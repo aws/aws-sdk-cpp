@@ -40,6 +40,11 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     m_webhookUrl = jsonValue.GetString("webhookUrl");
     m_webhookUrlHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("appId"))
+  {
+    m_appId = jsonValue.GetString("appId");
+    m_appIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("branchName"))
   {
     m_branchName = jsonValue.GetString("branchName");
@@ -82,6 +87,12 @@ JsonValue Webhook::Jsonize() const
   if(m_webhookUrlHasBeenSet)
   {
    payload.WithString("webhookUrl", m_webhookUrl);
+
+  }
+
+  if(m_appIdHasBeenSet)
+  {
+   payload.WithString("appId", m_appId);
 
   }
 

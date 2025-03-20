@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>The source port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
      */
     inline const Aws::String& GetSourcePort() const { return m_sourcePort; }
     inline bool SourcePortHasBeenSet() const { return m_sourcePortHasBeenSet; }
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The destination port to inspect for. You can specify an individual port, for
      * example <code>1994</code> and you can specify a port range, for example
-     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
      */
     inline const Aws::String& GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }

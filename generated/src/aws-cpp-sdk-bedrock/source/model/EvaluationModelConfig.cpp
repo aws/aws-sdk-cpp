@@ -30,6 +30,11 @@ EvaluationModelConfig& EvaluationModelConfig::operator =(JsonView jsonValue)
     m_bedrockModel = jsonValue.GetObject("bedrockModel");
     m_bedrockModelHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("precomputedInferenceSource"))
+  {
+    m_precomputedInferenceSource = jsonValue.GetObject("precomputedInferenceSource");
+    m_precomputedInferenceSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue EvaluationModelConfig::Jsonize() const
   if(m_bedrockModelHasBeenSet)
   {
    payload.WithObject("bedrockModel", m_bedrockModel.Jsonize());
+
+  }
+
+  if(m_precomputedInferenceSourceHasBeenSet)
+  {
+   payload.WithObject("precomputedInferenceSource", m_precomputedInferenceSource.Jsonize());
 
   }
 

@@ -30,6 +30,11 @@ RAGConfig& RAGConfig::operator =(JsonView jsonValue)
     m_knowledgeBaseConfig = jsonValue.GetObject("knowledgeBaseConfig");
     m_knowledgeBaseConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("precomputedRagSourceConfig"))
+  {
+    m_precomputedRagSourceConfig = jsonValue.GetObject("precomputedRagSourceConfig");
+    m_precomputedRagSourceConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue RAGConfig::Jsonize() const
   if(m_knowledgeBaseConfigHasBeenSet)
   {
    payload.WithObject("knowledgeBaseConfig", m_knowledgeBaseConfig.Jsonize());
+
+  }
+
+  if(m_precomputedRagSourceConfigHasBeenSet)
+  {
+   payload.WithObject("precomputedRagSourceConfig", m_precomputedRagSourceConfig.Jsonize());
 
   }
 

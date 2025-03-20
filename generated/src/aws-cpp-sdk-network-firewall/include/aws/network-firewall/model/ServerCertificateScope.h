@@ -107,9 +107,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The protocols to decrypt for inspection, specified using each protocol's
-     * assigned internet protocol number (IANA). Network Firewall currently supports
-     * only TCP.</p>
+     * <p>The protocols to inspect for, specified using the assigned internet protocol
+     * number (IANA) for each protocol. If not specified, this matches with any
+     * protocol.</p> <p>Network Firewall currently supports only TCP.</p>
      */
     inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }

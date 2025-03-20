@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/EvaluationBedrockModel.h>
+#include <aws/bedrock/model/EvaluationPrecomputedInferenceSource.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,26 @@ namespace Model
     template<typename BedrockModelT = EvaluationBedrockModel>
     EvaluationModelConfig& WithBedrockModel(BedrockModelT&& value) { SetBedrockModel(std::forward<BedrockModelT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Defines the model used to generate inference response data for a model
+     * evaluation job where you provide your own inference response data.</p>
+     */
+    inline const EvaluationPrecomputedInferenceSource& GetPrecomputedInferenceSource() const { return m_precomputedInferenceSource; }
+    inline bool PrecomputedInferenceSourceHasBeenSet() const { return m_precomputedInferenceSourceHasBeenSet; }
+    template<typename PrecomputedInferenceSourceT = EvaluationPrecomputedInferenceSource>
+    void SetPrecomputedInferenceSource(PrecomputedInferenceSourceT&& value) { m_precomputedInferenceSourceHasBeenSet = true; m_precomputedInferenceSource = std::forward<PrecomputedInferenceSourceT>(value); }
+    template<typename PrecomputedInferenceSourceT = EvaluationPrecomputedInferenceSource>
+    EvaluationModelConfig& WithPrecomputedInferenceSource(PrecomputedInferenceSourceT&& value) { SetPrecomputedInferenceSource(std::forward<PrecomputedInferenceSourceT>(value)); return *this;}
+    ///@}
   private:
 
     EvaluationBedrockModel m_bedrockModel;
     bool m_bedrockModelHasBeenSet = false;
+
+    EvaluationPrecomputedInferenceSource m_precomputedInferenceSource;
+    bool m_precomputedInferenceSourceHasBeenSet = false;
   };
 
 } // namespace Model
