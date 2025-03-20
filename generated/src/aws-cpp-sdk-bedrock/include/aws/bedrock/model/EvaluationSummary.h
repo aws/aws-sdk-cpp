@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/EvaluationJobType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/EvaluationInferenceConfigSummary.h>
 #include <aws/bedrock/model/ApplicationType.h>
 #include <aws/bedrock/model/EvaluationTaskType.h>
 #include <utility>
@@ -114,36 +115,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation
-     * job.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetModelIdentifiers() const { return m_modelIdentifiers; }
-    inline bool ModelIdentifiersHasBeenSet() const { return m_modelIdentifiersHasBeenSet; }
-    template<typename ModelIdentifiersT = Aws::Vector<Aws::String>>
-    void SetModelIdentifiers(ModelIdentifiersT&& value) { m_modelIdentifiersHasBeenSet = true; m_modelIdentifiers = std::forward<ModelIdentifiersT>(value); }
-    template<typename ModelIdentifiersT = Aws::Vector<Aws::String>>
-    EvaluationSummary& WithModelIdentifiers(ModelIdentifiersT&& value) { SetModelIdentifiers(std::forward<ModelIdentifiersT>(value)); return *this;}
-    template<typename ModelIdentifiersT = Aws::String>
-    EvaluationSummary& AddModelIdentifiers(ModelIdentifiersT&& value) { m_modelIdentifiersHasBeenSet = true; m_modelIdentifiers.emplace_back(std::forward<ModelIdentifiersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a
-     * knowledge base evaluation job.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRagIdentifiers() const { return m_ragIdentifiers; }
-    inline bool RagIdentifiersHasBeenSet() const { return m_ragIdentifiersHasBeenSet; }
-    template<typename RagIdentifiersT = Aws::Vector<Aws::String>>
-    void SetRagIdentifiers(RagIdentifiersT&& value) { m_ragIdentifiersHasBeenSet = true; m_ragIdentifiers = std::forward<RagIdentifiersT>(value); }
-    template<typename RagIdentifiersT = Aws::Vector<Aws::String>>
-    EvaluationSummary& WithRagIdentifiers(RagIdentifiersT&& value) { SetRagIdentifiers(std::forward<RagIdentifiersT>(value)); return *this;}
-    template<typename RagIdentifiersT = Aws::String>
-    EvaluationSummary& AddRagIdentifiers(RagIdentifiersT&& value) { m_ragIdentifiersHasBeenSet = true; m_ragIdentifiers.emplace_back(std::forward<RagIdentifiersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Names (ARNs) of the models used to compute the metrics
      * for a knowledge base evaluation job.</p>
      */
@@ -155,6 +126,19 @@ namespace Model
     EvaluationSummary& WithEvaluatorModelIdentifiers(EvaluatorModelIdentifiersT&& value) { SetEvaluatorModelIdentifiers(std::forward<EvaluatorModelIdentifiersT>(value)); return *this;}
     template<typename EvaluatorModelIdentifiersT = Aws::String>
     EvaluationSummary& AddEvaluatorModelIdentifiers(EvaluatorModelIdentifiersT&& value) { m_evaluatorModelIdentifiersHasBeenSet = true; m_evaluatorModelIdentifiers.emplace_back(std::forward<EvaluatorModelIdentifiersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a
+     * model or Knowledge Base evaluation job.</p>
+     */
+    inline const EvaluationInferenceConfigSummary& GetInferenceConfigSummary() const { return m_inferenceConfigSummary; }
+    inline bool InferenceConfigSummaryHasBeenSet() const { return m_inferenceConfigSummaryHasBeenSet; }
+    template<typename InferenceConfigSummaryT = EvaluationInferenceConfigSummary>
+    void SetInferenceConfigSummary(InferenceConfigSummaryT&& value) { m_inferenceConfigSummaryHasBeenSet = true; m_inferenceConfigSummary = std::forward<InferenceConfigSummaryT>(value); }
+    template<typename InferenceConfigSummaryT = EvaluationInferenceConfigSummary>
+    EvaluationSummary& WithInferenceConfigSummary(InferenceConfigSummaryT&& value) { SetInferenceConfigSummary(std::forward<InferenceConfigSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,14 +171,11 @@ namespace Model
     Aws::Vector<EvaluationTaskType> m_evaluationTaskTypes;
     bool m_evaluationTaskTypesHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_modelIdentifiers;
-    bool m_modelIdentifiersHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_ragIdentifiers;
-    bool m_ragIdentifiersHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_evaluatorModelIdentifiers;
     bool m_evaluatorModelIdentifiersHasBeenSet = false;
+
+    EvaluationInferenceConfigSummary m_inferenceConfigSummary;
+    bool m_inferenceConfigSummaryHasBeenSet = false;
 
     ApplicationType m_applicationType{ApplicationType::NOT_SET};
     bool m_applicationTypeHasBeenSet = false;

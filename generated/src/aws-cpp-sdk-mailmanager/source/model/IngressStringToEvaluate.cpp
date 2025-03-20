@@ -25,6 +25,11 @@ IngressStringToEvaluate::IngressStringToEvaluate(JsonView jsonValue)
 
 IngressStringToEvaluate& IngressStringToEvaluate::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Analysis"))
+  {
+    m_analysis = jsonValue.GetObject("Analysis");
+    m_analysisHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = IngressStringEmailAttributeMapper::GetIngressStringEmailAttributeForName(jsonValue.GetString("Attribute"));
@@ -36,6 +41,12 @@ IngressStringToEvaluate& IngressStringToEvaluate::operator =(JsonView jsonValue)
 JsonValue IngressStringToEvaluate::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_analysisHasBeenSet)
+  {
+   payload.WithObject("Analysis", m_analysis.Jsonize());
+
+  }
 
   if(m_attributeHasBeenSet)
   {

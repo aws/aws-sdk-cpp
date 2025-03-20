@@ -75,10 +75,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source ports to inspect for. If not specified, this matches with any
-     * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
-     * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990:1994</code>. </p>
+     * <p>The source port to inspect for. You can specify an individual port, for
+     * example <code>1994</code> and you can specify a port range, for example
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+     * <p> If not specified, this matches with any source port.</p> <p>This setting is
+     * only used for protocols 6 (TCP) and 17 (UDP).</p>
      */
     inline const Aws::Vector<PortRange>& GetSourcePorts() const { return m_sourcePorts; }
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
@@ -92,10 +93,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination ports to inspect for. If not specified, this matches with any
-     * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
-     * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990:1994</code>. </p>
+     * <p>The destination port to inspect for. You can specify an individual port, for
+     * example <code>1994</code> and you can specify a port range, for example
+     * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+     * <p>This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      */
     inline const Aws::Vector<PortRange>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
@@ -109,9 +110,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The protocols to inspect for, specified using each protocol's assigned
-     * internet protocol number (IANA). If not specified, this matches with any
-     * protocol. </p>
+     * <p>The protocols to inspect for, specified using the assigned internet protocol
+     * number (IANA) for each protocol. If not specified, this matches with any
+     * protocol.</p>
      */
     inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
