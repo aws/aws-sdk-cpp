@@ -6,7 +6,6 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/crypto/Hash.h>
-#include <aws/crt/io/Stream.h>
 
 namespace Aws {
 namespace Utils {
@@ -15,13 +14,10 @@ namespace Stream {
 static const size_t AWS_DATA_BUFFER_SIZE = 65536;
 
 template <size_t DataBufferSize = AWS_DATA_BUFFER_SIZE>
-class AwsChunkedStream: public Aws::Crt::Io::StdIOStreamInputStream {
+class AwsChunkedStream {
  public:
   AwsChunkedStream(Http::HttpRequest *request, const std::shared_ptr<Aws::IOStream> &stream)
-      : StdIOStreamInputStream{stream},
-        m_chunkingStream{Aws::MakeShared<StringStream>("AwsChunkedStream")},
-        m_request(request),
-        m_stream(stream) {
+      : m_chunkingStream{Aws::MakeShared<StringStream>("AwsChunkedStream")}, m_request(request), m_stream(stream) {
     assert(m_stream != nullptr);
     if (m_stream == nullptr) {
       AWS_LOGSTREAM_ERROR("AwsChunkedStream", "stream is null");
@@ -59,14 +55,6 @@ class AwsChunkedStream: public Aws::Crt::Io::StdIOStreamInputStream {
     m_chunkingStream->read(dst, amountToRead);
     return static_cast<size_t>(m_chunkingStream->gcount());
   }
-
-protected:
-  bool ReadImpl(Crt::ByteBuf &dstBuffer) noexcept override {
-    size_t amountToRead = dstBuffer.capacity - dstBuffer.len;
-    const auto bytesRead = BufferedRead(reinterpret_cast<char *>(dstBuffer.buffer), amountToRead);
-    dstBuffer.len += bytesRead;;
-    return true;
-  };
 
  private:
   void writeTrailerToUnderlyingStream() {
