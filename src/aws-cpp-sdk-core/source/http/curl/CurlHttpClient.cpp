@@ -860,6 +860,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
+        curl_easy_setopt(connectionHandle, CURLOPT_ERRORBUFFER, nullptr);
         bool shouldContinueRequest = ContinueRequest(*request);
         if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
@@ -968,14 +969,12 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         {
             request->SetResolvedRemoteHost(ip);
         }
-        if (curlResponseCode != CURLE_OK)
-        {
+        if (curlResponseCode != CURLE_OK) {
             m_curlHandleContainer.DestroyCurlHandle(connectionHandle);
-        }
-        else
-        {
+        } else {
             m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
         }
+        connectionHandle = nullptr;
         //go ahead and flush the response body stream
         response->GetResponseBody().flush();
         if (response->GetResponseBody().fail()) {
@@ -987,8 +986,6 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
         }
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
-
-        curl_easy_setopt(connectionHandle, CURLOPT_ERRORBUFFER, nullptr);
     }
 
     if (headers)
