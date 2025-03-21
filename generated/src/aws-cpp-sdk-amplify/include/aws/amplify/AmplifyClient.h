@@ -637,8 +637,13 @@ namespace Amplify
         }
 
         /**
-         * <p>Returns a list of artifacts for a specified app, branch, and job.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of end-to-end testing artifacts for a specified app, branch,
+         * and job.</p> <p>To return the build artifacts, use the <a
+         * href="https://docs.aws.amazon.com/amplify/latest/APIReference/API_GetJob.html">GetJob</a>
+         * API.</p> <p>For more information about Amplify testing support, see <a
+         * href="https://docs.aws.amazon.com/amplify/latest/userguide/running-tests.html">Setting
+         * up end-to-end Cypress tests for your Amplify application</a> in the <i>Amplify
+         * Hosting User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">AWS
          * API Reference</a></p>
          */

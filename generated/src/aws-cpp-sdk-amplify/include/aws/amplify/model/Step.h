@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The URL to the artifact for the execution step. </p>
+     * <p> The URL to the build artifact for the execution step. </p>
      */
     inline const Aws::String& GetArtifactsUrl() const { return m_artifactsUrl; }
     inline bool ArtifactsUrlHasBeenSet() const { return m_artifactsUrlHasBeenSet; }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/mailmanager/model/IngressAnalysis.h>
 #include <aws/mailmanager/model/IngressStringEmailAttribute.h>
 #include <utility>
 
@@ -40,6 +41,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The structure type for a string condition stating the Add On ARN and its
+     * returned value.</p>
+     */
+    inline const IngressAnalysis& GetAnalysis() const { return m_analysis; }
+    inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
+    template<typename AnalysisT = IngressAnalysis>
+    void SetAnalysis(AnalysisT&& value) { m_analysisHasBeenSet = true; m_analysis = std::forward<AnalysisT>(value); }
+    template<typename AnalysisT = IngressAnalysis>
+    IngressStringToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The enum type representing the allowed attribute types for a string
      * condition.</p>
      */
@@ -49,6 +63,9 @@ namespace Model
     inline IngressStringToEvaluate& WithAttribute(IngressStringEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
+
+    IngressAnalysis m_analysis;
+    bool m_analysisHasBeenSet = false;
 
     IngressStringEmailAttribute m_attribute{IngressStringEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;

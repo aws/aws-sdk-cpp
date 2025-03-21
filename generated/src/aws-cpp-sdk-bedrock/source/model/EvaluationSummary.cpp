@@ -59,24 +59,6 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_evaluationTaskTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelIdentifiers"))
-  {
-    Aws::Utils::Array<JsonView> modelIdentifiersJsonList = jsonValue.GetArray("modelIdentifiers");
-    for(unsigned modelIdentifiersIndex = 0; modelIdentifiersIndex < modelIdentifiersJsonList.GetLength(); ++modelIdentifiersIndex)
-    {
-      m_modelIdentifiers.push_back(modelIdentifiersJsonList[modelIdentifiersIndex].AsString());
-    }
-    m_modelIdentifiersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ragIdentifiers"))
-  {
-    Aws::Utils::Array<JsonView> ragIdentifiersJsonList = jsonValue.GetArray("ragIdentifiers");
-    for(unsigned ragIdentifiersIndex = 0; ragIdentifiersIndex < ragIdentifiersJsonList.GetLength(); ++ragIdentifiersIndex)
-    {
-      m_ragIdentifiers.push_back(ragIdentifiersJsonList[ragIdentifiersIndex].AsString());
-    }
-    m_ragIdentifiersHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("evaluatorModelIdentifiers"))
   {
     Aws::Utils::Array<JsonView> evaluatorModelIdentifiersJsonList = jsonValue.GetArray("evaluatorModelIdentifiers");
@@ -85,6 +67,11 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
       m_evaluatorModelIdentifiers.push_back(evaluatorModelIdentifiersJsonList[evaluatorModelIdentifiersIndex].AsString());
     }
     m_evaluatorModelIdentifiersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inferenceConfigSummary"))
+  {
+    m_inferenceConfigSummary = jsonValue.GetObject("inferenceConfigSummary");
+    m_inferenceConfigSummaryHasBeenSet = true;
   }
   if(jsonValue.ValueExists("applicationType"))
   {
@@ -136,28 +123,6 @@ JsonValue EvaluationSummary::Jsonize() const
 
   }
 
-  if(m_modelIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> modelIdentifiersJsonList(m_modelIdentifiers.size());
-   for(unsigned modelIdentifiersIndex = 0; modelIdentifiersIndex < modelIdentifiersJsonList.GetLength(); ++modelIdentifiersIndex)
-   {
-     modelIdentifiersJsonList[modelIdentifiersIndex].AsString(m_modelIdentifiers[modelIdentifiersIndex]);
-   }
-   payload.WithArray("modelIdentifiers", std::move(modelIdentifiersJsonList));
-
-  }
-
-  if(m_ragIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ragIdentifiersJsonList(m_ragIdentifiers.size());
-   for(unsigned ragIdentifiersIndex = 0; ragIdentifiersIndex < ragIdentifiersJsonList.GetLength(); ++ragIdentifiersIndex)
-   {
-     ragIdentifiersJsonList[ragIdentifiersIndex].AsString(m_ragIdentifiers[ragIdentifiersIndex]);
-   }
-   payload.WithArray("ragIdentifiers", std::move(ragIdentifiersJsonList));
-
-  }
-
   if(m_evaluatorModelIdentifiersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> evaluatorModelIdentifiersJsonList(m_evaluatorModelIdentifiers.size());
@@ -166,6 +131,12 @@ JsonValue EvaluationSummary::Jsonize() const
      evaluatorModelIdentifiersJsonList[evaluatorModelIdentifiersIndex].AsString(m_evaluatorModelIdentifiers[evaluatorModelIdentifiersIndex]);
    }
    payload.WithArray("evaluatorModelIdentifiers", std::move(evaluatorModelIdentifiersJsonList));
+
+  }
+
+  if(m_inferenceConfigSummaryHasBeenSet)
+  {
+   payload.WithObject("inferenceConfigSummary", m_inferenceConfigSummary.Jsonize());
 
   }
 

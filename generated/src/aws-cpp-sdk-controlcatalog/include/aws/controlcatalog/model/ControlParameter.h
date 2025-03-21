@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Four types of control parameters are supported.</p> <ul> <li> <p>
+   * <p>Five types of control parameters are supported.</p> <ul> <li> <p>
    * <b>AllowedRegions</b>: List of Amazon Web Services Regions exempted from the
    * control. Each string is expected to be an Amazon Web Services Region code. This
    * parameter is mandatory for the <b>OU Region deny</b> control,
@@ -40,8 +40,21 @@ namespace Model
    * <code>["arn:aws:iam::*:role/ReadOnly","arn:aws:sts::*:assumed-role/ReadOnly/ *"]</code>
    * </p> </li> <li> <p> <b>ExemptedResourceArns</b>: List of resource ARNs exempted
    * from the control. Each string is expected to be a resource ARN.</p> <p>Example:
-   * <code>["arn:aws:s3:::my-bucket-name"]</code> </p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * <code>["arn:aws:s3:::my-bucket-name"]</code> </p> </li> <li> <p>
+   * <b>ExemptAssumeRoot</b>: A parameter that lets you choose whether to exempt
+   * requests made with <code>AssumeRoot</code> from this control, for this OU. For
+   * member accounts, the <code>AssumeRoot</code> property is included in requests
+   * initiated by IAM centralized root access. This parameter applies only to the
+   * <code>AWS-GR_RESTRICT_ROOT_USER</code> control. If you add the parameter when
+   * enabling the control, the <code>AssumeRoot</code> exemption is allowed. If you
+   * omit the parameter, the <code>AssumeRoot</code> exception is not permitted. The
+   * parameter does not accept <code>False</code> as a value.</p> <p> <i>Example:
+   * Enabling the control and allowing <code>AssumeRoot</code> </i> </p> <p> <code>{
+   * "controlIdentifier":
+   * "arn:aws:controlcatalog:::control/5kvme4m5d2b4d7if2fs5yg2ui", "parameters": [ {
+   * "key": "ExemptAssumeRoot", "value": true } ], "targetIdentifier":
+   * "arn:aws:organizations::8633900XXXXX:ou/o-6jmn81636m/ou-qsah-jtiihcla" }</code>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ControlParameter">AWS
    * API Reference</a></p>
    */

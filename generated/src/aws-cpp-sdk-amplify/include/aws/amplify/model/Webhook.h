@@ -77,6 +77,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique ID of an Amplify app.</p>
+     */
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    Webhook& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name for a branch that is part of an Amplify app. </p>
      */
     inline const Aws::String& GetBranchName() const { return m_branchName; }
@@ -132,6 +144,9 @@ namespace Model
 
     Aws::String m_webhookUrl;
     bool m_webhookUrlHasBeenSet = false;
+
+    Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_branchName;
     bool m_branchNameHasBeenSet = false;

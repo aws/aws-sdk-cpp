@@ -524,6 +524,32 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Returns key information about a specific flow operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlowOperationOutcome DescribeFlowOperation(const Model::DescribeFlowOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFlowOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFlowOperationRequestT = Model::DescribeFlowOperationRequest>
+        Model::DescribeFlowOperationOutcomeCallable DescribeFlowOperationCallable(const DescribeFlowOperationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DescribeFlowOperation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFlowOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFlowOperationRequestT = Model::DescribeFlowOperationRequest>
+        void DescribeFlowOperationAsync(const DescribeFlowOperationRequestT& request, const DescribeFlowOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DescribeFlowOperation, request, handler, context);
+        }
+
+        /**
          * <p>Returns the logging configuration for the specified firewall. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeLoggingConfiguration">AWS
@@ -792,6 +818,68 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Returns the results of a specific flow operation. </p> <p>Flow operations let
+         * you manage the flows tracked in the flow table, also known as the firewall
+         * table.</p> <p>A flow is network traffic that is monitored by a firewall, either
+         * by stateful or stateless rules. For traffic to be considered part of a flow, it
+         * must share Destination, DestinationPort, Direction, Protocol, Source, and
+         * SourcePort. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowOperationResultsOutcome ListFlowOperationResults(const Model::ListFlowOperationResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowOperationResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowOperationResultsRequestT = Model::ListFlowOperationResultsRequest>
+        Model::ListFlowOperationResultsOutcomeCallable ListFlowOperationResultsCallable(const ListFlowOperationResultsRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::ListFlowOperationResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowOperationResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowOperationResultsRequestT = Model::ListFlowOperationResultsRequest>
+        void ListFlowOperationResultsAsync(const ListFlowOperationResultsRequestT& request, const ListFlowOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::ListFlowOperationResults, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all flow operations ran in a specific firewall. You can
+         * optionally narrow the request scope by specifying the operation type or
+         * Availability Zone associated with a firewall's flow operations. </p> <p>Flow
+         * operations let you manage the flows tracked in the flow table, also known as the
+         * firewall table.</p> <p>A flow is network traffic that is monitored by a
+         * firewall, either by stateful or stateless rules. For traffic to be considered
+         * part of a flow, it must share Destination, DestinationPort, Direction, Protocol,
+         * Source, and SourcePort. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowOperationsOutcome ListFlowOperations(const Model::ListFlowOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowOperationsRequestT = Model::ListFlowOperationsRequest>
+        Model::ListFlowOperationsOutcomeCallable ListFlowOperationsCallable(const ListFlowOperationsRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::ListFlowOperations, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowOperationsRequestT = Model::ListFlowOperationsRequest>
+        void ListFlowOperationsAsync(const ListFlowOperationsRequestT& request, const ListFlowOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::ListFlowOperations, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the metadata for the rule groups that you have defined. Depending
          * on your setting for max results and the number of rule groups, a single call
          * might not return the full list. </p><p><h3>See Also:</h3>   <a
@@ -944,6 +1032,73 @@ namespace NetworkFirewall
         void StartAnalysisReportAsync(const StartAnalysisReportRequestT& request, const StartAnalysisReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::StartAnalysisReport, request, handler, context);
+        }
+
+        /**
+         * <p>Begins capturing the flows in a firewall, according to the filters you
+         * define. Captures are similar, but not identical to snapshots. Capture operations
+         * provide visibility into flows that are not closed and are tracked by a
+         * firewall's flow table. Unlike snapshots, captures are a time-boxed view. </p>
+         * <p>A flow is network traffic that is monitored by a firewall, either by stateful
+         * or stateless rules. For traffic to be considered part of a flow, it must share
+         * Destination, DestinationPort, Direction, Protocol, Source, and SourcePort. </p>
+         *  <p>To avoid encountering operation limits, you should avoid starting
+         * captures with broad filters, like wide IP ranges. Instead, we recommend you
+         * define more specific criteria with <code>FlowFilters</code>, like narrow IP
+         * ranges, ports, or protocols.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFlowCaptureOutcome StartFlowCapture(const Model::StartFlowCaptureRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartFlowCapture that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartFlowCaptureRequestT = Model::StartFlowCaptureRequest>
+        Model::StartFlowCaptureOutcomeCallable StartFlowCaptureCallable(const StartFlowCaptureRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::StartFlowCapture, request);
+        }
+
+        /**
+         * An Async wrapper for StartFlowCapture that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartFlowCaptureRequestT = Model::StartFlowCaptureRequest>
+        void StartFlowCaptureAsync(const StartFlowCaptureRequestT& request, const StartFlowCaptureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::StartFlowCapture, request, handler, context);
+        }
+
+        /**
+         * <p>Begins the flushing of traffic from the firewall, according to the filters
+         * you define. When the operation starts, impacted flows are temporarily marked as
+         * timed out before the Suricata engine prunes, or flushes, the flows from the
+         * firewall table.</p>  <p>While the flush completes, impacted flows are
+         * processed as midstream traffic. This may result in a temporary increase in
+         * midstream traffic metrics. We recommend that you double check your stream
+         * exception policy before you perform a flush operation.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFlowFlushOutcome StartFlowFlush(const Model::StartFlowFlushRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartFlowFlush that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartFlowFlushRequestT = Model::StartFlowFlushRequest>
+        Model::StartFlowFlushOutcomeCallable StartFlowFlushCallable(const StartFlowFlushRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::StartFlowFlush, request);
+        }
+
+        /**
+         * An Async wrapper for StartFlowFlush that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartFlowFlushRequestT = Model::StartFlowFlushRequest>
+        void StartFlowFlushAsync(const StartFlowFlushRequestT& request, const StartFlowFlushResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::StartFlowFlush, request, handler, context);
         }
 
         /**
