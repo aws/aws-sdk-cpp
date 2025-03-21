@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53-recovery-control-config/model/Status.h>
+#include <aws/route53-recovery-control-config/model/NetworkType.h>
 #include <aws/route53-recovery-control-config/model/ClusterEndpoint.h>
 #include <utility>
 
@@ -106,6 +107,17 @@ namespace Model
     template<typename OwnerT = Aws::String>
     Cluster& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the cluster. NetworkType can be one of the following:
+     * IPV4, DUALSTACK.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline Cluster& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterArn;
@@ -122,6 +134,9 @@ namespace Model
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

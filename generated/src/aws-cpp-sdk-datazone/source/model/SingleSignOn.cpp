@@ -25,6 +25,11 @@ SingleSignOn::SingleSignOn(JsonView jsonValue)
 
 SingleSignOn& SingleSignOn::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("idcInstanceArn"))
+  {
+    m_idcInstanceArn = jsonValue.GetString("idcInstanceArn");
+    m_idcInstanceArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("type"));
@@ -41,6 +46,12 @@ SingleSignOn& SingleSignOn::operator =(JsonView jsonValue)
 JsonValue SingleSignOn::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idcInstanceArnHasBeenSet)
+  {
+   payload.WithString("idcInstanceArn", m_idcInstanceArn);
+
+  }
 
   if(m_typeHasBeenSet)
   {

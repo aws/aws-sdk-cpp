@@ -649,6 +649,32 @@ namespace Route53RecoveryControlConfig
         }
 
         /**
+         * <p>Updates an existing cluster. You can only update the network type of a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        Model::UpdateClusterOutcomeCallable UpdateClusterCallable(const UpdateClusterRequestT& request) const
+        {
+            return SubmitCallable(&Route53RecoveryControlConfigClient::UpdateCluster, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53RecoveryControlConfigClient::UpdateCluster, request, handler, context);
+        }
+
+        /**
          * <p>Updates a control panel. The only update you can make to a control panel is
          * to change the name of the control panel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateControlPanel">AWS

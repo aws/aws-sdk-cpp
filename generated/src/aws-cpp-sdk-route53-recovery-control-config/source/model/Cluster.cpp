@@ -54,6 +54,11 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_owner = jsonValue.GetString("Owner");
     m_ownerHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +98,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithString("Owner", m_owner);
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;
