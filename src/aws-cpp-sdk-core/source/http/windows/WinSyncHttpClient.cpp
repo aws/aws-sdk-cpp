@@ -289,6 +289,13 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                             {
                                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(dst), static_cast<size_t>(read));
                             }
+
+                            auto& headersHandler = request->GetHeadersReceivedEventHandler();
+                            if (headersHandler)
+                            {
+                              headersHandler(request.get(), response.get());
+                            }
+
                             if (readLimiter != nullptr)
                             {
                                 readLimiter->ApplyAndPayForCost(read);
