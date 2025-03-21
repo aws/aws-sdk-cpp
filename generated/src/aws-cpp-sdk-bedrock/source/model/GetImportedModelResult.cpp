@@ -70,6 +70,11 @@ GetImportedModelResult& GetImportedModelResult::operator =(const Aws::AmazonWebS
     m_instructSupported = jsonValue.GetBool("instructSupported");
     m_instructSupportedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("customModelUnits"))
+  {
+    m_customModelUnits = jsonValue.GetObject("customModelUnits");
+    m_customModelUnitsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

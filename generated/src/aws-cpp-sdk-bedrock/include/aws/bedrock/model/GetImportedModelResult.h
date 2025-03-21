@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelDataSource.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock/model/CustomModelUnits.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the hardware utilization for a single copy of the
+     * model.</p>
+     */
+    inline const CustomModelUnits& GetCustomModelUnits() const { return m_customModelUnits; }
+    template<typename CustomModelUnitsT = CustomModelUnits>
+    void SetCustomModelUnits(CustomModelUnitsT&& value) { m_customModelUnitsHasBeenSet = true; m_customModelUnits = std::forward<CustomModelUnitsT>(value); }
+    template<typename CustomModelUnitsT = CustomModelUnits>
+    GetImportedModelResult& WithCustomModelUnits(CustomModelUnitsT&& value) { SetCustomModelUnits(std::forward<CustomModelUnitsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -167,6 +180,9 @@ namespace Model
 
     bool m_instructSupported{false};
     bool m_instructSupportedHasBeenSet = false;
+
+    CustomModelUnits m_customModelUnits;
+    bool m_customModelUnitsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
