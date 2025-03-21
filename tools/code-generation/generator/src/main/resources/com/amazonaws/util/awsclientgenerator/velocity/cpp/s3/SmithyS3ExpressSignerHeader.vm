@@ -112,7 +112,7 @@ namespace {
         S3ExpressSignerBase<SIGNER> m_signer;
     };
 
-    class AWS_S3_API S3ExpressSigner : public Aws::Client::AWSAuthV4Signer {
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigner : public Aws::Client::AWSAuthV4Signer {
         public:
             S3ExpressSigner(std::shared_ptr<S3ExpressIdentityProvider> S3ExpressIdentityProvider,
                 const std::shared_ptr<Auth::AWSCredentialsProvider> &credentialsProvider,

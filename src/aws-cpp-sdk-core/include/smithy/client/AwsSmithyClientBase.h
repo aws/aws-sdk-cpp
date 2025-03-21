@@ -87,6 +87,7 @@ namespace client
         using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSCoreError >;
         using IdentityOutcome = Aws::Utils::Outcome<std::shared_ptr<smithy::AwsIdentity>, AWSCoreError>;
         using GetContextEndpointParametersOutcome = Aws::Utils::Outcome<Aws::Vector<Aws::Endpoint::EndpointParameter>, AWSCoreError>;
+        using IdentityAuthOutcomeVariant = Aws::Crt::Variant<SelectAuthSchemeOptionOutcome, IdentityOutcome, ResolveEndpointOutcome>;
 
         /* primary constructor */
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
@@ -206,6 +207,10 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
         virtual IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual GetContextEndpointParametersOutcome GetContextEndpointParameters(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
+        AwsSmithyClientBase::ResolveEndpointOutcome ResolveIdentityAuth(
+            Aws::AmazonWebServiceRequest const * const request,
+            const char* requestName,
+            EndpointUpdateCallback&& endpointCallback) const;
 
         /* AwsSmithyClientT class binds its config reference to this pointer, so don't remove const and don't re-allocate it.
          * This is done to avoid duplication of config object between this base and actual service template classes.
@@ -220,6 +225,14 @@ namespace client
         std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
     private:
         void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
+
+        bool ResolveIdentityAuth(
+            std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+            ResponseHandlerFunc&& responseHandler,
+            EndpointUpdateCallback&& endpointCallback,
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor
+        ) const;
+
     };
 } // namespace client
 } // namespace smithy

@@ -4,8 +4,19 @@
  */
 
 #pragma once
+
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/s3-crt/S3CrtServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
+#include <aws/s3-crt/S3ExpressSigV4AuthScheme.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/core/utils/DNS.h>
+
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/s3-crt/ClientConfiguration.h>
@@ -13,14 +24,10 @@
 #include <aws/s3/s3_client.h>
 #include <aws/crt/auth/Sigv4Signing.h>
 #include <aws/crt/http/HttpRequestResponse.h>
-#include <aws/core/client/AWSClient.h>
-#include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/auth/AWSAuthSigner.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/DNS.h>
-#include <aws/s3-crt/S3CrtServiceClientModel.h>
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
 #include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
+
+
 
 struct aws_s3_client;
 // TODO: temporary fix for naming conflicts on Windows.
@@ -42,6 +49,7 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
+    AWS_S3CRT_API extern const char SERVICE_NAME[];
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -51,12 +59,20 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>
+    class AWS_S3CRT_API S3CrtClient : Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>,
+      public smithy::client::AwsSmithyClientT<Aws::S3Crt::SERVICE_NAME,
+        Aws::S3Crt::S3CrtClientConfiguration,
+        smithy::SigV4MultiAuthSchemeResolver<S3CrtEndpointProvider, Aws::S3Crt::S3CrtClientConfiguration>,
+        Aws::Crt::Variant<smithy::SigV4AuthScheme,S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme>,
+        S3CrtEndpointProviderBase,
+        smithy::client::XmlOutcomeSerializer,
+        smithy::client::XmlOutcome,
+        Aws::Client::S3CrtErrorMarshaller>
     {
     public:
-        typedef Aws::Client::AWSXMLClient BASECLASS;
         static const char* GetServiceName();
         static const char* GetAllocationTag();
+        inline const char* GetServiceClientName() const override { return "S3"; }
 
       typedef S3CrtClientConfiguration ClientConfigurationType;
       typedef S3CrtEndpointProvider EndpointProviderType;
@@ -7005,14 +7021,14 @@ namespace Aws
                                         aws_s3_meta_request_options *options,
                                         const Aws::AmazonWebServiceRequest *request,
                                         const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
-        S3Crt::ClientConfiguration m_clientConfiguration;
+
         struct aws_s3_client* m_s3CrtClient = {};
         struct aws_signing_config_aws m_s3CrtSigningConfig = {};
         struct CrtClientShutdownCallbackDataWrapper m_wrappedData = {};
         std::shared_ptr<Aws::Utils::Threading::Semaphore> m_clientShutdownSem;
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
-        std::shared_ptr<S3CrtEndpointProviderBase> m_endpointProvider;
+
         std::shared_ptr<S3ExpressIdentityProvider> m_identityProvider;
         S3CrtIdentityProviderUserData m_identityProviderUserData{m_identityProvider};
     };

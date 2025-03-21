@@ -280,11 +280,7 @@ namespace ${rootNamespace}
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
 #end##-#if(!$serviceModel.endpointRules)
-#if($serviceModel.endpointRules)
-#if($serviceNamespace == "S3Crt")
-        ${metadata.classNamePrefix}::ClientConfiguration m_clientConfiguration;
-#end
-#end
+
 #if($serviceNamespace == "S3Crt")
         struct aws_s3_client* m_s3CrtClient = {};
         struct aws_signing_config_aws m_s3CrtSigningConfig = {};
