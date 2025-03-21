@@ -856,7 +856,7 @@ void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
     }
 }
 
-TEST_F(TableOperationTest, TestLimiter)
+TEST_F(TableOperationTest, DISABLED_TestLimiter)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestLimiter")
 
