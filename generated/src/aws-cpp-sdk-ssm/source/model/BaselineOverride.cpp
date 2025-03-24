@@ -82,6 +82,11 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AvailableSecurityUpdatesComplianceStatus"))
+  {
+    m_availableSecurityUpdatesComplianceStatus = PatchComplianceStatusMapper::GetPatchComplianceStatusForName(jsonValue.GetString("AvailableSecurityUpdatesComplianceStatus"));
+    m_availableSecurityUpdatesComplianceStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -153,6 +158,11 @@ JsonValue BaselineOverride::Jsonize() const
    }
    payload.WithArray("Sources", std::move(sourcesJsonList));
 
+  }
+
+  if(m_availableSecurityUpdatesComplianceStatusHasBeenSet)
+  {
+   payload.WithString("AvailableSecurityUpdatesComplianceStatus", PatchComplianceStatusMapper::GetNameForPatchComplianceStatus(m_availableSecurityUpdatesComplianceStatus));
   }
 
   return payload;

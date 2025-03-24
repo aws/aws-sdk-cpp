@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The conversation history data to included in conversation context data before
-   * the the Amazon Q in Connect session..</p><p><h3>See Also:</h3>   <a
+   * the Amazon Q in Connect session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SelfServiceConversationHistory">AWS
    * API Reference</a></p>
    */

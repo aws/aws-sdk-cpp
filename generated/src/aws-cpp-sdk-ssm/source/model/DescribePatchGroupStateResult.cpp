@@ -85,6 +85,11 @@ DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const A
     m_instancesWithOtherNonCompliantPatches = jsonValue.GetInteger("InstancesWithOtherNonCompliantPatches");
     m_instancesWithOtherNonCompliantPatchesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InstancesWithAvailableSecurityUpdates"))
+  {
+    m_instancesWithAvailableSecurityUpdates = jsonValue.GetInteger("InstancesWithAvailableSecurityUpdates");
+    m_instancesWithAvailableSecurityUpdatesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

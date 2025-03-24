@@ -20,7 +20,7 @@ namespace IoTWireless
    * internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN
    * and Sidewalk devices to AWS IoT, use the IoT Wireless API. These wireless
    * devices use the Low Power Wide Area Networking (LPWAN) communication protocol to
-   * communicate with AWS IoT.</p> <p>Using the API, you can perform create, read,
+   * communicate with AWS IoT. </p> <p>Using the API, you can perform create, read,
    * update, and delete operations for your wireless devices, gateways, destinations,
    * and profiles. After onboarding your devices, you can use the API operations to
    * set log levels and monitor your devices with CloudWatch.</p> <p>You can also use
@@ -31,7 +31,11 @@ namespace IoTWireless
    * group of devices in a multicast group.</p> <p>To connect to the AWS IoT Wireless
    * Service, use the Service endpoints as described in <a
    * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
-   * Wireless Service endpoints</a> in the <i>AWS General Reference</i>.</p>
+   * Wireless Service endpoints</a>. You can use both IPv4 and IPv6 protocols to
+   * connect to the endpoints and send requests to the AWS IoT Wireless service. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/iot-wireless/latest/developerguide/wireless-ipv6-access.html">Using
+   * IPv6 with AWS IoT Wireless</a>.</p>
    */
   class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>
   {
@@ -627,7 +631,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Deletes a multicast group if it is not in use by a fuota task.</p><p><h3>See
+         * <p>Deletes a multicast group if it is not in use by a FUOTA task.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">AWS
          * API Reference</a></p>
@@ -915,7 +919,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Disassociates a multicast group from a fuota task.</p><p><h3>See Also:</h3>  
+         * <p>Disassociates a multicast group from a FUOTA task.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">AWS
          * API Reference</a></p>
@@ -1173,8 +1177,8 @@ namespace IoTWireless
 
         /**
          * <p>Returns current default log levels or log levels by resource types. Based on
-         * resource types, log levels can be for wireless device log options or wireless
-         * gateway log options.</p><p><h3>See Also:</h3>   <a
+         * the resource type, log levels can be returned for wireless device, wireless
+         * gateway, or FUOTA task log options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          */
@@ -1406,9 +1410,8 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Fetches the log-level override, if any, for a given resource-ID and
-         * resource-type. It can be used for a wireless device, wireless gateway or fuota
-         * task.</p><p><h3>See Also:</h3>   <a
+         * <p>Fetches the log-level override, if any, for a given resource ID and resource
+         * type..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
          * API Reference</a></p>
          */
@@ -1900,7 +1903,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>List all multicast groups associated with a fuota task.</p><p><h3>See
+         * <p>List all multicast groups associated with a FUOTA task.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">AWS
          * API Reference</a></p>
@@ -2158,9 +2161,8 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Sets the log-level override for a resource-ID and resource-type. This option
-         * can be specified for a wireless gateway or a wireless device. A limit of 200 log
-         * level override can be set per account.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the log-level override for a resource ID and resource type. A limit of
+         * 200 log level override can be set per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
          * API Reference</a></p>
          */
@@ -2186,7 +2188,7 @@ namespace IoTWireless
 
         /**
          * <p>Removes the log-level overrides for all resources; wireless devices, wireless
-         * gateways, and fuota tasks.</p><p><h3>See Also:</h3>   <a
+         * gateways, and FUOTA tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
          * API Reference</a></p>
          */
@@ -2211,9 +2213,9 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Removes the log-level override, if any, for a specific resource-ID and
-         * resource-type. It can be used for a wireless device, a wireless gateway, or a
-         * fuota task.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the log-level override, if any, for a specific resource ID and
+         * resource type. It can be used for a wireless device, a wireless gateway, or a
+         * FUOTA task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
          * API Reference</a></p>
          */
@@ -2595,7 +2597,7 @@ namespace IoTWireless
 
         /**
          * <p>Set default log level, or log levels by resource types. This can be for
-         * wireless device log options or wireless gateways log options and is used to
+         * wireless device, wireless gateway, or FUOTA task log options, and is used to
          * control the log messages that'll be displayed in CloudWatch.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS

@@ -1870,8 +1870,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Removes the AI Agent that is set for use by defafult on an Amazon Q in
-         * Connect Assistant.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the AI Agent that is set for use by default on an Amazon Q in Connect
+         * Assistant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveAssistantAIAgent">AWS
          * API Reference</a></p>
          */
@@ -2272,8 +2272,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Updates the AI Agent that is set for use by defafult on an Amazon Q in
-         * Connect Assistant.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the AI Agent that is set for use by default on an Amazon Q in Connect
+         * Assistant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAssistantAIAgent">AWS
          * API Reference</a></p>
          */

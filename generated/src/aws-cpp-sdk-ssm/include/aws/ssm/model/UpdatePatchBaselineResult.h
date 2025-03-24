@@ -13,6 +13,7 @@
 #include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/ssm/model/PatchAction.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ssm/model/PatchComplianceStatus.h>
 #include <aws/ssm/model/PatchSource.h>
 #include <utility>
 
@@ -201,6 +202,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates the compliance status of managed nodes for which security-related
+     * patches are available but were not approved. This preference is specified when
+     * the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code>
+     * commands are run.</p> <p>Applies to Windows Server managed nodes only.</p>
+     */
+    inline PatchComplianceStatus GetAvailableSecurityUpdatesComplianceStatus() const { return m_availableSecurityUpdatesComplianceStatus; }
+    inline void SetAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { m_availableSecurityUpdatesComplianceStatusHasBeenSet = true; m_availableSecurityUpdatesComplianceStatus = value; }
+    inline UpdatePatchBaselineResult& WithAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { SetAvailableSecurityUpdatesComplianceStatus(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -251,6 +264,9 @@ namespace Model
 
     Aws::Vector<PatchSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    PatchComplianceStatus m_availableSecurityUpdatesComplianceStatus{PatchComplianceStatus::NOT_SET};
+    bool m_availableSecurityUpdatesComplianceStatusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

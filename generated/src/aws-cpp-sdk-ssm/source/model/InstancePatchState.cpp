@@ -95,6 +95,11 @@ InstancePatchState& InstancePatchState::operator =(JsonView jsonValue)
     m_notApplicableCount = jsonValue.GetInteger("NotApplicableCount");
     m_notApplicableCountHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AvailableSecurityUpdateCount"))
+  {
+    m_availableSecurityUpdateCount = jsonValue.GetInteger("AvailableSecurityUpdateCount");
+    m_availableSecurityUpdateCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("OperationStartTime"))
   {
     m_operationStartTime = jsonValue.GetDouble("OperationStartTime");
@@ -223,6 +228,12 @@ JsonValue InstancePatchState::Jsonize() const
   if(m_notApplicableCountHasBeenSet)
   {
    payload.WithInteger("NotApplicableCount", m_notApplicableCount);
+
+  }
+
+  if(m_availableSecurityUpdateCountHasBeenSet)
+  {
+   payload.WithInteger("AvailableSecurityUpdateCount", m_availableSecurityUpdateCount);
 
   }
 

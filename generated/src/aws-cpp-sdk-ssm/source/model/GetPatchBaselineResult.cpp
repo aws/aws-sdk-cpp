@@ -116,6 +116,11 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     }
     m_sourcesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AvailableSecurityUpdatesComplianceStatus"))
+  {
+    m_availableSecurityUpdatesComplianceStatus = PatchComplianceStatusMapper::GetPatchComplianceStatusForName(jsonValue.GetString("AvailableSecurityUpdatesComplianceStatus"));
+    m_availableSecurityUpdatesComplianceStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

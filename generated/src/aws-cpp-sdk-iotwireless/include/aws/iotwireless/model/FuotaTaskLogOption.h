@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The log options for fuota tasks and can be used to set log levels for a
-   * specific type of fuota task.</p><p><h3>See Also:</h3>   <a
+   * <p>The log options for FUOTA tasks and can be used to set log levels for a
+   * specific type of FUOTA task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/FuotaTaskLogOption">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fuota task type.</p>
+     * <p>The FUOTA task type.</p>
      */
     inline FuotaTaskType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

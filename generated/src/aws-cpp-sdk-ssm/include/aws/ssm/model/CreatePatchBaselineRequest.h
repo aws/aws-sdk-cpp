@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/ssm/model/PatchAction.h>
+#include <aws/ssm/model/PatchComplianceStatus.h>
 #include <aws/ssm/model/PatchSource.h>
 #include <aws/ssm/model/Tag.h>
 #include <utility>
@@ -211,6 +212,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the status you want to assign to security patches that are
+     * available but not approved because they don't meet the installation criteria
+     * specified in the patch baseline.</p> <p>Example scenario: Security patches that
+     * you might want installed can be skipped if you have specified a long period to
+     * wait after a patch is released before installation. If an update to the patch is
+     * released during your specified waiting period, the waiting period for installing
+     * the patch starts over. If the waiting period is too long, multiple versions of
+     * the patch could be released but never installed.</p> <p>Supported for Windows
+     * Server managed nodes only.</p>
+     */
+    inline PatchComplianceStatus GetAvailableSecurityUpdatesComplianceStatus() const { return m_availableSecurityUpdatesComplianceStatus; }
+    inline bool AvailableSecurityUpdatesComplianceStatusHasBeenSet() const { return m_availableSecurityUpdatesComplianceStatusHasBeenSet; }
+    inline void SetAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { m_availableSecurityUpdatesComplianceStatusHasBeenSet = true; m_availableSecurityUpdatesComplianceStatus = value; }
+    inline CreatePatchBaselineRequest& WithAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { SetAvailableSecurityUpdatesComplianceStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -275,6 +294,9 @@ namespace Model
 
     Aws::Vector<PatchSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    PatchComplianceStatus m_availableSecurityUpdatesComplianceStatus{PatchComplianceStatus::NOT_SET};
+    bool m_availableSecurityUpdatesComplianceStatusHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

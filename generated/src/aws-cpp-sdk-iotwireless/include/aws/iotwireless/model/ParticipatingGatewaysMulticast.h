@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Specify the list of gateways to which you want to send the multicast downlink
-   * messages. The multicast message will be sent to each gateway in the sequence
-   * provided in the list.</p><p><h3>See Also:</h3>   <a
+   * messages. The multicast message will be sent to each gateway in the list, with
+   * the transmission interval as the time interval between each
+   * message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ParticipatingGatewaysMulticast">AWS
    * API Reference</a></p>
    */
@@ -42,10 +43,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of gateways that you want to use for sending the multicast downlink.
-     * Each downlink will be sent to all the gateways in the list with transmission
-     * interval between them. If list is empty the gateway list will be dynamically
-     * selected similar to the case of no ParticipatingGateways </p>
+     * <p>The list of gateways that you want to use for sending the multicast downlink
+     * message. Each downlink message will be sent to all the gateways in the list in
+     * the order that you provided. If the gateway list is empty, then AWS IoT Core for
+     * LoRaWAN chooses the gateways that were most recently used by the devices to send
+     * an uplink message.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGatewayList() const { return m_gatewayList; }
     inline bool GatewayListHasBeenSet() const { return m_gatewayListHasBeenSet; }
@@ -59,8 +61,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before
-     * transmitting the multicast payload to the next gateway in the list.</p>
+     * <p>The duration of time in milliseconds for which AWS IoT Core for LoRaWAN will
+     * wait before transmitting the multicast payload to the next gateway in the
+     * list.</p>
      */
     inline int GetTransmissionInterval() const { return m_transmissionInterval; }
     inline bool TransmissionIntervalHasBeenSet() const { return m_transmissionIntervalHasBeenSet; }

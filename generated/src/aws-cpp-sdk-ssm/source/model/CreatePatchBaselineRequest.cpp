@@ -94,6 +94,11 @@ Aws::String CreatePatchBaselineRequest::SerializePayload() const
 
   }
 
+  if(m_availableSecurityUpdatesComplianceStatusHasBeenSet)
+  {
+   payload.WithString("AvailableSecurityUpdatesComplianceStatus", PatchComplianceStatusMapper::GetNameForPatchComplianceStatus(m_availableSecurityUpdatesComplianceStatus));
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
