@@ -225,6 +225,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of security-related patches that are available but not approved
+     * because they didn't meet the patch baseline requirements. For example, an
+     * updated version of a patch might have been released before the specified
+     * auto-approval period was over.</p> <p>Applies to Windows Server managed nodes
+     * only.</p>
+     */
+    inline int GetAvailableSecurityUpdateCount() const { return m_availableSecurityUpdateCount; }
+    inline bool AvailableSecurityUpdateCountHasBeenSet() const { return m_availableSecurityUpdateCountHasBeenSet; }
+    inline void SetAvailableSecurityUpdateCount(int value) { m_availableSecurityUpdateCountHasBeenSet = true; m_availableSecurityUpdateCount = value; }
+    inline InstancePatchState& WithAvailableSecurityUpdateCount(int value) { SetAvailableSecurityUpdateCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time the most recent patching operation was started on the managed
      * node.</p>
      */
@@ -376,6 +390,9 @@ namespace Model
 
     int m_notApplicableCount{0};
     bool m_notApplicableCountHasBeenSet = false;
+
+    int m_availableSecurityUpdateCount{0};
+    bool m_availableSecurityUpdateCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_operationStartTime{};
     bool m_operationStartTimeHasBeenSet = false;

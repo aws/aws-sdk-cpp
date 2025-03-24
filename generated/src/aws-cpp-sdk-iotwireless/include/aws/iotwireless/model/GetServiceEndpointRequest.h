@@ -42,8 +42,7 @@ namespace Model
     /**
      * <p>The service type for which to get endpoint information about. Can be
      * <code>CUPS</code> for the Configuration and Update Server endpoint, or
-     * <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code>
-     * for the global endpoint.</p>
+     * <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
      */
     inline WirelessGatewayServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }

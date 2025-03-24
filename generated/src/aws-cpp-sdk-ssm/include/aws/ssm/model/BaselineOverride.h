@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/ssm/model/PatchAction.h>
+#include <aws/ssm/model/PatchComplianceStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PatchSource.h>
 #include <utility>
@@ -165,6 +166,21 @@ namespace Model
     template<typename SourcesT = PatchSource>
     BaselineOverride& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether managed nodes for which there are available
+     * security-related patches that have not been approved by the baseline are being
+     * defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is
+     * specified when the <code>CreatePatchBaseline</code> or
+     * <code>UpdatePatchBaseline</code> commands are run.</p> <p>Applies to Windows
+     * Server managed nodes only.</p>
+     */
+    inline PatchComplianceStatus GetAvailableSecurityUpdatesComplianceStatus() const { return m_availableSecurityUpdatesComplianceStatus; }
+    inline bool AvailableSecurityUpdatesComplianceStatusHasBeenSet() const { return m_availableSecurityUpdatesComplianceStatusHasBeenSet; }
+    inline void SetAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { m_availableSecurityUpdatesComplianceStatusHasBeenSet = true; m_availableSecurityUpdatesComplianceStatus = value; }
+    inline BaselineOverride& WithAvailableSecurityUpdatesComplianceStatus(PatchComplianceStatus value) { SetAvailableSecurityUpdatesComplianceStatus(value); return *this;}
+    ///@}
   private:
 
     OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
@@ -193,6 +209,9 @@ namespace Model
 
     Aws::Vector<PatchSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    PatchComplianceStatus m_availableSecurityUpdatesComplianceStatus{PatchComplianceStatus::NOT_SET};
+    bool m_availableSecurityUpdatesComplianceStatusHasBeenSet = false;
   };
 
 } // namespace Model

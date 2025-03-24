@@ -62,7 +62,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Web Services users that should have access to the document. The
-     * account IDs can either be a group of account IDs or <i>All</i>. </p>
+     * account IDs can either be a group of account IDs or <i>All</i>. You must specify
+     * a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIdsToAdd() const { return m_accountIdsToAdd; }
     inline bool AccountIdsToAddHasBeenSet() const { return m_accountIdsToAddHasBeenSet; }
@@ -80,7 +81,8 @@ namespace Model
      * document. The Amazon Web Services user can either be a group of account IDs or
      * <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>.
      * If you specify an ID to add and the same ID to remove, the system removes access
-     * to the document. </p>
+     * to the document. You must specify a value for this parameter or the
+     * <code>AccountIdsToAdd</code> parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIdsToRemove() const { return m_accountIdsToRemove; }
     inline bool AccountIdsToRemoveHasBeenSet() const { return m_accountIdsToRemoveHasBeenSet; }

@@ -93,7 +93,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the model used for this AI Prompt. Model Ids supported are:
-     * <code>CLAUDE_3_HAIKU_20240307_V1</code> </p>
+     * <code>anthropic.claude-3-haiku-20240307-v1:0</code> </p>
      */
     inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }

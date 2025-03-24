@@ -95,6 +95,11 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 
   }
 
+  if(m_availableSecurityUpdatesComplianceStatusHasBeenSet)
+  {
+   payload.WithString("AvailableSecurityUpdatesComplianceStatus", PatchComplianceStatusMapper::GetNameForPatchComplianceStatus(m_availableSecurityUpdatesComplianceStatus));
+  }
+
   if(m_replaceHasBeenSet)
   {
    payload.WithBool("Replace", m_replace);

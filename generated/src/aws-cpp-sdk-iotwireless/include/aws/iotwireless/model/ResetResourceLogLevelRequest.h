@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the resource, which can be <code>WirelessDevice</code>,
+     * <p>The type of resource, which can be <code>WirelessDevice</code>,
      * <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
      */
     inline const Aws::String& GetResourceType() const { return m_resourceType; }

@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>The log options for a FUOTA task event and can be used to set log levels for
-   * a specific fuota task event.</p> <p>For a LoRaWAN FuotaTask type, possible event
-   * for a log message is <code>Fuota</code>.</p><p><h3>See Also:</h3>   <a
+   * a specific FUOTA task event.</p> <p>For a LoRaWAN FUOTA task, the only possible
+   * event for a log message is <code>Fuota</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/FuotaTaskEventLogOption">AWS
    * API Reference</a></p>
    */

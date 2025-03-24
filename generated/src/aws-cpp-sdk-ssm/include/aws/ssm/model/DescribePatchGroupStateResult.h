@@ -165,6 +165,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The number of managed nodes for which security-related patches are available
+     * but not approved because because they didn't meet the patch baseline
+     * requirements. For example, an updated version of a patch might have been
+     * released before the specified auto-approval period was over.</p> <p>Applies to
+     * Windows Server managed nodes only.</p>
+     */
+    inline int GetInstancesWithAvailableSecurityUpdates() const { return m_instancesWithAvailableSecurityUpdates; }
+    inline void SetInstancesWithAvailableSecurityUpdates(int value) { m_instancesWithAvailableSecurityUpdatesHasBeenSet = true; m_instancesWithAvailableSecurityUpdates = value; }
+    inline DescribePatchGroupStateResult& WithInstancesWithAvailableSecurityUpdates(int value) { SetInstancesWithAvailableSecurityUpdates(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -209,6 +222,9 @@ namespace Model
 
     int m_instancesWithOtherNonCompliantPatches{0};
     bool m_instancesWithOtherNonCompliantPatchesHasBeenSet = false;
+
+    int m_instancesWithAvailableSecurityUpdates{0};
+    bool m_instancesWithAvailableSecurityUpdatesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -22,7 +22,8 @@ namespace Model
     INSTALLED_REJECTED,
     MISSING,
     NOT_APPLICABLE,
-    FAILED
+    FAILED,
+    AVAILABLE_SECURITY_UPDATE
   };
 
 namespace PatchComplianceDataStateMapper
