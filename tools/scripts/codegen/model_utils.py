@@ -39,7 +39,7 @@ SMITHY_EXCLUSION_CLIENTS = {
     # bidirectional streaming
     , "lexv2-runtime"
     , "qbusiness"
-    , "transcribestreaming"
+    #, "transcribestreaming"
     , "s3-crt"
     , "s3"
     , "s3control"
@@ -180,8 +180,8 @@ class ModelUtils(object):
             with open(models_dir + "/" + c2j_model_filename, 'r') as json_file:
                 model = json.load(json_file)
                 model_protocol = model.get("metadata", dict()).get("protocol", "UNKNOWN_PROTOCOL")
-                #if model_protocol in {"json", "rest-json", "rest-xml", "query"}:
-                #    use_smithy = True
+                if model_protocol in {"json", "rest-json", "rest-xml", "query"}:
+                    use_smithy = True
         return use_smithy
 
     @staticmethod

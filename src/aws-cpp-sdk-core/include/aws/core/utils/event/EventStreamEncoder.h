@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
+#include <smithy/identity/signer/AwsSignerBase.h>
 
 namespace Aws
 {
@@ -40,6 +41,11 @@ namespace Aws
                  * The signing is done via the signer member.
                  */
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
+
+                virtual ~EventStreamEncoder(){};
+            protected:
+                virtual bool SignEventMessage(Event::Message& msg);
+                Aws::String m_signatureSeed;
             private:
                 /**
                  * Initialize C struct based on C++ object.
@@ -57,7 +63,28 @@ namespace Aws
                 bool InitSignedStruct(const aws_event_stream_message* payload, aws_event_stream_message* signedmsg);
 
                 Aws::Client::AWSAuthSigner* m_signer;
-                Aws::String m_signatureSeed;
+            };
+
+            template <typename IdentityT>
+            class AWS_CORE_API SmithyEventStreamEncoder : public EventStreamEncoder {
+             public:
+              using SIGNER_TYPE = smithy::AwsSignerBase<IdentityT>;
+              SmithyEventStreamEncoder(std::shared_ptr<SIGNER_TYPE> signer, std::shared_ptr<smithy::AwsIdentity> awsIdentity) : EventStreamEncoder(), m_smithySigner(signer), m_awsIdentity{awsIdentity}{};
+              //SmithyEventStreamEncoder() : EventStreamEncoder(){};
+
+             protected:
+              bool SignEventMessage(Event::Message& signedMessage) override {
+
+                //resolved identity
+                const auto& identity = *static_cast<IdentityT*>(m_awsIdentity.get());
+
+                //@to do: if identity expired, resolve it again
+                return (m_smithySigner->SignEventMessage(signedMessage, m_signatureSeed, identity));
+              }
+
+             private:
+              std::shared_ptr<SIGNER_TYPE> m_smithySigner;
+              std::shared_ptr<smithy::AwsIdentity> m_awsIdentity;
             };
         }
     }

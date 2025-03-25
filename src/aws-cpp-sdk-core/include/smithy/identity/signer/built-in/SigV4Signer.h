@@ -25,7 +25,8 @@ namespace smithy {
         explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region)
             : m_serviceName(serviceName),
               m_region(region),
-              legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always)
+              legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always),
+              legacyEventStreamSigner{Aws::MakeShared<Aws::Client::AWSAuthEventStreamV4Signer>("SigV4AuthScheme", nullptr, serviceName.c_str(), region)}
         {
         }
         /*
@@ -34,7 +35,8 @@ namespace smithy {
         explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool urlEscapePath)
             : m_serviceName(serviceName),
               m_region(region),
-              legacySigner(nullptr, serviceName.c_str(), region, policy, urlEscapePath)
+              legacySigner(nullptr, serviceName.c_str(), region, policy, urlEscapePath),
+              legacyEventStreamSigner{Aws::MakeShared<Aws::Client::AWSAuthEventStreamV4Signer>("SigV4AuthScheme", nullptr, serviceName.c_str(), region)}
         {
         }
 
@@ -63,7 +65,9 @@ namespace smithy {
 
 
             assert(httpRequest);
-            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, region, svcName, signPayload);
+
+            bool success = httpRequest->IsEventStreamRequest()? legacyEventStreamSigner->SignRequest(*httpRequest, region, svcName, signPayload, legacyCreds) : 
+                            legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, region, svcName, signPayload);
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));
@@ -108,8 +112,26 @@ namespace smithy {
             return legacySigner;
         }
 
+        bool SignEventMessage(Aws::Utils::Event::Message& em, Aws::String& sig, const AwsCredentialIdentityBase& identity) const override {
+
+            //get legacy credentials
+            const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
+                if(identity.sessionToken().has_value() && identity.expiration().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration()};
+                }
+                if(identity.sessionToken().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken()};
+                }
+                return {identity.accessKeyId(), identity.secretAccessKey()};
+            }();
+            return legacyEventStreamSigner->SignEventMessage(em, sig, legacyCreds);
+        }
+
         Aws::String m_serviceName;
         Aws::String m_region;
         Aws::Client::AWSAuthV4Signer legacySigner;
+        std::shared_ptr<Aws::Client::AWSAuthEventStreamV4Signer> legacyEventStreamSigner;
     };
 }

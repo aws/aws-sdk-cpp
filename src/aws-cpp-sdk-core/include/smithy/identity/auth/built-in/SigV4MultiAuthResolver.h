@@ -43,6 +43,8 @@ namespace smithy {
               }
             }
 
+            bool isRequestEventStream = identityProperties.additionalProperties.find(SignerProperties::EVENT_STREAM_REQUEST) != identityProperties.additionalProperties.end();
+
             //resolve endpoint first time to fetch auth schemes
             if (m_endpointProviderForAuth) {
               auto epResolutionOutcome = m_endpointProviderForAuth->ResolveEndpoint(epParams);

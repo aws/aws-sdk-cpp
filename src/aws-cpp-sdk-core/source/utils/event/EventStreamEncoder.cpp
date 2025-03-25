@@ -147,8 +147,7 @@ namespace Aws
                     signedMessage.WriteEventPayload(msgbuf, msglen);
                 }
 
-                assert(m_signer);
-                if (m_signer->SignEventMessage(signedMessage, m_signatureSeed))
+                if (SignEventMessage(signedMessage))
                 {
                     aws_array_list headers;
                     EncodeHeaders(signedMessage, &headers);
@@ -171,6 +170,12 @@ namespace Aws
                 }
 
                 return success;
+            }
+
+            bool EventStreamEncoder::SignEventMessage(Event::Message& signedMessage) {
+                assert(m_signer);
+                assert(!m_signatureSeed.empty());
+                return (m_signer->SignEventMessage(signedMessage, m_signatureSeed));
             }
 
         } // namespace Event

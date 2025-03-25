@@ -1,4 +1,4 @@
-#if(($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled) || $operation.getRequest().getShape().hasEventStreamMembers())
+#if(($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled))
 #set($meterNeeded = true)
 #set($indent = "")
 #else

@@ -55,20 +55,11 @@ namespace Aws
 
             bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature) const override;
 
-            bool SignRequest(Aws::Http::HttpRequest& request) const override
-            {
-                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true);
-            }
+            bool SignRequest(Aws::Http::HttpRequest& request) const override;
 
-            bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override
-            {
-                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), signBody);
-            }
+            bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override;
 
-            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override
-            {
-                return SignRequest(request, region, m_serviceName.c_str(), signBody);
-            }
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override;
 
             bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
 
@@ -88,6 +79,12 @@ namespace Aws
             bool PresignRequest(Aws::Http::HttpRequest&, const char*, const char*, long long) const override { return false; }
 
             bool ShouldSignHeader(const Aws::String& header) const;
+
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */,
+                const Aws::Auth::AWSCredentials& credentials) const;
+            
+            bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature, const Aws::Auth::AWSCredentials& creds) const;
+
         private:
             Utils::ByteBuffer GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
                     const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;

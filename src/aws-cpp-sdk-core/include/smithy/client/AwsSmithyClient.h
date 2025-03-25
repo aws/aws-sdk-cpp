@@ -24,6 +24,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/client/AwsLegacyClient.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
 
 namespace smithy {
 namespace client
@@ -227,6 +228,27 @@ namespace client
         {
             auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
+        }
+
+        ResponseT MakeEventStreamRequestDeserialize(
+            Aws::AmazonWebServiceRequest const* const request, 
+            const char* requestName, 
+            Aws::Http::HttpMethod method,
+            EndpointUpdateCallback&& endpointCallback,
+            std::function<void (std::shared_ptr<Aws::Utils::Event::EventStreamEncoder>) >&&  eventEncoderStreamHandler
+        ) const {
+          std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor =
+              Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>("AwsSmithyClient");
+          assert(pExecutor);
+
+          HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+          ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome) { outcome = std::move(asyncOutcome); };
+          pExecutor->Submit([&]() {
+            this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor,
+                                std::move(eventEncoderStreamHandler));
+          });
+          pExecutor->WaitUntilStopped();
+          return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), requestName);
         }
         
         Aws::String GeneratePresignedUrl(

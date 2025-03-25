@@ -1,7 +1,4 @@
 #set($indent = "        ")
-#if($operation.request.shape.hasEventStreamMembers())
-${indent}streamReadySemaphore->ReleaseAll();
-#end
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
 #if($metadata.hasEndpointDiscoveryTrait)
 #if($operation.hasEndpointDiscoveryTrait)

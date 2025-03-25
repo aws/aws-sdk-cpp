@@ -1,12 +1,16 @@
 #foreach($operation in $serviceModel.operations)
 #set($hasEndPointOverrides = false)
-## todo: add support for request stream
+#if($operation.request.shape.hasEventStreamMembers())
+#set($constText = "")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceEventStreamOperationsSource.vm")
+#else
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #else
 #set($constText = "const ")
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceOperationsSource.vm")
+#end
 #end
 #foreach($presigner in $serviceModel.presigners)
 Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${className}::${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn)

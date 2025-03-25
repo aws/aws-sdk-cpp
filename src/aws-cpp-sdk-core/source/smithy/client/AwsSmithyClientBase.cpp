@@ -182,7 +182,9 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            Aws::Http::HttpMethod method,
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
-                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
+                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                           std::function<void (std::shared_ptr<Aws::Utils::Event::EventStreamEncoder>) >&& eventEncoderStreamHandler
+                                        ) const
 {
     if(!responseHandler)
     {
@@ -212,6 +214,8 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_method = method;
     pRequestCtx->m_retryCount = 0;
     pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+    pRequestCtx->m_eventEncoderStreamHandler = std::move(eventEncoderStreamHandler);
+
     auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
     if (!authSchemeOptionOutcome.IsSuccess())
     {
@@ -643,7 +647,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor);
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor, nullptr);
     });
     pExecutor->WaitUntilStopped();
 

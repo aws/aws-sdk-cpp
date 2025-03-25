@@ -23,6 +23,7 @@
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <utility>
+#include <aws/core/utils/event/EventEncoderStream.h>
 
 namespace Aws
 {
@@ -137,7 +138,9 @@ namespace client
                               Aws::Http::HttpMethod method,
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
-                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                              std::function<void (std::shared_ptr<Aws::Utils::Event::EventStreamEncoder>) >&& eventEncoderStreamHandler
+                            ) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,

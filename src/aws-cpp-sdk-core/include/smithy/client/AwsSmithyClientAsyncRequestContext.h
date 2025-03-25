@@ -12,6 +12,7 @@
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/interceptor/InterceptorContext.h>
+#include <aws/core/utils/event/EventEncoderStream.h>
 
 namespace smithy
 {
@@ -71,6 +72,8 @@ namespace smithy
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
             std::shared_ptr<smithy::AwsIdentity> m_awsIdentity;
+            //std::shared_ptr<Aws::Utils::Event::EventEncoderStream> m_eventEncoderStream;
+            std::function<void (std::shared_ptr<Aws::Utils::Event::EventStreamEncoder> )> m_eventEncoderStreamHandler;
         };
     } // namespace client
 } // namespace smithy

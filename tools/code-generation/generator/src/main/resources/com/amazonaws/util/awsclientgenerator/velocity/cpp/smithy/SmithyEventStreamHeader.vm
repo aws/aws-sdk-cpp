@@ -9,6 +9,11 @@
 \#include $header
 #end
 \#include <aws/core/utils/event/EventStream.h>
+#if($serviceModel.hasOnlyBearerAuth())
+\#include <smithy/identity/identity/AwsBearerTokenIdentity.h>
+#else
+\#include <smithy/identity/identity/AwsCredentialIdentity.h>
+#end
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.shape.isEvent())
 #foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
@@ -40,7 +45,11 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::EventEncoderStream
+#if($serviceModel.hasOnlyBearerAuth())
+  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::SmithyEventEncoderStream<smithy::AwsBearerTokenIdentity>
+#else
+  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::SmithyEventEncoderStream<smithy::AwsCredentialIdentity>
+#end
   {
   public:
 #foreach($entry in $shape.members.entrySet())

@@ -10,6 +10,7 @@
 #include <aws/transcribestreaming/model/MedicalScribeConfigurationEvent.h>
 #include <utility>
 #include <aws/core/utils/event/EventStream.h>
+#include <smithy/identity/identity/AwsCredentialIdentity.h>
 
 namespace Aws
 {
@@ -29,7 +30,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/MedicalScribeInputStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeInputStream : public Aws::Utils::Event::EventEncoderStream
+  class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeInputStream : public Aws::Utils::Event::SmithyEventEncoderStream<smithy::AwsCredentialIdentity>
   {
   public:
     MedicalScribeInputStream& WriteMedicalScribeAudioEvent(const MedicalScribeAudioEvent& value)

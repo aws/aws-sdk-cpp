@@ -222,6 +222,11 @@ namespace smithy
                     return;
                 }
 
+                if(m_httpRequest->IsEventStreamRequest() && m_requestContext.m_eventEncoderStreamHandler)
+                {
+                  m_requestContext.m_eventEncoderStreamHandler(Aws::MakeShared<Aws::Utils::Event::SmithyEventStreamEncoder<IdentityT>>("", signer, m_requestContext.m_awsIdentity)); 
+                }
+
                 result.emplace(signer->sign(m_httpRequest,
                   *static_cast<IdentityT*>(m_requestContext.m_awsIdentity.get()),
                   m_requestContext.m_authSchemeOption.signerProperties()));

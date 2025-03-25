@@ -9,6 +9,7 @@
 #include <aws/transcribestreaming/model/ConfigurationEvent.h>
 #include <utility>
 #include <aws/core/utils/event/EventStream.h>
+#include <smithy/identity/identity/AwsCredentialIdentity.h>
 
 namespace Aws
 {
@@ -25,7 +26,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/AudioStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioStream : public Aws::Utils::Event::EventEncoderStream
+  class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioStream : public Aws::Utils::Event::SmithyEventEncoderStream<smithy::AwsCredentialIdentity>
   {
   public:
     AudioStream& WriteAudioEvent(const AudioEvent& value)

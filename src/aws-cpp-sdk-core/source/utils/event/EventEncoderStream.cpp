@@ -26,7 +26,7 @@ namespace Aws
 
             EventEncoderStream& EventEncoderStream::WriteEvent(const Aws::Utils::Event::Message& msg)
             {
-                auto bits = m_encoder.EncodeAndSign(msg);
+                auto bits = EncodeAndSign(msg);
 
                 AWS_LOGSTREAM_TRACE("EventEncoderStream::WriteEvent", "Encoded event (base64 encoded): " <<
                                     Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::ByteBuffer(bits.data(), bits.size())));
@@ -38,6 +38,10 @@ namespace Aws
                 // so that consuming HTTP Client will have data to send
                 flush();
                 return *this;
+            }
+
+            Aws::Vector<unsigned char> EventEncoderStream::EncodeAndSign(const Aws::Utils::Event::Message& msg) {
+                return m_encoder.EncodeAndSign(msg);
             }
         }
     }
