@@ -45,9 +45,9 @@ namespace Model
     ///@{
     /**
      * <p>Contains all <code>UsageRecords</code> processed by
-     * <code>BatchMeterUsage</code>. These records were either honored by AWS
-     * Marketplace Metering Service or were invalid. Invalid records should be fixed
-     * before being resubmitted.</p>
+     * <code>BatchMeterUsage</code>. These records were either honored by Amazon Web
+     * Services Marketplace Metering Service or were invalid. Invalid records should be
+     * fixed before being resubmitted.</p>
      */
     inline const Aws::Vector<UsageRecordResult>& GetResults() const { return m_results; }
     template<typename ResultsT = Aws::Vector<UsageRecordResult>>

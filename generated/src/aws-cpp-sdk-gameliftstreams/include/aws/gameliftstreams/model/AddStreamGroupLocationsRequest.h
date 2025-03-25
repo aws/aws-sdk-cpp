@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p> A stream group to add the specified locations to. </p> <p>This value is a
      * Amazon Resource Name (ARN) that uniquely identifies the stream group resource.
-     * Format example: <code>1AB2C3De4</code>. </p>
+     * Format example: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

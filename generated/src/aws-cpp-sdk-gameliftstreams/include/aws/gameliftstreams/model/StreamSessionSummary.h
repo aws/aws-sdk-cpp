@@ -29,7 +29,8 @@ namespace Model
 
   /**
    * <p>Describes a Amazon GameLift Streams stream session. To retrieve additional
-   * details for the stream session, call <a>GetStreamSession</a>.</p><p><h3>See
+   * details for the stream session, call <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StreamSessionSummary">AWS
    * API Reference</a></p>
@@ -49,8 +50,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
+     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
@@ -119,8 +120,9 @@ namespace Model
     /**
      * <p>The location where Amazon GameLift Streams is hosting the stream session.</p>
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
-     * of locations that Amazon GameLift Streams supports, see the Regions and quotas
-     * section in the Amazon GameLift Streams Developer Guide . </p>
+     * of locations that Amazon GameLift Streams supports, refer to <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
      */
     inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }

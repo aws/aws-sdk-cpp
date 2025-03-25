@@ -39,12 +39,11 @@ namespace Model
     ///@{
     /**
      * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
-     * save application logs. Use the following format for the URI: <code>s3://[bucket
-     * name]/[prefix]</code>. Required if you specify one or more
-     * <code>LogPaths</code>.</p>  <p>The log bucket must have permissions that
-     * give Amazon GameLift Streams access to write the log files. For more
-     * information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer
-     * Guide. </p> 
+     * save application logs. Required if you specify one or more
+     * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
+     * permissions that give Amazon GameLift Streams access to write the log files. For
+     * more information, see <b>Getting Started</b> in the Amazon GameLift Streams
+     * Developer Guide. </p> 
      */
     inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
@@ -58,11 +57,12 @@ namespace Model
     /**
      * <p>Locations of log files that your content generates during a stream session.
      * Enter path values that are relative to the <code>ApplicationSourceUri</code>
-     * location. You can specify up to 10 log locations. Amazon GameLift Streams
-     * uploads designated log files to the Amazon S3 bucket that you specify in
+     * location. You can specify up to 10 log paths. Amazon GameLift Streams uploads
+     * designated log files to the Amazon S3 bucket that you specify in
      * <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve
-     * stored log files, call <a>GetStreamSession</a> and get the
-     * <code>LogFileLocationUri</code>.</p>
+     * stored log files, call <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
+     * and get the <code>LogFileLocationUri</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const { return m_applicationLogPaths; }
     inline bool ApplicationLogPathsHasBeenSet() const { return m_applicationLogPathsHasBeenSet; }
@@ -76,13 +76,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location of the content that you want to stream. Enter the URI of an
-     * Amazon S3 location (bucket name and prefixes) that contains your content. Use
-     * the following format for the URI: <code>s3://[bucket name]/[prefix]</code>. The
-     * location can have a multi-level prefix structure, but it must include all the
-     * files needed to run the content. Amazon GameLift Streams copies everything under
-     * the specified location.</p> <p>This value is immutable. To designate a different
-     * content location, create a new application.</p>  <p>The S3 bucket and the
+     * <p>The location of the content that you want to stream. Enter an Amazon S3 URI
+     * to a bucket that contains your game or other application. The location can have
+     * a multi-level prefix structure, but it must include all the files needed to run
+     * the content. Amazon GameLift Streams copies everything under the specified
+     * location.</p> <p>This value is immutable. To designate a different content
+     * location, create a new application.</p>  <p>The Amazon S3 bucket and the
      * Amazon GameLift Streams application must be in the same Amazon Web Services
      * Region.</p> 
      */
@@ -137,12 +136,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of configuration settings to run the application on a stream group.
-     * This configures the operating system, and can include compatibility layers and
-     * other drivers.</p> <p>A runtime environment can be one of the following:</p>
-     * <ul> <li> <p> For Linux applications </p> <ul> <li> <p> Ubuntu 22.04
-     * LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p>
-     * For Windows applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
+     * <p>Configuration settings that identify the operating system for an application
+     * resource. This can also include a compatibility layer and other drivers.</p>
+     * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
+     * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
+     * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
+     * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
      * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
@@ -162,10 +161,13 @@ namespace Model
      * useful for resource management, access management and cost allocation. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. You can use <a>TagResource</a> to add tags, <a>UntagResource</a>
-     * to remove tags, and <a>ListTagsForResource</a> to view tags on existing
-     * resources. The maximum tag limit might be lower than stated. See the <i>Amazon
-     * Web Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>. You can use <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a>
+     * to add tags, <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a>
+     * to remove tags, and <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to view tags on existing resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

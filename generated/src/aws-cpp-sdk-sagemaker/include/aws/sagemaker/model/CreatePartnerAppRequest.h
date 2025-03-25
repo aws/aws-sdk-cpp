@@ -79,6 +79,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at
+     * rest using an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreatePartnerAppRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Maintenance configuration settings for the SageMaker Partner AI App.</p>
      */
     inline const PartnerAppMaintenanceConfig& GetMaintenanceConfig() const { return m_maintenanceConfig; }
@@ -173,6 +187,9 @@ namespace Model
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     PartnerAppMaintenanceConfig m_maintenanceConfig;
     bool m_maintenanceConfigHasBeenSet = false;

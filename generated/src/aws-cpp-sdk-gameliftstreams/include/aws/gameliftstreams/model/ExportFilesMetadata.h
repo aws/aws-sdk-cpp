@@ -63,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result of the <a>ExportStreamSessionFiles</a> operation.</p>
+     * <p>The result of the <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a>
+     * operation.</p>
      */
     inline ExportFilesStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

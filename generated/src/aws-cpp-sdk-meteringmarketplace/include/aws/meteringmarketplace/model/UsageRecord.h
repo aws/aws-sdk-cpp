@@ -73,8 +73,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>During the process of registering a product on AWS Marketplace, dimensions
-     * are specified. These represent different units of value in your application.</p>
+     * <p>During the process of registering a product on Amazon Web Services
+     * Marketplace, dimensions are specified. These represent different units of value
+     * in your application.</p>
      */
     inline const Aws::String& GetDimension() const { return m_dimension; }
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
@@ -110,6 +111,19 @@ namespace Model
     template<typename UsageAllocationsT = UsageAllocation>
     UsageRecord& AddUsageAllocations(UsageAllocationsT&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.emplace_back(std::forward<UsageAllocationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID
+     * of the buyer. </p>
+     */
+    inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
+    inline bool CustomerAWSAccountIdHasBeenSet() const { return m_customerAWSAccountIdHasBeenSet; }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    void SetCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { m_customerAWSAccountIdHasBeenSet = true; m_customerAWSAccountId = std::forward<CustomerAWSAccountIdT>(value); }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    UsageRecord& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp{};
@@ -126,6 +140,9 @@ namespace Model
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
     bool m_usageAllocationsHasBeenSet = false;
+
+    Aws::String m_customerAWSAccountId;
+    bool m_customerAWSAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique ID value of the stream group resource to delete. Format example:
-     * <code>1AB2C3De4</code>.</p>
+     * <code>sg-1AB2C3De4</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

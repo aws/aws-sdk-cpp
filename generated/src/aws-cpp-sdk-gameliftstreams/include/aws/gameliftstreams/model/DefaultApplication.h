@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the Amazon GameLift Streams application that a stream group
-   * hosts.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the default Amazon GameLift Streams application that a stream
+   * group hosts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DefaultApplication">AWS
    * API Reference</a></p>
    */
@@ -42,10 +42,10 @@ namespace Model
     /**
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
-     * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
-     * or ID-<code>1AB2C3De4</code>. </p>
+     * Resource Name (ARN)</a> that uniquely identifies the application resource.
+     * Format example:
+     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.
+     * </p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -57,12 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default application of the stream group.</p> <p>This value is an <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * <p>An ID that uniquely identifies the application resource. For example:
+     * <code>a-9ZY8X7Wv6</code>.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

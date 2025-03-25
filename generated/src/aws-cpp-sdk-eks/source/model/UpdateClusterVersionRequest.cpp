@@ -28,6 +28,12 @@ Aws::String UpdateClusterVersionRequest::SerializePayload() const
 
   }
 
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("force", m_force);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

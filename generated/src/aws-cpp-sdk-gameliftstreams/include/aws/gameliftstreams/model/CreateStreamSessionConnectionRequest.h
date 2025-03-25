@@ -53,8 +53,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
      * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
-     * or ID-<code>1AB2C3De4</code>. </p> <p> The stream group that you want to run
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
+     * or ID-<code>sg-1AB2C3De4</code>. </p> <p> The stream group that you want to run
      * this stream session with. The stream group must be in <code>ACTIVE</code> status
      * and have idle stream capacity. </p>
      */

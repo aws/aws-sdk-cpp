@@ -69,6 +69,17 @@ namespace Model
     template<typename ClientRequestTokenT = Aws::String>
     UpdateClusterVersionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Set this value to <code>true</code> to override upgrade-blocking readiness
+     * checks when updating a cluster.</p>
+     */
+    inline bool GetForce() const { return m_force; }
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+    inline UpdateClusterVersionRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -79,6 +90,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    bool m_force{false};
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

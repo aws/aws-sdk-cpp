@@ -75,8 +75,7 @@ namespace Model
      * <code>regionList</code> - if the <code>replicationStrategy</code> is
      * <code>MULTI_REGION</code>, the <code>regionList</code> requires the current
      * Region and at least one additional Amazon Web Services Region where the keyspace
-     * is going to be replicated in. The maximum number of supported replication
-     * Regions including the current Region is six.</p> </li> </ul>
+     * is going to be replicated in.</p> </li> </ul>
      */
     inline const ReplicationSpecification& GetReplicationSpecification() const { return m_replicationSpecification; }
     inline bool ReplicationSpecificationHasBeenSet() const { return m_replicationSpecificationHasBeenSet; }

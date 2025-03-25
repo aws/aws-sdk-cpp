@@ -9,6 +9,8 @@
 #include <aws/eks/model/ClientException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
 #include <aws/eks/model/ServerException.h>
+#include <aws/eks/model/InvalidStateException.h>
+#include <aws/eks/model/ThrottlingException.h>
 #include <aws/eks/model/InvalidParameterException.h>
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/UnsupportedAvailabilityZoneException.h>
@@ -40,6 +42,18 @@ template<> AWS_EKS_API ServerException EKSError::GetModeledError()
 {
   assert(this->GetErrorType() == EKSErrors::SERVER);
   return ServerException(this->GetJsonPayload().View());
+}
+
+template<> AWS_EKS_API InvalidStateException EKSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EKSErrors::INVALID_STATE);
+  return InvalidStateException(this->GetJsonPayload().View());
+}
+
+template<> AWS_EKS_API ThrottlingException EKSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EKSErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EKS_API InvalidParameterException EKSError::GetModeledError()
@@ -84,6 +98,7 @@ static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int RESOURCE_PROPAGATION_DELAY_HASH = HashingUtils::HashString("ResourcePropagationDelayException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -126,6 +141,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BAD_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
+     * <p>Product code is used to uniquely identify a product in Amazon Web Services
+     * Marketplace. The product code should be the same as the one used during the
+     * publishing of a new product.</p>
      */
     inline const Aws::String& GetProductCode() const { return m_productCode; }
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Public Key Version provided by AWS Marketplace</p>
+     * <p>Public Key Version provided by Amazon Web Services Marketplace</p>
      */
     inline int GetPublicKeyVersion() const { return m_publicKeyVersion; }
     inline bool PublicKeyVersionHasBeenSet() const { return m_publicKeyVersionHasBeenSet; }

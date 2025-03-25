@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CUSTOMER_IDENTIFIER,
-    DIMENSION
+    DIMENSION,
+    CUSTOMER_AWS_ACCOUNT_ID
   };
 
 namespace GetEntitlementFilterNameMapper

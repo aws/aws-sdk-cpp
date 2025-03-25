@@ -54,6 +54,11 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     }
     m_usageAllocationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomerAWSAccountId"))
+  {
+    m_customerAWSAccountId = jsonValue.GetString("CustomerAWSAccountId");
+    m_customerAWSAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +97,12 @@ JsonValue UsageRecord::Jsonize() const
      usageAllocationsJsonList[usageAllocationsIndex].AsObject(m_usageAllocations[usageAllocationsIndex].Jsonize());
    }
    payload.WithArray("UsageAllocations", std::move(usageAllocationsJsonList));
+
+  }
+
+  if(m_customerAWSAccountIdHasBeenSet)
+  {
+   payload.WithString("CustomerAWSAccountId", m_customerAWSAccountId);
 
   }
 

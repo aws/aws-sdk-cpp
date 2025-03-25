@@ -21,7 +21,8 @@ namespace Model
     REDIS_ENTERPRISE_CLOUD,
     RDS,
     MONGO_DB_ATLAS,
-    NEPTUNE_ANALYTICS
+    NEPTUNE_ANALYTICS,
+    OPENSEARCH_MANAGED_CLUSTER
   };
 
 namespace KnowledgeBaseStorageTypeMapper

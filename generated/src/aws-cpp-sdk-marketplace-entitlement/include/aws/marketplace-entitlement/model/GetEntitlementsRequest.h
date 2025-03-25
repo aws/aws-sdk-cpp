@@ -60,7 +60,9 @@ namespace Model
      * <p>Filter is used to return entitlements for a specific customer or for a
      * specific dimension. Filters are described as keys mapped to a lists of values.
      * Filtered requests are <i>unioned</i> for each value in the value list, and then
-     * <i>intersected</i> for each filter key.</p>
+     * <i>intersected</i> for each filter key.</p> <p> <code>CustomerIdentifier</code>
+     * and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify
+     * both in the same request. </p>
      */
     inline const Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

@@ -29,7 +29,9 @@ namespace Model
   /**
    * <p>Describes an application resource that represents a collection of content for
    * streaming with Amazon GameLift Streams. To retrieve additional application
-   * details, call <a>GetApplication</a>.</p><p><h3>See Also:</h3>   <a
+   * details, call <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html">GetApplication</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ApplicationSummary">AWS
    * API Reference</a></p>
    */
@@ -89,8 +91,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
+     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -116,12 +118,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> A set of configuration settings to run the application on a stream group.
-     * This configures the operating system, and can include compatibility layers and
-     * other drivers. </p> <p>A runtime environment can be one of the following:</p>
-     * <ul> <li> <p> For Linux applications </p> <ul> <li> <p> Ubuntu 22.04
-     * LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p>
-     * For Windows applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
+     * <p> Configuration settings that identify the operating system for an application
+     * resource. This can also include a compatibility layer and other drivers. </p>
+     * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
+     * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
+     * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
+     * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
      * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>

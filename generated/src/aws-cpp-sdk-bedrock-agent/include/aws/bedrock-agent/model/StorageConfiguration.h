@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasConfiguration.h>
 #include <aws/bedrock-agent/model/NeptuneAnalyticsConfiguration.h>
+#include <aws/bedrock-agent/model/OpenSearchManagedClusterConfiguration.h>
 #include <aws/bedrock-agent/model/OpenSearchServerlessConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/RdsConfiguration.h>
@@ -70,6 +71,21 @@ namespace Model
     void SetNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfigurationT&& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = std::forward<NeptuneAnalyticsConfigurationT>(value); }
     template<typename NeptuneAnalyticsConfigurationT = NeptuneAnalyticsConfiguration>
     StorageConfiguration& WithNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfigurationT&& value) { SetNeptuneAnalyticsConfiguration(std::forward<NeptuneAnalyticsConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the storage configuration of the knowledge base in
+     * OpenSearch Managed Cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create
+     * a vector index in Amazon OpenSearch Service</a>.</p>
+     */
+    inline const OpenSearchManagedClusterConfiguration& GetOpensearchManagedClusterConfiguration() const { return m_opensearchManagedClusterConfiguration; }
+    inline bool OpensearchManagedClusterConfigurationHasBeenSet() const { return m_opensearchManagedClusterConfigurationHasBeenSet; }
+    template<typename OpensearchManagedClusterConfigurationT = OpenSearchManagedClusterConfiguration>
+    void SetOpensearchManagedClusterConfiguration(OpensearchManagedClusterConfigurationT&& value) { m_opensearchManagedClusterConfigurationHasBeenSet = true; m_opensearchManagedClusterConfiguration = std::forward<OpensearchManagedClusterConfigurationT>(value); }
+    template<typename OpensearchManagedClusterConfigurationT = OpenSearchManagedClusterConfiguration>
+    StorageConfiguration& WithOpensearchManagedClusterConfiguration(OpensearchManagedClusterConfigurationT&& value) { SetOpensearchManagedClusterConfiguration(std::forward<OpensearchManagedClusterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,6 +157,9 @@ namespace Model
 
     NeptuneAnalyticsConfiguration m_neptuneAnalyticsConfiguration;
     bool m_neptuneAnalyticsConfigurationHasBeenSet = false;
+
+    OpenSearchManagedClusterConfiguration m_opensearchManagedClusterConfiguration;
+    bool m_opensearchManagedClusterConfigurationHasBeenSet = false;
 
     OpenSearchServerlessConfiguration m_opensearchServerlessConfiguration;
     bool m_opensearchServerlessConfigurationHasBeenSet = false;

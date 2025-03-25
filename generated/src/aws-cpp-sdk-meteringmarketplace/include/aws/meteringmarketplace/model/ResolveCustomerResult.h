@@ -67,8 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated
-     * with the <code>CustomerIdentifier</code> for the individual customer.</p>
+     * <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services
+     * account ID associated with the <code>CustomerIdentifier</code> for the
+     * individual customer.</p>
      */
     inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
     template<typename CustomerAWSAccountIdT = Aws::String>

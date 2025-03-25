@@ -85,6 +85,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID
+     * of the buyer. </p>
+     */
+    inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
+    inline bool CustomerAWSAccountIdHasBeenSet() const { return m_customerAWSAccountIdHasBeenSet; }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    void SetCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { m_customerAWSAccountIdHasBeenSet = true; m_customerAWSAccountId = std::forward<CustomerAWSAccountIdT>(value); }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    Entitlement& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The EntitlementValue represents the amount of capacity that the customer is
      * entitled to for the product.</p>
      */
@@ -121,6 +134,9 @@ namespace Model
 
     Aws::String m_customerIdentifier;
     bool m_customerIdentifierHasBeenSet = false;
+
+    Aws::String m_customerAWSAccountId;
+    bool m_customerAWSAccountIdHasBeenSet = false;
 
     EntitlementValue m_value;
     bool m_valueHasBeenSet = false;

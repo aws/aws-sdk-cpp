@@ -79,8 +79,9 @@ namespace Model
     ///@{
     /**
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
-     * of locations that Amazon GameLift Streams supports, see the Regions and quotas
-     * section in the Amazon GameLift Streams Developer Guide . </p>
+     * of locations that Amazon GameLift Streams supports, refer to <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
      */
     inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }

@@ -122,7 +122,8 @@ namespace GameLiftStreams
          * <p>When you associate, or link, an application with a stream group, then Amazon
          * GameLift Streams can launch the application using the stream group's allocated
          * compute resources. The stream group must be in <code>ACTIVE</code> status. You
-         * can reverse this action by using <a>DisassociateApplications</a>.</p><p><h3>See
+         * can reverse this action by using <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AssociateApplications">AWS
          * API Reference</a></p>
@@ -160,7 +161,9 @@ namespace GameLiftStreams
          * Amazon GameLift Streams begins to create an application and sets the status to
          * <code>INITIALIZED</code>. When an application reaches <code>READY</code> status,
          * you can use the application to set up stream groups and start streams. To track
-         * application status, call <a>GetApplication</a>. </p><p><h3>See Also:</h3>   <a
+         * application status, call <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetApplication.html">GetApplication</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -205,15 +208,18 @@ namespace GameLiftStreams
          * the session has terminated. This offers a cost control measure at the expense of
          * a greater startup time (typically under 5 minutes). &lt;/p&gt; &lt;/li&gt;
          * &lt;/ul&gt; &lt;p&gt; To adjust the capacity of any
-         * &lt;code&gt;ACTIVE&lt;/code&gt; stream group, call
-         * &lt;a&gt;UpdateStreamGroup&lt;/a&gt;. &lt;/p&gt; &lt;p&gt; If the request is
-         * successful, Amazon GameLift Streams begins creating the stream group. Amazon
-         * GameLift Streams assigns a unique ID to the stream group resource and sets the
-         * status to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the stream group reaches
+         * &lt;code&gt;ACTIVE&lt;/code&gt; stream group, call &lt;a
+         * href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html&quot;&gt;UpdateStreamGroup&lt;/a&gt;.
+         * &lt;/p&gt; &lt;p&gt; If the request is successful, Amazon GameLift Streams
+         * begins creating the stream group. Amazon GameLift Streams assigns a unique ID to
+         * the stream group resource and sets the status to
+         * &lt;code&gt;ACTIVATING&lt;/code&gt;. When the stream group reaches
          * &lt;code&gt;ACTIVE&lt;/code&gt; status, you can start stream sessions by using
-         * &lt;a&gt;StartStreamSession&lt;/a&gt;. To check the stream group's status, call
-         * &lt;a&gt;GetStreamGroup&lt;/a&gt;. &lt;/p&gt; </code></pre><p><h3>See Also:</h3>
-         * <a
+         * &lt;a
+         * href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html&quot;&gt;StartStreamSession&lt;/a&gt;.
+         * To check the stream group's status, call &lt;a
+         * href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html&quot;&gt;GetStreamGroup&lt;/a&gt;.
+         * &lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamGroup">AWS
          * API Reference</a></p>
          */
@@ -291,13 +297,16 @@ namespace GameLiftStreams
          * or <code>ERROR</code> status. You cannot delete an application that's in
          * <code>PROCESSING</code> or <code>INITIALIZED</code> status.</p> </li> <li>
          * <p>The application is not the default application of any stream groups. You must
-         * first delete the stream group by using <a>DeleteStreamGroup</a>.</p> </li> <li>
-         * <p>The application is not linked to any stream groups. You must first unlink the
-         * stream group by using <a>DisassociateApplications</a>.</p> </li> <li> <p> An
-         * application is not streaming in any ongoing stream session. You must wait until
-         * the client ends the stream session or call <a>TerminateStreamSession</a> to end
-         * the stream. </p> </li> </ul> <p>If any active stream groups exist for this
-         * application, this request returns a <code>ValidationException</code>.
+         * first delete the stream group by using <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DeleteStreamGroup.html">DeleteStreamGroup</a>.</p>
+         * </li> <li> <p>The application is not linked to any stream groups. You must first
+         * unlink the stream group by using <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.</p>
+         * </li> <li> <p> An application is not streaming in any ongoing stream session.
+         * You must wait until the client ends the stream session or call <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>
+         * to end the stream. </p> </li> </ul> <p>If any active stream groups exist for
+         * this application, this request returns a <code>ValidationException</code>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteApplication">AWS
          * API Reference</a></p>
@@ -327,11 +336,11 @@ namespace GameLiftStreams
          * group. To delete a stream group, specify the unique stream group identifier.
          * During the deletion process, the stream group's status is <code>DELETING</code>.
          * This operation stops streams in progress and prevents new streams from starting.
-         * As a best practice, before deleting the stream group, call
-         * <a>ListStreamSessions</a> to check for streams in progress and take action to
-         * stop them. When you delete a stream group, any application associations
-         * referring to that stream group are automatically removed.</p><p><h3>See
-         * Also:</h3>   <a
+         * As a best practice, before deleting the stream group, call <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamSessions.html">ListStreamSessions</a>
+         * to check for streams in progress and take action to stop them. When you delete a
+         * stream group, any application associations referring to that stream group are
+         * automatically removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteStreamGroup">AWS
          * API Reference</a></p>
          */
@@ -363,8 +372,9 @@ namespace GameLiftStreams
          * will not initiate new streams using this stream group. The disassociate action
          * does not affect the stream capacity of a stream group. </p> <p> You can only
          * disassociate an application if it's not a default application of the stream
-         * group. Check <code>DefaultApplicationIdentifier</code> by calling
-         * <a>GetStreamGroup</a>. </p><p><h3>See Also:</h3>   <a
+         * group. Check <code>DefaultApplicationIdentifier</code> by calling <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DisassociateApplications">AWS
          * API Reference</a></p>
          */
@@ -608,10 +618,13 @@ namespace GameLiftStreams
          * account has access to.</p> <p>In the returned list of stream sessions, the
          * <code>ExportFilesMetadata</code> property only shows the <code>Status</code>
          * value. To get the <code>OutpurUri</code> and <code>StatusReason</code> values,
-         * use <a>GetStreamSession</a>.</p> <p>We don't recommend using this operation to
-         * regularly check stream session statuses because it's costly. Instead, to check
-         * status updates for a specific stream session, use
-         * <a>GetStreamSession</a>.</p><p><h3>See Also:</h3>   <a
+         * use <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p>
+         * <p>We don't recommend using this operation to regularly check stream session
+         * statuses because it's costly. Instead, to check status updates for a specific
+         * stream session, use <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamSessionsByAccount">AWS
          * API Reference</a></p>
          */
@@ -708,26 +721,26 @@ namespace GameLiftStreams
          * session, specify a stream group and application ID, along with the transport
          * protocol and signal request settings to use with the stream. You must have
          * associated at least one application to the stream group before starting a stream
-         * session, either when creating the stream group, or by using
-         * <a>AssociateApplications</a>.</p> <p> For stream groups that have multiple
-         * locations, provide a set of locations ordered by priority by setting
-         * <code>Locations</code>. Amazon GameLift Streams will start a single stream
-         * session in the next available location. An application must be finished
-         * replicating in a remote location before the remote location can host a stream.
-         * </p> <p> If the request is successful, Amazon GameLift Streams begins to prepare
-         * the stream. Amazon GameLift Streams assigns an Amazon Resource Name (ARN) value
-         * to the stream session resource and sets the status to <code>ACTIVATING</code>.
-         * During the stream preparation process, Amazon GameLift Streams queues the
-         * request and searches for available stream capacity to run the stream. This can
-         * result to one of the following: </p> <ul> <li> <p> Amazon GameLift Streams
-         * identifies an available compute resource to run the application content and
-         * start the stream. When the stream is ready, the stream session's status changes
-         * to <code>ACTIVE</code> and includes stream connection information. Provide the
-         * connection information to the requesting client to join the stream session.</p>
-         * </li> <li> <p> Amazon GameLift Streams doesn't identify an available resource
-         * within a certain time, set by <code>ClientToken</code>. In this case, Amazon
-         * GameLift Streams stops processing the request, and the stream session object
-         * status changes to <code>ERROR</code> with status reason
+         * session, either when creating the stream group, or by using <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+         * <p> For stream groups that have multiple locations, provide a set of locations
+         * ordered by priority by setting <code>Locations</code>. Amazon GameLift Streams
+         * will start a single stream session in the next available location. An
+         * application must be finished replicating in a remote location before the remote
+         * location can host a stream. </p> <p> If the request is successful, Amazon
+         * GameLift Streams begins to prepare the stream. Amazon GameLift Streams assigns
+         * an Amazon Resource Name (ARN) value to the stream session resource and sets the
+         * status to <code>ACTIVATING</code>. During the stream preparation process, Amazon
+         * GameLift Streams queues the request and searches for available stream capacity
+         * to run the stream. This can result to one of the following: </p> <ul> <li> <p>
+         * Amazon GameLift Streams identifies an available compute resource to run the
+         * application content and start the stream. When the stream is ready, the stream
+         * session's status changes to <code>ACTIVE</code> and includes stream connection
+         * information. Provide the connection information to the requesting client to join
+         * the stream session.</p> </li> <li> <p> Amazon GameLift Streams doesn't identify
+         * an available resource within a certain time, set by <code>ClientToken</code>. In
+         * this case, Amazon GameLift Streams stops processing the request, and the stream
+         * session object status changes to <code>ERROR</code> with status reason
          * <code>placementTimeout</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StartStreamSession">AWS
          * API Reference</a></p>

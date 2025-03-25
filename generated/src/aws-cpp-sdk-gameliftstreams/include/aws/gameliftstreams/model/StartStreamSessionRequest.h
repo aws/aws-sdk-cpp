@@ -92,8 +92,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
+     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
@@ -150,8 +150,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
      * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
-     * or ID-<code>1AB2C3De4</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
+     * or ID-<code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -169,8 +169,9 @@ namespace Model
      * value is empty, Amazon GameLift Streams attempts to start a stream session in
      * the primary location. </p> <p> This value is A set of location names. For
      * example, <code>us-east-1</code>. For a complete list of locations that Amazon
-     * GameLift Streams supports, see the Regions and quotas section in the Amazon
-     * GameLift Streams Developer Guide . <pre><code> &lt;/p&gt; </code></pre>
+     * GameLift Streams supports, refer to <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }

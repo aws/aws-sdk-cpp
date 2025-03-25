@@ -27,10 +27,10 @@ namespace Model
 
   /**
    * <p> The replication specification of the keyspace includes:</p> <ul> <li> <p>
-   * <code>regionList</code> - up to six Amazon Web Services Regions where the
-   * keyspace is replicated in.</p> </li> <li> <p> <code>replicationStrategy</code> -
-   * the required value is <code>SINGLE_REGION</code> or
-   * <code>MULTI_REGION</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>regionList</code> - the Amazon Web Services Regions where the keyspace is
+   * replicated in.</p> </li> <li> <p> <code>replicationStrategy</code> - the
+   * required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ReplicationSpecification">AWS
    * API Reference</a></p>
    */
@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>regionList</code> can contain up to six Amazon Web Services
-     * Regions where the keyspace is replicated in. </p>
+     * <p> The <code>regionList</code> contains the Amazon Web Services Regions where
+     * the keyspace is replicated in. </p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionList() const { return m_regionList; }
     inline bool RegionListHasBeenSet() const { return m_regionListHasBeenSet; }

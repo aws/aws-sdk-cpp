@@ -61,7 +61,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Names (ARNs)</a> that uniquely identify application resources. Format
      * example:
-     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.
+     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAssociatedApplications() const { return m_associatedApplications; }
@@ -88,8 +88,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon GameLift Streams application that is associated with this stream
-     * group.</p>
+     * <p>The default Amazon GameLift Streams application that is associated with this
+     * stream group.</p>
      */
     inline const DefaultApplication& GetDefaultApplication() const { return m_defaultApplication; }
     template<typename DefaultApplicationT = DefaultApplication>
@@ -112,7 +112,7 @@ namespace Model
     ///@{
     /**
      * <p>A unique ID value that is assigned to the resource when it's created. Format
-     * example: <code>1AB2C3De4</code>.</p>
+     * example: <code>sg-1AB2C3De4</code>.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -201,40 +201,41 @@ namespace Model
      * one of the following:</p> <ul> <li> <p> <b> <code>gen5n_win2022</code> (NVIDIA,
      * ultra)</b> Supports applications with extremely high 3D scene complexity. Runs
      * applications on Microsoft Windows Server 2022 Base and supports DirectX 12.
-     * Compatible with most Unreal Engine 5.x builds, 32-bit applications, and
-     * anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p> <ul> <li> <p>Reference
-     * resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li>
-     * <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p> </li> <li>
-     * <p>Tenancy: Supports 1 concurrent stream session</p> </li> </ul> </li> <li> <p>
-     * <b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with
-     * moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p> <ul> <li>
-     * <p>Reference resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60
-     * fps</p> </li> <li> <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB
-     * VRAM</p> </li> <li> <p>Tenancy: Supports up to 2 concurrent stream sessions</p>
-     * </li> </ul> </li> <li> <p> <b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b>
-     * Supports applications with extremely high 3D scene complexity. Uses dedicated
-     * NVIDIA A10G Tensor GPU.</p> <ul> <li> <p>Reference resolution: 1080p</p> </li>
-     * <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload specifications:
-     * 8 vCPUs, 32 GB RAM, 24 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent
-     * stream session</p> </li> </ul> </li> <li> <p> <b> <code>gen4n_win2022</code>
-     * (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene
-     * complexity. Runs applications on Microsoft Windows Server 2022 Base and supports
-     * DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit
-     * applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p> <ul>
+     * Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit
+     * applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p> <ul>
      * <li> <p>Reference resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60
-     * fps</p> </li> <li> <p>Workload specifications: 8 vCPUs, 32 GB RAM, 16 GB
+     * fps</p> </li> <li> <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB
      * VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent stream session</p> </li>
-     * </ul> </li> <li> <p> <b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports
-     * applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor
+     * </ul> </li> <li> <p> <b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports
+     * applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor
      * GPU.</p> <ul> <li> <p>Reference resolution: 1080p</p> </li> <li> <p>Reference
      * frame rate: 60 fps</p> </li> <li> <p>Workload specifications: 4 vCPUs, 16 GB
-     * RAM, 8 GB VRAM</p> </li> <li> <p>Tenancy: Supports up to 2 concurrent stream
-     * sessions</p> </li> </ul> </li> <li> <p> <b> <code>gen4n_ultra</code> (NVIDIA,
-     * ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated
+     * RAM, 12 GB VRAM</p> </li> <li> <p>Tenancy: Supports up to 2 concurrent stream
+     * sessions</p> </li> </ul> </li> <li> <p> <b> <code>gen5n_ultra</code> (NVIDIA,
+     * ultra)</b> Supports applications with extremely high 3D scene complexity. Uses
+     * dedicated NVIDIA A10G Tensor GPU.</p> <ul> <li> <p>Reference resolution:
+     * 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload
+     * specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p> </li> <li> <p>Tenancy:
+     * Supports 1 concurrent stream session</p> </li> </ul> </li> <li> <p> <b>
+     * <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with
+     * extremely high 3D scene complexity. Runs applications on Microsoft Windows
+     * Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions
+     * up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses
      * NVIDIA T4 Tensor GPU.</p> <ul> <li> <p>Reference resolution: 1080p</p> </li>
      * <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload specifications:
      * 8 vCPUs, 32 GB RAM, 16 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent
-     * stream session</p> </li> </ul> </li> </ul>
+     * stream session</p> </li> </ul> </li> <li> <p> <b> <code>gen4n_high</code>
+     * (NVIDIA, high)</b> Supports applications with moderate to high 3D scene
+     * complexity. Uses NVIDIA T4 Tensor GPU.</p> <ul> <li> <p>Reference resolution:
+     * 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload
+     * specifications: 4 vCPUs, 16 GB RAM, 8 GB VRAM</p> </li> <li> <p>Tenancy:
+     * Supports up to 2 concurrent stream sessions</p> </li> </ul> </li> <li> <p> <b>
+     * <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D
+     * scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p> <ul> <li>
+     * <p>Reference resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60
+     * fps</p> </li> <li> <p>Workload specifications: 8 vCPUs, 32 GB RAM, 16 GB
+     * VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent stream session</p> </li>
+     * </ul> </li> </ul>
      */
     inline StreamClass GetStreamClass() const { return m_streamClass; }
     inline void SetStreamClass(StreamClass value) { m_streamClassHasBeenSet = true; m_streamClass = value; }

@@ -40,6 +40,11 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
     m_customerIdentifier = jsonValue.GetString("CustomerIdentifier");
     m_customerIdentifierHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomerAWSAccountId"))
+  {
+    m_customerAWSAccountId = jsonValue.GetString("CustomerAWSAccountId");
+    m_customerAWSAccountIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
@@ -72,6 +77,12 @@ JsonValue Entitlement::Jsonize() const
   if(m_customerIdentifierHasBeenSet)
   {
    payload.WithString("CustomerIdentifier", m_customerIdentifier);
+
+  }
+
+  if(m_customerAWSAccountIdHasBeenSet)
+  {
+   payload.WithString("CustomerAWSAccountId", m_customerAWSAccountId);
 
   }
 
