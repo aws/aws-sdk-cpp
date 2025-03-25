@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the foundation model used for context
-     * enrichment.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }

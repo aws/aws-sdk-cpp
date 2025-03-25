@@ -94,6 +94,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time that the SageMaker Partner AI App was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribePartnerAppResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the IAM role associated with the SageMaker Partner AI App.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
@@ -101,6 +112,18 @@ namespace Model
     void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
     template<typename ExecutionRoleArnT = Aws::String>
     DescribePartnerAppResult& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS customer managed key used to encrypt the data at
+     * rest associated with SageMaker Partner AI Apps.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    DescribePartnerAppResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,8 +241,14 @@ namespace Model
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
+
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet = false;

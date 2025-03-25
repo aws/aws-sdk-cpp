@@ -41,9 +41,8 @@ namespace Model
     ///@{
     /**
      * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
-     * save application logs. Use the following format for the URI: <code>s3://[bucket
-     * name]/[prefix]</code>. Required if you specify one or more
-     * <code>LogPaths</code>.</p>
+     * save application logs. Required if you specify one or more
+     * <code>ApplicationLogPaths</code>.</p>
      */
     inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     template<typename ApplicationLogOutputUriT = Aws::String>
@@ -57,8 +56,9 @@ namespace Model
      * <p>Locations of log files that your content generates during a stream session.
      * Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you
      * specify in <code>ApplicationLogOutputUri</code> at the end of a stream session.
-     * To retrieve stored log files, call <a>GetStreamSession</a> and get the
-     * <code>LogFileLocationUri</code>.</p>
+     * To retrieve stored log files, call <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
+     * and get the <code>LogFileLocationUri</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const { return m_applicationLogPaths; }
     template<typename ApplicationLogPathsT = Aws::Vector<Aws::String>>
@@ -103,7 +103,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Names (ARNs)</a> that uniquely identify stream group resources. Format
      * example:
-     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.
+     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAssociatedStreamGroups() const { return m_associatedStreamGroups; }
@@ -157,8 +157,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
+     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -195,12 +195,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> A set of configuration settings to run the application on a stream group.
-     * This configures the operating system, and can include compatibility layers and
-     * other drivers. </p> <p>A runtime environment can be one of the following:</p>
-     * <ul> <li> <p> For Linux applications </p> <ul> <li> <p> Ubuntu 22.04
-     * LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p>
-     * For Windows applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
+     * <p> Configuration settings that identify the operating system for an application
+     * resource. This can also include a compatibility layer and other drivers. </p>
+     * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
+     * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
+     * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
+     * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
      * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>

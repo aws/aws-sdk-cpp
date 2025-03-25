@@ -33,6 +33,12 @@ Aws::String CreatePartnerAppRequest::SerializePayload() const
 
   }
 
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
   if(m_maintenanceConfigHasBeenSet)
   {
    payload.WithObject("MaintenanceConfig", m_maintenanceConfig.Jsonize());

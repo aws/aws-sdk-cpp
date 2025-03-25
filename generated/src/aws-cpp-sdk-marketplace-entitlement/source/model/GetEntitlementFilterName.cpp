@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("CUSTOMER_IDENTIFIER");
         static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
+        static const int CUSTOMER_AWS_ACCOUNT_ID_HASH = HashingUtils::HashString("CUSTOMER_AWS_ACCOUNT_ID");
 
 
         GetEntitlementFilterName GetGetEntitlementFilterNameForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DIMENSION_HASH)
           {
             return GetEntitlementFilterName::DIMENSION;
+          }
+          else if (hashCode == CUSTOMER_AWS_ACCOUNT_ID_HASH)
+          {
+            return GetEntitlementFilterName::CUSTOMER_AWS_ACCOUNT_ID;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "CUSTOMER_IDENTIFIER";
           case GetEntitlementFilterName::DIMENSION:
             return "DIMENSION";
+          case GetEntitlementFilterName::CUSTOMER_AWS_ACCOUNT_ID:
+            return "CUSTOMER_AWS_ACCOUNT_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

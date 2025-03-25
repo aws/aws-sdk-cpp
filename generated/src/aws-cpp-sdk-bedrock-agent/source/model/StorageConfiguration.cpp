@@ -35,6 +35,11 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_neptuneAnalyticsConfiguration = jsonValue.GetObject("neptuneAnalyticsConfiguration");
     m_neptuneAnalyticsConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("opensearchManagedClusterConfiguration"))
+  {
+    m_opensearchManagedClusterConfiguration = jsonValue.GetObject("opensearchManagedClusterConfiguration");
+    m_opensearchManagedClusterConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("opensearchServerlessConfiguration"))
   {
     m_opensearchServerlessConfiguration = jsonValue.GetObject("opensearchServerlessConfiguration");
@@ -76,6 +81,12 @@ JsonValue StorageConfiguration::Jsonize() const
   if(m_neptuneAnalyticsConfigurationHasBeenSet)
   {
    payload.WithObject("neptuneAnalyticsConfiguration", m_neptuneAnalyticsConfiguration.Jsonize());
+
+  }
+
+  if(m_opensearchManagedClusterConfigurationHasBeenSet)
+  {
+   payload.WithObject("opensearchManagedClusterConfiguration", m_opensearchManagedClusterConfiguration.Jsonize());
 
   }
 

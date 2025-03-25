@@ -9,7 +9,6 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/workspaces-thin-client/model/SoftwareSetValidationStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/workspaces-thin-client/model/Software.h>
 #include <utility>
 
@@ -125,22 +124,6 @@ namespace Model
     template<typename ArnT = Aws::String>
     SoftwareSet& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    SoftwareSet& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    SoftwareSet& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
   private:
 
     Aws::String m_id;
@@ -163,9 +146,6 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

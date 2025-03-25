@@ -86,8 +86,12 @@ namespace MarketplaceEntitlementService
 
         /**
          * <p>GetEntitlements retrieves entitlement values for a given product. The results
-         * can be filtered based on customer identifier or product
-         * dimensions.</p><p><h3>See Also:</h3>   <a
+         * can be filtered based on customer identifier, AWS account ID, or product
+         * dimensions.</p>  <p> The <code>CustomerIdentifier</code> parameter is
+         * on path for deprecation. Use <code>CustomerAWSAccountID</code> instead.</p>
+         * <p>These parameters are mutually exclusive. You can't specify both
+         * <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> in the
+         * same request. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">AWS
          * API Reference</a></p>
          */

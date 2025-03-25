@@ -27,9 +27,11 @@ namespace Model
    * <p>Configuration settings that define a stream group's stream capacity for a
    * location. When configuring a location for the first time, you must specify a
    * numeric value for at least one of the two capacity types. To update the capacity
-   * for an existing stream group, call <a>UpdateStreamGroup</a>. To add a new
-   * location and specify its capacity, call
-   * <a>AddStreamGroupLocations</a>.</p><p><h3>See Also:</h3>   <a
+   * for an existing stream group, call <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
+   * To add a new location and specify its capacity, call <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html">AddStreamGroupLocations</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/LocationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -57,8 +59,9 @@ namespace Model
     ///@{
     /**
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
-     * of locations that Amazon GameLift Streams supports, see the Regions and quotas
-     * section in the Amazon GameLift Streams Developer Guide . </p>
+     * of locations that Amazon GameLift Streams supports, refer to <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
      */
     inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }

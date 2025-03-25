@@ -106,17 +106,17 @@ namespace Model
      * are available: </p> <p>A stream class can be one of the following:</p> <ul> <li>
      * <p> <b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications
      * with extremely high 3D scene complexity. Runs applications on Microsoft Windows
-     * Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x
-     * builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor
-     * GPU.</p> <ul> <li> <p>Reference resolution: 1080p</p> </li> <li> <p>Reference
-     * frame rate: 60 fps</p> </li> <li> <p>Workload specifications: 8 vCPUs, 32 GB
-     * RAM, 24 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent stream
-     * session</p> </li> </ul> </li> <li> <p> <b> <code>gen5n_high</code> (NVIDIA,
-     * high)</b> Supports applications with moderate to high 3D scene complexity. Uses
+     * Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions
+     * up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses
      * NVIDIA A10G Tensor GPU.</p> <ul> <li> <p>Reference resolution: 1080p</p> </li>
      * <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload specifications:
-     * 4 vCPUs, 16 GB RAM, 12 GB VRAM</p> </li> <li> <p>Tenancy: Supports up to 2
-     * concurrent stream sessions</p> </li> </ul> </li> <li> <p> <b>
+     * 8 vCPUs, 32 GB RAM, 24 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent
+     * stream session</p> </li> </ul> </li> <li> <p> <b> <code>gen5n_high</code>
+     * (NVIDIA, high)</b> Supports applications with moderate to high 3D scene
+     * complexity. Uses NVIDIA A10G Tensor GPU.</p> <ul> <li> <p>Reference resolution:
+     * 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload
+     * specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p> </li> <li> <p>Tenancy:
+     * Supports up to 2 concurrent stream sessions</p> </li> </ul> </li> <li> <p> <b>
      * <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with
      * extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
      * <ul> <li> <p>Reference resolution: 1080p</p> </li> <li> <p>Reference frame rate:
@@ -124,14 +124,14 @@ namespace Model
      * VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent stream session</p> </li>
      * </ul> </li> <li> <p> <b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports
      * applications with extremely high 3D scene complexity. Runs applications on
-     * Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most
-     * Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat
-     * technology. Uses NVIDIA T4 Tensor GPU.</p> <ul> <li> <p>Reference resolution:
-     * 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li> <p>Workload
-     * specifications: 8 vCPUs, 32 GB RAM, 16 GB VRAM</p> </li> <li> <p>Tenancy:
-     * Supports 1 concurrent stream session</p> </li> </ul> </li> <li> <p> <b>
-     * <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate
-     * to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p> <ul> <li>
+     * Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with
+     * Unreal Engine versions up through 5.4, 32 and 64-bit applications, and
+     * anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p> <ul> <li> <p>Reference
+     * resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60 fps</p> </li> <li>
+     * <p>Workload specifications: 8 vCPUs, 32 GB RAM, 16 GB VRAM</p> </li> <li>
+     * <p>Tenancy: Supports 1 concurrent stream session</p> </li> </ul> </li> <li> <p>
+     * <b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with
+     * moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p> <ul> <li>
      * <p>Reference resolution: 1080p</p> </li> <li> <p>Reference frame rate: 60
      * fps</p> </li> <li> <p>Workload specifications: 4 vCPUs, 16 GB RAM, 8 GB VRAM</p>
      * </li> <li> <p>Tenancy: Supports up to 2 concurrent stream sessions</p> </li>
@@ -151,14 +151,17 @@ namespace Model
     ///@{
     /**
      * <p>A list of labels to assign to the new stream group resource. Tags are
-     * developer-defined key-value pairs. It is useful to tag Amazon Web Services
-     * resources for resource management, access management, and cost allocation. See
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. You can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags on existing resources.
-     * The maximum tag limit might be lower than stated. See the <i>Amazon Web Services
-     * </i> for actual tagging limits.</p>
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources is
+     * useful for resource management, access management and cost allocation. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. You can use <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a>
+     * to add tags, <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a>
+     * to remove tags, and <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to view tags on existing resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

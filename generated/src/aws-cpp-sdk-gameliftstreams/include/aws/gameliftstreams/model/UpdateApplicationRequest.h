@@ -36,12 +36,11 @@ namespace Model
     ///@{
     /**
      * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
-     * save application logs. Use the following format for the URI: <code>s3://[bucket
-     * name]/[prefix]</code>. Required if you specify one or more
-     * <code>LogPaths</code>.</p>  <p>The log bucket must have permissions that
-     * give Amazon GameLift Streams access to write the log files. For more
-     * information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer
-     * Guide. </p> 
+     * save application logs. Required if you specify one or more
+     * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
+     * permissions that give Amazon GameLift Streams access to write the log files. For
+     * more information, see <b>Getting Started</b> in the Amazon GameLift Streams
+     * Developer Guide. </p> 
      */
     inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
@@ -55,11 +54,12 @@ namespace Model
     /**
      * <p>Locations of log files that your content generates during a stream session.
      * Enter path values that are relative to the <code>ApplicationSourceUri</code>
-     * location. You can specify up to 10 log locations. Amazon GameLift Streams
-     * uploads designated log files to the Amazon S3 bucket that you specify in
+     * location. You can specify up to 10 log paths. Amazon GameLift Streams uploads
+     * designated log files to the Amazon S3 bucket that you specify in
      * <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve
-     * stored log files, call <a>GetStreamSession</a> and get the
-     * <code>LogFileLocationUri</code>.</p>
+     * stored log files, call <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
+     * and get the <code>LogFileLocationUri</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const { return m_applicationLogPaths; }
     inline bool ApplicationLogPathsHasBeenSet() const { return m_applicationLogPathsHasBeenSet; }
@@ -89,8 +89,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
-     * or ID-<code>9ZY8X7Wv6</code>. </p>
+     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
+     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

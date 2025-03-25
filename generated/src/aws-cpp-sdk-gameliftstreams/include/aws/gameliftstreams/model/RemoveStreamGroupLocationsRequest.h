@@ -43,8 +43,7 @@ namespace Model
     /**
      * <p> A stream group to remove the specified locations from. </p> <p> This value
      * is a Amazon Resource Name (ARN) that uniquely identifies the stream group
-     * resource. Format example: <code>1AB2C3De4</code>. <pre><code> &lt;/p&gt;
-     * </code></pre>
+     * resource. Format example: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -58,8 +57,9 @@ namespace Model
     /**
      * <p> A set of locations to remove this stream group. </p> <p> A set of location
      * names. For example, <code>us-east-1</code>. For a complete list of locations
-     * that Amazon GameLift Streams supports, see the Regions and quotas section in the
-     * Amazon GameLift Streams Developer Guide . <pre><code> &lt;/p&gt; </code></pre>
+     * that Amazon GameLift Streams supports, refer to <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }

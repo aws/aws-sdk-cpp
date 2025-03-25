@@ -11,7 +11,6 @@
 #include <aws/workspaces-thin-client/model/DeviceSoftwareSetComplianceStatus.h>
 #include <aws/workspaces-thin-client/model/SoftwareSetUpdateStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -278,22 +277,6 @@ namespace Model
     template<typename KmsKeyArnT = Aws::String>
     Device& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    Device& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    Device& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
   private:
 
     Aws::String m_id;
@@ -355,9 +338,6 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

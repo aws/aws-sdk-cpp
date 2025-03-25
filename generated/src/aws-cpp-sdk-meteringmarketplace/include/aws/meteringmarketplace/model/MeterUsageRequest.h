@@ -39,9 +39,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
+     * <p>Product code is used to uniquely identify a product in Amazon Web Services
+     * Marketplace. The product code should be the same as the one used during the
+     * publishing of a new product.</p>
      */
     inline const Aws::String& GetProductCode() const { return m_productCode; }
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>Timestamp, in UTC, for which the usage is being reported. Your application
-     * can meter usage for up to one hour in the past. Make sure the
+     * can meter usage for up to six hours in the past. Make sure the
      * <code>timestamp</code> value is not before the start of the software usage.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }

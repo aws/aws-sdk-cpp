@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>This value is the Amazon Resource Name (ARN) that uniquely identifies the
-     * stream group resource. Format example: <code>1AB2C3De4</code>. </p>
+     * stream group resource. Format example: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     template<typename IdentifierT = Aws::String>

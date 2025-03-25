@@ -28,7 +28,7 @@ namespace Model
    * <p>Configuration settings that identify the operating system for an application
    * resource. This can also include a compatibility layer and other drivers.</p>
    * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
-   * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS(<code>Type=UBUNTU,
+   * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
    * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
    * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
    * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5

@@ -50,10 +50,20 @@ DescribePartnerAppResult& DescribePartnerAppResult::operator =(const Aws::Amazon
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
     m_executionRoleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("BaseUrl"))
   {
