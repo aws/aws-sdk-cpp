@@ -30,6 +30,11 @@ AutomatedAbrSettings& AutomatedAbrSettings::operator =(JsonView jsonValue)
     m_maxAbrBitrate = jsonValue.GetInteger("maxAbrBitrate");
     m_maxAbrBitrateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("maxQualityLevel"))
+  {
+    m_maxQualityLevel = jsonValue.GetDouble("maxQualityLevel");
+    m_maxQualityLevelHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("maxRenditions"))
   {
     m_maxRenditions = jsonValue.GetInteger("maxRenditions");
@@ -59,6 +64,12 @@ JsonValue AutomatedAbrSettings::Jsonize() const
   if(m_maxAbrBitrateHasBeenSet)
   {
    payload.WithInteger("maxAbrBitrate", m_maxAbrBitrate);
+
+  }
+
+  if(m_maxQualityLevelHasBeenSet)
+  {
+   payload.WithDouble("maxQualityLevel", m_maxQualityLevel);
 
   }
 

@@ -31,10 +31,10 @@ namespace Model
   /**
    * <p>A complex structure for a managed resource in an Amazon Web Services account
    * with information about zonal shifts and autoshifts.</p> <p>A managed resource is
-   * a load balancer that has been registered with Route 53 ARC by Elastic Load
-   * Balancing. You can start a zonal shift in Route 53 ARC for a managed resource to
-   * temporarily move traffic for the resource away from an Availability Zone in an
-   * Amazon Web Services Region. You can also configure zonal autoshift for a managed
+   * a load balancer that has been registered with ARC by Elastic Load Balancing. You
+   * can start a zonal shift in ARC for a managed resource to temporarily move
+   * traffic for the resource away from an Availability Zone in an Amazon Web
+   * Services Region. You can also configure zonal autoshift for a managed
    * resource.</p>  <p>At this time, managed resources are Network Load
    * Balancers and Application Load Balancers with cross-zone load balancing turned
    * off.</p> <p><h3>See Also:</h3>   <a
@@ -123,11 +123,11 @@ namespace Model
     /**
      * <p>This status tracks whether a practice run configuration exists for a
      * resource. When you configure a practice run for a resource so that a practice
-     * run configuration exists, Route 53 ARC sets this value to <code>ENABLED</code>.
-     * If a you have not configured a practice run for the resource, or delete a
-     * practice run configuration, Route 53 ARC sets the value to
-     * <code>DISABLED</code>.</p> <p>Route 53 ARC updates this status; you can't set a
-     * practice run status to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+     * run configuration exists, ARC sets this value to <code>ENABLED</code>. If a you
+     * have not configured a practice run for the resource, or delete a practice run
+     * configuration, ARC sets the value to <code>DISABLED</code>.</p> <p>ARC updates
+     * this status; you can't set a practice run status to <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p>
      */
     inline ZonalAutoshiftStatus GetPracticeRunStatus() const { return m_practiceRunStatus; }
     inline bool PracticeRunStatusHasBeenSet() const { return m_practiceRunStatusHasBeenSet; }

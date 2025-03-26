@@ -39,6 +39,18 @@ Aws::String ConfigureLogsForPlaybackConfigurationRequest::SerializePayload() con
 
   }
 
+  if(m_adsInteractionLogHasBeenSet)
+  {
+   payload.WithObject("AdsInteractionLog", m_adsInteractionLog.Jsonize());
+
+  }
+
+  if(m_manifestServiceInteractionLogHasBeenSet)
+  {
+   payload.WithObject("ManifestServiceInteractionLog", m_manifestServiceInteractionLog.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

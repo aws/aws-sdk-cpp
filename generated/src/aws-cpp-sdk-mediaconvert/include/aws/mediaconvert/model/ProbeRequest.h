@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * The list of input media files to be probed.
+     * Specify a media file to probe.
      */
     inline const Aws::Vector<ProbeInputFile>& GetInputFiles() const { return m_inputFiles; }
     inline bool InputFilesHasBeenSet() const { return m_inputFilesHasBeenSet; }

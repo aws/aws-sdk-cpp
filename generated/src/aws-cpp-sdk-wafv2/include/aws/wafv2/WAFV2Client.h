@@ -31,15 +31,16 @@ namespace WAFV2
    * you monitor the HTTP and HTTPS requests that are forwarded to a protected
    * resource. Protected resource types include Amazon CloudFront distribution,
    * Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API,
-   * Amazon Cognito user pool, App Runner service, and Amazon Web Services Verified
-   * Access instance. WAF also lets you control access to your content, to protect
-   * the Amazon Web Services resource that WAF is monitoring. Based on conditions
-   * that you specify, such as the IP addresses that requests originate from or the
-   * values of query strings, the protected resource responds to requests with either
-   * the requested content, an HTTP 403 status code (Forbidden), or with a custom
-   * response. </p> <p>This API guide is for developers who need detailed information
-   * about WAF API actions, data types, and errors. For detailed information about
-   * WAF features and guidance for configuring and using WAF, see the <a
+   * Amazon Cognito user pool, App Runner service, Amplify application, and Amazon
+   * Web Services Verified Access instance. WAF also lets you control access to your
+   * content, to protect the Amazon Web Services resource that WAF is monitoring.
+   * Based on conditions that you specify, such as the IP addresses that requests
+   * originate from or the values of query strings, the protected resource responds
+   * to requests with either the requested content, an HTTP 403 status code
+   * (Forbidden), or with a custom response. </p> <p>This API guide is for developers
+   * who need detailed information about WAF API actions, data types, and errors. For
+   * detailed information about WAF features and guidance for configuring and using
+   * WAF, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
    * Developer Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
    * href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and
@@ -47,12 +48,12 @@ namespace WAFV2
    * endpoints in the list. A regional application can be an Application Load
    * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
    * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services
-   * Verified Access instance. </p> </li> <li> <p>For Amazon CloudFront, you must use
-   * the API endpoint listed for US East (N. Virginia): us-east-1.</p> </li> </ul>
-   * <p>Alternatively, you can use one of the Amazon Web Services SDKs to access an
-   * API that's tailored to the programming language or platform that you're using.
-   * For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web
-   * Services SDKs</a>.</p>
+   * Verified Access instance. </p> </li> <li> <p>For Amazon CloudFront and Amplify,
+   * you must use the API endpoint listed for US East (N. Virginia): us-east-1.</p>
+   * </li> </ul> <p>Alternatively, you can use one of the Amazon Web Services SDKs to
+   * access an API that's tailored to the programming language or platform that
+   * you're using. For more information, see <a
+   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
    */
   class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>
   {
@@ -328,8 +329,8 @@ namespace WAFV2
          * ACL with one or more Amazon Web Services resources to protect. The resource
          * types include Amazon CloudFront distribution, Amazon API Gateway REST API,
          * Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App
-         * Runner service, and Amazon Web Services Verified Access instance. </p><p><h3>See
-         * Also:</h3>   <a
+         * Runner service, Amplify application, and Amazon Web Services Verified Access
+         * instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          */
@@ -1029,13 +1030,13 @@ namespace WAFV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
+        virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetWebACLRequestT = Model::GetWebACLRequest>
-        Model::GetWebACLOutcomeCallable GetWebACLCallable(const GetWebACLRequestT& request) const
+        Model::GetWebACLOutcomeCallable GetWebACLCallable(const GetWebACLRequestT& request = {}) const
         {
             return SubmitCallable(&WAFV2Client::GetWebACL, request);
         }
@@ -1044,7 +1045,7 @@ namespace WAFV2
          * An Async wrapper for GetWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetWebACLRequestT = Model::GetWebACLRequest>
-        void GetWebACLAsync(const GetWebACLRequestT& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetWebACLAsync(const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetWebACLRequestT& request = {}) const
         {
             return SubmitAsync(&WAFV2Client::GetWebACL, request, handler, context);
         }
@@ -1819,21 +1820,22 @@ namespace WAFV2
          * rule group. You can associate a web ACL with one or more Amazon Web Services
          * resources to protect. The resource types include Amazon CloudFront distribution,
          * Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API,
-         * Amazon Cognito user pool, App Runner service, and Amazon Web Services Verified
-         * Access instance. </p> <p> <b>Temporary inconsistencies during updates</b> </p>
-         * <p>When you create or change a web ACL or other WAF resources, the changes take
-         * a small amount of time to propagate to all areas where the resources are stored.
-         * The propagation time can be from a few seconds to a number of minutes. </p>
-         * <p>The following are examples of the temporary inconsistencies that you might
-         * notice during change propagation: </p> <ul> <li> <p>After you create a web ACL,
-         * if you try to associate it with a resource, you might get an exception
-         * indicating that the web ACL is unavailable. </p> </li> <li> <p>After you add a
-         * rule group to a web ACL, the new rule group rules might be in effect in one area
-         * where the web ACL is used and not in another.</p> </li> <li> <p>After you change
-         * a rule action setting, you might see the old action in some places and the new
-         * action in others. </p> </li> <li> <p>After you add an IP address to an IP set
-         * that is in use in a blocking rule, the new address might be blocked in one area
-         * while still allowed in another.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Amazon Cognito user pool, App Runner service, Amplify application, and Amazon
+         * Web Services Verified Access instance. </p> <p> <b>Temporary inconsistencies
+         * during updates</b> </p> <p>When you create or change a web ACL or other WAF
+         * resources, the changes take a small amount of time to propagate to all areas
+         * where the resources are stored. The propagation time can be from a few seconds
+         * to a number of minutes. </p> <p>The following are examples of the temporary
+         * inconsistencies that you might notice during change propagation: </p> <ul> <li>
+         * <p>After you create a web ACL, if you try to associate it with a resource, you
+         * might get an exception indicating that the web ACL is unavailable. </p> </li>
+         * <li> <p>After you add a rule group to a web ACL, the new rule group rules might
+         * be in effect in one area where the web ACL is used and not in another.</p> </li>
+         * <li> <p>After you change a rule action setting, you might see the old action in
+         * some places and the new action in others. </p> </li> <li> <p>After you add an IP
+         * address to an IP set that is in use in a blocking rule, the new address might be
+         * blocked in one area while still allowed in another.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          */

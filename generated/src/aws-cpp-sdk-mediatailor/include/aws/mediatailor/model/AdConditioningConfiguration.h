@@ -47,7 +47,8 @@ namespace Model
      * already transcoded the ads outside of MediaTailor and don't need them transcoded
      * as part of the ad insertion workflow. For more information about ad conditioning
      * see <a
-     * href="https://docs.aws.amazon.com/precondition-ads.html">https://docs.aws.amazon.com/precondition-ads.html</a>.</p>
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/precondition-ads.html">Using
+     * preconditioned ads</a> in the Elemental MediaTailor user guide.</p>
      */
     inline StreamingMediaFileConditioning GetStreamingMediaFileConditioning() const { return m_streamingMediaFileConditioning; }
     inline bool StreamingMediaFileConditioningHasBeenSet() const { return m_streamingMediaFileConditioningHasBeenSet; }

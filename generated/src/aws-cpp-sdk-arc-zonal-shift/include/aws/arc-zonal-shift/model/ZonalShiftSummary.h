@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/arc-zonal-shift/model/PracticeRunOutcome.h>
+#include <aws/arc-zonal-shift/model/ShiftType.h>
 #include <aws/arc-zonal-shift/model/ZonalShiftStatus.h>
 #include <utility>
 
@@ -29,12 +30,12 @@ namespace Model
   /**
    * <p>Lists information about zonal shifts in Amazon Route 53 Application Recovery
    * Controller, including zonal shifts that you start yourself and zonal shifts that
-   * Route 53 ARC starts on your behalf for practice runs with zonal autoshift.</p>
-   * <p>Zonal shifts are temporary, including customer-initiated zonal shifts and the
-   * zonal autoshift practice run zonal shifts that Route 53 ARC starts weekly, on
-   * your behalf. A zonal shift that a customer starts can be active for up to three
-   * days (72 hours). A practice run zonal shift has a 30 minute
-   * duration.</p><p><h3>See Also:</h3>   <a
+   * ARC starts on your behalf for practice runs with zonal autoshift.</p> <p>Zonal
+   * shifts are temporary, including customer-initiated zonal shifts and the zonal
+   * autoshift practice run zonal shifts that ARC starts weekly, on your behalf. A
+   * zonal shift that a customer starts can be active for up to three days (72
+   * hours). A practice run zonal shift has a 30 minute duration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ZonalShiftSummary">AWS
    * API Reference</a></p>
    */
@@ -83,10 +84,10 @@ namespace Model
      * shift. You can initially set a zonal shift to expire in a maximum of three days
      * (72 hours). However, you can update a zonal shift to set a new expiration at any
      * time. </p> <p>When you start a zonal shift, you specify how long you want it to
-     * be active, which Route 53 ARC converts to an expiry time (expiration time). You
-     * can cancel a zonal shift when you're ready to restore traffic to the
-     * Availability Zone, or just wait for it to expire. Or you can update the zonal
-     * shift to specify another length of time to expire in.</p>
+     * be active, which ARC converts to an expiry time (expiration time). You can
+     * cancel a zonal shift when you're ready to restore traffic to the Availability
+     * Zone, or just wait for it to expire. Or you can update the zonal shift to
+     * specify another length of time to expire in.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const { return m_expiryTime; }
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }
@@ -133,6 +134,16 @@ namespace Model
     void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
     template<typename ResourceIdentifierT = Aws::String>
     ZonalShiftSummary& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines the zonal shift type.</p>
+     */
+    inline ShiftType GetShiftType() const { return m_shiftType; }
+    inline bool ShiftTypeHasBeenSet() const { return m_shiftTypeHasBeenSet; }
+    inline void SetShiftType(ShiftType value) { m_shiftTypeHasBeenSet = true; m_shiftType = value; }
+    inline ZonalShiftSummary& WithShiftType(ShiftType value) { SetShiftType(value); return *this;}
     ///@}
 
     ///@{
@@ -188,6 +199,9 @@ namespace Model
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
+
+    ShiftType m_shiftType{ShiftType::NOT_SET};
+    bool m_shiftTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;

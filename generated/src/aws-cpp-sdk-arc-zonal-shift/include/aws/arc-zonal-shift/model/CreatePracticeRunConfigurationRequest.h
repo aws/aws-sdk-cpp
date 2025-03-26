@@ -36,13 +36,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optionally, you can block Route 53 ARC from starting practice runs for a
-     * resource on specific calendar dates.</p> <p>The format for blocked dates is:
-     * YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for
-     * practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
-     * <p>For example, if you have an application update scheduled to launch on May 1,
-     * 2024, and you don't want practice runs to shift traffic away at that time, you
-     * could set a blocked date for <code>2024-05-01</code>.</p>
+     * <p>Optionally, you can block ARC from starting practice runs for a resource on
+     * specific calendar dates.</p> <p>The format for blocked dates is: YYYY-MM-DD.
+     * Keep in mind, when you specify dates, that dates and times for practice runs are
+     * in UTC. Separate multiple blocked dates with spaces.</p> <p>For example, if you
+     * have an application update scheduled to launch on May 1, 2024, and you don't
+     * want practice runs to shift traffic away at that time, you could set a blocked
+     * date for <code>2024-05-01</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
     inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optionally, you can block Route 53 ARC from starting practice runs for
-     * specific windows of days and times. </p> <p>The format for blocked windows is:
+     * <p>Optionally, you can block ARC from starting practice runs for specific
+     * windows of days and times. </p> <p>The format for blocked windows is:
      * DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times
      * for practice runs are in UTC. Also, be aware of potential time adjustments that
      * might be required for daylight saving time differences. Separate multiple
@@ -79,9 +79,9 @@ namespace Model
     ///@{
     /**
      * <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice
-     * runs. This alarm blocks Route 53 ARC from starting practice run zonal shifts,
-     * and ends a practice run that's in progress, when the alarm is in an
-     * <code>ALARM</code> state. </p>
+     * runs. This alarm blocks ARC from starting practice run zonal shifts, and ends a
+     * practice run that's in progress, when the alarm is in an <code>ALARM</code>
+     * state. </p>
      */
     inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const { return m_blockingAlarms; }
     inline bool BlockingAlarmsHasBeenSet() const { return m_blockingAlarmsHasBeenSet; }
@@ -99,7 +99,7 @@ namespace Model
      * alarm that you specify that ends a practice run when the alarm is in an
      * <code>ALARM</code> state.</p> <p>Configure the alarm to monitor the health of
      * your application when traffic is shifted away from an Availability Zone during
-     * each weekly practice run. You should configure the alarm to go into an
+     * each practice run. You should configure the alarm to go into an
      * <code>ALARM</code> state if your application is impacted by the zonal shift, and
      * you want to stop the zonal shift, to let traffic for the resource return to the
      * Availability Zone.</p>

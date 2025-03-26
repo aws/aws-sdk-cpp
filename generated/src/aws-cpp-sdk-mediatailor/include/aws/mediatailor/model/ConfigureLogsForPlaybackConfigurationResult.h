@@ -7,6 +7,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/AdsInteractionLog.h>
+#include <aws/mediatailor/model/ManifestServiceInteractionLog.h>
 #include <aws/mediatailor/model/LoggingStrategy.h>
 #include <utility>
 
@@ -73,6 +75,30 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The event types that MediaTailor emits in logs for interactions with the
+     * ADS.</p>
+     */
+    inline const AdsInteractionLog& GetAdsInteractionLog() const { return m_adsInteractionLog; }
+    template<typename AdsInteractionLogT = AdsInteractionLog>
+    void SetAdsInteractionLog(AdsInteractionLogT&& value) { m_adsInteractionLogHasBeenSet = true; m_adsInteractionLog = std::forward<AdsInteractionLogT>(value); }
+    template<typename AdsInteractionLogT = AdsInteractionLog>
+    ConfigureLogsForPlaybackConfigurationResult& WithAdsInteractionLog(AdsInteractionLogT&& value) { SetAdsInteractionLog(std::forward<AdsInteractionLogT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The event types that MediaTailor emits in logs for interactions with the
+     * origin server.</p>
+     */
+    inline const ManifestServiceInteractionLog& GetManifestServiceInteractionLog() const { return m_manifestServiceInteractionLog; }
+    template<typename ManifestServiceInteractionLogT = ManifestServiceInteractionLog>
+    void SetManifestServiceInteractionLog(ManifestServiceInteractionLogT&& value) { m_manifestServiceInteractionLogHasBeenSet = true; m_manifestServiceInteractionLog = std::forward<ManifestServiceInteractionLogT>(value); }
+    template<typename ManifestServiceInteractionLogT = ManifestServiceInteractionLog>
+    ConfigureLogsForPlaybackConfigurationResult& WithManifestServiceInteractionLog(ManifestServiceInteractionLogT&& value) { SetManifestServiceInteractionLog(std::forward<ManifestServiceInteractionLogT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -90,6 +116,12 @@ namespace Model
 
     Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;
     bool m_enabledLoggingStrategiesHasBeenSet = false;
+
+    AdsInteractionLog m_adsInteractionLog;
+    bool m_adsInteractionLogHasBeenSet = false;
+
+    ManifestServiceInteractionLog m_manifestServiceInteractionLog;
+    bool m_manifestServiceInteractionLogHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

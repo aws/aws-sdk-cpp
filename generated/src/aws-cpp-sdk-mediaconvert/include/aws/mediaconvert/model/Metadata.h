@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Metadata about the file.<p><h3>See Also:</h3>   <a
+   * Metadata and other file information.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Metadata">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * The ETag of the file.
+     * The entity tag (ETag) of the file.
      */
     inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * The size of the file in bytes.
+     * The size of the media file, in bytes.
      */
     inline long long GetFileSize() const { return m_fileSize; }
     inline bool FileSizeHasBeenSet() const { return m_fileSizeHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * The last modification time of the file.
+     * The last modification timestamp of the media file, in Unix time.
      */
     inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * The MIME type of the file.
+     * The MIME type of the media file.
      */
     inline const Aws::String& GetMimeType() const { return m_mimeType; }
     inline bool MimeTypeHasBeenSet() const { return m_mimeTypeHasBeenSet; }

@@ -55,6 +55,15 @@ DirectConnectGateway& DirectConnectGateway::operator =(JsonView jsonValue)
     m_stateChangeError = jsonValue.GetString("stateChangeError");
     m_stateChangeErrorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +103,17 @@ JsonValue DirectConnectGateway::Jsonize() const
   if(m_stateChangeErrorHasBeenSet)
   {
    payload.WithString("stateChangeError", m_stateChangeError);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

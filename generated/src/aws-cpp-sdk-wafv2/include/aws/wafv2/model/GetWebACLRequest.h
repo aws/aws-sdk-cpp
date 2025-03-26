@@ -51,7 +51,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether this is for a global resource type, such as a Amazon
-     * CloudFront distribution. </p> <p>To work with CloudFront, you must also specify
+     * CloudFront distribution. For an Amplify application, use
+     * <code>CLOUDFRONT</code>.</p> <p>To work with CloudFront, you must also specify
      * the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
      * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
@@ -76,6 +77,18 @@ namespace Model
     template<typename IdT = Aws::String>
     GetWebACLRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to retrieve. </p>
+     */
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    GetWebACLRequest& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -86,6 +99,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

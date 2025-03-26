@@ -44,6 +44,16 @@ ConfigureLogsForPlaybackConfigurationResult& ConfigureLogsForPlaybackConfigurati
     }
     m_enabledLoggingStrategiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AdsInteractionLog"))
+  {
+    m_adsInteractionLog = jsonValue.GetObject("AdsInteractionLog");
+    m_adsInteractionLogHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ManifestServiceInteractionLog"))
+  {
+    m_manifestServiceInteractionLog = jsonValue.GetObject("ManifestServiceInteractionLog");
+    m_manifestServiceInteractionLogHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

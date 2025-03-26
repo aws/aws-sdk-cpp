@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * List of probe results for the input media file(s).
+     * Probe results for your media file.
      */
     inline const Aws::Vector<ProbeResult>& GetProbeResults() const { return m_probeResults; }
     template<typename ProbeResultsT = Aws::Vector<ProbeResult>>

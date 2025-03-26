@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>The Amazon Web Services Cloud WAN core network that the Direct Connect
-   * attachment is associated with.</p><p><h3>See Also:</h3>   <a
+   * gateway is associated to. This is only returned when a Direct Connect gateway is
+   * associated to a Cloud WAN core network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociatedCoreNetwork">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Cloud WAN core network.</p>
+     * <p>The ID of the Cloud WAN core network that the Direct Connect gateway is
+     * associated to.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -64,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>the ID of the Direct Connect attachment</p>
+     * <p>the ID of the Direct Connect gateway attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }

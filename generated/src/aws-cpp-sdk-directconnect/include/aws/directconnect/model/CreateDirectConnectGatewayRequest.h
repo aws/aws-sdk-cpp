@@ -7,6 +7,8 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +50,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The key-value pair tags associated with the request.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDirectConnectGatewayRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDirectConnectGatewayRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
      * configured on the Amazon side of the connection. The ASN must be in the private
      * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
@@ -62,6 +78,9 @@ namespace Model
 
     Aws::String m_directConnectGatewayName;
     bool m_directConnectGatewayNameHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     long long m_amazonSideAsn{0};
     bool m_amazonSideAsnHasBeenSet = false;
