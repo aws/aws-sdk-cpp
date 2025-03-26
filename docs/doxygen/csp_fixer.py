@@ -5,6 +5,10 @@ from pathlib import Path
 import logging
 
 class CSPFixer:
+    # static compiled regex patterns
+    SCRIPT_TAG_PATTERN = re.compile(r'<script([^>]*)>')
+    CSP_META_PATTERN = re.compile(r'<meta\s+http-equiv="Content-Security-Policy"[^>]*>\n?', re.IGNORECASE)
+    HEAD_TAG_PATTERN = re.compile(r'<head>', re.IGNORECASE)
     def __init__(self, log_level=logging.INFO):
         self.nonce = str(uuid.uuid4())
         # CSP meta tags
@@ -24,26 +28,21 @@ class CSPFixer:
             return html_content
                 
         # replace existing script tags with nonce
-        modified_content = re.sub(
-            r'<script([^>]*)>',
+        modified_content = self.SCRIPT_TAG_PATTERN.sub(
             f'<script nonce="{self.nonce}"\\1>',
             html_content
         )
         
         # remove any existing CSP meta tags so there is no conflict
-        modified_content = re.sub(
-            r'<meta\s+http-equiv="Content-Security-Policy"[^>]*>\n?',
+        modified_content = self.CSP_META_PATTERN.sub(
             '',
-            modified_content,
-            flags=re.IGNORECASE
+            modified_content
         )
 
         # add CSP meta tag in head
-        with_csp = re.sub(
-            r'<head>',
+        with_csp = self.HEAD_TAG_PATTERN.sub(
             f'<head>\n{self.csp_meta}',
-            modified_content,
-            flags=re.IGNORECASE
+            modified_content
         )
         
         return with_csp
