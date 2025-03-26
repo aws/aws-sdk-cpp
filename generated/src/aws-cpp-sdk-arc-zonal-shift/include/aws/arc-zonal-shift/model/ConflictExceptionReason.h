@@ -21,7 +21,8 @@ namespace Model
     SimultaneousZonalShiftsConflict,
     PracticeConfigurationAlreadyExists,
     AutoShiftEnabled,
-    PracticeConfigurationDoesNotExist
+    PracticeConfigurationDoesNotExist,
+    ZonalAutoshiftActive
   };
 
 namespace ConflictExceptionReasonMapper

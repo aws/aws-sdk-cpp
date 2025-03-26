@@ -4657,9 +4657,12 @@ namespace Aws
          * point in time before <code>LatestRestorableTime</code> for up to
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
-         * except that the new DB cluster is created with the default DB security
-         * group.</p>  <p>For Aurora, this operation only restores the DB cluster,
-         * not the DB instances for that DB cluster. You must invoke the
+         * except that the new DB cluster is created with the default DB security group.
+         * Unless the <code>RestoreType</code> is set to <code>copy-on-write</code>, the
+         * restore may occur in a different Availability Zone (AZ) from the original DB
+         * cluster. The AZ where RDS restores the DB cluster depends on the AZs in the
+         * specified subnet group.</p>  <p>For Aurora, this operation only restores
+         * the DB cluster, not the DB instances for that DB cluster. You must invoke the
          * <code>CreateDBInstance</code> operation to create DB instances for the restored
          * DB cluster, specifying the identifier of the restored DB cluster in
          * <code>DBClusterIdentifier</code>. You can create DB instances only after the

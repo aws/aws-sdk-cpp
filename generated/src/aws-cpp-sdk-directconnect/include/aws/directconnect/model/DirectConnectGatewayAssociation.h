@@ -143,7 +143,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Cloud WAN core network associated with the Direct Connect
-     * attachment.</p>
+     * gateway attachment.</p>
      */
     inline const AssociatedCoreNetwork& GetAssociatedCoreNetwork() const { return m_associatedCoreNetwork; }
     inline bool AssociatedCoreNetworkHasBeenSet() const { return m_associatedCoreNetworkHasBeenSet; }

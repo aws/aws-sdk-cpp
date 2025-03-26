@@ -39,8 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S)
-     * server.
+     * Specify the S3, HTTP, or HTTPS URL for your media file.
      */
     inline const Aws::String& GetFileUrl() const { return m_fileUrl; }
     inline bool FileUrlHasBeenSet() const { return m_fileUrlHasBeenSet; }

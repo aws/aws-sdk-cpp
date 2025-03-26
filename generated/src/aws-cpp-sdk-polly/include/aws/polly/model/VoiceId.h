@@ -114,7 +114,8 @@ namespace Model
     Burcu,
     Jitka,
     Sabrina,
-    Jasmine
+    Jasmine,
+    Jihye
   };
 
 namespace VoiceIdMapper

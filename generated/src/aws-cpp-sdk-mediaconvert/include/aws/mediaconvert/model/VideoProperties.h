@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * Properties specific to video tracks.<p><h3>See Also:</h3>   <a
+   * Details about the media file's video track.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoProperties">AWS
    * API Reference</a></p>
    */
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * The bit rate of the video track in bits per second.
+     * The bit rate of the video track, in bits per second.
      */
     inline int GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * the color primaries.
+     * The color space color primaries of the video track.
      */
     inline ColorPrimaries GetColorPrimaries() const { return m_colorPrimaries; }
     inline bool ColorPrimariesHasBeenSet() const { return m_colorPrimariesHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * the calculated frame rate of the asset.
+     * The frame rate of the video or audio track.
      */
     inline const FrameRate& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * The height of the video track in pixels.
+     * The height of the video track, in pixels.
      */
     inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * the matrix coefficients.
+     * The color space matrix coefficients of the video track.
      */
     inline MatrixCoefficients GetMatrixCoefficients() const { return m_matrixCoefficients; }
     inline bool MatrixCoefficientsHasBeenSet() const { return m_matrixCoefficientsHasBeenSet; }
@@ -104,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * the transfer characteristics.
+     * The color space transfer characteristics of the video track.
      */
     inline TransferCharacteristics GetTransferCharacteristics() const { return m_transferCharacteristics; }
     inline bool TransferCharacteristicsHasBeenSet() const { return m_transferCharacteristicsHasBeenSet; }
@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * The width of the video track in pixels.
+     * The width of the video track, in pixels.
      */
     inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }

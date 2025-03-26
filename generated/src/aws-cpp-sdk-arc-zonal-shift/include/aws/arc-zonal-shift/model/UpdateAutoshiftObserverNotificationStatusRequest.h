@@ -35,10 +35,10 @@ namespace Model
     ///@{
     /**
      * <p>The status to set for autoshift observer notification. If the status is
-     * <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use
-     * the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the
-     * status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
-     * autoshifts when one or more of your resources is included in the autoshift. </p>
+     * <code>ENABLED</code>, ARC includes all autoshift events when you use the Amazon
+     * EventBridge pattern <code>Autoshift In Progress</code>. When the status is
+     * <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when
+     * one or more of your resources is included in the autoshift. </p>
      */
     inline AutoshiftObserverNotificationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

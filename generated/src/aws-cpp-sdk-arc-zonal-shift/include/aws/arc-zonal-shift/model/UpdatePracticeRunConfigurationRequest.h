@@ -58,15 +58,14 @@ namespace Model
     ///@{
     /**
      * <p>Add, change, or remove windows of days and times for when you can,
-     * optionally, block Route 53 ARC from starting a practice run for a resource.</p>
-     * <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when
-     * you specify dates, that dates and times for practice runs are in UTC. Also, be
-     * aware of potential time adjustments that might be required for daylight saving
-     * time differences. Separate multiple blocked windows with spaces.</p> <p>For
-     * example, say you run business report summaries three days a week. For this
-     * scenario, you might set the following recurring days and times as blocked
-     * windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30
-     * FRI-20:30-21:30</code>.</p>
+     * optionally, block ARC from starting a practice run for a resource.</p> <p>The
+     * format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you
+     * specify dates, that dates and times for practice runs are in UTC. Also, be aware
+     * of potential time adjustments that might be required for daylight saving time
+     * differences. Separate multiple blocked windows with spaces.</p> <p>For example,
+     * say you run business report summaries three days a week. For this scenario, you
+     * might set the following recurring days and times as blocked windows, for
+     * example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
     inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }

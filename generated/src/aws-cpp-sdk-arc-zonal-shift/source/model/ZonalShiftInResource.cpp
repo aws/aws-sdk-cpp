@@ -55,6 +55,11 @@ ZonalShiftInResource& ZonalShiftInResource::operator =(JsonView jsonValue)
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
     m_resourceIdentifierHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("shiftType"))
+  {
+    m_shiftType = ShiftTypeMapper::GetShiftTypeForName(jsonValue.GetString("shiftType"));
+    m_shiftTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
@@ -103,6 +108,11 @@ JsonValue ZonalShiftInResource::Jsonize() const
   {
    payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
+  }
+
+  if(m_shiftTypeHasBeenSet)
+  {
+   payload.WithString("shiftType", ShiftTypeMapper::GetNameForShiftType(m_shiftType));
   }
 
   if(m_startTimeHasBeenSet)

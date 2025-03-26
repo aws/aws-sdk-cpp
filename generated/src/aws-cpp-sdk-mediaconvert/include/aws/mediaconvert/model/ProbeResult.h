@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * The metadata and analysis results for a media file.<p><h3>See Also:</h3>   <a
+   * Probe results for your media file.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ProbeResult">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * Information about the container format of the media file.
+     * The container of your media file. This information helps you understand the
+     * overall structure and details of your media, including format, duration, and
+     * track layout.
      */
     inline const Container& GetContainer() const { return m_container; }
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
@@ -54,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * Metadata about the file.
+     * Metadata and other file information.
      */
     inline const Metadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
@@ -66,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * List of Track mapping objects.
+     * An array containing track mapping information.
      */
     inline const Aws::Vector<TrackMapping>& GetTrackMappings() const { return m_trackMappings; }
     inline bool TrackMappingsHasBeenSet() const { return m_trackMappingsHasBeenSet; }

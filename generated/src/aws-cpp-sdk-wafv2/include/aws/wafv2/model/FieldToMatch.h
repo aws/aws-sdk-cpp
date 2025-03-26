@@ -156,9 +156,10 @@ namespace Model
      * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
      * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
      * you can increase the limit for each resource type in the web ACL
-     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
-     * <p>For information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
+     * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
+     * about how to handle oversized request bodies, see the <code>Body</code> object
+     * configuration. </p>
      */
     inline const Body& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
@@ -194,9 +195,10 @@ namespace Model
      * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
      * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
      * can increase the limit for each resource type in the web ACL
-     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
-     * <p>For information about how to handle oversized request bodies, see the
-     * <code>JsonBody</code> object configuration. </p>
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
+     * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
+     * about how to handle oversized request bodies, see the <code>JsonBody</code>
+     * object configuration. </p>
      */
     inline const JsonBody& GetJsonBody() const { return m_jsonBody; }
     inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }

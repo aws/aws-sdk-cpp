@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * The track information such as codec, duration, etc.<p><h3>See Also:</h3>   <a
+   * Details about each track (video, audio, or data) in the media file.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Track">AWS
    * API Reference</a></p>
    */
@@ -43,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * Properties specific to audio tracks.
+     * Details about the media file's audio track.
      */
     inline const AudioProperties& GetAudioProperties() const { return m_audioProperties; }
     inline bool AudioPropertiesHasBeenSet() const { return m_audioPropertiesHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * The codec used for the track.
+     * The codec of the audio or video track, or caption format of the data track.
      */
     inline Codec GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
@@ -65,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * Properties specific to data tracks.
+     * Details about the media file's data track.
      */
     inline const DataProperties& GetDataProperties() const { return m_dataProperties; }
     inline bool DataPropertiesHasBeenSet() const { return m_dataPropertiesHasBeenSet; }
@@ -77,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * The duration of the track in seconds.
+     * The duration of the track, in seconds.
      */
     inline double GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -87,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * The index of the track.
+     * The unique index number of the track, starting at 1.
      */
     inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
@@ -97,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * The type of the track (video, audio, or data).
+     * The type of track: video, audio, or data.
      */
     inline TrackType GetTrackType() const { return m_trackType; }
     inline bool TrackTypeHasBeenSet() const { return m_trackTypeHasBeenSet; }
@@ -107,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * Properties specific to video tracks.
+     * Details about the media file's video track.
      */
     inline const VideoProperties& GetVideoProperties() const { return m_videoProperties; }
     inline bool VideoPropertiesHasBeenSet() const { return m_videoPropertiesHasBeenSet; }
