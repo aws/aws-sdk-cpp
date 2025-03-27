@@ -25,7 +25,8 @@ namespace Model
     UnsupportedAz,
     InvalidAlarmCondition,
     InvalidConditionType,
-    InvalidPracticeBlocker
+    InvalidPracticeBlocker,
+    FISExperimentUpdateNotAllowed
   };
 
 namespace ValidationExceptionReasonMapper

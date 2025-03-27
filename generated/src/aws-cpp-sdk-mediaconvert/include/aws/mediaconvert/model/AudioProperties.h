@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Properties specific to audio tracks.<p><h3>See Also:</h3>   <a
+   * Details about the media file's audio track.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioProperties">AWS
    * API Reference</a></p>
    */
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * The bit rate of the audio track in bits per second.
+     * The bit rate of the audio track, in bits per second.
      */
     inline int GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * The number of audio channels.
+     * The number of audio channels in the audio track.
      */
     inline int GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * the calculated frame rate of the asset.
+     * The frame rate of the video or audio track.
      */
     inline const FrameRate& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * the language code of the track
+     * The language code of the audio track, in three character ISO 639-3 format.
      */
     inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }

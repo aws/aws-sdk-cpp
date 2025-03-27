@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Track mapping information.<p><h3>See Also:</h3>   <a
+   * An array containing track mapping information.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TrackMapping">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * The indexes of the audio tracks.
+     * The index numbers of the audio tracks in your media file.
      */
     inline const Aws::Vector<int>& GetAudioTrackIndexes() const { return m_audioTrackIndexes; }
     inline bool AudioTrackIndexesHasBeenSet() const { return m_audioTrackIndexesHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * The indexes of the data tracks.
+     * The index numbers of the data tracks in your media file.
      */
     inline const Aws::Vector<int>& GetDataTrackIndexes() const { return m_dataTrackIndexes; }
     inline bool DataTrackIndexesHasBeenSet() const { return m_dataTrackIndexesHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * The indexes of the video tracks.
+     * The index numbers of the video tracks in your media file.
      */
     inline const Aws::Vector<int>& GetVideoTrackIndexes() const { return m_videoTrackIndexes; }
     inline bool VideoTrackIndexesHasBeenSet() const { return m_videoTrackIndexesHasBeenSet; }

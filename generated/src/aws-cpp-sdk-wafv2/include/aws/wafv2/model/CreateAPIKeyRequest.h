@@ -39,7 +39,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether this is for a global resource type, such as a Amazon
-     * CloudFront distribution. </p> <p>To work with CloudFront, you must also specify
+     * CloudFront distribution. For an Amplify application, use
+     * <code>CLOUDFRONT</code>.</p> <p>To work with CloudFront, you must also specify
      * the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
      * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use

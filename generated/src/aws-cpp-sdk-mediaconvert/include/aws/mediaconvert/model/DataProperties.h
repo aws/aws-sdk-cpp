@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Properties specific to data tracks.<p><h3>See Also:</h3>   <a
+   * Details about the media file's data track.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DataProperties">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * the language code of the track
+     * The language code of the data track, in three character ISO 639-3 format.
      */
     inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }

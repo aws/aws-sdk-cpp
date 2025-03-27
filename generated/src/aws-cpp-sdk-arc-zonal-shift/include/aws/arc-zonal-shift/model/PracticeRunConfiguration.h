@@ -29,14 +29,14 @@ namespace Model
    * <p>A practice run configuration for a resource includes the Amazon CloudWatch
    * alarms that you've specified for a practice run, as well as any blocked dates or
    * blocked windows for the practice run. When a resource has a practice run
-   * configuration, Route 53 ARC shifts traffic for the resource weekly for practice
-   * runs.</p> <p>Practice runs are required for zonal autoshift. The zonal shifts
-   * that Route 53 ARC starts for practice runs help you to ensure that shifting away
-   * traffic from an Availability Zone during an autoshift is safe for your
-   * application.</p> <p>You can update or delete a practice run configuration.
-   * Before you delete a practice run configuration, you must disable zonal autoshift
-   * for the resource. A practice run configuration is required when zonal autoshift
-   * is enabled.</p><p><h3>See Also:</h3>   <a
+   * configuration, ARC shifts traffic for the resource weekly for practice runs.</p>
+   * <p>Practice runs are required for zonal autoshift. The zonal shifts that ARC
+   * starts for practice runs help you to ensure that shifting away traffic from an
+   * Availability Zone during an autoshift is safe for your application.</p> <p>You
+   * can update or delete a practice run configuration. Before you delete a practice
+   * run configuration, you must disable zonal autoshift for the resource. A practice
+   * run configuration is required when zonal autoshift is enabled.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/PracticeRunConfiguration">AWS
    * API Reference</a></p>
    */
@@ -67,10 +67,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of one or more windows of days and times that you can block Route 53
-     * ARC from starting practice runs for a resource.</p> <p>Specify the blocked
-     * windows in UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by
-     * spaces. For example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
+     * <p>An array of one or more windows of days and times that you can block ARC from
+     * starting practice runs for a resource.</p> <p>Specify the blocked windows in
+     * UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by spaces. For
+     * example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
     inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }

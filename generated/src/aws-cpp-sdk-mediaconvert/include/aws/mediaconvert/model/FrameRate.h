@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * the calculated frame rate of the asset.<p><h3>See Also:</h3>   <a
+   * The frame rate of the video or audio track.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FrameRate">AWS
    * API Reference</a></p>
    */
@@ -37,7 +37,9 @@ namespace Model
 
     ///@{
     /**
-     * the denominator of the frame rate of the asset.
+     * The denominator, or bottom number, in the fractional frame rate. For example, if
+     * your frame rate is 24000 / 1001 (23.976 frames per second), then the denominator
+     * would be 1001.
      */
     inline int GetDenominator() const { return m_denominator; }
     inline bool DenominatorHasBeenSet() const { return m_denominatorHasBeenSet; }
@@ -47,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * the numerator of the frame rate of the asset.
+     * The numerator, or top number, in the fractional frame rate. For example, if your
+     * frame rate is 24000 / 1001 (23.976 frames per second), then the numerator would
+     * be 24000.
      */
     inline int GetNumerator() const { return m_numerator; }
     inline bool NumeratorHasBeenSet() const { return m_numeratorHasBeenSet; }

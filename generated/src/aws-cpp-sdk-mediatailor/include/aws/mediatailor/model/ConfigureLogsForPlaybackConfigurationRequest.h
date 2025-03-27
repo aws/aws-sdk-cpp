@@ -8,6 +8,8 @@
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/AdsInteractionLog.h>
+#include <aws/mediatailor/model/ManifestServiceInteractionLog.h>
 #include <aws/mediatailor/model/LoggingStrategy.h>
 #include <utility>
 
@@ -89,6 +91,32 @@ namespace Model
     ConfigureLogsForPlaybackConfigurationRequest& WithEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { SetEnabledLoggingStrategies(std::forward<EnabledLoggingStrategiesT>(value)); return *this;}
     inline ConfigureLogsForPlaybackConfigurationRequest& AddEnabledLoggingStrategies(LoggingStrategy value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The event types that MediaTailor emits in logs for interactions with the
+     * ADS.</p>
+     */
+    inline const AdsInteractionLog& GetAdsInteractionLog() const { return m_adsInteractionLog; }
+    inline bool AdsInteractionLogHasBeenSet() const { return m_adsInteractionLogHasBeenSet; }
+    template<typename AdsInteractionLogT = AdsInteractionLog>
+    void SetAdsInteractionLog(AdsInteractionLogT&& value) { m_adsInteractionLogHasBeenSet = true; m_adsInteractionLog = std::forward<AdsInteractionLogT>(value); }
+    template<typename AdsInteractionLogT = AdsInteractionLog>
+    ConfigureLogsForPlaybackConfigurationRequest& WithAdsInteractionLog(AdsInteractionLogT&& value) { SetAdsInteractionLog(std::forward<AdsInteractionLogT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The event types that MediaTailor emits in logs for interactions with the
+     * origin server.</p>
+     */
+    inline const ManifestServiceInteractionLog& GetManifestServiceInteractionLog() const { return m_manifestServiceInteractionLog; }
+    inline bool ManifestServiceInteractionLogHasBeenSet() const { return m_manifestServiceInteractionLogHasBeenSet; }
+    template<typename ManifestServiceInteractionLogT = ManifestServiceInteractionLog>
+    void SetManifestServiceInteractionLog(ManifestServiceInteractionLogT&& value) { m_manifestServiceInteractionLogHasBeenSet = true; m_manifestServiceInteractionLog = std::forward<ManifestServiceInteractionLogT>(value); }
+    template<typename ManifestServiceInteractionLogT = ManifestServiceInteractionLog>
+    ConfigureLogsForPlaybackConfigurationRequest& WithManifestServiceInteractionLog(ManifestServiceInteractionLogT&& value) { SetManifestServiceInteractionLog(std::forward<ManifestServiceInteractionLogT>(value)); return *this;}
+    ///@}
   private:
 
     int m_percentEnabled{0};
@@ -99,6 +127,12 @@ namespace Model
 
     Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;
     bool m_enabledLoggingStrategiesHasBeenSet = false;
+
+    AdsInteractionLog m_adsInteractionLog;
+    bool m_adsInteractionLogHasBeenSet = false;
+
+    ManifestServiceInteractionLog m_manifestServiceInteractionLog;
+    bool m_manifestServiceInteractionLogHasBeenSet = false;
   };
 
 } // namespace Model

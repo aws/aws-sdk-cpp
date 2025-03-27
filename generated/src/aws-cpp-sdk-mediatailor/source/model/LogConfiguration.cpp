@@ -39,6 +39,16 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_enabledLoggingStrategiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AdsInteractionLog"))
+  {
+    m_adsInteractionLog = jsonValue.GetObject("AdsInteractionLog");
+    m_adsInteractionLogHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ManifestServiceInteractionLog"))
+  {
+    m_manifestServiceInteractionLog = jsonValue.GetObject("ManifestServiceInteractionLog");
+    m_manifestServiceInteractionLogHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +70,18 @@ JsonValue LogConfiguration::Jsonize() const
      enabledLoggingStrategiesJsonList[enabledLoggingStrategiesIndex].AsString(LoggingStrategyMapper::GetNameForLoggingStrategy(m_enabledLoggingStrategies[enabledLoggingStrategiesIndex]));
    }
    payload.WithArray("EnabledLoggingStrategies", std::move(enabledLoggingStrategiesJsonList));
+
+  }
+
+  if(m_adsInteractionLogHasBeenSet)
+  {
+   payload.WithObject("AdsInteractionLog", m_adsInteractionLog.Jsonize());
+
+  }
+
+  if(m_manifestServiceInteractionLogHasBeenSet)
+  {
+   payload.WithObject("ManifestServiceInteractionLog", m_manifestServiceInteractionLog.Jsonize());
 
   }
 

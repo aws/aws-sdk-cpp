@@ -26,6 +26,7 @@ namespace Aws
         static const int PracticeConfigurationAlreadyExists_HASH = HashingUtils::HashString("PracticeConfigurationAlreadyExists");
         static const int AutoShiftEnabled_HASH = HashingUtils::HashString("AutoShiftEnabled");
         static const int PracticeConfigurationDoesNotExist_HASH = HashingUtils::HashString("PracticeConfigurationDoesNotExist");
+        static const int ZonalAutoshiftActive_HASH = HashingUtils::HashString("ZonalAutoshiftActive");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ConflictExceptionReason::PracticeConfigurationDoesNotExist;
           }
+          else if (hashCode == ZonalAutoshiftActive_HASH)
+          {
+            return ConflictExceptionReason::ZonalAutoshiftActive;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "AutoShiftEnabled";
           case ConflictExceptionReason::PracticeConfigurationDoesNotExist:
             return "PracticeConfigurationDoesNotExist";
+          case ConflictExceptionReason::ZonalAutoshiftActive:
+            return "ZonalAutoshiftActive";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

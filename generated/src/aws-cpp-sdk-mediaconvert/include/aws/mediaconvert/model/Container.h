@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * Information about the container format of the media file.<p><h3>See Also:</h3>  
-   * <a
+   * The container of your media file. This information helps you understand the
+   * overall structure and details of your media, including format, duration, and
+   * track layout.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Container">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * The duration of the media file in seconds.
+     * The total duration of your media file, in seconds.
      */
     inline double GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -52,7 +53,9 @@ namespace Model
 
     ///@{
     /**
-     * The format of the container
+     * The format of your media file. For example: MP4, QuickTime (MOV), Matroska
+     * (MKV), or WebM. Note that this will be blank if your media file has a format
+     * that the MediaConvert Probe operation does not recognize.
      */
     inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
@@ -62,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * List of Track objects.
+     * Details about each track (video, audio, or data) in the media file.
      */
     inline const Aws::Vector<Track>& GetTracks() const { return m_tracks; }
     inline bool TracksHasBeenSet() const { return m_tracksHasBeenSet; }

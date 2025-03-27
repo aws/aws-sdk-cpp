@@ -17,41 +17,40 @@ namespace ARCZonalShift
 {
   /**
    * <p>Welcome to the API Reference Guide for zonal shift and zonal autoshift in
-   * Amazon Route 53 Application Recovery Controller (Route 53 ARC).</p> <p>You can
-   * start a zonal shift to move traffic for a load balancer resource away from an
+   * Amazon Route 53 Application Recovery Controller (ARC).</p> <p>You can start a
+   * zonal shift to move traffic for a load balancer resource away from an
    * Availability Zone to help your application recover quickly from an impairment in
    * an Availability Zone. For example, you can recover your application from a
    * developer's bad code deployment or from an Amazon Web Services infrastructure
    * failure in a single Availability Zone.</p> <p>You can also configure zonal
    * autoshift for supported load balancer resources. Zonal autoshift is a capability
-   * in Route 53 ARC where you authorize Amazon Web Services to shift away
-   * application resource traffic from an Availability Zone during events, on your
-   * behalf, to help reduce your time to recovery. Amazon Web Services starts an
-   * autoshift when internal telemetry indicates that there is an Availability Zone
-   * impairment that could potentially impact customers.</p> <p>To help make sure
-   * that zonal autoshift is safe for your application, you must also configure
-   * practice runs when you enable zonal autoshift for a resource. Practice runs
-   * start weekly zonal shifts for a resource, to shift traffic for the resource away
-   * from an Availability Zone. Practice runs help you to make sure, on a regular
-   * basis, that you have enough capacity in all the Availability Zones in an Amazon
-   * Web Services Region for your application to continue to operate normally when
-   * traffic for a resource is shifted away from one Availability Zone.</p>
-   *  <p>Before you configure practice runs or enable zonal autoshift, we
-   * strongly recommend that you prescale your application resource capacity in all
-   * Availability Zones in the Region where your application resources are deployed.
-   * You should not rely on scaling on demand when an autoshift or practice run
-   * starts. Zonal autoshift, including practice runs, works independently, and does
-   * not wait for auto scaling actions to complete. Relying on auto scaling, instead
-   * of pre-scaling, can result in loss of availability.</p> <p>If you use auto
-   * scaling to handle regular cycles of traffic, we strongly recommend that you
-   * configure the minimum capacity of your auto scaling to continue operating
-   * normally with the loss of an Availability Zone. </p>  <p>Be aware
-   * that Route 53 ARC does not inspect the health of individual resources. Amazon
-   * Web Services only starts an autoshift when Amazon Web Services telemetry detects
-   * that there is an Availability Zone impairment that could potentially impact
-   * customers. In some cases, resources might be shifted away that are not
-   * experiencing impact.</p> <p>For more information about using zonal shift and
-   * zonal autoshift, see the <a
+   * in ARC where you authorize Amazon Web Services to shift away application
+   * resource traffic from an Availability Zone during events, on your behalf, to
+   * help reduce your time to recovery. Amazon Web Services starts an autoshift when
+   * internal telemetry indicates that there is an Availability Zone impairment that
+   * could potentially impact customers.</p> <p>To help make sure that zonal
+   * autoshift is safe for your application, you must also configure practice runs
+   * when you enable zonal autoshift for a resource. Practice runs start weekly zonal
+   * shifts for a resource, to shift traffic for the resource away from an
+   * Availability Zone. Practice runs help you to make sure, on a regular basis, that
+   * you have enough capacity in all the Availability Zones in an Amazon Web Services
+   * Region for your application to continue to operate normally when traffic for a
+   * resource is shifted away from one Availability Zone.</p>  <p>Before
+   * you configure practice runs or enable zonal autoshift, we strongly recommend
+   * that you prescale your application resource capacity in all Availability Zones
+   * in the Region where your application resources are deployed. You should not rely
+   * on scaling on demand when an autoshift or practice run starts. Zonal autoshift,
+   * including practice runs, works independently, and does not wait for auto scaling
+   * actions to complete. Relying on auto scaling, instead of pre-scaling, can result
+   * in loss of availability.</p> <p>If you use auto scaling to handle regular cycles
+   * of traffic, we strongly recommend that you configure the minimum capacity of
+   * your auto scaling to continue operating normally with the loss of an
+   * Availability Zone. </p>  <p>Be aware that ARC does not inspect the
+   * health of individual resources. Amazon Web Services only starts an autoshift
+   * when Amazon Web Services telemetry detects that there is an Availability Zone
+   * impairment that could potentially impact customers. In some cases, resources
+   * might be shifted away that are not experiencing impact.</p> <p>For more
+   * information about using zonal shift and zonal autoshift, see the <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html">Amazon
    * Route 53 Application Recovery Controller Developer Guide</a>.</p>
    */
@@ -149,11 +148,10 @@ namespace ARCZonalShift
          * you create to use with practice runs. The alarms that you specify are an
          * <i>outcome alarm</i>, to monitor application health during practice runs and,
          * optionally, a <i>blocking alarm</i>, to block practice runs from starting.</p>
-         * <p>When a resource has a practice run configuration, Route 53 ARC starts zonal
-         * shifts for the resource weekly, to shift traffic for practice runs. Practice
-         * runs help you to ensure that shifting away traffic from an Availability Zone
-         * during an autoshift is safe for your application.</p> <p>For more information,
-         * see <a
+         * <p>When a resource has a practice run configuration, ARC starts zonal shifts for
+         * the resource weekly, to shift traffic for practice runs. Practice runs help you
+         * to ensure that shifting away traffic from an Availability Zone during an
+         * autoshift is safe for your application.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
          * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
          * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
@@ -209,17 +207,12 @@ namespace ARCZonalShift
         }
 
         /**
-         * <p>Returns the status of autoshift observer notification. Autoshift observer
-         * notification enables you to be notified, through Amazon EventBridge, when there
-         * is an autoshift event for zonal autoshift.</p> <p>If the status is
-         * <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use
-         * the EventBridge pattern <code>Autoshift In Progress</code>. When the status is
-         * <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
-         * autoshifts when one or more of your resources is included in the autoshift.</p>
-         * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification">
-         * Notifications for practice runs and autoshifts</a> in the Amazon Route 53
-         * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the status of the autoshift observer notification. Autoshift observer
+         * notifications notify you through Amazon EventBridge when there is an autoshift
+         * event for zonal autoshift. The status can be <code>ENABLED</code> or
+         * <code>DISABLED</code>. When <code>ENABLED</code>, a notification is sent when an
+         * autoshift is triggered. When <code>DISABLED</code>, notifications are not sent.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetAutoshiftObserverNotificationStatus">AWS
          * API Reference</a></p>
          */
@@ -247,11 +240,8 @@ namespace ARCZonalShift
          * <p>Get information about a resource that's been registered for zonal shifts with
          * Amazon Route 53 Application Recovery Controller in this Amazon Web Services
          * Region. Resources that are registered for zonal shifts are managed resources in
-         * Route 53 ARC. You can start zonal shifts and configure zonal autoshift for
-         * managed resources.</p> <p>At this time, you can only start a zonal shift or
-         * configure zonal autoshift for Network Load Balancers and Application Load
-         * Balancers with cross-zone load balancing turned off.</p><p><h3>See Also:</h3>  
-         * <a
+         * ARC. You can start zonal shifts and configure zonal autoshift for managed
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetManagedResource">AWS
          * API Reference</a></p>
          */
@@ -276,10 +266,10 @@ namespace ARCZonalShift
         }
 
         /**
-         * <p>Returns a list of autoshifts for an Amazon Web Services Region. By default,
-         * the call returns only <code>ACTIVE</code> autoshifts. Optionally, you can
-         * specify the <code>status</code> parameter to return <code>COMPLETED</code>
-         * autoshifts. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the autoshifts for an Amazon Web Services Region. By default, the
+         * call returns only <code>ACTIVE</code> autoshifts. Optionally, you can specify
+         * the <code>status</code> parameter to return <code>COMPLETED</code> autoshifts.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListAutoshifts">AWS
          * API Reference</a></p>
          */
@@ -337,9 +327,8 @@ namespace ARCZonalShift
          * <p>Lists all active and completed zonal shifts in Amazon Route 53 Application
          * Recovery Controller in your Amazon Web Services account in this Amazon Web
          * Services Region. <code>ListZonalShifts</code> returns customer-initiated zonal
-         * shifts, as well as practice run zonal shifts that Route 53 ARC started on your
-         * behalf for zonal autoshift.</p> <p>The <code>ListZonalShifts</code> operation
-         * does not list autoshifts. For more information about listing autoshifts, see <a
+         * shifts, as well as practice run zonal shifts that ARC started on your behalf for
+         * zonal autoshift.</p> <p>For more information about listing autoshifts, see <a
          * href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListZonalShifts">AWS
@@ -370,16 +359,15 @@ namespace ARCZonalShift
          * an Availability Zone in an Amazon Web Services Region, to help your application
          * recover immediately, for example, from a developer's bad code deployment or from
          * an Amazon Web Services infrastructure failure in a single Availability Zone. You
-         * can start a zonal shift in Route 53 ARC only for managed resources in your
-         * Amazon Web Services account in an Amazon Web Services Region. Resources are
-         * automatically registered with Route 53 ARC by Amazon Web Services services.</p>
-         * <p>At this time, you can only start a zonal shift for Network Load Balancers and
-         * Application Load Balancers with cross-zone load balancing turned off.</p>
-         * <p>When you start a zonal shift, traffic for the resource is no longer routed to
-         * the Availability Zone. The zonal shift is created immediately in Route 53 ARC.
-         * However, it can take a short time, typically up to a few minutes, for existing,
-         * in-progress connections in the Availability Zone to complete.</p> <p>For more
-         * information, see <a
+         * can start a zonal shift in ARC only for managed resources in your Amazon Web
+         * Services account in an Amazon Web Services Region. Resources are automatically
+         * registered with ARC by Amazon Web Services services.</p> <p>At this time, you
+         * can only start a zonal shift for Network Load Balancers and Application Load
+         * Balancers with cross-zone load balancing turned off.</p> <p>When you start a
+         * zonal shift, traffic for the resource is no longer routed to the Availability
+         * Zone. The zonal shift is created immediately in ARC. However, it can take a
+         * short time, typically up to a few minutes, for existing, in-progress connections
+         * in the Availability Zone to complete.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.html">Zonal
          * shift</a> in the Amazon Route 53 Application Recovery Controller Developer
          * Guide.</p><p><h3>See Also:</h3>   <a
@@ -410,11 +398,11 @@ namespace ARCZonalShift
          * <p>Update the status of autoshift observer notification. Autoshift observer
          * notification enables you to be notified, through Amazon EventBridge, when there
          * is an autoshift event for zonal autoshift.</p> <p>If the status is
-         * <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use
-         * the EventBridge pattern <code>Autoshift In Progress</code>. When the status is
-         * <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
-         * autoshifts when one or more of your resources is included in the autoshift.</p>
-         * <p>For more information, see <a
+         * <code>ENABLED</code>, ARC includes all autoshift events when you use the
+         * EventBridge pattern <code>Autoshift In Progress</code>. When the status is
+         * <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when
+         * one or more of your resources is included in the autoshift.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification">
          * Notifications for practice runs and autoshifts</a> in the Amazon Route 53
          * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
@@ -506,8 +494,8 @@ namespace ARCZonalShift
         /**
          * <p>Update an active zonal shift in Amazon Route 53 Application Recovery
          * Controller in your Amazon Web Services account. You can update a zonal shift to
-         * set a new expiration, or edit or replace the comment for the zonal shift.
-         * </p><p><h3>See Also:</h3>   <a
+         * set a new expiration, or edit or replace the comment for the zonal
+         * shift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalShift">AWS
          * API Reference</a></p>
          */

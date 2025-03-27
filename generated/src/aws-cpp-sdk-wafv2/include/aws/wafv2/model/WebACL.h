@@ -44,8 +44,8 @@ namespace Model
    * You can associate a web ACL with one or more Amazon Web Services resources to
    * protect. The resource types include Amazon CloudFront distribution, Amazon API
    * Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-   * user pool, App Runner service, and Amazon Web Services Verified Access instance.
-   * </p><p><h3>See Also:</h3>   <a
+   * user pool, App Runner service, Amplify application, and Amazon Web Services
+   * Verified Access instance. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */
