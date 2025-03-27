@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     READY,
     LOCKED,
-    FAILED
+    FAILED,
+    STALE
   };
 
 namespace BillScenarioStatusMapper

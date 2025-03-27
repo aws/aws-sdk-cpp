@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scheduling policy.</p>
+     * <p>The name of the fair-share scheduling policy.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fair share policy for the scheduling policy.</p>
+     * <p>The fair-share scheduling policy details.</p>
      */
     inline const FairsharePolicy& GetFairsharePolicy() const { return m_fairsharePolicy; }
     inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }
@@ -79,9 +79,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags that you apply to the scheduling policy to categorize and organize
-     * your resources. Each tag consists of a key and an optional value. For more
-     * information, see <a
+     * <p>The tags that you apply to the fair-share scheduling policy to categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>

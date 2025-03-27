@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/cloudformation/model/ScanFilter.h>
 #include <utility>
 
 namespace Aws
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the resource scan.</p> <dl> <dt> INPROGRESS </dt> <dd> <p>The
+     * <p>Status of the resource scan.</p> <dl> <dt> IN_PROGRESS </dt> <dd> <p>The
      * resource scan is still in progress.</p> </dd> <dt> COMPLETE </dt> <dd> <p>The
      * resource scan is complete.</p> </dd> <dt> EXPIRED </dt> <dd> <p>The resource
      * scan has expired.</p> </dd> <dt> FAILED </dt> <dd> <p>The resource scan has
@@ -137,12 +138,25 @@ namespace Model
     /**
      * <p>The number of resources that were read. This is only available for scans with
      * a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or
-     * <code>FAILED </code>.</p>  <p>This field may be 0 if the resource scan
+     * <code>FAILED</code>.</p>  <p>This field may be 0 if the resource scan
      * failed with a <code>ResourceScanLimitExceededException</code>.</p> 
      */
     inline int GetResourcesRead() const { return m_resourcesRead; }
     inline void SetResourcesRead(int value) { m_resourcesReadHasBeenSet = true; m_resourcesRead = value; }
     inline DescribeResourceScanResult& WithResourcesRead(int value) { SetResourcesRead(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The scan filters that were used.</p>
+     */
+    inline const Aws::Vector<ScanFilter>& GetScanFilters() const { return m_scanFilters; }
+    template<typename ScanFiltersT = Aws::Vector<ScanFilter>>
+    void SetScanFilters(ScanFiltersT&& value) { m_scanFiltersHasBeenSet = true; m_scanFilters = std::forward<ScanFiltersT>(value); }
+    template<typename ScanFiltersT = Aws::Vector<ScanFilter>>
+    DescribeResourceScanResult& WithScanFilters(ScanFiltersT&& value) { SetScanFilters(std::forward<ScanFiltersT>(value)); return *this;}
+    template<typename ScanFiltersT = ScanFilter>
+    DescribeResourceScanResult& AddScanFilters(ScanFiltersT&& value) { m_scanFiltersHasBeenSet = true; m_scanFilters.emplace_back(std::forward<ScanFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -181,6 +195,9 @@ namespace Model
 
     int m_resourcesRead{0};
     bool m_resourcesReadHasBeenSet = false;
+
+    Aws::Vector<ScanFilter> m_scanFilters;
+    bool m_scanFiltersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet = false;

@@ -410,6 +410,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
+     * containers in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const { return m_enableExecuteCommand; }
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+    inline ContainerProperties& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate.</p>
@@ -501,6 +513,9 @@ namespace Model
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
     bool m_fargatePlatformConfigurationHasBeenSet = false;
+
+    bool m_enableExecuteCommand{false};
+    bool m_enableExecuteCommandHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
     bool m_ephemeralStorageHasBeenSet = false;

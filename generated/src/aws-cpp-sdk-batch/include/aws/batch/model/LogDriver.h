@@ -22,7 +22,8 @@ namespace Model
     gelf,
     fluentd,
     awslogs,
-    splunk
+    splunk,
+    awsfirelens
   };
 
 namespace LogDriverMapper

@@ -19,6 +19,23 @@ Aws::String StartResourceScanRequest::SerializePayload() const
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
+  if(m_scanFiltersHasBeenSet)
+  {
+    if (m_scanFilters.empty())
+    {
+      ss << "ScanFilters=&";
+    }
+    else
+    {
+      unsigned scanFiltersCount = 1;
+      for(auto& item : m_scanFilters)
+      {
+        item.OutputToStream(ss, "ScanFilters.member.", scanFiltersCount, "");
+        scanFiltersCount++;
+      }
+    }
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

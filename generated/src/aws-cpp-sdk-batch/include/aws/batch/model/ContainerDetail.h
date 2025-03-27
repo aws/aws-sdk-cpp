@@ -505,6 +505,18 @@ namespace Model
     template<typename RepositoryCredentialsT = RepositoryCredentials>
     ContainerDetail& WithRepositoryCredentials(RepositoryCredentialsT&& value) { SetRepositoryCredentials(std::forward<RepositoryCredentialsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
+     * containers in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const { return m_enableExecuteCommand; }
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+    inline ContainerDetail& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_image;
@@ -593,6 +605,9 @@ namespace Model
 
     RepositoryCredentials m_repositoryCredentials;
     bool m_repositoryCredentialsHasBeenSet = false;
+
+    bool m_enableExecuteCommand{false};
+    bool m_enableExecuteCommandHasBeenSet = false;
   };
 
 } // namespace Model

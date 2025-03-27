@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A set of instructions for launching server processes on fleet computes.
-   * Server processes run either an executable in a custom game build or a Realtime
-   * Servers script. Server process configurations are part of a fleet's runtime
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * Server processes run either an executable in a custom game build or a Amazon
+   * GameLift Realtime script. Server process configurations are part of a fleet's
+   * runtime configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
    * API Reference</a></p>
    */

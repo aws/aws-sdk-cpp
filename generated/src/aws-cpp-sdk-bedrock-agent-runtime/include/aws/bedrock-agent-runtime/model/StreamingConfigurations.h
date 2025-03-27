@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> Configurations for streaming.</p><p><h3>See Also:</h3>   <a
+   * <p>Configurations for streaming.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StreamingConfigurations">AWS
    * API Reference</a></p>
    */
@@ -37,7 +37,16 @@ namespace Model
 
     ///@{
     /**
-     * <p> The guardrail interval to apply as response is generated. </p>
+     * <p> The guardrail interval to apply as response is generated. By default, the
+     * guardrail interval is set to 50 characters. If a larger interval is specified,
+     * the response will be generated in larger chunks with fewer
+     * <code>ApplyGuardrail</code> calls. The following examples show the response
+     * generated for <i>Hello, I am an agent</i> input string.</p> <p> <b>Example
+     * response in chunks: Interval set to 3 characters</b> </p> <p> <code>'Hel', 'lo,
+     * ','I am', ' an', ' Age', 'nt'</code> </p> <p>Each chunk has at least 3
+     * characters except for the last chunk</p> <p> <b>Example response in chunks:
+     * Interval set to 20 or more characters</b> </p> <p> <code>Hello, I am an
+     * Agent</code> </p>
      */
     inline int GetApplyGuardrailInterval() const { return m_applyGuardrailInterval; }
     inline bool ApplyGuardrailIntervalHasBeenSet() const { return m_applyGuardrailIntervalHasBeenSet; }

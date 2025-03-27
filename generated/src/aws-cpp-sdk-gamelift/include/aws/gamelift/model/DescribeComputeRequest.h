@@ -50,8 +50,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the compute resource to retrieve properties for. For
-     * an Anywhere fleet compute, use the registered compute name. For an EC2 fleet
-     * instance, use the instance ID. </p>
+     * a managed container fleet or Anywhere fleet, use a compute name. For an EC2
+     * fleet, use an instance ID. To retrieve a fleet's compute identifiers, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
      */
     inline const Aws::String& GetComputeName() const { return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }

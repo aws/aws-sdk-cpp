@@ -40,9 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scheduling policy. It can be up to 128 letters long. It can
-     * contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
-     * (_).</p>
+     * <p>The name of the fair-share scheduling policy. It can be up to 128 letters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fair share policy of the scheduling policy.</p>
+     * <p>The fair-share scheduling policy details.</p>
      */
     inline const FairsharePolicy& GetFairsharePolicy() const { return m_fairsharePolicy; }
     inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }

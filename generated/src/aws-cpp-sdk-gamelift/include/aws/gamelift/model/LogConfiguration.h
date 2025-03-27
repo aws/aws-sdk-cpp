@@ -46,8 +46,9 @@ namespace Model
      * <code>CLOUDWATCH</code> -- (default value) Send logs to an Amazon CloudWatch log
      * group that you define. Each container emits a log stream, which is organized in
      * the log group. </p> </li> <li> <p> <code>S3</code> -- Store logs in an Amazon S3
-     * bucket that you define.</p> </li> <li> <p> <code>NONE</code> -- Don't collect
-     * container logs.</p> </li> </ul>
+     * bucket that you define. This bucket must reside in the fleet's home Amazon Web
+     * Services Region.</p> </li> <li> <p> <code>NONE</code> -- Don't collect container
+     * logs.</p> </li> </ul>
      */
     inline LogDestination GetLogDestination() const { return m_logDestination; }
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }

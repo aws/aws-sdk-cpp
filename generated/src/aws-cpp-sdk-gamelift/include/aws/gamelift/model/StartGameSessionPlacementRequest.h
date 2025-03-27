@@ -158,9 +158,11 @@ namespace Model
      * instructions on how to use it. This list overrides a queue's prioritized
      * location list for this game session placement request only. You can include
      * Amazon Web Services Regions, local zones, and custom locations (for Anywhere
-     * fleets). Choose a fallback strategy to instruct Amazon GameLift to use the
-     * override list for the first placement attempt only or for all placement
-     * attempts.</p>
+     * fleets). You can choose to limit placements to locations on the override list
+     * only, or you can prioritize locations on the override list first and then fall
+     * back to the queue's other locations if needed. Choose a fallback strategy to use
+     * in the event that Amazon GameLift fails to place a game session in any of the
+     * locations on the priority override list. </p>
      */
     inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const { return m_priorityConfigurationOverride; }
     inline bool PriorityConfigurationOverrideHasBeenSet() const { return m_priorityConfigurationOverrideHasBeenSet; }

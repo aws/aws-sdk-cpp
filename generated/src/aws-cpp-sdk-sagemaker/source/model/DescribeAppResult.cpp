@@ -60,6 +60,11 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
     m_status = AppStatusMapper::GetAppStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RecoveryMode"))
+  {
+    m_recoveryMode = jsonValue.GetBool("RecoveryMode");
+    m_recoveryModeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("LastHealthCheckTimestamp"))
   {
     m_lastHealthCheckTimestamp = jsonValue.GetDouble("LastHealthCheckTimestamp");

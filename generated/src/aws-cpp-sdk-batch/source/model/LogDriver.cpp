@@ -27,6 +27,7 @@ namespace Aws
         static const int fluentd_HASH = HashingUtils::HashString("fluentd");
         static const int awslogs_HASH = HashingUtils::HashString("awslogs");
         static const int splunk_HASH = HashingUtils::HashString("splunk");
+        static const int awsfirelens_HASH = HashingUtils::HashString("awsfirelens");
 
 
         LogDriver GetLogDriverForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return LogDriver::splunk;
           }
+          else if (hashCode == awsfirelens_HASH)
+          {
+            return LogDriver::awsfirelens;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "awslogs";
           case LogDriver::splunk:
             return "splunk";
+          case LogDriver::awsfirelens:
+            return "awsfirelens";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

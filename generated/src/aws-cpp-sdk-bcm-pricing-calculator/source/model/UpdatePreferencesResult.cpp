@@ -43,6 +43,15 @@ UpdatePreferencesResult& UpdatePreferencesResult::operator =(const Aws::AmazonWe
     }
     m_memberAccountRateTypeSelectionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("standaloneAccountRateTypeSelections"))
+  {
+    Aws::Utils::Array<JsonView> standaloneAccountRateTypeSelectionsJsonList = jsonValue.GetArray("standaloneAccountRateTypeSelections");
+    for(unsigned standaloneAccountRateTypeSelectionsIndex = 0; standaloneAccountRateTypeSelectionsIndex < standaloneAccountRateTypeSelectionsJsonList.GetLength(); ++standaloneAccountRateTypeSelectionsIndex)
+    {
+      m_standaloneAccountRateTypeSelections.push_back(RateTypeMapper::GetRateTypeForName(standaloneAccountRateTypeSelectionsJsonList[standaloneAccountRateTypeSelectionsIndex].AsString()));
+    }
+    m_standaloneAccountRateTypeSelectionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -217,8 +217,9 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
-     * for using StackSets</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+     * <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const { return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
@@ -235,7 +236,8 @@ namespace Model
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
-     * stack sets.</p>
+     * stack sets.</p> <p>Valid only if the permissions model is
+     * <code>SELF_MANAGED</code>.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
@@ -269,8 +271,13 @@ namespace Model
     ///@{
     /**
      * <p>Describes whether StackSets automatically deploys to Organizations accounts
-     * that are added to the target organization or organizational unit (OU). Specify
-     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+     * that are added to the target organization or organizational unit (OU). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage
+     * automatic deployments for CloudFormation StackSets that use service-managed
+     * permissions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Required if the
+     * permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed
+     * permissions.)</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
@@ -282,22 +289,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Service-managed permissions] Specifies whether you are acting as an account
-     * administrator in the organization's management account or as a delegated
-     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
-     * specified. Use <code>SELF</code> for stack sets with self-managed
-     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
-     * permissions while signed in to the management account, specify
-     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
-     * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be
-     * registered as a delegated admin in the management account. For more information,
-     * see <a
+     * <p>Specifies whether you are acting as an account administrator in the
+     * organization's management account or as a delegated administrator in a member
+     * account.</p> <p>By default, <code>SELF</code> is specified. Use
+     * <code>SELF</code> for stack sets with self-managed permissions.</p> <ul> <li>
+     * <p>To create a stack set with service-managed permissions while signed in to the
+     * management account, specify <code>SELF</code>.</p> </li> <li> <p>To create a
+     * stack set with service-managed permissions while signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated admin in the management
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
-     * administrators.</p>
+     * administrators.</p> <p>Valid only if the permissions model is
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }

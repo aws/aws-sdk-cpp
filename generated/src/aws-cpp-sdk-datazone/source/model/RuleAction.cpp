@@ -20,13 +20,18 @@ namespace Aws
       namespace RuleActionMapper
       {
 
+        static const int CREATE_LISTING_CHANGE_SET_HASH = HashingUtils::HashString("CREATE_LISTING_CHANGE_SET");
         static const int CREATE_SUBSCRIPTION_REQUEST_HASH = HashingUtils::HashString("CREATE_SUBSCRIPTION_REQUEST");
 
 
         RuleAction GetRuleActionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREATE_SUBSCRIPTION_REQUEST_HASH)
+          if (hashCode == CREATE_LISTING_CHANGE_SET_HASH)
+          {
+            return RuleAction::CREATE_LISTING_CHANGE_SET;
+          }
+          else if (hashCode == CREATE_SUBSCRIPTION_REQUEST_HASH)
           {
             return RuleAction::CREATE_SUBSCRIPTION_REQUEST;
           }
@@ -46,6 +51,8 @@ namespace Aws
           {
           case RuleAction::NOT_SET:
             return {};
+          case RuleAction::CREATE_LISTING_CHANGE_SET:
+            return "CREATE_LISTING_CHANGE_SET";
           case RuleAction::CREATE_SUBSCRIPTION_REQUEST:
             return "CREATE_SUBSCRIPTION_REQUEST";
           default:

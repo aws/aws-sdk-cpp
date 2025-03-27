@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>A unique identifier for the game session to be terminated. A game session ARN
      * has the following format:
-     * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
+     * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.</p>
      */
     inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }

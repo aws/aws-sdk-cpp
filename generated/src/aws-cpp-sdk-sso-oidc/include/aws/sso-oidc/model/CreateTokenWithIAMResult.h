@@ -7,6 +7,7 @@
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sso-oidc/model/AwsAdditionalDetails.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A structure containing information from the <code>idToken</code>. Only the
+     * <code>identityContext</code> is in it, which is a value extracted from the
+     * <code>idToken</code>. This provides direct access to identity information
+     * without requiring JWT parsing.</p>
+     */
+    inline const AwsAdditionalDetails& GetAwsAdditionalDetails() const { return m_awsAdditionalDetails; }
+    template<typename AwsAdditionalDetailsT = AwsAdditionalDetails>
+    void SetAwsAdditionalDetails(AwsAdditionalDetailsT&& value) { m_awsAdditionalDetailsHasBeenSet = true; m_awsAdditionalDetails = std::forward<AwsAdditionalDetailsT>(value); }
+    template<typename AwsAdditionalDetailsT = AwsAdditionalDetails>
+    CreateTokenWithIAMResult& WithAwsAdditionalDetails(AwsAdditionalDetailsT&& value) { SetAwsAdditionalDetails(std::forward<AwsAdditionalDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -152,6 +167,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_scope;
     bool m_scopeHasBeenSet = false;
+
+    AwsAdditionalDetails m_awsAdditionalDetails;
+    bool m_awsAdditionalDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

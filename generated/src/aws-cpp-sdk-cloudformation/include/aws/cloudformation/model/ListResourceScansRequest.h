@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/ScanType.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,17 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourceScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scan type that you want to get summary information about. The default is
+     * <code>FULL</code>.</p>
+     */
+    inline ScanType GetScanTypeFilter() const { return m_scanTypeFilter; }
+    inline bool ScanTypeFilterHasBeenSet() const { return m_scanTypeFilterHasBeenSet; }
+    inline void SetScanTypeFilter(ScanType value) { m_scanTypeFilterHasBeenSet = true; m_scanTypeFilter = value; }
+    inline ListResourceScansRequest& WithScanTypeFilter(ScanType value) { SetScanTypeFilter(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -67,6 +79,9 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    ScanType m_scanTypeFilter{ScanType::NOT_SET};
+    bool m_scanTypeFilterHasBeenSet = false;
   };
 
 } // namespace Model

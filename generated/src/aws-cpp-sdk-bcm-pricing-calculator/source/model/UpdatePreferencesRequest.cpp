@@ -38,6 +38,17 @@ Aws::String UpdatePreferencesRequest::SerializePayload() const
 
   }
 
+  if(m_standaloneAccountRateTypeSelectionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> standaloneAccountRateTypeSelectionsJsonList(m_standaloneAccountRateTypeSelections.size());
+   for(unsigned standaloneAccountRateTypeSelectionsIndex = 0; standaloneAccountRateTypeSelectionsIndex < standaloneAccountRateTypeSelectionsJsonList.GetLength(); ++standaloneAccountRateTypeSelectionsIndex)
+   {
+     standaloneAccountRateTypeSelectionsJsonList[standaloneAccountRateTypeSelectionsIndex].AsString(RateTypeMapper::GetNameForRateType(m_standaloneAccountRateTypeSelections[standaloneAccountRateTypeSelectionsIndex]));
+   }
+   payload.WithArray("standaloneAccountRateTypeSelections", std::move(standaloneAccountRateTypeSelectionsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

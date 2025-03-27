@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/FirelensConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/LinuxParameters.h>
 #include <aws/batch/model/LogConfiguration.h>
@@ -129,6 +130,22 @@ namespace Model
     inline bool EssentialHasBeenSet() const { return m_essentialHasBeenSet; }
     inline void SetEssential(bool value) { m_essentialHasBeenSet = true; m_essential = value; }
     inline TaskContainerProperties& WithEssential(bool value) { SetEssential(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * log</a> routing in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline const FirelensConfiguration& GetFirelensConfiguration() const { return m_firelensConfiguration; }
+    inline bool FirelensConfigurationHasBeenSet() const { return m_firelensConfigurationHasBeenSet; }
+    template<typename FirelensConfigurationT = FirelensConfiguration>
+    void SetFirelensConfiguration(FirelensConfigurationT&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::forward<FirelensConfigurationT>(value); }
+    template<typename FirelensConfigurationT = FirelensConfiguration>
+    TaskContainerProperties& WithFirelensConfiguration(FirelensConfigurationT&& value) { SetFirelensConfiguration(std::forward<FirelensConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -395,6 +412,9 @@ namespace Model
 
     bool m_essential{false};
     bool m_essentialHasBeenSet = false;
+
+    FirelensConfiguration m_firelensConfiguration;
+    bool m_firelensConfigurationHasBeenSet = false;
 
     Aws::String m_image;
     bool m_imageHasBeenSet = false;

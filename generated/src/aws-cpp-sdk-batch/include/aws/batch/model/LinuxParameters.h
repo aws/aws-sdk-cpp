@@ -122,7 +122,7 @@ namespace Model
      * <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't
      * use swap. Accepted values are <code>0</code> or any positive integer. If the
      * <code>maxSwap</code> parameter is omitted, the container doesn't use the swap
-     * configuration for the container instance that it's running on. A
+     * configuration for the container instance on which it runs. A
      * <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter
      * to be used.</p>  <p>This parameter isn't applicable to jobs that are
      * running on Fargate resources. Don't provide it for these jobs.</p> 

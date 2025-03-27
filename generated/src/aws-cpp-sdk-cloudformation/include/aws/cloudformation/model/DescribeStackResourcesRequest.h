@@ -45,9 +45,9 @@ namespace Model
      * <p>The name or the unique stack ID that is associated with the stack, which
      * aren't always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
      * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
-     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
-     * is no default value.</p> <p>Required: Conditional. If you don't specify
-     * <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Required:
+     * Conditional. If you don't specify <code>StackName</code>, you must specify
+     * <code>PhysicalResourceId</code>.</p>
      */
     inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
@@ -60,7 +60,6 @@ namespace Model
     ///@{
     /**
      * <p>The logical name of the resource as specified in the template.</p>
-     * <p>Default: There is no default value.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
@@ -79,7 +78,7 @@ namespace Model
      * <code>DescribeStackResources</code> to find which stack the instance belongs to
      * and what other resources are part of the stack.</p> <p>Required: Conditional. If
      * you don't specify <code>PhysicalResourceId</code>, you must specify
-     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
+     * <code>StackName</code>.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const { return m_physicalResourceId; }
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }

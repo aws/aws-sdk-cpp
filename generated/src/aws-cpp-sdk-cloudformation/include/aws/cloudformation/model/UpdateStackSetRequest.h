@@ -239,16 +239,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
-     * set.</p> <p>Specify an IAM role only if you are using customized administrator
-     * roles to control which users or groups can manage specific stack sets within the
-     * same administrator account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
-     * for using CloudFormation StackSets</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <p>If you specified a customized administrator role when you
-     * created the stack set, you must specify a customized administrator role, even if
-     * it is the same customized administrator role used with this stack set
-     * previously.</p>
+     * <p>[Self-managed permissions] The Amazon Resource Name (ARN) of the IAM role to
+     * use to update this stack set.</p> <p>Specify an IAM role only if you are using
+     * customized administrator roles to control which users or groups can manage
+     * specific stack sets within the same administrator account. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p> <p>If
+     * you specified a customized administrator role when you created the stack set,
+     * you must specify a customized administrator role, even if it is the same
+     * customized administrator role used with this stack set previously.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const { return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
@@ -260,16 +260,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the IAM execution role to use to update the stack set. If you do
-     * not specify an execution role, CloudFormation uses the
-     * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
-     * operation.</p> <p>Specify an IAM role only if you are using customized execution
-     * roles to control which stack resources users and groups can include in their
-     * stack sets.</p> <p>If you specify a customized execution role, CloudFormation
-     * uses that role to update the stack. If you do not specify a customized execution
-     * role, CloudFormation performs the update using the role previously associated
-     * with the stack set, so long as you have permissions to perform operations on the
-     * stack set.</p>
+     * <p>[Self-managed permissions] The name of the IAM execution role to use to
+     * update the stack set. If you do not specify an execution role, CloudFormation
+     * uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     * set operation.</p> <p>Specify an IAM role only if you are using customized
+     * execution roles to control which stack resources users and groups can include in
+     * their stack sets.</p> <p>If you specify a customized execution role,
+     * CloudFormation uses that role to update the stack. If you do not specify a
+     * customized execution role, CloudFormation performs the update using the role
+     * previously associated with the stack set, so long as you have permissions to
+     * perform operations on the stack set.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
@@ -327,8 +327,12 @@ namespace Model
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
      * deploys to Organizations accounts that are added to a target organization or
-     * organizational unit (OU).</p> <p>If you specify <code>AutoDeployment</code>,
-     * don't specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * organizational unit (OU). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage
+     * automatic deployments for CloudFormation StackSets that use service-managed
+     * permissions</a> in the <i>CloudFormation User Guide</i>.</p> <p>If you specify
+     * <code>AutoDeployment</code>, don't specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }

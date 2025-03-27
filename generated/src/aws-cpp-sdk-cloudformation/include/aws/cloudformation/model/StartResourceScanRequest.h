@@ -7,6 +7,8 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ScanFilter.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +51,27 @@ namespace Model
     template<typename ClientRequestTokenT = Aws::String>
     StartResourceScanRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scan filters to use.</p>
+     */
+    inline const Aws::Vector<ScanFilter>& GetScanFilters() const { return m_scanFilters; }
+    inline bool ScanFiltersHasBeenSet() const { return m_scanFiltersHasBeenSet; }
+    template<typename ScanFiltersT = Aws::Vector<ScanFilter>>
+    void SetScanFilters(ScanFiltersT&& value) { m_scanFiltersHasBeenSet = true; m_scanFilters = std::forward<ScanFiltersT>(value); }
+    template<typename ScanFiltersT = Aws::Vector<ScanFilter>>
+    StartResourceScanRequest& WithScanFilters(ScanFiltersT&& value) { SetScanFilters(std::forward<ScanFiltersT>(value)); return *this;}
+    template<typename ScanFiltersT = ScanFilter>
+    StartResourceScanRequest& AddScanFilters(ScanFiltersT&& value) { m_scanFiltersHasBeenSet = true; m_scanFilters.emplace_back(std::forward<ScanFiltersT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    Aws::Vector<ScanFilter> m_scanFilters;
+    bool m_scanFiltersHasBeenSet = false;
   };
 
 } // namespace Model

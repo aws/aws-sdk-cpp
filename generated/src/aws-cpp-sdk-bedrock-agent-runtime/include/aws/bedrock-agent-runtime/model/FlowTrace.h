@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceConditionNodeResultEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceNodeActionEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceNodeInputEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceNodeOutputEvent.h>
 #include <utility>
@@ -57,6 +58,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about an action (operation) called by a node. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+     * each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+     */
+    inline const FlowTraceNodeActionEvent& GetNodeActionTrace() const { return m_nodeActionTrace; }
+    inline bool NodeActionTraceHasBeenSet() const { return m_nodeActionTraceHasBeenSet; }
+    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
+    void SetNodeActionTrace(NodeActionTraceT&& value) { m_nodeActionTraceHasBeenSet = true; m_nodeActionTrace = std::forward<NodeActionTraceT>(value); }
+    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
+    FlowTrace& WithNodeActionTrace(NodeActionTraceT&& value) { SetNodeActionTrace(std::forward<NodeActionTraceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about the input into a node.</p>
      */
     inline const FlowTraceNodeInputEvent& GetNodeInputTrace() const { return m_nodeInputTrace; }
@@ -82,6 +98,9 @@ namespace Model
 
     FlowTraceConditionNodeResultEvent m_conditionNodeResultTrace;
     bool m_conditionNodeResultTraceHasBeenSet = false;
+
+    FlowTraceNodeActionEvent m_nodeActionTrace;
+    bool m_nodeActionTraceHasBeenSet = false;
 
     FlowTraceNodeInputEvent m_nodeInputTrace;
     bool m_nodeInputTraceHasBeenSet = false;

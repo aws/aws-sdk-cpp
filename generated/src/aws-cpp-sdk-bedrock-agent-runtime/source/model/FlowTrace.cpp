@@ -30,6 +30,11 @@ FlowTrace& FlowTrace::operator =(JsonView jsonValue)
     m_conditionNodeResultTrace = jsonValue.GetObject("conditionNodeResultTrace");
     m_conditionNodeResultTraceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("nodeActionTrace"))
+  {
+    m_nodeActionTrace = jsonValue.GetObject("nodeActionTrace");
+    m_nodeActionTraceHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("nodeInputTrace"))
   {
     m_nodeInputTrace = jsonValue.GetObject("nodeInputTrace");
@@ -50,6 +55,12 @@ JsonValue FlowTrace::Jsonize() const
   if(m_conditionNodeResultTraceHasBeenSet)
   {
    payload.WithObject("conditionNodeResultTrace", m_conditionNodeResultTrace.Jsonize());
+
+  }
+
+  if(m_nodeActionTraceHasBeenSet)
+  {
+   payload.WithObject("nodeActionTrace", m_nodeActionTrace.Jsonize());
 
   }
 

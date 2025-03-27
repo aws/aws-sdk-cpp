@@ -24,6 +24,11 @@ Aws::String ListResourceScansRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
+  if(m_scanTypeFilterHasBeenSet)
+  {
+    ss << "ScanTypeFilter=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanTypeFilter)) << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }
