@@ -130,7 +130,7 @@ namespace Model
 #end
 #end
 ##the only member is blob member
-#if($eventShape.members.size() == 1 && $onlyEventMember.isBlob())
+#if($eventShape.members.size() == 1 && $onlyEventMember.isBlob() && $eventShape.eventPayloadType.equals("blob"))
             ${eventShape.name} event(GetEventPayloadWithOwnership());
             m_on${eventShape.name}(event);
             break;

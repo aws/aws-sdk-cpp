@@ -343,14 +343,15 @@ public class C2jModelToGeneratorModelTransformer {
                              * - we need to determine how to serialize events in eventstream
                              * - to specify payload there is an eventpayload trait
                              * - but what happens if that trait is not specified
-                             * - if there is one field and its a string, blob or struct then we assume that field is event payload
-                             *  (note: this might not be completely correct, spec is vague on that and other sdks do implicit struct around string and blob)
+                             * - if there is one field and its a string or struct then we assume that field is event payload
+                             * - if there is one field and its a blob within structure and not explicitly marked as eventpayload then parent shape is eventpayload
                              * - if that one field is of any other type then treat parent shape as eventpayload
                              * - if there is more than one field then parent shape is the payload
                              */
                             Shape memberShape = memberEntry.getValue().getShape();
                             if (memberShape.isString() ||
-                                memberShape.isBlob() ||
+                                memberShape.isBlob() && !shape.isStructure() ||
+                                memberShape.isBlob() && memberEntry.getValue().isEventPayload() ||
                                 memberShape.isStructure()) {
                                 memberEntry.getValue().setEventPayload(true);
                                 shape.setEventPayloadMemberName(memberEntry.getKey());

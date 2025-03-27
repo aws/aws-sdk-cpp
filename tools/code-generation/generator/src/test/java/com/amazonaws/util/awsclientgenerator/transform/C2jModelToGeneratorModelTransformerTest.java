@@ -437,15 +437,14 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertTrue(shapes.get("EventStreamShape").isEventStream());
         assertEquals("EventShape", shapes.get("EventShape").getName());
         assertTrue(shapes.get("EventShape").isEvent());
-        assertEquals("blob", shapes.get("EventShape").getEventPayloadType());
-        assertEquals("BlobShape", shapes.get("EventShape").getEventPayloadMemberName());
+        assertEquals("structure", shapes.get("EventShape").getEventPayloadType());
         assertEquals("BlobShape", shapes.get("BlobShape").getName());
         assertEquals("blob", shapes.get("BlobShape").getType());
         assertEquals(2, shapes.get("EventStreamShape").getMembers().size());
         assertEquals("EventShape", shapes.get("EventStreamShape").getMembers().get("EventShape").getShape().getName());
         assertEquals(1, shapes.get("EventShape").getMembers().size());
         assertEquals("BlobShape", shapes.get("EventShape").getMembers().get("BlobShape").getShape().getName());
-        assertTrue(shapes.get("EventShape").getMembers().get("BlobShape").isEventPayload());
+        assertFalse(shapes.get("EventShape").getMembers().get("BlobShape").isEventPayload());
 
         assertFalse(shapes.get("EventEnumShape").getMembers().get("EnumShape").isEventPayload());
         assertEquals("structure", shapes.get("EventEnumShape").getEventPayloadType());
