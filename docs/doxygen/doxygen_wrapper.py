@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
+from csp_fixer import CSPFixer
 
 DOXYGEN_EXE = shutil.which("doxygen")
 CMAKE_EXE = shutil.which("cmake3")
@@ -234,6 +235,9 @@ class DoxygenWrapper(object):
             future.result()
 
         self._cleanup_temp_files()
+        print("Update CSP")
+        cspfixer = CSPFixer()
+        cspfixer.update_files(Path(self.output_dir))
 
         return dependency_map
 
