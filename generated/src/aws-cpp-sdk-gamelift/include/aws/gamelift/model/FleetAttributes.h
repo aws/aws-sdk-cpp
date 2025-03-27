@@ -40,7 +40,7 @@ namespace Model
    * <p>Describes an Amazon GameLift fleet of game hosting resources. Attributes
    * differ based on the fleet's compute type, as follows:</p> <ul> <li> <p>EC2 fleet
    * attributes identify a <code>Build</code> resource (for fleets with customer game
-   * server builds) or a <code>Script</code> resource (for Realtime Servers
+   * server builds) or a <code>Script</code> resource (for Amazon GameLift Realtime
    * fleets).</p> </li> <li> <p>Amazon GameLift Anywhere fleets have an abbreviated
    * set of attributes, because most fleet configurations are set directly on the
    * fleet's computes. Attributes include fleet identifiers and descriptive
@@ -326,11 +326,11 @@ namespace Model
      * <code>EC2</code>.</p>  <p>Amazon Linux 2 (AL2) will reach end of support
      * on 6/30/2025. See more details in the <a
      * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x.,
-     * first update the game server build to server SDK 5.x, and then deploy to AL2023
-     * instances. See <a
+     * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
+     * GameLift, first update the game server build to server SDK 5.x, and then deploy
+     * to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
-     * Migrate to Amazon GameLift server SDK version 5.</a> </p> 
+     * Migrate to server SDK version 5.</a> </p> 
      */
     inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }

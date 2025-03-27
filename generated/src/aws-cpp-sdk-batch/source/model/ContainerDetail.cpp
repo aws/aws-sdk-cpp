@@ -202,6 +202,11 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_repositoryCredentials = jsonValue.GetObject("repositoryCredentials");
     m_repositoryCredentialsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+    m_enableExecuteCommandHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -420,6 +425,12 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_repositoryCredentialsHasBeenSet)
   {
    payload.WithObject("repositoryCredentials", m_repositoryCredentials.Jsonize());
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

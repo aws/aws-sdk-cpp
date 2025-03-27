@@ -205,6 +205,18 @@ namespace Model
     template<typename VolumesT = Volume>
     EcsTaskDetails& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
+     * containers in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const { return m_enableExecuteCommand; }
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+    inline EcsTaskDetails& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<TaskContainerDetails> m_containers;
@@ -242,6 +254,9 @@ namespace Model
 
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet = false;
+
+    bool m_enableExecuteCommand{false};
+    bool m_enableExecuteCommandHasBeenSet = false;
   };
 
 } // namespace Model

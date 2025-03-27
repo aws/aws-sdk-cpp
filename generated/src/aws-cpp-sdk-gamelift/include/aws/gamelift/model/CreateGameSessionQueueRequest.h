@@ -57,7 +57,8 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. If you don't specify a
+     * request timeout, the queue uses a default value.</p>
      */
     inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }

@@ -23,6 +23,7 @@ namespace Aws
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int LOCKED_HASH = HashingUtils::HashString("LOCKED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int STALE_HASH = HashingUtils::HashString("STALE");
 
 
         BillScenarioStatus GetBillScenarioStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return BillScenarioStatus::FAILED;
+          }
+          else if (hashCode == STALE_HASH)
+          {
+            return BillScenarioStatus::STALE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "LOCKED";
           case BillScenarioStatus::FAILED:
             return "FAILED";
+          case BillScenarioStatus::STALE:
+            return "STALE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,6 +16,7 @@ namespace Model
   enum class RuleAction
   {
     NOT_SET,
+    CREATE_LISTING_CHANGE_SET,
     CREATE_SUBSCRIPTION_REQUEST
   };
 

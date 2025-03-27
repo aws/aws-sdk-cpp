@@ -64,6 +64,11 @@ CreateTokenWithIAMResult& CreateTokenWithIAMResult::operator =(const Aws::Amazon
     }
     m_scopeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("awsAdditionalDetails"))
+  {
+    m_awsAdditionalDetails = jsonValue.GetObject("awsAdditionalDetails");
+    m_awsAdditionalDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

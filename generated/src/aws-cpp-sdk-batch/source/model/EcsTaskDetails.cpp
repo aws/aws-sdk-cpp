@@ -93,6 +93,11 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+    m_enableExecuteCommandHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -179,6 +184,12 @@ JsonValue EcsTaskDetails::Jsonize() const
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
    }
    payload.WithArray("volumes", std::move(volumesJsonList));
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

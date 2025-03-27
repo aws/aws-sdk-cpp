@@ -31,7 +31,10 @@ namespace Model
    * operation.</p> <p>For more information about maximum concurrent accounts and
    * failure tolerance, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-   * set operation options</a>.</p><p><h3>See Also:</h3>   <a
+   * set operation options</a>.</p>  <p>
+   * <code>StackSetOperationPreferences</code> don't apply to
+   * <code>AutoDeployment</code>, even if it's enabled.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationPreferences">AWS
    * API Reference</a></p>
    */
@@ -60,8 +63,6 @@ namespace Model
     ///@{
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRegionOrder() const { return m_regionOrder; }
     inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }

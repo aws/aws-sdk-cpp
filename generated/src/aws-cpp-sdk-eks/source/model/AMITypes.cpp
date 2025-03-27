@@ -26,6 +26,8 @@ namespace Aws
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int BOTTLEROCKET_ARM_64_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64");
         static const int BOTTLEROCKET_x86_64_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64");
+        static const int BOTTLEROCKET_ARM_64_FIPS_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_FIPS");
+        static const int BOTTLEROCKET_x86_64_FIPS_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_FIPS");
         static const int BOTTLEROCKET_ARM_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
         static const int BOTTLEROCKET_x86_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
         static const int WINDOWS_CORE_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2019_x86_64");
@@ -64,6 +66,14 @@ namespace Aws
           else if (hashCode == BOTTLEROCKET_x86_64_HASH)
           {
             return AMITypes::BOTTLEROCKET_x86_64;
+          }
+          else if (hashCode == BOTTLEROCKET_ARM_64_FIPS_HASH)
+          {
+            return AMITypes::BOTTLEROCKET_ARM_64_FIPS;
+          }
+          else if (hashCode == BOTTLEROCKET_x86_64_FIPS_HASH)
+          {
+            return AMITypes::BOTTLEROCKET_x86_64_FIPS;
           }
           else if (hashCode == BOTTLEROCKET_ARM_64_NVIDIA_HASH)
           {
@@ -133,6 +143,10 @@ namespace Aws
             return "BOTTLEROCKET_ARM_64";
           case AMITypes::BOTTLEROCKET_x86_64:
             return "BOTTLEROCKET_x86_64";
+          case AMITypes::BOTTLEROCKET_ARM_64_FIPS:
+            return "BOTTLEROCKET_ARM_64_FIPS";
+          case AMITypes::BOTTLEROCKET_x86_64_FIPS:
+            return "BOTTLEROCKET_x86_64_FIPS";
           case AMITypes::BOTTLEROCKET_ARM_64_NVIDIA:
             return "BOTTLEROCKET_ARM_64_NVIDIA";
           case AMITypes::BOTTLEROCKET_x86_64_NVIDIA:

@@ -59,6 +59,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The updated preferred rate types for a standalone account. </p>
+     */
+    inline const Aws::Vector<RateType>& GetStandaloneAccountRateTypeSelections() const { return m_standaloneAccountRateTypeSelections; }
+    template<typename StandaloneAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    void SetStandaloneAccountRateTypeSelections(StandaloneAccountRateTypeSelectionsT&& value) { m_standaloneAccountRateTypeSelectionsHasBeenSet = true; m_standaloneAccountRateTypeSelections = std::forward<StandaloneAccountRateTypeSelectionsT>(value); }
+    template<typename StandaloneAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    UpdatePreferencesResult& WithStandaloneAccountRateTypeSelections(StandaloneAccountRateTypeSelectionsT&& value) { SetStandaloneAccountRateTypeSelections(std::forward<StandaloneAccountRateTypeSelectionsT>(value)); return *this;}
+    inline UpdatePreferencesResult& AddStandaloneAccountRateTypeSelections(RateType value) { m_standaloneAccountRateTypeSelectionsHasBeenSet = true; m_standaloneAccountRateTypeSelections.push_back(value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,6 +85,9 @@ namespace Model
 
     Aws::Vector<RateType> m_memberAccountRateTypeSelections;
     bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
+
+    Aws::Vector<RateType> m_standaloneAccountRateTypeSelections;
+    bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

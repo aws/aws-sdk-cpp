@@ -50,9 +50,9 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the compute resource that you want to connect to. For
-     * an EC2 fleet compute, use the instance ID. Use <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>
-     * to retrieve compute identifiers.</p>
+     * an EC2 fleet, use an instance ID. For a managed container fleet, use a compute
+     * name. You can retrieve a fleet's compute names by calling <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
      */
     inline const Aws::String& GetComputeName() const { return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }

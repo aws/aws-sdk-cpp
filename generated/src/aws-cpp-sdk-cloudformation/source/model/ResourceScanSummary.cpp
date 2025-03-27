@@ -67,6 +67,12 @@ ResourceScanSummary& ResourceScanSummary::operator =(const XmlNode& xmlNode)
       m_percentageCompleted = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompletedNode.GetText()).c_str()).c_str());
       m_percentageCompletedHasBeenSet = true;
     }
+    XmlNode scanTypeNode = resultNode.FirstChild("ScanType");
+    if(!scanTypeNode.IsNull())
+    {
+      m_scanType = ScanTypeMapper::GetScanTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scanTypeNode.GetText()).c_str()));
+      m_scanTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -104,6 +110,11 @@ void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
   }
 
+  if(m_scanTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType)) << "&";
+  }
+
 }
 
 void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +142,10 @@ void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_percentageCompletedHasBeenSet)
   {
       oStream << location << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
+  }
+  if(m_scanTypeHasBeenSet)
+  {
+      oStream << location << ".ScanType=" << StringUtils::URLEncode(ScanTypeMapper::GetNameForScanType(m_scanType)) << "&";
   }
 }
 

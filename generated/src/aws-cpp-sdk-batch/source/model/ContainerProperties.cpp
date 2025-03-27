@@ -143,6 +143,11 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_fargatePlatformConfiguration = jsonValue.GetObject("fargatePlatformConfiguration");
     m_fargatePlatformConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+    m_enableExecuteCommandHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ephemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
@@ -305,6 +310,12 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_fargatePlatformConfigurationHasBeenSet)
   {
    payload.WithObject("fargatePlatformConfiguration", m_fargatePlatformConfiguration.Jsonize());
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

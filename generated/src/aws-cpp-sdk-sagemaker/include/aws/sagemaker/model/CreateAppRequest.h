@@ -131,6 +131,16 @@ namespace Model
     template<typename ResourceSpecT = ResourceSpec>
     CreateAppRequest& WithResourceSpec(ResourceSpecT&& value) { SetResourceSpec(std::forward<ResourceSpecT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Indicates whether the application is launched in recovery mode. </p>
+     */
+    inline bool GetRecoveryMode() const { return m_recoveryMode; }
+    inline bool RecoveryModeHasBeenSet() const { return m_recoveryModeHasBeenSet; }
+    inline void SetRecoveryMode(bool value) { m_recoveryModeHasBeenSet = true; m_recoveryMode = value; }
+    inline CreateAppRequest& WithRecoveryMode(bool value) { SetRecoveryMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainId;
@@ -153,6 +163,9 @@ namespace Model
 
     ResourceSpec m_resourceSpec;
     bool m_resourceSpecHasBeenSet = false;
+
+    bool m_recoveryMode{false};
+    bool m_recoveryModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,13 +154,14 @@ namespace Model
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call <code>InitSDK()</code> within the time
      * expected (5 minutes). Check your game session log to see why
-     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
-     * <code>InitSDK()</code>. Check your game session log to see why
-     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time. This event is not emitted for
+     * managed container fleets and Anywhere fleets unless they're deployed with the
+     * Amazon GameLift Agent.</p> </li> <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT --
+     * The server process did not call <code>ProcessReady()</code> within the time
+     * expected (5 minutes) after calling <code>InitSDK()</code>. Check your game
+     * session log to see why <code>ProcessReady()</code> was not called in time.</p>
+     * </li> <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without
+     * calling <code>ProcessEnding()</code>. Check your game session log to see why
      * <code>ProcessEnding()</code> was not called.</p> </li> <li>
      * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
      * valid health check for too long and was therefore terminated by GameLift. Check
