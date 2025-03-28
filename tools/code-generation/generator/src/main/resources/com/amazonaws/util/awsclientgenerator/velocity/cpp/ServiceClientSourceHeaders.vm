@@ -52,6 +52,9 @@
 #end
 #if($serviceModel.metadata.namespace == "S3Crt")
 \#include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
+#if($serviceModel.isUseSmithyClient())
+\#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
+#end
 #end
 
 \#include <smithy/tracing/TracingUtils.h>

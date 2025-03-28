@@ -791,7 +791,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
             "v4","smithy::SigV4AuthScheme",
-            "sigv4-s3express","S3::S3ExpressSigV4AuthScheme",
+            "sigv4-s3express","S3ExpressSigV4AuthScheme",
             "v2","smithy::SigV4AuthScheme"
     );
 
@@ -808,7 +808,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
             "bearer", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
             "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
-            "sigv4-s3express", "S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption",
+            "sigv4-s3express", "S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption",
             "v2", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption"
     );
 
