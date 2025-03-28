@@ -585,8 +585,8 @@ namespace BCMPricingCalculator
         }
 
         /**
-         * <p> Retrieves the current preferences for the Amazon Web Services Cost Explorer
-         * service. </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves the current preferences for Pricing Calculator. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetPreferences">AWS
          * API Reference</a></p>
          */
@@ -1022,8 +1022,8 @@ namespace BCMPricingCalculator
         }
 
         /**
-         * <p> Updates the preferences for the Amazon Web Services Cost Explorer service.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Updates the preferences for Pricing Calculator. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdatePreferences">AWS
          * API Reference</a></p>
          */

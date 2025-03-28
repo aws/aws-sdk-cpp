@@ -49,9 +49,8 @@ S3CrtClientConfiguration::S3CrtConfigFactories S3CrtClientConfiguration::S3CrtCo
 
     if (strategyToUse == CrtRetryStrategyType::NO_RETRY)
     {
-      aws_standard_retry_options options {};
-      options.initial_bucket_capacity = 1;
-      return aws_retry_strategy_new_standard(Aws::get_aws_allocator(), &options);
+      aws_no_retry_options options {};
+      return aws_retry_strategy_new_no_retry(Aws::get_aws_allocator(), &options);
     }
 
     return nullptr;

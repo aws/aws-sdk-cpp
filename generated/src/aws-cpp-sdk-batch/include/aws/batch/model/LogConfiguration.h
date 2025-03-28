@@ -51,9 +51,14 @@ namespace Model
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
      * <code>syslog</code>, and <code>splunk</code>.</p>  <p>Jobs that are
      * running on Fargate resources are restricted to the <code>awslogs</code> and
-     * <code>splunk</code> log drivers.</p>  <dl> <dt>awslogs</dt> <dd>
-     * <p>Specifies the Amazon CloudWatch Logs logging driver. For more information,
-     * see <a
+     * <code>splunk</code> log drivers.</p>  <dl> <dt>awsfirelens</dt> <dd>
+     * <p>Specifies the firelens logging driver. For more information on configuring
+     * Firelens, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
+     * Amazon ECS logs to an Amazon Web Services service or Amazon Web Services
+     * Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     * </dd> <dt>awslogs</dt> <dd> <p>Specifies the Amazon CloudWatch Logs logging
+     * driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
      * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon

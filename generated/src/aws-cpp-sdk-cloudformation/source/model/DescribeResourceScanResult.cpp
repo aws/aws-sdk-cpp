@@ -95,6 +95,19 @@ DescribeResourceScanResult& DescribeResourceScanResult::operator =(const Aws::Am
       m_resourcesRead = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourcesReadNode.GetText()).c_str()).c_str());
       m_resourcesReadHasBeenSet = true;
     }
+    XmlNode scanFiltersNode = resultNode.FirstChild("ScanFilters");
+    if(!scanFiltersNode.IsNull())
+    {
+      XmlNode scanFiltersMember = scanFiltersNode.FirstChild("member");
+      m_scanFiltersHasBeenSet = !scanFiltersMember.IsNull();
+      while(!scanFiltersMember.IsNull())
+      {
+        m_scanFilters.push_back(scanFiltersMember);
+        scanFiltersMember = scanFiltersMember.NextNode("member");
+      }
+
+      m_scanFiltersHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

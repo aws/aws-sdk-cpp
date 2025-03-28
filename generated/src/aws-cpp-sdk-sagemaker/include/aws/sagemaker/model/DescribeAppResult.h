@@ -112,6 +112,15 @@ namespace Model
 
     ///@{
     /**
+     * <p> Indicates whether the application is launched in recovery mode. </p>
+     */
+    inline bool GetRecoveryMode() const { return m_recoveryMode; }
+    inline void SetRecoveryMode(bool value) { m_recoveryModeHasBeenSet = true; m_recoveryMode = value; }
+    inline DescribeAppResult& WithRecoveryMode(bool value) { SetRecoveryMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp of the last health check.</p>
      */
     inline const Aws::Utils::DateTime& GetLastHealthCheckTimestamp() const { return m_lastHealthCheckTimestamp; }
@@ -217,6 +226,9 @@ namespace Model
 
     AppStatus m_status{AppStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    bool m_recoveryMode{false};
+    bool m_recoveryModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastHealthCheckTimestamp{};
     bool m_lastHealthCheckTimestampHasBeenSet = false;

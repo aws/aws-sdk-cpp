@@ -281,8 +281,8 @@ namespace Model
      * <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched
      * in the compute environment. For Batch, these take the form of <code>"String1":
      * "String2"</code>, where <code>String1</code> is the tag key and
-     * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch
-     * Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
+     * <code>String2</code> is the tag value (for example, <code>{ "Name": "Batch
+     * Instance - C4OnDemand" }</code>). This is helpful for recognizing your Batch
      * instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p> <p>When updating a compute
      * environment, changing this setting requires an infrastructure update of the

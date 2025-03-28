@@ -57,6 +57,11 @@ TaskContainerDetails& TaskContainerDetails::operator =(JsonView jsonValue)
     m_essential = jsonValue.GetBool("essential");
     m_essentialHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("firelensConfiguration"))
+  {
+    m_firelensConfiguration = jsonValue.GetObject("firelensConfiguration");
+    m_firelensConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
@@ -200,6 +205,12 @@ JsonValue TaskContainerDetails::Jsonize() const
   if(m_essentialHasBeenSet)
   {
    payload.WithBool("essential", m_essential);
+
+  }
+
+  if(m_firelensConfigurationHasBeenSet)
+  {
+   payload.WithObject("firelensConfiguration", m_firelensConfiguration.Jsonize());
 
   }
 

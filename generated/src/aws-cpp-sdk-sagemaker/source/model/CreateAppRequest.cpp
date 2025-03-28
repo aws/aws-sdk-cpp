@@ -62,6 +62,12 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   }
 
+  if(m_recoveryModeHasBeenSet)
+  {
+   payload.WithBool("RecoveryMode", m_recoveryMode);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

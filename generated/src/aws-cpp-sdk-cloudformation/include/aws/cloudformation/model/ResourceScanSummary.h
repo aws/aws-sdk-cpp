@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ResourceScanStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/ScanType.h>
 #include <utility>
 
 namespace Aws
@@ -56,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the resource scan.</p> <dl> <dt> INPROGRESS </dt> <dd> <p>The
+     * <p>Status of the resource scan.</p> <dl> <dt> IN_PROGRESS </dt> <dd> <p>The
      * resource scan is still in progress.</p> </dd> <dt> COMPLETE </dt> <dd> <p>The
      * resource scan is complete.</p> </dd> <dt> EXPIRED </dt> <dd> <p>The resource
      * scan has expired.</p> </dd> <dt> FAILED </dt> <dd> <p>The resource scan has
@@ -114,6 +115,16 @@ namespace Model
     inline void SetPercentageCompleted(double value) { m_percentageCompletedHasBeenSet = true; m_percentageCompleted = value; }
     inline ResourceScanSummary& WithPercentageCompleted(double value) { SetPercentageCompleted(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scan type that has been completed.</p>
+     */
+    inline ScanType GetScanType() const { return m_scanType; }
+    inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
+    inline void SetScanType(ScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+    inline ResourceScanSummary& WithScanType(ScanType value) { SetScanType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_resourceScanId;
@@ -133,6 +144,9 @@ namespace Model
 
     double m_percentageCompleted{0.0};
     bool m_percentageCompletedHasBeenSet = false;
+
+    ScanType m_scanType{ScanType::NOT_SET};
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

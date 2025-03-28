@@ -60,6 +60,19 @@ namespace Model
     UpdatePreferencesRequest& WithMemberAccountRateTypeSelections(MemberAccountRateTypeSelectionsT&& value) { SetMemberAccountRateTypeSelections(std::forward<MemberAccountRateTypeSelectionsT>(value)); return *this;}
     inline UpdatePreferencesRequest& AddMemberAccountRateTypeSelections(RateType value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The updated preferred rate types for a standalone account. </p>
+     */
+    inline const Aws::Vector<RateType>& GetStandaloneAccountRateTypeSelections() const { return m_standaloneAccountRateTypeSelections; }
+    inline bool StandaloneAccountRateTypeSelectionsHasBeenSet() const { return m_standaloneAccountRateTypeSelectionsHasBeenSet; }
+    template<typename StandaloneAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    void SetStandaloneAccountRateTypeSelections(StandaloneAccountRateTypeSelectionsT&& value) { m_standaloneAccountRateTypeSelectionsHasBeenSet = true; m_standaloneAccountRateTypeSelections = std::forward<StandaloneAccountRateTypeSelectionsT>(value); }
+    template<typename StandaloneAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    UpdatePreferencesRequest& WithStandaloneAccountRateTypeSelections(StandaloneAccountRateTypeSelectionsT&& value) { SetStandaloneAccountRateTypeSelections(std::forward<StandaloneAccountRateTypeSelectionsT>(value)); return *this;}
+    inline UpdatePreferencesRequest& AddStandaloneAccountRateTypeSelections(RateType value) { m_standaloneAccountRateTypeSelectionsHasBeenSet = true; m_standaloneAccountRateTypeSelections.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::Vector<RateType> m_managementAccountRateTypeSelections;
@@ -67,6 +80,9 @@ namespace Model
 
     Aws::Vector<RateType> m_memberAccountRateTypeSelections;
     bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
+
+    Aws::Vector<RateType> m_standaloneAccountRateTypeSelections;
+    bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;
   };
 
 } // namespace Model

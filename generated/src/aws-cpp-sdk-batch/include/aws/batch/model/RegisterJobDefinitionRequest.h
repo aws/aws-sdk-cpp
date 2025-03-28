@@ -102,7 +102,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This only affects jobs in job queues with a fair share policy. Jobs with a
+     * This only affects jobs in job queues with a fair-share policy. Jobs with a
      * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
