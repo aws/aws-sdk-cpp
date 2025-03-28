@@ -48,6 +48,15 @@ TableFieldOptions& TableFieldOptions::operator =(JsonView jsonValue)
     m_pinnedFieldOptions = jsonValue.GetObject("PinnedFieldOptions");
     m_pinnedFieldOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransposedTableOptions"))
+  {
+    Aws::Utils::Array<JsonView> transposedTableOptionsJsonList = jsonValue.GetArray("TransposedTableOptions");
+    for(unsigned transposedTableOptionsIndex = 0; transposedTableOptionsIndex < transposedTableOptionsJsonList.GetLength(); ++transposedTableOptionsIndex)
+    {
+      m_transposedTableOptions.push_back(transposedTableOptionsJsonList[transposedTableOptionsIndex].AsObject());
+    }
+    m_transposedTableOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +89,17 @@ JsonValue TableFieldOptions::Jsonize() const
   if(m_pinnedFieldOptionsHasBeenSet)
   {
    payload.WithObject("PinnedFieldOptions", m_pinnedFieldOptions.Jsonize());
+
+  }
+
+  if(m_transposedTableOptionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> transposedTableOptionsJsonList(m_transposedTableOptions.size());
+   for(unsigned transposedTableOptionsIndex = 0; transposedTableOptionsIndex < transposedTableOptionsJsonList.GetLength(); ++transposedTableOptionsIndex)
+   {
+     transposedTableOptionsJsonList[transposedTableOptionsIndex].AsObject(m_transposedTableOptions[transposedTableOptionsIndex].Jsonize());
+   }
+   payload.WithArray("TransposedTableOptions", std::move(transposedTableOptionsJsonList));
 
   }
 

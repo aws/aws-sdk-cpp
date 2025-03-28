@@ -44,6 +44,11 @@ ProjectCache& ProjectCache::operator =(JsonView jsonValue)
     }
     m_modesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cacheNamespace"))
+  {
+    m_cacheNamespace = jsonValue.GetString("cacheNamespace");
+    m_cacheNamespaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +75,12 @@ JsonValue ProjectCache::Jsonize() const
      modesJsonList[modesIndex].AsString(CacheModeMapper::GetNameForCacheMode(m_modes[modesIndex]));
    }
    payload.WithArray("modes", std::move(modesJsonList));
+
+  }
+
+  if(m_cacheNamespaceHasBeenSet)
+  {
+   payload.WithString("cacheNamespace", m_cacheNamespace);
 
   }
 

@@ -7,6 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/DayOfTheWeek.h>
+#include <aws/quicksight/model/QBusinessInsightsStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +61,31 @@ namespace Model
     inline void SetWeekStart(DayOfTheWeek value) { m_weekStartHasBeenSet = true; m_weekStart = value; }
     inline AssetOptions& WithWeekStart(DayOfTheWeek value) { SetWeekStart(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether insight summaries from Amazon Q Business are allowed in
+     * Dashboard Q&amp;A.</p>
+     */
+    inline QBusinessInsightsStatus GetQBusinessInsightsStatus() const { return m_qBusinessInsightsStatus; }
+    inline bool QBusinessInsightsStatusHasBeenSet() const { return m_qBusinessInsightsStatusHasBeenSet; }
+    inline void SetQBusinessInsightsStatus(QBusinessInsightsStatus value) { m_qBusinessInsightsStatusHasBeenSet = true; m_qBusinessInsightsStatus = value; }
+    inline AssetOptions& WithQBusinessInsightsStatus(QBusinessInsightsStatus value) { SetQBusinessInsightsStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExcludedDataSetArns() const { return m_excludedDataSetArns; }
+    inline bool ExcludedDataSetArnsHasBeenSet() const { return m_excludedDataSetArnsHasBeenSet; }
+    template<typename ExcludedDataSetArnsT = Aws::Vector<Aws::String>>
+    void SetExcludedDataSetArns(ExcludedDataSetArnsT&& value) { m_excludedDataSetArnsHasBeenSet = true; m_excludedDataSetArns = std::forward<ExcludedDataSetArnsT>(value); }
+    template<typename ExcludedDataSetArnsT = Aws::Vector<Aws::String>>
+    AssetOptions& WithExcludedDataSetArns(ExcludedDataSetArnsT&& value) { SetExcludedDataSetArns(std::forward<ExcludedDataSetArnsT>(value)); return *this;}
+    template<typename ExcludedDataSetArnsT = Aws::String>
+    AssetOptions& AddExcludedDataSetArns(ExcludedDataSetArnsT&& value) { m_excludedDataSetArnsHasBeenSet = true; m_excludedDataSetArns.emplace_back(std::forward<ExcludedDataSetArnsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_timezone;
@@ -66,6 +93,12 @@ namespace Model
 
     DayOfTheWeek m_weekStart{DayOfTheWeek::NOT_SET};
     bool m_weekStartHasBeenSet = false;
+
+    QBusinessInsightsStatus m_qBusinessInsightsStatus{QBusinessInsightsStatus::NOT_SET};
+    bool m_qBusinessInsightsStatusHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_excludedDataSetArns;
+    bool m_excludedDataSetArnsHasBeenSet = false;
   };
 
 } // namespace Model

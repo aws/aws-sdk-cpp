@@ -9,6 +9,7 @@
 #include <aws/payment-cryptography/model/KeyAttributes.h>
 #include <aws/payment-cryptography/model/KeyCheckValueAlgorithm.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/payment-cryptography/model/DeriveKeyUsage.h>
 #include <aws/payment-cryptography/model/Tag.h>
 #include <utility>
 
@@ -113,6 +114,17 @@ namespace Model
     template<typename TagsT = Tag>
     CreateKeyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of
+     * the TR-31 spec.</p>
+     */
+    inline DeriveKeyUsage GetDeriveKeyUsage() const { return m_deriveKeyUsage; }
+    inline bool DeriveKeyUsageHasBeenSet() const { return m_deriveKeyUsageHasBeenSet; }
+    inline void SetDeriveKeyUsage(DeriveKeyUsage value) { m_deriveKeyUsageHasBeenSet = true; m_deriveKeyUsage = value; }
+    inline CreateKeyRequest& WithDeriveKeyUsage(DeriveKeyUsage value) { SetDeriveKeyUsage(value); return *this;}
+    ///@}
   private:
 
     KeyAttributes m_keyAttributes;
@@ -129,6 +141,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
+    bool m_deriveKeyUsageHasBeenSet = false;
   };
 
 } // namespace Model

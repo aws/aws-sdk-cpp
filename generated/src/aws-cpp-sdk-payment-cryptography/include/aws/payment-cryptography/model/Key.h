@@ -11,6 +11,7 @@
 #include <aws/payment-cryptography/model/KeyState.h>
 #include <aws/payment-cryptography/model/KeyOrigin.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/payment-cryptography/model/DeriveKeyUsage.h>
 #include <utility>
 
 namespace Aws
@@ -208,6 +209,17 @@ namespace Model
     template<typename DeleteTimestampT = Aws::Utils::DateTime>
     Key& WithDeleteTimestamp(DeleteTimestampT&& value) { SetDeleteTimestamp(std::forward<DeleteTimestampT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of
+     * the TR-31 spec.</p>
+     */
+    inline DeriveKeyUsage GetDeriveKeyUsage() const { return m_deriveKeyUsage; }
+    inline bool DeriveKeyUsageHasBeenSet() const { return m_deriveKeyUsageHasBeenSet; }
+    inline void SetDeriveKeyUsage(DeriveKeyUsage value) { m_deriveKeyUsageHasBeenSet = true; m_deriveKeyUsage = value; }
+    inline Key& WithDeriveKeyUsage(DeriveKeyUsage value) { SetDeriveKeyUsage(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyArn;
@@ -248,6 +260,9 @@ namespace Model
 
     Aws::Utils::DateTime m_deleteTimestamp{};
     bool m_deleteTimestampHasBeenSet = false;
+
+    DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
+    bool m_deriveKeyUsageHasBeenSet = false;
   };
 
 } // namespace Model

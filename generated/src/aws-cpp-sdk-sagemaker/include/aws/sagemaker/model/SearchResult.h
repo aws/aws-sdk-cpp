@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/TotalHits.h>
 #include <aws/sagemaker/model/SearchRecord.h>
 #include <utility>
 
@@ -61,6 +62,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The total number of matching results.</p>
+     */
+    inline const TotalHits& GetTotalHits() const { return m_totalHits; }
+    template<typename TotalHitsT = TotalHits>
+    void SetTotalHits(TotalHitsT&& value) { m_totalHitsHasBeenSet = true; m_totalHits = std::forward<TotalHitsT>(value); }
+    template<typename TotalHitsT = TotalHits>
+    SearchResult& WithTotalHits(TotalHitsT&& value) { SetTotalHits(std::forward<TotalHitsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -75,6 +87,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    TotalHits m_totalHits;
+    bool m_totalHitsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

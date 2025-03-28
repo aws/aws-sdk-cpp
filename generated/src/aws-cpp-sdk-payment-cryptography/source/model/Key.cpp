@@ -90,6 +90,11 @@ Key& Key::operator =(JsonView jsonValue)
     m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
     m_deleteTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DeriveKeyUsage"))
+  {
+    m_deriveKeyUsage = DeriveKeyUsageMapper::GetDeriveKeyUsageForName(jsonValue.GetString("DeriveKeyUsage"));
+    m_deriveKeyUsageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -165,6 +170,11 @@ JsonValue Key::Jsonize() const
   if(m_deleteTimestampHasBeenSet)
   {
    payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_deriveKeyUsageHasBeenSet)
+  {
+   payload.WithString("DeriveKeyUsage", DeriveKeyUsageMapper::GetNameForDeriveKeyUsage(m_deriveKeyUsage));
   }
 
   return payload;

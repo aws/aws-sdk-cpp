@@ -93,6 +93,24 @@ namespace Model
     template<typename VolumeKmsKeyIdT = Aws::String>
     TransformResources& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions.</p> <dl> <dt>al2-ami-sagemaker-batch-gpu-470</dt>
+     * <dd> <ul> <li> <p>Accelerator: GPU</p> </li> <li> <p>NVIDIA driver version:
+     * 470</p> </li> </ul> </dd> <dt>al2-ami-sagemaker-batch-gpu-535</dt> <dd> <ul>
+     * <li> <p>Accelerator: GPU</p> </li> <li> <p>NVIDIA driver version: 535</p> </li>
+     * </ul> </dd> </dl>
+     */
+    inline const Aws::String& GetTransformAmiVersion() const { return m_transformAmiVersion; }
+    inline bool TransformAmiVersionHasBeenSet() const { return m_transformAmiVersionHasBeenSet; }
+    template<typename TransformAmiVersionT = Aws::String>
+    void SetTransformAmiVersion(TransformAmiVersionT&& value) { m_transformAmiVersionHasBeenSet = true; m_transformAmiVersion = std::forward<TransformAmiVersionT>(value); }
+    template<typename TransformAmiVersionT = Aws::String>
+    TransformResources& WithTransformAmiVersion(TransformAmiVersionT&& value) { SetTransformAmiVersion(std::forward<TransformAmiVersionT>(value)); return *this;}
+    ///@}
   private:
 
     TransformInstanceType m_instanceType{TransformInstanceType::NOT_SET};
@@ -103,6 +121,9 @@ namespace Model
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_transformAmiVersion;
+    bool m_transformAmiVersionHasBeenSet = false;
   };
 
 } // namespace Model

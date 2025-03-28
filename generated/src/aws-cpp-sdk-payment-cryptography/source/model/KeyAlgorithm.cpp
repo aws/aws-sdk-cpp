@@ -30,6 +30,7 @@ namespace Aws
         static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
         static const int ECC_NIST_P256_HASH = HashingUtils::HashString("ECC_NIST_P256");
         static const int ECC_NIST_P384_HASH = HashingUtils::HashString("ECC_NIST_P384");
+        static const int ECC_NIST_P521_HASH = HashingUtils::HashString("ECC_NIST_P521");
 
 
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return KeyAlgorithm::ECC_NIST_P384;
           }
+          else if (hashCode == ECC_NIST_P521_HASH)
+          {
+            return KeyAlgorithm::ECC_NIST_P521;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "ECC_NIST_P256";
           case KeyAlgorithm::ECC_NIST_P384:
             return "ECC_NIST_P384";
+          case KeyAlgorithm::ECC_NIST_P521:
+            return "ECC_NIST_P521";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

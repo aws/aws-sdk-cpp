@@ -50,6 +50,11 @@ Aws::String CreateKeyRequest::SerializePayload() const
 
   }
 
+  if(m_deriveKeyUsageHasBeenSet)
+  {
+   payload.WithString("DeriveKeyUsage", DeriveKeyUsageMapper::GetNameForDeriveKeyUsage(m_deriveKeyUsage));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -39,6 +39,11 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TotalHits"))
+  {
+    m_totalHits = jsonValue.GetObject("TotalHits");
+    m_totalHitsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

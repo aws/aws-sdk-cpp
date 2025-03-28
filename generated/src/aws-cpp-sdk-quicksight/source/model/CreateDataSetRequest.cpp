@@ -156,6 +156,11 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   }
 
+  if(m_useAsHasBeenSet)
+  {
+   payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
+  }
+
   return payload.View().WriteReadable();
 }
 

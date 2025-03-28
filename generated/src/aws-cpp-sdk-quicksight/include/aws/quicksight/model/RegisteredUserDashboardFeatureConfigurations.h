@@ -8,6 +8,10 @@
 #include <aws/quicksight/model/StatePersistenceConfigurations.h>
 #include <aws/quicksight/model/SharedViewConfigurations.h>
 #include <aws/quicksight/model/BookmarksConfigurations.h>
+#include <aws/quicksight/model/AmazonQInQuickSightDashboardConfigurations.h>
+#include <aws/quicksight/model/SchedulesConfigurations.h>
+#include <aws/quicksight/model/RecentSnapshotsConfigurations.h>
+#include <aws/quicksight/model/ThresholdAlertsConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +80,56 @@ namespace Model
     template<typename BookmarksT = BookmarksConfigurations>
     RegisteredUserDashboardFeatureConfigurations& WithBookmarks(BookmarksT&& value) { SetBookmarks(std::forward<BookmarksT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+     */
+    inline const AmazonQInQuickSightDashboardConfigurations& GetAmazonQInQuickSight() const { return m_amazonQInQuickSight; }
+    inline bool AmazonQInQuickSightHasBeenSet() const { return m_amazonQInQuickSightHasBeenSet; }
+    template<typename AmazonQInQuickSightT = AmazonQInQuickSightDashboardConfigurations>
+    void SetAmazonQInQuickSight(AmazonQInQuickSightT&& value) { m_amazonQInQuickSightHasBeenSet = true; m_amazonQInQuickSight = std::forward<AmazonQInQuickSightT>(value); }
+    template<typename AmazonQInQuickSightT = AmazonQInQuickSightDashboardConfigurations>
+    RegisteredUserDashboardFeatureConfigurations& WithAmazonQInQuickSight(AmazonQInQuickSightT&& value) { SetAmazonQInQuickSight(std::forward<AmazonQInQuickSightT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+     */
+    inline const SchedulesConfigurations& GetSchedules() const { return m_schedules; }
+    inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
+    template<typename SchedulesT = SchedulesConfigurations>
+    void SetSchedules(SchedulesT&& value) { m_schedulesHasBeenSet = true; m_schedules = std::forward<SchedulesT>(value); }
+    template<typename SchedulesT = SchedulesConfigurations>
+    RegisteredUserDashboardFeatureConfigurations& WithSchedules(SchedulesT&& value) { SetSchedules(std::forward<SchedulesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The recent snapshots configuration for an Amazon QuickSight embedded
+     * dashboard</p>
+     */
+    inline const RecentSnapshotsConfigurations& GetRecentSnapshots() const { return m_recentSnapshots; }
+    inline bool RecentSnapshotsHasBeenSet() const { return m_recentSnapshotsHasBeenSet; }
+    template<typename RecentSnapshotsT = RecentSnapshotsConfigurations>
+    void SetRecentSnapshots(RecentSnapshotsT&& value) { m_recentSnapshotsHasBeenSet = true; m_recentSnapshots = std::forward<RecentSnapshotsT>(value); }
+    template<typename RecentSnapshotsT = RecentSnapshotsConfigurations>
+    RegisteredUserDashboardFeatureConfigurations& WithRecentSnapshots(RecentSnapshotsT&& value) { SetRecentSnapshots(std::forward<RecentSnapshotsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The threshold alerts configuration for an Amazon QuickSight embedded
+     * dashboard.</p>
+     */
+    inline const ThresholdAlertsConfigurations& GetThresholdAlerts() const { return m_thresholdAlerts; }
+    inline bool ThresholdAlertsHasBeenSet() const { return m_thresholdAlertsHasBeenSet; }
+    template<typename ThresholdAlertsT = ThresholdAlertsConfigurations>
+    void SetThresholdAlerts(ThresholdAlertsT&& value) { m_thresholdAlertsHasBeenSet = true; m_thresholdAlerts = std::forward<ThresholdAlertsT>(value); }
+    template<typename ThresholdAlertsT = ThresholdAlertsConfigurations>
+    RegisteredUserDashboardFeatureConfigurations& WithThresholdAlerts(ThresholdAlertsT&& value) { SetThresholdAlerts(std::forward<ThresholdAlertsT>(value)); return *this;}
+    ///@}
   private:
 
     StatePersistenceConfigurations m_statePersistence;
@@ -86,6 +140,18 @@ namespace Model
 
     BookmarksConfigurations m_bookmarks;
     bool m_bookmarksHasBeenSet = false;
+
+    AmazonQInQuickSightDashboardConfigurations m_amazonQInQuickSight;
+    bool m_amazonQInQuickSightHasBeenSet = false;
+
+    SchedulesConfigurations m_schedules;
+    bool m_schedulesHasBeenSet = false;
+
+    RecentSnapshotsConfigurations m_recentSnapshots;
+    bool m_recentSnapshotsHasBeenSet = false;
+
+    ThresholdAlertsConfigurations m_thresholdAlerts;
+    bool m_thresholdAlertsHasBeenSet = false;
   };
 
 } // namespace Model

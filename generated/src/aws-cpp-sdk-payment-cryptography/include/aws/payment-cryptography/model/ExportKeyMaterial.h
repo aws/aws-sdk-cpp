@@ -8,6 +8,7 @@
 #include <aws/payment-cryptography/model/ExportTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ExportTr34KeyBlock.h>
 #include <aws/payment-cryptography/model/ExportKeyCryptogram.h>
+#include <aws/payment-cryptography/model/ExportDiffieHellmanTr31KeyBlock.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,19 @@ namespace Model
     template<typename KeyCryptogramT = ExportKeyCryptogram>
     ExportKeyMaterial& WithKeyCryptogram(KeyCryptogramT&& value) { SetKeyCryptogram(std::forward<KeyCryptogramT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Parameter information for key material export using the asymmetric ECDH key
+     * exchange method.</p>
+     */
+    inline const ExportDiffieHellmanTr31KeyBlock& GetDiffieHellmanTr31KeyBlock() const { return m_diffieHellmanTr31KeyBlock; }
+    inline bool DiffieHellmanTr31KeyBlockHasBeenSet() const { return m_diffieHellmanTr31KeyBlockHasBeenSet; }
+    template<typename DiffieHellmanTr31KeyBlockT = ExportDiffieHellmanTr31KeyBlock>
+    void SetDiffieHellmanTr31KeyBlock(DiffieHellmanTr31KeyBlockT&& value) { m_diffieHellmanTr31KeyBlockHasBeenSet = true; m_diffieHellmanTr31KeyBlock = std::forward<DiffieHellmanTr31KeyBlockT>(value); }
+    template<typename DiffieHellmanTr31KeyBlockT = ExportDiffieHellmanTr31KeyBlock>
+    ExportKeyMaterial& WithDiffieHellmanTr31KeyBlock(DiffieHellmanTr31KeyBlockT&& value) { SetDiffieHellmanTr31KeyBlock(std::forward<DiffieHellmanTr31KeyBlockT>(value)); return *this;}
+    ///@}
   private:
 
     ExportTr31KeyBlock m_tr31KeyBlock;
@@ -89,6 +103,9 @@ namespace Model
 
     ExportKeyCryptogram m_keyCryptogram;
     bool m_keyCryptogramHasBeenSet = false;
+
+    ExportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+    bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
   };
 
 } // namespace Model

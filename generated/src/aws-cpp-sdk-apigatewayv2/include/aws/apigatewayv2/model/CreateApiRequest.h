@@ -8,6 +8,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigatewayv2/model/Cors.h>
+#include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -119,6 +120,16 @@ namespace Model
     inline bool DisableExecuteApiEndpointHasBeenSet() const { return m_disableExecuteApiEndpointHasBeenSet; }
     inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpointHasBeenSet = true; m_disableExecuteApiEndpoint = value; }
     inline CreateApiRequest& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address types that can invoke the API.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateApiRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -238,6 +249,9 @@ namespace Model
 
     bool m_disableExecuteApiEndpoint{false};
     bool m_disableExecuteApiEndpointHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

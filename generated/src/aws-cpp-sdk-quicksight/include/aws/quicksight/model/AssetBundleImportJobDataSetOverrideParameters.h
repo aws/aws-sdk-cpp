@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/DataSetRefreshProperties.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,16 @@ namespace Model
     template<typename NameT = Aws::String>
     AssetBundleImportJobDataSetOverrideParameters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const DataSetRefreshProperties& GetDataSetRefreshProperties() const { return m_dataSetRefreshProperties; }
+    inline bool DataSetRefreshPropertiesHasBeenSet() const { return m_dataSetRefreshPropertiesHasBeenSet; }
+    template<typename DataSetRefreshPropertiesT = DataSetRefreshProperties>
+    void SetDataSetRefreshProperties(DataSetRefreshPropertiesT&& value) { m_dataSetRefreshPropertiesHasBeenSet = true; m_dataSetRefreshProperties = std::forward<DataSetRefreshPropertiesT>(value); }
+    template<typename DataSetRefreshPropertiesT = DataSetRefreshProperties>
+    AssetBundleImportJobDataSetOverrideParameters& WithDataSetRefreshProperties(DataSetRefreshPropertiesT&& value) { SetDataSetRefreshProperties(std::forward<DataSetRefreshPropertiesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dataSetId;
@@ -68,6 +79,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    DataSetRefreshProperties m_dataSetRefreshProperties;
+    bool m_dataSetRefreshPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

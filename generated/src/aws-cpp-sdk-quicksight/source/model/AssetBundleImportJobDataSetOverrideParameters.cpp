@@ -35,6 +35,11 @@ AssetBundleImportJobDataSetOverrideParameters& AssetBundleImportJobDataSetOverri
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DataSetRefreshProperties"))
+  {
+    m_dataSetRefreshProperties = jsonValue.GetObject("DataSetRefreshProperties");
+    m_dataSetRefreshPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue AssetBundleImportJobDataSetOverrideParameters::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_dataSetRefreshPropertiesHasBeenSet)
+  {
+   payload.WithObject("DataSetRefreshProperties", m_dataSetRefreshProperties.Jsonize());
 
   }
 

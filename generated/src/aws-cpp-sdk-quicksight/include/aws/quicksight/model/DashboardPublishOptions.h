@@ -15,6 +15,7 @@
 #include <aws/quicksight/model/DataPointDrillUpDownOption.h>
 #include <aws/quicksight/model/DataPointMenuLabelOption.h>
 #include <aws/quicksight/model/DataPointTooltipOption.h>
+#include <aws/quicksight/model/DataQAEnabledOption.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,22 @@ namespace Model
     template<typename DataPointTooltipOptionT = DataPointTooltipOption>
     DashboardPublishOptions& WithDataPointTooltipOption(DataPointTooltipOptionT&& value) { SetDataPointTooltipOption(std::forward<DataPointTooltipOptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is
+     * linked, Dashboard Q&amp;A uses the data values that are rendered on the
+     * dashboard. End users can use Dashboard Q&amp;A to ask for different slices of
+     * the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is
+     * used.</p>
+     */
+    inline const DataQAEnabledOption& GetDataQAEnabledOption() const { return m_dataQAEnabledOption; }
+    inline bool DataQAEnabledOptionHasBeenSet() const { return m_dataQAEnabledOptionHasBeenSet; }
+    template<typename DataQAEnabledOptionT = DataQAEnabledOption>
+    void SetDataQAEnabledOption(DataQAEnabledOptionT&& value) { m_dataQAEnabledOptionHasBeenSet = true; m_dataQAEnabledOption = std::forward<DataQAEnabledOptionT>(value); }
+    template<typename DataQAEnabledOptionT = DataQAEnabledOption>
+    DashboardPublishOptions& WithDataQAEnabledOption(DataQAEnabledOptionT&& value) { SetDataQAEnabledOption(std::forward<DataQAEnabledOptionT>(value)); return *this;}
+    ///@}
   private:
 
     AdHocFilteringOption m_adHocFilteringOption;
@@ -196,6 +213,9 @@ namespace Model
 
     DataPointTooltipOption m_dataPointTooltipOption;
     bool m_dataPointTooltipOptionHasBeenSet = false;
+
+    DataQAEnabledOption m_dataQAEnabledOption;
+    bool m_dataQAEnabledOptionHasBeenSet = false;
   };
 
 } // namespace Model

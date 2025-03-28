@@ -652,16 +652,13 @@ namespace PaymentCryptography
          * <i>root public key certificate</i>, used to sign other public key certificates,
          * or a <i>trusted public key certificate</i> under an already established root
          * public key certificate.</p> <p> <b>To import a public root key certificate</b>
-         * </p> <p>You can also import a <i>root public key certificate</i>, used to sign
-         * other public key certificates, or a <i>trusted public key certificate</i> under
-         * an already established root public key certificate.</p> <p> <b>To import a
-         * public root key certificate</b> </p> <p>Using this operation, you can import the
-         * public component (in PEM cerificate format) of your private root key. You can
-         * use the imported public root key certificate for digital signatures, for example
-         * signing wrapping key or signing key in TR-34, within your Amazon Web Services
-         * Payment Cryptography account.</p> <p>Set the following parameters:</p> <ul> <li>
-         * <p> <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> </p> </li>
-         * <li> <p> <code>KeyClass</code>: <code>PUBLIC_KEY</code> </p> </li> <li> <p>
+         * </p> <p>Using this operation, you can import the public component (in PEM
+         * cerificate format) of your private root key. You can use the imported public
+         * root key certificate for digital signatures, for example signing wrapping key or
+         * signing key in TR-34, within your Amazon Web Services Payment Cryptography
+         * account.</p> <p>Set the following parameters:</p> <ul> <li> <p>
+         * <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> </p> </li> <li>
+         * <p> <code>KeyClass</code>: <code>PUBLIC_KEY</code> </p> </li> <li> <p>
          * <code>KeyModesOfUse</code>: <code>Verify</code> </p> </li> <li> <p>
          * <code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code>
          * </p> </li> <li> <p> <code>PublicKeyCertificate</code>: The public key

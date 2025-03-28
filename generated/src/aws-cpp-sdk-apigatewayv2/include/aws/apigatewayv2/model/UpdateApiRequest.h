@@ -8,6 +8,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigatewayv2/model/Cors.h>
+#include <aws/apigatewayv2/model/IpAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -133,6 +134,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address types that can invoke your API or domain name.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline UpdateApiRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the API.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -222,6 +233,9 @@ namespace Model
 
     bool m_disableExecuteApiEndpoint{false};
     bool m_disableExecuteApiEndpointHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

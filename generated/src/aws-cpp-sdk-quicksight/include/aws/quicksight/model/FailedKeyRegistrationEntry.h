@@ -80,7 +80,7 @@ namespace Model
      * the error was caused by user error. If the value of this property is
      * <code>False</code>, the error occurred on the backend. If your job continues
      * fail and with a <code>False</code> <code>SenderFault</code> value, contact
-     * Amazon Web Services Support.</p>
+     * Amazon Web ServicesSupport.</p>
      */
     inline bool GetSenderFault() const { return m_senderFault; }
     inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }

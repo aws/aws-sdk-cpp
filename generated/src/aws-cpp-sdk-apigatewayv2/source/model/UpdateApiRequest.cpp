@@ -52,6 +52,11 @@ Aws::String UpdateApiRequest::SerializePayload() const
 
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);

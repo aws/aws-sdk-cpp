@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/TablePinnedFieldOptions.h>
 #include <aws/quicksight/model/TableFieldOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/TransposedTableOption.h>
 #include <utility>
 
 namespace Aws
@@ -80,6 +81,20 @@ namespace Model
     template<typename PinnedFieldOptionsT = TablePinnedFieldOptions>
     TableFieldOptions& WithPinnedFieldOptions(PinnedFieldOptionsT&& value) { SetPinnedFieldOptions(std::forward<PinnedFieldOptionsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The <code>TableOptions</code> of a transposed table.</p>
+     */
+    inline const Aws::Vector<TransposedTableOption>& GetTransposedTableOptions() const { return m_transposedTableOptions; }
+    inline bool TransposedTableOptionsHasBeenSet() const { return m_transposedTableOptionsHasBeenSet; }
+    template<typename TransposedTableOptionsT = Aws::Vector<TransposedTableOption>>
+    void SetTransposedTableOptions(TransposedTableOptionsT&& value) { m_transposedTableOptionsHasBeenSet = true; m_transposedTableOptions = std::forward<TransposedTableOptionsT>(value); }
+    template<typename TransposedTableOptionsT = Aws::Vector<TransposedTableOption>>
+    TableFieldOptions& WithTransposedTableOptions(TransposedTableOptionsT&& value) { SetTransposedTableOptions(std::forward<TransposedTableOptionsT>(value)); return *this;}
+    template<typename TransposedTableOptionsT = TransposedTableOption>
+    TableFieldOptions& AddTransposedTableOptions(TransposedTableOptionsT&& value) { m_transposedTableOptionsHasBeenSet = true; m_transposedTableOptions.emplace_back(std::forward<TransposedTableOptionsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<TableFieldOption> m_selectedFieldOptions;
@@ -90,6 +105,9 @@ namespace Model
 
     TablePinnedFieldOptions m_pinnedFieldOptions;
     bool m_pinnedFieldOptionsHasBeenSet = false;
+
+    Aws::Vector<TransposedTableOption> m_transposedTableOptions;
+    bool m_transposedTableOptionsHasBeenSet = false;
   };
 
 } // namespace Model

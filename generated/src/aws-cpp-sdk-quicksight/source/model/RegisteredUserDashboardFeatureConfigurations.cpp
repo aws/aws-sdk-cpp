@@ -40,6 +40,26 @@ RegisteredUserDashboardFeatureConfigurations& RegisteredUserDashboardFeatureConf
     m_bookmarks = jsonValue.GetObject("Bookmarks");
     m_bookmarksHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AmazonQInQuickSight"))
+  {
+    m_amazonQInQuickSight = jsonValue.GetObject("AmazonQInQuickSight");
+    m_amazonQInQuickSightHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Schedules"))
+  {
+    m_schedules = jsonValue.GetObject("Schedules");
+    m_schedulesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RecentSnapshots"))
+  {
+    m_recentSnapshots = jsonValue.GetObject("RecentSnapshots");
+    m_recentSnapshotsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ThresholdAlerts"))
+  {
+    m_thresholdAlerts = jsonValue.GetObject("ThresholdAlerts");
+    m_thresholdAlertsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +82,30 @@ JsonValue RegisteredUserDashboardFeatureConfigurations::Jsonize() const
   if(m_bookmarksHasBeenSet)
   {
    payload.WithObject("Bookmarks", m_bookmarks.Jsonize());
+
+  }
+
+  if(m_amazonQInQuickSightHasBeenSet)
+  {
+   payload.WithObject("AmazonQInQuickSight", m_amazonQInQuickSight.Jsonize());
+
+  }
+
+  if(m_schedulesHasBeenSet)
+  {
+   payload.WithObject("Schedules", m_schedules.Jsonize());
+
+  }
+
+  if(m_recentSnapshotsHasBeenSet)
+  {
+   payload.WithObject("RecentSnapshots", m_recentSnapshots.Jsonize());
+
+  }
+
+  if(m_thresholdAlertsHasBeenSet)
+  {
+   payload.WithObject("ThresholdAlerts", m_thresholdAlerts.Jsonize());
 
   }
 

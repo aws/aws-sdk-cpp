@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/RefreshConfiguration.h>
+#include <aws/quicksight/model/RefreshFailureConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,25 @@ namespace Model
     template<typename RefreshConfigurationT = RefreshConfiguration>
     DataSetRefreshProperties& WithRefreshConfiguration(RefreshConfigurationT&& value) { SetRefreshConfiguration(std::forward<RefreshConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The failure configuration for a dataset.</p>
+     */
+    inline const RefreshFailureConfiguration& GetFailureConfiguration() const { return m_failureConfiguration; }
+    inline bool FailureConfigurationHasBeenSet() const { return m_failureConfigurationHasBeenSet; }
+    template<typename FailureConfigurationT = RefreshFailureConfiguration>
+    void SetFailureConfiguration(FailureConfigurationT&& value) { m_failureConfigurationHasBeenSet = true; m_failureConfiguration = std::forward<FailureConfigurationT>(value); }
+    template<typename FailureConfigurationT = RefreshFailureConfiguration>
+    DataSetRefreshProperties& WithFailureConfiguration(FailureConfigurationT&& value) { SetFailureConfiguration(std::forward<FailureConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     RefreshConfiguration m_refreshConfiguration;
     bool m_refreshConfigurationHasBeenSet = false;
+
+    RefreshFailureConfiguration m_failureConfiguration;
+    bool m_failureConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

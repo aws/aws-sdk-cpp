@@ -79,6 +79,11 @@ Api& Api::operator =(JsonView jsonValue)
     }
     m_importInfoHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -186,6 +191,11 @@ JsonValue Api::Jsonize() const
    }
    payload.WithArray("importInfo", std::move(importInfoJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_nameHasBeenSet)

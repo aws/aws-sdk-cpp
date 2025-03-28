@@ -70,6 +70,11 @@ DataSetSummary& DataSetSummary::operator =(JsonView jsonValue)
     m_columnLevelPermissionRulesApplied = jsonValue.GetBool("ColumnLevelPermissionRulesApplied");
     m_columnLevelPermissionRulesAppliedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UseAs"))
+  {
+    m_useAs = DataSetUseAsMapper::GetDataSetUseAsForName(jsonValue.GetString("UseAs"));
+    m_useAsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +131,11 @@ JsonValue DataSetSummary::Jsonize() const
   {
    payload.WithBool("ColumnLevelPermissionRulesApplied", m_columnLevelPermissionRulesApplied);
 
+  }
+
+  if(m_useAsHasBeenSet)
+  {
+   payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
   }
 
   return payload;

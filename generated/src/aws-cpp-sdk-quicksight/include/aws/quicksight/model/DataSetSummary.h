@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
+#include <aws/quicksight/model/DataSetUseAs.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,16 @@ namespace Model
     inline void SetColumnLevelPermissionRulesApplied(bool value) { m_columnLevelPermissionRulesAppliedHasBeenSet = true; m_columnLevelPermissionRulesApplied = value; }
     inline DataSetSummary& WithColumnLevelPermissionRulesApplied(bool value) { SetColumnLevelPermissionRulesApplied(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The usage of the dataset.</p>
+     */
+    inline DataSetUseAs GetUseAs() const { return m_useAs; }
+    inline bool UseAsHasBeenSet() const { return m_useAsHasBeenSet; }
+    inline void SetUseAs(DataSetUseAs value) { m_useAsHasBeenSet = true; m_useAs = value; }
+    inline DataSetSummary& WithUseAs(DataSetUseAs value) { SetUseAs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -170,6 +181,9 @@ namespace Model
 
     bool m_columnLevelPermissionRulesApplied{false};
     bool m_columnLevelPermissionRulesAppliedHasBeenSet = false;
+
+    DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
+    bool m_useAsHasBeenSet = false;
   };
 
 } // namespace Model

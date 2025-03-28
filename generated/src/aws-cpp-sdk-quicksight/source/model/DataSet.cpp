@@ -143,6 +143,11 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     m_performanceConfiguration = jsonValue.GetObject("PerformanceConfiguration");
     m_performanceConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UseAs"))
+  {
+    m_useAs = DataSetUseAsMapper::GetDataSetUseAsForName(jsonValue.GetString("UseAs"));
+    m_useAsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -288,6 +293,11 @@ JsonValue DataSet::Jsonize() const
   {
    payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
 
+  }
+
+  if(m_useAsHasBeenSet)
+  {
+   payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
   }
 
   return payload;

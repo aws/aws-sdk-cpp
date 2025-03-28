@@ -40,6 +40,11 @@ TransformResources& TransformResources::operator =(JsonView jsonValue)
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
     m_volumeKmsKeyIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransformAmiVersion"))
+  {
+    m_transformAmiVersion = jsonValue.GetString("TransformAmiVersion");
+    m_transformAmiVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +66,12 @@ JsonValue TransformResources::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_transformAmiVersionHasBeenSet)
+  {
+   payload.WithString("TransformAmiVersion", m_transformAmiVersion);
 
   }
 

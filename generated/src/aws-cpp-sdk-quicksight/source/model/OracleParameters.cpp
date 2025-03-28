@@ -40,6 +40,11 @@ OracleParameters& OracleParameters::operator =(JsonView jsonValue)
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UseServiceName"))
+  {
+    m_useServiceName = jsonValue.GetBool("UseServiceName");
+    m_useServiceNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue OracleParameters::Jsonize() const
   if(m_databaseHasBeenSet)
   {
    payload.WithString("Database", m_database);
+
+  }
+
+  if(m_useServiceNameHasBeenSet)
+  {
+   payload.WithBool("UseServiceName", m_useServiceName);
 
   }
 
