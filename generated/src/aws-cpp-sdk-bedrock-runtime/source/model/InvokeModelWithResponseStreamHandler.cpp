@@ -105,8 +105,14 @@ namespace Model
 
         case InvokeModelWithResponseStreamEventType::CHUNK:
         {
-            PayloadPart event(GetEventPayloadWithOwnership());
-            m_onPayloadPart(event);
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper PayloadPart object from the response in JSON format.");
+                break;
+            }
+
+            m_onPayloadPart(PayloadPart{json.View()});
             break;
         }
         default:

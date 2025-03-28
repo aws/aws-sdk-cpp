@@ -48,7 +48,15 @@ namespace Model
     ${typeInfo.className}& Write${entry.value.shape.name}(const ${entry.value.shape.name}& value)
     {
        Aws::Utils::Event::Message msg;
-#if(!$entry.value.shape.eventPayloadType.equals("blob"))
+#if($entry.value.shape.eventPayloadType.equals("blob"))
+       if(!value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})().empty())
+       {
+           msg.InsertEventHeader(":message-type", Aws::String("event"));
+           msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
+           msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
+           msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
+       }
+#else
        msg.InsertEventHeader(":message-type", Aws::String("event"));
        msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
 #if($entry.value.shape.eventPayloadType.equals("string"))
@@ -60,15 +68,7 @@ namespace Model
 #else
        AWS_UNREFERENCED_PARAM(value);
 #end
-#else##if($entry.value.shape.eventPayloadType.equals("blob"))
-       if(!value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})().empty())
-       {
-           msg.InsertEventHeader(":message-type", Aws::String("event"));
-           msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
-           msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
-           msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
-       }
-#end
+#end##if($entry.value.shape.eventPayloadType.equals("blob"))
        WriteEvent(msg);
        return *this;
     }
