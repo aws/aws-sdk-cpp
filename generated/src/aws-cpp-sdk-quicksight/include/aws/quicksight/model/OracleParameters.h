@@ -70,6 +70,19 @@ namespace Model
     template<typename DatabaseT = Aws::String>
     OracleParameters& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A Boolean value that indicates whether the <code>Database</code> uses a
+     * service name or an SID. If this value is left blank, the default value is
+     * <code>SID</code>. If this value is set to <code>false</code>, the value is
+     * <code>SID</code>.</p>
+     */
+    inline bool GetUseServiceName() const { return m_useServiceName; }
+    inline bool UseServiceNameHasBeenSet() const { return m_useServiceNameHasBeenSet; }
+    inline void SetUseServiceName(bool value) { m_useServiceNameHasBeenSet = true; m_useServiceName = value; }
+    inline OracleParameters& WithUseServiceName(bool value) { SetUseServiceName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_host;
@@ -80,6 +93,9 @@ namespace Model
 
     Aws::String m_database;
     bool m_databaseHasBeenSet = false;
+
+    bool m_useServiceName{false};
+    bool m_useServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

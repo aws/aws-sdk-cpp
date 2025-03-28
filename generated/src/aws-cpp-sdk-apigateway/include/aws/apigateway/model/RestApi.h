@@ -162,8 +162,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
-     * API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types and IP
+     * address types of the API. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const { return m_endpointConfiguration; }
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }

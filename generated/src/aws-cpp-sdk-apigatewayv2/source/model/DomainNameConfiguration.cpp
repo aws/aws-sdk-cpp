@@ -65,6 +65,11 @@ DomainNameConfiguration& DomainNameConfiguration::operator =(JsonView jsonValue)
     m_hostedZoneId = jsonValue.GetString("hostedZoneId");
     m_hostedZoneIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("securityPolicy"))
   {
     m_securityPolicy = SecurityPolicyMapper::GetSecurityPolicyForName(jsonValue.GetString("securityPolicy"));
@@ -125,6 +130,11 @@ JsonValue DomainNameConfiguration::Jsonize() const
   {
    payload.WithString("hostedZoneId", m_hostedZoneId);
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_securityPolicyHasBeenSet)

@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/apigatewayv2/model/DomainNameStatus.h>
 #include <aws/apigatewayv2/model/EndpointType.h>
+#include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/SecurityPolicy.h>
 #include <utility>
 
@@ -142,6 +143,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address types that can invoke the domain name. Use ipv4 to allow only
+     * IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4
+     * and IPv6 addresses to invoke your domain name.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline DomainNameConfiguration& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Transport Layer Security (TLS) version of the security policy for this
      * domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
      */
@@ -189,6 +202,9 @@ namespace Model
 
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
     bool m_securityPolicyHasBeenSet = false;

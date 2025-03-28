@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/PerformanceConfiguration.h>
+#include <aws/quicksight/model/DataSetUseAs.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
@@ -281,6 +282,17 @@ namespace Model
     template<typename PerformanceConfigurationT = PerformanceConfiguration>
     CreateDataSetRequest& WithPerformanceConfiguration(PerformanceConfigurationT&& value) { SetPerformanceConfiguration(std::forward<PerformanceConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS
+     * permission datasets.</p>
+     */
+    inline DataSetUseAs GetUseAs() const { return m_useAs; }
+    inline bool UseAsHasBeenSet() const { return m_useAsHasBeenSet; }
+    inline void SetUseAs(DataSetUseAs value) { m_useAsHasBeenSet = true; m_useAs = value; }
+    inline CreateDataSetRequest& WithUseAs(DataSetUseAs value) { SetUseAs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -333,6 +345,9 @@ namespace Model
 
     PerformanceConfiguration m_performanceConfiguration;
     bool m_performanceConfigurationHasBeenSet = false;
+
+    DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
+    bool m_useAsHasBeenSet = false;
   };
 
 } // namespace Model

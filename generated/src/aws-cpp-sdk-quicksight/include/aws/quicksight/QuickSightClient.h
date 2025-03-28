@@ -594,7 +594,7 @@ namespace QuickSight
          * namespace after your Amazon Web Services account is subscribed to Amazon
          * QuickSight. The namespace must be unique within the Amazon Web Services account.
          * By default, there is a limit of 100 namespaces per Amazon Web Services account.
-         * To increase your limit, create a ticket with Amazon Web Services Support.
+         * To increase your limit, create a ticket with Amazon Web ServicesSupport.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">AWS
          * API Reference</a></p>
@@ -4153,7 +4153,23 @@ namespace QuickSight
 
         /**
          * <p>Predicts existing visuals or generates new visuals to answer a given
-         * query.</p><p><h3>See Also:</h3>   <a
+         * query.</p> <p>This API uses <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation.html">trusted
+         * identity propagation</a> to ensure that an end user is authenticated and
+         * receives the embed URL that is specific to that user. The IAM Identity Center
+         * application that the user has logged into needs to have <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
+         * Identity Propagation enabled for Amazon QuickSight</a> with the scope value set
+         * to <code>quicksight:read</code>. Before you use this action, make sure that you
+         * have configured the relevant Amazon QuickSight resource and permissions.</p>
+         * <p>We recommend enabling the <code>QSearchStatus</code> API to unlock the full
+         * potential of <code>PredictQnA</code>. When <code>QSearchStatus</code> is
+         * enabled, it first checks the specified dashboard for any existing visuals that
+         * match the question. If no matching visuals are found, <code>PredictQnA</code>
+         * uses generative Q&amp;A to provide an answer. To update the
+         * <code>QSearchStatus</code>, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQuickSightQSearchConfiguration.html">UpdateQuickSightQSearchConfiguration</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PredictQAResults">AWS
          * API Reference</a></p>
          */

@@ -34,6 +34,11 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("vpcEndpointIds"))
   {
     Aws::Utils::Array<JsonView> vpcEndpointIdsJsonList = jsonValue.GetArray("vpcEndpointIds");
@@ -59,6 +64,11 @@ JsonValue EndpointConfiguration::Jsonize() const
    }
    payload.WithArray("types", std::move(typesJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_vpcEndpointIdsHasBeenSet)

@@ -9,6 +9,7 @@
 #include <aws/apigatewayv2/model/Cors.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -158,6 +159,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address types that can invoke the API.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline UpdateApiResult& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the API.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -269,6 +279,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_importInfo;
     bool m_importInfoHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

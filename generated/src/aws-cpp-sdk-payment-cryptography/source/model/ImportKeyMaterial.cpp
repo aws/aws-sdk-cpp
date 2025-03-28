@@ -50,6 +50,11 @@ ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
     m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
     m_keyCryptogramHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DiffieHellmanTr31KeyBlock"))
+  {
+    m_diffieHellmanTr31KeyBlock = jsonValue.GetObject("DiffieHellmanTr31KeyBlock");
+    m_diffieHellmanTr31KeyBlockHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +89,12 @@ JsonValue ImportKeyMaterial::Jsonize() const
   if(m_keyCryptogramHasBeenSet)
   {
    payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
+
+  }
+
+  if(m_diffieHellmanTr31KeyBlockHasBeenSet)
+  {
+   payload.WithObject("DiffieHellmanTr31KeyBlock", m_diffieHellmanTr31KeyBlock.Jsonize());
 
   }
 

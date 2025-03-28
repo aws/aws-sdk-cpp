@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/IpAddressType.h>
 #include <aws/apigateway/model/EndpointType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -27,8 +28,8 @@ namespace Model
 
   /**
    * <p>The endpoint configuration to indicate the types of endpoints an API
-   * (RestApi) or its custom domain name (DomainName) has. </p><p><h3>See Also:</h3> 
-   * <a
+   * (RestApi) or its custom domain name (DomainName) has and the IP address types
+   * that can invoke it. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/EndpointConfiguration">AWS
    * API Reference</a></p>
    */
@@ -60,6 +61,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address types that can invoke an API (RestApi) or a DomainName. Use
+     * <code>ipv4</code> to allow only IPv4 addresses to invoke an API or DomainName,
+     * or use <code>dualstack</code> to allow both IPv4 and IPv6 addresses to invoke an
+     * API or a DomainName. For the <code>PRIVATE</code> endpoint type, only
+     * <code>dualstack</code> is supported.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline EndpointConfiguration& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
      * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
      */
@@ -76,6 +91,9 @@ namespace Model
 
     Aws::Vector<EndpointType> m_types;
     bool m_typesHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;
     bool m_vpcEndpointIdsHasBeenSet = false;

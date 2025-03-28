@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Name_HASH = HashingUtils::HashString("Name");
+        static const int RefreshFailureEmailAlertStatus_HASH = HashingUtils::HashString("RefreshFailureEmailAlertStatus");
 
 
         AssetBundleExportJobDataSetPropertyToOverride GetAssetBundleExportJobDataSetPropertyToOverrideForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == Name_HASH)
           {
             return AssetBundleExportJobDataSetPropertyToOverride::Name;
+          }
+          else if (hashCode == RefreshFailureEmailAlertStatus_HASH)
+          {
+            return AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AssetBundleExportJobDataSetPropertyToOverride::Name:
             return "Name";
+          case AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus:
+            return "RefreshFailureEmailAlertStatus";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

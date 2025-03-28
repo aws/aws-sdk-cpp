@@ -106,6 +106,21 @@ namespace Model
     ProjectCache& WithModes(ModesT&& value) { SetModes(std::forward<ModesT>(value)); return *this;}
     inline ProjectCache& AddModes(CacheMode value) { m_modesHasBeenSet = true; m_modes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Defines the scope of the cache. You can use this namespace to share a cache
+     * across multiple projects. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache
+     * sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+     */
+    inline const Aws::String& GetCacheNamespace() const { return m_cacheNamespace; }
+    inline bool CacheNamespaceHasBeenSet() const { return m_cacheNamespaceHasBeenSet; }
+    template<typename CacheNamespaceT = Aws::String>
+    void SetCacheNamespace(CacheNamespaceT&& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = std::forward<CacheNamespaceT>(value); }
+    template<typename CacheNamespaceT = Aws::String>
+    ProjectCache& WithCacheNamespace(CacheNamespaceT&& value) { SetCacheNamespace(std::forward<CacheNamespaceT>(value)); return *this;}
+    ///@}
   private:
 
     CacheType m_type{CacheType::NOT_SET};
@@ -116,6 +131,9 @@ namespace Model
 
     Aws::Vector<CacheMode> m_modes;
     bool m_modesHasBeenSet = false;
+
+    Aws::String m_cacheNamespace;
+    bool m_cacheNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

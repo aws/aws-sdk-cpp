@@ -55,6 +55,11 @@ GuardrailUsage& GuardrailUsage::operator =(JsonView jsonValue)
     m_contextualGroundingPolicyUnits = jsonValue.GetInteger("contextualGroundingPolicyUnits");
     m_contextualGroundingPolicyUnitsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("contentPolicyImageUnits"))
+  {
+    m_contentPolicyImageUnits = jsonValue.GetInteger("contentPolicyImageUnits");
+    m_contentPolicyImageUnitsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -95,6 +100,12 @@ JsonValue GuardrailUsage::Jsonize() const
   if(m_contextualGroundingPolicyUnitsHasBeenSet)
   {
    payload.WithInteger("contextualGroundingPolicyUnits", m_contextualGroundingPolicyUnits);
+
+  }
+
+  if(m_contentPolicyImageUnitsHasBeenSet)
+  {
+   payload.WithInteger("contentPolicyImageUnits", m_contentPolicyImageUnits);
 
   }
 

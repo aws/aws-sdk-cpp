@@ -30,6 +30,11 @@ DataSetRefreshProperties& DataSetRefreshProperties::operator =(JsonView jsonValu
     m_refreshConfiguration = jsonValue.GetObject("RefreshConfiguration");
     m_refreshConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("FailureConfiguration"))
+  {
+    m_failureConfiguration = jsonValue.GetObject("FailureConfiguration");
+    m_failureConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue DataSetRefreshProperties::Jsonize() const
   if(m_refreshConfigurationHasBeenSet)
   {
    payload.WithObject("RefreshConfiguration", m_refreshConfiguration.Jsonize());
+
+  }
+
+  if(m_failureConfigurationHasBeenSet)
+  {
+   payload.WithObject("FailureConfiguration", m_failureConfiguration.Jsonize());
 
   }
 

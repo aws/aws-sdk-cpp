@@ -79,6 +79,11 @@ ReimportApiResult& ReimportApiResult::operator =(const Aws::AmazonWebServiceResu
     }
     m_importInfoHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");

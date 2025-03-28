@@ -10,6 +10,7 @@
 #include <aws/payment-cryptography/model/ImportTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportTr34KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
+#include <aws/payment-cryptography/model/ImportDiffieHellmanTr31KeyBlock.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +106,19 @@ namespace Model
     template<typename KeyCryptogramT = ImportKeyCryptogram>
     ImportKeyMaterial& WithKeyCryptogram(KeyCryptogramT&& value) { SetKeyCryptogram(std::forward<KeyCryptogramT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Parameter information for key material import using the asymmetric ECDH key
+     * exchange method.</p>
+     */
+    inline const ImportDiffieHellmanTr31KeyBlock& GetDiffieHellmanTr31KeyBlock() const { return m_diffieHellmanTr31KeyBlock; }
+    inline bool DiffieHellmanTr31KeyBlockHasBeenSet() const { return m_diffieHellmanTr31KeyBlockHasBeenSet; }
+    template<typename DiffieHellmanTr31KeyBlockT = ImportDiffieHellmanTr31KeyBlock>
+    void SetDiffieHellmanTr31KeyBlock(DiffieHellmanTr31KeyBlockT&& value) { m_diffieHellmanTr31KeyBlockHasBeenSet = true; m_diffieHellmanTr31KeyBlock = std::forward<DiffieHellmanTr31KeyBlockT>(value); }
+    template<typename DiffieHellmanTr31KeyBlockT = ImportDiffieHellmanTr31KeyBlock>
+    ImportKeyMaterial& WithDiffieHellmanTr31KeyBlock(DiffieHellmanTr31KeyBlockT&& value) { SetDiffieHellmanTr31KeyBlock(std::forward<DiffieHellmanTr31KeyBlockT>(value)); return *this;}
+    ///@}
   private:
 
     RootCertificatePublicKey m_rootCertificatePublicKey;
@@ -121,6 +135,9 @@ namespace Model
 
     ImportKeyCryptogram m_keyCryptogram;
     bool m_keyCryptogramHasBeenSet = false;
+
+    ImportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+    bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
   };
 
 } // namespace Model

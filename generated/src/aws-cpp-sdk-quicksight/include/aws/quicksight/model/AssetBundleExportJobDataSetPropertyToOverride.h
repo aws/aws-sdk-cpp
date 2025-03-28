@@ -16,7 +16,8 @@ namespace Model
   enum class AssetBundleExportJobDataSetPropertyToOverride
   {
     NOT_SET,
-    Name
+    Name,
+    RefreshFailureEmailAlertStatus
   };
 
 namespace AssetBundleExportJobDataSetPropertyToOverrideMapper

@@ -35,6 +35,20 @@ AssetOptions& AssetOptions::operator =(JsonView jsonValue)
     m_weekStart = DayOfTheWeekMapper::GetDayOfTheWeekForName(jsonValue.GetString("WeekStart"));
     m_weekStartHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("QBusinessInsightsStatus"))
+  {
+    m_qBusinessInsightsStatus = QBusinessInsightsStatusMapper::GetQBusinessInsightsStatusForName(jsonValue.GetString("QBusinessInsightsStatus"));
+    m_qBusinessInsightsStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExcludedDataSetArns"))
+  {
+    Aws::Utils::Array<JsonView> excludedDataSetArnsJsonList = jsonValue.GetArray("ExcludedDataSetArns");
+    for(unsigned excludedDataSetArnsIndex = 0; excludedDataSetArnsIndex < excludedDataSetArnsJsonList.GetLength(); ++excludedDataSetArnsIndex)
+    {
+      m_excludedDataSetArns.push_back(excludedDataSetArnsJsonList[excludedDataSetArnsIndex].AsString());
+    }
+    m_excludedDataSetArnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +65,22 @@ JsonValue AssetOptions::Jsonize() const
   if(m_weekStartHasBeenSet)
   {
    payload.WithString("WeekStart", DayOfTheWeekMapper::GetNameForDayOfTheWeek(m_weekStart));
+  }
+
+  if(m_qBusinessInsightsStatusHasBeenSet)
+  {
+   payload.WithString("QBusinessInsightsStatus", QBusinessInsightsStatusMapper::GetNameForQBusinessInsightsStatus(m_qBusinessInsightsStatus));
+  }
+
+  if(m_excludedDataSetArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> excludedDataSetArnsJsonList(m_excludedDataSetArns.size());
+   for(unsigned excludedDataSetArnsIndex = 0; excludedDataSetArnsIndex < excludedDataSetArnsJsonList.GetLength(); ++excludedDataSetArnsIndex)
+   {
+     excludedDataSetArnsJsonList[excludedDataSetArnsIndex].AsString(m_excludedDataSetArns[excludedDataSetArnsIndex]);
+   }
+   payload.WithArray("ExcludedDataSetArns", std::move(excludedDataSetArnsJsonList));
+
   }
 
   return payload;

@@ -94,6 +94,16 @@ namespace Model
     inline void SetContextualGroundingPolicyUnits(int value) { m_contextualGroundingPolicyUnitsHasBeenSet = true; m_contextualGroundingPolicyUnits = value; }
     inline GuardrailUsage& WithContextualGroundingPolicyUnits(int value) { SetContextualGroundingPolicyUnits(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The content policy image units processed by the guardrail.</p>
+     */
+    inline int GetContentPolicyImageUnits() const { return m_contentPolicyImageUnits; }
+    inline bool ContentPolicyImageUnitsHasBeenSet() const { return m_contentPolicyImageUnitsHasBeenSet; }
+    inline void SetContentPolicyImageUnits(int value) { m_contentPolicyImageUnitsHasBeenSet = true; m_contentPolicyImageUnits = value; }
+    inline GuardrailUsage& WithContentPolicyImageUnits(int value) { SetContentPolicyImageUnits(value); return *this;}
+    ///@}
   private:
 
     int m_topicPolicyUnits{0};
@@ -113,6 +123,9 @@ namespace Model
 
     int m_contextualGroundingPolicyUnits{0};
     bool m_contextualGroundingPolicyUnitsHasBeenSet = false;
+
+    int m_contentPolicyImageUnits{0};
+    bool m_contentPolicyImageUnitsHasBeenSet = false;
   };
 
 } // namespace Model

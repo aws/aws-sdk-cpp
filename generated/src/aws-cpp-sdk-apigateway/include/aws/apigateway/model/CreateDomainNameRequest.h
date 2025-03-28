@@ -152,8 +152,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The endpoint configuration of this DomainName showing the endpoint types of
-     * the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types and
+     * IP address types of the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const { return m_endpointConfiguration; }
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }

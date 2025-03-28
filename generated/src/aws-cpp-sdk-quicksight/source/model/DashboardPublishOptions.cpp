@@ -75,6 +75,11 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
     m_dataPointTooltipOption = jsonValue.GetObject("DataPointTooltipOption");
     m_dataPointTooltipOptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DataQAEnabledOption"))
+  {
+    m_dataQAEnabledOption = jsonValue.GetObject("DataQAEnabledOption");
+    m_dataQAEnabledOptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -139,6 +144,12 @@ JsonValue DashboardPublishOptions::Jsonize() const
   if(m_dataPointTooltipOptionHasBeenSet)
   {
    payload.WithObject("DataPointTooltipOption", m_dataPointTooltipOption.Jsonize());
+
+  }
+
+  if(m_dataQAEnabledOptionHasBeenSet)
+  {
+   payload.WithObject("DataQAEnabledOption", m_dataQAEnabledOption.Jsonize());
 
   }
 
