@@ -27,6 +27,10 @@ namespace smithy {
 
         };
 
+        DefaultAwsCredentialIdentityResolver(const Aws::Auth::DefaultAWSCredentialsProviderChain& credChain): legacyChain_sp{Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOC_ID, credChain)}{
+
+        };
+
         DefaultAwsCredentialIdentityResolver(const DefaultAwsCredentialIdentityResolver& other) = delete;
         DefaultAwsCredentialIdentityResolver(DefaultAwsCredentialIdentityResolver&& other) noexcept = default;
         DefaultAwsCredentialIdentityResolver& operator=(const DefaultAwsCredentialIdentityResolver& other) = delete;

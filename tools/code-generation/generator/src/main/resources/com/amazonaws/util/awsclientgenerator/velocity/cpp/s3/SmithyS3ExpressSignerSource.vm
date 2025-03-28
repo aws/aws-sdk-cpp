@@ -142,4 +142,4 @@ typename S3ExpressSignerBase<BASECLASS>::SigningFutureOutcome S3ExpressSignerBas
 }
 
 
-template class Aws::S3::S3ExpressSignerBase<smithy::AwsSigV4Signer>;
+template class ${rootNamespace}::${serviceNamespace}::S3ExpressSignerBase<smithy::AwsSigV4Signer>;

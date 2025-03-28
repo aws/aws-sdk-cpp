@@ -480,8 +480,16 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             }
             Map<String, String> templateOverride = new HashMap<>();
             if ("S3-CRT".equalsIgnoreCase(serviceModels.get(i).getMetadata().getProjectName())) {
-                templateOverride.put("ServiceClientSourceInit_template",
-                        "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+                if (serviceModels.get(i).isUseSmithyClient())
+                {
+                    templateOverride.put("ServiceClientSourceInit_template",
+                            "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/SmithyS3CrtServiceClientSourceInit.vm");
+                }
+                else
+                {
+                    templateOverride.put("ServiceClientSourceInit_template",
+                            "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+                }
             }
             VelocityContext context = createContext(serviceModels.get(i));
             context.put("CppViewHelper", CppViewHelper.class);

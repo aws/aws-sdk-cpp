@@ -13,7 +13,7 @@
 \#include <aws/${metadata.projectName}/S3ExpressIdentity.h>
 \#include <thread>
 \#include <condition_variable>
-\#include <aws/s3/S3_EXPORTS.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 
 namespace ${rootNamespace} {
     namespace Http {
@@ -24,7 +24,7 @@ namespace ${rootNamespace} {
         class ${serviceNamespace}Client;
         class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressIdentityProvider : public smithy::IdentityResolverBase<S3ExpressIdentity> {
          public:
-          explicit S3ExpressIdentityProvider(const S3Client& s3Client);
+          explicit S3ExpressIdentityProvider(const ${serviceNamespace}Client& s3Client);
           ResolveIdentityFutureOutcome getIdentity(
               const IdentityProperties& identityProperties,
               const AdditionalParameters& additionalParameters) override;
@@ -37,7 +37,7 @@ namespace ${rootNamespace} {
           S3ExpressIdentity GetCredentialsFromBucket(const Aws::String& bucketName) const;
 
          private:
-          const Aws::S3::S3Client& m_s3Client;
+          const ${serviceNamespace}Client& m_s3Client;
           mutable std::mutex m_bucketNameMapMutex;
           Aws::Map<Aws::String, std::shared_ptr<std::mutex>> m_bucketNameMutex;
 
@@ -48,9 +48,9 @@ namespace ${rootNamespace} {
         
         class ${CppViewHelper.computeExportValue($serviceNamespace)} DefaultS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
          public:
-          explicit DefaultS3ExpressIdentityProvider(const S3Client& s3Client);
+          explicit DefaultS3ExpressIdentityProvider(const ${serviceNamespace}Client& s3Client);
           explicit DefaultS3ExpressIdentityProvider(
-              const S3Client& s3Client,
+              const ${serviceNamespace}Client& s3Client,
               std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache);
           DefaultS3ExpressIdentityProvider(const DefaultS3ExpressIdentityProvider& other) = delete;
           DefaultS3ExpressIdentityProvider(DefaultS3ExpressIdentityProvider&& other) noexcept = delete;
@@ -66,11 +66,11 @@ namespace ${rootNamespace} {
         class ${CppViewHelper.computeExportValue($serviceNamespace)} DefaultAsyncS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
          public:
           explicit DefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
+              const ${serviceNamespace}Client& s3Client,
               std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
         
           explicit DefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
+              const ${serviceNamespace}Client& s3Client,
               std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache,
               std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
         

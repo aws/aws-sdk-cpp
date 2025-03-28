@@ -24,7 +24,7 @@ namespace{
 const char S3_EXPRESS_IDENTITY_PROVIDER[] = "S3ExpressIdentityProvider";
 const int DEFAULT_CACHE_SIZE = 100;
 }
-S3ExpressIdentityProvider::S3ExpressIdentityProvider(const S3Client& s3Client) : m_s3Client(s3Client){}
+S3ExpressIdentityProvider::S3ExpressIdentityProvider(const ${serviceNamespace}Client& s3Client) : m_s3Client(s3Client){}
 
 S3ExpressIdentityProvider::ResolveIdentityFutureOutcome S3ExpressIdentityProvider::getIdentity(
     const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters){
@@ -89,12 +89,12 @@ S3ExpressIdentity S3ExpressIdentityProvider::GetCredentialsFromBucket(const Aws:
       expiry};
 }
 
-DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(const S3Client& s3Client)
+DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(const ${serviceNamespace}Client& s3Client)
     : S3ExpressIdentityProvider{s3Client}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
             DEFAULT_CACHE_SIZE)}{}
 
 DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(
-    const S3Client& s3Client,
+    const ${serviceNamespace}Client& s3Client,
     std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache)
     : S3ExpressIdentityProvider{s3Client}, m_credentialsCache{credentialsCache} {}
 
@@ -121,14 +121,14 @@ S3ExpressIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressIdentity(const s
 
 
 DefaultAsyncS3ExpressIdentityProvider::DefaultAsyncS3ExpressIdentityProvider(
-    const S3Client& s3Client, std::chrono::minutes refreshPeriod)
+    const ${serviceNamespace}Client& s3Client, std::chrono::minutes refreshPeriod)
     : DefaultAsyncS3ExpressIdentityProvider(s3Client,
                                             Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>>(
                                                 S3_EXPRESS_IDENTITY_PROVIDER, DEFAULT_CACHE_SIZE),
                                             refreshPeriod) {}
 
 DefaultAsyncS3ExpressIdentityProvider::DefaultAsyncS3ExpressIdentityProvider(
-    const S3Client& s3Client, std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache,
+    const ${serviceNamespace}Client& s3Client, std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache,
     std::chrono::minutes refreshPeriod)
     : S3ExpressIdentityProvider(s3Client), m_credentialsCache(std::move(credentialsCache)) {
   // Start a thread to background refresh the keys currently in the cache.

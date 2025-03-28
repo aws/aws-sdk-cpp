@@ -177,6 +177,70 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     return httpRequest;
 }
 
+
+bool AwsSmithyClientBase::ResolveIdentityAuth(
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+    ResponseHandlerFunc&& responseHandler,
+    EndpointUpdateCallback&& endpointCallback
+) const
+{
+
+    auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
+    if (!authSchemeOptionOutcome.IsSuccess())
+    {
+        responseHandler(std::move(authSchemeOptionOutcome));
+        return false;
+    }
+    pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+    assert(pRequestCtx->m_authSchemeOption.schemeId);
+
+    // resolve identity
+    auto identityOutcome = this->ResolveIdentity(*pRequestCtx);
+    if (!identityOutcome.IsSuccess())
+    {
+      responseHandler(std::move(identityOutcome));
+      return false;
+    }
+    
+    pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+
+    // get endpoint params from operation context
+    const auto contextEndpointParameters = this->GetContextEndpointParameters(*pRequestCtx);
+
+    if (!contextEndpointParameters.IsSuccess())
+    {
+      responseHandler(std::move(contextEndpointParameters.GetError()));
+
+      return false;
+    }
+
+    Aws::Endpoint::EndpointParameters epParams = pRequestCtx->m_pRequest ? pRequestCtx->m_pRequest->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
+    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
+    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+    const auto contextParams = contextEndpointParameters.GetResult();
+    epParams.insert(epParams.end(), contextParams.begin(), contextParams.end());
+    auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+    if (!epResolutionOutcome.IsSuccess())
+    {
+        auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
+            Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+            epResolutionOutcome.GetError().GetExceptionName(),
+            epResolutionOutcome.GetError().GetMessage(),
+            false});
+        responseHandler(std::move(epOutcome));
+        return false;
+    }
+    pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+    if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
+        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+        responseHandler(std::move(outcome));
+        return false;
+    }
+    return true;
+}
+
 void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request,
                                            const char* requestName,
                                            Aws::Http::HttpMethod method,
@@ -192,7 +256,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
 
     std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
-        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
+        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, pExecutor );
     if (!pRequestCtx)
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
@@ -203,80 +267,21 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-    pRequestCtx->m_pExecutor = pExecutor;
-    pRequestCtx->m_pRequest = request;
-    if (requestName)
-      pRequestCtx->m_requestName = requestName;
-    else if (pRequestCtx->m_pRequest)
-      pRequestCtx->m_requestName = pRequestCtx->m_pRequest->GetServiceRequestName();
+
     pRequestCtx->m_method = method;
-    pRequestCtx->m_retryCount = 0;
-    pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
-    auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
-    if (!authSchemeOptionOutcome.IsSuccess())
-    {
-        pExecutor->Submit([authSchemeOptionOutcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(authSchemeOptionOutcome));
-          } );
-        return;
-    }
-    pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-    assert(pRequestCtx->m_authSchemeOption.schemeId);
-
-    // resolve identity
-    auto identityOutcome = this->ResolveIdentity(*pRequestCtx);
-    if (!identityOutcome.IsSuccess())
-    {
-      pExecutor->Submit([identityOutcome, responseHandler]() mutable
+    ResponseHandlerFunc modifiedResponseHandler = [&](HttpResponseOutcome&& outcome){
+        auto capturedOutcome = std::make_shared<HttpResponseOutcome>(std::move(outcome));
+        pExecutor->Submit([capturedOutcome, &responseHandler]()
         {
-            responseHandler(std::move(identityOutcome));
+            responseHandler(std::move(*capturedOutcome));
         });
-      return;
-    }
-    pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+    };
 
-    // get endpoint params from operation context
-    const auto contextEndpointParameters = this->GetContextEndpointParameters(*pRequestCtx);
-    if (!contextEndpointParameters.IsSuccess())
+    if(!ResolveIdentityAuth(
+        pRequestCtx,
+        std::move(modifiedResponseHandler),
+        std::move(endpointCallback)))
     {
-      pExecutor->Submit([contextEndpointParameters, responseHandler]() mutable
-        {
-            responseHandler(std::move(contextEndpointParameters.GetError()));
-        });
-      return;
-    }
-
-    Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
-    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
-    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
-    const auto contextParams = contextEndpointParameters.GetResult();
-    epParams.insert(epParams.end(), contextParams.begin(), contextParams.end());
-    auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
-    if (!epResolutionOutcome.IsSuccess())
-    {
-        auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
-            Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-            epResolutionOutcome.GetError().GetExceptionName(),
-            epResolutionOutcome.GetError().GetMessage(),
-            false});
-
-        pExecutor->Submit([epOutcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(epOutcome));
-          } );
-        return;
-    }
-    pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-
-    if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
-    {
-        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
-        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
-        pExecutor->Submit([outcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(outcome));
-          } );
         return;
     }
     pRequestCtx->m_requestInfo.attempt = 1;
@@ -682,4 +687,39 @@ void AwsSmithyClientBase::AppendToUserAgent(const Aws::String& valueToAppend)
 {
    assert(m_userAgentInterceptor);
    m_userAgentInterceptor->AddLegacyFeaturesToUserAgent(valueToAppend);
+}
+
+/*
+    blocking API to resolve endpoint from request
+*/
+AwsSmithyClientBase::ResolveEndpointOutcome AwsSmithyClientBase::ResolveEndpointFromRequest(
+    Aws::AmazonWebServiceRequest const * const request,
+    const char* requestName,
+    EndpointUpdateCallback&& endpointCallback) const
+{
+    ResolveEndpointOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+    ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+    {
+        outcome = std::move(asyncOutcome);
+    };
+   
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx = Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG, request, requestName, nullptr);
+    if (!pRequestCtx)
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
+        auto result = HttpResponseOutcome(ClientError(CoreErrors::MEMORY_ALLOCATION, "", "Failed to allocate async request context", false/*retryable*/));
+        responseHandler(std::move(result));
+    }
+    else
+    {
+        if(this->ResolveIdentityAuth(
+            pRequestCtx, 
+            std::move(responseHandler),                  
+            std::move(endpointCallback)
+        ))
+        {
+            outcome = std::move(pRequestCtx->m_endpoint);
+        }
+    }
+    return outcome;
 }

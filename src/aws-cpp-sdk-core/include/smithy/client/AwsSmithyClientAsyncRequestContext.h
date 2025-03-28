@@ -71,6 +71,21 @@ namespace smithy
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
             std::shared_ptr<smithy::AwsIdentity> m_awsIdentity;
+
+            AwsSmithyClientAsyncRequestContext() = default;
+
+            AwsSmithyClientAsyncRequestContext(
+                Aws::AmazonWebServiceRequest const * const request,
+                const char* requestName,
+                std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor):
+                m_invocationId{Aws::Utils::UUID::PseudoRandomUUID()},
+                m_pRequest{request},
+                m_requestName{requestName ? requestName : m_pRequest ?  m_pRequest->GetServiceRequestName() : ""},
+                m_retryCount{0},
+                m_pExecutor{pExecutor}
+            {
+
+            }
         };
     } // namespace client
 } // namespace smithy
