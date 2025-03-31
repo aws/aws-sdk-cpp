@@ -75,6 +75,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the asset. An Outpost asset can be a single server within an
+     * Outposts rack or an Outposts server configuration.</p>
+     */
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    StartCapacityTaskResult& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of the instance pools requested in the specified capacity task.</p>
      */
     inline const Aws::Vector<InstanceTypeCapacity>& GetRequestedInstancePools() const { return m_requestedInstancePools; }
@@ -192,6 +204,9 @@ namespace Model
 
     Aws::String m_orderId;
     bool m_orderIdHasBeenSet = false;
+
+    Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::Vector<InstanceTypeCapacity> m_requestedInstancePools;
     bool m_requestedInstancePoolsHasBeenSet = false;

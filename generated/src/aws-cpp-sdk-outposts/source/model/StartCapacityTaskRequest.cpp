@@ -22,6 +22,12 @@ Aws::String StartCapacityTaskRequest::SerializePayload() const
 
   }
 
+  if(m_assetIdHasBeenSet)
+  {
+   payload.WithString("AssetId", m_assetId);
+
+  }
+
   if(m_instancePoolsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> instancePoolsJsonList(m_instancePools.size());

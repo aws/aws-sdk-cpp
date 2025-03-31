@@ -52,7 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The process exit code.</p>
+     * <p>The process exit code. The default Deadline Cloud worker agent converts
+     * unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
      */
     inline int GetProcessExitCode() const { return m_processExitCode; }
     inline bool ProcessExitCodeHasBeenSet() const { return m_processExitCodeHasBeenSet; }

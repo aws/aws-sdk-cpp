@@ -28,7 +28,8 @@ namespace Model
     AccessConfigUpdate,
     UpgradePolicyUpdate,
     ZonalShiftConfigUpdate,
-    AutoModeUpdate
+    AutoModeUpdate,
+    RemoteNetworkConfigUpdate
   };
 
 namespace UpdateTypeMapper

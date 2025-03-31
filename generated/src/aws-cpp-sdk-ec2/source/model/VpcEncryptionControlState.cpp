@@ -27,6 +27,8 @@ namespace Aws
         static const int deleting_HASH = HashingUtils::HashString("deleting");
         static const int deleted_HASH = HashingUtils::HashString("deleted");
         static const int available_HASH = HashingUtils::HashString("available");
+        static const int creating_HASH = HashingUtils::HashString("creating");
+        static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
 
 
         VpcEncryptionControlState GetVpcEncryptionControlStateForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return VpcEncryptionControlState::available;
           }
+          else if (hashCode == creating_HASH)
+          {
+            return VpcEncryptionControlState::creating;
+          }
+          else if (hashCode == delete_failed_HASH)
+          {
+            return VpcEncryptionControlState::delete_failed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "deleted";
           case VpcEncryptionControlState::available:
             return "available";
+          case VpcEncryptionControlState::creating:
+            return "creating";
+          case VpcEncryptionControlState::delete_failed:
+            return "delete-failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

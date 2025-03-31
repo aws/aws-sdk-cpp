@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
+#include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <utility>
 
 namespace Aws
@@ -66,6 +67,18 @@ namespace Model
     template<typename GuardContentT = GuardrailConverseContentBlock>
     SystemContentBlock& WithGuardContent(GuardContentT&& value) { SetGuardContent(std::forward<GuardContentT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>CachePoint to include in the system prompt.</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    template<typename CachePointT = CachePointBlock>
+    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
+    template<typename CachePointT = CachePointBlock>
+    SystemContentBlock& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -73,6 +86,9 @@ namespace Model
 
     GuardrailConverseContentBlock m_guardContent;
     bool m_guardContentHasBeenSet = false;
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
   };
 
 } // namespace Model

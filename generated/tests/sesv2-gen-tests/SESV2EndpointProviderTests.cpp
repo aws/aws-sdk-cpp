@@ -494,7 +494,7 @@ Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::g
   {"Valid EndpointId with dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://abc123.456def.endpoints.email.api.aws",
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.global.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

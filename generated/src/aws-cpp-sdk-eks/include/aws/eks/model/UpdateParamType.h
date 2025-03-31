@@ -50,7 +50,8 @@ namespace Model
     ZonalShiftConfig,
     ComputeConfig,
     StorageConfig,
-    KubernetesNetworkConfig
+    KubernetesNetworkConfig,
+    RemoteNetworkConfig
   };
 
 namespace UpdateParamTypeMapper

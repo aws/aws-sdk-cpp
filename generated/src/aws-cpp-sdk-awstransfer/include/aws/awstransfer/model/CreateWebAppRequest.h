@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/WebAppEndpointPolicy.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
 
@@ -41,7 +42,10 @@ namespace Model
     ///@{
     /**
      * <p>You can provide a structure that contains the details for the identity
-     * provider to use with your web app.</p>
+     * provider to use with your web app.</p> <p>For more details about this parameter,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-identity-center.html">Configure
+     * your identity provider for Transfer Family web apps</a>.</p>
      */
     inline const WebAppIdentityProviderDetails& GetIdentityProviderDetails() const { return m_identityProviderDetails; }
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
@@ -55,7 +59,10 @@ namespace Model
     /**
      * <p>The <code>AccessEndpoint</code> is the URL that you provide to your users for
      * them to interact with the Transfer Family web app. You can specify a custom URL
-     * or use the default value.</p>
+     * or use the default value.</p> <p>Before you enter a custom URL for this
+     * parameter, follow the steps described in <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-customize.html">Update
+     * your access endpoint with a custom URL</a>.</p>
      */
     inline const Aws::String& GetAccessEndpoint() const { return m_accessEndpoint; }
     inline bool AccessEndpointHasBeenSet() const { return m_accessEndpointHasBeenSet; }
@@ -91,6 +98,19 @@ namespace Model
     template<typename TagsT = Tag>
     CreateWebAppRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> Setting for the type of endpoint policy for the web app. The default value
+     * is <code>STANDARD</code>. </p> <p>If you are creating the web app in an Amazon
+     * Web Services GovCloud (US) Region, you can set this parameter to
+     * <code>FIPS</code>.</p>
+     */
+    inline WebAppEndpointPolicy GetWebAppEndpointPolicy() const { return m_webAppEndpointPolicy; }
+    inline bool WebAppEndpointPolicyHasBeenSet() const { return m_webAppEndpointPolicyHasBeenSet; }
+    inline void SetWebAppEndpointPolicy(WebAppEndpointPolicy value) { m_webAppEndpointPolicyHasBeenSet = true; m_webAppEndpointPolicy = value; }
+    inline CreateWebAppRequest& WithWebAppEndpointPolicy(WebAppEndpointPolicy value) { SetWebAppEndpointPolicy(value); return *this;}
+    ///@}
   private:
 
     WebAppIdentityProviderDetails m_identityProviderDetails;
@@ -104,6 +124,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
+    bool m_webAppEndpointPolicyHasBeenSet = false;
   };
 
 } // namespace Model

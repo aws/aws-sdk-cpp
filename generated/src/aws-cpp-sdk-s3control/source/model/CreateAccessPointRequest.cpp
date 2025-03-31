@@ -48,6 +48,12 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
    bucketAccountIdNode.SetText(m_bucketAccountId);
   }
 
+  if(m_scopeHasBeenSet)
+  {
+   XmlNode scopeNode = parentNode.CreateChildElement("Scope");
+   m_scope.AddToNode(scopeNode);
+  }
+
   return payloadDoc.ConvertToString();
 }
 
@@ -74,6 +80,9 @@ CreateAccessPointRequest::EndpointParameters CreateAccessPointRequest::GetEndpoi
     // Operation context parameters
     if (AccountIdHasBeenSet()) {
         parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (NameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccessPointName"), this->GetName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

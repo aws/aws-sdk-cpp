@@ -55,6 +55,7 @@ namespace Aws
         static const int ComputeConfig_HASH = HashingUtils::HashString("ComputeConfig");
         static const int StorageConfig_HASH = HashingUtils::HashString("StorageConfig");
         static const int KubernetesNetworkConfig_HASH = HashingUtils::HashString("KubernetesNetworkConfig");
+        static const int RemoteNetworkConfig_HASH = HashingUtils::HashString("RemoteNetworkConfig");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -200,6 +201,10 @@ namespace Aws
           {
             return UpdateParamType::KubernetesNetworkConfig;
           }
+          else if (hashCode == RemoteNetworkConfig_HASH)
+          {
+            return UpdateParamType::RemoteNetworkConfig;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -286,6 +291,8 @@ namespace Aws
             return "StorageConfig";
           case UpdateParamType::KubernetesNetworkConfig:
             return "KubernetesNetworkConfig";
+          case UpdateParamType::RemoteNetworkConfig:
+            return "RemoteNetworkConfig";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -3118,20 +3118,22 @@ namespace Aws
          * information about restoring archived objects, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Directory
-         * buckets </b> - For directory buckets, only the S3 Express One Zone storage class
-         * is supported to store newly created objects. Unsupported storage class values
-         * won't write a destination object and will respond with the HTTP status code
-         * <code>400 Bad Request</code>.</p> </dd> <dt>Encryption</dt> <dd> <p>Encryption
-         * request headers, like <code>x-amz-server-side-encryption</code>, should not be
-         * sent for the <code>GetObject</code> requests, if your object uses server-side
-         * encryption with Amazon S3 managed encryption keys (SSE-S3), server-side
-         * encryption with Key Management Service (KMS) keys (SSE-KMS), or dual-layer
-         * server-side encryption with Amazon Web Services KMS keys (DSSE-KMS). If you
-         * include the header in your <code>GetObject</code> requests for the object that
-         * uses these types of keys, you’ll get an HTTP <code>400 Bad Request</code>
-         * error.</p> <p> <b>Directory buckets</b> - For directory buckets, there are only
-         * two supported options for server-side encryption: SSE-S3 and SSE-KMS. SSE-C
-         * isn't supported. For more information, see <a
+         * buckets </b> - Directory buckets only support <code>EXPRESS_ONEZONE</code> (the
+         * S3 Express One Zone storage class) in Availability Zones and
+         * <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent Access storage class) in
+         * Dedicated Local Zones. Unsupported storage class values won't write a
+         * destination object and will respond with the HTTP status code <code>400 Bad
+         * Request</code>.</p> </dd> <dt>Encryption</dt> <dd> <p>Encryption request
+         * headers, like <code>x-amz-server-side-encryption</code>, should not be sent for
+         * the <code>GetObject</code> requests, if your object uses server-side encryption
+         * with Amazon S3 managed encryption keys (SSE-S3), server-side encryption with Key
+         * Management Service (KMS) keys (SSE-KMS), or dual-layer server-side encryption
+         * with Amazon Web Services KMS keys (DSSE-KMS). If you include the header in your
+         * <code>GetObject</code> requests for the object that uses these types of keys,
+         * you’ll get an HTTP <code>400 Bad Request</code> error.</p> <p> <b>Directory
+         * buckets</b> - For directory buckets, there are only two supported options for
+         * server-side encryption: SSE-S3 and SSE-KMS. SSE-C isn't supported. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
          * data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </dd> <dt>Overriding response header values through the request</dt> <dd>
@@ -5971,7 +5973,7 @@ namespace Aws
          * <li> <p>US West (N. California)</p> </li> <li> <p> US West (Oregon)</p> </li>
          * <li> <p> Asia Pacific (Singapore)</p> </li> <li> <p>Asia Pacific (Sydney)</p>
          * </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe (Ireland)</p> </li>
-         * <li> <p>South America (S��o Paulo)</p> </li> </ul> <p>For a list of all the
+         * <li> <p>South America (São Paulo)</p> </li> </ul> <p>For a list of all the
          * Amazon S3 supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the Amazon Web Services General Reference.</p> 
@@ -6266,45 +6268,43 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User
          * Guide</i>.</p> </dd> <dt>Restoring objects</dt> <dd> <p>Objects that you archive
-         * to the S3 Glacier Flexible Retrieval Flexible Retrieval or S3 Glacier Deep
-         * Archive storage class, and S3 Intelligent-Tiering Archive or S3
-         * Intelligent-Tiering Deep Archive tiers, are not accessible in real time. For
-         * objects in the S3 Glacier Flexible Retrieval Flexible Retrieval or S3 Glacier
-         * Deep Archive storage classes, you must first initiate a restore request, and
-         * then wait until a temporary copy of the object is available. If you want a
-         * permanent copy of the object, create a copy of it in the Amazon S3 Standard
-         * storage class in your S3 bucket. To access an archived object, you must restore
-         * the object for the duration (number of days) that you specify. For objects in
-         * the Archive Access or Deep Archive Access tiers of S3 Intelligent-Tiering, you
-         * must first initiate a restore request, and then wait until the object is moved
-         * into the Frequent Access tier.</p> <p>To restore a specific object version, you
-         * can provide a version ID. If you don't provide a version ID, Amazon S3 restores
-         * the current version.</p> <p>When restoring an archived object, you can specify
-         * one of the following data access tier options in the <code>Tier</code> element
-         * of the request body: </p> <ul> <li> <p> <code>Expedited</code> - Expedited
-         * retrievals allow you to quickly access your data stored in the S3 Glacier
-         * Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering
-         * Archive tier when occasional urgent requests for restoring archives are
-         * required. For all but the largest archived objects (250 MB+), data accessed
-         * using Expedited retrievals is typically made available within 1–5 minutes.
-         * Provisioned capacity ensures that retrieval capacity for Expedited retrievals is
-         * available when you need it. Expedited retrievals and provisioned capacity are
-         * not available for objects stored in the S3 Glacier Deep Archive storage class or
-         * S3 Intelligent-Tiering Deep Archive tier.</p> </li> <li> <p>
+         * to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage class,
+         * and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers,
+         * are not accessible in real time. For objects in the S3 Glacier Flexible
+         * Retrieval or S3 Glacier Deep Archive storage classes, you must first initiate a
+         * restore request, and then wait until a temporary copy of the object is
+         * available. If you want a permanent copy of the object, create a copy of it in
+         * the Amazon S3 Standard storage class in your S3 bucket. To access an archived
+         * object, you must restore the object for the duration (number of days) that you
+         * specify. For objects in the Archive Access or Deep Archive Access tiers of S3
+         * Intelligent-Tiering, you must first initiate a restore request, and then wait
+         * until the object is moved into the Frequent Access tier.</p> <p>To restore a
+         * specific object version, you can provide a version ID. If you don't provide a
+         * version ID, Amazon S3 restores the current version.</p> <p>When restoring an
+         * archived object, you can specify one of the following data access tier options
+         * in the <code>Tier</code> element of the request body: </p> <ul> <li> <p>
+         * <code>Expedited</code> - Expedited retrievals allow you to quickly access your
+         * data stored in the S3 Glacier Flexible Retrieval storage class or S3
+         * Intelligent-Tiering Archive tier when occasional urgent requests for restoring
+         * archives are required. For all but the largest archived objects (250 MB+), data
+         * accessed using Expedited retrievals is typically made available within 1–5
+         * minutes. Provisioned capacity ensures that retrieval capacity for Expedited
+         * retrievals is available when you need it. Expedited retrievals and provisioned
+         * capacity are not available for objects stored in the S3 Glacier Deep Archive
+         * storage class or S3 Intelligent-Tiering Deep Archive tier.</p> </li> <li> <p>
          * <code>Standard</code> - Standard retrievals allow you to access any of your
          * archived objects within several hours. This is the default option for retrieval
          * requests that do not specify the retrieval option. Standard retrievals typically
          * finish within 3–5 hours for objects stored in the S3 Glacier Flexible Retrieval
-         * Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier. They
-         * typically finish within 12 hours for objects stored in the S3 Glacier Deep
-         * Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard
-         * retrievals are free for objects stored in S3 Intelligent-Tiering.</p> </li> <li>
-         * <p> <code>Bulk</code> - Bulk retrievals free for objects stored in the S3
-         * Glacier Flexible Retrieval and S3 Intelligent-Tiering storage classes, enabling
-         * you to retrieve large amounts, even petabytes, of data at no cost. Bulk
-         * retrievals typically finish within 5–12 hours for objects stored in the S3
-         * Glacier Flexible Retrieval Flexible Retrieval storage class or S3
-         * Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost
+         * storage class or S3 Intelligent-Tiering Archive tier. They typically finish
+         * within 12 hours for objects stored in the S3 Glacier Deep Archive storage class
+         * or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals are free for
+         * objects stored in S3 Intelligent-Tiering.</p> </li> <li> <p> <code>Bulk</code> -
+         * Bulk retrievals free for objects stored in the S3 Glacier Flexible Retrieval and
+         * S3 Intelligent-Tiering storage classes, enabling you to retrieve large amounts,
+         * even petabytes, of data at no cost. Bulk retrievals typically finish within 5–12
+         * hours for objects stored in the S3 Glacier Flexible Retrieval storage class or
+         * S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost
          * retrieval option when restoring objects from S3 Glacier Deep Archive. They
          * typically finish within 48 hours for objects stored in the S3 Glacier Deep
          * Archive storage class or S3 Intelligent-Tiering Deep Archive tier. </p> </li>

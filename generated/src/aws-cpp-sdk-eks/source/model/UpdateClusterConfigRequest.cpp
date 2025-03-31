@@ -70,6 +70,12 @@ Aws::String UpdateClusterConfigRequest::SerializePayload() const
 
   }
 
+  if(m_remoteNetworkConfigHasBeenSet)
+  {
+   payload.WithObject("remoteNetworkConfig", m_remoteNetworkConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

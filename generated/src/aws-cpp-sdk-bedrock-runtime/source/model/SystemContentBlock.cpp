@@ -35,6 +35,11 @@ SystemContentBlock& SystemContentBlock::operator =(JsonView jsonValue)
     m_guardContent = jsonValue.GetObject("guardContent");
     m_guardContentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+    m_cachePointHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue SystemContentBlock::Jsonize() const
   if(m_guardContentHasBeenSet)
   {
    payload.WithObject("guardContent", m_guardContent.Jsonize());
+
+  }
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
 
   }
 

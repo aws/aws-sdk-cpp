@@ -40,6 +40,11 @@ CapacityTaskSummary& CapacityTaskSummary::operator =(JsonView jsonValue)
     m_orderId = jsonValue.GetString("OrderId");
     m_orderIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AssetId"))
+  {
+    m_assetId = jsonValue.GetString("AssetId");
+    m_assetIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CapacityTaskStatus"))
   {
     m_capacityTaskStatus = CapacityTaskStatusMapper::GetCapacityTaskStatusForName(jsonValue.GetString("CapacityTaskStatus"));
@@ -82,6 +87,12 @@ JsonValue CapacityTaskSummary::Jsonize() const
   if(m_orderIdHasBeenSet)
   {
    payload.WithString("OrderId", m_orderId);
+
+  }
+
+  if(m_assetIdHasBeenSet)
+  {
+   payload.WithString("AssetId", m_assetId);
 
   }
 

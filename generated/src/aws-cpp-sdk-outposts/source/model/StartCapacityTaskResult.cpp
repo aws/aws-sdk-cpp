@@ -40,6 +40,11 @@ StartCapacityTaskResult& StartCapacityTaskResult::operator =(const Aws::AmazonWe
     m_orderId = jsonValue.GetString("OrderId");
     m_orderIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AssetId"))
+  {
+    m_assetId = jsonValue.GetString("AssetId");
+    m_assetIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RequestedInstancePools"))
   {
     Aws::Utils::Array<JsonView> requestedInstancePoolsJsonList = jsonValue.GetArray("RequestedInstancePools");

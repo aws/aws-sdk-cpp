@@ -927,6 +927,38 @@ namespace EC2
         }
 
         /**
+         * <p>Associates a route server with a VPC to enable dynamic route updates.</p>
+         * <p>A route server association is the connection established between a route
+         * server and a VPC. This is a fundamental configuration step that enables the
+         * route server to work with appliances in your VPC.</p> <p>For more information
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateRouteServerOutcome AssociateRouteServer(const Model::AssociateRouteServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateRouteServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateRouteServerRequestT = Model::AssociateRouteServerRequest>
+        Model::AssociateRouteServerOutcomeCallable AssociateRouteServerCallable(const AssociateRouteServerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateRouteServer, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateRouteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateRouteServerRequestT = Model::AssociateRouteServerRequest>
+        void AssociateRouteServerAsync(const AssociateRouteServerRequestT& request, const AssociateRouteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateRouteServer, request, handler, context);
+        }
+
+        /**
          * <p>Associates a subnet in your VPC or an internet gateway or virtual private
          * gateway attached to your VPC with a route table in your VPC. This association
          * causes traffic from the subnet or gateway to be routed according to the routes
@@ -3496,6 +3528,106 @@ namespace EC2
         }
 
         /**
+         * <p>Creates a new route server to manage dynamic routing in a VPC.</p> <p>Amazon
+         * VPC Route Server simplifies routing for traffic between workloads that are
+         * deployed within a VPC and its internet gateways. With this feature, VPC Route
+         * Server dynamically updates VPC and gateway route tables with your preferred IPv4
+         * or IPv6 routes to achieve routing fault tolerance for those workloads. This
+         * enables you to automatically reroute traffic within a VPC, which increases the
+         * manageability of VPC routing and interoperability with third-party
+         * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
+         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+         * support route tables associated with virtual private gateways. To propagate
+         * routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRouteServerOutcome CreateRouteServer(const Model::CreateRouteServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRouteServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRouteServerRequestT = Model::CreateRouteServerRequest>
+        Model::CreateRouteServerOutcomeCallable CreateRouteServerCallable(const CreateRouteServerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateRouteServer, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRouteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRouteServerRequestT = Model::CreateRouteServerRequest>
+        void CreateRouteServerAsync(const CreateRouteServerRequestT& request, const CreateRouteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateRouteServer, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new endpoint for a route server in a specified subnet.</p> <p>A
+         * route server endpoint is an Amazon Web Services-managed component inside a
+         * subnet that facilitates BGP (Border Gateway Protocol) connections between your
+         * route server and your BGP peers. Create two endpoints per subnet for
+         * redundancy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRouteServerEndpointOutcome CreateRouteServerEndpoint(const Model::CreateRouteServerEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRouteServerEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRouteServerEndpointRequestT = Model::CreateRouteServerEndpointRequest>
+        Model::CreateRouteServerEndpointOutcomeCallable CreateRouteServerEndpointCallable(const CreateRouteServerEndpointRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateRouteServerEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRouteServerEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRouteServerEndpointRequestT = Model::CreateRouteServerEndpointRequest>
+        void CreateRouteServerEndpointAsync(const CreateRouteServerEndpointRequestT& request, const CreateRouteServerEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateRouteServerEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new BGP peer for a specified route server endpoint.</p> <p>A route
+         * server peer is a network appliance or function deployed in Amazon Web Services,
+         * such as firewall appliances and other network security functions, that meet
+         * these requirements:</p> <ul> <li> <p>Have an elastic network interface in the
+         * VPC</p> </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li>
+         * <p>Can initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRouteServerPeerOutcome CreateRouteServerPeer(const Model::CreateRouteServerPeerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRouteServerPeer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRouteServerPeerRequestT = Model::CreateRouteServerPeerRequest>
+        Model::CreateRouteServerPeerOutcomeCallable CreateRouteServerPeerCallable(const CreateRouteServerPeerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateRouteServerPeer, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRouteServerPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRouteServerPeerRequestT = Model::CreateRouteServerPeerRequest>
+        void CreateRouteServerPeerAsync(const CreateRouteServerPeerRequestT& request, const CreateRouteServerPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateRouteServerPeer, request, handler, context);
+        }
+
+        /**
          * <p>Creates a route table for the specified VPC. After you create a route table,
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
@@ -4470,7 +4602,7 @@ namespace EC2
         /**
          * <p>Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
          * mode that can be applied to a single VPC or subnet that exempts it from the
-         * account���s BPA mode and will allow bidirectional or egress-only access. You can
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
          * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
          * account to ensure that there is no traffic disruption to the exclusions when VPC
          * BPA is turned on. To learn more about VPC BPA, see <a
@@ -5838,6 +5970,105 @@ namespace EC2
         void DeleteRouteAsync(const DeleteRouteRequestT& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeleteRoute, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified route server.</p> <p>Amazon VPC Route Server simplifies
+         * routing for traffic between workloads that are deployed within a VPC and its
+         * internet gateways. With this feature, VPC Route Server dynamically updates VPC
+         * and gateway route tables with your preferred IPv4 or IPv6 routes to achieve
+         * routing fault tolerance for those workloads. This enables you to automatically
+         * reroute traffic within a VPC, which increases the manageability of VPC routing
+         * and interoperability with third-party workloads.</p> <p>Route server supports
+         * the follow route table types:</p> <ul> <li> <p>VPC route tables</p> </li> <li>
+         * <p>Subnet route tables</p> </li> <li> <p>Internet gateway route tables</p> </li>
+         * </ul> <p>Route server does not support route tables associated with virtual
+         * private gateways. To propagate routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRouteServerOutcome DeleteRouteServer(const Model::DeleteRouteServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRouteServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRouteServerRequestT = Model::DeleteRouteServerRequest>
+        Model::DeleteRouteServerOutcomeCallable DeleteRouteServerCallable(const DeleteRouteServerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteRouteServer, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRouteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRouteServerRequestT = Model::DeleteRouteServerRequest>
+        void DeleteRouteServerAsync(const DeleteRouteServerRequestT& request, const DeleteRouteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteRouteServer, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified route server endpoint.</p> <p>A route server endpoint
+         * is an Amazon Web Services-managed component inside a subnet that facilitates BGP
+         * (Border Gateway Protocol) connections between your route server and your BGP
+         * peers. Create two endpoints per subnet for redundancy.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRouteServerEndpointOutcome DeleteRouteServerEndpoint(const Model::DeleteRouteServerEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRouteServerEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRouteServerEndpointRequestT = Model::DeleteRouteServerEndpointRequest>
+        Model::DeleteRouteServerEndpointOutcomeCallable DeleteRouteServerEndpointCallable(const DeleteRouteServerEndpointRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteRouteServerEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRouteServerEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRouteServerEndpointRequestT = Model::DeleteRouteServerEndpointRequest>
+        void DeleteRouteServerEndpointAsync(const DeleteRouteServerEndpointRequestT& request, const DeleteRouteServerEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteRouteServerEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified BGP peer from a route server.</p> <p>A route server
+         * peer is a network appliance or function deployed in Amazon Web Services, such as
+         * firewall appliances and other network security functions, that meet these
+         * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
+         * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
+         * initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRouteServerPeerOutcome DeleteRouteServerPeer(const Model::DeleteRouteServerPeerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRouteServerPeer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRouteServerPeerRequestT = Model::DeleteRouteServerPeerRequest>
+        Model::DeleteRouteServerPeerOutcomeCallable DeleteRouteServerPeerCallable(const DeleteRouteServerPeerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteRouteServerPeer, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRouteServerPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRouteServerPeerRequestT = Model::DeleteRouteServerPeerRequest>
+        void DeleteRouteServerPeerAsync(const DeleteRouteServerPeerRequestT& request, const DeleteRouteServerPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteRouteServerPeer, request, handler, context);
         }
 
         /**
@@ -10095,6 +10326,112 @@ namespace EC2
         }
 
         /**
+         * <p>Describes one or more route server endpoints.</p> <p>A route server endpoint
+         * is an Amazon Web Services-managed component inside a subnet that facilitates BGP
+         * (Border Gateway Protocol) connections between your route server and your BGP
+         * peers. Create two endpoints per subnet for redundancy.</p> <p>For more
+         * information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRouteServerEndpointsOutcome DescribeRouteServerEndpoints(const Model::DescribeRouteServerEndpointsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeRouteServerEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRouteServerEndpointsRequestT = Model::DescribeRouteServerEndpointsRequest>
+        Model::DescribeRouteServerEndpointsOutcomeCallable DescribeRouteServerEndpointsCallable(const DescribeRouteServerEndpointsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeRouteServerEndpoints, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRouteServerEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRouteServerEndpointsRequestT = Model::DescribeRouteServerEndpointsRequest>
+        void DescribeRouteServerEndpointsAsync(const DescribeRouteServerEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRouteServerEndpointsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeRouteServerEndpoints, request, handler, context);
+        }
+
+        /**
+         * <p>Describes one or more route server peers.</p> <p>A route server peer is a
+         * network appliance or function deployed in Amazon Web Services, such as firewall
+         * appliances and other network security functions, that meet these
+         * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
+         * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
+         * initiate BGP sessions</p> </li> </ul> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRouteServerPeersOutcome DescribeRouteServerPeers(const Model::DescribeRouteServerPeersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeRouteServerPeers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRouteServerPeersRequestT = Model::DescribeRouteServerPeersRequest>
+        Model::DescribeRouteServerPeersOutcomeCallable DescribeRouteServerPeersCallable(const DescribeRouteServerPeersRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeRouteServerPeers, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRouteServerPeers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRouteServerPeersRequestT = Model::DescribeRouteServerPeersRequest>
+        void DescribeRouteServerPeersAsync(const DescribeRouteServerPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRouteServerPeersRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeRouteServerPeers, request, handler, context);
+        }
+
+        /**
+         * <p>Describes one or more route servers.</p> <p>Amazon VPC Route Server
+         * simplifies routing for traffic between workloads that are deployed within a VPC
+         * and its internet gateways. With this feature, VPC Route Server dynamically
+         * updates VPC and gateway route tables with your preferred IPv4 or IPv6 routes to
+         * achieve routing fault tolerance for those workloads. This enables you to
+         * automatically reroute traffic within a VPC, which increases the manageability of
+         * VPC routing and interoperability with third-party workloads.</p> <p>Route server
+         * supports the follow route table types:</p> <ul> <li> <p>VPC route tables</p>
+         * </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway route
+         * tables</p> </li> </ul> <p>Route server does not support route tables associated
+         * with virtual private gateways. To propagate routes into a transit gateway route
+         * table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRouteServersOutcome DescribeRouteServers(const Model::DescribeRouteServersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeRouteServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRouteServersRequestT = Model::DescribeRouteServersRequest>
+        Model::DescribeRouteServersOutcomeCallable DescribeRouteServersCallable(const DescribeRouteServersRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeRouteServers, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRouteServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRouteServersRequestT = Model::DescribeRouteServersRequest>
+        void DescribeRouteServersAsync(const DescribeRouteServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRouteServersRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeRouteServers, request, handler, context);
+        }
+
+        /**
          * <p>Describes your route tables. The default is to describe all your route
          * tables. Alternatively, you can specify specific route table IDs or filter the
          * results to include only the route tables that match specific criteria.</p>
@@ -12375,6 +12712,49 @@ namespace EC2
         }
 
         /**
+         * <p>Disables route propagation from a route server to a specified route
+         * table.</p> <p>When enabled, route server propagation installs the routes in the
+         * FIB on the route table you've specified. Route server supports IPv4 and IPv6
+         * route propagation.</p> <p>Amazon VPC Route Server simplifies routing for traffic
+         * between workloads that are deployed within a VPC and its internet gateways. With
+         * this feature, VPC Route Server dynamically updates VPC and gateway route tables
+         * with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for
+         * those workloads. This enables you to automatically reroute traffic within a VPC,
+         * which increases the manageability of VPC routing and interoperability with
+         * third-party workloads.</p> <p>Route server supports the follow route table
+         * types:</p> <ul> <li> <p>VPC route tables</p> </li> <li> <p>Subnet route
+         * tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul> <p>Route
+         * server does not support route tables associated with virtual private gateways.
+         * To propagate routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableRouteServerPropagationOutcome DisableRouteServerPropagation(const Model::DisableRouteServerPropagationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableRouteServerPropagation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableRouteServerPropagationRequestT = Model::DisableRouteServerPropagationRequest>
+        Model::DisableRouteServerPropagationOutcomeCallable DisableRouteServerPropagationCallable(const DisableRouteServerPropagationRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableRouteServerPropagation, request);
+        }
+
+        /**
+         * An Async wrapper for DisableRouteServerPropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableRouteServerPropagationRequestT = Model::DisableRouteServerPropagationRequest>
+        void DisableRouteServerPropagationAsync(const DisableRouteServerPropagationRequestT& request, const DisableRouteServerPropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableRouteServerPropagation, request, handler, context);
+        }
+
+        /**
          * <p>Disables access to the EC2 serial console of all instances for your account.
          * By default, access to the EC2 serial console is disabled for your account. For
          * more information, see <a
@@ -12816,6 +13196,37 @@ namespace EC2
         void DisassociateNatGatewayAddressAsync(const DisassociateNatGatewayAddressRequestT& request, const DisassociateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisassociateNatGatewayAddress, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a route server from a VPC.</p> <p>A route server association is
+         * the connection established between a route server and a VPC. This is a
+         * fundamental configuration step that enables the route server to work with
+         * appliances in your VPC.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateRouteServerOutcome DisassociateRouteServer(const Model::DisassociateRouteServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateRouteServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateRouteServerRequestT = Model::DisassociateRouteServerRequest>
+        Model::DisassociateRouteServerOutcomeCallable DisassociateRouteServerCallable(const DisassociateRouteServerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateRouteServer, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateRouteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateRouteServerRequestT = Model::DisassociateRouteServerRequest>
+        void DisassociateRouteServerAsync(const DisassociateRouteServerRequestT& request, const DisassociateRouteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateRouteServer, request, handler, context);
         }
 
         /**
@@ -13426,6 +13837,37 @@ namespace EC2
         void EnableReachabilityAnalyzerOrganizationSharingAsync(const EnableReachabilityAnalyzerOrganizationSharingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableReachabilityAnalyzerOrganizationSharingRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::EnableReachabilityAnalyzerOrganizationSharing, request, handler, context);
+        }
+
+        /**
+         * <p>Defines which route tables the route server can update with routes.</p>
+         * <p>When enabled, route server propagation installs the routes in the FIB on the
+         * route table you've specified. Route server supports IPv4 and IPv6 route
+         * propagation.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableRouteServerPropagationOutcome EnableRouteServerPropagation(const Model::EnableRouteServerPropagationRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableRouteServerPropagation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableRouteServerPropagationRequestT = Model::EnableRouteServerPropagationRequest>
+        Model::EnableRouteServerPropagationOutcomeCallable EnableRouteServerPropagationCallable(const EnableRouteServerPropagationRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableRouteServerPropagation, request);
+        }
+
+        /**
+         * An Async wrapper for EnableRouteServerPropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableRouteServerPropagationRequestT = Model::EnableRouteServerPropagationRequest>
+        void EnableRouteServerPropagationAsync(const EnableRouteServerPropagationRequestT& request, const EnableRouteServerPropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableRouteServerPropagation, request, handler, context);
         }
 
         /**
@@ -14796,6 +15238,122 @@ namespace EC2
         void GetReservedInstancesExchangeQuoteAsync(const GetReservedInstancesExchangeQuoteRequestT& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetReservedInstancesExchangeQuote, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about the associations for the specified route server.</p>
+         * <p>A route server association is the connection established between a route
+         * server and a VPC. This is a fundamental configuration step that enables the
+         * route server to work with appliances in your VPC.</p> <p>For more information
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRouteServerAssociationsOutcome GetRouteServerAssociations(const Model::GetRouteServerAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRouteServerAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRouteServerAssociationsRequestT = Model::GetRouteServerAssociationsRequest>
+        Model::GetRouteServerAssociationsOutcomeCallable GetRouteServerAssociationsCallable(const GetRouteServerAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetRouteServerAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for GetRouteServerAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRouteServerAssociationsRequestT = Model::GetRouteServerAssociationsRequest>
+        void GetRouteServerAssociationsAsync(const GetRouteServerAssociationsRequestT& request, const GetRouteServerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetRouteServerAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about the route propagations for the specified route
+         * server.</p> <p>When enabled, route server propagation installs the routes in the
+         * FIB on the route table you've specified. Route server supports IPv4 and IPv6
+         * route propagation.</p> <p>Amazon VPC Route Server simplifies routing for traffic
+         * between workloads that are deployed within a VPC and its internet gateways. With
+         * this feature, VPC Route Server dynamically updates VPC and gateway route tables
+         * with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for
+         * those workloads. This enables you to automatically reroute traffic within a VPC,
+         * which increases the manageability of VPC routing and interoperability with
+         * third-party workloads.</p> <p>Route server supports the follow route table
+         * types:</p> <ul> <li> <p>VPC route tables</p> </li> <li> <p>Subnet route
+         * tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul> <p>Route
+         * server does not support route tables associated with virtual private gateways.
+         * To propagate routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRouteServerPropagationsOutcome GetRouteServerPropagations(const Model::GetRouteServerPropagationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRouteServerPropagations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRouteServerPropagationsRequestT = Model::GetRouteServerPropagationsRequest>
+        Model::GetRouteServerPropagationsOutcomeCallable GetRouteServerPropagationsCallable(const GetRouteServerPropagationsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetRouteServerPropagations, request);
+        }
+
+        /**
+         * An Async wrapper for GetRouteServerPropagations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRouteServerPropagationsRequestT = Model::GetRouteServerPropagationsRequest>
+        void GetRouteServerPropagationsAsync(const GetRouteServerPropagationsRequestT& request, const GetRouteServerPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetRouteServerPropagations, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the routing database for the specified route server. The <a
+         * href="https://en.wikipedia.org/wiki/Routing_table">Routing Information Base
+         * (RIB)</a> serves as a database that stores all the routing information and
+         * network topology data collected by a router or routing system, such as routes
+         * learned from BGP peers. The RIB is constantly updated as new routing information
+         * is received or existing routes change. This ensures that the route server always
+         * has the most current view of the network topology and can make optimal routing
+         * decisions.</p> <p>Amazon VPC Route Server simplifies routing for traffic between
+         * workloads that are deployed within a VPC and its internet gateways. With this
+         * feature, VPC Route Server dynamically updates VPC and gateway route tables with
+         * your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for those
+         * workloads. This enables you to automatically reroute traffic within a VPC, which
+         * increases the manageability of VPC routing and interoperability with third-party
+         * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
+         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+         * support route tables associated with virtual private gateways. To propagate
+         * routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRouteServerRoutingDatabaseOutcome GetRouteServerRoutingDatabase(const Model::GetRouteServerRoutingDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRouteServerRoutingDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRouteServerRoutingDatabaseRequestT = Model::GetRouteServerRoutingDatabaseRequest>
+        Model::GetRouteServerRoutingDatabaseOutcomeCallable GetRouteServerRoutingDatabaseCallable(const GetRouteServerRoutingDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetRouteServerRoutingDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for GetRouteServerRoutingDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRouteServerRoutingDatabaseRequestT = Model::GetRouteServerRoutingDatabaseRequest>
+        void GetRouteServerRoutingDatabaseAsync(const GetRouteServerRoutingDatabaseRequestT& request, const GetRouteServerRoutingDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetRouteServerRoutingDatabase, request, handler, context);
         }
 
         /**
@@ -16700,6 +17258,47 @@ namespace EC2
         void ModifyReservedInstancesAsync(const ModifyReservedInstancesRequestT& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ModifyReservedInstances, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the configuration of an existing route server.</p> <p>Amazon VPC
+         * Route Server simplifies routing for traffic between workloads that are deployed
+         * within a VPC and its internet gateways. With this feature, VPC Route Server
+         * dynamically updates VPC and gateway route tables with your preferred IPv4 or
+         * IPv6 routes to achieve routing fault tolerance for those workloads. This enables
+         * you to automatically reroute traffic within a VPC, which increases the
+         * manageability of VPC routing and interoperability with third-party
+         * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
+         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+         * support route tables associated with virtual private gateways. To propagate
+         * routes into a transit gateway route table, use <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+         * Gateway Connect</a>.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyRouteServerOutcome ModifyRouteServer(const Model::ModifyRouteServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyRouteServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyRouteServerRequestT = Model::ModifyRouteServerRequest>
+        Model::ModifyRouteServerOutcomeCallable ModifyRouteServerCallable(const ModifyRouteServerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyRouteServer, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyRouteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyRouteServerRequestT = Model::ModifyRouteServerRequest>
+        void ModifyRouteServerAsync(const ModifyRouteServerRequestT& request, const ModifyRouteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyRouteServer, request, handler, context);
         }
 
         /**

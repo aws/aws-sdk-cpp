@@ -45,6 +45,11 @@ Aws::String CreateWebAppRequest::SerializePayload() const
 
   }
 
+  if(m_webAppEndpointPolicyHasBeenSet)
+  {
+   payload.WithString("WebAppEndpointPolicy", WebAppEndpointPolicyMapper::GetNameForWebAppEndpointPolicy(m_webAppEndpointPolicy));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
+#include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlock.h>
 #include <utility>
 
@@ -140,6 +141,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>CachePoint to include in the message.</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    template<typename CachePointT = CachePointBlock>
+    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
+    template<typename CachePointT = CachePointBlock>
+    ContentBlock& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains content regarding the reasoning that is carried out by the model.
      * Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance
      * the accuracy of its final response.</p>
@@ -173,6 +186,9 @@ namespace Model
 
     GuardrailConverseContentBlock m_guardContent;
     bool m_guardContentHasBeenSet = false;
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
 
     ReasoningContentBlock m_reasoningContent;
     bool m_reasoningContentHasBeenSet = false;

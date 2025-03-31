@@ -64,6 +64,11 @@ DescribedWebApp& DescribedWebApp::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("WebAppEndpointPolicy"))
+  {
+    m_webAppEndpointPolicy = WebAppEndpointPolicyMapper::GetWebAppEndpointPolicyForName(jsonValue.GetString("WebAppEndpointPolicy"));
+    m_webAppEndpointPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -116,6 +121,11 @@ JsonValue DescribedWebApp::Jsonize() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_webAppEndpointPolicyHasBeenSet)
+  {
+   payload.WithString("WebAppEndpointPolicy", WebAppEndpointPolicyMapper::GetNameForWebAppEndpointPolicy(m_webAppEndpointPolicy));
   }
 
   return payload;

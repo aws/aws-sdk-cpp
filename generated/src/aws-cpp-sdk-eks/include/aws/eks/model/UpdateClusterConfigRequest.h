@@ -15,6 +15,7 @@
 #include <aws/eks/model/ComputeConfigRequest.h>
 #include <aws/eks/model/KubernetesNetworkConfigRequest.h>
 #include <aws/eks/model/StorageConfigRequest.h>
+#include <aws/eks/model/RemoteNetworkConfigRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -184,6 +185,16 @@ namespace Model
     template<typename StorageConfigT = StorageConfigRequest>
     UpdateClusterConfigRequest& WithStorageConfig(StorageConfigT&& value) { SetStorageConfig(std::forward<StorageConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const RemoteNetworkConfigRequest& GetRemoteNetworkConfig() const { return m_remoteNetworkConfig; }
+    inline bool RemoteNetworkConfigHasBeenSet() const { return m_remoteNetworkConfigHasBeenSet; }
+    template<typename RemoteNetworkConfigT = RemoteNetworkConfigRequest>
+    void SetRemoteNetworkConfig(RemoteNetworkConfigT&& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = std::forward<RemoteNetworkConfigT>(value); }
+    template<typename RemoteNetworkConfigT = RemoteNetworkConfigRequest>
+    UpdateClusterConfigRequest& WithRemoteNetworkConfig(RemoteNetworkConfigT&& value) { SetRemoteNetworkConfig(std::forward<RemoteNetworkConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -215,6 +226,9 @@ namespace Model
 
     StorageConfigRequest m_storageConfig;
     bool m_storageConfigHasBeenSet = false;
+
+    RemoteNetworkConfigRequest m_remoteNetworkConfig;
+    bool m_remoteNetworkConfigHasBeenSet = false;
   };
 
 } // namespace Model

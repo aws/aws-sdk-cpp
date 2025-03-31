@@ -83,8 +83,10 @@ namespace Model
     ///@{
     /**
      * <p>The class of storage used to store the object.</p>  <p> <b>Directory
-     * buckets</b> - Only the S3 Express One Zone storage class is supported by
-     * directory buckets to store objects.</p> 
+     * buckets</b> - Directory buckets only support <code>EXPRESS_ONEZONE</code> (the
+     * S3 Express One Zone storage class) in Availability Zones and
+     * <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent Access storage class) in
+     * Dedicated Local Zones.</p> 
      */
     inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }

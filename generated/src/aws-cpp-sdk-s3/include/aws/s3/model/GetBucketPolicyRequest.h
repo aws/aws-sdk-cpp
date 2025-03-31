@@ -68,8 +68,8 @@ namespace Model
      * the error code <code>InvalidAccessPointAliasError</code> is returned. For more
      * information about <code>InvalidAccessPointAliasError</code>, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-     * of Error Codes</a>.</p>  <p>Access points and Object Lambda access points
-     * are not supported by directory buckets.</p> 
+     * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported
+     * by directory buckets.</p> 
      */
     inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }

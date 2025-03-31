@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether ENA Express is enabled for the network interface when you
-     * launch an instance from your launch template.</p>
+     * launch an instance.</p>
      */
     inline bool GetEnaSrdEnabled() const { return m_enaSrdEnabled; }
     inline bool EnaSrdEnabledHasBeenSet() const { return m_enaSrdEnabledHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains ENA Express settings for UDP network traffic in your launch
-     * template.</p>
+     * <p>Contains ENA Express settings for UDP network traffic for the network
+     * interface attached to the instance.</p>
      */
     inline const EnaSrdUdpSpecificationRequest& GetEnaSrdUdpSpecification() const { return m_enaSrdUdpSpecification; }
     inline bool EnaSrdUdpSpecificationHasBeenSet() const { return m_enaSrdUdpSpecificationHasBeenSet; }

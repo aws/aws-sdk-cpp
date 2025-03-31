@@ -136,8 +136,10 @@ namespace Model
     ///@{
     /**
      * <p>The class of storage used to store the object.</p>  <p> <b>Directory
-     * buckets</b> - Only the S3 Express One Zone storage class is supported by
-     * directory buckets to store objects.</p> 
+     * buckets</b> - Directory buckets only support <code>EXPRESS_ONEZONE</code> (the
+     * S3 Express One Zone storage class) in Availability Zones and
+     * <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent Access storage class) in
+     * Dedicated Local Zones.</p> 
      */
     inline ObjectStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
@@ -165,9 +167,10 @@ namespace Model
      * about these storage classes and how to work with archived objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
      * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
-     * <p>This functionality is not supported for directory buckets. Only the S3
-     * Express One Zone storage class is supported by directory buckets to store
-     * objects.</p> 
+     * <p>This functionality is not supported for directory buckets. Directory buckets
+     * only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage
+     * class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+     * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p> 
      */
     inline const RestoreStatus& GetRestoreStatus() const { return m_restoreStatus; }
     inline bool RestoreStatusHasBeenSet() const { return m_restoreStatusHasBeenSet; }

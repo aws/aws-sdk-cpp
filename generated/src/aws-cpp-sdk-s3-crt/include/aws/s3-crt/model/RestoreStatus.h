@@ -28,9 +28,11 @@ namespace Model
    * about these storage classes and how to work with archived objects, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
    * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
-   * <p>This functionality is not supported for directory buckets. Only the S3
-   * Express One Zone storage class is supported by directory buckets to store
-   * objects.</p> <p><h3>See Also:</h3>   <a
+   * <p>This functionality is not supported for directory buckets. Directory buckets
+   * only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage
+   * class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+   * Zone-Infrequent Access storage class) in Dedicated Local Zones.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreStatus">AWS
    * API Reference</a></p>
    */
