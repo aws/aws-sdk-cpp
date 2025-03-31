@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or
-   * update this configuration after the cluster is created.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change,
+   * or remove this configuration after the cluster is created.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RemoteNetworkConfigRequest">AWS
    * API Reference</a></p>
    */

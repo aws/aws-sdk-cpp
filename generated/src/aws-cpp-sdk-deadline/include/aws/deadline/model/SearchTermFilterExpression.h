@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/SearchTermMatchingType.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,28 @@ namespace Model
     template<typename SearchTermT = Aws::String>
     SearchTermFilterExpression& WithSearchTerm(SearchTermT&& value) { SetSearchTerm(std::forward<SearchTermT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies how Deadline Cloud matches your search term in the results. If you
+     * don't specify a <code>matchType</code> the default is
+     * <code>FUZZY_MATCH</code>.</p> <ul> <li> <p> <code>FUZZY_MATCH</code> - Matches
+     * if a portion of the search term is found in the result.</p> </li> <li> <p>
+     * <code>CONTAINS</code> - Matches if the exact search term is contained in the
+     * result.</p> </li> </ul>
+     */
+    inline SearchTermMatchingType GetMatchType() const { return m_matchType; }
+    inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }
+    inline void SetMatchType(SearchTermMatchingType value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
+    inline SearchTermFilterExpression& WithMatchType(SearchTermMatchingType value) { SetMatchType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_searchTerm;
     bool m_searchTermHasBeenSet = false;
+
+    SearchTermMatchingType m_matchType{SearchTermMatchingType::NOT_SET};
+    bool m_matchTypeHasBeenSet = false;
   };
 
 } // namespace Model

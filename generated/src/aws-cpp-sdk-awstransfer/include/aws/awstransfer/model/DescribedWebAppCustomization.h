@@ -90,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns a icon file data string (in base64 encoding).</p>
+     * <p>Returns an icon file data string (in base64 encoding).</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetFaviconFile() const { return m_faviconFile; }
     inline bool FaviconFileHasBeenSet() const { return m_faviconFileHasBeenSet; }

@@ -22,7 +22,9 @@ namespace Model
     monitor_failed,
     deleting,
     deleted,
-    available
+    available,
+    creating,
+    delete_failed
   };
 
 namespace VpcEncryptionControlStateMapper

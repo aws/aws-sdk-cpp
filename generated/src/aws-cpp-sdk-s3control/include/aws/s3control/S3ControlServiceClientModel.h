@@ -43,6 +43,7 @@
 #include <aws/s3control/model/GetAccessPointPolicyForObjectLambdaResult.h>
 #include <aws/s3control/model/GetAccessPointPolicyStatusResult.h>
 #include <aws/s3control/model/GetAccessPointPolicyStatusForObjectLambdaResult.h>
+#include <aws/s3control/model/GetAccessPointScopeResult.h>
 #include <aws/s3control/model/GetBucketResult.h>
 #include <aws/s3control/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3control/model/GetBucketPolicyResult.h>
@@ -63,6 +64,7 @@
 #include <aws/s3control/model/ListAccessGrantsInstancesResult.h>
 #include <aws/s3control/model/ListAccessGrantsLocationsResult.h>
 #include <aws/s3control/model/ListAccessPointsResult.h>
+#include <aws/s3control/model/ListAccessPointsForDirectoryBucketsResult.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaResult.h>
 #include <aws/s3control/model/ListCallerAccessGrantsResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
@@ -139,6 +141,7 @@ namespace Aws
       class DeleteAccessPointForObjectLambdaRequest;
       class DeleteAccessPointPolicyRequest;
       class DeleteAccessPointPolicyForObjectLambdaRequest;
+      class DeleteAccessPointScopeRequest;
       class DeleteBucketRequest;
       class DeleteBucketLifecycleConfigurationRequest;
       class DeleteBucketPolicyRequest;
@@ -165,6 +168,7 @@ namespace Aws
       class GetAccessPointPolicyForObjectLambdaRequest;
       class GetAccessPointPolicyStatusRequest;
       class GetAccessPointPolicyStatusForObjectLambdaRequest;
+      class GetAccessPointScopeRequest;
       class GetBucketRequest;
       class GetBucketLifecycleConfigurationRequest;
       class GetBucketPolicyRequest;
@@ -185,6 +189,7 @@ namespace Aws
       class ListAccessGrantsInstancesRequest;
       class ListAccessGrantsLocationsRequest;
       class ListAccessPointsRequest;
+      class ListAccessPointsForDirectoryBucketsRequest;
       class ListAccessPointsForObjectLambdaRequest;
       class ListCallerAccessGrantsRequest;
       class ListJobsRequest;
@@ -197,6 +202,7 @@ namespace Aws
       class PutAccessPointConfigurationForObjectLambdaRequest;
       class PutAccessPointPolicyRequest;
       class PutAccessPointPolicyForObjectLambdaRequest;
+      class PutAccessPointScopeRequest;
       class PutBucketLifecycleConfigurationRequest;
       class PutBucketPolicyRequest;
       class PutBucketReplicationRequest;
@@ -235,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyForObjectLambdaOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointScopeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketPolicyOutcome;
@@ -261,6 +268,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAccessPointPolicyForObjectLambdaResult, S3ControlError> GetAccessPointPolicyForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<GetAccessPointPolicyStatusResult, S3ControlError> GetAccessPointPolicyStatusOutcome;
       typedef Aws::Utils::Outcome<GetAccessPointPolicyStatusForObjectLambdaResult, S3ControlError> GetAccessPointPolicyStatusForObjectLambdaOutcome;
+      typedef Aws::Utils::Outcome<GetAccessPointScopeResult, S3ControlError> GetAccessPointScopeOutcome;
       typedef Aws::Utils::Outcome<GetBucketResult, S3ControlError> GetBucketOutcome;
       typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, S3ControlError> GetBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketPolicyResult, S3ControlError> GetBucketPolicyOutcome;
@@ -281,6 +289,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAccessGrantsInstancesResult, S3ControlError> ListAccessGrantsInstancesOutcome;
       typedef Aws::Utils::Outcome<ListAccessGrantsLocationsResult, S3ControlError> ListAccessGrantsLocationsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsResult, S3ControlError> ListAccessPointsOutcome;
+      typedef Aws::Utils::Outcome<ListAccessPointsForDirectoryBucketsResult, S3ControlError> ListAccessPointsForDirectoryBucketsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPointsForObjectLambdaResult, S3ControlError> ListAccessPointsForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<ListCallerAccessGrantsResult, S3ControlError> ListCallerAccessGrantsOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, S3ControlError> ListJobsOutcome;
@@ -293,6 +302,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointConfigurationForObjectLambdaOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyForObjectLambdaOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointScopeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketReplicationOutcome;
@@ -331,6 +341,7 @@ namespace Aws
       typedef std::future<DeleteAccessPointForObjectLambdaOutcome> DeleteAccessPointForObjectLambdaOutcomeCallable;
       typedef std::future<DeleteAccessPointPolicyOutcome> DeleteAccessPointPolicyOutcomeCallable;
       typedef std::future<DeleteAccessPointPolicyForObjectLambdaOutcome> DeleteAccessPointPolicyForObjectLambdaOutcomeCallable;
+      typedef std::future<DeleteAccessPointScopeOutcome> DeleteAccessPointScopeOutcomeCallable;
       typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
       typedef std::future<DeleteBucketLifecycleConfigurationOutcome> DeleteBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketPolicyOutcome> DeleteBucketPolicyOutcomeCallable;
@@ -357,6 +368,7 @@ namespace Aws
       typedef std::future<GetAccessPointPolicyForObjectLambdaOutcome> GetAccessPointPolicyForObjectLambdaOutcomeCallable;
       typedef std::future<GetAccessPointPolicyStatusOutcome> GetAccessPointPolicyStatusOutcomeCallable;
       typedef std::future<GetAccessPointPolicyStatusForObjectLambdaOutcome> GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable;
+      typedef std::future<GetAccessPointScopeOutcome> GetAccessPointScopeOutcomeCallable;
       typedef std::future<GetBucketOutcome> GetBucketOutcomeCallable;
       typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
@@ -377,6 +389,7 @@ namespace Aws
       typedef std::future<ListAccessGrantsInstancesOutcome> ListAccessGrantsInstancesOutcomeCallable;
       typedef std::future<ListAccessGrantsLocationsOutcome> ListAccessGrantsLocationsOutcomeCallable;
       typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
+      typedef std::future<ListAccessPointsForDirectoryBucketsOutcome> ListAccessPointsForDirectoryBucketsOutcomeCallable;
       typedef std::future<ListAccessPointsForObjectLambdaOutcome> ListAccessPointsForObjectLambdaOutcomeCallable;
       typedef std::future<ListCallerAccessGrantsOutcome> ListCallerAccessGrantsOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
@@ -389,6 +402,7 @@ namespace Aws
       typedef std::future<PutAccessPointConfigurationForObjectLambdaOutcome> PutAccessPointConfigurationForObjectLambdaOutcomeCallable;
       typedef std::future<PutAccessPointPolicyOutcome> PutAccessPointPolicyOutcomeCallable;
       typedef std::future<PutAccessPointPolicyForObjectLambdaOutcome> PutAccessPointPolicyForObjectLambdaOutcomeCallable;
+      typedef std::future<PutAccessPointScopeOutcome> PutAccessPointScopeOutcomeCallable;
       typedef std::future<PutBucketLifecycleConfigurationOutcome> PutBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
       typedef std::future<PutBucketReplicationOutcome> PutBucketReplicationOutcomeCallable;
@@ -430,6 +444,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointForObjectLambdaRequest&, const Model::DeleteAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyRequest&, const Model::DeleteAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyForObjectLambdaRequest&, const Model::DeleteAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointScopeRequest&, const Model::DeleteAccessPointScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointScopeResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketLifecycleConfigurationRequest&, const Model::DeleteBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketPolicyResponseReceivedHandler;
@@ -456,6 +471,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyForObjectLambdaRequest&, const Model::GetAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyStatusRequest&, const Model::GetAccessPointPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyStatusResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyStatusForObjectLambdaRequest&, const Model::GetAccessPointPolicyStatusForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointScopeRequest&, const Model::GetAccessPointScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointScopeResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketRequest&, const Model::GetBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
@@ -476,6 +492,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessGrantsInstancesRequest&, const Model::ListAccessGrantsInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessGrantsInstancesResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessGrantsLocationsRequest&, const Model::ListAccessGrantsLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessGrantsLocationsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForDirectoryBucketsRequest&, const Model::ListAccessPointsForDirectoryBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForDirectoryBucketsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForObjectLambdaRequest&, const Model::ListAccessPointsForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListCallerAccessGrantsRequest&, const Model::ListCallerAccessGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCallerAccessGrantsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
@@ -488,6 +505,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointConfigurationForObjectLambdaRequest&, const Model::PutAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyRequest&, const Model::PutAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyForObjectLambdaRequest&, const Model::PutAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyForObjectLambdaResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointScopeRequest&, const Model::PutAccessPointScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointScopeResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketLifecycleConfigurationRequest&, const Model::PutBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketReplicationRequest&, const Model::PutBucketReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketReplicationResponseReceivedHandler;

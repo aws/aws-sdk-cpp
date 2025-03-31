@@ -9,6 +9,7 @@
 #include <aws/awstransfer/model/DescribedWebAppIdentityProviderDetails.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/WebAppEndpointPolicy.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
 
@@ -134,6 +135,19 @@ namespace Model
     template<typename TagsT = Tag>
     DescribedWebApp& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> Setting for the type of endpoint policy for the web app. The default value
+     * is <code>STANDARD</code>. </p> <p>If your web app was created in an Amazon Web
+     * Services GovCloud (US) Region, the value of this parameter can be
+     * <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+     */
+    inline WebAppEndpointPolicy GetWebAppEndpointPolicy() const { return m_webAppEndpointPolicy; }
+    inline bool WebAppEndpointPolicyHasBeenSet() const { return m_webAppEndpointPolicyHasBeenSet; }
+    inline void SetWebAppEndpointPolicy(WebAppEndpointPolicy value) { m_webAppEndpointPolicyHasBeenSet = true; m_webAppEndpointPolicy = value; }
+    inline DescribedWebApp& WithWebAppEndpointPolicy(WebAppEndpointPolicy value) { SetWebAppEndpointPolicy(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -156,6 +170,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
+    bool m_webAppEndpointPolicyHasBeenSet = false;
   };
 
 } // namespace Model

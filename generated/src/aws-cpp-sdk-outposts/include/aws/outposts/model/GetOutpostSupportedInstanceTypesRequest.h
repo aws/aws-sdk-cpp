@@ -63,6 +63,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the Outpost asset. An Outpost asset can be a single server within
+     * an Outposts rack or an Outposts server configuration.</p>
+     */
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    GetOutpostSupportedInstanceTypesRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -86,6 +99,9 @@ namespace Model
 
     Aws::String m_orderId;
     bool m_orderIdHasBeenSet = false;
+
+    Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;

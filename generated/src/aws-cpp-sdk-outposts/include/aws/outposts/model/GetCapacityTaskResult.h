@@ -75,6 +75,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Outpost asset. An Outpost asset can be a single server within
+     * an Outposts rack or an Outposts server configuration.</p>
+     */
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    GetCapacityTaskResult& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of instance pools requested in the capacity task.</p>
      */
     inline const Aws::Vector<InstanceTypeCapacity>& GetRequestedInstancePools() const { return m_requestedInstancePools; }
@@ -114,9 +126,15 @@ namespace Model
      * following statuses:</p> <ul> <li> <p> <code>REQUESTED</code> - The capacity task
      * was created and is awaiting the next step by Amazon Web Services Outposts.</p>
      * </li> <li> <p> <code>IN_PROGRESS</code> - The capacity task is running and
-     * cannot be cancelled.</p> </li> <li> <p> <code>WAITING_FOR_EVACUATION</code> -
-     * The capacity task requires capacity to run. You must stop the recommended EC2
-     * running instances to free up capacity for the task to run.</p> </li> </ul>
+     * cannot be cancelled.</p> </li> <li> <p> <code>FAILED</code> - The capacity task
+     * could not be completed.</p> </li> <li> <p> <code>COMPLETED</code> - The capacity
+     * task has completed successfully.</p> </li> <li> <p>
+     * <code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to
+     * run. You must stop the recommended EC2 running instances to free up capacity for
+     * the task to run.</p> </li> <li> <p> <code>CANCELLATION_IN_PROGRESS</code> - The
+     * capacity task has been cancelled and is in the process of cleaning up
+     * resources.</p> </li> <li> <p> <code>CANCELLED</code> - The capacity task is
+     * cancelled.</p> </li> </ul>
      */
     inline CapacityTaskStatus GetCapacityTaskStatus() const { return m_capacityTaskStatus; }
     inline void SetCapacityTaskStatus(CapacityTaskStatus value) { m_capacityTaskStatusHasBeenSet = true; m_capacityTaskStatus = value; }
@@ -199,6 +217,9 @@ namespace Model
 
     Aws::String m_orderId;
     bool m_orderIdHasBeenSet = false;
+
+    Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::Vector<InstanceTypeCapacity> m_requestedInstancePools;
     bool m_requestedInstancePoolsHasBeenSet = false;

@@ -30,6 +30,13 @@ void GetOutpostSupportedInstanceTypesRequest::AddQueryStringParameters(URI& uri)
       ss.str("");
     }
 
+    if(m_assetIdHasBeenSet)
+    {
+      ss << m_assetId;
+      uri.AddQueryStringParameter("AssetId", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;

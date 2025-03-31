@@ -30,6 +30,11 @@ SearchTermFilterExpression& SearchTermFilterExpression::operator =(JsonView json
     m_searchTerm = jsonValue.GetString("searchTerm");
     m_searchTermHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("matchType"))
+  {
+    m_matchType = SearchTermMatchingTypeMapper::GetSearchTermMatchingTypeForName(jsonValue.GetString("matchType"));
+    m_matchTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -41,6 +46,11 @@ JsonValue SearchTermFilterExpression::Jsonize() const
   {
    payload.WithString("searchTerm", m_searchTerm);
 
+  }
+
+  if(m_matchTypeHasBeenSet)
+  {
+   payload.WithString("matchType", SearchTermMatchingTypeMapper::GetNameForSearchTermMatchingType(m_matchType));
   }
 
   return payload;

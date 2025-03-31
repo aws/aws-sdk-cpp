@@ -122,9 +122,10 @@ namespace Model
      * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a>.</p>  <p> <b>Directory buckets</b> - Only the S3 Express One
-     * Zone storage class is supported by directory buckets to store objects.</p>
-     * 
+     * Classes</a>.</p>  <p> <b>Directory buckets</b> - Directory buckets only
+     * support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone storage class) in
+     * Availability Zones and <code>ONEZONE_IA</code> (the S3 One Zone-Infrequent
+     * Access storage class) in Dedicated Local Zones.</p> 
      */
     inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline void SetStorageClass(StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }

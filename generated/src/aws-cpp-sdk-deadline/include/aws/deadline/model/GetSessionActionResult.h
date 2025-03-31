@@ -113,7 +113,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The exit code to exit the session.</p>
+     * <p>The process exit code. The default Deadline Cloud worker agent converts
+     * unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
      */
     inline int GetProcessExitCode() const { return m_processExitCode; }
     inline void SetProcessExitCode(int value) { m_processExitCodeHasBeenSet = true; m_processExitCode = value; }

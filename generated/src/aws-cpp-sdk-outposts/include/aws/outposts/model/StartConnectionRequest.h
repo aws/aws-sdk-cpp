@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ID of the Outpost server. </p>
+     * <p> The ID of the Outpost server.</p>
      */
     inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }

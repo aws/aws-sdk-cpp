@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3control/model/VpcConfiguration.h>
 #include <aws/s3control/model/PublicAccessBlockConfiguration.h>
+#include <aws/s3control/model/Scope.h>
 #include <utility>
 
 namespace Aws
@@ -55,7 +56,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name you want to assign to this access point.</p>
+     * <p>The name you want to assign to this access point.</p> <p>For directory
+     * buckets, the access point name must consist of a base name that you provide and
+     * suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability
+     * Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+     * access to shared datasets in directory buckets with access points</a> in the
+     * Amazon S3 User Guide.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -131,6 +139,23 @@ namespace Model
     template<typename BucketAccountIdT = Aws::String>
     CreateAccessPointRequest& WithBucketAccountId(BucketAccountIdT&& value) { SetBucketAccountId(std::forward<BucketAccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For directory buckets, you can filter access control to specific prefixes,
+     * API operations, or a combination of both. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+     * access to shared datasets in directory buckets with access points</a> in the
+     * Amazon S3 User Guide.</p>  <p>Scope is not supported for access points for
+     * general purpose buckets.</p> 
+     */
+    inline const Scope& GetScope() const { return m_scope; }
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    CreateAccessPointRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -150,6 +175,9 @@ namespace Model
 
     Aws::String m_bucketAccountId;
     bool m_bucketAccountIdHasBeenSet = false;
+
+    Scope m_scope;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

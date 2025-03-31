@@ -1479,7 +1479,10 @@ namespace SESV2
         }
 
         /**
-         * <p>Lists all of the contact lists available.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the contact lists available.</p> <p>If your output includes a
+         * "NextToken" field with a string value, this indicates there may be additional
+         * contacts on the filtered list - regardless of the number of contacts
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists">AWS
          * API Reference</a></p>
          */

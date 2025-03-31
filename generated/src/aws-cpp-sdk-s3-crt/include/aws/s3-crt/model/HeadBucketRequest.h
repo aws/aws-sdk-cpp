@@ -59,10 +59,12 @@ namespace Model
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
-     * points</b> - When you use this action with an access point, you must provide the
-     * alias of the access point in place of the bucket name or specify the access
-     * point ARN. When using the access point ARN, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * points</b> - When you use this action with an access point for general purpose
+     * buckets, you must provide the alias of the access point in place of the bucket
+     * name or specify the access point ARN. When you use this action with an access
+     * point for directory buckets, you must provide the access point name in place of
+     * the bucket name. When using the access point ARN, you must direct requests to
+     * the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -75,10 +77,10 @@ namespace Model
      * the error code <code>InvalidAccessPointAliasError</code> is returned. For more
      * information about <code>InvalidAccessPointAliasError</code>, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-     * of Error Codes</a>.</p>  <p>Access points and Object Lambda access points
-     * are not supported by directory buckets.</p>  <p> <b>S3 on Outposts</b> -
-     * When you use this action with S3 on Outposts, you must direct requests to the S3
-     * on Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * of Error Codes</a>.</p>  <p>Object Lambda access points are not supported
+     * by directory buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this
+     * action with S3 on Outposts, you must direct requests to the S3 on Outposts
+     * hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts, the destination bucket must be the
      * Outposts access point ARN or the access point alias. For more information about

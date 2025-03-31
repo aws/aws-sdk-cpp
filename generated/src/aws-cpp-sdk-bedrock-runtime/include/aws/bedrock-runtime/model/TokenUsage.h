@@ -65,6 +65,26 @@ namespace Model
     inline void SetTotalTokens(int value) { m_totalTokensHasBeenSet = true; m_totalTokens = value; }
     inline TokenUsage& WithTotalTokens(int value) { SetTotalTokens(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of input tokens read from the cache for the request.</p>
+     */
+    inline int GetCacheReadInputTokens() const { return m_cacheReadInputTokens; }
+    inline bool CacheReadInputTokensHasBeenSet() const { return m_cacheReadInputTokensHasBeenSet; }
+    inline void SetCacheReadInputTokens(int value) { m_cacheReadInputTokensHasBeenSet = true; m_cacheReadInputTokens = value; }
+    inline TokenUsage& WithCacheReadInputTokens(int value) { SetCacheReadInputTokens(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of input tokens written to the cache for the request.</p>
+     */
+    inline int GetCacheWriteInputTokens() const { return m_cacheWriteInputTokens; }
+    inline bool CacheWriteInputTokensHasBeenSet() const { return m_cacheWriteInputTokensHasBeenSet; }
+    inline void SetCacheWriteInputTokens(int value) { m_cacheWriteInputTokensHasBeenSet = true; m_cacheWriteInputTokens = value; }
+    inline TokenUsage& WithCacheWriteInputTokens(int value) { SetCacheWriteInputTokens(value); return *this;}
+    ///@}
   private:
 
     int m_inputTokens{0};
@@ -75,6 +95,12 @@ namespace Model
 
     int m_totalTokens{0};
     bool m_totalTokensHasBeenSet = false;
+
+    int m_cacheReadInputTokens{0};
+    bool m_cacheReadInputTokensHasBeenSet = false;
+
+    int m_cacheWriteInputTokens{0};
+    bool m_cacheWriteInputTokensHasBeenSet = false;
   };
 
 } // namespace Model

@@ -277,8 +277,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or
-     * update this configuration after the cluster is created.</p>
+     * <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change,
+     * or remove this configuration after the cluster is created.</p>
      */
     inline const RemoteNetworkConfigRequest& GetRemoteNetworkConfig() const { return m_remoteNetworkConfig; }
     inline bool RemoteNetworkConfigHasBeenSet() const { return m_remoteNetworkConfigHasBeenSet; }

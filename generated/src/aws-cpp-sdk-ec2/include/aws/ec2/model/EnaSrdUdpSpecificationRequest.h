@@ -43,7 +43,7 @@ namespace Model
      * <p>Indicates whether UDP traffic uses ENA Express for your instance. To ensure
      * that UDP traffic can use ENA Express when you launch an instance, you must also
      * set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to
-     * <code>true</code> in your launch template.</p>
+     * <code>true</code>.</p>
      */
     inline bool GetEnaSrdUdpEnabled() const { return m_enaSrdUdpEnabled; }
     inline bool EnaSrdUdpEnabledHasBeenSet() const { return m_enaSrdUdpEnabledHasBeenSet; }

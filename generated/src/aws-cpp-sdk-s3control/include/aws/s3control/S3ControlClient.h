@@ -231,13 +231,15 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
-         * <p>Creates an access point and associates it with the specified bucket. For more
+         * <p>Creates an access point and associates it to a specified bucket. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-         * Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User
-         * Guide</i>.</p> <p/>  <p>S3 on Outposts only supports VPC-style access
-         * points. </p> <p>For more information, see <a
+         * access to shared datasets in general purpose buckets with access points</a> or
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+         * access to shared datasets in directory buckets with access points</a> in the
+         * <i>Amazon S3 User Guide</i>.</p> <p/>  <p>S3 on Outposts only supports
+         * VPC-style access points. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access
          * points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>All Amazon S3 on
@@ -255,6 +257,8 @@ namespace S3Control
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">AWS
          * API Reference</a></p>
@@ -639,7 +643,6 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Deletes the specified access point.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you
@@ -714,7 +717,6 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Deletes the access point policy for the specified access point.</p> <p/>
          * <p>All Amazon S3 on Outposts REST API requests for this action require an
          * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
@@ -783,6 +785,37 @@ namespace S3Control
         void DeleteAccessPointPolicyForObjectLambdaAsync(const DeleteAccessPointPolicyForObjectLambdaRequestT& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::DeleteAccessPointPolicyForObjectLambda, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes an existing access point scope for a directory bucket.</p> 
+         * <p>When you delete the scope of an access point, all prefixes and permissions
+         * are deleted.</p>  <p>To use this operation, you must have the permission
+         * to perform the <code>s3express:DeleteAccessPointScope</code> action.</p> <p>For
+         * information about REST API errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+         * error responses</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessPointScopeOutcome DeleteAccessPointScope(const Model::DeleteAccessPointScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccessPointScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccessPointScopeRequestT = Model::DeleteAccessPointScopeRequest>
+        Model::DeleteAccessPointScopeOutcomeCallable DeleteAccessPointScopeCallable(const DeleteAccessPointScopeRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::DeleteAccessPointScope, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccessPointScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccessPointScopeRequestT = Model::DeleteAccessPointScopeRequest>
+        void DeleteAccessPointScopeAsync(const DeleteAccessPointScopeRequestT& request, const DeleteAccessPointScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::DeleteAccessPointScope, request, handler, context);
         }
 
         /**
@@ -1528,7 +1561,6 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Returns configuration information about the specified access point.</p> <p/>
          * <p>All Amazon S3 on Outposts REST API requests for this action require an
          * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
@@ -1634,7 +1666,6 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Returns the access point policy associated with the specified access
          * point.</p> <p>The following actions are related to
          * <code>GetAccessPointPolicy</code>:</p> <ul> <li> <p> <a
@@ -1753,6 +1784,36 @@ namespace S3Control
         void GetAccessPointPolicyStatusForObjectLambdaAsync(const GetAccessPointPolicyStatusForObjectLambdaRequestT& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::GetAccessPointPolicyStatusForObjectLambda, request, handler, context);
+        }
+
+        /**
+         * <p> Returns the access point scope for a directory bucket.</p> <p>To use this
+         * operation, you must have the permission to perform the
+         * <code>s3express:GetAccessPointScope</code> action.</p> <p>For information about
+         * REST API errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+         * error responses</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointScopeOutcome GetAccessPointScope(const Model::GetAccessPointScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccessPointScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccessPointScopeRequestT = Model::GetAccessPointScopeRequest>
+        Model::GetAccessPointScopeOutcomeCallable GetAccessPointScopeCallable(const GetAccessPointScopeRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::GetAccessPointScope, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccessPointScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccessPointScopeRequestT = Model::GetAccessPointScopeRequest>
+        void GetAccessPointScopeAsync(const GetAccessPointScopeRequestT& request, const GetAccessPointScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::GetAccessPointScope, request, handler, context);
         }
 
         /**
@@ -2589,6 +2650,39 @@ namespace S3Control
         }
 
         /**
+         * <p>Returns a list of the access points that are owned by the Amazon Web Services
+         * account and that are associated with the specified directory bucket.</p> <p>To
+         * list access points for general purpose buckets, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccesspoints</a>.</p>
+         * <p>To use this operation, you must have the permission to perform the
+         * <code>s3express:ListAccessPointsForDirectoryBuckets</code> action.</p> <p>For
+         * information about REST API errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+         * error responses</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccessPointsForDirectoryBucketsOutcome ListAccessPointsForDirectoryBuckets(const Model::ListAccessPointsForDirectoryBucketsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccessPointsForDirectoryBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccessPointsForDirectoryBucketsRequestT = Model::ListAccessPointsForDirectoryBucketsRequest>
+        Model::ListAccessPointsForDirectoryBucketsOutcomeCallable ListAccessPointsForDirectoryBucketsCallable(const ListAccessPointsForDirectoryBucketsRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::ListAccessPointsForDirectoryBuckets, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccessPointsForDirectoryBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccessPointsForDirectoryBucketsRequestT = Model::ListAccessPointsForDirectoryBucketsRequest>
+        void ListAccessPointsForDirectoryBucketsAsync(const ListAccessPointsForDirectoryBucketsRequestT& request, const ListAccessPointsForDirectoryBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::ListAccessPointsForDirectoryBuckets, request, handler, context);
+        }
+
+        /**
          *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Returns some or all (up to 1,000) access points associated with the Object
          * Lambda Access Point per call. If there are more access points than what can be
@@ -2949,7 +3043,6 @@ namespace S3Control
         }
 
         /**
-         *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Associates an access policy with the specified access point. Each access
          * point can have only one policy, so a request made to this API replaces any
          * existing policy associated with the specified access point.</p> <p/> <p>All
@@ -3022,6 +3115,46 @@ namespace S3Control
         void PutAccessPointPolicyForObjectLambdaAsync(const PutAccessPointPolicyForObjectLambdaRequestT& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3ControlClient::PutAccessPointPolicyForObjectLambda, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or replaces the access point scope for a directory bucket. You can
+         * use the access point scope to restrict access to specific prefixes, API
+         * operations, or a combination of both.</p> <p>You can include one or more of the
+         * following API operations as permissions:</p> <ul> <li> <p> <code>PutObjet</code>
+         * </p> </li> <li> <p> <code>GetObject</code> </p> </li> <li> <p>
+         * <code>DeleteObject</code> </p> </li> <li> <p> <code>ListBucket</code> </p> </li>
+         * <li> <p> <code>GetObjectAttributes</code> </p> </li> <li> <p>
+         * <code>AbortMultipartUpload</code> </p> </li> <li> <p>
+         * <code>ListBucketMultipartUpload</code> </p> </li> <li> <p>
+         * <code>ListMultiPartUploadParts</code> </p> </li> </ul>  <p>You can specify
+         * any amount of prefixes, but the total length of characters of all prefixes must
+         * be less than 512 KB in size.</p>  <p>To use this operation, you must have
+         * the permission to perform the <code>s3express:PutAccessPointScope</code>
+         * action.</p> <p>For information about REST API errors, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+         * error responses</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccessPointScopeOutcome PutAccessPointScope(const Model::PutAccessPointScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccessPointScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAccessPointScopeRequestT = Model::PutAccessPointScopeRequest>
+        Model::PutAccessPointScopeOutcomeCallable PutAccessPointScopeCallable(const PutAccessPointScopeRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::PutAccessPointScope, request);
+        }
+
+        /**
+         * An Async wrapper for PutAccessPointScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAccessPointScopeRequestT = Model::PutAccessPointScopeRequest>
+        void PutAccessPointScopeAsync(const PutAccessPointScopeRequestT& request, const PutAccessPointScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::PutAccessPointScope, request, handler, context);
         }
 
         /**

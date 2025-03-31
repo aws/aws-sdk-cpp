@@ -40,6 +40,16 @@ TokenUsage& TokenUsage::operator =(JsonView jsonValue)
     m_totalTokens = jsonValue.GetInteger("totalTokens");
     m_totalTokensHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cacheReadInputTokens"))
+  {
+    m_cacheReadInputTokens = jsonValue.GetInteger("cacheReadInputTokens");
+    m_cacheReadInputTokensHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cacheWriteInputTokens"))
+  {
+    m_cacheWriteInputTokens = jsonValue.GetInteger("cacheWriteInputTokens");
+    m_cacheWriteInputTokensHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +72,18 @@ JsonValue TokenUsage::Jsonize() const
   if(m_totalTokensHasBeenSet)
   {
    payload.WithInteger("totalTokens", m_totalTokens);
+
+  }
+
+  if(m_cacheReadInputTokensHasBeenSet)
+  {
+   payload.WithInteger("cacheReadInputTokens", m_cacheReadInputTokens);
+
+  }
+
+  if(m_cacheWriteInputTokensHasBeenSet)
+  {
+   payload.WithInteger("cacheWriteInputTokens", m_cacheWriteInputTokens);
 
   }
 

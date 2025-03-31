@@ -176,7 +176,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for
-     * the described user.</p>
+     * the described user.</p>  <p>To delete the public key body, set its value
+     * to zero keys, as shown here:</p> <p> <code>SshPublicKeys: []</code> </p> 
      */
     inline const Aws::Vector<SshPublicKey>& GetSshPublicKeys() const { return m_sshPublicKeys; }
     inline bool SshPublicKeysHasBeenSet() const { return m_sshPublicKeysHasBeenSet; }

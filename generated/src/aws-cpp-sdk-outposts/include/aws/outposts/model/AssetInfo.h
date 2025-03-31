@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ID of the asset. </p>
+     * <p> The ID of the asset. An Outpost asset can be a single server within an
+     * Outposts rack or an Outposts server configuration.</p>
      */
     inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }

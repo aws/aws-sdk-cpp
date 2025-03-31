@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

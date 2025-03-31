@@ -104,24 +104,25 @@ namespace Model
      * source and destination buckets must have the same parent Amazon Web Services
      * Region. Otherwise, you get an HTTP <code>400 Bad Request</code> error with the
      * error code <code>InvalidRequest</code>.</p>  <p> <b>Access points</b> -
-     * When you use this action with an access point, you must provide the alias of the
-     * access point in place of the bucket name or specify the access point ARN. When
-     * using the access point ARN, you must direct requests to the access point
-     * hostname. The access point hostname takes the form
+     * When you use this action with an access point for general purpose buckets, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When you use this action with an access point for
+     * directory buckets, you must provide the access point name in place of the bucket
+     * name. When using the access point ARN, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
-     * points and Object Lambda access points are not supported by directory
-     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
-     * S3 on Outposts, you must use the Outpost bucket access point ARN or the access
-     * point alias for the destination bucket. You can only copy objects within the
-     * same Outpost bucket. It's not supported to copy objects across different Amazon
-     * Web Services Outposts, between buckets on the same Outposts, or between Outposts
-     * buckets and any other bucket types. For more information about S3 on Outposts,
-     * see <a
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Object
+     * Lambda access points are not supported by directory buckets.</p>  <p>
+     * <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must
+     * use the Outpost bucket access point ARN or the access point alias for the
+     * destination bucket. You can only copy objects within the same Outpost bucket.
+     * It's not supported to copy objects across different Amazon Web Services
+     * Outposts, between buckets on the same Outposts, or between Outposts buckets and
+     * any other bucket types. For more information about S3 on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
      * is S3 on Outposts?</a> in the <i>S3 on Outposts guide</i>. When you use this
      * action with S3 on Outposts through the REST API, you must direct requests to the
@@ -602,15 +603,16 @@ namespace Model
      * will be stored in the <code>STANDARD</code> Storage Class by default. The
      * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
-     * directory buckets, only the S3 Express One Zone storage class is supported to
-     * store newly created objects. Unsupported storage class values won't write a
-     * destination object and will respond with the HTTP status code <code>400 Bad
-     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
-     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
-     *  <p>You can use the <code>CopyObject</code> action to change the storage
-     * class of an object that is already stored in Amazon S3 by using the
-     * <code>x-amz-storage-class</code> header. For more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - Directory
+     * buckets only support <code>EXPRESS_ONEZONE</code> (the S3 Express One Zone
+     * storage class) in Availability Zones and <code>ONEZONE_IA</code> (the S3 One
+     * Zone-Infrequent Access storage class) in Dedicated Local Zones. Unsupported
+     * storage class values won't write a destination object and will respond with the
+     * HTTP status code <code>400 Bad Request</code>.</p> </li> <li> <p> <b>Amazon S3
+     * on Outposts </b> - S3 on Outposts only uses the <code>OUTPOSTS</code> Storage
+     * Class.</p> </li> </ul>  <p>You can use the <code>CopyObject</code> action
+     * to change the storage class of an object that is already stored in Amazon S3 by
+     * using the <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
      * a source object for the copy operation, you must restore a copy of it if it
