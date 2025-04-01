@@ -28,6 +28,11 @@ Aws::String UpdateCollaborationRequest::SerializePayload() const
 
   }
 
+  if(m_analyticsEngineHasBeenSet)
+  {
+   payload.WithString("analyticsEngine", AnalyticsEngineMapper::GetNameForAnalyticsEngine(m_analyticsEngine));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +69,16 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     UpdateCollaborationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The analytics engine.</p>
+     */
+    inline AnalyticsEngine GetAnalyticsEngine() const { return m_analyticsEngine; }
+    inline bool AnalyticsEngineHasBeenSet() const { return m_analyticsEngineHasBeenSet; }
+    inline void SetAnalyticsEngine(AnalyticsEngine value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
+    inline UpdateCollaborationRequest& WithAnalyticsEngine(AnalyticsEngine value) { SetAnalyticsEngine(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;
@@ -78,6 +89,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
+    bool m_analyticsEngineHasBeenSet = false;
   };
 
 } // namespace Model
