@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/NotebookInstanceLifecycleHook.h>
+#include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,24 @@ namespace Model
     template<typename OnStartT = NotebookInstanceLifecycleHook>
     CreateNotebookInstanceLifecycleConfigRequest& AddOnStart(OnStartT&& value) { m_onStartHasBeenSet = true; m_onStart.emplace_back(std::forward<OnStartT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
+     * Amazon Web Services Resources</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateNotebookInstanceLifecycleConfigRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateNotebookInstanceLifecycleConfigRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
@@ -88,6 +107,9 @@ namespace Model
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
     bool m_onStartHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model
