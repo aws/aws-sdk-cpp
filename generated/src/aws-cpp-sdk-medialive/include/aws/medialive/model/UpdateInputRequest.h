@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/SrtSettingsRequest.h>
 #include <aws/medialive/model/MulticastSettingsUpdateRequest.h>
+#include <aws/medialive/model/Smpte2110ReceiverGroupSettings.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/InputDeviceRequest.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
@@ -182,6 +183,19 @@ Only specify sources for PULL type Inputs. Leave
     template<typename MulticastSettingsT = MulticastSettingsUpdateRequest>
     UpdateInputRequest& WithMulticastSettings(MulticastSettingsT&& value) { SetMulticastSettings(std::forward<MulticastSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Include this parameter if the input is a SMPTE 2110 input, to identify the
+     * stream sources for this input.
+     */
+    inline const Smpte2110ReceiverGroupSettings& GetSmpte2110ReceiverGroupSettings() const { return m_smpte2110ReceiverGroupSettings; }
+    inline bool Smpte2110ReceiverGroupSettingsHasBeenSet() const { return m_smpte2110ReceiverGroupSettingsHasBeenSet; }
+    template<typename Smpte2110ReceiverGroupSettingsT = Smpte2110ReceiverGroupSettings>
+    void SetSmpte2110ReceiverGroupSettings(Smpte2110ReceiverGroupSettingsT&& value) { m_smpte2110ReceiverGroupSettingsHasBeenSet = true; m_smpte2110ReceiverGroupSettings = std::forward<Smpte2110ReceiverGroupSettingsT>(value); }
+    template<typename Smpte2110ReceiverGroupSettingsT = Smpte2110ReceiverGroupSettings>
+    UpdateInputRequest& WithSmpte2110ReceiverGroupSettings(Smpte2110ReceiverGroupSettingsT&& value) { SetSmpte2110ReceiverGroupSettings(std::forward<Smpte2110ReceiverGroupSettingsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -213,6 +227,9 @@ Only specify sources for PULL type Inputs. Leave
 
     MulticastSettingsUpdateRequest m_multicastSettings;
     bool m_multicastSettingsHasBeenSet = false;
+
+    Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
+    bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/application-signals/model/ServiceLevelIndicatorMetricType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/application-signals/model/MonitoredRequestCountMetricDataQueries.h>
+#include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/MetricDataQuery.h>
 #include <utility>
 
@@ -132,6 +133,19 @@ namespace Model
     template<typename MonitoredRequestCountMetricT = MonitoredRequestCountMetricDataQueries>
     RequestBasedServiceLevelIndicatorMetricConfig& WithMonitoredRequestCountMetric(MonitoredRequestCountMetricT&& value) { SetMonitoredRequestCountMetric(std::forward<MonitoredRequestCountMetricT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and
+     * <code>DependencyOperationName</code>. </p>
+     */
+    inline const DependencyConfig& GetDependencyConfig() const { return m_dependencyConfig; }
+    inline bool DependencyConfigHasBeenSet() const { return m_dependencyConfigHasBeenSet; }
+    template<typename DependencyConfigT = DependencyConfig>
+    void SetDependencyConfig(DependencyConfigT&& value) { m_dependencyConfigHasBeenSet = true; m_dependencyConfig = std::forward<DependencyConfigT>(value); }
+    template<typename DependencyConfigT = DependencyConfig>
+    RequestBasedServiceLevelIndicatorMetricConfig& WithDependencyConfig(DependencyConfigT&& value) { SetDependencyConfig(std::forward<DependencyConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;
@@ -148,6 +162,9 @@ namespace Model
 
     MonitoredRequestCountMetricDataQueries m_monitoredRequestCountMetric;
     bool m_monitoredRequestCountMetricHasBeenSet = false;
+
+    DependencyConfig m_dependencyConfig;
+    bool m_dependencyConfigHasBeenSet = false;
   };
 
 } // namespace Model

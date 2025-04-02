@@ -84,6 +84,11 @@ UpdateBotResult& UpdateBotResult::operator =(const Aws::AmazonWebServiceResult<J
     }
     m_botMembersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorLogSettings"))
+  {
+    m_errorLogSettings = jsonValue.GetObject("errorLogSettings");
+    m_errorLogSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

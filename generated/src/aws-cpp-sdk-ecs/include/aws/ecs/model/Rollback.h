@@ -66,15 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the service revision deployed as part of the rollback.</p> <p>When
-     * the type is <code>GPU</code>, the value is the number of physical
-     * <code>GPUs</code> the Amazon ECS container agent reserves for the container. The
-     * number of GPUs that's reserved for all containers in a task can't exceed the
-     * number of available GPUs on the container instance that the task is launched
-     * on.</p> <p>When the type is <code>InferenceAccelerator</code>, the
-     * <code>value</code> matches the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
+     * <p>The ARN of the service revision deployed as part of the rollback.</p>
      */
     inline const Aws::String& GetServiceRevisionArn() const { return m_serviceRevisionArn; }
     inline bool ServiceRevisionArnHasBeenSet() const { return m_serviceRevisionArnHasBeenSet; }

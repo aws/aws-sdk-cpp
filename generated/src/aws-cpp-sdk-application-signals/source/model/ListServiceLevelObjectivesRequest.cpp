@@ -30,6 +30,23 @@ Aws::String ListServiceLevelObjectivesRequest::SerializePayload() const
 
   }
 
+  if(m_dependencyConfigHasBeenSet)
+  {
+   payload.WithObject("DependencyConfig", m_dependencyConfig.Jsonize());
+
+  }
+
+  if(m_metricSourceTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metricSourceTypesJsonList(m_metricSourceTypes.size());
+   for(unsigned metricSourceTypesIndex = 0; metricSourceTypesIndex < metricSourceTypesJsonList.GetLength(); ++metricSourceTypesIndex)
+   {
+     metricSourceTypesJsonList[metricSourceTypesIndex].AsString(MetricSourceTypeMapper::GetNameForMetricSourceType(m_metricSourceTypes[metricSourceTypesIndex]));
+   }
+   payload.WithArray("MetricSourceTypes", std::move(metricSourceTypesJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

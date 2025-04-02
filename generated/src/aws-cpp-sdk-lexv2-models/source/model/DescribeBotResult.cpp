@@ -93,6 +93,11 @@ DescribeBotResult& DescribeBotResult::operator =(const Aws::AmazonWebServiceResu
     }
     m_failureReasonsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorLogSettings"))
+  {
+    m_errorLogSettings = jsonValue.GetObject("errorLogSettings");
+    m_errorLogSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

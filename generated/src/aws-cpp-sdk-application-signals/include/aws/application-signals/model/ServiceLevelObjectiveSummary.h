@@ -7,7 +7,10 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/application-signals/model/EvaluationType.h>
+#include <aws/application-signals/model/MetricSourceType.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +111,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and
+     * <code>DependencyOperationName</code>. </p>
+     */
+    inline const DependencyConfig& GetDependencyConfig() const { return m_dependencyConfig; }
+    inline bool DependencyConfigHasBeenSet() const { return m_dependencyConfigHasBeenSet; }
+    template<typename DependencyConfigT = DependencyConfig>
+    void SetDependencyConfig(DependencyConfigT&& value) { m_dependencyConfigHasBeenSet = true; m_dependencyConfig = std::forward<DependencyConfigT>(value); }
+    template<typename DependencyConfigT = DependencyConfig>
+    ServiceLevelObjectiveSummary& WithDependencyConfig(DependencyConfigT&& value) { SetDependencyConfig(std::forward<DependencyConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time that this service level objective was created. It is
      * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
@@ -117,6 +133,28 @@ namespace Model
     void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
     template<typename CreatedTimeT = Aws::Utils::DateTime>
     ServiceLevelObjectiveSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+     */
+    inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
+    inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
+    inline void SetEvaluationType(EvaluationType value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
+    inline ServiceLevelObjectiveSummary& WithEvaluationType(EvaluationType value) { SetEvaluationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+     * <ul> <li> <p>Service operation</p> </li> <li> <p>Service dependency</p> </li>
+     * <li> <p>CloudWatch metric</p> </li> </ul>
+     */
+    inline MetricSourceType GetMetricSourceType() const { return m_metricSourceType; }
+    inline bool MetricSourceTypeHasBeenSet() const { return m_metricSourceTypeHasBeenSet; }
+    inline void SetMetricSourceType(MetricSourceType value) { m_metricSourceTypeHasBeenSet = true; m_metricSourceType = value; }
+    inline ServiceLevelObjectiveSummary& WithMetricSourceType(MetricSourceType value) { SetMetricSourceType(value); return *this;}
     ///@}
   private:
 
@@ -132,8 +170,17 @@ namespace Model
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet = false;
 
+    DependencyConfig m_dependencyConfig;
+    bool m_dependencyConfigHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
+
+    EvaluationType m_evaluationType{EvaluationType::NOT_SET};
+    bool m_evaluationTypeHasBeenSet = false;
+
+    MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+    bool m_metricSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

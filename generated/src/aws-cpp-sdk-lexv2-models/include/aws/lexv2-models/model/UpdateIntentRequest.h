@@ -15,6 +15,7 @@
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/QnAIntentConfiguration.h>
+#include <aws/lexv2-models/model/QInConnectIntentConfiguration.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -283,6 +284,18 @@ namespace Model
     template<typename QnAIntentConfigurationT = QnAIntentConfiguration>
     UpdateIntentRequest& WithQnAIntentConfiguration(QnAIntentConfigurationT&& value) { SetQnAIntentConfiguration(std::forward<QnAIntentConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Qinconnect intent configuration details for the update intent request.</p>
+     */
+    inline const QInConnectIntentConfiguration& GetQInConnectIntentConfiguration() const { return m_qInConnectIntentConfiguration; }
+    inline bool QInConnectIntentConfigurationHasBeenSet() const { return m_qInConnectIntentConfigurationHasBeenSet; }
+    template<typename QInConnectIntentConfigurationT = QInConnectIntentConfiguration>
+    void SetQInConnectIntentConfiguration(QInConnectIntentConfigurationT&& value) { m_qInConnectIntentConfigurationHasBeenSet = true; m_qInConnectIntentConfiguration = std::forward<QInConnectIntentConfigurationT>(value); }
+    template<typename QInConnectIntentConfigurationT = QInConnectIntentConfiguration>
+    UpdateIntentRequest& WithQInConnectIntentConfiguration(QInConnectIntentConfigurationT&& value) { SetQInConnectIntentConfiguration(std::forward<QInConnectIntentConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_intentId;
@@ -338,6 +351,9 @@ namespace Model
 
     QnAIntentConfiguration m_qnAIntentConfiguration;
     bool m_qnAIntentConfigurationHasBeenSet = false;
+
+    QInConnectIntentConfiguration m_qInConnectIntentConfiguration;
+    bool m_qInConnectIntentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

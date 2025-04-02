@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/model/DataPrivacy.h>
+#include <aws/lexv2-models/model/ErrorLogSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -77,6 +78,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Allows you to configure destinations where error logs will be published
+     * during the bot import process.</p>
+     */
+    inline const ErrorLogSettings& GetErrorLogSettings() const { return m_errorLogSettings; }
+    inline bool ErrorLogSettingsHasBeenSet() const { return m_errorLogSettingsHasBeenSet; }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    void SetErrorLogSettings(ErrorLogSettingsT&& value) { m_errorLogSettingsHasBeenSet = true; m_errorLogSettings = std::forward<ErrorLogSettingsT>(value); }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    BotImportSpecification& WithErrorLogSettings(ErrorLogSettingsT&& value) { SetErrorLogSettings(std::forward<ErrorLogSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time, in seconds, that Amazon Lex should keep information about a user's
      * conversation with the bot. </p> <p>A user interaction remains active for the
      * amount of time specified. If no conversation occurs during this time, the
@@ -135,6 +149,9 @@ namespace Model
 
     DataPrivacy m_dataPrivacy;
     bool m_dataPrivacyHasBeenSet = false;
+
+    ErrorLogSettings m_errorLogSettings;
+    bool m_errorLogSettingsHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;

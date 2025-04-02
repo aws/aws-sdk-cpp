@@ -62,6 +62,12 @@ Aws::String UpdateBotRequest::SerializePayload() const
 
   }
 
+  if(m_errorLogSettingsHasBeenSet)
+  {
+   payload.WithObject("errorLogSettings", m_errorLogSettings.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

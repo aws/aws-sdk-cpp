@@ -15,6 +15,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/QnAIntentConfiguration.h>
+#include <aws/lexv2-models/model/QInConnectIntentConfiguration.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -285,6 +286,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Qinconnect intent configuration details for the update intent response.</p>
+     */
+    inline const QInConnectIntentConfiguration& GetQInConnectIntentConfiguration() const { return m_qInConnectIntentConfiguration; }
+    template<typename QInConnectIntentConfigurationT = QInConnectIntentConfiguration>
+    void SetQInConnectIntentConfiguration(QInConnectIntentConfigurationT&& value) { m_qInConnectIntentConfigurationHasBeenSet = true; m_qInConnectIntentConfiguration = std::forward<QInConnectIntentConfigurationT>(value); }
+    template<typename QInConnectIntentConfigurationT = QInConnectIntentConfiguration>
+    UpdateIntentResult& WithQInConnectIntentConfiguration(QInConnectIntentConfigurationT&& value) { SetQInConnectIntentConfiguration(std::forward<QInConnectIntentConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -353,6 +365,9 @@ namespace Model
 
     QnAIntentConfiguration m_qnAIntentConfiguration;
     bool m_qnAIntentConfigurationHasBeenSet = false;
+
+    QInConnectIntentConfiguration m_qInConnectIntentConfiguration;
+    bool m_qInConnectIntentConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

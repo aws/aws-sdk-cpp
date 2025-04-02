@@ -15,6 +15,7 @@
 #include <aws/medialive/model/SrtSettings.h>
 #include <aws/medialive/model/InputNetworkLocation.h>
 #include <aws/medialive/model/MulticastSettings.h>
+#include <aws/medialive/model/Smpte2110ReceiverGroupSettings.h>
 #include <aws/medialive/model/InputDestination.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
@@ -278,6 +279,18 @@ an input in a customer network.
     ///@}
 
     ///@{
+    /**
+     * Include this parameter if the input is a SMPTE 2110 input, to identify the
+     * stream sources for this input.
+     */
+    inline const Smpte2110ReceiverGroupSettings& GetSmpte2110ReceiverGroupSettings() const { return m_smpte2110ReceiverGroupSettings; }
+    template<typename Smpte2110ReceiverGroupSettingsT = Smpte2110ReceiverGroupSettings>
+    void SetSmpte2110ReceiverGroupSettings(Smpte2110ReceiverGroupSettingsT&& value) { m_smpte2110ReceiverGroupSettingsHasBeenSet = true; m_smpte2110ReceiverGroupSettings = std::forward<Smpte2110ReceiverGroupSettingsT>(value); }
+    template<typename Smpte2110ReceiverGroupSettingsT = Smpte2110ReceiverGroupSettings>
+    DescribeInputResult& WithSmpte2110ReceiverGroupSettings(Smpte2110ReceiverGroupSettingsT&& value) { SetSmpte2110ReceiverGroupSettings(std::forward<Smpte2110ReceiverGroupSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -343,6 +356,9 @@ an input in a customer network.
 
     MulticastSettings m_multicastSettings;
     bool m_multicastSettingsHasBeenSet = false;
+
+    Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
+    bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

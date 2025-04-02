@@ -120,6 +120,12 @@ Aws::String UpdateIntentRequest::SerializePayload() const
 
   }
 
+  if(m_qInConnectIntentConfigurationHasBeenSet)
+  {
+   payload.WithObject("qInConnectIntentConfiguration", m_qInConnectIntentConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

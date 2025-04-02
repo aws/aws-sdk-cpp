@@ -53,6 +53,11 @@ ServiceLevelIndicatorMetric& ServiceLevelIndicatorMetric::operator =(JsonView js
     }
     m_metricDataQueriesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DependencyConfig"))
+  {
+    m_dependencyConfig = jsonValue.GetObject("DependencyConfig");
+    m_dependencyConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -90,6 +95,12 @@ JsonValue ServiceLevelIndicatorMetric::Jsonize() const
      metricDataQueriesJsonList[metricDataQueriesIndex].AsObject(m_metricDataQueries[metricDataQueriesIndex].Jsonize());
    }
    payload.WithArray("MetricDataQueries", std::move(metricDataQueriesJsonList));
+
+  }
+
+  if(m_dependencyConfigHasBeenSet)
+  {
+   payload.WithObject("DependencyConfig", m_dependencyConfig.Jsonize());
 
   }
 

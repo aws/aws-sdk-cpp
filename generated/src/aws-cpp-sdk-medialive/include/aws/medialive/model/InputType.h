@@ -27,7 +27,8 @@ namespace Model
     AWS_CDI,
     TS_FILE,
     SRT_CALLER,
-    MULTICAST
+    MULTICAST,
+    SMPTE_2110_RECEIVER_GROUP
   };
 
 namespace InputTypeMapper

@@ -152,6 +152,11 @@ Input& Input::operator =(JsonView jsonValue)
     m_multicastSettings = jsonValue.GetObject("multicastSettings");
     m_multicastSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("smpte2110ReceiverGroupSettings"))
+  {
+    m_smpte2110ReceiverGroupSettings = jsonValue.GetObject("smpte2110ReceiverGroupSettings");
+    m_smpte2110ReceiverGroupSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -305,6 +310,12 @@ JsonValue Input::Jsonize() const
   if(m_multicastSettingsHasBeenSet)
   {
    payload.WithObject("multicastSettings", m_multicastSettings.Jsonize());
+
+  }
+
+  if(m_smpte2110ReceiverGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("smpte2110ReceiverGroupSettings", m_smpte2110ReceiverGroupSettings.Jsonize());
 
   }
 

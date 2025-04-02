@@ -152,6 +152,11 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     m_multicastSettings = jsonValue.GetObject("multicastSettings");
     m_multicastSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("smpte2110ReceiverGroupSettings"))
+  {
+    m_smpte2110ReceiverGroupSettings = jsonValue.GetObject("smpte2110ReceiverGroupSettings");
+    m_smpte2110ReceiverGroupSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
