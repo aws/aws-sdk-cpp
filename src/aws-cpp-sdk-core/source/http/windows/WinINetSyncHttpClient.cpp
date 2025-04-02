@@ -31,6 +31,10 @@ using namespace Aws::Utils::Logging;
 static const DWORD HTTP_PROTOCOL_FLAG_HTTP2 = 0x2;
 #endif
 
+#ifndef INTERNET_OPTION_ENABLE_HTTP_PROTOCOL
+static const DWORD INTERNET_OPTION_ENABLE_HTTP_PROTOCOL = 148;
+#endif
+
 static void WinINetEnableHttp2(void* handle)
 {
     DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
