@@ -12,6 +12,7 @@
 #include <aws/application-signals/model/EvaluationType.h>
 #include <aws/application-signals/model/Goal.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-signals/model/MetricSourceType.h>
 #include <aws/application-signals/model/BurnRateConfiguration.h>
 #include <utility>
 
@@ -177,6 +178,18 @@ namespace Model
     template<typename BurnRateConfigurationsT = BurnRateConfiguration>
     ServiceLevelObjective& AddBurnRateConfigurations(BurnRateConfigurationsT&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.emplace_back(std::forward<BurnRateConfigurationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+     * <ul> <li> <p>Service operation</p> </li> <li> <p>Service dependency</p> </li>
+     * <li> <p>CloudWatch metric</p> </li> </ul>
+     */
+    inline MetricSourceType GetMetricSourceType() const { return m_metricSourceType; }
+    inline bool MetricSourceTypeHasBeenSet() const { return m_metricSourceTypeHasBeenSet; }
+    inline void SetMetricSourceType(MetricSourceType value) { m_metricSourceTypeHasBeenSet = true; m_metricSourceType = value; }
+    inline ServiceLevelObjective& WithMetricSourceType(MetricSourceType value) { SetMetricSourceType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -208,6 +221,9 @@ namespace Model
 
     Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
     bool m_burnRateConfigurationsHasBeenSet = false;
+
+    MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+    bool m_metricSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

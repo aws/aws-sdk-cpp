@@ -141,6 +141,11 @@ DescribeIntentResult& DescribeIntentResult::operator =(const Aws::AmazonWebServi
     m_qnAIntentConfiguration = jsonValue.GetObject("qnAIntentConfiguration");
     m_qnAIntentConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("qInConnectIntentConfiguration"))
+  {
+    m_qInConnectIntentConfiguration = jsonValue.GetObject("qInConnectIntentConfiguration");
+    m_qInConnectIntentConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

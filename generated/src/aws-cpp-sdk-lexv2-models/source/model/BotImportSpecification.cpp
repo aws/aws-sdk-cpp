@@ -40,6 +40,11 @@ BotImportSpecification& BotImportSpecification::operator =(JsonView jsonValue)
     m_dataPrivacy = jsonValue.GetObject("dataPrivacy");
     m_dataPrivacyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorLogSettings"))
+  {
+    m_errorLogSettings = jsonValue.GetObject("errorLogSettings");
+    m_errorLogSettingsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
   {
     m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
@@ -85,6 +90,12 @@ JsonValue BotImportSpecification::Jsonize() const
   if(m_dataPrivacyHasBeenSet)
   {
    payload.WithObject("dataPrivacy", m_dataPrivacy.Jsonize());
+
+  }
+
+  if(m_errorLogSettingsHasBeenSet)
+  {
+   payload.WithObject("errorLogSettings", m_errorLogSettings.Jsonize());
 
   }
 

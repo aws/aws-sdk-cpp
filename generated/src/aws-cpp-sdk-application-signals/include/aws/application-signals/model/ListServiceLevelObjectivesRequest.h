@@ -8,6 +8,9 @@
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-signals/model/DependencyConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-signals/model/MetricSourceType.h>
 #include <utility>
 
 namespace Aws
@@ -83,6 +86,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and
+     * <code>DependencyOperationName</code>. </p>
+     */
+    inline const DependencyConfig& GetDependencyConfig() const { return m_dependencyConfig; }
+    inline bool DependencyConfigHasBeenSet() const { return m_dependencyConfigHasBeenSet; }
+    template<typename DependencyConfigT = DependencyConfig>
+    void SetDependencyConfig(DependencyConfigT&& value) { m_dependencyConfigHasBeenSet = true; m_dependencyConfig = std::forward<DependencyConfigT>(value); }
+    template<typename DependencyConfigT = DependencyConfig>
+    ListServiceLevelObjectivesRequest& WithDependencyConfig(DependencyConfigT&& value) { SetDependencyConfig(std::forward<DependencyConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to return in one operation. If you omit this
      * parameter, the default of 50 is used.</p>
      */
@@ -103,6 +119,22 @@ namespace Model
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
     ListServiceLevelObjectivesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use this optional field to only include SLOs with the specified metric source
+     * types in the output. Supported types are:</p> <ul> <li> <p>Service operation</p>
+     * </li> <li> <p>Service dependency</p> </li> <li> <p>CloudWatch metric</p> </li>
+     * </ul>
+     */
+    inline const Aws::Vector<MetricSourceType>& GetMetricSourceTypes() const { return m_metricSourceTypes; }
+    inline bool MetricSourceTypesHasBeenSet() const { return m_metricSourceTypesHasBeenSet; }
+    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+    void SetMetricSourceTypes(MetricSourceTypesT&& value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes = std::forward<MetricSourceTypesT>(value); }
+    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+    ListServiceLevelObjectivesRequest& WithMetricSourceTypes(MetricSourceTypesT&& value) { SetMetricSourceTypes(std::forward<MetricSourceTypesT>(value)); return *this;}
+    inline ListServiceLevelObjectivesRequest& AddMetricSourceTypes(MetricSourceType value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -140,11 +172,17 @@ namespace Model
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet = false;
 
+    DependencyConfig m_dependencyConfig;
+    bool m_dependencyConfigHasBeenSet = false;
+
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<MetricSourceType> m_metricSourceTypes;
+    bool m_metricSourceTypesHasBeenSet = false;
 
     bool m_includeLinkedAccounts{false};
     bool m_includeLinkedAccountsHasBeenSet = false;

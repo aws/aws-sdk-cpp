@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/BotType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/ErrorLogSettings.h>
 #include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
@@ -160,6 +161,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings for managing error logs within the response of an update bot
+     * operation.</p>
+     */
+    inline const ErrorLogSettings& GetErrorLogSettings() const { return m_errorLogSettings; }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    void SetErrorLogSettings(ErrorLogSettingsT&& value) { m_errorLogSettingsHasBeenSet = true; m_errorLogSettings = std::forward<ErrorLogSettingsT>(value); }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    UpdateBotResult& WithErrorLogSettings(ErrorLogSettingsT&& value) { SetErrorLogSettings(std::forward<ErrorLogSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -201,6 +214,9 @@ namespace Model
 
     Aws::Vector<BotMember> m_botMembers;
     bool m_botMembersHasBeenSet = false;
+
+    ErrorLogSettings m_errorLogSettings;
+    bool m_errorLogSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

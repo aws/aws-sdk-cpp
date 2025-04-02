@@ -58,6 +58,11 @@ RequestBasedServiceLevelIndicatorMetricConfig& RequestBasedServiceLevelIndicator
     m_monitoredRequestCountMetric = jsonValue.GetObject("MonitoredRequestCountMetric");
     m_monitoredRequestCountMetricHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DependencyConfig"))
+  {
+    m_dependencyConfig = jsonValue.GetObject("DependencyConfig");
+    m_dependencyConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +106,12 @@ JsonValue RequestBasedServiceLevelIndicatorMetricConfig::Jsonize() const
   if(m_monitoredRequestCountMetricHasBeenSet)
   {
    payload.WithObject("MonitoredRequestCountMetric", m_monitoredRequestCountMetric.Jsonize());
+
+  }
+
+  if(m_dependencyConfigHasBeenSet)
+  {
+   payload.WithObject("DependencyConfig", m_dependencyConfig.Jsonize());
 
   }
 

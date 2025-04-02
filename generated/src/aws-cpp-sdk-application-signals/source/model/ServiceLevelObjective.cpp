@@ -79,6 +79,11 @@ ServiceLevelObjective& ServiceLevelObjective::operator =(JsonView jsonValue)
     }
     m_burnRateConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MetricSourceType"))
+  {
+    m_metricSourceType = MetricSourceTypeMapper::GetMetricSourceTypeForName(jsonValue.GetString("MetricSourceType"));
+    m_metricSourceTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -146,6 +151,11 @@ JsonValue ServiceLevelObjective::Jsonize() const
    }
    payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
 
+  }
+
+  if(m_metricSourceTypeHasBeenSet)
+  {
+   payload.WithString("MetricSourceType", MetricSourceTypeMapper::GetNameForMetricSourceType(m_metricSourceType));
   }
 
   return payload;

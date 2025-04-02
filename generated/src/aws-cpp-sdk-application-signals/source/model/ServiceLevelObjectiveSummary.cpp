@@ -49,10 +49,25 @@ ServiceLevelObjectiveSummary& ServiceLevelObjectiveSummary::operator =(JsonView 
     m_operationName = jsonValue.GetString("OperationName");
     m_operationNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DependencyConfig"))
+  {
+    m_dependencyConfig = jsonValue.GetObject("DependencyConfig");
+    m_dependencyConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
     m_createdTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EvaluationType"))
+  {
+    m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
+    m_evaluationTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MetricSourceType"))
+  {
+    m_metricSourceType = MetricSourceTypeMapper::GetMetricSourceTypeForName(jsonValue.GetString("MetricSourceType"));
+    m_metricSourceTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -90,9 +105,25 @@ JsonValue ServiceLevelObjectiveSummary::Jsonize() const
 
   }
 
+  if(m_dependencyConfigHasBeenSet)
+  {
+   payload.WithObject("DependencyConfig", m_dependencyConfig.Jsonize());
+
+  }
+
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_evaluationTypeHasBeenSet)
+  {
+   payload.WithString("EvaluationType", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluationType));
+  }
+
+  if(m_metricSourceTypeHasBeenSet)
+  {
+   payload.WithString("MetricSourceType", MetricSourceTypeMapper::GetNameForMetricSourceType(m_metricSourceType));
   }
 
   return payload;

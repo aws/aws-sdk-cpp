@@ -128,6 +128,12 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   }
 
+  if(m_smpte2110ReceiverGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("smpte2110ReceiverGroupSettings", m_smpte2110ReceiverGroupSettings.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

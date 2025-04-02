@@ -32,6 +32,7 @@ namespace Aws
         static const int TS_FILE_HASH = HashingUtils::HashString("TS_FILE");
         static const int SRT_CALLER_HASH = HashingUtils::HashString("SRT_CALLER");
         static const int MULTICAST_HASH = HashingUtils::HashString("MULTICAST");
+        static const int SMPTE_2110_RECEIVER_GROUP_HASH = HashingUtils::HashString("SMPTE_2110_RECEIVER_GROUP");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return InputType::MULTICAST;
           }
+          else if (hashCode == SMPTE_2110_RECEIVER_GROUP_HASH)
+          {
+            return InputType::SMPTE_2110_RECEIVER_GROUP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +130,8 @@ namespace Aws
             return "SRT_CALLER";
           case InputType::MULTICAST:
             return "MULTICAST";
+          case InputType::SMPTE_2110_RECEIVER_GROUP:
+            return "SMPTE_2110_RECEIVER_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

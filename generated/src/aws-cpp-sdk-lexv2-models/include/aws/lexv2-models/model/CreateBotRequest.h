@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lexv2-models/model/BotType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/ErrorLogSettings.h>
 #include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
@@ -163,6 +164,18 @@ namespace Model
     template<typename BotMembersT = BotMember>
     CreateBotRequest& AddBotMembers(BotMembersT&& value) { m_botMembersHasBeenSet = true; m_botMembers.emplace_back(std::forward<BotMembersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the configuration for error logging during bot creation.</p>
+     */
+    inline const ErrorLogSettings& GetErrorLogSettings() const { return m_errorLogSettings; }
+    inline bool ErrorLogSettingsHasBeenSet() const { return m_errorLogSettingsHasBeenSet; }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    void SetErrorLogSettings(ErrorLogSettingsT&& value) { m_errorLogSettingsHasBeenSet = true; m_errorLogSettings = std::forward<ErrorLogSettingsT>(value); }
+    template<typename ErrorLogSettingsT = ErrorLogSettings>
+    CreateBotRequest& WithErrorLogSettings(ErrorLogSettingsT&& value) { SetErrorLogSettings(std::forward<ErrorLogSettingsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_botName;
@@ -191,6 +204,9 @@ namespace Model
 
     Aws::Vector<BotMember> m_botMembers;
     bool m_botMembersHasBeenSet = false;
+
+    ErrorLogSettings m_errorLogSettings;
+    bool m_errorLogSettingsHasBeenSet = false;
   };
 
 } // namespace Model
