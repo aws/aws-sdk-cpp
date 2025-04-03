@@ -9,6 +9,7 @@
 #include <aws/sesv2/model/EmailTemplateContent.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/MessageHeader.h>
+#include <aws/sesv2/model/Attachment.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,21 @@ namespace Model
     template<typename HeadersT = MessageHeader>
     Template& AddHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers.emplace_back(std::forward<HeadersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The List of attachments to include in your email. All recipients will
+     * receive the same attachments.</p>
+     */
+    inline const Aws::Vector<Attachment>& GetAttachments() const { return m_attachments; }
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    Template& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = Attachment>
+    Template& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_templateName;
@@ -131,6 +147,9 @@ namespace Model
 
     Aws::Vector<MessageHeader> m_headers;
     bool m_headersHasBeenSet = false;
+
+    Aws::Vector<Attachment> m_attachments;
+    bool m_attachmentsHasBeenSet = false;
   };
 
 } // namespace Model

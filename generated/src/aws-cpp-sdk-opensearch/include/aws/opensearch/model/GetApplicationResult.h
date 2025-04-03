@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of the checked OpenSearch Application.</p>
+     * <p>The unique identifier of the OpenSearch application.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the checked OpenSearch Application.</p>
+     * <p>The name of the OpenSearch application.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -71,7 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Endpoint URL of the checked OpenSearch Application.</p>
+     * <p>The endpoint URL of the OpenSearch application.</p>
      */
     inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     template<typename EndpointT = Aws::String>
@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Current status of the checked OpenSearch Application. Possible values are
+     * <p>The current status of the OpenSearch application. Possible values:
      * <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>,
      * <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
      */
@@ -93,7 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+     * <p>The IAM Identity Center settings configured for the OpenSearch
+     * application.</p>
      */
     inline const IamIdentityCenterOptions& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
     template<typename IamIdentityCenterOptionsT = IamIdentityCenterOptions>
@@ -104,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Associated data sources to the checked OpenSearch Application.</p>
+     * <p>The data sources associated with the OpenSearch application.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     template<typename DataSourcesT = Aws::Vector<DataSource>>
@@ -117,7 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>App configurations of the checked OpenSearch Application.</p>
+     * <p>The configuration settings of the OpenSearch application.</p>
      */
     inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     template<typename AppConfigsT = Aws::Vector<AppConfig>>
@@ -130,7 +131,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which the checked OpenSearch Application was created.</p>
+     * <p>The timestamp when the OpenSearch application was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -141,7 +142,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+     * <p>The timestamp of the last update to the OpenSearch application.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>

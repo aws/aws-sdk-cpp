@@ -25,7 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Configurations of the OpenSearch Application.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration settings for an OpenSearch application. For more information,
+   * see see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+   * the OpenSearch user interface in Amazon OpenSearch Service</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AppConfig">AWS
    * API Reference</a></p>
    */
@@ -40,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the item to configure, such as admin role for the OpenSearch
-     * Application.</p>
+     * <p>The configuration item to set, such as the admin role for the OpenSearch
+     * application.</p>
      */
     inline AppConfigType GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -51,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the value to configure for the key, such as an IAM user ARN.</p>
+     * <p>The value assigned to the configuration key, such as an IAM user ARN.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

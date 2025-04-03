@@ -209,8 +209,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The owner of the package who is allowed to create/update a package and add
-     * users to the package scope.</p>
+     * <p>The owner of the package who is allowed to create and update a package and
+     * add users to the package scope.</p>
      */
     inline const Aws::String& GetPackageOwner() const { return m_packageOwner; }
     inline bool PackageOwnerHasBeenSet() const { return m_packageOwnerHasBeenSet; }
@@ -234,7 +234,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Package Encryption Options for a package.</p>
+     * <p>Encryption options for a package.</p>
      */
     inline const PackageEncryptionOptions& GetPackageEncryptionOptions() const { return m_packageEncryptionOptions; }
     inline bool PackageEncryptionOptionsHasBeenSet() const { return m_packageEncryptionOptionsHasBeenSet; }

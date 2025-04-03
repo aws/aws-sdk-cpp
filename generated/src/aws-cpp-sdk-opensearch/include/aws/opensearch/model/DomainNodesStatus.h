@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+     * <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
      */
     inline NodeType GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3.
+     * <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3.
      * Only applicable for data nodes. </p>
      */
     inline VolumeType GetStorageVolumeType() const { return m_storageVolumeType; }

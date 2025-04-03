@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mailmanager/model/IngressPointAuthConfiguration.h>
+#include <aws/mailmanager/model/NetworkConfiguration.h>
 #include <aws/mailmanager/model/IngressPointStatus.h>
 #include <aws/mailmanager/model/IngressPointType.h>
 #include <utility>
@@ -116,6 +117,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The network configuration for the ingress point.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    GetIngressPointResult& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of a rule set resource associated with the ingress
      * endpoint.</p>
      */
@@ -186,6 +198,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::String m_ruleSetId;
     bool m_ruleSetIdHasBeenSet = false;

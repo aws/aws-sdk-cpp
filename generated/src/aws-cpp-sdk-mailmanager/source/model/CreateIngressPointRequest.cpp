@@ -34,6 +34,12 @@ Aws::String CreateIngressPointRequest::SerializePayload() const
 
   }
 
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
   if(m_ruleSetIdHasBeenSet)
   {
    payload.WithString("RuleSetId", m_ruleSetId);

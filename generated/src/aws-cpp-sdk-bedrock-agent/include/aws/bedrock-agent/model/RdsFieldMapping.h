@@ -40,6 +40,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provide a name for the universal metadata field where Amazon Bedrock will
+     * store any custom metadata from your data source.</p>
+     */
+    inline const Aws::String& GetCustomMetadataField() const { return m_customMetadataField; }
+    inline bool CustomMetadataFieldHasBeenSet() const { return m_customMetadataFieldHasBeenSet; }
+    template<typename CustomMetadataFieldT = Aws::String>
+    void SetCustomMetadataField(CustomMetadataFieldT&& value) { m_customMetadataFieldHasBeenSet = true; m_customMetadataField = std::forward<CustomMetadataFieldT>(value); }
+    template<typename CustomMetadataFieldT = Aws::String>
+    RdsFieldMapping& WithCustomMetadataField(CustomMetadataFieldT&& value) { SetCustomMetadataField(std::forward<CustomMetadataFieldT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the field in which Amazon Bedrock stores metadata about the
      * vector store.</p>
      */
@@ -90,6 +103,9 @@ namespace Model
     RdsFieldMapping& WithVectorField(VectorFieldT&& value) { SetVectorField(std::forward<VectorFieldT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_customMetadataField;
+    bool m_customMetadataFieldHasBeenSet = false;
 
     Aws::String m_metadataField;
     bool m_metadataFieldHasBeenSet = false;

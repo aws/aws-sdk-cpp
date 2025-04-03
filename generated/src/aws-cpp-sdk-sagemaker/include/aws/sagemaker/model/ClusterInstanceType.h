@@ -101,7 +101,32 @@ namespace Model
     ml_r6i_12xlarge,
     ml_r6i_16xlarge,
     ml_r6i_24xlarge,
-    ml_r6i_32xlarge
+    ml_r6i_32xlarge,
+    ml_i3en_large,
+    ml_i3en_xlarge,
+    ml_i3en_2xlarge,
+    ml_i3en_3xlarge,
+    ml_i3en_6xlarge,
+    ml_i3en_12xlarge,
+    ml_i3en_24xlarge,
+    ml_m7i_large,
+    ml_m7i_xlarge,
+    ml_m7i_2xlarge,
+    ml_m7i_4xlarge,
+    ml_m7i_8xlarge,
+    ml_m7i_12xlarge,
+    ml_m7i_16xlarge,
+    ml_m7i_24xlarge,
+    ml_m7i_48xlarge,
+    ml_r7i_large,
+    ml_r7i_xlarge,
+    ml_r7i_2xlarge,
+    ml_r7i_4xlarge,
+    ml_r7i_8xlarge,
+    ml_r7i_12xlarge,
+    ml_r7i_16xlarge,
+    ml_r7i_24xlarge,
+    ml_r7i_48xlarge
   };
 
 namespace ClusterInstanceTypeMapper

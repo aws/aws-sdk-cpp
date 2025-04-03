@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of the updated OpenSearch Application.</p>
+     * <p>The unique identifier of the updated OpenSearch application.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the updated OpenSearch Application.</p>
+     * <p>The name of the updated OpenSearch application.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data sources associated with the updated OpenSearch Application.</p>
+     * <p>The data sources associated with the updated OpenSearch application.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     template<typename DataSourcesT = Aws::Vector<DataSource>>
@@ -83,7 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>IAM Identity Center settings for the updated OpenSearch Application.</p>
+     * <p>The IAM Identity Center configuration for the updated OpenSearch
+     * application.</p>
      */
     inline const IamIdentityCenterOptions& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
     template<typename IamIdentityCenterOptionsT = IamIdentityCenterOptions>
@@ -94,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configurations for the updated OpenSearch Application.</p>
+     * <p>The configuration settings for the updated OpenSearch application.</p>
      */
     inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     template<typename AppConfigsT = Aws::Vector<AppConfig>>
@@ -107,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which the OpenSearch Application was created.</p>
+     * <p>The timestamp when the OpenSearch application was originally created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -118,7 +119,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which the OpenSearch Application was last updated.</p>
+     * <p>The timestamp when the OpenSearch application was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>

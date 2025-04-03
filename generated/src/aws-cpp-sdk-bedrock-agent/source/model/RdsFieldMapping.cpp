@@ -25,6 +25,11 @@ RdsFieldMapping::RdsFieldMapping(JsonView jsonValue)
 
 RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customMetadataField"))
+  {
+    m_customMetadataField = jsonValue.GetString("customMetadataField");
+    m_customMetadataFieldHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("metadataField"))
   {
     m_metadataField = jsonValue.GetString("metadataField");
@@ -51,6 +56,12 @@ RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
 JsonValue RdsFieldMapping::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customMetadataFieldHasBeenSet)
+  {
+   payload.WithString("customMetadataField", m_customMetadataField);
+
+  }
 
   if(m_metadataFieldHasBeenSet)
   {

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for the OpenSearch Application that you want to delete.</p>
+     * <p>The unique identifier of the OpenSearch application to delete.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

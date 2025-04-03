@@ -54,6 +54,8 @@ namespace Aws
         static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
         static const int mx_central_1_HASH = HashingUtils::HashString("mx-central-1");
         static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
+        static const int us_gov_east_1_HASH = HashingUtils::HashString("us-gov-east-1");
+        static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
 
 
         ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
@@ -195,6 +197,14 @@ namespace Aws
           {
             return ResourceRecordSetRegion::ap_southeast_7;
           }
+          else if (hashCode == us_gov_east_1_HASH)
+          {
+            return ResourceRecordSetRegion::us_gov_east_1;
+          }
+          else if (hashCode == us_gov_west_1_HASH)
+          {
+            return ResourceRecordSetRegion::us_gov_west_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -279,6 +289,10 @@ namespace Aws
             return "mx-central-1";
           case ResourceRecordSetRegion::ap_southeast_7:
             return "ap-southeast-7";
+          case ResourceRecordSetRegion::us_gov_east_1:
+            return "us-gov-east-1";
+          case ResourceRecordSetRegion::us_gov_west_1:
+            return "us-gov-west-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

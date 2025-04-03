@@ -35,6 +35,11 @@ PolicyCondition& PolicyCondition::operator =(JsonView jsonValue)
     m_ipExpression = jsonValue.GetObject("IpExpression");
     m_ipExpressionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Ipv6Expression"))
+  {
+    m_ipv6Expression = jsonValue.GetObject("Ipv6Expression");
+    m_ipv6ExpressionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("StringExpression"))
   {
     m_stringExpression = jsonValue.GetObject("StringExpression");
@@ -61,6 +66,12 @@ JsonValue PolicyCondition::Jsonize() const
   if(m_ipExpressionHasBeenSet)
   {
    payload.WithObject("IpExpression", m_ipExpression.Jsonize());
+
+  }
+
+  if(m_ipv6ExpressionHasBeenSet)
+  {
+   payload.WithObject("Ipv6Expression", m_ipv6Expression.Jsonize());
 
   }
 

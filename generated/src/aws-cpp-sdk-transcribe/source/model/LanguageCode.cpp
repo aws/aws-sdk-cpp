@@ -122,6 +122,7 @@ namespace Aws
         static const int uk_UA_HASH = HashingUtils::HashString("uk-UA");
         static const int uz_UZ_HASH = HashingUtils::HashString("uz-UZ");
         static const int wo_SN_HASH = HashingUtils::HashString("wo-SN");
+        static const int zh_HK_HASH = HashingUtils::HashString("zh-HK");
         static const int zu_ZA_HASH = HashingUtils::HashString("zu-ZA");
 
 
@@ -536,6 +537,10 @@ namespace Aws
           {
             return LanguageCode::wo_SN;
           }
+          else if (hashCode == zh_HK_HASH)
+          {
+            return LanguageCode::zh_HK;
+          }
           else if (hashCode == zu_ZA_HASH)
           {
             return LanguageCode::zu_ZA;
@@ -760,6 +765,8 @@ namespace Aws
             return "uz-UZ";
           case LanguageCode::wo_SN:
             return "wo-SN";
+          case LanguageCode::zh_HK:
+            return "zh-HK";
           case LanguageCode::zu_ZA:
             return "zu-ZA";
           default:

@@ -42,8 +42,8 @@ namespace Model
     /**
      * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
      * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for your account.</p> </li> <li> <p> <code>DISABLED</code>
-     * ��� Amazon SES disables engagement metrics for your account.</p> </li> </ul>
+     * engagement metrics for your account.</p> </li> <li> <p> <code>DISABLED</code> –
+     * Amazon SES disables engagement metrics for your account.</p> </li> </ul>
      */
     inline FeatureStatus GetEngagementMetrics() const { return m_engagementMetrics; }
     inline bool EngagementMetricsHasBeenSet() const { return m_engagementMetricsHasBeenSet; }

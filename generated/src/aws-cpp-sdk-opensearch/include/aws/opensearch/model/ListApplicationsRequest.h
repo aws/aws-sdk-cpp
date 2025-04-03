@@ -52,10 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>OpenSearch Application Status can be used as filters for the listing request.
-     * Possible values are <code>CREATING</code>, <code>UPDATING</code>,
-     * <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and
-     * <code>DELETED</code>.</p>
+     * <p>Filters the list of OpenSearch applications by status. Possible values:
+     * <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>,
+     * <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
      */
     inline const Aws::Vector<ApplicationStatus>& GetStatuses() const { return m_statuses; }
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }

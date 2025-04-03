@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of the OpenSearch Application to be updated.</p>
+     * <p>The unique identifier for the OpenSearch application to be updated.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data sources to be associated with the OpenSearch Application.</p>
+     * <p>The data sources to associate with the OpenSearch application.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configurations to be changed for the OpenSearch Application.</p>
+     * <p>The configuration settings to modify for the OpenSearch application.</p>
      */
     inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     inline bool AppConfigsHasBeenSet() const { return m_appConfigsHasBeenSet; }

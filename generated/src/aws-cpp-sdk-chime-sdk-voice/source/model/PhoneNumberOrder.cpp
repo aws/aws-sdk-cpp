@@ -64,6 +64,11 @@ PhoneNumberOrder& PhoneNumberOrder::operator =(JsonView jsonValue)
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("FocDate"))
+  {
+    m_focDate = jsonValue.GetString("FocDate");
+    m_focDateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -111,6 +116,11 @@ JsonValue PhoneNumberOrder::Jsonize() const
   if(m_updatedTimestampHasBeenSet)
   {
    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_focDateHasBeenSet)
+  {
+   payload.WithString("FocDate", m_focDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

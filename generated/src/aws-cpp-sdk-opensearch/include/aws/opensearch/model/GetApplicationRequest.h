@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of the checked OpenSearch Application.</p>
+     * <p>The unique identifier of the OpenSearch application to retrieve.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

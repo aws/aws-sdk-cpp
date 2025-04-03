@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The status of IAM Identity Center Options settings for a
+   * <p>The status of IAM Identity Center configuration settings for a
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IdentityCenterOptionsStatus">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Container for IAM Identity Center Options settings.</p>
+     * <p>Configuration settings for IAM Identity Center integration.</p>
      */
     inline const IdentityCenterOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of IAM Identity Center Options settings for a domain.</p>
+     * <p>The status of IAM Identity Center configuration settings for a domain.</p>
      */
     inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

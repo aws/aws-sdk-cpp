@@ -332,7 +332,10 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Creates an OpenSearch Application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an OpenSearch UI application. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+         * the OpenSearch user interface in Amazon OpenSearch Service</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -467,7 +470,7 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Deletes an existing OpenSearch Application.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified OpenSearch application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -1149,8 +1152,8 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Check the configuration and status of an existing OpenSearch
-         * Application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the configuration and status of an existing OpenSearch
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetApplication">AWS
          * API Reference</a></p>
          */
@@ -1360,8 +1363,8 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>List all OpenSearch Applications under your account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Lists all OpenSearch applications under your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListApplications">AWS
          * API Reference</a></p>
          */
@@ -1898,7 +1901,8 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Update the OpenSearch Application. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration and settings of an existing OpenSearch
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateApplication">AWS
          * API Reference</a></p>
          */

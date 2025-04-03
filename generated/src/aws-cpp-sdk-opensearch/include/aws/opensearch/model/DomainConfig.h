@@ -238,7 +238,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Container for IAM Identity Center Option control for the domain.</p>
+     * <p>Configuration options for enabling and managing IAM Identity Center
+     * integration within a domain.</p>
      */
     inline const IdentityCenterOptionsStatus& GetIdentityCenterOptions() const { return m_identityCenterOptions; }
     inline bool IdentityCenterOptionsHasBeenSet() const { return m_identityCenterOptionsHasBeenSet; }

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The vending options for a package to determine if the package can be used by
-   * other users. </p><p><h3>See Also:</h3>   <a
+   * <p>Configuration options for determining whether a package can be made available
+   * for use by other users.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PackageVendingOptions">AWS
    * API Reference</a></p>
    */
@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This indicates whether vending is enabled for the package to determine if
-     * package can be used by other users. </p>
+     * <p>Indicates whether the package vending feature is enabled, allowing the
+     * package to be used by other users.</p>
      */
     inline bool GetVendingEnabled() const { return m_vendingEnabled; }
     inline bool VendingEnabledHasBeenSet() const { return m_vendingEnabledHasBeenSet; }
