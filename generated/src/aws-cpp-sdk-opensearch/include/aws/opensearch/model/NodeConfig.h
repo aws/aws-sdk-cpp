@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for specifying configuration of any node type.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configuration options for defining the setup of any node type within the
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/NodeConfig">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A boolean that indicates whether a particular node type is enabled or
-     * not.</p>
+     * <p>A boolean value indicating whether a specific node type is active or
+     * inactive.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance type of a particular node type in the cluster.</p>
+     * <p>The instance type of a particular node within the cluster.</p>
      */
     inline OpenSearchPartitionInstanceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of nodes of a particular node type in the cluster.</p>
+     * <p>The number of nodes of a specific type within the cluster.</p>
      */
     inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/mailmanager/MailManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/IngressPointConfiguration.h>
+#include <aws/mailmanager/model/NetworkConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mailmanager/model/IngressPointType.h>
 #include <aws/mailmanager/model/Tag.h>
@@ -79,6 +80,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the network configuration for the ingress point. This allows you to
+     * create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not
+     * specified, the default network type is IPv4-only. </p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    CreateIngressPointRequest& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of an existing rule set that you attach to an ingress endpoint
      * resource.</p>
      */
@@ -137,6 +152,9 @@ namespace Model
 
     Aws::String m_ingressPointName;
     bool m_ingressPointNameHasBeenSet = false;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::String m_ruleSetId;
     bool m_ruleSetIdHasBeenSet = false;

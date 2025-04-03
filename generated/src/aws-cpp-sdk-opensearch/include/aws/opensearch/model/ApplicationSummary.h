@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Basic information of the OpenSearch Application.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Basic details of an OpenSearch application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ApplicationSummary">AWS
    * API Reference</a></p>
    */
@@ -42,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for an OpenSearch application.</p>
+     * <p>The unique identifier of an OpenSearch application.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -64,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of an OpenSearch Application.</p>
+     * <p>The name of an OpenSearch application.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -76,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Endpoint URL of an OpenSearch Application.</p>
+     * <p>The endpoint URL of an OpenSearch application.</p>
      */
     inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
@@ -88,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of an OpenSearch Application. Possible values are
-     * <code>CREATING</code>, <code>UPDATING</code>,<code> DELETING</code>,
+     * <p>The current status of an OpenSearch application. Possible values:
+     * <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>,
      * <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
      */
     inline ApplicationStatus GetStatus() const { return m_status; }
@@ -100,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which an OpenSearch Application was created.</p>
+     * <p>The timestamp when an OpenSearch application was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -112,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which an OpenSearch Application was last updated.</p>
+     * <p>The timestamp of the last update to an OpenSearch application.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }

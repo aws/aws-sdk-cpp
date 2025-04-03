@@ -55,6 +55,11 @@ MongoDbAtlasConfiguration& MongoDbAtlasConfiguration::operator =(JsonView jsonVa
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
     m_fieldMappingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("textIndexName"))
+  {
+    m_textIndexName = jsonValue.GetString("textIndexName");
+    m_textIndexNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("vectorIndexName"))
   {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
@@ -100,6 +105,12 @@ JsonValue MongoDbAtlasConfiguration::Jsonize() const
   if(m_fieldMappingHasBeenSet)
   {
    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
+
+  }
+
+  if(m_textIndexNameHasBeenSet)
+  {
+   payload.WithString("textIndexName", m_textIndexName);
 
   }
 

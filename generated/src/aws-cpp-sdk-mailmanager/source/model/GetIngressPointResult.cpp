@@ -60,6 +60,11 @@ GetIngressPointResult& GetIngressPointResult::operator =(const Aws::AmazonWebSer
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
     m_lastUpdatedTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
+    m_networkConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RuleSetId"))
   {
     m_ruleSetId = jsonValue.GetString("RuleSetId");

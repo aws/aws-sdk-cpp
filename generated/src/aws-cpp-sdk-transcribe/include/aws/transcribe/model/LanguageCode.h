@@ -118,6 +118,7 @@ namespace Model
     uk_UA,
     uz_UZ,
     wo_SN,
+    zh_HK,
     zu_ZA
   };
 

@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for the created OpenSearch Application.</p>
+     * <p>The unique identifier assigned to the OpenSearch application.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the created OpenSearch Application.</p>
+     * <p>The name of the OpenSearch application.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -71,7 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data sources associated with the created OpenSearch Application.</p>
+     * <p>The data sources linked to the OpenSearch application.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     template<typename DataSourcesT = Aws::Vector<DataSource>>
@@ -84,7 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+     * <p>The IAM Identity Center settings configured for the OpenSearch
+     * application.</p>
      */
     inline const IamIdentityCenterOptions& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
     template<typename IamIdentityCenterOptionsT = IamIdentityCenterOptions>
@@ -95,8 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configurations of the OpenSearch Application, inlcuding admin
-     * configuration.</p>
+     * <p>Configuration settings for the OpenSearch application, including
+     * administrative options.</p>
      */
     inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     template<typename AppConfigsT = Aws::Vector<AppConfig>>
@@ -120,7 +121,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp when the OpenSearch Application was created.</p>
+     * <p>The timestamp indicating when the OpenSearch application was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>

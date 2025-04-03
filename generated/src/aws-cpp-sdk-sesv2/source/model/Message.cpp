@@ -44,6 +44,15 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Attachments"))
+  {
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +80,17 @@ JsonValue Message::Jsonize() const
      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
    }
    payload.WithArray("Headers", std::move(headersJsonList));
+
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("Attachments", std::move(attachmentsJsonList));
 
   }
 

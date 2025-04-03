@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique client idempotency token. It will be auto generated if not
-     * provided.</p>
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -53,9 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the OpenSearch Appication to create. Application names are unique
-     * across the applications owned by an account within an Amazon Web Services
-     * Region.</p>
+     * <p>The unique name of the OpenSearch application. Names must be unique within an
+     * Amazon Web Services Region for each account.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -67,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data sources to be associated with the OpenSearch Application.</p>
+     * <p>The data sources to link to the OpenSearch application.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
@@ -81,7 +79,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+     * <p>Configuration settings for integrating Amazon Web Services IAM Identity
+     * Center with the OpenSearch application.</p>
      */
     inline const IamIdentityCenterOptionsInput& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
     inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
@@ -93,8 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configurations of the OpenSearch Application, inlcuding admin
-     * configuration.</p>
+     * <p>Configuration settings for the OpenSearch application, including
+     * administrative options.</p>
      */
     inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     inline bool AppConfigsHasBeenSet() const { return m_appConfigsHasBeenSet; }

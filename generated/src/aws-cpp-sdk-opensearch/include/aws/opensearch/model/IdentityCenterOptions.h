@@ -26,8 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Container for IAM Identity Center Options settings.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Settings container for integrating IAM Identity Center with OpenSearch UI
+   * applications, which enables enabling secure user authentication and access
+   * control across multiple data sources. This setup supports single sign-on (SSO)
+   * through IAM Identity Center, allowing centralized user management.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IdentityCenterOptions">AWS
    * API Reference</a></p>
    */
@@ -42,8 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>True to enable IAM Identity Center for API access in Amazon OpenSearch
-     * Service.</p>
+     * <p>Indicates whether IAM Identity Center is enabled for the application.</p>
      */
     inline bool GetEnabledAPIAccess() const { return m_enabledAPIAccess; }
     inline bool EnabledAPIAccessHasBeenSet() const { return m_enabledAPIAccessHasBeenSet; }
@@ -53,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN for IAM Identity Center Instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>
      */
     inline const Aws::String& GetIdentityCenterInstanceARN() const { return m_identityCenterInstanceARN; }
     inline bool IdentityCenterInstanceARNHasBeenSet() const { return m_identityCenterInstanceARNHasBeenSet; }
@@ -65,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the attribute that contains the subject (username, userID, email) of
-     * IAM Identity Center.</p>
+     * <p>Specifies the attribute that contains the subject identifier (such as
+     * username, user ID, or email) in IAM Identity Center.</p>
      */
     inline SubjectKeyIdCOption GetSubjectKey() const { return m_subjectKey; }
     inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
@@ -76,8 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the attribute that contains the backend role (groupName, groupID) of
-     * IAM Identity Center</p>
+     * <p>Specifies the attribute that contains the backend role identifier (such as
+     * group name or group ID) in IAM Identity Center.</p>
      */
     inline RolesKeyIdCOption GetRolesKey() const { return m_rolesKey; }
     inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }
@@ -87,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN for IAM Identity Center Application which will integrate with Amazon
+     * <p>The ARN of the IAM Identity Center application that integrates with Amazon
      * OpenSearch Service.</p>
      */
     inline const Aws::String& GetIdentityCenterApplicationARN() const { return m_identityCenterApplicationARN; }
@@ -100,7 +102,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of IAM Identity Store.</p>
+     * <p>The identifier of the IAM Identity Store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }

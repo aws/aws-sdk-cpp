@@ -124,6 +124,19 @@ namespace Model
     template<typename UpdatedTimestampT = Aws::Utils::DateTime>
     PhoneNumberOrder& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Firm Order Commitment (FOC) date for phone number porting orders. This
+     * field is null if a phone number order is not a porting order.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFocDate() const { return m_focDate; }
+    inline bool FocDateHasBeenSet() const { return m_focDateHasBeenSet; }
+    template<typename FocDateT = Aws::Utils::DateTime>
+    void SetFocDate(FocDateT&& value) { m_focDateHasBeenSet = true; m_focDate = std::forward<FocDateT>(value); }
+    template<typename FocDateT = Aws::Utils::DateTime>
+    PhoneNumberOrder& WithFocDate(FocDateT&& value) { SetFocDate(std::forward<FocDateT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_phoneNumberOrderId;
@@ -146,6 +159,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedTimestamp{};
     bool m_updatedTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_focDate{};
+    bool m_focDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/IngressBooleanExpression.h>
 #include <aws/mailmanager/model/IngressIpv4Expression.h>
+#include <aws/mailmanager/model/IngressIpv6Expression.h>
 #include <aws/mailmanager/model/IngressStringExpression.h>
 #include <aws/mailmanager/model/IngressTlsProtocolExpression.h>
 #include <utility>
@@ -71,6 +72,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>This represents an IPv6 based condition matching on the incoming mail. It
+     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
+     * object against the 'Value'.</p>
+     */
+    inline const IngressIpv6Expression& GetIpv6Expression() const { return m_ipv6Expression; }
+    inline bool Ipv6ExpressionHasBeenSet() const { return m_ipv6ExpressionHasBeenSet; }
+    template<typename Ipv6ExpressionT = IngressIpv6Expression>
+    void SetIpv6Expression(Ipv6ExpressionT&& value) { m_ipv6ExpressionHasBeenSet = true; m_ipv6Expression = std::forward<Ipv6ExpressionT>(value); }
+    template<typename Ipv6ExpressionT = IngressIpv6Expression>
+    PolicyCondition& WithIpv6Expression(Ipv6ExpressionT&& value) { SetIpv6Expression(std::forward<Ipv6ExpressionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This represents a string based condition matching on the incoming mail. It
      * performs the string operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
@@ -103,6 +118,9 @@ namespace Model
 
     IngressIpv4Expression m_ipExpression;
     bool m_ipExpressionHasBeenSet = false;
+
+    IngressIpv6Expression m_ipv6Expression;
+    bool m_ipv6ExpressionHasBeenSet = false;
 
     IngressStringExpression m_stringExpression;
     bool m_stringExpressionHasBeenSet = false;

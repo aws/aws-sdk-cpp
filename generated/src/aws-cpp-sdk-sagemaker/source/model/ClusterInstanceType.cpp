@@ -106,6 +106,31 @@ namespace Aws
         static const int ml_r6i_16xlarge_HASH = HashingUtils::HashString("ml.r6i.16xlarge");
         static const int ml_r6i_24xlarge_HASH = HashingUtils::HashString("ml.r6i.24xlarge");
         static const int ml_r6i_32xlarge_HASH = HashingUtils::HashString("ml.r6i.32xlarge");
+        static const int ml_i3en_large_HASH = HashingUtils::HashString("ml.i3en.large");
+        static const int ml_i3en_xlarge_HASH = HashingUtils::HashString("ml.i3en.xlarge");
+        static const int ml_i3en_2xlarge_HASH = HashingUtils::HashString("ml.i3en.2xlarge");
+        static const int ml_i3en_3xlarge_HASH = HashingUtils::HashString("ml.i3en.3xlarge");
+        static const int ml_i3en_6xlarge_HASH = HashingUtils::HashString("ml.i3en.6xlarge");
+        static const int ml_i3en_12xlarge_HASH = HashingUtils::HashString("ml.i3en.12xlarge");
+        static const int ml_i3en_24xlarge_HASH = HashingUtils::HashString("ml.i3en.24xlarge");
+        static const int ml_m7i_large_HASH = HashingUtils::HashString("ml.m7i.large");
+        static const int ml_m7i_xlarge_HASH = HashingUtils::HashString("ml.m7i.xlarge");
+        static const int ml_m7i_2xlarge_HASH = HashingUtils::HashString("ml.m7i.2xlarge");
+        static const int ml_m7i_4xlarge_HASH = HashingUtils::HashString("ml.m7i.4xlarge");
+        static const int ml_m7i_8xlarge_HASH = HashingUtils::HashString("ml.m7i.8xlarge");
+        static const int ml_m7i_12xlarge_HASH = HashingUtils::HashString("ml.m7i.12xlarge");
+        static const int ml_m7i_16xlarge_HASH = HashingUtils::HashString("ml.m7i.16xlarge");
+        static const int ml_m7i_24xlarge_HASH = HashingUtils::HashString("ml.m7i.24xlarge");
+        static const int ml_m7i_48xlarge_HASH = HashingUtils::HashString("ml.m7i.48xlarge");
+        static const int ml_r7i_large_HASH = HashingUtils::HashString("ml.r7i.large");
+        static const int ml_r7i_xlarge_HASH = HashingUtils::HashString("ml.r7i.xlarge");
+        static const int ml_r7i_2xlarge_HASH = HashingUtils::HashString("ml.r7i.2xlarge");
+        static const int ml_r7i_4xlarge_HASH = HashingUtils::HashString("ml.r7i.4xlarge");
+        static const int ml_r7i_8xlarge_HASH = HashingUtils::HashString("ml.r7i.8xlarge");
+        static const int ml_r7i_12xlarge_HASH = HashingUtils::HashString("ml.r7i.12xlarge");
+        static const int ml_r7i_16xlarge_HASH = HashingUtils::HashString("ml.r7i.16xlarge");
+        static const int ml_r7i_24xlarge_HASH = HashingUtils::HashString("ml.r7i.24xlarge");
+        static const int ml_r7i_48xlarge_HASH = HashingUtils::HashString("ml.r7i.48xlarge");
 
 
         ClusterInstanceType GetClusterInstanceTypeForName(const Aws::String& name)
@@ -455,6 +480,106 @@ namespace Aws
           {
             return ClusterInstanceType::ml_r6i_32xlarge;
           }
+          else if (hashCode == ml_i3en_large_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_large;
+          }
+          else if (hashCode == ml_i3en_xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_xlarge;
+          }
+          else if (hashCode == ml_i3en_2xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_2xlarge;
+          }
+          else if (hashCode == ml_i3en_3xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_3xlarge;
+          }
+          else if (hashCode == ml_i3en_6xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_6xlarge;
+          }
+          else if (hashCode == ml_i3en_12xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_12xlarge;
+          }
+          else if (hashCode == ml_i3en_24xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_i3en_24xlarge;
+          }
+          else if (hashCode == ml_m7i_large_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_large;
+          }
+          else if (hashCode == ml_m7i_xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_xlarge;
+          }
+          else if (hashCode == ml_m7i_2xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_2xlarge;
+          }
+          else if (hashCode == ml_m7i_4xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_4xlarge;
+          }
+          else if (hashCode == ml_m7i_8xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_8xlarge;
+          }
+          else if (hashCode == ml_m7i_12xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_12xlarge;
+          }
+          else if (hashCode == ml_m7i_16xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_16xlarge;
+          }
+          else if (hashCode == ml_m7i_24xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_24xlarge;
+          }
+          else if (hashCode == ml_m7i_48xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_m7i_48xlarge;
+          }
+          else if (hashCode == ml_r7i_large_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_large;
+          }
+          else if (hashCode == ml_r7i_xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_xlarge;
+          }
+          else if (hashCode == ml_r7i_2xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_2xlarge;
+          }
+          else if (hashCode == ml_r7i_4xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_4xlarge;
+          }
+          else if (hashCode == ml_r7i_8xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_8xlarge;
+          }
+          else if (hashCode == ml_r7i_12xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_12xlarge;
+          }
+          else if (hashCode == ml_r7i_16xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_16xlarge;
+          }
+          else if (hashCode == ml_r7i_24xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_24xlarge;
+          }
+          else if (hashCode == ml_r7i_48xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_r7i_48xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -643,6 +768,56 @@ namespace Aws
             return "ml.r6i.24xlarge";
           case ClusterInstanceType::ml_r6i_32xlarge:
             return "ml.r6i.32xlarge";
+          case ClusterInstanceType::ml_i3en_large:
+            return "ml.i3en.large";
+          case ClusterInstanceType::ml_i3en_xlarge:
+            return "ml.i3en.xlarge";
+          case ClusterInstanceType::ml_i3en_2xlarge:
+            return "ml.i3en.2xlarge";
+          case ClusterInstanceType::ml_i3en_3xlarge:
+            return "ml.i3en.3xlarge";
+          case ClusterInstanceType::ml_i3en_6xlarge:
+            return "ml.i3en.6xlarge";
+          case ClusterInstanceType::ml_i3en_12xlarge:
+            return "ml.i3en.12xlarge";
+          case ClusterInstanceType::ml_i3en_24xlarge:
+            return "ml.i3en.24xlarge";
+          case ClusterInstanceType::ml_m7i_large:
+            return "ml.m7i.large";
+          case ClusterInstanceType::ml_m7i_xlarge:
+            return "ml.m7i.xlarge";
+          case ClusterInstanceType::ml_m7i_2xlarge:
+            return "ml.m7i.2xlarge";
+          case ClusterInstanceType::ml_m7i_4xlarge:
+            return "ml.m7i.4xlarge";
+          case ClusterInstanceType::ml_m7i_8xlarge:
+            return "ml.m7i.8xlarge";
+          case ClusterInstanceType::ml_m7i_12xlarge:
+            return "ml.m7i.12xlarge";
+          case ClusterInstanceType::ml_m7i_16xlarge:
+            return "ml.m7i.16xlarge";
+          case ClusterInstanceType::ml_m7i_24xlarge:
+            return "ml.m7i.24xlarge";
+          case ClusterInstanceType::ml_m7i_48xlarge:
+            return "ml.m7i.48xlarge";
+          case ClusterInstanceType::ml_r7i_large:
+            return "ml.r7i.large";
+          case ClusterInstanceType::ml_r7i_xlarge:
+            return "ml.r7i.xlarge";
+          case ClusterInstanceType::ml_r7i_2xlarge:
+            return "ml.r7i.2xlarge";
+          case ClusterInstanceType::ml_r7i_4xlarge:
+            return "ml.r7i.4xlarge";
+          case ClusterInstanceType::ml_r7i_8xlarge:
+            return "ml.r7i.8xlarge";
+          case ClusterInstanceType::ml_r7i_12xlarge:
+            return "ml.r7i.12xlarge";
+          case ClusterInstanceType::ml_r7i_16xlarge:
+            return "ml.r7i.16xlarge";
+          case ClusterInstanceType::ml_r7i_24xlarge:
+            return "ml.r7i.24xlarge";
+          case ClusterInstanceType::ml_r7i_48xlarge:
+            return "ml.r7i.48xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

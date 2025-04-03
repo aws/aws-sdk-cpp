@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint,
-     * status, create time and last update time.</p>
+     * <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint,
+     * status, creation time, and last update time.</p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplicationSummaries() const { return m_applicationSummaries; }
     template<typename ApplicationSummariesT = Aws::Vector<ApplicationSummary>>

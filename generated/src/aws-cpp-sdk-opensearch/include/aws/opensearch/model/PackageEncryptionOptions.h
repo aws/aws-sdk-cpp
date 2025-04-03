@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> KMS key ID for encrypting the package.</p>
+     * <p>KMS key ID for encrypting the package.</p>
      */
     inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This indicates whether encryption is enabled for the package.</p>
+     * <p>Whether encryption is enabled for the package.</p>
      */
     inline bool GetEncryptionEnabled() const { return m_encryptionEnabled; }
     inline bool EncryptionEnabledHasBeenSet() const { return m_encryptionEnabledHasBeenSet; }

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for specifying node type.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration settings for defining the node type within a
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/NodeOption">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Container for node type like coordinating.</p>
+     * <p>Defines the type of node, such as coordinating nodes.</p>
      */
     inline NodeOptionsNodeType GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
@@ -50,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Container for specifying configuration of any node type.</p>
+     * <p>Configuration options for defining the setup of any node type.</p>
      */
     inline const NodeConfig& GetNodeConfig() const { return m_nodeConfig; }
     inline bool NodeConfigHasBeenSet() const { return m_nodeConfigHasBeenSet; }

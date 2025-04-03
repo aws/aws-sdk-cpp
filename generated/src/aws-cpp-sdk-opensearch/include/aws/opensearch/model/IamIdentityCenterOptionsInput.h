@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Settings for IAM Identity Center.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration settings for enabling and managing IAM Identity
+   * Center.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IamIdentityCenterOptionsInput">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enable/disable settings for IAM Identity Center.</p>
+     * <p>Specifies whether IAM Identity Center is enabled or disabled.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -59,7 +60,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Resource Name of IAM Identity Center's application.</p>
+     * <p>The ARN of the IAM role associated with the IAM Identity Center
+     * application.</p>
      */
     inline const Aws::String& GetIamRoleForIdentityCenterApplicationArn() const { return m_iamRoleForIdentityCenterApplicationArn; }
     inline bool IamRoleForIdentityCenterApplicationArnHasBeenSet() const { return m_iamRoleForIdentityCenterApplicationArnHasBeenSet; }

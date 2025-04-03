@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of package IDs that must be associated with the domain with or before
-     * the package can be associated.</p>
+     * <p>List of package IDs that must be linked to the domain before or
+     * simultaneously with the package association.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrerequisitePackageIDList() const { return m_prerequisitePackageIDList; }
     inline bool PrerequisitePackageIDListHasBeenSet() const { return m_prerequisitePackageIDListHasBeenSet; }

@@ -116,6 +116,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the text search index in the MongoDB collection. This is required
+     * for using the hybrid search feature.</p>
+     */
+    inline const Aws::String& GetTextIndexName() const { return m_textIndexName; }
+    inline bool TextIndexNameHasBeenSet() const { return m_textIndexNameHasBeenSet; }
+    template<typename TextIndexNameT = Aws::String>
+    void SetTextIndexName(TextIndexNameT&& value) { m_textIndexNameHasBeenSet = true; m_textIndexName = std::forward<TextIndexNameT>(value); }
+    template<typename TextIndexNameT = Aws::String>
+    MongoDbAtlasConfiguration& WithTextIndexName(TextIndexNameT&& value) { SetTextIndexName(std::forward<TextIndexNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the MongoDB Atlas vector search index.</p>
      */
     inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
@@ -144,6 +157,9 @@ namespace Model
 
     MongoDbAtlasFieldMapping m_fieldMapping;
     bool m_fieldMappingHasBeenSet = false;
+
+    Aws::String m_textIndexName;
+    bool m_textIndexNameHasBeenSet = false;
 
     Aws::String m_vectorIndexName;
     bool m_vectorIndexNameHasBeenSet = false;
