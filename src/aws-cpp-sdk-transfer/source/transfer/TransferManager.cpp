@@ -931,6 +931,7 @@ namespace Aws
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
+                handle->SetEtag(headObjectOutcome.GetResult().GetETag());
                 /* When bucket versioning is suspended, head object will return "null" for unversioned object.
                  * Send following GetObject with "null" as versionId will result in 403 access denied error if your IAM role or policy
                  * doesn't have GetObjectVersion permission.
@@ -1012,6 +1013,7 @@ namespace Aws
                     getObjectRangeRequest.WithKey(handle->GetKey());
                     getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
                     getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
+                    getObjectRangeRequest.SetIfMatch(handle->GetEtag());
                     if(handle->GetVersionId().size() > 0)
                     {
                         getObjectRangeRequest.SetVersionId(handle->GetVersionId());
