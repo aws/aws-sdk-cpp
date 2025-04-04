@@ -246,13 +246,19 @@ namespace Aws
             }
 
             //TODO: handle the read rate limiter here, once back pressure is setup.
+            assert(response);
             for (const auto& hashIterator : request->GetResponseValidationHashes())
             {
+              std::stringstream headerStr;
+              headerStr<<"x-amz-checksum-"<<hashIterator.first;
+              if(response->HasHeader(headerStr.str().c_str()))
+              {
                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
+                break;
+              }
             }
 
             // When data is received from the content body of the incoming response, just copy it to the output stream.
-            assert(response);
             response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
             if (response->GetResponseBody().fail()) {
                 const auto& ref = response->GetResponseBody();
