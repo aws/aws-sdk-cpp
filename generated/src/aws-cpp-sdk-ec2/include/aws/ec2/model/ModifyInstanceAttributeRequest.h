@@ -101,9 +101,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the attribute to modify.</p>  <p>You can modify the
-     * following attributes only: <code>disableApiTermination</code> |
-     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <p>The name of the attribute to modify.</p>  <p>When changing the instance
+     * type: If the original instance type is configured for configurable bandwidth,
+     * and the desired instance type doesn't support configurable bandwidth, first set
+     * the existing bandwidth configuration to <code>default</code> using the
+     * <a>ModifyInstanceNetworkPerformanceOptions</a> operation.</p> 
+     *  <p>You can modify the following attributes only:
+     * <code>disableApiTermination</code> | <code>instanceType</code> |
+     * <code>kernel</code> | <code>ramdisk</code> |
      * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
      * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
      * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |

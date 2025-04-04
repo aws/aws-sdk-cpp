@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>These are custom parameters to use when the target is a SageMaker Model
+   * <p>These are custom parameters to use when the target is a SageMaker AI Model
    * Building Pipeline that starts based on EventBridge events.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/SageMakerPipelineParameters">AWS
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
+     * <p>List of Parameter names and values for SageMaker AI Model Building Pipeline
      * execution.</p>
      */
     inline const Aws::Vector<SageMakerPipelineParameter>& GetPipelineParameterList() const { return m_pipelineParameterList; }

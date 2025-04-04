@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p> One or more attributes to be returned for the group. For a list of supported
      * attributes, see <a
-     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory
      * Service Data Attributes</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOtherAttributes() const { return m_otherAttributes; }

@@ -111,6 +111,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use to
+     * encrypt this archive, if one has been specified.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+     * archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    DescribeArchiveResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of days to retain events for in the archive.</p>
      */
     inline int GetRetentionDays() const { return m_retentionDays; }
@@ -177,6 +192,9 @@ namespace Model
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
 
     int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;

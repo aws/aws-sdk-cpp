@@ -60,6 +60,11 @@ DescribeArchiveResult& DescribeArchiveResult::operator =(const Aws::AmazonWebSer
     m_stateReason = jsonValue.GetString("StateReason");
     m_stateReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RetentionDays"))
   {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");

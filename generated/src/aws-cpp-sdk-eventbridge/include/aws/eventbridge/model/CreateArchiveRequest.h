@@ -92,6 +92,31 @@ namespace Model
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
     inline CreateArchiveRequest& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use, if you
+     * choose to use a customer managed key to encrypt this archive. The identifier can
+     * be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+     * <p>If you do not specify a customer managed key identifier, EventBridge uses an
+     * Amazon Web Services owned key to encrypt the archive.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify
+     * and view keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
+     *  <p>If you have specified that EventBridge use a customer managed key
+     * for encrypting the source event bus, we strongly recommend you also specify a
+     * customer managed key for any archives for the event bus as well. </p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+     * archives</a> in the <i>Amazon EventBridge User Guide</i>.</p> 
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    CreateArchiveRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_archiveName;
@@ -108,6 +133,9 @@ namespace Model
 
     int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

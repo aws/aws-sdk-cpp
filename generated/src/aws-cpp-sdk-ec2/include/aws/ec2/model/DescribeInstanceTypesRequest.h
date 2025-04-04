@@ -78,10 +78,12 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
-     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
-     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
-     * baseline input/output storage operations per second for an EBS-optimized
+     * <code>dedicated-hosts-supported</code> - Indicates whether the instance type
+     * supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> -
+     * The baseline bandwidth performance for an EBS-optimized instance type, in
+     * Mbps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code>
+     * - The baseline input/output storage operations per second for an EBS-optimized
      * instance type.</p> </li> <li> <p>
      * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
      * baseline throughput performance for an EBS-optimized instance type, in MB/s.</p>

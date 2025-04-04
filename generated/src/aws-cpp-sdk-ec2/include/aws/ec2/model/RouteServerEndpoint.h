@@ -29,9 +29,9 @@ namespace Model
   /**
    * <p>Describes a route server endpoint and its properties.</p> <p>A route server
    * endpoint is an Amazon Web Services-managed component inside a subnet that
-   * facilitates BGP (Border Gateway Protocol) connections between your route server
-   * and your BGP peers. Create two endpoints per subnet for
-   * redundancy.</p><p><h3>See Also:</h3>   <a
+   * facilitates <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP
+   * (Border Gateway Protocol)</a> connections between your route server and your BGP
+   * peers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteServerEndpoint">AWS
    * API Reference</a></p>
    */

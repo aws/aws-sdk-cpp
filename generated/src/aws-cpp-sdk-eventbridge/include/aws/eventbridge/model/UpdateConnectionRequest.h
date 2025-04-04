@@ -85,11 +85,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For connections to private resource endpoints, the parameters to use for
-     * invoking the resource endpoint.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
-     * to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i>
-     * </i>.</p>
+     * <p>For connections to private APIs, the parameters to use for invoking the
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting
+     * to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline const ConnectivityResourceParameters& GetInvocationConnectivityParameters() const { return m_invocationConnectivityParameters; }
     inline bool InvocationConnectivityParametersHasBeenSet() const { return m_invocationConnectivityParametersHasBeenSet; }

@@ -40,6 +40,12 @@ Aws::String UpdateArchiveRequest::SerializePayload() const
 
   }
 
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

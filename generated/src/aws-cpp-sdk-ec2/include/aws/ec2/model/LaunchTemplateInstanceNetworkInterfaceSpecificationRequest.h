@@ -100,11 +100,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device index for the network interface attachment. Each network interface
-     * requires a device index. If you create a launch template that includes secondary
-     * network interfaces but not a primary network interface, then you must add a
-     * primary network interface as a launch parameter when you launch an instance from
-     * the template.</p>
+     * <p>The device index for the network interface attachment. The primary network
+     * interface has a device index of 0. Each network interface is of type
+     * <code>interface</code>, you must specify a device index. If you create a launch
+     * template that includes secondary network interfaces but not a primary network
+     * interface, then you must add a primary network interface as a launch parameter
+     * when you launch an instance from the template.</p>
      */
     inline int GetDeviceIndex() const { return m_deviceIndex; }
     inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }

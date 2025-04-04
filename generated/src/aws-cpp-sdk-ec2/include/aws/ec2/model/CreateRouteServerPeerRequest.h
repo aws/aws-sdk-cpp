@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 address of the peer.</p>
+     * <p>The IPv4 address of the peer device.</p>
      */
     inline const Aws::String& GetPeerAddress() const { return m_peerAddress; }
     inline bool PeerAddressHasBeenSet() const { return m_peerAddressHasBeenSet; }

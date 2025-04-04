@@ -46,7 +46,7 @@ namespace Model
     ///@{
     /**
      * <p>You can specify any amount of prefixes, but the total length of characters of
-     * all prefixes must be less than 512 KB in size.</p>
+     * all prefixes must be less than 256 bytes in size.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrefixes() const { return m_prefixes; }
     inline bool PrefixesHasBeenSet() const { return m_prefixesHasBeenSet; }

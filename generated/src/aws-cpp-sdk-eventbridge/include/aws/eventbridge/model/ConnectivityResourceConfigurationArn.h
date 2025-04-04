@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Resource Name (ARN) of the resource configuration for the resource
-   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Resource Name (ARN) of the Amazon VPC Lattice resource
+   * configuration for the resource endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectivityResourceConfigurationArn">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource configuration for the resource
-     * endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon VPC Lattice resource
+     * configuration for the resource endpoint.</p>
      */
     inline const Aws::String& GetResourceConfigurationArn() const { return m_resourceConfigurationArn; }
     inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
