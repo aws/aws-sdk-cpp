@@ -250,10 +250,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
-     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
-     * Building Pipeline as a target, you can use this to specify parameters to start a
-     * pipeline execution based on EventBridge events.</p>
+     * <p>Contains the SageMaker AI Model Building Pipeline parameters to start
+     * execution of a SageMaker AI Model Building Pipeline.</p> <p>If you specify a
+     * SageMaker AI Model Building Pipeline as a target, you can use this to specify
+     * parameters to start a pipeline execution based on EventBridge events.</p>
      */
     inline const SageMakerPipelineParameters& GetSageMakerPipelineParameters() const { return m_sageMakerPipelineParameters; }
     inline bool SageMakerPipelineParametersHasBeenSet() const { return m_sageMakerPipelineParametersHasBeenSet; }

@@ -27,8 +27,7 @@ namespace Model
   /**
    * <p>Describes the association between a route server and a VPC.</p> <p>A route
    * server association is the connection established between a route server and a
-   * VPC. This is a fundamental configuration step that enables the route server to
-   * work with appliances in your VPC.</p><p><h3>See Also:</h3>   <a
+   * VPC.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteServerAssociation">AWS
    * API Reference</a></p>
    */

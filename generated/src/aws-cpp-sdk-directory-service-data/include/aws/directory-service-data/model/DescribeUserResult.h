@@ -153,8 +153,9 @@ namespace Model
     ///@{
     /**
      * <p> The UPN that is an Internet-style login name for a user and is based on the
-     * Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>.
-     * The UPN is shorter than the distinguished name and easier to remember. </p>
+     * Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC
+     * 822</a>. The UPN is shorter than the distinguished name and easier to remember.
+     * </p>
      */
     inline const Aws::String& GetUserPrincipalName() const { return m_userPrincipalName; }
     template<typename UserPrincipalNameT = Aws::String>

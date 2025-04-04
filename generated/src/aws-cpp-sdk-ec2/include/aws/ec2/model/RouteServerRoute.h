@@ -96,9 +96,8 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Forwarding_information_base">Forwarding
      * Information Base (FIB)</a> serves as a forwarding table for what route server
      * has determined are the best-path routes in the RIB after evaluating all
-     * available routing information and policies. The FIB routes that are installed on
-     * the route tables. The FIB is recomputed whenever there are changes to the
-     * RIB.</p>
+     * available routing information and policies. The FIB routes are installed on the
+     * route tables. The FIB is recomputed whenever there are changes to the RIB.</p>
      */
     inline RouteServerRouteStatus GetRouteStatus() const { return m_routeStatus; }
     inline bool RouteStatusHasBeenSet() const { return m_routeStatusHasBeenSet; }

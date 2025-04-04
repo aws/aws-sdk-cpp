@@ -31,15 +31,15 @@ namespace Model
    * <p>Describes a route server and its configuration.</p> <p>Amazon VPC Route
    * Server simplifies routing for traffic between workloads that are deployed within
    * a VPC and its internet gateways. With this feature, VPC Route Server dynamically
-   * updates VPC and gateway route tables with your preferred IPv4 or IPv6 routes to
-   * achieve routing fault tolerance for those workloads. This enables you to
-   * automatically reroute traffic within a VPC, which increases the manageability of
-   * VPC routing and interoperability with third-party workloads.</p> <p>Route server
-   * supports the follow route table types:</p> <ul> <li> <p>VPC route tables</p>
-   * </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway route
-   * tables</p> </li> </ul> <p>Route server does not support route tables associated
-   * with virtual private gateways. To propagate routes into a transit gateway route
-   * table, use <a
+   * updates VPC and internet gateway route tables with your preferred IPv4 or IPv6
+   * routes to achieve routing fault tolerance for those workloads. This enables you
+   * to automatically reroute traffic within a VPC, which increases the manageability
+   * of VPC routing and interoperability with third-party workloads.</p> <p>Route
+   * server supports the follow route table types:</p> <ul> <li> <p>VPC route tables
+   * not associated with subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+   * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+   * support route tables associated with virtual private gateways. To propagate
+   * routes into a transit gateway route table, use <a
    * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
    * Gateway Connect</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteServer">AWS API
@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) for the
      * appliance. Valid values are from 1 to 4294967295. We recommend using a private
-     * ASN in the 64512���65534 (16-bit ASN) or 4200000000–4294967294 (32-bit ASN)
+     * ASN in the 64512–65534 (16-bit ASN) or 4200000000–4294967294 (32-bit ASN)
      * range.</p>
      */
     inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }

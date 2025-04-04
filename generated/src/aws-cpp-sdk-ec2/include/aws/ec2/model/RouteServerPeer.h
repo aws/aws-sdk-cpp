@@ -31,11 +31,12 @@ namespace Model
 
   /**
    * <p>Describes a BGP peer configuration for a route server endpoint.</p> <p>A
-   * route server peer is a network appliance or function deployed in Amazon Web
-   * Services, such as firewall appliances and other network security functions, that
-   * meet these requirements:</p> <ul> <li> <p>Have an elastic network interface in
-   * the VPC</p> </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li>
-   * <p>Can initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * route server peer is a session between a route server endpoint and the device
+   * deployed in Amazon Web Services (such as a firewall appliance or other network
+   * security function running on an EC2 instance). The device must meet these
+   * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
+   * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
+   * initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteServerPeer">AWS
    * API Reference</a></p>
    */
@@ -159,7 +160,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 address of the peer.</p>
+     * <p>The IPv4 address of the peer device.</p>
      */
     inline const Aws::String& GetPeerAddress() const { return m_peerAddress; }
     inline bool PeerAddressHasBeenSet() const { return m_peerAddressHasBeenSet; }

@@ -88,25 +88,22 @@ namespace Model
      * alias ARN.</p> <p>If you do not specify a customer managed key identifier,
      * EventBridge uses an Amazon Web Services owned key to encrypt events on the event
      * bus.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing
-     * keys</a> in the <i>Key Management Service Developer Guide</i>. </p> 
-     * <p>Archives and schema discovery are not supported for event buses encrypted
-     * using a customer managed key. EventBridge returns an error if:</p> <ul> <li>
-     * <p>You call <code> <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
-     * </code> on an event bus set to use a customer managed key for encryption.</p>
-     * </li> <li> <p>You call <code> <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify
+     * and view keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
+     *  <p>Schema discovery is not supported for event buses encrypted using a
+     * customer managed key. EventBridge returns an error if you call <code> <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
      * </code> on an event bus set to use a customer managed key for encryption.</p>
-     * </li> <li> <p>You call <code> <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
-     * </code> to set a customer managed key on an event bus with an archives or schema
-     * discovery enabled.</p> </li> </ul> <p>To enable archives or schema discovery on
-     * an event bus, choose to use an Amazon Web Services owned key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
-     * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * 
+     * <p>To enable schema discovery on an event bus, choose to use an Amazon Web
+     * Services owned key. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html">Encrypting
+     * events</a> in the <i>Amazon EventBridge User Guide</i>.</p>  
+     * <p>If you have specified that EventBridge use a customer managed key for
+     * encrypting the source event bus, we strongly recommend you also specify a
+     * customer managed key for any archives for the event bus as well. </p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+     * archives</a> in the <i>Amazon EventBridge User Guide</i>.</p> 
      */
     inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }

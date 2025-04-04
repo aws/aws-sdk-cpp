@@ -929,10 +929,8 @@ namespace EC2
         /**
          * <p>Associates a route server with a VPC to enable dynamic route updates.</p>
          * <p>A route server association is the connection established between a route
-         * server and a VPC. This is a fundamental configuration step that enables the
-         * route server to work with appliances in your VPC.</p> <p>For more information
-         * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * server and a VPC.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">AWS
@@ -3531,18 +3529,18 @@ namespace EC2
          * <p>Creates a new route server to manage dynamic routing in a VPC.</p> <p>Amazon
          * VPC Route Server simplifies routing for traffic between workloads that are
          * deployed within a VPC and its internet gateways. With this feature, VPC Route
-         * Server dynamically updates VPC and gateway route tables with your preferred IPv4
-         * or IPv6 routes to achieve routing fault tolerance for those workloads. This
-         * enables you to automatically reroute traffic within a VPC, which increases the
-         * manageability of VPC routing and interoperability with third-party
+         * Server dynamically updates VPC and internet gateway route tables with your
+         * preferred IPv4 or IPv6 routes to achieve routing fault tolerance for those
+         * workloads. This enables you to automatically reroute traffic within a VPC, which
+         * increases the manageability of VPC routing and interoperability with third-party
          * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
-         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
-         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
-         * support route tables associated with virtual private gateways. To propagate
-         * routes into a transit gateway route table, use <a
+         * <li> <p>VPC route tables not associated with subnets</p> </li> <li> <p>Subnet
+         * route tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul>
+         * <p>Route server does not support route tables associated with virtual private
+         * gateways. To propagate routes into a transit gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">AWS
@@ -3571,9 +3569,13 @@ namespace EC2
         /**
          * <p>Creates a new endpoint for a route server in a specified subnet.</p> <p>A
          * route server endpoint is an Amazon Web Services-managed component inside a
-         * subnet that facilitates BGP (Border Gateway Protocol) connections between your
-         * route server and your BGP peers. Create two endpoints per subnet for
-         * redundancy.</p><p><h3>See Also:</h3>   <a
+         * subnet that facilitates <a
+         * href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP (Border Gateway
+         * Protocol)</a> connections between your route server and your BGP peers.</p>
+         * <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3599,11 +3601,15 @@ namespace EC2
 
         /**
          * <p>Creates a new BGP peer for a specified route server endpoint.</p> <p>A route
-         * server peer is a network appliance or function deployed in Amazon Web Services,
-         * such as firewall appliances and other network security functions, that meet
-         * these requirements:</p> <ul> <li> <p>Have an elastic network interface in the
-         * VPC</p> </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li>
-         * <p>Can initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * server peer is a session between a route server endpoint and the device deployed
+         * in Amazon Web Services (such as a firewall appliance or other network security
+         * function running on an EC2 instance). The device must meet these
+         * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
+         * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
+         * initiate BGP sessions</p> </li> </ul> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
+         * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">AWS
          * API Reference</a></p>
          */
@@ -5976,17 +5982,18 @@ namespace EC2
          * <p>Deletes the specified route server.</p> <p>Amazon VPC Route Server simplifies
          * routing for traffic between workloads that are deployed within a VPC and its
          * internet gateways. With this feature, VPC Route Server dynamically updates VPC
-         * and gateway route tables with your preferred IPv4 or IPv6 routes to achieve
-         * routing fault tolerance for those workloads. This enables you to automatically
-         * reroute traffic within a VPC, which increases the manageability of VPC routing
-         * and interoperability with third-party workloads.</p> <p>Route server supports
-         * the follow route table types:</p> <ul> <li> <p>VPC route tables</p> </li> <li>
-         * <p>Subnet route tables</p> </li> <li> <p>Internet gateway route tables</p> </li>
-         * </ul> <p>Route server does not support route tables associated with virtual
-         * private gateways. To propagate routes into a transit gateway route table, use <a
+         * and internet gateway route tables with your preferred IPv4 or IPv6 routes to
+         * achieve routing fault tolerance for those workloads. This enables you to
+         * automatically reroute traffic within a VPC, which increases the manageability of
+         * VPC routing and interoperability with third-party workloads.</p> <p>Route server
+         * supports the follow route table types:</p> <ul> <li> <p>VPC route tables not
+         * associated with subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+         * support route tables associated with virtual private gateways. To propagate
+         * routes into a transit gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">AWS
@@ -6014,10 +6021,10 @@ namespace EC2
 
         /**
          * <p>Deletes the specified route server endpoint.</p> <p>A route server endpoint
-         * is an Amazon Web Services-managed component inside a subnet that facilitates BGP
-         * (Border Gateway Protocol) connections between your route server and your BGP
-         * peers. Create two endpoints per subnet for redundancy.</p><p><h3>See Also:</h3> 
-         * <a
+         * is an Amazon Web Services-managed component inside a subnet that facilitates <a
+         * href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP (Border Gateway
+         * Protocol)</a> connections between your route server and your BGP
+         * peers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">AWS
          * API Reference</a></p>
          */
@@ -6043,8 +6050,9 @@ namespace EC2
 
         /**
          * <p>Deletes the specified BGP peer from a route server.</p> <p>A route server
-         * peer is a network appliance or function deployed in Amazon Web Services, such as
-         * firewall appliances and other network security functions, that meet these
+         * peer is a session between a route server endpoint and the device deployed in
+         * Amazon Web Services (such as a firewall appliance or other network security
+         * function running on an EC2 instance). The device must meet these
          * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
          * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
          * initiate BGP sessions</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -7183,19 +7191,24 @@ namespace EC2
         }
 
         /**
-         * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
-         * to launch new instances.</p> <p>If you deregister an AMI that matches a Recycle
-         * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
-         * retention period. For more information, see <a
+         * <p>Deregisters the specified AMI. A deregistered AMI can't be used to launch new
+         * instances.</p> <p>If a deregistered EBS-backed AMI matches a Recycle Bin
+         * retention rule, it moves to the Recycle Bin for the specified retention period.
+         * It can be restored before its retention period expires, after which it is
+         * permanently deleted. If the deregistered AMI doesn't match a retention rule, it
+         * is permanently deleted immediately. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you deregister an AMI,
-         * it doesn't affect any instances that you've already launched from the AMI.
-         * You'll continue to incur usage costs for those instances until you terminate
-         * them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't affect the
-         * snapshot that was created for the root volume of the instance during the AMI
-         * creation process. When you deregister an instance store-backed AMI, it doesn't
-         * affect the files that you uploaded to Amazon S3 when you created the
-         * AMI.</p><p><h3>See Also:</h3>   <a
+         * Bin</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Deregistering an AMI does
+         * not delete the following:</p> <ul> <li> <p>Instances already launched from the
+         * AMI. You'll continue to incur usage costs for the instances until you terminate
+         * them.</p> </li> <li> <p>For EBS-backed AMIs: The snapshots that were created of
+         * the root and data volumes of the instance during AMI creation. You'll continue
+         * to incur snapshot storage costs.</p> </li> <li> <p>For instance store-backed
+         * AMIs: The files uploaded to Amazon S3 during AMI creation. You'll continue to
+         * incur S3 storage costs.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+         * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">AWS
          * API Reference</a></p>
          */
@@ -10327,11 +10340,11 @@ namespace EC2
 
         /**
          * <p>Describes one or more route server endpoints.</p> <p>A route server endpoint
-         * is an Amazon Web Services-managed component inside a subnet that facilitates BGP
-         * (Border Gateway Protocol) connections between your route server and your BGP
-         * peers. Create two endpoints per subnet for redundancy.</p> <p>For more
-         * information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * is an Amazon Web Services-managed component inside a subnet that facilitates <a
+         * href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP (Border Gateway
+         * Protocol)</a> connections between your route server and your BGP peers.</p>
+         * <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">AWS
@@ -10359,12 +10372,13 @@ namespace EC2
 
         /**
          * <p>Describes one or more route server peers.</p> <p>A route server peer is a
-         * network appliance or function deployed in Amazon Web Services, such as firewall
-         * appliances and other network security functions, that meet these
-         * requirements:</p> <ul> <li> <p>Have an elastic network interface in the VPC</p>
-         * </li> <li> <p>Support BGP (Border Gateway Protocol)</p> </li> <li> <p>Can
-         * initiate BGP sessions</p> </li> </ul> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * session between a route server endpoint and the device deployed in Amazon Web
+         * Services (such as a firewall appliance or other network security function
+         * running on an EC2 instance). The device must meet these requirements:</p> <ul>
+         * <li> <p>Have an elastic network interface in the VPC</p> </li> <li> <p>Support
+         * BGP (Border Gateway Protocol)</p> </li> <li> <p>Can initiate BGP sessions</p>
+         * </li> </ul> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">AWS
@@ -10394,18 +10408,18 @@ namespace EC2
          * <p>Describes one or more route servers.</p> <p>Amazon VPC Route Server
          * simplifies routing for traffic between workloads that are deployed within a VPC
          * and its internet gateways. With this feature, VPC Route Server dynamically
-         * updates VPC and gateway route tables with your preferred IPv4 or IPv6 routes to
-         * achieve routing fault tolerance for those workloads. This enables you to
-         * automatically reroute traffic within a VPC, which increases the manageability of
-         * VPC routing and interoperability with third-party workloads.</p> <p>Route server
-         * supports the follow route table types:</p> <ul> <li> <p>VPC route tables</p>
-         * </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway route
-         * tables</p> </li> </ul> <p>Route server does not support route tables associated
-         * with virtual private gateways. To propagate routes into a transit gateway route
-         * table, use <a
+         * updates VPC and internet gateway route tables with your preferred IPv4 or IPv6
+         * routes to achieve routing fault tolerance for those workloads. This enables you
+         * to automatically reroute traffic within a VPC, which increases the manageability
+         * of VPC routing and interoperability with third-party workloads.</p> <p>Route
+         * server supports the follow route table types:</p> <ul> <li> <p>VPC route tables
+         * not associated with subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li>
+         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
+         * support route tables associated with virtual private gateways. To propagate
+         * routes into a transit gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">AWS
@@ -12717,18 +12731,19 @@ namespace EC2
          * FIB on the route table you've specified. Route server supports IPv4 and IPv6
          * route propagation.</p> <p>Amazon VPC Route Server simplifies routing for traffic
          * between workloads that are deployed within a VPC and its internet gateways. With
-         * this feature, VPC Route Server dynamically updates VPC and gateway route tables
-         * with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for
-         * those workloads. This enables you to automatically reroute traffic within a VPC,
-         * which increases the manageability of VPC routing and interoperability with
-         * third-party workloads.</p> <p>Route server supports the follow route table
-         * types:</p> <ul> <li> <p>VPC route tables</p> </li> <li> <p>Subnet route
-         * tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul> <p>Route
-         * server does not support route tables associated with virtual private gateways.
-         * To propagate routes into a transit gateway route table, use <a
+         * this feature, VPC Route Server dynamically updates VPC and internet gateway
+         * route tables with your preferred IPv4 or IPv6 routes to achieve routing fault
+         * tolerance for those workloads. This enables you to automatically reroute traffic
+         * within a VPC, which increases the manageability of VPC routing and
+         * interoperability with third-party workloads.</p> <p>Route server supports the
+         * follow route table types:</p> <ul> <li> <p>VPC route tables not associated with
+         * subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway
+         * route tables</p> </li> </ul> <p>Route server does not support route tables
+         * associated with virtual private gateways. To propagate routes into a transit
+         * gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">AWS
@@ -13200,10 +13215,9 @@ namespace EC2
 
         /**
          * <p>Disassociates a route server from a VPC.</p> <p>A route server association is
-         * the connection established between a route server and a VPC. This is a
-         * fundamental configuration step that enables the route server to work with
-         * appliances in your VPC.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * the connection established between a route server and a VPC.</p> <p>For more
+         * information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">AWS
@@ -13844,7 +13858,7 @@ namespace EC2
          * <p>When enabled, route server propagation installs the routes in the FIB on the
          * route table you've specified. Route server supports IPv4 and IPv6 route
          * propagation.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">AWS
@@ -15243,10 +15257,8 @@ namespace EC2
         /**
          * <p>Gets information about the associations for the specified route server.</p>
          * <p>A route server association is the connection established between a route
-         * server and a VPC. This is a fundamental configuration step that enables the
-         * route server to work with appliances in your VPC.</p> <p>For more information
-         * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * server and a VPC.</p> <p>For more information see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">AWS
@@ -15278,15 +15290,16 @@ namespace EC2
          * FIB on the route table you've specified. Route server supports IPv4 and IPv6
          * route propagation.</p> <p>Amazon VPC Route Server simplifies routing for traffic
          * between workloads that are deployed within a VPC and its internet gateways. With
-         * this feature, VPC Route Server dynamically updates VPC and gateway route tables
-         * with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for
-         * those workloads. This enables you to automatically reroute traffic within a VPC,
-         * which increases the manageability of VPC routing and interoperability with
-         * third-party workloads.</p> <p>Route server supports the follow route table
-         * types:</p> <ul> <li> <p>VPC route tables</p> </li> <li> <p>Subnet route
-         * tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul> <p>Route
-         * server does not support route tables associated with virtual private gateways.
-         * To propagate routes into a transit gateway route table, use <a
+         * this feature, VPC Route Server dynamically updates VPC and internet gateway
+         * route tables with your preferred IPv4 or IPv6 routes to achieve routing fault
+         * tolerance for those workloads. This enables you to automatically reroute traffic
+         * within a VPC, which increases the manageability of VPC routing and
+         * interoperability with third-party workloads.</p> <p>Route server supports the
+         * follow route table types:</p> <ul> <li> <p>VPC route tables not associated with
+         * subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway
+         * route tables</p> </li> </ul> <p>Route server does not support route tables
+         * associated with virtual private gateways. To propagate routes into a transit
+         * gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">AWS
@@ -15322,15 +15335,16 @@ namespace EC2
          * has the most current view of the network topology and can make optimal routing
          * decisions.</p> <p>Amazon VPC Route Server simplifies routing for traffic between
          * workloads that are deployed within a VPC and its internet gateways. With this
-         * feature, VPC Route Server dynamically updates VPC and gateway route tables with
-         * your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for those
-         * workloads. This enables you to automatically reroute traffic within a VPC, which
-         * increases the manageability of VPC routing and interoperability with third-party
-         * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
-         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
-         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
-         * support route tables associated with virtual private gateways. To propagate
-         * routes into a transit gateway route table, use <a
+         * feature, VPC Route Server dynamically updates VPC and internet gateway route
+         * tables with your preferred IPv4 or IPv6 routes to achieve routing fault
+         * tolerance for those workloads. This enables you to automatically reroute traffic
+         * within a VPC, which increases the manageability of VPC routing and
+         * interoperability with third-party workloads.</p> <p>Route server supports the
+         * follow route table types:</p> <ul> <li> <p>VPC route tables not associated with
+         * subnets</p> </li> <li> <p>Subnet route tables</p> </li> <li> <p>Internet gateway
+         * route tables</p> </li> </ul> <p>Route server does not support route tables
+         * associated with virtual private gateways. To propagate routes into a transit
+         * gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">AWS
@@ -17264,18 +17278,18 @@ namespace EC2
          * <p>Modifies the configuration of an existing route server.</p> <p>Amazon VPC
          * Route Server simplifies routing for traffic between workloads that are deployed
          * within a VPC and its internet gateways. With this feature, VPC Route Server
-         * dynamically updates VPC and gateway route tables with your preferred IPv4 or
-         * IPv6 routes to achieve routing fault tolerance for those workloads. This enables
-         * you to automatically reroute traffic within a VPC, which increases the
+         * dynamically updates VPC and internet gateway route tables with your preferred
+         * IPv4 or IPv6 routes to achieve routing fault tolerance for those workloads. This
+         * enables you to automatically reroute traffic within a VPC, which increases the
          * manageability of VPC routing and interoperability with third-party
          * workloads.</p> <p>Route server supports the follow route table types:</p> <ul>
-         * <li> <p>VPC route tables</p> </li> <li> <p>Subnet route tables</p> </li> <li>
-         * <p>Internet gateway route tables</p> </li> </ul> <p>Route server does not
-         * support route tables associated with virtual private gateways. To propagate
-         * routes into a transit gateway route table, use <a
+         * <li> <p>VPC route tables not associated with subnets</p> </li> <li> <p>Subnet
+         * route tables</p> </li> <li> <p>Internet gateway route tables</p> </li> </ul>
+         * <p>Route server does not support route tables associated with virtual private
+         * gateways. To propagate routes into a transit gateway route table, use <a
          * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
          * Gateway Connect</a>.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
          * routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">AWS

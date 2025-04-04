@@ -72,11 +72,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For connections to private resource endpoints. The parameters EventBridge
-     * uses to invoke the resource endpoint.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
-     * to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i>
-     * </i>.</p>
+     * <p>For connections to private APIs The parameters EventBridge uses to invoke the
+     * resource endpoint.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting
+     * to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline const DescribeConnectionConnectivityParameters& GetInvocationConnectivityParameters() const { return m_invocationConnectivityParameters; }
     template<typename InvocationConnectivityParametersT = DescribeConnectionConnectivityParameters>

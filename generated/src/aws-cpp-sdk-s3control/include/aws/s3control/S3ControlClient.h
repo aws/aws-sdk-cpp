@@ -3120,18 +3120,11 @@ namespace S3Control
         /**
          * <p>Creates or replaces the access point scope for a directory bucket. You can
          * use the access point scope to restrict access to specific prefixes, API
-         * operations, or a combination of both.</p> <p>You can include one or more of the
-         * following API operations as permissions:</p> <ul> <li> <p> <code>PutObjet</code>
-         * </p> </li> <li> <p> <code>GetObject</code> </p> </li> <li> <p>
-         * <code>DeleteObject</code> </p> </li> <li> <p> <code>ListBucket</code> </p> </li>
-         * <li> <p> <code>GetObjectAttributes</code> </p> </li> <li> <p>
-         * <code>AbortMultipartUpload</code> </p> </li> <li> <p>
-         * <code>ListBucketMultipartUpload</code> </p> </li> <li> <p>
-         * <code>ListMultiPartUploadParts</code> </p> </li> </ul>  <p>You can specify
-         * any amount of prefixes, but the total length of characters of all prefixes must
-         * be less than 512 KB in size.</p>  <p>To use this operation, you must have
-         * the permission to perform the <code>s3express:PutAccessPointScope</code>
-         * action.</p> <p>For information about REST API errors, see <a
+         * operations, or a combination of both.</p>  <p>You can specify any amount
+         * of prefixes, but the total length of characters of all prefixes must be less
+         * than 256 bytes in size.</p>  <p>To use this operation, you must have the
+         * permission to perform the <code>s3express:PutAccessPointScope</code> action.</p>
+         * <p>For information about REST API errors, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
          * error responses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">AWS

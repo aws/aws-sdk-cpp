@@ -177,23 +177,13 @@ namespace EventBridge
          * archive, incoming events might not immediately start being sent to the archive.
          * Allow a short period of time for changes to take effect. If you do not specify a
          * pattern to filter events sent to the archive, all events are sent to the archive
-         * except replayed events. Replayed events are not sent to an archive.</p> 
-         * <p>Archives and schema discovery are not supported for event buses encrypted
-         * using a customer managed key. EventBridge returns an error if:</p> <ul> <li>
-         * <p>You call <code> <a
-         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
-         * </code> on an event bus set to use a customer managed key for encryption.</p>
-         * </li> <li> <p>You call <code> <a
-         * href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
-         * </code> on an event bus set to use a customer managed key for encryption.</p>
-         * </li> <li> <p>You call <code> <a
-         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
-         * </code> to set a customer managed key on an event bus with an archives or schema
-         * discovery enabled.</p> </li> </ul> <p>To enable archives or schema discovery on
-         * an event bus, choose to use an Amazon Web Services owned key. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
-         * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+         * except replayed events. Replayed events are not sent to an archive.</p>
+         *  <p>If you have specified that EventBridge use a customer managed key
+         * for encrypting the source event bus, we strongly recommend you also specify a
+         * customer managed key for any archives for the event bus as well. </p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+         * archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
          * API Reference</a></p>
@@ -1282,12 +1272,13 @@ namespace EventBridge
 
         /**
          * <p>Sends custom events to Amazon EventBridge so that they can be matched to
-         * rules.</p> <p>The maximum size for a PutEvents event entry is 256 KB. Entry size
-         * is calculated including the event and any necessary characters and keys of the
-         * JSON representation of the event. To learn more, see <a
-         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
+         * rules.</p> <p>You can batch multiple event entries into one request for
+         * efficiency. However, the total entry size must be less than 256KB. You can
+         * calculate the entry size before you send the events. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
          * PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i>
-         * </i> </p> <p>PutEvents accepts the data in JSON format. For the JSON number
+         * </i>.</p> <p>PutEvents accepts the data in JSON format. For the JSON number
          * (integer) data type, the constraints are: a minimum value of
          * -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807.</p>
          *  <p>PutEvents will only process nested JSON up to 1000 levels deep.</p>
