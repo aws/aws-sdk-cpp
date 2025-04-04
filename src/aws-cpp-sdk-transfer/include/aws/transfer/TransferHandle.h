@@ -298,6 +298,12 @@ namespace Aws
             void SetVersionId(const Aws::String& versionId) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_versionId = versionId; }
 
             /**
+             * (Download only) ETAG of the object to retrieve.
+            */
+            const Aws::String GetEtag() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_etag; }
+            void SetEtag(const Aws::String& etag) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_etag = etag; }
+
+            /**
              * Upload or Download?
              */
             inline TransferDirection GetTransferDirection() const { return m_direction; }
@@ -405,6 +411,7 @@ namespace Aws
             Aws::String m_fileName;
             Aws::String m_contentType;
             Aws::String m_versionId;
+            Aws::String m_etag;
             Aws::Map<Aws::String, Aws::String> m_metadata;
             TransferStatus m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
