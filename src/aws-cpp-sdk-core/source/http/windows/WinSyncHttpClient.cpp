@@ -287,7 +287,13 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                         {
                             for (const auto& hashIterator : request->GetResponseValidationHashes())
                             {
+                              std::stringstream headerStr;
+                              headerStr<<"x-amz-checksum-"<<hashIterator.first;
+                              if(response->HasHeader(headerStr.str().c_str()))
+                              {
                                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(dst), static_cast<size_t>(read));
+                                break;
+                              }
                             }
 
                             auto& headersHandler = request->GetHeadersReceivedEventHandler();
