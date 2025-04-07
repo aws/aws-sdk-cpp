@@ -652,6 +652,35 @@ namespace MediaLive
         }
 
         /**
+         * Create an SdiSource for each video source that uses the SDI protocol. You will
+         * reference the SdiSource when you create an SDI input in MediaLive. You will also
+         * reference it in an SdiSourceMapping, in order to create a connection between the
+         * logical SdiSource and the physical SDI card and port that the physical SDI
+         * source uses.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSdiSourceOutcome CreateSdiSource(const Model::CreateSdiSourceRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateSdiSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSdiSourceRequestT = Model::CreateSdiSourceRequest>
+        Model::CreateSdiSourceOutcomeCallable CreateSdiSourceCallable(const CreateSdiSourceRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateSdiSource, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSdiSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSdiSourceRequestT = Model::CreateSdiSourceRequest>
+        void CreateSdiSourceAsync(const CreateSdiSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSdiSourceRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateSdiSource, request, handler, context);
+        }
+
+        /**
          * Initiates the creation of a new signal map. Will discover a new mediaResourceMap
          * based on the provided discoveryEntryPointArn.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap">AWS
@@ -1085,6 +1114,32 @@ namespace MediaLive
         }
 
         /**
+         * Delete an SdiSource. The SdiSource must not be part of any SidSourceMapping and
+         * must not be attached to any input.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSdiSourceOutcome DeleteSdiSource(const Model::DeleteSdiSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSdiSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSdiSourceRequestT = Model::DeleteSdiSourceRequest>
+        Model::DeleteSdiSourceOutcomeCallable DeleteSdiSourceCallable(const DeleteSdiSourceRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteSdiSource, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSdiSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSdiSourceRequestT = Model::DeleteSdiSourceRequest>
+        void DeleteSdiSourceAsync(const DeleteSdiSourceRequestT& request, const DeleteSdiSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteSdiSource, request, handler, context);
+        }
+
+        /**
          * Deletes the specified signal map.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap">AWS
          * API Reference</a></p>
@@ -1507,6 +1562,31 @@ namespace MediaLive
         void DescribeScheduleAsync(const DescribeScheduleRequestT& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DescribeSchedule, request, handler, context);
+        }
+
+        /**
+         * Gets details about a SdiSource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSdiSourceOutcome DescribeSdiSource(const Model::DescribeSdiSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSdiSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSdiSourceRequestT = Model::DescribeSdiSourceRequest>
+        Model::DescribeSdiSourceOutcomeCallable DescribeSdiSourceCallable(const DescribeSdiSourceRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeSdiSource, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSdiSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSdiSourceRequestT = Model::DescribeSdiSourceRequest>
+        void DescribeSdiSourceAsync(const DescribeSdiSourceRequestT& request, const DescribeSdiSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeSdiSource, request, handler, context);
         }
 
         /**
@@ -2089,6 +2169,31 @@ namespace MediaLive
         void ListReservationsAsync(const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReservationsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaLiveClient::ListReservations, request, handler, context);
+        }
+
+        /**
+         * List all the SdiSources in the AWS account.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSdiSourcesOutcome ListSdiSources(const Model::ListSdiSourcesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListSdiSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSdiSourcesRequestT = Model::ListSdiSourcesRequest>
+        Model::ListSdiSourcesOutcomeCallable ListSdiSourcesCallable(const ListSdiSourcesRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListSdiSources, request);
+        }
+
+        /**
+         * An Async wrapper for ListSdiSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSdiSourcesRequestT = Model::ListSdiSourcesRequest>
+        void ListSdiSourcesAsync(const ListSdiSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSdiSourcesRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListSdiSources, request, handler, context);
         }
 
         /**
@@ -3014,6 +3119,31 @@ namespace MediaLive
         void UpdateReservationAsync(const UpdateReservationRequestT& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::UpdateReservation, request, handler, context);
+        }
+
+        /**
+         * Change some of the settings in an SdiSource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSdiSourceOutcome UpdateSdiSource(const Model::UpdateSdiSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSdiSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSdiSourceRequestT = Model::UpdateSdiSourceRequest>
+        Model::UpdateSdiSourceOutcomeCallable UpdateSdiSourceCallable(const UpdateSdiSourceRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateSdiSource, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSdiSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSdiSourceRequestT = Model::UpdateSdiSourceRequest>
+        void UpdateSdiSourceAsync(const UpdateSdiSourceRequestT& request, const UpdateSdiSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateSdiSource, request, handler, context);
         }
 
 

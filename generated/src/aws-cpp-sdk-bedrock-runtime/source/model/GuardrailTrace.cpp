@@ -22,6 +22,7 @@ namespace Aws
 
         static const int enabled_HASH = HashingUtils::HashString("enabled");
         static const int disabled_HASH = HashingUtils::HashString("disabled");
+        static const int enabled_full_HASH = HashingUtils::HashString("enabled_full");
 
 
         GuardrailTrace GetGuardrailTraceForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == disabled_HASH)
           {
             return GuardrailTrace::disabled;
+          }
+          else if (hashCode == enabled_full_HASH)
+          {
+            return GuardrailTrace::enabled_full;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "enabled";
           case GuardrailTrace::disabled:
             return "disabled";
+          case GuardrailTrace::enabled_full:
+            return "enabled_full";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

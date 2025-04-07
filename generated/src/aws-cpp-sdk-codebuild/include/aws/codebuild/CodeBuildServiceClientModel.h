@@ -21,10 +21,12 @@
 #include <aws/codebuild/model/BatchDeleteBuildsResult.h>
 #include <aws/codebuild/model/BatchGetBuildBatchesResult.h>
 #include <aws/codebuild/model/BatchGetBuildsResult.h>
+#include <aws/codebuild/model/BatchGetCommandExecutionsResult.h>
 #include <aws/codebuild/model/BatchGetFleetsResult.h>
 #include <aws/codebuild/model/BatchGetProjectsResult.h>
 #include <aws/codebuild/model/BatchGetReportGroupsResult.h>
 #include <aws/codebuild/model/BatchGetReportsResult.h>
+#include <aws/codebuild/model/BatchGetSandboxesResult.h>
 #include <aws/codebuild/model/CreateFleetResult.h>
 #include <aws/codebuild/model/CreateProjectResult.h>
 #include <aws/codebuild/model/CreateReportGroupResult.h>
@@ -47,12 +49,15 @@
 #include <aws/codebuild/model/ListBuildBatchesForProjectResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
+#include <aws/codebuild/model/ListCommandExecutionsForSandboxResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
 #include <aws/codebuild/model/ListFleetsResult.h>
 #include <aws/codebuild/model/ListProjectsResult.h>
 #include <aws/codebuild/model/ListReportGroupsResult.h>
 #include <aws/codebuild/model/ListReportsResult.h>
 #include <aws/codebuild/model/ListReportsForReportGroupResult.h>
+#include <aws/codebuild/model/ListSandboxesResult.h>
+#include <aws/codebuild/model/ListSandboxesForProjectResult.h>
 #include <aws/codebuild/model/ListSharedProjectsResult.h>
 #include <aws/codebuild/model/ListSharedReportGroupsResult.h>
 #include <aws/codebuild/model/ListSourceCredentialsResult.h>
@@ -61,8 +66,12 @@
 #include <aws/codebuild/model/RetryBuildBatchResult.h>
 #include <aws/codebuild/model/StartBuildResult.h>
 #include <aws/codebuild/model/StartBuildBatchResult.h>
+#include <aws/codebuild/model/StartCommandExecutionResult.h>
+#include <aws/codebuild/model/StartSandboxResult.h>
+#include <aws/codebuild/model/StartSandboxConnectionResult.h>
 #include <aws/codebuild/model/StopBuildResult.h>
 #include <aws/codebuild/model/StopBuildBatchResult.h>
+#include <aws/codebuild/model/StopSandboxResult.h>
 #include <aws/codebuild/model/UpdateFleetResult.h>
 #include <aws/codebuild/model/UpdateProjectResult.h>
 #include <aws/codebuild/model/UpdateProjectVisibilityResult.h>
@@ -70,12 +79,14 @@
 #include <aws/codebuild/model/UpdateWebhookResult.h>
 #include <aws/codebuild/model/ListReportsRequest.h>
 #include <aws/codebuild/model/RetryBuildRequest.h>
+#include <aws/codebuild/model/ListSandboxesRequest.h>
 #include <aws/codebuild/model/ListProjectsRequest.h>
 #include <aws/codebuild/model/ListBuildBatchesForProjectRequest.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesRequest.h>
 #include <aws/codebuild/model/ListFleetsRequest.h>
 #include <aws/codebuild/model/ListReportGroupsRequest.h>
 #include <aws/codebuild/model/ListSharedReportGroupsRequest.h>
+#include <aws/codebuild/model/StartSandboxRequest.h>
 #include <aws/codebuild/model/ListSourceCredentialsRequest.h>
 #include <aws/codebuild/model/RetryBuildBatchRequest.h>
 #include <aws/codebuild/model/ListBuildsRequest.h>
@@ -124,10 +135,12 @@ namespace Aws
       class BatchDeleteBuildsRequest;
       class BatchGetBuildBatchesRequest;
       class BatchGetBuildsRequest;
+      class BatchGetCommandExecutionsRequest;
       class BatchGetFleetsRequest;
       class BatchGetProjectsRequest;
       class BatchGetReportGroupsRequest;
       class BatchGetReportsRequest;
+      class BatchGetSandboxesRequest;
       class CreateFleetRequest;
       class CreateProjectRequest;
       class CreateReportGroupRequest;
@@ -150,12 +163,15 @@ namespace Aws
       class ListBuildBatchesForProjectRequest;
       class ListBuildsRequest;
       class ListBuildsForProjectRequest;
+      class ListCommandExecutionsForSandboxRequest;
       class ListCuratedEnvironmentImagesRequest;
       class ListFleetsRequest;
       class ListProjectsRequest;
       class ListReportGroupsRequest;
       class ListReportsRequest;
       class ListReportsForReportGroupRequest;
+      class ListSandboxesRequest;
+      class ListSandboxesForProjectRequest;
       class ListSharedProjectsRequest;
       class ListSharedReportGroupsRequest;
       class ListSourceCredentialsRequest;
@@ -164,8 +180,12 @@ namespace Aws
       class RetryBuildBatchRequest;
       class StartBuildRequest;
       class StartBuildBatchRequest;
+      class StartCommandExecutionRequest;
+      class StartSandboxRequest;
+      class StartSandboxConnectionRequest;
       class StopBuildRequest;
       class StopBuildBatchRequest;
+      class StopSandboxRequest;
       class UpdateFleetRequest;
       class UpdateProjectRequest;
       class UpdateProjectVisibilityRequest;
@@ -177,10 +197,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchDeleteBuildsResult, CodeBuildError> BatchDeleteBuildsOutcome;
       typedef Aws::Utils::Outcome<BatchGetBuildBatchesResult, CodeBuildError> BatchGetBuildBatchesOutcome;
       typedef Aws::Utils::Outcome<BatchGetBuildsResult, CodeBuildError> BatchGetBuildsOutcome;
+      typedef Aws::Utils::Outcome<BatchGetCommandExecutionsResult, CodeBuildError> BatchGetCommandExecutionsOutcome;
       typedef Aws::Utils::Outcome<BatchGetFleetsResult, CodeBuildError> BatchGetFleetsOutcome;
       typedef Aws::Utils::Outcome<BatchGetProjectsResult, CodeBuildError> BatchGetProjectsOutcome;
       typedef Aws::Utils::Outcome<BatchGetReportGroupsResult, CodeBuildError> BatchGetReportGroupsOutcome;
       typedef Aws::Utils::Outcome<BatchGetReportsResult, CodeBuildError> BatchGetReportsOutcome;
+      typedef Aws::Utils::Outcome<BatchGetSandboxesResult, CodeBuildError> BatchGetSandboxesOutcome;
       typedef Aws::Utils::Outcome<CreateFleetResult, CodeBuildError> CreateFleetOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, CodeBuildError> CreateProjectOutcome;
       typedef Aws::Utils::Outcome<CreateReportGroupResult, CodeBuildError> CreateReportGroupOutcome;
@@ -203,12 +225,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBuildBatchesForProjectResult, CodeBuildError> ListBuildBatchesForProjectOutcome;
       typedef Aws::Utils::Outcome<ListBuildsResult, CodeBuildError> ListBuildsOutcome;
       typedef Aws::Utils::Outcome<ListBuildsForProjectResult, CodeBuildError> ListBuildsForProjectOutcome;
+      typedef Aws::Utils::Outcome<ListCommandExecutionsForSandboxResult, CodeBuildError> ListCommandExecutionsForSandboxOutcome;
       typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, CodeBuildError> ListCuratedEnvironmentImagesOutcome;
       typedef Aws::Utils::Outcome<ListFleetsResult, CodeBuildError> ListFleetsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, CodeBuildError> ListProjectsOutcome;
       typedef Aws::Utils::Outcome<ListReportGroupsResult, CodeBuildError> ListReportGroupsOutcome;
       typedef Aws::Utils::Outcome<ListReportsResult, CodeBuildError> ListReportsOutcome;
       typedef Aws::Utils::Outcome<ListReportsForReportGroupResult, CodeBuildError> ListReportsForReportGroupOutcome;
+      typedef Aws::Utils::Outcome<ListSandboxesResult, CodeBuildError> ListSandboxesOutcome;
+      typedef Aws::Utils::Outcome<ListSandboxesForProjectResult, CodeBuildError> ListSandboxesForProjectOutcome;
       typedef Aws::Utils::Outcome<ListSharedProjectsResult, CodeBuildError> ListSharedProjectsOutcome;
       typedef Aws::Utils::Outcome<ListSharedReportGroupsResult, CodeBuildError> ListSharedReportGroupsOutcome;
       typedef Aws::Utils::Outcome<ListSourceCredentialsResult, CodeBuildError> ListSourceCredentialsOutcome;
@@ -217,8 +242,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<RetryBuildBatchResult, CodeBuildError> RetryBuildBatchOutcome;
       typedef Aws::Utils::Outcome<StartBuildResult, CodeBuildError> StartBuildOutcome;
       typedef Aws::Utils::Outcome<StartBuildBatchResult, CodeBuildError> StartBuildBatchOutcome;
+      typedef Aws::Utils::Outcome<StartCommandExecutionResult, CodeBuildError> StartCommandExecutionOutcome;
+      typedef Aws::Utils::Outcome<StartSandboxResult, CodeBuildError> StartSandboxOutcome;
+      typedef Aws::Utils::Outcome<StartSandboxConnectionResult, CodeBuildError> StartSandboxConnectionOutcome;
       typedef Aws::Utils::Outcome<StopBuildResult, CodeBuildError> StopBuildOutcome;
       typedef Aws::Utils::Outcome<StopBuildBatchResult, CodeBuildError> StopBuildBatchOutcome;
+      typedef Aws::Utils::Outcome<StopSandboxResult, CodeBuildError> StopSandboxOutcome;
       typedef Aws::Utils::Outcome<UpdateFleetResult, CodeBuildError> UpdateFleetOutcome;
       typedef Aws::Utils::Outcome<UpdateProjectResult, CodeBuildError> UpdateProjectOutcome;
       typedef Aws::Utils::Outcome<UpdateProjectVisibilityResult, CodeBuildError> UpdateProjectVisibilityOutcome;
@@ -230,10 +259,12 @@ namespace Aws
       typedef std::future<BatchDeleteBuildsOutcome> BatchDeleteBuildsOutcomeCallable;
       typedef std::future<BatchGetBuildBatchesOutcome> BatchGetBuildBatchesOutcomeCallable;
       typedef std::future<BatchGetBuildsOutcome> BatchGetBuildsOutcomeCallable;
+      typedef std::future<BatchGetCommandExecutionsOutcome> BatchGetCommandExecutionsOutcomeCallable;
       typedef std::future<BatchGetFleetsOutcome> BatchGetFleetsOutcomeCallable;
       typedef std::future<BatchGetProjectsOutcome> BatchGetProjectsOutcomeCallable;
       typedef std::future<BatchGetReportGroupsOutcome> BatchGetReportGroupsOutcomeCallable;
       typedef std::future<BatchGetReportsOutcome> BatchGetReportsOutcomeCallable;
+      typedef std::future<BatchGetSandboxesOutcome> BatchGetSandboxesOutcomeCallable;
       typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
       typedef std::future<CreateReportGroupOutcome> CreateReportGroupOutcomeCallable;
@@ -256,12 +287,15 @@ namespace Aws
       typedef std::future<ListBuildBatchesForProjectOutcome> ListBuildBatchesForProjectOutcomeCallable;
       typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
       typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
+      typedef std::future<ListCommandExecutionsForSandboxOutcome> ListCommandExecutionsForSandboxOutcomeCallable;
       typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
       typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
       typedef std::future<ListReportGroupsOutcome> ListReportGroupsOutcomeCallable;
       typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
       typedef std::future<ListReportsForReportGroupOutcome> ListReportsForReportGroupOutcomeCallable;
+      typedef std::future<ListSandboxesOutcome> ListSandboxesOutcomeCallable;
+      typedef std::future<ListSandboxesForProjectOutcome> ListSandboxesForProjectOutcomeCallable;
       typedef std::future<ListSharedProjectsOutcome> ListSharedProjectsOutcomeCallable;
       typedef std::future<ListSharedReportGroupsOutcome> ListSharedReportGroupsOutcomeCallable;
       typedef std::future<ListSourceCredentialsOutcome> ListSourceCredentialsOutcomeCallable;
@@ -270,8 +304,12 @@ namespace Aws
       typedef std::future<RetryBuildBatchOutcome> RetryBuildBatchOutcomeCallable;
       typedef std::future<StartBuildOutcome> StartBuildOutcomeCallable;
       typedef std::future<StartBuildBatchOutcome> StartBuildBatchOutcomeCallable;
+      typedef std::future<StartCommandExecutionOutcome> StartCommandExecutionOutcomeCallable;
+      typedef std::future<StartSandboxOutcome> StartSandboxOutcomeCallable;
+      typedef std::future<StartSandboxConnectionOutcome> StartSandboxConnectionOutcomeCallable;
       typedef std::future<StopBuildOutcome> StopBuildOutcomeCallable;
       typedef std::future<StopBuildBatchOutcome> StopBuildBatchOutcomeCallable;
+      typedef std::future<StopSandboxOutcome> StopSandboxOutcomeCallable;
       typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
       typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
       typedef std::future<UpdateProjectVisibilityOutcome> UpdateProjectVisibilityOutcomeCallable;
@@ -286,10 +324,12 @@ namespace Aws
     typedef std::function<void(const CodeBuildClient*, const Model::BatchDeleteBuildsRequest&, const Model::BatchDeleteBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildBatchesRequest&, const Model::BatchGetBuildBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildBatchesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildsRequest&, const Model::BatchGetBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchGetCommandExecutionsRequest&, const Model::BatchGetCommandExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCommandExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetFleetsRequest&, const Model::BatchGetFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFleetsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetProjectsRequest&, const Model::BatchGetProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetReportGroupsRequest&, const Model::BatchGetReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetReportsRequest&, const Model::BatchGetReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetReportsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchGetSandboxesRequest&, const Model::BatchGetSandboxesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSandboxesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateReportGroupRequest&, const Model::CreateReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportGroupResponseReceivedHandler;
@@ -312,12 +352,15 @@ namespace Aws
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildBatchesForProjectRequest&, const Model::ListBuildBatchesForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildBatchesForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListCommandExecutionsForSandboxRequest&, const Model::ListCommandExecutionsForSandboxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommandExecutionsForSandboxResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportGroupsRequest&, const Model::ListReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportsForReportGroupRequest&, const Model::ListReportsForReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsForReportGroupResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListSandboxesRequest&, const Model::ListSandboxesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSandboxesResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListSandboxesForProjectRequest&, const Model::ListSandboxesForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSandboxesForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSharedProjectsRequest&, const Model::ListSharedProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSharedReportGroupsRequest&, const Model::ListSharedReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSourceCredentialsRequest&, const Model::ListSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceCredentialsResponseReceivedHandler;
@@ -326,8 +369,12 @@ namespace Aws
     typedef std::function<void(const CodeBuildClient*, const Model::RetryBuildBatchRequest&, const Model::RetryBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryBuildBatchResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildRequest&, const Model::StartBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildBatchRequest&, const Model::StartBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildBatchResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StartCommandExecutionRequest&, const Model::StartCommandExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCommandExecutionResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StartSandboxRequest&, const Model::StartSandboxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSandboxResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StartSandboxConnectionRequest&, const Model::StartSandboxConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSandboxConnectionResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildRequest&, const Model::StopBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildBatchRequest&, const Model::StopBuildBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildBatchResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::StopSandboxRequest&, const Model::StopSandboxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSandboxResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectVisibilityRequest&, const Model::UpdateProjectVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectVisibilityResponseReceivedHandler;

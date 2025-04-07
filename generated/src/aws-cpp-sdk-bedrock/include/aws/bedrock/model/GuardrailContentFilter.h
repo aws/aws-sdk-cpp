@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/GuardrailContentFilterType.h>
 #include <aws/bedrock/model/GuardrailFilterStrength.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailContentFilterAction.h>
 #include <aws/bedrock/model/GuardrailModality.h>
 #include <utility>
 
@@ -128,6 +129,58 @@ namespace Model
     GuardrailContentFilter& WithOutputModalities(OutputModalitiesT&& value) { SetOutputModalities(std::forward<OutputModalitiesT>(value)); return *this;}
     inline GuardrailContentFilter& AddOutputModalities(GuardrailModality value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The action to take when harmful content is detected in the input. Supported
+     * values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and
+     * replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take
+     * no action but return detection information in the trace response.</p> </li>
+     * </ul>
+     */
+    inline GuardrailContentFilterAction GetInputAction() const { return m_inputAction; }
+    inline bool InputActionHasBeenSet() const { return m_inputActionHasBeenSet; }
+    inline void SetInputAction(GuardrailContentFilterAction value) { m_inputActionHasBeenSet = true; m_inputAction = value; }
+    inline GuardrailContentFilter& WithInputAction(GuardrailContentFilterAction value) { SetInputAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The action to take when harmful content is detected in the output. Supported
+     * values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and
+     * replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take
+     * no action but return detection information in the trace response.</p> </li>
+     * </ul>
+     */
+    inline GuardrailContentFilterAction GetOutputAction() const { return m_outputAction; }
+    inline bool OutputActionHasBeenSet() const { return m_outputActionHasBeenSet; }
+    inline void SetOutputAction(GuardrailContentFilterAction value) { m_outputActionHasBeenSet = true; m_outputAction = value; }
+    inline GuardrailContentFilter& WithOutputAction(GuardrailContentFilterAction value) { SetOutputAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether guardrail evaluation is enabled on the input. When
+     * disabled, you aren't charged for the evaluation. The evaluation doesn't appear
+     * in the response.</p>
+     */
+    inline bool GetInputEnabled() const { return m_inputEnabled; }
+    inline bool InputEnabledHasBeenSet() const { return m_inputEnabledHasBeenSet; }
+    inline void SetInputEnabled(bool value) { m_inputEnabledHasBeenSet = true; m_inputEnabled = value; }
+    inline GuardrailContentFilter& WithInputEnabled(bool value) { SetInputEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether guardrail evaluation is enabled on the output. When
+     * disabled, you aren't charged for the evaluation. The evaluation doesn't appear
+     * in the response.</p>
+     */
+    inline bool GetOutputEnabled() const { return m_outputEnabled; }
+    inline bool OutputEnabledHasBeenSet() const { return m_outputEnabledHasBeenSet; }
+    inline void SetOutputEnabled(bool value) { m_outputEnabledHasBeenSet = true; m_outputEnabled = value; }
+    inline GuardrailContentFilter& WithOutputEnabled(bool value) { SetOutputEnabled(value); return *this;}
+    ///@}
   private:
 
     GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
@@ -144,6 +197,18 @@ namespace Model
 
     Aws::Vector<GuardrailModality> m_outputModalities;
     bool m_outputModalitiesHasBeenSet = false;
+
+    GuardrailContentFilterAction m_inputAction{GuardrailContentFilterAction::NOT_SET};
+    bool m_inputActionHasBeenSet = false;
+
+    GuardrailContentFilterAction m_outputAction{GuardrailContentFilterAction::NOT_SET};
+    bool m_outputActionHasBeenSet = false;
+
+    bool m_inputEnabled{false};
+    bool m_inputEnabledHasBeenSet = false;
+
+    bool m_outputEnabled{false};
+    bool m_outputEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ANONYMIZED,
-    BLOCKED
+    BLOCKED,
+    NONE
   };
 
 namespace GuardrailSensitiveInformationPolicyActionMapper

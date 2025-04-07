@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingFilterType.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingAction.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +58,32 @@ namespace Model
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline GuardrailContextualGroundingFilterConfig& WithThreshold(double value) { SetThreshold(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the action to take when content fails the contextual grounding
+     * evaluation. Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> –
+     * Block the content and replace it with blocked messaging.</p> </li> <li> <p>
+     * <code>NONE</code> – Take no action but return detection information in the trace
+     * response.</p> </li> </ul>
+     */
+    inline GuardrailContextualGroundingAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(GuardrailContextualGroundingAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailContextualGroundingFilterConfig& WithAction(GuardrailContextualGroundingAction value) { SetAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable contextual grounding evaluation. When disabled,
+     * you aren't charged for the evaluation. The evaluation doesn't appear in the
+     * response.</p>
+     */
+    inline bool GetEnabled() const { return m_enabled; }
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+    inline GuardrailContextualGroundingFilterConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
   private:
 
     GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
@@ -64,6 +91,12 @@ namespace Model
 
     double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
+
+    GuardrailContextualGroundingAction m_action{GuardrailContextualGroundingAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
+
+    bool m_enabled{false};
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

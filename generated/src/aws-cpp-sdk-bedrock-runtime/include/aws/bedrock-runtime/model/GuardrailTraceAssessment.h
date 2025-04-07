@@ -86,6 +86,19 @@ namespace Model
       m_outputAssessmentsHasBeenSet = true; m_outputAssessments.emplace(std::forward<OutputAssessmentsKeyT>(key), std::forward<OutputAssessmentsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>Provides the reason for the action taken when harmful content is
+     * detected.</p>
+     */
+    inline const Aws::String& GetActionReason() const { return m_actionReason; }
+    inline bool ActionReasonHasBeenSet() const { return m_actionReasonHasBeenSet; }
+    template<typename ActionReasonT = Aws::String>
+    void SetActionReason(ActionReasonT&& value) { m_actionReasonHasBeenSet = true; m_actionReason = std::forward<ActionReasonT>(value); }
+    template<typename ActionReasonT = Aws::String>
+    GuardrailTraceAssessment& WithActionReason(ActionReasonT&& value) { SetActionReason(std::forward<ActionReasonT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_modelOutput;
@@ -96,6 +109,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<GuardrailAssessment>> m_outputAssessments;
     bool m_outputAssessmentsHasBeenSet = false;
+
+    Aws::String m_actionReason;
+    bool m_actionReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,6 +157,15 @@ Input& Input::operator =(JsonView jsonValue)
     m_smpte2110ReceiverGroupSettings = jsonValue.GetObject("smpte2110ReceiverGroupSettings");
     m_smpte2110ReceiverGroupSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sdiSources"))
+  {
+    Aws::Utils::Array<JsonView> sdiSourcesJsonList = jsonValue.GetArray("sdiSources");
+    for(unsigned sdiSourcesIndex = 0; sdiSourcesIndex < sdiSourcesJsonList.GetLength(); ++sdiSourcesIndex)
+    {
+      m_sdiSources.push_back(sdiSourcesJsonList[sdiSourcesIndex].AsString());
+    }
+    m_sdiSourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -316,6 +325,17 @@ JsonValue Input::Jsonize() const
   if(m_smpte2110ReceiverGroupSettingsHasBeenSet)
   {
    payload.WithObject("smpte2110ReceiverGroupSettings", m_smpte2110ReceiverGroupSettings.Jsonize());
+
+  }
+
+  if(m_sdiSourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sdiSourcesJsonList(m_sdiSources.size());
+   for(unsigned sdiSourcesIndex = 0; sdiSourcesIndex < sdiSourcesJsonList.GetLength(); ++sdiSourcesIndex)
+   {
+     sdiSourcesJsonList[sdiSourcesIndex].AsString(m_sdiSources[sdiSourcesIndex]);
+   }
+   payload.WithArray("sdiSources", std::move(sdiSourcesJsonList));
 
   }
 

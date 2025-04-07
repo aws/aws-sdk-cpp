@@ -88,6 +88,15 @@ DescribeNodeSummary& DescribeNodeSummary::operator =(JsonView jsonValue)
     m_state = NodeStateMapper::GetNodeStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sdiSourceMappings"))
+  {
+    Aws::Utils::Array<JsonView> sdiSourceMappingsJsonList = jsonValue.GetArray("sdiSourceMappings");
+    for(unsigned sdiSourceMappingsIndex = 0; sdiSourceMappingsIndex < sdiSourceMappingsJsonList.GetLength(); ++sdiSourceMappingsIndex)
+    {
+      m_sdiSourceMappings.push_back(sdiSourceMappingsJsonList[sdiSourceMappingsIndex].AsObject());
+    }
+    m_sdiSourceMappingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -166,6 +175,17 @@ JsonValue DescribeNodeSummary::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", NodeStateMapper::GetNameForNodeState(m_state));
+  }
+
+  if(m_sdiSourceMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sdiSourceMappingsJsonList(m_sdiSourceMappings.size());
+   for(unsigned sdiSourceMappingsIndex = 0; sdiSourceMappingsIndex < sdiSourceMappingsJsonList.GetLength(); ++sdiSourceMappingsIndex)
+   {
+     sdiSourceMappingsJsonList[sdiSourceMappingsIndex].AsObject(m_sdiSourceMappings[sdiSourceMappingsIndex].Jsonize());
+   }
+   payload.WithArray("sdiSourceMappings", std::move(sdiSourceMappingsJsonList));
+
   }
 
   return payload;

@@ -30,6 +30,11 @@ SolutionUpdateConfig& SolutionUpdateConfig::operator =(JsonView jsonValue)
     m_autoTrainingConfig = jsonValue.GetObject("autoTrainingConfig");
     m_autoTrainingConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("eventsConfig"))
+  {
+    m_eventsConfig = jsonValue.GetObject("eventsConfig");
+    m_eventsConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue SolutionUpdateConfig::Jsonize() const
   if(m_autoTrainingConfigHasBeenSet)
   {
    payload.WithObject("autoTrainingConfig", m_autoTrainingConfig.Jsonize());
+
+  }
+
+  if(m_eventsConfigHasBeenSet)
+  {
+   payload.WithObject("eventsConfig", m_eventsConfig.Jsonize());
 
   }
 

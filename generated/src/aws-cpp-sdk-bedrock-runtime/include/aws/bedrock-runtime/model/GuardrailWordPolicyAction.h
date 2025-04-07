@@ -16,7 +16,8 @@ namespace Model
   enum class GuardrailWordPolicyAction
   {
     NOT_SET,
-    BLOCKED
+    BLOCKED,
+    NONE
   };
 
 namespace GuardrailWordPolicyActionMapper

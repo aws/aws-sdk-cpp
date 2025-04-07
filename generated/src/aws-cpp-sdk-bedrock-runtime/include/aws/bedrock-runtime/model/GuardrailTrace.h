@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     enabled,
-    disabled
+    disabled,
+    enabled_full
   };
 
 namespace GuardrailTraceMapper

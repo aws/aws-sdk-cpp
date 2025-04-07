@@ -11,6 +11,7 @@
 #include <aws/medialive/model/NodeRole.h>
 #include <aws/medialive/model/NodeState.h>
 #include <aws/medialive/model/NodeInterfaceMapping.h>
+#include <aws/medialive/model/SdiSourceMapping.h>
 #include <utility>
 
 namespace Aws
@@ -155,6 +156,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * An array of SDI source mappings. Each mapping connects one logical SdiSource to
+     * the physical SDI card and port that the physical SDI source uses.
+     */
+    inline const Aws::Vector<SdiSourceMapping>& GetSdiSourceMappings() const { return m_sdiSourceMappings; }
+    template<typename SdiSourceMappingsT = Aws::Vector<SdiSourceMapping>>
+    void SetSdiSourceMappings(SdiSourceMappingsT&& value) { m_sdiSourceMappingsHasBeenSet = true; m_sdiSourceMappings = std::forward<SdiSourceMappingsT>(value); }
+    template<typename SdiSourceMappingsT = Aws::Vector<SdiSourceMapping>>
+    DeleteNodeResult& WithSdiSourceMappings(SdiSourceMappingsT&& value) { SetSdiSourceMappings(std::forward<SdiSourceMappingsT>(value)); return *this;}
+    template<typename SdiSourceMappingsT = SdiSourceMapping>
+    DeleteNodeResult& AddSdiSourceMappings(SdiSourceMappingsT&& value) { m_sdiSourceMappingsHasBeenSet = true; m_sdiSourceMappings.emplace_back(std::forward<SdiSourceMappingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -193,6 +208,9 @@ namespace Model
 
     NodeState m_state{NodeState::NOT_SET};
     bool m_stateHasBeenSet = false;
+
+    Aws::Vector<SdiSourceMapping> m_sdiSourceMappings;
+    bool m_sdiSourceMappingsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

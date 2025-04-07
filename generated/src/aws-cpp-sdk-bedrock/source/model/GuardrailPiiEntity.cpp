@@ -35,6 +35,26 @@ GuardrailPiiEntity& GuardrailPiiEntity::operator =(JsonView jsonValue)
     m_action = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputAction"))
+  {
+    m_inputAction = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("inputAction"));
+    m_inputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputAction"))
+  {
+    m_outputAction = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("outputAction"));
+    m_outputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inputEnabled"))
+  {
+    m_inputEnabled = jsonValue.GetBool("inputEnabled");
+    m_inputEnabledHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputEnabled"))
+  {
+    m_outputEnabled = jsonValue.GetBool("outputEnabled");
+    m_outputEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +70,28 @@ JsonValue GuardrailPiiEntity::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", GuardrailSensitiveInformationActionMapper::GetNameForGuardrailSensitiveInformationAction(m_action));
+  }
+
+  if(m_inputActionHasBeenSet)
+  {
+   payload.WithString("inputAction", GuardrailSensitiveInformationActionMapper::GetNameForGuardrailSensitiveInformationAction(m_inputAction));
+  }
+
+  if(m_outputActionHasBeenSet)
+  {
+   payload.WithString("outputAction", GuardrailSensitiveInformationActionMapper::GetNameForGuardrailSensitiveInformationAction(m_outputAction));
+  }
+
+  if(m_inputEnabledHasBeenSet)
+  {
+   payload.WithBool("inputEnabled", m_inputEnabled);
+
+  }
+
+  if(m_outputEnabledHasBeenSet)
+  {
+   payload.WithBool("outputEnabled", m_outputEnabled);
+
   }
 
   return payload;

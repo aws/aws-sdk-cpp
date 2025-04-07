@@ -45,6 +45,11 @@ GuardrailContextualGroundingFilter& GuardrailContextualGroundingFilter::operator
     m_action = GuardrailContextualGroundingPolicyActionMapper::GetGuardrailContextualGroundingPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("detected"))
+  {
+    m_detected = jsonValue.GetBool("detected");
+    m_detectedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -72,6 +77,12 @@ JsonValue GuardrailContextualGroundingFilter::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", GuardrailContextualGroundingPolicyActionMapper::GetNameForGuardrailContextualGroundingPolicyAction(m_action));
+  }
+
+  if(m_detectedHasBeenSet)
+  {
+   payload.WithBool("detected", m_detected);
+
   }
 
   return payload;

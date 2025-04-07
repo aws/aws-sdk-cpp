@@ -22,6 +22,7 @@ namespace Aws
 
         static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
         static const int ANONYMIZE_HASH = HashingUtils::HashString("ANONYMIZE");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         GuardrailSensitiveInformationAction GetGuardrailSensitiveInformationActionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ANONYMIZE_HASH)
           {
             return GuardrailSensitiveInformationAction::ANONYMIZE;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return GuardrailSensitiveInformationAction::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "BLOCK";
           case GuardrailSensitiveInformationAction::ANONYMIZE:
             return "ANONYMIZE";
+          case GuardrailSensitiveInformationAction::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -58,6 +58,26 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
     }
     m_outputModalitiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputAction"))
+  {
+    m_inputAction = GuardrailContentFilterActionMapper::GetGuardrailContentFilterActionForName(jsonValue.GetString("inputAction"));
+    m_inputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputAction"))
+  {
+    m_outputAction = GuardrailContentFilterActionMapper::GetGuardrailContentFilterActionForName(jsonValue.GetString("outputAction"));
+    m_outputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inputEnabled"))
+  {
+    m_inputEnabled = jsonValue.GetBool("inputEnabled");
+    m_inputEnabledHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputEnabled"))
+  {
+    m_outputEnabled = jsonValue.GetBool("outputEnabled");
+    m_outputEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -99,6 +119,28 @@ JsonValue GuardrailContentFilterConfig::Jsonize() const
      outputModalitiesJsonList[outputModalitiesIndex].AsString(GuardrailModalityMapper::GetNameForGuardrailModality(m_outputModalities[outputModalitiesIndex]));
    }
    payload.WithArray("outputModalities", std::move(outputModalitiesJsonList));
+
+  }
+
+  if(m_inputActionHasBeenSet)
+  {
+   payload.WithString("inputAction", GuardrailContentFilterActionMapper::GetNameForGuardrailContentFilterAction(m_inputAction));
+  }
+
+  if(m_outputActionHasBeenSet)
+  {
+   payload.WithString("outputAction", GuardrailContentFilterActionMapper::GetNameForGuardrailContentFilterAction(m_outputAction));
+  }
+
+  if(m_inputEnabledHasBeenSet)
+  {
+   payload.WithBool("inputEnabled", m_inputEnabled);
+
+  }
+
+  if(m_outputEnabledHasBeenSet)
+  {
+   payload.WithBool("outputEnabled", m_outputEnabled);
 
   }
 

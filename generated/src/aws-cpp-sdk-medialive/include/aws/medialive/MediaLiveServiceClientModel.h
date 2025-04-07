@@ -40,6 +40,7 @@
 #include <aws/medialive/model/CreateNodeResult.h>
 #include <aws/medialive/model/CreateNodeRegistrationScriptSdkResult.h>
 #include <aws/medialive/model/CreatePartnerInputResult.h>
+#include <aws/medialive/model/CreateSdiSourceResult.h>
 #include <aws/medialive/model/CreateSignalMapResult.h>
 #include <aws/medialive/model/DeleteChannelResult.h>
 #include <aws/medialive/model/DeleteChannelPlacementGroupResult.h>
@@ -52,6 +53,7 @@
 #include <aws/medialive/model/DeleteNodeResult.h>
 #include <aws/medialive/model/DeleteReservationResult.h>
 #include <aws/medialive/model/DeleteScheduleResult.h>
+#include <aws/medialive/model/DeleteSdiSourceResult.h>
 #include <aws/medialive/model/DescribeAccountConfigurationResult.h>
 #include <aws/medialive/model/DescribeChannelResult.h>
 #include <aws/medialive/model/DescribeChannelPlacementGroupSdkResult.h>
@@ -67,6 +69,7 @@
 #include <aws/medialive/model/DescribeOfferingResult.h>
 #include <aws/medialive/model/DescribeReservationResult.h>
 #include <aws/medialive/model/DescribeScheduleResult.h>
+#include <aws/medialive/model/DescribeSdiSourceResult.h>
 #include <aws/medialive/model/DescribeThumbnailsResult.h>
 #include <aws/medialive/model/GetCloudWatchAlarmTemplateResult.h>
 #include <aws/medialive/model/GetCloudWatchAlarmTemplateGroupResult.h>
@@ -90,6 +93,7 @@
 #include <aws/medialive/model/ListNodesSdkResult.h>
 #include <aws/medialive/model/ListOfferingsResult.h>
 #include <aws/medialive/model/ListReservationsResult.h>
+#include <aws/medialive/model/ListSdiSourcesResult.h>
 #include <aws/medialive/model/ListSignalMapsResult.h>
 #include <aws/medialive/model/ListTagsForResourceResult.h>
 #include <aws/medialive/model/ListVersionsResult.h>
@@ -126,6 +130,7 @@
 #include <aws/medialive/model/UpdateNodeResult.h>
 #include <aws/medialive/model/UpdateNodeStateResult.h>
 #include <aws/medialive/model/UpdateReservationResult.h>
+#include <aws/medialive/model/UpdateSdiSourceResult.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplateGroupsRequest.h>
 #include <aws/medialive/model/BatchStartRequest.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplatesRequest.h>
@@ -140,7 +145,9 @@
 #include <aws/medialive/model/ListMultiplexesRequest.h>
 #include <aws/medialive/model/DescribeAccountConfigurationRequest.h>
 #include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
+#include <aws/medialive/model/ListSdiSourcesRequest.h>
 #include <aws/medialive/model/UpdateAccountConfigurationRequest.h>
+#include <aws/medialive/model/CreateSdiSourceRequest.h>
 #include <aws/medialive/model/ClaimDeviceRequest.h>
 #include <aws/medialive/model/BatchStopRequest.h>
 #include <aws/medialive/model/ListOfferingsRequest.h>
@@ -215,6 +222,7 @@ namespace Aws
       class CreateNodeRequest;
       class CreateNodeRegistrationScriptRequest;
       class CreatePartnerInputRequest;
+      class CreateSdiSourceRequest;
       class CreateSignalMapRequest;
       class CreateTagsRequest;
       class DeleteChannelRequest;
@@ -232,6 +240,7 @@ namespace Aws
       class DeleteNodeRequest;
       class DeleteReservationRequest;
       class DeleteScheduleRequest;
+      class DeleteSdiSourceRequest;
       class DeleteSignalMapRequest;
       class DeleteTagsRequest;
       class DescribeAccountConfigurationRequest;
@@ -249,6 +258,7 @@ namespace Aws
       class DescribeOfferingRequest;
       class DescribeReservationRequest;
       class DescribeScheduleRequest;
+      class DescribeSdiSourceRequest;
       class DescribeThumbnailsRequest;
       class GetCloudWatchAlarmTemplateRequest;
       class GetCloudWatchAlarmTemplateGroupRequest;
@@ -272,6 +282,7 @@ namespace Aws
       class ListNodesRequest;
       class ListOfferingsRequest;
       class ListReservationsRequest;
+      class ListSdiSourcesRequest;
       class ListSignalMapsRequest;
       class ListTagsForResourceRequest;
       class ListVersionsRequest;
@@ -308,6 +319,7 @@ namespace Aws
       class UpdateNodeRequest;
       class UpdateNodeStateRequest;
       class UpdateReservationRequest;
+      class UpdateSdiSourceRequest;
       /* End of service model forward declarations required in MediaLiveClient header */
 
       /* Service model Outcome class definitions */
@@ -333,6 +345,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateNodeResult, MediaLiveError> CreateNodeOutcome;
       typedef Aws::Utils::Outcome<CreateNodeRegistrationScriptSdkResult, MediaLiveError> CreateNodeRegistrationScriptOutcome;
       typedef Aws::Utils::Outcome<CreatePartnerInputResult, MediaLiveError> CreatePartnerInputOutcome;
+      typedef Aws::Utils::Outcome<CreateSdiSourceResult, MediaLiveError> CreateSdiSourceOutcome;
       typedef Aws::Utils::Outcome<CreateSignalMapResult, MediaLiveError> CreateSignalMapOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> CreateTagsOutcome;
       typedef Aws::Utils::Outcome<DeleteChannelResult, MediaLiveError> DeleteChannelOutcome;
@@ -350,6 +363,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteNodeResult, MediaLiveError> DeleteNodeOutcome;
       typedef Aws::Utils::Outcome<DeleteReservationResult, MediaLiveError> DeleteReservationOutcome;
       typedef Aws::Utils::Outcome<DeleteScheduleResult, MediaLiveError> DeleteScheduleOutcome;
+      typedef Aws::Utils::Outcome<DeleteSdiSourceResult, MediaLiveError> DeleteSdiSourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> DeleteSignalMapOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountConfigurationResult, MediaLiveError> DescribeAccountConfigurationOutcome;
@@ -367,6 +381,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaLiveError> DescribeOfferingOutcome;
       typedef Aws::Utils::Outcome<DescribeReservationResult, MediaLiveError> DescribeReservationOutcome;
       typedef Aws::Utils::Outcome<DescribeScheduleResult, MediaLiveError> DescribeScheduleOutcome;
+      typedef Aws::Utils::Outcome<DescribeSdiSourceResult, MediaLiveError> DescribeSdiSourceOutcome;
       typedef Aws::Utils::Outcome<DescribeThumbnailsResult, MediaLiveError> DescribeThumbnailsOutcome;
       typedef Aws::Utils::Outcome<GetCloudWatchAlarmTemplateResult, MediaLiveError> GetCloudWatchAlarmTemplateOutcome;
       typedef Aws::Utils::Outcome<GetCloudWatchAlarmTemplateGroupResult, MediaLiveError> GetCloudWatchAlarmTemplateGroupOutcome;
@@ -390,6 +405,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListNodesSdkResult, MediaLiveError> ListNodesOutcome;
       typedef Aws::Utils::Outcome<ListOfferingsResult, MediaLiveError> ListOfferingsOutcome;
       typedef Aws::Utils::Outcome<ListReservationsResult, MediaLiveError> ListReservationsOutcome;
+      typedef Aws::Utils::Outcome<ListSdiSourcesResult, MediaLiveError> ListSdiSourcesOutcome;
       typedef Aws::Utils::Outcome<ListSignalMapsResult, MediaLiveError> ListSignalMapsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaLiveError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVersionsResult, MediaLiveError> ListVersionsOutcome;
@@ -426,6 +442,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateNodeResult, MediaLiveError> UpdateNodeOutcome;
       typedef Aws::Utils::Outcome<UpdateNodeStateResult, MediaLiveError> UpdateNodeStateOutcome;
       typedef Aws::Utils::Outcome<UpdateReservationResult, MediaLiveError> UpdateReservationOutcome;
+      typedef Aws::Utils::Outcome<UpdateSdiSourceResult, MediaLiveError> UpdateSdiSourceOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -451,6 +468,7 @@ namespace Aws
       typedef std::future<CreateNodeOutcome> CreateNodeOutcomeCallable;
       typedef std::future<CreateNodeRegistrationScriptOutcome> CreateNodeRegistrationScriptOutcomeCallable;
       typedef std::future<CreatePartnerInputOutcome> CreatePartnerInputOutcomeCallable;
+      typedef std::future<CreateSdiSourceOutcome> CreateSdiSourceOutcomeCallable;
       typedef std::future<CreateSignalMapOutcome> CreateSignalMapOutcomeCallable;
       typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
       typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
@@ -468,6 +486,7 @@ namespace Aws
       typedef std::future<DeleteNodeOutcome> DeleteNodeOutcomeCallable;
       typedef std::future<DeleteReservationOutcome> DeleteReservationOutcomeCallable;
       typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
+      typedef std::future<DeleteSdiSourceOutcome> DeleteSdiSourceOutcomeCallable;
       typedef std::future<DeleteSignalMapOutcome> DeleteSignalMapOutcomeCallable;
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DescribeAccountConfigurationOutcome> DescribeAccountConfigurationOutcomeCallable;
@@ -485,6 +504,7 @@ namespace Aws
       typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
       typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
       typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
+      typedef std::future<DescribeSdiSourceOutcome> DescribeSdiSourceOutcomeCallable;
       typedef std::future<DescribeThumbnailsOutcome> DescribeThumbnailsOutcomeCallable;
       typedef std::future<GetCloudWatchAlarmTemplateOutcome> GetCloudWatchAlarmTemplateOutcomeCallable;
       typedef std::future<GetCloudWatchAlarmTemplateGroupOutcome> GetCloudWatchAlarmTemplateGroupOutcomeCallable;
@@ -508,6 +528,7 @@ namespace Aws
       typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
       typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
       typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
+      typedef std::future<ListSdiSourcesOutcome> ListSdiSourcesOutcomeCallable;
       typedef std::future<ListSignalMapsOutcome> ListSignalMapsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
@@ -544,6 +565,7 @@ namespace Aws
       typedef std::future<UpdateNodeOutcome> UpdateNodeOutcomeCallable;
       typedef std::future<UpdateNodeStateOutcome> UpdateNodeStateOutcomeCallable;
       typedef std::future<UpdateReservationOutcome> UpdateReservationOutcomeCallable;
+      typedef std::future<UpdateSdiSourceOutcome> UpdateSdiSourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -572,6 +594,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::CreateNodeRequest&, const Model::CreateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodeResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateNodeRegistrationScriptRequest&, const Model::CreateNodeRegistrationScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodeRegistrationScriptResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreatePartnerInputRequest&, const Model::CreatePartnerInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerInputResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::CreateSdiSourceRequest&, const Model::CreateSdiSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSdiSourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateSignalMapRequest&, const Model::CreateSignalMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSignalMapResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
@@ -589,6 +612,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteNodeRequest&, const Model::DeleteNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodeResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteReservationRequest&, const Model::DeleteReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReservationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteScheduleRequest&, const Model::DeleteScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduleResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DeleteSdiSourceRequest&, const Model::DeleteSdiSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSdiSourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteSignalMapRequest&, const Model::DeleteSignalMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSignalMapResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeAccountConfigurationRequest&, const Model::DescribeAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountConfigurationResponseReceivedHandler;
@@ -606,6 +630,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeSdiSourceRequest&, const Model::DescribeSdiSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSdiSourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeThumbnailsRequest&, const Model::DescribeThumbnailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThumbnailsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::GetCloudWatchAlarmTemplateRequest&, const Model::GetCloudWatchAlarmTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudWatchAlarmTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::GetCloudWatchAlarmTemplateGroupRequest&, const Model::GetCloudWatchAlarmTemplateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudWatchAlarmTemplateGroupResponseReceivedHandler;
@@ -629,6 +654,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::ListNodesRequest&, const Model::ListNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListSdiSourcesRequest&, const Model::ListSdiSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSdiSourcesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListSignalMapsRequest&, const Model::ListSignalMapsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSignalMapsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
@@ -665,6 +691,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateNodeRequest&, const Model::UpdateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodeResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateNodeStateRequest&, const Model::UpdateNodeStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodeStateResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateReservationRequest&, const Model::UpdateReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReservationResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateSdiSourceRequest&, const Model::UpdateSdiSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSdiSourceResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace MediaLive
 } // namespace Aws

@@ -27,6 +27,17 @@ Aws::String UpdateNodeRequest::SerializePayload() const
    payload.WithString("role", NodeRoleMapper::GetNameForNodeRole(m_role));
   }
 
+  if(m_sdiSourceMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sdiSourceMappingsJsonList(m_sdiSourceMappings.size());
+   for(unsigned sdiSourceMappingsIndex = 0; sdiSourceMappingsIndex < sdiSourceMappingsJsonList.GetLength(); ++sdiSourceMappingsIndex)
+   {
+     sdiSourceMappingsJsonList[sdiSourceMappingsIndex].AsObject(m_sdiSourceMappings[sdiSourceMappingsIndex].Jsonize());
+   }
+   payload.WithArray("sdiSourceMappings", std::move(sdiSourceMappingsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

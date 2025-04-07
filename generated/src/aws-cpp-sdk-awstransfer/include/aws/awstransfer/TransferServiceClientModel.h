@@ -59,6 +59,8 @@
 #include <aws/awstransfer/model/SendWorkflowStepStateResult.h>
 #include <aws/awstransfer/model/StartDirectoryListingResult.h>
 #include <aws/awstransfer/model/StartFileTransferResult.h>
+#include <aws/awstransfer/model/StartRemoteDeleteResult.h>
+#include <aws/awstransfer/model/StartRemoteMoveResult.h>
 #include <aws/awstransfer/model/TestConnectionResult.h>
 #include <aws/awstransfer/model/TestIdentityProviderResult.h>
 #include <aws/awstransfer/model/UpdateAccessResult.h>
@@ -173,6 +175,8 @@ namespace Aws
       class SendWorkflowStepStateRequest;
       class StartDirectoryListingRequest;
       class StartFileTransferRequest;
+      class StartRemoteDeleteRequest;
+      class StartRemoteMoveRequest;
       class StartServerRequest;
       class StopServerRequest;
       class TagResourceRequest;
@@ -245,6 +249,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendWorkflowStepStateResult, TransferError> SendWorkflowStepStateOutcome;
       typedef Aws::Utils::Outcome<StartDirectoryListingResult, TransferError> StartDirectoryListingOutcome;
       typedef Aws::Utils::Outcome<StartFileTransferResult, TransferError> StartFileTransferOutcome;
+      typedef Aws::Utils::Outcome<StartRemoteDeleteResult, TransferError> StartRemoteDeleteOutcome;
+      typedef Aws::Utils::Outcome<StartRemoteMoveResult, TransferError> StartRemoteMoveOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StartServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StopServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> TagResourceOutcome;
@@ -317,6 +323,8 @@ namespace Aws
       typedef std::future<SendWorkflowStepStateOutcome> SendWorkflowStepStateOutcomeCallable;
       typedef std::future<StartDirectoryListingOutcome> StartDirectoryListingOutcomeCallable;
       typedef std::future<StartFileTransferOutcome> StartFileTransferOutcomeCallable;
+      typedef std::future<StartRemoteDeleteOutcome> StartRemoteDeleteOutcomeCallable;
+      typedef std::future<StartRemoteMoveOutcome> StartRemoteMoveOutcomeCallable;
       typedef std::future<StartServerOutcome> StartServerOutcomeCallable;
       typedef std::future<StopServerOutcome> StopServerOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -392,6 +400,8 @@ namespace Aws
     typedef std::function<void(const TransferClient*, const Model::SendWorkflowStepStateRequest&, const Model::SendWorkflowStepStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendWorkflowStepStateResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StartDirectoryListingRequest&, const Model::StartDirectoryListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDirectoryListingResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StartFileTransferRequest&, const Model::StartFileTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFileTransferResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::StartRemoteDeleteRequest&, const Model::StartRemoteDeleteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRemoteDeleteResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::StartRemoteMoveRequest&, const Model::StartRemoteMoveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRemoteMoveResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StartServerRequest&, const Model::StartServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StopServerRequest&, const Model::StopServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

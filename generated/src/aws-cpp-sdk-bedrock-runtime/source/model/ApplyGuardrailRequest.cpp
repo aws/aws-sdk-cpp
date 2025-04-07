@@ -32,6 +32,11 @@ Aws::String ApplyGuardrailRequest::SerializePayload() const
 
   }
 
+  if(m_outputScopeHasBeenSet)
+  {
+   payload.WithString("outputScope", GuardrailOutputScopeMapper::GetNameForGuardrailOutputScope(m_outputScope));
+  }
+
   return payload.View().WriteReadable();
 }
 

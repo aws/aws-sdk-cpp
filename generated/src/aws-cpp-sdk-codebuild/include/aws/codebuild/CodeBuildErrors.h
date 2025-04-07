@@ -48,6 +48,7 @@ enum class CodeBuildErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ACCOUNT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_SUSPENDED,
   INVALID_INPUT,
   O_AUTH_PROVIDER,
   RESOURCE_ALREADY_EXISTS

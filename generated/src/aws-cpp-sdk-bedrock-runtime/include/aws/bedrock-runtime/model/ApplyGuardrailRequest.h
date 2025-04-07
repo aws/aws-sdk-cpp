@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/GuardrailContentSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-runtime/model/GuardrailOutputScope.h>
 #include <aws/bedrock-runtime/model/GuardrailContentBlock.h>
 #include <utility>
 
@@ -82,6 +83,22 @@ namespace Model
     template<typename ContentT = GuardrailContentBlock>
     ApplyGuardrailRequest& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the scope of the output that you get in the response. Set to
+     * <code>FULL</code> to return the entire output, including any detected and
+     * non-detected entries in the response for enhanced debugging.</p> <p>Note that
+     * the full output scope doesn't apply to word filters or regex in sensitive
+     * information filters. It does apply to all other filtering policies, including
+     * sensitive information with filters that can detect personally identifiable
+     * information (PII).</p>
+     */
+    inline GuardrailOutputScope GetOutputScope() const { return m_outputScope; }
+    inline bool OutputScopeHasBeenSet() const { return m_outputScopeHasBeenSet; }
+    inline void SetOutputScope(GuardrailOutputScope value) { m_outputScopeHasBeenSet = true; m_outputScope = value; }
+    inline ApplyGuardrailRequest& WithOutputScope(GuardrailOutputScope value) { SetOutputScope(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_guardrailIdentifier;
@@ -95,6 +112,9 @@ namespace Model
 
     Aws::Vector<GuardrailContentBlock> m_content;
     bool m_contentHasBeenSet = false;
+
+    GuardrailOutputScope m_outputScope{GuardrailOutputScope::NOT_SET};
+    bool m_outputScopeHasBeenSet = false;
   };
 
 } // namespace Model

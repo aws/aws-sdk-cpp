@@ -995,7 +995,11 @@ namespace Transfer
 
         /**
          * <p>Imports the signing and encryption certificates that you need to create local
-         * (AS2) profiles and partner profiles.</p><p><h3>See Also:</h3>   <a
+         * (AS2) profiles and partner profiles.</p> <p>You can import both the certificate
+         * and its chain in the <code>Certificate</code> parameter.</p>  <p>If you
+         * use the <code>Certificate</code> parameter to upload both the certificate and
+         * its chain, don't use the <code>CertificateChain</code> parameter.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">AWS
          * API Reference</a></p>
          */
@@ -1577,6 +1581,58 @@ namespace Transfer
         void StartFileTransferAsync(const StartFileTransferRequestT& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::StartFileTransfer, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a file or directory on the remote SFTP server.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartRemoteDelete">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartRemoteDeleteOutcome StartRemoteDelete(const Model::StartRemoteDeleteRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartRemoteDelete that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartRemoteDeleteRequestT = Model::StartRemoteDeleteRequest>
+        Model::StartRemoteDeleteOutcomeCallable StartRemoteDeleteCallable(const StartRemoteDeleteRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::StartRemoteDelete, request);
+        }
+
+        /**
+         * An Async wrapper for StartRemoteDelete that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartRemoteDeleteRequestT = Model::StartRemoteDeleteRequest>
+        void StartRemoteDeleteAsync(const StartRemoteDeleteRequestT& request, const StartRemoteDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::StartRemoteDelete, request, handler, context);
+        }
+
+        /**
+         * <p>Moves or renames a file or directory on the remote SFTP server.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartRemoteMove">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartRemoteMoveOutcome StartRemoteMove(const Model::StartRemoteMoveRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartRemoteMove that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartRemoteMoveRequestT = Model::StartRemoteMoveRequest>
+        Model::StartRemoteMoveOutcomeCallable StartRemoteMoveCallable(const StartRemoteMoveRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::StartRemoteMove, request);
+        }
+
+        /**
+         * An Async wrapper for StartRemoteMove that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartRemoteMoveRequestT = Model::StartRemoteMoveRequest>
+        void StartRemoteMoveAsync(const StartRemoteMoveRequestT& request, const StartRemoteMoveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::StartRemoteMove, request, handler, context);
         }
 
         /**
