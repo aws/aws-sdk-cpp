@@ -157,6 +157,15 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     m_smpte2110ReceiverGroupSettings = jsonValue.GetObject("smpte2110ReceiverGroupSettings");
     m_smpte2110ReceiverGroupSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sdiSources"))
+  {
+    Aws::Utils::Array<JsonView> sdiSourcesJsonList = jsonValue.GetArray("sdiSources");
+    for(unsigned sdiSourcesIndex = 0; sdiSourcesIndex < sdiSourcesJsonList.GetLength(); ++sdiSourcesIndex)
+    {
+      m_sdiSources.push_back(sdiSourcesJsonList[sdiSourcesIndex].AsString());
+    }
+    m_sdiSourcesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

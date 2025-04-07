@@ -45,6 +45,11 @@ GuardrailRegexFilter& GuardrailRegexFilter::operator =(JsonView jsonValue)
     m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("detected"))
+  {
+    m_detected = jsonValue.GetBool("detected");
+    m_detectedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue GuardrailRegexFilter::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
+  }
+
+  if(m_detectedHasBeenSet)
+  {
+   payload.WithBool("detected", m_detected);
+
   }
 
   return payload;

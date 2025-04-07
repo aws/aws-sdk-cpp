@@ -59,6 +59,17 @@ namespace Model
     inline void SetAction(GuardrailWordPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
     inline GuardrailCustomWord& WithAction(GuardrailWordPolicyAction value) { SetAction(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether custom word content that breaches the guardrail
+     * configuration is detected.</p>
+     */
+    inline bool GetDetected() const { return m_detected; }
+    inline bool DetectedHasBeenSet() const { return m_detectedHasBeenSet; }
+    inline void SetDetected(bool value) { m_detectedHasBeenSet = true; m_detected = value; }
+    inline GuardrailCustomWord& WithDetected(bool value) { SetDetected(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_match;
@@ -66,6 +77,9 @@ namespace Model
 
     GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
+
+    bool m_detected{false};
+    bool m_detectedHasBeenSet = false;
   };
 
 } // namespace Model

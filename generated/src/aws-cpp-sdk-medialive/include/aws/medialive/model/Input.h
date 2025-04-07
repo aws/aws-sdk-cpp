@@ -309,6 +309,18 @@ an input in a customer network.
     template<typename Smpte2110ReceiverGroupSettingsT = Smpte2110ReceiverGroupSettings>
     Input& WithSmpte2110ReceiverGroupSettings(Smpte2110ReceiverGroupSettingsT&& value) { SetSmpte2110ReceiverGroupSettings(std::forward<Smpte2110ReceiverGroupSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::Vector<Aws::String>& GetSdiSources() const { return m_sdiSources; }
+    inline bool SdiSourcesHasBeenSet() const { return m_sdiSourcesHasBeenSet; }
+    template<typename SdiSourcesT = Aws::Vector<Aws::String>>
+    void SetSdiSources(SdiSourcesT&& value) { m_sdiSourcesHasBeenSet = true; m_sdiSources = std::forward<SdiSourcesT>(value); }
+    template<typename SdiSourcesT = Aws::Vector<Aws::String>>
+    Input& WithSdiSources(SdiSourcesT&& value) { SetSdiSources(std::forward<SdiSourcesT>(value)); return *this;}
+    template<typename SdiSourcesT = Aws::String>
+    Input& AddSdiSources(SdiSourcesT&& value) { m_sdiSourcesHasBeenSet = true; m_sdiSources.emplace_back(std::forward<SdiSourcesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -370,6 +382,9 @@ an input in a customer network.
 
     Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
     bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sdiSources;
+    bool m_sdiSourcesHasBeenSet = false;
   };
 
 } // namespace Model

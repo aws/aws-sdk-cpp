@@ -35,6 +35,11 @@ ApplyGuardrailResult& ApplyGuardrailResult::operator =(const Aws::AmazonWebServi
     m_action = GuardrailActionMapper::GetGuardrailActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("actionReason"))
+  {
+    m_actionReason = jsonValue.GetString("actionReason");
+    m_actionReasonHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");

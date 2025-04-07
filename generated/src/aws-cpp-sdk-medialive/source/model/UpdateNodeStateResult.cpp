@@ -83,6 +83,15 @@ UpdateNodeStateResult& UpdateNodeStateResult::operator =(const Aws::AmazonWebSer
     m_state = NodeStateMapper::GetNodeStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sdiSourceMappings"))
+  {
+    Aws::Utils::Array<JsonView> sdiSourceMappingsJsonList = jsonValue.GetArray("sdiSourceMappings");
+    for(unsigned sdiSourceMappingsIndex = 0; sdiSourceMappingsIndex < sdiSourceMappingsJsonList.GetLength(); ++sdiSourceMappingsIndex)
+    {
+      m_sdiSourceMappings.push_back(sdiSourceMappingsJsonList[sdiSourceMappingsIndex].AsObject());
+    }
+    m_sdiSourceMappingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

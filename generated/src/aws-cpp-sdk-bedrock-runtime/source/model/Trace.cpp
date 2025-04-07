@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int ENABLED_FULL_HASH = HashingUtils::HashString("ENABLED_FULL");
 
 
         Trace GetTraceForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLED_HASH)
           {
             return Trace::DISABLED;
+          }
+          else if (hashCode == ENABLED_FULL_HASH)
+          {
+            return Trace::ENABLED_FULL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ENABLED";
           case Trace::DISABLED:
             return "DISABLED";
+          case Trace::ENABLED_FULL:
+            return "ENABLED_FULL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

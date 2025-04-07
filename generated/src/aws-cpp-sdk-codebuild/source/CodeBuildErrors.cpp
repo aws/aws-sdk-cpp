@@ -21,6 +21,7 @@ namespace CodeBuildErrorMapper
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int O_AUTH_PROVIDER_HASH = HashingUtils::HashString("OAuthProviderException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("AccountSuspendedException");
 static const int ACCOUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountLimitExceededException");
 
 
@@ -39,6 +40,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_INPUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ACCOUNT_SUSPENDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeBuildErrors::ACCOUNT_SUSPENDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_LIMIT_EXCEEDED_HASH)
   {

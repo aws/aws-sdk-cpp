@@ -292,6 +292,17 @@ an input in a customer network.
 
     ///@{
     
+    inline const Aws::Vector<Aws::String>& GetSdiSources() const { return m_sdiSources; }
+    template<typename SdiSourcesT = Aws::Vector<Aws::String>>
+    void SetSdiSources(SdiSourcesT&& value) { m_sdiSourcesHasBeenSet = true; m_sdiSources = std::forward<SdiSourcesT>(value); }
+    template<typename SdiSourcesT = Aws::Vector<Aws::String>>
+    DescribeInputResult& WithSdiSources(SdiSourcesT&& value) { SetSdiSources(std::forward<SdiSourcesT>(value)); return *this;}
+    template<typename SdiSourcesT = Aws::String>
+    DescribeInputResult& AddSdiSources(SdiSourcesT&& value) { m_sdiSourcesHasBeenSet = true; m_sdiSources.emplace_back(std::forward<SdiSourcesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
     void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
@@ -359,6 +370,9 @@ an input in a customer network.
 
     Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
     bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sdiSources;
+    bool m_sdiSourcesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ENABLED,
-    DISABLED
+    DISABLED,
+    ENABLED_FULL
   };
 
 namespace TraceMapper

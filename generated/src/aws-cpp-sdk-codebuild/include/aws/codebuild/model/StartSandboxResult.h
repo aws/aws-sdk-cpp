@@ -1,0 +1,66 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/codebuild/CodeBuild_EXPORTS.h>
+#include <aws/codebuild/model/Sandbox.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace CodeBuild
+{
+namespace Model
+{
+  class StartSandboxResult
+  {
+  public:
+    AWS_CODEBUILD_API StartSandboxResult() = default;
+    AWS_CODEBUILD_API StartSandboxResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API StartSandboxResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p>Information about the requested sandbox.</p>
+     */
+    inline const Sandbox& GetSandbox() const { return m_sandbox; }
+    template<typename SandboxT = Sandbox>
+    void SetSandbox(SandboxT&& value) { m_sandboxHasBeenSet = true; m_sandbox = std::forward<SandboxT>(value); }
+    template<typename SandboxT = Sandbox>
+    StartSandboxResult& WithSandbox(SandboxT&& value) { SetSandbox(std::forward<SandboxT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSandboxResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
+    ///@}
+  private:
+
+    Sandbox m_sandbox;
+    bool m_sandboxHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace CodeBuild
+} // namespace Aws

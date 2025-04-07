@@ -8,6 +8,8 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/NodeRole.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/SdiSourceMappingUpdateRequest.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +87,20 @@ namespace Model
     inline void SetRole(NodeRole value) { m_roleHasBeenSet = true; m_role = value; }
     inline UpdateNodeRequest& WithRole(NodeRole value) { SetRole(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The mappings of a SDI capture card port to a logical SDI data stream
+     */
+    inline const Aws::Vector<SdiSourceMappingUpdateRequest>& GetSdiSourceMappings() const { return m_sdiSourceMappings; }
+    inline bool SdiSourceMappingsHasBeenSet() const { return m_sdiSourceMappingsHasBeenSet; }
+    template<typename SdiSourceMappingsT = Aws::Vector<SdiSourceMappingUpdateRequest>>
+    void SetSdiSourceMappings(SdiSourceMappingsT&& value) { m_sdiSourceMappingsHasBeenSet = true; m_sdiSourceMappings = std::forward<SdiSourceMappingsT>(value); }
+    template<typename SdiSourceMappingsT = Aws::Vector<SdiSourceMappingUpdateRequest>>
+    UpdateNodeRequest& WithSdiSourceMappings(SdiSourceMappingsT&& value) { SetSdiSourceMappings(std::forward<SdiSourceMappingsT>(value)); return *this;}
+    template<typename SdiSourceMappingsT = SdiSourceMappingUpdateRequest>
+    UpdateNodeRequest& AddSdiSourceMappings(SdiSourceMappingsT&& value) { m_sdiSourceMappingsHasBeenSet = true; m_sdiSourceMappings.emplace_back(std::forward<SdiSourceMappingsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_clusterId;
@@ -98,6 +114,9 @@ namespace Model
 
     NodeRole m_role{NodeRole::NOT_SET};
     bool m_roleHasBeenSet = false;
+
+    Aws::Vector<SdiSourceMappingUpdateRequest> m_sdiSourceMappings;
+    bool m_sdiSourceMappingsHasBeenSet = false;
   };
 
 } // namespace Model

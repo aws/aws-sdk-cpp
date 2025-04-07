@@ -9,6 +9,7 @@
 #include <aws/personalize/model/HPOConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/personalize/model/AutoMLConfig.h>
+#include <aws/personalize/model/EventsConfig.h>
 #include <aws/personalize/model/OptimizationObjective.h>
 #include <aws/personalize/model/TrainingDataConfig.h>
 #include <aws/personalize/model/AutoTrainingConfig.h>
@@ -117,6 +118,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes the configuration of an event, which includes a list of event
+     * parameters. You can specify up to 10 event parameters. Events are used in
+     * solution creation.</p>
+     */
+    inline const EventsConfig& GetEventsConfig() const { return m_eventsConfig; }
+    inline bool EventsConfigHasBeenSet() const { return m_eventsConfigHasBeenSet; }
+    template<typename EventsConfigT = EventsConfig>
+    void SetEventsConfig(EventsConfigT&& value) { m_eventsConfigHasBeenSet = true; m_eventsConfig = std::forward<EventsConfigT>(value); }
+    template<typename EventsConfigT = EventsConfig>
+    SolutionConfig& WithEventsConfig(EventsConfigT&& value) { SetEventsConfig(std::forward<EventsConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Describes the additional objective for the solution, such as maximizing
      * streaming minutes or increasing revenue. For more information see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
@@ -170,6 +185,9 @@ namespace Model
 
     AutoMLConfig m_autoMLConfig;
     bool m_autoMLConfigHasBeenSet = false;
+
+    EventsConfig m_eventsConfig;
+    bool m_eventsConfigHasBeenSet = false;
 
     OptimizationObjective m_optimizationObjective;
     bool m_optimizationObjectiveHasBeenSet = false;

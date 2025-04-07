@@ -79,6 +79,18 @@ namespace Model
     inline void SetAction(GuardrailContextualGroundingPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
     inline GuardrailContextualGroundingFilter& WithAction(GuardrailContextualGroundingPolicyAction value) { SetAction(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether content that fails the contextual grounding evaluation
+     * (grounding or relevance score less than the corresponding threshold) was
+     * detected.</p>
+     */
+    inline bool GetDetected() const { return m_detected; }
+    inline bool DetectedHasBeenSet() const { return m_detectedHasBeenSet; }
+    inline void SetDetected(bool value) { m_detectedHasBeenSet = true; m_detected = value; }
+    inline GuardrailContextualGroundingFilter& WithDetected(bool value) { SetDetected(value); return *this;}
+    ///@}
   private:
 
     GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
@@ -92,6 +104,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicyAction m_action{GuardrailContextualGroundingPolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
+
+    bool m_detected{false};
+    bool m_detectedHasBeenSet = false;
   };
 
 } // namespace Model

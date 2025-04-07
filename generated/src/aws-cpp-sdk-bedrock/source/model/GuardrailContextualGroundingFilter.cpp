@@ -35,6 +35,16 @@ GuardrailContextualGroundingFilter& GuardrailContextualGroundingFilter::operator
     m_threshold = jsonValue.GetDouble("threshold");
     m_thresholdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("action"))
+  {
+    m_action = GuardrailContextualGroundingActionMapper::GetGuardrailContextualGroundingActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("enabled"))
+  {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +60,17 @@ JsonValue GuardrailContextualGroundingFilter::Jsonize() const
   if(m_thresholdHasBeenSet)
   {
    payload.WithDouble("threshold", m_threshold);
+
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("action", GuardrailContextualGroundingActionMapper::GetNameForGuardrailContextualGroundingAction(m_action));
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("enabled", m_enabled);
 
   }
 

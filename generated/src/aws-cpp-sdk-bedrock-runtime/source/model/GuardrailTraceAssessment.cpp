@@ -59,6 +59,11 @@ GuardrailTraceAssessment& GuardrailTraceAssessment::operator =(JsonView jsonValu
     }
     m_outputAssessmentsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("actionReason"))
+  {
+    m_actionReason = jsonValue.GetString("actionReason");
+    m_actionReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +106,12 @@ JsonValue GuardrailTraceAssessment::Jsonize() const
      outputAssessmentsJsonMap.WithArray(outputAssessmentsItem.first, std::move(guardrailAssessmentListJsonList));
    }
    payload.WithObject("outputAssessments", std::move(outputAssessmentsJsonMap));
+
+  }
+
+  if(m_actionReasonHasBeenSet)
+  {
+   payload.WithString("actionReason", m_actionReason);
 
   }
 

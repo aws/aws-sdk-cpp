@@ -7,9 +7,9 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/GuardrailUsage.h>
 #include <aws/bedrock-runtime/model/GuardrailAction.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-runtime/model/GuardrailCoverage.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/GuardrailOutputContent.h>
 #include <aws/bedrock-runtime/model/GuardrailAssessment.h>
 #include <utility>
@@ -56,6 +56,17 @@ namespace Model
     inline GuardrailAction GetAction() const { return m_action; }
     inline void SetAction(GuardrailAction value) { m_actionHasBeenSet = true; m_action = value; }
     inline ApplyGuardrailResult& WithAction(GuardrailAction value) { SetAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The reason for the action taken when harmful content is detected.</p>
+     */
+    inline const Aws::String& GetActionReason() const { return m_actionReason; }
+    template<typename ActionReasonT = Aws::String>
+    void SetActionReason(ActionReasonT&& value) { m_actionReasonHasBeenSet = true; m_actionReason = std::forward<ActionReasonT>(value); }
+    template<typename ActionReasonT = Aws::String>
+    ApplyGuardrailResult& WithActionReason(ActionReasonT&& value) { SetActionReason(std::forward<ActionReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,6 +121,9 @@ namespace Model
 
     GuardrailAction m_action{GuardrailAction::NOT_SET};
     bool m_actionHasBeenSet = false;
+
+    Aws::String m_actionReason;
+    bool m_actionReasonHasBeenSet = false;
 
     Aws::Vector<GuardrailOutputContent> m_outputs;
     bool m_outputsHasBeenSet = false;

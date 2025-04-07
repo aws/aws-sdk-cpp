@@ -1,0 +1,71 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/codebuild/CodeBuild_EXPORTS.h>
+#include <aws/codebuild/CodeBuildRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace CodeBuild
+{
+namespace Model
+{
+
+  /**
+   */
+  class StartSandboxRequest : public CodeBuildRequest
+  {
+  public:
+    AWS_CODEBUILD_API StartSandboxRequest() = default;
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "StartSandbox"; }
+
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
+
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    ///@{
+    /**
+     * <p>The CodeBuild project name.</p>
+     */
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    StartSandboxRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique client token.</p>
+     */
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    StartSandboxRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
+
+    Aws::String m_idempotencyToken;
+    bool m_idempotencyTokenHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace CodeBuild
+} // namespace Aws

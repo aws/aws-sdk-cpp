@@ -49,6 +49,26 @@ GuardrailTopicConfig& GuardrailTopicConfig::operator =(JsonView jsonValue)
     m_type = GuardrailTopicTypeMapper::GetGuardrailTopicTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputAction"))
+  {
+    m_inputAction = GuardrailTopicActionMapper::GetGuardrailTopicActionForName(jsonValue.GetString("inputAction"));
+    m_inputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputAction"))
+  {
+    m_outputAction = GuardrailTopicActionMapper::GetGuardrailTopicActionForName(jsonValue.GetString("outputAction"));
+    m_outputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inputEnabled"))
+  {
+    m_inputEnabled = jsonValue.GetBool("inputEnabled");
+    m_inputEnabledHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputEnabled"))
+  {
+    m_outputEnabled = jsonValue.GetBool("outputEnabled");
+    m_outputEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +102,28 @@ JsonValue GuardrailTopicConfig::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", GuardrailTopicTypeMapper::GetNameForGuardrailTopicType(m_type));
+  }
+
+  if(m_inputActionHasBeenSet)
+  {
+   payload.WithString("inputAction", GuardrailTopicActionMapper::GetNameForGuardrailTopicAction(m_inputAction));
+  }
+
+  if(m_outputActionHasBeenSet)
+  {
+   payload.WithString("outputAction", GuardrailTopicActionMapper::GetNameForGuardrailTopicAction(m_outputAction));
+  }
+
+  if(m_inputEnabledHasBeenSet)
+  {
+   payload.WithBool("inputEnabled", m_inputEnabled);
+
+  }
+
+  if(m_outputEnabledHasBeenSet)
+  {
+   payload.WithBool("outputEnabled", m_outputEnabled);
+
   }
 
   return payload;

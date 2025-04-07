@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int BLOCKED_HASH = HashingUtils::HashString("BLOCKED");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         GuardrailWordPolicyAction GetGuardrailWordPolicyActionForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == BLOCKED_HASH)
           {
             return GuardrailWordPolicyAction::BLOCKED;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return GuardrailWordPolicyAction::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case GuardrailWordPolicyAction::BLOCKED:
             return "BLOCKED";
+          case GuardrailWordPolicyAction::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

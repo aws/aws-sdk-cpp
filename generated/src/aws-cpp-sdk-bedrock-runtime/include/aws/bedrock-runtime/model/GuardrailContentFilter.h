@@ -79,6 +79,17 @@ namespace Model
     inline void SetAction(GuardrailContentPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
     inline GuardrailContentFilter& WithAction(GuardrailContentPolicyAction value) { SetAction(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether content that breaches the guardrail configuration is
+     * detected.</p>
+     */
+    inline bool GetDetected() const { return m_detected; }
+    inline bool DetectedHasBeenSet() const { return m_detectedHasBeenSet; }
+    inline void SetDetected(bool value) { m_detectedHasBeenSet = true; m_detected = value; }
+    inline GuardrailContentFilter& WithDetected(bool value) { SetDetected(value); return *this;}
+    ///@}
   private:
 
     GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
@@ -92,6 +103,9 @@ namespace Model
 
     GuardrailContentPolicyAction m_action{GuardrailContentPolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
+
+    bool m_detected{false};
+    bool m_detectedHasBeenSet = false;
   };
 
 } // namespace Model

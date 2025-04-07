@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/GuardrailTopicType.h>
+#include <aws/bedrock/model/GuardrailTopicAction.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,58 @@ namespace Model
     inline void SetType(GuardrailTopicType value) { m_typeHasBeenSet = true; m_type = value; }
     inline GuardrailTopicConfig& WithType(GuardrailTopicType value) { SetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the action to take when harmful content is detected in the input.
+     * Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the
+     * content and replace it with blocked messaging.</p> </li> <li> <p>
+     * <code>NONE</code> – Take no action but return detection information in the trace
+     * response.</p> </li> </ul>
+     */
+    inline GuardrailTopicAction GetInputAction() const { return m_inputAction; }
+    inline bool InputActionHasBeenSet() const { return m_inputActionHasBeenSet; }
+    inline void SetInputAction(GuardrailTopicAction value) { m_inputActionHasBeenSet = true; m_inputAction = value; }
+    inline GuardrailTopicConfig& WithInputAction(GuardrailTopicAction value) { SetInputAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the action to take when harmful content is detected in the output.
+     * Supported values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the
+     * content and replace it with blocked messaging.</p> </li> <li> <p>
+     * <code>NONE</code> – Take no action but return detection information in the trace
+     * response.</p> </li> </ul>
+     */
+    inline GuardrailTopicAction GetOutputAction() const { return m_outputAction; }
+    inline bool OutputActionHasBeenSet() const { return m_outputActionHasBeenSet; }
+    inline void SetOutputAction(GuardrailTopicAction value) { m_outputActionHasBeenSet = true; m_outputAction = value; }
+    inline GuardrailTopicConfig& WithOutputAction(GuardrailTopicAction value) { SetOutputAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable guardrail evaluation on the input. When disabled,
+     * you aren't charged for the evaluation. The evaluation doesn't appear in the
+     * response.</p>
+     */
+    inline bool GetInputEnabled() const { return m_inputEnabled; }
+    inline bool InputEnabledHasBeenSet() const { return m_inputEnabledHasBeenSet; }
+    inline void SetInputEnabled(bool value) { m_inputEnabledHasBeenSet = true; m_inputEnabled = value; }
+    inline GuardrailTopicConfig& WithInputEnabled(bool value) { SetInputEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable guardrail evaluation on the output. When
+     * disabled, you aren't charged for the evaluation. The evaluation doesn't appear
+     * in the response.</p>
+     */
+    inline bool GetOutputEnabled() const { return m_outputEnabled; }
+    inline bool OutputEnabledHasBeenSet() const { return m_outputEnabledHasBeenSet; }
+    inline void SetOutputEnabled(bool value) { m_outputEnabledHasBeenSet = true; m_outputEnabled = value; }
+    inline GuardrailTopicConfig& WithOutputEnabled(bool value) { SetOutputEnabled(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -101,6 +154,18 @@ namespace Model
 
     GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    GuardrailTopicAction m_inputAction{GuardrailTopicAction::NOT_SET};
+    bool m_inputActionHasBeenSet = false;
+
+    GuardrailTopicAction m_outputAction{GuardrailTopicAction::NOT_SET};
+    bool m_outputActionHasBeenSet = false;
+
+    bool m_inputEnabled{false};
+    bool m_inputEnabledHasBeenSet = false;
+
+    bool m_outputEnabled{false};
+    bool m_outputEnabledHasBeenSet = false;
   };
 
 } // namespace Model

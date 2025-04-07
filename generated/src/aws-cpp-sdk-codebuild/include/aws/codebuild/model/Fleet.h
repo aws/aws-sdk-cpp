@@ -138,11 +138,11 @@ namespace Model
      * type <code>ARM_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney),
-     * EU (Frankfurt), and South America (São Paulo).</p> </li> <li> <p>The environment
-     * type <code>ARM_EC2</code> is available only in regions US East (N. Virginia), US
-     * East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São
-     * Paulo), and Asia Pacific (Mumbai).</p> </li> <li> <p>The environment type
+     * EU (Frankfurt), and South America (S��o Paulo).</p> </li> <li> <p>The
+     * environment type <code>ARM_EC2</code> is available only in regions US East (N.
+     * Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia
+     * Pacific (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America
+     * (São Paulo), and Asia Pacific (Mumbai).</p> </li> <li> <p>The environment type
      * <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia),
      * US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific
      * (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São

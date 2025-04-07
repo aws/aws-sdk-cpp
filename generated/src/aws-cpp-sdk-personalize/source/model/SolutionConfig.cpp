@@ -58,6 +58,11 @@ SolutionConfig& SolutionConfig::operator =(JsonView jsonValue)
     m_autoMLConfig = jsonValue.GetObject("autoMLConfig");
     m_autoMLConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("eventsConfig"))
+  {
+    m_eventsConfig = jsonValue.GetObject("eventsConfig");
+    m_eventsConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("optimizationObjective"))
   {
     m_optimizationObjective = jsonValue.GetObject("optimizationObjective");
@@ -117,6 +122,12 @@ JsonValue SolutionConfig::Jsonize() const
   if(m_autoMLConfigHasBeenSet)
   {
    payload.WithObject("autoMLConfig", m_autoMLConfig.Jsonize());
+
+  }
+
+  if(m_eventsConfigHasBeenSet)
+  {
+   payload.WithObject("eventsConfig", m_eventsConfig.Jsonize());
 
   }
 

@@ -30,6 +30,26 @@ GuardrailWordConfig& GuardrailWordConfig::operator =(JsonView jsonValue)
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputAction"))
+  {
+    m_inputAction = GuardrailWordActionMapper::GetGuardrailWordActionForName(jsonValue.GetString("inputAction"));
+    m_inputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputAction"))
+  {
+    m_outputAction = GuardrailWordActionMapper::GetGuardrailWordActionForName(jsonValue.GetString("outputAction"));
+    m_outputActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inputEnabled"))
+  {
+    m_inputEnabled = jsonValue.GetBool("inputEnabled");
+    m_inputEnabledHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("outputEnabled"))
+  {
+    m_outputEnabled = jsonValue.GetBool("outputEnabled");
+    m_outputEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +60,28 @@ JsonValue GuardrailWordConfig::Jsonize() const
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_inputActionHasBeenSet)
+  {
+   payload.WithString("inputAction", GuardrailWordActionMapper::GetNameForGuardrailWordAction(m_inputAction));
+  }
+
+  if(m_outputActionHasBeenSet)
+  {
+   payload.WithString("outputAction", GuardrailWordActionMapper::GetNameForGuardrailWordAction(m_outputAction));
+  }
+
+  if(m_inputEnabledHasBeenSet)
+  {
+   payload.WithBool("inputEnabled", m_inputEnabled);
+
+  }
+
+  if(m_outputEnabledHasBeenSet)
+  {
+   payload.WithBool("outputEnabled", m_outputEnabled);
 
   }
 

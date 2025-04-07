@@ -49,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional date that specifies when the certificate becomes active.</p>
+     * <p>An optional date that specifies when the certificate becomes active. If you
+     * do not specify a value, <code>ActiveDate</code> takes the same value as
+     * <code>NotBeforeDate</code>, which is specified by the CA. </p>
      */
     inline const Aws::Utils::DateTime& GetActiveDate() const { return m_activeDate; }
     inline bool ActiveDateHasBeenSet() const { return m_activeDateHasBeenSet; }
@@ -61,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional date that specifies when the certificate becomes inactive.</p>
+     * <p>An optional date that specifies when the certificate becomes inactive. If you
+     * do not specify a value, <code>InactiveDate</code> takes the same value as
+     * <code>NotAfterDate</code>, which is specified by the CA.</p>
      */
     inline const Aws::Utils::DateTime& GetInactiveDate() const { return m_inactiveDate; }
     inline bool InactiveDateHasBeenSet() const { return m_inactiveDateHasBeenSet; }

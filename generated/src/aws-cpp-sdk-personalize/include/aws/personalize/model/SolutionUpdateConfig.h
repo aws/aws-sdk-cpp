@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/AutoTrainingConfig.h>
+#include <aws/personalize/model/EventsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -47,10 +48,27 @@ namespace Model
     template<typename AutoTrainingConfigT = AutoTrainingConfig>
     SolutionUpdateConfig& WithAutoTrainingConfig(AutoTrainingConfigT&& value) { SetAutoTrainingConfig(std::forward<AutoTrainingConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the configuration of an event, which includes a list of event
+     * parameters. You can specify up to 10 event parameters. Events are used in
+     * solution creation.</p>
+     */
+    inline const EventsConfig& GetEventsConfig() const { return m_eventsConfig; }
+    inline bool EventsConfigHasBeenSet() const { return m_eventsConfigHasBeenSet; }
+    template<typename EventsConfigT = EventsConfig>
+    void SetEventsConfig(EventsConfigT&& value) { m_eventsConfigHasBeenSet = true; m_eventsConfig = std::forward<EventsConfigT>(value); }
+    template<typename EventsConfigT = EventsConfig>
+    SolutionUpdateConfig& WithEventsConfig(EventsConfigT&& value) { SetEventsConfig(std::forward<EventsConfigT>(value)); return *this;}
+    ///@}
   private:
 
     AutoTrainingConfig m_autoTrainingConfig;
     bool m_autoTrainingConfigHasBeenSet = false;
+
+    EventsConfig m_eventsConfig;
+    bool m_eventsConfigHasBeenSet = false;
   };
 
 } // namespace Model

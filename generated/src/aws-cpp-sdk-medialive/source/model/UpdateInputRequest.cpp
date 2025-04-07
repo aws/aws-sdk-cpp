@@ -101,6 +101,17 @@ Aws::String UpdateInputRequest::SerializePayload() const
 
   }
 
+  if(m_sdiSourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sdiSourcesJsonList(m_sdiSources.size());
+   for(unsigned sdiSourcesIndex = 0; sdiSourcesIndex < sdiSourcesJsonList.GetLength(); ++sdiSourcesIndex)
+   {
+     sdiSourcesJsonList[sdiSourcesIndex].AsString(m_sdiSources[sdiSourcesIndex]);
+   }
+   payload.WithArray("sdiSources", std::move(sdiSourcesJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     BLOCK,
-    ANONYMIZE
+    ANONYMIZE,
+    NONE
   };
 
 namespace GuardrailSensitiveInformationActionMapper

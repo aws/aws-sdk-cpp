@@ -28,7 +28,8 @@ namespace Model
     TS_FILE,
     SRT_CALLER,
     MULTICAST,
-    SMPTE_2110_RECEIVER_GROUP
+    SMPTE_2110_RECEIVER_GROUP,
+    SDI
   };
 
 namespace InputTypeMapper
