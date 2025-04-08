@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of a resource that represents your subscription to a supported
+     * <p>The ARN of the resource that represents your subscription to the
      * standard.</p>
      */
     inline const Aws::String& GetStandardsSubscriptionArn() const { return m_standardsSubscriptionArn; }
@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of a standard.</p>
+     * <p>The ARN of the standard.</p>
      */
     inline const Aws::String& GetStandardsArn() const { return m_standardsArn; }
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
@@ -85,13 +85,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the standard subscription.</p> <p>The status values are as
-     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
-     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
-     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
-     * completely. Some controls may not be available.</p> </li> <li> <p>
-     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
-     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
+     * <p>The status of your subscription to the standard. Possible values are:</p>
+     * <ul> <li> <p> <code>PENDING</code> - The standard is in the process of being
+     * enabled. Or the standard is already enabled and Security Hub is adding new
+     * controls to the standard.</p> </li> <li> <p> <code>READY</code> - The standard
+     * is enabled.</p> </li> <li> <p> <code>INCOMPLETE</code> - The standard could not
+     * be enabled completely. One or more errors (<code>StandardsStatusReason</code>)
+     * occurred when Security Hub attempted to enable the standard.</p> </li> <li> <p>
+     * <code>DELETING</code> - The standard is in the process of being disabled.</p>
+     * </li> <li> <p> <code>FAILED</code> - The standard could not be disabled. One or
+     * more errors (<code>StandardsStatusReason</code>) occurred when Security Hub
+     * attempted to disable the standard.</p> </li> </ul>
      */
     inline StandardsStatus GetStandardsStatus() const { return m_standardsStatus; }
     inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
@@ -101,13 +105,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the controls associated with this standards subscription
-     * can be viewed and updated.</p> <p>The values are as follows:</p> <ul> <li> <p>
-     * <code>READY_FOR_UPDATES</code> - Controls associated with this standards
-     * subscription can be viewed and updated.</p> </li> <li> <p>
-     * <code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards
-     * subscription cannot be retrieved or updated yet. Security Hub is still
-     * processing a request to create the controls.</p> </li> </ul>
+     * <p>Specifies whether you can retrieve information about and configure individual
+     * controls that apply to the standard. Possible values are:</p> <ul> <li> <p>
+     * <code>READY_FOR_UPDATES</code> - Controls in the standard can be retrieved and
+     * configured.</p> </li> <li> <p> <code>NOT_READY_FOR_UPDATES</code> - Controls in
+     * the standard cannot be retrieved or configured.</p> </li> </ul>
      */
     inline StandardsControlsUpdatable GetStandardsControlsUpdatable() const { return m_standardsControlsUpdatable; }
     inline bool StandardsControlsUpdatableHasBeenSet() const { return m_standardsControlsUpdatableHasBeenSet; }

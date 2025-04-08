@@ -131,6 +131,21 @@ namespace Model
     template<typename StateTemplatesToRemoveT = Aws::String>
     UpdateVehicleRequest& AddStateTemplatesToRemove(StateTemplatesToRemoveT&& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove.emplace_back(std::forward<StateTemplatesToRemoveT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates
+     * already associated with the vehicle.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplatesToUpdate() const { return m_stateTemplatesToUpdate; }
+    inline bool StateTemplatesToUpdateHasBeenSet() const { return m_stateTemplatesToUpdateHasBeenSet; }
+    template<typename StateTemplatesToUpdateT = Aws::Vector<StateTemplateAssociation>>
+    void SetStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { m_stateTemplatesToUpdateHasBeenSet = true; m_stateTemplatesToUpdate = std::forward<StateTemplatesToUpdateT>(value); }
+    template<typename StateTemplatesToUpdateT = Aws::Vector<StateTemplateAssociation>>
+    UpdateVehicleRequest& WithStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { SetStateTemplatesToUpdate(std::forward<StateTemplatesToUpdateT>(value)); return *this;}
+    template<typename StateTemplatesToUpdateT = StateTemplateAssociation>
+    UpdateVehicleRequest& AddStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { m_stateTemplatesToUpdateHasBeenSet = true; m_stateTemplatesToUpdate.emplace_back(std::forward<StateTemplatesToUpdateT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_vehicleName;
@@ -153,6 +168,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_stateTemplatesToRemove;
     bool m_stateTemplatesToRemoveHasBeenSet = false;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplatesToUpdate;
+    bool m_stateTemplatesToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

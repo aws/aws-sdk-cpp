@@ -27,6 +27,7 @@ namespace Aws
         static const int NETWORK_ERROR_HASH = HashingUtils::HashString("NETWORK_ERROR");
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
         static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+        static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("INSUFFICIENT_PERMISSIONS");
 
 
         ActiveDirectoryStatus GetActiveDirectoryStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ActiveDirectoryStatus::UNKNOWN_ERROR;
           }
+          else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
+          {
+            return ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "TIMEOUT";
           case ActiveDirectoryStatus::UNKNOWN_ERROR:
             return "UNKNOWN_ERROR";
+          case ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS:
+            return "INSUFFICIENT_PERMISSIONS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

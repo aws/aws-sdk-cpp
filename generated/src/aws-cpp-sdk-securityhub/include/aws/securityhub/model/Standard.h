@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of a standard.</p>
+     * <p>The ARN of the standard.</p>
      */
     inline const Aws::String& GetStandardsArn() const { return m_standardsArn; }
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }

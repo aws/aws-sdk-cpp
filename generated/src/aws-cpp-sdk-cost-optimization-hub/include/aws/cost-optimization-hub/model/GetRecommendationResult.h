@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account that the recommendation is for.</p>
+     * <p>The account to which the recommendation applies.</p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
     template<typename AccountIdT = Aws::String>

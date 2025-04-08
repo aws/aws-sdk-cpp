@@ -28,7 +28,12 @@ namespace Model
 {
 
   /**
-   * <p>Information about the vehicle to update.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the vehicle to update.</p>  <p>Access to certain
+   * Amazon Web Services IoT FleetWise features is currently gated. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+   * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+   * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateVehicleRequestItem">AWS
    * API Reference</a></p>
    */
@@ -137,6 +142,21 @@ namespace Model
     template<typename StateTemplatesToRemoveT = Aws::String>
     UpdateVehicleRequestItem& AddStateTemplatesToRemove(StateTemplatesToRemoveT&& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove.emplace_back(std::forward<StateTemplatesToRemoveT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates
+     * already associated with the vehicle.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplatesToUpdate() const { return m_stateTemplatesToUpdate; }
+    inline bool StateTemplatesToUpdateHasBeenSet() const { return m_stateTemplatesToUpdateHasBeenSet; }
+    template<typename StateTemplatesToUpdateT = Aws::Vector<StateTemplateAssociation>>
+    void SetStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { m_stateTemplatesToUpdateHasBeenSet = true; m_stateTemplatesToUpdate = std::forward<StateTemplatesToUpdateT>(value); }
+    template<typename StateTemplatesToUpdateT = Aws::Vector<StateTemplateAssociation>>
+    UpdateVehicleRequestItem& WithStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { SetStateTemplatesToUpdate(std::forward<StateTemplatesToUpdateT>(value)); return *this;}
+    template<typename StateTemplatesToUpdateT = StateTemplateAssociation>
+    UpdateVehicleRequestItem& AddStateTemplatesToUpdate(StateTemplatesToUpdateT&& value) { m_stateTemplatesToUpdateHasBeenSet = true; m_stateTemplatesToUpdate.emplace_back(std::forward<StateTemplatesToUpdateT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_vehicleName;
@@ -159,6 +179,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_stateTemplatesToRemove;
     bool m_stateTemplatesToRemoveHasBeenSet = false;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplatesToUpdate;
+    bool m_stateTemplatesToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

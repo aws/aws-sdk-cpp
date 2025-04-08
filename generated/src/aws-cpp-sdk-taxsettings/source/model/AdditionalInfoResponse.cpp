@@ -115,6 +115,11 @@ AdditionalInfoResponse& AdditionalInfoResponse::operator =(JsonView jsonValue)
     m_ukraineAdditionalInfo = jsonValue.GetObject("ukraineAdditionalInfo");
     m_ukraineAdditionalInfoHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("uzbekistanAdditionalInfo"))
+  {
+    m_uzbekistanAdditionalInfo = jsonValue.GetObject("uzbekistanAdditionalInfo");
+    m_uzbekistanAdditionalInfoHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("vietnamAdditionalInfo"))
   {
     m_vietnamAdditionalInfo = jsonValue.GetObject("vietnamAdditionalInfo");
@@ -232,6 +237,12 @@ JsonValue AdditionalInfoResponse::Jsonize() const
   if(m_ukraineAdditionalInfoHasBeenSet)
   {
    payload.WithObject("ukraineAdditionalInfo", m_ukraineAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_uzbekistanAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("uzbekistanAdditionalInfo", m_uzbekistanAdditionalInfo.Jsonize());
 
   }
 

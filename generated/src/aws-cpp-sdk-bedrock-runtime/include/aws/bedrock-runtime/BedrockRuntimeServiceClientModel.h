@@ -40,6 +40,11 @@ namespace Aws
   {
     template< typename R, typename E> class Outcome;
 
+    namespace Event
+    {
+      class EventEncoderStream;
+    } // namespace Event
+
     namespace Threading
     {
       class Executor;
@@ -71,6 +76,8 @@ namespace Aws
       class ConverseStreamRequest;
       class GetAsyncInvokeRequest;
       class InvokeModelRequest;
+      class InvokeModelWithBidirectionalStreamRequest;
+      class InvokeModelWithBidirectionalStreamInput;
       class InvokeModelWithResponseStreamRequest;
       class ListAsyncInvokesRequest;
       class StartAsyncInvokeRequest;
@@ -82,6 +89,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> ConverseStreamOutcome;
       typedef Aws::Utils::Outcome<GetAsyncInvokeResult, BedrockRuntimeError> GetAsyncInvokeOutcome;
       typedef Aws::Utils::Outcome<InvokeModelResult, BedrockRuntimeError> InvokeModelOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> InvokeModelWithBidirectionalStreamOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> InvokeModelWithResponseStreamOutcome;
       typedef Aws::Utils::Outcome<ListAsyncInvokesResult, BedrockRuntimeError> ListAsyncInvokesOutcome;
       typedef Aws::Utils::Outcome<StartAsyncInvokeResult, BedrockRuntimeError> StartAsyncInvokeOutcome;
@@ -93,6 +101,7 @@ namespace Aws
       typedef std::future<ConverseStreamOutcome> ConverseStreamOutcomeCallable;
       typedef std::future<GetAsyncInvokeOutcome> GetAsyncInvokeOutcomeCallable;
       typedef std::future<InvokeModelOutcome> InvokeModelOutcomeCallable;
+      typedef std::future<InvokeModelWithBidirectionalStreamOutcome> InvokeModelWithBidirectionalStreamOutcomeCallable;
       typedef std::future<InvokeModelWithResponseStreamOutcome> InvokeModelWithResponseStreamOutcomeCallable;
       typedef std::future<ListAsyncInvokesOutcome> ListAsyncInvokesOutcomeCallable;
       typedef std::future<StartAsyncInvokeOutcome> StartAsyncInvokeOutcomeCallable;
@@ -107,6 +116,8 @@ namespace Aws
     typedef std::function<void(const BedrockRuntimeClient*, const Model::ConverseStreamRequest&, const Model::ConverseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConverseStreamResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::GetAsyncInvokeRequest&, const Model::GetAsyncInvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAsyncInvokeResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelRequest&, Model::InvokeModelOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelResponseReceivedHandler;
+    typedef std::function<void(Model::InvokeModelWithBidirectionalStreamInput&)> InvokeModelWithBidirectionalStreamStreamReadyHandler;
+    typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelWithBidirectionalStreamRequest&, const Model::InvokeModelWithBidirectionalStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelWithBidirectionalStreamResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelWithResponseStreamRequest&, const Model::InvokeModelWithResponseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelWithResponseStreamResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::ListAsyncInvokesRequest&, const Model::ListAsyncInvokesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAsyncInvokesResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::StartAsyncInvokeRequest&, const Model::StartAsyncInvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAsyncInvokeResponseReceivedHandler;

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The reason for the current status of a standard subscription.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The reason for the current status of your subscription to the
+   * standard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsStatusReason">AWS
    * API Reference</a></p>
    */

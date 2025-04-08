@@ -30,7 +30,9 @@ namespace Model
     RedshiftReservedInstances,
     ElastiCacheReservedInstances,
     RdsDbInstanceStorage,
-    RdsDbInstance
+    RdsDbInstance,
+    DynamoDbReservedCapacity,
+    MemoryDbReservedInstances
   };
 
 namespace ResourceTypeMapper

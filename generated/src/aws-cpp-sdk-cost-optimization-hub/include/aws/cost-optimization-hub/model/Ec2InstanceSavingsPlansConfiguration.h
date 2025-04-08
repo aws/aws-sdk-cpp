@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account scope that you want your recommendations for.</p>
+     * <p>The account scope for which you want recommendations.</p>
      */
     inline const Aws::String& GetAccountScope() const { return m_accountScope; }
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
