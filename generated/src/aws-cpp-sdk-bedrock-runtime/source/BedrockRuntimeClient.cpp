@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/utils/event/EventStream.h>
 
 #include <aws/bedrock-runtime/BedrockRuntimeClient.h>
@@ -27,6 +28,7 @@
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelRequest.h>
+#include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamRequest.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesRequest.h>
 #include <aws/bedrock-runtime/model/StartAsyncInvokeRequest.h>
@@ -360,6 +362,54 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(Model::InvokeModelWithBidirectionalStreamRequest& request,
+                const InvokeModelWithBidirectionalStreamStreamReadyHandler& streamReadyHandler,
+                const InvokeModelWithBidirectionalStreamResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  AWS_ASYNC_OPERATION_GUARD(InvokeModelWithBidirectionalStream);
+  if (!m_endpointProvider) {
+    handler(this, request, InvokeModelWithBidirectionalStreamOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+    return;
+  }
+  if (!request.ModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeModelWithBidirectionalStream", "Required field: ModelId, is not set");
+    handler(this, request, InvokeModelWithBidirectionalStreamOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelId]", false)), handlerContext);
+    return;
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+      *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+      handler(this, request, InvokeModelWithBidirectionalStreamOutcome(Aws::Client::AWSError<CoreErrors>(
+          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+      return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/model/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModelId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/invoke-with-bidirectional-stream");
+
+  auto eventEncoderStream = Aws::MakeShared<Model::InvokeModelWithBidirectionalStreamInput>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  auto requestCopy = Aws::MakeShared<InvokeModelWithBidirectionalStreamRequest>("InvokeModelWithBidirectionalStream", request);
+  requestCopy->SetBody(eventEncoderStream); // this becomes the body of the request
+  request.SetBody(eventEncoderStream);
+
+  auto asyncTask = CreateBidirectionalEventStreamTask<InvokeModelWithBidirectionalStreamOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+}
 InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithResponseStream(InvokeModelWithResponseStreamRequest& request) const
 {
   AWS_OPERATION_GUARD(InvokeModelWithResponseStream);

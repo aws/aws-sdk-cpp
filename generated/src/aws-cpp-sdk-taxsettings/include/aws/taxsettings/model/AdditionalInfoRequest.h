@@ -21,6 +21,7 @@
 #include <aws/taxsettings/model/SpainAdditionalInfo.h>
 #include <aws/taxsettings/model/TurkeyAdditionalInfo.h>
 #include <aws/taxsettings/model/UkraineAdditionalInfo.h>
+#include <aws/taxsettings/model/UzbekistanAdditionalInfo.h>
 #include <aws/taxsettings/model/VietnamAdditionalInfo.h>
 #include <utility>
 
@@ -254,6 +255,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Additional tax information to specify for a TRN in Uzbekistan. </p>
+     */
+    inline const UzbekistanAdditionalInfo& GetUzbekistanAdditionalInfo() const { return m_uzbekistanAdditionalInfo; }
+    inline bool UzbekistanAdditionalInfoHasBeenSet() const { return m_uzbekistanAdditionalInfoHasBeenSet; }
+    template<typename UzbekistanAdditionalInfoT = UzbekistanAdditionalInfo>
+    void SetUzbekistanAdditionalInfo(UzbekistanAdditionalInfoT&& value) { m_uzbekistanAdditionalInfoHasBeenSet = true; m_uzbekistanAdditionalInfo = std::forward<UzbekistanAdditionalInfoT>(value); }
+    template<typename UzbekistanAdditionalInfoT = UzbekistanAdditionalInfo>
+    AdditionalInfoRequest& WithUzbekistanAdditionalInfo(UzbekistanAdditionalInfoT&& value) { SetUzbekistanAdditionalInfo(std::forward<UzbekistanAdditionalInfoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Additional tax information to specify for a TRN in Vietnam. </p>
      */
     inline const VietnamAdditionalInfo& GetVietnamAdditionalInfo() const { return m_vietnamAdditionalInfo; }
@@ -312,6 +325,9 @@ namespace Model
 
     UkraineAdditionalInfo m_ukraineAdditionalInfo;
     bool m_ukraineAdditionalInfoHasBeenSet = false;
+
+    UzbekistanAdditionalInfo m_uzbekistanAdditionalInfo;
+    bool m_uzbekistanAdditionalInfoHasBeenSet = false;
 
     VietnamAdditionalInfo m_vietnamAdditionalInfo;
     bool m_vietnamAdditionalInfoHasBeenSet = false;

@@ -20,6 +20,8 @@
 #include <aws/cost-optimization-hub/model/SageMakerSavingsPlans.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstance.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstanceStorage.h>
+#include <aws/cost-optimization-hub/model/DynamoDbReservedCapacity.h>
+#include <aws/cost-optimization-hub/model/MemoryDbReservedInstances.h>
 #include <utility>
 
 namespace Aws
@@ -231,6 +233,30 @@ namespace Model
     template<typename RdsDbInstanceStorageT = RdsDbInstanceStorage>
     ResourceDetails& WithRdsDbInstanceStorage(RdsDbInstanceStorageT&& value) { SetRdsDbInstanceStorage(std::forward<RdsDbInstanceStorageT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The DynamoDB reserved capacity recommendation details.</p>
+     */
+    inline const DynamoDbReservedCapacity& GetDynamoDbReservedCapacity() const { return m_dynamoDbReservedCapacity; }
+    inline bool DynamoDbReservedCapacityHasBeenSet() const { return m_dynamoDbReservedCapacityHasBeenSet; }
+    template<typename DynamoDbReservedCapacityT = DynamoDbReservedCapacity>
+    void SetDynamoDbReservedCapacity(DynamoDbReservedCapacityT&& value) { m_dynamoDbReservedCapacityHasBeenSet = true; m_dynamoDbReservedCapacity = std::forward<DynamoDbReservedCapacityT>(value); }
+    template<typename DynamoDbReservedCapacityT = DynamoDbReservedCapacity>
+    ResourceDetails& WithDynamoDbReservedCapacity(DynamoDbReservedCapacityT&& value) { SetDynamoDbReservedCapacity(std::forward<DynamoDbReservedCapacityT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The MemoryDB reserved instances recommendation details.</p>
+     */
+    inline const MemoryDbReservedInstances& GetMemoryDbReservedInstances() const { return m_memoryDbReservedInstances; }
+    inline bool MemoryDbReservedInstancesHasBeenSet() const { return m_memoryDbReservedInstancesHasBeenSet; }
+    template<typename MemoryDbReservedInstancesT = MemoryDbReservedInstances>
+    void SetMemoryDbReservedInstances(MemoryDbReservedInstancesT&& value) { m_memoryDbReservedInstancesHasBeenSet = true; m_memoryDbReservedInstances = std::forward<MemoryDbReservedInstancesT>(value); }
+    template<typename MemoryDbReservedInstancesT = MemoryDbReservedInstances>
+    ResourceDetails& WithMemoryDbReservedInstances(MemoryDbReservedInstancesT&& value) { SetMemoryDbReservedInstances(std::forward<MemoryDbReservedInstancesT>(value)); return *this;}
+    ///@}
   private:
 
     LambdaFunction m_lambdaFunction;
@@ -277,6 +303,12 @@ namespace Model
 
     RdsDbInstanceStorage m_rdsDbInstanceStorage;
     bool m_rdsDbInstanceStorageHasBeenSet = false;
+
+    DynamoDbReservedCapacity m_dynamoDbReservedCapacity;
+    bool m_dynamoDbReservedCapacityHasBeenSet = false;
+
+    MemoryDbReservedInstances m_memoryDbReservedInstances;
+    bool m_memoryDbReservedInstancesHasBeenSet = false;
   };
 
 } // namespace Model

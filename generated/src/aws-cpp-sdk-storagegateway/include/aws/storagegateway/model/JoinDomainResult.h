@@ -62,6 +62,9 @@ namespace Model
      * domain.</p> </li> <li> <p> <code>JOINED</code>: Indicates that the gateway has
      * successfully joined a domain.</p> </li> <li> <p> <code>JOINING</code>: Indicates
      * that a <code>JoinDomain</code> operation is in progress.</p> </li> <li> <p>
+     * <code>INSUFFICIENT_PERMISSIONS</code>: Indicates that the
+     * <code>JoinDomain</code> operation failed because the specified user lacks the
+     * necessary permissions to join the domain.</p> </li> <li> <p>
      * <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation
      * failed due to a network or connectivity error.</p> </li> <li> <p>
      * <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation

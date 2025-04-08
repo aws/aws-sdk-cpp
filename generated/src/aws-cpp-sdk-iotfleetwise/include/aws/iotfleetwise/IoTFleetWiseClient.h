@@ -1657,7 +1657,11 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Updates a vehicle. </p><p><h3>See Also:</h3>   <a
+         * <p> Updates a vehicle.</p>  <p>Access to certain Amazon Web Services
+         * IoT FleetWise features is currently gated. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateVehicle">AWS
          * API Reference</a></p>
          */

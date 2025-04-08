@@ -72,6 +72,17 @@ Aws::String UpdateVehicleRequest::SerializePayload() const
 
   }
 
+  if(m_stateTemplatesToUpdateHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTemplatesToUpdateJsonList(m_stateTemplatesToUpdate.size());
+   for(unsigned stateTemplatesToUpdateIndex = 0; stateTemplatesToUpdateIndex < stateTemplatesToUpdateJsonList.GetLength(); ++stateTemplatesToUpdateIndex)
+   {
+     stateTemplatesToUpdateJsonList[stateTemplatesToUpdateIndex].AsObject(m_stateTemplatesToUpdate[stateTemplatesToUpdateIndex].Jsonize());
+   }
+   payload.WithArray("stateTemplatesToUpdate", std::move(stateTemplatesToUpdateJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

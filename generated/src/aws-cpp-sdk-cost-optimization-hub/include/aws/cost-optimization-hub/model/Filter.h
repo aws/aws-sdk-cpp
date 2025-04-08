@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account that the recommendation is for.</p>
+     * <p>The account to which the recommendation applies.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

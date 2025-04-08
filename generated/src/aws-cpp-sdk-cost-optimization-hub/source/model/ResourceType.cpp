@@ -35,6 +35,8 @@ namespace Aws
         static const int ElastiCacheReservedInstances_HASH = HashingUtils::HashString("ElastiCacheReservedInstances");
         static const int RdsDbInstanceStorage_HASH = HashingUtils::HashString("RdsDbInstanceStorage");
         static const int RdsDbInstance_HASH = HashingUtils::HashString("RdsDbInstance");
+        static const int DynamoDbReservedCapacity_HASH = HashingUtils::HashString("DynamoDbReservedCapacity");
+        static const int MemoryDbReservedInstances_HASH = HashingUtils::HashString("MemoryDbReservedInstances");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return ResourceType::RdsDbInstance;
           }
+          else if (hashCode == DynamoDbReservedCapacity_HASH)
+          {
+            return ResourceType::DynamoDbReservedCapacity;
+          }
+          else if (hashCode == MemoryDbReservedInstances_HASH)
+          {
+            return ResourceType::MemoryDbReservedInstances;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -146,6 +156,10 @@ namespace Aws
             return "RdsDbInstanceStorage";
           case ResourceType::RdsDbInstance:
             return "RdsDbInstance";
+          case ResourceType::DynamoDbReservedCapacity:
+            return "DynamoDbReservedCapacity";
+          case ResourceType::MemoryDbReservedInstances:
+            return "MemoryDbReservedInstances";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

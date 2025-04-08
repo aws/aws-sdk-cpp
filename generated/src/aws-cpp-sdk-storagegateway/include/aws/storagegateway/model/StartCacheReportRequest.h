@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p>
+     * <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p>
      *  <p>We do not recommend saving the cache report to the same Amazon S3
      * bucket for which you are generating the report.</p> <p>This field does not
      * accept access point ARNs.</p> 
@@ -76,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the
-     * file share for which you want to generate the cache report.</p>
+     * <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save
+     * the cache report.</p>
      */
     inline const Aws::String& GetBucketRegion() const { return m_bucketRegion; }
     inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }

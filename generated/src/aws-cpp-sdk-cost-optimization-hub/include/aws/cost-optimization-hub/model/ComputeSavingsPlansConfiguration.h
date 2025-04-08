@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * <p>The account scope for which you want recommendations. Amazon Web Services
      * calculates recommendations including the management account and member accounts
      * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>

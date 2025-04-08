@@ -72,6 +72,15 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
     }
     m_stateTemplatesToRemoveHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("stateTemplatesToUpdate"))
+  {
+    Aws::Utils::Array<JsonView> stateTemplatesToUpdateJsonList = jsonValue.GetArray("stateTemplatesToUpdate");
+    for(unsigned stateTemplatesToUpdateIndex = 0; stateTemplatesToUpdateIndex < stateTemplatesToUpdateJsonList.GetLength(); ++stateTemplatesToUpdateIndex)
+    {
+      m_stateTemplatesToUpdate.push_back(stateTemplatesToUpdateJsonList[stateTemplatesToUpdateIndex].AsObject());
+    }
+    m_stateTemplatesToUpdateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -132,6 +141,17 @@ JsonValue UpdateVehicleRequestItem::Jsonize() const
      stateTemplatesToRemoveJsonList[stateTemplatesToRemoveIndex].AsString(m_stateTemplatesToRemove[stateTemplatesToRemoveIndex]);
    }
    payload.WithArray("stateTemplatesToRemove", std::move(stateTemplatesToRemoveJsonList));
+
+  }
+
+  if(m_stateTemplatesToUpdateHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTemplatesToUpdateJsonList(m_stateTemplatesToUpdate.size());
+   for(unsigned stateTemplatesToUpdateIndex = 0; stateTemplatesToUpdateIndex < stateTemplatesToUpdateJsonList.GetLength(); ++stateTemplatesToUpdateIndex)
+   {
+     stateTemplatesToUpdateJsonList[stateTemplatesToUpdateIndex].AsObject(m_stateTemplatesToUpdate[stateTemplatesToUpdateIndex].Jsonize());
+   }
+   payload.WithArray("stateTemplatesToUpdate", std::move(stateTemplatesToUpdateJsonList));
 
   }
 

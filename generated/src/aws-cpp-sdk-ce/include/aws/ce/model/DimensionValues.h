@@ -48,8 +48,8 @@ namespace Model
      * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
      * <p>Not all dimensions are supported in each API. Refer to the documentation for
      * each specific API to see what is supported.</p> <p>
-     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
-     * <a
+     * <code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used
+     * in <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      * <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
      * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a

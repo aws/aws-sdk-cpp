@@ -100,6 +100,16 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_rdsDbInstanceStorage = jsonValue.GetObject("rdsDbInstanceStorage");
     m_rdsDbInstanceStorageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("dynamoDbReservedCapacity"))
+  {
+    m_dynamoDbReservedCapacity = jsonValue.GetObject("dynamoDbReservedCapacity");
+    m_dynamoDbReservedCapacityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("memoryDbReservedInstances"))
+  {
+    m_memoryDbReservedInstances = jsonValue.GetObject("memoryDbReservedInstances");
+    m_memoryDbReservedInstancesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -194,6 +204,18 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_rdsDbInstanceStorageHasBeenSet)
   {
    payload.WithObject("rdsDbInstanceStorage", m_rdsDbInstanceStorage.Jsonize());
+
+  }
+
+  if(m_dynamoDbReservedCapacityHasBeenSet)
+  {
+   payload.WithObject("dynamoDbReservedCapacity", m_dynamoDbReservedCapacity.Jsonize());
+
+  }
+
+  if(m_memoryDbReservedInstancesHasBeenSet)
+  {
+   payload.WithObject("memoryDbReservedInstances", m_memoryDbReservedInstances.Jsonize());
 
   }
 

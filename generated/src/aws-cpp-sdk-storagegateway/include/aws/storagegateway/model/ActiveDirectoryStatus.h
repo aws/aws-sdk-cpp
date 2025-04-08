@@ -22,7 +22,8 @@ namespace Model
     JOINING,
     NETWORK_ERROR,
     TIMEOUT,
-    UNKNOWN_ERROR
+    UNKNOWN_ERROR,
+    INSUFFICIENT_PERMISSIONS
   };
 
 namespace ActiveDirectoryStatusMapper

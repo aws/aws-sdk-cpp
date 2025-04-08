@@ -316,6 +316,27 @@ namespace BedrockRuntime
         }
 
         /**
+         * <p>Invoke the specified Amazon Bedrock model to run inference using the
+         * bidirectional stream. The response is returned in a stream that remains open for
+         * 8 minutes. A single session can contain multiple prompts and responses from the
+         * model. The prompts to the model are provided as audio files and the model's
+         * responses are spoken back to the user and transcribed.</p> <p>It is possible for
+         * users to interrupt the model's response with a new prompt, which will halt the
+         * response speech. The model will retain contextual awareness of the conversation
+         * while pivoting to respond to the new prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithBidirectionalStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The handler is triggered when the request is finished.
+         */
+        virtual void InvokeModelWithBidirectionalStreamAsync(Model::InvokeModelWithBidirectionalStreamRequest& request,
+                const InvokeModelWithBidirectionalStreamStreamReadyHandler& streamReadyHandler,
+                const InvokeModelWithBidirectionalStreamResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+        /**
          * <p>Invoke the specified Amazon Bedrock model to run inference using the prompt
          * and inference parameters provided in the request body. The response is returned
          * in a stream.</p> <p>To see if a model supports streaming, call <a
