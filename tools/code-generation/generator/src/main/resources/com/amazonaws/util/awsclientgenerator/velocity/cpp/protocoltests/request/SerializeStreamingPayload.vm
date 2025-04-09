@@ -1,0 +1,5 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SerializeSingleParameterMacro.vm")
+##-------------------- SerializeStreamingPayload macro
+#macro( SerializeStreamingPayload $shape $value )
+[](){ return Aws::MakeShared<Aws::StringStream>("Test", #SerializeSingleParameterMacro($shape, $value), std::ios_base::in | std::ios_base::binary); }() ##
+#end##macro SerializeStreamingPayload
