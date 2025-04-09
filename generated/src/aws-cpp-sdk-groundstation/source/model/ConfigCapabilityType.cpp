@@ -22,9 +22,9 @@ namespace Aws
 
         static const int antenna_downlink_HASH = HashingUtils::HashString("antenna-downlink");
         static const int antenna_downlink_demod_decode_HASH = HashingUtils::HashString("antenna-downlink-demod-decode");
-        static const int antenna_uplink_HASH = HashingUtils::HashString("antenna-uplink");
-        static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-endpoint");
         static const int tracking_HASH = HashingUtils::HashString("tracking");
+        static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-endpoint");
+        static const int antenna_uplink_HASH = HashingUtils::HashString("antenna-uplink");
         static const int uplink_echo_HASH = HashingUtils::HashString("uplink-echo");
         static const int s3_recording_HASH = HashingUtils::HashString("s3-recording");
 
@@ -40,17 +40,17 @@ namespace Aws
           {
             return ConfigCapabilityType::antenna_downlink_demod_decode;
           }
-          else if (hashCode == antenna_uplink_HASH)
+          else if (hashCode == tracking_HASH)
           {
-            return ConfigCapabilityType::antenna_uplink;
+            return ConfigCapabilityType::tracking;
           }
           else if (hashCode == dataflow_endpoint_HASH)
           {
             return ConfigCapabilityType::dataflow_endpoint;
           }
-          else if (hashCode == tracking_HASH)
+          else if (hashCode == antenna_uplink_HASH)
           {
-            return ConfigCapabilityType::tracking;
+            return ConfigCapabilityType::antenna_uplink;
           }
           else if (hashCode == uplink_echo_HASH)
           {
@@ -80,12 +80,12 @@ namespace Aws
             return "antenna-downlink";
           case ConfigCapabilityType::antenna_downlink_demod_decode:
             return "antenna-downlink-demod-decode";
-          case ConfigCapabilityType::antenna_uplink:
-            return "antenna-uplink";
-          case ConfigCapabilityType::dataflow_endpoint:
-            return "dataflow-endpoint";
           case ConfigCapabilityType::tracking:
             return "tracking";
+          case ConfigCapabilityType::dataflow_endpoint:
+            return "dataflow-endpoint";
+          case ConfigCapabilityType::antenna_uplink:
+            return "antenna-uplink";
           case ConfigCapabilityType::uplink_echo:
             return "uplink-echo";
           case ConfigCapabilityType::s3_recording:

@@ -30,6 +30,11 @@ IcebergOrphanFileDeletionMetrics& IcebergOrphanFileDeletionMetrics::operator =(J
     m_numberOfOrphanFilesDeleted = jsonValue.GetInt64("NumberOfOrphanFilesDeleted");
     m_numberOfOrphanFilesDeletedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DpuHours"))
+  {
+    m_dpuHours = jsonValue.GetDouble("DpuHours");
+    m_dpuHoursHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
@@ -50,6 +55,12 @@ JsonValue IcebergOrphanFileDeletionMetrics::Jsonize() const
   if(m_numberOfOrphanFilesDeletedHasBeenSet)
   {
    payload.WithInt64("NumberOfOrphanFilesDeleted", m_numberOfOrphanFilesDeleted);
+
+  }
+
+  if(m_dpuHoursHasBeenSet)
+  {
+   payload.WithDouble("DpuHours", m_dpuHours);
 
   }
 

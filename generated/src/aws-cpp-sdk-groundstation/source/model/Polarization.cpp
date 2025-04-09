@@ -20,25 +20,25 @@ namespace Aws
       namespace PolarizationMapper
       {
 
+        static const int RIGHT_HAND_HASH = HashingUtils::HashString("RIGHT_HAND");
         static const int LEFT_HAND_HASH = HashingUtils::HashString("LEFT_HAND");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int RIGHT_HAND_HASH = HashingUtils::HashString("RIGHT_HAND");
 
 
         Polarization GetPolarizationForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LEFT_HAND_HASH)
+          if (hashCode == RIGHT_HAND_HASH)
+          {
+            return Polarization::RIGHT_HAND;
+          }
+          else if (hashCode == LEFT_HAND_HASH)
           {
             return Polarization::LEFT_HAND;
           }
           else if (hashCode == NONE_HASH)
           {
             return Polarization::NONE;
-          }
-          else if (hashCode == RIGHT_HAND_HASH)
-          {
-            return Polarization::RIGHT_HAND;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,12 +56,12 @@ namespace Aws
           {
           case Polarization::NOT_SET:
             return {};
+          case Polarization::RIGHT_HAND:
+            return "RIGHT_HAND";
           case Polarization::LEFT_HAND:
             return "LEFT_HAND";
           case Polarization::NONE:
             return "NONE";
-          case Polarization::RIGHT_HAND:
-            return "RIGHT_HAND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

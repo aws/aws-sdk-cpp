@@ -60,6 +60,17 @@ namespace Model
     /**
      * <p>The number of DPU hours consumed by the job.</p>
      */
+    inline double GetDpuHours() const { return m_dpuHours; }
+    inline bool DpuHoursHasBeenSet() const { return m_dpuHoursHasBeenSet; }
+    inline void SetDpuHours(double value) { m_dpuHoursHasBeenSet = true; m_dpuHours = value; }
+    inline IcebergCompactionMetrics& WithDpuHours(double value) { SetDpuHours(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of DPUs consumed by the job, rounded up to the nearest whole
+     * number.</p>
+     */
     inline int GetNumberOfDpus() const { return m_numberOfDpus; }
     inline bool NumberOfDpusHasBeenSet() const { return m_numberOfDpusHasBeenSet; }
     inline void SetNumberOfDpus(int value) { m_numberOfDpusHasBeenSet = true; m_numberOfDpus = value; }
@@ -82,6 +93,9 @@ namespace Model
 
     long long m_numberOfFilesCompacted{0};
     bool m_numberOfFilesCompactedHasBeenSet = false;
+
+    double m_dpuHours{0.0};
+    bool m_dpuHoursHasBeenSet = false;
 
     int m_numberOfDpus{0};
     bool m_numberOfDpusHasBeenSet = false;

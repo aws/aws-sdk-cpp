@@ -40,6 +40,11 @@ TestConnectionResult& TestConnectionResult::operator =(const Aws::AmazonWebServi
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SftpConnectionDetails"))
+  {
+    m_sftpConnectionDetails = jsonValue.GetObject("SftpConnectionDetails");
+    m_sftpConnectionDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

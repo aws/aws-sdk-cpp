@@ -20,20 +20,20 @@ namespace Aws
       namespace CapabilityHealthMapper
       {
 
-        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
+        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
 
 
         CapabilityHealth GetCapabilityHealthForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == UNHEALTHY_HASH)
-          {
-            return CapabilityHealth::UNHEALTHY;
-          }
-          else if (hashCode == HEALTHY_HASH)
+          if (hashCode == HEALTHY_HASH)
           {
             return CapabilityHealth::HEALTHY;
+          }
+          else if (hashCode == UNHEALTHY_HASH)
+          {
+            return CapabilityHealth::UNHEALTHY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -51,10 +51,10 @@ namespace Aws
           {
           case CapabilityHealth::NOT_SET:
             return {};
-          case CapabilityHealth::UNHEALTHY:
-            return "UNHEALTHY";
           case CapabilityHealth::HEALTHY:
             return "HEALTHY";
+          case CapabilityHealth::UNHEALTHY:
+            return "UNHEALTHY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

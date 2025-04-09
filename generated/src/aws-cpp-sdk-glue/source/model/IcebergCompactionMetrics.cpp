@@ -35,6 +35,11 @@ IcebergCompactionMetrics& IcebergCompactionMetrics::operator =(JsonView jsonValu
     m_numberOfFilesCompacted = jsonValue.GetInt64("NumberOfFilesCompacted");
     m_numberOfFilesCompactedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DpuHours"))
+  {
+    m_dpuHours = jsonValue.GetDouble("DpuHours");
+    m_dpuHoursHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
@@ -61,6 +66,12 @@ JsonValue IcebergCompactionMetrics::Jsonize() const
   if(m_numberOfFilesCompactedHasBeenSet)
   {
    payload.WithInt64("NumberOfFilesCompacted", m_numberOfFilesCompacted);
+
+  }
+
+  if(m_dpuHoursHasBeenSet)
+  {
+   payload.WithDouble("DpuHours", m_dpuHours);
 
   }
 

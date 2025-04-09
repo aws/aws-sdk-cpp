@@ -16,19 +16,19 @@ namespace Model
   enum class ContactStatus
   {
     NOT_SET,
-    AVAILABLE,
-    AWS_CANCELLED,
-    AWS_FAILED,
-    CANCELLED,
-    CANCELLING,
-    COMPLETED,
-    FAILED,
+    SCHEDULING,
     FAILED_TO_SCHEDULE,
+    SCHEDULED,
+    CANCELLED,
+    AWS_CANCELLED,
+    PREPASS,
     PASS,
     POSTPASS,
-    PREPASS,
-    SCHEDULED,
-    SCHEDULING
+    COMPLETED,
+    FAILED,
+    AVAILABLE,
+    CANCELLING,
+    AWS_FAILED
   };
 
 namespace ContactStatusMapper

@@ -63,10 +63,27 @@ namespace Model
     template<typename TypeT = Aws::String>
     ImplementationDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A service-specific identifier for the control, assigned by the service that
+     * implemented the control. For example, this identifier could be an Amazon Web
+     * Services Config Rule ID or a Security Hub Control ID.</p>
+     */
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ImplementationDetails& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

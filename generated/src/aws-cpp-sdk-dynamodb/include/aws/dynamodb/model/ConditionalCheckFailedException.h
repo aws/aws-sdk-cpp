@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A condition specified in the operation could not be evaluated.</p><p><h3>See
+   * <p>A condition specified in the operation failed to be evaluated.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConditionalCheckFailedException">AWS
    * API Reference</a></p>

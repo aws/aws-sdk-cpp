@@ -39,6 +39,11 @@ SftpConnectorConfig& SftpConnectorConfig::operator =(JsonView jsonValue)
     }
     m_trustedHostKeysHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MaxConcurrentConnections"))
+  {
+    m_maxConcurrentConnections = jsonValue.GetInteger("MaxConcurrentConnections");
+    m_maxConcurrentConnectionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue SftpConnectorConfig::Jsonize() const
      trustedHostKeysJsonList[trustedHostKeysIndex].AsString(m_trustedHostKeys[trustedHostKeysIndex]);
    }
    payload.WithArray("TrustedHostKeys", std::move(trustedHostKeysJsonList));
+
+  }
+
+  if(m_maxConcurrentConnectionsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentConnections", m_maxConcurrentConnections);
 
   }
 

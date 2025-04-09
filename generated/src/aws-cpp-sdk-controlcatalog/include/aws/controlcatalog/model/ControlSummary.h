@@ -6,6 +6,10 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controlcatalog/model/ControlBehavior.h>
+#include <aws/controlcatalog/model/ControlSeverity.h>
+#include <aws/controlcatalog/model/ImplementationSummary.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +77,52 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     ControlSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An enumerated type, with the following possible values:</p>
+     */
+    inline ControlBehavior GetBehavior() const { return m_behavior; }
+    inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
+    inline void SetBehavior(ControlBehavior value) { m_behaviorHasBeenSet = true; m_behavior = value; }
+    inline ControlSummary& WithBehavior(ControlBehavior value) { SetBehavior(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An enumerated type, with the following possible values:</p>
+     */
+    inline ControlSeverity GetSeverity() const { return m_severity; }
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+    inline void SetSeverity(ControlSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ControlSummary& WithSeverity(ControlSeverity value) { SetSeverity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object of type <code>ImplementationSummary</code> that describes how the
+     * control is implemented.</p>
+     */
+    inline const ImplementationSummary& GetImplementation() const { return m_implementation; }
+    inline bool ImplementationHasBeenSet() const { return m_implementationHasBeenSet; }
+    template<typename ImplementationT = ImplementationSummary>
+    void SetImplementation(ImplementationT&& value) { m_implementationHasBeenSet = true; m_implementation = std::forward<ImplementationT>(value); }
+    template<typename ImplementationT = ImplementationSummary>
+    ControlSummary& WithImplementation(ImplementationT&& value) { SetImplementation(std::forward<ImplementationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that notes the time when the control was released (start of its
+     * life) as a governance capability in Amazon Web Services.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ControlSummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -83,6 +133,18 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    ControlBehavior m_behavior{ControlBehavior::NOT_SET};
+    bool m_behaviorHasBeenSet = false;
+
+    ControlSeverity m_severity{ControlSeverity::NOT_SET};
+    bool m_severityHasBeenSet = false;
+
+    ImplementationSummary m_implementation;
+    bool m_implementationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
   };
 
 } // namespace Model

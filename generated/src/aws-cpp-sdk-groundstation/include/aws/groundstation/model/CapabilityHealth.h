@@ -16,8 +16,8 @@ namespace Model
   enum class CapabilityHealth
   {
     NOT_SET,
-    UNHEALTHY,
-    HEALTHY
+    HEALTHY,
+    UNHEALTHY
   };
 
 namespace CapabilityHealthMapper

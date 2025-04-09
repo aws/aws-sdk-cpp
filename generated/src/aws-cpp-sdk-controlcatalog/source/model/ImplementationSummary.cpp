@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/controlcatalog/model/ImplementationDetails.h>
+#include <aws/controlcatalog/model/ImplementationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,12 +18,12 @@ namespace ControlCatalog
 namespace Model
 {
 
-ImplementationDetails::ImplementationDetails(JsonView jsonValue)
+ImplementationSummary::ImplementationSummary(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-ImplementationDetails& ImplementationDetails::operator =(JsonView jsonValue)
+ImplementationSummary& ImplementationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -38,7 +38,7 @@ ImplementationDetails& ImplementationDetails::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ImplementationDetails::Jsonize() const
+JsonValue ImplementationSummary::Jsonize() const
 {
   JsonValue payload;
 

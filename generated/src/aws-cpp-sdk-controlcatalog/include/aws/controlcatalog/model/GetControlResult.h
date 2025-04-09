@@ -7,9 +7,11 @@
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/controlcatalog/model/ControlBehavior.h>
+#include <aws/controlcatalog/model/ControlSeverity.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
 #include <aws/controlcatalog/model/ImplementationDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/controlcatalog/model/ControlParameter.h>
 #include <utility>
 
@@ -81,6 +83,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An enumerated type, with the following possible values:</p>
+     */
+    inline ControlSeverity GetSeverity() const { return m_severity; }
+    inline void SetSeverity(ControlSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline GetControlResult& WithSeverity(ControlSeverity value) { SetSeverity(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const RegionConfiguration& GetRegionConfiguration() const { return m_regionConfiguration; }
     template<typename RegionConfigurationT = RegionConfiguration>
@@ -118,6 +129,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A timestamp that notes the time when the control was released (start of its
+     * life) as a governance capability in Amazon Web Services.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetControlResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -139,6 +162,9 @@ namespace Model
     ControlBehavior m_behavior{ControlBehavior::NOT_SET};
     bool m_behaviorHasBeenSet = false;
 
+    ControlSeverity m_severity{ControlSeverity::NOT_SET};
+    bool m_severityHasBeenSet = false;
+
     RegionConfiguration m_regionConfiguration;
     bool m_regionConfigurationHasBeenSet = false;
 
@@ -147,6 +173,9 @@ namespace Model
 
     Aws::Vector<ControlParameter> m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
