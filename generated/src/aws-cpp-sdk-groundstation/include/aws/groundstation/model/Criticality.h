@@ -16,9 +16,9 @@ namespace Model
   enum class Criticality
   {
     NOT_SET,
+    REQUIRED,
     PREFERRED,
-    REMOVED,
-    REQUIRED
+    REMOVED
   };
 
 namespace CriticalityMapper

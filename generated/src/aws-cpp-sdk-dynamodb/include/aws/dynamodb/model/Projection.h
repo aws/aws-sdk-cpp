@@ -60,10 +60,14 @@ namespace Model
     ///@{
     /**
      * <p>Represents the non-key attribute names which will be projected into the
-     * index.</p> <p>For local secondary indexes, the total count of
-     * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 100. If you project the same attribute into two different
-     * indexes, this counts as two distinct attributes when determining the total.</p>
+     * index.</p> <p>For global and local secondary indexes, the total count of
+     * <code>NonKeyAttributes</code> summed across all of the secondary indexes, must
+     * not exceed 100. If you project the same attribute into two different indexes,
+     * this counts as two distinct attributes when determining the total. This limit
+     * only applies when you specify the ProjectionType of <code>INCLUDE</code>. You
+     * still can specify the ProjectionType of <code>ALL</code> to project all
+     * attributes from the source table, even if the table has more than 100
+     * attributes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNonKeyAttributes() const { return m_nonKeyAttributes; }
     inline bool NonKeyAttributesHasBeenSet() const { return m_nonKeyAttributesHasBeenSet; }

@@ -18,9 +18,9 @@ namespace Model
     NOT_SET,
     antenna_downlink,
     antenna_downlink_demod_decode,
-    antenna_uplink,
-    dataflow_endpoint,
     tracking,
+    dataflow_endpoint,
+    antenna_uplink,
     uplink_echo,
     s3_recording
   };

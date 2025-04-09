@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Key Management Service (KMS) Key.</p><p><h3>See Also:</h3>   <a
+   * <p>KMS key info.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/KmsKey">AWS
    * API Reference</a></p>
    */

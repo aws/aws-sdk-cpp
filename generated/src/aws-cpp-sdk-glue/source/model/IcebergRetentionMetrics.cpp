@@ -40,6 +40,11 @@ IcebergRetentionMetrics& IcebergRetentionMetrics::operator =(JsonView jsonValue)
     m_numberOfManifestListsDeleted = jsonValue.GetInt64("NumberOfManifestListsDeleted");
     m_numberOfManifestListsDeletedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DpuHours"))
+  {
+    m_dpuHours = jsonValue.GetDouble("DpuHours");
+    m_dpuHoursHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
@@ -72,6 +77,12 @@ JsonValue IcebergRetentionMetrics::Jsonize() const
   if(m_numberOfManifestListsDeletedHasBeenSet)
   {
    payload.WithInt64("NumberOfManifestListsDeleted", m_numberOfManifestListsDeleted);
+
+  }
+
+  if(m_dpuHoursHasBeenSet)
+  {
+   payload.WithDouble("DpuHours", m_dpuHours);
 
   }
 

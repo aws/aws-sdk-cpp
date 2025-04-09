@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/SftpConnectorConnectionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Structure that contains the SFTP connector host key.</p>
+     */
+    inline const SftpConnectorConnectionDetails& GetSftpConnectionDetails() const { return m_sftpConnectionDetails; }
+    template<typename SftpConnectionDetailsT = SftpConnectorConnectionDetails>
+    void SetSftpConnectionDetails(SftpConnectionDetailsT&& value) { m_sftpConnectionDetailsHasBeenSet = true; m_sftpConnectionDetails = std::forward<SftpConnectionDetailsT>(value); }
+    template<typename SftpConnectionDetailsT = SftpConnectorConnectionDetails>
+    TestConnectionResult& WithSftpConnectionDetails(SftpConnectionDetailsT&& value) { SetSftpConnectionDetails(std::forward<SftpConnectionDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -93,6 +105,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
+
+    SftpConnectorConnectionDetails m_sftpConnectionDetails;
+    bool m_sftpConnectionDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

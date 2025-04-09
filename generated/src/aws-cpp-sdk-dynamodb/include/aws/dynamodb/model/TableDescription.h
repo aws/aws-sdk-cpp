@@ -247,13 +247,17 @@ namespace Model
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
      * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
-     * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
-     * the total size of the index, in bytes. DynamoDB updates this value approximately
-     * every six hours. Recent changes might not be reflected in this value.</p> </li>
-     * <li> <p> <code>ItemCount</code> - Represents the number of items in the index.
+     * total. This limit only applies when you specify the ProjectionType of
+     * <code>INCLUDE</code>. You still can specify the ProjectionType of
+     * <code>ALL</code> to project all attributes from the source table, even if the
+     * table has more than 100 attributes.</p> </li> </ul> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes.
      * DynamoDB updates this value approximately every six hours. Recent changes might
-     * not be reflected in this value.</p> </li> </ul> <p>If the table is in the
-     * <code>DELETING</code> state, no information about indexes will be returned.</p>
+     * not be reflected in this value.</p> </li> <li> <p> <code>ItemCount</code> -
+     * Represents the number of items in the index. DynamoDB updates this value
+     * approximately every six hours. Recent changes might not be reflected in this
+     * value.</p> </li> </ul> <p>If the table is in the <code>DELETING</code> state, no
+     * information about indexes will be returned.</p>
      */
     inline const Aws::Vector<LocalSecondaryIndexDescription>& GetLocalSecondaryIndexes() const { return m_localSecondaryIndexes; }
     inline bool LocalSecondaryIndexesHasBeenSet() const { return m_localSecondaryIndexesHasBeenSet; }
@@ -309,7 +313,10 @@ namespace Model
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
      * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
-     * determining the total.</p> </li> </ul> </li> <li> <p>
+     * determining the total. This limit only applies when you specify the
+     * ProjectionType of <code>INCLUDE</code>. You still can specify the ProjectionType
+     * of <code>ALL</code> to project all attributes from the source table, even if the
+     * table has more than 100 attributes.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
      * global secondary index, consisting of read and write capacity units, along with
      * data about increases and decreases. </p> </li> </ul> <p>If the table is in the

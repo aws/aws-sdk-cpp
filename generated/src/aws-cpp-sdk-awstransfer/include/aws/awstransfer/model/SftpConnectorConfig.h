@@ -26,13 +26,8 @@ namespace Model
 
   /**
    * <p>Contains the details for an SFTP connector object. The connector object is
-   * used for transferring files to and from a partner's SFTP server.</p> 
-   * <p>Because the <code>SftpConnectorConfig</code> data type is used for both
-   * creating and updating SFTP connectors, its parameters,
-   * <code>TrustedHostKeys</code> and <code>UserSecretId</code> are marked as not
-   * required. This is a bit misleading, as they are not required when you are
-   * updating an existing SFTP connector, but <i>are required</i> when you are
-   * creating a new SFTP connector.</p> <p><h3>See Also:</h3>   <a
+   * used for transferring files to and from a partner's SFTP server.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SftpConnectorConfig">AWS
    * API Reference</a></p>
    */
@@ -49,7 +44,9 @@ namespace Model
     /**
      * <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that
      * contains the SFTP user's private key, password, or both. The identifier must be
-     * the Amazon Resource Name (ARN) of the secret.</p>
+     * the Amazon Resource Name (ARN) of the secret.</p>  <ul> <li> <p>Required
+     * when creating an SFTP connector</p> </li> <li> <p>Optional when updating an
+     * existing SFTP connector</p> </li> </ul> 
      */
     inline const Aws::String& GetUserSecretId() const { return m_userSecretId; }
     inline bool UserSecretIdHasBeenSet() const { return m_userSecretIdHasBeenSet; }
@@ -64,7 +61,11 @@ namespace Model
      * <p>The public portion of the host key, or keys, that are used to identify the
      * external server to which you are connecting. You can use the
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
-     * necessary key.</p> <p>The three standard SSH public key format elements are
+     * necessary key.</p>  <p> <code>TrustedHostKeys</code> is optional for
+     * <code>CreateConnector</code>. If not provided, you can use
+     * <code>TestConnection</code> to retrieve the server host key during the initial
+     * connection attempt, and subsequently update the connector with the observed host
+     * key.</p>  <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
      * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
      * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
@@ -92,6 +93,21 @@ namespace Model
     template<typename TrustedHostKeysT = Aws::String>
     SftpConnectorConfig& AddTrustedHostKeys(TrustedHostKeysT&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.emplace_back(std::forward<TrustedHostKeysT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify the number of concurrent connections that your connector creates to
+     * the remote server. The default value is <code>5</code> (this is also the maximum
+     * value allowed).</p> <p>This parameter specifies the number of active connections
+     * that your connector can establish with the remote server at the same time.
+     * Increasing this value can enhance connector performance when transferring large
+     * file batches by enabling parallel operations.</p>
+     */
+    inline int GetMaxConcurrentConnections() const { return m_maxConcurrentConnections; }
+    inline bool MaxConcurrentConnectionsHasBeenSet() const { return m_maxConcurrentConnectionsHasBeenSet; }
+    inline void SetMaxConcurrentConnections(int value) { m_maxConcurrentConnectionsHasBeenSet = true; m_maxConcurrentConnections = value; }
+    inline SftpConnectorConfig& WithMaxConcurrentConnections(int value) { SetMaxConcurrentConnections(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userSecretId;
@@ -99,6 +115,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_trustedHostKeys;
     bool m_trustedHostKeysHasBeenSet = false;
+
+    int m_maxConcurrentConnections{0};
+    bool m_maxConcurrentConnectionsHasBeenSet = false;
   };
 
 } // namespace Model

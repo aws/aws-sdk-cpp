@@ -1968,8 +1968,8 @@ namespace DynamoDB
          * <code>LatestRestorableDateTime</code>. </p> <p>
          * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
          * time. You can restore your table to any point in time in the last 35 days. You
-         * can set the recovery period to any value between 1 and 35 days.</p><p><h3>See
-         * Also:</h3>   <a
+         * can set the <code>RecoveryPeriodInDays</code> to any value between 1 and 35
+         * days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">AWS
          * API Reference</a></p>
          */

@@ -45,6 +45,11 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
     m_behavior = ControlBehaviorMapper::GetControlBehaviorForName(jsonValue.GetString("Behavior"));
     m_behaviorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = ControlSeverityMapper::GetControlSeverityForName(jsonValue.GetString("Severity"));
+    m_severityHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RegionConfiguration"))
   {
     m_regionConfiguration = jsonValue.GetObject("RegionConfiguration");
@@ -63,6 +68,11 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
     m_parametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetDouble("CreateTime");
+    m_createTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,25 +20,25 @@ namespace Aws
       namespace CriticalityMapper
       {
 
+        static const int REQUIRED_HASH = HashingUtils::HashString("REQUIRED");
         static const int PREFERRED_HASH = HashingUtils::HashString("PREFERRED");
         static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
-        static const int REQUIRED_HASH = HashingUtils::HashString("REQUIRED");
 
 
         Criticality GetCriticalityForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PREFERRED_HASH)
+          if (hashCode == REQUIRED_HASH)
+          {
+            return Criticality::REQUIRED;
+          }
+          else if (hashCode == PREFERRED_HASH)
           {
             return Criticality::PREFERRED;
           }
           else if (hashCode == REMOVED_HASH)
           {
             return Criticality::REMOVED;
-          }
-          else if (hashCode == REQUIRED_HASH)
-          {
-            return Criticality::REQUIRED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,12 +56,12 @@ namespace Aws
           {
           case Criticality::NOT_SET:
             return {};
+          case Criticality::REQUIRED:
+            return "REQUIRED";
           case Criticality::PREFERRED:
             return "PREFERRED";
           case Criticality::REMOVED:
             return "REMOVED";
-          case Criticality::REQUIRED:
-            return "REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

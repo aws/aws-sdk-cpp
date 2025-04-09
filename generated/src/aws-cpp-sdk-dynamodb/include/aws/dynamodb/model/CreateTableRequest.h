@@ -145,7 +145,10 @@ namespace Model
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
      * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
-     * total.</p> </li> </ul> </li> </ul>
+     * total. This limit only applies when you specify the ProjectionType of
+     * <code>INCLUDE</code>. You still can specify the ProjectionType of
+     * <code>ALL</code> to project all attributes from the source table, even if the
+     * table has more than 100 attributes.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<LocalSecondaryIndex>& GetLocalSecondaryIndexes() const { return m_localSecondaryIndexes; }
     inline bool LocalSecondaryIndexesHasBeenSet() const { return m_localSecondaryIndexesHasBeenSet; }
@@ -179,9 +182,13 @@ namespace Model
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
      * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
-     * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
-     * provisioned throughput settings for the global secondary index, consisting of
-     * read and write capacity units.</p> </li> </ul>
+     * total. This limit only applies when you specify the ProjectionType of
+     * <code>INCLUDE</code>. You still can specify the ProjectionType of
+     * <code>ALL</code> to project all attributes from the source table, even if the
+     * table has more than 100 attributes.</p> </li> </ul> </li> <li> <p>
+     * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
+     * global secondary index, consisting of read and write capacity units.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const { return m_globalSecondaryIndexes; }
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
@@ -197,14 +204,16 @@ namespace Model
     /**
      * <p>Controls how you are charged for read and write throughput and how you manage
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
-     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-     * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
-     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
-     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
+     * for most DynamoDB workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
+     * to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
-     * capacity mode</a>. </p> </li> </ul>
+     * capacity mode</a>. </p> </li> <li> <p> <code>PROVISIONED</code> - We recommend
+     * using <code>PROVISIONED</code> for steady workloads with predictable growth
+     * where capacity requirements can be reliably forecasted. <code>PROVISIONED</code>
+     * sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> </ul>
      */
     inline BillingMode GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }

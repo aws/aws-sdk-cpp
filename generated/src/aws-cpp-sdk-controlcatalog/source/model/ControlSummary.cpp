@@ -40,6 +40,26 @@ ControlSummary& ControlSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Behavior"))
+  {
+    m_behavior = ControlBehaviorMapper::GetControlBehaviorForName(jsonValue.GetString("Behavior"));
+    m_behaviorHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = ControlSeverityMapper::GetControlSeverityForName(jsonValue.GetString("Severity"));
+    m_severityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Implementation"))
+  {
+    m_implementation = jsonValue.GetObject("Implementation");
+    m_implementationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetDouble("CreateTime");
+    m_createTimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -63,6 +83,27 @@ JsonValue ControlSummary::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_behaviorHasBeenSet)
+  {
+   payload.WithString("Behavior", ControlBehaviorMapper::GetNameForControlBehavior(m_behavior));
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", ControlSeverityMapper::GetNameForControlSeverity(m_severity));
+  }
+
+  if(m_implementationHasBeenSet)
+  {
+   payload.WithObject("Implementation", m_implementation.Jsonize());
+
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
   }
 
   return payload;

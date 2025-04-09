@@ -16,9 +16,9 @@ namespace Model
   enum class Polarization
   {
     NOT_SET,
+    RIGHT_HAND,
     LEFT_HAND,
-    NONE,
-    RIGHT_HAND
+    NONE
   };
 
 namespace PolarizationMapper
