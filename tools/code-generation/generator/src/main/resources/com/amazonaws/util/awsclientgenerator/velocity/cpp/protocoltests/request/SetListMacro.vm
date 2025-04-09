@@ -1,0 +1,43 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SerializeSingleParameterMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/FillParamsMacro.vm")
+##-------------------- SetListMacro macro
+#macro( SetListMacro $spaces $dstObject $listShape $testInputParam )
+#set($macro.spaces = $spaces)
+#set($macro.listMemberShape=$listShape.listMember.shape)
+#if($macro.listMemberShape.list || $macro.listMemberShape.map || $macro.listMemberShape.structure)
+#set($macro.listItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}Item")
+#set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#foreach($arrayItem in $testInputParam.value)
+${macro.spaces}{
+#if($macro.listMemberShape.list)
+  ${macro.spaces}Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape.listMember.shape)> $macro.listItemVarName;
+#foreach($innerListEl in $arrayItem)
+  ${macro.spaces}${macro.listItemVarName}.emplace_back(#SerializeSingleParameterMacro($macro.listMemberShape.listMember.shape, $innerListEl));
+#end
+  ${macro.spaces}${dstObject}.${macro.fieldAdder}($macro.listItemVarName);
+#elseif($macro.listMemberShape.map)
+  ${macro.spaces}Aws::Map<$CppViewHelper.computeCppType($macro.listMemberShape.mapKey.shape), $CppViewHelper.computeCppType($macro.listMemberShape.mapValue.shape)> $macro.listItemVarName;
+#foreach($innerMapEl in $arrayItem.fields())
+  ${macro.spaces}${macro.listItemVarName}["$innerMapEl.key"] = #SerializeSingleParameterMacro($macro.listMemberShape.mapValue.shape, $innerMapEl.value);
+#end
+  ${macro.spaces}${dstObject}.${macro.fieldAdder}($macro.listItemVarName);
+#elseif($macro.listMemberShape.structure)
+  ${macro.spaces}${macro.listMemberShape.name} $macro.listItemVarName;
+#foreach($innerParam in $arrayItem.fields())
+#FillParamsMacro("${macro.spaces}  " $macro.listItemVarName $macro.listMemberShape $innerParam)
+#end
+  ${macro.spaces}${dstObject}.${macro.fieldAdder}($macro.listItemVarName);
+#end##list
+${macro.spaces}}
+#end##foreach
+#else## not (list || map || structure)
+#set($macro.fieldSetter = "Set${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#set($macro.listResult="{")
+#foreach($arrayItem in $testInputParam.value)
+#set($macro.listResult=$macro.listResult + "#SerializeSingleParameterMacro($macro.listMemberShape, $arrayItem)")
+#if($foreach.hasNext)#set($macro.listResult=$macro.listResult + ", ")#end
+#end
+#set($macro.listResult=$macro.listResult + "}")
+${spaces}${dstObject}.${macro.fieldSetter}($macro.listResult);
+#end##(list || map || structure)
+#end##macro SetListMacro

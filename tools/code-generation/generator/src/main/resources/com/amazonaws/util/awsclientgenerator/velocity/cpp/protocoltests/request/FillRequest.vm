@@ -1,0 +1,12 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/FillParamsMacro.vm")
+#if($case.input && !$case.input.get().params.isEmpty())
+#set($requestShape="")
+#if($case.given.input.shape)
+#set($requestShape = $serviceModel.shapes.get($case.given.input.shape))
+#end
+#foreach($param in $case.input.get().params.fields())
+#FillParamsMacro("  ", "request", $requestShape, $param)
+#end
+#else
+##  // params are empty: $case.input and !$case.input.get().params.isEmpty()
+#end
