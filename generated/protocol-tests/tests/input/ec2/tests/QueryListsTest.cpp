@@ -1,0 +1,71 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
+#include <aws/ec2-protocol/EC2ProtocolClient.h>
+#include <aws/ec2-protocol/model/QueryListsRequest.h>
+
+using QueryLists = AWS_PROTOCOL_TEST_SUITE;
+using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
+using namespace Aws::EC2Protocol::Model;
+
+AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
+  EC2ProtocolClient client;
+  QueryListsRequest request;
+  request.SetListArg({R"(foo)", R"(bar)", R"(baz)"});
+  {
+    GreetingStruct requestComplexListArgItem;
+    requestComplexListArgItem.SetHi(R"(hello)");
+    request.AddComplexListArg(requestComplexListArgItem);
+  }
+  {
+    GreetingStruct requestComplexListArgItem;
+    requestComplexListArgItem.SetHi(R"(hola)");
+    request.AddComplexListArg(requestComplexListArgItem);
+  }
+
+  auto outcome = client.QueryLists(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
+  EC2ProtocolClient client;
+  QueryListsRequest request;
+  request.SetListArg({});
+
+  auto outcome = client.QueryLists(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
+  EC2ProtocolClient client;
+  QueryListsRequest request;
+  request.SetListArgWithXmlNameMember({R"(A)", R"(B)"});
+
+  auto outcome = client.QueryLists(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
+  EC2ProtocolClient client;
+  QueryListsRequest request;
+  request.SetListArgWithXmlName({R"(A)", R"(B)"});
+
+  auto outcome = client.QueryLists(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
+  EC2ProtocolClient client;
+  QueryListsRequest request;
+  {
+    NestedStructWithList requestNestedWithList;
+    requestNestedWithList.SetListArg({R"(A)", R"(B)"});
+    request.SetNestedWithList(requestNestedWithList);
+  }
+
+  auto outcome = client.QueryLists(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}

@@ -6,6 +6,7 @@ add_project(json_1_0-input-protocol-tests
 
 file(GLOB AWS_JSON_1_0_INPUT_PROTOCOL_TESTS_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
 )
 
 if(MSVC AND BUILD_SHARED_LIBS)
