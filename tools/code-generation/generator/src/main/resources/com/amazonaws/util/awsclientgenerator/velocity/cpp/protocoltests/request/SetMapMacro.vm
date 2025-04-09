@@ -1,0 +1,41 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SerializeSingleParameterMacro.vm")
+##-------------------- SetMapMacro macro
+#macro( SetMapMacro $spaces $dstObject $mapShape $testInputParam )
+#set($macro.fieldSetter = "Set${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#set($macro.spaces = $spaces)
+#if($mapShape.mapValue.shape.document)
+#set($macro.mapItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}Item")
+#set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#foreach($mapItem in $testInputParam.value.fields())
+${macro.spaces}{
+  ${macro.spaces}Aws::Utils::Document ${macro.mapItemVarName}(R"j(${mapItem.value})j");
+  ${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $macro.mapItemVarName);
+${macro.spaces}}
+#end
+#break
+#end
+#if($mapShape.mapValue.shape.structure)
+#set($macro.mapItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}Item")
+#set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#foreach($mapItem in $testInputParam.value.fields())
+${macro.spaces}{
+  ${macro.spaces}$CppViewHelper.computeCppType($mapShape.mapValue.shape) $macro.mapItemVarName;
+#foreach($innerParam in $mapItem.value.fields())
+#FillParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
+#end
+  ${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $macro.mapItemVarName);
+${macro.spaces}}
+#end
+#break
+#end
+###----- the map value is not nested structure or document
+#set($macro.mapResult="{")
+#foreach($mapItem in $testInputParam.value.fields())
+#set($macro.mapItem="{" + '"' + "$mapItem.key" + '"' + ",  ")
+#set($macro.mapItem=$macro.mapItem + "#SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value)" + "}")
+#set($macro.mapResult=$macro.mapResult + $macro.mapItem)
+#if($foreach.hasNext)#set($macro.mapResult=$macro.mapResult + ", ")#end
+#end
+#set($macro.mapResult=$macro.mapResult + "}")
+${spaces}${dstObject}.${macro.fieldSetter}($macro.mapResult);
+#end##macro SetMapMacro

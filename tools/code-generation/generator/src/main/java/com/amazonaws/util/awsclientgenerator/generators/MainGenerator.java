@@ -16,11 +16,13 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Service
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOption;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifier;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.DefaultClientConfigs;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.CppDefaultsGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.CppPartitionsGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.CppProtocolTestGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.CppServiceClientTestGenerator;
 import com.amazonaws.util.awsclientgenerator.transform.C2jModelToGeneratorModelTransformer;
+import com.amazonaws.util.awsclientgenerator.transform.C2jProtocolTestToGeneratorModelTransformer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -108,7 +110,7 @@ public class MainGenerator {
     }
 
     public ByteArrayOutputStream generateProtocolTestSourceFromModel(C2jServiceModel c2jModel,
-                                                                     C2jTestSuite testSuiteModel) throws Exception {
+                                                                     C2jTestSuite c2jTestModel) throws Exception {
         SdkSpec spec = new SdkSpec("cpp", c2jModel.getServiceName(), null);
         // Transform to intermediate code gen models from input c2j format.
         ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jModel, false).convert();
@@ -122,9 +124,12 @@ public class MainGenerator {
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 
         // TODO: Also transform C2j Protocol test model to an intermediate code gen model
-        CppProtocolTestGenerator cppTestGenerator = new CppProtocolTestGenerator(serviceModel, testSuiteModel);
+
+        C2jProtocolTestToGeneratorModelTransformer testTransformer = new C2jProtocolTestToGeneratorModelTransformer();
+        ProtocolTestModel testModel = testTransformer.convert(c2jTestModel);
+        CppProtocolTestGenerator cppTestGenerator = new CppProtocolTestGenerator(serviceModel, testModel);
         SdkFileEntry[] apiFiles = cppTestGenerator.generateSourceFiles(serviceModel);
-        String componentOutputName = String.format("%s", testSuiteModel.getName());
+        String componentOutputName = String.format("%s", testModel.getName());
 
         return compressFilesToZip(apiFiles, componentOutputName);
     }

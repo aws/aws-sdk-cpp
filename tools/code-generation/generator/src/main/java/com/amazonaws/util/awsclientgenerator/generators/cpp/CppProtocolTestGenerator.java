@@ -6,10 +6,12 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
-import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
-import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.C2jTestSuite;
+
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
 import org.apache.velocity.Template;
@@ -22,20 +24,21 @@ import org.slf4j.helpers.NOPLoggerFactory;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CppProtocolTestGenerator implements ClientGenerator {
 
     private static String CMAKE_LISTS_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsCMakeLists.vm";
-    private static String TEST_DRIVER_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsSource.vm";
+    private static String RUN_TESTS_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsRunTestsSrc.vm";
+    private static String TEST_SUITE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsTestSuiteSrc.vm";
 
     protected final VelocityEngine velocityEngine;
     private final ServiceModel serviceModel;
-    private final C2jTestSuite testModel;  // TODO: use an intermediate codegen model instead of raw C2J
+    private final ProtocolTestModel testModel;  // TODO: use an intermediate codegen model instead of raw C2J
     private final String projectName;
 
-    public CppProtocolTestGenerator(ServiceModel serviceModel, C2jTestSuite testSuiteModel) throws Exception {
+    public CppProtocolTestGenerator(ServiceModel serviceModel, ProtocolTestModel testSuiteModel) throws Exception {
         this.serviceModel = serviceModel;
         this.testModel = testSuiteModel;
         String prefix = testSuiteModel.getType().toString().toLowerCase();
@@ -52,10 +55,32 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         velocityEngine.init();
     }
 
+    protected SdkFileEntry generateTestSuiteSourceFile(ProtocolTestSuite testSuite) throws IOException {
+        VelocityContext context = createContext();
+        context.put("testSuite", testSuite);
+        Template template = velocityEngine.getTemplate(TEST_SUITE_TEMPLATE, StandardCharsets.UTF_8.name());
+        String fileName = String.format("tests/%sTest.cpp", testSuite.getName());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected List<SdkFileEntry> generateTestSuiteSourceFiles() throws IOException {
+        return testModel.getTestSuites().stream()
+                .map(entry -> {
+                    try {
+                        return generateTestSuiteSourceFile(entry);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .collect(Collectors.toList());
+    }
+
     public SdkFileEntry[] generateSourceFiles(ServiceModel dummy) throws Exception {
         List<SdkFileEntry> fileList = new ArrayList<>();
         fileList.add(generateCmakeFile());
         fileList.add(generateTestDriver());
+        fileList.addAll(generateTestSuiteSourceFiles());
 
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
@@ -69,7 +94,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateTestDriver() throws Exception {
         VelocityContext context = createContext();
-        Template template = velocityEngine.getTemplate(TEST_DRIVER_TEMPLATE, StandardCharsets.UTF_8.name());
+        Template template = velocityEngine.getTemplate(RUN_TESTS_TEMPLATE, StandardCharsets.UTF_8.name());
         return makeFile(template, context, "RunTests.cpp", true);
     }
 
@@ -81,6 +106,8 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         context.put("testModel", testModel);
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());
+
+        context.put("CppViewHelper", CppViewHelper.class);
         return context;
     }
 
