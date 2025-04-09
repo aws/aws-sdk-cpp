@@ -1,0 +1,51 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
+#include <aws/rest-json-protocol/RestJsonProtocolClient.h>
+#include <aws/rest-json-protocol/model/PostUnionWithJsonNameRequest.h>
+
+using PostUnionWithJsonName = AWS_PROTOCOL_TEST_SUITE;
+using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
+using namespace Aws::RestJsonProtocol::Model;
+
+AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest1) {
+  RestJsonProtocolClient client;
+  PostUnionWithJsonNameRequest request;
+  {
+    UnionWithJsonName requestValue;
+    requestValue.SetFoo(R"(hi)");
+    request.SetValue(requestValue);
+  }
+
+  auto outcome = client.PostUnionWithJsonName(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest2) {
+  RestJsonProtocolClient client;
+  PostUnionWithJsonNameRequest request;
+  {
+    UnionWithJsonName requestValue;
+    requestValue.SetBaz(R"(hi)");
+    request.SetValue(requestValue);
+  }
+
+  auto outcome = client.PostUnionWithJsonName(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
+
+AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest3) {
+  RestJsonProtocolClient client;
+  PostUnionWithJsonNameRequest request;
+  {
+    UnionWithJsonName requestValue;
+    requestValue.SetBar(R"(hi)");
+    request.SetValue(requestValue);
+  }
+
+  auto outcome = client.PostUnionWithJsonName(request);
+  AWS_ASSERT_SUCCESS(outcome);
+}
