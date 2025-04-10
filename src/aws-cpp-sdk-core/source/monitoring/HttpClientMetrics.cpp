@@ -21,6 +21,8 @@ namespace Aws
         static const char HTTP_CLIENT_METRICS_THROUGHPUT[] = "Throughput";
         static const char HTTP_CLIENT_METRICS_DOWNLOAD_SPEED[] = "DownloadSpeed";
         static const char HTTP_CLIENT_METRICS_UPLOAD_SPEED[] = "UploadSpeed";
+        static const char HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE[] = "TimeToFirstByte";
+        static const char HTTP_CLIENT_METRICS_TIME_TO_CONNECT[] = "TimeToConnect";
         static const char HTTP_CLIENT_METRICS_UNKNOWN[] = "Unknown";
 
         using namespace Aws::Utils;
@@ -40,6 +42,8 @@ namespace Aws
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_THROUGHPUT), HttpClientMetricsType::Throughput),
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DOWNLOAD_SPEED), HttpClientMetricsType::DownloadSpeed),
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_UPLOAD_SPEED), HttpClientMetricsType::UploadSpeed),
+                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE), HttpClientMetricsType::TimeToFirstByte),
+                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_TIME_TO_CONNECT), HttpClientMetricsType::TimeToConnect),
             };
 
             int nameHash = HashingUtils::HashString(name.c_str());
@@ -68,6 +72,8 @@ namespace Aws
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::DownloadSpeed), HTTP_CLIENT_METRICS_DOWNLOAD_SPEED),
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::UploadSpeed), HTTP_CLIENT_METRICS_UPLOAD_SPEED),
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::Unknown), HTTP_CLIENT_METRICS_UNKNOWN),
+                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::TimeToFirstByte), HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE),
+                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::TimeToConnect), HTTP_CLIENT_METRICS_TIME_TO_CONNECT),
             };
 
             auto it = metricsTypeToName.find(static_cast<int>(type));
