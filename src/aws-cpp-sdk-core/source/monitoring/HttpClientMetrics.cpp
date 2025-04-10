@@ -21,9 +21,11 @@ namespace Aws
         static const char HTTP_CLIENT_METRICS_DOWNLOAD_SPEED[] = "DownloadSpeed";
         static const char HTTP_CLIENT_METRICS_THROUGHPUT[] = "Throughput";
         static const char HTTP_CLIENT_METRICS_UPLOAD_SPEED[] = "UploadSpeed";
+        static const char HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE[] = "TimeToFirstByte";
+        static const char HTTP_CLIENT_METRICS_TIME_TO_CONNECT[] = "TimeToConnect";
         static const char HTTP_CLIENT_METRICS_UNKNOWN[] = "Unknown";
 
-        static const Aws::Array<std::pair<HttpClientMetricsType, const char*>, 12> httpClientMetricsNames =
+        static const Aws::Array<std::pair<HttpClientMetricsType, const char*>, 14> httpClientMetricsNames =
         {
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::DestinationIp, HTTP_CLIENT_METRICS_DESTINATION_IP),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::AcquireConnectionLatency, HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY),
@@ -37,6 +39,8 @@ namespace Aws
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::Throughput, HTTP_CLIENT_METRICS_THROUGHPUT),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::UploadSpeed, HTTP_CLIENT_METRICS_UPLOAD_SPEED),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::Unknown, HTTP_CLIENT_METRICS_UNKNOWN),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::TimeToFirstByte, HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::TimeToConnect, HTTP_CLIENT_METRICS_TIME_TO_CONNECT),
         };
 
         HttpClientMetricsType GetHttpClientMetricTypeByName(const Aws::String& name)

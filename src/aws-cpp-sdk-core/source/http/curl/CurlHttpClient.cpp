@@ -933,6 +933,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::ConnectLatency), static_cast<int64_t>(timep * 1000));
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::TimeToFirstByte), static_cast<int64_t>(timep * 1000));
+        }
+
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_PRETRANSFER_TIME, &timep);
+        if (ret == CURLE_OK)
+        {
+          request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::TimeToConnect), static_cast<int64_t>(timep * 1000));
         }
 
 #if LIBCURL_VERSION_NUM >= 0x073D00 // 7.61.0
