@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/SheetContentType.h>
+#include <aws/quicksight/model/VisualCustomActionDefaults.h>
 #include <aws/quicksight/model/ParameterControl.h>
 #include <aws/quicksight/model/FilterControl.h>
 #include <aws/quicksight/model/Visual.h>
@@ -219,6 +220,18 @@ namespace Model
     inline void SetContentType(SheetContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
     inline SheetDefinition& WithContentType(SheetContentType value) { SetContentType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of visual custom actions for the sheet.</p>
+     */
+    inline const VisualCustomActionDefaults& GetCustomActionDefaults() const { return m_customActionDefaults; }
+    inline bool CustomActionDefaultsHasBeenSet() const { return m_customActionDefaultsHasBeenSet; }
+    template<typename CustomActionDefaultsT = VisualCustomActionDefaults>
+    void SetCustomActionDefaults(CustomActionDefaultsT&& value) { m_customActionDefaultsHasBeenSet = true; m_customActionDefaults = std::forward<CustomActionDefaultsT>(value); }
+    template<typename CustomActionDefaultsT = VisualCustomActionDefaults>
+    SheetDefinition& WithCustomActionDefaults(CustomActionDefaultsT&& value) { SetCustomActionDefaults(std::forward<CustomActionDefaultsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_sheetId;
@@ -256,6 +269,9 @@ namespace Model
 
     SheetContentType m_contentType{SheetContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
+
+    VisualCustomActionDefaults m_customActionDefaults;
+    bool m_customActionDefaultsHasBeenSet = false;
   };
 
 } // namespace Model

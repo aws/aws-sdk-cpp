@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/DayOfTheWeek.h>
 #include <aws/quicksight/model/QBusinessInsightsStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/VisualCustomActionDefaults.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +87,18 @@ namespace Model
     template<typename ExcludedDataSetArnsT = Aws::String>
     AssetOptions& AddExcludedDataSetArns(ExcludedDataSetArnsT&& value) { m_excludedDataSetArnsHasBeenSet = true; m_excludedDataSetArns.emplace_back(std::forward<ExcludedDataSetArnsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of visual custom actions for the analysis.</p>
+     */
+    inline const VisualCustomActionDefaults& GetCustomActionDefaults() const { return m_customActionDefaults; }
+    inline bool CustomActionDefaultsHasBeenSet() const { return m_customActionDefaultsHasBeenSet; }
+    template<typename CustomActionDefaultsT = VisualCustomActionDefaults>
+    void SetCustomActionDefaults(CustomActionDefaultsT&& value) { m_customActionDefaultsHasBeenSet = true; m_customActionDefaults = std::forward<CustomActionDefaultsT>(value); }
+    template<typename CustomActionDefaultsT = VisualCustomActionDefaults>
+    AssetOptions& WithCustomActionDefaults(CustomActionDefaultsT&& value) { SetCustomActionDefaults(std::forward<CustomActionDefaultsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_timezone;
@@ -99,6 +112,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_excludedDataSetArns;
     bool m_excludedDataSetArnsHasBeenSet = false;
+
+    VisualCustomActionDefaults m_customActionDefaults;
+    bool m_customActionDefaultsHasBeenSet = false;
   };
 
 } // namespace Model

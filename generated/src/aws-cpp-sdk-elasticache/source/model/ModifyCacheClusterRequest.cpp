@@ -188,6 +188,11 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
     ss << "IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
+  if(m_scaleConfigHasBeenSet)
+  {
+    m_scaleConfig.OutputToStream(ss, "ScaleConfig");
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

@@ -12,6 +12,10 @@
 #include <aws/medialive/model/CmafKLVBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/CmafId3Behavior.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
+#include <aws/medialive/model/CmafTimedMetadataPassthrough.h>
+#include <aws/medialive/model/CmafIngestCaptionLanguageMapping.h>
 #include <utility>
 
 namespace Aws
@@ -194,6 +198,53 @@ namespace Model
     template<typename Id3NameModifierT = Aws::String>
     CmafIngestGroupSettings& WithId3NameModifier(Id3NameModifierT&& value) { SetId3NameModifier(std::forward<Id3NameModifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * An array that identifies the languages in the four caption channels in the
+     * embedded captions.
+     */
+    inline const Aws::Vector<CmafIngestCaptionLanguageMapping>& GetCaptionLanguageMappings() const { return m_captionLanguageMappings; }
+    inline bool CaptionLanguageMappingsHasBeenSet() const { return m_captionLanguageMappingsHasBeenSet; }
+    template<typename CaptionLanguageMappingsT = Aws::Vector<CmafIngestCaptionLanguageMapping>>
+    void SetCaptionLanguageMappings(CaptionLanguageMappingsT&& value) { m_captionLanguageMappingsHasBeenSet = true; m_captionLanguageMappings = std::forward<CaptionLanguageMappingsT>(value); }
+    template<typename CaptionLanguageMappingsT = Aws::Vector<CmafIngestCaptionLanguageMapping>>
+    CmafIngestGroupSettings& WithCaptionLanguageMappings(CaptionLanguageMappingsT&& value) { SetCaptionLanguageMappings(std::forward<CaptionLanguageMappingsT>(value)); return *this;}
+    template<typename CaptionLanguageMappingsT = CmafIngestCaptionLanguageMapping>
+    CmafIngestGroupSettings& AddCaptionLanguageMappings(CaptionLanguageMappingsT&& value) { m_captionLanguageMappingsHasBeenSet = true; m_captionLanguageMappings.emplace_back(std::forward<CaptionLanguageMappingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * Set to none if you don't want to insert a timecode in the output. Otherwise
+     * choose the frame type for the timecode.
+     */
+    inline CmafTimedMetadataId3Frame GetTimedMetadataId3Frame() const { return m_timedMetadataId3Frame; }
+    inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
+    inline void SetTimedMetadataId3Frame(CmafTimedMetadataId3Frame value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
+    inline CmafIngestGroupSettings& WithTimedMetadataId3Frame(CmafTimedMetadataId3Frame value) { SetTimedMetadataId3Frame(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * If you set up to insert a timecode in the output, specify the frequency for the
+     * frame, in seconds.
+     */
+    inline int GetTimedMetadataId3Period() const { return m_timedMetadataId3Period; }
+    inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
+    inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
+    inline CmafIngestGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Set to enabled to pass through ID3 metadata from the input sources.
+     */
+    inline CmafTimedMetadataPassthrough GetTimedMetadataPassthrough() const { return m_timedMetadataPassthrough; }
+    inline bool TimedMetadataPassthroughHasBeenSet() const { return m_timedMetadataPassthroughHasBeenSet; }
+    inline void SetTimedMetadataPassthrough(CmafTimedMetadataPassthrough value) { m_timedMetadataPassthroughHasBeenSet = true; m_timedMetadataPassthrough = value; }
+    inline CmafIngestGroupSettings& WithTimedMetadataPassthrough(CmafTimedMetadataPassthrough value) { SetTimedMetadataPassthrough(value); return *this;}
+    ///@}
   private:
 
     OutputLocationRef m_destination;
@@ -231,6 +282,18 @@ namespace Model
 
     Aws::String m_id3NameModifier;
     bool m_id3NameModifierHasBeenSet = false;
+
+    Aws::Vector<CmafIngestCaptionLanguageMapping> m_captionLanguageMappings;
+    bool m_captionLanguageMappingsHasBeenSet = false;
+
+    CmafTimedMetadataId3Frame m_timedMetadataId3Frame{CmafTimedMetadataId3Frame::NOT_SET};
+    bool m_timedMetadataId3FrameHasBeenSet = false;
+
+    int m_timedMetadataId3Period{0};
+    bool m_timedMetadataId3PeriodHasBeenSet = false;
+
+    CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
+    bool m_timedMetadataPassthroughHasBeenSet = false;
   };
 
 } // namespace Model

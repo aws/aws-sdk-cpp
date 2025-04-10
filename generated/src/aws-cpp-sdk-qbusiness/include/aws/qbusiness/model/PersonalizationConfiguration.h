@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>An option to allow Amazon Q Business to customize chat responses using user
-     * specific metadata—specifically, location and job information���in your IAM
+     * specific metadata—specifically, location and job information—in your IAM
      * Identity Center instance.</p>
      */
     inline PersonalizationControlMode GetPersonalizationControlMode() const { return m_personalizationControlMode; }

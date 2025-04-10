@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,43 @@ namespace Model
 
     ///@{
     /**
+     * <p>A registered step-level checkpoint identifier that can be used for restarting
+     * an Amazon Web Services Blu Age application batch job.</p>
+     */
+    inline int GetStepCheckpoint() const { return m_stepCheckpoint; }
+    inline bool StepCheckpointHasBeenSet() const { return m_stepCheckpointHasBeenSet; }
+    inline void SetStepCheckpoint(int value) { m_stepCheckpointHasBeenSet = true; m_stepCheckpoint = value; }
+    inline JobStep& WithStepCheckpoint(int value) { SetStepCheckpoint(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The step-level checkpoint status for an Amazon Web Services Blu Age
+     * application batch job.</p>
+     */
+    inline const Aws::String& GetStepCheckpointStatus() const { return m_stepCheckpointStatus; }
+    inline bool StepCheckpointStatusHasBeenSet() const { return m_stepCheckpointStatusHasBeenSet; }
+    template<typename StepCheckpointStatusT = Aws::String>
+    void SetStepCheckpointStatus(StepCheckpointStatusT&& value) { m_stepCheckpointStatusHasBeenSet = true; m_stepCheckpointStatus = std::forward<StepCheckpointStatusT>(value); }
+    template<typename StepCheckpointStatusT = Aws::String>
+    JobStep& WithStepCheckpointStatus(StepCheckpointStatusT&& value) { SetStepCheckpointStatus(std::forward<StepCheckpointStatusT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The step-level checkpoint status for an Amazon Web Services Blu Age
+     * application batch job.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStepCheckpointTime() const { return m_stepCheckpointTime; }
+    inline bool StepCheckpointTimeHasBeenSet() const { return m_stepCheckpointTimeHasBeenSet; }
+    template<typename StepCheckpointTimeT = Aws::Utils::DateTime>
+    void SetStepCheckpointTime(StepCheckpointTimeT&& value) { m_stepCheckpointTimeHasBeenSet = true; m_stepCheckpointTime = std::forward<StepCheckpointTimeT>(value); }
+    template<typename StepCheckpointTimeT = Aws::Utils::DateTime>
+    JobStep& WithStepCheckpointTime(StepCheckpointTimeT&& value) { SetStepCheckpointTime(std::forward<StepCheckpointTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The condition code of a step.</p>
      */
     inline const Aws::String& GetStepCondCode() const { return m_stepCondCode; }
@@ -109,6 +147,15 @@ namespace Model
 
     int m_procStepNumber{0};
     bool m_procStepNumberHasBeenSet = false;
+
+    int m_stepCheckpoint{0};
+    bool m_stepCheckpointHasBeenSet = false;
+
+    Aws::String m_stepCheckpointStatus;
+    bool m_stepCheckpointStatusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_stepCheckpointTime{};
+    bool m_stepCheckpointTimeHasBeenSet = false;
 
     Aws::String m_stepCondCode;
     bool m_stepCondCodeHasBeenSet = false;

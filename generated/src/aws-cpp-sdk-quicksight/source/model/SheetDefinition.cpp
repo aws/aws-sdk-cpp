@@ -113,6 +113,11 @@ SheetDefinition& SheetDefinition::operator =(JsonView jsonValue)
     m_contentType = SheetContentTypeMapper::GetSheetContentTypeForName(jsonValue.GetString("ContentType"));
     m_contentTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomActionDefaults"))
+  {
+    m_customActionDefaults = jsonValue.GetObject("CustomActionDefaults");
+    m_customActionDefaultsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -224,6 +229,12 @@ JsonValue SheetDefinition::Jsonize() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", SheetContentTypeMapper::GetNameForSheetContentType(m_contentType));
+  }
+
+  if(m_customActionDefaultsHasBeenSet)
+  {
+   payload.WithObject("CustomActionDefaults", m_customActionDefaults.Jsonize());
+
   }
 
   return payload;

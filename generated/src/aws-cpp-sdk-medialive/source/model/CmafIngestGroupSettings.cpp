@@ -85,6 +85,30 @@ CmafIngestGroupSettings& CmafIngestGroupSettings::operator =(JsonView jsonValue)
     m_id3NameModifier = jsonValue.GetString("id3NameModifier");
     m_id3NameModifierHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("captionLanguageMappings"))
+  {
+    Aws::Utils::Array<JsonView> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
+    for(unsigned captionLanguageMappingsIndex = 0; captionLanguageMappingsIndex < captionLanguageMappingsJsonList.GetLength(); ++captionLanguageMappingsIndex)
+    {
+      m_captionLanguageMappings.push_back(captionLanguageMappingsJsonList[captionLanguageMappingsIndex].AsObject());
+    }
+    m_captionLanguageMappingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("timedMetadataId3Frame"))
+  {
+    m_timedMetadataId3Frame = CmafTimedMetadataId3FrameMapper::GetCmafTimedMetadataId3FrameForName(jsonValue.GetString("timedMetadataId3Frame"));
+    m_timedMetadataId3FrameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("timedMetadataId3Period"))
+  {
+    m_timedMetadataId3Period = jsonValue.GetInteger("timedMetadataId3Period");
+    m_timedMetadataId3PeriodHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("timedMetadataPassthrough"))
+  {
+    m_timedMetadataPassthrough = CmafTimedMetadataPassthroughMapper::GetCmafTimedMetadataPassthroughForName(jsonValue.GetString("timedMetadataPassthrough"));
+    m_timedMetadataPassthroughHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +181,33 @@ JsonValue CmafIngestGroupSettings::Jsonize() const
   {
    payload.WithString("id3NameModifier", m_id3NameModifier);
 
+  }
+
+  if(m_captionLanguageMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> captionLanguageMappingsJsonList(m_captionLanguageMappings.size());
+   for(unsigned captionLanguageMappingsIndex = 0; captionLanguageMappingsIndex < captionLanguageMappingsJsonList.GetLength(); ++captionLanguageMappingsIndex)
+   {
+     captionLanguageMappingsJsonList[captionLanguageMappingsIndex].AsObject(m_captionLanguageMappings[captionLanguageMappingsIndex].Jsonize());
+   }
+   payload.WithArray("captionLanguageMappings", std::move(captionLanguageMappingsJsonList));
+
+  }
+
+  if(m_timedMetadataId3FrameHasBeenSet)
+  {
+   payload.WithString("timedMetadataId3Frame", CmafTimedMetadataId3FrameMapper::GetNameForCmafTimedMetadataId3Frame(m_timedMetadataId3Frame));
+  }
+
+  if(m_timedMetadataId3PeriodHasBeenSet)
+  {
+   payload.WithInteger("timedMetadataId3Period", m_timedMetadataId3Period);
+
+  }
+
+  if(m_timedMetadataPassthroughHasBeenSet)
+  {
+   payload.WithString("timedMetadataPassthrough", CmafTimedMetadataPassthroughMapper::GetNameForCmafTimedMetadataPassthrough(m_timedMetadataPassthrough));
   }
 
   return payload;

@@ -37,6 +37,8 @@ namespace Aws
         static const int CassandraReadCapacityUtilization_HASH = HashingUtils::HashString("CassandraReadCapacityUtilization");
         static const int CassandraWriteCapacityUtilization_HASH = HashingUtils::HashString("CassandraWriteCapacityUtilization");
         static const int KafkaBrokerStorageUtilization_HASH = HashingUtils::HashString("KafkaBrokerStorageUtilization");
+        static const int ElastiCacheEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheEngineCPUUtilization");
+        static const int ElastiCacheDatabaseMemoryUsagePercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsagePercentage");
         static const int ElastiCachePrimaryEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCachePrimaryEngineCPUUtilization");
         static const int ElastiCacheReplicaEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
         static const int ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
@@ -119,6 +121,14 @@ namespace Aws
           else if (hashCode == KafkaBrokerStorageUtilization_HASH)
           {
             return MetricType::KafkaBrokerStorageUtilization;
+          }
+          else if (hashCode == ElastiCacheEngineCPUUtilization_HASH)
+          {
+            return MetricType::ElastiCacheEngineCPUUtilization;
+          }
+          else if (hashCode == ElastiCacheDatabaseMemoryUsagePercentage_HASH)
+          {
+            return MetricType::ElastiCacheDatabaseMemoryUsagePercentage;
           }
           else if (hashCode == ElastiCachePrimaryEngineCPUUtilization_HASH)
           {
@@ -210,6 +220,10 @@ namespace Aws
             return "CassandraWriteCapacityUtilization";
           case MetricType::KafkaBrokerStorageUtilization:
             return "KafkaBrokerStorageUtilization";
+          case MetricType::ElastiCacheEngineCPUUtilization:
+            return "ElastiCacheEngineCPUUtilization";
+          case MetricType::ElastiCacheDatabaseMemoryUsagePercentage:
+            return "ElastiCacheDatabaseMemoryUsagePercentage";
           case MetricType::ElastiCachePrimaryEngineCPUUtilization:
             return "ElastiCachePrimaryEngineCPUUtilization";
           case MetricType::ElastiCacheReplicaEngineCPUUtilization:

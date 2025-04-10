@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AuthTokenUpdateStatus.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
+#include <aws/elasticache/model/ScaleConfig.h>
 #include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
@@ -139,6 +140,19 @@ namespace Model
     inline void SetTransitEncryptionMode(TransitEncryptionMode value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
     inline PendingModifiedValues& WithTransitEncryptionMode(TransitEncryptionMode value) { SetTransitEncryptionMode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scaling configuration changes that are pending for the Memcached
+     * cluster.</p>
+     */
+    inline const ScaleConfig& GetScaleConfig() const { return m_scaleConfig; }
+    inline bool ScaleConfigHasBeenSet() const { return m_scaleConfigHasBeenSet; }
+    template<typename ScaleConfigT = ScaleConfig>
+    void SetScaleConfig(ScaleConfigT&& value) { m_scaleConfigHasBeenSet = true; m_scaleConfig = std::forward<ScaleConfigT>(value); }
+    template<typename ScaleConfigT = ScaleConfig>
+    PendingModifiedValues& WithScaleConfig(ScaleConfigT&& value) { SetScaleConfig(std::forward<ScaleConfigT>(value)); return *this;}
+    ///@}
   private:
 
     int m_numCacheNodes{0};
@@ -164,6 +178,9 @@ namespace Model
 
     TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
     bool m_transitEncryptionModeHasBeenSet = false;
+
+    ScaleConfig m_scaleConfig;
+    bool m_scaleConfigHasBeenSet = false;
   };
 
 } // namespace Model

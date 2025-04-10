@@ -9,6 +9,7 @@
 #include <aws/medialive/model/InputDeviceCodec.h>
 #include <aws/medialive/model/InputDeviceMediaConnectConfigurableSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputDeviceConfigurableAudioChannelPairConfig.h>
 #include <utility>
 
@@ -118,6 +119,21 @@ namespace Model
     template<typename AudioChannelPairsT = InputDeviceConfigurableAudioChannelPairConfig>
     InputDeviceConfigurableSettings& AddAudioChannelPairs(AudioChannelPairsT&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.emplace_back(std::forward<AudioChannelPairsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * Choose the resolution of the Link device's source (HD or UHD). Make sure the
+     * resolution matches the current source from the device. This value determines
+     * MediaLive resource allocation and billing for this input. Only UHD devices can
+     * specify this parameter.
+     */
+    inline const Aws::String& GetInputResolution() const { return m_inputResolution; }
+    inline bool InputResolutionHasBeenSet() const { return m_inputResolutionHasBeenSet; }
+    template<typename InputResolutionT = Aws::String>
+    void SetInputResolution(InputResolutionT&& value) { m_inputResolutionHasBeenSet = true; m_inputResolution = std::forward<InputResolutionT>(value); }
+    template<typename InputResolutionT = Aws::String>
+    InputDeviceConfigurableSettings& WithInputResolution(InputResolutionT&& value) { SetInputResolution(std::forward<InputResolutionT>(value)); return *this;}
+    ///@}
   private:
 
     InputDeviceConfiguredInput m_configuredInput{InputDeviceConfiguredInput::NOT_SET};
@@ -137,6 +153,9 @@ namespace Model
 
     Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig> m_audioChannelPairs;
     bool m_audioChannelPairsHasBeenSet = false;
+
+    Aws::String m_inputResolution;
+    bool m_inputResolutionHasBeenSet = false;
   };
 
 } // namespace Model

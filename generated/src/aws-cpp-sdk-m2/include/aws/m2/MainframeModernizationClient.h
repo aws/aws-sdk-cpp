@@ -134,6 +134,32 @@ namespace MainframeModernization
         }
 
         /**
+         * <p>Starts a data set export task for a specific application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataSetExportTaskOutcome CreateDataSetExportTask(const Model::CreateDataSetExportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataSetExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataSetExportTaskRequestT = Model::CreateDataSetExportTaskRequest>
+        Model::CreateDataSetExportTaskOutcomeCallable CreateDataSetExportTaskCallable(const CreateDataSetExportTaskRequestT& request) const
+        {
+            return SubmitCallable(&MainframeModernizationClient::CreateDataSetExportTask, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataSetExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataSetExportTaskRequestT = Model::CreateDataSetExportTaskRequest>
+        void CreateDataSetExportTaskAsync(const CreateDataSetExportTaskRequestT& request, const CreateDataSetExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::CreateDataSetExportTask, request, handler, context);
+        }
+
+        /**
          * <p>Starts a data set import task for a specific application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetImportTask">AWS
@@ -398,6 +424,32 @@ namespace MainframeModernization
 
         /**
          * <p>Gets the status of a data set import task initiated with the
+         * <a>CreateDataSetExportTask</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataSetExportTaskOutcome GetDataSetExportTask(const Model::GetDataSetExportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataSetExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataSetExportTaskRequestT = Model::GetDataSetExportTaskRequest>
+        Model::GetDataSetExportTaskOutcomeCallable GetDataSetExportTaskCallable(const GetDataSetExportTaskRequestT& request) const
+        {
+            return SubmitCallable(&MainframeModernizationClient::GetDataSetExportTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataSetExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataSetExportTaskRequestT = Model::GetDataSetExportTaskRequest>
+        void GetDataSetExportTaskAsync(const GetDataSetExportTaskRequestT& request, const GetDataSetExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::GetDataSetExportTask, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the status of a data set import task initiated with the
          * <a>CreateDataSetImportTask</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetImportTask">AWS
          * API Reference</a></p>
@@ -631,6 +683,32 @@ namespace MainframeModernization
         void ListBatchJobRestartPointsAsync(const ListBatchJobRestartPointsRequestT& request, const ListBatchJobRestartPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MainframeModernizationClient::ListBatchJobRestartPoints, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the data set exports for the specified application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataSetExportHistoryOutcome ListDataSetExportHistory(const Model::ListDataSetExportHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataSetExportHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataSetExportHistoryRequestT = Model::ListDataSetExportHistoryRequest>
+        Model::ListDataSetExportHistoryOutcomeCallable ListDataSetExportHistoryCallable(const ListDataSetExportHistoryRequestT& request) const
+        {
+            return SubmitCallable(&MainframeModernizationClient::ListDataSetExportHistory, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataSetExportHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataSetExportHistoryRequestT = Model::ListDataSetExportHistoryRequest>
+        void ListDataSetExportHistoryAsync(const ListDataSetExportHistoryRequestT& request, const ListDataSetExportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::ListDataSetExportHistory, request, handler, context);
         }
 
         /**

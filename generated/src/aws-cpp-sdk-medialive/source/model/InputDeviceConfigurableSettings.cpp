@@ -59,6 +59,11 @@ InputDeviceConfigurableSettings& InputDeviceConfigurableSettings::operator =(Jso
     }
     m_audioChannelPairsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputResolution"))
+  {
+    m_inputResolution = jsonValue.GetString("inputResolution");
+    m_inputResolutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +107,12 @@ JsonValue InputDeviceConfigurableSettings::Jsonize() const
      audioChannelPairsJsonList[audioChannelPairsIndex].AsObject(m_audioChannelPairs[audioChannelPairsIndex].Jsonize());
    }
    payload.WithArray("audioChannelPairs", std::move(audioChannelPairsJsonList));
+
+  }
+
+  if(m_inputResolutionHasBeenSet)
+  {
+   payload.WithString("inputResolution", m_inputResolution);
 
   }
 

@@ -25,6 +25,11 @@ TextOutputEvent::TextOutputEvent(JsonView jsonValue)
 
 TextOutputEvent& TextOutputEvent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("systemMessageType"))
+  {
+    m_systemMessageType = SystemMessageTypeMapper::GetSystemMessageTypeForName(jsonValue.GetString("systemMessageType"));
+    m_systemMessageTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
@@ -51,6 +56,11 @@ TextOutputEvent& TextOutputEvent::operator =(JsonView jsonValue)
 JsonValue TextOutputEvent::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_systemMessageTypeHasBeenSet)
+  {
+   payload.WithString("systemMessageType", SystemMessageTypeMapper::GetNameForSystemMessageType(m_systemMessageType));
+  }
 
   if(m_conversationIdHasBeenSet)
   {
