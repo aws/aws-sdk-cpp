@@ -93,6 +93,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()));
       m_transitEncryptionModeHasBeenSet = true;
     }
+    XmlNode scaleConfigNode = resultNode.FirstChild("ScaleConfig");
+    if(!scaleConfigNode.IsNull())
+    {
+      m_scaleConfig = scaleConfigNode;
+      m_scaleConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -150,6 +156,13 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 
+  if(m_scaleConfigHasBeenSet)
+  {
+      Aws::StringStream scaleConfigLocationAndMemberSs;
+      scaleConfigLocationAndMemberSs << location << index << locationValue << ".ScaleConfig";
+      m_scaleConfig.OutputToStream(oStream, scaleConfigLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -195,6 +208,12 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_transitEncryptionModeHasBeenSet)
   {
       oStream << location << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
+  }
+  if(m_scaleConfigHasBeenSet)
+  {
+      Aws::String scaleConfigLocationAndMember(location);
+      scaleConfigLocationAndMember += ".ScaleConfig";
+      m_scaleConfig.OutputToStream(oStream, scaleConfigLocationAndMember.c_str());
   }
 }
 

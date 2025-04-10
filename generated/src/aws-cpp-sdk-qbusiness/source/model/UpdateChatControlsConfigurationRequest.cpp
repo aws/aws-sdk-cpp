@@ -67,6 +67,12 @@ Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_hallucinationReductionConfigurationHasBeenSet)
+  {
+   payload.WithObject("hallucinationReductionConfiguration", m_hallucinationReductionConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

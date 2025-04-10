@@ -35,6 +35,16 @@ JobStepRestartMarker& JobStepRestartMarker::operator =(JsonView jsonValue)
     m_fromStep = jsonValue.GetString("fromStep");
     m_fromStepHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("skip"))
+  {
+    m_skip = jsonValue.GetBool("skip");
+    m_skipHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("stepCheckpoint"))
+  {
+    m_stepCheckpoint = jsonValue.GetInteger("stepCheckpoint");
+    m_stepCheckpointHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("toProcStep"))
   {
     m_toProcStep = jsonValue.GetString("toProcStep");
@@ -61,6 +71,18 @@ JsonValue JobStepRestartMarker::Jsonize() const
   if(m_fromStepHasBeenSet)
   {
    payload.WithString("fromStep", m_fromStep);
+
+  }
+
+  if(m_skipHasBeenSet)
+  {
+   payload.WithBool("skip", m_skip);
+
+  }
+
+  if(m_stepCheckpointHasBeenSet)
+  {
+   payload.WithInteger("stepCheckpoint", m_stepCheckpoint);
 
   }
 

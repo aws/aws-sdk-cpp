@@ -11,6 +11,7 @@
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
+#include <aws/elasticache/model/ScaleConfig.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
@@ -300,8 +301,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Modifies the engine listed in a cluster message. The options are redis,
-     * memcached or valkey.</p>
+     * <p>The engine type used by the cache cluster. The options are valkey, memcached
+     * or redis.</p>
      */
     inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -441,6 +442,19 @@ namespace Model
     inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
     inline ModifyCacheClusterRequest& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configures horizontal or vertical scaling for Memcached clusters, specifying
+     * the scaling percentage and interval.</p>
+     */
+    inline const ScaleConfig& GetScaleConfig() const { return m_scaleConfig; }
+    inline bool ScaleConfigHasBeenSet() const { return m_scaleConfigHasBeenSet; }
+    template<typename ScaleConfigT = ScaleConfig>
+    void SetScaleConfig(ScaleConfigT&& value) { m_scaleConfigHasBeenSet = true; m_scaleConfig = std::forward<ScaleConfigT>(value); }
+    template<typename ScaleConfigT = ScaleConfig>
+    ModifyCacheClusterRequest& WithScaleConfig(ScaleConfigT&& value) { SetScaleConfig(std::forward<ScaleConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_cacheClusterId;
@@ -508,6 +522,9 @@ namespace Model
 
     IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
     bool m_ipDiscoveryHasBeenSet = false;
+
+    ScaleConfig m_scaleConfig;
+    bool m_scaleConfigHasBeenSet = false;
   };
 
 } // namespace Model

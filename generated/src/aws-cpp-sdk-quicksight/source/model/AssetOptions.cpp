@@ -49,6 +49,11 @@ AssetOptions& AssetOptions::operator =(JsonView jsonValue)
     }
     m_excludedDataSetArnsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomActionDefaults"))
+  {
+    m_customActionDefaults = jsonValue.GetObject("CustomActionDefaults");
+    m_customActionDefaultsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +85,12 @@ JsonValue AssetOptions::Jsonize() const
      excludedDataSetArnsJsonList[excludedDataSetArnsIndex].AsString(m_excludedDataSetArns[excludedDataSetArnsIndex]);
    }
    payload.WithArray("ExcludedDataSetArns", std::move(excludedDataSetArnsJsonList));
+
+  }
+
+  if(m_customActionDefaultsHasBeenSet)
+  {
+   payload.WithObject("CustomActionDefaults", m_customActionDefaults.Jsonize());
 
   }
 

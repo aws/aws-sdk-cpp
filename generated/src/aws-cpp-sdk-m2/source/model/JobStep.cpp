@@ -35,6 +35,21 @@ JobStep& JobStep::operator =(JsonView jsonValue)
     m_procStepNumber = jsonValue.GetInteger("procStepNumber");
     m_procStepNumberHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("stepCheckpoint"))
+  {
+    m_stepCheckpoint = jsonValue.GetInteger("stepCheckpoint");
+    m_stepCheckpointHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("stepCheckpointStatus"))
+  {
+    m_stepCheckpointStatus = jsonValue.GetString("stepCheckpointStatus");
+    m_stepCheckpointStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("stepCheckpointTime"))
+  {
+    m_stepCheckpointTime = jsonValue.GetDouble("stepCheckpointTime");
+    m_stepCheckpointTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("stepCondCode"))
   {
     m_stepCondCode = jsonValue.GetString("stepCondCode");
@@ -72,6 +87,23 @@ JsonValue JobStep::Jsonize() const
   {
    payload.WithInteger("procStepNumber", m_procStepNumber);
 
+  }
+
+  if(m_stepCheckpointHasBeenSet)
+  {
+   payload.WithInteger("stepCheckpoint", m_stepCheckpoint);
+
+  }
+
+  if(m_stepCheckpointStatusHasBeenSet)
+  {
+   payload.WithString("stepCheckpointStatus", m_stepCheckpointStatus);
+
+  }
+
+  if(m_stepCheckpointTimeHasBeenSet)
+  {
+   payload.WithDouble("stepCheckpointTime", m_stepCheckpointTime.SecondsWithMSPrecision());
   }
 
   if(m_stepCondCodeHasBeenSet)

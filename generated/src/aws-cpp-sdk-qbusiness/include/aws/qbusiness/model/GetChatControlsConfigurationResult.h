@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/AppliedCreatorModeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/HallucinationReductionConfiguration.h>
 #include <aws/qbusiness/model/TopicConfiguration.h>
 #include <utility>
 
@@ -117,6 +118,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The hallucination reduction settings for your application.</p>
+     */
+    inline const HallucinationReductionConfiguration& GetHallucinationReductionConfiguration() const { return m_hallucinationReductionConfiguration; }
+    template<typename HallucinationReductionConfigurationT = HallucinationReductionConfiguration>
+    void SetHallucinationReductionConfiguration(HallucinationReductionConfigurationT&& value) { m_hallucinationReductionConfigurationHasBeenSet = true; m_hallucinationReductionConfiguration = std::forward<HallucinationReductionConfigurationT>(value); }
+    template<typename HallucinationReductionConfigurationT = HallucinationReductionConfiguration>
+    GetChatControlsConfigurationResult& WithHallucinationReductionConfiguration(HallucinationReductionConfigurationT&& value) { SetHallucinationReductionConfiguration(std::forward<HallucinationReductionConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -143,6 +155,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    HallucinationReductionConfiguration m_hallucinationReductionConfiguration;
+    bool m_hallucinationReductionConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

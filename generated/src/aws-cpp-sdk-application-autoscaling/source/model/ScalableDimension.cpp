@@ -37,6 +37,7 @@ namespace Aws
         static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
         static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
         static const int kafka_broker_storage_VolumeSize_HASH = HashingUtils::HashString("kafka:broker-storage:VolumeSize");
+        static const int elasticache_cache_cluster_Nodes_HASH = HashingUtils::HashString("elasticache:cache-cluster:Nodes");
         static const int elasticache_replication_group_NodeGroups_HASH = HashingUtils::HashString("elasticache:replication-group:NodeGroups");
         static const int elasticache_replication_group_Replicas_HASH = HashingUtils::HashString("elasticache:replication-group:Replicas");
         static const int neptune_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("neptune:cluster:ReadReplicaCount");
@@ -116,6 +117,10 @@ namespace Aws
           {
             return ScalableDimension::kafka_broker_storage_VolumeSize;
           }
+          else if (hashCode == elasticache_cache_cluster_Nodes_HASH)
+          {
+            return ScalableDimension::elasticache_cache_cluster_Nodes;
+          }
           else if (hashCode == elasticache_replication_group_NodeGroups_HASH)
           {
             return ScalableDimension::elasticache_replication_group_NodeGroups;
@@ -190,6 +195,8 @@ namespace Aws
             return "cassandra:table:WriteCapacityUnits";
           case ScalableDimension::kafka_broker_storage_VolumeSize:
             return "kafka:broker-storage:VolumeSize";
+          case ScalableDimension::elasticache_cache_cluster_Nodes:
+            return "elasticache:cache-cluster:Nodes";
           case ScalableDimension::elasticache_replication_group_NodeGroups:
             return "elasticache:replication-group:NodeGroups";
           case ScalableDimension::elasticache_replication_group_Replicas:

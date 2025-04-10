@@ -31,6 +31,7 @@ namespace Aws
         static const char AWS_CN_GLOBAL[] = "aws-cn-global"; // AWS China global region
         static const char AWS_GLOBAL[] = "aws-global"; // AWS Standard global region
         static const char AWS_ISO_B_GLOBAL[] = "aws-iso-b-global"; // AWS ISOB (US) global region
+        static const char AWS_ISO_E_GLOBAL[] = "aws-iso-e-global"; // AWS ISOE (Europe) global region
         static const char AWS_ISO_F_GLOBAL[] = "aws-iso-f-global"; // AWS ISOF global region
         static const char AWS_ISO_GLOBAL[] = "aws-iso-global"; // AWS ISO (US) global region
         static const char AWS_US_GOV_GLOBAL[] = "aws-us-gov-global"; // AWS GovCloud (US) global region

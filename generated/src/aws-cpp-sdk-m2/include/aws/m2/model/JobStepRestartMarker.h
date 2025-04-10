@@ -64,6 +64,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The step-level checkpoint timestamp (creation or last modification) for an
+     * Amazon Web Services Blu Age application batch job.</p>
+     */
+    inline bool GetSkip() const { return m_skip; }
+    inline bool SkipHasBeenSet() const { return m_skipHasBeenSet; }
+    inline void SetSkip(bool value) { m_skipHasBeenSet = true; m_skip = value; }
+    inline JobStepRestartMarker& WithSkip(bool value) { SetSkip(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Skip selected step and issue a restart from immediate successor step for an
+     * Amazon Web Services Blu Age application batch job.</p>
+     */
+    inline int GetStepCheckpoint() const { return m_stepCheckpoint; }
+    inline bool StepCheckpointHasBeenSet() const { return m_stepCheckpointHasBeenSet; }
+    inline void SetStepCheckpoint(int value) { m_stepCheckpointHasBeenSet = true; m_stepCheckpoint = value; }
+    inline JobStepRestartMarker& WithStepCheckpoint(int value) { SetStepCheckpoint(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The procedure step name that a batch job was restarted to.</p>
      */
     inline const Aws::String& GetToProcStep() const { return m_toProcStep; }
@@ -92,6 +114,12 @@ namespace Model
 
     Aws::String m_fromStep;
     bool m_fromStepHasBeenSet = false;
+
+    bool m_skip{false};
+    bool m_skipHasBeenSet = false;
+
+    int m_stepCheckpoint{0};
+    bool m_stepCheckpointHasBeenSet = false;
 
     Aws::String m_toProcStep;
     bool m_toProcStepHasBeenSet = false;

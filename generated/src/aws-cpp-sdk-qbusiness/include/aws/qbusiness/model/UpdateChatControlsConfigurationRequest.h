@@ -12,6 +12,7 @@
 #include <aws/qbusiness/model/BlockedPhrasesConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/CreatorModeConfiguration.h>
+#include <aws/qbusiness/model/HallucinationReductionConfiguration.h>
 #include <aws/qbusiness/model/TopicConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -141,6 +142,18 @@ namespace Model
     template<typename CreatorModeConfigurationT = CreatorModeConfiguration>
     UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(CreatorModeConfigurationT&& value) { SetCreatorModeConfiguration(std::forward<CreatorModeConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The hallucination reduction settings for your application.</p>
+     */
+    inline const HallucinationReductionConfiguration& GetHallucinationReductionConfiguration() const { return m_hallucinationReductionConfiguration; }
+    inline bool HallucinationReductionConfigurationHasBeenSet() const { return m_hallucinationReductionConfigurationHasBeenSet; }
+    template<typename HallucinationReductionConfigurationT = HallucinationReductionConfiguration>
+    void SetHallucinationReductionConfiguration(HallucinationReductionConfigurationT&& value) { m_hallucinationReductionConfigurationHasBeenSet = true; m_hallucinationReductionConfiguration = std::forward<HallucinationReductionConfigurationT>(value); }
+    template<typename HallucinationReductionConfigurationT = HallucinationReductionConfiguration>
+    UpdateChatControlsConfigurationRequest& WithHallucinationReductionConfiguration(HallucinationReductionConfigurationT&& value) { SetHallucinationReductionConfiguration(std::forward<HallucinationReductionConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -166,6 +179,9 @@ namespace Model
 
     CreatorModeConfiguration m_creatorModeConfiguration;
     bool m_creatorModeConfigurationHasBeenSet = false;
+
+    HallucinationReductionConfiguration m_hallucinationReductionConfiguration;
+    bool m_hallucinationReductionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

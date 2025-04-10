@@ -33,6 +33,8 @@ namespace Model
     CassandraReadCapacityUtilization,
     CassandraWriteCapacityUtilization,
     KafkaBrokerStorageUtilization,
+    ElastiCacheEngineCPUUtilization,
+    ElastiCacheDatabaseMemoryUsagePercentage,
     ElastiCachePrimaryEngineCPUUtilization,
     ElastiCacheReplicaEngineCPUUtilization,
     ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,

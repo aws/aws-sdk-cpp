@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/qbusiness/model/SystemMessageType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -37,6 +38,22 @@ namespace Model
     AWS_QBUSINESS_API TextOutputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q
+     * Business currently supports two types of messages:</p> <ul> <li> <p>
+     * <code>RESPONSE</code> - The Amazon Q Business system response.</p> </li> <li>
+     * <p> <code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced,
+     * response returned by Amazon Q Business. Available only if hallucination
+     * reduction is supported and configured for the application and detected in the
+     * end user chat query by Amazon Q Business.</p> </li> </ul>
+     */
+    inline SystemMessageType GetSystemMessageType() const { return m_systemMessageType; }
+    inline bool SystemMessageTypeHasBeenSet() const { return m_systemMessageTypeHasBeenSet; }
+    inline void SetSystemMessageType(SystemMessageType value) { m_systemMessageTypeHasBeenSet = true; m_systemMessageType = value; }
+    inline TextOutputEvent& WithSystemMessageType(SystemMessageType value) { SetSystemMessageType(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -88,6 +105,9 @@ namespace Model
     TextOutputEvent& WithSystemMessage(SystemMessageT&& value) { SetSystemMessage(std::forward<SystemMessageT>(value)); return *this;}
     ///@}
   private:
+
+    SystemMessageType m_systemMessageType{SystemMessageType::NOT_SET};
+    bool m_systemMessageTypeHasBeenSet = false;
 
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;

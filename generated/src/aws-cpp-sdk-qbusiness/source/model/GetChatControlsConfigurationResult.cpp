@@ -59,6 +59,11 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("hallucinationReductionConfiguration"))
+  {
+    m_hallucinationReductionConfiguration = jsonValue.GetObject("hallucinationReductionConfiguration");
+    m_hallucinationReductionConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
