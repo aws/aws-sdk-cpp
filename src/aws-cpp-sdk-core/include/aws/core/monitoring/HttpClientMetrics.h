@@ -35,11 +35,7 @@ namespace Aws
             ConnectionReused,
 
             /**
-             * Requires the SDK to recognize that a new connection was established to make the request,
-             * contains the time interval (in milliseconds) between the construction of the http request and when a connection was fully established.
-             * If the SDK is able to estimate this time despite not having a perfectly accurate callback for the specific event, then it should.
-             * For example, if the http client includes user-level data write functions that are guaranteed to be called shortly after connection establishment,
-             * then the first call could be used as a reasonable time marker for ConnectLatency
+             * Deprecated, maintained for backwards compatibility, use TimeToConnect instead,
              */
             ConnectLatency,
 
@@ -84,7 +80,21 @@ namespace Aws
             /**
              * Unknow Metrics Type
              */
-            Unknown
+            Unknown,
+
+            /**
+             * Time between http client initialization and first byte transferred.
+             */
+            TimeToFirstByte,
+
+            /**
+             * Requires the SDK to recognize that a new connection was established to make the request,
+             * contains the time interval (in milliseconds) between the construction of the http request and when a connection was fully established.
+             * If the SDK is able to estimate this time despite not having a perfectly accurate callback for the specific event, then it should.
+             * For example, if the http client includes user-level data write functions that are guaranteed to be called shortly after connection establishment,
+             * then the first call could be used as a reasonable time marker for ConnectLatency
+             */
+            TimeToConnect,
         };
 
         typedef Aws::Map<Aws::String, int64_t> HttpClientMetricsCollection;
