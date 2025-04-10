@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/core/monitoring/HttpClientMetrics.h>
 
 namespace Aws
@@ -18,64 +18,45 @@ namespace Aws
         static const char HTTP_CLIENT_METRICS_DNS_LATENCY[] = "DnsLatency";
         static const char HTTP_CLIENT_METRICS_TCP_LATENCY[] = "TcpLatency";
         static const char HTTP_CLIENT_METRICS_SSL_LATENCY[] = "SslLatency";
-        static const char HTTP_CLIENT_METRICS_THROUGHPUT[] = "Throughput";
         static const char HTTP_CLIENT_METRICS_DOWNLOAD_SPEED[] = "DownloadSpeed";
+        static const char HTTP_CLIENT_METRICS_THROUGHPUT[] = "Throughput";
         static const char HTTP_CLIENT_METRICS_UPLOAD_SPEED[] = "UploadSpeed";
         static const char HTTP_CLIENT_METRICS_UNKNOWN[] = "Unknown";
 
-        using namespace Aws::Utils;
+        static const Aws::Array<std::pair<HttpClientMetricsType, const char*>, 12> httpClientMetricsNames =
+        {
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::DestinationIp, HTTP_CLIENT_METRICS_DESTINATION_IP),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::AcquireConnectionLatency, HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::ConnectionReused, HTTP_CLIENT_METRICS_CONNECTION_REUSED),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::ConnectLatency, HTTP_CLIENT_METRICS_CONNECTION_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::RequestLatency, HTTP_CLIENT_METRICS_REQUEST_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::DnsLatency, HTTP_CLIENT_METRICS_DNS_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::TcpLatency, HTTP_CLIENT_METRICS_TCP_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::SslLatency, HTTP_CLIENT_METRICS_SSL_LATENCY),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::DownloadSpeed, HTTP_CLIENT_METRICS_DOWNLOAD_SPEED),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::Throughput, HTTP_CLIENT_METRICS_THROUGHPUT),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::UploadSpeed, HTTP_CLIENT_METRICS_UPLOAD_SPEED),
+            std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::Unknown, HTTP_CLIENT_METRICS_UNKNOWN),
+        };
+
         HttpClientMetricsType GetHttpClientMetricTypeByName(const Aws::String& name)
         {
-            //TODO: Make static map, Aws::Map cannot be made static with a customer memory manager as of the moment.
-            Aws::Map<int, HttpClientMetricsType> metricsNameHashToType =
-            {
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DESTINATION_IP), HttpClientMetricsType::DestinationIp),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY), HttpClientMetricsType::AcquireConnectionLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_CONNECTION_REUSED), HttpClientMetricsType::ConnectionReused),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_CONNECTION_LATENCY), HttpClientMetricsType::ConnectLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_REQUEST_LATENCY), HttpClientMetricsType::RequestLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DNS_LATENCY), HttpClientMetricsType::DnsLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_TCP_LATENCY), HttpClientMetricsType::TcpLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_SSL_LATENCY), HttpClientMetricsType::SslLatency),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_THROUGHPUT), HttpClientMetricsType::Throughput),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DOWNLOAD_SPEED), HttpClientMetricsType::DownloadSpeed),
-                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_UPLOAD_SPEED), HttpClientMetricsType::UploadSpeed),
-            };
-
-            int nameHash = HashingUtils::HashString(name.c_str());
-            auto it = metricsNameHashToType.find(nameHash);
-            if (it == metricsNameHashToType.end())
-            {
-                return HttpClientMetricsType::Unknown;
-            }
-            return it->second;
+             auto it = std::find_if(httpClientMetricsNames.begin(), httpClientMetricsNames.end(), [&](const std::pair<HttpClientMetricsType, const char *>& pair) { return name == pair.second; });
+             if (it == httpClientMetricsNames.end())
+             {
+                 return HttpClientMetricsType::Unknown;
+             }
+             return it->first;
         }
 
         Aws::String GetHttpClientMetricNameByType(HttpClientMetricsType type)
         {
-            //TODO: Make static map, Aws::Map cannot be made static with a customer memory manager as of the moment.
-            Aws::Map<int, Aws::String> metricsTypeToName =
-            {
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::DestinationIp), HTTP_CLIENT_METRICS_DESTINATION_IP),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::AcquireConnectionLatency), HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::ConnectionReused), HTTP_CLIENT_METRICS_CONNECTION_REUSED),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::ConnectLatency), HTTP_CLIENT_METRICS_CONNECTION_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::RequestLatency), HTTP_CLIENT_METRICS_REQUEST_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::DnsLatency), HTTP_CLIENT_METRICS_DNS_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::TcpLatency), HTTP_CLIENT_METRICS_TCP_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::SslLatency), HTTP_CLIENT_METRICS_SSL_LATENCY),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::Throughput), HTTP_CLIENT_METRICS_THROUGHPUT),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::DownloadSpeed), HTTP_CLIENT_METRICS_DOWNLOAD_SPEED),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::UploadSpeed), HTTP_CLIENT_METRICS_UPLOAD_SPEED),
-                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::Unknown), HTTP_CLIENT_METRICS_UNKNOWN),
-            };
-
-            auto it = metricsTypeToName.find(static_cast<int>(type));
-            if (it == metricsTypeToName.end())
-            {
+            assert(static_cast<unsigned>(type) < httpClientMetricsNames.size());
+            if (static_cast<unsigned>(type) >= httpClientMetricsNames.size())
                 return HTTP_CLIENT_METRICS_UNKNOWN;
-            }
-            return Aws::String(it->second.c_str());
+
+            assert(httpClientMetricsNames[static_cast<int>(type)].first == type);
+            return Aws::String(httpClientMetricsNames[static_cast<int>(type)].second);
         }
 
     }

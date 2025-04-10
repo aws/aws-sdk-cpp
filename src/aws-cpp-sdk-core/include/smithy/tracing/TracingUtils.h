@@ -134,32 +134,21 @@ namespace smithy {
                  * @return A tuple of metric name to measurement unit.
                  */
                 static std::pair<Aws::String, Aws::String> ConvertCoreMetricToSmithy(const Aws::String &name) {
-                    //TODO: Make static map, Aws::Map cannot be made static with a customer memory manager as of the moment.
-                    Aws::Map<int, std::pair<Aws::String, Aws::String>> metricsTypeToName =
-                        {
-                            std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::DnsLatency),
-                                std::make_pair(SMITHY_METRICS_DNS_DURATION, MICROSECOND_METRIC_TYPE)),
-                            std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::ConnectLatency),
-                                std::make_pair(SMITHY_METRICS_CONNECT_DURATION, MICROSECOND_METRIC_TYPE)),
-                            std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::SslLatency),
-                                std::make_pair(SMITHY_METRICS_SSL_DURATION, MICROSECOND_METRIC_TYPE)),
-                            std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::DownloadSpeed),
-                                std::make_pair(SMITHY_METRICS_DOWNLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE)),
-                            std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::UploadSpeed),
-                                std::make_pair(SMITHY_METRICS_UPLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE)),
-                        };
-
-                    auto metricType = Aws::Monitoring::GetHttpClientMetricTypeByName(name);
-                    auto it = metricsTypeToName.find(static_cast<int>(metricType));
-                    if (it == metricsTypeToName.end()) {
-                        return std::make_pair(SMITHY_METRICS_UNKNOWN_METRIC, "unknown");
+                    switch (Aws::Monitoring::GetHttpClientMetricTypeByName(name))
+                    {
+                        case Aws::Monitoring::HttpClientMetricsType::DnsLatency:
+                            return std::make_pair(SMITHY_METRICS_DNS_DURATION, MICROSECOND_METRIC_TYPE);
+                        case Aws::Monitoring::HttpClientMetricsType::ConnectLatency:
+                            return std::make_pair(SMITHY_METRICS_CONNECT_DURATION, MICROSECOND_METRIC_TYPE);
+                        case Aws::Monitoring::HttpClientMetricsType::SslLatency:
+                            return std::make_pair(SMITHY_METRICS_SSL_DURATION, MICROSECOND_METRIC_TYPE);
+                        case Aws::Monitoring::HttpClientMetricsType::DownloadSpeed:
+                            return std::make_pair(SMITHY_METRICS_DOWNLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE);
+                        case Aws::Monitoring::HttpClientMetricsType::UploadSpeed:
+                            return std::make_pair(SMITHY_METRICS_UPLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE);
+                        default:
+                            return std::make_pair(SMITHY_METRICS_UNKNOWN_METRIC, "unknown");
                     }
-                    return it->second;
                 }
             };
         }
