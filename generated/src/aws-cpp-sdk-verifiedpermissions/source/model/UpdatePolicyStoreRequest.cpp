@@ -28,6 +28,11 @@ Aws::String UpdatePolicyStoreRequest::SerializePayload() const
 
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);

@@ -8,6 +8,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/model/ValidationSettings.h>
+#include <aws/verifiedpermissions/model/DeletionProtection.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the policy store can be deleted. If enabled, the policy
+     * store can't be deleted.</p> <p>When you call <code>UpdatePolicyStore</code>,
+     * this parameter is unchanged unless explicitly included in the call.</p>
+     */
+    inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+    inline void SetDeletionProtection(DeletionProtection value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+    inline UpdatePolicyStoreRequest& WithDeletionProtection(DeletionProtection value) { SetDeletionProtection(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Descriptive text that you can provide to help with identification of the
      * current policy store.</p>
      */
@@ -79,6 +92,9 @@ namespace Model
 
     ValidationSettings m_validationSettings;
     bool m_validationSettingsHasBeenSet = false;
+
+    DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

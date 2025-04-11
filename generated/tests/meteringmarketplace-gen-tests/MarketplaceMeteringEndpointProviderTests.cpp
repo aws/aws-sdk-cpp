@@ -158,7 +158,7 @@ Aws::Vector<MarketplaceMeteringEndpointProviderEndpointTestCase> MarketplaceMete
   {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://metering-marketplace.cn-northwest-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -194,7 +194,7 @@ Aws::Vector<MarketplaceMeteringEndpointProviderEndpointTestCase> MarketplaceMete
   {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.us-gov-west-1.api.aws",
+    {{/*epUrl*/"https://metering-marketplace.us-gov-west-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

@@ -104,8 +104,9 @@ namespace Model
     /**
      * <p>The maximum number of read and write units for the global secondary index
      * being created. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * You must use either <code>OnDemand Throughput</code> or
+     * <code>ProvisionedThroughput</code> based on your table's capacity mode.</p>
      */
     inline const OnDemandThroughput& GetOnDemandThroughput() const { return m_onDemandThroughput; }
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }

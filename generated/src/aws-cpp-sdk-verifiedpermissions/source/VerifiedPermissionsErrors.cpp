@@ -57,6 +57,7 @@ namespace VerifiedPermissionsErrorMapper
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -74,6 +75,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(VerifiedPermissionsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(VerifiedPermissionsErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
