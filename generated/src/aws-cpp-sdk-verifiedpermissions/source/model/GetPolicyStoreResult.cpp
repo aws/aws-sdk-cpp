@@ -55,6 +55,11 @@ GetPolicyStoreResult& GetPolicyStoreResult::operator =(const Aws::AmazonWebServi
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("deletionProtection"))
+  {
+    m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(jsonValue.GetString("deletionProtection"));
+    m_deletionProtectionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

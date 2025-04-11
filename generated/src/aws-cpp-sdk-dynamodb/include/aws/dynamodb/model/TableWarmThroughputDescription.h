@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>Represents the warm throughput value (in read units per second and write
-   * units per second) of the base table.</p><p><h3>See Also:</h3>   <a
+   * units per second) of the table. Warm throughput is applicable for DynamoDB
+   * Standard-IA tables and specifies the minimum provisioned capacity maintained for
+   * immediate data access.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TableWarmThroughputDescription">AWS
    * API Reference</a></p>
    */
@@ -62,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents warm throughput value of the base table..</p>
+     * <p>Represents warm throughput value of the base table.</p>
      */
     inline TableStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

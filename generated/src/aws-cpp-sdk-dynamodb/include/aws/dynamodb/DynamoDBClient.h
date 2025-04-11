@@ -186,8 +186,9 @@ namespace DynamoDB
          * the minimum read capacity units according to the type of read. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working
-         * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>  <p>
+         * <code>BatchGetItem</code> will result in a <code>ValidationException</code> if
+         * the same key is specified multiple times.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">AWS
          * API Reference</a></p>
          */

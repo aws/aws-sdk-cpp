@@ -8,6 +8,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/model/ValidationSettings.h>
+#include <aws/verifiedpermissions/model/DeletionProtection.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -93,6 +94,17 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     CreatePolicyStoreRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the policy store can be deleted. If enabled, the policy
+     * store can't be deleted.</p> <p>The default state is <code>DISABLED</code>.</p>
+     */
+    inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+    inline void SetDeletionProtection(DeletionProtection value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+    inline CreatePolicyStoreRequest& WithDeletionProtection(DeletionProtection value) { SetDeletionProtection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -103,6 +115,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -158,7 +158,7 @@ Aws::Vector<MarketplaceEntitlementServiceEndpointProviderEndpointTestCase> Marke
   {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://entitlement.marketplace.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://entitlement-marketplace.cn-northwest-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
