@@ -25,20 +25,20 @@ JobOutputSource::JobOutputSource(JsonView jsonValue)
 
 JobOutputSource& JobOutputSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("KMSArn"))
+  if(jsonValue.ValueExists("roleArn"))
   {
-    m_kMSArn = jsonValue.GetString("KMSArn");
-    m_kMSArnHasBeenSet = true;
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
     m_outputS3PathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("KMSArn"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
-    m_roleArnHasBeenSet = true;
+    m_kMSArn = jsonValue.GetString("KMSArn");
+    m_kMSArnHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue JobOutputSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_kMSArnHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithString("KMSArn", m_kMSArn);
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue JobOutputSource::Jsonize() const
 
   }
 
-  if(m_roleArnHasBeenSet)
+  if(m_kMSArnHasBeenSet)
   {
-   payload.WithString("roleArn", m_roleArn);
+   payload.WithString("KMSArn", m_kMSArn);
 
   }
 

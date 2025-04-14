@@ -25,6 +25,16 @@ UpdateSchemaMappingResult::UpdateSchemaMappingResult(const Aws::AmazonWebService
 UpdateSchemaMappingResult& UpdateSchemaMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("schemaName"))
+  {
+    m_schemaName = jsonValue.GetString("schemaName");
+    m_schemaNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("schemaArn"))
+  {
+    m_schemaArn = jsonValue.GetString("schemaArn");
+    m_schemaArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -38,16 +48,6 @@ UpdateSchemaMappingResult& UpdateSchemaMappingResult::operator =(const Aws::Amaz
       m_mappedInputFields.push_back(mappedInputFieldsJsonList[mappedInputFieldsIndex].AsObject());
     }
     m_mappedInputFieldsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("schemaArn"))
-  {
-    m_schemaArn = jsonValue.GetString("schemaArn");
-    m_schemaArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("schemaName"))
-  {
-    m_schemaName = jsonValue.GetString("schemaName");
-    m_schemaNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,6 +25,20 @@ BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult(const Aws::AmazonWebService
 BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = DeleteUniqueIdStatusMapper::GetDeleteUniqueIdStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errors"))
+  {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+    m_errorsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("deleted"))
   {
     Aws::Utils::Array<JsonView> deletedJsonList = jsonValue.GetArray("deleted");
@@ -42,20 +56,6 @@ BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator =(const Aws::Amaz
       m_disconnectedUniqueIds.push_back(disconnectedUniqueIdsJsonList[disconnectedUniqueIdsIndex].AsString());
     }
     m_disconnectedUniqueIdsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("errors"))
-  {
-    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
-      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
-    }
-    m_errorsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = DeleteUniqueIdStatusMapper::GetDeleteUniqueIdStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

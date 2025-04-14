@@ -30,6 +30,11 @@ IdMappingJobMetrics& IdMappingJobMetrics::operator =(JsonView jsonValue)
     m_inputRecords = jsonValue.GetInteger("inputRecords");
     m_inputRecordsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("totalRecordsProcessed"))
+  {
+    m_totalRecordsProcessed = jsonValue.GetInteger("totalRecordsProcessed");
+    m_totalRecordsProcessedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("recordsNotProcessed"))
   {
     m_recordsNotProcessed = jsonValue.GetInteger("recordsNotProcessed");
@@ -50,10 +55,10 @@ IdMappingJobMetrics& IdMappingJobMetrics::operator =(JsonView jsonValue)
     m_totalMappedTargetRecords = jsonValue.GetInteger("totalMappedTargetRecords");
     m_totalMappedTargetRecordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalRecordsProcessed"))
+  if(jsonValue.ValueExists("uniqueRecordsLoaded"))
   {
-    m_totalRecordsProcessed = jsonValue.GetInteger("totalRecordsProcessed");
-    m_totalRecordsProcessedHasBeenSet = true;
+    m_uniqueRecordsLoaded = jsonValue.GetInteger("uniqueRecordsLoaded");
+    m_uniqueRecordsLoadedHasBeenSet = true;
   }
   return *this;
 }
@@ -65,6 +70,12 @@ JsonValue IdMappingJobMetrics::Jsonize() const
   if(m_inputRecordsHasBeenSet)
   {
    payload.WithInteger("inputRecords", m_inputRecords);
+
+  }
+
+  if(m_totalRecordsProcessedHasBeenSet)
+  {
+   payload.WithInteger("totalRecordsProcessed", m_totalRecordsProcessed);
 
   }
 
@@ -92,9 +103,9 @@ JsonValue IdMappingJobMetrics::Jsonize() const
 
   }
 
-  if(m_totalRecordsProcessedHasBeenSet)
+  if(m_uniqueRecordsLoadedHasBeenSet)
   {
-   payload.WithInteger("totalRecordsProcessed", m_totalRecordsProcessed);
+   payload.WithInteger("uniqueRecordsLoaded", m_uniqueRecordsLoaded);
 
   }
 

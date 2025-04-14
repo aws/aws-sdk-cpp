@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Normalizes the attributes defined in the schema in the input data. For
-     * example, if an attribute has an <code>AttributeType</code> of
-     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
-     * 1234567890, Entity Resolution will normalize this field in the output to
-     * (123)-456-7890.</p>
-     */
-    inline bool GetApplyNormalization() const { return m_applyNormalization; }
-    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
-    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
-    inline InputSource& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An Glue table Amazon Resource Name (ARN) for the input source table.</p>
      */
     inline const Aws::String& GetInputSourceARN() const { return m_inputSourceARN; }
@@ -75,16 +61,30 @@ namespace Model
     template<typename SchemaNameT = Aws::String>
     InputSource& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
-  private:
 
-    bool m_applyNormalization{false};
-    bool m_applyNormalizationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
+     */
+    inline bool GetApplyNormalization() const { return m_applyNormalization; }
+    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
+    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
+    inline InputSource& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_inputSourceARN;
     bool m_inputSourceARNHasBeenSet = false;
 
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet = false;
+
+    bool m_applyNormalization{false};
+    bool m_applyNormalizationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A name for the matching rule.</p>
+     */
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    Rule& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
      * been defined in the <code>SchemaMapping</code>. Two records are considered to
      * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
@@ -54,25 +66,13 @@ namespace Model
     template<typename MatchingKeysT = Aws::String>
     Rule& AddMatchingKeys(MatchingKeysT&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.emplace_back(std::forward<MatchingKeysT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>A name for the matching rule.</p>
-     */
-    inline const Aws::String& GetRuleName() const { return m_ruleName; }
-    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    template<typename RuleNameT = Aws::String>
-    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
-    template<typename RuleNameT = Aws::String>
-    Rule& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Aws::String> m_matchingKeys;
-    bool m_matchingKeysHasBeenSet = false;
 
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_matchingKeys;
+    bool m_matchingKeysHasBeenSet = false;
   };
 
 } // namespace Model

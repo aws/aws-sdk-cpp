@@ -25,30 +25,30 @@ SchemaMappingSummary::SchemaMappingSummary(JsonView jsonValue)
 
 SchemaMappingSummary& SchemaMappingSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("schemaName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("hasWorkflows"))
-  {
-    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
-    m_hasWorkflowsHasBeenSet = true;
+    m_schemaName = jsonValue.GetString("schemaName");
+    m_schemaNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("schemaArn"))
   {
     m_schemaArn = jsonValue.GetString("schemaArn");
     m_schemaArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("schemaName"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_schemaName = jsonValue.GetString("schemaName");
-    m_schemaNameHasBeenSet = true;
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("hasWorkflows"))
+  {
+    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
+    m_hasWorkflowsHasBeenSet = true;
   }
   return *this;
 }
@@ -57,14 +57,9 @@ JsonValue SchemaMappingSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_schemaNameHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_hasWorkflowsHasBeenSet)
-  {
-   payload.WithBool("hasWorkflows", m_hasWorkflows);
+   payload.WithString("schemaName", m_schemaName);
 
   }
 
@@ -74,15 +69,20 @@ JsonValue SchemaMappingSummary::Jsonize() const
 
   }
 
-  if(m_schemaNameHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("schemaName", m_schemaName);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_hasWorkflowsHasBeenSet)
+  {
+   payload.WithBool("hasWorkflows", m_hasWorkflows);
+
   }
 
   return payload;

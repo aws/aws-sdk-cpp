@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/entityresolution/model/IdMappingTechniques.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/entityresolution/model/IdMappingTechniques.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/entityresolution/model/IdMappingWorkflowInputSource.h>
 #include <aws/entityresolution/model/IdMappingWorkflowOutputSource.h>
@@ -40,13 +40,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the workflow was created.</p>
+     * <p>The name of the workflow.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetIdMappingWorkflowResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    GetIdMappingWorkflowResult& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
+     * <code>IdMappingWorkflow</code> .</p>
+     */
+    inline const Aws::String& GetWorkflowArn() const { return m_workflowArn; }
+    template<typename WorkflowArnT = Aws::String>
+    void SetWorkflowArn(WorkflowArnT&& value) { m_workflowArnHasBeenSet = true; m_workflowArn = std::forward<WorkflowArnT>(value); }
+    template<typename WorkflowArnT = Aws::String>
+    GetIdMappingWorkflowResult& WithWorkflowArn(WorkflowArnT&& value) { SetWorkflowArn(std::forward<WorkflowArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +70,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     GetIdMappingWorkflowResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object which defines the ID mapping technique and any additional
-     * configurations.</p>
-     */
-    inline const IdMappingTechniques& GetIdMappingTechniques() const { return m_idMappingTechniques; }
-    template<typename IdMappingTechniquesT = IdMappingTechniques>
-    void SetIdMappingTechniques(IdMappingTechniquesT&& value) { m_idMappingTechniquesHasBeenSet = true; m_idMappingTechniques = std::forward<IdMappingTechniquesT>(value); }
-    template<typename IdMappingTechniquesT = IdMappingTechniques>
-    GetIdMappingWorkflowResult& WithIdMappingTechniques(IdMappingTechniquesT&& value) { SetIdMappingTechniques(std::forward<IdMappingTechniquesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,6 +102,40 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object which defines the ID mapping technique and any additional
+     * configurations.</p>
+     */
+    inline const IdMappingTechniques& GetIdMappingTechniques() const { return m_idMappingTechniques; }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    void SetIdMappingTechniques(IdMappingTechniquesT&& value) { m_idMappingTechniquesHasBeenSet = true; m_idMappingTechniques = std::forward<IdMappingTechniquesT>(value); }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    GetIdMappingWorkflowResult& WithIdMappingTechniques(IdMappingTechniquesT&& value) { SetIdMappingTechniques(std::forward<IdMappingTechniquesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the workflow was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetIdMappingWorkflowResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the workflow was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetIdMappingWorkflowResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to access Amazon Web Services resources on your behalf.</p>
      */
@@ -128,40 +162,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The timestamp of when the workflow was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    GetIdMappingWorkflowResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
-     * <code>IdMappingWorkflow</code> .</p>
-     */
-    inline const Aws::String& GetWorkflowArn() const { return m_workflowArn; }
-    template<typename WorkflowArnT = Aws::String>
-    void SetWorkflowArn(WorkflowArnT&& value) { m_workflowArnHasBeenSet = true; m_workflowArn = std::forward<WorkflowArnT>(value); }
-    template<typename WorkflowArnT = Aws::String>
-    GetIdMappingWorkflowResult& WithWorkflowArn(WorkflowArnT&& value) { SetWorkflowArn(std::forward<WorkflowArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the workflow.</p>
-     */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    GetIdMappingWorkflowResult& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -171,14 +171,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
+
+    Aws::String m_workflowArn;
+    bool m_workflowArnHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    IdMappingTechniques m_idMappingTechniques;
-    bool m_idMappingTechniquesHasBeenSet = false;
 
     Aws::Vector<IdMappingWorkflowInputSource> m_inputSourceConfig;
     bool m_inputSourceConfigHasBeenSet = false;
@@ -186,20 +186,20 @@ namespace Model
     Aws::Vector<IdMappingWorkflowOutputSource> m_outputSourceConfig;
     bool m_outputSourceConfigHasBeenSet = false;
 
+    IdMappingTechniques m_idMappingTechniques;
+    bool m_idMappingTechniquesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt{};
-    bool m_updatedAtHasBeenSet = false;
-
-    Aws::String m_workflowArn;
-    bool m_workflowArnHasBeenSet = false;
-
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

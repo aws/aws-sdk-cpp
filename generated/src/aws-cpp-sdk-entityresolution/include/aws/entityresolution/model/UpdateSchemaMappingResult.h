@@ -36,6 +36,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the schema.</p>
+     */
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    UpdateSchemaMappingResult& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
+     * <code>SchemaMapping</code>.</p>
+     */
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    UpdateSchemaMappingResult& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the schema.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -61,29 +84,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
-     * <code>SchemaMapping</code>.</p>
-     */
-    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
-    template<typename SchemaArnT = Aws::String>
-    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
-    template<typename SchemaArnT = Aws::String>
-    UpdateSchemaMappingResult& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the schema.</p>
-     */
-    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
-    template<typename SchemaNameT = Aws::String>
-    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
-    template<typename SchemaNameT = Aws::String>
-    UpdateSchemaMappingResult& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -93,17 +93,17 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_schemaName;
+    bool m_schemaNameHasBeenSet = false;
+
+    Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
     bool m_mappedInputFieldsHasBeenSet = false;
-
-    Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet = false;
-
-    Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

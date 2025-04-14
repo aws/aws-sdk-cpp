@@ -40,15 +40,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Customer KMS ARN for encryption at rest. If not provided, system will use an
-     * Entity Resolution managed KMS key.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
+     * this role to access Amazon Web Services resources on your behalf as part of
+     * workflow execution.</p>
      */
-    inline const Aws::String& GetKMSArn() const { return m_kMSArn; }
-    inline bool KMSArnHasBeenSet() const { return m_kMSArnHasBeenSet; }
-    template<typename KMSArnT = Aws::String>
-    void SetKMSArn(KMSArnT&& value) { m_kMSArnHasBeenSet = true; m_kMSArn = std::forward<KMSArnT>(value); }
-    template<typename KMSArnT = Aws::String>
-    IdMappingJobOutputSource& WithKMSArn(KMSArnT&& value) { SetKMSArn(std::forward<KMSArnT>(value)); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    IdMappingJobOutputSource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,27 +66,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
-     * this role to access Amazon Web Services resources on your behalf as part of
-     * workflow execution.</p>
+     * <p>Customer KMS ARN for encryption at rest. If not provided, system will use an
+     * Entity Resolution managed KMS key.</p>
      */
-    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    template<typename RoleArnT = Aws::String>
-    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
-    template<typename RoleArnT = Aws::String>
-    IdMappingJobOutputSource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
+    inline const Aws::String& GetKMSArn() const { return m_kMSArn; }
+    inline bool KMSArnHasBeenSet() const { return m_kMSArnHasBeenSet; }
+    template<typename KMSArnT = Aws::String>
+    void SetKMSArn(KMSArnT&& value) { m_kMSArnHasBeenSet = true; m_kMSArn = std::forward<KMSArnT>(value); }
+    template<typename KMSArnT = Aws::String>
+    IdMappingJobOutputSource& WithKMSArn(KMSArnT&& value) { SetKMSArn(std::forward<KMSArnT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_kMSArn;
-    bool m_kMSArnHasBeenSet = false;
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_outputS3Path;
     bool m_outputS3PathHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    Aws::String m_kMSArn;
+    bool m_kMSArnHasBeenSet = false;
   };
 
 } // namespace Model

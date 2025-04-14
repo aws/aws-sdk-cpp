@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/DeleteUniqueIdStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/entityresolution/model/DeletedUniqueId.h>
 #include <aws/entityresolution/model/DeleteUniqueIdError.h>
+#include <aws/entityresolution/model/DeletedUniqueId.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the batch delete unique ID operation.</p>
+     */
+    inline DeleteUniqueIdStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DeleteUniqueIdStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BatchDeleteUniqueIdResult& WithStatus(DeleteUniqueIdStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The errors from deleting multiple unique IDs.</p>
+     */
+    inline const Aws::Vector<DeleteUniqueIdError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<DeleteUniqueIdError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<DeleteUniqueIdError>>
+    BatchDeleteUniqueIdResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = DeleteUniqueIdError>
+    BatchDeleteUniqueIdResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique IDs that were deleted.</p>
      */
     inline const Aws::Vector<DeletedUniqueId>& GetDeleted() const { return m_deleted; }
@@ -63,28 +85,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p> The errors from deleting multiple unique IDs.</p>
-     */
-    inline const Aws::Vector<DeleteUniqueIdError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<DeleteUniqueIdError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<DeleteUniqueIdError>>
-    BatchDeleteUniqueIdResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = DeleteUniqueIdError>
-    BatchDeleteUniqueIdResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the batch delete unique ID operation.</p>
-     */
-    inline DeleteUniqueIdStatus GetStatus() const { return m_status; }
-    inline void SetStatus(DeleteUniqueIdStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline BatchDeleteUniqueIdResult& WithStatus(DeleteUniqueIdStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -94,17 +94,17 @@ namespace Model
     ///@}
   private:
 
+    DeleteUniqueIdStatus m_status{DeleteUniqueIdStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::Vector<DeleteUniqueIdError> m_errors;
+    bool m_errorsHasBeenSet = false;
+
     Aws::Vector<DeletedUniqueId> m_deleted;
     bool m_deletedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_disconnectedUniqueIds;
     bool m_disconnectedUniqueIdsHasBeenSet = false;
-
-    Aws::Vector<DeleteUniqueIdError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
-    DeleteUniqueIdStatus m_status{DeleteUniqueIdStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

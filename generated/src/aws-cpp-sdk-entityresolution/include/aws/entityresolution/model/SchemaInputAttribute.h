@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>FieldName</code>, <code>Type</code>,
-   * <code>GroupName</code>, <code>MatchKey</code>, <code>Hashing</code>, and
-   * <code>SubType</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>A configuration object for defining input data fields in Entity Resolution.
+   * The SchemaInputAttribute specifies how individual fields in your input data
+   * should be processed and matched.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaInputAttribute">AWS
    * API Reference</a></p>
    */
@@ -54,10 +54,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the attribute, selected from a list of values.</p> 
+     * <p>Normalization is only supported for <code>NAME</code>, <code>ADDRESS</code>,
+     * <code>PHONE</code>, and <code>EMAIL_ADDRESS</code>. </p> <p>If you want to
+     * normalize <code>NAME_FIRST</code>, <code>NAME_MIDDLE</code>, and
+     * <code>NAME_LAST</code>, you must group them by assigning them to the
+     * <code>NAME</code> <code>groupName</code>. </p> <p>If you want to normalize
+     * <code>ADDRESS_STREET1</code>, <code>ADDRESS_STREET2</code>,
+     * <code>ADDRESS_STREET3</code>, <code>ADDRESS_CITY</code>,
+     * <code>ADDRESS_STATE</code>, <code>ADDRESS_COUNTRY</code>, and
+     * <code>ADDRESS_POSTALCODE</code>, you must group them by assigning them to the
+     * <code>ADDRESS</code> <code>groupName</code>. </p> <p>If you want to normalize
+     * <code>PHONE_NUMBER</code> and <code>PHONE_COUNTRYCODE</code>, you must group
+     * them by assigning them to the <code>PHONE</code> <code>groupName</code>. </p>
+     * 
+     */
+    inline SchemaAttributeType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(SchemaAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SchemaInputAttribute& WithType(SchemaAttributeType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A string that instructs Entity Resolution to combine several columns into a
      * unified column with the identical attribute type. </p> <p>For example, when
-     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
-     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * working with columns such as <code>NAME_FIRST</code>, <code>NAME_MIDDLE</code>,
+     * and <code>NAME_LAST</code>, assigning them a common <code>groupName</code> will
      * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline const Aws::String& GetGroupName() const { return m_groupName; }
@@ -66,18 +89,6 @@ namespace Model
     void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
     template<typename GroupNameT = Aws::String>
     SchemaInputAttribute& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> Indicates if the column values are hashed in the schema input. If the value
-     * is set to <code>TRUE</code>, the column values are hashed. If the value is set
-     * to <code>FALSE</code>, the column values are cleartext.</p>
-     */
-    inline bool GetHashed() const { return m_hashed; }
-    inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
-    inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
-    inline SchemaInputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
     ///@}
 
     ///@{
@@ -113,23 +124,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the attribute, selected from a list of values.</p>
+     * <p> Indicates if the column values are hashed in the schema input. </p> <p>If
+     * the value is set to <code>TRUE</code>, the column values are hashed. </p> <p>If
+     * the value is set to <code>FALSE</code>, the column values are cleartext.</p>
      */
-    inline SchemaAttributeType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(SchemaAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline SchemaInputAttribute& WithType(SchemaAttributeType value) { SetType(value); return *this;}
+    inline bool GetHashed() const { return m_hashed; }
+    inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
+    inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
+    inline SchemaInputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet = false;
 
+    SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
+    bool m_typeHasBeenSet = false;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
-
-    bool m_hashed{false};
-    bool m_hashedHasBeenSet = false;
 
     Aws::String m_matchKey;
     bool m_matchKeyHasBeenSet = false;
@@ -137,8 +150,8 @@ namespace Model
     Aws::String m_subType;
     bool m_subTypeHasBeenSet = false;
 
-    SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    bool m_hashed{false};
+    bool m_hashedHasBeenSet = false;
   };
 
 } // namespace Model

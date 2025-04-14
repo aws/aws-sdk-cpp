@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
-    inline const Aws::String& GetProviderName() const { return m_providerName; }
-    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    template<typename ProviderNameT = Aws::String>
-    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
-    template<typename ProviderNameT = Aws::String>
-    ProviderServiceSummary& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
      * <code>providerService</code>.</p>
      */
@@ -64,6 +52,18 @@ namespace Model
     void SetProviderServiceArn(ProviderServiceArnT&& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = std::forward<ProviderServiceArnT>(value); }
     template<typename ProviderServiceArnT = Aws::String>
     ProviderServiceSummary& WithProviderServiceArn(ProviderServiceArnT&& value) { SetProviderServiceArn(std::forward<ProviderServiceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the provider. This name is typically the company name.</p>
+     */
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    ProviderServiceSummary& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,11 +101,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_providerName;
-    bool m_providerNameHasBeenSet = false;
-
     Aws::String m_providerServiceArn;
     bool m_providerServiceArnHasBeenSet = false;
+
+    Aws::String m_providerName;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_providerServiceDisplayName;
     bool m_providerServiceDisplayNameHasBeenSet = false;

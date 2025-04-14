@@ -10,6 +10,7 @@
 #include <aws/taxsettings/model/EstoniaAdditionalInfo.h>
 #include <aws/taxsettings/model/GeorgiaAdditionalInfo.h>
 #include <aws/taxsettings/model/GreeceAdditionalInfo.h>
+#include <aws/taxsettings/model/IndonesiaAdditionalInfo.h>
 #include <aws/taxsettings/model/IsraelAdditionalInfo.h>
 #include <aws/taxsettings/model/ItalyAdditionalInfo.h>
 #include <aws/taxsettings/model/KenyaAdditionalInfo.h>
@@ -119,6 +120,18 @@ namespace Model
     void SetGreeceAdditionalInfo(GreeceAdditionalInfoT&& value) { m_greeceAdditionalInfoHasBeenSet = true; m_greeceAdditionalInfo = std::forward<GreeceAdditionalInfoT>(value); }
     template<typename GreeceAdditionalInfoT = GreeceAdditionalInfo>
     AdditionalInfoRequest& WithGreeceAdditionalInfo(GreeceAdditionalInfoT&& value) { SetGreeceAdditionalInfo(std::forward<GreeceAdditionalInfoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> </p>
+     */
+    inline const IndonesiaAdditionalInfo& GetIndonesiaAdditionalInfo() const { return m_indonesiaAdditionalInfo; }
+    inline bool IndonesiaAdditionalInfoHasBeenSet() const { return m_indonesiaAdditionalInfoHasBeenSet; }
+    template<typename IndonesiaAdditionalInfoT = IndonesiaAdditionalInfo>
+    void SetIndonesiaAdditionalInfo(IndonesiaAdditionalInfoT&& value) { m_indonesiaAdditionalInfoHasBeenSet = true; m_indonesiaAdditionalInfo = std::forward<IndonesiaAdditionalInfoT>(value); }
+    template<typename IndonesiaAdditionalInfoT = IndonesiaAdditionalInfo>
+    AdditionalInfoRequest& WithIndonesiaAdditionalInfo(IndonesiaAdditionalInfoT&& value) { SetIndonesiaAdditionalInfo(std::forward<IndonesiaAdditionalInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -292,6 +305,9 @@ namespace Model
 
     GreeceAdditionalInfo m_greeceAdditionalInfo;
     bool m_greeceAdditionalInfoHasBeenSet = false;
+
+    IndonesiaAdditionalInfo m_indonesiaAdditionalInfo;
+    bool m_indonesiaAdditionalInfoHasBeenSet = false;
 
     IsraelAdditionalInfo m_israelAdditionalInfo;
     bool m_israelAdditionalInfoHasBeenSet = false;

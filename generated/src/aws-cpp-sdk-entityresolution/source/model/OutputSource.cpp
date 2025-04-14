@@ -25,15 +25,15 @@ OutputSource::OutputSource(JsonView jsonValue)
 
 OutputSource& OutputSource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("outputS3Path"))
+  {
+    m_outputS3Path = jsonValue.GetString("outputS3Path");
+    m_outputS3PathHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("KMSArn"))
   {
     m_kMSArn = jsonValue.GetString("KMSArn");
     m_kMSArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("applyNormalization"))
-  {
-    m_applyNormalization = jsonValue.GetBool("applyNormalization");
-    m_applyNormalizationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("output"))
   {
@@ -44,10 +44,10 @@ OutputSource& OutputSource::operator =(JsonView jsonValue)
     }
     m_outputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputS3Path"))
+  if(jsonValue.ValueExists("applyNormalization"))
   {
-    m_outputS3Path = jsonValue.GetString("outputS3Path");
-    m_outputS3PathHasBeenSet = true;
+    m_applyNormalization = jsonValue.GetBool("applyNormalization");
+    m_applyNormalizationHasBeenSet = true;
   }
   return *this;
 }
@@ -56,15 +56,15 @@ JsonValue OutputSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_kMSArnHasBeenSet)
+  if(m_outputS3PathHasBeenSet)
   {
-   payload.WithString("KMSArn", m_kMSArn);
+   payload.WithString("outputS3Path", m_outputS3Path);
 
   }
 
-  if(m_applyNormalizationHasBeenSet)
+  if(m_kMSArnHasBeenSet)
   {
-   payload.WithBool("applyNormalization", m_applyNormalization);
+   payload.WithString("KMSArn", m_kMSArn);
 
   }
 
@@ -79,9 +79,9 @@ JsonValue OutputSource::Jsonize() const
 
   }
 
-  if(m_outputS3PathHasBeenSet)
+  if(m_applyNormalizationHasBeenSet)
   {
-   payload.WithString("outputS3Path", m_outputS3Path);
+   payload.WithBool("applyNormalization", m_applyNormalization);
 
   }
 

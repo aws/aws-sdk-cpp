@@ -25,6 +25,20 @@ IdMappingRuleBasedProperties::IdMappingRuleBasedProperties(JsonView jsonValue)
 
 IdMappingRuleBasedProperties& IdMappingRuleBasedProperties::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("rules"))
+  {
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+    {
+      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+    m_rulesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ruleDefinitionType"))
+  {
+    m_ruleDefinitionType = IdMappingWorkflowRuleDefinitionTypeMapper::GetIdMappingWorkflowRuleDefinitionTypeForName(jsonValue.GetString("ruleDefinitionType"));
+    m_ruleDefinitionTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
@@ -35,41 +49,12 @@ IdMappingRuleBasedProperties& IdMappingRuleBasedProperties::operator =(JsonView 
     m_recordMatchingModel = RecordMatchingModelMapper::GetRecordMatchingModelForName(jsonValue.GetString("recordMatchingModel"));
     m_recordMatchingModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleDefinitionType"))
-  {
-    m_ruleDefinitionType = IdMappingWorkflowRuleDefinitionTypeMapper::GetIdMappingWorkflowRuleDefinitionTypeForName(jsonValue.GetString("ruleDefinitionType"));
-    m_ruleDefinitionTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("rules"))
-  {
-    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
-      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
-    }
-    m_rulesHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue IdMappingRuleBasedProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_attributeMatchingModelHasBeenSet)
-  {
-   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
-  }
-
-  if(m_recordMatchingModelHasBeenSet)
-  {
-   payload.WithString("recordMatchingModel", RecordMatchingModelMapper::GetNameForRecordMatchingModel(m_recordMatchingModel));
-  }
-
-  if(m_ruleDefinitionTypeHasBeenSet)
-  {
-   payload.WithString("ruleDefinitionType", IdMappingWorkflowRuleDefinitionTypeMapper::GetNameForIdMappingWorkflowRuleDefinitionType(m_ruleDefinitionType));
-  }
 
   if(m_rulesHasBeenSet)
   {
@@ -80,6 +65,21 @@ JsonValue IdMappingRuleBasedProperties::Jsonize() const
    }
    payload.WithArray("rules", std::move(rulesJsonList));
 
+  }
+
+  if(m_ruleDefinitionTypeHasBeenSet)
+  {
+   payload.WithString("ruleDefinitionType", IdMappingWorkflowRuleDefinitionTypeMapper::GetNameForIdMappingWorkflowRuleDefinitionType(m_ruleDefinitionType));
+  }
+
+  if(m_attributeMatchingModelHasBeenSet)
+  {
+   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
+  }
+
+  if(m_recordMatchingModelHasBeenSet)
+  {
+   payload.WithString("recordMatchingModel", RecordMatchingModelMapper::GetNameForRecordMatchingModel(m_recordMatchingModel));
   }
 
   return payload;

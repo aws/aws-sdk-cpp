@@ -53,18 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configurations required for the source ID namespace.</p>
-     */
-    inline Aws::Utils::DocumentView GetProviderSourceConfigurationDefinition() const { return m_providerSourceConfigurationDefinition; }
-    inline bool ProviderSourceConfigurationDefinitionHasBeenSet() const { return m_providerSourceConfigurationDefinitionHasBeenSet; }
-    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
-    void SetProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { m_providerSourceConfigurationDefinitionHasBeenSet = true; m_providerSourceConfigurationDefinition = std::forward<ProviderSourceConfigurationDefinitionT>(value); }
-    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
-    ProviderIdNameSpaceConfiguration& WithProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { SetProviderSourceConfigurationDefinition(std::forward<ProviderSourceConfigurationDefinitionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Configurations required for the target ID namespace.</p>
      */
     inline Aws::Utils::DocumentView GetProviderTargetConfigurationDefinition() const { return m_providerTargetConfigurationDefinition; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename ProviderTargetConfigurationDefinitionT = Aws::Utils::Document>
     ProviderIdNameSpaceConfiguration& WithProviderTargetConfigurationDefinition(ProviderTargetConfigurationDefinitionT&& value) { SetProviderTargetConfigurationDefinition(std::forward<ProviderTargetConfigurationDefinitionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configurations required for the source ID namespace.</p>
+     */
+    inline Aws::Utils::DocumentView GetProviderSourceConfigurationDefinition() const { return m_providerSourceConfigurationDefinition; }
+    inline bool ProviderSourceConfigurationDefinitionHasBeenSet() const { return m_providerSourceConfigurationDefinitionHasBeenSet; }
+    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
+    void SetProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { m_providerSourceConfigurationDefinitionHasBeenSet = true; m_providerSourceConfigurationDefinition = std::forward<ProviderSourceConfigurationDefinitionT>(value); }
+    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
+    ProviderIdNameSpaceConfiguration& WithProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { SetProviderSourceConfigurationDefinition(std::forward<ProviderSourceConfigurationDefinitionT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::Document m_providerSourceConfigurationDefinition;
-    bool m_providerSourceConfigurationDefinitionHasBeenSet = false;
-
     Aws::Utils::Document m_providerTargetConfigurationDefinition;
     bool m_providerTargetConfigurationDefinitionHasBeenSet = false;
+
+    Aws::Utils::Document m_providerSourceConfigurationDefinition;
+    bool m_providerSourceConfigurationDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

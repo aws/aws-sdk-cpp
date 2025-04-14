@@ -16,6 +16,11 @@ Aws::String AddPolicyStatementRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_effectHasBeenSet)
+  {
+   payload.WithString("effect", StatementEffectMapper::GetNameForStatementEffect(m_effect));
+  }
+
   if(m_actionHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> actionJsonList(m_action.size());
@@ -27,17 +32,6 @@ Aws::String AddPolicyStatementRequest::SerializePayload() const
 
   }
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("condition", m_condition);
-
-  }
-
-  if(m_effectHasBeenSet)
-  {
-   payload.WithString("effect", StatementEffectMapper::GetNameForStatementEffect(m_effect));
-  }
-
   if(m_principalHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> principalJsonList(m_principal.size());
@@ -46,6 +40,12 @@ Aws::String AddPolicyStatementRequest::SerializePayload() const
      principalJsonList[principalIndex].AsString(m_principal[principalIndex]);
    }
    payload.WithArray("principal", std::move(principalJsonList));
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithString("condition", m_condition);
 
   }
 

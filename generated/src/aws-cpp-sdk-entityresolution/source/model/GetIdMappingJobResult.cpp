@@ -25,25 +25,35 @@ GetIdMappingJobResult::GetIdMappingJobResult(const Aws::AmazonWebServiceResult<J
 GetIdMappingJobResult& GetIdMappingJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("errorDetails"))
-  {
-    m_errorDetails = jsonValue.GetObject("errorDetails");
-    m_errorDetailsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("metrics"))
   {
     m_metrics = jsonValue.GetObject("metrics");
     m_metricsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errorDetails"))
+  {
+    m_errorDetails = jsonValue.GetObject("errorDetails");
+    m_errorDetailsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("outputSourceConfig"))
   {
@@ -53,16 +63,6 @@ GetIdMappingJobResult& GetIdMappingJobResult::operator =(const Aws::AmazonWebSer
       m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
     }
     m_outputSourceConfigHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetDouble("startTime");
-    m_startTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

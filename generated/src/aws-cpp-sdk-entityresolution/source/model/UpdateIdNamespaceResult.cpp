@@ -25,34 +25,20 @@ UpdateIdNamespaceResult::UpdateIdNamespaceResult(const Aws::AmazonWebServiceResu
 UpdateIdNamespaceResult& UpdateIdNamespaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("idNamespaceName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("idMappingWorkflowProperties"))
-  {
-    Aws::Utils::Array<JsonView> idMappingWorkflowPropertiesJsonList = jsonValue.GetArray("idMappingWorkflowProperties");
-    for(unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength(); ++idMappingWorkflowPropertiesIndex)
-    {
-      m_idMappingWorkflowProperties.push_back(idMappingWorkflowPropertiesJsonList[idMappingWorkflowPropertiesIndex].AsObject());
-    }
-    m_idMappingWorkflowPropertiesHasBeenSet = true;
+    m_idNamespaceName = jsonValue.GetString("idNamespaceName");
+    m_idNamespaceNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("idNamespaceArn"))
   {
     m_idNamespaceArn = jsonValue.GetString("idNamespaceArn");
     m_idNamespaceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idNamespaceName"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_idNamespaceName = jsonValue.GetString("idNamespaceName");
-    m_idNamespaceNameHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputSourceConfig"))
   {
@@ -63,15 +49,29 @@ UpdateIdNamespaceResult& UpdateIdNamespaceResult::operator =(const Aws::AmazonWe
     }
     m_inputSourceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("idMappingWorkflowProperties"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
-    m_roleArnHasBeenSet = true;
+    Aws::Utils::Array<JsonView> idMappingWorkflowPropertiesJsonList = jsonValue.GetArray("idMappingWorkflowProperties");
+    for(unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength(); ++idMappingWorkflowPropertiesIndex)
+    {
+      m_idMappingWorkflowProperties.push_back(idMappingWorkflowPropertiesJsonList[idMappingWorkflowPropertiesIndex].AsObject());
+    }
+    m_idMappingWorkflowPropertiesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("type"))
   {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {

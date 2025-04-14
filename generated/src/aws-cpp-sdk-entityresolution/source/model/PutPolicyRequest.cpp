@@ -16,15 +16,15 @@ Aws::String PutPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
-
-  }
-
   if(m_tokenHasBeenSet)
   {
    payload.WithString("token", m_token);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
 
   }
 

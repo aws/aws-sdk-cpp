@@ -30,15 +30,15 @@ ProviderIdNameSpaceConfiguration& ProviderIdNameSpaceConfiguration::operator =(J
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerSourceConfigurationDefinition"))
-  {
-    m_providerSourceConfigurationDefinition = jsonValue.GetObject("providerSourceConfigurationDefinition");
-    m_providerSourceConfigurationDefinitionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("providerTargetConfigurationDefinition"))
   {
     m_providerTargetConfigurationDefinition = jsonValue.GetObject("providerTargetConfigurationDefinition");
     m_providerTargetConfigurationDefinitionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("providerSourceConfigurationDefinition"))
+  {
+    m_providerSourceConfigurationDefinition = jsonValue.GetObject("providerSourceConfigurationDefinition");
+    m_providerSourceConfigurationDefinitionHasBeenSet = true;
   }
   return *this;
 }
@@ -53,19 +53,19 @@ JsonValue ProviderIdNameSpaceConfiguration::Jsonize() const
 
   }
 
-  if(m_providerSourceConfigurationDefinitionHasBeenSet)
-  {
-    if(!m_providerSourceConfigurationDefinition.View().IsNull())
-    {
-       payload.WithObject("providerSourceConfigurationDefinition", JsonValue(m_providerSourceConfigurationDefinition.View()));
-    }
-  }
-
   if(m_providerTargetConfigurationDefinitionHasBeenSet)
   {
     if(!m_providerTargetConfigurationDefinition.View().IsNull())
     {
        payload.WithObject("providerTargetConfigurationDefinition", JsonValue(m_providerTargetConfigurationDefinition.View()));
+    }
+  }
+
+  if(m_providerSourceConfigurationDefinitionHasBeenSet)
+  {
+    if(!m_providerSourceConfigurationDefinition.View().IsNull())
+    {
+       payload.WithObject("providerSourceConfigurationDefinition", JsonValue(m_providerSourceConfigurationDefinition.View()));
     }
   }
 

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -35,16 +35,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Normalizes the attributes defined in the schema in the input data. For
-     * example, if an attribute has an <code>AttributeType</code> of
-     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
-     * 1234567890, Entity Resolution will normalize this field in the output to
-     * (123)-456-7890.</p>
+     * <p>The name of the workflow.</p>
      */
-    inline bool GetApplyNormalization() const { return m_applyNormalization; }
-    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
-    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
-    inline GetMatchIdRequest& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    GetMatchIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,25 +63,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the workflow.</p>
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
      */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    GetMatchIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    inline bool GetApplyNormalization() const { return m_applyNormalization; }
+    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
+    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
+    inline GetMatchIdRequest& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
     ///@}
   private:
 
-    bool m_applyNormalization{false};
-    bool m_applyNormalizationHasBeenSet = false;
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_record;
     bool m_recordHasBeenSet = false;
 
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
+    bool m_applyNormalization{false};
+    bool m_applyNormalizationHasBeenSet = false;
   };
 
 } // namespace Model

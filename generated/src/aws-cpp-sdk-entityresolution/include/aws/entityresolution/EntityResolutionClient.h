@@ -468,7 +468,9 @@ namespace EntityResolution
 
         /**
          * <p>Returns the corresponding Match ID of a customer record if the record has
-         * been processed.</p><p><h3>See Also:</h3>   <a
+         * been processed in a rule-based matching workflow or ML matching workflow.</p>
+         * <p>You can call this API as a dry run of an incremental load on the rule-based
+         * matching workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">AWS
          * API Reference</a></p>
          */

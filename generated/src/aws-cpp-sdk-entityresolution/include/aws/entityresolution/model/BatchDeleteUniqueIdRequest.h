@@ -37,6 +37,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the workflow.</p>
+     */
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    BatchDeleteUniqueIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The input source for the batch delete unique ID operation.</p>
      */
     inline const Aws::String& GetInputSource() const { return m_inputSource; }
@@ -60,28 +72,16 @@ namespace Model
     template<typename UniqueIdsT = Aws::String>
     BatchDeleteUniqueIdRequest& AddUniqueIds(UniqueIdsT&& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds.emplace_back(std::forward<UniqueIdsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the workflow.</p>
-     */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    BatchDeleteUniqueIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_inputSource;
     bool m_inputSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_uniqueIds;
     bool m_uniqueIdsHasBeenSet = false;
-
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
   };
 
 } // namespace Model

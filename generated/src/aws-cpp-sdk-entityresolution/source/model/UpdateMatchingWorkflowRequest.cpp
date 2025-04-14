@@ -22,12 +22,6 @@ Aws::String UpdateMatchingWorkflowRequest::SerializePayload() const
 
   }
 
-  if(m_incrementalRunConfigHasBeenSet)
-  {
-   payload.WithObject("incrementalRunConfig", m_incrementalRunConfig.Jsonize());
-
-  }
-
   if(m_inputSourceConfigHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inputSourceConfigJsonList(m_inputSourceConfig.size());
@@ -53,6 +47,12 @@ Aws::String UpdateMatchingWorkflowRequest::SerializePayload() const
   if(m_resolutionTechniquesHasBeenSet)
   {
    payload.WithObject("resolutionTechniques", m_resolutionTechniques.Jsonize());
+
+  }
+
+  if(m_incrementalRunConfigHasBeenSet)
+  {
+   payload.WithObject("incrementalRunConfig", m_incrementalRunConfig.Jsonize());
 
   }
 

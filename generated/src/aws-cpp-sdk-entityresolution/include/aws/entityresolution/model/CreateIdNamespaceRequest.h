@@ -8,10 +8,10 @@
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/entityresolution/model/IdNamespaceType.h>
-#include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowProperties.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/entityresolution/model/IdNamespaceInputSource.h>
+#include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowProperties.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the ID namespace.</p>
+     */
+    inline const Aws::String& GetIdNamespaceName() const { return m_idNamespaceName; }
+    inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
+    template<typename IdNamespaceNameT = Aws::String>
+    void SetIdNamespaceName(IdNamespaceNameT&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::forward<IdNamespaceNameT>(value); }
+    template<typename IdNamespaceNameT = Aws::String>
+    CreateIdNamespaceRequest& WithIdNamespaceName(IdNamespaceNameT&& value) { SetIdNamespaceName(std::forward<IdNamespaceNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the ID namespace.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -47,6 +59,21 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     CreateIdNamespaceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>InputSource</code> objects, which have the fields
+     * <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
+     */
+    inline const Aws::Vector<IdNamespaceInputSource>& GetInputSourceConfig() const { return m_inputSourceConfig; }
+    inline bool InputSourceConfigHasBeenSet() const { return m_inputSourceConfigHasBeenSet; }
+    template<typename InputSourceConfigT = Aws::Vector<IdNamespaceInputSource>>
+    void SetInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = std::forward<InputSourceConfigT>(value); }
+    template<typename InputSourceConfigT = Aws::Vector<IdNamespaceInputSource>>
+    CreateIdNamespaceRequest& WithInputSourceConfig(InputSourceConfigT&& value) { SetInputSourceConfig(std::forward<InputSourceConfigT>(value)); return *this;}
+    template<typename InputSourceConfigT = IdNamespaceInputSource>
+    CreateIdNamespaceRequest& AddInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.emplace_back(std::forward<InputSourceConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,29 +94,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the ID namespace.</p>
+     * <p>The type of ID namespace. There are two types: <code>SOURCE</code> and
+     * <code>TARGET</code>. </p> <p>The <code>SOURCE</code> contains configurations for
+     * <code>sourceId</code> data that will be processed in an ID mapping workflow.
+     * </p> <p>The <code>TARGET</code> contains a configuration of
+     * <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
      */
-    inline const Aws::String& GetIdNamespaceName() const { return m_idNamespaceName; }
-    inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
-    template<typename IdNamespaceNameT = Aws::String>
-    void SetIdNamespaceName(IdNamespaceNameT&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::forward<IdNamespaceNameT>(value); }
-    template<typename IdNamespaceNameT = Aws::String>
-    CreateIdNamespaceRequest& WithIdNamespaceName(IdNamespaceNameT&& value) { SetIdNamespaceName(std::forward<IdNamespaceNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of <code>InputSource</code> objects, which have the fields
-     * <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-     */
-    inline const Aws::Vector<IdNamespaceInputSource>& GetInputSourceConfig() const { return m_inputSourceConfig; }
-    inline bool InputSourceConfigHasBeenSet() const { return m_inputSourceConfigHasBeenSet; }
-    template<typename InputSourceConfigT = Aws::Vector<IdNamespaceInputSource>>
-    void SetInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = std::forward<InputSourceConfigT>(value); }
-    template<typename InputSourceConfigT = Aws::Vector<IdNamespaceInputSource>>
-    CreateIdNamespaceRequest& WithInputSourceConfig(InputSourceConfigT&& value) { SetInputSourceConfig(std::forward<InputSourceConfigT>(value)); return *this;}
-    template<typename InputSourceConfigT = IdNamespaceInputSource>
-    CreateIdNamespaceRequest& AddInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.emplace_back(std::forward<InputSourceConfigT>(value)); return *this; }
+    inline IdNamespaceType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(IdNamespaceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateIdNamespaceRequest& WithType(IdNamespaceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,42 +135,28 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of ID namespace. There are two types: <code>SOURCE</code> and
-     * <code>TARGET</code>. </p> <p>The <code>SOURCE</code> contains configurations for
-     * <code>sourceId</code> data that will be processed in an ID mapping workflow.
-     * </p> <p>The <code>TARGET</code> contains a configuration of
-     * <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
-     */
-    inline IdNamespaceType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(IdNamespaceType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline CreateIdNamespaceRequest& WithType(IdNamespaceType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<IdNamespaceIdMappingWorkflowProperties> m_idMappingWorkflowProperties;
-    bool m_idMappingWorkflowPropertiesHasBeenSet = false;
 
     Aws::String m_idNamespaceName;
     bool m_idNamespaceNameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::Vector<IdNamespaceInputSource> m_inputSourceConfig;
     bool m_inputSourceConfigHasBeenSet = false;
+
+    Aws::Vector<IdNamespaceIdMappingWorkflowProperties> m_idMappingWorkflowProperties;
+    bool m_idMappingWorkflowPropertiesHasBeenSet = false;
+
+    IdNamespaceType m_type{IdNamespaceType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    IdNamespaceType m_type{IdNamespaceType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

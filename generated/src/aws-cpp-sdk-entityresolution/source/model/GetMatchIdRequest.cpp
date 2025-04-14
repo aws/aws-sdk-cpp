@@ -16,12 +16,6 @@ Aws::String GetMatchIdRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applyNormalizationHasBeenSet)
-  {
-   payload.WithBool("applyNormalization", m_applyNormalization);
-
-  }
-
   if(m_recordHasBeenSet)
   {
    JsonValue recordJsonMap;
@@ -30,6 +24,12 @@ Aws::String GetMatchIdRequest::SerializePayload() const
      recordJsonMap.WithString(recordItem.first, recordItem.second);
    }
    payload.WithObject("record", std::move(recordJsonMap));
+
+  }
+
+  if(m_applyNormalizationHasBeenSet)
+  {
+   payload.WithBool("applyNormalization", m_applyNormalization);
 
   }
 

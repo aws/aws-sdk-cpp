@@ -25,11 +25,6 @@ ResolutionTechniques::ResolutionTechniques(JsonView jsonValue)
 
 ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("providerProperties"))
-  {
-    m_providerProperties = jsonValue.GetObject("providerProperties");
-    m_providerPropertiesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("resolutionType"))
   {
     m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
@@ -40,18 +35,17 @@ ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
     m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
     m_ruleBasedPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("providerProperties"))
+  {
+    m_providerProperties = jsonValue.GetObject("providerProperties");
+    m_providerPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ResolutionTechniques::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_providerPropertiesHasBeenSet)
-  {
-   payload.WithObject("providerProperties", m_providerProperties.Jsonize());
-
-  }
 
   if(m_resolutionTypeHasBeenSet)
   {
@@ -61,6 +55,12 @@ JsonValue ResolutionTechniques::Jsonize() const
   if(m_ruleBasedPropertiesHasBeenSet)
   {
    payload.WithObject("ruleBasedProperties", m_ruleBasedProperties.Jsonize());
+
+  }
+
+  if(m_providerPropertiesHasBeenSet)
+  {
+   payload.WithObject("providerProperties", m_providerProperties.Jsonize());
 
   }
 

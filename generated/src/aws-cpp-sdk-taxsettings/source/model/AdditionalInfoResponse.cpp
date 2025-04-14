@@ -60,6 +60,11 @@ AdditionalInfoResponse& AdditionalInfoResponse::operator =(JsonView jsonValue)
     m_indiaAdditionalInfo = jsonValue.GetObject("indiaAdditionalInfo");
     m_indiaAdditionalInfoHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("indonesiaAdditionalInfo"))
+  {
+    m_indonesiaAdditionalInfo = jsonValue.GetObject("indonesiaAdditionalInfo");
+    m_indonesiaAdditionalInfoHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("israelAdditionalInfo"))
   {
     m_israelAdditionalInfo = jsonValue.GetObject("israelAdditionalInfo");
@@ -171,6 +176,12 @@ JsonValue AdditionalInfoResponse::Jsonize() const
   if(m_indiaAdditionalInfoHasBeenSet)
   {
    payload.WithObject("indiaAdditionalInfo", m_indiaAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_indonesiaAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("indonesiaAdditionalInfo", m_indonesiaAdditionalInfo.Jsonize());
 
   }
 

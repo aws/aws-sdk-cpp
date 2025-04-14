@@ -25,15 +25,20 @@ CreateIdMappingWorkflowResult::CreateIdMappingWorkflowResult(const Aws::AmazonWe
 CreateIdMappingWorkflowResult& CreateIdMappingWorkflowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workflowName"))
+  {
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workflowArn"))
+  {
+    m_workflowArn = jsonValue.GetString("workflowArn");
+    m_workflowArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("idMappingTechniques"))
-  {
-    m_idMappingTechniques = jsonValue.GetObject("idMappingTechniques");
-    m_idMappingTechniquesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputSourceConfig"))
   {
@@ -53,20 +58,15 @@ CreateIdMappingWorkflowResult& CreateIdMappingWorkflowResult::operator =(const A
     }
     m_outputSourceConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("idMappingTechniques"))
+  {
+    m_idMappingTechniques = jsonValue.GetObject("idMappingTechniques");
+    m_idMappingTechniquesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowArn"))
-  {
-    m_workflowArn = jsonValue.GetString("workflowArn");
-    m_workflowArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowName"))
-  {
-    m_workflowName = jsonValue.GetString("workflowName");
-    m_workflowNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
