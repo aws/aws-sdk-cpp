@@ -25,15 +25,15 @@ ProviderServiceSummary::ProviderServiceSummary(JsonView jsonValue)
 
 ProviderServiceSummary& ProviderServiceSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("providerName"))
-  {
-    m_providerName = jsonValue.GetString("providerName");
-    m_providerNameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("providerServiceArn"))
   {
     m_providerServiceArn = jsonValue.GetString("providerServiceArn");
     m_providerServiceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+    m_providerNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("providerServiceDisplayName"))
   {
@@ -57,15 +57,15 @@ JsonValue ProviderServiceSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_providerNameHasBeenSet)
-  {
-   payload.WithString("providerName", m_providerName);
-
-  }
-
   if(m_providerServiceArnHasBeenSet)
   {
    payload.WithString("providerServiceArn", m_providerServiceArn);
+
+  }
+
+  if(m_providerNameHasBeenSet)
+  {
+   payload.WithString("providerName", m_providerName);
 
   }
 

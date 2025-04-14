@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/IdNamespaceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowMetadata.h>
 #include <utility>
 
@@ -43,14 +43,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the ID namespace was created.</p>
+     * <p>The name of the ID namespace.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    IdNamespaceSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const Aws::String& GetIdNamespaceName() const { return m_idNamespaceName; }
+    inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
+    template<typename IdNamespaceNameT = Aws::String>
+    void SetIdNamespaceName(IdNamespaceNameT&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::forward<IdNamespaceNameT>(value); }
+    template<typename IdNamespaceNameT = Aws::String>
+    IdNamespaceSummary& WithIdNamespaceName(IdNamespaceNameT&& value) { SetIdNamespaceName(std::forward<IdNamespaceNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ID namespace.</p>
+     */
+    inline const Aws::String& GetIdNamespaceArn() const { return m_idNamespaceArn; }
+    inline bool IdNamespaceArnHasBeenSet() const { return m_idNamespaceArnHasBeenSet; }
+    template<typename IdNamespaceArnT = Aws::String>
+    void SetIdNamespaceArn(IdNamespaceArnT&& value) { m_idNamespaceArnHasBeenSet = true; m_idNamespaceArn = std::forward<IdNamespaceArnT>(value); }
+    template<typename IdNamespaceArnT = Aws::String>
+    IdNamespaceSummary& WithIdNamespaceArn(IdNamespaceArnT&& value) { SetIdNamespaceArn(std::forward<IdNamespaceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,30 +94,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the ID namespace.</p>
-     */
-    inline const Aws::String& GetIdNamespaceArn() const { return m_idNamespaceArn; }
-    inline bool IdNamespaceArnHasBeenSet() const { return m_idNamespaceArnHasBeenSet; }
-    template<typename IdNamespaceArnT = Aws::String>
-    void SetIdNamespaceArn(IdNamespaceArnT&& value) { m_idNamespaceArnHasBeenSet = true; m_idNamespaceArn = std::forward<IdNamespaceArnT>(value); }
-    template<typename IdNamespaceArnT = Aws::String>
-    IdNamespaceSummary& WithIdNamespaceArn(IdNamespaceArnT&& value) { SetIdNamespaceArn(std::forward<IdNamespaceArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the ID namespace.</p>
-     */
-    inline const Aws::String& GetIdNamespaceName() const { return m_idNamespaceName; }
-    inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
-    template<typename IdNamespaceNameT = Aws::String>
-    void SetIdNamespaceName(IdNamespaceNameT&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::forward<IdNamespaceNameT>(value); }
-    template<typename IdNamespaceNameT = Aws::String>
-    IdNamespaceSummary& WithIdNamespaceName(IdNamespaceNameT&& value) { SetIdNamespaceName(std::forward<IdNamespaceNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of ID namespace. There are two types: <code>SOURCE</code> and
      * <code>TARGET</code>.</p> <p>The <code>SOURCE</code> contains configurations for
      * <code>sourceId</code> data that will be processed in an ID mapping workflow.
@@ -116,6 +104,18 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
     inline void SetType(IdNamespaceType value) { m_typeHasBeenSet = true; m_type = value; }
     inline IdNamespaceSummary& WithType(IdNamespaceType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the ID namespace was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    IdNamespaceSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,8 +131,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_idNamespaceName;
+    bool m_idNamespaceNameHasBeenSet = false;
+
+    Aws::String m_idNamespaceArn;
+    bool m_idNamespaceArnHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -140,14 +143,11 @@ namespace Model
     Aws::Vector<IdNamespaceIdMappingWorkflowMetadata> m_idMappingWorkflowProperties;
     bool m_idMappingWorkflowPropertiesHasBeenSet = false;
 
-    Aws::String m_idNamespaceArn;
-    bool m_idNamespaceArnHasBeenSet = false;
-
-    Aws::String m_idNamespaceName;
-    bool m_idNamespaceNameHasBeenSet = false;
-
     IdNamespaceType m_type{IdNamespaceType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;

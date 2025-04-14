@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the job.</p>
-     */
-    inline const Aws::String& GetJobId() const { return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    template<typename JobIdT = Aws::String>
-    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
-    template<typename JobIdT = Aws::String>
-    GetIdMappingJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the workflow.</p>
      */
     inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename WorkflowNameT = Aws::String>
     GetIdMappingJobRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ID of the job.</p>
+     */
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetIdMappingJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_workflowName;
     bool m_workflowNameHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

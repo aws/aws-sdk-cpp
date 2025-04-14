@@ -22,12 +22,6 @@ Aws::String UpdateIdMappingWorkflowRequest::SerializePayload() const
 
   }
 
-  if(m_idMappingTechniquesHasBeenSet)
-  {
-   payload.WithObject("idMappingTechniques", m_idMappingTechniques.Jsonize());
-
-  }
-
   if(m_inputSourceConfigHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inputSourceConfigJsonList(m_inputSourceConfig.size());
@@ -47,6 +41,12 @@ Aws::String UpdateIdMappingWorkflowRequest::SerializePayload() const
      outputSourceConfigJsonList[outputSourceConfigIndex].AsObject(m_outputSourceConfig[outputSourceConfigIndex].Jsonize());
    }
    payload.WithArray("outputSourceConfig", std::move(outputSourceConfigJsonList));
+
+  }
+
+  if(m_idMappingTechniquesHasBeenSet)
+  {
+   payload.WithObject("idMappingTechniques", m_idMappingTechniques.Jsonize());
 
   }
 

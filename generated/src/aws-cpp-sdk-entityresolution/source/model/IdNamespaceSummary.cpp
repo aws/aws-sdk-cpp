@@ -25,10 +25,15 @@ IdNamespaceSummary::IdNamespaceSummary(JsonView jsonValue)
 
 IdNamespaceSummary& IdNamespaceSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("idNamespaceName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_idNamespaceName = jsonValue.GetString("idNamespaceName");
+    m_idNamespaceNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("idNamespaceArn"))
+  {
+    m_idNamespaceArn = jsonValue.GetString("idNamespaceArn");
+    m_idNamespaceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
@@ -44,20 +49,15 @@ IdNamespaceSummary& IdNamespaceSummary::operator =(JsonView jsonValue)
     }
     m_idMappingWorkflowPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idNamespaceArn"))
-  {
-    m_idNamespaceArn = jsonValue.GetString("idNamespaceArn");
-    m_idNamespaceArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("idNamespaceName"))
-  {
-    m_idNamespaceName = jsonValue.GetString("idNamespaceName");
-    m_idNamespaceNameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
@@ -71,9 +71,16 @@ JsonValue IdNamespaceSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_idNamespaceNameHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("idNamespaceName", m_idNamespaceName);
+
+  }
+
+  if(m_idNamespaceArnHasBeenSet)
+  {
+   payload.WithString("idNamespaceArn", m_idNamespaceArn);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -93,21 +100,14 @@ JsonValue IdNamespaceSummary::Jsonize() const
 
   }
 
-  if(m_idNamespaceArnHasBeenSet)
-  {
-   payload.WithString("idNamespaceArn", m_idNamespaceArn);
-
-  }
-
-  if(m_idNamespaceNameHasBeenSet)
-  {
-   payload.WithString("idNamespaceName", m_idNamespaceName);
-
-  }
-
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)

@@ -50,6 +50,11 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator =(JsonView jsonValue)
     m_greeceAdditionalInfo = jsonValue.GetObject("greeceAdditionalInfo");
     m_greeceAdditionalInfoHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("indonesiaAdditionalInfo"))
+  {
+    m_indonesiaAdditionalInfo = jsonValue.GetObject("indonesiaAdditionalInfo");
+    m_indonesiaAdditionalInfoHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("israelAdditionalInfo"))
   {
     m_israelAdditionalInfo = jsonValue.GetObject("israelAdditionalInfo");
@@ -149,6 +154,12 @@ JsonValue AdditionalInfoRequest::Jsonize() const
   if(m_greeceAdditionalInfoHasBeenSet)
   {
    payload.WithObject("greeceAdditionalInfo", m_greeceAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_indonesiaAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("indonesiaAdditionalInfo", m_indonesiaAdditionalInfo.Jsonize());
 
   }
 

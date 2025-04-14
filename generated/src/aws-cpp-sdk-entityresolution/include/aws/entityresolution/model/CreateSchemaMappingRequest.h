@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
+     * with the same name.</p>
+     */
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    CreateSchemaMappingRequest& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the schema.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -65,19 +78,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
-     * with the same name.</p>
-     */
-    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
-    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    template<typename SchemaNameT = Aws::String>
-    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
-    template<typename SchemaNameT = Aws::String>
-    CreateSchemaMappingRequest& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -93,14 +93,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_schemaName;
+    bool m_schemaNameHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
     bool m_mappedInputFieldsHasBeenSet = false;
-
-    Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

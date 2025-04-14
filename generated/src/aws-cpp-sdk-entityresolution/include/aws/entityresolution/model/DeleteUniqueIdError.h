@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/entityresolution/model/DeleteUniqueIdErrorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/model/DeleteUniqueIdErrorType.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The error type for the batch delete unique ID operation.</p>
-     */
-    inline DeleteUniqueIdErrorType GetErrorType() const { return m_errorType; }
-    inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(DeleteUniqueIdErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline DeleteUniqueIdError& WithErrorType(DeleteUniqueIdErrorType value) { SetErrorType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique ID that could not be deleted.</p>
      */
     inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
@@ -59,13 +49,23 @@ namespace Model
     template<typename UniqueIdT = Aws::String>
     DeleteUniqueIdError& WithUniqueId(UniqueIdT&& value) { SetUniqueId(std::forward<UniqueIdT>(value)); return *this;}
     ///@}
-  private:
 
-    DeleteUniqueIdErrorType m_errorType{DeleteUniqueIdErrorType::NOT_SET};
-    bool m_errorTypeHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The error type for the batch delete unique ID operation.</p>
+     */
+    inline DeleteUniqueIdErrorType GetErrorType() const { return m_errorType; }
+    inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
+    inline void SetErrorType(DeleteUniqueIdErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline DeleteUniqueIdError& WithErrorType(DeleteUniqueIdErrorType value) { SetErrorType(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_uniqueId;
     bool m_uniqueIdHasBeenSet = false;
+
+    DeleteUniqueIdErrorType m_errorType{DeleteUniqueIdErrorType::NOT_SET};
+    bool m_errorTypeHasBeenSet = false;
   };
 
 } // namespace Model

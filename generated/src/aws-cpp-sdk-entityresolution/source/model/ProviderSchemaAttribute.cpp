@@ -30,20 +30,20 @@ ProviderSchemaAttribute& ProviderSchemaAttribute::operator =(JsonView jsonValue)
     m_fieldName = jsonValue.GetString("fieldName");
     m_fieldNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hashing"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_hashing = jsonValue.GetBool("hashing");
-    m_hashingHasBeenSet = true;
+    m_type = SchemaAttributeTypeMapper::GetSchemaAttributeTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("subType"))
   {
     m_subType = jsonValue.GetString("subType");
     m_subTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("hashing"))
   {
-    m_type = SchemaAttributeTypeMapper::GetSchemaAttributeTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_hashing = jsonValue.GetBool("hashing");
+    m_hashingHasBeenSet = true;
   }
   return *this;
 }
@@ -58,10 +58,9 @@ JsonValue ProviderSchemaAttribute::Jsonize() const
 
   }
 
-  if(m_hashingHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithBool("hashing", m_hashing);
-
+   payload.WithString("type", SchemaAttributeTypeMapper::GetNameForSchemaAttributeType(m_type));
   }
 
   if(m_subTypeHasBeenSet)
@@ -70,9 +69,10 @@ JsonValue ProviderSchemaAttribute::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_hashingHasBeenSet)
   {
-   payload.WithString("type", SchemaAttributeTypeMapper::GetNameForSchemaAttributeType(m_type));
+   payload.WithBool("hashing", m_hashing);
+
   }
 
   return payload;

@@ -7,9 +7,9 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/entityresolution/model/IncrementalRunConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/ResolutionTechniques.h>
+#include <aws/entityresolution/model/IncrementalRunConfig.h>
 #include <aws/entityresolution/model/InputSource.h>
 #include <aws/entityresolution/model/OutputSource.h>
 #include <utility>
@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the workflow to be retrieved.</p>
+     */
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    UpdateMatchingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the workflow.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -47,19 +59,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     UpdateMatchingWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object which defines an incremental run type and has only
-     * <code>incrementalRunType</code> as a field.</p>
-     */
-    inline const IncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
-    inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }
-    template<typename IncrementalRunConfigT = IncrementalRunConfig>
-    void SetIncrementalRunConfig(IncrementalRunConfigT&& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = std::forward<IncrementalRunConfigT>(value); }
-    template<typename IncrementalRunConfigT = IncrementalRunConfig>
-    UpdateMatchingWorkflowRequest& WithIncrementalRunConfig(IncrementalRunConfigT&& value) { SetIncrementalRunConfig(std::forward<IncrementalRunConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,6 +107,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object which defines an incremental run type and has only
+     * <code>incrementalRunType</code> as a field.</p>
+     */
+    inline const IncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
+    inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }
+    template<typename IncrementalRunConfigT = IncrementalRunConfig>
+    void SetIncrementalRunConfig(IncrementalRunConfigT&& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = std::forward<IncrementalRunConfigT>(value); }
+    template<typename IncrementalRunConfigT = IncrementalRunConfig>
+    UpdateMatchingWorkflowRequest& WithIncrementalRunConfig(IncrementalRunConfigT&& value) { SetIncrementalRunConfig(std::forward<IncrementalRunConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
@@ -118,25 +130,13 @@ namespace Model
     template<typename RoleArnT = Aws::String>
     UpdateMatchingWorkflowRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the workflow to be retrieved.</p>
-     */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    UpdateMatchingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    IncrementalRunConfig m_incrementalRunConfig;
-    bool m_incrementalRunConfigHasBeenSet = false;
 
     Aws::Vector<InputSource> m_inputSourceConfig;
     bool m_inputSourceConfigHasBeenSet = false;
@@ -147,11 +147,11 @@ namespace Model
     ResolutionTechniques m_resolutionTechniques;
     bool m_resolutionTechniquesHasBeenSet = false;
 
+    IncrementalRunConfig m_incrementalRunConfig;
+    bool m_incrementalRunConfigHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
-
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
   };
 
 } // namespace Model

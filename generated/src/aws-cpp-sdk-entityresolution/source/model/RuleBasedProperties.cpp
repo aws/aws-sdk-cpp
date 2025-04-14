@@ -25,6 +25,15 @@ RuleBasedProperties::RuleBasedProperties(JsonView jsonValue)
 
 RuleBasedProperties& RuleBasedProperties::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("rules"))
+  {
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+    {
+      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+    m_rulesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
@@ -35,31 +44,12 @@ RuleBasedProperties& RuleBasedProperties::operator =(JsonView jsonValue)
     m_matchPurpose = MatchPurposeMapper::GetMatchPurposeForName(jsonValue.GetString("matchPurpose"));
     m_matchPurposeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rules"))
-  {
-    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
-      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
-    }
-    m_rulesHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RuleBasedProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_attributeMatchingModelHasBeenSet)
-  {
-   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
-  }
-
-  if(m_matchPurposeHasBeenSet)
-  {
-   payload.WithString("matchPurpose", MatchPurposeMapper::GetNameForMatchPurpose(m_matchPurpose));
-  }
 
   if(m_rulesHasBeenSet)
   {
@@ -70,6 +60,16 @@ JsonValue RuleBasedProperties::Jsonize() const
    }
    payload.WithArray("rules", std::move(rulesJsonList));
 
+  }
+
+  if(m_attributeMatchingModelHasBeenSet)
+  {
+   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
+  }
+
+  if(m_matchPurposeHasBeenSet)
+  {
+   payload.WithString("matchPurpose", MatchPurposeMapper::GetNameForMatchPurpose(m_matchPurpose));
   }
 
   return payload;

@@ -16,15 +16,15 @@ Aws::String CreateIdMappingWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
+  if(m_workflowNameHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("workflowName", m_workflowName);
 
   }
 
-  if(m_idMappingTechniquesHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("idMappingTechniques", m_idMappingTechniques.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 
@@ -50,6 +50,12 @@ Aws::String CreateIdMappingWorkflowRequest::SerializePayload() const
 
   }
 
+  if(m_idMappingTechniquesHasBeenSet)
+  {
+   payload.WithObject("idMappingTechniques", m_idMappingTechniques.Jsonize());
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
@@ -64,12 +70,6 @@ Aws::String CreateIdMappingWorkflowRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_workflowNameHasBeenSet)
-  {
-   payload.WithString("workflowName", m_workflowName);
 
   }
 

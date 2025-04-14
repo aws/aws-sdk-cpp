@@ -16,6 +16,12 @@ Aws::String CreateSchemaMappingRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_schemaNameHasBeenSet)
+  {
+   payload.WithString("schemaName", m_schemaName);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -30,12 +36,6 @@ Aws::String CreateSchemaMappingRequest::SerializePayload() const
      mappedInputFieldsJsonList[mappedInputFieldsIndex].AsObject(m_mappedInputFields[mappedInputFieldsIndex].Jsonize());
    }
    payload.WithArray("mappedInputFields", std::move(mappedInputFieldsJsonList));
-
-  }
-
-  if(m_schemaNameHasBeenSet)
-  {
-   payload.WithString("schemaName", m_schemaName);
 
   }
 

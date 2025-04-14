@@ -22,17 +22,6 @@ Aws::String UpdateIdNamespaceRequest::SerializePayload() const
 
   }
 
-  if(m_idMappingWorkflowPropertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> idMappingWorkflowPropertiesJsonList(m_idMappingWorkflowProperties.size());
-   for(unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength(); ++idMappingWorkflowPropertiesIndex)
-   {
-     idMappingWorkflowPropertiesJsonList[idMappingWorkflowPropertiesIndex].AsObject(m_idMappingWorkflowProperties[idMappingWorkflowPropertiesIndex].Jsonize());
-   }
-   payload.WithArray("idMappingWorkflowProperties", std::move(idMappingWorkflowPropertiesJsonList));
-
-  }
-
   if(m_inputSourceConfigHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inputSourceConfigJsonList(m_inputSourceConfig.size());
@@ -41,6 +30,17 @@ Aws::String UpdateIdNamespaceRequest::SerializePayload() const
      inputSourceConfigJsonList[inputSourceConfigIndex].AsObject(m_inputSourceConfig[inputSourceConfigIndex].Jsonize());
    }
    payload.WithArray("inputSourceConfig", std::move(inputSourceConfigJsonList));
+
+  }
+
+  if(m_idMappingWorkflowPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> idMappingWorkflowPropertiesJsonList(m_idMappingWorkflowProperties.size());
+   for(unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength(); ++idMappingWorkflowPropertiesIndex)
+   {
+     idMappingWorkflowPropertiesJsonList[idMappingWorkflowPropertiesIndex].AsObject(m_idMappingWorkflowProperties[idMappingWorkflowPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("idMappingWorkflowProperties", std::move(idMappingWorkflowPropertiesJsonList));
 
   }
 

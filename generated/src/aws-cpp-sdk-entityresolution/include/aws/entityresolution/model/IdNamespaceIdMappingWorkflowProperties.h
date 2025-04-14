@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/model/IdMappingType.h>
-#include <aws/entityresolution/model/NamespaceProviderProperties.h>
 #include <aws/entityresolution/model/NamespaceRuleBasedProperties.h>
+#include <aws/entityresolution/model/NamespaceProviderProperties.h>
 #include <utility>
 
 namespace Aws
@@ -53,19 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object which defines any additional configurations required by the
-     * provider service.</p>
-     */
-    inline const NamespaceProviderProperties& GetProviderProperties() const { return m_providerProperties; }
-    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-    template<typename ProviderPropertiesT = NamespaceProviderProperties>
-    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
-    template<typename ProviderPropertiesT = NamespaceProviderProperties>
-    IdNamespaceIdMappingWorkflowProperties& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> An object which defines any additional configurations required by rule-based
      * matching.</p>
      */
@@ -76,16 +63,29 @@ namespace Model
     template<typename RuleBasedPropertiesT = NamespaceRuleBasedProperties>
     IdNamespaceIdMappingWorkflowProperties& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object which defines any additional configurations required by the
+     * provider service.</p>
+     */
+    inline const NamespaceProviderProperties& GetProviderProperties() const { return m_providerProperties; }
+    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
+    template<typename ProviderPropertiesT = NamespaceProviderProperties>
+    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
+    template<typename ProviderPropertiesT = NamespaceProviderProperties>
+    IdNamespaceIdMappingWorkflowProperties& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
+    ///@}
   private:
 
     IdMappingType m_idMappingType{IdMappingType::NOT_SET};
     bool m_idMappingTypeHasBeenSet = false;
 
-    NamespaceProviderProperties m_providerProperties;
-    bool m_providerPropertiesHasBeenSet = false;
-
     NamespaceRuleBasedProperties m_ruleBasedProperties;
     bool m_ruleBasedPropertiesHasBeenSet = false;
+
+    NamespaceProviderProperties m_providerProperties;
+    bool m_providerPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

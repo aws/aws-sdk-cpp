@@ -25,6 +25,24 @@ NamespaceRuleBasedProperties::NamespaceRuleBasedProperties(JsonView jsonValue)
 
 NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("rules"))
+  {
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+    {
+      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+    m_rulesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ruleDefinitionTypes"))
+  {
+    Aws::Utils::Array<JsonView> ruleDefinitionTypesJsonList = jsonValue.GetArray("ruleDefinitionTypes");
+    for(unsigned ruleDefinitionTypesIndex = 0; ruleDefinitionTypesIndex < ruleDefinitionTypesJsonList.GetLength(); ++ruleDefinitionTypesIndex)
+    {
+      m_ruleDefinitionTypes.push_back(IdMappingWorkflowRuleDefinitionTypeMapper::GetIdMappingWorkflowRuleDefinitionTypeForName(ruleDefinitionTypesJsonList[ruleDefinitionTypesIndex].AsString()));
+    }
+    m_ruleDefinitionTypesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
@@ -39,24 +57,6 @@ NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView 
     }
     m_recordMatchingModelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleDefinitionTypes"))
-  {
-    Aws::Utils::Array<JsonView> ruleDefinitionTypesJsonList = jsonValue.GetArray("ruleDefinitionTypes");
-    for(unsigned ruleDefinitionTypesIndex = 0; ruleDefinitionTypesIndex < ruleDefinitionTypesJsonList.GetLength(); ++ruleDefinitionTypesIndex)
-    {
-      m_ruleDefinitionTypes.push_back(IdMappingWorkflowRuleDefinitionTypeMapper::GetIdMappingWorkflowRuleDefinitionTypeForName(ruleDefinitionTypesJsonList[ruleDefinitionTypesIndex].AsString()));
-    }
-    m_ruleDefinitionTypesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("rules"))
-  {
-    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
-      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
-    }
-    m_rulesHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -64,19 +64,14 @@ JsonValue NamespaceRuleBasedProperties::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_attributeMatchingModelHasBeenSet)
+  if(m_rulesHasBeenSet)
   {
-   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
-  }
-
-  if(m_recordMatchingModelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordMatchingModelsJsonList(m_recordMatchingModels.size());
-   for(unsigned recordMatchingModelsIndex = 0; recordMatchingModelsIndex < recordMatchingModelsJsonList.GetLength(); ++recordMatchingModelsIndex)
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
-     recordMatchingModelsJsonList[recordMatchingModelsIndex].AsString(RecordMatchingModelMapper::GetNameForRecordMatchingModel(m_recordMatchingModels[recordMatchingModelsIndex]));
+     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
-   payload.WithArray("recordMatchingModels", std::move(recordMatchingModelsJsonList));
+   payload.WithArray("rules", std::move(rulesJsonList));
 
   }
 
@@ -91,14 +86,19 @@ JsonValue NamespaceRuleBasedProperties::Jsonize() const
 
   }
 
-  if(m_rulesHasBeenSet)
+  if(m_attributeMatchingModelHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+   payload.WithString("attributeMatchingModel", AttributeMatchingModelMapper::GetNameForAttributeMatchingModel(m_attributeMatchingModel));
+  }
+
+  if(m_recordMatchingModelsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> recordMatchingModelsJsonList(m_recordMatchingModels.size());
+   for(unsigned recordMatchingModelsIndex = 0; recordMatchingModelsIndex < recordMatchingModelsJsonList.GetLength(); ++recordMatchingModelsIndex)
    {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+     recordMatchingModelsJsonList[recordMatchingModelsIndex].AsString(RecordMatchingModelMapper::GetNameForRecordMatchingModel(m_recordMatchingModels[recordMatchingModelsIndex]));
    }
-   payload.WithArray("rules", std::move(rulesJsonList));
+   payload.WithArray("recordMatchingModels", std::move(recordMatchingModelsJsonList));
 
   }
 

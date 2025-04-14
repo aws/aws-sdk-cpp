@@ -25,6 +25,16 @@ IdMappingWorkflowSummary::IdMappingWorkflowSummary(JsonView jsonValue)
 
 IdMappingWorkflowSummary& IdMappingWorkflowSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("workflowName"))
+  {
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workflowArn"))
+  {
+    m_workflowArn = jsonValue.GetString("workflowArn");
+    m_workflowArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -35,22 +45,24 @@ IdMappingWorkflowSummary& IdMappingWorkflowSummary::operator =(JsonView jsonValu
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workflowArn"))
-  {
-    m_workflowArn = jsonValue.GetString("workflowArn");
-    m_workflowArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowName"))
-  {
-    m_workflowName = jsonValue.GetString("workflowName");
-    m_workflowNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue IdMappingWorkflowSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_workflowNameHasBeenSet)
+  {
+   payload.WithString("workflowName", m_workflowName);
+
+  }
+
+  if(m_workflowArnHasBeenSet)
+  {
+   payload.WithString("workflowArn", m_workflowArn);
+
+  }
 
   if(m_createdAtHasBeenSet)
   {
@@ -60,18 +72,6 @@ JsonValue IdMappingWorkflowSummary::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_workflowArnHasBeenSet)
-  {
-   payload.WithString("workflowArn", m_workflowArn);
-
-  }
-
-  if(m_workflowNameHasBeenSet)
-  {
-   payload.WithString("workflowName", m_workflowName);
-
   }
 
   return payload;

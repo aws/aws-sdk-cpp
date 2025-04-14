@@ -52,12 +52,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The hashing attribute of the provider schema.</p>
+     * <p>The type of the provider schema attribute.</p>
      */
-    inline bool GetHashing() const { return m_hashing; }
-    inline bool HashingHasBeenSet() const { return m_hashingHasBeenSet; }
-    inline void SetHashing(bool value) { m_hashingHasBeenSet = true; m_hashing = value; }
-    inline ProviderSchemaAttribute& WithHashing(bool value) { SetHashing(value); return *this;}
+    inline SchemaAttributeType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(SchemaAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProviderSchemaAttribute& WithType(SchemaAttributeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +74,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the provider schema attribute.</p>
+     * <p>The hashing attribute of the provider schema.</p>
      */
-    inline SchemaAttributeType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(SchemaAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ProviderSchemaAttribute& WithType(SchemaAttributeType value) { SetType(value); return *this;}
+    inline bool GetHashing() const { return m_hashing; }
+    inline bool HashingHasBeenSet() const { return m_hashingHasBeenSet; }
+    inline void SetHashing(bool value) { m_hashingHasBeenSet = true; m_hashing = value; }
+    inline ProviderSchemaAttribute& WithHashing(bool value) { SetHashing(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet = false;
 
-    bool m_hashing{false};
-    bool m_hashingHasBeenSet = false;
+    SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_subType;
     bool m_subTypeHasBeenSet = false;
 
-    SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    bool m_hashing{false};
+    bool m_hashingHasBeenSet = false;
   };
 
 } // namespace Model

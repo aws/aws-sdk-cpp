@@ -16,15 +16,15 @@ Aws::String CreateMatchingWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
+  if(m_workflowNameHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("workflowName", m_workflowName);
 
   }
 
-  if(m_incrementalRunConfigHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("incrementalRunConfig", m_incrementalRunConfig.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 
@@ -56,6 +56,12 @@ Aws::String CreateMatchingWorkflowRequest::SerializePayload() const
 
   }
 
+  if(m_incrementalRunConfigHasBeenSet)
+  {
+   payload.WithObject("incrementalRunConfig", m_incrementalRunConfig.Jsonize());
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
@@ -70,12 +76,6 @@ Aws::String CreateMatchingWorkflowRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_workflowNameHasBeenSet)
-  {
-   payload.WithString("workflowName", m_workflowName);
 
   }
 

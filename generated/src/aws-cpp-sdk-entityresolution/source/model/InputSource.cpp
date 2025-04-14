@@ -25,11 +25,6 @@ InputSource::InputSource(JsonView jsonValue)
 
 InputSource& InputSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("applyNormalization"))
-  {
-    m_applyNormalization = jsonValue.GetBool("applyNormalization");
-    m_applyNormalizationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("inputSourceARN"))
   {
     m_inputSourceARN = jsonValue.GetString("inputSourceARN");
@@ -40,18 +35,17 @@ InputSource& InputSource::operator =(JsonView jsonValue)
     m_schemaName = jsonValue.GetString("schemaName");
     m_schemaNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("applyNormalization"))
+  {
+    m_applyNormalization = jsonValue.GetBool("applyNormalization");
+    m_applyNormalizationHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue InputSource::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_applyNormalizationHasBeenSet)
-  {
-   payload.WithBool("applyNormalization", m_applyNormalization);
-
-  }
 
   if(m_inputSourceARNHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue InputSource::Jsonize() const
   if(m_schemaNameHasBeenSet)
   {
    payload.WithString("schemaName", m_schemaName);
+
+  }
+
+  if(m_applyNormalizationHasBeenSet)
+  {
+   payload.WithBool("applyNormalization", m_applyNormalization);
 
   }
 

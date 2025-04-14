@@ -30,15 +30,15 @@ DeletePolicyStatementResult& DeletePolicyStatementResult::operator =(const Aws::
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policy"))
-  {
-    m_policy = jsonValue.GetString("policy");
-    m_policyHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
     m_tokenHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
+    m_policyHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

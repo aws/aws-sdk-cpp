@@ -25,20 +25,20 @@ GetSchemaMappingResult::GetSchemaMappingResult(const Aws::AmazonWebServiceResult
 GetSchemaMappingResult& GetSchemaMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("schemaName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_schemaName = jsonValue.GetString("schemaName");
+    m_schemaNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("schemaArn"))
+  {
+    m_schemaArn = jsonValue.GetString("schemaArn");
+    m_schemaArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("hasWorkflows"))
-  {
-    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
-    m_hasWorkflowsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("mappedInputFields"))
   {
@@ -49,15 +49,15 @@ GetSchemaMappingResult& GetSchemaMappingResult::operator =(const Aws::AmazonWebS
     }
     m_mappedInputFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("schemaArn"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_schemaArn = jsonValue.GetString("schemaArn");
-    m_schemaArnHasBeenSet = true;
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("schemaName"))
+  if(jsonValue.ValueExists("updatedAt"))
   {
-    m_schemaName = jsonValue.GetString("schemaName");
-    m_schemaNameHasBeenSet = true;
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -68,10 +68,10 @@ GetSchemaMappingResult& GetSchemaMappingResult::operator =(const Aws::AmazonWebS
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("hasWorkflows"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
+    m_hasWorkflowsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

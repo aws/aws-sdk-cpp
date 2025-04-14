@@ -25,20 +25,20 @@ ProviderProperties::ProviderProperties(JsonView jsonValue)
 
 ProviderProperties& ProviderProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("intermediateSourceConfiguration"))
+  if(jsonValue.ValueExists("providerServiceArn"))
   {
-    m_intermediateSourceConfiguration = jsonValue.GetObject("intermediateSourceConfiguration");
-    m_intermediateSourceConfigurationHasBeenSet = true;
+    m_providerServiceArn = jsonValue.GetString("providerServiceArn");
+    m_providerServiceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("providerConfiguration"))
   {
     m_providerConfiguration = jsonValue.GetObject("providerConfiguration");
     m_providerConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerServiceArn"))
+  if(jsonValue.ValueExists("intermediateSourceConfiguration"))
   {
-    m_providerServiceArn = jsonValue.GetString("providerServiceArn");
-    m_providerServiceArnHasBeenSet = true;
+    m_intermediateSourceConfiguration = jsonValue.GetObject("intermediateSourceConfiguration");
+    m_intermediateSourceConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue ProviderProperties::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_intermediateSourceConfigurationHasBeenSet)
+  if(m_providerServiceArnHasBeenSet)
   {
-   payload.WithObject("intermediateSourceConfiguration", m_intermediateSourceConfiguration.Jsonize());
+   payload.WithString("providerServiceArn", m_providerServiceArn);
 
   }
 
@@ -61,9 +61,9 @@ JsonValue ProviderProperties::Jsonize() const
     }
   }
 
-  if(m_providerServiceArnHasBeenSet)
+  if(m_intermediateSourceConfigurationHasBeenSet)
   {
-   payload.WithString("providerServiceArn", m_providerServiceArn);
+   payload.WithObject("intermediateSourceConfiguration", m_intermediateSourceConfiguration.Jsonize());
 
   }
 

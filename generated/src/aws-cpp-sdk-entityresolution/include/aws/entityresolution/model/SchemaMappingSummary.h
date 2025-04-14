@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,24 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
+     * <p>The name of the schema.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    SchemaMappingSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
-     */
-    inline bool GetHasWorkflows() const { return m_hasWorkflows; }
-    inline bool HasWorkflowsHasBeenSet() const { return m_hasWorkflowsHasBeenSet; }
-    inline void SetHasWorkflows(bool value) { m_hasWorkflowsHasBeenSet = true; m_hasWorkflows = value; }
-    inline SchemaMappingSummary& WithHasWorkflows(bool value) { SetHasWorkflows(value); return *this;}
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    SchemaMappingSummary& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +66,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the schema.</p>
+     * <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
      */
-    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
-    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    template<typename SchemaNameT = Aws::String>
-    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
-    template<typename SchemaNameT = Aws::String>
-    SchemaMappingSummary& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    SchemaMappingSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,22 +87,32 @@ namespace Model
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     SchemaMappingSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline bool GetHasWorkflows() const { return m_hasWorkflows; }
+    inline bool HasWorkflowsHasBeenSet() const { return m_hasWorkflowsHasBeenSet; }
+    inline void SetHasWorkflows(bool value) { m_hasWorkflowsHasBeenSet = true; m_hasWorkflows = value; }
+    inline SchemaMappingSummary& WithHasWorkflows(bool value) { SetHasWorkflows(value); return *this;}
+    ///@}
   private:
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    bool m_hasWorkflows{false};
-    bool m_hasWorkflowsHasBeenSet = false;
-
-    Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet = false;
 
+    Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    bool m_hasWorkflows{false};
+    bool m_hasWorkflowsHasBeenSet = false;
   };
 
 } // namespace Model

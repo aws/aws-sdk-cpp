@@ -47,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier for the current revision of the policy.</p>
+     */
+    inline const Aws::String& GetToken() const { return m_token; }
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    PutPolicyRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The resource-based policy.</p>  <p>If you set the value of the
      * <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code>
      * for the <code>PutPolicy</code> operation, you must also set the value of the
@@ -60,28 +72,16 @@ namespace Model
     template<typename PolicyT = Aws::String>
     PutPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A unique identifier for the current revision of the policy.</p>
-     */
-    inline const Aws::String& GetToken() const { return m_token; }
-    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    template<typename TokenT = Aws::String>
-    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
-    template<typename TokenT = Aws::String>
-    PutPolicyRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
-
     Aws::String m_token;
     bool m_tokenHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

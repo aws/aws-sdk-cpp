@@ -44,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The S3 path to which Entity Resolution will write the output table.</p>
+     */
+    inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
+    inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
+    template<typename OutputS3PathT = Aws::String>
+    void SetOutputS3Path(OutputS3PathT&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::forward<OutputS3PathT>(value); }
+    template<typename OutputS3PathT = Aws::String>
+    OutputSource& WithOutputS3Path(OutputS3PathT&& value) { SetOutputS3Path(std::forward<OutputS3PathT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Customer KMS ARN for encryption at rest. If not provided, system will use an
      * Entity Resolution managed KMS key.</p>
      */
@@ -53,20 +65,6 @@ namespace Model
     void SetKMSArn(KMSArnT&& value) { m_kMSArnHasBeenSet = true; m_kMSArn = std::forward<KMSArnT>(value); }
     template<typename KMSArnT = Aws::String>
     OutputSource& WithKMSArn(KMSArnT&& value) { SetKMSArn(std::forward<KMSArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Normalizes the attributes defined in the schema in the input data. For
-     * example, if an attribute has an <code>AttributeType</code> of
-     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
-     * 1234567890, Entity Resolution will normalize this field in the output to
-     * (123)-456-7890.</p>
-     */
-    inline bool GetApplyNormalization() const { return m_applyNormalization; }
-    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
-    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
-    inline OutputSource& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
     ///@}
 
     ///@{
@@ -88,28 +86,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The S3 path to which Entity Resolution will write the output table.</p>
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
      */
-    inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
-    inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
-    template<typename OutputS3PathT = Aws::String>
-    void SetOutputS3Path(OutputS3PathT&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::forward<OutputS3PathT>(value); }
-    template<typename OutputS3PathT = Aws::String>
-    OutputSource& WithOutputS3Path(OutputS3PathT&& value) { SetOutputS3Path(std::forward<OutputS3PathT>(value)); return *this;}
+    inline bool GetApplyNormalization() const { return m_applyNormalization; }
+    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
+    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
+    inline OutputSource& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_outputS3Path;
+    bool m_outputS3PathHasBeenSet = false;
 
     Aws::String m_kMSArn;
     bool m_kMSArnHasBeenSet = false;
 
-    bool m_applyNormalization{false};
-    bool m_applyNormalizationHasBeenSet = false;
-
     Aws::Vector<OutputAttribute> m_output;
     bool m_outputHasBeenSet = false;
 
-    Aws::String m_outputS3Path;
-    bool m_outputS3PathHasBeenSet = false;
+    bool m_applyNormalization{false};
+    bool m_applyNormalizationHasBeenSet = false;
   };
 
 } // namespace Model

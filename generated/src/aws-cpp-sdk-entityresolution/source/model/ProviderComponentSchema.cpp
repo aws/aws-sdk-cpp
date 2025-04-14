@@ -25,15 +25,6 @@ ProviderComponentSchema::ProviderComponentSchema(JsonView jsonValue)
 
 ProviderComponentSchema& ProviderComponentSchema::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("providerSchemaAttributes"))
-  {
-    Aws::Utils::Array<JsonView> providerSchemaAttributesJsonList = jsonValue.GetArray("providerSchemaAttributes");
-    for(unsigned providerSchemaAttributesIndex = 0; providerSchemaAttributesIndex < providerSchemaAttributesJsonList.GetLength(); ++providerSchemaAttributesIndex)
-    {
-      m_providerSchemaAttributes.push_back(providerSchemaAttributesJsonList[providerSchemaAttributesIndex].AsObject());
-    }
-    m_providerSchemaAttributesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("schemas"))
   {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("schemas");
@@ -50,23 +41,21 @@ ProviderComponentSchema& ProviderComponentSchema::operator =(JsonView jsonValue)
     }
     m_schemasHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("providerSchemaAttributes"))
+  {
+    Aws::Utils::Array<JsonView> providerSchemaAttributesJsonList = jsonValue.GetArray("providerSchemaAttributes");
+    for(unsigned providerSchemaAttributesIndex = 0; providerSchemaAttributesIndex < providerSchemaAttributesJsonList.GetLength(); ++providerSchemaAttributesIndex)
+    {
+      m_providerSchemaAttributes.push_back(providerSchemaAttributesJsonList[providerSchemaAttributesIndex].AsObject());
+    }
+    m_providerSchemaAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProviderComponentSchema::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_providerSchemaAttributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> providerSchemaAttributesJsonList(m_providerSchemaAttributes.size());
-   for(unsigned providerSchemaAttributesIndex = 0; providerSchemaAttributesIndex < providerSchemaAttributesJsonList.GetLength(); ++providerSchemaAttributesIndex)
-   {
-     providerSchemaAttributesJsonList[providerSchemaAttributesIndex].AsObject(m_providerSchemaAttributes[providerSchemaAttributesIndex].Jsonize());
-   }
-   payload.WithArray("providerSchemaAttributes", std::move(providerSchemaAttributesJsonList));
-
-  }
 
   if(m_schemasHasBeenSet)
   {
@@ -81,6 +70,17 @@ JsonValue ProviderComponentSchema::Jsonize() const
      schemasJsonList[schemasIndex].AsArray(std::move(schemaListJsonList));
    }
    payload.WithArray("schemas", std::move(schemasJsonList));
+
+  }
+
+  if(m_providerSchemaAttributesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> providerSchemaAttributesJsonList(m_providerSchemaAttributes.size());
+   for(unsigned providerSchemaAttributesIndex = 0; providerSchemaAttributesIndex < providerSchemaAttributesJsonList.GetLength(); ++providerSchemaAttributesIndex)
+   {
+     providerSchemaAttributesJsonList[providerSchemaAttributesIndex].AsObject(m_providerSchemaAttributes[providerSchemaAttributesIndex].Jsonize());
+   }
+   payload.WithArray("providerSchemaAttributes", std::move(providerSchemaAttributesJsonList));
 
   }
 

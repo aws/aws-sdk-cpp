@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <utility>
 
@@ -36,6 +36,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the ID mapping job to be retrieved.</p>
+     */
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    StartIdMappingJobRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of <code>OutputSource</code> objects.</p>
      */
     inline const Aws::Vector<IdMappingJobOutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
@@ -47,25 +59,13 @@ namespace Model
     template<typename OutputSourceConfigT = IdMappingJobOutputSource>
     StartIdMappingJobRequest& AddOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.emplace_back(std::forward<OutputSourceConfigT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the ID mapping job to be retrieved.</p>
-     */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    StartIdMappingJobRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
-    bool m_outputSourceConfigHasBeenSet = false;
 
     Aws::String m_workflowName;
     bool m_workflowNameHasBeenSet = false;
+
+    Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
+    bool m_outputSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

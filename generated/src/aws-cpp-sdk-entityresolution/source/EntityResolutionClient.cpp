@@ -244,15 +244,15 @@ BatchDeleteUniqueIdOutcome EntityResolutionClient::BatchDeleteUniqueId(const Bat
 {
   AWS_OPERATION_GUARD(BatchDeleteUniqueId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteUniqueId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.UniqueIdsHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("BatchDeleteUniqueId", "Required field: UniqueIds, is not set");
-    return BatchDeleteUniqueIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UniqueIds]", false));
-  }
   if (!request.WorkflowNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchDeleteUniqueId", "Required field: WorkflowName, is not set");
     return BatchDeleteUniqueIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowName]", false));
+  }
+  if (!request.UniqueIdsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteUniqueId", "Required field: UniqueIds, is not set");
+    return BatchDeleteUniqueIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UniqueIds]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchDeleteUniqueId, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -562,15 +562,15 @@ GetIdMappingJobOutcome EntityResolutionClient::GetIdMappingJob(const GetIdMappin
 {
   AWS_OPERATION_GUARD(GetIdMappingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdMappingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetIdMappingJob", "Required field: JobId, is not set");
-    return GetIdMappingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.WorkflowNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetIdMappingJob", "Required field: WorkflowName, is not set");
     return GetIdMappingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIdMappingJob", "Required field: JobId, is not set");
+    return GetIdMappingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIdMappingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -702,15 +702,15 @@ GetMatchingJobOutcome EntityResolutionClient::GetMatchingJob(const GetMatchingJo
 {
   AWS_OPERATION_GUARD(GetMatchingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMatchingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetMatchingJob", "Required field: JobId, is not set");
-    return GetMatchingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.WorkflowNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMatchingJob", "Required field: WorkflowName, is not set");
     return GetMatchingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMatchingJob", "Required field: JobId, is not set");
+    return GetMatchingJobOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMatchingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/model/JobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the job has finished.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    JobSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the job.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
@@ -63,6 +51,16 @@ namespace Model
     void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
     template<typename JobIdT = Aws::String>
     JobSummary& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the job.</p>
+     */
+    inline JobStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobSummary& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -79,26 +77,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the job.</p>
+     * <p>The time at which the job has finished.</p>
      */
-    inline JobStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline JobSummary& WithStatus(JobStatus value) { SetStatus(value); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    JobSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_endTime{};
-    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
+    JobStatus m_status{JobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
     Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    JobStatus m_status{JobStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

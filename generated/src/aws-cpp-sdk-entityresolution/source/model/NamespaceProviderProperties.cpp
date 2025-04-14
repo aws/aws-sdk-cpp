@@ -25,15 +25,15 @@ NamespaceProviderProperties::NamespaceProviderProperties(JsonView jsonValue)
 
 NamespaceProviderProperties& NamespaceProviderProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("providerConfiguration"))
-  {
-    m_providerConfiguration = jsonValue.GetObject("providerConfiguration");
-    m_providerConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("providerServiceArn"))
   {
     m_providerServiceArn = jsonValue.GetString("providerServiceArn");
     m_providerServiceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("providerConfiguration"))
+  {
+    m_providerConfiguration = jsonValue.GetObject("providerConfiguration");
+    m_providerConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,18 +42,18 @@ JsonValue NamespaceProviderProperties::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_providerServiceArnHasBeenSet)
+  {
+   payload.WithString("providerServiceArn", m_providerServiceArn);
+
+  }
+
   if(m_providerConfigurationHasBeenSet)
   {
     if(!m_providerConfiguration.View().IsNull())
     {
        payload.WithObject("providerConfiguration", JsonValue(m_providerConfiguration.View()));
     }
-  }
-
-  if(m_providerServiceArnHasBeenSet)
-  {
-   payload.WithString("providerServiceArn", m_providerServiceArn);
-
   }
 
   return payload;

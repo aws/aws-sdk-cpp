@@ -25,15 +25,15 @@ IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource(JsonView jsonValue)
 
 IdMappingWorkflowOutputSource& IdMappingWorkflowOutputSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("KMSArn"))
-  {
-    m_kMSArn = jsonValue.GetString("KMSArn");
-    m_kMSArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
     m_outputS3PathHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KMSArn"))
+  {
+    m_kMSArn = jsonValue.GetString("KMSArn");
+    m_kMSArnHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue IdMappingWorkflowOutputSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_kMSArnHasBeenSet)
-  {
-   payload.WithString("KMSArn", m_kMSArn);
-
-  }
-
   if(m_outputS3PathHasBeenSet)
   {
    payload.WithString("outputS3Path", m_outputS3Path);
+
+  }
+
+  if(m_kMSArnHasBeenSet)
+  {
+   payload.WithString("KMSArn", m_kMSArn);
 
   }
 

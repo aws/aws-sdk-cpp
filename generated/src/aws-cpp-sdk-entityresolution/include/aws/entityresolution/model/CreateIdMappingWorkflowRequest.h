@@ -7,8 +7,8 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/entityresolution/model/IdMappingTechniques.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/entityresolution/model/IdMappingTechniques.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/entityresolution/model/IdMappingWorkflowInputSource.h>
 #include <aws/entityresolution/model/IdMappingWorkflowOutputSource.h>
@@ -39,6 +39,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the workflow. There can't be multiple
+     * <code>IdMappingWorkflows</code> with the same name.</p>
+     */
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    CreateIdMappingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the workflow.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -47,19 +60,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     CreateIdMappingWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object which defines the ID mapping technique and any additional
-     * configurations.</p>
-     */
-    inline const IdMappingTechniques& GetIdMappingTechniques() const { return m_idMappingTechniques; }
-    inline bool IdMappingTechniquesHasBeenSet() const { return m_idMappingTechniquesHasBeenSet; }
-    template<typename IdMappingTechniquesT = IdMappingTechniques>
-    void SetIdMappingTechniques(IdMappingTechniquesT&& value) { m_idMappingTechniquesHasBeenSet = true; m_idMappingTechniques = std::forward<IdMappingTechniquesT>(value); }
-    template<typename IdMappingTechniquesT = IdMappingTechniques>
-    CreateIdMappingWorkflowRequest& WithIdMappingTechniques(IdMappingTechniquesT&& value) { SetIdMappingTechniques(std::forward<IdMappingTechniquesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,6 +94,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object which defines the ID mapping technique and any additional
+     * configurations.</p>
+     */
+    inline const IdMappingTechniques& GetIdMappingTechniques() const { return m_idMappingTechniques; }
+    inline bool IdMappingTechniquesHasBeenSet() const { return m_idMappingTechniquesHasBeenSet; }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    void SetIdMappingTechniques(IdMappingTechniquesT&& value) { m_idMappingTechniquesHasBeenSet = true; m_idMappingTechniques = std::forward<IdMappingTechniquesT>(value); }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    CreateIdMappingWorkflowRequest& WithIdMappingTechniques(IdMappingTechniquesT&& value) { SetIdMappingTechniques(std::forward<IdMappingTechniquesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
@@ -120,26 +133,13 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the workflow. There can't be multiple
-     * <code>IdMappingWorkflows</code> with the same name.</p>
-     */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    CreateIdMappingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    IdMappingTechniques m_idMappingTechniques;
-    bool m_idMappingTechniquesHasBeenSet = false;
 
     Aws::Vector<IdMappingWorkflowInputSource> m_inputSourceConfig;
     bool m_inputSourceConfigHasBeenSet = false;
@@ -147,14 +147,14 @@ namespace Model
     Aws::Vector<IdMappingWorkflowOutputSource> m_outputSourceConfig;
     bool m_outputSourceConfigHasBeenSet = false;
 
+    IdMappingTechniques m_idMappingTechniques;
+    bool m_idMappingTechniquesHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
   };
 
 } // namespace Model

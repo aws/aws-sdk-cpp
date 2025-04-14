@@ -25,25 +25,25 @@ JobSummary::JobSummary(JsonView jsonValue)
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("endTime"))
   {
-    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -52,15 +52,15 @@ JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
-
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("jobId", m_jobId);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
   }
 
   if(m_startTimeHasBeenSet)
@@ -68,9 +68,9 @@ JsonValue JobSummary::Jsonize() const
    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
+  if(m_endTimeHasBeenSet)
   {
-   payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

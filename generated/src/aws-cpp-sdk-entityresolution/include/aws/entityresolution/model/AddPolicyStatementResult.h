@@ -46,17 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource-based policy.</p>
-     */
-    inline const Aws::String& GetPolicy() const { return m_policy; }
-    template<typename PolicyT = Aws::String>
-    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
-    template<typename PolicyT = Aws::String>
-    AddPolicyStatementResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique identifier for the current revision of the policy.</p>
      */
     inline const Aws::String& GetToken() const { return m_token; }
@@ -64,6 +53,17 @@ namespace Model
     void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
     template<typename TokenT = Aws::String>
     AddPolicyStatementResult& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The resource-based policy.</p>
+     */
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    AddPolicyStatementResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
-
     Aws::String m_token;
     bool m_tokenHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

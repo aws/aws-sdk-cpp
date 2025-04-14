@@ -12,6 +12,7 @@
 #include <aws/taxsettings/model/GeorgiaAdditionalInfo.h>
 #include <aws/taxsettings/model/GreeceAdditionalInfo.h>
 #include <aws/taxsettings/model/IndiaAdditionalInfo.h>
+#include <aws/taxsettings/model/IndonesiaAdditionalInfo.h>
 #include <aws/taxsettings/model/IsraelAdditionalInfo.h>
 #include <aws/taxsettings/model/ItalyAdditionalInfo.h>
 #include <aws/taxsettings/model/KenyaAdditionalInfo.h>
@@ -143,6 +144,18 @@ namespace Model
     void SetIndiaAdditionalInfo(IndiaAdditionalInfoT&& value) { m_indiaAdditionalInfoHasBeenSet = true; m_indiaAdditionalInfo = std::forward<IndiaAdditionalInfoT>(value); }
     template<typename IndiaAdditionalInfoT = IndiaAdditionalInfo>
     AdditionalInfoResponse& WithIndiaAdditionalInfo(IndiaAdditionalInfoT&& value) { SetIndiaAdditionalInfo(std::forward<IndiaAdditionalInfoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Additional tax information associated with your TRN in Indonesia.</p>
+     */
+    inline const IndonesiaAdditionalInfo& GetIndonesiaAdditionalInfo() const { return m_indonesiaAdditionalInfo; }
+    inline bool IndonesiaAdditionalInfoHasBeenSet() const { return m_indonesiaAdditionalInfoHasBeenSet; }
+    template<typename IndonesiaAdditionalInfoT = IndonesiaAdditionalInfo>
+    void SetIndonesiaAdditionalInfo(IndonesiaAdditionalInfoT&& value) { m_indonesiaAdditionalInfoHasBeenSet = true; m_indonesiaAdditionalInfo = std::forward<IndonesiaAdditionalInfoT>(value); }
+    template<typename IndonesiaAdditionalInfoT = IndonesiaAdditionalInfo>
+    AdditionalInfoResponse& WithIndonesiaAdditionalInfo(IndonesiaAdditionalInfoT&& value) { SetIndonesiaAdditionalInfo(std::forward<IndonesiaAdditionalInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -322,6 +335,9 @@ namespace Model
 
     IndiaAdditionalInfo m_indiaAdditionalInfo;
     bool m_indiaAdditionalInfoHasBeenSet = false;
+
+    IndonesiaAdditionalInfo m_indonesiaAdditionalInfo;
+    bool m_indonesiaAdditionalInfoHasBeenSet = false;
 
     IsraelAdditionalInfo m_israelAdditionalInfo;
     bool m_israelAdditionalInfoHasBeenSet = false;

@@ -25,30 +25,30 @@ MatchingWorkflowSummary::MatchingWorkflowSummary(JsonView jsonValue)
 
 MatchingWorkflowSummary& MatchingWorkflowSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("workflowName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resolutionType"))
-  {
-    m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
-    m_resolutionTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("workflowArn"))
   {
     m_workflowArn = jsonValue.GetString("workflowArn");
     m_workflowArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workflowName"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_workflowName = jsonValue.GetString("workflowName");
-    m_workflowNameHasBeenSet = true;
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resolutionType"))
+  {
+    m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
+    m_resolutionTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -57,19 +57,10 @@ JsonValue MatchingWorkflowSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_workflowNameHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
+   payload.WithString("workflowName", m_workflowName);
 
-  if(m_resolutionTypeHasBeenSet)
-  {
-   payload.WithString("resolutionType", ResolutionTypeMapper::GetNameForResolutionType(m_resolutionType));
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if(m_workflowArnHasBeenSet)
@@ -78,10 +69,19 @@ JsonValue MatchingWorkflowSummary::Jsonize() const
 
   }
 
-  if(m_workflowNameHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("workflowName", m_workflowName);
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
 
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_resolutionTypeHasBeenSet)
+  {
+   payload.WithString("resolutionType", ResolutionTypeMapper::GetNameForResolutionType(m_resolutionType));
   }
 
   return payload;

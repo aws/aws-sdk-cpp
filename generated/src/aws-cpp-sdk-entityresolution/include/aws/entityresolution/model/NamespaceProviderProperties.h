@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the provider service.</p>
+     */
+    inline const Aws::String& GetProviderServiceArn() const { return m_providerServiceArn; }
+    inline bool ProviderServiceArnHasBeenSet() const { return m_providerServiceArnHasBeenSet; }
+    template<typename ProviderServiceArnT = Aws::String>
+    void SetProviderServiceArn(ProviderServiceArnT&& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = std::forward<ProviderServiceArnT>(value); }
+    template<typename ProviderServiceArnT = Aws::String>
+    NamespaceProviderProperties& WithProviderServiceArn(ProviderServiceArnT&& value) { SetProviderServiceArn(std::forward<ProviderServiceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object which defines any additional configurations required by the
      * provider service.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename ProviderConfigurationT = Aws::Utils::Document>
     NamespaceProviderProperties& WithProviderConfiguration(ProviderConfigurationT&& value) { SetProviderConfiguration(std::forward<ProviderConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the provider service.</p>
-     */
-    inline const Aws::String& GetProviderServiceArn() const { return m_providerServiceArn; }
-    inline bool ProviderServiceArnHasBeenSet() const { return m_providerServiceArnHasBeenSet; }
-    template<typename ProviderServiceArnT = Aws::String>
-    void SetProviderServiceArn(ProviderServiceArnT&& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = std::forward<ProviderServiceArnT>(value); }
-    template<typename ProviderServiceArnT = Aws::String>
-    NamespaceProviderProperties& WithProviderServiceArn(ProviderServiceArnT&& value) { SetProviderServiceArn(std::forward<ProviderServiceArnT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Utils::Document m_providerConfiguration;
-    bool m_providerConfigurationHasBeenSet = false;
 
     Aws::String m_providerServiceArn;
     bool m_providerServiceArnHasBeenSet = false;
+
+    Aws::Utils::Document m_providerConfiguration;
+    bool m_providerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

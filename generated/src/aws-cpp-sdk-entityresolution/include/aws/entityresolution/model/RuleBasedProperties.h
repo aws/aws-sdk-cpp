@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/AttributeMatchingModel.h>
 #include <aws/entityresolution/model/MatchPurpose.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/Rule.h>
 #include <utility>
 
@@ -44,6 +44,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of <code>Rule</code> objects, each of which have fields
+     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+     */
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    RuleBasedProperties& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    RuleBasedProperties& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
      * <code>MANY_TO_MANY</code> as the <code>attributeMatchingModel</code>. </p> <p>If
      * you choose <code>MANY_TO_MANY</code>, the system can match attributes across the
@@ -75,31 +90,16 @@ namespace Model
     inline void SetMatchPurpose(MatchPurpose value) { m_matchPurposeHasBeenSet = true; m_matchPurpose = value; }
     inline RuleBasedProperties& WithMatchPurpose(MatchPurpose value) { SetMatchPurpose(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A list of <code>Rule</code> objects, each of which have fields
-     * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-     */
-    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
-    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    template<typename RulesT = Aws::Vector<Rule>>
-    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
-    template<typename RulesT = Aws::Vector<Rule>>
-    RuleBasedProperties& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
-    template<typename RulesT = Rule>
-    RuleBasedProperties& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<Rule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
     bool m_attributeMatchingModelHasBeenSet = false;
 
     MatchPurpose m_matchPurpose{MatchPurpose::NOT_SET};
     bool m_matchPurposeHasBeenSet = false;
-
-    Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,15 +25,20 @@ CreateMatchingWorkflowResult::CreateMatchingWorkflowResult(const Aws::AmazonWebS
 CreateMatchingWorkflowResult& CreateMatchingWorkflowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workflowName"))
+  {
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workflowArn"))
+  {
+    m_workflowArn = jsonValue.GetString("workflowArn");
+    m_workflowArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("incrementalRunConfig"))
-  {
-    m_incrementalRunConfig = jsonValue.GetObject("incrementalRunConfig");
-    m_incrementalRunConfigHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputSourceConfig"))
   {
@@ -58,20 +63,15 @@ CreateMatchingWorkflowResult& CreateMatchingWorkflowResult::operator =(const Aws
     m_resolutionTechniques = jsonValue.GetObject("resolutionTechniques");
     m_resolutionTechniquesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("incrementalRunConfig"))
+  {
+    m_incrementalRunConfig = jsonValue.GetObject("incrementalRunConfig");
+    m_incrementalRunConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowArn"))
-  {
-    m_workflowArn = jsonValue.GetString("workflowArn");
-    m_workflowArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowName"))
-  {
-    m_workflowName = jsonValue.GetString("workflowName");
-    m_workflowNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

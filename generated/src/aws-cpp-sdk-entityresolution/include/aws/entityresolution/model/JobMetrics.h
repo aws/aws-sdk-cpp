@@ -49,12 +49,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of <code>matchID</code>s generated.</p>
+     * <p>The total number of records processed.</p>
      */
-    inline int GetMatchIDs() const { return m_matchIDs; }
-    inline bool MatchIDsHasBeenSet() const { return m_matchIDsHasBeenSet; }
-    inline void SetMatchIDs(int value) { m_matchIDsHasBeenSet = true; m_matchIDs = value; }
-    inline JobMetrics& WithMatchIDs(int value) { SetMatchIDs(value); return *this;}
+    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
+    inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
+    inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
+    inline JobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
     ///@}
 
     ///@{
@@ -69,26 +69,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of records processed.</p>
+     * <p>The total number of <code>matchID</code>s generated.</p>
      */
-    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
-    inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
-    inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
-    inline JobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
+    inline int GetMatchIDs() const { return m_matchIDs; }
+    inline bool MatchIDsHasBeenSet() const { return m_matchIDsHasBeenSet; }
+    inline void SetMatchIDs(int value) { m_matchIDsHasBeenSet = true; m_matchIDs = value; }
+    inline JobMetrics& WithMatchIDs(int value) { SetMatchIDs(value); return *this;}
     ///@}
   private:
 
     int m_inputRecords{0};
     bool m_inputRecordsHasBeenSet = false;
 
-    int m_matchIDs{0};
-    bool m_matchIDsHasBeenSet = false;
+    int m_totalRecordsProcessed{0};
+    bool m_totalRecordsProcessedHasBeenSet = false;
 
     int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
 
-    int m_totalRecordsProcessed{0};
-    bool m_totalRecordsProcessedHasBeenSet = false;
+    int m_matchIDs{0};
+    bool m_matchIDsHasBeenSet = false;
   };
 
 } // namespace Model

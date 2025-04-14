@@ -30,15 +30,15 @@ IdNamespaceIdMappingWorkflowProperties& IdNamespaceIdMappingWorkflowProperties::
     m_idMappingType = IdMappingTypeMapper::GetIdMappingTypeForName(jsonValue.GetString("idMappingType"));
     m_idMappingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerProperties"))
-  {
-    m_providerProperties = jsonValue.GetObject("providerProperties");
-    m_providerPropertiesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ruleBasedProperties"))
   {
     m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
     m_ruleBasedPropertiesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("providerProperties"))
+  {
+    m_providerProperties = jsonValue.GetObject("providerProperties");
+    m_providerPropertiesHasBeenSet = true;
   }
   return *this;
 }
@@ -52,15 +52,15 @@ JsonValue IdNamespaceIdMappingWorkflowProperties::Jsonize() const
    payload.WithString("idMappingType", IdMappingTypeMapper::GetNameForIdMappingType(m_idMappingType));
   }
 
-  if(m_providerPropertiesHasBeenSet)
-  {
-   payload.WithObject("providerProperties", m_providerProperties.Jsonize());
-
-  }
-
   if(m_ruleBasedPropertiesHasBeenSet)
   {
    payload.WithObject("ruleBasedProperties", m_ruleBasedProperties.Jsonize());
+
+  }
+
+  if(m_providerPropertiesHasBeenSet)
+  {
+   payload.WithObject("providerProperties", m_providerProperties.Jsonize());
 
   }
 

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
-#include <aws/entityresolution/model/ProviderProperties.h>
 #include <aws/entityresolution/model/ResolutionType.h>
 #include <aws/entityresolution/model/RuleBasedProperties.h>
+#include <aws/entityresolution/model/ProviderProperties.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties of the provider service.</p>
-     */
-    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
-    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-    template<typename ProviderPropertiesT = ProviderProperties>
-    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
-    template<typename ProviderPropertiesT = ProviderProperties>
-    ResolutionTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of matching. There are three types of matching:
      * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
      * <code>PROVIDER</code>.</p>
@@ -76,16 +64,28 @@ namespace Model
     template<typename RuleBasedPropertiesT = RuleBasedProperties>
     ResolutionTechniques& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
     ///@}
-  private:
 
-    ProviderProperties m_providerProperties;
-    bool m_providerPropertiesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
+    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    ResolutionTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
+    ///@}
+  private:
 
     ResolutionType m_resolutionType{ResolutionType::NOT_SET};
     bool m_resolutionTypeHasBeenSet = false;
 
     RuleBasedProperties m_ruleBasedProperties;
     bool m_ruleBasedPropertiesHasBeenSet = false;
+
+    ProviderProperties m_providerProperties;
+    bool m_providerPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,12 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of objects returned per page.</p>
+     * <p>The name of the workflow to be retrieved.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListIdMappingJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    ListIdMappingJobsRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,25 +64,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the workflow to be retrieved.</p>
+     * <p>The maximum number of objects returned per page.</p>
      */
-    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
-    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    template<typename WorkflowNameT = Aws::String>
-    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
-    template<typename WorkflowNameT = Aws::String>
-    ListIdMappingJobsRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListIdMappingJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

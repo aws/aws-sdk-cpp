@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The provider schema attributes.</p>
-     */
-    inline const Aws::Vector<ProviderSchemaAttribute>& GetProviderSchemaAttributes() const { return m_providerSchemaAttributes; }
-    inline bool ProviderSchemaAttributesHasBeenSet() const { return m_providerSchemaAttributesHasBeenSet; }
-    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
-    void SetProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = std::forward<ProviderSchemaAttributesT>(value); }
-    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
-    ProviderComponentSchema& WithProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { SetProviderSchemaAttributes(std::forward<ProviderSchemaAttributesT>(value)); return *this;}
-    template<typename ProviderSchemaAttributesT = ProviderSchemaAttribute>
-    ProviderComponentSchema& AddProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.emplace_back(std::forward<ProviderSchemaAttributesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>Input schema for the provider service.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSchemas() const { return m_schemas; }
@@ -66,13 +52,27 @@ namespace Model
     template<typename SchemasT = Aws::Vector<Aws::String>>
     ProviderComponentSchema& AddSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas.emplace_back(std::forward<SchemasT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<ProviderSchemaAttribute> m_providerSchemaAttributes;
-    bool m_providerSchemaAttributesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The provider schema attributes.</p>
+     */
+    inline const Aws::Vector<ProviderSchemaAttribute>& GetProviderSchemaAttributes() const { return m_providerSchemaAttributes; }
+    inline bool ProviderSchemaAttributesHasBeenSet() const { return m_providerSchemaAttributesHasBeenSet; }
+    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
+    void SetProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = std::forward<ProviderSchemaAttributesT>(value); }
+    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
+    ProviderComponentSchema& WithProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { SetProviderSchemaAttributes(std::forward<ProviderSchemaAttributesT>(value)); return *this;}
+    template<typename ProviderSchemaAttributesT = ProviderSchemaAttribute>
+    ProviderComponentSchema& AddProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.emplace_back(std::forward<ProviderSchemaAttributesT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<Aws::Vector<Aws::String>> m_schemas;
     bool m_schemasHasBeenSet = false;
+
+    Aws::Vector<ProviderSchemaAttribute> m_providerSchemaAttributes;
+    bool m_providerSchemaAttributesHasBeenSet = false;
   };
 
 } // namespace Model

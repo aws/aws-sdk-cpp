@@ -30,15 +30,15 @@ SchemaInputAttribute& SchemaInputAttribute::operator =(JsonView jsonValue)
     m_fieldName = jsonValue.GetString("fieldName");
     m_fieldNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = SchemaAttributeTypeMapper::GetSchemaAttributeTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("hashed"))
-  {
-    m_hashed = jsonValue.GetBool("hashed");
-    m_hashedHasBeenSet = true;
   }
   if(jsonValue.ValueExists("matchKey"))
   {
@@ -50,10 +50,10 @@ SchemaInputAttribute& SchemaInputAttribute::operator =(JsonView jsonValue)
     m_subType = jsonValue.GetString("subType");
     m_subTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("hashed"))
   {
-    m_type = SchemaAttributeTypeMapper::GetSchemaAttributeTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_hashed = jsonValue.GetBool("hashed");
+    m_hashedHasBeenSet = true;
   }
   return *this;
 }
@@ -68,15 +68,14 @@ JsonValue SchemaInputAttribute::Jsonize() const
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", SchemaAttributeTypeMapper::GetNameForSchemaAttributeType(m_type));
+  }
+
   if(m_groupNameHasBeenSet)
   {
    payload.WithString("groupName", m_groupName);
-
-  }
-
-  if(m_hashedHasBeenSet)
-  {
-   payload.WithBool("hashed", m_hashed);
 
   }
 
@@ -92,9 +91,10 @@ JsonValue SchemaInputAttribute::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_hashedHasBeenSet)
   {
-   payload.WithString("type", SchemaAttributeTypeMapper::GetNameForSchemaAttributeType(m_type));
+   payload.WithBool("hashed", m_hashed);
+
   }
 
   return payload;

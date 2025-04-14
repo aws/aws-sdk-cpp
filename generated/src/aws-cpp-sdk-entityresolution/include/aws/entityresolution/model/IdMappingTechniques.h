@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/model/IdMappingType.h>
-#include <aws/entityresolution/model/ProviderProperties.h>
 #include <aws/entityresolution/model/IdMappingRuleBasedProperties.h>
+#include <aws/entityresolution/model/ProviderProperties.h>
 #include <utility>
 
 namespace Aws
@@ -52,19 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object which defines any additional configurations required by the
-     * provider service.</p>
-     */
-    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
-    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-    template<typename ProviderPropertiesT = ProviderProperties>
-    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
-    template<typename ProviderPropertiesT = ProviderProperties>
-    IdMappingTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> An object which defines any additional configurations required by rule-based
      * matching.</p>
      */
@@ -75,16 +62,29 @@ namespace Model
     template<typename RuleBasedPropertiesT = IdMappingRuleBasedProperties>
     IdMappingTechniques& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object which defines any additional configurations required by the
+     * provider service.</p>
+     */
+    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
+    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    IdMappingTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
+    ///@}
   private:
 
     IdMappingType m_idMappingType{IdMappingType::NOT_SET};
     bool m_idMappingTypeHasBeenSet = false;
 
-    ProviderProperties m_providerProperties;
-    bool m_providerPropertiesHasBeenSet = false;
-
     IdMappingRuleBasedProperties m_ruleBasedProperties;
     bool m_ruleBasedPropertiesHasBeenSet = false;
+
+    ProviderProperties m_providerProperties;
+    bool m_providerPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

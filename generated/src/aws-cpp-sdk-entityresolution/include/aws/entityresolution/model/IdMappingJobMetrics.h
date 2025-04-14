@@ -22,10 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>InputRecords</code>,
-   * <code>RecordsNotProcessed</code>, <code>TotalRecordsProcessed</code>,
-   * <code>TotalMappedRecords</code>, <code>TotalMappedSourceRecords</code>, and
-   * <code>TotalMappedTargetRecords</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains metrics about an ID mapping job, including counts of
+   * input records, processed records, and mapped records between source and target
+   * identifiers. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdMappingJobMetrics">AWS
    * API Reference</a></p>
    */
@@ -46,6 +45,16 @@ namespace Model
     inline bool InputRecordsHasBeenSet() const { return m_inputRecordsHasBeenSet; }
     inline void SetInputRecords(int value) { m_inputRecordsHasBeenSet = true; m_inputRecords = value; }
     inline IdMappingJobMetrics& WithInputRecords(int value) { SetInputRecords(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The total number of records that were processed.</p>
+     */
+    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
+    inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
+    inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
+    inline IdMappingJobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
     ///@}
 
     ///@{
@@ -90,17 +99,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of records that were processed.</p>
+     * <p>The number of records remaining after loading and aggregating duplicate
+     * records. Duplicates are determined by the field marked as UNIQUE_ID in your
+     * schema mapping - records sharing the same value in this field are considered
+     * duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and
+     * had three records with the same customer_id value, they would count as one
+     * unique record in this metric. </p>
      */
-    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
-    inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
-    inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
-    inline IdMappingJobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
+    inline int GetUniqueRecordsLoaded() const { return m_uniqueRecordsLoaded; }
+    inline bool UniqueRecordsLoadedHasBeenSet() const { return m_uniqueRecordsLoadedHasBeenSet; }
+    inline void SetUniqueRecordsLoaded(int value) { m_uniqueRecordsLoadedHasBeenSet = true; m_uniqueRecordsLoaded = value; }
+    inline IdMappingJobMetrics& WithUniqueRecordsLoaded(int value) { SetUniqueRecordsLoaded(value); return *this;}
     ///@}
   private:
 
     int m_inputRecords{0};
     bool m_inputRecordsHasBeenSet = false;
+
+    int m_totalRecordsProcessed{0};
+    bool m_totalRecordsProcessedHasBeenSet = false;
 
     int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
@@ -114,8 +131,8 @@ namespace Model
     int m_totalMappedTargetRecords{0};
     bool m_totalMappedTargetRecordsHasBeenSet = false;
 
-    int m_totalRecordsProcessed{0};
-    bool m_totalRecordsProcessedHasBeenSet = false;
+    int m_uniqueRecordsLoaded{0};
+    bool m_uniqueRecordsLoadedHasBeenSet = false;
   };
 
 } // namespace Model

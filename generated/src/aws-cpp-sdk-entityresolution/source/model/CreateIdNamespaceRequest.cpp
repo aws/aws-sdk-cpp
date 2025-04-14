@@ -16,9 +16,26 @@ Aws::String CreateIdNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_idNamespaceNameHasBeenSet)
+  {
+   payload.WithString("idNamespaceName", m_idNamespaceName);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_inputSourceConfigHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inputSourceConfigJsonList(m_inputSourceConfig.size());
+   for(unsigned inputSourceConfigIndex = 0; inputSourceConfigIndex < inputSourceConfigJsonList.GetLength(); ++inputSourceConfigIndex)
+   {
+     inputSourceConfigJsonList[inputSourceConfigIndex].AsObject(m_inputSourceConfig[inputSourceConfigIndex].Jsonize());
+   }
+   payload.WithArray("inputSourceConfig", std::move(inputSourceConfigJsonList));
 
   }
 
@@ -33,21 +50,9 @@ Aws::String CreateIdNamespaceRequest::SerializePayload() const
 
   }
 
-  if(m_idNamespaceNameHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("idNamespaceName", m_idNamespaceName);
-
-  }
-
-  if(m_inputSourceConfigHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputSourceConfigJsonList(m_inputSourceConfig.size());
-   for(unsigned inputSourceConfigIndex = 0; inputSourceConfigIndex < inputSourceConfigJsonList.GetLength(); ++inputSourceConfigIndex)
-   {
-     inputSourceConfigJsonList[inputSourceConfigIndex].AsObject(m_inputSourceConfig[inputSourceConfigIndex].Jsonize());
-   }
-   payload.WithArray("inputSourceConfig", std::move(inputSourceConfigJsonList));
-
+   payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
   }
 
   if(m_roleArnHasBeenSet)
@@ -65,11 +70,6 @@ Aws::String CreateIdNamespaceRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
   }
 
   return payload.View().WriteReadable();

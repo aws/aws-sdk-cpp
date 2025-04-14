@@ -25,20 +25,20 @@ GetIdMappingWorkflowResult::GetIdMappingWorkflowResult(const Aws::AmazonWebServi
 GetIdMappingWorkflowResult& GetIdMappingWorkflowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("workflowName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_workflowName = jsonValue.GetString("workflowName");
+    m_workflowNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workflowArn"))
+  {
+    m_workflowArn = jsonValue.GetString("workflowArn");
+    m_workflowArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("idMappingTechniques"))
-  {
-    m_idMappingTechniques = jsonValue.GetObject("idMappingTechniques");
-    m_idMappingTechniquesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputSourceConfig"))
   {
@@ -58,6 +58,21 @@ GetIdMappingWorkflowResult& GetIdMappingWorkflowResult::operator =(const Aws::Am
     }
     m_outputSourceConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("idMappingTechniques"))
+  {
+    m_idMappingTechniques = jsonValue.GetObject("idMappingTechniques");
+    m_idMappingTechniquesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
@@ -71,21 +86,6 @@ GetIdMappingWorkflowResult& GetIdMappingWorkflowResult::operator =(const Aws::Am
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowArn"))
-  {
-    m_workflowArn = jsonValue.GetString("workflowArn");
-    m_workflowArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("workflowName"))
-  {
-    m_workflowName = jsonValue.GetString("workflowName");
-    m_workflowNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

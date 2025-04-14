@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables the ability to hash the column values in the output.</p>
-     */
-    inline bool GetHashed() const { return m_hashed; }
-    inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
-    inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
-    inline OutputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A name of a column to be written to the output. This must be an
      * <code>InputField</code> name in the schema mapping.</p>
      */
@@ -62,13 +52,23 @@ namespace Model
     template<typename NameT = Aws::String>
     OutputAttribute& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
-  private:
 
-    bool m_hashed{false};
-    bool m_hashedHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Enables the ability to hash the column values in the output.</p>
+     */
+    inline bool GetHashed() const { return m_hashed; }
+    inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
+    inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
+    inline OutputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    bool m_hashed{false};
+    bool m_hashedHasBeenSet = false;
   };
 
 } // namespace Model
