@@ -97,6 +97,25 @@ namespace Model
     template<typename InvocationConnectivityParametersT = ConnectivityResourceParameters>
     UpdateConnectionRequest& WithInvocationConnectivityParameters(InvocationConnectivityParametersT&& value) { SetInvocationConnectivityParameters(std::forward<InvocationConnectivityParametersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use, if you
+     * choose to use a customer managed key to encrypt this connection. The identifier
+     * can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias
+     * ARN.</p> <p>If you do not specify a customer managed key identifier, EventBridge
+     * uses an Amazon Web Services owned key to encrypt the connection.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify
+     * and view keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    UpdateConnectionRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -113,6 +132,9 @@ namespace Model
 
     ConnectivityResourceParameters m_invocationConnectivityParameters;
     bool m_invocationConnectivityParametersHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

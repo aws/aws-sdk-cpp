@@ -49,6 +49,16 @@ GetNamespaceResult& GetNamespaceResult::operator =(const Aws::AmazonWebServiceRe
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
     m_ownerAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("namespaceId"))
+  {
+    m_namespaceId = jsonValue.GetString("namespaceId");
+    m_namespaceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

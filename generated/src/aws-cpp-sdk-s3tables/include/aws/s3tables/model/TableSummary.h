@@ -111,6 +111,30 @@ namespace Model
     template<typename ModifiedAtT = Aws::Utils::DateTime>
     TableSummary& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for the namespace that contains this table.</p>
+     */
+    inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
+    template<typename NamespaceIdT = Aws::String>
+    void SetNamespaceId(NamespaceIdT&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::forward<NamespaceIdT>(value); }
+    template<typename NamespaceIdT = Aws::String>
+    TableSummary& WithNamespaceId(NamespaceIdT&& value) { SetNamespaceId(std::forward<NamespaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for the table bucket that contains this table.</p>
+     */
+    inline const Aws::String& GetTableBucketId() const { return m_tableBucketId; }
+    inline bool TableBucketIdHasBeenSet() const { return m_tableBucketIdHasBeenSet; }
+    template<typename TableBucketIdT = Aws::String>
+    void SetTableBucketId(TableBucketIdT&& value) { m_tableBucketIdHasBeenSet = true; m_tableBucketId = std::forward<TableBucketIdT>(value); }
+    template<typename TableBucketIdT = Aws::String>
+    TableSummary& WithTableBucketId(TableBucketIdT&& value) { SetTableBucketId(std::forward<TableBucketIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_namespace;
@@ -130,6 +154,12 @@ namespace Model
 
     Aws::Utils::DateTime m_modifiedAt{};
     bool m_modifiedAtHasBeenSet = false;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet = false;
+
+    Aws::String m_tableBucketId;
+    bool m_tableBucketIdHasBeenSet = false;
   };
 
 } // namespace Model

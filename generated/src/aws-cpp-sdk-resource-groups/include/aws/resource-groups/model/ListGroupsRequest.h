@@ -54,7 +54,7 @@ namespace Model
      * supported values are:</p> <ul> <li> <p>
      * <code>AWS::ResourceGroups::ApplicationGroup</code> </p> </li> <li> <p>
      * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
-     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroup</code> </p> </li> <li> <p>
      * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
      * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>

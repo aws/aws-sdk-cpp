@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Contact,
     Comment,
-    File
+    File,
+    Sla
   };
 
 namespace RelatedItemTypeMapper

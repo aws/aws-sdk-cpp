@@ -27,13 +27,16 @@
 #include <aws/s3tables/model/DeleteNamespaceRequest.h>
 #include <aws/s3tables/model/DeleteTableRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketRequest.h>
+#include <aws/s3tables/model/DeleteTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/DeleteTablePolicyRequest.h>
 #include <aws/s3tables/model/GetNamespaceRequest.h>
 #include <aws/s3tables/model/GetTableRequest.h>
 #include <aws/s3tables/model/GetTableBucketRequest.h>
+#include <aws/s3tables/model/GetTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketPolicyRequest.h>
+#include <aws/s3tables/model/GetTableEncryptionRequest.h>
 #include <aws/s3tables/model/GetTableMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableMaintenanceJobStatusRequest.h>
 #include <aws/s3tables/model/GetTableMetadataLocationRequest.h>
@@ -41,6 +44,7 @@
 #include <aws/s3tables/model/ListNamespacesRequest.h>
 #include <aws/s3tables/model/ListTableBucketsRequest.h>
 #include <aws/s3tables/model/ListTablesRequest.h>
+#include <aws/s3tables/model/PutTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/PutTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/PutTableMaintenanceConfigurationRequest.h>
@@ -406,6 +410,40 @@ DeleteTableBucketOutcome S3TablesClient::DeleteTableBucket(const DeleteTableBuck
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteTableBucketEncryptionOutcome S3TablesClient::DeleteTableBucketEncryption(const DeleteTableBucketEncryptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteTableBucketEncryption);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTableBucketEncryption", "Required field: TableBucketARN, is not set");
+    return DeleteTableBucketEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteTableBucketEncryption",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteTableBucketEncryptionOutcome>(
+    [&]()-> DeleteTableBucketEncryptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
+      return DeleteTableBucketEncryptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteTableBucketPolicyOutcome S3TablesClient::DeleteTableBucketPolicy(const DeleteTableBucketPolicyRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteTableBucketPolicy);
@@ -603,6 +641,40 @@ GetTableBucketOutcome S3TablesClient::GetTableBucket(const GetTableBucketRequest
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetTableBucketEncryptionOutcome S3TablesClient::GetTableBucketEncryption(const GetTableBucketEncryptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTableBucketEncryption);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTableBucketEncryption", "Required field: TableBucketARN, is not set");
+    return GetTableBucketEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTableBucketEncryption",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTableBucketEncryptionOutcome>(
+    [&]()-> GetTableBucketEncryptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
+      return GetTableBucketEncryptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetTableBucketMaintenanceConfigurationOutcome S3TablesClient::GetTableBucketMaintenanceConfiguration(const GetTableBucketMaintenanceConfigurationRequest& request) const
 {
   AWS_OPERATION_GUARD(GetTableBucketMaintenanceConfiguration);
@@ -665,6 +737,52 @@ GetTableBucketPolicyOutcome S3TablesClient::GetTableBucketPolicy(const GetTableB
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
       endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
       return GetTableBucketPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTableEncryptionOutcome S3TablesClient::GetTableEncryption(const GetTableEncryptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTableEncryption);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTableEncryption", "Required field: TableBucketARN, is not set");
+    return GetTableEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTableEncryption", "Required field: Namespace, is not set");
+    return GetTableEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTableEncryption", "Required field: Name, is not set");
+    return GetTableEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTableEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTableEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTableEncryption",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTableEncryptionOutcome>(
+    [&]()-> GetTableEncryptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTableEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/tables/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
+      return GetTableEncryptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -942,6 +1060,40 @@ ListTablesOutcome S3TablesClient::ListTables(const ListTablesRequest& request) c
       endpointResolutionOutcome.GetResult().AddPathSegments("/tables/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
       return ListTablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutTableBucketEncryptionOutcome S3TablesClient::PutTableBucketEncryption(const PutTableBucketEncryptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutTableBucketEncryption);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutTableBucketEncryption", "Required field: TableBucketARN, is not set");
+    return PutTableBucketEncryptionOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutTableBucketEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutTableBucketEncryption",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutTableBucketEncryptionOutcome>(
+    [&]()-> PutTableBucketEncryptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutTableBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
+      return PutTableBucketEncryptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

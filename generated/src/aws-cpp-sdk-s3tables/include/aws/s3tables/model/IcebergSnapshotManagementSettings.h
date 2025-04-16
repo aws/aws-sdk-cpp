@@ -26,7 +26,7 @@ namespace Model
    * The oldest snapshot expires when its age exceeds the
    * <code>maxSnapshotAgeHours</code> and the total number of snapshots exceeds the
    * value for the minimum number of snapshots to keep
-   * <code>minSnapshotsToKeep</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>minSnapshotsToKeep</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/IcebergSnapshotManagementSettings">AWS
    * API Reference</a></p>
    */

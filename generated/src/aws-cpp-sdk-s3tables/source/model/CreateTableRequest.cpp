@@ -33,6 +33,12 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   }
 
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

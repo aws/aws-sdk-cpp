@@ -49,6 +49,16 @@ NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
     m_ownerAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("namespaceId"))
+  {
+    m_namespaceId = jsonValue.GetString("namespaceId");
+    m_namespaceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -81,6 +91,18 @@ JsonValue NamespaceSummary::Jsonize() const
   if(m_ownerAccountIdHasBeenSet)
   {
    payload.WithString("ownerAccountId", m_ownerAccountId);
+
+  }
+
+  if(m_namespaceIdHasBeenSet)
+  {
+   payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_tableBucketIdHasBeenSet)
+  {
+   payload.WithString("tableBucketId", m_tableBucketId);
 
   }
 

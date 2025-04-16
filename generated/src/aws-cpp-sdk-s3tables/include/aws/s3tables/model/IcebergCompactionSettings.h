@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about the compaction settings for an Iceberg table.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains details about the compaction settings for an Iceberg
+   * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/IcebergCompactionSettings">AWS
    * API Reference</a></p>
    */

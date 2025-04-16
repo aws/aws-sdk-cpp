@@ -8,6 +8,7 @@
 #include <aws/connectcases/model/CommentFilter.h>
 #include <aws/connectcases/model/ContactFilter.h>
 #include <aws/connectcases/model/FileFilter.h>
+#include <aws/connectcases/model/SlaFilter.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,18 @@ namespace Model
     template<typename FileT = FileFilter>
     RelatedItemTypeFilter& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Filter for related items of type <code>SLA</code>.</p>
+     */
+    inline const SlaFilter& GetSla() const { return m_sla; }
+    inline bool SlaHasBeenSet() const { return m_slaHasBeenSet; }
+    template<typename SlaT = SlaFilter>
+    void SetSla(SlaT&& value) { m_slaHasBeenSet = true; m_sla = std::forward<SlaT>(value); }
+    template<typename SlaT = SlaFilter>
+    RelatedItemTypeFilter& WithSla(SlaT&& value) { SetSla(std::forward<SlaT>(value)); return *this;}
+    ///@}
   private:
 
     CommentFilter m_comment;
@@ -85,6 +98,9 @@ namespace Model
 
     FileFilter m_file;
     bool m_fileHasBeenSet = false;
+
+    SlaFilter m_sla;
+    bool m_slaHasBeenSet = false;
   };
 
 } // namespace Model

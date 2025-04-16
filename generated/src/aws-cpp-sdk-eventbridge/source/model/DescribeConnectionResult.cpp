@@ -65,6 +65,11 @@ DescribeConnectionResult& DescribeConnectionResult::operator =(const Aws::Amazon
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AuthParameters"))
   {
     m_authParameters = jsonValue.GetObject("AuthParameters");

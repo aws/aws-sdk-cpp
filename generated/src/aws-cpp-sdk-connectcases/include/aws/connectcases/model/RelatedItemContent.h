@@ -8,6 +8,7 @@
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/ContactContent.h>
 #include <aws/connectcases/model/FileContent.h>
+#include <aws/connectcases/model/SlaContent.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,18 @@ namespace Model
     template<typename FileT = FileContent>
     RelatedItemContent& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the content of an SLA to be returned to agents.</p>
+     */
+    inline const SlaContent& GetSla() const { return m_sla; }
+    inline bool SlaHasBeenSet() const { return m_slaHasBeenSet; }
+    template<typename SlaT = SlaContent>
+    void SetSla(SlaT&& value) { m_slaHasBeenSet = true; m_sla = std::forward<SlaT>(value); }
+    template<typename SlaT = SlaContent>
+    RelatedItemContent& WithSla(SlaT&& value) { SetSla(std::forward<SlaT>(value)); return *this;}
+    ///@}
   private:
 
     CommentContent m_comment;
@@ -85,6 +98,9 @@ namespace Model
 
     FileContent m_file;
     bool m_fileHasBeenSet = false;
+
+    SlaContent m_sla;
+    bool m_slaHasBeenSet = false;
   };
 
 } // namespace Model

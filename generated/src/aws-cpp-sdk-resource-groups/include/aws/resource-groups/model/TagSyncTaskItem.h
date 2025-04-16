@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/model/ResourceQuery.h>
 #include <aws/resource-groups/model/TagSyncTaskStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -101,6 +102,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const ResourceQuery& GetResourceQuery() const { return m_resourceQuery; }
+    inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
+    template<typename ResourceQueryT = ResourceQuery>
+    void SetResourceQuery(ResourceQueryT&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::forward<ResourceQueryT>(value); }
+    template<typename ResourceQueryT = ResourceQuery>
+    TagSyncTaskItem& WithResourceQuery(ResourceQueryT&& value) { SetResourceQuery(std::forward<ResourceQueryT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) of the role assumed by the service to tag and
      * untag resources on your behalf.</p>
@@ -169,6 +180,9 @@ namespace Model
 
     Aws::String m_tagValue;
     bool m_tagValueHasBeenSet = false;
+
+    ResourceQuery m_resourceQuery;
+    bool m_resourceQueryHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

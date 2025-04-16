@@ -580,7 +580,16 @@ namespace ResourceGroups
 
         /**
          * <p>Creates a new tag-sync task to onboard and sync resources tagged with a
-         * specific tag key-value pair to an application. </p> <p> <b>Minimum
+         * specific tag key-value pair to an application. To start a tag-sync task, you
+         * need a <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#tag-sync-role">resource
+         * tagging role</a>. The resource tagging role grants permissions to tag and untag
+         * applications resources and must include a trust policy that allows Resource
+         * Groups to assume the role and perform resource tagging tasks on your behalf.
+         * </p> <p>For instructions on creating a tag-sync task, see <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#create-tag-sync">Create
+         * a tag-sync using the Resource Groups API</a> in the <i>Amazon Web Services
+         * Service Catalog AppRegistry Administrator Guide</i>. </p> <p> <b>Minimum
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p> <code>resource-groups:StartTagSyncTask</code> on
          * the application group</p> </li> <li> <p>

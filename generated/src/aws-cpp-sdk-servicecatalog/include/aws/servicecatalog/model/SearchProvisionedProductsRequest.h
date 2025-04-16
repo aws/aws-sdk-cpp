@@ -55,7 +55,7 @@ namespace Model
     ///@{
     /**
      * <p>The access level to use to obtain results. The default is
-     * <code>User</code>.</p>
+     * <code>Account</code>.</p>
      */
     inline const AccessLevelFilter& GetAccessLevelFilter() const { return m_accessLevelFilter; }
     inline bool AccessLevelFilterHasBeenSet() const { return m_accessLevelFilterHasBeenSet; }

@@ -22,9 +22,9 @@ namespace S3Tables
    * tables in a table bucket are stored in the <a
    * href="https://iceberg.apache.org/docs/latest/">Apache Iceberg</a> table format.
    * Through integration with the <a
-   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">AWS
-   * Glue Data Catalog</a> you can interact with your tables using AWS analytics
-   * services, such as <a
+   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
+   * Web Services Glue Data Catalog</a> you can interact with your tables using
+   * Amazon Web Services analytics services, such as <a
    * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/athena/">Amazon
    * Athena</a> and <a
    * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/redshift/">Amazon
@@ -127,11 +127,14 @@ namespace S3Tables
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
          * an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User
-         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
-         * <code>s3tables:CreateTable</code> permission to use this operation. </p> 
-         * <p>Additionally, you must have the <code>s3tables:PutTableData</code> permission
-         * to use this operation with the optional <code>metadata</code> request parameter.
-         * </p>  </dd> </dl><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must have the
+         * <code>s3tables:CreateTable</code> permission to use this operation. </p> </li>
+         * <li> <p>If you use this operation with the optional <code>metadata</code>
+         * request parameter you must have the <code>s3tables:PutTableData</code>
+         * permission. </p> </li> <li> <p>If you use this operation with the optional
+         * <code>encryptionConfiguration</code> request parameter you must have the
+         * <code>s3tables:PutTableEncryption</code> permission. </p> </li> </ul> 
+         * <p>Additionally, </p>  </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTable">AWS
          * API Reference</a></p>
          */
@@ -159,9 +162,12 @@ namespace S3Tables
          * <p>Creates a table bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
          * a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must have the
          * <code>s3tables:CreateTableBucket</code> permission to use this operation. </p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>If you use this operation with the optional
+         * <code>encryptionConfiguration</code> parameter you must have the
+         * <code>s3tables:PutTableBucketEncryption</code> permission.</p> </li> </ul> </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTableBucket">AWS
          * API Reference</a></p>
          */
@@ -273,6 +279,34 @@ namespace S3Tables
         void DeleteTableBucketAsync(const DeleteTableBucketRequestT& request, const DeleteTableBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3TablesClient::DeleteTableBucket, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the encryption configuration for a table bucket.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteTableBucketEncryption</code> permission to use this
+         * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTableBucketEncryptionOutcome DeleteTableBucketEncryption(const Model::DeleteTableBucketEncryptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTableBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTableBucketEncryptionRequestT = Model::DeleteTableBucketEncryptionRequest>
+        Model::DeleteTableBucketEncryptionOutcomeCallable DeleteTableBucketEncryptionCallable(const DeleteTableBucketEncryptionRequestT& request) const
+        {
+            return SubmitCallable(&S3TablesClient::DeleteTableBucketEncryption, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTableBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTableBucketEncryptionRequestT = Model::DeleteTableBucketEncryptionRequest>
+        void DeleteTableBucketEncryptionAsync(const DeleteTableBucketEncryptionRequestT& request, const DeleteTableBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3TablesClient::DeleteTableBucketEncryption, request, handler, context);
         }
 
         /**
@@ -425,6 +459,34 @@ namespace S3Tables
         }
 
         /**
+         * <p>Gets the encryption configuration for a table bucket.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableBucketEncryption</code> permission to use this
+         * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTableBucketEncryptionOutcome GetTableBucketEncryption(const Model::GetTableBucketEncryptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTableBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTableBucketEncryptionRequestT = Model::GetTableBucketEncryptionRequest>
+        Model::GetTableBucketEncryptionOutcomeCallable GetTableBucketEncryptionCallable(const GetTableBucketEncryptionRequestT& request) const
+        {
+            return SubmitCallable(&S3TablesClient::GetTableBucketEncryption, request);
+        }
+
+        /**
+         * An Async wrapper for GetTableBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTableBucketEncryptionRequestT = Model::GetTableBucketEncryptionRequest>
+        void GetTableBucketEncryptionAsync(const GetTableBucketEncryptionRequestT& request, const GetTableBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3TablesClient::GetTableBucketEncryption, request, handler, context);
+        }
+
+        /**
          * <p>Gets details about a maintenance configuration for a given table bucket. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
@@ -483,6 +545,33 @@ namespace S3Tables
         void GetTableBucketPolicyAsync(const GetTableBucketPolicyRequestT& request, const GetTableBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3TablesClient::GetTableBucketPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the encryption configuration for a table.</p> <dl> <dt>Permissions</dt>
+         * <dd> <p>You must have the <code>s3tables:GetTableEncryption</code> permission to
+         * use this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTableEncryptionOutcome GetTableEncryption(const Model::GetTableEncryptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTableEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTableEncryptionRequestT = Model::GetTableEncryptionRequest>
+        Model::GetTableEncryptionOutcomeCallable GetTableEncryptionCallable(const GetTableEncryptionRequestT& request) const
+        {
+            return SubmitCallable(&S3TablesClient::GetTableEncryption, request);
+        }
+
+        /**
+         * An Async wrapper for GetTableEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTableEncryptionRequestT = Model::GetTableEncryptionRequest>
+        void GetTableEncryptionAsync(const GetTableEncryptionRequestT& request, const GetTableEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3TablesClient::GetTableEncryption, request, handler, context);
         }
 
         /**
@@ -691,6 +780,38 @@ namespace S3Tables
         void ListTablesAsync(const ListTablesRequestT& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3TablesClient::ListTables, request, handler, context);
+        }
+
+        /**
+         * <p>Sets the encryption configuration for a table bucket.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:PutTableBucketEncryption</code> permission to use this
+         * operation.</p>  <p>If you choose SSE-KMS encryption you must grant the S3
+         * Tables maintenance principal access to your KMS key. For more information, see
+         * <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+         * requirements for S3 Tables SSE-KMS encryption</a> </p>  </dd>
+         * </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutTableBucketEncryptionOutcome PutTableBucketEncryption(const Model::PutTableBucketEncryptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutTableBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutTableBucketEncryptionRequestT = Model::PutTableBucketEncryptionRequest>
+        Model::PutTableBucketEncryptionOutcomeCallable PutTableBucketEncryptionCallable(const PutTableBucketEncryptionRequestT& request) const
+        {
+            return SubmitCallable(&S3TablesClient::PutTableBucketEncryption, request);
+        }
+
+        /**
+         * An Async wrapper for PutTableBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutTableBucketEncryptionRequestT = Model::PutTableBucketEncryptionRequest>
+        void PutTableBucketEncryptionAsync(const PutTableBucketEncryptionRequestT& request, const PutTableBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3TablesClient::PutTableBucketEncryption, request, handler, context);
         }
 
         /**

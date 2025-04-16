@@ -213,6 +213,31 @@ namespace DSQL
         }
 
         /**
+         * <p>Retrieves the VPC endpoint service name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetVpcEndpointServiceName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpcEndpointServiceNameOutcome GetVpcEndpointServiceName(const Model::GetVpcEndpointServiceNameRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVpcEndpointServiceName that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVpcEndpointServiceNameRequestT = Model::GetVpcEndpointServiceNameRequest>
+        Model::GetVpcEndpointServiceNameOutcomeCallable GetVpcEndpointServiceNameCallable(const GetVpcEndpointServiceNameRequestT& request) const
+        {
+            return SubmitCallable(&DSQLClient::GetVpcEndpointServiceName, request);
+        }
+
+        /**
+         * An Async wrapper for GetVpcEndpointServiceName that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVpcEndpointServiceNameRequestT = Model::GetVpcEndpointServiceNameRequest>
+        void GetVpcEndpointServiceNameAsync(const GetVpcEndpointServiceNameRequestT& request, const GetVpcEndpointServiceNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DSQLClient::GetVpcEndpointServiceName, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a list of clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListClusters">AWS
          * API Reference</a></p>

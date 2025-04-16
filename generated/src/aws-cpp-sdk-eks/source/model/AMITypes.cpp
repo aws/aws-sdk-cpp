@@ -38,6 +38,7 @@ namespace Aws
         static const int AL2023_ARM_64_STANDARD_HASH = HashingUtils::HashString("AL2023_ARM_64_STANDARD");
         static const int AL2023_x86_64_NEURON_HASH = HashingUtils::HashString("AL2023_x86_64_NEURON");
         static const int AL2023_x86_64_NVIDIA_HASH = HashingUtils::HashString("AL2023_x86_64_NVIDIA");
+        static const int AL2023_ARM_64_NVIDIA_HASH = HashingUtils::HashString("AL2023_ARM_64_NVIDIA");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return AMITypes::AL2023_x86_64_NVIDIA;
           }
+          else if (hashCode == AL2023_ARM_64_NVIDIA_HASH)
+          {
+            return AMITypes::AL2023_ARM_64_NVIDIA;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -167,6 +172,8 @@ namespace Aws
             return "AL2023_x86_64_NEURON";
           case AMITypes::AL2023_x86_64_NVIDIA:
             return "AL2023_x86_64_NVIDIA";
+          case AMITypes::AL2023_ARM_64_NVIDIA:
+            return "AL2023_ARM_64_NVIDIA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

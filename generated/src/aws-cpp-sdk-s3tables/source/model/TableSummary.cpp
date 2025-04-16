@@ -59,6 +59,16 @@ TableSummary& TableSummary::operator =(JsonView jsonValue)
     m_modifiedAt = jsonValue.GetString("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("namespaceId"))
+  {
+    m_namespaceId = jsonValue.GetString("namespaceId");
+    m_namespaceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +112,18 @@ JsonValue TableSummary::Jsonize() const
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_namespaceIdHasBeenSet)
+  {
+   payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_tableBucketIdHasBeenSet)
+  {
+   payload.WithString("tableBucketId", m_tableBucketId);
+
   }
 
   return payload;
