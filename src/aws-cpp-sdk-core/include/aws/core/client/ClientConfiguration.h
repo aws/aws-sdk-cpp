@@ -465,6 +465,22 @@ namespace Aws
                */
               bool useAnonymousAuth = false;
             } winHTTPOptions;
+
+          /**
+            * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
+            * Account-based endpoint routing provides better request performance for some services.
+            *
+            * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+            */
+          Aws::String accountId;
+
+          /**
+           * This setting is used to turn off account-based endpoint routing if necessary, and bypass account-based rules.
+           * Can be the case sensitive string values "required", "disabled", or "preferred". Defaults to "preferred".
+           *
+           * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+           */
+          Aws::String accountIdEndpointMode = "preferred";
         };
 
         /**

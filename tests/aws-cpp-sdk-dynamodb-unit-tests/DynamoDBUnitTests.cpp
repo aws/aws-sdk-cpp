@@ -21,6 +21,7 @@
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
+#include <aws/testing/utils/UserAgentUtils.h>
 #include <gtest/gtest.h>
 
 #include <memory>
@@ -449,6 +450,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseStandardEndpointIfAccountIdMissingFromCredenti
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://dynamodb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") == features.end());
 }
 
 
@@ -487,6 +494,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialsFile)
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://spike-spiegel.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromEnviornmentCredentialsProvider)
@@ -521,6 +534,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromEnviornmentCredentialsPro
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://ein.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromProcessCredentialsProvider)
@@ -555,6 +574,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromProcessCredentialsProvide
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://faye.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromSTSCredentialsProvider)
@@ -606,6 +631,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromSTSCredentialsProvider)
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://rocco.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromSSOCredentialsProvider)
@@ -672,6 +703,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromSSOCredentialsProvider)
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://jet.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromContainerCredentialsProvider)
@@ -704,6 +741,12 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromContainerCredentialsProvi
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://Vicious.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "P") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
 TEST_F(DynamoDBUnitTest, ShouldNotUseAccountIDEndpointWhenDisabled)
@@ -739,4 +782,84 @@ TEST_F(DynamoDBUnitTest, ShouldNotUseAccountIDEndpointWhenDisabled)
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://dynamodb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "Q") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
+}
+
+TEST_F(DynamoDBUnitTest, ShouldFailWhenNoAccountIDAndRequired)
+{
+  // create enviornment variables with account id
+  const Environment::EnvironmentRAII environmentVariables{
+          {
+            {"AWS_ACCESS_KEY_ID", "the"},
+            {"AWS_SECRET_ACCESS_KEY", "real"},
+            {"AWS_SESSION_TOKEN", "folk"},
+          }};
+
+  DynamoDBClientConfiguration configuration;
+  configuration.region = "us-east-1";
+  configuration.accountIdEndpointMode = "required";
+
+  auto credsProvider = Aws::MakeShared<EnvironmentAWSCredentialsProvider>(LOG_TAG);
+
+  const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
+
+  // mock response
+  auto successStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "cowboy.bebop/planets", HttpMethod::HTTP_GET);
+  successStream->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Planets","TableNames": ["Planets"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, successStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+
+  mock_http_client_->AddResponseToReturn(successResponse);
+  const auto listTablesOutcome = accountIdClient->ListTables();
+  EXPECT_TRUE(!listTablesOutcome.IsSuccess());
+  EXPECT_EQ(listTablesOutcome.GetError().GetMessage(), "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
+}
+
+TEST_F(DynamoDBUnitTest, ShouldWorkWhenAccountIDPresentAndRequired)
+{
+  // create enviornment variables with account id
+  const Environment::EnvironmentRAII environmentVariables{
+            {
+              {"AWS_ACCESS_KEY_ID", "the"},
+              {"AWS_SECRET_ACCESS_KEY", "real"},
+              {"AWS_SESSION_TOKEN", "folk"},
+              {"AWS_ACCOUNT_ID", "blues"},
+            }};
+
+  DynamoDBClientConfiguration configuration;
+  configuration.region = "us-east-1";
+  configuration.accountIdEndpointMode = "required";
+
+  auto credsProvider = Aws::MakeShared<EnvironmentAWSCredentialsProvider>(LOG_TAG);
+
+  const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
+
+  // mock response
+  auto successStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "cowboy.bebop/planets", HttpMethod::HTTP_GET);
+  successStream->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Planets","TableNames": ["Planets"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, successStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+
+  mock_http_client_->AddResponseToReturn(successResponse);
+  const auto listTablesOutcome = accountIdClient->ListTables();
+  EXPECT_TRUE(listTablesOutcome.IsSuccess());
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_EQ("https://blues.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+  const auto features = GetFeaturesForRequest(requestSeen);
+  EXPECT_TRUE(!features.empty());
+  // AccountId is disabled
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "R") != features.end());
+  // Identity resolved a accountId
+  EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }

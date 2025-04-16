@@ -9,7 +9,9 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/crt/Config.h>
+#include <aws/crt/Optional.h>
 
+#include <iterator>
 #include <numeric>
 #include <utility>
 
@@ -33,7 +35,11 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED, "Z"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_REQUIRED, "a"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED, "b"},
-    {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED, "c"}
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED, "c"},
+    {UserAgentFeature::ACCOUNT_ID_MODE_PREFERRED, "P"},
+    {UserAgentFeature::ACCOUNT_ID_MODE_DISABLED , "Q"},
+    {UserAgentFeature::ACCOUNT_ID_MODE_REQUIRED, "R"},
+    {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
 };
 
 Aws::String BusinessMetricForFeature(UserAgentFeature feature) {
@@ -52,6 +58,22 @@ const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
     {"standard", UserAgentFeature::RETRY_MODE_STANDARD},
     {"adaptive", UserAgentFeature::RETRY_MODE_ADAPTIVE},
 };
+
+const std::pair<const char*, UserAgentFeature> ACCOUNT_ID_MODE_MAPPING[] = {
+    {"preferred", UserAgentFeature::ACCOUNT_ID_MODE_PREFERRED},
+    {"disabled", UserAgentFeature::ACCOUNT_ID_MODE_DISABLED},
+    {"required", UserAgentFeature::ACCOUNT_ID_MODE_REQUIRED},
+};
+
+Aws::Crt::Optional<UserAgentFeature> BusinessMetricForAccountIdMode(const Aws::String& accountIdMode) {
+  const auto *const accountIdFeature = std::find_if(std::begin(ACCOUNT_ID_MODE_MAPPING),
+    std::end(ACCOUNT_ID_MODE_MAPPING),
+    [&accountIdMode](const std::pair<const char*, UserAgentFeature>& mapping) -> bool { return strcmp(mapping.first, accountIdMode.c_str()) == 0; });
+  if (accountIdFeature == std::end(ACCOUNT_ID_MODE_MAPPING)) {
+    return {};
+  }
+  return accountIdFeature->second;
+}
 
 const char* EXEC_ENV_VAR = "AWS_EXECUTION_ENV";
 const char* METADATA = "md";
@@ -94,6 +116,10 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
 #undef XSTR
 #endif
 {
+  const auto accountIdMode = BusinessMetricForAccountIdMode(clientConfiguration.accountIdEndpointMode);
+  if (accountIdMode.has_value()) {
+    m_features.emplace(accountIdMode.value());
+  }
 }
 
 Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const {
