@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
 #include <aws/s3tables/model/TableMetadata.h>
+#include <aws/s3tables/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +93,24 @@ namespace Model
     template<typename MetadataT = TableMetadata>
     CreateTableRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The encryption configuration to use for the table. This configuration
+     * specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for
+     * encrypting the table. </p>  <p>If you choose SSE-KMS encryption you must
+     * grant the S3 Tables maintenance principal access to your KMS key. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+     * requirements for S3 Tables SSE-KMS encryption</a>.</p> 
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    CreateTableRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_tableBucketARN;
@@ -108,6 +127,9 @@ namespace Model
 
     TableMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

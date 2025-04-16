@@ -45,6 +45,11 @@ GetTableBucketResult& GetTableBucketResult::operator =(const Aws::AmazonWebServi
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

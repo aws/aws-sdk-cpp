@@ -22,6 +22,7 @@
 #include <aws/dsql/model/CreateMultiRegionClustersResult.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
 #include <aws/dsql/model/GetClusterResult.h>
+#include <aws/dsql/model/GetVpcEndpointServiceNameResult.h>
 #include <aws/dsql/model/ListClustersResult.h>
 #include <aws/dsql/model/ListTagsForResourceResult.h>
 #include <aws/dsql/model/UpdateClusterResult.h>
@@ -73,6 +74,7 @@ namespace Aws
       class DeleteClusterRequest;
       class DeleteMultiRegionClustersRequest;
       class GetClusterRequest;
+      class GetVpcEndpointServiceNameRequest;
       class ListClustersRequest;
       class ListTagsForResourceRequest;
       class TagResourceRequest;
@@ -86,6 +88,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteClusterResult, DSQLError> DeleteClusterOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DSQLError> DeleteMultiRegionClustersOutcome;
       typedef Aws::Utils::Outcome<GetClusterResult, DSQLError> GetClusterOutcome;
+      typedef Aws::Utils::Outcome<GetVpcEndpointServiceNameResult, DSQLError> GetVpcEndpointServiceNameOutcome;
       typedef Aws::Utils::Outcome<ListClustersResult, DSQLError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DSQLError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DSQLError> TagResourceOutcome;
@@ -99,6 +102,7 @@ namespace Aws
       typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
       typedef std::future<DeleteMultiRegionClustersOutcome> DeleteMultiRegionClustersOutcomeCallable;
       typedef std::future<GetClusterOutcome> GetClusterOutcomeCallable;
+      typedef std::future<GetVpcEndpointServiceNameOutcome> GetVpcEndpointServiceNameOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -115,6 +119,7 @@ namespace Aws
     typedef std::function<void(const DSQLClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::DeleteMultiRegionClustersRequest&, const Model::DeleteMultiRegionClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiRegionClustersResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::GetClusterRequest&, const Model::GetClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterResponseReceivedHandler;
+    typedef std::function<void(const DSQLClient*, const Model::GetVpcEndpointServiceNameRequest&, const Model::GetVpcEndpointServiceNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpcEndpointServiceNameResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

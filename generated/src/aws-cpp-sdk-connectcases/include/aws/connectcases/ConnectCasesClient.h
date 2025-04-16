@@ -174,13 +174,11 @@ namespace ConnectCases
          * permission on the User ARN resource that you provide</p>  <p>Creates a
          * case in the specified Cases domain. Case system and custom fields are taken as
          * an array id/value pairs with a declared data types.</p> <p>The following fields
-         * are required when creating a case:</p> <pre><code> &lt;ul&gt; &lt;li&gt;
-         * &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full
-         * customer profile ARN in this format:
-         * &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
-         * ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt;
-         * &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt;
-         * &lt;/li&gt; &lt;/ul&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * are required when creating a case:</p> <ul> <li> <p> <code>customer_id</code> -
+         * You must provide the full customer profile ARN in this format:
+         * <code>arn:aws:profile:your_AWS_Region:your_AWS_account
+         * ID:domains/your_profiles_domain_name/profiles/profile_ID</code> </p> </li> <li>
+         * <p> <code>title</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -242,8 +240,7 @@ namespace ConnectCases
          * API. You need specific IAM permissions to successfully associate the Cases
          * domain. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
-         * to Cases</a>.</p> <pre><code> &lt;/important&gt; </code></pre><p><h3>See
-         * Also:</h3>   <a
+         * to Cases</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -429,12 +426,12 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Deletes a Cases domain.</p> <pre><code> &lt;note&gt; &lt;p&gt;After deleting
-         * your domain you must disassociate the deleted domain from your Amazon Connect
-         * instance with another API call before being able to use Cases again with this
-         * Amazon Connect instance. See &lt;a
-         * href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
-         * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Cases domain.</p>  <p>After deleting your domain you must
+         * disassociate the deleted domain from your Amazon Connect instance with another
+         * API call before being able to use Cases again with this Amazon Connect instance.
+         * See <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain">AWS
          * API Reference</a></p>
          */
@@ -509,15 +506,12 @@ namespace ConnectCases
 
         /**
          * <p>Deletes a layout from a cases template. You can delete up to 100 layouts per
-         * domain.</p> <pre><code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt;
-         * &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling
-         * &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-         * &lt;p&gt;You cannot update a deleted layout by calling
-         * &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a
-         * &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-         * &lt;p&gt;Deleted layouts are not included in the
-         * &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * domain.</p> <p>After a layout is deleted:</p> <ul> <li> <p>You can still
+         * retrieve the layout by calling <code>GetLayout</code>.</p> </li> <li> <p>You
+         * cannot update a deleted layout by calling <code>UpdateLayout</code>; it throws a
+         * <code>ValidationException</code>.</p> </li> <li> <p>Deleted layouts are not
+         * included in the <code>ListLayouts</code> response.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout">AWS
          * API Reference</a></p>
          */
@@ -543,14 +537,11 @@ namespace ConnectCases
 
         /**
          * <p>Deletes a cases template. You can delete up to 100 templates per domain.</p>
-         * <pre><code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt;
-         * &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling
-         * &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-         * &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-         * &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt;
-         * &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the
-         * &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt;
-         * &lt;/ul&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * <p>After a cases template is deleted:</p> <ul> <li> <p>You can still retrieve
+         * the template by calling <code>GetTemplate</code>.</p> </li> <li> <p>You cannot
+         * update the template. </p> </li> <li> <p>You cannot create a case by using the
+         * deleted template.</p> </li> <li> <p>Deleted templates are not included in the
+         * <code>ListTemplates</code> response.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate">AWS
          * API Reference</a></p>
          */

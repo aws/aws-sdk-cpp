@@ -82,6 +82,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the namespace containing this table.</p>
+     */
+    inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
+    template<typename NamespaceIdT = Aws::String>
+    void SetNamespaceId(NamespaceIdT&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::forward<NamespaceIdT>(value); }
+    template<typename NamespaceIdT = Aws::String>
+    GetTableResult& WithNamespaceId(NamespaceIdT&& value) { SetNamespaceId(std::forward<NamespaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The version token of the table.</p>
      */
     inline const Aws::String& GetVersionToken() const { return m_versionToken; }
@@ -189,6 +200,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The unique identifier of the table bucket containing this table.</p>
+     */
+    inline const Aws::String& GetTableBucketId() const { return m_tableBucketId; }
+    template<typename TableBucketIdT = Aws::String>
+    void SetTableBucketId(TableBucketIdT&& value) { m_tableBucketIdHasBeenSet = true; m_tableBucketId = std::forward<TableBucketIdT>(value); }
+    template<typename TableBucketIdT = Aws::String>
+    GetTableResult& WithTableBucketId(TableBucketIdT&& value) { SetTableBucketId(std::forward<TableBucketIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -209,6 +231,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_namespace;
     bool m_namespaceHasBeenSet = false;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_versionToken;
     bool m_versionTokenHasBeenSet = false;
@@ -239,6 +264,9 @@ namespace Model
 
     OpenTableFormat m_format{OpenTableFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
+
+    Aws::String m_tableBucketId;
+    bool m_tableBucketIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

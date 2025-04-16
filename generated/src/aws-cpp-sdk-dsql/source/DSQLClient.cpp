@@ -26,6 +26,7 @@
 #include <aws/dsql/model/DeleteClusterRequest.h>
 #include <aws/dsql/model/DeleteMultiRegionClustersRequest.h>
 #include <aws/dsql/model/GetClusterRequest.h>
+#include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>
 #include <aws/dsql/model/ListClustersRequest.h>
 #include <aws/dsql/model/ListTagsForResourceRequest.h>
 #include <aws/dsql/model/TagResourceRequest.h>
@@ -320,6 +321,40 @@ GetClusterOutcome DSQLClient::GetCluster(const GetClusterRequest& request) const
       endpointResolutionOutcome.GetResult().AddPathSegments("/cluster/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
       return GetClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetVpcEndpointServiceNameOutcome DSQLClient::GetVpcEndpointServiceName(const GetVpcEndpointServiceNameRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetVpcEndpointServiceName);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcEndpointServiceName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVpcEndpointServiceName", "Required field: Identifier, is not set");
+    return GetVpcEndpointServiceNameOutcome(Aws::Client::AWSError<DSQLErrors>(DSQLErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetVpcEndpointServiceName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetVpcEndpointServiceName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetVpcEndpointServiceName",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetVpcEndpointServiceNameOutcome>(
+    [&]()-> GetVpcEndpointServiceNameOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVpcEndpointServiceName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/vpc-endpoint-service-name");
+      return GetVpcEndpointServiceNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

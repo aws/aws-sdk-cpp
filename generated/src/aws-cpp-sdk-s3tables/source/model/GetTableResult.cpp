@@ -49,6 +49,11 @@ GetTableResult& GetTableResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
     m_namespaceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("namespaceId"))
+  {
+    m_namespaceId = jsonValue.GetString("namespaceId");
+    m_namespaceIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("versionToken"))
   {
     m_versionToken = jsonValue.GetString("versionToken");
@@ -98,6 +103,11 @@ GetTableResult& GetTableResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_format = OpenTableFormatMapper::GetOpenTableFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

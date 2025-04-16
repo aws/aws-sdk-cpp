@@ -45,6 +45,11 @@ TableBucketSummary& TableBucketSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tableBucketId"))
+  {
+    m_tableBucketId = jsonValue.GetString("tableBucketId");
+    m_tableBucketIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue TableBucketSummary::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_tableBucketIdHasBeenSet)
+  {
+   payload.WithString("tableBucketId", m_tableBucketId);
+
   }
 
   return payload;

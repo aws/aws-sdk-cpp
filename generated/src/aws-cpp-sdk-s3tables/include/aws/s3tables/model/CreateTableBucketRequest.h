@@ -7,6 +7,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3tables/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -43,10 +44,28 @@ namespace Model
     template<typename NameT = Aws::String>
     CreateTableBucketRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The encryption configuration to use for the table bucket. This configuration
+     * specifies the default encryption settings that will be applied to all tables
+     * created in this bucket unless overridden at the table level. The configuration
+     * includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    CreateTableBucketRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

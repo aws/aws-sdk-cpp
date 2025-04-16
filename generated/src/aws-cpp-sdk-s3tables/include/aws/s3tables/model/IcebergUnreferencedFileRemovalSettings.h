@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Contains details about the unreferenced file removal settings for an Iceberg
-   * table bucket. </p><p><h3>See Also:</h3>   <a
+   * table bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/IcebergUnreferencedFileRemovalSettings">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of days an object has to be unreferenced before it is marked as
-     * non-current. <pre><code> &lt;/p&gt; </code></pre>
+     * non-current.</p>
      */
     inline int GetUnreferencedDays() const { return m_unreferencedDays; }
     inline bool UnreferencedDaysHasBeenSet() const { return m_unreferencedDaysHasBeenSet; }
@@ -49,8 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of days an object has to be non-current before it is deleted.
-     * <pre><code>&lt;/p&gt; </code></pre>
+     * <p>The number of days an object has to be non-current before it is deleted.</p>
      */
     inline int GetNonCurrentDays() const { return m_nonCurrentDays; }
     inline bool NonCurrentDaysHasBeenSet() const { return m_nonCurrentDaysHasBeenSet; }

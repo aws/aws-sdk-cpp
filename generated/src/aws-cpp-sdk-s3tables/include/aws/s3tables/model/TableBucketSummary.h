@@ -85,6 +85,18 @@ namespace Model
     template<typename CreatedAtT = Aws::Utils::DateTime>
     TableBucketSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The system-assigned unique identifier for the table bucket.</p>
+     */
+    inline const Aws::String& GetTableBucketId() const { return m_tableBucketId; }
+    inline bool TableBucketIdHasBeenSet() const { return m_tableBucketIdHasBeenSet; }
+    template<typename TableBucketIdT = Aws::String>
+    void SetTableBucketId(TableBucketIdT&& value) { m_tableBucketIdHasBeenSet = true; m_tableBucketId = std::forward<TableBucketIdT>(value); }
+    template<typename TableBucketIdT = Aws::String>
+    TableBucketSummary& WithTableBucketId(TableBucketIdT&& value) { SetTableBucketId(std::forward<TableBucketIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -98,6 +110,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
+
+    Aws::String m_tableBucketId;
+    bool m_tableBucketIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -50,6 +50,11 @@ TagSyncTaskItem& TagSyncTaskItem::operator =(JsonView jsonValue)
     m_tagValue = jsonValue.GetString("TagValue");
     m_tagValueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceQuery"))
+  {
+    m_resourceQuery = jsonValue.GetObject("ResourceQuery");
+    m_resourceQueryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
@@ -104,6 +109,12 @@ JsonValue TagSyncTaskItem::Jsonize() const
   if(m_tagValueHasBeenSet)
   {
    payload.WithString("TagValue", m_tagValue);
+
+  }
+
+  if(m_resourceQueryHasBeenSet)
+  {
+   payload.WithObject("ResourceQuery", m_resourceQuery.Jsonize());
 
   }
 

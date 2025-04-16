@@ -127,6 +127,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the KMS customer managed key for EventBridge to use to
+     * encrypt the connection, if one has been specified.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting
+     * connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    DescribeConnectionResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The parameters to use for authorization for the connection.</p>
      */
     inline const ConnectionAuthResponseParameters& GetAuthParameters() const { return m_authParameters; }
@@ -202,6 +217,9 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
 
     ConnectionAuthResponseParameters m_authParameters;
     bool m_authParametersHasBeenSet = false;

@@ -24,8 +24,10 @@
 #include <aws/s3tables/model/GetNamespaceResult.h>
 #include <aws/s3tables/model/GetTableResult.h>
 #include <aws/s3tables/model/GetTableBucketResult.h>
+#include <aws/s3tables/model/GetTableBucketEncryptionResult.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationResult.h>
 #include <aws/s3tables/model/GetTableBucketPolicyResult.h>
+#include <aws/s3tables/model/GetTableEncryptionResult.h>
 #include <aws/s3tables/model/GetTableMaintenanceConfigurationResult.h>
 #include <aws/s3tables/model/GetTableMaintenanceJobStatusResult.h>
 #include <aws/s3tables/model/GetTableMetadataLocationResult.h>
@@ -82,13 +84,16 @@ namespace Aws
       class DeleteNamespaceRequest;
       class DeleteTableRequest;
       class DeleteTableBucketRequest;
+      class DeleteTableBucketEncryptionRequest;
       class DeleteTableBucketPolicyRequest;
       class DeleteTablePolicyRequest;
       class GetNamespaceRequest;
       class GetTableRequest;
       class GetTableBucketRequest;
+      class GetTableBucketEncryptionRequest;
       class GetTableBucketMaintenanceConfigurationRequest;
       class GetTableBucketPolicyRequest;
+      class GetTableEncryptionRequest;
       class GetTableMaintenanceConfigurationRequest;
       class GetTableMaintenanceJobStatusRequest;
       class GetTableMetadataLocationRequest;
@@ -96,6 +101,7 @@ namespace Aws
       class ListNamespacesRequest;
       class ListTableBucketsRequest;
       class ListTablesRequest;
+      class PutTableBucketEncryptionRequest;
       class PutTableBucketMaintenanceConfigurationRequest;
       class PutTableBucketPolicyRequest;
       class PutTableMaintenanceConfigurationRequest;
@@ -111,13 +117,16 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteNamespaceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableBucketOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableBucketEncryptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableBucketPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTablePolicyOutcome;
       typedef Aws::Utils::Outcome<GetNamespaceResult, S3TablesError> GetNamespaceOutcome;
       typedef Aws::Utils::Outcome<GetTableResult, S3TablesError> GetTableOutcome;
       typedef Aws::Utils::Outcome<GetTableBucketResult, S3TablesError> GetTableBucketOutcome;
+      typedef Aws::Utils::Outcome<GetTableBucketEncryptionResult, S3TablesError> GetTableBucketEncryptionOutcome;
       typedef Aws::Utils::Outcome<GetTableBucketMaintenanceConfigurationResult, S3TablesError> GetTableBucketMaintenanceConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetTableBucketPolicyResult, S3TablesError> GetTableBucketPolicyOutcome;
+      typedef Aws::Utils::Outcome<GetTableEncryptionResult, S3TablesError> GetTableEncryptionOutcome;
       typedef Aws::Utils::Outcome<GetTableMaintenanceConfigurationResult, S3TablesError> GetTableMaintenanceConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetTableMaintenanceJobStatusResult, S3TablesError> GetTableMaintenanceJobStatusOutcome;
       typedef Aws::Utils::Outcome<GetTableMetadataLocationResult, S3TablesError> GetTableMetadataLocationOutcome;
@@ -125,6 +134,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListNamespacesResult, S3TablesError> ListNamespacesOutcome;
       typedef Aws::Utils::Outcome<ListTableBucketsResult, S3TablesError> ListTableBucketsOutcome;
       typedef Aws::Utils::Outcome<ListTablesResult, S3TablesError> ListTablesOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketEncryptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketMaintenanceConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableMaintenanceConfigurationOutcome;
@@ -140,13 +150,16 @@ namespace Aws
       typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
       typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
       typedef std::future<DeleteTableBucketOutcome> DeleteTableBucketOutcomeCallable;
+      typedef std::future<DeleteTableBucketEncryptionOutcome> DeleteTableBucketEncryptionOutcomeCallable;
       typedef std::future<DeleteTableBucketPolicyOutcome> DeleteTableBucketPolicyOutcomeCallable;
       typedef std::future<DeleteTablePolicyOutcome> DeleteTablePolicyOutcomeCallable;
       typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
       typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
       typedef std::future<GetTableBucketOutcome> GetTableBucketOutcomeCallable;
+      typedef std::future<GetTableBucketEncryptionOutcome> GetTableBucketEncryptionOutcomeCallable;
       typedef std::future<GetTableBucketMaintenanceConfigurationOutcome> GetTableBucketMaintenanceConfigurationOutcomeCallable;
       typedef std::future<GetTableBucketPolicyOutcome> GetTableBucketPolicyOutcomeCallable;
+      typedef std::future<GetTableEncryptionOutcome> GetTableEncryptionOutcomeCallable;
       typedef std::future<GetTableMaintenanceConfigurationOutcome> GetTableMaintenanceConfigurationOutcomeCallable;
       typedef std::future<GetTableMaintenanceJobStatusOutcome> GetTableMaintenanceJobStatusOutcomeCallable;
       typedef std::future<GetTableMetadataLocationOutcome> GetTableMetadataLocationOutcomeCallable;
@@ -154,6 +167,7 @@ namespace Aws
       typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
       typedef std::future<ListTableBucketsOutcome> ListTableBucketsOutcomeCallable;
       typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
+      typedef std::future<PutTableBucketEncryptionOutcome> PutTableBucketEncryptionOutcomeCallable;
       typedef std::future<PutTableBucketMaintenanceConfigurationOutcome> PutTableBucketMaintenanceConfigurationOutcomeCallable;
       typedef std::future<PutTableBucketPolicyOutcome> PutTableBucketPolicyOutcomeCallable;
       typedef std::future<PutTableMaintenanceConfigurationOutcome> PutTableMaintenanceConfigurationOutcomeCallable;
@@ -172,13 +186,16 @@ namespace Aws
     typedef std::function<void(const S3TablesClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamespaceResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::DeleteTableBucketRequest&, const Model::DeleteTableBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableBucketResponseReceivedHandler;
+    typedef std::function<void(const S3TablesClient*, const Model::DeleteTableBucketEncryptionRequest&, const Model::DeleteTableBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableBucketEncryptionResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::DeleteTableBucketPolicyRequest&, const Model::DeleteTableBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::DeleteTablePolicyRequest&, const Model::DeleteTablePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTablePolicyResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamespaceResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableRequest&, const Model::GetTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableBucketRequest&, const Model::GetTableBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableBucketResponseReceivedHandler;
+    typedef std::function<void(const S3TablesClient*, const Model::GetTableBucketEncryptionRequest&, const Model::GetTableBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableBucketEncryptionResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableBucketMaintenanceConfigurationRequest&, const Model::GetTableBucketMaintenanceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableBucketMaintenanceConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableBucketPolicyRequest&, const Model::GetTableBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableBucketPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3TablesClient*, const Model::GetTableEncryptionRequest&, const Model::GetTableEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableEncryptionResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableMaintenanceConfigurationRequest&, const Model::GetTableMaintenanceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableMaintenanceConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableMaintenanceJobStatusRequest&, const Model::GetTableMaintenanceJobStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableMaintenanceJobStatusResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::GetTableMetadataLocationRequest&, const Model::GetTableMetadataLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableMetadataLocationResponseReceivedHandler;
@@ -186,6 +203,7 @@ namespace Aws
     typedef std::function<void(const S3TablesClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamespacesResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::ListTableBucketsRequest&, const Model::ListTableBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableBucketsResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
+    typedef std::function<void(const S3TablesClient*, const Model::PutTableBucketEncryptionRequest&, const Model::PutTableBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTableBucketEncryptionResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::PutTableBucketMaintenanceConfigurationRequest&, const Model::PutTableBucketMaintenanceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTableBucketMaintenanceConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::PutTableBucketPolicyRequest&, const Model::PutTableBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTableBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3TablesClient*, const Model::PutTableMaintenanceConfigurationRequest&, const Model::PutTableMaintenanceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTableMaintenanceConfigurationResponseReceivedHandler;

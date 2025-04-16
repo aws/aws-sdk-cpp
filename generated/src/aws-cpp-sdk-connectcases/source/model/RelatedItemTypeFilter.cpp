@@ -40,6 +40,11 @@ RelatedItemTypeFilter& RelatedItemTypeFilter::operator =(JsonView jsonValue)
     m_file = jsonValue.GetObject("file");
     m_fileHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sla"))
+  {
+    m_sla = jsonValue.GetObject("sla");
+    m_slaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue RelatedItemTypeFilter::Jsonize() const
   if(m_fileHasBeenSet)
   {
    payload.WithObject("file", m_file.Jsonize());
+
+  }
+
+  if(m_slaHasBeenSet)
+  {
+   payload.WithObject("sla", m_sla.Jsonize());
 
   }
 

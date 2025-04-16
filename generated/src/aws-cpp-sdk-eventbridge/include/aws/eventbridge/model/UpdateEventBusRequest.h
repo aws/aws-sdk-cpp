@@ -58,11 +58,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify
      * and view keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
      *  <p>Schema discovery is not supported for event buses encrypted using a
-     * customer managed key. EventBridge returns an error if you call <code> <a
+     * customer managed key. EventBridge returns an error if: </p> <ul> <li> <p>You
+     * call <code> <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
      * </code> on an event bus set to use a customer managed key for encryption.</p>
-     * <p>To enable schema discovery on an event bus, choose to use an Amazon Web
-     * Services owned key. For more information, see <a
+     * </li> <li> <p>You call <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+     * </code> to set a customer managed key on an event bus with schema discovery
+     * enabled.</p> </li> </ul> <p>To enable schema discovery on an event bus, choose
+     * to use an Amazon Web Services owned key. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption-event-bus-cmkey.html">Encrypting
      * events</a> in the <i>Amazon EventBridge User Guide</i>.</p>  
      * <p>If you have specified that EventBridge use a customer managed key for

@@ -34,6 +34,12 @@ Aws::String StartTagSyncTaskRequest::SerializePayload() const
 
   }
 
+  if(m_resourceQueryHasBeenSet)
+  {
+   payload.WithObject("ResourceQuery", m_resourceQuery.Jsonize());
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);

@@ -50,6 +50,11 @@ GetTagSyncTaskResult& GetTagSyncTaskResult::operator =(const Aws::AmazonWebServi
     m_tagValue = jsonValue.GetString("TagValue");
     m_tagValueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceQuery"))
+  {
+    m_resourceQuery = jsonValue.GetObject("ResourceQuery");
+    m_resourceQueryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
