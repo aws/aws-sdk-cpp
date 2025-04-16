@@ -45,15 +45,6 @@ void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& 
   if(!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
-  // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
-  // it must be set by an auth provider / identity resolver or by an SDK user.
-  static const char AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE[] = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
-  static const char AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION[] = "account_id_endpoint_mode";
-  accountIdEndpointMode = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE,
-                                                                               inputProfileName,
-                                                                               AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
-                                                                               {"required", "disabled", "preferred"}, /* allowed values */
-                                                                               "preferred" /* default value */);
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Client::ClientConfigurationInitValues &configuration)

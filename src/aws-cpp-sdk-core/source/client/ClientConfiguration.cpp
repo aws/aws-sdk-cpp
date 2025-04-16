@@ -39,6 +39,8 @@ static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_
 static const char* AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
 static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
+static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
+static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION = "account_id_endpoint_mode";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -278,12 +280,21 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     if (disableIMDSv1 == "true") {
         config.disableImdsV1 = true;
     }
+
+    // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
+    // it must be set by an auth provider / identity resolver or by an SDK user.
+    config.accountIdEndpointMode = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE,
+        config.profileName,
+        AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
+        {"required", "disabled", "preferred"}, /* allowed values */
+        "preferred" /* default value */);
 }
 
 ClientConfiguration::ClientConfiguration()
 {
     this->disableIMDS = false;
     setLegacyClientConfigurationParameters(*this);
+    setConfigFromEnvOrProfile(*this);;
 
     if (!this->disableIMDS &&
         region.empty() &&
@@ -300,13 +311,13 @@ ClientConfiguration::ClientConfiguration()
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
-    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
 {
     this->disableIMDS = configuration.shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
+    setConfigFromEnvOrProfile(*this);
 
     if (!this->disableIMDS &&
         region.empty() &&
@@ -323,7 +334,6 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
-    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
@@ -333,6 +343,7 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
         this->profileName = Aws::String(profile);
     }
     setLegacyClientConfigurationParameters(*this);
+    setConfigFromEnvOrProfile(*this);
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
     bool hasEc2MetadataRegion = false;
@@ -368,13 +379,13 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
     }
 
     AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");
-    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool shouldDisableIMDS)
 {
     this->disableIMDS = shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
+    setConfigFromEnvOrProfile(*this);
 
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
@@ -397,7 +408,6 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
     }
 
     Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, defaultMode, hasEc2MetadataRegion, ec2MetadataRegion);
-    setConfigFromEnvOrProfile(*this);
 }
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
