@@ -465,6 +465,16 @@ namespace Aws
                */
               bool useAnonymousAuth = false;
             } winHTTPOptions;
+
+          /**
+            * The AWS AccountId used for the request.
+            */
+          Aws::String accountId;
+
+          /**
+           * The AccountId Endpoint Mode.
+           */
+          Aws::String accountIdEndpointMode = "preferred";
         };
 
         /**

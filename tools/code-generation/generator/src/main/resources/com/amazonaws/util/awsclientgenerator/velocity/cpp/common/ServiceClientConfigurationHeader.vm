@@ -58,18 +58,6 @@ namespace ${rootNamespace}
 #set($addArgDummy = $copyCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
 #set($addArgDummy = $moveCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
 #end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
-#set($addArgDummy = $copyCtorStatements.add("accountId{other.accountId}"))
-#set($addArgDummy = $moveCtorStatements.add("accountId{std::move(other.accountId)}"))
-#set($addArgDummy = $copyAssignmentStatements.add("accountId = other.accountId;"))
-#set($addArgDummy = $moveAssignemntStatements.add("accountId = std::move(other.accountId);"))
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
-#set($addArgDummy = $copyCtorStatements.add("accountIdEndpointMode{other.accountIdEndpointMode}"))
-#set($addArgDummy = $moveCtorStatements.add("accountIdEndpointMode{std::move(other.accountIdEndpointMode)}"))
-#set($addArgDummy = $copyAssignmentStatements.add("accountIdEndpointMode = other.accountIdEndpointMode;"))
-#set($addArgDummy = $moveAssignemntStatements.add("accountIdEndpointMode = std::move(other.accountIdEndpointMode);"))
-#end
 #if(!$copyCtorStatements.isEmpty())
             ${metadata.classNamePrefix}ClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& other)
                 : Aws::Client::GenericClientConfiguration(other),
@@ -186,18 +174,6 @@ namespace ${rootNamespace}
              */
             Aws::Crt::Optional<bool>& enableEndpointDiscovery;
 
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
-            /**
-             * $serviceModel.endpointRuleSetModel.parameters["AccountId"].documentation
-             */
-            Aws::String accountId;
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
-            /**
-             * $serviceModel.endpointRuleSetModel.parameters["AccountIdEndpointMode"].documentation
-             */
-            Aws::String accountIdEndpointMode = "preferred";
 #end
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigHeader.vm")

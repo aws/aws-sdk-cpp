@@ -346,31 +346,19 @@ namespace client
             ResponseT,
             ErrorMarshallerT>>;
 
-        /**
-         * SFINAE implementation for refreshing client context params enabled if the client configuration
-         * type has a AccountId member. If there is a corresponding member we want to use that in the endpoint
-         * calculation and set it as a client context parameter.
-         */
-        template <typename T, typename = void>
-        struct HasAccountId : std::false_type {};
-
-        template<typename T>
-        struct HasAccountId<T, decltype(void(std::declval<T>().accountId))> : std::true_type {};
-
-        template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<HasAccountId<ConfigT>::value, int>::type = 0>
         GetContextEndpointParametersOutcome GetContextEndpointParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
           Aws::Vector<Aws::Endpoint::EndpointParameter> endpointParameters;
           const auto resolvedAccountId = ctx.m_awsIdentity->accountId();
-          if (resolvedAccountId.has_value() && !resolvedAccountId.value().empty() && m_clientConfiguration.accountId.empty()) {
+          const auto resolvedNonEmptyAccountId = resolvedAccountId.has_value() && !resolvedAccountId.value().empty();
+          // Set user agent if account ID was resolved in identity provider
+          if (resolvedNonEmptyAccountId) {
+            ctx.m_pRequest->AddUserAgentFeature(Aws::Client::UserAgentFeature::RESOLVED_ACCOUNT_ID);
+          }
+          // Only set EP param if client configuration does not have a configured account ID and we resolved a account id
+          if (resolvedNonEmptyAccountId && m_clientConfiguration.accountId.empty()) {
             endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
           }
           return endpointParameters;
-        }
-
-        template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<!HasAccountId<ConfigT>::value, int>::type = 0>
-        GetContextEndpointParametersOutcome GetContextEndpointParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
-          AWS_UNREFERENCED_PARAM(ctx);
-          return Aws::Vector<Aws::Endpoint::EndpointParameter>{};
         }
     };
 

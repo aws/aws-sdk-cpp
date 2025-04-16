@@ -19,6 +19,7 @@ file(GLOB AWS_TESTING_HTTP_MOCKS_HEADERS "include/aws/testing/mocks/http/*.h")
 file(GLOB AWS_TESTING_CLIENT_MOCKS_HEADERS "include/aws/testing/mocks/aws/client/*.h")
 file(GLOB AWS_TESTING_MONITORING_MOCKS_HEADERS "include/aws/testing/mocks/monitoring/*.h")
 file(GLOB AWS_TESTING_PLATFORM_HEADERS "include/aws/testing/platform/*.h")
+file(GLOB AWS_TESTING_UTILS_HEADERS "include/aws/testing/utils/*.h")
 
 file(GLOB AWS_TESTING_SOURCE "source/*.cpp")
 file(GLOB AWS_TESTING_EXTERNAL_SOURCE "source/external/*.cc")
@@ -36,6 +37,7 @@ file(GLOB TestingResources_SHARED_SRC
     ${AWS_TESTING_CLIENT_MOCKS_HEADERS}
     ${AWS_TESTING_MONITORING_MOCKS_HEADERS}
     ${AWS_TESTING_PLATFORM_HEADERS}
+    ${AWS_TESTING_UTILS_HEADERS}
     ${AWS_TESTING_SOURCE}
     ${AWS_TESTING_EXTERNAL_SOURCE}
     ${AWS_TESTING_GTEST_SOURCE}
@@ -59,6 +61,7 @@ if(PLATFORM_WINDOWS)
     if(MSVC)
         source_group("Header Files\\aws\\testing" FILES ${AWS_TESTING_HEADERS})
         source_group("Header Files\\aws\\testing\\platform" FILES ${AWS_TESTING_PLATFORM_HEADERS})
+        source_group("Header Files\\aws\\testing\\utils" FILES ${AWS_TESTING_UTILS_HEADERS})
         source_group("Header Files\\aws\\external" FILES ${AWS_TESTING_EXTERNAL_HEADERS})
         source_group("Header Files\\aws\\external\\gtest" FILES ${AWS_TESTING_GTEST_HEADERS})
         source_group("Header Files\\aws\\external\\gtest\\internal" FILES ${AWS_TESTING_GTEST_HEADERS_INTERNAL})
@@ -148,6 +151,7 @@ install (FILES ${AWS_TESTING_GTEST_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws
 install (FILES ${AWS_TESTING_GTEST_HEADERS_INTERNAL} DESTINATION ${INCLUDE_DIRECTORY}/aws/external/gtest/internal)
 install (FILES ${AWS_TESTING_GTEST_HEADERS_INTERNAL_CUSTOM} DESTINATION ${INCLUDE_DIRECTORY}/aws/external/gtest/internal/custom)
 install (FILES ${AWS_TESTING_PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/platform)
+install (FILES ${AWS_TESTING_UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/utils)
 install (FILES ${AWS_TESTING_AUTH_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/aws/auth)
 install (FILES ${AWS_TESTING_CLIENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/aws/client)
 install (FILES ${AWS_TESTING_EVENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/event)
