@@ -173,6 +173,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
     m_dataTieringHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+    m_networkTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IpDiscovery"))
+  {
+    m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(jsonValue.GetString("IpDiscovery"));
+    m_ipDiscoveryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -354,6 +364,16 @@ JsonValue Cluster::Jsonize() const
   if(m_dataTieringHasBeenSet)
   {
    payload.WithString("DataTiering", DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering));
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+   payload.WithString("IpDiscovery", IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery));
   }
 
   return payload;

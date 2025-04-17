@@ -72,8 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for an Amazon Connect contact. This identifier is
-     * related to the contact starting.</p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -124,8 +123,9 @@ namespace Model
     ///@{
     /**
      * <p>The channel for the contact</p>  <p>CreateContact only supports
-     * the EMAIL channel. The following information that states other channels are
-     * supported is incorrect. We are working to update this topic.</p> 
+     * the EMAIL and VOICE channels. The following information that states other
+     * channels are supported is incorrect. We are working to update this topic.</p>
+     * 
      */
     inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
@@ -136,9 +136,11 @@ namespace Model
     ///@{
     /**
      * <p>Indicates how the contact was initiated. </p>  <p>CreateContact
-     * only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW.
-     * The following information that states other initiation methods are supported is
-     * incorrect. We are working to update this topic.</p> 
+     * only supports the following initiation methods: </p> <ul> <li> <p>For EMAIL:
+     * OUTBOUND, AGENT_REPLY, and FLOW. </p> </li> <li> <p>For VOICE: TRANSFER and the
+     * subtype connect:ExternalAudio. </p> </li> </ul> <p>The following information
+     * that states other initiation methods are supported is incorrect. We are working
+     * to update this topic.</p> 
      */
     inline ContactInitiationMethod GetInitiationMethod() const { return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }

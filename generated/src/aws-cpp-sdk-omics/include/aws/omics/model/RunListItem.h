@@ -165,6 +165,18 @@ namespace Model
     inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
     inline RunListItem& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the workflow version.</p>
+     */
+    inline const Aws::String& GetWorkflowVersionName() const { return m_workflowVersionName; }
+    inline bool WorkflowVersionNameHasBeenSet() const { return m_workflowVersionNameHasBeenSet; }
+    template<typename WorkflowVersionNameT = Aws::String>
+    void SetWorkflowVersionName(WorkflowVersionNameT&& value) { m_workflowVersionNameHasBeenSet = true; m_workflowVersionName = std::forward<WorkflowVersionNameT>(value); }
+    template<typename WorkflowVersionNameT = Aws::String>
+    RunListItem& WithWorkflowVersionName(WorkflowVersionNameT&& value) { SetWorkflowVersionName(std::forward<WorkflowVersionNameT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -199,6 +211,9 @@ namespace Model
 
     StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_workflowVersionName;
+    bool m_workflowVersionNameHasBeenSet = false;
   };
 
 } // namespace Model

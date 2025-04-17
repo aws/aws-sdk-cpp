@@ -116,8 +116,7 @@ namespace Model
      * you specify with this option.</p> </dd> <dt>awslogs-group</dt> <dd> <p>Required:
      * Yes</p> <p>Make sure to specify a log group that the <code>awslogs</code> log
      * driver sends its log streams to.</p> </dd> <dt>awslogs-stream-prefix</dt> <dd>
-     * <p>Required: Yes, when using the Fargate launch type.Optional for the EC2 launch
-     * type, required for the Fargate launch type.</p> <p>Use the
+     * <p>Required: Yes, when using Fargate.Optional when using EC2.</p> <p>Use the
      * <code>awslogs-stream-prefix</code> option to associate a log stream with the
      * specified prefix, the container name, and the ID of the Amazon ECS task that the
      * container belongs to. If you specify a prefix with this option, then the log
@@ -156,25 +155,34 @@ namespace Model
      * <code>awslogs-datetime-format</code> and <code>awslogs-multiline-pattern</code>
      * options.</p>  <p>Multiline logging performs regular expression parsing and
      * matching of all log messages. This might have a negative impact on logging
-     * performance.</p>  </dd> <dt>mode</dt> <dd> <p>Required: No</p> <p>Valid
+     * performance.</p>  </dd> </dl> <p>The following options apply to all
+     * supported log drivers.</p> <dl> <dt>mode</dt> <dd> <p>Required: No</p> <p>Valid
      * values: <code>non-blocking</code> | <code>blocking</code> </p> <p>This option
-     * defines the delivery mode of log messages from the container to CloudWatch Logs.
-     * The delivery mode you choose affects application availability when the flow of
-     * logs from container to CloudWatch is interrupted.</p> <p>If you use the
-     * <code>blocking</code> mode and the flow of logs to CloudWatch is interrupted,
-     * calls from container code to write to the <code>stdout</code> and
-     * <code>stderr</code> streams will block. The logging thread of the application
-     * will block as a result. This may cause the application to become unresponsive
-     * and lead to container healthcheck failure. </p> <p>If you use the
-     * <code>non-blocking</code> mode, the container's logs are instead stored in an
-     * in-memory intermediate buffer configured with the <code>max-buffer-size</code>
-     * option. This prevents the application from becoming unresponsive when logs
-     * cannot be sent to CloudWatch. We recommend using this mode if you want to ensure
-     * service availability and are okay with some log loss. For more information, see
-     * <a
+     * defines the delivery mode of log messages from the container to the log driver
+     * specified using <code>logDriver</code>. The delivery mode you choose affects
+     * application availability when the flow of logs from container is
+     * interrupted.</p> <p>If you use the <code>blocking</code> mode and the flow of
+     * logs is interrupted, calls from container code to write to the
+     * <code>stdout</code> and <code>stderr</code> streams will block. The logging
+     * thread of the application will block as a result. This may cause the application
+     * to become unresponsive and lead to container healthcheck failure. </p> <p>If you
+     * use the <code>non-blocking</code> mode, the container's logs are instead stored
+     * in an in-memory intermediate buffer configured with the
+     * <code>max-buffer-size</code> option. This prevents the application from becoming
+     * unresponsive when logs cannot be sent. We recommend using this mode if you want
+     * to ensure service availability and are okay with some log loss. For more
+     * information, see <a
      * href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing
      * log loss with non-blocking mode in the <code>awslogs</code> container log
-     * driver</a>.</p> </dd> <dt>max-buffer-size</dt> <dd> <p>Required: No</p>
+     * driver</a>.</p> <p>You can set a default <code>mode</code> for all containers in
+     * a specific Amazon Web Services Region by using the
+     * <code>defaultLogDriverMode</code> account setting. If you don't specify the
+     * <code>mode</code> option or configure the account setting, Amazon ECS will
+     * default to the <code>blocking</code> mode. For more information about the
+     * account setting, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default
+     * log driver mode</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> </dd> <dt>max-buffer-size</dt> <dd> <p>Required: No</p>
      * <p>Default value: <code>1m</code> </p> <p>When <code>non-blocking</code> mode is
      * used, the <code>max-buffer-size</code> log option controls the size of the
      * buffer that's used for intermediate message storage. Make sure to specify an

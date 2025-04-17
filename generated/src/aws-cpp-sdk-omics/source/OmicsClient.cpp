@@ -38,6 +38,7 @@
 #include <aws/omics/model/CreateShareRequest.h>
 #include <aws/omics/model/CreateVariantStoreRequest.h>
 #include <aws/omics/model/CreateWorkflowRequest.h>
+#include <aws/omics/model/CreateWorkflowVersionRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/DeleteReferenceRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/omics/model/DeleteShareRequest.h>
 #include <aws/omics/model/DeleteVariantStoreRequest.h>
 #include <aws/omics/model/DeleteWorkflowRequest.h>
+#include <aws/omics/model/DeleteWorkflowVersionRequest.h>
 #include <aws/omics/model/GetAnnotationImportJobRequest.h>
 #include <aws/omics/model/GetAnnotationStoreRequest.h>
 #include <aws/omics/model/GetAnnotationStoreVersionRequest.h>
@@ -72,6 +74,7 @@
 #include <aws/omics/model/GetVariantImportJobRequest.h>
 #include <aws/omics/model/GetVariantStoreRequest.h>
 #include <aws/omics/model/GetWorkflowRequest.h>
+#include <aws/omics/model/GetWorkflowVersionRequest.h>
 #include <aws/omics/model/ListAnnotationImportJobsRequest.h>
 #include <aws/omics/model/ListAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/ListAnnotationStoresRequest.h>
@@ -93,6 +96,7 @@
 #include <aws/omics/model/ListTagsForResourceRequest.h>
 #include <aws/omics/model/ListVariantImportJobsRequest.h>
 #include <aws/omics/model/ListVariantStoresRequest.h>
+#include <aws/omics/model/ListWorkflowVersionsRequest.h>
 #include <aws/omics/model/ListWorkflowsRequest.h>
 #include <aws/omics/model/PutS3AccessPolicyRequest.h>
 #include <aws/omics/model/StartAnnotationImportJobRequest.h>
@@ -111,6 +115,7 @@
 #include <aws/omics/model/UpdateSequenceStoreRequest.h>
 #include <aws/omics/model/UpdateVariantStoreRequest.h>
 #include <aws/omics/model/UpdateWorkflowRequest.h>
+#include <aws/omics/model/UpdateWorkflowVersionRequest.h>
 #include <aws/omics/model/UploadReadSetPartRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -822,6 +827,42 @@ CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateWorkflowVersionOutcome OmicsClient::CreateWorkflowVersion(const CreateWorkflowVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateWorkflowVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWorkflowVersion", "Required field: WorkflowId, is not set");
+    return CreateWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateWorkflowVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateWorkflowVersionOutcome>(
+    [&]()-> CreateWorkflowVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateWorkflowVersionOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version");
+      return CreateWorkflowVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnnotationStoreRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteAnnotationStore);
@@ -1244,6 +1285,48 @@ DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& r
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       return DeleteWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteWorkflowVersionOutcome OmicsClient::DeleteWorkflowVersion(const DeleteWorkflowVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteWorkflowVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkflowVersion", "Required field: WorkflowId, is not set");
+    return DeleteWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowId]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkflowVersion", "Required field: VersionName, is not set");
+    return DeleteWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteWorkflowVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteWorkflowVersionOutcome>(
+    [&]()-> DeleteWorkflowVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteWorkflowVersionOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+      return DeleteWorkflowVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2102,6 +2185,48 @@ GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetWorkflowVersionOutcome OmicsClient::GetWorkflowVersion(const GetWorkflowVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetWorkflowVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWorkflowVersion", "Required field: WorkflowId, is not set");
+    return GetWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowId]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWorkflowVersion", "Required field: VersionName, is not set");
+    return GetWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetWorkflowVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetWorkflowVersionOutcome>(
+    [&]()-> GetWorkflowVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkflowVersionOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+      return GetWorkflowVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const ListAnnotationImportJobsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListAnnotationImportJobs);
@@ -2794,6 +2919,42 @@ ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresR
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListWorkflowVersionsOutcome OmicsClient::ListWorkflowVersions(const ListWorkflowVersionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListWorkflowVersions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListWorkflowVersions", "Required field: WorkflowId, is not set");
+    return ListWorkflowVersionsOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListWorkflowVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListWorkflowVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListWorkflowVersions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListWorkflowVersionsOutcome>(
+    [&]()-> ListWorkflowVersionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListWorkflowVersionsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version");
+      return ListWorkflowVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListWorkflows);
@@ -3410,6 +3571,48 @@ UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& r
       endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       return UpdateWorkflowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateWorkflowVersionOutcome OmicsClient::UpdateWorkflowVersion(const UpdateWorkflowVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateWorkflowVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateWorkflowVersion", "Required field: WorkflowId, is not set");
+    return UpdateWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowId]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateWorkflowVersion", "Required field: VersionName, is not set");
+    return UpdateWorkflowVersionOutcome(Aws::Client::AWSError<OmicsErrors>(OmicsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateWorkflowVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateWorkflowVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateWorkflowVersionOutcome>(
+    [&]()-> UpdateWorkflowVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorkflowVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("workflows-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateWorkflowVersionOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workflow/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+      return UpdateWorkflowVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

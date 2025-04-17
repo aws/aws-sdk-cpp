@@ -11,6 +11,8 @@
 #include <aws/memorydb/model/AZStatus.h>
 #include <aws/memorydb/model/Endpoint.h>
 #include <aws/memorydb/model/DataTieringStatus.h>
+#include <aws/memorydb/model/NetworkType.h>
+#include <aws/memorydb/model/IpDiscovery.h>
 #include <aws/memorydb/model/Shard.h>
 #include <aws/memorydb/model/SecurityGroupMembership.h>
 #include <utility>
@@ -386,6 +388,30 @@ namespace Model
     inline void SetDataTiering(DataTieringStatus value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
     inline Cluster& WithDataTiering(DataTieringStatus value) { SetDataTiering(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for
+     * IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6
+     * addressing.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline Cluster& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4'
+     * when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints
+     * resolve to IPv6 addresses.</p>
+     */
+    inline IpDiscovery GetIpDiscovery() const { return m_ipDiscovery; }
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+    inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+    inline Cluster& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -471,6 +497,12 @@ namespace Model
 
     DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
     bool m_dataTieringHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

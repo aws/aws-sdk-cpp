@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+     * <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
      */
     inline const Aws::String& GetStoreId() const { return m_storeId; }
     template<typename StoreIdT = Aws::String>

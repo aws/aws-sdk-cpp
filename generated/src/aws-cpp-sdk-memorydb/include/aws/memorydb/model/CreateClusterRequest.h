@@ -8,6 +8,8 @@
 #include <aws/memorydb/MemoryDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/memorydb/model/NetworkType.h>
+#include <aws/memorydb/model/IpDiscovery.h>
 #include <aws/memorydb/model/Tag.h>
 #include <utility>
 
@@ -341,6 +343,36 @@ namespace Model
     inline void SetDataTiering(bool value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
     inline CreateClusterRequest& WithDataTiering(bool value) { SetDataTiering(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the IP address type for the cluster. Valid values are 'ipv4',
+     * 'ipv6', or 'dual_stack'. When set to 'ipv4', the cluster will only be accessible
+     * via IPv4 addresses. When set to 'ipv6', the cluster will only be accessible via
+     * IPv6 addresses. When set to 'dual_stack', the cluster will be accessible via
+     * both IPv4 and IPv6 addresses. If not specified, the default is 'ipv4'.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateClusterRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The mechanism for discovering IP addresses for the cluster discovery
+     * protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
+     * discovery functions such as cluster slots, cluster shards, and cluster nodes
+     * return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster
+     * discovery functions return IPv6 addresses for cluster nodes. The value must be
+     * compatible with the NetworkType parameter. If not specified, the default is
+     * 'ipv4'.</p>
+     */
+    inline IpDiscovery GetIpDiscovery() const { return m_ipDiscovery; }
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+    inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+    inline CreateClusterRequest& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -414,6 +446,12 @@ namespace Model
 
     bool m_dataTiering{false};
     bool m_dataTieringHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

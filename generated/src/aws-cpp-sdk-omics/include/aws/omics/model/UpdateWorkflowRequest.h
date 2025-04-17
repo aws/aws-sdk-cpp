@@ -7,6 +7,7 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/StorageType.h>
 #include <utility>
 
 namespace Aws
@@ -67,6 +68,32 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     UpdateWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The default storage type for runs that use this workflow. STATIC storage
+     * allocates a fixed amount of storage. DYNAMIC storage dynamically scales the
+     * storage up or down, based on file system utilization. For more information about
+     * static and dynamic storage, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+     * workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. </p>
+     */
+    inline StorageType GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline UpdateWorkflowRequest& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The default static storage capacity (in gibibytes) for runs that use this
+     * workflow or workflow version. </p>
+     */
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+    inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
+    inline UpdateWorkflowRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -77,6 +104,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    StorageType m_storageType{StorageType::NOT_SET};
+    bool m_storageTypeHasBeenSet = false;
+
+    int m_storageCapacity{0};
+    bool m_storageCapacityHasBeenSet = false;
   };
 
 } // namespace Model

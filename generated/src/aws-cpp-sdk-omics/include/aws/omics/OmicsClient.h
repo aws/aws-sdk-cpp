@@ -358,10 +358,12 @@ namespace Omics
          * <p>You can create a run cache to save the task outputs from completed tasks in a
          * run for a private workflow. Subsequent runs use the task outputs from the cache,
          * rather than computing the task outputs again. You specify an Amazon S3 location
-         * where HealthOmics saves the cached data. This data must be immediately
-         * accessible (not in an archived state).</p> <p>For more information, see <a
+         * where Amazon Web Services HealthOmics saves the cached data. This data must be
+         * immediately accessible (not in an archived state).</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
-         * a run cache</a> in the AWS HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * a run cache</a> in the Amazon Web Services HealthOmics User Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">AWS
          * API Reference</a></p>
          */
@@ -492,7 +494,24 @@ namespace Omics
         }
 
         /**
-         * <p>Creates a workflow.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a private workflow.Private workflows depend on a variety of resources
+         * that you create and configure before creating the workflow:</p> <ul> <li> <p>
+         * <i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a
+         * Amazon Web Services HealthOmics sequence store. </p> </li> <li> <p> <i>Workflow
+         * definition files</i>: Define your workflow in one or more workflow definition
+         * files, written in WDL, Nextflow, or CWL. The workflow definition specifies the
+         * inputs and outputs for runs that use the workflow. It also includes
+         * specifications for the runs and run tasks for your workflow, including compute
+         * and memory requirements.</p> </li> <li> <p> <i>Parameter template files</i>:
+         * Define run parameters using a parameter template file (written in JSON). </p>
+         * </li> <li> <p> <i>ECR container images</i>: Create one or more container images
+         * for the workflow. Store the images in a private ECR repository.</p> </li> <li>
+         * <p>(Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan
+         * to use Sentieon software in a private workflow.</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
+         * or updating a private workflow in Amazon Web Services HealthOmics</a> in the
+         * Amazon Web Services HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">AWS
          * API Reference</a></p>
          */
@@ -514,6 +533,41 @@ namespace Omics
         void CreateWorkflowAsync(const CreateWorkflowRequestT& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::CreateWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new workflow version for the workflow that you specify with the
+         * <code>workflowId</code> parameter.</p> <p>When you create a new version of a
+         * workflow, you need to specify the configuration for the new version. It doesn't
+         * inherit any configuration values from the workflow.</p> <p>Provide a version
+         * name that is unique for this workflow. You cannot change the name after
+         * HealthOmics creates the version.</p>  <p>Don’t include any personally
+         * identifiable information (PII) in the version name. Version names appear in the
+         * workflow version ARN.</p>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWorkflowVersionOutcome CreateWorkflowVersion(const Model::CreateWorkflowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWorkflowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWorkflowVersionRequestT = Model::CreateWorkflowVersionRequest>
+        Model::CreateWorkflowVersionOutcomeCallable CreateWorkflowVersionCallable(const CreateWorkflowVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CreateWorkflowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWorkflowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWorkflowVersionRequestT = Model::CreateWorkflowVersionRequest>
+        void CreateWorkflowVersionAsync(const CreateWorkflowVersionRequestT& request, const CreateWorkflowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CreateWorkflowVersion, request, handler, context);
         }
 
         /**
@@ -649,7 +703,8 @@ namespace Omics
          * remove old cache data using standard S3 <code>Delete</code> operations. </p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
-         * a run cache</a> in the AWS HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * a run cache</a> in the Amazon Web Services HealthOmics User Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">AWS
          * API Reference</a></p>
          */
@@ -824,6 +879,36 @@ namespace Omics
         void DeleteWorkflowAsync(const DeleteWorkflowRequestT& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::DeleteWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a workflow version. Deleting a workflow version doesn't affect any
+         * ongoing runs that are using the workflow version.</p> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWorkflowVersionOutcome DeleteWorkflowVersion(const Model::DeleteWorkflowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWorkflowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWorkflowVersionRequestT = Model::DeleteWorkflowVersionRequest>
+        Model::DeleteWorkflowVersionOutcomeCallable DeleteWorkflowVersionCallable(const DeleteWorkflowVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::DeleteWorkflowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWorkflowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWorkflowVersionRequestT = Model::DeleteWorkflowVersionRequest>
+        void DeleteWorkflowVersionAsync(const DeleteWorkflowVersionRequestT& request, const DeleteWorkflowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::DeleteWorkflowVersion, request, handler, context);
         }
 
         /**
@@ -1132,12 +1217,14 @@ namespace Omics
 
         /**
          * <p>Gets information about a workflow run.</p> <p>If a workflow is shared with
-         * you, you cannot export information about the run.</p> <p>HealthOmics stores a
-         * fixed number of runs that are available to the console and API. If GetRun
-         * doesn't return the requested run, you can find run logs for all runs in the
-         * CloudWatch logs. For more information about viewing the run logs, see <a
+         * you, you cannot export information about the run.</p> <p>Amazon Web Services
+         * HealthOmics stores a fixed number of runs that are available to the console and
+         * API. If GetRun doesn't return the requested run, you can find run logs for all
+         * runs in the CloudWatch logs. For more information about viewing the run logs,
+         * see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-         * logs</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * logs</a> in the <i>in the Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">AWS API
          * Reference</a></p>
          */
@@ -1165,8 +1252,8 @@ namespace Omics
          * <p>Retrieve the details for the specified run cache.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-         * caching for HealthOmics runs</a> in the AWS HealthOmics User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">AWS
          * API Reference</a></p>
          */
@@ -1391,6 +1478,34 @@ namespace Omics
         void GetWorkflowAsync(const GetWorkflowRequestT& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::GetWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a workflow version. For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWorkflowVersionOutcome GetWorkflowVersion(const Model::GetWorkflowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWorkflowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWorkflowVersionRequestT = Model::GetWorkflowVersionRequest>
+        Model::GetWorkflowVersionOutcomeCallable GetWorkflowVersionCallable(const GetWorkflowVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::GetWorkflowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for GetWorkflowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWorkflowVersionRequestT = Model::GetWorkflowVersionRequest>
+        void GetWorkflowVersionAsync(const GetWorkflowVersionRequestT& request, const GetWorkflowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::GetWorkflowVersion, request, handler, context);
         }
 
         /**
@@ -1772,12 +1887,14 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of runs.</p> <p>HealthOmics stores a fixed number of runs
-         * that are available to the console and API. If the ListRuns response doesn't
-         * include specific runs that you expected, you can find run logs for all runs in
-         * the CloudWatch logs. For more information about viewing the run logs, see <a
+         * <p>Retrieves a list of runs.</p> <p>Amazon Web Services HealthOmics stores a
+         * fixed number of runs that are available to the console and API. If the ListRuns
+         * response doesn't include specific runs that you expected, you can find run logs
+         * for all runs in the CloudWatch logs. For more information about viewing the run
+         * logs, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-         * logs</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">AWS API
          * Reference</a></p>
          */
@@ -1925,6 +2042,35 @@ namespace Omics
         void ListVariantStoresAsync(const ListVariantStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVariantStoresRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListVariantStores, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the workflow versions for the specified workflow. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkflowVersionsOutcome ListWorkflowVersions(const Model::ListWorkflowVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWorkflowVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWorkflowVersionsRequestT = Model::ListWorkflowVersionsRequest>
+        Model::ListWorkflowVersionsOutcomeCallable ListWorkflowVersionsCallable(const ListWorkflowVersionsRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::ListWorkflowVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListWorkflowVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWorkflowVersionsRequestT = Model::ListWorkflowVersionsRequest>
+        void ListWorkflowVersionsAsync(const ListWorkflowVersionsRequestT& request, const ListWorkflowVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::ListWorkflowVersions, request, handler, context);
         }
 
         /**
@@ -2104,22 +2250,18 @@ namespace Omics
         }
 
         /**
-         * <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role
-         * ARN. The remaining parameters are copied from the previous run.</p> <p>StartRun
-         * will not support re-run for a workflow that is shared with you.</p>
-         * <p>HealthOmics stores a fixed number of runs that are available to the console
-         * and API. By default, HealthOmics doesn't any remove any runs. If HealthOmics
-         * reaches the maximum number of runs, you must manually remove runs. To have older
-         * runs removed automatically, set the retention mode to <code>REMOVE</code>.</p>
-         * <p>By default, the run uses STATIC storage. For STATIC storage, set the
-         * <code>storageCapacity</code> field. You can set the storage type to DYNAMIC. You
-         * do not set <code>storageCapacity</code>, because HealthOmics dynamically scales
-         * the storage up or down as required. For more information about static and
-         * dynamic storage, see <a
-         * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-         * workflows</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS
-         * API Reference</a></p>
+         * <p>Starts a new run or duplicates an existing run.</p> <p>For a new run, specify
+         * a unique <code>requestId</code>, the <code>workflowId</code>, and a role ARN. If
+         * you're using static run storage (the default), specify the required
+         * <code>storageCapacity</code>.</p> <p>You duplicate a run by specifing a unique
+         * <code>requestId</code>, the <code>runID</code> of the run to duplicate, and a
+         * role ARN.</p> <p>For more information about the optional parameters in the
+         * StartRun request, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting
+         * a run</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS API
+         * Reference</a></p>
          */
         virtual Model::StartRunOutcome StartRun(const Model::StartRunRequest& request) const;
 
@@ -2369,7 +2511,10 @@ namespace Omics
         }
 
         /**
-         * <p>Updates a workflow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about a workflow. For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
+         * a private workflow</a> in the Amazon Web Services HealthOmics User
+         * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">AWS
          * API Reference</a></p>
          */
@@ -2391,6 +2536,34 @@ namespace Omics
         void UpdateWorkflowAsync(const UpdateWorkflowRequestT& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::UpdateWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Updates information about the workflow version. For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
+         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
+         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkflowVersionOutcome UpdateWorkflowVersion(const Model::UpdateWorkflowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWorkflowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWorkflowVersionRequestT = Model::UpdateWorkflowVersionRequest>
+        Model::UpdateWorkflowVersionOutcomeCallable UpdateWorkflowVersionCallable(const UpdateWorkflowVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::UpdateWorkflowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWorkflowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWorkflowVersionRequestT = Model::UpdateWorkflowVersionRequest>
+        void UpdateWorkflowVersionAsync(const UpdateWorkflowVersionRequestT& request, const UpdateWorkflowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::UpdateWorkflowVersion, request, handler, context);
         }
 
         /**

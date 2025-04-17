@@ -26,7 +26,8 @@ namespace Model
     OnContactEvaluationSubmit,
     OnMetricDataUpdate,
     OnCaseCreate,
-    OnCaseUpdate
+    OnCaseUpdate,
+    OnSlaBreach
   };
 
 namespace EventSourceNameMapper

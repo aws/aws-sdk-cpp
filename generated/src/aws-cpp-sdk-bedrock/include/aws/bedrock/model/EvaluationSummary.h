@@ -130,6 +130,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics
+     * in an Amazon Bedrock evaluation job.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomMetricsEvaluatorModelIdentifiers() const { return m_customMetricsEvaluatorModelIdentifiers; }
+    inline bool CustomMetricsEvaluatorModelIdentifiersHasBeenSet() const { return m_customMetricsEvaluatorModelIdentifiersHasBeenSet; }
+    template<typename CustomMetricsEvaluatorModelIdentifiersT = Aws::Vector<Aws::String>>
+    void SetCustomMetricsEvaluatorModelIdentifiers(CustomMetricsEvaluatorModelIdentifiersT&& value) { m_customMetricsEvaluatorModelIdentifiersHasBeenSet = true; m_customMetricsEvaluatorModelIdentifiers = std::forward<CustomMetricsEvaluatorModelIdentifiersT>(value); }
+    template<typename CustomMetricsEvaluatorModelIdentifiersT = Aws::Vector<Aws::String>>
+    EvaluationSummary& WithCustomMetricsEvaluatorModelIdentifiers(CustomMetricsEvaluatorModelIdentifiersT&& value) { SetCustomMetricsEvaluatorModelIdentifiers(std::forward<CustomMetricsEvaluatorModelIdentifiersT>(value)); return *this;}
+    template<typename CustomMetricsEvaluatorModelIdentifiersT = Aws::String>
+    EvaluationSummary& AddCustomMetricsEvaluatorModelIdentifiers(CustomMetricsEvaluatorModelIdentifiersT&& value) { m_customMetricsEvaluatorModelIdentifiersHasBeenSet = true; m_customMetricsEvaluatorModelIdentifiers.emplace_back(std::forward<CustomMetricsEvaluatorModelIdentifiersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a
      * model or Knowledge Base evaluation job.</p>
      */
@@ -173,6 +188,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_evaluatorModelIdentifiers;
     bool m_evaluatorModelIdentifiersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_customMetricsEvaluatorModelIdentifiers;
+    bool m_customMetricsEvaluatorModelIdentifiersHasBeenSet = false;
 
     EvaluationInferenceConfigSummary m_inferenceConfigSummary;
     bool m_inferenceConfigSummaryHasBeenSet = false;

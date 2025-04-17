@@ -30,6 +30,15 @@ S3ExpressDirectoryBucketConfiguration& S3ExpressDirectoryBucketConfiguration::op
     m_bucketPolicy = jsonValue.GetString("bucketPolicy");
     m_bucketPolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("accessPoints"))
+  {
+    Aws::Map<Aws::String, JsonView> accessPointsJsonMap = jsonValue.GetObject("accessPoints").GetAllObjects();
+    for(auto& accessPointsItem : accessPointsJsonMap)
+    {
+      m_accessPoints[accessPointsItem.first] = accessPointsItem.second.AsObject();
+    }
+    m_accessPointsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue S3ExpressDirectoryBucketConfiguration::Jsonize() const
   if(m_bucketPolicyHasBeenSet)
   {
    payload.WithString("bucketPolicy", m_bucketPolicy);
+
+  }
+
+  if(m_accessPointsHasBeenSet)
+  {
+   JsonValue accessPointsJsonMap;
+   for(auto& accessPointsItem : m_accessPoints)
+   {
+     accessPointsJsonMap.WithObject(accessPointsItem.first, accessPointsItem.second.Jsonize());
+   }
+   payload.WithObject("accessPoints", std::move(accessPointsJsonMap));
 
   }
 

@@ -508,6 +508,33 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Use this operation to return information about the configuration of a
+         * workspace. The configuration details returned include workspace configuration
+         * status, label set limits, and retention period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspaceConfigurationOutcome DescribeWorkspaceConfiguration(const Model::DescribeWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWorkspaceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWorkspaceConfigurationRequestT = Model::DescribeWorkspaceConfigurationRequest>
+        Model::DescribeWorkspaceConfigurationOutcomeCallable DescribeWorkspaceConfigurationCallable(const DescribeWorkspaceConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DescribeWorkspaceConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWorkspaceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWorkspaceConfigurationRequestT = Model::DescribeWorkspaceConfigurationRequest>
+        void DescribeWorkspaceConfigurationAsync(const DescribeWorkspaceConfigurationRequestT& request, const DescribeWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DescribeWorkspaceConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>The <code>GetDefaultScraperConfiguration</code> operation returns the default
          * scraper configuration used when Amazon EKS creates a scraper for
          * you.</p><p><h3>See Also:</h3>   <a
@@ -835,6 +862,34 @@ namespace PrometheusService
         void UpdateWorkspaceAliasAsync(const UpdateWorkspaceAliasRequestT& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::UpdateWorkspaceAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Use this operation to create or update the label sets, label set limits, and
+         * retention period of a workspace.</p> <p>You must specify at least one of
+         * <code>limitsPerLabelSet</code> or <code>retentionPeriodInDays</code> for the
+         * request to be valid.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkspaceConfigurationOutcome UpdateWorkspaceConfiguration(const Model::UpdateWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWorkspaceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWorkspaceConfigurationRequestT = Model::UpdateWorkspaceConfigurationRequest>
+        Model::UpdateWorkspaceConfigurationOutcomeCallable UpdateWorkspaceConfigurationCallable(const UpdateWorkspaceConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::UpdateWorkspaceConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWorkspaceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWorkspaceConfigurationRequestT = Model::UpdateWorkspaceConfigurationRequest>
+        void UpdateWorkspaceConfigurationAsync(const UpdateWorkspaceConfigurationRequestT& request, const UpdateWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::UpdateWorkspaceConfiguration, request, handler, context);
         }
 
 

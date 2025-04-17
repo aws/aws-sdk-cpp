@@ -81,7 +81,7 @@ namespace Model
      * multi-region access points. If the access preview is for a new resource and
      * neither is specified, the access preview uses <code>Internet</code> for the
      * network origin. If the access preview is for an existing resource and neither is
-     * specified, the access preview uses the exiting network origin.</p>
+     * specified, the access preview uses the existing network origin.</p>
      */
     inline const NetworkOriginConfiguration& GetNetworkOrigin() const { return m_networkOrigin; }
     inline bool NetworkOriginHasBeenSet() const { return m_networkOriginHasBeenSet; }

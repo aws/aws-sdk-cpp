@@ -7,6 +7,8 @@
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/memorydb/model/AvailabilityZone.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/memorydb/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +65,21 @@ namespace Model
     template<typename AvailabilityZoneT = AvailabilityZone>
     Subnet& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network types supported by this subnet. Returns an array of strings that
+     * can include 'ipv4', 'ipv6', or both, indicating whether the subnet supports IPv4
+     * only, IPv6 only, or dual-stack deployments.</p>
+     */
+    inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const { return m_supportedNetworkTypes; }
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    void SetSupportedNetworkTypes(SupportedNetworkTypesT&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::forward<SupportedNetworkTypesT>(value); }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    Subnet& WithSupportedNetworkTypes(SupportedNetworkTypesT&& value) { SetSupportedNetworkTypes(std::forward<SupportedNetworkTypesT>(value)); return *this;}
+    inline Subnet& AddSupportedNetworkTypes(NetworkType value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_identifier;
@@ -70,6 +87,9 @@ namespace Model
 
     AvailabilityZone m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
+
+    Aws::Vector<NetworkType> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet = false;
   };
 
 } // namespace Model

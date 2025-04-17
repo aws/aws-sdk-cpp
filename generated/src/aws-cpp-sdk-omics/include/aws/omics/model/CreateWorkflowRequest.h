@@ -11,6 +11,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/Accelerators.h>
+#include <aws/omics/model/StorageType.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -64,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An engine for the workflow.</p>
+     * <p>The workflow engine for the workflow.</p>
      */
     inline WorkflowEngine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -126,7 +127,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default storage capacity for the workflow runs, in gibibytes.</p>
+     * <p>The default static storage capacity (in gibibytes) for runs that use this
+     * workflow or workflow version.</p>
      */
     inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
@@ -172,6 +174,21 @@ namespace Model
     inline void SetAccelerators(Accelerators value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
     inline CreateWorkflowRequest& WithAccelerators(Accelerators value) { SetAccelerators(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The default storage type for runs that use this workflow. STATIC storage
+     * allocates a fixed amount of storage. DYNAMIC storage dynamically scales the
+     * storage up or down, based on file system utilization. For more information about
+     * static and dynamic storage, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+     * workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+     */
+    inline StorageType GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline CreateWorkflowRequest& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -206,6 +223,9 @@ namespace Model
 
     Accelerators m_accelerators{Accelerators::NOT_SET};
     bool m_acceleratorsHasBeenSet = false;
+
+    StorageType m_storageType{StorageType::NOT_SET};
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

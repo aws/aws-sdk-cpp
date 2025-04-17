@@ -126,6 +126,12 @@ Aws::String StartRunRequest::SerializePayload() const
 
   }
 
+  if(m_workflowVersionNameHasBeenSet)
+  {
+   payload.WithString("workflowVersionName", m_workflowVersionName);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

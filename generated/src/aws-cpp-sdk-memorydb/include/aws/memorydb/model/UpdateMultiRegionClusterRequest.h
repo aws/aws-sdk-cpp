@@ -108,7 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether to force the update even if it may cause data loss.</p>
+     * <p>The strategy to use for the update operation. Supported values are
+     * "coordinated" or "uncoordinated".</p>
      */
     inline UpdateStrategy GetUpdateStrategy() const { return m_updateStrategy; }
     inline bool UpdateStrategyHasBeenSet() const { return m_updateStrategyHasBeenSet; }

@@ -49,6 +49,11 @@ CreateWorkflowResult& CreateWorkflowResult::operator =(const Aws::AmazonWebServi
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("uuid"))
+  {
+    m_uuid = jsonValue.GetString("uuid");
+    m_uuidHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

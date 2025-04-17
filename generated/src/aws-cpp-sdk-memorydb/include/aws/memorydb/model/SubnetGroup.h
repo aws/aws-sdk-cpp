@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/memorydb/model/Subnet.h>
+#include <aws/memorydb/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,21 @@ namespace Model
     template<typename ARNT = Aws::String>
     SubnetGroup& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network types supported by this subnet group. Returns an array of strings
+     * that can include 'ipv4', 'ipv6', or both, indicating the IP address types that
+     * can be used for clusters deployed in this subnet group.</p>
+     */
+    inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const { return m_supportedNetworkTypes; }
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    void SetSupportedNetworkTypes(SupportedNetworkTypesT&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::forward<SupportedNetworkTypesT>(value); }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    SubnetGroup& WithSupportedNetworkTypes(SupportedNetworkTypesT&& value) { SetSupportedNetworkTypes(std::forward<SupportedNetworkTypesT>(value)); return *this;}
+    inline SubnetGroup& AddSupportedNetworkTypes(NetworkType value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -120,6 +136,9 @@ namespace Model
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet = false;
+
+    Aws::Vector<NetworkType> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/connect/model/SendNotificationActionDefinition.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
 #include <aws/connect/model/UpdateCaseActionDefinition.h>
+#include <aws/connect/model/AssignSlaActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/SubmitAutoEvaluationActionDefinition.h>
 #include <utility>
@@ -153,6 +154,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Information about the assign SLA action.</p>
+     */
+    inline const AssignSlaActionDefinition& GetAssignSlaAction() const { return m_assignSlaAction; }
+    inline bool AssignSlaActionHasBeenSet() const { return m_assignSlaActionHasBeenSet; }
+    template<typename AssignSlaActionT = AssignSlaActionDefinition>
+    void SetAssignSlaAction(AssignSlaActionT&& value) { m_assignSlaActionHasBeenSet = true; m_assignSlaAction = std::forward<AssignSlaActionT>(value); }
+    template<typename AssignSlaActionT = AssignSlaActionDefinition>
+    RuleAction& WithAssignSlaAction(AssignSlaActionT&& value) { SetAssignSlaAction(std::forward<AssignSlaActionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about the end associated tasks action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
      */
@@ -197,6 +210,9 @@ namespace Model
 
     UpdateCaseActionDefinition m_updateCaseAction;
     bool m_updateCaseActionHasBeenSet = false;
+
+    AssignSlaActionDefinition m_assignSlaAction;
+    bool m_assignSlaActionHasBeenSet = false;
 
     EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
     bool m_endAssociatedTasksActionHasBeenSet = false;

@@ -82,7 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The scraper role configuration for the workspace.</p>
+     * <p>Use this structure to enable cross-account access, so that you can use a
+     * target account to access Prometheus metrics from source accounts.</p>
      */
     inline const RoleConfiguration& GetRoleConfiguration() const { return m_roleConfiguration; }
     inline bool RoleConfigurationHasBeenSet() const { return m_roleConfigurationHasBeenSet; }

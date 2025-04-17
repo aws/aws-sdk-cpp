@@ -81,6 +81,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The universally unique identifier (UUID) value for this workflow.</p>
+     */
+    inline const Aws::String& GetUuid() const { return m_uuid; }
+    template<typename UuidT = Aws::String>
+    void SetUuid(UuidT&& value) { m_uuidHasBeenSet = true; m_uuid = std::forward<UuidT>(value); }
+    template<typename UuidT = Aws::String>
+    CreateWorkflowResult& WithUuid(UuidT&& value) { SetUuid(std::forward<UuidT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -101,6 +112,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_uuid;
+    bool m_uuidHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -87,7 +87,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow engine version.</p>
+     * <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used
+     * for the run. The other workflow definition languages don't provide a value for
+     * this field.</p>
      */
     inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     template<typename EngineVersionT = Aws::String>
@@ -410,6 +412,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The workflow version name.</p>
+     */
+    inline const Aws::String& GetWorkflowVersionName() const { return m_workflowVersionName; }
+    template<typename WorkflowVersionNameT = Aws::String>
+    void SetWorkflowVersionName(WorkflowVersionNameT&& value) { m_workflowVersionNameHasBeenSet = true; m_workflowVersionName = std::forward<WorkflowVersionNameT>(value); }
+    template<typename WorkflowVersionNameT = Aws::String>
+    GetRunResult& WithWorkflowVersionName(WorkflowVersionNameT&& value) { SetWorkflowVersionName(std::forward<WorkflowVersionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The universally unique identifier (UUID) value for the workflow.</p>
+     */
+    inline const Aws::String& GetWorkflowUuid() const { return m_workflowUuid; }
+    template<typename WorkflowUuidT = Aws::String>
+    void SetWorkflowUuid(WorkflowUuidT&& value) { m_workflowUuidHasBeenSet = true; m_workflowUuid = std::forward<WorkflowUuidT>(value); }
+    template<typename WorkflowUuidT = Aws::String>
+    GetRunResult& WithWorkflowUuid(WorkflowUuidT&& value) { SetWorkflowUuid(std::forward<WorkflowUuidT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -520,6 +544,12 @@ namespace Model
 
     Aws::String m_workflowOwnerId;
     bool m_workflowOwnerIdHasBeenSet = false;
+
+    Aws::String m_workflowVersionName;
+    bool m_workflowVersionNameHasBeenSet = false;
+
+    Aws::String m_workflowUuid;
+    bool m_workflowUuidHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

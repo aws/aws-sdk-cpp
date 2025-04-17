@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/Accelerators.h>
+#include <aws/omics/model/StorageType.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
 
@@ -160,7 +161,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow's default run storage capacity in gibibytes.</p>
+     * <p>The default static storage capacity (in gibibytes) for runs that use this
+     * workflow or workflow version.</p>
      */
     inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
@@ -206,7 +208,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Gets metadata for workflow.</p>
+     * <p>Gets metadata for the workflow.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
@@ -226,6 +228,26 @@ namespace Model
     inline Accelerators GetAccelerators() const { return m_accelerators; }
     inline void SetAccelerators(Accelerators value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
     inline GetWorkflowResult& WithAccelerators(Accelerators value) { SetAccelerators(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The default storage type for runs using this workflow.</p>
+     */
+    inline StorageType GetStorageType() const { return m_storageType; }
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline GetWorkflowResult& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The universally unique identifier (UUID) value for this workflow.</p>
+     */
+    inline const Aws::String& GetUuid() const { return m_uuid; }
+    template<typename UuidT = Aws::String>
+    void SetUuid(UuidT&& value) { m_uuidHasBeenSet = true; m_uuid = std::forward<UuidT>(value); }
+    template<typename UuidT = Aws::String>
+    GetWorkflowResult& WithUuid(UuidT&& value) { SetUuid(std::forward<UuidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -288,6 +310,12 @@ namespace Model
 
     Accelerators m_accelerators{Accelerators::NOT_SET};
     bool m_acceleratorsHasBeenSet = false;
+
+    StorageType m_storageType{StorageType::NOT_SET};
+    bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_uuid;
+    bool m_uuidHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
