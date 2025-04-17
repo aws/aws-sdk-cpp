@@ -5,7 +5,9 @@
 
 #include <aws/testing/platform/PlatformTesting.h>
 
+#ifdef _MSC_VER
 #pragma warning(disable: 4996)
+#endif
 #include <windows.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
