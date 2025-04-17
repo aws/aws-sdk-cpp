@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/accessanalyzer/model/S3ExpressDirectoryAccessPointConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +37,8 @@ namespace Model
    * existing bucket policy, you can specify an empty string. For more information
    * about Amazon S3 directory bucket policies, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
-   * directory bucket policies for S3 Express One Zone</a>.</p><p><h3>See Also:</h3> 
-   * <a
+   * bucket policies for directory buckets</a> in the Amazon Simple Storage Service
+   * User Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3ExpressDirectoryBucketConfiguration">AWS
    * API Reference</a></p>
    */
@@ -60,10 +62,29 @@ namespace Model
     template<typename BucketPolicyT = Aws::String>
     S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(BucketPolicyT&& value) { SetBucketPolicy(std::forward<BucketPolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The proposed access points for the Amazon S3 directory bucket.</p>
+     */
+    inline const Aws::Map<Aws::String, S3ExpressDirectoryAccessPointConfiguration>& GetAccessPoints() const { return m_accessPoints; }
+    inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
+    template<typename AccessPointsT = Aws::Map<Aws::String, S3ExpressDirectoryAccessPointConfiguration>>
+    void SetAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::forward<AccessPointsT>(value); }
+    template<typename AccessPointsT = Aws::Map<Aws::String, S3ExpressDirectoryAccessPointConfiguration>>
+    S3ExpressDirectoryBucketConfiguration& WithAccessPoints(AccessPointsT&& value) { SetAccessPoints(std::forward<AccessPointsT>(value)); return *this;}
+    template<typename AccessPointsKeyT = Aws::String, typename AccessPointsValueT = S3ExpressDirectoryAccessPointConfiguration>
+    S3ExpressDirectoryBucketConfiguration& AddAccessPoints(AccessPointsKeyT&& key, AccessPointsValueT&& value) {
+      m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::forward<AccessPointsKeyT>(key), std::forward<AccessPointsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_bucketPolicy;
     bool m_bucketPolicyHasBeenSet = false;
+
+    Aws::Map<Aws::String, S3ExpressDirectoryAccessPointConfiguration> m_accessPoints;
+    bool m_accessPointsHasBeenSet = false;
   };
 
 } // namespace Model

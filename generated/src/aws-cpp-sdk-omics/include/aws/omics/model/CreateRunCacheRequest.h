@@ -49,7 +49,7 @@ namespace Model
      * CACHE_ON_FAILURE. When you start a run that uses this cache, you can override
      * the default cache behavior.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
-     * cache behavior</a> in the AWS HealthOmics User Guide.</p>
+     * cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
      */
     inline CacheBehavior GetCacheBehavior() const { return m_cacheBehavior; }
     inline bool CacheBehaviorHasBeenSet() const { return m_cacheBehaviorHasBeenSet; }
@@ -97,8 +97,8 @@ namespace Model
     ///@{
     /**
      * <p>A unique request token, to ensure idempotency. If you don't specify a token,
-     * HealthOmics automatically generates a universally unique identifier (UUID) for
-     * the request.</p>
+     * Amazon Web Services HealthOmics automatically generates a universally unique
+     * identifier (UUID) for the request.</p>
      */
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -126,8 +126,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the expected owner of the S3 bucket for the run cache.
-     * If not provided, your account ID is set as the owner of the bucket.</p>
+     * <p>The Amazon Web Services account ID of the expected owner of the S3 bucket for
+     * the run cache. If not provided, your account ID is set as the owner of the
+     * bucket.</p>
      */
     inline const Aws::String& GetCacheBucketOwnerId() const { return m_cacheBucketOwnerId; }
     inline bool CacheBucketOwnerIdHasBeenSet() const { return m_cacheBucketOwnerIdHasBeenSet; }

@@ -102,7 +102,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Denotes the class of traffic.</p>
+     * <p>Denotes the class of traffic.</p>  <p>Only the CAMPAIGN traffic type is
+     * supported.</p> 
      */
     inline TrafficType GetTrafficType() const { return m_trafficType; }
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }

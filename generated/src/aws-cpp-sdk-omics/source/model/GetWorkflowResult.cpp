@@ -122,6 +122,16 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
     m_accelerators = AcceleratorsMapper::GetAcceleratorsForName(jsonValue.GetString("accelerators"));
     m_acceleratorsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("storageType"))
+  {
+    m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));
+    m_storageTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("uuid"))
+  {
+    m_uuid = jsonValue.GetString("uuid");
+    m_uuidHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -38,7 +38,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A suffix to be added to the multi-Region cluster name.</p>
+     * <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB
+     * automatically applies a prefix to the Multi-Region cluster Name when it is
+     * created. Each Amazon Region has its own prefix. For instance, a Multi-Region
+     * cluster Name created in the US-West-1 region will begin with "virxk", along with
+     * the suffix name you provide. The suffix guarantees uniqueness of the
+     * Multi-Region cluster name across multiple regions.</p>
      */
     inline const Aws::String& GetMultiRegionClusterNameSuffix() const { return m_multiRegionClusterNameSuffix; }
     inline bool MultiRegionClusterNameSuffixHasBeenSet() const { return m_multiRegionClusterNameSuffixHasBeenSet; }

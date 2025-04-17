@@ -70,7 +70,7 @@ namespace Model
      * <p>The names of the metrics you want to use for your evaluation job.</p> <p>For
      * knowledge base evaluation jobs that evaluate retrieval only, valid values are
      * "<code>Builtin.ContextRelevance</code>",
-     * "<code>Builtin.ContextConverage</code>".</p> <p>For knowledge base evaluation
+     * "<code>Builtin.ContextCoverage</code>".</p> <p>For knowledge base evaluation
      * jobs that evaluate retrieval with response generation, valid values are
      * "<code>Builtin.Correctness</code>", "<code>Builtin.Completeness</code>",
      * "<code>Builtin.Helpfulness</code>", "<code>Builtin.LogicalCoherence</code>",

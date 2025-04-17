@@ -52,8 +52,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the voice contact that is shown to an agent in the Contact
-     * Control Panel (CCP).</p>
+     * <p>A description of the voice contact that appears in the agent's snapshot in
+     * the CCP logs. For more information about CCP logs, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download
+     * and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

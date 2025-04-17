@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>To configure roles that allows users to write to an Amazon Managed Service
-   * for Prometheus workspace in a different account.</p><p><h3>See Also:</h3>   <a
+   * <p>Use this structure to enable cross-account access, so that you can use a
+   * target account to access Prometheus metrics from source accounts.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RoleConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A ARN identifying the source role configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the role used in the source account to
+     * enable cross-account scraping. For information about the contents of this
+     * policy, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#cross-account-remote-write">Cross-account
+     * setup</a>.</p>
      */
     inline const Aws::String& GetSourceRoleArn() const { return m_sourceRoleArn; }
     inline bool SourceRoleArnHasBeenSet() const { return m_sourceRoleArnHasBeenSet; }
@@ -52,7 +57,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A ARN identifying the target role configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the role used in the target account to
+     * enable cross-account scraping. For information about the contents of this
+     * policy, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#cross-account-remote-write">Cross-account
+     * setup</a>.</p>
      */
     inline const Aws::String& GetTargetRoleArn() const { return m_targetRoleArn; }
     inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }

@@ -111,6 +111,11 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_ipDiscoveryHasBeenSet)
+  {
+   payload.WithString("IpDiscovery", IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery));
+  }
+
   return payload.View().WriteReadable();
 }
 

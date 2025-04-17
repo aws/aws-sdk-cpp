@@ -29,6 +29,7 @@ namespace Aws
         static const int tagResourceAuthorization_HASH = HashingUtils::HashString("tagResourceAuthorization");
         static const int fargateTaskRetirementWaitPeriod_HASH = HashingUtils::HashString("fargateTaskRetirementWaitPeriod");
         static const int guardDutyActivate_HASH = HashingUtils::HashString("guardDutyActivate");
+        static const int defaultLogDriverMode_HASH = HashingUtils::HashString("defaultLogDriverMode");
 
 
         SettingName GetSettingNameForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return SettingName::guardDutyActivate;
           }
+          else if (hashCode == defaultLogDriverMode_HASH)
+          {
+            return SettingName::defaultLogDriverMode;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +109,8 @@ namespace Aws
             return "fargateTaskRetirementWaitPeriod";
           case SettingName::guardDutyActivate:
             return "guardDutyActivate";
+          case SettingName::defaultLogDriverMode:
+            return "defaultLogDriverMode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

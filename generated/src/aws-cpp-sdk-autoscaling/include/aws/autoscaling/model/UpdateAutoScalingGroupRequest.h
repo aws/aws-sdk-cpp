@@ -307,10 +307,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
-     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Enables or disables Capacity Rebalancing. If Capacity Rebalancing is
+     * disabled, proactive replacement of at-risk Spot Instances does not occur. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Capacity
+     * Rebalancing in Auto Scaling to replace at-risk Spot Instances</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>To suspend rebalancing
+     * across Availability Zones, use the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_SuspendedProcess.html">SuspendProcesses</a>
+     * API.</p> 
      */
     inline bool GetCapacityRebalance() const { return m_capacityRebalance; }
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }

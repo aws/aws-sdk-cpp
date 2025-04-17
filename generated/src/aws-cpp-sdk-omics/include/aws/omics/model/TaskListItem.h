@@ -85,8 +85,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set to true if AWS HealthOmics found a matching entry in the run cache for
-     * this task.</p>
+     * <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the
+     * run cache for this task.</p>
      */
     inline bool GetCacheHit() const { return m_cacheHit; }
     inline bool CacheHitHasBeenSet() const { return m_cacheHitHasBeenSet; }

@@ -90,6 +90,11 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
    payload.WithString("accelerators", AcceleratorsMapper::GetNameForAccelerators(m_accelerators));
   }
 
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
   return payload.View().WriteReadable();
 }
 

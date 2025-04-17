@@ -754,9 +754,11 @@ namespace Connect
         }
 
         /**
-         *  <p>Only the EMAIL channel is supported. The supported initiation
-         * methods are: OUTBOUND, AGENT_REPLY, and FLOW.</p>  <p>Creates a new
-         * EMAIL contact. </p><p><h3>See Also:</h3>   <a
+         *  <p>Only the EMAIL and VOICE channels are supported. The supported
+         * initiation methods for EMAIL are: OUTBOUND, AGENT_REPLY, and FLOW. For VOICE the
+         * supported initiation methods are TRANSFER and the subtype connect:ExternalAudio.
+         * </p>  <p>Creates a new EMAIL or VOICE contact. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">AWS
          * API Reference</a></p>
          */
@@ -6551,13 +6553,14 @@ namespace Connect
 
         /**
          * <p>When a contact is being recorded, this API suspends recording whatever is
-         * selected in the flow configuration: call, screen, or both. If only call
-         * recording or only screen recording is enabled, then it would be suspended. For
-         * example, you might suspend the screen recording while collecting sensitive
-         * information, such as a credit card number. Then use ResumeContactRecording to
-         * restart recording the screen.</p> <p>The period of time that the recording is
-         * suspended is filled with silence in the final recording.</p> <p>Voice and screen
-         * recordings are supported.</p><p><h3>See Also:</h3>   <a
+         * selected in the flow configuration: call (IVR or agent), screen, or both. If
+         * only call recording or only screen recording is enabled, then it would be
+         * suspended. For example, you might suspend the screen recording while collecting
+         * sensitive information, such as a credit card number. Then use <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html">ResumeContactRecording</a>
+         * to restart recording the screen.</p> <p>The period of time that the recording is
+         * suspended is filled with silence in the final recording. </p> <p> Voice (IVR,
+         * agent) and screen recordings are supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">AWS
          * API Reference</a></p>
          */
@@ -6651,7 +6654,7 @@ namespace Connect
          * contact to the destination queue. This gives you more control over contact
          * handling and helps you adhere to the service level agreement (SLA) guaranteed to
          * your customers.</p> <p>Note the following requirements:</p> <ul> <li>
-         * <p>Transfer is supported for only <code>TASK</code> and <code>EMAIL</code>
+         * <p>Transfer is only supported for <code>TASK</code> and <code>EMAIL</code>
          * contacts.</p> </li> <li> <p>Do not use both <code>QueueId</code> and
          * <code>UserId</code> in the same call.</p> </li> <li> <p>The following flow types
          * are supported: Inbound flow, Transfer to agent flow, and Transfer to queue

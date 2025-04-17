@@ -24,7 +24,8 @@ namespace Model
     fargateFIPSMode,
     tagResourceAuthorization,
     fargateTaskRetirementWaitPeriod,
-    guardDutyActivate
+    guardDutyActivate,
+    defaultLogDriverMode
   };
 
 namespace SettingNameMapper

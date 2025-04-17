@@ -39,6 +39,11 @@ AutomatedEvaluationConfig& AutomatedEvaluationConfig::operator =(JsonView jsonVa
     m_evaluatorModelConfig = jsonValue.GetObject("evaluatorModelConfig");
     m_evaluatorModelConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("customMetricConfig"))
+  {
+    m_customMetricConfig = jsonValue.GetObject("customMetricConfig");
+    m_customMetricConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue AutomatedEvaluationConfig::Jsonize() const
   if(m_evaluatorModelConfigHasBeenSet)
   {
    payload.WithObject("evaluatorModelConfig", m_evaluatorModelConfig.Jsonize());
+
+  }
+
+  if(m_customMetricConfigHasBeenSet)
+  {
+   payload.WithObject("customMetricConfig", m_customMetricConfig.Jsonize());
 
   }
 

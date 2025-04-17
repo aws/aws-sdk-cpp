@@ -33,7 +33,15 @@ namespace Model
     AWS_SecretsManager_Secret,
     AWS_SNS_Topic,
     AWS_SQS_Queue,
-    AWS_IAM_AssumeRolePolicyDocument
+    AWS_IAM_AssumeRolePolicyDocument,
+    AWS_S3Tables_TableBucket,
+    AWS_ApiGateway_RestApi,
+    AWS_CodeArtifact_Domain,
+    AWS_Backup_BackupVault,
+    AWS_CloudTrail_Dashboard,
+    AWS_CloudTrail_EventDataStore,
+    AWS_S3Tables_Table,
+    AWS_S3Express_AccessPoint
   };
 
 namespace AccessCheckResourceTypeMapper

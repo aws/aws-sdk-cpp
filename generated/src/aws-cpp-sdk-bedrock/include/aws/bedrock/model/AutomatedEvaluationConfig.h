@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/EvaluatorModelConfig.h>
+#include <aws/bedrock/model/AutomatedEvaluationCustomMetricConfig.h>
 #include <aws/bedrock/model/EvaluationDatasetMetricConfig.h>
 #include <utility>
 
@@ -70,6 +71,19 @@ namespace Model
     template<typename EvaluatorModelConfigT = EvaluatorModelConfig>
     AutomatedEvaluationConfig& WithEvaluatorModelConfig(EvaluatorModelConfigT&& value) { SetEvaluatorModelConfig(std::forward<EvaluatorModelConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Defines the configuration of custom metrics to be used in an evaluation
+     * job.</p>
+     */
+    inline const AutomatedEvaluationCustomMetricConfig& GetCustomMetricConfig() const { return m_customMetricConfig; }
+    inline bool CustomMetricConfigHasBeenSet() const { return m_customMetricConfigHasBeenSet; }
+    template<typename CustomMetricConfigT = AutomatedEvaluationCustomMetricConfig>
+    void SetCustomMetricConfig(CustomMetricConfigT&& value) { m_customMetricConfigHasBeenSet = true; m_customMetricConfig = std::forward<CustomMetricConfigT>(value); }
+    template<typename CustomMetricConfigT = AutomatedEvaluationCustomMetricConfig>
+    AutomatedEvaluationConfig& WithCustomMetricConfig(CustomMetricConfigT&& value) { SetCustomMetricConfig(std::forward<CustomMetricConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<EvaluationDatasetMetricConfig> m_datasetMetricConfigs;
@@ -77,6 +91,9 @@ namespace Model
 
     EvaluatorModelConfig m_evaluatorModelConfig;
     bool m_evaluatorModelConfigHasBeenSet = false;
+
+    AutomatedEvaluationCustomMetricConfig m_customMetricConfig;
+    bool m_customMetricConfigHasBeenSet = false;
   };
 
 } // namespace Model

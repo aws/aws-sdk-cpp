@@ -31,6 +31,7 @@ namespace Aws
         static const int OnMetricDataUpdate_HASH = HashingUtils::HashString("OnMetricDataUpdate");
         static const int OnCaseCreate_HASH = HashingUtils::HashString("OnCaseCreate");
         static const int OnCaseUpdate_HASH = HashingUtils::HashString("OnCaseUpdate");
+        static const int OnSlaBreach_HASH = HashingUtils::HashString("OnSlaBreach");
 
 
         EventSourceName GetEventSourceNameForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return EventSourceName::OnCaseUpdate;
           }
+          else if (hashCode == OnSlaBreach_HASH)
+          {
+            return EventSourceName::OnSlaBreach;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "OnCaseCreate";
           case EventSourceName::OnCaseUpdate:
             return "OnCaseUpdate";
+          case EventSourceName::OnSlaBreach:
+            return "OnSlaBreach";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

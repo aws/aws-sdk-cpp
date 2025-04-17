@@ -732,8 +732,9 @@ namespace ECS
          * <p>Describes one or more of your service deployments.</p> <p>A service
          * deployment happens when you release a software update for the service. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
-         * ECS service deployments</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View
+         * service history using Amazon ECS service deployments</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">AWS
          * API Reference</a></p>
          */

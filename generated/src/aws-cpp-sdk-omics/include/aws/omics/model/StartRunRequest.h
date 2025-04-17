@@ -117,7 +117,7 @@ namespace Model
      * override the default behavior for the cache. You had set the default value when
      * you created the cache. For more information, see <a
      * href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
-     * cache behavior</a> in the AWS HealthOmics User Guide.</p>
+     * cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
      */
     inline CacheBehavior GetCacheBehavior() const { return m_cacheBehavior; }
     inline bool CacheBehaviorHasBeenSet() const { return m_cacheBehaviorHasBeenSet; }
@@ -161,8 +161,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A storage capacity for the run in gibibytes. This field is not required if
-     * the storage type is dynamic (the system ignores any value that you enter).</p>
+     * <p>The static storage capacity (in gibibytes) for this run. This field is not
+     * required if the storage type is dynamic (the system ignores any value that you
+     * enter).</p>
      */
     inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
@@ -223,17 +224,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The retention mode for the run. The default value is RETAIN. </p>
-     * <p>HealthOmics stores a fixed number of runs that are available to the console
-     * and API. In the default mode (RETAIN), you need to remove runs manually when the
-     * number of run exceeds the maximum. If you set the retention mode to
-     * <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set
-     * to REMOVE) when the number of run exceeds the maximum. All run logs are
-     * available in CloudWatch logs, if you need information about a run that is no
-     * longer available to the API.</p> <p>For more information about retention mode,
-     * see <a
+     * <p>The retention mode for the run. The default value is RETAIN. </p> <p>Amazon
+     * Web Services HealthOmics stores a fixed number of runs that are available to the
+     * console and API. In the default mode (RETAIN), you need to remove runs manually
+     * when the number of run exceeds the maximum. If you set the retention mode to
+     * <code>REMOVE</code>, Amazon Web Services HealthOmics automatically removes runs
+     * (that have mode set to REMOVE) when the number of run exceeds the maximum. All
+     * run logs are available in CloudWatch logs, if you need information about a run
+     * that is no longer available to the API.</p> <p>For more information about
+     * retention mode, see <a
      * href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying
-     * run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+     * run retention mode</a> in the <i>Amazon Web Services HealthOmics User
+     * Guide</i>.</p>
      */
     inline RunRetentionMode GetRetentionMode() const { return m_retentionMode; }
     inline bool RetentionModeHasBeenSet() const { return m_retentionModeHasBeenSet; }
@@ -243,10 +245,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run's storage type. By default, the run uses STATIC storage type, which
-     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
-     * HealthOmics dynamically scales the storage up or down, based on file system
-     * utilization.</p>
+     * <p>The storage type for the run. By default, the run uses STATIC storage type,
+     * which allocates a fixed amount of storage. If you set the storage type to
+     * DYNAMIC, Amazon Web Services HealthOmics dynamically scales the storage up or
+     * down, based on file system utilization. For more information about static and
+     * dynamic storage, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+     * workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
      */
     inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -264,6 +269,18 @@ namespace Model
     void SetWorkflowOwnerId(WorkflowOwnerIdT&& value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId = std::forward<WorkflowOwnerIdT>(value); }
     template<typename WorkflowOwnerIdT = Aws::String>
     StartRunRequest& WithWorkflowOwnerId(WorkflowOwnerIdT&& value) { SetWorkflowOwnerId(std::forward<WorkflowOwnerIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the workflow version.</p>
+     */
+    inline const Aws::String& GetWorkflowVersionName() const { return m_workflowVersionName; }
+    inline bool WorkflowVersionNameHasBeenSet() const { return m_workflowVersionNameHasBeenSet; }
+    template<typename WorkflowVersionNameT = Aws::String>
+    void SetWorkflowVersionName(WorkflowVersionNameT&& value) { m_workflowVersionNameHasBeenSet = true; m_workflowVersionName = std::forward<WorkflowVersionNameT>(value); }
+    template<typename WorkflowVersionNameT = Aws::String>
+    StartRunRequest& WithWorkflowVersionName(WorkflowVersionNameT&& value) { SetWorkflowVersionName(std::forward<WorkflowVersionNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -320,6 +337,9 @@ namespace Model
 
     Aws::String m_workflowOwnerId;
     bool m_workflowOwnerIdHasBeenSet = false;
+
+    Aws::String m_workflowVersionName;
+    bool m_workflowVersionNameHasBeenSet = false;
   };
 
 } // namespace Model

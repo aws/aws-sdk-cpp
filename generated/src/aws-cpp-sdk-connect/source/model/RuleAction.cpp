@@ -60,6 +60,11 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_updateCaseAction = jsonValue.GetObject("UpdateCaseAction");
     m_updateCaseActionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AssignSlaAction"))
+  {
+    m_assignSlaAction = jsonValue.GetObject("AssignSlaAction");
+    m_assignSlaActionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("EndAssociatedTasksAction"))
   {
     m_endAssociatedTasksAction = jsonValue.GetObject("EndAssociatedTasksAction");
@@ -115,6 +120,12 @@ JsonValue RuleAction::Jsonize() const
   if(m_updateCaseActionHasBeenSet)
   {
    payload.WithObject("UpdateCaseAction", m_updateCaseAction.Jsonize());
+
+  }
+
+  if(m_assignSlaActionHasBeenSet)
+  {
+   payload.WithObject("AssignSlaAction", m_assignSlaAction.Jsonize());
 
   }
 

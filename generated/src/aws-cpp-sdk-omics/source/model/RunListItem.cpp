@@ -80,6 +80,11 @@ RunListItem& RunListItem::operator =(JsonView jsonValue)
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));
     m_storageTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("workflowVersionName"))
+  {
+    m_workflowVersionName = jsonValue.GetString("workflowVersionName");
+    m_workflowVersionNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -146,6 +151,12 @@ JsonValue RunListItem::Jsonize() const
   if(m_storageTypeHasBeenSet)
   {
    payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
+  if(m_workflowVersionNameHasBeenSet)
+  {
+   payload.WithString("workflowVersionName", m_workflowVersionName);
+
   }
 
   return payload;

@@ -68,6 +68,15 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_evaluatorModelIdentifiersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("customMetricsEvaluatorModelIdentifiers"))
+  {
+    Aws::Utils::Array<JsonView> customMetricsEvaluatorModelIdentifiersJsonList = jsonValue.GetArray("customMetricsEvaluatorModelIdentifiers");
+    for(unsigned customMetricsEvaluatorModelIdentifiersIndex = 0; customMetricsEvaluatorModelIdentifiersIndex < customMetricsEvaluatorModelIdentifiersJsonList.GetLength(); ++customMetricsEvaluatorModelIdentifiersIndex)
+    {
+      m_customMetricsEvaluatorModelIdentifiers.push_back(customMetricsEvaluatorModelIdentifiersJsonList[customMetricsEvaluatorModelIdentifiersIndex].AsString());
+    }
+    m_customMetricsEvaluatorModelIdentifiersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("inferenceConfigSummary"))
   {
     m_inferenceConfigSummary = jsonValue.GetObject("inferenceConfigSummary");
@@ -131,6 +140,17 @@ JsonValue EvaluationSummary::Jsonize() const
      evaluatorModelIdentifiersJsonList[evaluatorModelIdentifiersIndex].AsString(m_evaluatorModelIdentifiers[evaluatorModelIdentifiersIndex]);
    }
    payload.WithArray("evaluatorModelIdentifiers", std::move(evaluatorModelIdentifiersJsonList));
+
+  }
+
+  if(m_customMetricsEvaluatorModelIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customMetricsEvaluatorModelIdentifiersJsonList(m_customMetricsEvaluatorModelIdentifiers.size());
+   for(unsigned customMetricsEvaluatorModelIdentifiersIndex = 0; customMetricsEvaluatorModelIdentifiersIndex < customMetricsEvaluatorModelIdentifiersJsonList.GetLength(); ++customMetricsEvaluatorModelIdentifiersIndex)
+   {
+     customMetricsEvaluatorModelIdentifiersJsonList[customMetricsEvaluatorModelIdentifiersIndex].AsString(m_customMetricsEvaluatorModelIdentifiers[customMetricsEvaluatorModelIdentifiersIndex]);
+   }
+   payload.WithArray("customMetricsEvaluatorModelIdentifiers", std::move(customMetricsEvaluatorModelIdentifiersJsonList));
 
   }
 

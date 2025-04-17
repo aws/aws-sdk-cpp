@@ -28,6 +28,17 @@ Aws::String UpdateWorkflowRequest::SerializePayload() const
 
   }
 
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
+  if(m_storageCapacityHasBeenSet)
+  {
+   payload.WithInteger("storageCapacity", m_storageCapacity);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

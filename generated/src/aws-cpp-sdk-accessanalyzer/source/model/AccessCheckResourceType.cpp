@@ -38,6 +38,14 @@ namespace Aws
         static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
         static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
         static const int AWS_IAM_AssumeRolePolicyDocument_HASH = HashingUtils::HashString("AWS::IAM::AssumeRolePolicyDocument");
+        static const int AWS_S3Tables_TableBucket_HASH = HashingUtils::HashString("AWS::S3Tables::TableBucket");
+        static const int AWS_ApiGateway_RestApi_HASH = HashingUtils::HashString("AWS::ApiGateway::RestApi");
+        static const int AWS_CodeArtifact_Domain_HASH = HashingUtils::HashString("AWS::CodeArtifact::Domain");
+        static const int AWS_Backup_BackupVault_HASH = HashingUtils::HashString("AWS::Backup::BackupVault");
+        static const int AWS_CloudTrail_Dashboard_HASH = HashingUtils::HashString("AWS::CloudTrail::Dashboard");
+        static const int AWS_CloudTrail_EventDataStore_HASH = HashingUtils::HashString("AWS::CloudTrail::EventDataStore");
+        static const int AWS_S3Tables_Table_HASH = HashingUtils::HashString("AWS::S3Tables::Table");
+        static const int AWS_S3Express_AccessPoint_HASH = HashingUtils::HashString("AWS::S3Express::AccessPoint");
 
 
         AccessCheckResourceType GetAccessCheckResourceTypeForName(const Aws::String& name)
@@ -115,6 +123,38 @@ namespace Aws
           {
             return AccessCheckResourceType::AWS_IAM_AssumeRolePolicyDocument;
           }
+          else if (hashCode == AWS_S3Tables_TableBucket_HASH)
+          {
+            return AccessCheckResourceType::AWS_S3Tables_TableBucket;
+          }
+          else if (hashCode == AWS_ApiGateway_RestApi_HASH)
+          {
+            return AccessCheckResourceType::AWS_ApiGateway_RestApi;
+          }
+          else if (hashCode == AWS_CodeArtifact_Domain_HASH)
+          {
+            return AccessCheckResourceType::AWS_CodeArtifact_Domain;
+          }
+          else if (hashCode == AWS_Backup_BackupVault_HASH)
+          {
+            return AccessCheckResourceType::AWS_Backup_BackupVault;
+          }
+          else if (hashCode == AWS_CloudTrail_Dashboard_HASH)
+          {
+            return AccessCheckResourceType::AWS_CloudTrail_Dashboard;
+          }
+          else if (hashCode == AWS_CloudTrail_EventDataStore_HASH)
+          {
+            return AccessCheckResourceType::AWS_CloudTrail_EventDataStore;
+          }
+          else if (hashCode == AWS_S3Tables_Table_HASH)
+          {
+            return AccessCheckResourceType::AWS_S3Tables_Table;
+          }
+          else if (hashCode == AWS_S3Express_AccessPoint_HASH)
+          {
+            return AccessCheckResourceType::AWS_S3Express_AccessPoint;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -167,6 +207,22 @@ namespace Aws
             return "AWS::SQS::Queue";
           case AccessCheckResourceType::AWS_IAM_AssumeRolePolicyDocument:
             return "AWS::IAM::AssumeRolePolicyDocument";
+          case AccessCheckResourceType::AWS_S3Tables_TableBucket:
+            return "AWS::S3Tables::TableBucket";
+          case AccessCheckResourceType::AWS_ApiGateway_RestApi:
+            return "AWS::ApiGateway::RestApi";
+          case AccessCheckResourceType::AWS_CodeArtifact_Domain:
+            return "AWS::CodeArtifact::Domain";
+          case AccessCheckResourceType::AWS_Backup_BackupVault:
+            return "AWS::Backup::BackupVault";
+          case AccessCheckResourceType::AWS_CloudTrail_Dashboard:
+            return "AWS::CloudTrail::Dashboard";
+          case AccessCheckResourceType::AWS_CloudTrail_EventDataStore:
+            return "AWS::CloudTrail::EventDataStore";
+          case AccessCheckResourceType::AWS_S3Tables_Table:
+            return "AWS::S3Tables::Table";
+          case AccessCheckResourceType::AWS_S3Express_AccessPoint:
+            return "AWS::S3Express::AccessPoint";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/memorydb/model/ReplicaConfigurationRequest.h>
 #include <aws/memorydb/model/ShardConfigurationRequest.h>
+#include <aws/memorydb/model/IpDiscovery.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +231,22 @@ namespace Model
     template<typename ACLNameT = Aws::String>
     UpdateClusterRequest& WithACLName(ACLNameT&& value) { SetACLName(std::forward<ACLNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The mechanism for discovering IP addresses for the cluster discovery
+     * protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
+     * discovery functions such as cluster slots, cluster shards, and cluster nodes
+     * will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster
+     * discovery functions return IPv6 addresses for cluster nodes. The value must be
+     * compatible with the NetworkType parameter. If not specified, the default is
+     * 'ipv4'.</p>
+     */
+    inline IpDiscovery GetIpDiscovery() const { return m_ipDiscovery; }
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+    inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+    inline UpdateClusterRequest& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -276,6 +293,9 @@ namespace Model
 
     Aws::String m_aCLName;
     bool m_aCLNameHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

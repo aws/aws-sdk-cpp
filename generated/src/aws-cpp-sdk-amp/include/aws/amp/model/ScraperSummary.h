@@ -119,7 +119,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>This structure displays information about the IAM roles used for
+     * cross-account scraping configuration.</p>
+     */
     inline const RoleConfiguration& GetRoleConfiguration() const { return m_roleConfiguration; }
     inline bool RoleConfigurationHasBeenSet() const { return m_roleConfigurationHasBeenSet; }
     template<typename RoleConfigurationT = RoleConfiguration>

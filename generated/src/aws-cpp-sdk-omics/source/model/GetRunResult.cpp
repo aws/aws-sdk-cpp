@@ -203,6 +203,16 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     m_workflowOwnerId = jsonValue.GetString("workflowOwnerId");
     m_workflowOwnerIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("workflowVersionName"))
+  {
+    m_workflowVersionName = jsonValue.GetString("workflowVersionName");
+    m_workflowVersionNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workflowUuid"))
+  {
+    m_workflowUuid = jsonValue.GetString("workflowUuid");
+    m_workflowUuidHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

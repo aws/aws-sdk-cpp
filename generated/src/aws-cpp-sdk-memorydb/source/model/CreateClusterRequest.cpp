@@ -175,6 +175,16 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+   payload.WithString("IpDiscovery", IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery));
+  }
+
   return payload.View().WriteReadable();
 }
 
