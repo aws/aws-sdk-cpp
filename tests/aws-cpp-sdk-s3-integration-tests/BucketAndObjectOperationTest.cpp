@@ -49,7 +49,7 @@
 #include <fstream>
 #include <thread>
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #pragma warning(disable: 4127)
 #ifdef GetObject
 #undef GetObject

@@ -148,6 +148,8 @@
     "gnustl",
     "libgnustl",
     "Wmissing",
+    "Wmaybe",
+    "Wuninitialized",
     // Android NDK
     "JNIEXPORT",
     "jint",

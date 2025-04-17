@@ -227,7 +227,7 @@ bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<H
     char contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);
     HttpQueryInfoA(hHttpRequest, HTTP_QUERY_CONTENT_TYPE, &contentTypeStr, &dwSize, 0);
-    if (contentTypeStr[0] != NULL)
+    if (contentTypeStr[0])
     {
         response->SetContentType(contentTypeStr);
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received content type " << contentTypeStr);
