@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qconnect/model/ConversationState.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/MessageOutput.h>
 #include <aws/qconnect/model/MessageType.h>
+#include <aws/qconnect/model/MessageOutput.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/ConversationState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/RuntimeSessionData.h>
 #include <utility>
 
@@ -39,15 +39,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The conversation data stored on an Amazon Q in Connect Session.</p>
+     * <p>The type of message response.</p>
      */
-    inline const Aws::Vector<RuntimeSessionData>& GetConversationSessionData() const { return m_conversationSessionData; }
-    template<typename ConversationSessionDataT = Aws::Vector<RuntimeSessionData>>
-    void SetConversationSessionData(ConversationSessionDataT&& value) { m_conversationSessionDataHasBeenSet = true; m_conversationSessionData = std::forward<ConversationSessionDataT>(value); }
-    template<typename ConversationSessionDataT = Aws::Vector<RuntimeSessionData>>
-    GetNextMessageResult& WithConversationSessionData(ConversationSessionDataT&& value) { SetConversationSessionData(std::forward<ConversationSessionDataT>(value)); return *this;}
-    template<typename ConversationSessionDataT = RuntimeSessionData>
-    GetNextMessageResult& AddConversationSessionData(ConversationSessionDataT&& value) { m_conversationSessionDataHasBeenSet = true; m_conversationSessionData.emplace_back(std::forward<ConversationSessionDataT>(value)); return *this; }
+    inline MessageType GetType() const { return m_type; }
+    inline void SetType(MessageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetNextMessageResult& WithType(MessageType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The message response to the requested message.</p>
+     */
+    inline const MessageOutput& GetResponse() const { return m_response; }
+    template<typename ResponseT = MessageOutput>
+    void SetResponse(ResponseT&& value) { m_responseHasBeenSet = true; m_response = std::forward<ResponseT>(value); }
+    template<typename ResponseT = MessageOutput>
+    GetNextMessageResult& WithResponse(ResponseT&& value) { SetResponse(std::forward<ResponseT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the submitted message.</p>
+     */
+    inline const Aws::String& GetRequestMessageId() const { return m_requestMessageId; }
+    template<typename RequestMessageIdT = Aws::String>
+    void SetRequestMessageId(RequestMessageIdT&& value) { m_requestMessageIdHasBeenSet = true; m_requestMessageId = std::forward<RequestMessageIdT>(value); }
+    template<typename RequestMessageIdT = Aws::String>
+    GetNextMessageResult& WithRequestMessageId(RequestMessageIdT&& value) { SetRequestMessageId(std::forward<RequestMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,33 +92,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the submitted message.</p>
+     * <p>The conversation data stored on an Amazon Q in Connect Session.</p>
      */
-    inline const Aws::String& GetRequestMessageId() const { return m_requestMessageId; }
-    template<typename RequestMessageIdT = Aws::String>
-    void SetRequestMessageId(RequestMessageIdT&& value) { m_requestMessageIdHasBeenSet = true; m_requestMessageId = std::forward<RequestMessageIdT>(value); }
-    template<typename RequestMessageIdT = Aws::String>
-    GetNextMessageResult& WithRequestMessageId(RequestMessageIdT&& value) { SetRequestMessageId(std::forward<RequestMessageIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The message response to the requested message.</p>
-     */
-    inline const MessageOutput& GetResponse() const { return m_response; }
-    template<typename ResponseT = MessageOutput>
-    void SetResponse(ResponseT&& value) { m_responseHasBeenSet = true; m_response = std::forward<ResponseT>(value); }
-    template<typename ResponseT = MessageOutput>
-    GetNextMessageResult& WithResponse(ResponseT&& value) { SetResponse(std::forward<ResponseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of message response.</p>
-     */
-    inline MessageType GetType() const { return m_type; }
-    inline void SetType(MessageType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline GetNextMessageResult& WithType(MessageType value) { SetType(value); return *this;}
+    inline const Aws::Vector<RuntimeSessionData>& GetConversationSessionData() const { return m_conversationSessionData; }
+    template<typename ConversationSessionDataT = Aws::Vector<RuntimeSessionData>>
+    void SetConversationSessionData(ConversationSessionDataT&& value) { m_conversationSessionDataHasBeenSet = true; m_conversationSessionData = std::forward<ConversationSessionDataT>(value); }
+    template<typename ConversationSessionDataT = Aws::Vector<RuntimeSessionData>>
+    GetNextMessageResult& WithConversationSessionData(ConversationSessionDataT&& value) { SetConversationSessionData(std::forward<ConversationSessionDataT>(value)); return *this;}
+    template<typename ConversationSessionDataT = RuntimeSessionData>
+    GetNextMessageResult& AddConversationSessionData(ConversationSessionDataT&& value) { m_conversationSessionDataHasBeenSet = true; m_conversationSessionData.emplace_back(std::forward<ConversationSessionDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,8 +113,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<RuntimeSessionData> m_conversationSessionData;
-    bool m_conversationSessionDataHasBeenSet = false;
+    MessageType m_type{MessageType::NOT_SET};
+    bool m_typeHasBeenSet = false;
+
+    MessageOutput m_response;
+    bool m_responseHasBeenSet = false;
+
+    Aws::String m_requestMessageId;
+    bool m_requestMessageIdHasBeenSet = false;
 
     ConversationState m_conversationState;
     bool m_conversationStateHasBeenSet = false;
@@ -122,14 +128,8 @@ namespace Model
     Aws::String m_nextMessageToken;
     bool m_nextMessageTokenHasBeenSet = false;
 
-    Aws::String m_requestMessageId;
-    bool m_requestMessageIdHasBeenSet = false;
-
-    MessageOutput m_response;
-    bool m_responseHasBeenSet = false;
-
-    MessageType m_type{MessageType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    Aws::Vector<RuntimeSessionData> m_conversationSessionData;
+    bool m_conversationSessionDataHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

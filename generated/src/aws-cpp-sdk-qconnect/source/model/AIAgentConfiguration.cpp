@@ -25,15 +25,15 @@ AIAgentConfiguration::AIAgentConfiguration(JsonView jsonValue)
 
 AIAgentConfiguration& AIAgentConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("answerRecommendationAIAgentConfiguration"))
-  {
-    m_answerRecommendationAIAgentConfiguration = jsonValue.GetObject("answerRecommendationAIAgentConfiguration");
-    m_answerRecommendationAIAgentConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("manualSearchAIAgentConfiguration"))
   {
     m_manualSearchAIAgentConfiguration = jsonValue.GetObject("manualSearchAIAgentConfiguration");
     m_manualSearchAIAgentConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("answerRecommendationAIAgentConfiguration"))
+  {
+    m_answerRecommendationAIAgentConfiguration = jsonValue.GetObject("answerRecommendationAIAgentConfiguration");
+    m_answerRecommendationAIAgentConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("selfServiceAIAgentConfiguration"))
   {
@@ -47,15 +47,15 @@ JsonValue AIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_answerRecommendationAIAgentConfigurationHasBeenSet)
-  {
-   payload.WithObject("answerRecommendationAIAgentConfiguration", m_answerRecommendationAIAgentConfiguration.Jsonize());
-
-  }
-
   if(m_manualSearchAIAgentConfigurationHasBeenSet)
   {
    payload.WithObject("manualSearchAIAgentConfiguration", m_manualSearchAIAgentConfiguration.Jsonize());
+
+  }
+
+  if(m_answerRecommendationAIAgentConfigurationHasBeenSet)
+  {
+   payload.WithObject("answerRecommendationAIAgentConfiguration", m_answerRecommendationAIAgentConfiguration.Jsonize());
 
   }
 

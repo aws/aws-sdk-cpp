@@ -41,15 +41,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
-     * the ARN. URLs cannot contain the ARN.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
-    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    template<typename AssistantIdT = Aws::String>
-    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
-    template<typename AssistantIdT = Aws::String>
-    SearchSessionsRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +64,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    SearchSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
+    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    SearchSessionsRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +88,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    Aws::String m_assistantId;
+    bool m_assistantIdHasBeenSet = false;
 
     SearchExpression m_searchExpression;
     bool m_searchExpressionHasBeenSet = false;

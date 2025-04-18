@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/ChannelSubtype.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/ChannelSubtype.h>
 #include <utility>
 
 namespace Aws
@@ -40,22 +40,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The channel subtype this message template applies to.</p>
+     * <p>The Amazon Resource Name (ARN) of the message template.</p>
      */
-    inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
-    inline bool ChannelSubtypeHasBeenSet() const { return m_channelSubtypeHasBeenSet; }
-    inline void SetChannelSubtype(ChannelSubtype value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
-    inline MessageTemplateVersionSummary& WithChannelSubtype(ChannelSubtype value) { SetChannelSubtype(value); return *this;}
+    inline const Aws::String& GetMessageTemplateArn() const { return m_messageTemplateArn; }
+    inline bool MessageTemplateArnHasBeenSet() const { return m_messageTemplateArnHasBeenSet; }
+    template<typename MessageTemplateArnT = Aws::String>
+    void SetMessageTemplateArn(MessageTemplateArnT&& value) { m_messageTemplateArnHasBeenSet = true; m_messageTemplateArn = std::forward<MessageTemplateArnT>(value); }
+    template<typename MessageTemplateArnT = Aws::String>
+    MessageTemplateVersionSummary& WithMessageTemplateArn(MessageTemplateArnT&& value) { SetMessageTemplateArn(std::forward<MessageTemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Whether the version of the message template is activated.</p>
+     * <p>The identifier of the message template.</p>
      */
-    inline bool GetIsActive() const { return m_isActive; }
-    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
-    inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
-    inline MessageTemplateVersionSummary& WithIsActive(bool value) { SetIsActive(value); return *this;}
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
+    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    MessageTemplateVersionSummary& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,30 +88,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the message template.</p>
-     */
-    inline const Aws::String& GetMessageTemplateArn() const { return m_messageTemplateArn; }
-    inline bool MessageTemplateArnHasBeenSet() const { return m_messageTemplateArnHasBeenSet; }
-    template<typename MessageTemplateArnT = Aws::String>
-    void SetMessageTemplateArn(MessageTemplateArnT&& value) { m_messageTemplateArnHasBeenSet = true; m_messageTemplateArn = std::forward<MessageTemplateArnT>(value); }
-    template<typename MessageTemplateArnT = Aws::String>
-    MessageTemplateVersionSummary& WithMessageTemplateArn(MessageTemplateArnT&& value) { SetMessageTemplateArn(std::forward<MessageTemplateArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the message template.</p>
-     */
-    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
-    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    template<typename MessageTemplateIdT = Aws::String>
-    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
-    template<typename MessageTemplateIdT = Aws::String>
-    MessageTemplateVersionSummary& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the message template.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -116,6 +96,26 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     MessageTemplateVersionSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The channel subtype this message template applies to.</p>
+     */
+    inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
+    inline bool ChannelSubtypeHasBeenSet() const { return m_channelSubtypeHasBeenSet; }
+    inline void SetChannelSubtype(ChannelSubtype value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
+    inline MessageTemplateVersionSummary& WithChannelSubtype(ChannelSubtype value) { SetChannelSubtype(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether the version of the message template is activated.</p>
+     */
+    inline bool GetIsActive() const { return m_isActive; }
+    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
+    inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
+    inline MessageTemplateVersionSummary& WithIsActive(bool value) { SetIsActive(value); return *this;}
     ///@}
 
     ///@{
@@ -129,11 +129,11 @@ namespace Model
     ///@}
   private:
 
-    ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
-    bool m_channelSubtypeHasBeenSet = false;
+    Aws::String m_messageTemplateArn;
+    bool m_messageTemplateArnHasBeenSet = false;
 
-    bool m_isActive{false};
-    bool m_isActiveHasBeenSet = false;
+    Aws::String m_messageTemplateId;
+    bool m_messageTemplateIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseArn;
     bool m_knowledgeBaseArnHasBeenSet = false;
@@ -141,14 +141,14 @@ namespace Model
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::String m_messageTemplateArn;
-    bool m_messageTemplateArnHasBeenSet = false;
-
-    Aws::String m_messageTemplateId;
-    bool m_messageTemplateIdHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
+    bool m_channelSubtypeHasBeenSet = false;
+
+    bool m_isActive{false};
+    bool m_isActiveHasBeenSet = false;
 
     long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;

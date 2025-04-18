@@ -25,10 +25,20 @@ MessageTemplateAttributes::MessageTemplateAttributes(JsonView jsonValue)
 
 MessageTemplateAttributes& MessageTemplateAttributes::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("systemAttributes"))
+  {
+    m_systemAttributes = jsonValue.GetObject("systemAttributes");
+    m_systemAttributesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("agentAttributes"))
   {
     m_agentAttributes = jsonValue.GetObject("agentAttributes");
     m_agentAttributesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customerProfileAttributes"))
+  {
+    m_customerProfileAttributes = jsonValue.GetObject("customerProfileAttributes");
+    m_customerProfileAttributesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("customAttributes"))
   {
@@ -39,16 +49,6 @@ MessageTemplateAttributes& MessageTemplateAttributes::operator =(JsonView jsonVa
     }
     m_customAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customerProfileAttributes"))
-  {
-    m_customerProfileAttributes = jsonValue.GetObject("customerProfileAttributes");
-    m_customerProfileAttributesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("systemAttributes"))
-  {
-    m_systemAttributes = jsonValue.GetObject("systemAttributes");
-    m_systemAttributesHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -56,9 +56,21 @@ JsonValue MessageTemplateAttributes::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_systemAttributesHasBeenSet)
+  {
+   payload.WithObject("systemAttributes", m_systemAttributes.Jsonize());
+
+  }
+
   if(m_agentAttributesHasBeenSet)
   {
    payload.WithObject("agentAttributes", m_agentAttributes.Jsonize());
+
+  }
+
+  if(m_customerProfileAttributesHasBeenSet)
+  {
+   payload.WithObject("customerProfileAttributes", m_customerProfileAttributes.Jsonize());
 
   }
 
@@ -70,18 +82,6 @@ JsonValue MessageTemplateAttributes::Jsonize() const
      customAttributesJsonMap.WithString(customAttributesItem.first, customAttributesItem.second);
    }
    payload.WithObject("customAttributes", std::move(customAttributesJsonMap));
-
-  }
-
-  if(m_customerProfileAttributesHasBeenSet)
-  {
-   payload.WithObject("customerProfileAttributes", m_customerProfileAttributes.Jsonize());
-
-  }
-
-  if(m_systemAttributesHasBeenSet)
-  {
-   payload.WithObject("systemAttributes", m_systemAttributes.Jsonize());
 
   }
 

@@ -48,6 +48,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
+     * contain the ARN.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    NotifyRecommendationsReceivedRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifiers of the recommendations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
@@ -59,29 +72,16 @@ namespace Model
     template<typename RecommendationIdsT = Aws::String>
     NotifyRecommendationsReceivedRequest& AddRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.emplace_back(std::forward<RecommendationIdsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    NotifyRecommendationsReceivedRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet = false;
-
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_recommendationIds;
+    bool m_recommendationIdsHasBeenSet = false;
   };
 
 } // namespace Model

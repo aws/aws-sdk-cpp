@@ -39,16 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The relevance score of the content.</p>
-     */
-    inline RelevanceLevel GetRelevanceLevel() const { return m_relevanceLevel; }
-    inline bool RelevanceLevelHasBeenSet() const { return m_relevanceLevelHasBeenSet; }
-    inline void SetRelevanceLevel(RelevanceLevel value) { m_relevanceLevelHasBeenSet = true; m_relevanceLevel = value; }
-    inline RankingData& WithRelevanceLevel(RelevanceLevel value) { SetRelevanceLevel(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The relevance level of the recommendation.</p>
      */
     inline double GetRelevanceScore() const { return m_relevanceScore; }
@@ -56,13 +46,23 @@ namespace Model
     inline void SetRelevanceScore(double value) { m_relevanceScoreHasBeenSet = true; m_relevanceScore = value; }
     inline RankingData& WithRelevanceScore(double value) { SetRelevanceScore(value); return *this;}
     ///@}
-  private:
 
-    RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
-    bool m_relevanceLevelHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The relevance score of the content.</p>
+     */
+    inline RelevanceLevel GetRelevanceLevel() const { return m_relevanceLevel; }
+    inline bool RelevanceLevelHasBeenSet() const { return m_relevanceLevelHasBeenSet; }
+    inline void SetRelevanceLevel(RelevanceLevel value) { m_relevanceLevelHasBeenSet = true; m_relevanceLevel = value; }
+    inline RankingData& WithRelevanceLevel(RelevanceLevel value) { SetRelevanceLevel(value); return *this;}
+    ///@}
+  private:
 
     double m_relevanceScore{0.0};
     bool m_relevanceScoreHasBeenSet = false;
+
+    RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
+    bool m_relevanceLevelHasBeenSet = false;
   };
 
 } // namespace Model

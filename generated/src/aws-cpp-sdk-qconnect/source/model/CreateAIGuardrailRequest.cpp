@@ -16,6 +16,18 @@ Aws::String CreateAIGuardrailRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
   if(m_blockedInputMessagingHasBeenSet)
   {
    payload.WithString("blockedInputMessaging", m_blockedInputMessaging);
@@ -28,9 +40,20 @@ Aws::String CreateAIGuardrailRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_visibilityStatusHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_topicPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("topicPolicyConfig", m_topicPolicyConfig.Jsonize());
 
   }
 
@@ -40,27 +63,21 @@ Aws::String CreateAIGuardrailRequest::SerializePayload() const
 
   }
 
-  if(m_contextualGroundingPolicyConfigHasBeenSet)
+  if(m_wordPolicyConfigHasBeenSet)
   {
-   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
+   payload.WithObject("wordPolicyConfig", m_wordPolicyConfig.Jsonize());
 
   }
 
   if(m_sensitiveInformationPolicyConfigHasBeenSet)
   {
    payload.WithObject("sensitiveInformationPolicyConfig", m_sensitiveInformationPolicyConfig.Jsonize());
+
+  }
+
+  if(m_contextualGroundingPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
 
   }
 
@@ -72,23 +89,6 @@ Aws::String CreateAIGuardrailRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_topicPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("topicPolicyConfig", m_topicPolicyConfig.Jsonize());
-
-  }
-
-  if(m_visibilityStatusHasBeenSet)
-  {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
-  }
-
-  if(m_wordPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("wordPolicyConfig", m_wordPolicyConfig.Jsonize());
 
   }
 

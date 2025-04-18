@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/ContentDisposition.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -39,18 +39,6 @@ namespace Model
     AWS_QCONNECT_API MessageTemplateAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>The identifier of the attachment file.</p>
-     */
-    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
-    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    template<typename AttachmentIdT = Aws::String>
-    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
-    template<typename AttachmentIdT = Aws::String>
-    MessageTemplateAttachment& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -111,10 +99,19 @@ namespace Model
     template<typename UrlExpiryT = Aws::Utils::DateTime>
     MessageTemplateAttachment& WithUrlExpiry(UrlExpiryT&& value) { SetUrlExpiry(std::forward<UrlExpiryT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the attachment file.</p>
+     */
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    MessageTemplateAttachment& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
+    ///@}
+  private:
 
     ContentDisposition m_contentDisposition{ContentDisposition::NOT_SET};
     bool m_contentDispositionHasBeenSet = false;
@@ -130,6 +127,9 @@ namespace Model
 
     Aws::Utils::DateTime m_urlExpiry{};
     bool m_urlExpiryHasBeenSet = false;
+
+    Aws::String m_attachmentId;
+    bool m_attachmentIdHasBeenSet = false;
   };
 
 } // namespace Model

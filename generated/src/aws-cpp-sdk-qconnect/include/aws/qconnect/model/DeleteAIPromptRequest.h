@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI prompt. Can be either the ID or
-     * the ARN. URLs cannot contain the ARN.</p>
-     */
-    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
-    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
-    template<typename AiPromptIdT = Aws::String>
-    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
-    template<typename AiPromptIdT = Aws::String>
-    DeleteAIPromptRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -57,13 +44,26 @@ namespace Model
     template<typename AssistantIdT = Aws::String>
     DeleteAIPromptRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_aiPromptId;
-    bool m_aiPromptIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the Amazon Q in Connect AI prompt. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
+     */
+    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
+    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
+    template<typename AiPromptIdT = Aws::String>
+    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
+    template<typename AiPromptIdT = Aws::String>
+    DeleteAIPromptRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    Aws::String m_aiPromptId;
+    bool m_aiPromptIdHasBeenSet = false;
   };
 
 } // namespace Model

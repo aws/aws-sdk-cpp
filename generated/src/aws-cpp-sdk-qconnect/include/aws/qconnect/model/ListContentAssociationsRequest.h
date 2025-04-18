@@ -40,14 +40,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the content.</p>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetContentId() const { return m_contentId; }
-    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
-    template<typename ContentIdT = Aws::String>
-    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
-    template<typename ContentIdT = Aws::String>
-    ListContentAssociationsRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContentAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return per page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListContentAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -64,39 +75,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The identifier of the content.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListContentAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListContentAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    inline const Aws::String& GetContentId() const { return m_contentId; }
+    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
+    template<typename ContentIdT = Aws::String>
+    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
+    template<typename ContentIdT = Aws::String>
+    ListContentAssociationsRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_contentId;
-    bool m_contentIdHasBeenSet = false;
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_contentId;
+    bool m_contentIdHasBeenSet = false;
   };
 
 } // namespace Model

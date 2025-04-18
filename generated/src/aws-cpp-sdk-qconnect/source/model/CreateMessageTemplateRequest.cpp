@@ -16,14 +16,9 @@ Aws::String CreateMessageTemplateRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_channelSubtypeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
@@ -33,15 +28,26 @@ Aws::String CreateMessageTemplateRequest::SerializePayload() const
 
   }
 
-  if(m_defaultAttributesHasBeenSet)
-  {
-   payload.WithObject("defaultAttributes", m_defaultAttributes.Jsonize());
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_channelSubtypeHasBeenSet)
+  {
+   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("language", m_language);
+
+  }
+
+  if(m_defaultAttributesHasBeenSet)
+  {
+   payload.WithObject("defaultAttributes", m_defaultAttributes.Jsonize());
 
   }
 
@@ -51,15 +57,9 @@ Aws::String CreateMessageTemplateRequest::SerializePayload() const
 
   }
 
-  if(m_languageHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("language", m_language);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

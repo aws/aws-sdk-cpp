@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
 #include <aws/qconnect/model/MessageTemplateAttributes.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,33 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The content of the message template.</p>
-     */
-    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
-    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    template<typename ContentT = MessageTemplateContentProvider>
-    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
-    template<typename ContentT = MessageTemplateContentProvider>
-    UpdateMessageTemplateRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that specifies the default values to use for variables in the
-     * message template. This object contains different categories of key-value pairs.
-     * Each key defines a variable or placeholder in the message template. The
-     * corresponding value defines the default value for that variable.</p>
-     */
-    inline const MessageTemplateAttributes& GetDefaultAttributes() const { return m_defaultAttributes; }
-    inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
-    template<typename DefaultAttributesT = MessageTemplateAttributes>
-    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
-    template<typename DefaultAttributesT = MessageTemplateAttributes>
-    UpdateMessageTemplateRequest& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -72,6 +45,31 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     UpdateMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the message template. Can be either the ID or the ARN. It
+     * cannot contain any qualifier.</p>
+     */
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
+    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    UpdateMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The content of the message template.</p>
+     */
+    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+    template<typename ContentT = MessageTemplateContentProvider>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = MessageTemplateContentProvider>
+    UpdateMessageTemplateRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,32 +90,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the message template. Can be either the ID or the ARN. It
-     * cannot contain any qualifier.</p>
+     * <p>An object that specifies the default values to use for variables in the
+     * message template. This object contains different categories of key-value pairs.
+     * Each key defines a variable or placeholder in the message template. The
+     * corresponding value defines the default value for that variable.</p>
      */
-    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
-    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    template<typename MessageTemplateIdT = Aws::String>
-    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
-    template<typename MessageTemplateIdT = Aws::String>
-    UpdateMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
+    inline const MessageTemplateAttributes& GetDefaultAttributes() const { return m_defaultAttributes; }
+    inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    UpdateMessageTemplateRequest& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
     ///@}
   private:
-
-    MessageTemplateContentProvider m_content;
-    bool m_contentHasBeenSet = false;
-
-    MessageTemplateAttributes m_defaultAttributes;
-    bool m_defaultAttributesHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
+    Aws::String m_messageTemplateId;
+    bool m_messageTemplateIdHasBeenSet = false;
+
+    MessageTemplateContentProvider m_content;
+    bool m_contentHasBeenSet = false;
+
     Aws::String m_language;
     bool m_languageHasBeenSet = false;
 
-    Aws::String m_messageTemplateId;
-    bool m_messageTemplateIdHasBeenSet = false;
+    MessageTemplateAttributes m_defaultAttributes;
+    bool m_defaultAttributesHasBeenSet = false;
   };
 
 } // namespace Model

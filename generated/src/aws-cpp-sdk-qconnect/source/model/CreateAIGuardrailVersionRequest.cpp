@@ -16,15 +16,15 @@ Aws::String CreateAIGuardrailVersionRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_modifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
-  }
-
-  if(m_modifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

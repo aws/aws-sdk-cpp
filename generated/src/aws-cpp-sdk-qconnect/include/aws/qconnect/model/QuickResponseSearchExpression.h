@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/QuickResponseOrderField.h>
-#include <aws/qconnect/model/QuickResponseFilterField.h>
 #include <aws/qconnect/model/QuickResponseQueryField.h>
+#include <aws/qconnect/model/QuickResponseFilterField.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The quick response query expressions.</p>
+     */
+    inline const Aws::Vector<QuickResponseQueryField>& GetQueries() const { return m_queries; }
+    inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
+    template<typename QueriesT = Aws::Vector<QuickResponseQueryField>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<QuickResponseQueryField>>
+    QuickResponseSearchExpression& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = QuickResponseQueryField>
+    QuickResponseSearchExpression& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of filtering rules applied to quick response query
      * results.</p>
      */
@@ -67,30 +81,16 @@ namespace Model
     template<typename OrderOnFieldT = QuickResponseOrderField>
     QuickResponseSearchExpression& WithOrderOnField(OrderOnFieldT&& value) { SetOrderOnField(std::forward<OrderOnFieldT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The quick response query expressions.</p>
-     */
-    inline const Aws::Vector<QuickResponseQueryField>& GetQueries() const { return m_queries; }
-    inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
-    template<typename QueriesT = Aws::Vector<QuickResponseQueryField>>
-    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
-    template<typename QueriesT = Aws::Vector<QuickResponseQueryField>>
-    QuickResponseSearchExpression& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
-    template<typename QueriesT = QuickResponseQueryField>
-    QuickResponseSearchExpression& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<QuickResponseQueryField> m_queries;
+    bool m_queriesHasBeenSet = false;
 
     Aws::Vector<QuickResponseFilterField> m_filters;
     bool m_filtersHasBeenSet = false;
 
     QuickResponseOrderField m_orderOnField;
     bool m_orderOnFieldHasBeenSet = false;
-
-    Aws::Vector<QuickResponseQueryField> m_queries;
-    bool m_queriesHasBeenSet = false;
   };
 
 } // namespace Model

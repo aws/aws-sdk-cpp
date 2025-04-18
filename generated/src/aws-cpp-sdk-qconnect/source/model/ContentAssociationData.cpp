@@ -25,45 +25,45 @@ ContentAssociationData::ContentAssociationData(JsonView jsonValue)
 
 ContentAssociationData& ContentAssociationData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("associationData"))
+  if(jsonValue.ValueExists("knowledgeBaseId"))
   {
-    m_associationData = jsonValue.GetObject("associationData");
-    m_associationDataHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("associationType"))
-  {
-    m_associationType = ContentAssociationTypeMapper::GetContentAssociationTypeForName(jsonValue.GetString("associationType"));
-    m_associationTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contentArn"))
-  {
-    m_contentArn = jsonValue.GetString("contentArn");
-    m_contentArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contentAssociationArn"))
-  {
-    m_contentAssociationArn = jsonValue.GetString("contentAssociationArn");
-    m_contentAssociationArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contentAssociationId"))
-  {
-    m_contentAssociationId = jsonValue.GetString("contentAssociationId");
-    m_contentAssociationIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contentId"))
-  {
-    m_contentId = jsonValue.GetString("contentId");
-    m_contentIdHasBeenSet = true;
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("contentId"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
+    m_contentId = jsonValue.GetString("contentId");
+    m_contentIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentArn"))
+  {
+    m_contentArn = jsonValue.GetString("contentArn");
+    m_contentArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentAssociationId"))
+  {
+    m_contentAssociationId = jsonValue.GetString("contentAssociationId");
+    m_contentAssociationIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentAssociationArn"))
+  {
+    m_contentAssociationArn = jsonValue.GetString("contentAssociationArn");
+    m_contentAssociationArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("associationType"))
+  {
+    m_associationType = ContentAssociationTypeMapper::GetContentAssociationTypeForName(jsonValue.GetString("associationType"));
+    m_associationTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("associationData"))
+  {
+    m_associationData = jsonValue.GetObject("associationData");
+    m_associationDataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -81,38 +81,9 @@ JsonValue ContentAssociationData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_associationDataHasBeenSet)
+  if(m_knowledgeBaseIdHasBeenSet)
   {
-   payload.WithObject("associationData", m_associationData.Jsonize());
-
-  }
-
-  if(m_associationTypeHasBeenSet)
-  {
-   payload.WithString("associationType", ContentAssociationTypeMapper::GetNameForContentAssociationType(m_associationType));
-  }
-
-  if(m_contentArnHasBeenSet)
-  {
-   payload.WithString("contentArn", m_contentArn);
-
-  }
-
-  if(m_contentAssociationArnHasBeenSet)
-  {
-   payload.WithString("contentAssociationArn", m_contentAssociationArn);
-
-  }
-
-  if(m_contentAssociationIdHasBeenSet)
-  {
-   payload.WithString("contentAssociationId", m_contentAssociationId);
-
-  }
-
-  if(m_contentIdHasBeenSet)
-  {
-   payload.WithString("contentId", m_contentId);
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 
@@ -122,9 +93,38 @@ JsonValue ContentAssociationData::Jsonize() const
 
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
+  if(m_contentIdHasBeenSet)
   {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+   payload.WithString("contentId", m_contentId);
+
+  }
+
+  if(m_contentArnHasBeenSet)
+  {
+   payload.WithString("contentArn", m_contentArn);
+
+  }
+
+  if(m_contentAssociationIdHasBeenSet)
+  {
+   payload.WithString("contentAssociationId", m_contentAssociationId);
+
+  }
+
+  if(m_contentAssociationArnHasBeenSet)
+  {
+   payload.WithString("contentAssociationArn", m_contentAssociationArn);
+
+  }
+
+  if(m_associationTypeHasBeenSet)
+  {
+   payload.WithString("associationType", ContentAssociationTypeMapper::GetNameForContentAssociationType(m_associationType));
+  }
+
+  if(m_associationDataHasBeenSet)
+  {
+   payload.WithObject("associationData", m_associationData.Jsonize());
 
   }
 

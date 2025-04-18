@@ -22,10 +22,9 @@ Aws::String UpdateAIPromptRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_visibilityStatusHasBeenSet)
   {
-   payload.WithString("description", m_description);
-
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   if(m_templateConfigurationHasBeenSet)
@@ -34,9 +33,10 @@ Aws::String UpdateAIPromptRequest::SerializePayload() const
 
   }
 
-  if(m_visibilityStatusHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+   payload.WithString("description", m_description);
+
   }
 
   return payload.View().WriteReadable();

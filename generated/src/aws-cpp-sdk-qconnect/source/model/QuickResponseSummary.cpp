@@ -25,34 +25,15 @@ QuickResponseSummary::QuickResponseSummary(JsonView jsonValue)
 
 QuickResponseSummary& QuickResponseSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("channels"))
+  if(jsonValue.ValueExists("quickResponseArn"))
   {
-    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
-    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-    {
-      m_channels.push_back(channelsJsonList[channelsIndex].AsString());
-    }
-    m_channelsHasBeenSet = true;
+    m_quickResponseArn = jsonValue.GetString("quickResponseArn");
+    m_quickResponseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
+  if(jsonValue.ValueExists("quickResponseId"))
   {
-    m_contentType = jsonValue.GetString("contentType");
-    m_contentTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("createdTime");
-    m_createdTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("isActive"))
-  {
-    m_isActive = jsonValue.GetBool("isActive");
-    m_isActiveHasBeenSet = true;
+    m_quickResponseId = jsonValue.GetString("quickResponseId");
+    m_quickResponseIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
@@ -64,35 +45,54 @@ QuickResponseSummary& QuickResponseSummary::operator =(JsonView jsonValue)
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedBy"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-    m_lastModifiedByHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentType"))
+  {
+    m_contentType = jsonValue.GetString("contentType");
+    m_contentTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = QuickResponseStatusMapper::GetQuickResponseStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("createdTime");
+    m_createdTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quickResponseArn"))
+  if(jsonValue.ValueExists("lastModifiedBy"))
   {
-    m_quickResponseArn = jsonValue.GetString("quickResponseArn");
-    m_quickResponseArnHasBeenSet = true;
+    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
+    m_lastModifiedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quickResponseId"))
+  if(jsonValue.ValueExists("isActive"))
   {
-    m_quickResponseId = jsonValue.GetString("quickResponseId");
-    m_quickResponseIdHasBeenSet = true;
+    m_isActive = jsonValue.GetBool("isActive");
+    m_isActiveHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("channels"))
   {
-    m_status = QuickResponseStatusMapper::GetQuickResponseStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
+    {
+      m_channels.push_back(channelsJsonList[channelsIndex].AsString());
+    }
+    m_channelsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -110,37 +110,15 @@ JsonValue QuickResponseSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_channelsHasBeenSet)
+  if(m_quickResponseArnHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
-   for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-   {
-     channelsJsonList[channelsIndex].AsString(m_channels[channelsIndex]);
-   }
-   payload.WithArray("channels", std::move(channelsJsonList));
+   payload.WithString("quickResponseArn", m_quickResponseArn);
 
   }
 
-  if(m_contentTypeHasBeenSet)
+  if(m_quickResponseIdHasBeenSet)
   {
-   payload.WithString("contentType", m_contentType);
-
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_isActiveHasBeenSet)
-  {
-   payload.WithBool("isActive", m_isActive);
+   payload.WithString("quickResponseId", m_quickResponseId);
 
   }
 
@@ -156,10 +134,26 @@ JsonValue QuickResponseSummary::Jsonize() const
 
   }
 
-  if(m_lastModifiedByHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("lastModifiedBy", m_lastModifiedBy);
+   payload.WithString("name", m_name);
 
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("contentType", m_contentType);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", QuickResponseStatusMapper::GetNameForQuickResponseStatus(m_status));
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedTimeHasBeenSet)
@@ -167,27 +161,33 @@ JsonValue QuickResponseSummary::Jsonize() const
    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_nameHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("description", m_description);
 
   }
 
-  if(m_quickResponseArnHasBeenSet)
+  if(m_lastModifiedByHasBeenSet)
   {
-   payload.WithString("quickResponseArn", m_quickResponseArn);
+   payload.WithString("lastModifiedBy", m_lastModifiedBy);
 
   }
 
-  if(m_quickResponseIdHasBeenSet)
+  if(m_isActiveHasBeenSet)
   {
-   payload.WithString("quickResponseId", m_quickResponseId);
+   payload.WithBool("isActive", m_isActive);
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_channelsHasBeenSet)
   {
-   payload.WithString("status", QuickResponseStatusMapper::GetNameForQuickResponseStatus(m_status));
+   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
+   for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
+   {
+     channelsJsonList[channelsIndex].AsString(m_channels[channelsIndex]);
+   }
+   payload.WithArray("channels", std::move(channelsJsonList));
+
   }
 
   if(m_tagsHasBeenSet)

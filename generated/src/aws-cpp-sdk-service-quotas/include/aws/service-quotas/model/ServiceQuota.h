@@ -185,7 +185,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
+     * <p>Filters the response to return applied quota values for the
+     * <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels.
+     * <code>ACCOUNT</code> is the default.</p>
      */
     inline AppliedLevelEnum GetQuotaAppliedAtLevel() const { return m_quotaAppliedAtLevel; }
     inline bool QuotaAppliedAtLevelHasBeenSet() const { return m_quotaAppliedAtLevelHasBeenSet; }
@@ -203,6 +205,18 @@ namespace Model
     void SetQuotaContext(QuotaContextT&& value) { m_quotaContextHasBeenSet = true; m_quotaContext = std::forward<QuotaContextT>(value); }
     template<typename QuotaContextT = QuotaContextInfo>
     ServiceQuota& WithQuotaContext(QuotaContextT&& value) { SetQuotaContext(std::forward<QuotaContextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The quota description. </p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ServiceQuota& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -247,6 +261,9 @@ namespace Model
 
     QuotaContextInfo m_quotaContext;
     bool m_quotaContextHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

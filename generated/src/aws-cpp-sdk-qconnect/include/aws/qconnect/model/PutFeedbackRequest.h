@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/ContentFeedbackData.h>
 #include <aws/qconnect/model/TargetType.h>
+#include <aws/qconnect/model/ContentFeedbackData.h>
 #include <utility>
 
 namespace Aws
@@ -48,18 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the feedback provided.</p>
-     */
-    inline const ContentFeedbackData& GetContentFeedback() const { return m_contentFeedback; }
-    inline bool ContentFeedbackHasBeenSet() const { return m_contentFeedbackHasBeenSet; }
-    template<typename ContentFeedbackT = ContentFeedbackData>
-    void SetContentFeedback(ContentFeedbackT&& value) { m_contentFeedbackHasBeenSet = true; m_contentFeedback = std::forward<ContentFeedbackT>(value); }
-    template<typename ContentFeedbackT = ContentFeedbackData>
-    PutFeedbackRequest& WithContentFeedback(ContentFeedbackT&& value) { SetContentFeedback(std::forward<ContentFeedbackT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the feedback target.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
@@ -79,19 +67,31 @@ namespace Model
     inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
     inline PutFeedbackRequest& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the feedback provided.</p>
+     */
+    inline const ContentFeedbackData& GetContentFeedback() const { return m_contentFeedback; }
+    inline bool ContentFeedbackHasBeenSet() const { return m_contentFeedbackHasBeenSet; }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    void SetContentFeedback(ContentFeedbackT&& value) { m_contentFeedbackHasBeenSet = true; m_contentFeedback = std::forward<ContentFeedbackT>(value); }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    PutFeedbackRequest& WithContentFeedback(ContentFeedbackT&& value) { SetContentFeedback(std::forward<ContentFeedbackT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
-
-    ContentFeedbackData m_contentFeedback;
-    bool m_contentFeedbackHasBeenSet = false;
 
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
+
+    ContentFeedbackData m_contentFeedback;
+    bool m_contentFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

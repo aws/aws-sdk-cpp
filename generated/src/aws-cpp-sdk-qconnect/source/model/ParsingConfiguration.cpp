@@ -25,15 +25,15 @@ ParsingConfiguration::ParsingConfiguration(JsonView jsonValue)
 
 ParsingConfiguration& ParsingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
-  {
-    m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
-    m_bedrockFoundationModelConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("parsingStrategy"))
   {
     m_parsingStrategy = ParsingStrategyMapper::GetParsingStrategyForName(jsonValue.GetString("parsingStrategy"));
     m_parsingStrategyHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
+  {
+    m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
+    m_bedrockFoundationModelConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ParsingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_parsingStrategyHasBeenSet)
+  {
+   payload.WithString("parsingStrategy", ParsingStrategyMapper::GetNameForParsingStrategy(m_parsingStrategy));
+  }
+
   if(m_bedrockFoundationModelConfigurationHasBeenSet)
   {
    payload.WithObject("bedrockFoundationModelConfiguration", m_bedrockFoundationModelConfiguration.Jsonize());
 
-  }
-
-  if(m_parsingStrategyHasBeenSet)
-  {
-   payload.WithString("parsingStrategy", ParsingStrategyMapper::GetNameForParsingStrategy(m_parsingStrategy));
   }
 
   return payload;

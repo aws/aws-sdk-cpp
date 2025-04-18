@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
-#include <aws/qconnect/model/AIAgentType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <utility>
 
@@ -36,17 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the AI Agent being updated for use by default on the Amazon Q in
-     * Connect Assistant.</p>
-     */
-    inline AIAgentType GetAiAgentType() const { return m_aiAgentType; }
-    inline bool AiAgentTypeHasBeenSet() const { return m_aiAgentTypeHasBeenSet; }
-    inline void SetAiAgentType(AIAgentType value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
-    inline UpdateAssistantAIAgentRequest& WithAiAgentType(AIAgentType value) { SetAiAgentType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -56,6 +45,17 @@ namespace Model
     void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
     template<typename AssistantIdT = Aws::String>
     UpdateAssistantAIAgentRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of the AI Agent being updated for use by default on the Amazon Q in
+     * Connect Assistant.</p>
+     */
+    inline AIAgentType GetAiAgentType() const { return m_aiAgentType; }
+    inline bool AiAgentTypeHasBeenSet() const { return m_aiAgentTypeHasBeenSet; }
+    inline void SetAiAgentType(AIAgentType value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
+    inline UpdateAssistantAIAgentRequest& WithAiAgentType(AIAgentType value) { SetAiAgentType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
-    bool m_aiAgentTypeHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
+    bool m_aiAgentTypeHasBeenSet = false;
 
     AIAgentConfigurationData m_configuration;
     bool m_configurationHasBeenSet = false;

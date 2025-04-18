@@ -25,40 +25,55 @@ ImportJobData::ImportJobData(JsonView jsonValue)
 
 ImportJobData& ImportJobData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("createdTime");
-    m_createdTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("externalSourceConfiguration"))
-  {
-    m_externalSourceConfiguration = jsonValue.GetObject("externalSourceConfiguration");
-    m_externalSourceConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failedRecordReport"))
-  {
-    m_failedRecordReport = jsonValue.GetString("failedRecordReport");
-    m_failedRecordReportHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("importJobId"))
   {
     m_importJobId = jsonValue.GetString("importJobId");
     m_importJobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importJobType"))
+  if(jsonValue.ValueExists("knowledgeBaseId"))
   {
-    m_importJobType = ImportJobTypeMapper::GetImportJobTypeForName(jsonValue.GetString("importJobType"));
-    m_importJobTypeHasBeenSet = true;
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("uploadId"))
+  {
+    m_uploadId = jsonValue.GetString("uploadId");
+    m_uploadIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("importJobType"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
+    m_importJobType = ImportJobTypeMapper::GetImportJobTypeForName(jsonValue.GetString("importJobType"));
+    m_importJobTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("url"))
+  {
+    m_url = jsonValue.GetString("url");
+    m_urlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failedRecordReport"))
+  {
+    m_failedRecordReport = jsonValue.GetString("failedRecordReport");
+    m_failedRecordReportHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("urlExpiry"))
+  {
+    m_urlExpiry = jsonValue.GetDouble("urlExpiry");
+    m_urlExpiryHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("createdTime");
+    m_createdTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
@@ -74,25 +89,10 @@ ImportJobData& ImportJobData::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("externalSourceConfiguration"))
   {
-    m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("uploadId"))
-  {
-    m_uploadId = jsonValue.GetString("uploadId");
-    m_uploadIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("url"))
-  {
-    m_url = jsonValue.GetString("url");
-    m_urlHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("urlExpiry"))
-  {
-    m_urlExpiry = jsonValue.GetDouble("urlExpiry");
-    m_urlExpiryHasBeenSet = true;
+    m_externalSourceConfiguration = jsonValue.GetObject("externalSourceConfiguration");
+    m_externalSourceConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -101,14 +101,43 @@ JsonValue ImportJobData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdTimeHasBeenSet)
+  if(m_importJobIdHasBeenSet)
   {
-   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
+   payload.WithString("importJobId", m_importJobId);
+
   }
 
-  if(m_externalSourceConfigurationHasBeenSet)
+  if(m_knowledgeBaseIdHasBeenSet)
   {
-   payload.WithObject("externalSourceConfiguration", m_externalSourceConfiguration.Jsonize());
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+
+  }
+
+  if(m_uploadIdHasBeenSet)
+  {
+   payload.WithString("uploadId", m_uploadId);
+
+  }
+
+  if(m_knowledgeBaseArnHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
+
+  }
+
+  if(m_importJobTypeHasBeenSet)
+  {
+   payload.WithString("importJobType", ImportJobTypeMapper::GetNameForImportJobType(m_importJobType));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ImportJobStatusMapper::GetNameForImportJobStatus(m_status));
+  }
+
+  if(m_urlHasBeenSet)
+  {
+   payload.WithString("url", m_url);
 
   }
 
@@ -118,27 +147,14 @@ JsonValue ImportJobData::Jsonize() const
 
   }
 
-  if(m_importJobIdHasBeenSet)
+  if(m_urlExpiryHasBeenSet)
   {
-   payload.WithString("importJobId", m_importJobId);
-
+   payload.WithDouble("urlExpiry", m_urlExpiry.SecondsWithMSPrecision());
   }
 
-  if(m_importJobTypeHasBeenSet)
+  if(m_createdTimeHasBeenSet)
   {
-   payload.WithString("importJobType", ImportJobTypeMapper::GetNameForImportJobType(m_importJobType));
-  }
-
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
-  }
-
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedTimeHasBeenSet)
@@ -157,26 +173,10 @@ JsonValue ImportJobData::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_externalSourceConfigurationHasBeenSet)
   {
-   payload.WithString("status", ImportJobStatusMapper::GetNameForImportJobStatus(m_status));
-  }
+   payload.WithObject("externalSourceConfiguration", m_externalSourceConfiguration.Jsonize());
 
-  if(m_uploadIdHasBeenSet)
-  {
-   payload.WithString("uploadId", m_uploadId);
-
-  }
-
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
-  }
-
-  if(m_urlExpiryHasBeenSet)
-  {
-   payload.WithDouble("urlExpiry", m_urlExpiry.SecondsWithMSPrecision());
   }
 
   return payload;

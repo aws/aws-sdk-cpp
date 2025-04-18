@@ -7,9 +7,9 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/ExternalSourceConfiguration.h>
 #include <aws/qconnect/model/ImportJobType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/ExternalSourceConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -38,27 +38,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    StartImportJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The configuration information of the external source that the resource data
-     * are imported from.</p>
-     */
-    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const { return m_externalSourceConfiguration; }
-    inline bool ExternalSourceConfigurationHasBeenSet() const { return m_externalSourceConfigurationHasBeenSet; }
-    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
-    void SetExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::forward<ExternalSourceConfigurationT>(value); }
-    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
-    StartImportJobRequest& WithExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { SetExternalSourceConfiguration(std::forward<ExternalSourceConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    StartImportJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,17 +64,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
-     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
-     * base.</p> </li> </ul>
+     * <p>A pointer to the uploaded asset. This value is returned by <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    StartImportJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    StartImportJobRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The tags used to organize, track, or control access for this resource.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartImportJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,35 +105,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pointer to the uploaded asset. This value is returned by <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+     * <p>The configuration information of the external source that the resource data
+     * are imported from.</p>
      */
-    inline const Aws::String& GetUploadId() const { return m_uploadId; }
-    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
-    template<typename UploadIdT = Aws::String>
-    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
-    template<typename UploadIdT = Aws::String>
-    StartImportJobRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
+    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const { return m_externalSourceConfiguration; }
+    inline bool ExternalSourceConfigurationHasBeenSet() const { return m_externalSourceConfigurationHasBeenSet; }
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    void SetExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::forward<ExternalSourceConfigurationT>(value); }
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    StartImportJobRequest& WithExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { SetExternalSourceConfiguration(std::forward<ExternalSourceConfigurationT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    ExternalSourceConfiguration m_externalSourceConfiguration;
-    bool m_externalSourceConfigurationHasBeenSet = false;
-
-    ImportJobType m_importJobType{ImportJobType::NOT_SET};
-    bool m_importJobTypeHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet = false;
+    ImportJobType m_importJobType{ImportJobType::NOT_SET};
+    bool m_importJobTypeHasBeenSet = false;
 
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
+
+    ExternalSourceConfiguration m_externalSourceConfiguration;
+    bool m_externalSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

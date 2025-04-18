@@ -22,22 +22,26 @@ Aws::String CreateAIAgentRequest::SerializePayload() const
 
   }
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", AIAgentTypeMapper::GetNameForAIAgentType(m_type));
+  }
+
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_visibilityStatusHasBeenSet)
   {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   if(m_tagsHasBeenSet)
@@ -51,14 +55,10 @@ Aws::String CreateAIAgentRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("type", AIAgentTypeMapper::GetNameForAIAgentType(m_type));
-  }
+   payload.WithString("description", m_description);
 
-  if(m_visibilityStatusHasBeenSet)
-  {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   return payload.View().WriteReadable();

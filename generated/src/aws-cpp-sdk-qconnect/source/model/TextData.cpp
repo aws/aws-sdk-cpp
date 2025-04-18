@@ -25,15 +25,15 @@ TextData::TextData(JsonView jsonValue)
 
 TextData& TextData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("excerpt"))
-  {
-    m_excerpt = jsonValue.GetObject("excerpt");
-    m_excerptHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetObject("title");
     m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("excerpt"))
+  {
+    m_excerpt = jsonValue.GetObject("excerpt");
+    m_excerptHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue TextData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_excerptHasBeenSet)
-  {
-   payload.WithObject("excerpt", m_excerpt.Jsonize());
-
-  }
-
   if(m_titleHasBeenSet)
   {
    payload.WithObject("title", m_title.Jsonize());
+
+  }
+
+  if(m_excerptHasBeenSet)
+  {
+   payload.WithObject("excerpt", m_excerpt.Jsonize());
 
   }
 

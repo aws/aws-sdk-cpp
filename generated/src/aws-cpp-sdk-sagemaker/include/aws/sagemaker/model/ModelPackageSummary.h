@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
+#include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,16 @@ namespace Model
     inline void SetModelApprovalStatus(ModelApprovalStatus value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
     inline ModelPackageSummary& WithModelApprovalStatus(ModelApprovalStatus value) { SetModelApprovalStatus(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ModelLifeCycle& GetModelLifeCycle() const { return m_modelLifeCycle; }
+    inline bool ModelLifeCycleHasBeenSet() const { return m_modelLifeCycleHasBeenSet; }
+    template<typename ModelLifeCycleT = ModelLifeCycle>
+    void SetModelLifeCycle(ModelLifeCycleT&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::forward<ModelLifeCycleT>(value); }
+    template<typename ModelLifeCycleT = ModelLifeCycle>
+    ModelPackageSummary& WithModelLifeCycle(ModelLifeCycleT&& value) { SetModelLifeCycle(std::forward<ModelLifeCycleT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelPackageName;
@@ -160,6 +171,9 @@ namespace Model
 
     ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
     bool m_modelApprovalStatusHasBeenSet = false;
+
+    ModelLifeCycle m_modelLifeCycle;
+    bool m_modelLifeCycleHasBeenSet = false;
   };
 
 } // namespace Model

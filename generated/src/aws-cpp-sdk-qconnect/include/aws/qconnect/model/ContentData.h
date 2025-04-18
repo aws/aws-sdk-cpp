@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qconnect/model/ContentStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The media type of the content.</p>
-     */
-    inline const Aws::String& GetContentType() const { return m_contentType; }
-    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    template<typename ContentTypeT = Aws::String>
-    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
-    template<typename ContentTypeT = Aws::String>
-    ContentData& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseArn() const { return m_knowledgeBaseArn; }
@@ -98,37 +86,6 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     ContentData& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The URI of the content.</p>
-     */
-    inline const Aws::String& GetLinkOutUri() const { return m_linkOutUri; }
-    inline bool LinkOutUriHasBeenSet() const { return m_linkOutUriHasBeenSet; }
-    template<typename LinkOutUriT = Aws::String>
-    void SetLinkOutUri(LinkOutUriT&& value) { m_linkOutUriHasBeenSet = true; m_linkOutUri = std::forward<LinkOutUriT>(value); }
-    template<typename LinkOutUriT = Aws::String>
-    ContentData& WithLinkOutUri(LinkOutUriT&& value) { SetLinkOutUri(std::forward<LinkOutUriT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A key/value map to store attributes without affecting tagging or
-     * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q in Connect, you can store an external version identifier as
-     * metadata to utilize for determining drift.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-    ContentData& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
-    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
-    ContentData& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
-      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
-    }
     ///@}
 
     ///@{
@@ -157,12 +114,55 @@ namespace Model
 
     ///@{
     /**
+     * <p>The title of the content.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ContentData& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The media type of the content.</p>
+     */
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    ContentData& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the content.</p>
      */
     inline ContentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
     inline void SetStatus(ContentStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline ContentData& WithStatus(ContentStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A key/value map to store attributes without affecting tagging or
+     * recommendations. For example, when synchronizing data between an external system
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    ContentData& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    ContentData& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -183,14 +183,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The title of the content.</p>
+     * <p>The URI of the content.</p>
      */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    ContentData& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    inline const Aws::String& GetLinkOutUri() const { return m_linkOutUri; }
+    inline bool LinkOutUriHasBeenSet() const { return m_linkOutUriHasBeenSet; }
+    template<typename LinkOutUriT = Aws::String>
+    void SetLinkOutUri(LinkOutUriT&& value) { m_linkOutUriHasBeenSet = true; m_linkOutUri = std::forward<LinkOutUriT>(value); }
+    template<typename LinkOutUriT = Aws::String>
+    ContentData& WithLinkOutUri(LinkOutUriT&& value) { SetLinkOutUri(std::forward<LinkOutUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,20 +224,11 @@ namespace Model
     Aws::String m_contentId;
     bool m_contentIdHasBeenSet = false;
 
-    Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet = false;
-
     Aws::String m_knowledgeBaseArn;
     bool m_knowledgeBaseArnHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
-
-    Aws::String m_linkOutUri;
-    bool m_linkOutUriHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -245,14 +236,23 @@ namespace Model
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet = false;
 
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
+
     ContentStatus m_status{ContentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
+    Aws::String m_linkOutUri;
+    bool m_linkOutUriHasBeenSet = false;
 
     Aws::String m_url;
     bool m_urlHasBeenSet = false;

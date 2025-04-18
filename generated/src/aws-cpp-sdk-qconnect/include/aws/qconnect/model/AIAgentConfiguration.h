@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/AnswerRecommendationAIAgentConfiguration.h>
 #include <aws/qconnect/model/ManualSearchAIAgentConfiguration.h>
+#include <aws/qconnect/model/AnswerRecommendationAIAgentConfiguration.h>
 #include <aws/qconnect/model/SelfServiceAIAgentConfiguration.h>
 #include <utility>
 
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
+     */
+    inline const ManualSearchAIAgentConfiguration& GetManualSearchAIAgentConfiguration() const { return m_manualSearchAIAgentConfiguration; }
+    inline bool ManualSearchAIAgentConfigurationHasBeenSet() const { return m_manualSearchAIAgentConfigurationHasBeenSet; }
+    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
+    void SetManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { m_manualSearchAIAgentConfigurationHasBeenSet = true; m_manualSearchAIAgentConfiguration = std::forward<ManualSearchAIAgentConfigurationT>(value); }
+    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
+    AIAgentConfiguration& WithManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { SetManualSearchAIAgentConfiguration(std::forward<ManualSearchAIAgentConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration for AI Agents of type
      * <code>ANSWER_RECOMMENDATION</code>.</p>
      */
@@ -51,18 +63,6 @@ namespace Model
     void SetAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfigurationT&& value) { m_answerRecommendationAIAgentConfigurationHasBeenSet = true; m_answerRecommendationAIAgentConfiguration = std::forward<AnswerRecommendationAIAgentConfigurationT>(value); }
     template<typename AnswerRecommendationAIAgentConfigurationT = AnswerRecommendationAIAgentConfiguration>
     AIAgentConfiguration& WithAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfigurationT&& value) { SetAnswerRecommendationAIAgentConfiguration(std::forward<AnswerRecommendationAIAgentConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
-     */
-    inline const ManualSearchAIAgentConfiguration& GetManualSearchAIAgentConfiguration() const { return m_manualSearchAIAgentConfiguration; }
-    inline bool ManualSearchAIAgentConfigurationHasBeenSet() const { return m_manualSearchAIAgentConfigurationHasBeenSet; }
-    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
-    void SetManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { m_manualSearchAIAgentConfigurationHasBeenSet = true; m_manualSearchAIAgentConfiguration = std::forward<ManualSearchAIAgentConfigurationT>(value); }
-    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
-    AIAgentConfiguration& WithManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { SetManualSearchAIAgentConfiguration(std::forward<ManualSearchAIAgentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
-    AnswerRecommendationAIAgentConfiguration m_answerRecommendationAIAgentConfiguration;
-    bool m_answerRecommendationAIAgentConfigurationHasBeenSet = false;
-
     ManualSearchAIAgentConfiguration m_manualSearchAIAgentConfiguration;
     bool m_manualSearchAIAgentConfigurationHasBeenSet = false;
+
+    AnswerRecommendationAIAgentConfiguration m_answerRecommendationAIAgentConfiguration;
+    bool m_answerRecommendationAIAgentConfigurationHasBeenSet = false;
 
     SelfServiceAIAgentConfiguration m_selfServiceAIAgentConfiguration;
     bool m_selfServiceAIAgentConfigurationHasBeenSet = false;

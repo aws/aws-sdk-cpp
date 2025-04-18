@@ -52,18 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The excerpt from the document.</p>
-     */
-    inline const DocumentText& GetExcerpt() const { return m_excerpt; }
-    inline bool ExcerptHasBeenSet() const { return m_excerptHasBeenSet; }
-    template<typename ExcerptT = DocumentText>
-    void SetExcerpt(ExcerptT&& value) { m_excerptHasBeenSet = true; m_excerpt = std::forward<ExcerptT>(value); }
-    template<typename ExcerptT = DocumentText>
-    Document& WithExcerpt(ExcerptT&& value) { SetExcerpt(std::forward<ExcerptT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The title of the document.</p>
      */
     inline const DocumentText& GetTitle() const { return m_title; }
@@ -73,16 +61,28 @@ namespace Model
     template<typename TitleT = DocumentText>
     Document& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The excerpt from the document.</p>
+     */
+    inline const DocumentText& GetExcerpt() const { return m_excerpt; }
+    inline bool ExcerptHasBeenSet() const { return m_excerptHasBeenSet; }
+    template<typename ExcerptT = DocumentText>
+    void SetExcerpt(ExcerptT&& value) { m_excerptHasBeenSet = true; m_excerpt = std::forward<ExcerptT>(value); }
+    template<typename ExcerptT = DocumentText>
+    Document& WithExcerpt(ExcerptT&& value) { SetExcerpt(std::forward<ExcerptT>(value)); return *this;}
+    ///@}
   private:
 
     ContentReference m_contentReference;
     bool m_contentReferenceHasBeenSet = false;
 
-    DocumentText m_excerpt;
-    bool m_excerptHasBeenSet = false;
-
     DocumentText m_title;
     bool m_titleHasBeenSet = false;
+
+    DocumentText m_excerpt;
+    bool m_excerptHasBeenSet = false;
   };
 
 } // namespace Model

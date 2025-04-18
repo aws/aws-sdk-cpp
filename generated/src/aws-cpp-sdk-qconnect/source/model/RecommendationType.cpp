@@ -24,6 +24,10 @@ namespace Aws
         static const int GENERATIVE_RESPONSE_HASH = HashingUtils::HashString("GENERATIVE_RESPONSE");
         static const int GENERATIVE_ANSWER_HASH = HashingUtils::HashString("GENERATIVE_ANSWER");
         static const int DETECTED_INTENT_HASH = HashingUtils::HashString("DETECTED_INTENT");
+        static const int GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("GENERATIVE_ANSWER_CHUNK");
+        static const int BLOCKED_GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("BLOCKED_GENERATIVE_ANSWER_CHUNK");
+        static const int INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("INTENT_ANSWER_CHUNK");
+        static const int BLOCKED_INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("BLOCKED_INTENT_ANSWER_CHUNK");
 
 
         RecommendationType GetRecommendationTypeForName(const Aws::String& name)
@@ -44,6 +48,22 @@ namespace Aws
           else if (hashCode == DETECTED_INTENT_HASH)
           {
             return RecommendationType::DETECTED_INTENT;
+          }
+          else if (hashCode == GENERATIVE_ANSWER_CHUNK_HASH)
+          {
+            return RecommendationType::GENERATIVE_ANSWER_CHUNK;
+          }
+          else if (hashCode == BLOCKED_GENERATIVE_ANSWER_CHUNK_HASH)
+          {
+            return RecommendationType::BLOCKED_GENERATIVE_ANSWER_CHUNK;
+          }
+          else if (hashCode == INTENT_ANSWER_CHUNK_HASH)
+          {
+            return RecommendationType::INTENT_ANSWER_CHUNK;
+          }
+          else if (hashCode == BLOCKED_INTENT_ANSWER_CHUNK_HASH)
+          {
+            return RecommendationType::BLOCKED_INTENT_ANSWER_CHUNK;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +89,14 @@ namespace Aws
             return "GENERATIVE_ANSWER";
           case RecommendationType::DETECTED_INTENT:
             return "DETECTED_INTENT";
+          case RecommendationType::GENERATIVE_ANSWER_CHUNK:
+            return "GENERATIVE_ANSWER_CHUNK";
+          case RecommendationType::BLOCKED_GENERATIVE_ANSWER_CHUNK:
+            return "BLOCKED_GENERATIVE_ANSWER_CHUNK";
+          case RecommendationType::INTENT_ANSWER_CHUNK:
+            return "INTENT_ANSWER_CHUNK";
+          case RecommendationType::BLOCKED_INTENT_ANSWER_CHUNK:
+            return "BLOCKED_INTENT_ANSWER_CHUNK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

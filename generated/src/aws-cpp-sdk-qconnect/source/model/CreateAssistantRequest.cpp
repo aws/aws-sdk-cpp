@@ -22,21 +22,20 @@ Aws::String CreateAssistantRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
-  if(m_serverSideEncryptionConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+   payload.WithString("type", AssistantTypeMapper::GetNameForAssistantType(m_type));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 
@@ -51,9 +50,10 @@ Aws::String CreateAssistantRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
-   payload.WithString("type", AssistantTypeMapper::GetNameForAssistantType(m_type));
+   payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

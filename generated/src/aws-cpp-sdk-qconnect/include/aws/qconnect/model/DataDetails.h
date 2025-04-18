@@ -26,6 +26,7 @@ namespace QConnect
 namespace Model
 {
   class GenerativeDataDetails;
+  class GenerativeChunkDataDetails;
 
   /**
    * <p>Details about the data.</p><p><h3>See Also:</h3>   <a
@@ -93,6 +94,23 @@ namespace Model
     template<typename SourceContentDataT = SourceContentDataDetails>
     DataDetails& WithSourceContentData(SourceContentDataT&& value) { SetSourceContentData(std::forward<SourceContentDataT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Details about the generative chunk data.</p>
+     */
+    inline const GenerativeChunkDataDetails& GetGenerativeChunkData() const{
+      return *m_generativeChunkData;
+    }
+    inline bool GenerativeChunkDataHasBeenSet() const { return m_generativeChunkDataHasBeenSet; }
+    template<typename GenerativeChunkDataT = GenerativeChunkDataDetails>
+    void SetGenerativeChunkData(GenerativeChunkDataT&& value) {
+      m_generativeChunkDataHasBeenSet = true; 
+      m_generativeChunkData = Aws::MakeShared<GenerativeChunkDataDetails>("DataDetails", std::forward<GenerativeChunkDataT>(value));
+    }
+    template<typename GenerativeChunkDataT = GenerativeChunkDataDetails>
+    DataDetails& WithGenerativeChunkData(GenerativeChunkDataT&& value) { SetGenerativeChunkData(std::forward<GenerativeChunkDataT>(value)); return *this;}
+    ///@}
   private:
 
     ContentDataDetails m_contentData;
@@ -106,6 +124,9 @@ namespace Model
 
     SourceContentDataDetails m_sourceContentData;
     bool m_sourceContentDataHasBeenSet = false;
+
+    std::shared_ptr<GenerativeChunkDataDetails> m_generativeChunkData;
+    bool m_generativeChunkDataHasBeenSet = false;
   };
 
 } // namespace Model

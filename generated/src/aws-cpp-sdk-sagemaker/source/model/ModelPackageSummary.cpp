@@ -65,6 +65,11 @@ ModelPackageSummary& ModelPackageSummary::operator =(JsonView jsonValue)
     m_modelApprovalStatus = ModelApprovalStatusMapper::GetModelApprovalStatusForName(jsonValue.GetString("ModelApprovalStatus"));
     m_modelApprovalStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ModelLifeCycle"))
+  {
+    m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
+    m_modelLifeCycleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +120,12 @@ JsonValue ModelPackageSummary::Jsonize() const
   if(m_modelApprovalStatusHasBeenSet)
   {
    payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
+  }
+
+  if(m_modelLifeCycleHasBeenSet)
+  {
+   payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
+
   }
 
   return payload;

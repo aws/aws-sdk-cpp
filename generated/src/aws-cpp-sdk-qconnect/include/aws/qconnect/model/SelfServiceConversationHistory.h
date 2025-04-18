@@ -40,14 +40,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The bot response of the conversation history data.</p>
+     * <p>The number of turn of the conversation history data.</p>
      */
-    inline const Aws::String& GetBotResponse() const { return m_botResponse; }
-    inline bool BotResponseHasBeenSet() const { return m_botResponseHasBeenSet; }
-    template<typename BotResponseT = Aws::String>
-    void SetBotResponse(BotResponseT&& value) { m_botResponseHasBeenSet = true; m_botResponse = std::forward<BotResponseT>(value); }
-    template<typename BotResponseT = Aws::String>
-    SelfServiceConversationHistory& WithBotResponse(BotResponseT&& value) { SetBotResponse(std::forward<BotResponseT>(value)); return *this;}
+    inline int GetTurnNumber() const { return m_turnNumber; }
+    inline bool TurnNumberHasBeenSet() const { return m_turnNumberHasBeenSet; }
+    inline void SetTurnNumber(int value) { m_turnNumberHasBeenSet = true; m_turnNumber = value; }
+    inline SelfServiceConversationHistory& WithTurnNumber(int value) { SetTurnNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -64,23 +62,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of turn of the conversation history data.</p>
+     * <p>The bot response of the conversation history data.</p>
      */
-    inline int GetTurnNumber() const { return m_turnNumber; }
-    inline bool TurnNumberHasBeenSet() const { return m_turnNumberHasBeenSet; }
-    inline void SetTurnNumber(int value) { m_turnNumberHasBeenSet = true; m_turnNumber = value; }
-    inline SelfServiceConversationHistory& WithTurnNumber(int value) { SetTurnNumber(value); return *this;}
+    inline const Aws::String& GetBotResponse() const { return m_botResponse; }
+    inline bool BotResponseHasBeenSet() const { return m_botResponseHasBeenSet; }
+    template<typename BotResponseT = Aws::String>
+    void SetBotResponse(BotResponseT&& value) { m_botResponseHasBeenSet = true; m_botResponse = std::forward<BotResponseT>(value); }
+    template<typename BotResponseT = Aws::String>
+    SelfServiceConversationHistory& WithBotResponse(BotResponseT&& value) { SetBotResponse(std::forward<BotResponseT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_botResponse;
-    bool m_botResponseHasBeenSet = false;
+    int m_turnNumber{0};
+    bool m_turnNumberHasBeenSet = false;
 
     Aws::String m_inputTranscript;
     bool m_inputTranscriptHasBeenSet = false;
 
-    int m_turnNumber{0};
-    bool m_turnNumberHasBeenSet = false;
+    Aws::String m_botResponse;
+    bool m_botResponseHasBeenSet = false;
   };
 
 } // namespace Model

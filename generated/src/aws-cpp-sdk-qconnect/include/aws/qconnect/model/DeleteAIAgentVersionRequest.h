@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Agent. Can be either the ID or
-     * the ARN. URLs cannot contain the ARN.</p>
-     */
-    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
-    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
-    template<typename AiAgentIdT = Aws::String>
-    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
-    template<typename AiAgentIdT = Aws::String>
-    DeleteAIAgentVersionRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -60,6 +47,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the Amazon Q in Connect AI Agent. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
+     */
+    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
+    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
+    template<typename AiAgentIdT = Aws::String>
+    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
+    template<typename AiAgentIdT = Aws::String>
+    DeleteAIAgentVersionRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The version number of the AI Agent version.</p>
      */
     inline long long GetVersionNumber() const { return m_versionNumber; }
@@ -69,11 +69,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_aiAgentId;
-    bool m_aiAgentIdHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    Aws::String m_aiAgentId;
+    bool m_aiAgentIdHasBeenSet = false;
 
     long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;

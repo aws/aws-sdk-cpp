@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
-#include <aws/qconnect/model/AIAgentType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/AIAgentType.h>
 #include <utility>
 
 namespace Aws
@@ -41,17 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the AI Agent being removed for use by default from the Amazon Q
-     * in Connect Assistant.</p>
-     */
-    inline AIAgentType GetAiAgentType() const { return m_aiAgentType; }
-    inline bool AiAgentTypeHasBeenSet() const { return m_aiAgentTypeHasBeenSet; }
-    inline void SetAiAgentType(AIAgentType value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
-    inline RemoveAssistantAIAgentRequest& WithAiAgentType(AIAgentType value) { SetAiAgentType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -62,13 +51,24 @@ namespace Model
     template<typename AssistantIdT = Aws::String>
     RemoveAssistantAIAgentRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
-  private:
 
-    AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
-    bool m_aiAgentTypeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The type of the AI Agent being removed for use by default from the Amazon Q
+     * in Connect Assistant.</p>
+     */
+    inline AIAgentType GetAiAgentType() const { return m_aiAgentType; }
+    inline bool AiAgentTypeHasBeenSet() const { return m_aiAgentTypeHasBeenSet; }
+    inline void SetAiAgentType(AIAgentType value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
+    inline RemoveAssistantAIAgentRequest& WithAiAgentType(AIAgentType value) { SetAiAgentType(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
+    bool m_aiAgentTypeHasBeenSet = false;
   };
 
 } // namespace Model

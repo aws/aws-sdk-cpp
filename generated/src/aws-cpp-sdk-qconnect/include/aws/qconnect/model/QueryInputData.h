@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/IntentInputData.h>
 #include <aws/qconnect/model/QueryTextInputData.h>
+#include <aws/qconnect/model/IntentInputData.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Input information for the intent.</p>
-     */
-    inline const IntentInputData& GetIntentInputData() const { return m_intentInputData; }
-    inline bool IntentInputDataHasBeenSet() const { return m_intentInputDataHasBeenSet; }
-    template<typename IntentInputDataT = IntentInputData>
-    void SetIntentInputData(IntentInputDataT&& value) { m_intentInputDataHasBeenSet = true; m_intentInputData = std::forward<IntentInputDataT>(value); }
-    template<typename IntentInputDataT = IntentInputData>
-    QueryInputData& WithIntentInputData(IntentInputDataT&& value) { SetIntentInputData(std::forward<IntentInputDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Input information for the query.</p>
      */
     inline const QueryTextInputData& GetQueryTextInputData() const { return m_queryTextInputData; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename QueryTextInputDataT = QueryTextInputData>
     QueryInputData& WithQueryTextInputData(QueryTextInputDataT&& value) { SetQueryTextInputData(std::forward<QueryTextInputDataT>(value)); return *this;}
     ///@}
-  private:
 
-    IntentInputData m_intentInputData;
-    bool m_intentInputDataHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Input information for the intent.</p>
+     */
+    inline const IntentInputData& GetIntentInputData() const { return m_intentInputData; }
+    inline bool IntentInputDataHasBeenSet() const { return m_intentInputDataHasBeenSet; }
+    template<typename IntentInputDataT = IntentInputData>
+    void SetIntentInputData(IntentInputDataT&& value) { m_intentInputDataHasBeenSet = true; m_intentInputData = std::forward<IntentInputDataT>(value); }
+    template<typename IntentInputDataT = IntentInputData>
+    QueryInputData& WithIntentInputData(IntentInputDataT&& value) { SetIntentInputData(std::forward<IntentInputDataT>(value)); return *this;}
+    ///@}
+  private:
 
     QueryTextInputData m_queryTextInputData;
     bool m_queryTextInputDataHasBeenSet = false;
+
+    IntentInputData m_intentInputData;
+    bool m_intentInputDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,45 +25,64 @@ AIAgentData::AIAgentData(JsonView jsonValue)
 
 AIAgentData& AIAgentData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("aiAgentArn"))
+  if(jsonValue.ValueExists("assistantId"))
   {
-    m_aiAgentArn = jsonValue.GetString("aiAgentArn");
-    m_aiAgentArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("aiAgentId"))
-  {
-    m_aiAgentId = jsonValue.GetString("aiAgentId");
-    m_aiAgentIdHasBeenSet = true;
+    m_assistantId = jsonValue.GetString("assistantId");
+    m_assistantIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("assistantArn"))
   {
     m_assistantArn = jsonValue.GetString("assistantArn");
     m_assistantArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantId"))
+  if(jsonValue.ValueExists("aiAgentId"))
   {
-    m_assistantId = jsonValue.GetString("assistantId");
-    m_assistantIdHasBeenSet = true;
+    m_aiAgentId = jsonValue.GetString("aiAgentId");
+    m_aiAgentIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("aiAgentArn"))
+  {
+    m_aiAgentArn = jsonValue.GetString("aiAgentArn");
+    m_aiAgentArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = AIAgentTypeMapper::GetAIAgentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("modifiedTime"))
   {
     m_modifiedTime = jsonValue.GetDouble("modifiedTime");
     m_modifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("visibilityStatus"))
+  {
+    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
+    m_visibilityStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("origin"))
   {
@@ -75,25 +94,6 @@ AIAgentData& AIAgentData::operator =(JsonView jsonValue)
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = AIAgentTypeMapper::GetAIAgentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("visibilityStatus"))
-  {
-    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
-    m_visibilityStatusHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -101,15 +101,9 @@ JsonValue AIAgentData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_aiAgentArnHasBeenSet)
+  if(m_assistantIdHasBeenSet)
   {
-   payload.WithString("aiAgentArn", m_aiAgentArn);
-
-  }
-
-  if(m_aiAgentIdHasBeenSet)
-  {
-   payload.WithString("aiAgentId", m_aiAgentId);
+   payload.WithString("assistantId", m_assistantId);
 
   }
 
@@ -119,27 +113,16 @@ JsonValue AIAgentData::Jsonize() const
 
   }
 
-  if(m_assistantIdHasBeenSet)
+  if(m_aiAgentIdHasBeenSet)
   {
-   payload.WithString("assistantId", m_assistantId);
+   payload.WithString("aiAgentId", m_aiAgentId);
 
   }
 
-  if(m_configurationHasBeenSet)
+  if(m_aiAgentArnHasBeenSet)
   {
-   payload.WithObject("configuration", m_configuration.Jsonize());
+   payload.WithString("aiAgentArn", m_aiAgentArn);
 
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_modifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
   }
 
   if(m_nameHasBeenSet)
@@ -148,14 +131,31 @@ JsonValue AIAgentData::Jsonize() const
 
   }
 
-  if(m_originHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("origin", OriginMapper::GetNameForOrigin(m_origin));
+   payload.WithString("type", AIAgentTypeMapper::GetNameForAIAgentType(m_type));
   }
 
-  if(m_statusHasBeenSet)
+  if(m_configurationHasBeenSet)
   {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+   payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_modifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_visibilityStatusHasBeenSet)
+  {
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   if(m_tagsHasBeenSet)
@@ -169,14 +169,14 @@ JsonValue AIAgentData::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_originHasBeenSet)
   {
-   payload.WithString("type", AIAgentTypeMapper::GetNameForAIAgentType(m_type));
+   payload.WithString("origin", OriginMapper::GetNameForOrigin(m_origin));
   }
 
-  if(m_visibilityStatusHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;

@@ -25,15 +25,15 @@ ExternalSourceConfiguration::ExternalSourceConfiguration(JsonView jsonValue)
 
 ExternalSourceConfiguration& ExternalSourceConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("configuration"))
-  {
-    m_configuration = jsonValue.GetObject("configuration");
-    m_configurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("source"))
   {
     m_source = ExternalSourceMapper::GetExternalSourceForName(jsonValue.GetString("source"));
     m_sourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ExternalSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithString("source", ExternalSourceMapper::GetNameForExternalSource(m_source));
+  }
+
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
 
-  }
-
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", ExternalSourceMapper::GetNameForExternalSource(m_source));
   }
 
   return payload;

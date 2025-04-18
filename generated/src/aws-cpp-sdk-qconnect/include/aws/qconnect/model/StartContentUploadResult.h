@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -33,21 +33,6 @@ namespace Model
     AWS_QCONNECT_API StartContentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API StartContentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-
-    ///@{
-    /**
-     * <p>The headers to include in the upload.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeadersToInclude() const { return m_headersToInclude; }
-    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
-    void SetHeadersToInclude(HeadersToIncludeT&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude = std::forward<HeadersToIncludeT>(value); }
-    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
-    StartContentUploadResult& WithHeadersToInclude(HeadersToIncludeT&& value) { SetHeadersToInclude(std::forward<HeadersToIncludeT>(value)); return *this;}
-    template<typename HeadersToIncludeKeyT = Aws::String, typename HeadersToIncludeValueT = Aws::String>
-    StartContentUploadResult& AddHeadersToInclude(HeadersToIncludeKeyT&& key, HeadersToIncludeValueT&& value) {
-      m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::forward<HeadersToIncludeKeyT>(key), std::forward<HeadersToIncludeValueT>(value)); return *this;
-    }
-    ///@}
 
     ///@{
     /**
@@ -83,6 +68,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The headers to include in the upload.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetHeadersToInclude() const { return m_headersToInclude; }
+    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
+    void SetHeadersToInclude(HeadersToIncludeT&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude = std::forward<HeadersToIncludeT>(value); }
+    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
+    StartContentUploadResult& WithHeadersToInclude(HeadersToIncludeT&& value) { SetHeadersToInclude(std::forward<HeadersToIncludeT>(value)); return *this;}
+    template<typename HeadersToIncludeKeyT = Aws::String, typename HeadersToIncludeValueT = Aws::String>
+    StartContentUploadResult& AddHeadersToInclude(HeadersToIncludeKeyT&& key, HeadersToIncludeValueT&& value) {
+      m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::forward<HeadersToIncludeKeyT>(key), std::forward<HeadersToIncludeValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -92,9 +92,6 @@ namespace Model
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_headersToInclude;
-    bool m_headersToIncludeHasBeenSet = false;
-
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet = false;
 
@@ -103,6 +100,9 @@ namespace Model
 
     Aws::Utils::DateTime m_urlExpiry{};
     bool m_urlExpiryHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_headersToInclude;
+    bool m_headersToIncludeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

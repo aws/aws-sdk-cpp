@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The threshold details for the AI Guardrail's contextual grounding filter.</p>
-     */
-    inline double GetThreshold() const { return m_threshold; }
-    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-    inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-    inline GuardrailContextualGroundingFilterConfig& WithThreshold(double value) { SetThreshold(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The filter type for the AI Guardrail's contextual grounding filter.</p>
      */
     inline GuardrailContextualGroundingFilterType GetType() const { return m_type; }
@@ -57,13 +47,23 @@ namespace Model
     inline void SetType(GuardrailContextualGroundingFilterType value) { m_typeHasBeenSet = true; m_type = value; }
     inline GuardrailContextualGroundingFilterConfig& WithType(GuardrailContextualGroundingFilterType value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    double m_threshold{0.0};
-    bool m_thresholdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The threshold details for the AI Guardrail's contextual grounding filter.</p>
+     */
+    inline double GetThreshold() const { return m_threshold; }
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+    inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
+    inline GuardrailContextualGroundingFilterConfig& WithThreshold(double value) { SetThreshold(value); return *this;}
+    ///@}
+  private:
 
     GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    double m_threshold{0.0};
+    bool m_thresholdHasBeenSet = false;
   };
 
 } // namespace Model

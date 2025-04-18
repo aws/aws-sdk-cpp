@@ -52,6 +52,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the Amazon Q in Connect session.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetNextMessageRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The token for the next message. Use the value returned in the SendMessage or
      * previous response in the next request to retrieve the next message.</p>
      */
@@ -62,28 +74,16 @@ namespace Model
     template<typename NextMessageTokenT = Aws::String>
     GetNextMessageRequest& WithNextMessageToken(NextMessageTokenT&& value) { SetNextMessageToken(std::forward<NextMessageTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the Amazon Q in Connect session.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    GetNextMessageRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::String m_nextMessageToken;
-    bool m_nextMessageTokenHasBeenSet = false;
-
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    Aws::String m_nextMessageToken;
+    bool m_nextMessageTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/RecommendationTriggerData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qconnect/model/RecommendationSourceType.h>
 #include <aws/qconnect/model/RecommendationTriggerType.h>
+#include <aws/qconnect/model/RecommendationSourceType.h>
+#include <aws/qconnect/model/RecommendationTriggerData.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -46,18 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A union type containing information related to the trigger.</p>
-     */
-    inline const RecommendationTriggerData& GetData() const { return m_data; }
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    template<typename DataT = RecommendationTriggerData>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = RecommendationTriggerData>
-    RecommendationTrigger& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the recommendation trigger.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -70,16 +58,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifiers of the recommendations.</p>
+     * <p>The type of recommendation trigger.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
-    inline bool RecommendationIdsHasBeenSet() const { return m_recommendationIdsHasBeenSet; }
-    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
-    void SetRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::forward<RecommendationIdsT>(value); }
-    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
-    RecommendationTrigger& WithRecommendationIds(RecommendationIdsT&& value) { SetRecommendationIds(std::forward<RecommendationIdsT>(value)); return *this;}
-    template<typename RecommendationIdsT = Aws::String>
-    RecommendationTrigger& AddRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.emplace_back(std::forward<RecommendationIdsT>(value)); return *this; }
+    inline RecommendationTriggerType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RecommendationTriggerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RecommendationTrigger& WithType(RecommendationTriggerType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,29 +81,45 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of recommendation trigger.</p>
+     * <p>A union type containing information related to the trigger.</p>
      */
-    inline RecommendationTriggerType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RecommendationTriggerType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RecommendationTrigger& WithType(RecommendationTriggerType value) { SetType(value); return *this;}
+    inline const RecommendationTriggerData& GetData() const { return m_data; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+    template<typename DataT = RecommendationTriggerData>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = RecommendationTriggerData>
+    RecommendationTrigger& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifiers of the recommendations.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
+    inline bool RecommendationIdsHasBeenSet() const { return m_recommendationIdsHasBeenSet; }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    void SetRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::forward<RecommendationIdsT>(value); }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    RecommendationTrigger& WithRecommendationIds(RecommendationIdsT&& value) { SetRecommendationIds(std::forward<RecommendationIdsT>(value)); return *this;}
+    template<typename RecommendationIdsT = Aws::String>
+    RecommendationTrigger& AddRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.emplace_back(std::forward<RecommendationIdsT>(value)); return *this; }
     ///@}
   private:
-
-    RecommendationTriggerData m_data;
-    bool m_dataHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet = false;
+    RecommendationTriggerType m_type{RecommendationTriggerType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     RecommendationSourceType m_source{RecommendationSourceType::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
-    RecommendationTriggerType m_type{RecommendationTriggerType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    RecommendationTriggerData m_data;
+    bool m_dataHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_recommendationIds;
+    bool m_recommendationIdsHasBeenSet = false;
   };
 
 } // namespace Model

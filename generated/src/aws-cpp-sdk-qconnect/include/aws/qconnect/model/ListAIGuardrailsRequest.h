@@ -53,16 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListAIGuardrailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
@@ -73,16 +63,26 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAIGuardrailsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return per page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListAIGuardrailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

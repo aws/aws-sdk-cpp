@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/RankingData.h>
 #include <aws/qconnect/model/TextData.h>
+#include <aws/qconnect/model/RankingData.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the content ranking data.</p>
-     */
-    inline const RankingData& GetRankingData() const { return m_rankingData; }
-    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
-    template<typename RankingDataT = RankingData>
-    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
-    template<typename RankingDataT = RankingData>
-    ContentDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Details about the content text data.</p>
      */
     inline const TextData& GetTextData() const { return m_textData; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename TextDataT = TextData>
     ContentDataDetails& WithTextData(TextDataT&& value) { SetTextData(std::forward<TextDataT>(value)); return *this;}
     ///@}
-  private:
 
-    RankingData m_rankingData;
-    bool m_rankingDataHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Details about the content ranking data.</p>
+     */
+    inline const RankingData& GetRankingData() const { return m_rankingData; }
+    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
+    template<typename RankingDataT = RankingData>
+    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
+    template<typename RankingDataT = RankingData>
+    ContentDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
+    ///@}
+  private:
 
     TextData m_textData;
     bool m_textDataHasBeenSet = false;
+
+    RankingData m_rankingData;
+    bool m_rankingDataHasBeenSet = false;
   };
 
 } // namespace Model

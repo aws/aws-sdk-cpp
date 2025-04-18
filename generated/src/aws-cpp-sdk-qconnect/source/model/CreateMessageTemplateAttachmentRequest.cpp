@@ -16,12 +16,6 @@ Aws::String CreateMessageTemplateAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_contentDispositionHasBeenSet)
   {
    payload.WithString("contentDisposition", ContentDispositionMapper::GetNameForContentDisposition(m_contentDisposition));
@@ -30,6 +24,12 @@ Aws::String CreateMessageTemplateAttachmentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

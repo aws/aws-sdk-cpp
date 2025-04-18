@@ -25,15 +25,6 @@ StartContentUploadResult::StartContentUploadResult(const Aws::AmazonWebServiceRe
 StartContentUploadResult& StartContentUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("headersToInclude"))
-  {
-    Aws::Map<Aws::String, JsonView> headersToIncludeJsonMap = jsonValue.GetObject("headersToInclude").GetAllObjects();
-    for(auto& headersToIncludeItem : headersToIncludeJsonMap)
-    {
-      m_headersToInclude[headersToIncludeItem.first] = headersToIncludeItem.second.AsString();
-    }
-    m_headersToIncludeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
@@ -48,6 +39,15 @@ StartContentUploadResult& StartContentUploadResult::operator =(const Aws::Amazon
   {
     m_urlExpiry = jsonValue.GetDouble("urlExpiry");
     m_urlExpiryHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("headersToInclude"))
+  {
+    Aws::Map<Aws::String, JsonView> headersToIncludeJsonMap = jsonValue.GetObject("headersToInclude").GetAllObjects();
+    for(auto& headersToIncludeItem : headersToIncludeJsonMap)
+    {
+      m_headersToInclude[headersToIncludeItem.first] = headersToIncludeItem.second.AsString();
+    }
+    m_headersToIncludeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

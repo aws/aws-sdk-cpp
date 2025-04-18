@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the import job to be deleted.</p>
-     */
-    inline const Aws::String& GetImportJobId() const { return m_importJobId; }
-    inline bool ImportJobIdHasBeenSet() const { return m_importJobIdHasBeenSet; }
-    template<typename ImportJobIdT = Aws::String>
-    void SetImportJobId(ImportJobIdT&& value) { m_importJobIdHasBeenSet = true; m_importJobId = std::forward<ImportJobIdT>(value); }
-    template<typename ImportJobIdT = Aws::String>
-    DeleteImportJobRequest& WithImportJobId(ImportJobIdT&& value) { SetImportJobId(std::forward<ImportJobIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     DeleteImportJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_importJobId;
-    bool m_importJobIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the import job to be deleted.</p>
+     */
+    inline const Aws::String& GetImportJobId() const { return m_importJobId; }
+    inline bool ImportJobIdHasBeenSet() const { return m_importJobIdHasBeenSet; }
+    template<typename ImportJobIdT = Aws::String>
+    void SetImportJobId(ImportJobIdT&& value) { m_importJobIdHasBeenSet = true; m_importJobId = std::forward<ImportJobIdT>(value); }
+    template<typename ImportJobIdT = Aws::String>
+    DeleteImportJobRequest& WithImportJobId(ImportJobIdT&& value) { SetImportJobId(std::forward<ImportJobIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_importJobId;
+    bool m_importJobIdHasBeenSet = false;
   };
 
 } // namespace Model

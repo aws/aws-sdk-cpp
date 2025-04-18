@@ -30,11 +30,6 @@ GenerativeDataDetails& GenerativeDataDetails::operator =(JsonView jsonValue)
     m_completion = jsonValue.GetString("completion");
     m_completionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rankingData"))
-  {
-    m_rankingData = jsonValue.GetObject("rankingData");
-    m_rankingDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("references"))
   {
     Aws::Utils::Array<JsonView> referencesJsonList = jsonValue.GetArray("references");
@@ -43,6 +38,11 @@ GenerativeDataDetails& GenerativeDataDetails::operator =(JsonView jsonValue)
       m_references.push_back(referencesJsonList[referencesIndex].AsObject());
     }
     m_referencesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("rankingData"))
+  {
+    m_rankingData = jsonValue.GetObject("rankingData");
+    m_rankingDataHasBeenSet = true;
   }
   return *this;
 }
@@ -57,12 +57,6 @@ JsonValue GenerativeDataDetails::Jsonize() const
 
   }
 
-  if(m_rankingDataHasBeenSet)
-  {
-   payload.WithObject("rankingData", m_rankingData.Jsonize());
-
-  }
-
   if(m_referencesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> referencesJsonList(m_references.size());
@@ -71,6 +65,12 @@ JsonValue GenerativeDataDetails::Jsonize() const
      referencesJsonList[referencesIndex].AsObject(m_references[referencesIndex].Jsonize());
    }
    payload.WithArray("references", std::move(referencesJsonList));
+
+  }
+
+  if(m_rankingDataHasBeenSet)
+  {
+   payload.WithObject("rankingData", m_rankingData.Jsonize());
 
   }
 

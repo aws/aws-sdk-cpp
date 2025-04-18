@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/QueryConditionComparisonOperator.h>
 #include <aws/qconnect/model/QueryConditionFieldName.h>
+#include <aws/qconnect/model/QueryConditionComparisonOperator.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -41,22 +41,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The comparison operator for query condition to query on.</p>
-     */
-    inline QueryConditionComparisonOperator GetComparator() const { return m_comparator; }
-    inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(QueryConditionComparisonOperator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline QueryConditionItem& WithComparator(QueryConditionComparisonOperator value) { SetComparator(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The name of the field for query condition to query on.</p>
      */
     inline QueryConditionFieldName GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
     inline void SetField(QueryConditionFieldName value) { m_fieldHasBeenSet = true; m_field = value; }
     inline QueryConditionItem& WithField(QueryConditionFieldName value) { SetField(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The comparison operator for query condition to query on.</p>
+     */
+    inline QueryConditionComparisonOperator GetComparator() const { return m_comparator; }
+    inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
+    inline void SetComparator(QueryConditionComparisonOperator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline QueryConditionItem& WithComparator(QueryConditionComparisonOperator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    QueryConditionComparisonOperator m_comparator{QueryConditionComparisonOperator::NOT_SET};
-    bool m_comparatorHasBeenSet = false;
-
     QueryConditionFieldName m_field{QueryConditionFieldName::NOT_SET};
     bool m_fieldHasBeenSet = false;
+
+    QueryConditionComparisonOperator m_comparator{QueryConditionComparisonOperator::NOT_SET};
+    bool m_comparatorHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;

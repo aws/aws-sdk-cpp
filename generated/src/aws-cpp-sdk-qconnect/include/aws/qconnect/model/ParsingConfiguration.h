@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/BedrockFoundationModelConfigurationForParsing.h>
 #include <aws/qconnect/model/ParsingStrategy.h>
+#include <aws/qconnect/model/BedrockFoundationModelConfigurationForParsing.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parsing strategy for the data source.</p>
+     */
+    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
+    inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
+    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
+    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Settings for a foundation model used to parse documents for a data
      * source.</p>
      */
@@ -54,23 +64,13 @@ namespace Model
     template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelConfigurationForParsing>
     ParsingConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { SetBedrockFoundationModelConfiguration(std::forward<BedrockFoundationModelConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The parsing strategy for the data source.</p>
-     */
-    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
-    inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
-    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
-    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
-    ///@}
   private:
-
-    BedrockFoundationModelConfigurationForParsing m_bedrockFoundationModelConfiguration;
-    bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
     ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
     bool m_parsingStrategyHasBeenSet = false;
+
+    BedrockFoundationModelConfigurationForParsing m_bedrockFoundationModelConfiguration;
+    bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -73,9 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Web Services account or resource to which the quota
-     * applies. The value in this field depends on the context scope associated with
-     * the specified service quota.</p>
+     * <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetContextId() const { return m_contextId; }
     inline bool ContextIdHasBeenSet() const { return m_contextIdHasBeenSet; }
@@ -83,6 +81,22 @@ namespace Model
     void SetContextId(ContextIdT&& value) { m_contextIdHasBeenSet = true; m_contextId = std::forward<ContextIdT>(value); }
     template<typename ContextIdT = Aws::String>
     RequestServiceQuotaIncreaseRequest& WithContextId(ContextIdT&& value) { SetContextId(std::forward<ContextIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies if an Amazon Web Services Support case can be opened for the quota
+     * increase request. This parameter is optional. </p> <p>By default, this flag is
+     * set to <code>True</code> and Amazon Web Services may create a support case for
+     * some quota increase requests. You can set this flag to <code>False</code> if you
+     * do not want a support case created when you request a quota increase. If you set
+     * the flag to <code>False</code>, Amazon Web Services does not open a support case
+     * and updates the request status to <code>Not approved</code>. </p>
+     */
+    inline bool GetSupportCaseAllowed() const { return m_supportCaseAllowed; }
+    inline bool SupportCaseAllowedHasBeenSet() const { return m_supportCaseAllowedHasBeenSet; }
+    inline void SetSupportCaseAllowed(bool value) { m_supportCaseAllowedHasBeenSet = true; m_supportCaseAllowed = value; }
+    inline RequestServiceQuotaIncreaseRequest& WithSupportCaseAllowed(bool value) { SetSupportCaseAllowed(value); return *this;}
     ///@}
   private:
 
@@ -97,6 +111,9 @@ namespace Model
 
     Aws::String m_contextId;
     bool m_contextIdHasBeenSet = false;
+
+    bool m_supportCaseAllowed{false};
+    bool m_supportCaseAllowedHasBeenSet = false;
   };
 
 } // namespace Model

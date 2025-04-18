@@ -25,6 +25,15 @@ MessageTemplateSearchExpression::MessageTemplateSearchExpression(JsonView jsonVa
 
 MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("queries"))
+  {
+    Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
+    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
+    {
+      m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
+    }
+    m_queriesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
@@ -39,21 +48,23 @@ MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator =(Jso
     m_orderOnField = jsonValue.GetObject("orderOnField");
     m_orderOnFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queries"))
-  {
-    Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
-    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-    {
-      m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
-    }
-    m_queriesHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue MessageTemplateSearchExpression::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_queriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
+   for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
+   {
+     queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
+   }
+   payload.WithArray("queries", std::move(queriesJsonList));
+
+  }
 
   if(m_filtersHasBeenSet)
   {
@@ -69,17 +80,6 @@ JsonValue MessageTemplateSearchExpression::Jsonize() const
   if(m_orderOnFieldHasBeenSet)
   {
    payload.WithObject("orderOnField", m_orderOnField.Jsonize());
-
-  }
-
-  if(m_queriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
-   for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-   {
-     queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
-   }
-   payload.WithArray("queries", std::move(queriesJsonList));
 
   }
 

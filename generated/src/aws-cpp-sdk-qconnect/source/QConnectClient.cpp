@@ -332,15 +332,15 @@ CreateAIAgentVersionOutcome QConnectClient::CreateAIAgentVersion(const CreateAIA
 {
   AWS_OPERATION_GUARD(CreateAIAgentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAIAgentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateAIAgentVersion", "Required field: AiAgentId, is not set");
-    return CreateAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAIAgentVersion", "Required field: AssistantId, is not set");
     return CreateAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAIAgentVersion", "Required field: AiAgentId, is not set");
+    return CreateAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAIAgentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -407,15 +407,15 @@ CreateAIGuardrailVersionOutcome QConnectClient::CreateAIGuardrailVersion(const C
 {
   AWS_OPERATION_GUARD(CreateAIGuardrailVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAIGuardrailVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateAIGuardrailVersion", "Required field: AiGuardrailId, is not set");
-    return CreateAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAIGuardrailVersion", "Required field: AssistantId, is not set");
     return CreateAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAIGuardrailVersion", "Required field: AiGuardrailId, is not set");
+    return CreateAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAIGuardrailVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -482,15 +482,15 @@ CreateAIPromptVersionOutcome QConnectClient::CreateAIPromptVersion(const CreateA
 {
   AWS_OPERATION_GUARD(CreateAIPromptVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAIPromptVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateAIPromptVersion", "Required field: AiPromptId, is not set");
-    return CreateAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAIPromptVersion", "Required field: AssistantId, is not set");
     return CreateAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAIPromptVersion", "Required field: AiPromptId, is not set");
+    return CreateAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAIPromptVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -618,15 +618,15 @@ CreateContentAssociationOutcome QConnectClient::CreateContentAssociation(const C
 {
   AWS_OPERATION_GUARD(CreateContentAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateContentAssociation", "Required field: ContentId, is not set");
-    return CreateContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateContentAssociation", "Required field: KnowledgeBaseId, is not set");
     return CreateContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateContentAssociation", "Required field: ContentId, is not set");
+    return CreateContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -911,15 +911,15 @@ DeleteAIAgentOutcome QConnectClient::DeleteAIAgent(const DeleteAIAgentRequest& r
 {
   AWS_OPERATION_GUARD(DeleteAIAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIAgent", "Required field: AiAgentId, is not set");
-    return DeleteAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIAgent", "Required field: AssistantId, is not set");
     return DeleteAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIAgent", "Required field: AiAgentId, is not set");
+    return DeleteAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAIAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -951,15 +951,15 @@ DeleteAIAgentVersionOutcome QConnectClient::DeleteAIAgentVersion(const DeleteAIA
 {
   AWS_OPERATION_GUARD(DeleteAIAgentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIAgentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIAgentVersion", "Required field: AiAgentId, is not set");
-    return DeleteAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIAgentVersion", "Required field: AssistantId, is not set");
     return DeleteAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIAgentVersion", "Required field: AiAgentId, is not set");
+    return DeleteAIAgentVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   if (!request.VersionNumberHasBeenSet())
   {
@@ -998,15 +998,15 @@ DeleteAIGuardrailOutcome QConnectClient::DeleteAIGuardrail(const DeleteAIGuardra
 {
   AWS_OPERATION_GUARD(DeleteAIGuardrail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIGuardrail", "Required field: AiGuardrailId, is not set");
-    return DeleteAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIGuardrail", "Required field: AssistantId, is not set");
     return DeleteAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIGuardrail", "Required field: AiGuardrailId, is not set");
+    return DeleteAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAIGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1038,15 +1038,15 @@ DeleteAIGuardrailVersionOutcome QConnectClient::DeleteAIGuardrailVersion(const D
 {
   AWS_OPERATION_GUARD(DeleteAIGuardrailVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIGuardrailVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIGuardrailVersion", "Required field: AiGuardrailId, is not set");
-    return DeleteAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIGuardrailVersion", "Required field: AssistantId, is not set");
     return DeleteAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIGuardrailVersion", "Required field: AiGuardrailId, is not set");
+    return DeleteAIGuardrailVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   if (!request.VersionNumberHasBeenSet())
   {
@@ -1085,15 +1085,15 @@ DeleteAIPromptOutcome QConnectClient::DeleteAIPrompt(const DeleteAIPromptRequest
 {
   AWS_OPERATION_GUARD(DeleteAIPrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIPrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIPrompt", "Required field: AiPromptId, is not set");
-    return DeleteAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIPrompt", "Required field: AssistantId, is not set");
     return DeleteAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIPrompt", "Required field: AiPromptId, is not set");
+    return DeleteAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAIPrompt, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1125,15 +1125,15 @@ DeleteAIPromptVersionOutcome QConnectClient::DeleteAIPromptVersion(const DeleteA
 {
   AWS_OPERATION_GUARD(DeleteAIPromptVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAIPromptVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAIPromptVersion", "Required field: AiPromptId, is not set");
-    return DeleteAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAIPromptVersion", "Required field: AssistantId, is not set");
     return DeleteAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAIPromptVersion", "Required field: AiPromptId, is not set");
+    return DeleteAIPromptVersionOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   if (!request.VersionNumberHasBeenSet())
   {
@@ -1245,15 +1245,15 @@ DeleteContentOutcome QConnectClient::DeleteContent(const DeleteContentRequest& r
 {
   AWS_OPERATION_GUARD(DeleteContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteContent", "Required field: ContentId, is not set");
-    return DeleteContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteContent", "Required field: KnowledgeBaseId, is not set");
     return DeleteContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContent", "Required field: ContentId, is not set");
+    return DeleteContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1285,20 +1285,20 @@ DeleteContentAssociationOutcome QConnectClient::DeleteContentAssociation(const D
 {
   AWS_OPERATION_GUARD(DeleteContentAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentAssociationIdHasBeenSet())
+  if (!request.KnowledgeBaseIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: ContentAssociationId, is not set");
-    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
+    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: KnowledgeBaseId, is not set");
+    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   if (!request.ContentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: ContentId, is not set");
     return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
-  if (!request.KnowledgeBaseIdHasBeenSet())
+  if (!request.ContentAssociationIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: KnowledgeBaseId, is not set");
-    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: ContentAssociationId, is not set");
+    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1332,15 +1332,15 @@ DeleteImportJobOutcome QConnectClient::DeleteImportJob(const DeleteImportJobRequ
 {
   AWS_OPERATION_GUARD(DeleteImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ImportJobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteImportJob", "Required field: ImportJobId, is not set");
-    return DeleteImportJobOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportJobId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteImportJob", "Required field: KnowledgeBaseId, is not set");
     return DeleteImportJobOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.ImportJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteImportJob", "Required field: ImportJobId, is not set");
+    return DeleteImportJobOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportJobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteImportJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1445,11 +1445,6 @@ DeleteMessageTemplateAttachmentOutcome QConnectClient::DeleteMessageTemplateAtta
 {
   AWS_OPERATION_GUARD(DeleteMessageTemplateAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMessageTemplateAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AttachmentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteMessageTemplateAttachment", "Required field: AttachmentId, is not set");
-    return DeleteMessageTemplateAttachmentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteMessageTemplateAttachment", "Required field: KnowledgeBaseId, is not set");
@@ -1459,6 +1454,11 @@ DeleteMessageTemplateAttachmentOutcome QConnectClient::DeleteMessageTemplateAtta
   {
     AWS_LOGSTREAM_ERROR("DeleteMessageTemplateAttachment", "Required field: MessageTemplateId, is not set");
     return DeleteMessageTemplateAttachmentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageTemplateId]", false));
+  }
+  if (!request.AttachmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMessageTemplateAttachment", "Required field: AttachmentId, is not set");
+    return DeleteMessageTemplateAttachmentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMessageTemplateAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1532,15 +1532,15 @@ GetAIAgentOutcome QConnectClient::GetAIAgent(const GetAIAgentRequest& request) c
 {
   AWS_OPERATION_GUARD(GetAIAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAIAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAIAgent", "Required field: AiAgentId, is not set");
-    return GetAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAIAgent", "Required field: AssistantId, is not set");
     return GetAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAIAgent", "Required field: AiAgentId, is not set");
+    return GetAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAIAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1572,15 +1572,15 @@ GetAIGuardrailOutcome QConnectClient::GetAIGuardrail(const GetAIGuardrailRequest
 {
   AWS_OPERATION_GUARD(GetAIGuardrail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAIGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAIGuardrail", "Required field: AiGuardrailId, is not set");
-    return GetAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAIGuardrail", "Required field: AssistantId, is not set");
     return GetAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAIGuardrail", "Required field: AiGuardrailId, is not set");
+    return GetAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAIGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1612,15 +1612,15 @@ GetAIPromptOutcome QConnectClient::GetAIPrompt(const GetAIPromptRequest& request
 {
   AWS_OPERATION_GUARD(GetAIPrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAIPrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAIPrompt", "Required field: AiPromptId, is not set");
-    return GetAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAIPrompt", "Required field: AssistantId, is not set");
     return GetAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAIPrompt", "Required field: AiPromptId, is not set");
+    return GetAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAIPrompt, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1765,20 +1765,20 @@ GetContentAssociationOutcome QConnectClient::GetContentAssociation(const GetCont
 {
   AWS_OPERATION_GUARD(GetContentAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentAssociationIdHasBeenSet())
+  if (!request.KnowledgeBaseIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: ContentAssociationId, is not set");
-    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
+    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: KnowledgeBaseId, is not set");
+    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   if (!request.ContentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: ContentId, is not set");
     return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
-  if (!request.KnowledgeBaseIdHasBeenSet())
+  if (!request.ContentAssociationIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: KnowledgeBaseId, is not set");
-    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: ContentAssociationId, is not set");
+    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1926,15 +1926,15 @@ GetMessageTemplateOutcome QConnectClient::GetMessageTemplate(const GetMessageTem
 {
   AWS_OPERATION_GUARD(GetMessageTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessageTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.KnowledgeBaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetMessageTemplate", "Required field: KnowledgeBaseId, is not set");
-    return GetMessageTemplateOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
-  }
   if (!request.MessageTemplateIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMessageTemplate", "Required field: MessageTemplateId, is not set");
     return GetMessageTemplateOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageTemplateId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMessageTemplate", "Required field: KnowledgeBaseId, is not set");
+    return GetMessageTemplateOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMessageTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1971,15 +1971,15 @@ GetNextMessageOutcome QConnectClient::GetNextMessage(const GetNextMessageRequest
     AWS_LOGSTREAM_ERROR("GetNextMessage", "Required field: AssistantId, is not set");
     return GetNextMessageOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
   }
-  if (!request.NextMessageTokenHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetNextMessage", "Required field: NextMessageToken, is not set");
-    return GetNextMessageOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NextMessageToken]", false));
-  }
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetNextMessage", "Required field: SessionId, is not set");
     return GetNextMessageOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+  if (!request.NextMessageTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNextMessage", "Required field: NextMessageToken, is not set");
+    return GetNextMessageOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NextMessageToken]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNextMessage, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2012,15 +2012,15 @@ GetQuickResponseOutcome QConnectClient::GetQuickResponse(const GetQuickResponseR
 {
   AWS_OPERATION_GUARD(GetQuickResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQuickResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.KnowledgeBaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetQuickResponse", "Required field: KnowledgeBaseId, is not set");
-    return GetQuickResponseOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
-  }
   if (!request.QuickResponseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetQuickResponse", "Required field: QuickResponseId, is not set");
     return GetQuickResponseOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickResponseId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQuickResponse", "Required field: KnowledgeBaseId, is not set");
+    return GetQuickResponseOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQuickResponse, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2092,15 +2092,15 @@ ListAIAgentVersionsOutcome QConnectClient::ListAIAgentVersions(const ListAIAgent
 {
   AWS_OPERATION_GUARD(ListAIAgentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAIAgentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListAIAgentVersions", "Required field: AiAgentId, is not set");
-    return ListAIAgentVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAIAgentVersions", "Required field: AssistantId, is not set");
     return ListAIAgentVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAIAgentVersions", "Required field: AiAgentId, is not set");
+    return ListAIAgentVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAIAgentVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2167,15 +2167,15 @@ ListAIGuardrailVersionsOutcome QConnectClient::ListAIGuardrailVersions(const Lis
 {
   AWS_OPERATION_GUARD(ListAIGuardrailVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAIGuardrailVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListAIGuardrailVersions", "Required field: AiGuardrailId, is not set");
-    return ListAIGuardrailVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAIGuardrailVersions", "Required field: AssistantId, is not set");
     return ListAIGuardrailVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAIGuardrailVersions", "Required field: AiGuardrailId, is not set");
+    return ListAIGuardrailVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAIGuardrailVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2242,15 +2242,15 @@ ListAIPromptVersionsOutcome QConnectClient::ListAIPromptVersions(const ListAIPro
 {
   AWS_OPERATION_GUARD(ListAIPromptVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAIPromptVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListAIPromptVersions", "Required field: AiPromptId, is not set");
-    return ListAIPromptVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAIPromptVersions", "Required field: AssistantId, is not set");
     return ListAIPromptVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAIPromptVersions", "Required field: AiPromptId, is not set");
+    return ListAIPromptVersionsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAIPromptVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2378,15 +2378,15 @@ ListContentAssociationsOutcome QConnectClient::ListContentAssociations(const Lis
 {
   AWS_OPERATION_GUARD(ListContentAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContentAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListContentAssociations", "Required field: ContentId, is not set");
-    return ListContentAssociationsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListContentAssociations", "Required field: KnowledgeBaseId, is not set");
     return ListContentAssociationsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListContentAssociations", "Required field: ContentId, is not set");
+    return ListContentAssociationsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListContentAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2772,15 +2772,15 @@ RemoveAssistantAIAgentOutcome QConnectClient::RemoveAssistantAIAgent(const Remov
 {
   AWS_OPERATION_GUARD(RemoveAssistantAIAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAssistantAIAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("RemoveAssistantAIAgent", "Required field: AiAgentType, is not set");
-    return RemoveAssistantAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentType]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemoveAssistantAIAgent", "Required field: AssistantId, is not set");
     return RemoveAssistantAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveAssistantAIAgent", "Required field: AiAgentType, is not set");
+    return RemoveAssistantAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentType]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RemoveAssistantAIAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3202,15 +3202,15 @@ UpdateAIAgentOutcome QConnectClient::UpdateAIAgent(const UpdateAIAgentRequest& r
 {
   AWS_OPERATION_GUARD(UpdateAIAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAIAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiAgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateAIAgent", "Required field: AiAgentId, is not set");
-    return UpdateAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAIAgent", "Required field: AssistantId, is not set");
     return UpdateAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiAgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAIAgent", "Required field: AiAgentId, is not set");
+    return UpdateAIAgentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiAgentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAIAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3242,15 +3242,15 @@ UpdateAIGuardrailOutcome QConnectClient::UpdateAIGuardrail(const UpdateAIGuardra
 {
   AWS_OPERATION_GUARD(UpdateAIGuardrail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAIGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiGuardrailIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateAIGuardrail", "Required field: AiGuardrailId, is not set");
-    return UpdateAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAIGuardrail", "Required field: AssistantId, is not set");
     return UpdateAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiGuardrailIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAIGuardrail", "Required field: AiGuardrailId, is not set");
+    return UpdateAIGuardrailOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiGuardrailId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAIGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3282,15 +3282,15 @@ UpdateAIPromptOutcome QConnectClient::UpdateAIPrompt(const UpdateAIPromptRequest
 {
   AWS_OPERATION_GUARD(UpdateAIPrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAIPrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AiPromptIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateAIPrompt", "Required field: AiPromptId, is not set");
-    return UpdateAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
-  }
   if (!request.AssistantIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAIPrompt", "Required field: AssistantId, is not set");
     return UpdateAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  if (!request.AiPromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAIPrompt", "Required field: AiPromptId, is not set");
+    return UpdateAIPromptOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AiPromptId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAIPrompt, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -3356,15 +3356,15 @@ UpdateContentOutcome QConnectClient::UpdateContent(const UpdateContentRequest& r
 {
   AWS_OPERATION_GUARD(UpdateContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ContentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateContent", "Required field: ContentId, is not set");
-    return UpdateContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateContent", "Required field: KnowledgeBaseId, is not set");
     return UpdateContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContent", "Required field: ContentId, is not set");
+    return UpdateContentOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

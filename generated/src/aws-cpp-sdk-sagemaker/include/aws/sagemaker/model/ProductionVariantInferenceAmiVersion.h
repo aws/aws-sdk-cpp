@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     al2_ami_sagemaker_inference_gpu_2,
     al2_ami_sagemaker_inference_gpu_2_1,
-    al2_ami_sagemaker_inference_gpu_3_1
+    al2_ami_sagemaker_inference_gpu_3_1,
+    al2_ami_sagemaker_inference_neuron_2
   };
 
 namespace ProductionVariantInferenceAmiVersionMapper

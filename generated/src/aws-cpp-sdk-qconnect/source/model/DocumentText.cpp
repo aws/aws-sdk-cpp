@@ -25,6 +25,11 @@ DocumentText::DocumentText(JsonView jsonValue)
 
 DocumentText& DocumentText::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("highlights"))
   {
     Aws::Utils::Array<JsonView> highlightsJsonList = jsonValue.GetArray("highlights");
@@ -34,17 +39,18 @@ DocumentText& DocumentText::operator =(JsonView jsonValue)
     }
     m_highlightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue DocumentText::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("text", m_text);
+
+  }
 
   if(m_highlightsHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue DocumentText::Jsonize() const
      highlightsJsonList[highlightsIndex].AsObject(m_highlights[highlightsIndex].Jsonize());
    }
    payload.WithArray("highlights", std::move(highlightsJsonList));
-
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
 
   }
 

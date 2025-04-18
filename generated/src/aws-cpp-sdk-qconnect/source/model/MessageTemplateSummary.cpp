@@ -25,25 +25,15 @@ MessageTemplateSummary::MessageTemplateSummary(JsonView jsonValue)
 
 MessageTemplateSummary& MessageTemplateSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("activeVersionNumber"))
+  if(jsonValue.ValueExists("messageTemplateArn"))
   {
-    m_activeVersionNumber = jsonValue.GetInt64("activeVersionNumber");
-    m_activeVersionNumberHasBeenSet = true;
+    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
+    m_messageTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("channelSubtype"))
+  if(jsonValue.ValueExists("messageTemplateId"))
   {
-    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
-    m_channelSubtypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdTime"))
-  {
-    m_createdTime = jsonValue.GetString("createdTime");
-    m_createdTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
+    m_messageTemplateIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
@@ -55,30 +45,40 @@ MessageTemplateSummary& MessageTemplateSummary::operator =(JsonView jsonValue)
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedBy"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-    m_lastModifiedByHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("channelSubtype"))
+  {
+    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
+    m_channelSubtypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+    m_createdTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateArn"))
+  if(jsonValue.ValueExists("lastModifiedBy"))
   {
-    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
-    m_messageTemplateArnHasBeenSet = true;
+    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
+    m_lastModifiedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateId"))
+  if(jsonValue.ValueExists("activeVersionNumber"))
   {
-    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
-    m_messageTemplateIdHasBeenSet = true;
+    m_activeVersionNumber = jsonValue.GetInt64("activeVersionNumber");
+    m_activeVersionNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -96,25 +96,15 @@ JsonValue MessageTemplateSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_activeVersionNumberHasBeenSet)
+  if(m_messageTemplateArnHasBeenSet)
   {
-   payload.WithInt64("activeVersionNumber", m_activeVersionNumber);
+   payload.WithString("messageTemplateArn", m_messageTemplateArn);
 
   }
 
-  if(m_channelSubtypeHasBeenSet)
+  if(m_messageTemplateIdHasBeenSet)
   {
-   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
+   payload.WithString("messageTemplateId", m_messageTemplateId);
 
   }
 
@@ -130,10 +120,20 @@ JsonValue MessageTemplateSummary::Jsonize() const
 
   }
 
-  if(m_lastModifiedByHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("lastModifiedBy", m_lastModifiedBy);
+   payload.WithString("name", m_name);
 
+  }
+
+  if(m_channelSubtypeHasBeenSet)
+  {
+   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastModifiedTimeHasBeenSet)
@@ -141,21 +141,21 @@ JsonValue MessageTemplateSummary::Jsonize() const
    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_messageTemplateArnHasBeenSet)
+  if(m_lastModifiedByHasBeenSet)
   {
-   payload.WithString("messageTemplateArn", m_messageTemplateArn);
+   payload.WithString("lastModifiedBy", m_lastModifiedBy);
 
   }
 
-  if(m_messageTemplateIdHasBeenSet)
+  if(m_activeVersionNumberHasBeenSet)
   {
-   payload.WithString("messageTemplateId", m_messageTemplateId);
+   payload.WithInt64("activeVersionNumber", m_activeVersionNumber);
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("description", m_description);
 
   }
 

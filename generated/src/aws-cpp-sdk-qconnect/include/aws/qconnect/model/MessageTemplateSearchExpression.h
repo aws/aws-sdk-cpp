@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/MessageTemplateOrderField.h>
-#include <aws/qconnect/model/MessageTemplateFilterField.h>
 #include <aws/qconnect/model/MessageTemplateQueryField.h>
+#include <aws/qconnect/model/MessageTemplateFilterField.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The message template query expressions.</p>
+     */
+    inline const Aws::Vector<MessageTemplateQueryField>& GetQueries() const { return m_queries; }
+    inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
+    template<typename QueriesT = Aws::Vector<MessageTemplateQueryField>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<MessageTemplateQueryField>>
+    MessageTemplateSearchExpression& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = MessageTemplateQueryField>
+    MessageTemplateSearchExpression& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of filtering rules applied to message template query
      * results.</p>
      */
@@ -67,30 +81,16 @@ namespace Model
     template<typename OrderOnFieldT = MessageTemplateOrderField>
     MessageTemplateSearchExpression& WithOrderOnField(OrderOnFieldT&& value) { SetOrderOnField(std::forward<OrderOnFieldT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The message template query expressions.</p>
-     */
-    inline const Aws::Vector<MessageTemplateQueryField>& GetQueries() const { return m_queries; }
-    inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
-    template<typename QueriesT = Aws::Vector<MessageTemplateQueryField>>
-    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
-    template<typename QueriesT = Aws::Vector<MessageTemplateQueryField>>
-    MessageTemplateSearchExpression& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
-    template<typename QueriesT = MessageTemplateQueryField>
-    MessageTemplateSearchExpression& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<MessageTemplateQueryField> m_queries;
+    bool m_queriesHasBeenSet = false;
 
     Aws::Vector<MessageTemplateFilterField> m_filters;
     bool m_filtersHasBeenSet = false;
 
     MessageTemplateOrderField m_orderOnField;
     bool m_orderOnFieldHasBeenSet = false;
-
-    Aws::Vector<MessageTemplateQueryField> m_queries;
-    bool m_queriesHasBeenSet = false;
   };
 
 } // namespace Model

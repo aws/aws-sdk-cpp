@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/SessionDataNamespace.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/RuntimeSessionData.h>
 #include <utility>
 
@@ -50,16 +50,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data stored on the Amazon Q in Connect Session.</p>
+     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
+     * contain the ARN.</p>
      */
-    inline const Aws::Vector<RuntimeSessionData>& GetData() const { return m_data; }
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    template<typename DataT = Aws::Vector<RuntimeSessionData>>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = Aws::Vector<RuntimeSessionData>>
-    UpdateSessionDataRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
-    template<typename DataT = RuntimeSessionData>
-    UpdateSessionDataRequest& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    UpdateSessionDataRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,29 +74,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
+     * <p>The data stored on the Amazon Q in Connect Session.</p>
      */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    UpdateSessionDataRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    inline const Aws::Vector<RuntimeSessionData>& GetData() const { return m_data; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    UpdateSessionDataRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataT = RuntimeSessionData>
+    UpdateSessionDataRequest& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::Vector<RuntimeSessionData> m_data;
-    bool m_dataHasBeenSet = false;
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
     bool m_namespaceHasBeenSet = false;
 
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
+    Aws::Vector<RuntimeSessionData> m_data;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

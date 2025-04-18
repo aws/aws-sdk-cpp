@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Guardrail. Can be either the ID
-     * or the ARN. URLs cannot contain the ARN.</p>
-     */
-    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
-    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
-    template<typename AiGuardrailIdT = Aws::String>
-    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
-    template<typename AiGuardrailIdT = Aws::String>
-    DeleteAIGuardrailRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -57,13 +44,26 @@ namespace Model
     template<typename AssistantIdT = Aws::String>
     DeleteAIGuardrailRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_aiGuardrailId;
-    bool m_aiGuardrailIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the Amazon Q in Connect AI Guardrail. Can be either the ID
+     * or the ARN. URLs cannot contain the ARN.</p>
+     */
+    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
+    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
+    template<typename AiGuardrailIdT = Aws::String>
+    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
+    template<typename AiGuardrailIdT = Aws::String>
+    DeleteAIGuardrailRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    Aws::String m_aiGuardrailId;
+    bool m_aiGuardrailIdHasBeenSet = false;
   };
 
 } // namespace Model

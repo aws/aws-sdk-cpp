@@ -25,15 +25,15 @@ ConversationState::ConversationState(JsonView jsonValue)
 
 ConversationState& ConversationState::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("reason"))
-  {
-    m_reason = ConversationStatusReasonMapper::GetConversationStatusReasonForName(jsonValue.GetString("reason"));
-    m_reasonHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConversationStatusMapper::GetConversationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("reason"))
+  {
+    m_reason = ConversationStatusReasonMapper::GetConversationStatusReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
   }
   return *this;
 }
@@ -42,14 +42,14 @@ JsonValue ConversationState::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", ConversationStatusReasonMapper::GetNameForConversationStatusReason(m_reason));
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ConversationStatusMapper::GetNameForConversationStatus(m_status));
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", ConversationStatusReasonMapper::GetNameForConversationStatusReason(m_reason));
   }
 
   return payload;

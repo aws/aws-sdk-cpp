@@ -25,50 +25,79 @@ AIPromptData::AIPromptData(JsonView jsonValue)
 
 AIPromptData& AIPromptData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("aiPromptArn"))
+  if(jsonValue.ValueExists("assistantId"))
   {
-    m_aiPromptArn = jsonValue.GetString("aiPromptArn");
-    m_aiPromptArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("aiPromptId"))
-  {
-    m_aiPromptId = jsonValue.GetString("aiPromptId");
-    m_aiPromptIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("apiFormat"))
-  {
-    m_apiFormat = AIPromptAPIFormatMapper::GetAIPromptAPIFormatForName(jsonValue.GetString("apiFormat"));
-    m_apiFormatHasBeenSet = true;
+    m_assistantId = jsonValue.GetString("assistantId");
+    m_assistantIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("assistantArn"))
   {
     m_assistantArn = jsonValue.GetString("assistantArn");
     m_assistantArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantId"))
+  if(jsonValue.ValueExists("aiPromptId"))
   {
-    m_assistantId = jsonValue.GetString("assistantId");
-    m_assistantIdHasBeenSet = true;
+    m_aiPromptId = jsonValue.GetString("aiPromptId");
+    m_aiPromptIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("aiPromptArn"))
   {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+    m_aiPromptArn = jsonValue.GetString("aiPromptArn");
+    m_aiPromptArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = AIPromptTypeMapper::GetAIPromptTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("templateType"))
+  {
+    m_templateType = AIPromptTemplateTypeMapper::GetAIPromptTemplateTypeForName(jsonValue.GetString("templateType"));
+    m_templateTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("apiFormat"))
+  {
+    m_apiFormat = AIPromptAPIFormatMapper::GetAIPromptAPIFormatForName(jsonValue.GetString("apiFormat"));
+    m_apiFormatHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("templateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
+    m_templateConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("modifiedTime"))
   {
     m_modifiedTime = jsonValue.GetDouble("modifiedTime");
     m_modifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("visibilityStatus"))
+  {
+    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
+    m_visibilityStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("origin"))
   {
@@ -80,35 +109,6 @@ AIPromptData& AIPromptData::operator =(JsonView jsonValue)
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateConfiguration"))
-  {
-    m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
-    m_templateConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateType"))
-  {
-    m_templateType = AIPromptTemplateTypeMapper::GetAIPromptTemplateTypeForName(jsonValue.GetString("templateType"));
-    m_templateTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = AIPromptTypeMapper::GetAIPromptTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("visibilityStatus"))
-  {
-    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
-    m_visibilityStatusHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -116,9 +116,15 @@ JsonValue AIPromptData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_aiPromptArnHasBeenSet)
+  if(m_assistantIdHasBeenSet)
   {
-   payload.WithString("aiPromptArn", m_aiPromptArn);
+   payload.WithString("assistantId", m_assistantId);
+
+  }
+
+  if(m_assistantArnHasBeenSet)
+  {
+   payload.WithString("assistantArn", m_assistantArn);
 
   }
 
@@ -128,38 +134,10 @@ JsonValue AIPromptData::Jsonize() const
 
   }
 
-  if(m_apiFormatHasBeenSet)
+  if(m_aiPromptArnHasBeenSet)
   {
-   payload.WithString("apiFormat", AIPromptAPIFormatMapper::GetNameForAIPromptAPIFormat(m_apiFormat));
-  }
+   payload.WithString("aiPromptArn", m_aiPromptArn);
 
-  if(m_assistantArnHasBeenSet)
-  {
-   payload.WithString("assistantArn", m_assistantArn);
-
-  }
-
-  if(m_assistantIdHasBeenSet)
-  {
-   payload.WithString("assistantId", m_assistantId);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
-  }
-
-  if(m_modifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
   }
 
   if(m_nameHasBeenSet)
@@ -168,14 +146,47 @@ JsonValue AIPromptData::Jsonize() const
 
   }
 
-  if(m_originHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("origin", OriginMapper::GetNameForOrigin(m_origin));
+   payload.WithString("type", AIPromptTypeMapper::GetNameForAIPromptType(m_type));
   }
 
-  if(m_statusHasBeenSet)
+  if(m_templateTypeHasBeenSet)
   {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+   payload.WithString("templateType", AIPromptTemplateTypeMapper::GetNameForAIPromptTemplateType(m_templateType));
+  }
+
+  if(m_modelIdHasBeenSet)
+  {
+   payload.WithString("modelId", m_modelId);
+
+  }
+
+  if(m_apiFormatHasBeenSet)
+  {
+   payload.WithString("apiFormat", AIPromptAPIFormatMapper::GetNameForAIPromptAPIFormat(m_apiFormat));
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+
+  }
+
+  if(m_modifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_visibilityStatusHasBeenSet)
+  {
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   if(m_tagsHasBeenSet)
@@ -189,25 +200,14 @@ JsonValue AIPromptData::Jsonize() const
 
   }
 
-  if(m_templateConfigurationHasBeenSet)
+  if(m_originHasBeenSet)
   {
-   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
-
+   payload.WithString("origin", OriginMapper::GetNameForOrigin(m_origin));
   }
 
-  if(m_templateTypeHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("templateType", AIPromptTemplateTypeMapper::GetNameForAIPromptTemplateType(m_templateType));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AIPromptTypeMapper::GetNameForAIPromptType(m_type));
-  }
-
-  if(m_visibilityStatusHasBeenSet)
-  {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;

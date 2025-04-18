@@ -25,20 +25,10 @@ QuickResponseFilterField::QuickResponseFilterField(JsonView jsonValue)
 
 QuickResponseFilterField& QuickResponseFilterField::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("includeNoExistence"))
-  {
-    m_includeNoExistence = jsonValue.GetBool("includeNoExistence");
-    m_includeNoExistenceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("operator"))
-  {
-    m_operator = QuickResponseFilterOperatorMapper::GetQuickResponseFilterOperatorForName(jsonValue.GetString("operator"));
-    m_operatorHasBeenSet = true;
   }
   if(jsonValue.ValueExists("values"))
   {
@@ -49,6 +39,16 @@ QuickResponseFilterField& QuickResponseFilterField::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("operator"))
+  {
+    m_operator = QuickResponseFilterOperatorMapper::GetQuickResponseFilterOperatorForName(jsonValue.GetString("operator"));
+    m_operatorHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("includeNoExistence"))
+  {
+    m_includeNoExistence = jsonValue.GetBool("includeNoExistence");
+    m_includeNoExistenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -56,21 +56,10 @@ JsonValue QuickResponseFilterField::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_includeNoExistenceHasBeenSet)
-  {
-   payload.WithBool("includeNoExistence", m_includeNoExistence);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
-  }
-
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", QuickResponseFilterOperatorMapper::GetNameForQuickResponseFilterOperator(m_operator));
   }
 
   if(m_valuesHasBeenSet)
@@ -81,6 +70,17 @@ JsonValue QuickResponseFilterField::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("values", std::move(valuesJsonList));
+
+  }
+
+  if(m_operatorHasBeenSet)
+  {
+   payload.WithString("operator", QuickResponseFilterOperatorMapper::GetNameForQuickResponseFilterOperator(m_operator));
+  }
+
+  if(m_includeNoExistenceHasBeenSet)
+  {
+   payload.WithBool("includeNoExistence", m_includeNoExistence);
 
   }
 

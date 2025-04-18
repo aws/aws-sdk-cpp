@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/MessageTemplateFilterOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qconnect/model/MessageTemplateFilterOperator.h>
 #include <utility>
 
 namespace Aws
@@ -47,16 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether to treat null value as a match for the attribute field.</p>
-     */
-    inline bool GetIncludeNoExistence() const { return m_includeNoExistence; }
-    inline bool IncludeNoExistenceHasBeenSet() const { return m_includeNoExistenceHasBeenSet; }
-    inline void SetIncludeNoExistence(bool value) { m_includeNoExistenceHasBeenSet = true; m_includeNoExistence = value; }
-    inline MessageTemplateFilterField& WithIncludeNoExistence(bool value) { SetIncludeNoExistence(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the attribute field to filter the message templates by.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -65,16 +55,6 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     MessageTemplateFilterField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The operator to use for filtering.</p>
-     */
-    inline MessageTemplateFilterOperator GetOperator() const { return m_operator; }
-    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(MessageTemplateFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline MessageTemplateFilterField& WithOperator(MessageTemplateFilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +70,39 @@ namespace Model
     template<typename ValuesT = Aws::String>
     MessageTemplateFilterField& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
-  private:
 
-    bool m_includeNoExistence{false};
-    bool m_includeNoExistenceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The operator to use for filtering.</p>
+     */
+    inline MessageTemplateFilterOperator GetOperator() const { return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(MessageTemplateFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline MessageTemplateFilterField& WithOperator(MessageTemplateFilterOperator value) { SetOperator(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether to treat null value as a match for the attribute field.</p>
+     */
+    inline bool GetIncludeNoExistence() const { return m_includeNoExistence; }
+    inline bool IncludeNoExistenceHasBeenSet() const { return m_includeNoExistenceHasBeenSet; }
+    inline void SetIncludeNoExistence(bool value) { m_includeNoExistenceHasBeenSet = true; m_includeNoExistence = value; }
+    inline MessageTemplateFilterField& WithIncludeNoExistence(bool value) { SetIncludeNoExistence(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_values;
+    bool m_valuesHasBeenSet = false;
+
     MessageTemplateFilterOperator m_operator{MessageTemplateFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet = false;
+    bool m_includeNoExistence{false};
+    bool m_includeNoExistenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,28 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the message template.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateMessageTemplateMetadataRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    
-    inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
-    inline bool GroupingConfigurationHasBeenSet() const { return m_groupingConfigurationHasBeenSet; }
-    template<typename GroupingConfigurationT = GroupingConfiguration>
-    void SetGroupingConfiguration(GroupingConfigurationT&& value) { m_groupingConfigurationHasBeenSet = true; m_groupingConfiguration = std::forward<GroupingConfigurationT>(value); }
-    template<typename GroupingConfigurationT = GroupingConfiguration>
-    UpdateMessageTemplateMetadataRequest& WithGroupingConfiguration(GroupingConfigurationT&& value) { SetGroupingConfiguration(std::forward<GroupingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -92,13 +70,29 @@ namespace Model
     template<typename NameT = Aws::String>
     UpdateMessageTemplateMetadataRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The description of the message template.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateMessageTemplateMetadataRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
+    inline bool GroupingConfigurationHasBeenSet() const { return m_groupingConfigurationHasBeenSet; }
+    template<typename GroupingConfigurationT = GroupingConfiguration>
+    void SetGroupingConfiguration(GroupingConfigurationT&& value) { m_groupingConfigurationHasBeenSet = true; m_groupingConfiguration = std::forward<GroupingConfigurationT>(value); }
+    template<typename GroupingConfigurationT = GroupingConfiguration>
+    UpdateMessageTemplateMetadataRequest& WithGroupingConfiguration(GroupingConfigurationT&& value) { SetGroupingConfiguration(std::forward<GroupingConfigurationT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    GroupingConfiguration m_groupingConfiguration;
-    bool m_groupingConfigurationHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
@@ -108,6 +102,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    GroupingConfiguration m_groupingConfiguration;
+    bool m_groupingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

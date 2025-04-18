@@ -39,21 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message body, in HTML format, to use in email messages that are based on
-     * the message template. We recommend using HTML format for email clients that
-     * render HTML content. You can include links, formatted text, and more in an HTML
-     * message.</p>
-     */
-    inline const MessageTemplateBodyContentProvider& GetHtml() const { return m_html; }
-    inline bool HtmlHasBeenSet() const { return m_htmlHasBeenSet; }
-    template<typename HtmlT = MessageTemplateBodyContentProvider>
-    void SetHtml(HtmlT&& value) { m_htmlHasBeenSet = true; m_html = std::forward<HtmlT>(value); }
-    template<typename HtmlT = MessageTemplateBodyContentProvider>
-    EmailMessageTemplateContentBody& WithHtml(HtmlT&& value) { SetHtml(std::forward<HtmlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The message body, in plain text format, to use in email messages that are
      * based on the message template. We recommend using plain text format for email
      * clients that don't render HTML content and clients that are connected to
@@ -66,13 +51,28 @@ namespace Model
     template<typename PlainTextT = MessageTemplateBodyContentProvider>
     EmailMessageTemplateContentBody& WithPlainText(PlainTextT&& value) { SetPlainText(std::forward<PlainTextT>(value)); return *this;}
     ///@}
-  private:
 
-    MessageTemplateBodyContentProvider m_html;
-    bool m_htmlHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The message body, in HTML format, to use in email messages that are based on
+     * the message template. We recommend using HTML format for email clients that
+     * render HTML content. You can include links, formatted text, and more in an HTML
+     * message.</p>
+     */
+    inline const MessageTemplateBodyContentProvider& GetHtml() const { return m_html; }
+    inline bool HtmlHasBeenSet() const { return m_htmlHasBeenSet; }
+    template<typename HtmlT = MessageTemplateBodyContentProvider>
+    void SetHtml(HtmlT&& value) { m_htmlHasBeenSet = true; m_html = std::forward<HtmlT>(value); }
+    template<typename HtmlT = MessageTemplateBodyContentProvider>
+    EmailMessageTemplateContentBody& WithHtml(HtmlT&& value) { SetHtml(std::forward<HtmlT>(value)); return *this;}
+    ///@}
+  private:
 
     MessageTemplateBodyContentProvider m_plainText;
     bool m_plainTextHasBeenSet = false;
+
+    MessageTemplateBodyContentProvider m_html;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

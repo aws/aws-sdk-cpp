@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dissimilarity threshold for splitting chunks.</p>
+     * <p>The maximum number of tokens that a chunk can contain.</p>
      */
-    inline int GetBreakpointPercentileThreshold() const { return m_breakpointPercentileThreshold; }
-    inline bool BreakpointPercentileThresholdHasBeenSet() const { return m_breakpointPercentileThresholdHasBeenSet; }
-    inline void SetBreakpointPercentileThreshold(int value) { m_breakpointPercentileThresholdHasBeenSet = true; m_breakpointPercentileThreshold = value; }
-    inline SemanticChunkingConfiguration& WithBreakpointPercentileThreshold(int value) { SetBreakpointPercentileThreshold(value); return *this;}
+    inline int GetMaxTokens() const { return m_maxTokens; }
+    inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
+    inline void SetMaxTokens(int value) { m_maxTokensHasBeenSet = true; m_maxTokens = value; }
+    inline SemanticChunkingConfiguration& WithMaxTokens(int value) { SetMaxTokens(value); return *this;}
     ///@}
 
     ///@{
@@ -60,23 +60,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of tokens that a chunk can contain.</p>
+     * <p>The dissimilarity threshold for splitting chunks.</p>
      */
-    inline int GetMaxTokens() const { return m_maxTokens; }
-    inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
-    inline void SetMaxTokens(int value) { m_maxTokensHasBeenSet = true; m_maxTokens = value; }
-    inline SemanticChunkingConfiguration& WithMaxTokens(int value) { SetMaxTokens(value); return *this;}
+    inline int GetBreakpointPercentileThreshold() const { return m_breakpointPercentileThreshold; }
+    inline bool BreakpointPercentileThresholdHasBeenSet() const { return m_breakpointPercentileThresholdHasBeenSet; }
+    inline void SetBreakpointPercentileThreshold(int value) { m_breakpointPercentileThresholdHasBeenSet = true; m_breakpointPercentileThreshold = value; }
+    inline SemanticChunkingConfiguration& WithBreakpointPercentileThreshold(int value) { SetBreakpointPercentileThreshold(value); return *this;}
     ///@}
   private:
 
-    int m_breakpointPercentileThreshold{0};
-    bool m_breakpointPercentileThresholdHasBeenSet = false;
+    int m_maxTokens{0};
+    bool m_maxTokensHasBeenSet = false;
 
     int m_bufferSize{0};
     bool m_bufferSizeHasBeenSet = false;
 
-    int m_maxTokens{0};
-    bool m_maxTokensHasBeenSet = false;
+    int m_breakpointPercentileThreshold{0};
+    bool m_breakpointPercentileThresholdHasBeenSet = false;
   };
 
 } // namespace Model

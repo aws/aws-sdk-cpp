@@ -25,11 +25,6 @@ AssociationConfiguration::AssociationConfiguration(JsonView jsonValue)
 
 AssociationConfiguration& AssociationConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("associationConfigurationData"))
-  {
-    m_associationConfigurationData = jsonValue.GetObject("associationConfigurationData");
-    m_associationConfigurationDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("associationId"))
   {
     m_associationId = jsonValue.GetString("associationId");
@@ -40,18 +35,17 @@ AssociationConfiguration& AssociationConfiguration::operator =(JsonView jsonValu
     m_associationType = AIAgentAssociationConfigurationTypeMapper::GetAIAgentAssociationConfigurationTypeForName(jsonValue.GetString("associationType"));
     m_associationTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("associationConfigurationData"))
+  {
+    m_associationConfigurationData = jsonValue.GetObject("associationConfigurationData");
+    m_associationConfigurationDataHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AssociationConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_associationConfigurationDataHasBeenSet)
-  {
-   payload.WithObject("associationConfigurationData", m_associationConfigurationData.Jsonize());
-
-  }
 
   if(m_associationIdHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue AssociationConfiguration::Jsonize() const
   if(m_associationTypeHasBeenSet)
   {
    payload.WithString("associationType", AIAgentAssociationConfigurationTypeMapper::GetNameForAIAgentAssociationConfigurationType(m_associationType));
+  }
+
+  if(m_associationConfigurationDataHasBeenSet)
+  {
+   payload.WithObject("associationConfigurationData", m_associationConfigurationData.Jsonize());
+
   }
 
   return payload;

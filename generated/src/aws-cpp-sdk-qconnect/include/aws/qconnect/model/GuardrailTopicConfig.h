@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the topic to deny.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GuardrailTopicConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A definition of the topic to deny.</p>
      */
     inline const Aws::String& GetDefinition() const { return m_definition; }
@@ -69,18 +81,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the topic to deny.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GuardrailTopicConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies to deny the topic.</p>
      */
     inline GuardrailTopicType GetType() const { return m_type; }
@@ -90,14 +90,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_definition;
     bool m_definitionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_examples;
     bool m_examplesHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
     bool m_typeHasBeenSet = false;

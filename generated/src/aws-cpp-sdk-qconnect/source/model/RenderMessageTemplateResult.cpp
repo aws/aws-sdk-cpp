@@ -25,14 +25,10 @@ RenderMessageTemplateResult::RenderMessageTemplateResult(const Aws::AmazonWebSer
 RenderMessageTemplateResult& RenderMessageTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("attachments"))
+  if(jsonValue.ValueExists("content"))
   {
-    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
-    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
-    {
-      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
-    }
-    m_attachmentsHasBeenSet = true;
+    m_content = jsonValue.GetObject("content");
+    m_contentHasBeenSet = true;
   }
   if(jsonValue.ValueExists("attributesNotInterpolated"))
   {
@@ -43,10 +39,14 @@ RenderMessageTemplateResult& RenderMessageTemplateResult::operator =(const Aws::
     }
     m_attributesNotInterpolatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("content"))
+  if(jsonValue.ValueExists("attachments"))
   {
-    m_content = jsonValue.GetObject("content");
-    m_contentHasBeenSet = true;
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qconnect/model/SessionDataNamespace.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/SessionDataNamespace.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/RuntimeSessionData.h>
 #include <utility>
 
@@ -37,29 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data stored in the session.</p>
-     */
-    inline const Aws::Vector<RuntimeSessionData>& GetData() const { return m_data; }
-    template<typename DataT = Aws::Vector<RuntimeSessionData>>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = Aws::Vector<RuntimeSessionData>>
-    UpdateSessionDataResult& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
-    template<typename DataT = RuntimeSessionData>
-    UpdateSessionDataResult& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The namespace into which the session data is stored. Supported namespaces
-     * are: Custom</p>
-     */
-    inline SessionDataNamespace GetNamespace() const { return m_namespace; }
-    inline void SetNamespace(SessionDataNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline UpdateSessionDataResult& WithNamespace(SessionDataNamespace value) { SetNamespace(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the session.</p>
      */
     inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
@@ -81,6 +58,29 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The namespace into which the session data is stored. Supported namespaces
+     * are: Custom</p>
+     */
+    inline SessionDataNamespace GetNamespace() const { return m_namespace; }
+    inline void SetNamespace(SessionDataNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline UpdateSessionDataResult& WithNamespace(SessionDataNamespace value) { SetNamespace(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Data stored in the session.</p>
+     */
+    inline const Aws::Vector<RuntimeSessionData>& GetData() const { return m_data; }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    UpdateSessionDataResult& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataT = RuntimeSessionData>
+    UpdateSessionDataResult& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -90,17 +90,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<RuntimeSessionData> m_data;
-    bool m_dataHasBeenSet = false;
-
-    SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
-    bool m_namespaceHasBeenSet = false;
-
     Aws::String m_sessionArn;
     bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
+    bool m_namespaceHasBeenSet = false;
+
+    Aws::Vector<RuntimeSessionData> m_data;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
-    inline const Aws::String& GetContentId() const { return m_contentId; }
-    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
-    template<typename ContentIdT = Aws::String>
-    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
-    template<typename ContentIdT = Aws::String>
-    DeleteContentRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -57,13 +44,26 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     DeleteContentRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_contentId;
-    bool m_contentIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot
+     * contain the ARN.</p>
+     */
+    inline const Aws::String& GetContentId() const { return m_contentId; }
+    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
+    template<typename ContentIdT = Aws::String>
+    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
+    template<typename ContentIdT = Aws::String>
+    DeleteContentRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_contentId;
+    bool m_contentIdHasBeenSet = false;
   };
 
 } // namespace Model

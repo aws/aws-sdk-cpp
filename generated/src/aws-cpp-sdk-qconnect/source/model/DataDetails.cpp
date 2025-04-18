@@ -6,6 +6,7 @@
 #include <aws/qconnect/model/DataDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qconnect/model/GenerativeDataDetails.h>
+#include <aws/qconnect/model/GenerativeChunkDataDetails.h>
 
 #include <utility>
 
@@ -46,6 +47,11 @@ DataDetails& DataDetails::operator =(JsonView jsonValue)
     m_sourceContentData = jsonValue.GetObject("sourceContentData");
     m_sourceContentDataHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("generativeChunkData"))
+  {
+    m_generativeChunkData = Aws::MakeShared<GenerativeChunkDataDetails>("DataDetails", jsonValue.GetObject("generativeChunkData"));
+    m_generativeChunkDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -74,6 +80,12 @@ JsonValue DataDetails::Jsonize() const
   if(m_sourceContentDataHasBeenSet)
   {
    payload.WithObject("sourceContentData", m_sourceContentData.Jsonize());
+
+  }
+
+  if(m_generativeChunkDataHasBeenSet)
+  {
+   payload.WithObject("generativeChunkData", m_generativeChunkData->Jsonize());
 
   }
 

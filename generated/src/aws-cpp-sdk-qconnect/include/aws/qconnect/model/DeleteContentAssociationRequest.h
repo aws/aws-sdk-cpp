@@ -34,15 +34,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the content association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
-    inline const Aws::String& GetContentAssociationId() const { return m_contentAssociationId; }
-    inline bool ContentAssociationIdHasBeenSet() const { return m_contentAssociationIdHasBeenSet; }
-    template<typename ContentAssociationIdT = Aws::String>
-    void SetContentAssociationId(ContentAssociationIdT&& value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId = std::forward<ContentAssociationIdT>(value); }
-    template<typename ContentAssociationIdT = Aws::String>
-    DeleteContentAssociationRequest& WithContentAssociationId(ContentAssociationIdT&& value) { SetContentAssociationId(std::forward<ContentAssociationIdT>(value)); return *this;}
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    DeleteContentAssociationRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,25 +58,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the content association. Can be either the ID or the ARN.
+     * URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    DeleteContentAssociationRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    inline const Aws::String& GetContentAssociationId() const { return m_contentAssociationId; }
+    inline bool ContentAssociationIdHasBeenSet() const { return m_contentAssociationIdHasBeenSet; }
+    template<typename ContentAssociationIdT = Aws::String>
+    void SetContentAssociationId(ContentAssociationIdT&& value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId = std::forward<ContentAssociationIdT>(value); }
+    template<typename ContentAssociationIdT = Aws::String>
+    DeleteContentAssociationRequest& WithContentAssociationId(ContentAssociationIdT&& value) { SetContentAssociationId(std::forward<ContentAssociationIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_contentAssociationId;
-    bool m_contentAssociationIdHasBeenSet = false;
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_contentId;
     bool m_contentIdHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    Aws::String m_contentAssociationId;
+    bool m_contentAssociationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Amazon Web Service.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an Amazon Web Services service.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceInfo">AWS
    * API Reference</a></p>
    */

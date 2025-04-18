@@ -53,16 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListMessageTemplateVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the message template. Can be either the ID or the ARN. It
      * cannot contain any qualifier.</p>
      */
@@ -86,19 +76,29 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListMessageTemplateVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return per page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListMessageTemplateVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

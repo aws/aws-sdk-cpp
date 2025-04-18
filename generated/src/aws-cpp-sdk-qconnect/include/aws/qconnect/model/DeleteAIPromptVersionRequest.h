@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI prompt.</p>
-     */
-    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
-    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
-    template<typename AiPromptIdT = Aws::String>
-    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
-    template<typename AiPromptIdT = Aws::String>
-    DeleteAIPromptVersionRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -59,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the Amazon Q in Connect AI prompt.</p>
+     */
+    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
+    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
+    template<typename AiPromptIdT = Aws::String>
+    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
+    template<typename AiPromptIdT = Aws::String>
+    DeleteAIPromptVersionRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The version number of the AI Prompt version to be deleted.</p>
      */
     inline long long GetVersionNumber() const { return m_versionNumber; }
@@ -68,11 +68,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_aiPromptId;
-    bool m_aiPromptIdHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
+
+    Aws::String m_aiPromptId;
+    bool m_aiPromptIdHasBeenSet = false;
 
     long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;

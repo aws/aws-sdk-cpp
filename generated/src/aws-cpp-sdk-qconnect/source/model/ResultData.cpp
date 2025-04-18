@@ -25,10 +25,10 @@ ResultData::ResultData(JsonView jsonValue)
 
 ResultData& ResultData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("data"))
+  if(jsonValue.ValueExists("resultId"))
   {
-    m_data = jsonValue.GetObject("data");
-    m_dataHasBeenSet = true;
+    m_resultId = jsonValue.GetString("resultId");
+    m_resultIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("document"))
   {
@@ -40,10 +40,10 @@ ResultData& ResultData::operator =(JsonView jsonValue)
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resultId"))
+  if(jsonValue.ValueExists("data"))
   {
-    m_resultId = jsonValue.GetString("resultId");
-    m_resultIdHasBeenSet = true;
+    m_data = jsonValue.GetObject("data");
+    m_dataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("type"))
   {
@@ -57,9 +57,9 @@ JsonValue ResultData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
+  if(m_resultIdHasBeenSet)
   {
-   payload.WithObject("data", m_data.Jsonize());
+   payload.WithString("resultId", m_resultId);
 
   }
 
@@ -75,9 +75,9 @@ JsonValue ResultData::Jsonize() const
 
   }
 
-  if(m_resultIdHasBeenSet)
+  if(m_dataHasBeenSet)
   {
-   payload.WithString("resultId", m_resultId);
+   payload.WithObject("data", m_data.Jsonize());
 
   }
 

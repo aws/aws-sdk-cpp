@@ -16,21 +16,37 @@ Aws::String CreateAIPromptRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_apiFormatHasBeenSet)
-  {
-   payload.WithString("apiFormat", AIPromptAPIFormatMapper::GetNameForAIPromptAPIFormat(m_apiFormat));
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", AIPromptTypeMapper::GetNameForAIPromptType(m_type));
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+
+  }
+
+  if(m_visibilityStatusHasBeenSet)
+  {
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+  }
+
+  if(m_templateTypeHasBeenSet)
+  {
+   payload.WithString("templateType", AIPromptTemplateTypeMapper::GetNameForAIPromptTemplateType(m_templateType));
   }
 
   if(m_modelIdHasBeenSet)
@@ -39,10 +55,9 @@ Aws::String CreateAIPromptRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_apiFormatHasBeenSet)
   {
-   payload.WithString("name", m_name);
-
+   payload.WithString("apiFormat", AIPromptAPIFormatMapper::GetNameForAIPromptAPIFormat(m_apiFormat));
   }
 
   if(m_tagsHasBeenSet)
@@ -56,25 +71,10 @@ Aws::String CreateAIPromptRequest::SerializePayload() const
 
   }
 
-  if(m_templateConfigurationHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+   payload.WithString("description", m_description);
 
-  }
-
-  if(m_templateTypeHasBeenSet)
-  {
-   payload.WithString("templateType", AIPromptTemplateTypeMapper::GetNameForAIPromptTemplateType(m_templateType));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AIPromptTypeMapper::GetNameForAIPromptType(m_type));
-  }
-
-  if(m_visibilityStatusHasBeenSet)
-  {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   return payload.View().WriteReadable();

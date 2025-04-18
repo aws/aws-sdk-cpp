@@ -16,6 +16,11 @@ Aws::String UpdateSessionDataRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("namespace", SessionDataNamespaceMapper::GetNameForSessionDataNamespace(m_namespace));
+  }
+
   if(m_dataHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> dataJsonList(m_data.size());
@@ -25,11 +30,6 @@ Aws::String UpdateSessionDataRequest::SerializePayload() const
    }
    payload.WithArray("data", std::move(dataJsonList));
 
-  }
-
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("namespace", SessionDataNamespaceMapper::GetNameForSessionDataNamespace(m_namespace));
   }
 
   return payload.View().WriteReadable();

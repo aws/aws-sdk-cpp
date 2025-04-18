@@ -25,15 +25,15 @@ EmailMessageTemplateContentBody::EmailMessageTemplateContentBody(JsonView jsonVa
 
 EmailMessageTemplateContentBody& EmailMessageTemplateContentBody::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("html"))
-  {
-    m_html = jsonValue.GetObject("html");
-    m_htmlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("plainText"))
   {
     m_plainText = jsonValue.GetObject("plainText");
     m_plainTextHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("html"))
+  {
+    m_html = jsonValue.GetObject("html");
+    m_htmlHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue EmailMessageTemplateContentBody::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_htmlHasBeenSet)
-  {
-   payload.WithObject("html", m_html.Jsonize());
-
-  }
-
   if(m_plainTextHasBeenSet)
   {
    payload.WithObject("plainText", m_plainText.Jsonize());
+
+  }
+
+  if(m_htmlHasBeenSet)
+  {
+   payload.WithObject("html", m_html.Jsonize());
 
   }
 

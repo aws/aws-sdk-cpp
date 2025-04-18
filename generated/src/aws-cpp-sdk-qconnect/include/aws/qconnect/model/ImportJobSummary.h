@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/qconnect/model/ExternalSourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/ImportJobType.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qconnect/model/ImportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/ExternalSourceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -44,31 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the import job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    ImportJobSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The configuration information of the external source that the resource data
-     * are imported from.</p>
-     */
-    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const { return m_externalSourceConfiguration; }
-    inline bool ExternalSourceConfigurationHasBeenSet() const { return m_externalSourceConfigurationHasBeenSet; }
-    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
-    void SetExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::forward<ExternalSourceConfigurationT>(value); }
-    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
-    ImportJobSummary& WithExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { SetExternalSourceConfiguration(std::forward<ExternalSourceConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the import job.</p>
      */
     inline const Aws::String& GetImportJobId() const { return m_importJobId; }
@@ -81,12 +56,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of import job.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
-    inline ImportJobType GetImportJobType() const { return m_importJobType; }
-    inline bool ImportJobTypeHasBeenSet() const { return m_importJobTypeHasBeenSet; }
-    inline void SetImportJobType(ImportJobType value) { m_importJobTypeHasBeenSet = true; m_importJobType = value; }
-    inline ImportJobSummary& WithImportJobType(ImportJobType value) { SetImportJobType(value); return *this;}
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    ImportJobSummary& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A pointer to the uploaded asset. This value is returned by <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+     */
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    ImportJobSummary& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +93,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The type of import job.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    ImportJobSummary& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    inline ImportJobType GetImportJobType() const { return m_importJobType; }
+    inline bool ImportJobTypeHasBeenSet() const { return m_importJobTypeHasBeenSet; }
+    inline void SetImportJobType(ImportJobType value) { m_importJobTypeHasBeenSet = true; m_importJobType = value; }
+    inline ImportJobSummary& WithImportJobType(ImportJobType value) { SetImportJobType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the import job.</p>
+     */
+    inline ImportJobStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ImportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImportJobSummary& WithStatus(ImportJobStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the import job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    ImportJobSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,45 +153,38 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the import job.</p>
+     * <p>The configuration information of the external source that the resource data
+     * are imported from.</p>
      */
-    inline ImportJobStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ImportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ImportJobSummary& WithStatus(ImportJobStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A pointer to the uploaded asset. This value is returned by <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-     */
-    inline const Aws::String& GetUploadId() const { return m_uploadId; }
-    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
-    template<typename UploadIdT = Aws::String>
-    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
-    template<typename UploadIdT = Aws::String>
-    ImportJobSummary& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
+    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const { return m_externalSourceConfiguration; }
+    inline bool ExternalSourceConfigurationHasBeenSet() const { return m_externalSourceConfigurationHasBeenSet; }
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    void SetExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::forward<ExternalSourceConfigurationT>(value); }
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    ImportJobSummary& WithExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { SetExternalSourceConfiguration(std::forward<ExternalSourceConfigurationT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_createdTime{};
-    bool m_createdTimeHasBeenSet = false;
-
-    ExternalSourceConfiguration m_externalSourceConfiguration;
-    bool m_externalSourceConfigurationHasBeenSet = false;
 
     Aws::String m_importJobId;
     bool m_importJobIdHasBeenSet = false;
 
-    ImportJobType m_importJobType{ImportJobType::NOT_SET};
-    bool m_importJobTypeHasBeenSet = false;
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_uploadId;
+    bool m_uploadIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseArn;
     bool m_knowledgeBaseArnHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    ImportJobType m_importJobType{ImportJobType::NOT_SET};
+    bool m_importJobTypeHasBeenSet = false;
+
+    ImportJobStatus m_status{ImportJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
@@ -189,11 +192,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    ImportJobStatus m_status{ImportJobStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
-    Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet = false;
+    ExternalSourceConfiguration m_externalSourceConfiguration;
+    bool m_externalSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

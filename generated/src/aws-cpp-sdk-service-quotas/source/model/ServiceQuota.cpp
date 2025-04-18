@@ -95,6 +95,11 @@ ServiceQuota& ServiceQuota::operator =(JsonView jsonValue)
     m_quotaContext = jsonValue.GetObject("QuotaContext");
     m_quotaContextHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -182,6 +187,12 @@ JsonValue ServiceQuota::Jsonize() const
   if(m_quotaContextHasBeenSet)
   {
    payload.WithObject("QuotaContext", m_quotaContext.Jsonize());
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

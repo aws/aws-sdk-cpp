@@ -16,15 +16,15 @@ Aws::String CreateAssistantAssociationRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_associationTypeHasBeenSet)
+  {
+   payload.WithString("associationType", AssociationTypeMapper::GetNameForAssociationType(m_associationType));
+  }
+
   if(m_associationHasBeenSet)
   {
    payload.WithObject("association", m_association.Jsonize());
 
-  }
-
-  if(m_associationTypeHasBeenSet)
-  {
-   payload.WithString("associationType", AssociationTypeMapper::GetNameForAssociationType(m_associationType));
   }
 
   if(m_clientTokenHasBeenSet)

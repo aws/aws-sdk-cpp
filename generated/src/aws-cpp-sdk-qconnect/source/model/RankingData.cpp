@@ -25,15 +25,15 @@ RankingData::RankingData(JsonView jsonValue)
 
 RankingData& RankingData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("relevanceLevel"))
-  {
-    m_relevanceLevel = RelevanceLevelMapper::GetRelevanceLevelForName(jsonValue.GetString("relevanceLevel"));
-    m_relevanceLevelHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("relevanceScore"))
   {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("relevanceLevel"))
+  {
+    m_relevanceLevel = RelevanceLevelMapper::GetRelevanceLevelForName(jsonValue.GetString("relevanceLevel"));
+    m_relevanceLevelHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RankingData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_relevanceLevelHasBeenSet)
-  {
-   payload.WithString("relevanceLevel", RelevanceLevelMapper::GetNameForRelevanceLevel(m_relevanceLevel));
-  }
-
   if(m_relevanceScoreHasBeenSet)
   {
    payload.WithDouble("relevanceScore", m_relevanceScore);
 
+  }
+
+  if(m_relevanceLevelHasBeenSet)
+  {
+   payload.WithString("relevanceLevel", RelevanceLevelMapper::GetNameForRelevanceLevel(m_relevanceLevel));
   }
 
   return payload;

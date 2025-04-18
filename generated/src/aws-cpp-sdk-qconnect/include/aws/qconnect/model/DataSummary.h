@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Reference information about the content.</p>
+     */
+    inline const DataReference& GetReference() const { return m_reference; }
+    inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
+    template<typename ReferenceT = DataReference>
+    void SetReference(ReferenceT&& value) { m_referenceHasBeenSet = true; m_reference = std::forward<ReferenceT>(value); }
+    template<typename ReferenceT = DataReference>
+    DataSummary& WithReference(ReferenceT&& value) { SetReference(std::forward<ReferenceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about the data.</p>
      */
     inline const DataDetails& GetDetails() const{
@@ -55,25 +67,13 @@ namespace Model
     template<typename DetailsT = DataDetails>
     DataSummary& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Reference information about the content.</p>
-     */
-    inline const DataReference& GetReference() const { return m_reference; }
-    inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
-    template<typename ReferenceT = DataReference>
-    void SetReference(ReferenceT&& value) { m_referenceHasBeenSet = true; m_reference = std::forward<ReferenceT>(value); }
-    template<typename ReferenceT = DataReference>
-    DataSummary& WithReference(ReferenceT&& value) { SetReference(std::forward<ReferenceT>(value)); return *this;}
-    ///@}
   private:
-
-    std::shared_ptr<DataDetails> m_details;
-    bool m_detailsHasBeenSet = false;
 
     DataReference m_reference;
     bool m_referenceHasBeenSet = false;
+
+    std::shared_ptr<DataDetails> m_details;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

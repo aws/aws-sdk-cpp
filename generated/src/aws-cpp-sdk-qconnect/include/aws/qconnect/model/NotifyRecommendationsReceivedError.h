@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A recommendation is causing an error.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    NotifyRecommendationsReceivedError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the recommendation that is in error.</p>
      */
     inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename RecommendationIdT = Aws::String>
     NotifyRecommendationsReceivedError& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A recommendation is causing an error.</p>
+     */
+    inline const Aws::String& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    NotifyRecommendationsReceivedError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,11 +35,6 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
     m_contentId = jsonValue.GetString("contentId");
     m_contentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
-    m_contentType = jsonValue.GetString("contentType");
-    m_contentTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
@@ -49,15 +44,6 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("metadata"))
-  {
-    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
-    for(auto& metadataItem : metadataJsonMap)
-    {
-      m_metadata[metadataItem.first] = metadataItem.second.AsString();
-    }
-    m_metadataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
@@ -69,10 +55,29 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
     m_revisionId = jsonValue.GetString("revisionId");
     m_revisionIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("title"))
+  {
+    m_title = jsonValue.GetString("title");
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentType"))
+  {
+    m_contentType = jsonValue.GetString("contentType");
+    m_contentTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ContentStatusMapper::GetContentStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -82,11 +87,6 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("title"))
-  {
-    m_title = jsonValue.GetString("title");
-    m_titleHasBeenSet = true;
   }
   return *this;
 }
@@ -107,12 +107,6 @@ JsonValue ContentSummary::Jsonize() const
 
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
-  }
-
   if(m_knowledgeBaseArnHasBeenSet)
   {
    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
@@ -122,17 +116,6 @@ JsonValue ContentSummary::Jsonize() const
   if(m_knowledgeBaseIdHasBeenSet)
   {
    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
-  if(m_metadataHasBeenSet)
-  {
-   JsonValue metadataJsonMap;
-   for(auto& metadataItem : m_metadata)
-   {
-     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
-   }
-   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 
@@ -148,9 +131,32 @@ JsonValue ContentSummary::Jsonize() const
 
   }
 
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("title", m_title);
+
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("contentType", m_contentType);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ContentStatusMapper::GetNameForContentStatus(m_status));
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
+
   }
 
   if(m_tagsHasBeenSet)
@@ -161,12 +167,6 @@ JsonValue ContentSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("title", m_title);
 
   }
 

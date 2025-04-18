@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/MessageData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/Participant.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/qconnect/model/MessageData.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,18 @@ namespace Model
     AWS_QCONNECT_API MessageOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The value of a message data.</p>
+     */
+    inline const MessageData& GetValue() const { return m_value; }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    template<typename ValueT = MessageData>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = MessageData>
+    MessageOutput& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -73,19 +85,10 @@ namespace Model
     template<typename TimestampT = Aws::Utils::DateTime>
     MessageOutput& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The value of a message data.</p>
-     */
-    inline const MessageData& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = MessageData>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = MessageData>
-    MessageOutput& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
   private:
+
+    MessageData m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
@@ -95,9 +98,6 @@ namespace Model
 
     Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
-
-    MessageData m_value;
-    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

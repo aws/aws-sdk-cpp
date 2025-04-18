@@ -22,15 +22,15 @@ Aws::String UpdateMessageTemplateRequest::SerializePayload() const
 
   }
 
-  if(m_defaultAttributesHasBeenSet)
-  {
-   payload.WithObject("defaultAttributes", m_defaultAttributes.Jsonize());
-
-  }
-
   if(m_languageHasBeenSet)
   {
    payload.WithString("language", m_language);
+
+  }
+
+  if(m_defaultAttributesHasBeenSet)
+  {
+   payload.WithObject("defaultAttributes", m_defaultAttributes.Jsonize());
 
   }
 

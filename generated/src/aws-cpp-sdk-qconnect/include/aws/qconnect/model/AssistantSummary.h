@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/AssistantCapabilityConfiguration.h>
-#include <aws/qconnect/model/AssistantIntegrationConfiguration.h>
-#include <aws/qconnect/model/ServerSideEncryptionConfiguration.h>
-#include <aws/qconnect/model/AssistantStatus.h>
 #include <aws/qconnect/model/AssistantType.h>
+#include <aws/qconnect/model/AssistantStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/ServerSideEncryptionConfiguration.h>
+#include <aws/qconnect/model/AssistantIntegrationConfiguration.h>
+#include <aws/qconnect/model/AssistantCapabilityConfiguration.h>
 #include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <utility>
@@ -47,18 +47,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent
-     * version) that is set on the Amazon Q in Connect Assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::Map<AIAgentType, AIAgentConfigurationData>& GetAiAgentConfiguration() const { return m_aiAgentConfiguration; }
-    inline bool AiAgentConfigurationHasBeenSet() const { return m_aiAgentConfigurationHasBeenSet; }
-    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
-    void SetAiAgentConfiguration(AiAgentConfigurationT&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = std::forward<AiAgentConfigurationT>(value); }
-    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
-    AssistantSummary& WithAiAgentConfiguration(AiAgentConfigurationT&& value) { SetAiAgentConfiguration(std::forward<AiAgentConfigurationT>(value)); return *this;}
-    inline AssistantSummary& AddAiAgentConfiguration(AIAgentType key, AIAgentConfigurationData value) {
-      m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this;
-    }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
+    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    AssistantSummary& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,27 +71,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect assistant.</p>
+     * <p>The name of the assistant.</p>
      */
-    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
-    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    template<typename AssistantIdT = Aws::String>
-    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
-    template<typename AssistantIdT = Aws::String>
-    AssistantSummary& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssistantSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The configuration information for the Amazon Q in Connect assistant
-     * capability. </p>
+     * <p>The type of the assistant.</p>
      */
-    inline const AssistantCapabilityConfiguration& GetCapabilityConfiguration() const { return m_capabilityConfiguration; }
-    inline bool CapabilityConfigurationHasBeenSet() const { return m_capabilityConfigurationHasBeenSet; }
-    template<typename CapabilityConfigurationT = AssistantCapabilityConfiguration>
-    void SetCapabilityConfiguration(CapabilityConfigurationT&& value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration = std::forward<CapabilityConfigurationT>(value); }
-    template<typename CapabilityConfigurationT = AssistantCapabilityConfiguration>
-    AssistantSummary& WithCapabilityConfiguration(CapabilityConfigurationT&& value) { SetCapabilityConfiguration(std::forward<CapabilityConfigurationT>(value)); return *this;}
+    inline AssistantType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(AssistantType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AssistantSummary& WithType(AssistantType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the assistant.</p>
+     */
+    inline AssistantStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(AssistantStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AssistantSummary& WithStatus(AssistantStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -112,27 +115,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration information for the Amazon Q in Connect assistant
-     * integration.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const AssistantIntegrationConfiguration& GetIntegrationConfiguration() const { return m_integrationConfiguration; }
-    inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
-    template<typename IntegrationConfigurationT = AssistantIntegrationConfiguration>
-    void SetIntegrationConfiguration(IntegrationConfigurationT&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::forward<IntegrationConfigurationT>(value); }
-    template<typename IntegrationConfigurationT = AssistantIntegrationConfiguration>
-    AssistantSummary& WithIntegrationConfiguration(IntegrationConfigurationT&& value) { SetIntegrationConfiguration(std::forward<IntegrationConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the assistant.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    AssistantSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    AssistantSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    AssistantSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -160,73 +154,79 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the assistant.</p>
+     * <p>The configuration information for the Amazon Q in Connect assistant
+     * integration.</p>
      */
-    inline AssistantStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(AssistantStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline AssistantSummary& WithStatus(AssistantStatus value) { SetStatus(value); return *this;}
+    inline const AssistantIntegrationConfiguration& GetIntegrationConfiguration() const { return m_integrationConfiguration; }
+    inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
+    template<typename IntegrationConfigurationT = AssistantIntegrationConfiguration>
+    void SetIntegrationConfiguration(IntegrationConfigurationT&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::forward<IntegrationConfigurationT>(value); }
+    template<typename IntegrationConfigurationT = AssistantIntegrationConfiguration>
+    AssistantSummary& WithIntegrationConfiguration(IntegrationConfigurationT&& value) { SetIntegrationConfiguration(std::forward<IntegrationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The configuration information for the Amazon Q in Connect assistant
+     * capability. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    AssistantSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    AssistantSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    inline const AssistantCapabilityConfiguration& GetCapabilityConfiguration() const { return m_capabilityConfiguration; }
+    inline bool CapabilityConfigurationHasBeenSet() const { return m_capabilityConfigurationHasBeenSet; }
+    template<typename CapabilityConfigurationT = AssistantCapabilityConfiguration>
+    void SetCapabilityConfiguration(CapabilityConfigurationT&& value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration = std::forward<CapabilityConfigurationT>(value); }
+    template<typename CapabilityConfigurationT = AssistantCapabilityConfiguration>
+    AssistantSummary& WithCapabilityConfiguration(CapabilityConfigurationT&& value) { SetCapabilityConfiguration(std::forward<CapabilityConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent
+     * version) that is set on the Amazon Q in Connect Assistant.</p>
+     */
+    inline const Aws::Map<AIAgentType, AIAgentConfigurationData>& GetAiAgentConfiguration() const { return m_aiAgentConfiguration; }
+    inline bool AiAgentConfigurationHasBeenSet() const { return m_aiAgentConfigurationHasBeenSet; }
+    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
+    void SetAiAgentConfiguration(AiAgentConfigurationT&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = std::forward<AiAgentConfigurationT>(value); }
+    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
+    AssistantSummary& WithAiAgentConfiguration(AiAgentConfigurationT&& value) { SetAiAgentConfiguration(std::forward<AiAgentConfigurationT>(value)); return *this;}
+    inline AssistantSummary& AddAiAgentConfiguration(AIAgentType key, AIAgentConfigurationData value) {
+      m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the assistant.</p>
-     */
-    inline AssistantType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(AssistantType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline AssistantSummary& WithType(AssistantType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
-    bool m_aiAgentConfigurationHasBeenSet = false;
-
-    Aws::String m_assistantArn;
-    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    AssistantCapabilityConfiguration m_capabilityConfiguration;
-    bool m_capabilityConfigurationHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    AssistantIntegrationConfiguration m_integrationConfiguration;
-    bool m_integrationConfigurationHasBeenSet = false;
+    Aws::String m_assistantArn;
+    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+    AssistantType m_type{AssistantType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     AssistantStatus m_status{AssistantStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AssistantType m_type{AssistantType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+
+    AssistantIntegrationConfiguration m_integrationConfiguration;
+    bool m_integrationConfigurationHasBeenSet = false;
+
+    AssistantCapabilityConfiguration m_capabilityConfiguration;
+    bool m_capabilityConfigurationHasBeenSet = false;
+
+    Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
+    bool m_aiAgentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

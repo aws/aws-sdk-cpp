@@ -47,6 +47,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the message template. Can be either the ID or the ARN. It
+     * cannot contain any qualifier.</p>
+     */
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
+    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    CreateMessageTemplateVersionRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The checksum value of the message template content that is referenced by the
      * <code>$LATEST</code> qualifier. It can be returned in
      * <code>MessageTemplateData</code> or <code>ExtendedMessageTemplateData</code>.
@@ -62,29 +75,16 @@ namespace Model
     template<typename MessageTemplateContentSha256T = Aws::String>
     CreateMessageTemplateVersionRequest& WithMessageTemplateContentSha256(MessageTemplateContentSha256T&& value) { SetMessageTemplateContentSha256(std::forward<MessageTemplateContentSha256T>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the message template. Can be either the ID or the ARN. It
-     * cannot contain any qualifier.</p>
-     */
-    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
-    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    template<typename MessageTemplateIdT = Aws::String>
-    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
-    template<typename MessageTemplateIdT = Aws::String>
-    CreateMessageTemplateVersionRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::String m_messageTemplateContentSha256;
-    bool m_messageTemplateContentSha256HasBeenSet = false;
-
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
+
+    Aws::String m_messageTemplateContentSha256;
+    bool m_messageTemplateContentSha256HasBeenSet = false;
   };
 
 } // namespace Model

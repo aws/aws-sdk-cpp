@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     
-    inline const QuickResponseContentProvider& GetMarkdown() const { return m_markdown; }
-    inline bool MarkdownHasBeenSet() const { return m_markdownHasBeenSet; }
-    template<typename MarkdownT = QuickResponseContentProvider>
-    void SetMarkdown(MarkdownT&& value) { m_markdownHasBeenSet = true; m_markdown = std::forward<MarkdownT>(value); }
-    template<typename MarkdownT = QuickResponseContentProvider>
-    QuickResponseContents& WithMarkdown(MarkdownT&& value) { SetMarkdown(std::forward<MarkdownT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    
     inline const QuickResponseContentProvider& GetPlainText() const { return m_plainText; }
     inline bool PlainTextHasBeenSet() const { return m_plainTextHasBeenSet; }
     template<typename PlainTextT = QuickResponseContentProvider>
@@ -57,13 +47,23 @@ namespace Model
     template<typename PlainTextT = QuickResponseContentProvider>
     QuickResponseContents& WithPlainText(PlainTextT&& value) { SetPlainText(std::forward<PlainTextT>(value)); return *this;}
     ///@}
-  private:
 
-    QuickResponseContentProvider m_markdown;
-    bool m_markdownHasBeenSet = false;
+    ///@{
+    
+    inline const QuickResponseContentProvider& GetMarkdown() const { return m_markdown; }
+    inline bool MarkdownHasBeenSet() const { return m_markdownHasBeenSet; }
+    template<typename MarkdownT = QuickResponseContentProvider>
+    void SetMarkdown(MarkdownT&& value) { m_markdownHasBeenSet = true; m_markdown = std::forward<MarkdownT>(value); }
+    template<typename MarkdownT = QuickResponseContentProvider>
+    QuickResponseContents& WithMarkdown(MarkdownT&& value) { SetMarkdown(std::forward<MarkdownT>(value)); return *this;}
+    ///@}
+  private:
 
     QuickResponseContentProvider m_plainText;
     bool m_plainTextHasBeenSet = false;
+
+    QuickResponseContentProvider m_markdown;
+    bool m_markdownHasBeenSet = false;
   };
 
 } // namespace Model

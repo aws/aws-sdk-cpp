@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/ContentFeedbackData.h>
 #include <aws/qconnect/model/TargetType.h>
+#include <aws/qconnect/model/ContentFeedbackData.h>
 #include <utility>
 
 namespace Aws
@@ -36,17 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
-     */
-    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
-    template<typename AssistantArnT = Aws::String>
-    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
-    template<typename AssistantArnT = Aws::String>
-    PutFeedbackResult& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline const Aws::String& GetAssistantId() const { return m_assistantId; }
@@ -58,13 +47,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the feedback provided.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
-    inline const ContentFeedbackData& GetContentFeedback() const { return m_contentFeedback; }
-    template<typename ContentFeedbackT = ContentFeedbackData>
-    void SetContentFeedback(ContentFeedbackT&& value) { m_contentFeedbackHasBeenSet = true; m_contentFeedback = std::forward<ContentFeedbackT>(value); }
-    template<typename ContentFeedbackT = ContentFeedbackData>
-    PutFeedbackResult& WithContentFeedback(ContentFeedbackT&& value) { SetContentFeedback(std::forward<ContentFeedbackT>(value)); return *this;}
+    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
+    template<typename AssistantArnT = Aws::String>
+    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
+    template<typename AssistantArnT = Aws::String>
+    PutFeedbackResult& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,6 +77,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the feedback provided.</p>
+     */
+    inline const ContentFeedbackData& GetContentFeedback() const { return m_contentFeedback; }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    void SetContentFeedback(ContentFeedbackT&& value) { m_contentFeedbackHasBeenSet = true; m_contentFeedback = std::forward<ContentFeedbackT>(value); }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    PutFeedbackResult& WithContentFeedback(ContentFeedbackT&& value) { SetContentFeedback(std::forward<ContentFeedbackT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -97,20 +97,20 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_assistantArn;
-    bool m_assistantArnHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    ContentFeedbackData m_contentFeedback;
-    bool m_contentFeedbackHasBeenSet = false;
+    Aws::String m_assistantArn;
+    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
+
+    ContentFeedbackData m_contentFeedback;
+    bool m_contentFeedbackHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/AssistantAssociationInputData.h>
 #include <aws/qconnect/model/AssociationType.h>
+#include <aws/qconnect/model/AssistantAssociationInputData.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -51,6 +51,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of association.</p>
+     */
+    inline AssociationType GetAssociationType() const { return m_associationType; }
+    inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
+    inline void SetAssociationType(AssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline CreateAssistantAssociationRequest& WithAssociationType(AssociationType value) { SetAssociationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the associated resource.</p>
      */
     inline const AssistantAssociationInputData& GetAssociation() const { return m_association; }
@@ -59,16 +69,6 @@ namespace Model
     void SetAssociation(AssociationT&& value) { m_associationHasBeenSet = true; m_association = std::forward<AssociationT>(value); }
     template<typename AssociationT = AssistantAssociationInputData>
     CreateAssistantAssociationRequest& WithAssociation(AssociationT&& value) { SetAssociation(std::forward<AssociationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of association.</p>
-     */
-    inline AssociationType GetAssociationType() const { return m_associationType; }
-    inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(AssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline CreateAssistantAssociationRequest& WithAssociationType(AssociationType value) { SetAssociationType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,11 +107,11 @@ namespace Model
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    AssistantAssociationInputData m_association;
-    bool m_associationHasBeenSet = false;
-
     AssociationType m_associationType{AssociationType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
+
+    AssistantAssociationInputData m_association;
+    bool m_associationHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

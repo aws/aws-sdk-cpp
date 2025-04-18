@@ -63,9 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Web Services account or resource to which the quota
-     * applies. The value in this field depends on the context scope associated with
-     * the specified service quota.</p>
+     * <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetContextId() const { return m_contextId; }
     inline bool ContextIdHasBeenSet() const { return m_contextIdHasBeenSet; }

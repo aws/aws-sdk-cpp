@@ -22,6 +22,11 @@ Aws::String UpdateAIAgentRequest::SerializePayload() const
 
   }
 
+  if(m_visibilityStatusHasBeenSet)
+  {
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+  }
+
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
@@ -32,11 +37,6 @@ Aws::String UpdateAIAgentRequest::SerializePayload() const
   {
    payload.WithString("description", m_description);
 
-  }
-
-  if(m_visibilityStatusHasBeenSet)
-  {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   return payload.View().WriteReadable();

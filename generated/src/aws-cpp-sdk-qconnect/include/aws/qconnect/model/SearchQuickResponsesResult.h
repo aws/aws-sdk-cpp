@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/QuickResponseSearchResultData.h>
 #include <utility>
 
@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    SearchQuickResponsesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The results of the quick response search.</p>
      */
     inline const Aws::Vector<QuickResponseSearchResultData>& GetResults() const { return m_results; }
@@ -60,6 +48,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchQuickResponsesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -69,11 +69,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<QuickResponseSearchResultData> m_results;
     bool m_resultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

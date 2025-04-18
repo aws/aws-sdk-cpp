@@ -25,20 +25,10 @@ MessageTemplateFilterField::MessageTemplateFilterField(JsonView jsonValue)
 
 MessageTemplateFilterField& MessageTemplateFilterField::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("includeNoExistence"))
-  {
-    m_includeNoExistence = jsonValue.GetBool("includeNoExistence");
-    m_includeNoExistenceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("operator"))
-  {
-    m_operator = MessageTemplateFilterOperatorMapper::GetMessageTemplateFilterOperatorForName(jsonValue.GetString("operator"));
-    m_operatorHasBeenSet = true;
   }
   if(jsonValue.ValueExists("values"))
   {
@@ -49,6 +39,16 @@ MessageTemplateFilterField& MessageTemplateFilterField::operator =(JsonView json
     }
     m_valuesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("operator"))
+  {
+    m_operator = MessageTemplateFilterOperatorMapper::GetMessageTemplateFilterOperatorForName(jsonValue.GetString("operator"));
+    m_operatorHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("includeNoExistence"))
+  {
+    m_includeNoExistence = jsonValue.GetBool("includeNoExistence");
+    m_includeNoExistenceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -56,21 +56,10 @@ JsonValue MessageTemplateFilterField::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_includeNoExistenceHasBeenSet)
-  {
-   payload.WithBool("includeNoExistence", m_includeNoExistence);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
-  }
-
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", MessageTemplateFilterOperatorMapper::GetNameForMessageTemplateFilterOperator(m_operator));
   }
 
   if(m_valuesHasBeenSet)
@@ -81,6 +70,17 @@ JsonValue MessageTemplateFilterField::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("values", std::move(valuesJsonList));
+
+  }
+
+  if(m_operatorHasBeenSet)
+  {
+   payload.WithString("operator", MessageTemplateFilterOperatorMapper::GetNameForMessageTemplateFilterOperator(m_operator));
+  }
+
+  if(m_includeNoExistenceHasBeenSet)
+  {
+   payload.WithBool("includeNoExistence", m_includeNoExistence);
 
   }
 
