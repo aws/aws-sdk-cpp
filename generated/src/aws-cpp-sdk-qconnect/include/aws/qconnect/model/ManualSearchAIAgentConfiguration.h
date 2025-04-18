@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AI Guardrail identifier for the Answer Generation guardrail used by the
-     * MANUAL_SEARCH AI Agent.</p>
-     */
-    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const { return m_answerGenerationAIGuardrailId; }
-    inline bool AnswerGenerationAIGuardrailIdHasBeenSet() const { return m_answerGenerationAIGuardrailIdHasBeenSet; }
-    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
-    void SetAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::forward<AnswerGenerationAIGuardrailIdT>(value); }
-    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
-    ManualSearchAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { SetAnswerGenerationAIGuardrailId(std::forward<AnswerGenerationAIGuardrailIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The AI Prompt identifier for the Answer Generation prompt used by the
      * MANUAL_SEARCH AI Agent.</p>
      */
@@ -64,6 +51,19 @@ namespace Model
     void SetAnswerGenerationAIPromptId(AnswerGenerationAIPromptIdT&& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = std::forward<AnswerGenerationAIPromptIdT>(value); }
     template<typename AnswerGenerationAIPromptIdT = Aws::String>
     ManualSearchAIAgentConfiguration& WithAnswerGenerationAIPromptId(AnswerGenerationAIPromptIdT&& value) { SetAnswerGenerationAIPromptId(std::forward<AnswerGenerationAIPromptIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The AI Guardrail identifier for the Answer Generation guardrail used by the
+     * MANUAL_SEARCH AI Agent.</p>
+     */
+    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const { return m_answerGenerationAIGuardrailId; }
+    inline bool AnswerGenerationAIGuardrailIdHasBeenSet() const { return m_answerGenerationAIGuardrailIdHasBeenSet; }
+    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
+    void SetAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::forward<AnswerGenerationAIGuardrailIdT>(value); }
+    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
+    ManualSearchAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { SetAnswerGenerationAIGuardrailId(std::forward<AnswerGenerationAIGuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,11 +95,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_answerGenerationAIGuardrailId;
-    bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
-
     Aws::String m_answerGenerationAIPromptId;
     bool m_answerGenerationAIPromptIdHasBeenSet = false;
+
+    Aws::String m_answerGenerationAIGuardrailId;
+    bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
 
     Aws::Vector<AssociationConfiguration> m_associationConfigurations;
     bool m_associationConfigurationsHasBeenSet = false;

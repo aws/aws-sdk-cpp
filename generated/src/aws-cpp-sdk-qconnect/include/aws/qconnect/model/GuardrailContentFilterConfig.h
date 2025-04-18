@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/GuardrailFilterStrength.h>
 #include <aws/qconnect/model/GuardrailContentFilterType.h>
+#include <aws/qconnect/model/GuardrailFilterStrength.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +63,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The harmful category that the content filter is applied to.</p>
+     */
+    inline GuardrailContentFilterType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(GuardrailContentFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailContentFilterConfig& WithType(GuardrailContentFilterType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The strength of the content filter to apply to prompts. As you increase the
      * filter strength, the likelihood of filtering harmful content increases and the
      * probability of seeing harmful content in your application reduces.</p>
@@ -85,26 +95,16 @@ namespace Model
     inline void SetOutputStrength(GuardrailFilterStrength value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
     inline GuardrailContentFilterConfig& WithOutputStrength(GuardrailFilterStrength value) { SetOutputStrength(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
-    inline GuardrailContentFilterType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(GuardrailContentFilterType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline GuardrailContentFilterConfig& WithType(GuardrailContentFilterType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     GuardrailFilterStrength m_inputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_inputStrengthHasBeenSet = false;
 
     GuardrailFilterStrength m_outputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_outputStrengthHasBeenSet = false;
-
-    GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

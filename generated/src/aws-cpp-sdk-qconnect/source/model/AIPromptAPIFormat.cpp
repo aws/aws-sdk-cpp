@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ANTHROPIC_CLAUDE_MESSAGES_HASH = HashingUtils::HashString("ANTHROPIC_CLAUDE_MESSAGES");
         static const int ANTHROPIC_CLAUDE_TEXT_COMPLETIONS_HASH = HashingUtils::HashString("ANTHROPIC_CLAUDE_TEXT_COMPLETIONS");
+        static const int MESSAGES_HASH = HashingUtils::HashString("MESSAGES");
+        static const int TEXT_COMPLETIONS_HASH = HashingUtils::HashString("TEXT_COMPLETIONS");
 
 
         AIPromptAPIFormat GetAIPromptAPIFormatForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == ANTHROPIC_CLAUDE_TEXT_COMPLETIONS_HASH)
           {
             return AIPromptAPIFormat::ANTHROPIC_CLAUDE_TEXT_COMPLETIONS;
+          }
+          else if (hashCode == MESSAGES_HASH)
+          {
+            return AIPromptAPIFormat::MESSAGES;
+          }
+          else if (hashCode == TEXT_COMPLETIONS_HASH)
+          {
+            return AIPromptAPIFormat::TEXT_COMPLETIONS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "ANTHROPIC_CLAUDE_MESSAGES";
           case AIPromptAPIFormat::ANTHROPIC_CLAUDE_TEXT_COMPLETIONS:
             return "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS";
+          case AIPromptAPIFormat::MESSAGES:
+            return "MESSAGES";
+          case AIPromptAPIFormat::TEXT_COMPLETIONS:
+            return "TEXT_COMPLETIONS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

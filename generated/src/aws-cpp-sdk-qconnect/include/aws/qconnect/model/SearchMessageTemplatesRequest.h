@@ -54,12 +54,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The search expression for querying the message template.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline SearchMessageTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const MessageTemplateSearchExpression& GetSearchExpression() const { return m_searchExpression; }
+    inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
+    template<typename SearchExpressionT = MessageTemplateSearchExpression>
+    void SetSearchExpression(SearchExpressionT&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::forward<SearchExpressionT>(value); }
+    template<typename SearchExpressionT = MessageTemplateSearchExpression>
+    SearchMessageTemplatesRequest& WithSearchExpression(SearchExpressionT&& value) { SetSearchExpression(std::forward<SearchExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,28 +79,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The search expression for querying the message template.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
-    inline const MessageTemplateSearchExpression& GetSearchExpression() const { return m_searchExpression; }
-    inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
-    template<typename SearchExpressionT = MessageTemplateSearchExpression>
-    void SetSearchExpression(SearchExpressionT&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::forward<SearchExpressionT>(value); }
-    template<typename SearchExpressionT = MessageTemplateSearchExpression>
-    SearchMessageTemplatesRequest& WithSearchExpression(SearchExpressionT&& value) { SetSearchExpression(std::forward<SearchExpressionT>(value)); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline SearchMessageTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    MessageTemplateSearchExpression m_searchExpression;
+    bool m_searchExpressionHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    MessageTemplateSearchExpression m_searchExpression;
-    bool m_searchExpressionHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

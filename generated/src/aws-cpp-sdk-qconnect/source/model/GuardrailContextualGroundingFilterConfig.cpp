@@ -25,15 +25,15 @@ GuardrailContextualGroundingFilterConfig::GuardrailContextualGroundingFilterConf
 
 GuardrailContextualGroundingFilterConfig& GuardrailContextualGroundingFilterConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("threshold"))
-  {
-    m_threshold = jsonValue.GetDouble("threshold");
-    m_thresholdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContextualGroundingFilterTypeMapper::GetGuardrailContextualGroundingFilterTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("threshold"))
+  {
+    m_threshold = jsonValue.GetDouble("threshold");
+    m_thresholdHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue GuardrailContextualGroundingFilterConfig::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", GuardrailContextualGroundingFilterTypeMapper::GetNameForGuardrailContextualGroundingFilterType(m_type));
+  }
+
   if(m_thresholdHasBeenSet)
   {
    payload.WithDouble("threshold", m_threshold);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GuardrailContextualGroundingFilterTypeMapper::GetNameForGuardrailContextualGroundingFilterType(m_type));
   }
 
   return payload;

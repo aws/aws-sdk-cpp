@@ -30,15 +30,15 @@ Document& Document::operator =(JsonView jsonValue)
     m_contentReference = jsonValue.GetObject("contentReference");
     m_contentReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("excerpt"))
-  {
-    m_excerpt = jsonValue.GetObject("excerpt");
-    m_excerptHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetObject("title");
     m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("excerpt"))
+  {
+    m_excerpt = jsonValue.GetObject("excerpt");
+    m_excerptHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue Document::Jsonize() const
 
   }
 
-  if(m_excerptHasBeenSet)
-  {
-   payload.WithObject("excerpt", m_excerpt.Jsonize());
-
-  }
-
   if(m_titleHasBeenSet)
   {
    payload.WithObject("title", m_title.Jsonize());
+
+  }
+
+  if(m_excerptHasBeenSet)
+  {
+   payload.WithObject("excerpt", m_excerpt.Jsonize());
 
   }
 

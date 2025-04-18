@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Agent.</p>
-     */
-    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
-    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
-    template<typename AiAgentIdT = Aws::String>
-    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
-    template<typename AiAgentIdT = Aws::String>
-    CreateAIAgentVersionRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -61,18 +49,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>..</p>
+     * <p>The identifier of the Amazon Q in Connect AI Agent.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateAIAgentVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
+    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
+    template<typename AiAgentIdT = Aws::String>
+    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
+    template<typename AiAgentIdT = Aws::String>
+    CreateAIAgentVersionRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,19 +75,35 @@ namespace Model
     template<typename ModifiedTimeT = Aws::Utils::DateTime>
     CreateAIAgentVersionRequest& WithModifiedTime(ModifiedTimeT&& value) { SetModifiedTime(std::forward<ModifiedTimeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_aiAgentId;
-    bool m_aiAgentIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>..</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAIAgentVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_aiAgentId;
+    bool m_aiAgentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTime{};
     bool m_modifiedTimeHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

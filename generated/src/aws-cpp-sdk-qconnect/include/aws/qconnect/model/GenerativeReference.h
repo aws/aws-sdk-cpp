@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the LLM model. </p>
-     */
-    inline const Aws::String& GetGenerationId() const { return m_generationId; }
-    inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
-    template<typename GenerationIdT = Aws::String>
-    void SetGenerationId(GenerationIdT&& value) { m_generationIdHasBeenSet = true; m_generationId = std::forward<GenerationIdT>(value); }
-    template<typename GenerationIdT = Aws::String>
-    GenerativeReference& WithGenerationId(GenerationIdT&& value) { SetGenerationId(std::forward<GenerationIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the LLM model. </p>
      */
     inline const Aws::String& GetModelId() const { return m_modelId; }
@@ -60,13 +48,25 @@ namespace Model
     template<typename ModelIdT = Aws::String>
     GenerativeReference& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_generationId;
-    bool m_generationIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The identifier of the LLM model. </p>
+     */
+    inline const Aws::String& GetGenerationId() const { return m_generationId; }
+    inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
+    template<typename GenerationIdT = Aws::String>
+    void SetGenerationId(GenerationIdT&& value) { m_generationIdHasBeenSet = true; m_generationId = std::forward<GenerationIdT>(value); }
+    template<typename GenerationIdT = Aws::String>
+    GenerativeReference& WithGenerationId(GenerationIdT&& value) { SetGenerationId(std::forward<GenerationIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
+
+    Aws::String m_generationId;
+    bool m_generationIdHasBeenSet = false;
   };
 
 } // namespace Model

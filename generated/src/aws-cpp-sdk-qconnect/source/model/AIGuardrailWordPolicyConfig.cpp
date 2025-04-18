@@ -25,15 +25,6 @@ AIGuardrailWordPolicyConfig::AIGuardrailWordPolicyConfig(JsonView jsonValue)
 
 AIGuardrailWordPolicyConfig& AIGuardrailWordPolicyConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("managedWordListsConfig"))
-  {
-    Aws::Utils::Array<JsonView> managedWordListsConfigJsonList = jsonValue.GetArray("managedWordListsConfig");
-    for(unsigned managedWordListsConfigIndex = 0; managedWordListsConfigIndex < managedWordListsConfigJsonList.GetLength(); ++managedWordListsConfigIndex)
-    {
-      m_managedWordListsConfig.push_back(managedWordListsConfigJsonList[managedWordListsConfigIndex].AsObject());
-    }
-    m_managedWordListsConfigHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("wordsConfig"))
   {
     Aws::Utils::Array<JsonView> wordsConfigJsonList = jsonValue.GetArray("wordsConfig");
@@ -43,23 +34,21 @@ AIGuardrailWordPolicyConfig& AIGuardrailWordPolicyConfig::operator =(JsonView js
     }
     m_wordsConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("managedWordListsConfig"))
+  {
+    Aws::Utils::Array<JsonView> managedWordListsConfigJsonList = jsonValue.GetArray("managedWordListsConfig");
+    for(unsigned managedWordListsConfigIndex = 0; managedWordListsConfigIndex < managedWordListsConfigJsonList.GetLength(); ++managedWordListsConfigIndex)
+    {
+      m_managedWordListsConfig.push_back(managedWordListsConfigJsonList[managedWordListsConfigIndex].AsObject());
+    }
+    m_managedWordListsConfigHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AIGuardrailWordPolicyConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_managedWordListsConfigHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> managedWordListsConfigJsonList(m_managedWordListsConfig.size());
-   for(unsigned managedWordListsConfigIndex = 0; managedWordListsConfigIndex < managedWordListsConfigJsonList.GetLength(); ++managedWordListsConfigIndex)
-   {
-     managedWordListsConfigJsonList[managedWordListsConfigIndex].AsObject(m_managedWordListsConfig[managedWordListsConfigIndex].Jsonize());
-   }
-   payload.WithArray("managedWordListsConfig", std::move(managedWordListsConfigJsonList));
-
-  }
 
   if(m_wordsConfigHasBeenSet)
   {
@@ -69,6 +58,17 @@ JsonValue AIGuardrailWordPolicyConfig::Jsonize() const
      wordsConfigJsonList[wordsConfigIndex].AsObject(m_wordsConfig[wordsConfigIndex].Jsonize());
    }
    payload.WithArray("wordsConfig", std::move(wordsConfigJsonList));
+
+  }
+
+  if(m_managedWordListsConfigHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> managedWordListsConfigJsonList(m_managedWordListsConfig.size());
+   for(unsigned managedWordListsConfigIndex = 0; managedWordListsConfigIndex < managedWordListsConfigJsonList.GetLength(); ++managedWordListsConfigIndex)
+   {
+     managedWordListsConfigJsonList[managedWordListsConfigIndex].AsObject(m_managedWordListsConfig[managedWordListsConfigIndex].Jsonize());
+   }
+   payload.WithArray("managedWordListsConfig", std::move(managedWordListsConfigJsonList));
 
   }
 

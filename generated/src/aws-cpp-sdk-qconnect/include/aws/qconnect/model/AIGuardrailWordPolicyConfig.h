@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qconnect/model/GuardrailManagedWordsConfig.h>
 #include <aws/qconnect/model/GuardrailWordConfig.h>
+#include <aws/qconnect/model/GuardrailManagedWordsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -42,20 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of managed words to configure for the AI Guardrail.</p>
-     */
-    inline const Aws::Vector<GuardrailManagedWordsConfig>& GetManagedWordListsConfig() const { return m_managedWordListsConfig; }
-    inline bool ManagedWordListsConfigHasBeenSet() const { return m_managedWordListsConfigHasBeenSet; }
-    template<typename ManagedWordListsConfigT = Aws::Vector<GuardrailManagedWordsConfig>>
-    void SetManagedWordListsConfig(ManagedWordListsConfigT&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig = std::forward<ManagedWordListsConfigT>(value); }
-    template<typename ManagedWordListsConfigT = Aws::Vector<GuardrailManagedWordsConfig>>
-    AIGuardrailWordPolicyConfig& WithManagedWordListsConfig(ManagedWordListsConfigT&& value) { SetManagedWordListsConfig(std::forward<ManagedWordListsConfigT>(value)); return *this;}
-    template<typename ManagedWordListsConfigT = GuardrailManagedWordsConfig>
-    AIGuardrailWordPolicyConfig& AddManagedWordListsConfig(ManagedWordListsConfigT&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig.emplace_back(std::forward<ManagedWordListsConfigT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of words to configure for the AI Guardrail.</p>
      */
     inline const Aws::Vector<GuardrailWordConfig>& GetWordsConfig() const { return m_wordsConfig; }
@@ -67,13 +53,27 @@ namespace Model
     template<typename WordsConfigT = GuardrailWordConfig>
     AIGuardrailWordPolicyConfig& AddWordsConfig(WordsConfigT&& value) { m_wordsConfigHasBeenSet = true; m_wordsConfig.emplace_back(std::forward<WordsConfigT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<GuardrailManagedWordsConfig> m_managedWordListsConfig;
-    bool m_managedWordListsConfigHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A list of managed words to configure for the AI Guardrail.</p>
+     */
+    inline const Aws::Vector<GuardrailManagedWordsConfig>& GetManagedWordListsConfig() const { return m_managedWordListsConfig; }
+    inline bool ManagedWordListsConfigHasBeenSet() const { return m_managedWordListsConfigHasBeenSet; }
+    template<typename ManagedWordListsConfigT = Aws::Vector<GuardrailManagedWordsConfig>>
+    void SetManagedWordListsConfig(ManagedWordListsConfigT&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig = std::forward<ManagedWordListsConfigT>(value); }
+    template<typename ManagedWordListsConfigT = Aws::Vector<GuardrailManagedWordsConfig>>
+    AIGuardrailWordPolicyConfig& WithManagedWordListsConfig(ManagedWordListsConfigT&& value) { SetManagedWordListsConfig(std::forward<ManagedWordListsConfigT>(value)); return *this;}
+    template<typename ManagedWordListsConfigT = GuardrailManagedWordsConfig>
+    AIGuardrailWordPolicyConfig& AddManagedWordListsConfig(ManagedWordListsConfigT&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig.emplace_back(std::forward<ManagedWordListsConfigT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<GuardrailWordConfig> m_wordsConfig;
     bool m_wordsConfigHasBeenSet = false;
+
+    Aws::Vector<GuardrailManagedWordsConfig> m_managedWordListsConfig;
+    bool m_managedWordListsConfigHasBeenSet = false;
   };
 
 } // namespace Model

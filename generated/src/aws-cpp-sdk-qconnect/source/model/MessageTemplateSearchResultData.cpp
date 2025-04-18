@@ -25,30 +25,15 @@ MessageTemplateSearchResultData::MessageTemplateSearchResultData(JsonView jsonVa
 
 MessageTemplateSearchResultData& MessageTemplateSearchResultData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("channelSubtype"))
+  if(jsonValue.ValueExists("messageTemplateArn"))
   {
-    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
-    m_channelSubtypeHasBeenSet = true;
+    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
+    m_messageTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdTime"))
+  if(jsonValue.ValueExists("messageTemplateId"))
   {
-    m_createdTime = jsonValue.GetString("createdTime");
-    m_createdTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("groupingConfiguration"))
-  {
-    m_groupingConfiguration = jsonValue.GetObject("groupingConfiguration");
-    m_groupingConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("isActive"))
-  {
-    m_isActive = jsonValue.GetBool("isActive");
-    m_isActiveHasBeenSet = true;
+    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
+    m_messageTemplateIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
@@ -60,35 +45,55 @@ MessageTemplateSearchResultData& MessageTemplateSearchResultData::operator =(Jso
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("language"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_language = jsonValue.GetString("language");
-    m_languageHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedBy"))
+  if(jsonValue.ValueExists("channelSubtype"))
   {
-    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-    m_lastModifiedByHasBeenSet = true;
+    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
+    m_channelSubtypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+    m_createdTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateArn"))
+  if(jsonValue.ValueExists("lastModifiedBy"))
   {
-    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
-    m_messageTemplateArnHasBeenSet = true;
+    m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
+    m_lastModifiedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateId"))
+  if(jsonValue.ValueExists("isActive"))
   {
-    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
-    m_messageTemplateIdHasBeenSet = true;
+    m_isActive = jsonValue.GetBool("isActive");
+    m_isActiveHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("versionNumber"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_versionNumber = jsonValue.GetInt64("versionNumber");
+    m_versionNumberHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("groupingConfiguration"))
+  {
+    m_groupingConfiguration = jsonValue.GetObject("groupingConfiguration");
+    m_groupingConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("language"))
+  {
+    m_language = jsonValue.GetString("language");
+    m_languageHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -99,11 +104,6 @@ MessageTemplateSearchResultData& MessageTemplateSearchResultData::operator =(Jso
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionNumber"))
-  {
-    m_versionNumber = jsonValue.GetInt64("versionNumber");
-    m_versionNumberHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -111,31 +111,15 @@ JsonValue MessageTemplateSearchResultData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_channelSubtypeHasBeenSet)
+  if(m_messageTemplateArnHasBeenSet)
   {
-   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
+   payload.WithString("messageTemplateArn", m_messageTemplateArn);
 
   }
 
-  if(m_groupingConfigurationHasBeenSet)
+  if(m_messageTemplateIdHasBeenSet)
   {
-   payload.WithObject("groupingConfiguration", m_groupingConfiguration.Jsonize());
-
-  }
-
-  if(m_isActiveHasBeenSet)
-  {
-   payload.WithBool("isActive", m_isActive);
+   payload.WithString("messageTemplateId", m_messageTemplateId);
 
   }
 
@@ -151,10 +135,25 @@ JsonValue MessageTemplateSearchResultData::Jsonize() const
 
   }
 
-  if(m_languageHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("language", m_language);
+   payload.WithString("name", m_name);
 
+  }
+
+  if(m_channelSubtypeHasBeenSet)
+  {
+   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastModifiedByHasBeenSet)
@@ -163,26 +162,33 @@ JsonValue MessageTemplateSearchResultData::Jsonize() const
 
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
+  if(m_isActiveHasBeenSet)
   {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_messageTemplateArnHasBeenSet)
-  {
-   payload.WithString("messageTemplateArn", m_messageTemplateArn);
+   payload.WithBool("isActive", m_isActive);
 
   }
 
-  if(m_messageTemplateIdHasBeenSet)
+  if(m_versionNumberHasBeenSet)
   {
-   payload.WithString("messageTemplateId", m_messageTemplateId);
+   payload.WithInt64("versionNumber", m_versionNumber);
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_groupingConfigurationHasBeenSet)
+  {
+   payload.WithObject("groupingConfiguration", m_groupingConfiguration.Jsonize());
+
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("language", m_language);
 
   }
 
@@ -194,12 +200,6 @@ JsonValue MessageTemplateSearchResultData::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_versionNumberHasBeenSet)
-  {
-   payload.WithInt64("versionNumber", m_versionNumber);
 
   }
 

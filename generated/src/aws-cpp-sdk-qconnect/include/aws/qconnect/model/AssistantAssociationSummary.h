@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/AssistantAssociationOutputData.h>
 #include <aws/qconnect/model/AssociationType.h>
+#include <aws/qconnect/model/AssistantAssociationOutputData.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -43,14 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
+     * <p>The identifier of the assistant association.</p>
      */
-    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
-    inline bool AssistantArnHasBeenSet() const { return m_assistantArnHasBeenSet; }
-    template<typename AssistantArnT = Aws::String>
-    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
-    template<typename AssistantArnT = Aws::String>
-    AssistantAssociationSummary& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
+    inline const Aws::String& GetAssistantAssociationId() const { return m_assistantAssociationId; }
+    inline bool AssistantAssociationIdHasBeenSet() const { return m_assistantAssociationIdHasBeenSet; }
+    template<typename AssistantAssociationIdT = Aws::String>
+    void SetAssistantAssociationId(AssistantAssociationIdT&& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = std::forward<AssistantAssociationIdT>(value); }
+    template<typename AssistantAssociationIdT = Aws::String>
+    AssistantAssociationSummary& WithAssistantAssociationId(AssistantAssociationIdT&& value) { SetAssistantAssociationId(std::forward<AssistantAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +67,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the assistant association.</p>
-     */
-    inline const Aws::String& GetAssistantAssociationId() const { return m_assistantAssociationId; }
-    inline bool AssistantAssociationIdHasBeenSet() const { return m_assistantAssociationIdHasBeenSet; }
-    template<typename AssistantAssociationIdT = Aws::String>
-    void SetAssistantAssociationId(AssistantAssociationIdT&& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = std::forward<AssistantAssociationIdT>(value); }
-    template<typename AssistantAssociationIdT = Aws::String>
-    AssistantAssociationSummary& WithAssistantAssociationId(AssistantAssociationIdT&& value) { SetAssistantAssociationId(std::forward<AssistantAssociationIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline const Aws::String& GetAssistantId() const { return m_assistantId; }
@@ -91,14 +79,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The association data.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
-    inline const AssistantAssociationOutputData& GetAssociationData() const { return m_associationData; }
-    inline bool AssociationDataHasBeenSet() const { return m_associationDataHasBeenSet; }
-    template<typename AssociationDataT = AssistantAssociationOutputData>
-    void SetAssociationData(AssociationDataT&& value) { m_associationDataHasBeenSet = true; m_associationData = std::forward<AssociationDataT>(value); }
-    template<typename AssociationDataT = AssistantAssociationOutputData>
-    AssistantAssociationSummary& WithAssociationData(AssociationDataT&& value) { SetAssociationData(std::forward<AssociationDataT>(value)); return *this;}
+    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
+    inline bool AssistantArnHasBeenSet() const { return m_assistantArnHasBeenSet; }
+    template<typename AssistantArnT = Aws::String>
+    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
+    template<typename AssistantArnT = Aws::String>
+    AssistantAssociationSummary& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,6 +97,18 @@ namespace Model
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
     inline void SetAssociationType(AssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
     inline AssistantAssociationSummary& WithAssociationType(AssociationType value) { SetAssociationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The association data.</p>
+     */
+    inline const AssistantAssociationOutputData& GetAssociationData() const { return m_associationData; }
+    inline bool AssociationDataHasBeenSet() const { return m_associationDataHasBeenSet; }
+    template<typename AssociationDataT = AssistantAssociationOutputData>
+    void SetAssociationData(AssociationDataT&& value) { m_associationDataHasBeenSet = true; m_associationData = std::forward<AssociationDataT>(value); }
+    template<typename AssociationDataT = AssistantAssociationOutputData>
+    AssistantAssociationSummary& WithAssociationData(AssociationDataT&& value) { SetAssociationData(std::forward<AssociationDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,23 +128,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_assistantArn;
-    bool m_assistantArnHasBeenSet = false;
+    Aws::String m_assistantAssociationId;
+    bool m_assistantAssociationIdHasBeenSet = false;
 
     Aws::String m_assistantAssociationArn;
     bool m_assistantAssociationArnHasBeenSet = false;
 
-    Aws::String m_assistantAssociationId;
-    bool m_assistantAssociationIdHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    AssistantAssociationOutputData m_associationData;
-    bool m_associationDataHasBeenSet = false;
+    Aws::String m_assistantArn;
+    bool m_assistantArnHasBeenSet = false;
 
     AssociationType m_associationType{AssociationType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
+
+    AssistantAssociationOutputData m_associationData;
+    bool m_associationDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

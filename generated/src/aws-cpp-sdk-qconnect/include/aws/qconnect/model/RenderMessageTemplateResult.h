@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/MessageTemplateAttachment.h>
 #include <utility>
@@ -37,15 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message template attachments.</p>
+     * <p>The content of the message template.</p>
      */
-    inline const Aws::Vector<MessageTemplateAttachment>& GetAttachments() const { return m_attachments; }
-    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
-    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
-    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
-    RenderMessageTemplateResult& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
-    template<typename AttachmentsT = MessageTemplateAttachment>
-    RenderMessageTemplateResult& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
+    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
+    template<typename ContentT = MessageTemplateContentProvider>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = MessageTemplateContentProvider>
+    RenderMessageTemplateResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,13 +61,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The content of the message template.</p>
+     * <p>The message template attachments.</p>
      */
-    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
-    template<typename ContentT = MessageTemplateContentProvider>
-    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
-    template<typename ContentT = MessageTemplateContentProvider>
-    RenderMessageTemplateResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    inline const Aws::Vector<MessageTemplateAttachment>& GetAttachments() const { return m_attachments; }
+    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
+    RenderMessageTemplateResult& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = MessageTemplateAttachment>
+    RenderMessageTemplateResult& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +82,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<MessageTemplateAttachment> m_attachments;
-    bool m_attachmentsHasBeenSet = false;
+    MessageTemplateContentProvider m_content;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesNotInterpolated;
     bool m_attributesNotInterpolatedHasBeenSet = false;
 
-    MessageTemplateContentProvider m_content;
-    bool m_contentHasBeenSet = false;
+    Aws::Vector<MessageTemplateAttachment> m_attachments;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -25,14 +25,20 @@ GetNextMessageResult::GetNextMessageResult(const Aws::AmazonWebServiceResult<Jso
 GetNextMessageResult& GetNextMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("conversationSessionData"))
+  if(jsonValue.ValueExists("type"))
   {
-    Aws::Utils::Array<JsonView> conversationSessionDataJsonList = jsonValue.GetArray("conversationSessionData");
-    for(unsigned conversationSessionDataIndex = 0; conversationSessionDataIndex < conversationSessionDataJsonList.GetLength(); ++conversationSessionDataIndex)
-    {
-      m_conversationSessionData.push_back(conversationSessionDataJsonList[conversationSessionDataIndex].AsObject());
-    }
-    m_conversationSessionDataHasBeenSet = true;
+    m_type = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("response"))
+  {
+    m_response = jsonValue.GetObject("response");
+    m_responseHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("requestMessageId"))
+  {
+    m_requestMessageId = jsonValue.GetString("requestMessageId");
+    m_requestMessageIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("conversationState"))
   {
@@ -44,20 +50,14 @@ GetNextMessageResult& GetNextMessageResult::operator =(const Aws::AmazonWebServi
     m_nextMessageToken = jsonValue.GetString("nextMessageToken");
     m_nextMessageTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("requestMessageId"))
+  if(jsonValue.ValueExists("conversationSessionData"))
   {
-    m_requestMessageId = jsonValue.GetString("requestMessageId");
-    m_requestMessageIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("response"))
-  {
-    m_response = jsonValue.GetObject("response");
-    m_responseHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    Aws::Utils::Array<JsonView> conversationSessionDataJsonList = jsonValue.GetArray("conversationSessionData");
+    for(unsigned conversationSessionDataIndex = 0; conversationSessionDataIndex < conversationSessionDataJsonList.GetLength(); ++conversationSessionDataIndex)
+    {
+      m_conversationSessionData.push_back(conversationSessionDataJsonList[conversationSessionDataIndex].AsObject());
+    }
+    m_conversationSessionDataHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

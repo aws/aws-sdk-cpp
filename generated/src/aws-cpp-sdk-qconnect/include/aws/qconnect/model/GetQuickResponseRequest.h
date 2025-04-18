@@ -34,6 +34,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the quick response.</p>
+     */
+    inline const Aws::String& GetQuickResponseId() const { return m_quickResponseId; }
+    inline bool QuickResponseIdHasBeenSet() const { return m_quickResponseIdHasBeenSet; }
+    template<typename QuickResponseIdT = Aws::String>
+    void SetQuickResponseId(QuickResponseIdT&& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = std::forward<QuickResponseIdT>(value); }
+    template<typename QuickResponseIdT = Aws::String>
+    GetQuickResponseRequest& WithQuickResponseId(QuickResponseIdT&& value) { SetQuickResponseId(std::forward<QuickResponseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
      * knowledge base.</p>
      */
@@ -44,25 +56,13 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     GetQuickResponseRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
-    inline const Aws::String& GetQuickResponseId() const { return m_quickResponseId; }
-    inline bool QuickResponseIdHasBeenSet() const { return m_quickResponseIdHasBeenSet; }
-    template<typename QuickResponseIdT = Aws::String>
-    void SetQuickResponseId(QuickResponseIdT&& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = std::forward<QuickResponseIdT>(value); }
-    template<typename QuickResponseIdT = Aws::String>
-    GetQuickResponseRequest& WithQuickResponseId(QuickResponseIdT&& value) { SetQuickResponseId(std::forward<QuickResponseIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_quickResponseId;
     bool m_quickResponseIdHasBeenSet = false;
+
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

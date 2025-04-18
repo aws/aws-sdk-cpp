@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/CitationSpan.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/RankingData.h>
-#include <aws/qconnect/model/TextData.h>
 #include <aws/qconnect/model/SourceContentType.h>
+#include <aws/qconnect/model/TextData.h>
+#include <aws/qconnect/model/RankingData.h>
+#include <aws/qconnect/model/CitationSpan.h>
 #include <utility>
 
 namespace Aws
@@ -43,19 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about where the text with a citation begins and ends in
-     * the generated output.</p>
-     */
-    inline const CitationSpan& GetCitationSpan() const { return m_citationSpan; }
-    inline bool CitationSpanHasBeenSet() const { return m_citationSpanHasBeenSet; }
-    template<typename CitationSpanT = CitationSpan>
-    void SetCitationSpan(CitationSpanT&& value) { m_citationSpanHasBeenSet = true; m_citationSpan = std::forward<CitationSpanT>(value); }
-    template<typename CitationSpanT = CitationSpan>
-    SourceContentDataDetails& WithCitationSpan(CitationSpanT&& value) { SetCitationSpan(std::forward<CitationSpanT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the source content.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -68,14 +55,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the source content ranking data.</p>
+     * <p>The type of the source content.</p>
      */
-    inline const RankingData& GetRankingData() const { return m_rankingData; }
-    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
-    template<typename RankingDataT = RankingData>
-    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
-    template<typename RankingDataT = RankingData>
-    SourceContentDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
+    inline SourceContentType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(SourceContentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SourceContentDataDetails& WithType(SourceContentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,29 +77,44 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the source content.</p>
+     * <p>Details about the source content ranking data.</p>
      */
-    inline SourceContentType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(SourceContentType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline SourceContentDataDetails& WithType(SourceContentType value) { SetType(value); return *this;}
+    inline const RankingData& GetRankingData() const { return m_rankingData; }
+    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
+    template<typename RankingDataT = RankingData>
+    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
+    template<typename RankingDataT = RankingData>
+    SourceContentDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about where the text with a citation begins and ends in
+     * the generated output.</p>
+     */
+    inline const CitationSpan& GetCitationSpan() const { return m_citationSpan; }
+    inline bool CitationSpanHasBeenSet() const { return m_citationSpanHasBeenSet; }
+    template<typename CitationSpanT = CitationSpan>
+    void SetCitationSpan(CitationSpanT&& value) { m_citationSpanHasBeenSet = true; m_citationSpan = std::forward<CitationSpanT>(value); }
+    template<typename CitationSpanT = CitationSpan>
+    SourceContentDataDetails& WithCitationSpan(CitationSpanT&& value) { SetCitationSpan(std::forward<CitationSpanT>(value)); return *this;}
     ///@}
   private:
-
-    CitationSpan m_citationSpan;
-    bool m_citationSpanHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    RankingData m_rankingData;
-    bool m_rankingDataHasBeenSet = false;
+    SourceContentType m_type{SourceContentType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     TextData m_textData;
     bool m_textDataHasBeenSet = false;
 
-    SourceContentType m_type{SourceContentType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    RankingData m_rankingData;
+    bool m_rankingDataHasBeenSet = false;
+
+    CitationSpan m_citationSpan;
+    bool m_citationSpanHasBeenSet = false;
   };
 
 } // namespace Model

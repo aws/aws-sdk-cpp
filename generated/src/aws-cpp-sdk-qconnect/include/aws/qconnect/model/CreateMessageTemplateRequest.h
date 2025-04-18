@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
-#include <aws/qconnect/model/ChannelSubtype.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
+#include <aws/qconnect/model/ChannelSubtype.h>
 #include <aws/qconnect/model/MessageTemplateAttributes.h>
 #include <aws/qconnect/model/GroupingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -40,28 +40,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The channel subtype this message template applies to.</p>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p>
      */
-    inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
-    inline bool ChannelSubtypeHasBeenSet() const { return m_channelSubtypeHasBeenSet; }
-    inline void SetChannelSubtype(ChannelSubtype value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
-    inline CreateMessageTemplateRequest& WithChannelSubtype(ChannelSubtype value) { SetChannelSubtype(value); return *this;}
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    CreateMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * <p>The name of the message template.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateMessageTemplateRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateMessageTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,21 +77,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that specifies the default values to use for variables in the
-     * message template. This object contains different categories of key-value pairs.
-     * Each key defines a variable or placeholder in the message template. The
-     * corresponding value defines the default value for that variable.</p>
-     */
-    inline const MessageTemplateAttributes& GetDefaultAttributes() const { return m_defaultAttributes; }
-    inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
-    template<typename DefaultAttributesT = MessageTemplateAttributes>
-    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
-    template<typename DefaultAttributesT = MessageTemplateAttributes>
-    CreateMessageTemplateRequest& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The description of the message template.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -104,26 +88,13 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
-    inline bool GroupingConfigurationHasBeenSet() const { return m_groupingConfigurationHasBeenSet; }
-    template<typename GroupingConfigurationT = GroupingConfiguration>
-    void SetGroupingConfiguration(GroupingConfigurationT&& value) { m_groupingConfigurationHasBeenSet = true; m_groupingConfiguration = std::forward<GroupingConfigurationT>(value); }
-    template<typename GroupingConfigurationT = GroupingConfiguration>
-    CreateMessageTemplateRequest& WithGroupingConfiguration(GroupingConfigurationT&& value) { SetGroupingConfiguration(std::forward<GroupingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
-     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
+     * <p>The channel subtype this message template applies to.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    CreateMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
+    inline bool ChannelSubtypeHasBeenSet() const { return m_channelSubtypeHasBeenSet; }
+    inline void SetChannelSubtype(ChannelSubtype value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
+    inline CreateMessageTemplateRequest& WithChannelSubtype(ChannelSubtype value) { SetChannelSubtype(value); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +115,43 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the message template.</p>
+     * <p>An object that specifies the default values to use for variables in the
+     * message template. This object contains different categories of key-value pairs.
+     * Each key defines a variable or placeholder in the message template. The
+     * corresponding value defines the default value for that variable.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateMessageTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const MessageTemplateAttributes& GetDefaultAttributes() const { return m_defaultAttributes; }
+    inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    CreateMessageTemplateRequest& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
+    inline bool GroupingConfigurationHasBeenSet() const { return m_groupingConfigurationHasBeenSet; }
+    template<typename GroupingConfigurationT = GroupingConfiguration>
+    void SetGroupingConfiguration(GroupingConfigurationT&& value) { m_groupingConfigurationHasBeenSet = true; m_groupingConfiguration = std::forward<GroupingConfigurationT>(value); }
+    template<typename GroupingConfigurationT = GroupingConfiguration>
+    CreateMessageTemplateRequest& WithGroupingConfiguration(GroupingConfigurationT&& value) { SetGroupingConfiguration(std::forward<GroupingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateMessageTemplateRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,32 +171,32 @@ namespace Model
     ///@}
   private:
 
-    ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
-    bool m_channelSubtypeHasBeenSet = false;
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     MessageTemplateContentProvider m_content;
     bool m_contentHasBeenSet = false;
 
-    MessageTemplateAttributes m_defaultAttributes;
-    bool m_defaultAttributesHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    GroupingConfiguration m_groupingConfiguration;
-    bool m_groupingConfigurationHasBeenSet = false;
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
+    bool m_channelSubtypeHasBeenSet = false;
 
     Aws::String m_language;
     bool m_languageHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    MessageTemplateAttributes m_defaultAttributes;
+    bool m_defaultAttributesHasBeenSet = false;
+
+    GroupingConfiguration m_groupingConfiguration;
+    bool m_groupingConfigurationHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

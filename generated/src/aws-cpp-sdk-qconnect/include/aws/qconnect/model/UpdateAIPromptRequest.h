@@ -7,8 +7,8 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/AIPromptTemplateConfiguration.h>
 #include <aws/qconnect/model/VisibilityStatus.h>
+#include <aws/qconnect/model/AIPromptTemplateConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -37,14 +37,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Prompt.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>..</p>
      */
-    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
-    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
-    template<typename AiPromptIdT = Aws::String>
-    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
-    template<typename AiPromptIdT = Aws::String>
-    UpdateAIPromptRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateAIPromptRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,30 +66,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>..</p>
+     * <p>The identifier of the Amazon Q in Connect AI Prompt.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateAIPromptRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
+    inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
+    template<typename AiPromptIdT = Aws::String>
+    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
+    template<typename AiPromptIdT = Aws::String>
+    UpdateAIPromptRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The description of the Amazon Q in Connect AI Prompt.</p>
+     * <p>The visibility status of the Amazon Q in Connect AI prompt.</p>
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateAIPromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
+    inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
+    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
+    inline UpdateAIPromptRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -102,32 +100,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The visibility status of the Amazon Q in Connect AI prompt.</p>
+     * <p>The description of the Amazon Q in Connect AI Prompt.</p>
      */
-    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
-    inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
-    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
-    inline UpdateAIPromptRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAIPromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_aiPromptId;
-    bool m_aiPromptIdHasBeenSet = false;
-
-    Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_assistantId;
+    bool m_assistantIdHasBeenSet = false;
+
+    Aws::String m_aiPromptId;
+    bool m_aiPromptIdHasBeenSet = false;
+
+    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
+    bool m_visibilityStatusHasBeenSet = false;
 
     AIPromptTemplateConfiguration m_templateConfiguration;
     bool m_templateConfigurationHasBeenSet = false;
 
-    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-    bool m_visibilityStatusHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

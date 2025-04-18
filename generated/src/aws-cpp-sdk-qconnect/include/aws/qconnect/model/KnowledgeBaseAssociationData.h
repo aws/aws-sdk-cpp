@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-     */
-    inline const Aws::String& GetKnowledgeBaseArn() const { return m_knowledgeBaseArn; }
-    inline bool KnowledgeBaseArnHasBeenSet() const { return m_knowledgeBaseArnHasBeenSet; }
-    template<typename KnowledgeBaseArnT = Aws::String>
-    void SetKnowledgeBaseArn(KnowledgeBaseArnT&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::forward<KnowledgeBaseArnT>(value); }
-    template<typename KnowledgeBaseArnT = Aws::String>
-    KnowledgeBaseAssociationData& WithKnowledgeBaseArn(KnowledgeBaseArnT&& value) { SetKnowledgeBaseArn(std::forward<KnowledgeBaseArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     KnowledgeBaseAssociationData& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_knowledgeBaseArn;
-    bool m_knowledgeBaseArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+     */
+    inline const Aws::String& GetKnowledgeBaseArn() const { return m_knowledgeBaseArn; }
+    inline bool KnowledgeBaseArnHasBeenSet() const { return m_knowledgeBaseArnHasBeenSet; }
+    template<typename KnowledgeBaseArnT = Aws::String>
+    void SetKnowledgeBaseArn(KnowledgeBaseArnT&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::forward<KnowledgeBaseArnT>(value); }
+    template<typename KnowledgeBaseArnT = Aws::String>
+    KnowledgeBaseAssociationData& WithKnowledgeBaseArn(KnowledgeBaseArnT&& value) { SetKnowledgeBaseArn(std::forward<KnowledgeBaseArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_knowledgeBaseArn;
+    bool m_knowledgeBaseArnHasBeenSet = false;
   };
 
 } // namespace Model

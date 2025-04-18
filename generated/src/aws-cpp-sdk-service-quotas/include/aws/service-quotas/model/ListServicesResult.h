@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of the Amazon Web Service names and service codes.</p>
+     * <p>The list of the Amazon Web Services service names and service codes.</p>
      */
     inline const Aws::Vector<ServiceInfo>& GetServices() const { return m_services; }
     template<typename ServicesT = Aws::Vector<ServiceInfo>>

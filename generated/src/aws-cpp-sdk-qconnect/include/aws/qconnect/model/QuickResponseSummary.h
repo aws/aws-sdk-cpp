@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/qconnect/model/QuickResponseStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -44,67 +44,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Connect contact channels this quick response applies to. The
-     * supported contact channel types include <code>Chat</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the quick response.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }
-    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    template<typename ChannelsT = Aws::Vector<Aws::String>>
-    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
-    template<typename ChannelsT = Aws::Vector<Aws::String>>
-    QuickResponseSummary& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
-    template<typename ChannelsT = Aws::String>
-    QuickResponseSummary& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
+    inline const Aws::String& GetQuickResponseArn() const { return m_quickResponseArn; }
+    inline bool QuickResponseArnHasBeenSet() const { return m_quickResponseArnHasBeenSet; }
+    template<typename QuickResponseArnT = Aws::String>
+    void SetQuickResponseArn(QuickResponseArnT&& value) { m_quickResponseArnHasBeenSet = true; m_quickResponseArn = std::forward<QuickResponseArnT>(value); }
+    template<typename QuickResponseArnT = Aws::String>
+    QuickResponseSummary& WithQuickResponseArn(QuickResponseArnT&& value) { SetQuickResponseArn(std::forward<QuickResponseArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The media type of the quick response content.</p> <ul> <li> <p>Use
-     * <code>application/x.quickresponse;format=plain</code> for quick response written
-     * in plain text.</p> </li> <li> <p>Use
-     * <code>application/x.quickresponse;format=markdown</code> for quick response
-     * written in richtext.</p> </li> </ul>
+     * <p>The identifier of the quick response.</p>
      */
-    inline const Aws::String& GetContentType() const { return m_contentType; }
-    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    template<typename ContentTypeT = Aws::String>
-    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
-    template<typename ContentTypeT = Aws::String>
-    QuickResponseSummary& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The timestamp when the quick response was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    QuickResponseSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the quick response.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    QuickResponseSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Whether the quick response is active.</p>
-     */
-    inline bool GetIsActive() const { return m_isActive; }
-    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
-    inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
-    inline QuickResponseSummary& WithIsActive(bool value) { SetIsActive(value); return *this;}
+    inline const Aws::String& GetQuickResponseId() const { return m_quickResponseId; }
+    inline bool QuickResponseIdHasBeenSet() const { return m_quickResponseIdHasBeenSet; }
+    template<typename QuickResponseIdT = Aws::String>
+    void SetQuickResponseId(QuickResponseIdT&& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = std::forward<QuickResponseIdT>(value); }
+    template<typename QuickResponseIdT = Aws::String>
+    QuickResponseSummary& WithQuickResponseId(QuickResponseIdT&& value) { SetQuickResponseId(std::forward<QuickResponseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,15 +92,52 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who last updated the quick
-     * response data.</p>
+     * <p>The name of the quick response.</p>
      */
-    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
-    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    template<typename LastModifiedByT = Aws::String>
-    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
-    template<typename LastModifiedByT = Aws::String>
-    QuickResponseSummary& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QuickResponseSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The media type of the quick response content.</p> <ul> <li> <p>Use
+     * <code>application/x.quickresponse;format=plain</code> for quick response written
+     * in plain text.</p> </li> <li> <p>Use
+     * <code>application/x.quickresponse;format=markdown</code> for quick response
+     * written in richtext.</p> </li> </ul>
+     */
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    QuickResponseSummary& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The resource status of the quick response.</p>
+     */
+    inline QuickResponseStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(QuickResponseStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline QuickResponseSummary& WithStatus(QuickResponseStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the quick response was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    QuickResponseSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,48 +154,52 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the quick response.</p>
+     * <p>The description of the quick response.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    QuickResponseSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    QuickResponseSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the quick response.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last updated the quick
+     * response data.</p>
      */
-    inline const Aws::String& GetQuickResponseArn() const { return m_quickResponseArn; }
-    inline bool QuickResponseArnHasBeenSet() const { return m_quickResponseArnHasBeenSet; }
-    template<typename QuickResponseArnT = Aws::String>
-    void SetQuickResponseArn(QuickResponseArnT&& value) { m_quickResponseArnHasBeenSet = true; m_quickResponseArn = std::forward<QuickResponseArnT>(value); }
-    template<typename QuickResponseArnT = Aws::String>
-    QuickResponseSummary& WithQuickResponseArn(QuickResponseArnT&& value) { SetQuickResponseArn(std::forward<QuickResponseArnT>(value)); return *this;}
+    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
+    template<typename LastModifiedByT = Aws::String>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = Aws::String>
+    QuickResponseSummary& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The identifier of the quick response.</p>
+     * <p>Whether the quick response is active.</p>
      */
-    inline const Aws::String& GetQuickResponseId() const { return m_quickResponseId; }
-    inline bool QuickResponseIdHasBeenSet() const { return m_quickResponseIdHasBeenSet; }
-    template<typename QuickResponseIdT = Aws::String>
-    void SetQuickResponseId(QuickResponseIdT&& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = std::forward<QuickResponseIdT>(value); }
-    template<typename QuickResponseIdT = Aws::String>
-    QuickResponseSummary& WithQuickResponseId(QuickResponseIdT&& value) { SetQuickResponseId(std::forward<QuickResponseIdT>(value)); return *this;}
+    inline bool GetIsActive() const { return m_isActive; }
+    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
+    inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
+    inline QuickResponseSummary& WithIsActive(bool value) { SetIsActive(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The resource status of the quick response.</p>
+     * <p>The Amazon Connect contact channels this quick response applies to. The
+     * supported contact channel types include <code>Chat</code>.</p>
      */
-    inline QuickResponseStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(QuickResponseStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline QuickResponseSummary& WithStatus(QuickResponseStatus value) { SetStatus(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+    template<typename ChannelsT = Aws::Vector<Aws::String>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Aws::String>>
+    QuickResponseSummary& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsT = Aws::String>
+    QuickResponseSummary& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,20 +219,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_channels;
-    bool m_channelsHasBeenSet = false;
+    Aws::String m_quickResponseArn;
+    bool m_quickResponseArnHasBeenSet = false;
 
-    Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdTime{};
-    bool m_createdTimeHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    bool m_isActive{false};
-    bool m_isActiveHasBeenSet = false;
+    Aws::String m_quickResponseId;
+    bool m_quickResponseIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseArn;
     bool m_knowledgeBaseArnHasBeenSet = false;
@@ -240,23 +231,32 @@ namespace Model
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
+
+    QuickResponseStatus m_status{QuickResponseStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_quickResponseArn;
-    bool m_quickResponseArnHasBeenSet = false;
+    Aws::String m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::String m_quickResponseId;
-    bool m_quickResponseIdHasBeenSet = false;
+    bool m_isActive{false};
+    bool m_isActiveHasBeenSet = false;
 
-    QuickResponseStatus m_status{QuickResponseStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Vector<Aws::String> m_channels;
+    bool m_channelsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

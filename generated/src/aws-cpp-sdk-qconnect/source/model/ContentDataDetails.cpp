@@ -25,15 +25,15 @@ ContentDataDetails::ContentDataDetails(JsonView jsonValue)
 
 ContentDataDetails& ContentDataDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("rankingData"))
-  {
-    m_rankingData = jsonValue.GetObject("rankingData");
-    m_rankingDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("textData"))
   {
     m_textData = jsonValue.GetObject("textData");
     m_textDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("rankingData"))
+  {
+    m_rankingData = jsonValue.GetObject("rankingData");
+    m_rankingDataHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ContentDataDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_rankingDataHasBeenSet)
-  {
-   payload.WithObject("rankingData", m_rankingData.Jsonize());
-
-  }
-
   if(m_textDataHasBeenSet)
   {
    payload.WithObject("textData", m_textData.Jsonize());
+
+  }
+
+  if(m_rankingDataHasBeenSet)
+  {
+   payload.WithObject("rankingData", m_rankingData.Jsonize());
 
   }
 

@@ -35,19 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot
-     * contain the ARN.</p>
-     */
-    inline const Aws::String& GetContentId() const { return m_contentId; }
-    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
-    template<typename ContentIdT = Aws::String>
-    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
-    template<typename ContentIdT = Aws::String>
-    UpdateContentRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
      * type knowledge base. Can be either the ID or the ARN</p>
      */
@@ -61,46 +48,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A key/value map to store attributes without affecting tagging or
-     * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q in Connect, you can store an external version identifier as
-     * metadata to utilize for determining drift.</p>
+     * <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot
+     * contain the ARN.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-    UpdateContentRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
-    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
-    UpdateContentRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
-      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
-    }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The URI for the article. If the knowledge base has a templateUri, setting
-     * this argument overrides it for this piece of content. To remove an existing
-     * <code>overrideLinkOurUri</code>, exclude this argument and set
-     * <code>removeOverrideLinkOutUri</code> to true.</p>
-     */
-    inline const Aws::String& GetOverrideLinkOutUri() const { return m_overrideLinkOutUri; }
-    inline bool OverrideLinkOutUriHasBeenSet() const { return m_overrideLinkOutUriHasBeenSet; }
-    template<typename OverrideLinkOutUriT = Aws::String>
-    void SetOverrideLinkOutUri(OverrideLinkOutUriT&& value) { m_overrideLinkOutUriHasBeenSet = true; m_overrideLinkOutUri = std::forward<OverrideLinkOutUriT>(value); }
-    template<typename OverrideLinkOutUriT = Aws::String>
-    UpdateContentRequest& WithOverrideLinkOutUri(OverrideLinkOutUriT&& value) { SetOverrideLinkOutUri(std::forward<OverrideLinkOutUriT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
-     */
-    inline bool GetRemoveOverrideLinkOutUri() const { return m_removeOverrideLinkOutUri; }
-    inline bool RemoveOverrideLinkOutUriHasBeenSet() const { return m_removeOverrideLinkOutUriHasBeenSet; }
-    inline void SetRemoveOverrideLinkOutUri(bool value) { m_removeOverrideLinkOutUriHasBeenSet = true; m_removeOverrideLinkOutUri = value; }
-    inline UpdateContentRequest& WithRemoveOverrideLinkOutUri(bool value) { SetRemoveOverrideLinkOutUri(value); return *this;}
+    inline const Aws::String& GetContentId() const { return m_contentId; }
+    inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
+    template<typename ContentIdT = Aws::String>
+    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
+    template<typename ContentIdT = Aws::String>
+    UpdateContentRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,6 +90,50 @@ namespace Model
 
     ///@{
     /**
+     * <p>The URI for the article. If the knowledge base has a templateUri, setting
+     * this argument overrides it for this piece of content. To remove an existing
+     * <code>overrideLinkOurUri</code>, exclude this argument and set
+     * <code>removeOverrideLinkOutUri</code> to true.</p>
+     */
+    inline const Aws::String& GetOverrideLinkOutUri() const { return m_overrideLinkOutUri; }
+    inline bool OverrideLinkOutUriHasBeenSet() const { return m_overrideLinkOutUriHasBeenSet; }
+    template<typename OverrideLinkOutUriT = Aws::String>
+    void SetOverrideLinkOutUri(OverrideLinkOutUriT&& value) { m_overrideLinkOutUriHasBeenSet = true; m_overrideLinkOutUri = std::forward<OverrideLinkOutUriT>(value); }
+    template<typename OverrideLinkOutUriT = Aws::String>
+    UpdateContentRequest& WithOverrideLinkOutUri(OverrideLinkOutUriT&& value) { SetOverrideLinkOutUri(std::forward<OverrideLinkOutUriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
+     */
+    inline bool GetRemoveOverrideLinkOutUri() const { return m_removeOverrideLinkOutUri; }
+    inline bool RemoveOverrideLinkOutUriHasBeenSet() const { return m_removeOverrideLinkOutUriHasBeenSet; }
+    inline void SetRemoveOverrideLinkOutUri(bool value) { m_removeOverrideLinkOutUriHasBeenSet = true; m_removeOverrideLinkOutUri = value; }
+    inline UpdateContentRequest& WithRemoveOverrideLinkOutUri(bool value) { SetRemoveOverrideLinkOutUri(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A key/value map to store attributes without affecting tagging or
+     * recommendations. For example, when synchronizing data between an external system
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    UpdateContentRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    UpdateContentRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
      * <p>A pointer to the uploaded asset. This value is returned by <a
      * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
      * </p>
@@ -147,14 +147,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_contentId;
-    bool m_contentIdHasBeenSet = false;
-
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet = false;
+    Aws::String m_contentId;
+    bool m_contentIdHasBeenSet = false;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet = false;
+
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_overrideLinkOutUri;
     bool m_overrideLinkOutUriHasBeenSet = false;
@@ -162,11 +165,8 @@ namespace Model
     bool m_removeOverrideLinkOutUri{false};
     bool m_removeOverrideLinkOutUriHasBeenSet = false;
 
-    Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet = false;
-
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet = false;

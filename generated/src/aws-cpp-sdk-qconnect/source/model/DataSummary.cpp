@@ -26,15 +26,15 @@ DataSummary::DataSummary(JsonView jsonValue)
 
 DataSummary& DataSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("details"))
-  {
-    m_details = Aws::MakeShared<DataDetails>("DataSummary", jsonValue.GetObject("details"));
-    m_detailsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("reference"))
   {
     m_reference = jsonValue.GetObject("reference");
     m_referenceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("details"))
+  {
+    m_details = Aws::MakeShared<DataDetails>("DataSummary", jsonValue.GetObject("details"));
+    m_detailsHasBeenSet = true;
   }
   return *this;
 }
@@ -43,15 +43,15 @@ JsonValue DataSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("details", m_details->Jsonize());
-
-  }
-
   if(m_referenceHasBeenSet)
   {
    payload.WithObject("reference", m_reference.Jsonize());
+
+  }
+
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithObject("details", m_details->Jsonize());
 
   }
 

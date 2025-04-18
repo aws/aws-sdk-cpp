@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the attachment file.</p>
-     */
-    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
-    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    template<typename AttachmentIdT = Aws::String>
-    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
-    template<typename AttachmentIdT = Aws::String>
-    DeleteMessageTemplateAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -69,16 +57,28 @@ namespace Model
     template<typename MessageTemplateIdT = Aws::String>
     DeleteMessageTemplateAttachmentRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier of the attachment file.</p>
+     */
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    DeleteMessageTemplateAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
+
+    Aws::String m_attachmentId;
+    bool m_attachmentIdHasBeenSet = false;
   };
 
 } // namespace Model

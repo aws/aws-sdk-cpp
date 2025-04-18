@@ -25,6 +25,11 @@ GuardrailContentFilterConfig::GuardrailContentFilterConfig(JsonView jsonValue)
 
 GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("inputStrength"))
   {
     m_inputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("inputStrength"));
@@ -35,17 +40,17 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
     m_outputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("outputStrength"));
     m_outputStrengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue GuardrailContentFilterConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
+  }
 
   if(m_inputStrengthHasBeenSet)
   {
@@ -55,11 +60,6 @@ JsonValue GuardrailContentFilterConfig::Jsonize() const
   if(m_outputStrengthHasBeenSet)
   {
    payload.WithString("outputStrength", GuardrailFilterStrengthMapper::GetNameForGuardrailFilterStrength(m_outputStrength));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
   }
 
   return payload;

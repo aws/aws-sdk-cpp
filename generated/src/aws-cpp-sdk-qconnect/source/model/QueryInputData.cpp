@@ -25,15 +25,15 @@ QueryInputData::QueryInputData(JsonView jsonValue)
 
 QueryInputData& QueryInputData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("intentInputData"))
-  {
-    m_intentInputData = jsonValue.GetObject("intentInputData");
-    m_intentInputDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("queryTextInputData"))
   {
     m_queryTextInputData = jsonValue.GetObject("queryTextInputData");
     m_queryTextInputDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("intentInputData"))
+  {
+    m_intentInputData = jsonValue.GetObject("intentInputData");
+    m_intentInputDataHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue QueryInputData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_intentInputDataHasBeenSet)
-  {
-   payload.WithObject("intentInputData", m_intentInputData.Jsonize());
-
-  }
-
   if(m_queryTextInputDataHasBeenSet)
   {
    payload.WithObject("queryTextInputData", m_queryTextInputData.Jsonize());
+
+  }
+
+  if(m_intentInputDataHasBeenSet)
+  {
+   payload.WithObject("intentInputData", m_intentInputData.Jsonize());
 
   }
 

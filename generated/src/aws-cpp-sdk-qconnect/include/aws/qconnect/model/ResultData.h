@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/DataSummary.h>
-#include <aws/qconnect/model/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/Document.h>
+#include <aws/qconnect/model/DataSummary.h>
 #include <aws/qconnect/model/QueryResultType.h>
 #include <utility>
 
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> Summary of the recommended content.</p>
+     * <p>The identifier of the result data.</p>
      */
-    inline const DataSummary& GetData() const { return m_data; }
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    template<typename DataT = DataSummary>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = DataSummary>
-    ResultData& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    inline const Aws::String& GetResultId() const { return m_resultId; }
+    inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    ResultData& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +76,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the result data.</p>
+     * <p> Summary of the recommended content.</p>
      */
-    inline const Aws::String& GetResultId() const { return m_resultId; }
-    inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-    template<typename ResultIdT = Aws::String>
-    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
-    template<typename ResultIdT = Aws::String>
-    ResultData& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
+    inline const DataSummary& GetData() const { return m_data; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+    template<typename DataT = DataSummary>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = DataSummary>
+    ResultData& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,8 +97,8 @@ namespace Model
     ///@}
   private:
 
-    DataSummary m_data;
-    bool m_dataHasBeenSet = false;
+    Aws::String m_resultId;
+    bool m_resultIdHasBeenSet = false;
 
     Document m_document;
     bool m_documentHasBeenSet = false;
@@ -106,8 +106,8 @@ namespace Model
     double m_relevanceScore{0.0};
     bool m_relevanceScoreHasBeenSet = false;
 
-    Aws::String m_resultId;
-    bool m_resultIdHasBeenSet = false;
+    DataSummary m_data;
+    bool m_dataHasBeenSet = false;
 
     QueryResultType m_type{QueryResultType::NOT_SET};
     bool m_typeHasBeenSet = false;

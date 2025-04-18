@@ -25,30 +25,40 @@ KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue)
 
 KnowledgeBaseSummary& KnowledgeBaseSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("knowledgeBaseId"))
   {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseType"))
   {
     m_knowledgeBaseType = KnowledgeBaseTypeMapper::GetKnowledgeBaseTypeForName(jsonValue.GetString("knowledgeBaseType"));
     m_knowledgeBaseTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_status = KnowledgeBaseStatusMapper::GetKnowledgeBaseStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sourceConfiguration"))
+  {
+    m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
+    m_sourceConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vectorIngestionConfiguration"))
+  {
+    m_vectorIngestionConfiguration = jsonValue.GetObject("vectorIngestionConfiguration");
+    m_vectorIngestionConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("renderingConfiguration"))
   {
@@ -60,15 +70,10 @@ KnowledgeBaseSummary& KnowledgeBaseSummary::operator =(JsonView jsonValue)
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceConfiguration"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
-    m_sourceConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = KnowledgeBaseStatusMapper::GetKnowledgeBaseStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -79,11 +84,6 @@ KnowledgeBaseSummary& KnowledgeBaseSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorIngestionConfiguration"))
-  {
-    m_vectorIngestionConfiguration = jsonValue.GetObject("vectorIngestionConfiguration");
-    m_vectorIngestionConfigurationHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -91,9 +91,9 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
+  if(m_knowledgeBaseIdHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 
@@ -103,9 +103,9 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
 
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+   payload.WithString("name", m_name);
 
   }
 
@@ -114,9 +114,20 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
    payload.WithString("knowledgeBaseType", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_knowledgeBaseType));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("status", KnowledgeBaseStatusMapper::GetNameForKnowledgeBaseStatus(m_status));
+  }
+
+  if(m_sourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+
+  }
+
+  if(m_vectorIngestionConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
 
   }
 
@@ -132,15 +143,10 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
 
   }
 
-  if(m_sourceConfigurationHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+   payload.WithString("description", m_description);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", KnowledgeBaseStatusMapper::GetNameForKnowledgeBaseStatus(m_status));
   }
 
   if(m_tagsHasBeenSet)
@@ -151,12 +157,6 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_vectorIngestionConfigurationHasBeenSet)
-  {
-   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
 
   }
 

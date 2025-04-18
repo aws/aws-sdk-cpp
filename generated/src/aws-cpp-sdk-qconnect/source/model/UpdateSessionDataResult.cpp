@@ -25,20 +25,6 @@ UpdateSessionDataResult::UpdateSessionDataResult(const Aws::AmazonWebServiceResu
 UpdateSessionDataResult& UpdateSessionDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("data"))
-  {
-    Aws::Utils::Array<JsonView> dataJsonList = jsonValue.GetArray("data");
-    for(unsigned dataIndex = 0; dataIndex < dataJsonList.GetLength(); ++dataIndex)
-    {
-      m_data.push_back(dataJsonList[dataIndex].AsObject());
-    }
-    m_dataHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("namespace"))
-  {
-    m_namespace = SessionDataNamespaceMapper::GetSessionDataNamespaceForName(jsonValue.GetString("namespace"));
-    m_namespaceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
@@ -48,6 +34,20 @@ UpdateSessionDataResult& UpdateSessionDataResult::operator =(const Aws::AmazonWe
   {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("namespace"))
+  {
+    m_namespace = SessionDataNamespaceMapper::GetSessionDataNamespaceForName(jsonValue.GetString("namespace"));
+    m_namespaceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("data"))
+  {
+    Aws::Utils::Array<JsonView> dataJsonList = jsonValue.GetArray("data");
+    for(unsigned dataIndex = 0; dataIndex < dataJsonList.GetLength(); ++dataIndex)
+    {
+      m_data.push_back(dataJsonList[dataIndex].AsObject());
+    }
+    m_dataHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -243,7 +243,9 @@ namespace Model
      * <dt>al2-ami-sagemaker-inference-gpu-3-1</dt> <dd> <ul> <li> <p>Accelerator:
      * GPU</p> </li> <li> <p>NVIDIA driver version: 550</p> </li> <li> <p>CUDA version:
      * 12.4</p> </li> <li> <p>NVIDIA Container Toolkit with disabled CUDA-compat
-     * mounting</p> </li> </ul> </dd> </dl>
+     * mounting</p> </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-neuron-2</dt>
+     * <dd> <ul> <li> <p>Accelerator: Inferentia2 and Trainium</p> </li> <li> <p>Neuron
+     * driver version: 2.19</p> </li> </ul> </dd> </dl>
      */
     inline ProductionVariantInferenceAmiVersion GetInferenceAmiVersion() const { return m_inferenceAmiVersion; }
     inline bool InferenceAmiVersionHasBeenSet() const { return m_inferenceAmiVersionHasBeenSet; }

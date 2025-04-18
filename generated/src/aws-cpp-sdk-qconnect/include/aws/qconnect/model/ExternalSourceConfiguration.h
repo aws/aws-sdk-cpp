@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/Configuration.h>
 #include <aws/qconnect/model/ExternalSource.h>
+#include <aws/qconnect/model/Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the external data source.</p>
+     */
+    inline ExternalSource GetSource() const { return m_source; }
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+    inline void SetSource(ExternalSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ExternalSourceConfiguration& WithSource(ExternalSource value) { SetSource(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration information of the external data source.</p>
      */
     inline const Configuration& GetConfiguration() const { return m_configuration; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename ConfigurationT = Configuration>
     ExternalSourceConfiguration& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the external data source.</p>
-     */
-    inline ExternalSource GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(ExternalSource value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline ExternalSourceConfiguration& WithSource(ExternalSource value) { SetSource(value); return *this;}
-    ///@}
   private:
-
-    Configuration m_configuration;
-    bool m_configurationHasBeenSet = false;
 
     ExternalSource m_source{ExternalSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
+
+    Configuration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

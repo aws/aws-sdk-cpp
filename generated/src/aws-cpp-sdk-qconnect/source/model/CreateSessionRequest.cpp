@@ -16,26 +16,9 @@ Aws::String CreateSessionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_aiAgentConfigurationHasBeenSet)
-  {
-   JsonValue aiAgentConfigurationJsonMap;
-   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
-   {
-     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
-   }
-   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
 
   }
 
@@ -45,9 +28,9 @@ Aws::String CreateSessionRequest::SerializePayload() const
 
   }
 
-  if(m_tagFilterHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("tagFilter", m_tagFilter.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 
@@ -59,6 +42,23 @@ Aws::String CreateSessionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_tagFilterHasBeenSet)
+  {
+   payload.WithObject("tagFilter", m_tagFilter.Jsonize());
+
+  }
+
+  if(m_aiAgentConfigurationHasBeenSet)
+  {
+   JsonValue aiAgentConfigurationJsonMap;
+   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
+   {
+     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
 
   }
 

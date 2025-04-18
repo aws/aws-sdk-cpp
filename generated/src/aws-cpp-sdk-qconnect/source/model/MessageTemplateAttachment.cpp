@@ -25,11 +25,6 @@ MessageTemplateAttachment::MessageTemplateAttachment(JsonView jsonValue)
 
 MessageTemplateAttachment& MessageTemplateAttachment::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("attachmentId"))
-  {
-    m_attachmentId = jsonValue.GetString("attachmentId");
-    m_attachmentIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("contentDisposition"))
   {
     m_contentDisposition = ContentDispositionMapper::GetContentDispositionForName(jsonValue.GetString("contentDisposition"));
@@ -55,18 +50,17 @@ MessageTemplateAttachment& MessageTemplateAttachment::operator =(JsonView jsonVa
     m_urlExpiry = jsonValue.GetString("urlExpiry");
     m_urlExpiryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("attachmentId"))
+  {
+    m_attachmentId = jsonValue.GetString("attachmentId");
+    m_attachmentIdHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue MessageTemplateAttachment::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_attachmentIdHasBeenSet)
-  {
-   payload.WithString("attachmentId", m_attachmentId);
-
-  }
 
   if(m_contentDispositionHasBeenSet)
   {
@@ -93,6 +87,12 @@ JsonValue MessageTemplateAttachment::Jsonize() const
   if(m_urlExpiryHasBeenSet)
   {
    payload.WithString("urlExpiry", m_urlExpiry.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_attachmentIdHasBeenSet)
+  {
+   payload.WithString("attachmentId", m_attachmentId);
+
   }
 
   return payload;

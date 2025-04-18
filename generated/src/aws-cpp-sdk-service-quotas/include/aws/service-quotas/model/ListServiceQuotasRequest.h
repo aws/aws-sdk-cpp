@@ -99,7 +99,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies at which level of granularity that the quota value is applied.</p>
+     * <p>Filters the response to return applied quota values for the
+     * <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels.
+     * <code>ACCOUNT</code> is the default.</p>
      */
     inline AppliedLevelEnum GetQuotaAppliedAtLevel() const { return m_quotaAppliedAtLevel; }
     inline bool QuotaAppliedAtLevelHasBeenSet() const { return m_quotaAppliedAtLevelHasBeenSet; }

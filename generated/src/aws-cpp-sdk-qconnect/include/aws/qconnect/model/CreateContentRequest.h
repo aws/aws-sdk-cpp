@@ -36,22 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateContentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
      * type knowledge base. Can be either the ID or the ARN. URLs cannot contain the
      * ARN.</p>
@@ -62,6 +46,47 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     CreateContentRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the content. Each piece of content in a knowledge base must have
+     * a unique name. You can retrieve a piece of content using only its knowledge base
+     * and its name with the <a
+     * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_SearchContent.html">SearchContent</a>
+     * API.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateContentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The title of the content. If not set, the title is equal to the name.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    CreateContentRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The URI you want to use for the article. If the knowledge base has a
+     * templateUri, setting this argument overrides it for this piece of content.</p>
+     */
+    inline const Aws::String& GetOverrideLinkOutUri() const { return m_overrideLinkOutUri; }
+    inline bool OverrideLinkOutUriHasBeenSet() const { return m_overrideLinkOutUriHasBeenSet; }
+    template<typename OverrideLinkOutUriT = Aws::String>
+    void SetOverrideLinkOutUri(OverrideLinkOutUriT&& value) { m_overrideLinkOutUriHasBeenSet = true; m_overrideLinkOutUri = std::forward<OverrideLinkOutUriT>(value); }
+    template<typename OverrideLinkOutUriT = Aws::String>
+    CreateContentRequest& WithOverrideLinkOutUri(OverrideLinkOutUriT&& value) { SetOverrideLinkOutUri(std::forward<OverrideLinkOutUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,31 +110,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the content. Each piece of content in a knowledge base must have
-     * a unique name. You can retrieve a piece of content using only its knowledge base
-     * and its name with the <a
-     * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_SearchContent.html">SearchContent</a>
-     * API.</p>
+     * <p>A pointer to the uploaded asset. This value is returned by <a
+     * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateContentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    CreateContentRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The URI you want to use for the article. If the knowledge base has a
-     * templateUri, setting this argument overrides it for this piece of content.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetOverrideLinkOutUri() const { return m_overrideLinkOutUri; }
-    inline bool OverrideLinkOutUriHasBeenSet() const { return m_overrideLinkOutUriHasBeenSet; }
-    template<typename OverrideLinkOutUriT = Aws::String>
-    void SetOverrideLinkOutUri(OverrideLinkOutUriT&& value) { m_overrideLinkOutUriHasBeenSet = true; m_overrideLinkOutUri = std::forward<OverrideLinkOutUriT>(value); }
-    template<typename OverrideLinkOutUriT = Aws::String>
-    CreateContentRequest& WithOverrideLinkOutUri(OverrideLinkOutUriT&& value) { SetOverrideLinkOutUri(std::forward<OverrideLinkOutUriT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateContentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,56 +152,31 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The title of the content. If not set, the title is equal to the name.</p>
-     */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    CreateContentRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A pointer to the uploaded asset. This value is returned by <a
-     * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-     */
-    inline const Aws::String& GetUploadId() const { return m_uploadId; }
-    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
-    template<typename UploadIdT = Aws::String>
-    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
-    template<typename UploadIdT = Aws::String>
-    CreateContentRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
-
-    Aws::String m_overrideLinkOutUri;
-    bool m_overrideLinkOutUriHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
+    Aws::String m_overrideLinkOutUri;
+    bool m_overrideLinkOutUriHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

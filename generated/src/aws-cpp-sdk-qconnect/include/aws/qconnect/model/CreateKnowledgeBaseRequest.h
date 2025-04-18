@@ -8,11 +8,11 @@
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/KnowledgeBaseType.h>
-#include <aws/qconnect/model/RenderingConfiguration.h>
-#include <aws/qconnect/model/ServerSideEncryptionConfiguration.h>
 #include <aws/qconnect/model/SourceConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/RenderingConfiguration.h>
 #include <aws/qconnect/model/VectorIngestionConfiguration.h>
+#include <aws/qconnect/model/ServerSideEncryptionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -57,14 +57,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description.</p>
+     * <p>The name of the knowledge base.</p>
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateKnowledgeBaseRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateKnowledgeBaseRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +81,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the knowledge base.</p>
+     * <p>The source of the knowledge base content. Only set this argument for EXTERNAL
+     * or Managed knowledge bases.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateKnowledgeBaseRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const SourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+    template<typename SourceConfigurationT = SourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SourceConfiguration>
+    CreateKnowledgeBaseRequest& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,6 +102,18 @@ namespace Model
     void SetRenderingConfiguration(RenderingConfigurationT&& value) { m_renderingConfigurationHasBeenSet = true; m_renderingConfiguration = std::forward<RenderingConfigurationT>(value); }
     template<typename RenderingConfigurationT = RenderingConfiguration>
     CreateKnowledgeBaseRequest& WithRenderingConfiguration(RenderingConfigurationT&& value) { SetRenderingConfiguration(std::forward<RenderingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about how to ingest the documents in a data source.</p>
+     */
+    inline const VectorIngestionConfiguration& GetVectorIngestionConfiguration() const { return m_vectorIngestionConfiguration; }
+    inline bool VectorIngestionConfigurationHasBeenSet() const { return m_vectorIngestionConfigurationHasBeenSet; }
+    template<typename VectorIngestionConfigurationT = VectorIngestionConfiguration>
+    void SetVectorIngestionConfiguration(VectorIngestionConfigurationT&& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = std::forward<VectorIngestionConfigurationT>(value); }
+    template<typename VectorIngestionConfigurationT = VectorIngestionConfiguration>
+    CreateKnowledgeBaseRequest& WithVectorIngestionConfiguration(VectorIngestionConfigurationT&& value) { SetVectorIngestionConfiguration(std::forward<VectorIngestionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,15 +138,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source of the knowledge base content. Only set this argument for EXTERNAL
-     * or Managed knowledge bases.</p>
+     * <p>The description.</p>
      */
-    inline const SourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
-    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    template<typename SourceConfigurationT = SourceConfiguration>
-    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
-    template<typename SourceConfigurationT = SourceConfiguration>
-    CreateKnowledgeBaseRequest& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateKnowledgeBaseRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,46 +163,34 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about how to ingest the documents in a data source.</p>
-     */
-    inline const VectorIngestionConfiguration& GetVectorIngestionConfiguration() const { return m_vectorIngestionConfiguration; }
-    inline bool VectorIngestionConfigurationHasBeenSet() const { return m_vectorIngestionConfigurationHasBeenSet; }
-    template<typename VectorIngestionConfigurationT = VectorIngestionConfiguration>
-    void SetVectorIngestionConfiguration(VectorIngestionConfigurationT&& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = std::forward<VectorIngestionConfigurationT>(value); }
-    template<typename VectorIngestionConfigurationT = VectorIngestionConfiguration>
-    CreateKnowledgeBaseRequest& WithVectorIngestionConfiguration(VectorIngestionConfigurationT&& value) { SetVectorIngestionConfiguration(std::forward<VectorIngestionConfigurationT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     KnowledgeBaseType m_knowledgeBaseType{KnowledgeBaseType::NOT_SET};
     bool m_knowledgeBaseTypeHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    SourceConfiguration m_sourceConfiguration;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     RenderingConfiguration m_renderingConfiguration;
     bool m_renderingConfigurationHasBeenSet = false;
 
+    VectorIngestionConfiguration m_vectorIngestionConfiguration;
+    bool m_vectorIngestionConfigurationHasBeenSet = false;
+
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
-    SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    VectorIngestionConfiguration m_vectorIngestionConfiguration;
-    bool m_vectorIngestionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

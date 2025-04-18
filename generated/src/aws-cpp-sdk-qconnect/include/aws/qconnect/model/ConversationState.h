@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/ConversationStatusReason.h>
 #include <aws/qconnect/model/ConversationStatus.h>
+#include <aws/qconnect/model/ConversationStatusReason.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reason of the conversation state.</p>
-     */
-    inline ConversationStatusReason GetReason() const { return m_reason; }
-    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(ConversationStatusReason value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline ConversationState& WithReason(ConversationStatusReason value) { SetReason(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of the conversation state.</p>
      */
     inline ConversationStatus GetStatus() const { return m_status; }
@@ -57,13 +47,23 @@ namespace Model
     inline void SetStatus(ConversationStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline ConversationState& WithStatus(ConversationStatus value) { SetStatus(value); return *this;}
     ///@}
-  private:
 
-    ConversationStatusReason m_reason{ConversationStatusReason::NOT_SET};
-    bool m_reasonHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The reason of the conversation state.</p>
+     */
+    inline ConversationStatusReason GetReason() const { return m_reason; }
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+    inline void SetReason(ConversationStatusReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ConversationState& WithReason(ConversationStatusReason value) { SetReason(value); return *this;}
+    ///@}
+  private:
 
     ConversationStatus m_status{ConversationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    ConversationStatusReason m_reason{ConversationStatusReason::NOT_SET};
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

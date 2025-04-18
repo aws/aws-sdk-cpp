@@ -128,7 +128,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The state of the quota increase request.</p>
+     * <p>The state of the quota increase request.</p> <ul> <li> <p>
+     * <code>PENDING</code>: The quota increase request is under review by Amazon Web
+     * Services. </p> </li> <li> <p> <code>CASE_OPENED</code>: Service Quotas opened a
+     * support case to process the quota increase request. Follow-up on the support
+     * case for more information.</p> </li> <li> <p> <code>APPROVED</code>: The quota
+     * increase request is approved. </p> </li> <li> <p> <code>DENIED</code>: The quota
+     * increase request can't be approved by Service Quotas. Contact Amazon Web
+     * Services Support for more details.</p> </li> <li> <p> <code>NOT APPROVED</code>:
+     * The quota increase request can't be approved by Service Quotas. Contact Amazon
+     * Web Services Support for more details.</p> </li> <li> <p>
+     * <code>CASE_CLOSED</code>: The support case associated with this quota increase
+     * request was closed. Check the support case correspondence for the outcome of
+     * your quota request.</p> </li> <li> <p> <code>INVALID_REQUEST</code>: Service
+     * Quotas couldn't process your resource-level quota increase request because the
+     * Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is
+     * invalid.</p> </li> </ul>
      */
     inline RequestStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -209,8 +224,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies at which level within the Amazon Web Services account the quota
-     * request applies to.</p>
+     * <p>Filters the response to return quota requests for the <code>ACCOUNT</code>,
+     * <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the
+     * default.</p>
      */
     inline AppliedLevelEnum GetQuotaRequestedAtLevel() const { return m_quotaRequestedAtLevel; }
     inline bool QuotaRequestedAtLevelHasBeenSet() const { return m_quotaRequestedAtLevelHasBeenSet; }

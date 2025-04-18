@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/TagFilter.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <utility>
@@ -38,22 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent
-     * version) that should be used by Amazon Q in Connect for this Session.</p>
-     */
-    inline const Aws::Map<AIAgentType, AIAgentConfigurationData>& GetAiAgentConfiguration() const { return m_aiAgentConfiguration; }
-    inline bool AiAgentConfigurationHasBeenSet() const { return m_aiAgentConfigurationHasBeenSet; }
-    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
-    void SetAiAgentConfiguration(AiAgentConfigurationT&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = std::forward<AiAgentConfigurationT>(value); }
-    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
-    UpdateSessionRequest& WithAiAgentConfiguration(AiAgentConfigurationT&& value) { SetAiAgentConfiguration(std::forward<AiAgentConfigurationT>(value)); return *this;}
-    inline UpdateSessionRequest& AddAiAgentConfiguration(AIAgentType key, AIAgentConfigurationData value) {
-      m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this;
-    }
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -63,18 +47,6 @@ namespace Model
     void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
     template<typename AssistantIdT = Aws::String>
     UpdateSessionRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateSessionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,6 +64,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The description.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSessionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that can be used to specify Tag conditions.</p>
      */
     inline const TagFilter& GetTagFilter() const { return m_tagFilter; }
@@ -101,22 +85,38 @@ namespace Model
     template<typename TagFilterT = TagFilter>
     UpdateSessionRequest& WithTagFilter(TagFilterT&& value) { SetTagFilter(std::forward<TagFilterT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
-    bool m_aiAgentConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent
+     * version) that should be used by Amazon Q in Connect for this Session.</p>
+     */
+    inline const Aws::Map<AIAgentType, AIAgentConfigurationData>& GetAiAgentConfiguration() const { return m_aiAgentConfiguration; }
+    inline bool AiAgentConfigurationHasBeenSet() const { return m_aiAgentConfigurationHasBeenSet; }
+    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
+    void SetAiAgentConfiguration(AiAgentConfigurationT&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = std::forward<AiAgentConfigurationT>(value); }
+    template<typename AiAgentConfigurationT = Aws::Map<AIAgentType, AIAgentConfigurationData>>
+    UpdateSessionRequest& WithAiAgentConfiguration(AiAgentConfigurationT&& value) { SetAiAgentConfiguration(std::forward<AiAgentConfigurationT>(value)); return *this;}
+    inline UpdateSessionRequest& AddAiAgentConfiguration(AIAgentType key, AIAgentConfigurationData value) {
+      m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this;
+    }
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     TagFilter m_tagFilter;
     bool m_tagFilterHasBeenSet = false;
+
+    Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
+    bool m_aiAgentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,16 +25,6 @@ ContentReference::ContentReference(JsonView jsonValue)
 
 ContentReference& ContentReference::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("contentArn"))
-  {
-    m_contentArn = jsonValue.GetString("contentArn");
-    m_contentArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contentId"))
-  {
-    m_contentId = jsonValue.GetString("contentId");
-    m_contentIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
@@ -45,15 +35,25 @@ ContentReference& ContentReference::operator =(JsonView jsonValue)
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("referenceType"))
+  if(jsonValue.ValueExists("contentArn"))
   {
-    m_referenceType = ReferenceTypeMapper::GetReferenceTypeForName(jsonValue.GetString("referenceType"));
-    m_referenceTypeHasBeenSet = true;
+    m_contentArn = jsonValue.GetString("contentArn");
+    m_contentArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contentId"))
+  {
+    m_contentId = jsonValue.GetString("contentId");
+    m_contentIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sourceURL"))
   {
     m_sourceURL = jsonValue.GetString("sourceURL");
     m_sourceURLHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("referenceType"))
+  {
+    m_referenceType = ReferenceTypeMapper::GetReferenceTypeForName(jsonValue.GetString("referenceType"));
+    m_referenceTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -61,18 +61,6 @@ ContentReference& ContentReference::operator =(JsonView jsonValue)
 JsonValue ContentReference::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_contentArnHasBeenSet)
-  {
-   payload.WithString("contentArn", m_contentArn);
-
-  }
-
-  if(m_contentIdHasBeenSet)
-  {
-   payload.WithString("contentId", m_contentId);
-
-  }
 
   if(m_knowledgeBaseArnHasBeenSet)
   {
@@ -86,15 +74,27 @@ JsonValue ContentReference::Jsonize() const
 
   }
 
-  if(m_referenceTypeHasBeenSet)
+  if(m_contentArnHasBeenSet)
   {
-   payload.WithString("referenceType", ReferenceTypeMapper::GetNameForReferenceType(m_referenceType));
+   payload.WithString("contentArn", m_contentArn);
+
+  }
+
+  if(m_contentIdHasBeenSet)
+  {
+   payload.WithString("contentId", m_contentId);
+
   }
 
   if(m_sourceURLHasBeenSet)
   {
    payload.WithString("sourceURL", m_sourceURL);
 
+  }
+
+  if(m_referenceTypeHasBeenSet)
+  {
+   payload.WithString("referenceType", ReferenceTypeMapper::GetNameForReferenceType(m_referenceType));
   }
 
   return payload;

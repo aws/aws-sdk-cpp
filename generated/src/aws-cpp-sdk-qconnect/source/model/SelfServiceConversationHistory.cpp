@@ -25,20 +25,20 @@ SelfServiceConversationHistory::SelfServiceConversationHistory(JsonView jsonValu
 
 SelfServiceConversationHistory& SelfServiceConversationHistory::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("botResponse"))
+  if(jsonValue.ValueExists("turnNumber"))
   {
-    m_botResponse = jsonValue.GetString("botResponse");
-    m_botResponseHasBeenSet = true;
+    m_turnNumber = jsonValue.GetInteger("turnNumber");
+    m_turnNumberHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputTranscript"))
   {
     m_inputTranscript = jsonValue.GetString("inputTranscript");
     m_inputTranscriptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("turnNumber"))
+  if(jsonValue.ValueExists("botResponse"))
   {
-    m_turnNumber = jsonValue.GetInteger("turnNumber");
-    m_turnNumberHasBeenSet = true;
+    m_botResponse = jsonValue.GetString("botResponse");
+    m_botResponseHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue SelfServiceConversationHistory::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_botResponseHasBeenSet)
+  if(m_turnNumberHasBeenSet)
   {
-   payload.WithString("botResponse", m_botResponse);
+   payload.WithInteger("turnNumber", m_turnNumber);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue SelfServiceConversationHistory::Jsonize() const
 
   }
 
-  if(m_turnNumberHasBeenSet)
+  if(m_botResponseHasBeenSet)
   {
-   payload.WithInteger("turnNumber", m_turnNumber);
+   payload.WithString("botResponse", m_botResponse);
 
   }
 

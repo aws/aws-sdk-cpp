@@ -16,9 +16,9 @@ Aws::String CreateContentAssociationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_associationHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithObject("association", m_association.Jsonize());
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -27,9 +27,9 @@ Aws::String CreateContentAssociationRequest::SerializePayload() const
    payload.WithString("associationType", ContentAssociationTypeMapper::GetNameForContentAssociationType(m_associationType));
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_associationHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithObject("association", m_association.Jsonize());
 
   }
 

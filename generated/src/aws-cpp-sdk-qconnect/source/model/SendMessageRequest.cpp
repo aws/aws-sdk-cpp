@@ -16,9 +16,14 @@ Aws::String SendMessageRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("type", MessageTypeMapper::GetNameForMessageType(m_type));
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithObject("message", m_message.Jsonize());
 
   }
 
@@ -28,15 +33,16 @@ Aws::String SendMessageRequest::SerializePayload() const
 
   }
 
-  if(m_messageHasBeenSet)
+  if(m_configurationHasBeenSet)
   {
-   payload.WithObject("message", m_message.Jsonize());
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("type", MessageTypeMapper::GetNameForMessageType(m_type));
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

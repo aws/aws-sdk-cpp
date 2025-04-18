@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/EmailMessageTemplateContentBody.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/EmailHeader.h>
 #include <utility>
 
@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The subject line, or title, to use in email messages.</p>
+     */
+    inline const Aws::String& GetSubject() const { return m_subject; }
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    EmailMessageTemplateContent& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The body to use in email messages.</p>
      */
     inline const EmailMessageTemplateContentBody& GetBody() const { return m_body; }
@@ -66,28 +78,16 @@ namespace Model
     template<typename HeadersT = EmailHeader>
     EmailMessageTemplateContent& AddHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers.emplace_back(std::forward<HeadersT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The subject line, or title, to use in email messages.</p>
-     */
-    inline const Aws::String& GetSubject() const { return m_subject; }
-    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    template<typename SubjectT = Aws::String>
-    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
-    template<typename SubjectT = Aws::String>
-    EmailMessageTemplateContent& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_subject;
+    bool m_subjectHasBeenSet = false;
 
     EmailMessageTemplateContentBody m_body;
     bool m_bodyHasBeenSet = false;
 
     Aws::Vector<EmailHeader> m_headers;
     bool m_headersHasBeenSet = false;
-
-    Aws::String m_subject;
-    bool m_subjectHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,11 @@ EmailMessageTemplateContent::EmailMessageTemplateContent(JsonView jsonValue)
 
 EmailMessageTemplateContent& EmailMessageTemplateContent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("subject"))
+  {
+    m_subject = jsonValue.GetString("subject");
+    m_subjectHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetObject("body");
@@ -39,17 +44,18 @@ EmailMessageTemplateContent& EmailMessageTemplateContent::operator =(JsonView js
     }
     m_headersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subject"))
-  {
-    m_subject = jsonValue.GetString("subject");
-    m_subjectHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EmailMessageTemplateContent::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_subjectHasBeenSet)
+  {
+   payload.WithString("subject", m_subject);
+
+  }
 
   if(m_bodyHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue EmailMessageTemplateContent::Jsonize() const
      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
    }
    payload.WithArray("headers", std::move(headersJsonList));
-
-  }
-
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithString("subject", m_subject);
 
   }
 

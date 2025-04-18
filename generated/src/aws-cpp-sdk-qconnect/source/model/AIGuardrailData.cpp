@@ -25,6 +25,16 @@ AIGuardrailData::AIGuardrailData(JsonView jsonValue)
 
 AIGuardrailData& AIGuardrailData::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("assistantId"))
+  {
+    m_assistantId = jsonValue.GetString("assistantId");
+    m_assistantIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("assistantArn"))
+  {
+    m_assistantArn = jsonValue.GetString("assistantArn");
+    m_assistantArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("aiGuardrailArn"))
   {
     m_aiGuardrailArn = jsonValue.GetString("aiGuardrailArn");
@@ -35,15 +45,15 @@ AIGuardrailData& AIGuardrailData::operator =(JsonView jsonValue)
     m_aiGuardrailId = jsonValue.GetString("aiGuardrailId");
     m_aiGuardrailIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantArn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_assistantArn = jsonValue.GetString("assistantArn");
-    m_assistantArnHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantId"))
+  if(jsonValue.ValueExists("visibilityStatus"))
   {
-    m_assistantId = jsonValue.GetString("assistantId");
-    m_assistantIdHasBeenSet = true;
+    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
+    m_visibilityStatusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("blockedInputMessaging"))
   {
@@ -55,40 +65,35 @@ AIGuardrailData& AIGuardrailData::operator =(JsonView jsonValue)
     m_blockedOutputsMessaging = jsonValue.GetString("blockedOutputsMessaging");
     m_blockedOutputsMessagingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentPolicyConfig"))
-  {
-    m_contentPolicyConfig = jsonValue.GetObject("contentPolicyConfig");
-    m_contentPolicyConfigHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("contextualGroundingPolicyConfig"))
-  {
-    m_contextualGroundingPolicyConfig = jsonValue.GetObject("contextualGroundingPolicyConfig");
-    m_contextualGroundingPolicyConfigHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modifiedTime"))
+  if(jsonValue.ValueExists("topicPolicyConfig"))
   {
-    m_modifiedTime = jsonValue.GetDouble("modifiedTime");
-    m_modifiedTimeHasBeenSet = true;
+    m_topicPolicyConfig = jsonValue.GetObject("topicPolicyConfig");
+    m_topicPolicyConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("contentPolicyConfig"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_contentPolicyConfig = jsonValue.GetObject("contentPolicyConfig");
+    m_contentPolicyConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("wordPolicyConfig"))
+  {
+    m_wordPolicyConfig = jsonValue.GetObject("wordPolicyConfig");
+    m_wordPolicyConfigHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sensitiveInformationPolicyConfig"))
   {
     m_sensitiveInformationPolicyConfig = jsonValue.GetObject("sensitiveInformationPolicyConfig");
     m_sensitiveInformationPolicyConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("contextualGroundingPolicyConfig"))
   {
-    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_contextualGroundingPolicyConfig = jsonValue.GetObject("contextualGroundingPolicyConfig");
+    m_contextualGroundingPolicyConfigHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -99,20 +104,15 @@ AIGuardrailData& AIGuardrailData::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("topicPolicyConfig"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_topicPolicyConfig = jsonValue.GetObject("topicPolicyConfig");
-    m_topicPolicyConfigHasBeenSet = true;
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("visibilityStatus"))
+  if(jsonValue.ValueExists("modifiedTime"))
   {
-    m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
-    m_visibilityStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("wordPolicyConfig"))
-  {
-    m_wordPolicyConfig = jsonValue.GetObject("wordPolicyConfig");
-    m_wordPolicyConfigHasBeenSet = true;
+    m_modifiedTime = jsonValue.GetDouble("modifiedTime");
+    m_modifiedTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -120,6 +120,18 @@ AIGuardrailData& AIGuardrailData::operator =(JsonView jsonValue)
 JsonValue AIGuardrailData::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_assistantIdHasBeenSet)
+  {
+   payload.WithString("assistantId", m_assistantId);
+
+  }
+
+  if(m_assistantArnHasBeenSet)
+  {
+   payload.WithString("assistantArn", m_assistantArn);
+
+  }
 
   if(m_aiGuardrailArnHasBeenSet)
   {
@@ -133,16 +145,15 @@ JsonValue AIGuardrailData::Jsonize() const
 
   }
 
-  if(m_assistantArnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("assistantArn", m_assistantArn);
+   payload.WithString("name", m_name);
 
   }
 
-  if(m_assistantIdHasBeenSet)
+  if(m_visibilityStatusHasBeenSet)
   {
-   payload.WithString("assistantId", m_assistantId);
-
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
   }
 
   if(m_blockedInputMessagingHasBeenSet)
@@ -157,32 +168,27 @@ JsonValue AIGuardrailData::Jsonize() const
 
   }
 
-  if(m_contentPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("contentPolicyConfig", m_contentPolicyConfig.Jsonize());
-
-  }
-
-  if(m_contextualGroundingPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
   }
 
-  if(m_modifiedTimeHasBeenSet)
+  if(m_topicPolicyConfigHasBeenSet)
   {
-   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+   payload.WithObject("topicPolicyConfig", m_topicPolicyConfig.Jsonize());
+
   }
 
-  if(m_nameHasBeenSet)
+  if(m_contentPolicyConfigHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("contentPolicyConfig", m_contentPolicyConfig.Jsonize());
+
+  }
+
+  if(m_wordPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("wordPolicyConfig", m_wordPolicyConfig.Jsonize());
 
   }
 
@@ -192,9 +198,10 @@ JsonValue AIGuardrailData::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_contextualGroundingPolicyConfigHasBeenSet)
   {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)
@@ -208,21 +215,14 @@ JsonValue AIGuardrailData::Jsonize() const
 
   }
 
-  if(m_topicPolicyConfigHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithObject("topicPolicyConfig", m_topicPolicyConfig.Jsonize());
-
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_visibilityStatusHasBeenSet)
+  if(m_modifiedTimeHasBeenSet)
   {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
-  }
-
-  if(m_wordPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("wordPolicyConfig", m_wordPolicyConfig.Jsonize());
-
+   payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;

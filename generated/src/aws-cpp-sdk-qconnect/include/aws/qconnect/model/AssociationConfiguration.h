@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/AssociationConfigurationData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/AIAgentAssociationConfigurationType.h>
+#include <aws/qconnect/model/AssociationConfigurationData.h>
 #include <utility>
 
 namespace Aws
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data of the configuration for an Amazon Q in Connect Assistant
-     * Association.</p>
-     */
-    inline const AssociationConfigurationData& GetAssociationConfigurationData() const { return m_associationConfigurationData; }
-    inline bool AssociationConfigurationDataHasBeenSet() const { return m_associationConfigurationDataHasBeenSet; }
-    template<typename AssociationConfigurationDataT = AssociationConfigurationData>
-    void SetAssociationConfigurationData(AssociationConfigurationDataT&& value) { m_associationConfigurationDataHasBeenSet = true; m_associationConfigurationData = std::forward<AssociationConfigurationDataT>(value); }
-    template<typename AssociationConfigurationDataT = AssociationConfigurationData>
-    AssociationConfiguration& WithAssociationConfigurationData(AssociationConfigurationDataT&& value) { SetAssociationConfigurationData(std::forward<AssociationConfigurationDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the association for this Association Configuration.</p>
      */
     inline const Aws::String& GetAssociationId() const { return m_associationId; }
@@ -74,16 +61,29 @@ namespace Model
     inline void SetAssociationType(AIAgentAssociationConfigurationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
     inline AssociationConfiguration& WithAssociationType(AIAgentAssociationConfigurationType value) { SetAssociationType(value); return *this;}
     ///@}
-  private:
 
-    AssociationConfigurationData m_associationConfigurationData;
-    bool m_associationConfigurationDataHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The data of the configuration for an Amazon Q in Connect Assistant
+     * Association.</p>
+     */
+    inline const AssociationConfigurationData& GetAssociationConfigurationData() const { return m_associationConfigurationData; }
+    inline bool AssociationConfigurationDataHasBeenSet() const { return m_associationConfigurationDataHasBeenSet; }
+    template<typename AssociationConfigurationDataT = AssociationConfigurationData>
+    void SetAssociationConfigurationData(AssociationConfigurationDataT&& value) { m_associationConfigurationDataHasBeenSet = true; m_associationConfigurationData = std::forward<AssociationConfigurationDataT>(value); }
+    template<typename AssociationConfigurationDataT = AssociationConfigurationData>
+    AssociationConfiguration& WithAssociationConfigurationData(AssociationConfigurationDataT&& value) { SetAssociationConfigurationData(std::forward<AssociationConfigurationDataT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet = false;
 
     AIAgentAssociationConfigurationType m_associationType{AIAgentAssociationConfigurationType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
+
+    AssociationConfigurationData m_associationConfigurationData;
+    bool m_associationConfigurationDataHasBeenSet = false;
   };
 
 } // namespace Model

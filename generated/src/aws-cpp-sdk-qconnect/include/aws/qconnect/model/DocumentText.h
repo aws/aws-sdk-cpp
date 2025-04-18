@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/model/Highlight.h>
 #include <utility>
 
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Text in the document.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DocumentText& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Highlights in the document text.</p>
      */
     inline const Aws::Vector<Highlight>& GetHighlights() const { return m_highlights; }
@@ -52,25 +64,13 @@ namespace Model
     template<typename HighlightsT = Highlight>
     DocumentText& AddHighlights(HighlightsT&& value) { m_highlightsHasBeenSet = true; m_highlights.emplace_back(std::forward<HighlightsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Text in the document.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    DocumentText& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Highlight> m_highlights;
-    bool m_highlightsHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    Aws::Vector<Highlight> m_highlights;
+    bool m_highlightsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,6 +40,12 @@ Aws::String RequestServiceQuotaIncreaseRequest::SerializePayload() const
 
   }
 
+  if(m_supportCaseAllowedHasBeenSet)
+  {
+   payload.WithBool("SupportCaseAllowed", m_supportCaseAllowed);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

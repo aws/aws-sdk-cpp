@@ -25,15 +25,20 @@ SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<JsonValue
 SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextMessageToken"))
-  {
-    m_nextMessageToken = jsonValue.GetString("nextMessageToken");
-    m_nextMessageTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("requestMessageId"))
   {
     m_requestMessageId = jsonValue.GetString("requestMessageId");
     m_requestMessageIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextMessageToken"))
+  {
+    m_nextMessageToken = jsonValue.GetString("nextMessageToken");
+    m_nextMessageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,30 +25,30 @@ SourceContentDataDetails::SourceContentDataDetails(JsonView jsonValue)
 
 SourceContentDataDetails& SourceContentDataDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("citationSpan"))
-  {
-    m_citationSpan = jsonValue.GetObject("citationSpan");
-    m_citationSpanHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rankingData"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_rankingData = jsonValue.GetObject("rankingData");
-    m_rankingDataHasBeenSet = true;
+    m_type = SourceContentTypeMapper::GetSourceContentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("textData"))
   {
     m_textData = jsonValue.GetObject("textData");
     m_textDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("rankingData"))
   {
-    m_type = SourceContentTypeMapper::GetSourceContentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_rankingData = jsonValue.GetObject("rankingData");
+    m_rankingDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("citationSpan"))
+  {
+    m_citationSpan = jsonValue.GetObject("citationSpan");
+    m_citationSpanHasBeenSet = true;
   }
   return *this;
 }
@@ -57,15 +57,20 @@ JsonValue SourceContentDataDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_citationSpanHasBeenSet)
-  {
-   payload.WithObject("citationSpan", m_citationSpan.Jsonize());
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", SourceContentTypeMapper::GetNameForSourceContentType(m_type));
+  }
+
+  if(m_textDataHasBeenSet)
+  {
+   payload.WithObject("textData", m_textData.Jsonize());
 
   }
 
@@ -75,15 +80,10 @@ JsonValue SourceContentDataDetails::Jsonize() const
 
   }
 
-  if(m_textDataHasBeenSet)
+  if(m_citationSpanHasBeenSet)
   {
-   payload.WithObject("textData", m_textData.Jsonize());
+   payload.WithObject("citationSpan", m_citationSpan.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SourceContentTypeMapper::GetNameForSourceContentType(m_type));
   }
 
   return payload;

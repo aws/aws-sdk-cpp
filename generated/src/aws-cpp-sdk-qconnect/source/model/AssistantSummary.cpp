@@ -25,54 +25,35 @@ AssistantSummary::AssistantSummary(JsonView jsonValue)
 
 AssistantSummary& AssistantSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("aiAgentConfiguration"))
+  if(jsonValue.ValueExists("assistantId"))
   {
-    Aws::Map<Aws::String, JsonView> aiAgentConfigurationJsonMap = jsonValue.GetObject("aiAgentConfiguration").GetAllObjects();
-    for(auto& aiAgentConfigurationItem : aiAgentConfigurationJsonMap)
-    {
-      m_aiAgentConfiguration[AIAgentTypeMapper::GetAIAgentTypeForName(aiAgentConfigurationItem.first)] = aiAgentConfigurationItem.second.AsObject();
-    }
-    m_aiAgentConfigurationHasBeenSet = true;
+    m_assistantId = jsonValue.GetString("assistantId");
+    m_assistantIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("assistantArn"))
   {
     m_assistantArn = jsonValue.GetString("assistantArn");
     m_assistantArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assistantId"))
-  {
-    m_assistantId = jsonValue.GetString("assistantId");
-    m_assistantIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("capabilityConfiguration"))
-  {
-    m_capabilityConfiguration = jsonValue.GetObject("capabilityConfiguration");
-    m_capabilityConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("integrationConfiguration"))
-  {
-    m_integrationConfiguration = jsonValue.GetObject("integrationConfiguration");
-    m_integrationConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serverSideEncryptionConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
-    m_serverSideEncryptionConfigurationHasBeenSet = true;
+    m_type = AssistantTypeMapper::GetAssistantTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = AssistantStatusMapper::GetAssistantStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -83,10 +64,29 @@ AssistantSummary& AssistantSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("serverSideEncryptionConfiguration"))
   {
-    m_type = AssistantTypeMapper::GetAssistantTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
+    m_serverSideEncryptionConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("integrationConfiguration"))
+  {
+    m_integrationConfiguration = jsonValue.GetObject("integrationConfiguration");
+    m_integrationConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("capabilityConfiguration"))
+  {
+    m_capabilityConfiguration = jsonValue.GetObject("capabilityConfiguration");
+    m_capabilityConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("aiAgentConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonView> aiAgentConfigurationJsonMap = jsonValue.GetObject("aiAgentConfiguration").GetAllObjects();
+    for(auto& aiAgentConfigurationItem : aiAgentConfigurationJsonMap)
+    {
+      m_aiAgentConfiguration[AIAgentTypeMapper::GetAIAgentTypeForName(aiAgentConfigurationItem.first)] = aiAgentConfigurationItem.second.AsObject();
+    }
+    m_aiAgentConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -95,14 +95,9 @@ JsonValue AssistantSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_aiAgentConfigurationHasBeenSet)
+  if(m_assistantIdHasBeenSet)
   {
-   JsonValue aiAgentConfigurationJsonMap;
-   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
-   {
-     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
-   }
-   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+   payload.WithString("assistantId", m_assistantId);
 
   }
 
@@ -112,45 +107,26 @@ JsonValue AssistantSummary::Jsonize() const
 
   }
 
-  if(m_assistantIdHasBeenSet)
-  {
-   payload.WithString("assistantId", m_assistantId);
-
-  }
-
-  if(m_capabilityConfigurationHasBeenSet)
-  {
-   payload.WithObject("capabilityConfiguration", m_capabilityConfiguration.Jsonize());
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_integrationConfigurationHasBeenSet)
-  {
-   payload.WithObject("integrationConfiguration", m_integrationConfiguration.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
-  if(m_serverSideEncryptionConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
-
+   payload.WithString("type", AssistantTypeMapper::GetNameForAssistantType(m_type));
   }
 
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", AssistantStatusMapper::GetNameForAssistantStatus(m_status));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
   }
 
   if(m_tagsHasBeenSet)
@@ -164,9 +140,33 @@ JsonValue AssistantSummary::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
-   payload.WithString("type", AssistantTypeMapper::GetNameForAssistantType(m_type));
+   payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_integrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("integrationConfiguration", m_integrationConfiguration.Jsonize());
+
+  }
+
+  if(m_capabilityConfigurationHasBeenSet)
+  {
+   payload.WithObject("capabilityConfiguration", m_capabilityConfiguration.Jsonize());
+
+  }
+
+  if(m_aiAgentConfigurationHasBeenSet)
+  {
+   JsonValue aiAgentConfigurationJsonMap;
+   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
+   {
+     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+
   }
 
   return payload;

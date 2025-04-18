@@ -25,15 +25,15 @@ NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError(JsonView 
 
 NotifyRecommendationsReceivedError& NotifyRecommendationsReceivedError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
     m_recommendationIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NotifyRecommendationsReceivedError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
-  }
-
   if(m_recommendationIdHasBeenSet)
   {
    payload.WithString("recommendationId", m_recommendationId);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

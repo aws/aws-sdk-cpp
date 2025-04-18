@@ -7,12 +7,12 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/AIGuardrailContentPolicyConfig.h>
-#include <aws/qconnect/model/AIGuardrailContextualGroundingPolicyConfig.h>
-#include <aws/qconnect/model/AIGuardrailSensitiveInformationPolicyConfig.h>
-#include <aws/qconnect/model/AIGuardrailTopicPolicyConfig.h>
 #include <aws/qconnect/model/VisibilityStatus.h>
+#include <aws/qconnect/model/AIGuardrailTopicPolicyConfig.h>
+#include <aws/qconnect/model/AIGuardrailContentPolicyConfig.h>
 #include <aws/qconnect/model/AIGuardrailWordPolicyConfig.h>
+#include <aws/qconnect/model/AIGuardrailSensitiveInformationPolicyConfig.h>
+#include <aws/qconnect/model/AIGuardrailContextualGroundingPolicyConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -41,14 +41,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Guardrail.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>..</p>
      */
-    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
-    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
-    template<typename AiGuardrailIdT = Aws::String>
-    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
-    template<typename AiGuardrailIdT = Aws::String>
-    UpdateAIGuardrailRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateAIGuardrailRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,6 +66,28 @@ namespace Model
     void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
     template<typename AssistantIdT = Aws::String>
     UpdateAIGuardrailRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the Amazon Q in Connect AI Guardrail.</p>
+     */
+    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
+    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
+    template<typename AiGuardrailIdT = Aws::String>
+    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
+    template<typename AiGuardrailIdT = Aws::String>
+    UpdateAIGuardrailRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The visibility status of the Amazon Q in Connect AI Guardrail.</p>
+     */
+    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
+    inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
+    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
+    inline UpdateAIGuardrailRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -90,47 +116,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>..</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateAIGuardrailRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The content filter policies to configure for the AI Guardrail.</p>
-     */
-    inline const AIGuardrailContentPolicyConfig& GetContentPolicyConfig() const { return m_contentPolicyConfig; }
-    inline bool ContentPolicyConfigHasBeenSet() const { return m_contentPolicyConfigHasBeenSet; }
-    template<typename ContentPolicyConfigT = AIGuardrailContentPolicyConfig>
-    void SetContentPolicyConfig(ContentPolicyConfigT&& value) { m_contentPolicyConfigHasBeenSet = true; m_contentPolicyConfig = std::forward<ContentPolicyConfigT>(value); }
-    template<typename ContentPolicyConfigT = AIGuardrailContentPolicyConfig>
-    UpdateAIGuardrailRequest& WithContentPolicyConfig(ContentPolicyConfigT&& value) { SetContentPolicyConfig(std::forward<ContentPolicyConfigT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The contextual grounding policy configuration used to create an AI
-     * Guardrail.</p>
-     */
-    inline const AIGuardrailContextualGroundingPolicyConfig& GetContextualGroundingPolicyConfig() const { return m_contextualGroundingPolicyConfig; }
-    inline bool ContextualGroundingPolicyConfigHasBeenSet() const { return m_contextualGroundingPolicyConfigHasBeenSet; }
-    template<typename ContextualGroundingPolicyConfigT = AIGuardrailContextualGroundingPolicyConfig>
-    void SetContextualGroundingPolicyConfig(ContextualGroundingPolicyConfigT&& value) { m_contextualGroundingPolicyConfigHasBeenSet = true; m_contextualGroundingPolicyConfig = std::forward<ContextualGroundingPolicyConfigT>(value); }
-    template<typename ContextualGroundingPolicyConfigT = AIGuardrailContextualGroundingPolicyConfig>
-    UpdateAIGuardrailRequest& WithContextualGroundingPolicyConfig(ContextualGroundingPolicyConfigT&& value) { SetContextualGroundingPolicyConfig(std::forward<ContextualGroundingPolicyConfigT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A description of the AI Guardrail.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -139,18 +124,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     UpdateAIGuardrailRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The sensitive information policy to configure for the AI Guardrail.</p>
-     */
-    inline const AIGuardrailSensitiveInformationPolicyConfig& GetSensitiveInformationPolicyConfig() const { return m_sensitiveInformationPolicyConfig; }
-    inline bool SensitiveInformationPolicyConfigHasBeenSet() const { return m_sensitiveInformationPolicyConfigHasBeenSet; }
-    template<typename SensitiveInformationPolicyConfigT = AIGuardrailSensitiveInformationPolicyConfig>
-    void SetSensitiveInformationPolicyConfig(SensitiveInformationPolicyConfigT&& value) { m_sensitiveInformationPolicyConfigHasBeenSet = true; m_sensitiveInformationPolicyConfig = std::forward<SensitiveInformationPolicyConfigT>(value); }
-    template<typename SensitiveInformationPolicyConfigT = AIGuardrailSensitiveInformationPolicyConfig>
-    UpdateAIGuardrailRequest& WithSensitiveInformationPolicyConfig(SensitiveInformationPolicyConfigT&& value) { SetSensitiveInformationPolicyConfig(std::forward<SensitiveInformationPolicyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,12 +140,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The visibility status of the Amazon Q in Connect AI Guardrail.</p>
+     * <p>The content filter policies to configure for the AI Guardrail.</p>
      */
-    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
-    inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
-    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
-    inline UpdateAIGuardrailRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
+    inline const AIGuardrailContentPolicyConfig& GetContentPolicyConfig() const { return m_contentPolicyConfig; }
+    inline bool ContentPolicyConfigHasBeenSet() const { return m_contentPolicyConfigHasBeenSet; }
+    template<typename ContentPolicyConfigT = AIGuardrailContentPolicyConfig>
+    void SetContentPolicyConfig(ContentPolicyConfigT&& value) { m_contentPolicyConfigHasBeenSet = true; m_contentPolicyConfig = std::forward<ContentPolicyConfigT>(value); }
+    template<typename ContentPolicyConfigT = AIGuardrailContentPolicyConfig>
+    UpdateAIGuardrailRequest& WithContentPolicyConfig(ContentPolicyConfigT&& value) { SetContentPolicyConfig(std::forward<ContentPolicyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,13 +161,44 @@ namespace Model
     template<typename WordPolicyConfigT = AIGuardrailWordPolicyConfig>
     UpdateAIGuardrailRequest& WithWordPolicyConfig(WordPolicyConfigT&& value) { SetWordPolicyConfig(std::forward<WordPolicyConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The sensitive information policy to configure for the AI Guardrail.</p>
+     */
+    inline const AIGuardrailSensitiveInformationPolicyConfig& GetSensitiveInformationPolicyConfig() const { return m_sensitiveInformationPolicyConfig; }
+    inline bool SensitiveInformationPolicyConfigHasBeenSet() const { return m_sensitiveInformationPolicyConfigHasBeenSet; }
+    template<typename SensitiveInformationPolicyConfigT = AIGuardrailSensitiveInformationPolicyConfig>
+    void SetSensitiveInformationPolicyConfig(SensitiveInformationPolicyConfigT&& value) { m_sensitiveInformationPolicyConfigHasBeenSet = true; m_sensitiveInformationPolicyConfig = std::forward<SensitiveInformationPolicyConfigT>(value); }
+    template<typename SensitiveInformationPolicyConfigT = AIGuardrailSensitiveInformationPolicyConfig>
+    UpdateAIGuardrailRequest& WithSensitiveInformationPolicyConfig(SensitiveInformationPolicyConfigT&& value) { SetSensitiveInformationPolicyConfig(std::forward<SensitiveInformationPolicyConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The contextual grounding policy configuration used to create an AI
+     * Guardrail.</p>
+     */
+    inline const AIGuardrailContextualGroundingPolicyConfig& GetContextualGroundingPolicyConfig() const { return m_contextualGroundingPolicyConfig; }
+    inline bool ContextualGroundingPolicyConfigHasBeenSet() const { return m_contextualGroundingPolicyConfigHasBeenSet; }
+    template<typename ContextualGroundingPolicyConfigT = AIGuardrailContextualGroundingPolicyConfig>
+    void SetContextualGroundingPolicyConfig(ContextualGroundingPolicyConfigT&& value) { m_contextualGroundingPolicyConfigHasBeenSet = true; m_contextualGroundingPolicyConfig = std::forward<ContextualGroundingPolicyConfigT>(value); }
+    template<typename ContextualGroundingPolicyConfigT = AIGuardrailContextualGroundingPolicyConfig>
+    UpdateAIGuardrailRequest& WithContextualGroundingPolicyConfig(ContextualGroundingPolicyConfigT&& value) { SetContextualGroundingPolicyConfig(std::forward<ContextualGroundingPolicyConfigT>(value)); return *this;}
+    ///@}
   private:
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_assistantId;
+    bool m_assistantIdHasBeenSet = false;
 
     Aws::String m_aiGuardrailId;
     bool m_aiGuardrailIdHasBeenSet = false;
 
-    Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet = false;
+    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
+    bool m_visibilityStatusHasBeenSet = false;
 
     Aws::String m_blockedInputMessaging;
     bool m_blockedInputMessagingHasBeenSet = false;
@@ -200,29 +206,23 @@ namespace Model
     Aws::String m_blockedOutputsMessaging;
     bool m_blockedOutputsMessagingHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    AIGuardrailContentPolicyConfig m_contentPolicyConfig;
-    bool m_contentPolicyConfigHasBeenSet = false;
-
-    AIGuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
-    bool m_contextualGroundingPolicyConfigHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    AIGuardrailSensitiveInformationPolicyConfig m_sensitiveInformationPolicyConfig;
-    bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
 
     AIGuardrailTopicPolicyConfig m_topicPolicyConfig;
     bool m_topicPolicyConfigHasBeenSet = false;
 
-    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-    bool m_visibilityStatusHasBeenSet = false;
+    AIGuardrailContentPolicyConfig m_contentPolicyConfig;
+    bool m_contentPolicyConfigHasBeenSet = false;
 
     AIGuardrailWordPolicyConfig m_wordPolicyConfig;
     bool m_wordPolicyConfigHasBeenSet = false;
+
+    AIGuardrailSensitiveInformationPolicyConfig m_sensitiveInformationPolicyConfig;
+    bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
+
+    AIGuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
+    bool m_contextualGroundingPolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

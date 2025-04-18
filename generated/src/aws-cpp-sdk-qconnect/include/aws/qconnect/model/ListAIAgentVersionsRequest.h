@@ -41,19 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Agent for which versions are to
-     * be listed.</p>
-     */
-    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
-    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
-    template<typename AiAgentIdT = Aws::String>
-    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
-    template<typename AiAgentIdT = Aws::String>
-    ListAIAgentVersionsRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -67,12 +54,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The identifier of the Amazon Q in Connect AI Agent for which versions are to
+     * be listed.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListAIAgentVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
+    inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
+    template<typename AiAgentIdT = Aws::String>
+    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
+    template<typename AiAgentIdT = Aws::String>
+    ListAIAgentVersionsRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,6 +80,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The maximum number of results to return per page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListAIAgentVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The origin of the AI Agent versions to be listed. <code>SYSTEM</code> for a
      * default AI Agent created by Q in Connect or <code>CUSTOMER</code> for an AI
      * Agent created by calling AI Agent creation APIs. </p>
@@ -101,17 +101,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_aiAgentId;
-    bool m_aiAgentIdHasBeenSet = false;
-
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_aiAgentId;
+    bool m_aiAgentIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     Origin m_origin{Origin::NOT_SET};
     bool m_originHasBeenSet = false;

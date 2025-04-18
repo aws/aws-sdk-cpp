@@ -25,11 +25,6 @@ ListQuickResponsesResult::ListQuickResponsesResult(const Aws::AmazonWebServiceRe
 ListQuickResponsesResult& ListQuickResponsesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("quickResponseSummaries"))
   {
     Aws::Utils::Array<JsonView> quickResponseSummariesJsonList = jsonValue.GetArray("quickResponseSummaries");
@@ -38,6 +33,11 @@ ListQuickResponsesResult& ListQuickResponsesResult::operator =(const Aws::Amazon
       m_quickResponseSummaries.push_back(quickResponseSummariesJsonList[quickResponseSummariesIndex].AsObject());
     }
     m_quickResponseSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

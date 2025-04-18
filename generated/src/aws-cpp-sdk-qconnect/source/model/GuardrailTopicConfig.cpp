@@ -25,6 +25,11 @@ GuardrailTopicConfig::GuardrailTopicConfig(JsonView jsonValue)
 
 GuardrailTopicConfig& GuardrailTopicConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetString("definition");
@@ -39,11 +44,6 @@ GuardrailTopicConfig& GuardrailTopicConfig::operator =(JsonView jsonValue)
     }
     m_examplesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailTopicTypeMapper::GetGuardrailTopicTypeForName(jsonValue.GetString("type"));
@@ -55,6 +55,12 @@ GuardrailTopicConfig& GuardrailTopicConfig::operator =(JsonView jsonValue)
 JsonValue GuardrailTopicConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_definitionHasBeenSet)
   {
@@ -70,12 +76,6 @@ JsonValue GuardrailTopicConfig::Jsonize() const
      examplesJsonList[examplesIndex].AsString(m_examples[examplesIndex]);
    }
    payload.WithArray("examples", std::move(examplesJsonList));
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

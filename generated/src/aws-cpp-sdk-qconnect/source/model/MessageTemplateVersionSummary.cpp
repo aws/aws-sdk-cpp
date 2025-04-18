@@ -25,15 +25,15 @@ MessageTemplateVersionSummary::MessageTemplateVersionSummary(JsonView jsonValue)
 
 MessageTemplateVersionSummary& MessageTemplateVersionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("channelSubtype"))
+  if(jsonValue.ValueExists("messageTemplateArn"))
   {
-    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
-    m_channelSubtypeHasBeenSet = true;
+    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
+    m_messageTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isActive"))
+  if(jsonValue.ValueExists("messageTemplateId"))
   {
-    m_isActive = jsonValue.GetBool("isActive");
-    m_isActiveHasBeenSet = true;
+    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
+    m_messageTemplateIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
@@ -45,20 +45,20 @@ MessageTemplateVersionSummary& MessageTemplateVersionSummary::operator =(JsonVie
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("messageTemplateArn"))
-  {
-    m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
-    m_messageTemplateArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("messageTemplateId"))
-  {
-    m_messageTemplateId = jsonValue.GetString("messageTemplateId");
-    m_messageTemplateIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("channelSubtype"))
+  {
+    m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
+    m_channelSubtypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("isActive"))
+  {
+    m_isActive = jsonValue.GetBool("isActive");
+    m_isActiveHasBeenSet = true;
   }
   if(jsonValue.ValueExists("versionNumber"))
   {
@@ -72,14 +72,15 @@ JsonValue MessageTemplateVersionSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_channelSubtypeHasBeenSet)
+  if(m_messageTemplateArnHasBeenSet)
   {
-   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+   payload.WithString("messageTemplateArn", m_messageTemplateArn);
+
   }
 
-  if(m_isActiveHasBeenSet)
+  if(m_messageTemplateIdHasBeenSet)
   {
-   payload.WithBool("isActive", m_isActive);
+   payload.WithString("messageTemplateId", m_messageTemplateId);
 
   }
 
@@ -95,21 +96,20 @@ JsonValue MessageTemplateVersionSummary::Jsonize() const
 
   }
 
-  if(m_messageTemplateArnHasBeenSet)
-  {
-   payload.WithString("messageTemplateArn", m_messageTemplateArn);
-
-  }
-
-  if(m_messageTemplateIdHasBeenSet)
-  {
-   payload.WithString("messageTemplateId", m_messageTemplateId);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_channelSubtypeHasBeenSet)
+  {
+   payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
+  }
+
+  if(m_isActiveHasBeenSet)
+  {
+   payload.WithBool("isActive", m_isActive);
 
   }
 

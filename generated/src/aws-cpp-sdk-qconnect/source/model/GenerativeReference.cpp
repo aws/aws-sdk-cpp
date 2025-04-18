@@ -25,15 +25,15 @@ GenerativeReference::GenerativeReference(JsonView jsonValue)
 
 GenerativeReference& GenerativeReference::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("generationId"))
-  {
-    m_generationId = jsonValue.GetString("generationId");
-    m_generationIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("generationId"))
+  {
+    m_generationId = jsonValue.GetString("generationId");
+    m_generationIdHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue GenerativeReference::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_generationIdHasBeenSet)
-  {
-   payload.WithString("generationId", m_generationId);
-
-  }
-
   if(m_modelIdHasBeenSet)
   {
    payload.WithString("modelId", m_modelId);
+
+  }
+
+  if(m_generationIdHasBeenSet)
+  {
+   payload.WithString("generationId", m_generationId);
 
   }
 

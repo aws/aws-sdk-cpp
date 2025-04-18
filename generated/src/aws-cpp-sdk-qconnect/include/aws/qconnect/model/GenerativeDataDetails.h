@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qconnect/model/RankingData.h>
 #include <aws/qconnect/model/DataSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qconnect/model/RankingData.h>
 #include <utility>
 
 namespace Aws
@@ -55,18 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the generative content ranking data.</p>
-     */
-    inline const RankingData& GetRankingData() const { return m_rankingData; }
-    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
-    template<typename RankingDataT = RankingData>
-    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
-    template<typename RankingDataT = RankingData>
-    GenerativeDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The references used to generative the LLM response.</p>
      */
     inline const Aws::Vector<DataSummary>& GetReferences() const { return m_references; }
@@ -78,16 +66,28 @@ namespace Model
     template<typename ReferencesT = DataSummary>
     GenerativeDataDetails& AddReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references.emplace_back(std::forward<ReferencesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Details about the generative content ranking data.</p>
+     */
+    inline const RankingData& GetRankingData() const { return m_rankingData; }
+    inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
+    template<typename RankingDataT = RankingData>
+    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
+    template<typename RankingDataT = RankingData>
+    GenerativeDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_completion;
     bool m_completionHasBeenSet = false;
 
-    RankingData m_rankingData;
-    bool m_rankingDataHasBeenSet = false;
-
     Aws::Vector<DataSummary> m_references;
     bool m_referencesHasBeenSet = false;
+
+    RankingData m_rankingData;
+    bool m_rankingDataHasBeenSet = false;
   };
 
 } // namespace Model

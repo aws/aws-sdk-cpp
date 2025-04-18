@@ -34,6 +34,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the message template. Can be either the ID or the ARN.</p>
+     */
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
+    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    GetMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -44,25 +56,13 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     GetMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the message template. Can be either the ID or the ARN.</p>
-     */
-    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
-    inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    template<typename MessageTemplateIdT = Aws::String>
-    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
-    template<typename MessageTemplateIdT = Aws::String>
-    GetMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
+
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

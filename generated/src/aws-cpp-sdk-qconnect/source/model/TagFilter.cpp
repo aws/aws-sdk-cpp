@@ -25,6 +25,11 @@ TagFilter::TagFilter(JsonView jsonValue)
 
 TagFilter& TagFilter::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("tagCondition"))
+  {
+    m_tagCondition = jsonValue.GetObject("tagCondition");
+    m_tagConditionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("andConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("andConditions");
@@ -43,17 +48,18 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
     }
     m_orConditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tagCondition"))
-  {
-    m_tagCondition = jsonValue.GetObject("tagCondition");
-    m_tagConditionHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TagFilter::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_tagConditionHasBeenSet)
+  {
+   payload.WithObject("tagCondition", m_tagCondition.Jsonize());
+
+  }
 
   if(m_andConditionsHasBeenSet)
   {
@@ -74,12 +80,6 @@ JsonValue TagFilter::Jsonize() const
      orConditionsJsonList[orConditionsIndex].AsObject(m_orConditions[orConditionsIndex].Jsonize());
    }
    payload.WithArray("orConditions", std::move(orConditionsJsonList));
-
-  }
-
-  if(m_tagConditionHasBeenSet)
-  {
-   payload.WithObject("tagCondition", m_tagCondition.Jsonize());
 
   }
 

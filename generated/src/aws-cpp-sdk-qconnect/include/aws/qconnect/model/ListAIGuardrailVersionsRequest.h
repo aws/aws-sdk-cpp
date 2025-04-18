@@ -40,19 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect AI Guardrail for which versions are
-     * to be listed.</p>
-     */
-    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
-    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
-    template<typename AiGuardrailIdT = Aws::String>
-    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
-    template<typename AiGuardrailIdT = Aws::String>
-    ListAIGuardrailVersionsRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
@@ -66,12 +53,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The identifier of the Amazon Q in Connect AI Guardrail for which versions are
+     * to be listed.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListAIGuardrailVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
+    inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
+    template<typename AiGuardrailIdT = Aws::String>
+    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
+    template<typename AiGuardrailIdT = Aws::String>
+    ListAIGuardrailVersionsRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,19 +76,29 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAIGuardrailVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_aiGuardrailId;
-    bool m_aiGuardrailIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of results to return per page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListAIGuardrailVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_aiGuardrailId;
+    bool m_aiGuardrailIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

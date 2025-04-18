@@ -25,15 +25,15 @@ QueryConditionItem::QueryConditionItem(JsonView jsonValue)
 
 QueryConditionItem& QueryConditionItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("comparator"))
-  {
-    m_comparator = QueryConditionComparisonOperatorMapper::GetQueryConditionComparisonOperatorForName(jsonValue.GetString("comparator"));
-    m_comparatorHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("field"))
   {
     m_field = QueryConditionFieldNameMapper::GetQueryConditionFieldNameForName(jsonValue.GetString("field"));
     m_fieldHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("comparator"))
+  {
+    m_comparator = QueryConditionComparisonOperatorMapper::GetQueryConditionComparisonOperatorForName(jsonValue.GetString("comparator"));
+    m_comparatorHasBeenSet = true;
   }
   if(jsonValue.ValueExists("value"))
   {
@@ -47,14 +47,14 @@ JsonValue QueryConditionItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_comparatorHasBeenSet)
-  {
-   payload.WithString("comparator", QueryConditionComparisonOperatorMapper::GetNameForQueryConditionComparisonOperator(m_comparator));
-  }
-
   if(m_fieldHasBeenSet)
   {
    payload.WithString("field", QueryConditionFieldNameMapper::GetNameForQueryConditionFieldName(m_field));
+  }
+
+  if(m_comparatorHasBeenSet)
+  {
+   payload.WithString("comparator", QueryConditionComparisonOperatorMapper::GetNameForQueryConditionComparisonOperator(m_comparator));
   }
 
   if(m_valueHasBeenSet)

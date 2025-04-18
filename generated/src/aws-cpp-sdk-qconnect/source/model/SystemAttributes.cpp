@@ -25,15 +25,15 @@ SystemAttributes::SystemAttributes(JsonView jsonValue)
 
 SystemAttributes& SystemAttributes::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("customerEndpoint"))
-  {
-    m_customerEndpoint = jsonValue.GetObject("customerEndpoint");
-    m_customerEndpointHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customerEndpoint"))
+  {
+    m_customerEndpoint = jsonValue.GetObject("customerEndpoint");
+    m_customerEndpointHasBeenSet = true;
   }
   if(jsonValue.ValueExists("systemEndpoint"))
   {
@@ -47,15 +47,15 @@ JsonValue SystemAttributes::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customerEndpointHasBeenSet)
-  {
-   payload.WithObject("customerEndpoint", m_customerEndpoint.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_customerEndpointHasBeenSet)
+  {
+   payload.WithObject("customerEndpoint", m_customerEndpoint.Jsonize());
 
   }
 

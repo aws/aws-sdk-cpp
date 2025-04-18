@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/GuardrailSensitiveInformationAction.h>
 #include <aws/qconnect/model/GuardrailPiiEntityType.h>
+#include <aws/qconnect/model/GuardrailSensitiveInformationAction.h>
 #include <utility>
 
 namespace Aws
@@ -38,16 +38,6 @@ namespace Model
     AWS_QCONNECT_API GuardrailPiiEntityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>Configure AI Guardrail's action when the PII entity is detected.</p>
-     */
-    inline GuardrailSensitiveInformationAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(GuardrailSensitiveInformationAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline GuardrailPiiEntityConfig& WithAction(GuardrailSensitiveInformationAction value) { SetAction(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -160,13 +150,23 @@ namespace Model
     inline void SetType(GuardrailPiiEntityType value) { m_typeHasBeenSet = true; m_type = value; }
     inline GuardrailPiiEntityConfig& WithType(GuardrailPiiEntityType value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Configure AI Guardrail's action when the PII entity is detected.</p>
+     */
+    inline GuardrailSensitiveInformationAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(GuardrailSensitiveInformationAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailPiiEntityConfig& WithAction(GuardrailSensitiveInformationAction value) { SetAction(value); return *this;}
+    ///@}
+  private:
 
     GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    GuardrailSensitiveInformationAction m_action{GuardrailSensitiveInformationAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

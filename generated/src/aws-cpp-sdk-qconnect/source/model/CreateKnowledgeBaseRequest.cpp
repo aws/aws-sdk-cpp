@@ -22,9 +22,9 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("name", m_name);
 
   }
 
@@ -33,9 +33,9 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
    payload.WithString("knowledgeBaseType", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_knowledgeBaseType));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_sourceConfigurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
 
   }
 
@@ -45,15 +45,21 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
 
   }
 
+  if(m_vectorIngestionConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
+
+  }
+
   if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
    payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
 
   }
 
-  if(m_sourceConfigurationHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 
@@ -65,12 +71,6 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_vectorIngestionConfigurationHasBeenSet)
-  {
-   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
 
   }
 

@@ -16,6 +16,12 @@ Aws::String UpdateMessageTemplateMetadataRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -25,12 +31,6 @@ Aws::String UpdateMessageTemplateMetadataRequest::SerializePayload() const
   if(m_groupingConfigurationHasBeenSet)
   {
    payload.WithObject("groupingConfiguration", m_groupingConfiguration.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

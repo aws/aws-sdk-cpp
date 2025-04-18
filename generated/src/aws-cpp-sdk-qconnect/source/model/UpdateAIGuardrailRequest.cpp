@@ -16,6 +16,17 @@ Aws::String UpdateAIGuardrailRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_visibilityStatusHasBeenSet)
+  {
+   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+  }
+
   if(m_blockedInputMessagingHasBeenSet)
   {
    payload.WithString("blockedInputMessaging", m_blockedInputMessaging);
@@ -28,33 +39,9 @@ Aws::String UpdateAIGuardrailRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_contentPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("contentPolicyConfig", m_contentPolicyConfig.Jsonize());
-
-  }
-
-  if(m_contextualGroundingPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_sensitiveInformationPolicyConfigHasBeenSet)
-  {
-   payload.WithObject("sensitiveInformationPolicyConfig", m_sensitiveInformationPolicyConfig.Jsonize());
 
   }
 
@@ -64,14 +51,27 @@ Aws::String UpdateAIGuardrailRequest::SerializePayload() const
 
   }
 
-  if(m_visibilityStatusHasBeenSet)
+  if(m_contentPolicyConfigHasBeenSet)
   {
-   payload.WithString("visibilityStatus", VisibilityStatusMapper::GetNameForVisibilityStatus(m_visibilityStatus));
+   payload.WithObject("contentPolicyConfig", m_contentPolicyConfig.Jsonize());
+
   }
 
   if(m_wordPolicyConfigHasBeenSet)
   {
    payload.WithObject("wordPolicyConfig", m_wordPolicyConfig.Jsonize());
+
+  }
+
+  if(m_sensitiveInformationPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("sensitiveInformationPolicyConfig", m_sensitiveInformationPolicyConfig.Jsonize());
+
+  }
+
+  if(m_contextualGroundingPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
 
   }
 

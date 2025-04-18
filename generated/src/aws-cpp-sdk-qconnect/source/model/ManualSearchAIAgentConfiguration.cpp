@@ -25,15 +25,15 @@ ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration(JsonView json
 
 ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
-  {
-    m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
-    m_answerGenerationAIGuardrailIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
     m_answerGenerationAIPromptIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
+  {
+    m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
+    m_answerGenerationAIGuardrailIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("associationConfigurations"))
   {
@@ -56,15 +56,15 @@ JsonValue ManualSearchAIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_answerGenerationAIGuardrailIdHasBeenSet)
-  {
-   payload.WithString("answerGenerationAIGuardrailId", m_answerGenerationAIGuardrailId);
-
-  }
-
   if(m_answerGenerationAIPromptIdHasBeenSet)
   {
    payload.WithString("answerGenerationAIPromptId", m_answerGenerationAIPromptId);
+
+  }
+
+  if(m_answerGenerationAIGuardrailIdHasBeenSet)
+  {
+   payload.WithString("answerGenerationAIGuardrailId", m_answerGenerationAIGuardrailId);
 
   }
 

@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifiers of recommendations that are causing errors.</p>
-     */
-    inline const Aws::Vector<NotifyRecommendationsReceivedError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<NotifyRecommendationsReceivedError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<NotifyRecommendationsReceivedError>>
-    NotifyRecommendationsReceivedResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = NotifyRecommendationsReceivedError>
-    NotifyRecommendationsReceivedResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifiers of the recommendations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
@@ -61,6 +48,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The identifiers of recommendations that are causing errors.</p>
+     */
+    inline const Aws::Vector<NotifyRecommendationsReceivedError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<NotifyRecommendationsReceivedError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<NotifyRecommendationsReceivedError>>
+    NotifyRecommendationsReceivedResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = NotifyRecommendationsReceivedError>
+    NotifyRecommendationsReceivedResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,11 +70,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<NotifyRecommendationsReceivedError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_recommendationIds;
     bool m_recommendationIdsHasBeenSet = false;
+
+    Aws::Vector<NotifyRecommendationsReceivedError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

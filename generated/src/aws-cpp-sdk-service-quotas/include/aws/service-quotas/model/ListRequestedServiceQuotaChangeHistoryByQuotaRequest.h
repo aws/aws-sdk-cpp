@@ -111,8 +111,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies at which level within the Amazon Web Services account the quota
-     * request applies to.</p>
+     * <p>Filters the response to return quota requests for the <code>ACCOUNT</code>,
+     * <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the
+     * default.</p>
      */
     inline AppliedLevelEnum GetQuotaRequestedAtLevel() const { return m_quotaRequestedAtLevel; }
     inline bool QuotaRequestedAtLevelHasBeenSet() const { return m_quotaRequestedAtLevelHasBeenSet; }

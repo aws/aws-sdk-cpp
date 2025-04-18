@@ -35,32 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateMessageTemplateAttachmentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The presentation information for the attachment file.</p>
-     */
-    inline ContentDisposition GetContentDisposition() const { return m_contentDisposition; }
-    inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
-    inline void SetContentDisposition(ContentDisposition value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
-    inline CreateMessageTemplateAttachmentRequest& WithContentDisposition(ContentDisposition value) { SetContentDisposition(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
@@ -87,6 +61,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The presentation information for the attachment file.</p>
+     */
+    inline ContentDisposition GetContentDisposition() const { return m_contentDisposition; }
+    inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
+    inline void SetContentDisposition(ContentDisposition value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
+    inline CreateMessageTemplateAttachmentRequest& WithContentDisposition(ContentDisposition value) { SetContentDisposition(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the attachment file being uploaded. The name should include the
      * file extension.</p>
      */
@@ -96,6 +80,22 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CreateMessageTemplateAttachmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateMessageTemplateAttachmentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,20 +112,20 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    ContentDisposition m_contentDisposition{ContentDisposition::NOT_SET};
-    bool m_contentDispositionHasBeenSet = false;
-
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
 
+    ContentDisposition m_contentDisposition{ContentDisposition::NOT_SET};
+    bool m_contentDispositionHasBeenSet = false;
+
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_requestBody;
     bool m_requestBodyHasBeenSet = false;

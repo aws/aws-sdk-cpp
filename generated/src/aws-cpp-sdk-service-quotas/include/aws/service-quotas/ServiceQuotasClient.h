@@ -21,7 +21,9 @@ namespace ServiceQuotas
    * maximum number of resources that you can create in your Amazon Web Services
    * account. For more information, see the <a
    * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
-   * Quotas User Guide</a>.</p>
+   * Quotas User Guide</a>.</p> <p>You need Amazon Web Services CLI version 2.13.20
+   * or higher to view and manage resource-level quotas such as <code>Instances per
+   * domain</code> for Amazon OpenSearch Service.</p>
    */
   class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
   {
@@ -243,9 +245,10 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Retrieves the applied quota value for the specified quota. For some quotas,
-         * only the default values are available. If the applied quota value is not
-         * available for a quota, the quota is not retrieved.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the applied quota value for the specified account-level or
+         * resource-level quota. For some quotas, only the default values are available. If
+         * the applied quota value is not available for a quota, the quota is not
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuota">AWS
          * API Reference</a></p>
          */
@@ -296,9 +299,9 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the default values for the quotas for the specified Amazon Web Service.
-         * A default value does not reflect any quota increases.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the default values for the quotas for the specified Amazon Web Services
+         * service. A default value does not reflect any quota increases.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">AWS
          * API Reference</a></p>
          */
@@ -323,8 +326,10 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Retrieves the quota increase requests for the specified Amazon Web
-         * Service.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the quota increase requests for the specified Amazon Web Services
+         * service. Filter responses to return quota requests at either the account level,
+         * resource level, or all levels. Responses include any open or closed requests
+         * within 90 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistory">AWS
          * API Reference</a></p>
          */
@@ -349,8 +354,9 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Retrieves the quota increase requests for the specified quota.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the quota increase requests for the specified quota. Filter
+         * responses to return quota requests at either the account level, resource level,
+         * or all levels.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistoryByQuota">AWS
          * API Reference</a></p>
          */
@@ -401,9 +407,11 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the applied quota values for the specified Amazon Web Service. For some
-         * quotas, only the default values are available. If the applied quota value is not
-         * available for a quota, the quota is not retrieved.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the applied quota values for the specified Amazon Web Services service.
+         * For some quotas, only the default values are available. If the applied quota
+         * value is not available for a quota, the quota is not retrieved. Filter responses
+         * to return applied quota values at either the account level, resource level, or
+         * all levels.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">AWS
          * API Reference</a></p>
          */
@@ -428,8 +436,8 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the names and codes for the Amazon Web Services integrated with Service
-         * Quotas.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the names and codes for the Amazon Web Services services integrated
+         * with Service Quotas.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServices">AWS
          * API Reference</a></p>
          */
@@ -506,8 +514,8 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Submits a quota increase request for the specified quota.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Submits a quota increase request for the specified quota at the account or
+         * resource level.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/RequestServiceQuotaIncrease">AWS
          * API Reference</a></p>
          */

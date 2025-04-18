@@ -25,6 +25,11 @@ MessageOutput::MessageOutput(JsonView jsonValue)
 
 MessageOutput& MessageOutput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetObject("value");
+    m_valueHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
@@ -40,17 +45,18 @@ MessageOutput& MessageOutput::operator =(JsonView jsonValue)
     m_timestamp = jsonValue.GetDouble("timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
-    m_value = jsonValue.GetObject("value");
-    m_valueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue MessageOutput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithObject("value", m_value.Jsonize());
+
+  }
 
   if(m_messageIdHasBeenSet)
   {
@@ -66,12 +72,6 @@ JsonValue MessageOutput::Jsonize() const
   if(m_timestampHasBeenSet)
   {
    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
-  }
-
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
   }
 
   return payload;

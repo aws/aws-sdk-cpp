@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
+     */
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
+    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    CreateAIPromptVersionRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon Q in Connect AI prompt.</p>
      */
     inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
@@ -48,15 +61,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
-     * the ARN. URLs cannot contain the ARN.</p>
+     * <p>The time the AI Prompt was last modified.</p>
      */
-    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
-    inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    template<typename AssistantIdT = Aws::String>
-    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
-    template<typename AssistantIdT = Aws::String>
-    CreateAIPromptVersionRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedTime() const { return m_modifiedTime; }
+    inline bool ModifiedTimeHasBeenSet() const { return m_modifiedTimeHasBeenSet; }
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    void SetModifiedTime(ModifiedTimeT&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::forward<ModifiedTimeT>(value); }
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    CreateAIPromptVersionRequest& WithModifiedTime(ModifiedTimeT&& value) { SetModifiedTime(std::forward<ModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,31 +86,19 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateAIPromptVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The time the AI Prompt was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedTime() const { return m_modifiedTime; }
-    inline bool ModifiedTimeHasBeenSet() const { return m_modifiedTimeHasBeenSet; }
-    template<typename ModifiedTimeT = Aws::Utils::DateTime>
-    void SetModifiedTime(ModifiedTimeT&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::forward<ModifiedTimeT>(value); }
-    template<typename ModifiedTimeT = Aws::Utils::DateTime>
-    CreateAIPromptVersionRequest& WithModifiedTime(ModifiedTimeT&& value) { SetModifiedTime(std::forward<ModifiedTimeT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_aiPromptId;
-    bool m_aiPromptIdHasBeenSet = false;
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_aiPromptId;
+    bool m_aiPromptIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTime{};
     bool m_modifiedTimeHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

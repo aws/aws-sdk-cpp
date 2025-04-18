@@ -25,6 +25,21 @@ SelfServiceAIAgentConfiguration::SelfServiceAIAgentConfiguration(JsonView jsonVa
 
 SelfServiceAIAgentConfiguration& SelfServiceAIAgentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("selfServicePreProcessingAIPromptId"))
+  {
+    m_selfServicePreProcessingAIPromptId = jsonValue.GetString("selfServicePreProcessingAIPromptId");
+    m_selfServicePreProcessingAIPromptIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("selfServiceAnswerGenerationAIPromptId"))
+  {
+    m_selfServiceAnswerGenerationAIPromptId = jsonValue.GetString("selfServiceAnswerGenerationAIPromptId");
+    m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("selfServiceAIGuardrailId"))
+  {
+    m_selfServiceAIGuardrailId = jsonValue.GetString("selfServiceAIGuardrailId");
+    m_selfServiceAIGuardrailIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("associationConfigurations"))
   {
     Aws::Utils::Array<JsonView> associationConfigurationsJsonList = jsonValue.GetArray("associationConfigurations");
@@ -34,21 +49,6 @@ SelfServiceAIAgentConfiguration& SelfServiceAIAgentConfiguration::operator =(Jso
     }
     m_associationConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("selfServiceAIGuardrailId"))
-  {
-    m_selfServiceAIGuardrailId = jsonValue.GetString("selfServiceAIGuardrailId");
-    m_selfServiceAIGuardrailIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("selfServiceAnswerGenerationAIPromptId"))
-  {
-    m_selfServiceAnswerGenerationAIPromptId = jsonValue.GetString("selfServiceAnswerGenerationAIPromptId");
-    m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("selfServicePreProcessingAIPromptId"))
-  {
-    m_selfServicePreProcessingAIPromptId = jsonValue.GetString("selfServicePreProcessingAIPromptId");
-    m_selfServicePreProcessingAIPromptIdHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -56,20 +56,9 @@ JsonValue SelfServiceAIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_associationConfigurationsHasBeenSet)
+  if(m_selfServicePreProcessingAIPromptIdHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> associationConfigurationsJsonList(m_associationConfigurations.size());
-   for(unsigned associationConfigurationsIndex = 0; associationConfigurationsIndex < associationConfigurationsJsonList.GetLength(); ++associationConfigurationsIndex)
-   {
-     associationConfigurationsJsonList[associationConfigurationsIndex].AsObject(m_associationConfigurations[associationConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("associationConfigurations", std::move(associationConfigurationsJsonList));
-
-  }
-
-  if(m_selfServiceAIGuardrailIdHasBeenSet)
-  {
-   payload.WithString("selfServiceAIGuardrailId", m_selfServiceAIGuardrailId);
+   payload.WithString("selfServicePreProcessingAIPromptId", m_selfServicePreProcessingAIPromptId);
 
   }
 
@@ -79,9 +68,20 @@ JsonValue SelfServiceAIAgentConfiguration::Jsonize() const
 
   }
 
-  if(m_selfServicePreProcessingAIPromptIdHasBeenSet)
+  if(m_selfServiceAIGuardrailIdHasBeenSet)
   {
-   payload.WithString("selfServicePreProcessingAIPromptId", m_selfServicePreProcessingAIPromptId);
+   payload.WithString("selfServiceAIGuardrailId", m_selfServiceAIGuardrailId);
+
+  }
+
+  if(m_associationConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associationConfigurationsJsonList(m_associationConfigurations.size());
+   for(unsigned associationConfigurationsIndex = 0; associationConfigurationsIndex < associationConfigurationsJsonList.GetLength(); ++associationConfigurationsIndex)
+   {
+     associationConfigurationsJsonList[associationConfigurationsIndex].AsObject(m_associationConfigurations[associationConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("associationConfigurations", std::move(associationConfigurationsJsonList));
 
   }
 
