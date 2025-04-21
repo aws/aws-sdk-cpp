@@ -66,10 +66,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM
-     * roles for Custom Document Enrichment (CDE)</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using
+     * Lambda functions for Amazon Q Business document enrichment</a>.</p>
      */
     inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }

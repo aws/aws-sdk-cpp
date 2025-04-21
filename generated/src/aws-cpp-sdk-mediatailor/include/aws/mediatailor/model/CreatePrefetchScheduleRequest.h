@@ -9,6 +9,8 @@
 #include <aws/mediatailor/model/PrefetchConsumption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/PrefetchRetrieval.h>
+#include <aws/mediatailor/model/RecurringPrefetchConfiguration.h>
+#include <aws/mediatailor/model/PrefetchScheduleType.h>
 #include <utility>
 
 namespace Aws
@@ -36,11 +38,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
-     * prefetched ads from the ad decision server. Each consumption configuration
-     * contains an end time and an optional start time that define the <i>consumption
-     * window</i>. Prefetch schedules automatically expire no earlier than seven days
-     * after the end time.</p>
+     * <p>The configuration settings for how and when MediaTailor consumes prefetched
+     * ads from the ad decision server for single prefetch schedules. Each consumption
+     * configuration contains an end time and an optional start time that define the
+     * <i>consumption window</i>. Prefetch schedules automatically expire no earlier
+     * than seven days after the end time.</p>
      */
     inline const PrefetchConsumption& GetConsumption() const { return m_consumption; }
     inline bool ConsumptionHasBeenSet() const { return m_consumptionHasBeenSet; }
@@ -90,6 +92,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration that defines how and when MediaTailor performs ad
+     * prefetching in a live event.</p>
+     */
+    inline const RecurringPrefetchConfiguration& GetRecurringPrefetchConfiguration() const { return m_recurringPrefetchConfiguration; }
+    inline bool RecurringPrefetchConfigurationHasBeenSet() const { return m_recurringPrefetchConfigurationHasBeenSet; }
+    template<typename RecurringPrefetchConfigurationT = RecurringPrefetchConfiguration>
+    void SetRecurringPrefetchConfiguration(RecurringPrefetchConfigurationT&& value) { m_recurringPrefetchConfigurationHasBeenSet = true; m_recurringPrefetchConfiguration = std::forward<RecurringPrefetchConfigurationT>(value); }
+    template<typename RecurringPrefetchConfigurationT = RecurringPrefetchConfiguration>
+    CreatePrefetchScheduleRequest& WithRecurringPrefetchConfiguration(RecurringPrefetchConfigurationT&& value) { SetRecurringPrefetchConfiguration(std::forward<RecurringPrefetchConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The frequency that MediaTailor creates prefetch schedules.
+     * <code>SINGLE</code> indicates that this schedule applies to one ad break.
+     * <code>RECURRING</code> indicates that MediaTailor automatically creates a
+     * schedule for each ad avail in a live event.</p> <p>For more information about
+     * the prefetch types and when you might use each, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching
+     * ads in Elemental MediaTailor.</a> </p>
+     */
+    inline PrefetchScheduleType GetScheduleType() const { return m_scheduleType; }
+    inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+    inline void SetScheduleType(PrefetchScheduleType value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
+    inline CreatePrefetchScheduleRequest& WithScheduleType(PrefetchScheduleType value) { SetScheduleType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
      * multiple streams that use the same playback configuration. If
      * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
@@ -117,6 +148,12 @@ namespace Model
 
     PrefetchRetrieval m_retrieval;
     bool m_retrievalHasBeenSet = false;
+
+    RecurringPrefetchConfiguration m_recurringPrefetchConfiguration;
+    bool m_recurringPrefetchConfigurationHasBeenSet = false;
+
+    PrefetchScheduleType m_scheduleType{PrefetchScheduleType::NOT_SET};
+    bool m_scheduleTypeHasBeenSet = false;
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;

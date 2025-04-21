@@ -8,14 +8,15 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/budgets/model/Spend.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/budgets/model/CostTypes.h>
 #include <aws/budgets/model/TimeUnit.h>
 #include <aws/budgets/model/TimePeriod.h>
 #include <aws/budgets/model/CalculatedSpend.h>
 #include <aws/budgets/model/BudgetType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/budgets/model/AutoAdjustData.h>
+#include <aws/budgets/model/Expression.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/budgets/model/Metric.h>
 #include <utility>
 
 namespace Aws
@@ -128,43 +129,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
-     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
-     * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
-     * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
-     * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
-     * <p>Amazon OpenSearch Service</p> </li> </ul>
-     */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const { return m_costFilters; }
-    inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
-    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
-    void SetCostFilters(CostFiltersT&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::forward<CostFiltersT>(value); }
-    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
-    Budget& WithCostFilters(CostFiltersT&& value) { SetCostFilters(std::forward<CostFiltersT>(value)); return *this;}
-    template<typename CostFiltersKeyT = Aws::String, typename CostFiltersValueT = Aws::Vector<Aws::String>>
-    Budget& AddCostFilters(CostFiltersKeyT&& key, CostFiltersValueT&& value) {
-      m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::forward<CostFiltersKeyT>(key), std::forward<CostFiltersValueT>(value)); return *this;
-    }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
-     * budgets do not have <code>CostTypes</code>.</p>
-     */
-    inline const CostTypes& GetCostTypes() const { return m_costTypes; }
-    inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
-    template<typename CostTypesT = CostTypes>
-    void SetCostTypes(CostTypesT&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::forward<CostTypesT>(value); }
-    template<typename CostTypesT = CostTypes>
-    Budget& WithCostTypes(CostTypesT&& value) { SetCostTypes(std::forward<CostTypesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline TimeUnit GetTimeUnit() const { return m_timeUnit; }
@@ -175,7 +139,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The period of time that's covered by a budget. You setthe start date and end
+     * <p>The period of time that's covered by a budget. You set the start date and end
      * date. The start date must come before the end date. The end date must come
      * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
      * don't specify a start date, Amazon Web Services defaults to the start of your
@@ -245,6 +209,31 @@ namespace Model
     template<typename AutoAdjustDataT = AutoAdjustData>
     Budget& WithAutoAdjustData(AutoAdjustDataT&& value) { SetAutoAdjustData(std::forward<AutoAdjustDataT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The filtering dimensions for the budget and their corresponding values.</p>
+     */
+    inline const Expression& GetFilterExpression() const { return m_filterExpression; }
+    inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
+    template<typename FilterExpressionT = Expression>
+    void SetFilterExpression(FilterExpressionT&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::forward<FilterExpressionT>(value); }
+    template<typename FilterExpressionT = Expression>
+    Budget& WithFilterExpression(FilterExpressionT&& value) { SetFilterExpression(std::forward<FilterExpressionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The definition for how the budget data is aggregated.</p>
+     */
+    inline const Aws::Vector<Metric>& GetMetrics() const { return m_metrics; }
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+    template<typename MetricsT = Aws::Vector<Metric>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<Metric>>
+    Budget& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    inline Budget& AddMetrics(Metric value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_budgetName;
@@ -255,12 +244,6 @@ namespace Model
 
     Aws::Map<Aws::String, Spend> m_plannedBudgetLimits;
     bool m_plannedBudgetLimitsHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
-    bool m_costFiltersHasBeenSet = false;
-
-    CostTypes m_costTypes;
-    bool m_costTypesHasBeenSet = false;
 
     TimeUnit m_timeUnit{TimeUnit::NOT_SET};
     bool m_timeUnitHasBeenSet = false;
@@ -279,6 +262,12 @@ namespace Model
 
     AutoAdjustData m_autoAdjustData;
     bool m_autoAdjustDataHasBeenSet = false;
+
+    Expression m_filterExpression;
+    bool m_filterExpressionHasBeenSet = false;
+
+    Aws::Vector<Metric> m_metrics;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -61,6 +61,19 @@ namespace Model
     template<typename BudgetNameT = Aws::String>
     DescribeBudgetRequest& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the response includes the filter expression associated with
+     * the budget. By showing the filter expression, you can see detailed filtering
+     * logic applied to the budget, such as Amazon Web Services services or tags that
+     * are being tracked.</p>
+     */
+    inline bool GetShowFilterExpression() const { return m_showFilterExpression; }
+    inline bool ShowFilterExpressionHasBeenSet() const { return m_showFilterExpressionHasBeenSet; }
+    inline void SetShowFilterExpression(bool value) { m_showFilterExpressionHasBeenSet = true; m_showFilterExpression = value; }
+    inline DescribeBudgetRequest& WithShowFilterExpression(bool value) { SetShowFilterExpression(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -68,6 +81,9 @@ namespace Model
 
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet = false;
+
+    bool m_showFilterExpression{false};
+    bool m_showFilterExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains settings that determine how and when that
-   * MediaTailor places prefetched ads into upcoming ad breaks.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>For single prefetch, describes how and when that MediaTailor places
+   * prefetched ads into upcoming ad breaks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PrefetchConsumption">AWS
    * API Reference</a></p>
    */

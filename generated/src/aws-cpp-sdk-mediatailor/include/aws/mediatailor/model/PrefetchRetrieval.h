@@ -7,6 +7,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediatailor/model/TrafficShapingType.h>
+#include <aws/mediatailor/model/TrafficShapingRetrievalWindow.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -89,6 +91,30 @@ namespace Model
     template<typename StartTimeT = Aws::Utils::DateTime>
     PrefetchRetrieval& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates if this configuration uses a retrieval window for traffic shaping
+     * and limiting the number of requests to the ADS at one time.</p>
+     */
+    inline TrafficShapingType GetTrafficShapingType() const { return m_trafficShapingType; }
+    inline bool TrafficShapingTypeHasBeenSet() const { return m_trafficShapingTypeHasBeenSet; }
+    inline void SetTrafficShapingType(TrafficShapingType value) { m_trafficShapingTypeHasBeenSet = true; m_trafficShapingType = value; }
+    inline PrefetchRetrieval& WithTrafficShapingType(TrafficShapingType value) { SetTrafficShapingType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration for spreading ADS traffic across a set window instead of
+     * sending ADS requests for all sessions at the same time.</p>
+     */
+    inline const TrafficShapingRetrievalWindow& GetTrafficShapingRetrievalWindow() const { return m_trafficShapingRetrievalWindow; }
+    inline bool TrafficShapingRetrievalWindowHasBeenSet() const { return m_trafficShapingRetrievalWindowHasBeenSet; }
+    template<typename TrafficShapingRetrievalWindowT = TrafficShapingRetrievalWindow>
+    void SetTrafficShapingRetrievalWindow(TrafficShapingRetrievalWindowT&& value) { m_trafficShapingRetrievalWindowHasBeenSet = true; m_trafficShapingRetrievalWindow = std::forward<TrafficShapingRetrievalWindowT>(value); }
+    template<typename TrafficShapingRetrievalWindowT = TrafficShapingRetrievalWindow>
+    PrefetchRetrieval& WithTrafficShapingRetrievalWindow(TrafficShapingRetrievalWindowT&& value) { SetTrafficShapingRetrievalWindow(std::forward<TrafficShapingRetrievalWindowT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
@@ -99,6 +125,12 @@ namespace Model
 
     Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
+
+    TrafficShapingType m_trafficShapingType{TrafficShapingType::NOT_SET};
+    bool m_trafficShapingTypeHasBeenSet = false;
+
+    TrafficShapingRetrievalWindow m_trafficShapingRetrievalWindow;
+    bool m_trafficShapingRetrievalWindowHasBeenSet = false;
   };
 
 } // namespace Model

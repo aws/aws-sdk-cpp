@@ -23,6 +23,7 @@
 #include <aws/qbusiness/model/BatchPutDocumentResult.h>
 #include <aws/qbusiness/model/CancelSubscriptionResult.h>
 #include <aws/qbusiness/model/ChatSyncResult.h>
+#include <aws/qbusiness/model/CheckDocumentAccessResult.h>
 #include <aws/qbusiness/model/CreateApplicationResult.h>
 #include <aws/qbusiness/model/CreateDataAccessorResult.h>
 #include <aws/qbusiness/model/CreateDataSourceResult.h>
@@ -146,6 +147,7 @@ namespace Aws
       class ChatRequest;
       class ChatInputStream;
       class ChatSyncRequest;
+      class CheckDocumentAccessRequest;
       class CreateApplicationRequest;
       class CreateDataAccessorRequest;
       class CreateDataSourceRequest;
@@ -224,6 +226,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelSubscriptionResult, QBusinessError> CancelSubscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, QBusinessError> ChatOutcome;
       typedef Aws::Utils::Outcome<ChatSyncResult, QBusinessError> ChatSyncOutcome;
+      typedef Aws::Utils::Outcome<CheckDocumentAccessResult, QBusinessError> CheckDocumentAccessOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, QBusinessError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateDataAccessorResult, QBusinessError> CreateDataAccessorOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, QBusinessError> CreateDataSourceOutcome;
@@ -302,6 +305,7 @@ namespace Aws
       typedef std::future<CancelSubscriptionOutcome> CancelSubscriptionOutcomeCallable;
       typedef std::future<ChatOutcome> ChatOutcomeCallable;
       typedef std::future<ChatSyncOutcome> ChatSyncOutcomeCallable;
+      typedef std::future<CheckDocumentAccessOutcome> CheckDocumentAccessOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateDataAccessorOutcome> CreateDataAccessorOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
@@ -384,6 +388,7 @@ namespace Aws
     typedef std::function<void(Model::ChatInputStream&)> ChatStreamReadyHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ChatRequest&, const Model::ChatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ChatSyncRequest&, const Model::ChatSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatSyncResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::CheckDocumentAccessRequest&, const Model::CheckDocumentAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDocumentAccessResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateDataAccessorRequest&, const Model::CreateDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;

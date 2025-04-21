@@ -102,13 +102,11 @@ namespace Model
     ///@{
     /**
      * <p>Sets the website domain origins that are allowed to embed the Amazon Q
-     * Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers
-     * to the base URL for accessing a website including the protocol
-     * (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if
-     * specified). &lt;/p&gt; &lt;note&gt; &lt;p&gt;You must only submit a
-     * &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example,
-     * &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt;
-     * </code></pre>
+     * Business web experience. The <i>domain origin</i> refers to the base URL for
+     * accessing a website including the protocol (<code>http/https</code>), the domain
+     * name, and the port number (if specified). </p>  <p>You must only submit a
+     * <i>base URL</i> and not a full path. For example,
+     * <code>https://docs.aws.amazon.com</code>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetOrigins() const { return m_origins; }
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }

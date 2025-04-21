@@ -34,6 +34,12 @@ Aws::String DescribeBudgetsRequest::SerializePayload() const
 
   }
 
+  if(m_showFilterExpressionHasBeenSet)
+  {
+   payload.WithBool("ShowFilterExpression", m_showFilterExpression);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
