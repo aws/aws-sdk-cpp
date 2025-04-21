@@ -31,6 +31,7 @@ namespace Aws
         static const int InvalidConditionType_HASH = HashingUtils::HashString("InvalidConditionType");
         static const int InvalidPracticeBlocker_HASH = HashingUtils::HashString("InvalidPracticeBlocker");
         static const int FISExperimentUpdateNotAllowed_HASH = HashingUtils::HashString("FISExperimentUpdateNotAllowed");
+        static const int AutoshiftUpdateNotAllowed_HASH = HashingUtils::HashString("AutoshiftUpdateNotAllowed");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ValidationExceptionReason::FISExperimentUpdateNotAllowed;
           }
+          else if (hashCode == AutoshiftUpdateNotAllowed_HASH)
+          {
+            return ValidationExceptionReason::AutoshiftUpdateNotAllowed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "InvalidPracticeBlocker";
           case ValidationExceptionReason::FISExperimentUpdateNotAllowed:
             return "FISExperimentUpdateNotAllowed";
+          case ValidationExceptionReason::AutoshiftUpdateNotAllowed:
+            return "AutoshiftUpdateNotAllowed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

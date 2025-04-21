@@ -28,6 +28,17 @@ Aws::String CreatePrefetchScheduleRequest::SerializePayload() const
 
   }
 
+  if(m_recurringPrefetchConfigurationHasBeenSet)
+  {
+   payload.WithObject("RecurringPrefetchConfiguration", m_recurringPrefetchConfiguration.Jsonize());
+
+  }
+
+  if(m_scheduleTypeHasBeenSet)
+  {
+   payload.WithString("ScheduleType", PrefetchScheduleTypeMapper::GetNameForPrefetchScheduleType(m_scheduleType));
+  }
+
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("StreamId", m_streamId);

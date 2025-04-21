@@ -7,6 +7,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/ListPrefetchScheduleType.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of prefetch schedules that you want to list. <code>SINGLE</code>
+     * indicates that you want to list the configured single prefetch schedules.
+     * <code>RECURRING</code> indicates that you want to list the configured recurring
+     * prefetch schedules. <code>ALL</code> indicates that you want to list all
+     * configured prefetch schedules.</p>
+     */
+    inline ListPrefetchScheduleType GetScheduleType() const { return m_scheduleType; }
+    inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+    inline void SetScheduleType(ListPrefetchScheduleType value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
+    inline ListPrefetchSchedulesRequest& WithScheduleType(ListPrefetchScheduleType value) { SetScheduleType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional filtering parameter whereby MediaTailor filters the prefetch
      * schedules to include only specific streams.</p>
      */
@@ -98,6 +113,9 @@ namespace Model
 
     Aws::String m_playbackConfigurationName;
     bool m_playbackConfigurationNameHasBeenSet = false;
+
+    ListPrefetchScheduleType m_scheduleType{ListPrefetchScheduleType::NOT_SET};
+    bool m_scheduleTypeHasBeenSet = false;
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;

@@ -50,6 +50,16 @@ CreatePrefetchScheduleResult& CreatePrefetchScheduleResult::operator =(const Aws
     m_retrieval = jsonValue.GetObject("Retrieval");
     m_retrievalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RecurringPrefetchConfiguration"))
+  {
+    m_recurringPrefetchConfiguration = jsonValue.GetObject("RecurringPrefetchConfiguration");
+    m_recurringPrefetchConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ScheduleType"))
+  {
+    m_scheduleType = PrefetchScheduleTypeMapper::GetPrefetchScheduleTypeForName(jsonValue.GetString("ScheduleType"));
+    m_scheduleTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("StreamId"))
   {
     m_streamId = jsonValue.GetString("StreamId");

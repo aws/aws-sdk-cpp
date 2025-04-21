@@ -257,6 +257,34 @@ namespace QBusiness
         }
 
         /**
+         * <p>Verifies if a user has access permissions for a specified document and
+         * returns the actual ACL attached to the document. Resolves user access on the
+         * document via user aliases and groups when verifying user access.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CheckDocumentAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CheckDocumentAccessOutcome CheckDocumentAccess(const Model::CheckDocumentAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for CheckDocumentAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CheckDocumentAccessRequestT = Model::CheckDocumentAccessRequest>
+        Model::CheckDocumentAccessOutcomeCallable CheckDocumentAccessCallable(const CheckDocumentAccessRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::CheckDocumentAccess, request);
+        }
+
+        /**
+         * An Async wrapper for CheckDocumentAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CheckDocumentAccessRequestT = Model::CheckDocumentAccessRequest>
+        void CheckDocumentAccessAsync(const CheckDocumentAccessRequestT& request, const CheckDocumentAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::CheckDocumentAccess, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Amazon Q Business application.</p>  <p>There are new tiers
          * for Amazon Q Business. Not all features in Amazon Q Business Pro are also
          * available in Amazon Q Business Lite. For information on what's included in

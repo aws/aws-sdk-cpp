@@ -28,6 +28,11 @@ Aws::String ListPrefetchSchedulesRequest::SerializePayload() const
 
   }
 
+  if(m_scheduleTypeHasBeenSet)
+  {
+   payload.WithString("ScheduleType", ListPrefetchScheduleTypeMapper::GetNameForListPrefetchScheduleType(m_scheduleType));
+  }
+
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("StreamId", m_streamId);

@@ -50,6 +50,16 @@ PrefetchSchedule& PrefetchSchedule::operator =(JsonView jsonValue)
     m_retrieval = jsonValue.GetObject("Retrieval");
     m_retrievalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ScheduleType"))
+  {
+    m_scheduleType = PrefetchScheduleTypeMapper::GetPrefetchScheduleTypeForName(jsonValue.GetString("ScheduleType"));
+    m_scheduleTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RecurringPrefetchConfiguration"))
+  {
+    m_recurringPrefetchConfiguration = jsonValue.GetObject("RecurringPrefetchConfiguration");
+    m_recurringPrefetchConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("StreamId"))
   {
     m_streamId = jsonValue.GetString("StreamId");
@@ -89,6 +99,17 @@ JsonValue PrefetchSchedule::Jsonize() const
   if(m_retrievalHasBeenSet)
   {
    payload.WithObject("Retrieval", m_retrieval.Jsonize());
+
+  }
+
+  if(m_scheduleTypeHasBeenSet)
+  {
+   payload.WithString("ScheduleType", PrefetchScheduleTypeMapper::GetNameForPrefetchScheduleType(m_scheduleType));
+  }
+
+  if(m_recurringPrefetchConfigurationHasBeenSet)
+  {
+   payload.WithObject("RecurringPrefetchConfiguration", m_recurringPrefetchConfiguration.Jsonize());
 
   }
 

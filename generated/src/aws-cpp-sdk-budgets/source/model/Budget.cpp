@@ -44,27 +44,6 @@ Budget& Budget::operator =(JsonView jsonValue)
     }
     m_plannedBudgetLimitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CostFilters"))
-  {
-    Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
-    for(auto& costFiltersItem : costFiltersJsonMap)
-    {
-      Aws::Utils::Array<JsonView> dimensionValuesJsonList = costFiltersItem.second.AsArray();
-      Aws::Vector<Aws::String> dimensionValuesList;
-      dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
-      for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
-      {
-        dimensionValuesList.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsString());
-      }
-      m_costFilters[costFiltersItem.first] = std::move(dimensionValuesList);
-    }
-    m_costFiltersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CostTypes"))
-  {
-    m_costTypes = jsonValue.GetObject("CostTypes");
-    m_costTypesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
@@ -95,6 +74,20 @@ Budget& Budget::operator =(JsonView jsonValue)
     m_autoAdjustData = jsonValue.GetObject("AutoAdjustData");
     m_autoAdjustDataHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("FilterExpression"))
+  {
+    m_filterExpression = jsonValue.GetObject("FilterExpression");
+    m_filterExpressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Metrics"))
+  {
+    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
+    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+    {
+      m_metrics.push_back(MetricMapper::GetMetricForName(metricsJsonList[metricsIndex].AsString()));
+    }
+    m_metricsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,28 +115,6 @@ JsonValue Budget::Jsonize() const
      plannedBudgetLimitsJsonMap.WithObject(plannedBudgetLimitsItem.first, plannedBudgetLimitsItem.second.Jsonize());
    }
    payload.WithObject("PlannedBudgetLimits", std::move(plannedBudgetLimitsJsonMap));
-
-  }
-
-  if(m_costFiltersHasBeenSet)
-  {
-   JsonValue costFiltersJsonMap;
-   for(auto& costFiltersItem : m_costFilters)
-   {
-     Aws::Utils::Array<JsonValue> dimensionValuesJsonList(costFiltersItem.second.size());
-     for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
-     {
-       dimensionValuesJsonList[dimensionValuesIndex].AsString(costFiltersItem.second[dimensionValuesIndex]);
-     }
-     costFiltersJsonMap.WithArray(costFiltersItem.first, std::move(dimensionValuesJsonList));
-   }
-   payload.WithObject("CostFilters", std::move(costFiltersJsonMap));
-
-  }
-
-  if(m_costTypesHasBeenSet)
-  {
-   payload.WithObject("CostTypes", m_costTypes.Jsonize());
 
   }
 
@@ -177,6 +148,23 @@ JsonValue Budget::Jsonize() const
   if(m_autoAdjustDataHasBeenSet)
   {
    payload.WithObject("AutoAdjustData", m_autoAdjustData.Jsonize());
+
+  }
+
+  if(m_filterExpressionHasBeenSet)
+  {
+   payload.WithObject("FilterExpression", m_filterExpression.Jsonize());
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+   {
+     metricsJsonList[metricsIndex].AsString(MetricMapper::GetNameForMetric(m_metrics[metricsIndex]));
+   }
+   payload.WithArray("Metrics", std::move(metricsJsonList));
 
   }
 

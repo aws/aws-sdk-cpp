@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/PrefetchConsumption.h>
 #include <aws/mediatailor/model/PrefetchRetrieval.h>
+#include <aws/mediatailor/model/PrefetchScheduleType.h>
+#include <aws/mediatailor/model/RecurringPrefetchConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -59,10 +61,10 @@ namespace Model
     ///@{
     /**
      * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * prefetched ads into ad breaks for single prefetch schedules. Ad consumption
+     * occurs within a span of time that you define, called a <i>consumption
+     * window</i>. You can designate which ad breaks that MediaTailor fills with
+     * prefetch ads by setting avail matching criteria.</p>
      */
     inline const PrefetchConsumption& GetConsumption() const { return m_consumption; }
     inline bool ConsumptionHasBeenSet() const { return m_consumptionHasBeenSet; }
@@ -113,6 +115,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The frequency that MediaTailor creates prefetch schedules.
+     * <code>SINGLE</code> indicates that this schedule applies to one ad break.
+     * <code>RECURRING</code> indicates that MediaTailor automatically creates a
+     * schedule for each ad avail in a live event.</p> <p>For more information about
+     * the prefetch types and when you might use each, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching
+     * ads in Elemental MediaTailor.</a> </p>
+     */
+    inline PrefetchScheduleType GetScheduleType() const { return m_scheduleType; }
+    inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+    inline void SetScheduleType(PrefetchScheduleType value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
+    inline PrefetchSchedule& WithScheduleType(PrefetchScheduleType value) { SetScheduleType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The settings that determine how and when MediaTailor prefetches ads and
+     * inserts them into ad breaks.</p>
+     */
+    inline const RecurringPrefetchConfiguration& GetRecurringPrefetchConfiguration() const { return m_recurringPrefetchConfiguration; }
+    inline bool RecurringPrefetchConfigurationHasBeenSet() const { return m_recurringPrefetchConfigurationHasBeenSet; }
+    template<typename RecurringPrefetchConfigurationT = RecurringPrefetchConfiguration>
+    void SetRecurringPrefetchConfiguration(RecurringPrefetchConfigurationT&& value) { m_recurringPrefetchConfigurationHasBeenSet = true; m_recurringPrefetchConfiguration = std::forward<RecurringPrefetchConfigurationT>(value); }
+    template<typename RecurringPrefetchConfigurationT = RecurringPrefetchConfiguration>
+    PrefetchSchedule& WithRecurringPrefetchConfiguration(RecurringPrefetchConfigurationT&& value) { SetRecurringPrefetchConfiguration(std::forward<RecurringPrefetchConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional stream identifier that you can specify in order to prefetch for
      * multiple streams that use the same playback configuration.</p>
      */
@@ -139,6 +170,12 @@ namespace Model
 
     PrefetchRetrieval m_retrieval;
     bool m_retrievalHasBeenSet = false;
+
+    PrefetchScheduleType m_scheduleType{PrefetchScheduleType::NOT_SET};
+    bool m_scheduleTypeHasBeenSet = false;
+
+    RecurringPrefetchConfiguration m_recurringPrefetchConfiguration;
+    bool m_recurringPrefetchConfigurationHasBeenSet = false;
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;

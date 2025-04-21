@@ -26,7 +26,8 @@ namespace Model
     InvalidAlarmCondition,
     InvalidConditionType,
     InvalidPracticeBlocker,
-    FISExperimentUpdateNotAllowed
+    FISExperimentUpdateNotAllowed,
+    AutoshiftUpdateNotAllowed
   };
 
 namespace ValidationExceptionReasonMapper

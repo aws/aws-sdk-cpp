@@ -139,15 +139,13 @@ namespace Model
     ///@{
     /**
      * <p>Updates the website domain origins that are allowed to embed the Amazon Q
-     * Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers
-     * to the &lt;i&gt;base URL&lt;/i&gt; for accessing a website including the
-     * protocol (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port
-     * number (if specified).&lt;/p&gt; &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Any
-     * values except &lt;code&gt;null&lt;/code&gt; submitted as part of this update
-     * will replace all previous values.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You
-     * must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example,
-     * &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt;
-     * &lt;/ul&gt; &lt;/note&gt; </code></pre>
+     * Business web experience. The <i>domain origin</i> refers to the <i>base URL</i>
+     * for accessing a website including the protocol (<code>http/https</code>), the
+     * domain name, and the port number (if specified).</p>  <ul> <li> <p>Any
+     * values except <code>null</code> submitted as part of this update will replace
+     * all previous values.</p> </li> <li> <p>You must only submit a <i>base URL</i>
+     * and not a full path. For example, <code>https://docs.aws.amazon.com</code>.</p>
+     * </li> </ul> 
      */
     inline const Aws::Vector<Aws::String>& GetOrigins() const { return m_origins; }
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
