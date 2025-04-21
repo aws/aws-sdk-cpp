@@ -26,7 +26,7 @@ namespace Aws
         static const char HTTP_CLIENT_METRICS_UNKNOWN[] = "Unknown";
 
         static const Aws::Array<std::pair<HttpClientMetricsType, const char*>, 14> httpClientMetricsNames =
-        {
+        {{
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::DestinationIp, HTTP_CLIENT_METRICS_DESTINATION_IP),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::AcquireConnectionLatency, HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::ConnectionReused, HTTP_CLIENT_METRICS_CONNECTION_REUSED),
@@ -41,7 +41,7 @@ namespace Aws
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::Unknown, HTTP_CLIENT_METRICS_UNKNOWN),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::TimeToFirstByte, HTTP_CLIENT_METRICS_TIME_TO_FIRST_BYTE),
             std::pair<HttpClientMetricsType, const char *>(HttpClientMetricsType::TimeToConnect, HTTP_CLIENT_METRICS_TIME_TO_CONNECT),
-        };
+        }};
 
         HttpClientMetricsType GetHttpClientMetricTypeByName(const Aws::String& name)
         {
