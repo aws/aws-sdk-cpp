@@ -2799,6 +2799,35 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Given a refresh token, issues new ID, access, and optionally refresh tokens
+         * for the user who owns the submitted token. This operation issues a new refresh
+         * token and invalidates the original refresh token after an optional grace period
+         * when refresh token rotation is enabled. If refresh token rotation is disabled,
+         * issues new ID and access tokens only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetTokensFromRefreshToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTokensFromRefreshTokenOutcome GetTokensFromRefreshToken(const Model::GetTokensFromRefreshTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTokensFromRefreshToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTokensFromRefreshTokenRequestT = Model::GetTokensFromRefreshTokenRequest>
+        Model::GetTokensFromRefreshTokenOutcomeCallable GetTokensFromRefreshTokenCallable(const GetTokensFromRefreshTokenRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::GetTokensFromRefreshToken, request);
+        }
+
+        /**
+         * An Async wrapper for GetTokensFromRefreshToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTokensFromRefreshTokenRequestT = Model::GetTokensFromRefreshTokenRequest>
+        void GetTokensFromRefreshTokenAsync(const GetTokensFromRefreshTokenRequestT& request, const GetTokensFromRefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::GetTokensFromRefreshToken, request, handler, context);
+        }
+
+        /**
          * <p>Given a user pool ID or app client, returns information about classic hosted
          * UI branding that you applied, if any. Returns user-pool level branding
          * information if no app client branding is applied, or if you don't specify an app

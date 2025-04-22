@@ -65,14 +65,15 @@ static const int GROUP_EXISTS_HASH = HashingUtils::HashString("GroupExistsExcept
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int DUPLICATE_PROVIDER_HASH = HashingUtils::HashString("DuplicateProviderException");
 static const int TOO_MANY_FAILED_ATTEMPTS_HASH = HashingUtils::HashString("TooManyFailedAttemptsException");
-static const int WEB_AUTHN_CHALLENGE_NOT_FOUND_HASH = HashingUtils::HashString("WebAuthnChallengeNotFoundException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
+static const int WEB_AUTHN_CHALLENGE_NOT_FOUND_HASH = HashingUtils::HashString("WebAuthnChallengeNotFoundException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
 static const int INVALID_LAMBDA_RESPONSE_HASH = HashingUtils::HashString("InvalidLambdaResponseException");
 static const int WEB_AUTHN_ORIGIN_NOT_ALLOWED_HASH = HashingUtils::HashString("WebAuthnOriginNotAllowedException");
 static const int WEB_AUTHN_CLIENT_MISMATCH_HASH = HashingUtils::HashString("WebAuthnClientMismatchException");
 static const int USER_LAMBDA_VALIDATION_HASH = HashingUtils::HashString("UserLambdaValidationException");
 static const int CODE_DELIVERY_FAILURE_HASH = HashingUtils::HashString("CodeDeliveryFailureException");
+static const int REFRESH_TOKEN_REUSE_HASH = HashingUtils::HashString("RefreshTokenReuseException");
 static const int USERNAME_EXISTS_HASH = HashingUtils::HashString("UsernameExistsException");
 static const int USER_IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("UserImportInProgressException");
 static const int USER_POOL_TAGGING_HASH = HashingUtils::HashString("UserPoolTaggingException");
@@ -240,13 +241,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TOO_MANY_FAILED_ATTEMPTS), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == WEB_AUTHN_CHALLENGE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::WEB_AUTHN_CHALLENGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == WEB_AUTHN_CHALLENGE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::WEB_AUTHN_CHALLENGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
@@ -271,6 +272,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CODE_DELIVERY_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::CODE_DELIVERY_FAILURE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == REFRESH_TOKEN_REUSE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::REFRESH_TOKEN_REUSE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == USERNAME_EXISTS_HASH)
   {

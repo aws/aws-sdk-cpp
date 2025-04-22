@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
 #include <aws/cognito-idp/model/PreventUserExistenceErrorTypes.h>
+#include <aws/cognito-idp/model/RefreshTokenRotationType.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
 #include <utility>
@@ -502,6 +503,21 @@ namespace Model
     inline void SetAuthSessionValidity(int value) { m_authSessionValidityHasBeenSet = true; m_authSessionValidity = value; }
     inline CreateUserPoolClientRequest& WithAuthSessionValidity(int value) { SetAuthSessionValidity(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration of your app client for refresh token rotation. When
+     * enabled, your app client issues new ID, access, and refresh tokens when users
+     * renew their sessions with refresh tokens. When disabled, token refresh issues
+     * only ID and access tokens.</p>
+     */
+    inline const RefreshTokenRotationType& GetRefreshTokenRotation() const { return m_refreshTokenRotation; }
+    inline bool RefreshTokenRotationHasBeenSet() const { return m_refreshTokenRotationHasBeenSet; }
+    template<typename RefreshTokenRotationT = RefreshTokenRotationType>
+    void SetRefreshTokenRotation(RefreshTokenRotationT&& value) { m_refreshTokenRotationHasBeenSet = true; m_refreshTokenRotation = std::forward<RefreshTokenRotationT>(value); }
+    template<typename RefreshTokenRotationT = RefreshTokenRotationType>
+    CreateUserPoolClientRequest& WithRefreshTokenRotation(RefreshTokenRotationT&& value) { SetRefreshTokenRotation(std::forward<RefreshTokenRotationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_userPoolId;
@@ -569,6 +585,9 @@ namespace Model
 
     int m_authSessionValidity{0};
     bool m_authSessionValidityHasBeenSet = false;
+
+    RefreshTokenRotationType m_refreshTokenRotation;
+    bool m_refreshTokenRotationHasBeenSet = false;
   };
 
 } // namespace Model

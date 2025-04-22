@@ -22,6 +22,7 @@ namespace Aws
 
         static const int alb_HASH = HashingUtils::HashString("alb");
         static const int nlb_HASH = HashingUtils::HashString("nlb");
+        static const int rnat_HASH = HashingUtils::HashString("rnat");
 
 
         ServiceManaged GetServiceManagedForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == nlb_HASH)
           {
             return ServiceManaged::nlb;
+          }
+          else if (hashCode == rnat_HASH)
+          {
+            return ServiceManaged::rnat;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "alb";
           case ServiceManaged::nlb:
             return "nlb";
+          case ServiceManaged::rnat:
+            return "rnat";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -191,6 +191,12 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_clientLoginBannerOptions = clientLoginBannerOptionsNode;
       m_clientLoginBannerOptionsHasBeenSet = true;
     }
+    XmlNode clientRouteEnforcementOptionsNode = resultNode.FirstChild("clientRouteEnforcementOptions");
+    if(!clientRouteEnforcementOptionsNode.IsNull())
+    {
+      m_clientRouteEnforcementOptions = clientRouteEnforcementOptionsNode;
+      m_clientRouteEnforcementOptionsHasBeenSet = true;
+    }
     XmlNode disconnectOnSessionTimeoutNode = resultNode.FirstChild("disconnectOnSessionTimeout");
     if(!disconnectOnSessionTimeoutNode.IsNull())
     {
@@ -342,6 +348,13 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_clientRouteEnforcementOptionsHasBeenSet)
+  {
+      Aws::StringStream clientRouteEnforcementOptionsLocationAndMemberSs;
+      clientRouteEnforcementOptionsLocationAndMemberSs << location << index << locationValue << ".ClientRouteEnforcementOptions";
+      m_clientRouteEnforcementOptions.OutputToStream(oStream, clientRouteEnforcementOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_disconnectOnSessionTimeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
@@ -466,6 +479,12 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String clientLoginBannerOptionsLocationAndMember(location);
       clientLoginBannerOptionsLocationAndMember += ".ClientLoginBannerOptions";
       m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMember.c_str());
+  }
+  if(m_clientRouteEnforcementOptionsHasBeenSet)
+  {
+      Aws::String clientRouteEnforcementOptionsLocationAndMember(location);
+      clientRouteEnforcementOptionsLocationAndMember += ".ClientRouteEnforcementOptions";
+      m_clientRouteEnforcementOptions.OutputToStream(oStream, clientRouteEnforcementOptionsLocationAndMember.c_str());
   }
   if(m_disconnectOnSessionTimeoutHasBeenSet)
   {

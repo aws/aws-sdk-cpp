@@ -74,6 +74,7 @@
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
 #include <aws/cognito-idp/model/GetLogDeliveryConfigurationResult.h>
 #include <aws/cognito-idp/model/GetSigningCertificateResult.h>
+#include <aws/cognito-idp/model/GetTokensFromRefreshTokenResult.h>
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
@@ -230,6 +231,7 @@ namespace Aws
       class GetIdentityProviderByIdentifierRequest;
       class GetLogDeliveryConfigurationRequest;
       class GetSigningCertificateRequest;
+      class GetTokensFromRefreshTokenRequest;
       class GetUICustomizationRequest;
       class GetUserRequest;
       class GetUserAttributeVerificationCodeRequest;
@@ -346,6 +348,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
       typedef Aws::Utils::Outcome<GetLogDeliveryConfigurationResult, CognitoIdentityProviderError> GetLogDeliveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetSigningCertificateResult, CognitoIdentityProviderError> GetSigningCertificateOutcome;
+      typedef Aws::Utils::Outcome<GetTokensFromRefreshTokenResult, CognitoIdentityProviderError> GetTokensFromRefreshTokenOutcome;
       typedef Aws::Utils::Outcome<GetUICustomizationResult, CognitoIdentityProviderError> GetUICustomizationOutcome;
       typedef Aws::Utils::Outcome<GetUserResult, CognitoIdentityProviderError> GetUserOutcome;
       typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, CognitoIdentityProviderError> GetUserAttributeVerificationCodeOutcome;
@@ -462,6 +465,7 @@ namespace Aws
       typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
       typedef std::future<GetLogDeliveryConfigurationOutcome> GetLogDeliveryConfigurationOutcomeCallable;
       typedef std::future<GetSigningCertificateOutcome> GetSigningCertificateOutcomeCallable;
+      typedef std::future<GetTokensFromRefreshTokenOutcome> GetTokensFromRefreshTokenOutcomeCallable;
       typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
       typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
       typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
@@ -581,6 +585,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetIdentityProviderByIdentifierRequest&, const Model::GetIdentityProviderByIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderByIdentifierResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetLogDeliveryConfigurationRequest&, const Model::GetLogDeliveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogDeliveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetSigningCertificateRequest&, const Model::GetSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningCertificateResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetTokensFromRefreshTokenRequest&, const Model::GetTokensFromRefreshTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTokensFromRefreshTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;

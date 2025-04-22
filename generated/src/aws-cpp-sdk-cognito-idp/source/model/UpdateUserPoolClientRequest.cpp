@@ -187,6 +187,12 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   }
 
+  if(m_refreshTokenRotationHasBeenSet)
+  {
+   payload.WithObject("RefreshTokenRotation", m_refreshTokenRotation.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

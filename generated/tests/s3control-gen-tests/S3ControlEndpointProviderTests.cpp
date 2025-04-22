@@ -902,24 +902,24 @@ Aws::Vector<S3ControlEndpointProviderEndpointTestCase> S3ControlEndpointProvider
   },
   /*TEST CASE 93*/
   {"ListRegionalBuckets + OutpostId with fips in CN.", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", true), EpParam("AccountId", "0123456789012"), EpParam("Region", "cn-north-1"),
+    {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", true), EpParam("AccountId", "012345678912"), EpParam("Region", "cn-north-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
   /*TEST CASE 94*/
   {"ListRegionalBuckets + invalid OutpostId.", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("OutpostId", "?outpost/invalid+"), EpParam("UseFIPS", false), EpParam("AccountId", "0123456789012"), EpParam("Region", "us-west-1"),
+    {EpParam("RequiresAccountId", true), EpParam("OutpostId", "?outpost/invalid+"), EpParam("UseFIPS", false), EpParam("AccountId", "012345678912"), EpParam("Region", "us-west-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"OutpostId must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
   /*TEST CASE 95*/
   {"bucket ARN with mismatched accountId", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "0123456789012"), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "012345678912"), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)"} // expect
   },
   /*TEST CASE 96*/
   {"OutpostId with invalid region", // documentation

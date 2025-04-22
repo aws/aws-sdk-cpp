@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>A configuration object for defining input data fields in Entity Resolution.
-   * The SchemaInputAttribute specifies how individual fields in your input data
-   * should be processed and matched.</p><p><h3>See Also:</h3>   <a
+   * The <code>SchemaInputAttribute</code> specifies how individual fields in your
+   * input data should be processed and matched.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaInputAttribute">AWS
    * API Reference</a></p>
    */
@@ -54,12 +54,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the attribute, selected from a list of values.</p> 
-     * <p>Normalization is only supported for <code>NAME</code>, <code>ADDRESS</code>,
-     * <code>PHONE</code>, and <code>EMAIL_ADDRESS</code>. </p> <p>If you want to
-     * normalize <code>NAME_FIRST</code>, <code>NAME_MIDDLE</code>, and
-     * <code>NAME_LAST</code>, you must group them by assigning them to the
-     * <code>NAME</code> <code>groupName</code>. </p> <p>If you want to normalize
+     * <p>The type of the attribute, selected from a list of values.</p> <p>LiveRamp
+     * supports: <code>NAME</code> | <code>NAME_FIRST</code> | <code>NAME_MIDDLE</code>
+     * | <code>NAME_LAST</code> | <code>ADDRESS</code> | <code>ADDRESS_STREET1</code> |
+     * <code>ADDRESS_STREET2</code> | <code>ADDRESS_STREET3</code> |
+     * <code>ADDRESS_CITY</code> | <code>ADDRESS_STATE</code> |
+     * <code>ADDRESS_COUNTRY</code> | <code>ADDRESS_POSTALCODE</code> |
+     * <code>PHONE</code> | <code>PHONE_NUMBER</code> | <code>EMAIL_ADDRESS</code> |
+     * <code>UNIQUE_ID</code> | <code>PROVIDER_ID</code> </p> <p>TransUnion supports:
+     * <code>NAME</code> | <code>NAME_FIRST</code> | <code>NAME_LAST</code> |
+     * <code>ADDRESS</code> | <code>ADDRESS_CITY</code> | <code>ADDRESS_STATE</code> |
+     * <code>ADDRESS_COUNTRY</code> | <code>ADDRESS_POSTALCODE</code> |
+     * <code>PHONE_NUMBER</code> | <code>EMAIL_ADDRESS</code> | <code>UNIQUE_ID</code>
+     * | <code>IPV4</code> | <code>IPV6</code> | <code>MAID</code> </p> <p>Unified ID
+     * 2.0 supports: <code>PHONE_NUMBER</code> | <code>EMAIL_ADDRESS</code> |
+     * <code>UNIQUE_ID</code> </p>  <p>Normalization is only supported for
+     * <code>NAME</code>, <code>ADDRESS</code>, <code>PHONE</code>, and
+     * <code>EMAIL_ADDRESS</code>. </p> <p>If you want to normalize
+     * <code>NAME_FIRST</code>, <code>NAME_MIDDLE</code>, and <code>NAME_LAST</code>,
+     * you must group them by assigning them to the <code>NAME</code>
+     * <code>groupName</code>. </p> <p>If you want to normalize
      * <code>ADDRESS_STREET1</code>, <code>ADDRESS_STREET2</code>,
      * <code>ADDRESS_STREET3</code>, <code>ADDRESS_CITY</code>,
      * <code>ADDRESS_STATE</code>, <code>ADDRESS_COUNTRY</code>, and

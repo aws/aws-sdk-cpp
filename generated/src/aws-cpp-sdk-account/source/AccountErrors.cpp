@@ -6,7 +6,12 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/account/AccountErrors.h>
+#include <aws/account/model/ConflictException.h>
+#include <aws/account/model/ResourceNotFoundException.h>
+#include <aws/account/model/InternalServerException.h>
 #include <aws/account/model/ValidationException.h>
+#include <aws/account/model/AccessDeniedException.h>
+#include <aws/account/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -17,10 +22,40 @@ namespace Aws
 {
 namespace Account
 {
+template<> AWS_ACCOUNT_API ConflictException AccountError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccountErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCOUNT_API ResourceNotFoundException AccountError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccountErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCOUNT_API InternalServerException AccountError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccountErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
+}
+
 template<> AWS_ACCOUNT_API ValidationException AccountError::GetModeledError()
 {
   assert(this->GetErrorType() == AccountErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCOUNT_API AccessDeniedException AccountError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccountErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCOUNT_API TooManyRequestsException AccountError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccountErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
 }
 
 namespace AccountErrorMapper

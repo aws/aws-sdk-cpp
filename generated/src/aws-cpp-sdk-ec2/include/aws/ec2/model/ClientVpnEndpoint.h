@@ -14,6 +14,7 @@
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
 #include <aws/ec2/model/ClientConnectResponseOptions.h>
 #include <aws/ec2/model/ClientLoginBannerResponseOptions.h>
+#include <aws/ec2/model/ClientRouteEnforcementResponseOptions.h>
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -322,6 +323,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>Client route enforcement is a feature of the Client VPN service that helps
+     * enforce administrator defined routes on devices connected through the VPN. T his
+     * feature helps improve your security posture by ensuring that network traffic
+     * originating from a connected client is not inadvertently sent outside the VPN
+     * tunnel.</p> <p>Client route enforcement works by monitoring the route table of a
+     * connected device for routing policy changes to the VPN connection. If the
+     * feature detects any VPN routing policy modifications, it will automatically
+     * force an update to the route table, reverting it back to the expected route
+     * configurations.</p>
+     */
+    inline const ClientRouteEnforcementResponseOptions& GetClientRouteEnforcementOptions() const { return m_clientRouteEnforcementOptions; }
+    inline bool ClientRouteEnforcementOptionsHasBeenSet() const { return m_clientRouteEnforcementOptionsHasBeenSet; }
+    template<typename ClientRouteEnforcementOptionsT = ClientRouteEnforcementResponseOptions>
+    void SetClientRouteEnforcementOptions(ClientRouteEnforcementOptionsT&& value) { m_clientRouteEnforcementOptionsHasBeenSet = true; m_clientRouteEnforcementOptions = std::forward<ClientRouteEnforcementOptionsT>(value); }
+    template<typename ClientRouteEnforcementOptionsT = ClientRouteEnforcementResponseOptions>
+    ClientVpnEndpoint& WithClientRouteEnforcementOptions(ClientRouteEnforcementOptionsT&& value) { SetClientRouteEnforcementOptions(std::forward<ClientRouteEnforcementOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the client VPN session is disconnected after the maximum
      * <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are
      * prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to
@@ -399,6 +420,9 @@ namespace Model
 
     ClientLoginBannerResponseOptions m_clientLoginBannerOptions;
     bool m_clientLoginBannerOptionsHasBeenSet = false;
+
+    ClientRouteEnforcementResponseOptions m_clientRouteEnforcementOptions;
+    bool m_clientRouteEnforcementOptionsHasBeenSet = false;
 
     bool m_disconnectOnSessionTimeout{false};
     bool m_disconnectOnSessionTimeoutHasBeenSet = false;

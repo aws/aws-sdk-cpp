@@ -22,6 +22,7 @@
 #include <aws/mq/model/CreateConfigurationResult.h>
 #include <aws/mq/model/CreateUserResult.h>
 #include <aws/mq/model/DeleteBrokerResult.h>
+#include <aws/mq/model/DeleteConfigurationResult.h>
 #include <aws/mq/model/DeleteUserResult.h>
 #include <aws/mq/model/DescribeBrokerResult.h>
 #include <aws/mq/model/DescribeBrokerEngineTypesResult.h>
@@ -89,6 +90,7 @@ namespace Aws
       class CreateTagsRequest;
       class CreateUserRequest;
       class DeleteBrokerRequest;
+      class DeleteConfigurationRequest;
       class DeleteTagsRequest;
       class DeleteUserRequest;
       class DescribeBrokerRequest;
@@ -115,6 +117,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, MQError> CreateTagsOutcome;
       typedef Aws::Utils::Outcome<CreateUserResult, MQError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<DeleteBrokerResult, MQError> DeleteBrokerOutcome;
+      typedef Aws::Utils::Outcome<DeleteConfigurationResult, MQError> DeleteConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, MQError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<DeleteUserResult, MQError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DescribeBrokerResult, MQError> DescribeBrokerOutcome;
@@ -141,6 +144,7 @@ namespace Aws
       typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<DeleteBrokerOutcome> DeleteBrokerOutcomeCallable;
+      typedef std::future<DeleteConfigurationOutcome> DeleteConfigurationOutcomeCallable;
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DescribeBrokerOutcome> DescribeBrokerOutcomeCallable;
@@ -170,6 +174,7 @@ namespace Aws
     typedef std::function<void(const MQClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::DeleteBrokerRequest&, const Model::DeleteBrokerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBrokerResponseReceivedHandler;
+    typedef std::function<void(const MQClient*, const Model::DeleteConfigurationRequest&, const Model::DeleteConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::DescribeBrokerRequest&, const Model::DescribeBrokerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBrokerResponseReceivedHandler;
