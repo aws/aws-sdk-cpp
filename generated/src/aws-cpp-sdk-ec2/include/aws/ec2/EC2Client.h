@@ -12011,7 +12011,8 @@ namespace EC2
 
         /**
          * <p>Describes the principals (service consumers) that are permitted to discover
-         * your VPC endpoint service.</p><p><h3>See Also:</h3>   <a
+         * your VPC endpoint service. Principal ARNs with path components aren't
+         * supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          */
@@ -18111,11 +18112,11 @@ namespace EC2
         /**
          * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
          * permissions for service consumers (Amazon Web Services accounts, users, and IAM
-         * roles) to connect to your endpoint service.</p> <p>If you grant permissions to
-         * all principals, the service is public. Any users who know the name of a public
-         * service can send a request to attach an endpoint. If the service does not
-         * require manual approval, attachments are automatically approved.</p><p><h3>See
-         * Also:</h3>   <a
+         * roles) to connect to your endpoint service. Principal ARNs with path components
+         * aren't supported.</p> <p>If you grant permissions to all principals, the service
+         * is public. Any users who know the name of a public service can send a request to
+         * attach an endpoint. If the service does not require manual approval, attachments
+         * are automatically approved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
          * API Reference</a></p>
          */

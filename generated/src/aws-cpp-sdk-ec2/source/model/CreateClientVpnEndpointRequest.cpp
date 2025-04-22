@@ -126,6 +126,11 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
     m_clientLoginBannerOptions.OutputToStream(ss, "ClientLoginBannerOptions");
   }
 
+  if(m_clientRouteEnforcementOptionsHasBeenSet)
+  {
+    m_clientRouteEnforcementOptions.OutputToStream(ss, "ClientRouteEnforcementOptions");
+  }
+
   if(m_disconnectOnSessionTimeoutHasBeenSet)
   {
     ss << "DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";

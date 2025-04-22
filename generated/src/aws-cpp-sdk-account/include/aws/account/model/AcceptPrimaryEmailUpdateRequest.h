@@ -43,9 +43,9 @@ namespace Model
      * must have <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
      * features enabled</a>, and the organization must have <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">trusted
      * access</a> enabled for the Account Management service, and optionally a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#delegated-admin">delegated
      * admin</a> account assigned.</p> <p>This operation can only be called from the
      * management account or the delegated administrator account of an organization for
      * a member account.</p>  <p>The management account can't specify its own

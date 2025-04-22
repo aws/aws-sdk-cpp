@@ -192,6 +192,34 @@ namespace Account
         }
 
         /**
+         * <p>Retrieves information about the specified account including its account name,
+         * account ID, and account creation date and time. To use this API, an IAM user or
+         * role must have the <code>account:GetAccountInformation</code> IAM permission.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountInformationOutcome GetAccountInformation(const Model::GetAccountInformationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAccountInformation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountInformationRequestT = Model::GetAccountInformationRequest>
+        Model::GetAccountInformationOutcomeCallable GetAccountInformationCallable(const GetAccountInformationRequestT& request = {}) const
+        {
+            return SubmitCallable(&AccountClient::GetAccountInformation, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountInformationRequestT = Model::GetAccountInformationRequest>
+        void GetAccountInformationAsync(const GetAccountInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountInformationRequestT& request = {}) const
+        {
+            return SubmitAsync(&AccountClient::GetAccountInformation, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
          * account.</p> <p>For complete details about how to use the alternate contact
          * operations, see <a
@@ -333,6 +361,33 @@ namespace Account
         void ListRegionsAsync(const ListRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegionsRequestT& request = {}) const
         {
             return SubmitAsync(&AccountClient::ListRegions, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the account name of the specified account. To use this API, IAM
+         * principals must have the <code>account:PutAccountName</code> IAM permission.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountNameOutcome PutAccountName(const Model::PutAccountNameRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccountName that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAccountNameRequestT = Model::PutAccountNameRequest>
+        Model::PutAccountNameOutcomeCallable PutAccountNameCallable(const PutAccountNameRequestT& request) const
+        {
+            return SubmitCallable(&AccountClient::PutAccountName, request);
+        }
+
+        /**
+         * An Async wrapper for PutAccountName that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAccountNameRequestT = Model::PutAccountNameRequest>
+        void PutAccountNameAsync(const PutAccountNameRequestT& request, const PutAccountNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccountClient::PutAccountName, request, handler, context);
         }
 
         /**

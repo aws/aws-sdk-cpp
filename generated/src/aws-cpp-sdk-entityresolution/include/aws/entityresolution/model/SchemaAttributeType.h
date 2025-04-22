@@ -35,7 +35,10 @@ namespace Model
     UNIQUE_ID,
     DATE,
     STRING,
-    PROVIDER_ID
+    PROVIDER_ID,
+    IPV4,
+    IPV6,
+    MAID
   };
 
 namespace SchemaAttributeTypeMapper

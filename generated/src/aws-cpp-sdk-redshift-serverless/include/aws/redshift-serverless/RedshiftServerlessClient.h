@@ -90,7 +90,7 @@ namespace RedshiftServerless
         /**
          * <p>Converts a recovery point to a snapshot. For more information about recovery
          * points and snapshots, see <a
-         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working
          * with snapshots and recovery points</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ConvertRecoveryPointToSnapshot">AWS
          * API Reference</a></p>
@@ -194,6 +194,34 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Creates an Amazon Redshift Serverless reservation, which gives you the option
+         * to commit to a specified number of Redshift Processing Units (RPUs) for a year
+         * at a discount from Serverless on-demand (OD) rates.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReservationOutcome CreateReservation(const Model::CreateReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateReservationRequestT = Model::CreateReservationRequest>
+        Model::CreateReservationOutcomeCallable CreateReservationCallable(const CreateReservationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::CreateReservation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateReservationRequestT = Model::CreateReservationRequest>
+        void CreateReservationAsync(const CreateReservationRequestT& request, const CreateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::CreateReservation, request, handler, context);
+        }
+
+        /**
          * <p>Creates a scheduled action. A scheduled action contains a schedule and an
          * Amazon Redshift API action. For example, you can create a schedule of when to
          * run the <code>CreateSnapshot</code> API operation.</p><p><h3>See Also:</h3>   <a
@@ -223,7 +251,7 @@ namespace RedshiftServerless
         /**
          * <p>Creates a snapshot of all databases in a namespace. For more information
          * about snapshots, see <a
-         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">
          * Working with snapshots and recovery points</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -705,6 +733,60 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Gets an Amazon Redshift Serverless reservation. A reservation gives you the
+         * option to commit to a specified number of Redshift Processing Units (RPUs) for a
+         * year at a discount from Serverless on-demand (OD) rates.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReservationOutcome GetReservation(const Model::GetReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetReservationRequestT = Model::GetReservationRequest>
+        Model::GetReservationOutcomeCallable GetReservationCallable(const GetReservationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::GetReservation, request);
+        }
+
+        /**
+         * An Async wrapper for GetReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetReservationRequestT = Model::GetReservationRequest>
+        void GetReservationAsync(const GetReservationRequestT& request, const GetReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::GetReservation, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the reservation offering. The offering determines the payment
+         * schedule for the reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReservationOfferingOutcome GetReservationOffering(const Model::GetReservationOfferingRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetReservationOffering that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetReservationOfferingRequestT = Model::GetReservationOfferingRequest>
+        Model::GetReservationOfferingOutcomeCallable GetReservationOfferingCallable(const GetReservationOfferingRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::GetReservationOffering, request);
+        }
+
+        /**
+         * An Async wrapper for GetReservationOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetReservationOfferingRequestT = Model::GetReservationOfferingRequest>
+        void GetReservationOfferingAsync(const GetReservationOfferingRequestT& request, const GetReservationOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::GetReservationOffering, request, handler, context);
+        }
+
+        /**
          * <p>Returns a resource policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetResourcePolicy">AWS
          * API Reference</a></p>
@@ -1008,6 +1090,57 @@ namespace RedshiftServerless
         void ListRecoveryPointsAsync(const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecoveryPointsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListRecoveryPoints, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the current reservation offerings in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReservationOfferingsOutcome ListReservationOfferings(const Model::ListReservationOfferingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListReservationOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReservationOfferingsRequestT = Model::ListReservationOfferingsRequest>
+        Model::ListReservationOfferingsOutcomeCallable ListReservationOfferingsCallable(const ListReservationOfferingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListReservationOfferings, request);
+        }
+
+        /**
+         * An Async wrapper for ListReservationOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReservationOfferingsRequestT = Model::ListReservationOfferingsRequest>
+        void ListReservationOfferingsAsync(const ListReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReservationOfferingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListReservationOfferings, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Reservation objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReservationsOutcome ListReservations(const Model::ListReservationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListReservations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReservationsRequestT = Model::ListReservationsRequest>
+        Model::ListReservationsOutcomeCallable ListReservationsCallable(const ListReservationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListReservations, request);
+        }
+
+        /**
+         * An Async wrapper for ListReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReservationsRequestT = Model::ListReservationsRequest>
+        void ListReservationsAsync(const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReservationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListReservations, request, handler, context);
         }
 
         /**

@@ -182,6 +182,11 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_authSessionValidity = jsonValue.GetInteger("AuthSessionValidity");
     m_authSessionValidityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RefreshTokenRotation"))
+  {
+    m_refreshTokenRotation = jsonValue.GetObject("RefreshTokenRotation");
+    m_refreshTokenRotationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -373,6 +378,12 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_authSessionValidityHasBeenSet)
   {
    payload.WithInteger("AuthSessionValidity", m_authSessionValidity);
+
+  }
+
+  if(m_refreshTokenRotationHasBeenSet)
+  {
+   payload.WithObject("RefreshTokenRotation", m_refreshTokenRotation.Jsonize());
 
   }
 

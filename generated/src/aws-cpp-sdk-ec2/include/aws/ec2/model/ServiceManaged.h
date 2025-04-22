@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     alb,
-    nlb
+    nlb,
+    rnat
   };
 
 namespace ServiceManagedMapper

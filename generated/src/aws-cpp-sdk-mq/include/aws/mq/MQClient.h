@@ -232,6 +232,31 @@ namespace MQ
         }
 
         /**
+         * <p>Deletes the specified configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfigurationOutcome DeleteConfiguration(const Model::DeleteConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConfigurationRequestT = Model::DeleteConfigurationRequest>
+        Model::DeleteConfigurationOutcomeCallable DeleteConfigurationCallable(const DeleteConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&MQClient::DeleteConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConfigurationRequestT = Model::DeleteConfigurationRequest>
+        void DeleteConfigurationAsync(const DeleteConfigurationRequestT& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MQClient::DeleteConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
          * Reference</a></p>
