@@ -17,7 +17,7 @@
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
-#include <Windows.h>
+#include <winsock2.h>
 #include <winhttp.h>
 #include <mstcpip.h> // for tcp_keepalive
 #include <sstream>
@@ -696,7 +696,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<H
     wmemset(contentTypeStr, 0, static_cast<size_t>(dwSize / sizeof(wchar_t)));
 
     WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_CONTENT_TYPE, nullptr, &contentTypeStr, &dwSize, 0);
-    if (contentTypeStr[0] != NULL)
+    if (contentTypeStr[0])
     {
         Aws::String contentStr = StringUtils::FromWString(contentTypeStr);
         response->SetContentType(contentStr);
@@ -727,7 +727,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<H
 
 bool WinHttpSyncHttpClient::DoSendRequest(void* hHttpRequest) const
 {
-    bool success = WinHttpSendRequest(hHttpRequest, NULL, NULL, 0, 0, 0, NULL) != 0;
+    bool success = WinHttpSendRequest(hHttpRequest, NULL, 0, NULL, 0, 0, 0) != 0;
     if (!success)
     {
         AzWinHttpLogLastError("WinHttpSendRequest");

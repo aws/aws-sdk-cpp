@@ -809,7 +809,7 @@ std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACIm
     return GetSha256HMACFactory()->CreateImplementation();
 }
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #pragma warning( push )
 #pragma warning( disable : 4702 )
 #endif
@@ -902,7 +902,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
     return GetAES_KeyWrapFactory()->CreateImplementation(key);
 }
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #pragma warning(pop)
 #endif
 
