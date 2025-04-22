@@ -6,7 +6,7 @@
 #pragma once
 
 #include <aws/testing/Testing_EXPORTS.h>
-#include <aws/testing/AwsCppSdkGTestSuite.h>s
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 
 

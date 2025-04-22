@@ -16,6 +16,12 @@
 #include <aws/event-stream/event_stream.h>
 #include <cassert>
 
+#ifdef __MINGW32__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#pragma GCC diagnostic ignored "-Wuninitialized"
+#endif
+
 namespace Aws
 {
     namespace Utils
@@ -350,3 +356,7 @@ namespace Aws
         }
     }
 }
+
+#ifdef __MINGW32__
+#pragma GCC diagnostic pop
+#endif

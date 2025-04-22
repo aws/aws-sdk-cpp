@@ -12,7 +12,9 @@
 #include <iostream>
 #include <Userenv.h>
 
-#pragma warning( disable : 4996)
+#ifdef _MSC_VER
+#pragma warning(disable: 4996)
+#endif
 
 using namespace Aws::Utils;
 namespace Aws
@@ -311,6 +313,9 @@ Aws::String CreateTempFilePath()
 {
 #ifdef _MSC_VER
 #pragma warning(disable: 4996) // _CRT_SECURE_NO_WARNINGS
+#elif !defined(L_tmpnam_s)
+    // Definition from the MSVC stdio.h
+    #define L_tmpnam_s (sizeof("\\") + 16)
 #endif
     char s_tempName[L_tmpnam_s+1];
 
