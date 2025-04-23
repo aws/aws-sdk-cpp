@@ -11,14 +11,6 @@
 #include <aws/lexv2-runtime/model/TextResponseEvent.h>
 #include <aws/lexv2-runtime/model/AudioResponseEvent.h>
 #include <aws/lexv2-runtime/model/HeartbeatEvent.h>
-#include <aws/lexv2-runtime/model/AccessDeniedException.h>
-#include <aws/lexv2-runtime/model/ResourceNotFoundException.h>
-#include <aws/lexv2-runtime/model/ValidationException.h>
-#include <aws/lexv2-runtime/model/ThrottlingException.h>
-#include <aws/lexv2-runtime/model/InternalServerException.h>
-#include <aws/lexv2-runtime/model/ConflictException.h>
-#include <aws/lexv2-runtime/model/DependencyFailedException.h>
-#include <aws/lexv2-runtime/model/BadGatewayException.h>
 #include <utility>
 
 namespace Aws

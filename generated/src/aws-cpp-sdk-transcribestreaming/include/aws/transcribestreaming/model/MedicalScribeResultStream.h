@@ -6,11 +6,6 @@
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/model/MedicalScribeTranscriptEvent.h>
-#include <aws/transcribestreaming/model/BadRequestException.h>
-#include <aws/transcribestreaming/model/LimitExceededException.h>
-#include <aws/transcribestreaming/model/InternalFailureException.h>
-#include <aws/transcribestreaming/model/ConflictException.h>
-#include <aws/transcribestreaming/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws

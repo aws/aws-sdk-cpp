@@ -6,15 +6,6 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/model/SubscribeToShardEvent.h>
-#include <aws/kinesis/model/ResourceNotFoundException.h>
-#include <aws/kinesis/model/ResourceInUseException.h>
-#include <aws/kinesis/model/KMSDisabledException.h>
-#include <aws/kinesis/model/KMSInvalidStateException.h>
-#include <aws/kinesis/model/KMSAccessDeniedException.h>
-#include <aws/kinesis/model/KMSNotFoundException.h>
-#include <aws/kinesis/model/KMSOptInRequired.h>
-#include <aws/kinesis/model/KMSThrottlingException.h>
-#include <aws/kinesis/model/InternalFailureException.h>
 #include <utility>
 
 namespace Aws

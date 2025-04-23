@@ -6,12 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/BidirectionalOutputPayloadPart.h>
-#include <aws/bedrock-runtime/model/InternalServerException.h>
 #include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
-#include <aws/bedrock-runtime/model/ValidationException.h>
-#include <aws/bedrock-runtime/model/ThrottlingException.h>
-#include <aws/bedrock-runtime/model/ModelTimeoutException.h>
-#include <aws/bedrock-runtime/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws

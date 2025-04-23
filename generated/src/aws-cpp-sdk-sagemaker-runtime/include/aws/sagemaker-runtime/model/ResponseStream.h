@@ -7,7 +7,6 @@
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/sagemaker-runtime/model/PayloadPart.h>
 #include <aws/sagemaker-runtime/model/ModelStreamError.h>
-#include <aws/sagemaker-runtime/model/InternalStreamFailure.h>
 #include <utility>
 
 namespace Aws

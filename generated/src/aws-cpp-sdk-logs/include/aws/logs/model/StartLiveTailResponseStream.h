@@ -7,8 +7,6 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/LiveTailSessionStart.h>
 #include <aws/logs/model/LiveTailSessionUpdate.h>
-#include <aws/logs/model/SessionTimeoutException.h>
-#include <aws/logs/model/SessionStreamingException.h>
 #include <utility>
 
 namespace Aws

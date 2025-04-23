@@ -5,18 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/AccessDeniedException.h>
 #include <aws/bedrock-agent-runtime/model/BadGatewayException.h>
 #include <aws/bedrock-agent-runtime/model/CitationEvent.h>
-#include <aws/bedrock-agent-runtime/model/ConflictException.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailEvent.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutputEvent.h>
-#include <aws/bedrock-agent-runtime/model/ResourceNotFoundException.h>
-#include <aws/bedrock-agent-runtime/model/ServiceQuotaExceededException.h>
-#include <aws/bedrock-agent-runtime/model/ThrottlingException.h>
-#include <aws/bedrock-agent-runtime/model/ValidationException.h>
 #include <utility>
 
 namespace Aws

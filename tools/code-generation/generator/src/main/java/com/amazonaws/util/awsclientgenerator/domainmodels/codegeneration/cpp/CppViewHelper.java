@@ -353,6 +353,11 @@ public class CppViewHelper {
                 }
             }
             if(!next.isPrimitive()) {
+                if (next.isException() && !next.isModeledException()) {
+                    // C++ SDK code generator skips generating exceptions that can be expressed using
+                    // a purely built-in C++ SDK Core exception class, so they must not be included.
+                    continue;
+                }
                 // if `next` is a direct member of a `shape` and they are mutually referenced
                 if(next.isMutuallyReferencedWith(shape) &&
                         shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().getName().equals(next.getName()))) {
