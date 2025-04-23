@@ -123,6 +123,10 @@ public class Shape {
         return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message"));
     }
 
+    public boolean isModeledException() {
+        return isXmlModeledException() || isJsonModeledException();
+    }
+
     public boolean isMemberRequired(String member) {
         ShapeMember shapeMember = members.get(member);
         return shapeMember != null && members.get(member).isRequired();
