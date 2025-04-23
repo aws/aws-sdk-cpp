@@ -45,6 +45,11 @@ ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
     m_machineType = MachineTypeMapper::GetMachineTypeForName(jsonValue.GetString("machineType"));
     m_machineTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+    m_instanceTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue ComputeConfiguration::Jsonize() const
   if(m_machineTypeHasBeenSet)
   {
    payload.WithString("machineType", MachineTypeMapper::GetNameForMachineType(m_machineType));
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
+
   }
 
   return payload;

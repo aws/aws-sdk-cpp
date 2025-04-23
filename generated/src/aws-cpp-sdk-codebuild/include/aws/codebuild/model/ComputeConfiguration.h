@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/MachineType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,8 @@ namespace Model
   /**
    * <p>Contains compute attributes. These attributes only need be specified when
    * your project's or fleet's <code>computeType</code> is set to
-   * <code>ATTRIBUTE_BASED_COMPUTE</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>ATTRIBUTE_BASED_COMPUTE</code> or
+   * <code>CUSTOM_INSTANCE_TYPE</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ComputeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -78,6 +80,18 @@ namespace Model
     inline void SetMachineType(MachineType value) { m_machineTypeHasBeenSet = true; m_machineType = value; }
     inline ComputeConfiguration& WithMachineType(MachineType value) { SetMachineType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The EC2 instance type to be launched in your fleet.</p>
+     */
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    ComputeConfiguration& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
+    ///@}
   private:
 
     long long m_vCpu{0};
@@ -91,6 +105,9 @@ namespace Model
 
     MachineType m_machineType{MachineType::NOT_SET};
     bool m_machineTypeHasBeenSet = false;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

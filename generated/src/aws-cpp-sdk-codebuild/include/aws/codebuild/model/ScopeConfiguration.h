@@ -68,7 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of scope for a GitHub or GitLab webhook.</p>
+     * <p>The type of scope for a GitHub or GitLab webhook. The scope default is
+     * GITHUB_ORGANIZATION.</p>
      */
     inline WebhookScopeType GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }

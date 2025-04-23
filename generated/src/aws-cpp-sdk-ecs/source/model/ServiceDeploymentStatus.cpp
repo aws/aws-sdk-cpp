@@ -25,6 +25,7 @@ namespace Aws
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int STOP_REQUESTED_HASH = HashingUtils::HashString("STOP_REQUESTED");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int ROLLBACK_REQUESTED_HASH = HashingUtils::HashString("ROLLBACK_REQUESTED");
         static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
         static const int ROLLBACK_SUCCESSFUL_HASH = HashingUtils::HashString("ROLLBACK_SUCCESSFUL");
         static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
@@ -52,6 +53,10 @@ namespace Aws
           else if (hashCode == IN_PROGRESS_HASH)
           {
             return ServiceDeploymentStatus::IN_PROGRESS;
+          }
+          else if (hashCode == ROLLBACK_REQUESTED_HASH)
+          {
+            return ServiceDeploymentStatus::ROLLBACK_REQUESTED;
           }
           else if (hashCode == ROLLBACK_IN_PROGRESS_HASH)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "STOP_REQUESTED";
           case ServiceDeploymentStatus::IN_PROGRESS:
             return "IN_PROGRESS";
+          case ServiceDeploymentStatus::ROLLBACK_REQUESTED:
+            return "ROLLBACK_REQUESTED";
           case ServiceDeploymentStatus::ROLLBACK_IN_PROGRESS:
             return "ROLLBACK_IN_PROGRESS";
           case ServiceDeploymentStatus::ROLLBACK_SUCCESSFUL:
