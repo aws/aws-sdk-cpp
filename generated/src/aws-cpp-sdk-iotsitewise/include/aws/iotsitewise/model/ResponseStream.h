@@ -7,13 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/Trace.h>
 #include <aws/iotsitewise/model/InvocationOutput.h>
-#include <aws/iotsitewise/model/AccessDeniedException.h>
 #include <aws/iotsitewise/model/ConflictingOperationException.h>
-#include <aws/iotsitewise/model/InternalFailureException.h>
-#include <aws/iotsitewise/model/InvalidRequestException.h>
-#include <aws/iotsitewise/model/LimitExceededException.h>
-#include <aws/iotsitewise/model/ResourceNotFoundException.h>
-#include <aws/iotsitewise/model/ThrottlingException.h>
 #include <utility>
 
 namespace Aws
