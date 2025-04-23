@@ -1605,6 +1605,38 @@ namespace ECS
         }
 
         /**
+         * <p>Stops an ongoing service deployment.</p> <p>The following stop types are
+         * avaiable:</p> <ul> <li> <p>ROLLBACK - This option rolls back the service
+         * deployment to the previous service revision. </p> <p>You can use this option
+         * even if you didn't configure the service deployment for the rollback option.
+         * </p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
+         * Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopServiceDeploymentOutcome StopServiceDeployment(const Model::StopServiceDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopServiceDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopServiceDeploymentRequestT = Model::StopServiceDeploymentRequest>
+        Model::StopServiceDeploymentOutcomeCallable StopServiceDeploymentCallable(const StopServiceDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&ECSClient::StopServiceDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for StopServiceDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopServiceDeploymentRequestT = Model::StopServiceDeploymentRequest>
+        void StopServiceDeploymentAsync(const StopServiceDeploymentRequestT& request, const StopServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECSClient::StopServiceDeployment, request, handler, context);
+        }
+
+        /**
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When you call <code>StopTask</code> on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a

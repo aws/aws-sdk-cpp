@@ -26,7 +26,8 @@ namespace Model
     BUILD_LAMBDA_4GB,
     BUILD_LAMBDA_8GB,
     BUILD_LAMBDA_10GB,
-    ATTRIBUTE_BASED_COMPUTE
+    ATTRIBUTE_BASED_COMPUTE,
+    CUSTOM_INSTANCE_TYPE
   };
 
 namespace ComputeTypeMapper

@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The name of the property that is included in this view.</p> <p>You can
      * specify the following property names for this field:</p> <ul> <li> <p>
-     * <code>Tags</code> </p> </li> </ul>
+     * <code>tags</code> </p> </li> </ul>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

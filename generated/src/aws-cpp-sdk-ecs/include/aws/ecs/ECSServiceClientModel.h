@@ -62,6 +62,7 @@
 #include <aws/ecs/model/RegisterTaskDefinitionResult.h>
 #include <aws/ecs/model/RunTaskResult.h>
 #include <aws/ecs/model/StartTaskResult.h>
+#include <aws/ecs/model/StopServiceDeploymentResult.h>
 #include <aws/ecs/model/StopTaskResult.h>
 #include <aws/ecs/model/SubmitAttachmentStateChangesResult.h>
 #include <aws/ecs/model/SubmitContainerStateChangeResult.h>
@@ -175,6 +176,7 @@ namespace Aws
       class RegisterTaskDefinitionRequest;
       class RunTaskRequest;
       class StartTaskRequest;
+      class StopServiceDeploymentRequest;
       class StopTaskRequest;
       class SubmitAttachmentStateChangesRequest;
       class SubmitContainerStateChangeRequest;
@@ -237,6 +239,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RegisterTaskDefinitionResult, ECSError> RegisterTaskDefinitionOutcome;
       typedef Aws::Utils::Outcome<RunTaskResult, ECSError> RunTaskOutcome;
       typedef Aws::Utils::Outcome<StartTaskResult, ECSError> StartTaskOutcome;
+      typedef Aws::Utils::Outcome<StopServiceDeploymentResult, ECSError> StopServiceDeploymentOutcome;
       typedef Aws::Utils::Outcome<StopTaskResult, ECSError> StopTaskOutcome;
       typedef Aws::Utils::Outcome<SubmitAttachmentStateChangesResult, ECSError> SubmitAttachmentStateChangesOutcome;
       typedef Aws::Utils::Outcome<SubmitContainerStateChangeResult, ECSError> SubmitContainerStateChangeOutcome;
@@ -299,6 +302,7 @@ namespace Aws
       typedef std::future<RegisterTaskDefinitionOutcome> RegisterTaskDefinitionOutcomeCallable;
       typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
       typedef std::future<StartTaskOutcome> StartTaskOutcomeCallable;
+      typedef std::future<StopServiceDeploymentOutcome> StopServiceDeploymentOutcomeCallable;
       typedef std::future<StopTaskOutcome> StopTaskOutcomeCallable;
       typedef std::future<SubmitAttachmentStateChangesOutcome> SubmitAttachmentStateChangesOutcomeCallable;
       typedef std::future<SubmitContainerStateChangeOutcome> SubmitContainerStateChangeOutcomeCallable;
@@ -364,6 +368,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskDefinitionResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::RunTaskRequest&, const Model::RunTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunTaskResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::StartTaskRequest&, const Model::StartTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::StopServiceDeploymentRequest&, const Model::StopServiceDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopServiceDeploymentResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::StopTaskRequest&, const Model::StopTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTaskResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::SubmitAttachmentStateChangesRequest&, const Model::SubmitAttachmentStateChangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitAttachmentStateChangesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::SubmitContainerStateChangeRequest&, const Model::SubmitContainerStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitContainerStateChangeResponseReceivedHandler;

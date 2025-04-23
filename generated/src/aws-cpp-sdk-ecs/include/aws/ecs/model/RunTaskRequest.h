@@ -70,6 +70,8 @@ namespace Model
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
      * task on. If you do not specify a cluster, the default cluster is assumed.</p>
+     * <p>Each account receives a default cluster the first time you use the service,
+     * but you may also create other clusters.</p>
      */
     inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }

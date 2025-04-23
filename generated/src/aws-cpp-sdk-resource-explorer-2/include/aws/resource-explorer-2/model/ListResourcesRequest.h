@@ -34,7 +34,25 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>An array of strings that specify which resources are included in the results
+     * of queries made using this view. When you use this view in a <a>Search</a>
+     * operation, the filter string is combined with the search's
+     * <code>QueryString</code> parameter using a logical <code>AND</code>
+     * operator.</p> <p>For information about the supported syntax, see <a
+     * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search
+     * query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource
+     * Explorer User Guide</i>.</p>  <p>This query string in the context of
+     * this operation supports only <a
+     * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter
+     * prefixes</a> with optional <a
+     * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>.
+     * It doesn't support free-form text. For example, the string <code>region:us*
+     * service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any
+     * Amazon Web Services Region that begins with the letters <code>us</code> and is
+     * <i>not</i> tagged with a key <code>Stage</code> that has the value
+     * <code>prod</code>.</p> 
+     */
     inline const SearchFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
     template<typename FiltersT = SearchFilter>
@@ -69,7 +87,9 @@ namespace Model
      * response indicates that more output is available. Set this parameter to the
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from. The pagination tokens expire after 24
-     * hours.</p>
+     * hours.</p>  <p>The <code>ListResources</code> operation does not generate
+     * a <code>NextToken</code> if you set <code>MaxResults</code> to 1000. </p>
+     * 
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
