@@ -119,11 +119,11 @@ namespace Model
     /**
      * <p>An internal server error occurred. Retry your request.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
+    inline const BedrockRuntimeError& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = BedrockRuntimeError>
     void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = BedrockRuntimeError>
     ConverseStreamOutput& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
@@ -146,11 +146,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ValidationException& GetValidationException() const { return m_validationException; }
+    inline const BedrockRuntimeError& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockRuntimeError>
     void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockRuntimeError>
     ConverseStreamOutput& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
 
@@ -161,11 +161,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const BedrockRuntimeError& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockRuntimeError>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockRuntimeError>
     ConverseStreamOutput& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
@@ -175,11 +175,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
+    inline const BedrockRuntimeError& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = BedrockRuntimeError>
     void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = BedrockRuntimeError>
     ConverseStreamOutput& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -202,19 +202,19 @@ namespace Model
     ConverseStreamMetadataEvent m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    InternalServerException m_internalServerException;
+    BedrockRuntimeError m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;
 
     ModelStreamErrorException m_modelStreamErrorException;
     bool m_modelStreamErrorExceptionHasBeenSet = false;
 
-    ValidationException m_validationException;
+    BedrockRuntimeError m_validationException;
     bool m_validationExceptionHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    BedrockRuntimeError m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
-    ServiceUnavailableException m_serviceUnavailableException;
+    BedrockRuntimeError m_serviceUnavailableException;
     bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 

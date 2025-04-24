@@ -75,11 +75,11 @@ namespace Model
      * <p>The stream processing failed because of an unknown error, exception or
      * failure. Try your request again.</p>
      */
-    inline const InternalStreamFailure& GetInternalStreamFailure() const { return m_internalStreamFailure; }
+    inline const SageMakerRuntimeError& GetInternalStreamFailure() const { return m_internalStreamFailure; }
     inline bool InternalStreamFailureHasBeenSet() const { return m_internalStreamFailureHasBeenSet; }
-    template<typename InternalStreamFailureT = InternalStreamFailure>
+    template<typename InternalStreamFailureT = SageMakerRuntimeError>
     void SetInternalStreamFailure(InternalStreamFailureT&& value) { m_internalStreamFailureHasBeenSet = true; m_internalStreamFailure = std::forward<InternalStreamFailureT>(value); }
-    template<typename InternalStreamFailureT = InternalStreamFailure>
+    template<typename InternalStreamFailureT = SageMakerRuntimeError>
     ResponseStream& WithInternalStreamFailure(InternalStreamFailureT&& value) { SetInternalStreamFailure(std::forward<InternalStreamFailureT>(value)); return *this;}
     ///@}
   private:
@@ -90,7 +90,7 @@ namespace Model
     ModelStreamError m_modelStreamError;
     bool m_modelStreamErrorHasBeenSet = false;
 
-    InternalStreamFailure m_internalStreamFailure;
+    SageMakerRuntimeError m_internalStreamFailure;
     bool m_internalStreamFailureHasBeenSet = false;
   };
 

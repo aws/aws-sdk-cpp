@@ -47,11 +47,11 @@ namespace Model
      * <p>The request is denied because of missing access permissions. Check your
      * permissions and retry your request.</p>
      */
-    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
+    inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
     void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
     OptimizedPromptStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
@@ -125,11 +125,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
      * Throughput</a> to increase the rate or number of tokens you can process.</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const BedrockAgentRuntimeError& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockAgentRuntimeError>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockAgentRuntimeError>
     OptimizedPromptStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
@@ -138,16 +138,16 @@ namespace Model
      * <p>Input validation failed. Check your request parameters and retry the
      * request.</p>
      */
-    inline const ValidationException& GetValidationException() const { return m_validationException; }
+    inline const BedrockAgentRuntimeError& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockAgentRuntimeError>
     void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockAgentRuntimeError>
     OptimizedPromptStream& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
   private:
 
-    AccessDeniedException m_accessDeniedException;
+    BedrockAgentRuntimeError m_accessDeniedException;
     bool m_accessDeniedExceptionHasBeenSet = false;
 
     AnalyzePromptEvent m_analyzePromptEvent;
@@ -165,10 +165,10 @@ namespace Model
     OptimizedPromptEvent m_optimizedPromptEvent;
     bool m_optimizedPromptEventHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    BedrockAgentRuntimeError m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
-    ValidationException m_validationException;
+    BedrockAgentRuntimeError m_validationException;
     bool m_validationExceptionHasBeenSet = false;
   };
 

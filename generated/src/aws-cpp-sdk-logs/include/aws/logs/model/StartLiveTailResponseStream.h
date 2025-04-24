@@ -70,11 +70,11 @@ namespace Model
      * <p>This exception is returned in the stream when the Live Tail session times
      * out. Live Tail sessions time out after three hours.</p>
      */
-    inline const SessionTimeoutException& GetSessionTimeoutException() const { return m_sessionTimeoutException; }
+    inline const CloudWatchLogsError& GetSessionTimeoutException() const { return m_sessionTimeoutException; }
     inline bool SessionTimeoutExceptionHasBeenSet() const { return m_sessionTimeoutExceptionHasBeenSet; }
-    template<typename SessionTimeoutExceptionT = SessionTimeoutException>
+    template<typename SessionTimeoutExceptionT = CloudWatchLogsError>
     void SetSessionTimeoutException(SessionTimeoutExceptionT&& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = std::forward<SessionTimeoutExceptionT>(value); }
-    template<typename SessionTimeoutExceptionT = SessionTimeoutException>
+    template<typename SessionTimeoutExceptionT = CloudWatchLogsError>
     StartLiveTailResponseStream& WithSessionTimeoutException(SessionTimeoutExceptionT&& value) { SetSessionTimeoutException(std::forward<SessionTimeoutExceptionT>(value)); return *this;}
     ///@}
 
@@ -82,11 +82,11 @@ namespace Model
     /**
      * <p>This exception is returned if an unknown error occurs.</p>
      */
-    inline const SessionStreamingException& GetSessionStreamingException() const { return m_sessionStreamingException; }
+    inline const CloudWatchLogsError& GetSessionStreamingException() const { return m_sessionStreamingException; }
     inline bool SessionStreamingExceptionHasBeenSet() const { return m_sessionStreamingExceptionHasBeenSet; }
-    template<typename SessionStreamingExceptionT = SessionStreamingException>
+    template<typename SessionStreamingExceptionT = CloudWatchLogsError>
     void SetSessionStreamingException(SessionStreamingExceptionT&& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = std::forward<SessionStreamingExceptionT>(value); }
-    template<typename SessionStreamingExceptionT = SessionStreamingException>
+    template<typename SessionStreamingExceptionT = CloudWatchLogsError>
     StartLiveTailResponseStream& WithSessionStreamingException(SessionStreamingExceptionT&& value) { SetSessionStreamingException(std::forward<SessionStreamingExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -97,10 +97,10 @@ namespace Model
     LiveTailSessionUpdate m_sessionUpdate;
     bool m_sessionUpdateHasBeenSet = false;
 
-    SessionTimeoutException m_sessionTimeoutException;
+    CloudWatchLogsError m_sessionTimeoutException;
     bool m_sessionTimeoutExceptionHasBeenSet = false;
 
-    SessionStreamingException m_sessionStreamingException;
+    CloudWatchLogsError m_sessionStreamingException;
     bool m_sessionStreamingExceptionHasBeenSet = false;
   };
 
