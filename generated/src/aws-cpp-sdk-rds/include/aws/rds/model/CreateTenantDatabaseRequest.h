@@ -88,8 +88,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 8 to 30 characters.</p> </li> <li>
      * <p>Can include any printable ASCII character except forward slash
      * (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>),
-     * ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li>
-     * </ul>
+     * ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p> </li> <li>
+     * <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
@@ -125,6 +126,47 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
+     * user password with Amazon Web Services Secrets Manager if
+     * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
+     */
+    inline bool GetManageMasterUserPassword() const { return m_manageMasterUserPassword; }
+    inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
+    inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
+    inline CreateTenantDatabaseRequest& WithManageMasterUserPassword(bool value) { SetManageMasterUserPassword(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline const Aws::String& GetMasterUserSecretKmsKeyId() const { return m_masterUserSecretKmsKeyId; }
+    inline bool MasterUserSecretKmsKeyIdHasBeenSet() const { return m_masterUserSecretKmsKeyIdHasBeenSet; }
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    void SetMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::forward<MasterUserSecretKmsKeyIdT>(value); }
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    CreateTenantDatabaseRequest& WithMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { SetMasterUserSecretKmsKeyId(std::forward<MasterUserSecretKmsKeyIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -154,6 +196,12 @@ namespace Model
 
     Aws::String m_ncharCharacterSetName;
     bool m_ncharCharacterSetNameHasBeenSet = false;
+
+    bool m_manageMasterUserPassword{false};
+    bool m_manageMasterUserPasswordHasBeenSet = false;
+
+    Aws::String m_masterUserSecretKmsKeyId;
+    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

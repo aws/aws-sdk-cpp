@@ -906,7 +906,10 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether minor version patches are applied automatically.</p>
-     * <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+     * <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p> <p>For
+     * more information about automatic minor version upgrades, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+     * upgrading the minor engine version</a>.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }

@@ -108,7 +108,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     * <p>The type of authentication the proxy uses for connections from clients. The
+     * following values are defaults for the corresponding engines:</p> <ul> <li>
+     * <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code> </p> </li> <li>
+     * <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code> </p> </li> <li>
+     * <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code> </p> </li> </ul>
      */
     inline ClientPasswordAuthType GetClientPasswordAuthType() const { return m_clientPasswordAuthType; }
     inline bool ClientPasswordAuthTypeHasBeenSet() const { return m_clientPasswordAuthTypeHasBeenSet; }

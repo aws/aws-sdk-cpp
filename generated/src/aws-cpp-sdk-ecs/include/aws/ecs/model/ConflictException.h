@@ -25,14 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The <code>RunTask</code> request could not be processed due to conflicts. The
-   * provided <code>clientToken</code> is already in use with a different
-   * <code>RunTask</code> request. The <code>resourceIds</code> are the existing task
-   * ARNs which are already associated with the <code>clientToken</code>. </p> <p>To
-   * fix this issue:</p> <ul> <li> <p>Run <code>RunTask</code> with a unique
-   * <code>clientToken</code>.</p> </li> <li> <p>Run <code>RunTask</code> with the
-   * <code>clientToken</code> and the original set of parameters</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <p>The request could not be processed because of conflict in the current state
+   * of the resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ConflictException">AWS
    * API Reference</a></p>
    */

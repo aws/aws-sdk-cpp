@@ -61,6 +61,12 @@ Aws::String CreateChannelNamespaceRequest::SerializePayload() const
 
   }
 
+  if(m_handlerConfigsHasBeenSet)
+  {
+   payload.WithObject("handlerConfigs", m_handlerConfigs.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

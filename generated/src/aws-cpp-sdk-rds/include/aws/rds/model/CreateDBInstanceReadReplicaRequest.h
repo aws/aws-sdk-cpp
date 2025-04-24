@@ -153,7 +153,10 @@ namespace Model
      * <p>Specifies whether to automatically apply minor engine upgrades to the read
      * replica during the maintenance window.</p> <p>This setting doesn't apply to RDS
      * Custom DB instances.</p> <p>Default: Inherits the value from the source DB
-     * instance.</p>
+     * instance.</p> <p>For more information about automatic minor version upgrades,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+     * upgrading the minor engine version</a>.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }

@@ -307,6 +307,16 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
+  if(m_manageMasterUserPasswordHasBeenSet)
+  {
+    ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
+  }
+
+  if(m_masterUserSecretKmsKeyIdHasBeenSet)
+  {
+    ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }
