@@ -48,6 +48,14 @@ namespace Aws
             m_s3Client->AppendToUserAgent("ft/S3CryptoV1n");
         }
 
+        S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials,
+            const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+            const std::function<Aws::UniquePtr<S3::S3Client> ()>& s3ClientFactory) :
+            m_s3Client(s3ClientFactory()), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
+        {
+            m_s3Client->AppendToUserAgent("ft/S3CryptoV1n");
+        }
+
         S3EncryptionPutObjectOutcome S3EncryptionClientBase::PutObject(const Aws::S3::Model::PutObjectRequest& request, const Aws::Map<Aws::String, Aws::String>& contextMap) const
         {
             auto module = m_cryptoModuleFactory.FetchCryptoModule(m_encryptionMaterials, m_cryptoConfig);
