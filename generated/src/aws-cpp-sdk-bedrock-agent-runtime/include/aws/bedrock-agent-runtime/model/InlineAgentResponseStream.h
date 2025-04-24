@@ -49,11 +49,11 @@ namespace Model
      * <p>The request is denied because of missing access permissions. Check your
      * permissions and retry your request.</p>
      */
-    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
+    inline const BedrockAgentRuntimeError& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
     void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
@@ -87,11 +87,11 @@ namespace Model
      * <p>There was a conflict performing an operation. Resolve the conflict and retry
      * your request. </p>
      */
-    inline const ConflictException& GetConflictException() const { return m_conflictException; }
+    inline const BedrockAgentRuntimeError& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = BedrockAgentRuntimeError>
     void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
@@ -138,11 +138,11 @@ namespace Model
      * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
      * Amazon Resource Name (ARN) and try your request again. </p>
      */
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
+    inline const BedrockAgentRuntimeError& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = BedrockAgentRuntimeError>
     void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
@@ -165,11 +165,11 @@ namespace Model
      * <p>The number of requests exceeds the service quota. Resubmit your request
      * later.</p>
      */
-    inline const ServiceQuotaExceededException& GetServiceQuotaExceededException() const { return m_serviceQuotaExceededException; }
+    inline const BedrockAgentRuntimeError& GetServiceQuotaExceededException() const { return m_serviceQuotaExceededException; }
     inline bool ServiceQuotaExceededExceptionHasBeenSet() const { return m_serviceQuotaExceededExceptionHasBeenSet; }
-    template<typename ServiceQuotaExceededExceptionT = ServiceQuotaExceededException>
+    template<typename ServiceQuotaExceededExceptionT = BedrockAgentRuntimeError>
     void SetServiceQuotaExceededException(ServiceQuotaExceededExceptionT&& value) { m_serviceQuotaExceededExceptionHasBeenSet = true; m_serviceQuotaExceededException = std::forward<ServiceQuotaExceededExceptionT>(value); }
-    template<typename ServiceQuotaExceededExceptionT = ServiceQuotaExceededException>
+    template<typename ServiceQuotaExceededExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithServiceQuotaExceededException(ServiceQuotaExceededExceptionT&& value) { SetServiceQuotaExceededException(std::forward<ServiceQuotaExceededExceptionT>(value)); return *this;}
     ///@}
 
@@ -177,11 +177,11 @@ namespace Model
     /**
      * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const BedrockAgentRuntimeError& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockAgentRuntimeError>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
@@ -207,16 +207,16 @@ namespace Model
      * <p>Input validation failed. Check your request parameters and retry the
      * request.</p>
      */
-    inline const ValidationException& GetValidationException() const { return m_validationException; }
+    inline const BedrockAgentRuntimeError& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockAgentRuntimeError>
     void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockAgentRuntimeError>
     InlineAgentResponseStream& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
   private:
 
-    AccessDeniedException m_accessDeniedException;
+    BedrockAgentRuntimeError m_accessDeniedException;
     bool m_accessDeniedExceptionHasBeenSet = false;
 
     BadGatewayException m_badGatewayException;
@@ -225,7 +225,7 @@ namespace Model
     InlineAgentPayloadPart m_chunk;
     bool m_chunkHasBeenSet = false;
 
-    ConflictException m_conflictException;
+    BedrockAgentRuntimeError m_conflictException;
     bool m_conflictExceptionHasBeenSet = false;
 
     DependencyFailedException m_dependencyFailedException;
@@ -237,22 +237,22 @@ namespace Model
     InternalServerException m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;
 
-    ResourceNotFoundException m_resourceNotFoundException;
+    BedrockAgentRuntimeError m_resourceNotFoundException;
     bool m_resourceNotFoundExceptionHasBeenSet = false;
 
     InlineAgentReturnControlPayload m_returnControl;
     bool m_returnControlHasBeenSet = false;
 
-    ServiceQuotaExceededException m_serviceQuotaExceededException;
+    BedrockAgentRuntimeError m_serviceQuotaExceededException;
     bool m_serviceQuotaExceededExceptionHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    BedrockAgentRuntimeError m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
     InlineAgentTracePart m_trace;
     bool m_traceHasBeenSet = false;
 
-    ValidationException m_validationException;
+    BedrockAgentRuntimeError m_validationException;
     bool m_validationExceptionHasBeenSet = false;
   };
 

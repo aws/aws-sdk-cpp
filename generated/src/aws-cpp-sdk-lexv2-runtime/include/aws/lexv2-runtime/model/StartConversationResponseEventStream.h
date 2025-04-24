@@ -112,11 +112,11 @@ namespace Model
      * expired. Also thrown when the credentials in the request do not have permission
      * to access the <code>StartConversation</code> operation.</p>
      */
-    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
+    inline const LexRuntimeV2Error& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = LexRuntimeV2Error>
     void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
@@ -125,11 +125,11 @@ namespace Model
      * <p>Exception thrown if one of the input parameters points to a resource that
      * does not exist. For example, if the bot ID specified does not exist.</p>
      */
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
+    inline const LexRuntimeV2Error& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = LexRuntimeV2Error>
     void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
@@ -138,11 +138,11 @@ namespace Model
      * <p>Exception thrown when one or more parameters could not be validated. The
      * <code>message</code> contains the name of the field that isn't valid.</p>
      */
-    inline const ValidationException& GetValidationException() const { return m_validationException; }
+    inline const LexRuntimeV2Error& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = LexRuntimeV2Error>
     void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
 
@@ -151,11 +151,11 @@ namespace Model
      * <p>Exception thrown when your application exceeds the maximum number of
      * concurrent requests. </p>
      */
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const LexRuntimeV2Error& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = LexRuntimeV2Error>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
@@ -163,11 +163,11 @@ namespace Model
     /**
      * <p>An error occurred with Amazon Lex V2.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
+    inline const LexRuntimeV2Error& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = LexRuntimeV2Error>
     void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
@@ -176,31 +176,31 @@ namespace Model
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
      * V2 bot, and session ID.</p>
      */
-    inline const ConflictException& GetConflictException() const { return m_conflictException; }
+    inline const LexRuntimeV2Error& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = LexRuntimeV2Error>
     void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
+    inline const LexRuntimeV2Error& GetDependencyFailedException() const { return m_dependencyFailedException; }
     inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
-    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    template<typename DependencyFailedExceptionT = LexRuntimeV2Error>
     void SetDependencyFailedException(DependencyFailedExceptionT&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value); }
-    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    template<typename DependencyFailedExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithDependencyFailedException(DependencyFailedExceptionT&& value) { SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
+    inline const LexRuntimeV2Error& GetBadGatewayException() const { return m_badGatewayException; }
     inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
-    template<typename BadGatewayExceptionT = BadGatewayException>
+    template<typename BadGatewayExceptionT = LexRuntimeV2Error>
     void SetBadGatewayException(BadGatewayExceptionT&& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = std::forward<BadGatewayExceptionT>(value); }
-    template<typename BadGatewayExceptionT = BadGatewayException>
+    template<typename BadGatewayExceptionT = LexRuntimeV2Error>
     StartConversationResponseEventStream& WithBadGatewayException(BadGatewayExceptionT&& value) { SetBadGatewayException(std::forward<BadGatewayExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -223,28 +223,28 @@ namespace Model
     HeartbeatEvent m_heartbeatEvent;
     bool m_heartbeatEventHasBeenSet = false;
 
-    AccessDeniedException m_accessDeniedException;
+    LexRuntimeV2Error m_accessDeniedException;
     bool m_accessDeniedExceptionHasBeenSet = false;
 
-    ResourceNotFoundException m_resourceNotFoundException;
+    LexRuntimeV2Error m_resourceNotFoundException;
     bool m_resourceNotFoundExceptionHasBeenSet = false;
 
-    ValidationException m_validationException;
+    LexRuntimeV2Error m_validationException;
     bool m_validationExceptionHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    LexRuntimeV2Error m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
-    InternalServerException m_internalServerException;
+    LexRuntimeV2Error m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;
 
-    ConflictException m_conflictException;
+    LexRuntimeV2Error m_conflictException;
     bool m_conflictExceptionHasBeenSet = false;
 
-    DependencyFailedException m_dependencyFailedException;
+    LexRuntimeV2Error m_dependencyFailedException;
     bool m_dependencyFailedExceptionHasBeenSet = false;
 
-    BadGatewayException m_badGatewayException;
+    LexRuntimeV2Error m_badGatewayException;
     bool m_badGatewayExceptionHasBeenSet = false;
   };
 

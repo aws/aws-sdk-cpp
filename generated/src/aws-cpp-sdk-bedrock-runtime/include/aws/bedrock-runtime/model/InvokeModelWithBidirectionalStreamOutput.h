@@ -55,11 +55,11 @@ namespace Model
     /**
      * <p>The request encountered an unknown internal error.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
+    inline const BedrockRuntimeError& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = BedrockRuntimeError>
     void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
-    template<typename InternalServerExceptionT = InternalServerException>
+    template<typename InternalServerExceptionT = BedrockRuntimeError>
     InvokeModelWithBidirectionalStreamOutput& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
@@ -80,11 +80,11 @@ namespace Model
      * <p>The input fails to satisfy the constraints specified by an Amazon Web
      * Services service.</p>
      */
-    inline const ValidationException& GetValidationException() const { return m_validationException; }
+    inline const BedrockRuntimeError& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockRuntimeError>
     void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
-    template<typename ValidationExceptionT = ValidationException>
+    template<typename ValidationExceptionT = BedrockRuntimeError>
     InvokeModelWithBidirectionalStreamOutput& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
 
@@ -92,11 +92,11 @@ namespace Model
     /**
      * <p>The request was denied due to request throttling.</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const BedrockRuntimeError& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockRuntimeError>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = BedrockRuntimeError>
     InvokeModelWithBidirectionalStreamOutput& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
@@ -105,11 +105,11 @@ namespace Model
      * <p>The connection was closed because a request was not received within the
      * timeout period.</p>
      */
-    inline const ModelTimeoutException& GetModelTimeoutException() const { return m_modelTimeoutException; }
+    inline const BedrockRuntimeError& GetModelTimeoutException() const { return m_modelTimeoutException; }
     inline bool ModelTimeoutExceptionHasBeenSet() const { return m_modelTimeoutExceptionHasBeenSet; }
-    template<typename ModelTimeoutExceptionT = ModelTimeoutException>
+    template<typename ModelTimeoutExceptionT = BedrockRuntimeError>
     void SetModelTimeoutException(ModelTimeoutExceptionT&& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = std::forward<ModelTimeoutExceptionT>(value); }
-    template<typename ModelTimeoutExceptionT = ModelTimeoutException>
+    template<typename ModelTimeoutExceptionT = BedrockRuntimeError>
     InvokeModelWithBidirectionalStreamOutput& WithModelTimeoutException(ModelTimeoutExceptionT&& value) { SetModelTimeoutException(std::forward<ModelTimeoutExceptionT>(value)); return *this;}
     ///@}
 
@@ -117,11 +117,11 @@ namespace Model
     /**
      * <p>The request has failed due to a temporary failure of the server.</p>
      */
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
+    inline const BedrockRuntimeError& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = BedrockRuntimeError>
     void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = BedrockRuntimeError>
     InvokeModelWithBidirectionalStreamOutput& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -129,22 +129,22 @@ namespace Model
     BidirectionalOutputPayloadPart m_chunk;
     bool m_chunkHasBeenSet = false;
 
-    InternalServerException m_internalServerException;
+    BedrockRuntimeError m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;
 
     ModelStreamErrorException m_modelStreamErrorException;
     bool m_modelStreamErrorExceptionHasBeenSet = false;
 
-    ValidationException m_validationException;
+    BedrockRuntimeError m_validationException;
     bool m_validationExceptionHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    BedrockRuntimeError m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
-    ModelTimeoutException m_modelTimeoutException;
+    BedrockRuntimeError m_modelTimeoutException;
     bool m_modelTimeoutExceptionHasBeenSet = false;
 
-    ServiceUnavailableException m_serviceUnavailableException;
+    BedrockRuntimeError m_serviceUnavailableException;
     bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
