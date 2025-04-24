@@ -14,6 +14,9 @@
 #if($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.result)
 #set($cppType = "Aws::Utils::Stream::ResponseStream")
 #set($isStream = true)
+#elseif($member.value.shape.isException() && !$member.value.shape.isModeledException())
+#set($cppType = "${metadata.classNamePrefix}Error")
+#set($isStream = false)
 #else
 #set($cppType = $CppViewHelper.computeCppType($member.value.shape))
 #set($isStream = false)

@@ -7,6 +7,9 @@
 #set($isEventStreamInput = false)
 #end
 #set($cppType = $CppViewHelper.computeCppType($shape, $member.key))
+#if($member.value.shape.isException() && !$member.value.shape.isModeledException())
+#set($cppType = "${metadata.classNamePrefix}Error")
+#end
 #set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
 #if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
     Aws::Vector<$cppType> $memberVariableName;
