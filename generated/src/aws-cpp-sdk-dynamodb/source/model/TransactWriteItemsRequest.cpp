@@ -56,4 +56,29 @@ Aws::Http::HeaderValueCollection TransactWriteItemsRequest::GetRequestSpecificHe
 
 
 
+TransactWriteItemsRequest::EndpointParameters TransactWriteItemsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    //operation context params go here
+    parameters.emplace_back(Aws::String{"ResourceArnList"}, this->GetOperationContextParams(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    return parameters;
+}
+//Accessor for dynamic context endpoint params
+Aws::Vector<Aws::String> TransactWriteItemsRequest::GetOperationContextParams() const{
+  Aws::Vector<Aws::String> result;
+  auto& TransactItemsElems = (*this).GetTransactItems();
+  for (auto& TransactItemsElem : TransactItemsElems)
+  {
+  	auto& ConditionCheckElems = TransactItemsElem.GetConditionCheck().GetTableName();
+  	result.emplace_back(ConditionCheckElems);
+  	auto& PutElems = TransactItemsElem.GetPut().GetTableName();
+  	result.emplace_back(PutElems);
+  	auto& DeleteElems = TransactItemsElem.GetDelete().GetTableName();
+  	result.emplace_back(DeleteElems);
+  	auto& UpdateElems = TransactItemsElem.GetUpdate().GetTableName();
+  	result.emplace_back(UpdateElems);
+  }
+  return result;
+}
+
 

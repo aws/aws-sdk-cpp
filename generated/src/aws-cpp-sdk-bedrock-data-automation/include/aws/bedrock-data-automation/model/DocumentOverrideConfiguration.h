@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/SplitterConfiguration.h>
+#include <aws/bedrock-data-automation/model/ModalityProcessingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -46,10 +47,23 @@ namespace Model
     template<typename SplitterT = SplitterConfiguration>
     DocumentOverrideConfiguration& WithSplitter(SplitterT&& value) { SetSplitter(std::forward<SplitterT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ModalityProcessingConfiguration& GetModalityProcessing() const { return m_modalityProcessing; }
+    inline bool ModalityProcessingHasBeenSet() const { return m_modalityProcessingHasBeenSet; }
+    template<typename ModalityProcessingT = ModalityProcessingConfiguration>
+    void SetModalityProcessing(ModalityProcessingT&& value) { m_modalityProcessingHasBeenSet = true; m_modalityProcessing = std::forward<ModalityProcessingT>(value); }
+    template<typename ModalityProcessingT = ModalityProcessingConfiguration>
+    DocumentOverrideConfiguration& WithModalityProcessing(ModalityProcessingT&& value) { SetModalityProcessing(std::forward<ModalityProcessingT>(value)); return *this;}
+    ///@}
   private:
 
     SplitterConfiguration m_splitter;
     bool m_splitterHasBeenSet = false;
+
+    ModalityProcessingConfiguration m_modalityProcessing;
+    bool m_modalityProcessingHasBeenSet = false;
   };
 
 } // namespace Model

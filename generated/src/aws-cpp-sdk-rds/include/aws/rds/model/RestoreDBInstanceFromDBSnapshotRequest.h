@@ -172,7 +172,10 @@ namespace Model
     /**
      * <p>Specifies whether to automatically apply minor version upgrades to the DB
      * instance during the maintenance window.</p> <p>If you restore an RDS Custom DB
-     * instance, you must disable this parameter.</p>
+     * instance, you must disable this parameter.</p> <p>For more information about
+     * automatic minor version upgrades, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+     * upgrading the minor engine version</a>.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -745,6 +748,46 @@ namespace Model
     template<typename EngineLifecycleSupportT = Aws::String>
     RestoreDBInstanceFromDBSnapshotRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) { SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager in the restored DB instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Applies to RDS for Oracle
+     * only.</p> </li> </ul>
+     */
+    inline bool GetManageMasterUserPassword() const { return m_manageMasterUserPassword; }
+    inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
+    inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithManageMasterUserPassword(bool value) { SetManageMasterUserPassword(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline const Aws::String& GetMasterUserSecretKmsKeyId() const { return m_masterUserSecretKmsKeyId; }
+    inline bool MasterUserSecretKmsKeyIdHasBeenSet() const { return m_masterUserSecretKmsKeyIdHasBeenSet; }
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    void SetMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::forward<MasterUserSecretKmsKeyIdT>(value); }
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    RestoreDBInstanceFromDBSnapshotRequest& WithMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { SetMasterUserSecretKmsKeyId(std::forward<MasterUserSecretKmsKeyIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -872,6 +915,12 @@ namespace Model
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;
+
+    bool m_manageMasterUserPassword{false};
+    bool m_manageMasterUserPasswordHasBeenSet = false;
+
+    Aws::String m_masterUserSecretKmsKeyId;
+    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

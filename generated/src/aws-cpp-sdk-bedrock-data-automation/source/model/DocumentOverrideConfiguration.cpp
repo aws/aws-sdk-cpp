@@ -30,6 +30,11 @@ DocumentOverrideConfiguration& DocumentOverrideConfiguration::operator =(JsonVie
     m_splitter = jsonValue.GetObject("splitter");
     m_splitterHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("modalityProcessing"))
+  {
+    m_modalityProcessing = jsonValue.GetObject("modalityProcessing");
+    m_modalityProcessingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue DocumentOverrideConfiguration::Jsonize() const
   if(m_splitterHasBeenSet)
   {
    payload.WithObject("splitter", m_splitter.Jsonize());
+
+  }
+
+  if(m_modalityProcessingHasBeenSet)
+  {
+   payload.WithObject("modalityProcessing", m_modalityProcessing.Jsonize());
 
   }
 

@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>How you want Amazon ECS to stop the task. </p> <p>The valid values are
-     * <code>ROLLBACK</code>.</p>
+     * <p>How you want Amazon ECS to stop the service. </p> <p>The ROLLBACK and ABORT
+     * stopType aren't supported.</p>
      */
     inline StopServiceDeploymentStopType GetStopType() const { return m_stopType; }
     inline bool StopTypeHasBeenSet() const { return m_stopTypeHasBeenSet; }

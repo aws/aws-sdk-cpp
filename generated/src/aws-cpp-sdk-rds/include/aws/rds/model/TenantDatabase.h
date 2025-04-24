@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/TenantDatabasePendingModifiedValues.h>
+#include <aws/rds/model/MasterUserSecret.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
@@ -191,6 +192,16 @@ namespace Model
 
     ///@{
     
+    inline const MasterUserSecret& GetMasterUserSecret() const { return m_masterUserSecret; }
+    inline bool MasterUserSecretHasBeenSet() const { return m_masterUserSecretHasBeenSet; }
+    template<typename MasterUserSecretT = MasterUserSecret>
+    void SetMasterUserSecret(MasterUserSecretT&& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = std::forward<MasterUserSecretT>(value); }
+    template<typename MasterUserSecretT = MasterUserSecret>
+    TenantDatabase& WithMasterUserSecret(MasterUserSecretT&& value) { SetMasterUserSecret(std::forward<MasterUserSecretT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
     inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
     template<typename TagListT = Aws::Vector<Tag>>
@@ -237,6 +248,9 @@ namespace Model
 
     TenantDatabasePendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet = false;
+
+    MasterUserSecret m_masterUserSecret;
+    bool m_masterUserSecretHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;

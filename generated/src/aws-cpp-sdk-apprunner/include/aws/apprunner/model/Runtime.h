@@ -27,7 +27,8 @@ namespace Model
     PHP_81,
     RUBY_31,
     PYTHON_311,
-    NODEJS_18
+    NODEJS_18,
+    NODEJS_22
   };
 
 namespace RuntimeMapper

@@ -82,6 +82,11 @@ ChannelNamespace& ChannelNamespace::operator =(JsonView jsonValue)
     m_lastModified = jsonValue.GetDouble("lastModified");
     m_lastModifiedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("handlerConfigs"))
+  {
+    m_handlerConfigs = jsonValue.GetObject("handlerConfigs");
+    m_handlerConfigsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -154,6 +159,12 @@ JsonValue ChannelNamespace::Jsonize() const
   if(m_lastModifiedHasBeenSet)
   {
    payload.WithDouble("lastModified", m_lastModified.SecondsWithMSPrecision());
+  }
+
+  if(m_handlerConfigsHasBeenSet)
+  {
+   payload.WithObject("handlerConfigs", m_handlerConfigs.Jsonize());
+
   }
 
   return payload;

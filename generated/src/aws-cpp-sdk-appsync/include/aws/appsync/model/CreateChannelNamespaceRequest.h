@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appsync/model/HandlerConfigs.h>
 #include <aws/appsync/model/AuthMode.h>
 #include <utility>
 
@@ -118,6 +119,19 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code>
+     * handlers.</p>
+     */
+    inline const HandlerConfigs& GetHandlerConfigs() const { return m_handlerConfigs; }
+    inline bool HandlerConfigsHasBeenSet() const { return m_handlerConfigsHasBeenSet; }
+    template<typename HandlerConfigsT = HandlerConfigs>
+    void SetHandlerConfigs(HandlerConfigsT&& value) { m_handlerConfigsHasBeenSet = true; m_handlerConfigs = std::forward<HandlerConfigsT>(value); }
+    template<typename HandlerConfigsT = HandlerConfigs>
+    CreateChannelNamespaceRequest& WithHandlerConfigs(HandlerConfigsT&& value) { SetHandlerConfigs(std::forward<HandlerConfigsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_apiId;
@@ -137,6 +151,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    HandlerConfigs m_handlerConfigs;
+    bool m_handlerConfigsHasBeenSet = false;
   };
 
 } // namespace Model
