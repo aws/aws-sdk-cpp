@@ -6,7 +6,6 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.codegen.core.SymbolWriter;
-import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,17 +45,14 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
         write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
-        if(test.getConfig().getParams() instanceof AwsVendorParams)
-        {
-            AwsVendorParams configParams = (AwsVendorParams) test.getConfig().getParams();
-            if(!configParams.getRegion().isEmpty())
+        test.vendorParamsSupplier.get().ifPresent(awsVendorParams -> {
+            if(!awsVendorParams.getRegion().isEmpty())
             {
-                write("clientConfiguration.region = \"$L\";",configParams.getRegion());
+                write("clientConfiguration.region = \"$L\";",awsVendorParams.getRegion());
             }
-            write("clientConfiguration.useFIPS = $L;",configParams.useFips())
-            .write("clientConfiguration.useDualStack = $L;",configParams.useDualstack());
-        }
-        //for s3, needs to be handled when client code is ready to use the parameters passed in client configuration
+            write("clientConfiguration.useFIPS = $L;",awsVendorParams.useFips())
+                    .write("clientConfiguration.useDualStack = $L;",awsVendorParams.useDualstack());
+        });
 
         if(Objects.equals(test.getAuth(), "sigv4") || Objects.equals(test.getAuth(), "sigv4a"))
         {

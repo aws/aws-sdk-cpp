@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+import software.amazon.smithy.aws.smoketests.model.BaseAwsVendorParams;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
 import software.amazon.smithy.aws.traits.auth.SigV4Trait;
@@ -234,17 +235,12 @@ public class SmokeTestsParser implements Runnable{
                 }
             }
 
-            //get configuration properties
-            if(AwsSmokeTestModel.hasAwsVendorParams(testcase))
-            {
-                ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getAwsVendorParams(testcase).get());
-                test.setConfig(config);
-            }
-            else if (serviceShape.getId().getName().equalsIgnoreCase("s3") && 
-                AwsSmokeTestModel.hasS3VendorParams(testcase))
-            {
-                ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getS3VendorParams(testcase).get());
-                test.setConfig(config);               
+            if(AwsSmokeTestModel.hasS3VendorParams(testcase)) {
+                test.setVendorParamsSupplier(() -> AwsSmokeTestModel.getS3VendorParams(testcase)
+                        .map(params -> (BaseAwsVendorParams) params));
+            } else {
+                test.setVendorParamsSupplier(() -> AwsSmokeTestModel.getAwsVendorParams(testcase)
+                        .map(params -> (BaseAwsVendorParams) params));
             }
             test.setTestcaseName(testcase.getId());
 

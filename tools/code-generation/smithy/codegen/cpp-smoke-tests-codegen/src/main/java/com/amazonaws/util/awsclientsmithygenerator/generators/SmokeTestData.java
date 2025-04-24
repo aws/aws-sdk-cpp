@@ -8,11 +8,14 @@ import lombok.Data;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
+
+import software.amazon.smithy.aws.smoketests.model.BaseAwsVendorParams;
 import software.amazon.smithy.codegen.core.Symbol;
 @Data
 public final class SmokeTestData {
     public String testcaseName;
-    public ClientConfiguration config;
+    public Supplier<Optional<BaseAwsVendorParams>> vendorParamsSupplier;
     public String operationName;
     public String inputShapeName;
     public String outputShapeName;
