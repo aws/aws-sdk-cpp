@@ -1,0 +1,57 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/invoicing/InvoicingClient.h>
+#include <aws/invoicing/InvoicingEndpointProvider.h>
+#include <aws/invoicing/InvoicingEndpointRules.h>
+#include <aws/invoicing/InvoicingErrorMarshaller.h>
+#include <aws/invoicing/InvoicingErrors.h>
+#include <aws/invoicing/InvoicingRequest.h>
+#include <aws/invoicing/InvoicingServiceClientModel.h>
+#include <aws/invoicing/Invoicing_EXPORTS.h>
+#include <aws/invoicing/model/AccessDeniedException.h>
+#include <aws/invoicing/model/BatchGetInvoiceProfileRequest.h>
+#include <aws/invoicing/model/BatchGetInvoiceProfileResult.h>
+#include <aws/invoicing/model/CreateInvoiceUnitRequest.h>
+#include <aws/invoicing/model/CreateInvoiceUnitResult.h>
+#include <aws/invoicing/model/DeleteInvoiceUnitRequest.h>
+#include <aws/invoicing/model/DeleteInvoiceUnitResult.h>
+#include <aws/invoicing/model/Filters.h>
+#include <aws/invoicing/model/GetInvoiceUnitRequest.h>
+#include <aws/invoicing/model/GetInvoiceUnitResult.h>
+#include <aws/invoicing/model/InternalServerException.h>
+#include <aws/invoicing/model/InvoiceProfile.h>
+#include <aws/invoicing/model/InvoiceUnit.h>
+#include <aws/invoicing/model/InvoiceUnitRule.h>
+#include <aws/invoicing/model/ListInvoiceUnitsRequest.h>
+#include <aws/invoicing/model/ListInvoiceUnitsResult.h>
+#include <aws/invoicing/model/ListTagsForResourceRequest.h>
+#include <aws/invoicing/model/ListTagsForResourceResult.h>
+#include <aws/invoicing/model/ReceiverAddress.h>
+#include <aws/invoicing/model/ResourceNotFoundException.h>
+#include <aws/invoicing/model/ResourceTag.h>
+#include <aws/invoicing/model/TagResourceRequest.h>
+#include <aws/invoicing/model/TagResourceResult.h>
+#include <aws/invoicing/model/UntagResourceRequest.h>
+#include <aws/invoicing/model/UntagResourceResult.h>
+#include <aws/invoicing/model/UpdateInvoiceUnitRequest.h>
+#include <aws/invoicing/model/UpdateInvoiceUnitResult.h>
+#include <aws/invoicing/model/ValidationException.h>
+#include <aws/invoicing/model/ValidationExceptionField.h>
+#include <aws/invoicing/model/ValidationExceptionReason.h>
+
+using InvoicingIncludeTest = ::testing::Test;
+
+TEST_F(InvoicingIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  auto pClient = Aws::MakeUnique<Aws::Invoicing::InvoicingClient>("InvoicingIncludeTest", config);
+  ASSERT_TRUE(pClient.get());
+}

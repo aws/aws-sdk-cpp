@@ -1,0 +1,151 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/opensearchserverless/OpenSearchServerlessClient.h>
+#include <aws/opensearchserverless/OpenSearchServerlessEndpointProvider.h>
+#include <aws/opensearchserverless/OpenSearchServerlessEndpointRules.h>
+#include <aws/opensearchserverless/OpenSearchServerlessErrorMarshaller.h>
+#include <aws/opensearchserverless/OpenSearchServerlessErrors.h>
+#include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
+#include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/model/AccessPolicyDetail.h>
+#include <aws/opensearchserverless/model/AccessPolicyStats.h>
+#include <aws/opensearchserverless/model/AccessPolicySummary.h>
+#include <aws/opensearchserverless/model/AccessPolicyType.h>
+#include <aws/opensearchserverless/model/AccountSettingsDetail.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionRequest.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionResult.h>
+#include <aws/opensearchserverless/model/BatchGetEffectiveLifecyclePolicyRequest.h>
+#include <aws/opensearchserverless/model/BatchGetEffectiveLifecyclePolicyResult.h>
+#include <aws/opensearchserverless/model/BatchGetLifecyclePolicyRequest.h>
+#include <aws/opensearchserverless/model/BatchGetLifecyclePolicyResult.h>
+#include <aws/opensearchserverless/model/BatchGetVpcEndpointRequest.h>
+#include <aws/opensearchserverless/model/BatchGetVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/CapacityLimits.h>
+#include <aws/opensearchserverless/model/CollectionDetail.h>
+#include <aws/opensearchserverless/model/CollectionErrorDetail.h>
+#include <aws/opensearchserverless/model/CollectionFilters.h>
+#include <aws/opensearchserverless/model/CollectionStatus.h>
+#include <aws/opensearchserverless/model/CollectionSummary.h>
+#include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/CreateAccessPolicyRequest.h>
+#include <aws/opensearchserverless/model/CreateAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/CreateCollectionDetail.h>
+#include <aws/opensearchserverless/model/CreateCollectionRequest.h>
+#include <aws/opensearchserverless/model/CreateCollectionResult.h>
+#include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/CreateLifecyclePolicyRequest.h>
+#include <aws/opensearchserverless/model/CreateLifecyclePolicyResult.h>
+#include <aws/opensearchserverless/model/CreateSecurityConfigRequest.h>
+#include <aws/opensearchserverless/model/CreateSecurityConfigResult.h>
+#include <aws/opensearchserverless/model/CreateSecurityPolicyRequest.h>
+#include <aws/opensearchserverless/model/CreateSecurityPolicyResult.h>
+#include <aws/opensearchserverless/model/CreateVpcEndpointDetail.h>
+#include <aws/opensearchserverless/model/CreateVpcEndpointRequest.h>
+#include <aws/opensearchserverless/model/CreateVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/DeleteAccessPolicyRequest.h>
+#include <aws/opensearchserverless/model/DeleteAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/DeleteCollectionDetail.h>
+#include <aws/opensearchserverless/model/DeleteCollectionRequest.h>
+#include <aws/opensearchserverless/model/DeleteCollectionResult.h>
+#include <aws/opensearchserverless/model/DeleteLifecyclePolicyRequest.h>
+#include <aws/opensearchserverless/model/DeleteLifecyclePolicyResult.h>
+#include <aws/opensearchserverless/model/DeleteSecurityConfigRequest.h>
+#include <aws/opensearchserverless/model/DeleteSecurityConfigResult.h>
+#include <aws/opensearchserverless/model/DeleteSecurityPolicyRequest.h>
+#include <aws/opensearchserverless/model/DeleteSecurityPolicyResult.h>
+#include <aws/opensearchserverless/model/DeleteVpcEndpointDetail.h>
+#include <aws/opensearchserverless/model/DeleteVpcEndpointRequest.h>
+#include <aws/opensearchserverless/model/DeleteVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/EffectiveLifecyclePolicyDetail.h>
+#include <aws/opensearchserverless/model/EffectiveLifecyclePolicyErrorDetail.h>
+#include <aws/opensearchserverless/model/GetAccessPolicyRequest.h>
+#include <aws/opensearchserverless/model/GetAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
+#include <aws/opensearchserverless/model/GetAccountSettingsResult.h>
+#include <aws/opensearchserverless/model/GetPoliciesStatsRequest.h>
+#include <aws/opensearchserverless/model/GetPoliciesStatsResult.h>
+#include <aws/opensearchserverless/model/GetSecurityConfigRequest.h>
+#include <aws/opensearchserverless/model/GetSecurityConfigResult.h>
+#include <aws/opensearchserverless/model/GetSecurityPolicyRequest.h>
+#include <aws/opensearchserverless/model/GetSecurityPolicyResult.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterGroupAttribute.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterUserAttribute.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyDetail.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyErrorDetail.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyIdentifier.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyResourceIdentifier.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyStats.h>
+#include <aws/opensearchserverless/model/LifecyclePolicySummary.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyType.h>
+#include <aws/opensearchserverless/model/ListAccessPoliciesRequest.h>
+#include <aws/opensearchserverless/model/ListAccessPoliciesResult.h>
+#include <aws/opensearchserverless/model/ListCollectionsRequest.h>
+#include <aws/opensearchserverless/model/ListCollectionsResult.h>
+#include <aws/opensearchserverless/model/ListLifecyclePoliciesRequest.h>
+#include <aws/opensearchserverless/model/ListLifecyclePoliciesResult.h>
+#include <aws/opensearchserverless/model/ListSecurityConfigsRequest.h>
+#include <aws/opensearchserverless/model/ListSecurityConfigsResult.h>
+#include <aws/opensearchserverless/model/ListSecurityPoliciesRequest.h>
+#include <aws/opensearchserverless/model/ListSecurityPoliciesResult.h>
+#include <aws/opensearchserverless/model/ListTagsForResourceRequest.h>
+#include <aws/opensearchserverless/model/ListTagsForResourceResult.h>
+#include <aws/opensearchserverless/model/ListVpcEndpointsRequest.h>
+#include <aws/opensearchserverless/model/ListVpcEndpointsResult.h>
+#include <aws/opensearchserverless/model/ResourceType.h>
+#include <aws/opensearchserverless/model/SamlConfigOptions.h>
+#include <aws/opensearchserverless/model/SecurityConfigDetail.h>
+#include <aws/opensearchserverless/model/SecurityConfigStats.h>
+#include <aws/opensearchserverless/model/SecurityConfigSummary.h>
+#include <aws/opensearchserverless/model/SecurityConfigType.h>
+#include <aws/opensearchserverless/model/SecurityPolicyDetail.h>
+#include <aws/opensearchserverless/model/SecurityPolicyStats.h>
+#include <aws/opensearchserverless/model/SecurityPolicySummary.h>
+#include <aws/opensearchserverless/model/SecurityPolicyType.h>
+#include <aws/opensearchserverless/model/ServiceQuotaExceededException.h>
+#include <aws/opensearchserverless/model/StandbyReplicas.h>
+#include <aws/opensearchserverless/model/Tag.h>
+#include <aws/opensearchserverless/model/TagResourceRequest.h>
+#include <aws/opensearchserverless/model/TagResourceResult.h>
+#include <aws/opensearchserverless/model/UntagResourceRequest.h>
+#include <aws/opensearchserverless/model/UntagResourceResult.h>
+#include <aws/opensearchserverless/model/UpdateAccessPolicyRequest.h>
+#include <aws/opensearchserverless/model/UpdateAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/UpdateAccountSettingsRequest.h>
+#include <aws/opensearchserverless/model/UpdateAccountSettingsResult.h>
+#include <aws/opensearchserverless/model/UpdateCollectionDetail.h>
+#include <aws/opensearchserverless/model/UpdateCollectionRequest.h>
+#include <aws/opensearchserverless/model/UpdateCollectionResult.h>
+#include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/UpdateLifecyclePolicyRequest.h>
+#include <aws/opensearchserverless/model/UpdateLifecyclePolicyResult.h>
+#include <aws/opensearchserverless/model/UpdateSecurityConfigRequest.h>
+#include <aws/opensearchserverless/model/UpdateSecurityConfigResult.h>
+#include <aws/opensearchserverless/model/UpdateSecurityPolicyRequest.h>
+#include <aws/opensearchserverless/model/UpdateSecurityPolicyResult.h>
+#include <aws/opensearchserverless/model/UpdateVpcEndpointDetail.h>
+#include <aws/opensearchserverless/model/UpdateVpcEndpointRequest.h>
+#include <aws/opensearchserverless/model/UpdateVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/VpcEndpointDetail.h>
+#include <aws/opensearchserverless/model/VpcEndpointErrorDetail.h>
+#include <aws/opensearchserverless/model/VpcEndpointFilters.h>
+#include <aws/opensearchserverless/model/VpcEndpointStatus.h>
+#include <aws/opensearchserverless/model/VpcEndpointSummary.h>
+
+using OpenSearchServerlessIncludeTest = ::testing::Test;
+
+TEST_F(OpenSearchServerlessIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  auto pClient = Aws::MakeUnique<Aws::OpenSearchServerless::OpenSearchServerlessClient>("OpenSearchServerlessIncludeTest", config);
+  ASSERT_TRUE(pClient.get());
+}
