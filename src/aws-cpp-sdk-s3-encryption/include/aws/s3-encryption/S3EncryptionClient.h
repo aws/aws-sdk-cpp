@@ -66,6 +66,14 @@ namespace Aws
             S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
                 const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
+            /*
+             * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, and a s3 client factory.
+             * The factory will be used to create the underlying S3 Client.
+             */
+            S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials,
+              const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+              const std::function<Aws::UniquePtr<Aws::S3::S3Client> ()>& s3ClientFactory);
+
             S3EncryptionClientBase(const S3EncryptionClientBase&) = delete;
             S3EncryptionClientBase& operator=(const S3EncryptionClientBase&) = delete;
 
@@ -176,6 +184,17 @@ namespace Aws
             S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
                 const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentialsProvider, clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+            /*
+             * Initialize the S3 Encryption Client V2 with crypto configuration v2, and a s3 client factory.
+             * The factory will be used to create the underlying S3 Client.
+             */
+            S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig,
+                const std::function<Aws::UniquePtr<Aws::S3::S3Client> ()>& s3ClientFactory)
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), s3ClientFactory)
             {
                 Init(cryptoConfig);
             }
