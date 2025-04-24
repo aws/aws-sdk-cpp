@@ -67,11 +67,11 @@ namespace Model
 
     ///@{
     
-    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
+    inline const IoTSiteWiseError& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = IoTSiteWiseError>
     void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
-    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    template<typename AccessDeniedExceptionT = IoTSiteWiseError>
     ResponseStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
@@ -87,51 +87,51 @@ namespace Model
 
     ///@{
     
-    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
+    inline const IoTSiteWiseError& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    template<typename InternalFailureExceptionT = InternalFailureException>
+    template<typename InternalFailureExceptionT = IoTSiteWiseError>
     void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
-    template<typename InternalFailureExceptionT = InternalFailureException>
+    template<typename InternalFailureExceptionT = IoTSiteWiseError>
     ResponseStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InvalidRequestException& GetInvalidRequestException() const { return m_invalidRequestException; }
+    inline const IoTSiteWiseError& GetInvalidRequestException() const { return m_invalidRequestException; }
     inline bool InvalidRequestExceptionHasBeenSet() const { return m_invalidRequestExceptionHasBeenSet; }
-    template<typename InvalidRequestExceptionT = InvalidRequestException>
+    template<typename InvalidRequestExceptionT = IoTSiteWiseError>
     void SetInvalidRequestException(InvalidRequestExceptionT&& value) { m_invalidRequestExceptionHasBeenSet = true; m_invalidRequestException = std::forward<InvalidRequestExceptionT>(value); }
-    template<typename InvalidRequestExceptionT = InvalidRequestException>
+    template<typename InvalidRequestExceptionT = IoTSiteWiseError>
     ResponseStream& WithInvalidRequestException(InvalidRequestExceptionT&& value) { SetInvalidRequestException(std::forward<InvalidRequestExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LimitExceededException& GetLimitExceededException() const { return m_limitExceededException; }
+    inline const IoTSiteWiseError& GetLimitExceededException() const { return m_limitExceededException; }
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
-    template<typename LimitExceededExceptionT = LimitExceededException>
+    template<typename LimitExceededExceptionT = IoTSiteWiseError>
     void SetLimitExceededException(LimitExceededExceptionT&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::forward<LimitExceededExceptionT>(value); }
-    template<typename LimitExceededExceptionT = LimitExceededException>
+    template<typename LimitExceededExceptionT = IoTSiteWiseError>
     ResponseStream& WithLimitExceededException(LimitExceededExceptionT&& value) { SetLimitExceededException(std::forward<LimitExceededExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
+    inline const IoTSiteWiseError& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = IoTSiteWiseError>
     void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
-    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    template<typename ResourceNotFoundExceptionT = IoTSiteWiseError>
     ResponseStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
+    inline const IoTSiteWiseError& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = IoTSiteWiseError>
     void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
-    template<typename ThrottlingExceptionT = ThrottlingException>
+    template<typename ThrottlingExceptionT = IoTSiteWiseError>
     ResponseStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -142,25 +142,25 @@ namespace Model
     InvocationOutput m_output;
     bool m_outputHasBeenSet = false;
 
-    AccessDeniedException m_accessDeniedException;
+    IoTSiteWiseError m_accessDeniedException;
     bool m_accessDeniedExceptionHasBeenSet = false;
 
     ConflictingOperationException m_conflictingOperationException;
     bool m_conflictingOperationExceptionHasBeenSet = false;
 
-    InternalFailureException m_internalFailureException;
+    IoTSiteWiseError m_internalFailureException;
     bool m_internalFailureExceptionHasBeenSet = false;
 
-    InvalidRequestException m_invalidRequestException;
+    IoTSiteWiseError m_invalidRequestException;
     bool m_invalidRequestExceptionHasBeenSet = false;
 
-    LimitExceededException m_limitExceededException;
+    IoTSiteWiseError m_limitExceededException;
     bool m_limitExceededExceptionHasBeenSet = false;
 
-    ResourceNotFoundException m_resourceNotFoundException;
+    IoTSiteWiseError m_resourceNotFoundException;
     bool m_resourceNotFoundExceptionHasBeenSet = false;
 
-    ThrottlingException m_throttlingException;
+    IoTSiteWiseError m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
   };
 

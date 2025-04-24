@@ -58,51 +58,51 @@ namespace Model
 
     ///@{
     
-    inline const BadRequestException& GetBadRequestException() const { return m_badRequestException; }
+    inline const TranscribeStreamingServiceError& GetBadRequestException() const { return m_badRequestException; }
     inline bool BadRequestExceptionHasBeenSet() const { return m_badRequestExceptionHasBeenSet; }
-    template<typename BadRequestExceptionT = BadRequestException>
+    template<typename BadRequestExceptionT = TranscribeStreamingServiceError>
     void SetBadRequestException(BadRequestExceptionT&& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = std::forward<BadRequestExceptionT>(value); }
-    template<typename BadRequestExceptionT = BadRequestException>
+    template<typename BadRequestExceptionT = TranscribeStreamingServiceError>
     MedicalTranscriptResultStream& WithBadRequestException(BadRequestExceptionT&& value) { SetBadRequestException(std::forward<BadRequestExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LimitExceededException& GetLimitExceededException() const { return m_limitExceededException; }
+    inline const TranscribeStreamingServiceError& GetLimitExceededException() const { return m_limitExceededException; }
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
-    template<typename LimitExceededExceptionT = LimitExceededException>
+    template<typename LimitExceededExceptionT = TranscribeStreamingServiceError>
     void SetLimitExceededException(LimitExceededExceptionT&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::forward<LimitExceededExceptionT>(value); }
-    template<typename LimitExceededExceptionT = LimitExceededException>
+    template<typename LimitExceededExceptionT = TranscribeStreamingServiceError>
     MedicalTranscriptResultStream& WithLimitExceededException(LimitExceededExceptionT&& value) { SetLimitExceededException(std::forward<LimitExceededExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
+    inline const TranscribeStreamingServiceError& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    template<typename InternalFailureExceptionT = InternalFailureException>
+    template<typename InternalFailureExceptionT = TranscribeStreamingServiceError>
     void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
-    template<typename InternalFailureExceptionT = InternalFailureException>
+    template<typename InternalFailureExceptionT = TranscribeStreamingServiceError>
     MedicalTranscriptResultStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConflictException& GetConflictException() const { return m_conflictException; }
+    inline const TranscribeStreamingServiceError& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = TranscribeStreamingServiceError>
     void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
-    template<typename ConflictExceptionT = ConflictException>
+    template<typename ConflictExceptionT = TranscribeStreamingServiceError>
     MedicalTranscriptResultStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
+    inline const TranscribeStreamingServiceError& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = TranscribeStreamingServiceError>
     void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
-    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    template<typename ServiceUnavailableExceptionT = TranscribeStreamingServiceError>
     MedicalTranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
@@ -110,19 +110,19 @@ namespace Model
     MedicalTranscriptEvent m_transcriptEvent;
     bool m_transcriptEventHasBeenSet = false;
 
-    BadRequestException m_badRequestException;
+    TranscribeStreamingServiceError m_badRequestException;
     bool m_badRequestExceptionHasBeenSet = false;
 
-    LimitExceededException m_limitExceededException;
+    TranscribeStreamingServiceError m_limitExceededException;
     bool m_limitExceededExceptionHasBeenSet = false;
 
-    InternalFailureException m_internalFailureException;
+    TranscribeStreamingServiceError m_internalFailureException;
     bool m_internalFailureExceptionHasBeenSet = false;
 
-    ConflictException m_conflictException;
+    TranscribeStreamingServiceError m_conflictException;
     bool m_conflictExceptionHasBeenSet = false;
 
-    ServiceUnavailableException m_serviceUnavailableException;
+    TranscribeStreamingServiceError m_serviceUnavailableException;
     bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
