@@ -31,6 +31,11 @@ DocumentSource& DocumentSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("s3Location"))
+  {
+    m_s3Location = jsonValue.GetObject("s3Location");
+    m_s3LocationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -41,6 +46,12 @@ JsonValue DocumentSource::Jsonize() const
   if(m_bytesHasBeenSet)
   {
    payload.WithString("bytes", HashingUtils::Base64Encode(m_bytes));
+  }
+
+  if(m_s3LocationHasBeenSet)
+  {
+   payload.WithObject("s3Location", m_s3Location.Jsonize());
+
   }
 
   return payload;

@@ -54,7 +54,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location of a video object in an S3 bucket.</p>
+     * <p>The location of a video object in an Amazon S3 bucket. To see which models
+     * support S3 uploads, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported
+     * models and features for Converse</a>.</p>
      */
     inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }

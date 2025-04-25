@@ -20,9 +20,8 @@ namespace MarketplaceDeployment
    * which is a deployment option for software as a service (SaaS) products. Quick
    * Launch simplifies and reduces the time, resources, and steps required to
    * configure, deploy, and launch a products. The AWS Marketplace Deployment Service
-   * provides sellers with a secure method for passing deployment parameters (for
-   * example, API keys and external IDs) to buyers during the Quick Launch
-   * experience.</p>
+   * provides sellers with a secure method for passing deployment parameters, such as
+   * API keys and external IDs, to buyers during the Quick Launch experience.</p>
    */
   class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>
   {
