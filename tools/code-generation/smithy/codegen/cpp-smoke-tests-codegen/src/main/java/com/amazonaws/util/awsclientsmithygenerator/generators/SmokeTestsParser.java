@@ -235,16 +235,16 @@ public class SmokeTestsParser implements Runnable{
             }
 
             //get configuration properties
-            if(AwsSmokeTestModel.hasAwsVendorParams(testcase))
-            {
+            if(AwsSmokeTestModel.hasAwsVendorParams(testcase)) {
                 ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getAwsVendorParams(testcase).get());
                 test.setConfig(config);
-            }
-            else if (serviceShape.getId().getName().equalsIgnoreCase("s3") && 
-                AwsSmokeTestModel.hasS3VendorParams(testcase))
-            {
+            } else if (serviceShape.getId().getName().equalsIgnoreCase("s3") && AwsSmokeTestModel.hasS3VendorParams(testcase)) {
                 ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getS3VendorParams(testcase).get());
                 test.setConfig(config);               
+            } else {
+                throw testcase.getVendorParamsShape()
+                        .map(shapeId -> new RuntimeException(String.format("Unsupported vendor shape %s, must be aws.test#AwsVendorParams or aws.test#S3VendorParams", shapeId.getName())))
+                        .orElseThrow(() -> new RuntimeException("No Vendor parameter shape found, must be aws.test#AwsVendorParams or aws.test#S3VendorParams"));
             }
             test.setTestcaseName(testcase.getId());
 
