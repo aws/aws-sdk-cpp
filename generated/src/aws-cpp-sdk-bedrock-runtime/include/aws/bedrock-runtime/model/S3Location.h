@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A storage location in an S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>A storage location in an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/S3Location">AWS
    * API Reference</a></p>
    */

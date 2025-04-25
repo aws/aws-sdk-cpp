@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code>
+     * <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
      * </p>
      */
     inline const Aws::String& GetCatalog() const { return m_catalog; }
@@ -64,7 +64,9 @@ namespace Model
     ///@{
     /**
      * <p>The idempotency token for deployment parameters. A unique identifier for the
-     * new version.</p>
+     * new version.</p>  <p>This field is not required if you're calling using an
+     * AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the
+     * request.</p> 
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
