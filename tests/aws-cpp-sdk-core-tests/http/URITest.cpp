@@ -383,3 +383,35 @@ TEST_F(URITest, TestGetRFC3986URLEncodedPathCompliant)
 
     Aws::Http::SetCompliantRfc3986Encoding(false);
 }
+
+TEST_F(URITest, TestHostParsesCorrectly) {
+    URI uri = "https://test.com";
+    EXPECT_STREQ("test.com", uri.GetHost().c_str());
+
+    uri = "https://test.com:9000";
+    EXPECT_STREQ("test.com", uri.GetHost().c_str());
+
+    uri = "https://[::]";
+    EXPECT_STREQ("::", uri.GetHost().c_str());
+
+    uri = "https://[::]:9000";
+    EXPECT_STREQ("::", uri.GetHost().c_str());
+
+    uri = "https://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]";
+    EXPECT_STREQ("2001:0db8:85a3:0000:0000:8a2e:0370:7334", uri.GetHost().c_str());
+
+    uri = "https://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]:9000";
+    EXPECT_STREQ("2001:0db8:85a3:0000:0000:8a2e:0370:7334", uri.GetHost().c_str());
+
+    uri = "https://[]";
+    EXPECT_STREQ("", uri.GetHost().c_str());
+
+    uri = "https://[]:9000";
+    EXPECT_STREQ("", uri.GetHost().c_str());
+
+    uri = "https://127.0.0.1";
+    EXPECT_STREQ("127.0.0.1", uri.GetHost().c_str());
+
+    uri = "https://127.0.0.1:9000";
+    EXPECT_STREQ("127.0.0.1", uri.GetHost().c_str());
+}
