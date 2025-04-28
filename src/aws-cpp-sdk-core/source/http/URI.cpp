@@ -600,3 +600,15 @@ bool URI::CompareURIParts(const URI& other) const
 {
     return m_scheme == other.m_scheme && m_authority == other.m_authority && GetPath() == other.GetPath() && m_queryString == other.m_queryString;
 }
+
+Aws::String URI::GetHost() const {
+  Aws::String host{m_authority};
+  const auto begin = host.find('[');
+  const auto end = host.rfind(']');
+  if (begin != Aws::String::npos && end != Aws::String::npos && begin + 1 < end) {
+    host = host.substr(begin + 1, end - begin - 1);
+  } else if (begin != Aws::String::npos && end != Aws::String::npos && begin + 1 == end) {
+    host = "";
+  }
+  return host;
+}
