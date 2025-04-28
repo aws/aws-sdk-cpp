@@ -18,6 +18,7 @@
 #include <aws/cloudfront/model/Restrictions.h>
 #include <aws/cloudfront/model/HttpVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudfront/model/ConnectionMode.h>
 #include <aws/cloudfront/model/AliasICPRecordal.h>
 #include <utility>
 
@@ -76,6 +77,18 @@ namespace Model
     void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
     template<typename ARNT = Aws::String>
     DistributionSummary& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current version of the distribution.</p>
+     */
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    DistributionSummary& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -327,6 +340,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The connection mode to filter distributions by.</p>
+     */
+    inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
+    inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
+    inline void SetConnectionMode(ConnectionMode value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
+    inline DistributionSummary& WithConnectionMode(ConnectionMode value) { SetConnectionMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>ID of the Anycast static IP list that is associated with the
      * distribution.</p>
      */
@@ -344,6 +367,9 @@ namespace Model
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet = false;
+
+    Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
@@ -401,6 +427,9 @@ namespace Model
 
     bool m_staging{false};
     bool m_stagingHasBeenSet = false;
+
+    ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
+    bool m_connectionModeHasBeenSet = false;
 
     Aws::String m_anycastIpListId;
     bool m_anycastIpListIdHasBeenSet = false;

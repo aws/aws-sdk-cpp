@@ -147,7 +147,7 @@ namespace Model
      * distribution has been enabled for this feature by the CloudFront team. If you
      * have a use case that requires static IP addresses for a distribution, contact
      * CloudFront through the <a
-     * href="https://console.aws.amazon.com/support/home">Amazon Web ServicesSupport
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
      * Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
      * name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for
      * this field.</p>

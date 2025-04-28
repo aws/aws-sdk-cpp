@@ -83,6 +83,11 @@ Aws::String RequestCertificateRequest::SerializePayload() const
    payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
   }
 
+  if(m_managedByHasBeenSet)
+  {
+   payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
+  }
+
   return payload.View().WriteReadable();
 }
 

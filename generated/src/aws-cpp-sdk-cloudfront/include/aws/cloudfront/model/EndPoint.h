@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the Amazon Kinesis data stream where you are
+   * <p>Contains information about the Amazon Kinesis data stream where you're
    * sending real-time log data in a real-time log configuration.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/EndPoint">AWS
@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>Contains information about the Amazon Kinesis data stream where you are
-     * sending real-time log data.</p>
+     * sending real-time log data in a real-time log configuration.</p>
      */
     inline const KinesisStreamConfig& GetKinesisStreamConfig() const { return m_kinesisStreamConfig; }
     inline bool KinesisStreamConfigHasBeenSet() const { return m_kinesisStreamConfigHasBeenSet; }

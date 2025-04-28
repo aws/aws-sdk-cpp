@@ -127,6 +127,11 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
     m_revokedAt = jsonValue.GetDouble("RevokedAt");
     m_revokedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedBy"))
+  {
+    m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("ManagedBy"));
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -245,6 +250,11 @@ JsonValue CertificateSummary::Jsonize() const
   if(m_revokedAtHasBeenSet)
   {
    payload.WithDouble("RevokedAt", m_revokedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_managedByHasBeenSet)
+  {
+   payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
   return payload;

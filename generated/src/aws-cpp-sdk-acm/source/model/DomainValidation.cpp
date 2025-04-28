@@ -54,6 +54,11 @@ DomainValidation& DomainValidation::operator =(JsonView jsonValue)
     m_resourceRecord = jsonValue.GetObject("ResourceRecord");
     m_resourceRecordHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("HttpRedirect"))
+  {
+    m_httpRedirect = jsonValue.GetObject("HttpRedirect");
+    m_httpRedirectHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ValidationMethod"))
   {
     m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
@@ -97,6 +102,12 @@ JsonValue DomainValidation::Jsonize() const
   if(m_resourceRecordHasBeenSet)
   {
    payload.WithObject("ResourceRecord", m_resourceRecord.Jsonize());
+
+  }
+
+  if(m_httpRedirectHasBeenSet)
+  {
+   payload.WithObject("HttpRedirect", m_httpRedirect.Jsonize());
 
   }
 

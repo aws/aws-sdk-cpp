@@ -44,6 +44,11 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_subjectAlternativeNamesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedBy"))
+  {
+    m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("ManagedBy"));
+    m_managedByHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
     Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
@@ -203,6 +208,11 @@ JsonValue CertificateDetail::Jsonize() const
    }
    payload.WithArray("SubjectAlternativeNames", std::move(subjectAlternativeNamesJsonList));
 
+  }
+
+  if(m_managedByHasBeenSet)
+  {
+   payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
   if(m_domainValidationOptionsHasBeenSet)

@@ -151,6 +151,18 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_anycastIpListId = Aws::Utils::Xml::DecodeEscapedXmlText(anycastIpListIdNode.GetText());
       m_anycastIpListIdHasBeenSet = true;
     }
+    XmlNode tenantConfigNode = resultNode.FirstChild("TenantConfig");
+    if(!tenantConfigNode.IsNull())
+    {
+      m_tenantConfig = tenantConfigNode;
+      m_tenantConfigHasBeenSet = true;
+    }
+    XmlNode connectionModeNode = resultNode.FirstChild("ConnectionMode");
+    if(!connectionModeNode.IsNull())
+    {
+      m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionModeNode.GetText()).c_str()));
+      m_connectionModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -283,6 +295,18 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
   {
    XmlNode anycastIpListIdNode = parentNode.CreateChildElement("AnycastIpListId");
    anycastIpListIdNode.SetText(m_anycastIpListId);
+  }
+
+  if(m_tenantConfigHasBeenSet)
+  {
+   XmlNode tenantConfigNode = parentNode.CreateChildElement("TenantConfig");
+   m_tenantConfig.AddToNode(tenantConfigNode);
+  }
+
+  if(m_connectionModeHasBeenSet)
+  {
+   XmlNode connectionModeNode = parentNode.CreateChildElement("ConnectionMode");
+   connectionModeNode.SetText(ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
   }
 
 }

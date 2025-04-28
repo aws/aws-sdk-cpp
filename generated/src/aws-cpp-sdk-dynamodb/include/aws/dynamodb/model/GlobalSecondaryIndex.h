@@ -97,8 +97,9 @@ namespace Model
     ///@{
     /**
      * <p>Represents the provisioned throughput settings for the specified global
-     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
-     * values, see <a
+     * secondary index. You must use either <code>OnDemandThroughput</code> or
+     * <code>ProvisionedThroughput</code> based on your table's capacity mode.</p>
+     * <p>For current minimum and maximum provisioned throughput values, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
      * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -114,8 +115,9 @@ namespace Model
     /**
      * <p>The maximum number of read and write units for the specified global secondary
      * index. If you use this parameter, you must specify
-     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
-     * both.</p>
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * You must use either <code>OnDemandThroughput</code> or
+     * <code>ProvisionedThroughput</code> based on your table's capacity mode.</p>
      */
     inline const OnDemandThroughput& GetOnDemandThroughput() const { return m_onDemandThroughput; }
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }

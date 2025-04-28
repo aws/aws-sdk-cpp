@@ -12,6 +12,7 @@
 #include <aws/imagebuilder/model/S3ExportConfiguration.h>
 #include <aws/imagebuilder/model/LaunchTemplateConfiguration.h>
 #include <aws/imagebuilder/model/FastLaunchConfiguration.h>
+#include <aws/imagebuilder/model/SsmParameterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,22 @@ namespace Model
     template<typename FastLaunchConfigurationsT = FastLaunchConfiguration>
     Distribution& AddFastLaunchConfigurations(FastLaunchConfigurationsT&& value) { m_fastLaunchConfigurationsHasBeenSet = true; m_fastLaunchConfigurations.emplace_back(std::forward<FastLaunchConfigurationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains settings to update Amazon Web Services Systems Manager (SSM)
+     * Parameter Store Parameters with output AMI IDs from the build by target
+     * Region.</p>
+     */
+    inline const Aws::Vector<SsmParameterConfiguration>& GetSsmParameterConfigurations() const { return m_ssmParameterConfigurations; }
+    inline bool SsmParameterConfigurationsHasBeenSet() const { return m_ssmParameterConfigurationsHasBeenSet; }
+    template<typename SsmParameterConfigurationsT = Aws::Vector<SsmParameterConfiguration>>
+    void SetSsmParameterConfigurations(SsmParameterConfigurationsT&& value) { m_ssmParameterConfigurationsHasBeenSet = true; m_ssmParameterConfigurations = std::forward<SsmParameterConfigurationsT>(value); }
+    template<typename SsmParameterConfigurationsT = Aws::Vector<SsmParameterConfiguration>>
+    Distribution& WithSsmParameterConfigurations(SsmParameterConfigurationsT&& value) { SetSsmParameterConfigurations(std::forward<SsmParameterConfigurationsT>(value)); return *this;}
+    template<typename SsmParameterConfigurationsT = SsmParameterConfiguration>
+    Distribution& AddSsmParameterConfigurations(SsmParameterConfigurationsT&& value) { m_ssmParameterConfigurationsHasBeenSet = true; m_ssmParameterConfigurations.emplace_back(std::forward<SsmParameterConfigurationsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_region;
@@ -158,6 +175,9 @@ namespace Model
 
     Aws::Vector<FastLaunchConfiguration> m_fastLaunchConfigurations;
     bool m_fastLaunchConfigurationsHasBeenSet = false;
+
+    Aws::Vector<SsmParameterConfiguration> m_ssmParameterConfigurations;
+    bool m_ssmParameterConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model
