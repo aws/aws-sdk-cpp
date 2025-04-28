@@ -72,6 +72,15 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     }
     m_fastLaunchConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ssmParameterConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> ssmParameterConfigurationsJsonList = jsonValue.GetArray("ssmParameterConfigurations");
+    for(unsigned ssmParameterConfigurationsIndex = 0; ssmParameterConfigurationsIndex < ssmParameterConfigurationsJsonList.GetLength(); ++ssmParameterConfigurationsIndex)
+    {
+      m_ssmParameterConfigurations.push_back(ssmParameterConfigurationsJsonList[ssmParameterConfigurationsIndex].AsObject());
+    }
+    m_ssmParameterConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +142,17 @@ JsonValue Distribution::Jsonize() const
      fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject(m_fastLaunchConfigurations[fastLaunchConfigurationsIndex].Jsonize());
    }
    payload.WithArray("fastLaunchConfigurations", std::move(fastLaunchConfigurationsJsonList));
+
+  }
+
+  if(m_ssmParameterConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ssmParameterConfigurationsJsonList(m_ssmParameterConfigurations.size());
+   for(unsigned ssmParameterConfigurationsIndex = 0; ssmParameterConfigurationsIndex < ssmParameterConfigurationsJsonList.GetLength(); ++ssmParameterConfigurationsIndex)
+   {
+     ssmParameterConfigurationsJsonList[ssmParameterConfigurationsIndex].AsObject(m_ssmParameterConfigurations[ssmParameterConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("ssmParameterConfigurations", std::move(ssmParameterConfigurationsJsonList));
 
   }
 

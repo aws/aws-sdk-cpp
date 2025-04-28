@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/ExtendedKeyUsageName.h>
 #include <aws/acm/model/KeyUsageName.h>
 #include <aws/acm/model/KeyAlgorithm.h>
@@ -85,6 +86,17 @@ namespace Model
     Filters& WithKeyTypes(KeyTypesT&& value) { SetKeyTypes(std::forward<KeyTypesT>(value)); return *this;}
     inline Filters& AddKeyTypes(KeyAlgorithm value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the Amazon Web Services service that manages the certificate
+     * issued by ACM.</p>
+     */
+    inline CertificateManagedBy GetManagedBy() const { return m_managedBy; }
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+    inline void SetManagedBy(CertificateManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline Filters& WithManagedBy(CertificateManagedBy value) { SetManagedBy(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsage;
@@ -95,6 +107,9 @@ namespace Model
 
     Aws::Vector<KeyAlgorithm> m_keyTypes;
     bool m_keyTypesHasBeenSet = false;
+
+    CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
   };
 
 } // namespace Model

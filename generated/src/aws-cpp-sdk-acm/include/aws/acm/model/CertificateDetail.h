@@ -7,6 +7,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/RevocationReason.h>
@@ -96,6 +97,17 @@ namespace Model
     CertificateDetail& WithSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { SetSubjectAlternativeNames(std::forward<SubjectAlternativeNamesT>(value)); return *this;}
     template<typename SubjectAlternativeNamesT = Aws::String>
     CertificateDetail& AddSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.emplace_back(std::forward<SubjectAlternativeNamesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the Amazon Web Services service that manages the certificate
+     * issued by ACM.</p>
+     */
+    inline CertificateManagedBy GetManagedBy() const { return m_managedBy; }
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+    inline void SetManagedBy(CertificateManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline CertificateDetail& WithManagedBy(CertificateManagedBy value) { SetManagedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -429,6 +441,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
     bool m_subjectAlternativeNamesHasBeenSet = false;
+
+    CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
 
     Aws::Vector<DomainValidation> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet = false;

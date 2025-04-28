@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EMAIL,
-    DNS
+    DNS,
+    HTTP
   };
 
 namespace ValidationMethodMapper

@@ -22,12 +22,12 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
 static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
+static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
@@ -52,13 +52,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == INVALID_ARN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -68,13 +68,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == INVALID_TAG_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_TAG), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == TAG_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_TAG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_TAG), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

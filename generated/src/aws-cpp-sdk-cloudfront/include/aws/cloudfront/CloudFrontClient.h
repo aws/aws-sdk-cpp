@@ -121,6 +121,57 @@ namespace CloudFront
         }
 
         /**
+         * <p>Associates the WAF web ACL with a distribution tenant.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDistributionTenantWebACL2020_05_31Outcome AssociateDistributionTenantWebACL2020_05_31(const Model::AssociateDistributionTenantWebACL2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for AssociateDistributionTenantWebACL2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateDistributionTenantWebACL2020_05_31RequestT = Model::AssociateDistributionTenantWebACL2020_05_31Request>
+        Model::AssociateDistributionTenantWebACL2020_05_31OutcomeCallable AssociateDistributionTenantWebACL2020_05_31Callable(const AssociateDistributionTenantWebACL2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::AssociateDistributionTenantWebACL2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateDistributionTenantWebACL2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateDistributionTenantWebACL2020_05_31RequestT = Model::AssociateDistributionTenantWebACL2020_05_31Request>
+        void AssociateDistributionTenantWebACL2020_05_31Async(const AssociateDistributionTenantWebACL2020_05_31RequestT& request, const AssociateDistributionTenantWebACL2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::AssociateDistributionTenantWebACL2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Associates the WAF web ACL with a distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDistributionWebACL2020_05_31Outcome AssociateDistributionWebACL2020_05_31(const Model::AssociateDistributionWebACL2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for AssociateDistributionWebACL2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateDistributionWebACL2020_05_31RequestT = Model::AssociateDistributionWebACL2020_05_31Request>
+        Model::AssociateDistributionWebACL2020_05_31OutcomeCallable AssociateDistributionWebACL2020_05_31Callable(const AssociateDistributionWebACL2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::AssociateDistributionWebACL2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateDistributionWebACL2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateDistributionWebACL2020_05_31RequestT = Model::AssociateDistributionWebACL2020_05_31Request>
+        void AssociateDistributionWebACL2020_05_31Async(const AssociateDistributionWebACL2020_05_31RequestT& request, const AssociateDistributionWebACL2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::AssociateDistributionWebACL2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Creates a staging distribution using the configuration of the provided
          * primary distribution. A staging distribution is a copy of an existing
          * distribution (called the primary distribution) that you can use in a continuous
@@ -256,6 +307,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Creates a connection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectionGroup2020_05_31Outcome CreateConnectionGroup2020_05_31(const Model::CreateConnectionGroup2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateConnectionGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConnectionGroup2020_05_31RequestT = Model::CreateConnectionGroup2020_05_31Request>
+        Model::CreateConnectionGroup2020_05_31OutcomeCallable CreateConnectionGroup2020_05_31Callable(const CreateConnectionGroup2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::CreateConnectionGroup2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConnectionGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConnectionGroup2020_05_31RequestT = Model::CreateConnectionGroup2020_05_31Request>
+        void CreateConnectionGroup2020_05_31Async(const CreateConnectionGroup2020_05_31RequestT& request, const CreateConnectionGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::CreateConnectionGroup2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Creates a continuous deployment policy that distributes traffic for a custom
          * domain name to two different CloudFront distributions.</p> <p>To use a
          * continuous deployment policy, first use <code>CopyDistribution</code> to create
@@ -312,6 +388,31 @@ namespace CloudFront
         void CreateDistribution2020_05_31Async(const CreateDistribution2020_05_31RequestT& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::CreateDistribution2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a distribution tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDistributionTenant2020_05_31Outcome CreateDistributionTenant2020_05_31(const Model::CreateDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDistributionTenant2020_05_31RequestT = Model::CreateDistributionTenant2020_05_31Request>
+        Model::CreateDistributionTenant2020_05_31OutcomeCallable CreateDistributionTenant2020_05_31Callable(const CreateDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::CreateDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDistributionTenant2020_05_31RequestT = Model::CreateDistributionTenant2020_05_31Request>
+        void CreateDistributionTenant2020_05_31Async(const CreateDistributionTenant2020_05_31RequestT& request, const CreateDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::CreateDistributionTenant2020_05_31, request, handler, context);
         }
 
         /**
@@ -456,6 +557,35 @@ namespace CloudFront
         void CreateInvalidation2020_05_31Async(const CreateInvalidation2020_05_31RequestT& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::CreateInvalidation2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an invalidation for a distribution tenant. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+         * files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInvalidationForDistributionTenant2020_05_31Outcome CreateInvalidationForDistributionTenant2020_05_31(const Model::CreateInvalidationForDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateInvalidationForDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInvalidationForDistributionTenant2020_05_31RequestT = Model::CreateInvalidationForDistributionTenant2020_05_31Request>
+        Model::CreateInvalidationForDistributionTenant2020_05_31OutcomeCallable CreateInvalidationForDistributionTenant2020_05_31Callable(const CreateInvalidationForDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::CreateInvalidationForDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInvalidationForDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInvalidationForDistributionTenant2020_05_31RequestT = Model::CreateInvalidationForDistributionTenant2020_05_31Request>
+        void CreateInvalidationForDistributionTenant2020_05_31Async(const CreateInvalidationForDistributionTenant2020_05_31RequestT& request, const CreateInvalidationForDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::CreateInvalidationForDistributionTenant2020_05_31, request, handler, context);
         }
 
         /**
@@ -890,6 +1020,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Deletes a connection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionGroup2020_05_31Outcome DeleteConnectionGroup2020_05_31(const Model::DeleteConnectionGroup2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConnectionGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConnectionGroup2020_05_31RequestT = Model::DeleteConnectionGroup2020_05_31Request>
+        Model::DeleteConnectionGroup2020_05_31OutcomeCallable DeleteConnectionGroup2020_05_31Callable(const DeleteConnectionGroup2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DeleteConnectionGroup2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConnectionGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConnectionGroup2020_05_31RequestT = Model::DeleteConnectionGroup2020_05_31Request>
+        void DeleteConnectionGroup2020_05_31Async(const DeleteConnectionGroup2020_05_31RequestT& request, const DeleteConnectionGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DeleteConnectionGroup2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a continuous deployment policy.</p> <p>You cannot delete a continuous
          * deployment policy that's attached to a primary distribution. First update your
          * distribution to remove the continuous deployment policy, then you can delete the
@@ -940,6 +1095,35 @@ namespace CloudFront
         void DeleteDistribution2020_05_31Async(const DeleteDistribution2020_05_31RequestT& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::DeleteDistribution2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a distribution tenant. If you use this API operation to delete a
+         * distribution tenant that is currently enabled, the request will fail.</p> <p>To
+         * delete a distribution tenant, you must first disable the distribution tenant by
+         * using the <code>UpdateDistributionTenant</code> API operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDistributionTenant2020_05_31Outcome DeleteDistributionTenant2020_05_31(const Model::DeleteDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDistributionTenant2020_05_31RequestT = Model::DeleteDistributionTenant2020_05_31Request>
+        Model::DeleteDistributionTenant2020_05_31OutcomeCallable DeleteDistributionTenant2020_05_31Callable(const DeleteDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DeleteDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDistributionTenant2020_05_31RequestT = Model::DeleteDistributionTenant2020_05_31Request>
+        void DeleteDistributionTenant2020_05_31Async(const DeleteDistributionTenant2020_05_31RequestT& request, const DeleteDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DeleteDistributionTenant2020_05_31, request, handler, context);
         }
 
         /**
@@ -1386,6 +1570,58 @@ namespace CloudFront
         }
 
         /**
+         * <p>Disassociates a distribution tenant from the WAF web ACL.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateDistributionTenantWebACL2020_05_31Outcome DisassociateDistributionTenantWebACL2020_05_31(const Model::DisassociateDistributionTenantWebACL2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateDistributionTenantWebACL2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateDistributionTenantWebACL2020_05_31RequestT = Model::DisassociateDistributionTenantWebACL2020_05_31Request>
+        Model::DisassociateDistributionTenantWebACL2020_05_31OutcomeCallable DisassociateDistributionTenantWebACL2020_05_31Callable(const DisassociateDistributionTenantWebACL2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DisassociateDistributionTenantWebACL2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateDistributionTenantWebACL2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateDistributionTenantWebACL2020_05_31RequestT = Model::DisassociateDistributionTenantWebACL2020_05_31Request>
+        void DisassociateDistributionTenantWebACL2020_05_31Async(const DisassociateDistributionTenantWebACL2020_05_31RequestT& request, const DisassociateDistributionTenantWebACL2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DisassociateDistributionTenantWebACL2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a distribution from the WAF web ACL.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateDistributionWebACL2020_05_31Outcome DisassociateDistributionWebACL2020_05_31(const Model::DisassociateDistributionWebACL2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateDistributionWebACL2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateDistributionWebACL2020_05_31RequestT = Model::DisassociateDistributionWebACL2020_05_31Request>
+        Model::DisassociateDistributionWebACL2020_05_31OutcomeCallable DisassociateDistributionWebACL2020_05_31Callable(const DisassociateDistributionWebACL2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::DisassociateDistributionWebACL2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateDistributionWebACL2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateDistributionWebACL2020_05_31RequestT = Model::DisassociateDistributionWebACL2020_05_31Request>
+        void DisassociateDistributionWebACL2020_05_31Async(const DisassociateDistributionWebACL2020_05_31RequestT& request, const DisassociateDistributionWebACL2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::DisassociateDistributionWebACL2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets an Anycast static IP list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList2020_05_31">AWS
          * API Reference</a></p>
@@ -1525,6 +1761,57 @@ namespace CloudFront
         }
 
         /**
+         * <p>Gets information about a connection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionGroup2020_05_31Outcome GetConnectionGroup2020_05_31(const Model::GetConnectionGroup2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetConnectionGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConnectionGroup2020_05_31RequestT = Model::GetConnectionGroup2020_05_31Request>
+        Model::GetConnectionGroup2020_05_31OutcomeCallable GetConnectionGroup2020_05_31Callable(const GetConnectionGroup2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetConnectionGroup2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetConnectionGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConnectionGroup2020_05_31RequestT = Model::GetConnectionGroup2020_05_31Request>
+        void GetConnectionGroup2020_05_31Async(const GetConnectionGroup2020_05_31RequestT& request, const GetConnectionGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetConnectionGroup2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a connection group by using the endpoint that you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionGroupByRoutingEndpoint2020_05_31Outcome GetConnectionGroupByRoutingEndpoint2020_05_31(const Model::GetConnectionGroupByRoutingEndpoint2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetConnectionGroupByRoutingEndpoint2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConnectionGroupByRoutingEndpoint2020_05_31RequestT = Model::GetConnectionGroupByRoutingEndpoint2020_05_31Request>
+        Model::GetConnectionGroupByRoutingEndpoint2020_05_31OutcomeCallable GetConnectionGroupByRoutingEndpoint2020_05_31Callable(const GetConnectionGroupByRoutingEndpoint2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetConnectionGroupByRoutingEndpoint2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetConnectionGroupByRoutingEndpoint2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConnectionGroupByRoutingEndpoint2020_05_31RequestT = Model::GetConnectionGroupByRoutingEndpoint2020_05_31Request>
+        void GetConnectionGroupByRoutingEndpoint2020_05_31Async(const GetConnectionGroupByRoutingEndpoint2020_05_31RequestT& request, const GetConnectionGroupByRoutingEndpoint2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetConnectionGroupByRoutingEndpoint2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets a continuous deployment policy, including metadata (the policy's
          * identifier and the date and time when the policy was last
          * modified).</p><p><h3>See Also:</h3>   <a
@@ -1626,6 +1913,57 @@ namespace CloudFront
         void GetDistributionConfig2020_05_31Async(const GetDistributionConfig2020_05_31RequestT& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::GetDistributionConfig2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a distribution tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionTenant2020_05_31Outcome GetDistributionTenant2020_05_31(const Model::GetDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDistributionTenant2020_05_31RequestT = Model::GetDistributionTenant2020_05_31Request>
+        Model::GetDistributionTenant2020_05_31OutcomeCallable GetDistributionTenant2020_05_31Callable(const GetDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDistributionTenant2020_05_31RequestT = Model::GetDistributionTenant2020_05_31Request>
+        void GetDistributionTenant2020_05_31Async(const GetDistributionTenant2020_05_31RequestT& request, const GetDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetDistributionTenant2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a distribution tenant by the associated
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionTenantByDomain2020_05_31Outcome GetDistributionTenantByDomain2020_05_31(const Model::GetDistributionTenantByDomain2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetDistributionTenantByDomain2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDistributionTenantByDomain2020_05_31RequestT = Model::GetDistributionTenantByDomain2020_05_31Request>
+        Model::GetDistributionTenantByDomain2020_05_31OutcomeCallable GetDistributionTenantByDomain2020_05_31Callable(const GetDistributionTenantByDomain2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetDistributionTenantByDomain2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetDistributionTenantByDomain2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDistributionTenantByDomain2020_05_31RequestT = Model::GetDistributionTenantByDomain2020_05_31Request>
+        void GetDistributionTenantByDomain2020_05_31Async(const GetDistributionTenantByDomain2020_05_31RequestT& request, const GetDistributionTenantByDomain2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetDistributionTenantByDomain2020_05_31, request, handler, context);
         }
 
         /**
@@ -1786,6 +2124,32 @@ namespace CloudFront
         }
 
         /**
+         * <p>Gets information about a specific invalidation for a distribution
+         * tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInvalidationForDistributionTenant2020_05_31Outcome GetInvalidationForDistributionTenant2020_05_31(const Model::GetInvalidationForDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetInvalidationForDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInvalidationForDistributionTenant2020_05_31RequestT = Model::GetInvalidationForDistributionTenant2020_05_31Request>
+        Model::GetInvalidationForDistributionTenant2020_05_31OutcomeCallable GetInvalidationForDistributionTenant2020_05_31Callable(const GetInvalidationForDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetInvalidationForDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetInvalidationForDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInvalidationForDistributionTenant2020_05_31RequestT = Model::GetInvalidationForDistributionTenant2020_05_31Request>
+        void GetInvalidationForDistributionTenant2020_05_31Async(const GetInvalidationForDistributionTenant2020_05_31RequestT& request, const GetInvalidationForDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetInvalidationForDistributionTenant2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets a key group, including the date and time when the key group was last
          * modified.</p> <p>To get a key group, you must provide the key group's
          * identifier. If the key group is referenced in a distribution's cache behavior,
@@ -1844,6 +2208,32 @@ namespace CloudFront
         void GetKeyGroupConfig2020_05_31Async(const GetKeyGroupConfig2020_05_31RequestT& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::GetKeyGroupConfig2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Gets details about the CloudFront managed ACM certificate.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedCertificateDetails2020_05_31Outcome GetManagedCertificateDetails2020_05_31(const Model::GetManagedCertificateDetails2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedCertificateDetails2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedCertificateDetails2020_05_31RequestT = Model::GetManagedCertificateDetails2020_05_31Request>
+        Model::GetManagedCertificateDetails2020_05_31OutcomeCallable GetManagedCertificateDetails2020_05_31Callable(const GetManagedCertificateDetails2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::GetManagedCertificateDetails2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedCertificateDetails2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedCertificateDetails2020_05_31RequestT = Model::GetManagedCertificateDetails2020_05_31Request>
+        void GetManagedCertificateDetails2020_05_31Async(const GetManagedCertificateDetails2020_05_31RequestT& request, const GetManagedCertificateDetails2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::GetManagedCertificateDetails2020_05_31, request, handler, context);
         }
 
         /**
@@ -2343,6 +2733,32 @@ namespace CloudFront
         }
 
         /**
+         * <p>Lists the connection groups in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectionGroups2020_05_31Outcome ListConnectionGroups2020_05_31(const Model::ListConnectionGroups2020_05_31Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConnectionGroups2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectionGroups2020_05_31RequestT = Model::ListConnectionGroups2020_05_31Request>
+        Model::ListConnectionGroups2020_05_31OutcomeCallable ListConnectionGroups2020_05_31Callable(const ListConnectionGroups2020_05_31RequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListConnectionGroups2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectionGroups2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectionGroups2020_05_31RequestT = Model::ListConnectionGroups2020_05_31Request>
+        void ListConnectionGroups2020_05_31Async(const ListConnectionGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectionGroups2020_05_31RequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListConnectionGroups2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of the continuous deployment policies in your Amazon Web Services
          * account.</p> <p>You can optionally specify the maximum number of items to
          * receive in the response. If the total number of items in the list exceeds the
@@ -2372,6 +2788,60 @@ namespace CloudFront
         void ListContinuousDeploymentPolicies2020_05_31Async(const ListContinuousDeploymentPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContinuousDeploymentPolicies2020_05_31RequestT& request = {}) const
         {
             return SubmitAsync(&CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the distribution tenants in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributionTenants2020_05_31Outcome ListDistributionTenants2020_05_31(const Model::ListDistributionTenants2020_05_31Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDistributionTenants2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDistributionTenants2020_05_31RequestT = Model::ListDistributionTenants2020_05_31Request>
+        Model::ListDistributionTenants2020_05_31OutcomeCallable ListDistributionTenants2020_05_31Callable(const ListDistributionTenants2020_05_31RequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListDistributionTenants2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListDistributionTenants2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDistributionTenants2020_05_31RequestT = Model::ListDistributionTenants2020_05_31Request>
+        void ListDistributionTenants2020_05_31Async(const ListDistributionTenants2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDistributionTenants2020_05_31RequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListDistributionTenants2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Lists distribution tenants by the customization that you specify.</p> <p>You
+         * must specify either the <code>CertificateArn</code> parameter or
+         * <code>WebACLArn</code> parameter, but not both in the same
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributionTenantsByCustomization2020_05_31Outcome ListDistributionTenantsByCustomization2020_05_31(const Model::ListDistributionTenantsByCustomization2020_05_31Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDistributionTenantsByCustomization2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDistributionTenantsByCustomization2020_05_31RequestT = Model::ListDistributionTenantsByCustomization2020_05_31Request>
+        Model::ListDistributionTenantsByCustomization2020_05_31OutcomeCallable ListDistributionTenantsByCustomization2020_05_31Callable(const ListDistributionTenantsByCustomization2020_05_31RequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListDistributionTenantsByCustomization2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListDistributionTenantsByCustomization2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDistributionTenantsByCustomization2020_05_31RequestT = Model::ListDistributionTenantsByCustomization2020_05_31Request>
+        void ListDistributionTenantsByCustomization2020_05_31Async(const ListDistributionTenantsByCustomization2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDistributionTenantsByCustomization2020_05_31RequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListDistributionTenantsByCustomization2020_05_31, request, handler, context);
         }
 
         /**
@@ -2455,6 +2925,32 @@ namespace CloudFront
         void ListDistributionsByCachePolicyId2020_05_31Async(const ListDistributionsByCachePolicyId2020_05_31RequestT& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the distributions by the connection mode that you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributionsByConnectionMode2020_05_31Outcome ListDistributionsByConnectionMode2020_05_31(const Model::ListDistributionsByConnectionMode2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListDistributionsByConnectionMode2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDistributionsByConnectionMode2020_05_31RequestT = Model::ListDistributionsByConnectionMode2020_05_31Request>
+        Model::ListDistributionsByConnectionMode2020_05_31OutcomeCallable ListDistributionsByConnectionMode2020_05_31Callable(const ListDistributionsByConnectionMode2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListDistributionsByConnectionMode2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListDistributionsByConnectionMode2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDistributionsByConnectionMode2020_05_31RequestT = Model::ListDistributionsByConnectionMode2020_05_31Request>
+        void ListDistributionsByConnectionMode2020_05_31Async(const ListDistributionsByConnectionMode2020_05_31RequestT& request, const ListDistributionsByConnectionMode2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListDistributionsByConnectionMode2020_05_31, request, handler, context);
         }
 
         /**
@@ -2641,6 +3137,34 @@ namespace CloudFront
         }
 
         /**
+         * <p>Lists existing domain associations that conflict with the domain that you
+         * specify.</p> <p>You can use this API operation when transferring domains to
+         * identify potential domain conflicts. Domain conflicts must be resolved first
+         * before they can be moved.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainConflicts2020_05_31Outcome ListDomainConflicts2020_05_31(const Model::ListDomainConflicts2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListDomainConflicts2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDomainConflicts2020_05_31RequestT = Model::ListDomainConflicts2020_05_31Request>
+        Model::ListDomainConflicts2020_05_31OutcomeCallable ListDomainConflicts2020_05_31Callable(const ListDomainConflicts2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListDomainConflicts2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListDomainConflicts2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDomainConflicts2020_05_31RequestT = Model::ListDomainConflicts2020_05_31Request>
+        void ListDomainConflicts2020_05_31Async(const ListDomainConflicts2020_05_31RequestT& request, const ListDomainConflicts2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListDomainConflicts2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>List all field-level encryption configurations that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs2020_05_31">AWS
@@ -2749,6 +3273,32 @@ namespace CloudFront
         void ListInvalidations2020_05_31Async(const ListInvalidations2020_05_31RequestT& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::ListInvalidations2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the invalidations for a distribution tenant.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInvalidationsForDistributionTenant2020_05_31Outcome ListInvalidationsForDistributionTenant2020_05_31(const Model::ListInvalidationsForDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListInvalidationsForDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInvalidationsForDistributionTenant2020_05_31RequestT = Model::ListInvalidationsForDistributionTenant2020_05_31Request>
+        Model::ListInvalidationsForDistributionTenant2020_05_31OutcomeCallable ListInvalidationsForDistributionTenant2020_05_31Callable(const ListInvalidationsForDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::ListInvalidationsForDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for ListInvalidationsForDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInvalidationsForDistributionTenant2020_05_31RequestT = Model::ListInvalidationsForDistributionTenant2020_05_31Request>
+        void ListInvalidationsForDistributionTenant2020_05_31Async(const ListInvalidationsForDistributionTenant2020_05_31RequestT& request, const ListInvalidationsForDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::ListInvalidationsForDistributionTenant2020_05_31, request, handler, context);
         }
 
         /**
@@ -3229,6 +3779,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Updates a connection group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectionGroup2020_05_31Outcome UpdateConnectionGroup2020_05_31(const Model::UpdateConnectionGroup2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConnectionGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConnectionGroup2020_05_31RequestT = Model::UpdateConnectionGroup2020_05_31Request>
+        Model::UpdateConnectionGroup2020_05_31OutcomeCallable UpdateConnectionGroup2020_05_31Callable(const UpdateConnectionGroup2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::UpdateConnectionGroup2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConnectionGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConnectionGroup2020_05_31RequestT = Model::UpdateConnectionGroup2020_05_31Request>
+        void UpdateConnectionGroup2020_05_31Async(const UpdateConnectionGroup2020_05_31RequestT& request, const UpdateConnectionGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::UpdateConnectionGroup2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Updates a continuous deployment policy. You can update a continuous
          * deployment policy to enable or disable it, to change the percentage of traffic
          * that it sends to the staging distribution, or to change the staging distribution
@@ -3309,6 +3884,31 @@ namespace CloudFront
         }
 
         /**
+         * <p>Updates a distribution tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDistributionTenant2020_05_31Outcome UpdateDistributionTenant2020_05_31(const Model::UpdateDistributionTenant2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDistributionTenant2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDistributionTenant2020_05_31RequestT = Model::UpdateDistributionTenant2020_05_31Request>
+        Model::UpdateDistributionTenant2020_05_31OutcomeCallable UpdateDistributionTenant2020_05_31Callable(const UpdateDistributionTenant2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::UpdateDistributionTenant2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDistributionTenant2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDistributionTenant2020_05_31RequestT = Model::UpdateDistributionTenant2020_05_31Request>
+        void UpdateDistributionTenant2020_05_31Async(const UpdateDistributionTenant2020_05_31RequestT& request, const UpdateDistributionTenant2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::UpdateDistributionTenant2020_05_31, request, handler, context);
+        }
+
+        /**
          * <p>Copies the staging distribution's configuration to its corresponding primary
          * distribution. The primary distribution retains its <code>Aliases</code> (also
          * known as alternate domain names or CNAMEs) and
@@ -3347,6 +3947,32 @@ namespace CloudFront
         void UpdateDistributionWithStagingConfig2020_05_31Async(const UpdateDistributionWithStagingConfig2020_05_31RequestT& request, const UpdateDistributionWithStagingConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Moves a domain from its current distribution or distribution tenant to
+         * another one.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainAssociation2020_05_31Outcome UpdateDomainAssociation2020_05_31(const Model::UpdateDomainAssociation2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDomainAssociation2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDomainAssociation2020_05_31RequestT = Model::UpdateDomainAssociation2020_05_31Request>
+        Model::UpdateDomainAssociation2020_05_31OutcomeCallable UpdateDomainAssociation2020_05_31Callable(const UpdateDomainAssociation2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::UpdateDomainAssociation2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDomainAssociation2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDomainAssociation2020_05_31RequestT = Model::UpdateDomainAssociation2020_05_31Request>
+        void UpdateDomainAssociation2020_05_31Async(const UpdateDomainAssociation2020_05_31RequestT& request, const UpdateDomainAssociation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::UpdateDomainAssociation2020_05_31, request, handler, context);
         }
 
         /**
@@ -3689,6 +4315,35 @@ namespace CloudFront
         void UpdateVpcOrigin2020_05_31Async(const UpdateVpcOrigin2020_05_31RequestT& request, const UpdateVpcOrigin2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFrontClient::UpdateVpcOrigin2020_05_31, request, handler, context);
+        }
+
+        /**
+         * <p>Verify the DNS configuration for your domain names. This API operation checks
+         * whether your domain name points to the correct routing endpoint of the
+         * connection group, such as d111111abcdef8.cloudfront.net. You can use this API
+         * operation to troubleshoot and resolve DNS configuration issues.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifyDnsConfiguration2020_05_31Outcome VerifyDnsConfiguration2020_05_31(const Model::VerifyDnsConfiguration2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for VerifyDnsConfiguration2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename VerifyDnsConfiguration2020_05_31RequestT = Model::VerifyDnsConfiguration2020_05_31Request>
+        Model::VerifyDnsConfiguration2020_05_31OutcomeCallable VerifyDnsConfiguration2020_05_31Callable(const VerifyDnsConfiguration2020_05_31RequestT& request) const
+        {
+            return SubmitCallable(&CloudFrontClient::VerifyDnsConfiguration2020_05_31, request);
+        }
+
+        /**
+         * An Async wrapper for VerifyDnsConfiguration2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename VerifyDnsConfiguration2020_05_31RequestT = Model::VerifyDnsConfiguration2020_05_31Request>
+        void VerifyDnsConfiguration2020_05_31Async(const VerifyDnsConfiguration2020_05_31RequestT& request, const VerifyDnsConfiguration2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFrontClient::VerifyDnsConfiguration2020_05_31, request, handler, context);
         }
 
 

@@ -48,7 +48,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of static IP addresses that are allocated to the Anycast static IP
-     * list.</p>
+     * list. Valid values: 21 or 3.</p>
      */
     inline int GetIpCount() const { return m_ipCount; }
     inline bool IpCountHasBeenSet() const { return m_ipCountHasBeenSet; }

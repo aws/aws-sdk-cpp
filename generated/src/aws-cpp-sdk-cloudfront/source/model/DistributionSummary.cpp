@@ -43,6 +43,12 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
+    XmlNode eTagNode = resultNode.FirstChild("ETag");
+    if(!eTagNode.IsNull())
+    {
+      m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
+      m_eTagHasBeenSet = true;
+    }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
@@ -164,6 +170,12 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
       m_staging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stagingNode.GetText()).c_str()).c_str());
       m_stagingHasBeenSet = true;
     }
+    XmlNode connectionModeNode = resultNode.FirstChild("ConnectionMode");
+    if(!connectionModeNode.IsNull())
+    {
+      m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionModeNode.GetText()).c_str()));
+      m_connectionModeHasBeenSet = true;
+    }
     XmlNode anycastIpListIdNode = resultNode.FirstChild("AnycastIpListId");
     if(!anycastIpListIdNode.IsNull())
     {
@@ -188,6 +200,12 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
   {
    XmlNode aRNNode = parentNode.CreateChildElement("ARN");
    aRNNode.SetText(m_aRN);
+  }
+
+  if(m_eTagHasBeenSet)
+  {
+   XmlNode eTagNode = parentNode.CreateChildElement("ETag");
+   eTagNode.SetText(m_eTag);
   }
 
   if(m_statusHasBeenSet)
@@ -312,6 +330,12 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
    ss << std::boolalpha << m_staging;
    stagingNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_connectionModeHasBeenSet)
+  {
+   XmlNode connectionModeNode = parentNode.CreateChildElement("ConnectionMode");
+   connectionModeNode.SetText(ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
   }
 
   if(m_anycastIpListIdHasBeenSet)

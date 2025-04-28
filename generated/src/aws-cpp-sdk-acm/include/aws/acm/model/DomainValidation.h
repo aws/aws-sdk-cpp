@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/DomainStatus.h>
 #include <aws/acm/model/ResourceRecord.h>
+#include <aws/acm/model/HttpRedirect.h>
 #include <aws/acm/model/ValidationMethod.h>
 #include <utility>
 
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The validation status of the domain name. This can be one of the following
      * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
-     * <code>SUCCESS</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> </ul>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline DomainStatus GetValidationStatus() const { return m_validationStatus; }
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
@@ -99,9 +100,9 @@ namespace Model
      * validation. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p> <p>Note: The CNAME information that
-     * you need does not include the name of your domain. If you include&#x2028; your
-     * domain name in the DNS database CNAME record, validation fails.&#x2028; For
-     * example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
+     * you need does not include the name of your domain. If you include your domain
+     * name in the DNS database CNAME record, validation fails. For example, if the
+     * name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
      * "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
      */
     inline const ResourceRecord& GetResourceRecord() const { return m_resourceRecord; }
@@ -110,6 +111,21 @@ namespace Model
     void SetResourceRecord(ResourceRecordT&& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = std::forward<ResourceRecordT>(value); }
     template<typename ResourceRecordT = ResourceRecord>
     DomainValidation& WithResourceRecord(ResourceRecordT&& value) { SetResourceRecord(std::forward<ResourceRecordT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information for HTTP-based domain validation of certificates
+     * requested through CloudFront and issued by ACM. This field exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code> and the validation method is
+     * <code>HTTP</code>.</p>
+     */
+    inline const HttpRedirect& GetHttpRedirect() const { return m_httpRedirect; }
+    inline bool HttpRedirectHasBeenSet() const { return m_httpRedirectHasBeenSet; }
+    template<typename HttpRedirectT = HttpRedirect>
+    void SetHttpRedirect(HttpRedirectT&& value) { m_httpRedirectHasBeenSet = true; m_httpRedirect = std::forward<HttpRedirectT>(value); }
+    template<typename HttpRedirectT = HttpRedirect>
+    DomainValidation& WithHttpRedirect(HttpRedirectT&& value) { SetHttpRedirect(std::forward<HttpRedirectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,6 +153,9 @@ namespace Model
 
     ResourceRecord m_resourceRecord;
     bool m_resourceRecordHasBeenSet = false;
+
+    HttpRedirect m_httpRedirect;
+    bool m_httpRedirectHasBeenSet = false;
 
     ValidationMethod m_validationMethod{ValidationMethod::NOT_SET};
     bool m_validationMethodHasBeenSet = false;

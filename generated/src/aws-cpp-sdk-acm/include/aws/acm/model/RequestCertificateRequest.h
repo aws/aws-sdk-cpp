@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/KeyAlgorithm.h>
+#include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/DomainValidationOption.h>
 #include <aws/acm/model/Tag.h>
 #include <utility>
@@ -219,6 +220,17 @@ namespace Model
     inline void SetKeyAlgorithm(KeyAlgorithm value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
     inline RequestCertificateRequest& WithKeyAlgorithm(KeyAlgorithm value) { SetKeyAlgorithm(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the Amazon Web Services service that manages the certificate
+     * issued by ACM.</p>
+     */
+    inline CertificateManagedBy GetManagedBy() const { return m_managedBy; }
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+    inline void SetManagedBy(CertificateManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline RequestCertificateRequest& WithManagedBy(CertificateManagedBy value) { SetManagedBy(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -247,6 +259,9 @@ namespace Model
 
     KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
     bool m_keyAlgorithmHasBeenSet = false;
+
+    CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
   };
 
 } // namespace Model

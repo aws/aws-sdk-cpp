@@ -214,7 +214,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base image for the container recipe.</p>
+     * <p>The base image for customizations specified in the container recipe. This can
+     * contain an Image Builder image resource ARN or a container image URI, for
+     * example <code>amazonlinux:latest</code>.</p>
      */
     inline const Aws::String& GetParentImage() const { return m_parentImage; }
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }

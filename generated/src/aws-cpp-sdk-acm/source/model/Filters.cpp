@@ -52,6 +52,11 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_keyTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("managedBy"))
+  {
+    m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("managedBy"));
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -90,6 +95,11 @@ JsonValue Filters::Jsonize() const
    }
    payload.WithArray("keyTypes", std::move(keyTypesJsonList));
 
+  }
+
+  if(m_managedByHasBeenSet)
+  {
+   payload.WithString("managedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
   return payload;

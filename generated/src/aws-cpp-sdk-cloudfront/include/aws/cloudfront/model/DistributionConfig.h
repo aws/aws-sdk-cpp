@@ -17,6 +17,8 @@
 #include <aws/cloudfront/model/ViewerCertificate.h>
 #include <aws/cloudfront/model/Restrictions.h>
 #include <aws/cloudfront/model/HttpVersion.h>
+#include <aws/cloudfront/model/TenantConfig.h>
+#include <aws/cloudfront/model/ConnectionMode.h>
 #include <utility>
 
 namespace Aws
@@ -391,6 +393,28 @@ namespace Model
     template<typename AnycastIpListIdT = Aws::String>
     DistributionConfig& WithAnycastIpListId(AnycastIpListIdT&& value) { SetAnycastIpListId(std::forward<AnycastIpListIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A distribution tenant configuration.</p>
+     */
+    inline const TenantConfig& GetTenantConfig() const { return m_tenantConfig; }
+    inline bool TenantConfigHasBeenSet() const { return m_tenantConfigHasBeenSet; }
+    template<typename TenantConfigT = TenantConfig>
+    void SetTenantConfig(TenantConfigT&& value) { m_tenantConfigHasBeenSet = true; m_tenantConfig = std::forward<TenantConfigT>(value); }
+    template<typename TenantConfigT = TenantConfig>
+    DistributionConfig& WithTenantConfig(TenantConfigT&& value) { SetTenantConfig(std::forward<TenantConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The connection mode to filter distributions by.</p>
+     */
+    inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
+    inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
+    inline void SetConnectionMode(ConnectionMode value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
+    inline DistributionConfig& WithConnectionMode(ConnectionMode value) { SetConnectionMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_callerReference;
@@ -452,6 +476,12 @@ namespace Model
 
     Aws::String m_anycastIpListId;
     bool m_anycastIpListIdHasBeenSet = false;
+
+    TenantConfig m_tenantConfig;
+    bool m_tenantConfigHasBeenSet = false;
+
+    ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
+    bool m_connectionModeHasBeenSet = false;
   };
 
 } // namespace Model

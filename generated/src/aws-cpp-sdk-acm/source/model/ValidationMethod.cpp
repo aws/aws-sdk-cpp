@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
         static const int DNS_HASH = HashingUtils::HashString("DNS");
+        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
 
 
         ValidationMethod GetValidationMethodForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DNS_HASH)
           {
             return ValidationMethod::DNS;
+          }
+          else if (hashCode == HTTP_HASH)
+          {
+            return ValidationMethod::HTTP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "EMAIL";
           case ValidationMethod::DNS:
             return "DNS";
+          case ValidationMethod::HTTP:
+            return "HTTP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -143,7 +143,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base image of the image recipe.</p>
+     * <p>The base image for customizations specified in the image recipe. You can
+     * specify the parent image using one of the following options:</p> <ul> <li>
+     * <p>AMI ID</p> </li> <li> <p>Image Builder image Amazon Resource Name (ARN)</p>
+     * </li> <li> <p>Amazon Web Services Systems Manager (SSM) Parameter Store
+     * Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or
+     * ARN.</p> </li> <li> <p>Amazon Web Services Marketplace product ID</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetParentImage() const { return m_parentImage; }
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }

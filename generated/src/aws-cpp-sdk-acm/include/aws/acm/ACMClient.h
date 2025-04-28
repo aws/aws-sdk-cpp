@@ -16,11 +16,11 @@ namespace Aws
 namespace ACM
 {
   /**
-   * <fullname>Certificate Manager</fullname> <p>You can use Certificate Manager
+   * <p><fullname>Certificate Manager</fullname> <p>You can use Certificate Manager
    * (ACM) to manage SSL/TLS certificates for your Amazon Web Services-based websites
    * and applications. For more information about using ACM, see the <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
-   * User Guide</a>.</p>
+   * User Guide</a>.</p></p>
    */
   class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>
   {
@@ -338,14 +338,11 @@ namespace ACM
         }
 
         /**
-         * <p>Retrieves a list of certificate ARNs and domain names. By default, the API
-         * returns RSA_2048 certificates. To return all certificates in the account,
-         * include the <code>keyType</code> filter with the values <code>[RSA_1024,
-         * RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1,
-         * EC_secp521r1]</code>.</p> <p>In addition to <code>keyType</code>, you can also
-         * filter by the <code>CertificateStatuses</code>, <code>keyUsage</code>, and
-         * <code>extendedKeyUsage</code> attributes on the certificate. For more
-         * information, see <a>Filters</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of certificate ARNs and domain names. You can request that
+         * only certificates that match a specific status be listed. You can also filter by
+         * specific attributes of the certificate. Default filtering returns only
+         * <code>RSA_2048</code> certificates. For more information, see
+         * <a>Filters</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          */

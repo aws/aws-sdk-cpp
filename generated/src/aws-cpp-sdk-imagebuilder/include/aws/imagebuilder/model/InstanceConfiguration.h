@@ -43,9 +43,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AMI ID to use as the base image for a container build and test instance.
-     * If not specified, Image Builder will use the appropriate ECS-optimized AMI as a
-     * base image.</p>
+     * <p>The base image for a container build and test instance. This can contain an
+     * AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter
+     * Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name
+     * or ARN.</p> <p>If not specified, Image Builder uses the appropriate
+     * ECS-optimized AMI as a base image.</p>
      */
     inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     PriceClass_100,
     PriceClass_200,
-    PriceClass_All
+    PriceClass_All,
+    None
   };
 
 namespace PriceClassMapper
