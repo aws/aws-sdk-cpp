@@ -71,12 +71,14 @@ namespace Aws
             void SetScheme(Scheme value);
 
             /**
-            * Gets the domain portion of the uri
+            * Gets the authority portion of the URI. Differs from the authority definition in RFC 3986. user information
+            * and the port information are not included. It is functionally the host as defined by  RFC 3986 with encoding included.
             */
             inline const Aws::String& GetAuthority() const { return m_authority; }
 
             /**
-            * Sets the domain portion of the uri
+            * Sets the authority portion of the URI. Differs from the authority definition in RFC 3986. user information
+            * and the port information are not included. It is functionally the host as defined by  RFC 3986 with encoding included.
             */
             inline void SetAuthority(const Aws::String& value) { m_authority = value; }
 
@@ -212,6 +214,17 @@ namespace Aws
              * URLEncodes the path portion of the URI according to RFC3986
              */
             static Aws::String URLEncodePathRFC3986(const Aws::String& path, bool rfcCompliantEncoding = false);
+
+            /**
+             * The host portion of the URI as described in rfc3986.
+             *
+             * The host subcomponent of authority is identified by an IPv6 literal
+             * encapsulated within square brackets, an IPv4 address in dotted-
+             * decimal form, or a registered name.
+             *
+             * @return The host portion of the URI
+             */
+            Aws::String GetHost() const;
 
         private:
             void ParseURIParts(const Aws::String& uri);

@@ -259,7 +259,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    if (!Aws::Utils::IsValidHost(uri.GetHost()))
     {
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
     }
@@ -415,7 +415,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    if (!Aws::Utils::IsValidHost(uri.GetHost()))
     {
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
     }
