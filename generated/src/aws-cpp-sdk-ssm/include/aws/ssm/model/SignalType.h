@@ -20,7 +20,8 @@ namespace Model
     Reject,
     StartStep,
     StopStep,
-    Resume
+    Resume,
+    Revoke
   };
 
 namespace SignalTypeMapper

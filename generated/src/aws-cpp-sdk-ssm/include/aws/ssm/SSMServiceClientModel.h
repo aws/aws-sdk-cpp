@@ -81,6 +81,7 @@
 #include <aws/ssm/model/DescribePatchPropertiesResult.h>
 #include <aws/ssm/model/DescribeSessionsResult.h>
 #include <aws/ssm/model/DisassociateOpsItemRelatedItemResult.h>
+#include <aws/ssm/model/GetAccessTokenResult.h>
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
 #include <aws/ssm/model/GetCalendarStateResult.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
@@ -140,6 +141,7 @@
 #include <aws/ssm/model/ResumeSessionResult.h>
 #include <aws/ssm/model/SendAutomationSignalResult.h>
 #include <aws/ssm/model/SendCommandResult.h>
+#include <aws/ssm/model/StartAccessRequestResult.h>
 #include <aws/ssm/model/StartAssociationsOnceResult.h>
 #include <aws/ssm/model/StartAutomationExecutionResult.h>
 #include <aws/ssm/model/StartChangeRequestExecutionResult.h>
@@ -295,6 +297,7 @@ namespace Aws
       class DescribePatchPropertiesRequest;
       class DescribeSessionsRequest;
       class DisassociateOpsItemRelatedItemRequest;
+      class GetAccessTokenRequest;
       class GetAutomationExecutionRequest;
       class GetCalendarStateRequest;
       class GetCommandInvocationRequest;
@@ -354,6 +357,7 @@ namespace Aws
       class ResumeSessionRequest;
       class SendAutomationSignalRequest;
       class SendCommandRequest;
+      class StartAccessRequestRequest;
       class StartAssociationsOnceRequest;
       class StartAutomationExecutionRequest;
       class StartChangeRequestExecutionRequest;
@@ -442,6 +446,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribePatchPropertiesResult, SSMError> DescribePatchPropertiesOutcome;
       typedef Aws::Utils::Outcome<DescribeSessionsResult, SSMError> DescribeSessionsOutcome;
       typedef Aws::Utils::Outcome<DisassociateOpsItemRelatedItemResult, SSMError> DisassociateOpsItemRelatedItemOutcome;
+      typedef Aws::Utils::Outcome<GetAccessTokenResult, SSMError> GetAccessTokenOutcome;
       typedef Aws::Utils::Outcome<GetAutomationExecutionResult, SSMError> GetAutomationExecutionOutcome;
       typedef Aws::Utils::Outcome<GetCalendarStateResult, SSMError> GetCalendarStateOutcome;
       typedef Aws::Utils::Outcome<GetCommandInvocationResult, SSMError> GetCommandInvocationOutcome;
@@ -501,6 +506,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ResumeSessionResult, SSMError> ResumeSessionOutcome;
       typedef Aws::Utils::Outcome<SendAutomationSignalResult, SSMError> SendAutomationSignalOutcome;
       typedef Aws::Utils::Outcome<SendCommandResult, SSMError> SendCommandOutcome;
+      typedef Aws::Utils::Outcome<StartAccessRequestResult, SSMError> StartAccessRequestOutcome;
       typedef Aws::Utils::Outcome<StartAssociationsOnceResult, SSMError> StartAssociationsOnceOutcome;
       typedef Aws::Utils::Outcome<StartAutomationExecutionResult, SSMError> StartAutomationExecutionOutcome;
       typedef Aws::Utils::Outcome<StartChangeRequestExecutionResult, SSMError> StartChangeRequestExecutionOutcome;
@@ -589,6 +595,7 @@ namespace Aws
       typedef std::future<DescribePatchPropertiesOutcome> DescribePatchPropertiesOutcomeCallable;
       typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
       typedef std::future<DisassociateOpsItemRelatedItemOutcome> DisassociateOpsItemRelatedItemOutcomeCallable;
+      typedef std::future<GetAccessTokenOutcome> GetAccessTokenOutcomeCallable;
       typedef std::future<GetAutomationExecutionOutcome> GetAutomationExecutionOutcomeCallable;
       typedef std::future<GetCalendarStateOutcome> GetCalendarStateOutcomeCallable;
       typedef std::future<GetCommandInvocationOutcome> GetCommandInvocationOutcomeCallable;
@@ -648,6 +655,7 @@ namespace Aws
       typedef std::future<ResumeSessionOutcome> ResumeSessionOutcomeCallable;
       typedef std::future<SendAutomationSignalOutcome> SendAutomationSignalOutcomeCallable;
       typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
+      typedef std::future<StartAccessRequestOutcome> StartAccessRequestOutcomeCallable;
       typedef std::future<StartAssociationsOnceOutcome> StartAssociationsOnceOutcomeCallable;
       typedef std::future<StartAutomationExecutionOutcome> StartAutomationExecutionOutcomeCallable;
       typedef std::future<StartChangeRequestExecutionOutcome> StartChangeRequestExecutionOutcomeCallable;
@@ -739,6 +747,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::DescribePatchPropertiesRequest&, const Model::DescribePatchPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchPropertiesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DisassociateOpsItemRelatedItemRequest&, const Model::DisassociateOpsItemRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateOpsItemRelatedItemResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetAccessTokenRequest&, const Model::GetAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessTokenResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetAutomationExecutionRequest&, const Model::GetAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCalendarStateRequest&, const Model::GetCalendarStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalendarStateResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCommandInvocationRequest&, const Model::GetCommandInvocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommandInvocationResponseReceivedHandler;
@@ -798,6 +807,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::ResumeSessionRequest&, const Model::ResumeSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendAutomationSignalRequest&, const Model::SendAutomationSignalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAutomationSignalResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::StartAccessRequestRequest&, const Model::StartAccessRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAccessRequestResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAssociationsOnceRequest&, const Model::StartAssociationsOnceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssociationsOnceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAutomationExecutionRequest&, const Model::StartAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartChangeRequestExecutionRequest&, const Model::StartChangeRequestExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChangeRequestExecutionResponseReceivedHandler;

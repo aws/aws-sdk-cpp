@@ -30,6 +30,7 @@
 #include <aws/qbusiness/model/ChatRequest.h>
 #include <aws/qbusiness/model/ChatSyncRequest.h>
 #include <aws/qbusiness/model/CheckDocumentAccessRequest.h>
+#include <aws/qbusiness/model/CreateAnonymousWebExperienceUrlRequest.h>
 #include <aws/qbusiness/model/CreateApplicationRequest.h>
 #include <aws/qbusiness/model/CreateDataAccessorRequest.h>
 #include <aws/qbusiness/model/CreateDataSourceRequest.h>
@@ -532,6 +533,47 @@ CheckDocumentAccessOutcome QBusinessClient::CheckDocumentAccess(const CheckDocum
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/check-document-access");
       return CheckDocumentAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateAnonymousWebExperienceUrlOutcome QBusinessClient::CreateAnonymousWebExperienceUrl(const CreateAnonymousWebExperienceUrlRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateAnonymousWebExperienceUrl);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAnonymousWebExperienceUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAnonymousWebExperienceUrl", "Required field: ApplicationId, is not set");
+    return CreateAnonymousWebExperienceUrlOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.WebExperienceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAnonymousWebExperienceUrl", "Required field: WebExperienceId, is not set");
+    return CreateAnonymousWebExperienceUrlOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebExperienceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAnonymousWebExperienceUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateAnonymousWebExperienceUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateAnonymousWebExperienceUrl",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateAnonymousWebExperienceUrlOutcome>(
+    [&]()-> CreateAnonymousWebExperienceUrlOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAnonymousWebExperienceUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/experiences/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebExperienceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/anonymous-url");
+      return CreateAnonymousWebExperienceUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

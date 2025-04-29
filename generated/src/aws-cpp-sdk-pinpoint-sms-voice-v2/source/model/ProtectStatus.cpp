@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ALLOW_HASH = HashingUtils::HashString("ALLOW");
         static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
+        static const int MONITOR_HASH = HashingUtils::HashString("MONITOR");
+        static const int FILTER_HASH = HashingUtils::HashString("FILTER");
 
 
         ProtectStatus GetProtectStatusForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == BLOCK_HASH)
           {
             return ProtectStatus::BLOCK;
+          }
+          else if (hashCode == MONITOR_HASH)
+          {
+            return ProtectStatus::MONITOR;
+          }
+          else if (hashCode == FILTER_HASH)
+          {
+            return ProtectStatus::FILTER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "ALLOW";
           case ProtectStatus::BLOCK:
             return "BLOCK";
+          case ProtectStatus::MONITOR:
+            return "MONITOR";
+          case ProtectStatus::FILTER:
+            return "FILTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

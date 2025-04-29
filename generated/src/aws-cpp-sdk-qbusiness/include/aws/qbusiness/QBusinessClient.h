@@ -285,6 +285,33 @@ namespace QBusiness
         }
 
         /**
+         * <p>Creates a unique URL for anonymous Amazon Q Business web experience. This URL
+         * can only be used once and must be used within 5 minutes after it's
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAnonymousWebExperienceUrlOutcome CreateAnonymousWebExperienceUrl(const Model::CreateAnonymousWebExperienceUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAnonymousWebExperienceUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAnonymousWebExperienceUrlRequestT = Model::CreateAnonymousWebExperienceUrlRequest>
+        Model::CreateAnonymousWebExperienceUrlOutcomeCallable CreateAnonymousWebExperienceUrlCallable(const CreateAnonymousWebExperienceUrlRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::CreateAnonymousWebExperienceUrl, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAnonymousWebExperienceUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAnonymousWebExperienceUrlRequestT = Model::CreateAnonymousWebExperienceUrlRequest>
+        void CreateAnonymousWebExperienceUrlAsync(const CreateAnonymousWebExperienceUrlRequestT& request, const CreateAnonymousWebExperienceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::CreateAnonymousWebExperienceUrl, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Amazon Q Business application.</p>  <p>There are new tiers
          * for Amazon Q Business. Not all features in Amazon Q Business Pro are also
          * available in Amazon Q Business Lite. For information on what's included in

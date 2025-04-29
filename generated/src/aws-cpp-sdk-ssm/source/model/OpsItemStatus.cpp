@@ -37,6 +37,7 @@ namespace Aws
         static const int ChangeCalendarOverrideRejected_HASH = HashingUtils::HashString("ChangeCalendarOverrideRejected");
         static const int PendingApproval_HASH = HashingUtils::HashString("PendingApproval");
         static const int Approved_HASH = HashingUtils::HashString("Approved");
+        static const int Revoked_HASH = HashingUtils::HashString("Revoked");
         static const int Rejected_HASH = HashingUtils::HashString("Rejected");
         static const int Closed_HASH = HashingUtils::HashString("Closed");
 
@@ -112,6 +113,10 @@ namespace Aws
           {
             return OpsItemStatus::Approved;
           }
+          else if (hashCode == Revoked_HASH)
+          {
+            return OpsItemStatus::Revoked;
+          }
           else if (hashCode == Rejected_HASH)
           {
             return OpsItemStatus::Rejected;
@@ -170,6 +175,8 @@ namespace Aws
             return "PendingApproval";
           case OpsItemStatus::Approved:
             return "Approved";
+          case OpsItemStatus::Revoked:
+            return "Revoked";
           case OpsItemStatus::Rejected:
             return "Rejected";
           case OpsItemStatus::Closed:

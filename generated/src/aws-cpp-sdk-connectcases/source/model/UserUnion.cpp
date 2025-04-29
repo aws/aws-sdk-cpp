@@ -25,6 +25,11 @@ UserUnion::UserUnion(JsonView jsonValue)
 
 UserUnion& UserUnion::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customEntity"))
+  {
+    m_customEntity = jsonValue.GetString("customEntity");
+    m_customEntityHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("userArn"))
   {
     m_userArn = jsonValue.GetString("userArn");
@@ -36,6 +41,12 @@ UserUnion& UserUnion::operator =(JsonView jsonValue)
 JsonValue UserUnion::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customEntityHasBeenSet)
+  {
+   payload.WithString("customEntity", m_customEntity);
+
+  }
 
   if(m_userArnHasBeenSet)
   {

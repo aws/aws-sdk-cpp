@@ -24,6 +24,7 @@ namespace Aws
         static const int AWS_IAM_IDP_OIDC_HASH = HashingUtils::HashString("AWS_IAM_IDP_OIDC");
         static const int AWS_IAM_IDC_HASH = HashingUtils::HashString("AWS_IAM_IDC");
         static const int AWS_QUICKSIGHT_IDP_HASH = HashingUtils::HashString("AWS_QUICKSIGHT_IDP");
+        static const int ANONYMOUS_HASH = HashingUtils::HashString("ANONYMOUS");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AWS_QUICKSIGHT_IDP_HASH)
           {
             return IdentityType::AWS_QUICKSIGHT_IDP;
+          }
+          else if (hashCode == ANONYMOUS_HASH)
+          {
+            return IdentityType::ANONYMOUS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "AWS_IAM_IDC";
           case IdentityType::AWS_QUICKSIGHT_IDP:
             return "AWS_QUICKSIGHT_IDP";
+          case IdentityType::ANONYMOUS:
+            return "ANONYMOUS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

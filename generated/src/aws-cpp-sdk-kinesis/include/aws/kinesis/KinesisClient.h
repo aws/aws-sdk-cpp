@@ -149,11 +149,13 @@ namespace Kinesis
          * <p> <a>CreateStream</a> has a limit of five transactions per second per
          * account.</p> <p>You can add tags to the stream when making a
          * <code>CreateStream</code> request by setting the <code>Tags</code> parameter. If
-         * you pass <code>Tags</code> parameter, in addition to having
-         * <code>kinesis:createStream</code> permission, you must also have
-         * <code>kinesis:addTagsToStream</code> permission for the stream that will be
-         * created. Tags will take effect from the <code>CREATING</code> status of the
-         * stream. </p><p><h3>See Also:</h3>   <a
+         * you pass the <code>Tags</code> parameter, in addition to having the
+         * <code>kinesis:CreateStream</code> permission, you must also have the
+         * <code>kinesis:AddTagsToStream</code> permission for the stream that will be
+         * created. The <code>kinesis:TagResource</code> permission won’t work to tag
+         * streams on creation. Tags will take effect from the <code>CREATING</code> status
+         * of the stream, but you can't make any updates to the tags until the stream is in
+         * <code>ACTIVE</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">AWS
          * API Reference</a></p>
          */
@@ -833,6 +835,36 @@ namespace Kinesis
         }
 
         /**
+         * <p>List all tags added to the specified Kinesis resource. Each tag is a label
+         * consisting of a user-defined key and value. Tags can help you manage, identify,
+         * organize, search for, and filter resources.</p> <p>For more information about
+         * tagging Kinesis resources, see <a
+         * href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag your
+         * Amazon Kinesis Data Streams resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request = {}) const
+        {
+            return SubmitCallable(&KinesisClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTagsForResourceRequestT& request = {}) const
+        {
+            return SubmitAsync(&KinesisClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Lists the tags for the specified Kinesis data stream. This operation has a
          * limit of five transactions per second per account.</p>  <p>When invoking
          * this API, you must use either the <code>StreamARN</code> or the
@@ -1121,7 +1153,13 @@ namespace Kinesis
          * the consumer you register can then call <a>SubscribeToShard</a> to receive data
          * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
          * every shard you subscribe to. This rate is unaffected by the total number of
-         * consumers that read from the same stream.</p> <p>You can register up to 20
+         * consumers that read from the same stream.</p> <p>You can add tags to the
+         * registered consumer when making a <code>RegisterStreamConsumer</code> request by
+         * setting the <code>Tags</code> parameter. If you pass the <code>Tags</code>
+         * parameter, in addition to having the <code>kinesis:RegisterStreamConsumer</code>
+         * permission, you must also have the <code>kinesis:TagResource</code> permission
+         * for the consumer that will be registered. Tags will take effect from the
+         * <code>CREATING</code> status of the consumer.</p> <p>You can register up to 20
          * consumers per stream. A given consumer can only be registered with one stream at
          * a time.</p> <p>For an example of how to use this operation, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
@@ -1388,6 +1426,61 @@ namespace Kinesis
         void SubscribeToShardAsync(SubscribeToShardRequestT& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KinesisClient::SubscribeToShard, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or updates tags for the specified Kinesis resource. Each tag is a label
+         * consisting of a user-defined key and value. Tags can help you manage, identify,
+         * organize, search for, and filter resources. You can assign up to 50 tags to a
+         * Kinesis resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&KinesisClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes tags from the specified Kinesis resource. Removed tags are deleted
+         * and can't be recovered after this operation completes
+         * successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&KinesisClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisClient::UntagResource, request, handler, context);
         }
 
         /**

@@ -6,12 +6,14 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
+#include <aws/ssm/model/ServiceQuotaExceededException.h>
 #include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
 #include <aws/ssm/model/ResourcePolicyLimitExceededException.h>
 #include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
 #include <aws/ssm/model/OpsItemAlreadyExistsException.h>
 #include <aws/ssm/model/ResourcePolicyInvalidParameterException.h>
 #include <aws/ssm/model/ItemSizeLimitExceededException.h>
+#include <aws/ssm/model/ThrottlingException.h>
 #include <aws/ssm/model/UnsupportedInventoryItemContextException.h>
 #include <aws/ssm/model/ValidationException.h>
 #include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
@@ -29,6 +31,12 @@ namespace Aws
 {
 namespace SSM
 {
+template<> AWS_SSM_API ServiceQuotaExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SSM_API OpsItemRelatedItemAlreadyExistsException SSMError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS);
@@ -63,6 +71,12 @@ template<> AWS_SSM_API ItemSizeLimitExceededException SSMError::GetModeledError(
 {
   assert(this->GetErrorType() == SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED);
   return ItemSizeLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ThrottlingException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSM_API UnsupportedInventoryItemContextException SSMError::GetModeledError()
@@ -122,6 +136,7 @@ static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeN
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
 static const int OPS_ITEM_CONFLICT_HASH = HashingUtils::HashString("OpsItemConflictException");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
 static const int INVALID_INSTANCE_PROPERTY_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstancePropertyFilterValue");
@@ -310,6 +325,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
@@ -857,17 +877,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == INVALID_FILTER_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
+  if (hashCode == INVALID_FILTER_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
     return true;

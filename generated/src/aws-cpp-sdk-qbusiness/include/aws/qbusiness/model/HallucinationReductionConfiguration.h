@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>Configuration information required to setup hallucination reduction. For more
    * information, see <a
-   * href="amazonq/latest/qbusiness-ug/hallucination-reduction.html">hallucination
-   * reduction</a>.</p>  <p>The hallucination reduction feature won't work if
-   * chat orchestration controls are enabled for your application.</p>
+   * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/hallucination-reduction.html">
+   * hallucination reduction</a>.</p>  <p>The hallucination reduction feature
+   * won't work if chat orchestration controls are enabled for your application.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/HallucinationReductionConfiguration">AWS
    * API Reference</a></p>

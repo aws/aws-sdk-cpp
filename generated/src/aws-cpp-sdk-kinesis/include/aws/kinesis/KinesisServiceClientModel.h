@@ -30,6 +30,7 @@
 #include <aws/kinesis/model/ListShardsResult.h>
 #include <aws/kinesis/model/ListStreamConsumersResult.h>
 #include <aws/kinesis/model/ListStreamsResult.h>
+#include <aws/kinesis/model/ListTagsForResourceResult.h>
 #include <aws/kinesis/model/ListTagsForStreamResult.h>
 #include <aws/kinesis/model/PutRecordResult.h>
 #include <aws/kinesis/model/PutRecordsResult.h>
@@ -44,6 +45,7 @@
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/ListTagsForStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
+#include <aws/kinesis/model/ListTagsForResourceRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KinesisClient header */
 
@@ -104,6 +106,7 @@ namespace Aws
       class ListShardsRequest;
       class ListStreamConsumersRequest;
       class ListStreamsRequest;
+      class ListTagsForResourceRequest;
       class ListTagsForStreamRequest;
       class MergeShardsRequest;
       class PutRecordRequest;
@@ -115,6 +118,8 @@ namespace Aws
       class StartStreamEncryptionRequest;
       class StopStreamEncryptionRequest;
       class SubscribeToShardRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateShardCountRequest;
       class UpdateStreamModeRequest;
       /* End of service model forward declarations required in KinesisClient header */
@@ -139,6 +144,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListShardsResult, KinesisError> ListShardsOutcome;
       typedef Aws::Utils::Outcome<ListStreamConsumersResult, KinesisError> ListStreamConsumersOutcome;
       typedef Aws::Utils::Outcome<ListStreamsResult, KinesisError> ListStreamsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisError> ListTagsForStreamOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> MergeShardsOutcome;
       typedef Aws::Utils::Outcome<PutRecordResult, KinesisError> PutRecordOutcome;
@@ -150,6 +156,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StartStreamEncryptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
       /* End of service model Outcome class definitions */
@@ -174,6 +182,7 @@ namespace Aws
       typedef std::future<ListShardsOutcome> ListShardsOutcomeCallable;
       typedef std::future<ListStreamConsumersOutcome> ListStreamConsumersOutcomeCallable;
       typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTagsForStreamOutcome> ListTagsForStreamOutcomeCallable;
       typedef std::future<MergeShardsOutcome> MergeShardsOutcomeCallable;
       typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
@@ -185,6 +194,8 @@ namespace Aws
       typedef std::future<StartStreamEncryptionOutcome> StartStreamEncryptionOutcomeCallable;
       typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCallable;
       typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
       typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -212,6 +223,7 @@ namespace Aws
     typedef std::function<void(const KinesisClient*, const Model::ListShardsRequest&, const Model::ListShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListShardsResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::ListStreamConsumersRequest&, const Model::ListStreamConsumersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamConsumersResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::ListTagsForStreamRequest&, const Model::ListTagsForStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::MergeShardsRequest&, const Model::MergeShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeShardsResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
@@ -223,6 +235,8 @@ namespace Aws
     typedef std::function<void(const KinesisClient*, const Model::StartStreamEncryptionRequest&, const Model::StartStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamEncryptionResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::StopStreamEncryptionRequest&, const Model::StopStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamEncryptionResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::SubscribeToShardRequest&, const Model::SubscribeToShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeToShardResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShardCountResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::UpdateStreamModeRequest&, const Model::UpdateStreamModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamModeResponseReceivedHandler;
     /* End of service model async handlers definitions */

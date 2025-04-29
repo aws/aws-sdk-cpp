@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     ALLOW,
-    BLOCK
+    BLOCK,
+    MONITOR,
+    FILTER
   };
 
 namespace ProtectStatusMapper

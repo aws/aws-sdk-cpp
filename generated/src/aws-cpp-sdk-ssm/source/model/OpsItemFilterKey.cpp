@@ -40,6 +40,15 @@ namespace Aws
         static const int Category_HASH = HashingUtils::HashString("Category");
         static const int Severity_HASH = HashingUtils::HashString("Severity");
         static const int OpsItemType_HASH = HashingUtils::HashString("OpsItemType");
+        static const int AccessRequestByRequesterArn_HASH = HashingUtils::HashString("AccessRequestByRequesterArn");
+        static const int AccessRequestByRequesterId_HASH = HashingUtils::HashString("AccessRequestByRequesterId");
+        static const int AccessRequestByApproverArn_HASH = HashingUtils::HashString("AccessRequestByApproverArn");
+        static const int AccessRequestByApproverId_HASH = HashingUtils::HashString("AccessRequestByApproverId");
+        static const int AccessRequestBySourceAccountId_HASH = HashingUtils::HashString("AccessRequestBySourceAccountId");
+        static const int AccessRequestBySourceOpsItemId_HASH = HashingUtils::HashString("AccessRequestBySourceOpsItemId");
+        static const int AccessRequestBySourceRegion_HASH = HashingUtils::HashString("AccessRequestBySourceRegion");
+        static const int AccessRequestByIsReplica_HASH = HashingUtils::HashString("AccessRequestByIsReplica");
+        static const int AccessRequestByTargetResourceId_HASH = HashingUtils::HashString("AccessRequestByTargetResourceId");
         static const int ChangeRequestByRequesterArn_HASH = HashingUtils::HashString("ChangeRequestByRequesterArn");
         static const int ChangeRequestByRequesterName_HASH = HashingUtils::HashString("ChangeRequestByRequesterName");
         static const int ChangeRequestByApproverArn_HASH = HashingUtils::HashString("ChangeRequestByApproverArn");
@@ -133,6 +142,42 @@ namespace Aws
           {
             return OpsItemFilterKey::OpsItemType;
           }
+          else if (hashCode == AccessRequestByRequesterArn_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByRequesterArn;
+          }
+          else if (hashCode == AccessRequestByRequesterId_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByRequesterId;
+          }
+          else if (hashCode == AccessRequestByApproverArn_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByApproverArn;
+          }
+          else if (hashCode == AccessRequestByApproverId_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByApproverId;
+          }
+          else if (hashCode == AccessRequestBySourceAccountId_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestBySourceAccountId;
+          }
+          else if (hashCode == AccessRequestBySourceOpsItemId_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestBySourceOpsItemId;
+          }
+          else if (hashCode == AccessRequestBySourceRegion_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestBySourceRegion;
+          }
+          else if (hashCode == AccessRequestByIsReplica_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByIsReplica;
+          }
+          else if (hashCode == AccessRequestByTargetResourceId_HASH)
+          {
+            return OpsItemFilterKey::AccessRequestByTargetResourceId;
+          }
           else if (hashCode == ChangeRequestByRequesterArn_HASH)
           {
             return OpsItemFilterKey::ChangeRequestByRequesterArn;
@@ -221,6 +266,24 @@ namespace Aws
             return "Severity";
           case OpsItemFilterKey::OpsItemType:
             return "OpsItemType";
+          case OpsItemFilterKey::AccessRequestByRequesterArn:
+            return "AccessRequestByRequesterArn";
+          case OpsItemFilterKey::AccessRequestByRequesterId:
+            return "AccessRequestByRequesterId";
+          case OpsItemFilterKey::AccessRequestByApproverArn:
+            return "AccessRequestByApproverArn";
+          case OpsItemFilterKey::AccessRequestByApproverId:
+            return "AccessRequestByApproverId";
+          case OpsItemFilterKey::AccessRequestBySourceAccountId:
+            return "AccessRequestBySourceAccountId";
+          case OpsItemFilterKey::AccessRequestBySourceOpsItemId:
+            return "AccessRequestBySourceOpsItemId";
+          case OpsItemFilterKey::AccessRequestBySourceRegion:
+            return "AccessRequestBySourceRegion";
+          case OpsItemFilterKey::AccessRequestByIsReplica:
+            return "AccessRequestByIsReplica";
+          case OpsItemFilterKey::AccessRequestByTargetResourceId:
+            return "AccessRequestByTargetResourceId";
           case OpsItemFilterKey::ChangeRequestByRequesterArn:
             return "ChangeRequestByRequesterArn";
           case OpsItemFilterKey::ChangeRequestByRequesterName:

@@ -33,6 +33,7 @@ namespace Model
     ChangeCalendarOverrideRejected,
     PendingApproval,
     Approved,
+    Revoked,
     Rejected,
     Closed
   };
