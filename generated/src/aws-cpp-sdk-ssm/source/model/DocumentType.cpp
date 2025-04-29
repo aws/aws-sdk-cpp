@@ -35,6 +35,8 @@ namespace Aws
         static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
         static const int ConformancePackTemplate_HASH = HashingUtils::HashString("ConformancePackTemplate");
         static const int QuickSetup_HASH = HashingUtils::HashString("QuickSetup");
+        static const int ManualApprovalPolicy_HASH = HashingUtils::HashString("ManualApprovalPolicy");
+        static const int AutoApprovalPolicy_HASH = HashingUtils::HashString("AutoApprovalPolicy");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return DocumentType::QuickSetup;
           }
+          else if (hashCode == ManualApprovalPolicy_HASH)
+          {
+            return DocumentType::ManualApprovalPolicy;
+          }
+          else if (hashCode == AutoApprovalPolicy_HASH)
+          {
+            return DocumentType::AutoApprovalPolicy;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -146,6 +156,10 @@ namespace Aws
             return "ConformancePackTemplate";
           case DocumentType::QuickSetup:
             return "QuickSetup";
+          case DocumentType::ManualApprovalPolicy:
+            return "ManualApprovalPolicy";
+          case DocumentType::AutoApprovalPolicy:
+            return "AutoApprovalPolicy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

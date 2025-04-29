@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details on a RuleSetNumberOverride.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details on phone number rule overrides for a protect
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ProtectConfigurationRuleSetNumberOverride">AWS
    * API Reference</a></p>
    */

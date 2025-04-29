@@ -78,15 +78,17 @@ namespace Model
     ///@{
     /**
      * <p>An array of URLs to each media file to send. </p> <p>The media files have to
-     * be stored in a publicly available S3 bucket. Supported media file formats are
-     * listed in <a
+     * be stored in an S3 bucket. Supported media file formats are listed in <a
      * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/mms-limitations-character.html">MMS
      * file types, size and character limits</a>. For more information on creating an
      * S3 bucket and managing objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html">Creating
-     * a bucket</a> and <a
+     * a bucket</a>, <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html">Uploading
-     * objects</a> in the S3 user guide.</p>
+     * objects</a> in the <i>Amazon S3 User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/send-mms-message.html#send-mms-message-bucket">Setting
+     * up an Amazon S3 bucket for MMS files</a> in the <i>Amazon Web Services End User
+     * Messaging SMS User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMediaUrls() const { return m_mediaUrls; }
     inline bool MediaUrlsHasBeenSet() const { return m_mediaUrlsHasBeenSet; }

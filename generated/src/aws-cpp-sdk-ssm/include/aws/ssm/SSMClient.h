@@ -1954,6 +1954,32 @@ namespace SSM
         }
 
         /**
+         * <p>Returns a credentials set to be used with just-in-time node
+         * access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAccessToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessTokenOutcome GetAccessToken(const Model::GetAccessTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccessToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccessTokenRequestT = Model::GetAccessTokenRequest>
+        Model::GetAccessTokenOutcomeCallable GetAccessTokenCallable(const GetAccessTokenRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::GetAccessToken, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccessToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccessTokenRequestT = Model::GetAccessTokenRequest>
+        void GetAccessTokenAsync(const GetAccessTokenRequestT& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::GetAccessToken, request, handler, context);
+        }
+
+        /**
          * <p>Get detailed information about a particular Automation
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
@@ -3687,6 +3713,32 @@ namespace SSM
         void SendCommandAsync(const SendCommandRequestT& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMClient::SendCommand, request, handler, context);
+        }
+
+        /**
+         * <p>Starts the workflow for just-in-time node access sessions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAccessRequest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAccessRequestOutcome StartAccessRequest(const Model::StartAccessRequestRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAccessRequest that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAccessRequestRequestT = Model::StartAccessRequestRequest>
+        Model::StartAccessRequestOutcomeCallable StartAccessRequestCallable(const StartAccessRequestRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::StartAccessRequest, request);
+        }
+
+        /**
+         * An Async wrapper for StartAccessRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAccessRequestRequestT = Model::StartAccessRequestRequest>
+        void StartAccessRequestAsync(const StartAccessRequestRequestT& request, const StartAccessRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::StartAccessRequest, request, handler, context);
         }
 
         /**

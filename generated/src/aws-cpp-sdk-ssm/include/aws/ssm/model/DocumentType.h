@@ -30,7 +30,9 @@ namespace Model
     ProblemAnalysisTemplate,
     CloudFormation,
     ConformancePackTemplate,
-    QuickSetup
+    QuickSetup,
+    ManualApprovalPolicy,
+    AutoApprovalPolicy
   };
 
 namespace DocumentTypeMapper

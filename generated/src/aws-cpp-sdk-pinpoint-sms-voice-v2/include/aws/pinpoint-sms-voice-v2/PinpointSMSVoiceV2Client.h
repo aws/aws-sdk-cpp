@@ -207,7 +207,11 @@ namespace PinpointSMSVoiceV2
          * Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a
          * message is delivered successfully, you can send information about that event to
          * an event destination, or send notifications to endpoints that are subscribed to
-         * an Amazon SNS topic.</p> <p>Each configuration set can contain between 0 and 5
+         * an Amazon SNS topic. </p> <p>You can only create one event destination at a
+         * time. You must provide a value for a single event destination using either
+         * <code>CloudWatchLogsDestination</code>, <code>KinesisFirehoseDestination</code>
+         * or <code>SnsDestination</code>. If an event destination isn't provided then an
+         * exception is returned.</p> <p>Each configuration set can contain between 0 and 5
          * event destinations. Each event destination can contain a reference to a single
          * destination, such as a CloudWatch or Firehose destination.</p><p><h3>See
          * Also:</h3>   <a
@@ -1891,7 +1895,7 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
-         * <p>Create or update a RuleSetNumberOverride and associate it with a protect
+         * <p>Create or update a phone number rule override and associate it with a protect
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutProtectConfigurationRuleSetNumberOverride">AWS
          * API Reference</a></p>
@@ -2424,9 +2428,8 @@ namespace PinpointSMSVoiceV2
         /**
          * <p>Adds or overwrites only the specified tags for the specified resource. When
          * you specify an existing tag key, the value is overwritten with the new value.
-         * Each resource can have a maximum of 50 tags. Each tag consists of a key and an
-         * optional value. Tag keys must be unique per resource. For more information about
-         * tags, see <a
+         * Each tag consists of a key and an optional value. Tag keys must be unique per
+         * resource. For more information about tags, see <a
          * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
          * </a> in the <i>AWS End User Messaging SMS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2597,10 +2600,11 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
-         * <p>Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code>
-         * messages to be sent to the specified destination counties. You can update one or
-         * multiple countries at a time. The updates are only applied to the specified
-         * NumberCapability type.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a country rule set to <code>ALLOW</code>, <code>BLOCK</code>,
+         * <code>MONITOR</code>, or <code>FILTER</code> messages to be sent to the
+         * specified destination counties. You can update one or multiple countries at a
+         * time. The updates are only applied to the specified NumberCapability
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet">AWS
          * API Reference</a></p>
          */

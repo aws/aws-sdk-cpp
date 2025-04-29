@@ -57,7 +57,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of up to 10 key-value pairs to use to create the tags.</p>
+     * <p>A set of up to 50 key-value pairs to use to create the tags. A tag consists
+     * of a required key and an optional value. You can add up to 50 tags per
+     * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

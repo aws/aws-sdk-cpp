@@ -16,7 +16,8 @@ namespace Model
   enum class AutomationSubtype
   {
     NOT_SET,
-    ChangeRequest
+    ChangeRequest,
+    AccessRequest
   };
 
 namespace AutomationSubtypeMapper

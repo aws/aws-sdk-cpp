@@ -72,8 +72,8 @@ namespace Model
      * <p>The association behavior.</p> <ul> <li> <p>
      * <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied
      * when creating a registration.</p> </li> <li> <p>
-     * <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations.
-     * The short code will be automatically provisioned once the registration is
+     * <code>ASSOCIATE_ON_APPROVAL</code> This applies to all sender ID registrations.
+     * The sender ID will be automatically provisioned once the registration is
      * approved.</p> </li> <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies
      * to phone number registrations when you must complete a registration first, then
      * associate one or more phone numbers later. For example 10DLC campaigns and long

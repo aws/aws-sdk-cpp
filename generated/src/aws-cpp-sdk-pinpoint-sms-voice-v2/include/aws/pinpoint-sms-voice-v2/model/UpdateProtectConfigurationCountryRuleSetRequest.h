@@ -66,7 +66,10 @@ namespace Model
      * country code. For a list of supported ISO country codes, see <a
      * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported
      * countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User
-     * Guide.</p>
+     * Guide.</p> <p>For example, to set the United States as allowed and Canada as
+     * blocked, the <code>CountryRuleSetUpdates</code> would be formatted as:
+     * <code>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW" } "CA" : {
+     * "ProtectStatus": "BLOCK" } }</code> </p>
      */
     inline const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& GetCountryRuleSetUpdates() const { return m_countryRuleSetUpdates; }
     inline bool CountryRuleSetUpdatesHasBeenSet() const { return m_countryRuleSetUpdatesHasBeenSet; }
