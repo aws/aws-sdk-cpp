@@ -134,8 +134,8 @@ namespace CloudWatchLogs
          * group query results, then all the associated stored log events or query results
          * that were encrypted with that key will be unencryptable and unusable.</p>
          *   <p>CloudWatch Logs supports only symmetric KMS keys. Do not
-         * use an associate an asymmetric KMS key with your log group or query results. For
-         * more information, see <a
+         * associate an asymmetric KMS key with your log group or query results. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
          * Symmetric and Asymmetric Keys</a>.</p>  <p>It can take up to 5 minutes
          * for this operation to take effect.</p> <p>If you attempt to associate a KMS key
@@ -264,7 +264,7 @@ namespace CloudWatchLogs
          * same S3 bucket. To separate log data for each export task, specify a prefix to
          * be used as the Amazon S3 key prefix for all exported objects.</p>  <p>We
          * recommend that you don't regularly export to Amazon S3 as a way to continuously
-         * archive your logs. For that use case, we instaed recommend that you use
+         * archive your logs. For that use case, we instead recommend that you use
          * subscriptions. For more information about subscriptions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
          * processing of log data with subscriptions</a>.</p>   <p>Time-based
@@ -955,7 +955,7 @@ namespace CloudWatchLogs
          * <code>logs:GetDataProtectionPolicy</code> and
          * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
          * subscription filter policies, you must have the
-         * <code>logs:DescrubeSubscriptionFilters</code> and
+         * <code>logs:DescribeSubscriptionFilters</code> and
          * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
          * transformer policies, you must have the <code>logs:GetTransformer</code> and
          * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
@@ -2626,8 +2626,8 @@ namespace CloudWatchLogs
          * timestamp is specified in .NET format: <code>yyyy-mm-ddThh:mm:ss</code>. For
          * example, <code>2017-09-15T13:45:30</code>.) </p> </li> <li> <p>A batch of log
          * events in a single request cannot span more than 24 hours. Otherwise, the
-         * operation fails.</p> </li> <li> <p>Each log event can be no larger than 256
-         * KB.</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p>
+         * operation fails.</p> </li> <li> <p>Each log event can be no larger than 1
+         * MB.</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p>
          * </li> <li>  <p>The quota of five requests per second per log stream
          * has been removed. Instead, <code>PutLogEvents</code> actions are throttled based
          * on a per-second per-account quota. You can request an increase to the per-second
@@ -2951,11 +2951,14 @@ namespace CloudWatchLogs
          * <p>A <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
          * object is returned when the session times out, after it has been kept open for
-         * three hours.</p> </li> </ul>  <p>You can end a session before it
-         * times out by closing the session stream or by closing the client that is
-         * receiving the stream. The session also ends if the established connection
-         * between the client and the server breaks.</p>  <p>For examples of
-         * using an SDK to start a Live Tail session, see <a
+         * three hours.</p> </li> </ul>  <p>The <code>StartLiveTail</code> API routes
+         * requests to <code>streaming-logs.<i>Region</i>.amazonaws.com</code> using SDK
+         * host prefix injection. VPC endpoint support is not available for this API.</p>
+         *   <p>You can end a session before it times out by closing the
+         * session stream or by closing the client that is receiving the stream. The
+         * session also ends if the established connection between the client and the
+         * server breaks.</p>  <p>For examples of using an SDK to start a Live
+         * Tail session, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html">
          * Start a Live Tail session using an Amazon Web Services SDK</a>.</p><p><h3>See
          * Also:</h3>   <a

@@ -67,8 +67,16 @@ namespace Model
      * enable performance protection by specifying a supported instance family, the
      * returned instance types will exclude the above unsupported instance
      * families.</p> <p>If you specify an unsupported instance family as a value for
-     * baseline performance, the API returns an empty response for and an exception for
-     * , , , and .</p>
+     * baseline performance, the API returns an empty response for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a>
+     * and an exception for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
      */
     inline const Aws::String& GetInstanceFamily() const { return m_instanceFamily; }
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }

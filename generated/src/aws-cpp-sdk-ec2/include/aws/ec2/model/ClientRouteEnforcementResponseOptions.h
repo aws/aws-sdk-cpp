@@ -22,9 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The current status of client route enforcement. The state will either be
-   * <code>true</code> (enabled) or <code>false</code> (disabled).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The current status of Client Route Enforcement. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientRouteEnforcementResponseOptions">AWS
    * API Reference</a></p>
    */
@@ -41,8 +40,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the client route enforcement feature.</p> <p>Valid values:
-     * <code>true | false</code> </p> <p>Default value: <code>false</code> </p>
+     * <p>Status of the client route enforcement feature, indicating whether Client
+     * Route Enforcement is <code>true</code> (enabled) or <code>false</code>
+     * (disabled).</p> <p>Valid values: <code>true | false</code> </p> <p>Default
+     * value: <code>false</code> </p>
      */
     inline bool GetEnforced() const { return m_enforced; }
     inline bool EnforcedHasBeenSet() const { return m_enforcedHasBeenSet; }

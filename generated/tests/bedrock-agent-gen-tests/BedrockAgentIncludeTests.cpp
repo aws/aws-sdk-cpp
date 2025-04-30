@@ -209,6 +209,7 @@
 #include <aws/bedrock-agent/model/IngestionJobStatistics.h>
 #include <aws/bedrock-agent/model/IngestionJobStatus.h>
 #include <aws/bedrock-agent/model/IngestionJobSummary.h>
+#include <aws/bedrock-agent/model/InlineCodeFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/InlineContent.h>
 #include <aws/bedrock-agent/model/InlineContentType.h>
 #include <aws/bedrock-agent/model/InputFlowNodeConfiguration.h>
@@ -377,6 +378,7 @@
 #include <aws/bedrock-agent/model/SupplementalDataStorageConfiguration.h>
 #include <aws/bedrock-agent/model/SupplementalDataStorageLocation.h>
 #include <aws/bedrock-agent/model/SupplementalDataStorageLocationType.h>
+#include <aws/bedrock-agent/model/SupportedLanguages.h>
 #include <aws/bedrock-agent/model/SystemContentBlock.h>
 #include <aws/bedrock-agent/model/TagResourceRequest.h>
 #include <aws/bedrock-agent/model/TagResourceResult.h>

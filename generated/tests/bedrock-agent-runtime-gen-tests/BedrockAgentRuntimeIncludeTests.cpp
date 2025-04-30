@@ -58,6 +58,7 @@
 #include <aws/bedrock-agent-runtime/model/CreateSessionResult.h>
 #include <aws/bedrock-agent-runtime/model/CreationMode.h>
 #include <aws/bedrock-agent-runtime/model/CustomControlMethod.h>
+#include <aws/bedrock-agent-runtime/model/CustomOrchestration.h>
 #include <aws/bedrock-agent-runtime/model/CustomOrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/CustomOrchestrationTraceEvent.h>
 #include <aws/bedrock-agent-runtime/model/DeleteAgentMemoryRequest.h>
@@ -215,8 +216,10 @@
 #include <aws/bedrock-agent-runtime/model/OptimizedPromptEvent.h>
 #include <aws/bedrock-agent-runtime/model/OptimizedPromptStream.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/OrchestrationExecutor.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationModelInvocationOutput.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationTrace.h>
+#include <aws/bedrock-agent-runtime/model/OrchestrationType.h>
 #include <aws/bedrock-agent-runtime/model/OutputFile.h>
 #include <aws/bedrock-agent-runtime/model/Parameter.h>
 #include <aws/bedrock-agent-runtime/model/ParameterDetail.h>

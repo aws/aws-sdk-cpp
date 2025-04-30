@@ -40,6 +40,11 @@ CustomerManagedFleetConfiguration& CustomerManagedFleetConfiguration::operator =
     m_storageProfileId = jsonValue.GetString("storageProfileId");
     m_storageProfileIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tagPropagationMode"))
+  {
+    m_tagPropagationMode = TagPropagationModeMapper::GetTagPropagationModeForName(jsonValue.GetString("tagPropagationMode"));
+    m_tagPropagationModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,11 @@ JsonValue CustomerManagedFleetConfiguration::Jsonize() const
   {
    payload.WithString("storageProfileId", m_storageProfileId);
 
+  }
+
+  if(m_tagPropagationModeHasBeenSet)
+  {
+   payload.WithString("tagPropagationMode", TagPropagationModeMapper::GetNameForTagPropagationMode(m_tagPropagationMode));
   }
 
   return payload;

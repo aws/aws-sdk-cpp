@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The raw event message. Each log event can be no larger than 256 KB.</p>
+     * <p>The raw event message. Each log event can be no larger than 1 MB.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

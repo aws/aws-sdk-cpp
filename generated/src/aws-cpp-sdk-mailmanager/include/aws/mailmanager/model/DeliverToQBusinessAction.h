@@ -44,7 +44,7 @@ namespace Model
      * <p>A policy that states what to do in the case of failure. The action will fail
      * if there are configuration errors. For example, the specified application has
      * been deleted or the role lacks necessary permissions to call the
-     * qbusiness:BatchPutDocument API.</p>
+     * <code>qbusiness:BatchPutDocument</code> API.</p>
      */
     inline ActionFailurePolicy GetActionFailurePolicy() const { return m_actionFailurePolicy; }
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
@@ -81,8 +81,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM Role to use while delivering to
-     * Amazon Q Business. This role must have access to the qbusiness:BatchPutDocument
-     * API for the given application and index.</p>
+     * Amazon Q Business. This role must have access to the
+     * <code>qbusiness:BatchPutDocument</code> API for the given application and
+     * index.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

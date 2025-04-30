@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelCustomizationJobStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock/model/StatusDetails.h>
 #include <aws/bedrock/model/CustomizationType.h>
 #include <utility>
 
@@ -100,6 +101,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about the status of the data processing sub-task of the job.</p>
+     */
+    inline const StatusDetails& GetStatusDetails() const { return m_statusDetails; }
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+    template<typename StatusDetailsT = StatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StatusDetails>
+    ModelCustomizationJobSummary& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Creation time of the custom model. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
@@ -174,6 +187,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
+
+    StatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;

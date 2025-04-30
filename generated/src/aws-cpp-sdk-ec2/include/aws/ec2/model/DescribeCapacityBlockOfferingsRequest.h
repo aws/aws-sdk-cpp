@@ -65,7 +65,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity. Each Capacity Block
+     * can have up to 64 instances, and you can have up to 256 instances across
+     * Capacity Blocks.</p>
      */
     inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
@@ -99,7 +101,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of hours for which to reserve Capacity Block.</p>
+     * <p>The reservation duration for the Capacity Block, in hours. You must specify
+     * the duration in 1-day increments up 14 days, and in 7-day increments up to 182
+     * days.</p>
      */
     inline int GetCapacityDurationHours() const { return m_capacityDurationHours; }
     inline bool CapacityDurationHoursHasBeenSet() const { return m_capacityDurationHoursHasBeenSet; }

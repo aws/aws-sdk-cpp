@@ -55,6 +55,7 @@
 #include <aws/bedrock/model/CustomModelUnits.h>
 #include <aws/bedrock/model/CustomizationConfig.h>
 #include <aws/bedrock/model/CustomizationType.h>
+#include <aws/bedrock/model/DataProcessingDetails.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
 #include <aws/bedrock/model/DeleteGuardrailRequest.h>
@@ -185,6 +186,7 @@
 #include <aws/bedrock/model/InferenceType.h>
 #include <aws/bedrock/model/InvocationLogSource.h>
 #include <aws/bedrock/model/InvocationLogsConfig.h>
+#include <aws/bedrock/model/JobStatusDetails.h>
 #include <aws/bedrock/model/KbInferenceConfig.h>
 #include <aws/bedrock/model/KnowledgeBaseConfig.h>
 #include <aws/bedrock/model/KnowledgeBaseRetrievalConfiguration.h>
@@ -274,6 +276,7 @@
 #include <aws/bedrock/model/SortModelsBy.h>
 #include <aws/bedrock/model/SortOrder.h>
 #include <aws/bedrock/model/Status.h>
+#include <aws/bedrock/model/StatusDetails.h>
 #include <aws/bedrock/model/StopEvaluationJobRequest.h>
 #include <aws/bedrock/model/StopEvaluationJobResult.h>
 #include <aws/bedrock/model/StopModelCustomizationJobRequest.h>
@@ -287,6 +290,7 @@
 #include <aws/bedrock/model/TextInferenceConfig.h>
 #include <aws/bedrock/model/TooManyTagsException.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
+#include <aws/bedrock/model/TrainingDetails.h>
 #include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/bedrock/model/UntagResourceRequest.h>
 #include <aws/bedrock/model/UntagResourceResult.h>
@@ -297,6 +301,7 @@
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
+#include <aws/bedrock/model/ValidationDetails.h>
 #include <aws/bedrock/model/Validator.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <aws/bedrock/model/VpcConfig.h>

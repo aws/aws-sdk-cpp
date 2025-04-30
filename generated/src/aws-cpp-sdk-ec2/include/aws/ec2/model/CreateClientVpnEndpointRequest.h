@@ -319,7 +319,7 @@ namespace Model
      * timeout specified in <code>SessionTimeoutHours</code> is reached. If
      * <code>true</code>, users are prompted to reconnect client VPN. If
      * <code>false</code>, client VPN attempts to reconnect automatically. The default
-     * value is <code>false</code>.</p>
+     * value is <code>true</code>.</p>
      */
     inline bool GetDisconnectOnSessionTimeout() const { return m_disconnectOnSessionTimeout; }
     inline bool DisconnectOnSessionTimeoutHasBeenSet() const { return m_disconnectOnSessionTimeoutHasBeenSet; }

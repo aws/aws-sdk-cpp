@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamState.h>
 #include <aws/ec2/model/IpamTier.h>
+#include <aws/ec2/model/IpamMeteredAccount.h>
 #include <aws/ec2/model/IpamOperatingRegion.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -262,6 +263,24 @@ namespace Model
     inline void SetEnablePrivateGua(bool value) { m_enablePrivateGuaHasBeenSet = true; m_enablePrivateGua = value; }
     inline Ipam& WithEnablePrivateGua(bool value) { SetEnablePrivateGua(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A metered account is an Amazon Web Services account that is charged for
+     * active IP addresses managed in IPAM. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable
+     * cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p> <p>Possible
+     * values:</p> <ul> <li> <p> <code>ipam-owner</code> (default): The Amazon Web
+     * Services account which owns the IPAM is charged for all active IP addresses
+     * managed in IPAM.</p> </li> <li> <p> <code>resource-owner</code>: The Amazon Web
+     * Services account that owns the IP address is charged for the active IP
+     * address.</p> </li> </ul>
+     */
+    inline IpamMeteredAccount GetMeteredAccount() const { return m_meteredAccount; }
+    inline bool MeteredAccountHasBeenSet() const { return m_meteredAccountHasBeenSet; }
+    inline void SetMeteredAccount(IpamMeteredAccount value) { m_meteredAccountHasBeenSet = true; m_meteredAccount = value; }
+    inline Ipam& WithMeteredAccount(IpamMeteredAccount value) { SetMeteredAccount(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -314,6 +333,9 @@ namespace Model
 
     bool m_enablePrivateGua{false};
     bool m_enablePrivateGuaHasBeenSet = false;
+
+    IpamMeteredAccount m_meteredAccount{IpamMeteredAccount::NOT_SET};
+    bool m_meteredAccountHasBeenSet = false;
   };
 
 } // namespace Model

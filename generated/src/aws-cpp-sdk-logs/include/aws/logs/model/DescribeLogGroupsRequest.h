@@ -128,11 +128,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the log group class for this log group. There are two classes:</p>
-     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
-     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
-     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
-     * </ul> <p>For details about the features supported by each class, see <a
+     * <p>Specifies the log group class for this log group. There are three
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> <li> <p>Use the <code>Delivery</code> log class only for
+     * delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events
+     * in log groups in the Delivery class are kept in CloudWatch Logs for only one
+     * day. This log class doesn't offer rich CloudWatch Logs capabilities such as
+     * CloudWatch Logs Insights queries.</p> </li> </ul> <p>For details about the
+     * features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */

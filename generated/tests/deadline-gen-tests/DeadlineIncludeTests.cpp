@@ -364,6 +364,7 @@
 #include <aws/deadline/model/StringFilterExpression.h>
 #include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinition.h>
 #include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinitionSummary.h>
+#include <aws/deadline/model/TagPropagationMode.h>
 #include <aws/deadline/model/TagResourceRequest.h>
 #include <aws/deadline/model/TagResourceResult.h>
 #include <aws/deadline/model/TaskParameterValue.h>

@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The distillation configuration for the custom model.</p>
+     * <p>The Distillation configuration for the custom model.</p>
      */
     inline const DistillationConfig& GetDistillationConfig() const { return m_distillationConfig; }
     inline bool DistillationConfigHasBeenSet() const { return m_distillationConfigHasBeenSet; }

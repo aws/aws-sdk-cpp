@@ -321,6 +321,9 @@
 #include <aws/cleanrooms/model/ProtectedJobSummary.h>
 #include <aws/cleanrooms/model/ProtectedJobType.h>
 #include <aws/cleanrooms/model/ProtectedQuery.h>
+#include <aws/cleanrooms/model/ProtectedQueryDistributeOutput.h>
+#include <aws/cleanrooms/model/ProtectedQueryDistributeOutputConfiguration.h>
+#include <aws/cleanrooms/model/ProtectedQueryDistributeOutputConfigurationLocation.h>
 #include <aws/cleanrooms/model/ProtectedQueryError.h>
 #include <aws/cleanrooms/model/ProtectedQueryMemberOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryOutput.h>

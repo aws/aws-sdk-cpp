@@ -141,7 +141,7 @@ namespace Model
      * <p>Specifies whether to allow the agent to carry out the step specified in the
      * <code>promptType</code>. If you set this value to <code>DISABLED</code>, the
      * agent skips that step. The default state for each <code>promptType</code> is as
-     * follows.</p> <ul> <li> <p> <code>PRE_PROCESSING</code> – <code>ENABLED</code>
+     * follows.</p> <ul> <li> <p> <code>PRE_PROCESSING</code> – <code>DISABLED</code>
      * </p> </li> <li> <p> <code>ORCHESTRATION</code> – <code>ENABLED</code> </p> </li>
      * <li> <p> <code>KNOWLEDGE_BASE_RESPONSE_GENERATION</code> – <code>ENABLED</code>
      * </p> </li> <li> <p> <code>POST_PROCESSING</code> – <code>DISABLED</code> </p>

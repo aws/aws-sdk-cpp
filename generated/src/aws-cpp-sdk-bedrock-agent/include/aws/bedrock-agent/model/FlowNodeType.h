@@ -27,7 +27,8 @@ namespace Model
     Agent,
     Retrieval,
     Iterator,
-    Collector
+    Collector,
+    InlineCode
   };
 
 namespace FlowNodeTypeMapper

@@ -8,6 +8,7 @@
 #include <aws/deadline/model/AutoScalingMode.h>
 #include <aws/deadline/model/CustomerManagedWorkerCapabilities.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/model/TagPropagationMode.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,22 @@ namespace Model
     template<typename StorageProfileIdT = Aws::String>
     CustomerManagedFleetConfiguration& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether tags associated with a fleet are attached to workers when
+     * the worker is launched. </p> <p>When the <code>tagPropagationMode</code> is set
+     * to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a
+     * fleet is attached to workers when they launch. If the tags for a fleet change,
+     * the tags associated with running workers <b>do not</b> change.</p> <p>If you
+     * don't specify <code>tagPropagationMode</code>, the default is
+     * <code>NO_PROPAGATION</code>.</p>
+     */
+    inline TagPropagationMode GetTagPropagationMode() const { return m_tagPropagationMode; }
+    inline bool TagPropagationModeHasBeenSet() const { return m_tagPropagationModeHasBeenSet; }
+    inline void SetTagPropagationMode(TagPropagationMode value) { m_tagPropagationModeHasBeenSet = true; m_tagPropagationMode = value; }
+    inline CustomerManagedFleetConfiguration& WithTagPropagationMode(TagPropagationMode value) { SetTagPropagationMode(value); return *this;}
+    ///@}
   private:
 
     AutoScalingMode m_mode{AutoScalingMode::NOT_SET};
@@ -83,6 +100,9 @@ namespace Model
 
     Aws::String m_storageProfileId;
     bool m_storageProfileIdHasBeenSet = false;
+
+    TagPropagationMode m_tagPropagationMode{TagPropagationMode::NOT_SET};
+    bool m_tagPropagationModeHasBeenSet = false;
   };
 
 } // namespace Model

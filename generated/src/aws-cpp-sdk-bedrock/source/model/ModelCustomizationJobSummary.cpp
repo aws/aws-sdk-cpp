@@ -50,6 +50,11 @@ ModelCustomizationJobSummary& ModelCustomizationJobSummary::operator =(JsonView 
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("statusDetails"))
+  {
+    m_statusDetails = jsonValue.GetObject("statusDetails");
+    m_statusDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
@@ -108,6 +113,12 @@ JsonValue ModelCustomizationJobSummary::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_statusDetailsHasBeenSet)
+  {
+   payload.WithObject("statusDetails", m_statusDetails.Jsonize());
+
   }
 
   if(m_creationTimeHasBeenSet)
