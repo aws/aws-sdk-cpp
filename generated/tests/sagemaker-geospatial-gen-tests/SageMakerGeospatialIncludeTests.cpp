@@ -1,0 +1,154 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointProvider.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointRules.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialErrorMarshaller.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialErrors.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialRequest.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialServiceClientModel.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
+#include <aws/sagemaker-geospatial/model/AlgorithmNameCloudRemoval.h>
+#include <aws/sagemaker-geospatial/model/AlgorithmNameGeoMosaic.h>
+#include <aws/sagemaker-geospatial/model/AlgorithmNameResampling.h>
+#include <aws/sagemaker-geospatial/model/AreaOfInterest.h>
+#include <aws/sagemaker-geospatial/model/AreaOfInterestGeometry.h>
+#include <aws/sagemaker-geospatial/model/AssetValue.h>
+#include <aws/sagemaker-geospatial/model/BandMathConfigInput.h>
+#include <aws/sagemaker-geospatial/model/CloudMaskingConfigInput.h>
+#include <aws/sagemaker-geospatial/model/CloudRemovalConfigInput.h>
+#include <aws/sagemaker-geospatial/model/ComparisonOperator.h>
+#include <aws/sagemaker-geospatial/model/ConflictException.h>
+#include <aws/sagemaker-geospatial/model/CustomIndicesInput.h>
+#include <aws/sagemaker-geospatial/model/DataCollectionType.h>
+#include <aws/sagemaker-geospatial/model/DeleteEarthObservationJobRequest.h>
+#include <aws/sagemaker-geospatial/model/DeleteEarthObservationJobResult.h>
+#include <aws/sagemaker-geospatial/model/DeleteVectorEnrichmentJobRequest.h>
+#include <aws/sagemaker-geospatial/model/DeleteVectorEnrichmentJobResult.h>
+#include <aws/sagemaker-geospatial/model/EarthObservationJobErrorDetails.h>
+#include <aws/sagemaker-geospatial/model/EarthObservationJobErrorType.h>
+#include <aws/sagemaker-geospatial/model/EarthObservationJobExportStatus.h>
+#include <aws/sagemaker-geospatial/model/EarthObservationJobStatus.h>
+#include <aws/sagemaker-geospatial/model/EoCloudCoverInput.h>
+#include <aws/sagemaker-geospatial/model/ExportEarthObservationJobRequest.h>
+#include <aws/sagemaker-geospatial/model/ExportEarthObservationJobResult.h>
+#include <aws/sagemaker-geospatial/model/ExportErrorDetails.h>
+#include <aws/sagemaker-geospatial/model/ExportErrorDetailsOutput.h>
+#include <aws/sagemaker-geospatial/model/ExportErrorType.h>
+#include <aws/sagemaker-geospatial/model/ExportS3DataInput.h>
+#include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobOutputConfig.h>
+#include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobRequest.h>
+#include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobResult.h>
+#include <aws/sagemaker-geospatial/model/Filter.h>
+#include <aws/sagemaker-geospatial/model/GeoMosaicConfigInput.h>
+#include <aws/sagemaker-geospatial/model/Geometry.h>
+#include <aws/sagemaker-geospatial/model/GetEarthObservationJobRequest.h>
+#include <aws/sagemaker-geospatial/model/GetEarthObservationJobResult.h>
+#include <aws/sagemaker-geospatial/model/GetRasterDataCollectionRequest.h>
+#include <aws/sagemaker-geospatial/model/GetRasterDataCollectionResult.h>
+#include <aws/sagemaker-geospatial/model/GetTileRequest.h>
+#include <aws/sagemaker-geospatial/model/GetTileResult.h>
+#include <aws/sagemaker-geospatial/model/GetVectorEnrichmentJobRequest.h>
+#include <aws/sagemaker-geospatial/model/GetVectorEnrichmentJobResult.h>
+#include <aws/sagemaker-geospatial/model/GroupBy.h>
+#include <aws/sagemaker-geospatial/model/InputConfigInput.h>
+#include <aws/sagemaker-geospatial/model/InputConfigOutput.h>
+#include <aws/sagemaker-geospatial/model/InternalServerException.h>
+#include <aws/sagemaker-geospatial/model/ItemSource.h>
+#include <aws/sagemaker-geospatial/model/JobConfigInput.h>
+#include <aws/sagemaker-geospatial/model/LandCoverSegmentationConfigInput.h>
+#include <aws/sagemaker-geospatial/model/LandsatCloudCoverLandInput.h>
+#include <aws/sagemaker-geospatial/model/ListEarthObservationJobOutputConfig.h>
+#include <aws/sagemaker-geospatial/model/ListEarthObservationJobsRequest.h>
+#include <aws/sagemaker-geospatial/model/ListEarthObservationJobsResult.h>
+#include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsRequest.h>
+#include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsResult.h>
+#include <aws/sagemaker-geospatial/model/ListTagsForResourceRequest.h>
+#include <aws/sagemaker-geospatial/model/ListTagsForResourceResult.h>
+#include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobOutputConfig.h>
+#include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsRequest.h>
+#include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsResult.h>
+#include <aws/sagemaker-geospatial/model/LogicalOperator.h>
+#include <aws/sagemaker-geospatial/model/MapMatchingConfig.h>
+#include <aws/sagemaker-geospatial/model/MultiPolygonGeometryInput.h>
+#include <aws/sagemaker-geospatial/model/Operation.h>
+#include <aws/sagemaker-geospatial/model/OutputBand.h>
+#include <aws/sagemaker-geospatial/model/OutputConfigInput.h>
+#include <aws/sagemaker-geospatial/model/OutputResolutionResamplingInput.h>
+#include <aws/sagemaker-geospatial/model/OutputResolutionStackInput.h>
+#include <aws/sagemaker-geospatial/model/OutputType.h>
+#include <aws/sagemaker-geospatial/model/PlatformInput.h>
+#include <aws/sagemaker-geospatial/model/PolygonGeometryInput.h>
+#include <aws/sagemaker-geospatial/model/PredefinedResolution.h>
+#include <aws/sagemaker-geospatial/model/Properties.h>
+#include <aws/sagemaker-geospatial/model/Property.h>
+#include <aws/sagemaker-geospatial/model/PropertyFilter.h>
+#include <aws/sagemaker-geospatial/model/PropertyFilters.h>
+#include <aws/sagemaker-geospatial/model/RasterDataCollectionMetadata.h>
+#include <aws/sagemaker-geospatial/model/RasterDataCollectionQueryInput.h>
+#include <aws/sagemaker-geospatial/model/RasterDataCollectionQueryOutput.h>
+#include <aws/sagemaker-geospatial/model/RasterDataCollectionQueryWithBandFilterInput.h>
+#include <aws/sagemaker-geospatial/model/ResamplingConfigInput.h>
+#include <aws/sagemaker-geospatial/model/ResourceNotFoundException.h>
+#include <aws/sagemaker-geospatial/model/ReverseGeocodingConfig.h>
+#include <aws/sagemaker-geospatial/model/SearchRasterDataCollectionRequest.h>
+#include <aws/sagemaker-geospatial/model/SearchRasterDataCollectionResult.h>
+#include <aws/sagemaker-geospatial/model/ServiceQuotaExceededException.h>
+#include <aws/sagemaker-geospatial/model/SortOrder.h>
+#include <aws/sagemaker-geospatial/model/StackConfigInput.h>
+#include <aws/sagemaker-geospatial/model/StartEarthObservationJobRequest.h>
+#include <aws/sagemaker-geospatial/model/StartEarthObservationJobResult.h>
+#include <aws/sagemaker-geospatial/model/StartVectorEnrichmentJobRequest.h>
+#include <aws/sagemaker-geospatial/model/StartVectorEnrichmentJobResult.h>
+#include <aws/sagemaker-geospatial/model/StopEarthObservationJobRequest.h>
+#include <aws/sagemaker-geospatial/model/StopEarthObservationJobResult.h>
+#include <aws/sagemaker-geospatial/model/StopVectorEnrichmentJobRequest.h>
+#include <aws/sagemaker-geospatial/model/StopVectorEnrichmentJobResult.h>
+#include <aws/sagemaker-geospatial/model/TagResourceRequest.h>
+#include <aws/sagemaker-geospatial/model/TagResourceResult.h>
+#include <aws/sagemaker-geospatial/model/TargetOptions.h>
+#include <aws/sagemaker-geospatial/model/TemporalStatistics.h>
+#include <aws/sagemaker-geospatial/model/TemporalStatisticsConfigInput.h>
+#include <aws/sagemaker-geospatial/model/ThrottlingException.h>
+#include <aws/sagemaker-geospatial/model/TimeRangeFilterInput.h>
+#include <aws/sagemaker-geospatial/model/TimeRangeFilterOutput.h>
+#include <aws/sagemaker-geospatial/model/Unit.h>
+#include <aws/sagemaker-geospatial/model/UntagResourceRequest.h>
+#include <aws/sagemaker-geospatial/model/UntagResourceResult.h>
+#include <aws/sagemaker-geospatial/model/UserDefined.h>
+#include <aws/sagemaker-geospatial/model/ValidationException.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobConfig.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobDataSourceConfigInput.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobDocumentType.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobErrorDetails.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobErrorType.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobExportErrorDetails.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobExportErrorType.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobExportStatus.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobInputConfig.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobS3Data.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobStatus.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobType.h>
+#include <aws/sagemaker-geospatial/model/ViewOffNadirInput.h>
+#include <aws/sagemaker-geospatial/model/ViewSunAzimuthInput.h>
+#include <aws/sagemaker-geospatial/model/ViewSunElevationInput.h>
+#include <aws/sagemaker-geospatial/model/ZonalStatistics.h>
+#include <aws/sagemaker-geospatial/model/ZonalStatisticsConfigInput.h>
+
+using SageMakerGeospatialIncludeTest = ::testing::Test;
+
+TEST_F(SageMakerGeospatialIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::SageMakerGeospatial::SageMakerGeospatialClient>("SageMakerGeospatialIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

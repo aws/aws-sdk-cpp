@@ -1,0 +1,166 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/groundstation/GroundStationClient.h>
+#include <aws/groundstation/GroundStationEndpointProvider.h>
+#include <aws/groundstation/GroundStationEndpointRules.h>
+#include <aws/groundstation/GroundStationErrorMarshaller.h>
+#include <aws/groundstation/GroundStationErrors.h>
+#include <aws/groundstation/GroundStationRequest.h>
+#include <aws/groundstation/GroundStationServiceClientModel.h>
+#include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/AgentDetails.h>
+#include <aws/groundstation/model/AgentStatus.h>
+#include <aws/groundstation/model/AggregateStatus.h>
+#include <aws/groundstation/model/AngleUnits.h>
+#include <aws/groundstation/model/AntennaDemodDecodeDetails.h>
+#include <aws/groundstation/model/AntennaDownlinkConfig.h>
+#include <aws/groundstation/model/AntennaDownlinkDemodDecodeConfig.h>
+#include <aws/groundstation/model/AntennaUplinkConfig.h>
+#include <aws/groundstation/model/AuditResults.h>
+#include <aws/groundstation/model/AwsGroundStationAgentEndpoint.h>
+#include <aws/groundstation/model/BandwidthUnits.h>
+#include <aws/groundstation/model/CancelContactRequest.h>
+#include <aws/groundstation/model/CancelContactResult.h>
+#include <aws/groundstation/model/CapabilityHealth.h>
+#include <aws/groundstation/model/CapabilityHealthReason.h>
+#include <aws/groundstation/model/ComponentStatusData.h>
+#include <aws/groundstation/model/ComponentVersion.h>
+#include <aws/groundstation/model/ConfigCapabilityType.h>
+#include <aws/groundstation/model/ConfigDetails.h>
+#include <aws/groundstation/model/ConfigListItem.h>
+#include <aws/groundstation/model/ConfigTypeData.h>
+#include <aws/groundstation/model/ConnectionDetails.h>
+#include <aws/groundstation/model/ContactData.h>
+#include <aws/groundstation/model/ContactStatus.h>
+#include <aws/groundstation/model/CreateConfigRequest.h>
+#include <aws/groundstation/model/CreateConfigResult.h>
+#include <aws/groundstation/model/CreateDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/CreateDataflowEndpointGroupResult.h>
+#include <aws/groundstation/model/CreateEphemerisRequest.h>
+#include <aws/groundstation/model/CreateEphemerisResult.h>
+#include <aws/groundstation/model/CreateMissionProfileRequest.h>
+#include <aws/groundstation/model/CreateMissionProfileResult.h>
+#include <aws/groundstation/model/Criticality.h>
+#include <aws/groundstation/model/DataflowDetail.h>
+#include <aws/groundstation/model/DataflowEndpoint.h>
+#include <aws/groundstation/model/DataflowEndpointConfig.h>
+#include <aws/groundstation/model/DataflowEndpointListItem.h>
+#include <aws/groundstation/model/DecodeConfig.h>
+#include <aws/groundstation/model/DeleteConfigRequest.h>
+#include <aws/groundstation/model/DeleteConfigResult.h>
+#include <aws/groundstation/model/DeleteDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/DeleteDataflowEndpointGroupResult.h>
+#include <aws/groundstation/model/DeleteEphemerisRequest.h>
+#include <aws/groundstation/model/DeleteEphemerisResult.h>
+#include <aws/groundstation/model/DeleteMissionProfileRequest.h>
+#include <aws/groundstation/model/DeleteMissionProfileResult.h>
+#include <aws/groundstation/model/DemodulationConfig.h>
+#include <aws/groundstation/model/DependencyException.h>
+#include <aws/groundstation/model/DescribeContactRequest.h>
+#include <aws/groundstation/model/DescribeContactResult.h>
+#include <aws/groundstation/model/DescribeEphemerisRequest.h>
+#include <aws/groundstation/model/DescribeEphemerisResult.h>
+#include <aws/groundstation/model/Destination.h>
+#include <aws/groundstation/model/DiscoveryData.h>
+#include <aws/groundstation/model/Eirp.h>
+#include <aws/groundstation/model/EirpUnits.h>
+#include <aws/groundstation/model/Elevation.h>
+#include <aws/groundstation/model/EndpointDetails.h>
+#include <aws/groundstation/model/EndpointStatus.h>
+#include <aws/groundstation/model/EphemerisData.h>
+#include <aws/groundstation/model/EphemerisDescription.h>
+#include <aws/groundstation/model/EphemerisInvalidReason.h>
+#include <aws/groundstation/model/EphemerisItem.h>
+#include <aws/groundstation/model/EphemerisMetaData.h>
+#include <aws/groundstation/model/EphemerisSource.h>
+#include <aws/groundstation/model/EphemerisStatus.h>
+#include <aws/groundstation/model/EphemerisTypeDescription.h>
+#include <aws/groundstation/model/Frequency.h>
+#include <aws/groundstation/model/FrequencyBandwidth.h>
+#include <aws/groundstation/model/FrequencyUnits.h>
+#include <aws/groundstation/model/GetAgentConfigurationRequest.h>
+#include <aws/groundstation/model/GetAgentConfigurationResult.h>
+#include <aws/groundstation/model/GetConfigRequest.h>
+#include <aws/groundstation/model/GetConfigResult.h>
+#include <aws/groundstation/model/GetDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/GetDataflowEndpointGroupResult.h>
+#include <aws/groundstation/model/GetMinuteUsageRequest.h>
+#include <aws/groundstation/model/GetMinuteUsageResult.h>
+#include <aws/groundstation/model/GetMissionProfileRequest.h>
+#include <aws/groundstation/model/GetMissionProfileResult.h>
+#include <aws/groundstation/model/GetSatelliteRequest.h>
+#include <aws/groundstation/model/GetSatelliteResult.h>
+#include <aws/groundstation/model/GroundStationData.h>
+#include <aws/groundstation/model/IntegerRange.h>
+#include <aws/groundstation/model/InvalidParameterException.h>
+#include <aws/groundstation/model/KmsKey.h>
+#include <aws/groundstation/model/ListConfigsRequest.h>
+#include <aws/groundstation/model/ListConfigsResult.h>
+#include <aws/groundstation/model/ListContactsRequest.h>
+#include <aws/groundstation/model/ListContactsResult.h>
+#include <aws/groundstation/model/ListDataflowEndpointGroupsRequest.h>
+#include <aws/groundstation/model/ListDataflowEndpointGroupsResult.h>
+#include <aws/groundstation/model/ListEphemeridesRequest.h>
+#include <aws/groundstation/model/ListEphemeridesResult.h>
+#include <aws/groundstation/model/ListGroundStationsRequest.h>
+#include <aws/groundstation/model/ListGroundStationsResult.h>
+#include <aws/groundstation/model/ListMissionProfilesRequest.h>
+#include <aws/groundstation/model/ListMissionProfilesResult.h>
+#include <aws/groundstation/model/ListSatellitesRequest.h>
+#include <aws/groundstation/model/ListSatellitesResult.h>
+#include <aws/groundstation/model/ListTagsForResourceRequest.h>
+#include <aws/groundstation/model/ListTagsForResourceResult.h>
+#include <aws/groundstation/model/MissionProfileListItem.h>
+#include <aws/groundstation/model/OEMEphemeris.h>
+#include <aws/groundstation/model/Polarization.h>
+#include <aws/groundstation/model/RangedConnectionDetails.h>
+#include <aws/groundstation/model/RangedSocketAddress.h>
+#include <aws/groundstation/model/RegisterAgentRequest.h>
+#include <aws/groundstation/model/RegisterAgentResult.h>
+#include <aws/groundstation/model/ReserveContactRequest.h>
+#include <aws/groundstation/model/ReserveContactResult.h>
+#include <aws/groundstation/model/ResourceLimitExceededException.h>
+#include <aws/groundstation/model/S3Object.h>
+#include <aws/groundstation/model/S3RecordingConfig.h>
+#include <aws/groundstation/model/S3RecordingDetails.h>
+#include <aws/groundstation/model/SatelliteListItem.h>
+#include <aws/groundstation/model/SecurityDetails.h>
+#include <aws/groundstation/model/SocketAddress.h>
+#include <aws/groundstation/model/Source.h>
+#include <aws/groundstation/model/SpectrumConfig.h>
+#include <aws/groundstation/model/TLEData.h>
+#include <aws/groundstation/model/TLEEphemeris.h>
+#include <aws/groundstation/model/TagResourceRequest.h>
+#include <aws/groundstation/model/TagResourceResult.h>
+#include <aws/groundstation/model/TimeRange.h>
+#include <aws/groundstation/model/TrackingConfig.h>
+#include <aws/groundstation/model/UntagResourceRequest.h>
+#include <aws/groundstation/model/UntagResourceResult.h>
+#include <aws/groundstation/model/UpdateAgentStatusRequest.h>
+#include <aws/groundstation/model/UpdateAgentStatusResult.h>
+#include <aws/groundstation/model/UpdateConfigRequest.h>
+#include <aws/groundstation/model/UpdateConfigResult.h>
+#include <aws/groundstation/model/UpdateEphemerisRequest.h>
+#include <aws/groundstation/model/UpdateEphemerisResult.h>
+#include <aws/groundstation/model/UpdateMissionProfileRequest.h>
+#include <aws/groundstation/model/UpdateMissionProfileResult.h>
+#include <aws/groundstation/model/UplinkEchoConfig.h>
+#include <aws/groundstation/model/UplinkSpectrumConfig.h>
+
+using GroundStationIncludeTest = ::testing::Test;
+
+TEST_F(GroundStationIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::GroundStation::GroundStationClient>("GroundStationIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

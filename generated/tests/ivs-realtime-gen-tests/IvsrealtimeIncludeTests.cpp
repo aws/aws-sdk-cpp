@@ -1,0 +1,164 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/ivs-realtime/IvsrealtimeClient.h>
+#include <aws/ivs-realtime/IvsrealtimeEndpointProvider.h>
+#include <aws/ivs-realtime/IvsrealtimeEndpointRules.h>
+#include <aws/ivs-realtime/IvsrealtimeErrorMarshaller.h>
+#include <aws/ivs-realtime/IvsrealtimeErrors.h>
+#include <aws/ivs-realtime/IvsrealtimeRequest.h>
+#include <aws/ivs-realtime/IvsrealtimeServiceClientModel.h>
+#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
+#include <aws/ivs-realtime/model/AccessDeniedException.h>
+#include <aws/ivs-realtime/model/AutoParticipantRecordingConfiguration.h>
+#include <aws/ivs-realtime/model/ChannelDestinationConfiguration.h>
+#include <aws/ivs-realtime/model/Composition.h>
+#include <aws/ivs-realtime/model/CompositionRecordingHlsConfiguration.h>
+#include <aws/ivs-realtime/model/CompositionState.h>
+#include <aws/ivs-realtime/model/CompositionSummary.h>
+#include <aws/ivs-realtime/model/CompositionThumbnailConfiguration.h>
+#include <aws/ivs-realtime/model/ConflictException.h>
+#include <aws/ivs-realtime/model/CreateEncoderConfigurationRequest.h>
+#include <aws/ivs-realtime/model/CreateEncoderConfigurationResult.h>
+#include <aws/ivs-realtime/model/CreateIngestConfigurationRequest.h>
+#include <aws/ivs-realtime/model/CreateIngestConfigurationResult.h>
+#include <aws/ivs-realtime/model/CreateParticipantTokenRequest.h>
+#include <aws/ivs-realtime/model/CreateParticipantTokenResult.h>
+#include <aws/ivs-realtime/model/CreateStageRequest.h>
+#include <aws/ivs-realtime/model/CreateStageResult.h>
+#include <aws/ivs-realtime/model/CreateStorageConfigurationRequest.h>
+#include <aws/ivs-realtime/model/CreateStorageConfigurationResult.h>
+#include <aws/ivs-realtime/model/DeleteEncoderConfigurationRequest.h>
+#include <aws/ivs-realtime/model/DeleteEncoderConfigurationResult.h>
+#include <aws/ivs-realtime/model/DeleteIngestConfigurationRequest.h>
+#include <aws/ivs-realtime/model/DeleteIngestConfigurationResult.h>
+#include <aws/ivs-realtime/model/DeletePublicKeyRequest.h>
+#include <aws/ivs-realtime/model/DeletePublicKeyResult.h>
+#include <aws/ivs-realtime/model/DeleteStageRequest.h>
+#include <aws/ivs-realtime/model/DeleteStageResult.h>
+#include <aws/ivs-realtime/model/DeleteStorageConfigurationRequest.h>
+#include <aws/ivs-realtime/model/DeleteStorageConfigurationResult.h>
+#include <aws/ivs-realtime/model/Destination.h>
+#include <aws/ivs-realtime/model/DestinationConfiguration.h>
+#include <aws/ivs-realtime/model/DestinationDetail.h>
+#include <aws/ivs-realtime/model/DestinationState.h>
+#include <aws/ivs-realtime/model/DestinationSummary.h>
+#include <aws/ivs-realtime/model/DisconnectParticipantRequest.h>
+#include <aws/ivs-realtime/model/DisconnectParticipantResult.h>
+#include <aws/ivs-realtime/model/EncoderConfiguration.h>
+#include <aws/ivs-realtime/model/EncoderConfigurationSummary.h>
+#include <aws/ivs-realtime/model/Event.h>
+#include <aws/ivs-realtime/model/EventErrorCode.h>
+#include <aws/ivs-realtime/model/EventName.h>
+#include <aws/ivs-realtime/model/GetCompositionRequest.h>
+#include <aws/ivs-realtime/model/GetCompositionResult.h>
+#include <aws/ivs-realtime/model/GetEncoderConfigurationRequest.h>
+#include <aws/ivs-realtime/model/GetEncoderConfigurationResult.h>
+#include <aws/ivs-realtime/model/GetIngestConfigurationRequest.h>
+#include <aws/ivs-realtime/model/GetIngestConfigurationResult.h>
+#include <aws/ivs-realtime/model/GetParticipantRequest.h>
+#include <aws/ivs-realtime/model/GetParticipantResult.h>
+#include <aws/ivs-realtime/model/GetPublicKeyRequest.h>
+#include <aws/ivs-realtime/model/GetPublicKeyResult.h>
+#include <aws/ivs-realtime/model/GetStageRequest.h>
+#include <aws/ivs-realtime/model/GetStageResult.h>
+#include <aws/ivs-realtime/model/GetStageSessionRequest.h>
+#include <aws/ivs-realtime/model/GetStageSessionResult.h>
+#include <aws/ivs-realtime/model/GetStorageConfigurationRequest.h>
+#include <aws/ivs-realtime/model/GetStorageConfigurationResult.h>
+#include <aws/ivs-realtime/model/GridConfiguration.h>
+#include <aws/ivs-realtime/model/ImportPublicKeyRequest.h>
+#include <aws/ivs-realtime/model/ImportPublicKeyResult.h>
+#include <aws/ivs-realtime/model/IngestConfiguration.h>
+#include <aws/ivs-realtime/model/IngestConfigurationState.h>
+#include <aws/ivs-realtime/model/IngestConfigurationSummary.h>
+#include <aws/ivs-realtime/model/IngestProtocol.h>
+#include <aws/ivs-realtime/model/InternalServerException.h>
+#include <aws/ivs-realtime/model/LayoutConfiguration.h>
+#include <aws/ivs-realtime/model/ListCompositionsRequest.h>
+#include <aws/ivs-realtime/model/ListCompositionsResult.h>
+#include <aws/ivs-realtime/model/ListEncoderConfigurationsRequest.h>
+#include <aws/ivs-realtime/model/ListEncoderConfigurationsResult.h>
+#include <aws/ivs-realtime/model/ListIngestConfigurationsRequest.h>
+#include <aws/ivs-realtime/model/ListIngestConfigurationsResult.h>
+#include <aws/ivs-realtime/model/ListParticipantEventsRequest.h>
+#include <aws/ivs-realtime/model/ListParticipantEventsResult.h>
+#include <aws/ivs-realtime/model/ListParticipantsRequest.h>
+#include <aws/ivs-realtime/model/ListParticipantsResult.h>
+#include <aws/ivs-realtime/model/ListPublicKeysRequest.h>
+#include <aws/ivs-realtime/model/ListPublicKeysResult.h>
+#include <aws/ivs-realtime/model/ListStageSessionsRequest.h>
+#include <aws/ivs-realtime/model/ListStageSessionsResult.h>
+#include <aws/ivs-realtime/model/ListStagesRequest.h>
+#include <aws/ivs-realtime/model/ListStagesResult.h>
+#include <aws/ivs-realtime/model/ListStorageConfigurationsRequest.h>
+#include <aws/ivs-realtime/model/ListStorageConfigurationsResult.h>
+#include <aws/ivs-realtime/model/ListTagsForResourceRequest.h>
+#include <aws/ivs-realtime/model/ListTagsForResourceResult.h>
+#include <aws/ivs-realtime/model/Participant.h>
+#include <aws/ivs-realtime/model/ParticipantProtocol.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingFilterByRecordingState.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingHlsConfiguration.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingMediaType.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingState.h>
+#include <aws/ivs-realtime/model/ParticipantState.h>
+#include <aws/ivs-realtime/model/ParticipantSummary.h>
+#include <aws/ivs-realtime/model/ParticipantThumbnailConfiguration.h>
+#include <aws/ivs-realtime/model/ParticipantToken.h>
+#include <aws/ivs-realtime/model/ParticipantTokenCapability.h>
+#include <aws/ivs-realtime/model/ParticipantTokenConfiguration.h>
+#include <aws/ivs-realtime/model/PendingVerification.h>
+#include <aws/ivs-realtime/model/PipBehavior.h>
+#include <aws/ivs-realtime/model/PipConfiguration.h>
+#include <aws/ivs-realtime/model/PipPosition.h>
+#include <aws/ivs-realtime/model/PublicKey.h>
+#include <aws/ivs-realtime/model/PublicKeySummary.h>
+#include <aws/ivs-realtime/model/RecordingConfiguration.h>
+#include <aws/ivs-realtime/model/RecordingConfigurationFormat.h>
+#include <aws/ivs-realtime/model/ResourceNotFoundException.h>
+#include <aws/ivs-realtime/model/S3DestinationConfiguration.h>
+#include <aws/ivs-realtime/model/S3Detail.h>
+#include <aws/ivs-realtime/model/S3StorageConfiguration.h>
+#include <aws/ivs-realtime/model/ServiceQuotaExceededException.h>
+#include <aws/ivs-realtime/model/Stage.h>
+#include <aws/ivs-realtime/model/StageEndpoints.h>
+#include <aws/ivs-realtime/model/StageSession.h>
+#include <aws/ivs-realtime/model/StageSessionSummary.h>
+#include <aws/ivs-realtime/model/StageSummary.h>
+#include <aws/ivs-realtime/model/StartCompositionRequest.h>
+#include <aws/ivs-realtime/model/StartCompositionResult.h>
+#include <aws/ivs-realtime/model/StopCompositionRequest.h>
+#include <aws/ivs-realtime/model/StopCompositionResult.h>
+#include <aws/ivs-realtime/model/StorageConfiguration.h>
+#include <aws/ivs-realtime/model/StorageConfigurationSummary.h>
+#include <aws/ivs-realtime/model/TagResourceRequest.h>
+#include <aws/ivs-realtime/model/TagResourceResult.h>
+#include <aws/ivs-realtime/model/ThumbnailRecordingMode.h>
+#include <aws/ivs-realtime/model/ThumbnailStorageType.h>
+#include <aws/ivs-realtime/model/UntagResourceRequest.h>
+#include <aws/ivs-realtime/model/UntagResourceResult.h>
+#include <aws/ivs-realtime/model/UpdateIngestConfigurationRequest.h>
+#include <aws/ivs-realtime/model/UpdateIngestConfigurationResult.h>
+#include <aws/ivs-realtime/model/UpdateStageRequest.h>
+#include <aws/ivs-realtime/model/UpdateStageResult.h>
+#include <aws/ivs-realtime/model/ValidationException.h>
+#include <aws/ivs-realtime/model/Video.h>
+#include <aws/ivs-realtime/model/VideoAspectRatio.h>
+#include <aws/ivs-realtime/model/VideoFillMode.h>
+
+using IvsrealtimeIncludeTest = ::testing::Test;
+
+TEST_F(IvsrealtimeIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::ivsrealtime::IvsrealtimeClient>("IvsrealtimeIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

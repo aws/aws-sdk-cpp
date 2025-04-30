@@ -1,0 +1,152 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/greengrassv2/GreengrassV2Client.h>
+#include <aws/greengrassv2/GreengrassV2EndpointProvider.h>
+#include <aws/greengrassv2/GreengrassV2EndpointRules.h>
+#include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
+#include <aws/greengrassv2/GreengrassV2Errors.h>
+#include <aws/greengrassv2/GreengrassV2Request.h>
+#include <aws/greengrassv2/GreengrassV2ServiceClientModel.h>
+#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
+#include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceEntry.h>
+#include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceErrorEntry.h>
+#include <aws/greengrassv2/model/AssociateServiceRoleToAccountRequest.h>
+#include <aws/greengrassv2/model/AssociateServiceRoleToAccountResult.h>
+#include <aws/greengrassv2/model/AssociatedClientDevice.h>
+#include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceResult.h>
+#include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceResult.h>
+#include <aws/greengrassv2/model/CancelDeploymentRequest.h>
+#include <aws/greengrassv2/model/CancelDeploymentResult.h>
+#include <aws/greengrassv2/model/CloudComponentState.h>
+#include <aws/greengrassv2/model/CloudComponentStatus.h>
+#include <aws/greengrassv2/model/Component.h>
+#include <aws/greengrassv2/model/ComponentCandidate.h>
+#include <aws/greengrassv2/model/ComponentConfigurationUpdate.h>
+#include <aws/greengrassv2/model/ComponentDependencyRequirement.h>
+#include <aws/greengrassv2/model/ComponentDependencyType.h>
+#include <aws/greengrassv2/model/ComponentDeploymentSpecification.h>
+#include <aws/greengrassv2/model/ComponentLatestVersion.h>
+#include <aws/greengrassv2/model/ComponentPlatform.h>
+#include <aws/greengrassv2/model/ComponentRunWith.h>
+#include <aws/greengrassv2/model/ComponentVersionListItem.h>
+#include <aws/greengrassv2/model/ComponentVisibilityScope.h>
+#include <aws/greengrassv2/model/ConflictException.h>
+#include <aws/greengrassv2/model/ConnectivityInfo.h>
+#include <aws/greengrassv2/model/CoreDevice.h>
+#include <aws/greengrassv2/model/CoreDeviceStatus.h>
+#include <aws/greengrassv2/model/CreateComponentVersionRequest.h>
+#include <aws/greengrassv2/model/CreateComponentVersionResult.h>
+#include <aws/greengrassv2/model/CreateDeploymentRequest.h>
+#include <aws/greengrassv2/model/CreateDeploymentResult.h>
+#include <aws/greengrassv2/model/DeleteComponentRequest.h>
+#include <aws/greengrassv2/model/DeleteCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/DeleteDeploymentRequest.h>
+#include <aws/greengrassv2/model/Deployment.h>
+#include <aws/greengrassv2/model/DeploymentComponentUpdatePolicy.h>
+#include <aws/greengrassv2/model/DeploymentComponentUpdatePolicyAction.h>
+#include <aws/greengrassv2/model/DeploymentConfigurationValidationPolicy.h>
+#include <aws/greengrassv2/model/DeploymentFailureHandlingPolicy.h>
+#include <aws/greengrassv2/model/DeploymentHistoryFilter.h>
+#include <aws/greengrassv2/model/DeploymentIoTJobConfiguration.h>
+#include <aws/greengrassv2/model/DeploymentPolicies.h>
+#include <aws/greengrassv2/model/DeploymentStatus.h>
+#include <aws/greengrassv2/model/DescribeComponentRequest.h>
+#include <aws/greengrassv2/model/DescribeComponentResult.h>
+#include <aws/greengrassv2/model/DisassociateClientDeviceFromCoreDeviceEntry.h>
+#include <aws/greengrassv2/model/DisassociateClientDeviceFromCoreDeviceErrorEntry.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountRequest.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountResult.h>
+#include <aws/greengrassv2/model/EffectiveDeployment.h>
+#include <aws/greengrassv2/model/EffectiveDeploymentExecutionStatus.h>
+#include <aws/greengrassv2/model/EffectiveDeploymentStatusDetails.h>
+#include <aws/greengrassv2/model/GetComponentRequest.h>
+#include <aws/greengrassv2/model/GetComponentResult.h>
+#include <aws/greengrassv2/model/GetComponentVersionArtifactRequest.h>
+#include <aws/greengrassv2/model/GetComponentVersionArtifactResult.h>
+#include <aws/greengrassv2/model/GetConnectivityInfoRequest.h>
+#include <aws/greengrassv2/model/GetConnectivityInfoResult.h>
+#include <aws/greengrassv2/model/GetCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/GetCoreDeviceResult.h>
+#include <aws/greengrassv2/model/GetDeploymentRequest.h>
+#include <aws/greengrassv2/model/GetDeploymentResult.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountRequest.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountResult.h>
+#include <aws/greengrassv2/model/InstalledComponent.h>
+#include <aws/greengrassv2/model/InstalledComponentLifecycleState.h>
+#include <aws/greengrassv2/model/InstalledComponentTopologyFilter.h>
+#include <aws/greengrassv2/model/InternalServerException.h>
+#include <aws/greengrassv2/model/IoTJobAbortAction.h>
+#include <aws/greengrassv2/model/IoTJobAbortConfig.h>
+#include <aws/greengrassv2/model/IoTJobAbortCriteria.h>
+#include <aws/greengrassv2/model/IoTJobExecutionFailureType.h>
+#include <aws/greengrassv2/model/IoTJobExecutionsRolloutConfig.h>
+#include <aws/greengrassv2/model/IoTJobExponentialRolloutRate.h>
+#include <aws/greengrassv2/model/IoTJobRateIncreaseCriteria.h>
+#include <aws/greengrassv2/model/IoTJobTimeoutConfig.h>
+#include <aws/greengrassv2/model/IotEndpointType.h>
+#include <aws/greengrassv2/model/LambdaContainerParams.h>
+#include <aws/greengrassv2/model/LambdaDeviceMount.h>
+#include <aws/greengrassv2/model/LambdaEventSource.h>
+#include <aws/greengrassv2/model/LambdaEventSourceType.h>
+#include <aws/greengrassv2/model/LambdaExecutionParameters.h>
+#include <aws/greengrassv2/model/LambdaFilesystemPermission.h>
+#include <aws/greengrassv2/model/LambdaFunctionRecipeSource.h>
+#include <aws/greengrassv2/model/LambdaInputPayloadEncodingType.h>
+#include <aws/greengrassv2/model/LambdaIsolationMode.h>
+#include <aws/greengrassv2/model/LambdaLinuxProcessParams.h>
+#include <aws/greengrassv2/model/LambdaVolumeMount.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceResult.h>
+#include <aws/greengrassv2/model/ListComponentVersionsRequest.h>
+#include <aws/greengrassv2/model/ListComponentVersionsResult.h>
+#include <aws/greengrassv2/model/ListComponentsRequest.h>
+#include <aws/greengrassv2/model/ListComponentsResult.h>
+#include <aws/greengrassv2/model/ListCoreDevicesRequest.h>
+#include <aws/greengrassv2/model/ListCoreDevicesResult.h>
+#include <aws/greengrassv2/model/ListDeploymentsRequest.h>
+#include <aws/greengrassv2/model/ListDeploymentsResult.h>
+#include <aws/greengrassv2/model/ListEffectiveDeploymentsRequest.h>
+#include <aws/greengrassv2/model/ListEffectiveDeploymentsResult.h>
+#include <aws/greengrassv2/model/ListInstalledComponentsRequest.h>
+#include <aws/greengrassv2/model/ListInstalledComponentsResult.h>
+#include <aws/greengrassv2/model/ListTagsForResourceRequest.h>
+#include <aws/greengrassv2/model/ListTagsForResourceResult.h>
+#include <aws/greengrassv2/model/RecipeOutputFormat.h>
+#include <aws/greengrassv2/model/ResolveComponentCandidatesRequest.h>
+#include <aws/greengrassv2/model/ResolveComponentCandidatesResult.h>
+#include <aws/greengrassv2/model/ResolvedComponentVersion.h>
+#include <aws/greengrassv2/model/ResourceNotFoundException.h>
+#include <aws/greengrassv2/model/S3EndpointType.h>
+#include <aws/greengrassv2/model/ServiceQuotaExceededException.h>
+#include <aws/greengrassv2/model/SystemResourceLimits.h>
+#include <aws/greengrassv2/model/TagResourceRequest.h>
+#include <aws/greengrassv2/model/TagResourceResult.h>
+#include <aws/greengrassv2/model/ThrottlingException.h>
+#include <aws/greengrassv2/model/UntagResourceRequest.h>
+#include <aws/greengrassv2/model/UntagResourceResult.h>
+#include <aws/greengrassv2/model/UpdateConnectivityInfoRequest.h>
+#include <aws/greengrassv2/model/UpdateConnectivityInfoResult.h>
+#include <aws/greengrassv2/model/ValidationException.h>
+#include <aws/greengrassv2/model/ValidationExceptionField.h>
+#include <aws/greengrassv2/model/ValidationExceptionReason.h>
+#include <aws/greengrassv2/model/VendorGuidance.h>
+
+using GreengrassV2IncludeTest = ::testing::Test;
+
+TEST_F(GreengrassV2IncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::GreengrassV2::GreengrassV2Client>("GreengrassV2IncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

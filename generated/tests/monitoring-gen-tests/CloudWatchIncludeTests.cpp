@@ -1,0 +1,151 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/monitoring/CloudWatchClient.h>
+#include <aws/monitoring/CloudWatchEndpointProvider.h>
+#include <aws/monitoring/CloudWatchEndpointRules.h>
+#include <aws/monitoring/CloudWatchErrorMarshaller.h>
+#include <aws/monitoring/CloudWatchErrors.h>
+#include <aws/monitoring/CloudWatchRequest.h>
+#include <aws/monitoring/CloudWatchServiceClientModel.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/ActionsSuppressedBy.h>
+#include <aws/monitoring/model/AlarmHistoryItem.h>
+#include <aws/monitoring/model/AlarmType.h>
+#include <aws/monitoring/model/AnomalyDetector.h>
+#include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
+#include <aws/monitoring/model/AnomalyDetectorStateValue.h>
+#include <aws/monitoring/model/AnomalyDetectorType.h>
+#include <aws/monitoring/model/ComparisonOperator.h>
+#include <aws/monitoring/model/CompositeAlarm.h>
+#include <aws/monitoring/model/DashboardEntry.h>
+#include <aws/monitoring/model/DashboardInvalidInputError.h>
+#include <aws/monitoring/model/DashboardValidationMessage.h>
+#include <aws/monitoring/model/Datapoint.h>
+#include <aws/monitoring/model/DeleteAlarmsRequest.h>
+#include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
+#include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
+#include <aws/monitoring/model/DeleteDashboardsRequest.h>
+#include <aws/monitoring/model/DeleteDashboardsResult.h>
+#include <aws/monitoring/model/DeleteInsightRulesRequest.h>
+#include <aws/monitoring/model/DeleteInsightRulesResult.h>
+#include <aws/monitoring/model/DeleteMetricStreamRequest.h>
+#include <aws/monitoring/model/DeleteMetricStreamResult.h>
+#include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
+#include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
+#include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>
+#include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
+#include <aws/monitoring/model/DescribeAlarmsRequest.h>
+#include <aws/monitoring/model/DescribeAlarmsResult.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsRequest.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsResult.h>
+#include <aws/monitoring/model/DescribeInsightRulesRequest.h>
+#include <aws/monitoring/model/DescribeInsightRulesResult.h>
+#include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/DimensionFilter.h>
+#include <aws/monitoring/model/DisableAlarmActionsRequest.h>
+#include <aws/monitoring/model/DisableInsightRulesRequest.h>
+#include <aws/monitoring/model/DisableInsightRulesResult.h>
+#include <aws/monitoring/model/EnableAlarmActionsRequest.h>
+#include <aws/monitoring/model/EnableInsightRulesRequest.h>
+#include <aws/monitoring/model/EnableInsightRulesResult.h>
+#include <aws/monitoring/model/Entity.h>
+#include <aws/monitoring/model/EntityMetricData.h>
+#include <aws/monitoring/model/EvaluationState.h>
+#include <aws/monitoring/model/GetDashboardRequest.h>
+#include <aws/monitoring/model/GetDashboardResult.h>
+#include <aws/monitoring/model/GetInsightRuleReportRequest.h>
+#include <aws/monitoring/model/GetInsightRuleReportResult.h>
+#include <aws/monitoring/model/GetMetricDataRequest.h>
+#include <aws/monitoring/model/GetMetricDataResult.h>
+#include <aws/monitoring/model/GetMetricStatisticsRequest.h>
+#include <aws/monitoring/model/GetMetricStatisticsResult.h>
+#include <aws/monitoring/model/GetMetricStreamRequest.h>
+#include <aws/monitoring/model/GetMetricStreamResult.h>
+#include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
+#include <aws/monitoring/model/GetMetricWidgetImageResult.h>
+#include <aws/monitoring/model/HistoryItemType.h>
+#include <aws/monitoring/model/InsightRule.h>
+#include <aws/monitoring/model/InsightRuleContributor.h>
+#include <aws/monitoring/model/InsightRuleContributorDatapoint.h>
+#include <aws/monitoring/model/InsightRuleMetricDatapoint.h>
+#include <aws/monitoring/model/LabelOptions.h>
+#include <aws/monitoring/model/ListDashboardsRequest.h>
+#include <aws/monitoring/model/ListDashboardsResult.h>
+#include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
+#include <aws/monitoring/model/ListManagedInsightRulesResult.h>
+#include <aws/monitoring/model/ListMetricStreamsRequest.h>
+#include <aws/monitoring/model/ListMetricStreamsResult.h>
+#include <aws/monitoring/model/ListMetricsRequest.h>
+#include <aws/monitoring/model/ListMetricsResult.h>
+#include <aws/monitoring/model/ListTagsForResourceRequest.h>
+#include <aws/monitoring/model/ListTagsForResourceResult.h>
+#include <aws/monitoring/model/ManagedRule.h>
+#include <aws/monitoring/model/ManagedRuleDescription.h>
+#include <aws/monitoring/model/ManagedRuleState.h>
+#include <aws/monitoring/model/MessageData.h>
+#include <aws/monitoring/model/Metric.h>
+#include <aws/monitoring/model/MetricAlarm.h>
+#include <aws/monitoring/model/MetricCharacteristics.h>
+#include <aws/monitoring/model/MetricDataQuery.h>
+#include <aws/monitoring/model/MetricDataResult.h>
+#include <aws/monitoring/model/MetricDatum.h>
+#include <aws/monitoring/model/MetricMathAnomalyDetector.h>
+#include <aws/monitoring/model/MetricStat.h>
+#include <aws/monitoring/model/MetricStreamEntry.h>
+#include <aws/monitoring/model/MetricStreamFilter.h>
+#include <aws/monitoring/model/MetricStreamOutputFormat.h>
+#include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
+#include <aws/monitoring/model/MetricStreamStatisticsMetric.h>
+#include <aws/monitoring/model/PartialFailure.h>
+#include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
+#include <aws/monitoring/model/PutAnomalyDetectorResult.h>
+#include <aws/monitoring/model/PutCompositeAlarmRequest.h>
+#include <aws/monitoring/model/PutDashboardRequest.h>
+#include <aws/monitoring/model/PutDashboardResult.h>
+#include <aws/monitoring/model/PutInsightRuleRequest.h>
+#include <aws/monitoring/model/PutInsightRuleResult.h>
+#include <aws/monitoring/model/PutManagedInsightRulesRequest.h>
+#include <aws/monitoring/model/PutManagedInsightRulesResult.h>
+#include <aws/monitoring/model/PutMetricAlarmRequest.h>
+#include <aws/monitoring/model/PutMetricDataRequest.h>
+#include <aws/monitoring/model/PutMetricStreamRequest.h>
+#include <aws/monitoring/model/PutMetricStreamResult.h>
+#include <aws/monitoring/model/Range.h>
+#include <aws/monitoring/model/RecentlyActive.h>
+#include <aws/monitoring/model/ResourceNotFoundException.h>
+#include <aws/monitoring/model/ResponseMetadata.h>
+#include <aws/monitoring/model/ScanBy.h>
+#include <aws/monitoring/model/SetAlarmStateRequest.h>
+#include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
+#include <aws/monitoring/model/StandardUnit.h>
+#include <aws/monitoring/model/StartMetricStreamsRequest.h>
+#include <aws/monitoring/model/StartMetricStreamsResult.h>
+#include <aws/monitoring/model/StateValue.h>
+#include <aws/monitoring/model/Statistic.h>
+#include <aws/monitoring/model/StatisticSet.h>
+#include <aws/monitoring/model/StatusCode.h>
+#include <aws/monitoring/model/StopMetricStreamsRequest.h>
+#include <aws/monitoring/model/StopMetricStreamsResult.h>
+#include <aws/monitoring/model/Tag.h>
+#include <aws/monitoring/model/TagResourceRequest.h>
+#include <aws/monitoring/model/TagResourceResult.h>
+#include <aws/monitoring/model/UntagResourceRequest.h>
+#include <aws/monitoring/model/UntagResourceResult.h>
+
+using CloudWatchIncludeTest = ::testing::Test;
+
+TEST_F(CloudWatchIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::CloudWatch::CloudWatchClient>("CloudWatchIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}
