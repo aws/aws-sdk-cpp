@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent/model/AgentFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/CollectorFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/ConditionFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/InlineCodeFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/InputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/IteratorFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseFlowNodeConfiguration.h>
@@ -79,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations for a Condition node in your flow. Defines conditions
+     * <p>Contains configurations for a condition node in your flow. Defines conditions
      * that lead to different branches of the flow.</p>
      */
     inline const ConditionFlowNodeConfiguration& GetCondition() const { return m_condition; }
@@ -88,6 +89,21 @@ namespace Model
     void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
     template<typename ConditionT = ConditionFlowNodeConfiguration>
     FlowNodeConfiguration& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains configurations for an inline code node in your flow. Inline code
+     * nodes let you write and execute code directly within your flow, enabling data
+     * transformations, custom logic, and integrations without needing an external
+     * Lambda function.</p>
+     */
+    inline const InlineCodeFlowNodeConfiguration& GetInlineCode() const { return m_inlineCode; }
+    inline bool InlineCodeHasBeenSet() const { return m_inlineCodeHasBeenSet; }
+    template<typename InlineCodeT = InlineCodeFlowNodeConfiguration>
+    void SetInlineCode(InlineCodeT&& value) { m_inlineCodeHasBeenSet = true; m_inlineCode = std::forward<InlineCodeT>(value); }
+    template<typename InlineCodeT = InlineCodeFlowNodeConfiguration>
+    FlowNodeConfiguration& WithInlineCode(InlineCodeT&& value) { SetInlineCode(std::forward<InlineCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,7 +204,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations for a Retrieval node in your flow. Retrieves data
+     * <p>Contains configurations for a retrieval node in your flow. Retrieves data
      * from an Amazon S3 location and returns it as the output.</p>
      */
     inline const RetrievalFlowNodeConfiguration& GetRetrieval() const { return m_retrieval; }
@@ -201,7 +217,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations for a Storage node in your flow. Stores an input in
+     * <p>Contains configurations for a storage node in your flow. Stores an input in
      * an Amazon S3 location.</p>
      */
     inline const StorageFlowNodeConfiguration& GetStorage() const { return m_storage; }
@@ -221,6 +237,9 @@ namespace Model
 
     ConditionFlowNodeConfiguration m_condition;
     bool m_conditionHasBeenSet = false;
+
+    InlineCodeFlowNodeConfiguration m_inlineCode;
+    bool m_inlineCodeHasBeenSet = false;
 
     InputFlowNodeConfiguration m_input;
     bool m_inputHasBeenSet = false;

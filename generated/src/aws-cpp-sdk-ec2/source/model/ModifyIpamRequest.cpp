@@ -59,6 +59,11 @@ Aws::String ModifyIpamRequest::SerializePayload() const
     ss << "EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
   }
 
+  if(m_meteredAccountHasBeenSet)
+  {
+    ss << "MeteredAccount=" << StringUtils::URLEncode(IpamMeteredAccountMapper::GetNameForIpamMeteredAccount(m_meteredAccount)) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

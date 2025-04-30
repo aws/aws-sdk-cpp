@@ -40,6 +40,11 @@ FlowNodeConfiguration& FlowNodeConfiguration::operator =(JsonView jsonValue)
     m_condition = jsonValue.GetObject("condition");
     m_conditionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inlineCode"))
+  {
+    m_inlineCode = jsonValue.GetObject("inlineCode");
+    m_inlineCodeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
@@ -107,6 +112,12 @@ JsonValue FlowNodeConfiguration::Jsonize() const
   if(m_conditionHasBeenSet)
   {
    payload.WithObject("condition", m_condition.Jsonize());
+
+  }
+
+  if(m_inlineCodeHasBeenSet)
+  {
+   payload.WithObject("inlineCode", m_inlineCode.Jsonize());
 
   }
 

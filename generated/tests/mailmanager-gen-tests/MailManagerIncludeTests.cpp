@@ -224,6 +224,9 @@
 #include <aws/mailmanager/model/SearchStatus.h>
 #include <aws/mailmanager/model/SearchSummary.h>
 #include <aws/mailmanager/model/SendAction.h>
+#include <aws/mailmanager/model/SnsAction.h>
+#include <aws/mailmanager/model/SnsNotificationEncoding.h>
+#include <aws/mailmanager/model/SnsNotificationPayloadType.h>
 #include <aws/mailmanager/model/StartAddressListImportJobRequest.h>
 #include <aws/mailmanager/model/StartAddressListImportJobResult.h>
 #include <aws/mailmanager/model/StartArchiveExportRequest.h>

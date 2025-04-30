@@ -10,6 +10,7 @@
 #include <aws/mailmanager/model/DeliverToMailboxAction.h>
 #include <aws/mailmanager/model/DeliverToQBusinessAction.h>
 #include <aws/mailmanager/model/DropAction.h>
+#include <aws/mailmanager/model/SnsAction.h>
 #include <aws/mailmanager/model/RelayAction.h>
 #include <aws/mailmanager/model/ReplaceRecipientAction.h>
 #include <aws/mailmanager/model/SendAction.h>
@@ -111,6 +112,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>This action publishes the email content to an Amazon SNS topic.</p>
+     */
+    inline const SnsAction& GetPublishToSns() const { return m_publishToSns; }
+    inline bool PublishToSnsHasBeenSet() const { return m_publishToSnsHasBeenSet; }
+    template<typename PublishToSnsT = SnsAction>
+    void SetPublishToSns(PublishToSnsT&& value) { m_publishToSnsHasBeenSet = true; m_publishToSns = std::forward<PublishToSnsT>(value); }
+    template<typename PublishToSnsT = SnsAction>
+    RuleAction& WithPublishToSns(PublishToSnsT&& value) { SetPublishToSns(std::forward<PublishToSnsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This action relays the email to another SMTP server.</p>
      */
     inline const RelayAction& GetRelay() const { return m_relay; }
@@ -173,6 +186,9 @@ namespace Model
 
     DropAction m_drop;
     bool m_dropHasBeenSet = false;
+
+    SnsAction m_publishToSns;
+    bool m_publishToSnsHasBeenSet = false;
 
     RelayAction m_relay;
     bool m_relayHasBeenSet = false;

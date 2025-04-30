@@ -22,6 +22,7 @@ namespace Aws
 
         static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
         static const int INFREQUENT_ACCESS_HASH = HashingUtils::HashString("INFREQUENT_ACCESS");
+        static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
 
 
         LogGroupClass GetLogGroupClassForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INFREQUENT_ACCESS_HASH)
           {
             return LogGroupClass::INFREQUENT_ACCESS;
+          }
+          else if (hashCode == DELIVERY_HASH)
+          {
+            return LogGroupClass::DELIVERY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "STANDARD";
           case LogGroupClass::INFREQUENT_ACCESS:
             return "INFREQUENT_ACCESS";
+          case LogGroupClass::DELIVERY:
+            return "DELIVERY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

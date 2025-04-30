@@ -22,14 +22,14 @@ namespace Model
 {
 
   /**
-   * <p>Client route enforcement is a feature of the Client VPN service that helps
-   * enforce administrator defined routes on devices connected through the VPN. T his
-   * feature helps improve your security posture by ensuring that network traffic
-   * originating from a connected client is not inadvertently sent outside the VPN
-   * tunnel.</p> <p>Client route enforcement works by monitoring the route table of a
-   * connected device for routing policy changes to the VPN connection. If the
-   * feature detects any VPN routing policy modifications, it will automatically
-   * force an update to the route table, reverting it back to the expected route
+   * <p>Client Route Enforcement is a feature of Client VPN that helps enforce
+   * administrator defined routes on devices connected through the VPN. This feature
+   * helps improve your security posture by ensuring that network traffic originating
+   * from a connected client is not inadvertently sent outside the VPN tunnel.</p>
+   * <p>Client Route Enforcement works by monitoring the route table of a connected
+   * device for routing policy changes to the VPN connection. If the feature detects
+   * any VPN routing policy modifications, it will automatically force an update to
+   * the route table, reverting it back to the expected route
    * configurations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientRouteEnforcementOptions">AWS
    * API Reference</a></p>
@@ -47,8 +47,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enable or disable the client route enforcement feature.</p> <p>Valid values:
-     * <code>true | false</code> </p> <p>Default value: <code>false</code> </p>
+     * <p>Enable or disable Client Route Enforcement. The state can either be
+     * <code>true</code> (enabled) or <code>false</code> (disabled). The default is
+     * <code>false</code>.</p> <p>Valid values: <code>true | false</code> </p>
+     * <p>Default value: <code>false</code> </p>
      */
     inline bool GetEnforced() const { return m_enforced; }
     inline bool EnforcedHasBeenSet() const { return m_enforcedHasBeenSet; }

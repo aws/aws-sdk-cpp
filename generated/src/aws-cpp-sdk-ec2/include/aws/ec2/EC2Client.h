@@ -7662,11 +7662,8 @@ namespace EC2
          * <p>Describes Capacity Block offerings available for purchase in the Amazon Web
          * Services Region that you're currently using. With Capacity Blocks, you purchase
          * a specific instance type for a period of time.</p> <p>To search for an available
-         * Capacity Block offering, you specify a reservation duration and instance count.
-         * You must select one of the following options.</p> <ul> <li> <p>For reservation
-         * durations<b> 1-day increments up 14 days and 7-day increments up to 182 days
-         * total</b> </p> </li> <li> <p>For instance count<b> 1, 2, 4, 8, 16, 32, or 64
-         * instances</b> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Capacity Block offering, you specify a reservation duration and instance
+         * count.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
          * API Reference</a></p>
          */
@@ -20424,43 +20421,36 @@ namespace EC2
          * <p>Stops an Amazon EBS-backed instance. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
          * and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>You can use the Stop action to hibernate an instance if the instance is <a
+         * <p>When you stop an instance, we shut it down. You can restart your instance at
+         * any time.</p> <p>You can use the Stop operation together with the Hibernate
+         * parameter to hibernate an instance if the instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
-         * for hibernation</a> and it meets the <a
+         * for hibernation</a> and meets the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
-         * prerequisites</a>. For more information, see <a
+         * prerequisites</a>. Stopping an instance doesn't preserve data stored in RAM,
+         * while hibernation does. If hibernation fails, a normal shutdown occurs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We
-         * don't charge usage for a stopped instance, or data transfer fees; however, your
-         * root partition Amazon EBS volume remains and continues to persist your data, and
-         * you are charged for Amazon EBS volume usage. Every time you start your instance,
-         * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't stop or hibernate
-         * instance store-backed instances. You can't use the Stop action to hibernate Spot
-         * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
-         * when they are interrupted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When
-         * you stop or hibernate an instance, we shut it down. You can restart your
-         * instance at any time. Before stopping or hibernating an instance, make sure it
-         * is in a state from which it can be restarted. Stopping an instance does not
-         * preserve data stored in RAM, but hibernating an instance does preserve data
-         * stored in RAM. If an instance cannot hibernate successfully, a normal shutdown
-         * occurs.</p> <p>Stopping and hibernating an instance is different to rebooting or
-         * terminating it. For example, when you stop or hibernate an instance, the root
-         * device and any other devices attached to the instance persist. When you
-         * terminate an instance, the root device and any other devices attached during the
-         * instance launch are automatically deleted. For more information about the
-         * differences between rebooting, stopping, hibernating, and terminating instances,
-         * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you stop an
-         * instance, we attempt to shut it down forcibly after a short while. If your
-         * instance appears stuck in the stopping state after a period of time, there may
-         * be an issue with the underlying host computer. For more information, see <a
+         * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If your
+         * instance appears stuck in the <code>stopping</code> state, there might be an
+         * issue with the underlying host computer. You can use the Stop operation together
+         * with the Force parameter to force stop your instance. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
-         * stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon EC2 instance stop issues</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p>Stopping and hibernating an instance differs from rebooting or terminating
+         * it. For example, a stopped or hibernated instance retains its root volume and
+         * any data volumes, unlike terminated instances where these volumes are
+         * automatically deleted. For more information about the differences between
+         * stopping, hibernating, rebooting, and terminating instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+         * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We
+         * don't charge for instance usage or data transfer fees when an instance is
+         * stopped. However, the root volume and any data volumes remain and continue to
+         * persist your data, and you're charged for volume usage. Every time you start
+         * your instance, Amazon EC2 charges a one-minute minimum for instance usage,
+         * followed by per-second billing.</p> <p>You can't stop or hibernate instance
+         * store-backed instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
          */
@@ -20512,15 +20502,16 @@ namespace EC2
         }
 
         /**
-         * <p>Shuts down the specified instances. This operation is idempotent; if you
-         * terminate an instance more than once, each call succeeds. </p> <p>If you specify
-         * multiple instances and the request fails (for example, because of a single
-         * incorrect instance ID), none of the instances are terminated.</p> <p>If you
-         * terminate multiple instances across multiple Availability Zones, and one or more
-         * of the specified instances are enabled for termination protection, the request
-         * fails with the following results:</p> <ul> <li> <p>The specified instances that
-         * are in the same Availability Zone as the protected instance are not
-         * terminated.</p> </li> <li> <p>The specified instances that are in different
+         * <p>Shuts down the specified instances. This operation is <a
+         * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
+         * if you terminate an instance more than once, each call succeeds.</p> <p>If you
+         * specify multiple instances and the request fails (for example, because of a
+         * single incorrect instance ID), none of the instances are terminated.</p> <p>If
+         * you terminate multiple instances across multiple Availability Zones, and one or
+         * more of the specified instances are enabled for termination protection, the
+         * request fails with the following results:</p> <ul> <li> <p>The specified
+         * instances that are in the same Availability Zone as the protected instance are
+         * not terminated.</p> </li> <li> <p>The specified instances that are in different
          * Availability Zones, where no other specified instances are protected, are
          * successfully terminated.</p> </li> </ul> <p>For example, say you have the
          * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
@@ -20539,15 +20530,15 @@ namespace EC2
          * launched. Volumes attached after instance launch continue running.</p> <p>You
          * can stop, start, and terminate EBS-backed instances. You can only terminate
          * instance store-backed instances. What happens to an instance differs if you stop
-         * it or terminate it. For example, when you stop an instance, the root device and
-         * any other devices attached to the instance persist. When you terminate an
-         * instance, any attached EBS volumes with the <code>DeleteOnTermination</code>
-         * block device mapping parameter set to <code>true</code> are automatically
-         * deleted. For more information about the differences between stopping and
-         * terminating instances, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
-         * about troubleshooting, see <a
+         * or terminate it. For example, when you stop an instance, the root device and any
+         * other devices attached to the instance persist. When you terminate an instance,
+         * any attached EBS volumes with the <code>DeleteOnTermination</code> block device
+         * mapping parameter set to <code>true</code> are automatically deleted. For more
+         * information about the differences between stopping and terminating instances,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+         * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For
+         * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

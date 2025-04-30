@@ -65,6 +65,11 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("statusDetails"))
+  {
+    m_statusDetails = jsonValue.GetObject("statusDetails");
+    m_statusDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");

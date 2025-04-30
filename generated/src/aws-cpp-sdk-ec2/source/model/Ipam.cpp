@@ -147,6 +147,12 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
       m_enablePrivateGua = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrivateGuaNode.GetText()).c_str()).c_str());
       m_enablePrivateGuaHasBeenSet = true;
     }
+    XmlNode meteredAccountNode = resultNode.FirstChild("meteredAccount");
+    if(!meteredAccountNode.IsNull())
+    {
+      m_meteredAccount = IpamMeteredAccountMapper::GetIpamMeteredAccountForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(meteredAccountNode.GetText()).c_str()));
+      m_meteredAccountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -251,6 +257,11 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
   }
 
+  if(m_meteredAccountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MeteredAccount=" << StringUtils::URLEncode(IpamMeteredAccountMapper::GetNameForIpamMeteredAccount(m_meteredAccount)) << "&";
+  }
+
 }
 
 void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -334,6 +345,10 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_enablePrivateGuaHasBeenSet)
   {
       oStream << location << ".EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
+  }
+  if(m_meteredAccountHasBeenSet)
+  {
+      oStream << location << ".MeteredAccount=" << StringUtils::URLEncode(IpamMeteredAccountMapper::GetNameForIpamMeteredAccount(m_meteredAccount)) << "&";
   }
 }
 

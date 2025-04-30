@@ -32,6 +32,12 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
    payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
   }
 
+  if(m_agentNameHasBeenSet)
+  {
+   payload.WithString("agentName", m_agentName);
+
+  }
+
   if(m_bedrockModelConfigurationsHasBeenSet)
   {
    payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
@@ -57,6 +63,12 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
      collaboratorsJsonList[collaboratorsIndex].AsObject(m_collaborators[collaboratorsIndex].Jsonize());
    }
    payload.WithArray("collaborators", std::move(collaboratorsJsonList));
+
+  }
+
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
 
   }
 
@@ -123,6 +135,11 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
    }
    payload.WithArray("knowledgeBases", std::move(knowledgeBasesJsonList));
 
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
   if(m_promptOverrideConfigurationHasBeenSet)

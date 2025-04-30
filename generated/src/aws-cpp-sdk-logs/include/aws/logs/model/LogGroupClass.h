@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     STANDARD,
-    INFREQUENT_ACCESS
+    INFREQUENT_ACCESS,
+    DELIVERY
   };
 
 namespace LogGroupClassMapper

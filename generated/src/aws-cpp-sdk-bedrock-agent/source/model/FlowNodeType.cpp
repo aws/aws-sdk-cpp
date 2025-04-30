@@ -32,6 +32,7 @@ namespace Aws
         static const int Retrieval_HASH = HashingUtils::HashString("Retrieval");
         static const int Iterator_HASH = HashingUtils::HashString("Iterator");
         static const int Collector_HASH = HashingUtils::HashString("Collector");
+        static const int InlineCode_HASH = HashingUtils::HashString("InlineCode");
 
 
         FlowNodeType GetFlowNodeTypeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return FlowNodeType::Collector;
           }
+          else if (hashCode == InlineCode_HASH)
+          {
+            return FlowNodeType::InlineCode;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +130,8 @@ namespace Aws
             return "Iterator";
           case FlowNodeType::Collector:
             return "Collector";
+          case FlowNodeType::InlineCode:
+            return "InlineCode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

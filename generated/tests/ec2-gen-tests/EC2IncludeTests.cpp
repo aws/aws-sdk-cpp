@@ -1548,6 +1548,7 @@
 #include <aws/ec2/model/IpamExternalResourceVerificationToken.h>
 #include <aws/ec2/model/IpamExternalResourceVerificationTokenState.h>
 #include <aws/ec2/model/IpamManagementState.h>
+#include <aws/ec2/model/IpamMeteredAccount.h>
 #include <aws/ec2/model/IpamNetworkInterfaceAttachmentStatus.h>
 #include <aws/ec2/model/IpamOperatingRegion.h>
 #include <aws/ec2/model/IpamOrganizationalUnitExclusion.h>

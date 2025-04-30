@@ -10,10 +10,12 @@
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/AgentCollaboration.h>
-#include <aws/bedrock-agent-runtime/model/InlineBedrockModelConfigurations.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/InlineBedrockModelConfigurations.h>
+#include <aws/bedrock-agent-runtime/model/CustomOrchestration.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailConfigurationWithArn.h>
 #include <aws/bedrock-agent-runtime/model/InlineSessionState.h>
+#include <aws/bedrock-agent-runtime/model/OrchestrationType.h>
 #include <aws/bedrock-agent-runtime/model/PromptOverrideConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/AgentActionGroup.h>
@@ -95,6 +97,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name for the agent.</p>
+     */
+    inline const Aws::String& GetAgentName() const { return m_agentName; }
+    inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
+    template<typename AgentNameT = Aws::String>
+    void SetAgentName(AgentNameT&& value) { m_agentNameHasBeenSet = true; m_agentName = std::forward<AgentNameT>(value); }
+    template<typename AgentNameT = Aws::String>
+    InvokeInlineAgentRequest& WithAgentName(AgentNameT&& value) { SetAgentName(std::forward<AgentNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Model settings for the request.</p>
      */
     inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
@@ -137,6 +151,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains details of the custom orchestration configured for the agent. </p>
+     */
+    inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
+    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    void SetCustomOrchestration(CustomOrchestrationT&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::forward<CustomOrchestrationT>(value); }
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    InvokeInlineAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) { SetCustomOrchestration(std::forward<CustomOrchestrationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to
      * encrypt your inline agent. </p>
      */
@@ -153,7 +179,7 @@ namespace Model
      * <p> Specifies whether to turn on the trace or not to track the agent's reasoning
      * process. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using
-     * trace</a>. <pre><code> &lt;/p&gt; </code></pre>
+     * trace</a>. </p>
      */
     inline bool GetEnableTrace() const { return m_enableTrace; }
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
@@ -277,6 +303,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the type of orchestration strategy for the agent. This is set to
+     * DEFAULT orchestration type, by default. </p>
+     */
+    inline OrchestrationType GetOrchestrationType() const { return m_orchestrationType; }
+    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
+    inline void SetOrchestrationType(OrchestrationType value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline InvokeInlineAgentRequest& WithOrchestrationType(OrchestrationType value) { SetOrchestrationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Configurations for advanced prompts used to override the default prompts to
      * enhance the accuracy of the inline agent. </p>
      */
@@ -322,6 +359,9 @@ namespace Model
     AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
     bool m_agentCollaborationHasBeenSet = false;
 
+    Aws::String m_agentName;
+    bool m_agentNameHasBeenSet = false;
+
     InlineBedrockModelConfigurations m_bedrockModelConfigurations;
     bool m_bedrockModelConfigurationsHasBeenSet = false;
 
@@ -330,6 +370,9 @@ namespace Model
 
     Aws::Vector<Collaborator> m_collaborators;
     bool m_collaboratorsHasBeenSet = false;
+
+    CustomOrchestration m_customOrchestration;
+    bool m_customOrchestrationHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
@@ -360,6 +403,9 @@ namespace Model
 
     Aws::Vector<KnowledgeBase> m_knowledgeBases;
     bool m_knowledgeBasesHasBeenSet = false;
+
+    OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
+    bool m_orchestrationTypeHasBeenSet = false;
 
     PromptOverrideConfiguration m_promptOverrideConfiguration;
     bool m_promptOverrideConfigurationHasBeenSet = false;

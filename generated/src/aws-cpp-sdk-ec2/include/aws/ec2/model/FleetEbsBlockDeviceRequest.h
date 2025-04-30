@@ -53,7 +53,12 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p> <p>For and ,
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute">DescribeImageAttribute</a>.</p>
+     * <p>For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage">CreateImage</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage">RegisterImage</a>,
      * whether you can include this parameter, and the allowed values differ depending
      * on the type of block device mapping you are creating.</p> <ul> <li> <p>If you
      * are creating a block device mapping for a <b>new (empty) volume</b>, you can

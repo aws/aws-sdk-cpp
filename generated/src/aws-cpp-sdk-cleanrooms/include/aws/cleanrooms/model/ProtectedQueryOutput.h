@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ProtectedQueryS3Output.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/ProtectedQueryDistributeOutput.h>
 #include <aws/cleanrooms/model/ProtectedQuerySingleMemberOutput.h>
 #include <utility>
 
@@ -42,7 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If present, the output for a protected query with an `S3` output type.</p>
+     * <p>If present, the output for a protected query with an <code>S3</code> output
+     * type.</p>
      */
     inline const ProtectedQueryS3Output& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
@@ -66,6 +68,22 @@ namespace Model
     template<typename MemberListT = ProtectedQuerySingleMemberOutput>
     ProtectedQueryOutput& AddMemberList(MemberListT&& value) { m_memberListHasBeenSet = true; m_memberList.emplace_back(std::forward<MemberListT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains output information for protected queries that use a
+     * <code>distribute</code> output type. This output type lets you send query
+     * results to multiple locations - either to S3 or to collaboration members. </p>
+     *  <p> You can only use the <code>distribute</code> output type with the
+     * Spark analytics engine. </p> 
+     */
+    inline const ProtectedQueryDistributeOutput& GetDistribute() const { return m_distribute; }
+    inline bool DistributeHasBeenSet() const { return m_distributeHasBeenSet; }
+    template<typename DistributeT = ProtectedQueryDistributeOutput>
+    void SetDistribute(DistributeT&& value) { m_distributeHasBeenSet = true; m_distribute = std::forward<DistributeT>(value); }
+    template<typename DistributeT = ProtectedQueryDistributeOutput>
+    ProtectedQueryOutput& WithDistribute(DistributeT&& value) { SetDistribute(std::forward<DistributeT>(value)); return *this;}
+    ///@}
   private:
 
     ProtectedQueryS3Output m_s3;
@@ -73,6 +91,9 @@ namespace Model
 
     Aws::Vector<ProtectedQuerySingleMemberOutput> m_memberList;
     bool m_memberListHasBeenSet = false;
+
+    ProtectedQueryDistributeOutput m_distribute;
+    bool m_distributeHasBeenSet = false;
   };
 
 } // namespace Model

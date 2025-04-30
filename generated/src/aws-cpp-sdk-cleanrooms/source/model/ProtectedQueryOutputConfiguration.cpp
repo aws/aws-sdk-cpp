@@ -35,6 +35,11 @@ ProtectedQueryOutputConfiguration& ProtectedQueryOutputConfiguration::operator =
     m_member = jsonValue.GetObject("member");
     m_memberHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("distribute"))
+  {
+    m_distribute = jsonValue.GetObject("distribute");
+    m_distributeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue ProtectedQueryOutputConfiguration::Jsonize() const
   if(m_memberHasBeenSet)
   {
    payload.WithObject("member", m_member.Jsonize());
+
+  }
+
+  if(m_distributeHasBeenSet)
+  {
+   payload.WithObject("distribute", m_distribute.Jsonize());
 
   }
 

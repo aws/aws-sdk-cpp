@@ -100,8 +100,8 @@ namespace Model
      *  <p>Starting with Docker version 1.9, the Docker client compresses image
      * layers before pushing them to a V2 Docker registry. The output of the
      * <code>docker images</code> command shows the uncompressed image size. Therefore,
-     * Docker might return a larger image than the image shown in the Amazon Web
-     * Services Management Console.</p> 
+     * Docker might return a larger image than the image sizes returned by
+     * <a>DescribeImages</a>.</p> 
      */
     inline long long GetImageSizeInBytes() const { return m_imageSizeInBytes; }
     inline bool ImageSizeInBytesHasBeenSet() const { return m_imageSizeInBytesHasBeenSet; }

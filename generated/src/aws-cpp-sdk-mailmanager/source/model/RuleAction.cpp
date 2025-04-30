@@ -50,6 +50,11 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_drop = jsonValue.GetObject("Drop");
     m_dropHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PublishToSns"))
+  {
+    m_publishToSns = jsonValue.GetObject("PublishToSns");
+    m_publishToSnsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Relay"))
   {
     m_relay = jsonValue.GetObject("Relay");
@@ -104,6 +109,12 @@ JsonValue RuleAction::Jsonize() const
   if(m_dropHasBeenSet)
   {
    payload.WithObject("Drop", m_drop.Jsonize());
+
+  }
+
+  if(m_publishToSnsHasBeenSet)
+  {
+   payload.WithObject("PublishToSns", m_publishToSns.Jsonize());
 
   }
 

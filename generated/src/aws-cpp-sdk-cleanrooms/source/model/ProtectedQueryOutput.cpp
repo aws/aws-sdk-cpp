@@ -39,6 +39,11 @@ ProtectedQueryOutput& ProtectedQueryOutput::operator =(JsonView jsonValue)
     }
     m_memberListHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("distribute"))
+  {
+    m_distribute = jsonValue.GetObject("distribute");
+    m_distributeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue ProtectedQueryOutput::Jsonize() const
      memberListJsonList[memberListIndex].AsObject(m_memberList[memberListIndex].Jsonize());
    }
    payload.WithArray("memberList", std::move(memberListJsonList));
+
+  }
+
+  if(m_distributeHasBeenSet)
+  {
+   payload.WithObject("distribute", m_distribute.Jsonize());
 
   }
 

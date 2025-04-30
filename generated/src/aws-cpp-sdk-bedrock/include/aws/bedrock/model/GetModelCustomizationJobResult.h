@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelCustomizationJobStatus.h>
+#include <aws/bedrock/model/StatusDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
@@ -131,6 +132,18 @@ namespace Model
     void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
     template<typename FailureMessageT = Aws::String>
     GetModelCustomizationJobResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For a Distillation job, the details about the statuses of the sub-tasks of
+     * the customization job. </p>
+     */
+    inline const StatusDetails& GetStatusDetails() const { return m_statusDetails; }
+    template<typename StatusDetailsT = StatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StatusDetails>
+    GetModelCustomizationJobResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -328,6 +341,9 @@ namespace Model
 
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet = false;
+
+    StatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;

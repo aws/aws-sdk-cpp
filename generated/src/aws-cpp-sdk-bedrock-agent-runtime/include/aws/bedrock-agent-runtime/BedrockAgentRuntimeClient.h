@@ -365,8 +365,8 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         *   <p>Sends a prompt for the agent to process and respond to. Note
-         * the following fields for the request:</p> <ul> <li> <p>To continue the same
+         * <p>  <p>Sends a prompt for the agent to process and respond to.
+         * Note the following fields for the request:</p> <ul> <li> <p>To continue the same
          * conversation with an agent, use the same <code>sessionId</code> value in the
          * request.</p> </li> <li> <p>To activate trace enablement, turn
          * <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow
@@ -388,7 +388,7 @@ namespace BedrockAgentRuntime
          * was configured to return control, the response returns parameters for the
          * action, elicited from the user, in the <code>returnControl</code> field.</p>
          * </li> <li> <p>Errors are also surfaced in the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * </ul></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">AWS
          * API Reference</a></p>
          */

@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ProtectedQueryS3OutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedQueryMemberOutputConfiguration.h>
+#include <aws/cleanrooms/model/ProtectedQueryDistributeOutputConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,19 @@ namespace Model
     template<typename MemberT = ProtectedQueryMemberOutputConfiguration>
     ProtectedQueryOutputConfiguration& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Required configuration for a protected query with a <code>distribute</code>
+     * output type.</p>
+     */
+    inline const ProtectedQueryDistributeOutputConfiguration& GetDistribute() const { return m_distribute; }
+    inline bool DistributeHasBeenSet() const { return m_distributeHasBeenSet; }
+    template<typename DistributeT = ProtectedQueryDistributeOutputConfiguration>
+    void SetDistribute(DistributeT&& value) { m_distributeHasBeenSet = true; m_distribute = std::forward<DistributeT>(value); }
+    template<typename DistributeT = ProtectedQueryDistributeOutputConfiguration>
+    ProtectedQueryOutputConfiguration& WithDistribute(DistributeT&& value) { SetDistribute(std::forward<DistributeT>(value)); return *this;}
+    ///@}
   private:
 
     ProtectedQueryS3OutputConfiguration m_s3;
@@ -71,6 +85,9 @@ namespace Model
 
     ProtectedQueryMemberOutputConfiguration m_member;
     bool m_memberHasBeenSet = false;
+
+    ProtectedQueryDistributeOutputConfiguration m_distribute;
+    bool m_distributeHasBeenSet = false;
   };
 
 } // namespace Model
