@@ -1,0 +1,160 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/fis/FISClient.h>
+#include <aws/fis/FISEndpointProvider.h>
+#include <aws/fis/FISEndpointRules.h>
+#include <aws/fis/FISErrorMarshaller.h>
+#include <aws/fis/FISErrors.h>
+#include <aws/fis/FISRequest.h>
+#include <aws/fis/FISServiceClientModel.h>
+#include <aws/fis/FIS_EXPORTS.h>
+#include <aws/fis/model/AccountTargeting.h>
+#include <aws/fis/model/Action.h>
+#include <aws/fis/model/ActionParameter.h>
+#include <aws/fis/model/ActionSummary.h>
+#include <aws/fis/model/ActionTarget.h>
+#include <aws/fis/model/ActionsMode.h>
+#include <aws/fis/model/CreateExperimentTemplateActionInput.h>
+#include <aws/fis/model/CreateExperimentTemplateExperimentOptionsInput.h>
+#include <aws/fis/model/CreateExperimentTemplateLogConfigurationInput.h>
+#include <aws/fis/model/CreateExperimentTemplateReportConfigurationInput.h>
+#include <aws/fis/model/CreateExperimentTemplateRequest.h>
+#include <aws/fis/model/CreateExperimentTemplateResult.h>
+#include <aws/fis/model/CreateExperimentTemplateStopConditionInput.h>
+#include <aws/fis/model/CreateExperimentTemplateTargetInput.h>
+#include <aws/fis/model/CreateTargetAccountConfigurationRequest.h>
+#include <aws/fis/model/CreateTargetAccountConfigurationResult.h>
+#include <aws/fis/model/DeleteExperimentTemplateRequest.h>
+#include <aws/fis/model/DeleteExperimentTemplateResult.h>
+#include <aws/fis/model/DeleteTargetAccountConfigurationRequest.h>
+#include <aws/fis/model/DeleteTargetAccountConfigurationResult.h>
+#include <aws/fis/model/EmptyTargetResolutionMode.h>
+#include <aws/fis/model/Experiment.h>
+#include <aws/fis/model/ExperimentAction.h>
+#include <aws/fis/model/ExperimentActionState.h>
+#include <aws/fis/model/ExperimentActionStatus.h>
+#include <aws/fis/model/ExperimentCloudWatchLogsLogConfiguration.h>
+#include <aws/fis/model/ExperimentError.h>
+#include <aws/fis/model/ExperimentLogConfiguration.h>
+#include <aws/fis/model/ExperimentOptions.h>
+#include <aws/fis/model/ExperimentReport.h>
+#include <aws/fis/model/ExperimentReportConfiguration.h>
+#include <aws/fis/model/ExperimentReportConfigurationCloudWatchDashboard.h>
+#include <aws/fis/model/ExperimentReportConfigurationDataSources.h>
+#include <aws/fis/model/ExperimentReportConfigurationOutputs.h>
+#include <aws/fis/model/ExperimentReportConfigurationOutputsS3Configuration.h>
+#include <aws/fis/model/ExperimentReportError.h>
+#include <aws/fis/model/ExperimentReportS3Report.h>
+#include <aws/fis/model/ExperimentReportState.h>
+#include <aws/fis/model/ExperimentReportStatus.h>
+#include <aws/fis/model/ExperimentS3LogConfiguration.h>
+#include <aws/fis/model/ExperimentState.h>
+#include <aws/fis/model/ExperimentStatus.h>
+#include <aws/fis/model/ExperimentStopCondition.h>
+#include <aws/fis/model/ExperimentSummary.h>
+#include <aws/fis/model/ExperimentTarget.h>
+#include <aws/fis/model/ExperimentTargetAccountConfiguration.h>
+#include <aws/fis/model/ExperimentTargetAccountConfigurationSummary.h>
+#include <aws/fis/model/ExperimentTargetFilter.h>
+#include <aws/fis/model/ExperimentTemplate.h>
+#include <aws/fis/model/ExperimentTemplateAction.h>
+#include <aws/fis/model/ExperimentTemplateCloudWatchLogsLogConfiguration.h>
+#include <aws/fis/model/ExperimentTemplateCloudWatchLogsLogConfigurationInput.h>
+#include <aws/fis/model/ExperimentTemplateExperimentOptions.h>
+#include <aws/fis/model/ExperimentTemplateLogConfiguration.h>
+#include <aws/fis/model/ExperimentTemplateReportConfiguration.h>
+#include <aws/fis/model/ExperimentTemplateReportConfigurationCloudWatchDashboard.h>
+#include <aws/fis/model/ExperimentTemplateReportConfigurationDataSources.h>
+#include <aws/fis/model/ExperimentTemplateReportConfigurationDataSourcesInput.h>
+#include <aws/fis/model/ExperimentTemplateReportConfigurationOutputs.h>
+#include <aws/fis/model/ExperimentTemplateReportConfigurationOutputsInput.h>
+#include <aws/fis/model/ExperimentTemplateS3LogConfiguration.h>
+#include <aws/fis/model/ExperimentTemplateS3LogConfigurationInput.h>
+#include <aws/fis/model/ExperimentTemplateStopCondition.h>
+#include <aws/fis/model/ExperimentTemplateSummary.h>
+#include <aws/fis/model/ExperimentTemplateTarget.h>
+#include <aws/fis/model/ExperimentTemplateTargetFilter.h>
+#include <aws/fis/model/ExperimentTemplateTargetInputFilter.h>
+#include <aws/fis/model/GetActionRequest.h>
+#include <aws/fis/model/GetActionResult.h>
+#include <aws/fis/model/GetExperimentRequest.h>
+#include <aws/fis/model/GetExperimentResult.h>
+#include <aws/fis/model/GetExperimentTargetAccountConfigurationRequest.h>
+#include <aws/fis/model/GetExperimentTargetAccountConfigurationResult.h>
+#include <aws/fis/model/GetExperimentTemplateRequest.h>
+#include <aws/fis/model/GetExperimentTemplateResult.h>
+#include <aws/fis/model/GetSafetyLeverRequest.h>
+#include <aws/fis/model/GetSafetyLeverResult.h>
+#include <aws/fis/model/GetTargetAccountConfigurationRequest.h>
+#include <aws/fis/model/GetTargetAccountConfigurationResult.h>
+#include <aws/fis/model/GetTargetResourceTypeRequest.h>
+#include <aws/fis/model/GetTargetResourceTypeResult.h>
+#include <aws/fis/model/ListActionsRequest.h>
+#include <aws/fis/model/ListActionsResult.h>
+#include <aws/fis/model/ListExperimentResolvedTargetsRequest.h>
+#include <aws/fis/model/ListExperimentResolvedTargetsResult.h>
+#include <aws/fis/model/ListExperimentTargetAccountConfigurationsRequest.h>
+#include <aws/fis/model/ListExperimentTargetAccountConfigurationsResult.h>
+#include <aws/fis/model/ListExperimentTemplatesRequest.h>
+#include <aws/fis/model/ListExperimentTemplatesResult.h>
+#include <aws/fis/model/ListExperimentsRequest.h>
+#include <aws/fis/model/ListExperimentsResult.h>
+#include <aws/fis/model/ListTagsForResourceRequest.h>
+#include <aws/fis/model/ListTagsForResourceResult.h>
+#include <aws/fis/model/ListTargetAccountConfigurationsRequest.h>
+#include <aws/fis/model/ListTargetAccountConfigurationsResult.h>
+#include <aws/fis/model/ListTargetResourceTypesRequest.h>
+#include <aws/fis/model/ListTargetResourceTypesResult.h>
+#include <aws/fis/model/ReportConfigurationCloudWatchDashboardInput.h>
+#include <aws/fis/model/ReportConfigurationS3Output.h>
+#include <aws/fis/model/ReportConfigurationS3OutputInput.h>
+#include <aws/fis/model/ResolvedTarget.h>
+#include <aws/fis/model/SafetyLever.h>
+#include <aws/fis/model/SafetyLeverState.h>
+#include <aws/fis/model/SafetyLeverStatus.h>
+#include <aws/fis/model/SafetyLeverStatusInput.h>
+#include <aws/fis/model/StartExperimentExperimentOptionsInput.h>
+#include <aws/fis/model/StartExperimentRequest.h>
+#include <aws/fis/model/StartExperimentResult.h>
+#include <aws/fis/model/StopExperimentRequest.h>
+#include <aws/fis/model/StopExperimentResult.h>
+#include <aws/fis/model/TagResourceRequest.h>
+#include <aws/fis/model/TagResourceResult.h>
+#include <aws/fis/model/TargetAccountConfiguration.h>
+#include <aws/fis/model/TargetAccountConfigurationSummary.h>
+#include <aws/fis/model/TargetResourceType.h>
+#include <aws/fis/model/TargetResourceTypeParameter.h>
+#include <aws/fis/model/TargetResourceTypeSummary.h>
+#include <aws/fis/model/UntagResourceRequest.h>
+#include <aws/fis/model/UntagResourceResult.h>
+#include <aws/fis/model/UpdateExperimentTemplateActionInputItem.h>
+#include <aws/fis/model/UpdateExperimentTemplateExperimentOptionsInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateLogConfigurationInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateReportConfigurationInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateRequest.h>
+#include <aws/fis/model/UpdateExperimentTemplateResult.h>
+#include <aws/fis/model/UpdateExperimentTemplateStopConditionInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateTargetInput.h>
+#include <aws/fis/model/UpdateSafetyLeverStateInput.h>
+#include <aws/fis/model/UpdateSafetyLeverStateRequest.h>
+#include <aws/fis/model/UpdateSafetyLeverStateResult.h>
+#include <aws/fis/model/UpdateTargetAccountConfigurationRequest.h>
+#include <aws/fis/model/UpdateTargetAccountConfigurationResult.h>
+
+using FISIncludeTest = ::testing::Test;
+
+TEST_F(FISIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::FIS::FISClient>("FISIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

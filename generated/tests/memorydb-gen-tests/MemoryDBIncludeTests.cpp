@@ -1,0 +1,163 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/memorydb/MemoryDBClient.h>
+#include <aws/memorydb/MemoryDBEndpointProvider.h>
+#include <aws/memorydb/MemoryDBEndpointRules.h>
+#include <aws/memorydb/MemoryDBErrorMarshaller.h>
+#include <aws/memorydb/MemoryDBErrors.h>
+#include <aws/memorydb/MemoryDBRequest.h>
+#include <aws/memorydb/MemoryDBServiceClientModel.h>
+#include <aws/memorydb/MemoryDB_EXPORTS.h>
+#include <aws/memorydb/model/ACL.h>
+#include <aws/memorydb/model/ACLPendingChanges.h>
+#include <aws/memorydb/model/ACLsUpdateStatus.h>
+#include <aws/memorydb/model/AZStatus.h>
+#include <aws/memorydb/model/Authentication.h>
+#include <aws/memorydb/model/AuthenticationMode.h>
+#include <aws/memorydb/model/AuthenticationType.h>
+#include <aws/memorydb/model/AvailabilityZone.h>
+#include <aws/memorydb/model/BatchUpdateClusterRequest.h>
+#include <aws/memorydb/model/BatchUpdateClusterResult.h>
+#include <aws/memorydb/model/Cluster.h>
+#include <aws/memorydb/model/ClusterConfiguration.h>
+#include <aws/memorydb/model/ClusterPendingUpdates.h>
+#include <aws/memorydb/model/CopySnapshotRequest.h>
+#include <aws/memorydb/model/CopySnapshotResult.h>
+#include <aws/memorydb/model/CreateACLRequest.h>
+#include <aws/memorydb/model/CreateACLResult.h>
+#include <aws/memorydb/model/CreateClusterRequest.h>
+#include <aws/memorydb/model/CreateClusterResult.h>
+#include <aws/memorydb/model/CreateMultiRegionClusterRequest.h>
+#include <aws/memorydb/model/CreateMultiRegionClusterResult.h>
+#include <aws/memorydb/model/CreateParameterGroupRequest.h>
+#include <aws/memorydb/model/CreateParameterGroupResult.h>
+#include <aws/memorydb/model/CreateSnapshotRequest.h>
+#include <aws/memorydb/model/CreateSnapshotResult.h>
+#include <aws/memorydb/model/CreateSubnetGroupRequest.h>
+#include <aws/memorydb/model/CreateSubnetGroupResult.h>
+#include <aws/memorydb/model/CreateUserRequest.h>
+#include <aws/memorydb/model/CreateUserResult.h>
+#include <aws/memorydb/model/DataTieringStatus.h>
+#include <aws/memorydb/model/DeleteACLRequest.h>
+#include <aws/memorydb/model/DeleteACLResult.h>
+#include <aws/memorydb/model/DeleteClusterRequest.h>
+#include <aws/memorydb/model/DeleteClusterResult.h>
+#include <aws/memorydb/model/DeleteMultiRegionClusterRequest.h>
+#include <aws/memorydb/model/DeleteMultiRegionClusterResult.h>
+#include <aws/memorydb/model/DeleteParameterGroupRequest.h>
+#include <aws/memorydb/model/DeleteParameterGroupResult.h>
+#include <aws/memorydb/model/DeleteSnapshotRequest.h>
+#include <aws/memorydb/model/DeleteSnapshotResult.h>
+#include <aws/memorydb/model/DeleteSubnetGroupRequest.h>
+#include <aws/memorydb/model/DeleteSubnetGroupResult.h>
+#include <aws/memorydb/model/DeleteUserRequest.h>
+#include <aws/memorydb/model/DeleteUserResult.h>
+#include <aws/memorydb/model/DescribeACLsRequest.h>
+#include <aws/memorydb/model/DescribeACLsResult.h>
+#include <aws/memorydb/model/DescribeClustersRequest.h>
+#include <aws/memorydb/model/DescribeClustersResult.h>
+#include <aws/memorydb/model/DescribeEngineVersionsRequest.h>
+#include <aws/memorydb/model/DescribeEngineVersionsResult.h>
+#include <aws/memorydb/model/DescribeEventsRequest.h>
+#include <aws/memorydb/model/DescribeEventsResult.h>
+#include <aws/memorydb/model/DescribeMultiRegionClustersRequest.h>
+#include <aws/memorydb/model/DescribeMultiRegionClustersResult.h>
+#include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
+#include <aws/memorydb/model/DescribeParameterGroupsResult.h>
+#include <aws/memorydb/model/DescribeParametersRequest.h>
+#include <aws/memorydb/model/DescribeParametersResult.h>
+#include <aws/memorydb/model/DescribeReservedNodesOfferingsRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesOfferingsResult.h>
+#include <aws/memorydb/model/DescribeReservedNodesRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesResult.h>
+#include <aws/memorydb/model/DescribeServiceUpdatesRequest.h>
+#include <aws/memorydb/model/DescribeServiceUpdatesResult.h>
+#include <aws/memorydb/model/DescribeSnapshotsRequest.h>
+#include <aws/memorydb/model/DescribeSnapshotsResult.h>
+#include <aws/memorydb/model/DescribeSubnetGroupsRequest.h>
+#include <aws/memorydb/model/DescribeSubnetGroupsResult.h>
+#include <aws/memorydb/model/DescribeUsersRequest.h>
+#include <aws/memorydb/model/DescribeUsersResult.h>
+#include <aws/memorydb/model/Endpoint.h>
+#include <aws/memorydb/model/EngineVersionInfo.h>
+#include <aws/memorydb/model/Event.h>
+#include <aws/memorydb/model/FailoverShardRequest.h>
+#include <aws/memorydb/model/FailoverShardResult.h>
+#include <aws/memorydb/model/Filter.h>
+#include <aws/memorydb/model/InputAuthenticationType.h>
+#include <aws/memorydb/model/IpDiscovery.h>
+#include <aws/memorydb/model/ListAllowedMultiRegionClusterUpdatesRequest.h>
+#include <aws/memorydb/model/ListAllowedMultiRegionClusterUpdatesResult.h>
+#include <aws/memorydb/model/ListAllowedNodeTypeUpdatesRequest.h>
+#include <aws/memorydb/model/ListAllowedNodeTypeUpdatesResult.h>
+#include <aws/memorydb/model/ListTagsRequest.h>
+#include <aws/memorydb/model/ListTagsResult.h>
+#include <aws/memorydb/model/MultiRegionCluster.h>
+#include <aws/memorydb/model/NetworkType.h>
+#include <aws/memorydb/model/Node.h>
+#include <aws/memorydb/model/Parameter.h>
+#include <aws/memorydb/model/ParameterGroup.h>
+#include <aws/memorydb/model/ParameterNameValue.h>
+#include <aws/memorydb/model/PendingModifiedServiceUpdate.h>
+#include <aws/memorydb/model/PurchaseReservedNodesOfferingRequest.h>
+#include <aws/memorydb/model/PurchaseReservedNodesOfferingResult.h>
+#include <aws/memorydb/model/RecurringCharge.h>
+#include <aws/memorydb/model/RegionalCluster.h>
+#include <aws/memorydb/model/ReplicaConfigurationRequest.h>
+#include <aws/memorydb/model/ReservedNode.h>
+#include <aws/memorydb/model/ReservedNodesOffering.h>
+#include <aws/memorydb/model/ResetParameterGroupRequest.h>
+#include <aws/memorydb/model/ResetParameterGroupResult.h>
+#include <aws/memorydb/model/ReshardingStatus.h>
+#include <aws/memorydb/model/SecurityGroupMembership.h>
+#include <aws/memorydb/model/ServiceUpdate.h>
+#include <aws/memorydb/model/ServiceUpdateRequest.h>
+#include <aws/memorydb/model/ServiceUpdateStatus.h>
+#include <aws/memorydb/model/ServiceUpdateType.h>
+#include <aws/memorydb/model/Shard.h>
+#include <aws/memorydb/model/ShardConfiguration.h>
+#include <aws/memorydb/model/ShardConfigurationRequest.h>
+#include <aws/memorydb/model/ShardDetail.h>
+#include <aws/memorydb/model/SlotMigration.h>
+#include <aws/memorydb/model/Snapshot.h>
+#include <aws/memorydb/model/SourceType.h>
+#include <aws/memorydb/model/Subnet.h>
+#include <aws/memorydb/model/SubnetGroup.h>
+#include <aws/memorydb/model/Tag.h>
+#include <aws/memorydb/model/TagResourceRequest.h>
+#include <aws/memorydb/model/TagResourceResult.h>
+#include <aws/memorydb/model/UnprocessedCluster.h>
+#include <aws/memorydb/model/UntagResourceRequest.h>
+#include <aws/memorydb/model/UntagResourceResult.h>
+#include <aws/memorydb/model/UpdateACLRequest.h>
+#include <aws/memorydb/model/UpdateACLResult.h>
+#include <aws/memorydb/model/UpdateClusterRequest.h>
+#include <aws/memorydb/model/UpdateClusterResult.h>
+#include <aws/memorydb/model/UpdateMultiRegionClusterRequest.h>
+#include <aws/memorydb/model/UpdateMultiRegionClusterResult.h>
+#include <aws/memorydb/model/UpdateParameterGroupRequest.h>
+#include <aws/memorydb/model/UpdateParameterGroupResult.h>
+#include <aws/memorydb/model/UpdateStrategy.h>
+#include <aws/memorydb/model/UpdateSubnetGroupRequest.h>
+#include <aws/memorydb/model/UpdateSubnetGroupResult.h>
+#include <aws/memorydb/model/UpdateUserRequest.h>
+#include <aws/memorydb/model/UpdateUserResult.h>
+#include <aws/memorydb/model/User.h>
+
+using MemoryDBIncludeTest = ::testing::Test;
+
+TEST_F(MemoryDBIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::MemoryDB::MemoryDBClient>("MemoryDBIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

@@ -1,0 +1,164 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/lookoutmetrics/LookoutMetricsClient.h>
+#include <aws/lookoutmetrics/LookoutMetricsEndpointProvider.h>
+#include <aws/lookoutmetrics/LookoutMetricsEndpointRules.h>
+#include <aws/lookoutmetrics/LookoutMetricsErrorMarshaller.h>
+#include <aws/lookoutmetrics/LookoutMetricsErrors.h>
+#include <aws/lookoutmetrics/LookoutMetricsRequest.h>
+#include <aws/lookoutmetrics/LookoutMetricsServiceClientModel.h>
+#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
+#include <aws/lookoutmetrics/model/Action.h>
+#include <aws/lookoutmetrics/model/ActivateAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/ActivateAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/AggregationFunction.h>
+#include <aws/lookoutmetrics/model/Alert.h>
+#include <aws/lookoutmetrics/model/AlertFilters.h>
+#include <aws/lookoutmetrics/model/AlertStatus.h>
+#include <aws/lookoutmetrics/model/AlertSummary.h>
+#include <aws/lookoutmetrics/model/AlertType.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectionTaskStatus.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorConfig.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorConfigSummary.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorDataQualityMetric.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorFailureType.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorStatus.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorSummary.h>
+#include <aws/lookoutmetrics/model/AnomalyGroup.h>
+#include <aws/lookoutmetrics/model/AnomalyGroupStatistics.h>
+#include <aws/lookoutmetrics/model/AnomalyGroupSummary.h>
+#include <aws/lookoutmetrics/model/AnomalyGroupTimeSeries.h>
+#include <aws/lookoutmetrics/model/AnomalyGroupTimeSeriesFeedback.h>
+#include <aws/lookoutmetrics/model/AppFlowConfig.h>
+#include <aws/lookoutmetrics/model/AthenaSourceConfig.h>
+#include <aws/lookoutmetrics/model/AttributeValue.h>
+#include <aws/lookoutmetrics/model/AutoDetectionMetricSource.h>
+#include <aws/lookoutmetrics/model/AutoDetectionS3SourceConfig.h>
+#include <aws/lookoutmetrics/model/BackTestAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/BackTestAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/BackTestConfiguration.h>
+#include <aws/lookoutmetrics/model/CSVFileCompression.h>
+#include <aws/lookoutmetrics/model/CloudWatchConfig.h>
+#include <aws/lookoutmetrics/model/Confidence.h>
+#include <aws/lookoutmetrics/model/ConflictException.h>
+#include <aws/lookoutmetrics/model/ContributionMatrix.h>
+#include <aws/lookoutmetrics/model/CreateAlertRequest.h>
+#include <aws/lookoutmetrics/model/CreateAlertResult.h>
+#include <aws/lookoutmetrics/model/CreateAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/CreateAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/CreateMetricSetRequest.h>
+#include <aws/lookoutmetrics/model/CreateMetricSetResult.h>
+#include <aws/lookoutmetrics/model/CsvFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/DataQualityMetric.h>
+#include <aws/lookoutmetrics/model/DataQualityMetricType.h>
+#include <aws/lookoutmetrics/model/DeactivateAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/DeactivateAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/DeleteAlertRequest.h>
+#include <aws/lookoutmetrics/model/DeleteAlertResult.h>
+#include <aws/lookoutmetrics/model/DeleteAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/DeleteAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/DescribeAlertRequest.h>
+#include <aws/lookoutmetrics/model/DescribeAlertResult.h>
+#include <aws/lookoutmetrics/model/DescribeAnomalyDetectionExecutionsRequest.h>
+#include <aws/lookoutmetrics/model/DescribeAnomalyDetectionExecutionsResult.h>
+#include <aws/lookoutmetrics/model/DescribeAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/DescribeAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/DescribeMetricSetRequest.h>
+#include <aws/lookoutmetrics/model/DescribeMetricSetResult.h>
+#include <aws/lookoutmetrics/model/DetectMetricSetConfigRequest.h>
+#include <aws/lookoutmetrics/model/DetectMetricSetConfigResult.h>
+#include <aws/lookoutmetrics/model/DetectedCsvFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/DetectedField.h>
+#include <aws/lookoutmetrics/model/DetectedFileFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/DetectedJsonFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/DetectedMetricSetConfig.h>
+#include <aws/lookoutmetrics/model/DetectedMetricSource.h>
+#include <aws/lookoutmetrics/model/DetectedS3SourceConfig.h>
+#include <aws/lookoutmetrics/model/DimensionContribution.h>
+#include <aws/lookoutmetrics/model/DimensionFilter.h>
+#include <aws/lookoutmetrics/model/DimensionNameValue.h>
+#include <aws/lookoutmetrics/model/DimensionValueContribution.h>
+#include <aws/lookoutmetrics/model/ExecutionStatus.h>
+#include <aws/lookoutmetrics/model/FileFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/Filter.h>
+#include <aws/lookoutmetrics/model/FilterOperation.h>
+#include <aws/lookoutmetrics/model/Frequency.h>
+#include <aws/lookoutmetrics/model/GetAnomalyGroupRequest.h>
+#include <aws/lookoutmetrics/model/GetAnomalyGroupResult.h>
+#include <aws/lookoutmetrics/model/GetDataQualityMetricsRequest.h>
+#include <aws/lookoutmetrics/model/GetDataQualityMetricsResult.h>
+#include <aws/lookoutmetrics/model/GetFeedbackRequest.h>
+#include <aws/lookoutmetrics/model/GetFeedbackResult.h>
+#include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
+#include <aws/lookoutmetrics/model/GetSampleDataResult.h>
+#include <aws/lookoutmetrics/model/InterMetricImpactDetails.h>
+#include <aws/lookoutmetrics/model/ItemizedMetricStats.h>
+#include <aws/lookoutmetrics/model/JsonFileCompression.h>
+#include <aws/lookoutmetrics/model/JsonFormatDescriptor.h>
+#include <aws/lookoutmetrics/model/LambdaConfiguration.h>
+#include <aws/lookoutmetrics/model/ListAlertsRequest.h>
+#include <aws/lookoutmetrics/model/ListAlertsResult.h>
+#include <aws/lookoutmetrics/model/ListAnomalyDetectorsRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyDetectorsResult.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupRelatedMetricsRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupRelatedMetricsResult.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesResult.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupTimeSeriesRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupTimeSeriesResult.h>
+#include <aws/lookoutmetrics/model/ListMetricSetsRequest.h>
+#include <aws/lookoutmetrics/model/ListMetricSetsResult.h>
+#include <aws/lookoutmetrics/model/ListTagsForResourceRequest.h>
+#include <aws/lookoutmetrics/model/ListTagsForResourceResult.h>
+#include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricLevelImpact.h>
+#include <aws/lookoutmetrics/model/MetricSetDataQualityMetric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
+#include <aws/lookoutmetrics/model/MetricSetSummary.h>
+#include <aws/lookoutmetrics/model/MetricSource.h>
+#include <aws/lookoutmetrics/model/PutFeedbackRequest.h>
+#include <aws/lookoutmetrics/model/PutFeedbackResult.h>
+#include <aws/lookoutmetrics/model/RDSSourceConfig.h>
+#include <aws/lookoutmetrics/model/RedshiftSourceConfig.h>
+#include <aws/lookoutmetrics/model/RelationshipType.h>
+#include <aws/lookoutmetrics/model/ResourceNotFoundException.h>
+#include <aws/lookoutmetrics/model/S3SourceConfig.h>
+#include <aws/lookoutmetrics/model/SNSConfiguration.h>
+#include <aws/lookoutmetrics/model/SampleDataS3SourceConfig.h>
+#include <aws/lookoutmetrics/model/ServiceQuotaExceededException.h>
+#include <aws/lookoutmetrics/model/SnsFormat.h>
+#include <aws/lookoutmetrics/model/TagResourceRequest.h>
+#include <aws/lookoutmetrics/model/TagResourceResult.h>
+#include <aws/lookoutmetrics/model/TimeSeries.h>
+#include <aws/lookoutmetrics/model/TimeSeriesFeedback.h>
+#include <aws/lookoutmetrics/model/TimestampColumn.h>
+#include <aws/lookoutmetrics/model/UntagResourceRequest.h>
+#include <aws/lookoutmetrics/model/UntagResourceResult.h>
+#include <aws/lookoutmetrics/model/UpdateAlertRequest.h>
+#include <aws/lookoutmetrics/model/UpdateAlertResult.h>
+#include <aws/lookoutmetrics/model/UpdateAnomalyDetectorRequest.h>
+#include <aws/lookoutmetrics/model/UpdateAnomalyDetectorResult.h>
+#include <aws/lookoutmetrics/model/UpdateMetricSetRequest.h>
+#include <aws/lookoutmetrics/model/UpdateMetricSetResult.h>
+#include <aws/lookoutmetrics/model/ValidationException.h>
+#include <aws/lookoutmetrics/model/ValidationExceptionField.h>
+#include <aws/lookoutmetrics/model/ValidationExceptionReason.h>
+#include <aws/lookoutmetrics/model/VpcConfiguration.h>
+
+using LookoutMetricsIncludeTest = ::testing::Test;
+
+TEST_F(LookoutMetricsIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::LookoutMetrics::LookoutMetricsClient>("LookoutMetricsIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

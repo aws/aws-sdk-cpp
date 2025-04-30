@@ -1,0 +1,156 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/billingconductor/BillingConductorClient.h>
+#include <aws/billingconductor/BillingConductorEndpointProvider.h>
+#include <aws/billingconductor/BillingConductorEndpointRules.h>
+#include <aws/billingconductor/BillingConductorErrorMarshaller.h>
+#include <aws/billingconductor/BillingConductorErrors.h>
+#include <aws/billingconductor/BillingConductorRequest.h>
+#include <aws/billingconductor/BillingConductorServiceClientModel.h>
+#include <aws/billingconductor/BillingConductor_EXPORTS.h>
+#include <aws/billingconductor/model/AccountAssociationsListElement.h>
+#include <aws/billingconductor/model/AccountGrouping.h>
+#include <aws/billingconductor/model/AssociateAccountsRequest.h>
+#include <aws/billingconductor/model/AssociateAccountsResult.h>
+#include <aws/billingconductor/model/AssociatePricingRulesRequest.h>
+#include <aws/billingconductor/model/AssociatePricingRulesResult.h>
+#include <aws/billingconductor/model/AssociateResourceError.h>
+#include <aws/billingconductor/model/AssociateResourceErrorReason.h>
+#include <aws/billingconductor/model/AssociateResourceResponseElement.h>
+#include <aws/billingconductor/model/Attribute.h>
+#include <aws/billingconductor/model/BatchAssociateResourcesToCustomLineItemRequest.h>
+#include <aws/billingconductor/model/BatchAssociateResourcesToCustomLineItemResult.h>
+#include <aws/billingconductor/model/BatchDisassociateResourcesFromCustomLineItemRequest.h>
+#include <aws/billingconductor/model/BatchDisassociateResourcesFromCustomLineItemResult.h>
+#include <aws/billingconductor/model/BillingGroupCostReportElement.h>
+#include <aws/billingconductor/model/BillingGroupCostReportResultElement.h>
+#include <aws/billingconductor/model/BillingGroupListElement.h>
+#include <aws/billingconductor/model/BillingGroupStatus.h>
+#include <aws/billingconductor/model/BillingPeriodRange.h>
+#include <aws/billingconductor/model/ComputationPreference.h>
+#include <aws/billingconductor/model/ConflictException.h>
+#include <aws/billingconductor/model/ConflictExceptionReason.h>
+#include <aws/billingconductor/model/CreateBillingGroupRequest.h>
+#include <aws/billingconductor/model/CreateBillingGroupResult.h>
+#include <aws/billingconductor/model/CreateCustomLineItemRequest.h>
+#include <aws/billingconductor/model/CreateCustomLineItemResult.h>
+#include <aws/billingconductor/model/CreateFreeTierConfig.h>
+#include <aws/billingconductor/model/CreatePricingPlanRequest.h>
+#include <aws/billingconductor/model/CreatePricingPlanResult.h>
+#include <aws/billingconductor/model/CreatePricingRuleRequest.h>
+#include <aws/billingconductor/model/CreatePricingRuleResult.h>
+#include <aws/billingconductor/model/CreateTieringInput.h>
+#include <aws/billingconductor/model/CurrencyCode.h>
+#include <aws/billingconductor/model/CustomLineItemBillingPeriodRange.h>
+#include <aws/billingconductor/model/CustomLineItemChargeDetails.h>
+#include <aws/billingconductor/model/CustomLineItemFlatChargeDetails.h>
+#include <aws/billingconductor/model/CustomLineItemListElement.h>
+#include <aws/billingconductor/model/CustomLineItemPercentageChargeDetails.h>
+#include <aws/billingconductor/model/CustomLineItemRelationship.h>
+#include <aws/billingconductor/model/CustomLineItemType.h>
+#include <aws/billingconductor/model/CustomLineItemVersionListElement.h>
+#include <aws/billingconductor/model/DeleteBillingGroupRequest.h>
+#include <aws/billingconductor/model/DeleteBillingGroupResult.h>
+#include <aws/billingconductor/model/DeleteCustomLineItemRequest.h>
+#include <aws/billingconductor/model/DeleteCustomLineItemResult.h>
+#include <aws/billingconductor/model/DeletePricingPlanRequest.h>
+#include <aws/billingconductor/model/DeletePricingPlanResult.h>
+#include <aws/billingconductor/model/DeletePricingRuleRequest.h>
+#include <aws/billingconductor/model/DeletePricingRuleResult.h>
+#include <aws/billingconductor/model/DisassociateAccountsRequest.h>
+#include <aws/billingconductor/model/DisassociateAccountsResult.h>
+#include <aws/billingconductor/model/DisassociatePricingRulesRequest.h>
+#include <aws/billingconductor/model/DisassociatePricingRulesResult.h>
+#include <aws/billingconductor/model/DisassociateResourceResponseElement.h>
+#include <aws/billingconductor/model/FreeTierConfig.h>
+#include <aws/billingconductor/model/GetBillingGroupCostReportRequest.h>
+#include <aws/billingconductor/model/GetBillingGroupCostReportResult.h>
+#include <aws/billingconductor/model/GroupByAttributeName.h>
+#include <aws/billingconductor/model/InternalServerException.h>
+#include <aws/billingconductor/model/LineItemFilter.h>
+#include <aws/billingconductor/model/LineItemFilterAttributeName.h>
+#include <aws/billingconductor/model/LineItemFilterValue.h>
+#include <aws/billingconductor/model/ListAccountAssociationsFilter.h>
+#include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
+#include <aws/billingconductor/model/ListAccountAssociationsResult.h>
+#include <aws/billingconductor/model/ListBillingGroupAccountGrouping.h>
+#include <aws/billingconductor/model/ListBillingGroupCostReportsFilter.h>
+#include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
+#include <aws/billingconductor/model/ListBillingGroupCostReportsResult.h>
+#include <aws/billingconductor/model/ListBillingGroupsFilter.h>
+#include <aws/billingconductor/model/ListBillingGroupsRequest.h>
+#include <aws/billingconductor/model/ListBillingGroupsResult.h>
+#include <aws/billingconductor/model/ListCustomLineItemChargeDetails.h>
+#include <aws/billingconductor/model/ListCustomLineItemFlatChargeDetails.h>
+#include <aws/billingconductor/model/ListCustomLineItemPercentageChargeDetails.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsBillingPeriodRangeFilter.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsFilter.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsRequest.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsResult.h>
+#include <aws/billingconductor/model/ListCustomLineItemsFilter.h>
+#include <aws/billingconductor/model/ListCustomLineItemsRequest.h>
+#include <aws/billingconductor/model/ListCustomLineItemsResult.h>
+#include <aws/billingconductor/model/ListPricingPlansAssociatedWithPricingRuleRequest.h>
+#include <aws/billingconductor/model/ListPricingPlansAssociatedWithPricingRuleResult.h>
+#include <aws/billingconductor/model/ListPricingPlansFilter.h>
+#include <aws/billingconductor/model/ListPricingPlansRequest.h>
+#include <aws/billingconductor/model/ListPricingPlansResult.h>
+#include <aws/billingconductor/model/ListPricingRulesAssociatedToPricingPlanRequest.h>
+#include <aws/billingconductor/model/ListPricingRulesAssociatedToPricingPlanResult.h>
+#include <aws/billingconductor/model/ListPricingRulesFilter.h>
+#include <aws/billingconductor/model/ListPricingRulesRequest.h>
+#include <aws/billingconductor/model/ListPricingRulesResult.h>
+#include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemFilter.h>
+#include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemRequest.h>
+#include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemResponseElement.h>
+#include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemResult.h>
+#include <aws/billingconductor/model/ListTagsForResourceRequest.h>
+#include <aws/billingconductor/model/ListTagsForResourceResult.h>
+#include <aws/billingconductor/model/MatchOption.h>
+#include <aws/billingconductor/model/PricingPlanListElement.h>
+#include <aws/billingconductor/model/PricingRuleListElement.h>
+#include <aws/billingconductor/model/PricingRuleScope.h>
+#include <aws/billingconductor/model/PricingRuleType.h>
+#include <aws/billingconductor/model/ResourceNotFoundException.h>
+#include <aws/billingconductor/model/ServiceLimitExceededException.h>
+#include <aws/billingconductor/model/TagResourceRequest.h>
+#include <aws/billingconductor/model/TagResourceResult.h>
+#include <aws/billingconductor/model/ThrottlingException.h>
+#include <aws/billingconductor/model/Tiering.h>
+#include <aws/billingconductor/model/UntagResourceRequest.h>
+#include <aws/billingconductor/model/UntagResourceResult.h>
+#include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
+#include <aws/billingconductor/model/UpdateBillingGroupRequest.h>
+#include <aws/billingconductor/model/UpdateBillingGroupResult.h>
+#include <aws/billingconductor/model/UpdateCustomLineItemChargeDetails.h>
+#include <aws/billingconductor/model/UpdateCustomLineItemFlatChargeDetails.h>
+#include <aws/billingconductor/model/UpdateCustomLineItemPercentageChargeDetails.h>
+#include <aws/billingconductor/model/UpdateCustomLineItemRequest.h>
+#include <aws/billingconductor/model/UpdateCustomLineItemResult.h>
+#include <aws/billingconductor/model/UpdateFreeTierConfig.h>
+#include <aws/billingconductor/model/UpdatePricingPlanRequest.h>
+#include <aws/billingconductor/model/UpdatePricingPlanResult.h>
+#include <aws/billingconductor/model/UpdatePricingRuleRequest.h>
+#include <aws/billingconductor/model/UpdatePricingRuleResult.h>
+#include <aws/billingconductor/model/UpdateTieringInput.h>
+#include <aws/billingconductor/model/ValidationException.h>
+#include <aws/billingconductor/model/ValidationExceptionField.h>
+#include <aws/billingconductor/model/ValidationExceptionReason.h>
+
+using BillingConductorIncludeTest = ::testing::Test;
+
+TEST_F(BillingConductorIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::BillingConductor::BillingConductorClient>("BillingConductorIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

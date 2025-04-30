@@ -16,6 +16,7 @@ import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
 
+from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ServiceModel
 
 SMITHY_SUPPORTED_CLIENTS = [
@@ -242,6 +243,9 @@ class LegacyC2jCppGen(object):
 
         if model_files.endpoint_rule_set and model_files.endpoint_tests:
             self._generate_client_endpoint_tests(service_name, model_files, f"{output_dir}/tests", tmp_dir)
+            IncludeTestsUtil.generate(service_name,
+                                      f"{output_dir}/src/aws-cpp-sdk-{service_name}",
+                                      f"{output_dir}/tests/{service_name}-gen-tests")
 
         return service_name, status
 
