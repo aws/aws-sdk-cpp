@@ -1,0 +1,166 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/workdocs/WorkDocsClient.h>
+#include <aws/workdocs/WorkDocsEndpointProvider.h>
+#include <aws/workdocs/WorkDocsEndpointRules.h>
+#include <aws/workdocs/WorkDocsErrorMarshaller.h>
+#include <aws/workdocs/WorkDocsErrors.h>
+#include <aws/workdocs/WorkDocsRequest.h>
+#include <aws/workdocs/WorkDocsServiceClientModel.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
+#include <aws/workdocs/model/AbortDocumentVersionUploadRequest.h>
+#include <aws/workdocs/model/ActivateUserRequest.h>
+#include <aws/workdocs/model/ActivateUserResult.h>
+#include <aws/workdocs/model/Activity.h>
+#include <aws/workdocs/model/ActivityType.h>
+#include <aws/workdocs/model/AddResourcePermissionsRequest.h>
+#include <aws/workdocs/model/AddResourcePermissionsResult.h>
+#include <aws/workdocs/model/AdditionalResponseFieldType.h>
+#include <aws/workdocs/model/BooleanEnumType.h>
+#include <aws/workdocs/model/Comment.h>
+#include <aws/workdocs/model/CommentMetadata.h>
+#include <aws/workdocs/model/CommentStatusType.h>
+#include <aws/workdocs/model/CommentVisibilityType.h>
+#include <aws/workdocs/model/ContentCategoryType.h>
+#include <aws/workdocs/model/CreateCommentRequest.h>
+#include <aws/workdocs/model/CreateCommentResult.h>
+#include <aws/workdocs/model/CreateCustomMetadataRequest.h>
+#include <aws/workdocs/model/CreateCustomMetadataResult.h>
+#include <aws/workdocs/model/CreateFolderRequest.h>
+#include <aws/workdocs/model/CreateFolderResult.h>
+#include <aws/workdocs/model/CreateLabelsRequest.h>
+#include <aws/workdocs/model/CreateLabelsResult.h>
+#include <aws/workdocs/model/CreateNotificationSubscriptionRequest.h>
+#include <aws/workdocs/model/CreateNotificationSubscriptionResult.h>
+#include <aws/workdocs/model/CreateUserRequest.h>
+#include <aws/workdocs/model/CreateUserResult.h>
+#include <aws/workdocs/model/DateRangeType.h>
+#include <aws/workdocs/model/DeactivateUserRequest.h>
+#include <aws/workdocs/model/DeleteCommentRequest.h>
+#include <aws/workdocs/model/DeleteCustomMetadataRequest.h>
+#include <aws/workdocs/model/DeleteCustomMetadataResult.h>
+#include <aws/workdocs/model/DeleteDocumentRequest.h>
+#include <aws/workdocs/model/DeleteDocumentVersionRequest.h>
+#include <aws/workdocs/model/DeleteFolderContentsRequest.h>
+#include <aws/workdocs/model/DeleteFolderRequest.h>
+#include <aws/workdocs/model/DeleteLabelsRequest.h>
+#include <aws/workdocs/model/DeleteLabelsResult.h>
+#include <aws/workdocs/model/DeleteNotificationSubscriptionRequest.h>
+#include <aws/workdocs/model/DeleteUserRequest.h>
+#include <aws/workdocs/model/DescribeActivitiesRequest.h>
+#include <aws/workdocs/model/DescribeActivitiesResult.h>
+#include <aws/workdocs/model/DescribeCommentsRequest.h>
+#include <aws/workdocs/model/DescribeCommentsResult.h>
+#include <aws/workdocs/model/DescribeDocumentVersionsRequest.h>
+#include <aws/workdocs/model/DescribeDocumentVersionsResult.h>
+#include <aws/workdocs/model/DescribeFolderContentsRequest.h>
+#include <aws/workdocs/model/DescribeFolderContentsResult.h>
+#include <aws/workdocs/model/DescribeGroupsRequest.h>
+#include <aws/workdocs/model/DescribeGroupsResult.h>
+#include <aws/workdocs/model/DescribeNotificationSubscriptionsRequest.h>
+#include <aws/workdocs/model/DescribeNotificationSubscriptionsResult.h>
+#include <aws/workdocs/model/DescribeResourcePermissionsRequest.h>
+#include <aws/workdocs/model/DescribeResourcePermissionsResult.h>
+#include <aws/workdocs/model/DescribeRootFoldersRequest.h>
+#include <aws/workdocs/model/DescribeRootFoldersResult.h>
+#include <aws/workdocs/model/DescribeUsersRequest.h>
+#include <aws/workdocs/model/DescribeUsersResult.h>
+#include <aws/workdocs/model/DocumentMetadata.h>
+#include <aws/workdocs/model/DocumentSourceType.h>
+#include <aws/workdocs/model/DocumentStatusType.h>
+#include <aws/workdocs/model/DocumentThumbnailType.h>
+#include <aws/workdocs/model/DocumentVersionMetadata.h>
+#include <aws/workdocs/model/DocumentVersionStatus.h>
+#include <aws/workdocs/model/EntityNotExistsException.h>
+#include <aws/workdocs/model/Filters.h>
+#include <aws/workdocs/model/FolderContentType.h>
+#include <aws/workdocs/model/FolderMetadata.h>
+#include <aws/workdocs/model/GetCurrentUserRequest.h>
+#include <aws/workdocs/model/GetCurrentUserResult.h>
+#include <aws/workdocs/model/GetDocumentPathRequest.h>
+#include <aws/workdocs/model/GetDocumentPathResult.h>
+#include <aws/workdocs/model/GetDocumentRequest.h>
+#include <aws/workdocs/model/GetDocumentResult.h>
+#include <aws/workdocs/model/GetDocumentVersionRequest.h>
+#include <aws/workdocs/model/GetDocumentVersionResult.h>
+#include <aws/workdocs/model/GetFolderPathRequest.h>
+#include <aws/workdocs/model/GetFolderPathResult.h>
+#include <aws/workdocs/model/GetFolderRequest.h>
+#include <aws/workdocs/model/GetFolderResult.h>
+#include <aws/workdocs/model/GetResourcesRequest.h>
+#include <aws/workdocs/model/GetResourcesResult.h>
+#include <aws/workdocs/model/GroupMetadata.h>
+#include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
+#include <aws/workdocs/model/InitiateDocumentVersionUploadResult.h>
+#include <aws/workdocs/model/LanguageCodeType.h>
+#include <aws/workdocs/model/LocaleType.h>
+#include <aws/workdocs/model/LongRangeType.h>
+#include <aws/workdocs/model/NotificationOptions.h>
+#include <aws/workdocs/model/OrderByFieldType.h>
+#include <aws/workdocs/model/OrderType.h>
+#include <aws/workdocs/model/Participants.h>
+#include <aws/workdocs/model/PermissionInfo.h>
+#include <aws/workdocs/model/Principal.h>
+#include <aws/workdocs/model/PrincipalRoleType.h>
+#include <aws/workdocs/model/PrincipalType.h>
+#include <aws/workdocs/model/RemoveAllResourcePermissionsRequest.h>
+#include <aws/workdocs/model/RemoveResourcePermissionRequest.h>
+#include <aws/workdocs/model/ResourceCollectionType.h>
+#include <aws/workdocs/model/ResourceMetadata.h>
+#include <aws/workdocs/model/ResourcePath.h>
+#include <aws/workdocs/model/ResourcePathComponent.h>
+#include <aws/workdocs/model/ResourceSortType.h>
+#include <aws/workdocs/model/ResourceStateType.h>
+#include <aws/workdocs/model/ResourceType.h>
+#include <aws/workdocs/model/ResponseItem.h>
+#include <aws/workdocs/model/ResponseItemType.h>
+#include <aws/workdocs/model/RestoreDocumentVersionsRequest.h>
+#include <aws/workdocs/model/RolePermissionType.h>
+#include <aws/workdocs/model/RoleType.h>
+#include <aws/workdocs/model/SearchCollectionType.h>
+#include <aws/workdocs/model/SearchPrincipalType.h>
+#include <aws/workdocs/model/SearchQueryScopeType.h>
+#include <aws/workdocs/model/SearchResourceType.h>
+#include <aws/workdocs/model/SearchResourcesRequest.h>
+#include <aws/workdocs/model/SearchResourcesResult.h>
+#include <aws/workdocs/model/SearchSortResult.h>
+#include <aws/workdocs/model/SharePrincipal.h>
+#include <aws/workdocs/model/ShareResult.h>
+#include <aws/workdocs/model/ShareStatusType.h>
+#include <aws/workdocs/model/SortOrder.h>
+#include <aws/workdocs/model/StorageRuleType.h>
+#include <aws/workdocs/model/StorageType.h>
+#include <aws/workdocs/model/Subscription.h>
+#include <aws/workdocs/model/SubscriptionProtocolType.h>
+#include <aws/workdocs/model/SubscriptionType.h>
+#include <aws/workdocs/model/UpdateDocumentRequest.h>
+#include <aws/workdocs/model/UpdateDocumentVersionRequest.h>
+#include <aws/workdocs/model/UpdateFolderRequest.h>
+#include <aws/workdocs/model/UpdateUserRequest.h>
+#include <aws/workdocs/model/UpdateUserResult.h>
+#include <aws/workdocs/model/UploadMetadata.h>
+#include <aws/workdocs/model/User.h>
+#include <aws/workdocs/model/UserFilterType.h>
+#include <aws/workdocs/model/UserMetadata.h>
+#include <aws/workdocs/model/UserSortType.h>
+#include <aws/workdocs/model/UserStatusType.h>
+#include <aws/workdocs/model/UserStorageMetadata.h>
+#include <aws/workdocs/model/UserType.h>
+
+using WorkDocsIncludeTest = ::testing::Test;
+
+TEST_F(WorkDocsIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::WorkDocs::WorkDocsClient>("WorkDocsIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

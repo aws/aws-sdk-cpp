@@ -1,0 +1,153 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogEndpointRules.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogErrors.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogRequest.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
+#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/AmiProductFilters.h>
+#include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/AmiProductSort.h>
+#include <aws/marketplace-catalog/model/AmiProductSortBy.h>
+#include <aws/marketplace-catalog/model/AmiProductSummary.h>
+#include <aws/marketplace-catalog/model/AmiProductTitleFilter.h>
+#include <aws/marketplace-catalog/model/AmiProductVisibilityFilter.h>
+#include <aws/marketplace-catalog/model/AmiProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/BatchDescribeEntitiesRequest.h>
+#include <aws/marketplace-catalog/model/BatchDescribeEntitiesResult.h>
+#include <aws/marketplace-catalog/model/BatchDescribeErrorDetail.h>
+#include <aws/marketplace-catalog/model/CancelChangeSetRequest.h>
+#include <aws/marketplace-catalog/model/CancelChangeSetResult.h>
+#include <aws/marketplace-catalog/model/Change.h>
+#include <aws/marketplace-catalog/model/ChangeSetSummaryListItem.h>
+#include <aws/marketplace-catalog/model/ChangeStatus.h>
+#include <aws/marketplace-catalog/model/ChangeSummary.h>
+#include <aws/marketplace-catalog/model/ContainerProductEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/ContainerProductFilters.h>
+#include <aws/marketplace-catalog/model/ContainerProductLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/ContainerProductLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/ContainerProductSort.h>
+#include <aws/marketplace-catalog/model/ContainerProductSortBy.h>
+#include <aws/marketplace-catalog/model/ContainerProductSummary.h>
+#include <aws/marketplace-catalog/model/ContainerProductTitleFilter.h>
+#include <aws/marketplace-catalog/model/ContainerProductVisibilityFilter.h>
+#include <aws/marketplace-catalog/model/ContainerProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/DataProductEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/DataProductFilters.h>
+#include <aws/marketplace-catalog/model/DataProductLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/DataProductLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/DataProductSort.h>
+#include <aws/marketplace-catalog/model/DataProductSortBy.h>
+#include <aws/marketplace-catalog/model/DataProductSummary.h>
+#include <aws/marketplace-catalog/model/DataProductTitleFilter.h>
+#include <aws/marketplace-catalog/model/DataProductVisibilityFilter.h>
+#include <aws/marketplace-catalog/model/DataProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/DeleteResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/DeleteResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/DescribeChangeSetRequest.h>
+#include <aws/marketplace-catalog/model/DescribeChangeSetResult.h>
+#include <aws/marketplace-catalog/model/DescribeEntityRequest.h>
+#include <aws/marketplace-catalog/model/DescribeEntityResult.h>
+#include <aws/marketplace-catalog/model/Entity.h>
+#include <aws/marketplace-catalog/model/EntityDetail.h>
+#include <aws/marketplace-catalog/model/EntityRequest.h>
+#include <aws/marketplace-catalog/model/EntitySummary.h>
+#include <aws/marketplace-catalog/model/EntityTypeFilters.h>
+#include <aws/marketplace-catalog/model/EntityTypeSort.h>
+#include <aws/marketplace-catalog/model/ErrorDetail.h>
+#include <aws/marketplace-catalog/model/FailureCode.h>
+#include <aws/marketplace-catalog/model/Filter.h>
+#include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/GetResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/Intent.h>
+#include <aws/marketplace-catalog/model/ListChangeSetsRequest.h>
+#include <aws/marketplace-catalog/model/ListChangeSetsResult.h>
+#include <aws/marketplace-catalog/model/ListEntitiesRequest.h>
+#include <aws/marketplace-catalog/model/ListEntitiesResult.h>
+#include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
+#include <aws/marketplace-catalog/model/ListTagsForResourceResult.h>
+#include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilter.h>
+#include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
+#include <aws/marketplace-catalog/model/OfferEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferFilters.h>
+#include <aws/marketplace-catalog/model/OfferLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/OfferLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/OfferNameFilter.h>
+#include <aws/marketplace-catalog/model/OfferProductIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferReleaseDateFilter.h>
+#include <aws/marketplace-catalog/model/OfferReleaseDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/OfferResaleAuthorizationIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferSort.h>
+#include <aws/marketplace-catalog/model/OfferSortBy.h>
+#include <aws/marketplace-catalog/model/OfferStateFilter.h>
+#include <aws/marketplace-catalog/model/OfferStateString.h>
+#include <aws/marketplace-catalog/model/OfferSummary.h>
+#include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
+#include <aws/marketplace-catalog/model/OfferTargetingString.h>
+#include <aws/marketplace-catalog/model/OwnershipType.h>
+#include <aws/marketplace-catalog/model/PutResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/PutResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationAvailabilityEndDateFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationAvailabilityEndDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationCreatedDateFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationCreatedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationFilters.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationManufacturerAccountIdFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationManufacturerLegalNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationOfferExtendedStatusFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationProductIdFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationProductNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerAccountIDFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationResellerLegalNameFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationSortBy.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationStatusFilter.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationStatusString.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationSummary.h>
+#include <aws/marketplace-catalog/model/SaaSProductEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/SaaSProductFilters.h>
+#include <aws/marketplace-catalog/model/SaaSProductLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/SaaSProductLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/SaaSProductSort.h>
+#include <aws/marketplace-catalog/model/SaaSProductSortBy.h>
+#include <aws/marketplace-catalog/model/SaaSProductSummary.h>
+#include <aws/marketplace-catalog/model/SaaSProductTitleFilter.h>
+#include <aws/marketplace-catalog/model/SaaSProductVisibilityFilter.h>
+#include <aws/marketplace-catalog/model/SaaSProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/Sort.h>
+#include <aws/marketplace-catalog/model/SortOrder.h>
+#include <aws/marketplace-catalog/model/StartChangeSetRequest.h>
+#include <aws/marketplace-catalog/model/StartChangeSetResult.h>
+#include <aws/marketplace-catalog/model/Tag.h>
+#include <aws/marketplace-catalog/model/TagResourceRequest.h>
+#include <aws/marketplace-catalog/model/TagResourceResult.h>
+#include <aws/marketplace-catalog/model/UntagResourceRequest.h>
+#include <aws/marketplace-catalog/model/UntagResourceResult.h>
+
+using MarketplaceCatalogIncludeTest = ::testing::Test;
+
+TEST_F(MarketplaceCatalogIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::MarketplaceCatalog::MarketplaceCatalogClient>("MarketplaceCatalogIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

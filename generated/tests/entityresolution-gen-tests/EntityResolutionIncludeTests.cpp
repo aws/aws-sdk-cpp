@@ -1,0 +1,155 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/entityresolution/EntityResolutionClient.h>
+#include <aws/entityresolution/EntityResolutionEndpointProvider.h>
+#include <aws/entityresolution/EntityResolutionEndpointRules.h>
+#include <aws/entityresolution/EntityResolutionErrorMarshaller.h>
+#include <aws/entityresolution/EntityResolutionErrors.h>
+#include <aws/entityresolution/EntityResolutionRequest.h>
+#include <aws/entityresolution/EntityResolutionServiceClientModel.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/entityresolution/model/AddPolicyStatementRequest.h>
+#include <aws/entityresolution/model/AddPolicyStatementResult.h>
+#include <aws/entityresolution/model/AttributeMatchingModel.h>
+#include <aws/entityresolution/model/BatchDeleteUniqueIdRequest.h>
+#include <aws/entityresolution/model/BatchDeleteUniqueIdResult.h>
+#include <aws/entityresolution/model/CreateIdMappingWorkflowRequest.h>
+#include <aws/entityresolution/model/CreateIdMappingWorkflowResult.h>
+#include <aws/entityresolution/model/CreateIdNamespaceRequest.h>
+#include <aws/entityresolution/model/CreateIdNamespaceResult.h>
+#include <aws/entityresolution/model/CreateMatchingWorkflowRequest.h>
+#include <aws/entityresolution/model/CreateMatchingWorkflowResult.h>
+#include <aws/entityresolution/model/CreateSchemaMappingRequest.h>
+#include <aws/entityresolution/model/CreateSchemaMappingResult.h>
+#include <aws/entityresolution/model/DeleteIdMappingWorkflowRequest.h>
+#include <aws/entityresolution/model/DeleteIdMappingWorkflowResult.h>
+#include <aws/entityresolution/model/DeleteIdNamespaceRequest.h>
+#include <aws/entityresolution/model/DeleteIdNamespaceResult.h>
+#include <aws/entityresolution/model/DeleteMatchingWorkflowRequest.h>
+#include <aws/entityresolution/model/DeleteMatchingWorkflowResult.h>
+#include <aws/entityresolution/model/DeletePolicyStatementRequest.h>
+#include <aws/entityresolution/model/DeletePolicyStatementResult.h>
+#include <aws/entityresolution/model/DeleteSchemaMappingRequest.h>
+#include <aws/entityresolution/model/DeleteSchemaMappingResult.h>
+#include <aws/entityresolution/model/DeleteUniqueIdError.h>
+#include <aws/entityresolution/model/DeleteUniqueIdErrorType.h>
+#include <aws/entityresolution/model/DeleteUniqueIdStatus.h>
+#include <aws/entityresolution/model/DeletedUniqueId.h>
+#include <aws/entityresolution/model/ErrorDetails.h>
+#include <aws/entityresolution/model/ExceedsLimitException.h>
+#include <aws/entityresolution/model/GetIdMappingJobRequest.h>
+#include <aws/entityresolution/model/GetIdMappingJobResult.h>
+#include <aws/entityresolution/model/GetIdMappingWorkflowRequest.h>
+#include <aws/entityresolution/model/GetIdMappingWorkflowResult.h>
+#include <aws/entityresolution/model/GetIdNamespaceRequest.h>
+#include <aws/entityresolution/model/GetIdNamespaceResult.h>
+#include <aws/entityresolution/model/GetMatchIdRequest.h>
+#include <aws/entityresolution/model/GetMatchIdResult.h>
+#include <aws/entityresolution/model/GetMatchingJobRequest.h>
+#include <aws/entityresolution/model/GetMatchingJobResult.h>
+#include <aws/entityresolution/model/GetMatchingWorkflowRequest.h>
+#include <aws/entityresolution/model/GetMatchingWorkflowResult.h>
+#include <aws/entityresolution/model/GetPolicyRequest.h>
+#include <aws/entityresolution/model/GetPolicyResult.h>
+#include <aws/entityresolution/model/GetProviderServiceRequest.h>
+#include <aws/entityresolution/model/GetProviderServiceResult.h>
+#include <aws/entityresolution/model/GetSchemaMappingRequest.h>
+#include <aws/entityresolution/model/GetSchemaMappingResult.h>
+#include <aws/entityresolution/model/IdMappingJobMetrics.h>
+#include <aws/entityresolution/model/IdMappingJobOutputSource.h>
+#include <aws/entityresolution/model/IdMappingRuleBasedProperties.h>
+#include <aws/entityresolution/model/IdMappingTechniques.h>
+#include <aws/entityresolution/model/IdMappingType.h>
+#include <aws/entityresolution/model/IdMappingWorkflowInputSource.h>
+#include <aws/entityresolution/model/IdMappingWorkflowOutputSource.h>
+#include <aws/entityresolution/model/IdMappingWorkflowRuleDefinitionType.h>
+#include <aws/entityresolution/model/IdMappingWorkflowSummary.h>
+#include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowMetadata.h>
+#include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowProperties.h>
+#include <aws/entityresolution/model/IdNamespaceInputSource.h>
+#include <aws/entityresolution/model/IdNamespaceSummary.h>
+#include <aws/entityresolution/model/IdNamespaceType.h>
+#include <aws/entityresolution/model/IncrementalRunConfig.h>
+#include <aws/entityresolution/model/IncrementalRunType.h>
+#include <aws/entityresolution/model/InputSource.h>
+#include <aws/entityresolution/model/IntermediateSourceConfiguration.h>
+#include <aws/entityresolution/model/JobMetrics.h>
+#include <aws/entityresolution/model/JobOutputSource.h>
+#include <aws/entityresolution/model/JobStatus.h>
+#include <aws/entityresolution/model/JobSummary.h>
+#include <aws/entityresolution/model/ListIdMappingJobsRequest.h>
+#include <aws/entityresolution/model/ListIdMappingJobsResult.h>
+#include <aws/entityresolution/model/ListIdMappingWorkflowsRequest.h>
+#include <aws/entityresolution/model/ListIdMappingWorkflowsResult.h>
+#include <aws/entityresolution/model/ListIdNamespacesRequest.h>
+#include <aws/entityresolution/model/ListIdNamespacesResult.h>
+#include <aws/entityresolution/model/ListMatchingJobsRequest.h>
+#include <aws/entityresolution/model/ListMatchingJobsResult.h>
+#include <aws/entityresolution/model/ListMatchingWorkflowsRequest.h>
+#include <aws/entityresolution/model/ListMatchingWorkflowsResult.h>
+#include <aws/entityresolution/model/ListProviderServicesRequest.h>
+#include <aws/entityresolution/model/ListProviderServicesResult.h>
+#include <aws/entityresolution/model/ListSchemaMappingsRequest.h>
+#include <aws/entityresolution/model/ListSchemaMappingsResult.h>
+#include <aws/entityresolution/model/ListTagsForResourceRequest.h>
+#include <aws/entityresolution/model/ListTagsForResourceResult.h>
+#include <aws/entityresolution/model/MatchPurpose.h>
+#include <aws/entityresolution/model/MatchingWorkflowSummary.h>
+#include <aws/entityresolution/model/NamespaceProviderProperties.h>
+#include <aws/entityresolution/model/NamespaceRuleBasedProperties.h>
+#include <aws/entityresolution/model/OutputAttribute.h>
+#include <aws/entityresolution/model/OutputSource.h>
+#include <aws/entityresolution/model/ProviderComponentSchema.h>
+#include <aws/entityresolution/model/ProviderEndpointConfiguration.h>
+#include <aws/entityresolution/model/ProviderIdNameSpaceConfiguration.h>
+#include <aws/entityresolution/model/ProviderIntermediateDataAccessConfiguration.h>
+#include <aws/entityresolution/model/ProviderMarketplaceConfiguration.h>
+#include <aws/entityresolution/model/ProviderProperties.h>
+#include <aws/entityresolution/model/ProviderSchemaAttribute.h>
+#include <aws/entityresolution/model/ProviderServiceSummary.h>
+#include <aws/entityresolution/model/PutPolicyRequest.h>
+#include <aws/entityresolution/model/PutPolicyResult.h>
+#include <aws/entityresolution/model/RecordMatchingModel.h>
+#include <aws/entityresolution/model/ResolutionTechniques.h>
+#include <aws/entityresolution/model/ResolutionType.h>
+#include <aws/entityresolution/model/Rule.h>
+#include <aws/entityresolution/model/RuleBasedProperties.h>
+#include <aws/entityresolution/model/SchemaAttributeType.h>
+#include <aws/entityresolution/model/SchemaInputAttribute.h>
+#include <aws/entityresolution/model/SchemaMappingSummary.h>
+#include <aws/entityresolution/model/ServiceType.h>
+#include <aws/entityresolution/model/StartIdMappingJobRequest.h>
+#include <aws/entityresolution/model/StartIdMappingJobResult.h>
+#include <aws/entityresolution/model/StartMatchingJobRequest.h>
+#include <aws/entityresolution/model/StartMatchingJobResult.h>
+#include <aws/entityresolution/model/StatementEffect.h>
+#include <aws/entityresolution/model/TagResourceRequest.h>
+#include <aws/entityresolution/model/TagResourceResult.h>
+#include <aws/entityresolution/model/UntagResourceRequest.h>
+#include <aws/entityresolution/model/UntagResourceResult.h>
+#include <aws/entityresolution/model/UpdateIdMappingWorkflowRequest.h>
+#include <aws/entityresolution/model/UpdateIdMappingWorkflowResult.h>
+#include <aws/entityresolution/model/UpdateIdNamespaceRequest.h>
+#include <aws/entityresolution/model/UpdateIdNamespaceResult.h>
+#include <aws/entityresolution/model/UpdateMatchingWorkflowRequest.h>
+#include <aws/entityresolution/model/UpdateMatchingWorkflowResult.h>
+#include <aws/entityresolution/model/UpdateSchemaMappingRequest.h>
+#include <aws/entityresolution/model/UpdateSchemaMappingResult.h>
+
+using EntityResolutionIncludeTest = ::testing::Test;
+
+TEST_F(EntityResolutionIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::EntityResolution::EntityResolutionClient>("EntityResolutionIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

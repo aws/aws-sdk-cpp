@@ -1,0 +1,161 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/amplifyuibuilder/AmplifyUIBuilderClient.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointRules.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderErrors.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderRequest.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/amplifyuibuilder/model/ActionParameters.h>
+#include <aws/amplifyuibuilder/model/ApiConfiguration.h>
+#include <aws/amplifyuibuilder/model/CodegenDependency.h>
+#include <aws/amplifyuibuilder/model/CodegenFeatureFlags.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataEnum.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataField.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataFieldDataType.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataModel.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataNonModel.h>
+#include <aws/amplifyuibuilder/model/CodegenGenericDataRelationshipType.h>
+#include <aws/amplifyuibuilder/model/CodegenJob.h>
+#include <aws/amplifyuibuilder/model/CodegenJobAsset.h>
+#include <aws/amplifyuibuilder/model/CodegenJobGenericDataSchema.h>
+#include <aws/amplifyuibuilder/model/CodegenJobGenericDataSourceType.h>
+#include <aws/amplifyuibuilder/model/CodegenJobRenderConfig.h>
+#include <aws/amplifyuibuilder/model/CodegenJobStatus.h>
+#include <aws/amplifyuibuilder/model/CodegenJobSummary.h>
+#include <aws/amplifyuibuilder/model/Component.h>
+#include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValue.h>
+#include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValueProperties.h>
+#include <aws/amplifyuibuilder/model/ComponentChild.h>
+#include <aws/amplifyuibuilder/model/ComponentConditionProperty.h>
+#include <aws/amplifyuibuilder/model/ComponentDataConfiguration.h>
+#include <aws/amplifyuibuilder/model/ComponentEvent.h>
+#include <aws/amplifyuibuilder/model/ComponentProperty.h>
+#include <aws/amplifyuibuilder/model/ComponentPropertyBindingProperties.h>
+#include <aws/amplifyuibuilder/model/ComponentSummary.h>
+#include <aws/amplifyuibuilder/model/ComponentVariant.h>
+#include <aws/amplifyuibuilder/model/CreateComponentData.h>
+#include <aws/amplifyuibuilder/model/CreateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/CreateComponentResult.h>
+#include <aws/amplifyuibuilder/model/CreateFormData.h>
+#include <aws/amplifyuibuilder/model/CreateFormRequest.h>
+#include <aws/amplifyuibuilder/model/CreateFormResult.h>
+#include <aws/amplifyuibuilder/model/CreateThemeData.h>
+#include <aws/amplifyuibuilder/model/CreateThemeRequest.h>
+#include <aws/amplifyuibuilder/model/CreateThemeResult.h>
+#include <aws/amplifyuibuilder/model/DataStoreRenderConfig.h>
+#include <aws/amplifyuibuilder/model/DeleteComponentRequest.h>
+#include <aws/amplifyuibuilder/model/DeleteFormRequest.h>
+#include <aws/amplifyuibuilder/model/DeleteThemeRequest.h>
+#include <aws/amplifyuibuilder/model/ExchangeCodeForTokenRequest.h>
+#include <aws/amplifyuibuilder/model/ExchangeCodeForTokenRequestBody.h>
+#include <aws/amplifyuibuilder/model/ExchangeCodeForTokenResult.h>
+#include <aws/amplifyuibuilder/model/ExportComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ExportComponentsResult.h>
+#include <aws/amplifyuibuilder/model/ExportFormsRequest.h>
+#include <aws/amplifyuibuilder/model/ExportFormsResult.h>
+#include <aws/amplifyuibuilder/model/ExportThemesRequest.h>
+#include <aws/amplifyuibuilder/model/ExportThemesResult.h>
+#include <aws/amplifyuibuilder/model/FieldConfig.h>
+#include <aws/amplifyuibuilder/model/FieldInputConfig.h>
+#include <aws/amplifyuibuilder/model/FieldPosition.h>
+#include <aws/amplifyuibuilder/model/FieldValidationConfiguration.h>
+#include <aws/amplifyuibuilder/model/FileUploaderFieldConfig.h>
+#include <aws/amplifyuibuilder/model/FixedPosition.h>
+#include <aws/amplifyuibuilder/model/Form.h>
+#include <aws/amplifyuibuilder/model/FormActionType.h>
+#include <aws/amplifyuibuilder/model/FormBindingElement.h>
+#include <aws/amplifyuibuilder/model/FormButton.h>
+#include <aws/amplifyuibuilder/model/FormButtonsPosition.h>
+#include <aws/amplifyuibuilder/model/FormCTA.h>
+#include <aws/amplifyuibuilder/model/FormDataSourceType.h>
+#include <aws/amplifyuibuilder/model/FormDataTypeConfig.h>
+#include <aws/amplifyuibuilder/model/FormInputBindingPropertiesValue.h>
+#include <aws/amplifyuibuilder/model/FormInputBindingPropertiesValueProperties.h>
+#include <aws/amplifyuibuilder/model/FormInputValueProperty.h>
+#include <aws/amplifyuibuilder/model/FormInputValuePropertyBindingProperties.h>
+#include <aws/amplifyuibuilder/model/FormStyle.h>
+#include <aws/amplifyuibuilder/model/FormStyleConfig.h>
+#include <aws/amplifyuibuilder/model/FormSummary.h>
+#include <aws/amplifyuibuilder/model/GenericDataRelationshipType.h>
+#include <aws/amplifyuibuilder/model/GetCodegenJobRequest.h>
+#include <aws/amplifyuibuilder/model/GetCodegenJobResult.h>
+#include <aws/amplifyuibuilder/model/GetComponentRequest.h>
+#include <aws/amplifyuibuilder/model/GetComponentResult.h>
+#include <aws/amplifyuibuilder/model/GetFormRequest.h>
+#include <aws/amplifyuibuilder/model/GetFormResult.h>
+#include <aws/amplifyuibuilder/model/GetMetadataRequest.h>
+#include <aws/amplifyuibuilder/model/GetMetadataResult.h>
+#include <aws/amplifyuibuilder/model/GetThemeRequest.h>
+#include <aws/amplifyuibuilder/model/GetThemeResult.h>
+#include <aws/amplifyuibuilder/model/GraphQLRenderConfig.h>
+#include <aws/amplifyuibuilder/model/JSModule.h>
+#include <aws/amplifyuibuilder/model/JSScript.h>
+#include <aws/amplifyuibuilder/model/JSTarget.h>
+#include <aws/amplifyuibuilder/model/LabelDecorator.h>
+#include <aws/amplifyuibuilder/model/ListCodegenJobsRequest.h>
+#include <aws/amplifyuibuilder/model/ListCodegenJobsResult.h>
+#include <aws/amplifyuibuilder/model/ListComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ListComponentsResult.h>
+#include <aws/amplifyuibuilder/model/ListFormsRequest.h>
+#include <aws/amplifyuibuilder/model/ListFormsResult.h>
+#include <aws/amplifyuibuilder/model/ListTagsForResourceRequest.h>
+#include <aws/amplifyuibuilder/model/ListTagsForResourceResult.h>
+#include <aws/amplifyuibuilder/model/ListThemesRequest.h>
+#include <aws/amplifyuibuilder/model/ListThemesResult.h>
+#include <aws/amplifyuibuilder/model/MutationActionSetStateParameter.h>
+#include <aws/amplifyuibuilder/model/NoApiRenderConfig.h>
+#include <aws/amplifyuibuilder/model/Predicate.h>
+#include <aws/amplifyuibuilder/model/PutMetadataFlagBody.h>
+#include <aws/amplifyuibuilder/model/PutMetadataFlagRequest.h>
+#include <aws/amplifyuibuilder/model/ReactStartCodegenJobData.h>
+#include <aws/amplifyuibuilder/model/RefreshTokenRequest.h>
+#include <aws/amplifyuibuilder/model/RefreshTokenRequestBody.h>
+#include <aws/amplifyuibuilder/model/RefreshTokenResult.h>
+#include <aws/amplifyuibuilder/model/SectionalElement.h>
+#include <aws/amplifyuibuilder/model/SortDirection.h>
+#include <aws/amplifyuibuilder/model/SortProperty.h>
+#include <aws/amplifyuibuilder/model/StartCodegenJobData.h>
+#include <aws/amplifyuibuilder/model/StartCodegenJobRequest.h>
+#include <aws/amplifyuibuilder/model/StartCodegenJobResult.h>
+#include <aws/amplifyuibuilder/model/StorageAccessLevel.h>
+#include <aws/amplifyuibuilder/model/TagResourceRequest.h>
+#include <aws/amplifyuibuilder/model/TagResourceResult.h>
+#include <aws/amplifyuibuilder/model/Theme.h>
+#include <aws/amplifyuibuilder/model/ThemeSummary.h>
+#include <aws/amplifyuibuilder/model/ThemeValue.h>
+#include <aws/amplifyuibuilder/model/ThemeValues.h>
+#include <aws/amplifyuibuilder/model/TokenProviders.h>
+#include <aws/amplifyuibuilder/model/UntagResourceRequest.h>
+#include <aws/amplifyuibuilder/model/UntagResourceResult.h>
+#include <aws/amplifyuibuilder/model/UpdateComponentData.h>
+#include <aws/amplifyuibuilder/model/UpdateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/UpdateComponentResult.h>
+#include <aws/amplifyuibuilder/model/UpdateFormData.h>
+#include <aws/amplifyuibuilder/model/UpdateFormRequest.h>
+#include <aws/amplifyuibuilder/model/UpdateFormResult.h>
+#include <aws/amplifyuibuilder/model/UpdateThemeData.h>
+#include <aws/amplifyuibuilder/model/UpdateThemeRequest.h>
+#include <aws/amplifyuibuilder/model/UpdateThemeResult.h>
+#include <aws/amplifyuibuilder/model/ValueMapping.h>
+#include <aws/amplifyuibuilder/model/ValueMappings.h>
+
+using AmplifyUIBuilderIncludeTest = ::testing::Test;
+
+TEST_F(AmplifyUIBuilderIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::AmplifyUIBuilder::AmplifyUIBuilderClient>("AmplifyUIBuilderIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

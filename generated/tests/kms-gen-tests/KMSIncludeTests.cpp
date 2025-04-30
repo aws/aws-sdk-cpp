@@ -1,0 +1,156 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/kms/KMSClient.h>
+#include <aws/kms/KMSEndpointProvider.h>
+#include <aws/kms/KMSEndpointRules.h>
+#include <aws/kms/KMSErrorMarshaller.h>
+#include <aws/kms/KMSErrors.h>
+#include <aws/kms/KMSRequest.h>
+#include <aws/kms/KMSServiceClientModel.h>
+#include <aws/kms/KMS_EXPORTS.h>
+#include <aws/kms/model/AlgorithmSpec.h>
+#include <aws/kms/model/AliasListEntry.h>
+#include <aws/kms/model/CancelKeyDeletionRequest.h>
+#include <aws/kms/model/CancelKeyDeletionResult.h>
+#include <aws/kms/model/ConnectCustomKeyStoreRequest.h>
+#include <aws/kms/model/ConnectCustomKeyStoreResult.h>
+#include <aws/kms/model/ConnectionErrorCodeType.h>
+#include <aws/kms/model/ConnectionStateType.h>
+#include <aws/kms/model/CreateAliasRequest.h>
+#include <aws/kms/model/CreateCustomKeyStoreRequest.h>
+#include <aws/kms/model/CreateCustomKeyStoreResult.h>
+#include <aws/kms/model/CreateGrantRequest.h>
+#include <aws/kms/model/CreateGrantResult.h>
+#include <aws/kms/model/CreateKeyRequest.h>
+#include <aws/kms/model/CreateKeyResult.h>
+#include <aws/kms/model/CustomKeyStoreType.h>
+#include <aws/kms/model/CustomKeyStoresListEntry.h>
+#include <aws/kms/model/DataKeyPairSpec.h>
+#include <aws/kms/model/DataKeySpec.h>
+#include <aws/kms/model/DecryptRequest.h>
+#include <aws/kms/model/DecryptResult.h>
+#include <aws/kms/model/DeleteAliasRequest.h>
+#include <aws/kms/model/DeleteCustomKeyStoreRequest.h>
+#include <aws/kms/model/DeleteCustomKeyStoreResult.h>
+#include <aws/kms/model/DeleteImportedKeyMaterialRequest.h>
+#include <aws/kms/model/DeriveSharedSecretRequest.h>
+#include <aws/kms/model/DeriveSharedSecretResult.h>
+#include <aws/kms/model/DescribeCustomKeyStoresRequest.h>
+#include <aws/kms/model/DescribeCustomKeyStoresResult.h>
+#include <aws/kms/model/DescribeKeyRequest.h>
+#include <aws/kms/model/DescribeKeyResult.h>
+#include <aws/kms/model/DisableKeyRequest.h>
+#include <aws/kms/model/DisableKeyRotationRequest.h>
+#include <aws/kms/model/DisconnectCustomKeyStoreRequest.h>
+#include <aws/kms/model/DisconnectCustomKeyStoreResult.h>
+#include <aws/kms/model/EnableKeyRequest.h>
+#include <aws/kms/model/EnableKeyRotationRequest.h>
+#include <aws/kms/model/EncryptRequest.h>
+#include <aws/kms/model/EncryptResult.h>
+#include <aws/kms/model/EncryptionAlgorithmSpec.h>
+#include <aws/kms/model/ExpirationModelType.h>
+#include <aws/kms/model/GenerateDataKeyPairRequest.h>
+#include <aws/kms/model/GenerateDataKeyPairResult.h>
+#include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextRequest.h>
+#include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextResult.h>
+#include <aws/kms/model/GenerateDataKeyRequest.h>
+#include <aws/kms/model/GenerateDataKeyResult.h>
+#include <aws/kms/model/GenerateDataKeyWithoutPlaintextRequest.h>
+#include <aws/kms/model/GenerateDataKeyWithoutPlaintextResult.h>
+#include <aws/kms/model/GenerateMacRequest.h>
+#include <aws/kms/model/GenerateMacResult.h>
+#include <aws/kms/model/GenerateRandomRequest.h>
+#include <aws/kms/model/GenerateRandomResult.h>
+#include <aws/kms/model/GetKeyPolicyRequest.h>
+#include <aws/kms/model/GetKeyPolicyResult.h>
+#include <aws/kms/model/GetKeyRotationStatusRequest.h>
+#include <aws/kms/model/GetKeyRotationStatusResult.h>
+#include <aws/kms/model/GetParametersForImportRequest.h>
+#include <aws/kms/model/GetParametersForImportResult.h>
+#include <aws/kms/model/GetPublicKeyRequest.h>
+#include <aws/kms/model/GetPublicKeyResult.h>
+#include <aws/kms/model/GrantConstraints.h>
+#include <aws/kms/model/GrantListEntry.h>
+#include <aws/kms/model/GrantOperation.h>
+#include <aws/kms/model/ImportKeyMaterialRequest.h>
+#include <aws/kms/model/ImportKeyMaterialResult.h>
+#include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
+#include <aws/kms/model/KeyEncryptionMechanism.h>
+#include <aws/kms/model/KeyListEntry.h>
+#include <aws/kms/model/KeyManagerType.h>
+#include <aws/kms/model/KeyMetadata.h>
+#include <aws/kms/model/KeySpec.h>
+#include <aws/kms/model/KeyState.h>
+#include <aws/kms/model/KeyUsageType.h>
+#include <aws/kms/model/ListAliasesRequest.h>
+#include <aws/kms/model/ListAliasesResult.h>
+#include <aws/kms/model/ListGrantsRequest.h>
+#include <aws/kms/model/ListGrantsResult.h>
+#include <aws/kms/model/ListKeyPoliciesRequest.h>
+#include <aws/kms/model/ListKeyPoliciesResult.h>
+#include <aws/kms/model/ListKeyRotationsRequest.h>
+#include <aws/kms/model/ListKeyRotationsResult.h>
+#include <aws/kms/model/ListKeysRequest.h>
+#include <aws/kms/model/ListKeysResult.h>
+#include <aws/kms/model/ListResourceTagsRequest.h>
+#include <aws/kms/model/ListResourceTagsResult.h>
+#include <aws/kms/model/ListRetirableGrantsRequest.h>
+#include <aws/kms/model/ListRetirableGrantsResult.h>
+#include <aws/kms/model/MacAlgorithmSpec.h>
+#include <aws/kms/model/MessageType.h>
+#include <aws/kms/model/MultiRegionConfiguration.h>
+#include <aws/kms/model/MultiRegionKey.h>
+#include <aws/kms/model/MultiRegionKeyType.h>
+#include <aws/kms/model/OriginType.h>
+#include <aws/kms/model/PutKeyPolicyRequest.h>
+#include <aws/kms/model/ReEncryptRequest.h>
+#include <aws/kms/model/ReEncryptResult.h>
+#include <aws/kms/model/RecipientInfo.h>
+#include <aws/kms/model/ReplicateKeyRequest.h>
+#include <aws/kms/model/ReplicateKeyResult.h>
+#include <aws/kms/model/RetireGrantRequest.h>
+#include <aws/kms/model/RevokeGrantRequest.h>
+#include <aws/kms/model/RotateKeyOnDemandRequest.h>
+#include <aws/kms/model/RotateKeyOnDemandResult.h>
+#include <aws/kms/model/RotationType.h>
+#include <aws/kms/model/RotationsListEntry.h>
+#include <aws/kms/model/ScheduleKeyDeletionRequest.h>
+#include <aws/kms/model/ScheduleKeyDeletionResult.h>
+#include <aws/kms/model/SignRequest.h>
+#include <aws/kms/model/SignResult.h>
+#include <aws/kms/model/SigningAlgorithmSpec.h>
+#include <aws/kms/model/Tag.h>
+#include <aws/kms/model/TagResourceRequest.h>
+#include <aws/kms/model/UntagResourceRequest.h>
+#include <aws/kms/model/UpdateAliasRequest.h>
+#include <aws/kms/model/UpdateCustomKeyStoreRequest.h>
+#include <aws/kms/model/UpdateCustomKeyStoreResult.h>
+#include <aws/kms/model/UpdateKeyDescriptionRequest.h>
+#include <aws/kms/model/UpdatePrimaryRegionRequest.h>
+#include <aws/kms/model/VerifyMacRequest.h>
+#include <aws/kms/model/VerifyMacResult.h>
+#include <aws/kms/model/VerifyRequest.h>
+#include <aws/kms/model/VerifyResult.h>
+#include <aws/kms/model/WrappingKeySpec.h>
+#include <aws/kms/model/XksKeyConfigurationType.h>
+#include <aws/kms/model/XksProxyAuthenticationCredentialType.h>
+#include <aws/kms/model/XksProxyConfigurationType.h>
+#include <aws/kms/model/XksProxyConnectivityType.h>
+
+using KMSIncludeTest = ::testing::Test;
+
+TEST_F(KMSIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::KMS::KMSClient>("KMSIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

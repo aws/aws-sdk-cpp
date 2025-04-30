@@ -1,0 +1,163 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsEndpointProvider.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsEndpointRules.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsErrorMarshaller.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsErrors.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
+#include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
+#include <aws/verifiedpermissions/model/ActionIdentifier.h>
+#include <aws/verifiedpermissions/model/AttributeValue.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyErrorCode.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyErrorItem.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyInputItem.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyOutputItem.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyRequest.h>
+#include <aws/verifiedpermissions/model/BatchGetPolicyResult.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedInputItem.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedOutputItem.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedRequest.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedResult.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenInputItem.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenOutputItem.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenRequest.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
+#include <aws/verifiedpermissions/model/CognitoGroupConfiguration.h>
+#include <aws/verifiedpermissions/model/CognitoGroupConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/CognitoGroupConfigurationItem.h>
+#include <aws/verifiedpermissions/model/CognitoUserPoolConfiguration.h>
+#include <aws/verifiedpermissions/model/CognitoUserPoolConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/CognitoUserPoolConfigurationItem.h>
+#include <aws/verifiedpermissions/model/Configuration.h>
+#include <aws/verifiedpermissions/model/ConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/ConfigurationItem.h>
+#include <aws/verifiedpermissions/model/ConflictException.h>
+#include <aws/verifiedpermissions/model/ContextDefinition.h>
+#include <aws/verifiedpermissions/model/CreateIdentitySourceRequest.h>
+#include <aws/verifiedpermissions/model/CreateIdentitySourceResult.h>
+#include <aws/verifiedpermissions/model/CreatePolicyRequest.h>
+#include <aws/verifiedpermissions/model/CreatePolicyResult.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreRequest.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreResult.h>
+#include <aws/verifiedpermissions/model/CreatePolicyTemplateRequest.h>
+#include <aws/verifiedpermissions/model/CreatePolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/Decision.h>
+#include <aws/verifiedpermissions/model/DeleteIdentitySourceRequest.h>
+#include <aws/verifiedpermissions/model/DeleteIdentitySourceResult.h>
+#include <aws/verifiedpermissions/model/DeletePolicyRequest.h>
+#include <aws/verifiedpermissions/model/DeletePolicyResult.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreRequest.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreResult.h>
+#include <aws/verifiedpermissions/model/DeletePolicyTemplateRequest.h>
+#include <aws/verifiedpermissions/model/DeletePolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/DeletionProtection.h>
+#include <aws/verifiedpermissions/model/DeterminingPolicyItem.h>
+#include <aws/verifiedpermissions/model/EntitiesDefinition.h>
+#include <aws/verifiedpermissions/model/EntityIdentifier.h>
+#include <aws/verifiedpermissions/model/EntityItem.h>
+#include <aws/verifiedpermissions/model/EntityReference.h>
+#include <aws/verifiedpermissions/model/EvaluationErrorItem.h>
+#include <aws/verifiedpermissions/model/GetIdentitySourceRequest.h>
+#include <aws/verifiedpermissions/model/GetIdentitySourceResult.h>
+#include <aws/verifiedpermissions/model/GetPolicyRequest.h>
+#include <aws/verifiedpermissions/model/GetPolicyResult.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreRequest.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreResult.h>
+#include <aws/verifiedpermissions/model/GetPolicyTemplateRequest.h>
+#include <aws/verifiedpermissions/model/GetPolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/GetSchemaRequest.h>
+#include <aws/verifiedpermissions/model/GetSchemaResult.h>
+#include <aws/verifiedpermissions/model/IdentitySourceFilter.h>
+#include <aws/verifiedpermissions/model/IdentitySourceItem.h>
+#include <aws/verifiedpermissions/model/IsAuthorizedRequest.h>
+#include <aws/verifiedpermissions/model/IsAuthorizedResult.h>
+#include <aws/verifiedpermissions/model/IsAuthorizedWithTokenRequest.h>
+#include <aws/verifiedpermissions/model/IsAuthorizedWithTokenResult.h>
+#include <aws/verifiedpermissions/model/ListIdentitySourcesRequest.h>
+#include <aws/verifiedpermissions/model/ListIdentitySourcesResult.h>
+#include <aws/verifiedpermissions/model/ListPoliciesRequest.h>
+#include <aws/verifiedpermissions/model/ListPoliciesResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyTemplatesRequest.h>
+#include <aws/verifiedpermissions/model/ListPolicyTemplatesResult.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfiguration.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfigurationItem.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectConfiguration.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectConfigurationItem.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectGroupConfiguration.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectGroupConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectGroupConfigurationItem.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectIdentityTokenConfiguration.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectIdentityTokenConfigurationDetail.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectIdentityTokenConfigurationItem.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectTokenSelection.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectTokenSelectionDetail.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectTokenSelectionItem.h>
+#include <aws/verifiedpermissions/model/PolicyDefinition.h>
+#include <aws/verifiedpermissions/model/PolicyDefinitionDetail.h>
+#include <aws/verifiedpermissions/model/PolicyDefinitionItem.h>
+#include <aws/verifiedpermissions/model/PolicyEffect.h>
+#include <aws/verifiedpermissions/model/PolicyFilter.h>
+#include <aws/verifiedpermissions/model/PolicyItem.h>
+#include <aws/verifiedpermissions/model/PolicyStoreItem.h>
+#include <aws/verifiedpermissions/model/PolicyTemplateItem.h>
+#include <aws/verifiedpermissions/model/PolicyType.h>
+#include <aws/verifiedpermissions/model/PutSchemaRequest.h>
+#include <aws/verifiedpermissions/model/PutSchemaResult.h>
+#include <aws/verifiedpermissions/model/ResourceConflict.h>
+#include <aws/verifiedpermissions/model/ResourceNotFoundException.h>
+#include <aws/verifiedpermissions/model/ResourceType.h>
+#include <aws/verifiedpermissions/model/SchemaDefinition.h>
+#include <aws/verifiedpermissions/model/ServiceQuotaExceededException.h>
+#include <aws/verifiedpermissions/model/StaticPolicyDefinition.h>
+#include <aws/verifiedpermissions/model/StaticPolicyDefinitionDetail.h>
+#include <aws/verifiedpermissions/model/StaticPolicyDefinitionItem.h>
+#include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinition.h>
+#include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinitionDetail.h>
+#include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinitionItem.h>
+#include <aws/verifiedpermissions/model/ThrottlingException.h>
+#include <aws/verifiedpermissions/model/UpdateCognitoGroupConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateCognitoUserPoolConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateIdentitySourceRequest.h>
+#include <aws/verifiedpermissions/model/UpdateIdentitySourceResult.h>
+#include <aws/verifiedpermissions/model/UpdateOpenIdConnectAccessTokenConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateOpenIdConnectConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateOpenIdConnectGroupConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateOpenIdConnectIdentityTokenConfiguration.h>
+#include <aws/verifiedpermissions/model/UpdateOpenIdConnectTokenSelection.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyDefinition.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyRequest.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyResult.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyStoreRequest.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyStoreResult.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyTemplateRequest.h>
+#include <aws/verifiedpermissions/model/UpdatePolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/UpdateStaticPolicyDefinition.h>
+#include <aws/verifiedpermissions/model/ValidationException.h>
+#include <aws/verifiedpermissions/model/ValidationExceptionField.h>
+#include <aws/verifiedpermissions/model/ValidationMode.h>
+#include <aws/verifiedpermissions/model/ValidationSettings.h>
+
+using VerifiedPermissionsIncludeTest = ::testing::Test;
+
+TEST_F(VerifiedPermissionsIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::VerifiedPermissions::VerifiedPermissionsClient>("VerifiedPermissionsIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

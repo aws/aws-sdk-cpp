@@ -1,0 +1,155 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/apprunner/AppRunnerClient.h>
+#include <aws/apprunner/AppRunnerEndpointProvider.h>
+#include <aws/apprunner/AppRunnerEndpointRules.h>
+#include <aws/apprunner/AppRunnerErrorMarshaller.h>
+#include <aws/apprunner/AppRunnerErrors.h>
+#include <aws/apprunner/AppRunnerRequest.h>
+#include <aws/apprunner/AppRunnerServiceClientModel.h>
+#include <aws/apprunner/AppRunner_EXPORTS.h>
+#include <aws/apprunner/model/AssociateCustomDomainRequest.h>
+#include <aws/apprunner/model/AssociateCustomDomainResult.h>
+#include <aws/apprunner/model/AuthenticationConfiguration.h>
+#include <aws/apprunner/model/AutoScalingConfiguration.h>
+#include <aws/apprunner/model/AutoScalingConfigurationStatus.h>
+#include <aws/apprunner/model/AutoScalingConfigurationSummary.h>
+#include <aws/apprunner/model/CertificateValidationRecord.h>
+#include <aws/apprunner/model/CertificateValidationRecordStatus.h>
+#include <aws/apprunner/model/CodeConfiguration.h>
+#include <aws/apprunner/model/CodeConfigurationValues.h>
+#include <aws/apprunner/model/CodeRepository.h>
+#include <aws/apprunner/model/ConfigurationSource.h>
+#include <aws/apprunner/model/Connection.h>
+#include <aws/apprunner/model/ConnectionStatus.h>
+#include <aws/apprunner/model/ConnectionSummary.h>
+#include <aws/apprunner/model/CreateAutoScalingConfigurationRequest.h>
+#include <aws/apprunner/model/CreateAutoScalingConfigurationResult.h>
+#include <aws/apprunner/model/CreateConnectionRequest.h>
+#include <aws/apprunner/model/CreateConnectionResult.h>
+#include <aws/apprunner/model/CreateObservabilityConfigurationRequest.h>
+#include <aws/apprunner/model/CreateObservabilityConfigurationResult.h>
+#include <aws/apprunner/model/CreateServiceRequest.h>
+#include <aws/apprunner/model/CreateServiceResult.h>
+#include <aws/apprunner/model/CreateVpcConnectorRequest.h>
+#include <aws/apprunner/model/CreateVpcConnectorResult.h>
+#include <aws/apprunner/model/CreateVpcIngressConnectionRequest.h>
+#include <aws/apprunner/model/CreateVpcIngressConnectionResult.h>
+#include <aws/apprunner/model/CustomDomain.h>
+#include <aws/apprunner/model/CustomDomainAssociationStatus.h>
+#include <aws/apprunner/model/DeleteAutoScalingConfigurationRequest.h>
+#include <aws/apprunner/model/DeleteAutoScalingConfigurationResult.h>
+#include <aws/apprunner/model/DeleteConnectionRequest.h>
+#include <aws/apprunner/model/DeleteConnectionResult.h>
+#include <aws/apprunner/model/DeleteObservabilityConfigurationRequest.h>
+#include <aws/apprunner/model/DeleteObservabilityConfigurationResult.h>
+#include <aws/apprunner/model/DeleteServiceRequest.h>
+#include <aws/apprunner/model/DeleteServiceResult.h>
+#include <aws/apprunner/model/DeleteVpcConnectorRequest.h>
+#include <aws/apprunner/model/DeleteVpcConnectorResult.h>
+#include <aws/apprunner/model/DeleteVpcIngressConnectionRequest.h>
+#include <aws/apprunner/model/DeleteVpcIngressConnectionResult.h>
+#include <aws/apprunner/model/DescribeAutoScalingConfigurationRequest.h>
+#include <aws/apprunner/model/DescribeAutoScalingConfigurationResult.h>
+#include <aws/apprunner/model/DescribeCustomDomainsRequest.h>
+#include <aws/apprunner/model/DescribeCustomDomainsResult.h>
+#include <aws/apprunner/model/DescribeObservabilityConfigurationRequest.h>
+#include <aws/apprunner/model/DescribeObservabilityConfigurationResult.h>
+#include <aws/apprunner/model/DescribeServiceRequest.h>
+#include <aws/apprunner/model/DescribeServiceResult.h>
+#include <aws/apprunner/model/DescribeVpcConnectorRequest.h>
+#include <aws/apprunner/model/DescribeVpcConnectorResult.h>
+#include <aws/apprunner/model/DescribeVpcIngressConnectionRequest.h>
+#include <aws/apprunner/model/DescribeVpcIngressConnectionResult.h>
+#include <aws/apprunner/model/DisassociateCustomDomainRequest.h>
+#include <aws/apprunner/model/DisassociateCustomDomainResult.h>
+#include <aws/apprunner/model/EgressConfiguration.h>
+#include <aws/apprunner/model/EgressType.h>
+#include <aws/apprunner/model/EncryptionConfiguration.h>
+#include <aws/apprunner/model/HealthCheckConfiguration.h>
+#include <aws/apprunner/model/HealthCheckProtocol.h>
+#include <aws/apprunner/model/ImageConfiguration.h>
+#include <aws/apprunner/model/ImageRepository.h>
+#include <aws/apprunner/model/ImageRepositoryType.h>
+#include <aws/apprunner/model/IngressConfiguration.h>
+#include <aws/apprunner/model/IngressVpcConfiguration.h>
+#include <aws/apprunner/model/InstanceConfiguration.h>
+#include <aws/apprunner/model/IpAddressType.h>
+#include <aws/apprunner/model/ListAutoScalingConfigurationsRequest.h>
+#include <aws/apprunner/model/ListAutoScalingConfigurationsResult.h>
+#include <aws/apprunner/model/ListConnectionsRequest.h>
+#include <aws/apprunner/model/ListConnectionsResult.h>
+#include <aws/apprunner/model/ListObservabilityConfigurationsRequest.h>
+#include <aws/apprunner/model/ListObservabilityConfigurationsResult.h>
+#include <aws/apprunner/model/ListOperationsRequest.h>
+#include <aws/apprunner/model/ListOperationsResult.h>
+#include <aws/apprunner/model/ListServicesForAutoScalingConfigurationRequest.h>
+#include <aws/apprunner/model/ListServicesForAutoScalingConfigurationResult.h>
+#include <aws/apprunner/model/ListServicesRequest.h>
+#include <aws/apprunner/model/ListServicesResult.h>
+#include <aws/apprunner/model/ListTagsForResourceRequest.h>
+#include <aws/apprunner/model/ListTagsForResourceResult.h>
+#include <aws/apprunner/model/ListVpcConnectorsRequest.h>
+#include <aws/apprunner/model/ListVpcConnectorsResult.h>
+#include <aws/apprunner/model/ListVpcIngressConnectionsFilter.h>
+#include <aws/apprunner/model/ListVpcIngressConnectionsRequest.h>
+#include <aws/apprunner/model/ListVpcIngressConnectionsResult.h>
+#include <aws/apprunner/model/NetworkConfiguration.h>
+#include <aws/apprunner/model/ObservabilityConfiguration.h>
+#include <aws/apprunner/model/ObservabilityConfigurationStatus.h>
+#include <aws/apprunner/model/ObservabilityConfigurationSummary.h>
+#include <aws/apprunner/model/OperationStatus.h>
+#include <aws/apprunner/model/OperationSummary.h>
+#include <aws/apprunner/model/OperationType.h>
+#include <aws/apprunner/model/PauseServiceRequest.h>
+#include <aws/apprunner/model/PauseServiceResult.h>
+#include <aws/apprunner/model/ProviderType.h>
+#include <aws/apprunner/model/ResumeServiceRequest.h>
+#include <aws/apprunner/model/ResumeServiceResult.h>
+#include <aws/apprunner/model/Runtime.h>
+#include <aws/apprunner/model/Service.h>
+#include <aws/apprunner/model/ServiceObservabilityConfiguration.h>
+#include <aws/apprunner/model/ServiceStatus.h>
+#include <aws/apprunner/model/ServiceSummary.h>
+#include <aws/apprunner/model/SourceCodeVersion.h>
+#include <aws/apprunner/model/SourceCodeVersionType.h>
+#include <aws/apprunner/model/SourceConfiguration.h>
+#include <aws/apprunner/model/StartDeploymentRequest.h>
+#include <aws/apprunner/model/StartDeploymentResult.h>
+#include <aws/apprunner/model/Tag.h>
+#include <aws/apprunner/model/TagResourceRequest.h>
+#include <aws/apprunner/model/TagResourceResult.h>
+#include <aws/apprunner/model/TraceConfiguration.h>
+#include <aws/apprunner/model/TracingVendor.h>
+#include <aws/apprunner/model/UntagResourceRequest.h>
+#include <aws/apprunner/model/UntagResourceResult.h>
+#include <aws/apprunner/model/UpdateDefaultAutoScalingConfigurationRequest.h>
+#include <aws/apprunner/model/UpdateDefaultAutoScalingConfigurationResult.h>
+#include <aws/apprunner/model/UpdateServiceRequest.h>
+#include <aws/apprunner/model/UpdateServiceResult.h>
+#include <aws/apprunner/model/UpdateVpcIngressConnectionRequest.h>
+#include <aws/apprunner/model/UpdateVpcIngressConnectionResult.h>
+#include <aws/apprunner/model/VpcConnector.h>
+#include <aws/apprunner/model/VpcConnectorStatus.h>
+#include <aws/apprunner/model/VpcDNSTarget.h>
+#include <aws/apprunner/model/VpcIngressConnection.h>
+#include <aws/apprunner/model/VpcIngressConnectionStatus.h>
+#include <aws/apprunner/model/VpcIngressConnectionSummary.h>
+
+using AppRunnerIncludeTest = ::testing::Test;
+
+TEST_F(AppRunnerIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::AppRunner::AppRunnerClient>("AppRunnerIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

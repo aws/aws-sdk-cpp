@@ -1,0 +1,156 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/inspector/InspectorClient.h>
+#include <aws/inspector/InspectorEndpointProvider.h>
+#include <aws/inspector/InspectorEndpointRules.h>
+#include <aws/inspector/InspectorErrorMarshaller.h>
+#include <aws/inspector/InspectorErrors.h>
+#include <aws/inspector/InspectorRequest.h>
+#include <aws/inspector/InspectorServiceClientModel.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/inspector/model/AccessDeniedErrorCode.h>
+#include <aws/inspector/model/AccessDeniedException.h>
+#include <aws/inspector/model/AddAttributesToFindingsRequest.h>
+#include <aws/inspector/model/AddAttributesToFindingsResult.h>
+#include <aws/inspector/model/AgentAlreadyRunningAssessment.h>
+#include <aws/inspector/model/AgentFilter.h>
+#include <aws/inspector/model/AgentHealth.h>
+#include <aws/inspector/model/AgentHealthCode.h>
+#include <aws/inspector/model/AgentPreview.h>
+#include <aws/inspector/model/AgentsAlreadyRunningAssessmentException.h>
+#include <aws/inspector/model/AssessmentRun.h>
+#include <aws/inspector/model/AssessmentRunAgent.h>
+#include <aws/inspector/model/AssessmentRunFilter.h>
+#include <aws/inspector/model/AssessmentRunInProgressException.h>
+#include <aws/inspector/model/AssessmentRunNotification.h>
+#include <aws/inspector/model/AssessmentRunNotificationSnsStatusCode.h>
+#include <aws/inspector/model/AssessmentRunState.h>
+#include <aws/inspector/model/AssessmentRunStateChange.h>
+#include <aws/inspector/model/AssessmentTarget.h>
+#include <aws/inspector/model/AssessmentTargetFilter.h>
+#include <aws/inspector/model/AssessmentTemplate.h>
+#include <aws/inspector/model/AssessmentTemplateFilter.h>
+#include <aws/inspector/model/AssetAttributes.h>
+#include <aws/inspector/model/AssetType.h>
+#include <aws/inspector/model/Attribute.h>
+#include <aws/inspector/model/CreateAssessmentTargetRequest.h>
+#include <aws/inspector/model/CreateAssessmentTargetResult.h>
+#include <aws/inspector/model/CreateAssessmentTemplateRequest.h>
+#include <aws/inspector/model/CreateAssessmentTemplateResult.h>
+#include <aws/inspector/model/CreateExclusionsPreviewRequest.h>
+#include <aws/inspector/model/CreateExclusionsPreviewResult.h>
+#include <aws/inspector/model/CreateResourceGroupRequest.h>
+#include <aws/inspector/model/CreateResourceGroupResult.h>
+#include <aws/inspector/model/DeleteAssessmentRunRequest.h>
+#include <aws/inspector/model/DeleteAssessmentTargetRequest.h>
+#include <aws/inspector/model/DeleteAssessmentTemplateRequest.h>
+#include <aws/inspector/model/DescribeAssessmentRunsRequest.h>
+#include <aws/inspector/model/DescribeAssessmentRunsResult.h>
+#include <aws/inspector/model/DescribeAssessmentTargetsRequest.h>
+#include <aws/inspector/model/DescribeAssessmentTargetsResult.h>
+#include <aws/inspector/model/DescribeAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/DescribeAssessmentTemplatesResult.h>
+#include <aws/inspector/model/DescribeCrossAccountAccessRoleRequest.h>
+#include <aws/inspector/model/DescribeCrossAccountAccessRoleResult.h>
+#include <aws/inspector/model/DescribeExclusionsRequest.h>
+#include <aws/inspector/model/DescribeExclusionsResult.h>
+#include <aws/inspector/model/DescribeFindingsRequest.h>
+#include <aws/inspector/model/DescribeFindingsResult.h>
+#include <aws/inspector/model/DescribeResourceGroupsRequest.h>
+#include <aws/inspector/model/DescribeResourceGroupsResult.h>
+#include <aws/inspector/model/DescribeRulesPackagesRequest.h>
+#include <aws/inspector/model/DescribeRulesPackagesResult.h>
+#include <aws/inspector/model/DurationRange.h>
+#include <aws/inspector/model/EventSubscription.h>
+#include <aws/inspector/model/Exclusion.h>
+#include <aws/inspector/model/ExclusionPreview.h>
+#include <aws/inspector/model/FailedItemDetails.h>
+#include <aws/inspector/model/FailedItemErrorCode.h>
+#include <aws/inspector/model/Finding.h>
+#include <aws/inspector/model/FindingFilter.h>
+#include <aws/inspector/model/GetAssessmentReportRequest.h>
+#include <aws/inspector/model/GetAssessmentReportResult.h>
+#include <aws/inspector/model/GetExclusionsPreviewRequest.h>
+#include <aws/inspector/model/GetExclusionsPreviewResult.h>
+#include <aws/inspector/model/GetTelemetryMetadataRequest.h>
+#include <aws/inspector/model/GetTelemetryMetadataResult.h>
+#include <aws/inspector/model/InspectorEvent.h>
+#include <aws/inspector/model/InspectorServiceAttributes.h>
+#include <aws/inspector/model/InternalException.h>
+#include <aws/inspector/model/InvalidCrossAccountRoleErrorCode.h>
+#include <aws/inspector/model/InvalidCrossAccountRoleException.h>
+#include <aws/inspector/model/InvalidInputErrorCode.h>
+#include <aws/inspector/model/InvalidInputException.h>
+#include <aws/inspector/model/LimitExceededErrorCode.h>
+#include <aws/inspector/model/LimitExceededException.h>
+#include <aws/inspector/model/ListAssessmentRunAgentsRequest.h>
+#include <aws/inspector/model/ListAssessmentRunAgentsResult.h>
+#include <aws/inspector/model/ListAssessmentRunsRequest.h>
+#include <aws/inspector/model/ListAssessmentRunsResult.h>
+#include <aws/inspector/model/ListAssessmentTargetsRequest.h>
+#include <aws/inspector/model/ListAssessmentTargetsResult.h>
+#include <aws/inspector/model/ListAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/ListAssessmentTemplatesResult.h>
+#include <aws/inspector/model/ListEventSubscriptionsRequest.h>
+#include <aws/inspector/model/ListEventSubscriptionsResult.h>
+#include <aws/inspector/model/ListExclusionsRequest.h>
+#include <aws/inspector/model/ListExclusionsResult.h>
+#include <aws/inspector/model/ListFindingsRequest.h>
+#include <aws/inspector/model/ListFindingsResult.h>
+#include <aws/inspector/model/ListRulesPackagesRequest.h>
+#include <aws/inspector/model/ListRulesPackagesResult.h>
+#include <aws/inspector/model/ListTagsForResourceRequest.h>
+#include <aws/inspector/model/ListTagsForResourceResult.h>
+#include <aws/inspector/model/Locale.h>
+#include <aws/inspector/model/NetworkInterface.h>
+#include <aws/inspector/model/NoSuchEntityErrorCode.h>
+#include <aws/inspector/model/NoSuchEntityException.h>
+#include <aws/inspector/model/PreviewAgentsRequest.h>
+#include <aws/inspector/model/PreviewAgentsResult.h>
+#include <aws/inspector/model/PreviewStatus.h>
+#include <aws/inspector/model/PrivateIp.h>
+#include <aws/inspector/model/RegisterCrossAccountAccessRoleRequest.h>
+#include <aws/inspector/model/RemoveAttributesFromFindingsRequest.h>
+#include <aws/inspector/model/RemoveAttributesFromFindingsResult.h>
+#include <aws/inspector/model/ReportFileFormat.h>
+#include <aws/inspector/model/ReportStatus.h>
+#include <aws/inspector/model/ReportType.h>
+#include <aws/inspector/model/ResourceGroup.h>
+#include <aws/inspector/model/ResourceGroupTag.h>
+#include <aws/inspector/model/RulesPackage.h>
+#include <aws/inspector/model/Scope.h>
+#include <aws/inspector/model/ScopeType.h>
+#include <aws/inspector/model/SecurityGroup.h>
+#include <aws/inspector/model/ServiceTemporarilyUnavailableException.h>
+#include <aws/inspector/model/SetTagsForResourceRequest.h>
+#include <aws/inspector/model/Severity.h>
+#include <aws/inspector/model/StartAssessmentRunRequest.h>
+#include <aws/inspector/model/StartAssessmentRunResult.h>
+#include <aws/inspector/model/StopAction.h>
+#include <aws/inspector/model/StopAssessmentRunRequest.h>
+#include <aws/inspector/model/SubscribeToEventRequest.h>
+#include <aws/inspector/model/Subscription.h>
+#include <aws/inspector/model/Tag.h>
+#include <aws/inspector/model/TelemetryMetadata.h>
+#include <aws/inspector/model/TimestampRange.h>
+#include <aws/inspector/model/UnsubscribeFromEventRequest.h>
+#include <aws/inspector/model/UnsupportedFeatureException.h>
+#include <aws/inspector/model/UpdateAssessmentTargetRequest.h>
+
+using InspectorIncludeTest = ::testing::Test;
+
+TEST_F(InspectorIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::Inspector::InspectorClient>("InspectorIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}
