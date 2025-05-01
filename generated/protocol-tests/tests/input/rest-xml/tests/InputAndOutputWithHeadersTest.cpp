@@ -51,7 +51,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithBooleanHeaders) {
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithTimestampHeaders) {
   RestXmlProtocolClient client;
   InputAndOutputWithHeadersRequest request;
-  request.SetHeaderTimestampList({Aws::Utils::DateTime(1576540098), Aws::Utils::DateTime(1576540098)});
+  request.SetHeaderTimestampList({Aws::Utils::DateTime(1576540098L), Aws::Utils::DateTime(1576540098L)});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   AWS_ASSERT_SUCCESS(outcome);

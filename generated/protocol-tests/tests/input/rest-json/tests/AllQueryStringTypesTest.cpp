@@ -28,8 +28,8 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonAllQueryStringTypes) {
   request.SetQueryDoubleList({1.1, 2.1, 3.1});
   request.SetQueryBoolean(true);
   request.SetQueryBooleanList({true, false, true});
-  request.SetQueryTimestamp(Aws::Utils::DateTime(1));
-  request.SetQueryTimestampList({Aws::Utils::DateTime(1), Aws::Utils::DateTime(2), Aws::Utils::DateTime(3)});
+  request.SetQueryTimestamp(Aws::Utils::DateTime(1L));
+  request.SetQueryTimestampList({Aws::Utils::DateTime(1L), Aws::Utils::DateTime(2L), Aws::Utils::DateTime(3L)});
   request.SetQueryEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
   request.SetQueryEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e"), FooEnumMapper::GetFooEnumForName(R"e(Bar)e")});
   request.SetQueryIntegerEnum(1);

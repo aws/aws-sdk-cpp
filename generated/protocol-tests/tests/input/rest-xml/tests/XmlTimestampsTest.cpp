@@ -14,7 +14,7 @@ using namespace Aws::RestXmlProtocol::Model;
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetNormal(Aws::Utils::DateTime(1398796238));
+  request.SetNormal(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetDateTime(Aws::Utils::DateTime(1398796238));
+  request.SetDateTime(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -41,7 +41,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetEpochSeconds(Aws::Utils::DateTime(1398796238));
+  request.SetEpochSeconds(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -50,7 +50,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -59,7 +59,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetHttpDate(Aws::Utils::DateTime(1398796238));
+  request.SetHttpDate(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -68,7 +68,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
   RestXmlProtocolClient client;
   XmlTimestampsRequest request;
-  request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);

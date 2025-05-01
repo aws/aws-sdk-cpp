@@ -14,7 +14,7 @@ using namespace Aws::RestJsonProtocol::Model;
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestamps) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetNormal(Aws::Utils::DateTime(1398796238));
+  request.SetNormal(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestamps) {
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetDateTime(Aws::Utils::DateTime(1398796238));
+  request.SetDateTime(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -41,7 +41,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetForm
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetEpochSeconds(Aws::Utils::DateTime(1398796238));
+  request.SetEpochSeconds(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -50,7 +50,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTargetFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -59,7 +59,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTarget
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetHttpDate(Aws::Utils::DateTime(1398796238));
+  request.SetHttpDate(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -68,7 +68,7 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetFormat) {
   RestJsonProtocolClient client;
   JsonTimestampsRequest request;
-  request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238));
+  request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);

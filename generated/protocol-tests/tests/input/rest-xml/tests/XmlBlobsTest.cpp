@@ -14,7 +14,7 @@ using namespace Aws::RestXmlProtocol::Model;
 AWS_PROTOCOL_TEST(XmlBlobs, XmlBlobs) {
   RestXmlProtocolClient client;
   XmlBlobsRequest request;
-  request.SetData(R"(value)");
+  request.SetData(Aws::String(R"(value)"));
 
   auto outcome = client.XmlBlobs(request);
   AWS_ASSERT_SUCCESS(outcome);
