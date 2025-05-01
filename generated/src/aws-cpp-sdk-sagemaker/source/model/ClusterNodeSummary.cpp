@@ -45,6 +45,11 @@ ClusterNodeSummary& ClusterNodeSummary::operator =(JsonView jsonValue)
     m_launchTime = jsonValue.GetDouble("LaunchTime");
     m_launchTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastSoftwareUpdateTime"))
+  {
+    m_lastSoftwareUpdateTime = jsonValue.GetDouble("LastSoftwareUpdateTime");
+    m_lastSoftwareUpdateTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("InstanceStatus"))
   {
     m_instanceStatus = jsonValue.GetObject("InstanceStatus");
@@ -77,6 +82,11 @@ JsonValue ClusterNodeSummary::Jsonize() const
   if(m_launchTimeHasBeenSet)
   {
    payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastSoftwareUpdateTimeHasBeenSet)
+  {
+   payload.WithDouble("LastSoftwareUpdateTime", m_lastSoftwareUpdateTime.SecondsWithMSPrecision());
   }
 
   if(m_instanceStatusHasBeenSet)

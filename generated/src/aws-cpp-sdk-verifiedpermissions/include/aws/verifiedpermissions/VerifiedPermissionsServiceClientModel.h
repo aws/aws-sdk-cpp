@@ -40,7 +40,10 @@
 #include <aws/verifiedpermissions/model/ListPoliciesResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesResult.h>
+#include <aws/verifiedpermissions/model/ListTagsForResourceResult.h>
 #include <aws/verifiedpermissions/model/PutSchemaResult.h>
+#include <aws/verifiedpermissions/model/TagResourceResult.h>
+#include <aws/verifiedpermissions/model/UntagResourceResult.h>
 #include <aws/verifiedpermissions/model/UpdateIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/UpdatePolicyResult.h>
 #include <aws/verifiedpermissions/model/UpdatePolicyStoreResult.h>
@@ -108,7 +111,10 @@ namespace Aws
       class ListPoliciesRequest;
       class ListPolicyStoresRequest;
       class ListPolicyTemplatesRequest;
+      class ListTagsForResourceRequest;
       class PutSchemaRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateIdentitySourceRequest;
       class UpdatePolicyRequest;
       class UpdatePolicyStoreRequest;
@@ -138,7 +144,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPoliciesResult, VerifiedPermissionsError> ListPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListPolicyStoresResult, VerifiedPermissionsError> ListPolicyStoresOutcome;
       typedef Aws::Utils::Outcome<ListPolicyTemplatesResult, VerifiedPermissionsError> ListPolicyTemplatesOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, VerifiedPermissionsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutSchemaResult, VerifiedPermissionsError> PutSchemaOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, VerifiedPermissionsError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, VerifiedPermissionsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateIdentitySourceResult, VerifiedPermissionsError> UpdateIdentitySourceOutcome;
       typedef Aws::Utils::Outcome<UpdatePolicyResult, VerifiedPermissionsError> UpdatePolicyOutcome;
       typedef Aws::Utils::Outcome<UpdatePolicyStoreResult, VerifiedPermissionsError> UpdatePolicyStoreOutcome;
@@ -168,7 +177,10 @@ namespace Aws
       typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
       typedef std::future<ListPolicyStoresOutcome> ListPolicyStoresOutcomeCallable;
       typedef std::future<ListPolicyTemplatesOutcome> ListPolicyTemplatesOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutSchemaOutcome> PutSchemaOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateIdentitySourceOutcome> UpdateIdentitySourceOutcomeCallable;
       typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
       typedef std::future<UpdatePolicyStoreOutcome> UpdatePolicyStoreOutcomeCallable;
@@ -201,7 +213,10 @@ namespace Aws
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPolicyStoresRequest&, const Model::ListPolicyStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyStoresResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPolicyTemplatesRequest&, const Model::ListPolicyTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyTemplatesResponseReceivedHandler;
+    typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::PutSchemaRequest&, const Model::PutSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSchemaResponseReceivedHandler;
+    typedef std::function<void(const VerifiedPermissionsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const VerifiedPermissionsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::UpdateIdentitySourceRequest&, const Model::UpdateIdentitySourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentitySourceResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::UpdatePolicyRequest&, const Model::UpdatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePolicyResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::UpdatePolicyStoreRequest&, const Model::UpdatePolicyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePolicyStoreResponseReceivedHandler;

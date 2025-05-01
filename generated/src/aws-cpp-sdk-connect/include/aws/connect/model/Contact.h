@@ -22,7 +22,11 @@
 #include <aws/connect/model/QualityMetrics.h>
 #include <aws/connect/model/DisconnectDetails.h>
 #include <aws/connect/model/AdditionalEmailRecipients.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/ContactDetails.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
+#include <aws/connect/model/RecordingInfo.h>
+#include <aws/connect/model/ContactEvaluation.h>
 #include <utility>
 
 namespace Aws
@@ -527,6 +531,79 @@ namespace Model
       m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::forward<SegmentAttributesKeyT>(key), std::forward<SegmentAttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>If recording was enabled, this is information about the recordings.</p>
+     */
+    inline const Aws::Vector<RecordingInfo>& GetRecordings() const { return m_recordings; }
+    inline bool RecordingsHasBeenSet() const { return m_recordingsHasBeenSet; }
+    template<typename RecordingsT = Aws::Vector<RecordingInfo>>
+    void SetRecordings(RecordingsT&& value) { m_recordingsHasBeenSet = true; m_recordings = std::forward<RecordingsT>(value); }
+    template<typename RecordingsT = Aws::Vector<RecordingInfo>>
+    Contact& WithRecordings(RecordingsT&& value) { SetRecordings(std::forward<RecordingsT>(value)); return *this;}
+    template<typename RecordingsT = RecordingInfo>
+    Contact& AddRecordings(RecordingsT&& value) { m_recordingsHasBeenSet = true; m_recordings.emplace_back(std::forward<RecordingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The disconnect reason for the contact.</p>
+     */
+    inline const Aws::String& GetDisconnectReason() const { return m_disconnectReason; }
+    inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }
+    template<typename DisconnectReasonT = Aws::String>
+    void SetDisconnectReason(DisconnectReasonT&& value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = std::forward<DisconnectReasonT>(value); }
+    template<typename DisconnectReasonT = Aws::String>
+    Contact& WithDisconnectReason(DisconnectReasonT&& value) { SetDisconnectReason(std::forward<DisconnectReasonT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the contact evaluations where the key is the FormId, which
+     * is a unique identifier for the form.</p>
+     */
+    inline const Aws::Map<Aws::String, ContactEvaluation>& GetContactEvaluations() const { return m_contactEvaluations; }
+    inline bool ContactEvaluationsHasBeenSet() const { return m_contactEvaluationsHasBeenSet; }
+    template<typename ContactEvaluationsT = Aws::Map<Aws::String, ContactEvaluation>>
+    void SetContactEvaluations(ContactEvaluationsT&& value) { m_contactEvaluationsHasBeenSet = true; m_contactEvaluations = std::forward<ContactEvaluationsT>(value); }
+    template<typename ContactEvaluationsT = Aws::Map<Aws::String, ContactEvaluation>>
+    Contact& WithContactEvaluations(ContactEvaluationsT&& value) { SetContactEvaluations(std::forward<ContactEvaluationsT>(value)); return *this;}
+    template<typename ContactEvaluationsKeyT = Aws::String, typename ContactEvaluationsValueT = ContactEvaluation>
+    Contact& AddContactEvaluations(ContactEvaluationsKeyT&& key, ContactEvaluationsValueT&& value) {
+      m_contactEvaluationsHasBeenSet = true; m_contactEvaluations.emplace(std::forward<ContactEvaluationsKeyT>(key), std::forward<ContactEvaluationsValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A map of string key/value pairs that contain user-defined attributes which
+     * are lightly typed within the contact. This object is used only for task
+     * contacts.</p>
+     */
+    inline const ContactDetails& GetContactDetails() const { return m_contactDetails; }
+    inline bool ContactDetailsHasBeenSet() const { return m_contactDetailsHasBeenSet; }
+    template<typename ContactDetailsT = ContactDetails>
+    void SetContactDetails(ContactDetailsT&& value) { m_contactDetailsHasBeenSet = true; m_contactDetails = std::forward<ContactDetailsT>(value); }
+    template<typename ContactDetailsT = ContactDetails>
+    Contact& WithContactDetails(ContactDetailsT&& value) { SetContactDetails(std::forward<ContactDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The attributes of the contact.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    Contact& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    Contact& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -639,6 +716,21 @@ namespace Model
 
     Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;
+
+    Aws::Vector<RecordingInfo> m_recordings;
+    bool m_recordingsHasBeenSet = false;
+
+    Aws::String m_disconnectReason;
+    bool m_disconnectReasonHasBeenSet = false;
+
+    Aws::Map<Aws::String, ContactEvaluation> m_contactEvaluations;
+    bool m_contactEvaluationsHasBeenSet = false;
+
+    ContactDetails m_contactDetails;
+    bool m_contactDetailsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,23 @@ Aws::String UpdateClusterSoftwareRequest::SerializePayload() const
 
   }
 
+  if(m_instanceGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
+   {
+     instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
+
+  }
+
+  if(m_deploymentConfigHasBeenSet)
+  {
+   payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

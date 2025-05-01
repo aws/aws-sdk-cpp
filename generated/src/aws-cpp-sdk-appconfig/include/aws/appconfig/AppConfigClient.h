@@ -25,9 +25,9 @@ namespace AppConfig
    * capabilities to all users. With operational flags and dynamic configurations,
    * you can update block lists, allow lists, throttling limits, logging verbosity,
    * and perform other operational tuning to quickly respond to issues in production
-   * environments.</p>  <p>AppConfig is a capability of Amazon Web Services
-   * Systems Manager.</p>  <p>Despite the fact that application configuration
-   * content can vary greatly from application to application, AppConfig supports the
+   * environments.</p>  <p>AppConfig is a tool in Amazon Web Services Systems
+   * Manager.</p>  <p>Despite the fact that application configuration content
+   * can vary greatly from application to application, AppConfig supports the
    * following use cases, which cover a broad spectrum of customer needs:</p> <ul>
    * <li> <p> <b>Feature flags and toggles</b> - Safely release new capabilities to
    * your customers in a controlled environment. Instantly roll back changes if you

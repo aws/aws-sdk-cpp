@@ -10,6 +10,8 @@
 #include <aws/connect/model/HierarchyGroups.h>
 #include <aws/connect/model/DeviceInfo.h>
 #include <aws/connect/model/ParticipantCapabilities.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/StateTransition.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +111,71 @@ namespace Model
     template<typename CapabilitiesT = ParticipantCapabilities>
     AgentInfo& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The difference in time, in whole seconds, between
+     * <code>AfterContactWorkStartTimestamp</code> and
+     * <code>AfterContactWorkEndTimestamp</code>.</p>
+     */
+    inline int GetAfterContactWorkDuration() const { return m_afterContactWorkDuration; }
+    inline bool AfterContactWorkDurationHasBeenSet() const { return m_afterContactWorkDurationHasBeenSet; }
+    inline void SetAfterContactWorkDuration(int value) { m_afterContactWorkDurationHasBeenSet = true; m_afterContactWorkDuration = value; }
+    inline AgentInfo& WithAfterContactWorkDuration(int value) { SetAfterContactWorkDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the agent started doing After Contact Work for the
+     * contact, in UTC time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAfterContactWorkStartTimestamp() const { return m_afterContactWorkStartTimestamp; }
+    inline bool AfterContactWorkStartTimestampHasBeenSet() const { return m_afterContactWorkStartTimestampHasBeenSet; }
+    template<typename AfterContactWorkStartTimestampT = Aws::Utils::DateTime>
+    void SetAfterContactWorkStartTimestamp(AfterContactWorkStartTimestampT&& value) { m_afterContactWorkStartTimestampHasBeenSet = true; m_afterContactWorkStartTimestamp = std::forward<AfterContactWorkStartTimestampT>(value); }
+    template<typename AfterContactWorkStartTimestampT = Aws::Utils::DateTime>
+    AgentInfo& WithAfterContactWorkStartTimestamp(AfterContactWorkStartTimestampT&& value) { SetAfterContactWorkStartTimestamp(std::forward<AfterContactWorkStartTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the agent ended After Contact Work for the contact, in
+     * UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for
+     * chat contacts and switches their activity status to offline or equivalent
+     * without clearing the contact in CCP, discrepancies may be noticed for
+     * <code>AfterContactWorkEndTimestamp</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAfterContactWorkEndTimestamp() const { return m_afterContactWorkEndTimestamp; }
+    inline bool AfterContactWorkEndTimestampHasBeenSet() const { return m_afterContactWorkEndTimestampHasBeenSet; }
+    template<typename AfterContactWorkEndTimestampT = Aws::Utils::DateTime>
+    void SetAfterContactWorkEndTimestamp(AfterContactWorkEndTimestampT&& value) { m_afterContactWorkEndTimestampHasBeenSet = true; m_afterContactWorkEndTimestamp = std::forward<AfterContactWorkEndTimestampT>(value); }
+    template<typename AfterContactWorkEndTimestampT = Aws::Utils::DateTime>
+    AgentInfo& WithAfterContactWorkEndTimestamp(AfterContactWorkEndTimestampT&& value) { SetAfterContactWorkEndTimestamp(std::forward<AfterContactWorkEndTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The total hold duration in seconds initiated by the agent.</p>
+     */
+    inline int GetAgentInitiatedHoldDuration() const { return m_agentInitiatedHoldDuration; }
+    inline bool AgentInitiatedHoldDurationHasBeenSet() const { return m_agentInitiatedHoldDurationHasBeenSet; }
+    inline void SetAgentInitiatedHoldDuration(int value) { m_agentInitiatedHoldDurationHasBeenSet = true; m_agentInitiatedHoldDuration = value; }
+    inline AgentInfo& WithAgentInitiatedHoldDuration(int value) { SetAgentInitiatedHoldDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of <code>StateTransition</code> for a supervisor.</p>
+     */
+    inline const Aws::Vector<StateTransition>& GetStateTransitions() const { return m_stateTransitions; }
+    inline bool StateTransitionsHasBeenSet() const { return m_stateTransitionsHasBeenSet; }
+    template<typename StateTransitionsT = Aws::Vector<StateTransition>>
+    void SetStateTransitions(StateTransitionsT&& value) { m_stateTransitionsHasBeenSet = true; m_stateTransitions = std::forward<StateTransitionsT>(value); }
+    template<typename StateTransitionsT = Aws::Vector<StateTransition>>
+    AgentInfo& WithStateTransitions(StateTransitionsT&& value) { SetStateTransitions(std::forward<StateTransitionsT>(value)); return *this;}
+    template<typename StateTransitionsT = StateTransition>
+    AgentInfo& AddStateTransitions(StateTransitionsT&& value) { m_stateTransitionsHasBeenSet = true; m_stateTransitions.emplace_back(std::forward<StateTransitionsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -128,6 +195,21 @@ namespace Model
 
     ParticipantCapabilities m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
+
+    int m_afterContactWorkDuration{0};
+    bool m_afterContactWorkDurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_afterContactWorkStartTimestamp{};
+    bool m_afterContactWorkStartTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_afterContactWorkEndTimestamp{};
+    bool m_afterContactWorkEndTimestampHasBeenSet = false;
+
+    int m_agentInitiatedHoldDuration{0};
+    bool m_agentInitiatedHoldDurationHasBeenSet = false;
+
+    Aws::Vector<StateTransition> m_stateTransitions;
+    bool m_stateTransitionsHasBeenSet = false;
   };
 
 } // namespace Model

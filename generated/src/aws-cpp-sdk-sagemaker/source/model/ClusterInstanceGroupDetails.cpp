@@ -98,6 +98,11 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
     m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
     m_overrideVpcConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ScheduledUpdateConfig"))
+  {
+    m_scheduledUpdateConfig = jsonValue.GetObject("ScheduledUpdateConfig");
+    m_scheduledUpdateConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -188,6 +193,12 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const
   if(m_overrideVpcConfigHasBeenSet)
   {
    payload.WithObject("OverrideVpcConfig", m_overrideVpcConfig.Jsonize());
+
+  }
+
+  if(m_scheduledUpdateConfigHasBeenSet)
+  {
+   payload.WithObject("ScheduledUpdateConfig", m_scheduledUpdateConfig.Jsonize());
 
   }
 

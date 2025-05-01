@@ -55,6 +55,35 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
     m_capabilities = jsonValue.GetObject("Capabilities");
     m_capabilitiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AfterContactWorkDuration"))
+  {
+    m_afterContactWorkDuration = jsonValue.GetInteger("AfterContactWorkDuration");
+    m_afterContactWorkDurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AfterContactWorkStartTimestamp"))
+  {
+    m_afterContactWorkStartTimestamp = jsonValue.GetDouble("AfterContactWorkStartTimestamp");
+    m_afterContactWorkStartTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AfterContactWorkEndTimestamp"))
+  {
+    m_afterContactWorkEndTimestamp = jsonValue.GetDouble("AfterContactWorkEndTimestamp");
+    m_afterContactWorkEndTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AgentInitiatedHoldDuration"))
+  {
+    m_agentInitiatedHoldDuration = jsonValue.GetInteger("AgentInitiatedHoldDuration");
+    m_agentInitiatedHoldDurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("StateTransitions"))
+  {
+    Aws::Utils::Array<JsonView> stateTransitionsJsonList = jsonValue.GetArray("StateTransitions");
+    for(unsigned stateTransitionsIndex = 0; stateTransitionsIndex < stateTransitionsJsonList.GetLength(); ++stateTransitionsIndex)
+    {
+      m_stateTransitions.push_back(stateTransitionsJsonList[stateTransitionsIndex].AsObject());
+    }
+    m_stateTransitionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +123,39 @@ JsonValue AgentInfo::Jsonize() const
   if(m_capabilitiesHasBeenSet)
   {
    payload.WithObject("Capabilities", m_capabilities.Jsonize());
+
+  }
+
+  if(m_afterContactWorkDurationHasBeenSet)
+  {
+   payload.WithInteger("AfterContactWorkDuration", m_afterContactWorkDuration);
+
+  }
+
+  if(m_afterContactWorkStartTimestampHasBeenSet)
+  {
+   payload.WithDouble("AfterContactWorkStartTimestamp", m_afterContactWorkStartTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_afterContactWorkEndTimestampHasBeenSet)
+  {
+   payload.WithDouble("AfterContactWorkEndTimestamp", m_afterContactWorkEndTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_agentInitiatedHoldDurationHasBeenSet)
+  {
+   payload.WithInteger("AgentInitiatedHoldDuration", m_agentInitiatedHoldDuration);
+
+  }
+
+  if(m_stateTransitionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTransitionsJsonList(m_stateTransitions.size());
+   for(unsigned stateTransitionsIndex = 0; stateTransitionsIndex < stateTransitionsJsonList.GetLength(); ++stateTransitionsIndex)
+   {
+     stateTransitionsJsonList[stateTransitionsIndex].AsObject(m_stateTransitions[stateTransitionsIndex].Jsonize());
+   }
+   payload.WithArray("StateTransitions", std::move(stateTransitionsJsonList));
 
   }
 

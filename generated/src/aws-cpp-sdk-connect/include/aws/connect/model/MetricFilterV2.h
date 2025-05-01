@@ -70,7 +70,7 @@ namespace Model
      * in the <i>Amazon Connect Administrator Guide</i>. </p> <p>For valid values of
      * the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for
      * the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome">Flow
      * outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p> <p>For
      * valid values of the metric-level filter
      * <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a

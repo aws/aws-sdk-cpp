@@ -1252,10 +1252,12 @@ namespace SageMaker
          * these entities in Amazon SageMaker Studio. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
          * Experiments, Trials, and Trial Components</a>.</p>  <p>Do not include
-         * any security-sensitive information including account access IDs, secrets or
-         * tokens in any hyperparameter field. If the use of security-sensitive credentials
-         * are detected, SageMaker will reject your training job request and return an
-         * exception error.</p> <p><h3>See Also:</h3>   <a
+         * any security-sensitive information including account access IDs, secrets, or
+         * tokens in any hyperparameter fields. As part of the shared responsibility model,
+         * you are responsible for any potential exposure, unauthorized access, or
+         * compromise of your sensitive data if caused by any security-sensitive
+         * information included in the request hyperparameter variable or plain text
+         * fields..</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
@@ -2219,9 +2221,11 @@ namespace SageMaker
          * provided by SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
          * </p>  <p>Do not include any security-sensitive information including
-         * account access IDs, secrets or tokens in any hyperparameter field. If the use of
-         * security-sensitive credentials are detected, SageMaker will reject your training
-         * job request and return an exception error.</p>  </li> <li> <p>
+         * account access IDs, secrets, or tokens in any hyperparameter fields. As part of
+         * the shared responsibility model, you are responsible for any potential exposure,
+         * unauthorized access, or compromise of your sensitive data if caused by
+         * security-sensitive information included in the request hyperparameter variable
+         * or plain text fields.</p>  </li> <li> <p>
          * <code>InputDataConfig</code> - Describes the input required by the training job
          * and the Amazon S3, EFS, or FSx location where it is stored.</p> </li> <li> <p>
          * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want
@@ -2241,10 +2245,16 @@ namespace SageMaker
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
          * <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training
          * job has to complete. </p> </li> <li> <p> <code>Environment</code> - The
-         * environment variables to set in the Docker container.</p> </li> <li> <p>
-         * <code>RetryStrategy</code> - The number of times to retry the job when the job
-         * fails due to an <code>InternalServerError</code>.</p> </li> </ul> <p> For more
-         * information about SageMaker, see <a
+         * environment variables to set in the Docker container.</p>  <p>Do not
+         * include any security-sensitive information including account access IDs,
+         * secrets, or tokens in any environment fields. As part of the shared
+         * responsibility model, you are responsible for any potential exposure,
+         * unauthorized access, or compromise of your sensitive data if caused by
+         * security-sensitive information included in the request environment variable or
+         * plain text fields.</p>  </li> <li> <p> <code>RetryStrategy</code> -
+         * The number of times to retry the job when the job fails due to an
+         * <code>InternalServerError</code>.</p> </li> </ul> <p> For more information about
+         * SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS

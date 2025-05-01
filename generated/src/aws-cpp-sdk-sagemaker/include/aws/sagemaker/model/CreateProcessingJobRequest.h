@@ -125,7 +125,12 @@ namespace Model
     ///@{
     /**
      * <p>The environment variables to set in the Docker container. Up to 100 key and
-     * values entries in the map are supported.</p>
+     * values entries in the map are supported.</p>  <p>Do not include any
+     * security-sensitive information including account access IDs, secrets, or tokens
+     * in any environment fields. As part of the shared responsibility model, you are
+     * responsible for any potential exposure, unauthorized access, or compromise of
+     * your sensitive data if caused by security-sensitive information included in the
+     * request environment variable or plain text fields.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
@@ -171,7 +176,12 @@ namespace Model
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
      * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
-     * Management User Guide</i>.</p>
+     * Management User Guide</i>.</p>  <p>Do not include any
+     * security-sensitive information including account access IDs, secrets, or tokens
+     * in any tags. As part of the shared responsibility model, you are responsible for
+     * any potential exposure, unauthorized access, or compromise of your sensitive
+     * data if caused by security-sensitive information included in the request tag
+     * variable or plain text fields.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

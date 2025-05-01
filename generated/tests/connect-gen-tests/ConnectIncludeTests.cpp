@@ -110,6 +110,8 @@
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactConfiguration.h>
 #include <aws/connect/model/ContactDataRequest.h>
+#include <aws/connect/model/ContactDetails.h>
+#include <aws/connect/model/ContactEvaluation.h>
 #include <aws/connect/model/ContactFilter.h>
 #include <aws/connect/model/ContactFlow.h>
 #include <aws/connect/model/ContactFlowModule.h>
@@ -576,6 +578,7 @@
 #include <aws/connect/model/MatchCriteria.h>
 #include <aws/connect/model/MediaConcurrency.h>
 #include <aws/connect/model/MediaPlacement.h>
+#include <aws/connect/model/MediaStreamType.h>
 #include <aws/connect/model/Meeting.h>
 #include <aws/connect/model/MeetingFeatureStatus.h>
 #include <aws/connect/model/MeetingFeaturesConfiguration.h>
@@ -609,11 +612,13 @@
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/ParticipantDetailsToAdd.h>
 #include <aws/connect/model/ParticipantRole.h>
+#include <aws/connect/model/ParticipantState.h>
 #include <aws/connect/model/ParticipantTimerAction.h>
 #include <aws/connect/model/ParticipantTimerConfiguration.h>
 #include <aws/connect/model/ParticipantTimerType.h>
 #include <aws/connect/model/ParticipantTimerValue.h>
 #include <aws/connect/model/ParticipantTokenCredentials.h>
+#include <aws/connect/model/ParticipantType.h>
 #include <aws/connect/model/PauseContactRequest.h>
 #include <aws/connect/model/PauseContactResult.h>
 #include <aws/connect/model/PersistentChat.h>
@@ -680,6 +685,8 @@
 #include <aws/connect/model/RealTimeContactAnalysisTranscriptItemWithCharacterOffsets.h>
 #include <aws/connect/model/RealTimeContactAnalysisTranscriptItemWithContent.h>
 #include <aws/connect/model/RealtimeContactAnalysisSegment.h>
+#include <aws/connect/model/RecordingInfo.h>
+#include <aws/connect/model/RecordingStatus.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/ReferenceStatus.h>
 #include <aws/connect/model/ReferenceSummary.h>
@@ -812,7 +819,9 @@
 #include <aws/connect/model/StartTaskContactResult.h>
 #include <aws/connect/model/StartWebRTCContactRequest.h>
 #include <aws/connect/model/StartWebRTCContactResult.h>
+#include <aws/connect/model/StateTransition.h>
 #include <aws/connect/model/Statistic.h>
+#include <aws/connect/model/Status.h>
 #include <aws/connect/model/Step.h>
 #include <aws/connect/model/StopContactRecordingRequest.h>
 #include <aws/connect/model/StopContactRecordingResult.h>

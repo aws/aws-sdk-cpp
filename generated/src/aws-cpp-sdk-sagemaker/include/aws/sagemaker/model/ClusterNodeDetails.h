@@ -106,6 +106,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time of when the cluster was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastSoftwareUpdateTime() const { return m_lastSoftwareUpdateTime; }
+    inline bool LastSoftwareUpdateTimeHasBeenSet() const { return m_lastSoftwareUpdateTimeHasBeenSet; }
+    template<typename LastSoftwareUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastSoftwareUpdateTime(LastSoftwareUpdateTimeT&& value) { m_lastSoftwareUpdateTimeHasBeenSet = true; m_lastSoftwareUpdateTime = std::forward<LastSoftwareUpdateTimeT>(value); }
+    template<typename LastSoftwareUpdateTimeT = Aws::Utils::DateTime>
+    ClusterNodeDetails& WithLastSoftwareUpdateTime(LastSoftwareUpdateTimeT&& value) { SetLastSoftwareUpdateTime(std::forward<LastSoftwareUpdateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The LifeCycle configuration applied to the instance.</p>
      */
     inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const { return m_lifeCycleConfig; }
@@ -222,6 +234,9 @@ namespace Model
 
     Aws::Utils::DateTime m_launchTime{};
     bool m_launchTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastSoftwareUpdateTime{};
+    bool m_lastSoftwareUpdateTimeHasBeenSet = false;
 
     ClusterLifeCycleConfig m_lifeCycleConfig;
     bool m_lifeCycleConfigHasBeenSet = false;

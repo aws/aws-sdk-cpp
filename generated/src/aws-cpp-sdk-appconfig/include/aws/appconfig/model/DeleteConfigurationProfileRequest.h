@@ -62,15 +62,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A parameter to configure deletion protection. If enabled, deletion protection
-     * prevents a user from deleting a configuration profile if your application has
-     * called either <a
+     * <p>A parameter to configure deletion protection. Deletion protection prevents a
+     * user from deleting a configuration profile if your application has called either
+     * <a
      * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
      * or for the configuration profile during the specified interval. </p> <p>This
      * parameter supports the following values:</p> <ul> <li> <p> <code>BYPASS</code>:
      * Instructs AppConfig to bypass the deletion protection check and delete a
      * configuration profile even if deletion protection would have otherwise prevented
-     * it. </p> </li> <li> <p> <code>APPLY</code>: Instructs the deletion protection
+     * it.</p> </li> <li> <p> <code>APPLY</code>: Instructs the deletion protection
      * check to run, even if deletion protection is disabled at the account level.
      * <code>APPLY</code> also forces the deletion protection check to run against
      * resources created in the past hour, which are normally excluded from deletion

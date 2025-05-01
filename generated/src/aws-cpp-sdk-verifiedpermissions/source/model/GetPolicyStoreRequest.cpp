@@ -22,6 +22,12 @@ Aws::String GetPolicyStoreRequest::SerializePayload() const
 
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   payload.WithBool("tags", m_tags);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

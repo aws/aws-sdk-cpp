@@ -34,13 +34,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A parameter to configure deletion protection. If enabled, deletion protection
-     * prevents a user from deleting a configuration profile or an environment if
-     * AppConfig has called either <a
+     * <p>A parameter to configure deletion protection. Deletion protection prevents a
+     * user from deleting a configuration profile or an environment if AppConfig has
+     * called either <a
      * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
      * or for the configuration profile or from the environment during the specified
-     * interval. Deletion protection is disabled by default. The default interval for
-     * <code>ProtectionPeriodInMinutes</code> is 60.</p>
+     * interval. The default interval for <code>ProtectionPeriodInMinutes</code> is
+     * 60.</p>
      */
     inline const DeletionProtectionSettings& GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }

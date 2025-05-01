@@ -29,6 +29,7 @@
 #include <aws/sagemaker/model/AgentVersion.h>
 #include <aws/sagemaker/model/AggregationTransformationValue.h>
 #include <aws/sagemaker/model/Alarm.h>
+#include <aws/sagemaker/model/AlarmDetails.h>
 #include <aws/sagemaker/model/AlgorithmSortBy.h>
 #include <aws/sagemaker/model/AlgorithmSpecification.h>
 #include <aws/sagemaker/model/AlgorithmStatus.h>
@@ -135,6 +136,7 @@
 #include <aws/sagemaker/model/CandidateStepType.h>
 #include <aws/sagemaker/model/CanvasAppSettings.h>
 #include <aws/sagemaker/model/CapacitySize.h>
+#include <aws/sagemaker/model/CapacitySizeConfig.h>
 #include <aws/sagemaker/model/CapacitySizeType.h>
 #include <aws/sagemaker/model/CaptureContentTypeHeader.h>
 #include <aws/sagemaker/model/CaptureMode.h>
@@ -430,6 +432,7 @@
 #include <aws/sagemaker/model/DeleteWorkteamResult.h>
 #include <aws/sagemaker/model/DeployedImage.h>
 #include <aws/sagemaker/model/DeploymentConfig.h>
+#include <aws/sagemaker/model/DeploymentConfiguration.h>
 #include <aws/sagemaker/model/DeploymentRecommendation.h>
 #include <aws/sagemaker/model/DeploymentStage.h>
 #include <aws/sagemaker/model/DeploymentStageStatusSummary.h>
@@ -1116,6 +1119,7 @@
 #include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <aws/sagemaker/model/NestedFilters.h>
 #include <aws/sagemaker/model/NetworkConfig.h>
+#include <aws/sagemaker/model/NodeUnavailabilityType.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <aws/sagemaker/model/NotebookInstanceLifecycleConfigSortKey.h>
 #include <aws/sagemaker/model/NotebookInstanceLifecycleConfigSortOrder.h>
@@ -1295,6 +1299,7 @@
 #include <aws/sagemaker/model/RetryPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/RollingDeploymentPolicy.h>
 #include <aws/sagemaker/model/RollingUpdatePolicy.h>
 #include <aws/sagemaker/model/RootAccess.h>
 #include <aws/sagemaker/model/RoutingStrategy.h>
@@ -1314,6 +1319,7 @@
 #include <aws/sagemaker/model/ScalingPolicyObjective.h>
 #include <aws/sagemaker/model/ScheduleConfig.h>
 #include <aws/sagemaker/model/ScheduleStatus.h>
+#include <aws/sagemaker/model/ScheduledUpdateConfig.h>
 #include <aws/sagemaker/model/SchedulerConfig.h>
 #include <aws/sagemaker/model/SchedulerResourceStatus.h>
 #include <aws/sagemaker/model/SearchExpression.h>
@@ -1510,6 +1516,7 @@
 #include <aws/sagemaker/model/UpdateClusterResult.h>
 #include <aws/sagemaker/model/UpdateClusterSchedulerConfigRequest.h>
 #include <aws/sagemaker/model/UpdateClusterSchedulerConfigResult.h>
+#include <aws/sagemaker/model/UpdateClusterSoftwareInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/UpdateClusterSoftwareRequest.h>
 #include <aws/sagemaker/model/UpdateClusterSoftwareResult.h>
 #include <aws/sagemaker/model/UpdateCodeRepositoryRequest.h>

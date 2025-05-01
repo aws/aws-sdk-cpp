@@ -85,7 +85,10 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified <code>LocationUri</code>.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in CodePipeline or the AppConfig hosted
+     * configuration store. It is required for all other sources that store your
+     * configuration. </p> 
      */
     inline const Aws::String& GetRetrievalRoleArn() const { return m_retrievalRoleArn; }
     inline bool RetrievalRoleArnHasBeenSet() const { return m_retrievalRoleArnHasBeenSet; }

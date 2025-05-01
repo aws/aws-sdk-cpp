@@ -105,10 +105,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
+     * <p>(Optional) Specifies the list of resources and principals and their
+     * associated attributes that Verified Permissions can examine when evaluating the
+     * policies. These additional entities and their attributes can be referenced and
+     * checked by conditional elements in the policies in the specified policy
+     * store.</p>  <p>You can include only principal and resource entities in
+     * this parameter; you can't include actions. You must specify actions in the
      * schema.</p> 
      */
     inline const EntitiesDefinition& GetEntities() const { return m_entities; }

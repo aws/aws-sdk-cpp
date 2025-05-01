@@ -125,9 +125,9 @@ namespace Model
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
      * metric. The following historical metrics are available. For a description of
      * each metric, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-     *  <p>This API does not support a contacts incoming metric (there's no
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+     * definition</a> in the <i>Amazon Connect Administrator Guide</i>.</p> 
+     * <p>This API does not support a contacts incoming metric (there's no
      * CONTACTS_INCOMING metric missing from the documented list). </p>  <dl>
      * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
