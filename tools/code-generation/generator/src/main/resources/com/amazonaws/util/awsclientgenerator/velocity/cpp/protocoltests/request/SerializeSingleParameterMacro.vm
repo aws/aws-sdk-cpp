@@ -16,10 +16,12 @@ ${value}##
 #end###if($shape.double)
 #if($shape.primitive || $shape.boolean)
 ${value}##
-#elseif($shape.string || $shape.blob)
+#elseif($shape.string)
 R"(${value.asText()})"##
+#elseif($shape.blob)
+Aws::String(R"(${value.asText()})")##
 #elseif($shape.timeStamp)
-Aws::Utils::DateTime(${value})##
+Aws::Utils::DateTime(${value}L)##
 #elseif($shape.enum)
 ${shape.name}Mapper::Get${shape.name}ForName(R"e(${value.asText()})e")##
 #elseif($shape.list)

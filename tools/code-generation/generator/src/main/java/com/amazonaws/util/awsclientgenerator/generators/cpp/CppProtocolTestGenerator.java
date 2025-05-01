@@ -9,11 +9,14 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -58,6 +61,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
     protected SdkFileEntry generateTestSuiteSourceFile(ProtocolTestSuite testSuite) throws IOException {
         VelocityContext context = createContext();
         context.put("testSuite", testSuite);
+        context.put("sourceIncludes", computeTestSourceIncludes(testSuite));
         Template template = velocityEngine.getTemplate(TEST_SUITE_TEMPLATE, StandardCharsets.UTF_8.name());
         String fileName = String.format("tests/%sTest.cpp", testSuite.getName());
 
@@ -129,5 +133,39 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         file.setSdkFile(sb);
         file.setNeedsByteOrderMark(needsBOM);
         return file;
+    }
+
+    private final Set<String> HEADERS_TO_NOT_INCLUDE = ImmutableSet.of(
+            "<aws/core/utils/memory/stl/AWSStringStream.h>",
+            "<aws/core/utils/HashingUtils.h>"
+    );
+
+    private List<String> computeTestSourceIncludes(ProtocolTestSuite testSuite) {
+        Set<String> set = testSuite.getCases().stream()
+                .map(entry -> {
+                    Shape shape = serviceModel.getShapes().getOrDefault(entry.getGiven().getName(),
+                            serviceModel.getShapes().get(entry.getGiven().getName() + "Request"));
+                    // operation with no input shape defined but cpp sdk generates an empty request class
+                    Set<String> includes = shape != null ?
+                            CppViewHelper.computeSourceIncludes(serviceModel.getMetadata().getProjectName(), shape) :
+                            new HashSet<String>();
+                    if (shape != null) {
+                        for(Map.Entry<String, ShapeMember> member : shape.getMembers().entrySet()) {
+                            // deal with recursive sub-members
+                            includes.addAll(CppViewHelper.computeSourceIncludes(
+                                    serviceModel.getMetadata().getProjectName(), member.getValue().getShape()));
+                        }
+
+                    }
+                    // include the request shape itself
+                    includes.add(String.format("<aws/%s/model/%s.h>", serviceModel.getMetadata().getProjectName(),
+                            entry.getGiven().getName() + "Request"));
+
+                    return includes;
+                })
+                .flatMap(entrySet -> entrySet.stream())
+                .collect(Collectors.toSet());
+        set.removeAll(HEADERS_TO_NOT_INCLUDE);
+        return set.stream().sorted().collect(Collectors.toList());
     }
 }

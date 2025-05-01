@@ -14,9 +14,9 @@ using namespace Aws::QueryProtocol::Model;
 AWS_PROTOCOL_TEST(QueryTimestamps, QueryTimestampsInput) {
   QueryProtocolClient client;
   QueryTimestampsRequest request;
-  request.SetNormalFormat(Aws::Utils::DateTime(1422172800));
-  request.SetEpochMember(Aws::Utils::DateTime(1422172800));
-  request.SetEpochTarget(Aws::Utils::DateTime(1422172800));
+  request.SetNormalFormat(Aws::Utils::DateTime(1422172800L));
+  request.SetEpochMember(Aws::Utils::DateTime(1422172800L));
+  request.SetEpochTarget(Aws::Utils::DateTime(1422172800L));
 
   auto outcome = client.QueryTimestamps(request);
   AWS_ASSERT_SUCCESS(outcome);

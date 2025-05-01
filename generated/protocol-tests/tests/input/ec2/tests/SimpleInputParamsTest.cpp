@@ -61,7 +61,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
   EC2ProtocolClient client;
   SimpleInputParamsRequest request;
-  request.SetQux(R"(value)");
+  request.SetQux(Aws::String(R"(value)"));
 
   auto outcome = client.SimpleInputParams(request);
   AWS_ASSERT_SUCCESS(outcome);

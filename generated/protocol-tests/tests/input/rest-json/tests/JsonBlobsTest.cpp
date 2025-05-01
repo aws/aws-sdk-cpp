@@ -14,7 +14,7 @@ using namespace Aws::RestJsonProtocol::Model;
 AWS_PROTOCOL_TEST(JsonBlobs, RestJsonJsonBlobs) {
   RestJsonProtocolClient client;
   JsonBlobsRequest request;
-  request.SetData(R"(value)");
+  request.SetData(Aws::String(R"(value)"));
 
   auto outcome = client.JsonBlobs(request);
   AWS_ASSERT_SUCCESS(outcome);

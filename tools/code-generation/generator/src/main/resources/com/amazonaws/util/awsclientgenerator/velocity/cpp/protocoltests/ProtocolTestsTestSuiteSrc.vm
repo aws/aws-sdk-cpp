@@ -4,12 +4,8 @@
 \#include <aws/core/utils/logging/LogMacros.h>
 \#include <aws/testing/AwsProtocolTestHelpers.h>
 \#include <aws/${serviceModel.metadata.projectName}/${serviceClient}.h>
-#set($modelIncludes = {})
-#foreach($case in $testSuite.cases)
-#set($dummy = $modelIncludes.put("${testSuite.name}", "<aws/${serviceModel.metadata.projectName}/model/${testSuite.name}Request.h>"))
-#end
-#foreach($include in $modelIncludes)
-\#include $include
+#foreach($header in $sourceIncludes)
+\#include $header
 #end
 
 using $testSuite.name = AWS_PROTOCOL_TEST_SUITE;
@@ -19,10 +15,10 @@ using namespace Aws::$serviceNs::Model;
 
 AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
   $serviceClient client;
-  ${testSuite.name}Request request;
+  ${case.given.name}Request request;
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/FillRequest.vm")
 
-  auto outcome = client.${testSuite.name}(request);
+  auto outcome = client.${case.given.name}(request);
 #if($case.input)
   AWS_ASSERT_SUCCESS(outcome);
 #else

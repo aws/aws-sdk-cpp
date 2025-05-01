@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(TestPayloadBlob, RestJsonTestPayloadBlob) {
   RestJsonProtocolClient client;
   TestPayloadBlobRequest request;
   request.SetContentType("image/jpg");
-  request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", R"(1234)", std::ios_base::in | std::ios_base::binary); }() );
+  request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", Aws::String(R"(1234)"), std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.TestPayloadBlob(request);
   AWS_ASSERT_SUCCESS(outcome);

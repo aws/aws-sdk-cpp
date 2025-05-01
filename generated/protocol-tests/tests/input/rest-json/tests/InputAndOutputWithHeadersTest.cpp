@@ -60,7 +60,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithBooleanHe
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithTimestampHeaders) {
   RestJsonProtocolClient client;
   InputAndOutputWithHeadersRequest request;
-  request.SetHeaderTimestampList({Aws::Utils::DateTime(1576540098), Aws::Utils::DateTime(1576540098)});
+  request.SetHeaderTimestampList({Aws::Utils::DateTime(1576540098L), Aws::Utils::DateTime(1576540098L)});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   AWS_ASSERT_SUCCESS(outcome);

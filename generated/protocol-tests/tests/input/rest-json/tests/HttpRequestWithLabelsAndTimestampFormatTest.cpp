@@ -14,13 +14,13 @@ using namespace Aws::RestJsonProtocol::Model;
 AWS_PROTOCOL_TEST(HttpRequestWithLabelsAndTimestampFormat, RestJsonHttpRequestWithLabelsAndTimestampFormat) {
   RestJsonProtocolClient client;
   HttpRequestWithLabelsAndTimestampFormatRequest request;
-  request.SetMemberEpochSeconds(Aws::Utils::DateTime(1576540098));
-  request.SetMemberHttpDate(Aws::Utils::DateTime(1576540098));
-  request.SetMemberDateTime(Aws::Utils::DateTime(1576540098));
-  request.SetDefaultFormat(Aws::Utils::DateTime(1576540098));
-  request.SetTargetEpochSeconds(Aws::Utils::DateTime(1576540098));
-  request.SetTargetHttpDate(Aws::Utils::DateTime(1576540098));
-  request.SetTargetDateTime(Aws::Utils::DateTime(1576540098));
+  request.SetMemberEpochSeconds(Aws::Utils::DateTime(1576540098L));
+  request.SetMemberHttpDate(Aws::Utils::DateTime(1576540098L));
+  request.SetMemberDateTime(Aws::Utils::DateTime(1576540098L));
+  request.SetDefaultFormat(Aws::Utils::DateTime(1576540098L));
+  request.SetTargetEpochSeconds(Aws::Utils::DateTime(1576540098L));
+  request.SetTargetHttpDate(Aws::Utils::DateTime(1576540098L));
+  request.SetTargetDateTime(Aws::Utils::DateTime(1576540098L));
 
   auto outcome = client.HttpRequestWithLabelsAndTimestampFormat(request);
   AWS_ASSERT_SUCCESS(outcome);
