@@ -68,7 +68,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
   JsonProtocolClient client;
   KitchenSinkOperationRequest request;
-  request.SetBlob(R"(binary-value)");
+  request.SetBlob(Aws::String(R"(binary-value)"));
 
   auto outcome = client.KitchenSinkOperation(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -95,7 +95,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
   JsonProtocolClient client;
   KitchenSinkOperationRequest request;
-  request.SetTimestamp(Aws::Utils::DateTime(946845296));
+  request.SetTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -104,7 +104,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601_timestampformat) {
   JsonProtocolClient client;
   KitchenSinkOperationRequest request;
-  request.SetIso8601Timestamp(Aws::Utils::DateTime(946845296));
+  request.SetIso8601Timestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -113,7 +113,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdate_timestampformat) {
   JsonProtocolClient client;
   KitchenSinkOperationRequest request;
-  request.SetHttpdateTimestamp(Aws::Utils::DateTime(946845296));
+  request.SetHttpdateTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
   AWS_ASSERT_SUCCESS(outcome);
@@ -122,7 +122,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdat
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtimestamp_timestampformat) {
   JsonProtocolClient client;
   KitchenSinkOperationRequest request;
-  request.SetUnixTimestamp(Aws::Utils::DateTime(946845296));
+  request.SetUnixTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
   AWS_ASSERT_SUCCESS(outcome);

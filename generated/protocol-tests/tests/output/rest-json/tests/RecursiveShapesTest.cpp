@@ -5,6 +5,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
+#include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested2.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesRequest.h>
 
 using RecursiveShapes = AWS_PROTOCOL_TEST_SUITE;

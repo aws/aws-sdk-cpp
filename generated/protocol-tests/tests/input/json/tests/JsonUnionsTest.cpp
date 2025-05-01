@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBlobUnionValue) {
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
-    requestContents.SetBlobValue(R"(foo)");
+    requestContents.SetBlobValue(Aws::String(R"(foo)"));
     request.SetContents(requestContents);
   }
 
@@ -68,7 +68,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeTimestampUnionValue) {
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
-    requestContents.SetTimestampValue(Aws::Utils::DateTime(1398796238));
+    requestContents.SetTimestampValue(Aws::Utils::DateTime(1398796238L));
     request.SetContents(requestContents);
   }
 
