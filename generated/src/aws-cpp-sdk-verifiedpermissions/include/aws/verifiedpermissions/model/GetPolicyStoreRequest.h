@@ -45,10 +45,27 @@ namespace Model
     template<typename PolicyStoreIdT = Aws::String>
     GetPolicyStoreRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to return the tags that are attached to the policy store.
+     * If this parameter is included in the API call, the tags are returned, otherwise
+     * they are not returned.</p>  <p>If this parameter is included in the API
+     * call but there are no tags attached to the policy store, the <code>tags</code>
+     * response parameter is omitted from the response.</p> 
+     */
+    inline bool GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(bool value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline GetPolicyStoreRequest& WithTags(bool value) { SetTags(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_policyStoreId;
     bool m_policyStoreIdHasBeenSet = false;
+
+    bool m_tags{false};
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -89,6 +89,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time of when SageMaker last updated the software of the instances in the
+     * cluster.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastSoftwareUpdateTime() const { return m_lastSoftwareUpdateTime; }
+    inline bool LastSoftwareUpdateTimeHasBeenSet() const { return m_lastSoftwareUpdateTimeHasBeenSet; }
+    template<typename LastSoftwareUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastSoftwareUpdateTime(LastSoftwareUpdateTimeT&& value) { m_lastSoftwareUpdateTimeHasBeenSet = true; m_lastSoftwareUpdateTime = std::forward<LastSoftwareUpdateTimeT>(value); }
+    template<typename LastSoftwareUpdateTimeT = Aws::Utils::DateTime>
+    ClusterNodeSummary& WithLastSoftwareUpdateTime(LastSoftwareUpdateTimeT&& value) { SetLastSoftwareUpdateTime(std::forward<LastSoftwareUpdateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the instance.</p>
      */
     inline const ClusterInstanceStatusDetails& GetInstanceStatus() const { return m_instanceStatus; }
@@ -111,6 +124,9 @@ namespace Model
 
     Aws::Utils::DateTime m_launchTime{};
     bool m_launchTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastSoftwareUpdateTime{};
+    bool m_lastSoftwareUpdateTimeHasBeenSet = false;
 
     ClusterInstanceStatusDetails m_instanceStatus;
     bool m_instanceStatusHasBeenSet = false;

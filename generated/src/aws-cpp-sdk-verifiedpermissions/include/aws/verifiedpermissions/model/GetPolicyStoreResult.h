@@ -9,6 +9,8 @@
 #include <aws/verifiedpermissions/model/ValidationSettings.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/verifiedpermissions/model/DeletionProtection.h>
+#include <aws/verifiedpermissions/model/CedarVersion.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +115,33 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The version of the Cedar language used with policies, policy templates, and
+     * schemas in this policy store. For more information, see <a
+     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon
+     * Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+     */
+    inline CedarVersion GetCedarVersion() const { return m_cedarVersion; }
+    inline void SetCedarVersion(CedarVersion value) { m_cedarVersionHasBeenSet = true; m_cedarVersion = value; }
+    inline GetPolicyStoreResult& WithCedarVersion(CedarVersion value) { SetCedarVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of tags associated with the policy store.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetPolicyStoreResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetPolicyStoreResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -142,6 +171,12 @@ namespace Model
 
     DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
     bool m_deletionProtectionHasBeenSet = false;
+
+    CedarVersion m_cedarVersion{CedarVersion::NOT_SET};
+    bool m_cedarVersionHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

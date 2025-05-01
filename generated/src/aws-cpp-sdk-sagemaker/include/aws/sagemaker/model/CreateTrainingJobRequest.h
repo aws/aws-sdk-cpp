@@ -76,10 +76,11 @@ namespace Model
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>  <p>Do not include any
-     * security-sensitive information including account access IDs, secrets or tokens
-     * in any hyperparameter field. If the use of security-sensitive credentials are
-     * detected, SageMaker will reject your training job request and return an
-     * exception error.</p> 
+     * security-sensitive information including account access IDs, secrets, or tokens
+     * in any hyperparameter fields. As part of the shared responsibility model, you
+     * are responsible for any potential exposure, unauthorized access, or compromise
+     * of your sensitive data if caused by any security-sensitive information included
+     * in the request hyperparameter variable or plain text fields.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const { return m_hyperParameters; }
     inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
@@ -230,7 +231,12 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>  <p>Do not include any
+     * security-sensitive information including account access IDs, secrets, or tokens
+     * in any tags. As part of the shared responsibility model, you are responsible for
+     * any potential exposure, unauthorized access, or compromise of your sensitive
+     * data if caused by any security-sensitive information included in the request tag
+     * variable or plain text fields.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -377,7 +383,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment variables to set in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container.</p> 
+     * <p>Do not include any security-sensitive information including account access
+     * IDs, secrets, or tokens in any environment fields. As part of the shared
+     * responsibility model, you are responsible for any potential exposure,
+     * unauthorized access, or compromise of your sensitive data if caused by
+     * security-sensitive information included in the request environment variable or
+     * plain text fields.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }

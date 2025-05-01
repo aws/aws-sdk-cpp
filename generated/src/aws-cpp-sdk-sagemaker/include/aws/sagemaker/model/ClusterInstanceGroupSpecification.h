@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
+#include <aws/sagemaker/model/ScheduledUpdateConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <utility>
@@ -200,6 +201,19 @@ namespace Model
     template<typename OverrideVpcConfigT = VpcConfig>
     ClusterInstanceGroupSpecification& WithOverrideVpcConfig(OverrideVpcConfigT&& value) { SetOverrideVpcConfig(std::forward<OverrideVpcConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration object of the schedule that SageMaker uses to update the
+     * AMI.</p>
+     */
+    inline const ScheduledUpdateConfig& GetScheduledUpdateConfig() const { return m_scheduledUpdateConfig; }
+    inline bool ScheduledUpdateConfigHasBeenSet() const { return m_scheduledUpdateConfigHasBeenSet; }
+    template<typename ScheduledUpdateConfigT = ScheduledUpdateConfig>
+    void SetScheduledUpdateConfig(ScheduledUpdateConfigT&& value) { m_scheduledUpdateConfigHasBeenSet = true; m_scheduledUpdateConfig = std::forward<ScheduledUpdateConfigT>(value); }
+    template<typename ScheduledUpdateConfigT = ScheduledUpdateConfig>
+    ClusterInstanceGroupSpecification& WithScheduledUpdateConfig(ScheduledUpdateConfigT&& value) { SetScheduledUpdateConfig(std::forward<ScheduledUpdateConfigT>(value)); return *this;}
+    ///@}
   private:
 
     int m_instanceCount{0};
@@ -231,6 +245,9 @@ namespace Model
 
     VpcConfig m_overrideVpcConfig;
     bool m_overrideVpcConfigHasBeenSet = false;
+
+    ScheduledUpdateConfig m_scheduledUpdateConfig;
+    bool m_scheduledUpdateConfigHasBeenSet = false;
   };
 
 } // namespace Model

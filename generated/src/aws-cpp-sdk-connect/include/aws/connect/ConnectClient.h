@@ -2399,11 +2399,12 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <ul> <li> <p>
-         * <code>CustomerEndpoint</code> and <code>SystemEndpoint</code> are only populated
-         * for EMAIL contacts. </p> </li> <li> <p>Contact information remains available in
-         * Amazon Connect for 24 months from the <code>InitiationTimestamp</code>, and then
-         * it is deleted. Only contact information that is available in Amazon Connect is
-         * returned by this API.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * <code>SystemEndpoint</code> is not populated for contacts with initiation method
+         * of MONITOR, QUEUE_TRANSFER, or CALLBACK</p> </li> <li> <p>Contact information
+         * remains available in Amazon Connect for 24 months from the
+         * <code>InitiationTimestamp</code>, and then it is deleted. Only contact
+         * information that is available in Amazon Connect is returned by this API.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -3538,9 +3539,9 @@ namespace Connect
         /**
          * <p>Gets the real-time metric data from the specified Amazon Connect
          * instance.</p> <p>For a description of each metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
          */
@@ -3680,9 +3681,9 @@ namespace Connect
         /**
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
          * <p>For a description of each historical metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-         *  <p>We recommend using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> 
+         * <p>We recommend using the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
          * API. It provides more flexibility, features, and the ability to query longer
          * time ranges than <code>GetMetricData</code>. Use it to retrieve historical agent
@@ -3724,9 +3725,9 @@ namespace Connect
          * historical data for the last 3 months, at varying intervals. It does not support
          * agent queues.</p> <p>For a description of the historical metrics that are
          * supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * metrics definitions</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">AWS
          * API Reference</a></p>
          */

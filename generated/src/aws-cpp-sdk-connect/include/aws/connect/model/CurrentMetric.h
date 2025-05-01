@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p>Contains information about a real-time metric. For a description of each
    * metric, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-   * Metrics Definitions</a> in the <i>Amazon Connect Administrator
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric">AWS
    * API Reference</a></p>
    */

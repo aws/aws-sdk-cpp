@@ -87,16 +87,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the list of resources and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies. </p>  <p>You
-     * can't include principals in this parameter, only resource and action entities.
-     * This parameter can't include any entities of a type that matches the user or
-     * group entity types that you defined in your identity source.</p> <ul> <li>
-     * <p>The <code>BatchIsAuthorizedWithToken</code> operation takes principal
-     * attributes from <b> <i>only</i> </b> the <code>identityToken</code> or
-     * <code>accessToken</code> passed to the operation.</p> </li> <li> <p>For action
-     * entities, you can include only their <code>Identifier</code> and
-     * <code>EntityType</code>. </p> </li> </ul> 
+     * <p>(Optional) Specifies the list of resources and their associated attributes
+     * that Verified Permissions can examine when evaluating the policies. These
+     * additional entities and their attributes can be referenced and checked by
+     * conditional elements in the policies in the specified policy store.</p>
+     *  <p>You can't include principals in this parameter, only resource and
+     * action entities. This parameter can't include any entities of a type that
+     * matches the user or group entity types that you defined in your identity
+     * source.</p> <ul> <li> <p>The <code>BatchIsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul>
+     * 
      */
     inline const EntitiesDefinition& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }

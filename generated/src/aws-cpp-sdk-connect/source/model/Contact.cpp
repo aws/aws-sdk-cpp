@@ -218,6 +218,43 @@ Contact& Contact::operator =(JsonView jsonValue)
     }
     m_segmentAttributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Recordings"))
+  {
+    Aws::Utils::Array<JsonView> recordingsJsonList = jsonValue.GetArray("Recordings");
+    for(unsigned recordingsIndex = 0; recordingsIndex < recordingsJsonList.GetLength(); ++recordingsIndex)
+    {
+      m_recordings.push_back(recordingsJsonList[recordingsIndex].AsObject());
+    }
+    m_recordingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DisconnectReason"))
+  {
+    m_disconnectReason = jsonValue.GetString("DisconnectReason");
+    m_disconnectReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ContactEvaluations"))
+  {
+    Aws::Map<Aws::String, JsonView> contactEvaluationsJsonMap = jsonValue.GetObject("ContactEvaluations").GetAllObjects();
+    for(auto& contactEvaluationsItem : contactEvaluationsJsonMap)
+    {
+      m_contactEvaluations[contactEvaluationsItem.first] = contactEvaluationsItem.second.AsObject();
+    }
+    m_contactEvaluationsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ContactDetails"))
+  {
+    m_contactDetails = jsonValue.GetObject("ContactDetails");
+    m_contactDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Attributes"))
+  {
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    for(auto& attributesItem : attributesJsonMap)
+    {
+      m_attributes[attributesItem.first] = attributesItem.second.AsString();
+    }
+    m_attributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -444,6 +481,51 @@ JsonValue Contact::Jsonize() const
      segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
    }
    payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+
+  }
+
+  if(m_recordingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> recordingsJsonList(m_recordings.size());
+   for(unsigned recordingsIndex = 0; recordingsIndex < recordingsJsonList.GetLength(); ++recordingsIndex)
+   {
+     recordingsJsonList[recordingsIndex].AsObject(m_recordings[recordingsIndex].Jsonize());
+   }
+   payload.WithArray("Recordings", std::move(recordingsJsonList));
+
+  }
+
+  if(m_disconnectReasonHasBeenSet)
+  {
+   payload.WithString("DisconnectReason", m_disconnectReason);
+
+  }
+
+  if(m_contactEvaluationsHasBeenSet)
+  {
+   JsonValue contactEvaluationsJsonMap;
+   for(auto& contactEvaluationsItem : m_contactEvaluations)
+   {
+     contactEvaluationsJsonMap.WithObject(contactEvaluationsItem.first, contactEvaluationsItem.second.Jsonize());
+   }
+   payload.WithObject("ContactEvaluations", std::move(contactEvaluationsJsonMap));
+
+  }
+
+  if(m_contactDetailsHasBeenSet)
+  {
+   payload.WithObject("ContactDetails", m_contactDetails.Jsonize());
+
+  }
+
+  if(m_attributesHasBeenSet)
+  {
+   JsonValue attributesJsonMap;
+   for(auto& attributesItem : m_attributes)
+   {
+     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+   }
+   payload.WithObject("Attributes", std::move(attributesJsonMap));
 
   }
 

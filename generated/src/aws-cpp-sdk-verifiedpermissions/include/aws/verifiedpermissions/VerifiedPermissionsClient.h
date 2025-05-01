@@ -817,6 +817,33 @@ namespace VerifiedPermissions
         }
 
         /**
+         * <p>Returns the tags associated with the specified Amazon Verified Permissions
+         * resource. In Verified Permissions, policy stores can be tagged.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Creates or updates the policy schema in the specified policy store. The
          * schema is used to validate any Cedar policies and policy templates submitted to
          * the policy store. Any changes to the schema validate only policies and templates
@@ -849,6 +876,69 @@ namespace VerifiedPermissions
         void PutSchemaAsync(const PutSchemaRequestT& request, const PutSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&VerifiedPermissionsClient::PutSchema, request, handler, context);
+        }
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Verified
+         * Permissions resource. Tags can help you organize and categorize your resources.
+         * You can also use them to scope user permissions by granting a user permission to
+         * access or change only resources with certain tag values. In Verified
+         * Permissions, policy stores can be tagged.</p> <p>Tags don't have any semantic
+         * meaning to Amazon Web Services and are interpreted strictly as strings of
+         * characters.</p> <p>You can use the TagResource action with a resource that
+         * already has tags. If you specify a new tag key, this tag is appended to the list
+         * of tags associated with the resource. If you specify a tag key that is already
+         * associated with the resource, the new tag value that you specify replaces the
+         * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes one or more tags from the specified Amazon Verified Permissions
+         * resource. In Verified Permissions, policy stores can be tagged.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::UntagResource, request, handler, context);
         }
 
         /**

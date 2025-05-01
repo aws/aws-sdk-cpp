@@ -30,6 +30,7 @@
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenOutputItem.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenRequest.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
+#include <aws/verifiedpermissions/model/CedarVersion.h>
 #include <aws/verifiedpermissions/model/CognitoGroupConfiguration.h>
 #include <aws/verifiedpermissions/model/CognitoGroupConfigurationDetail.h>
 #include <aws/verifiedpermissions/model/CognitoGroupConfigurationItem.h>
@@ -89,6 +90,8 @@
 #include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesResult.h>
+#include <aws/verifiedpermissions/model/ListTagsForResourceRequest.h>
+#include <aws/verifiedpermissions/model/ListTagsForResourceResult.h>
 #include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfiguration.h>
 #include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfigurationDetail.h>
 #include <aws/verifiedpermissions/model/OpenIdConnectAccessTokenConfigurationItem.h>
@@ -123,10 +126,15 @@
 #include <aws/verifiedpermissions/model/StaticPolicyDefinition.h>
 #include <aws/verifiedpermissions/model/StaticPolicyDefinitionDetail.h>
 #include <aws/verifiedpermissions/model/StaticPolicyDefinitionItem.h>
+#include <aws/verifiedpermissions/model/TagResourceRequest.h>
+#include <aws/verifiedpermissions/model/TagResourceResult.h>
 #include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinition.h>
 #include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinitionDetail.h>
 #include <aws/verifiedpermissions/model/TemplateLinkedPolicyDefinitionItem.h>
 #include <aws/verifiedpermissions/model/ThrottlingException.h>
+#include <aws/verifiedpermissions/model/TooManyTagsException.h>
+#include <aws/verifiedpermissions/model/UntagResourceRequest.h>
+#include <aws/verifiedpermissions/model/UntagResourceResult.h>
 #include <aws/verifiedpermissions/model/UpdateCognitoGroupConfiguration.h>
 #include <aws/verifiedpermissions/model/UpdateCognitoUserPoolConfiguration.h>
 #include <aws/verifiedpermissions/model/UpdateConfiguration.h>

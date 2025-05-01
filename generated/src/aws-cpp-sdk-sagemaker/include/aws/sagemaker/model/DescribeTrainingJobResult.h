@@ -572,7 +572,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The environment variables to set in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container.</p> 
+     * <p>Do not include any security-sensitive information including account access
+     * IDs, secrets, or tokens in any environment fields. As part of the shared
+     * responsibility model, you are responsible for any potential exposure,
+     * unauthorized access, or compromise of your sensitive data if caused by
+     * security-sensitive information included in the request environment variable or
+     * plain text fields.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
