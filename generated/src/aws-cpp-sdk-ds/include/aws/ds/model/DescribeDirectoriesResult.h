@@ -42,10 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
-     * <p>It is possible that this list contains less than the number of items
-     * specified in the <code>Limit</code> member of the request. This occurs if there
-     * are less than the requested number of items left to retrieve, or if the
+     * <p>The list of available <a>DirectoryDescription</a> objects that were
+     * retrieved.</p> <p>It is possible that this list contains less than the number of
+     * items specified in the <code>Limit</code> member of the request. This occurs if
+     * there are less than the requested number of items left to retrieve, or if the
      * limitations of the operation have been exceeded.</p>
      */
     inline const Aws::Vector<DirectoryDescription>& GetDirectoryDescriptions() const { return m_directoryDescriptions; }

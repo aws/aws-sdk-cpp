@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
         static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
+        static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
 
 
         Type GetTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == IMAGE_HASH)
           {
             return Type::IMAGE;
+          }
+          else if (hashCode == AUDIO_HASH)
+          {
+            return Type::AUDIO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "DOCUMENT";
           case Type::IMAGE:
             return "IMAGE";
+          case Type::AUDIO:
+            return "AUDIO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

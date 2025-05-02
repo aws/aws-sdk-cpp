@@ -1103,7 +1103,9 @@ namespace DirectoryService
 
         /**
          * <p>Deactivates access to directory data via the Directory Service Data API for
-         * the specified directory.</p><p><h3>See Also:</h3>   <a
+         * the specified directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory
+         * Service Data API Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">AWS
          * API Reference</a></p>
          */
@@ -1233,7 +1235,9 @@ namespace DirectoryService
 
         /**
          * <p>Enables access to directory data via the Directory Service Data API for the
-         * specified directory.</p><p><h3>See Also:</h3>   <a
+         * specified directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory
+         * Service Data API Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">AWS
          * API Reference</a></p>
          */
