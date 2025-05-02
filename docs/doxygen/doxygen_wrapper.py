@@ -235,9 +235,10 @@ class DoxygenWrapper(object):
             future.result()
 
         self._cleanup_temp_files()
-        print("Update CSP")
-        cspfixer = CSPFixer()
-        cspfixer.update_files(Path(self.output_dir))
+        # TODO: fix CSP fixer for search box
+        # print("Update CSP")
+        # cspfixer = CSPFixer()
+        # cspfixer.update_files(Path(self.output_dir))
 
         return dependency_map
 
