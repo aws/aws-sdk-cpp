@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DOCUMENT,
-    IMAGE
+    IMAGE,
+    AUDIO
   };
 
 namespace TypeMapper

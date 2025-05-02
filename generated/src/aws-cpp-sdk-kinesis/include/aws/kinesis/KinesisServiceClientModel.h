@@ -45,7 +45,6 @@
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/ListTagsForStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
-#include <aws/kinesis/model/ListTagsForResourceRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KinesisClient header */
 

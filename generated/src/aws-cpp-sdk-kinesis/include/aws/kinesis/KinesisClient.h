@@ -844,13 +844,13 @@ namespace Kinesis
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request = {}) const;
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
          * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
-        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request = {}) const
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
         {
             return SubmitCallable(&KinesisClient::ListTagsForResource, request);
         }
@@ -859,7 +859,7 @@ namespace Kinesis
          * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
-        void ListTagsForResourceAsync(const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTagsForResourceRequestT& request = {}) const
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KinesisClient::ListTagsForResource, request, handler, context);
         }
