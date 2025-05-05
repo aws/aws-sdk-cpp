@@ -75,6 +75,8 @@
     "AWSXML",
     "IMDSV",
     "AWSSTL",
+    "reparsed",
+    "reparses",
     // AWS Signature
     "SIGV",
     "AUTHV",
@@ -175,6 +177,7 @@
     "callfopen",
     "overengineered",
     "callfopen",
+    "throughs",
     // Json parser
     "Jsonize",
     "CJSON",

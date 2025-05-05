@@ -45,7 +45,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         this.serviceModel = serviceModel;
         this.testModel = testSuiteModel;
         String prefix = testSuiteModel.getType().toString().toLowerCase();
-        this.projectName = testSuiteModel.getName() + "-" + prefix + "-protocol-tests";
+        this.projectName = "protocol-" + testSuiteModel.getName() + "-" + prefix + "-tests";
 
         velocityEngine = new VelocityEngine();
         velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");

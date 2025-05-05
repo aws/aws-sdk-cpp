@@ -11,6 +11,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.Protocol
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
@@ -65,6 +66,11 @@ public class C2jProtocolTestToGeneratorModelTransformer {
                     Optional<ProtocolTestCase.Input> input = Optional.of(new ProtocolTestCase.Input());
                     input.get().setParams(inputTestCase.getParams());
                     input.get().setSerialized(inputTestCase.getSerialized());
+                    if (input.get().getSerialized().getBody() != null) {
+                        input.get().getSerialized().setBody(
+                            Base64.getEncoder().encodeToString(input.get().getSerialized().getBody().getBytes())
+                        );
+                    }
                     testCase.setInput(input);
 
                     protocolTestSuite.getCases().add(testCase);
@@ -95,6 +101,11 @@ public class C2jProtocolTestToGeneratorModelTransformer {
                     }
 
                     output.get().setResponse(outputTestCase.getResponse());
+                    if (output.get().getResponse().getBody() != null) {
+                        output.get().getResponse().setBody(
+                            Base64.getEncoder().encodeToString(output.get().getResponse().getBody().getBytes())
+                        );
+                    }
 
                     if (outputTestCase.getError() != null) {
                         output.get().setError(true);
@@ -102,10 +113,14 @@ public class C2jProtocolTestToGeneratorModelTransformer {
                         error.get().setError(Optional.of(outputTestCase.getError()));
                         error.get().setErrorMessage(outputTestCase.getErrorMessage());
                         error.get().setErrorCode(outputTestCase.getErrorCode());
+                        output.get().setErrorResult(error);
                     } else {
                         output.get().setError(false);
+                    }
+                    if (outputTestCase.getResult() != null) {
                         Optional<ProtocolTestCase.Output.SuccessResult> success = Optional.of(new ProtocolTestCase.Output.SuccessResult());
                         success.get().setResult(Optional.of(outputTestCase.getResult()));
+                        output.get().setSuccessResult(success);
                     }
 
                     output.get().setResponse(outputTestCase.getResponse());

@@ -49,10 +49,10 @@
         ],
         "type": "endpoint",
         "endpoint": {
-          "url": "http://localhost:1994",
+          "url": "http://localhost:1994/MockControl",
           "properties": {},
           "headers": {}
         }
       }
     ]
-}
+  }
