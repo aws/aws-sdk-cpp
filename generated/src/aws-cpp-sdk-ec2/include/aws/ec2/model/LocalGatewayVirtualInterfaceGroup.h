@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/LocalGatewayVirtualInterfaceGroupConfigurationState.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -95,6 +96,40 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol
+     * (BGP).</p>
+     */
+    inline int GetLocalBgpAsn() const { return m_localBgpAsn; }
+    inline bool LocalBgpAsnHasBeenSet() const { return m_localBgpAsnHasBeenSet; }
+    inline void SetLocalBgpAsn(int value) { m_localBgpAsnHasBeenSet = true; m_localBgpAsn = value; }
+    inline LocalGatewayVirtualInterfaceGroup& WithLocalBgpAsn(int value) { SetLocalBgpAsn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The extended 32-bit ASN for the local BGP configuration.</p>
+     */
+    inline long long GetLocalBgpAsnExtended() const { return m_localBgpAsnExtended; }
+    inline bool LocalBgpAsnExtendedHasBeenSet() const { return m_localBgpAsnExtendedHasBeenSet; }
+    inline void SetLocalBgpAsnExtended(long long value) { m_localBgpAsnExtendedHasBeenSet = true; m_localBgpAsnExtended = value; }
+    inline LocalGatewayVirtualInterfaceGroup& WithLocalBgpAsnExtended(long long value) { SetLocalBgpAsnExtended(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Number (ARN) of the local gateway virtual interface
+     * group.</p>
+     */
+    inline const Aws::String& GetLocalGatewayVirtualInterfaceGroupArn() const { return m_localGatewayVirtualInterfaceGroupArn; }
+    inline bool LocalGatewayVirtualInterfaceGroupArnHasBeenSet() const { return m_localGatewayVirtualInterfaceGroupArnHasBeenSet; }
+    template<typename LocalGatewayVirtualInterfaceGroupArnT = Aws::String>
+    void SetLocalGatewayVirtualInterfaceGroupArn(LocalGatewayVirtualInterfaceGroupArnT&& value) { m_localGatewayVirtualInterfaceGroupArnHasBeenSet = true; m_localGatewayVirtualInterfaceGroupArn = std::forward<LocalGatewayVirtualInterfaceGroupArnT>(value); }
+    template<typename LocalGatewayVirtualInterfaceGroupArnT = Aws::String>
+    LocalGatewayVirtualInterfaceGroup& WithLocalGatewayVirtualInterfaceGroupArn(LocalGatewayVirtualInterfaceGroupArnT&& value) { SetLocalGatewayVirtualInterfaceGroupArn(std::forward<LocalGatewayVirtualInterfaceGroupArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags assigned to the virtual interface group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -105,6 +140,16 @@ namespace Model
     LocalGatewayVirtualInterfaceGroup& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     template<typename TagsT = Tag>
     LocalGatewayVirtualInterfaceGroup& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the local gateway virtual interface group.</p>
+     */
+    inline LocalGatewayVirtualInterfaceGroupConfigurationState GetConfigurationState() const { return m_configurationState; }
+    inline bool ConfigurationStateHasBeenSet() const { return m_configurationStateHasBeenSet; }
+    inline void SetConfigurationState(LocalGatewayVirtualInterfaceGroupConfigurationState value) { m_configurationStateHasBeenSet = true; m_configurationState = value; }
+    inline LocalGatewayVirtualInterfaceGroup& WithConfigurationState(LocalGatewayVirtualInterfaceGroupConfigurationState value) { SetConfigurationState(value); return *this;}
     ///@}
   private:
 
@@ -120,8 +165,20 @@ namespace Model
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
+    int m_localBgpAsn{0};
+    bool m_localBgpAsnHasBeenSet = false;
+
+    long long m_localBgpAsnExtended{0};
+    bool m_localBgpAsnExtendedHasBeenSet = false;
+
+    Aws::String m_localGatewayVirtualInterfaceGroupArn;
+    bool m_localGatewayVirtualInterfaceGroupArnHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    LocalGatewayVirtualInterfaceGroupConfigurationState m_configurationState{LocalGatewayVirtualInterfaceGroupConfigurationState::NOT_SET};
+    bool m_configurationStateHasBeenSet = false;
   };
 
 } // namespace Model

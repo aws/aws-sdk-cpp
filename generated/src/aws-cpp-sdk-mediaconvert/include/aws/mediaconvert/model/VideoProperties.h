@@ -54,10 +54,10 @@ namespace Model
     /**
      * The bit rate of the video track, in bits per second.
      */
-    inline int GetBitRate() const { return m_bitRate; }
+    inline long long GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
-    inline void SetBitRate(int value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
-    inline VideoProperties& WithBitRate(int value) { SetBitRate(value); return *this;}
+    inline void SetBitRate(long long value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
+    inline VideoProperties& WithBitRate(long long value) { SetBitRate(value); return *this;}
     ///@}
 
     ///@{
@@ -126,7 +126,7 @@ namespace Model
     int m_bitDepth{0};
     bool m_bitDepthHasBeenSet = false;
 
-    int m_bitRate{0};
+    long long m_bitRate{0};
     bool m_bitRateHasBeenSet = false;
 
     ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};

@@ -107,6 +107,8 @@
 #include <aws/ec2/model/CreateLocalGatewayRouteTableResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
@@ -182,6 +184,8 @@
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsAccessScopeResponse.h>
@@ -319,6 +323,7 @@
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
+#include <aws/ec2/model/DescribeOutpostLagsResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsResponse.h>
 #include <aws/ec2/model/DescribePrefixListsResponse.h>
 #include <aws/ec2/model/DescribePrincipalIdFormatResponse.h>
@@ -339,6 +344,7 @@
 #include <aws/ec2/model/DescribeSecurityGroupRulesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
+#include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesResponse.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeResponse.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusResponse.h>
 #include <aws/ec2/model/DescribeSnapshotsResponse.h>
@@ -695,6 +701,7 @@
 #include <aws/ec2/model/DescribeFpgaImagesRequest.h>
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
+#include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
 #include <aws/ec2/model/DescribeIpamsRequest.h>
 #include <aws/ec2/model/DescribeHostReservationOfferingsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInsightsAnalysesRequest.h>
@@ -737,6 +744,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayRouteTablesRequest.h>
 #include <aws/ec2/model/DescribeElasticGpusRequest.h>
 #include <aws/ec2/model/DescribeLocalGatewaysRequest.h>
+#include <aws/ec2/model/DescribeOutpostLagsRequest.h>
 #include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
@@ -974,6 +982,8 @@ namespace Aws
       class CreateLocalGatewayRouteTableRequest;
       class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest;
       class CreateLocalGatewayRouteTableVpcAssociationRequest;
+      class CreateLocalGatewayVirtualInterfaceRequest;
+      class CreateLocalGatewayVirtualInterfaceGroupRequest;
       class CreateManagedPrefixListRequest;
       class CreateNatGatewayRequest;
       class CreateNetworkAclRequest;
@@ -1055,6 +1065,8 @@ namespace Aws
       class DeleteLocalGatewayRouteTableRequest;
       class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest;
       class DeleteLocalGatewayRouteTableVpcAssociationRequest;
+      class DeleteLocalGatewayVirtualInterfaceRequest;
+      class DeleteLocalGatewayVirtualInterfaceGroupRequest;
       class DeleteManagedPrefixListRequest;
       class DeleteNatGatewayRequest;
       class DeleteNetworkAclRequest;
@@ -1207,6 +1219,7 @@ namespace Aws
       class DescribeNetworkInterfaceAttributeRequest;
       class DescribeNetworkInterfacePermissionsRequest;
       class DescribeNetworkInterfacesRequest;
+      class DescribeOutpostLagsRequest;
       class DescribePlacementGroupsRequest;
       class DescribePrefixListsRequest;
       class DescribePrincipalIdFormatRequest;
@@ -1227,6 +1240,7 @@ namespace Aws
       class DescribeSecurityGroupRulesRequest;
       class DescribeSecurityGroupVpcAssociationsRequest;
       class DescribeSecurityGroupsRequest;
+      class DescribeServiceLinkVirtualInterfacesRequest;
       class DescribeSnapshotAttributeRequest;
       class DescribeSnapshotTierStatusRequest;
       class DescribeSnapshotsRequest;
@@ -1652,6 +1666,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableResponse, EC2Error> CreateLocalGatewayRouteTableOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse, EC2Error> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVpcAssociationResponse, EC2Error> CreateLocalGatewayRouteTableVpcAssociationOutcome;
+      typedef Aws::Utils::Outcome<CreateLocalGatewayVirtualInterfaceResponse, EC2Error> CreateLocalGatewayVirtualInterfaceOutcome;
+      typedef Aws::Utils::Outcome<CreateLocalGatewayVirtualInterfaceGroupResponse, EC2Error> CreateLocalGatewayVirtualInterfaceGroupOutcome;
       typedef Aws::Utils::Outcome<CreateManagedPrefixListResponse, EC2Error> CreateManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<CreateNatGatewayResponse, EC2Error> CreateNatGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateNetworkAclResponse, EC2Error> CreateNetworkAclOutcome;
@@ -1733,6 +1749,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableResponse, EC2Error> DeleteLocalGatewayRouteTableOutcome;
       typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse, EC2Error> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVpcAssociationResponse, EC2Error> DeleteLocalGatewayRouteTableVpcAssociationOutcome;
+      typedef Aws::Utils::Outcome<DeleteLocalGatewayVirtualInterfaceResponse, EC2Error> DeleteLocalGatewayVirtualInterfaceOutcome;
+      typedef Aws::Utils::Outcome<DeleteLocalGatewayVirtualInterfaceGroupResponse, EC2Error> DeleteLocalGatewayVirtualInterfaceGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteManagedPrefixListResponse, EC2Error> DeleteManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, EC2Error> DeleteNatGatewayOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkAclOutcome;
@@ -1885,6 +1903,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeNetworkInterfaceAttributeResponse, EC2Error> DescribeNetworkInterfaceAttributeOutcome;
       typedef Aws::Utils::Outcome<DescribeNetworkInterfacePermissionsResponse, EC2Error> DescribeNetworkInterfacePermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeNetworkInterfacesResponse, EC2Error> DescribeNetworkInterfacesOutcome;
+      typedef Aws::Utils::Outcome<DescribeOutpostLagsResponse, EC2Error> DescribeOutpostLagsOutcome;
       typedef Aws::Utils::Outcome<DescribePlacementGroupsResponse, EC2Error> DescribePlacementGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribePrefixListsResponse, EC2Error> DescribePrefixListsOutcome;
       typedef Aws::Utils::Outcome<DescribePrincipalIdFormatResponse, EC2Error> DescribePrincipalIdFormatOutcome;
@@ -1905,6 +1924,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeSecurityGroupRulesResponse, EC2Error> DescribeSecurityGroupRulesOutcome;
       typedef Aws::Utils::Outcome<DescribeSecurityGroupVpcAssociationsResponse, EC2Error> DescribeSecurityGroupVpcAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeSecurityGroupsResponse, EC2Error> DescribeSecurityGroupsOutcome;
+      typedef Aws::Utils::Outcome<DescribeServiceLinkVirtualInterfacesResponse, EC2Error> DescribeServiceLinkVirtualInterfacesOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotAttributeResponse, EC2Error> DescribeSnapshotAttributeOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotTierStatusResponse, EC2Error> DescribeSnapshotTierStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotsResponse, EC2Error> DescribeSnapshotsOutcome;
@@ -2330,6 +2350,8 @@ namespace Aws
       typedef std::future<CreateLocalGatewayRouteTableOutcome> CreateLocalGatewayRouteTableOutcomeCallable;
       typedef std::future<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable;
       typedef std::future<CreateLocalGatewayRouteTableVpcAssociationOutcome> CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable;
+      typedef std::future<CreateLocalGatewayVirtualInterfaceOutcome> CreateLocalGatewayVirtualInterfaceOutcomeCallable;
+      typedef std::future<CreateLocalGatewayVirtualInterfaceGroupOutcome> CreateLocalGatewayVirtualInterfaceGroupOutcomeCallable;
       typedef std::future<CreateManagedPrefixListOutcome> CreateManagedPrefixListOutcomeCallable;
       typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
       typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
@@ -2411,6 +2433,8 @@ namespace Aws
       typedef std::future<DeleteLocalGatewayRouteTableOutcome> DeleteLocalGatewayRouteTableOutcomeCallable;
       typedef std::future<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable;
       typedef std::future<DeleteLocalGatewayRouteTableVpcAssociationOutcome> DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable;
+      typedef std::future<DeleteLocalGatewayVirtualInterfaceOutcome> DeleteLocalGatewayVirtualInterfaceOutcomeCallable;
+      typedef std::future<DeleteLocalGatewayVirtualInterfaceGroupOutcome> DeleteLocalGatewayVirtualInterfaceGroupOutcomeCallable;
       typedef std::future<DeleteManagedPrefixListOutcome> DeleteManagedPrefixListOutcomeCallable;
       typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
       typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
@@ -2563,6 +2587,7 @@ namespace Aws
       typedef std::future<DescribeNetworkInterfaceAttributeOutcome> DescribeNetworkInterfaceAttributeOutcomeCallable;
       typedef std::future<DescribeNetworkInterfacePermissionsOutcome> DescribeNetworkInterfacePermissionsOutcomeCallable;
       typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
+      typedef std::future<DescribeOutpostLagsOutcome> DescribeOutpostLagsOutcomeCallable;
       typedef std::future<DescribePlacementGroupsOutcome> DescribePlacementGroupsOutcomeCallable;
       typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
       typedef std::future<DescribePrincipalIdFormatOutcome> DescribePrincipalIdFormatOutcomeCallable;
@@ -2583,6 +2608,7 @@ namespace Aws
       typedef std::future<DescribeSecurityGroupRulesOutcome> DescribeSecurityGroupRulesOutcomeCallable;
       typedef std::future<DescribeSecurityGroupVpcAssociationsOutcome> DescribeSecurityGroupVpcAssociationsOutcomeCallable;
       typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
+      typedef std::future<DescribeServiceLinkVirtualInterfacesOutcome> DescribeServiceLinkVirtualInterfacesOutcomeCallable;
       typedef std::future<DescribeSnapshotAttributeOutcome> DescribeSnapshotAttributeOutcomeCallable;
       typedef std::future<DescribeSnapshotTierStatusOutcome> DescribeSnapshotTierStatusOutcomeCallable;
       typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
@@ -3011,6 +3037,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableRequest&, const Model::CreateLocalGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest&, const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVpcAssociationRequest&, const Model::CreateLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayVirtualInterfaceRequest&, const Model::CreateLocalGatewayVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayVirtualInterfaceGroupRequest&, const Model::CreateLocalGatewayVirtualInterfaceGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayVirtualInterfaceGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateManagedPrefixListRequest&, const Model::CreateManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
@@ -3092,6 +3120,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableRequest&, const Model::DeleteLocalGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayVirtualInterfaceRequest&, const Model::DeleteLocalGatewayVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayVirtualInterfaceGroupRequest&, const Model::DeleteLocalGatewayVirtualInterfaceGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayVirtualInterfaceGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteManagedPrefixListRequest&, const Model::DeleteManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclRequest&, const Model::DeleteNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclResponseReceivedHandler;
@@ -3244,6 +3274,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfaceAttributeRequest&, const Model::DescribeNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacePermissionsRequest&, const Model::DescribeNetworkInterfacePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfacePermissionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacesRequest&, const Model::DescribeNetworkInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfacesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeOutpostLagsRequest&, const Model::DescribeOutpostLagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOutpostLagsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePlacementGroupsRequest&, const Model::DescribePlacementGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlacementGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrefixListsRequest&, const Model::DescribePrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrincipalIdFormatRequest&, const Model::DescribePrincipalIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalIdFormatResponseReceivedHandler;
@@ -3264,6 +3295,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupRulesRequest&, const Model::DescribeSecurityGroupRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupRulesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupVpcAssociationsRequest&, const Model::DescribeSecurityGroupVpcAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupVpcAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupsRequest&, const Model::DescribeSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeServiceLinkVirtualInterfacesRequest&, const Model::DescribeServiceLinkVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceLinkVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotAttributeRequest&, const Model::DescribeSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotTierStatusRequest&, const Model::DescribeSnapshotTierStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotTierStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;

@@ -16,6 +16,7 @@
 #include <aws/datazone/model/CreateProjectFromProjectProfilePolicyGrantDetail.h>
 #include <aws/datazone/model/OverrideDomainUnitOwnersPolicyGrantDetail.h>
 #include <aws/datazone/model/OverrideProjectOwnersPolicyGrantDetail.h>
+#include <aws/datazone/model/UseAssetTypePolicyGrantDetail.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +203,19 @@ namespace Model
     template<typename OverrideProjectOwnersT = OverrideProjectOwnersPolicyGrantDetail>
     PolicyGrantDetail& WithOverrideProjectOwners(OverrideProjectOwnersT&& value) { SetOverrideProjectOwners(std::forward<OverrideProjectOwnersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the domain unit(s) whose projects can use this asset type while
+     * creating asset or asset revisions.</p>
+     */
+    inline const UseAssetTypePolicyGrantDetail& GetUseAssetType() const { return m_useAssetType; }
+    inline bool UseAssetTypeHasBeenSet() const { return m_useAssetTypeHasBeenSet; }
+    template<typename UseAssetTypeT = UseAssetTypePolicyGrantDetail>
+    void SetUseAssetType(UseAssetTypeT&& value) { m_useAssetTypeHasBeenSet = true; m_useAssetType = std::forward<UseAssetTypeT>(value); }
+    template<typename UseAssetTypeT = UseAssetTypePolicyGrantDetail>
+    PolicyGrantDetail& WithUseAssetType(UseAssetTypeT&& value) { SetUseAssetType(std::forward<UseAssetTypeT>(value)); return *this;}
+    ///@}
   private:
 
     AddToProjectMemberPoolPolicyGrantDetail m_addToProjectMemberPool;
@@ -242,6 +256,9 @@ namespace Model
 
     OverrideProjectOwnersPolicyGrantDetail m_overrideProjectOwners;
     bool m_overrideProjectOwnersHasBeenSet = false;
+
+    UseAssetTypePolicyGrantDetail m_useAssetType;
+    bool m_useAssetTypeHasBeenSet = false;
   };
 
 } // namespace Model

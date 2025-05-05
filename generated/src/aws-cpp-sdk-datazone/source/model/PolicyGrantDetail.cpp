@@ -90,6 +90,11 @@ PolicyGrantDetail& PolicyGrantDetail::operator =(JsonView jsonValue)
     m_overrideProjectOwners = jsonValue.GetObject("overrideProjectOwners");
     m_overrideProjectOwnersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("useAssetType"))
+  {
+    m_useAssetType = jsonValue.GetObject("useAssetType");
+    m_useAssetTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -172,6 +177,12 @@ JsonValue PolicyGrantDetail::Jsonize() const
   if(m_overrideProjectOwnersHasBeenSet)
   {
    payload.WithObject("overrideProjectOwners", m_overrideProjectOwners.Jsonize());
+
+  }
+
+  if(m_useAssetTypeHasBeenSet)
+  {
+   payload.WithObject("useAssetType", m_useAssetType.Jsonize());
 
   }
 

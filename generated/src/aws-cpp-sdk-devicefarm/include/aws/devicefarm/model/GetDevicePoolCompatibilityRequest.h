@@ -106,6 +106,19 @@ namespace Model
     template<typename ConfigurationT = ScheduleRunConfiguration>
     GetDevicePoolCompatibilityRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the project for which you want to check device pool
+     * compatibility.</p>
+     */
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    GetDevicePoolCompatibilityRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_devicePoolArn;
@@ -122,6 +135,9 @@ namespace Model
 
     ScheduleRunConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::String m_projectArn;
+    bool m_projectArnHasBeenSet = false;
   };
 
 } // namespace Model

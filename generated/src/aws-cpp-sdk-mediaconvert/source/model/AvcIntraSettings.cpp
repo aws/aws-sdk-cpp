@@ -60,6 +60,15 @@ AvcIntraSettings& AvcIntraSettings::operator =(JsonView jsonValue)
     m_interlaceMode = AvcIntraInterlaceModeMapper::GetAvcIntraInterlaceModeForName(jsonValue.GetString("interlaceMode"));
     m_interlaceModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("perFrameMetrics"))
+  {
+    Aws::Utils::Array<JsonView> perFrameMetricsJsonList = jsonValue.GetArray("perFrameMetrics");
+    for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+    {
+      m_perFrameMetrics.push_back(FrameMetricTypeMapper::GetFrameMetricTypeForName(perFrameMetricsJsonList[perFrameMetricsIndex].AsString()));
+    }
+    m_perFrameMetricsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("scanTypeConversionMode"))
   {
     m_scanTypeConversionMode = AvcIntraScanTypeConversionModeMapper::GetAvcIntraScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
@@ -118,6 +127,17 @@ JsonValue AvcIntraSettings::Jsonize() const
   if(m_interlaceModeHasBeenSet)
   {
    payload.WithString("interlaceMode", AvcIntraInterlaceModeMapper::GetNameForAvcIntraInterlaceMode(m_interlaceMode));
+  }
+
+  if(m_perFrameMetricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> perFrameMetricsJsonList(m_perFrameMetrics.size());
+   for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+   {
+     perFrameMetricsJsonList[perFrameMetricsIndex].AsString(FrameMetricTypeMapper::GetNameForFrameMetricType(m_perFrameMetrics[perFrameMetricsIndex]));
+   }
+   payload.WithArray("perFrameMetrics", std::move(perFrameMetricsJsonList));
+
   }
 
   if(m_scanTypeConversionModeHasBeenSet)

@@ -32,7 +32,7 @@ AudioProperties& AudioProperties::operator =(JsonView jsonValue)
   }
   if(jsonValue.ValueExists("bitRate"))
   {
-    m_bitRate = jsonValue.GetInteger("bitRate");
+    m_bitRate = jsonValue.GetInt64("bitRate");
     m_bitRateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("channels"))
@@ -70,7 +70,7 @@ JsonValue AudioProperties::Jsonize() const
 
   if(m_bitRateHasBeenSet)
   {
-   payload.WithInteger("bitRate", m_bitRate);
+   payload.WithInt64("bitRate", m_bitRate);
 
   }
 

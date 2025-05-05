@@ -23,6 +23,7 @@ namespace Aws
         static const int DOMAIN_UNIT_HASH = HashingUtils::HashString("DOMAIN_UNIT");
         static const int ENVIRONMENT_BLUEPRINT_CONFIGURATION_HASH = HashingUtils::HashString("ENVIRONMENT_BLUEPRINT_CONFIGURATION");
         static const int ENVIRONMENT_PROFILE_HASH = HashingUtils::HashString("ENVIRONMENT_PROFILE");
+        static const int ASSET_TYPE_HASH = HashingUtils::HashString("ASSET_TYPE");
 
 
         TargetEntityType GetTargetEntityTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ENVIRONMENT_PROFILE_HASH)
           {
             return TargetEntityType::ENVIRONMENT_PROFILE;
+          }
+          else if (hashCode == ASSET_TYPE_HASH)
+          {
+            return TargetEntityType::ASSET_TYPE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "ENVIRONMENT_BLUEPRINT_CONFIGURATION";
           case TargetEntityType::ENVIRONMENT_PROFILE:
             return "ENVIRONMENT_PROFILE";
+          case TargetEntityType::ASSET_TYPE:
+            return "ASSET_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

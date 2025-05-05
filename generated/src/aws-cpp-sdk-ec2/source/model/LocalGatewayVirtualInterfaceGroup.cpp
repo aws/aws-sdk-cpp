@@ -62,6 +62,24 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
+    XmlNode localBgpAsnNode = resultNode.FirstChild("localBgpAsn");
+    if(!localBgpAsnNode.IsNull())
+    {
+      m_localBgpAsn = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localBgpAsnNode.GetText()).c_str()).c_str());
+      m_localBgpAsnHasBeenSet = true;
+    }
+    XmlNode localBgpAsnExtendedNode = resultNode.FirstChild("localBgpAsnExtended");
+    if(!localBgpAsnExtendedNode.IsNull())
+    {
+      m_localBgpAsnExtended = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localBgpAsnExtendedNode.GetText()).c_str()).c_str());
+      m_localBgpAsnExtendedHasBeenSet = true;
+    }
+    XmlNode localGatewayVirtualInterfaceGroupArnNode = resultNode.FirstChild("localGatewayVirtualInterfaceGroupArn");
+    if(!localGatewayVirtualInterfaceGroupArnNode.IsNull())
+    {
+      m_localGatewayVirtualInterfaceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayVirtualInterfaceGroupArnNode.GetText());
+      m_localGatewayVirtualInterfaceGroupArnHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -74,6 +92,12 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
       }
 
       m_tagsHasBeenSet = true;
+    }
+    XmlNode configurationStateNode = resultNode.FirstChild("configurationState");
+    if(!configurationStateNode.IsNull())
+    {
+      m_configurationState = LocalGatewayVirtualInterfaceGroupConfigurationStateMapper::GetLocalGatewayVirtualInterfaceGroupConfigurationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(configurationStateNode.GetText()).c_str()));
+      m_configurationStateHasBeenSet = true;
     }
   }
 
@@ -106,6 +130,21 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
+  if(m_localBgpAsnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalBgpAsn=" << m_localBgpAsn << "&";
+  }
+
+  if(m_localBgpAsnExtendedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalBgpAsnExtended=" << m_localBgpAsnExtended << "&";
+  }
+
+  if(m_localGatewayVirtualInterfaceGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalGatewayVirtualInterfaceGroupArn=" << StringUtils::URLEncode(m_localGatewayVirtualInterfaceGroupArn.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -115,6 +154,11 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
         tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+
+  if(m_configurationStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ConfigurationState=" << StringUtils::URLEncode(LocalGatewayVirtualInterfaceGroupConfigurationStateMapper::GetNameForLocalGatewayVirtualInterfaceGroupConfigurationState(m_configurationState)) << "&";
   }
 
 }
@@ -141,6 +185,18 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+  if(m_localBgpAsnHasBeenSet)
+  {
+      oStream << location << ".LocalBgpAsn=" << m_localBgpAsn << "&";
+  }
+  if(m_localBgpAsnExtendedHasBeenSet)
+  {
+      oStream << location << ".LocalBgpAsnExtended=" << m_localBgpAsnExtended << "&";
+  }
+  if(m_localGatewayVirtualInterfaceGroupArnHasBeenSet)
+  {
+      oStream << location << ".LocalGatewayVirtualInterfaceGroupArn=" << StringUtils::URLEncode(m_localGatewayVirtualInterfaceGroupArn.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -150,6 +206,10 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
         tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_configurationStateHasBeenSet)
+  {
+      oStream << location << ".ConfigurationState=" << StringUtils::URLEncode(LocalGatewayVirtualInterfaceGroupConfigurationStateMapper::GetNameForLocalGatewayVirtualInterfaceGroupConfigurationState(m_configurationState)) << "&";
   }
 }
 

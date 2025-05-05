@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/LocalGatewayVirtualInterfaceConfigurationState.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -67,6 +68,42 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the local gateway virtual interface group.</p>
+     */
+    inline const Aws::String& GetLocalGatewayVirtualInterfaceGroupId() const { return m_localGatewayVirtualInterfaceGroupId; }
+    inline bool LocalGatewayVirtualInterfaceGroupIdHasBeenSet() const { return m_localGatewayVirtualInterfaceGroupIdHasBeenSet; }
+    template<typename LocalGatewayVirtualInterfaceGroupIdT = Aws::String>
+    void SetLocalGatewayVirtualInterfaceGroupId(LocalGatewayVirtualInterfaceGroupIdT&& value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId = std::forward<LocalGatewayVirtualInterfaceGroupIdT>(value); }
+    template<typename LocalGatewayVirtualInterfaceGroupIdT = Aws::String>
+    LocalGatewayVirtualInterface& WithLocalGatewayVirtualInterfaceGroupId(LocalGatewayVirtualInterfaceGroupIdT&& value) { SetLocalGatewayVirtualInterfaceGroupId(std::forward<LocalGatewayVirtualInterfaceGroupIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Number (ARN) of the local gateway virtual interface.</p>
+     */
+    inline const Aws::String& GetLocalGatewayVirtualInterfaceArn() const { return m_localGatewayVirtualInterfaceArn; }
+    inline bool LocalGatewayVirtualInterfaceArnHasBeenSet() const { return m_localGatewayVirtualInterfaceArnHasBeenSet; }
+    template<typename LocalGatewayVirtualInterfaceArnT = Aws::String>
+    void SetLocalGatewayVirtualInterfaceArn(LocalGatewayVirtualInterfaceArnT&& value) { m_localGatewayVirtualInterfaceArnHasBeenSet = true; m_localGatewayVirtualInterfaceArn = std::forward<LocalGatewayVirtualInterfaceArnT>(value); }
+    template<typename LocalGatewayVirtualInterfaceArnT = Aws::String>
+    LocalGatewayVirtualInterface& WithLocalGatewayVirtualInterfaceArn(LocalGatewayVirtualInterfaceArnT&& value) { SetLocalGatewayVirtualInterfaceArn(std::forward<LocalGatewayVirtualInterfaceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Outpost LAG ID.</p>
+     */
+    inline const Aws::String& GetOutpostLagId() const { return m_outpostLagId; }
+    inline bool OutpostLagIdHasBeenSet() const { return m_outpostLagIdHasBeenSet; }
+    template<typename OutpostLagIdT = Aws::String>
+    void SetOutpostLagId(OutpostLagIdT&& value) { m_outpostLagIdHasBeenSet = true; m_outpostLagId = std::forward<OutpostLagIdT>(value); }
+    template<typename OutpostLagIdT = Aws::String>
+    LocalGatewayVirtualInterface& WithOutpostLagId(OutpostLagIdT&& value) { SetOutpostLagId(std::forward<OutpostLagIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the VLAN.</p>
      */
     inline int GetVlan() const { return m_vlan; }
@@ -122,6 +159,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The extended 32-bit ASN of the BGP peer for use with larger ASN values.</p>
+     */
+    inline long long GetPeerBgpAsnExtended() const { return m_peerBgpAsnExtended; }
+    inline bool PeerBgpAsnExtendedHasBeenSet() const { return m_peerBgpAsnExtendedHasBeenSet; }
+    inline void SetPeerBgpAsnExtended(long long value) { m_peerBgpAsnExtendedHasBeenSet = true; m_peerBgpAsnExtended = value; }
+    inline LocalGatewayVirtualInterface& WithPeerBgpAsnExtended(long long value) { SetPeerBgpAsnExtended(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the Amazon Web Services account that owns the local gateway virtual
      * interface.</p>
      */
@@ -146,6 +193,16 @@ namespace Model
     template<typename TagsT = Tag>
     LocalGatewayVirtualInterface& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the local gateway virtual interface.</p>
+     */
+    inline LocalGatewayVirtualInterfaceConfigurationState GetConfigurationState() const { return m_configurationState; }
+    inline bool ConfigurationStateHasBeenSet() const { return m_configurationStateHasBeenSet; }
+    inline void SetConfigurationState(LocalGatewayVirtualInterfaceConfigurationState value) { m_configurationStateHasBeenSet = true; m_configurationState = value; }
+    inline LocalGatewayVirtualInterface& WithConfigurationState(LocalGatewayVirtualInterfaceConfigurationState value) { SetConfigurationState(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_localGatewayVirtualInterfaceId;
@@ -153,6 +210,15 @@ namespace Model
 
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet = false;
+
+    Aws::String m_localGatewayVirtualInterfaceGroupId;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+
+    Aws::String m_localGatewayVirtualInterfaceArn;
+    bool m_localGatewayVirtualInterfaceArnHasBeenSet = false;
+
+    Aws::String m_outpostLagId;
+    bool m_outpostLagIdHasBeenSet = false;
 
     int m_vlan{0};
     bool m_vlanHasBeenSet = false;
@@ -169,11 +235,17 @@ namespace Model
     int m_peerBgpAsn{0};
     bool m_peerBgpAsnHasBeenSet = false;
 
+    long long m_peerBgpAsnExtended{0};
+    bool m_peerBgpAsnExtendedHasBeenSet = false;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    LocalGatewayVirtualInterfaceConfigurationState m_configurationState{LocalGatewayVirtualInterfaceConfigurationState::NOT_SET};
+    bool m_configurationStateHasBeenSet = false;
   };
 
 } // namespace Model
