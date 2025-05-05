@@ -60,8 +60,8 @@ namespace Model
     /**
      * Optional. Specify the QVBR quality level to use for all renditions in your
      * automated ABR stack. To have MediaConvert automatically determine the quality
-     * level: Leave blank. To manually specify a quality level: Enter an integer from 1
-     * to 10. MediaConvert will use a quality level up to the value that you specify,
+     * level: Leave blank. To manually specify a quality level: Enter a value from 1 to
+     * 10. MediaConvert will use a quality level up to the value that you specify,
      * depending on your source. For more information about QVBR quality levels, see:
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
      */

@@ -58,11 +58,9 @@ namespace Model
 
     ///@{
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * Optionally choose a Billing tags source that AWS Billing and Cost Management
+     * will use to display tags for individual output costs on any billing report that
+     * you set up. Leave blank to use the default value, Job.
      */
     inline BillingTagsSource GetBillingTagsSource() const { return m_billingTagsSource; }
     inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }

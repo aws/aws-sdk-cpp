@@ -655,6 +655,7 @@
 #include <aws/datazone/model/UpdateSubscriptionTargetResult.h>
 #include <aws/datazone/model/UpdateUserProfileRequest.h>
 #include <aws/datazone/model/UpdateUserProfileResult.h>
+#include <aws/datazone/model/UseAssetTypePolicyGrantDetail.h>
 #include <aws/datazone/model/UserAssignment.h>
 #include <aws/datazone/model/UserDesignation.h>
 #include <aws/datazone/model/UserDetails.h>

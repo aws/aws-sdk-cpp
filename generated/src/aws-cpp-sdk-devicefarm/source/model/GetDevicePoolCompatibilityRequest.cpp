@@ -45,6 +45,12 @@ Aws::String GetDevicePoolCompatibilityRequest::SerializePayload() const
 
   }
 
+  if(m_projectArnHasBeenSet)
+  {
+   payload.WithString("projectArn", m_projectArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

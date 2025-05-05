@@ -24,6 +24,7 @@ namespace Aws
         static const int TRACK_HASH = HashingUtils::HashString("TRACK");
         static const int LANGUAGE_CODE_HASH = HashingUtils::HashString("LANGUAGE_CODE");
         static const int HLS_RENDITION_GROUP_HASH = HashingUtils::HashString("HLS_RENDITION_GROUP");
+        static const int ALL_PCM_HASH = HashingUtils::HashString("ALL_PCM");
 
 
         AudioSelectorType GetAudioSelectorTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == HLS_RENDITION_GROUP_HASH)
           {
             return AudioSelectorType::HLS_RENDITION_GROUP;
+          }
+          else if (hashCode == ALL_PCM_HASH)
+          {
+            return AudioSelectorType::ALL_PCM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "LANGUAGE_CODE";
           case AudioSelectorType::HLS_RENDITION_GROUP:
             return "HLS_RENDITION_GROUP";
+          case AudioSelectorType::ALL_PCM:
+            return "ALL_PCM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -10,9 +10,11 @@
 #include <aws/mediaconvert/model/Av1FilmGrainSynthesis.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
 #include <aws/mediaconvert/model/Av1RateControlMode.h>
 #include <aws/mediaconvert/model/Av1SpatialAdaptiveQuantization.h>
+#include <aws/mediaconvert/model/FrameMetricType.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +190,35 @@ namespace Model
 
     ///@{
     /**
+     * Optionally choose one or more per frame metric reports to generate along with
+     * your output. You can use these metrics to analyze your video output according to
+     * one or more commonly used image quality metrics. You can specify per frame
+     * metrics for output groups or for individual outputs. When you do, MediaConvert
+     * writes a CSV (Comma-Separated Values) file to your S3 output destination, named
+     * after the video, video codec, and metric type. For example: video_h264_PSNR.csv
+     * Jobs that generate per frame metrics will take longer to complete, depending on
+     * the resolution and complexity of your output. For example, some 4K jobs might
+     * take up to twice as long to complete. Note that when analyzing the video quality
+     * of your output, or when comparing the video quality of multiple different
+     * outputs, we generally also recommend a detailed visual review in a controlled
+     * environment. You can choose from the following per frame metrics: * PSNR: Peak
+     * Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM:
+     * Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio,
+     * Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR:
+     * Quality-Defined Variable Bitrate. This option is only available when your output
+     * uses the QVBR rate control mode.
+     */
+    inline const Aws::Vector<FrameMetricType>& GetPerFrameMetrics() const { return m_perFrameMetrics; }
+    inline bool PerFrameMetricsHasBeenSet() const { return m_perFrameMetricsHasBeenSet; }
+    template<typename PerFrameMetricsT = Aws::Vector<FrameMetricType>>
+    void SetPerFrameMetrics(PerFrameMetricsT&& value) { m_perFrameMetricsHasBeenSet = true; m_perFrameMetrics = std::forward<PerFrameMetricsT>(value); }
+    template<typename PerFrameMetricsT = Aws::Vector<FrameMetricType>>
+    Av1Settings& WithPerFrameMetrics(PerFrameMetricsT&& value) { SetPerFrameMetrics(std::forward<PerFrameMetricsT>(value)); return *this;}
+    inline Av1Settings& AddPerFrameMetrics(FrameMetricType value) { m_perFrameMetricsHasBeenSet = true; m_perFrameMetrics.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
      * these settings only when you set QVBR for Rate control mode.
      */
@@ -276,6 +307,9 @@ namespace Model
 
     int m_numberBFramesBetweenReferenceFrames{0};
     bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
+
+    Aws::Vector<FrameMetricType> m_perFrameMetrics;
+    bool m_perFrameMetricsHasBeenSet = false;
 
     Av1QvbrSettings m_qvbrSettings;
     bool m_qvbrSettingsHasBeenSet = false;

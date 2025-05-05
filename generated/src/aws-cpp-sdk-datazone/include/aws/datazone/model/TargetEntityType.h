@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     DOMAIN_UNIT,
     ENVIRONMENT_BLUEPRINT_CONFIGURATION,
-    ENVIRONMENT_PROFILE
+    ENVIRONMENT_PROFILE,
+    ASSET_TYPE
   };
 
 namespace TargetEntityTypeMapper

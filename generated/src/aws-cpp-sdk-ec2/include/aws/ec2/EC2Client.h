@@ -3053,6 +3053,57 @@ namespace EC2
         }
 
         /**
+         * <p>Create a virtual interface for a local gateway. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayVirtualInterfaceOutcome CreateLocalGatewayVirtualInterface(const Model::CreateLocalGatewayVirtualInterfaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLocalGatewayVirtualInterfaceRequestT = Model::CreateLocalGatewayVirtualInterfaceRequest>
+        Model::CreateLocalGatewayVirtualInterfaceOutcomeCallable CreateLocalGatewayVirtualInterfaceCallable(const CreateLocalGatewayVirtualInterfaceRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateLocalGatewayVirtualInterface, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLocalGatewayVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLocalGatewayVirtualInterfaceRequestT = Model::CreateLocalGatewayVirtualInterfaceRequest>
+        void CreateLocalGatewayVirtualInterfaceAsync(const CreateLocalGatewayVirtualInterfaceRequestT& request, const CreateLocalGatewayVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateLocalGatewayVirtualInterface, request, handler, context);
+        }
+
+        /**
+         * <p>Create a local gateway virtual interface group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayVirtualInterfaceGroupOutcome CreateLocalGatewayVirtualInterfaceGroup(const Model::CreateLocalGatewayVirtualInterfaceGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayVirtualInterfaceGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLocalGatewayVirtualInterfaceGroupRequestT = Model::CreateLocalGatewayVirtualInterfaceGroupRequest>
+        Model::CreateLocalGatewayVirtualInterfaceGroupOutcomeCallable CreateLocalGatewayVirtualInterfaceGroupCallable(const CreateLocalGatewayVirtualInterfaceGroupRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateLocalGatewayVirtualInterfaceGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLocalGatewayVirtualInterfaceGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLocalGatewayVirtualInterfaceGroupRequestT = Model::CreateLocalGatewayVirtualInterfaceGroupRequest>
+        void CreateLocalGatewayVirtualInterfaceGroupAsync(const CreateLocalGatewayVirtualInterfaceGroupRequestT& request, const CreateLocalGatewayVirtualInterfaceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateLocalGatewayVirtualInterfaceGroup, request, handler, context);
+        }
+
+        /**
          * <p>Creates a managed prefix list. You can specify entries for the prefix list.
          * Each entry consists of a CIDR block and an optional description.</p><p><h3>See
          * Also:</h3>   <a
@@ -5604,6 +5655,58 @@ namespace EC2
         void DeleteLocalGatewayRouteTableVpcAssociationAsync(const DeleteLocalGatewayRouteTableVpcAssociationRequestT& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeleteLocalGatewayRouteTableVpcAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified local gateway virtual interface.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayVirtualInterfaceOutcome DeleteLocalGatewayVirtualInterface(const Model::DeleteLocalGatewayVirtualInterfaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLocalGatewayVirtualInterfaceRequestT = Model::DeleteLocalGatewayVirtualInterfaceRequest>
+        Model::DeleteLocalGatewayVirtualInterfaceOutcomeCallable DeleteLocalGatewayVirtualInterfaceCallable(const DeleteLocalGatewayVirtualInterfaceRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteLocalGatewayVirtualInterface, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLocalGatewayVirtualInterfaceRequestT = Model::DeleteLocalGatewayVirtualInterfaceRequest>
+        void DeleteLocalGatewayVirtualInterfaceAsync(const DeleteLocalGatewayVirtualInterfaceRequestT& request, const DeleteLocalGatewayVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteLocalGatewayVirtualInterface, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the specified local gateway interface group.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayVirtualInterfaceGroupOutcome DeleteLocalGatewayVirtualInterfaceGroup(const Model::DeleteLocalGatewayVirtualInterfaceGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayVirtualInterfaceGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLocalGatewayVirtualInterfaceGroupRequestT = Model::DeleteLocalGatewayVirtualInterfaceGroupRequest>
+        Model::DeleteLocalGatewayVirtualInterfaceGroupOutcomeCallable DeleteLocalGatewayVirtualInterfaceGroupCallable(const DeleteLocalGatewayVirtualInterfaceGroupRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteLocalGatewayVirtualInterfaceGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayVirtualInterfaceGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLocalGatewayVirtualInterfaceGroupRequestT = Model::DeleteLocalGatewayVirtualInterfaceGroupRequest>
+        void DeleteLocalGatewayVirtualInterfaceGroupAsync(const DeleteLocalGatewayVirtualInterfaceGroupRequestT& request, const DeleteLocalGatewayVirtualInterfaceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteLocalGatewayVirtualInterfaceGroup, request, handler, context);
         }
 
         /**
@@ -9999,6 +10102,32 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the Outposts link aggregation groups (LAGs).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOutpostLagsOutcome DescribeOutpostLags(const Model::DescribeOutpostLagsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeOutpostLags that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeOutpostLagsRequestT = Model::DescribeOutpostLagsRequest>
+        Model::DescribeOutpostLagsOutcomeCallable DescribeOutpostLagsCallable(const DescribeOutpostLagsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeOutpostLags, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeOutpostLags that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeOutpostLagsRequestT = Model::DescribeOutpostLagsRequest>
+        void DescribeOutpostLagsAsync(const DescribeOutpostLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOutpostLagsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeOutpostLags, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified placement groups or all of your placement groups.</p>
          *  <p>To describe a specific placement group that is <i>shared</i> with your
          * account, you must specify the ID of the placement group using the
@@ -10636,6 +10765,32 @@ namespace EC2
         void DescribeSecurityGroupsAsync(const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSecurityGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::DescribeSecurityGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the Outpost service link virtual interfaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServiceLinkVirtualInterfacesOutcome DescribeServiceLinkVirtualInterfaces(const Model::DescribeServiceLinkVirtualInterfacesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeServiceLinkVirtualInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeServiceLinkVirtualInterfacesRequestT = Model::DescribeServiceLinkVirtualInterfacesRequest>
+        Model::DescribeServiceLinkVirtualInterfacesOutcomeCallable DescribeServiceLinkVirtualInterfacesCallable(const DescribeServiceLinkVirtualInterfacesRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeServiceLinkVirtualInterfaces, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeServiceLinkVirtualInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeServiceLinkVirtualInterfacesRequestT = Model::DescribeServiceLinkVirtualInterfacesRequest>
+        void DescribeServiceLinkVirtualInterfacesAsync(const DescribeServiceLinkVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServiceLinkVirtualInterfacesRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeServiceLinkVirtualInterfaces, request, handler, context);
         }
 
         /**

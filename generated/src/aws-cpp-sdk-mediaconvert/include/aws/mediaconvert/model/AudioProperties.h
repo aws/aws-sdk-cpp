@@ -52,10 +52,10 @@ namespace Model
     /**
      * The bit rate of the audio track, in bits per second.
      */
-    inline int GetBitRate() const { return m_bitRate; }
+    inline long long GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
-    inline void SetBitRate(int value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
-    inline AudioProperties& WithBitRate(int value) { SetBitRate(value); return *this;}
+    inline void SetBitRate(long long value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
+    inline AudioProperties& WithBitRate(long long value) { SetBitRate(value); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +106,7 @@ namespace Model
     int m_bitDepth{0};
     bool m_bitDepthHasBeenSet = false;
 
-    int m_bitRate{0};
+    long long m_bitRate{0};
     bool m_bitRateHasBeenSet = false;
 
     int m_channels{0};

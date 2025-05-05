@@ -30,10 +30,10 @@ namespace Model
    * Use Dynamic audio selectors when you do not know the track layout of your source
    * when you submit your job, but want to select multiple audio tracks. When you
    * include an audio track in your output and specify this Dynamic audio selector as
-   * the Audio source, MediaConvert creates an output audio track for each
-   * dynamically selected track. Note that when you include a Dynamic audio selector
-   * for two or more inputs, each input must have the same number of audio tracks and
-   * audio channels.<p><h3>See Also:</h3>   <a
+   * the Audio source, MediaConvert creates an audio track within that output for
+   * each dynamically selected track. Note that when you include a Dynamic audio
+   * selector for two or more inputs, each input must have the same number of audio
+   * tracks and audio channels.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DynamicAudioSelector">AWS
    * API Reference</a></p>
    */

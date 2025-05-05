@@ -62,6 +62,7 @@ namespace Aws
         static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
         static const int network_insights_access_scope_HASH = HashingUtils::HashString("network-insights-access-scope");
         static const int network_insights_access_scope_analysis_HASH = HashingUtils::HashString("network-insights-access-scope-analysis");
+        static const int outpost_lag_HASH = HashingUtils::HashString("outpost-lag");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int prefix_list_HASH = HashingUtils::HashString("prefix-list");
         static const int replace_root_volume_task_HASH = HashingUtils::HashString("replace-root-volume-task");
@@ -69,6 +70,7 @@ namespace Aws
         static const int route_table_HASH = HashingUtils::HashString("route-table");
         static const int security_group_HASH = HashingUtils::HashString("security-group");
         static const int security_group_rule_HASH = HashingUtils::HashString("security-group-rule");
+        static const int service_link_virtual_interface_HASH = HashingUtils::HashString("service-link-virtual-interface");
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
         static const int spot_fleet_request_HASH = HashingUtils::HashString("spot-fleet-request");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
@@ -285,6 +287,10 @@ namespace Aws
           {
             return ResourceType::network_insights_access_scope_analysis;
           }
+          else if (hashCode == outpost_lag_HASH)
+          {
+            return ResourceType::outpost_lag;
+          }
           else if (hashCode == placement_group_HASH)
           {
             return ResourceType::placement_group;
@@ -312,6 +318,10 @@ namespace Aws
           else if (hashCode == security_group_rule_HASH)
           {
             return ResourceType::security_group_rule;
+          }
+          else if (hashCode == service_link_virtual_interface_HASH)
+          {
+            return ResourceType::service_link_virtual_interface;
           }
           else if (hashCode == snapshot_HASH)
           {
@@ -585,6 +595,8 @@ namespace Aws
             return "network-insights-access-scope";
           case ResourceType::network_insights_access_scope_analysis:
             return "network-insights-access-scope-analysis";
+          case ResourceType::outpost_lag:
+            return "outpost-lag";
           case ResourceType::placement_group:
             return "placement-group";
           case ResourceType::prefix_list:
@@ -599,6 +611,8 @@ namespace Aws
             return "security-group";
           case ResourceType::security_group_rule:
             return "security-group-rule";
+          case ResourceType::service_link_virtual_interface:
+            return "service-link-virtual-interface";
           case ResourceType::snapshot:
             return "snapshot";
           case ResourceType::spot_fleet_request:

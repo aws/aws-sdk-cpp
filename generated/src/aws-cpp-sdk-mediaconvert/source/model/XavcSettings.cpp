@@ -55,6 +55,15 @@ XavcSettings& XavcSettings::operator =(JsonView jsonValue)
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
     m_framerateNumeratorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("perFrameMetrics"))
+  {
+    Aws::Utils::Array<JsonView> perFrameMetricsJsonList = jsonValue.GetArray("perFrameMetrics");
+    for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+    {
+      m_perFrameMetrics.push_back(FrameMetricTypeMapper::GetFrameMetricTypeForName(perFrameMetricsJsonList[perFrameMetricsIndex].AsString()));
+    }
+    m_perFrameMetricsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = XavcProfileMapper::GetXavcProfileForName(jsonValue.GetString("profile"));
@@ -141,6 +150,17 @@ JsonValue XavcSettings::Jsonize() const
   if(m_framerateNumeratorHasBeenSet)
   {
    payload.WithInteger("framerateNumerator", m_framerateNumerator);
+
+  }
+
+  if(m_perFrameMetricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> perFrameMetricsJsonList(m_perFrameMetrics.size());
+   for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+   {
+     perFrameMetricsJsonList[perFrameMetricsIndex].AsString(FrameMetricTypeMapper::GetNameForFrameMetricType(m_perFrameMetrics[perFrameMetricsIndex]));
+   }
+   payload.WithArray("perFrameMetrics", std::move(perFrameMetricsJsonList));
 
   }
 

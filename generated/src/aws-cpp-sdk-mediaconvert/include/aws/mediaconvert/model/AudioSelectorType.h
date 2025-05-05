@@ -19,7 +19,8 @@ namespace Model
     PID,
     TRACK,
     LANGUAGE_CODE,
-    HLS_RENDITION_GROUP
+    HLS_RENDITION_GROUP,
+    ALL_PCM
   };
 
 namespace AudioSelectorTypeMapper

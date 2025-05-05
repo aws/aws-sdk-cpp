@@ -33,6 +33,7 @@ namespace Aws
         static const int CREATE_ENVIRONMENT_HASH = HashingUtils::HashString("CREATE_ENVIRONMENT");
         static const int CREATE_ENVIRONMENT_FROM_BLUEPRINT_HASH = HashingUtils::HashString("CREATE_ENVIRONMENT_FROM_BLUEPRINT");
         static const int CREATE_PROJECT_FROM_PROJECT_PROFILE_HASH = HashingUtils::HashString("CREATE_PROJECT_FROM_PROJECT_PROFILE");
+        static const int USE_ASSET_TYPE_HASH = HashingUtils::HashString("USE_ASSET_TYPE");
 
 
         ManagedPolicyType GetManagedPolicyTypeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return ManagedPolicyType::CREATE_PROJECT_FROM_PROJECT_PROFILE;
           }
+          else if (hashCode == USE_ASSET_TYPE_HASH)
+          {
+            return ManagedPolicyType::USE_ASSET_TYPE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +137,8 @@ namespace Aws
             return "CREATE_ENVIRONMENT_FROM_BLUEPRINT";
           case ManagedPolicyType::CREATE_PROJECT_FROM_PROJECT_PROFILE:
             return "CREATE_PROJECT_FROM_PROJECT_PROFILE";
+          case ManagedPolicyType::USE_ASSET_TYPE:
+            return "USE_ASSET_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

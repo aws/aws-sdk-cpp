@@ -386,6 +386,10 @@
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
@@ -575,6 +579,10 @@
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
@@ -871,6 +879,8 @@
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
+#include <aws/ec2/model/DescribeOutpostLagsRequest.h>
+#include <aws/ec2/model/DescribeOutpostLagsResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 #include <aws/ec2/model/DescribePlacementGroupsResponse.h>
 #include <aws/ec2/model/DescribePrefixListsRequest.h>
@@ -911,6 +921,8 @@
 #include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
+#include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
+#include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesResponse.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeResponse.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
@@ -1678,7 +1690,9 @@
 #include <aws/ec2/model/LocalGatewayRouteTableVpcAssociation.h>
 #include <aws/ec2/model/LocalGatewayRouteType.h>
 #include <aws/ec2/model/LocalGatewayVirtualInterface.h>
+#include <aws/ec2/model/LocalGatewayVirtualInterfaceConfigurationState.h>
 #include <aws/ec2/model/LocalGatewayVirtualInterfaceGroup.h>
+#include <aws/ec2/model/LocalGatewayVirtualInterfaceGroupConfigurationState.h>
 #include <aws/ec2/model/LocalStorage.h>
 #include <aws/ec2/model/LocalStorageType.h>
 #include <aws/ec2/model/LocationType.h>
@@ -1910,6 +1924,7 @@
 #include <aws/ec2/model/OperationType.h>
 #include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/OperatorResponse.h>
+#include <aws/ec2/model/OutpostLag.h>
 #include <aws/ec2/model/PacketHeaderStatement.h>
 #include <aws/ec2/model/PacketHeaderStatementRequest.h>
 #include <aws/ec2/model/PartitionLoadFrequency.h>
@@ -2191,6 +2206,8 @@
 #include <aws/ec2/model/ServiceConfiguration.h>
 #include <aws/ec2/model/ServiceConnectivityType.h>
 #include <aws/ec2/model/ServiceDetail.h>
+#include <aws/ec2/model/ServiceLinkVirtualInterface.h>
+#include <aws/ec2/model/ServiceLinkVirtualInterfaceConfigurationState.h>
 #include <aws/ec2/model/ServiceManaged.h>
 #include <aws/ec2/model/ServiceState.h>
 #include <aws/ec2/model/ServiceType.h>

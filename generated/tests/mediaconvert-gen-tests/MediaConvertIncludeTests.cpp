@@ -280,6 +280,7 @@
 #include <aws/mediaconvert/model/ForceIncludeRenditionSize.h>
 #include <aws/mediaconvert/model/Format.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
+#include <aws/mediaconvert/model/FrameMetricType.h>
 #include <aws/mediaconvert/model/FrameRate.h>
 #include <aws/mediaconvert/model/GetJobRequest.h>
 #include <aws/mediaconvert/model/GetJobResult.h>

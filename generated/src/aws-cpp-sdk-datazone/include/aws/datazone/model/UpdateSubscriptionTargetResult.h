@@ -52,7 +52,8 @@ namespace Model
     ///@{
     /**
      * <p>The authorized principals to be updated as part of the
-     * <code>UpdateSubscriptionTarget</code> action.</p>
+     * <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches
+     * of 5 at a time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedPrincipals() const { return m_authorizedPrincipals; }
     template<typename AuthorizedPrincipalsT = Aws::Vector<Aws::String>>

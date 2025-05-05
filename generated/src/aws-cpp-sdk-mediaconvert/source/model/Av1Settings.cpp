@@ -75,6 +75,15 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_numberBFramesBetweenReferenceFrames = jsonValue.GetInteger("numberBFramesBetweenReferenceFrames");
     m_numberBFramesBetweenReferenceFramesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("perFrameMetrics"))
+  {
+    Aws::Utils::Array<JsonView> perFrameMetricsJsonList = jsonValue.GetArray("perFrameMetrics");
+    for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+    {
+      m_perFrameMetrics.push_back(FrameMetricTypeMapper::GetFrameMetricTypeForName(perFrameMetricsJsonList[perFrameMetricsIndex].AsString()));
+    }
+    m_perFrameMetricsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("qvbrSettings"))
   {
     m_qvbrSettings = jsonValue.GetObject("qvbrSettings");
@@ -154,6 +163,17 @@ JsonValue Av1Settings::Jsonize() const
   if(m_numberBFramesBetweenReferenceFramesHasBeenSet)
   {
    payload.WithInteger("numberBFramesBetweenReferenceFrames", m_numberBFramesBetweenReferenceFrames);
+
+  }
+
+  if(m_perFrameMetricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> perFrameMetricsJsonList(m_perFrameMetrics.size());
+   for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+   {
+     perFrameMetricsJsonList[perFrameMetricsIndex].AsString(FrameMetricTypeMapper::GetNameForFrameMetricType(m_perFrameMetrics[perFrameMetricsIndex]));
+   }
+   payload.WithArray("perFrameMetrics", std::move(perFrameMetricsJsonList));
 
   }
 

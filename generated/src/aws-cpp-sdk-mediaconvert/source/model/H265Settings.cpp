@@ -170,6 +170,15 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_parNumerator = jsonValue.GetInteger("parNumerator");
     m_parNumeratorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("perFrameMetrics"))
+  {
+    Aws::Utils::Array<JsonView> perFrameMetricsJsonList = jsonValue.GetArray("perFrameMetrics");
+    for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+    {
+      m_perFrameMetrics.push_back(FrameMetricTypeMapper::GetFrameMetricTypeForName(perFrameMetricsJsonList[perFrameMetricsIndex].AsString()));
+    }
+    m_perFrameMetricsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("qualityTuningLevel"))
   {
     m_qualityTuningLevel = H265QualityTuningLevelMapper::GetH265QualityTuningLevelForName(jsonValue.GetString("qualityTuningLevel"));
@@ -409,6 +418,17 @@ JsonValue H265Settings::Jsonize() const
   if(m_parNumeratorHasBeenSet)
   {
    payload.WithInteger("parNumerator", m_parNumerator);
+
+  }
+
+  if(m_perFrameMetricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> perFrameMetricsJsonList(m_perFrameMetrics.size());
+   for(unsigned perFrameMetricsIndex = 0; perFrameMetricsIndex < perFrameMetricsJsonList.GetLength(); ++perFrameMetricsIndex)
+   {
+     perFrameMetricsJsonList[perFrameMetricsIndex].AsString(FrameMetricTypeMapper::GetNameForFrameMetricType(m_perFrameMetrics[perFrameMetricsIndex]));
+   }
+   payload.WithArray("perFrameMetrics", std::move(perFrameMetricsJsonList));
 
   }
 
