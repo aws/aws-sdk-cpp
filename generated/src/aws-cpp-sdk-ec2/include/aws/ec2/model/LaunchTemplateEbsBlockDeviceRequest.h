@@ -149,6 +149,31 @@ namespace Model
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline LaunchTemplateEbsBlockDeviceRequest& WithThroughput(int value) { SetThroughput(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume
+     * initialization rate), in MiB/s, at which to download the snapshot blocks from
+     * Amazon S3 to the volume. This is also known as <i>volume initialization</i>.
+     * Specifying a volume initialization rate ensures that the volume is initialized
+     * at a predictable and consistent rate after creation.</p> <p>This parameter is
+     * supported only for volumes created from snapshots. Omit this parameter if:</p>
+     * <ul> <li> <p>You want to create the volume using fast snapshot restore. You must
+     * specify a snapshot that is enabled for fast snapshot restore. In this case, the
+     * volume is fully initialized at creation.</p>  <p>If you specify a snapshot
+     * that is enabled for fast snapshot restore and a volume initialization rate, the
+     * volume will be initialized at the specified rate instead of fast snapshot
+     * restore.</p>  </li> <li> <p>You want to create a volume that is
+     * initialized at the default rate.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
+     * Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Valid range: 100 - 300 MiB/s</p>
+     */
+    inline int GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+    inline bool VolumeInitializationRateHasBeenSet() const { return m_volumeInitializationRateHasBeenSet; }
+    inline void SetVolumeInitializationRate(int value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
+    inline LaunchTemplateEbsBlockDeviceRequest& WithVolumeInitializationRate(int value) { SetVolumeInitializationRate(value); return *this;}
+    ///@}
   private:
 
     bool m_encrypted{false};
@@ -174,6 +199,9 @@ namespace Model
 
     int m_throughput{0};
     bool m_throughputHasBeenSet = false;
+
+    int m_volumeInitializationRate{0};
+    bool m_volumeInitializationRateHasBeenSet = false;
   };
 
 } // namespace Model

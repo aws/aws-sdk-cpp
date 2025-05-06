@@ -79,6 +79,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+    ss << "VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+
   if(m_operatorHasBeenSet)
   {
     m_operator.OutputToStream(ss, "Operator");

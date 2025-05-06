@@ -95,6 +95,12 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode volumeInitializationRateNode = resultNode.FirstChild("volumeInitializationRate");
+    if(!volumeInitializationRateNode.IsNull())
+    {
+      m_volumeInitializationRate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
+      m_volumeInitializationRateHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {

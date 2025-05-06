@@ -54,6 +54,11 @@ Aws::String CreateReplaceRootVolumeTaskRequest::SerializePayload() const
     ss << "DeleteReplacedRootVolume=" << std::boolalpha << m_deleteReplacedRootVolume << "&";
   }
 
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+    ss << "VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }
