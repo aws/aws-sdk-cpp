@@ -69,6 +69,7 @@ if (LEGACY_BUILD)
     option(ENABLE_SMOKE_TESTS "Enable smoke tests" OFF)
     option(ENABLE_PROTOCOL_TESTS "Enable protocol tests" OFF)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
+    option(AWS_APPSTORE_SAFE "Remove reference to private Apple APIs for AES GCM in Common Crypto. If set to OFF you application will get rejected from the apple app store." OFF)
 
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
@@ -93,6 +94,10 @@ if (LEGACY_BUILD)
 
     if (DISABLE_DNS_REQUIRED_TESTS)
         add_definitions(-DDISABLE_DNS_REQUIRED_TESTS)
+    endif ()
+
+    if (AWS_APPSTORE_SAFE)
+        add_definitions(-DAWS_APPSTORE_SAFE)
     endif ()
 
     #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
