@@ -177,3 +177,7 @@ An override path for where the build system should find the Android NDK.  By def
 
 ### AWS_USE_CRYPTO_SHARED_LIBS
 Forces FindCrypto to use a shared crypto library if found. regardless of the value of BUILD_SHARED_LIBS
+
+
+### AWS_APPSTORE_SAFE
+One of our dependencies [aws-c-cal](https://github.com/awslabs/aws-c-cal) links against several [CommonCrypto](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/Common%20Crypto.3cc.html) APIs that will cause a binary application using these APIs to be rejected from the apple appstore. This will set the corresponding [definition ia aws-c-cal](https://github.com/awslabs/aws-c-cal/blob/027d9760908c649d1f53e397d74d907babbde059/source/darwin/commoncrypto_aes.c#L12-L16) that will no-op AES-GCM functionality. This option is turned `OFF` by default as to no t break AWS-GCM functionality by default.   
