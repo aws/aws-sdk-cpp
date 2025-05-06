@@ -14,6 +14,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.lang.RuntimeException;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -284,6 +285,13 @@ public class CppViewHelper {
 
     public static String computeServicePayloadType(String protocol) {
         return CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.get(protocol);
+    }
+
+    public static String computeServicePayloadType(Collection<String> protocols) {
+        return protocols.stream().filter(CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING::containsKey)
+                .findFirst()
+                .map(CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING::get)
+                .orElseThrow(() -> new RuntimeException("could not find any supported service protocol in " + String.join(",", protocols)));
     }
 
     public static String computeTimestampFormatInHeader(Shape shape) {
