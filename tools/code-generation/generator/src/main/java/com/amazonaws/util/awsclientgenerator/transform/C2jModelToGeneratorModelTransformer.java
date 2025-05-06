@@ -25,6 +25,8 @@ import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
 import software.amazon.smithy.jmespath.JmespathExpression;
 
 public class C2jModelToGeneratorModelTransformer {
@@ -923,7 +925,12 @@ public class C2jModelToGeneratorModelTransformer {
             // 1. Its shape is defined in C2J model.
             // 2. For XML payload type, it has extra member other than "message" and "code" (case insensitive).
             // 3. For JSON payload type, it has extra member other than "message" (case insensitive).
-            String errorPayloadType = CppViewHelper.computeServicePayloadType(this.c2jServiceModel.getMetadata().getProtocol());
+            // Look through priority list of protocols falling back to singular protocol if not found.
+            final Set<String> protocols = ImmutableSet.<String>builder()
+                    .addAll(this.c2jServiceModel.getMetadata().getProtocols() == null ? ImmutableSet.of(): this.c2jServiceModel.getMetadata().getProtocols())
+                    .addAll(StringUtils.isEmpty(this.c2jServiceModel.getMetadata().getProtocol()) ? ImmutableSet.of() : ImmutableSet.of(this.c2jServiceModel.getMetadata().getProtocol()))
+                    .build();
+            String errorPayloadType = CppViewHelper.computeServicePayloadType(protocols);
             if (errorPayloadType.equals("xml") && referencedShape.isXmlModeledException() ||
                 errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
                 error.setModeled(true);
