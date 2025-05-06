@@ -12,17 +12,34 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithBlob) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"X-Foo", R"(Foo)"}};
+  mockRs.body = "YmxvYmJ5IGJsb2IgYmxvYg==";
+  SetMockResponse(mockRs);
+
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithNoBlobBody) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"X-Foo", R"(Foo)"}};
+  SetMockResponse(mockRs);
+
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

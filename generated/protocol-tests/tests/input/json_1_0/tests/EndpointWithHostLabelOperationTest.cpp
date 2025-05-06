@@ -12,10 +12,20 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson10EndpointTraitWithHostLabel) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointWithHostLabelOperationRequest request;
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
+  expectedRq.uri = "/";
+  expectedRq.host = "foo.bar.example.com";
+  ValidateRequestSent(expectedRq);
 }

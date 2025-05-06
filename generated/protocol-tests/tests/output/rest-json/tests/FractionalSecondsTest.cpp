@@ -12,9 +12,17 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(FractionalSeconds, RestJsonDateTimeWithFractionalSeconds) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.body = "ICAgICAgewogICAgICAgICAgImRhdGV0aW1lIjogIjIwMDAtMDEtMDJUMjA6MzQ6NTYuMTIzWiIKICAgICAgfQo=";
+  SetMockResponse(mockRs);
+
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

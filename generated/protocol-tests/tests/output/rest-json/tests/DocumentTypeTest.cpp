@@ -12,41 +12,86 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IHsKICAgICAgICAiZm9vIjogImJhciIKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   DocumentTypeRequest request;
 
   auto outcome = client.DocumentType(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputString) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6ICJoZWxsbyIKfQ==";
+  SetMockResponse(mockRs);
+
   DocumentTypeRequest request;
 
   auto outcome = client.DocumentType(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputNumber) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IDEwCn0=";
+  SetMockResponse(mockRs);
+
   DocumentTypeRequest request;
 
   auto outcome = client.DocumentType(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputBoolean) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IGZhbHNlCn0=";
+  SetMockResponse(mockRs);
+
   DocumentTypeRequest request;
 
   auto outcome = client.DocumentType(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputArray) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IFsKICAgICAgICB0cnVlLAogICAgICAgIGZhbHNlCiAgICBdCn0=";
+  SetMockResponse(mockRs);
+
   DocumentTypeRequest request;
 
   auto outcome = client.DocumentType(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

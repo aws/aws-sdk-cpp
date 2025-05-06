@@ -12,10 +12,18 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(ConstantQueryString, RestJsonConstantQueryString) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   ConstantQueryStringRequest request;
   request.SetHello(R"(hi)");
 
   auto outcome = client.ConstantQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/ConstantQueryString/hi?foo=bar&hello";
+  ValidateRequestSent(expectedRq);
 }

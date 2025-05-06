@@ -13,7 +13,10 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(RecursiveShapes, RecursiveShapes) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   RecursiveShapesRequest request;
   {
     RecursiveShapesInputOutputNested1 requestNested;
@@ -37,5 +40,12 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RecursiveShapes) {
   }
 
   auto outcome = client.RecursiveShapes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFJlY3Vyc2l2ZVNoYXBlc1JlcXVlc3Q+CiAgICA8bmVzdGVkPgogICAgICAgIDxmb28+Rm9vMTwvZm9vPgogICAgICAgIDxuZXN0ZWQ+CiAgICAgICAgICAgIDxiYXI+QmFyMTwvYmFyPgogICAgICAgICAgICA8cmVjdXJzaXZlTWVtYmVyPgogICAgICAgICAgICAgICAgPGZvbz5Gb28yPC9mb28+CiAgICAgICAgICAgICAgICA8bmVzdGVkPgogICAgICAgICAgICAgICAgICAgIDxiYXI+QmFyMjwvYmFyPgogICAgICAgICAgICAgICAgPC9uZXN0ZWQ+CiAgICAgICAgICAgIDwvcmVjdXJzaXZlTWVtYmVyPgogICAgICAgIDwvbmVzdGVkPgogICAgPC9uZXN0ZWQ+CjwvUmVjdXJzaXZlU2hhcGVzUmVxdWVzdD4K";
+  expectedRq.uri = "/RecursiveShapes";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }

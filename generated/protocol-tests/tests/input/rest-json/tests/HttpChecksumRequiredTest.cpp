@@ -12,10 +12,20 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpChecksumRequired, RestJsonHttpChecksumRequired) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpChecksumRequiredRequest request;
   request.SetFoo(R"(base64 encoded md5 checksum)");
 
   auto outcome = client.HttpChecksumRequired(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImZvbyI6ImJhc2U2NCBlbmNvZGVkIG1kNSBjaGVja3N1bSIKfQo=";
+  expectedRq.uri = "/HttpChecksumRequired";
+  expectedRq.headers = {{"Content-MD5", R"(iB0/3YSo7maijL0IGOgA9g==)"}, {"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

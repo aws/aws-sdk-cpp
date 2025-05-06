@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest1) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   PostUnionWithJsonNameRequest request;
   {
     UnionWithJsonName requestValue;
@@ -21,11 +24,21 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest1) {
   }
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgInZhbHVlIjogewogICAgICAgICJGT08iOiAiaGkiCiAgICB9Cn0=";
+  expectedRq.uri = "/PostUnionWithJsonName";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest2) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   PostUnionWithJsonNameRequest request;
   {
     UnionWithJsonName requestValue;
@@ -34,11 +47,21 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest2) {
   }
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgInZhbHVlIjogewogICAgICAgICJfYmF6IjogImhpIgogICAgfQp9";
+  expectedRq.uri = "/PostUnionWithJsonName";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest3) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   PostUnionWithJsonNameRequest request;
   {
     UnionWithJsonName requestValue;
@@ -47,5 +70,12 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest3) {
   }
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgInZhbHVlIjogewogICAgICAgICJiYXIiOiAiaGkiCiAgICB9Cn0=";
+  expectedRq.uri = "/PostUnionWithJsonName";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

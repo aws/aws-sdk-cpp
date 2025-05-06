@@ -12,9 +12,17 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(MediaTypeHeader, MediaTypeHeaderOutputBase64) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"X-Json", R"(dHJ1ZQ==)"}};
+  SetMockResponse(mockRs);
+
   MediaTypeHeaderRequest request;
 
   auto outcome = client.MediaTypeHeader(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

@@ -12,9 +12,17 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(UnitInputAndOutput, RestJsonUnitInputAndOutput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   UnitInputAndOutputRequest request;
 
   auto outcome = client.UnitInputAndOutput(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/UnitInputAndOutput";
+  ValidateRequestSent(expectedRq);
 }

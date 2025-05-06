@@ -130,6 +130,7 @@
     "MGMT",
     "DENABLED",
     "DENFORCE",
+    "APPSTORE",
     // Compiler and linker
     "Wpedantic",
     "Wextra",
@@ -231,6 +232,7 @@
     "CPPUNWIND",
     "keepalivetime",
     "keepaliveinterval",
+    "AUTODETECTION",
     // Crypto
     "decryptor",
     "encryptor",

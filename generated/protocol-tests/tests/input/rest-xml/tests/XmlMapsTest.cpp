@@ -12,7 +12,10 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlMaps, XmlMaps) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   XmlMapsRequest request;
   {
     GreetingStruct requestMyMapItem;
@@ -26,5 +29,12 @@ AWS_PROTOCOL_TEST(XmlMaps, XmlMaps) {
   }
 
   auto outcome = client.XmlMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "PFhtbE1hcHNSZXF1ZXN0PgogICAgPG15TWFwPgogICAgICAgIDxlbnRyeT4KICAgICAgICAgICAgPGtleT5mb288L2tleT4KICAgICAgICAgICAgPHZhbHVlPgogICAgICAgICAgICAgICAgPGhpPnRoZXJlPC9oaT4KICAgICAgICAgICAgPC92YWx1ZT4KICAgICAgICA8L2VudHJ5PgogICAgICAgIDxlbnRyeT4KICAgICAgICAgICAgPGtleT5iYXo8L2tleT4KICAgICAgICAgICAgPHZhbHVlPgogICAgICAgICAgICAgICAgPGhpPmJ5ZTwvaGk+CiAgICAgICAgICAgIDwvdmFsdWU+CiAgICAgICAgPC9lbnRyeT4KICAgIDwvbXlNYXA+CjwvWG1sTWFwc1JlcXVlc3Q+Cg==";
+  expectedRq.uri = "/XmlMaps";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }

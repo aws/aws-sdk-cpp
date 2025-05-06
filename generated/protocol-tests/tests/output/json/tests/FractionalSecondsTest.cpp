@@ -12,9 +12,18 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(FractionalSeconds, AwsJson11DateTimeWithFractionalSeconds) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ICAgICAgewogICAgICAgICAgImRhdGV0aW1lIjogIjIwMDAtMDEtMDJUMjA6MzQ6NTYuMTIzWiIKICAgICAgfQo=";
+  SetMockResponse(mockRs);
+
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

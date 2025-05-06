@@ -12,57 +12,120 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestamps) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPG5vcm1hbD4yMDE0LTA0LTI5VDE4OjMwOjM4Wjwvbm9ybWFsPgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9YbWxUaW1lc3RhbXBzUmVzcG9uc2U+Cg==";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGRhdGVUaW1lPjIwMTQtMDQtMjlUMTg6MzA6MzhaPC9kYXRlVGltZT4KICAgIDxyZXF1ZXN0SWQ+cmVxdWVzdGlkPC9yZXF1ZXN0SWQ+CjwvWG1sVGltZXN0YW1wc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeOnTargetFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGRhdGVUaW1lT25UYXJnZXQ+MjAxNC0wNC0yOVQxODozMDozOFo8L2RhdGVUaW1lT25UYXJnZXQ+CiAgICA8cmVxdWVzdElkPnJlcXVlc3RpZDwvcmVxdWVzdElkPgo8L1htbFRpbWVzdGFtcHNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGVwb2NoU2Vjb25kcz4xMzk4Nzk2MjM4PC9lcG9jaFNlY29uZHM+CiAgICA8cmVxdWVzdElkPnJlcXVlc3RpZDwvcmVxdWVzdElkPgo8L1htbFRpbWVzdGFtcHNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsOnTargetFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGVwb2NoU2Vjb25kc09uVGFyZ2V0PjEzOTg3OTYyMzg8L2Vwb2NoU2Vjb25kc09uVGFyZ2V0PgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9YbWxUaW1lc3RhbXBzUmVzcG9uc2U+Cg==";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGh0dHBEYXRlPlR1ZSwgMjkgQXByIDIwMTQgMTg6MzA6MzggR01UPC9odHRwRGF0ZT4KICAgIDxyZXF1ZXN0SWQ+cmVxdWVzdGlkPC9yZXF1ZXN0SWQ+CjwvWG1sVGltZXN0YW1wc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateOnTargetFormat) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbFRpbWVzdGFtcHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGh0dHBEYXRlT25UYXJnZXQ+VHVlLCAyOSBBcHIgMjAxNCAxODozMDozOCBHTVQ8L2h0dHBEYXRlT25UYXJnZXQ+CiAgICA8cmVxdWVzdElkPnJlcXVlc3RpZDwvcmVxdWVzdElkPgo8L1htbFRpbWVzdGFtcHNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlTimestampsRequest request;
 
   auto outcome = client.XmlTimestamps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

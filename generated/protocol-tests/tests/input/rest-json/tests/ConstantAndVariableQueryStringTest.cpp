@@ -12,20 +12,36 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, RestJsonConstantAndVariableQueryStringMissingOneValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   ConstantAndVariableQueryStringRequest request;
   request.SetBaz(R"(bam)");
 
   auto outcome = client.ConstantAndVariableQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, RestJsonConstantAndVariableQueryStringAllValues) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   ConstantAndVariableQueryStringRequest request;
   request.SetBaz(R"(bam)");
   request.SetMaybeSet(R"(yes)");
 
   auto outcome = client.ConstantAndVariableQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam&maybeSet=yes";
+  ValidateRequestSent(expectedRq);
 }

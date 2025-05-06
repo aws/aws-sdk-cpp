@@ -12,7 +12,10 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpPayloadWithXmlName, HttpPayloadWithXmlName) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPayloadWithXmlNameRequest request;
   {
     PayloadWithXmlName requestNested;
@@ -21,5 +24,13 @@ AWS_PROTOCOL_TEST(HttpPayloadWithXmlName, HttpPayloadWithXmlName) {
   }
 
   auto outcome = client.HttpPayloadWithXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PEhlbGxvPjxuYW1lPlBocmVkZHk8L25hbWU+PC9IZWxsbz4=";
+  expectedRq.uri = "/HttpPayloadWithXmlName";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }

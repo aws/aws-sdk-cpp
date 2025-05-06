@@ -12,9 +12,19 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(HostWithPathOperation, QueryHostWithPath) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HostWithPathOperationRequest request;
 
   auto outcome = client.HostWithPathOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPUhvc3RXaXRoUGF0aE9wZXJhdGlvbiZWZXJzaW9uPTIwMjAtMDEtMDg=";
+  expectedRq.uri = "/custom/";
+  expectedRq.host = "example.com/custom";
+  ValidateRequestSent(expectedRq);
 }

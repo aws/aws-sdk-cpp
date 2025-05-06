@@ -12,9 +12,19 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(HostWithPathOperation, AwsJson10HostWithPath) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HostWithPathOperationRequest request;
 
   auto outcome = client.HostWithPathOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "e30=";
+  expectedRq.uri = "/custom/";
+  expectedRq.host = "example.com/custom";
+  ValidateRequestSent(expectedRq);
 }

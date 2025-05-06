@@ -12,10 +12,20 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, RestJsonEndpointTraitWithHostLabel) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointWithHostLabelOperationRequest request;
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
+  expectedRq.uri = "/EndpointWithHostLabelOperation";
+  expectedRq.host = "foo.bar.example.com";
+  ValidateRequestSent(expectedRq);
 }

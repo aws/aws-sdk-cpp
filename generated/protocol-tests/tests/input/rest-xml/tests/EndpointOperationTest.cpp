@@ -12,9 +12,18 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(EndpointOperation, RestXmlEndpointTrait) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointOperationRequest request;
 
   auto outcome = client.EndpointOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/EndpointOperation";
+  expectedRq.host = "foo.example.com";
+  ValidateRequestSent(expectedRq);
 }

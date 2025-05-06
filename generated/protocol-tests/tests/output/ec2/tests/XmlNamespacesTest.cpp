@@ -12,9 +12,18 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlNamespaces, Ec2XmlNamespaces) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbE5hbWVzcGFjZXNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPG5lc3RlZD4KICAgICAgICA8Zm9vIHhtbG5zOmJhej0iaHR0cDovL2Jhei5jb20iPkZvbzwvZm9vPgogICAgICAgIDx2YWx1ZXMgeG1sbnM9Imh0dHA6Ly9xdXguY29tIj4KICAgICAgICAgICAgPG1lbWJlciB4bWxucz0iaHR0cDovL2J1eC5jb20iPkJhcjwvbWVtYmVyPgogICAgICAgICAgICA8bWVtYmVyIHhtbG5zPSJodHRwOi8vYnV4LmNvbSI+QmF6PC9tZW1iZXI+CiAgICAgICAgPC92YWx1ZXM+CiAgICA8L25lc3RlZD4KICAgIDxyZXF1ZXN0SWQ+cmVxdWVzdGlkPC9yZXF1ZXN0SWQ+CjwvWG1sTmFtZXNwYWNlc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   XmlNamespacesRequest request;
 
   auto outcome = client.XmlNamespaces(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

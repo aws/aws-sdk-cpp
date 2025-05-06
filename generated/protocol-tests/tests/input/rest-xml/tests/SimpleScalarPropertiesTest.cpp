@@ -12,7 +12,10 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFoo(R"(Foo)");
   request.SetStringValue(R"(string)");
@@ -26,65 +29,132 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
   request.SetDoubleValue(6.5);
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPnN0cmluZzwvc3RyaW5nVmFsdWU+CiAgICA8dHJ1ZUJvb2xlYW5WYWx1ZT50cnVlPC90cnVlQm9vbGVhblZhbHVlPgogICAgPGZhbHNlQm9vbGVhblZhbHVlPmZhbHNlPC9mYWxzZUJvb2xlYW5WYWx1ZT4KICAgIDxieXRlVmFsdWU+MTwvYnl0ZVZhbHVlPgogICAgPHNob3J0VmFsdWU+Mjwvc2hvcnRWYWx1ZT4KICAgIDxpbnRlZ2VyVmFsdWU+MzwvaW50ZWdlclZhbHVlPgogICAgPGxvbmdWYWx1ZT40PC9sb25nVmFsdWU+CiAgICA8ZmxvYXRWYWx1ZT41LjU8L2Zsb2F0VmFsdWU+CiAgICA8RG91YmxlRHJpYmJsZT42LjU8L0RvdWJsZURyaWJibGU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedCharacter) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFoo(R"(Foo)");
   request.SetStringValue(R"(<string>)");
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiZsdDtzdHJpbmcmZ3Q7PC9zdHJpbmdWYWx1ZT4KPC9TaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVxdWVzdD4K";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFoo(R"(Foo)");
   request.SetStringValue(R"(  string with white    space  )");
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiAgc3RyaW5nIHdpdGggd2hpdGUgICAgc3BhY2UgIDwvc3RyaW5nVmFsdWU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFoo(R"(Foo)");
   request.SetStringValue(R"(   )");
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiAgIDwvc3RyaW5nVmFsdWU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNaNFloatInputs) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFloatValue(std::numeric_limits<double>::quiet_NaN());
   request.SetDoubleValue(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPGZsb2F0VmFsdWU+TmFOPC9mbG9hdFZhbHVlPgogICAgPERvdWJsZURyaWJibGU+TmFOPC9Eb3VibGVEcmliYmxlPgo8L1NpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0Pgo=";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsInfinityFloatInputs) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFloatValue(std::numeric_limits<double>::infinity());
   request.SetDoubleValue(std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPGZsb2F0VmFsdWU+SW5maW5pdHk8L2Zsb2F0VmFsdWU+CiAgICA8RG91YmxlRHJpYmJsZT5JbmZpbml0eTwvRG91YmxlRHJpYmJsZT4KPC9TaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVxdWVzdD4K";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNegativeInfinityFloatInputs) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   SimpleScalarPropertiesRequest request;
   request.SetFloatValue(-std::numeric_limits<double>::infinity());
   request.SetDoubleValue(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPGZsb2F0VmFsdWU+LUluZmluaXR5PC9mbG9hdFZhbHVlPgogICAgPERvdWJsZURyaWJibGU+LUluZmluaXR5PC9Eb3VibGVEcmliYmxlPgo8L1NpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0Pgo=";
+  expectedRq.uri = "/SimpleScalarProperties";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }

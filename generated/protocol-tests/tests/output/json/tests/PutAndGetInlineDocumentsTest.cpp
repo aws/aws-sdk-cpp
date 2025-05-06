@@ -12,9 +12,18 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(PutAndGetInlineDocuments, PutAndGetInlineDocumentsInput) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ewogICAgImlubGluZURvY3VtZW50IjogeyJmb28iOiAiYmFyIn0KfQ==";
+  SetMockResponse(mockRs);
+
   PutAndGetInlineDocumentsRequest request;
 
   auto outcome = client.PutAndGetInlineDocuments(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

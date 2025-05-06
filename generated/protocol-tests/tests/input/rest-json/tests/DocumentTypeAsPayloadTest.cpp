@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeAsPayloadRequest request;
   {
     Aws::Utils::Document requestDocumentValue(R"j({"foo":"bar"})j");
@@ -20,11 +23,21 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInput) {
   }
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImZvbyI6ICJiYXIiCn0=";
+  expectedRq.uri = "/DocumentTypeAsPayload";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInputString) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeAsPayloadRequest request;
   {
     Aws::Utils::Document requestDocumentValue(R"j("hello")j");
@@ -32,5 +45,12 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInputString) {
   }
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ImhlbGxvIg==";
+  expectedRq.uri = "/DocumentTypeAsPayload";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

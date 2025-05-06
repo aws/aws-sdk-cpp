@@ -12,17 +12,35 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithNegativeOffset) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ICAgICAgewogICAgICAgICAgImRhdGV0aW1lIjogIjIwMTktMTItMTZUMjI6NDg6MTgtMDE6MDAiCiAgICAgIH0K";
+  SetMockResponse(mockRs);
+
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithPositiveOffset) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ICAgICAgewogICAgICAgICAgImRhdGV0aW1lIjogIjIwMTktMTItMTdUMDA6NDg6MTgrMDE6MDAiCiAgICAgIH0K";
+  SetMockResponse(mockRs);
+
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

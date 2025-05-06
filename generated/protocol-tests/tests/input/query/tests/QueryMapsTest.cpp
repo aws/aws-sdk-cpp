@@ -12,25 +12,48 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMaps) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetMapArg({{"bar",  R"(Bar)"}, {"foo",  R"(Foo)"}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmTWFwQXJnLmVudHJ5LjEua2V5PWJhciZNYXBBcmcuZW50cnkuMS52YWx1ZT1CYXImTWFwQXJnLmVudHJ5LjIua2V5PWZvbyZNYXBBcmcuZW50cnkuMi52YWx1ZT1Gb28=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMapsWithXmlName) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetRenamedMapArg({{"foo",  R"(Foo)"}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmRm9vLmVudHJ5LjEua2V5PWZvbyZGb28uZW50cnkuMS52YWx1ZT1Gb28=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryComplexQueryMaps) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   {
     GreetingStruct requestComplexMapArgItem;
@@ -44,56 +67,116 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryComplexQueryMaps) {
   }
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmQ29tcGxleE1hcEFyZy5lbnRyeS4xLmtleT1iYXImQ29tcGxleE1hcEFyZy5lbnRyeS4xLnZhbHVlLmhpPUJhciZDb21wbGV4TWFwQXJnLmVudHJ5LjIua2V5PWZvbyZDb21wbGV4TWFwQXJnLmVudHJ5LjIudmFsdWUuaGk9Rm9v";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryEmptyQueryMaps) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetMapArg({});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDg=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapWithMemberXmlName) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetMapWithXmlMemberName({{"bar",  R"(Bar)"}, {"foo",  R"(Foo)"}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmTWFwV2l0aFhtbE1lbWJlck5hbWUuZW50cnkuMS5LPWJhciZNYXBXaXRoWG1sTWVtYmVyTmFtZS5lbnRyeS4xLlY9QmFyJk1hcFdpdGhYbWxNZW1iZXJOYW1lLmVudHJ5LjIuSz1mb28mTWFwV2l0aFhtbE1lbWJlck5hbWUuZW50cnkuMi5WPUZvbw==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMaps) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetFlattenedMap({{"bar",  R"(Bar)"}, {"foo",  R"(Foo)"}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmRmxhdHRlbmVkTWFwLjEua2V5PWJhciZGbGF0dGVuZWRNYXAuMS52YWx1ZT1CYXImRmxhdHRlbmVkTWFwLjIua2V5PWZvbyZGbGF0dGVuZWRNYXAuMi52YWx1ZT1Gb28=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMapsWithXmlName) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetFlattenedMapWithXmlName({{"bar",  R"(Bar)"}, {"foo",  R"(Foo)"}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmSGkuMS5LPWJhciZIaS4xLlY9QmFyJkhpLjIuSz1mb28mSGkuMi5WPUZvbw==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapOfLists) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   request.SetMapOfLists({{"bar",  {R"(C)", R"(D)"}}, {"foo",  {R"(A)", R"(B)"}}});
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmTWFwT2ZMaXN0cy5lbnRyeS4xLmtleT1iYXImTWFwT2ZMaXN0cy5lbnRyeS4xLnZhbHVlLm1lbWJlci4xPUMmTWFwT2ZMaXN0cy5lbnRyeS4xLnZhbHVlLm1lbWJlci4yPUQmTWFwT2ZMaXN0cy5lbnRyeS4yLmtleT1mb28mTWFwT2ZMaXN0cy5lbnRyeS4yLnZhbHVlLm1lbWJlci4xPUEmTWFwT2ZMaXN0cy5lbnRyeS4yLnZhbHVlLm1lbWJlci4yPUI=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryNestedStructWithMap) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryMapsRequest request;
   {
     NestedStructWithMap requestNestedStructWithMap;
@@ -102,5 +185,12 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryNestedStructWithMap) {
   }
 
   auto outcome = client.QueryMaps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TWFwcyZWZXJzaW9uPTIwMjAtMDEtMDgmTmVzdGVkU3RydWN0V2l0aE1hcC5NYXBBcmcuZW50cnkuMS5rZXk9YmFyJk5lc3RlZFN0cnVjdFdpdGhNYXAuTWFwQXJnLmVudHJ5LjEudmFsdWU9QmFyJk5lc3RlZFN0cnVjdFdpdGhNYXAuTWFwQXJnLmVudHJ5LjIua2V5PWZvbyZOZXN0ZWRTdHJ1Y3RXaXRoTWFwLk1hcEFyZy5lbnRyeS4yLnZhbHVlPUZvbw==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }

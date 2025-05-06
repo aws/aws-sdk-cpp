@@ -12,17 +12,33 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInResponse) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "e30=";
+  SetMockResponse(mockRs);
+
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInResponseNoPayload) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  SetMockResponse(mockRs);
+
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

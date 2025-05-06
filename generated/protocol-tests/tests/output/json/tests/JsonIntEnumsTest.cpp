@@ -12,9 +12,18 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonIntEnums, AwsJson11IntEnums) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonIntEnums)"}};
+  mockRs.body = "ewogICAgImludEVudW0xIjogMSwKICAgICJpbnRFbnVtMiI6IDIsCiAgICAiaW50RW51bTMiOiAzLAogICAgImludEVudW1MaXN0IjogWwogICAgICAgIDEsCiAgICAgICAgMgogICAgXSwKICAgICJpbnRFbnVtU2V0IjogWwogICAgICAgIDEsCiAgICAgICAgMgogICAgXSwKICAgICJpbnRFbnVtTWFwIjogewogICAgICAgICJhIjogMSwKICAgICAgICAiYiI6IDIKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonIntEnumsRequest request;
 
   auto outcome = client.JsonIntEnums(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

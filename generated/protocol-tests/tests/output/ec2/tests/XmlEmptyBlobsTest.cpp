@@ -12,17 +12,35 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, Ec2XmlEmptyBlobs) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbEVtcHR5QmxvYnNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGRhdGE+PC9kYXRhPgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9YbWxFbXB0eUJsb2JzUmVzcG9uc2U+Cg==";
+  SetMockResponse(mockRs);
+
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, Ec2XmlEmptySelfClosedBlobs) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbEVtcHR5QmxvYnNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPGRhdGEvPgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9YbWxFbXB0eUJsb2JzUmVzcG9uc2U+Cg==";
+  SetMockResponse(mockRs);
+
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

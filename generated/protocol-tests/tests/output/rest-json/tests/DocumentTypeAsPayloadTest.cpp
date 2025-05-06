@@ -12,17 +12,35 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImZvbyI6ICJiYXIiCn0=";
+  SetMockResponse(mockRs);
+
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutputString) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ImhlbGxvIg==";
+  SetMockResponse(mockRs);
+
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

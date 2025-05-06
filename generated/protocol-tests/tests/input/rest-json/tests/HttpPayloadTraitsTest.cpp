@@ -12,20 +12,40 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithBlob) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPayloadTraitsRequest request;
   request.SetFoo(R"(Foo)");
   request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", Aws::String(R"(blobby blob blob)"), std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "YmxvYmJ5IGJsb2IgYmxvYg==";
+  expectedRq.uri = "/HttpPayloadTraits";
+  expectedRq.headers = {{"Content-Type", R"(application/octet-stream)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithNoBlobBody) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPayloadTraitsRequest request;
   request.SetFoo(R"(Foo)");
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/HttpPayloadTraits";
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }

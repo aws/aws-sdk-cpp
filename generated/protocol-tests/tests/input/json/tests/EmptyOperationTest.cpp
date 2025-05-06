@@ -12,25 +12,53 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(EmptyOperation, sends_requests_to_slash) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EmptyOperation)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, includes_x_amz_target_and_content_type) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EmptyOperation)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, json_1_1_client_sends_empty_payload_for_no_input_shape) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "e30=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EmptyOperation)"}};
+  ValidateRequestSent(expectedRq);
 }

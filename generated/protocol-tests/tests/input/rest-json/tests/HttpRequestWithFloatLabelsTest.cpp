@@ -12,31 +12,55 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNaNFloatLabels) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithFloatLabelsRequest request;
   request.SetFloat(std::numeric_limits<double>::quiet_NaN());
   request.SetDouble(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/FloatHttpLabels/NaN/NaN";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsInfinityFloatLabels) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithFloatLabelsRequest request;
   request.SetFloat(std::numeric_limits<double>::infinity());
   request.SetDouble(std::numeric_limits<double>::infinity());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/FloatHttpLabels/Infinity/Infinity";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNegativeInfinityFloatLabels) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithFloatLabelsRequest request;
   request.SetFloat(-std::numeric_limits<double>::infinity());
   request.SetDouble(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/FloatHttpLabels/-Infinity/-Infinity";
+  ValidateRequestSent(expectedRq);
 }

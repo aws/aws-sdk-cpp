@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonInputWithHeadersAndAllParams) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithLabelsRequest request;
   request.SetString(R"(string)");
   request.SetShort(1);
@@ -24,11 +27,19 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonInputWithHeadersAndAllParams) {
   request.SetTimestamp(Aws::Utils::DateTime(1576540098L));
 
   auto outcome = client.HttpRequestWithLabels(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpRequestWithLabels/string/1/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonHttpRequestLabelEscaping) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithLabelsRequest request;
   request.SetString(R"( %:/?#[]@!$&'()*+,;=😹)");
   request.SetShort(1);
@@ -40,5 +51,10 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonHttpRequestLabelEscaping) {
   request.SetTimestamp(Aws::Utils::DateTime(1576540098L));
 
   auto outcome = client.HttpRequestWithLabels(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/1/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
+  ValidateRequestSent(expectedRq);
 }

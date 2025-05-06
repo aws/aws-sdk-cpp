@@ -12,9 +12,18 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyLists, QueryXmlEmptyLists) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml)"}};
+  mockRs.body = "PFhtbEVtcHR5TGlzdHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogICAgPFhtbEVtcHR5TGlzdHNSZXN1bHQ+CiAgICAgICAgPHN0cmluZ0xpc3QvPgogICAgICAgIDxzdHJpbmdTZXQ+PC9zdHJpbmdTZXQ+CiAgICA8L1htbEVtcHR5TGlzdHNSZXN1bHQ+CjwvWG1sRW1wdHlMaXN0c1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   XmlEmptyListsRequest request;
 
   auto outcome = client.XmlEmptyLists(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

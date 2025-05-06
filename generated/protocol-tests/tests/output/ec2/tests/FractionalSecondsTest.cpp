@@ -12,9 +12,18 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(FractionalSeconds, Ec2QueryDateTimeWithFractionalSeconds) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PEZyYWN0aW9uYWxTZWNvbmRzUmVzcG9uc2UgeG1sbnM9Imh0dHBzOi8vZXhhbXBsZS5jb20vIj4KICAgIDxkYXRldGltZT4yMDAwLTAxLTAyVDIwOjM0OjU2LjEyM1o8L2RhdGV0aW1lPgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9GcmFjdGlvbmFsU2Vjb25kc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

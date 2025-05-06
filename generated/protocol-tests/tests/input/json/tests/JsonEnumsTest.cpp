@@ -12,7 +12,10 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonEnums, AwsJson11Enums) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonEnumsRequest request;
   request.SetFooEnum1(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
   request.SetFooEnum2(FooEnumMapper::GetFooEnumForName(R"e(0)e"));
@@ -22,5 +25,12 @@ AWS_PROTOCOL_TEST(JsonEnums, AwsJson11Enums) {
   request.SetFooEnumMap({{"hi",  FooEnumMapper::GetFooEnumForName(R"e(Foo)e")}, {"zero",  FooEnumMapper::GetFooEnumForName(R"e(0)e")}});
 
   auto outcome = client.JsonEnums(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImZvb0VudW0xIjogIkZvbyIsCiAgICAiZm9vRW51bTIiOiAiMCIsCiAgICAiZm9vRW51bTMiOiAiMSIsCiAgICAiZm9vRW51bUxpc3QiOiBbCiAgICAgICAgIkZvbyIsCiAgICAgICAgIjAiCiAgICBdLAogICAgImZvb0VudW1TZXQiOiBbCiAgICAgICAgIkZvbyIsCiAgICAgICAgIjAiCiAgICBdLAogICAgImZvb0VudW1NYXAiOiB7CiAgICAgICAgImhpIjogIkZvbyIsCiAgICAgICAgInplcm8iOiAiMCIKICAgIH0KfQ==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonEnums)"}};
+  ValidateRequestSent(expectedRq);
 }

@@ -12,64 +12,134 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestamps) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetNormal(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgIm5vcm1hbCI6IDEzOTg3OTYyMzgKfQ==";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetDateTime(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImRhdGVUaW1lIjogIjIwMTQtMDQtMjlUMTg6MzA6MzhaIgp9";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImRhdGVUaW1lT25UYXJnZXQiOiAiMjAxNC0wNC0yOVQxODozMDozOFoiCn0=";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetEpochSeconds(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImVwb2NoU2Vjb25kcyI6IDEzOTg3OTYyMzgKfQ==";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTargetFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImVwb2NoU2Vjb25kc09uVGFyZ2V0IjogMTM5ODc5NjIzOAp9";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetHttpDate(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImh0dHBEYXRlIjogIlR1ZSwgMjkgQXByIDIwMTQgMTg6MzA6MzggR01UIgp9";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetFormat) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonTimestampsRequest request;
   request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImh0dHBEYXRlT25UYXJnZXQiOiAiVHVlLCAyOSBBcHIgMjAxNCAxODozMDozOCBHTVQiCn0=";
+  expectedRq.uri = "/JsonTimestamps";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

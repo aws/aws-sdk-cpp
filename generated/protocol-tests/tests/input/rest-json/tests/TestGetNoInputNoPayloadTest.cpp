@@ -12,9 +12,18 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(TestGetNoInputNoPayload, RestJsonHttpGetWithNoInput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   TestGetNoInputNoPayloadRequest request;
 
   auto outcome = client.TestGetNoInputNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/no_input_no_payload";
+  expectedRq.forbidHeaders = {"Content-Type", "Content-Length"};
+  ValidateRequestSent(expectedRq);
 }

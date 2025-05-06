@@ -12,18 +12,37 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(TestPostNoPayload, RestJsonHttpPostWithNoModeledBody) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   TestPostNoPayloadRequest request;
 
   auto outcome = client.TestPostNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/no_payload";
+  expectedRq.forbidHeaders = {"Content-Type"};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(TestPostNoPayload, RestJsonHttpWithPostHeaderMemberNoModeledBody) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   TestPostNoPayloadRequest request;
   request.SetTestId(R"(t-12345)");
 
   auto outcome = client.TestPostNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/no_payload";
+  expectedRq.headers = {{"X-Amz-Test-Id", R"(t-12345)"}};
+  expectedRq.forbidHeaders = {"Content-Type"};
+  ValidateRequestSent(expectedRq);
 }

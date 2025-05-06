@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(OmitsSerializingEmptyLists, RestJsonOmitsEmptyListQueryValues) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   OmitsSerializingEmptyListsRequest request;
   request.SetQueryStringList({});
   request.SetQueryIntegerList({});
@@ -23,5 +26,10 @@ AWS_PROTOCOL_TEST(OmitsSerializingEmptyLists, RestJsonOmitsEmptyListQueryValues)
   request.SetQueryIntegerEnumList({});
 
   auto outcome = client.OmitsSerializingEmptyLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/OmitsSerializingEmptyLists";
+  ValidateRequestSent(expectedRq);
 }
