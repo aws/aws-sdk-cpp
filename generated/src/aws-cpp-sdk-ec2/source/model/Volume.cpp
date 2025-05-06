@@ -92,6 +92,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode volumeInitializationRateNode = resultNode.FirstChild("volumeInitializationRate");
+    if(!volumeInitializationRateNode.IsNull())
+    {
+      m_volumeInitializationRate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
+      m_volumeInitializationRateHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
@@ -213,6 +219,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+
   if(m_volumeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
@@ -314,6 +325,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String operatorLocationAndMember(location);
       operatorLocationAndMember += ".Operator";
       m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+      oStream << location << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
   if(m_volumeIdHasBeenSet)
   {

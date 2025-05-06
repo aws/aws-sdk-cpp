@@ -124,6 +124,18 @@ namespace Model
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline LaunchTemplateEbsBlockDevice& WithThroughput(int value) { SetThroughput(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume
+     * initialization rate) specified for the volume, in MiB/s. If no volume
+     * initialization rate was specified, the value is <code>null</code>.</p>
+     */
+    inline int GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+    inline bool VolumeInitializationRateHasBeenSet() const { return m_volumeInitializationRateHasBeenSet; }
+    inline void SetVolumeInitializationRate(int value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
+    inline LaunchTemplateEbsBlockDevice& WithVolumeInitializationRate(int value) { SetVolumeInitializationRate(value); return *this;}
+    ///@}
   private:
 
     bool m_encrypted{false};
@@ -149,6 +161,9 @@ namespace Model
 
     int m_throughput{0};
     bool m_throughputHasBeenSet = false;
+
+    int m_volumeInitializationRate{0};
+    bool m_volumeInitializationRateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
    * <i>or</i> the value of version in the new record is equal to or lower than the
    * existing value</p> </li> </ul> <p> In this case, if Timestream rejects data, the
    * <code>ExistingVersion</code> field in the <code>RejectedRecords</code> response
-   * will indicate the current record’s version. To force an update, you can resend
+   * will indicate the current record��s version. To force an update, you can resend
    * the request with a version for the record set to a value greater than the
    * <code>ExistingVersion</code>.</p> </li> <li> <p> Records with timestamps that
    * lie outside the retention duration of the memory store. </p> </li> <li> <p>

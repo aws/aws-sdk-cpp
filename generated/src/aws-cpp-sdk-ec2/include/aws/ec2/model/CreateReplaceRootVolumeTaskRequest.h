@@ -139,6 +139,31 @@ namespace Model
     inline void SetDeleteReplacedRootVolume(bool value) { m_deleteReplacedRootVolumeHasBeenSet = true; m_deleteReplacedRootVolume = value; }
     inline CreateReplaceRootVolumeTaskRequest& WithDeleteReplacedRootVolume(bool value) { SetDeleteReplacedRootVolume(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume
+     * initialization rate), in MiB/s, at which to download the snapshot blocks from
+     * Amazon S3 to the replacement root volume. This is also known as <i>volume
+     * initialization</i>. Specifying a volume initialization rate ensures that the
+     * volume is initialized at a predictable and consistent rate after creation.</p>
+     * <p>Omit this parameter if:</p> <ul> <li> <p>You want to create the volume using
+     * fast snapshot restore. You must specify a snapshot that is enabled for fast
+     * snapshot restore. In this case, the volume is fully initialized at creation.</p>
+     *  <p>If you specify a snapshot that is enabled for fast snapshot restore
+     * and a volume initialization rate, the volume will be initialized at the
+     * specified rate instead of fast snapshot restore.</p>  </li> <li> <p>You
+     * want to create a volume that is initialized at the default rate.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
+     * Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Valid range: 100 - 300 MiB/s</p>
+     */
+    inline long long GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+    inline bool VolumeInitializationRateHasBeenSet() const { return m_volumeInitializationRateHasBeenSet; }
+    inline void SetVolumeInitializationRate(long long value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
+    inline CreateReplaceRootVolumeTaskRequest& WithVolumeInitializationRate(long long value) { SetVolumeInitializationRate(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -161,6 +186,9 @@ namespace Model
 
     bool m_deleteReplacedRootVolume{false};
     bool m_deleteReplacedRootVolumeHasBeenSet = false;
+
+    long long m_volumeInitializationRate{0};
+    bool m_volumeInitializationRateHasBeenSet = false;
   };
 
 } // namespace Model

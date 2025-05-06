@@ -85,6 +85,12 @@ EbsBlockDevice& EbsBlockDevice::operator =(const XmlNode& xmlNode)
       m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
     }
+    XmlNode volumeInitializationRateNode = resultNode.FirstChild("VolumeInitializationRate");
+    if(!volumeInitializationRateNode.IsNull())
+    {
+      m_volumeInitializationRate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
+      m_volumeInitializationRateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -137,6 +143,11 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+
 }
 
 void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -176,6 +187,10 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_encryptedHasBeenSet)
   {
       oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+      oStream << location << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
 }
 

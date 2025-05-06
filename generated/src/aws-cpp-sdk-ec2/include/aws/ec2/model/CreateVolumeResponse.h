@@ -143,6 +143,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume
+     * initialization rate) specified for the volume during creation, in MiB/s. If no
+     * volume initialization rate was specified, the value is <code>null</code>.</p>
+     */
+    inline int GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+    inline void SetVolumeInitializationRate(int value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
+    inline CreateVolumeResponse& WithVolumeInitializationRate(int value) { SetVolumeInitializationRate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the volume.</p>
      */
     inline const Aws::String& GetVolumeId() const { return m_volumeId; }
@@ -274,6 +285,9 @@ namespace Model
 
     OperatorResponse m_operator;
     bool m_operatorHasBeenSet = false;
+
+    int m_volumeInitializationRate{0};
+    bool m_volumeInitializationRateHasBeenSet = false;
 
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet = false;
