@@ -12,30 +12,57 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpPrefixHeaders, HttpPrefixHeadersArePresent) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPrefixHeadersRequest request;
   request.SetFoo(R"(Foo)");
   request.SetFooMap({{"abc",  R"(Abc value)"}, {"def",  R"(Def value)"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpPrefixHeaders";
+  expectedRq.headers = {{"x-foo", R"(Foo)"}, {"x-foo-abc", R"(Abc value)"}, {"x-foo-def", R"(Def value)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpPrefixHeaders, HttpPrefixHeadersAreNotPresent) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPrefixHeadersRequest request;
   request.SetFoo(R"(Foo)");
   request.SetFooMap({});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpPrefixHeaders";
+  expectedRq.headers = {{"x-foo", R"(Foo)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(HttpPrefixHeaders, HttpPrefixEmptyHeaders) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpPrefixHeadersRequest request;
   request.SetFooMap({{"abc",  R"()"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpPrefixHeaders";
+  expectedRq.headers = {{"x-foo-abc", R"()"}};
+  ValidateRequestSent(expectedRq);
 }

@@ -1494,8 +1494,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         }
         else
         {
-            assert(0);
-            AWS_LOGSTREAM_WARN(CLASS_TAG, "Non-UTC timestamp detected. This is always a bug. Make the world a better place and fix whatever sent you this timestamp: " << timestamp)
+            AWS_LOGSTREAM_ERROR(CLASS_TAG, "Non-UTC timestamp detected. This is always a bug. Make the world a better place and fix whatever sent you this timestamp: " << timestamp)
             tt = std::mktime(&timeStruct);
         }
         m_time = std::chrono::system_clock::from_time_t(tt);

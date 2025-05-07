@@ -12,17 +12,35 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, RestXmlDateTimeWithNegativeOffset) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  mockRs.body = "PERhdGV0aW1lT2Zmc2V0c091dHB1dD4KICAgIDxkYXRldGltZT4yMDE5LTEyLTE2VDIyOjQ4OjE4LTAxOjAwPC9kYXRldGltZT4KPC9EYXRldGltZU9mZnNldHNPdXRwdXQ+Cg==";
+  SetMockResponse(mockRs);
+
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, RestXmlDateTimeWithPositiveOffset) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  mockRs.body = "PERhdGV0aW1lT2Zmc2V0c091dHB1dD4KICAgIDxkYXRldGltZT4yMDE5LTEyLTE3VDAwOjQ4OjE4KzAxOjAwPC9kYXRldGltZT4KPC9EYXRldGltZU9mZnNldHNPdXRwdXQ+Cg==";
+  SetMockResponse(mockRs);
+
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

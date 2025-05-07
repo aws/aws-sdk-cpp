@@ -12,19 +12,35 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlOmitsNullQuery) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   OmitsNullSerializesEmptyStringRequest request;
   request.SetNullValue(R"(null)");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/OmitsNullSerializesEmptyString";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlSerializesEmptyString) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   OmitsNullSerializesEmptyStringRequest request;
   request.SetEmptyString(R"()");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/OmitsNullSerializesEmptyString?Empty=";
+  ValidateRequestSent(expectedRq);
 }

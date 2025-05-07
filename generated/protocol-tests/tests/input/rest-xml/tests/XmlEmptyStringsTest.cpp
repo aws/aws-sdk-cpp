@@ -12,10 +12,20 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptyStrings) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   XmlEmptyStringsRequest request;
   request.SetEmptyString(R"()");
 
   auto outcome = client.XmlEmptyStrings(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "PFhtbEVtcHR5U3RyaW5nc1JlcXVlc3Q+CiAgICA8ZW1wdHlTdHJpbmc+PC9lbXB0eVN0cmluZz4KPC9YbWxFbXB0eVN0cmluZ3NSZXF1ZXN0Pgo=";
+  expectedRq.uri = "/XmlEmptyStrings";
+  expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
+  ValidateRequestSent(expectedRq);
 }

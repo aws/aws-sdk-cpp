@@ -12,9 +12,19 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(NoInputAndOutput, Ec2QueryNoInputAndOutput) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   NoInputAndOutputRequest request;
 
   auto outcome = client.NoInputAndOutput(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPU5vSW5wdXRBbmRPdXRwdXQmVmVyc2lvbj0yMDIwLTAxLTA4";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }

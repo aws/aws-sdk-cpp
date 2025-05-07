@@ -12,7 +12,10 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryListsRequest request;
   request.SetListArg({R"(foo)", R"(bar)", R"(baz)"});
   {
@@ -27,38 +30,78 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
   }
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jkxpc3RBcmcuMT1mb28mTGlzdEFyZy4yPWJhciZMaXN0QXJnLjM9YmF6JkNvbXBsZXhMaXN0QXJnLjEuSGk9aGVsbG8mQ29tcGxleExpc3RBcmcuMi5IaT1ob2xh";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryListsRequest request;
   request.SetListArg({});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryListsRequest request;
   request.SetListArgWithXmlNameMember({R"(A)", R"(B)"});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jkxpc3RBcmdXaXRoWG1sTmFtZU1lbWJlci4xPUEmTGlzdEFyZ1dpdGhYbWxOYW1lTWVtYmVyLjI9Qg==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryListsRequest request;
   request.SetListArgWithXmlName({R"(A)", R"(B)"});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4JkhpLjE9QSZIaS4yPUI=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryListsRequest request;
   {
     NestedStructWithList requestNestedWithList;
@@ -67,5 +110,12 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
   }
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jk5lc3RlZFdpdGhMaXN0Lkxpc3RBcmcuMT1BJk5lc3RlZFdpdGhMaXN0Lkxpc3RBcmcuMj1C";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }

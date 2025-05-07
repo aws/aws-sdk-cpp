@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentTypeInputWithObject) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeRequest request;
   request.SetStringValue(R"(string)");
   {
@@ -21,11 +24,21 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentTypeInputWithObject) {
   }
 
   auto outcome = client.DocumentType(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IHsKICAgICAgICAiZm9vIjogImJhciIKICAgIH0KfQ==";
+  expectedRq.uri = "/DocumentType";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithString) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeRequest request;
   request.SetStringValue(R"(string)");
   {
@@ -34,11 +47,21 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithString) {
   }
 
   auto outcome = client.DocumentType(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6ICJoZWxsbyIKfQ==";
+  expectedRq.uri = "/DocumentType";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithNumber) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeRequest request;
   request.SetStringValue(R"(string)");
   {
@@ -47,11 +70,21 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithNumber) {
   }
 
   auto outcome = client.DocumentType(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IDEwCn0=";
+  expectedRq.uri = "/DocumentType";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithBoolean) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeRequest request;
   request.SetStringValue(R"(string)");
   {
@@ -60,11 +93,21 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithBoolean) {
   }
 
   auto outcome = client.DocumentType(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IHRydWUKfQ==";
+  expectedRq.uri = "/DocumentType";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithList) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeRequest request;
   request.SetStringValue(R"(string)");
   {
@@ -73,5 +116,12 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithList) {
   }
 
   auto outcome = client.DocumentType(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IFsKICAgICAgICB0cnVlLAogICAgICAgICJoaSIsCiAgICAgICAgWwogICAgICAgICAgICAxLAogICAgICAgICAgICAyCiAgICAgICAgXSwKICAgICAgICB7CiAgICAgICAgICAgICJmb28iOiB7CiAgICAgICAgICAgICAgICAiYmF6IjogWwogICAgICAgICAgICAgICAgICAgIDMsCiAgICAgICAgICAgICAgICAgICAgNAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXQp9";
+  expectedRq.uri = "/DocumentType";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

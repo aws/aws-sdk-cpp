@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentTypeAsMapValue, DocumentTypeAsMapValueInput) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   DocumentTypeAsMapValueRequest request;
   {
     Aws::Utils::Document requestDocValuedMapItem(R"j({"f":1,"o":2})j");
@@ -28,5 +31,12 @@ AWS_PROTOCOL_TEST(DocumentTypeAsMapValue, DocumentTypeAsMapValueInput) {
   }
 
   auto outcome = client.DocumentTypeAsMapValue(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImRvY1ZhbHVlZE1hcCI6IHsKICAgICAgICAiZm9vIjogeyAiZiI6IDEsICJvIjogMiB9LAogICAgICAgICJiYXIiOiBbICJiIiwgImEiLCAiciIgXSwKICAgICAgICAiYmF6IjogIkJBWiIKICAgIH0KfQ==";
+  expectedRq.uri = "/DocumentTypeAsMapValue";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

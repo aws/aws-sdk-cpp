@@ -12,7 +12,10 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryString(R"(Hello there)");
   request.SetQueryStringList({R"(a)", R"(b)", R"(c)"});
@@ -36,63 +39,116 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
   request.SetQueryIntegerEnumList({1, 2});
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?String=Hello%20there&StringList=a&StringList=b&StringList=c&StringSet=a&StringSet=b&StringSet=c&Byte=1&Short=2&Integer=3&IntegerList=1&IntegerList=2&IntegerList=3&IntegerSet=1&IntegerSet=2&IntegerSet=3&Long=4&Float=1.1&Double=1.1&DoubleList=1.1&DoubleList=2.1&DoubleList=3.1&Boolean=true&BooleanList=true&BooleanList=false&BooleanList=true&Timestamp=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A02Z&TimestampList=1970-01-01T00%3A00%3A03Z&Enum=Foo&EnumList=Foo&EnumList=Baz&EnumList=Bar&IntegerEnum=1&IntegerEnumList=1&IntegerEnumList=2";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringMap) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryParamsMapOfStrings({{"QueryParamsStringKeyA",  R"(Foo)"}, {"QueryParamsStringKeyB",  R"(Bar)"}});
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?QueryParamsStringKeyA=Foo&QueryParamsStringKeyB=Bar";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringEscaping) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryString(R"( %:/?#[]@!$&'()*+,;=😹)");
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?String=%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNaNFloatQueryValues) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryFloat(std::numeric_limits<double>::quiet_NaN());
   request.SetQueryDouble(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?Float=NaN&Double=NaN";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsInfinityFloatQueryValues) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryFloat(std::numeric_limits<double>::infinity());
   request.SetQueryDouble(std::numeric_limits<double>::infinity());
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?Float=Infinity&Double=Infinity";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNegativeInfinityFloatQueryValues) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryFloat(-std::numeric_limits<double>::infinity());
   request.SetQueryDouble(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?Float=-Infinity&Double=-Infinity";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlZeroAndFalseQueryValues) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   AllQueryStringTypesRequest request;
   request.SetQueryInteger(0);
   request.SetQueryBoolean(false);
 
   auto outcome = client.AllQueryStringTypes(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/AllQueryStringTypesInput?Integer=0&Boolean=false";
+  ValidateRequestSent(expectedRq);
 }

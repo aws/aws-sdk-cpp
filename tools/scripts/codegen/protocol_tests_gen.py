@@ -20,6 +20,8 @@ PROTOCOL_TESTS_BASE_DIR = "tools/code-generation/protocol-tests"
 PROTOCOL_TESTS_CLIENT_MODELS = PROTOCOL_TESTS_BASE_DIR + "/api-descriptions"
 PROTOCOL_TESTS_ENDPOINT_RULES = "endpoint-rule-set.json"  # Dummy endpoint ruleset
 PROTOCOL_TESTS_DEFINITION_SETS = ["input", "output"]
+PROTOCOL_TESTS_MOCK_TEST_CLIENT = "protocol-mock"
+PROTOCOL_TESTS_MOCK_TEST_RULES = "protocol-mock-endpoint-rule-set.json"
 
 PROTOCOL_TESTS_GENERATED_CLIENTS_DIR = "generated/protocol-tests/test-clients"
 PROTOCOL_GENERATED_TESTS_DIR = "generated/protocol-tests/tests"
@@ -155,6 +157,7 @@ class ProtocolTestsGen(object):
             use_smithy = ModelUtils.is_smithy_enabled(service_model_name, self.client_models_dir, filename)
             service_models[service_model_name] = ServiceModel(service_model_name, filename,
                                                               PROTOCOL_TESTS_ENDPOINT_RULES, None, use_smithy)
+        service_models[PROTOCOL_TESTS_MOCK_TEST_CLIENT].endpoint_rule_set = PROTOCOL_TESTS_MOCK_TEST_RULES
         return service_models
 
     def _get_client_models_metadata(self) -> list:

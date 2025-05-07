@@ -12,9 +12,16 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(NoInputAndOutput, QueryNoInputAndOutput) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  SetMockResponse(mockRs);
+
   NoInputAndOutputRequest request;
 
   auto outcome = client.NoInputAndOutput(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

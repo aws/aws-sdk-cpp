@@ -12,9 +12,18 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyLists, Ec2XmlEmptyLists) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml)"}};
+  mockRs.body = "PFhtbEVtcHR5TGlzdHNSZXNwb25zZSB4bWxucz0iaHR0cHM6Ly9leGFtcGxlLmNvbS8iPgogIDxzdHJpbmdMaXN0Lz4KICA8c3RyaW5nU2V0Pjwvc3RyaW5nU2V0Pgo8L1htbEVtcHR5TGlzdHNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlEmptyListsRequest request;
 
   auto outcome = client.XmlEmptyLists(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

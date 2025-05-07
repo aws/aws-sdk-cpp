@@ -13,9 +13,18 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(RecursiveShapes, RecursiveShapes) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  mockRs.body = "PFJlY3Vyc2l2ZVNoYXBlc1Jlc3BvbnNlPgogICAgPG5lc3RlZD4KICAgICAgICA8Zm9vPkZvbzE8L2Zvbz4KICAgICAgICA8bmVzdGVkPgogICAgICAgICAgICA8YmFyPkJhcjE8L2Jhcj4KICAgICAgICAgICAgPHJlY3Vyc2l2ZU1lbWJlcj4KICAgICAgICAgICAgICAgIDxmb28+Rm9vMjwvZm9vPgogICAgICAgICAgICAgICAgPG5lc3RlZD4KICAgICAgICAgICAgICAgICAgICA8YmFyPkJhcjI8L2Jhcj4KICAgICAgICAgICAgICAgIDwvbmVzdGVkPgogICAgICAgICAgICA8L3JlY3Vyc2l2ZU1lbWJlcj4KICAgICAgICA8L25lc3RlZD4KICAgIDwvbmVzdGVkPgo8L1JlY3Vyc2l2ZVNoYXBlc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   RecursiveShapesRequest request;
 
   auto outcome = client.RecursiveShapes(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

@@ -12,11 +12,19 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryParamsAsStringListMap, RestXmlQueryParamsStringListMap) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryParamsAsStringListMapRequest request;
   request.SetQux(R"(named)");
   request.SetFoo({{"baz",  {R"(bar)", R"(qux)"}}});
 
   auto outcome = client.QueryParamsAsStringListMap(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/StringListMap?corge=named&baz=bar&baz=qux";
+  ValidateRequestSent(expectedRq);
 }

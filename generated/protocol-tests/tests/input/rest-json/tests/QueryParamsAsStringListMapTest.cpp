@@ -12,11 +12,19 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryParamsAsStringListMap, RestJsonQueryParamsStringListMap) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryParamsAsStringListMapRequest request;
   request.SetQux(R"(named)");
   request.SetFoo({{"baz",  {R"(bar)", R"(qux)"}}});
 
   auto outcome = client.QueryParamsAsStringListMap(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/StringListMap?corge=named&baz=bar&baz=qux";
+  ValidateRequestSent(expectedRq);
 }

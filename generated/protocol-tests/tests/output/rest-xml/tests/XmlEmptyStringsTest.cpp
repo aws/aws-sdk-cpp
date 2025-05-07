@@ -12,17 +12,35 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptyStrings) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  mockRs.body = "PFhtbEVtcHR5U3RyaW5nc1Jlc3BvbnNlPgogICAgPGVtcHR5U3RyaW5nPjwvZW1wdHlTdHJpbmc+CjwvWG1sRW1wdHlTdHJpbmdzUmVzcG9uc2U+Cg==";
+  SetMockResponse(mockRs);
+
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptySelfClosedStrings) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  mockRs.body = "PFhtbEVtcHR5U3RyaW5nc1Jlc3BvbnNlPgogICAgPGVtcHR5U3RyaW5nLz4KPC9YbWxFbXB0eVN0cmluZ3NSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

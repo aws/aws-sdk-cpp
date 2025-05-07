@@ -12,18 +12,37 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(TestGetNoPayload, RestJsonHttpGetWithNoModeledBody) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   TestGetNoPayloadRequest request;
 
   auto outcome = client.TestGetNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/no_payload";
+  expectedRq.forbidHeaders = {"Content-Length", "Content-Type"};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(TestGetNoPayload, RestJsonHttpGetWithHeaderMemberNoModeledBody) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   TestGetNoPayloadRequest request;
   request.SetTestId(R"(t-12345)");
 
   auto outcome = client.TestGetNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/no_payload";
+  expectedRq.headers = {{"X-Amz-Test-Id", R"(t-12345)"}};
+  expectedRq.forbidHeaders = {"Content-Length", "Content-Type"};
+  ValidateRequestSent(expectedRq);
 }

@@ -12,7 +12,10 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(PutWithContentEncoding, SDKAppliedContentEncoding_awsQuery) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   PutWithContentEncodingRequest request;
   request.SetData(R"(RjCEL3kBwqPivZUXGiyA5JCujtWgJAkKRlnTEsNYfBRGOS0f7LT6R3bCSOXeJ4auSHzQ4BEZZTklUyj5
 1HEojihShQC2jkQJrNdGOZNSW49yRO0XbnGmeczUHbZqZRelLFKW4xjru9uTuB8lFCtwoGgciFsgqTF8
@@ -145,11 +148,20 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
 )");
 
   auto outcome = client.PutWithContentEncoding(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(PutWithContentEncoding, SDKAppendsGzipAndIgnoresHttpProvidedEncoding_awsQuery) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   PutWithContentEncodingRequest request;
   request.SetEncoding(R"(custom)");
   request.SetData(R"(RjCEL3kBwqPivZUXGiyA5JCujtWgJAkKRlnTEsNYfBRGOS0f7LT6R3bCSOXeJ4auSHzQ4BEZZTklUyj5
@@ -283,5 +295,11 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
 )");
 
   auto outcome = client.PutWithContentEncoding(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
+  ValidateRequestSent(expectedRq);
 }

@@ -19,6 +19,7 @@ int main(int argc, char** argv)
     Aws::Testing::ParseArgs(argc, argv);
 
     Aws::InitAPI(options);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", true);
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS();
     Aws::ShutdownAPI(options);

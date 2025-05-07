@@ -12,10 +12,20 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonBlobs, RestJsonJsonBlobs) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonBlobsRequest request;
   request.SetData(Aws::String(R"(value)"));
 
   auto outcome = client.JsonBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImRhdGEiOiAiZG1Gc2RXVT0iCn0=";
+  expectedRq.uri = "/JsonBlobs";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

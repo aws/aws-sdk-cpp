@@ -1,10 +1,11 @@
-add_project(rest-xml-input-protocol-tests
+add_project(protocol-rest-xml-input-tests
     "Tests for the protocol rest-xml of AWS C++ SDK"
     testing-resources
+    aws-cpp-sdk-protocol-mock
     aws-cpp-sdk-rest-xml-protocol
     aws-cpp-sdk-core)
 
-file(GLOB AWS_REST_XML_INPUT_PROTOCOL_TESTS_SRC
+file(GLOB AWS_PROTOCOL_REST_XML_INPUT_TESTS_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
 )
@@ -22,9 +23,9 @@ if (AUTORUN_UNIT_TESTS)
 endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} "${AWS_REST_XML_INPUT_PROTOCOL_TESTS_SRC}")
+    add_library(${PROJECT_NAME} "${AWS_PROTOCOL_REST_XML_INPUT_TESTS_SRC}")
 else()
-    add_executable(${PROJECT_NAME} "${AWS_REST_XML_INPUT_PROTOCOL_TESTS_SRC}")
+    add_executable(${PROJECT_NAME} "${AWS_PROTOCOL_REST_XML_INPUT_TESTS_SRC}")
 endif()
 
 set_compiler_flags(${PROJECT_NAME})

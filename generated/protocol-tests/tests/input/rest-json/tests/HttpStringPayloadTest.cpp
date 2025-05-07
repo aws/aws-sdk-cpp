@@ -12,10 +12,21 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpStringPayload, RestJsonStringPayloadRequest) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpStringPayloadRequest request;
   request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", R"(rawstring)", std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.HttpStringPayload(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "cmF3c3RyaW5n";
+  expectedRq.uri = "/StringPayload";
+  expectedRq.headers = {{"Content-Type", R"(text/plain)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }

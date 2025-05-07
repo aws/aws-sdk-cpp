@@ -12,9 +12,20 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(EndpointOperation, AwsQueryEndpointTrait) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointOperationRequest request;
 
   auto outcome = client.EndpointOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPUVuZHBvaW50T3BlcmF0aW9uJlZlcnNpb249MjAyMC0wMS0wOA==";
+  expectedRq.uri = "/";
+  expectedRq.host = "foo.example.com";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }

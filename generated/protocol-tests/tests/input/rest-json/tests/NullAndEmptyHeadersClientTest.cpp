@@ -12,12 +12,22 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(NullAndEmptyHeadersClient, RestJsonNullAndEmptyHeaders) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   NullAndEmptyHeadersClientRequest request;
   request.SetA(R"(null)");
   request.SetB(R"()");
   request.SetC({});
 
   auto outcome = client.NullAndEmptyHeadersClient(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/NullAndEmptyHeadersClient";
+  expectedRq.headers = {{"X-B", R"()"}, {"X-C", R"()"}};
+  expectedRq.forbidHeaders = {"X-A"};
+  ValidateRequestSent(expectedRq);
 }

@@ -12,9 +12,17 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(TimestampFormatHeaders, RestJsonTimestampFormatHeaders) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"X-defaultFormat", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}, {"X-memberDateTime", R"(2019-12-16T23:48:18Z)"}, {"X-memberEpochSeconds", R"(1576540098)"}, {"X-memberHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}, {"X-targetDateTime", R"(2019-12-16T23:48:18Z)"}, {"X-targetEpochSeconds", R"(1576540098)"}, {"X-targetHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}};
+  SetMockResponse(mockRs);
+
   TimestampFormatHeadersRequest request;
 
   auto outcome = client.TimestampFormatHeaders(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

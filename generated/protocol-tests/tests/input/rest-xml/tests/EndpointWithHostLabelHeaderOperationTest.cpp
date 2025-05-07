@@ -12,10 +12,20 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(EndpointWithHostLabelHeaderOperation, RestXmlEndpointTraitWithHostLabelAndHttpBinding) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointWithHostLabelHeaderOperationRequest request;
   request.SetAccountId(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelHeaderOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/EndpointWithHostLabelHeaderOperation";
+  expectedRq.host = "bar.example.com";
+  expectedRq.headers = {{"X-Amz-Account-Id", R"(bar)"}};
+  ValidateRequestSent(expectedRq);
 }

@@ -12,97 +12,205 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStringUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJpbmdWYWx1ZSI6ICJmb28iCiAgICB9Cn0=";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBooleanUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJib29sZWFuVmFsdWUiOiB0cnVlCiAgICB9Cn0=";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeNumberUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJudW1iZXJWYWx1ZSI6IDEKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBlobUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJibG9iVmFsdWUiOiAiWm05diIKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeTimestampUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ0aW1lc3RhbXBWYWx1ZSI6IDEzOTg3OTYyMzgKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeEnumUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJlbnVtVmFsdWUiOiAiRm9vIgogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIntEnumUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJpbnRFbnVtVmFsdWUiOiAxCiAgICB9Cn0=";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeListUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJsaXN0VmFsdWUiOiBbImZvbyIsICJiYXIiXQogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeMapUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAgICAgIH0KICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStructureUnionValue) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIgnoreType) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJfX3R5cGUiOiAiYXdzLnByb3RvY29sdGVzdHMuanNvbjEwI015VW5pb24iLAogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeAllowNulls) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAic3RyaW5nVmFsdWUiOiBudWxsLAogICAgICAiYm9vbGVhblZhbHVlIjogbnVsbCwKICAgICAgIm51bWJlclZhbHVlIjogbnVsbCwKICAgICAgImJsb2JWYWx1ZSI6IG51bGwsCiAgICAgICJ0aW1lc3RhbXBWYWx1ZSI6IG51bGwsCiAgICAgICJlbnVtVmFsdWUiOiBudWxsLAogICAgICAiaW50RW51bVZhbHVlIjogbnVsbCwKICAgICAgImxpc3RWYWx1ZSI6IG51bGwsCiAgICAgICJtYXBWYWx1ZSI6IG51bGwsCiAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICJoaSI6ICJoZWxsbyIKICAgICAgfQogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

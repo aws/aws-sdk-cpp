@@ -12,9 +12,18 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlIntEnums, Ec2XmlIntEnums) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml;charset=UTF-8)"}};
+  mockRs.body = "PFhtbEludEVudW1zUmVzcG9uc2UgeG1sbnM9Imh0dHBzOi8vZXhhbXBsZS5jb20vIj4KICAgIDxpbnRFbnVtMT4xPC9pbnRFbnVtMT4KICAgIDxpbnRFbnVtMj4yPC9pbnRFbnVtMj4KICAgIDxpbnRFbnVtMz4zPC9pbnRFbnVtMz4KICAgIDxpbnRFbnVtTGlzdD4KICAgICAgICA8bWVtYmVyPjE8L21lbWJlcj4KICAgICAgICA8bWVtYmVyPjI8L21lbWJlcj4KICAgIDwvaW50RW51bUxpc3Q+CiAgICA8aW50RW51bVNldD4KICAgICAgICA8bWVtYmVyPjE8L21lbWJlcj4KICAgICAgICA8bWVtYmVyPjI8L21lbWJlcj4KICAgIDwvaW50RW51bVNldD4KICAgIDxpbnRFbnVtTWFwPgogICAgICAgIDxlbnRyeT4KICAgICAgICAgICAgPGtleT5hPC9rZXk+CiAgICAgICAgICAgIDx2YWx1ZT4xPC92YWx1ZT4KICAgICAgICA8L2VudHJ5PgogICAgICAgIDxlbnRyeT4KICAgICAgICAgICAgPGtleT5iPC9rZXk+CiAgICAgICAgICAgIDx2YWx1ZT4yPC92YWx1ZT4KICAgICAgICA8L2VudHJ5PgogICAgPC9pbnRFbnVtTWFwPgogICAgPHJlcXVlc3RJZD5yZXF1ZXN0aWQ8L3JlcXVlc3RJZD4KPC9YbWxJbnRFbnVtc1Jlc3BvbnNlPgo=";
+  SetMockResponse(mockRs);
+
   XmlIntEnumsRequest request;
 
   auto outcome = client.XmlIntEnums(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

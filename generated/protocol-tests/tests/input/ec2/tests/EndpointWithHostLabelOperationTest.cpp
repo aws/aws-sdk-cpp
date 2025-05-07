@@ -12,10 +12,21 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, Ec2QueryEndpointTraitWithHostLabel) {
-  EC2ProtocolClient client;
+  EC2ProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   EndpointWithHostLabelOperationRequest request;
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPUVuZHBvaW50V2l0aEhvc3RMYWJlbE9wZXJhdGlvbiZWZXJzaW9uPTIwMjAtMDEtMDgmTGFiZWw9YmFy";
+  expectedRq.uri = "/";
+  expectedRq.host = "foo.bar.example.com";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  ValidateRequestSent(expectedRq);
 }

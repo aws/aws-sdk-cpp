@@ -1,10 +1,11 @@
-add_project(json_1_0-input-protocol-tests
+add_project(protocol-json_1_0-input-tests
     "Tests for the protocol json of AWS C++ SDK"
     testing-resources
+    aws-cpp-sdk-protocol-mock
     aws-cpp-sdk-json-rpc-10
     aws-cpp-sdk-core)
 
-file(GLOB AWS_JSON_1_0_INPUT_PROTOCOL_TESTS_SRC
+file(GLOB AWS_PROTOCOL_JSON_1_0_INPUT_TESTS_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
 )
@@ -22,9 +23,9 @@ if (AUTORUN_UNIT_TESTS)
 endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} "${AWS_JSON_1_0_INPUT_PROTOCOL_TESTS_SRC}")
+    add_library(${PROJECT_NAME} "${AWS_PROTOCOL_JSON_1_0_INPUT_TESTS_SRC}")
 else()
-    add_executable(${PROJECT_NAME} "${AWS_JSON_1_0_INPUT_PROTOCOL_TESTS_SRC}")
+    add_executable(${PROJECT_NAME} "${AWS_PROTOCOL_JSON_1_0_INPUT_TESTS_SRC}")
 endif()
 
 set_compiler_flags(${PROJECT_NAME})

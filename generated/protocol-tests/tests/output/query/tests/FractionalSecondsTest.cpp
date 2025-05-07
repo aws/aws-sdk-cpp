@@ -12,9 +12,18 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(FractionalSeconds, AwsQueryDateTimeWithFractionalSeconds) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml)"}};
+  mockRs.body = "PEZyYWN0aW9uYWxTZWNvbmRzUmVzcG9uc2UgeG1sbnM9Imh0dHBzOi8vZXhhbXBsZS5jb20vIj4KICAgIDxGcmFjdGlvbmFsU2Vjb25kc1Jlc3VsdD4KICAgICAgICA8ZGF0ZXRpbWU+MjAwMC0wMS0wMlQyMDozNDo1Ni4xMjNaPC9kYXRldGltZT4KICAgIDwvRnJhY3Rpb25hbFNlY29uZHNSZXN1bHQ+CjwvRnJhY3Rpb25hbFNlY29uZHNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

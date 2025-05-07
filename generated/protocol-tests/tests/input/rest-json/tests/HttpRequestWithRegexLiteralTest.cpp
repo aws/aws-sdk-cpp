@@ -12,10 +12,18 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithRegexLiteral, RestJsonToleratesRegexCharsInSegments) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithRegexLiteralRequest request;
   request.SetStr(R"(abc)");
 
   auto outcome = client.HttpRequestWithRegexLiteral(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/ReDosLiteral/abc/(a+)+";
+  ValidateRequestSent(expectedRq);
 }

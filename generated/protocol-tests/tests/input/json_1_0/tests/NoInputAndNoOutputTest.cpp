@@ -12,9 +12,19 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10MustAlwaysSendEmptyJsonPayload) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "e30=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.NoInputAndNoOutput)"}};
+  ValidateRequestSent(expectedRq);
 }

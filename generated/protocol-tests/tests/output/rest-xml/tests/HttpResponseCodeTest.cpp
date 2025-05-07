@@ -12,9 +12,17 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpResponseCode, RestXmlHttpResponseCode) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 201;
+  mockRs.headers = {{"Content-Type", R"(application/xml)"}};
+  SetMockResponse(mockRs);
+
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

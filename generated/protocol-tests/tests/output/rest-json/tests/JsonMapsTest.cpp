@@ -12,33 +12,69 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonJsonMaps) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImRlbnNlU3RydWN0TWFwIjogewogICAgICAgICJmb28iOiB7CiAgICAgICAgICAgICJoaSI6ICJ0aGVyZSIKICAgICAgICB9LAogICAgICAgICJiYXoiOiB7CiAgICAgICAgICAgICJoaSI6ICJieWUiCiAgICAgICAgfQogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesZeroValuesInMaps) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImRlbnNlTnVtYmVyTWFwIjogewogICAgICAgICJ4IjogMAogICAgfSwKICAgICJkZW5zZUJvb2xlYW5NYXAiOiB7CiAgICAgICAgIngiOiBmYWxzZQogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMap) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImRlbnNlU2V0TWFwIjogewogICAgICAgICJ4IjogW10sCiAgICAgICAgInkiOiBbImEiLCAiYiJdCiAgICB9Cn0=";
+  SetMockResponse(mockRs);
+
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMapAndSkipsNull) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImRlbnNlU2V0TWFwIjogewogICAgICAgICJ4IjogW10sCiAgICAgICAgInkiOiBbImEiLCAiYiJdLAogICAgICAgICJ6IjogbnVsbAogICAgfQp9";
+  SetMockResponse(mockRs);
+
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }
