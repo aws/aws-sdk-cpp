@@ -411,7 +411,7 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const std::shared_ptr<HttpRequ
             }
             else
             {
-                curl_easy_setopt(requestHandle, CURLOPT_PUT, 1L);
+                curl_easy_setopt(requestHandle, CURLOPT_UPLOAD, 1L);
             }
             break;
         case HttpMethod::HTTP_HEAD:
