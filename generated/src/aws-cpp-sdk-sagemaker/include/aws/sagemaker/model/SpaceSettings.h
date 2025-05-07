@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/SpaceJupyterLabAppSettings.h>
 #include <aws/sagemaker/model/AppType.h>
 #include <aws/sagemaker/model/SpaceStorageSettings.h>
+#include <aws/sagemaker/model/FeatureStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/CustomFileSystem.h>
 #include <utility>
@@ -115,6 +116,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>If you enable this option, SageMaker AI creates the following resources on
+     * your behalf when you create the space:</p> <ul> <li> <p>The user profile that
+     * possesses the space.</p> </li> <li> <p>The app that the space contains.</p>
+     * </li> </ul>
+     */
+    inline FeatureStatus GetSpaceManagedResources() const { return m_spaceManagedResources; }
+    inline bool SpaceManagedResourcesHasBeenSet() const { return m_spaceManagedResourcesHasBeenSet; }
+    inline void SetSpaceManagedResources(FeatureStatus value) { m_spaceManagedResourcesHasBeenSet = true; m_spaceManagedResources = value; }
+    inline SpaceSettings& WithSpaceManagedResources(FeatureStatus value) { SetSpaceManagedResources(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A file system, created by you, that you assign to a space for an Amazon
      * SageMaker AI Domain. Permitted users can access this file system in Amazon
      * SageMaker AI Studio.</p>
@@ -147,6 +161,9 @@ namespace Model
 
     SpaceStorageSettings m_spaceStorageSettings;
     bool m_spaceStorageSettingsHasBeenSet = false;
+
+    FeatureStatus m_spaceManagedResources{FeatureStatus::NOT_SET};
+    bool m_spaceManagedResourcesHasBeenSet = false;
 
     Aws::Vector<CustomFileSystem> m_customFileSystems;
     bool m_customFileSystemsHasBeenSet = false;

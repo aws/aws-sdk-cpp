@@ -14,6 +14,7 @@
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceUpdateSettings.h>
 #include <aws/medialive/model/ChannelEngineVersionRequest.h>
+#include <aws/medialive/model/AnywhereSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -185,6 +186,18 @@ namespace Model
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline UpdateChannelRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The Elemental Anywhere settings for this channel.
+     */
+    inline const AnywhereSettings& GetAnywhereSettings() const { return m_anywhereSettings; }
+    inline bool AnywhereSettingsHasBeenSet() const { return m_anywhereSettingsHasBeenSet; }
+    template<typename AnywhereSettingsT = AnywhereSettings>
+    void SetAnywhereSettings(AnywhereSettingsT&& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = std::forward<AnywhereSettingsT>(value); }
+    template<typename AnywhereSettingsT = AnywhereSettings>
+    UpdateChannelRequest& WithAnywhereSettings(AnywhereSettingsT&& value) { SetAnywhereSettings(std::forward<AnywhereSettingsT>(value)); return *this;}
+    ///@}
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
@@ -222,6 +235,9 @@ namespace Model
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
+
+    AnywhereSettings m_anywhereSettings;
+    bool m_anywhereSettingsHasBeenSet = false;
   };
 
 } // namespace Model

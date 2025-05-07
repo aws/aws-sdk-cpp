@@ -106,7 +106,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time of when the cluster was last updated.</p>
+     * <p>The time when the cluster was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSoftwareUpdateTime() const { return m_lastSoftwareUpdateTime; }
     inline bool LastSoftwareUpdateTimeHasBeenSet() const { return m_lastSoftwareUpdateTimeHasBeenSet; }

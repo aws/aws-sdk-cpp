@@ -22,6 +22,7 @@
 #include <aws/synthetics/model/Canary.h>
 #include <aws/synthetics/model/CanaryCodeInput.h>
 #include <aws/synthetics/model/CanaryCodeOutput.h>
+#include <aws/synthetics/model/CanaryDryRunConfigOutput.h>
 #include <aws/synthetics/model/CanaryLastRun.h>
 #include <aws/synthetics/model/CanaryRun.h>
 #include <aws/synthetics/model/CanaryRunConfigInput.h>
@@ -52,6 +53,7 @@
 #include <aws/synthetics/model/DescribeRuntimeVersionsResult.h>
 #include <aws/synthetics/model/DisassociateResourceRequest.h>
 #include <aws/synthetics/model/DisassociateResourceResult.h>
+#include <aws/synthetics/model/DryRunConfigOutput.h>
 #include <aws/synthetics/model/EncryptionMode.h>
 #include <aws/synthetics/model/GetCanaryRequest.h>
 #include <aws/synthetics/model/GetCanaryResult.h>
@@ -71,8 +73,11 @@
 #include <aws/synthetics/model/ListTagsForResourceResult.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <aws/synthetics/model/ResourceToTag.h>
+#include <aws/synthetics/model/RunType.h>
 #include <aws/synthetics/model/RuntimeVersion.h>
 #include <aws/synthetics/model/S3EncryptionConfig.h>
+#include <aws/synthetics/model/StartCanaryDryRunRequest.h>
+#include <aws/synthetics/model/StartCanaryDryRunResult.h>
 #include <aws/synthetics/model/StartCanaryRequest.h>
 #include <aws/synthetics/model/StartCanaryResult.h>
 #include <aws/synthetics/model/StopCanaryRequest.h>

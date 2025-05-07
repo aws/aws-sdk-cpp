@@ -75,6 +75,19 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
 
       m_filterInArnsHasBeenSet = true;
     }
+    XmlNode filterOutArnsNode = resultNode.FirstChild("filterOutArnSet");
+    if(!filterOutArnsNode.IsNull())
+    {
+      XmlNode filterOutArnsMember = filterOutArnsNode.FirstChild("item");
+      m_filterOutArnsHasBeenSet = !filterOutArnsMember.IsNull();
+      while(!filterOutArnsMember.IsNull())
+      {
+        m_filterOutArns.push_back(filterOutArnsMember.GetText());
+        filterOutArnsMember = filterOutArnsMember.NextNode("item");
+      }
+
+      m_filterOutArnsHasBeenSet = true;
+    }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
@@ -223,6 +236,15 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       }
   }
 
+  if(m_filterOutArnsHasBeenSet)
+  {
+      unsigned filterOutArnsIdx = 1;
+      for(auto& item : m_filterOutArns)
+      {
+        oStream << location << index << locationValue << ".FilterOutArnSet." << filterOutArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_startDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
@@ -342,6 +364,14 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_filterInArns)
       {
         oStream << location << ".FilterInArnSet." << filterInArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_filterOutArnsHasBeenSet)
+  {
+      unsigned filterOutArnsIdx = 1;
+      for(auto& item : m_filterOutArns)
+      {
+        oStream << location << ".FilterOutArnSet." << filterOutArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_startDateHasBeenSet)

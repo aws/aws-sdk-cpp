@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DockerSettings.h>
 #include <aws/sagemaker/model/AmazonQSettings.h>
+#include <aws/sagemaker/model/UnifiedStudioSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -111,6 +112,19 @@ namespace Model
     template<typename AmazonQSettingsT = AmazonQSettings>
     DomainSettingsForUpdate& WithAmazonQSettings(AmazonQSettingsT&& value) { SetAmazonQSettings(std::forward<AmazonQSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The settings that apply to an SageMaker AI domain when you use it in Amazon
+     * SageMaker Unified Studio.</p>
+     */
+    inline const UnifiedStudioSettings& GetUnifiedStudioSettings() const { return m_unifiedStudioSettings; }
+    inline bool UnifiedStudioSettingsHasBeenSet() const { return m_unifiedStudioSettingsHasBeenSet; }
+    template<typename UnifiedStudioSettingsT = UnifiedStudioSettings>
+    void SetUnifiedStudioSettings(UnifiedStudioSettingsT&& value) { m_unifiedStudioSettingsHasBeenSet = true; m_unifiedStudioSettings = std::forward<UnifiedStudioSettingsT>(value); }
+    template<typename UnifiedStudioSettingsT = UnifiedStudioSettings>
+    DomainSettingsForUpdate& WithUnifiedStudioSettings(UnifiedStudioSettingsT&& value) { SetUnifiedStudioSettings(std::forward<UnifiedStudioSettingsT>(value)); return *this;}
+    ///@}
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
@@ -127,6 +141,9 @@ namespace Model
 
     AmazonQSettings m_amazonQSettings;
     bool m_amazonQSettingsHasBeenSet = false;
+
+    UnifiedStudioSettings m_unifiedStudioSettings;
+    bool m_unifiedStudioSettingsHasBeenSet = false;
   };
 
 } // namespace Model

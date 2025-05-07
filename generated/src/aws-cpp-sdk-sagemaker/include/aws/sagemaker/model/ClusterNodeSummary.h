@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time of when SageMaker last updated the software of the instances in the
+     * <p>The time when SageMaker last updated the software of the instances in the
      * cluster.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSoftwareUpdateTime() const { return m_lastSoftwareUpdateTime; }

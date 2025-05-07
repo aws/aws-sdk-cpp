@@ -90,9 +90,10 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>  <p>The environment variables
-     * keys and values are not encrypted. Do not store sensitive information in this
-     * field.</p> 
+     * Runtime environment variables</a>.</p>  <p>Environment variable keys
+     * and values are encrypted at rest using Amazon Web Services owned KMS keys.
+     * However, the environment variables are not encrypted on the client side. Do not
+     * store sensitive information in them.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/synthetics/model/CanaryRunStatus.h>
 #include <aws/synthetics/model/CanaryRunTimeline.h>
+#include <aws/synthetics/model/CanaryDryRunConfigOutput.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,18 @@ namespace Model
     template<typename ArtifactS3LocationT = Aws::String>
     CanaryRun& WithArtifactS3Location(ArtifactS3LocationT&& value) { SetArtifactS3Location(std::forward<ArtifactS3LocationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Returns the dry run configurations for a canary.</p>
+     */
+    inline const CanaryDryRunConfigOutput& GetDryRunConfig() const { return m_dryRunConfig; }
+    inline bool DryRunConfigHasBeenSet() const { return m_dryRunConfigHasBeenSet; }
+    template<typename DryRunConfigT = CanaryDryRunConfigOutput>
+    void SetDryRunConfig(DryRunConfigT&& value) { m_dryRunConfigHasBeenSet = true; m_dryRunConfig = std::forward<DryRunConfigT>(value); }
+    template<typename DryRunConfigT = CanaryDryRunConfigOutput>
+    CanaryRun& WithDryRunConfig(DryRunConfigT&& value) { SetDryRunConfig(std::forward<DryRunConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -116,6 +129,9 @@ namespace Model
 
     Aws::String m_artifactS3Location;
     bool m_artifactS3LocationHasBeenSet = false;
+
+    CanaryDryRunConfigOutput m_dryRunConfig;
+    bool m_dryRunConfigHasBeenSet = false;
   };
 
 } // namespace Model

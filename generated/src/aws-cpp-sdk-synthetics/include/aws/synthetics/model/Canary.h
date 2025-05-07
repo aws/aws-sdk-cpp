@@ -16,6 +16,7 @@
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/synthetics/model/ArtifactConfigOutput.h>
+#include <aws/synthetics/model/DryRunConfigOutput.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain data about successful runs of this canary.</p>
+     * <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetSuccessRetentionPeriodInDays() const { return m_successRetentionPeriodInDays; }
     inline bool SuccessRetentionPeriodInDaysHasBeenSet() const { return m_successRetentionPeriodInDaysHasBeenSet; }
@@ -131,6 +135,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain data about failed runs of this canary.</p>
+     * <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetFailureRetentionPeriodInDays() const { return m_failureRetentionPeriodInDays; }
     inline bool FailureRetentionPeriodInDaysHasBeenSet() const { return m_failureRetentionPeriodInDaysHasBeenSet; }
@@ -277,6 +284,18 @@ namespace Model
     template<typename ArtifactConfigT = ArtifactConfigOutput>
     Canary& WithArtifactConfig(ArtifactConfigT&& value) { SetArtifactConfig(std::forward<ArtifactConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Returns the dry run configurations for a canary.</p>
+     */
+    inline const DryRunConfigOutput& GetDryRunConfig() const { return m_dryRunConfig; }
+    inline bool DryRunConfigHasBeenSet() const { return m_dryRunConfigHasBeenSet; }
+    template<typename DryRunConfigT = DryRunConfigOutput>
+    void SetDryRunConfig(DryRunConfigT&& value) { m_dryRunConfigHasBeenSet = true; m_dryRunConfig = std::forward<DryRunConfigT>(value); }
+    template<typename DryRunConfigT = DryRunConfigOutput>
+    Canary& WithDryRunConfig(DryRunConfigT&& value) { SetDryRunConfig(std::forward<DryRunConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -332,6 +351,9 @@ namespace Model
 
     ArtifactConfigOutput m_artifactConfig;
     bool m_artifactConfigHasBeenSet = false;
+
+    DryRunConfigOutput m_dryRunConfig;
+    bool m_dryRunConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ namespace Model
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_package">Packaging
    * your Node.js canary files</a> </p> </li> <li> <p>For Python canaries, the folder
-   * structure must be <code>python/<i>myCanaryFilename.p</i> </code> or
+   * structure must be <code>python/<i>myCanaryFilename.py</i> </code> or
    * <code>python/<i>myFolder/myCanaryFilename.py</i> </code> For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Python.html#CloudWatch_Synthetics_Canaries_WritingCanary_Python_package">Packaging

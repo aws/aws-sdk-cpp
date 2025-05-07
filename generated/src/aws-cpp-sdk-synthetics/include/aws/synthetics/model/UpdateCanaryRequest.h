@@ -120,9 +120,10 @@ namespace Model
     ///@{
     /**
      * <p>A structure that contains the timeout value that is used for each individual
-     * run of the canary.</p>  <p>The environment variables keys and values
-     * are not encrypted. Do not store sensitive information in this field.</p>
-     * 
+     * run of the canary.</p>  <p>Environment variable keys and values are
+     * encrypted at rest using Amazon Web Services owned KMS keys. However, the
+     * environment variables are not encrypted on the client side. Do not store
+     * sensitive information in them.</p> 
      */
     inline const CanaryRunConfigInput& GetRunConfig() const { return m_runConfig; }
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
@@ -135,6 +136,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain data about successful runs of this canary.</p>
+     * <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetSuccessRetentionPeriodInDays() const { return m_successRetentionPeriodInDays; }
     inline bool SuccessRetentionPeriodInDaysHasBeenSet() const { return m_successRetentionPeriodInDaysHasBeenSet; }
@@ -145,6 +149,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain data about failed runs of this canary.</p>
+     * <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetFailureRetentionPeriodInDays() const { return m_failureRetentionPeriodInDays; }
     inline bool FailureRetentionPeriodInDaysHasBeenSet() const { return m_failureRetentionPeriodInDaysHasBeenSet; }
@@ -231,6 +238,22 @@ namespace Model
     inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
     inline UpdateCanaryRequest& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { SetProvisionedResourceCleanup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Update the existing canary using the updated configurations from the DryRun
+     * associated with the DryRunId.</p>  <p>When you use the
+     * <code>dryRunId</code> field when updating a canary, the only other field you can
+     * provide is the <code>Schedule</code>. Adding any other field will thrown an
+     * exception.</p> 
+     */
+    inline const Aws::String& GetDryRunId() const { return m_dryRunId; }
+    inline bool DryRunIdHasBeenSet() const { return m_dryRunIdHasBeenSet; }
+    template<typename DryRunIdT = Aws::String>
+    void SetDryRunId(DryRunIdT&& value) { m_dryRunIdHasBeenSet = true; m_dryRunId = std::forward<DryRunIdT>(value); }
+    template<typename DryRunIdT = Aws::String>
+    UpdateCanaryRequest& WithDryRunId(DryRunIdT&& value) { SetDryRunId(std::forward<DryRunIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -271,6 +294,9 @@ namespace Model
 
     ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
+
+    Aws::String m_dryRunId;
+    bool m_dryRunIdHasBeenSet = false;
   };
 
 } // namespace Model

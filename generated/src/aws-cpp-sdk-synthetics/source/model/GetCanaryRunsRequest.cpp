@@ -28,6 +28,17 @@ Aws::String GetCanaryRunsRequest::SerializePayload() const
 
   }
 
+  if(m_dryRunIdHasBeenSet)
+  {
+   payload.WithString("DryRunId", m_dryRunId);
+
+  }
+
+  if(m_runTypeHasBeenSet)
+  {
+   payload.WithString("RunType", RunTypeMapper::GetNameForRunType(m_runType));
+  }
+
   return payload.View().WriteReadable();
 }
 
