@@ -12,9 +12,18 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonInvalidGreetingError) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 400;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Amzn-Errortype", R"(InvalidGreeting)"}};
+  mockRs.body = "ewogICAgIk1lc3NhZ2UiOiAiSGkiCn0=";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }

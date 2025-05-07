@@ -12,18 +12,40 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAutoFill) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryIdempotencyTokenAutoFillRequest request;
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5SWRlbXBvdGVuY3lUb2tlbkF1dG9GaWxsJlZlcnNpb249MjAyMC0wMS0wOCZ0b2tlbj0wMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDA=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAutoFillIsSet) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryIdempotencyTokenAutoFillRequest request;
   request.SetToken(R"(00000000-0000-4000-8000-000000000123)");
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPVF1ZXJ5SWRlbXBvdGVuY3lUb2tlbkF1dG9GaWxsJlZlcnNpb249MjAyMC0wMS0wOCZ0b2tlbj0wMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAxMjM=";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }

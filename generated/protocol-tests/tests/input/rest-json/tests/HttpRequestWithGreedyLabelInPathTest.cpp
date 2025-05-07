@@ -12,11 +12,19 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithGreedyLabelInPath, RestJsonHttpRequestWithGreedyLabelInPath) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   HttpRequestWithGreedyLabelInPathRequest request;
   request.SetFoo(R"(hello/escape)");
   request.SetBaz(R"(there/guy)");
 
   auto outcome = client.HttpRequestWithGreedyLabelInPath(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/HttpRequestWithGreedyLabelInPath/foo/hello%2Fescape/baz/there/guy";
+  ValidateRequestSent(expectedRq);
 }

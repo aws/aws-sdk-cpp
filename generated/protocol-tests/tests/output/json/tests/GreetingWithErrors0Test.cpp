@@ -12,17 +12,35 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, AwsJson11ComplexError) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 400;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJDb21wbGV4RXJyb3IiLAogICAgIlRvcExldmVsIjogIlRvcCBsZXZlbCIsCiAgICAiTmVzdGVkIjogewogICAgICAgICJGb28iOiAiYmFyIgogICAgfQp9";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, AwsJson11EmptyComplexError) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 400;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJDb21wbGV4RXJyb3IiCn0=";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }

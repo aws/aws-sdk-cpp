@@ -1,10 +1,11 @@
-add_project(ec2-input-protocol-tests
+add_project(protocol-ec2-input-tests
     "Tests for the protocol ec2 of AWS C++ SDK"
     testing-resources
+    aws-cpp-sdk-protocol-mock
     aws-cpp-sdk-ec2-protocol
     aws-cpp-sdk-core)
 
-file(GLOB AWS_EC2_INPUT_PROTOCOL_TESTS_SRC
+file(GLOB AWS_PROTOCOL_EC2_INPUT_TESTS_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
 )
@@ -22,9 +23,9 @@ if (AUTORUN_UNIT_TESTS)
 endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} "${AWS_EC2_INPUT_PROTOCOL_TESTS_SRC}")
+    add_library(${PROJECT_NAME} "${AWS_PROTOCOL_EC2_INPUT_TESTS_SRC}")
 else()
-    add_executable(${PROJECT_NAME} "${AWS_EC2_INPUT_PROTOCOL_TESTS_SRC}")
+    add_executable(${PROJECT_NAME} "${AWS_PROTOCOL_EC2_INPUT_TESTS_SRC}")
 endif()
 
 set_compiler_flags(${PROJECT_NAME})

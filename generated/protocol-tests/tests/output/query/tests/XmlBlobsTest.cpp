@@ -12,9 +12,18 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlBlobs, QueryXmlBlobs) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(text/xml)"}};
+  mockRs.body = "PFhtbEJsb2JzUmVzcG9uc2UgeG1sbnM9Imh0dHBzOi8vZXhhbXBsZS5jb20vIj4KICAgIDxYbWxCbG9ic1Jlc3VsdD4KICAgICAgICA8ZGF0YT5kbUZzZFdVPTwvZGF0YT4KICAgIDwvWG1sQmxvYnNSZXN1bHQ+CjwvWG1sQmxvYnNSZXNwb25zZT4K";
+  SetMockResponse(mockRs);
+
   XmlBlobsRequest request;
 
   auto outcome = client.XmlBlobs(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

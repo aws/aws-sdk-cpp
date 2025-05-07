@@ -12,9 +12,18 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonIntEnums, RestJsonJsonIntEnums) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body = "ewogICAgImludGVnZXJFbnVtMSI6IDEsCiAgICAiaW50ZWdlckVudW0yIjogMiwKICAgICJpbnRlZ2VyRW51bTMiOiAzLAogICAgImludGVnZXJFbnVtTGlzdCI6IFsKICAgICAgICAxLAogICAgICAgIDIsCiAgICAgICAgMwogICAgXSwKICAgICJpbnRlZ2VyRW51bVNldCI6IFsKICAgICAgICAxLAogICAgICAgIDIKICAgIF0sCiAgICAiaW50ZWdlckVudW1NYXAiOiB7CiAgICAgICAgImFiYyI6IDEsCiAgICAgICAgImRlZiI6IDIKICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
   JsonIntEnumsRequest request;
 
   auto outcome = client.JsonIntEnums(request);
-  ASSERT_FALSE(outcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ValidateRequestSent();
 }

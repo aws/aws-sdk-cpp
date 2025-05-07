@@ -12,7 +12,10 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonIntEnums, AwsJson11IntEnums) {
-  JsonProtocolClient client;
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonIntEnumsRequest request;
   request.SetIntEnum1(1);
   request.SetIntEnum2(2);
@@ -22,5 +25,12 @@ AWS_PROTOCOL_TEST(JsonIntEnums, AwsJson11IntEnums) {
   request.SetIntEnumMap({{"a",  1}, {"b",  2}});
 
   auto outcome = client.JsonIntEnums(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "ewogICAgImludEVudW0xIjogMSwKICAgICJpbnRFbnVtMiI6IDIsCiAgICAiaW50RW51bTMiOiAzLAogICAgImludEVudW1MaXN0IjogWwogICAgICAgIDEsCiAgICAgICAgMgogICAgXSwKICAgICJpbnRFbnVtU2V0IjogWwogICAgICAgIDEsCiAgICAgICAgMgogICAgXSwKICAgICJpbnRFbnVtTWFwIjogewogICAgICAgICJhIjogMSwKICAgICAgICAiYiI6IDIKICAgIH0KfQ==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonIntEnums)"}};
+  ValidateRequestSent(expectedRq);
 }

@@ -12,7 +12,10 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(NestedStructures, NestedStructures) {
-  QueryProtocolClient client;
+  QueryProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   NestedStructuresRequest request;
   {
     StructArg requestNested;
@@ -27,5 +30,13 @@ AWS_PROTOCOL_TEST(NestedStructures, NestedStructures) {
   }
 
   auto outcome = client.NestedStructures(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.body = "QWN0aW9uPU5lc3RlZFN0cnVjdHVyZXMmVmVyc2lvbj0yMDIwLTAxLTA4Jk5lc3RlZC5TdHJpbmdBcmc9Zm9vJk5lc3RlZC5PdGhlckFyZz10cnVlJk5lc3RlZC5SZWN1cnNpdmVBcmcuU3RyaW5nQXJnPWJheg==";
+  expectedRq.uri = "/";
+  expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
+  expectedRq.requireHeaders = {"Content-Length"};
+  ValidateRequestSent(expectedRq);
 }

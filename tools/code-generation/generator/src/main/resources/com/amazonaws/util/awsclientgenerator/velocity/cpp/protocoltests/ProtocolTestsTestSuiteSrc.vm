@@ -14,15 +14,80 @@ using namespace Aws::$serviceNs::Model;
 #foreach($case in $testSuite.cases)
 
 AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
-  $serviceClient client;
+  $serviceClient client(mockCredentials, mockConfig);
+
+#if($case.output)
+  OutputResponse mockRs;
+  mockRs.statusCode = ${case.output.get().response.status_code};
+#if($case.output.get().response.headers)
+  mockRs.headers = {##
+#foreach($headerEntry in $case.output.get().response.headers.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($case.output.get().response.body)
+  mockRs.body = "${case.output.get().response.body}";
+#end
+  SetMockResponse(mockRs);
+#else
+  SetMockResponse();
+#end
+
   ${case.given.name}Request request;
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/FillRequest.vm")
 
   auto outcome = client.${case.given.name}(request);
 #if($case.input)
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 #else
+#if($case.output.get().successResult)
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+#end
+#if($case.output.get().errorResult)
   ASSERT_FALSE(outcome.IsSuccess());
+#end
+#end
+
+#if($case.input)
+#set($serialized = $case.input.get().serialized)
+  ExpectedRequest expectedRq;
+#if($serialized.method)
+  expectedRq.method = "${serialized.method}";
+#end
+#if($serialized.body)
+  expectedRq.body = "${serialized.body}";
+#end
+#if($serialized.uri)
+  expectedRq.uri = "${serialized.uri}";
+#end
+#if($serialized.host)
+  expectedRq.host = "${serialized.host}";
+#end
+#if($serialized.headers)
+  expectedRq.headers = {##
+#foreach($headerEntry in $serialized.headers.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serialized.forbidHeaders)
+  expectedRq.forbidHeaders = {##
+#foreach($forbidHeader in $serialized.forbidHeaders)
+"$forbidHeader"#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serialized.requireHeaders)
+  expectedRq.requireHeaders = {##
+#foreach($requireHeader in $serialized.requireHeaders)
+"$requireHeader"#if($foreach.hasNext), #end##
+#end
+};
+#end
+  ValidateRequestSent(expectedRq);
+#else
+  ValidateRequestSent();
 #end
 }
 #end

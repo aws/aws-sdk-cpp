@@ -75,6 +75,8 @@
     "AWSXML",
     "IMDSV",
     "AWSSTL",
+    "reparsed",
+    "reparses",
     // AWS Signature
     "SIGV",
     "AUTHV",
@@ -128,6 +130,7 @@
     "MGMT",
     "DENABLED",
     "DENFORCE",
+    "APPSTORE",
     // Compiler and linker
     "Wpedantic",
     "Wextra",
@@ -175,6 +178,7 @@
     "callfopen",
     "overengineered",
     "callfopen",
+    "throughs",
     // Json parser
     "Jsonize",
     "CJSON",
@@ -228,6 +232,7 @@
     "CPPUNWIND",
     "keepalivetime",
     "keepaliveinterval",
+    "AUTODETECTION",
     // Crypto
     "decryptor",
     "encryptor",

@@ -12,19 +12,35 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonOmitsNullQuery) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   OmitsNullSerializesEmptyStringRequest request;
   request.SetNullValue(R"(null)");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/OmitsNullSerializesEmptyString";
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonSerializesEmptyQueryValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   OmitsNullSerializesEmptyStringRequest request;
   request.SetEmptyString(R"()");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "GET";
+  expectedRq.uri = "/OmitsNullSerializesEmptyString?Empty=";
+  ValidateRequestSent(expectedRq);
 }

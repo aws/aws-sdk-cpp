@@ -12,9 +12,18 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors, AwsJson10InvalidGreetingError) {
-  JSONRPC10Client client;
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 400;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjSW52YWxpZEdyZWV0aW5nIiwKICAgICJNZXNzYWdlIjogIkhpIgp9";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }

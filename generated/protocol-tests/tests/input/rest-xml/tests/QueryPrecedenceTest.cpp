@@ -12,11 +12,19 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryPrecedence, RestXmlQueryPrecedence) {
-  RestXmlProtocolClient client;
+  RestXmlProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   QueryPrecedenceRequest request;
   request.SetFoo(R"(named)");
   request.SetBaz({{"bar",  R"(fromMap)"}, {"qux",  R"(alsoFromMap)"}});
 
   auto outcome = client.QueryPrecedence(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "POST";
+  expectedRq.uri = "/Precedence?bar=named&qux=alsoFromMap";
+  ValidateRequestSent(expectedRq);
 }

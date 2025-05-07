@@ -12,7 +12,10 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStringUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -21,11 +24,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStringUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJpbmdWYWx1ZSI6ICJmb28iCiAgICB9Cn0=";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBooleanUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -34,11 +47,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBooleanUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJib29sZWFuVmFsdWUiOiB0cnVlCiAgICB9Cn0=";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNumberUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -47,11 +70,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNumberUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJudW1iZXJWYWx1ZSI6IDEKICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBlobUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -60,11 +93,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBlobUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJibG9iVmFsdWUiOiAiWm05diIKICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeTimestampUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -73,11 +116,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeTimestampUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ0aW1lc3RhbXBWYWx1ZSI6IDEzOTg3OTYyMzgKICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeEnumUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -86,11 +139,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeEnumUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJlbnVtVmFsdWUiOiAiRm9vIgogICAgfQp9";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeListUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -99,11 +162,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeListUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJsaXN0VmFsdWUiOiBbImZvbyIsICJiYXIiXQogICAgfQp9";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeMapUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -112,11 +185,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeMapUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStructureUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -129,11 +212,21 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStructureUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
@@ -146,5 +239,12 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJyZW5hbWVkU3RydWN0dXJlVmFsdWUiOiB7CiAgICAgICAgICAgICJzYWx1dGF0aW9uIjogImhlbGxvISIKICAgICAgICB9CiAgICB9Cn0=";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
 }

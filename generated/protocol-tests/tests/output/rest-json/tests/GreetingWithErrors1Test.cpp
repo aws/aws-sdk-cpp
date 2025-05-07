@@ -12,17 +12,35 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonComplexErrorWithNoMessage) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 403;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Amzn-Errortype", R"(ComplexError)"}, {"X-Header", R"(Header)"}};
+  mockRs.body = "ewogICAgIlRvcExldmVsIjogIlRvcCBsZXZlbCIsCiAgICAiTmVzdGVkIjogewogICAgICAgICJGb29vb28iOiAiYmFyIgogICAgfQp9";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonEmptyComplexErrorWithNoMessage) {
-  RestJsonProtocolClient client;
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 403;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Amzn-Errortype", R"(ComplexError)"}};
+  mockRs.body = "e30=";
+  SetMockResponse(mockRs);
+
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
   ASSERT_FALSE(outcome.IsSuccess());
+
+  ValidateRequestSent();
 }
