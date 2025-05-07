@@ -7,6 +7,7 @@
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/synthetics/model/RunType.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +70,35 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCanaryRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The DryRunId associated with an existing canary’s dry run. You can use this
+     * DryRunId to retrieve information about the dry run.</p>
+     */
+    inline const Aws::String& GetDryRunId() const { return m_dryRunId; }
+    inline bool DryRunIdHasBeenSet() const { return m_dryRunIdHasBeenSet; }
+    template<typename DryRunIdT = Aws::String>
+    void SetDryRunId(DryRunIdT&& value) { m_dryRunIdHasBeenSet = true; m_dryRunId = std::forward<DryRunIdT>(value); }
+    template<typename DryRunIdT = Aws::String>
+    GetCanaryRunsRequest& WithDryRunId(DryRunIdT&& value) { SetDryRunId(std::forward<DryRunIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <ul> <li> <p>When you provide <code>RunType=CANARY_RUN</code> and
+     * <code>dryRunId</code>, you will get an exception </p> </li> <li> <p>When a value
+     * is not provided for <code>RunType</code>, the default value is
+     * <code>CANARY_RUN</code> </p> </li> <li> <p>When <code>CANARY_RUN</code> is
+     * provided, all canary runs excluding dry runs are returned</p> </li> <li> <p>When
+     * <code>DRY_RUN</code> is provided, all dry runs excluding canary runs are
+     * returned</p> </li> </ul>
+     */
+    inline RunType GetRunType() const { return m_runType; }
+    inline bool RunTypeHasBeenSet() const { return m_runTypeHasBeenSet; }
+    inline void SetRunType(RunType value) { m_runTypeHasBeenSet = true; m_runType = value; }
+    inline GetCanaryRunsRequest& WithRunType(RunType value) { SetRunType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -79,6 +109,12 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_dryRunId;
+    bool m_dryRunIdHasBeenSet = false;
+
+    RunType m_runType{RunType::NOT_SET};
+    bool m_runTypeHasBeenSet = false;
   };
 
 } // namespace Model

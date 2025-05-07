@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace Synthetics
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
 
     AWS_SYNTHETICS_API Aws::String SerializePayload() const override;
 
+    AWS_SYNTHETICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     ///@{
     /**
@@ -43,10 +49,26 @@ namespace Model
     template<typename NameT = Aws::String>
     GetCanaryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The DryRunId associated with an existing canary’s dry run. You can use this
+     * DryRunId to retrieve information about the dry run.</p>
+     */
+    inline const Aws::String& GetDryRunId() const { return m_dryRunId; }
+    inline bool DryRunIdHasBeenSet() const { return m_dryRunIdHasBeenSet; }
+    template<typename DryRunIdT = Aws::String>
+    void SetDryRunId(DryRunIdT&& value) { m_dryRunIdHasBeenSet = true; m_dryRunId = std::forward<DryRunIdT>(value); }
+    template<typename DryRunIdT = Aws::String>
+    GetCanaryRequest& WithDryRunId(DryRunIdT&& value) { SetDryRunId(std::forward<DryRunIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_dryRunId;
+    bool m_dryRunIdHasBeenSet = false;
   };
 
 } // namespace Model

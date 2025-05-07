@@ -50,6 +50,11 @@ CanaryRun& CanaryRun::operator =(JsonView jsonValue)
     m_artifactS3Location = jsonValue.GetString("ArtifactS3Location");
     m_artifactS3LocationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DryRunConfig"))
+  {
+    m_dryRunConfig = jsonValue.GetObject("DryRunConfig");
+    m_dryRunConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +89,12 @@ JsonValue CanaryRun::Jsonize() const
   if(m_artifactS3LocationHasBeenSet)
   {
    payload.WithString("ArtifactS3Location", m_artifactS3Location);
+
+  }
+
+  if(m_dryRunConfigHasBeenSet)
+  {
+   payload.WithObject("DryRunConfig", m_dryRunConfig.Jsonize());
 
   }
 

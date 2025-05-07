@@ -616,6 +616,32 @@ namespace Synthetics
         }
 
         /**
+         * <p>Use this operation to start a dry run for a canary that has already been
+         * created</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanaryDryRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCanaryDryRunOutcome StartCanaryDryRun(const Model::StartCanaryDryRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCanaryDryRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCanaryDryRunRequestT = Model::StartCanaryDryRunRequest>
+        Model::StartCanaryDryRunOutcomeCallable StartCanaryDryRunCallable(const StartCanaryDryRunRequestT& request) const
+        {
+            return SubmitCallable(&SyntheticsClient::StartCanaryDryRun, request);
+        }
+
+        /**
+         * An Async wrapper for StartCanaryDryRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCanaryDryRunRequestT = Model::StartCanaryDryRunRequest>
+        void StartCanaryDryRunAsync(const StartCanaryDryRunRequestT& request, const StartCanaryDryRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SyntheticsClient::StartCanaryDryRun, request, handler, context);
+        }
+
+        /**
          * <p>Stops the canary to prevent all future runs. If the canary is currently
          * running,the run that is in progress completes on its own, publishes metrics, and
          * uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
@@ -711,8 +737,10 @@ namespace Synthetics
          * <p>Updates the configuration of a canary that has already been created.</p>
          * <p>You can't use this operation to update the tags of an existing canary. To
          * change the tags of an existing canary, use <a
-         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+         *  <p>When you use the <code>dryRunId</code> field when updating a canary,
+         * the only other field you can provide is the <code>Schedule</code>. Adding any
+         * other field will thrown an exception.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UpdateCanary">AWS
          * API Reference</a></p>
          */

@@ -55,6 +55,11 @@ SpaceSettings& SpaceSettings::operator =(JsonView jsonValue)
     m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
     m_spaceStorageSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SpaceManagedResources"))
+  {
+    m_spaceManagedResources = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("SpaceManagedResources"));
+    m_spaceManagedResourcesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CustomFileSystems"))
   {
     Aws::Utils::Array<JsonView> customFileSystemsJsonList = jsonValue.GetArray("CustomFileSystems");
@@ -104,6 +109,11 @@ JsonValue SpaceSettings::Jsonize() const
   {
    payload.WithObject("SpaceStorageSettings", m_spaceStorageSettings.Jsonize());
 
+  }
+
+  if(m_spaceManagedResourcesHasBeenSet)
+  {
+   payload.WithString("SpaceManagedResources", FeatureStatusMapper::GetNameForFeatureStatus(m_spaceManagedResources));
   }
 
   if(m_customFileSystemsHasBeenSet)

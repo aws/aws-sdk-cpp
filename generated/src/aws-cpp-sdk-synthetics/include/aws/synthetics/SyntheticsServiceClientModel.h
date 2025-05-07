@@ -35,6 +35,7 @@
 #include <aws/synthetics/model/ListGroupsResult.h>
 #include <aws/synthetics/model/ListTagsForResourceResult.h>
 #include <aws/synthetics/model/StartCanaryResult.h>
+#include <aws/synthetics/model/StartCanaryDryRunResult.h>
 #include <aws/synthetics/model/StopCanaryResult.h>
 #include <aws/synthetics/model/TagResourceResult.h>
 #include <aws/synthetics/model/UntagResourceResult.h>
@@ -100,6 +101,7 @@ namespace Aws
       class ListGroupsRequest;
       class ListTagsForResourceRequest;
       class StartCanaryRequest;
+      class StartCanaryDryRunRequest;
       class StopCanaryRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -124,6 +126,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListGroupsResult, SyntheticsError> ListGroupsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SyntheticsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartCanaryResult, SyntheticsError> StartCanaryOutcome;
+      typedef Aws::Utils::Outcome<StartCanaryDryRunResult, SyntheticsError> StartCanaryDryRunOutcome;
       typedef Aws::Utils::Outcome<StopCanaryResult, SyntheticsError> StopCanaryOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SyntheticsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, SyntheticsError> UntagResourceOutcome;
@@ -148,6 +151,7 @@ namespace Aws
       typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartCanaryOutcome> StartCanaryOutcomeCallable;
+      typedef std::future<StartCanaryDryRunOutcome> StartCanaryDryRunOutcomeCallable;
       typedef std::future<StopCanaryOutcome> StopCanaryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -175,6 +179,7 @@ namespace Aws
     typedef std::function<void(const SyntheticsClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const SyntheticsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SyntheticsClient*, const Model::StartCanaryRequest&, const Model::StartCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCanaryResponseReceivedHandler;
+    typedef std::function<void(const SyntheticsClient*, const Model::StartCanaryDryRunRequest&, const Model::StartCanaryDryRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCanaryDryRunResponseReceivedHandler;
     typedef std::function<void(const SyntheticsClient*, const Model::StopCanaryRequest&, const Model::StopCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCanaryResponseReceivedHandler;
     typedef std::function<void(const SyntheticsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SyntheticsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

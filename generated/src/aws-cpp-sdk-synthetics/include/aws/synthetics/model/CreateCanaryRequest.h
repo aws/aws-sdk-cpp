@@ -124,9 +124,10 @@ namespace Model
     ///@{
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value and environment variables.</p>  <p>The environment
-     * variables keys and values are not encrypted. Do not store sensitive information
-     * in this field.</p> 
+     * as timeout value and environment variables.</p>  <p>Environment
+     * variable keys and values are encrypted at rest using Amazon Web Services owned
+     * KMS keys. However, the environment variables are not encrypted on the client
+     * side. Do not store sensitive information in them.</p> 
      */
     inline const CanaryRunConfigInput& GetRunConfig() const { return m_runConfig; }
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
@@ -140,7 +141,9 @@ namespace Model
     /**
      * <p>The number of days to retain data about successful runs of this canary. If
      * you omit this field, the default of 31 days is used. The valid range is 1 to 455
-     * days.</p>
+     * days.</p> <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetSuccessRetentionPeriodInDays() const { return m_successRetentionPeriodInDays; }
     inline bool SuccessRetentionPeriodInDaysHasBeenSet() const { return m_successRetentionPeriodInDaysHasBeenSet; }
@@ -152,7 +155,9 @@ namespace Model
     /**
      * <p>The number of days to retain data about failed runs of this canary. If you
      * omit this field, the default of 31 days is used. The valid range is 1 to 455
-     * days.</p>
+     * days.</p> <p>This setting affects the range of information returned by <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
+     * as well as the range of information displayed in the Synthetics console. </p>
      */
     inline int GetFailureRetentionPeriodInDays() const { return m_failureRetentionPeriodInDays; }
     inline bool FailureRetentionPeriodInDaysHasBeenSet() const { return m_failureRetentionPeriodInDaysHasBeenSet; }

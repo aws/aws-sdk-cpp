@@ -1506,6 +1506,7 @@
 #include <aws/sagemaker/model/UiConfig.h>
 #include <aws/sagemaker/model/UiTemplate.h>
 #include <aws/sagemaker/model/UiTemplateInfo.h>
+#include <aws/sagemaker/model/UnifiedStudioSettings.h>
 #include <aws/sagemaker/model/UpdateActionRequest.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>
 #include <aws/sagemaker/model/UpdateAppImageConfigRequest.h>

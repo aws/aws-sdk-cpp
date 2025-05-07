@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/UpdateCanaryRequest.h>
+#include <aws/synthetics/model/StartCanaryDryRunRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,7 +12,7 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCanaryRequest::SerializePayload() const
+Aws::String StartCanaryDryRunRequest::SerializePayload() const
 {
   JsonValue payload;
 
@@ -22,27 +22,27 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
 
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
-   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
-
-  }
-
   if(m_runtimeVersionHasBeenSet)
   {
    payload.WithString("RuntimeVersion", m_runtimeVersion);
 
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithObject("Schedule", m_schedule.Jsonize());
-
-  }
-
   if(m_runConfigHasBeenSet)
   {
    payload.WithObject("RunConfig", m_runConfig.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
 
   }
 
@@ -55,12 +55,6 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
   if(m_failureRetentionPeriodInDaysHasBeenSet)
   {
    payload.WithInteger("FailureRetentionPeriodInDays", m_failureRetentionPeriodInDays);
-
-  }
-
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 
@@ -85,12 +79,6 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
   if(m_provisionedResourceCleanupHasBeenSet)
   {
    payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
-  }
-
-  if(m_dryRunIdHasBeenSet)
-  {
-   payload.WithString("DryRunId", m_dryRunId);
-
   }
 
   return payload.View().WriteReadable();

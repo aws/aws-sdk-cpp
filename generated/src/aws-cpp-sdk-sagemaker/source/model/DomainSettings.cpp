@@ -54,6 +54,11 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     m_amazonQSettings = jsonValue.GetObject("AmazonQSettings");
     m_amazonQSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UnifiedStudioSettings"))
+  {
+    m_unifiedStudioSettings = jsonValue.GetObject("UnifiedStudioSettings");
+    m_unifiedStudioSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +97,12 @@ JsonValue DomainSettings::Jsonize() const
   if(m_amazonQSettingsHasBeenSet)
   {
    payload.WithObject("AmazonQSettings", m_amazonQSettings.Jsonize());
+
+  }
+
+  if(m_unifiedStudioSettingsHasBeenSet)
+  {
+   payload.WithObject("UnifiedStudioSettings", m_unifiedStudioSettings.Jsonize());
 
   }
 

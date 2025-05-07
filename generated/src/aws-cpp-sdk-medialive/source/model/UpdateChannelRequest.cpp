@@ -91,6 +91,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
 
   }
 
+  if(m_anywhereSettingsHasBeenSet)
+  {
+   payload.WithObject("anywhereSettings", m_anywhereSettings.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

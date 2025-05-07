@@ -41,6 +41,17 @@ Aws::String StartNetworkInsightsAnalysisRequest::SerializePayload() const
     }
   }
 
+  if(m_filterOutArnsHasBeenSet)
+  {
+    unsigned filterOutArnsCount = 1;
+    for(auto& item : m_filterOutArns)
+    {
+      ss << "FilterOutArn." << filterOutArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      filterOutArnsCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

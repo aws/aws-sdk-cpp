@@ -82,6 +82,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Names (ARN) of the resources that the path will
+     * ignore.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFilterOutArns() const { return m_filterOutArns; }
+    inline bool FilterOutArnsHasBeenSet() const { return m_filterOutArnsHasBeenSet; }
+    template<typename FilterOutArnsT = Aws::Vector<Aws::String>>
+    void SetFilterOutArns(FilterOutArnsT&& value) { m_filterOutArnsHasBeenSet = true; m_filterOutArns = std::forward<FilterOutArnsT>(value); }
+    template<typename FilterOutArnsT = Aws::Vector<Aws::String>>
+    StartNetworkInsightsAnalysisRequest& WithFilterOutArns(FilterOutArnsT&& value) { SetFilterOutArns(std::forward<FilterOutArnsT>(value)); return *this;}
+    template<typename FilterOutArnsT = Aws::String>
+    StartNetworkInsightsAnalysisRequest& AddFilterOutArns(FilterOutArnsT&& value) { m_filterOutArnsHasBeenSet = true; m_filterOutArns.emplace_back(std::forward<FilterOutArnsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -131,6 +146,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_filterInArns;
     bool m_filterInArnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_filterOutArns;
+    bool m_filterOutArnsHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
