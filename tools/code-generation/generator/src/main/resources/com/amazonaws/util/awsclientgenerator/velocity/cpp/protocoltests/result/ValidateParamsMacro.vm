@@ -1,0 +1,39 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateSingleParameterMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateListMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateMapMacro.vm")
+##-------------------- ValidateParamsMacro macro
+#macro( ValidateParamsMacro $spaces $dstObject $currentShape $testValidateParam )
+#set($macro.spaces = $spaces)
+#if(!$currentShape.members.containsKey($testValidateParam.key) && $testValidateParam.key != "contentType")
+static_assert(false, "Codegen failure: Test input has a key $testValidateParam.key not found in the model for the current shape: $currentShape");
+#end
+#set($macro.fieldGetter = "Get${CppViewHelper.capitalizeFirstChar($testValidateParam.key)}")
+#set($macro.memberToGet = $currentShape.members.get($testValidateParam.key))
+#if($macro.memberToGet.shape.list)
+#ValidateListMacro($macro.spaces $dstObject $macro.memberToGet.shape $testValidateParam)
+#elseif($macro.memberToGet.shape.map)
+#ValidateMapMacro($macro.spaces $dstObject $macro.memberToGet.shape $testValidateParam)
+#elseif($macro.memberToGet.shape.document)
+#set($macro.innerStructVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}")
+${macro.spaces}{
+  ${macro.spaces}const Aws::Utils::DocumentView& ${macro.innerStructVarName} = ${dstObject}.${macro.fieldGetter}();
+  ${macro.spaces}EXPECT_STREQ(R"j(${testValidateParam.value})j", ${macro.innerStructVarName}.WriteCompact().c_str());
+${macro.spaces}}
+#elseif($macro.memberToGet.shape.structure)
+${macro.spaces}{
+#set($macro.innerStructVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}")
+  ${macro.spaces}const ${macro.memberToGet.shape.name}& $macro.innerStructVarName = ${dstObject}.${macro.fieldGetter}();
+#foreach($innerParam in $testValidateParam.value.fields())
+#ValidateParamsMacro("${macro.spaces}  ", $macro.innerStructVarName, $macro.memberToGet.shape, $innerParam)
+#end
+${macro.spaces}}
+#elseif($testValidateParam.key != "contentType" && $currentShape.members.containsKey($testValidateParam.key) && $CppViewHelper.isStreamingPayloadMember($currentShape, $testValidateParam.key))
+#set($macro.payloadVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}")
+${macro.spaces}const Aws::String $macro.payloadVarName = [&${dstObject}](){Aws::StringStream ss; ss << ${dstObject}.${macro.fieldGetter}().rdbuf(); return ss.str();}();
+${macro.spaces}EXPECT_STREQ(R"(${testValidateParam.value.asText()})", ${macro.payloadVarName}.c_str());
+#elseif(!$macro.memberToGet)
+${macro.spaces}EXPECT_EQ($testValidateParam.value, ${dstObject}.${macro.fieldGetter}());
+#else
+${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.memberToGet.shape, $testValidateParam.value), ${dstObject}.${macro.fieldGetter}());
+#end
+#end##macro ValidateParamsMacro
