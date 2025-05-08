@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/IntegrationConfig.h>
 #include <aws/glue/model/Tag.h>
 #include <utility>
 
@@ -141,6 +142,18 @@ namespace Model
     template<typename TagsT = Tag>
     CreateIntegrationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings.</p>
+     */
+    inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
+    inline bool IntegrationConfigHasBeenSet() const { return m_integrationConfigHasBeenSet; }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    void SetIntegrationConfig(IntegrationConfigT&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::forward<IntegrationConfigT>(value); }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    CreateIntegrationRequest& WithIntegrationConfig(IntegrationConfigT&& value) { SetIntegrationConfig(std::forward<IntegrationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_integrationName;
@@ -166,6 +179,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    IntegrationConfig m_integrationConfig;
+    bool m_integrationConfigHasBeenSet = false;
   };
 
 } // namespace Model

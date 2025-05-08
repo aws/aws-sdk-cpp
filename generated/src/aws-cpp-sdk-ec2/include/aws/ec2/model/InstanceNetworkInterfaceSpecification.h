@@ -363,6 +363,16 @@ namespace Model
     template<typename ConnectionTrackingSpecificationT = ConnectionTrackingSpecificationRequest>
     InstanceNetworkInterfaceSpecification& WithConnectionTrackingSpecification(ConnectionTrackingSpecificationT&& value) { SetConnectionTrackingSpecification(std::forward<ConnectionTrackingSpecificationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of ENA queues to be created with the instance.</p>
+     */
+    inline int GetEnaQueueCount() const { return m_enaQueueCount; }
+    inline bool EnaQueueCountHasBeenSet() const { return m_enaQueueCountHasBeenSet; }
+    inline void SetEnaQueueCount(int value) { m_enaQueueCountHasBeenSet = true; m_enaQueueCount = value; }
+    inline InstanceNetworkInterfaceSpecification& WithEnaQueueCount(int value) { SetEnaQueueCount(value); return *this;}
+    ///@}
   private:
 
     bool m_associatePublicIpAddress{false};
@@ -430,6 +440,9 @@ namespace Model
 
     ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
     bool m_connectionTrackingSpecificationHasBeenSet = false;
+
+    int m_enaQueueCount{0};
+    bool m_enaQueueCountHasBeenSet = false;
   };
 
 } // namespace Model

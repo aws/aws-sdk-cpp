@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/PrincipalType.h>
 #include <aws/sso-admin/model/StatusValues.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/TargetType.h>
+#include <aws/sso-admin/model/PrincipalType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -44,68 +44,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    AccountAssignmentOperationStatus& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The message that contains an error or exception in case of an operation
-     * failure.</p>
-     */
-    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
-    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    template<typename FailureReasonT = Aws::String>
-    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
-    template<typename FailureReasonT = Aws::String>
-    AccountAssignmentOperationStatus& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
-     */
-    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
-    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    template<typename PermissionSetArnT = Aws::String>
-    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
-    template<typename PermissionSetArnT = Aws::String>
-    AccountAssignmentOperationStatus& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
-    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    template<typename PrincipalIdT = Aws::String>
-    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
-    template<typename PrincipalIdT = Aws::String>
-    AccountAssignmentOperationStatus& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The entity type for which the assignment will be created.</p>
-     */
-    inline PrincipalType GetPrincipalType() const { return m_principalType; }
-    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline AccountAssignmentOperationStatus& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
+    inline StatusValues GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccountAssignmentOperationStatus& WithStatus(StatusValues value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +67,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The message that contains an error or exception in case of an operation
+     * failure.</p>
      */
-    inline StatusValues GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
-    inline AccountAssignmentOperationStatus& WithStatus(StatusValues value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    AccountAssignmentOperationStatus& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,34 +100,87 @@ namespace Model
     inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
     inline AccountAssignmentOperationStatus& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the permission set. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
+     */
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
+    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    AccountAssignmentOperationStatus& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The entity type for which the assignment will be created.</p>
+     */
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AccountAssignmentOperationStatus& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    AccountAssignmentOperationStatus& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date that the permission set was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    AccountAssignmentOperationStatus& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
+    ///@}
   private:
 
-    Aws::Utils::DateTime m_createdDate{};
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet = false;
-
-    Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet = false;
-
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
-    PrincipalType m_principalType{PrincipalType::NOT_SET};
-    bool m_principalTypeHasBeenSet = false;
+    StatusValues m_status{StatusValues::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    StatusValues m_status{StatusValues::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
+
+    Aws::String m_permissionSetArn;
+    bool m_permissionSetArnHasBeenSet = false;
+
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
+    bool m_principalTypeHasBeenSet = false;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

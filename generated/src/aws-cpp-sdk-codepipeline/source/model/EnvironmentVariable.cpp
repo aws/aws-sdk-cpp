@@ -35,6 +35,11 @@ EnvironmentVariable& EnvironmentVariable::operator =(JsonView jsonValue)
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = EnvironmentVariableTypeMapper::GetEnvironmentVariableTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +57,11 @@ JsonValue EnvironmentVariable::Jsonize() const
   {
    payload.WithString("value", m_value);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", EnvironmentVariableTypeMapper::GetNameForEnvironmentVariableType(m_type));
   }
 
   return payload;

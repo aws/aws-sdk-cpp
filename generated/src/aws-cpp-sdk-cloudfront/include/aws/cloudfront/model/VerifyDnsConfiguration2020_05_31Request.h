@@ -46,7 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the distribution tenant.</p>
+     * <p>The identifier of the distribution tenant. You can specify the ARN, ID, or
+     * name of the distribution tenant.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

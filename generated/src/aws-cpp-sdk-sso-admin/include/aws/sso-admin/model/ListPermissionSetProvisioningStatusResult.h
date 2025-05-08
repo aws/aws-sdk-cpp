@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/PermissionSetProvisioningStatusMetadata.h>
 #include <utility>
 
@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pagination token for the list API. Initially the value is null. Use the
-     * output of previous API calls to make subsequent calls.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListPermissionSetProvisioningStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status object for the permission set provisioning operation.</p>
      */
     inline const Aws::Vector<PermissionSetProvisioningStatusMetadata>& GetPermissionSetsProvisioningStatus() const { return m_permissionSetsProvisioningStatus; }
@@ -60,6 +48,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The pagination token for the list API. Initially the value is null. Use the
+     * output of previous API calls to make subsequent calls.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPermissionSetProvisioningStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -69,11 +69,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<PermissionSetProvisioningStatusMetadata> m_permissionSetsProvisioningStatus;
     bool m_permissionSetsProvisioningStatusHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

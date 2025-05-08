@@ -22,23 +22,6 @@ Aws::String DeleteAccountAssignmentRequest::SerializePayload() const
 
   }
 
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("PrincipalId", m_principalId);
-
-  }
-
-  if(m_principalTypeHasBeenSet)
-  {
-   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
-  }
-
   if(m_targetIdHasBeenSet)
   {
    payload.WithString("TargetId", m_targetId);
@@ -48,6 +31,23 @@ Aws::String DeleteAccountAssignmentRequest::SerializePayload() const
   if(m_targetTypeHasBeenSet)
   {
    payload.WithString("TargetType", TargetTypeMapper::GetNameForTargetType(m_targetType));
+  }
+
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_principalTypeHasBeenSet)
+  {
+   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("PrincipalId", m_principalId);
+
   }
 
   return payload.View().WriteReadable();

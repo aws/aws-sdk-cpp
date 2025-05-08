@@ -79,6 +79,7 @@
 #include <aws/codepipeline/model/EncryptionKey.h>
 #include <aws/codepipeline/model/EncryptionKeyType.h>
 #include <aws/codepipeline/model/EnvironmentVariable.h>
+#include <aws/codepipeline/model/EnvironmentVariableType.h>
 #include <aws/codepipeline/model/ErrorDetails.h>
 #include <aws/codepipeline/model/ExecutionDetails.h>
 #include <aws/codepipeline/model/ExecutionMode.h>

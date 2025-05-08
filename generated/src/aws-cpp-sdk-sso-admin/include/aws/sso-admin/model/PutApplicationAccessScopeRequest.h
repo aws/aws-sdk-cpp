@@ -37,15 +37,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN of the application with the access scope with the targets
-     * to add or update.</p>
+     * <p>Specifies the name of the access scope to be associated with the specified
+     * targets.</p>
      */
-    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
-    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    template<typename ApplicationArnT = Aws::String>
-    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
-    template<typename ApplicationArnT = Aws::String>
-    PutApplicationAccessScopeRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
+    inline const Aws::String& GetScope() const { return m_scope; }
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    PutApplicationAccessScopeRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,26 +65,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the name of the access scope to be associated with the specified
-     * targets.</p>
+     * <p>Specifies the ARN of the application with the access scope with the targets
+     * to add or update.</p>
      */
-    inline const Aws::String& GetScope() const { return m_scope; }
-    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    template<typename ScopeT = Aws::String>
-    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
-    template<typename ScopeT = Aws::String>
-    PutApplicationAccessScopeRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    PutApplicationAccessScopeRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet = false;
+    Aws::String m_scope;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedTargets;
     bool m_authorizedTargetsHasBeenSet = false;
 
-    Aws::String m_scope;
-    bool m_scopeHasBeenSet = false;
+    Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

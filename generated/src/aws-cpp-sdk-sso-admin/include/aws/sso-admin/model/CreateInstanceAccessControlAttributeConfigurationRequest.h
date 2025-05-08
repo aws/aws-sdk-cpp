@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    CreateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the IAM Identity Center identity store attributes to add to your
      * ABAC configuration. When using an external identity provider as an identity
      * source, you can pass attributes through the SAML assertion. Doing so provides an
@@ -52,26 +65,13 @@ namespace Model
     template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
     CreateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { SetInstanceAccessControlAttributeConfiguration(std::forward<InstanceAccessControlAttributeConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed.</p>
-     */
-    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
-    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    template<typename InstanceArnT = Aws::String>
-    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
-    template<typename InstanceArnT = Aws::String>
-    CreateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
-    ///@}
   private:
-
-    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
-    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
+
+    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
+    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

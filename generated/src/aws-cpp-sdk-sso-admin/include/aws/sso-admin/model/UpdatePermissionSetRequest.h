@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the <a>PermissionSet</a>.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdatePermissionSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -76,15 +64,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used to redirect users within the application during the federation
-     * authentication process.</p>
+     * <p>The description of the <a>PermissionSet</a>.</p>
      */
-    inline const Aws::String& GetRelayState() const { return m_relayState; }
-    inline bool RelayStateHasBeenSet() const { return m_relayStateHasBeenSet; }
-    template<typename RelayStateT = Aws::String>
-    void SetRelayState(RelayStateT&& value) { m_relayStateHasBeenSet = true; m_relayState = std::forward<RelayStateT>(value); }
-    template<typename RelayStateT = Aws::String>
-    UpdatePermissionSetRequest& WithRelayState(RelayStateT&& value) { SetRelayState(std::forward<RelayStateT>(value)); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdatePermissionSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,10 +86,20 @@ namespace Model
     template<typename SessionDurationT = Aws::String>
     UpdatePermissionSetRequest& WithSessionDuration(SessionDurationT&& value) { SetSessionDuration(std::forward<SessionDurationT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Used to redirect users within the application during the federation
+     * authentication process.</p>
+     */
+    inline const Aws::String& GetRelayState() const { return m_relayState; }
+    inline bool RelayStateHasBeenSet() const { return m_relayStateHasBeenSet; }
+    template<typename RelayStateT = Aws::String>
+    void SetRelayState(RelayStateT&& value) { m_relayStateHasBeenSet = true; m_relayState = std::forward<RelayStateT>(value); }
+    template<typename RelayStateT = Aws::String>
+    UpdatePermissionSetRequest& WithRelayState(RelayStateT&& value) { SetRelayState(std::forward<RelayStateT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
@@ -110,11 +107,14 @@ namespace Model
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
 
-    Aws::String m_relayState;
-    bool m_relayStateHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_sessionDuration;
     bool m_sessionDurationHasBeenSet = false;
+
+    Aws::String m_relayState;
+    bool m_relayStateHasBeenSet = false;
   };
 
 } // namespace Model

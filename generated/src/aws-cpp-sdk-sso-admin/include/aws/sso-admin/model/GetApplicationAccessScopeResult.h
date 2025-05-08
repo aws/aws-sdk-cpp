@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the access scope that can be used with the authorized
+     * targets.</p>
+     */
+    inline const Aws::String& GetScope() const { return m_scope; }
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    GetApplicationAccessScopeResult& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of authorized targets associated with this access scope.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const { return m_authorizedTargets; }
@@ -47,18 +59,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The name of the access scope that can be used with the authorized
-     * targets.</p>
-     */
-    inline const Aws::String& GetScope() const { return m_scope; }
-    template<typename ScopeT = Aws::String>
-    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
-    template<typename ScopeT = Aws::String>
-    GetApplicationAccessScopeResult& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -68,11 +68,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_authorizedTargets;
-    bool m_authorizedTargetsHasBeenSet = false;
-
     Aws::String m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_authorizedTargets;
+    bool m_authorizedTargetsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

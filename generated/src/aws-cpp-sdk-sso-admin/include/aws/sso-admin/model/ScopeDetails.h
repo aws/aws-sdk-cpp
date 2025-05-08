@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the access scope.</p>
+     */
+    inline const Aws::String& GetScope() const { return m_scope; }
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    ScopeDetails& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array list of ARNs of applications.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const { return m_authorizedTargets; }
@@ -52,25 +64,13 @@ namespace Model
     template<typename AuthorizedTargetsT = Aws::String>
     ScopeDetails& AddAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.emplace_back(std::forward<AuthorizedTargetsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the access scope.</p>
-     */
-    inline const Aws::String& GetScope() const { return m_scope; }
-    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    template<typename ScopeT = Aws::String>
-    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
-    template<typename ScopeT = Aws::String>
-    ScopeDetails& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Aws::String> m_authorizedTargets;
-    bool m_authorizedTargetsHasBeenSet = false;
 
     Aws::String m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_authorizedTargets;
+    bool m_authorizedTargetsHasBeenSet = false;
   };
 
 } // namespace Model

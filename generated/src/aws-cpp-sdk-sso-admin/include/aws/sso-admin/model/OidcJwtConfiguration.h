@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery
+     * is used to obtain the information required to verify the tokens that the trusted
+     * token issuer generates.</p>
+     */
+    inline const Aws::String& GetIssuerUrl() const { return m_issuerUrl; }
+    inline bool IssuerUrlHasBeenSet() const { return m_issuerUrlHasBeenSet; }
+    template<typename IssuerUrlT = Aws::String>
+    void SetIssuerUrl(IssuerUrlT&& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = std::forward<IssuerUrlT>(value); }
+    template<typename IssuerUrlT = Aws::String>
+    OidcJwtConfiguration& WithIssuerUrl(IssuerUrlT&& value) { SetIssuerUrl(std::forward<IssuerUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The path of the source attribute in the JWT from the trusted token issuer.
      * The attribute mapped by this JMESPath expression is compared against the
      * attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token
@@ -72,20 +86,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery
-     * is used to obtain the information required to verify the tokens that the trusted
-     * token issuer generates.</p>
-     */
-    inline const Aws::String& GetIssuerUrl() const { return m_issuerUrl; }
-    inline bool IssuerUrlHasBeenSet() const { return m_issuerUrlHasBeenSet; }
-    template<typename IssuerUrlT = Aws::String>
-    void SetIssuerUrl(IssuerUrlT&& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = std::forward<IssuerUrlT>(value); }
-    template<typename IssuerUrlT = Aws::String>
-    OidcJwtConfiguration& WithIssuerUrl(IssuerUrlT&& value) { SetIssuerUrl(std::forward<IssuerUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The method that the trusted token issuer can use to retrieve the JSON Web Key
      * Set used to verify a JWT.</p>
      */
@@ -96,14 +96,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_issuerUrl;
+    bool m_issuerUrlHasBeenSet = false;
+
     Aws::String m_claimAttributePath;
     bool m_claimAttributePathHasBeenSet = false;
 
     Aws::String m_identityStoreAttributePath;
     bool m_identityStoreAttributePathHasBeenSet = false;
-
-    Aws::String m_issuerUrl;
-    bool m_issuerUrlHasBeenSet = false;
 
     JwksRetrievalOption m_jwksRetrievalOption{JwksRetrievalOption::NOT_SET};
     bool m_jwksRetrievalOptionHasBeenSet = false;

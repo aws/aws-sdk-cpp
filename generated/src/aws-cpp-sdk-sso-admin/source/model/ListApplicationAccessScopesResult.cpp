@@ -25,11 +25,6 @@ ListApplicationAccessScopesResult::ListApplicationAccessScopesResult(const Aws::
 ListApplicationAccessScopesResult& ListApplicationAccessScopesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Scopes"))
   {
     Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
@@ -38,6 +33,11 @@ ListApplicationAccessScopesResult& ListApplicationAccessScopesResult::operator =
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
     }
     m_scopesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

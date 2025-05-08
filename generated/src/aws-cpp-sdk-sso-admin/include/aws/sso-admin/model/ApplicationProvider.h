@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/DisplayData.h>
 #include <aws/sso-admin/model/FederationProtocol.h>
+#include <aws/sso-admin/model/DisplayData.h>
 #include <aws/sso-admin/model/ResourceServerConfig.h>
 #include <utility>
 
@@ -56,6 +56,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The protocol that the application provider uses to perform federation.</p>
+     */
+    inline FederationProtocol GetFederationProtocol() const { return m_federationProtocol; }
+    inline bool FederationProtocolHasBeenSet() const { return m_federationProtocolHasBeenSet; }
+    inline void SetFederationProtocol(FederationProtocol value) { m_federationProtocolHasBeenSet = true; m_federationProtocol = value; }
+    inline ApplicationProvider& WithFederationProtocol(FederationProtocol value) { SetFederationProtocol(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A structure that describes how IAM Identity Center represents the application
      * provider in the portal.</p>
      */
@@ -65,16 +75,6 @@ namespace Model
     void SetDisplayData(DisplayDataT&& value) { m_displayDataHasBeenSet = true; m_displayData = std::forward<DisplayDataT>(value); }
     template<typename DisplayDataT = DisplayData>
     ApplicationProvider& WithDisplayData(DisplayDataT&& value) { SetDisplayData(std::forward<DisplayDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The protocol that the application provider uses to perform federation.</p>
-     */
-    inline FederationProtocol GetFederationProtocol() const { return m_federationProtocol; }
-    inline bool FederationProtocolHasBeenSet() const { return m_federationProtocolHasBeenSet; }
-    inline void SetFederationProtocol(FederationProtocol value) { m_federationProtocolHasBeenSet = true; m_federationProtocol = value; }
-    inline ApplicationProvider& WithFederationProtocol(FederationProtocol value) { SetFederationProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -93,11 +93,11 @@ namespace Model
     Aws::String m_applicationProviderArn;
     bool m_applicationProviderArnHasBeenSet = false;
 
-    DisplayData m_displayData;
-    bool m_displayDataHasBeenSet = false;
-
     FederationProtocol m_federationProtocol{FederationProtocol::NOT_SET};
     bool m_federationProtocolHasBeenSet = false;
+
+    DisplayData m_displayData;
+    bool m_displayDataHasBeenSet = false;
 
     ResourceServerConfig m_resourceServerConfig;
     bool m_resourceServerConfigHasBeenSet = false;

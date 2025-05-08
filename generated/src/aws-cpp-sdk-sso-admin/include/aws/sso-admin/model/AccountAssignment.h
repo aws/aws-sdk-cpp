@@ -70,6 +70,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The entity type for which the assignment will be created.</p>
+     */
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AccountAssignment& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An identifier for an object in IAM Identity Center, such as a user or group.
      * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
      * more information about PrincipalIds in IAM Identity Center, see the <a
@@ -83,16 +93,6 @@ namespace Model
     template<typename PrincipalIdT = Aws::String>
     AccountAssignment& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The entity type for which the assignment will be created.</p>
-     */
-    inline PrincipalType GetPrincipalType() const { return m_principalType; }
-    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline AccountAssignment& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
@@ -101,11 +101,11 @@ namespace Model
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
 
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
     PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

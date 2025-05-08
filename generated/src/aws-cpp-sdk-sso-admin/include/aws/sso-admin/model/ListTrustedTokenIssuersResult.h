@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/TrustedTokenIssuerMetadata.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An array list of the trusted token issuer configurations.</p>
+     */
+    inline const Aws::Vector<TrustedTokenIssuerMetadata>& GetTrustedTokenIssuers() const { return m_trustedTokenIssuers; }
+    template<typename TrustedTokenIssuersT = Aws::Vector<TrustedTokenIssuerMetadata>>
+    void SetTrustedTokenIssuers(TrustedTokenIssuersT&& value) { m_trustedTokenIssuersHasBeenSet = true; m_trustedTokenIssuers = std::forward<TrustedTokenIssuersT>(value); }
+    template<typename TrustedTokenIssuersT = Aws::Vector<TrustedTokenIssuerMetadata>>
+    ListTrustedTokenIssuersResult& WithTrustedTokenIssuers(TrustedTokenIssuersT&& value) { SetTrustedTokenIssuers(std::forward<TrustedTokenIssuersT>(value)); return *this;}
+    template<typename TrustedTokenIssuersT = TrustedTokenIssuerMetadata>
+    ListTrustedTokenIssuersResult& AddTrustedTokenIssuers(TrustedTokenIssuersT&& value) { m_trustedTokenIssuersHasBeenSet = true; m_trustedTokenIssuers.emplace_back(std::forward<TrustedTokenIssuersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If present, this value indicates that more output is available than is
      * included in the current response. Use this value in the <code>NextToken</code>
      * request parameter in a subsequent call to the operation to get the next part of
@@ -51,19 +64,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>An array list of the trusted token issuer configurations.</p>
-     */
-    inline const Aws::Vector<TrustedTokenIssuerMetadata>& GetTrustedTokenIssuers() const { return m_trustedTokenIssuers; }
-    template<typename TrustedTokenIssuersT = Aws::Vector<TrustedTokenIssuerMetadata>>
-    void SetTrustedTokenIssuers(TrustedTokenIssuersT&& value) { m_trustedTokenIssuersHasBeenSet = true; m_trustedTokenIssuers = std::forward<TrustedTokenIssuersT>(value); }
-    template<typename TrustedTokenIssuersT = Aws::Vector<TrustedTokenIssuerMetadata>>
-    ListTrustedTokenIssuersResult& WithTrustedTokenIssuers(TrustedTokenIssuersT&& value) { SetTrustedTokenIssuers(std::forward<TrustedTokenIssuersT>(value)); return *this;}
-    template<typename TrustedTokenIssuersT = TrustedTokenIssuerMetadata>
-    ListTrustedTokenIssuersResult& AddTrustedTokenIssuers(TrustedTokenIssuersT&& value) { m_trustedTokenIssuersHasBeenSet = true; m_trustedTokenIssuers.emplace_back(std::forward<TrustedTokenIssuersT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,11 +73,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<TrustedTokenIssuerMetadata> m_trustedTokenIssuers;
     bool m_trustedTokenIssuersHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

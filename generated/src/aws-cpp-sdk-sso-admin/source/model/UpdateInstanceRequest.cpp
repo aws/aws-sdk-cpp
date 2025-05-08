@@ -16,15 +16,15 @@ Aws::String UpdateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("InstanceArn", m_instanceArn);
 
   }
 

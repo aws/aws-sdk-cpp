@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the updated name to be applied to the trusted token issuer
-     * configuration.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateTrustedTokenIssuerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the ARN of the trusted token issuer configuration that you want to
      * update.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value); }
     template<typename TrustedTokenIssuerArnT = Aws::String>
     UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the updated name to be applied to the trusted token issuer
+     * configuration.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTrustedTokenIssuerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,11 +76,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::String m_trustedTokenIssuerArn;
     bool m_trustedTokenIssuerArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     TrustedTokenIssuerUpdateConfiguration m_trustedTokenIssuerConfiguration;
     bool m_trustedTokenIssuerConfigurationHasBeenSet = false;

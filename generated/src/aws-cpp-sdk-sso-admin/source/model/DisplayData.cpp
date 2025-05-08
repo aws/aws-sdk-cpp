@@ -25,11 +25,6 @@ DisplayData::DisplayData(JsonView jsonValue)
 
 DisplayData& DisplayData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
@@ -40,18 +35,17 @@ DisplayData& DisplayData::operator =(JsonView jsonValue)
     m_iconUrl = jsonValue.GetString("IconUrl");
     m_iconUrlHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue DisplayData::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
-  }
 
   if(m_displayNameHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue DisplayData::Jsonize() const
   if(m_iconUrlHasBeenSet)
   {
    payload.WithString("IconUrl", m_iconUrl);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

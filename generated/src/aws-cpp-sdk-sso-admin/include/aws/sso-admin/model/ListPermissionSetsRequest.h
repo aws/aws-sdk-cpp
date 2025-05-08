@@ -52,16 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to display for the assignment.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListPermissionSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
@@ -72,16 +62,26 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListPermissionSetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to display for the assignment.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListPermissionSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

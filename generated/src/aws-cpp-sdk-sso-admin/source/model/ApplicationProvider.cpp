@@ -30,15 +30,15 @@ ApplicationProvider& ApplicationProvider::operator =(JsonView jsonValue)
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
     m_applicationProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayData"))
-  {
-    m_displayData = jsonValue.GetObject("DisplayData");
-    m_displayDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("FederationProtocol"))
   {
     m_federationProtocol = FederationProtocolMapper::GetFederationProtocolForName(jsonValue.GetString("FederationProtocol"));
     m_federationProtocolHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DisplayData"))
+  {
+    m_displayData = jsonValue.GetObject("DisplayData");
+    m_displayDataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceServerConfig"))
   {
@@ -58,15 +58,15 @@ JsonValue ApplicationProvider::Jsonize() const
 
   }
 
+  if(m_federationProtocolHasBeenSet)
+  {
+   payload.WithString("FederationProtocol", FederationProtocolMapper::GetNameForFederationProtocol(m_federationProtocol));
+  }
+
   if(m_displayDataHasBeenSet)
   {
    payload.WithObject("DisplayData", m_displayData.Jsonize());
 
-  }
-
-  if(m_federationProtocolHasBeenSet)
-  {
-   payload.WithString("FederationProtocol", FederationProtocolMapper::GetNameForFederationProtocol(m_federationProtocol));
   }
 
   if(m_resourceServerConfigHasBeenSet)

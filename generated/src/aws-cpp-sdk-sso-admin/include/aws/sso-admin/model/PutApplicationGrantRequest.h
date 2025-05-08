@@ -7,8 +7,8 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/Grant.h>
 #include <aws/sso-admin/model/GrantType.h>
+#include <aws/sso-admin/model/Grant.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the type of grant to update.</p>
+     */
+    inline GrantType GetGrantType() const { return m_grantType; }
+    inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+    inline void SetGrantType(GrantType value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
+    inline PutApplicationGrantRequest& WithGrantType(GrantType value) { SetGrantType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a structure that describes the grant to update.</p>
      */
     inline const Grant& GetGrant() const { return m_grant; }
@@ -59,26 +69,16 @@ namespace Model
     template<typename GrantT = Grant>
     PutApplicationGrantRequest& WithGrant(GrantT&& value) { SetGrant(std::forward<GrantT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the type of grant to update.</p>
-     */
-    inline GrantType GetGrantType() const { return m_grantType; }
-    inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-    inline void SetGrantType(GrantType value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-    inline PutApplicationGrantRequest& WithGrantType(GrantType value) { SetGrantType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    Grant m_grant;
-    bool m_grantHasBeenSet = false;
-
     GrantType m_grantType{GrantType::NOT_SET};
     bool m_grantTypeHasBeenSet = false;
+
+    Grant m_grant;
+    bool m_grantHasBeenSet = false;
   };
 
 } // namespace Model

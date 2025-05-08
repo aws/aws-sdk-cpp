@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/EnvironmentVariableType.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,19 @@ namespace Model
     template<typename ValueT = Aws::String>
     EnvironmentVariable& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the type of use for the environment variable value. The value can
+     * be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value
+     * is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the
+     * EnvironmentVariable value.</p>
+     */
+    inline EnvironmentVariableType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(EnvironmentVariableType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EnvironmentVariable& WithType(EnvironmentVariableType value) { SetType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -67,6 +81,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    EnvironmentVariableType m_type{EnvironmentVariableType::NOT_SET};
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

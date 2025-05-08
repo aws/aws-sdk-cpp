@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/model/AuthenticationMethod.h>
 #include <aws/sso-admin/model/AuthenticationMethodType.h>
+#include <aws/sso-admin/model/AuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of authentication that is used by this method.</p>
+     */
+    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
+    inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
+    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
+    inline AuthenticationMethodItem& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A structure that describes an authentication method. The contents of this
      * structure is determined by the <code>AuthenticationMethodType</code>.</p>
      */
@@ -51,23 +61,13 @@ namespace Model
     template<typename AuthenticationMethodT = AuthenticationMethod>
     AuthenticationMethodItem& WithAuthenticationMethod(AuthenticationMethodT&& value) { SetAuthenticationMethod(std::forward<AuthenticationMethodT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of authentication that is used by this method.</p>
-     */
-    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
-    inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-    inline AuthenticationMethodItem& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
-    ///@}
   private:
-
-    AuthenticationMethod m_authenticationMethod;
-    bool m_authenticationMethodHasBeenSet = false;
 
     AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
     bool m_authenticationMethodTypeHasBeenSet = false;
+
+    AuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

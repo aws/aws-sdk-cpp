@@ -77,13 +77,21 @@ namespace Model
     ///@{
     /**
      * <p>The date and time that polling for source changes (periodic checks) was
-     * stopped for the pipeline, in timestamp format. You can migrate (update) a
-     * polling pipeline to use event-based change detection. For example, for a
-     * pipeline with a CodeCommit source, we recommend you migrate (update) your
-     * pipeline to use CloudWatch Events. To learn more, see <a
+     * stopped for the pipeline, in timestamp format. </p>  <p>Pipelines
+     * that are inactive for longer than 30 days will have polling disabled for the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#metadata.pollingDisabledAt">pollingDisabledAt</a>
+     * in the pipeline structure reference. For the steps to migrate your pipeline from
+     * polling to event-based change detection, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-     * polling pipelines to use event-based change detection</a> in the CodePipeline
-     * User Guide.</p>
+     * polling pipelines to use event-based change detection</a>.</p> 
+     * <p>You can migrate (update) a polling pipeline to use event-based change
+     * detection. For example, for a pipeline with a CodeCommit source, we recommend
+     * you migrate (update) your pipeline to use CloudWatch Events. To learn more, see
+     * <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     * polling pipelines to use event-based change detection</a> in the <i>CodePipeline
+     * User Guide</i>.</p>
      */
     inline const Aws::Utils::DateTime& GetPollingDisabledAt() const { return m_pollingDisabledAt; }
     inline bool PollingDisabledAtHasBeenSet() const { return m_pollingDisabledAtHasBeenSet; }

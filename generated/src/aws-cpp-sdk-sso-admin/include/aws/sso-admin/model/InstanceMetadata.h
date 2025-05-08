@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/sso-admin/model/InstanceStatus.h>
 #include <utility>
 
@@ -42,14 +42,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the Identity Center instance was created.</p>
+     * <p>The ARN of the Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    InstanceMetadata& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    InstanceMetadata& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +71,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Identity Center instance under which the operation will be
-     * executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * <p>The Amazon Web Services account ID number of the owner of the Identity Center
+     * instance.</p>
      */
-    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
-    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    template<typename InstanceArnT = Aws::String>
-    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
-    template<typename InstanceArnT = Aws::String>
-    InstanceMetadata& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    InstanceMetadata& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,15 +96,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID number of the owner of the Identity Center
-     * instance.</p>
+     * <p>The date and time that the Identity Center instance was created.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
-    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    template<typename OwnerAccountIdT = Aws::String>
-    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
-    template<typename OwnerAccountIdT = Aws::String>
-    InstanceMetadata& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    InstanceMetadata& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,20 +117,20 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdDate{};
-    bool m_createdDateHasBeenSet = false;
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_identityStoreId;
     bool m_identityStoreIdHasBeenSet = false;
 
-    Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet = false;
+    Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet = false;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     InstanceStatus m_status{InstanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;

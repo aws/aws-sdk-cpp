@@ -25,11 +25,6 @@ ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebService
 ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -38,6 +33,11 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

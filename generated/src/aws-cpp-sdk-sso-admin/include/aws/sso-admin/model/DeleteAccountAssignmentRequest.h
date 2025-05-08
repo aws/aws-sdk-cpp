@@ -7,8 +7,8 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/PrincipalType.h>
 #include <aws/sso-admin/model/TargetType.h>
+#include <aws/sso-admin/model/PrincipalType.h>
 #include <utility>
 
 namespace Aws
@@ -54,44 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the permission set that will be used to remove access.</p>
-     */
-    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
-    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    template<typename PermissionSetArnT = Aws::String>
-    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
-    template<typename PermissionSetArnT = Aws::String>
-    DeleteAccountAssignmentRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
-     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
-     * more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
-     * Center Identity Store API Reference</a>.</p>
-     */
-    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    template<typename PrincipalIdT = Aws::String>
-    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
-    template<typename PrincipalIdT = Aws::String>
-    DeleteAccountAssignmentRequest& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The entity type for which the assignment will be deleted.</p>
-     */
-    inline PrincipalType GetPrincipalType() const { return m_principalType; }
-    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline DeleteAccountAssignmentRequest& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>TargetID is an Amazon Web Services account identifier, (For example,
      * 123456789012).</p>
      */
@@ -112,25 +74,63 @@ namespace Model
     inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
     inline DeleteAccountAssignmentRequest& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the permission set that will be used to remove access.</p>
+     */
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
+    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    DeleteAccountAssignmentRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The entity type for which the assignment will be deleted.</p>
+     */
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline DeleteAccountAssignmentRequest& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    DeleteAccountAssignmentRequest& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
-
-    Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet = false;
-
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
-    PrincipalType m_principalType{PrincipalType::NOT_SET};
-    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
+
+    Aws::String m_permissionSetArn;
+    bool m_permissionSetArnHasBeenSet = false;
+
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
+    bool m_principalTypeHasBeenSet = false;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

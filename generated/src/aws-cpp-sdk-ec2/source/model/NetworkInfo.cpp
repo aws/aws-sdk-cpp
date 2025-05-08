@@ -129,6 +129,12 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
 
       m_bandwidthWeightingsHasBeenSet = true;
     }
+    XmlNode flexibleEnaQueuesSupportNode = resultNode.FirstChild("flexibleEnaQueuesSupport");
+    if(!flexibleEnaQueuesSupportNode.IsNull())
+    {
+      m_flexibleEnaQueuesSupport = FlexibleEnaQueuesSupportMapper::GetFlexibleEnaQueuesSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(flexibleEnaQueuesSupportNode.GetText()).c_str()));
+      m_flexibleEnaQueuesSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -218,6 +224,11 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_flexibleEnaQueuesSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FlexibleEnaQueuesSupport=" << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport)) << "&";
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -289,6 +300,10 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
       {
         oStream << location << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << StringUtils::URLEncode(BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item)) << "&";
       }
+  }
+  if(m_flexibleEnaQueuesSupportHasBeenSet)
+  {
+      oStream << location << ".FlexibleEnaQueuesSupport=" << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport)) << "&";
   }
 }
 

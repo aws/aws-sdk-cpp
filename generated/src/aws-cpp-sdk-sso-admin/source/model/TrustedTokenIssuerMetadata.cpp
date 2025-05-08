@@ -25,15 +25,15 @@ TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata(JsonView jsonValue)
 
 TrustedTokenIssuerMetadata& TrustedTokenIssuerMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
   {
     m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
     m_trustedTokenIssuerArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("TrustedTokenIssuerType"))
   {
@@ -47,15 +47,15 @@ JsonValue TrustedTokenIssuerMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_trustedTokenIssuerArnHasBeenSet)
   {
    payload.WithString("TrustedTokenIssuerArn", m_trustedTokenIssuerArn);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

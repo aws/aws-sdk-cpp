@@ -22,15 +22,15 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
-  }
-
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 

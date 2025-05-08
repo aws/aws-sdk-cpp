@@ -62,7 +62,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure for the source table configuration.</p>
+     * <p>A structure for the source table configuration. See the
+     * <code>SourceTableConfig</code> structure to see list of supported source
+     * properties.</p>
      */
     inline const SourceTableConfig& GetSourceTableConfig() const { return m_sourceTableConfig; }
     inline bool SourceTableConfigHasBeenSet() const { return m_sourceTableConfigHasBeenSet; }

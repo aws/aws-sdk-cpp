@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the application provider that appears in the portal.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    DisplayData& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the application provider that appears in the portal.</p>
      */
     inline const Aws::String& GetDisplayName() const { return m_displayName; }
@@ -73,16 +61,28 @@ namespace Model
     template<typename IconUrlT = Aws::String>
     DisplayData& WithIconUrl(IconUrlT&& value) { SetIconUrl(std::forward<IconUrlT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The description of the application provider that appears in the portal.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DisplayData& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
     Aws::String m_iconUrl;
     bool m_iconUrlHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

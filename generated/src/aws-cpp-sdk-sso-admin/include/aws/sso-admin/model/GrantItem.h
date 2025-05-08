@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/model/Grant.h>
 #include <aws/sso-admin/model/GrantType.h>
+#include <aws/sso-admin/model/Grant.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the selected grant.</p>
+     */
+    inline GrantType GetGrantType() const { return m_grantType; }
+    inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+    inline void SetGrantType(GrantType value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
+    inline GrantItem& WithGrantType(GrantType value) { SetGrantType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration structure for the selected grant.</p>
      */
     inline const Grant& GetGrant() const { return m_grant; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename GrantT = Grant>
     GrantItem& WithGrant(GrantT&& value) { SetGrant(std::forward<GrantT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the selected grant.</p>
-     */
-    inline GrantType GetGrantType() const { return m_grantType; }
-    inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-    inline void SetGrantType(GrantType value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-    inline GrantItem& WithGrantType(GrantType value) { SetGrantType(value); return *this;}
-    ///@}
   private:
-
-    Grant m_grant;
-    bool m_grantHasBeenSet = false;
 
     GrantType m_grantType{GrantType::NOT_SET};
     bool m_grantTypeHasBeenSet = false;
+
+    Grant m_grant;
+    bool m_grantHasBeenSet = false;
   };
 
 } // namespace Model

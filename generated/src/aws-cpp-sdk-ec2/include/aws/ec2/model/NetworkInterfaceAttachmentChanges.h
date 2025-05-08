@@ -41,6 +41,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The default number of the ENA queues.</p>
+     */
+    inline bool GetDefaultEnaQueueCount() const { return m_defaultEnaQueueCount; }
+    inline bool DefaultEnaQueueCountHasBeenSet() const { return m_defaultEnaQueueCountHasBeenSet; }
+    inline void SetDefaultEnaQueueCount(bool value) { m_defaultEnaQueueCountHasBeenSet = true; m_defaultEnaQueueCount = value; }
+    inline NetworkInterfaceAttachmentChanges& WithDefaultEnaQueueCount(bool value) { SetDefaultEnaQueueCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of ENA queues to be created with the instance.</p>
+     */
+    inline int GetEnaQueueCount() const { return m_enaQueueCount; }
+    inline bool EnaQueueCountHasBeenSet() const { return m_enaQueueCountHasBeenSet; }
+    inline void SetEnaQueueCount(int value) { m_enaQueueCountHasBeenSet = true; m_enaQueueCount = value; }
+    inline NetworkInterfaceAttachmentChanges& WithEnaQueueCount(int value) { SetEnaQueueCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the network interface attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
@@ -62,6 +82,12 @@ namespace Model
     inline NetworkInterfaceAttachmentChanges& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
     ///@}
   private:
+
+    bool m_defaultEnaQueueCount{false};
+    bool m_defaultEnaQueueCountHasBeenSet = false;
+
+    int m_enaQueueCount{0};
+    bool m_enaQueueCountHasBeenSet = false;
 
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet = false;

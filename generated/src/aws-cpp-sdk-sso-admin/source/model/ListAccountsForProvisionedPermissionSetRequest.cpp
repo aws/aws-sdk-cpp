@@ -22,6 +22,17 @@ Aws::String ListAccountsForProvisionedPermissionSetRequest::SerializePayload() c
 
   }
 
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_provisioningStatusHasBeenSet)
+  {
+   payload.WithString("ProvisioningStatus", ProvisioningStatusMapper::GetNameForProvisioningStatus(m_provisioningStatus));
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -32,17 +43,6 @@ Aws::String ListAccountsForProvisionedPermissionSetRequest::SerializePayload() c
   {
    payload.WithString("NextToken", m_nextToken);
 
-  }
-
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
-  if(m_provisioningStatusHasBeenSet)
-  {
-   payload.WithString("ProvisioningStatus", ProvisioningStatusMapper::GetNameForProvisioningStatus(m_provisioningStatus));
   }
 
   return payload.View().WriteReadable();

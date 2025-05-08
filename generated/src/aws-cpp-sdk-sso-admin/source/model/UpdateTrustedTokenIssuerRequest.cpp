@@ -16,15 +16,15 @@ Aws::String UpdateTrustedTokenIssuerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_trustedTokenIssuerArnHasBeenSet)
   {
    payload.WithString("TrustedTokenIssuerArn", m_trustedTokenIssuerArn);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

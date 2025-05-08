@@ -25,35 +25,35 @@ PermissionSetProvisioningStatus::PermissionSetProvisioningStatus(JsonView jsonVa
 
 PermissionSetProvisioningStatus& PermissionSetProvisioningStatus::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AccountId"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_accountId = jsonValue.GetString("AccountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedDate"))
-  {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
-    m_failureReason = jsonValue.GetString("FailureReason");
-    m_failureReasonHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("PermissionSetArn"))
-  {
-    m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
-    m_permissionSetArnHasBeenSet = true;
+    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("AccountId"))
   {
-    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_accountId = jsonValue.GetString("AccountId");
+    m_accountIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PermissionSetArn"))
+  {
+    m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
+    m_permissionSetArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+    m_failureReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
   return *this;
 }
@@ -62,20 +62,20 @@ JsonValue PermissionSetProvisioningStatus::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("RequestId", m_requestId);
+
+  }
+
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
-
-  }
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
-  }
-
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
 
   }
 
@@ -85,15 +85,15 @@ JsonValue PermissionSetProvisioningStatus::Jsonize() const
 
   }
 
-  if(m_requestIdHasBeenSet)
+  if(m_failureReasonHasBeenSet)
   {
-   payload.WithString("RequestId", m_requestId);
+   payload.WithString("FailureReason", m_failureReason);
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdDateHasBeenSet)
   {
-   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;

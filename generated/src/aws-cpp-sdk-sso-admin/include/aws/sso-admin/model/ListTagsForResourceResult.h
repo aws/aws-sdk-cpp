@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/Tag.h>
 #include <utility>
 
@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pagination token for the list API. Initially the value is null. Use the
-     * output of previous API calls to make subsequent calls.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListTagsForResourceResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A set of key-value pairs that are used to manage the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -60,6 +48,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The pagination token for the list API. Initially the value is null. Use the
+     * output of previous API calls to make subsequent calls.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTagsForResourceResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -69,11 +69,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

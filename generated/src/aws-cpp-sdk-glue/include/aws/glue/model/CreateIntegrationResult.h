@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/IntegrationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/glue/model/IntegrationConfig.h>
 #include <aws/glue/model/Tag.h>
 #include <aws/glue/model/IntegrationError.h>
 #include <utility>
@@ -186,6 +187,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The configuration settings.</p>
+     */
+    inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    void SetIntegrationConfig(IntegrationConfigT&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::forward<IntegrationConfigT>(value); }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    CreateIntegrationResult& WithIntegrationConfig(IntegrationConfigT&& value) { SetIntegrationConfig(std::forward<IntegrationConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -230,6 +242,9 @@ namespace Model
 
     Aws::String m_dataFilter;
     bool m_dataFilterHasBeenSet = false;
+
+    IntegrationConfig m_integrationConfig;
+    bool m_integrationConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

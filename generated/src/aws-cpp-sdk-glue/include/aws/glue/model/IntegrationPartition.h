@@ -40,7 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The field name used to partition data on the target.</p>
+     * <p>The field name used to partition data on the target. Avoid using columns that
+     * have unique values for each row (for example, `LastModifiedTimestamp`,
+     * `SystemModTimeStamp`) as the partition column. These columns are not suitable
+     * for partitioning because they create a large number of small partitions, which
+     * can lead to performance issues.</p>
      */
     inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
@@ -52,7 +56,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies a function used to partition data on the target.</p>
+     * <p>Specifies the function used to partition data on the target. The only
+     * accepted value for this parameter is `'identity'` (string). The `'identity'`
+     * function ensures that the data partitioning on the target follows the same
+     * scheme as the source. In other words, the partitioning structure of the source
+     * data is preserved in the target destination.</p>
      */
     inline const Aws::String& GetFunctionSpec() const { return m_functionSpec; }
     inline bool FunctionSpecHasBeenSet() const { return m_functionSpecHasBeenSet; }

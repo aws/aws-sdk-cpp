@@ -23,7 +23,9 @@ namespace Model
 
   /**
    * <p>A structure that defines configuration settings for an application that
-   * supports the OAuth 2.0 Token Exchange Grant.</p><p><h3>See Also:</h3>   <a
+   * supports the OAuth 2.0 Token Exchange Grant. For more information, see <a
+   * href="https://datatracker.ietf.org/doc/html/rfc8693">RFC 8693</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/TokenExchangeGrant">AWS
    * API Reference</a></p>
    */

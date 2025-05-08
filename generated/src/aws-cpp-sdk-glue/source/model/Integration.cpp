@@ -83,6 +83,11 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_createTime = jsonValue.GetDouble("CreateTime");
     m_createTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IntegrationConfig"))
+  {
+    m_integrationConfig = jsonValue.GetObject("IntegrationConfig");
+    m_integrationConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -170,6 +175,12 @@ JsonValue Integration::Jsonize() const
   if(m_createTimeHasBeenSet)
   {
    payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+  }
+
+  if(m_integrationConfigHasBeenSet)
+  {
+   payload.WithObject("IntegrationConfig", m_integrationConfig.Jsonize());
+
   }
 
   if(m_errorsHasBeenSet)

@@ -25,20 +25,20 @@ DescribeApplicationAssignmentResult::DescribeApplicationAssignmentResult(const A
 DescribeApplicationAssignmentResult& DescribeApplicationAssignmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ApplicationArn"))
+  if(jsonValue.ValueExists("PrincipalType"))
   {
-    m_applicationArn = jsonValue.GetString("ApplicationArn");
-    m_applicationArnHasBeenSet = true;
+    m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
+    m_principalTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
     m_principalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrincipalType"))
+  if(jsonValue.ValueExists("ApplicationArn"))
   {
-    m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-    m_principalTypeHasBeenSet = true;
+    m_applicationArn = jsonValue.GetString("ApplicationArn");
+    m_applicationArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

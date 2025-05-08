@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/EnaSupport.h>
 #include <aws/ec2/model/EfaInfo.h>
+#include <aws/ec2/model/FlexibleEnaQueuesSupport.h>
 #include <aws/ec2/model/NetworkCardInfo.h>
 #include <aws/ec2/model/BandwidthWeightingType.h>
 #include <utility>
@@ -201,6 +202,16 @@ namespace Model
     NetworkInfo& WithBandwidthWeightings(BandwidthWeightingsT&& value) { SetBandwidthWeightings(std::forward<BandwidthWeightingsT>(value)); return *this;}
     inline NetworkInfo& AddBandwidthWeightings(BandwidthWeightingType value) { m_bandwidthWeightingsHasBeenSet = true; m_bandwidthWeightings.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether changing the number of ENA queues is supported.</p>
+     */
+    inline FlexibleEnaQueuesSupport GetFlexibleEnaQueuesSupport() const { return m_flexibleEnaQueuesSupport; }
+    inline bool FlexibleEnaQueuesSupportHasBeenSet() const { return m_flexibleEnaQueuesSupportHasBeenSet; }
+    inline void SetFlexibleEnaQueuesSupport(FlexibleEnaQueuesSupport value) { m_flexibleEnaQueuesSupportHasBeenSet = true; m_flexibleEnaQueuesSupport = value; }
+    inline NetworkInfo& WithFlexibleEnaQueuesSupport(FlexibleEnaQueuesSupport value) { SetFlexibleEnaQueuesSupport(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_networkPerformance;
@@ -244,6 +255,9 @@ namespace Model
 
     Aws::Vector<BandwidthWeightingType> m_bandwidthWeightings;
     bool m_bandwidthWeightingsHasBeenSet = false;
+
+    FlexibleEnaQueuesSupport m_flexibleEnaQueuesSupport{FlexibleEnaQueuesSupport::NOT_SET};
+    bool m_flexibleEnaQueuesSupportHasBeenSet = false;
   };
 
 } // namespace Model

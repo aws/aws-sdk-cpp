@@ -120,6 +120,16 @@ namespace Model
     template<typename EnaSrdSpecificationT = InstanceAttachmentEnaSrdSpecification>
     InstanceNetworkInterfaceAttachment& WithEnaSrdSpecification(EnaSrdSpecificationT&& value) { SetEnaSrdSpecification(std::forward<EnaSrdSpecificationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of ENA queues created with the instance.</p>
+     */
+    inline int GetEnaQueueCount() const { return m_enaQueueCount; }
+    inline bool EnaQueueCountHasBeenSet() const { return m_enaQueueCountHasBeenSet; }
+    inline void SetEnaQueueCount(int value) { m_enaQueueCountHasBeenSet = true; m_enaQueueCount = value; }
+    inline InstanceNetworkInterfaceAttachment& WithEnaQueueCount(int value) { SetEnaQueueCount(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_attachTime{};
@@ -142,6 +152,9 @@ namespace Model
 
     InstanceAttachmentEnaSrdSpecification m_enaSrdSpecification;
     bool m_enaSrdSpecificationHasBeenSet = false;
+
+    int m_enaQueueCount{0};
+    bool m_enaQueueCountHasBeenSet = false;
   };
 
 } // namespace Model

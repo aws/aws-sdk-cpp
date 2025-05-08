@@ -1277,6 +1277,7 @@
 #include <aws/ec2/model/FleetSpotMaintenanceStrategiesRequest.h>
 #include <aws/ec2/model/FleetStateCode.h>
 #include <aws/ec2/model/FleetType.h>
+#include <aws/ec2/model/FlexibleEnaQueuesSupport.h>
 #include <aws/ec2/model/FlowLog.h>
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/FpgaDeviceInfo.h>

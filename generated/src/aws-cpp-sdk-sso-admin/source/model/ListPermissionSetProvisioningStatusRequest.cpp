@@ -16,12 +16,6 @@ Aws::String ListPermissionSetProvisioningStatusRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
@@ -37,6 +31,12 @@ Aws::String ListPermissionSetProvisioningStatusRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
 
   }
 

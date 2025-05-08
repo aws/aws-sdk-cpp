@@ -25,16 +25,6 @@ PermissionSet::PermissionSet(JsonView jsonValue)
 
 PermissionSet& PermissionSet::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreatedDate"))
-  {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -45,15 +35,25 @@ PermissionSet& PermissionSet::operator =(JsonView jsonValue)
     m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
     m_permissionSetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelayState"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_relayState = jsonValue.GetString("RelayState");
-    m_relayStateHasBeenSet = true;
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("SessionDuration"))
   {
     m_sessionDuration = jsonValue.GetString("SessionDuration");
     m_sessionDurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RelayState"))
+  {
+    m_relayState = jsonValue.GetString("RelayState");
+    m_relayStateHasBeenSet = true;
   }
   return *this;
 }
@@ -61,17 +61,6 @@ PermissionSet& PermissionSet::operator =(JsonView jsonValue)
 JsonValue PermissionSet::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -85,15 +74,26 @@ JsonValue PermissionSet::Jsonize() const
 
   }
 
-  if(m_relayStateHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("RelayState", m_relayState);
+   payload.WithString("Description", m_description);
 
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_sessionDurationHasBeenSet)
   {
    payload.WithString("SessionDuration", m_sessionDuration);
+
+  }
+
+  if(m_relayStateHasBeenSet)
+  {
+   payload.WithString("RelayState", m_relayState);
 
   }
 

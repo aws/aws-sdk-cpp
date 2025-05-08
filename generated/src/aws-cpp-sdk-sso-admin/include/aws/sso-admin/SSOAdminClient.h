@@ -16,21 +16,22 @@ namespace Aws
 namespace SSOAdmin
 {
   /**
-   * <p>IAM Identity Center (successor to Single Sign-On) helps you securely create,
-   * or connect, your workforce identities and manage their access centrally across
-   * Amazon Web Services accounts and applications. IAM Identity Center is the
-   * recommended approach for workforce authentication and authorization in Amazon
-   * Web Services, for organizations of any size and type.</p>  <p>IAM Identity
-   * Center uses the <code>sso</code> and <code>identitystore</code> API
-   * namespaces.</p>  <p>This reference guide provides information on single
-   * sign-on operations which could be used for access management of Amazon Web
-   * Services accounts. For information about IAM Identity Center features, see the
-   * <a
+   * <p>IAM Identity Center is the Amazon Web Services solution for connecting your
+   * workforce users to Amazon Web Services managed applications and other Amazon Web
+   * Services resources. You can connect your existing identity provider and
+   * synchronize users and groups from your directory, or create and manage your
+   * users directly in IAM Identity Center. You can then use IAM Identity Center for
+   * either or both of the following:</p> <ul> <li> <p>User access to
+   * applications</p> </li> <li> <p>User access to Amazon Web Services accounts</p>
+   * </li> </ul> <p>This guide provides information about single sign-on operations
+   * that you can use for access to applications and Amazon Web Services accounts.
+   * For information about IAM Identity Center features, see the <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
-   * Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity
-   * Center APIs rely on identifiers for users and groups, known as principals. For
-   * more information about how to work with principals and principal IDs in IAM
-   * Identity Center, see the <a
+   * Identity Center User Guide</a>.</p>  <p>IAM Identity Center uses the
+   * <code>sso</code> and <code>identitystore</code> API namespaces.</p> 
+   * <p>Many API operations for IAM Identity Center rely on identifiers for users and
+   * groups, known as principals. For more information about how to work with
+   * principals and principal IDs in IAM Identity Center, see the <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
    * Store API Reference</a>.</p>  <p>Amazon Web Services provides SDKs that
    * consist of libraries and sample code for various programming languages and
@@ -193,8 +194,17 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Creates an application in IAM Identity Center for the given application
-         * provider.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an OAuth 2.0 customer managed application in IAM Identity Center for
+         * the given application provider.</p>  <p>This API does not support creating
+         * SAML 2.0 customer managed applications or Amazon Web Services managed
+         * applications. To learn how to create an Amazon Web Services managed application,
+         * see the application user guide. You can create a SAML 2.0 customer managed
+         * application in the Amazon Web Services Management Console only. See <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-setup.html">Setting
+         * up customer managed SAML 2.0 applications</a>. For more information on these
+         * application types, see <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/awsapps.html">Amazon
+         * Web Services managed applications</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -1257,7 +1267,10 @@ namespace SSOAdmin
 
         /**
          * <p>Retrieves a list of the IAM Identity Center associated Amazon Web Services
-         * accounts that the principal has access to.</p><p><h3>See Also:</h3>   <a
+         * accounts that the principal has access to. This action must be called from the
+         * management account containing your organization instance of IAM Identity Center.
+         * This action is not valid for account instances of IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">AWS
          * API Reference</a></p>
          */
@@ -1360,8 +1373,12 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the applications to which a specified principal is
-         * assigned.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the applications to which a specified principal is assigned. You must
+         * provide a filter when calling this action from a member account against your
+         * organization instance of IAM Identity Center. A filter is not required when
+         * called from the management account against an organization instance of IAM
+         * Identity Center, or from a member account against an account instance of IAM
+         * Identity Center in the same account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">AWS
          * API Reference</a></p>
          */
@@ -1464,10 +1481,11 @@ namespace SSOAdmin
 
         /**
          * <p>Lists all applications associated with the instance of IAM Identity Center.
-         * When listing applications for an instance in the management account, member
-         * accounts must use the <code>applicationAccount</code> parameter to filter the
-         * list to only applications created from that account.</p><p><h3>See Also:</h3>  
-         * <a
+         * When listing applications for an organization instance in the management
+         * account, member accounts must use the <code>applicationAccount</code> parameter
+         * to filter the list to only applications created from that account. When listing
+         * applications for an account instance in the same member account, a filter is not
+         * required.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">AWS
          * API Reference</a></p>
          */
@@ -1813,7 +1831,43 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Adds a grant to an application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a configuration for an application to use grants. Conceptually grants
+         * are authorization to request actions related to tokens. This configuration will
+         * be used when parties are requesting and receiving tokens during the trusted
+         * identity propagation process. For more information on the IAM Identity Center
+         * supported grant workflows, see <a
+         * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-oauth2.html">SAML
+         * 2.0 and OAuth 2.0</a>.</p> <p>A grant is created between your applications and
+         * Identity Center instance which enables an application to use specified
+         * mechanisms to obtain tokens. These tokens are used by your applications to gain
+         * access to Amazon Web Services resources on behalf of users. The following
+         * elements are within these exchanges:</p> <ul> <li> <p> <b>Requester</b> - The
+         * application requesting access to Amazon Web Services resources.</p> </li> <li>
+         * <p> <b>Subject</b> - Typically the user that is requesting access to Amazon Web
+         * Services resources.</p> </li> <li> <p> <b>Grant</b> - Conceptually, a grant is
+         * authorization to access Amazon Web Services resources. These grants authorize
+         * token generation for authenticating access to the requester and for the request
+         * to make requests on behalf of the subjects. There are four types of grants:</p>
+         * <ul> <li> <p> <b>AuthorizationCode</b> - Allows an application to request
+         * authorization through a series of user-agent redirects.</p> </li> <li> <p>
+         * <b>JWT bearer </b> - Authorizes an application to exchange a JSON Web Token that
+         * came from an external identity provider. To learn more, see <a
+         * href="https://datatracker.ietf.org/doc/html/rfc6749">RFC 6479</a>.</p> </li>
+         * <li> <p> <b>Refresh token</b> - Enables application to request new access tokens
+         * to replace expiring or expired access tokens.</p> </li> <li> <p> <b>Exchange
+         * token</b> - A grant that requests tokens from the authorization server by
+         * providing a ‘subject’ token with access scope authorizing trusted identity
+         * propagation to this application. To learn more, see <a
+         * href="https://datatracker.ietf.org/doc/html/rfc8693">RFC 8693</a>.</p> </li>
+         * </ul> </li> <li> <p> <b>Authorization server</b> - IAM Identity Center requests
+         * tokens.</p> </li> </ul> <p>User credentials are never shared directly within
+         * these exchanges. Instead, applications use grants to request access tokens from
+         * IAM Identity Center. For more information, see <a
+         * href="https://datatracker.ietf.org/doc/html/rfc6749">RFC 6479</a>.</p> <p
+         * class="title"> <b>Use cases</b> </p> <ul> <li> <p>Connecting to custom
+         * applications.</p> </li> <li> <p>Configuring an Amazon Web Services service to
+         * make calls to another Amazon Web Services services using JWT tokens.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">AWS
          * API Reference</a></p>
          */

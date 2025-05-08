@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier that is used to track the request operation progress.</p>
-     */
-    inline const Aws::String& GetAccountAssignmentDeletionRequestId() const { return m_accountAssignmentDeletionRequestId; }
-    inline bool AccountAssignmentDeletionRequestIdHasBeenSet() const { return m_accountAssignmentDeletionRequestIdHasBeenSet; }
-    template<typename AccountAssignmentDeletionRequestIdT = Aws::String>
-    void SetAccountAssignmentDeletionRequestId(AccountAssignmentDeletionRequestIdT&& value) { m_accountAssignmentDeletionRequestIdHasBeenSet = true; m_accountAssignmentDeletionRequestId = std::forward<AccountAssignmentDeletionRequestIdT>(value); }
-    template<typename AccountAssignmentDeletionRequestIdT = Aws::String>
-    DescribeAccountAssignmentDeletionStatusRequest& WithAccountAssignmentDeletionRequestId(AccountAssignmentDeletionRequestIdT&& value) { SetAccountAssignmentDeletionRequestId(std::forward<AccountAssignmentDeletionRequestIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -61,13 +49,25 @@ namespace Model
     template<typename InstanceArnT = Aws::String>
     DescribeAccountAssignmentDeletionStatusRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_accountAssignmentDeletionRequestId;
-    bool m_accountAssignmentDeletionRequestIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier that is used to track the request operation progress.</p>
+     */
+    inline const Aws::String& GetAccountAssignmentDeletionRequestId() const { return m_accountAssignmentDeletionRequestId; }
+    inline bool AccountAssignmentDeletionRequestIdHasBeenSet() const { return m_accountAssignmentDeletionRequestIdHasBeenSet; }
+    template<typename AccountAssignmentDeletionRequestIdT = Aws::String>
+    void SetAccountAssignmentDeletionRequestId(AccountAssignmentDeletionRequestIdT&& value) { m_accountAssignmentDeletionRequestIdHasBeenSet = true; m_accountAssignmentDeletionRequestId = std::forward<AccountAssignmentDeletionRequestIdT>(value); }
+    template<typename AccountAssignmentDeletionRequestIdT = Aws::String>
+    DescribeAccountAssignmentDeletionStatusRequest& WithAccountAssignmentDeletionRequestId(AccountAssignmentDeletionRequestIdT&& value) { SetAccountAssignmentDeletionRequestId(std::forward<AccountAssignmentDeletionRequestIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
+
+    Aws::String m_accountAssignmentDeletionRequestId;
+    bool m_accountAssignmentDeletionRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,27 +16,9 @@ Aws::String ListApplicationAssignmentsForPrincipalRequest::SerializePayload() co
 {
   JsonValue payload;
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
 
   }
 
@@ -49,6 +31,24 @@ Aws::String ListApplicationAssignmentsForPrincipalRequest::SerializePayload() co
   if(m_principalTypeHasBeenSet)
   {
    payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

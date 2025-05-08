@@ -24,6 +24,11 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
     m_enaSrdSpecification.OutputToStream(ss, "EnaSrdSpecification");
   }
 
+  if(m_enaQueueCountHasBeenSet)
+  {
+    ss << "EnaQueueCount=" << m_enaQueueCount << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

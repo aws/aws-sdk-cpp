@@ -37,6 +37,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    ListPermissionSetsProvisionedToAccountRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon Web Services account from which to list the
      * assignments.</p>
      */
@@ -50,18 +66,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * <p>The status object for the permission set provisioning operation.</p>
      */
-    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
-    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    template<typename InstanceArnT = Aws::String>
-    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
-    template<typename InstanceArnT = Aws::String>
-    ListPermissionSetsProvisionedToAccountRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    inline ProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
+    inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }
+    inline void SetProvisioningStatus(ProvisioningStatus value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
+    inline ListPermissionSetsProvisionedToAccountRequest& WithProvisioningStatus(ProvisioningStatus value) { SetProvisioningStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -86,32 +96,22 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListPermissionSetsProvisionedToAccountRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline ProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
-    inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }
-    inline void SetProvisioningStatus(ProvisioningStatus value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
-    inline ListPermissionSetsProvisionedToAccountRequest& WithProvisioningStatus(ProvisioningStatus value) { SetProvisioningStatus(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet = false;
+    ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
+    bool m_provisioningStatusHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
-    bool m_provisioningStatusHasBeenSet = false;
   };
 
 } // namespace Model

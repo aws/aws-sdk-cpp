@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/IntegrationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/glue/model/IntegrationConfig.h>
 #include <aws/glue/model/Tag.h>
 #include <aws/glue/model/IntegrationError.h>
 #include <utility>
@@ -178,6 +179,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Properties associated with the integration.</p>
+     */
+    inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
+    inline bool IntegrationConfigHasBeenSet() const { return m_integrationConfigHasBeenSet; }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    void SetIntegrationConfig(IntegrationConfigT&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::forward<IntegrationConfigT>(value); }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    Integration& WithIntegrationConfig(IntegrationConfigT&& value) { SetIntegrationConfig(std::forward<IntegrationConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of errors associated with the integration.</p>
      */
     inline const Aws::Vector<IntegrationError>& GetErrors() const { return m_errors; }
@@ -232,6 +245,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
+
+    IntegrationConfig m_integrationConfig;
+    bool m_integrationConfigHasBeenSet = false;
 
     Aws::Vector<IntegrationError> m_errors;
     bool m_errorsHasBeenSet = false;

@@ -198,6 +198,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& LaunchTemplateInstan
       m_connectionTrackingSpecification = connectionTrackingSpecificationNode;
       m_connectionTrackingSpecificationHasBeenSet = true;
     }
+    XmlNode enaQueueCountNode = resultNode.FirstChild("EnaQueueCount");
+    if(!enaQueueCountNode.IsNull())
+    {
+      m_enaQueueCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaQueueCountNode.GetText()).c_str()).c_str());
+      m_enaQueueCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -347,6 +353,11 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaQueueCount=" << m_enaQueueCount << "&";
+  }
+
 }
 
 void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -470,6 +481,10 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       Aws::String connectionTrackingSpecificationLocationAndMember(location);
       connectionTrackingSpecificationLocationAndMember += ".ConnectionTrackingSpecification";
       m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMember.c_str());
+  }
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << ".EnaQueueCount=" << m_enaQueueCount << "&";
   }
 }
 

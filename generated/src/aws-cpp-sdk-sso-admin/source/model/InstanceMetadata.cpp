@@ -25,30 +25,30 @@ InstanceMetadata::InstanceMetadata(JsonView jsonValue)
 
 InstanceMetadata& InstanceMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreatedDate"))
+  if(jsonValue.ValueExists("InstanceArn"))
   {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
+    m_instanceArn = jsonValue.GetString("InstanceArn");
+    m_instanceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceArn"))
+  if(jsonValue.ValueExists("OwnerAccountId"))
   {
-    m_instanceArn = jsonValue.GetString("InstanceArn");
-    m_instanceArnHasBeenSet = true;
+    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
+    m_ownerAccountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerAccountId"))
+  if(jsonValue.ValueExists("CreatedDate"))
   {
-    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-    m_ownerAccountIdHasBeenSet = true;
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
@@ -62,9 +62,10 @@ JsonValue InstanceMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdDateHasBeenSet)
+  if(m_instanceArnHasBeenSet)
   {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+   payload.WithString("InstanceArn", m_instanceArn);
+
   }
 
   if(m_identityStoreIdHasBeenSet)
@@ -73,9 +74,9 @@ JsonValue InstanceMetadata::Jsonize() const
 
   }
 
-  if(m_instanceArnHasBeenSet)
+  if(m_ownerAccountIdHasBeenSet)
   {
-   payload.WithString("InstanceArn", m_instanceArn);
+   payload.WithString("OwnerAccountId", m_ownerAccountId);
 
   }
 
@@ -85,10 +86,9 @@ JsonValue InstanceMetadata::Jsonize() const
 
   }
 
-  if(m_ownerAccountIdHasBeenSet)
+  if(m_createdDateHasBeenSet)
   {
-   payload.WithString("OwnerAccountId", m_ownerAccountId);
-
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)
