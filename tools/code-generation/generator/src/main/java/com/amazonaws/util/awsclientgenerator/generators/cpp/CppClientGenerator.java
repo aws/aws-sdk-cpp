@@ -244,9 +244,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         if (c2jAuthList != null) {
             boolean hasSigV4AndBearer = c2jAuthList.contains("smithy.api#httpBearerAuth") &&
                     (c2jAuthList.contains("aws.auth#sigv4a") || c2jAuthList.contains("aws.auth#sigv4"));
+            /*TODO: re-enable after smithy identity migration is complete
             if (!serviceModel.isUseSmithyClient() && hasSigV4AndBearer) {
                 throw new RuntimeException("SDK Clients cannot mix AWS and Bearer Credentials without enabling Smithy Identity!");
             }
+            */
         }
     }
 
