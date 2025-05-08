@@ -25,11 +25,6 @@ Application::Application(JsonView jsonValue)
 
 Application& Application::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationAccount"))
-  {
-    m_applicationAccount = jsonValue.GetString("ApplicationAccount");
-    m_applicationAccountHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
@@ -40,35 +35,40 @@ Application& Application::operator =(JsonView jsonValue)
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
     m_applicationProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedDate"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("ApplicationAccount"))
   {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
+    m_applicationAccount = jsonValue.GetString("ApplicationAccount");
+    m_applicationAccountHasBeenSet = true;
   }
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
     m_instanceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
+    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("PortalOptions"))
   {
     m_portalOptions = jsonValue.GetObject("PortalOptions");
     m_portalOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
   return *this;
 }
@@ -76,12 +76,6 @@ Application& Application::operator =(JsonView jsonValue)
 JsonValue Application::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_applicationAccountHasBeenSet)
-  {
-   payload.WithString("ApplicationAccount", m_applicationAccount);
-
-  }
 
   if(m_applicationArnHasBeenSet)
   {
@@ -95,14 +89,15 @@ JsonValue Application::Jsonize() const
 
   }
 
-  if(m_createdDateHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+   payload.WithString("Name", m_name);
+
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_applicationAccountHasBeenSet)
   {
-   payload.WithString("Description", m_description);
+   payload.WithString("ApplicationAccount", m_applicationAccount);
 
   }
 
@@ -112,10 +107,9 @@ JsonValue Application::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("Name", m_name);
-
+   payload.WithString("Status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
   }
 
   if(m_portalOptionsHasBeenSet)
@@ -124,9 +118,15 @@ JsonValue Application::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("Status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;

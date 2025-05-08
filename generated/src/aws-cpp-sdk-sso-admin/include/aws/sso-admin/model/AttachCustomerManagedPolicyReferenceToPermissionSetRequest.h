@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/sso-admin/model/CustomerManagedPolicyReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/CustomerManagedPolicyReference.h>
 #include <utility>
 
 namespace Aws
@@ -37,20 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
-    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const { return m_customerManagedPolicyReference; }
-    inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
-    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
-    void SetCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::forward<CustomerManagedPolicyReferenceT>(value); }
-    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
-    AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { SetCustomerManagedPolicyReference(std::forward<CustomerManagedPolicyReferenceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. </p>
      */
@@ -73,16 +59,30 @@ namespace Model
     template<typename PermissionSetArnT = Aws::String>
     AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
-  private:
 
-    CustomerManagedPolicyReference m_customerManagedPolicyReference;
-    bool m_customerManagedPolicyReferenceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const { return m_customerManagedPolicyReference; }
+    inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
+    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
+    void SetCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::forward<CustomerManagedPolicyReferenceT>(value); }
+    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
+    AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { SetCustomerManagedPolicyReference(std::forward<CustomerManagedPolicyReferenceT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
+
+    CustomerManagedPolicyReference m_customerManagedPolicyReference;
+    bool m_customerManagedPolicyReferenceHasBeenSet = false;
   };
 
 } // namespace Model

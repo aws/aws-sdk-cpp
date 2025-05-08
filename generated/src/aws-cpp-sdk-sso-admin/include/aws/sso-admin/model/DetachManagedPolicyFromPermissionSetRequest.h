@@ -52,19 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services managed policy ARN to be detached from a permission
-     * set.</p>
-     */
-    inline const Aws::String& GetManagedPolicyArn() const { return m_managedPolicyArn; }
-    inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
-    template<typename ManagedPolicyArnT = Aws::String>
-    void SetManagedPolicyArn(ManagedPolicyArnT&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::forward<ManagedPolicyArnT>(value); }
-    template<typename ManagedPolicyArnT = Aws::String>
-    DetachManagedPolicyFromPermissionSetRequest& WithManagedPolicyArn(ManagedPolicyArnT&& value) { SetManagedPolicyArn(std::forward<ManagedPolicyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the <a>PermissionSet</a> from which the policy should be
      * detached.</p>
      */
@@ -75,16 +62,29 @@ namespace Model
     template<typename PermissionSetArnT = Aws::String>
     DetachManagedPolicyFromPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services managed policy ARN to be detached from a permission
+     * set.</p>
+     */
+    inline const Aws::String& GetManagedPolicyArn() const { return m_managedPolicyArn; }
+    inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
+    template<typename ManagedPolicyArnT = Aws::String>
+    void SetManagedPolicyArn(ManagedPolicyArnT&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::forward<ManagedPolicyArnT>(value); }
+    template<typename ManagedPolicyArnT = Aws::String>
+    DetachManagedPolicyFromPermissionSetRequest& WithManagedPolicyArn(ManagedPolicyArnT&& value) { SetManagedPolicyArn(std::forward<ManagedPolicyArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    Aws::String m_managedPolicyArn;
-    bool m_managedPolicyArnHasBeenSet = false;
-
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
+
+    Aws::String m_managedPolicyArn;
+    bool m_managedPolicyArnHasBeenSet = false;
   };
 
 } // namespace Model

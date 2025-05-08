@@ -36,6 +36,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    ListAccountAssignmentsRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon Web Services account from which to list the
      * assignments.</p>
      */
@@ -49,18 +65,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * <p>The ARN of the permission set from which to list assignments.</p>
      */
-    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
-    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    template<typename InstanceArnT = Aws::String>
-    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
-    template<typename InstanceArnT = Aws::String>
-    ListAccountAssignmentsRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
+    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    ListAccountAssignmentsRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,34 +97,22 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAccountAssignmentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the permission set from which to list assignments.</p>
-     */
-    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
-    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    template<typename PermissionSetArnT = Aws::String>
-    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
-    template<typename PermissionSetArnT = Aws::String>
-    ListAccountAssignmentsRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet = false;
+    Aws::String m_permissionSetArn;
+    bool m_permissionSetArnHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet = false;
   };
 
 } // namespace Model

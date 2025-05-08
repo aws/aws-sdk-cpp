@@ -16,12 +16,6 @@ Aws::String AttachCustomerManagedPolicyReferenceToPermissionSetRequest::Serializ
 {
   JsonValue payload;
 
-  if(m_customerManagedPolicyReferenceHasBeenSet)
-  {
-   payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
@@ -31,6 +25,12 @@ Aws::String AttachCustomerManagedPolicyReferenceToPermissionSetRequest::Serializ
   if(m_permissionSetArnHasBeenSet)
   {
    payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_customerManagedPolicyReferenceHasBeenSet)
+  {
+   payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
 
   }
 

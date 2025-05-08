@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the location of the remote IP
-   * address.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the location of the remote IP address. By default,
+   * GuardDuty returns <code>Geolocation</code> with <code>Lat</code> and
+   * <code>Lon</code> as <code>0.0</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GeoLocation">AWS
    * API Reference</a></p>
    */

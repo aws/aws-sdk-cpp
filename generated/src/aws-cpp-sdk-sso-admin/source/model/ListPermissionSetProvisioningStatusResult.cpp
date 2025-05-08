@@ -25,11 +25,6 @@ ListPermissionSetProvisioningStatusResult::ListPermissionSetProvisioningStatusRe
 ListPermissionSetProvisioningStatusResult& ListPermissionSetProvisioningStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("PermissionSetsProvisioningStatus"))
   {
     Aws::Utils::Array<JsonView> permissionSetsProvisioningStatusJsonList = jsonValue.GetArray("PermissionSetsProvisioningStatus");
@@ -38,6 +33,11 @@ ListPermissionSetProvisioningStatusResult& ListPermissionSetProvisioningStatusRe
       m_permissionSetsProvisioningStatus.push_back(permissionSetsProvisioningStatusJsonList[permissionSetsProvisioningStatusIndex].AsObject());
     }
     m_permissionSetsProvisioningStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

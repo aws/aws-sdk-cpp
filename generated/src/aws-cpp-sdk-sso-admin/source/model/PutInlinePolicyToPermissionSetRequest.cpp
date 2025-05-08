@@ -16,12 +16,6 @@ Aws::String PutInlinePolicyToPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_inlinePolicyHasBeenSet)
-  {
-   payload.WithString("InlinePolicy", m_inlinePolicy);
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
@@ -31,6 +25,12 @@ Aws::String PutInlinePolicyToPermissionSetRequest::SerializePayload() const
   if(m_permissionSetArnHasBeenSet)
   {
    payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_inlinePolicyHasBeenSet)
+  {
+   payload.WithString("InlinePolicy", m_inlinePolicy);
 
   }
 

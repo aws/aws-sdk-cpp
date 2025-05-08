@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/SignInOrigin.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL that accepts authentication requests for an application. This is a
-     * required parameter if the <code>Origin</code> parameter is
-     * <code>APPLICATION</code>.</p>
-     */
-    inline const Aws::String& GetApplicationUrl() const { return m_applicationUrl; }
-    inline bool ApplicationUrlHasBeenSet() const { return m_applicationUrlHasBeenSet; }
-    template<typename ApplicationUrlT = Aws::String>
-    void SetApplicationUrl(ApplicationUrlT&& value) { m_applicationUrlHasBeenSet = true; m_applicationUrl = std::forward<ApplicationUrlT>(value); }
-    template<typename ApplicationUrlT = Aws::String>
-    SignInOptions& WithApplicationUrl(ApplicationUrlT&& value) { SetApplicationUrl(std::forward<ApplicationUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>This determines how IAM Identity Center navigates the user to the target
      * application. It can be one of the following values:</p> <ul> <li> <p>
      * <code>APPLICATION</code>: IAM Identity Center redirects the customer to the
@@ -68,13 +54,27 @@ namespace Model
     inline void SetOrigin(SignInOrigin value) { m_originHasBeenSet = true; m_origin = value; }
     inline SignInOptions& WithOrigin(SignInOrigin value) { SetOrigin(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_applicationUrl;
-    bool m_applicationUrlHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The URL that accepts authentication requests for an application. This is a
+     * required parameter if the <code>Origin</code> parameter is
+     * <code>APPLICATION</code>.</p>
+     */
+    inline const Aws::String& GetApplicationUrl() const { return m_applicationUrl; }
+    inline bool ApplicationUrlHasBeenSet() const { return m_applicationUrlHasBeenSet; }
+    template<typename ApplicationUrlT = Aws::String>
+    void SetApplicationUrl(ApplicationUrlT&& value) { m_applicationUrlHasBeenSet = true; m_applicationUrl = std::forward<ApplicationUrlT>(value); }
+    template<typename ApplicationUrlT = Aws::String>
+    SignInOptions& WithApplicationUrl(ApplicationUrlT&& value) { SetApplicationUrl(std::forward<ApplicationUrlT>(value)); return *this;}
+    ///@}
+  private:
 
     SignInOrigin m_origin{SignInOrigin::NOT_SET};
     bool m_originHasBeenSet = false;
+
+    Aws::String m_applicationUrl;
+    bool m_applicationUrlHasBeenSet = false;
   };
 
 } // namespace Model

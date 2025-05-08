@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -37,18 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const { return m_instanceAccessControlAttributeConfiguration; }
-    inline bool InstanceAccessControlAttributeConfigurationHasBeenSet() const { return m_instanceAccessControlAttributeConfigurationHasBeenSet; }
-    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
-    void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::forward<InstanceAccessControlAttributeConfigurationT>(value); }
-    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
-    UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { SetInstanceAccessControlAttributeConfiguration(std::forward<InstanceAccessControlAttributeConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed.</p>
      */
@@ -59,13 +47,25 @@ namespace Model
     template<typename InstanceArnT = Aws::String>
     UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
-  private:
 
-    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
-    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const { return m_instanceAccessControlAttributeConfiguration; }
+    inline bool InstanceAccessControlAttributeConfigurationHasBeenSet() const { return m_instanceAccessControlAttributeConfigurationHasBeenSet; }
+    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
+    void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::forward<InstanceAccessControlAttributeConfigurationT>(value); }
+    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
+    UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { SetInstanceAccessControlAttributeConfiguration(std::forward<InstanceAccessControlAttributeConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
+
+    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
+    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

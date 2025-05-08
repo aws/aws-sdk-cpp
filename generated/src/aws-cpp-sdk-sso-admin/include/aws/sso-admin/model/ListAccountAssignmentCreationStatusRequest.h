@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/sso-admin/model/OperationStatusFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/OperationStatusFilter.h>
 #include <utility>
 
 namespace Aws
@@ -34,18 +34,6 @@ namespace Model
 
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    ///@{
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline const OperationStatusFilter& GetFilter() const { return m_filter; }
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    template<typename FilterT = OperationStatusFilter>
-    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
-    template<typename FilterT = OperationStatusFilter>
-    ListAccountAssignmentCreationStatusRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -85,10 +73,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAccountAssignmentCreationStatusRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    OperationStatusFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline const OperationStatusFilter& GetFilter() const { return m_filter; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    template<typename FilterT = OperationStatusFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = OperationStatusFilter>
+    ListAccountAssignmentCreationStatusRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
@@ -98,6 +95,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    OperationStatusFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

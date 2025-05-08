@@ -16,15 +16,15 @@ Aws::String DescribeAccountAssignmentDeletionStatusRequest::SerializePayload() c
 {
   JsonValue payload;
 
-  if(m_accountAssignmentDeletionRequestIdHasBeenSet)
-  {
-   payload.WithString("AccountAssignmentDeletionRequestId", m_accountAssignmentDeletionRequestId);
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
+
+  }
+
+  if(m_accountAssignmentDeletionRequestIdHasBeenSet)
+  {
+   payload.WithString("AccountAssignmentDeletionRequestId", m_accountAssignmentDeletionRequestId);
 
   }
 

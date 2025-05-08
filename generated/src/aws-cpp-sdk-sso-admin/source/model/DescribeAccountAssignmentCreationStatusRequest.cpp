@@ -16,15 +16,15 @@ Aws::String DescribeAccountAssignmentCreationStatusRequest::SerializePayload() c
 {
   JsonValue payload;
 
-  if(m_accountAssignmentCreationRequestIdHasBeenSet)
-  {
-   payload.WithString("AccountAssignmentCreationRequestId", m_accountAssignmentCreationRequestId);
-
-  }
-
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("InstanceArn", m_instanceArn);
+
+  }
+
+  if(m_accountAssignmentCreationRequestIdHasBeenSet)
+  {
+   payload.WithString("AccountAssignmentCreationRequestId", m_accountAssignmentCreationRequestId);
 
   }
 

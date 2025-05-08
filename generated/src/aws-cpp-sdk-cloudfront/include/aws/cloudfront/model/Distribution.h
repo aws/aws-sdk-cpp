@@ -120,11 +120,11 @@ namespace Model
 
     ///@{
     /**
-     *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
+     * <p> <p>We recommend using <code>TrustedKeyGroups</code> instead of
      * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
      * Amazon Web Services account IDs and the active CloudFront key pairs in each
      * account that CloudFront can use to verify the signatures of signed URLs or
-     * signed cookies.</p>
+     * signed cookies.</p></p>
      */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const { return m_activeTrustedSigners; }
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }

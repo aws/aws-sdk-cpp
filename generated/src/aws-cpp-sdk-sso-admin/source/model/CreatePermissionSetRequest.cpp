@@ -16,6 +16,12 @@ Aws::String CreatePermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -28,21 +34,15 @@ Aws::String CreatePermissionSetRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_sessionDurationHasBeenSet)
   {
-   payload.WithString("Name", m_name);
+   payload.WithString("SessionDuration", m_sessionDuration);
 
   }
 
   if(m_relayStateHasBeenSet)
   {
    payload.WithString("RelayState", m_relayState);
-
-  }
-
-  if(m_sessionDurationHasBeenSet)
-  {
-   payload.WithString("SessionDuration", m_sessionDuration);
 
   }
 

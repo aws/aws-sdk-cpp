@@ -91,6 +91,36 @@ namespace Model
     inline void SetPeakBandwidthInGbps(double value) { m_peakBandwidthInGbpsHasBeenSet = true; m_peakBandwidthInGbps = value; }
     inline NetworkCardInfo& WithPeakBandwidthInGbps(double value) { SetPeakBandwidthInGbps(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The default number of the ENA queues for each interface.</p>
+     */
+    inline int GetDefaultEnaQueueCountPerInterface() const { return m_defaultEnaQueueCountPerInterface; }
+    inline bool DefaultEnaQueueCountPerInterfaceHasBeenSet() const { return m_defaultEnaQueueCountPerInterfaceHasBeenSet; }
+    inline void SetDefaultEnaQueueCountPerInterface(int value) { m_defaultEnaQueueCountPerInterfaceHasBeenSet = true; m_defaultEnaQueueCountPerInterface = value; }
+    inline NetworkCardInfo& WithDefaultEnaQueueCountPerInterface(int value) { SetDefaultEnaQueueCountPerInterface(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of the ENA queues.</p>
+     */
+    inline int GetMaximumEnaQueueCount() const { return m_maximumEnaQueueCount; }
+    inline bool MaximumEnaQueueCountHasBeenSet() const { return m_maximumEnaQueueCountHasBeenSet; }
+    inline void SetMaximumEnaQueueCount(int value) { m_maximumEnaQueueCountHasBeenSet = true; m_maximumEnaQueueCount = value; }
+    inline NetworkCardInfo& WithMaximumEnaQueueCount(int value) { SetMaximumEnaQueueCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of the ENA queues for each interface.</p>
+     */
+    inline int GetMaximumEnaQueueCountPerInterface() const { return m_maximumEnaQueueCountPerInterface; }
+    inline bool MaximumEnaQueueCountPerInterfaceHasBeenSet() const { return m_maximumEnaQueueCountPerInterfaceHasBeenSet; }
+    inline void SetMaximumEnaQueueCountPerInterface(int value) { m_maximumEnaQueueCountPerInterfaceHasBeenSet = true; m_maximumEnaQueueCountPerInterface = value; }
+    inline NetworkCardInfo& WithMaximumEnaQueueCountPerInterface(int value) { SetMaximumEnaQueueCountPerInterface(value); return *this;}
+    ///@}
   private:
 
     int m_networkCardIndex{0};
@@ -107,6 +137,15 @@ namespace Model
 
     double m_peakBandwidthInGbps{0.0};
     bool m_peakBandwidthInGbpsHasBeenSet = false;
+
+    int m_defaultEnaQueueCountPerInterface{0};
+    bool m_defaultEnaQueueCountPerInterfaceHasBeenSet = false;
+
+    int m_maximumEnaQueueCount{0};
+    bool m_maximumEnaQueueCountHasBeenSet = false;
+
+    int m_maximumEnaQueueCountPerInterface{0};
+    bool m_maximumEnaQueueCountPerInterfaceHasBeenSet = false;
   };
 
 } // namespace Model

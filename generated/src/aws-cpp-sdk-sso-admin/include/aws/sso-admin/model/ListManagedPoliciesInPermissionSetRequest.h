@@ -52,6 +52,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
+     * listed.</p>
+     */
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
+    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    ListManagedPoliciesInPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -72,32 +85,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListManagedPoliciesInPermissionSetRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
-     * listed.</p>
-     */
-    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
-    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    template<typename PermissionSetArnT = Aws::String>
-    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
-    template<typename PermissionSetArnT = Aws::String>
-    ListManagedPoliciesInPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
+
+    Aws::String m_permissionSetArn;
+    bool m_permissionSetArnHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet = false;
   };
 
 } // namespace Model

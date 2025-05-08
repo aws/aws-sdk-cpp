@@ -25,11 +25,6 @@ DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebService
 DescribeApplicationResult& DescribeApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ApplicationAccount"))
-  {
-    m_applicationAccount = jsonValue.GetString("ApplicationAccount");
-    m_applicationAccountHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
@@ -40,35 +35,40 @@ DescribeApplicationResult& DescribeApplicationResult::operator =(const Aws::Amaz
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
     m_applicationProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedDate"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("ApplicationAccount"))
   {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
+    m_applicationAccount = jsonValue.GetString("ApplicationAccount");
+    m_applicationAccountHasBeenSet = true;
   }
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
     m_instanceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
+    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("PortalOptions"))
   {
     m_portalOptions = jsonValue.GetObject("PortalOptions");
     m_portalOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/StatusValues.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
-    template<typename CreatedDateT = Aws::Utils::DateTime>
-    PermissionSetProvisioningStatusMetadata& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
+    inline StatusValues GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PermissionSetProvisioningStatusMetadata& WithStatus(StatusValues value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -67,23 +65,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline StatusValues GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
-    inline PermissionSetProvisioningStatusMetadata& WithStatus(StatusValues value) { SetStatus(value); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    PermissionSetProvisioningStatusMetadata& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdDate{};
-    bool m_createdDateHasBeenSet = false;
+    StatusValues m_status{StatusValues::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    StatusValues m_status{StatusValues::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

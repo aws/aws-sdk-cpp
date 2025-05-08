@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
-     */
-    inline const Aws::String& GetInlinePolicy() const { return m_inlinePolicy; }
-    inline bool InlinePolicyHasBeenSet() const { return m_inlinePolicyHasBeenSet; }
-    template<typename InlinePolicyT = Aws::String>
-    void SetInlinePolicy(InlinePolicyT&& value) { m_inlinePolicyHasBeenSet = true; m_inlinePolicy = std::forward<InlinePolicyT>(value); }
-    template<typename InlinePolicyT = Aws::String>
-    PutInlinePolicyToPermissionSetRequest& WithInlinePolicy(InlinePolicyT&& value) { SetInlinePolicy(std::forward<InlinePolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -73,16 +61,28 @@ namespace Model
     template<typename PermissionSetArnT = Aws::String>
     PutInlinePolicyToPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_inlinePolicy;
-    bool m_inlinePolicyHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
+     */
+    inline const Aws::String& GetInlinePolicy() const { return m_inlinePolicy; }
+    inline bool InlinePolicyHasBeenSet() const { return m_inlinePolicyHasBeenSet; }
+    template<typename InlinePolicyT = Aws::String>
+    void SetInlinePolicy(InlinePolicyT&& value) { m_inlinePolicyHasBeenSet = true; m_inlinePolicy = std::forward<InlinePolicyT>(value); }
+    template<typename InlinePolicyT = Aws::String>
+    PutInlinePolicyToPermissionSetRequest& WithInlinePolicy(InlinePolicyT&& value) { SetInlinePolicy(std::forward<InlinePolicyT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
+
+    Aws::String m_inlinePolicy;
+    bool m_inlinePolicyHasBeenSet = false;
   };
 
 } // namespace Model

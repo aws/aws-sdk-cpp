@@ -30,15 +30,15 @@ DescribeApplicationProviderResult& DescribeApplicationProviderResult::operator =
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
     m_applicationProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayData"))
-  {
-    m_displayData = jsonValue.GetObject("DisplayData");
-    m_displayDataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("FederationProtocol"))
   {
     m_federationProtocol = FederationProtocolMapper::GetFederationProtocolForName(jsonValue.GetString("FederationProtocol"));
     m_federationProtocolHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DisplayData"))
+  {
+    m_displayData = jsonValue.GetObject("DisplayData");
+    m_displayDataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceServerConfig"))
   {

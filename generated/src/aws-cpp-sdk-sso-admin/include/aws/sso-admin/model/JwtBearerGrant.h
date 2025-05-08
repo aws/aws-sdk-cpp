@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>A structure that defines configuration settings for an application that
-   * supports the JWT Bearer Token Authorization Grant.</p><p><h3>See Also:</h3>   <a
+   * supports the JWT Bearer Token Authorization Grant. The
+   * <code>AuthorizedAudience</code> field is the aud claim. For more information,
+   * see <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC
+   * 7523</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/JwtBearerGrant">AWS
    * API Reference</a></p>
    */
@@ -42,7 +45,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of allowed token issuers trusted by the Identity Center instances for
-     * this application.</p>
+     * this application.</p>  <p> <code>AuthorizedTokenIssuers</code> is required
+     * when the grant type is <code>JwtBearerGrant</code>.</p> 
      */
     inline const Aws::Vector<AuthorizedTokenIssuer>& GetAuthorizedTokenIssuers() const { return m_authorizedTokenIssuers; }
     inline bool AuthorizedTokenIssuersHasBeenSet() const { return m_authorizedTokenIssuersHasBeenSet; }

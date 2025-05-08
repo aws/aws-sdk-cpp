@@ -74,6 +74,12 @@ Aws::String CreateIntegrationRequest::SerializePayload() const
 
   }
 
+  if(m_integrationConfigHasBeenSet)
+  {
+   payload.WithObject("IntegrationConfig", m_integrationConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the instance of IAM Identity Center.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateInstanceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a unique, case-sensitive ID that you provide to ensure the
      * idempotency of the request. This lets you safely retry the request without
      * accidentally performing the same operation a second time. Passing the same value
@@ -60,18 +72,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the instance of IAM Identity Center.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateInstanceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies tags to be attached to the instance of IAM Identity Center.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -85,11 +85,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -571,6 +571,7 @@
 #include <aws/glue/model/InboundIntegration.h>
 #include <aws/glue/model/InclusionAnnotationValue.h>
 #include <aws/glue/model/Integration.h>
+#include <aws/glue/model/IntegrationConfig.h>
 #include <aws/glue/model/IntegrationError.h>
 #include <aws/glue/model/IntegrationFilter.h>
 #include <aws/glue/model/IntegrationPartition.h>

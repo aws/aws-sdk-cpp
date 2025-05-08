@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <aws/sso-admin/model/InstanceAccessControlAttributeConfigurationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Gets the list of IAM Identity Center identity store attributes that have been
-     * added to your ABAC configuration.</p>
-     */
-    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const { return m_instanceAccessControlAttributeConfiguration; }
-    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
-    void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::forward<InstanceAccessControlAttributeConfigurationT>(value); }
-    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
-    DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { SetInstanceAccessControlAttributeConfiguration(std::forward<InstanceAccessControlAttributeConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of the attribute configuration process.</p>
      */
     inline InstanceAccessControlAttributeConfigurationStatus GetStatus() const { return m_status; }
@@ -68,6 +56,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
+     */
+    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const { return m_instanceAccessControlAttributeConfiguration; }
+    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
+    void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::forward<InstanceAccessControlAttributeConfigurationT>(value); }
+    template<typename InstanceAccessControlAttributeConfigurationT = InstanceAccessControlAttributeConfiguration>
+    DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfigurationT&& value) { SetInstanceAccessControlAttributeConfiguration(std::forward<InstanceAccessControlAttributeConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -77,14 +77,14 @@ namespace Model
     ///@}
   private:
 
-    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
-    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
-
     InstanceAccessControlAttributeConfigurationStatus m_status{InstanceAccessControlAttributeConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
+    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

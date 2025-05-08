@@ -42,7 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of URIs that are valid locations to redirect a user's browser after
-     * the user is authorized.</p>
+     * the user is authorized.</p>  <p>RedirectUris is required when the grant
+     * type is <code>authorization_code</code>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRedirectUris() const { return m_redirectUris; }
     inline bool RedirectUrisHasBeenSet() const { return m_redirectUrisHasBeenSet; }

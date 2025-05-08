@@ -38,6 +38,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the <a>PermissionSet</a>.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePermissionSetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the <a>PermissionSet</a>.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -66,14 +78,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the <a>PermissionSet</a>.</p>
+     * <p>The length of time that the application user sessions are valid in the
+     * ISO-8601 standard.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreatePermissionSetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetSessionDuration() const { return m_sessionDuration; }
+    inline bool SessionDurationHasBeenSet() const { return m_sessionDurationHasBeenSet; }
+    template<typename SessionDurationT = Aws::String>
+    void SetSessionDuration(SessionDurationT&& value) { m_sessionDurationHasBeenSet = true; m_sessionDuration = std::forward<SessionDurationT>(value); }
+    template<typename SessionDurationT = Aws::String>
+    CreatePermissionSetRequest& WithSessionDuration(SessionDurationT&& value) { SetSessionDuration(std::forward<SessionDurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,19 +104,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The length of time that the application user sessions are valid in the
-     * ISO-8601 standard.</p>
-     */
-    inline const Aws::String& GetSessionDuration() const { return m_sessionDuration; }
-    inline bool SessionDurationHasBeenSet() const { return m_sessionDurationHasBeenSet; }
-    template<typename SessionDurationT = Aws::String>
-    void SetSessionDuration(SessionDurationT&& value) { m_sessionDurationHasBeenSet = true; m_sessionDuration = std::forward<SessionDurationT>(value); }
-    template<typename SessionDurationT = Aws::String>
-    CreatePermissionSetRequest& WithSessionDuration(SessionDurationT&& value) { SetSessionDuration(std::forward<SessionDurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags to attach to the new <a>PermissionSet</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -117,20 +117,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_sessionDuration;
+    bool m_sessionDurationHasBeenSet = false;
 
     Aws::String m_relayState;
     bool m_relayStateHasBeenSet = false;
-
-    Aws::String m_sessionDuration;
-    bool m_sessionDurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

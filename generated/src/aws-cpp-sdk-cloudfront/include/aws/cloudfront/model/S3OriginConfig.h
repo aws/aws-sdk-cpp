@@ -42,9 +42,9 @@ namespace Model
 
     ///@{
     /**
-     *  <p>If you're using origin access control (OAC) instead of origin access
-     * identity, specify an empty <code>OriginAccessIdentity</code> element. For more
-     * information, see <a
+     * <p> <p>If you're using origin access control (OAC) instead of origin
+     * access identity, specify an empty <code>OriginAccessIdentity</code> element. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting
      * access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The CloudFront origin access identity to associate
@@ -64,7 +64,7 @@ namespace Model
      * origin access identity, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p></p>
      */
     inline const Aws::String& GetOriginAccessIdentity() const { return m_originAccessIdentity; }
     inline bool OriginAccessIdentityHasBeenSet() const { return m_originAccessIdentityHasBeenSet; }

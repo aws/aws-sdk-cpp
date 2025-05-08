@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/TrustedTokenIssuerConfiguration.h>
 #include <aws/sso-admin/model/TrustedTokenIssuerType.h>
+#include <aws/sso-admin/model/TrustedTokenIssuerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the trusted token issuer configuration.</p>
+     */
+    inline const Aws::String& GetTrustedTokenIssuerArn() const { return m_trustedTokenIssuerArn; }
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value); }
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    DescribeTrustedTokenIssuerResult& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the trusted token issuer configuration.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -47,13 +58,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the trusted token issuer configuration.</p>
+     * <p>The type of the trusted token issuer.</p>
      */
-    inline const Aws::String& GetTrustedTokenIssuerArn() const { return m_trustedTokenIssuerArn; }
-    template<typename TrustedTokenIssuerArnT = Aws::String>
-    void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value); }
-    template<typename TrustedTokenIssuerArnT = Aws::String>
-    DescribeTrustedTokenIssuerResult& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value)); return *this;}
+    inline TrustedTokenIssuerType GetTrustedTokenIssuerType() const { return m_trustedTokenIssuerType; }
+    inline void SetTrustedTokenIssuerType(TrustedTokenIssuerType value) { m_trustedTokenIssuerTypeHasBeenSet = true; m_trustedTokenIssuerType = value; }
+    inline DescribeTrustedTokenIssuerResult& WithTrustedTokenIssuerType(TrustedTokenIssuerType value) { SetTrustedTokenIssuerType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,15 +78,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The type of the trusted token issuer.</p>
-     */
-    inline TrustedTokenIssuerType GetTrustedTokenIssuerType() const { return m_trustedTokenIssuerType; }
-    inline void SetTrustedTokenIssuerType(TrustedTokenIssuerType value) { m_trustedTokenIssuerTypeHasBeenSet = true; m_trustedTokenIssuerType = value; }
-    inline DescribeTrustedTokenIssuerResult& WithTrustedTokenIssuerType(TrustedTokenIssuerType value) { SetTrustedTokenIssuerType(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -87,17 +87,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::String m_trustedTokenIssuerArn;
     bool m_trustedTokenIssuerArnHasBeenSet = false;
 
-    TrustedTokenIssuerConfiguration m_trustedTokenIssuerConfiguration;
-    bool m_trustedTokenIssuerConfigurationHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     TrustedTokenIssuerType m_trustedTokenIssuerType{TrustedTokenIssuerType::NOT_SET};
     bool m_trustedTokenIssuerTypeHasBeenSet = false;
+
+    TrustedTokenIssuerConfiguration m_trustedTokenIssuerConfiguration;
+    bool m_trustedTokenIssuerConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

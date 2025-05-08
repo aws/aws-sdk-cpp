@@ -25,30 +25,30 @@ DescribeInstanceResult::DescribeInstanceResult(const Aws::AmazonWebServiceResult
 DescribeInstanceResult& DescribeInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreatedDate"))
+  if(jsonValue.ValueExists("InstanceArn"))
   {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-    m_createdDateHasBeenSet = true;
+    m_instanceArn = jsonValue.GetString("InstanceArn");
+    m_instanceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceArn"))
+  if(jsonValue.ValueExists("OwnerAccountId"))
   {
-    m_instanceArn = jsonValue.GetString("InstanceArn");
-    m_instanceArnHasBeenSet = true;
+    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
+    m_ownerAccountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerAccountId"))
+  if(jsonValue.ValueExists("CreatedDate"))
   {
-    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-    m_ownerAccountIdHasBeenSet = true;
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_createdDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {

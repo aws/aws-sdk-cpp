@@ -16,9 +16,9 @@ Aws::String PutApplicationAccessScopeRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applicationArnHasBeenSet)
+  if(m_scopeHasBeenSet)
   {
-   payload.WithString("ApplicationArn", m_applicationArn);
+   payload.WithString("Scope", m_scope);
 
   }
 
@@ -33,9 +33,9 @@ Aws::String PutApplicationAccessScopeRequest::SerializePayload() const
 
   }
 
-  if(m_scopeHasBeenSet)
+  if(m_applicationArnHasBeenSet)
   {
-   payload.WithString("Scope", m_scope);
+   payload.WithString("ApplicationArn", m_applicationArn);
 
   }
 

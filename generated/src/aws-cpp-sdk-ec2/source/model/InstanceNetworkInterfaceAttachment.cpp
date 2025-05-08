@@ -73,6 +73,12 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
       m_enaSrdSpecification = enaSrdSpecificationNode;
       m_enaSrdSpecificationHasBeenSet = true;
     }
+    XmlNode enaQueueCountNode = resultNode.FirstChild("enaQueueCount");
+    if(!enaQueueCountNode.IsNull())
+    {
+      m_enaQueueCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaQueueCountNode.GetText()).c_str()).c_str());
+      m_enaQueueCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +123,11 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
       m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaQueueCount=" << m_enaQueueCount << "&";
+  }
+
 }
 
 void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,6 +161,10 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
       Aws::String enaSrdSpecificationLocationAndMember(location);
       enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
       m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
+  }
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << ".EnaQueueCount=" << m_enaQueueCount << "&";
   }
 }
 

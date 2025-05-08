@@ -106,7 +106,7 @@ namespace Model
 
     ///@{
     /**
-     *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
+     * <p> <p>We recommend using <code>TrustedKeyGroups</code> instead of
      * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
      * account IDs whose public keys CloudFront can use to validate signed URLs or
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
@@ -116,7 +116,7 @@ namespace Model
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p></p>
      */
     inline const TrustedSigners& GetTrustedSigners() const { return m_trustedSigners; }
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }

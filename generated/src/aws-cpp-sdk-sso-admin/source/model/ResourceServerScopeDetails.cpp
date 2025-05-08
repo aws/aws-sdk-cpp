@@ -25,15 +25,15 @@ ResourceServerScopeDetails::ResourceServerScopeDetails(JsonView jsonValue)
 
 ResourceServerScopeDetails& ResourceServerScopeDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DetailedTitle"))
-  {
-    m_detailedTitle = jsonValue.GetString("DetailedTitle");
-    m_detailedTitleHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("LongDescription"))
   {
     m_longDescription = jsonValue.GetString("LongDescription");
     m_longDescriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DetailedTitle"))
+  {
+    m_detailedTitle = jsonValue.GetString("DetailedTitle");
+    m_detailedTitleHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ResourceServerScopeDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_detailedTitleHasBeenSet)
-  {
-   payload.WithString("DetailedTitle", m_detailedTitle);
-
-  }
-
   if(m_longDescriptionHasBeenSet)
   {
    payload.WithString("LongDescription", m_longDescription);
+
+  }
+
+  if(m_detailedTitleHasBeenSet)
+  {
+   payload.WithString("DetailedTitle", m_detailedTitle);
 
   }
 

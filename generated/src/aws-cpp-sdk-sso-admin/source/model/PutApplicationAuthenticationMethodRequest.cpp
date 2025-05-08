@@ -22,15 +22,15 @@ Aws::String PutApplicationAuthenticationMethodRequest::SerializePayload() const
 
   }
 
+  if(m_authenticationMethodTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationMethodType", AuthenticationMethodTypeMapper::GetNameForAuthenticationMethodType(m_authenticationMethodType));
+  }
+
   if(m_authenticationMethodHasBeenSet)
   {
    payload.WithObject("AuthenticationMethod", m_authenticationMethod.Jsonize());
 
-  }
-
-  if(m_authenticationMethodTypeHasBeenSet)
-  {
-   payload.WithString("AuthenticationMethodType", AuthenticationMethodTypeMapper::GetNameForAuthenticationMethodType(m_authenticationMethodType));
   }
 
   return payload.View().WriteReadable();

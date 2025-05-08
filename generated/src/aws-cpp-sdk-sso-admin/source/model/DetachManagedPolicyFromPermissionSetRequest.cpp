@@ -22,15 +22,15 @@ Aws::String DetachManagedPolicyFromPermissionSetRequest::SerializePayload() cons
 
   }
 
-  if(m_managedPolicyArnHasBeenSet)
-  {
-   payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
-
-  }
-
   if(m_permissionSetArnHasBeenSet)
   {
    payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_managedPolicyArnHasBeenSet)
+  {
+   payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
 
   }
 

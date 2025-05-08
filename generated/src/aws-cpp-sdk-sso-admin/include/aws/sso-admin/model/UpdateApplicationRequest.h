@@ -7,8 +7,8 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/UpdateApplicationPortalOptions.h>
 #include <aws/sso-admin/model/ApplicationStatus.h>
+#include <aws/sso-admin/model/UpdateApplicationPortalOptions.h>
 #include <utility>
 
 namespace Aws
@@ -53,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the updated name for the application.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateApplicationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the .</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -65,14 +77,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the updated name for the application.</p>
+     * <p>Specifies whether the application is enabled or disabled.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateApplicationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline ApplicationStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateApplicationRequest& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -87,32 +97,22 @@ namespace Model
     template<typename PortalOptionsT = UpdateApplicationPortalOptions>
     UpdateApplicationRequest& WithPortalOptions(PortalOptionsT&& value) { SetPortalOptions(std::forward<PortalOptionsT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the application is enabled or disabled.</p>
-     */
-    inline ApplicationStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline UpdateApplicationRequest& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    UpdateApplicationPortalOptions m_portalOptions;
-    bool m_portalOptionsHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     ApplicationStatus m_status{ApplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    UpdateApplicationPortalOptions m_portalOptions;
+    bool m_portalOptionsHasBeenSet = false;
   };
 
 } // namespace Model

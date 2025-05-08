@@ -25,6 +25,11 @@ AuthorizedTokenIssuer::AuthorizedTokenIssuer(JsonView jsonValue)
 
 AuthorizedTokenIssuer& AuthorizedTokenIssuer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
+  {
+    m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
+    m_trustedTokenIssuerArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AuthorizedAudiences"))
   {
     Aws::Utils::Array<JsonView> authorizedAudiencesJsonList = jsonValue.GetArray("AuthorizedAudiences");
@@ -34,17 +39,18 @@ AuthorizedTokenIssuer& AuthorizedTokenIssuer::operator =(JsonView jsonValue)
     }
     m_authorizedAudiencesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
-  {
-    m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
-    m_trustedTokenIssuerArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AuthorizedTokenIssuer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_trustedTokenIssuerArnHasBeenSet)
+  {
+   payload.WithString("TrustedTokenIssuerArn", m_trustedTokenIssuerArn);
+
+  }
 
   if(m_authorizedAudiencesHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue AuthorizedTokenIssuer::Jsonize() const
      authorizedAudiencesJsonList[authorizedAudiencesIndex].AsString(m_authorizedAudiences[authorizedAudiencesIndex]);
    }
    payload.WithArray("AuthorizedAudiences", std::move(authorizedAudiencesJsonList));
-
-  }
-
-  if(m_trustedTokenIssuerArnHasBeenSet)
-  {
-   payload.WithString("TrustedTokenIssuerArn", m_trustedTokenIssuerArn);
 
   }
 

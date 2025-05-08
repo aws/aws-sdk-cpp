@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The title of an access scope for a resource server.</p>
-     */
-    inline const Aws::String& GetDetailedTitle() const { return m_detailedTitle; }
-    inline bool DetailedTitleHasBeenSet() const { return m_detailedTitleHasBeenSet; }
-    template<typename DetailedTitleT = Aws::String>
-    void SetDetailedTitle(DetailedTitleT&& value) { m_detailedTitleHasBeenSet = true; m_detailedTitle = std::forward<DetailedTitleT>(value); }
-    template<typename DetailedTitleT = Aws::String>
-    ResourceServerScopeDetails& WithDetailedTitle(DetailedTitleT&& value) { SetDetailedTitle(std::forward<DetailedTitleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The description of an access scope for a resource server.</p>
      */
     inline const Aws::String& GetLongDescription() const { return m_longDescription; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename LongDescriptionT = Aws::String>
     ResourceServerScopeDetails& WithLongDescription(LongDescriptionT&& value) { SetLongDescription(std::forward<LongDescriptionT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_detailedTitle;
-    bool m_detailedTitleHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The title of an access scope for a resource server.</p>
+     */
+    inline const Aws::String& GetDetailedTitle() const { return m_detailedTitle; }
+    inline bool DetailedTitleHasBeenSet() const { return m_detailedTitleHasBeenSet; }
+    template<typename DetailedTitleT = Aws::String>
+    void SetDetailedTitle(DetailedTitleT&& value) { m_detailedTitleHasBeenSet = true; m_detailedTitle = std::forward<DetailedTitleT>(value); }
+    template<typename DetailedTitleT = Aws::String>
+    ResourceServerScopeDetails& WithDetailedTitle(DetailedTitleT&& value) { SetDetailedTitle(std::forward<DetailedTitleT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_longDescription;
     bool m_longDescriptionHasBeenSet = false;
+
+    Aws::String m_detailedTitle;
+    bool m_detailedTitleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,6 +31,18 @@ NetworkInterfaceAttachmentChanges& NetworkInterfaceAttachmentChanges::operator =
 
   if(!resultNode.IsNull())
   {
+    XmlNode defaultEnaQueueCountNode = resultNode.FirstChild("DefaultEnaQueueCount");
+    if(!defaultEnaQueueCountNode.IsNull())
+    {
+      m_defaultEnaQueueCount = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultEnaQueueCountNode.GetText()).c_str()).c_str());
+      m_defaultEnaQueueCountHasBeenSet = true;
+    }
+    XmlNode enaQueueCountNode = resultNode.FirstChild("EnaQueueCount");
+    if(!enaQueueCountNode.IsNull())
+    {
+      m_enaQueueCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaQueueCountNode.GetText()).c_str()).c_str());
+      m_enaQueueCountHasBeenSet = true;
+    }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
@@ -50,6 +62,16 @@ NetworkInterfaceAttachmentChanges& NetworkInterfaceAttachmentChanges::operator =
 
 void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_defaultEnaQueueCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultEnaQueueCount=" << std::boolalpha << m_defaultEnaQueueCount << "&";
+  }
+
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaQueueCount=" << m_enaQueueCount << "&";
+  }
+
   if(m_attachmentIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
@@ -64,6 +86,14 @@ void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, co
 
 void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_defaultEnaQueueCountHasBeenSet)
+  {
+      oStream << location << ".DefaultEnaQueueCount=" << std::boolalpha << m_defaultEnaQueueCount << "&";
+  }
+  if(m_enaQueueCountHasBeenSet)
+  {
+      oStream << location << ".EnaQueueCount=" << m_enaQueueCount << "&";
+  }
   if(m_attachmentIdHasBeenSet)
   {
       oStream << location << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";

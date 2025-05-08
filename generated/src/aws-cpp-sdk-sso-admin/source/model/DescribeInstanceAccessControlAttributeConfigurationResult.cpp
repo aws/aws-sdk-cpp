@@ -25,11 +25,6 @@ DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAcces
 DescribeInstanceAccessControlAttributeConfigurationResult& DescribeInstanceAccessControlAttributeConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("InstanceAccessControlAttributeConfiguration"))
-  {
-    m_instanceAccessControlAttributeConfiguration = jsonValue.GetObject("InstanceAccessControlAttributeConfiguration");
-    m_instanceAccessControlAttributeConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InstanceAccessControlAttributeConfigurationStatusMapper::GetInstanceAccessControlAttributeConfigurationStatusForName(jsonValue.GetString("Status"));
@@ -39,6 +34,11 @@ DescribeInstanceAccessControlAttributeConfigurationResult& DescribeInstanceAcces
   {
     m_statusReason = jsonValue.GetString("StatusReason");
     m_statusReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("InstanceAccessControlAttributeConfiguration"))
+  {
+    m_instanceAccessControlAttributeConfiguration = jsonValue.GetObject("InstanceAccessControlAttributeConfiguration");
+    m_instanceAccessControlAttributeConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

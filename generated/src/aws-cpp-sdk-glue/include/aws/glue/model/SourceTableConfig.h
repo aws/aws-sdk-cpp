@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of fields used for column-level filtering.</p>
+     * <p>A list of fields used for column-level filtering. Currently unsupported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A condition clause used for row-level filtering.</p>
+     * <p>A condition clause used for row-level filtering. Currently unsupported.</p>
      */
     inline const Aws::String& GetFilterPredicate() const { return m_filterPredicate; }
     inline bool FilterPredicateHasBeenSet() const { return m_filterPredicateHasBeenSet; }
@@ -67,7 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of a record.</p>
+     * <p>Provide the primary key set for this table. Currently supported specifically
+     * for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services
+     * Support to make this feature available.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrimaryKey() const { return m_primaryKey; }
     inline bool PrimaryKeyHasBeenSet() const { return m_primaryKeyHasBeenSet; }
@@ -81,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Incremental pull timestamp-based field.</p>
+     * <p>Incremental pull timestamp-based field. Currently unsupported.</p>
      */
     inline const Aws::String& GetRecordUpdateField() const { return m_recordUpdateField; }
     inline bool RecordUpdateFieldHasBeenSet() const { return m_recordUpdateFieldHasBeenSet; }

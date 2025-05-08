@@ -68,6 +68,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of ENA queues to be created with the instance.</p>
+     */
+    inline int GetEnaQueueCount() const { return m_enaQueueCount; }
+    inline bool EnaQueueCountHasBeenSet() const { return m_enaQueueCountHasBeenSet; }
+    inline void SetEnaQueueCount(int value) { m_enaQueueCountHasBeenSet = true; m_enaQueueCount = value; }
+    inline AttachNetworkInterfaceRequest& WithEnaQueueCount(int value) { SetEnaQueueCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -119,6 +129,9 @@ namespace Model
 
     EnaSrdSpecification m_enaSrdSpecification;
     bool m_enaSrdSpecificationHasBeenSet = false;
+
+    int m_enaQueueCount{0};
+    bool m_enaQueueCountHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

@@ -7,8 +7,8 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sso-admin/model/AuthenticationMethod.h>
 #include <aws/sso-admin/model/AuthenticationMethodType.h>
+#include <aws/sso-admin/model/AuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +51,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the type of the authentication method that you want to add or
+     * update.</p>
+     */
+    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
+    inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
+    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
+    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a structure that describes the authentication method to add or
      * update. The structure type you provide is determined by the
      * <code>AuthenticationMethodType</code> parameter.</p>
@@ -62,27 +73,16 @@ namespace Model
     template<typename AuthenticationMethodT = AuthenticationMethod>
     PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(AuthenticationMethodT&& value) { SetAuthenticationMethod(std::forward<AuthenticationMethodT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
-    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
-    inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    AuthenticationMethod m_authenticationMethod;
-    bool m_authenticationMethodHasBeenSet = false;
-
     AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
     bool m_authenticationMethodTypeHasBeenSet = false;
+
+    AuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

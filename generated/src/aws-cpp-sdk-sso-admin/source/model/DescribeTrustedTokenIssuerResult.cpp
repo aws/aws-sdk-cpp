@@ -25,25 +25,25 @@ DescribeTrustedTokenIssuerResult::DescribeTrustedTokenIssuerResult(const Aws::Am
 DescribeTrustedTokenIssuerResult& DescribeTrustedTokenIssuerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
   {
     m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
     m_trustedTokenIssuerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrustedTokenIssuerConfiguration"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_trustedTokenIssuerConfiguration = jsonValue.GetObject("TrustedTokenIssuerConfiguration");
-    m_trustedTokenIssuerConfigurationHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("TrustedTokenIssuerType"))
   {
     m_trustedTokenIssuerType = TrustedTokenIssuerTypeMapper::GetTrustedTokenIssuerTypeForName(jsonValue.GetString("TrustedTokenIssuerType"));
     m_trustedTokenIssuerTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TrustedTokenIssuerConfiguration"))
+  {
+    m_trustedTokenIssuerConfiguration = jsonValue.GetObject("TrustedTokenIssuerConfiguration");
+    m_trustedTokenIssuerConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

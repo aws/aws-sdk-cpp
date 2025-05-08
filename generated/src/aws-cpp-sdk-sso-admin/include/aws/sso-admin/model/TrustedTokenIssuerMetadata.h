@@ -41,19 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the trusted token issuer configuration in the instance of IAM
-     * Identity Center.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    TrustedTokenIssuerMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the trusted token issuer configuration in the instance of IAM
      * Identity Center.</p>
      */
@@ -67,6 +54,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the trusted token issuer configuration in the instance of IAM
+     * Identity Center.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TrustedTokenIssuerMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of trusted token issuer.</p>
      */
     inline TrustedTokenIssuerType GetTrustedTokenIssuerType() const { return m_trustedTokenIssuerType; }
@@ -76,11 +76,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::String m_trustedTokenIssuerArn;
     bool m_trustedTokenIssuerArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     TrustedTokenIssuerType m_trustedTokenIssuerType{TrustedTokenIssuerType::NOT_SET};
     bool m_trustedTokenIssuerTypeHasBeenSet = false;
