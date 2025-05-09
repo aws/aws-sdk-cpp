@@ -30,7 +30,7 @@ using Aws::Utils::Threading::ReaderLockGuard;
 using Aws::Utils::Threading::WriterLockGuard;
 
 static const char STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG[] = "STSAssumeRoleWithWebIdentityCredentialsProvider";
-static const int STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
+static const int STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 60 * 1000; // 5 Minutes.
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider() :
     m_initialized(false)
