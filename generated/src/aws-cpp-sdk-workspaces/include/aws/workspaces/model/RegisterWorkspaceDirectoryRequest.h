@@ -77,19 +77,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled
-     * this parameter and WorkDocs is not available in the Region, you will receive an
-     * OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to
-     * disabled, and try again.</p>
-     */
-    inline bool GetEnableWorkDocs() const { return m_enableWorkDocs; }
-    inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
-    inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
-    inline RegisterWorkspaceDirectoryRequest& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether self-service capabilities are enabled or disabled.</p>
      */
     inline bool GetEnableSelfService() const { return m_enableSelfService; }
@@ -215,9 +202,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
-
-    bool m_enableWorkDocs{false};
-    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableSelfService{false};
     bool m_enableSelfServiceHasBeenSet = false;

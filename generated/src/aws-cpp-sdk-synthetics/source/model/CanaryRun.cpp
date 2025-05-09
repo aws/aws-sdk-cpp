@@ -30,6 +30,16 @@ CanaryRun& CanaryRun::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ScheduledRunId"))
+  {
+    m_scheduledRunId = jsonValue.GetString("ScheduledRunId");
+    m_scheduledRunIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RetryAttempt"))
+  {
+    m_retryAttempt = jsonValue.GetInteger("RetryAttempt");
+    m_retryAttemptHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -65,6 +75,18 @@ JsonValue CanaryRun::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_scheduledRunIdHasBeenSet)
+  {
+   payload.WithString("ScheduledRunId", m_scheduledRunId);
+
+  }
+
+  if(m_retryAttemptHasBeenSet)
+  {
+   payload.WithInteger("RetryAttempt", m_retryAttempt);
 
   }
 

@@ -33,12 +33,6 @@ Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const
 
   }
 
-  if(m_enableWorkDocsHasBeenSet)
-  {
-   payload.WithBool("EnableWorkDocs", m_enableWorkDocs);
-
-  }
-
   if(m_enableSelfServiceHasBeenSet)
   {
    payload.WithBool("EnableSelfService", m_enableSelfService);

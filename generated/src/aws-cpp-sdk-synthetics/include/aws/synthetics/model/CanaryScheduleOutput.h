@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/synthetics/model/RetryConfigOutput.h>
 #include <utility>
 
 namespace Aws
@@ -74,6 +75,18 @@ namespace Model
     inline void SetDurationInSeconds(long long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline CanaryScheduleOutput& WithDurationInSeconds(long long value) { SetDurationInSeconds(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A structure that contains the retry configuration for a canary</p>
+     */
+    inline const RetryConfigOutput& GetRetryConfig() const { return m_retryConfig; }
+    inline bool RetryConfigHasBeenSet() const { return m_retryConfigHasBeenSet; }
+    template<typename RetryConfigT = RetryConfigOutput>
+    void SetRetryConfig(RetryConfigT&& value) { m_retryConfigHasBeenSet = true; m_retryConfig = std::forward<RetryConfigT>(value); }
+    template<typename RetryConfigT = RetryConfigOutput>
+    CanaryScheduleOutput& WithRetryConfig(RetryConfigT&& value) { SetRetryConfig(std::forward<RetryConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_expression;
@@ -81,6 +94,9 @@ namespace Model
 
     long long m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
+
+    RetryConfigOutput m_retryConfig;
+    bool m_retryConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,6 +35,11 @@ CanaryScheduleOutput& CanaryScheduleOutput::operator =(JsonView jsonValue)
     m_durationInSeconds = jsonValue.GetInt64("DurationInSeconds");
     m_durationInSecondsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RetryConfig"))
+  {
+    m_retryConfig = jsonValue.GetObject("RetryConfig");
+    m_retryConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue CanaryScheduleOutput::Jsonize() const
   if(m_durationInSecondsHasBeenSet)
   {
    payload.WithInt64("DurationInSeconds", m_durationInSeconds);
+
+  }
+
+  if(m_retryConfigHasBeenSet)
+  {
+   payload.WithObject("RetryConfig", m_retryConfig.Jsonize());
 
   }
 

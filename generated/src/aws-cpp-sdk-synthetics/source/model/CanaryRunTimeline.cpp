@@ -35,6 +35,11 @@ CanaryRunTimeline& CanaryRunTimeline::operator =(JsonView jsonValue)
     m_completed = jsonValue.GetDouble("Completed");
     m_completedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MetricTimestampForRunAndRetries"))
+  {
+    m_metricTimestampForRunAndRetries = jsonValue.GetDouble("MetricTimestampForRunAndRetries");
+    m_metricTimestampForRunAndRetriesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,11 @@ JsonValue CanaryRunTimeline::Jsonize() const
   if(m_completedHasBeenSet)
   {
    payload.WithDouble("Completed", m_completed.SecondsWithMSPrecision());
+  }
+
+  if(m_metricTimestampForRunAndRetriesHasBeenSet)
+  {
+   payload.WithDouble("MetricTimestampForRunAndRetries", m_metricTimestampForRunAndRetries.SecondsWithMSPrecision());
   }
 
   return payload;

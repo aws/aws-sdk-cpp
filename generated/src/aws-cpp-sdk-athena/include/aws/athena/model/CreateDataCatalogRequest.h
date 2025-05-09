@@ -68,7 +68,8 @@ namespace Model
      * catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for
      * an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog
      * for which Athena creates the connection and the Lambda function for you based on
-     * the parameters that you pass.</p>
+     * the parameters that you pass.</p> <p>For <code>FEDERATED</code> type, we do not
+     * support IAM identity center.</p>
      */
     inline DataCatalogType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

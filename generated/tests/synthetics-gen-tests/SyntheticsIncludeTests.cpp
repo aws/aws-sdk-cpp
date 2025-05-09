@@ -73,6 +73,8 @@
 #include <aws/synthetics/model/ListTagsForResourceResult.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <aws/synthetics/model/ResourceToTag.h>
+#include <aws/synthetics/model/RetryConfigInput.h>
+#include <aws/synthetics/model/RetryConfigOutput.h>
 #include <aws/synthetics/model/RunType.h>
 #include <aws/synthetics/model/RuntimeVersion.h>
 #include <aws/synthetics/model/S3EncryptionConfig.h>
