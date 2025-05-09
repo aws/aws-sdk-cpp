@@ -23,7 +23,14 @@ AWS_PROTOCOL_TEST(FlattenedXmlMap, QueryQueryFlattenedXmlMap) {
   FlattenedXmlMapRequest request;
 
   auto outcome = client.FlattenedXmlMap(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const FlattenedXmlMapResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"myMap":{"foo":"Foo","baz":"Baz"}} )" */
+  const Aws::Map<Aws::String, FooEnum>& resultMyMap = result.GetMyMap();
+  EXPECT_EQ(2U, resultMyMap.size());
+  EXPECT_TRUE(resultMyMap.find("foo") != resultMyMap.end());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultMyMap.at("foo"));
+  EXPECT_TRUE(resultMyMap.find("baz") != resultMyMap.end());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Baz)e"), resultMyMap.at("baz"));
 }

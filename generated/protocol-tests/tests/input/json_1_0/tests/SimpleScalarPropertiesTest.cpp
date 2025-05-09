@@ -21,14 +21,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNaNFloatInputs) {
   request.SetDoubleValue(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiTmFOIiwKICAgICJkb3VibGVWYWx1ZSI6ICJOYU4iCn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsInfinityFloatInputs) {
@@ -41,14 +40,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsInfinityFloatInputs) 
   request.SetDoubleValue(std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiSW5maW5pdHkiLAogICAgImRvdWJsZVZhbHVlIjogIkluZmluaXR5Igp9";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNegativeInfinityFloatInputs) {
@@ -61,12 +59,11 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNegativeInfinityFloat
   request.SetDoubleValue(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiLUluZmluaXR5IiwKICAgICJkb3VibGVWYWx1ZSI6ICItSW5maW5pdHkiCn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

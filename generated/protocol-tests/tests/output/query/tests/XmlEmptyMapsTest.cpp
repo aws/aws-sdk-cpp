@@ -23,9 +23,12 @@ AWS_PROTOCOL_TEST(XmlEmptyMaps, QueryXmlEmptyMaps) {
   XmlEmptyMapsRequest request;
 
   auto outcome = client.XmlEmptyMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"myMap":{}} )" */
+  const Aws::Map<Aws::String, GreetingStruct>& resultMyMap = result.GetMyMap();
+  EXPECT_EQ(0U, resultMyMap.size());
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyMaps, QueryXmlEmptySelfClosedMaps) {
@@ -40,7 +43,10 @@ AWS_PROTOCOL_TEST(XmlEmptyMaps, QueryXmlEmptySelfClosedMaps) {
   XmlEmptyMapsRequest request;
 
   auto outcome = client.XmlEmptyMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"myMap":{}} )" */
+  const Aws::Map<Aws::String, GreetingStruct>& resultMyMap = result.GetMyMap();
+  EXPECT_EQ(0U, resultMyMap.size());
 }

@@ -23,7 +23,25 @@ AWS_PROTOCOL_TEST(XmlEnums, Ec2XmlEnums) {
   XmlEnumsRequest request;
 
   auto outcome = client.XmlEnums(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEnumsResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"fooEnum1":"Foo","fooEnum2":"0","fooEnum3":"1","fooEnumList":["Foo","0"],"fooEnumSet":["Foo","0"],"fooEnumMap":{"hi":"Foo","zero":"0"}} )" */
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), result.GetFooEnum1());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), result.GetFooEnum2());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(1)e"), result.GetFooEnum3());
+  const Aws::Vector<FooEnum>& resultFooEnumListItem = result.GetFooEnumList();
+  EXPECT_EQ(2U, resultFooEnumListItem.size());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultFooEnumListItem.at(0));
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), resultFooEnumListItem.at(1));
+  const Aws::Vector<FooEnum>& resultFooEnumSetItem = result.GetFooEnumSet();
+  EXPECT_EQ(2U, resultFooEnumSetItem.size());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultFooEnumSetItem.at(0));
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), resultFooEnumSetItem.at(1));
+  const Aws::Map<Aws::String, FooEnum>& resultFooEnumMap = result.GetFooEnumMap();
+  EXPECT_EQ(2U, resultFooEnumMap.size());
+  EXPECT_TRUE(resultFooEnumMap.find("hi") != resultFooEnumMap.end());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultFooEnumMap.at("hi"));
+  EXPECT_TRUE(resultFooEnumMap.find("zero") != resultFooEnumMap.end());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), resultFooEnumMap.at("zero"));
 }

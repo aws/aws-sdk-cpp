@@ -20,8 +20,6 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsQueryEndpointTraitWithHostL
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPUVuZHBvaW50V2l0aEhvc3RMYWJlbE9wZXJhdGlvbiZWZXJzaW9uPTIwMjAtMDEtMDgmbGFiZWw9YmFy";
@@ -29,4 +27,5 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsQueryEndpointTraitWithHostL
   expectedRq.host = "foo.bar.example.com";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

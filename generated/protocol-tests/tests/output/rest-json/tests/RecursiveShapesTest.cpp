@@ -5,6 +5,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
+#include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested2.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesRequest.h>
 
@@ -24,7 +25,24 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RestJsonRecursiveShapes) {
   RecursiveShapesRequest request;
 
   auto outcome = client.RecursiveShapes(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const RecursiveShapesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"foo":"Foo1","nested":{"bar":"Bar1","recursiveMember":{"foo":"Foo2","nested":{"bar":"Bar2"}}}}} )" */
+  {
+    const RecursiveShapesInputOutputNested1& resultNested = result.GetNested();
+    EXPECT_EQ(R"(Foo1)", resultNested.GetFoo());
+    {
+      const RecursiveShapesInputOutputNested2& resultNestedNested = resultNested.GetNested();
+      EXPECT_EQ(R"(Bar1)", resultNestedNested.GetBar());
+      {
+        const RecursiveShapesInputOutputNested1& resultNestedNestedRecursiveMember = resultNestedNested.GetRecursiveMember();
+        EXPECT_EQ(R"(Foo2)", resultNestedNestedRecursiveMember.GetFoo());
+        {
+          const RecursiveShapesInputOutputNested2& resultNestedNestedRecursiveMemberNested = resultNestedNestedRecursiveMember.GetNested();
+          EXPECT_EQ(R"(Bar2)", resultNestedNestedRecursiveMemberNested.GetBar());
+        }
+      }
+    }
+  }
 }

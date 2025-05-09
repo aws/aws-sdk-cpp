@@ -1,0 +1,57 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateSingleParameterMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateParamsMacro.vm")
+##-------------------- ValidateListMacro macro
+#macro( ValidateListMacro $spaces $dstObject $listShape $testValidateParam $listGetter="")
+#set($macro.spaces = $spaces)
+#set($macro.listMemberShape=$listShape.listMember.shape)
+#if(false)
+/* ValidateListMacro  dstObject = $dstObject */
+/* ValidateListMacro  listShape = $listShape */
+/* ValidateListMacro  testValidateParam = $testValidateParam */
+/* ValidateListMacro  listGetter = $listGetter */
+#break
+#end
+#set($macro.fieldGetter = $listGetter)
+#if($macro.fieldGetter)
+## this is a nested list (i.e. a list inside a map/list/structure)
+#set($testValidateParamVal = $testValidateParam)
+#set($macro.listItemVarName = "${dstObject}Item")
+#else
+## this is list at the root level)
+#set($macro.fieldGetter = "Get${CppViewHelper.capitalizeFirstChar($testValidateParam.key)}()")
+#set($testValidateParamVal = $testValidateParam.value)
+#set($macro.listItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}Item")
+#end
+#if($macro.listMemberShape.list || $macro.listMemberShape.map || $macro.listMemberShape.structure)
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${dstObject}.${macro.fieldGetter}.size());
+#foreach($arrayItem in $testValidateParamVal)
+${macro.spaces}{
+#if($macro.listMemberShape.list)
+  ${macro.spaces}const Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape.listMember.shape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
+  ${macro.spaces}EXPECT_EQ(${arrayItem.size()}U, ${macro.listItemVarName}.size());
+#foreach($innerListEl in $arrayItem)
+  ${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape.listMember.shape, $innerListEl), ${macro.listItemVarName}.at(${foreach.index}));
+#end
+#elseif($macro.listMemberShape.map)
+  ${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($macro.listMemberShape.mapKey.shape), $CppViewHelper.computeCppType($macro.listMemberShape.mapValue.shape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
+  ${macro.spaces}EXPECT_EQ(${arrayItem.size()}U, ${macro.listItemVarName}.size());
+#foreach($innerMapEl in $arrayItem.fields())
+  ${macro.spaces}EXPECT_TRUE(${macro.listItemVarName}.find("$innerMapEl.key") != ${macro.listItemVarName}.end());
+  ${macro.spaces}EXPECT_EQ(${macro.listItemVarName}.at("$innerMapEl.key"), #ValidateSingleParameterMacro($macro.listMemberShape.mapValue.shape, $innerMapEl.value));
+#end
+#elseif($macro.listMemberShape.structure)
+  ${macro.spaces}const ${macro.listMemberShape.name}& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
+#foreach($innerParam in $arrayItem.fields())
+#ValidateParamsMacro("${macro.spaces}  " $macro.listItemVarName $macro.listMemberShape $innerParam)
+#end
+#end##list
+${macro.spaces}}
+#end##foreach
+#else## not (list || map || structure)
+${macro.spaces}const Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
+#foreach($arrayItem in $testValidateParamVal)
+${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape, $arrayItem), ${macro.listItemVarName}.at(${foreach.index}));
+#end
+#end##(list || map || structure)
+#end##macro ValidateListMacro

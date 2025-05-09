@@ -30,14 +30,13 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
   }
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jkxpc3RBcmcuMT1mb28mTGlzdEFyZy4yPWJhciZMaXN0QXJnLjM9YmF6JkNvbXBsZXhMaXN0QXJnLjEuSGk9aGVsbG8mQ29tcGxleExpc3RBcmcuMi5IaT1ob2xh";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
@@ -49,14 +48,13 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
   request.SetListArg({});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
@@ -68,14 +66,13 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
   request.SetListArgWithXmlNameMember({R"(A)", R"(B)"});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jkxpc3RBcmdXaXRoWG1sTmFtZU1lbWJlci4xPUEmTGlzdEFyZ1dpdGhYbWxOYW1lTWVtYmVyLjI9Qg==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
@@ -87,14 +84,13 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
   request.SetListArgWithXmlName({R"(A)", R"(B)"});
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4JkhpLjE9QSZIaS4yPUI=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
@@ -110,12 +106,11 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
   }
 
   auto outcome = client.QueryLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5TGlzdHMmVmVyc2lvbj0yMDIwLTAxLTA4Jk5lc3RlZFdpdGhMaXN0Lkxpc3RBcmcuMT1BJk5lc3RlZFdpdGhMaXN0Lkxpc3RBcmcuMj1C";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

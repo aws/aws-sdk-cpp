@@ -22,6 +22,11 @@ public class C2jGiven {
     }
 
     @Data
+    public class C2jGivenOutput {
+        private String shape;
+    }
+
+    @Data
     public class C2jGivenEndpoint {
         private String hostPrefix;
     }
@@ -29,5 +34,6 @@ public class C2jGiven {
     private String name;
     private C2jGivenHttp http;
     private C2jGivenInput input;
+    private C2jGivenOutput output;
     private C2jGivenEndpoint endpoint;
 }
