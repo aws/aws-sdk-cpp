@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
-     */
-    inline bool GetEnableWorkDocs() const { return m_enableWorkDocs; }
-    inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
-    inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
-    inline DefaultWorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies whether to automatically assign an Elastic public IP address to
      * WorkSpaces in this directory by default. If enabled, the Elastic public IP
      * address allows outbound internet access from your WorkSpaces when you’re using
@@ -134,9 +124,6 @@ namespace Model
     DefaultWorkspaceCreationProperties& WithInstanceIamRoleArn(InstanceIamRoleArnT&& value) { SetInstanceIamRoleArn(std::forward<InstanceIamRoleArnT>(value)); return *this;}
     ///@}
   private:
-
-    bool m_enableWorkDocs{false};
-    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableInternetAccess{false};
     bool m_enableInternetAccessHasBeenSet = false;

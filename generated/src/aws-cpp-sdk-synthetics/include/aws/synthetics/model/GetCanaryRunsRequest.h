@@ -49,7 +49,9 @@ namespace Model
     /**
      * <p>A token that indicates that there is more data available. You can use this
      * token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next
-     * set of results.</p>
+     * set of results.</p>  <p>When auto retry is enabled for the canary, the
+     * first subsequent retry is suffixed with *1 indicating its the first retry and
+     * the next subsequent try is suffixed with *2.</p> 
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

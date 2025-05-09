@@ -28,7 +28,7 @@ namespace Model
    * <p>This processor takes a list of objects that contain key fields, and converts
    * them into a map of target keys.</p> <p>For more information about this processor
    * including examples, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-listToMap">
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#CloudWatch-Logs-Transformation-listToMap">
    * listToMap</a> in the <i>CloudWatch Logs User Guide</i>.</p><p><h3>See Also:</h3>
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListToMap">AWS
    * API Reference</a></p>

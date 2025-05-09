@@ -25,11 +25,6 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView 
 
 DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("EnableWorkDocs"))
-  {
-    m_enableWorkDocs = jsonValue.GetBool("EnableWorkDocs");
-    m_enableWorkDocsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("EnableInternetAccess"))
   {
     m_enableInternetAccess = jsonValue.GetBool("EnableInternetAccess");
@@ -66,12 +61,6 @@ DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator
 JsonValue DefaultWorkspaceCreationProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_enableWorkDocsHasBeenSet)
-  {
-   payload.WithBool("EnableWorkDocs", m_enableWorkDocs);
-
-  }
 
   if(m_enableInternetAccessHasBeenSet)
   {

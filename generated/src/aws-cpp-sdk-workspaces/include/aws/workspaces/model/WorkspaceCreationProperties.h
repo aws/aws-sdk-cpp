@@ -42,29 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> 
-     * <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it,
-     * new WorkSpaces launched in the directory will not have WorkDocs enabled.
-     * However, WorkDocs remains enabled for any existing WorkSpaces, unless you either
-     * disable users' access to WorkDocs or you delete the WorkDocs site. To disable
-     * users' access to WorkDocs, see <a
-     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
-     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a
-     * WorkDocs site, see <a
-     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting
-     * a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p> <p>If you
-     * enable WorkDocs on a directory that already has existing WorkSpaces, the
-     * existing WorkSpaces and any new WorkSpaces that are launched in the directory
-     * will have WorkDocs enabled.</p> 
-     */
-    inline bool GetEnableWorkDocs() const { return m_enableWorkDocs; }
-    inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
-    inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
-    inline WorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
      */
     inline bool GetEnableInternetAccess() const { return m_enableInternetAccess; }
@@ -143,9 +120,6 @@ namespace Model
     WorkspaceCreationProperties& WithInstanceIamRoleArn(InstanceIamRoleArnT&& value) { SetInstanceIamRoleArn(std::forward<InstanceIamRoleArnT>(value)); return *this;}
     ///@}
   private:
-
-    bool m_enableWorkDocs{false};
-    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableInternetAccess{false};
     bool m_enableInternetAccessHasBeenSet = false;

@@ -55,6 +55,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the scheduled canary run.</p>
+     */
+    inline const Aws::String& GetScheduledRunId() const { return m_scheduledRunId; }
+    inline bool ScheduledRunIdHasBeenSet() const { return m_scheduledRunIdHasBeenSet; }
+    template<typename ScheduledRunIdT = Aws::String>
+    void SetScheduledRunId(ScheduledRunIdT&& value) { m_scheduledRunIdHasBeenSet = true; m_scheduledRunId = std::forward<ScheduledRunIdT>(value); }
+    template<typename ScheduledRunIdT = Aws::String>
+    CanaryRun& WithScheduledRunId(ScheduledRunIdT&& value) { SetScheduledRunId(std::forward<ScheduledRunIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The count in number of the retry attempt.</p>
+     */
+    inline int GetRetryAttempt() const { return m_retryAttempt; }
+    inline bool RetryAttemptHasBeenSet() const { return m_retryAttemptHasBeenSet; }
+    inline void SetRetryAttempt(int value) { m_retryAttemptHasBeenSet = true; m_retryAttempt = value; }
+    inline CanaryRun& WithRetryAttempt(int value) { SetRetryAttempt(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the canary.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -117,6 +139,12 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_scheduledRunId;
+    bool m_scheduledRunIdHasBeenSet = false;
+
+    int m_retryAttempt{0};
+    bool m_retryAttemptHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

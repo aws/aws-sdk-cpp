@@ -61,6 +61,18 @@ namespace Model
     template<typename CompletedT = Aws::Utils::DateTime>
     CanaryRunTimeline& WithCompleted(CompletedT&& value) { SetCompleted(std::forward<CompletedT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the metrics will be generated for this run or retries.</p>
+     */
+    inline const Aws::Utils::DateTime& GetMetricTimestampForRunAndRetries() const { return m_metricTimestampForRunAndRetries; }
+    inline bool MetricTimestampForRunAndRetriesHasBeenSet() const { return m_metricTimestampForRunAndRetriesHasBeenSet; }
+    template<typename MetricTimestampForRunAndRetriesT = Aws::Utils::DateTime>
+    void SetMetricTimestampForRunAndRetries(MetricTimestampForRunAndRetriesT&& value) { m_metricTimestampForRunAndRetriesHasBeenSet = true; m_metricTimestampForRunAndRetries = std::forward<MetricTimestampForRunAndRetriesT>(value); }
+    template<typename MetricTimestampForRunAndRetriesT = Aws::Utils::DateTime>
+    CanaryRunTimeline& WithMetricTimestampForRunAndRetries(MetricTimestampForRunAndRetriesT&& value) { SetMetricTimestampForRunAndRetries(std::forward<MetricTimestampForRunAndRetriesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_started{};
@@ -68,6 +80,9 @@ namespace Model
 
     Aws::Utils::DateTime m_completed{};
     bool m_completedHasBeenSet = false;
+
+    Aws::Utils::DateTime m_metricTimestampForRunAndRetries{};
+    bool m_metricTimestampForRunAndRetriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the canary has insufficient permissions to run, this field provides more
-     * details.</p>
+     * <p>If the canary creation or update failed, this field provides details on the
+     * failure.</p>
      */
     inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
@@ -65,7 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the canary cannot run or has failed, this field displays the reason.</p>
+     * <p>If the canary creation or update failed, this field displays the reason
+     * code.</p>
      */
     inline CanaryStateReasonCode GetStateReasonCode() const { return m_stateReasonCode; }
     inline bool StateReasonCodeHasBeenSet() const { return m_stateReasonCodeHasBeenSet; }
