@@ -23,9 +23,13 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithBlob) {
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadTraitsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"foo":"Foo","blob":"blobby blob blob"} )" */
+  EXPECT_EQ(R"(Foo)", result.GetFoo());
+  const Aws::String resultBlob = [&result](){Aws::StringStream ss; ss << result.GetBlob().rdbuf(); return ss.str();}();
+  EXPECT_STREQ(R"(blobby blob blob)", resultBlob.c_str());
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithNoBlobBody) {
@@ -39,7 +43,9 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, HttpPayloadTraitsWithNoBlobBody) {
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadTraitsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"foo":"Foo"} )" */
+  EXPECT_EQ(R"(Foo)", result.GetFoo());
 }

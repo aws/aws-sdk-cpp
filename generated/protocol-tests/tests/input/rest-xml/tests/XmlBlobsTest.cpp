@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(XmlBlobs, XmlBlobs) {
   request.SetData(Aws::String(R"(value)"));
 
   auto outcome = client.XmlBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbEJsb2JzUmVxdWVzdD4KICAgIDxkYXRhPmRtRnNkV1U9PC9kYXRhPgo8L1htbEJsb2JzUmVxdWVzdD4K";
   expectedRq.uri = "/XmlBlobs";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

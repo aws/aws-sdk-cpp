@@ -23,7 +23,13 @@ AWS_PROTOCOL_TEST(XmlAttributesOnPayload, XmlAttributesOnPayload) {
   XmlAttributesOnPayloadRequest request;
 
   auto outcome = client.XmlAttributesOnPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlAttributesOnPayloadResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"payload":{"foo":"hi","attr":"test"}} )" */
+  {
+    const XmlAttributesPayloadResponse& resultPayload = result.GetPayload();
+    EXPECT_EQ(R"(hi)", resultPayload.GetFoo());
+    EXPECT_EQ(R"(test)", resultPayload.GetAttr());
+  }
 }

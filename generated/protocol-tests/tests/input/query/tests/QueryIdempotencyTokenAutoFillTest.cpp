@@ -19,8 +19,6 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAu
   QueryIdempotencyTokenAutoFillRequest request;
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5SWRlbXBvdGVuY3lUb2tlbkF1dG9GaWxsJlZlcnNpb249MjAyMC0wMS0wOCZ0b2tlbj0wMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDA=";
@@ -28,6 +26,7 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAu
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAutoFillIsSet) {
@@ -39,8 +38,6 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAu
   request.SetToken(R"(00000000-0000-4000-8000-000000000123)");
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5SWRlbXBvdGVuY3lUb2tlbkF1dG9GaWxsJlZlcnNpb249MjAyMC0wMS0wOCZ0b2tlbj0wMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAxMjM=";
@@ -48,4 +45,5 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAu
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

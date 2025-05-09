@@ -22,8 +22,6 @@ AWS_PROTOCOL_TEST(QueryTimestamps, QueryTimestampsInput) {
   request.SetEpochTarget(Aws::Utils::DateTime(1422172800L));
 
   auto outcome = client.QueryTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVF1ZXJ5VGltZXN0YW1wcyZWZXJzaW9uPTIwMjAtMDEtMDgmbm9ybWFsRm9ybWF0PTIwMTUtMDEtMjVUMDglM0EwMCUzQTAwWiZlcG9jaE1lbWJlcj0xNDIyMTcyODAwJmVwb2NoVGFyZ2V0PTE0MjIxNzI4MDA=";
@@ -31,4 +29,5 @@ AWS_PROTOCOL_TEST(QueryTimestamps, QueryTimestampsInput) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

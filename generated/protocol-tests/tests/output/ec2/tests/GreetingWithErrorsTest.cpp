@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, Ec2GreetingWithErrors) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const GreetingWithErrorsResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"greeting":"Hello"} )" */
+  EXPECT_EQ(R"(Hello)", result.GetGreeting());
 }

@@ -26,11 +26,10 @@ AWS_PROTOCOL_TEST(TimestampFormatHeaders, TimestampFormatHeaders) {
   request.SetTargetDateTime(Aws::Utils::DateTime(1576540098L));
 
   auto outcome = client.TimestampFormatHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/TimestampFormatHeaders";
   expectedRq.headers = {{"X-defaultFormat", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}, {"X-memberDateTime", R"(2019-12-16T23:48:18Z)"}, {"X-memberEpochSeconds", R"(1576540098)"}, {"X-memberHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}, {"X-targetDateTime", R"(2019-12-16T23:48:18Z)"}, {"X-targetEpochSeconds", R"(1576540098)"}, {"X-targetHttpDate", R"(Mon, 16 Dec 2019 23:48:18 GMT)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

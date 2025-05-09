@@ -19,13 +19,12 @@ AWS_PROTOCOL_TEST(TestPostNoPayload, RestJsonHttpPostWithNoModeledBody) {
   TestPostNoPayloadRequest request;
 
   auto outcome = client.TestPostNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/no_payload";
   expectedRq.forbidHeaders = {"Content-Type"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(TestPostNoPayload, RestJsonHttpWithPostHeaderMemberNoModeledBody) {
@@ -37,12 +36,11 @@ AWS_PROTOCOL_TEST(TestPostNoPayload, RestJsonHttpWithPostHeaderMemberNoModeledBo
   request.SetTestId(R"(t-12345)");
 
   auto outcome = client.TestPostNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/no_payload";
   expectedRq.headers = {{"X-Amz-Test-Id", R"(t-12345)"}};
   expectedRq.forbidHeaders = {"Content-Type"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
