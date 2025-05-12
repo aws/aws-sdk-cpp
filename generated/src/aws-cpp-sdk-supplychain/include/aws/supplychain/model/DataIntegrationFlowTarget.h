@@ -63,7 +63,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dataset DataIntegrationFlow target.</p>
+     * <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain
+     * dataset under <b>asc</b> namespace, it has a connection_id internal field that
+     * is not allowed to be provided by client directly, they will be auto
+     * populated.</p>
      */
     inline const DataIntegrationFlowDatasetTargetConfiguration& GetDatasetTarget() const { return m_datasetTarget; }
     inline bool DatasetTargetHasBeenSet() const { return m_datasetTargetHasBeenSet; }

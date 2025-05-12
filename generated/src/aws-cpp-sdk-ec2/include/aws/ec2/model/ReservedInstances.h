@@ -133,6 +133,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    ReservedInstances& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the Reserved Instance.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const { return m_reservedInstancesId; }
@@ -270,6 +282,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet = false;

@@ -39,6 +39,15 @@ DataLakeDatasetSchema& DataLakeDatasetSchema::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("primaryKeys"))
+  {
+    Aws::Utils::Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("primaryKeys");
+    for(unsigned primaryKeysIndex = 0; primaryKeysIndex < primaryKeysJsonList.GetLength(); ++primaryKeysIndex)
+    {
+      m_primaryKeys.push_back(primaryKeysJsonList[primaryKeysIndex].AsObject());
+    }
+    m_primaryKeysHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +69,17 @@ JsonValue DataLakeDatasetSchema::Jsonize() const
      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
    }
    payload.WithArray("fields", std::move(fieldsJsonList));
+
+  }
+
+  if(m_primaryKeysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> primaryKeysJsonList(m_primaryKeys.size());
+   for(unsigned primaryKeysIndex = 0; primaryKeysIndex < primaryKeysJsonList.GetLength(); ++primaryKeysIndex)
+   {
+     primaryKeysJsonList[primaryKeysIndex].AsObject(m_primaryKeys[primaryKeysIndex].Jsonize());
+   }
+   payload.WithArray("primaryKeys", std::move(primaryKeysJsonList));
 
   }
 

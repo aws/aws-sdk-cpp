@@ -30,6 +30,11 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
     m_metricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("MetricName"));
     m_metricNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("StandardMetricName"))
+  {
+    m_standardMetricName = AutoMLMetricExtendedEnumMapper::GetAutoMLMetricExtendedEnumForName(jsonValue.GetString("StandardMetricName"));
+    m_standardMetricNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
@@ -39,11 +44,6 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
   {
     m_set = MetricSetSourceMapper::GetMetricSetSourceForName(jsonValue.GetString("Set"));
     m_setHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("StandardMetricName"))
-  {
-    m_standardMetricName = AutoMLMetricExtendedEnumMapper::GetAutoMLMetricExtendedEnumForName(jsonValue.GetString("StandardMetricName"));
-    m_standardMetricNameHasBeenSet = true;
   }
   return *this;
 }
@@ -57,6 +57,11 @@ JsonValue MetricDatum::Jsonize() const
    payload.WithString("MetricName", AutoMLMetricEnumMapper::GetNameForAutoMLMetricEnum(m_metricName));
   }
 
+  if(m_standardMetricNameHasBeenSet)
+  {
+   payload.WithString("StandardMetricName", AutoMLMetricExtendedEnumMapper::GetNameForAutoMLMetricExtendedEnum(m_standardMetricName));
+  }
+
   if(m_valueHasBeenSet)
   {
    payload.WithDouble("Value", m_value);
@@ -66,11 +71,6 @@ JsonValue MetricDatum::Jsonize() const
   if(m_setHasBeenSet)
   {
    payload.WithString("Set", MetricSetSourceMapper::GetNameForMetricSetSource(m_set));
-  }
-
-  if(m_standardMetricNameHasBeenSet)
-  {
-   payload.WithString("StandardMetricName", AutoMLMetricExtendedEnumMapper::GetNameForAutoMLMetricExtendedEnum(m_standardMetricName));
   }
 
   return payload;

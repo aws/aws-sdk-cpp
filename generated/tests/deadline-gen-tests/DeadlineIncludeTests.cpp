@@ -198,6 +198,7 @@
 #include <aws/deadline/model/GetTaskResult.h>
 #include <aws/deadline/model/GetWorkerRequest.h>
 #include <aws/deadline/model/GetWorkerResult.h>
+#include <aws/deadline/model/HostConfiguration.h>
 #include <aws/deadline/model/HostPropertiesRequest.h>
 #include <aws/deadline/model/HostPropertiesResponse.h>
 #include <aws/deadline/model/InternalServerErrorException.h>

@@ -80,6 +80,11 @@ GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<Jso
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("hostConfiguration"))
+  {
+    m_hostConfiguration = jsonValue.GetObject("hostConfiguration");
+    m_hostConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("capabilities"))
   {
     m_capabilities = jsonValue.GetObject("capabilities");

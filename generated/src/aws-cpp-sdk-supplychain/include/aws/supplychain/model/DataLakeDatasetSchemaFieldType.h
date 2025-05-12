@@ -19,7 +19,8 @@ namespace Model
     INT,
     DOUBLE,
     STRING,
-    TIMESTAMP
+    TIMESTAMP,
+    LONG
   };
 
 namespace DataLakeDatasetSchemaFieldTypeMapper

@@ -93,6 +93,12 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
       m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()));
       m_scopeHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
     if(!reservedInstancesOfferingIdNode.IsNull())
     {
@@ -194,6 +200,11 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_reservedInstancesOfferingIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
@@ -276,6 +287,10 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   if(m_scopeHasBeenSet)
   {
       oStream << location << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_reservedInstancesOfferingIdHasBeenSet)
   {

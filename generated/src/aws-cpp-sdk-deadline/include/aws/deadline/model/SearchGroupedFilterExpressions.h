@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when
-   * searching among a group of search strings in a resource. <p>You can use two
-   * groupings per search each within parenthesis <code>()</code>.</p></p><p><h3>See
+   * searching among a group of search strings in a resource. You can use two
+   * groupings per search each within parenthesis <code>()</code>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchGroupedFilterExpressions">AWS
    * API Reference</a></p>

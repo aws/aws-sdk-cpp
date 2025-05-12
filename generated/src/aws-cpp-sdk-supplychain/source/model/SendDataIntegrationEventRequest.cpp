@@ -44,6 +44,12 @@ Aws::String SendDataIntegrationEventRequest::SerializePayload() const
 
   }
 
+  if(m_datasetTargetHasBeenSet)
+  {
+   payload.WithObject("datasetTarget", m_datasetTarget.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

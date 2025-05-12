@@ -9,6 +9,7 @@
 #include <aws/deadline/model/FleetStatus.h>
 #include <aws/deadline/model/AutoScalingStatus.h>
 #include <aws/deadline/model/FleetConfiguration.h>
+#include <aws/deadline/model/HostConfiguration.h>
 #include <aws/deadline/model/FleetCapabilities.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -153,6 +154,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The script that runs as a worker is starting up that you can use to provide
+     * additional configuration for workers in your fleet.</p>
+     */
+    inline const HostConfiguration& GetHostConfiguration() const { return m_hostConfiguration; }
+    template<typename HostConfigurationT = HostConfiguration>
+    void SetHostConfiguration(HostConfigurationT&& value) { m_hostConfigurationHasBeenSet = true; m_hostConfiguration = std::forward<HostConfigurationT>(value); }
+    template<typename HostConfigurationT = HostConfiguration>
+    GetFleetResult& WithHostConfiguration(HostConfigurationT&& value) { SetHostConfiguration(std::forward<HostConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in
      * addition to attribute names and values.</p>
      */
@@ -260,6 +273,9 @@ namespace Model
 
     FleetConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    HostConfiguration m_hostConfiguration;
+    bool m_hostConfigurationHasBeenSet = false;
 
     FleetCapabilities m_capabilities;
     bool m_capabilitiesHasBeenSet = false;

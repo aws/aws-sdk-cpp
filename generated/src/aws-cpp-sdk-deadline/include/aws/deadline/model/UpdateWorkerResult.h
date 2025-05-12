@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/LogConfiguration.h>
+#include <aws/deadline/model/HostConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +46,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The script that runs as a worker is starting up that you can use to provide
+     * additional configuration for workers in your fleet.</p>
+     */
+    inline const HostConfiguration& GetHostConfiguration() const { return m_hostConfiguration; }
+    template<typename HostConfigurationT = HostConfiguration>
+    void SetHostConfiguration(HostConfigurationT&& value) { m_hostConfigurationHasBeenSet = true; m_hostConfiguration = std::forward<HostConfigurationT>(value); }
+    template<typename HostConfigurationT = HostConfiguration>
+    UpdateWorkerResult& WithHostConfiguration(HostConfigurationT&& value) { SetHostConfiguration(std::forward<HostConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -56,6 +69,9 @@ namespace Model
 
     LogConfiguration m_log;
     bool m_logHasBeenSet = false;
+
+    HostConfiguration m_hostConfiguration;
+    bool m_hostConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

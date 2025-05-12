@@ -86,12 +86,14 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
-     * <code>duration</code> - The duration of the Reserved Instance (one year or three
-     * years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
-     * <li> <p> <code>end</code> - The time when the Reserved Instance expires (for
-     * example, 2015-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>fixed-price</code>
-     * - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
-     * <li> <p> <code>instance-type</code> - The instance type that is covered by the
+     * <code>availability-zone-id</code> - The ID of the Availability Zone where the
+     * Reserved Instance can be used.</p> </li> <li> <p> <code>duration</code> - The
+     * duration of the Reserved Instance (one year or three years), in seconds
+     * (<code>31536000</code> | <code>94608000</code>).</p> </li> <li> <p>
+     * <code>end</code> - The time when the Reserved Instance expires (for example,
+     * 2015-08-07T11:54:42.000Z).</p> </li> <li> <p> <code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
+     * <p> <code>instance-type</code> - The instance type that is covered by the
      * reservation.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
      * Instance (<code>Region</code> or <code>Availability Zone</code>).</p> </li> <li>
      * <p> <code>product-description</code> - The Reserved Instance product platform

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SERVICE_QUOTA_EXCEEDED_EXCEPTION_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED_EXCEPTION");
         static const int KMS_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("KMS_KEY_LIMIT_EXCEEDED");
+        static const int DEPENDENCY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEPENDENCY_LIMIT_EXCEEDED");
 
 
         ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == KMS_KEY_LIMIT_EXCEEDED_HASH)
           {
             return ServiceQuotaExceededExceptionReason::KMS_KEY_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == DEPENDENCY_LIMIT_EXCEEDED_HASH)
+          {
+            return ServiceQuotaExceededExceptionReason::DEPENDENCY_LIMIT_EXCEEDED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SERVICE_QUOTA_EXCEEDED_EXCEPTION";
           case ServiceQuotaExceededExceptionReason::KMS_KEY_LIMIT_EXCEEDED:
             return "KMS_KEY_LIMIT_EXCEEDED";
+          case ServiceQuotaExceededExceptionReason::DEPENDENCY_LIMIT_EXCEEDED:
+            return "DEPENDENCY_LIMIT_EXCEEDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

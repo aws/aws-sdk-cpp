@@ -35,6 +35,7 @@ namespace Aws
         static const int scn_data_shipmentstop_HASH = HashingUtils::HashString("scn.data.shipmentstop");
         static const int scn_data_shipmentstoporder_HASH = HashingUtils::HashString("scn.data.shipmentstoporder");
         static const int scn_data_supplyplan_HASH = HashingUtils::HashString("scn.data.supplyplan");
+        static const int scn_data_dataset_HASH = HashingUtils::HashString("scn.data.dataset");
 
 
         DataIntegrationEventType GetDataIntegrationEventTypeForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return DataIntegrationEventType::scn_data_supplyplan;
           }
+          else if (hashCode == scn_data_dataset_HASH)
+          {
+            return DataIntegrationEventType::scn_data_dataset;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -146,6 +151,8 @@ namespace Aws
             return "scn.data.shipmentstoporder";
           case DataIntegrationEventType::scn_data_supplyplan:
             return "scn.data.supplyplan";
+          case DataIntegrationEventType::scn_data_dataset:
+            return "scn.data.dataset";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

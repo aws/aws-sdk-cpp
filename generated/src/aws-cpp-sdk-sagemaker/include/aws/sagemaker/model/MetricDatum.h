@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLMetricEnum.h>
-#include <aws/sagemaker/model/MetricSetSource.h>
 #include <aws/sagemaker/model/AutoMLMetricExtendedEnum.h>
+#include <aws/sagemaker/model/MetricSetSource.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +52,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
+     */
+    inline AutoMLMetricExtendedEnum GetStandardMetricName() const { return m_standardMetricName; }
+    inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
+    inline void SetStandardMetricName(AutoMLMetricExtendedEnum value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
+    inline MetricDatum& WithStandardMetricName(AutoMLMetricExtendedEnum value) { SetStandardMetricName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The value of the metric.</p>
      */
     inline double GetValue() const { return m_value; }
@@ -69,32 +82,19 @@ namespace Model
     inline void SetSet(MetricSetSource value) { m_setHasBeenSet = true; m_set = value; }
     inline MetricDatum& WithSet(MetricSetSource value) { SetSet(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the standard metric. </p>  <p>For definitions of the
-     * standard metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
-     * <code>Autopilot candidate metrics</code> </a>.</p> 
-     */
-    inline AutoMLMetricExtendedEnum GetStandardMetricName() const { return m_standardMetricName; }
-    inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
-    inline void SetStandardMetricName(AutoMLMetricExtendedEnum value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
-    inline MetricDatum& WithStandardMetricName(AutoMLMetricExtendedEnum value) { SetStandardMetricName(value); return *this;}
-    ///@}
   private:
 
     AutoMLMetricEnum m_metricName{AutoMLMetricEnum::NOT_SET};
     bool m_metricNameHasBeenSet = false;
+
+    AutoMLMetricExtendedEnum m_standardMetricName{AutoMLMetricExtendedEnum::NOT_SET};
+    bool m_standardMetricNameHasBeenSet = false;
 
     double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
     MetricSetSource m_set{MetricSetSource::NOT_SET};
     bool m_setHasBeenSet = false;
-
-    AutoMLMetricExtendedEnum m_standardMetricName{AutoMLMetricExtendedEnum::NOT_SET};
-    bool m_standardMetricNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name space of the dataset. The available values are:</p> <ul> <li> <p>
-     * <b>asc</b> - For information on the Amazon Web Services Supply Chain supported
-     * datasets see <a
+     * <p>The namespace of the dataset, besides the custom defined namespace, every
+     * instance comes with below pre-defined namespaces:</p> <ul> <li> <p> <b>asc</b> -
+     * For information on the Amazon Web Services Supply Chain supported datasets see
+     * <a
      * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
      * </li> <li> <p> <b>default</b> - For datasets with custom user-defined
      * schemas.</p> </li> </ul>
@@ -66,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the dataset. For <b>asc</b> name space, the name must be one of
+     * <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of
      * the supported data entities under <a
      * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
      */

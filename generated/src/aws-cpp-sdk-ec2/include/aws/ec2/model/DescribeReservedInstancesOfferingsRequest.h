@@ -50,6 +50,8 @@ namespace Model
     ///@{
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
+     * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can
+     * be specified, but not both.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -153,6 +155,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone.</p> <p>Either <code>AvailabilityZone</code>
+     * or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    DescribeReservedInstancesOfferingsRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -168,17 +183,19 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
-     * <code>duration</code> - The duration of the Reserved Instance (for example, one
-     * year or three years), in seconds (<code>31536000</code> |
-     * <code>94608000</code>).</p> </li> <li> <p> <code>fixed-price</code> - The
-     * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p> <code>instance-type</code> - The instance type that is covered by the
-     * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
-     * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both
-     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-     * <li> <p> <code>product-description</code> - The Reserved Instance product
-     * platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server
+     * <code>availability-zone-id</code> - The ID of the Availability Zone where the
+     * Reserved Instance can be used.</p> </li> <li> <p> <code>duration</code> - The
+     * duration of the Reserved Instance (for example, one year or three years), in
+     * seconds (<code>31536000</code> | <code>94608000</code>).</p> </li> <li> <p>
+     * <code>fixed-price</code> - The purchase price of the Reserved Instance (for
+     * example, 9800.0).</p> </li> <li> <p> <code>instance-type</code> - The instance
+     * type that is covered by the reservation.</p> </li> <li> <p>
+     * <code>marketplace</code> - Set to <code>true</code> to show only Reserved
+     * Instance Marketplace offerings. When this filter is not used, which is the
+     * default behavior, all offerings from both Amazon Web Services and the Reserved
+     * Instance Marketplace are listed.</p> </li> <li> <p>
+     * <code>product-description</code> - The Reserved Instance product platform
+     * description (<code>Linux/UNIX</code> | <code>Linux with SQL Server
      * Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL
      * Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise
      * Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
@@ -280,6 +297,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_reservedInstancesOfferingIds;
     bool m_reservedInstancesOfferingIdsHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

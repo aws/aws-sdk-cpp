@@ -110,6 +110,16 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
     m_timecodeBurninSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("bitrate"))
+  {
+    m_bitrate = jsonValue.GetInteger("bitrate");
+    m_bitrateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("rateControlMode"))
+  {
+    m_rateControlMode = Av1RateControlModeMapper::GetAv1RateControlModeForName(jsonValue.GetString("rateControlMode"));
+    m_rateControlModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -211,6 +221,17 @@ JsonValue Av1Settings::Jsonize() const
   {
    payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
 
+  }
+
+  if(m_bitrateHasBeenSet)
+  {
+   payload.WithInteger("bitrate", m_bitrate);
+
+  }
+
+  if(m_rateControlModeHasBeenSet)
+  {
+   payload.WithString("rateControlMode", Av1RateControlModeMapper::GetNameForAv1RateControlMode(m_rateControlMode));
   }
 
   return payload;

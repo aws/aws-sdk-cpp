@@ -30,6 +30,11 @@ UpdateWorkerResult& UpdateWorkerResult::operator =(const Aws::AmazonWebServiceRe
     m_log = jsonValue.GetObject("log");
     m_logHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("hostConfiguration"))
+  {
+    m_hostConfiguration = jsonValue.GetObject("hostConfiguration");
+    m_hostConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

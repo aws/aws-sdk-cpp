@@ -109,6 +109,21 @@ namespace Model
     template<typename SrtSettingsT = SrtOutputDestinationSettings>
     OutputDestination& AddSrtSettings(SrtSettingsT&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings.emplace_back(std::forward<SrtSettingsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * Optional assignment of an output to a logical interface on the Node. Only
+     * applies to on premises channels.
+     */
+    inline const Aws::Vector<Aws::String>& GetLogicalInterfaceNames() const { return m_logicalInterfaceNames; }
+    inline bool LogicalInterfaceNamesHasBeenSet() const { return m_logicalInterfaceNamesHasBeenSet; }
+    template<typename LogicalInterfaceNamesT = Aws::Vector<Aws::String>>
+    void SetLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = std::forward<LogicalInterfaceNamesT>(value); }
+    template<typename LogicalInterfaceNamesT = Aws::Vector<Aws::String>>
+    OutputDestination& WithLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { SetLogicalInterfaceNames(std::forward<LogicalInterfaceNamesT>(value)); return *this;}
+    template<typename LogicalInterfaceNamesT = Aws::String>
+    OutputDestination& AddLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.emplace_back(std::forward<LogicalInterfaceNamesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -125,6 +140,9 @@ namespace Model
 
     Aws::Vector<SrtOutputDestinationSettings> m_srtSettings;
     bool m_srtSettingsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_logicalInterfaceNames;
+    bool m_logicalInterfaceNamesHasBeenSet = false;
   };
 
 } // namespace Model

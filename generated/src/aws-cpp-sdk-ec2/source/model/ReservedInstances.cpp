@@ -87,6 +87,12 @@ ReservedInstances& ReservedInstances::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
@@ -207,6 +213,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_reservedInstancesIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
@@ -305,6 +316,10 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
         tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_reservedInstancesIdHasBeenSet)
   {

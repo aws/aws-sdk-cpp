@@ -30,7 +30,8 @@ namespace Model
     scn_data_shipment,
     scn_data_shipmentstop,
     scn_data_shipmentstoporder,
-    scn_data_supplyplan
+    scn_data_supplyplan,
+    scn_data_dataset
   };
 
 namespace DataIntegrationEventTypeMapper
