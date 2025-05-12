@@ -148,6 +148,7 @@ public class PlatformAndKeywordSanitizer {
         words.add("STATIC");
         words.add("T_CHAR");
         words.add("DOMAIN");
+        words.add("OVERFLOW");
         words.add("*");
         //ok you get the idea... add them as you encounter them.
         FORBIDDEN_WORDS = Collections.unmodifiableSet(words);
