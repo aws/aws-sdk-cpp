@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(JsonBlobs, RestJsonJsonBlobs) {
   request.SetData(Aws::String(R"(value)"));
 
   auto outcome = client.JsonBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImRhdGEiOiAiZG1Gc2RXVT0iCn0=";
   expectedRq.uri = "/JsonBlobs";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

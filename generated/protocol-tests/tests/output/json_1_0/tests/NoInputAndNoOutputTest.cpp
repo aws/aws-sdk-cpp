@@ -23,9 +23,9 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesEmptyOutputShape) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
@@ -40,9 +40,9 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10ServiceRespondsWithNoPayload) {
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10ServiceRespondsWithNoPayload) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

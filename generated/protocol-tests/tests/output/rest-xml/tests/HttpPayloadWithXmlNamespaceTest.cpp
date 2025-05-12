@@ -23,7 +23,12 @@ AWS_PROTOCOL_TEST(HttpPayloadWithXmlNamespace, HttpPayloadWithXmlNamespace) {
   HttpPayloadWithXmlNamespaceRequest request;
 
   auto outcome = client.HttpPayloadWithXmlNamespace(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadWithXmlNamespaceResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"name":"Phreddy"}} )" */
+  {
+    const PayloadWithXmlNamespace& resultNested = result.GetNested();
+    EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
+  }
 }

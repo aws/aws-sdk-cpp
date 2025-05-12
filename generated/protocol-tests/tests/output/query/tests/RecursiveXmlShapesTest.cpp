@@ -5,6 +5,8 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/query-protocol/QueryProtocolClient.h>
+#include <aws/query-protocol/model/RecursiveXmlShapesOutputNested1.h>
+#include <aws/query-protocol/model/RecursiveXmlShapesOutputNested2.h>
 #include <aws/query-protocol/model/RecursiveXmlShapesRequest.h>
 
 using RecursiveXmlShapes = AWS_PROTOCOL_TEST_SUITE;
@@ -23,7 +25,24 @@ AWS_PROTOCOL_TEST(RecursiveXmlShapes, QueryRecursiveShapes) {
   RecursiveXmlShapesRequest request;
 
   auto outcome = client.RecursiveXmlShapes(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const RecursiveXmlShapesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"foo":"Foo1","nested":{"bar":"Bar1","recursiveMember":{"foo":"Foo2","nested":{"bar":"Bar2"}}}}} )" */
+  {
+    const RecursiveXmlShapesOutputNested1& resultNested = result.GetNested();
+    EXPECT_EQ(R"(Foo1)", resultNested.GetFoo());
+    {
+      const RecursiveXmlShapesOutputNested2& resultNestedNested = resultNested.GetNested();
+      EXPECT_EQ(R"(Bar1)", resultNestedNested.GetBar());
+      {
+        const RecursiveXmlShapesOutputNested1& resultNestedNestedRecursiveMember = resultNestedNested.GetRecursiveMember();
+        EXPECT_EQ(R"(Foo2)", resultNestedNestedRecursiveMember.GetFoo());
+        {
+          const RecursiveXmlShapesOutputNested2& resultNestedNestedRecursiveMemberNested = resultNestedNestedRecursiveMember.GetNested();
+          EXPECT_EQ(R"(Bar2)", resultNestedNestedRecursiveMemberNested.GetBar());
+        }
+      }
+    }
+  }
 }

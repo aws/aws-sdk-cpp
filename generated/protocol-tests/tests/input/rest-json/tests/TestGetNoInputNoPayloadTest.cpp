@@ -19,11 +19,10 @@ AWS_PROTOCOL_TEST(TestGetNoInputNoPayload, RestJsonHttpGetWithNoInput) {
   TestGetNoInputNoPayloadRequest request;
 
   auto outcome = client.TestGetNoInputNoPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/no_input_no_payload";
   expectedRq.forbidHeaders = {"Content-Type", "Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

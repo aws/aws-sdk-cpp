@@ -21,7 +21,7 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, QueryEmptyInputAndEmptyOutput) {
   EmptyInputAndEmptyOutputRequest request;
 
   auto outcome = client.EmptyInputAndEmptyOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

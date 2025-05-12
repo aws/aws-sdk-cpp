@@ -23,9 +23,19 @@ AWS_PROTOCOL_TEST(NestedXmlMaps, NestedXmlMapResponse) {
   NestedXmlMapsRequest request;
 
   auto outcome = client.NestedXmlMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const NestedXmlMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nestedMap":{"foo":{"bar":"Bar"}}} )" */
+  const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& resultNestedMap = result.GetNestedMap();
+  EXPECT_EQ(1U, resultNestedMap.size());
+  EXPECT_TRUE(resultNestedMap.find("foo") != resultNestedMap.end());
+  {
+    const Aws::Map<Aws::String, FooEnum>& resultNestedMapNestedMap = resultNestedMap.at("foo");
+    EXPECT_EQ(1U, resultNestedMapNestedMap.size());
+    EXPECT_TRUE(resultNestedMapNestedMap.find("bar") != resultNestedMapNestedMap.end());
+    EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Bar)e"), resultNestedMapNestedMap.at("bar"));
+  }
 }
 
 AWS_PROTOCOL_TEST(NestedXmlMaps, FlatNestedXmlMapResponse) {
@@ -40,7 +50,17 @@ AWS_PROTOCOL_TEST(NestedXmlMaps, FlatNestedXmlMapResponse) {
   NestedXmlMapsRequest request;
 
   auto outcome = client.NestedXmlMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const NestedXmlMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"flatNestedMap":{"foo":{"bar":"Bar"}}} )" */
+  const Aws::Map<Aws::String, Aws::Map<Aws::String, FooEnum>>& resultFlatNestedMap = result.GetFlatNestedMap();
+  EXPECT_EQ(1U, resultFlatNestedMap.size());
+  EXPECT_TRUE(resultFlatNestedMap.find("foo") != resultFlatNestedMap.end());
+  {
+    const Aws::Map<Aws::String, FooEnum>& resultFlatNestedMapNestedMap = resultFlatNestedMap.at("foo");
+    EXPECT_EQ(1U, resultFlatNestedMapNestedMap.size());
+    EXPECT_TRUE(resultFlatNestedMapNestedMap.find("bar") != resultFlatNestedMapNestedMap.end());
+    EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Bar)e"), resultFlatNestedMapNestedMap.at("bar"));
+  }
 }
