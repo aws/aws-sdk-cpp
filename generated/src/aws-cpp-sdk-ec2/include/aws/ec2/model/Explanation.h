@@ -131,6 +131,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IDs of the Availability Zones.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+    inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value); }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    Explanation& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value)); return *this;}
+    template<typename AvailabilityZoneIdsT = Aws::String>
+    Explanation& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The CIDR ranges.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const { return m_cidrs; }
@@ -716,6 +730,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_availabilityZoneIds;
+    bool m_availabilityZoneIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
     bool m_cidrsHasBeenSet = false;

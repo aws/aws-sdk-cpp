@@ -138,6 +138,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    AllocateHostsRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the host accepts any untargeted instance launches that
      * match its instance type configuration, or if it only accepts Host tenancy
      * instance launches that specify its unique host ID. For more information, see <a
@@ -228,6 +240,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_assetIds;
     bool m_assetIdsHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
     bool m_autoPlacementHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/supplychain/model/DataIntegrationEventType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/supplychain/model/DataIntegrationEventDatasetTargetConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -53,7 +54,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data event type.</p>
+     * <p>The data event type.</p> <ul> <li> <p> <b>scn.data.dataset</b> - Send data
+     * directly to any specified dataset.</p> </li> <li> <p> <b>scn.data.supplyplan</b>
+     * - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/supply-plan-entity.html">supply_plan</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.shipmentstoporder</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-stop-order-entity.html">shipment_stop_order</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.shipmentstop</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-stop-entity.html">shipment_stop</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.shipment</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-shipment-entity.html">shipment</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.reservation</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/planning-reservation-entity.html">reservation</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.processproduct</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-product-entity.html">process_product</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.processoperation</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-operation-entity.html">process_operation</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.processheader</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/operation-process-header-entity.html">process_header</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.forecast</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/forecast-forecast-entity.html">forecast</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.inventorylevel</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/inventory_mgmnt-inv-level-entity.html">inv_level</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.inboundorder</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-entity.html">inbound_order</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.inboundorderline</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-line-entity.html">inbound_order_line</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.inboundorderlineschedule</b> - Send data
+     * to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/replenishment-inbound-order-line-schedule-entity.html">inbound_order_line_schedule</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.outboundorderline</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/outbound-fulfillment-order-line-entity.html">outbound_order_line</a>
+     * dataset.</p> </li> <li> <p> <b>scn.data.outboundshipment</b> - Send data to <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/outbound-fulfillment-shipment-entity.html">outbound_shipment</a>
+     * dataset.</p> </li> </ul>
      */
     inline DataIntegrationEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
@@ -63,10 +97,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data payload of the event. For more information on the data schema to
-     * use, see <a
+     * <p>The data payload of the event, should follow the data schema of the target
+     * dataset, or see <a
      * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data
-     * entities supported in AWS Supply Chain</a>.</p>
+     * entities supported in AWS Supply Chain</a>. To send single data record, use
+     * JsonObject format; to send multiple data records, use JsonArray format.</p>
+     * <p>Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a
+     * connection_id internal field that is not allowed to be provided by client
+     * directly, they will be auto populated.</p>
      */
     inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
@@ -79,7 +117,9 @@ namespace Model
     ///@{
     /**
      * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
+     * sharding or partitioning. Noted under one eventGroupId of same eventType and
+     * instanceId, events are processed sequentially in the order they are received by
+     * the server.</p>
      */
     inline const Aws::String& GetEventGroupId() const { return m_eventGroupId; }
     inline bool EventGroupIdHasBeenSet() const { return m_eventGroupIdHasBeenSet; }
@@ -91,7 +131,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event timestamp (in epoch seconds).</p>
+     * <p>The timestamp (in epoch seconds) associated with the event. If not provided,
+     * it will be assigned with current timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetEventTimestamp() const { return m_eventTimestamp; }
     inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
@@ -103,7 +144,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The idempotent client token.</p>
+     * <p>The idempotent client token. The token is active for 8 hours, and within its
+     * lifetime, it ensures the request completes only once upon retry with same client
+     * token. If omitted, the AWS SDK generates a unique value so that AWS SDK can
+     * safely retry the request upon network errors.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -111,6 +155,18 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     SendDataIntegrationEventRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The target dataset configuration for <b>scn.data.dataset</b> event type.</p>
+     */
+    inline const DataIntegrationEventDatasetTargetConfiguration& GetDatasetTarget() const { return m_datasetTarget; }
+    inline bool DatasetTargetHasBeenSet() const { return m_datasetTargetHasBeenSet; }
+    template<typename DatasetTargetT = DataIntegrationEventDatasetTargetConfiguration>
+    void SetDatasetTarget(DatasetTargetT&& value) { m_datasetTargetHasBeenSet = true; m_datasetTarget = std::forward<DatasetTargetT>(value); }
+    template<typename DatasetTargetT = DataIntegrationEventDatasetTargetConfiguration>
+    SendDataIntegrationEventRequest& WithDatasetTarget(DatasetTargetT&& value) { SetDatasetTarget(std::forward<DatasetTargetT>(value)); return *this;}
     ///@}
   private:
 
@@ -131,6 +187,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    DataIntegrationEventDatasetTargetConfiguration m_datasetTarget;
+    bool m_datasetTargetHasBeenSet = false;
   };
 
 } // namespace Model

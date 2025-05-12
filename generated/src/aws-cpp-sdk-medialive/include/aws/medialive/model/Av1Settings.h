@@ -13,6 +13,7 @@
 #include <aws/medialive/model/Av1LookAheadRateControl.h>
 #include <aws/medialive/model/Av1SceneChangeDetect.h>
 #include <aws/medialive/model/TimecodeBurninSettings.h>
+#include <aws/medialive/model/Av1RateControlMode.h>
 #include <utility>
 
 namespace Aws
@@ -267,6 +268,37 @@ Smartphone: qvbrQualityLevel: Leave empty. maxBitrate: 1,000,000 to
     template<typename TimecodeBurninSettingsT = TimecodeBurninSettings>
     Av1Settings& WithTimecodeBurninSettings(TimecodeBurninSettingsT&& value) { SetTimecodeBurninSettings(std::forward<TimecodeBurninSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Average bitrate in bits/second. Required when the rate control mode is CBR. Not
+     * used for QVBR.
+     */
+    inline int GetBitrate() const { return m_bitrate; }
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+    inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
+    inline Av1Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Rate control mode.
+
+QVBR: Quality will match the specified quality level except
+     * when it is constrained by the
+maximum bitrate.  Recommended if you or your
+     * viewers pay for bandwidth.
+
+CBR: Quality varies, depending on the video
+     * complexity. Recommended only if you distribute
+your assets to devices that
+     * cannot handle variable bitrates.
+     */
+    inline Av1RateControlMode GetRateControlMode() const { return m_rateControlMode; }
+    inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
+    inline void SetRateControlMode(Av1RateControlMode value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
+    inline Av1Settings& WithRateControlMode(Av1RateControlMode value) { SetRateControlMode(value); return *this;}
+    ///@}
   private:
 
     AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
@@ -319,6 +351,12 @@ Smartphone: qvbrQualityLevel: Leave empty. maxBitrate: 1,000,000 to
 
     TimecodeBurninSettings m_timecodeBurninSettings;
     bool m_timecodeBurninSettingsHasBeenSet = false;
+
+    int m_bitrate{0};
+    bool m_bitrateHasBeenSet = false;
+
+    Av1RateControlMode m_rateControlMode{Av1RateControlMode::NOT_SET};
+    bool m_rateControlModeHasBeenSet = false;
   };
 
 } // namespace Model

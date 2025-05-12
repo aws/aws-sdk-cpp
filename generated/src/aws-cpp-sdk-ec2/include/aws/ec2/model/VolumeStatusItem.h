@@ -133,6 +133,18 @@ namespace Model
     template<typename AttachmentStatusesT = VolumeStatusAttachmentStatus>
     VolumeStatusItem& AddAttachmentStatuses(AttachmentStatusesT&& value) { m_attachmentStatusesHasBeenSet = true; m_attachmentStatuses.emplace_back(std::forward<AttachmentStatusesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    VolumeStatusItem& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<VolumeStatusAction> m_actions;
@@ -155,6 +167,9 @@ namespace Model
 
     Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
     bool m_attachmentStatusesHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

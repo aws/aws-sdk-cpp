@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SERVICE_QUOTA_EXCEEDED_EXCEPTION,
-    KMS_KEY_LIMIT_EXCEEDED
+    KMS_KEY_LIMIT_EXCEEDED,
+    DEPENDENCY_LIMIT_EXCEEDED
   };
 
 namespace ServiceQuotaExceededExceptionReasonMapper

@@ -73,6 +73,18 @@ namespace Model
     inline void SetTenancy(CapacityReservationTenancy value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
     inline CapacityReservationInfo& WithTenancy(CapacityReservationTenancy value) { SetTenancy(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    CapacityReservationInfo& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceType;
@@ -83,6 +95,9 @@ namespace Model
 
     CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
     bool m_tenancyHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

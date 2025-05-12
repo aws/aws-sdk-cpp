@@ -26,8 +26,7 @@ namespace SupplyChain
 namespace Model
 {
   /**
-   * <p>The response parameters for UpdateDataLakeDataset.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The response parameters for GetDataLakeDataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDatasetResponse">AWS
    * API Reference</a></p>
    */

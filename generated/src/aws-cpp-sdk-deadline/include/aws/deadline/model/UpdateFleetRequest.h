@@ -8,6 +8,7 @@
 #include <aws/deadline/DeadlineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/FleetConfiguration.h>
+#include <aws/deadline/model/HostConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -127,7 +128,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of workers in the fleet.</p>
+     * <p>The maximum number of workers in the fleet.</p> <p>Deadline Cloud limits the
+     * number of workers to less than or equal to the fleet's maximum worker count. The
+     * service maintains eventual consistency for the worker count. If you make
+     * multiple rapid calls to <code>CreateWorker</code> before the field updates, you
+     * might exceed your fleet's maximum worker count. For example, if your
+     * <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two
+     * quick <code>CreateWorker</code> calls might successfully create 2 workers
+     * instead of 1, resulting in 11 total workers.</p>
      */
     inline int GetMaxWorkerCount() const { return m_maxWorkerCount; }
     inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
@@ -145,6 +153,19 @@ namespace Model
     void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
     template<typename ConfigurationT = FleetConfiguration>
     UpdateFleetRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides a script that runs as a worker is starting up that you can use to
+     * provide additional configuration for workers in your fleet.</p>
+     */
+    inline const HostConfiguration& GetHostConfiguration() const { return m_hostConfiguration; }
+    inline bool HostConfigurationHasBeenSet() const { return m_hostConfigurationHasBeenSet; }
+    template<typename HostConfigurationT = HostConfiguration>
+    void SetHostConfiguration(HostConfigurationT&& value) { m_hostConfigurationHasBeenSet = true; m_hostConfiguration = std::forward<HostConfigurationT>(value); }
+    template<typename HostConfigurationT = HostConfiguration>
+    UpdateFleetRequest& WithHostConfiguration(HostConfigurationT&& value) { SetHostConfiguration(std::forward<HostConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -174,6 +195,9 @@ namespace Model
 
     FleetConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    HostConfiguration m_hostConfiguration;
+    bool m_hostConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -392,13 +392,13 @@ namespace EC2
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">AWS
          * API Reference</a></p>
          */
-        virtual Model::AllocateHostsOutcome AllocateHosts(const Model::AllocateHostsRequest& request) const;
+        virtual Model::AllocateHostsOutcome AllocateHosts(const Model::AllocateHostsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AllocateHosts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AllocateHostsRequestT = Model::AllocateHostsRequest>
-        Model::AllocateHostsOutcomeCallable AllocateHostsCallable(const AllocateHostsRequestT& request) const
+        Model::AllocateHostsOutcomeCallable AllocateHostsCallable(const AllocateHostsRequestT& request = {}) const
         {
             return SubmitCallable(&EC2Client::AllocateHosts, request);
         }
@@ -407,7 +407,7 @@ namespace EC2
          * An Async wrapper for AllocateHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AllocateHostsRequestT = Model::AllocateHostsRequest>
-        void AllocateHostsAsync(const AllocateHostsRequestT& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AllocateHostsAsync(const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AllocateHostsRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::AllocateHosts, request, handler, context);
         }
@@ -9098,10 +9098,16 @@ namespace EC2
          * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
          * you launch them through their termination. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul>  <p>The
-         * order of the elements in the response, including those within nested structures,
-         * might vary. Applications should not assume the elements appear in a particular
-         * order.</p> <p><h3>See Also:</h3>   <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul> <p>The Amazon
+         * EC2 API follows an eventual consistency model. This means that the result of an
+         * API command you run that creates or modifies resources might not be immediately
+         * available to all subsequent commands you run. For guidance on how to manage
+         * eventual consistency, see <a
+         * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+         * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
+         * Guide</i>.</p>  <p>The order of the elements in the response, including
+         * those within nested structures, might vary. Applications should not assume the
+         * elements appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
          */
@@ -9239,12 +9245,18 @@ namespace EC2
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p>  <p>We strongly recommend using only
-         * paginated requests. Unpaginated requests are susceptible to throttling and
-         * timeouts.</p>   <p>The order of the elements in the response,
-         * including those within nested structures, might vary. Applications should not
-         * assume the elements appear in a particular order.</p> <p><h3>See
-         * Also:</h3>   <a
+         * the call works normally.</p> <p>The Amazon EC2 API follows an eventual
+         * consistency model. This means that the result of an API command you run that
+         * creates or modifies resources might not be immediately available to all
+         * subsequent commands you run. For guidance on how to manage eventual consistency,
+         * see <a
+         * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+         * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
+         * Guide</i>.</p>  <p>We strongly recommend using only paginated
+         * requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
+         *   <p>The order of the elements in the response, including
+         * those within nested structures, might vary. Applications should not assume the
+         * elements appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */

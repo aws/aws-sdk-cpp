@@ -173,6 +173,33 @@ namespace SupplyChain
 
         /**
          * <p>Enables you to programmatically create an Amazon Web Services Supply Chain
+         * data lake namespace. Developers can create the namespaces for a given instance
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataLakeNamespaceOutcome CreateDataLakeNamespace(const Model::CreateDataLakeNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataLakeNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataLakeNamespaceRequestT = Model::CreateDataLakeNamespaceRequest>
+        Model::CreateDataLakeNamespaceOutcomeCallable CreateDataLakeNamespaceCallable(const CreateDataLakeNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::CreateDataLakeNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataLakeNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataLakeNamespaceRequestT = Model::CreateDataLakeNamespaceRequest>
+        void CreateDataLakeNamespaceAsync(const CreateDataLakeNamespaceRequestT& request, const CreateDataLakeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::CreateDataLakeNamespace, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to programmatically create an Amazon Web Services Supply Chain
          * instance by applying KMS keys and relevant information associated with the API
          * without using the Amazon Web Services console.</p> <p>This is an asynchronous
          * operation. Upon receiving a CreateInstance request, Amazon Web Services Supply
@@ -262,6 +289,34 @@ namespace SupplyChain
 
         /**
          * <p>Enables you to programmatically delete an Amazon Web Services Supply Chain
+         * data lake namespace and its underling datasets. Developers can delete the
+         * existing namespaces for a given instance ID and namespace name.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataLakeNamespaceOutcome DeleteDataLakeNamespace(const Model::DeleteDataLakeNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataLakeNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataLakeNamespaceRequestT = Model::DeleteDataLakeNamespaceRequest>
+        Model::DeleteDataLakeNamespaceOutcomeCallable DeleteDataLakeNamespaceCallable(const DeleteDataLakeNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::DeleteDataLakeNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataLakeNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataLakeNamespaceRequestT = Model::DeleteDataLakeNamespaceRequest>
+        void DeleteDataLakeNamespaceAsync(const DeleteDataLakeNamespaceRequestT& request, const DeleteDataLakeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::DeleteDataLakeNamespace, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to programmatically delete an Amazon Web Services Supply Chain
          * instance by deleting the KMS keys and relevant information associated with the
          * API without using the Amazon Web Services console.</p> <p>This is an
          * asynchronous operation. Upon receiving a DeleteInstance request, Amazon Web
@@ -319,6 +374,34 @@ namespace SupplyChain
         }
 
         /**
+         * <p>Enables you to programmatically view an Amazon Web Services Supply Chain Data
+         * Integration Event. Developers can view the eventType, eventGroupId,
+         * eventTimestamp, datasetTarget, datasetLoadExecution.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataIntegrationEventOutcome GetDataIntegrationEvent(const Model::GetDataIntegrationEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataIntegrationEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataIntegrationEventRequestT = Model::GetDataIntegrationEventRequest>
+        Model::GetDataIntegrationEventOutcomeCallable GetDataIntegrationEventCallable(const GetDataIntegrationEventRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetDataIntegrationEvent, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataIntegrationEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataIntegrationEventRequestT = Model::GetDataIntegrationEventRequest>
+        void GetDataIntegrationEventAsync(const GetDataIntegrationEventRequestT& request, const GetDataIntegrationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetDataIntegrationEvent, request, handler, context);
+        }
+
+        /**
          * <p>Enables you to programmatically view a specific data pipeline for the
          * provided Amazon Web Services Supply Chain instance and DataIntegrationFlow
          * name.</p><p><h3>See Also:</h3>   <a
@@ -343,6 +426,31 @@ namespace SupplyChain
         void GetDataIntegrationFlowAsync(const GetDataIntegrationFlowRequestT& request, const GetDataIntegrationFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::GetDataIntegrationFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Get the flow execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataIntegrationFlowExecutionOutcome GetDataIntegrationFlowExecution(const Model::GetDataIntegrationFlowExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataIntegrationFlowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataIntegrationFlowExecutionRequestT = Model::GetDataIntegrationFlowExecutionRequest>
+        Model::GetDataIntegrationFlowExecutionOutcomeCallable GetDataIntegrationFlowExecutionCallable(const GetDataIntegrationFlowExecutionRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetDataIntegrationFlowExecution, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataIntegrationFlowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataIntegrationFlowExecutionRequestT = Model::GetDataIntegrationFlowExecutionRequest>
+        void GetDataIntegrationFlowExecutionAsync(const GetDataIntegrationFlowExecutionRequestT& request, const GetDataIntegrationFlowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetDataIntegrationFlowExecution, request, handler, context);
         }
 
         /**
@@ -374,6 +482,34 @@ namespace SupplyChain
         }
 
         /**
+         * <p>Enables you to programmatically view an Amazon Web Services Supply Chain data
+         * lake namespace. Developers can view the data lake namespace information such as
+         * description for a given instance ID and namespace name.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataLakeNamespaceOutcome GetDataLakeNamespace(const Model::GetDataLakeNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataLakeNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataLakeNamespaceRequestT = Model::GetDataLakeNamespaceRequest>
+        Model::GetDataLakeNamespaceOutcomeCallable GetDataLakeNamespaceCallable(const GetDataLakeNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetDataLakeNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataLakeNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataLakeNamespaceRequestT = Model::GetDataLakeNamespaceRequest>
+        void GetDataLakeNamespaceAsync(const GetDataLakeNamespaceRequestT& request, const GetDataLakeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetDataLakeNamespace, request, handler, context);
+        }
+
+        /**
          * <p>Enables you to programmatically retrieve the information related to an Amazon
          * Web Services Supply Chain instance ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">AWS
@@ -397,6 +533,58 @@ namespace SupplyChain
         void GetInstanceAsync(const GetInstanceRequestT& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::GetInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to programmatically list all data integration events for the
+         * provided Amazon Web Services Supply Chain instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataIntegrationEventsOutcome ListDataIntegrationEvents(const Model::ListDataIntegrationEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataIntegrationEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataIntegrationEventsRequestT = Model::ListDataIntegrationEventsRequest>
+        Model::ListDataIntegrationEventsOutcomeCallable ListDataIntegrationEventsCallable(const ListDataIntegrationEventsRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListDataIntegrationEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataIntegrationEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataIntegrationEventsRequestT = Model::ListDataIntegrationEventsRequest>
+        void ListDataIntegrationEventsAsync(const ListDataIntegrationEventsRequestT& request, const ListDataIntegrationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListDataIntegrationEvents, request, handler, context);
+        }
+
+        /**
+         * <p>List flow executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataIntegrationFlowExecutionsOutcome ListDataIntegrationFlowExecutions(const Model::ListDataIntegrationFlowExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataIntegrationFlowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataIntegrationFlowExecutionsRequestT = Model::ListDataIntegrationFlowExecutionsRequest>
+        Model::ListDataIntegrationFlowExecutionsOutcomeCallable ListDataIntegrationFlowExecutionsCallable(const ListDataIntegrationFlowExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListDataIntegrationFlowExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataIntegrationFlowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataIntegrationFlowExecutionsRequestT = Model::ListDataIntegrationFlowExecutionsRequest>
+        void ListDataIntegrationFlowExecutionsAsync(const ListDataIntegrationFlowExecutionsRequestT& request, const ListDataIntegrationFlowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListDataIntegrationFlowExecutions, request, handler, context);
         }
 
         /**
@@ -451,6 +639,35 @@ namespace SupplyChain
         void ListDataLakeDatasetsAsync(const ListDataLakeDatasetsRequestT& request, const ListDataLakeDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::ListDataLakeDatasets, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to programmatically view the list of Amazon Web Services Supply
+         * Chain data lake namespaces. Developers can view the namespaces and the
+         * corresponding information such as description for a given instance ID. Note that
+         * this API only return custom namespaces, instance pre-defined namespaces are not
+         * included.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataLakeNamespacesOutcome ListDataLakeNamespaces(const Model::ListDataLakeNamespacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataLakeNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataLakeNamespacesRequestT = Model::ListDataLakeNamespacesRequest>
+        Model::ListDataLakeNamespacesOutcomeCallable ListDataLakeNamespacesCallable(const ListDataLakeNamespacesRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListDataLakeNamespaces, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataLakeNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataLakeNamespacesRequestT = Model::ListDataLakeNamespacesRequest>
+        void ListDataLakeNamespacesAsync(const ListDataLakeNamespacesRequestT& request, const ListDataLakeNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListDataLakeNamespaces, request, handler, context);
         }
 
         /**
@@ -510,11 +727,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Send the transactional data payload for the event with real-time data for
-         * analysis or monitoring. The real-time data events are stored in an Amazon Web
-         * Services service before being processed and stored in data lake. New data events
-         * are synced with data lake at 5 PM GMT everyday. The updated transactional data
-         * is available in data lake after ingestion.</p><p><h3>See Also:</h3>   <a
+         * <p>Send the data payload for the event with real-time data for analysis or
+         * monitoring. The real-time data events are stored in an Amazon Web Services
+         * service before being processed and stored in data lake.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/SendDataIntegrationEvent">AWS
          * API Reference</a></p>
          */
@@ -652,6 +868,34 @@ namespace SupplyChain
         void UpdateDataLakeDatasetAsync(const UpdateDataLakeDatasetRequestT& request, const UpdateDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::UpdateDataLakeDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to programmatically update an Amazon Web Services Supply Chain
+         * data lake namespace. Developers can update the description of a data lake
+         * namespace for a given instance ID and namespace name.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataLakeNamespaceOutcome UpdateDataLakeNamespace(const Model::UpdateDataLakeNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataLakeNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataLakeNamespaceRequestT = Model::UpdateDataLakeNamespaceRequest>
+        Model::UpdateDataLakeNamespaceOutcomeCallable UpdateDataLakeNamespaceCallable(const UpdateDataLakeNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::UpdateDataLakeNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataLakeNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataLakeNamespaceRequestT = Model::UpdateDataLakeNamespaceRequest>
+        void UpdateDataLakeNamespaceAsync(const UpdateDataLakeNamespaceRequestT& request, const UpdateDataLakeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::UpdateDataLakeNamespace, request, handler, context);
         }
 
         /**

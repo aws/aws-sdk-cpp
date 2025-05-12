@@ -74,6 +74,7 @@
 #include <aws/medialive/model/Av1GopSizeUnits.h>
 #include <aws/medialive/model/Av1Level.h>
 #include <aws/medialive/model/Av1LookAheadRateControl.h>
+#include <aws/medialive/model/Av1RateControlMode.h>
 #include <aws/medialive/model/Av1SceneChangeDetect.h>
 #include <aws/medialive/model/Av1Settings.h>
 #include <aws/medialive/model/AvailBlanking.h>

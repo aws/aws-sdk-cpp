@@ -53,6 +53,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   }
 
+  if(m_hostConfigurationHasBeenSet)
+  {
+   payload.WithObject("hostConfiguration", m_hostConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

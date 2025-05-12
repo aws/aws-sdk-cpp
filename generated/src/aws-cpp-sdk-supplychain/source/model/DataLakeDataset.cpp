@@ -55,6 +55,11 @@ DataLakeDataset& DataLakeDataset::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("partitionSpec"))
+  {
+    m_partitionSpec = jsonValue.GetObject("partitionSpec");
+    m_partitionSpecHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
@@ -105,6 +110,12 @@ JsonValue DataLakeDataset::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_partitionSpecHasBeenSet)
+  {
+   payload.WithObject("partitionSpec", m_partitionSpec.Jsonize());
 
   }
 

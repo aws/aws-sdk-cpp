@@ -97,6 +97,18 @@ namespace Model
     inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
     inline ReservedInstancesConfiguration& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    ReservedInstancesConfiguration& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -113,6 +125,9 @@ namespace Model
 
     Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

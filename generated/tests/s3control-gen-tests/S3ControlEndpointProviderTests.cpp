@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<S3ControlEndpointProviderEndpointTestCase>> S3ControlEndpointProviderTests::TEST_CASES;
-const size_t S3ControlEndpointProviderTests::TEST_CASES_SZ = 120;
+const size_t S3ControlEndpointProviderTests::TEST_CASES_SZ = 126;
 
 Aws::Vector<S3ControlEndpointProviderEndpointTestCase> S3ControlEndpointProviderTests::getTestCase() {
 
@@ -1122,6 +1122,54 @@ Aws::Vector<S3ControlEndpointProviderEndpointTestCase> S3ControlEndpointProvider
      EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Unrecognized S3Express Access Point name format."} // expect
+  },
+  /*TEST CASE 120*/
+  {"Access Point APIs on express bucket routed to custom endpoint if provided", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "myaccesspoint--abcd-ab1--xa-s3"), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"),
+     EpParam("Endpoint", "https://my-endpoint.express-control.s3.aws.dev"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://my-endpoint.express-control.s3.aws.dev",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 121*/
+  {"Access Point APIs on express bucket routed to custom endpoint if provided for List", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"), EpParam("Endpoint", "https://my-endpoint.express-control.s3.aws.dev"),
+     EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://my-endpoint.express-control.s3.aws.dev",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 122*/
+  {"Error on Access Point APIs on express bucket for dual stack", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "myaccesspoint--abcd-ab1--xa-s3"), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"),
+     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"S3Express does not support Dual-stack."} // expect
+  },
+  /*TEST CASE 123*/
+  {"Error Access Point APIs on express bucket for dual stack for List", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"S3Express does not support Dual-stack."} // expect
+  },
+  /*TEST CASE 124*/
+  {"Error on Access Point APIs on express bucket for custom endpoint and dual stack", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "myaccesspoint--abcd-ab1--xa-s3"), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"),
+     EpParam("Endpoint", "https://my-endpoint.express-control.s3.aws.dev"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 125*/
+  {"Error Access Point APIs on express bucket for custom endpoint and dual stack for List", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "871317572157"), EpParam("Endpoint", "https://my-endpoint.express-control.s3.aws.dev"),
+     EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
   }
   };
   return test_cases;

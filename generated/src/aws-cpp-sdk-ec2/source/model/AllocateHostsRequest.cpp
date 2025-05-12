@@ -55,6 +55,11 @@ Aws::String AllocateHostsRequest::SerializePayload() const
     }
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_autoPlacementHasBeenSet)
   {
     ss << "AutoPlacement=" << StringUtils::URLEncode(AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement)) << "&";

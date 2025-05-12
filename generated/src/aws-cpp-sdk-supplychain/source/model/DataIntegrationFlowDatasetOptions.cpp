@@ -35,6 +35,11 @@ DataIntegrationFlowDatasetOptions& DataIntegrationFlowDatasetOptions::operator =
     m_dedupeRecords = jsonValue.GetBool("dedupeRecords");
     m_dedupeRecordsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("dedupeStrategy"))
+  {
+    m_dedupeStrategy = jsonValue.GetObject("dedupeStrategy");
+    m_dedupeStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,12 @@ JsonValue DataIntegrationFlowDatasetOptions::Jsonize() const
   if(m_dedupeRecordsHasBeenSet)
   {
    payload.WithBool("dedupeRecords", m_dedupeRecords);
+
+  }
+
+  if(m_dedupeStrategyHasBeenSet)
+  {
+   payload.WithObject("dedupeStrategy", m_dedupeStrategy.Jsonize());
 
   }
 

@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   *  <p>This data type is intended for use exclusively by SageMaker Canvas and
-   * cannot be used in other contexts at the moment.</p>  <p>Specifies the
-   * compute configuration for an AutoML job V2.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>This data type is intended for use exclusively by SageMaker Canvas
+   * and cannot be used in other contexts at the moment.</p>  <p>Specifies the
+   * compute configuration for an AutoML job V2.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLComputeConfig">AWS
    * API Reference</a></p>
    */

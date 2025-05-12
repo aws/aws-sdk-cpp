@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The prefix of the S3 source objects.</p>
+     * <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need
+     * to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
      */
     inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }

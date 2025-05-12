@@ -80,6 +80,8 @@ namespace Model
      * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
      * <p> <code>modification-result.target-configuration.availability-zone</code> -
      * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.availability-zone-id</code> - The
+     * ID of the Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-count </code> - The
      * number of new Reserved Instances.</p> </li> <li> <p>
      * <code>modification-result.target-configuration.instance-type</code> - The

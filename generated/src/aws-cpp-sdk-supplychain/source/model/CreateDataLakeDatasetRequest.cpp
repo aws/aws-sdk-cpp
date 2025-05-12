@@ -28,6 +28,12 @@ Aws::String CreateDataLakeDatasetRequest::SerializePayload() const
 
   }
 
+  if(m_partitionSpecHasBeenSet)
+  {
+   payload.WithObject("partitionSpec", m_partitionSpec.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

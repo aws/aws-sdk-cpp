@@ -81,6 +81,19 @@ Explanation& Explanation::operator =(const XmlNode& xmlNode)
 
       m_availabilityZonesHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdsNode = resultNode.FirstChild("availabilityZoneIdSet");
+    if(!availabilityZoneIdsNode.IsNull())
+    {
+      XmlNode availabilityZoneIdsMember = availabilityZoneIdsNode.FirstChild("item");
+      m_availabilityZoneIdsHasBeenSet = !availabilityZoneIdsMember.IsNull();
+      while(!availabilityZoneIdsMember.IsNull())
+      {
+        m_availabilityZoneIds.push_back(availabilityZoneIdsMember.GetText());
+        availabilityZoneIdsMember = availabilityZoneIdsMember.NextNode("item");
+      }
+
+      m_availabilityZoneIdsHasBeenSet = true;
+    }
     XmlNode cidrsNode = resultNode.FirstChild("cidrSet");
     if(!cidrsNode.IsNull())
     {
@@ -449,6 +462,15 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_availabilityZoneIdsHasBeenSet)
+  {
+      unsigned availabilityZoneIdsIdx = 1;
+      for(auto& item : m_availabilityZoneIds)
+      {
+        oStream << location << index << locationValue << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_cidrsHasBeenSet)
   {
       unsigned cidrsIdx = 1;
@@ -812,6 +834,14 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_availabilityZones)
       {
         oStream << location << ".AvailabilityZoneSet." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_availabilityZoneIdsHasBeenSet)
+  {
+      unsigned availabilityZoneIdsIdx = 1;
+      for(auto& item : m_availabilityZoneIds)
+      {
+        oStream << location << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_cidrsHasBeenSet)

@@ -94,6 +94,12 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
       m_attachmentStatusesHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -156,6 +162,11 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -207,6 +218,10 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
         attachmentStatusesSs << location << ".AttachmentStatuses." << attachmentStatusesIdx++;
         item.OutputToStream(oStream, attachmentStatusesSs.str().c_str());
       }
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

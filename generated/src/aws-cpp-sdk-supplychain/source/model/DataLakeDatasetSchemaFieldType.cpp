@@ -24,6 +24,7 @@ namespace Aws
         static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
         static const int STRING_HASH = HashingUtils::HashString("STRING");
         static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static const int LONG_HASH = HashingUtils::HashString("LONG");
 
 
         DataLakeDatasetSchemaFieldType GetDataLakeDatasetSchemaFieldTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TIMESTAMP_HASH)
           {
             return DataLakeDatasetSchemaFieldType::TIMESTAMP;
+          }
+          else if (hashCode == LONG_HASH)
+          {
+            return DataLakeDatasetSchemaFieldType::LONG;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "STRING";
           case DataLakeDatasetSchemaFieldType::TIMESTAMP:
             return "TIMESTAMP";
+          case DataLakeDatasetSchemaFieldType::LONG:
+            return "LONG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
