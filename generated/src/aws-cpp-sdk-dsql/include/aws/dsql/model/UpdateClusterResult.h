@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +27,8 @@ namespace DSQL
 namespace Model
 {
   /**
-   * <p>Output Mixin</p><p><h3>See Also:</h3>   <a
+   * <p>The details of the cluster after it has been updated.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/UpdateClusterOutput">AWS
    * API Reference</a></p>
    */
@@ -83,40 +83,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>Whether deletion protection is enabled for the updated cluster.</p>
-     */
-    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
-    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
-    inline UpdateClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Region that receives all data you write to linked clusters.</p>
-     */
-    inline const Aws::String& GetWitnessRegion() const { return m_witnessRegion; }
-    template<typename WitnessRegionT = Aws::String>
-    void SetWitnessRegion(WitnessRegionT&& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = std::forward<WitnessRegionT>(value); }
-    template<typename WitnessRegionT = Aws::String>
-    UpdateClusterResult& WithWitnessRegion(WitnessRegionT&& value) { SetWitnessRegion(std::forward<WitnessRegionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARNs of the clusters linked to the updated cluster. Applicable only for
-     * multi-Region clusters.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const { return m_linkedClusterArns; }
-    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
-    void SetLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = std::forward<LinkedClusterArnsT>(value); }
-    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
-    UpdateClusterResult& WithLinkedClusterArns(LinkedClusterArnsT&& value) { SetLinkedClusterArns(std::forward<LinkedClusterArnsT>(value)); return *this;}
-    template<typename LinkedClusterArnsT = Aws::String>
-    UpdateClusterResult& AddLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.emplace_back(std::forward<LinkedClusterArnsT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -137,15 +103,6 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
-
-    bool m_deletionProtectionEnabled{false};
-    bool m_deletionProtectionEnabledHasBeenSet = false;
-
-    Aws::String m_witnessRegion;
-    bool m_witnessRegionHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_linkedClusterArns;
-    bool m_linkedClusterArnsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/model/AllowedOperation.h>
+#include <aws/license-manager/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,23 @@ namespace Model
     CreateGrantRequest& WithAllowedOperations(AllowedOperationsT&& value) { SetAllowedOperations(std::forward<AllowedOperationsT>(value)); return *this;}
     inline CreateGrantRequest& AddAllowedOperations(AllowedOperation value) { m_allowedOperationsHasBeenSet = true; m_allowedOperations.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Tags to add to the grant. For more information about tagging support in
+     * License Manager, see the <a
+     * href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+     * operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateGrantRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateGrantRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -135,6 +153,9 @@ namespace Model
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
     bool m_allowedOperationsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

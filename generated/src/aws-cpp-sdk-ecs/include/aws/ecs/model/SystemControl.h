@@ -82,8 +82,9 @@ namespace Model
      * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
      * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
      * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
-     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
-     * values are supported by Fargate.</p>
+     * <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced
+     * <code>Sysctls</code> that exist within the container starting with "net.* are
+     * accepted.</p> <p>All of these values are supported by Fargate.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailAssessment.h>
 #include <utility>
@@ -66,6 +67,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the Guardrail output.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    GuardrailTrace& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The details of the output assessments used in the Guardrail Trace.</p>
      */
     inline const Aws::Vector<GuardrailAssessment>& GetOutputAssessments() const { return m_outputAssessments; }
@@ -96,6 +109,9 @@ namespace Model
 
     Aws::Vector<GuardrailAssessment> m_inputAssessments;
     bool m_inputAssessmentsHasBeenSet = false;
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Vector<GuardrailAssessment> m_outputAssessments;
     bool m_outputAssessmentsHasBeenSet = false;

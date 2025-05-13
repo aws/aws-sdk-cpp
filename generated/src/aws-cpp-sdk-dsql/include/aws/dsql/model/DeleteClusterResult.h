@@ -27,7 +27,7 @@ namespace DSQL
 namespace Model
 {
   /**
-   * <p>Output Mixin</p><p><h3>See Also:</h3>   <a
+   * <p>The output from a deleted cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterOutput">AWS
    * API Reference</a></p>
    */
@@ -82,15 +82,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>Specifies whether deletion protection was enabled on the cluster.</p>
-     */
-    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
-    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
-    inline DeleteClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -111,9 +102,6 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
-
-    bool m_deletionProtectionEnabled{false};
-    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

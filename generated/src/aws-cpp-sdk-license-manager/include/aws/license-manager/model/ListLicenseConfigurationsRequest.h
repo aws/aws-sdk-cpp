@@ -77,14 +77,11 @@ namespace Model
      * <p>Filters to scope the results. The following filters and logical operators are
      * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
      * for which licenses are counted. Possible values are <code>vCPU</code> |
-     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
-     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
-     * license enforcement is used. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
-     * Boolean value that indicates whether the available licenses have been exceeded.
-     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-     * </ul>
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p> </li> <li>
+     * <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether
+     * hard license enforcement is used.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

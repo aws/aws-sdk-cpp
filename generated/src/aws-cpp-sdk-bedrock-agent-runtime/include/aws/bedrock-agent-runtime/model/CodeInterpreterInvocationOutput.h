@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +87,18 @@ namespace Model
     template<typename FilesT = Aws::String>
     CodeInterpreterInvocationOutput& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the output from the code interpreter.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    CodeInterpreterInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_executionError;
@@ -99,6 +112,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_files;
     bool m_filesHasBeenSet = false;
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

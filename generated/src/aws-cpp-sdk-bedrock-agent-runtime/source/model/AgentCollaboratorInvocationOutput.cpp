@@ -35,6 +35,11 @@ AgentCollaboratorInvocationOutput& AgentCollaboratorInvocationOutput::operator =
     m_agentCollaboratorName = jsonValue.GetString("agentCollaboratorName");
     m_agentCollaboratorNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
@@ -56,6 +61,12 @@ JsonValue AgentCollaboratorInvocationOutput::Jsonize() const
   if(m_agentCollaboratorNameHasBeenSet)
   {
    payload.WithString("agentCollaboratorName", m_agentCollaboratorName);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

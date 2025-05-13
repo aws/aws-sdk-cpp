@@ -45,6 +45,11 @@ CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebService
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("multiRegionProperties"))
+  {
+    m_multiRegionProperties = jsonValue.GetObject("multiRegionProperties");
+    m_multiRegionPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("deletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");

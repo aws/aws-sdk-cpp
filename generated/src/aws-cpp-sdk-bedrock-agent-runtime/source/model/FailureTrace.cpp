@@ -25,10 +25,20 @@ FailureTrace::FailureTrace(JsonView jsonValue)
 
 FailureTrace& FailureTrace::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetInteger("failureCode");
+    m_failureCodeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("traceId"))
   {
@@ -42,9 +52,21 @@ JsonValue FailureTrace::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithInteger("failureCode", m_failureCode);
+
+  }
+
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("failureReason", m_failureReason);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

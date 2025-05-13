@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The execute command and managed storage configuration for the cluster.</p>
      */
     inline const ClusterConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

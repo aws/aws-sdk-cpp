@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

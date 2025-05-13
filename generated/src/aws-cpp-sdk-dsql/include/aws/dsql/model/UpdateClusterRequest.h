@@ -7,6 +7,7 @@
 #include <aws/dsql/DSQL_EXPORTS.h>
 #include <aws/dsql/DSQLRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dsql/model/MultiRegionProperties.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -72,6 +73,19 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     UpdateClusterRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The new multi-Region cluster configuration settings to be applied during an
+     * update operation.</p>
+     */
+    inline const MultiRegionProperties& GetMultiRegionProperties() const { return m_multiRegionProperties; }
+    inline bool MultiRegionPropertiesHasBeenSet() const { return m_multiRegionPropertiesHasBeenSet; }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    void SetMultiRegionProperties(MultiRegionPropertiesT&& value) { m_multiRegionPropertiesHasBeenSet = true; m_multiRegionProperties = std::forward<MultiRegionPropertiesT>(value); }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    UpdateClusterRequest& WithMultiRegionProperties(MultiRegionPropertiesT&& value) { SetMultiRegionProperties(std::forward<MultiRegionPropertiesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_identifier;
@@ -82,6 +96,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    MultiRegionProperties m_multiRegionProperties;
+    bool m_multiRegionPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

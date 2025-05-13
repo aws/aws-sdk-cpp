@@ -39,6 +39,11 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
     }
     m_inputAssessmentsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("outputAssessments"))
   {
     Aws::Utils::Array<JsonView> outputAssessmentsJsonList = jsonValue.GetArray("outputAssessments");
@@ -73,6 +78,12 @@ JsonValue GuardrailTrace::Jsonize() const
      inputAssessmentsJsonList[inputAssessmentsIndex].AsObject(m_inputAssessments[inputAssessmentsIndex].Jsonize());
    }
    payload.WithArray("inputAssessments", std::move(inputAssessmentsJsonList));
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

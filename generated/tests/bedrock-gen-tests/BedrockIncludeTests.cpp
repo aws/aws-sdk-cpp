@@ -148,6 +148,8 @@
 #include <aws/bedrock/model/GuardrailContextualGroundingFilterType.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicy.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicyConfig.h>
+#include <aws/bedrock/model/GuardrailCrossRegionConfig.h>
+#include <aws/bedrock/model/GuardrailCrossRegionDetails.h>
 #include <aws/bedrock/model/GuardrailFilterStrength.h>
 #include <aws/bedrock/model/GuardrailManagedWords.h>
 #include <aws/bedrock/model/GuardrailManagedWordsConfig.h>

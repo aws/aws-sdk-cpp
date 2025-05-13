@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/GuardrailStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock/model/GuardrailCrossRegionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,20 @@ namespace Model
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     GuardrailSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Details about the system-defined guardrail profile that you're using with
+     * your guardrail, including the guardrail profile ID and Amazon Resource Name
+     * (ARN).</p>
+     */
+    inline const GuardrailCrossRegionDetails& GetCrossRegionDetails() const { return m_crossRegionDetails; }
+    inline bool CrossRegionDetailsHasBeenSet() const { return m_crossRegionDetailsHasBeenSet; }
+    template<typename CrossRegionDetailsT = GuardrailCrossRegionDetails>
+    void SetCrossRegionDetails(CrossRegionDetailsT&& value) { m_crossRegionDetailsHasBeenSet = true; m_crossRegionDetails = std::forward<CrossRegionDetailsT>(value); }
+    template<typename CrossRegionDetailsT = GuardrailCrossRegionDetails>
+    GuardrailSummary& WithCrossRegionDetails(CrossRegionDetailsT&& value) { SetCrossRegionDetails(std::forward<CrossRegionDetailsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -160,6 +175,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    GuardrailCrossRegionDetails m_crossRegionDetails;
+    bool m_crossRegionDetailsHasBeenSet = false;
   };
 
 } // namespace Model

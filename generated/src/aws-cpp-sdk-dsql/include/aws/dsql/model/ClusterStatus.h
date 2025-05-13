@@ -18,10 +18,14 @@ namespace Model
     NOT_SET,
     CREATING,
     ACTIVE,
+    IDLE,
+    INACTIVE,
     UPDATING,
     DELETING,
     DELETED,
-    FAILED
+    FAILED,
+    PENDING_SETUP,
+    PENDING_DELETE
   };
 
 namespace ClusterStatusMapper

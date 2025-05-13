@@ -25,6 +25,11 @@ KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput(JsonView jsonValue)
 
 KnowledgeBaseLookupOutput& KnowledgeBaseLookupOutput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("retrievedReferences"))
   {
     Aws::Utils::Array<JsonView> retrievedReferencesJsonList = jsonValue.GetArray("retrievedReferences");
@@ -40,6 +45,12 @@ KnowledgeBaseLookupOutput& KnowledgeBaseLookupOutput::operator =(JsonView jsonVa
 JsonValue KnowledgeBaseLookupOutput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
+
+  }
 
   if(m_retrievedReferencesHasBeenSet)
   {

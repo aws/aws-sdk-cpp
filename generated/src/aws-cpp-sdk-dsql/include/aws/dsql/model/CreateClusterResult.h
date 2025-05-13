@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/dsql/model/MultiRegionProperties.h>
 #include <utility>
 
 namespace Aws
@@ -27,7 +28,7 @@ namespace DSQL
 namespace Model
 {
   /**
-   * <p>Output Mixin</p><p><h3>See Also:</h3>   <a
+   * <p>The output of a created cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateClusterOutput">AWS
    * API Reference</a></p>
    */
@@ -83,6 +84,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The multi-Region cluster configuration details that were set during cluster
+     * creation</p>
+     */
+    inline const MultiRegionProperties& GetMultiRegionProperties() const { return m_multiRegionProperties; }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    void SetMultiRegionProperties(MultiRegionPropertiesT&& value) { m_multiRegionPropertiesHasBeenSet = true; m_multiRegionProperties = std::forward<MultiRegionPropertiesT>(value); }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    CreateClusterResult& WithMultiRegionProperties(MultiRegionPropertiesT&& value) { SetMultiRegionProperties(std::forward<MultiRegionPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Whether deletion protection is enabled on this cluster.</p>
      */
     inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
@@ -111,6 +124,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
+
+    MultiRegionProperties m_multiRegionProperties;
+    bool m_multiRegionPropertiesHasBeenSet = false;
 
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;

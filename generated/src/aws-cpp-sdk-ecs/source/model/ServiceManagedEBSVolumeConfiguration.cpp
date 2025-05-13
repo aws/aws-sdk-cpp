@@ -50,6 +50,11 @@ ServiceManagedEBSVolumeConfiguration& ServiceManagedEBSVolumeConfiguration::oper
     m_snapshotId = jsonValue.GetString("snapshotId");
     m_snapshotIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("volumeInitializationRate"))
+  {
+    m_volumeInitializationRate = jsonValue.GetInteger("volumeInitializationRate");
+    m_volumeInitializationRateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetInteger("iops");
@@ -113,6 +118,12 @@ JsonValue ServiceManagedEBSVolumeConfiguration::Jsonize() const
   if(m_snapshotIdHasBeenSet)
   {
    payload.WithString("snapshotId", m_snapshotId);
+
+  }
+
+  if(m_volumeInitializationRateHasBeenSet)
+  {
+   payload.WithInteger("volumeInitializationRate", m_volumeInitializationRate);
 
   }
 

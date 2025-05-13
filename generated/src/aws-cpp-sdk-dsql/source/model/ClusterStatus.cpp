@@ -22,10 +22,14 @@ namespace Aws
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int IDLE_HASH = HashingUtils::HashString("IDLE");
+        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int PENDING_SETUP_HASH = HashingUtils::HashString("PENDING_SETUP");
+        static const int PENDING_DELETE_HASH = HashingUtils::HashString("PENDING_DELETE");
 
 
         ClusterStatus GetClusterStatusForName(const Aws::String& name)
@@ -38,6 +42,14 @@ namespace Aws
           else if (hashCode == ACTIVE_HASH)
           {
             return ClusterStatus::ACTIVE;
+          }
+          else if (hashCode == IDLE_HASH)
+          {
+            return ClusterStatus::IDLE;
+          }
+          else if (hashCode == INACTIVE_HASH)
+          {
+            return ClusterStatus::INACTIVE;
           }
           else if (hashCode == UPDATING_HASH)
           {
@@ -54,6 +66,14 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ClusterStatus::FAILED;
+          }
+          else if (hashCode == PENDING_SETUP_HASH)
+          {
+            return ClusterStatus::PENDING_SETUP;
+          }
+          else if (hashCode == PENDING_DELETE_HASH)
+          {
+            return ClusterStatus::PENDING_DELETE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -75,6 +95,10 @@ namespace Aws
             return "CREATING";
           case ClusterStatus::ACTIVE:
             return "ACTIVE";
+          case ClusterStatus::IDLE:
+            return "IDLE";
+          case ClusterStatus::INACTIVE:
+            return "INACTIVE";
           case ClusterStatus::UPDATING:
             return "UPDATING";
           case ClusterStatus::DELETING:
@@ -83,6 +107,10 @@ namespace Aws
             return "DELETED";
           case ClusterStatus::FAILED:
             return "FAILED";
+          case ClusterStatus::PENDING_SETUP:
+            return "PENDING_SETUP";
+          case ClusterStatus::PENDING_DELETE:
+            return "PENDING_DELETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

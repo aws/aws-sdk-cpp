@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/bedrock-agent-runtime/model/AgentCollaboratorOutputPayload.h>
 #include <utility>
 
@@ -64,6 +65,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the output from the agent collaborator.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    AgentCollaboratorInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The output's output.</p>
      */
     inline const AgentCollaboratorOutputPayload& GetOutput() const { return m_output; }
@@ -80,6 +93,9 @@ namespace Model
 
     Aws::String m_agentCollaboratorName;
     bool m_agentCollaboratorNameHasBeenSet = false;
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     AgentCollaboratorOutputPayload m_output;
     bool m_outputHasBeenSet = false;

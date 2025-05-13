@@ -65,6 +65,11 @@ GuardrailSummary& GuardrailSummary::operator =(JsonView jsonValue)
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("crossRegionDetails"))
+  {
+    m_crossRegionDetails = jsonValue.GetObject("crossRegionDetails");
+    m_crossRegionDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +120,12 @@ JsonValue GuardrailSummary::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_crossRegionDetailsHasBeenSet)
+  {
+   payload.WithObject("crossRegionDetails", m_crossRegionDetails.Jsonize());
+
   }
 
   return payload;

@@ -49,6 +49,11 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator =(Jso
     }
     m_filesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +87,12 @@ JsonValue CodeInterpreterInvocationOutput::Jsonize() const
      filesJsonList[filesIndex].AsString(m_files[filesIndex]);
    }
    payload.WithArray("files", std::move(filesJsonList));
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

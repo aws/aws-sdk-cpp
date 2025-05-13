@@ -74,14 +74,11 @@ namespace Model
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
      * supported:</p> <ul> <li> <p> <code>resourceArn</code> - The ARN of the license
-     * configuration resource. Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>resourceType</code> - The
+     * configuration resource.</p> </li> <li> <p> <code>resourceType</code> - The
      * resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
-     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical
-     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>resourceAccount</code> - The ID of the account that owns the resource.
-     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-     * </ul>
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).</p> </li>
+     * <li> <p> <code>resourceAccount</code> - The ID of the account that owns the
+     * resource.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

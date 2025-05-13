@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/GuardrailWordPolicy.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicy.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicy.h>
+#include <aws/bedrock/model/GuardrailCrossRegionDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -161,6 +162,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about the system-defined guardrail profile that you're using with
+     * your guardrail, including the guardrail profile ID and Amazon Resource Name
+     * (ARN).</p>
+     */
+    inline const GuardrailCrossRegionDetails& GetCrossRegionDetails() const { return m_crossRegionDetails; }
+    template<typename CrossRegionDetailsT = GuardrailCrossRegionDetails>
+    void SetCrossRegionDetails(CrossRegionDetailsT&& value) { m_crossRegionDetailsHasBeenSet = true; m_crossRegionDetails = std::forward<CrossRegionDetailsT>(value); }
+    template<typename CrossRegionDetailsT = GuardrailCrossRegionDetails>
+    GetGuardrailResult& WithCrossRegionDetails(CrossRegionDetailsT&& value) { SetCrossRegionDetails(std::forward<CrossRegionDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time at which the guardrail was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -284,6 +298,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicy m_contextualGroundingPolicy;
     bool m_contextualGroundingPolicyHasBeenSet = false;
+
+    GuardrailCrossRegionDetails m_crossRegionDetails;
+    bool m_crossRegionDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

@@ -13,6 +13,7 @@
 #include <aws/license-manager/model/ConsumptionConfiguration.h>
 #include <aws/license-manager/model/Entitlement.h>
 #include <aws/license-manager/model/Metadata.h>
+#include <aws/license-manager/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,23 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateLicenseRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Tags to add to the license. For more information about tagging support in
+     * License Manager, see the <a
+     * href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+     * operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateLicenseRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateLicenseRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_licenseName;
@@ -213,6 +231,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Details about a tag for a license configuration.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Details about the tags for a resource. For more information about tagging
+   * support in License Manager, see the <a
+   * href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Tag">AWS
    * API Reference</a></p>
    */
@@ -40,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Tag key.</p>
+     * <p>The tag key.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -52,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Tag value.</p>
+     * <p>The tag value.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

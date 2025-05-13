@@ -52,7 +52,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The reason for the validation exception.</p>
+     */
     inline ValidationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
     inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
@@ -60,7 +62,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A list of fields that didn't validate.</p>
+     */
     inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const { return m_fieldList; }
     inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
     template<typename FieldListT = Aws::Vector<ValidationExceptionField>>
