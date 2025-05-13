@@ -21,17 +21,13 @@ namespace Aws
 
             DynamoDBClientConfiguration(const DynamoDBClientConfiguration& other)
                 : Aws::Client::GenericClientConfiguration(other),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery),
-                  accountId{other.accountId},
-                  accountIdEndpointMode{other.accountIdEndpointMode}
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
             {
             }
 
             DynamoDBClientConfiguration(DynamoDBClientConfiguration&& other) noexcept
                 : Aws::Client::GenericClientConfiguration(std::move(other)),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery),
-                  accountId{std::move(other.accountId)},
-                  accountIdEndpointMode{std::move(other.accountIdEndpointMode)}
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
             {
             }
 
@@ -40,8 +36,6 @@ namespace Aws
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(other);
-                accountId = other.accountId;
-                accountIdEndpointMode = other.accountIdEndpointMode;
                 return *this;
             }
 
@@ -50,8 +44,6 @@ namespace Aws
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(std::move(other));
-                accountId = std::move(other.accountId);
-                accountIdEndpointMode = std::move(other.accountIdEndpointMode);
                 return *this;
             }
 
@@ -90,14 +82,6 @@ namespace Aws
              */
             Aws::Crt::Optional<bool>& enableEndpointDiscovery;
 
-            /**
-             * The AWS AccountId used for the request.
-             */
-            Aws::String accountId;
-            /**
-             * The AccountId Endpoint Mode.
-             */
-            Aws::String accountIdEndpointMode = "preferred";
         private:
             void LoadDynamoDBSpecificConfig(const Aws::String& profileName);
         };

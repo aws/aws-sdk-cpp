@@ -18,36 +18,6 @@ namespace Aws
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-            S3ControlClientConfiguration(const S3ControlClientConfiguration& other)
-                : Aws::Client::GenericClientConfiguration(other),
-                  accountId{other.accountId}
-            {
-            }
-
-            S3ControlClientConfiguration(S3ControlClientConfiguration&& other) noexcept
-                : Aws::Client::GenericClientConfiguration(std::move(other)),
-                  accountId{std::move(other.accountId)}
-            {
-            }
-
-            S3ControlClientConfiguration& operator=(const S3ControlClientConfiguration& other)
-            {
-                if (this == &other)
-                    return *this;
-                Aws::Client::GenericClientConfiguration::operator =(other);
-                accountId = other.accountId;
-                return *this;
-            }
-
-            S3ControlClientConfiguration& operator=(S3ControlClientConfiguration&& other) noexcept
-            {
-                if (this == &other)
-                    return *this;
-                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
-                accountId = std::move(other.accountId);
-                return *this;
-            }
-
             S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**
@@ -72,10 +42,6 @@ namespace Aws
             S3ControlClientConfiguration(const Client::ClientConfiguration& config);
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
-            /**
-             * The Account ID used to send the request. This is an optional parameter that will be set automatically for operations that require it.
-             */
-            Aws::String accountId;
         private:
             void LoadS3ControlSpecificConfig(const Aws::String& profileName);
         };
