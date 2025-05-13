@@ -96,8 +96,8 @@ resources.
     Aws::String m_programName;
     bool m_programNameHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
   };
 
 } // namespace Model

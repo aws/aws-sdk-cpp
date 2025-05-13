@@ -247,8 +247,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet = false;
+    Aws::String m_updateToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_updateTokenHasBeenSet = true;
   };
 
 } // namespace Model

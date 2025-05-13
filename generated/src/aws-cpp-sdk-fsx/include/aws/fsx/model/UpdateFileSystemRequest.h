@@ -185,8 +185,8 @@ namespace Model
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;

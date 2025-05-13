@@ -110,8 +110,8 @@ namespace Model
     Aws::String m_assetName;
     bool m_assetNameHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_assetDescription;
     bool m_assetDescriptionHasBeenSet = false;

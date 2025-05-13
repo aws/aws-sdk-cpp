@@ -124,8 +124,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     S3BucketSource m_s3BucketSource;
     bool m_s3BucketSourceHasBeenSet = false;

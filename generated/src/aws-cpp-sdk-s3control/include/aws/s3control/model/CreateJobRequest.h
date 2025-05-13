@@ -201,8 +201,8 @@ namespace Model
     JobReport m_report;
     bool m_reportHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     JobManifest m_manifest;
     bool m_manifestHasBeenSet = false;

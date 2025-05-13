@@ -110,8 +110,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     VolumeType m_volumeType{VolumeType::NOT_SET};
     bool m_volumeTypeHasBeenSet = false;

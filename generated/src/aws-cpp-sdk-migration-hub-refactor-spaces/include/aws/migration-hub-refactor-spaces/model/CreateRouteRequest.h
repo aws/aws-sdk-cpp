@@ -145,8 +145,8 @@ namespace Model
     Aws::String m_applicationIdentifier;
     bool m_applicationIdentifierHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     DefaultRouteInput m_defaultRoute;
     bool m_defaultRouteHasBeenSet = false;

@@ -101,8 +101,8 @@ namespace Model
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet = false;

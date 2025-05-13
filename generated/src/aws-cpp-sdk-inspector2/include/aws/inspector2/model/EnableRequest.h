@@ -78,8 +78,8 @@ namespace Model
     Aws::Vector<Aws::String> m_accountIds;
     bool m_accountIdsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<ResourceScanType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;

@@ -123,8 +123,8 @@ namespace Model
     Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
     bool m_provisionedProductPropertiesHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
   };
 
 } // namespace Model

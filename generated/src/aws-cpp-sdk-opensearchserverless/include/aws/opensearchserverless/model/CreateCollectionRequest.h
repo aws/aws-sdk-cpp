@@ -126,8 +126,8 @@ namespace Model
     StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
     bool m_standbyReplicasHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

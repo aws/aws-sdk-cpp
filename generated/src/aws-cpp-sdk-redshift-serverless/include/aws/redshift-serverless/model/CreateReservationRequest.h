@@ -79,8 +79,8 @@ namespace Model
     int m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet = false;

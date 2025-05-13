@@ -109,8 +109,8 @@ namespace Model
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

@@ -257,8 +257,8 @@ namespace Model
     BillingTagsSource m_billingTagsSource{BillingTagsSource::NOT_SET};
     bool m_billingTagsSourceHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Vector<HopDestination> m_hopDestinations;
     bool m_hopDestinationsHasBeenSet = false;

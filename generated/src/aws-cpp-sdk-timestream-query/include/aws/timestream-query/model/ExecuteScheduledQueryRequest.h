@@ -96,8 +96,8 @@ namespace Model
     Aws::Utils::DateTime m_invocationTime{};
     bool m_invocationTimeHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     ScheduledQueryInsights m_queryInsights;
     bool m_queryInsightsHasBeenSet = false;

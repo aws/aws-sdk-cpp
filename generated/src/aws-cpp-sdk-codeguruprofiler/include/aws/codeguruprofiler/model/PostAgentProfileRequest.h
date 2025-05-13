@@ -71,8 +71,8 @@ namespace Model
   private:
 
 
-    Aws::String m_profileToken;
-    bool m_profileTokenHasBeenSet = false;
+    Aws::String m_profileToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_profileTokenHasBeenSet = true;
 
     Aws::String m_profilingGroupName;
     bool m_profilingGroupNameHasBeenSet = false;

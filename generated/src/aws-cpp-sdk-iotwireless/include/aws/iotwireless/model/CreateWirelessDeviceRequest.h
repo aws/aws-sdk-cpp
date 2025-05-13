@@ -170,8 +170,8 @@ namespace Model
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     LoRaWANDevice m_loRaWAN;
     bool m_loRaWANHasBeenSet = false;

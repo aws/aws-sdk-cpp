@@ -119,8 +119,8 @@ namespace Model
     AgentOrchestrationConfig m_agentOrchestrationConfig;
     bool m_agentOrchestrationConfigHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
     bool m_computePlatformHasBeenSet = false;

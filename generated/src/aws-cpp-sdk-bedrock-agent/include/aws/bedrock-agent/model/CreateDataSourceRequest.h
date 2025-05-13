@@ -145,8 +145,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     DataDeletionPolicy m_dataDeletionPolicy{DataDeletionPolicy::NOT_SET};
     bool m_dataDeletionPolicyHasBeenSet = false;

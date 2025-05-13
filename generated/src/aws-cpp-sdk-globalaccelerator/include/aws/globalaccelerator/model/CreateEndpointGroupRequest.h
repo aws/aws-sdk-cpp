@@ -215,8 +215,8 @@ namespace Model
     int m_thresholdCount{0};
     bool m_thresholdCountHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     Aws::Vector<PortOverride> m_portOverrides;
     bool m_portOverridesHasBeenSet = false;

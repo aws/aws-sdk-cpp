@@ -170,8 +170,8 @@ namespace Model
     Aws::String m_parentMessageId;
     bool m_parentMessageIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     std::shared_ptr<ChatInputStream> m_inputStream;
     bool m_inputStreamHasBeenSet = false;

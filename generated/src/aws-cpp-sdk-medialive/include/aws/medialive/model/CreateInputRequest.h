@@ -277,8 +277,8 @@ an input in a customer network.
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

@@ -101,8 +101,8 @@ namespace Model
     Aws::Vector<CustomRoutingDestinationConfiguration> m_destinationConfigurations;
     bool m_destinationConfigurationsHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
   };
 
 } // namespace Model

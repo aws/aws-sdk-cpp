@@ -234,8 +234,8 @@ namespace Model
     JobCheckpointConfig m_checkpointConfig;
     bool m_checkpointConfigHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     DeviceConfig m_deviceConfig;
     bool m_deviceConfigHasBeenSet = false;

@@ -108,8 +108,8 @@ namespace Model
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_profileOwner;
     bool m_profileOwnerHasBeenSet = false;
