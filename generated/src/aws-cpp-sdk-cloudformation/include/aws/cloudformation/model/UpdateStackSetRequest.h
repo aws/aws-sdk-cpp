@@ -491,8 +491,8 @@ namespace Model
     AutoDeployment m_autoDeployment;
     bool m_autoDeploymentHasBeenSet = false;
 
-    Aws::String m_operationId;
-    bool m_operationIdHasBeenSet = false;
+    Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_operationIdHasBeenSet = true;
 
     Aws::Vector<Aws::String> m_accounts;
     bool m_accountsHasBeenSet = false;

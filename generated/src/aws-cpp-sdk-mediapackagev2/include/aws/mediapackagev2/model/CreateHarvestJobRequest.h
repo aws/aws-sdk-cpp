@@ -192,8 +192,8 @@ namespace Model
     Destination m_destination;
     bool m_destinationHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_harvestJobName;
     bool m_harvestJobNameHasBeenSet = false;

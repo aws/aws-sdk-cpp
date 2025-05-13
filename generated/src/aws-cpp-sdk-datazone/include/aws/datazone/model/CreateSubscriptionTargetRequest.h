@@ -170,8 +170,8 @@ namespace Model
     Aws::Vector<Aws::String> m_authorizedPrincipals;
     bool m_authorizedPrincipalsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;

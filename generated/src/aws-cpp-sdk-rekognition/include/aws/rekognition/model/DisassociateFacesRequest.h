@@ -97,8 +97,8 @@ namespace Model
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Vector<Aws::String> m_faceIds;
     bool m_faceIdsHasBeenSet = false;

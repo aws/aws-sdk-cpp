@@ -218,8 +218,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     Accelerators m_accelerators{Accelerators::NOT_SET};
     bool m_acceleratorsHasBeenSet = false;

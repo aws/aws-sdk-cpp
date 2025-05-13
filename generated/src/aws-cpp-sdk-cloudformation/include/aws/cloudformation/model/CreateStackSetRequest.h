@@ -382,8 +382,8 @@ namespace Model
     CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     ManagedExecution m_managedExecution;
     bool m_managedExecutionHasBeenSet = false;

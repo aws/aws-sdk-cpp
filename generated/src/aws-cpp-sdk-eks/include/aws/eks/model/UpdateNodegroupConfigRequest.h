@@ -162,8 +162,8 @@ namespace Model
     NodeRepairConfig m_nodeRepairConfig;
     bool m_nodeRepairConfigHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

@@ -194,8 +194,8 @@ namespace Model
     Aws::String m_assetModelCompositeModelName;
     bool m_assetModelCompositeModelNameHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<AssetModelProperty> m_assetModelCompositeModelProperties;
     bool m_assetModelCompositeModelPropertiesHasBeenSet = false;

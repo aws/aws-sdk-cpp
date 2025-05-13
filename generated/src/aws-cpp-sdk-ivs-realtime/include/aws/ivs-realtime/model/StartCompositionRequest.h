@@ -113,8 +113,8 @@ namespace Model
     Aws::String m_stageArn;
     bool m_stageArnHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     LayoutConfiguration m_layout;
     bool m_layoutHasBeenSet = false;

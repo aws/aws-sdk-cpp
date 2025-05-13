@@ -168,8 +168,8 @@ namespace Model
     LabelsInputConfiguration m_labelsInputConfiguration;
     bool m_labelsInputConfigurationHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

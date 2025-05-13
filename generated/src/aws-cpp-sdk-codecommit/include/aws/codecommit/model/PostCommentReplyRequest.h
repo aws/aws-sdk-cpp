@@ -80,8 +80,8 @@ namespace Model
     Aws::String m_inReplyTo;
     bool m_inReplyToHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;

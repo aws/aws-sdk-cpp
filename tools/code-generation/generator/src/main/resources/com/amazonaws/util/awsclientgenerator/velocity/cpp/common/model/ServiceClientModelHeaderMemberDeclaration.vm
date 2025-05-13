@@ -1,6 +1,7 @@
 #if($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request)
 #break##CPP SDK has a special "Streaming" common base request type, where the "streamed" payload is set by a "SetBody"
 #end
+#set($isIdempontencyToken = $member.value.idempotencyToken)
 #if ($shape.request && $member.value.shape.isEventStream())
 #set($isEventStreamInput = true)
 #else
@@ -21,18 +22,18 @@
 #set($initializer = "{}")
 #if($member.value.shape.primitive)
 #set($initializer = "{${CppViewHelper.computeDefaultValue($member.value.shape)}}")
+#elseif($isIdempontencyToken)
+#set($initializer = "{Aws::Utils::UUID::PseudoRandomUUID()}")
 #elseif($member.value.shape.string || $member.value.shape.structure || $member.value.shape.timestamp || $member.value.shape.list || $member.value.shape.map)
 #set($initializer = "")
 #elseif($member.value.shape.enum)
 #set($initializer = "{${member.value.shape.name}::NOT_SET}")
 #end
-#if($entry.value.idempotencyToken)
-#set($initializer = "{Aws::Utils::UUID::PseudoRandomUUID()}")
-#end
     $cppType $memberVariableName$initializer;
 #end
 #set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
-#if($useRequiredField && $member.value.required && !$isStreamingMember && !$member.value.shape.isEventStream())
+#set($isRequired = $useRequiredField && $member.value.required)
+#if(($isRequired || $isIdempontencyToken) && !$isStreamingMember && !$member.value.shape.isEventStream())
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true;
 #else
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;

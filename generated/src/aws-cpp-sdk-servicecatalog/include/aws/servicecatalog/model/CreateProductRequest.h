@@ -239,8 +239,8 @@ namespace Model
     ProvisioningArtifactProperties m_provisioningArtifactParameters;
     bool m_provisioningArtifactParametersHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     SourceConnection m_sourceConnection;
     bool m_sourceConnectionHasBeenSet = false;

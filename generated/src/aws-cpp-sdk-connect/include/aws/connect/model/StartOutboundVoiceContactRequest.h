@@ -271,8 +271,8 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_sourcePhoneNumber;
     bool m_sourcePhoneNumberHasBeenSet = false;

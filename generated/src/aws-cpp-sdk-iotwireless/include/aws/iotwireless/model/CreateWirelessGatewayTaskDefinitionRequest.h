@@ -117,8 +117,8 @@ namespace Model
     UpdateWirelessGatewayTaskCreate m_update;
     bool m_updateHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

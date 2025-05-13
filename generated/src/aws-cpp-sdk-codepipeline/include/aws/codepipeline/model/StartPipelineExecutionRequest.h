@@ -107,8 +107,8 @@ namespace Model
     Aws::Vector<PipelineVariable> m_variables;
     bool m_variablesHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Vector<SourceRevisionOverride> m_sourceRevisions;
     bool m_sourceRevisionsHasBeenSet = false;

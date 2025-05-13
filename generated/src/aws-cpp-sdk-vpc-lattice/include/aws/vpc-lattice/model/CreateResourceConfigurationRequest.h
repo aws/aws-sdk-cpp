@@ -179,8 +179,8 @@ namespace Model
     bool m_allowAssociationToShareableServiceNetwork{false};
     bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

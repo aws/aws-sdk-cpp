@@ -112,8 +112,8 @@ namespace Model
     Aws::Vector<CertificateProviderOperation> m_accountDefaultForOperations;
     bool m_accountDefaultForOperationsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

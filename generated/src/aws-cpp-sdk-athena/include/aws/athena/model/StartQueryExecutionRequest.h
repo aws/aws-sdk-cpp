@@ -147,8 +147,8 @@ namespace Model
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     QueryExecutionContext m_queryExecutionContext;
     bool m_queryExecutionContextHasBeenSet = false;

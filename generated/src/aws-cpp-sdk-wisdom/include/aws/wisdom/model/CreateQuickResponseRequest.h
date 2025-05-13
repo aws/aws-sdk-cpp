@@ -205,8 +205,8 @@ namespace Model
     Aws::Vector<Aws::String> m_channels;
     bool m_channelsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     QuickResponseDataProvider m_content;
     bool m_contentHasBeenSet = false;

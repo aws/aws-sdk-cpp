@@ -210,8 +210,8 @@ namespace Model
     Aws::String m_otaTargetQueryString;
     bool m_otaTargetQueryStringHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     OtaTaskSchedulingConfig m_otaSchedulingConfig;
     bool m_otaSchedulingConfigHasBeenSet = false;

@@ -88,8 +88,8 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     bool m_force{false};
     bool m_forceHasBeenSet = false;

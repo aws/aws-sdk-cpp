@@ -140,8 +140,8 @@ namespace Model
     RenewalSettings m_renewalSettings;
     bool m_renewalSettingsHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     Aws::String m_start;
     bool m_startHasBeenSet = false;

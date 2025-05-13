@@ -356,8 +356,8 @@ namespace Model
     ConfigurationId m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet = false;
+    Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_creatorRequestIdHasBeenSet = true;
 
     DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
     bool m_deploymentModeHasBeenSet = false;

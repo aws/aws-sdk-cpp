@@ -185,8 +185,8 @@ namespace Model
     FaqFileFormat m_fileFormat{FaqFileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_languageCode;
     bool m_languageCodeHasBeenSet = false;

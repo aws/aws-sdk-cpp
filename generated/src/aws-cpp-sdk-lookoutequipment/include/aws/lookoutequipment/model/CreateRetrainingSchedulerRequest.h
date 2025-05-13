@@ -137,8 +137,8 @@ namespace Model
     ModelPromoteMode m_promoteMode{ModelPromoteMode::NOT_SET};
     bool m_promoteModeHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

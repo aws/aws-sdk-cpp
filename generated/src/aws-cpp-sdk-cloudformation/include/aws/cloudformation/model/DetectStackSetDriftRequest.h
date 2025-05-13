@@ -108,8 +108,8 @@ namespace Model
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet = false;
 
-    Aws::String m_operationId;
-    bool m_operationIdHasBeenSet = false;
+    Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_operationIdHasBeenSet = true;
 
     CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;

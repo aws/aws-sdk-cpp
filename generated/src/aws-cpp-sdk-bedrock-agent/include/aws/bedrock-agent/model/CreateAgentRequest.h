@@ -269,8 +269,8 @@ namespace Model
     Aws::String m_agentResourceRoleArn;
     bool m_agentResourceRoleArnHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     CustomOrchestration m_customOrchestration;
     bool m_customOrchestrationHasBeenSet = false;

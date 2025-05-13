@@ -105,8 +105,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientTokenId;
-    bool m_clientTokenIdHasBeenSet = false;
+    Aws::String m_clientTokenId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenIdHasBeenSet = true;
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;

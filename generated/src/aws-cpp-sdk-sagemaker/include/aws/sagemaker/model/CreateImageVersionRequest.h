@@ -189,8 +189,8 @@ namespace Model
     Aws::String m_baseImage;
     bool m_baseImageHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet = false;

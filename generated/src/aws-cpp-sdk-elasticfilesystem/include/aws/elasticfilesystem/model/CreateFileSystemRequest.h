@@ -204,8 +204,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_creationToken;
-    bool m_creationTokenHasBeenSet = false;
+    Aws::String m_creationToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_creationTokenHasBeenSet = true;
 
     PerformanceMode m_performanceMode{PerformanceMode::NOT_SET};
     bool m_performanceModeHasBeenSet = false;

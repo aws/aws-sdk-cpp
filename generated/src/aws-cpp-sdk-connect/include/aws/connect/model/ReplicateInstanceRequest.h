@@ -97,8 +97,8 @@ namespace Model
     Aws::String m_replicaRegion;
     bool m_replicaRegionHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_replicaAlias;
     bool m_replicaAliasHasBeenSet = false;

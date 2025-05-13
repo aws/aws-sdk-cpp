@@ -174,8 +174,8 @@ namespace Model
     Aws::String m_sinkArn;
     bool m_sinkArnHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
     bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
