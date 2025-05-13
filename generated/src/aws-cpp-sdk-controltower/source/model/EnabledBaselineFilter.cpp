@@ -34,6 +34,15 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
     }
     m_baselineIdentifiersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inheritanceDriftStatuses"))
+  {
+    Aws::Utils::Array<JsonView> inheritanceDriftStatusesJsonList = jsonValue.GetArray("inheritanceDriftStatuses");
+    for(unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength(); ++inheritanceDriftStatusesIndex)
+    {
+      m_inheritanceDriftStatuses.push_back(EnabledBaselineDriftStatusMapper::GetEnabledBaselineDriftStatusForName(inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString()));
+    }
+    m_inheritanceDriftStatusesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("parentIdentifiers"))
   {
     Aws::Utils::Array<JsonView> parentIdentifiersJsonList = jsonValue.GetArray("parentIdentifiers");
@@ -42,6 +51,15 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
       m_parentIdentifiers.push_back(parentIdentifiersJsonList[parentIdentifiersIndex].AsString());
     }
     m_parentIdentifiersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("statuses"))
+  {
+    Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
+    for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
+    {
+      m_statuses.push_back(EnablementStatusMapper::GetEnablementStatusForName(statusesJsonList[statusesIndex].AsString()));
+    }
+    m_statusesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetIdentifiers"))
   {
@@ -70,6 +88,17 @@ JsonValue EnabledBaselineFilter::Jsonize() const
 
   }
 
+  if(m_inheritanceDriftStatusesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inheritanceDriftStatusesJsonList(m_inheritanceDriftStatuses.size());
+   for(unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength(); ++inheritanceDriftStatusesIndex)
+   {
+     inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString(EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(m_inheritanceDriftStatuses[inheritanceDriftStatusesIndex]));
+   }
+   payload.WithArray("inheritanceDriftStatuses", std::move(inheritanceDriftStatusesJsonList));
+
+  }
+
   if(m_parentIdentifiersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> parentIdentifiersJsonList(m_parentIdentifiers.size());
@@ -78,6 +107,17 @@ JsonValue EnabledBaselineFilter::Jsonize() const
      parentIdentifiersJsonList[parentIdentifiersIndex].AsString(m_parentIdentifiers[parentIdentifiersIndex]);
    }
    payload.WithArray("parentIdentifiers", std::move(parentIdentifiersJsonList));
+
+  }
+
+  if(m_statusesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> statusesJsonList(m_statuses.size());
+   for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
+   {
+     statusesJsonList[statusesIndex].AsString(EnablementStatusMapper::GetNameForEnablementStatus(m_statuses[statusesIndex]));
+   }
+   payload.WithArray("statuses", std::move(statusesJsonList));
 
   }
 

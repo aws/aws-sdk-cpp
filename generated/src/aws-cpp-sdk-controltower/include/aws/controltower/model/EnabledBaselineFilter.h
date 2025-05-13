@@ -7,6 +7,8 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controltower/model/EnabledBaselineDriftStatus.h>
+#include <aws/controltower/model/EnablementStatus.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +59,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled
+     * baselines.</p>
+     */
+    inline const Aws::Vector<EnabledBaselineDriftStatus>& GetInheritanceDriftStatuses() const { return m_inheritanceDriftStatuses; }
+    inline bool InheritanceDriftStatusesHasBeenSet() const { return m_inheritanceDriftStatusesHasBeenSet; }
+    template<typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+    void SetInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) { m_inheritanceDriftStatusesHasBeenSet = true; m_inheritanceDriftStatuses = std::forward<InheritanceDriftStatusesT>(value); }
+    template<typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+    EnabledBaselineFilter& WithInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) { SetInheritanceDriftStatuses(std::forward<InheritanceDriftStatusesT>(value)); return *this;}
+    inline EnabledBaselineFilter& AddInheritanceDriftStatuses(EnabledBaselineDriftStatus value) { m_inheritanceDriftStatusesHasBeenSet = true; m_inheritanceDriftStatuses.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to
      * filter the results of the <code>ListEnabledBaseline</code> output.</p>
      */
@@ -68,6 +84,19 @@ namespace Model
     EnabledBaselineFilter& WithParentIdentifiers(ParentIdentifiersT&& value) { SetParentIdentifiers(std::forward<ParentIdentifiersT>(value)); return *this;}
     template<typename ParentIdentifiersT = Aws::String>
     EnabledBaselineFilter& AddParentIdentifiers(ParentIdentifiersT&& value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers.emplace_back(std::forward<ParentIdentifiersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>EnablementStatus</code> items.</p>
+     */
+    inline const Aws::Vector<EnablementStatus>& GetStatuses() const { return m_statuses; }
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+    template<typename StatusesT = Aws::Vector<EnablementStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<EnablementStatus>>
+    EnabledBaselineFilter& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    inline EnabledBaselineFilter& AddStatuses(EnablementStatus value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -89,8 +118,14 @@ namespace Model
     Aws::Vector<Aws::String> m_baselineIdentifiers;
     bool m_baselineIdentifiersHasBeenSet = false;
 
+    Aws::Vector<EnabledBaselineDriftStatus> m_inheritanceDriftStatuses;
+    bool m_inheritanceDriftStatusesHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_parentIdentifiers;
     bool m_parentIdentifiersHasBeenSet = false;
+
+    Aws::Vector<EnablementStatus> m_statuses;
+    bool m_statusesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetIdentifiers;
     bool m_targetIdentifiersHasBeenSet = false;

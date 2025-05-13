@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -40,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the invoke agent operation.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    FinalResponse& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The text in the response to the user.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -50,6 +63,9 @@ namespace Model
     FinalResponse& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;

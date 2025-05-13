@@ -1127,8 +1127,10 @@ namespace LicenseManager
         }
 
         /**
-         * <p>Lists the tags for the specified license configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified resource. For more information about tagging
+         * support in License Manager, see the <a
+         * href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1231,8 +1233,10 @@ namespace LicenseManager
         }
 
         /**
-         * <p>Adds the specified tags to the specified license configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource. The following resources
+         * support tagging in License Manager:</p> <ul> <li> <p>Licenses</p> </li> <li>
+         * <p>Grants</p> </li> <li> <p>License configurations</p> </li> <li> <p>Report
+         * generators</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1257,8 +1261,8 @@ namespace LicenseManager
         }
 
         /**
-         * <p>Removes the specified tags from the specified license
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">AWS
          * API Reference</a></p>
          */

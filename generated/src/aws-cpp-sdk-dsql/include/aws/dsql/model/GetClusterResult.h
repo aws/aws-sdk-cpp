@@ -8,7 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dsql/model/MultiRegionProperties.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +29,7 @@ namespace DSQL
 namespace Model
 {
   /**
-   * <p>Output Mixin</p><p><h3>See Also:</h3>   <a
+   * <p>The output of a cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterOutput">AWS
    * API Reference</a></p>
    */
@@ -93,27 +94,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The witness Region of the cluster. Applicable only for multi-Region
-     * clusters.</p>
+     * <p>Returns the current multi-Region cluster configuration, including witness
+     * region and linked cluster information.</p>
      */
-    inline const Aws::String& GetWitnessRegion() const { return m_witnessRegion; }
-    template<typename WitnessRegionT = Aws::String>
-    void SetWitnessRegion(WitnessRegionT&& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = std::forward<WitnessRegionT>(value); }
-    template<typename WitnessRegionT = Aws::String>
-    GetClusterResult& WithWitnessRegion(WitnessRegionT&& value) { SetWitnessRegion(std::forward<WitnessRegionT>(value)); return *this;}
+    inline const MultiRegionProperties& GetMultiRegionProperties() const { return m_multiRegionProperties; }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    void SetMultiRegionProperties(MultiRegionPropertiesT&& value) { m_multiRegionPropertiesHasBeenSet = true; m_multiRegionProperties = std::forward<MultiRegionPropertiesT>(value); }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    GetClusterResult& WithMultiRegionProperties(MultiRegionPropertiesT&& value) { SetMultiRegionProperties(std::forward<MultiRegionPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const { return m_linkedClusterArns; }
-    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
-    void SetLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = std::forward<LinkedClusterArnsT>(value); }
-    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
-    GetClusterResult& WithLinkedClusterArns(LinkedClusterArnsT&& value) { SetLinkedClusterArns(std::forward<LinkedClusterArnsT>(value)); return *this;}
-    template<typename LinkedClusterArnsT = Aws::String>
-    GetClusterResult& AddLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.emplace_back(std::forward<LinkedClusterArnsT>(value)); return *this; }
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetClusterResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetClusterResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -141,11 +142,11 @@ namespace Model
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
 
-    Aws::String m_witnessRegion;
-    bool m_witnessRegionHasBeenSet = false;
+    MultiRegionProperties m_multiRegionProperties;
+    bool m_multiRegionPropertiesHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_linkedClusterArns;
-    bool m_linkedClusterArnsHasBeenSet = false;
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

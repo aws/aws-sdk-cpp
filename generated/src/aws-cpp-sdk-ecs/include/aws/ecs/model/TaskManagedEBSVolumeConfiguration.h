@@ -45,8 +45,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the volume should be encrypted. If no value is specified,
-     * encryption is turned on by default. This parameter maps 1:1 with the
+     * <p>Indicates whether the volume should be encrypted. If you turn on Region-level
+     * Amazon EBS encryption by default but set this value as <code>false</code>, the
+     * setting is overridden and the volume is encrypted with the KMS key specified for
+     * Amazon EBS encryption by default. This parameter maps 1:1 with the
      * <code>Encrypted</code> parameter of the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
      * API</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -60,15 +62,19 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key
-     * Management Service key to use for Amazon EBS encryption. When encryption is
-     * turned on and no Amazon Web Services Key Management Service key is specified,
-     * the default Amazon Web Services managed key for Amazon EBS volumes is used. This
-     * parameter maps 1:1 with the <code>KmsKeyId</code> parameter of the <a
+     * Management Service key to use for Amazon EBS encryption. When a key is specified
+     * using this parameter, it overrides Amazon EBS default encryption or any KMS key
+     * that you specified for cluster-level managed storage encryption. This parameter
+     * maps 1:1 with the <code>KmsKeyId</code> parameter of the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
-     * API</a> in the <i>Amazon EC2 API Reference</i>.</p>  <p>Amazon Web
-     * Services authenticates the Amazon Web Services Key Management Service key
-     * asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid,
-     * the action can appear to complete, but eventually fails.</p> 
+     * API</a> in the <i>Amazon EC2 API Reference</i>. For more information about
+     * encrypting Amazon EBS volumes attached to a task, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-kms-encryption.html">Encrypt
+     * data stored in Amazon EBS volumes attached to Amazon ECS tasks</a>.</p>
+     *  <p>Amazon Web Services authenticates the Amazon Web Services Key
+     * Management Service key asynchronously. Therefore, if you specify an ID, alias,
+     * or ARN that is invalid, the action can appear to complete, but eventually
+     * fails.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -136,6 +142,21 @@ namespace Model
     void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
     template<typename SnapshotIdT = Aws::String>
     TaskManagedEBSVolumeConfiguration& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The rate, in MiB/s, at which data is fetched from a snapshot of an existing
+     * Amazon EBS volume to create a new volume for attachment to the task. This
+     * property can be specified only if you specify a <code>snapshotId</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+     * Amazon EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p>
+     */
+    inline int GetVolumeInitializationRate() const { return m_volumeInitializationRate; }
+    inline bool VolumeInitializationRateHasBeenSet() const { return m_volumeInitializationRateHasBeenSet; }
+    inline void SetVolumeInitializationRate(int value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
+    inline TaskManagedEBSVolumeConfiguration& WithVolumeInitializationRate(int value) { SetVolumeInitializationRate(value); return *this;}
     ///@}
 
     ///@{
@@ -258,6 +279,9 @@ namespace Model
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
+
+    int m_volumeInitializationRate{0};
+    bool m_volumeInitializationRateHasBeenSet = false;
 
     int m_iops{0};
     bool m_iopsHasBeenSet = false;

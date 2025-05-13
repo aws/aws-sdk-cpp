@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Description of the error</p>
+     * <p>The message that the request was denied due to request throttling.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service Quotas requirement to identify originating service</p>
+     * <p>The request exceeds a service quota.</p>
      */
     inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service Quotas requirement to identify originating quota</p>
+     * <p>The request exceeds a request rate quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Advice to clients on when the call can be safely retried</p>
+     * <p>The request exceeds a request rate quota. Retry after seconds.</p>
      */
     inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }

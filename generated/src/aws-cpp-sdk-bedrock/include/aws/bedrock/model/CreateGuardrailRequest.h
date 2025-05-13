@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/GuardrailWordPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicyConfig.h>
+#include <aws/bedrock/model/GuardrailCrossRegionConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/Tag.h>
 #include <utility>
@@ -126,6 +127,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The system-defined guardrail profile that you're using with your guardrail.
+     * Guardrail profiles define the destination Amazon Web Services Regions where
+     * guardrail inference requests can be automatically routed.</p> <p>For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon
+     * Bedrock User Guide</a>.</p>
+     */
+    inline const GuardrailCrossRegionConfig& GetCrossRegionConfig() const { return m_crossRegionConfig; }
+    inline bool CrossRegionConfigHasBeenSet() const { return m_crossRegionConfigHasBeenSet; }
+    template<typename CrossRegionConfigT = GuardrailCrossRegionConfig>
+    void SetCrossRegionConfig(CrossRegionConfigT&& value) { m_crossRegionConfigHasBeenSet = true; m_crossRegionConfig = std::forward<CrossRegionConfigT>(value); }
+    template<typename CrossRegionConfigT = GuardrailCrossRegionConfig>
+    CreateGuardrailRequest& WithCrossRegionConfig(CrossRegionConfigT&& value) { SetCrossRegionConfig(std::forward<CrossRegionConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The message to return when the guardrail blocks a prompt.</p>
      */
     inline const Aws::String& GetBlockedInputMessaging() const { return m_blockedInputMessaging; }
@@ -211,6 +229,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
     bool m_contextualGroundingPolicyConfigHasBeenSet = false;
+
+    GuardrailCrossRegionConfig m_crossRegionConfig;
+    bool m_crossRegionConfigHasBeenSet = false;
 
     Aws::String m_blockedInputMessaging;
     bool m_blockedInputMessagingHasBeenSet = false;

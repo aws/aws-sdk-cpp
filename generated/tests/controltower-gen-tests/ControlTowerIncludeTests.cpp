@@ -38,7 +38,11 @@
 #include <aws/controltower/model/EnableControlRequest.h>
 #include <aws/controltower/model/EnableControlResult.h>
 #include <aws/controltower/model/EnabledBaselineDetails.h>
+#include <aws/controltower/model/EnabledBaselineDriftStatus.h>
+#include <aws/controltower/model/EnabledBaselineDriftStatusSummary.h>
+#include <aws/controltower/model/EnabledBaselineDriftTypes.h>
 #include <aws/controltower/model/EnabledBaselineFilter.h>
+#include <aws/controltower/model/EnabledBaselineInheritanceDrift.h>
 #include <aws/controltower/model/EnabledBaselineParameter.h>
 #include <aws/controltower/model/EnabledBaselineParameterSummary.h>
 #include <aws/controltower/model/EnabledBaselineSummary.h>

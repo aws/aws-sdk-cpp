@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Hypothetical identifier of the resource which does not exist</p>
+     * <p>The resource ID could not be found.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Hypothetical type of the resource which does not exist</p>
+     * <p>The resource type could not be found.</p>
      */
     inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

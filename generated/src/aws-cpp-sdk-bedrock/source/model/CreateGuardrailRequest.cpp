@@ -58,6 +58,12 @@ Aws::String CreateGuardrailRequest::SerializePayload() const
 
   }
 
+  if(m_crossRegionConfigHasBeenSet)
+  {
+   payload.WithObject("crossRegionConfig", m_crossRegionConfig.Jsonize());
+
+  }
+
   if(m_blockedInputMessagingHasBeenSet)
   {
    payload.WithString("blockedInputMessaging", m_blockedInputMessaging);

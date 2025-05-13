@@ -40,6 +40,11 @@ EnabledBaselineDetails& EnabledBaselineDetails::operator =(JsonView jsonValue)
     m_baselineVersion = jsonValue.GetString("baselineVersion");
     m_baselineVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("driftStatusSummary"))
+  {
+    m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
+    m_driftStatusSummaryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -86,6 +91,12 @@ JsonValue EnabledBaselineDetails::Jsonize() const
   if(m_baselineVersionHasBeenSet)
   {
    payload.WithString("baselineVersion", m_baselineVersion);
+
+  }
+
+  if(m_driftStatusSummaryHasBeenSet)
+  {
+   payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
 
   }
 

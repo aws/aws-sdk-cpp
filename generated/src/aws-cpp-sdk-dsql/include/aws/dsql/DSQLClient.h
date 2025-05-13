@@ -19,11 +19,11 @@ namespace DSQL
    * <p>This is an interface reference for Amazon Aurora DSQL. It contains
    * documentation for one of the programming or command line interfaces you can use
    * to manage Amazon Aurora DSQL.</p> <p>Amazon Aurora DSQL is a serverless,
-   * distributed SQL database suitable for workloads of any size. Aurora DSQL is
-   * available in both single-Region and multi-Region configurations, so your
-   * clusters and databases are always available even if an Availability Zone or an
-   * Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using
-   * your data to acquire new insights for your business and customers.</p>
+   * distributed SQL database suitable for workloads of any size. is available in
+   * both single-Region and multi-Region configurations, so your clusters and
+   * databases are always available even if an Availability Zone or an Amazon Web
+   * Services Region are unavailable. lets you focus on using your data to acquire
+   * new insights for your business and customers.</p>
    */
   class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>
   {
@@ -84,7 +84,31 @@ namespace DSQL
         virtual ~DSQLClient();
 
         /**
-         * <p>Creates a cluster in Amazon Aurora DSQL.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation creates a cluster in Amazon Aurora DSQL. You need the
+         * following permissions to use this operation.</p> <p>Permission to create a
+         * cluster.</p> <dl> <dt>dsql:CreateCluster</dt> <dd> <p>Resources:
+         * arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/ *</p> </dd> </dl> <p>
+         * Permission to add tags to a resource.</p> <dl> <dt>dsql:TagResource</dt> <dd>
+         * <p>Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/ *</p> </dd>
+         * </dl> <p>Permission to configure multi-region properties for a cluster.</p> <dl>
+         * <dt>dsql:PutMultiRegionProperties</dt> <dd> <p>Resources:
+         * arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/ *</p> </dd> </dl> <p>When
+         * specifying multiRegionProperties.clusters.</p> <dl> <dt>dsql:AddPeerCluster</dt>
+         * <dd> <p>Permission to add peer clusters.</p> <p>Resources:</p> <ul> <li>
+         * <p>Local cluster: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/ *</p>
+         * </li> <li> <p>Each peer cluster: exact ARN of each specified peer cluster</p>
+         * </li> </ul> </dd> </dl> <p>When specifying
+         * multiRegionProperties.witnessRegion.</p> <dl> <dt>dsql:PutWitnessRegion</dt>
+         * <dd> <p>Permission to set a witness region.</p> <p>Resources:
+         * arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/ *</p> <p>Condition Keys:
+         * <code>dsql:WitnessRegion</code> (matching the specified witness region)</p>
+         *  <p>This permission is checked both in the cluster Region and in the
+         * witness Region.</p>  </dd> </dl>  <p> <b>Important Notes for
+         * Multi-Region Operations</b> </p> <ul> <li> <p>The witness region specified in
+         * <code>multiRegionProperties.witnessRegion</code> cannot be the same as the
+         * cluster's Region.</p> </li> <li> <p>When updating clusters with peer
+         * relationships, permissions are checked for both adding and removing peers.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -106,34 +130,6 @@ namespace DSQL
         void CreateClusterAsync(const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateClusterRequestT& request = {}) const
         {
             return SubmitAsync(&DSQLClient::CreateCluster, request, handler, context);
-        }
-
-        /**
-         * <p>Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters
-         * require a linked Region list, which is an array of the Regions in which you want
-         * to create linked clusters. Multi-Region clusters require a witness Region, which
-         * participates in quorum in failure scenarios.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::CreateMultiRegionClustersOutcome CreateMultiRegionClusters(const Model::CreateMultiRegionClustersRequest& request) const;
-
-        /**
-         * A Callable wrapper for CreateMultiRegionClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename CreateMultiRegionClustersRequestT = Model::CreateMultiRegionClustersRequest>
-        Model::CreateMultiRegionClustersOutcomeCallable CreateMultiRegionClustersCallable(const CreateMultiRegionClustersRequestT& request) const
-        {
-            return SubmitCallable(&DSQLClient::CreateMultiRegionClusters, request);
-        }
-
-        /**
-         * An Async wrapper for CreateMultiRegionClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename CreateMultiRegionClustersRequestT = Model::CreateMultiRegionClustersRequest>
-        void CreateMultiRegionClustersAsync(const CreateMultiRegionClustersRequestT& request, const CreateMultiRegionClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&DSQLClient::CreateMultiRegionClusters, request, handler, context);
         }
 
         /**
@@ -159,32 +155,6 @@ namespace DSQL
         void DeleteClusterAsync(const DeleteClusterRequestT& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DSQLClient::DeleteCluster, request, handler, context);
-        }
-
-        /**
-         * <p>Deletes a multi-Region cluster in Amazon Aurora DSQL.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DeleteMultiRegionClustersOutcome DeleteMultiRegionClusters(const Model::DeleteMultiRegionClustersRequest& request) const;
-
-        /**
-         * A Callable wrapper for DeleteMultiRegionClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DeleteMultiRegionClustersRequestT = Model::DeleteMultiRegionClustersRequest>
-        Model::DeleteMultiRegionClustersOutcomeCallable DeleteMultiRegionClustersCallable(const DeleteMultiRegionClustersRequestT& request) const
-        {
-            return SubmitCallable(&DSQLClient::DeleteMultiRegionClusters, request);
-        }
-
-        /**
-         * An Async wrapper for DeleteMultiRegionClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DeleteMultiRegionClustersRequestT = Model::DeleteMultiRegionClustersRequest>
-        void DeleteMultiRegionClustersAsync(const DeleteMultiRegionClustersRequestT& request, const DeleteMultiRegionClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&DSQLClient::DeleteMultiRegionClusters, request, handler, context);
         }
 
         /**
@@ -338,7 +308,18 @@ namespace DSQL
         }
 
         /**
-         * <p>Updates a cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a cluster.</p> <p> <b>Example IAM Policy for Multi-Region
+         * Operations</b> </p> <p>The following IAM policy grants permissions for
+         * multi-Region operations.</p> <p>The <code>dsql:RemovePeerCluster</code>
+         * permission uses a wildcard ARN pattern to simplify permission management during
+         * updates.</p>  <p> <b>Important Notes for Multi-Region Operations</b>
+         * </p> <ul> <li> <p>The witness region specified in
+         * <code>multiRegionProperties.witnessRegion</code> cannot be the same as the
+         * cluster's Region.</p> </li> <li> <p>When updating clusters with peer
+         * relationships, permissions are checked for both adding and removing peers.</p>
+         * </li> <li> <p>The <code>dsql:RemovePeerCluster</code> permission uses a wildcard
+         * ARN pattern to simplify permission management during updates.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/UpdateCluster">AWS
          * API Reference</a></p>
          */

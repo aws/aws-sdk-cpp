@@ -27,9 +27,13 @@ namespace ControlTower
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledControl.html">GetEnabledControl</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetControlOperation.html">GetControlOperation</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListControlOperations.html">ListControlOperations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledControls.html">ListEnabledControls</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledControl.html">ResetEnabledControl</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html">UpdateEnabledControl</a>
    * </p> </li> </ul> </li> <li> <p> <a

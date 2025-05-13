@@ -45,25 +45,6 @@ UpdateClusterResult& UpdateClusterResult::operator =(const Aws::AmazonWebService
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletionProtectionEnabled"))
-  {
-    m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
-    m_deletionProtectionEnabledHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("witnessRegion"))
-  {
-    m_witnessRegion = jsonValue.GetString("witnessRegion");
-    m_witnessRegionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("linkedClusterArns"))
-  {
-    Aws::Utils::Array<JsonView> linkedClusterArnsJsonList = jsonValue.GetArray("linkedClusterArns");
-    for(unsigned linkedClusterArnsIndex = 0; linkedClusterArnsIndex < linkedClusterArnsJsonList.GetLength(); ++linkedClusterArnsIndex)
-    {
-      m_linkedClusterArns.push_back(linkedClusterArnsJsonList[linkedClusterArnsIndex].AsString());
-    }
-    m_linkedClusterArnsHasBeenSet = true;
-  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

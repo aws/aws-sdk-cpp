@@ -19,11 +19,8 @@
 #include <aws/dsql/model/ConflictException.h>
 #include <aws/dsql/model/CreateClusterRequest.h>
 #include <aws/dsql/model/CreateClusterResult.h>
-#include <aws/dsql/model/CreateMultiRegionClustersRequest.h>
-#include <aws/dsql/model/CreateMultiRegionClustersResult.h>
 #include <aws/dsql/model/DeleteClusterRequest.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
-#include <aws/dsql/model/DeleteMultiRegionClustersRequest.h>
 #include <aws/dsql/model/GetClusterRequest.h>
 #include <aws/dsql/model/GetClusterResult.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>
@@ -34,6 +31,7 @@
 #include <aws/dsql/model/ListClustersResult.h>
 #include <aws/dsql/model/ListTagsForResourceRequest.h>
 #include <aws/dsql/model/ListTagsForResourceResult.h>
+#include <aws/dsql/model/MultiRegionProperties.h>
 #include <aws/dsql/model/ResourceNotFoundException.h>
 #include <aws/dsql/model/ServiceQuotaExceededException.h>
 #include <aws/dsql/model/TagResourceRequest.h>

@@ -19,7 +19,6 @@
 
 /* Service model headers required in DSQLClient header */
 #include <aws/dsql/model/CreateClusterResult.h>
-#include <aws/dsql/model/CreateMultiRegionClustersResult.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
 #include <aws/dsql/model/GetClusterResult.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameResult.h>
@@ -70,9 +69,7 @@ namespace Aws
     {
       /* Service model forward declarations required in DSQLClient header */
       class CreateClusterRequest;
-      class CreateMultiRegionClustersRequest;
       class DeleteClusterRequest;
-      class DeleteMultiRegionClustersRequest;
       class GetClusterRequest;
       class GetVpcEndpointServiceNameRequest;
       class ListClustersRequest;
@@ -84,9 +81,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateClusterResult, DSQLError> CreateClusterOutcome;
-      typedef Aws::Utils::Outcome<CreateMultiRegionClustersResult, DSQLError> CreateMultiRegionClustersOutcome;
       typedef Aws::Utils::Outcome<DeleteClusterResult, DSQLError> DeleteClusterOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, DSQLError> DeleteMultiRegionClustersOutcome;
       typedef Aws::Utils::Outcome<GetClusterResult, DSQLError> GetClusterOutcome;
       typedef Aws::Utils::Outcome<GetVpcEndpointServiceNameResult, DSQLError> GetVpcEndpointServiceNameOutcome;
       typedef Aws::Utils::Outcome<ListClustersResult, DSQLError> ListClustersOutcome;
@@ -98,9 +93,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-      typedef std::future<CreateMultiRegionClustersOutcome> CreateMultiRegionClustersOutcomeCallable;
       typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-      typedef std::future<DeleteMultiRegionClustersOutcome> DeleteMultiRegionClustersOutcomeCallable;
       typedef std::future<GetClusterOutcome> GetClusterOutcomeCallable;
       typedef std::future<GetVpcEndpointServiceNameOutcome> GetVpcEndpointServiceNameOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
@@ -115,9 +108,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const DSQLClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
-    typedef std::function<void(const DSQLClient*, const Model::CreateMultiRegionClustersRequest&, const Model::CreateMultiRegionClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiRegionClustersResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
-    typedef std::function<void(const DSQLClient*, const Model::DeleteMultiRegionClustersRequest&, const Model::DeleteMultiRegionClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiRegionClustersResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::GetClusterRequest&, const Model::GetClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::GetVpcEndpointServiceNameRequest&, const Model::GetVpcEndpointServiceNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpcEndpointServiceNameResponseReceivedHandler;
     typedef std::function<void(const DSQLClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;

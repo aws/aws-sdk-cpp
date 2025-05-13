@@ -50,19 +50,19 @@ GetClusterResult& GetClusterResult::operator =(const Aws::AmazonWebServiceResult
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("witnessRegion"))
+  if(jsonValue.ValueExists("multiRegionProperties"))
   {
-    m_witnessRegion = jsonValue.GetString("witnessRegion");
-    m_witnessRegionHasBeenSet = true;
+    m_multiRegionProperties = jsonValue.GetObject("multiRegionProperties");
+    m_multiRegionPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("linkedClusterArns"))
+  if(jsonValue.ValueExists("tags"))
   {
-    Aws::Utils::Array<JsonView> linkedClusterArnsJsonList = jsonValue.GetArray("linkedClusterArns");
-    for(unsigned linkedClusterArnsIndex = 0; linkedClusterArnsIndex < linkedClusterArnsJsonList.GetLength(); ++linkedClusterArnsIndex)
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
     {
-      m_linkedClusterArns.push_back(linkedClusterArnsJsonList[linkedClusterArnsIndex].AsString());
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
-    m_linkedClusterArnsHasBeenSet = true;
+    m_tagsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -40,6 +40,11 @@ EnabledBaselineSummary& EnabledBaselineSummary::operator =(JsonView jsonValue)
     m_baselineVersion = jsonValue.GetString("baselineVersion");
     m_baselineVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("driftStatusSummary"))
+  {
+    m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
+    m_driftStatusSummaryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("parentIdentifier"))
   {
     m_parentIdentifier = jsonValue.GetString("parentIdentifier");
@@ -77,6 +82,12 @@ JsonValue EnabledBaselineSummary::Jsonize() const
   if(m_baselineVersionHasBeenSet)
   {
    payload.WithString("baselineVersion", m_baselineVersion);
+
+  }
+
+  if(m_driftStatusSummaryHasBeenSet)
+  {
+   payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
 
   }
 

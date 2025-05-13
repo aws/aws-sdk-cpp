@@ -28,6 +28,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_multiRegionPropertiesHasBeenSet)
+  {
+   payload.WithObject("multiRegionProperties", m_multiRegionProperties.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

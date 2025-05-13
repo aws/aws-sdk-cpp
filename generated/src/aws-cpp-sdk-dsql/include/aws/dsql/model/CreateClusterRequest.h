@@ -8,6 +8,7 @@
 #include <aws/dsql/DSQLRequest.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dsql/model/MultiRegionProperties.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -78,6 +79,19 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateClusterRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings when creating a multi-Region cluster, including
+     * the witness region and linked cluster properties.</p>
+     */
+    inline const MultiRegionProperties& GetMultiRegionProperties() const { return m_multiRegionProperties; }
+    inline bool MultiRegionPropertiesHasBeenSet() const { return m_multiRegionPropertiesHasBeenSet; }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    void SetMultiRegionProperties(MultiRegionPropertiesT&& value) { m_multiRegionPropertiesHasBeenSet = true; m_multiRegionProperties = std::forward<MultiRegionPropertiesT>(value); }
+    template<typename MultiRegionPropertiesT = MultiRegionProperties>
+    CreateClusterRequest& WithMultiRegionProperties(MultiRegionPropertiesT&& value) { SetMultiRegionProperties(std::forward<MultiRegionPropertiesT>(value)); return *this;}
+    ///@}
   private:
 
     bool m_deletionProtectionEnabled{false};
@@ -88,6 +102,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    MultiRegionProperties m_multiRegionProperties;
+    bool m_multiRegionPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

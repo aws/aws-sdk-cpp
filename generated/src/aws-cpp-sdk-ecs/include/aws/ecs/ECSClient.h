@@ -1549,13 +1549,8 @@ namespace ECS
          * ARNs which are already associated with the <code>clientToken</code>. </p> <p>To
          * fix this issue:</p> <ul> <li> <p>Run <code>RunTask</code> with a unique
          * <code>clientToken</code>.</p> </li> <li> <p>Run <code>RunTask</code> with the
-         * <code>clientToken</code> and the original set of parameters</p> </li> </ul>
-         * <p>If you get a <code>ClientException</code>error, the <code>RunTask</code>
-         * could not be processed because you use managed scaling and there is a capacity
-         * error because the quota of tasks in the <code>PROVISIONING</code> per cluster
-         * has been reached. For information about the service quotas, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
-         * ECS service quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>clientToken</code> and the original set of parameters</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
          * Reference</a></p>
          */
@@ -1618,14 +1613,8 @@ namespace ECS
         }
 
         /**
-         * <p>Stops an ongoing service deployment.</p> <p>The following stop types are
-         * avaiable:</p> <ul> <li> <p>ROLLBACK - This option rolls back the service
-         * deployment to the previous service revision. </p> <p>You can use this option
-         * even if you didn't configure the service deployment for the rollback option.
-         * </p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping
-         * Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an ongoing service deployment.</p>  <p>StopServiceDeployment
+         * isn't currently supported.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">AWS
          * API Reference</a></p>
          */

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controltower/model/EnabledBaselineDriftStatusSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/controltower/model/EnablementStatusSummary.h>
 #include <aws/controltower/model/EnabledBaselineParameterSummary.h>
@@ -80,6 +81,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The drift status of the enabled baseline.</p>
+     */
+    inline const EnabledBaselineDriftStatusSummary& GetDriftStatusSummary() const { return m_driftStatusSummary; }
+    inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
+    template<typename DriftStatusSummaryT = EnabledBaselineDriftStatusSummary>
+    void SetDriftStatusSummary(DriftStatusSummaryT&& value) { m_driftStatusSummaryHasBeenSet = true; m_driftStatusSummary = std::forward<DriftStatusSummaryT>(value); }
+    template<typename DriftStatusSummaryT = EnabledBaselineDriftStatusSummary>
+    EnabledBaselineDetails& WithDriftStatusSummary(DriftStatusSummaryT&& value) { SetDriftStatusSummary(std::forward<DriftStatusSummaryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Shows the parameters that are applied when enabling this
      * <code>Baseline</code>.</p>
      */
@@ -139,6 +152,9 @@ namespace Model
 
     Aws::String m_baselineVersion;
     bool m_baselineVersionHasBeenSet = false;
+
+    EnabledBaselineDriftStatusSummary m_driftStatusSummary;
+    bool m_driftStatusSummaryHasBeenSet = false;
 
     Aws::Vector<EnabledBaselineParameterSummary> m_parameters;
     bool m_parametersHasBeenSet = false;

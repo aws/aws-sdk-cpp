@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Description of the error</p>
+     * <p>The service exception for exceeding a quota.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifier of the resource affected</p>
+     * <p>The resource ID exceeds a quota.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of the resource affected</p>
+     * <p>The resource type exceeds a quota.</p>
      */
     inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -75,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service Quotas requirement to identify originating service</p>
+     * <p>The request exceeds a service quota.</p>
      */
     inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -87,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service Quotas requirement to identify originating quota</p>
+     * <p>The service exceeds a quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
