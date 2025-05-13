@@ -172,8 +172,8 @@ namespace Model
     DetailType m_detailType{DetailType::NOT_SET};
     bool m_detailTypeHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

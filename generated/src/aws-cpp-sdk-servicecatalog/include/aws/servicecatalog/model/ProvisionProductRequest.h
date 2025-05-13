@@ -249,8 +249,8 @@ namespace Model
     Aws::Vector<Aws::String> m_notificationArns;
     bool m_notificationArnsHasBeenSet = false;
 
-    Aws::String m_provisionToken;
-    bool m_provisionTokenHasBeenSet = false;
+    Aws::String m_provisionToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_provisionTokenHasBeenSet = true;
   };
 
 } // namespace Model

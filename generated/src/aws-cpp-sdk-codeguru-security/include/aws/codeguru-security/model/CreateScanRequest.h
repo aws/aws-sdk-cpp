@@ -131,8 +131,8 @@ namespace Model
     AnalysisType m_analysisType{AnalysisType::NOT_SET};
     bool m_analysisTypeHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     ResourceId m_resourceId;
     bool m_resourceIdHasBeenSet = false;

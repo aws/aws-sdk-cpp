@@ -253,8 +253,8 @@ namespace Model
     Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
     bool m_parameterTemplateHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;

@@ -136,8 +136,8 @@ namespace Model
     Aws::String m_awsRegion;
     bool m_awsRegionHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     LogicalResourceId m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet = false;

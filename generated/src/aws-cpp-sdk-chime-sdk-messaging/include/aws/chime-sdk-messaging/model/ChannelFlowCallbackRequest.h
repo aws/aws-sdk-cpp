@@ -83,8 +83,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_callbackId;
-    bool m_callbackIdHasBeenSet = false;
+    Aws::String m_callbackId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_callbackIdHasBeenSet = true;
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;

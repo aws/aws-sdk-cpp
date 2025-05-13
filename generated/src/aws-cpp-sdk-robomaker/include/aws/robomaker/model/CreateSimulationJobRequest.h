@@ -210,8 +210,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     OutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet = false;

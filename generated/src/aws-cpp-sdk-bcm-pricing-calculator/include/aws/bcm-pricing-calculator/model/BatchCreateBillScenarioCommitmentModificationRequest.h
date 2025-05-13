@@ -84,8 +84,8 @@ namespace Model
     Aws::Vector<BatchCreateBillScenarioCommitmentModificationEntry> m_commitmentModifications;
     bool m_commitmentModificationsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

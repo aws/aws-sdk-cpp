@@ -113,8 +113,8 @@ namespace Model
     double m_userMatchThreshold{0.0};
     bool m_userMatchThresholdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

@@ -85,8 +85,8 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     PutMultiRegionAccessPointPolicyInput m_details;
     bool m_detailsHasBeenSet = false;

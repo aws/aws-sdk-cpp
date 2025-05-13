@@ -78,8 +78,8 @@ namespace Model
     IdentityProviderConfig m_identityProviderConfig;
     bool m_identityProviderConfigHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

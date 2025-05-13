@@ -79,8 +79,8 @@ namespace Model
     Aws::String m_pipelineExecutionArn;
     bool m_pipelineExecutionArnHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     ParallelismConfiguration m_parallelismConfiguration;
     bool m_parallelismConfigurationHasBeenSet = false;

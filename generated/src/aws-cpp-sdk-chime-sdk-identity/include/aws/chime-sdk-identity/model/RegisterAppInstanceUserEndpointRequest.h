@@ -141,8 +141,8 @@ namespace Model
     EndpointAttributes m_endpointAttributes;
     bool m_endpointAttributesHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     AllowMessages m_allowMessages{AllowMessages::NOT_SET};
     bool m_allowMessagesHasBeenSet = false;

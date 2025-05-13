@@ -206,8 +206,8 @@ namespace Model
     Logging m_logging;
     bool m_loggingHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     UpdateAccessConfigRequest m_accessConfig;
     bool m_accessConfigHasBeenSet = false;

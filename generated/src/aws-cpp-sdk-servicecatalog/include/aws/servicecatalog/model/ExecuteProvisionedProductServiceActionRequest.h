@@ -114,8 +114,8 @@ namespace Model
     Aws::String m_serviceActionId;
     bool m_serviceActionIdHasBeenSet = false;
 
-    Aws::String m_executeToken;
-    bool m_executeTokenHasBeenSet = false;
+    Aws::String m_executeToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_executeTokenHasBeenSet = true;
 
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet = false;

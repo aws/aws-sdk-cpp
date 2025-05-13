@@ -140,8 +140,8 @@ namespace Model
     Logging m_logging{Logging::NOT_SET};
     bool m_loggingHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

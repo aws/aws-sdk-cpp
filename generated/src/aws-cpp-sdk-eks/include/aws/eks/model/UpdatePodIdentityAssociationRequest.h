@@ -92,8 +92,8 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

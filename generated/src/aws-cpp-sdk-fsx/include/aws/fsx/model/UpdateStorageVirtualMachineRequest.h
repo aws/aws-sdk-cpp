@@ -88,8 +88,8 @@ namespace Model
     UpdateSvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
     bool m_activeDirectoryConfigurationHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_storageVirtualMachineId;
     bool m_storageVirtualMachineIdHasBeenSet = false;

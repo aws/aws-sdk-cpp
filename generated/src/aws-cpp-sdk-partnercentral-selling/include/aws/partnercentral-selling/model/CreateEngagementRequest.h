@@ -123,8 +123,8 @@ namespace Model
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<EngagementContextDetails> m_contexts;
     bool m_contextsHasBeenSet = false;

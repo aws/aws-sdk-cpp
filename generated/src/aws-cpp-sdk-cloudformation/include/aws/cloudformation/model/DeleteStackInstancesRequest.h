@@ -184,8 +184,8 @@ namespace Model
     bool m_retainStacks{false};
     bool m_retainStacksHasBeenSet = false;
 
-    Aws::String m_operationId;
-    bool m_operationIdHasBeenSet = false;
+    Aws::String m_operationId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_operationIdHasBeenSet = true;
 
     CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;

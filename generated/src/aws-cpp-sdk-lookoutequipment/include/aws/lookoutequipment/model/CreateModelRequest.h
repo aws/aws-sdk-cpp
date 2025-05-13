@@ -257,8 +257,8 @@ namespace Model
     LabelsInputConfiguration m_labelsInputConfiguration;
     bool m_labelsInputConfigurationHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Utils::DateTime m_trainingDataStartTime{};
     bool m_trainingDataStartTimeHasBeenSet = false;

@@ -74,8 +74,8 @@ namespace Model
     Aws::String m_fileCacheId;
     bool m_fileCacheIdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     UpdateFileCacheLustreConfiguration m_lustreConfiguration;
     bool m_lustreConfigurationHasBeenSet = false;

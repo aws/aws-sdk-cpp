@@ -256,8 +256,8 @@ namespace Model
     ChatMessage m_initialMessage;
     bool m_initialMessageHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     int m_chatDurationInMinutes{0};
     bool m_chatDurationInMinutesHasBeenSet = false;

@@ -169,8 +169,8 @@ namespace Model
     Aws::Vector<Association> m_associations;
     bool m_associationsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet = false;

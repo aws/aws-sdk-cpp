@@ -98,8 +98,8 @@ namespace Model
     NewAssertionRule m_assertionRule;
     bool m_assertionRuleHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     NewGatingRule m_gatingRule;
     bool m_gatingRuleHasBeenSet = false;

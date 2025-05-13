@@ -119,8 +119,8 @@ namespace Model
     ConnectorProvisioningConfig m_connectorProvisioningConfig;
     bool m_connectorProvisioningConfigHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

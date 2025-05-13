@@ -123,8 +123,8 @@ namespace Model
     Aws::String m_adapterId;
     bool m_adapterIdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     AdapterVersionDatasetConfig m_datasetConfig;
     bool m_datasetConfigHasBeenSet = false;

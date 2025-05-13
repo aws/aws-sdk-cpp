@@ -230,8 +230,8 @@ namespace Model
     EntityRecognizerInputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;

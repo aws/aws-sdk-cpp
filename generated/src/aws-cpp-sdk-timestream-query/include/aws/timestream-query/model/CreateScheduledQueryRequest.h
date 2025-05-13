@@ -204,8 +204,8 @@ namespace Model
     TargetConfiguration m_targetConfiguration;
     bool m_targetConfigurationHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_scheduledQueryExecutionRoleArn;
     bool m_scheduledQueryExecutionRoleArnHasBeenSet = false;

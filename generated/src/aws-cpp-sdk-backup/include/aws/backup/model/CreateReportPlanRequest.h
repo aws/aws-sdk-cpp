@@ -142,8 +142,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_reportPlanTags;
     bool m_reportPlanTagsHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
   };
 
 } // namespace Model

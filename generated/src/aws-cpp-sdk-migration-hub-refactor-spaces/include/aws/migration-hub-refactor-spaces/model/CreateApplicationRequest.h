@@ -129,8 +129,8 @@ namespace Model
     ApiGatewayProxyInput m_apiGatewayProxy;
     bool m_apiGatewayProxyHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_environmentIdentifier;
     bool m_environmentIdentifierHasBeenSet = false;

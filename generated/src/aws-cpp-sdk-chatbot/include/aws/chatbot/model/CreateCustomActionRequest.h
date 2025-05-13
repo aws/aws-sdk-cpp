@@ -136,8 +136,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet = false;

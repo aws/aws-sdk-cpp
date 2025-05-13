@@ -234,8 +234,8 @@ namespace Model
     Aws::String m_portalContactEmail;
     bool m_portalContactEmailHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     ImageFile m_portalLogoImageFile;
     bool m_portalLogoImageFileHasBeenSet = false;

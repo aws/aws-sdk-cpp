@@ -110,8 +110,8 @@ namespace Model
     Aws::String m_attachmentName;
     bool m_attachmentNameHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_connectionToken;
     bool m_connectionTokenHasBeenSet = false;

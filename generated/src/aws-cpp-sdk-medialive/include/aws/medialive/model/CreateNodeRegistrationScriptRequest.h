@@ -131,8 +131,8 @@ namespace Model
     Aws::Vector<NodeInterfaceMapping> m_nodeInterfaceMappings;
     bool m_nodeInterfaceMappingsHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     NodeRole m_role{NodeRole::NOT_SET};
     bool m_roleHasBeenSet = false;

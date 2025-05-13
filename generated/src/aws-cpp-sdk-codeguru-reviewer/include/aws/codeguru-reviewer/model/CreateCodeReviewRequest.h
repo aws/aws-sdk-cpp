@@ -102,8 +102,8 @@ namespace Model
     CodeReviewType m_type;
     bool m_typeHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

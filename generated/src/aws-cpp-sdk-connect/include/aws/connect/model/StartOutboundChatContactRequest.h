@@ -251,8 +251,8 @@ namespace Model
     Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
     bool m_supportedMessagingContentTypesHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

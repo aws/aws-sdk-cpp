@@ -231,8 +231,8 @@ namespace Model
     Aws::Vector<Aws::String> m_parallelDataNames;
     bool m_parallelDataNamesHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     TranslationSettings m_settings;
     bool m_settingsHasBeenSet = false;

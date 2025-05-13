@@ -122,8 +122,8 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     Aws::Vector<RouteCreateRequest> m_routes;
     bool m_routesHasBeenSet = false;

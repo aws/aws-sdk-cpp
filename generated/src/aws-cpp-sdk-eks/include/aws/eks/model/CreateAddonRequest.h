@@ -205,8 +205,8 @@ namespace Model
     ResolveConflicts m_resolveConflicts{ResolveConflicts::NOT_SET};
     bool m_resolveConflictsHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

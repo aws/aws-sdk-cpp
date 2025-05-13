@@ -120,8 +120,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     TaskTargetRunStatus m_targetRunStatus{TaskTargetRunStatus::NOT_SET};
     bool m_targetRunStatusHasBeenSet = false;

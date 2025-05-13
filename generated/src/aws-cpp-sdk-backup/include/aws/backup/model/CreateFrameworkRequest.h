@@ -119,8 +119,8 @@ namespace Model
     Aws::Vector<FrameworkControl> m_frameworkControls;
     bool m_frameworkControlsHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_frameworkTags;
     bool m_frameworkTagsHasBeenSet = false;

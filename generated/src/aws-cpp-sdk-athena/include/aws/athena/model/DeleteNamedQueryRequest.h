@@ -48,8 +48,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_namedQueryId;
-    bool m_namedQueryIdHasBeenSet = false;
+    Aws::String m_namedQueryId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_namedQueryIdHasBeenSet = true;
   };
 
 } // namespace Model

@@ -74,8 +74,8 @@ namespace Model
     Aws::String m_lensAlias;
     bool m_lensAliasHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     LensStatusType m_lensStatus{LensStatusType::NOT_SET};
     bool m_lensStatusHasBeenSet = false;

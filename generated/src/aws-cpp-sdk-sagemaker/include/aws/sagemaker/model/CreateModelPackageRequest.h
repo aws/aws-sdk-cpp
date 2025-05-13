@@ -420,8 +420,8 @@ namespace Model
     ModelMetrics m_modelMetrics;
     bool m_modelMetricsHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;

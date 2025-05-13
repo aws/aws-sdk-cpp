@@ -137,3 +137,9 @@ TEST_F(DsqlUnitTest, ShouldFailPresignUrlGenerateDBConnectSuperuserAuthToken) {
   EXPECT_FALSE(emptyRegionOutcome.IsSuccess());
   EXPECT_EQ("all argments must be non-empty", emptyRegionOutcome.GetError().GetMessage());
 }
+
+TEST_F(DsqlUnitTest, CreateClusterShouldDefaultIdempotencyToken) {
+  DSQL::Model::CreateClusterRequest request{};
+  EXPECT_FALSE(request.GetClientToken().empty());
+  EXPECT_TRUE(request.ClientTokenHasBeenSet());
+}

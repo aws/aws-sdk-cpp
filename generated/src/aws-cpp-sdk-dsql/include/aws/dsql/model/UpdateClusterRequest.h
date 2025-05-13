@@ -94,8 +94,8 @@ namespace Model
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     MultiRegionProperties m_multiRegionProperties;
     bool m_multiRegionPropertiesHasBeenSet = false;

@@ -137,8 +137,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet = false;
+    Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_creatorRequestIdHasBeenSet = true;
 
     Aws::String m_firewallRuleGroupId;
     bool m_firewallRuleGroupIdHasBeenSet = false;

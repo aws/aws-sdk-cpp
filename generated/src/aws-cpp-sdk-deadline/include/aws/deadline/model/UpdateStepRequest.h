@@ -111,8 +111,8 @@ namespace Model
     StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
     bool m_targetTaskRunStatusHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;

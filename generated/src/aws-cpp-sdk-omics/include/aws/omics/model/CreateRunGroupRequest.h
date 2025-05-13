@@ -134,8 +134,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+    Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_requestIdHasBeenSet = true;
 
     int m_maxGpus{0};
     bool m_maxGpusHasBeenSet = false;

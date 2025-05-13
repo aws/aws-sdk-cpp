@@ -121,8 +121,8 @@ namespace Model
     Aws::String m_provisionedProductId;
     bool m_provisionedProductIdHasBeenSet = false;
 
-    Aws::String m_terminateToken;
-    bool m_terminateTokenHasBeenSet = false;
+    Aws::String m_terminateToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_terminateTokenHasBeenSet = true;
 
     bool m_ignoreErrors{false};
     bool m_ignoreErrorsHasBeenSet = false;

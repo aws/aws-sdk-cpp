@@ -88,8 +88,8 @@ namespace Model
     Aws::String m_s3uri;
     bool m_s3uriHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

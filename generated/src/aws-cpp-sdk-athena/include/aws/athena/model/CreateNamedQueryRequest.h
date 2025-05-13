@@ -128,8 +128,8 @@ namespace Model
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_workGroup;
     bool m_workGroupHasBeenSet = false;

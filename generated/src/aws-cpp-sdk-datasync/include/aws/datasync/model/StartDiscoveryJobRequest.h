@@ -100,8 +100,8 @@ namespace Model
     int m_collectionDurationMinutes{0};
     bool m_collectionDurationMinutesHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;

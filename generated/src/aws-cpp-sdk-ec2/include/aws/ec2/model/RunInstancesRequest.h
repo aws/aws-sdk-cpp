@@ -828,8 +828,8 @@ namespace Model
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet = false;

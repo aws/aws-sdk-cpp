@@ -261,8 +261,8 @@ namespace Model
     Aws::String m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_classification;
     bool m_classificationHasBeenSet = false;

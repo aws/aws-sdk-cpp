@@ -131,8 +131,8 @@ namespace Model
     Aws::Vector<Aws::String> m_kubernetesGroups;
     bool m_kubernetesGroupsHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;

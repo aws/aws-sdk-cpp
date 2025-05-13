@@ -119,8 +119,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     SidewalkCreateDeviceProfile m_sidewalk;
     bool m_sidewalkHasBeenSet = false;

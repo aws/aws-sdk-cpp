@@ -93,8 +93,8 @@ namespace Model
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     int m_importedFileChunkSize{0};
     bool m_importedFileChunkSizeHasBeenSet = false;

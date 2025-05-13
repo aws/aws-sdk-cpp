@@ -308,8 +308,8 @@ namespace Model
     Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
     bool m_authenticationProvidersHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet = false;

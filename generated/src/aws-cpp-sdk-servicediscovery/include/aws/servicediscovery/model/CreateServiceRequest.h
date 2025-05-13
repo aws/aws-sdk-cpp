@@ -195,8 +195,8 @@ namespace Model
     Aws::String m_namespaceId;
     bool m_namespaceIdHasBeenSet = false;
 
-    Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet = false;
+    Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_creatorRequestIdHasBeenSet = true;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

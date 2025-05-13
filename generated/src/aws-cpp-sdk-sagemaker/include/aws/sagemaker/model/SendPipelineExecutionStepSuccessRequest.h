@@ -84,8 +84,8 @@ namespace Model
     Aws::Vector<OutputParameter> m_outputParameters;
     bool m_outputParametersHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
   };
 
 } // namespace Model

@@ -145,8 +145,8 @@ namespace Model
     ApplicationSourceConfig m_applicationSourceConfig;
     bool m_applicationSourceConfigHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

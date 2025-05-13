@@ -97,8 +97,8 @@ namespace Model
     Aws::Vector<UserAlias> m_userAliases;
     bool m_userAliasesHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

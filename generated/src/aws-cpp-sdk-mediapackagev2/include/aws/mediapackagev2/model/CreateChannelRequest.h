@@ -161,8 +161,8 @@ namespace Model
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     InputType m_inputType{InputType::NOT_SET};
     bool m_inputTypeHasBeenSet = false;

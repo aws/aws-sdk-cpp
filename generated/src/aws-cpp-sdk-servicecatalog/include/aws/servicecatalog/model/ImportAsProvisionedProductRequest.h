@@ -129,8 +129,8 @@ namespace Model
     Aws::String m_physicalId;
     bool m_physicalIdHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
   };
 
 } // namespace Model

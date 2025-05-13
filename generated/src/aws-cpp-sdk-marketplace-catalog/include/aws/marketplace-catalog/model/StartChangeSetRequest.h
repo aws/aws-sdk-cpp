@@ -129,8 +129,8 @@ namespace Model
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet = false;
 
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
+    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientRequestTokenHasBeenSet = true;
 
     Aws::Vector<Tag> m_changeSetTags;
     bool m_changeSetTagsHasBeenSet = false;

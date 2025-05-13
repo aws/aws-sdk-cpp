@@ -216,8 +216,8 @@ namespace Model
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
