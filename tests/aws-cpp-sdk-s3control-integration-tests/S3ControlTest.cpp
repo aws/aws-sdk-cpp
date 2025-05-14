@@ -727,4 +727,25 @@ namespace
 
         CleanUpMRAPTest(bucketName, multiRegions, accessPointName);
     }
+
+
+
+TEST_F(S3ControlTest, TestRemoveHostPrefix)
+{
+    ClientConfiguration config;
+    config.region = Aws::Region::US_EAST_1;
+    auto s3controlClient = S3ControlClient(config);
+    Aws::String bucket = "test-ap-bucket--use2-az1--x-s3";
+    Aws::String accessPointName = "test-ap--use2-az1--xa-s3";
+    auto request = CreateAccessPointRequest{}
+    .WithName(accessPointName)
+    .WithBucket(bucket)
+    .WithAccountId(m_accountId)
+    .WithBucketAccountId(m_accountId);
+    auto resolveEndpointOutcome = s3controlClient.accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams());
+    EXPECT_TRUE(resolveEndpointOutcome.IsSuccess());
+    EXPECT_EQ(resolveEndpointOutcome.GetResult().GetURL(), "https://s3express-control.us-east-1.amazonaws.com");
+    auto createAccessPointOutcome = s3controlClient.CreateAccessPoint(request);
+    EXPECT_FALSE(createAccessPointOutcome.IsSuccess());
+}
 }
