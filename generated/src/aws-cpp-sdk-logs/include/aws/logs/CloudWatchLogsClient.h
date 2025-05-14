@@ -1218,10 +1218,10 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Lists the specified log groups. You can list all your log groups or filter
-         * the results by prefix. The results are ASCII-sorted by log group name.</p>
-         * <p>CloudWatch Logs doesn't support IAM policies that control access to the
-         * <code>DescribeLogGroups</code> action by using the
+         * <p>Returns information about log groups. You can return all your log groups or
+         * filter the results by prefix. The results are ASCII-sorted by log group
+         * name.</p> <p>CloudWatch Logs doesn't support IAM policies that control access to
+         * the <code>DescribeLogGroups</code> action by using the
          * <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other CloudWatch
          * Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
          * </code> condition key to control access. For more information about using tags
@@ -2006,6 +2006,42 @@ namespace CloudWatchLogs
         void ListLogAnomalyDetectorsAsync(const ListLogAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLogAnomalyDetectorsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::ListLogAnomalyDetectors, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of log groups in the Region in your account. If you are
+         * performing this action in a monitoring account, you can choose to also return
+         * log groups from source accounts that are linked to the monitoring account. For
+         * more information about using cross-account observability to set up monitoring
+         * accounts and source accounts, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">
+         * CloudWatch cross-account observability</a>.</p> <p>You can optionally filter the
+         * list by log group class and by using regular expressions in your request to
+         * match strings in the log group names.</p> <p>This operation is paginated. By
+         * default, your first use of this operation returns 50 results, and includes a
+         * token to use in a subsequent operation to return more results.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLogGroupsOutcome ListLogGroups(const Model::ListLogGroupsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListLogGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLogGroupsRequestT = Model::ListLogGroupsRequest>
+        Model::ListLogGroupsOutcomeCallable ListLogGroupsCallable(const ListLogGroupsRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::ListLogGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListLogGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLogGroupsRequestT = Model::ListLogGroupsRequest>
+        void ListLogGroupsAsync(const ListLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLogGroupsRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::ListLogGroups, request, handler, context);
         }
 
         /**

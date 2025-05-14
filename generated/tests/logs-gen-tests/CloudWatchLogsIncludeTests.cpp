@@ -154,6 +154,8 @@
 #include <aws/logs/model/ListLogAnomalyDetectorsResult.h>
 #include <aws/logs/model/ListLogGroupsForQueryRequest.h>
 #include <aws/logs/model/ListLogGroupsForQueryResult.h>
+#include <aws/logs/model/ListLogGroupsRequest.h>
+#include <aws/logs/model/ListLogGroupsResult.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/ListToMap.h>
@@ -165,6 +167,7 @@
 #include <aws/logs/model/LogGroup.h>
 #include <aws/logs/model/LogGroupClass.h>
 #include <aws/logs/model/LogGroupField.h>
+#include <aws/logs/model/LogGroupSummary.h>
 #include <aws/logs/model/LogStream.h>
 #include <aws/logs/model/LowerCaseString.h>
 #include <aws/logs/model/MalformedQueryException.h>

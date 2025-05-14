@@ -62,6 +62,17 @@ Aws::String DescribeLogGroupsRequest::SerializePayload() const
    payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
+  if(m_logGroupIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> logGroupIdentifiersJsonList(m_logGroupIdentifiers.size());
+   for(unsigned logGroupIdentifiersIndex = 0; logGroupIdentifiersIndex < logGroupIdentifiersJsonList.GetLength(); ++logGroupIdentifiersIndex)
+   {
+     logGroupIdentifiersJsonList[logGroupIdentifiersIndex].AsString(m_logGroupIdentifiers[logGroupIdentifiersIndex]);
+   }
+   payload.WithArray("logGroupIdentifiers", std::move(logGroupIdentifiersJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

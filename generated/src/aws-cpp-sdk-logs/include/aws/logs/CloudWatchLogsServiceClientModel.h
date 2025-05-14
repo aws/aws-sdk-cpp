@@ -56,6 +56,7 @@
 #include <aws/logs/model/ListAnomaliesResult.h>
 #include <aws/logs/model/ListIntegrationsResult.h>
 #include <aws/logs/model/ListLogAnomalyDetectorsResult.h>
+#include <aws/logs/model/ListLogGroupsResult.h>
 #include <aws/logs/model/ListLogGroupsForQueryResult.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/PutAccountPolicyResult.h>
@@ -75,6 +76,7 @@
 #include <aws/logs/model/TestTransformerResult.h>
 #include <aws/logs/model/UpdateDeliveryConfigurationResult.h>
 #include <aws/logs/model/DeleteResourcePolicyRequest.h>
+#include <aws/logs/model/ListLogGroupsRequest.h>
 #include <aws/logs/model/ListAnomaliesRequest.h>
 #include <aws/logs/model/DescribeQueriesRequest.h>
 #include <aws/logs/model/ListIntegrationsRequest.h>
@@ -193,6 +195,7 @@ namespace Aws
       class ListAnomaliesRequest;
       class ListIntegrationsRequest;
       class ListLogAnomalyDetectorsRequest;
+      class ListLogGroupsRequest;
       class ListLogGroupsForQueryRequest;
       class ListTagsForResourceRequest;
       class PutAccountPolicyRequest;
@@ -282,6 +285,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAnomaliesResult, CloudWatchLogsError> ListAnomaliesOutcome;
       typedef Aws::Utils::Outcome<ListIntegrationsResult, CloudWatchLogsError> ListIntegrationsOutcome;
       typedef Aws::Utils::Outcome<ListLogAnomalyDetectorsResult, CloudWatchLogsError> ListLogAnomalyDetectorsOutcome;
+      typedef Aws::Utils::Outcome<ListLogGroupsResult, CloudWatchLogsError> ListLogGroupsOutcome;
       typedef Aws::Utils::Outcome<ListLogGroupsForQueryResult, CloudWatchLogsError> ListLogGroupsForQueryOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
@@ -371,6 +375,7 @@ namespace Aws
       typedef std::future<ListAnomaliesOutcome> ListAnomaliesOutcomeCallable;
       typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
       typedef std::future<ListLogAnomalyDetectorsOutcome> ListLogAnomalyDetectorsOutcomeCallable;
+      typedef std::future<ListLogGroupsOutcome> ListLogGroupsOutcomeCallable;
       typedef std::future<ListLogGroupsForQueryOutcome> ListLogGroupsForQueryOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
@@ -463,6 +468,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListAnomaliesRequest&, const Model::ListAnomaliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomaliesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListIntegrationsRequest&, const Model::ListIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogAnomalyDetectorsRequest&, const Model::ListLogAnomalyDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogAnomalyDetectorsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogGroupsRequest&, const Model::ListLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogGroupsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogGroupsForQueryRequest&, const Model::ListLogGroupsForQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogGroupsForQueryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutAccountPolicyRequest&, const Model::PutAccountPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountPolicyResponseReceivedHandler;

@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this
+     * <p>When <code>includeLinkedAccounts</code> is set to <code>true</code>, use this
      * parameter to specify the list of accounts to search. You can specify as many as
      * 20 account IDs in the array. </p>
      */
@@ -113,12 +113,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you are using a monitoring account, set this to <code>True</code> to have
+     * <p>If you are using a monitoring account, set this to <code>true</code> to have
      * the operation return log groups in the accounts listed in
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>
+     * all source accounts that are linked to the monitoring account. </p> <p>The
+     * default for this parameter is <code>false</code>.</p>
      */
     inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
@@ -128,11 +129,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the log group class for this log group. There are three
-     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
-     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
-     * log class supports a subset of CloudWatch Logs features and incurs lower
-     * costs.</p> </li> <li> <p>Use the <code>Delivery</code> log class only for
+     * <p>Use this parameter to limit the results to only those log groups in the
+     * specified log group class. If you omit this parameter, log groups of all classes
+     * can be returned.</p> <p>Specifies the log group class for this log group. There
+     * are three classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports
+     * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
+     * Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     * lower costs.</p> </li> <li> <p>Use the <code>Delivery</code> log class only for
      * delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events
      * in log groups in the Delivery class are kept in CloudWatch Logs for only one
      * day. This log class doesn't offer rich CloudWatch Logs capabilities such as
@@ -145,6 +148,26 @@ namespace Model
     inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
     inline void SetLogGroupClass(LogGroupClass value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
     inline DescribeLogGroupsRequest& WithLogGroupClass(LogGroupClass value) { SetLogGroupClass(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use this array to filter the list of log groups returned. If you specify this
+     * parameter, the only other filter that you can choose to specify is
+     * <code>includeLinkedAccounts</code>.</p> <p>If you are using this operation in a
+     * monitoring account, you can specify the ARNs of log groups in source accounts
+     * and in the monitoring account itself. If you are using this operation in an
+     * account that is not a cross-account monitoring account, you can specify only log
+     * group names in the same account as the operation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
+    inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    void SetLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::forward<LogGroupIdentifiersT>(value); }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    DescribeLogGroupsRequest& WithLogGroupIdentifiers(LogGroupIdentifiersT&& value) { SetLogGroupIdentifiers(std::forward<LogGroupIdentifiersT>(value)); return *this;}
+    template<typename LogGroupIdentifiersT = Aws::String>
+    DescribeLogGroupsRequest& AddLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.emplace_back(std::forward<LogGroupIdentifiersT>(value)); return *this; }
     ///@}
   private:
 
@@ -168,6 +191,9 @@ namespace Model
 
     LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
     bool m_logGroupClassHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_logGroupIdentifiers;
+    bool m_logGroupIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

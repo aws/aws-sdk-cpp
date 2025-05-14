@@ -114,6 +114,7 @@
 #include <aws/mediaconvert/model/CaptionSourceFramerate.h>
 #include <aws/mediaconvert/model/CaptionSourceSettings.h>
 #include <aws/mediaconvert/model/CaptionSourceType.h>
+#include <aws/mediaconvert/model/CaptionSourceUpconvertSTLToTeletext.h>
 #include <aws/mediaconvert/model/ChannelMapping.h>
 #include <aws/mediaconvert/model/ChromaPositionMode.h>
 #include <aws/mediaconvert/model/ClipLimits.h>
@@ -657,6 +658,7 @@
 #include <aws/mediaconvert/model/VideoDescription.h>
 #include <aws/mediaconvert/model/VideoDetail.h>
 #include <aws/mediaconvert/model/VideoOverlay.h>
+#include <aws/mediaconvert/model/VideoOverlayCrop.h>
 #include <aws/mediaconvert/model/VideoOverlayInput.h>
 #include <aws/mediaconvert/model/VideoOverlayInputClipping.h>
 #include <aws/mediaconvert/model/VideoOverlayPlayBackMode.h>

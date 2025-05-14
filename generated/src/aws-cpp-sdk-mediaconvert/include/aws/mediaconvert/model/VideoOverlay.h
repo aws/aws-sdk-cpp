@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/VideoOverlayCrop.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/VideoOverlayPosition.h>
 #include <aws/mediaconvert/model/VideoOverlayInput.h>
@@ -43,6 +44,20 @@ namespace Model
     AWS_MEDIACONVERT_API VideoOverlay& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * Specify a rectangle of content to crop and use from your video overlay's input
+     * video. When you do, MediaConvert uses the cropped dimensions that you specify
+     * under X offset, Y offset, Width, and Height.
+     */
+    inline const VideoOverlayCrop& GetCrop() const { return m_crop; }
+    inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
+    template<typename CropT = VideoOverlayCrop>
+    void SetCrop(CropT&& value) { m_cropHasBeenSet = true; m_crop = std::forward<CropT>(value); }
+    template<typename CropT = VideoOverlayCrop>
+    VideoOverlay& WithCrop(CropT&& value) { SetCrop(std::forward<CropT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -142,6 +157,9 @@ namespace Model
     VideoOverlay& AddTransitions(TransitionsT&& value) { m_transitionsHasBeenSet = true; m_transitions.emplace_back(std::forward<TransitionsT>(value)); return *this; }
     ///@}
   private:
+
+    VideoOverlayCrop m_crop;
+    bool m_cropHasBeenSet = false;
 
     Aws::String m_endTimecode;
     bool m_endTimecodeHasBeenSet = false;

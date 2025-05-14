@@ -7,7 +7,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/logs/model/LogGroup.h>
+#include <aws/logs/model/LogGroupSummary.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +26,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class DescribeLogGroupsResult
+  class ListLogGroupsResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeLogGroupsResult() = default;
-    AWS_CLOUDWATCHLOGS_API DescribeLogGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CLOUDWATCHLOGS_API DescribeLogGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API ListLogGroupsResult() = default;
+    AWS_CLOUDWATCHLOGS_API ListLogGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API ListLogGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of structures, where each structure contains the information about
      * one log group.</p>
      */
-    inline const Aws::Vector<LogGroup>& GetLogGroups() const { return m_logGroups; }
-    template<typename LogGroupsT = Aws::Vector<LogGroup>>
+    inline const Aws::Vector<LogGroupSummary>& GetLogGroups() const { return m_logGroups; }
+    template<typename LogGroupsT = Aws::Vector<LogGroupSummary>>
     void SetLogGroups(LogGroupsT&& value) { m_logGroupsHasBeenSet = true; m_logGroups = std::forward<LogGroupsT>(value); }
-    template<typename LogGroupsT = Aws::Vector<LogGroup>>
-    DescribeLogGroupsResult& WithLogGroups(LogGroupsT&& value) { SetLogGroups(std::forward<LogGroupsT>(value)); return *this;}
-    template<typename LogGroupsT = LogGroup>
-    DescribeLogGroupsResult& AddLogGroups(LogGroupsT&& value) { m_logGroupsHasBeenSet = true; m_logGroups.emplace_back(std::forward<LogGroupsT>(value)); return *this; }
+    template<typename LogGroupsT = Aws::Vector<LogGroupSummary>>
+    ListLogGroupsResult& WithLogGroups(LogGroupsT&& value) { SetLogGroups(std::forward<LogGroupsT>(value)); return *this;}
+    template<typename LogGroupsT = LogGroupSummary>
+    ListLogGroupsResult& AddLogGroups(LogGroupsT&& value) { m_logGroupsHasBeenSet = true; m_logGroups.emplace_back(std::forward<LogGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,7 +54,7 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
-    DescribeLogGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ListLogGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,11 +63,11 @@ namespace Model
     template<typename RequestIdT = Aws::String>
     void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
     template<typename RequestIdT = Aws::String>
-    DescribeLogGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
+    ListLogGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Vector<LogGroup> m_logGroups;
+    Aws::Vector<LogGroupSummary> m_logGroups;
     bool m_logGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
