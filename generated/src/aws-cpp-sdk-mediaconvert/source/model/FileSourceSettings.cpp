@@ -60,6 +60,11 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_timeDeltaUnits = FileSourceTimeDeltaUnitsMapper::GetFileSourceTimeDeltaUnitsForName(jsonValue.GetString("timeDeltaUnits"));
     m_timeDeltaUnitsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("upconvertSTLToTeletext"))
+  {
+    m_upconvertSTLToTeletext = CaptionSourceUpconvertSTLToTeletextMapper::GetCaptionSourceUpconvertSTLToTeletextForName(jsonValue.GetString("upconvertSTLToTeletext"));
+    m_upconvertSTLToTeletextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +108,11 @@ JsonValue FileSourceSettings::Jsonize() const
   if(m_timeDeltaUnitsHasBeenSet)
   {
    payload.WithString("timeDeltaUnits", FileSourceTimeDeltaUnitsMapper::GetNameForFileSourceTimeDeltaUnits(m_timeDeltaUnits));
+  }
+
+  if(m_upconvertSTLToTeletextHasBeenSet)
+  {
+   payload.WithString("upconvertSTLToTeletext", CaptionSourceUpconvertSTLToTeletextMapper::GetNameForCaptionSourceUpconvertSTLToTeletext(m_upconvertSTLToTeletext));
   }
 
   return payload;

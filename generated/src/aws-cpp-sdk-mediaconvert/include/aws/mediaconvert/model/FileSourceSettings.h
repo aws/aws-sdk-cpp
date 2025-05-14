@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/CaptionSourceFramerate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/FileSourceTimeDeltaUnits.h>
+#include <aws/mediaconvert/model/CaptionSourceUpconvertSTLToTeletext.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +152,20 @@ namespace Model
     inline void SetTimeDeltaUnits(FileSourceTimeDeltaUnits value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = value; }
     inline FileSourceSettings& WithTimeDeltaUnits(FileSourceTimeDeltaUnits value) { SetTimeDeltaUnits(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Specify whether this set of input captions appears in your outputs in both STL
+     * and Teletext format. If you choose Upconvert, MediaConvert includes the captions
+     * data in two ways: it passes the STL data through using the Teletext
+     * compatibility bytes fields of the Teletext wrapper, and it also translates the
+     * STL data into Teletext.
+     */
+    inline CaptionSourceUpconvertSTLToTeletext GetUpconvertSTLToTeletext() const { return m_upconvertSTLToTeletext; }
+    inline bool UpconvertSTLToTeletextHasBeenSet() const { return m_upconvertSTLToTeletextHasBeenSet; }
+    inline void SetUpconvertSTLToTeletext(CaptionSourceUpconvertSTLToTeletext value) { m_upconvertSTLToTeletextHasBeenSet = true; m_upconvertSTLToTeletext = value; }
+    inline FileSourceSettings& WithUpconvertSTLToTeletext(CaptionSourceUpconvertSTLToTeletext value) { SetUpconvertSTLToTeletext(value); return *this;}
+    ///@}
   private:
 
     CaptionSourceByteRateLimit m_byteRateLimit{CaptionSourceByteRateLimit::NOT_SET};
@@ -173,6 +188,9 @@ namespace Model
 
     FileSourceTimeDeltaUnits m_timeDeltaUnits{FileSourceTimeDeltaUnits::NOT_SET};
     bool m_timeDeltaUnitsHasBeenSet = false;
+
+    CaptionSourceUpconvertSTLToTeletext m_upconvertSTLToTeletext{CaptionSourceUpconvertSTLToTeletext::NOT_SET};
+    bool m_upconvertSTLToTeletextHasBeenSet = false;
   };
 
 } // namespace Model

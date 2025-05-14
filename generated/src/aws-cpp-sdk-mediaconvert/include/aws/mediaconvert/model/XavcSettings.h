@@ -158,12 +158,12 @@ namespace Model
      * one or more commonly used image quality metrics. You can specify per frame
      * metrics for output groups or for individual outputs. When you do, MediaConvert
      * writes a CSV (Comma-Separated Values) file to your S3 output destination, named
-     * after the video, video codec, and metric type. For example: video_h264_PSNR.csv
-     * Jobs that generate per frame metrics will take longer to complete, depending on
-     * the resolution and complexity of your output. For example, some 4K jobs might
-     * take up to twice as long to complete. Note that when analyzing the video quality
-     * of your output, or when comparing the video quality of multiple different
-     * outputs, we generally also recommend a detailed visual review in a controlled
+     * after the output name and metric type. For example: videofile_PSNR.csv Jobs that
+     * generate per frame metrics will take longer to complete, depending on the
+     * resolution and complexity of your output. For example, some 4K jobs might take
+     * up to twice as long to complete. Note that when analyzing the video quality of
+     * your output, or when comparing the video quality of multiple different outputs,
+     * we generally also recommend a detailed visual review in a controlled
      * environment. You can choose from the following per frame metrics: * PSNR: Peak
      * Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM:
      * Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio,

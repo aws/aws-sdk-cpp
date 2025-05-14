@@ -25,6 +25,11 @@ VideoOverlay::VideoOverlay(JsonView jsonValue)
 
 VideoOverlay& VideoOverlay::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("crop"))
+  {
+    m_crop = jsonValue.GetObject("crop");
+    m_cropHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("endTimecode"))
   {
     m_endTimecode = jsonValue.GetString("endTimecode");
@@ -65,6 +70,12 @@ VideoOverlay& VideoOverlay::operator =(JsonView jsonValue)
 JsonValue VideoOverlay::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cropHasBeenSet)
+  {
+   payload.WithObject("crop", m_crop.Jsonize());
+
+  }
 
   if(m_endTimecodeHasBeenSet)
   {
