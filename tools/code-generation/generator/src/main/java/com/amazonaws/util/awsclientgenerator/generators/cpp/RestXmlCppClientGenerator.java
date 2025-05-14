@@ -15,10 +15,7 @@ import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
-import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.ResolverMapping;
-
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -99,7 +96,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, Map<String, CppShapeInformation> shapeInformationCache) {
 
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isXmlModeledException())
@@ -107,7 +104,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         //we only want to override json related stuff.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
-            return super.generateModelHeaderFile(serviceModel, shapeEntry);
+            return super.generateModelHeaderFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         // Will not generate source code if it's a shape of event, with empty member.
@@ -141,13 +138,13 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isXmlModeledException())
             return null;
 
         if (shape.isEnum()) {
-            return super.generateModelSourceFile(serviceModel, shapeEntry);
+            return super.generateModelSourceFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         if (shape.isStructure() && shape.isReferenced() &&

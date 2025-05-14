@@ -24,6 +24,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -87,8 +88,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         addEventStreamInitialResponse(serviceModel);
         addRequestIdToResults(serviceModel);
         List<SdkFileEntry> fileList = new ArrayList<>();
-        fileList.addAll(generateModelHeaderFiles(serviceModel));
-        fileList.addAll(generateModelSourceFiles(serviceModel));
+        final Map<String, CppShapeInformation> shapeInformationCache = serviceModel.getShapes().values().stream()
+            .map(shape -> Pair.of(shape.getName(), new CppShapeInformation(shape, serviceModel)))
+            .collect(Collectors.toMap(Pair::getKey, Pair::getValue));
+        fileList.addAll(generateModelHeaderFiles(serviceModel, shapeInformationCache));
+        fileList.addAll(generateModelSourceFiles(serviceModel, shapeInformationCache));
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
 
@@ -265,16 +269,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return context;
     }
 
-    protected List<SdkFileEntry> generateModelHeaderFiles(final ServiceModel serviceModel) throws Exception {
+    protected List<SdkFileEntry> generateModelHeaderFiles(final ServiceModel serviceModel,
+                                                          final Map<String, CppShapeInformation> shapeInformationCache)
+    {
         List<SdkFileEntry> sdkFileEntries = new ArrayList<>();
 
         for (Map.Entry<String, Shape> shapeEntry : serviceModel.getShapes().entrySet()) {
-            SdkFileEntry sdkFileEntry = generateModelHeaderFile(serviceModel, shapeEntry);
+            SdkFileEntry sdkFileEntry = generateModelHeaderFile(serviceModel, shapeEntry, shapeInformationCache);
             if (sdkFileEntry != null) {
                 sdkFileEntries.add(sdkFileEntry);
             }
 
-            sdkFileEntry = generateEventStreamHandlerHeaderFile(serviceModel, shapeEntry);
+            sdkFileEntry = generateEventStreamHandlerHeaderFile(serviceModel, shapeEntry, shapeInformationCache);
             if (sdkFileEntry != null) {
                 sdkFileEntries.add(sdkFileEntry);
             }
@@ -283,7 +289,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return sdkFileEntries;
     }
 
-    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (!(shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers())) {
             return null;
@@ -319,7 +325,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getKey().equals(shape.getEventPayloadMemberName())).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
         }
         context.put("shape", shape);
-        context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+        context.put("typeInfo", shapeInformationCache.get(shape.getName()));
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
@@ -327,7 +333,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected SdkFileEntry generateEventStreamHandlerHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateEventStreamHandlerHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isRequest()) {
             Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/RequestEventStreamHandlerHeader.vm", StandardCharsets.UTF_8.name());
@@ -346,7 +352,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                                 context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
-                                context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+                                context.put("typeInfo", shapeInformationCache.get(shape.getName()));
                                 context.put("CppViewHelper", CppViewHelper.class);
 
                                 String fileName = String.format("include/aws/%s/model/%sHandler.h", serviceModel.getMetadata().getProjectName(), key);
@@ -361,11 +367,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return null;
     }
 
-    protected List<SdkFileEntry> generateModelSourceFiles(final ServiceModel serviceModel) {
+    protected List<SdkFileEntry> generateModelSourceFiles(final ServiceModel serviceModel, final Map<String, CppShapeInformation> shapeInformationCache) {
 
         return serviceModel.getShapes().entrySet().stream()
                 .filter(entry -> Objects.nonNull(entry.getValue()))
-                .map(entry -> Collections.unmodifiableList(Arrays.asList(generateModelSourceFile(serviceModel, entry), generateEventStreamHandlerSourceFile(serviceModel, entry))))
+                .map(entry -> Collections.unmodifiableList(Arrays.asList(generateModelSourceFile(serviceModel, entry, shapeInformationCache),
+                        generateEventStreamHandlerSourceFile(serviceModel, entry, shapeInformationCache))))
                 .flatMap(Collection::stream)
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
@@ -391,7 +398,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected abstract List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception;
 
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         Template template;
         VelocityContext context = createContext(serviceModel);
@@ -402,7 +409,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             context.put("enumModel", enumModel);
 
             context.put("shape", shape);
-            context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+            context.put("typeInfo", shapeInformationCache.get(shape.getName()));
             context.put("CppViewHelper", CppViewHelper.class);
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
@@ -416,7 +423,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return null;
     }
 
-    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isRequest()) {
             Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlRequestEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
@@ -432,7 +439,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                                 context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
-                                context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+                                context.put("typeInfo", shapeInformationCache.get(shape.getName()));
                                 context.put("CppViewHelper", CppViewHelper.class);
 
                                 String fileName = String.format("source/model/%sHandler.cpp", key);
