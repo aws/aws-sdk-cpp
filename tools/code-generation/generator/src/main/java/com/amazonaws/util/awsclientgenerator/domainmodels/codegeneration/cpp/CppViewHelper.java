@@ -333,6 +333,9 @@ public class CppViewHelper {
     public static Set<String> computeHeaderIncludes(String projectName, Shape shape) {
         Set<String> headers = new LinkedHashSet<>();
         Set<String> visited = new LinkedHashSet<>();
+        if (shape.getMembers() == null) {
+            return headers;
+        }
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
         boolean includeUtilityHeader = false;
         boolean includeMemoryHeader = false;
@@ -399,6 +402,11 @@ public class CppViewHelper {
     public static Set<String> computeForwardDeclarations(Shape shape) {
         Set<String> forwardDeclarations = new LinkedHashSet<>();
         Set<String> visited = new LinkedHashSet<>();
+
+        if (shape.getMembers() == null) {
+            return forwardDeclarations;
+        }
+
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
 
         while(!toVisit.isEmpty()) {
@@ -459,6 +467,9 @@ public class CppViewHelper {
     public static Set<String> computeSourceIncludes(String projectName, Shape shape) {
         Set<String> headers = new LinkedHashSet<>();
         Set<String> visited = new LinkedHashSet<>();
+        if (shape.getMembers() == null) {
+            return headers;
+        }
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
 
         while(!toVisit.isEmpty()) {

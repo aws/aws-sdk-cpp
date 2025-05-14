@@ -15,7 +15,6 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,14 +87,14 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isXmlModeledException())
             return null;
 
         //we only want to handle results and internal structures. We don't want requests or enums.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
-            return super.generateModelHeaderFile(serviceModel, shapeEntry);
+            return super.generateModelHeaderFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         if (shape.isStructure() && shape.isReferenced()) {
@@ -121,13 +120,13 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isXmlModeledException())
             return null;
 
         if (shape.isEnum()) {
-            return super.generateModelSourceFile(serviceModel, shapeEntry);
+            return super.generateModelSourceFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         Template template = null;

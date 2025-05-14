@@ -569,7 +569,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Template template = null;
         String fileName = "";
 
@@ -585,7 +585,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                 break;
             }
             default:
-                return super.generateModelSourceFile(serviceModel, shapeEntry);
+                return super.generateModelSourceFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         Shape shape = shapeEntry.getValue();

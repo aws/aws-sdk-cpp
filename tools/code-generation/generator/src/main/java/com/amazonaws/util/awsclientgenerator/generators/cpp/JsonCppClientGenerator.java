@@ -16,7 +16,6 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +43,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, Map<String, CppShapeInformation> shapeInformationCache) {
 
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isJsonModeledException())
@@ -58,7 +57,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         //we only want to override json related stuff.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
-            return super.generateModelHeaderFile(serviceModel, shapeEntry);
+            return super.generateModelHeaderFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         if (shape.isStructure() && shape.isReferenced()) {
@@ -89,7 +88,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
@@ -110,7 +109,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         if (shape.isEnum()) {
             // event-stream input shapes do their serialization via the encoder; So skip generating code for those.
-            return super.generateModelSourceFile(serviceModel, shapeEntry);
+            return super.generateModelSourceFile(serviceModel, shapeEntry, shapeInformationCache);
         }
 
         if (shape.isStructure() && shape.isReferenced()) {
@@ -187,7 +186,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
+    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
         Shape shape = shapeEntry.getValue();
         if (shape.isRequest()) {
             Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
@@ -203,7 +202,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                                 context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
-                                context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+                                context.put("typeInfo", shapeInformationCache.get(shape.getName()));
                                 context.put("CppViewHelper", CppViewHelper.class);
 
                                 String fileName = String.format("source/model/%sHandler.cpp", key);
