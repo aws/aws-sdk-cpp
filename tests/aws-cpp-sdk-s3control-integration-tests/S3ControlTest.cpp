@@ -46,6 +46,9 @@
 #include <aws/sts/STSClient.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <thread>
+#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
+
 
 using namespace Aws;
 using namespace Aws::Http;
@@ -732,6 +735,11 @@ namespace
 
 TEST_F(S3ControlTest, TestRemoveHostPrefix)
 {
+    auto mock_client_factory= Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    auto mock_http_client = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mock_client_factory->SetClient(mock_http_client);
+    SetHttpClientFactory(mock_client_factory);
+
     ClientConfiguration config;
     config.region = Aws::Region::US_EAST_1;
     auto s3controlClient = S3ControlClient(config);
@@ -742,10 +750,18 @@ TEST_F(S3ControlTest, TestRemoveHostPrefix)
     .WithBucket(bucket)
     .WithAccountId(m_accountId)
     .WithBucketAccountId(m_accountId);
-    auto resolveEndpointOutcome = s3controlClient.accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams());
-    EXPECT_TRUE(resolveEndpointOutcome.IsSuccess());
-    EXPECT_EQ(resolveEndpointOutcome.GetResult().GetURL(), "https://s3express-control.us-east-1.amazonaws.com");
+    //create dummy request and response
+    std::shared_ptr<HttpRequest> dummyReq = CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> dummyResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, dummyReq);
+    dummyResponse->SetResponseCode(HttpResponseCode::OK);
+    
+    mock_http_client->AddResponseToReturn(dummyResponse);
     auto createAccessPointOutcome = s3controlClient.CreateAccessPoint(request);
-    EXPECT_FALSE(createAccessPointOutcome.IsSuccess());
+    EXPECT_TRUE(createAccessPointOutcome.IsSuccess());
+    const auto requestSeen = mock_http_client->GetMostRecentHttpRequest();
+    EXPECT_EQ("https://s3express-control.us-east-1.amazonaws.com/v20180820/accesspoint/test-ap--use2-az1--xa-s3", requestSeen.GetUri().GetURIString());
+
+    mock_client_factory.reset();
+    mock_http_client.reset();
 }
 }
