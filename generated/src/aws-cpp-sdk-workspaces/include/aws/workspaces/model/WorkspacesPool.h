@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/ApplicationSettingsResponse.h>
 #include <aws/workspaces/model/TimeoutSettings.h>
+#include <aws/workspaces/model/PoolsRunningMode.h>
 #include <aws/workspaces/model/WorkspacesPoolError.h>
 #include <utility>
 
@@ -82,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the pool,</p>
+     * <p>The name of the pool.</p>
      */
     inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
@@ -191,6 +192,16 @@ namespace Model
     template<typename TimeoutSettingsT = TimeoutSettings>
     WorkspacesPool& WithTimeoutSettings(TimeoutSettingsT&& value) { SetTimeoutSettings(std::forward<TimeoutSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The running mode of the pool.</p>
+     */
+    inline PoolsRunningMode GetRunningMode() const { return m_runningMode; }
+    inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
+    inline void SetRunningMode(PoolsRunningMode value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
+    inline WorkspacesPool& WithRunningMode(PoolsRunningMode value) { SetRunningMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_poolId;
@@ -228,6 +239,9 @@ namespace Model
 
     TimeoutSettings m_timeoutSettings;
     bool m_timeoutSettingsHasBeenSet = false;
+
+    PoolsRunningMode m_runningMode{PoolsRunningMode::NOT_SET};
+    bool m_runningModeHasBeenSet = false;
   };
 
 } // namespace Model

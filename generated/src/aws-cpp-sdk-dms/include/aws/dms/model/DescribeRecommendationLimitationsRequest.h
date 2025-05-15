@@ -39,7 +39,8 @@ namespace Model
     ///@{
     /**
      * <p>Filters applied to the limitations described in the form of key-value
-     * pairs.</p>
+     * pairs.</p> <p>Valid filter names: <code>database-id</code> |
+     * <code>engine-name</code> </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

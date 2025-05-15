@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a node missing required configuration.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Details about a node missing a required configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/MissingNodeConfigurationFlowValidationDetails">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node missing configuration.</p>
+     * <p>The name of the node missing a required configuration.</p>
      */
     inline const Aws::String& GetNode() const { return m_node; }
     inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }

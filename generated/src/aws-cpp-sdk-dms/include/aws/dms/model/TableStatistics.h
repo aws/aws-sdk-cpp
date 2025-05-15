@@ -284,7 +284,7 @@ namespace Model
      * table couldn't be validated because of an unexpected error.</p> </li> <li>
      * <p>Pending validation – The table is waiting validation.</p> </li> <li>
      * <p>Preparing table – Preparing the table enabled in the migration task for
-     * validation.</p> </li> <li> <p>Pending revalidation ��� All rows in the table are
+     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
      * pending validation after the table was updated.</p> </li> </ul>
      */
     inline const Aws::String& GetValidationState() const { return m_validationState; }
@@ -305,6 +305,69 @@ namespace Model
     void SetValidationStateDetails(ValidationStateDetailsT&& value) { m_validationStateDetailsHasBeenSet = true; m_validationStateDetails = std::forward<ValidationStateDetailsT>(value); }
     template<typename ValidationStateDetailsT = Aws::String>
     TableStatistics& WithValidationStateDetails(ValidationStateDetailsT&& value) { SetValidationStateDetails(std::forward<ValidationStateDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Records the current state of table resynchronization in the migration
+     * task.</p> <p>This parameter can have the following values:</p> <ul> <li> <p>Not
+     * enabled – Resync is not enabled for the table in the migration task.</p> </li>
+     * <li> <p>Pending – The tables are waiting for resync.</p> </li> <li> <p>In
+     * progress – Resync in progress for some records in the table.</p> </li> <li>
+     * <p>No primary key – The table could not be resynced because it has no primary
+     * key.</p> </li> <li> <p>Last resync at: <code>date/time</code> – Resync session
+     * is finished at time. Time provided in UTC format.</p> </li> </ul>
+     */
+    inline const Aws::String& GetResyncState() const { return m_resyncState; }
+    inline bool ResyncStateHasBeenSet() const { return m_resyncStateHasBeenSet; }
+    template<typename ResyncStateT = Aws::String>
+    void SetResyncState(ResyncStateT&& value) { m_resyncStateHasBeenSet = true; m_resyncState = std::forward<ResyncStateT>(value); }
+    template<typename ResyncStateT = Aws::String>
+    TableStatistics& WithResyncState(ResyncStateT&& value) { SetResyncState(std::forward<ResyncStateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Records the total number of mismatched data rows where the system attempted
+     * to apply fixes in the target database.</p>
+     */
+    inline long long GetResyncRowsAttempted() const { return m_resyncRowsAttempted; }
+    inline bool ResyncRowsAttemptedHasBeenSet() const { return m_resyncRowsAttemptedHasBeenSet; }
+    inline void SetResyncRowsAttempted(long long value) { m_resyncRowsAttemptedHasBeenSet = true; m_resyncRowsAttempted = value; }
+    inline TableStatistics& WithResyncRowsAttempted(long long value) { SetResyncRowsAttempted(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Records the total number of mismatched data rows where fixes were
+     * successfully applied in the target database.</p>
+     */
+    inline long long GetResyncRowsSucceeded() const { return m_resyncRowsSucceeded; }
+    inline bool ResyncRowsSucceededHasBeenSet() const { return m_resyncRowsSucceededHasBeenSet; }
+    inline void SetResyncRowsSucceeded(long long value) { m_resyncRowsSucceededHasBeenSet = true; m_resyncRowsSucceeded = value; }
+    inline TableStatistics& WithResyncRowsSucceeded(long long value) { SetResyncRowsSucceeded(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Records the total number of mismatched data rows where fix attempts failed in
+     * the target database.</p>
+     */
+    inline long long GetResyncRowsFailed() const { return m_resyncRowsFailed; }
+    inline bool ResyncRowsFailedHasBeenSet() const { return m_resyncRowsFailedHasBeenSet; }
+    inline void SetResyncRowsFailed(long long value) { m_resyncRowsFailedHasBeenSet = true; m_resyncRowsFailed = value; }
+    inline TableStatistics& WithResyncRowsFailed(long long value) { SetResyncRowsFailed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Calculates the percentage of failed validations that were successfully
+     * resynced to the system.</p>
+     */
+    inline double GetResyncProgress() const { return m_resyncProgress; }
+    inline bool ResyncProgressHasBeenSet() const { return m_resyncProgressHasBeenSet; }
+    inline void SetResyncProgress(double value) { m_resyncProgressHasBeenSet = true; m_resyncProgress = value; }
+    inline TableStatistics& WithResyncProgress(double value) { SetResyncProgress(value); return *this;}
     ///@}
   private:
 
@@ -376,6 +439,21 @@ namespace Model
 
     Aws::String m_validationStateDetails;
     bool m_validationStateDetailsHasBeenSet = false;
+
+    Aws::String m_resyncState;
+    bool m_resyncStateHasBeenSet = false;
+
+    long long m_resyncRowsAttempted{0};
+    bool m_resyncRowsAttemptedHasBeenSet = false;
+
+    long long m_resyncRowsSucceeded{0};
+    bool m_resyncRowsSucceededHasBeenSet = false;
+
+    long long m_resyncRowsFailed{0};
+    bool m_resyncRowsFailedHasBeenSet = false;
+
+    double m_resyncProgress{0.0};
+    bool m_resyncProgressHasBeenSet = false;
   };
 
 } // namespace Model

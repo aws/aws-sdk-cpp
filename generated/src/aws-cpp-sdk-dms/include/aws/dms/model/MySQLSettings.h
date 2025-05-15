@@ -7,6 +7,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/TargetDbType.h>
+#include <aws/dms/model/MySQLAuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -256,6 +257,31 @@ namespace Model
     inline void SetExecuteTimeout(int value) { m_executeTimeoutHasBeenSet = true; m_executeTimeout = value; }
     inline MySQLSettings& WithExecuteTimeout(int value) { SetExecuteTimeout(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IAM role you can use to authenticate when connecting to your endpoint.
+     * Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code>
+     * actions in permission policy.</p>
+     */
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    MySQLSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This attribute allows you to specify the authentication method as "iam
+     * auth".</p>
+     */
+    inline MySQLAuthenticationMethod GetAuthenticationMethod() const { return m_authenticationMethod; }
+    inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
+    inline void SetAuthenticationMethod(MySQLAuthenticationMethod value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+    inline MySQLSettings& WithAuthenticationMethod(MySQLAuthenticationMethod value) { SetAuthenticationMethod(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_afterConnectScript;
@@ -302,6 +328,12 @@ namespace Model
 
     int m_executeTimeout{0};
     bool m_executeTimeoutHasBeenSet = false;
+
+    Aws::String m_serviceAccessRoleArn;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
+
+    MySQLAuthenticationMethod m_authenticationMethod{MySQLAuthenticationMethod::NOT_SET};
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

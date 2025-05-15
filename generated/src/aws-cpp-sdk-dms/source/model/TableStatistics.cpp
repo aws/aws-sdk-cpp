@@ -140,6 +140,31 @@ TableStatistics& TableStatistics::operator =(JsonView jsonValue)
     m_validationStateDetails = jsonValue.GetString("ValidationStateDetails");
     m_validationStateDetailsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResyncState"))
+  {
+    m_resyncState = jsonValue.GetString("ResyncState");
+    m_resyncStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResyncRowsAttempted"))
+  {
+    m_resyncRowsAttempted = jsonValue.GetInt64("ResyncRowsAttempted");
+    m_resyncRowsAttemptedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResyncRowsSucceeded"))
+  {
+    m_resyncRowsSucceeded = jsonValue.GetInt64("ResyncRowsSucceeded");
+    m_resyncRowsSucceededHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResyncRowsFailed"))
+  {
+    m_resyncRowsFailed = jsonValue.GetInt64("ResyncRowsFailed");
+    m_resyncRowsFailedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResyncProgress"))
+  {
+    m_resyncProgress = jsonValue.GetDouble("ResyncProgress");
+    m_resyncProgressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -279,6 +304,36 @@ JsonValue TableStatistics::Jsonize() const
   if(m_validationStateDetailsHasBeenSet)
   {
    payload.WithString("ValidationStateDetails", m_validationStateDetails);
+
+  }
+
+  if(m_resyncStateHasBeenSet)
+  {
+   payload.WithString("ResyncState", m_resyncState);
+
+  }
+
+  if(m_resyncRowsAttemptedHasBeenSet)
+  {
+   payload.WithInt64("ResyncRowsAttempted", m_resyncRowsAttempted);
+
+  }
+
+  if(m_resyncRowsSucceededHasBeenSet)
+  {
+   payload.WithInt64("ResyncRowsSucceeded", m_resyncRowsSucceeded);
+
+  }
+
+  if(m_resyncRowsFailedHasBeenSet)
+  {
+   payload.WithInt64("ResyncRowsFailed", m_resyncRowsFailed);
+
+  }
+
+  if(m_resyncProgressHasBeenSet)
+  {
+   payload.WithDouble("ResyncProgress", m_resyncProgress);
 
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
@@ -53,6 +54,19 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     FlowAliasSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration that specifies how nodes in the flow are executed
+     * concurrently.</p>
+     */
+    inline const FlowAliasConcurrencyConfiguration& GetConcurrencyConfiguration() const { return m_concurrencyConfiguration; }
+    inline bool ConcurrencyConfigurationHasBeenSet() const { return m_concurrencyConfigurationHasBeenSet; }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    void SetConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { m_concurrencyConfigurationHasBeenSet = true; m_concurrencyConfiguration = std::forward<ConcurrencyConfigurationT>(value); }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    FlowAliasSummary& WithConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { SetConcurrencyConfiguration(std::forward<ConcurrencyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,6 +159,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
+    bool m_concurrencyConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

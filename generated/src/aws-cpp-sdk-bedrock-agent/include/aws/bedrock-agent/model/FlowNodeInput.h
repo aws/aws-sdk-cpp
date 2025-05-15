@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/FlowNodeInputCategory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <utility>
@@ -25,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains configurations for an input to a node.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains configurations for an input in an Amazon Bedrock Flows
+   * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/FlowNodeInput">AWS
    * API Reference</a></p>
    */
@@ -37,6 +39,24 @@ namespace Model
     AWS_BEDROCKAGENT_API FlowNodeInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Specifies how input data flows between iterations in a DoWhile loop.</p> <ul>
+     * <li> <p> <code>LoopCondition</code> - Controls whether the loop continues by
+     * evaluating condition expressions against the input data. Use this category to
+     * define the condition that determines if the loop should continue. </p> </li>
+     * <li> <p> <code>ReturnValueToLoopStart</code> - Defines data to pass back to the
+     * start of the loop's next iteration. Use this category for variables that you
+     * want to update for each loop iteration.</p> </li> <li> <p> <code>ExitLoop</code>
+     * - Defines the value that's available once the loop ends. Use this category to
+     * expose loop results to nodes outside the loop.</p> </li> </ul>
+     */
+    inline FlowNodeInputCategory GetCategory() const { return m_category; }
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+    inline void SetCategory(FlowNodeInputCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline FlowNodeInput& WithCategory(FlowNodeInputCategory value) { SetCategory(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -55,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the input that you can reference.</p>
+     * <p>Specifies a name for the input that you can reference.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -67,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data type of the input. If the input doesn't match this type at runtime,
-     * a validation error will be thrown.</p>
+     * <p>Specifies the data type of the input. If the input doesn't match this type at
+     * runtime, a validation error will be thrown.</p>
      */
     inline FlowNodeIODataType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -76,6 +96,9 @@ namespace Model
     inline FlowNodeInput& WithType(FlowNodeIODataType value) { SetType(value); return *this;}
     ///@}
   private:
+
+    FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;

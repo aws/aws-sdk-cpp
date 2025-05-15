@@ -69,6 +69,11 @@ Aws::String CreateWorkspacesPoolRequest::SerializePayload() const
 
   }
 
+  if(m_runningModeHasBeenSet)
+  {
+   payload.WithString("RunningMode", PoolsRunningModeMapper::GetNameForPoolsRunningMode(m_runningMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

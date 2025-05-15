@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/model/AccountingRequest.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
 #include <utility>
 
@@ -64,6 +65,19 @@ namespace Model
     template<typename SlurmCustomSettingsT = SlurmCustomSetting>
     ClusterSlurmConfigurationRequest& AddSlurmCustomSettings(SlurmCustomSettingsT&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.emplace_back(std::forward<SlurmCustomSettingsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The accounting configuration includes configurable settings for Slurm
+     * accounting.</p>
+     */
+    inline const AccountingRequest& GetAccounting() const { return m_accounting; }
+    inline bool AccountingHasBeenSet() const { return m_accountingHasBeenSet; }
+    template<typename AccountingT = AccountingRequest>
+    void SetAccounting(AccountingT&& value) { m_accountingHasBeenSet = true; m_accounting = std::forward<AccountingT>(value); }
+    template<typename AccountingT = AccountingRequest>
+    ClusterSlurmConfigurationRequest& WithAccounting(AccountingT&& value) { SetAccounting(std::forward<AccountingT>(value)); return *this;}
+    ///@}
   private:
 
     int m_scaleDownIdleTimeInSeconds{0};
@@ -71,6 +85,9 @@ namespace Model
 
     Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
     bool m_slurmCustomSettingsHasBeenSet = false;
+
+    AccountingRequest m_accounting;
+    bool m_accountingHasBeenSet = false;
   };
 
 } // namespace Model

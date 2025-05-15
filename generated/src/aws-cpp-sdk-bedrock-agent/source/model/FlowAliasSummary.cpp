@@ -30,6 +30,11 @@ FlowAliasSummary& FlowAliasSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("concurrencyConfiguration"))
+  {
+    m_concurrencyConfiguration = jsonValue.GetObject("concurrencyConfiguration");
+    m_concurrencyConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -79,6 +84,12 @@ JsonValue FlowAliasSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_concurrencyConfigurationHasBeenSet)
+  {
+   payload.WithObject("concurrencyConfiguration", m_concurrencyConfiguration.Jsonize());
 
   }
 

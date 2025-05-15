@@ -60,7 +60,10 @@ namespace Model
     MultipleUserProfiles,
     StagedAppxPackage,
     UnsupportedOsUpgrade,
-    InsufficientRearmCount
+    InsufficientRearmCount,
+    ProtocolOSIncompatibility,
+    MemoryIntegrityIncompatibility,
+    RestrictedDriveLetterInUse
   };
 
 namespace WorkspaceImageErrorDetailCodeMapper

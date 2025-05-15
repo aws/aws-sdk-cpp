@@ -234,6 +234,7 @@
 #include <aws/workspaces/model/OperatingSystemType.h>
 #include <aws/workspaces/model/OperationNotSupportedException.h>
 #include <aws/workspaces/model/PendingCreateStandbyWorkspacesRequest.h>
+#include <aws/workspaces/model/PoolsRunningMode.h>
 #include <aws/workspaces/model/Protocol.h>
 #include <aws/workspaces/model/RebootRequest.h>
 #include <aws/workspaces/model/RebootWorkspacesRequest.h>

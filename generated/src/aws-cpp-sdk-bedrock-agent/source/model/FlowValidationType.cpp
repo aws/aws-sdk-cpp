@@ -47,6 +47,12 @@ namespace Aws
         static const int Unspecified_HASH = HashingUtils::HashString("Unspecified");
         static const int UnknownNodeInput_HASH = HashingUtils::HashString("UnknownNodeInput");
         static const int UnknownNodeOutput_HASH = HashingUtils::HashString("UnknownNodeOutput");
+        static const int MissingLoopInputNode_HASH = HashingUtils::HashString("MissingLoopInputNode");
+        static const int MissingLoopControllerNode_HASH = HashingUtils::HashString("MissingLoopControllerNode");
+        static const int MultipleLoopInputNodes_HASH = HashingUtils::HashString("MultipleLoopInputNodes");
+        static const int MultipleLoopControllerNodes_HASH = HashingUtils::HashString("MultipleLoopControllerNodes");
+        static const int LoopIncompatibleNodeType_HASH = HashingUtils::HashString("LoopIncompatibleNodeType");
+        static const int InvalidLoopBoundary_HASH = HashingUtils::HashString("InvalidLoopBoundary");
 
 
         FlowValidationType GetFlowValidationTypeForName(const Aws::String& name)
@@ -160,6 +166,30 @@ namespace Aws
           {
             return FlowValidationType::UnknownNodeOutput;
           }
+          else if (hashCode == MissingLoopInputNode_HASH)
+          {
+            return FlowValidationType::MissingLoopInputNode;
+          }
+          else if (hashCode == MissingLoopControllerNode_HASH)
+          {
+            return FlowValidationType::MissingLoopControllerNode;
+          }
+          else if (hashCode == MultipleLoopInputNodes_HASH)
+          {
+            return FlowValidationType::MultipleLoopInputNodes;
+          }
+          else if (hashCode == MultipleLoopControllerNodes_HASH)
+          {
+            return FlowValidationType::MultipleLoopControllerNodes;
+          }
+          else if (hashCode == LoopIncompatibleNodeType_HASH)
+          {
+            return FlowValidationType::LoopIncompatibleNodeType;
+          }
+          else if (hashCode == InvalidLoopBoundary_HASH)
+          {
+            return FlowValidationType::InvalidLoopBoundary;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -230,6 +260,18 @@ namespace Aws
             return "UnknownNodeInput";
           case FlowValidationType::UnknownNodeOutput:
             return "UnknownNodeOutput";
+          case FlowValidationType::MissingLoopInputNode:
+            return "MissingLoopInputNode";
+          case FlowValidationType::MissingLoopControllerNode:
+            return "MissingLoopControllerNode";
+          case FlowValidationType::MultipleLoopInputNodes:
+            return "MultipleLoopInputNodes";
+          case FlowValidationType::MultipleLoopControllerNodes:
+            return "MultipleLoopControllerNodes";
+          case FlowValidationType::LoopIncompatibleNodeType:
+            return "LoopIncompatibleNodeType";
+          case FlowValidationType::InvalidLoopBoundary:
+            return "InvalidLoopBoundary";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

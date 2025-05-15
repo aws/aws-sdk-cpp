@@ -39,6 +39,11 @@ ClusterSlurmConfigurationRequest& ClusterSlurmConfigurationRequest::operator =(J
     }
     m_slurmCustomSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("accounting"))
+  {
+    m_accounting = jsonValue.GetObject("accounting");
+    m_accountingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue ClusterSlurmConfigurationRequest::Jsonize() const
      slurmCustomSettingsJsonList[slurmCustomSettingsIndex].AsObject(m_slurmCustomSettings[slurmCustomSettingsIndex].Jsonize());
    }
    payload.WithArray("slurmCustomSettings", std::move(slurmCustomSettingsJsonList));
+
+  }
+
+  if(m_accountingHasBeenSet)
+  {
+   payload.WithObject("accounting", m_accounting.Jsonize());
 
   }
 

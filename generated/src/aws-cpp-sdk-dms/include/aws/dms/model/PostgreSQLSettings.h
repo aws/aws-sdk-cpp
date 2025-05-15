@@ -9,6 +9,7 @@
 #include <aws/dms/model/PluginNameValue.h>
 #include <aws/dms/model/LongVarcharMappingType.h>
 #include <aws/dms/model/DatabaseMode.h>
+#include <aws/dms/model/PostgreSQLAuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -392,6 +393,31 @@ namespace Model
     inline void SetDisableUnicodeSourceFilter(bool value) { m_disableUnicodeSourceFilterHasBeenSet = true; m_disableUnicodeSourceFilter = value; }
     inline PostgreSQLSettings& WithDisableUnicodeSourceFilter(bool value) { SetDisableUnicodeSourceFilter(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IAM role arn you can use to authenticate the connection to your endpoint.
+     * Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code>
+     * actions in permission policy.</p>
+     */
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    PostgreSQLSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This attribute allows you to specify the authentication method as "iam
+     * auth".</p>
+     */
+    inline PostgreSQLAuthenticationMethod GetAuthenticationMethod() const { return m_authenticationMethod; }
+    inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
+    inline void SetAuthenticationMethod(PostgreSQLAuthenticationMethod value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+    inline PostgreSQLSettings& WithAuthenticationMethod(PostgreSQLAuthenticationMethod value) { SetAuthenticationMethod(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_afterConnectScript;
@@ -468,6 +494,12 @@ namespace Model
 
     bool m_disableUnicodeSourceFilter{false};
     bool m_disableUnicodeSourceFilterHasBeenSet = false;
+
+    Aws::String m_serviceAccessRoleArn;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
+
+    PostgreSQLAuthenticationMethod m_authenticationMethod{PostgreSQLAuthenticationMethod::NOT_SET};
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

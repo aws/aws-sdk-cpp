@@ -9,6 +9,8 @@
 #include <aws/bedrock-agent/model/DuplicateConditionExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/DuplicateConnectionsFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/IncompatibleConnectionDataTypeFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/InvalidLoopBoundaryFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/LoopIncompatibleNodeTypeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MalformedConditionExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MalformedNodeInputExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MismatchedNodeInputTypeFlowValidationDetails.h>
@@ -16,10 +18,14 @@
 #include <aws/bedrock-agent/model/MissingConnectionConfigurationFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingDefaultConditionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingEndingNodesFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MissingLoopControllerNodeFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MissingLoopInputNodeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeConfigurationFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeInputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeOutputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingStartingNodesFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MultipleLoopControllerNodesFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MultipleLoopInputNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MultipleNodeInputConnectionsFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnfulfilledNodeInputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnknownConnectionConditionFlowValidationDetails.h>
@@ -114,6 +120,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about a flow that includes connections that violate loop boundary
+     * rules.</p>
+     */
+    inline const InvalidLoopBoundaryFlowValidationDetails& GetInvalidLoopBoundary() const { return m_invalidLoopBoundary; }
+    inline bool InvalidLoopBoundaryHasBeenSet() const { return m_invalidLoopBoundaryHasBeenSet; }
+    template<typename InvalidLoopBoundaryT = InvalidLoopBoundaryFlowValidationDetails>
+    void SetInvalidLoopBoundary(InvalidLoopBoundaryT&& value) { m_invalidLoopBoundaryHasBeenSet = true; m_invalidLoopBoundary = std::forward<InvalidLoopBoundaryT>(value); }
+    template<typename InvalidLoopBoundaryT = InvalidLoopBoundaryFlowValidationDetails>
+    FlowValidationDetails& WithInvalidLoopBoundary(InvalidLoopBoundaryT&& value) { SetInvalidLoopBoundary(std::forward<InvalidLoopBoundaryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about a flow that includes incompatible node types in a DoWhile
+     * loop.</p>
+     */
+    inline const LoopIncompatibleNodeTypeFlowValidationDetails& GetLoopIncompatibleNodeType() const { return m_loopIncompatibleNodeType; }
+    inline bool LoopIncompatibleNodeTypeHasBeenSet() const { return m_loopIncompatibleNodeTypeHasBeenSet; }
+    template<typename LoopIncompatibleNodeTypeT = LoopIncompatibleNodeTypeFlowValidationDetails>
+    void SetLoopIncompatibleNodeType(LoopIncompatibleNodeTypeT&& value) { m_loopIncompatibleNodeTypeHasBeenSet = true; m_loopIncompatibleNodeType = std::forward<LoopIncompatibleNodeTypeT>(value); }
+    template<typename LoopIncompatibleNodeTypeT = LoopIncompatibleNodeTypeFlowValidationDetails>
+    FlowValidationDetails& WithLoopIncompatibleNodeType(LoopIncompatibleNodeTypeT&& value) { SetLoopIncompatibleNodeType(std::forward<LoopIncompatibleNodeTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about a malformed condition expression in a node.</p>
      */
     inline const MalformedConditionExpressionFlowValidationDetails& GetMalformedConditionExpression() const { return m_malformedConditionExpression; }
@@ -198,6 +230,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about a flow that's missing a required <code>LoopController</code>
+     * node in a DoWhile loop.</p>
+     */
+    inline const MissingLoopControllerNodeFlowValidationDetails& GetMissingLoopControllerNode() const { return m_missingLoopControllerNode; }
+    inline bool MissingLoopControllerNodeHasBeenSet() const { return m_missingLoopControllerNodeHasBeenSet; }
+    template<typename MissingLoopControllerNodeT = MissingLoopControllerNodeFlowValidationDetails>
+    void SetMissingLoopControllerNode(MissingLoopControllerNodeT&& value) { m_missingLoopControllerNodeHasBeenSet = true; m_missingLoopControllerNode = std::forward<MissingLoopControllerNodeT>(value); }
+    template<typename MissingLoopControllerNodeT = MissingLoopControllerNodeFlowValidationDetails>
+    FlowValidationDetails& WithMissingLoopControllerNode(MissingLoopControllerNodeT&& value) { SetMissingLoopControllerNode(std::forward<MissingLoopControllerNodeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about a flow that's missing a required <code>LoopInput</code> node in
+     * a DoWhile loop.</p>
+     */
+    inline const MissingLoopInputNodeFlowValidationDetails& GetMissingLoopInputNode() const { return m_missingLoopInputNode; }
+    inline bool MissingLoopInputNodeHasBeenSet() const { return m_missingLoopInputNodeHasBeenSet; }
+    template<typename MissingLoopInputNodeT = MissingLoopInputNodeFlowValidationDetails>
+    void SetMissingLoopInputNode(MissingLoopInputNodeT&& value) { m_missingLoopInputNodeHasBeenSet = true; m_missingLoopInputNode = std::forward<MissingLoopInputNodeT>(value); }
+    template<typename MissingLoopInputNodeT = MissingLoopInputNodeFlowValidationDetails>
+    FlowValidationDetails& WithMissingLoopInputNode(MissingLoopInputNodeT&& value) { SetMissingLoopInputNode(std::forward<MissingLoopInputNodeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about missing configuration for a node.</p>
      */
     inline const MissingNodeConfigurationFlowValidationDetails& GetMissingNodeConfiguration() const { return m_missingNodeConfiguration; }
@@ -242,6 +300,32 @@ namespace Model
     void SetMissingStartingNodes(MissingStartingNodesT&& value) { m_missingStartingNodesHasBeenSet = true; m_missingStartingNodes = std::forward<MissingStartingNodesT>(value); }
     template<typename MissingStartingNodesT = MissingStartingNodesFlowValidationDetails>
     FlowValidationDetails& WithMissingStartingNodes(MissingStartingNodesT&& value) { SetMissingStartingNodes(std::forward<MissingStartingNodesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about a flow that contains multiple <code>LoopController</code> nodes
+     * in a DoWhile loop.</p>
+     */
+    inline const MultipleLoopControllerNodesFlowValidationDetails& GetMultipleLoopControllerNodes() const { return m_multipleLoopControllerNodes; }
+    inline bool MultipleLoopControllerNodesHasBeenSet() const { return m_multipleLoopControllerNodesHasBeenSet; }
+    template<typename MultipleLoopControllerNodesT = MultipleLoopControllerNodesFlowValidationDetails>
+    void SetMultipleLoopControllerNodes(MultipleLoopControllerNodesT&& value) { m_multipleLoopControllerNodesHasBeenSet = true; m_multipleLoopControllerNodes = std::forward<MultipleLoopControllerNodesT>(value); }
+    template<typename MultipleLoopControllerNodesT = MultipleLoopControllerNodesFlowValidationDetails>
+    FlowValidationDetails& WithMultipleLoopControllerNodes(MultipleLoopControllerNodesT&& value) { SetMultipleLoopControllerNodes(std::forward<MultipleLoopControllerNodesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about a flow that contains multiple <code>LoopInput</code> nodes in a
+     * DoWhile loop.</p>
+     */
+    inline const MultipleLoopInputNodesFlowValidationDetails& GetMultipleLoopInputNodes() const { return m_multipleLoopInputNodes; }
+    inline bool MultipleLoopInputNodesHasBeenSet() const { return m_multipleLoopInputNodesHasBeenSet; }
+    template<typename MultipleLoopInputNodesT = MultipleLoopInputNodesFlowValidationDetails>
+    void SetMultipleLoopInputNodes(MultipleLoopInputNodesT&& value) { m_multipleLoopInputNodesHasBeenSet = true; m_multipleLoopInputNodes = std::forward<MultipleLoopInputNodesT>(value); }
+    template<typename MultipleLoopInputNodesT = MultipleLoopInputNodesFlowValidationDetails>
+    FlowValidationDetails& WithMultipleLoopInputNodes(MultipleLoopInputNodesT&& value) { SetMultipleLoopInputNodes(std::forward<MultipleLoopInputNodesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -401,6 +485,12 @@ namespace Model
     IncompatibleConnectionDataTypeFlowValidationDetails m_incompatibleConnectionDataType;
     bool m_incompatibleConnectionDataTypeHasBeenSet = false;
 
+    InvalidLoopBoundaryFlowValidationDetails m_invalidLoopBoundary;
+    bool m_invalidLoopBoundaryHasBeenSet = false;
+
+    LoopIncompatibleNodeTypeFlowValidationDetails m_loopIncompatibleNodeType;
+    bool m_loopIncompatibleNodeTypeHasBeenSet = false;
+
     MalformedConditionExpressionFlowValidationDetails m_malformedConditionExpression;
     bool m_malformedConditionExpressionHasBeenSet = false;
 
@@ -422,6 +512,12 @@ namespace Model
     MissingEndingNodesFlowValidationDetails m_missingEndingNodes;
     bool m_missingEndingNodesHasBeenSet = false;
 
+    MissingLoopControllerNodeFlowValidationDetails m_missingLoopControllerNode;
+    bool m_missingLoopControllerNodeHasBeenSet = false;
+
+    MissingLoopInputNodeFlowValidationDetails m_missingLoopInputNode;
+    bool m_missingLoopInputNodeHasBeenSet = false;
+
     MissingNodeConfigurationFlowValidationDetails m_missingNodeConfiguration;
     bool m_missingNodeConfigurationHasBeenSet = false;
 
@@ -433,6 +529,12 @@ namespace Model
 
     MissingStartingNodesFlowValidationDetails m_missingStartingNodes;
     bool m_missingStartingNodesHasBeenSet = false;
+
+    MultipleLoopControllerNodesFlowValidationDetails m_multipleLoopControllerNodes;
+    bool m_multipleLoopControllerNodesHasBeenSet = false;
+
+    MultipleLoopInputNodesFlowValidationDetails m_multipleLoopInputNodes;
+    bool m_multipleLoopInputNodesHasBeenSet = false;
 
     MultipleNodeInputConnectionsFlowValidationDetails m_multipleNodeInputConnections;
     bool m_multipleNodeInputConnectionsHasBeenSet = false;

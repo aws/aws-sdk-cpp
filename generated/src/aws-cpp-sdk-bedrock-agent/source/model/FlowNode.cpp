@@ -5,6 +5,7 @@
 
 #include <aws/bedrock-agent/model/FlowNode.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/bedrock-agent/model/FlowNodeConfiguration.h>
 
 #include <utility>
 
@@ -27,7 +28,7 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("configuration"))
   {
-    m_configuration = jsonValue.GetObject("configuration");
+    m_configuration = Aws::MakeShared<FlowNodeConfiguration>("FlowNode", jsonValue.GetObject("configuration"));
     m_configurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inputs"))
@@ -67,7 +68,7 @@ JsonValue FlowNode::Jsonize() const
 
   if(m_configurationHasBeenSet)
   {
-   payload.WithObject("configuration", m_configuration.Jsonize());
+   payload.WithObject("configuration", m_configuration->Jsonize());
 
   }
 

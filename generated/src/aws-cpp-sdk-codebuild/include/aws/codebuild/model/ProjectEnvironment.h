@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/RegistryCredential.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
+#include <aws/codebuild/model/DockerServer.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
 #include <utility>
 
@@ -247,6 +248,18 @@ namespace Model
     inline void SetImagePullCredentialsType(ImagePullCredentialsType value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
     inline ProjectEnvironment& WithImagePullCredentialsType(ImagePullCredentialsType value) { SetImagePullCredentialsType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A DockerServer object to use for this build project.</p>
+     */
+    inline const DockerServer& GetDockerServer() const { return m_dockerServer; }
+    inline bool DockerServerHasBeenSet() const { return m_dockerServerHasBeenSet; }
+    template<typename DockerServerT = DockerServer>
+    void SetDockerServer(DockerServerT&& value) { m_dockerServerHasBeenSet = true; m_dockerServer = std::forward<DockerServerT>(value); }
+    template<typename DockerServerT = DockerServer>
+    ProjectEnvironment& WithDockerServer(DockerServerT&& value) { SetDockerServer(std::forward<DockerServerT>(value)); return *this;}
+    ///@}
   private:
 
     EnvironmentType m_type{EnvironmentType::NOT_SET};
@@ -278,6 +291,9 @@ namespace Model
 
     ImagePullCredentialsType m_imagePullCredentialsType{ImagePullCredentialsType::NOT_SET};
     bool m_imagePullCredentialsTypeHasBeenSet = false;
+
+    DockerServer m_dockerServer;
+    bool m_dockerServerHasBeenSet = false;
   };
 
 } // namespace Model

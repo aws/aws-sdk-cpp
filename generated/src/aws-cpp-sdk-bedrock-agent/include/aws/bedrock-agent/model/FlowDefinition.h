@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/bedrock-agent/model/FlowConnection.h>
 #include <aws/bedrock-agent/model/FlowNode.h>
+#include <aws/bedrock-agent/model/FlowConnection.h>
 #include <utility>
 
 namespace Aws
@@ -24,6 +24,7 @@ namespace BedrockAgent
 {
 namespace Model
 {
+  class FlowNode;
 
   /**
    * <p>The definition of the nodes and connections between nodes in the

@@ -54,6 +54,7 @@
 #include <aws/bedrock-agent/model/ChunkingConfiguration.h>
 #include <aws/bedrock-agent/model/ChunkingStrategy.h>
 #include <aws/bedrock-agent/model/CollectorFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/ConcurrencyType.h>
 #include <aws/bedrock-agent/model/ConditionFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/ConfluenceAuthType.h>
 #include <aws/bedrock-agent/model/ConfluenceCrawlerConfiguration.h>
@@ -139,7 +140,9 @@
 #include <aws/bedrock-agent/model/EmbeddingModelConfiguration.h>
 #include <aws/bedrock-agent/model/EnrichmentStrategyConfiguration.h>
 #include <aws/bedrock-agent/model/EnrichmentStrategyMethod.h>
+#include <aws/bedrock-agent/model/FieldForReranking.h>
 #include <aws/bedrock-agent/model/FixedSizeChunkingConfiguration.h>
+#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
 #include <aws/bedrock-agent/model/FlowAliasSummary.h>
 #include <aws/bedrock-agent/model/FlowCondition.h>
@@ -153,6 +156,7 @@
 #include <aws/bedrock-agent/model/FlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <aws/bedrock-agent/model/FlowNodeInput.h>
+#include <aws/bedrock-agent/model/FlowNodeInputCategory.h>
 #include <aws/bedrock-agent/model/FlowNodeOutput.h>
 #include <aws/bedrock-agent/model/FlowNodeType.h>
 #include <aws/bedrock-agent/model/FlowStatus.h>
@@ -197,6 +201,7 @@
 #include <aws/bedrock-agent/model/HierarchicalChunkingLevelConfiguration.h>
 #include <aws/bedrock-agent/model/IncludeExclude.h>
 #include <aws/bedrock-agent/model/IncompatibleConnectionDataTypeFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/IncompatibleLoopNodeType.h>
 #include <aws/bedrock-agent/model/InferenceConfiguration.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsResult.h>
@@ -214,6 +219,7 @@
 #include <aws/bedrock-agent/model/InlineContentType.h>
 #include <aws/bedrock-agent/model/InputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/IntermediateStorage.h>
+#include <aws/bedrock-agent/model/InvalidLoopBoundaryFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/IteratorFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/KendraKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBase.h>
@@ -221,6 +227,8 @@
 #include <aws/bedrock-agent/model/KnowledgeBaseDocument.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseDocumentDetail.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/KnowledgeBaseOrchestrationConfiguration.h>
+#include <aws/bedrock-agent/model/KnowledgeBasePromptTemplate.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseState.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseStatus.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseStorageType.h>
@@ -258,6 +266,10 @@
 #include <aws/bedrock-agent/model/ListPromptsResult.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceResult.h>
+#include <aws/bedrock-agent/model/LoopControllerFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/LoopFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/LoopIncompatibleNodeTypeFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/LoopInputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/MalformedConditionExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MalformedNodeInputExpressionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
@@ -265,6 +277,7 @@
 #include <aws/bedrock-agent/model/Message.h>
 #include <aws/bedrock-agent/model/MetadataAttribute.h>
 #include <aws/bedrock-agent/model/MetadataAttributeValue.h>
+#include <aws/bedrock-agent/model/MetadataConfigurationForReranking.h>
 #include <aws/bedrock-agent/model/MetadataSourceType.h>
 #include <aws/bedrock-agent/model/MetadataValueType.h>
 #include <aws/bedrock-agent/model/MismatchedNodeInputTypeFlowValidationDetails.h>
@@ -272,12 +285,16 @@
 #include <aws/bedrock-agent/model/MissingConnectionConfigurationFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingDefaultConditionFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingEndingNodesFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MissingLoopControllerNodeFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MissingLoopInputNodeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeConfigurationFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeInputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingNodeOutputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MissingStartingNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasConfiguration.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasFieldMapping.h>
+#include <aws/bedrock-agent/model/MultipleLoopControllerNodesFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/MultipleLoopInputNodesFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/MultipleNodeInputConnectionsFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/NeptuneAnalyticsConfiguration.h>
 #include <aws/bedrock-agent/model/NeptuneAnalyticsFieldMapping.h>
@@ -295,6 +312,8 @@
 #include <aws/bedrock-agent/model/ParsingStrategy.h>
 #include <aws/bedrock-agent/model/PatternObjectFilter.h>
 #include <aws/bedrock-agent/model/PatternObjectFilterConfiguration.h>
+#include <aws/bedrock-agent/model/PerformanceConfigLatency.h>
+#include <aws/bedrock-agent/model/PerformanceConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeFieldMapping.h>
 #include <aws/bedrock-agent/model/PrepareAgentRequest.h>
@@ -343,6 +362,8 @@
 #include <aws/bedrock-agent/model/RedshiftServerlessConfiguration.h>
 #include <aws/bedrock-agent/model/RelayConversationHistory.h>
 #include <aws/bedrock-agent/model/RequireConfirmation.h>
+#include <aws/bedrock-agent/model/RerankingMetadataSelectionMode.h>
+#include <aws/bedrock-agent/model/RerankingMetadataSelectiveModeConfiguration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeS3Configuration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeServiceConfiguration.h>
@@ -433,6 +454,10 @@
 #include <aws/bedrock-agent/model/ValidationExceptionField.h>
 #include <aws/bedrock-agent/model/VectorIngestionConfiguration.h>
 #include <aws/bedrock-agent/model/VectorKnowledgeBaseConfiguration.h>
+#include <aws/bedrock-agent/model/VectorSearchBedrockRerankingConfiguration.h>
+#include <aws/bedrock-agent/model/VectorSearchBedrockRerankingModelConfiguration.h>
+#include <aws/bedrock-agent/model/VectorSearchRerankingConfiguration.h>
+#include <aws/bedrock-agent/model/VectorSearchRerankingConfigurationType.h>
 #include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/WebCrawlerLimits.h>
 #include <aws/bedrock-agent/model/WebDataSourceConfiguration.h>

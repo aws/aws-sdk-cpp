@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
+     * <code>event-subscription-arn</code> | <code>event-subscription-id</code> </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

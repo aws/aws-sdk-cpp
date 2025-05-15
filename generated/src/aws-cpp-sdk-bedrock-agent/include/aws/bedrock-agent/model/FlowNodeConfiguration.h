@@ -14,10 +14,13 @@
 #include <aws/bedrock-agent/model/KnowledgeBaseFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/LambdaFunctionFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/LexFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/LoopControllerFlowNodeConfiguration.h>
+#include <aws/bedrock-agent/model/LoopInputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/OutputFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/PromptFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/StorageFlowNodeConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
 
 namespace Aws
@@ -34,12 +37,13 @@ namespace BedrockAgent
 {
 namespace Model
 {
+  class LoopFlowNodeConfiguration;
 
   /**
    * <p>Contains configurations for a node in your flow. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-   * types in Amazon Bedrock works</a> in the Amazon Bedrock User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * types in a flow</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/FlowNodeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -177,6 +181,47 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains configurations for a DoWhile loop in your flow.</p>
+     */
+    inline const LoopFlowNodeConfiguration& GetLoop() const{
+      return *m_loop;
+    }
+    inline bool LoopHasBeenSet() const { return m_loopHasBeenSet; }
+    template<typename LoopT = LoopFlowNodeConfiguration>
+    void SetLoop(LoopT&& value) {
+      m_loopHasBeenSet = true; 
+      m_loop = Aws::MakeShared<LoopFlowNodeConfiguration>("FlowNodeConfiguration", std::forward<LoopT>(value));
+    }
+    template<typename LoopT = LoopFlowNodeConfiguration>
+    FlowNodeConfiguration& WithLoop(LoopT&& value) { SetLoop(std::forward<LoopT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains controller node configurations for a DoWhile loop in your flow.</p>
+     */
+    inline const LoopControllerFlowNodeConfiguration& GetLoopController() const { return m_loopController; }
+    inline bool LoopControllerHasBeenSet() const { return m_loopControllerHasBeenSet; }
+    template<typename LoopControllerT = LoopControllerFlowNodeConfiguration>
+    void SetLoopController(LoopControllerT&& value) { m_loopControllerHasBeenSet = true; m_loopController = std::forward<LoopControllerT>(value); }
+    template<typename LoopControllerT = LoopControllerFlowNodeConfiguration>
+    FlowNodeConfiguration& WithLoopController(LoopControllerT&& value) { SetLoopController(std::forward<LoopControllerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains input node configurations for a DoWhile loop in your flow.</p>
+     */
+    inline const LoopInputFlowNodeConfiguration& GetLoopInput() const { return m_loopInput; }
+    inline bool LoopInputHasBeenSet() const { return m_loopInputHasBeenSet; }
+    template<typename LoopInputT = LoopInputFlowNodeConfiguration>
+    void SetLoopInput(LoopInputT&& value) { m_loopInputHasBeenSet = true; m_loopInput = std::forward<LoopInputT>(value); }
+    template<typename LoopInputT = LoopInputFlowNodeConfiguration>
+    FlowNodeConfiguration& WithLoopInput(LoopInputT&& value) { SetLoopInput(std::forward<LoopInputT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations for an output flow node in your flow. The last node
      * in the flow. <code>outputs</code> can't be specified for this node.</p>
      */
@@ -255,6 +300,15 @@ namespace Model
 
     LexFlowNodeConfiguration m_lex;
     bool m_lexHasBeenSet = false;
+
+    std::shared_ptr<LoopFlowNodeConfiguration> m_loop;
+    bool m_loopHasBeenSet = false;
+
+    LoopControllerFlowNodeConfiguration m_loopController;
+    bool m_loopControllerHasBeenSet = false;
+
+    LoopInputFlowNodeConfiguration m_loopInput;
+    bool m_loopInputHasBeenSet = false;
 
     OutputFlowNodeConfiguration m_output;
     bool m_outputHasBeenSet = false;

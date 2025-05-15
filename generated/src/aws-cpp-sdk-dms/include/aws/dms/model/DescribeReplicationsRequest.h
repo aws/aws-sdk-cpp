@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters applied to the replications.</p>
+     * <p>Filters applied to the replications.</p> <p> Valid filter names:
+     * <code>replication-config-arn</code> | <code>replication-config-id</code> </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

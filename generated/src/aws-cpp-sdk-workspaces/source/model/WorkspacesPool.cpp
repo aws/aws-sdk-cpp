@@ -89,6 +89,11 @@ WorkspacesPool& WorkspacesPool::operator =(JsonView jsonValue)
     m_timeoutSettings = jsonValue.GetObject("TimeoutSettings");
     m_timeoutSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RunningMode"))
+  {
+    m_runningMode = PoolsRunningModeMapper::GetPoolsRunningModeForName(jsonValue.GetString("RunningMode"));
+    m_runningModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -169,6 +174,11 @@ JsonValue WorkspacesPool::Jsonize() const
   {
    payload.WithObject("TimeoutSettings", m_timeoutSettings.Jsonize());
 
+  }
+
+  if(m_runningModeHasBeenSet)
+  {
+   payload.WithString("RunningMode", PoolsRunningModeMapper::GetNameForPoolsRunningMode(m_runningMode));
   }
 
   return payload;

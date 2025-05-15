@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
@@ -50,6 +51,19 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateFlowAliasRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration that specifies how nodes in the flow are executed in
+     * parallel.</p>
+     */
+    inline const FlowAliasConcurrencyConfiguration& GetConcurrencyConfiguration() const { return m_concurrencyConfiguration; }
+    inline bool ConcurrencyConfigurationHasBeenSet() const { return m_concurrencyConfigurationHasBeenSet; }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    void SetConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { m_concurrencyConfigurationHasBeenSet = true; m_concurrencyConfiguration = std::forward<ConcurrencyConfigurationT>(value); }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    CreateFlowAliasRequest& WithConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { SetConcurrencyConfiguration(std::forward<ConcurrencyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,6 +138,9 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
+    bool m_concurrencyConfigurationHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

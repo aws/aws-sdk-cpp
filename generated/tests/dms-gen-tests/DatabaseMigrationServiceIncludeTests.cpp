@@ -265,6 +265,7 @@
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/MoveReplicationTaskRequest.h>
 #include <aws/dms/model/MoveReplicationTaskResult.h>
+#include <aws/dms/model/MySQLAuthenticationMethod.h>
 #include <aws/dms/model/MySQLSettings.h>
 #include <aws/dms/model/MySqlDataProviderSettings.h>
 #include <aws/dms/model/NeptuneSettings.h>
@@ -277,6 +278,7 @@
 #include <aws/dms/model/ParquetVersionValue.h>
 #include <aws/dms/model/PendingMaintenanceAction.h>
 #include <aws/dms/model/PluginNameValue.h>
+#include <aws/dms/model/PostgreSQLAuthenticationMethod.h>
 #include <aws/dms/model/PostgreSQLSettings.h>
 #include <aws/dms/model/PostgreSqlDataProviderSettings.h>
 #include <aws/dms/model/PremigrationAssessmentStatus.h>

@@ -29,13 +29,9 @@ namespace Model
    * account is different than the configuration that applies to the OU. Amazon Web
    * Services Control Tower reports this type of drift for a parent or child enabled
    * baseline. One way to repair this drift by resetting the parent enabled baseline,
-   * on the OU.</p> <p>For example, if an account is moved between OUs that share the
-   * same baseline but different versions or parameters, the entity from the previous
-   * OU is unlinked; that (previous) OU reports <i>inheritance drift</i>. Also, the
-   * parent enabled baseline on the destination OU reports <i>inheritance drift</i>;
-   * it is missing the newly moved account. The configurations do not match for
-   * either OU, so both are in a state of inheritance drift.</p><p><h3>See Also:</h3>
-   * <a
+   * on the OU.</p> <p>For example, you may see this type of drift if you move
+   * accounts between OUs, but the accounts are not yet (re-)enrolled.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnabledBaselineDriftStatusSummary">AWS
    * API Reference</a></p>
    */
