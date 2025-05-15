@@ -42,7 +42,13 @@ namespace Model
     UnsatisfiedConnectionConditions,
     Unspecified,
     UnknownNodeInput,
-    UnknownNodeOutput
+    UnknownNodeOutput,
+    MissingLoopInputNode,
+    MissingLoopControllerNode,
+    MultipleLoopInputNodes,
+    MultipleLoopControllerNodes,
+    LoopIncompatibleNodeType,
+    InvalidLoopBoundary
   };
 
 namespace FlowValidationTypeMapper

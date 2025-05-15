@@ -44,6 +44,11 @@ ClusterSlurmConfiguration& ClusterSlurmConfiguration::operator =(JsonView jsonVa
     m_authKey = jsonValue.GetObject("authKey");
     m_authKeyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("accounting"))
+  {
+    m_accounting = jsonValue.GetObject("accounting");
+    m_accountingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +76,12 @@ JsonValue ClusterSlurmConfiguration::Jsonize() const
   if(m_authKeyHasBeenSet)
   {
    payload.WithObject("authKey", m_authKey.Jsonize());
+
+  }
+
+  if(m_accountingHasBeenSet)
+  {
+   payload.WithObject("accounting", m_accounting.Jsonize());
 
   }
 

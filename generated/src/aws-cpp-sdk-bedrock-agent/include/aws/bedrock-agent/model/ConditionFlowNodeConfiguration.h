@@ -28,8 +28,8 @@ namespace Model
    * <p>Defines a condition node in your flow. You can specify conditions that
    * determine which node comes next in the flow. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-   * types in Amazon Bedrock works</a> in the Amazon Bedrock User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * types in a flow</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ConditionFlowNodeConfiguration">AWS
    * API Reference</a></p>
    */

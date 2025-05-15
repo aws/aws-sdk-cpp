@@ -124,9 +124,13 @@ namespace Model
      * instance that satisfies your specified attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved
      * capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p> 
-     * </li> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2
-     * vCPUs for builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up
-     * to 8 GiB memory and 4 vCPUs for builds.</p> </li> <li> <p>
+     * </li> <li> <p> <code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for
+     * your compute fleet. For a list of supported instance types, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported
+     * instance families </a> in the <i>CodeBuild User Guide</i>.</p> </li> <li> <p>
+     * <code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB
+     * memory and 4 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GiB memory and 8 vCPUs for
      * builds, depending on your environment type.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 72 GiB memory and 36 vCPUs for
@@ -174,7 +178,8 @@ namespace Model
     ///@{
     /**
      * <p>The compute configuration of the compute fleet. This is only required if
-     * <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+     * <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or
+     * <code>CUSTOM_INSTANCE_TYPE</code>.</p>
      */
     inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
     inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }

@@ -30,6 +30,11 @@ CreateFlowAliasResult& CreateFlowAliasResult::operator =(const Aws::AmazonWebSer
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("concurrencyConfiguration"))
+  {
+    m_concurrencyConfiguration = jsonValue.GetObject("concurrencyConfiguration");
+    m_concurrencyConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

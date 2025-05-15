@@ -6,7 +6,11 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
+#include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/KnowledgeBaseOrchestrationConfiguration.h>
+#include <aws/bedrock-agent/model/KnowledgeBasePromptTemplate.h>
+#include <aws/bedrock-agent/model/VectorSearchRerankingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -30,8 +34,8 @@ namespace Model
    * directly (as an array) or a response generated based on the retrieved responses.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-   * types in Amazon Bedrock works</a> in the Amazon Bedrock User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * types in a flow</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/KnowledgeBaseFlowNodeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -55,6 +59,18 @@ namespace Model
     void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
     template<typename GuardrailConfigurationT = GuardrailConfiguration>
     KnowledgeBaseFlowNodeConfiguration& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains inference configurations for the prompt.</p>
+     */
+    inline const PromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
+    inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    void SetInferenceConfiguration(InferenceConfigurationT&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value); }
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    KnowledgeBaseFlowNodeConfiguration& WithInferenceConfiguration(InferenceConfigurationT&& value) { SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,16 +99,80 @@ namespace Model
     template<typename ModelIdT = Aws::String>
     KnowledgeBaseFlowNodeConfiguration& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of results to retrieve from the knowledge base.</p>
+     */
+    inline int GetNumberOfResults() const { return m_numberOfResults; }
+    inline bool NumberOfResultsHasBeenSet() const { return m_numberOfResultsHasBeenSet; }
+    inline void SetNumberOfResults(int value) { m_numberOfResultsHasBeenSet = true; m_numberOfResults = value; }
+    inline KnowledgeBaseFlowNodeConfiguration& WithNumberOfResults(int value) { SetNumberOfResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for orchestrating the retrieval and generation process in
+     * the knowledge base node.</p>
+     */
+    inline const KnowledgeBaseOrchestrationConfiguration& GetOrchestrationConfiguration() const { return m_orchestrationConfiguration; }
+    inline bool OrchestrationConfigurationHasBeenSet() const { return m_orchestrationConfigurationHasBeenSet; }
+    template<typename OrchestrationConfigurationT = KnowledgeBaseOrchestrationConfiguration>
+    void SetOrchestrationConfiguration(OrchestrationConfigurationT&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::forward<OrchestrationConfigurationT>(value); }
+    template<typename OrchestrationConfigurationT = KnowledgeBaseOrchestrationConfiguration>
+    KnowledgeBaseFlowNodeConfiguration& WithOrchestrationConfiguration(OrchestrationConfigurationT&& value) { SetOrchestrationConfiguration(std::forward<OrchestrationConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A custom prompt template to use with the knowledge base for generating
+     * responses.</p>
+     */
+    inline const KnowledgeBasePromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
+    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
+    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
+    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
+    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
+    KnowledgeBaseFlowNodeConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for reranking the retrieved results from the knowledge base
+     * to improve relevance.</p>
+     */
+    inline const VectorSearchRerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
+    inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    KnowledgeBaseFlowNodeConfiguration& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     GuardrailConfiguration m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
+
+    PromptInferenceConfiguration m_inferenceConfiguration;
+    bool m_inferenceConfigurationHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
+
+    int m_numberOfResults{0};
+    bool m_numberOfResultsHasBeenSet = false;
+
+    KnowledgeBaseOrchestrationConfiguration m_orchestrationConfiguration;
+    bool m_orchestrationConfigurationHasBeenSet = false;
+
+    KnowledgeBasePromptTemplate m_promptTemplate;
+    bool m_promptTemplateHasBeenSet = false;
+
+    VectorSearchRerankingConfiguration m_rerankingConfiguration;
+    bool m_rerankingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

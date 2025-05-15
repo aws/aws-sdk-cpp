@@ -7,6 +7,7 @@
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/model/SlurmAuthKey.h>
+#include <aws/pcs/model/Accounting.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
 #include <utility>
 
@@ -78,6 +79,19 @@ namespace Model
     template<typename AuthKeyT = SlurmAuthKey>
     ClusterSlurmConfiguration& WithAuthKey(AuthKeyT&& value) { SetAuthKey(std::forward<AuthKeyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The accounting configuration includes configurable settings for Slurm
+     * accounting.</p>
+     */
+    inline const Accounting& GetAccounting() const { return m_accounting; }
+    inline bool AccountingHasBeenSet() const { return m_accountingHasBeenSet; }
+    template<typename AccountingT = Accounting>
+    void SetAccounting(AccountingT&& value) { m_accountingHasBeenSet = true; m_accounting = std::forward<AccountingT>(value); }
+    template<typename AccountingT = Accounting>
+    ClusterSlurmConfiguration& WithAccounting(AccountingT&& value) { SetAccounting(std::forward<AccountingT>(value)); return *this;}
+    ///@}
   private:
 
     int m_scaleDownIdleTimeInSeconds{0};
@@ -88,6 +102,9 @@ namespace Model
 
     SlurmAuthKey m_authKey;
     bool m_authKeyHasBeenSet = false;
+
+    Accounting m_accounting;
+    bool m_accountingHasBeenSet = false;
   };
 
 } // namespace Model

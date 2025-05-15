@@ -16,6 +16,12 @@ Aws::String UpdateFlowAliasRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_concurrencyConfigurationHasBeenSet)
+  {
+   payload.WithObject("concurrencyConfiguration", m_concurrencyConfiguration.Jsonize());
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);

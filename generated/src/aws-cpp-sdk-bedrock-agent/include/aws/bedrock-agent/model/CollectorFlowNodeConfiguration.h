@@ -25,8 +25,8 @@ namespace Model
    * <p>Defines a collector node in your flow. This node takes an iteration of inputs
    * and consolidates them into an array in the output. For more information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html">Node
-   * types in Amazon Bedrock works</a> in the Amazon Bedrock User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * types in a flow</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CollectorFlowNodeConfiguration">AWS
    * API Reference</a></p>
    */

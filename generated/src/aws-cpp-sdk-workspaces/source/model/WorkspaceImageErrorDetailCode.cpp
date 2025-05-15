@@ -65,6 +65,9 @@ namespace Aws
         static const int StagedAppxPackage_HASH = HashingUtils::HashString("StagedAppxPackage");
         static const int UnsupportedOsUpgrade_HASH = HashingUtils::HashString("UnsupportedOsUpgrade");
         static const int InsufficientRearmCount_HASH = HashingUtils::HashString("InsufficientRearmCount");
+        static const int ProtocolOSIncompatibility_HASH = HashingUtils::HashString("ProtocolOSIncompatibility");
+        static const int MemoryIntegrityIncompatibility_HASH = HashingUtils::HashString("MemoryIntegrityIncompatibility");
+        static const int RestrictedDriveLetterInUse_HASH = HashingUtils::HashString("RestrictedDriveLetterInUse");
 
 
         WorkspaceImageErrorDetailCode GetWorkspaceImageErrorDetailCodeForName(const Aws::String& name)
@@ -250,6 +253,18 @@ namespace Aws
           {
             return WorkspaceImageErrorDetailCode::InsufficientRearmCount;
           }
+          else if (hashCode == ProtocolOSIncompatibility_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::ProtocolOSIncompatibility;
+          }
+          else if (hashCode == MemoryIntegrityIncompatibility_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::MemoryIntegrityIncompatibility;
+          }
+          else if (hashCode == RestrictedDriveLetterInUse_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::RestrictedDriveLetterInUse;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -356,6 +371,12 @@ namespace Aws
             return "UnsupportedOsUpgrade";
           case WorkspaceImageErrorDetailCode::InsufficientRearmCount:
             return "InsufficientRearmCount";
+          case WorkspaceImageErrorDetailCode::ProtocolOSIncompatibility:
+            return "ProtocolOSIncompatibility";
+          case WorkspaceImageErrorDetailCode::MemoryIntegrityIncompatibility:
+            return "MemoryIntegrityIncompatibility";
+          case WorkspaceImageErrorDetailCode::RestrictedDriveLetterInUse:
+            return "RestrictedDriveLetterInUse";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

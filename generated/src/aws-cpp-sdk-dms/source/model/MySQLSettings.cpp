@@ -100,6 +100,16 @@ MySQLSettings& MySQLSettings::operator =(JsonView jsonValue)
     m_executeTimeout = jsonValue.GetInteger("ExecuteTimeout");
     m_executeTimeoutHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
+  {
+    m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
+    m_serviceAccessRoleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AuthenticationMethod"))
+  {
+    m_authenticationMethod = MySQLAuthenticationMethodMapper::GetMySQLAuthenticationMethodForName(jsonValue.GetString("AuthenticationMethod"));
+    m_authenticationMethodHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -194,6 +204,17 @@ JsonValue MySQLSettings::Jsonize() const
   {
    payload.WithInteger("ExecuteTimeout", m_executeTimeout);
 
+  }
+
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_authenticationMethodHasBeenSet)
+  {
+   payload.WithString("AuthenticationMethod", MySQLAuthenticationMethodMapper::GetNameForMySQLAuthenticationMethod(m_authenticationMethod));
   }
 
   return payload;

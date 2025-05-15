@@ -45,6 +45,16 @@ FlowValidationDetails& FlowValidationDetails::operator =(JsonView jsonValue)
     m_incompatibleConnectionDataType = jsonValue.GetObject("incompatibleConnectionDataType");
     m_incompatibleConnectionDataTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("invalidLoopBoundary"))
+  {
+    m_invalidLoopBoundary = jsonValue.GetObject("invalidLoopBoundary");
+    m_invalidLoopBoundaryHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("loopIncompatibleNodeType"))
+  {
+    m_loopIncompatibleNodeType = jsonValue.GetObject("loopIncompatibleNodeType");
+    m_loopIncompatibleNodeTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("malformedConditionExpression"))
   {
     m_malformedConditionExpression = jsonValue.GetObject("malformedConditionExpression");
@@ -80,6 +90,16 @@ FlowValidationDetails& FlowValidationDetails::operator =(JsonView jsonValue)
     m_missingEndingNodes = jsonValue.GetObject("missingEndingNodes");
     m_missingEndingNodesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("missingLoopControllerNode"))
+  {
+    m_missingLoopControllerNode = jsonValue.GetObject("missingLoopControllerNode");
+    m_missingLoopControllerNodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("missingLoopInputNode"))
+  {
+    m_missingLoopInputNode = jsonValue.GetObject("missingLoopInputNode");
+    m_missingLoopInputNodeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("missingNodeConfiguration"))
   {
     m_missingNodeConfiguration = jsonValue.GetObject("missingNodeConfiguration");
@@ -99,6 +119,16 @@ FlowValidationDetails& FlowValidationDetails::operator =(JsonView jsonValue)
   {
     m_missingStartingNodes = jsonValue.GetObject("missingStartingNodes");
     m_missingStartingNodesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("multipleLoopControllerNodes"))
+  {
+    m_multipleLoopControllerNodes = jsonValue.GetObject("multipleLoopControllerNodes");
+    m_multipleLoopControllerNodesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("multipleLoopInputNodes"))
+  {
+    m_multipleLoopInputNodes = jsonValue.GetObject("multipleLoopInputNodes");
+    m_multipleLoopInputNodesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("multipleNodeInputConnections"))
   {
@@ -191,6 +221,18 @@ JsonValue FlowValidationDetails::Jsonize() const
 
   }
 
+  if(m_invalidLoopBoundaryHasBeenSet)
+  {
+   payload.WithObject("invalidLoopBoundary", m_invalidLoopBoundary.Jsonize());
+
+  }
+
+  if(m_loopIncompatibleNodeTypeHasBeenSet)
+  {
+   payload.WithObject("loopIncompatibleNodeType", m_loopIncompatibleNodeType.Jsonize());
+
+  }
+
   if(m_malformedConditionExpressionHasBeenSet)
   {
    payload.WithObject("malformedConditionExpression", m_malformedConditionExpression.Jsonize());
@@ -233,6 +275,18 @@ JsonValue FlowValidationDetails::Jsonize() const
 
   }
 
+  if(m_missingLoopControllerNodeHasBeenSet)
+  {
+   payload.WithObject("missingLoopControllerNode", m_missingLoopControllerNode.Jsonize());
+
+  }
+
+  if(m_missingLoopInputNodeHasBeenSet)
+  {
+   payload.WithObject("missingLoopInputNode", m_missingLoopInputNode.Jsonize());
+
+  }
+
   if(m_missingNodeConfigurationHasBeenSet)
   {
    payload.WithObject("missingNodeConfiguration", m_missingNodeConfiguration.Jsonize());
@@ -254,6 +308,18 @@ JsonValue FlowValidationDetails::Jsonize() const
   if(m_missingStartingNodesHasBeenSet)
   {
    payload.WithObject("missingStartingNodes", m_missingStartingNodes.Jsonize());
+
+  }
+
+  if(m_multipleLoopControllerNodesHasBeenSet)
+  {
+   payload.WithObject("multipleLoopControllerNodes", m_multipleLoopControllerNodes.Jsonize());
+
+  }
+
+  if(m_multipleLoopInputNodesHasBeenSet)
+  {
+   payload.WithObject("multipleLoopInputNodes", m_multipleLoopInputNodes.Jsonize());
 
   }
 

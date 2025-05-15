@@ -461,9 +461,9 @@ namespace PCS
         }
 
         /**
-         *  <p>This API action isn't intended for you to use.</p> 
-         * <p>Amazon Web Services PCS uses this API action to register the compute nodes it
-         * launches in your account.</p><p><h3>See Also:</h3>   <a
+         * <p> <p>This API action isn't intended for you to use.</p>
+         *  <p>Amazon Web Services PCS uses this API action to register the
+         * compute nodes it launches in your account.</p></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">AWS
          * API Reference</a></p>
          */

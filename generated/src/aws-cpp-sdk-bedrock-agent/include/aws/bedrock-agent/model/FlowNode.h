@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowNodeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowNodeType.h>
 #include <aws/bedrock-agent/model/FlowNodeInput.h>
 #include <aws/bedrock-agent/model/FlowNodeOutput.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
 
 namespace Aws
@@ -27,6 +27,7 @@ namespace BedrockAgent
 {
 namespace Model
 {
+  class FlowNodeConfiguration;
 
   /**
    * <p>Contains configurations about a node in the flow.</p><p><h3>See Also:</h3>  
@@ -47,10 +48,15 @@ namespace Model
     /**
      * <p>Contains configurations for the node.</p>
      */
-    inline const FlowNodeConfiguration& GetConfiguration() const { return m_configuration; }
+    inline const FlowNodeConfiguration& GetConfiguration() const{
+      return *m_configuration;
+    }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
     template<typename ConfigurationT = FlowNodeConfiguration>
-    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    void SetConfiguration(ConfigurationT&& value) {
+      m_configurationHasBeenSet = true; 
+      m_configuration = Aws::MakeShared<FlowNodeConfiguration>("FlowNode", std::forward<ConfigurationT>(value));
+    }
     template<typename ConfigurationT = FlowNodeConfiguration>
     FlowNode& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
@@ -110,7 +116,7 @@ namespace Model
     ///@}
   private:
 
-    FlowNodeConfiguration m_configuration;
+    std::shared_ptr<FlowNodeConfiguration> m_configuration;
     bool m_configurationHasBeenSet = false;
 
     Aws::Vector<FlowNodeInput> m_inputs;

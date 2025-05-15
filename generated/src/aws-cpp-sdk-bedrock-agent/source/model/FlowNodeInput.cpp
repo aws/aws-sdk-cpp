@@ -25,6 +25,11 @@ FlowNodeInput::FlowNodeInput(JsonView jsonValue)
 
 FlowNodeInput& FlowNodeInput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("category"))
+  {
+    m_category = FlowNodeInputCategoryMapper::GetFlowNodeInputCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
@@ -46,6 +51,11 @@ FlowNodeInput& FlowNodeInput::operator =(JsonView jsonValue)
 JsonValue FlowNodeInput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("category", FlowNodeInputCategoryMapper::GetNameForFlowNodeInputCategory(m_category));
+  }
 
   if(m_expressionHasBeenSet)
   {

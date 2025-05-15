@@ -28,7 +28,10 @@ namespace Model
     Retrieval,
     Iterator,
     Collector,
-    InlineCode
+    InlineCode,
+    Loop,
+    LoopInput,
+    LoopController
   };
 
 namespace FlowNodeTypeMapper

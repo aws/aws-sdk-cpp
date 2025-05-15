@@ -5,6 +5,7 @@
 
 #include <aws/bedrock-agent/model/FlowNodeConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/bedrock-agent/model/LoopFlowNodeConfiguration.h>
 
 #include <utility>
 
@@ -69,6 +70,21 @@ FlowNodeConfiguration& FlowNodeConfiguration::operator =(JsonView jsonValue)
   {
     m_lex = jsonValue.GetObject("lex");
     m_lexHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("loop"))
+  {
+    m_loop = Aws::MakeShared<LoopFlowNodeConfiguration>("FlowNodeConfiguration", jsonValue.GetObject("loop"));
+    m_loopHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("loopController"))
+  {
+    m_loopController = jsonValue.GetObject("loopController");
+    m_loopControllerHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("loopInput"))
+  {
+    m_loopInput = jsonValue.GetObject("loopInput");
+    m_loopInputHasBeenSet = true;
   }
   if(jsonValue.ValueExists("output"))
   {
@@ -148,6 +164,24 @@ JsonValue FlowNodeConfiguration::Jsonize() const
   if(m_lexHasBeenSet)
   {
    payload.WithObject("lex", m_lex.Jsonize());
+
+  }
+
+  if(m_loopHasBeenSet)
+  {
+   payload.WithObject("loop", m_loop->Jsonize());
+
+  }
+
+  if(m_loopControllerHasBeenSet)
+  {
+   payload.WithObject("loopController", m_loopController.Jsonize());
+
+  }
+
+  if(m_loopInputHasBeenSet)
+  {
+   payload.WithObject("loopInput", m_loopInput.Jsonize());
 
   }
 

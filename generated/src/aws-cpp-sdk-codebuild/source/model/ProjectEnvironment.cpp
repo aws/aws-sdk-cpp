@@ -79,6 +79,11 @@ ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
     m_imagePullCredentialsType = ImagePullCredentialsTypeMapper::GetImagePullCredentialsTypeForName(jsonValue.GetString("imagePullCredentialsType"));
     m_imagePullCredentialsTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("dockerServer"))
+  {
+    m_dockerServer = jsonValue.GetObject("dockerServer");
+    m_dockerServerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -146,6 +151,12 @@ JsonValue ProjectEnvironment::Jsonize() const
   if(m_imagePullCredentialsTypeHasBeenSet)
   {
    payload.WithString("imagePullCredentialsType", ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsType));
+  }
+
+  if(m_dockerServerHasBeenSet)
+  {
+   payload.WithObject("dockerServer", m_dockerServer.Jsonize());
+
   }
 
   return payload;

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
 #include <utility>
@@ -44,6 +45,19 @@ namespace Model
     void SetAliasIdentifier(AliasIdentifierT&& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = std::forward<AliasIdentifierT>(value); }
     template<typename AliasIdentifierT = Aws::String>
     UpdateFlowAliasRequest& WithAliasIdentifier(AliasIdentifierT&& value) { SetAliasIdentifier(std::forward<AliasIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration that specifies how nodes in the flow are executed in
+     * parallel.</p>
+     */
+    inline const FlowAliasConcurrencyConfiguration& GetConcurrencyConfiguration() const { return m_concurrencyConfiguration; }
+    inline bool ConcurrencyConfigurationHasBeenSet() const { return m_concurrencyConfigurationHasBeenSet; }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    void SetConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { m_concurrencyConfigurationHasBeenSet = true; m_concurrencyConfiguration = std::forward<ConcurrencyConfigurationT>(value); }
+    template<typename ConcurrencyConfigurationT = FlowAliasConcurrencyConfiguration>
+    UpdateFlowAliasRequest& WithConcurrencyConfiguration(ConcurrencyConfigurationT&& value) { SetConcurrencyConfiguration(std::forward<ConcurrencyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,6 +113,9 @@ namespace Model
 
     Aws::String m_aliasIdentifier;
     bool m_aliasIdentifierHasBeenSet = false;
+
+    FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
+    bool m_concurrencyConfigurationHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

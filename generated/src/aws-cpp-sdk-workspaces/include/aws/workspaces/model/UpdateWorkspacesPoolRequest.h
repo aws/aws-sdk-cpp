@@ -10,6 +10,7 @@
 #include <aws/workspaces/model/Capacity.h>
 #include <aws/workspaces/model/ApplicationSettingsRequest.h>
 #include <aws/workspaces/model/TimeoutSettings.h>
+#include <aws/workspaces/model/PoolsRunningMode.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,17 @@ namespace Model
     template<typename TimeoutSettingsT = TimeoutSettings>
     UpdateWorkspacesPoolRequest& WithTimeoutSettings(TimeoutSettingsT&& value) { SetTimeoutSettings(std::forward<TimeoutSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The desired running mode for the pool. The running mode can only be updated
+     * when the pool is in a stopped state.</p>
+     */
+    inline PoolsRunningMode GetRunningMode() const { return m_runningMode; }
+    inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
+    inline void SetRunningMode(PoolsRunningMode value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
+    inline UpdateWorkspacesPoolRequest& WithRunningMode(PoolsRunningMode value) { SetRunningMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_poolId;
@@ -142,6 +154,9 @@ namespace Model
 
     TimeoutSettings m_timeoutSettings;
     bool m_timeoutSettingsHasBeenSet = false;
+
+    PoolsRunningMode m_runningMode{PoolsRunningMode::NOT_SET};
+    bool m_runningModeHasBeenSet = false;
   };
 
 } // namespace Model

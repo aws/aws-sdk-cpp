@@ -150,6 +150,16 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_disableUnicodeSourceFilter = jsonValue.GetBool("DisableUnicodeSourceFilter");
     m_disableUnicodeSourceFilterHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
+  {
+    m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
+    m_serviceAccessRoleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AuthenticationMethod"))
+  {
+    m_authenticationMethod = PostgreSQLAuthenticationMethodMapper::GetPostgreSQLAuthenticationMethodForName(jsonValue.GetString("AuthenticationMethod"));
+    m_authenticationMethodHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -302,6 +312,17 @@ JsonValue PostgreSQLSettings::Jsonize() const
   {
    payload.WithBool("DisableUnicodeSourceFilter", m_disableUnicodeSourceFilter);
 
+  }
+
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_authenticationMethodHasBeenSet)
+  {
+   payload.WithString("AuthenticationMethod", PostgreSQLAuthenticationMethodMapper::GetNameForPostgreSQLAuthenticationMethod(m_authenticationMethod));
   }
 
   return payload;

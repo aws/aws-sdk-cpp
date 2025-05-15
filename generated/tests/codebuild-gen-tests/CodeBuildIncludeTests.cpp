@@ -91,6 +91,8 @@
 #include <aws/codebuild/model/DescribeCodeCoveragesResult.h>
 #include <aws/codebuild/model/DescribeTestCasesRequest.h>
 #include <aws/codebuild/model/DescribeTestCasesResult.h>
+#include <aws/codebuild/model/DockerServer.h>
+#include <aws/codebuild/model/DockerServerStatus.h>
 #include <aws/codebuild/model/EnvironmentImage.h>
 #include <aws/codebuild/model/EnvironmentLanguage.h>
 #include <aws/codebuild/model/EnvironmentPlatform.h>
