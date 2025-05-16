@@ -25,7 +25,7 @@ ${indent}  }
 #end
 #if(!$operation.request.shape.hasEventStreamMembers() && !($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled))
 ${indent}  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-#if($operation.hasEndpointTrait)## Note: EndpointDiscovery Trait is not Endpoint Trait
+#if($operation.hasEndpointTrait && !($serviceNamespace == "S3Control" && $serviceModel.rawEndpointRules) )## Note: EndpointDiscovery Trait is not Endpoint Trait
 ${indent}  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing(${operation.endpoint.constructHostPrefixString("request")});
 ${indent}  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ${operation.name}Outcome(addPrefixErr.value()));
 #end
