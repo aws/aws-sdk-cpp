@@ -23,7 +23,12 @@ AWS_PROTOCOL_TEST(PutAndGetInlineDocuments, PutAndGetInlineDocumentsInput) {
   PutAndGetInlineDocumentsRequest request;
 
   auto outcome = client.PutAndGetInlineDocuments(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const PutAndGetInlineDocumentsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"inlineDocument":{"foo":"bar"}} )" */
+  {
+    const Aws::Utils::DocumentView& resultInlineDocument = result.GetInlineDocument();
+    EXPECT_STREQ(R"j({"foo":"bar"})j", resultInlineDocument.WriteCompact().c_str());
+  }
 }

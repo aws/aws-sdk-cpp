@@ -23,9 +23,22 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonJsonMaps) {
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"denseStructMap":{"foo":{"hi":"there"},"baz":{"hi":"bye"}}} )" */
+  const Aws::Map<Aws::String, GreetingStruct>& resultDenseStructMap = result.GetDenseStructMap();
+  EXPECT_EQ(2U, resultDenseStructMap.size());
+  {
+    EXPECT_TRUE(resultDenseStructMap.find("foo") != resultDenseStructMap.end());
+    const GreetingStruct& resultDenseStructMapItem = resultDenseStructMap.at("foo");
+    EXPECT_EQ(R"(there)", resultDenseStructMapItem.GetHi());
+  }
+  {
+    EXPECT_TRUE(resultDenseStructMap.find("baz") != resultDenseStructMap.end());
+    const GreetingStruct& resultDenseStructMapItem = resultDenseStructMap.at("baz");
+    EXPECT_EQ(R"(bye)", resultDenseStructMapItem.GetHi());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesZeroValuesInMaps) {
@@ -40,9 +53,18 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesZeroValuesInMaps) {
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"denseNumberMap":{"x":0},"denseBooleanMap":{"x":false}} )" */
+  const Aws::Map<Aws::String, int>& resultDenseNumberMap = result.GetDenseNumberMap();
+  EXPECT_EQ(1U, resultDenseNumberMap.size());
+  EXPECT_TRUE(resultDenseNumberMap.find("x") != resultDenseNumberMap.end());
+  EXPECT_EQ(0, resultDenseNumberMap.at("x"));
+  const Aws::Map<Aws::String, bool>& resultDenseBooleanMap = result.GetDenseBooleanMap();
+  EXPECT_EQ(1U, resultDenseBooleanMap.size());
+  EXPECT_TRUE(resultDenseBooleanMap.find("x") != resultDenseBooleanMap.end());
+  EXPECT_EQ(false, resultDenseBooleanMap.at("x"));
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMap) {
@@ -57,9 +79,24 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMap) {
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"denseSetMap":{"x":[],"y":["a","b"]}} )" */
+  const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& resultDenseSetMap = result.GetDenseSetMap();
+  EXPECT_EQ(2U, resultDenseSetMap.size());
+  EXPECT_TRUE(resultDenseSetMap.find("x") != resultDenseSetMap.end());
+  {
+    const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("x");
+    EXPECT_EQ(0U, resultDenseSetMapItem.size());
+  }
+  EXPECT_TRUE(resultDenseSetMap.find("y") != resultDenseSetMap.end());
+  {
+    const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("y");
+    EXPECT_EQ(2U, resultDenseSetMapItem.size());
+    EXPECT_EQ(R"(a)", resultDenseSetMapItem.at(0));
+    EXPECT_EQ(R"(b)", resultDenseSetMapItem.at(1));
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMapAndSkipsNull) {
@@ -74,7 +111,22 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonDeserializesDenseSetMapAndSkipsNull) {
   JsonMapsRequest request;
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonMapsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"denseSetMap":{"x":[],"y":["a","b"]}} )" */
+  const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& resultDenseSetMap = result.GetDenseSetMap();
+  EXPECT_EQ(2U, resultDenseSetMap.size());
+  EXPECT_TRUE(resultDenseSetMap.find("x") != resultDenseSetMap.end());
+  {
+    const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("x");
+    EXPECT_EQ(0U, resultDenseSetMapItem.size());
+  }
+  EXPECT_TRUE(resultDenseSetMap.find("y") != resultDenseSetMap.end());
+  {
+    const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("y");
+    EXPECT_EQ(2U, resultDenseSetMapItem.size());
+    EXPECT_EQ(R"(a)", resultDenseSetMapItem.at(0));
+    EXPECT_EQ(R"(b)", resultDenseSetMapItem.at(1));
+  }
 }

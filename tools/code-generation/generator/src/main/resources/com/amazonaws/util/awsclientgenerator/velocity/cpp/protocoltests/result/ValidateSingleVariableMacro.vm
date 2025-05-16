@@ -1,0 +1,26 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateSingleParameterMacro.vm")
+##-------------------- ValidateSingleVariableMacro macro
+#macro( ValidateSingleVariableMacro $spaces $shape $expectedValue $parentVarName $getter $varName="" )
+#set($macro.spaces = $spaces)
+##/* ValidateSingleVariableMacro: shape = R"($shape)"; expectedValue = R"($expectedValue)"; varName = R"($varName)" */ ##
+#if($shape.list)
+${macro.spaces}{
+#ValidateListMacro("${macro.spaces}  ", $parentVarName, $shape, $expectedValue, $getter)
+${macro.spaces}}
+#break
+#end
+#if($shape.map)
+${macro.spaces}{
+#ValidateMapMacro("${macro.spaces}  ", $parentVarName, $shape, $expectedValue, $getter)
+${macro.spaces}}
+#break
+#end
+#if($shape.structure)
+/* TODO: validate, currently no such case exist*/
+#foreach($innerParam in $arrayItem.fields())
+#ValidateParamsMacro("${macro.spaces}  " "${parentVarName}.${getter}" $shape $expectedValue)
+#end
+#break
+#end
+${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($shape, $expectedValue), ${parentVarName}.${getter});
+#end##macro ValidateSingleVariableMacro

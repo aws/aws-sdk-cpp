@@ -23,7 +23,12 @@ AWS_PROTOCOL_TEST(XmlEmptyLists, XmlEmptyLists) {
   XmlEmptyListsRequest request;
 
   auto outcome = client.XmlEmptyLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyListsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"stringList":[],"stringSet":[]} )" */
+  const Aws::Vector<Aws::String>& resultStringListItem = result.GetStringList();
+  EXPECT_EQ(0U, resultStringListItem.size());
+  const Aws::Vector<Aws::String>& resultStringSetItem = result.GetStringSet();
+  EXPECT_EQ(0U, resultStringSetItem.size());
 }

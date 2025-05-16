@@ -23,7 +23,10 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestJsonStringPayloadResponse) {
   HttpStringPayloadRequest request;
 
   auto outcome = client.HttpStringPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpStringPayloadResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"payload":"rawstring"} )" */
+  const Aws::String resultPayload = [&result](){Aws::StringStream ss; ss << result.GetPayload().rdbuf(); return ss.str();}();
+  EXPECT_STREQ(R"(rawstring)", resultPayload.c_str());
 }

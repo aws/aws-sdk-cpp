@@ -56,6 +56,8 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
 
         velocityEngine.init();
+
+        legacyPatchEc2Model();
     }
 
     protected SdkFileEntry generateTestSuiteSourceFile(ProtocolTestSuite testSuite) throws IOException {
@@ -141,10 +143,10 @@ public class CppProtocolTestGenerator implements ClientGenerator {
     );
 
     private List<String> computeTestSourceIncludes(ProtocolTestSuite testSuite) {
-        Set<String> set = testSuite.getCases().stream()
+        Set<String> set = testSuite.getShapes().entrySet().stream()
                 .map(entry -> {
-                    Shape shape = serviceModel.getShapes().getOrDefault(entry.getGiven().getName(),
-                            serviceModel.getShapes().get(entry.getGiven().getName() + "Request"));
+                    Shape shape = serviceModel.getShapes().getOrDefault(entry.getKey(),
+                            serviceModel.getShapes().get(entry.getKey() + "Request"));
                     // operation with no input shape defined but cpp sdk generates an empty request class
                     Set<String> includes = shape != null ?
                             CppViewHelper.computeSourceIncludes(serviceModel.getMetadata().getProjectName(), shape) :
@@ -157,7 +159,14 @@ public class CppProtocolTestGenerator implements ClientGenerator {
                         }
 
                     }
-                    // include the request shape itself
+                    return includes;
+                })
+                .flatMap(entrySet -> entrySet.stream())
+                .collect(Collectors.toSet());
+        // include the request shapes
+        Set<String> requestShapes = testSuite.getCases().stream()
+                .map(entry -> {
+                    Set<String> includes = new HashSet<>();
                     includes.add(String.format("<aws/%s/model/%s.h>", serviceModel.getMetadata().getProjectName(),
                             entry.getGiven().getName() + "Request"));
 
@@ -165,7 +174,33 @@ public class CppProtocolTestGenerator implements ClientGenerator {
                 })
                 .flatMap(entrySet -> entrySet.stream())
                 .collect(Collectors.toSet());
+
+        set.addAll(requestShapes);
         set.removeAll(HEADERS_TO_NOT_INCLUDE);
         return set.stream().sorted().collect(Collectors.toList());
+    }
+
+    /**
+     * Perform legacy patching of the ec2 model present from the very beginning.
+     */
+    private void legacyPatchEc2Model() {
+        if (!serviceModel.getMetadata().getProtocol().equals("ec2")) {
+            return;
+        }
+
+        List<String> keysToRename = new LinkedList<>();
+        Map<String, Shape> shapes = serviceModel.getShapes();
+        for (final String key : shapes.keySet()) {
+            final Shape shape = shapes.get(key);
+            shape.setName(shape.getName().replaceAll("Result$", "Response"));
+            shape.setType(shape.getType().replaceAll("Result$", "Response"));
+            keysToRename.add(key);
+        }
+
+        for (final String key : keysToRename) {
+            final Shape shape = shapes.get(key);
+            shapes.remove(key);
+            shapes.put(key.replaceAll("Result$", "Response"), shape);
+        }
     }
 }

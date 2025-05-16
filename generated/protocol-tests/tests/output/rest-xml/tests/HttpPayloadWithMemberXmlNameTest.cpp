@@ -23,7 +23,12 @@ AWS_PROTOCOL_TEST(HttpPayloadWithMemberXmlName, HttpPayloadWithMemberXmlName) {
   HttpPayloadWithMemberXmlNameRequest request;
 
   auto outcome = client.HttpPayloadWithMemberXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadWithMemberXmlNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"name":"Phreddy"}} )" */
+  {
+    const PayloadWithXmlName& resultNested = result.GetNested();
+    EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
+  }
 }

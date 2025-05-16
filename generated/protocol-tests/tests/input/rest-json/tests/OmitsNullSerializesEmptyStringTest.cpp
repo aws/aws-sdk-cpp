@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonOmitsNullQuery) {
   request.SetNullValue(R"(null)");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/OmitsNullSerializesEmptyString";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonSerializesEmptyQueryValue) {
@@ -37,10 +36,9 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonSerializesEmptyQueryVa
   request.SetEmptyString(R"()");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/OmitsNullSerializesEmptyString?Empty=";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

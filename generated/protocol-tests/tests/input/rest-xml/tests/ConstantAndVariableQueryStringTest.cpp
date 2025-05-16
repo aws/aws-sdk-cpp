@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, ConstantAndVariableQueryString
   request.SetBaz(R"(bam)");
 
   auto outcome = client.ConstantAndVariableQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, ConstantAndVariableQueryStringAllValues) {
@@ -38,10 +37,9 @@ AWS_PROTOCOL_TEST(ConstantAndVariableQueryString, ConstantAndVariableQueryString
   request.SetMaybeSet(R"(yes)");
 
   auto outcome = client.ConstantAndVariableQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantAndVariableQueryString?foo=bar&baz=bam&maybeSet=yes";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

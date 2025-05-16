@@ -19,12 +19,11 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAu
   QueryIdempotencyTokenAutoFillRequest request;
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/QueryIdempotencyTokenAutoFill?token=00000000-0000-4000-8000-000000000000";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAutoFillIsSet) {
@@ -36,10 +35,9 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAu
   request.SetToken(R"(00000000-0000-4000-8000-000000000000)");
 
   auto outcome = client.QueryIdempotencyTokenAutoFill(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/QueryIdempotencyTokenAutoFill?token=00000000-0000-4000-8000-000000000000";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
