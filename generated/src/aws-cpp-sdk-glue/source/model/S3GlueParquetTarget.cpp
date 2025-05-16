@@ -65,6 +65,11 @@ S3GlueParquetTarget& S3GlueParquetTarget::operator =(JsonView jsonValue)
     m_compression = ParquetCompressionTypeMapper::GetParquetCompressionTypeForName(jsonValue.GetString("Compression"));
     m_compressionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NumberTargetPartitions"))
+  {
+    m_numberTargetPartitions = jsonValue.GetString("NumberTargetPartitions");
+    m_numberTargetPartitionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("SchemaChangePolicy"))
   {
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
@@ -119,6 +124,12 @@ JsonValue S3GlueParquetTarget::Jsonize() const
   if(m_compressionHasBeenSet)
   {
    payload.WithString("Compression", ParquetCompressionTypeMapper::GetNameForParquetCompressionType(m_compression));
+  }
+
+  if(m_numberTargetPartitionsHasBeenSet)
+  {
+   payload.WithString("NumberTargetPartitions", m_numberTargetPartitions);
+
   }
 
   if(m_schemaChangePolicyHasBeenSet)

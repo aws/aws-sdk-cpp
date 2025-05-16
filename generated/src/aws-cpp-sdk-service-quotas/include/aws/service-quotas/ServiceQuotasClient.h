@@ -113,6 +113,33 @@ namespace ServiceQuotas
         }
 
         /**
+         * <p>Creates a Support case for an existing quota increase request. This call only
+         * creates a Support case if the request has a <code>Pending</code> status.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSupportCaseOutcome CreateSupportCase(const Model::CreateSupportCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSupportCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSupportCaseRequestT = Model::CreateSupportCaseRequest>
+        Model::CreateSupportCaseOutcomeCallable CreateSupportCaseCallable(const CreateSupportCaseRequestT& request) const
+        {
+            return SubmitCallable(&ServiceQuotasClient::CreateSupportCase, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSupportCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSupportCaseRequestT = Model::CreateSupportCaseRequest>
+        void CreateSupportCaseAsync(const CreateSupportCaseRequestT& request, const CreateSupportCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceQuotasClient::CreateSupportCase, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the quota increase request for the specified quota from your quota
          * request template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DeleteServiceQuotaIncreaseRequestFromTemplate">AWS

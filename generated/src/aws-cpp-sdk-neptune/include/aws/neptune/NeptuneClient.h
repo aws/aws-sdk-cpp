@@ -2113,6 +2113,42 @@ namespace Neptune
             return SubmitAsync(&NeptuneClient::StopDBCluster, request, handler, context);
         }
 
+        /**
+         * <p>Switches over the specified secondary DB cluster to be the new primary DB
+         * cluster in the global database cluster. Switchover operations were previously
+         * called "managed planned failovers."</p> <p>Promotes the specified secondary
+         * cluster to assume full read/write capabilities and demotes the current primary
+         * cluster to a secondary (read-only) cluster, maintaining the original replication
+         * topology. All secondary clusters are synchronized with the primary at the
+         * beginning of the process so the new primary continues operations for the global
+         * database without losing any data. Your database is unavailable for a short time
+         * while the primary and selected secondary clusters are assuming their new
+         * roles.</p>  <p>This operation is intended for controlled environments, for
+         * operations such as "regional rotation" or to fall back to the original primary
+         * after a global database failover.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverGlobalClusterOutcome SwitchoverGlobalCluster(const Model::SwitchoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        Model::SwitchoverGlobalClusterOutcomeCallable SwitchoverGlobalClusterCallable(const SwitchoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&NeptuneClient::SwitchoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for SwitchoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        void SwitchoverGlobalClusterAsync(const SwitchoverGlobalClusterRequestT& request, const SwitchoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NeptuneClient::SwitchoverGlobalCluster, request, handler, context);
+        }
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<NeptuneEndpointProviderBase>& accessEndpointProvider();

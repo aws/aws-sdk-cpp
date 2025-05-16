@@ -32,6 +32,7 @@
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsResult.h>
 #include <aws/codepipeline/model/ListActionExecutionsResult.h>
 #include <aws/codepipeline/model/ListActionTypesResult.h>
+#include <aws/codepipeline/model/ListDeployActionExecutionTargetsResult.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/codepipeline/model/ListPipelinesResult.h>
 #include <aws/codepipeline/model/ListRuleExecutionsResult.h>
@@ -116,6 +117,7 @@ namespace Aws
       class GetThirdPartyJobDetailsRequest;
       class ListActionExecutionsRequest;
       class ListActionTypesRequest;
+      class ListDeployActionExecutionTargetsRequest;
       class ListPipelineExecutionsRequest;
       class ListPipelinesRequest;
       class ListRuleExecutionsRequest;
@@ -162,6 +164,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, CodePipelineError> GetThirdPartyJobDetailsOutcome;
       typedef Aws::Utils::Outcome<ListActionExecutionsResult, CodePipelineError> ListActionExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListActionTypesResult, CodePipelineError> ListActionTypesOutcome;
+      typedef Aws::Utils::Outcome<ListDeployActionExecutionTargetsResult, CodePipelineError> ListDeployActionExecutionTargetsOutcome;
       typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, CodePipelineError> ListPipelineExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListPipelinesResult, CodePipelineError> ListPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListRuleExecutionsResult, CodePipelineError> ListRuleExecutionsOutcome;
@@ -208,6 +211,7 @@ namespace Aws
       typedef std::future<GetThirdPartyJobDetailsOutcome> GetThirdPartyJobDetailsOutcomeCallable;
       typedef std::future<ListActionExecutionsOutcome> ListActionExecutionsOutcomeCallable;
       typedef std::future<ListActionTypesOutcome> ListActionTypesOutcomeCallable;
+      typedef std::future<ListDeployActionExecutionTargetsOutcome> ListDeployActionExecutionTargetsOutcomeCallable;
       typedef std::future<ListPipelineExecutionsOutcome> ListPipelineExecutionsOutcomeCallable;
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
       typedef std::future<ListRuleExecutionsOutcome> ListRuleExecutionsOutcomeCallable;
@@ -257,6 +261,7 @@ namespace Aws
     typedef std::function<void(const CodePipelineClient*, const Model::GetThirdPartyJobDetailsRequest&, const Model::GetThirdPartyJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyJobDetailsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionExecutionsRequest&, const Model::ListActionExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionTypesRequest&, const Model::ListActionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionTypesResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::ListDeployActionExecutionTargetsRequest&, const Model::ListDeployActionExecutionTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeployActionExecutionTargetsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelineExecutionsRequest&, const Model::ListPipelineExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListRuleExecutionsRequest&, const Model::ListRuleExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleExecutionsResponseReceivedHandler;

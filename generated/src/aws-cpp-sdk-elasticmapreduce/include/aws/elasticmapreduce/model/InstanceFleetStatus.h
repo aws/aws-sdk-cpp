@@ -46,7 +46,7 @@ namespace Model
      * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
      * <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2
      * resources and is not yet ready to run jobs.</p> </li> <li> <p>
-     * <code>BOOTSTRAPPING</code>��Amazon EC2 instances and other resources have been
+     * <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been
      * provisioned and the bootstrap actions specified for the instances are
      * underway.</p> </li> <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other
      * resources are running. They are either executing jobs or waiting to execute

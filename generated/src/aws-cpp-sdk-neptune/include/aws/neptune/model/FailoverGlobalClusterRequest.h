@@ -64,6 +64,32 @@ namespace Model
     template<typename TargetDbClusterIdentifierT = Aws::String>
     FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(TargetDbClusterIdentifierT&& value) { SetTargetDbClusterIdentifier(std::forward<TargetDbClusterIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to allow data loss for this global database cluster
+     * operation. Allowing data loss triggers a global failover operation.</p> <p>If
+     * you don't specify <code>AllowDataLoss</code>, the global database cluster
+     * operation defaults to a switchover.</p> <p>Constraints:Can't be specified
+     * together with the <code>Switchover</code> parameter.</p>
+     */
+    inline bool GetAllowDataLoss() const { return m_allowDataLoss; }
+    inline bool AllowDataLossHasBeenSet() const { return m_allowDataLossHasBeenSet; }
+    inline void SetAllowDataLoss(bool value) { m_allowDataLossHasBeenSet = true; m_allowDataLoss = value; }
+    inline FailoverGlobalClusterRequest& WithAllowDataLoss(bool value) { SetAllowDataLoss(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to switch over this global database cluster.</p>
+     * <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code>
+     * parameter.</p>
+     */
+    inline bool GetSwitchover() const { return m_switchover; }
+    inline bool SwitchoverHasBeenSet() const { return m_switchoverHasBeenSet; }
+    inline void SetSwitchover(bool value) { m_switchoverHasBeenSet = true; m_switchover = value; }
+    inline FailoverGlobalClusterRequest& WithSwitchover(bool value) { SetSwitchover(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_globalClusterIdentifier;
@@ -71,6 +97,12 @@ namespace Model
 
     Aws::String m_targetDbClusterIdentifier;
     bool m_targetDbClusterIdentifierHasBeenSet = false;
+
+    bool m_allowDataLoss{false};
+    bool m_allowDataLossHasBeenSet = false;
+
+    bool m_switchover{false};
+    bool m_switchoverHasBeenSet = false;
   };
 
 } // namespace Model

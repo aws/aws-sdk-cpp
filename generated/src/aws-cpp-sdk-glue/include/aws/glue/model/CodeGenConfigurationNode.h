@@ -12,6 +12,7 @@
 #include <aws/glue/model/RedshiftSource.h>
 #include <aws/glue/model/S3CatalogSource.h>
 #include <aws/glue/model/S3CsvSource.h>
+#include <aws/glue/model/S3ExcelSource.h>
 #include <aws/glue/model/S3JsonSource.h>
 #include <aws/glue/model/S3ParquetSource.h>
 #include <aws/glue/model/RelationalCatalogSource.h>
@@ -22,7 +23,9 @@
 #include <aws/glue/model/RedshiftTarget.h>
 #include <aws/glue/model/S3CatalogTarget.h>
 #include <aws/glue/model/S3GlueParquetTarget.h>
+#include <aws/glue/model/S3HyperDirectTarget.h>
 #include <aws/glue/model/S3DirectTarget.h>
+#include <aws/glue/model/S3IcebergDirectTarget.h>
 #include <aws/glue/model/ApplyMapping.h>
 #include <aws/glue/model/SelectFields.h>
 #include <aws/glue/model/DropFields.h>
@@ -195,6 +198,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+     */
+    inline const S3ExcelSource& GetS3ExcelSource() const { return m_s3ExcelSource; }
+    inline bool S3ExcelSourceHasBeenSet() const { return m_s3ExcelSourceHasBeenSet; }
+    template<typename S3ExcelSourceT = S3ExcelSource>
+    void SetS3ExcelSource(S3ExcelSourceT&& value) { m_s3ExcelSourceHasBeenSet = true; m_s3ExcelSource = std::forward<S3ExcelSourceT>(value); }
+    template<typename S3ExcelSourceT = S3ExcelSource>
+    CodeGenConfigurationNode& WithS3ExcelSource(S3ExcelSourceT&& value) { SetS3ExcelSource(std::forward<S3ExcelSourceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a JSON data store stored in Amazon S3.</p>
      */
     inline const S3JsonSource& GetS3JsonSource() const { return m_s3JsonSource; }
@@ -318,6 +333,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Defines configuration parameters for writing data to Amazon S3 using
+     * HyperDirect optimization.</p>
+     */
+    inline const S3HyperDirectTarget& GetS3HyperDirectTarget() const { return m_s3HyperDirectTarget; }
+    inline bool S3HyperDirectTargetHasBeenSet() const { return m_s3HyperDirectTargetHasBeenSet; }
+    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
+    void SetS3HyperDirectTarget(S3HyperDirectTargetT&& value) { m_s3HyperDirectTargetHasBeenSet = true; m_s3HyperDirectTarget = std::forward<S3HyperDirectTargetT>(value); }
+    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
+    CodeGenConfigurationNode& WithS3HyperDirectTarget(S3HyperDirectTargetT&& value) { SetS3HyperDirectTarget(std::forward<S3HyperDirectTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a data target that writes to Amazon S3.</p>
      */
     inline const S3DirectTarget& GetS3DirectTarget() const { return m_s3DirectTarget; }
@@ -326,6 +354,19 @@ namespace Model
     void SetS3DirectTarget(S3DirectTargetT&& value) { m_s3DirectTargetHasBeenSet = true; m_s3DirectTarget = std::forward<S3DirectTargetT>(value); }
     template<typename S3DirectTargetT = S3DirectTarget>
     CodeGenConfigurationNode& WithS3DirectTarget(S3DirectTargetT&& value) { SetS3DirectTarget(std::forward<S3DirectTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines configuration parameters for writing data to Amazon S3 as an Apache
+     * Iceberg table.</p>
+     */
+    inline const S3IcebergDirectTarget& GetS3IcebergDirectTarget() const { return m_s3IcebergDirectTarget; }
+    inline bool S3IcebergDirectTargetHasBeenSet() const { return m_s3IcebergDirectTargetHasBeenSet; }
+    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
+    void SetS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { m_s3IcebergDirectTargetHasBeenSet = true; m_s3IcebergDirectTarget = std::forward<S3IcebergDirectTargetT>(value); }
+    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
+    CodeGenConfigurationNode& WithS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { SetS3IcebergDirectTarget(std::forward<S3IcebergDirectTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1017,6 +1058,9 @@ namespace Model
     S3CsvSource m_s3CsvSource;
     bool m_s3CsvSourceHasBeenSet = false;
 
+    S3ExcelSource m_s3ExcelSource;
+    bool m_s3ExcelSourceHasBeenSet = false;
+
     S3JsonSource m_s3JsonSource;
     bool m_s3JsonSourceHasBeenSet = false;
 
@@ -1047,8 +1091,14 @@ namespace Model
     S3GlueParquetTarget m_s3GlueParquetTarget;
     bool m_s3GlueParquetTargetHasBeenSet = false;
 
+    S3HyperDirectTarget m_s3HyperDirectTarget;
+    bool m_s3HyperDirectTargetHasBeenSet = false;
+
     S3DirectTarget m_s3DirectTarget;
     bool m_s3DirectTargetHasBeenSet = false;
+
+    S3IcebergDirectTarget m_s3IcebergDirectTarget;
+    bool m_s3IcebergDirectTargetHasBeenSet = false;
 
     ApplyMapping m_applyMapping;
     bool m_applyMappingHasBeenSet = false;

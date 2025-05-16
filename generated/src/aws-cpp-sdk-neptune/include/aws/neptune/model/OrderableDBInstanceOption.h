@@ -147,7 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+     * level.</p>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }

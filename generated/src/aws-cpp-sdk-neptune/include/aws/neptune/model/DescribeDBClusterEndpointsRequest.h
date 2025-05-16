@@ -95,7 +95,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
@@ -105,10 +105,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified,
      * the response includes only records beyond the marker, up to the value specified
-     * by <code>MaxRecords</code>. </p>
+     * by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }

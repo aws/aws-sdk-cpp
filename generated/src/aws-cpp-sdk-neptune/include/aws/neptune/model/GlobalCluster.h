@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/neptune/model/FailoverState.h>
 #include <aws/neptune/model/GlobalClusterMember.h>
 #include <utility>
 
@@ -155,6 +156,22 @@ namespace Model
     template<typename GlobalClusterMembersT = GlobalClusterMember>
     GlobalCluster& AddGlobalClusterMembers(GlobalClusterMembersT&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.emplace_back(std::forward<GlobalClusterMembersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending switchover or failover process for this global cluster
+     * (Neptune global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
+     */
+    inline const FailoverState& GetFailoverState() const { return m_failoverState; }
+    inline bool FailoverStateHasBeenSet() const { return m_failoverStateHasBeenSet; }
+    template<typename FailoverStateT = FailoverState>
+    void SetFailoverState(FailoverStateT&& value) { m_failoverStateHasBeenSet = true; m_failoverState = std::forward<FailoverStateT>(value); }
+    template<typename FailoverStateT = FailoverState>
+    GlobalCluster& WithFailoverState(FailoverStateT&& value) { SetFailoverState(std::forward<FailoverStateT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_globalClusterIdentifier;
@@ -183,6 +200,9 @@ namespace Model
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
     bool m_globalClusterMembersHasBeenSet = false;
+
+    FailoverState m_failoverState;
+    bool m_failoverStateHasBeenSet = false;
   };
 
 } // namespace Model

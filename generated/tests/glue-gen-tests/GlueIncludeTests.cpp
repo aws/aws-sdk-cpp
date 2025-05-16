@@ -558,6 +558,7 @@
 #include <aws/glue/model/GrokClassifier.h>
 #include <aws/glue/model/HudiTarget.h>
 #include <aws/glue/model/HudiTargetCompressionType.h>
+#include <aws/glue/model/HyperTargetCompressionType.h>
 #include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/glue/model/IcebergInput.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionConfiguration.h>
@@ -565,6 +566,7 @@
 #include <aws/glue/model/IcebergRetentionConfiguration.h>
 #include <aws/glue/model/IcebergRetentionMetrics.h>
 #include <aws/glue/model/IcebergTarget.h>
+#include <aws/glue/model/IcebergTargetCompressionType.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
 #include <aws/glue/model/ImportLabelsTaskRunProperties.h>
@@ -778,10 +780,13 @@
 #include <aws/glue/model/S3DirectTarget.h>
 #include <aws/glue/model/S3Encryption.h>
 #include <aws/glue/model/S3EncryptionMode.h>
+#include <aws/glue/model/S3ExcelSource.h>
 #include <aws/glue/model/S3GlueParquetTarget.h>
 #include <aws/glue/model/S3HudiCatalogTarget.h>
 #include <aws/glue/model/S3HudiDirectTarget.h>
 #include <aws/glue/model/S3HudiSource.h>
+#include <aws/glue/model/S3HyperDirectTarget.h>
+#include <aws/glue/model/S3IcebergDirectTarget.h>
 #include <aws/glue/model/S3JsonSource.h>
 #include <aws/glue/model/S3ParquetSource.h>
 #include <aws/glue/model/S3SourceAdditionalOptions.h>

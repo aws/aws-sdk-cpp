@@ -102,7 +102,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage type for the DB cluster.</p>
+     * <p>The pending change in storage type for the DB cluster.   Valid Values:</p>
+     * <ul> <li> <p> <b> <code>standard</code> </b>   –   ( <i>the default</i> )
+     * Configures cost-effective database storage for applications with moderate to
+     * small I/O usage.</p> </li> <li> <p> <b> <code>iopt1</code> </b>   –   Enables <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized
+     * storage</a> that's designed to meet the needs of I/O-intensive graph workloads
+     * that require predictable pricing with low I/O latency and consistent I/O
+     * throughput.</p> <p>Neptune I/O-Optimized storage is only available starting with
+     * engine release 1.3.0.0.</p> </li> </ul>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -128,7 +136,7 @@ namespace Model
     ///@{
     /**
      * <p>The Provisioned IOPS (I/O operations per second) value. This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * for Multi-AZ DB clusters.</p>
      */
     inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }

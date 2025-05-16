@@ -107,6 +107,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the number of target partitions for Parquet files when writing to
+     * Amazon S3 using AWS Glue.</p>
+     */
+    inline const Aws::String& GetNumberTargetPartitions() const { return m_numberTargetPartitions; }
+    inline bool NumberTargetPartitionsHasBeenSet() const { return m_numberTargetPartitionsHasBeenSet; }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    void SetNumberTargetPartitions(NumberTargetPartitionsT&& value) { m_numberTargetPartitionsHasBeenSet = true; m_numberTargetPartitions = std::forward<NumberTargetPartitionsT>(value); }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    S3GlueParquetTarget& WithNumberTargetPartitions(NumberTargetPartitionsT&& value) { SetNumberTargetPartitions(std::forward<NumberTargetPartitionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A policy that specifies update behavior for the crawler.</p>
      */
     inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const { return m_schemaChangePolicy; }
@@ -132,6 +145,9 @@ namespace Model
 
     ParquetCompressionType m_compression{ParquetCompressionType::NOT_SET};
     bool m_compressionHasBeenSet = false;
+
+    Aws::String m_numberTargetPartitions;
+    bool m_numberTargetPartitionsHasBeenSet = false;
 
     DirectSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;

@@ -27,10 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about valid modifications that you can make to your DB
-   * instance.</p> <p>Contains the result of a successful call to the
-   * <a>DescribeValidDBInstanceModifications</a> action.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+   * level.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ValidStorageOptions">AWS
    * API Reference</a></p>
    */
@@ -47,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+     * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+     * level.</p>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -59,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
+     * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+     * level.</p>
      */
     inline const Aws::Vector<Range>& GetStorageSize() const { return m_storageSize; }
     inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
@@ -73,7 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+     * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+     * level.</p>
      */
     inline const Aws::Vector<Range>& GetProvisionedIops() const { return m_provisionedIops; }
     inline bool ProvisionedIopsHasBeenSet() const { return m_provisionedIopsHasBeenSet; }
@@ -87,9 +88,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
-     * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
-     * storage.</p>
+     * <p>Not applicable. In Neptune the storage type is managed at the DB Cluster
+     * level.</p>
      */
     inline const Aws::Vector<DoubleRange>& GetIopsToStorageRatio() const { return m_iopsToStorageRatio; }
     inline bool IopsToStorageRatioHasBeenSet() const { return m_iopsToStorageRatioHasBeenSet; }

@@ -65,6 +65,11 @@ S3DirectTarget& S3DirectTarget::operator =(JsonView jsonValue)
     m_compression = jsonValue.GetString("Compression");
     m_compressionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NumberTargetPartitions"))
+  {
+    m_numberTargetPartitions = jsonValue.GetString("NumberTargetPartitions");
+    m_numberTargetPartitionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Format"))
   {
     m_format = TargetFormatMapper::GetTargetFormatForName(jsonValue.GetString("Format"));
@@ -124,6 +129,12 @@ JsonValue S3DirectTarget::Jsonize() const
   if(m_compressionHasBeenSet)
   {
    payload.WithString("Compression", m_compression);
+
+  }
+
+  if(m_numberTargetPartitionsHasBeenSet)
+  {
+   payload.WithString("NumberTargetPartitions", m_numberTargetPartitions);
 
   }
 

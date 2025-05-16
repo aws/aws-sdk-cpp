@@ -138,7 +138,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A short (255 max characters) human-readable string to provide additional
+     * <p>A short (1024 max characters) human-readable string to provide additional
      * details about a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const { return m_reason; }

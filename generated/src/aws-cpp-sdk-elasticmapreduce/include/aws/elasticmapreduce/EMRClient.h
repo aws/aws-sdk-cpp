@@ -238,6 +238,32 @@ namespace EMR
         }
 
         /**
+         * <p>Creates a persistent application user interface.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreatePersistentAppUI">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePersistentAppUIOutcome CreatePersistentAppUI(const Model::CreatePersistentAppUIRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePersistentAppUI that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePersistentAppUIRequestT = Model::CreatePersistentAppUIRequest>
+        Model::CreatePersistentAppUIOutcomeCallable CreatePersistentAppUICallable(const CreatePersistentAppUIRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::CreatePersistentAppUI, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePersistentAppUI that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePersistentAppUIRequestT = Model::CreatePersistentAppUIRequest>
+        void CreatePersistentAppUIAsync(const CreatePersistentAppUIRequestT& request, const CreatePersistentAppUIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::CreatePersistentAppUI, request, handler, context);
+        }
+
+        /**
          * <p>Creates a security configuration, which is stored in the service and can be
          * specified when a cluster is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">AWS
@@ -446,6 +472,32 @@ namespace EMR
         void DescribeNotebookExecutionAsync(const DescribeNotebookExecutionRequestT& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRClient::DescribeNotebookExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a persistent application user interface.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribePersistentAppUI">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePersistentAppUIOutcome DescribePersistentAppUI(const Model::DescribePersistentAppUIRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePersistentAppUI that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribePersistentAppUIRequestT = Model::DescribePersistentAppUIRequest>
+        Model::DescribePersistentAppUIOutcomeCallable DescribePersistentAppUICallable(const DescribePersistentAppUIRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::DescribePersistentAppUI, request);
+        }
+
+        /**
+         * An Async wrapper for DescribePersistentAppUI that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribePersistentAppUIRequestT = Model::DescribePersistentAppUIRequest>
+        void DescribePersistentAppUIAsync(const DescribePersistentAppUIRequestT& request, const DescribePersistentAppUIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::DescribePersistentAppUI, request, handler, context);
         }
 
         /**
@@ -660,6 +712,58 @@ namespace EMR
         void GetManagedScalingPolicyAsync(const GetManagedScalingPolicyRequestT& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRClient::GetManagedScalingPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>The presigned URL properties for the cluster's application user
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetOnClusterAppUIPresignedURL">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOnClusterAppUIPresignedURLOutcome GetOnClusterAppUIPresignedURL(const Model::GetOnClusterAppUIPresignedURLRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetOnClusterAppUIPresignedURL that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetOnClusterAppUIPresignedURLRequestT = Model::GetOnClusterAppUIPresignedURLRequest>
+        Model::GetOnClusterAppUIPresignedURLOutcomeCallable GetOnClusterAppUIPresignedURLCallable(const GetOnClusterAppUIPresignedURLRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::GetOnClusterAppUIPresignedURL, request);
+        }
+
+        /**
+         * An Async wrapper for GetOnClusterAppUIPresignedURL that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetOnClusterAppUIPresignedURLRequestT = Model::GetOnClusterAppUIPresignedURLRequest>
+        void GetOnClusterAppUIPresignedURLAsync(const GetOnClusterAppUIPresignedURLRequestT& request, const GetOnClusterAppUIPresignedURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::GetOnClusterAppUIPresignedURL, request, handler, context);
+        }
+
+        /**
+         * <p>The presigned URL properties for the cluster's application user
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetPersistentAppUIPresignedURL">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPersistentAppUIPresignedURLOutcome GetPersistentAppUIPresignedURL(const Model::GetPersistentAppUIPresignedURLRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPersistentAppUIPresignedURL that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPersistentAppUIPresignedURLRequestT = Model::GetPersistentAppUIPresignedURLRequest>
+        Model::GetPersistentAppUIPresignedURLOutcomeCallable GetPersistentAppUIPresignedURLCallable(const GetPersistentAppUIPresignedURLRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::GetPersistentAppUIPresignedURL, request);
+        }
+
+        /**
+         * An Async wrapper for GetPersistentAppUIPresignedURL that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPersistentAppUIPresignedURLRequestT = Model::GetPersistentAppUIPresignedURLRequest>
+        void GetPersistentAppUIPresignedURLAsync(const GetPersistentAppUIPresignedURLRequestT& request, const GetPersistentAppUIPresignedURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::GetPersistentAppUIPresignedURL, request, handler, context);
         }
 
         /**

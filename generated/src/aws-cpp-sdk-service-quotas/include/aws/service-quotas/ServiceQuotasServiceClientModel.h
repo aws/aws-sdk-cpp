@@ -19,6 +19,7 @@
 
 /* Service model headers required in ServiceQuotasClient header */
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>
+#include <aws/service-quotas/model/CreateSupportCaseResult.h>
 #include <aws/service-quotas/model/DeleteServiceQuotaIncreaseRequestFromTemplateResult.h>
 #include <aws/service-quotas/model/DisassociateServiceQuotaTemplateResult.h>
 #include <aws/service-quotas/model/GetAWSDefaultServiceQuotaResult.h>
@@ -84,6 +85,7 @@ namespace Aws
     {
       /* Service model forward declarations required in ServiceQuotasClient header */
       class AssociateServiceQuotaTemplateRequest;
+      class CreateSupportCaseRequest;
       class DeleteServiceQuotaIncreaseRequestFromTemplateRequest;
       class DisassociateServiceQuotaTemplateRequest;
       class GetAWSDefaultServiceQuotaRequest;
@@ -106,6 +108,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateServiceQuotaTemplateResult, ServiceQuotasError> AssociateServiceQuotaTemplateOutcome;
+      typedef Aws::Utils::Outcome<CreateSupportCaseResult, ServiceQuotasError> CreateSupportCaseOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> DeleteServiceQuotaIncreaseRequestFromTemplateOutcome;
       typedef Aws::Utils::Outcome<DisassociateServiceQuotaTemplateResult, ServiceQuotasError> DisassociateServiceQuotaTemplateOutcome;
       typedef Aws::Utils::Outcome<GetAWSDefaultServiceQuotaResult, ServiceQuotasError> GetAWSDefaultServiceQuotaOutcome;
@@ -128,6 +131,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateServiceQuotaTemplateOutcome> AssociateServiceQuotaTemplateOutcomeCallable;
+      typedef std::future<CreateSupportCaseOutcome> CreateSupportCaseOutcomeCallable;
       typedef std::future<DeleteServiceQuotaIncreaseRequestFromTemplateOutcome> DeleteServiceQuotaIncreaseRequestFromTemplateOutcomeCallable;
       typedef std::future<DisassociateServiceQuotaTemplateOutcome> DisassociateServiceQuotaTemplateOutcomeCallable;
       typedef std::future<GetAWSDefaultServiceQuotaOutcome> GetAWSDefaultServiceQuotaOutcomeCallable;
@@ -153,6 +157,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const ServiceQuotasClient*, const Model::AssociateServiceQuotaTemplateRequest&, const Model::AssociateServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateServiceQuotaTemplateResponseReceivedHandler;
+    typedef std::function<void(const ServiceQuotasClient*, const Model::CreateSupportCaseRequest&, const Model::CreateSupportCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSupportCaseResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::DeleteServiceQuotaIncreaseRequestFromTemplateRequest&, const Model::DeleteServiceQuotaIncreaseRequestFromTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::DisassociateServiceQuotaTemplateRequest&, const Model::DisassociateServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceQuotaTemplateResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetAWSDefaultServiceQuotaRequest&, const Model::GetAWSDefaultServiceQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSDefaultServiceQuotaResponseReceivedHandler;

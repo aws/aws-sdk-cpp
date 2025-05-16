@@ -17,6 +17,8 @@
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>
+#include <aws/service-quotas/model/CreateSupportCaseRequest.h>
+#include <aws/service-quotas/model/CreateSupportCaseResult.h>
 #include <aws/service-quotas/model/DeleteServiceQuotaIncreaseRequestFromTemplateRequest.h>
 #include <aws/service-quotas/model/DeleteServiceQuotaIncreaseRequestFromTemplateResult.h>
 #include <aws/service-quotas/model/DisassociateServiceQuotaTemplateRequest.h>

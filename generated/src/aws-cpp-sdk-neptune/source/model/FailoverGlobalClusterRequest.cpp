@@ -24,6 +24,16 @@ Aws::String FailoverGlobalClusterRequest::SerializePayload() const
     ss << "TargetDbClusterIdentifier=" << StringUtils::URLEncode(m_targetDbClusterIdentifier.c_str()) << "&";
   }
 
+  if(m_allowDataLossHasBeenSet)
+  {
+    ss << "AllowDataLoss=" << std::boolalpha << m_allowDataLoss << "&";
+  }
+
+  if(m_switchoverHasBeenSet)
+  {
+    ss << "Switchover=" << std::boolalpha << m_switchover << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

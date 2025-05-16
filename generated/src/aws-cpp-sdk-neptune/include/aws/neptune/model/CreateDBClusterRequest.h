@@ -178,7 +178,7 @@ namespace Model
     ///@{
     /**
      * <p>The version number of the database engine to use for the new DB cluster.</p>
-     * <p>Example: <code>1.0.2.1</code> </p>
+     * <p>Example: <code>1.2.1.0</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -425,12 +425,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
-     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
-     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
-     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>standard</code>.</p> 
+     * <p>The storage type for the new DB cluster.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <b> <code>standard</code> </b>   –   ( <i>the default</i> ) Configures
+     * cost-effective database storage for applications with moderate to small I/O
+     * usage. When set to <code>standard</code>, the storage type is not returned in
+     * the response.</p> </li> <li> <p> <b> <code>iopt1</code> </b>   –   Enables <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized
+     * storage</a> that's designed to meet the needs of I/O-intensive graph workloads
+     * that require predictable pricing with low I/O latency and consistent I/O
+     * throughput.</p> <p>Neptune I/O-Optimized storage is only available starting with
+     * engine release 1.3.0.0.</p> </li> </ul>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
