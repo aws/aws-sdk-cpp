@@ -49,6 +49,11 @@ S3HudiDirectTarget& S3HudiDirectTarget::operator =(JsonView jsonValue)
     m_compression = HudiTargetCompressionTypeMapper::GetHudiTargetCompressionTypeForName(jsonValue.GetString("Compression"));
     m_compressionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NumberTargetPartitions"))
+  {
+    m_numberTargetPartitions = jsonValue.GetString("NumberTargetPartitions");
+    m_numberTargetPartitionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("PartitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
@@ -117,6 +122,12 @@ JsonValue S3HudiDirectTarget::Jsonize() const
   if(m_compressionHasBeenSet)
   {
    payload.WithString("Compression", HudiTargetCompressionTypeMapper::GetNameForHudiTargetCompressionType(m_compression));
+  }
+
+  if(m_numberTargetPartitionsHasBeenSet)
+  {
+   payload.WithString("NumberTargetPartitions", m_numberTargetPartitions);
+
   }
 
   if(m_partitionKeysHasBeenSet)

@@ -19,6 +19,8 @@ namespace Model
     snappy,
     lzo,
     gzip,
+    brotli,
+    lz4,
     uncompressed,
     none
   };

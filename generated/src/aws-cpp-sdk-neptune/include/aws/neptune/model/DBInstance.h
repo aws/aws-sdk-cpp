@@ -449,7 +449,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }

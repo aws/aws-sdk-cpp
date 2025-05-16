@@ -131,6 +131,8 @@
 #include <aws/neptune/model/FailoverDBClusterResult.h>
 #include <aws/neptune/model/FailoverGlobalClusterRequest.h>
 #include <aws/neptune/model/FailoverGlobalClusterResult.h>
+#include <aws/neptune/model/FailoverState.h>
+#include <aws/neptune/model/FailoverStatus.h>
 #include <aws/neptune/model/Filter.h>
 #include <aws/neptune/model/GlobalCluster.h>
 #include <aws/neptune/model/GlobalClusterMember.h>
@@ -189,6 +191,8 @@
 #include <aws/neptune/model/StopDBClusterRequest.h>
 #include <aws/neptune/model/StopDBClusterResult.h>
 #include <aws/neptune/model/Subnet.h>
+#include <aws/neptune/model/SwitchoverGlobalClusterRequest.h>
+#include <aws/neptune/model/SwitchoverGlobalClusterResult.h>
 #include <aws/neptune/model/Tag.h>
 #include <aws/neptune/model/Timezone.h>
 #include <aws/neptune/model/UpgradeTarget.h>

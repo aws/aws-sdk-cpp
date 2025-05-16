@@ -80,6 +80,7 @@
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeResult.h>
 #include <aws/neptune/model/StartDBClusterResult.h>
 #include <aws/neptune/model/StopDBClusterResult.h>
+#include <aws/neptune/model/SwitchoverGlobalClusterResult.h>
 #include <aws/neptune/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/neptune/model/DescribeDBInstancesRequest.h>
 #include <aws/neptune/model/DescribeDBClustersRequest.h>
@@ -204,6 +205,7 @@ namespace Aws
       class RestoreDBClusterToPointInTimeRequest;
       class StartDBClusterRequest;
       class StopDBClusterRequest;
+      class SwitchoverGlobalClusterRequest;
       /* End of service model forward declarations required in NeptuneClient header */
 
       /* Service model Outcome class definitions */
@@ -276,6 +278,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, NeptuneError> RestoreDBClusterToPointInTimeOutcome;
       typedef Aws::Utils::Outcome<StartDBClusterResult, NeptuneError> StartDBClusterOutcome;
       typedef Aws::Utils::Outcome<StopDBClusterResult, NeptuneError> StopDBClusterOutcome;
+      typedef Aws::Utils::Outcome<SwitchoverGlobalClusterResult, NeptuneError> SwitchoverGlobalClusterOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -348,6 +351,7 @@ namespace Aws
       typedef std::future<RestoreDBClusterToPointInTimeOutcome> RestoreDBClusterToPointInTimeOutcomeCallable;
       typedef std::future<StartDBClusterOutcome> StartDBClusterOutcomeCallable;
       typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
+      typedef std::future<SwitchoverGlobalClusterOutcome> SwitchoverGlobalClusterOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -423,6 +427,7 @@ namespace Aws
     typedef std::function<void(const NeptuneClient*, const Model::RestoreDBClusterToPointInTimeRequest&, const Model::RestoreDBClusterToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::StartDBClusterRequest&, const Model::StartDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::SwitchoverGlobalClusterRequest&, const Model::SwitchoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverGlobalClusterResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Neptune
 } // namespace Aws

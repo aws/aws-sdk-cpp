@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-data-automation-runtime/model/AssetProcessingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,25 @@ namespace Model
     template<typename S3UriT = Aws::String>
     InputConfiguration& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Asset processing configuration</p>
+     */
+    inline const AssetProcessingConfiguration& GetAssetProcessingConfiguration() const { return m_assetProcessingConfiguration; }
+    inline bool AssetProcessingConfigurationHasBeenSet() const { return m_assetProcessingConfigurationHasBeenSet; }
+    template<typename AssetProcessingConfigurationT = AssetProcessingConfiguration>
+    void SetAssetProcessingConfiguration(AssetProcessingConfigurationT&& value) { m_assetProcessingConfigurationHasBeenSet = true; m_assetProcessingConfiguration = std::forward<AssetProcessingConfigurationT>(value); }
+    template<typename AssetProcessingConfigurationT = AssetProcessingConfiguration>
+    InputConfiguration& WithAssetProcessingConfiguration(AssetProcessingConfigurationT&& value) { SetAssetProcessingConfiguration(std::forward<AssetProcessingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
+
+    AssetProcessingConfiguration m_assetProcessingConfiguration;
+    bool m_assetProcessingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

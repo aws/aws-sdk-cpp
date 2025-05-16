@@ -60,6 +60,11 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3CsvSource = jsonValue.GetObject("S3CsvSource");
     m_s3CsvSourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3ExcelSource"))
+  {
+    m_s3ExcelSource = jsonValue.GetObject("S3ExcelSource");
+    m_s3ExcelSourceHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("S3JsonSource"))
   {
     m_s3JsonSource = jsonValue.GetObject("S3JsonSource");
@@ -110,10 +115,20 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3GlueParquetTarget = jsonValue.GetObject("S3GlueParquetTarget");
     m_s3GlueParquetTargetHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3HyperDirectTarget"))
+  {
+    m_s3HyperDirectTarget = jsonValue.GetObject("S3HyperDirectTarget");
+    m_s3HyperDirectTargetHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("S3DirectTarget"))
   {
     m_s3DirectTarget = jsonValue.GetObject("S3DirectTarget");
     m_s3DirectTargetHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3IcebergDirectTarget"))
+  {
+    m_s3IcebergDirectTarget = jsonValue.GetObject("S3IcebergDirectTarget");
+    m_s3IcebergDirectTargetHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ApplyMapping"))
   {
@@ -429,6 +444,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
 
   }
 
+  if(m_s3ExcelSourceHasBeenSet)
+  {
+   payload.WithObject("S3ExcelSource", m_s3ExcelSource.Jsonize());
+
+  }
+
   if(m_s3JsonSourceHasBeenSet)
   {
    payload.WithObject("S3JsonSource", m_s3JsonSource.Jsonize());
@@ -489,9 +510,21 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
 
   }
 
+  if(m_s3HyperDirectTargetHasBeenSet)
+  {
+   payload.WithObject("S3HyperDirectTarget", m_s3HyperDirectTarget.Jsonize());
+
+  }
+
   if(m_s3DirectTargetHasBeenSet)
   {
    payload.WithObject("S3DirectTarget", m_s3DirectTarget.Jsonize());
+
+  }
+
+  if(m_s3IcebergDirectTargetHasBeenSet)
+  {
+   payload.WithObject("S3IcebergDirectTarget", m_s3IcebergDirectTarget.Jsonize());
 
   }
 

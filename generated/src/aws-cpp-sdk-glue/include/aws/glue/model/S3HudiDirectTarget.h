@@ -95,6 +95,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the number of target partitions for distributing Hudi dataset files
+     * across Amazon S3.</p>
+     */
+    inline const Aws::String& GetNumberTargetPartitions() const { return m_numberTargetPartitions; }
+    inline bool NumberTargetPartitionsHasBeenSet() const { return m_numberTargetPartitionsHasBeenSet; }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    void SetNumberTargetPartitions(NumberTargetPartitionsT&& value) { m_numberTargetPartitionsHasBeenSet = true; m_numberTargetPartitions = std::forward<NumberTargetPartitionsT>(value); }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    S3HudiDirectTarget& WithNumberTargetPartitions(NumberTargetPartitionsT&& value) { SetNumberTargetPartitions(std::forward<NumberTargetPartitionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies native partitioning using a sequence of keys.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const { return m_partitionKeys; }
@@ -157,6 +170,9 @@ namespace Model
 
     HudiTargetCompressionType m_compression{HudiTargetCompressionType::NOT_SET};
     bool m_compressionHasBeenSet = false;
+
+    Aws::String m_numberTargetPartitions;
+    bool m_numberTargetPartitionsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
     bool m_partitionKeysHasBeenSet = false;

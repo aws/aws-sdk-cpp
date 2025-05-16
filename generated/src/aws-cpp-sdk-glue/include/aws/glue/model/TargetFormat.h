@@ -22,7 +22,10 @@ namespace Model
     orc,
     parquet,
     hudi,
-    delta
+    delta,
+    iceberg,
+    hyper,
+    xml
   };
 
 namespace TargetFormatMapper

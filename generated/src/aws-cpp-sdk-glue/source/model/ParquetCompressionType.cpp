@@ -23,6 +23,8 @@ namespace Aws
         static const int snappy_HASH = HashingUtils::HashString("snappy");
         static const int lzo_HASH = HashingUtils::HashString("lzo");
         static const int gzip_HASH = HashingUtils::HashString("gzip");
+        static const int brotli_HASH = HashingUtils::HashString("brotli");
+        static const int lz4_HASH = HashingUtils::HashString("lz4");
         static const int uncompressed_HASH = HashingUtils::HashString("uncompressed");
         static const int none_HASH = HashingUtils::HashString("none");
 
@@ -41,6 +43,14 @@ namespace Aws
           else if (hashCode == gzip_HASH)
           {
             return ParquetCompressionType::gzip;
+          }
+          else if (hashCode == brotli_HASH)
+          {
+            return ParquetCompressionType::brotli;
+          }
+          else if (hashCode == lz4_HASH)
+          {
+            return ParquetCompressionType::lz4;
           }
           else if (hashCode == uncompressed_HASH)
           {
@@ -72,6 +82,10 @@ namespace Aws
             return "lzo";
           case ParquetCompressionType::gzip:
             return "gzip";
+          case ParquetCompressionType::brotli:
+            return "brotli";
+          case ParquetCompressionType::lz4:
+            return "lz4";
           case ParquetCompressionType::uncompressed:
             return "uncompressed";
           case ParquetCompressionType::none:

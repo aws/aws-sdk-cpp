@@ -109,6 +109,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the number of target partitions for distributing Delta Lake dataset
+     * files across Amazon S3.</p>
+     */
+    inline const Aws::String& GetNumberTargetPartitions() const { return m_numberTargetPartitions; }
+    inline bool NumberTargetPartitionsHasBeenSet() const { return m_numberTargetPartitionsHasBeenSet; }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    void SetNumberTargetPartitions(NumberTargetPartitionsT&& value) { m_numberTargetPartitionsHasBeenSet = true; m_numberTargetPartitions = std::forward<NumberTargetPartitionsT>(value); }
+    template<typename NumberTargetPartitionsT = Aws::String>
+    S3DeltaDirectTarget& WithNumberTargetPartitions(NumberTargetPartitionsT&& value) { SetNumberTargetPartitions(std::forward<NumberTargetPartitionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the data output format for the target.</p>
      */
     inline TargetFormat GetFormat() const { return m_format; }
@@ -160,6 +173,9 @@ namespace Model
 
     DeltaTargetCompressionType m_compression{DeltaTargetCompressionType::NOT_SET};
     bool m_compressionHasBeenSet = false;
+
+    Aws::String m_numberTargetPartitions;
+    bool m_numberTargetPartitionsHasBeenSet = false;
 
     TargetFormat m_format{TargetFormat::NOT_SET};
     bool m_formatHasBeenSet = false;

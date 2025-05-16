@@ -54,6 +54,8 @@
 #include <aws/elasticmapreduce/model/ComputeLimits.h>
 #include <aws/elasticmapreduce/model/ComputeLimitsUnitType.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <aws/elasticmapreduce/model/CreatePersistentAppUIRequest.h>
+#include <aws/elasticmapreduce/model/CreatePersistentAppUIResult.h>
 #include <aws/elasticmapreduce/model/CreateSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/CreateSecurityConfigurationResult.h>
 #include <aws/elasticmapreduce/model/CreateStudioRequest.h>
@@ -68,6 +70,8 @@
 #include <aws/elasticmapreduce/model/DescribeClusterResult.h>
 #include <aws/elasticmapreduce/model/DescribeNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/DescribeNotebookExecutionResult.h>
+#include <aws/elasticmapreduce/model/DescribePersistentAppUIRequest.h>
+#include <aws/elasticmapreduce/model/DescribePersistentAppUIResult.h>
 #include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
 #include <aws/elasticmapreduce/model/DescribeReleaseLabelResult.h>
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
@@ -76,6 +80,7 @@
 #include <aws/elasticmapreduce/model/DescribeStepResult.h>
 #include <aws/elasticmapreduce/model/DescribeStudioRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStudioResult.h>
+#include <aws/elasticmapreduce/model/EMRContainersConfig.h>
 #include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 #include <aws/elasticmapreduce/model/EbsBlockDeviceConfig.h>
 #include <aws/elasticmapreduce/model/EbsConfiguration.h>
@@ -93,6 +98,10 @@
 #include <aws/elasticmapreduce/model/GetClusterSessionCredentialsResult.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyResult.h>
+#include <aws/elasticmapreduce/model/GetOnClusterAppUIPresignedURLRequest.h>
+#include <aws/elasticmapreduce/model/GetOnClusterAppUIPresignedURLResult.h>
+#include <aws/elasticmapreduce/model/GetPersistentAppUIPresignedURLRequest.h>
+#include <aws/elasticmapreduce/model/GetPersistentAppUIPresignedURLResult.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingResult.h>
 #include <aws/elasticmapreduce/model/HadoopJarStepConfig.h>
@@ -176,6 +185,7 @@
 #include <aws/elasticmapreduce/model/NotebookS3LocationForOutput.h>
 #include <aws/elasticmapreduce/model/NotebookS3LocationFromInput.h>
 #include <aws/elasticmapreduce/model/OSRelease.h>
+#include <aws/elasticmapreduce/model/OnClusterAppUIType.h>
 #include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
 #include <aws/elasticmapreduce/model/OnDemandCapacityReservationPreference.h>
 #include <aws/elasticmapreduce/model/OnDemandCapacityReservationUsageStrategy.h>
@@ -185,10 +195,13 @@
 #include <aws/elasticmapreduce/model/OutputNotebookFormat.h>
 #include <aws/elasticmapreduce/model/OutputNotebookS3LocationForOutput.h>
 #include <aws/elasticmapreduce/model/OutputNotebookS3LocationFromInput.h>
+#include <aws/elasticmapreduce/model/PersistentAppUI.h>
+#include <aws/elasticmapreduce/model/PersistentAppUIType.h>
 #include <aws/elasticmapreduce/model/PlacementGroupConfig.h>
 #include <aws/elasticmapreduce/model/PlacementGroupStrategy.h>
 #include <aws/elasticmapreduce/model/PlacementType.h>
 #include <aws/elasticmapreduce/model/PortRange.h>
+#include <aws/elasticmapreduce/model/ProfilerType.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/PutAutoTerminationPolicyRequest.h>

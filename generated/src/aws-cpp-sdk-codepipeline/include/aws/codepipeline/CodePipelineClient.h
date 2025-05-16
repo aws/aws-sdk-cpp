@@ -652,6 +652,31 @@ namespace CodePipeline
         }
 
         /**
+         * <p>Lists the targets for the deploy action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListDeployActionExecutionTargets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeployActionExecutionTargetsOutcome ListDeployActionExecutionTargets(const Model::ListDeployActionExecutionTargetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDeployActionExecutionTargets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDeployActionExecutionTargetsRequestT = Model::ListDeployActionExecutionTargetsRequest>
+        Model::ListDeployActionExecutionTargetsOutcomeCallable ListDeployActionExecutionTargetsCallable(const ListDeployActionExecutionTargetsRequestT& request) const
+        {
+            return SubmitCallable(&CodePipelineClient::ListDeployActionExecutionTargets, request);
+        }
+
+        /**
+         * An Async wrapper for ListDeployActionExecutionTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDeployActionExecutionTargetsRequestT = Model::ListDeployActionExecutionTargetsRequest>
+        void ListDeployActionExecutionTargetsAsync(const ListDeployActionExecutionTargetsRequestT& request, const ListDeployActionExecutionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodePipelineClient::ListDeployActionExecutionTargets, request, handler, context);
+        }
+
+        /**
          * <p>Gets a summary of the most recent executions for a pipeline.</p> 
          * <p>When applying the filter for pipeline executions that have succeeded in the
          * stage, the operation returns all executions in the current pipeline version

@@ -47,7 +47,8 @@ enum class CodePipelineErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACTION_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTION_EXECUTION_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTION_NOT_FOUND,
   ACTION_TYPE_NOT_FOUND,
   APPROVAL_ALREADY_COMPLETED,
   CONCURRENT_MODIFICATION,

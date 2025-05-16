@@ -23,8 +23,8 @@ static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::Hash
 static const int SERVICE_QUOTA_TEMPLATE_NOT_IN_USE_HASH = HashingUtils::HashString("ServiceQuotaTemplateNotInUseException");
 static const int DEPENDENCY_ACCESS_DENIED_HASH = HashingUtils::HashString("DependencyAccessDeniedException");
 static const int TEMPLATES_NOT_AVAILABLE_IN_REGION_HASH = HashingUtils::HashString("TemplatesNotAvailableInRegionException");
-static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
+static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
 static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
 static const int A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("AWSServiceAccessNotEnabledException");
@@ -60,13 +60,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TEMPLATES_NOT_AVAILABLE_IN_REGION), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == INVALID_RESOURCE_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_RESOURCE_STATE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_AVAILABLE_ORGANIZATION_HASH)
   {

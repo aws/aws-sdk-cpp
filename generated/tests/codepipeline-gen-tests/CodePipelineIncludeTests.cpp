@@ -72,6 +72,9 @@
 #include <aws/codepipeline/model/DeletePipelineRequest.h>
 #include <aws/codepipeline/model/DeleteWebhookRequest.h>
 #include <aws/codepipeline/model/DeleteWebhookResult.h>
+#include <aws/codepipeline/model/DeployActionExecutionTarget.h>
+#include <aws/codepipeline/model/DeployTargetEvent.h>
+#include <aws/codepipeline/model/DeployTargetEventContext.h>
 #include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyResult.h>
 #include <aws/codepipeline/model/DisableStageTransitionRequest.h>
@@ -121,6 +124,8 @@
 #include <aws/codepipeline/model/ListActionExecutionsResult.h>
 #include <aws/codepipeline/model/ListActionTypesRequest.h>
 #include <aws/codepipeline/model/ListActionTypesResult.h>
+#include <aws/codepipeline/model/ListDeployActionExecutionTargetsRequest.h>
+#include <aws/codepipeline/model/ListDeployActionExecutionTargetsResult.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsRequest.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/codepipeline/model/ListPipelinesRequest.h>
@@ -217,6 +222,8 @@
 #include <aws/codepipeline/model/Tag.h>
 #include <aws/codepipeline/model/TagResourceRequest.h>
 #include <aws/codepipeline/model/TagResourceResult.h>
+#include <aws/codepipeline/model/TargetFilter.h>
+#include <aws/codepipeline/model/TargetFilterName.h>
 #include <aws/codepipeline/model/ThirdPartyJob.h>
 #include <aws/codepipeline/model/ThirdPartyJobData.h>
 #include <aws/codepipeline/model/ThirdPartyJobDetails.h>

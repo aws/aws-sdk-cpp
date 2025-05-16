@@ -30,6 +30,11 @@ InputConfiguration& InputConfiguration::operator =(JsonView jsonValue)
     m_s3Uri = jsonValue.GetString("s3Uri");
     m_s3UriHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("assetProcessingConfiguration"))
+  {
+    m_assetProcessingConfiguration = jsonValue.GetObject("assetProcessingConfiguration");
+    m_assetProcessingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue InputConfiguration::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("s3Uri", m_s3Uri);
+
+  }
+
+  if(m_assetProcessingConfigurationHasBeenSet)
+  {
+   payload.WithObject("assetProcessingConfiguration", m_assetProcessingConfiguration.Jsonize());
 
   }
 

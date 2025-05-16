@@ -92,6 +92,12 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
 
       m_globalClusterMembersHasBeenSet = true;
     }
+    XmlNode failoverStateNode = resultNode.FirstChild("FailoverState");
+    if(!failoverStateNode.IsNull())
+    {
+      m_failoverState = failoverStateNode;
+      m_failoverStateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -150,6 +156,13 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_failoverStateHasBeenSet)
+  {
+      Aws::StringStream failoverStateLocationAndMemberSs;
+      failoverStateLocationAndMemberSs << location << index << locationValue << ".FailoverState";
+      m_failoverState.OutputToStream(oStream, failoverStateLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -195,6 +208,12 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
         globalClusterMembersSs << location << ".GlobalClusterMembers.GlobalClusterMember." << globalClusterMembersIdx++;
         item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
       }
+  }
+  if(m_failoverStateHasBeenSet)
+  {
+      Aws::String failoverStateLocationAndMember(location);
+      failoverStateLocationAndMember += ".FailoverState";
+      m_failoverState.OutputToStream(oStream, failoverStateLocationAndMember.c_str());
   }
 }
 

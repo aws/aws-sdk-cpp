@@ -62,8 +62,10 @@ namespace Model
     /**
      * <p>The ARN of the principal, which can be a user, role, or the root user. If
      * this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>  <p>Federated users assume the account setting of
-     * the root user and can't have explicit account settings set for them.</p> 
+     * authenticated user.</p> <p>In order to use this parameter, you must be the root
+     * user, or the principal.</p>  <p>Federated users assume the account setting
+     * of the root user and can't have explicit account settings set for them.</p>
+     * 
      */
     inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }

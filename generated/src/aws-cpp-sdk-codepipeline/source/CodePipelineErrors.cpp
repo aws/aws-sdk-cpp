@@ -43,6 +43,7 @@ static const int ACTION_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("ActionTy
 static const int INVALID_TAGS_HASH = HashingUtils::HashString("InvalidTagsException");
 static const int INVALID_APPROVAL_TOKEN_HASH = HashingUtils::HashString("InvalidApprovalTokenException");
 static const int PIPELINE_EXECUTION_OUTDATED_HASH = HashingUtils::HashString("PipelineExecutionOutdatedException");
+static const int ACTION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("ActionExecutionNotFoundException");
 static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundException");
 static const int INVALID_JOB_HASH = HashingUtils::HashString("InvalidJobException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
@@ -161,6 +162,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PIPELINE_EXECUTION_OUTDATED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_OUTDATED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ACTION_EXECUTION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_EXECUTION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == JOB_NOT_FOUND_HASH)
   {
