@@ -14,25 +14,25 @@ jobs:
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: aws/aws-sdk-cpp
           path: aws-sdk-cpp
           ref: main
       - name: Checkout stable version
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: aws/aws-sdk-cpp
           path: new-ref
           ref: "1.9.85"
       - name: Checkout scancode
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: nexB/scancode-toolkit
           path: scancode-toolkit
           fetch-depth: 1
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       # ScanCode
