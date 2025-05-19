@@ -114,6 +114,7 @@ namespace Aws
         static const int instance_connect_endpoint_HASH = HashingUtils::HashString("instance-connect-endpoint");
         static const int verified_access_endpoint_target_HASH = HashingUtils::HashString("verified-access-endpoint-target");
         static const int ipam_external_resource_verification_token_HASH = HashingUtils::HashString("ipam-external-resource-verification-token");
+        static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modification-task");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -495,6 +496,10 @@ namespace Aws
           {
             return ResourceType::ipam_external_resource_verification_token;
           }
+          else if (hashCode == mac_modification_task_HASH)
+          {
+            return ResourceType::mac_modification_task;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -699,6 +704,8 @@ namespace Aws
             return "verified-access-endpoint-target";
           case ResourceType::ipam_external_resource_verification_token:
             return "ipam-external-resource-verification-token";
+          case ResourceType::mac_modification_task:
+            return "mac-modification-task";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

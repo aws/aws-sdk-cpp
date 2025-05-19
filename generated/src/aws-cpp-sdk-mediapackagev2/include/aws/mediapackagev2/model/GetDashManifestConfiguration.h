@@ -12,7 +12,13 @@
 #include <aws/mediapackagev2/model/ScteDash.h>
 #include <aws/mediapackagev2/model/DashDrmSignaling.h>
 #include <aws/mediapackagev2/model/DashUtcTiming.h>
+#include <aws/mediapackagev2/model/DashProgramInformation.h>
+#include <aws/mediapackagev2/model/DashDvbSettings.h>
+#include <aws/mediapackagev2/model/DashCompactness.h>
+#include <aws/mediapackagev2/model/DashSubtitleConfiguration.h>
 #include <aws/mediapackagev2/model/DashPeriodTrigger.h>
+#include <aws/mediapackagev2/model/DashProfile.h>
+#include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <utility>
 
 namespace Aws
@@ -192,6 +198,84 @@ namespace Model
     template<typename UtcTimingT = DashUtcTiming>
     GetDashManifestConfiguration& WithUtcTiming(UtcTimingT&& value) { SetUtcTiming(std::forward<UtcTimingT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The profile that the output is compliant with.</p>
+     */
+    inline const Aws::Vector<DashProfile>& GetProfiles() const { return m_profiles; }
+    inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
+    template<typename ProfilesT = Aws::Vector<DashProfile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<DashProfile>>
+    GetDashManifestConfiguration& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    inline GetDashManifestConfiguration& AddProfiles(DashProfile value) { m_profilesHasBeenSet = true; m_profiles.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The base URL to use for retrieving segments.</p>
+     */
+    inline const Aws::Vector<DashBaseUrl>& GetBaseUrls() const { return m_baseUrls; }
+    inline bool BaseUrlsHasBeenSet() const { return m_baseUrlsHasBeenSet; }
+    template<typename BaseUrlsT = Aws::Vector<DashBaseUrl>>
+    void SetBaseUrls(BaseUrlsT&& value) { m_baseUrlsHasBeenSet = true; m_baseUrls = std::forward<BaseUrlsT>(value); }
+    template<typename BaseUrlsT = Aws::Vector<DashBaseUrl>>
+    GetDashManifestConfiguration& WithBaseUrls(BaseUrlsT&& value) { SetBaseUrls(std::forward<BaseUrlsT>(value)); return *this;}
+    template<typename BaseUrlsT = DashBaseUrl>
+    GetDashManifestConfiguration& AddBaseUrls(BaseUrlsT&& value) { m_baseUrlsHasBeenSet = true; m_baseUrls.emplace_back(std::forward<BaseUrlsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about the content that you want MediaPackage to pass through in the
+     * manifest to the playback device.</p>
+     */
+    inline const DashProgramInformation& GetProgramInformation() const { return m_programInformation; }
+    inline bool ProgramInformationHasBeenSet() const { return m_programInformationHasBeenSet; }
+    template<typename ProgramInformationT = DashProgramInformation>
+    void SetProgramInformation(ProgramInformationT&& value) { m_programInformationHasBeenSet = true; m_programInformation = std::forward<ProgramInformationT>(value); }
+    template<typename ProgramInformationT = DashProgramInformation>
+    GetDashManifestConfiguration& WithProgramInformation(ProgramInformationT&& value) { SetProgramInformation(std::forward<ProgramInformationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For endpoints that use the DVB-DASH profile only. The font download and error
+     * reporting information that you want MediaPackage to pass through to the
+     * manifest.</p>
+     */
+    inline const DashDvbSettings& GetDvbSettings() const { return m_dvbSettings; }
+    inline bool DvbSettingsHasBeenSet() const { return m_dvbSettingsHasBeenSet; }
+    template<typename DvbSettingsT = DashDvbSettings>
+    void SetDvbSettings(DvbSettingsT&& value) { m_dvbSettingsHasBeenSet = true; m_dvbSettings = std::forward<DvbSettingsT>(value); }
+    template<typename DvbSettingsT = DashDvbSettings>
+    GetDashManifestConfiguration& WithDvbSettings(DvbSettingsT&& value) { SetDvbSettings(std::forward<DvbSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The layout of the DASH manifest that MediaPackage produces.
+     * <code>STANDARD</code> indicates a default manifest, which is compacted.
+     * <code>NONE</code> indicates a full manifest.</p>
+     */
+    inline DashCompactness GetCompactness() const { return m_compactness; }
+    inline bool CompactnessHasBeenSet() const { return m_compactnessHasBeenSet; }
+    inline void SetCompactness(DashCompactness value) { m_compactnessHasBeenSet = true; m_compactness = value; }
+    inline GetDashManifestConfiguration& WithCompactness(DashCompactness value) { SetCompactness(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for DASH subtitles.</p>
+     */
+    inline const DashSubtitleConfiguration& GetSubtitleConfiguration() const { return m_subtitleConfiguration; }
+    inline bool SubtitleConfigurationHasBeenSet() const { return m_subtitleConfigurationHasBeenSet; }
+    template<typename SubtitleConfigurationT = DashSubtitleConfiguration>
+    void SetSubtitleConfiguration(SubtitleConfigurationT&& value) { m_subtitleConfigurationHasBeenSet = true; m_subtitleConfiguration = std::forward<SubtitleConfigurationT>(value); }
+    template<typename SubtitleConfigurationT = DashSubtitleConfiguration>
+    GetDashManifestConfiguration& WithSubtitleConfiguration(SubtitleConfigurationT&& value) { SetSubtitleConfiguration(std::forward<SubtitleConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_manifestName;
@@ -229,6 +313,24 @@ namespace Model
 
     DashUtcTiming m_utcTiming;
     bool m_utcTimingHasBeenSet = false;
+
+    Aws::Vector<DashProfile> m_profiles;
+    bool m_profilesHasBeenSet = false;
+
+    Aws::Vector<DashBaseUrl> m_baseUrls;
+    bool m_baseUrlsHasBeenSet = false;
+
+    DashProgramInformation m_programInformation;
+    bool m_programInformationHasBeenSet = false;
+
+    DashDvbSettings m_dvbSettings;
+    bool m_dvbSettingsHasBeenSet = false;
+
+    DashCompactness m_compactness{DashCompactness::NOT_SET};
+    bool m_compactnessHasBeenSet = false;
+
+    DashSubtitleConfiguration m_subtitleConfiguration;
+    bool m_subtitleConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

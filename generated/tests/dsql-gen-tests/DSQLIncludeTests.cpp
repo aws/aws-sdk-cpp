@@ -26,7 +26,6 @@
 #include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameResult.h>
 #include <aws/dsql/model/InternalServerException.h>
-#include <aws/dsql/model/LinkedClusterProperties.h>
 #include <aws/dsql/model/ListClustersRequest.h>
 #include <aws/dsql/model/ListClustersResult.h>
 #include <aws/dsql/model/ListTagsForResourceRequest.h>

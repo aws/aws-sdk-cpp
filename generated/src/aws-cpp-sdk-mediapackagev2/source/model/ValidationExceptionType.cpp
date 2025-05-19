@@ -79,6 +79,10 @@ namespace Aws
         static const int START_TAG_TIME_OFFSET_INVALID_HASH = HashingUtils::HashString("START_TAG_TIME_OFFSET_INVALID");
         static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
         static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
+        static const int INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH = HashingUtils::HashString("INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION");
+        static const int DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE_HASH = HashingUtils::HashString("DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE");
+        static const int INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION_HASH = HashingUtils::HashString("INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION");
+        static const int INCOMPATIBLE_XML_ENCODING_HASH = HashingUtils::HashString("INCOMPATIBLE_XML_ENCODING");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -320,6 +324,22 @@ namespace Aws
           {
             return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
           }
+          else if (hashCode == INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION;
+          }
+          else if (hashCode == DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE_HASH)
+          {
+            return ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE;
+          }
+          else if (hashCode == INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION;
+          }
+          else if (hashCode == INCOMPATIBLE_XML_ENCODING_HASH)
+          {
+            return ValidationExceptionType::INCOMPATIBLE_XML_ENCODING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -454,6 +474,14 @@ namespace Aws
             return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
           case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
             return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
+          case ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION:
+            return "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION";
+          case ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE:
+            return "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE";
+          case ValidationExceptionType::INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION:
+            return "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION";
+          case ValidationExceptionType::INCOMPATIBLE_XML_ENCODING:
+            return "INCOMPATIBLE_XML_ENCODING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

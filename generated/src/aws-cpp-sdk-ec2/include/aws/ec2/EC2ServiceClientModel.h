@@ -85,6 +85,7 @@
 #include <aws/ec2/model/CreateCustomerGatewayResponse.h>
 #include <aws/ec2/model/CreateDefaultSubnetResponse.h>
 #include <aws/ec2/model/CreateDefaultVpcResponse.h>
+#include <aws/ec2/model/CreateDelegateMacVolumeOwnershipTaskResponse.h>
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateFleetResponse.h>
@@ -109,6 +110,7 @@
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupResponse.h>
+#include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
@@ -312,6 +314,7 @@
 #include <aws/ec2/model/DescribeLocalGatewaysResponse.h>
 #include <aws/ec2/model/DescribeLockedSnapshotsResponse.h>
 #include <aws/ec2/model/DescribeMacHostsResponse.h>
+#include <aws/ec2/model/DescribeMacModificationTasksResponse.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
@@ -782,6 +785,7 @@
 #include <aws/ec2/model/DescribeTrafficMirrorTargetsRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
 #include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
+#include <aws/ec2/model/DescribeMacModificationTasksRequest.h>
 #include <aws/ec2/model/DescribeVerifiedAccessGroupsRequest.h>
 #include <aws/ec2/model/CancelImportTaskRequest.h>
 #include <aws/ec2/model/GetEbsDefaultKmsKeyIdRequest.h>
@@ -961,6 +965,7 @@ namespace Aws
       class CreateCustomerGatewayRequest;
       class CreateDefaultSubnetRequest;
       class CreateDefaultVpcRequest;
+      class CreateDelegateMacVolumeOwnershipTaskRequest;
       class CreateDhcpOptionsRequest;
       class CreateEgressOnlyInternetGatewayRequest;
       class CreateFleetRequest;
@@ -985,6 +990,7 @@ namespace Aws
       class CreateLocalGatewayRouteTableVpcAssociationRequest;
       class CreateLocalGatewayVirtualInterfaceRequest;
       class CreateLocalGatewayVirtualInterfaceGroupRequest;
+      class CreateMacSystemIntegrityProtectionModificationTaskRequest;
       class CreateManagedPrefixListRequest;
       class CreateNatGatewayRequest;
       class CreateNetworkAclRequest;
@@ -1209,6 +1215,7 @@ namespace Aws
       class DescribeLocalGatewaysRequest;
       class DescribeLockedSnapshotsRequest;
       class DescribeMacHostsRequest;
+      class DescribeMacModificationTasksRequest;
       class DescribeManagedPrefixListsRequest;
       class DescribeMovingAddressesRequest;
       class DescribeNatGatewaysRequest;
@@ -1645,6 +1652,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateCustomerGatewayResponse, EC2Error> CreateCustomerGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateDefaultSubnetResponse, EC2Error> CreateDefaultSubnetOutcome;
       typedef Aws::Utils::Outcome<CreateDefaultVpcResponse, EC2Error> CreateDefaultVpcOutcome;
+      typedef Aws::Utils::Outcome<CreateDelegateMacVolumeOwnershipTaskResponse, EC2Error> CreateDelegateMacVolumeOwnershipTaskOutcome;
       typedef Aws::Utils::Outcome<CreateDhcpOptionsResponse, EC2Error> CreateDhcpOptionsOutcome;
       typedef Aws::Utils::Outcome<CreateEgressOnlyInternetGatewayResponse, EC2Error> CreateEgressOnlyInternetGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateFleetResponse, EC2Error> CreateFleetOutcome;
@@ -1669,6 +1677,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVpcAssociationResponse, EC2Error> CreateLocalGatewayRouteTableVpcAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayVirtualInterfaceResponse, EC2Error> CreateLocalGatewayVirtualInterfaceOutcome;
       typedef Aws::Utils::Outcome<CreateLocalGatewayVirtualInterfaceGroupResponse, EC2Error> CreateLocalGatewayVirtualInterfaceGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateMacSystemIntegrityProtectionModificationTaskResponse, EC2Error> CreateMacSystemIntegrityProtectionModificationTaskOutcome;
       typedef Aws::Utils::Outcome<CreateManagedPrefixListResponse, EC2Error> CreateManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<CreateNatGatewayResponse, EC2Error> CreateNatGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateNetworkAclResponse, EC2Error> CreateNetworkAclOutcome;
@@ -1893,6 +1902,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeLocalGatewaysResponse, EC2Error> DescribeLocalGatewaysOutcome;
       typedef Aws::Utils::Outcome<DescribeLockedSnapshotsResponse, EC2Error> DescribeLockedSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeMacHostsResponse, EC2Error> DescribeMacHostsOutcome;
+      typedef Aws::Utils::Outcome<DescribeMacModificationTasksResponse, EC2Error> DescribeMacModificationTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedPrefixListsResponse, EC2Error> DescribeManagedPrefixListsOutcome;
       typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, EC2Error> DescribeMovingAddressesOutcome;
       typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, EC2Error> DescribeNatGatewaysOutcome;
@@ -2329,6 +2339,7 @@ namespace Aws
       typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
       typedef std::future<CreateDefaultSubnetOutcome> CreateDefaultSubnetOutcomeCallable;
       typedef std::future<CreateDefaultVpcOutcome> CreateDefaultVpcOutcomeCallable;
+      typedef std::future<CreateDelegateMacVolumeOwnershipTaskOutcome> CreateDelegateMacVolumeOwnershipTaskOutcomeCallable;
       typedef std::future<CreateDhcpOptionsOutcome> CreateDhcpOptionsOutcomeCallable;
       typedef std::future<CreateEgressOnlyInternetGatewayOutcome> CreateEgressOnlyInternetGatewayOutcomeCallable;
       typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
@@ -2353,6 +2364,7 @@ namespace Aws
       typedef std::future<CreateLocalGatewayRouteTableVpcAssociationOutcome> CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable;
       typedef std::future<CreateLocalGatewayVirtualInterfaceOutcome> CreateLocalGatewayVirtualInterfaceOutcomeCallable;
       typedef std::future<CreateLocalGatewayVirtualInterfaceGroupOutcome> CreateLocalGatewayVirtualInterfaceGroupOutcomeCallable;
+      typedef std::future<CreateMacSystemIntegrityProtectionModificationTaskOutcome> CreateMacSystemIntegrityProtectionModificationTaskOutcomeCallable;
       typedef std::future<CreateManagedPrefixListOutcome> CreateManagedPrefixListOutcomeCallable;
       typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
       typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
@@ -2577,6 +2589,7 @@ namespace Aws
       typedef std::future<DescribeLocalGatewaysOutcome> DescribeLocalGatewaysOutcomeCallable;
       typedef std::future<DescribeLockedSnapshotsOutcome> DescribeLockedSnapshotsOutcomeCallable;
       typedef std::future<DescribeMacHostsOutcome> DescribeMacHostsOutcomeCallable;
+      typedef std::future<DescribeMacModificationTasksOutcome> DescribeMacModificationTasksOutcomeCallable;
       typedef std::future<DescribeManagedPrefixListsOutcome> DescribeManagedPrefixListsOutcomeCallable;
       typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
       typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
@@ -3016,6 +3029,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateCustomerGatewayRequest&, const Model::CreateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDefaultSubnetRequest&, const Model::CreateDefaultSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultSubnetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDefaultVpcRequest&, const Model::CreateDefaultVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDefaultVpcResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateDelegateMacVolumeOwnershipTaskRequest&, const Model::CreateDelegateMacVolumeOwnershipTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDelegateMacVolumeOwnershipTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDhcpOptionsRequest&, const Model::CreateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateEgressOnlyInternetGatewayRequest&, const Model::CreateEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEgressOnlyInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
@@ -3040,6 +3054,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVpcAssociationRequest&, const Model::CreateLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayVirtualInterfaceRequest&, const Model::CreateLocalGatewayVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayVirtualInterfaceGroupRequest&, const Model::CreateLocalGatewayVirtualInterfaceGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayVirtualInterfaceGroupResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateMacSystemIntegrityProtectionModificationTaskRequest&, const Model::CreateMacSystemIntegrityProtectionModificationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMacSystemIntegrityProtectionModificationTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateManagedPrefixListRequest&, const Model::CreateManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
@@ -3264,6 +3279,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewaysRequest&, const Model::DescribeLocalGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLockedSnapshotsRequest&, const Model::DescribeLockedSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLockedSnapshotsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMacHostsRequest&, const Model::DescribeMacHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMacHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeMacModificationTasksRequest&, const Model::DescribeMacModificationTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMacModificationTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeManagedPrefixListsRequest&, const Model::DescribeManagedPrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedPrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
