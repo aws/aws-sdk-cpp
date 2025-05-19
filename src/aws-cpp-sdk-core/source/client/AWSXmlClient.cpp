@@ -52,6 +52,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request
                                      const char* signerRegionOverride /* = nullptr */,
                                      const char* signerServiceNameOverride /* = nullptr */) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     const Aws::Http::URI& uri = endpoint.GetURI();
     if (endpoint.GetAttributes()) {
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
@@ -98,6 +99,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
@@ -140,6 +142,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
