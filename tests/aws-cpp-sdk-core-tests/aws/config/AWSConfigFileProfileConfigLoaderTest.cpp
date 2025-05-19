@@ -348,13 +348,13 @@ R"(
      ;another comment
 [  default ]
 source_profile   =   base)" "\t" R"(
-credential_process = echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }'#COMMENT
+credential_process = echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }' #COMMENT
  ; Comment to be ignored
 )"
 R"(                  )" // to avoid blank space removals by an IDE.
 R"(
 [  profile   )" "\t\t\t" R"(    base  ]
-    region  =   us-east-1#sa-east-3
+    region  =   us-east-1 #sa-east-3
     #region = commented-out region
 )";
 
@@ -483,4 +483,127 @@ aws_secret_access_key =   correct_secret)";
         ASSERT_EQ("correct_key", profiles.at(complicatedProfileName).GetCredentials().GetAWSAccessKeyId());
         ASSERT_EQ("correct_secret", profiles.at(complicatedProfileName).GetCredentials().GetAWSSecretKey());
     }
+}
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestSsoStartUrlWithHash) {
+  TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+
+  configFile << R"([profile gustave])" << "\n"
+             << R"(sso_account_id = 333333333333)" << "\n"
+             << R"(sso_role_name = PictoAccess)" << "\n"
+             << R"(sso_start_url = https://lumiere.com/for-those-who-come-after#)" << "\n"
+             << R"(sso_region = eu-west-3)" << "\n"
+             << R"(sso_registration_scopes = sso:account:access)" << "\n"
+             << R"(region = eu-west-3)" << "\n"
+             << R"(output = json)" << "\n";
+
+  configFile.flush();
+
+  AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+  ASSERT_TRUE(loader.Load());
+  const auto& loadedProfiles = loader.GetProfiles();
+  ASSERT_TRUE(loadedProfiles.size() == 1);
+  const auto& profile = loadedProfiles.find("gustave");
+  ASSERT_TRUE(profile != loadedProfiles.end());
+  ASSERT_STREQ("https://lumiere.com/for-those-who-come-after#", profile->second.GetSsoStartUrl().c_str());
+}
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestSsoStartUrlWithComment) {
+  TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+
+  configFile << R"([profile lune])" << "\n"
+             << R"(sso_account_id = 333333333333)" << "\n"
+             << R"(sso_role_name = PictoAccess)" << "\n"
+             << R"(sso_start_url = https://lumiere.com/for-those-who-come-after # stained)" << "\n"
+             << R"(sso_region = eu-west-3)" << "\n"
+             << R"(sso_registration_scopes = sso:account:access)" << "\n"
+             << R"(region = eu-west-3)" << "\n"
+             << R"(output = json)" << "\n";
+
+  configFile.flush();
+
+  AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+  ASSERT_TRUE(loader.Load());
+  const auto& loadedProfiles = loader.GetProfiles();
+  ASSERT_TRUE(loadedProfiles.size() == 1);
+  const auto& profile = loadedProfiles.find("lune");
+  ASSERT_TRUE(profile != loadedProfiles.end());
+  ASSERT_STREQ("https://lumiere.com/for-those-who-come-after", profile->second.GetSsoStartUrl().c_str());
+}
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestSsoStartUrlLineCommnent) {
+  TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+
+  configFile << R"([profile maelle])" << "\n"
+             << R"(sso_account_id = 333333333333)" << "\n"
+             << R"(sso_role_name = PictoAccess)" << "\n"
+             << R"(sso_start_url = https://lumiere.com/for-those-who-come-after # stendahl pre nerf)" << "\n"
+             << R"(#sso_start_url = https://lumiere.com/verso)" << "\n"
+             << R"(sso_region = eu-west-3)" << "\n"
+             << R"(sso_registration_scopes = sso:account:access)" << "\n"
+             << R"(region = eu-west-3)" << "\n"
+             << R"(output = json)" << "\n";
+
+  configFile.flush();
+
+  AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+  ASSERT_TRUE(loader.Load());
+  const auto& loadedProfiles = loader.GetProfiles();
+  ASSERT_TRUE(loadedProfiles.size() == 1);
+  const auto& profile = loadedProfiles.find("maelle");
+  ASSERT_TRUE(profile != loadedProfiles.end());
+  ASSERT_STREQ("https://lumiere.com/for-those-who-come-after", profile->second.GetSsoStartUrl().c_str());
+}
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestSsoStartUrlShouldHandleMultipleCommentsCorrectly) {
+  TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+
+  configFile << R"([profile maelle])" << "\n"
+             << R"(sso_account_id = 333333333333)" << "\n"
+             << R"(sso_role_name = PictoAccess)" << "\n"
+             << R"(sso_start_url = https://lumiere.com/for-those-who-come-after#when-one-falls-we-continue    ; painted power # stendahl pre nerf)" << "\n"
+             << R"(;#sso_start_url = https://lumiere.com/verso)" << "\n"
+             << R"(sso_region = eu-west-3)" << "\n"
+             << R"(sso_registration_scopes = sso:account:access)" << "\n"
+             << R"(region = eu-west-3)" << "\n"
+             << R"(output = json)" << "\n";
+
+  configFile.flush();
+
+  AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+  ASSERT_TRUE(loader.Load());
+  const auto& loadedProfiles = loader.GetProfiles();
+  ASSERT_TRUE(loadedProfiles.size() == 1);
+  const auto& profile = loadedProfiles.find("maelle");
+  ASSERT_TRUE(profile != loadedProfiles.end());
+  ASSERT_STREQ("https://lumiere.com/for-those-who-come-after#when-one-falls-we-continue", profile->second.GetSsoStartUrl().c_str());
+}
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestSsoStartUrlShouldHandleTabbedCommentsCorrectly) {
+  TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+
+  configFile << R"([profile maelle])" << "\n"
+             << R"(sso_account_id = 333333333333)" << "\n"
+             << R"(sso_role_name = PictoAccess)" << "\n"
+             << R"(sso_start_url = https://lumiere.com/for-those-who-come-after#when-one-falls-we-continue)" << "\t" << R"(#tabbed comment)" << "\n"
+             << R"(;#sso_start_url = https://lumiere.com/verso)" << "\n"
+             << R"(sso_region = eu-west-3)" << "\n"
+             << R"(sso_registration_scopes = sso:account:access)" << "\n"
+             << R"(region = eu-west-3)" << "\n"
+             << R"(output = json)" << "\n";
+
+  configFile.flush();
+
+  AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+  ASSERT_TRUE(loader.Load());
+  const auto& loadedProfiles = loader.GetProfiles();
+  ASSERT_TRUE(loadedProfiles.size() == 1);
+  const auto& profile = loadedProfiles.find("maelle");
+  ASSERT_TRUE(profile != loadedProfiles.end());
+  ASSERT_STREQ("https://lumiere.com/for-those-who-come-after#when-one-falls-we-continue", profile->second.GetSsoStartUrl().c_str());
 }

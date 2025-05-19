@@ -4,11 +4,17 @@
  */
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <fstream>
+
+namespace {
+Aws::Array<const char*, 4> COMMENT_START_SEQ{" #", " ;", "\t#", "\t;"};
+Aws::Array<const char, 2> COMMENT_CHARS{'#', ';'};
+}
 
 namespace Aws
 {
@@ -46,8 +52,6 @@ namespace Aws
         static const size_t IDENTIFIER_ALLOWED_CHARACTERS_SZ = sizeof(IDENTIFIER_ALLOWED_CHARACTERS) - 1;
         const char WHITESPACE_CHARACTERS[]         = "\t ";
         static const size_t WHITESPACE_CHARACTERS_SZ = sizeof(WHITESPACE_CHARACTERS) - 1;
-        const char COMMENT_START[]                 = "#;";
-        static const size_t COMMENT_START_SZ = sizeof(COMMENT_START) - 1;
 
         struct ProfilePropertyAccessFunctions
         {
@@ -125,7 +129,7 @@ namespace Aws
                         rawLine.pop_back(); // Remove carriage return character ('\r')
                     }
 
-                    Aws::String line = rawLine.substr(0, rawLine.find_first_of(COMMENT_START)); // ignore comments
+                    const Aws::String line{StripCommentFromLine(rawLine)};
                     if (line.empty() || line.length() < ASSUME_EMPTY_LEN || line.find_first_not_of(WHITESPACE_CHARACTERS) == Aws::String::npos)
                     {
                         continue;
@@ -384,8 +388,7 @@ namespace Aws
                     }
                     pos++;
                     pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
-                    if(pos != Aws::String::npos &&
-                       std::find(COMMENT_START, COMMENT_START + COMMENT_START_SZ, line[pos]) == COMMENT_START + COMMENT_START_SZ)
+                    if(pos != Aws::String::npos && std::find(COMMENT_CHARS.begin(), COMMENT_CHARS.end(), line[pos]) == COMMENT_CHARS.end())
                     {
                         AWS_LOGSTREAM_ERROR(PARSER_TAG, "Found unexpected characters after closing bracket of Section Identifier " << line);
                         break;
@@ -530,6 +533,26 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_FATAL(PARSER_TAG, "Unknown parser error: unexpected state " << currentState);
                 }
+            }
+
+            /**
+             * Returns a configuration file line with inline comments removed.
+             *
+             * @param line a raw line read in from configuration.
+             * @return the raw line with any commented out sections removed.
+             */
+            static Aws::String StripCommentFromLine(const Aws::String& line) {
+              // entire line is commented if the first char is comment, otherwise we want whitespace + comment delimitation
+              if (line.empty() || std::any_of(COMMENT_CHARS.begin(), COMMENT_CHARS.end(),
+                                              [&line](const char firstChar) -> bool { return firstChar == line.front(); })) {
+                return {};
+              }
+
+              size_t commentLocation = Aws::String::npos;
+              for (const auto* const commentChar : COMMENT_START_SEQ) {
+                commentLocation = std::min(commentLocation, line.find(commentChar));
+              }
+              return {line.substr(0, commentLocation)};
             }
 
             Aws::Map<String, Profile> m_foundProfiles;
