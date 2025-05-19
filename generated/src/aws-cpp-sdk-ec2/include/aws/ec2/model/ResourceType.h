@@ -109,7 +109,8 @@ namespace Model
     ipam_resource_discovery_association,
     instance_connect_endpoint,
     verified_access_endpoint_target,
-    ipam_external_resource_verification_token
+    ipam_external_resource_verification_token,
+    mac_modification_task
   };
 
 namespace ResourceTypeMapper
