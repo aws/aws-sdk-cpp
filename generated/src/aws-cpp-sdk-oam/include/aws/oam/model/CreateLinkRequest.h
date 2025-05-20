@@ -44,7 +44,12 @@ namespace Model
      * <code>$AccountName</code> is the name of the account</p> </li> <li> <p>
      * <code>$AccountEmail</code> is the globally unique email address of the
      * account</p> </li> <li> <p> <code>$AccountEmailNoDomain</code> is the email
-     * address of the account without the domain name</p> </li> </ul>
+     * address of the account without the domain name</p> </li> </ul>  <p>In the
+     * Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud
+     * (US-West) Regions, the only supported option is to use custom labels, and the
+     * <code>$AccountName</code>, <code>$AccountEmail</code>, and
+     * <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i>
+     * instead of the specified variable.</p> 
      */
     inline const Aws::String& GetLabelTemplate() const { return m_labelTemplate; }
     inline bool LabelTemplateHasBeenSet() const { return m_labelTemplateHasBeenSet; }

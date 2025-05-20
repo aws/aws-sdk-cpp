@@ -239,6 +239,12 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_phcSupport = PhcSupportMapper::GetPhcSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phcSupportNode.GetText()).c_str()));
       m_phcSupportHasBeenSet = true;
     }
+    XmlNode rebootMigrationSupportNode = resultNode.FirstChild("rebootMigrationSupport");
+    if(!rebootMigrationSupportNode.IsNull())
+    {
+      m_rebootMigrationSupport = RebootMigrationSupportMapper::GetRebootMigrationSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rebootMigrationSupportNode.GetText()).c_str()));
+      m_rebootMigrationSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -438,6 +444,11 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".PhcSupport=" << StringUtils::URLEncode(PhcSupportMapper::GetNameForPhcSupport(m_phcSupport)) << "&";
   }
 
+  if(m_rebootMigrationSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RebootMigrationSupport=" << StringUtils::URLEncode(RebootMigrationSupportMapper::GetNameForRebootMigrationSupport(m_rebootMigrationSupport)) << "&";
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -603,6 +614,10 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_phcSupportHasBeenSet)
   {
       oStream << location << ".PhcSupport=" << StringUtils::URLEncode(PhcSupportMapper::GetNameForPhcSupport(m_phcSupport)) << "&";
+  }
+  if(m_rebootMigrationSupportHasBeenSet)
+  {
+      oStream << location << ".RebootMigrationSupport=" << StringUtils::URLEncode(RebootMigrationSupportMapper::GetNameForRebootMigrationSupport(m_rebootMigrationSupport)) << "&";
   }
 }
 

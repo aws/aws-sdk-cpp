@@ -149,6 +149,7 @@
 #include <aws/glue/model/ConnectionStatus.h>
 #include <aws/glue/model/ConnectionType.h>
 #include <aws/glue/model/ConnectionTypeBrief.h>
+#include <aws/glue/model/ConnectionTypeVariant.h>
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/ConnectorDataSource.h>
 #include <aws/glue/model/ConnectorDataTarget.h>

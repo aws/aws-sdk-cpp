@@ -43,10 +43,28 @@ namespace Model
     template<typename IdentifierT = Aws::String>
     GetSinkRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to include the tags associated with the sink in the
+     * response. When <code>IncludeTags</code> is set to <code>true</code> and the
+     * caller has the required permission, <code>oam:ListTagsForResource</code>, the
+     * API will return the tags for the specified resource. If the caller doesn't have
+     * the required permission, <code>oam:ListTagsForResource</code>, the API will
+     * raise an exception.</p> <p>The default value is <code>false</code>.</p>
+     */
+    inline bool GetIncludeTags() const { return m_includeTags; }
+    inline bool IncludeTagsHasBeenSet() const { return m_includeTagsHasBeenSet; }
+    inline void SetIncludeTags(bool value) { m_includeTagsHasBeenSet = true; m_includeTags = value; }
+    inline GetSinkRequest& WithIncludeTags(bool value) { SetIncludeTags(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    bool m_includeTags{false};
+    bool m_includeTagsHasBeenSet = false;
   };
 
 } // namespace Model

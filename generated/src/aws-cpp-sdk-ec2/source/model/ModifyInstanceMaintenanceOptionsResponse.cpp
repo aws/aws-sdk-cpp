@@ -46,6 +46,12 @@ ModifyInstanceMaintenanceOptionsResponse& ModifyInstanceMaintenanceOptionsRespon
       m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
       m_autoRecoveryHasBeenSet = true;
     }
+    XmlNode rebootMigrationNode = resultNode.FirstChild("rebootMigration");
+    if(!rebootMigrationNode.IsNull())
+    {
+      m_rebootMigration = InstanceRebootMigrationStateMapper::GetInstanceRebootMigrationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rebootMigrationNode.GetText()).c_str()));
+      m_rebootMigrationHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

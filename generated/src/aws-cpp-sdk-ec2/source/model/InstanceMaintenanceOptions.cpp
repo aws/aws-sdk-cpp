@@ -37,6 +37,12 @@ InstanceMaintenanceOptions& InstanceMaintenanceOptions::operator =(const XmlNode
       m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
       m_autoRecoveryHasBeenSet = true;
     }
+    XmlNode rebootMigrationNode = resultNode.FirstChild("rebootMigration");
+    if(!rebootMigrationNode.IsNull())
+    {
+      m_rebootMigration = InstanceRebootMigrationStateMapper::GetInstanceRebootMigrationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rebootMigrationNode.GetText()).c_str()));
+      m_rebootMigrationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,6 +55,11 @@ void InstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
   }
 
+  if(m_rebootMigrationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RebootMigration=" << StringUtils::URLEncode(InstanceRebootMigrationStateMapper::GetNameForInstanceRebootMigrationState(m_rebootMigration)) << "&";
+  }
+
 }
 
 void InstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -56,6 +67,10 @@ void InstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const cha
   if(m_autoRecoveryHasBeenSet)
   {
       oStream << location << ".AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
+  }
+  if(m_rebootMigrationHasBeenSet)
+  {
+      oStream << location << ".RebootMigration=" << StringUtils::URLEncode(InstanceRebootMigrationStateMapper::GetNameForInstanceRebootMigrationState(m_rebootMigration)) << "&";
   }
 }
 
