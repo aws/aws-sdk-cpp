@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/CoverageStringFilter.h>
 #include <aws/inspector2/model/CoverageMapFilter.h>
+#include <aws/inspector2/model/CoverageNumberFilter.h>
 #include <aws/inspector2/model/CoverageDateFilter.h>
 #include <utility>
 
@@ -68,6 +69,34 @@ namespace Model
     CoverageFilterCriteria& WithEc2InstanceTags(Ec2InstanceTagsT&& value) { SetEc2InstanceTags(std::forward<Ec2InstanceTagsT>(value)); return *this;}
     template<typename Ec2InstanceTagsT = CoverageMapFilter>
     CoverageFilterCriteria& AddEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.emplace_back(std::forward<Ec2InstanceTagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of Amazon ECR images in use.</p>
+     */
+    inline const Aws::Vector<CoverageNumberFilter>& GetEcrImageInUseCount() const { return m_ecrImageInUseCount; }
+    inline bool EcrImageInUseCountHasBeenSet() const { return m_ecrImageInUseCountHasBeenSet; }
+    template<typename EcrImageInUseCountT = Aws::Vector<CoverageNumberFilter>>
+    void SetEcrImageInUseCount(EcrImageInUseCountT&& value) { m_ecrImageInUseCountHasBeenSet = true; m_ecrImageInUseCount = std::forward<EcrImageInUseCountT>(value); }
+    template<typename EcrImageInUseCountT = Aws::Vector<CoverageNumberFilter>>
+    CoverageFilterCriteria& WithEcrImageInUseCount(EcrImageInUseCountT&& value) { SetEcrImageInUseCount(std::forward<EcrImageInUseCountT>(value)); return *this;}
+    template<typename EcrImageInUseCountT = CoverageNumberFilter>
+    CoverageFilterCriteria& AddEcrImageInUseCount(EcrImageInUseCountT&& value) { m_ecrImageInUseCountHasBeenSet = true; m_ecrImageInUseCount.emplace_back(std::forward<EcrImageInUseCountT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon ECR image that was last in use.</p>
+     */
+    inline const Aws::Vector<CoverageDateFilter>& GetEcrImageLastInUseAt() const { return m_ecrImageLastInUseAt; }
+    inline bool EcrImageLastInUseAtHasBeenSet() const { return m_ecrImageLastInUseAtHasBeenSet; }
+    template<typename EcrImageLastInUseAtT = Aws::Vector<CoverageDateFilter>>
+    void SetEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { m_ecrImageLastInUseAtHasBeenSet = true; m_ecrImageLastInUseAt = std::forward<EcrImageLastInUseAtT>(value); }
+    template<typename EcrImageLastInUseAtT = Aws::Vector<CoverageDateFilter>>
+    CoverageFilterCriteria& WithEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { SetEcrImageLastInUseAt(std::forward<EcrImageLastInUseAtT>(value)); return *this;}
+    template<typename EcrImageLastInUseAtT = CoverageDateFilter>
+    CoverageFilterCriteria& AddEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { m_ecrImageLastInUseAtHasBeenSet = true; m_ecrImageLastInUseAt.emplace_back(std::forward<EcrImageLastInUseAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -271,6 +300,12 @@ namespace Model
 
     Aws::Vector<CoverageMapFilter> m_ec2InstanceTags;
     bool m_ec2InstanceTagsHasBeenSet = false;
+
+    Aws::Vector<CoverageNumberFilter> m_ecrImageInUseCount;
+    bool m_ecrImageInUseCountHasBeenSet = false;
+
+    Aws::Vector<CoverageDateFilter> m_ecrImageLastInUseAt;
+    bool m_ecrImageLastInUseAtHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_ecrImageTags;
     bool m_ecrImageTagsHasBeenSet = false;

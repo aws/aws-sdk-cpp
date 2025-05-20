@@ -684,6 +684,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Returns a list of clusters and metadata associated with an
+         * image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetClustersForImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClustersForImageOutcome GetClustersForImage(const Model::GetClustersForImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClustersForImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetClustersForImageRequestT = Model::GetClustersForImageRequest>
+        Model::GetClustersForImageOutcomeCallable GetClustersForImageCallable(const GetClustersForImageRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetClustersForImage, request);
+        }
+
+        /**
+         * An Async wrapper for GetClustersForImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetClustersForImageRequestT = Model::GetClustersForImageRequest>
+        void GetClustersForImageAsync(const GetClustersForImageRequestT& request, const GetClustersForImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetClustersForImage, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves setting configurations for Inspector scans.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">AWS

@@ -30,6 +30,11 @@ EcrRescanDurationState& EcrRescanDurationState::operator =(JsonView jsonValue)
     m_pullDateRescanDuration = EcrPullDateRescanDurationMapper::GetEcrPullDateRescanDurationForName(jsonValue.GetString("pullDateRescanDuration"));
     m_pullDateRescanDurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("pullDateRescanMode"))
+  {
+    m_pullDateRescanMode = EcrPullDateRescanModeMapper::GetEcrPullDateRescanModeForName(jsonValue.GetString("pullDateRescanMode"));
+    m_pullDateRescanModeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("rescanDuration"))
   {
     m_rescanDuration = EcrRescanDurationMapper::GetEcrRescanDurationForName(jsonValue.GetString("rescanDuration"));
@@ -55,6 +60,11 @@ JsonValue EcrRescanDurationState::Jsonize() const
   if(m_pullDateRescanDurationHasBeenSet)
   {
    payload.WithString("pullDateRescanDuration", EcrPullDateRescanDurationMapper::GetNameForEcrPullDateRescanDuration(m_pullDateRescanDuration));
+  }
+
+  if(m_pullDateRescanModeHasBeenSet)
+  {
+   payload.WithString("pullDateRescanMode", EcrPullDateRescanModeMapper::GetNameForEcrPullDateRescanMode(m_pullDateRescanMode));
   }
 
   if(m_rescanDurationHasBeenSet)

@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/StringFilter.h>
-#include <aws/inspector2/model/DateFilter.h>
 #include <aws/inspector2/model/NumberFilter.h>
+#include <aws/inspector2/model/DateFilter.h>
 #include <aws/inspector2/model/PortRangeFilter.h>
 #include <aws/inspector2/model/MapFilter.h>
 #include <aws/inspector2/model/PackageFilter.h>
@@ -205,6 +205,36 @@ namespace Model
     FilterCriteria& WithEcrImageHash(EcrImageHashT&& value) { SetEcrImageHash(std::forward<EcrImageHashT>(value)); return *this;}
     template<typename EcrImageHashT = StringFilter>
     FilterCriteria& AddEcrImageHash(EcrImageHashT&& value) { m_ecrImageHashHasBeenSet = true; m_ecrImageHash.emplace_back(std::forward<EcrImageHashT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter criteria indicating when details for an Amazon ECR image include when
+     * an Amazon ECR image is in use.</p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetEcrImageInUseCount() const { return m_ecrImageInUseCount; }
+    inline bool EcrImageInUseCountHasBeenSet() const { return m_ecrImageInUseCountHasBeenSet; }
+    template<typename EcrImageInUseCountT = Aws::Vector<NumberFilter>>
+    void SetEcrImageInUseCount(EcrImageInUseCountT&& value) { m_ecrImageInUseCountHasBeenSet = true; m_ecrImageInUseCount = std::forward<EcrImageInUseCountT>(value); }
+    template<typename EcrImageInUseCountT = Aws::Vector<NumberFilter>>
+    FilterCriteria& WithEcrImageInUseCount(EcrImageInUseCountT&& value) { SetEcrImageInUseCount(std::forward<EcrImageInUseCountT>(value)); return *this;}
+    template<typename EcrImageInUseCountT = NumberFilter>
+    FilterCriteria& AddEcrImageInUseCount(EcrImageInUseCountT&& value) { m_ecrImageInUseCountHasBeenSet = true; m_ecrImageInUseCount.emplace_back(std::forward<EcrImageInUseCountT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter criteria indicating when an Amazon ECR image was last used in an
+     * Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+     */
+    inline const Aws::Vector<DateFilter>& GetEcrImageLastInUseAt() const { return m_ecrImageLastInUseAt; }
+    inline bool EcrImageLastInUseAtHasBeenSet() const { return m_ecrImageLastInUseAtHasBeenSet; }
+    template<typename EcrImageLastInUseAtT = Aws::Vector<DateFilter>>
+    void SetEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { m_ecrImageLastInUseAtHasBeenSet = true; m_ecrImageLastInUseAt = std::forward<EcrImageLastInUseAtT>(value); }
+    template<typename EcrImageLastInUseAtT = Aws::Vector<DateFilter>>
+    FilterCriteria& WithEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { SetEcrImageLastInUseAt(std::forward<EcrImageLastInUseAtT>(value)); return *this;}
+    template<typename EcrImageLastInUseAtT = DateFilter>
+    FilterCriteria& AddEcrImageLastInUseAt(EcrImageLastInUseAtT&& value) { m_ecrImageLastInUseAtHasBeenSet = true; m_ecrImageLastInUseAt.emplace_back(std::forward<EcrImageLastInUseAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -690,6 +720,12 @@ namespace Model
 
     Aws::Vector<StringFilter> m_ecrImageHash;
     bool m_ecrImageHashHasBeenSet = false;
+
+    Aws::Vector<NumberFilter> m_ecrImageInUseCount;
+    bool m_ecrImageInUseCountHasBeenSet = false;
+
+    Aws::Vector<DateFilter> m_ecrImageLastInUseAt;
+    bool m_ecrImageLastInUseAtHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_ecrImagePushedAt;
     bool m_ecrImagePushedAtHasBeenSet = false;

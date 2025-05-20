@@ -166,13 +166,16 @@ namespace Model
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
      * speed, in GHz.</p> </li> <li> <p> <code>processor-info.supported-features</code>
      * - The supported CPU features (<code>amd-sev-snp</code>).</p> </li> <li> <p>
-     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> |
-     * <code>uefi</code>).</p> </li> <li> <p> <code>supported-root-device-type</code> -
-     * The root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code> | <code>capacity-block</code>).</p>
-     * </li> <li> <p> <code>supported-virtualization-type</code> - The virtualization
-     * type (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
+     * <code>reboot-migration-support</code> - Indicates whether enabling reboot
+     * migration is supported (<code>supported</code> | <code>unsupported</code>).</p>
+     * </li> <li> <p> <code>supported-boot-mode</code> - The boot mode
+     * (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code> | <code>capacity-block</code>).</p> </li> <li> <p>
+     * <code>supported-virtualization-type</code> - The virtualization type
+     * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
      * instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads

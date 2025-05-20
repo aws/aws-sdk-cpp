@@ -1233,7 +1233,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * <p>The lifecycle type for the DB instance.</p> <p>For more information, see
      * CreateDBInstance.</p>
      */
     inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }

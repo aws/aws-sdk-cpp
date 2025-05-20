@@ -104,11 +104,8 @@ namespace Model
      * to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID,
      * alias ARN, or alias name for the KMS key. The caller of this operation must be
      * authorized to run the following operations. These can be set in the Amazon Web
-     * Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p> </li> <li>
-     * <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
-     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
-     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
-     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
+     * Services KMS key policy:</p> <ul> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

@@ -124,6 +124,24 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageHashHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ecrImageInUseCount"))
+  {
+    Aws::Utils::Array<JsonView> ecrImageInUseCountJsonList = jsonValue.GetArray("ecrImageInUseCount");
+    for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
+    {
+      m_ecrImageInUseCount.push_back(ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject());
+    }
+    m_ecrImageInUseCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ecrImageLastInUseAt"))
+  {
+    Aws::Utils::Array<JsonView> ecrImageLastInUseAtJsonList = jsonValue.GetArray("ecrImageLastInUseAt");
+    for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
+    {
+      m_ecrImageLastInUseAt.push_back(ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject());
+    }
+    m_ecrImageLastInUseAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ecrImagePushedAt"))
   {
     Aws::Utils::Array<JsonView> ecrImagePushedAtJsonList = jsonValue.GetArray("ecrImagePushedAt");
@@ -528,6 +546,28 @@ JsonValue FilterCriteria::Jsonize() const
      ecrImageHashJsonList[ecrImageHashIndex].AsObject(m_ecrImageHash[ecrImageHashIndex].Jsonize());
    }
    payload.WithArray("ecrImageHash", std::move(ecrImageHashJsonList));
+
+  }
+
+  if(m_ecrImageInUseCountHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ecrImageInUseCountJsonList(m_ecrImageInUseCount.size());
+   for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
+   {
+     ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject(m_ecrImageInUseCount[ecrImageInUseCountIndex].Jsonize());
+   }
+   payload.WithArray("ecrImageInUseCount", std::move(ecrImageInUseCountJsonList));
+
+  }
+
+  if(m_ecrImageLastInUseAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ecrImageLastInUseAtJsonList(m_ecrImageLastInUseAt.size());
+   for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
+   {
+     ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject(m_ecrImageLastInUseAt[ecrImageLastInUseAtIndex].Jsonize());
+   }
+   payload.WithArray("ecrImageLastInUseAt", std::move(ecrImageLastInUseAtJsonList));
 
   }
 

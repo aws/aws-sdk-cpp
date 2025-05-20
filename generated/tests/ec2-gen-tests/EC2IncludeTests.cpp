@@ -1521,6 +1521,7 @@
 #include <aws/ec2/model/InstanceNetworkPerformanceOptions.h>
 #include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
 #include <aws/ec2/model/InstancePrivateIpAddress.h>
+#include <aws/ec2/model/InstanceRebootMigrationState.h>
 #include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/InstanceRequirementsWithMetadataRequest.h>
@@ -2028,6 +2029,7 @@
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
 #include <aws/ec2/model/RIProductDescription.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
+#include <aws/ec2/model/RebootMigrationSupport.h>
 #include <aws/ec2/model/RecurringCharge.h>
 #include <aws/ec2/model/RecurringChargeFrequency.h>
 #include <aws/ec2/model/ReferencedSecurityGroup.h>

@@ -9224,18 +9224,20 @@ namespace EC2
          * within the Amazon Web Services network to support your tightly coupled
          * workloads.</p> <p class="title"> <b>Limitations</b> </p> <ul> <li> <p>Supported
          * zones</p> <ul> <li> <p>Availability Zone</p> </li> <li> <p>Local Zone</p> </li>
-         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>
-         * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> |
-         * <code>hpc7a.12xlarge</code> | <code>hpc7a.24xlarge</code> |
-         * <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
-         * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
-         * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
-         * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
-         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
-         * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
-         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> |
-         * <code>trn2.48xlarge</code> | <code>trn2u.48xlarge</code> </p> </li> </ul> </li>
-         * </ul> <p>For more information, see <a
+         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>Returns 3 network
+         * nodes in the response</p> <ul> <li> <p> <code>hpc6a.48xlarge</code> |
+         * <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> |
+         * <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> |
+         * <code>hpc7a.96xlarge</code> | <code>hpc7g.4xlarge</code> |
+         * <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code> </p> </li> <li> <p>
+         * <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> |
+         * <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> |
+         * <code>p5e.48xlarge</code> | <code>p5en.48xlarge</code> </p> </li> <li> <p>
+         * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> |
+         * <code>trn1n.32xlarge</code> | <code>trn2.48xlarge</code> |
+         * <code>trn2u.48xlarge</code> </p> </li> </ul> </li> <li> <p>Returns 4 network
+         * nodes in the response</p> <ul> <li> <p> <code>p6-b200.48xlarge</code> </p> </li>
+         * </ul> </li> </ul> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -17094,7 +17096,11 @@ namespace EC2
          * configuration will not enable simplified automatic recovery for an unsupported
          * instance type. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-         * automatic recovery</a>.</p><p><h3>See Also:</h3>   <a
+         * automatic recovery</a>.</p> <p>Modifies the reboot migration behavior during a
+         * user-initiated reboot of an instance that has a pending
+         * <code>system-reboot</code> event. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+         * or disable reboot migration</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">AWS
          * API Reference</a></p>
          */

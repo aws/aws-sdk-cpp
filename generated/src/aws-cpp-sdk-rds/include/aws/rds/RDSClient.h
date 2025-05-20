@@ -2320,6 +2320,32 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the properties of specific major versions of DB
+         * engines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBMajorEngineVersionsOutcome DescribeDBMajorEngineVersions(const Model::DescribeDBMajorEngineVersionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeDBMajorEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBMajorEngineVersionsRequestT = Model::DescribeDBMajorEngineVersionsRequest>
+        Model::DescribeDBMajorEngineVersionsOutcomeCallable DescribeDBMajorEngineVersionsCallable(const DescribeDBMajorEngineVersionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBMajorEngineVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBMajorEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBMajorEngineVersionsRequestT = Model::DescribeDBMajorEngineVersionsRequest>
+        void DescribeDBMajorEngineVersionsAsync(const DescribeDBMajorEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBMajorEngineVersionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBMajorEngineVersions, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of <code>DBParameterGroup</code> descriptions. If a
          * <code>DBParameterGroupName</code> is specified, the list will contain only the
          * description of the specified DB parameter group.</p><p><h3>See Also:</h3>   <a

@@ -49,6 +49,16 @@ AwsEcrContainerAggregationResponse& AwsEcrContainerAggregationResponse::operator
     }
     m_imageTagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
@@ -98,6 +108,17 @@ JsonValue AwsEcrContainerAggregationResponse::Jsonize() const
    }
    payload.WithArray("imageTags", std::move(imageTagsJsonList));
 
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
+
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
   }
 
   if(m_repositoryHasBeenSet)

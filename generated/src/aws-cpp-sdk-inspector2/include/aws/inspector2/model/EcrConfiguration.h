@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/EcrPullDateRescanDuration.h>
+#include <aws/inspector2/model/EcrPullDateRescanMode.h>
 #include <aws/inspector2/model/EcrRescanDuration.h>
 #include <utility>
 
@@ -51,6 +52,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The pull date for the re-scan mode.</p>
+     */
+    inline EcrPullDateRescanMode GetPullDateRescanMode() const { return m_pullDateRescanMode; }
+    inline bool PullDateRescanModeHasBeenSet() const { return m_pullDateRescanModeHasBeenSet; }
+    inline void SetPullDateRescanMode(EcrPullDateRescanMode value) { m_pullDateRescanModeHasBeenSet = true; m_pullDateRescanMode = value; }
+    inline EcrConfiguration& WithPullDateRescanMode(EcrPullDateRescanMode value) { SetPullDateRescanMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The rescan duration configured for image push date.</p>
      */
     inline EcrRescanDuration GetRescanDuration() const { return m_rescanDuration; }
@@ -62,6 +73,9 @@ namespace Model
 
     EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
     bool m_pullDateRescanDurationHasBeenSet = false;
+
+    EcrPullDateRescanMode m_pullDateRescanMode{EcrPullDateRescanMode::NOT_SET};
+    bool m_pullDateRescanModeHasBeenSet = false;
 
     EcrRescanDuration m_rescanDuration{EcrRescanDuration::NOT_SET};
     bool m_rescanDurationHasBeenSet = false;

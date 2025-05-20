@@ -9,6 +9,8 @@
 #include <aws/inspector2/model/AwsEcrContainerSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
 #include <aws/inspector2/model/StringFilter.h>
+#include <aws/inspector2/model/NumberFilter.h>
+#include <aws/inspector2/model/DateFilter.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +87,36 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
+     * container image is in use.</p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetInUseCount() const { return m_inUseCount; }
+    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
+    template<typename InUseCountT = Aws::Vector<NumberFilter>>
+    void SetInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount = std::forward<InUseCountT>(value); }
+    template<typename InUseCountT = Aws::Vector<NumberFilter>>
+    AwsEcrContainerAggregation& WithInUseCount(InUseCountT&& value) { SetInUseCount(std::forward<InUseCountT>(value)); return *this;}
+    template<typename InUseCountT = NumberFilter>
+    AwsEcrContainerAggregation& AddInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount.emplace_back(std::forward<InUseCountT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon
+     * EKS pod.</p>
+     */
+    inline const Aws::Vector<DateFilter>& GetLastInUseAt() const { return m_lastInUseAt; }
+    inline bool LastInUseAtHasBeenSet() const { return m_lastInUseAtHasBeenSet; }
+    template<typename LastInUseAtT = Aws::Vector<DateFilter>>
+    void SetLastInUseAt(LastInUseAtT&& value) { m_lastInUseAtHasBeenSet = true; m_lastInUseAt = std::forward<LastInUseAtT>(value); }
+    template<typename LastInUseAtT = Aws::Vector<DateFilter>>
+    AwsEcrContainerAggregation& WithLastInUseAt(LastInUseAtT&& value) { SetLastInUseAt(std::forward<LastInUseAtT>(value)); return *this;}
+    template<typename LastInUseAtT = DateFilter>
+    AwsEcrContainerAggregation& AddLastInUseAt(LastInUseAtT&& value) { m_lastInUseAtHasBeenSet = true; m_lastInUseAt.emplace_back(std::forward<LastInUseAtT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The container repositories.</p>
      */
     inline const Aws::Vector<StringFilter>& GetRepositories() const { return m_repositories; }
@@ -140,6 +172,12 @@ namespace Model
 
     Aws::Vector<StringFilter> m_imageTags;
     bool m_imageTagsHasBeenSet = false;
+
+    Aws::Vector<NumberFilter> m_inUseCount;
+    bool m_inUseCountHasBeenSet = false;
+
+    Aws::Vector<DateFilter> m_lastInUseAt;
+    bool m_lastInUseAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_repositories;
     bool m_repositoriesHasBeenSet = false;

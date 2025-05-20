@@ -25,6 +25,7 @@
 #include <aws/ec2/model/MediaAcceleratorInfo.h>
 #include <aws/ec2/model/NeuronInfo.h>
 #include <aws/ec2/model/PhcSupport.h>
+#include <aws/ec2/model/RebootMigrationSupport.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -407,6 +408,20 @@ namespace Model
     inline void SetPhcSupport(PhcSupport value) { m_phcSupportHasBeenSet = true; m_phcSupport = value; }
     inline InstanceTypeInfo& WithPhcSupport(PhcSupport value) { SetPhcSupport(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether reboot migration during a user-initiated reboot is
+     * supported for instances that have a scheduled <code>system-reboot</code> event.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+     * or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline RebootMigrationSupport GetRebootMigrationSupport() const { return m_rebootMigrationSupport; }
+    inline bool RebootMigrationSupportHasBeenSet() const { return m_rebootMigrationSupportHasBeenSet; }
+    inline void SetRebootMigrationSupport(RebootMigrationSupport value) { m_rebootMigrationSupportHasBeenSet = true; m_rebootMigrationSupport = value; }
+    inline InstanceTypeInfo& WithRebootMigrationSupport(RebootMigrationSupport value) { SetRebootMigrationSupport(value); return *this;}
+    ///@}
   private:
 
     InstanceType m_instanceType{InstanceType::NOT_SET};
@@ -498,6 +513,9 @@ namespace Model
 
     PhcSupport m_phcSupport{PhcSupport::NOT_SET};
     bool m_phcSupportHasBeenSet = false;
+
+    RebootMigrationSupport m_rebootMigrationSupport{RebootMigrationSupport::NOT_SET};
+    bool m_rebootMigrationSupportHasBeenSet = false;
   };
 
 } // namespace Model

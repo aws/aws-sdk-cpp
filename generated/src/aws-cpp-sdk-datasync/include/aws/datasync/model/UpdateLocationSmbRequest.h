@@ -212,10 +212,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies your Kerberos key table (keytab) file, which includes mappings
-     * between your Kerberos principal and encryption keys.</p> <p>The file must be
-     * base64 encoded. If you're using the CLI, the encoding is done for you.</p> <p>To
-     * avoid task execution errors, make sure that the Kerberos principal that you use
-     * to create the keytab file matches exactly what you specify for
+     * between your Kerberos principal and encryption keys.</p> <p>To avoid task
+     * execution errors, make sure that the Kerberos principal that you use to create
+     * the keytab file matches exactly what you specify for
      * <code>KerberosPrincipal</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const { return m_kerberosKeytab; }

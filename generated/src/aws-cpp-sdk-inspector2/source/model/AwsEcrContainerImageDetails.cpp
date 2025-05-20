@@ -49,6 +49,16 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
     }
     m_imageTagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
@@ -103,6 +113,17 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
    }
    payload.WithArray("imageTags", std::move(imageTagsJsonList));
 
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
+
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
   }
 
   if(m_platformHasBeenSet)

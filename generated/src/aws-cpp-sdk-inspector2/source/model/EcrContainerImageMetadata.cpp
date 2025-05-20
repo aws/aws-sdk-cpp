@@ -30,6 +30,16 @@ EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonVa
     m_imagePulledAt = jsonValue.GetDouble("imagePulledAt");
     m_imagePulledAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -49,6 +59,17 @@ JsonValue EcrContainerImageMetadata::Jsonize() const
   if(m_imagePulledAtHasBeenSet)
   {
    payload.WithDouble("imagePulledAt", m_imagePulledAt.SecondsWithMSPrecision());
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
+
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

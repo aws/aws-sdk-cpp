@@ -37,6 +37,9 @@
 #include <aws/inspector2/model/AwsEcrContainerAggregationResponse.h>
 #include <aws/inspector2/model/AwsEcrContainerImageDetails.h>
 #include <aws/inspector2/model/AwsEcrContainerSortBy.h>
+#include <aws/inspector2/model/AwsEcsMetadataDetails.h>
+#include <aws/inspector2/model/AwsEksMetadataDetails.h>
+#include <aws/inspector2/model/AwsEksWorkloadInfo.h>
 #include <aws/inspector2/model/AwsLambdaFunctionDetails.h>
 #include <aws/inspector2/model/BatchGetAccountStatusRequest.h>
 #include <aws/inspector2/model/BatchGetAccountStatusResult.h>
@@ -94,6 +97,10 @@
 #include <aws/inspector2/model/CisTargetStatusReasonFilter.h>
 #include <aws/inspector2/model/CisTargets.h>
 #include <aws/inspector2/model/CisaData.h>
+#include <aws/inspector2/model/ClusterDetails.h>
+#include <aws/inspector2/model/ClusterForImageFilterCriteria.h>
+#include <aws/inspector2/model/ClusterInformation.h>
+#include <aws/inspector2/model/ClusterMetadata.h>
 #include <aws/inspector2/model/CodeFilePath.h>
 #include <aws/inspector2/model/CodeLine.h>
 #include <aws/inspector2/model/CodeSnippetError.h>
@@ -107,6 +114,7 @@
 #include <aws/inspector2/model/CoverageFilterCriteria.h>
 #include <aws/inspector2/model/CoverageMapComparison.h>
 #include <aws/inspector2/model/CoverageMapFilter.h>
+#include <aws/inspector2/model/CoverageNumberFilter.h>
 #include <aws/inspector2/model/CoverageResourceType.h>
 #include <aws/inspector2/model/CoverageStringComparison.h>
 #include <aws/inspector2/model/CoverageStringFilter.h>
@@ -160,6 +168,7 @@
 #include <aws/inspector2/model/EcrConfigurationState.h>
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrPullDateRescanDuration.h>
+#include <aws/inspector2/model/EcrPullDateRescanMode.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
 #include <aws/inspector2/model/EcrRescanDuration.h>
 #include <aws/inspector2/model/EcrRescanDurationState.h>
@@ -202,6 +211,8 @@
 #include <aws/inspector2/model/GetCisScanReportResult.h>
 #include <aws/inspector2/model/GetCisScanResultDetailsRequest.h>
 #include <aws/inspector2/model/GetCisScanResultDetailsResult.h>
+#include <aws/inspector2/model/GetClustersForImageRequest.h>
+#include <aws/inspector2/model/GetClustersForImageResult.h>
 #include <aws/inspector2/model/GetConfigurationRequest.h>
 #include <aws/inspector2/model/GetConfigurationResult.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountRequest.h>

@@ -49,6 +49,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to include the tags associated with the link in the
+     * response after the update operation. When <code>IncludeTags</code> is set to
+     * <code>true</code> and the caller has the required permission,
+     * <code>oam:ListTagsForResource</code>, the API will return the tags for the
+     * specified resource. If the caller doesn't have the required permission,
+     * <code>oam:ListTagsForResource</code>, the API will raise an exception. </p>
+     * <p>The default value is <code>false</code>.</p>
+     */
+    inline bool GetIncludeTags() const { return m_includeTags; }
+    inline bool IncludeTagsHasBeenSet() const { return m_includeTagsHasBeenSet; }
+    inline void SetIncludeTags(bool value) { m_includeTagsHasBeenSet = true; m_includeTags = value; }
+    inline UpdateLinkRequest& WithIncludeTags(bool value) { SetIncludeTags(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Use this structure to filter which metric namespaces and which log groups are
      * to be shared from the source account to the monitoring account.</p>
      */
@@ -78,6 +94,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    bool m_includeTags{false};
+    bool m_includeTagsHasBeenSet = false;
 
     LinkConfiguration m_linkConfiguration;
     bool m_linkConfigurationHasBeenSet = false;

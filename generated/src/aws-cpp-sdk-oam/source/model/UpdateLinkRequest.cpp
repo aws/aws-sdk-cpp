@@ -22,6 +22,12 @@ Aws::String UpdateLinkRequest::SerializePayload() const
 
   }
 
+  if(m_includeTagsHasBeenSet)
+  {
+   payload.WithBool("IncludeTags", m_includeTags);
+
+  }
+
   if(m_linkConfigurationHasBeenSet)
   {
    payload.WithObject("LinkConfiguration", m_linkConfiguration.Jsonize());

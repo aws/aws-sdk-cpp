@@ -80,6 +80,7 @@
 #include <aws/rds/model/DescribeDBInstanceAutomatedBackupsResult.h>
 #include <aws/rds/model/DescribeDBInstancesResult.h>
 #include <aws/rds/model/DescribeDBLogFilesResult.h>
+#include <aws/rds/model/DescribeDBMajorEngineVersionsResult.h>
 #include <aws/rds/model/DescribeDBParameterGroupsResult.h>
 #include <aws/rds/model/DescribeDBParametersResult.h>
 #include <aws/rds/model/DescribeDBProxiesResult.h>
@@ -173,6 +174,7 @@
 #include <aws/rds/model/ModifyGlobalClusterRequest.h>
 #include <aws/rds/model/DescribeDBProxyEndpointsRequest.h>
 #include <aws/rds/model/DescribeDBInstancesRequest.h>
+#include <aws/rds/model/DescribeDBMajorEngineVersionsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeCertificatesRequest.h>
 #include <aws/rds/model/DescribeDBClustersRequest.h>
@@ -318,6 +320,7 @@ namespace Aws
       class DescribeDBInstanceAutomatedBackupsRequest;
       class DescribeDBInstancesRequest;
       class DescribeDBLogFilesRequest;
+      class DescribeDBMajorEngineVersionsRequest;
       class DescribeDBParameterGroupsRequest;
       class DescribeDBParametersRequest;
       class DescribeDBProxiesRequest;
@@ -483,6 +486,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDBInstanceAutomatedBackupsResult, RDSError> DescribeDBInstanceAutomatedBackupsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBInstancesResult, RDSError> DescribeDBInstancesOutcome;
       typedef Aws::Utils::Outcome<DescribeDBLogFilesResult, RDSError> DescribeDBLogFilesOutcome;
+      typedef Aws::Utils::Outcome<DescribeDBMajorEngineVersionsResult, RDSError> DescribeDBMajorEngineVersionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, RDSError> DescribeDBParameterGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBParametersResult, RDSError> DescribeDBParametersOutcome;
       typedef Aws::Utils::Outcome<DescribeDBProxiesResult, RDSError> DescribeDBProxiesOutcome;
@@ -648,6 +652,7 @@ namespace Aws
       typedef std::future<DescribeDBInstanceAutomatedBackupsOutcome> DescribeDBInstanceAutomatedBackupsOutcomeCallable;
       typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
       typedef std::future<DescribeDBLogFilesOutcome> DescribeDBLogFilesOutcomeCallable;
+      typedef std::future<DescribeDBMajorEngineVersionsOutcome> DescribeDBMajorEngineVersionsOutcomeCallable;
       typedef std::future<DescribeDBParameterGroupsOutcome> DescribeDBParameterGroupsOutcomeCallable;
       typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
       typedef std::future<DescribeDBProxiesOutcome> DescribeDBProxiesOutcomeCallable;
@@ -816,6 +821,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeDBInstanceAutomatedBackupsRequest&, const Model::DescribeDBInstanceAutomatedBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBInstanceAutomatedBackupsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBInstancesRequest&, const Model::DescribeDBInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBInstancesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBLogFilesRequest&, const Model::DescribeDBLogFilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBLogFilesResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeDBMajorEngineVersionsRequest&, const Model::DescribeDBMajorEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBMajorEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBParameterGroupsRequest&, const Model::DescribeDBParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBParametersRequest&, const Model::DescribeDBParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBParametersResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBProxiesRequest&, const Model::DescribeDBProxiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBProxiesResponseReceivedHandler;
