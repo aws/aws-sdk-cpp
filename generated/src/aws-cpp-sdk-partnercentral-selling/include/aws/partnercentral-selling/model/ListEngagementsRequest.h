@@ -117,9 +117,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p> An object that specifies the sort order of the results. </p>
-     */
+    
     inline const EngagementSort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
     template<typename SortT = EngagementSort>

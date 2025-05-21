@@ -54,6 +54,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>An IPv6-enabled public hostname for a network interface. Requests from within
+     * the VPC or from the internet resolve to the IPv6 GUA of the network interface.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+     * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPublicIpv6DnsName() const { return m_publicIpv6DnsName; }
+    inline bool PublicIpv6DnsNameHasBeenSet() const { return m_publicIpv6DnsNameHasBeenSet; }
+    template<typename PublicIpv6DnsNameT = Aws::String>
+    void SetPublicIpv6DnsName(PublicIpv6DnsNameT&& value) { m_publicIpv6DnsNameHasBeenSet = true; m_publicIpv6DnsName = std::forward<PublicIpv6DnsNameT>(value); }
+    template<typename PublicIpv6DnsNameT = Aws::String>
+    NetworkInterfaceIpv6Address& WithPublicIpv6DnsName(PublicIpv6DnsNameT&& value) { SetPublicIpv6DnsName(std::forward<PublicIpv6DnsNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Determines if an IPv6 address associated with a network interface is the
      * primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6,
      * the first IPv6 GUA will be made the primary IPv6 address until the instance is
@@ -69,6 +86,9 @@ namespace Model
 
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet = false;
+
+    Aws::String m_publicIpv6DnsName;
+    bool m_publicIpv6DnsNameHasBeenSet = false;
 
     bool m_isPrimaryIpv6{false};
     bool m_isPrimaryIpv6HasBeenSet = false;

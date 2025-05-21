@@ -13232,8 +13232,12 @@ namespace EC2
         /**
          * <p>Disassociates an Elastic IP address from the instance or network interface
          * it's associated with.</p> <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>An address
+         * cannot be disassociated if the all of the following conditions are met:</p> <ul>
+         * <li> <p>Network interface has a <code>publicDualStackDnsName</code>
+         * publicDnsName</p> </li> <li> <p>Public IPv4 address is the primary public IPv4
+         * address</p> </li> <li> <p>Network interface only has one remaining public IPv4
+         * address</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">AWS
          * API Reference</a></p>
          */
@@ -17532,6 +17536,35 @@ namespace EC2
         }
 
         /**
+         * <p>Modify public hostname options for a network interface. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+         * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyPublicIpDnsNameOptionsOutcome ModifyPublicIpDnsNameOptions(const Model::ModifyPublicIpDnsNameOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyPublicIpDnsNameOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyPublicIpDnsNameOptionsRequestT = Model::ModifyPublicIpDnsNameOptionsRequest>
+        Model::ModifyPublicIpDnsNameOptionsOutcomeCallable ModifyPublicIpDnsNameOptionsCallable(const ModifyPublicIpDnsNameOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyPublicIpDnsNameOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyPublicIpDnsNameOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyPublicIpDnsNameOptionsRequestT = Model::ModifyPublicIpDnsNameOptionsRequest>
+        void ModifyPublicIpDnsNameOptionsAsync(const ModifyPublicIpDnsNameOptionsRequestT& request, const ModifyPublicIpDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyPublicIpDnsNameOptions, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the configuration of your Reserved Instances, such as the
          * Availability Zone, instance count, or instance type. The Reserved Instances to
          * be modified must be identical, except for Availability Zone, network platform,
@@ -20826,9 +20859,9 @@ namespace EC2
          * mapping parameter set to <code>true</code> are automatically deleted. For more
          * information about the differences between stopping and terminating instances,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-         * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For
-         * information about troubleshooting, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
+         * about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

@@ -1797,6 +1797,8 @@
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifyRouteServerRequest.h>
@@ -2013,6 +2015,8 @@
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrResponse.h>
 #include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/PtrUpdateStatus.h>
+#include <aws/ec2/model/PublicIpDnsNameOptions.h>
+#include <aws/ec2/model/PublicIpDnsOption.h>
 #include <aws/ec2/model/PublicIpv4Pool.h>
 #include <aws/ec2/model/PublicIpv4PoolRange.h>
 #include <aws/ec2/model/Purchase.h>

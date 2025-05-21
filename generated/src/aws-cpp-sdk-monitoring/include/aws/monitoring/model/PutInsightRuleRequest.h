@@ -100,6 +100,28 @@ namespace Model
     template<typename TagsT = Tag>
     PutInsightRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify <code>true</code> to have this rule evalute log events after they
+     * have been transformed by <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
+     * transformation</a>. If you specify <code>true</code>, then the log events in log
+     * groups that have transformers will be evaluated by Contributor Insights after
+     * being transformed. Log groups that don't have transformers will still have their
+     * original log events evaluated by Contributor Insights.</p> <p>The default is
+     * <code>false</code> </p>  <p>If a log group has a transformer, and
+     * transformation fails for some log events, those log events won't be evaluated by
+     * Contributor Insights. For information about investigating log transformation
+     * failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation
+     * metrics and errors</a>.</p> 
+     */
+    inline bool GetApplyOnTransformedLogs() const { return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline PutInsightRuleRequest& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleName;
@@ -113,6 +135,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs{false};
+    bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 
 } // namespace Model
