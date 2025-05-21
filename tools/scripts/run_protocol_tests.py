@@ -39,12 +39,16 @@ class MockHttpServerHandle:
     """
 
     def __init__(self):
-        python_cmd = [shutil.which("python3"), PROTO_TEST_MOCK_HANDLER]
-        self.process = subprocess.Popen(python_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print(f"Started mock server with PID {self.process.pid}")
+        try:
+            python_cmd = [shutil.which("python3"), PROTO_TEST_MOCK_HANDLER]
+            self.process = subprocess.Popen(python_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            print(f"Started mock server with PID {self.process.pid}")
+        except Exception as exc:
+            print(f"ERROR: unable to start Mock server:\n{exc}")
+            raise exc
 
-    def __del__(self):
-        """Destructor that sends Ctrl-C/SIGINT to the subprocess."""
+    def stop(self):
+        """Sends Ctrl-C/SIGINT to the subprocess."""
         if self.process and self.process.poll() is None:
             print(f"Sending SIGINT to subprocess with PID {self.process.pid}")
             if os.name == 'nt':  # Windows
@@ -52,25 +56,32 @@ class MockHttpServerHandle:
             else:  # Unix-like
                 self.process.send_signal(signal.SIGINT)
 
-            time.sleep(0.5)
+            # wait for process to actually terminate
+            time.sleep(1)
 
             if self.process.poll() is None:
                 print(f"Process didn't terminate, sending SIGTERM to PID {self.process.pid}")
                 self.process.terminate()
 
-            self.process.wait()
+            try:
+                self.process.wait(timeout=60)
+            except subprocess.TimeoutExpired as exc:
+                print(f"Subprocess with PID {self.process.pid} did not terminate after 1 minute: {exc}")
+                print(f"Mock subprocess logs:\n{self.process.communicate()[0]}\n")
+                raise exc
+
             print(f"Subprocess with PID {self.process.pid} terminated")
             print(f"Mock http logs:\n{self.process.communicate()[0]}\n")
+            self.process = None
 
-    def is_running(self):
-        """Check if the subprocess is still running."""
-        return self.process.poll() is None if self.process else False
+    def __enter__(self):
+        return self
 
-    def wait(self):
-        """Wait for the subprocess to complete."""
-        if self.process:
-            return self.process.wait()
-        return None
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        self.stop()
+
+    def __del__(self):
+        self.stop()
 
 
 class ProtocolTestRunner:
@@ -78,24 +89,26 @@ class ProtocolTestRunner:
     """
 
     def __init__(self, args):
-        self.debug = args.get("debug", False)
         self.build_dir = args.get("build_dir")
         self.args = args
         self.fail = False
 
     def run(self):
-        tests = self._collect_tests()
-        if not tests or not len(tests):
-            print(f"No protocol tests found in {self.build_dir}")
-            self.fail = True
-        for test in tests:
-            mock_server = MockHttpServerHandle()
-            try:
-                process = subprocess.run([test], timeout=6 * 60, check=True)
-                process.check_returncode()
-            except Exception as exc:
-                print(f"Protocol test {test} failed with exception: {exc}")
+        try:
+            tests = self._collect_tests()
+            if not tests or not len(tests):
+                print(f"No protocol tests found in {self.build_dir}")
                 self.fail = True
+            for test in tests:
+                with MockHttpServerHandle() as mock_server:
+                    try:
+                        subprocess.run([test], timeout=6 * 60, check=True)
+                    except Exception as exc:
+                        print(f"Protocol test {test} failed with exception: {exc}")
+                        self.fail = True
+        except Exception as exc:
+            print(f"Protocol tests failed with exception: {exc}")
+            self.fail = True
 
     def _collect_tests(self):
         all_tests = []

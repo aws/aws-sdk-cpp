@@ -30,6 +30,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator.legacyPatchEc2Model;
+
 public class CppProtocolTestGenerator implements ClientGenerator {
 
     private static String CMAKE_LISTS_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsCMakeLists.vm";
@@ -57,7 +59,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
 
         velocityEngine.init();
 
-        legacyPatchEc2Model();
+        legacyPatchEc2Model(this.serviceModel);
     }
 
     protected SdkFileEntry generateTestSuiteSourceFile(ProtocolTestSuite testSuite) throws IOException {
@@ -165,42 +167,14 @@ public class CppProtocolTestGenerator implements ClientGenerator {
                 .collect(Collectors.toSet());
         // include the request shapes
         Set<String> requestShapes = testSuite.getCases().stream()
-                .map(entry -> {
-                    Set<String> includes = new HashSet<>();
-                    includes.add(String.format("<aws/%s/model/%s.h>", serviceModel.getMetadata().getProjectName(),
-                            entry.getGiven().getName() + "Request"));
-
-                    return includes;
-                })
-                .flatMap(entrySet -> entrySet.stream())
+                .map(entry ->
+                        String.format("<aws/%s/model/%s.h>",
+                                serviceModel.getMetadata().getProjectName(),
+                                entry.getGiven().getName() + "Request"))
                 .collect(Collectors.toSet());
 
         set.addAll(requestShapes);
         set.removeAll(HEADERS_TO_NOT_INCLUDE);
         return set.stream().sorted().collect(Collectors.toList());
-    }
-
-    /**
-     * Perform legacy patching of the ec2 model present from the very beginning.
-     */
-    private void legacyPatchEc2Model() {
-        if (!serviceModel.getMetadata().getProtocol().equals("ec2")) {
-            return;
-        }
-
-        List<String> keysToRename = new LinkedList<>();
-        Map<String, Shape> shapes = serviceModel.getShapes();
-        for (final String key : shapes.keySet()) {
-            final Shape shape = shapes.get(key);
-            shape.setName(shape.getName().replaceAll("Result$", "Response"));
-            shape.setType(shape.getType().replaceAll("Result$", "Response"));
-            keysToRename.add(key);
-        }
-
-        for (final String key : keysToRename) {
-            final Shape shape = shapes.get(key);
-            shapes.remove(key);
-            shapes.put(key.replaceAll("Result$", "Response"), shape);
-        }
     }
 }
