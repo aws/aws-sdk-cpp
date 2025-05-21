@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(JsonBlobs, RestJsonJsonBlobs) {
   JsonBlobsRequest request;
 
   auto outcome = client.JsonBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonBlobsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"data":"value"} )" */
+  EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
 }

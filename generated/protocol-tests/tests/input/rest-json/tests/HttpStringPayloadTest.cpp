@@ -20,8 +20,6 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestJsonStringPayloadRequest) {
   request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", R"(rawstring)", std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.HttpStringPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "cmF3c3RyaW5n";
@@ -29,4 +27,5 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestJsonStringPayloadRequest) {
   expectedRq.headers = {{"Content-Type", R"(text/plain)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

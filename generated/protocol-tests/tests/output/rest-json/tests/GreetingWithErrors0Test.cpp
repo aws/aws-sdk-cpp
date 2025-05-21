@@ -22,9 +22,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingXAmznErrorType) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingXAmznErrorTypeWithUri) {
@@ -38,9 +37,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingXAmznErrorTypeWithUr
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingXAmznErrorTypeWithUriAndNamespace) {
@@ -54,9 +52,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingXAmznErrorTypeWithUr
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCode) {
@@ -71,9 +68,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCode) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCodeAndNamespace) {
@@ -88,9 +84,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCodeAndNamespace) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCodeUriAndNamespace) {
@@ -105,9 +100,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorUsingCodeUriAndNamespace)
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderType) {
@@ -122,9 +116,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderType) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderTypeAndNamespace) {
@@ -139,9 +132,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderTypeAndNamespac
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderTypeUriAndNamespace) {
@@ -156,7 +148,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RestJsonFooErrorWithDunderTypeUriAndNames
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }

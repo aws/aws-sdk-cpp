@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(XmlBlobs, XmlBlobs) {
   XmlBlobsRequest request;
 
   auto outcome = client.XmlBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlBlobsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"data":"value"} )" */
+  EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
 }

@@ -22,7 +22,14 @@ AWS_PROTOCOL_TEST(HttpPrefixHeadersInResponse, HttpPrefixHeadersResponse) {
   HttpPrefixHeadersInResponseRequest request;
 
   auto outcome = client.HttpPrefixHeadersInResponse(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPrefixHeadersInResponseResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"prefixHeaders":{"x-foo":"Foo","hello":"Hello"}} )" */
+  const Aws::Map<Aws::String, Aws::String>& resultPrefixHeaders = result.GetPrefixHeaders();
+  EXPECT_EQ(2U, resultPrefixHeaders.size());
+  EXPECT_TRUE(resultPrefixHeaders.find("x-foo") != resultPrefixHeaders.end());
+  EXPECT_EQ(R"(Foo)", resultPrefixHeaders.at("x-foo"));
+  EXPECT_TRUE(resultPrefixHeaders.find("hello") != resultPrefixHeaders.end());
+  EXPECT_EQ(R"(Hello)", resultPrefixHeaders.at("hello"));
 }

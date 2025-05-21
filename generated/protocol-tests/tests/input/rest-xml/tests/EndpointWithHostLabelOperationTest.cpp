@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, RestXmlEndpointTraitWithHostLa
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PEVuZHBvaW50V2l0aEhvc3RMYWJlbE9wZXJhdGlvblJlcXVlc3Q+CiAgICA8bGFiZWw+YmFyPC9sYWJlbD4KPC9FbmRwb2ludFdpdGhIb3N0TGFiZWxPcGVyYXRpb25SZXF1ZXN0Pgo=";
   expectedRq.uri = "/EndpointWithHostLabelOperation";
   expectedRq.host = "foo.bar.example.com";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

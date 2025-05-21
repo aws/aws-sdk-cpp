@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelHeaderOperation, RestXmlEndpointTraitWith
   request.SetAccountId(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelHeaderOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/EndpointWithHostLabelHeaderOperation";
   expectedRq.host = "bar.example.com";
   expectedRq.headers = {{"X-Amz-Account-Id", R"(bar)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

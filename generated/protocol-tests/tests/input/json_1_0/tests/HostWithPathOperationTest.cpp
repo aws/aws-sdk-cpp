@@ -19,12 +19,11 @@ AWS_PROTOCOL_TEST(HostWithPathOperation, AwsJson10HostWithPath) {
   HostWithPathOperationRequest request;
 
   auto outcome = client.HostWithPathOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
   expectedRq.uri = "/custom/";
   expectedRq.host = "example.com/custom";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

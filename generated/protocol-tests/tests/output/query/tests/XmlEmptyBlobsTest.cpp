@@ -23,9 +23,11 @@ AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptyBlobs) {
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyBlobsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"data":""} )" */
+  EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptySelfClosedBlobs) {
@@ -40,7 +42,9 @@ AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptySelfClosedBlobs) {
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyBlobsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"data":""} )" */
+  EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
 }

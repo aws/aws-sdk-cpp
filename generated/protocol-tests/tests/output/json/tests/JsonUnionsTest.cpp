@@ -23,9 +23,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStringUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"stringValue":"foo"}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(R"(foo)", resultContents.GetStringValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBooleanUnionValue) {
@@ -40,9 +45,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBooleanUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"booleanValue":true}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(true, resultContents.GetBooleanValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeNumberUnionValue) {
@@ -57,9 +67,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeNumberUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"numberValue":1}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(1, resultContents.GetNumberValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBlobUnionValue) {
@@ -74,9 +89,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBlobUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"blobValue":"foo"}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(Aws::Utils::ByteBuffer(R"(foo)"), resultContents.GetBlobValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeTimestampUnionValue) {
@@ -91,9 +111,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeTimestampUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"timestampValue":1398796238}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultContents.GetTimestampValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeEnumUnionValue) {
@@ -108,9 +133,14 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeEnumUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"enumValue":"Foo"}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultContents.GetEnumValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeListUnionValue) {
@@ -125,9 +155,17 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeListUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"listValue":["foo","bar"]}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    const Aws::Vector<Aws::String>& resultContentsListValueItem = resultContents.GetListValue();
+    EXPECT_EQ(2U, resultContentsListValueItem.size());
+    EXPECT_EQ(R"(foo)", resultContentsListValueItem.at(0));
+    EXPECT_EQ(R"(bar)", resultContentsListValueItem.at(1));
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeMapUnionValue) {
@@ -142,9 +180,19 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeMapUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"mapValue":{"foo":"bar","spam":"eggs"}}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    const Aws::Map<Aws::String, Aws::String>& resultContentsMapValue = resultContents.GetMapValue();
+    EXPECT_EQ(2U, resultContentsMapValue.size());
+    EXPECT_TRUE(resultContentsMapValue.find("foo") != resultContentsMapValue.end());
+    EXPECT_EQ(R"(bar)", resultContentsMapValue.at("foo"));
+    EXPECT_TRUE(resultContentsMapValue.find("spam") != resultContentsMapValue.end());
+    EXPECT_EQ(R"(eggs)", resultContentsMapValue.at("spam"));
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStructureUnionValue) {
@@ -159,9 +207,17 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStructureUnionValue) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"structureValue":{"hi":"hello"}}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    {
+      const GreetingStruct& resultContentsStructureValue = resultContents.GetStructureValue();
+      EXPECT_EQ(R"(hello)", resultContentsStructureValue.GetHi());
+    }
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeIgnoreType) {
@@ -176,7 +232,15 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeIgnoreType) {
   JsonUnionsRequest request;
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"contents":{"structureValue":{"hi":"hello"}}} )" */
+  {
+    const MyUnion& resultContents = result.GetContents();
+    {
+      const GreetingStruct& resultContentsStructureValue = resultContents.GetStructureValue();
+      EXPECT_EQ(R"(hello)", resultContentsStructureValue.GetHi());
+    }
+  }
 }

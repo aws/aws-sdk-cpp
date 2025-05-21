@@ -50,8 +50,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_token;
-    bool m_tokenHasBeenSet = false;
+    Aws::String m_token{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_tokenHasBeenSet = true;
   };
 
 } // namespace Model

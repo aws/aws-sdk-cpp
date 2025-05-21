@@ -29,14 +29,13 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonJsonMaps) {
   }
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImRlbnNlU3RydWN0TWFwIjogewogICAgICAgICJmb28iOiB7CiAgICAgICAgICAgICJoaSI6ICJ0aGVyZSIKICAgICAgICB9LAogICAgICAgICJiYXoiOiB7CiAgICAgICAgICAgICJoaSI6ICJieWUiCiAgICAgICAgfQogICAgfQp9";
   expectedRq.uri = "/JsonMaps";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesZeroValuesInMaps) {
@@ -49,14 +48,13 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesZeroValuesInMaps) {
   request.SetDenseBooleanMap({{"x",  false}});
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImRlbnNlTnVtYmVyTWFwIjogewogICAgICAgICJ4IjogMAogICAgfSwKICAgICJkZW5zZUJvb2xlYW5NYXAiOiB7CiAgICAgICAgIngiOiBmYWxzZQogICAgfQp9";
   expectedRq.uri = "/JsonMaps";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesDenseSetMap) {
@@ -68,12 +66,11 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesDenseSetMap) {
   request.SetDenseSetMap({{"x",  {}}, {"y",  {R"(a)", R"(b)"}}});
 
   auto outcome = client.JsonMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImRlbnNlU2V0TWFwIjogewogICAgICAgICJ4IjogW10sCiAgICAgICAgInkiOiBbImEiLCAiYiJdCiAgICB9Cn0=";
   expectedRq.uri = "/JsonMaps";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

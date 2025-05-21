@@ -23,9 +23,14 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse1) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const PostUnionWithJsonNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"value":{"foo":"hi"}} )" */
+  {
+    const UnionWithJsonName& resultValue = result.GetValue();
+    EXPECT_EQ(R"(hi)", resultValue.GetFoo());
+  }
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse2) {
@@ -40,9 +45,14 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse2) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const PostUnionWithJsonNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"value":{"baz":"hi"}} )" */
+  {
+    const UnionWithJsonName& resultValue = result.GetValue();
+    EXPECT_EQ(R"(hi)", resultValue.GetBaz());
+  }
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse3) {
@@ -57,7 +67,12 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse3) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const PostUnionWithJsonNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"value":{"bar":"hi"}} )" */
+  {
+    const UnionWithJsonName& resultValue = result.GetValue();
+    EXPECT_EQ(R"(hi)", resultValue.GetBar());
+  }
 }

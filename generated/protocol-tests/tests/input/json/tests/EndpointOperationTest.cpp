@@ -19,8 +19,6 @@ AWS_PROTOCOL_TEST(EndpointOperation, AwsJson11EndpointTrait) {
   EndpointOperationRequest request;
 
   auto outcome = client.EndpointOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
@@ -28,4 +26,5 @@ AWS_PROTOCOL_TEST(EndpointOperation, AwsJson11EndpointTrait) {
   expectedRq.host = "foo.example.com";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EndpointOperation)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
