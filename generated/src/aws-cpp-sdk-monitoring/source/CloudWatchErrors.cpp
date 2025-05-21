@@ -33,6 +33,7 @@ template<> AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetMod
 namespace CloudWatchErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
 static const int DASHBOARD_INVALID_INPUT_HASH = HashingUtils::HashString("InvalidParameterInput");
@@ -48,7 +49,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }

@@ -29,11 +29,15 @@
 #include <aws/bedrock-agent-runtime/model/EndSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/GenerateQueryRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetAgentMemoryRequest.h>
+#include <aws/bedrock-agent-runtime/model/GetExecutionFlowSnapshotRequest.h>
+#include <aws/bedrock-agent-runtime/model/GetFlowExecutionRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetInvocationStepRequest.h>
 #include <aws/bedrock-agent-runtime/model/GetSessionRequest.h>
 #include <aws/bedrock-agent-runtime/model/InvokeAgentRequest.h>
 #include <aws/bedrock-agent-runtime/model/InvokeFlowRequest.h>
 #include <aws/bedrock-agent-runtime/model/InvokeInlineAgentRequest.h>
+#include <aws/bedrock-agent-runtime/model/ListFlowExecutionEventsRequest.h>
+#include <aws/bedrock-agent-runtime/model/ListFlowExecutionsRequest.h>
 #include <aws/bedrock-agent-runtime/model/ListInvocationStepsRequest.h>
 #include <aws/bedrock-agent-runtime/model/ListInvocationsRequest.h>
 #include <aws/bedrock-agent-runtime/model/ListSessionsRequest.h>
@@ -44,6 +48,8 @@
 #include <aws/bedrock-agent-runtime/model/RetrieveRequest.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateRequest.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateStreamRequest.h>
+#include <aws/bedrock-agent-runtime/model/StartFlowExecutionRequest.h>
+#include <aws/bedrock-agent-runtime/model/StopFlowExecutionRequest.h>
 #include <aws/bedrock-agent-runtime/model/TagResourceRequest.h>
 #include <aws/bedrock-agent-runtime/model/UntagResourceRequest.h>
 #include <aws/bedrock-agent-runtime/model/UpdateSessionRequest.h>
@@ -436,6 +442,101 @@ GetAgentMemoryOutcome BedrockAgentRuntimeClient::GetAgentMemory(const GetAgentMe
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetExecutionFlowSnapshotOutcome BedrockAgentRuntimeClient::GetExecutionFlowSnapshot(const GetExecutionFlowSnapshotRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetExecutionFlowSnapshot);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ExecutionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: ExecutionIdentifier, is not set");
+    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: FlowAliasIdentifier, is not set");
+    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
+  }
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: FlowIdentifier, is not set");
+    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetExecutionFlowSnapshot",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetExecutionFlowSnapshotOutcome>(
+    [&]()-> GetExecutionFlowSnapshotOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowAliasIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flowsnapshot");
+      return GetExecutionFlowSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetFlowExecutionOutcome BedrockAgentRuntimeClient::GetFlowExecution(const GetFlowExecutionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetFlowExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ExecutionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: ExecutionIdentifier, is not set");
+    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: FlowAliasIdentifier, is not set");
+    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
+  }
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: FlowIdentifier, is not set");
+    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFlowExecution",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetFlowExecutionOutcome>(
+    [&]()-> GetFlowExecutionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowAliasIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionIdentifier());
+      return GetFlowExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetInvocationStepOutcome BedrockAgentRuntimeClient::GetInvocationStep(const GetInvocationStepRequest& request) const
 {
   AWS_OPERATION_GUARD(GetInvocationStep);
@@ -657,6 +758,93 @@ InvokeInlineAgentOutcome BedrockAgentRuntimeClient::InvokeInlineAgent(InvokeInli
         });
       }
       return InvokeInlineAgentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListFlowExecutionEventsOutcome BedrockAgentRuntimeClient::ListFlowExecutionEvents(const ListFlowExecutionEventsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListFlowExecutionEvents);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFlowExecutionEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EventTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: EventType, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventType]", false));
+  }
+  if (!request.ExecutionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: ExecutionIdentifier, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: FlowAliasIdentifier, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
+  }
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: FlowIdentifier, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFlowExecutionEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListFlowExecutionEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFlowExecutionEvents",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListFlowExecutionEventsOutcome>(
+    [&]()-> ListFlowExecutionEventsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFlowExecutionEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowAliasIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/events");
+      return ListFlowExecutionEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListFlowExecutionsOutcome BedrockAgentRuntimeClient::ListFlowExecutions(const ListFlowExecutionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListFlowExecutions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFlowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutions", "Required field: FlowIdentifier, is not set");
+    return ListFlowExecutionsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFlowExecutions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListFlowExecutions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFlowExecutions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListFlowExecutionsOutcome>(
+    [&]()-> ListFlowExecutionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFlowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
+      return ListFlowExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -983,6 +1171,95 @@ RetrieveAndGenerateStreamOutcome BedrockAgentRuntimeClient::RetrieveAndGenerateS
         });
       }
       return RetrieveAndGenerateStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartFlowExecutionOutcome BedrockAgentRuntimeClient::StartFlowExecution(const StartFlowExecutionRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartFlowExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartFlowExecution", "Required field: FlowAliasIdentifier, is not set");
+    return StartFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
+  }
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartFlowExecution", "Required field: FlowIdentifier, is not set");
+    return StartFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartFlowExecution",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartFlowExecutionOutcome>(
+    [&]()-> StartFlowExecutionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowAliasIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
+      return StartFlowExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopFlowExecutionOutcome BedrockAgentRuntimeClient::StopFlowExecution(const StopFlowExecutionRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopFlowExecution);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ExecutionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: ExecutionIdentifier, is not set");
+    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: FlowAliasIdentifier, is not set");
+    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
+  }
+  if (!request.FlowIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: FlowIdentifier, is not set");
+    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopFlowExecution",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopFlowExecutionOutcome>(
+    [&]()-> StopFlowExecutionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/flows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFlowAliasIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/executions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+      return StopFlowExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

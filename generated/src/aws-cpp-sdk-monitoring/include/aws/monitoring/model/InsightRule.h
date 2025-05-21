@@ -107,6 +107,20 @@ namespace Model
     inline void SetManagedRule(bool value) { m_managedRuleHasBeenSet = true; m_managedRule = value; }
     inline InsightRule& WithManagedRule(bool value) { SetManagedRule(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Displays whether the rule is evaluated on the transformed versions of logs,
+     * for log groups that have <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
+     * transformation</a> enabled. If this is <code>false</code>, log events are
+     * evaluated before they are transformed.</p>
+     */
+    inline bool GetApplyOnTransformedLogs() const { return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline InsightRule& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -123,6 +137,9 @@ namespace Model
 
     bool m_managedRule{false};
     bool m_managedRuleHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs{false};
+    bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -61,6 +61,12 @@ InsightRule& InsightRule::operator =(const XmlNode& xmlNode)
       m_managedRule = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedRuleNode.GetText()).c_str()).c_str());
       m_managedRuleHasBeenSet = true;
     }
+    XmlNode applyOnTransformedLogsNode = resultNode.FirstChild("ApplyOnTransformedLogs");
+    if(!applyOnTransformedLogsNode.IsNull())
+    {
+      m_applyOnTransformedLogs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyOnTransformedLogsNode.GetText()).c_str()).c_str());
+      m_applyOnTransformedLogsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +99,11 @@ void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ManagedRule=" << std::boolalpha << m_managedRule << "&";
   }
 
+  if(m_applyOnTransformedLogsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplyOnTransformedLogs=" << std::boolalpha << m_applyOnTransformedLogs << "&";
+  }
+
 }
 
 void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,6 +127,10 @@ void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_managedRuleHasBeenSet)
   {
       oStream << location << ".ManagedRule=" << std::boolalpha << m_managedRule << "&";
+  }
+  if(m_applyOnTransformedLogsHasBeenSet)
+  {
+      oStream << location << ".ApplyOnTransformedLogs=" << std::boolalpha << m_applyOnTransformedLogs << "&";
   }
 }
 

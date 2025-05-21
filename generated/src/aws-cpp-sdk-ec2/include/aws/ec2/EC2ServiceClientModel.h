@@ -553,6 +553,7 @@
 #include <aws/ec2/model/ModifyLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifyRouteServerResponse.h>
 #include <aws/ec2/model/ModifySecurityGroupRulesResponse.h>
@@ -1467,6 +1468,7 @@ namespace Aws
       class ModifyManagedPrefixListRequest;
       class ModifyNetworkInterfaceAttributeRequest;
       class ModifyPrivateDnsNameOptionsRequest;
+      class ModifyPublicIpDnsNameOptionsRequest;
       class ModifyReservedInstancesRequest;
       class ModifyRouteServerRequest;
       class ModifySecurityGroupRulesRequest;
@@ -2154,6 +2156,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
       typedef Aws::Utils::Outcome<ModifyPrivateDnsNameOptionsResponse, EC2Error> ModifyPrivateDnsNameOptionsOutcome;
+      typedef Aws::Utils::Outcome<ModifyPublicIpDnsNameOptionsResponse, EC2Error> ModifyPublicIpDnsNameOptionsOutcome;
       typedef Aws::Utils::Outcome<ModifyReservedInstancesResponse, EC2Error> ModifyReservedInstancesOutcome;
       typedef Aws::Utils::Outcome<ModifyRouteServerResponse, EC2Error> ModifyRouteServerOutcome;
       typedef Aws::Utils::Outcome<ModifySecurityGroupRulesResponse, EC2Error> ModifySecurityGroupRulesOutcome;
@@ -2841,6 +2844,7 @@ namespace Aws
       typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
       typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
       typedef std::future<ModifyPrivateDnsNameOptionsOutcome> ModifyPrivateDnsNameOptionsOutcomeCallable;
+      typedef std::future<ModifyPublicIpDnsNameOptionsOutcome> ModifyPublicIpDnsNameOptionsOutcomeCallable;
       typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
       typedef std::future<ModifyRouteServerOutcome> ModifyRouteServerOutcomeCallable;
       typedef std::future<ModifySecurityGroupRulesOutcome> ModifySecurityGroupRulesOutcomeCallable;
@@ -3531,6 +3535,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyPrivateDnsNameOptionsRequest&, const Model::ModifyPrivateDnsNameOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyPrivateDnsNameOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyPublicIpDnsNameOptionsRequest&, const Model::ModifyPublicIpDnsNameOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyPublicIpDnsNameOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyReservedInstancesRequest&, const Model::ModifyReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyRouteServerRequest&, const Model::ModifyRouteServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyRouteServerResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySecurityGroupRulesRequest&, const Model::ModifySecurityGroupRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySecurityGroupRulesResponseReceivedHandler;

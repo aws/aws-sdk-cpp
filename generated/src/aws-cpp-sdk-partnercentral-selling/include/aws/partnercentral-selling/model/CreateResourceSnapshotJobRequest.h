@@ -116,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of objects specifying each tag name and value.</p>
+     * <p>A map of the key-value pairs of the tag or tags to assign.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

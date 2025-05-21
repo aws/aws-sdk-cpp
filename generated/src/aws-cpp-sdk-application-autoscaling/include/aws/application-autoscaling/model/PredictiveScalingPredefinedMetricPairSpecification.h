@@ -24,8 +24,17 @@ namespace Model
 {
 
   /**
-   * <p> Represents a metric pair for a predictive scaling policy. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Represents a metric pair for a predictive scaling policy. </p> <p>The
+   * following predefined metrics are available for predictive scaling:</p> <ul> <li>
+   * <p> <code>ECSServiceAverageCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceAverageMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceTotalCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceTotalMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ALBRequestCount</code> </p> </li> <li> <p>
+   * <code>ALBRequestCountPerTarget</code> </p> </li> <li> <p>
+   * <code>TotalALBRequestCount</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredictiveScalingPredefinedMetricPairSpecification">AWS
    * API Reference</a></p>
    */

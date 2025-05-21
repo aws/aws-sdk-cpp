@@ -307,6 +307,63 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Retrieves the flow definition snapshot used for an asynchronous execution.
+         * The snapshot represents the flow metadata and definition as it existed at the
+         * time the asynchronous execution was started. Note that even if the flow is
+         * edited after an execution starts, the snapshot connected to the execution
+         * remains unchanged.</p>  <p>Asynchronous flows is in preview release for
+         * Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetExecutionFlowSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExecutionFlowSnapshotOutcome GetExecutionFlowSnapshot(const Model::GetExecutionFlowSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExecutionFlowSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetExecutionFlowSnapshotRequestT = Model::GetExecutionFlowSnapshotRequest>
+        Model::GetExecutionFlowSnapshotOutcomeCallable GetExecutionFlowSnapshotCallable(const GetExecutionFlowSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GetExecutionFlowSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for GetExecutionFlowSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetExecutionFlowSnapshotRequestT = Model::GetExecutionFlowSnapshotRequest>
+        void GetExecutionFlowSnapshotAsync(const GetExecutionFlowSnapshotRequestT& request, const GetExecutionFlowSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GetExecutionFlowSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a specific asynchronous execution of a flow,
+         * including its status, start and end times, and any errors that occurred during
+         * execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetFlowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowExecutionOutcome GetFlowExecution(const Model::GetFlowExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFlowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFlowExecutionRequestT = Model::GetFlowExecutionRequest>
+        Model::GetFlowExecutionOutcomeCallable GetFlowExecutionCallable(const GetFlowExecutionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GetFlowExecution, request);
+        }
+
+        /**
+         * An Async wrapper for GetFlowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFlowExecutionRequestT = Model::GetFlowExecutionRequest>
+        void GetFlowExecutionAsync(const GetFlowExecutionRequestT& request, const GetFlowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GetFlowExecution, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the details of a specific invocation step within an invocation in a
          * session. For more information about sessions, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
@@ -483,6 +540,64 @@ namespace BedrockAgentRuntime
         void InvokeInlineAgentAsync(InvokeInlineAgentRequestT& request, const InvokeInlineAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::InvokeInlineAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Lists events that occurred during an asynchronous execution of a flow. Events
+         * provide detailed information about the execution progress, including node inputs
+         * and outputs, flow inputs and outputs, condition results, and failure events.</p>
+         *  <p>Asynchronous flows is in preview release for Amazon Bedrock and is
+         * subject to change.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutionEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowExecutionEventsOutcome ListFlowExecutionEvents(const Model::ListFlowExecutionEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowExecutionEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowExecutionEventsRequestT = Model::ListFlowExecutionEventsRequest>
+        Model::ListFlowExecutionEventsOutcomeCallable ListFlowExecutionEventsCallable(const ListFlowExecutionEventsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListFlowExecutionEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowExecutionEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowExecutionEventsRequestT = Model::ListFlowExecutionEventsRequest>
+        void ListFlowExecutionEventsAsync(const ListFlowExecutionEventsRequestT& request, const ListFlowExecutionEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListFlowExecutionEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all asynchronous executions for a flow. Results can be paginated and
+         * include summary information about each execution, such as status, start and end
+         * times, and the execution's Amazon Resource Name (ARN).</p> 
+         * <p>Asynchronous flows is in preview release for Amazon Bedrock and is subject to
+         * change.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowExecutionsOutcome ListFlowExecutions(const Model::ListFlowExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowExecutionsRequestT = Model::ListFlowExecutionsRequest>
+        Model::ListFlowExecutionsOutcomeCallable ListFlowExecutionsCallable(const ListFlowExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListFlowExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowExecutionsRequestT = Model::ListFlowExecutionsRequest>
+        void ListFlowExecutionsAsync(const ListFlowExecutionsRequestT& request, const ListFlowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListFlowExecutions, request, handler, context);
         }
 
         /**
@@ -777,6 +892,65 @@ namespace BedrockAgentRuntime
         void RetrieveAndGenerateStreamAsync(RetrieveAndGenerateStreamRequestT& request, const RetrieveAndGenerateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an asynchronous execution of an Amazon Bedrock flow. Unlike
+         * synchronous flows that run until completion or time out after five minutes, you
+         * can run asynchronous flows for longer durations. Asynchronous flows also yield
+         * control so that your application can perform other tasks.</p> <p>This operation
+         * returns an Amazon Resource Name (ARN) that you can use to track and manage your
+         * flow's async execution.</p>  <p>Asynchronous flows is in preview release
+         * for Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StartFlowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFlowExecutionOutcome StartFlowExecution(const Model::StartFlowExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartFlowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartFlowExecutionRequestT = Model::StartFlowExecutionRequest>
+        Model::StartFlowExecutionOutcomeCallable StartFlowExecutionCallable(const StartFlowExecutionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::StartFlowExecution, request);
+        }
+
+        /**
+         * An Async wrapper for StartFlowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartFlowExecutionRequestT = Model::StartFlowExecutionRequest>
+        void StartFlowExecutionAsync(const StartFlowExecutionRequestT& request, const StartFlowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::StartFlowExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Stops an Amazon Bedrock flow's asynchronous execution. This operation
+         * prevents further processing of the flow and changes the execution status to
+         * <code>Aborted</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StopFlowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopFlowExecutionOutcome StopFlowExecution(const Model::StopFlowExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopFlowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopFlowExecutionRequestT = Model::StopFlowExecutionRequest>
+        Model::StopFlowExecutionOutcomeCallable StopFlowExecutionCallable(const StopFlowExecutionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::StopFlowExecution, request);
+        }
+
+        /**
+         * An Async wrapper for StopFlowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopFlowExecutionRequestT = Model::StopFlowExecutionRequest>
+        void StopFlowExecutionAsync(const StopFlowExecutionRequestT& request, const StopFlowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::StopFlowExecution, request, handler, context);
         }
 
         /**

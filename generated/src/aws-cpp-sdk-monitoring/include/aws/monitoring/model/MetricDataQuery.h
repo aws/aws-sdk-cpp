@@ -162,8 +162,8 @@ namespace Model
      * <p>The granularity, in seconds, of the returned data points. For metrics with
      * regular resolution, a period can be as short as one minute (60 seconds) and must
      * be a multiple of 60. For high-resolution metrics that are collected at intervals
-     * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
-     * 60. High-resolution metrics are those metrics stored by a
+     * of less than one minute, the period can be 1, 5, 10, 20, 30, 60, or any multiple
+     * of 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
      * 1 second</code>.</p>
      */

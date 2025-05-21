@@ -46,6 +46,11 @@ Aws::String PutInsightRuleRequest::SerializePayload() const
     }
   }
 
+  if(m_applyOnTransformedLogsHasBeenSet)
+  {
+    ss << "ApplyOnTransformedLogs=" << std::boolalpha << m_applyOnTransformedLogs << "&";
+  }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

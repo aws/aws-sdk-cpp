@@ -67,8 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dimensions to filter against. Only the dimensions that match exactly will
-     * be returned.</p>
+     * <p>The dimensions to filter against. Only the dimension with names that match
+     * exactly will be returned. If you specify one dimension name and a metric has
+     * that dimension and also other dimensions, it will be returned.</p>
      */
     inline const Aws::Vector<DimensionFilter>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }

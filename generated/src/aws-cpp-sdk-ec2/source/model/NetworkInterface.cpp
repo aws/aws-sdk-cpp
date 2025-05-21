@@ -123,6 +123,18 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
     }
+    XmlNode publicDnsNameNode = resultNode.FirstChild("publicDnsName");
+    if(!publicDnsNameNode.IsNull())
+    {
+      m_publicDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(publicDnsNameNode.GetText());
+      m_publicDnsNameHasBeenSet = true;
+    }
+    XmlNode publicIpDnsNameOptionsNode = resultNode.FirstChild("publicIpDnsNameOptions");
+    if(!publicIpDnsNameOptionsNode.IsNull())
+    {
+      m_publicIpDnsNameOptions = publicIpDnsNameOptionsNode;
+      m_publicIpDnsNameOptionsHasBeenSet = true;
+    }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
@@ -331,6 +343,18 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
 
+  if(m_publicDnsNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicDnsName=" << StringUtils::URLEncode(m_publicDnsName.c_str()) << "&";
+  }
+
+  if(m_publicIpDnsNameOptionsHasBeenSet)
+  {
+      Aws::StringStream publicIpDnsNameOptionsLocationAndMemberSs;
+      publicIpDnsNameOptionsLocationAndMemberSs << location << index << locationValue << ".PublicIpDnsNameOptions";
+      m_publicIpDnsNameOptions.OutputToStream(oStream, publicIpDnsNameOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_privateIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
@@ -505,6 +529,16 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+  if(m_publicDnsNameHasBeenSet)
+  {
+      oStream << location << ".PublicDnsName=" << StringUtils::URLEncode(m_publicDnsName.c_str()) << "&";
+  }
+  if(m_publicIpDnsNameOptionsHasBeenSet)
+  {
+      Aws::String publicIpDnsNameOptionsLocationAndMember(location);
+      publicIpDnsNameOptionsLocationAndMember += ".PublicIpDnsNameOptions";
+      m_publicIpDnsNameOptions.OutputToStream(oStream, publicIpDnsNameOptionsLocationAndMember.c_str());
   }
   if(m_privateIpAddressHasBeenSet)
   {
