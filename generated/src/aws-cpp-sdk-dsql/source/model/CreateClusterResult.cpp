@@ -50,6 +50,11 @@ CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebService
     m_multiRegionProperties = jsonValue.GetObject("multiRegionProperties");
     m_multiRegionPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("encryptionDetails"))
+  {
+    m_encryptionDetails = jsonValue.GetObject("encryptionDetails");
+    m_encryptionDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("deletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");

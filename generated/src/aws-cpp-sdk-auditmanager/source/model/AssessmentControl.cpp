@@ -35,11 +35,6 @@ AssessmentControl& AssessmentControl::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ControlStatusMapper::GetControlStatusForName(jsonValue.GetString("status"));
@@ -94,12 +89,6 @@ JsonValue AssessmentControl::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
 
   }
 

@@ -35,6 +35,11 @@ IntegrationPartition& IntegrationPartition::operator =(JsonView jsonValue)
     m_functionSpec = jsonValue.GetString("FunctionSpec");
     m_functionSpecHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ConversionSpec"))
+  {
+    m_conversionSpec = jsonValue.GetString("ConversionSpec");
+    m_conversionSpecHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue IntegrationPartition::Jsonize() const
   if(m_functionSpecHasBeenSet)
   {
    payload.WithString("FunctionSpec", m_functionSpec);
+
+  }
+
+  if(m_conversionSpecHasBeenSet)
+  {
+   payload.WithString("ConversionSpec", m_conversionSpec);
 
   }
 

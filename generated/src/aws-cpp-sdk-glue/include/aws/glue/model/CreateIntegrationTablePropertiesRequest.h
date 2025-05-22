@@ -38,7 +38,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The connection ARN of the source, or the database ARN of the target.</p>
+     * <p>The Amazon Resource Name (ARN) of the target table for which to create
+     * integration table properties. Currently, this API only supports creating
+     * integration table properties for target tables, and the provided ARN should be
+     * the ARN of the target table in the Glue Data Catalog. Support for creating
+     * integration table properties for source connections (using the connection ARN)
+     * is not yet implemented and will be added in a future release. </p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

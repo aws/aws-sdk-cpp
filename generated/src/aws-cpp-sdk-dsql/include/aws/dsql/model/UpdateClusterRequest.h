@@ -58,6 +58,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The KMS key that encrypts and protects the data on your cluster. You can
+     * specify the ARN, ID, or alias of an existing key or have Amazon Web Services
+     * create a default key for you.</p>
+     */
+    inline const Aws::String& GetKmsEncryptionKey() const { return m_kmsEncryptionKey; }
+    inline bool KmsEncryptionKeyHasBeenSet() const { return m_kmsEncryptionKeyHasBeenSet; }
+    template<typename KmsEncryptionKeyT = Aws::String>
+    void SetKmsEncryptionKey(KmsEncryptionKeyT&& value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey = std::forward<KmsEncryptionKeyT>(value); }
+    template<typename KmsEncryptionKeyT = Aws::String>
+    UpdateClusterRequest& WithKmsEncryptionKey(KmsEncryptionKeyT&& value) { SetKmsEncryptionKey(std::forward<KmsEncryptionKeyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. Idempotency ensures that an API request completes
      * only once. With an idempotent request, if the original request completes
@@ -93,6 +107,9 @@ namespace Model
 
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    Aws::String m_kmsEncryptionKey;
+    bool m_kmsEncryptionKeyHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

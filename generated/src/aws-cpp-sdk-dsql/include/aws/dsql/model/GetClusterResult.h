@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/dsql/model/EncryptionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The current encryption configuration details for the cluster.</p>
+     */
+    inline const EncryptionDetails& GetEncryptionDetails() const { return m_encryptionDetails; }
+    template<typename EncryptionDetailsT = EncryptionDetails>
+    void SetEncryptionDetails(EncryptionDetailsT&& value) { m_encryptionDetailsHasBeenSet = true; m_encryptionDetails = std::forward<EncryptionDetailsT>(value); }
+    template<typename EncryptionDetailsT = EncryptionDetails>
+    GetClusterResult& WithEncryptionDetails(EncryptionDetailsT&& value) { SetEncryptionDetails(std::forward<EncryptionDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -147,6 +159,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    EncryptionDetails m_encryptionDetails;
+    bool m_encryptionDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

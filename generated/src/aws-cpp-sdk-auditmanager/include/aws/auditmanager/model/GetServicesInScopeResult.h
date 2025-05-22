@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The metadata that's associated with the Amazon Web Service. </p>
+     * <p> The metadata that's associated with the Amazon Web Services service. </p>
      */
     inline const Aws::Vector<ServiceMetadata>& GetServiceMetadata() const { return m_serviceMetadata; }
     template<typename ServiceMetadataT = Aws::Vector<ServiceMetadata>>

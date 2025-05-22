@@ -68,18 +68,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The description of the control. </p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    AssessmentControl& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The status of the control. </p>
      */
     inline ControlStatus GetStatus() const { return m_status; }
@@ -152,9 +140,6 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     ControlStatus m_status{ControlStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
