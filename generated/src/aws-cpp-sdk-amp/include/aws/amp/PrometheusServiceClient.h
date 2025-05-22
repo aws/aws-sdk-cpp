@@ -120,9 +120,11 @@ namespace PrometheusService
         }
 
         /**
-         * <p>The <code>CreateLoggingConfiguration</code> operation creates a logging
-         * configuration for the workspace. Use this operation to set the CloudWatch log
-         * group to which the logs will be published to.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>CreateLoggingConfiguration</code> operation creates rules and
+         * alerting logging configuration for the workspace. Use this operation to set the
+         * CloudWatch log group to which the logs will be published to.</p>  <p>These
+         * logging configurations are only for rules and alerting logs.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -144,6 +146,33 @@ namespace PrometheusService
         void CreateLoggingConfigurationAsync(const CreateLoggingConfigurationRequestT& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::CreateLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a query logging configuration for the specified workspace. This
+         * operation enables logging of queries that exceed the specified QSP
+         * threshold.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateQueryLoggingConfigurationOutcome CreateQueryLoggingConfiguration(const Model::CreateQueryLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateQueryLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateQueryLoggingConfigurationRequestT = Model::CreateQueryLoggingConfigurationRequest>
+        Model::CreateQueryLoggingConfigurationOutcomeCallable CreateQueryLoggingConfigurationCallable(const CreateQueryLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::CreateQueryLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateQueryLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateQueryLoggingConfigurationRequestT = Model::CreateQueryLoggingConfigurationRequest>
+        void CreateQueryLoggingConfigurationAsync(const CreateQueryLoggingConfigurationRequestT& request, const CreateQueryLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::CreateQueryLoggingConfiguration, request, handler, context);
         }
 
         /**
@@ -189,9 +218,13 @@ namespace PrometheusService
          * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
          * your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User
          * Guide</i>.</p> <p>The <code>scrapeConfiguration</code> parameter contains the
-         * base-64 encoded YAML configuration for the scraper.</p>  <p>For more
-         * information about collectors, including what metrics are collected, and how to
-         * configure the scraper, see <a
+         * base-64 encoded YAML configuration for the scraper.</p> <p>When creating a
+         * scraper, the service creates a <code>Network Interface</code> in each
+         * <b>Availability Zone</b> that are passed into <code>CreateScraper</code> through
+         * subnets. These network interfaces are used to connect to the Amazon EKS cluster
+         * within the VPC for scraping metrics.</p>  <p>For more information about
+         * collectors, including what metrics are collected, and how to configure the
+         * scraper, see <a
          * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
          * an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service
          * for Prometheus User Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -272,8 +305,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Deletes the logging configuration for a workspace.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes the rules and alerting logging configuration for a workspace.</p>
+         *  <p>These logging configurations are only for rules and alerting logs.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -295,6 +329,32 @@ namespace PrometheusService
         void DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequestT& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::DeleteLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the query logging configuration for the specified
+         * workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueryLoggingConfigurationOutcome DeleteQueryLoggingConfiguration(const Model::DeleteQueryLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteQueryLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteQueryLoggingConfigurationRequestT = Model::DeleteQueryLoggingConfigurationRequest>
+        Model::DeleteQueryLoggingConfigurationOutcomeCallable DeleteQueryLoggingConfigurationCallable(const DeleteQueryLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DeleteQueryLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteQueryLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteQueryLoggingConfigurationRequestT = Model::DeleteQueryLoggingConfigurationRequest>
+        void DeleteQueryLoggingConfigurationAsync(const DeleteQueryLoggingConfigurationRequestT& request, const DeleteQueryLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DeleteQueryLoggingConfiguration, request, handler, context);
         }
 
         /**
@@ -403,8 +463,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Returns complete information about the current logging configuration of the
-         * workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns complete information about the current rules and alerting logging
+         * configuration of the workspace.</p>  <p>These logging configurations are
+         * only for rules and alerting logs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -426,6 +487,32 @@ namespace PrometheusService
         void DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequestT& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::DescribeLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the details of the query logging configuration for the specified
+         * workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQueryLoggingConfigurationOutcome DescribeQueryLoggingConfiguration(const Model::DescribeQueryLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeQueryLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeQueryLoggingConfigurationRequestT = Model::DescribeQueryLoggingConfigurationRequest>
+        Model::DescribeQueryLoggingConfigurationOutcomeCallable DescribeQueryLoggingConfigurationCallable(const DescribeQueryLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DescribeQueryLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeQueryLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeQueryLoggingConfigurationRequestT = Model::DescribeQueryLoggingConfigurationRequest>
+        void DescribeQueryLoggingConfigurationAsync(const DescribeQueryLoggingConfigurationRequestT& request, const DescribeQueryLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DescribeQueryLoggingConfiguration, request, handler, context);
         }
 
         /**
@@ -787,8 +874,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Updates the log group ARN or the workspace ID of the current logging
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the log group ARN or the workspace ID of the current rules and
+         * alerting logging configuration.</p>  <p>These logging configurations are
+         * only for rules and alerting logs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -810,6 +898,32 @@ namespace PrometheusService
         void UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequestT& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::UpdateLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the query logging configuration for the specified
+         * workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueryLoggingConfigurationOutcome UpdateQueryLoggingConfiguration(const Model::UpdateQueryLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQueryLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQueryLoggingConfigurationRequestT = Model::UpdateQueryLoggingConfigurationRequest>
+        Model::UpdateQueryLoggingConfigurationOutcomeCallable UpdateQueryLoggingConfigurationCallable(const UpdateQueryLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::UpdateQueryLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQueryLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQueryLoggingConfigurationRequestT = Model::UpdateQueryLoggingConfigurationRequest>
+        void UpdateQueryLoggingConfigurationAsync(const UpdateQueryLoggingConfigurationRequestT& request, const UpdateQueryLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::UpdateQueryLoggingConfiguration, request, handler, context);
         }
 
         /**

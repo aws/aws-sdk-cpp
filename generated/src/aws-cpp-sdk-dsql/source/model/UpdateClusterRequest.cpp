@@ -22,6 +22,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_kmsEncryptionKeyHasBeenSet)
+  {
+   payload.WithString("kmsEncryptionKey", m_kmsEncryptionKey);
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);

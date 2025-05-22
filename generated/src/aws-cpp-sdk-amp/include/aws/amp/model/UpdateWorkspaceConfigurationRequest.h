@@ -51,8 +51,8 @@ namespace Model
     ///@{
     /**
      * <p>This is an array of structures, where each structure defines a label set for
-     * the workspace, and defines the ingestion limit for active time series for each
-     * of those label sets. Each label name in a label set must be unique.</p>
+     * the workspace, and defines the active time series limit for each of those label
+     * sets. Each label name in a label set must be unique.</p>
      */
     inline const Aws::Vector<LimitsPerLabelSet>& GetLimitsPerLabelSet() const { return m_limitsPerLabelSet; }
     inline bool LimitsPerLabelSetHasBeenSet() const { return m_limitsPerLabelSetHasBeenSet; }

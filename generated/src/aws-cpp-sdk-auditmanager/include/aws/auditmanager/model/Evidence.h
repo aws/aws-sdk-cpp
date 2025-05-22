@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Web Service that the evidence is collected from. </p>
+     * <p> The Amazon Web Services service that the evidence is collected from. </p>
      */
     inline const Aws::String& GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }

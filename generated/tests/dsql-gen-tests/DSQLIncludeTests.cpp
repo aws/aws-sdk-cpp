@@ -21,6 +21,9 @@
 #include <aws/dsql/model/CreateClusterResult.h>
 #include <aws/dsql/model/DeleteClusterRequest.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
+#include <aws/dsql/model/EncryptionDetails.h>
+#include <aws/dsql/model/EncryptionStatus.h>
+#include <aws/dsql/model/EncryptionType.h>
 #include <aws/dsql/model/GetClusterRequest.h>
 #include <aws/dsql/model/GetClusterResult.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>

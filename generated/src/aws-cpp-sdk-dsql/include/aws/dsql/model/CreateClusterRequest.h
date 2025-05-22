@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/dsql/DSQL_EXPORTS.h>
 #include <aws/dsql/DSQLRequest.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -44,6 +44,20 @@ namespace Model
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline CreateClusterRequest& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The KMS key that encrypts and protects the data on your cluster. You can
+     * specify the ARN, ID, or alias of an existing key or have Amazon Web Services
+     * create a default key for you.</p>
+     */
+    inline const Aws::String& GetKmsEncryptionKey() const { return m_kmsEncryptionKey; }
+    inline bool KmsEncryptionKeyHasBeenSet() const { return m_kmsEncryptionKeyHasBeenSet; }
+    template<typename KmsEncryptionKeyT = Aws::String>
+    void SetKmsEncryptionKey(KmsEncryptionKeyT&& value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey = std::forward<KmsEncryptionKeyT>(value); }
+    template<typename KmsEncryptionKeyT = Aws::String>
+    CreateClusterRequest& WithKmsEncryptionKey(KmsEncryptionKeyT&& value) { SetKmsEncryptionKey(std::forward<KmsEncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,6 +110,9 @@ namespace Model
 
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    Aws::String m_kmsEncryptionKey;
+    bool m_kmsEncryptionKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

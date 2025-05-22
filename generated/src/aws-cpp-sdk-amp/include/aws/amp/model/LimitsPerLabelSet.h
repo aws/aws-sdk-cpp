@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>This structure defines one label set used to enforce ingestion limits for the
-   * workspace, and defines the limit for that label set.</p> <p>A label set is a
-   * unique combination of label-value pairs. Use them to control time series
-   * ingestion limits and to monitor usage by specific label groups. Example label
-   * sets might be <code>team:finance</code> or <code>env:prod</code> </p><p><h3>See
+   * <p>This structure defines one label set used to enforce active time series
+   * limits for the workspace, and defines the limit for that label set.</p> <p>A
+   * label set is a unique combination of label-value pairs. Use them to control time
+   * series limits and to monitor usage by specific label groups. Example label sets
+   * might be <code>team:finance</code> or <code>env:prod</code> </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LimitsPerLabelSet">AWS
    * API Reference</a></p>
@@ -46,11 +46,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>This defines one label set that will have an enforced ingestion limit. </p>
-     * <p>Label values accept ASCII characters and must contain at least one character
-     * that isn't whitespace. ASCII control characters are not accepted. If the label
-     * name is metric name label <code>__<i>name</i>__</code>, then the <i>metric</i>
-     * part of the name must conform to the following pattern:
+     * <p>This defines one label set that will have an enforced active time series
+     * limit. </p> <p>Label values accept ASCII characters and must contain at least
+     * one character that isn't whitespace. ASCII control characters are not accepted.
+     * If the label name is metric name label <code>__<i>name</i>__</code>, then the
+     * <i>metric</i> part of the name must conform to the following pattern:
      * <code>[a-zA-Z_:][a-zA-Z0-9_:]*</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabelSet() const { return m_labelSet; }

@@ -40,7 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the logging configuration.</p>
+     * <p>The current status of the current rules and alerting logging
+     * configuration.</p>  <p>These logging configurations are only for rules and
+     * alerting logs.</p> 
      */
     inline LoggingConfigurationStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }

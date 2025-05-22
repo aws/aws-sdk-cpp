@@ -18,11 +18,14 @@
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>
 #include <aws/amp/model/AmpConfiguration.h>
+#include <aws/amp/model/CloudWatchLogDestination.h>
 #include <aws/amp/model/ConflictException.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionResult.h>
 #include <aws/amp/model/CreateLoggingConfigurationRequest.h>
 #include <aws/amp/model/CreateLoggingConfigurationResult.h>
+#include <aws/amp/model/CreateQueryLoggingConfigurationRequest.h>
+#include <aws/amp/model/CreateQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/CreateRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/CreateRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/CreateScraperRequest.h>
@@ -31,6 +34,7 @@
 #include <aws/amp/model/CreateWorkspaceResult.h>
 #include <aws/amp/model/DeleteAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DeleteLoggingConfigurationRequest.h>
+#include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DeleteScraperRequest.h>
 #include <aws/amp/model/DeleteScraperResult.h>
@@ -39,6 +43,8 @@
 #include <aws/amp/model/DescribeAlertManagerDefinitionResult.h>
 #include <aws/amp/model/DescribeLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeLoggingConfigurationResult.h>
+#include <aws/amp/model/DescribeQueryLoggingConfigurationRequest.h>
+#include <aws/amp/model/DescribeQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/DescribeScraperRequest.h>
@@ -65,10 +71,15 @@
 #include <aws/amp/model/LoggingConfigurationMetadata.h>
 #include <aws/amp/model/LoggingConfigurationStatus.h>
 #include <aws/amp/model/LoggingConfigurationStatusCode.h>
+#include <aws/amp/model/LoggingDestination.h>
+#include <aws/amp/model/LoggingFilter.h>
 #include <aws/amp/model/PutAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/PutAlertManagerDefinitionResult.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceResult.h>
+#include <aws/amp/model/QueryLoggingConfigurationMetadata.h>
+#include <aws/amp/model/QueryLoggingConfigurationStatus.h>
+#include <aws/amp/model/QueryLoggingConfigurationStatusCode.h>
 #include <aws/amp/model/ResourceNotFoundException.h>
 #include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/RuleGroupsNamespaceDescription.h>
@@ -89,6 +100,8 @@
 #include <aws/amp/model/UntagResourceResult.h>
 #include <aws/amp/model/UpdateLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateLoggingConfigurationResult.h>
+#include <aws/amp/model/UpdateQueryLoggingConfigurationRequest.h>
+#include <aws/amp/model/UpdateQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/UpdateScraperRequest.h>
 #include <aws/amp/model/UpdateScraperResult.h>
 #include <aws/amp/model/UpdateWorkspaceAliasRequest.h>

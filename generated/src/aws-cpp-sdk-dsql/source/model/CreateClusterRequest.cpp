@@ -22,6 +22,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_kmsEncryptionKeyHasBeenSet)
+  {
+   payload.WithString("kmsEncryptionKey", m_kmsEncryptionKey);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
