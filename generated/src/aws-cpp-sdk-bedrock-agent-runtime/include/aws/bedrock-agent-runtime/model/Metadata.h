@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>In the final response, <code>endTime</code> is the end time time of the agent
+     * <p>In the final response, <code>endTime</code> is the end time of the agent
      * invocation operation.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }

@@ -32,8 +32,13 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator {
         super();
     }
 
-    @Override
-    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+    /**
+     * Perform legacy patching of the ec2 model present from the very beginning.
+     */
+    public static void legacyPatchEc2Model(ServiceModel serviceModel) {
+        if (!serviceModel.getMetadata().getProtocol().equals("ec2")) {
+            return;
+        }
 
         List<String> keysToRename = new LinkedList<>();
         Map<String, Shape> shapes = serviceModel.getShapes();
@@ -49,7 +54,12 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator {
             shapes.remove(key);
             shapes.put(key.replaceAll("Result$", "Response"), shape);
         }
+    }
 
+    @Override
+    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+        legacyPatchEc2Model(serviceModel);
+        Map<String, Shape> shapes = serviceModel.getShapes();
 
         if (shapes.containsKey("SpotInstanceState")) {
             // add "disabled" state to SpotInstanceState

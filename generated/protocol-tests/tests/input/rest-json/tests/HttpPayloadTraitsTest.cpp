@@ -21,8 +21,6 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithBlob) {
   request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", Aws::String(R"(blobby blob blob)"), std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "YmxvYmJ5IGJsb2IgYmxvYg==";
@@ -30,6 +28,7 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithBlob) {
   expectedRq.headers = {{"Content-Type", R"(application/octet-stream)"}, {"X-Foo", R"(Foo)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithNoBlobBody) {
@@ -41,11 +40,10 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithNoBlobBody) {
   request.SetFoo(R"(Foo)");
 
   auto outcome = client.HttpPayloadTraits(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/HttpPayloadTraits";
   expectedRq.headers = {{"X-Foo", R"(Foo)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

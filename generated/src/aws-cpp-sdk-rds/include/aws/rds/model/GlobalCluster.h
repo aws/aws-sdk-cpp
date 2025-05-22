@@ -122,7 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * <p>The lifecycle type for the global cluster.</p> <p>For more information, see
      * CreateGlobalCluster.</p>
      */
     inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }

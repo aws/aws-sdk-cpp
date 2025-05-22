@@ -20,8 +20,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes) {
   request.SetString(R"(abc xyz)");
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJTdHJpbmciOiJhYmMgeHl6In0=";
@@ -29,6 +27,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_trait) {
@@ -40,8 +39,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_
   request.SetJsonValue(R"({"string":"value","number":1234.5,"boolTrue":true,"boolFalse":false,"array":[1,2,3,4],"object":{"key":"value"},"null":null})");
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJKc29uVmFsdWUiOiJ7XCJzdHJpbmdcIjpcInZhbHVlXCIsXCJudW1iZXJcIjoxMjM0LjUsXCJib29sVHJ1ZVwiOnRydWUsXCJib29sRmFsc2VcIjpmYWxzZSxcImFycmF5XCI6WzEsMiwzLDRdLFwib2JqZWN0XCI6e1wia2V5XCI6XCJ2YWx1ZVwifSxcIm51bGxcIjpudWxsfSJ9";
@@ -49,6 +46,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_integer_shapes) {
@@ -60,8 +58,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_integer_shapes) {
   request.SetInteger(1234);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJJbnRlZ2VyIjoxMjM0fQ==";
@@ -69,6 +65,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_integer_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_long_shapes) {
@@ -80,8 +77,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_long_shapes) {
   request.SetLong(999999999999);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJMb25nIjo5OTk5OTk5OTk5OTl9";
@@ -89,6 +84,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_long_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_float_shapes) {
@@ -100,8 +96,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_float_shapes) {
   request.SetFloat(1234.5);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJGbG9hdCI6MTIzNC41fQ==";
@@ -109,6 +103,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_float_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
@@ -120,8 +115,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
   request.SetDouble(1234.5);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJEb3VibGUiOjEyMzQuNX0=";
@@ -129,6 +122,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
@@ -140,8 +134,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
   request.SetBlob(Aws::String(R"(binary-value)"));
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJCbG9iIjoiWW1sdVlYSjVMWFpoYkhWbCJ9";
@@ -149,6 +141,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_true) {
@@ -160,8 +153,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_true) {
   request.SetBoolean(true);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJCb29sZWFuIjp0cnVlfQ==";
@@ -169,6 +160,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_true) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
@@ -180,8 +172,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
   request.SetBoolean(false);
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJCb29sZWFuIjpmYWxzZX0=";
@@ -189,6 +179,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
@@ -200,8 +191,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
   request.SetTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJUaW1lc3RhbXAiOjk0Njg0NTI5Nn0=";
@@ -209,6 +198,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601_timestampformat) {
@@ -220,8 +210,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601
   request.SetIso8601Timestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJJc284NjAxVGltZXN0YW1wIjoiMjAwMC0wMS0wMlQyMDozNDo1NloifQ==";
@@ -229,6 +217,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdate_timestampformat) {
@@ -240,8 +229,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdat
   request.SetHttpdateTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJIdHRwZGF0ZVRpbWVzdGFtcCI6IlN1biwgMDIgSmFuIDIwMDAgMjA6MzQ6NTYgR01UIn0=";
@@ -249,6 +236,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdat
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtimestamp_timestampformat) {
@@ -260,8 +248,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtim
   request.SetUnixTimestamp(Aws::Utils::DateTime(946845296L));
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJVbml4VGltZXN0YW1wIjo5NDY4NDUyOTZ9";
@@ -269,6 +255,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtim
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_shapes) {
@@ -280,8 +267,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_shapes) {
   request.SetListOfStrings({R"(abc)", R"(mno)", R"(xyz)"});
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJMaXN0T2ZTdHJpbmdzIjpbImFiYyIsIm1ubyIsInh5eiJdfQ==";
@@ -289,6 +274,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_list_shapes) {
@@ -300,8 +286,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_list_shapes) {
   request.SetListOfStrings({});
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJMaXN0T2ZTdHJpbmdzIjpbXX0=";
@@ -309,6 +293,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_list_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_map_shapes) {
@@ -334,8 +319,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_map_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJMaXN0T2ZNYXBzT2ZTdHJpbmdzIjpbeyJmb28iOiJiYXIifSx7ImFiYyI6Inh5eiJ9LHsicmVkIjoiYmx1ZSJ9XX0=";
@@ -343,6 +326,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_map_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_structure_shapes) {
@@ -368,8 +352,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_structure_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJMaXN0T2ZTdHJ1Y3RzIjpbeyJWYWx1ZSI6ImFiYyJ9LHsiVmFsdWUiOiJtbm8ifSx7IlZhbHVlIjoieHl6In1dfQ==";
@@ -377,6 +359,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_structure_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_recursive_structure_shapes) {
@@ -400,8 +383,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_recursive_structure_s
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJSZWN1cnNpdmVMaXN0IjpbeyJSZWN1cnNpdmVMaXN0IjpbeyJSZWN1cnNpdmVMaXN0IjpbeyJJbnRlZ2VyIjoxMjN9XX1dfV19";
@@ -409,6 +390,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_recursive_structure_s
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
@@ -420,8 +402,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
   request.SetMapOfStrings({{"abc",  R"(xyz)"}, {"mno",  R"(hjk)"}});
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJNYXBPZlN0cmluZ3MiOnsiYWJjIjoieHl6IiwibW5vIjoiaGprIn19";
@@ -429,6 +409,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_map_shapes) {
@@ -440,8 +421,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_map_shapes) {
   request.SetMapOfStrings({});
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJNYXBPZlN0cmluZ3MiOnt9fQ==";
@@ -449,6 +428,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_map_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
@@ -460,8 +440,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
   request.SetMapOfListsOfStrings({{"abc",  {R"(abc)", R"(xyz)"}}, {"mno",  {R"(xyz)", R"(abc)"}}});
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJNYXBPZkxpc3RzT2ZTdHJpbmdzIjp7ImFiYyI6WyJhYmMiLCJ4eXoiXSwibW5vIjpbInh5eiIsImFiYyJdfX0=";
@@ -469,6 +447,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_structure_shapes) {
@@ -489,8 +468,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_structure_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJNYXBPZlN0cnVjdHMiOnsia2V5MSI6eyJWYWx1ZSI6InZhbHVlLTEifSwia2V5MiI6eyJWYWx1ZSI6InZhbHVlLTIifX19";
@@ -498,6 +475,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_structure_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_shapes) {
@@ -521,8 +499,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_sh
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJSZWN1cnNpdmVNYXAiOnsia2V5MSI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MiI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MyI6eyJCb29sZWFuIjpmYWxzZX19fX19fX0=";
@@ -530,6 +506,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_sh
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_shapes) {
@@ -545,8 +522,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJTaW1wbGVTdHJ1Y3QiOnsiVmFsdWUiOiJhYmMifX0=";
@@ -554,6 +529,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_members_with_locationname_traits) {
@@ -569,8 +545,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_members_with_locati
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJTdHJ1Y3RXaXRoSnNvbk5hbWUiOnsiVmFsdWUiOiJzb21lLXZhbHVlIn19";
@@ -578,6 +552,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_members_with_locati
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_structure_shapes) {
@@ -592,8 +567,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_structure_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJTaW1wbGVTdHJ1Y3QiOnt9fQ==";
@@ -601,6 +574,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_structure_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_which_have_no_members) {
@@ -615,8 +589,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_which_have_no_membe
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJFbXB0eVN0cnVjdCI6e319";
@@ -624,6 +596,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_which_have_no_membe
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
@@ -656,8 +629,6 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
   }
 
   auto outcome = client.KitchenSinkOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJTdHJpbmciOiJ0b3AtdmFsdWUiLCJCb29sZWFuIjpmYWxzZSwiUmVjdXJzaXZlU3RydWN0Ijp7IlN0cmluZyI6Im5lc3RlZC12YWx1ZSIsIkJvb2xlYW4iOnRydWUsIlJlY3Vyc2l2ZUxpc3QiOlt7IlN0cmluZyI6InN0cmluZy1vbmx5In0seyJSZWN1cnNpdmVTdHJ1Y3QiOnsiTWFwT2ZTdHJpbmdzIjp7ImNvbG9yIjoicmVkIiwic2l6ZSI6ImxhcmdlIn19fV19fQ==";
@@ -665,4 +636,5 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -9,6 +9,7 @@
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
+#include <aws/dsql/model/EncryptionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +97,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The encryption configuration for the cluster that was specified during the
+     * creation process, including the KMS key identifier and encryption state.</p>
+     */
+    inline const EncryptionDetails& GetEncryptionDetails() const { return m_encryptionDetails; }
+    template<typename EncryptionDetailsT = EncryptionDetails>
+    void SetEncryptionDetails(EncryptionDetailsT&& value) { m_encryptionDetailsHasBeenSet = true; m_encryptionDetails = std::forward<EncryptionDetailsT>(value); }
+    template<typename EncryptionDetailsT = EncryptionDetails>
+    CreateClusterResult& WithEncryptionDetails(EncryptionDetailsT&& value) { SetEncryptionDetails(std::forward<EncryptionDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Whether deletion protection is enabled on this cluster.</p>
      */
     inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
@@ -127,6 +140,9 @@ namespace Model
 
     MultiRegionProperties m_multiRegionProperties;
     bool m_multiRegionPropertiesHasBeenSet = false;
+
+    EncryptionDetails m_encryptionDetails;
+    bool m_encryptionDetailsHasBeenSet = false;
 
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;

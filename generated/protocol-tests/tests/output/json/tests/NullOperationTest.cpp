@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(NullOperation, AwsJson11StructuresDontDeserializeNullValues) {
   NullOperationRequest request;
 
   auto outcome = client.NullOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

@@ -21,12 +21,11 @@ AWS_PROTOCOL_TEST(XmlEmptyLists, XmlEmptyLists) {
   request.SetStringSet({});
 
   auto outcome = client.XmlEmptyLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "PFhtbEVtcHR5TGlzdHNSZXF1ZXN0PgogICAgICAgIDxzdHJpbmdMaXN0Pjwvc3RyaW5nTGlzdD4KICAgICAgICA8c3RyaW5nU2V0Pjwvc3RyaW5nU2V0Pgo8L1htbEVtcHR5TGlzdHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlEmptyLists";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

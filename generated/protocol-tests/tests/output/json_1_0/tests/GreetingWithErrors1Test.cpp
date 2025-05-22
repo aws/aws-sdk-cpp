@@ -23,9 +23,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10ComplexError) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10EmptyComplexError) {
@@ -40,7 +39,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10EmptyComplexError) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }

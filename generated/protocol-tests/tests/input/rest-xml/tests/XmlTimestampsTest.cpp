@@ -20,14 +20,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
   request.SetNormal(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPG5vcm1hbD4yMDE0LTA0LTI5VDE4OjMwOjM4Wjwvbm9ybWFsPgo8L1htbFRpbWVzdGFtcHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
@@ -39,14 +38,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
   request.SetDateTime(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lPjIwMTQtMDQtMjlUMTg6MzA6MzhaPC9kYXRlVGltZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVzdD4K";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
@@ -58,14 +56,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
   request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lT25UYXJnZXQ+MjAxNC0wNC0yOVQxODozMDozOFo8L2RhdGVUaW1lT25UYXJnZXQ+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
@@ -77,14 +74,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
   request.SetEpochSeconds(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kcz4xMzk4Nzk2MjM4PC9lcG9jaFNlY29uZHM+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
@@ -96,14 +92,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
   request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kc09uVGFyZ2V0PjEzOTg3OTYyMzg8L2Vwb2NoU2Vjb25kc09uVGFyZ2V0Pgo8L1htbFRpbWVzdGFtcHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
@@ -115,14 +110,13 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
   request.SetHttpDate(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlPlR1ZSwgMjkgQXByIDIwMTQgMTg6MzA6MzggR01UPC9odHRwRGF0ZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVzdD4K";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
@@ -134,12 +128,11 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
   request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238L));
 
   auto outcome = client.XmlTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlT25UYXJnZXQ+VHVlLCAyOSBBcHIgMjAxNCAxODozMDozOCBHTVQ8L2h0dHBEYXRlT25UYXJnZXQ+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

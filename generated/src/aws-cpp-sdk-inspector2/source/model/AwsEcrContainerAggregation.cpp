@@ -52,6 +52,24 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_imageTagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    Aws::Utils::Array<JsonView> inUseCountJsonList = jsonValue.GetArray("inUseCount");
+    for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
+    {
+      m_inUseCount.push_back(inUseCountJsonList[inUseCountIndex].AsObject());
+    }
+    m_inUseCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    Aws::Utils::Array<JsonView> lastInUseAtJsonList = jsonValue.GetArray("lastInUseAt");
+    for(unsigned lastInUseAtIndex = 0; lastInUseAtIndex < lastInUseAtJsonList.GetLength(); ++lastInUseAtIndex)
+    {
+      m_lastInUseAt.push_back(lastInUseAtJsonList[lastInUseAtIndex].AsObject());
+    }
+    m_lastInUseAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("repositories"))
   {
     Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
@@ -117,6 +135,28 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
      imageTagsJsonList[imageTagsIndex].AsObject(m_imageTags[imageTagsIndex].Jsonize());
    }
    payload.WithArray("imageTags", std::move(imageTagsJsonList));
+
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inUseCountJsonList(m_inUseCount.size());
+   for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
+   {
+     inUseCountJsonList[inUseCountIndex].AsObject(m_inUseCount[inUseCountIndex].Jsonize());
+   }
+   payload.WithArray("inUseCount", std::move(inUseCountJsonList));
+
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lastInUseAtJsonList(m_lastInUseAt.size());
+   for(unsigned lastInUseAtIndex = 0; lastInUseAtIndex < lastInUseAtJsonList.GetLength(); ++lastInUseAtIndex)
+   {
+     lastInUseAtJsonList[lastInUseAtIndex].AsObject(m_lastInUseAt[lastInUseAtIndex].Jsonize());
+   }
+   payload.WithArray("lastInUseAt", std::move(lastInUseAtJsonList));
 
   }
 

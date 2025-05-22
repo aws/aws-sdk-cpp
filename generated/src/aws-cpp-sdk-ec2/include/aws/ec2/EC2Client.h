@@ -2332,6 +2332,32 @@ namespace EC2
         }
 
         /**
+         * <p>Delegates ownership of the Amazon EBS root volume for an Apple silicon Mac
+         * instance to an administrative user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDelegateMacVolumeOwnershipTaskOutcome CreateDelegateMacVolumeOwnershipTask(const Model::CreateDelegateMacVolumeOwnershipTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDelegateMacVolumeOwnershipTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDelegateMacVolumeOwnershipTaskRequestT = Model::CreateDelegateMacVolumeOwnershipTaskRequest>
+        Model::CreateDelegateMacVolumeOwnershipTaskOutcomeCallable CreateDelegateMacVolumeOwnershipTaskCallable(const CreateDelegateMacVolumeOwnershipTaskRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateDelegateMacVolumeOwnershipTask, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDelegateMacVolumeOwnershipTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDelegateMacVolumeOwnershipTaskRequestT = Model::CreateDelegateMacVolumeOwnershipTaskRequest>
+        void CreateDelegateMacVolumeOwnershipTaskAsync(const CreateDelegateMacVolumeOwnershipTaskRequestT& request, const CreateDelegateMacVolumeOwnershipTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateDelegateMacVolumeOwnershipTask, request, handler, context);
+        }
+
+        /**
          * <p>Creates a custom set of DHCP options. After you create a DHCP option set, you
          * associate it with a VPC. After you associate a DHCP option set with a VPC, all
          * existing and newly launched instances in the VPC use this set of DHCP
@@ -3101,6 +3127,60 @@ namespace EC2
         void CreateLocalGatewayVirtualInterfaceGroupAsync(const CreateLocalGatewayVirtualInterfaceGroupRequestT& request, const CreateLocalGatewayVirtualInterfaceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::CreateLocalGatewayVirtualInterfaceGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a System Integrity Protection (SIP) modification task to configure
+         * the SIP settings for an x86 Mac instance or Apple silicon Mac instance. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">
+         * Configure SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p>When you configure the SIP settings for your instance, you can
+         * either enable or disable all SIP settings, or you can specify a custom SIP
+         * configuration that selectively enables or disables specific SIP settings.</p>
+         *  <p>If you implement a custom configuration, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-check-settings">
+         * connect to the instance and verify the settings</a> to ensure that your
+         * requirements are properly implemented and functioning as intended.</p> <p>SIP
+         * configurations might change with macOS updates. We recommend that you review
+         * custom SIP settings after any macOS version upgrade to ensure continued
+         * compatibility and proper functionality of your security configurations.</p>
+         *  <p>To enable or disable all SIP settings, use the
+         * <b>MacSystemIntegrityProtectionStatus</b> parameter only. For example, to enable
+         * all SIP settings, specify the following:</p> <ul> <li> <p>
+         * <code>MacSystemIntegrityProtectionStatus=enabled</code> </p> </li> </ul> <p>To
+         * specify a custom configuration that selectively enables or disables specific SIP
+         * settings, use the <b>MacSystemIntegrityProtectionStatus</b> parameter to enable
+         * or disable all SIP settings, and then use the
+         * <b>MacSystemIntegrityProtectionConfiguration</b> parameter to specify
+         * exceptions. In this case, the exceptions you specify for
+         * <b>MacSystemIntegrityProtectionConfiguration</b> override the value you specify
+         * for <b>MacSystemIntegrityProtectionStatus</b>. For example, to enable all SIP
+         * settings, except <code>NvramProtections</code>, specify the following:</p> <ul>
+         * <li> <p> <code>MacSystemIntegrityProtectionStatus=enabled</code> </p> </li> <li>
+         * <p> <code>MacSystemIntegrityProtectionConfigurationRequest
+         * "NvramProtections=disabled"</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMacSystemIntegrityProtectionModificationTaskOutcome CreateMacSystemIntegrityProtectionModificationTask(const Model::CreateMacSystemIntegrityProtectionModificationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMacSystemIntegrityProtectionModificationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMacSystemIntegrityProtectionModificationTaskRequestT = Model::CreateMacSystemIntegrityProtectionModificationTaskRequest>
+        Model::CreateMacSystemIntegrityProtectionModificationTaskOutcomeCallable CreateMacSystemIntegrityProtectionModificationTaskCallable(const CreateMacSystemIntegrityProtectionModificationTaskRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateMacSystemIntegrityProtectionModificationTask, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMacSystemIntegrityProtectionModificationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMacSystemIntegrityProtectionModificationTaskRequestT = Model::CreateMacSystemIntegrityProtectionModificationTaskRequest>
+        void CreateMacSystemIntegrityProtectionModificationTaskAsync(const CreateMacSystemIntegrityProtectionModificationTaskRequestT& request, const CreateMacSystemIntegrityProtectionModificationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateMacSystemIntegrityProtectionModificationTask, request, handler, context);
         }
 
         /**
@@ -8800,12 +8880,18 @@ namespace EC2
          * each image. In <code>audit-mode</code>, the <code>imageAllowed</code> field is
          * set to <code>true</code> for images that meet the account's Allowed AMIs
          * criteria, and <code>false</code> for images that don't meet the criteria. For
-         * more information, see <a>EnableAllowedImagesSettings</a>.</p>  <p>We
-         * strongly recommend using only paginated requests. Unpaginated requests are
-         * susceptible to throttling and timeouts.</p>   <p>The order of
-         * the elements in the response, including those within nested structures, might
-         * vary. Applications should not assume the elements appear in a particular
-         * order.</p> <p><h3>See Also:</h3>   <a
+         * more information, see <a>EnableAllowedImagesSettings</a>.</p> <p>The Amazon EC2
+         * API follows an eventual consistency model. This means that the result of an API
+         * command you run that creates or modifies resources might not be immediately
+         * available to all subsequent commands you run. For guidance on how to manage
+         * eventual consistency, see <a
+         * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+         * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
+         * Guide</i>.</p>  <p>We strongly recommend using only paginated
+         * requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
+         *   <p>The order of the elements in the response, including
+         * those within nested structures, might vary. Applications should not assume the
+         * elements appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
          */
@@ -9138,18 +9224,20 @@ namespace EC2
          * within the Amazon Web Services network to support your tightly coupled
          * workloads.</p> <p class="title"> <b>Limitations</b> </p> <ul> <li> <p>Supported
          * zones</p> <ul> <li> <p>Availability Zone</p> </li> <li> <p>Local Zone</p> </li>
-         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>
-         * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> |
-         * <code>hpc7a.12xlarge</code> | <code>hpc7a.24xlarge</code> |
-         * <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
-         * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
-         * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
-         * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
-         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
-         * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
-         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> |
-         * <code>trn2.48xlarge</code> | <code>trn2u.48xlarge</code> </p> </li> </ul> </li>
-         * </ul> <p>For more information, see <a
+         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>Returns 3 network
+         * nodes in the response</p> <ul> <li> <p> <code>hpc6a.48xlarge</code> |
+         * <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> |
+         * <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> |
+         * <code>hpc7a.96xlarge</code> | <code>hpc7g.4xlarge</code> |
+         * <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code> </p> </li> <li> <p>
+         * <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> |
+         * <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> |
+         * <code>p5e.48xlarge</code> | <code>p5en.48xlarge</code> </p> </li> <li> <p>
+         * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> |
+         * <code>trn1n.32xlarge</code> | <code>trn2.48xlarge</code> |
+         * <code>trn2u.48xlarge</code> </p> </li> </ul> </li> <li> <p>Returns 4 network
+         * nodes in the response</p> <ul> <li> <p> <code>p6-b200.48xlarge</code> </p> </li>
+         * </ul> </li> </ul> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -9815,6 +9903,36 @@ namespace EC2
         }
 
         /**
+         * <p>Describes a System Integrity Protection (SIP) modification task or volume
+         * ownership delegation task for an Amazon EC2 Mac instance. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+         * SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMacModificationTasksOutcome DescribeMacModificationTasks(const Model::DescribeMacModificationTasksRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeMacModificationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMacModificationTasksRequestT = Model::DescribeMacModificationTasksRequest>
+        Model::DescribeMacModificationTasksOutcomeCallable DescribeMacModificationTasksCallable(const DescribeMacModificationTasksRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeMacModificationTasks, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMacModificationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMacModificationTasksRequestT = Model::DescribeMacModificationTasksRequest>
+        void DescribeMacModificationTasksAsync(const DescribeMacModificationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMacModificationTasksRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeMacModificationTasks, request, handler, context);
+        }
+
+        /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
          * prefix lists.</p> <p>To view the entries for your prefix list, use
          * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
@@ -10114,8 +10232,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the Outposts link aggregation groups (LAGs).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the Outposts link aggregation groups (LAGs).</p>  <p>LAGs are
+         * only available for second-generation Outposts racks at this time.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">AWS
          * API Reference</a></p>
          */
@@ -13113,8 +13232,12 @@ namespace EC2
         /**
          * <p>Disassociates an Elastic IP address from the instance or network interface
          * it's associated with.</p> <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>An address
+         * cannot be disassociated if the all of the following conditions are met:</p> <ul>
+         * <li> <p>Network interface has a <code>publicDualStackDnsName</code>
+         * publicDnsName</p> </li> <li> <p>Public IPv4 address is the primary public IPv4
+         * address</p> </li> <li> <p>Network interface only has one remaining public IPv4
+         * address</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">AWS
          * API Reference</a></p>
          */
@@ -16977,7 +17100,11 @@ namespace EC2
          * configuration will not enable simplified automatic recovery for an unsupported
          * instance type. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-         * automatic recovery</a>.</p><p><h3>See Also:</h3>   <a
+         * automatic recovery</a>.</p> <p>Modifies the reboot migration behavior during a
+         * user-initiated reboot of an instance that has a pending
+         * <code>system-reboot</code> event. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+         * or disable reboot migration</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">AWS
          * API Reference</a></p>
          */
@@ -17406,6 +17533,35 @@ namespace EC2
         void ModifyPrivateDnsNameOptionsAsync(const ModifyPrivateDnsNameOptionsRequestT& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ModifyPrivateDnsNameOptions, request, handler, context);
+        }
+
+        /**
+         * <p>Modify public hostname options for a network interface. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+         * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyPublicIpDnsNameOptionsOutcome ModifyPublicIpDnsNameOptions(const Model::ModifyPublicIpDnsNameOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyPublicIpDnsNameOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyPublicIpDnsNameOptionsRequestT = Model::ModifyPublicIpDnsNameOptionsRequest>
+        Model::ModifyPublicIpDnsNameOptionsOutcomeCallable ModifyPublicIpDnsNameOptionsCallable(const ModifyPublicIpDnsNameOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyPublicIpDnsNameOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyPublicIpDnsNameOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyPublicIpDnsNameOptionsRequestT = Model::ModifyPublicIpDnsNameOptionsRequest>
+        void ModifyPublicIpDnsNameOptionsAsync(const ModifyPublicIpDnsNameOptionsRequestT& request, const ModifyPublicIpDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyPublicIpDnsNameOptions, request, handler, context);
         }
 
         /**
@@ -20703,9 +20859,9 @@ namespace EC2
          * mapping parameter set to <code>true</code> are automatically deleted. For more
          * information about the differences between stopping and terminating instances,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-         * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For
-         * information about troubleshooting, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
+         * about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

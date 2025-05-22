@@ -20,12 +20,14 @@
 /* Service model headers required in PrometheusServiceClient header */
 #include <aws/amp/model/CreateAlertManagerDefinitionResult.h>
 #include <aws/amp/model/CreateLoggingConfigurationResult.h>
+#include <aws/amp/model/CreateQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/CreateRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/CreateScraperResult.h>
 #include <aws/amp/model/CreateWorkspaceResult.h>
 #include <aws/amp/model/DeleteScraperResult.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionResult.h>
 #include <aws/amp/model/DescribeLoggingConfigurationResult.h>
+#include <aws/amp/model/DescribeQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/DescribeScraperResult.h>
 #include <aws/amp/model/DescribeWorkspaceResult.h>
@@ -40,6 +42,7 @@
 #include <aws/amp/model/TagResourceResult.h>
 #include <aws/amp/model/UntagResourceResult.h>
 #include <aws/amp/model/UpdateLoggingConfigurationResult.h>
+#include <aws/amp/model/UpdateQueryLoggingConfigurationResult.h>
 #include <aws/amp/model/UpdateScraperResult.h>
 #include <aws/amp/model/UpdateWorkspaceConfigurationResult.h>
 #include <aws/amp/model/ListWorkspacesRequest.h>
@@ -89,16 +92,19 @@ namespace Aws
       /* Service model forward declarations required in PrometheusServiceClient header */
       class CreateAlertManagerDefinitionRequest;
       class CreateLoggingConfigurationRequest;
+      class CreateQueryLoggingConfigurationRequest;
       class CreateRuleGroupsNamespaceRequest;
       class CreateScraperRequest;
       class CreateWorkspaceRequest;
       class DeleteAlertManagerDefinitionRequest;
       class DeleteLoggingConfigurationRequest;
+      class DeleteQueryLoggingConfigurationRequest;
       class DeleteRuleGroupsNamespaceRequest;
       class DeleteScraperRequest;
       class DeleteWorkspaceRequest;
       class DescribeAlertManagerDefinitionRequest;
       class DescribeLoggingConfigurationRequest;
+      class DescribeQueryLoggingConfigurationRequest;
       class DescribeRuleGroupsNamespaceRequest;
       class DescribeScraperRequest;
       class DescribeWorkspaceRequest;
@@ -113,6 +119,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateLoggingConfigurationRequest;
+      class UpdateQueryLoggingConfigurationRequest;
       class UpdateScraperRequest;
       class UpdateWorkspaceAliasRequest;
       class UpdateWorkspaceConfigurationRequest;
@@ -121,16 +128,19 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateAlertManagerDefinitionResult, PrometheusServiceError> CreateAlertManagerDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateLoggingConfigurationResult, PrometheusServiceError> CreateLoggingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<CreateQueryLoggingConfigurationResult, PrometheusServiceError> CreateQueryLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateRuleGroupsNamespaceResult, PrometheusServiceError> CreateRuleGroupsNamespaceOutcome;
       typedef Aws::Utils::Outcome<CreateScraperResult, PrometheusServiceError> CreateScraperOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceResult, PrometheusServiceError> CreateWorkspaceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteAlertManagerDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteLoggingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteQueryLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteRuleGroupsNamespaceOutcome;
       typedef Aws::Utils::Outcome<DeleteScraperResult, PrometheusServiceError> DeleteScraperOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteWorkspaceOutcome;
       typedef Aws::Utils::Outcome<DescribeAlertManagerDefinitionResult, PrometheusServiceError> DescribeAlertManagerDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeLoggingConfigurationResult, PrometheusServiceError> DescribeLoggingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DescribeQueryLoggingConfigurationResult, PrometheusServiceError> DescribeQueryLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeRuleGroupsNamespaceResult, PrometheusServiceError> DescribeRuleGroupsNamespaceOutcome;
       typedef Aws::Utils::Outcome<DescribeScraperResult, PrometheusServiceError> DescribeScraperOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceResult, PrometheusServiceError> DescribeWorkspaceOutcome;
@@ -145,6 +155,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, PrometheusServiceError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PrometheusServiceError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateLoggingConfigurationResult, PrometheusServiceError> UpdateLoggingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateQueryLoggingConfigurationResult, PrometheusServiceError> UpdateQueryLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateScraperResult, PrometheusServiceError> UpdateScraperOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> UpdateWorkspaceAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkspaceConfigurationResult, PrometheusServiceError> UpdateWorkspaceConfigurationOutcome;
@@ -153,16 +164,19 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<CreateAlertManagerDefinitionOutcome> CreateAlertManagerDefinitionOutcomeCallable;
       typedef std::future<CreateLoggingConfigurationOutcome> CreateLoggingConfigurationOutcomeCallable;
+      typedef std::future<CreateQueryLoggingConfigurationOutcome> CreateQueryLoggingConfigurationOutcomeCallable;
       typedef std::future<CreateRuleGroupsNamespaceOutcome> CreateRuleGroupsNamespaceOutcomeCallable;
       typedef std::future<CreateScraperOutcome> CreateScraperOutcomeCallable;
       typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
       typedef std::future<DeleteAlertManagerDefinitionOutcome> DeleteAlertManagerDefinitionOutcomeCallable;
       typedef std::future<DeleteLoggingConfigurationOutcome> DeleteLoggingConfigurationOutcomeCallable;
+      typedef std::future<DeleteQueryLoggingConfigurationOutcome> DeleteQueryLoggingConfigurationOutcomeCallable;
       typedef std::future<DeleteRuleGroupsNamespaceOutcome> DeleteRuleGroupsNamespaceOutcomeCallable;
       typedef std::future<DeleteScraperOutcome> DeleteScraperOutcomeCallable;
       typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
       typedef std::future<DescribeAlertManagerDefinitionOutcome> DescribeAlertManagerDefinitionOutcomeCallable;
       typedef std::future<DescribeLoggingConfigurationOutcome> DescribeLoggingConfigurationOutcomeCallable;
+      typedef std::future<DescribeQueryLoggingConfigurationOutcome> DescribeQueryLoggingConfigurationOutcomeCallable;
       typedef std::future<DescribeRuleGroupsNamespaceOutcome> DescribeRuleGroupsNamespaceOutcomeCallable;
       typedef std::future<DescribeScraperOutcome> DescribeScraperOutcomeCallable;
       typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
@@ -177,6 +191,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateLoggingConfigurationOutcome> UpdateLoggingConfigurationOutcomeCallable;
+      typedef std::future<UpdateQueryLoggingConfigurationOutcome> UpdateQueryLoggingConfigurationOutcomeCallable;
       typedef std::future<UpdateScraperOutcome> UpdateScraperOutcomeCallable;
       typedef std::future<UpdateWorkspaceAliasOutcome> UpdateWorkspaceAliasOutcomeCallable;
       typedef std::future<UpdateWorkspaceConfigurationOutcome> UpdateWorkspaceConfigurationOutcomeCallable;
@@ -188,16 +203,19 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const PrometheusServiceClient*, const Model::CreateAlertManagerDefinitionRequest&, const Model::CreateAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlertManagerDefinitionResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::CreateLoggingConfigurationRequest&, const Model::CreateLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const PrometheusServiceClient*, const Model::CreateQueryLoggingConfigurationRequest&, const Model::CreateQueryLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueryLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::CreateRuleGroupsNamespaceRequest&, const Model::CreateRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleGroupsNamespaceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::CreateScraperRequest&, const Model::CreateScraperOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScraperResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteAlertManagerDefinitionRequest&, const Model::DeleteAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlertManagerDefinitionResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteLoggingConfigurationRequest&, const Model::DeleteLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteQueryLoggingConfigurationRequest&, const Model::DeleteQueryLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteRuleGroupsNamespaceRequest&, const Model::DeleteRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleGroupsNamespaceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteScraperRequest&, const Model::DeleteScraperOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScraperResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeAlertManagerDefinitionRequest&, const Model::DescribeAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlertManagerDefinitionResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeLoggingConfigurationRequest&, const Model::DescribeLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeQueryLoggingConfigurationRequest&, const Model::DescribeQueryLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueryLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeRuleGroupsNamespaceRequest&, const Model::DescribeRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupsNamespaceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeScraperRequest&, const Model::DescribeScraperOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScraperResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceResponseReceivedHandler;
@@ -212,6 +230,7 @@ namespace Aws
     typedef std::function<void(const PrometheusServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateLoggingConfigurationRequest&, const Model::UpdateLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateQueryLoggingConfigurationRequest&, const Model::UpdateQueryLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueryLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateScraperRequest&, const Model::UpdateScraperOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScraperResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateWorkspaceAliasRequest&, const Model::UpdateWorkspaceAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAliasResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateWorkspaceConfigurationRequest&, const Model::UpdateWorkspaceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceConfigurationResponseReceivedHandler;

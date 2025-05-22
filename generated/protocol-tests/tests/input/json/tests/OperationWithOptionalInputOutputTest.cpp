@@ -19,14 +19,13 @@ AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_no_i
   OperationWithOptionalInputOutputRequest request;
 
   auto outcome = client.OperationWithOptionalInputOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.OperationWithOptionalInputOutput)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_optional_input) {
@@ -38,12 +37,11 @@ AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_opti
   request.SetValue(R"(Hi)");
 
   auto outcome = client.OperationWithOptionalInputOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJWYWx1ZSI6IkhpIn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.OperationWithOptionalInputOutput)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -48,6 +48,7 @@ enum class CloudWatchErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   DASHBOARD_INVALID_INPUT,
   DASHBOARD_NOT_FOUND,
   INTERNAL_SERVICE_FAULT,

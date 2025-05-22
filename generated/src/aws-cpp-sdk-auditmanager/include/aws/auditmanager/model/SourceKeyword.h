@@ -139,7 +139,8 @@ namespace Model
      * API calls</a>.</p> </li> <li> <p>For CloudTrail: Make sure that the
      * <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
      * For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend
-     * that you review the Amazon Web Service prefix and action names in the <a
+     * that you review the Amazon Web Services service prefix and action names in the
+     * <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
      * Authorization Reference</a>.</p> </li> </ol> 
      */

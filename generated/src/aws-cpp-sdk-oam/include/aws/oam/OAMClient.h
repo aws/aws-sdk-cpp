@@ -21,7 +21,7 @@ namespace OAM
    * cross-account observability</i>. With CloudWatch cross-account observability,
    * you can monitor and troubleshoot applications that span multiple accounts within
    * a Region. Seamlessly search, visualize, and analyze your metrics, logs, traces,
-   * Application Signals services, service level objectives (SLOs), Application
+   * Application Signals services and service level objectives (SLOs), Application
    * Insights applications, and internet monitors in any of the linked accounts
    * without account boundaries.</p> <p>Set up one or more Amazon Web Services
    * accounts as <i>monitoring accounts</i> and link them with multiple <i>source
@@ -31,12 +31,13 @@ namespace OAM
    * observability data for the resources that reside in it. Source accounts share
    * their observability data with the monitoring account. The shared observability
    * data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs,
-   * traces in X-Ray, Application Signals services, service level objectives (SLOs),
-   * applications in Amazon CloudWatch Application Insights, and internet monitors in
-   * CloudWatch Internet Monitor.</p> <p>When you set up a link, you can choose to
-   * share the metrics from all namespaces with the monitoring account, or filter to
-   * a subset of namespaces. And for CloudWatch Logs, you can choose to share all log
-   * groups with the monitoring account, or filter to a subset of log groups. </p>
+   * traces in X-Ray, Application Signals services and service level objectives
+   * (SLOs), applications in Amazon CloudWatch Application Insights, and internet
+   * monitors in CloudWatch Internet Monitor.</p> <p>When you set up a link, you can
+   * choose to share the metrics from all namespaces with the monitoring account, or
+   * filter to a subset of namespaces. And for CloudWatch Logs, you can choose to
+   * share all log groups with the monitoring account, or filter to a subset of log
+   * groups. </p>
    */
   class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>
   {
@@ -421,14 +422,19 @@ namespace OAM
          * accounts to link to the monitoring account sink. When you create a sink policy,
          * you can grant permissions to all accounts in an organization or to individual
          * accounts.</p> <p>You can also use a sink policy to limit the types of data that
-         * is shared. The three types that you can allow or deny are:</p> <ul> <li> <p>
-         * <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> </p> </li>
-         * <li> <p> <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> </p>
-         * </li> <li> <p> <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> </p>
-         * </li> <li> <p> <b>Application Insights - Applications</b> - Specify with
-         * <code>AWS::ApplicationInsights::Application</code> </p> </li> </ul> <p>See the
-         * examples in this section to see how to specify permitted source accounts and
-         * data types.</p><p><h3>See Also:</h3>   <a
+         * is shared. The six types of services with their respective resource types that
+         * you can allow or deny are:</p> <ul> <li> <p> <b>Metrics</b> - Specify with
+         * <code>AWS::CloudWatch::Metric</code> </p> </li> <li> <p> <b>Log groups</b> -
+         * Specify with <code>AWS::Logs::LogGroup</code> </p> </li> <li> <p> <b>Traces</b>
+         * - Specify with <code>AWS::XRay::Trace</code> </p> </li> <li> <p> <b>Application
+         * Insights - Applications</b> - Specify with
+         * <code>AWS::ApplicationInsights::Application</code> </p> </li> <li> <p>
+         * <b>Internet Monitor</b> - Specify with
+         * <code>AWS::InternetMonitor::Monitor</code> </p> </li> <li> <p> <b>Application
+         * Signals</b> - Specify with <code>AWS::ApplicationSignals::Service</code> and
+         * <code>AWS::ApplicationSignals::ServiceLevelObjective</code> </p> </li> </ul>
+         * <p>See the examples in this section to see how to specify permitted source
+         * accounts and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/PutSinkPolicy">AWS
          * API Reference</a></p>
          */

@@ -25,12 +25,11 @@ AWS_PROTOCOL_TEST(JsonIntEnums, RestJsonJsonIntEnums) {
   request.SetIntegerEnumMap({{"abc",  1}, {"def",  2}});
 
   auto outcome = client.JsonIntEnums(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImludGVnZXJFbnVtMSI6IDEsCiAgICAiaW50ZWdlckVudW0yIjogMiwKICAgICJpbnRlZ2VyRW51bTMiOiAzLAogICAgImludGVnZXJFbnVtTGlzdCI6IFsKICAgICAgICAxLAogICAgICAgIDIsCiAgICAgICAgMwogICAgXSwKICAgICJpbnRlZ2VyRW51bVNldCI6IFsKICAgICAgICAxLAogICAgICAgIDIKICAgIF0sCiAgICAiaW50ZWdlckVudW1NYXAiOiB7CiAgICAgICAgImFiYyI6IDEsCiAgICAgICAgImRlZiI6IDIKICAgIH0KfQ==";
   expectedRq.uri = "/JsonIntEnums";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -29,14 +29,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSimpleScalarProperties) {
   request.SetDoubleValue(6.5);
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAidHJ1ZUJvb2xlYW5WYWx1ZSI6IHRydWUsCiAgICAiZmFsc2VCb29sZWFuVmFsdWUiOiBmYWxzZSwKICAgICJieXRlVmFsdWUiOiAxLAogICAgInNob3J0VmFsdWUiOiAyLAogICAgImludGVnZXJWYWx1ZSI6IDMsCiAgICAibG9uZ1ZhbHVlIjogNCwKICAgICJmbG9hdFZhbHVlIjogNS41LAogICAgIkRvdWJsZURyaWJibGUiOiA2LjUKfQ==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}, {"X-Foo", R"(Foo)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonDoesntSerializeNullStructureValues) {
@@ -48,14 +47,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonDoesntSerializeNullStructureVa
   request.SetStringValue(R"(null)");
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "e30=";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsNaNFloatInputs) {
@@ -68,14 +66,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsNaNFloatInputs) {
   request.SetDoubleValue(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiTmFOIiwKICAgICJEb3VibGVEcmliYmxlIjogIk5hTiIKfQ==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsInfinityFloatInputs) {
@@ -88,14 +85,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsInfinityFloatInputs) {
   request.SetDoubleValue(std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiSW5maW5pdHkiLAogICAgIkRvdWJsZURyaWJibGUiOiAiSW5maW5pdHkiCn0=";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsNegativeInfinityFloatInputs) {
@@ -108,12 +104,11 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSupportsNegativeInfinityFloatI
   request.SetDoubleValue(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiLUluZmluaXR5IiwKICAgICJEb3VibGVEcmliYmxlIjogIi1JbmZpbml0eSIKfQ==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

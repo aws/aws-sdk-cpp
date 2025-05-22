@@ -31,12 +31,11 @@ AWS_PROTOCOL_TEST(DocumentTypeAsMapValue, DocumentTypeAsMapValueInput) {
   }
 
   auto outcome = client.DocumentTypeAsMapValue(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImRvY1ZhbHVlZE1hcCI6IHsKICAgICAgICAiZm9vIjogeyAiZiI6IDEsICJvIjogMiB9LAogICAgICAgICJiYXIiOiBbICJiIiwgImEiLCAiciIgXSwKICAgICAgICAiYmF6IjogIkJBWiIKICAgIH0KfQ==";
   expectedRq.uri = "/DocumentTypeAsMapValue";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -23,9 +23,11 @@ AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCode) {
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpResponseCodeResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"Status":201} )" */
+  EXPECT_EQ(201, result.GetStatus());
 }
 
 AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCodeWithNoPayload) {
@@ -38,7 +40,9 @@ AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCodeWithNoPayload) {
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpResponseCodeResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"Status":201} )" */
+  EXPECT_EQ(201, result.GetStatus());
 }

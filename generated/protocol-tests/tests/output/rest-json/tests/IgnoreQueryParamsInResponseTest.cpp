@@ -23,9 +23,9 @@ AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInRespon
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInResponseNoPayload) {
@@ -38,7 +38,7 @@ AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, RestJsonIgnoreQueryParamsInRespon
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

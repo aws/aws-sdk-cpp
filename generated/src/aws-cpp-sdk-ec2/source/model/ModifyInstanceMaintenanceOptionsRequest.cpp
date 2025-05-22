@@ -24,6 +24,11 @@ Aws::String ModifyInstanceMaintenanceOptionsRequest::SerializePayload() const
     ss << "AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
   }
 
+  if(m_rebootMigrationHasBeenSet)
+  {
+    ss << "RebootMigration=" << StringUtils::URLEncode(InstanceRebootMigrationStateMapper::GetNameForInstanceRebootMigrationState(m_rebootMigration)) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

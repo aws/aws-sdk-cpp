@@ -84,6 +84,44 @@ CreateDashManifestConfiguration& CreateDashManifestConfiguration::operator =(Jso
     m_utcTiming = jsonValue.GetObject("UtcTiming");
     m_utcTimingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Profiles"))
+  {
+    Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
+    for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
+    {
+      m_profiles.push_back(DashProfileMapper::GetDashProfileForName(profilesJsonList[profilesIndex].AsString()));
+    }
+    m_profilesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BaseUrls"))
+  {
+    Aws::Utils::Array<JsonView> baseUrlsJsonList = jsonValue.GetArray("BaseUrls");
+    for(unsigned baseUrlsIndex = 0; baseUrlsIndex < baseUrlsJsonList.GetLength(); ++baseUrlsIndex)
+    {
+      m_baseUrls.push_back(baseUrlsJsonList[baseUrlsIndex].AsObject());
+    }
+    m_baseUrlsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ProgramInformation"))
+  {
+    m_programInformation = jsonValue.GetObject("ProgramInformation");
+    m_programInformationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DvbSettings"))
+  {
+    m_dvbSettings = jsonValue.GetObject("DvbSettings");
+    m_dvbSettingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Compactness"))
+  {
+    m_compactness = DashCompactnessMapper::GetDashCompactnessForName(jsonValue.GetString("Compactness"));
+    m_compactnessHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SubtitleConfiguration"))
+  {
+    m_subtitleConfiguration = jsonValue.GetObject("SubtitleConfiguration");
+    m_subtitleConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +195,51 @@ JsonValue CreateDashManifestConfiguration::Jsonize() const
   if(m_utcTimingHasBeenSet)
   {
    payload.WithObject("UtcTiming", m_utcTiming.Jsonize());
+
+  }
+
+  if(m_profilesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> profilesJsonList(m_profiles.size());
+   for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
+   {
+     profilesJsonList[profilesIndex].AsString(DashProfileMapper::GetNameForDashProfile(m_profiles[profilesIndex]));
+   }
+   payload.WithArray("Profiles", std::move(profilesJsonList));
+
+  }
+
+  if(m_baseUrlsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> baseUrlsJsonList(m_baseUrls.size());
+   for(unsigned baseUrlsIndex = 0; baseUrlsIndex < baseUrlsJsonList.GetLength(); ++baseUrlsIndex)
+   {
+     baseUrlsJsonList[baseUrlsIndex].AsObject(m_baseUrls[baseUrlsIndex].Jsonize());
+   }
+   payload.WithArray("BaseUrls", std::move(baseUrlsJsonList));
+
+  }
+
+  if(m_programInformationHasBeenSet)
+  {
+   payload.WithObject("ProgramInformation", m_programInformation.Jsonize());
+
+  }
+
+  if(m_dvbSettingsHasBeenSet)
+  {
+   payload.WithObject("DvbSettings", m_dvbSettings.Jsonize());
+
+  }
+
+  if(m_compactnessHasBeenSet)
+  {
+   payload.WithString("Compactness", DashCompactnessMapper::GetNameForDashCompactness(m_compactness));
+  }
+
+  if(m_subtitleConfigurationHasBeenSet)
+  {
+   payload.WithObject("SubtitleConfiguration", m_subtitleConfiguration.Jsonize());
 
   }
 

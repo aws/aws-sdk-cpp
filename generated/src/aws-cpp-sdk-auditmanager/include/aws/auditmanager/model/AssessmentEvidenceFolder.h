@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Web Service that the evidence was collected from. </p>
+     * <p> The Amazon Web Services service that the evidence was collected from. </p>
      */
     inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline int GetEvidenceByTypeConfigurationDataCount() const { return m_evidenceByTypeConfigurationDataCount; }
     inline bool EvidenceByTypeConfigurationDataCountHasBeenSet() const { return m_evidenceByTypeConfigurationDataCountHasBeenSet; }

@@ -118,8 +118,8 @@ namespace Model
      * <code>MissingRequiredFields</code> - There are missing required fields in the
      * <code>KeyAttributes</code> for the provided <code>Type</code>.</p> </li> </ul>
      * <p>For details of the requirements for specifying an entity, see <a
-     * href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to
-     * add related information to telemetry</a> in the <i>CloudWatch User
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
+     * to add related information to telemetry</a> in the <i>CloudWatch User
      * Guide</i>.</p> </li> </ul> <p>This parameter is <i>required</i> when
      * <code>EntityMetricData</code> is included.</p>
      */

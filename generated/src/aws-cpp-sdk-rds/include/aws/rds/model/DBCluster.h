@@ -1142,7 +1142,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * <p>The lifecycle type for the DB cluster.</p> <p>For more information, see
      * CreateDBCluster.</p>
      */
     inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }

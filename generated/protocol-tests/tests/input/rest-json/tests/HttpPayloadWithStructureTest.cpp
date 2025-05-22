@@ -25,8 +25,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructure) {
   }
 
   auto outcome = client.HttpPayloadWithStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImdyZWV0aW5nIjogImhlbGxvIiwKICAgICJuYW1lIjogIlBocmVkZHkiCn0=";
@@ -34,4 +32,5 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructure) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

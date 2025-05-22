@@ -27,7 +27,17 @@ namespace Model
    * <p> Describes a scaling metric for a predictive scaling policy. </p> <p>When
    * returned in the output of <code>DescribePolicies</code>, it indicates that a
    * predictive scaling policy uses individually specified load and scaling metrics
-   * instead of a metric pair.</p><p><h3>See Also:</h3>   <a
+   * instead of a metric pair.</p> <p>The following predefined metrics are available
+   * for predictive scaling:</p> <ul> <li> <p>
+   * <code>ECSServiceAverageCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceAverageMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceTotalCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ECSServiceTotalMemoryUtilization</code> </p> </li> <li> <p>
+   * <code>ALBRequestCount</code> </p> </li> <li> <p>
+   * <code>ALBRequestCountPerTarget</code> </p> </li> <li> <p>
+   * <code>TotalALBRequestCount</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredictiveScalingPredefinedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */

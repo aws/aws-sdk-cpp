@@ -340,6 +340,8 @@
 #include <aws/ec2/model/CreateDefaultSubnetResponse.h>
 #include <aws/ec2/model/CreateDefaultVpcRequest.h>
 #include <aws/ec2/model/CreateDefaultVpcResponse.h>
+#include <aws/ec2/model/CreateDelegateMacVolumeOwnershipTaskRequest.h>
+#include <aws/ec2/model/CreateDelegateMacVolumeOwnershipTaskResponse.h>
 #include <aws/ec2/model/CreateDhcpOptionsRequest.h>
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayRequest.h>
@@ -390,6 +392,8 @@
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceGroupResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceResponse.h>
+#include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskRequest.h>
+#include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
@@ -857,6 +861,8 @@
 #include <aws/ec2/model/DescribeLockedSnapshotsResponse.h>
 #include <aws/ec2/model/DescribeMacHostsRequest.h>
 #include <aws/ec2/model/DescribeMacHostsResponse.h>
+#include <aws/ec2/model/DescribeMacModificationTasksRequest.h>
+#include <aws/ec2/model/DescribeMacModificationTasksResponse.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsRequest.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
@@ -1515,6 +1521,7 @@
 #include <aws/ec2/model/InstanceNetworkPerformanceOptions.h>
 #include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
 #include <aws/ec2/model/InstancePrivateIpAddress.h>
+#include <aws/ec2/model/InstanceRebootMigrationState.h>
 #include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/InstanceRequirementsWithMetadataRequest.h>
@@ -1704,6 +1711,12 @@
 #include <aws/ec2/model/LockedSnapshotsInfo.h>
 #include <aws/ec2/model/LogDestinationType.h>
 #include <aws/ec2/model/MacHost.h>
+#include <aws/ec2/model/MacModificationTask.h>
+#include <aws/ec2/model/MacModificationTaskState.h>
+#include <aws/ec2/model/MacModificationTaskType.h>
+#include <aws/ec2/model/MacSystemIntegrityProtectionConfiguration.h>
+#include <aws/ec2/model/MacSystemIntegrityProtectionConfigurationRequest.h>
+#include <aws/ec2/model/MacSystemIntegrityProtectionSettingStatus.h>
 #include <aws/ec2/model/MaintenanceDetails.h>
 #include <aws/ec2/model/ManagedBy.h>
 #include <aws/ec2/model/ManagedPrefixList.h>
@@ -1784,6 +1797,8 @@
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifyRouteServerRequest.h>
@@ -2000,6 +2015,8 @@
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrResponse.h>
 #include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/PtrUpdateStatus.h>
+#include <aws/ec2/model/PublicIpDnsNameOptions.h>
+#include <aws/ec2/model/PublicIpDnsOption.h>
 #include <aws/ec2/model/PublicIpv4Pool.h>
 #include <aws/ec2/model/PublicIpv4PoolRange.h>
 #include <aws/ec2/model/Purchase.h>
@@ -2016,6 +2033,7 @@
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
 #include <aws/ec2/model/RIProductDescription.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
+#include <aws/ec2/model/RebootMigrationSupport.h>
 #include <aws/ec2/model/RecurringCharge.h>
 #include <aws/ec2/model/RecurringChargeFrequency.h>
 #include <aws/ec2/model/ReferencedSecurityGroup.h>

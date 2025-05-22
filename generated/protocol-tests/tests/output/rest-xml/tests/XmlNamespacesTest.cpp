@@ -23,7 +23,16 @@ AWS_PROTOCOL_TEST(XmlNamespaces, XmlNamespaces) {
   XmlNamespacesRequest request;
 
   auto outcome = client.XmlNamespaces(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlNamespacesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"foo":"Foo","values":["Bar","Baz"]}} )" */
+  {
+    const XmlNamespaceNested& resultNested = result.GetNested();
+    EXPECT_EQ(R"(Foo)", resultNested.GetFoo());
+    const Aws::Vector<Aws::String>& resultNestedValuesItem = resultNested.GetValues();
+    EXPECT_EQ(2U, resultNestedValuesItem.size());
+    EXPECT_EQ(R"(Bar)", resultNestedValuesItem.at(0));
+    EXPECT_EQ(R"(Baz)", resultNestedValuesItem.at(1));
+  }
 }

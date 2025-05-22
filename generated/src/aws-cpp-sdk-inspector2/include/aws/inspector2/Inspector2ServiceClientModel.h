@@ -41,6 +41,7 @@
 #include <aws/inspector2/model/EnableDelegatedAdminAccountResult.h>
 #include <aws/inspector2/model/GetCisScanReportResult.h>
 #include <aws/inspector2/model/GetCisScanResultDetailsResult.h>
+#include <aws/inspector2/model/GetClustersForImageResult.h>
 #include <aws/inspector2/model/GetConfigurationResult.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountResult.h>
 #include <aws/inspector2/model/GetEc2DeepInspectionConfigurationResult.h>
@@ -160,6 +161,7 @@ namespace Aws
       class EnableDelegatedAdminAccountRequest;
       class GetCisScanReportRequest;
       class GetCisScanResultDetailsRequest;
+      class GetClustersForImageRequest;
       class GetConfigurationRequest;
       class GetDelegatedAdminAccountRequest;
       class GetEc2DeepInspectionConfigurationRequest;
@@ -222,6 +224,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableDelegatedAdminAccountResult, Inspector2Error> EnableDelegatedAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetCisScanReportResult, Inspector2Error> GetCisScanReportOutcome;
       typedef Aws::Utils::Outcome<GetCisScanResultDetailsResult, Inspector2Error> GetCisScanResultDetailsOutcome;
+      typedef Aws::Utils::Outcome<GetClustersForImageResult, Inspector2Error> GetClustersForImageOutcome;
       typedef Aws::Utils::Outcome<GetConfigurationResult, Inspector2Error> GetConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDelegatedAdminAccountResult, Inspector2Error> GetDelegatedAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetEc2DeepInspectionConfigurationResult, Inspector2Error> GetEc2DeepInspectionConfigurationOutcome;
@@ -284,6 +287,7 @@ namespace Aws
       typedef std::future<EnableDelegatedAdminAccountOutcome> EnableDelegatedAdminAccountOutcomeCallable;
       typedef std::future<GetCisScanReportOutcome> GetCisScanReportOutcomeCallable;
       typedef std::future<GetCisScanResultDetailsOutcome> GetCisScanResultDetailsOutcomeCallable;
+      typedef std::future<GetClustersForImageOutcome> GetClustersForImageOutcomeCallable;
       typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
       typedef std::future<GetDelegatedAdminAccountOutcome> GetDelegatedAdminAccountOutcomeCallable;
       typedef std::future<GetEc2DeepInspectionConfigurationOutcome> GetEc2DeepInspectionConfigurationOutcomeCallable;
@@ -349,6 +353,7 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::EnableDelegatedAdminAccountRequest&, const Model::EnableDelegatedAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDelegatedAdminAccountResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetCisScanReportRequest&, const Model::GetCisScanReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCisScanReportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetCisScanResultDetailsRequest&, const Model::GetCisScanResultDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCisScanResultDetailsResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::GetClustersForImageRequest&, const Model::GetClustersForImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClustersForImageResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetConfigurationRequest&, const Model::GetConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetDelegatedAdminAccountRequest&, const Model::GetDelegatedAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDelegatedAdminAccountResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetEc2DeepInspectionConfigurationRequest&, const Model::GetEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEc2DeepInspectionConfigurationResponseReceivedHandler;

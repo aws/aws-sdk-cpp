@@ -22,6 +22,12 @@ Aws::String GetLinkRequest::SerializePayload() const
 
   }
 
+  if(m_includeTagsHasBeenSet)
+  {
+   payload.WithBool("IncludeTags", m_includeTags);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -46,6 +46,7 @@ namespace Aws
         static const int DEEP_INSPECTION_NO_INVENTORY_HASH = HashingUtils::HashString("DEEP_INSPECTION_NO_INVENTORY");
         static const int AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED");
         static const int AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED");
+        static const int PENDING_REVIVAL_SCAN_HASH = HashingUtils::HashString("PENDING_REVIVAL_SCAN");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
@@ -155,6 +156,10 @@ namespace Aws
           {
             return ScanStatusReason::AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED;
           }
+          else if (hashCode == PENDING_REVIVAL_SCAN_HASH)
+          {
+            return ScanStatusReason::PENDING_REVIVAL_SCAN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -223,6 +228,8 @@ namespace Aws
             return "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED";
           case ScanStatusReason::AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED:
             return "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED";
+          case ScanStatusReason::PENDING_REVIVAL_SCAN:
+            return "PENDING_REVIVAL_SCAN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

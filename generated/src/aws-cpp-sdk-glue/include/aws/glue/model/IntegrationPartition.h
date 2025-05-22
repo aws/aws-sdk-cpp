@@ -69,6 +69,31 @@ namespace Model
     template<typename FunctionSpecT = Aws::String>
     IntegrationPartition& WithFunctionSpec(FunctionSpecT&& value) { SetFunctionSpec(std::forward<FunctionSpecT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the timestamp format of the source data. Valid values are:</p> <ul>
+     * <li> <p> <code>epoch_sec</code> - Unix epoch timestamp in seconds</p> </li> <li>
+     * <p> <code>epoch_milli</code> - Unix epoch timestamp in milliseconds</p> </li>
+     * <li> <p> <code>iso</code> - ISO 8601 formatted timestamp</p> </li> </ul> 
+     * <p> Only specify <code>ConversionSpec</code> when using timestamp-based
+     * partition functions (year, month, day, or hour). Glue Zero-ETL uses this
+     * parameter to correctly transform source data into timestamp format before
+     * partitioning. </p> <p> Do not use high-cardinality columns with the
+     * <code>identity</code> partition function. High-cardinality columns include: </p>
+     * <ul> <li> <p>Primary keys</p> </li> <li> <p>Timestamp fields (such as
+     * <code>LastModifiedTimestamp</code>, <code>CreatedDate</code>)</p> </li> <li>
+     * <p>System-generated timestamps</p> </li> </ul> <p> Using high-cardinality
+     * columns with identity partitioning creates many small partitions, which can
+     * significantly degrade ingestion performance. </p> 
+     */
+    inline const Aws::String& GetConversionSpec() const { return m_conversionSpec; }
+    inline bool ConversionSpecHasBeenSet() const { return m_conversionSpecHasBeenSet; }
+    template<typename ConversionSpecT = Aws::String>
+    void SetConversionSpec(ConversionSpecT&& value) { m_conversionSpecHasBeenSet = true; m_conversionSpec = std::forward<ConversionSpecT>(value); }
+    template<typename ConversionSpecT = Aws::String>
+    IntegrationPartition& WithConversionSpec(ConversionSpecT&& value) { SetConversionSpec(std::forward<ConversionSpecT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_fieldName;
@@ -76,6 +101,9 @@ namespace Model
 
     Aws::String m_functionSpec;
     bool m_functionSpecHasBeenSet = false;
+
+    Aws::String m_conversionSpec;
+    bool m_conversionSpecHasBeenSet = false;
   };
 
 } // namespace Model

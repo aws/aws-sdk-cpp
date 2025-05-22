@@ -30,8 +30,6 @@ AWS_PROTOCOL_TEST(NestedStructures, Ec2NestedStructures) {
   }
 
   auto outcome = client.NestedStructures(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPU5lc3RlZFN0cnVjdHVyZXMmVmVyc2lvbj0yMDIwLTAxLTA4Jk5lc3RlZC5TdHJpbmdBcmc9Zm9vJk5lc3RlZC5PdGhlckFyZz10cnVlJk5lc3RlZC5SZWN1cnNpdmVBcmcuU3RyaW5nQXJnPWJheg==";
@@ -39,4 +37,5 @@ AWS_PROTOCOL_TEST(NestedStructures, Ec2NestedStructures) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

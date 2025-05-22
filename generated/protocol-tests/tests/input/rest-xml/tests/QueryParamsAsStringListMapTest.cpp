@@ -21,10 +21,9 @@ AWS_PROTOCOL_TEST(QueryParamsAsStringListMap, RestXmlQueryParamsStringListMap) {
   request.SetFoo({{"baz",  {R"(bar)", R"(qux)"}}});
 
   auto outcome = client.QueryParamsAsStringListMap(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/StringListMap?corge=named&baz=bar&baz=qux";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

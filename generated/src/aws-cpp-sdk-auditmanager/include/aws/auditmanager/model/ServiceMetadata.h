@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The metadata that's associated with the Amazon Web Service. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> The metadata that's associated with the Amazon Web Services service.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ServiceMetadata">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the Amazon Web Service. </p>
+     * <p> The name of the Amazon Web Services service. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The display name of the Amazon Web Service. </p>
+     * <p> The display name of the Amazon Web Services service. </p>
      */
     inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The description of the Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Services service. </p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -76,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The category that the Amazon Web Service belongs to, such as compute,
-     * storage, or database. </p>
+     * <p> The category that the Amazon Web Services service belongs to, such as
+     * compute, storage, or database. </p>
      */
     inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }

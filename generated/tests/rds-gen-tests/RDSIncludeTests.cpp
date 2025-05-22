@@ -119,6 +119,7 @@
 #include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
 #include <aws/rds/model/DBInstanceRole.h>
 #include <aws/rds/model/DBInstanceStatusInfo.h>
+#include <aws/rds/model/DBMajorEngineVersion.h>
 #include <aws/rds/model/DBParameterGroup.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
 #include <aws/rds/model/DBProxy.h>
@@ -208,6 +209,8 @@
 #include <aws/rds/model/DescribeDBLogFilesDetails.h>
 #include <aws/rds/model/DescribeDBLogFilesRequest.h>
 #include <aws/rds/model/DescribeDBLogFilesResult.h>
+#include <aws/rds/model/DescribeDBMajorEngineVersionsRequest.h>
+#include <aws/rds/model/DescribeDBMajorEngineVersionsResult.h>
 #include <aws/rds/model/DescribeDBParameterGroupsRequest.h>
 #include <aws/rds/model/DescribeDBParameterGroupsResult.h>
 #include <aws/rds/model/DescribeDBParametersRequest.h>
@@ -302,6 +305,7 @@
 #include <aws/rds/model/IntegrationError.h>
 #include <aws/rds/model/IntegrationStatus.h>
 #include <aws/rds/model/IssueDetails.h>
+#include <aws/rds/model/LifecycleSupportName.h>
 #include <aws/rds/model/LimitlessDatabase.h>
 #include <aws/rds/model/LimitlessDatabaseStatus.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
@@ -455,6 +459,7 @@
 #include <aws/rds/model/StopDBInstanceRequest.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
 #include <aws/rds/model/Subnet.h>
+#include <aws/rds/model/SupportedEngineLifecycle.h>
 #include <aws/rds/model/SwitchoverBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/SwitchoverBlueGreenDeploymentResult.h>
 #include <aws/rds/model/SwitchoverDetail.h>

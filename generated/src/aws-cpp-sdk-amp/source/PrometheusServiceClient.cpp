@@ -23,16 +23,19 @@
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/CreateLoggingConfigurationRequest.h>
+#include <aws/amp/model/CreateQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/CreateRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/CreateScraperRequest.h>
 #include <aws/amp/model/CreateWorkspaceRequest.h>
 #include <aws/amp/model/DeleteAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DeleteLoggingConfigurationRequest.h>
+#include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DeleteScraperRequest.h>
 #include <aws/amp/model/DeleteWorkspaceRequest.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DescribeLoggingConfigurationRequest.h>
+#include <aws/amp/model/DescribeQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DescribeScraperRequest.h>
 #include <aws/amp/model/DescribeWorkspaceRequest.h>
@@ -47,6 +50,7 @@
 #include <aws/amp/model/TagResourceRequest.h>
 #include <aws/amp/model/UntagResourceRequest.h>
 #include <aws/amp/model/UpdateLoggingConfigurationRequest.h>
+#include <aws/amp/model/UpdateQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateScraperRequest.h>
 #include <aws/amp/model/UpdateWorkspaceAliasRequest.h>
 #include <aws/amp/model/UpdateWorkspaceConfigurationRequest.h>
@@ -261,6 +265,40 @@ CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfigur
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateQueryLoggingConfigurationOutcome PrometheusServiceClient::CreateQueryLoggingConfiguration(const CreateQueryLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateQueryLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateQueryLoggingConfiguration", "Required field: WorkspaceId, is not set");
+    return CreateQueryLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueryLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateQueryLoggingConfigurationOutcome>(
+    [&]()-> CreateQueryLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
+      return CreateQueryLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamespace(const CreateRuleGroupsNamespaceRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateRuleGroupsNamespace);
@@ -411,6 +449,40 @@ DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfigur
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
       return DeleteLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteQueryLoggingConfigurationOutcome PrometheusServiceClient::DeleteQueryLoggingConfiguration(const DeleteQueryLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteQueryLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueryLoggingConfiguration", "Required field: WorkspaceId, is not set");
+    return DeleteQueryLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueryLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteQueryLoggingConfigurationOutcome>(
+    [&]()-> DeleteQueryLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
+      return DeleteQueryLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -585,6 +657,40 @@ DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConf
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
       return DescribeLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeQueryLoggingConfigurationOutcome PrometheusServiceClient::DescribeQueryLoggingConfiguration(const DescribeQueryLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeQueryLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeQueryLoggingConfiguration", "Required field: WorkspaceId, is not set");
+    return DescribeQueryLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeQueryLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeQueryLoggingConfigurationOutcome>(
+    [&]()-> DescribeQueryLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
+      return DescribeQueryLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1052,6 +1158,40 @@ UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfigur
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
       return UpdateLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateQueryLoggingConfigurationOutcome PrometheusServiceClient::UpdateQueryLoggingConfiguration(const UpdateQueryLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateQueryLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueryLoggingConfiguration", "Required field: WorkspaceId, is not set");
+    return UpdateQueryLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateQueryLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueryLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateQueryLoggingConfigurationOutcome>(
+    [&]()-> UpdateQueryLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateQueryLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
+      return UpdateQueryLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

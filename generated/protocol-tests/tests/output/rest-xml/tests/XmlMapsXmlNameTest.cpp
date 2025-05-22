@@ -23,7 +23,20 @@ AWS_PROTOCOL_TEST(XmlMapsXmlName, XmlMapsXmlName) {
   XmlMapsXmlNameRequest request;
 
   auto outcome = client.XmlMapsXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlMapsXmlNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"myMap":{"foo":{"hi":"there"},"baz":{"hi":"bye"}}} )" */
+  const Aws::Map<Aws::String, GreetingStruct>& resultMyMap = result.GetMyMap();
+  EXPECT_EQ(2U, resultMyMap.size());
+  {
+    EXPECT_TRUE(resultMyMap.find("foo") != resultMyMap.end());
+    const GreetingStruct& resultMyMapItem = resultMyMap.at("foo");
+    EXPECT_EQ(R"(there)", resultMyMapItem.GetHi());
+  }
+  {
+    EXPECT_TRUE(resultMyMap.find("baz") != resultMyMap.end());
+    const GreetingStruct& resultMyMapItem = resultMyMap.at("baz");
+    EXPECT_EQ(R"(bye)", resultMyMapItem.GetHi());
+  }
 }

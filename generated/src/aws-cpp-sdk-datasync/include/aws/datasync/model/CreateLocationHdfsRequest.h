@@ -165,10 +165,9 @@ namespace Model
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you're using the CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text. </p>  <p>If
-     * <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-     * parameter is required. </p> 
+     * by providing the file's address.</p>  <p>If <code>KERBEROS</code> is
+     * specified for <code>AuthenticationType</code>, this parameter is required. </p>
+     * 
      */
     inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const { return m_kerberosKeytab; }
     inline bool KerberosKeytabHasBeenSet() const { return m_kerberosKeytabHasBeenSet; }

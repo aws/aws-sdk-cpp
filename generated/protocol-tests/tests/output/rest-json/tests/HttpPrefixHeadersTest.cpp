@@ -22,7 +22,15 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersArePresent) {
   HttpPrefixHeadersRequest request;
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPrefixHeadersResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"foo":"Foo","fooMap":{"abc":"Abc value","def":"Def value"}} )" */
+  EXPECT_EQ(R"(Foo)", result.GetFoo());
+  const Aws::Map<Aws::String, Aws::String>& resultFooMap = result.GetFooMap();
+  EXPECT_EQ(2U, resultFooMap.size());
+  EXPECT_TRUE(resultFooMap.find("abc") != resultFooMap.end());
+  EXPECT_EQ(R"(Abc value)", resultFooMap.at("abc"));
+  EXPECT_TRUE(resultFooMap.find("def") != resultFooMap.end());
+  EXPECT_EQ(R"(Def value)", resultFooMap.at("def"));
 }

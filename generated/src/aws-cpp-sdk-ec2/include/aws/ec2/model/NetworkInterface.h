@@ -12,6 +12,7 @@
 #include <aws/ec2/model/ConnectionTrackingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceType.h>
+#include <aws/ec2/model/PublicIpDnsNameOptions.h>
 #include <aws/ec2/model/NetworkInterfaceStatus.h>
 #include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/GroupIdentifier.h>
@@ -205,7 +206,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The private DNS name.</p>
+     * <p>The private hostname. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+     * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const { return m_privateDnsName; }
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
@@ -213,6 +217,36 @@ namespace Model
     void SetPrivateDnsName(PrivateDnsNameT&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::forward<PrivateDnsNameT>(value); }
     template<typename PrivateDnsNameT = Aws::String>
     NetworkInterface& WithPrivateDnsName(PrivateDnsNameT&& value) { SetPrivateDnsName(std::forward<PrivateDnsNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A public hostname. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+     * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPublicDnsName() const { return m_publicDnsName; }
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+    template<typename PublicDnsNameT = Aws::String>
+    void SetPublicDnsName(PublicDnsNameT&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::forward<PublicDnsNameT>(value); }
+    template<typename PublicDnsNameT = Aws::String>
+    NetworkInterface& WithPublicDnsName(PublicDnsNameT&& value) { SetPublicDnsName(std::forward<PublicDnsNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Public hostname type options. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+     * instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const PublicIpDnsNameOptions& GetPublicIpDnsNameOptions() const { return m_publicIpDnsNameOptions; }
+    inline bool PublicIpDnsNameOptionsHasBeenSet() const { return m_publicIpDnsNameOptionsHasBeenSet; }
+    template<typename PublicIpDnsNameOptionsT = PublicIpDnsNameOptions>
+    void SetPublicIpDnsNameOptions(PublicIpDnsNameOptionsT&& value) { m_publicIpDnsNameOptionsHasBeenSet = true; m_publicIpDnsNameOptions = std::forward<PublicIpDnsNameOptionsT>(value); }
+    template<typename PublicIpDnsNameOptionsT = PublicIpDnsNameOptions>
+    NetworkInterface& WithPublicIpDnsNameOptions(PublicIpDnsNameOptionsT&& value) { SetPublicIpDnsNameOptions(std::forward<PublicIpDnsNameOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -439,6 +473,12 @@ namespace Model
 
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet = false;
+
+    Aws::String m_publicDnsName;
+    bool m_publicDnsNameHasBeenSet = false;
+
+    PublicIpDnsNameOptions m_publicIpDnsNameOptions;
+    bool m_publicIpDnsNameOptionsHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet = false;
