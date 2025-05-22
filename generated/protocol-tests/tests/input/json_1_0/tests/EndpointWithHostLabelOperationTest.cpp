@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson10EndpointTraitWithHost
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
   expectedRq.uri = "/";
   expectedRq.host = "foo.bar.example.com";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -23,9 +23,14 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnion) {
   HttpPayloadWithUnionRequest request;
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadWithUnionResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"greeting":"hello"}} )" */
+  {
+    const UnionPayload& resultNested = result.GetNested();
+    EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
+  }
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
@@ -39,7 +44,7 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
   HttpPayloadWithUnionRequest request;
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

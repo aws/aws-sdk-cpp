@@ -24,8 +24,6 @@ AWS_PROTOCOL_TEST(BodyWithXmlName, BodyWithXmlName) {
   }
 
   auto outcome = client.BodyWithXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "PEFob3k+PG5lc3RlZD48bmFtZT5QaHJlZGR5PC9uYW1lPjwvbmVzdGVkPjwvQWhveT4=";
@@ -33,4 +31,5 @@ AWS_PROTOCOL_TEST(BodyWithXmlName, BodyWithXmlName) {
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

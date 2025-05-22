@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(HttpEnumPayload, RestXmlEnumPayloadRequest) {
   request.SetPayload(StringEnumMapper::GetStringEnumForName(R"e(enumvalue)e"));
 
   auto outcome = client.HttpEnumPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ZW51bXZhbHVl";
   expectedRq.uri = "/EnumPayload";
   expectedRq.headers = {{"Content-Type", R"(text/plain)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

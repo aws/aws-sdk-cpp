@@ -26,10 +26,9 @@ AWS_PROTOCOL_TEST(OmitsSerializingEmptyLists, RestJsonOmitsEmptyListQueryValues)
   request.SetQueryIntegerEnumList({});
 
   auto outcome = client.OmitsSerializingEmptyLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/OmitsSerializingEmptyLists";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

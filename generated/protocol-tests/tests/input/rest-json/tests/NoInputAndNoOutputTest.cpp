@@ -19,10 +19,9 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, RestJsonNoInputAndNoOutput) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/NoInputAndNoOutput";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

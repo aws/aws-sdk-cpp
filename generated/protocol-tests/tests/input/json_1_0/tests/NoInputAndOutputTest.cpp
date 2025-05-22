@@ -19,12 +19,11 @@ AWS_PROTOCOL_TEST(NoInputAndOutput, AwsJson10NoInputAndOutput) {
   NoInputAndOutputRequest request;
 
   auto outcome = client.NoInputAndOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.NoInputAndOutput)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

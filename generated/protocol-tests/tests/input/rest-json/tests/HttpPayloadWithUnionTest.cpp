@@ -24,8 +24,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnion) {
   }
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgImdyZWV0aW5nIjogImhlbGxvIgp9";
@@ -33,6 +31,7 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnion) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
@@ -43,10 +42,9 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
   HttpPayloadWithUnionRequest request;
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.uri = "/HttpPayloadWithUnion";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

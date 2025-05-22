@@ -23,9 +23,11 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithNegativeOffset) {
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const DatetimeOffsetsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"datetime":1576540098} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithPositiveOffset) {
@@ -40,7 +42,9 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithPositiveOffset) {
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const DatetimeOffsetsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"datetime":1576540098} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
 }

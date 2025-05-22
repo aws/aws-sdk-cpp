@@ -23,9 +23,12 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNaNFloatInputs) {
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarPropertiesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"NaN","doubleValue":"NaN"} )" */
+  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetFloatValue());
+  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetDoubleValue());
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsInfinityFloatInputs) {
@@ -40,9 +43,12 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsInfinityFloatInputs) 
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarPropertiesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"Infinity","doubleValue":"Infinity"} )" */
+  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetFloatValue());
+  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetDoubleValue());
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNegativeInfinityFloatInputs) {
@@ -57,7 +63,10 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNegativeInfinityFloat
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarPropertiesResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"-Infinity","doubleValue":"-Infinity"} )" */
+  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetFloatValue());
+  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetDoubleValue());
 }

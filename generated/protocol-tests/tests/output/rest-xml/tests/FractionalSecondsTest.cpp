@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(FractionalSeconds, RestXmlDateTimeWithFractionalSeconds) {
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const FractionalSecondsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"datetime":9.46845296123E8} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(9.46845296123E8), result.GetDatetime());
 }

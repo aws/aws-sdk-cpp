@@ -19,12 +19,11 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, Ec2QueryEmptyInputAndEmptyOutput) {
   EmptyInputAndEmptyOutputRequest request;
 
   auto outcome = client.EmptyInputAndEmptyOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPUVtcHR5SW5wdXRBbmRFbXB0eU91dHB1dCZWZXJzaW9uPTIwMjAtMDEtMDg=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

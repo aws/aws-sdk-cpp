@@ -19,8 +19,6 @@ AWS_PROTOCOL_TEST(HostWithPathOperation, AwsJson11HostWithPath) {
   HostWithPathOperationRequest request;
 
   auto outcome = client.HostWithPathOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
@@ -28,4 +26,5 @@ AWS_PROTOCOL_TEST(HostWithPathOperation, AwsJson11HostWithPath) {
   expectedRq.host = "example.com/custom";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.HostWithPathOperation)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

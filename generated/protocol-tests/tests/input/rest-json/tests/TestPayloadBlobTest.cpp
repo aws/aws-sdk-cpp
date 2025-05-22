@@ -19,12 +19,11 @@ AWS_PROTOCOL_TEST(TestPayloadBlob, RestJsonHttpWithEmptyBlobPayload) {
   TestPayloadBlobRequest request;
 
   auto outcome = client.TestPayloadBlob(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/blob_payload";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(TestPayloadBlob, RestJsonTestPayloadBlob) {
@@ -37,8 +36,6 @@ AWS_PROTOCOL_TEST(TestPayloadBlob, RestJsonTestPayloadBlob) {
   request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", Aws::String(R"(1234)"), std::ios_base::in | std::ios_base::binary); }() );
 
   auto outcome = client.TestPayloadBlob(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "MTIzNA==";
@@ -46,4 +43,5 @@ AWS_PROTOCOL_TEST(TestPayloadBlob, RestJsonTestPayloadBlob) {
   expectedRq.headers = {{"Content-Type", R"(image/jpg)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

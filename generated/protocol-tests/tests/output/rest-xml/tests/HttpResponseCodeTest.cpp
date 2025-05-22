@@ -22,7 +22,9 @@ AWS_PROTOCOL_TEST(HttpResponseCode, RestXmlHttpResponseCode) {
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpResponseCodeResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"Status":201} )" */
+  EXPECT_EQ(201, result.GetStatus());
 }

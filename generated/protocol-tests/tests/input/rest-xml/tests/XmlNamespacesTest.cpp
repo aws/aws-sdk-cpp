@@ -25,12 +25,11 @@ AWS_PROTOCOL_TEST(XmlNamespaces, XmlNamespaces) {
   }
 
   auto outcome = client.XmlNamespaces(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PFhtbE5hbWVzcGFjZXNSZXF1ZXN0IHhtbG5zPSJodHRwOi8vZm9vLmNvbSI+CiAgICA8bmVzdGVkIHhtbG5zPSJodHRwOi8vZm9vLmNvbSI+CiAgICAgICAgPGZvbyB4bWxuczpiYXo9Imh0dHA6Ly9iYXouY29tIj5Gb288L2Zvbz4KICAgICAgICA8dmFsdWVzIHhtbG5zPSJodHRwOi8vcXV4LmNvbSI+CiAgICAgICAgICAgIDxtZW1iZXIgeG1sbnM9Imh0dHA6Ly9idXguY29tIj5CYXI8L21lbWJlcj4KICAgICAgICAgICAgPG1lbWJlciB4bWxucz0iaHR0cDovL2J1eC5jb20iPkJhejwvbWVtYmVyPgogICAgICAgIDwvdmFsdWVzPgogICAgPC9uZXN0ZWQ+CjwvWG1sTmFtZXNwYWNlc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlNamespaces";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

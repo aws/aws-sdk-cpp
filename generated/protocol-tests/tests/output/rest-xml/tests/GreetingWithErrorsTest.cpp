@@ -22,7 +22,9 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, GreetingWithErrors) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const GreetingWithErrorsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"greeting":"Hello"} )" */
+  EXPECT_EQ(R"(Hello)", result.GetGreeting());
 }

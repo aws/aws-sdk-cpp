@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(IgnoresWrappingXmlName, QueryIgnoresWrappingXmlName) {
   IgnoresWrappingXmlNameRequest request;
 
   auto outcome = client.IgnoresWrappingXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const IgnoresWrappingXmlNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"foo":"bar"} )" */
+  EXPECT_EQ(R"(bar)", result.GetFoo());
 }
