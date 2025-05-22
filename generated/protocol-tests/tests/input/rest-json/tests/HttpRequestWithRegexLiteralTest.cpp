@@ -20,10 +20,9 @@ AWS_PROTOCOL_TEST(HttpRequestWithRegexLiteral, RestJsonToleratesRegexCharsInSegm
   request.SetStr(R"(abc)");
 
   auto outcome = client.HttpRequestWithRegexLiteral(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ReDosLiteral/abc/(a+)+";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

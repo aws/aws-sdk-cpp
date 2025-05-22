@@ -24,14 +24,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeStringUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJpbmdWYWx1ZSI6ICJmb28iCiAgICB9Cn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeBooleanUnionValue) {
@@ -47,14 +46,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeBooleanUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJib29sZWFuVmFsdWUiOiB0cnVlCiAgICB9Cn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeNumberUnionValue) {
@@ -70,14 +68,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeNumberUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJudW1iZXJWYWx1ZSI6IDEKICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeBlobUnionValue) {
@@ -93,14 +90,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeBlobUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJibG9iVmFsdWUiOiAiWm05diIKICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeTimestampUnionValue) {
@@ -116,14 +112,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeTimestampUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ0aW1lc3RhbXBWYWx1ZSI6IDEzOTg3OTYyMzgKICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeEnumUnionValue) {
@@ -139,14 +134,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeEnumUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJlbnVtVmFsdWUiOiAiRm9vIgogICAgfQp9";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeIntEnumUnionValue) {
@@ -162,14 +156,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeIntEnumUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJpbnRFbnVtVmFsdWUiOiAxCiAgICB9Cn0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeListUnionValue) {
@@ -185,14 +178,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeListUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJsaXN0VmFsdWUiOiBbImZvbyIsICJiYXIiXQogICAgfQp9";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeMapUnionValue) {
@@ -208,14 +200,13 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeMapUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAgICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeStructureUnionValue) {
@@ -235,12 +226,11 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeStructureUnionValue) {
   }
 
   auto outcome = client.JsonUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

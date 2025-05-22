@@ -23,7 +23,7 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, Ec2QueryEmptyInputAndEmptyOutput) {
   EmptyInputAndEmptyOutputRequest request;
 
   auto outcome = client.EmptyInputAndEmptyOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

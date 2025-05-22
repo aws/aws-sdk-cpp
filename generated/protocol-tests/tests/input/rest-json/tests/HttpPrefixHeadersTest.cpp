@@ -21,13 +21,12 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersArePresent) {
   request.SetFooMap({{"abc",  R"(Abc value)"}, {"def",  R"(Def value)"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpPrefixHeaders";
   expectedRq.headers = {{"x-foo", R"(Foo)"}, {"x-foo-abc", R"(Abc value)"}, {"x-foo-def", R"(Def value)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersAreNotPresent) {
@@ -40,13 +39,12 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersAreNotPresent) {
   request.SetFooMap({});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpPrefixHeaders";
   expectedRq.headers = {{"x-foo", R"(Foo)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixEmptyHeaders) {
@@ -58,11 +56,10 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixEmptyHeaders) {
   request.SetFooMap({{"abc",  R"()"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpPrefixHeaders";
   expectedRq.headers = {{"x-foo-abc", R"()"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

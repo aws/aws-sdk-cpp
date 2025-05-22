@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(NullOperation, AwsJson11StructuresDontSerializeNullValues) {
   request.SetString(R"(null)");
 
   auto outcome = client.NullOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.NullOperation)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

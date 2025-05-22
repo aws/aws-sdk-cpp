@@ -5,6 +5,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
+#include <aws/rest-xml-protocol/model/RecursiveShapesInputOutputNested1.h>
 #include <aws/rest-xml-protocol/model/RecursiveShapesInputOutputNested2.h>
 #include <aws/rest-xml-protocol/model/RecursiveShapesRequest.h>
 
@@ -40,12 +41,11 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RecursiveShapes) {
   }
 
   auto outcome = client.RecursiveShapes(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "PFJlY3Vyc2l2ZVNoYXBlc1JlcXVlc3Q+CiAgICA8bmVzdGVkPgogICAgICAgIDxmb28+Rm9vMTwvZm9vPgogICAgICAgIDxuZXN0ZWQ+CiAgICAgICAgICAgIDxiYXI+QmFyMTwvYmFyPgogICAgICAgICAgICA8cmVjdXJzaXZlTWVtYmVyPgogICAgICAgICAgICAgICAgPGZvbz5Gb28yPC9mb28+CiAgICAgICAgICAgICAgICA8bmVzdGVkPgogICAgICAgICAgICAgICAgICAgIDxiYXI+QmFyMjwvYmFyPgogICAgICAgICAgICAgICAgPC9uZXN0ZWQ+CiAgICAgICAgICAgIDwvcmVjdXJzaXZlTWVtYmVyPgogICAgICAgIDwvbmVzdGVkPgogICAgPC9uZXN0ZWQ+CjwvUmVjdXJzaXZlU2hhcGVzUmVxdWVzdD4K";
   expectedRq.uri = "/RecursiveShapes";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -23,9 +23,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestamps) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"normal":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetNormal());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
@@ -40,9 +42,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"dateTime":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetDateTime());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetFormat) {
@@ -57,9 +61,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetForm
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"dateTimeOnTarget":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetDateTimeOnTarget());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) {
@@ -74,9 +80,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) 
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"epochSeconds":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetEpochSeconds());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTargetFormat) {
@@ -91,9 +99,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTarget
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"epochSecondsOnTarget":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetEpochSecondsOnTarget());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
@@ -108,9 +118,11 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"httpDate":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetHttpDate());
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetFormat) {
@@ -125,7 +137,9 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetForm
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonTimestampsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"httpDateOnTarget":1398796238} )" */
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetHttpDateOnTarget());
 }

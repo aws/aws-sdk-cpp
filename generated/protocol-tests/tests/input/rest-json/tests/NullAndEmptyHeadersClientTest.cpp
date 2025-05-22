@@ -22,12 +22,11 @@ AWS_PROTOCOL_TEST(NullAndEmptyHeadersClient, RestJsonNullAndEmptyHeaders) {
   request.SetC({});
 
   auto outcome = client.NullAndEmptyHeadersClient(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/NullAndEmptyHeadersClient";
   expectedRq.headers = {{"X-B", R"()"}, {"X-C", R"()"}};
   expectedRq.forbidHeaders = {"X-A"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

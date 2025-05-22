@@ -23,9 +23,9 @@ AWS_PROTOCOL_TEST(EmptyOperation, handles_empty_output_shape) {
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, handles_unexpected_json_output) {
@@ -40,9 +40,9 @@ AWS_PROTOCOL_TEST(EmptyOperation, handles_unexpected_json_output) {
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, json_1_1_service_responds_with_no_payload) {
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(EmptyOperation, json_1_1_service_responds_with_no_payload) {
   EmptyOperationRequest request;
 
   auto outcome = client.EmptyOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

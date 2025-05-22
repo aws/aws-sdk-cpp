@@ -23,7 +23,28 @@ AWS_PROTOCOL_TEST(NestedXmlMapWithXmlName, NestedXmlMapWithXmlNameDeserializes) 
   NestedXmlMapWithXmlNameRequest request;
 
   auto outcome = client.NestedXmlMapWithXmlName(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const NestedXmlMapWithXmlNameResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nestedXmlMapWithXmlNameMap":{"foo":{"bar":"Baz","fizz":"Buzz"},"qux":{"foobar":"Bar","fizzbuzz":"Buzz"}}} )" */
+  const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& resultNestedXmlMapWithXmlNameMap = result.GetNestedXmlMapWithXmlNameMap();
+  EXPECT_EQ(2U, resultNestedXmlMapWithXmlNameMap.size());
+  EXPECT_TRUE(resultNestedXmlMapWithXmlNameMap.find("foo") != resultNestedXmlMapWithXmlNameMap.end());
+  {
+    const Aws::Map<Aws::String, Aws::String>& resultNestedXmlMapWithXmlNameMapNestedMap = resultNestedXmlMapWithXmlNameMap.at("foo");
+    EXPECT_EQ(2U, resultNestedXmlMapWithXmlNameMapNestedMap.size());
+    EXPECT_TRUE(resultNestedXmlMapWithXmlNameMapNestedMap.find("bar") != resultNestedXmlMapWithXmlNameMapNestedMap.end());
+    EXPECT_EQ(R"(Baz)", resultNestedXmlMapWithXmlNameMapNestedMap.at("bar"));
+    EXPECT_TRUE(resultNestedXmlMapWithXmlNameMapNestedMap.find("fizz") != resultNestedXmlMapWithXmlNameMapNestedMap.end());
+    EXPECT_EQ(R"(Buzz)", resultNestedXmlMapWithXmlNameMapNestedMap.at("fizz"));
+  }
+  EXPECT_TRUE(resultNestedXmlMapWithXmlNameMap.find("qux") != resultNestedXmlMapWithXmlNameMap.end());
+  {
+    const Aws::Map<Aws::String, Aws::String>& resultNestedXmlMapWithXmlNameMapNestedMap = resultNestedXmlMapWithXmlNameMap.at("qux");
+    EXPECT_EQ(2U, resultNestedXmlMapWithXmlNameMapNestedMap.size());
+    EXPECT_TRUE(resultNestedXmlMapWithXmlNameMapNestedMap.find("foobar") != resultNestedXmlMapWithXmlNameMapNestedMap.end());
+    EXPECT_EQ(R"(Bar)", resultNestedXmlMapWithXmlNameMapNestedMap.at("foobar"));
+    EXPECT_TRUE(resultNestedXmlMapWithXmlNameMapNestedMap.find("fizzbuzz") != resultNestedXmlMapWithXmlNameMapNestedMap.end());
+    EXPECT_EQ(R"(Buzz)", resultNestedXmlMapWithXmlNameMapNestedMap.at("fizzbuzz"));
+  }
 }

@@ -23,9 +23,9 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, RestJsonEmptyInputAndEmptyOutput) {
   EmptyInputAndEmptyOutputRequest request;
 
   auto outcome = client.EmptyInputAndEmptyOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }
 
 AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, RestJsonEmptyInputAndEmptyOutputJsonObjectOutput) {
@@ -38,7 +38,7 @@ AWS_PROTOCOL_TEST(EmptyInputAndEmptyOutput, RestJsonEmptyInputAndEmptyOutputJson
   EmptyInputAndEmptyOutputRequest request;
 
   auto outcome = client.EmptyInputAndEmptyOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  /* expectedResult = R"( {} )" */
 }

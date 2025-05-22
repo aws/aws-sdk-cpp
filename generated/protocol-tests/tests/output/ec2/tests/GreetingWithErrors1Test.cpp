@@ -23,7 +23,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, Ec2ComplexError) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }

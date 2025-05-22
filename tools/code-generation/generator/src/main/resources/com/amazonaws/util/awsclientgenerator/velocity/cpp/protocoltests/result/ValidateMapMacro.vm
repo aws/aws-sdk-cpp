@@ -1,0 +1,51 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateSingleParameterMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateSingleVariableMacro.vm")
+##-------------------- ValidateMapMacro macro
+#macro( ValidateMapMacro $spaces $dstObject $mapShape $testValidateParam $mapGetter="")
+#set($macro.fieldGetter = $mapGetter)
+#if($macro.fieldGetter)
+## this is a nested map (i.e. a list inside a map/list/structure)
+#set($testValidateParamVal = $testValidateParam)
+#set($macro.mapVarName = "${dstObject}NestedMap")
+#set($macro.mapItemVarName = "${dstObject}Item")
+#else
+## this is map at the root level)
+#set($macro.fieldGetter = "Get${CppViewHelper.capitalizeFirstChar($testValidateParam.key)}()")
+#set($testValidateParamVal = $testValidateParam.value)
+#set($macro.mapVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}")
+#set($macro.mapItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}Item")
+#end
+#set($macro.spaces = $spaces)
+#if($mapShape.mapValue.shape.document)
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
+#foreach($mapItem in $testValidateParamVal.fields())
+${macro.spaces}EXPECT_STREQ(R"j(${mapItem.value})j", ${macro.mapVarName}.at("$mapItem.key").View().WriteCompact().c_str());
+#end
+#break
+#end
+#if($mapShape.mapValue.shape.structure)
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
+#foreach($mapItem in $testValidateParamVal.fields())
+${macro.spaces}{
+  ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
+  ${macro.spaces}const $CppViewHelper.computeCppType($mapShape.mapValue.shape)& $macro.mapItemVarName = ${macro.mapVarName}.at("$mapItem.key");
+#foreach($innerParam in $mapItem.value.fields())
+#ValidateParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
+#end
+${macro.spaces}}
+#end
+#break
+#end
+###----- the map value is not nested structure or document
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
+#foreach($mapItem in $testValidateParamVal.fields())
+${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
+#set($macro.parentVarName = $macro.mapVarName)
+#set($macro.getter = "at(" + '"' + $mapItem.key + '"' + ")")
+#set($macro.var = $macro.mapItemVarName)
+#ValidateSingleVariableMacro($macro.spaces, $mapShape.mapValue.shape, $mapItem.value, $macro.parentVarName, $macro.getter, $macro.var)
+#end
+#end##macro ValidateMapMacro

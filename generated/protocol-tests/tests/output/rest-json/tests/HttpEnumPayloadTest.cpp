@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(HttpEnumPayload, RestJsonEnumPayloadResponse) {
   HttpEnumPayloadRequest request;
 
   auto outcome = client.HttpEnumPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpEnumPayloadResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"payload":"enumvalue"} )" */
+  EXPECT_EQ(StringEnumMapper::GetStringEnumForName(R"e(enumvalue)e"), result.GetPayload());
 }

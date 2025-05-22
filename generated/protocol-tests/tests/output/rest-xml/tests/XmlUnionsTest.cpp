@@ -23,9 +23,24 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStructMember) {
   XmlUnionsRequest request;
 
   auto outcome = client.XmlUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"unionValue":{"structValue":{"stringValue":"string","booleanValue":true,"byteValue":1,"shortValue":2,"integerValue":3,"longValue":4,"floatValue":5.5,"doubleValue":6.5}}} )" */
+  {
+    const XmlUnionShape& resultUnionValue = result.GetUnionValue();
+    {
+      const XmlNestedUnionStruct& resultUnionValueStructValue = resultUnionValue.GetStructValue();
+      EXPECT_EQ(R"(string)", resultUnionValueStructValue.GetStringValue());
+      EXPECT_EQ(true, resultUnionValueStructValue.GetBooleanValue());
+      EXPECT_EQ(1, resultUnionValueStructValue.GetByteValue());
+      EXPECT_EQ(2, resultUnionValueStructValue.GetShortValue());
+      EXPECT_EQ(3, resultUnionValueStructValue.GetIntegerValue());
+      EXPECT_EQ(4, resultUnionValueStructValue.GetLongValue());
+      EXPECT_EQ(5.5, resultUnionValueStructValue.GetFloatValue());
+      EXPECT_EQ(6.5, resultUnionValueStructValue.GetDoubleValue());
+    }
+  }
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStringMember) {
@@ -40,9 +55,14 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStringMember) {
   XmlUnionsRequest request;
 
   auto outcome = client.XmlUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"unionValue":{"stringValue":"some string"}} )" */
+  {
+    const XmlUnionShape& resultUnionValue = result.GetUnionValue();
+    EXPECT_EQ(R"(some string)", resultUnionValue.GetStringValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithBooleanMember) {
@@ -57,9 +77,14 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithBooleanMember) {
   XmlUnionsRequest request;
 
   auto outcome = client.XmlUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"unionValue":{"booleanValue":true}} )" */
+  {
+    const XmlUnionShape& resultUnionValue = result.GetUnionValue();
+    EXPECT_EQ(true, resultUnionValue.GetBooleanValue());
+  }
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithUnionMember) {
@@ -74,7 +99,15 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithUnionMember) {
   XmlUnionsRequest request;
 
   auto outcome = client.XmlUnions(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlUnionsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"unionValue":{"unionValue":{"booleanValue":true}}} )" */
+  {
+    const XmlUnionShape& resultUnionValue = result.GetUnionValue();
+    {
+      const XmlUnionShape& resultUnionValueUnionValue = resultUnionValue.GetUnionValue();
+      EXPECT_EQ(true, resultUnionValueUnionValue.GetBooleanValue());
+    }
+  }
 }

@@ -148,13 +148,12 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
 )");
 
   auto outcome = client.PutWithContentEncoding(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(PutWithContentEncoding, SDKAppendsGzipAndIgnoresHttpProvidedEncoding_ec2Query) {
@@ -295,11 +294,10 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
 )");
 
   auto outcome = client.PutWithContentEncoding(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Encoding", R"(gzip)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

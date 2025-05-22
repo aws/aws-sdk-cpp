@@ -5,6 +5,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
+#include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested2.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesRequest.h>
 
@@ -40,12 +41,11 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RestJsonRecursiveShapes) {
   }
 
   auto outcome = client.RecursiveShapes(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
   expectedRq.body = "ewogICAgIm5lc3RlZCI6IHsKICAgICAgICAiZm9vIjogIkZvbzEiLAogICAgICAgICJuZXN0ZWQiOiB7CiAgICAgICAgICAgICJiYXIiOiAiQmFyMSIsCiAgICAgICAgICAgICJyZWN1cnNpdmVNZW1iZXIiOiB7CiAgICAgICAgICAgICAgICAiZm9vIjogIkZvbzIiLAogICAgICAgICAgICAgICAgIm5lc3RlZCI6IHsKICAgICAgICAgICAgICAgICAgICAiYmFyIjogIkJhcjIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0=";
   expectedRq.uri = "/RecursiveShapes";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

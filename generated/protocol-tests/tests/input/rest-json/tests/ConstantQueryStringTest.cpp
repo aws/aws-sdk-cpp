@@ -20,10 +20,9 @@ AWS_PROTOCOL_TEST(ConstantQueryString, RestJsonConstantQueryString) {
   request.SetHello(R"(hi)");
 
   auto outcome = client.ConstantQueryString(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/ConstantQueryString/hi?foo=bar&hello";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

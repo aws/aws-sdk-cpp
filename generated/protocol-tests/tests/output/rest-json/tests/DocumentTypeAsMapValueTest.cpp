@@ -23,7 +23,13 @@ AWS_PROTOCOL_TEST(DocumentTypeAsMapValue, DocumentTypeAsMapValueOutput) {
   DocumentTypeAsMapValueRequest request;
 
   auto outcome = client.DocumentTypeAsMapValue(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const DocumentTypeAsMapValueResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"docValuedMap":{"foo":{"f":1,"o":2},"bar":["b","a","r"],"baz":"BAZ"}} )" */
+  const Aws::Map<Aws::String, Aws::Utils::Document>& resultDocValuedMap = result.GetDocValuedMap();
+  EXPECT_EQ(3U, resultDocValuedMap.size());
+  EXPECT_STREQ(R"j({"f":1,"o":2})j", resultDocValuedMap.at("foo").View().WriteCompact().c_str());
+  EXPECT_STREQ(R"j(["b","a","r"])j", resultDocValuedMap.at("bar").View().WriteCompact().c_str());
+  EXPECT_STREQ(R"j("BAZ")j", resultDocValuedMap.at("baz").View().WriteCompact().c_str());
 }

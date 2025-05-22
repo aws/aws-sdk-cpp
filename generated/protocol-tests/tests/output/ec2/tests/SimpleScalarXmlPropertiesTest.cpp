@@ -23,9 +23,20 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2SimpleScalarProperties) {
   SimpleScalarXmlPropertiesRequest request;
 
   auto outcome = client.SimpleScalarXmlProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarXmlPropertiesResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"stringValue":"string","emptyStringValue":"","trueBooleanValue":true,"falseBooleanValue":false,"byteValue":1,"shortValue":2,"integerValue":3,"longValue":4,"floatValue":5.5,"doubleValue":6.5} )" */
+  EXPECT_EQ(R"(string)", result.GetStringValue());
+  EXPECT_EQ(R"()", result.GetEmptyStringValue());
+  EXPECT_EQ(true, result.GetTrueBooleanValue());
+  EXPECT_EQ(false, result.GetFalseBooleanValue());
+  EXPECT_EQ(1, result.GetByteValue());
+  EXPECT_EQ(2, result.GetShortValue());
+  EXPECT_EQ(3, result.GetIntegerValue());
+  EXPECT_EQ(4, result.GetLongValue());
+  EXPECT_EQ(5.5, result.GetFloatValue());
+  EXPECT_EQ(6.5, result.GetDoubleValue());
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsNaNFloatOutputs) {
@@ -40,9 +51,12 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsNaNFloatOutputs) {
   SimpleScalarXmlPropertiesRequest request;
 
   auto outcome = client.SimpleScalarXmlProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarXmlPropertiesResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"NaN","doubleValue":"NaN"} )" */
+  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetFloatValue());
+  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetDoubleValue());
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsInfinityFloatOutputs) {
@@ -57,9 +71,12 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsInfinityFloatOutput
   SimpleScalarXmlPropertiesRequest request;
 
   auto outcome = client.SimpleScalarXmlProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarXmlPropertiesResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"Infinity","doubleValue":"Infinity"} )" */
+  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetFloatValue());
+  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetDoubleValue());
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsNegativeInfinityFloatOutputs) {
@@ -74,7 +91,10 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, Ec2QuerySupportsNegativeInfinityFlo
   SimpleScalarXmlPropertiesRequest request;
 
   auto outcome = client.SimpleScalarXmlProperties(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const SimpleScalarXmlPropertiesResponse& result = outcome.GetResult();
+  /* expectedResult = R"( {"floatValue":"-Infinity","doubleValue":"-Infinity"} )" */
+  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetFloatValue());
+  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetDoubleValue());
 }

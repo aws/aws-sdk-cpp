@@ -22,7 +22,9 @@ AWS_PROTOCOL_TEST(MediaTypeHeader, MediaTypeHeaderOutputBase64) {
   MediaTypeHeaderRequest request;
 
   auto outcome = client.MediaTypeHeader(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const MediaTypeHeaderResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"json":"true"} )" */
+  EXPECT_EQ(R"(true)", result.GetJson());
 }

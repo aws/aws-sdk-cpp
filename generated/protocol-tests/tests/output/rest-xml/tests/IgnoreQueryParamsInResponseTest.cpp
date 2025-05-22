@@ -23,7 +23,9 @@ AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, IgnoreQueryParamsInResponse) {
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const IgnoreQueryParamsInResponseResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"baz":"bam"} )" */
+  EXPECT_EQ(R"(bam)", result.GetBaz());
 }

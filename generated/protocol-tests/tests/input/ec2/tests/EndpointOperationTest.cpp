@@ -19,8 +19,6 @@ AWS_PROTOCOL_TEST(EndpointOperation, Ec2QueryEndpointTrait) {
   EndpointOperationRequest request;
 
   auto outcome = client.EndpointOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPUVuZHBvaW50T3BlcmF0aW9uJlZlcnNpb249MjAyMC0wMS0wOA==";
@@ -28,4 +26,5 @@ AWS_PROTOCOL_TEST(EndpointOperation, Ec2QueryEndpointTrait) {
   expectedRq.host = "foo.example.com";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

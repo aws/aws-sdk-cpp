@@ -23,7 +23,13 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructure) {
   HttpPayloadWithStructureRequest request;
 
   auto outcome = client.HttpPayloadWithStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const HttpPayloadWithStructureResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"nested":{"greeting":"hello","name":"Phreddy"}} )" */
+  {
+    const NestedPayload& resultNested = result.GetNested();
+    EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
+    EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
+  }
 }

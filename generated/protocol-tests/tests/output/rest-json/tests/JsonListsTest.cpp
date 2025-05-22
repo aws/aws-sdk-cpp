@@ -23,9 +23,62 @@ AWS_PROTOCOL_TEST(JsonLists, RestJsonLists) {
   JsonListsRequest request;
 
   auto outcome = client.JsonLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonListsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"stringList":["foo","bar"],"stringSet":["foo","bar"],"integerList":[1,2],"booleanList":[true,false],"timestampList":[1398796238,1398796238],"enumList":["Foo","0"],"intEnumList":[1,2],"nestedStringList":[["foo","bar"],["baz","qux"]],"structureList":[{"a":"1","b":"2"},{"a":"3","b":"4"}]} )" */
+  const Aws::Vector<Aws::String>& resultStringListItem = result.GetStringList();
+  EXPECT_EQ(2U, resultStringListItem.size());
+  EXPECT_EQ(R"(foo)", resultStringListItem.at(0));
+  EXPECT_EQ(R"(bar)", resultStringListItem.at(1));
+  const Aws::Vector<Aws::String>& resultStringSetItem = result.GetStringSet();
+  EXPECT_EQ(2U, resultStringSetItem.size());
+  EXPECT_EQ(R"(foo)", resultStringSetItem.at(0));
+  EXPECT_EQ(R"(bar)", resultStringSetItem.at(1));
+  const Aws::Vector<int>& resultIntegerListItem = result.GetIntegerList();
+  EXPECT_EQ(2U, resultIntegerListItem.size());
+  EXPECT_EQ(1, resultIntegerListItem.at(0));
+  EXPECT_EQ(2, resultIntegerListItem.at(1));
+  const Aws::Vector<bool>& resultBooleanListItem = result.GetBooleanList();
+  EXPECT_EQ(2U, resultBooleanListItem.size());
+  EXPECT_EQ(true, resultBooleanListItem.at(0));
+  EXPECT_EQ(false, resultBooleanListItem.at(1));
+  const Aws::Vector<Aws::Utils::DateTime>& resultTimestampListItem = result.GetTimestampList();
+  EXPECT_EQ(2U, resultTimestampListItem.size());
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultTimestampListItem.at(0));
+  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultTimestampListItem.at(1));
+  const Aws::Vector<FooEnum>& resultEnumListItem = result.GetEnumList();
+  EXPECT_EQ(2U, resultEnumListItem.size());
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultEnumListItem.at(0));
+  EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), resultEnumListItem.at(1));
+  const Aws::Vector<int>& resultIntEnumListItem = result.GetIntEnumList();
+  EXPECT_EQ(2U, resultIntEnumListItem.size());
+  EXPECT_EQ(1, resultIntEnumListItem.at(0));
+  EXPECT_EQ(2, resultIntEnumListItem.at(1));
+  EXPECT_EQ(2U, result.GetNestedStringList().size());
+  {
+    const Aws::Vector<Aws::String>& resultNestedStringListItem = result.GetNestedStringList().at(0);
+    EXPECT_EQ(2U, resultNestedStringListItem.size());
+    EXPECT_EQ(R"(foo)", resultNestedStringListItem.at(0));
+    EXPECT_EQ(R"(bar)", resultNestedStringListItem.at(1));
+  }
+  {
+    const Aws::Vector<Aws::String>& resultNestedStringListItem = result.GetNestedStringList().at(1);
+    EXPECT_EQ(2U, resultNestedStringListItem.size());
+    EXPECT_EQ(R"(baz)", resultNestedStringListItem.at(0));
+    EXPECT_EQ(R"(qux)", resultNestedStringListItem.at(1));
+  }
+  EXPECT_EQ(2U, result.GetStructureList().size());
+  {
+    const StructureListMember& resultStructureListItem = result.GetStructureList().at(0);
+    EXPECT_EQ(R"(1)", resultStructureListItem.GetA());
+    EXPECT_EQ(R"(2)", resultStructureListItem.GetB());
+  }
+  {
+    const StructureListMember& resultStructureListItem = result.GetStructureList().at(1);
+    EXPECT_EQ(R"(3)", resultStructureListItem.GetA());
+    EXPECT_EQ(R"(4)", resultStructureListItem.GetB());
+  }
 }
 
 AWS_PROTOCOL_TEST(JsonLists, RestJsonListsEmpty) {
@@ -40,7 +93,10 @@ AWS_PROTOCOL_TEST(JsonLists, RestJsonListsEmpty) {
   JsonListsRequest request;
 
   auto outcome = client.JsonLists(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonListsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"stringList":[]} )" */
+  const Aws::Vector<Aws::String>& resultStringListItem = result.GetStringList();
+  EXPECT_EQ(0U, resultStringListItem.size());
 }

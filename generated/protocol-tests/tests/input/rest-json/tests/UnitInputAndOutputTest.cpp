@@ -19,10 +19,9 @@ AWS_PROTOCOL_TEST(UnitInputAndOutput, RestJsonUnitInputAndOutput) {
   UnitInputAndOutputRequest request;
 
   auto outcome = client.UnitInputAndOutput(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/UnitInputAndOutput";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -20,8 +20,6 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson11EndpointTraitWithHost
   request.SetLabel(R"(bar)");
 
   auto outcome = client.EndpointWithHostLabelOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
@@ -29,4 +27,5 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson11EndpointTraitWithHost
   expectedRq.host = "foo.bar.example.com";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EndpointWithHostLabelOperation)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

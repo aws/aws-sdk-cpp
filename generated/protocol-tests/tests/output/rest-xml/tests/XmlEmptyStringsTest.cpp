@@ -23,9 +23,11 @@ AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptyStrings) {
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyStringsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"emptyString":""} )" */
+  EXPECT_EQ(R"()", result.GetEmptyString());
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptySelfClosedStrings) {
@@ -40,7 +42,9 @@ AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptySelfClosedStrings) {
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const XmlEmptyStringsResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"emptyString":""} )" */
+  EXPECT_EQ(R"()", result.GetEmptyString());
 }

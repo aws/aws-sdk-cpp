@@ -20,12 +20,11 @@ AWS_PROTOCOL_TEST(FlattenedXmlMap, FlattenedXmlMap) {
   request.SetMyMap({{"foo",  FooEnumMapper::GetFooEnumForName(R"e(Foo)e")}, {"baz",  FooEnumMapper::GetFooEnumForName(R"e(Baz)e")}});
 
   auto outcome = client.FlattenedXmlMap(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "PEZsYXR0ZW5lZFhtbE1hcFJlcXVlc3Q+CiAgICA8bXlNYXA+CiAgICAgICAgPGtleT5mb288L2tleT4KICAgICAgICA8dmFsdWU+Rm9vPC92YWx1ZT4KICAgIDwvbXlNYXA+CiAgICA8bXlNYXA+CiAgICAgICAgPGtleT5iYXo8L2tleT4KICAgICAgICA8dmFsdWU+QmF6PC92YWx1ZT4KICAgIDwvbXlNYXA+CjwvRmxhdHRlbmVkWG1sTWFwUmVxdWVzdD4=";
   expectedRq.uri = "/FlattenedXmlMap";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -39,17 +39,6 @@ AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
 
   auto outcome = client.${case.given.name}(request);
 #if($case.input)
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-#else
-#if($case.output.get().successResult)
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-#end
-#if($case.output.get().errorResult)
-  ASSERT_FALSE(outcome.IsSuccess());
-#end
-#end
-
-#if($case.input)
 #set($serialized = $case.input.get().serialized)
   ExpectedRequest expectedRq;
 #if($serialized.method)
@@ -89,5 +78,6 @@ AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
 #else
   ValidateRequestSent();
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateOutcome.vm")
 }
 #end

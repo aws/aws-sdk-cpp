@@ -23,9 +23,14 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutput) {
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const DocumentTypeAsPayloadResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"documentValue":{"foo":"bar"}} )" */
+  {
+    const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
+    EXPECT_STREQ(R"j({"foo":"bar"})j", resultDocumentValue.WriteCompact().c_str());
+  }
 }
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutputString) {
@@ -40,7 +45,12 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutputString) {
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ValidateRequestSent();
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const DocumentTypeAsPayloadResult& result = outcome.GetResult();
+  /* expectedResult = R"( {"documentValue":"hello"} )" */
+  {
+    const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
+    EXPECT_STREQ(R"j("hello")j", resultDocumentValue.WriteCompact().c_str());
+  }
 }

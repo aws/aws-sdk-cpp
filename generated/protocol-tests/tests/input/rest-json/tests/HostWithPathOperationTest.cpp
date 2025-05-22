@@ -19,11 +19,10 @@ AWS_PROTOCOL_TEST(HostWithPathOperation, RestJsonHostWithPath) {
   HostWithPathOperationRequest request;
 
   auto outcome = client.HostWithPathOperation(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/custom/HostWithPathOperation";
   expectedRq.host = "example.com/custom";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

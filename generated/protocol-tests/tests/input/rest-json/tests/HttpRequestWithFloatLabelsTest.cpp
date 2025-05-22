@@ -21,12 +21,11 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNaNFloatLabels) {
   request.SetDouble(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/NaN/NaN";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsInfinityFloatLabels) {
@@ -39,12 +38,11 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsInfinityFloatLabel
   request.SetDouble(std::numeric_limits<double>::infinity());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/Infinity/Infinity";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNegativeInfinityFloatLabels) {
@@ -57,10 +55,9 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNegativeInfinityFl
   request.SetDouble(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.HttpRequestWithFloatLabels(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/FloatHttpLabels/-Infinity/-Infinity";
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

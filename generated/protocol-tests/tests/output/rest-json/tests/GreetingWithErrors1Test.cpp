@@ -23,9 +23,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonComplexErrorWithNoMessage) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonEmptyComplexErrorWithNoMessage) {
@@ -40,7 +39,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, RestJsonEmptyComplexErrorWithNoMessage) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ASSERT_FALSE(outcome.IsSuccess());
-
   ValidateRequestSent();
+  ASSERT_FALSE(outcome.IsSuccess());
 }

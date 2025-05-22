@@ -24,8 +24,6 @@ AWS_PROTOCOL_TEST(TestBodyStructure, RestJsonTestBodyStructure) {
   }
 
   auto outcome = client.TestBodyStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJ0ZXN0Q29uZmlnIjoKICAgIHsidGltZW91dCI6IDEwfQp9";
@@ -33,6 +31,7 @@ AWS_PROTOCOL_TEST(TestBodyStructure, RestJsonTestBodyStructure) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(TestBodyStructure, RestJsonHttpWithEmptyBody) {
@@ -43,8 +42,6 @@ AWS_PROTOCOL_TEST(TestBodyStructure, RestJsonHttpWithEmptyBody) {
   TestBodyStructureRequest request;
 
   auto outcome = client.TestBodyStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
@@ -52,4 +49,5 @@ AWS_PROTOCOL_TEST(TestBodyStructure, RestJsonHttpWithEmptyBody) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

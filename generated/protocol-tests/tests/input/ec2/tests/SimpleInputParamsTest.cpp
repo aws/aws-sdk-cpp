@@ -21,8 +21,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStrings) {
   request.SetBar(R"(val2)");
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGb289dmFsMSZCYXI9dmFsMg==";
@@ -30,6 +28,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStrings) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringAndBooleanTrue) {
@@ -42,8 +41,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringAndBooleanTrue) {
   request.SetBaz(true);
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGb289dmFsMSZCYXo9dHJ1ZQ==";
@@ -51,6 +48,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringAndBooleanTrue) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringsAndBooleanFalse) {
@@ -62,8 +60,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringsAndBooleanFalse)
   request.SetBaz(false);
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZCYXo9ZmFsc2U=";
@@ -71,6 +67,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringsAndBooleanFalse)
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsInteger) {
@@ -82,8 +79,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsInteger) {
   request.SetBam(10);
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZCYW09MTA=";
@@ -91,6 +86,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsInteger) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
@@ -102,8 +98,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
   request.SetBoo(10.8);
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZCb289MTAuOA==";
@@ -111,6 +105,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
@@ -122,8 +117,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
   request.SetQux(Aws::String(R"(value)"));
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZRdXg9ZG1Gc2RXVSUzRA==";
@@ -131,6 +124,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Enums) {
@@ -142,8 +136,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Enums) {
   request.SetFooEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGb29FbnVtPUZvbw==";
@@ -151,6 +143,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Enums) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Query) {
@@ -162,8 +155,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Query) {
   request.SetHasQueryName(R"(Hi)");
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZIYXNRdWVyeU5hbWU9SGk=";
@@ -171,6 +162,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Query) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QueryIsPreferred) {
@@ -182,8 +174,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QueryIsPreferred) {
   request.SetHasQueryAndXmlName(R"(Hi)");
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZIYXNRdWVyeUFuZFhtbE5hbWU9SGk=";
@@ -191,6 +181,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QueryIsPreferred) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2XmlNameIsUppercased) {
@@ -202,8 +193,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2XmlNameIsUppercased) {
   request.SetUsesXmlName(R"(Hi)");
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZVc2VzWG1sTmFtZT1IaQ==";
@@ -211,6 +200,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2XmlNameIsUppercased) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNaNFloatInputs) {
@@ -223,8 +213,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNaNFloatInputs) {
   request.SetBoo(std::numeric_limits<double>::quiet_NaN());
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGbG9hdFZhbHVlPU5hTiZCb289TmFO";
@@ -232,6 +220,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNaNFloatInputs) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsInfinityFloatInputs) {
@@ -244,8 +233,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsInfinityFloatInputs) {
   request.SetBoo(std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGbG9hdFZhbHVlPUluZmluaXR5JkJvbz1JbmZpbml0eQ==";
@@ -253,6 +240,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsInfinityFloatInputs) {
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNegativeInfinityFloatInputs) {
@@ -265,8 +253,6 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNegativeInfinityFloatInputs
   request.SetBoo(-std::numeric_limits<double>::infinity());
 
   auto outcome = client.SimpleInputParams(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "QWN0aW9uPVNpbXBsZUlucHV0UGFyYW1zJlZlcnNpb249MjAyMC0wMS0wOCZGbG9hdFZhbHVlPS1JbmZpbml0eSZCb289LUluZmluaXR5";
@@ -274,4 +260,5 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNegativeInfinityFloatInputs
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

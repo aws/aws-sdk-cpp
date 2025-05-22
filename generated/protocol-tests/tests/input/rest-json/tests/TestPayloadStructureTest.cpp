@@ -19,8 +19,6 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonHttpWithEmptyStructurePayload) {
   TestPayloadStructureRequest request;
 
   auto outcome = client.TestPayloadStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
@@ -28,6 +26,7 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonHttpWithEmptyStructurePayload) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonTestPayloadStructure) {
@@ -43,8 +42,6 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonTestPayloadStructure) {
   }
 
   auto outcome = client.TestPayloadStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "eyJkYXRhIjogMjUKfQ==";
@@ -52,6 +49,7 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonTestPayloadStructure) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
 
 AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonHttpWithHeadersButNoPayload) {
@@ -63,8 +61,6 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonHttpWithHeadersButNoPayload) {
   request.SetTestId(R"(t-12345)");
 
   auto outcome = client.TestPayloadStructure(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.body = "e30=";
@@ -72,4 +68,5 @@ AWS_PROTOCOL_TEST(TestPayloadStructure, RestJsonHttpWithHeadersButNoPayload) {
   expectedRq.headers = {{"Content-Type", R"(application/json)"}, {"X-Amz-Test-Id", R"(t-12345)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
