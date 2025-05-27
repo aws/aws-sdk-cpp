@@ -32,6 +32,7 @@ namespace Aws
         static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
         static const int ap_southeast_4_HASH = HashingUtils::HashString("ap-southeast-4");
         static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
+        static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
         static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
         static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
         static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
@@ -47,6 +48,7 @@ namespace Aws
         static const int il_central_1_HASH = HashingUtils::HashString("il-central-1");
         static const int me_central_1_HASH = HashingUtils::HashString("me-central-1");
         static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
+        static const int mx_central_1_HASH = HashingUtils::HashString("mx-central-1");
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
         static const int us_east_2_HASH = HashingUtils::HashString("us-east-2");
@@ -104,6 +106,10 @@ namespace Aws
           else if (hashCode == ap_southeast_5_HASH)
           {
             return AwsRegion::ap_southeast_5;
+          }
+          else if (hashCode == ap_southeast_7_HASH)
+          {
+            return AwsRegion::ap_southeast_7;
           }
           else if (hashCode == ca_central_1_HASH)
           {
@@ -165,6 +171,10 @@ namespace Aws
           {
             return AwsRegion::me_south_1;
           }
+          else if (hashCode == mx_central_1_HASH)
+          {
+            return AwsRegion::mx_central_1;
+          }
           else if (hashCode == sa_east_1_HASH)
           {
             return AwsRegion::sa_east_1;
@@ -225,6 +235,8 @@ namespace Aws
             return "ap-southeast-4";
           case AwsRegion::ap_southeast_5:
             return "ap-southeast-5";
+          case AwsRegion::ap_southeast_7:
+            return "ap-southeast-7";
           case AwsRegion::ca_central_1:
             return "ca-central-1";
           case AwsRegion::ca_west_1:
@@ -255,6 +267,8 @@ namespace Aws
             return "me-central-1";
           case AwsRegion::me_south_1:
             return "me-south-1";
+          case AwsRegion::mx_central_1:
+            return "mx-central-1";
           case AwsRegion::sa_east_1:
             return "sa-east-1";
           case AwsRegion::us_east_1:
