@@ -31,8 +31,10 @@
 #include <aws/ce/model/GetApproximateUsageRecordsResult.h>
 #include <aws/ce/model/GetCommitmentPurchaseAnalysisResult.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
+#include <aws/ce/model/GetCostAndUsageComparisonsResult.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostCategoriesResult.h>
+#include <aws/ce/model/GetCostComparisonDriversResult.h>
 #include <aws/ce/model/GetCostForecastResult.h>
 #include <aws/ce/model/GetDimensionValuesResult.h>
 #include <aws/ce/model/GetReservationCoverageResult.h>
@@ -123,8 +125,10 @@ namespace Aws
       class GetApproximateUsageRecordsRequest;
       class GetCommitmentPurchaseAnalysisRequest;
       class GetCostAndUsageRequest;
+      class GetCostAndUsageComparisonsRequest;
       class GetCostAndUsageWithResourcesRequest;
       class GetCostCategoriesRequest;
+      class GetCostComparisonDriversRequest;
       class GetCostForecastRequest;
       class GetDimensionValuesRequest;
       class GetReservationCoverageRequest;
@@ -170,8 +174,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetApproximateUsageRecordsResult, CostExplorerError> GetApproximateUsageRecordsOutcome;
       typedef Aws::Utils::Outcome<GetCommitmentPurchaseAnalysisResult, CostExplorerError> GetCommitmentPurchaseAnalysisOutcome;
       typedef Aws::Utils::Outcome<GetCostAndUsageResult, CostExplorerError> GetCostAndUsageOutcome;
+      typedef Aws::Utils::Outcome<GetCostAndUsageComparisonsResult, CostExplorerError> GetCostAndUsageComparisonsOutcome;
       typedef Aws::Utils::Outcome<GetCostAndUsageWithResourcesResult, CostExplorerError> GetCostAndUsageWithResourcesOutcome;
       typedef Aws::Utils::Outcome<GetCostCategoriesResult, CostExplorerError> GetCostCategoriesOutcome;
+      typedef Aws::Utils::Outcome<GetCostComparisonDriversResult, CostExplorerError> GetCostComparisonDriversOutcome;
       typedef Aws::Utils::Outcome<GetCostForecastResult, CostExplorerError> GetCostForecastOutcome;
       typedef Aws::Utils::Outcome<GetDimensionValuesResult, CostExplorerError> GetDimensionValuesOutcome;
       typedef Aws::Utils::Outcome<GetReservationCoverageResult, CostExplorerError> GetReservationCoverageOutcome;
@@ -217,8 +223,10 @@ namespace Aws
       typedef std::future<GetApproximateUsageRecordsOutcome> GetApproximateUsageRecordsOutcomeCallable;
       typedef std::future<GetCommitmentPurchaseAnalysisOutcome> GetCommitmentPurchaseAnalysisOutcomeCallable;
       typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
+      typedef std::future<GetCostAndUsageComparisonsOutcome> GetCostAndUsageComparisonsOutcomeCallable;
       typedef std::future<GetCostAndUsageWithResourcesOutcome> GetCostAndUsageWithResourcesOutcomeCallable;
       typedef std::future<GetCostCategoriesOutcome> GetCostCategoriesOutcomeCallable;
+      typedef std::future<GetCostComparisonDriversOutcome> GetCostComparisonDriversOutcomeCallable;
       typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
       typedef std::future<GetDimensionValuesOutcome> GetDimensionValuesOutcomeCallable;
       typedef std::future<GetReservationCoverageOutcome> GetReservationCoverageOutcomeCallable;
@@ -267,8 +275,10 @@ namespace Aws
     typedef std::function<void(const CostExplorerClient*, const Model::GetApproximateUsageRecordsRequest&, const Model::GetApproximateUsageRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApproximateUsageRecordsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCommitmentPurchaseAnalysisRequest&, const Model::GetCommitmentPurchaseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommitmentPurchaseAnalysisResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageComparisonsRequest&, const Model::GetCostAndUsageComparisonsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageComparisonsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageWithResourcesRequest&, const Model::GetCostAndUsageWithResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageWithResourcesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostCategoriesRequest&, const Model::GetCostCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostCategoriesResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetCostComparisonDriversRequest&, const Model::GetCostComparisonDriversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostComparisonDriversResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostForecastRequest&, const Model::GetCostForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetDimensionValuesRequest&, const Model::GetDimensionValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionValuesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationCoverageRequest&, const Model::GetReservationCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationCoverageResponseReceivedHandler;

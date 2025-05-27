@@ -29,6 +29,11 @@ Aws::String GetVpnConnectionDeviceSampleConfigurationRequest::SerializePayload()
     ss << "InternetKeyExchangeVersion=" << StringUtils::URLEncode(m_internetKeyExchangeVersion.c_str()) << "&";
   }
 
+  if(m_sampleTypeHasBeenSet)
+  {
+    ss << "SampleType=" << StringUtils::URLEncode(m_sampleType.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

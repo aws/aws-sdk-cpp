@@ -44,6 +44,7 @@
 #include <aws/ec2/model/AccountAttributeName.h>
 #include <aws/ec2/model/AccountAttributeValue.h>
 #include <aws/ec2/model/ActiveInstance.h>
+#include <aws/ec2/model/ActiveVpnTunnelStatus.h>
 #include <aws/ec2/model/ActivityStatus.h>
 #include <aws/ec2/model/AddIpamOperatingRegion.h>
 #include <aws/ec2/model/AddIpamOrganizationalUnitExclusion.h>
@@ -1296,6 +1297,8 @@
 #include <aws/ec2/model/FpgaInfo.h>
 #include <aws/ec2/model/GatewayAssociationState.h>
 #include <aws/ec2/model/GatewayType.h>
+#include <aws/ec2/model/GetActiveVpnTunnelStatusRequest.h>
+#include <aws/ec2/model/GetActiveVpnTunnelStatusResponse.h>
 #include <aws/ec2/model/GetAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/GetAllowedImagesSettingsResponse.h>
 #include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesRequest.h>
@@ -2536,6 +2539,7 @@
 #include <aws/ec2/model/VpnTunnelLogOptions.h>
 #include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>
+#include <aws/ec2/model/VpnTunnelProvisioningStatus.h>
 #include <aws/ec2/model/WeekDay.h>
 #include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <aws/ec2/model/WithdrawByoipCidrResponse.h>

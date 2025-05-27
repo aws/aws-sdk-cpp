@@ -78,6 +78,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of sample configuration to generate. Valid values are
+     * "compatibility" (includes IKEv1) or "recommended" (throws
+     * UnsupportedOperationException for IKEv1).</p>
+     */
+    inline const Aws::String& GetSampleType() const { return m_sampleType; }
+    inline bool SampleTypeHasBeenSet() const { return m_sampleTypeHasBeenSet; }
+    template<typename SampleTypeT = Aws::String>
+    void SetSampleType(SampleTypeT&& value) { m_sampleTypeHasBeenSet = true; m_sampleType = std::forward<SampleTypeT>(value); }
+    template<typename SampleTypeT = Aws::String>
+    GetVpnConnectionDeviceSampleConfigurationRequest& WithSampleType(SampleTypeT&& value) { SetSampleType(std::forward<SampleTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -98,6 +112,9 @@ namespace Model
 
     Aws::String m_internetKeyExchangeVersion;
     bool m_internetKeyExchangeVersionHasBeenSet = false;
+
+    Aws::String m_sampleType;
+    bool m_sampleTypeHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

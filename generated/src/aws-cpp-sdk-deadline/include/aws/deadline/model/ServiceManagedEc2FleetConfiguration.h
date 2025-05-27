@@ -7,6 +7,7 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
     template<typename InstanceMarketOptionsT = ServiceManagedEc2InstanceMarketOptions>
     ServiceManagedEc2FleetConfiguration& WithInstanceMarketOptions(InstanceMarketOptionsT&& value) { SetInstanceMarketOptions(std::forward<InstanceMarketOptionsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The storage profile ID.</p>
+     */
+    inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
+    inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
+    template<typename StorageProfileIdT = Aws::String>
+    void SetStorageProfileId(StorageProfileIdT&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::forward<StorageProfileIdT>(value); }
+    template<typename StorageProfileIdT = Aws::String>
+    ServiceManagedEc2FleetConfiguration& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
+    ///@}
   private:
 
     ServiceManagedEc2InstanceCapabilities m_instanceCapabilities;
@@ -69,6 +82,9 @@ namespace Model
 
     ServiceManagedEc2InstanceMarketOptions m_instanceMarketOptions;
     bool m_instanceMarketOptionsHasBeenSet = false;
+
+    Aws::String m_storageProfileId;
+    bool m_storageProfileIdHasBeenSet = false;
   };
 
 } // namespace Model
