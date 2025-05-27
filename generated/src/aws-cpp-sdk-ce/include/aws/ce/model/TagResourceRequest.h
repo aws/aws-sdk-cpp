@@ -63,7 +63,7 @@ namespace Model
      * values can only contain alphanumeric characters, spaces, and any of the
      * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
      * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
-     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * trailing whitespaces</p> </li> <li> <p>Don���t use <code>aws:</code> as a prefix
      * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
      * </ul>
      */

@@ -28,6 +28,7 @@
 #include <aws/ce/model/AnomalySubscriptionFrequency.h>
 #include <aws/ce/model/ApproximationDimension.h>
 #include <aws/ce/model/CommitmentPurchaseAnalysisConfiguration.h>
+#include <aws/ce/model/ComparisonMetricValue.h>
 #include <aws/ce/model/Context.h>
 #include <aws/ce/model/CostAllocationTag.h>
 #include <aws/ce/model/CostAllocationTagBackfillRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/ce/model/CostAllocationTagStatus.h>
 #include <aws/ce/model/CostAllocationTagStatusEntry.h>
 #include <aws/ce/model/CostAllocationTagType.h>
+#include <aws/ce/model/CostAndUsageComparison.h>
 #include <aws/ce/model/CostCategory.h>
 #include <aws/ce/model/CostCategoryInheritedValueDimension.h>
 #include <aws/ce/model/CostCategoryInheritedValueDimensionName.h>
@@ -50,6 +52,8 @@
 #include <aws/ce/model/CostCategoryStatus.h>
 #include <aws/ce/model/CostCategoryStatusComponent.h>
 #include <aws/ce/model/CostCategoryValues.h>
+#include <aws/ce/model/CostComparisonDriver.h>
+#include <aws/ce/model/CostDriver.h>
 #include <aws/ce/model/Coverage.h>
 #include <aws/ce/model/CoverageByTime.h>
 #include <aws/ce/model/CoverageCost.h>
@@ -99,12 +103,16 @@
 #include <aws/ce/model/GetApproximateUsageRecordsResult.h>
 #include <aws/ce/model/GetCommitmentPurchaseAnalysisRequest.h>
 #include <aws/ce/model/GetCommitmentPurchaseAnalysisResult.h>
+#include <aws/ce/model/GetCostAndUsageComparisonsRequest.h>
+#include <aws/ce/model/GetCostAndUsageComparisonsResult.h>
 #include <aws/ce/model/GetCostAndUsageRequest.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesRequest.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostCategoriesRequest.h>
 #include <aws/ce/model/GetCostCategoriesResult.h>
+#include <aws/ce/model/GetCostComparisonDriversRequest.h>
+#include <aws/ce/model/GetCostComparisonDriversResult.h>
 #include <aws/ce/model/GetCostForecastRequest.h>
 #include <aws/ce/model/GetCostForecastResult.h>
 #include <aws/ce/model/GetDimensionValuesRequest.h>

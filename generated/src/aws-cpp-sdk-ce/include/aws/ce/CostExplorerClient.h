@@ -442,6 +442,33 @@ namespace CostExplorer
         }
 
         /**
+         * <p>Retrieves cost and usage comparisons for your account between two periods
+         * within the last 13 months. If you have enabled multi-year data at monthly
+         * granularity, you can go back up to 38 months.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageComparisons">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostAndUsageComparisonsOutcome GetCostAndUsageComparisons(const Model::GetCostAndUsageComparisonsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCostAndUsageComparisons that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCostAndUsageComparisonsRequestT = Model::GetCostAndUsageComparisonsRequest>
+        Model::GetCostAndUsageComparisonsOutcomeCallable GetCostAndUsageComparisonsCallable(const GetCostAndUsageComparisonsRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetCostAndUsageComparisons, request);
+        }
+
+        /**
+         * An Async wrapper for GetCostAndUsageComparisons that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCostAndUsageComparisonsRequestT = Model::GetCostAndUsageComparisonsRequest>
+        void GetCostAndUsageComparisonsAsync(const GetCostAndUsageComparisonsRequestT& request, const GetCostAndUsageComparisonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetCostAndUsageComparisons, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves cost and usage metrics with resources for your account. You can
          * specify which cost and usage-related metric, such as <code>BlendedCosts</code>
          * or <code>UsageQuantity</code>, that you want the request to return. You can also
@@ -507,6 +534,34 @@ namespace CostExplorer
         void GetCostCategoriesAsync(const GetCostCategoriesRequestT& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CostExplorerClient::GetCostCategories, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves key factors driving cost changes between two time periods within
+         * the last 13 months, such as usage changes, discount changes, and
+         * commitment-based savings. If you have enabled multi-year data at monthly
+         * granularity, you can go back up to 38 months.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostComparisonDrivers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostComparisonDriversOutcome GetCostComparisonDrivers(const Model::GetCostComparisonDriversRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCostComparisonDrivers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCostComparisonDriversRequestT = Model::GetCostComparisonDriversRequest>
+        Model::GetCostComparisonDriversOutcomeCallable GetCostComparisonDriversCallable(const GetCostComparisonDriversRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetCostComparisonDrivers, request);
+        }
+
+        /**
+         * An Async wrapper for GetCostComparisonDrivers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCostComparisonDriversRequestT = Model::GetCostComparisonDriversRequest>
+        void GetCostComparisonDriversAsync(const GetCostComparisonDriversRequestT& request, const GetCostComparisonDriversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetCostComparisonDrivers, request, handler, context);
         }
 
         /**

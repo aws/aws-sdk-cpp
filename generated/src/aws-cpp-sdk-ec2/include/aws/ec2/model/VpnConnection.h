@@ -163,6 +163,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the
+     * pre-shared key(s) for the VPN connection.</p>
+     */
+    inline const Aws::String& GetPreSharedKeyArn() const { return m_preSharedKeyArn; }
+    inline bool PreSharedKeyArnHasBeenSet() const { return m_preSharedKeyArnHasBeenSet; }
+    template<typename PreSharedKeyArnT = Aws::String>
+    void SetPreSharedKeyArn(PreSharedKeyArnT&& value) { m_preSharedKeyArnHasBeenSet = true; m_preSharedKeyArn = std::forward<PreSharedKeyArnT>(value); }
+    template<typename PreSharedKeyArnT = Aws::String>
+    VpnConnection& WithPreSharedKeyArn(PreSharedKeyArnT&& value) { SetPreSharedKeyArn(std::forward<PreSharedKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the VPN connection.</p>
      */
     inline const Aws::String& GetVpnConnectionId() const { return m_vpnConnectionId; }
@@ -261,6 +274,9 @@ namespace Model
 
     Aws::Vector<VgwTelemetry> m_vgwTelemetry;
     bool m_vgwTelemetryHasBeenSet = false;
+
+    Aws::String m_preSharedKeyArn;
+    bool m_preSharedKeyArnHasBeenSet = false;
 
     Aws::String m_vpnConnectionId;
     bool m_vpnConnectionIdHasBeenSet = false;

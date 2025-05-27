@@ -460,6 +460,7 @@
 #include <aws/ec2/model/ExportImageResponse.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/ExportVerifiedAccessInstanceClientConfigurationResponse.h>
+#include <aws/ec2/model/GetActiveVpnTunnelStatusResponse.h>
 #include <aws/ec2/model/GetAllowedImagesSettingsResponse.h>
 #include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesResponse.h>
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsResponse.h>
@@ -1370,6 +1371,7 @@ namespace Aws
       class ExportImageRequest;
       class ExportTransitGatewayRoutesRequest;
       class ExportVerifiedAccessInstanceClientConfigurationRequest;
+      class GetActiveVpnTunnelStatusRequest;
       class GetAllowedImagesSettingsRequest;
       class GetAssociatedEnclaveCertificateIamRolesRequest;
       class GetAssociatedIpv6PoolCidrsRequest;
@@ -2058,6 +2060,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ExportImageResponse, EC2Error> ExportImageOutcome;
       typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, EC2Error> ExportTransitGatewayRoutesOutcome;
       typedef Aws::Utils::Outcome<ExportVerifiedAccessInstanceClientConfigurationResponse, EC2Error> ExportVerifiedAccessInstanceClientConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetActiveVpnTunnelStatusResponse, EC2Error> GetActiveVpnTunnelStatusOutcome;
       typedef Aws::Utils::Outcome<GetAllowedImagesSettingsResponse, EC2Error> GetAllowedImagesSettingsOutcome;
       typedef Aws::Utils::Outcome<GetAssociatedEnclaveCertificateIamRolesResponse, EC2Error> GetAssociatedEnclaveCertificateIamRolesOutcome;
       typedef Aws::Utils::Outcome<GetAssociatedIpv6PoolCidrsResponse, EC2Error> GetAssociatedIpv6PoolCidrsOutcome;
@@ -2746,6 +2749,7 @@ namespace Aws
       typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
       typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
       typedef std::future<ExportVerifiedAccessInstanceClientConfigurationOutcome> ExportVerifiedAccessInstanceClientConfigurationOutcomeCallable;
+      typedef std::future<GetActiveVpnTunnelStatusOutcome> GetActiveVpnTunnelStatusOutcomeCallable;
       typedef std::future<GetAllowedImagesSettingsOutcome> GetAllowedImagesSettingsOutcomeCallable;
       typedef std::future<GetAssociatedEnclaveCertificateIamRolesOutcome> GetAssociatedEnclaveCertificateIamRolesOutcomeCallable;
       typedef std::future<GetAssociatedIpv6PoolCidrsOutcome> GetAssociatedIpv6PoolCidrsOutcomeCallable;
@@ -3437,6 +3441,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ExportImageRequest&, const Model::ExportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportVerifiedAccessInstanceClientConfigurationRequest&, const Model::ExportVerifiedAccessInstanceClientConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportVerifiedAccessInstanceClientConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetActiveVpnTunnelStatusRequest&, const Model::GetActiveVpnTunnelStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActiveVpnTunnelStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetAllowedImagesSettingsRequest&, const Model::GetAllowedImagesSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAllowedImagesSettingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetAssociatedEnclaveCertificateIamRolesRequest&, const Model::GetAssociatedEnclaveCertificateIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetAssociatedIpv6PoolCidrsRequest&, const Model::GetAssociatedIpv6PoolCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedIpv6PoolCidrsResponseReceivedHandler;

@@ -97,6 +97,20 @@ namespace Model
     inline void SetSkipTunnelReplacement(bool value) { m_skipTunnelReplacementHasBeenSet = true; m_skipTunnelReplacement = value; }
     inline ModifyVpnTunnelOptionsRequest& WithSkipTunnelReplacement(bool value) { SetSkipTunnelReplacement(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are
+     * <code>Standard</code> (stored in Site-to-Site VPN service) or
+     * <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+     */
+    inline const Aws::String& GetPreSharedKeyStorage() const { return m_preSharedKeyStorage; }
+    inline bool PreSharedKeyStorageHasBeenSet() const { return m_preSharedKeyStorageHasBeenSet; }
+    template<typename PreSharedKeyStorageT = Aws::String>
+    void SetPreSharedKeyStorage(PreSharedKeyStorageT&& value) { m_preSharedKeyStorageHasBeenSet = true; m_preSharedKeyStorage = std::forward<PreSharedKeyStorageT>(value); }
+    template<typename PreSharedKeyStorageT = Aws::String>
+    ModifyVpnTunnelOptionsRequest& WithPreSharedKeyStorage(PreSharedKeyStorageT&& value) { SetPreSharedKeyStorage(std::forward<PreSharedKeyStorageT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_vpnConnectionId;
@@ -113,6 +127,9 @@ namespace Model
 
     bool m_skipTunnelReplacement{false};
     bool m_skipTunnelReplacementHasBeenSet = false;
+
+    Aws::String m_preSharedKeyStorage;
+    bool m_preSharedKeyStorageHasBeenSet = false;
   };
 
 } // namespace Model

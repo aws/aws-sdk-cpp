@@ -106,6 +106,12 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
 
       m_vgwTelemetryHasBeenSet = true;
     }
+    XmlNode preSharedKeyArnNode = resultNode.FirstChild("preSharedKeyArn");
+    if(!preSharedKeyArnNode.IsNull())
+    {
+      m_preSharedKeyArn = Aws::Utils::Xml::DecodeEscapedXmlText(preSharedKeyArnNode.GetText());
+      m_preSharedKeyArnHasBeenSet = true;
+    }
     XmlNode vpnConnectionIdNode = resultNode.FirstChild("vpnConnectionId");
     if(!vpnConnectionIdNode.IsNull())
     {
@@ -214,6 +220,11 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_preSharedKeyArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PreSharedKeyArn=" << StringUtils::URLEncode(m_preSharedKeyArn.c_str()) << "&";
+  }
+
   if(m_vpnConnectionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
@@ -303,6 +314,10 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
         vgwTelemetrySs << location << ".VgwTelemetry." << vgwTelemetryIdx++;
         item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
+  }
+  if(m_preSharedKeyArnHasBeenSet)
+  {
+      oStream << location << ".PreSharedKeyArn=" << StringUtils::URLEncode(m_preSharedKeyArn.c_str()) << "&";
   }
   if(m_vpnConnectionIdHasBeenSet)
   {

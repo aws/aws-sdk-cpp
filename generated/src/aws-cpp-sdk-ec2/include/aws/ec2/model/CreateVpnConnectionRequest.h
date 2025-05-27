@@ -109,6 +109,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are
+     * <code>Standard</code>" (stored in the Site-to-Site VPN service) or
+     * <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+     */
+    inline const Aws::String& GetPreSharedKeyStorage() const { return m_preSharedKeyStorage; }
+    inline bool PreSharedKeyStorageHasBeenSet() const { return m_preSharedKeyStorageHasBeenSet; }
+    template<typename PreSharedKeyStorageT = Aws::String>
+    void SetPreSharedKeyStorage(PreSharedKeyStorageT&& value) { m_preSharedKeyStorageHasBeenSet = true; m_preSharedKeyStorage = std::forward<PreSharedKeyStorageT>(value); }
+    template<typename PreSharedKeyStorageT = Aws::String>
+    CreateVpnConnectionRequest& WithPreSharedKeyStorage(PreSharedKeyStorageT&& value) { SetPreSharedKeyStorage(std::forward<PreSharedKeyStorageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -147,6 +161,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    Aws::String m_preSharedKeyStorage;
+    bool m_preSharedKeyStorageHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

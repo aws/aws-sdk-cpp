@@ -44,6 +44,11 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
     }
   }
 
+  if(m_preSharedKeyStorageHasBeenSet)
+  {
+    ss << "PreSharedKeyStorage=" << StringUtils::URLEncode(m_preSharedKeyStorage.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

@@ -14526,6 +14526,33 @@ namespace EC2
         }
 
         /**
+         * <p>Returns the currently negotiated security parameters for an active VPN
+         * tunnel, including IKE version, DH groups, encryption algorithms, and integrity
+         * algorithms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetActiveVpnTunnelStatusOutcome GetActiveVpnTunnelStatus(const Model::GetActiveVpnTunnelStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetActiveVpnTunnelStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetActiveVpnTunnelStatusRequestT = Model::GetActiveVpnTunnelStatusRequest>
+        Model::GetActiveVpnTunnelStatusOutcomeCallable GetActiveVpnTunnelStatusCallable(const GetActiveVpnTunnelStatusRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetActiveVpnTunnelStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetActiveVpnTunnelStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetActiveVpnTunnelStatusRequestT = Model::GetActiveVpnTunnelStatusRequest>
+        void GetActiveVpnTunnelStatusAsync(const GetActiveVpnTunnelStatusRequestT& request, const GetActiveVpnTunnelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetActiveVpnTunnelStatus, request, handler, context);
+        }
+
+        /**
          * <p>Gets the current state of the Allowed AMIs setting and the list of Allowed
          * AMIs criteria at the account level in the specified Region.</p>  <p>The
          * Allowed AMIs feature does not restrict the AMIs owned by your account.
