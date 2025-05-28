@@ -40,6 +40,11 @@ CanaryRunStatus& CanaryRunStatus::operator =(JsonView jsonValue)
     m_stateReasonCode = CanaryRunStateReasonCodeMapper::GetCanaryRunStateReasonCodeForName(jsonValue.GetString("StateReasonCode"));
     m_stateReasonCodeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TestResult"))
+  {
+    m_testResult = CanaryRunTestResultMapper::GetCanaryRunTestResultForName(jsonValue.GetString("TestResult"));
+    m_testResultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +66,11 @@ JsonValue CanaryRunStatus::Jsonize() const
   if(m_stateReasonCodeHasBeenSet)
   {
    payload.WithString("StateReasonCode", CanaryRunStateReasonCodeMapper::GetNameForCanaryRunStateReasonCode(m_stateReasonCode));
+  }
+
+  if(m_testResultHasBeenSet)
+  {
+   payload.WithString("TestResult", CanaryRunTestResultMapper::GetNameForCanaryRunTestResult(m_testResult));
   }
 
   return payload;

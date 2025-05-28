@@ -64,6 +64,8 @@
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstancesConfiguration.h>
 #include <aws/cost-optimization-hub/model/Order.h>
 #include <aws/cost-optimization-hub/model/OrderBy.h>
+#include <aws/cost-optimization-hub/model/PaymentOption.h>
+#include <aws/cost-optimization-hub/model/PreferredCommitment.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstance.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstanceStorage.h>
@@ -91,6 +93,7 @@
 #include <aws/cost-optimization-hub/model/SummaryMetrics.h>
 #include <aws/cost-optimization-hub/model/SummaryMetricsResult.h>
 #include <aws/cost-optimization-hub/model/Tag.h>
+#include <aws/cost-optimization-hub/model/Term.h>
 #include <aws/cost-optimization-hub/model/UpdateEnrollmentStatusRequest.h>
 #include <aws/cost-optimization-hub/model/UpdateEnrollmentStatusResult.h>
 #include <aws/cost-optimization-hub/model/UpdatePreferencesRequest.h>

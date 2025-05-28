@@ -14,6 +14,7 @@
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/AZSyncState.h>
 #include <aws/network-firewall/model/ActionDefinition.h>
 #include <aws/network-firewall/model/Address.h>
 #include <aws/network-firewall/model/AnalysisReport.h>
@@ -25,6 +26,7 @@
 #include <aws/network-firewall/model/AssociateSubnetsResult.h>
 #include <aws/network-firewall/model/Attachment.h>
 #include <aws/network-firewall/model/AttachmentStatus.h>
+#include <aws/network-firewall/model/AvailabilityZoneMetadata.h>
 #include <aws/network-firewall/model/CIDRSummary.h>
 #include <aws/network-firewall/model/CapacityUsageSummary.h>
 #include <aws/network-firewall/model/CheckCertificateRevocationStatusActions.h>
@@ -37,6 +39,8 @@
 #include <aws/network-firewall/model/CreateRuleGroupResult.h>
 #include <aws/network-firewall/model/CreateTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/CreateTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
+#include <aws/network-firewall/model/CreateVpcEndpointAssociationResult.h>
 #include <aws/network-firewall/model/CustomAction.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyResult.h>
@@ -48,6 +52,10 @@
 #include <aws/network-firewall/model/DeleteRuleGroupResult.h>
 #include <aws/network-firewall/model/DeleteTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/DeleteTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/DeleteVpcEndpointAssociationRequest.h>
+#include <aws/network-firewall/model/DeleteVpcEndpointAssociationResult.h>
+#include <aws/network-firewall/model/DescribeFirewallMetadataRequest.h>
+#include <aws/network-firewall/model/DescribeFirewallMetadataResult.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyResult.h>
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
@@ -64,6 +72,8 @@
 #include <aws/network-firewall/model/DescribeRuleGroupResult.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/DescribeVpcEndpointAssociationRequest.h>
+#include <aws/network-firewall/model/DescribeVpcEndpointAssociationResult.h>
 #include <aws/network-firewall/model/Dimension.h>
 #include <aws/network-firewall/model/DisassociateSubnetsRequest.h>
 #include <aws/network-firewall/model/DisassociateSubnetsResult.h>
@@ -110,6 +120,8 @@
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsResult.h>
 #include <aws/network-firewall/model/ListTagsForResourceRequest.h>
 #include <aws/network-firewall/model/ListTagsForResourceResult.h>
+#include <aws/network-firewall/model/ListVpcEndpointAssociationsRequest.h>
+#include <aws/network-firewall/model/ListVpcEndpointAssociationsResult.h>
 #include <aws/network-firewall/model/LogDestinationConfig.h>
 #include <aws/network-firewall/model/LogDestinationType.h>
 #include <aws/network-firewall/model/LogType.h>
@@ -196,6 +208,9 @@
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/VpcEndpointAssociation.h>
+#include <aws/network-firewall/model/VpcEndpointAssociationMetadata.h>
+#include <aws/network-firewall/model/VpcEndpointAssociationStatus.h>
 
 using NetworkFirewallIncludeTest = ::testing::Test;
 

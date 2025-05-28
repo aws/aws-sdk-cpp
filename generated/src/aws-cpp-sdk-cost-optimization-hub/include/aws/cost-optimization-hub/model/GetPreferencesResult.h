@@ -7,6 +7,7 @@
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/model/SavingsEstimationMode.h>
 #include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>
+#include <aws/cost-optimization-hub/model/PreferredCommitment.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -54,6 +55,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Retrieves the current preferences for how Reserved Instances and Savings
+     * Plans cost-saving opportunities are prioritized in terms of payment option and
+     * term length.</p>
+     */
+    inline const PreferredCommitment& GetPreferredCommitment() const { return m_preferredCommitment; }
+    template<typename PreferredCommitmentT = PreferredCommitment>
+    void SetPreferredCommitment(PreferredCommitmentT&& value) { m_preferredCommitmentHasBeenSet = true; m_preferredCommitment = std::forward<PreferredCommitmentT>(value); }
+    template<typename PreferredCommitmentT = PreferredCommitment>
+    GetPreferencesResult& WithPreferredCommitment(PreferredCommitmentT&& value) { SetPreferredCommitment(std::forward<PreferredCommitmentT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -68,6 +82,9 @@ namespace Model
 
     MemberAccountDiscountVisibility m_memberAccountDiscountVisibility{MemberAccountDiscountVisibility::NOT_SET};
     bool m_memberAccountDiscountVisibilityHasBeenSet = false;
+
+    PreferredCommitment m_preferredCommitment;
+    bool m_preferredCommitmentHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

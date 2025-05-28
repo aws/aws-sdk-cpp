@@ -52,7 +52,7 @@ namespace Model
      * must have the <code>aws-exec-read</code> canned access control list (ACL) to
      * ensure that it can be accessed by Amazon EC2. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
-     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * ACL</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetImageLocation() const { return m_imageLocation; }
     inline bool ImageLocationHasBeenSet() const { return m_imageLocationHasBeenSet; }
@@ -70,9 +70,10 @@ namespace Model
      * on the Amazon Web Services Marketplace. You must first register as a seller on
      * the Amazon Web Services Marketplace. For more information, see <a
      * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
-     * started as a seller</a> and <a
+     * started as an Amazon Web Services Marketplace seller</a> and <a
      * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
-     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
+     * products in Amazon Web Services Marketplace</a> in the <i>Amazon Web Services
+     * Marketplace Seller Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBillingProducts() const { return m_billingProducts; }
     inline bool BillingProductsHasBeenSet() const { return m_billingProductsHasBeenSet; }
@@ -90,8 +91,9 @@ namespace Model
      * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
      * system contained in the AMI must be configured to support the specified boot
      * mode.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Instance
+     * launch behavior with Amazon EC2 boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline BootModeValues GetBootMode() const { return m_bootMode; }
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
@@ -121,7 +123,8 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * Secure Boot for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetUefiData() const { return m_uefiData; }
     inline bool UefiDataHasBeenSet() const { return m_uefiDataHasBeenSet; }
@@ -264,8 +267,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Create
+     * AMIs from local snapshots</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }

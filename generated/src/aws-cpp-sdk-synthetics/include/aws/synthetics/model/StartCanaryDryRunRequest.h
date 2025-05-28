@@ -112,9 +112,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of days to retain data on the failed runs for this canary. The
-     * valid range is 1 to 455 days.</p> <p>This setting affects the range of
-     * information returned by <a
+     * <p>The number of days to retain data about successful runs of this canary. If
+     * you omit this field, the default of 31 days is used. The valid range is 1 to 455
+     * days.</p> <p>This setting affects the range of information returned by <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
      * as well as the range of information displayed in the Synthetics console. </p>
      */
@@ -126,9 +126,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of days to retain data on the failed runs for this canary. The
-     * valid range is 1 to 455 days.</p> <p>This setting affects the range of
-     * information returned by <a
+     * <p>The number of days to retain data about failed runs of this canary. If you
+     * omit this field, the default of 31 days is used. The valid range is 1 to 455
+     * days.</p> <p>This setting affects the range of information returned by <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>,
      * as well as the range of information displayed in the Synthetics console. </p>
      */
@@ -175,11 +175,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether to also delete the Lambda functions and layers used by this
-     * canary when the canary is deleted. If the value of this parameter is
-     * <code>AUTOMATIC</code>, it means that the Lambda functions and layers will be
-     * deleted when the canary is deleted.</p> <p>If the value of this parameter is
-     * <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of
-     * the <a
+     * canary when the canary is deleted. If you omit this parameter, the default of
+     * <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers
+     * will be deleted when the canary is deleted.</p> <p>If the value of this
+     * parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code>
+     * parameter of the <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a>
      * operation determines whether the Lambda functions and layers will be
      * deleted.</p>

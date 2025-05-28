@@ -25,9 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>The configuration and status for a single subnet that you've specified for
-   * use by the Network Firewall firewall. This is part of the
-   * <a>FirewallStatus</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>The definition and status of the firewall endpoint for a single subnet. In
+   * each configured subnet, Network Firewall instantiates a firewall endpoint to
+   * handle network traffic. </p> <p>This data type is used for any firewall endpoint
+   * type: </p> <ul> <li> <p>For <code>Firewall.SubnetMappings</code>, this
+   * <code>Attachment</code> is part of the <code>FirewallStatus</code> sync states
+   * information. You define firewall subnets using <code>CreateFirewall</code> and
+   * <code>AssociateSubnets</code>. </p> </li> <li> <p>For
+   * <code>VpcEndpointAssociation</code>, this <code>Attachment</code> is part of the
+   * <code>VpcEndpointAssociationStatus</code> sync states information. You define
+   * these subnets using <code>CreateVpcEndpointAssociation</code>. </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Attachment">AWS
    * API Reference</a></p>
    */
@@ -70,13 +78,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the firewall endpoint in the subnet. This value
-     * reflects both the instantiation of the endpoint in the VPC subnet and the sync
-     * states that are reported in the <code>Config</code> settings. When this value is
-     * <code>READY</code>, the endpoint is available and configured properly to handle
-     * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code> or
-     * <code>DELETING</code>.</p>
+     * <p>The current status of the firewall endpoint instantiation in the subnet. </p>
+     * <p>When this value is <code>READY</code>, the endpoint is available to handle
+     * network traffic. Otherwise, this value reflects its state, for example
+     * <code>CREATING</code> or <code>DELETING</code>.</p>
      */
     inline AttachmentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

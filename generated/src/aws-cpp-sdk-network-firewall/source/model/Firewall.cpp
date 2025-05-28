@@ -93,6 +93,11 @@ Firewall& Firewall::operator =(JsonView jsonValue)
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NumberOfAssociations"))
+  {
+    m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
+    m_numberOfAssociationsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("EnabledAnalysisTypes"))
   {
     Aws::Utils::Array<JsonView> enabledAnalysisTypesJsonList = jsonValue.GetArray("EnabledAnalysisTypes");
@@ -188,6 +193,12 @@ JsonValue Firewall::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_numberOfAssociationsHasBeenSet)
+  {
+   payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
 
   }
 

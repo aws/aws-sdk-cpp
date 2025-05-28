@@ -25,8 +25,9 @@ namespace Model
 
   /**
    * <p>The MemoryDB reserved instances configuration used for recommendations.</p>
-   *  <p>MemoryDB reserved instances are referred to as "MemoryDB reserved
-   * nodes" in customer-facing documentation.</p> <p><h3>See Also:</h3>   <a
+   *  <p>While the API reference uses "MemoryDB reserved instances", the user
+   * guide and other documentation refer to them as "MemoryDB reserved nodes", as the
+   * terms are used interchangeably.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/MemoryDbReservedInstancesConfiguration">AWS
    * API Reference</a></p>
    */

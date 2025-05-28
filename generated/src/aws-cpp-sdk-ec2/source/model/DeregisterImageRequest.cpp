@@ -19,6 +19,11 @@ Aws::String DeregisterImageRequest::SerializePayload() const
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
+  if(m_deleteAssociatedSnapshotsHasBeenSet)
+  {
+    ss << "DeleteAssociatedSnapshots=" << std::boolalpha << m_deleteAssociatedSnapshots << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

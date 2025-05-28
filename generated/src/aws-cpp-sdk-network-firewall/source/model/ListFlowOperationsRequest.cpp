@@ -28,6 +28,18 @@ Aws::String ListFlowOperationsRequest::SerializePayload() const
 
   }
 
+  if(m_vpcEndpointAssociationArnHasBeenSet)
+  {
+   payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
+
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
+
   if(m_flowOperationTypeHasBeenSet)
   {
    payload.WithString("FlowOperationType", FlowOperationTypeMapper::GetNameForFlowOperationType(m_flowOperationType));

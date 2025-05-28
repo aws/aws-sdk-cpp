@@ -63,6 +63,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+     */
+    inline const Aws::String& GetVpcEndpointAssociationArn() const { return m_vpcEndpointAssociationArn; }
+    inline bool VpcEndpointAssociationArnHasBeenSet() const { return m_vpcEndpointAssociationArnHasBeenSet; }
+    template<typename VpcEndpointAssociationArnT = Aws::String>
+    void SetVpcEndpointAssociationArn(VpcEndpointAssociationArnT&& value) { m_vpcEndpointAssociationArnHasBeenSet = true; m_vpcEndpointAssociationArn = std::forward<VpcEndpointAssociationArnT>(value); }
+    template<typename VpcEndpointAssociationArnT = Aws::String>
+    ListFlowOperationsRequest& WithVpcEndpointAssociationArn(VpcEndpointAssociationArnT&& value) { SetVpcEndpointAssociationArn(std::forward<VpcEndpointAssociationArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+     */
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
+    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    ListFlowOperationsRequest& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional string that defines whether any or all operation types are
      * returned.</p>
      */
@@ -107,6 +131,12 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
+
+    Aws::String m_vpcEndpointAssociationArn;
+    bool m_vpcEndpointAssociationArnHasBeenSet = false;
+
+    Aws::String m_vpcEndpointId;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     FlowOperationType m_flowOperationType{FlowOperationType::NOT_SET};
     bool m_flowOperationTypeHasBeenSet = false;

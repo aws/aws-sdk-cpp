@@ -51,7 +51,11 @@ namespace Model
     /**
      * <p>Detailed information about the current status of a <a>Firewall</a>. You can
      * retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing
-     * the firewall name and ARN.</p>
+     * the firewall name and ARN.</p> <p>The firewall status indicates a combined
+     * status. It indicates whether all subnets are up-to-date with the latest firewall
+     * configurations, which is based on the sync states config values, and also
+     * whether all subnets have their endpoints fully enabled, based on their sync
+     * states attachment values. </p>
      */
     inline const FirewallStatus& GetFirewallStatus() const { return m_firewallStatus; }
     template<typename FirewallStatusT = FirewallStatus>

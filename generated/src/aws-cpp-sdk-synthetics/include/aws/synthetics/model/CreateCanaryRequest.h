@@ -62,8 +62,8 @@ namespace Model
     ///@{
     /**
      * <p>A structure that includes the entry point from which the canary should start
-     * running your script. If the script is stored in an S3 bucket, the bucket name,
-     * key, and version are also included. </p>
+     * running your script. If the script is stored in an Amazon S3 bucket, the bucket
+     * name, key, and version are also included. </p>
      */
     inline const CanaryCodeInput& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
      * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
-     * The name of the S3 bucket can't include a period (.).</p>
+     * The name of the Amazon S3 bucket can't include a period (.).</p>
      */
     inline const Aws::String& GetArtifactS3Location() const { return m_artifactS3Location; }
     inline bool ArtifactS3LocationHasBeenSet() const { return m_artifactS3LocationHasBeenSet; }

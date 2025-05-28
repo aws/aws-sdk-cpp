@@ -46,6 +46,18 @@ Aws::String ListFlowOperationResultsRequest::SerializePayload() const
 
   }
 
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
+
+  if(m_vpcEndpointAssociationArnHasBeenSet)
+  {
+   payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

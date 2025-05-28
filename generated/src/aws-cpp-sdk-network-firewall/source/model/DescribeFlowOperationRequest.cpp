@@ -28,6 +28,18 @@ Aws::String DescribeFlowOperationRequest::SerializePayload() const
 
   }
 
+  if(m_vpcEndpointAssociationArnHasBeenSet)
+  {
+   payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
+
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
+
   if(m_flowOperationIdHasBeenSet)
   {
    payload.WithString("FlowOperationId", m_flowOperationId);

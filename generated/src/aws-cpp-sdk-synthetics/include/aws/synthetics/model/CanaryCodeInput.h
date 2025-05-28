@@ -27,12 +27,12 @@ namespace Model
   /**
    * <p>Use this structure to input your script code for the canary. This structure
    * contains the Lambda handler with the location where the canary should start
-   * running the script. If the script is stored in an S3 bucket, the bucket name,
-   * key, and version are also included. If the script was passed into the canary
-   * directly, the script code is contained in the value of <code>Zipfile</code>.
-   * </p> <p>If you are uploading your canary scripts with an Amazon S3 bucket, your
-   * zip file should include your script in a certain folder structure.</p> <ul> <li>
-   * <p>For Node.js canaries, the folder structure must be
+   * running the script. If the script is stored in an Amazon S3 bucket, the bucket
+   * name, key, and version are also included. If the script was passed into the
+   * canary directly, the script code is contained in the value of
+   * <code>Zipfile</code>. </p> <p>If you are uploading your canary scripts with an
+   * Amazon S3 bucket, your zip file should include your script in a certain folder
+   * structure.</p> <ul> <li> <p>For Node.js canaries, the folder structure must be
    * <code>nodejs/node_modules/<i>myCanaryFilename.js</i> </code> For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_package">Packaging
@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If your canary script is located in S3, specify the bucket name here. Do not
-     * include <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in Amazon S3, specify the bucket name here.
+     * Do not include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The S3 key of your script. For more information, see <a
+     * <p>The Amazon S3 key of your script. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working
      * with Amazon S3 Objects</a>.</p>
      */
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The S3 version ID of your script.</p>
+     * <p>The Amazon S3 version ID of your script.</p>
      */
     inline const Aws::String& GetS3Version() const { return m_s3Version; }
     inline bool S3VersionHasBeenSet() const { return m_s3VersionHasBeenSet; }
@@ -96,10 +96,10 @@ namespace Model
     ///@{
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It must be smaller than 225 Kb.</p>
-     * <p>For large canary scripts, we recommend that you use an S3 location instead of
-     * inputting it directly with this parameter.</p>
+     * to an Amazon S3 location, the value of this parameter is the base64-encoded
+     * contents of the .zip file that contains the script. It must be smaller than 225
+     * Kb.</p> <p>For large canary scripts, we recommend that you use an Amazon S3
+     * location instead of inputting it directly with this parameter.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const { return m_zipFile; }
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }

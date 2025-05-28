@@ -47,7 +47,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+     * idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 API
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -210,8 +211,8 @@ namespace Model
      * automatically adjusted for each snapshot based on its size to meet the timing
      * target.</p> <p>If you do not specify a value, the AMI copy operation is
      * completed on a best-effort basis.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
-     * Time-based copies</a>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based
+     * copies for Amazon EBS snapshots and EBS-backed AMIs</a>.</p>
      */
     inline long long GetSnapshotCopyCompletionDurationMinutes() const { return m_snapshotCopyCompletionDurationMinutes; }
     inline bool SnapshotCopyCompletionDurationMinutesHasBeenSet() const { return m_snapshotCopyCompletionDurationMinutesHasBeenSet; }
