@@ -35,6 +35,11 @@ GetPreferencesResult& GetPreferencesResult::operator =(const Aws::AmazonWebServi
     m_memberAccountDiscountVisibility = MemberAccountDiscountVisibilityMapper::GetMemberAccountDiscountVisibilityForName(jsonValue.GetString("memberAccountDiscountVisibility"));
     m_memberAccountDiscountVisibilityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("preferredCommitment"))
+  {
+    m_preferredCommitment = jsonValue.GetObject("preferredCommitment");
+    m_preferredCommitmentHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

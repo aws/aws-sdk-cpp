@@ -30,6 +30,7 @@
 #include <aws/synthetics/model/CanaryRunState.h>
 #include <aws/synthetics/model/CanaryRunStateReasonCode.h>
 #include <aws/synthetics/model/CanaryRunStatus.h>
+#include <aws/synthetics/model/CanaryRunTestResult.h>
 #include <aws/synthetics/model/CanaryRunTimeline.h>
 #include <aws/synthetics/model/CanaryScheduleInput.h>
 #include <aws/synthetics/model/CanaryScheduleOutput.h>

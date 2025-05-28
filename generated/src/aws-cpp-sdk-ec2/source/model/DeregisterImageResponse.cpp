@@ -34,6 +34,25 @@ DeregisterImageResponse& DeregisterImageResponse::operator =(const Aws::AmazonWe
 
   if(!resultNode.IsNull())
   {
+    XmlNode returnNode = resultNode.FirstChild("return");
+    if(!returnNode.IsNull())
+    {
+      m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
+    }
+    XmlNode deleteSnapshotResultsNode = resultNode.FirstChild("deleteSnapshotResultSet");
+    if(!deleteSnapshotResultsNode.IsNull())
+    {
+      XmlNode deleteSnapshotResultsMember = deleteSnapshotResultsNode.FirstChild("item");
+      m_deleteSnapshotResultsHasBeenSet = !deleteSnapshotResultsMember.IsNull();
+      while(!deleteSnapshotResultsMember.IsNull())
+      {
+        m_deleteSnapshotResults.push_back(deleteSnapshotResultsMember);
+        deleteSnapshotResultsMember = deleteSnapshotResultsMember.NextNode("item");
+      }
+
+      m_deleteSnapshotResultsHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

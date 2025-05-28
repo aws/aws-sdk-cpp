@@ -25,11 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The ID for a subnet that you want to associate with the firewall. This is
-   * used with <a>CreateFirewall</a> and <a>AssociateSubnets</a>. Network Firewall
-   * creates an instance of the associated firewall in each subnet that you specify,
-   * to filter traffic in the subnet's Availability Zone.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The ID for a subnet that's used in an association with a firewall. This is
+   * used in <a>CreateFirewall</a>, <a>AssociateSubnets</a>, and
+   * <a>CreateVpcEndpointAssociation</a>. Network Firewall creates an instance of the
+   * associated firewall in each subnet that you specify, to filter traffic in the
+   * subnet's Availability Zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/SubnetMapping">AWS
    * API Reference</a></p>
    */

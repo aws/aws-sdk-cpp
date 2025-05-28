@@ -120,7 +120,8 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * Secure Boot for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const AttributeValue& GetUefiData() const { return m_uefiData; }
     template<typename UefiDataT = AttributeValue>

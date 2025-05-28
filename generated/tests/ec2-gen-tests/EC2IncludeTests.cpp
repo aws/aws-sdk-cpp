@@ -623,6 +623,7 @@
 #include <aws/ec2/model/DeleteSecurityGroupRequest.h>
 #include <aws/ec2/model/DeleteSecurityGroupResponse.h>
 #include <aws/ec2/model/DeleteSnapshotRequest.h>
+#include <aws/ec2/model/DeleteSnapshotReturnCode.h>
 #include <aws/ec2/model/DeleteSpotDatafeedSubscriptionRequest.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationRequest.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
@@ -2245,6 +2246,7 @@
 #include <aws/ec2/model/SnapshotInfo.h>
 #include <aws/ec2/model/SnapshotLocationEnum.h>
 #include <aws/ec2/model/SnapshotRecycleBinInfo.h>
+#include <aws/ec2/model/SnapshotReturnCodes.h>
 #include <aws/ec2/model/SnapshotState.h>
 #include <aws/ec2/model/SnapshotTaskDetail.h>
 #include <aws/ec2/model/SnapshotTierStatus.h>

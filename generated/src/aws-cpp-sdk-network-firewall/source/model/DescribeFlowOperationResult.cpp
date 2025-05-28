@@ -35,6 +35,16 @@ DescribeFlowOperationResult& DescribeFlowOperationResult::operator =(const Aws::
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("VpcEndpointAssociationArn"))
+  {
+    m_vpcEndpointAssociationArn = jsonValue.GetString("VpcEndpointAssociationArn");
+    m_vpcEndpointAssociationArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("VpcEndpointId"))
+  {
+    m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
+    m_vpcEndpointIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("FlowOperationId"))
   {
     m_flowOperationId = jsonValue.GetString("FlowOperationId");

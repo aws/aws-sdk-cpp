@@ -28,14 +28,15 @@ namespace Model
 
   /**
    * <p>The status of the firewall endpoint and firewall policy configuration for a
-   * single VPC subnet. </p> <p>For each VPC subnet that you associate with a
-   * firewall, Network Firewall does the following: </p> <ul> <li> <p>Instantiates a
-   * firewall endpoint in the subnet, ready to take traffic.</p> </li> <li>
-   * <p>Configures the endpoint with the current firewall policy settings, to provide
-   * the filtering behavior for the endpoint.</p> </li> </ul> <p>When you update a
-   * firewall, for example to add a subnet association or change a rule group in the
-   * firewall policy, the affected sync states reflect out-of-sync or not ready
-   * status until the changes are complete. </p><p><h3>See Also:</h3>   <a
+   * single VPC subnet. This is part of the <a>FirewallStatus</a>. </p> <p>For each
+   * VPC subnet that you associate with a firewall, Network Firewall does the
+   * following: </p> <ul> <li> <p>Instantiates a firewall endpoint in the subnet,
+   * ready to take traffic.</p> </li> <li> <p>Configures the endpoint with the
+   * current firewall policy settings, to provide the filtering behavior for the
+   * endpoint.</p> </li> </ul> <p>When you update a firewall, for example to add a
+   * subnet association or change a rule group in the firewall policy, the affected
+   * sync states reflect out-of-sync or not ready status until the changes are
+   * complete. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/SyncState">AWS
    * API Reference</a></p>
    */
@@ -50,10 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
+     * <p>The configuration and status for a single firewall subnet. For each
+     * configured subnet, Network Firewall creates the attachment by instantiating the
+     * firewall endpoint in the subnet so that it's ready to take traffic. </p>
      */
     inline const Attachment& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
@@ -69,8 +69,7 @@ namespace Model
      * Network Firewall provides each endpoint with the rules that are configured in
      * the firewall policy. Each time you add a subnet or modify the associated
      * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
+     * can properly filter network traffic. </p>
      */
     inline const Aws::Map<Aws::String, PerObjectStatus>& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }

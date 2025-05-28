@@ -66,6 +66,20 @@ namespace Model
     inline void SetActiveTracing(bool value) { m_activeTracingHasBeenSet = true; m_activeTracing = value; }
     inline CanaryRunConfigOutput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary
+     * run during execution. This temporary storage is used for storing canary run
+     * artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and
+     * any canary browser operations. This temporary storage is cleared after the run
+     * is completed. Default storage value is 1024 MB.</p>
+     */
+    inline int GetEphemeralStorage() const { return m_ephemeralStorage; }
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+    inline void SetEphemeralStorage(int value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+    inline CanaryRunConfigOutput& WithEphemeralStorage(int value) { SetEphemeralStorage(value); return *this;}
+    ///@}
   private:
 
     int m_timeoutInSeconds{0};
@@ -76,6 +90,9 @@ namespace Model
 
     bool m_activeTracing{false};
     bool m_activeTracingHasBeenSet = false;
+
+    int m_ephemeralStorage{0};
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model
