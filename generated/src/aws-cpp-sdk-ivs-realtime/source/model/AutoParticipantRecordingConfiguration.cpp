@@ -54,6 +54,11 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
     m_hlsConfiguration = jsonValue.GetObject("hlsConfiguration");
     m_hlsConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("recordParticipantReplicas"))
+  {
+    m_recordParticipantReplicas = jsonValue.GetBool("recordParticipantReplicas");
+    m_recordParticipantReplicasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +98,12 @@ JsonValue AutoParticipantRecordingConfiguration::Jsonize() const
   if(m_hlsConfigurationHasBeenSet)
   {
    payload.WithObject("hlsConfiguration", m_hlsConfiguration.Jsonize());
+
+  }
+
+  if(m_recordParticipantReplicasHasBeenSet)
+  {
+   payload.WithBool("recordParticipantReplicas", m_recordParticipantReplicas);
 
   }
 

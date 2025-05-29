@@ -60,8 +60,8 @@ namespace Model
      * instance type that is supported in your requested Region and Availability Zones.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>You
-     * can specify up to 40 instance types per Auto Scaling group.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can specify up to 40
+     * instance types per Auto Scaling group.</p>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

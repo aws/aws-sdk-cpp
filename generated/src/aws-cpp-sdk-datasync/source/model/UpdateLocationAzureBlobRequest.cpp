@@ -60,6 +60,18 @@ Aws::String UpdateLocationAzureBlobRequest::SerializePayload() const
 
   }
 
+  if(m_cmkSecretConfigHasBeenSet)
+  {
+   payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+
+  }
+
+  if(m_customSecretConfigHasBeenSet)
+  {
+   payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

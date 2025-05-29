@@ -123,7 +123,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the maximum number of parts to return.</p>
+     * <p>Sets the maximum number of parts to return. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading
+     * and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon
+     * Simple Storage Service user guide</i>.</p>
      */
     inline int GetMaxParts() const { return m_maxParts; }
     inline bool MaxPartsHasBeenSet() const { return m_maxPartsHasBeenSet; }
@@ -134,7 +137,10 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the part after which listing should begin. Only parts with higher
-     * part numbers will be listed.</p>
+     * part numbers will be listed. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading
+     * and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon
+     * Simple Storage Service user guide</i>.</p>
      */
     inline int GetPartNumberMarker() const { return m_partNumberMarker; }
     inline bool PartNumberMarkerHasBeenSet() const { return m_partNumberMarkerHasBeenSet; }

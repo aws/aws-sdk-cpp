@@ -57,6 +57,7 @@
 #include <aws/mwaa/model/UpdateNetworkConfigurationInput.h>
 #include <aws/mwaa/model/UpdateStatus.h>
 #include <aws/mwaa/model/WebserverAccessMode.h>
+#include <aws/mwaa/model/WorkerReplacementStrategy.h>
 
 using MWAAIncludeTest = ::testing::Test;
 

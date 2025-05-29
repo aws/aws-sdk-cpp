@@ -3247,11 +3247,11 @@ namespace Aws
         }
 
         /**
-         * <p>Retrieves all the metadata from an object without returning the object
+         * <p>Retrieves all of the metadata from an object without returning the object
          * itself. This operation is useful if you're interested only in an object's
          * metadata. </p> <p> <code>GetObjectAttributes</code> combines the functionality
          * of <code>HeadObject</code> and <code>ListParts</code>. All of the data returned
-         * with each of those individual calls can be returned with a single call to
+         * with both of those individual calls can be returned with a single call to
          * <code>GetObjectAttributes</code>.</p>  <p> <b>Directory buckets</b> - For
          * directory buckets, you must make requests for this API operation to the Zonal
          * endpoint. These endpoints support virtual-hosted-style requests in the format
@@ -3266,23 +3266,25 @@ namespace Aws
          * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - To use <code>GetObjectAttributes</code>, you must have READ
-         * access to the object. The permissions that you need to use this operation depend
-         * on whether the bucket is versioned. If the bucket is versioned, you need both
-         * the <code>s3:GetObjectVersion</code> and
-         * <code>s3:GetObjectVersionAttributes</code> permissions for this operation. If
-         * the bucket is not versioned, you need the <code>s3:GetObject</code> and
-         * <code>s3:GetObjectAttributes</code> permissions. For more information, see <a
+         * access to the object.</p> <p>The other permissions that you need to use this
+         * operation depend on whether the bucket is versioned and if a version ID is
+         * passed in the <code>GetObjectAttributes</code> request. </p> <ul> <li> <p>If you
+         * pass a version ID in your request, you need both the
+         * <code>s3:GetObjectVersion</code> and <code>s3:GetObjectVersionAttributes</code>
+         * permissions.</p> </li> <li> <p>If you do not pass a version ID in your request,
+         * you need the <code>s3:GetObject</code> and <code>s3:GetObjectAttributes</code>
+         * permissions. </p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-         * Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>. If the object
-         * that you request does not exist, the error Amazon S3 returns depends on whether
-         * you also have the <code>s3:ListBucket</code> permission.</p> <ul> <li> <p>If you
-         * have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
-         * an HTTP status code <code>404 Not Found</code> ("no such key") error.</p> </li>
-         * <li> <p>If you don't have the <code>s3:ListBucket</code> permission, Amazon S3
-         * returns an HTTP status code <code>403 Forbidden</code> ("access denied")
-         * error.</p> </li> </ul> </li> <li> <p> <b>Directory bucket permissions</b> - To
-         * grant access to this API operation on a directory bucket, we recommend that you
-         * use the <a
+         * Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If the
+         * object that you request does not exist, the error Amazon S3 returns depends on
+         * whether you also have the <code>s3:ListBucket</code> permission.</p> <ul> <li>
+         * <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon
+         * S3 returns an HTTP status code <code>404 Not Found</code> ("no such key")
+         * error.</p> </li> <li> <p>If you don't have the <code>s3:ListBucket</code>
+         * permission, Amazon S3 returns an HTTP status code <code>403 Forbidden</code>
+         * ("access denied") error.</p> </li> </ul> </li> <li> <p> <b>Directory bucket
+         * permissions</b> - To grant access to this API operation on a directory bucket,
+         * we recommend that you use the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
          * <code>CreateSession</code> </a> API operation for session-based authorization.
          * Specifically, you grant the <code>s3express:CreateSession</code> permission to
@@ -3309,10 +3311,10 @@ namespace Aws
          * you include this header in a <code>GET</code> request for an object that uses
          * these types of keys, you’ll get an HTTP <code>400 Bad Request</code> error. It's
          * because the encryption method can't be changed when you retrieve the object.</p>
-         *  <p>If you encrypt an object by using server-side encryption with
-         * customer-provided encryption keys (SSE-C) when you store the object in Amazon
-         * S3, then when you retrieve the metadata from the object, you must use the
-         * following headers to provide the encryption key for the server to be able to
+         *  <p>If you encrypted an object when you stored the object in Amazon S3 by
+         * using server-side encryption with customer-provided encryption keys (SSE-C),
+         * then when you retrieve the metadata from the object, you must use the following
+         * headers. These headers provide the server with the encryption key required to
          * retrieve the object's metadata. The headers are: </p> <ul> <li> <p>
          * <code>x-amz-server-side-encryption-customer-algorithm</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-customer-key</code> </p> </li> <li> <p>

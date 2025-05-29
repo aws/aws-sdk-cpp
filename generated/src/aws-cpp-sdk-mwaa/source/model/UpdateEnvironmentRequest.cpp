@@ -22,21 +22,73 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
 
   }
 
+  if(m_airflowConfigurationOptionsHasBeenSet)
+  {
+   JsonValue airflowConfigurationOptionsJsonMap;
+   for(auto& airflowConfigurationOptionsItem : m_airflowConfigurationOptions)
+   {
+     airflowConfigurationOptionsJsonMap.WithString(airflowConfigurationOptionsItem.first, airflowConfigurationOptionsItem.second);
+   }
+   payload.WithObject("AirflowConfigurationOptions", std::move(airflowConfigurationOptionsJsonMap));
+
+  }
+
   if(m_airflowVersionHasBeenSet)
   {
    payload.WithString("AirflowVersion", m_airflowVersion);
 
   }
 
-  if(m_sourceBucketArnHasBeenSet)
-  {
-   payload.WithString("SourceBucketArn", m_sourceBucketArn);
-
-  }
-
   if(m_dagS3PathHasBeenSet)
   {
    payload.WithString("DagS3Path", m_dagS3Path);
+
+  }
+
+  if(m_environmentClassHasBeenSet)
+  {
+   payload.WithString("EnvironmentClass", m_environmentClass);
+
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LoggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
+  if(m_maxWorkersHasBeenSet)
+  {
+   payload.WithInteger("MaxWorkers", m_maxWorkers);
+
+  }
+
+  if(m_minWorkersHasBeenSet)
+  {
+   payload.WithInteger("MinWorkers", m_minWorkers);
+
+  }
+
+  if(m_maxWebserversHasBeenSet)
+  {
+   payload.WithInteger("MaxWebservers", m_maxWebservers);
+
+  }
+
+  if(m_minWebserversHasBeenSet)
+  {
+   payload.WithInteger("MinWebservers", m_minWebservers);
+
+  }
+
+  if(m_workerReplacementStrategyHasBeenSet)
+  {
+   payload.WithString("WorkerReplacementStrategy", WorkerReplacementStrategyMapper::GetNameForWorkerReplacementStrategy(m_workerReplacementStrategy));
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 
@@ -64,6 +116,18 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
 
   }
 
+  if(m_schedulersHasBeenSet)
+  {
+   payload.WithInteger("Schedulers", m_schedulers);
+
+  }
+
+  if(m_sourceBucketArnHasBeenSet)
+  {
+   payload.WithString("SourceBucketArn", m_sourceBucketArn);
+
+  }
+
   if(m_startupScriptS3PathHasBeenSet)
   {
    payload.WithString("StartupScriptS3Path", m_startupScriptS3Path);
@@ -76,73 +140,14 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
 
   }
 
-  if(m_airflowConfigurationOptionsHasBeenSet)
-  {
-   JsonValue airflowConfigurationOptionsJsonMap;
-   for(auto& airflowConfigurationOptionsItem : m_airflowConfigurationOptions)
-   {
-     airflowConfigurationOptionsJsonMap.WithString(airflowConfigurationOptionsItem.first, airflowConfigurationOptionsItem.second);
-   }
-   payload.WithObject("AirflowConfigurationOptions", std::move(airflowConfigurationOptionsJsonMap));
-
-  }
-
-  if(m_environmentClassHasBeenSet)
-  {
-   payload.WithString("EnvironmentClass", m_environmentClass);
-
-  }
-
-  if(m_maxWorkersHasBeenSet)
-  {
-   payload.WithInteger("MaxWorkers", m_maxWorkers);
-
-  }
-
-  if(m_networkConfigurationHasBeenSet)
-  {
-   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
-
-  }
-
-  if(m_loggingConfigurationHasBeenSet)
-  {
-   payload.WithObject("LoggingConfiguration", m_loggingConfiguration.Jsonize());
-
-  }
-
-  if(m_weeklyMaintenanceWindowStartHasBeenSet)
-  {
-   payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
-
-  }
-
   if(m_webserverAccessModeHasBeenSet)
   {
    payload.WithString("WebserverAccessMode", WebserverAccessModeMapper::GetNameForWebserverAccessMode(m_webserverAccessMode));
   }
 
-  if(m_minWorkersHasBeenSet)
+  if(m_weeklyMaintenanceWindowStartHasBeenSet)
   {
-   payload.WithInteger("MinWorkers", m_minWorkers);
-
-  }
-
-  if(m_schedulersHasBeenSet)
-  {
-   payload.WithInteger("Schedulers", m_schedulers);
-
-  }
-
-  if(m_minWebserversHasBeenSet)
-  {
-   payload.WithInteger("MinWebservers", m_minWebservers);
-
-  }
-
-  if(m_maxWebserversHasBeenSet)
-  {
-   payload.WithInteger("MaxWebservers", m_maxWebservers);
+   payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
 
   }
 

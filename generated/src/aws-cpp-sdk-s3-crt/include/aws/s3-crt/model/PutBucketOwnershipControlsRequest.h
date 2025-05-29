@@ -8,6 +8,7 @@
 #include <aws/s3-crt/S3CrtRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/OwnershipControls.h>
+#include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -42,6 +43,7 @@ namespace Model
     AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     AWS_S3CRT_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
+    AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
     inline bool RequestChecksumRequired() const override { return true; };
 
     /**
@@ -105,6 +107,25 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> Indicates the algorithm used to create the checksum for the object when you
+     * use the SDK. This header will not provide any additional functionality if you
+     * don't use the SDK. When you send this header, there must be a corresponding
+     * <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3
+     * fails the request with the HTTP status code <code>400 Bad Request</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter. </p>
+     */
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline PutBucketOwnershipControlsRequest& WithChecksumAlgorithm(ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
@@ -130,6 +151,9 @@ namespace Model
 
     OwnershipControls m_ownershipControls;
     bool m_ownershipControlsHasBeenSet = false;
+
+    ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

@@ -10,6 +10,8 @@
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/Array.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <utility>
 
 namespace Aws
@@ -127,8 +129,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
-     * connect with your object storage system.</p>
+     * <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents
+     * that can connect with your object storage system. If you are setting up an
+     * agentless cross-cloud transfer, you do not need to specify a value for this
+     * parameter.</p>  <p>You cannot add or remove agents from a storage location
+     * after you initially create it.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
@@ -167,6 +172,34 @@ namespace Model
     template<typename ServerCertificateT = Aws::Utils::ByteBuffer>
     UpdateLocationObjectStorageRequest& WithServerCertificate(ServerCertificateT&& value) { SetServerCertificate(std::forward<ServerCertificateT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a DataSync-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+    inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    void SetCmkSecretConfig(CmkSecretConfigT&& value) { m_cmkSecretConfigHasBeenSet = true; m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value); }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    UpdateLocationObjectStorageRequest& WithCmkSecretConfig(CmkSecretConfigT&& value) { SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a customer-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+    inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    void SetCustomSecretConfig(CustomSecretConfigT&& value) { m_customSecretConfigHasBeenSet = true; m_customSecretConfig = std::forward<CustomSecretConfigT>(value); }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    UpdateLocationObjectStorageRequest& WithCustomSecretConfig(CustomSecretConfigT&& value) { SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_locationArn;
@@ -195,6 +228,12 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_serverCertificate{};
     bool m_serverCertificateHasBeenSet = false;
+
+    CmkSecretConfig m_cmkSecretConfig;
+    bool m_cmkSecretConfigHasBeenSet = false;
+
+    CustomSecretConfig m_customSecretConfig;
+    bool m_customSecretConfigHasBeenSet = false;
   };
 
 } // namespace Model

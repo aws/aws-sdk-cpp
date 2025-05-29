@@ -148,14 +148,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
-     * creating from a backup. Valid values are <code>SSD</code> and
-     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
-     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
-     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
-     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
-     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
-     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * <p>Sets the storage type for the Windows, OpenZFS, or Lustre file system that
+     * you're creating from a backup. Valid values are <code>SSD</code>,
+     * <code>HDD</code>, and <code>INTELLIGENT_TIERING</code>.</p> <ul> <li> <p>Set to
+     * <code>SSD</code> to use solid state drive storage. SSD is supported on all
+     * Windows and OpenZFS deployment types.</p> </li> <li> <p>Set to <code>HDD</code>
+     * to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment
+     * types.</p> </li> <li> <p>Set to <code>INTELLIGENT_TIERING</code> to use fully
+     * elastic, intelligently-tiered storage. Intelligent-Tiering is only available for
+     * OpenZFS file systems with the Multi-AZ deployment type and for Lustre file
+     * systems with the Persistent_2 deployment type.</p> </li> </ul> <p> The default
+     * value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
      * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD

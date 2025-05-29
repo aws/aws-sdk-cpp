@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
+#include <aws/amplify/model/JobConfig.h>
 #include <aws/amplify/model/CacheConfig.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
@@ -322,6 +323,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes the configuration details that apply to the jobs for an Amplify
+     * app.</p>
+     */
+    inline const JobConfig& GetJobConfig() const { return m_jobConfig; }
+    inline bool JobConfigHasBeenSet() const { return m_jobConfigHasBeenSet; }
+    template<typename JobConfigT = JobConfig>
+    void SetJobConfig(JobConfigT&& value) { m_jobConfigHasBeenSet = true; m_jobConfig = std::forward<JobConfigT>(value); }
+    template<typename JobConfigT = JobConfig>
+    UpdateAppRequest& WithJobConfig(JobConfigT&& value) { SetJobConfig(std::forward<JobConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The cache configuration for the Amplify app.</p>
      */
     inline const CacheConfig& GetCacheConfig() const { return m_cacheConfig; }
@@ -392,6 +406,9 @@ namespace Model
 
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet = false;
+
+    JobConfig m_jobConfig;
+    bool m_jobConfigHasBeenSet = false;
 
     CacheConfig m_cacheConfig;
     bool m_cacheConfigHasBeenSet = false;

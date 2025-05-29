@@ -9,6 +9,8 @@
 #include <aws/ivs-realtime/model/ParticipantState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingState.h>
+#include <aws/ivs-realtime/model/ReplicationType.h>
+#include <aws/ivs-realtime/model/ReplicationState.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +113,52 @@ namespace Model
     inline void SetRecordingState(ParticipantRecordingState value) { m_recordingStateHasBeenSet = true; m_recordingState = value; }
     inline ParticipantSummary& WithRecordingState(ParticipantRecordingState value) { SetRecordingState(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates if the participant has been replicated to another stage or is a
+     * replica from another stage. Default: <code>NONE</code>. </p>
+     */
+    inline ReplicationType GetReplicationType() const { return m_replicationType; }
+    inline bool ReplicationTypeHasBeenSet() const { return m_replicationTypeHasBeenSet; }
+    inline void SetReplicationType(ReplicationType value) { m_replicationTypeHasBeenSet = true; m_replicationType = value; }
+    inline ParticipantSummary& WithReplicationType(ReplicationType value) { SetReplicationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The participant's replication state.</p>
+     */
+    inline ReplicationState GetReplicationState() const { return m_replicationState; }
+    inline bool ReplicationStateHasBeenSet() const { return m_replicationStateHasBeenSet; }
+    inline void SetReplicationState(ReplicationState value) { m_replicationStateHasBeenSet = true; m_replicationState = value; }
+    inline ParticipantSummary& WithReplicationState(ReplicationState value) { SetReplicationState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ARN of the stage from which this participant is replicated.</p>
+     */
+    inline const Aws::String& GetSourceStageArn() const { return m_sourceStageArn; }
+    inline bool SourceStageArnHasBeenSet() const { return m_sourceStageArnHasBeenSet; }
+    template<typename SourceStageArnT = Aws::String>
+    void SetSourceStageArn(SourceStageArnT&& value) { m_sourceStageArnHasBeenSet = true; m_sourceStageArn = std::forward<SourceStageArnT>(value); }
+    template<typename SourceStageArnT = Aws::String>
+    ParticipantSummary& WithSourceStageArn(SourceStageArnT&& value) { SetSourceStageArn(std::forward<SourceStageArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ID of the session within the source stage, if <code>replicationType</code> is
+     * <code>REPLICA</code>.</p>
+     */
+    inline const Aws::String& GetSourceSessionId() const { return m_sourceSessionId; }
+    inline bool SourceSessionIdHasBeenSet() const { return m_sourceSessionIdHasBeenSet; }
+    template<typename SourceSessionIdT = Aws::String>
+    void SetSourceSessionId(SourceSessionIdT&& value) { m_sourceSessionIdHasBeenSet = true; m_sourceSessionId = std::forward<SourceSessionIdT>(value); }
+    template<typename SourceSessionIdT = Aws::String>
+    ParticipantSummary& WithSourceSessionId(SourceSessionIdT&& value) { SetSourceSessionId(std::forward<SourceSessionIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_participantId;
@@ -130,6 +178,18 @@ namespace Model
 
     ParticipantRecordingState m_recordingState{ParticipantRecordingState::NOT_SET};
     bool m_recordingStateHasBeenSet = false;
+
+    ReplicationType m_replicationType{ReplicationType::NOT_SET};
+    bool m_replicationTypeHasBeenSet = false;
+
+    ReplicationState m_replicationState{ReplicationState::NOT_SET};
+    bool m_replicationStateHasBeenSet = false;
+
+    Aws::String m_sourceStageArn;
+    bool m_sourceStageArnHasBeenSet = false;
+
+    Aws::String m_sourceSessionId;
+    bool m_sourceSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -181,6 +181,11 @@ App& App::operator =(JsonView jsonValue)
     m_wafConfiguration = jsonValue.GetObject("wafConfiguration");
     m_wafConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("jobConfig"))
+  {
+    m_jobConfig = jsonValue.GetObject("jobConfig");
+    m_jobConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -368,6 +373,12 @@ JsonValue App::Jsonize() const
   if(m_wafConfigurationHasBeenSet)
   {
    payload.WithObject("wafConfiguration", m_wafConfiguration.Jsonize());
+
+  }
+
+  if(m_jobConfigHasBeenSet)
+  {
+   payload.WithObject("jobConfig", m_jobConfig.Jsonize());
 
   }
 

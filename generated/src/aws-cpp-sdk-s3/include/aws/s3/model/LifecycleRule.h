@@ -79,10 +79,11 @@ namespace Model
     /**
      * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
      * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
-     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
-     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
-     * element.</p>  <p> <code>Tag</code> filters are not supported for directory
-     * buckets.</p> 
+     * <code>Tag</code>, <code>ObjectSizeGreaterThan</code>,
+     * <code>ObjectSizeLessThan</code>, or <code>And</code> specified.
+     * <code>Filter</code> is required if the <code>LifecycleRule</code> does not
+     * contain a <code>Prefix</code> element.</p>  <p> <code>Tag</code> filters
+     * are not supported for directory buckets.</p> 
      */
     inline const LifecycleRuleFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

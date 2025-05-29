@@ -105,6 +105,16 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ThroughputCapacity"))
+  {
+    m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
+    m_throughputCapacityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DataReadCacheConfiguration"))
+  {
+    m_dataReadCacheConfiguration = jsonValue.GetObject("DataReadCacheConfiguration");
+    m_dataReadCacheConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +211,18 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_metadataConfigurationHasBeenSet)
   {
    payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
+
+  }
+
+  if(m_throughputCapacityHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
+
+  }
+
+  if(m_dataReadCacheConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataReadCacheConfiguration", m_dataReadCacheConfiguration.Jsonize());
 
   }
 

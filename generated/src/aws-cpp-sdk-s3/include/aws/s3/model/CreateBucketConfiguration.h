@@ -63,12 +63,12 @@ namespace Model
     /**
      * <p>Specifies the location where the bucket will be created.</p> <p> <b>Directory
      * buckets </b> - The location type is Availability Zone or Local Zone. To use the
-     * Local Zone location type, your account must be enabled for Dedicated Local
-     * Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the
-     * error code <code>AccessDenied</code>. To learn more, see <a
+     * Local Zone location type, your account must be enabled for Local Zones.
+     * Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code
+     * <code>AccessDenied</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable
-     * accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>. </p>
-     *  <p>This functionality is only supported by directory buckets.</p> 
+     * accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>. </p> 
+     * <p>This functionality is only supported by directory buckets.</p> 
      */
     inline const LocationInfo& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
