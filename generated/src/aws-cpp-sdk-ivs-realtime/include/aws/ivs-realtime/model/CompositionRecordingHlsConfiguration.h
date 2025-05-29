@@ -39,8 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>Defines the target duration for recorded segments generated when using
-     * composite recording. Segments may have durations shorter than the specified
-     * value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+     * composite recording. Default: 2.</p>
      */
     inline int GetTargetSegmentDurationSeconds() const { return m_targetSegmentDurationSeconds; }
     inline bool TargetSegmentDurationSecondsHasBeenSet() const { return m_targetSegmentDurationSecondsHasBeenSet; }

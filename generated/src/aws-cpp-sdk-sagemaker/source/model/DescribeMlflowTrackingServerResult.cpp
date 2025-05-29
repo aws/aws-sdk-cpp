@@ -60,6 +60,11 @@ DescribeMlflowTrackingServerResult& DescribeMlflowTrackingServerResult::operator
     m_trackingServerStatus = TrackingServerStatusMapper::GetTrackingServerStatusForName(jsonValue.GetString("TrackingServerStatus"));
     m_trackingServerStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TrackingServerMaintenanceStatus"))
+  {
+    m_trackingServerMaintenanceStatus = TrackingServerMaintenanceStatusMapper::GetTrackingServerMaintenanceStatusForName(jsonValue.GetString("TrackingServerMaintenanceStatus"));
+    m_trackingServerMaintenanceStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("IsActive"))
   {
     m_isActive = IsTrackingServerActiveMapper::GetIsTrackingServerActiveForName(jsonValue.GetString("IsActive"));

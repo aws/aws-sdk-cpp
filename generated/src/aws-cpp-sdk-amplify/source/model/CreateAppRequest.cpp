@@ -155,6 +155,12 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   }
 
+  if(m_jobConfigHasBeenSet)
+  {
+   payload.WithObject("jobConfig", m_jobConfig.Jsonize());
+
+  }
+
   if(m_cacheConfigHasBeenSet)
   {
    payload.WithObject("cacheConfig", m_cacheConfig.Jsonize());

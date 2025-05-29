@@ -22,6 +22,7 @@
 #include <aws/cloudtrail/model/CancelQueryRequest.h>
 #include <aws/cloudtrail/model/CancelQueryResult.h>
 #include <aws/cloudtrail/model/Channel.h>
+#include <aws/cloudtrail/model/ContextKeySelector.h>
 #include <aws/cloudtrail/model/CreateChannelRequest.h>
 #include <aws/cloudtrail/model/CreateChannelResult.h>
 #include <aws/cloudtrail/model/CreateDashboardRequest.h>
@@ -69,6 +70,8 @@
 #include <aws/cloudtrail/model/GetChannelResult.h>
 #include <aws/cloudtrail/model/GetDashboardRequest.h>
 #include <aws/cloudtrail/model/GetDashboardResult.h>
+#include <aws/cloudtrail/model/GetEventConfigurationRequest.h>
+#include <aws/cloudtrail/model/GetEventConfigurationResult.h>
 #include <aws/cloudtrail/model/GetEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/GetEventDataStoreResult.h>
 #include <aws/cloudtrail/model/GetEventSelectorsRequest.h>
@@ -119,8 +122,11 @@
 #include <aws/cloudtrail/model/LookupAttributeKey.h>
 #include <aws/cloudtrail/model/LookupEventsRequest.h>
 #include <aws/cloudtrail/model/LookupEventsResult.h>
+#include <aws/cloudtrail/model/MaxEventSize.h>
 #include <aws/cloudtrail/model/PartitionKey.h>
 #include <aws/cloudtrail/model/PublicKey.h>
+#include <aws/cloudtrail/model/PutEventConfigurationRequest.h>
+#include <aws/cloudtrail/model/PutEventConfigurationResult.h>
 #include <aws/cloudtrail/model/PutEventSelectorsRequest.h>
 #include <aws/cloudtrail/model/PutEventSelectorsResult.h>
 #include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
@@ -169,6 +175,7 @@
 #include <aws/cloudtrail/model/Tag.h>
 #include <aws/cloudtrail/model/Trail.h>
 #include <aws/cloudtrail/model/TrailInfo.h>
+#include <aws/cloudtrail/model/Type.h>
 #include <aws/cloudtrail/model/UpdateChannelRequest.h>
 #include <aws/cloudtrail/model/UpdateChannelResult.h>
 #include <aws/cloudtrail/model/UpdateDashboardRequest.h>

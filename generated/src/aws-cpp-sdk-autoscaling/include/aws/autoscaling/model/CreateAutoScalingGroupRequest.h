@@ -283,10 +283,10 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
-     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
-     * single Availability Zone. You cannot specify multiple Availability Zones and a
-     * cluster placement group. </p> 
+     * groups</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>A <i>cluster</i>
+     * placement group is a logical grouping of instances within a single Availability
+     * Zone. You cannot specify multiple Availability Zones and a cluster placement
+     * group. </p> 
      */
     inline const Aws::String& GetPlacementGroup() const { return m_placementGroup; }
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }

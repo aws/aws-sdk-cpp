@@ -153,6 +153,16 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
     m_filesFailed = jsonValue.GetObject("FilesFailed");
     m_filesFailedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LaunchTime"))
+  {
+    m_launchTime = jsonValue.GetDouble("LaunchTime");
+    m_launchTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EndTime"))
+  {
+    m_endTime = jsonValue.GetDouble("EndTime");
+    m_endTimeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

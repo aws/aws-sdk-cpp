@@ -171,6 +171,8 @@
 #include <aws/fsx/model/LustreFileSystemConfiguration.h>
 #include <aws/fsx/model/LustreLogConfiguration.h>
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
+#include <aws/fsx/model/LustreReadCacheConfiguration.h>
+#include <aws/fsx/model/LustreReadCacheSizingMode.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <aws/fsx/model/MetadataConfigurationMode.h>
 #include <aws/fsx/model/NFSDataRepositoryConfiguration.h>

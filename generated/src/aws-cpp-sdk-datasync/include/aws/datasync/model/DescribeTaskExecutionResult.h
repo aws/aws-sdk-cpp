@@ -133,7 +133,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time when the task execution started.</p>
+     * <p>The time that DataSync sends the request to start the task execution. For
+     * non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are
+     * typically the same. For queued tasks, <code>LaunchTime</code> is typically later
+     * than <code>StartTime</code> because previously queued tasks must finish running
+     * before newer tasks can begin.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     template<typename StartTimeT = Aws::Utils::DateTime>
@@ -373,6 +377,32 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The time that the task execution actually begins. For non-queued tasks,
+     * <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For
+     * queued tasks, <code>LaunchTime</code> is typically later than
+     * <code>StartTime</code> because previously queued tasks must finish running
+     * before newer tasks can begin.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLaunchTime() const { return m_launchTime; }
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    void SetLaunchTime(LaunchTimeT&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::forward<LaunchTimeT>(value); }
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    DescribeTaskExecutionResult& WithLaunchTime(LaunchTimeT&& value) { SetLaunchTime(std::forward<LaunchTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time that the transfer task ends.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DescribeTaskExecutionResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -453,6 +483,12 @@ namespace Model
 
     TaskExecutionFilesFailedDetail m_filesFailed;
     bool m_filesFailedHasBeenSet = false;
+
+    Aws::Utils::DateTime m_launchTime{};
+    bool m_launchTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

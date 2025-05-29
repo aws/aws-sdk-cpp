@@ -93,6 +93,11 @@ Aws::Http::HeaderValueCollection PutBucketOwnershipControlsRequest::GetRequestSp
     ss.str("");
   }
 
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
   return headers;
 }
 
@@ -107,3 +112,16 @@ PutBucketOwnershipControlsRequest::EndpointParameters PutBucketOwnershipControls
     }
     return parameters;
 }
+
+Aws::String PutBucketOwnershipControlsRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "crc64nvme";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

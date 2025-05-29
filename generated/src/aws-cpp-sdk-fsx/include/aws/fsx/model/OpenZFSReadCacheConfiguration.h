@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> The configuration for the optional provisioned SSD read cache on file
-   * systems that use the Intelligent-Tiering storage class. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> The configuration for the optional provisioned SSD read cache on Amazon FSx
+   * for OpenZFS file systems that use the Intelligent-Tiering storage class.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSReadCacheConfiguration">AWS
    * API Reference</a></p>
    */

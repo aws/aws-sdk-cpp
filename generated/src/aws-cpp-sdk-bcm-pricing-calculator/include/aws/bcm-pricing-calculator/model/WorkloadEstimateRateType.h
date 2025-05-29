@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     BEFORE_DISCOUNTS,
-    AFTER_DISCOUNTS
+    AFTER_DISCOUNTS,
+    AFTER_DISCOUNTS_AND_COMMITMENTS
   };
 
 namespace WorkloadEstimateRateTypeMapper

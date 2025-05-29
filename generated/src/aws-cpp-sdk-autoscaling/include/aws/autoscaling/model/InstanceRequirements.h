@@ -67,8 +67,8 @@ namespace Model
    * types match your attributes before you apply them to your Auto Scaling group,
    * see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview
-   * instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for
-   * Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
+   * instance types with specified attributes</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRequirements">AWS
    * API Reference</a></p>
    */
@@ -114,9 +114,10 @@ namespace Model
      * instance types with Intel CPUs, specify <code>intel</code>.</p> </li> <li>
      * <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li> <li>
      * <p>For instance types with Amazon Web Services CPUs, specify
-     * <code>amazon-web-services</code>.</p> </li> </ul>  <p>Don't confuse the
-     * CPU hardware manufacturer with the CPU hardware architecture. Instances will be
-     * launched with a compatible CPU architecture based on the Amazon Machine Image
+     * <code>amazon-web-services</code>.</p> </li> <li> <p>For instance types with
+     * Apple CPUs, specify <code>apple</code>.</p> </li> </ul>  <p>Don't confuse
+     * the CPU hardware manufacturer with the CPU hardware architecture. Instances will
+     * be launched with a compatible CPU architecture based on the Amazon Machine Image
      * (AMI) that you specify in your launch template. </p>  <p>Default: Any
      * manufacturer</p>
      */
@@ -174,10 +175,9 @@ namespace Model
      * currently recommended for use. This typically includes the latest two to three
      * generations in each instance family. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> </li>
-     * <li> <p>For previous generation instance types, specify
-     * <code>previous</code>.</p> </li> </ul> <p>Default: Any current or previous
-     * generation</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li> <p>For previous
+     * generation instance types, specify <code>previous</code>.</p> </li> </ul>
+     * <p>Default: Any current or previous generation</p>
      */
     inline const Aws::Vector<InstanceGeneration>& GetInstanceGenerations() const { return m_instanceGenerations; }
     inline bool InstanceGenerationsHasBeenSet() const { return m_instanceGenerationsHasBeenSet; }
@@ -288,8 +288,8 @@ namespace Model
      * <p>Indicates whether burstable performance instance types are included,
      * excluded, or required. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: <code>excluded</code> </p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>excluded</code> </p>
      */
     inline BurstablePerformance GetBurstablePerformance() const { return m_burstablePerformance; }
     inline bool BurstablePerformanceHasBeenSet() const { return m_burstablePerformanceHasBeenSet; }
@@ -326,8 +326,8 @@ namespace Model
      * <p>Indicates whether instance types with instance store volumes are included,
      * excluded, or required. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-     * EC2 instance store</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: <code>included</code> </p>
+     * EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>included</code> </p>
      */
     inline LocalStorage GetLocalStorage() const { return m_localStorage; }
     inline bool LocalStorageHasBeenSet() const { return m_localStorageHasBeenSet; }
@@ -369,8 +369,8 @@ namespace Model
      * <p>The minimum and maximum baseline bandwidth performance for an instance type,
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
+     * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * No minimum or maximum limits</p>
      */
     inline const BaselineEbsBandwidthMbpsRequest& GetBaselineEbsBandwidthMbps() const { return m_baselineEbsBandwidthMbps; }
     inline bool BaselineEbsBandwidthMbpsHasBeenSet() const { return m_baselineEbsBandwidthMbpsHasBeenSet; }

@@ -20,6 +20,7 @@
 #include <aws/amplify/model/Backend.h>
 #include <aws/amplify/model/BackendEnvironment.h>
 #include <aws/amplify/model/Branch.h>
+#include <aws/amplify/model/BuildComputeType.h>
 #include <aws/amplify/model/CacheConfig.h>
 #include <aws/amplify/model/CacheConfigType.h>
 #include <aws/amplify/model/Certificate.h>
@@ -69,6 +70,7 @@
 #include <aws/amplify/model/GetWebhookRequest.h>
 #include <aws/amplify/model/GetWebhookResult.h>
 #include <aws/amplify/model/Job.h>
+#include <aws/amplify/model/JobConfig.h>
 #include <aws/amplify/model/JobStatus.h>
 #include <aws/amplify/model/JobSummary.h>
 #include <aws/amplify/model/JobType.h>

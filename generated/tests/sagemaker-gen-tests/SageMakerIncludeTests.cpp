@@ -1446,6 +1446,7 @@
 #include <aws/sagemaker/model/TimeSeriesForecastingSettings.h>
 #include <aws/sagemaker/model/TimeSeriesTransformations.h>
 #include <aws/sagemaker/model/TotalHits.h>
+#include <aws/sagemaker/model/TrackingServerMaintenanceStatus.h>
 #include <aws/sagemaker/model/TrackingServerSize.h>
 #include <aws/sagemaker/model/TrackingServerStatus.h>
 #include <aws/sagemaker/model/TrackingServerSummary.h>

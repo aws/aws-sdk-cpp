@@ -29,6 +29,8 @@ namespace Aws
         static const int PUBLISH_ERROR_HASH = HashingUtils::HashString("PUBLISH_ERROR");
         static const int SUBSCRIBE_ERROR_HASH = HashingUtils::HashString("SUBSCRIBE_ERROR");
         static const int JOIN_ERROR_HASH = HashingUtils::HashString("JOIN_ERROR");
+        static const int REPLICATION_STARTED_HASH = HashingUtils::HashString("REPLICATION_STARTED");
+        static const int REPLICATION_STOPPED_HASH = HashingUtils::HashString("REPLICATION_STOPPED");
 
 
         EventName GetEventNameForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return EventName::JOIN_ERROR;
           }
+          else if (hashCode == REPLICATION_STARTED_HASH)
+          {
+            return EventName::REPLICATION_STARTED;
+          }
+          else if (hashCode == REPLICATION_STOPPED_HASH)
+          {
+            return EventName::REPLICATION_STOPPED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +114,10 @@ namespace Aws
             return "SUBSCRIBE_ERROR";
           case EventName::JOIN_ERROR:
             return "JOIN_ERROR";
+          case EventName::REPLICATION_STARTED:
+            return "REPLICATION_STARTED";
+          case EventName::REPLICATION_STOPPED:
+            return "REPLICATION_STOPPED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

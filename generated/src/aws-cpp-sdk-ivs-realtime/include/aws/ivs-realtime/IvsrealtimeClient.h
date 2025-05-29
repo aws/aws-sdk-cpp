@@ -31,7 +31,14 @@ namespace ivsrealtime
    * participants of a stage into a single video and forwards it to a set of outputs
    * (e.g., IVS channels). Composition operations support this process.</p> </li>
    * <li> <p> <b>Composition</b> — Controls the look of the outputs, including how
-   * participants are positioned in the video.</p> </li> </ul> <p>For more
+   * participants are positioned in the video.</p> </li> </ul> <p>For participant
+   * replication:</p> <ul> <li> <p> <b>Source stage</b> — The stage where the
+   * participant originally joined, which is used as the source for replication.</p>
+   * </li> <li> <p> <b>Destination stage</b> — The stage to which the participant is
+   * replicated. </p> </li> <li> <p> <b>Replicated participant</b> — A participant in
+   * a stage that is replicated to one or more destination stages. </p> </li> <li>
+   * <p> <b>Replica participant</b> — A participant in a destination stage that is
+   * replicated from another stage (the source stage).</p> </li> </ul> <p>For more
    * information about your IVS live stream, also see <a
    * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
    * Started with Amazon IVS Real-Time Streaming</a>.</p> <p> <b>Tagging</b> </p>
@@ -747,6 +754,32 @@ namespace ivsrealtime
         }
 
         /**
+         * <p>Lists all the replicas for a participant from a source stage.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListParticipantReplicasOutcome ListParticipantReplicas(const Model::ListParticipantReplicasRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListParticipantReplicas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListParticipantReplicasRequestT = Model::ListParticipantReplicasRequest>
+        Model::ListParticipantReplicasOutcomeCallable ListParticipantReplicasCallable(const ListParticipantReplicasRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::ListParticipantReplicas, request);
+        }
+
+        /**
+         * An Async wrapper for ListParticipantReplicas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListParticipantReplicasRequestT = Model::ListParticipantReplicasRequest>
+        void ListParticipantReplicasAsync(const ListParticipantReplicasRequestT& request, const ListParticipantReplicasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::ListParticipantReplicas, request, handler, context);
+        }
+
+        /**
          * <p>Lists all participants in a specified stage session.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">AWS
@@ -936,6 +969,32 @@ namespace ivsrealtime
         }
 
         /**
+         * <p>Starts replicating a publishing participant from a source stage to a
+         * destination stage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartParticipantReplicationOutcome StartParticipantReplication(const Model::StartParticipantReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartParticipantReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartParticipantReplicationRequestT = Model::StartParticipantReplicationRequest>
+        Model::StartParticipantReplicationOutcomeCallable StartParticipantReplicationCallable(const StartParticipantReplicationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::StartParticipantReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartParticipantReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartParticipantReplicationRequestT = Model::StartParticipantReplicationRequest>
+        void StartParticipantReplicationAsync(const StartParticipantReplicationRequestT& request, const StartParticipantReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::StartParticipantReplication, request, handler, context);
+        }
+
+        /**
          * <p>Stops and deletes a Composition resource. Any broadcast from the Composition
          * resource is stopped.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">AWS
@@ -959,6 +1018,31 @@ namespace ivsrealtime
         void StopCompositionAsync(const StopCompositionRequestT& request, const StopCompositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IvsrealtimeClient::StopComposition, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a replicated participant session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopParticipantReplicationOutcome StopParticipantReplication(const Model::StopParticipantReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopParticipantReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopParticipantReplicationRequestT = Model::StopParticipantReplicationRequest>
+        Model::StopParticipantReplicationOutcomeCallable StopParticipantReplicationCallable(const StopParticipantReplicationRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::StopParticipantReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopParticipantReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopParticipantReplicationRequestT = Model::StopParticipantReplicationRequest>
+        void StopParticipantReplicationAsync(const StopParticipantReplicationRequestT& request, const StopParticipantReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::StopParticipantReplication, request, handler, context);
         }
 
         /**

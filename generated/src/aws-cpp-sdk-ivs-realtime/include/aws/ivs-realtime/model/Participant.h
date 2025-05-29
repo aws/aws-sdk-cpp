@@ -11,6 +11,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingState.h>
 #include <aws/ivs-realtime/model/ParticipantProtocol.h>
+#include <aws/ivs-realtime/model/ReplicationType.h>
+#include <aws/ivs-realtime/model/ReplicationState.h>
 #include <utility>
 
 namespace Aws
@@ -214,7 +216,11 @@ namespace Model
     /**
      * <p>S3 prefix of the S3 bucket where the participant is being recorded, if
      * individual participant recording is enabled, or <code>""</code> (empty string),
-     * if recording is not enabled.</p>
+     * if recording is not enabled. If individual participant recording merge is
+     * enabled, and if a stage publisher disconnects from a stage and then reconnects,
+     * IVS tries to record to the same S3 prefix as the previous session. See <a
+     * href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag">
+     * Merge Fragmented Individual Participant Recordings</a>.</p>
      */
     inline const Aws::String& GetRecordingS3Prefix() const { return m_recordingS3Prefix; }
     inline bool RecordingS3PrefixHasBeenSet() const { return m_recordingS3PrefixHasBeenSet; }
@@ -242,6 +248,53 @@ namespace Model
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
     inline void SetProtocol(ParticipantProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
     inline Participant& WithProtocol(ParticipantProtocol value) { SetProtocol(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates if the participant has been replicated to another stage or is a
+     * replica from another stage. Default: <code>NONE</code>. </p>
+     */
+    inline ReplicationType GetReplicationType() const { return m_replicationType; }
+    inline bool ReplicationTypeHasBeenSet() const { return m_replicationTypeHasBeenSet; }
+    inline void SetReplicationType(ReplicationType value) { m_replicationTypeHasBeenSet = true; m_replicationType = value; }
+    inline Participant& WithReplicationType(ReplicationType value) { SetReplicationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The participant's replication state.</p>
+     */
+    inline ReplicationState GetReplicationState() const { return m_replicationState; }
+    inline bool ReplicationStateHasBeenSet() const { return m_replicationStateHasBeenSet; }
+    inline void SetReplicationState(ReplicationState value) { m_replicationStateHasBeenSet = true; m_replicationState = value; }
+    inline Participant& WithReplicationState(ReplicationState value) { SetReplicationState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Source stage ARN from which this participant is replicated, if
+     * <code>replicationType</code> is <code>REPLICA</code>. </p>
+     */
+    inline const Aws::String& GetSourceStageArn() const { return m_sourceStageArn; }
+    inline bool SourceStageArnHasBeenSet() const { return m_sourceStageArnHasBeenSet; }
+    template<typename SourceStageArnT = Aws::String>
+    void SetSourceStageArn(SourceStageArnT&& value) { m_sourceStageArnHasBeenSet = true; m_sourceStageArn = std::forward<SourceStageArnT>(value); }
+    template<typename SourceStageArnT = Aws::String>
+    Participant& WithSourceStageArn(SourceStageArnT&& value) { SetSourceStageArn(std::forward<SourceStageArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ID of the session within the source stage, if <code>replicationType</code> is
+     * <code>REPLICA</code>.</p>
+     */
+    inline const Aws::String& GetSourceSessionId() const { return m_sourceSessionId; }
+    inline bool SourceSessionIdHasBeenSet() const { return m_sourceSessionIdHasBeenSet; }
+    template<typename SourceSessionIdT = Aws::String>
+    void SetSourceSessionId(SourceSessionIdT&& value) { m_sourceSessionIdHasBeenSet = true; m_sourceSessionId = std::forward<SourceSessionIdT>(value); }
+    template<typename SourceSessionIdT = Aws::String>
+    Participant& WithSourceSessionId(SourceSessionIdT&& value) { SetSourceSessionId(std::forward<SourceSessionIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -292,6 +345,18 @@ namespace Model
 
     ParticipantProtocol m_protocol{ParticipantProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
+
+    ReplicationType m_replicationType{ReplicationType::NOT_SET};
+    bool m_replicationTypeHasBeenSet = false;
+
+    ReplicationState m_replicationState{ReplicationState::NOT_SET};
+    bool m_replicationStateHasBeenSet = false;
+
+    Aws::String m_sourceStageArn;
+    bool m_sourceStageArnHasBeenSet = false;
+
+    Aws::String m_sourceSessionId;
+    bool m_sourceSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

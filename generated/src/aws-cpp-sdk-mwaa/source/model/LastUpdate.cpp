@@ -45,6 +45,11 @@ LastUpdate& LastUpdate::operator =(JsonView jsonValue)
     m_source = jsonValue.GetString("Source");
     m_sourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("WorkerReplacementStrategy"))
+  {
+    m_workerReplacementStrategy = WorkerReplacementStrategyMapper::GetWorkerReplacementStrategyForName(jsonValue.GetString("WorkerReplacementStrategy"));
+    m_workerReplacementStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -72,6 +77,11 @@ JsonValue LastUpdate::Jsonize() const
   {
    payload.WithString("Source", m_source);
 
+  }
+
+  if(m_workerReplacementStrategyHasBeenSet)
+  {
+   payload.WithString("WorkerReplacementStrategy", WorkerReplacementStrategyMapper::GetNameForWorkerReplacementStrategy(m_workerReplacementStrategy));
   }
 
   return payload;

@@ -13,6 +13,7 @@
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <aws/fsx/model/CreateFileSystemLustreMetadataConfiguration.h>
+#include <aws/fsx/model/LustreReadCacheConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -139,23 +140,24 @@ namespace Model
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
      * for latency-sensitive workloads that require the highest levels of
-     * IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers
-     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can
-     * optionally specify a metadata configuration mode for <code>PERSISTENT_2</code>
-     * which supports increasing metadata performance. <code>PERSISTENT_2</code> is
-     * available in a limited number of Amazon Web Services Regions. For more
-     * information, and an up-to-date list of Amazon Web Services Regions in which
-     * <code>PERSISTENT_2</code> is available, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File
-     * system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre
-     * User Guide</i>.</p>  <p>If you choose <code>PERSISTENT_2</code>, and you
-     * set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the
-     * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
-     * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from
-     * Amazon EC2 instances that support automatic encryption in the Amazon Web
-     * Services Regions where they are available. For more information about encryption
-     * in transit for FSx for Lustre file systems, see <a
+     * IOPS/throughput. <code>PERSISTENT_2</code> supports the SSD and
+     * Intelligent-Tiering storage classes. You can optionally specify a metadata
+     * configuration mode for <code>PERSISTENT_2</code> which supports increasing
+     * metadata performance. <code>PERSISTENT_2</code> is available in a limited number
+     * of Amazon Web Services Regions. For more information, and an up-to-date list of
+     * Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment
+     * and storage class options for FSx for Lustre file systems</a> in the <i>Amazon
+     * FSx for Lustre User Guide</i>.</p>  <p>If you choose
+     * <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to
+     * <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
+     *  <p>Encryption of data in transit is automatically turned on when you
+     * access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and
+     * <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are
+     * available. For more information about encryption in transit for FSx for Lustre
+     * file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
      * <p>(Default = <code>SCRATCH_1</code>)</p>
@@ -200,12 +202,13 @@ namespace Model
     ///@{
     /**
      * <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code>
-     * deployment types, provisions the amount of read and write throughput for each 1
-     * tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system
-     * throughput capacity is calculated by multiplying ﬁle system storage capacity
-     * (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle
-     * system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields
-     * 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you
+     * deployment types using an SSD or HDD storage class, provisions the amount of
+     * read and write throughput for each 1 tebibyte (TiB) of file system storage
+     * capacity, in MB/s/TiB. File system throughput capacity is calculated by
+     * multiplying ﬁle system storage capacity (TiB) by the
+     * <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system,
+     * provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120
+     * MB/s of ﬁle system throughput. You pay for the amount of throughput that you
      * provision. </p> <p>Valid values:</p> <ul> <li> <p>For <code>PERSISTENT_1</code>
      * SSD storage: 50, 100, 200 MB/s/TiB.</p> </li> <li> <p>For
      * <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li> <li> <p>For
@@ -346,6 +349,33 @@ namespace Model
     template<typename MetadataConfigurationT = CreateFileSystemLustreMetadataConfiguration>
     CreateFileSystemLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the throughput of an FSx for Lustre file system using the
+     * Intelligent-Tiering storage class, measured in megabytes per second (MBps).
+     * Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of
+     * throughput that you provision.</p>
+     */
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
+    inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
+    inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
+    inline CreateFileSystemLustreConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the optional provisioned SSD read cache on FSx for Lustre file
+     * systems that use the Intelligent-Tiering storage class. Required when
+     * <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>.</p>
+     */
+    inline const LustreReadCacheConfiguration& GetDataReadCacheConfiguration() const { return m_dataReadCacheConfiguration; }
+    inline bool DataReadCacheConfigurationHasBeenSet() const { return m_dataReadCacheConfigurationHasBeenSet; }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    void SetDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { m_dataReadCacheConfigurationHasBeenSet = true; m_dataReadCacheConfiguration = std::forward<DataReadCacheConfigurationT>(value); }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    CreateFileSystemLustreConfiguration& WithDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { SetDataReadCacheConfiguration(std::forward<DataReadCacheConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -395,6 +425,12 @@ namespace Model
 
     CreateFileSystemLustreMetadataConfiguration m_metadataConfiguration;
     bool m_metadataConfigurationHasBeenSet = false;
+
+    int m_throughputCapacity{0};
+    bool m_throughputCapacityHasBeenSet = false;
+
+    LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+    bool m_dataReadCacheConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

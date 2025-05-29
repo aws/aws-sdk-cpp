@@ -31,8 +31,8 @@ namespace Model
    * actual bandwidth of your instance might go below the specified minimum at times.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth">Available
-   * instance bandwidth</a> in the <i>Amazon EC2 User Guide for Linux
-   * Instances</i>.</p> <p><h3>See Also:</h3>   <a
+   * instance bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/NetworkBandwidthGbpsRequest">AWS
    * API Reference</a></p>
    */

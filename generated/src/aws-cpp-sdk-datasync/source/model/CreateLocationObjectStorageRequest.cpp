@@ -85,6 +85,18 @@ Aws::String CreateLocationObjectStorageRequest::SerializePayload() const
    payload.WithString("ServerCertificate", HashingUtils::Base64Encode(m_serverCertificate));
   }
 
+  if(m_cmkSecretConfigHasBeenSet)
+  {
+   payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+
+  }
+
+  if(m_customSecretConfigHasBeenSet)
+  {
+   payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

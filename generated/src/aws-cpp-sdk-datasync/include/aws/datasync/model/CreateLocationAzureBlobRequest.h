@@ -12,6 +12,8 @@
 #include <aws/datasync/model/AzureBlobType.h>
 #include <aws/datasync/model/AzureAccessTier.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
 
@@ -68,7 +70,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the SAS configuration that allows DataSync to access your Azure
-     * Blob Storage.</p>
+     * Blob Storage.</p>  <p>If you provide an authentication token using
+     * <code>SasConfiguration</code>, but do not provide secret configuration details
+     * using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then
+     * DataSync stores the token using your Amazon Web Services account's secrets
+     * manager secret.</p> 
      */
     inline const AzureBlobSasConfiguration& GetSasConfiguration() const { return m_sasConfiguration; }
     inline bool SasConfigurationHasBeenSet() const { return m_sasConfigurationHasBeenSet; }
@@ -122,11 +128,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can
-     * connect with your Azure Blob Storage container.</p> <p>You can specify more than
-     * one agent. For more information, see <a
+     * <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent
+     * that can connect with your Azure Blob Storage container. If you are setting up
+     * an agentless cross-cloud transfer, you do not need to specify a value for this
+     * parameter.</p> <p>You can specify more than one agent. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
-     * multiple agents for your transfer</a>.</p>
+     * multiple agents for your transfer</a>.</p>  <p>Make sure you configure
+     * this parameter correctly when you first create your storage location. You cannot
+     * add or remove agents from a storage location after you create it.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
@@ -153,6 +163,49 @@ namespace Model
     template<typename TagsT = TagListEntry>
     CreateLocationAzureBlobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a DataSync-managed secret, which
+     * includes the authentication token that DataSync uses to access a specific
+     * AzureBlob storage location, with a customer-managed KMS key.</p> <p>When you
+     * include this paramater as part of a <code>CreateLocationAzureBlob</code>
+     * request, you provide only the KMS key ARN. DataSync uses this KMS key together
+     * with the authentication token you specify for <code>SasConfiguration</code> to
+     * create a DataSync-managed secret to store the location access credentials.</p>
+     * <p>Make sure the DataSync has permission to access the KMS key that you
+     * specify.</p>  <p>You can use either <code>CmkSecretConfig</code> (with
+     * <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without
+     * <code>SasConfiguration</code>) to provide credentials for a
+     * <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for
+     * the same request.</p> 
+     */
+    inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+    inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    void SetCmkSecretConfig(CmkSecretConfigT&& value) { m_cmkSecretConfigHasBeenSet = true; m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value); }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    CreateLocationAzureBlobRequest& WithCmkSecretConfig(CmkSecretConfigT&& value) { SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a customer-managed Secrets Manager
+     * secret where the authentication token for an AzureBlob storage location is
+     * stored in plain text. This configuration includes the secret ARN, and the ARN
+     * for an IAM role that provides access to the secret.</p>  <p>You can use
+     * either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or
+     * <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to
+     * provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not
+     * provide both parameters for the same request.</p> 
+     */
+    inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+    inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    void SetCustomSecretConfig(CustomSecretConfigT&& value) { m_customSecretConfigHasBeenSet = true; m_customSecretConfig = std::forward<CustomSecretConfigT>(value); }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    CreateLocationAzureBlobRequest& WithCustomSecretConfig(CustomSecretConfigT&& value) { SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_containerUrl;
@@ -178,6 +231,12 @@ namespace Model
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    CmkSecretConfig m_cmkSecretConfig;
+    bool m_cmkSecretConfigHasBeenSet = false;
+
+    CustomSecretConfig m_customSecretConfig;
+    bool m_customSecretConfigHasBeenSet = false;
   };
 
 } // namespace Model

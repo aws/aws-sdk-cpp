@@ -50,6 +50,21 @@ Event& Event::operator =(JsonView jsonValue)
     m_errorCode = EventErrorCodeMapper::GetEventErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("destinationStageArn"))
+  {
+    m_destinationStageArn = jsonValue.GetString("destinationStageArn");
+    m_destinationStageArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("destinationSessionId"))
+  {
+    m_destinationSessionId = jsonValue.GetString("destinationSessionId");
+    m_destinationSessionIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("replica"))
+  {
+    m_replica = jsonValue.GetBool("replica");
+    m_replicaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +97,24 @@ JsonValue Event::Jsonize() const
   if(m_errorCodeHasBeenSet)
   {
    payload.WithString("errorCode", EventErrorCodeMapper::GetNameForEventErrorCode(m_errorCode));
+  }
+
+  if(m_destinationStageArnHasBeenSet)
+  {
+   payload.WithString("destinationStageArn", m_destinationStageArn);
+
+  }
+
+  if(m_destinationSessionIdHasBeenSet)
+  {
+   payload.WithString("destinationSessionId", m_destinationSessionId);
+
+  }
+
+  if(m_replicaHasBeenSet)
+  {
+   payload.WithBool("replica", m_replica);
+
   }
 
   return payload;

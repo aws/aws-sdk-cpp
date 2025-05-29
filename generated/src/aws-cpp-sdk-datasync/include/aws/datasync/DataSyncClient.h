@@ -16,12 +16,11 @@ namespace Aws
 namespace DataSync
 {
   /**
-   * <fullname>DataSync</fullname> <p>DataSync is an online data movement and
-   * discovery service that simplifies data migration and helps you quickly, easily,
-   * and securely transfer your file or object data to, from, and between Amazon Web
-   * Services storage services.</p> <p>This API interface reference includes
-   * documentation for using DataSync programmatically. For complete information, see
-   * the <i> <a
+   * <fullname>DataSync</fullname> <p>DataSync is an online data movement service
+   * that simplifies data migration and helps you quickly, easily, and securely
+   * transfer your file or object data to, from, and between Amazon Web Services
+   * storage services.</p> <p>This API interface reference includes documentation for
+   * using DataSync programmatically. For complete information, see the <i> <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
@@ -146,16 +145,17 @@ namespace DataSync
 
         /**
          * <p>Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage
-         * container. DataSync can use this location as a transfer source or
-         * destination.</p> <p>Before you begin, make sure you know <a
+         * container. DataSync can use this location as a transfer source or destination.
+         * You can make transfers with or without a <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+         * agent</a> that connects to your container.</p> <p>Before you begin, make sure
+         * you know <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
          * DataSync accesses Azure Blob Storage</a> and works with <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
          * tiers</a> and <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
-         * types</a>. You also need a <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
-         * agent</a> that can connect to your container.</p><p><h3>See Also:</h3>   <a
+         * types</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">AWS
          * API Reference</a></p>
          */
@@ -390,8 +390,10 @@ namespace DataSync
 
         /**
          * <p>Creates a transfer <i>location</i> for an object storage system. DataSync can
-         * use this location as a source or destination for transferring data.</p>
-         * <p>Before you begin, make sure that you understand the <a
+         * use this location as a source or destination for transferring data. You can make
+         * transfers with or without a <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+         * agent</a>.</p> <p>Before you begin, make sure that you understand the <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html#create-object-location-prerequisites">prerequisites</a>
          * for DataSync to work with object storage systems.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS

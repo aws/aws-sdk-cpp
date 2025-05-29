@@ -676,6 +676,33 @@ namespace CloudTrail
         }
 
         /**
+         * <p>Retrieves the current event configuration settings for the specified event
+         * data store, including details about maximum event size and context key selectors
+         * configured for the event data store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventConfigurationOutcome GetEventConfiguration(const Model::GetEventConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetEventConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEventConfigurationRequestT = Model::GetEventConfigurationRequest>
+        Model::GetEventConfigurationOutcomeCallable GetEventConfigurationCallable(const GetEventConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudTrailClient::GetEventConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetEventConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEventConfigurationRequestT = Model::GetEventConfigurationRequest>
+        void GetEventConfigurationAsync(const GetEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEventConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudTrailClient::GetEventConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about an event data store specified as either an ARN or
          * the ID portion of the ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">AWS
@@ -1240,6 +1267,33 @@ namespace CloudTrail
         void LookupEventsAsync(const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const LookupEventsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::LookupEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the event configuration settings for the specified event data store.
+         * You can update the maximum event size and context key selectors.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEventConfigurationOutcome PutEventConfiguration(const Model::PutEventConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutEventConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
+        Model::PutEventConfigurationOutcomeCallable PutEventConfigurationCallable(const PutEventConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::PutEventConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutEventConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
+        void PutEventConfigurationAsync(const PutEventConfigurationRequestT& request, const PutEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::PutEventConfiguration, request, handler, context);
         }
 
         /**

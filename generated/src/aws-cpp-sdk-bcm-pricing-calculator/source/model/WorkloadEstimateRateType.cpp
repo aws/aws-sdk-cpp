@@ -22,6 +22,7 @@ namespace Aws
 
         static const int BEFORE_DISCOUNTS_HASH = HashingUtils::HashString("BEFORE_DISCOUNTS");
         static const int AFTER_DISCOUNTS_HASH = HashingUtils::HashString("AFTER_DISCOUNTS");
+        static const int AFTER_DISCOUNTS_AND_COMMITMENTS_HASH = HashingUtils::HashString("AFTER_DISCOUNTS_AND_COMMITMENTS");
 
 
         WorkloadEstimateRateType GetWorkloadEstimateRateTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AFTER_DISCOUNTS_HASH)
           {
             return WorkloadEstimateRateType::AFTER_DISCOUNTS;
+          }
+          else if (hashCode == AFTER_DISCOUNTS_AND_COMMITMENTS_HASH)
+          {
+            return WorkloadEstimateRateType::AFTER_DISCOUNTS_AND_COMMITMENTS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "BEFORE_DISCOUNTS";
           case WorkloadEstimateRateType::AFTER_DISCOUNTS:
             return "AFTER_DISCOUNTS";
+          case WorkloadEstimateRateType::AFTER_DISCOUNTS_AND_COMMITMENTS:
+            return "AFTER_DISCOUNTS_AND_COMMITMENTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

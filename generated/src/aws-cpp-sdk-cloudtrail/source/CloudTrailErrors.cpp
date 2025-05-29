@@ -34,6 +34,7 @@ static const int INVALID_SNS_TOPIC_NAME_HASH = HashingUtils::HashString("Invalid
 static const int TRAIL_NOT_FOUND_HASH = HashingUtils::HashString("TrailNotFoundException");
 static const int NOT_ORGANIZATION_MASTER_ACCOUNT_HASH = HashingUtils::HashString("NotOrganizationMasterAccountException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
+static const int INSUFFICIENT_I_A_M_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientIAMAccessPermissionException");
 static const int INACTIVE_QUERY_HASH = HashingUtils::HashString("InactiveQueryException");
 static const int CHANNEL_EXISTS_FOR_E_D_S_HASH = HashingUtils::HashString("ChannelExistsForEDSException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
@@ -168,6 +169,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TAG_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TAG_PARAMETER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INSUFFICIENT_I_A_M_ACCESS_PERMISSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_I_A_M_ACCESS_PERMISSION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INACTIVE_QUERY_HASH)
   {

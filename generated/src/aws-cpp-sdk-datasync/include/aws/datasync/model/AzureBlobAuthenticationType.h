@@ -16,7 +16,8 @@ namespace Model
   enum class AzureBlobAuthenticationType
   {
     NOT_SET,
-    SAS
+    SAS,
+    NONE
   };
 
 namespace AzureBlobAuthenticationTypeMapper

@@ -11,6 +11,7 @@
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <aws/fsx/model/UpdateFileSystemLustreMetadataConfiguration.h>
+#include <aws/fsx/model/LustreReadCacheConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,32 @@ namespace Model
     template<typename MetadataConfigurationT = UpdateFileSystemLustreMetadataConfiguration>
     UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre file system using an
+     * Intelligent-Tiering storage class, measured in megabytes per second (MBps). You
+     * can only increase your file system's throughput. Valid values are 4000 MBps or
+     * multiples of 4000 MBps.</p>
+     */
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
+    inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
+    inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
+    inline UpdateFileSystemLustreConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre
+     * file systems that use the Intelligent-Tiering storage class.</p>
+     */
+    inline const LustreReadCacheConfiguration& GetDataReadCacheConfiguration() const { return m_dataReadCacheConfiguration; }
+    inline bool DataReadCacheConfigurationHasBeenSet() const { return m_dataReadCacheConfigurationHasBeenSet; }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    void SetDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { m_dataReadCacheConfigurationHasBeenSet = true; m_dataReadCacheConfiguration = std::forward<DataReadCacheConfigurationT>(value); }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    UpdateFileSystemLustreConfiguration& WithDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { SetDataReadCacheConfiguration(std::forward<DataReadCacheConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -216,6 +243,12 @@ namespace Model
 
     UpdateFileSystemLustreMetadataConfiguration m_metadataConfiguration;
     bool m_metadataConfigurationHasBeenSet = false;
+
+    int m_throughputCapacity{0};
+    bool m_throughputCapacityHasBeenSet = false;
+
+    LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+    bool m_dataReadCacheConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

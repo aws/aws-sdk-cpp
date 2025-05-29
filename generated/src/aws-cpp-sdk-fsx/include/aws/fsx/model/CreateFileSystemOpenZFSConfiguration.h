@@ -128,12 +128,13 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MBps). Valid values depend on the DeploymentType you
-     * choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
-     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
-     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> </ul>
-     * <p>You pay for additional throughput capacity that you provision.</p>
+     * in megabytes per second (MBps). Valid values depend on the
+     * <code>DeploymentType</code> that you choose, as follows:</p> <ul> <li> <p>For
+     * <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320,
+     * 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
+     * or 4096 MBps.</p> </li> </ul> <p>You pay for additional throughput capacity that
+     * you provision.</p>
      */
     inline int GetThroughputCapacity() const { return m_throughputCapacity; }
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
@@ -194,7 +195,8 @@ namespace Model
      * access your file system will be created. By default in the Amazon FSx API and
      * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
      * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
-     * addresses for file systems deployed in the same VPC/route tables.</p>
+     * addresses for file systems deployed in the same VPC/route tables, as long as
+     * they don't overlap with any subnet.</p>
      */
     inline const Aws::String& GetEndpointIpAddressRange() const { return m_endpointIpAddressRange; }
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }

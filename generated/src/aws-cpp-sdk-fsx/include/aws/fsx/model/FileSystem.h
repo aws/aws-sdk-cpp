@@ -147,9 +147,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of storage the file system is using. If set to <code>SSD</code>, the
-     * file system uses solid state drive storage. If set to <code>HDD</code>, the file
-     * system uses hard disk drive storage. </p>
+     * <p>The type of storage the file system is using.</p> <ul> <li> <p>If set to
+     * <code>SSD</code>, the file system uses solid state drive storage.</p> </li> <li>
+     * <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+     * </li> <li> <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses
+     * fully elastic, intelligently-tiered storage.</p> </li> </ul>
      */
     inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }

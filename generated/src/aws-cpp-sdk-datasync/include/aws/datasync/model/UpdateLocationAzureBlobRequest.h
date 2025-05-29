@@ -12,6 +12,8 @@
 #include <aws/datasync/model/AzureBlobType.h>
 #include <aws/datasync/model/AzureAccessTier.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <utility>
 
 namespace Aws
@@ -121,11 +123,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can
-     * connect with your Azure Blob Storage container.</p> <p>You can specify more than
-     * one agent. For more information, see <a
+     * <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent
+     * that can connect with your Azure Blob Storage container. If you are setting up
+     * an agentless cross-cloud transfer, you do not need to specify a value for this
+     * parameter.</p> <p>You can specify more than one agent. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
-     * multiple agents for your transfer</a>.</p>
+     * multiple agents for your transfer</a>.</p>  <p>You cannot add or remove
+     * agents from a storage location after you initially create it.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
@@ -135,6 +140,34 @@ namespace Model
     UpdateLocationAzureBlobRequest& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
     template<typename AgentArnsT = Aws::String>
     UpdateLocationAzureBlobRequest& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a DataSync-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+    inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    void SetCmkSecretConfig(CmkSecretConfigT&& value) { m_cmkSecretConfigHasBeenSet = true; m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value); }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    UpdateLocationAzureBlobRequest& WithCmkSecretConfig(CmkSecretConfigT&& value) { SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configuration information for a customer-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+    inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    void SetCustomSecretConfig(CustomSecretConfigT&& value) { m_customSecretConfigHasBeenSet = true; m_customSecretConfig = std::forward<CustomSecretConfigT>(value); }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    UpdateLocationAzureBlobRequest& WithCustomSecretConfig(CustomSecretConfigT&& value) { SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,6 +191,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_agentArns;
     bool m_agentArnsHasBeenSet = false;
+
+    CmkSecretConfig m_cmkSecretConfig;
+    bool m_cmkSecretConfigHasBeenSet = false;
+
+    CustomSecretConfig m_customSecretConfig;
+    bool m_customSecretConfigHasBeenSet = false;
   };
 
 } // namespace Model

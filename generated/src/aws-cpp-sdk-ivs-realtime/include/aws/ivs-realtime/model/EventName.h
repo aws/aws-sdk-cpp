@@ -24,7 +24,9 @@ namespace Model
     SUBSCRIBE_STOPPED,
     PUBLISH_ERROR,
     SUBSCRIBE_ERROR,
-    JOIN_ERROR
+    JOIN_ERROR,
+    REPLICATION_STARTED,
+    REPLICATION_STOPPED
   };
 
 namespace EventNameMapper
