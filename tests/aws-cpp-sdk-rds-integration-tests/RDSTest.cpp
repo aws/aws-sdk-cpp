@@ -226,7 +226,7 @@ namespace
 
         auto copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
         ASSERT_NE(parameters.end(), parameters.find("Action"));
@@ -251,7 +251,7 @@ namespace
         copyDBClusterSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
     }
