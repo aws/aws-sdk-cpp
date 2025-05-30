@@ -43,6 +43,7 @@
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/JobRun.h>
 #include <aws/emr-serverless/model/JobRunAttemptSummary.h>
+#include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
 #include <aws/emr-serverless/model/JobRunMode.h>
 #include <aws/emr-serverless/model/JobRunState.h>
 #include <aws/emr-serverless/model/JobRunSummary.h>

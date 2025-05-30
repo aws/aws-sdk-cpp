@@ -135,6 +135,7 @@
 #include <aws/sagemaker/model/CandidateStatus.h>
 #include <aws/sagemaker/model/CandidateStepType.h>
 #include <aws/sagemaker/model/CanvasAppSettings.h>
+#include <aws/sagemaker/model/CapacityReservationPreference.h>
 #include <aws/sagemaker/model/CapacitySize.h>
 #include <aws/sagemaker/model/CapacitySizeConfig.h>
 #include <aws/sagemaker/model/CapacitySizeType.h>
@@ -605,6 +606,7 @@
 #include <aws/sagemaker/model/EFSFileSystemConfig.h>
 #include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/EbsStorageSettings.h>
+#include <aws/sagemaker/model/Ec2CapacityReservation.h>
 #include <aws/sagemaker/model/Edge.h>
 #include <aws/sagemaker/model/EdgeDeploymentConfig.h>
 #include <aws/sagemaker/model/EdgeDeploymentModelConfig.h>
@@ -1212,6 +1214,8 @@
 #include <aws/sagemaker/model/Processor.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
+#include <aws/sagemaker/model/ProductionVariantCapacityReservationConfig.h>
+#include <aws/sagemaker/model/ProductionVariantCapacityReservationSummary.h>
 #include <aws/sagemaker/model/ProductionVariantCoreDumpConfig.h>
 #include <aws/sagemaker/model/ProductionVariantInferenceAmiVersion.h>
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>

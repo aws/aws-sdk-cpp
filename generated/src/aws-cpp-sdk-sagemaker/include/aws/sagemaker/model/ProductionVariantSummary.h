@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
 #include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
 #include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
+#include <aws/sagemaker/model/ProductionVariantCapacityReservationSummary.h>
 #include <aws/sagemaker/model/DeployedImage.h>
 #include <aws/sagemaker/model/ProductionVariantStatus.h>
 #include <utility>
@@ -181,6 +182,19 @@ namespace Model
     template<typename RoutingConfigT = ProductionVariantRoutingConfig>
     ProductionVariantSummary& WithRoutingConfig(RoutingConfigT&& value) { SetRoutingConfig(std::forward<RoutingConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings for the capacity reservation for the compute instances that
+     * SageMaker AI reserves for an endpoint. </p>
+     */
+    inline const ProductionVariantCapacityReservationSummary& GetCapacityReservationConfig() const { return m_capacityReservationConfig; }
+    inline bool CapacityReservationConfigHasBeenSet() const { return m_capacityReservationConfigHasBeenSet; }
+    template<typename CapacityReservationConfigT = ProductionVariantCapacityReservationSummary>
+    void SetCapacityReservationConfig(CapacityReservationConfigT&& value) { m_capacityReservationConfigHasBeenSet = true; m_capacityReservationConfig = std::forward<CapacityReservationConfigT>(value); }
+    template<typename CapacityReservationConfigT = ProductionVariantCapacityReservationSummary>
+    ProductionVariantSummary& WithCapacityReservationConfig(CapacityReservationConfigT&& value) { SetCapacityReservationConfig(std::forward<CapacityReservationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_variantName;
@@ -215,6 +229,9 @@ namespace Model
 
     ProductionVariantRoutingConfig m_routingConfig;
     bool m_routingConfigHasBeenSet = false;
+
+    ProductionVariantCapacityReservationSummary m_capacityReservationConfig;
+    bool m_capacityReservationConfigHasBeenSet = false;
   };
 
 } // namespace Model

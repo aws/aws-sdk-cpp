@@ -100,6 +100,11 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_inferenceAmiVersion = ProductionVariantInferenceAmiVersionMapper::GetProductionVariantInferenceAmiVersionForName(jsonValue.GetString("InferenceAmiVersion"));
     m_inferenceAmiVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CapacityReservationConfig"))
+  {
+    m_capacityReservationConfig = jsonValue.GetObject("CapacityReservationConfig");
+    m_capacityReservationConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -192,6 +197,12 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_inferenceAmiVersionHasBeenSet)
   {
    payload.WithString("InferenceAmiVersion", ProductionVariantInferenceAmiVersionMapper::GetNameForProductionVariantInferenceAmiVersion(m_inferenceAmiVersion));
+  }
+
+  if(m_capacityReservationConfigHasBeenSet)
+  {
+   payload.WithObject("CapacityReservationConfig", m_capacityReservationConfig.Jsonize());
+
   }
 
   return payload;

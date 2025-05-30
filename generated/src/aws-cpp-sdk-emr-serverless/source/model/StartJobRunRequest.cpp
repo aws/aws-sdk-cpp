@@ -28,6 +28,12 @@ Aws::String StartJobRunRequest::SerializePayload() const
 
   }
 
+  if(m_executionIamPolicyHasBeenSet)
+  {
+   payload.WithObject("executionIamPolicy", m_executionIamPolicy.Jsonize());
+
+  }
+
   if(m_jobDriverHasBeenSet)
   {
    payload.WithObject("jobDriver", m_jobDriver.Jsonize());

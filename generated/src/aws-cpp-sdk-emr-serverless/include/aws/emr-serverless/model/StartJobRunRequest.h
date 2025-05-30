@@ -7,6 +7,7 @@
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/EMRServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -73,6 +74,20 @@ namespace Model
     void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
     template<typename ExecutionRoleArnT = Aws::String>
     StartJobRunRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>You can pass an optional IAM policy. The resulting job IAM role permissions
+     * will be an intersection of this policy and the policy associated with your job
+     * execution role.</p>
+     */
+    inline const JobRunExecutionIamPolicy& GetExecutionIamPolicy() const { return m_executionIamPolicy; }
+    inline bool ExecutionIamPolicyHasBeenSet() const { return m_executionIamPolicyHasBeenSet; }
+    template<typename ExecutionIamPolicyT = JobRunExecutionIamPolicy>
+    void SetExecutionIamPolicy(ExecutionIamPolicyT&& value) { m_executionIamPolicyHasBeenSet = true; m_executionIamPolicy = std::forward<ExecutionIamPolicyT>(value); }
+    template<typename ExecutionIamPolicyT = JobRunExecutionIamPolicy>
+    StartJobRunRequest& WithExecutionIamPolicy(ExecutionIamPolicyT&& value) { SetExecutionIamPolicy(std::forward<ExecutionIamPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,6 +184,9 @@ namespace Model
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
+
+    JobRunExecutionIamPolicy m_executionIamPolicy;
+    bool m_executionIamPolicyHasBeenSet = false;
 
     JobDriver m_jobDriver;
     bool m_jobDriverHasBeenSet = false;
