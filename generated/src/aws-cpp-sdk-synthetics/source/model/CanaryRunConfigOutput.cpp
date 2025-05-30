@@ -40,6 +40,11 @@ CanaryRunConfigOutput& CanaryRunConfigOutput::operator =(JsonView jsonValue)
     m_activeTracing = jsonValue.GetBool("ActiveTracing");
     m_activeTracingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetInteger("EphemeralStorage");
+    m_ephemeralStorageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue CanaryRunConfigOutput::Jsonize() const
   if(m_activeTracingHasBeenSet)
   {
    payload.WithBool("ActiveTracing", m_activeTracing);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithInteger("EphemeralStorage", m_ephemeralStorage);
 
   }
 

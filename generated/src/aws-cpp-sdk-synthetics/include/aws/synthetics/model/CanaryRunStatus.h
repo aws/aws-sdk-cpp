@@ -8,6 +8,7 @@
 #include <aws/synthetics/model/CanaryRunState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/synthetics/model/CanaryRunStateReasonCode.h>
+#include <aws/synthetics/model/CanaryRunTestResult.h>
 #include <utility>
 
 namespace Aws
@@ -65,14 +66,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the
-     * canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception
-     * occurred in CloudWatch Synthetics.</p>
+     * <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed
+     * or Synthetics ran into a fatal error when running the canary. For example, a
+     * canary timeout misconfiguration setting can cause the canary to timeout before
+     * Synthetics can evaluate its status. </p> <p> If this value is
+     * <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing
+     * to save generated debug artifacts (for example, screenshots or har files).</p>
+     * <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes
+     * precedence. To understand the exact error, use the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a>
+     * API.</p>
      */
     inline CanaryRunStateReasonCode GetStateReasonCode() const { return m_stateReasonCode; }
     inline bool StateReasonCodeHasBeenSet() const { return m_stateReasonCodeHasBeenSet; }
     inline void SetStateReasonCode(CanaryRunStateReasonCode value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = value; }
     inline CanaryRunStatus& WithStateReasonCode(CanaryRunStateReasonCode value) { SetStateReasonCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the status of canary script for this run. When Synthetics tries to
+     * determine the status but fails, the result is marked as <code>UNKNOWN</code>.
+     * For the overall status of canary run, see <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+     */
+    inline CanaryRunTestResult GetTestResult() const { return m_testResult; }
+    inline bool TestResultHasBeenSet() const { return m_testResultHasBeenSet; }
+    inline void SetTestResult(CanaryRunTestResult value) { m_testResultHasBeenSet = true; m_testResult = value; }
+    inline CanaryRunStatus& WithTestResult(CanaryRunTestResult value) { SetTestResult(value); return *this;}
     ///@}
   private:
 
@@ -84,6 +105,9 @@ namespace Model
 
     CanaryRunStateReasonCode m_stateReasonCode{CanaryRunStateReasonCode::NOT_SET};
     bool m_stateReasonCodeHasBeenSet = false;
+
+    CanaryRunTestResult m_testResult{CanaryRunTestResult::NOT_SET};
+    bool m_testResultHasBeenSet = false;
   };
 
 } // namespace Model

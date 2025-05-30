@@ -29,13 +29,18 @@ namespace Model
 {
 
   /**
-   * <p>The firewall defines the configuration settings for an Network Firewall
-   * firewall. These settings include the firewall policy, the subnets in your VPC to
-   * use for the firewall endpoints, and any tags that are attached to the firewall
-   * Amazon Web Services resource. </p> <p>The status of the firewall, for example
-   * whether it's ready to filter network traffic, is provided in the corresponding
-   * <a>FirewallStatus</a>. You can retrieve both objects by calling
-   * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>A firewall defines the behavior of a firewall, the main VPC where the
+   * firewall is used, the Availability Zones where the firewall can be used, and one
+   * subnet to use for a firewall endpoint within each of the Availability Zones. The
+   * Availability Zones are defined implicitly in the subnet specifications.</p>
+   * <p>In addition to the firewall endpoints that you define in this
+   * <code>Firewall</code> specification, you can create firewall endpoints in
+   * <code>VpcEndpointAssociation</code> resources for any VPC, in any Availability
+   * Zone where the firewall is already in use. </p> <p>The status of the firewall,
+   * for example whether it's ready to filter network traffic, is provided in the
+   * corresponding <a>FirewallStatus</a>. You can retrieve both the firewall and
+   * firewall status by calling <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Firewall">AWS
    * API Reference</a></p>
    */
@@ -102,8 +107,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The public subnets that Network Firewall is using for the firewall. Each
-     * subnet must belong to a different Availability Zone. </p>
+     * <p>The primary public subnets that Network Firewall is using for the firewall.
+     * Network Firewall creates a firewall endpoint in each subnet. Create a subnet
+     * mapping for each Availability Zone where you want to use the firewall.</p>
+     * <p>These subnets are all defined for a single, primary VPC, and each must belong
+     * to a different Availability Zone. Each of these subnets establishes the
+     * availability of the firewall in its Availability Zone. </p> <p>In addition to
+     * these subnets, you can define other endpoints for the firewall in
+     * <code>VpcEndpointAssociation</code> resources. You can define these additional
+     * endpoints for any VPC, and for any of the Availability Zones where the firewall
+     * resource already has a subnet mapping. VPC endpoint associations give you the
+     * ability to protect multiple VPCs using a single firewall, and to define multiple
+     * firewall endpoints for a VPC in a single Availability Zone. </p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const { return m_subnetMappings; }
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
@@ -209,6 +224,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of <code>VpcEndpointAssociation</code> resources that use this
+     * firewall. </p>
+     */
+    inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
+    inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
+    inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
+    inline Firewall& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional setting indicating the specific traffic analysis types to enable
      * on the firewall. </p>
      */
@@ -257,6 +283,9 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet = false;
+
+    int m_numberOfAssociations{0};
+    bool m_numberOfAssociationsHasBeenSet = false;
 
     Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
     bool m_enabledAnalysisTypesHasBeenSet = false;

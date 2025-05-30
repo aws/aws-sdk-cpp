@@ -1713,9 +1713,9 @@ namespace EC2
         /**
          * <p>Removes your Amazon Web Services account from the launch permissions for the
          * specified AMI. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
-         * Cancel having an AMI shared with your Amazon Web Services account</a> in the
-         * <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">Cancel
+         * having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
+         * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">AWS
          * API Reference</a></p>
          */
@@ -1923,7 +1923,8 @@ namespace EC2
          * snapshots.</p> <p>For information about the prerequisites when copying an AMI,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
          * Reference</a></p>
          */
@@ -2555,7 +2556,7 @@ namespace EC2
          * launch an instance from this new AMI, the instance automatically launches with
          * those additional volumes.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
-         * an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+         * an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">AWS API
          * Reference</a></p>
@@ -3589,11 +3590,11 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.</p>
          * <p>To use this API, you must have the required permissions. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+         * for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * and restore an AMI using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">AWS
          * API Reference</a></p>
@@ -3960,11 +3961,11 @@ namespace EC2
         /**
          * <p>Stores an AMI as a single object in an Amazon S3 bucket.</p> <p>To use this
          * API, you must have the required permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+         * for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * and restore an AMI using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">AWS
          * API Reference</a></p>
@@ -7380,15 +7381,19 @@ namespace EC2
          * It can be restored before its retention period expires, after which it is
          * permanently deleted. If the deregistered AMI doesn't match a retention rule, it
          * is permanently deleted immediately. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Deregistering an AMI does
-         * not delete the following:</p> <ul> <li> <p>Instances already launched from the
-         * AMI. You'll continue to incur usage costs for the instances until you terminate
-         * them.</p> </li> <li> <p>For EBS-backed AMIs: The snapshots that were created of
-         * the root and data volumes of the instance during AMI creation. You'll continue
-         * to incur snapshot storage costs.</p> </li> <li> <p>For instance store-backed
-         * AMIs: The files uploaded to Amazon S3 during AMI creation. You'll continue to
-         * incur S3 storage costs.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+         * deleted Amazon EBS snapshots and EBS-backed AMIs with Recycle Bin</a> in the
+         * <i>Amazon EBS User Guide</i>.</p> <p>When deregistering an EBS-backed AMI, you
+         * can optionally delete its associated snapshots at the same time. However, if a
+         * snapshot is associated with multiple AMIs, it won't be deleted even if specified
+         * for deletion, although the AMI will still be deregistered.</p> <p>Deregistering
+         * an AMI does not delete the following:</p> <ul> <li> <p>Instances already
+         * launched from the AMI. You'll continue to incur usage costs for the instances
+         * until you terminate them.</p> </li> <li> <p>For EBS-backed AMIs: Snapshots that
+         * are associated with multiple AMIs. You'll continue to incur snapshot storage
+         * costs.</p> </li> <li> <p>For instance store-backed AMIs: The files uploaded to
+         * Amazon S3 during AMI creation. You'll continue to incur S3 storage costs.</p>
+         * </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
          * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -11271,11 +11276,11 @@ namespace EC2
          * percentage.</p> <p>Tasks are listed in reverse chronological order. Currently,
          * only tasks from the past 31 days can be viewed.</p> <p>To use this API, you must
          * have the required permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+         * for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * and restore an AMI using S3</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">AWS
          * API Reference</a></p>
@@ -12895,7 +12900,7 @@ namespace EC2
          * the response will be <code>block-new-sharing</code>. When the API has completed
          * the configuration, the response will be <code>unblocked</code>.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
          * public access to your AMIs</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">AWS
@@ -12925,7 +12930,8 @@ namespace EC2
          * <p>Cancels the deprecation of the specified AMI.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">AWS
          * API Reference</a></p>
          */
@@ -12955,8 +12961,8 @@ namespace EC2
          * 24-hour cooldown period when you enabled deregistration protection for the AMI,
          * then, when you disable deregistration protection, you won’t immediately be able
          * to deregister the AMI.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-         * an AMI from deregistration</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+         * an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">AWS
          * API Reference</a></p>
@@ -13963,7 +13969,8 @@ namespace EC2
          * be shared with them again.</p> <p>Only the AMI owner can re-enable a disabled
          * AMI.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
-         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">AWS API
          * Reference</a></p>
          */
@@ -13997,7 +14004,7 @@ namespace EC2
          * the response will be <code>unblocked</code>. When the API has completed the
          * configuration, the response will be <code>block-new-sharing</code>.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
          * public access to your AMIs</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">AWS
@@ -14056,8 +14063,8 @@ namespace EC2
          * is enabled, the AMI can't be deregistered.</p> <p>To allow the AMI to be
          * deregistered, you must first disable deregistration protection using
          * <a>DisableImageDeregistrationProtection</a>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-         * an AMI from deregistration</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+         * an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">AWS
          * API Reference</a></p>
@@ -14526,6 +14533,33 @@ namespace EC2
         }
 
         /**
+         * <p>Returns the currently negotiated security parameters for an active VPN
+         * tunnel, including IKE version, DH groups, encryption algorithms, and integrity
+         * algorithms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetActiveVpnTunnelStatusOutcome GetActiveVpnTunnelStatus(const Model::GetActiveVpnTunnelStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetActiveVpnTunnelStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetActiveVpnTunnelStatusRequestT = Model::GetActiveVpnTunnelStatusRequest>
+        Model::GetActiveVpnTunnelStatusOutcomeCallable GetActiveVpnTunnelStatusCallable(const GetActiveVpnTunnelStatusRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetActiveVpnTunnelStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetActiveVpnTunnelStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetActiveVpnTunnelStatusRequestT = Model::GetActiveVpnTunnelStatusRequest>
+        void GetActiveVpnTunnelStatusAsync(const GetActiveVpnTunnelStatusRequestT& request, const GetActiveVpnTunnelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetActiveVpnTunnelStatus, request, handler, context);
+        }
+
+        /**
          * <p>Gets the current state of the Allowed AMIs setting and the list of Allowed
          * AMIs criteria at the account level in the specified Region.</p>  <p>The
          * Allowed AMIs feature does not restrict the AMIs owned by your account.
@@ -14975,7 +15009,7 @@ namespace EC2
          * <p>Gets the current state of <i>block public access for AMIs</i> at the account
          * level in the specified Amazon Web Services Region.</p> <p>For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
          * public access to your AMIs</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">AWS
@@ -19133,12 +19167,12 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
          * an AMI from a snapshot</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-         * encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon EC2 User
-         * Guide</i>.</p> <p> <b>Amazon Web Services Marketplace product codes</b> </p>
-         * <p>If any snapshots have Amazon Web Services Marketplace product codes, they are
-         * copied to the new AMI.</p> <p>In most cases, AMIs for Windows, RedHat, SUSE, and
-         * SQL Server require correct licensing information to be present on the AMI. For
-         * more information, see <a
+         * encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+         * <b>Amazon Web Services Marketplace product codes</b> </p> <p>If any snapshots
+         * have Amazon Web Services Marketplace product codes, they are copied to the new
+         * AMI.</p> <p>In most cases, AMIs for Windows, RedHat, SUSE, and SQL Server
+         * require correct licensing information to be present on the AMI. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
          * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>. When creating
          * an AMI from a snapshot, the <code>RegisterImage</code> operation derives the
@@ -20127,8 +20161,9 @@ namespace EC2
 
         /**
          * <p>Restores an AMI from the Recycle Bin. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+         * deleted Amazon EBS snapshots and EBS-back AMIs with Recycle Bin</a> in the
+         * <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">AWS
          * API Reference</a></p>
          */

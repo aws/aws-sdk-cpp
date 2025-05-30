@@ -53,6 +53,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to delete the snapshots associated with the AMI during
+     * deregistration.</p>  <p>If a snapshot is associated with multiple AMIs, it
+     * is not deleted, regardless of this setting.</p>  <p>Default: The
+     * snapshots are not deleted.</p>
+     */
+    inline bool GetDeleteAssociatedSnapshots() const { return m_deleteAssociatedSnapshots; }
+    inline bool DeleteAssociatedSnapshotsHasBeenSet() const { return m_deleteAssociatedSnapshotsHasBeenSet; }
+    inline void SetDeleteAssociatedSnapshots(bool value) { m_deleteAssociatedSnapshotsHasBeenSet = true; m_deleteAssociatedSnapshots = value; }
+    inline DeregisterImageRequest& WithDeleteAssociatedSnapshots(bool value) { SetDeleteAssociatedSnapshots(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -67,6 +80,9 @@ namespace Model
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
+
+    bool m_deleteAssociatedSnapshots{false};
+    bool m_deleteAssociatedSnapshotsHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

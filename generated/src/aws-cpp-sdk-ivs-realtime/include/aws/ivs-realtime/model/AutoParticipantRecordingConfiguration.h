@@ -110,6 +110,18 @@ namespace Model
     template<typename HlsConfigurationT = ParticipantRecordingHlsConfiguration>
     AutoParticipantRecordingConfiguration& WithHlsConfiguration(HlsConfigurationT&& value) { SetHlsConfiguration(std::forward<HlsConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Optional field to disable replica participant recording. If this is set to
+     * <code>false</code> when a participant is a replica, replica participants are not
+     * recorded. Default: <code>true</code>.</p>
+     */
+    inline bool GetRecordParticipantReplicas() const { return m_recordParticipantReplicas; }
+    inline bool RecordParticipantReplicasHasBeenSet() const { return m_recordParticipantReplicasHasBeenSet; }
+    inline void SetRecordParticipantReplicas(bool value) { m_recordParticipantReplicasHasBeenSet = true; m_recordParticipantReplicas = value; }
+    inline AutoParticipantRecordingConfiguration& WithRecordParticipantReplicas(bool value) { SetRecordParticipantReplicas(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_storageConfigurationArn;
@@ -126,6 +138,9 @@ namespace Model
 
     ParticipantRecordingHlsConfiguration m_hlsConfiguration;
     bool m_hlsConfigurationHasBeenSet = false;
+
+    bool m_recordParticipantReplicas{false};
+    bool m_recordParticipantReplicasHasBeenSet = false;
   };
 
 } // namespace Model

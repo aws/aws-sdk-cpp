@@ -39,6 +39,11 @@ Aws::String ModifyVpnTunnelOptionsRequest::SerializePayload() const
     ss << "SkipTunnelReplacement=" << std::boolalpha << m_skipTunnelReplacement << "&";
   }
 
+  if(m_preSharedKeyStorageHasBeenSet)
+  {
+    ss << "PreSharedKeyStorage=" << StringUtils::URLEncode(m_preSharedKeyStorage.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

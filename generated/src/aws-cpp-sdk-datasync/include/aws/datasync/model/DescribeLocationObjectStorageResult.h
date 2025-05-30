@@ -10,6 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
+#include <aws/datasync/model/ManagedSecretConfig.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <utility>
 
 namespace Aws
@@ -133,6 +136,46 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Describes configuration information for a DataSync-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location. DataSync uses the default Amazon Web
+     * Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+     */
+    inline const ManagedSecretConfig& GetManagedSecretConfig() const { return m_managedSecretConfig; }
+    template<typename ManagedSecretConfigT = ManagedSecretConfig>
+    void SetManagedSecretConfig(ManagedSecretConfigT&& value) { m_managedSecretConfigHasBeenSet = true; m_managedSecretConfig = std::forward<ManagedSecretConfigT>(value); }
+    template<typename ManagedSecretConfigT = ManagedSecretConfig>
+    DescribeLocationObjectStorageResult& WithManagedSecretConfig(ManagedSecretConfigT&& value) { SetManagedSecretConfig(std::forward<ManagedSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Describes configuration information for a DataSync-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    void SetCmkSecretConfig(CmkSecretConfigT&& value) { m_cmkSecretConfigHasBeenSet = true; m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value); }
+    template<typename CmkSecretConfigT = CmkSecretConfig>
+    DescribeLocationObjectStorageResult& WithCmkSecretConfig(CmkSecretConfigT&& value) { SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Describes configuration information for a customer-managed secret, such as an
+     * authentication token or set of credentials that DataSync uses to access a
+     * specific transfer location, and a customer-managed KMS key.</p>
+     */
+    inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    void SetCustomSecretConfig(CustomSecretConfigT&& value) { m_customSecretConfigHasBeenSet = true; m_customSecretConfig = std::forward<CustomSecretConfigT>(value); }
+    template<typename CustomSecretConfigT = CustomSecretConfig>
+    DescribeLocationObjectStorageResult& WithCustomSecretConfig(CustomSecretConfigT&& value) { SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -165,6 +208,15 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_serverCertificate{};
     bool m_serverCertificateHasBeenSet = false;
+
+    ManagedSecretConfig m_managedSecretConfig;
+    bool m_managedSecretConfigHasBeenSet = false;
+
+    CmkSecretConfig m_cmkSecretConfig;
+    bool m_cmkSecretConfigHasBeenSet = false;
+
+    CustomSecretConfig m_customSecretConfig;
+    bool m_customSecretConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

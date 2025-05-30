@@ -26,6 +26,12 @@ Aws::String UpdatePreferencesRequest::SerializePayload() const
    payload.WithString("memberAccountDiscountVisibility", MemberAccountDiscountVisibilityMapper::GetNameForMemberAccountDiscountVisibility(m_memberAccountDiscountVisibility));
   }
 
+  if(m_preferredCommitmentHasBeenSet)
+  {
+   payload.WithObject("preferredCommitment", m_preferredCommitment.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

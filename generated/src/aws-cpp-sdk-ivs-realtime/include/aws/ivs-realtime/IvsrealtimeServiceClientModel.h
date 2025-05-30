@@ -42,6 +42,7 @@
 #include <aws/ivs-realtime/model/ListEncoderConfigurationsResult.h>
 #include <aws/ivs-realtime/model/ListIngestConfigurationsResult.h>
 #include <aws/ivs-realtime/model/ListParticipantEventsResult.h>
+#include <aws/ivs-realtime/model/ListParticipantReplicasResult.h>
 #include <aws/ivs-realtime/model/ListParticipantsResult.h>
 #include <aws/ivs-realtime/model/ListPublicKeysResult.h>
 #include <aws/ivs-realtime/model/ListStageSessionsResult.h>
@@ -49,7 +50,9 @@
 #include <aws/ivs-realtime/model/ListStorageConfigurationsResult.h>
 #include <aws/ivs-realtime/model/ListTagsForResourceResult.h>
 #include <aws/ivs-realtime/model/StartCompositionResult.h>
+#include <aws/ivs-realtime/model/StartParticipantReplicationResult.h>
 #include <aws/ivs-realtime/model/StopCompositionResult.h>
+#include <aws/ivs-realtime/model/StopParticipantReplicationResult.h>
 #include <aws/ivs-realtime/model/TagResourceResult.h>
 #include <aws/ivs-realtime/model/UntagResourceResult.h>
 #include <aws/ivs-realtime/model/UpdateIngestConfigurationResult.h>
@@ -126,6 +129,7 @@ namespace Aws
       class ListEncoderConfigurationsRequest;
       class ListIngestConfigurationsRequest;
       class ListParticipantEventsRequest;
+      class ListParticipantReplicasRequest;
       class ListParticipantsRequest;
       class ListPublicKeysRequest;
       class ListStageSessionsRequest;
@@ -133,7 +137,9 @@ namespace Aws
       class ListStorageConfigurationsRequest;
       class ListTagsForResourceRequest;
       class StartCompositionRequest;
+      class StartParticipantReplicationRequest;
       class StopCompositionRequest;
+      class StopParticipantReplicationRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateIngestConfigurationRequest;
@@ -165,6 +171,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEncoderConfigurationsResult, IvsrealtimeError> ListEncoderConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListIngestConfigurationsResult, IvsrealtimeError> ListIngestConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListParticipantEventsResult, IvsrealtimeError> ListParticipantEventsOutcome;
+      typedef Aws::Utils::Outcome<ListParticipantReplicasResult, IvsrealtimeError> ListParticipantReplicasOutcome;
       typedef Aws::Utils::Outcome<ListParticipantsResult, IvsrealtimeError> ListParticipantsOutcome;
       typedef Aws::Utils::Outcome<ListPublicKeysResult, IvsrealtimeError> ListPublicKeysOutcome;
       typedef Aws::Utils::Outcome<ListStageSessionsResult, IvsrealtimeError> ListStageSessionsOutcome;
@@ -172,7 +179,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStorageConfigurationsResult, IvsrealtimeError> ListStorageConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IvsrealtimeError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartCompositionResult, IvsrealtimeError> StartCompositionOutcome;
+      typedef Aws::Utils::Outcome<StartParticipantReplicationResult, IvsrealtimeError> StartParticipantReplicationOutcome;
       typedef Aws::Utils::Outcome<StopCompositionResult, IvsrealtimeError> StopCompositionOutcome;
+      typedef Aws::Utils::Outcome<StopParticipantReplicationResult, IvsrealtimeError> StopParticipantReplicationOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, IvsrealtimeError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, IvsrealtimeError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateIngestConfigurationResult, IvsrealtimeError> UpdateIngestConfigurationOutcome;
@@ -204,6 +213,7 @@ namespace Aws
       typedef std::future<ListEncoderConfigurationsOutcome> ListEncoderConfigurationsOutcomeCallable;
       typedef std::future<ListIngestConfigurationsOutcome> ListIngestConfigurationsOutcomeCallable;
       typedef std::future<ListParticipantEventsOutcome> ListParticipantEventsOutcomeCallable;
+      typedef std::future<ListParticipantReplicasOutcome> ListParticipantReplicasOutcomeCallable;
       typedef std::future<ListParticipantsOutcome> ListParticipantsOutcomeCallable;
       typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
       typedef std::future<ListStageSessionsOutcome> ListStageSessionsOutcomeCallable;
@@ -211,7 +221,9 @@ namespace Aws
       typedef std::future<ListStorageConfigurationsOutcome> ListStorageConfigurationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartCompositionOutcome> StartCompositionOutcomeCallable;
+      typedef std::future<StartParticipantReplicationOutcome> StartParticipantReplicationOutcomeCallable;
       typedef std::future<StopCompositionOutcome> StopCompositionOutcomeCallable;
+      typedef std::future<StopParticipantReplicationOutcome> StopParticipantReplicationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateIngestConfigurationOutcome> UpdateIngestConfigurationOutcomeCallable;
@@ -246,6 +258,7 @@ namespace Aws
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListEncoderConfigurationsRequest&, const Model::ListEncoderConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEncoderConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListIngestConfigurationsRequest&, const Model::ListIngestConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIngestConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListParticipantEventsRequest&, const Model::ListParticipantEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParticipantEventsResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::ListParticipantReplicasRequest&, const Model::ListParticipantReplicasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParticipantReplicasResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListParticipantsRequest&, const Model::ListParticipantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParticipantsResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListPublicKeysRequest&, const Model::ListPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeysResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListStageSessionsRequest&, const Model::ListStageSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStageSessionsResponseReceivedHandler;
@@ -253,7 +266,9 @@ namespace Aws
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListStorageConfigurationsRequest&, const Model::ListStorageConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStorageConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::StartCompositionRequest&, const Model::StartCompositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCompositionResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::StartParticipantReplicationRequest&, const Model::StartParticipantReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartParticipantReplicationResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::StopCompositionRequest&, const Model::StopCompositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompositionResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::StopParticipantReplicationRequest&, const Model::StopParticipantReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopParticipantReplicationResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::UpdateIngestConfigurationRequest&, const Model::UpdateIngestConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIngestConfigurationResponseReceivedHandler;

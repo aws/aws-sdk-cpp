@@ -95,6 +95,16 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_efaEnabled = jsonValue.GetBool("EfaEnabled");
     m_efaEnabledHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ThroughputCapacity"))
+  {
+    m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
+    m_throughputCapacityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DataReadCacheConfiguration"))
+  {
+    m_dataReadCacheConfiguration = jsonValue.GetObject("DataReadCacheConfiguration");
+    m_dataReadCacheConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -180,6 +190,18 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_efaEnabledHasBeenSet)
   {
    payload.WithBool("EfaEnabled", m_efaEnabled);
+
+  }
+
+  if(m_throughputCapacityHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
+
+  }
+
+  if(m_dataReadCacheConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataReadCacheConfiguration", m_dataReadCacheConfiguration.Jsonize());
 
   }
 

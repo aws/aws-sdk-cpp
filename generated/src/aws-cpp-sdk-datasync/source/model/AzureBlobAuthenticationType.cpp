@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SAS_HASH = HashingUtils::HashString("SAS");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         AzureBlobAuthenticationType GetAzureBlobAuthenticationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SAS_HASH)
           {
             return AzureBlobAuthenticationType::SAS;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return AzureBlobAuthenticationType::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AzureBlobAuthenticationType::SAS:
             return "SAS";
+          case AzureBlobAuthenticationType::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

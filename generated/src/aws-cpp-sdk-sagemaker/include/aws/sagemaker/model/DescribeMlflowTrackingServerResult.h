@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TrackingServerSize.h>
 #include <aws/sagemaker/model/TrackingServerStatus.h>
+#include <aws/sagemaker/model/TrackingServerMaintenanceStatus.h>
 #include <aws/sagemaker/model/IsTrackingServerActive.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
@@ -111,6 +112,15 @@ namespace Model
     inline TrackingServerStatus GetTrackingServerStatus() const { return m_trackingServerStatus; }
     inline void SetTrackingServerStatus(TrackingServerStatus value) { m_trackingServerStatusHasBeenSet = true; m_trackingServerStatus = value; }
     inline DescribeMlflowTrackingServerResult& WithTrackingServerStatus(TrackingServerStatus value) { SetTrackingServerStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The current maintenance status of the described MLflow Tracking Server. </p>
+     */
+    inline TrackingServerMaintenanceStatus GetTrackingServerMaintenanceStatus() const { return m_trackingServerMaintenanceStatus; }
+    inline void SetTrackingServerMaintenanceStatus(TrackingServerMaintenanceStatus value) { m_trackingServerMaintenanceStatusHasBeenSet = true; m_trackingServerMaintenanceStatus = value; }
+    inline DescribeMlflowTrackingServerResult& WithTrackingServerMaintenanceStatus(TrackingServerMaintenanceStatus value) { SetTrackingServerMaintenanceStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -227,6 +237,9 @@ namespace Model
 
     TrackingServerStatus m_trackingServerStatus{TrackingServerStatus::NOT_SET};
     bool m_trackingServerStatusHasBeenSet = false;
+
+    TrackingServerMaintenanceStatus m_trackingServerMaintenanceStatus{TrackingServerMaintenanceStatus::NOT_SET};
+    bool m_trackingServerMaintenanceStatusHasBeenSet = false;
 
     IsTrackingServerActive m_isActive{IsTrackingServerActive::NOT_SET};
     bool m_isActiveHasBeenSet = false;

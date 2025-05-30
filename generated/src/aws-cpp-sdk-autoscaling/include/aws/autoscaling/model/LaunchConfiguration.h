@@ -73,7 +73,7 @@ namespace Model
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
-     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -87,8 +87,8 @@ namespace Model
     /**
      * <p>The name of the key pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for
-     * Linux Instances</i>.</p>
+     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
@@ -147,12 +147,10 @@ namespace Model
      * <p>The user data to make available to the launched EC2 instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> (Windows). If you are using a command line tool,
-     * base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide base64-encoded text. User data is limited to 16
-     * KB.</p>
+     * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. If you are using
+     * a command line tool, base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide base64-encoded text. User data is
+     * limited to 16 KB.</p>
      */
     inline const Aws::String& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
@@ -167,7 +165,7 @@ namespace Model
      * <p>The instance type for the instances. For information about available instance
      * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -207,7 +205,7 @@ namespace Model
      * the instances at launch. By default, the block devices specified in the block
      * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     * device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
@@ -287,8 +285,7 @@ namespace Model
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
      * (<code>true</code>) or not (<code>false</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }

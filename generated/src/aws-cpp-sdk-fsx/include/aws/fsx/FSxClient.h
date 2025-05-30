@@ -1520,10 +1520,10 @@ namespace FSx
          * properties:</p> <ul> <li> <p> <code>AuditLogConfiguration</code> </p> </li> <li>
          * <p> <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
+         * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
          * <code>SelfManagedActiveDirectoryConfiguration</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p> <code>StorageType</code> </p>
          * </li> <li> <p> <code>ThroughputCapacity</code> </p> </li> <li> <p>
-         * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
          * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for Lustre
          * file systems, you can update the following properties:</p> <ul> <li> <p>
          * <code>AutoImportPolicy</code> </p> </li> <li> <p>
@@ -1532,13 +1532,14 @@ namespace FSx
          * <code>DataCompressionType</code> </p> </li> <li> <p>
          * <code>FileSystemTypeVersion</code> </p> </li> <li> <p>
          * <code>LogConfiguration</code> </p> </li> <li> <p>
+         * <code>LustreReadCacheConfiguration</code> </p> </li> <li> <p>
          * <code>LustreRootSquashConfiguration</code> </p> </li> <li> <p>
          * <code>MetadataConfiguration</code> </p> </li> <li> <p>
          * <code>PerUnitStorageThroughput</code> </p> </li> <li> <p>
-         * <code>StorageCapacity</code> </p> </li> <li> <p>
-         * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for ONTAP
-         * file systems, you can update the following properties:</p> <ul> <li> <p>
-         * <code>AddRouteTableIds</code> </p> </li> <li> <p>
+         * <code>StorageCapacity</code> </p> </li> <li> <p> <code>ThroughputCapacity</code>
+         * </p> </li> <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul>
+         * <p>For FSx for ONTAP file systems, you can update the following properties:</p>
+         * <ul> <li> <p> <code>AddRouteTableIds</code> </p> </li> <li> <p>
          * <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>

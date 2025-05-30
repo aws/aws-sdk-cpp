@@ -88,6 +88,8 @@
 #include <aws/ivs-realtime/model/ListIngestConfigurationsResult.h>
 #include <aws/ivs-realtime/model/ListParticipantEventsRequest.h>
 #include <aws/ivs-realtime/model/ListParticipantEventsResult.h>
+#include <aws/ivs-realtime/model/ListParticipantReplicasRequest.h>
+#include <aws/ivs-realtime/model/ListParticipantReplicasResult.h>
 #include <aws/ivs-realtime/model/ListParticipantsRequest.h>
 #include <aws/ivs-realtime/model/ListParticipantsResult.h>
 #include <aws/ivs-realtime/model/ListPublicKeysRequest.h>
@@ -106,6 +108,7 @@
 #include <aws/ivs-realtime/model/ParticipantRecordingHlsConfiguration.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingMediaType.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingState.h>
+#include <aws/ivs-realtime/model/ParticipantReplica.h>
 #include <aws/ivs-realtime/model/ParticipantState.h>
 #include <aws/ivs-realtime/model/ParticipantSummary.h>
 #include <aws/ivs-realtime/model/ParticipantThumbnailConfiguration.h>
@@ -120,6 +123,8 @@
 #include <aws/ivs-realtime/model/PublicKeySummary.h>
 #include <aws/ivs-realtime/model/RecordingConfiguration.h>
 #include <aws/ivs-realtime/model/RecordingConfigurationFormat.h>
+#include <aws/ivs-realtime/model/ReplicationState.h>
+#include <aws/ivs-realtime/model/ReplicationType.h>
 #include <aws/ivs-realtime/model/ResourceNotFoundException.h>
 #include <aws/ivs-realtime/model/S3DestinationConfiguration.h>
 #include <aws/ivs-realtime/model/S3Detail.h>
@@ -132,8 +137,12 @@
 #include <aws/ivs-realtime/model/StageSummary.h>
 #include <aws/ivs-realtime/model/StartCompositionRequest.h>
 #include <aws/ivs-realtime/model/StartCompositionResult.h>
+#include <aws/ivs-realtime/model/StartParticipantReplicationRequest.h>
+#include <aws/ivs-realtime/model/StartParticipantReplicationResult.h>
 #include <aws/ivs-realtime/model/StopCompositionRequest.h>
 #include <aws/ivs-realtime/model/StopCompositionResult.h>
+#include <aws/ivs-realtime/model/StopParticipantReplicationRequest.h>
+#include <aws/ivs-realtime/model/StopParticipantReplicationResult.h>
 #include <aws/ivs-realtime/model/StorageConfiguration.h>
 #include <aws/ivs-realtime/model/StorageConfigurationSummary.h>
 #include <aws/ivs-realtime/model/TagResourceRequest.h>

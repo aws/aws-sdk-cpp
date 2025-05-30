@@ -88,6 +88,11 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
     m_routingConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CapacityReservationConfig"))
+  {
+    m_capacityReservationConfig = jsonValue.GetObject("CapacityReservationConfig");
+    m_capacityReservationConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -168,6 +173,12 @@ JsonValue ProductionVariantSummary::Jsonize() const
   if(m_routingConfigHasBeenSet)
   {
    payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
+
+  }
+
+  if(m_capacityReservationConfigHasBeenSet)
+  {
+   payload.WithObject("CapacityReservationConfig", m_capacityReservationConfig.Jsonize());
 
   }
 

@@ -49,6 +49,11 @@ CanaryRunConfigInput& CanaryRunConfigInput::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetInteger("EphemeralStorage");
+    m_ephemeralStorageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +87,12 @@ JsonValue CanaryRunConfigInput::Jsonize() const
      environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
    }
    payload.WithObject("EnvironmentVariables", std::move(environmentVariablesJsonMap));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithInteger("EphemeralStorage", m_ephemeralStorage);
 
   }
 

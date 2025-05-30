@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mwaa/model/UpdateError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mwaa/model/WorkerReplacementStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,17 @@ namespace Model
     template<typename SourceT = Aws::String>
     LastUpdate& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The worker replacement strategy used in the last update of the
+     * environment.</p>
+     */
+    inline WorkerReplacementStrategy GetWorkerReplacementStrategy() const { return m_workerReplacementStrategy; }
+    inline bool WorkerReplacementStrategyHasBeenSet() const { return m_workerReplacementStrategyHasBeenSet; }
+    inline void SetWorkerReplacementStrategy(WorkerReplacementStrategy value) { m_workerReplacementStrategyHasBeenSet = true; m_workerReplacementStrategy = value; }
+    inline LastUpdate& WithWorkerReplacementStrategy(WorkerReplacementStrategy value) { SetWorkerReplacementStrategy(value); return *this;}
+    ///@}
   private:
 
     UpdateStatus m_status{UpdateStatus::NOT_SET};
@@ -100,6 +112,9 @@ namespace Model
 
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
+
+    WorkerReplacementStrategy m_workerReplacementStrategy{WorkerReplacementStrategy::NOT_SET};
+    bool m_workerReplacementStrategyHasBeenSet = false;
   };
 
 } // namespace Model

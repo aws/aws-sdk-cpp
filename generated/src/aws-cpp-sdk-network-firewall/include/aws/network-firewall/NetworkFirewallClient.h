@@ -63,16 +63,22 @@ namespace NetworkFirewall
    * <li> <p>(Optional) If you don't already have a VPC that you want to protect,
    * create it in Amazon VPC. </p> </li> <li> <p>In Amazon VPC, in each Availability
    * Zone where you want to have a firewall endpoint, create a subnet for the sole
-   * use of Network Firewall. </p> </li> <li> <p>In Network Firewall, create
-   * stateless and stateful rule groups, to define the components of the network
-   * traffic filtering behavior that you want your firewall to have. </p> </li> <li>
-   * <p>In Network Firewall, create a firewall policy that uses your rule groups and
-   * specifies additional default traffic filtering behavior. </p> </li> <li> <p>In
-   * Network Firewall, create a firewall and specify your new firewall policy and VPC
-   * subnets. Network Firewall creates a firewall endpoint in each subnet that you
-   * specify, with the behavior that's defined in the firewall policy.</p> </li> <li>
-   * <p>In Amazon VPC, use ingress routing enhancements to route traffic through the
-   * new firewall endpoints.</p> </li> </ol>
+   * use of Network Firewall. </p> </li> <li> <p>In Network Firewall, define the
+   * firewall behavior as follows: </p> <ol> <li> <p>Create stateless and stateful
+   * rule groups, to define the components of the network traffic filtering behavior
+   * that you want your firewall to have. </p> </li> <li> <p>Create a firewall policy
+   * that uses your rule groups and specifies additional default traffic filtering
+   * behavior. </p> </li> </ol> </li> <li> <p>In Network Firewall, create a firewall
+   * and specify your new firewall policy and VPC subnets. Network Firewall creates a
+   * firewall endpoint in each subnet that you specify, with the behavior that's
+   * defined in the firewall policy.</p> </li> <li> <p>In Amazon VPC, use ingress
+   * routing enhancements to route traffic through the new firewall endpoints.</p>
+   * </li> </ol> <p>After your firewall is established, you can add firewall
+   * endpoints for new Availability Zones by following the prior steps for the Amazon
+   * VPC setup and firewall subnet definitions. You can also add endpoints to
+   * Availability Zones that you're using in the firewall, either for the same VPC or
+   * for another VPC, by following the prior steps for the Amazon VPC setup, and
+   * defining the new VPC subnets as VPC endpoint associations. </p>
    */
   class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>
   {
@@ -334,6 +340,36 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Creates a firewall endpoint for an Network Firewall firewall. This type of
+         * firewall endpoint is independent of the firewall endpoints that you specify in
+         * the <code>Firewall</code> itself, and you define it in addition to those
+         * endpoints after the firewall has been created. You can define a VPC endpoint
+         * association using a different VPC than the one you used in the firewall
+         * specifications. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateVpcEndpointAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcEndpointAssociationOutcome CreateVpcEndpointAssociation(const Model::CreateVpcEndpointAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcEndpointAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVpcEndpointAssociationRequestT = Model::CreateVpcEndpointAssociationRequest>
+        Model::CreateVpcEndpointAssociationOutcomeCallable CreateVpcEndpointAssociationCallable(const CreateVpcEndpointAssociationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::CreateVpcEndpointAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVpcEndpointAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVpcEndpointAssociationRequestT = Model::CreateVpcEndpointAssociationRequest>
+        void CreateVpcEndpointAssociationAsync(const CreateVpcEndpointAssociationRequestT& request, const CreateVpcEndpointAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::CreateVpcEndpointAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This
          * operation requires the firewall's <code>DeleteProtection</code> flag to be
          * <code>FALSE</code>. You can't revert this operation. </p> <p>You can check
@@ -472,6 +508,38 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Deletes the specified <a>VpcEndpointAssociation</a>.</p> <p>You can check
+         * whether an endpoint association is in use by reviewing the route tables for the
+         * Availability Zones where you have the endpoint subnet mapping. You can retrieve
+         * the subnet mapping by calling <a>DescribeVpcEndpointAssociation</a>. You define
+         * and update the route tables through Amazon VPC. As needed, update the route
+         * tables for the Availability Zone to remove the firewall endpoint for the
+         * association. When the route tables no longer use the firewall endpoint, you can
+         * remove the endpoint association safely.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteVpcEndpointAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcEndpointAssociationOutcome DeleteVpcEndpointAssociation(const Model::DeleteVpcEndpointAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcEndpointAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVpcEndpointAssociationRequestT = Model::DeleteVpcEndpointAssociationRequest>
+        Model::DeleteVpcEndpointAssociationOutcomeCallable DeleteVpcEndpointAssociationCallable(const DeleteVpcEndpointAssociationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DeleteVpcEndpointAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVpcEndpointAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVpcEndpointAssociationRequestT = Model::DeleteVpcEndpointAssociationRequest>
+        void DeleteVpcEndpointAssociationAsync(const DeleteVpcEndpointAssociationRequestT& request, const DeleteVpcEndpointAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DeleteVpcEndpointAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Returns the data objects for the specified firewall. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewall">AWS
@@ -495,6 +563,33 @@ namespace NetworkFirewall
         void DescribeFirewallAsync(const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFirewallRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeFirewall, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the high-level information about a firewall, including the
+         * Availability Zones where the Firewall is currently in use. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFirewallMetadataOutcome DescribeFirewallMetadata(const Model::DescribeFirewallMetadataRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeFirewallMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFirewallMetadataRequestT = Model::DescribeFirewallMetadataRequest>
+        Model::DescribeFirewallMetadataOutcomeCallable DescribeFirewallMetadataCallable(const DescribeFirewallMetadataRequestT& request = {}) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DescribeFirewallMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFirewallMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFirewallMetadataRequestT = Model::DescribeFirewallMetadataRequest>
+        void DescribeFirewallMetadataAsync(const DescribeFirewallMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFirewallMetadataRequestT& request = {}) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DescribeFirewallMetadata, request, handler, context);
         }
 
         /**
@@ -679,6 +774,32 @@ namespace NetworkFirewall
         void DescribeTLSInspectionConfigurationAsync(const DescribeTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTLSInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeTLSInspectionConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the data object for the specified VPC endpoint association.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcEndpointAssociationOutcome DescribeVpcEndpointAssociation(const Model::DescribeVpcEndpointAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcEndpointAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcEndpointAssociationRequestT = Model::DescribeVpcEndpointAssociationRequest>
+        Model::DescribeVpcEndpointAssociationOutcomeCallable DescribeVpcEndpointAssociationCallable(const DescribeVpcEndpointAssociationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DescribeVpcEndpointAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcEndpointAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcEndpointAssociationRequestT = Model::DescribeVpcEndpointAssociationRequest>
+        void DescribeVpcEndpointAssociationAsync(const DescribeVpcEndpointAssociationRequestT& request, const DescribeVpcEndpointAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DescribeVpcEndpointAssociation, request, handler, context);
         }
 
         /**
@@ -966,16 +1087,49 @@ namespace NetworkFirewall
         }
 
         /**
-         * <p>Creates or updates an IAM policy for your rule group or firewall policy. Use
-         * this to share rule groups and firewall policies between accounts. This operation
+         * <p>Retrieves the metadata for the VPC endpoint associations that you have
+         * defined. If you specify a fireawll, this returns only the endpoint associations
+         * for that firewall. </p> <p>Depending on your setting for max results and the
+         * number of associations, a single call might not return the full list.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListVpcEndpointAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcEndpointAssociationsOutcome ListVpcEndpointAssociations(const Model::ListVpcEndpointAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListVpcEndpointAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVpcEndpointAssociationsRequestT = Model::ListVpcEndpointAssociationsRequest>
+        Model::ListVpcEndpointAssociationsOutcomeCallable ListVpcEndpointAssociationsCallable(const ListVpcEndpointAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::ListVpcEndpointAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListVpcEndpointAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVpcEndpointAssociationsRequestT = Model::ListVpcEndpointAssociationsRequest>
+        void ListVpcEndpointAssociationsAsync(const ListVpcEndpointAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVpcEndpointAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::ListVpcEndpointAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates an IAM policy for your rule group, firewall policy, or
+         * firewall. Use this to share these resources between accounts. This operation
          * works in conjunction with the Amazon Web Services Resource Access Manager (RAM)
-         * service to manage resource sharing for Network Firewall. </p> <p>Use this
-         * operation to create or update a resource policy for your rule group or firewall
-         * policy. In the policy, you specify the accounts that you want to share the
+         * service to manage resource sharing for Network Firewall. </p> <p>For information
+         * about using sharing with Network Firewall resources, see <a
+         * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/sharing.html">Sharing
+         * Network Firewall resources</a> in the <i>Network Firewall Developer
+         * Guide</i>.</p> <p>Use this operation to create or update a resource policy for
+         * your Network Firewall rule group, firewall policy, or firewall. In the resource
+         * policy, you specify the accounts that you want to share the Network Firewall
          * resource with and the operations that you want the accounts to be able to
          * perform. </p> <p>When you add an account in the resource policy, you then run
          * the following Resource Access Manager (RAM) operations to access and accept the
-         * shared rule group or firewall policy. </p> <ul> <li> <p> <a
+         * shared resource. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a>
          * - Returns the Amazon Resource Names (ARNs) of the resource share invitations.
          * </p> </li> <li> <p> <a

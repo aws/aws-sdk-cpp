@@ -139,6 +139,46 @@ namespace Model
     inline void SetErrorCode(EventErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
     inline Event& WithErrorCode(EventErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>ARN of the stage where the participant is replicated. Applicable only if the
+     * event name is <code>REPLICATION_STARTED</code> or
+     * <code>REPLICATION_STOPPED</code>.</p>
+     */
+    inline const Aws::String& GetDestinationStageArn() const { return m_destinationStageArn; }
+    inline bool DestinationStageArnHasBeenSet() const { return m_destinationStageArnHasBeenSet; }
+    template<typename DestinationStageArnT = Aws::String>
+    void SetDestinationStageArn(DestinationStageArnT&& value) { m_destinationStageArnHasBeenSet = true; m_destinationStageArn = std::forward<DestinationStageArnT>(value); }
+    template<typename DestinationStageArnT = Aws::String>
+    Event& WithDestinationStageArn(DestinationStageArnT&& value) { SetDestinationStageArn(std::forward<DestinationStageArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ID of the session within the destination stage. Applicable only if the event
+     * name is <code>REPLICATION_STARTED</code> or
+     * <code>REPLICATION_STOPPED</code>.</p>
+     */
+    inline const Aws::String& GetDestinationSessionId() const { return m_destinationSessionId; }
+    inline bool DestinationSessionIdHasBeenSet() const { return m_destinationSessionIdHasBeenSet; }
+    template<typename DestinationSessionIdT = Aws::String>
+    void SetDestinationSessionId(DestinationSessionIdT&& value) { m_destinationSessionIdHasBeenSet = true; m_destinationSessionId = std::forward<DestinationSessionIdT>(value); }
+    template<typename DestinationSessionIdT = Aws::String>
+    Event& WithDestinationSessionId(DestinationSessionIdT&& value) { SetDestinationSessionId(std::forward<DestinationSessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If true, this indicates the <code>participantId</code> is a replicated
+     * participant. If this is a subscribe event, then this flag refers to
+     * <code>remoteParticipantId</code>.</p>
+     */
+    inline bool GetReplica() const { return m_replica; }
+    inline bool ReplicaHasBeenSet() const { return m_replicaHasBeenSet; }
+    inline void SetReplica(bool value) { m_replicaHasBeenSet = true; m_replica = value; }
+    inline Event& WithReplica(bool value) { SetReplica(value); return *this;}
+    ///@}
   private:
 
     EventName m_name{EventName::NOT_SET};
@@ -155,6 +195,15 @@ namespace Model
 
     EventErrorCode m_errorCode{EventErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
+
+    Aws::String m_destinationStageArn;
+    bool m_destinationStageArnHasBeenSet = false;
+
+    Aws::String m_destinationSessionId;
+    bool m_destinationSessionIdHasBeenSet = false;
+
+    bool m_replica{false};
+    bool m_replicaHasBeenSet = false;
   };
 
 } // namespace Model

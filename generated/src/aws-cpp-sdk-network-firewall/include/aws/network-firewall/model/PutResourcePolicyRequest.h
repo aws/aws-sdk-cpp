@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the account that you want to share rule
-     * groups and firewall policies with.</p>
+     * <p>The Amazon Resource Name (ARN) of the account that you want to share your
+     * Network Firewall resources with.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -50,18 +50,21 @@ namespace Model
     ///@{
     /**
      * <p>The IAM policy statement that lists the accounts that you want to share your
-     * rule group or firewall policy with and the operations that you want the accounts
-     * to be able to perform. </p> <p>For a rule group resource, you can specify the
+     * Network Firewall resources with and the operations that you want the accounts to
+     * be able to perform. </p> <p>For a rule group resource, you can specify the
      * following operations in the Actions section of the statement:</p> <ul> <li>
      * <p>network-firewall:CreateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
      * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
-     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
-     * section of the statement, you specify the ARNs for the rule groups and firewall
-     * policies that you want to share with the account that you specified in
-     * <code>Arn</code>.</p>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>For a firewall
+     * resource, you can specify the following operations in the Actions section of the
+     * statement:</p> <ul> <li> <p>network-firewall:CreateVpcEndpointAssociation</p>
+     * </li> <li> <p>network-firewall:DescribeFirewallMetadata</p> </li> <li>
+     * <p>network-firewall:ListFirewalls</p> </li> </ul> <p>In the Resource section of
+     * the statement, you specify the ARNs for the Network Firewall resources that you
+     * want to share with the account that you specified in <code>Arn</code>.</p>
      */
     inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }

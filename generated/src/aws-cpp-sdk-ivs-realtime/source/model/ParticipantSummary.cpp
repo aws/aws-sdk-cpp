@@ -55,6 +55,26 @@ ParticipantSummary& ParticipantSummary::operator =(JsonView jsonValue)
     m_recordingState = ParticipantRecordingStateMapper::GetParticipantRecordingStateForName(jsonValue.GetString("recordingState"));
     m_recordingStateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("replicationType"))
+  {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+    m_replicationTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("replicationState"))
+  {
+    m_replicationState = ReplicationStateMapper::GetReplicationStateForName(jsonValue.GetString("replicationState"));
+    m_replicationStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sourceStageArn"))
+  {
+    m_sourceStageArn = jsonValue.GetString("sourceStageArn");
+    m_sourceStageArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sourceSessionId"))
+  {
+    m_sourceSessionId = jsonValue.GetString("sourceSessionId");
+    m_sourceSessionIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +113,28 @@ JsonValue ParticipantSummary::Jsonize() const
   if(m_recordingStateHasBeenSet)
   {
    payload.WithString("recordingState", ParticipantRecordingStateMapper::GetNameForParticipantRecordingState(m_recordingState));
+  }
+
+  if(m_replicationTypeHasBeenSet)
+  {
+   payload.WithString("replicationType", ReplicationTypeMapper::GetNameForReplicationType(m_replicationType));
+  }
+
+  if(m_replicationStateHasBeenSet)
+  {
+   payload.WithString("replicationState", ReplicationStateMapper::GetNameForReplicationState(m_replicationState));
+  }
+
+  if(m_sourceStageArnHasBeenSet)
+  {
+   payload.WithString("sourceStageArn", m_sourceStageArn);
+
+  }
+
+  if(m_sourceSessionIdHasBeenSet)
+  {
+   payload.WithString("sourceSessionId", m_sourceSessionId);
+
   }
 
   return payload;

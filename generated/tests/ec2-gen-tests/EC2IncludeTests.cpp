@@ -44,6 +44,7 @@
 #include <aws/ec2/model/AccountAttributeName.h>
 #include <aws/ec2/model/AccountAttributeValue.h>
 #include <aws/ec2/model/ActiveInstance.h>
+#include <aws/ec2/model/ActiveVpnTunnelStatus.h>
 #include <aws/ec2/model/ActivityStatus.h>
 #include <aws/ec2/model/AddIpamOperatingRegion.h>
 #include <aws/ec2/model/AddIpamOrganizationalUnitExclusion.h>
@@ -622,6 +623,7 @@
 #include <aws/ec2/model/DeleteSecurityGroupRequest.h>
 #include <aws/ec2/model/DeleteSecurityGroupResponse.h>
 #include <aws/ec2/model/DeleteSnapshotRequest.h>
+#include <aws/ec2/model/DeleteSnapshotReturnCode.h>
 #include <aws/ec2/model/DeleteSpotDatafeedSubscriptionRequest.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationRequest.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
@@ -1296,6 +1298,8 @@
 #include <aws/ec2/model/FpgaInfo.h>
 #include <aws/ec2/model/GatewayAssociationState.h>
 #include <aws/ec2/model/GatewayType.h>
+#include <aws/ec2/model/GetActiveVpnTunnelStatusRequest.h>
+#include <aws/ec2/model/GetActiveVpnTunnelStatusResponse.h>
 #include <aws/ec2/model/GetAllowedImagesSettingsRequest.h>
 #include <aws/ec2/model/GetAllowedImagesSettingsResponse.h>
 #include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesRequest.h>
@@ -2242,6 +2246,7 @@
 #include <aws/ec2/model/SnapshotInfo.h>
 #include <aws/ec2/model/SnapshotLocationEnum.h>
 #include <aws/ec2/model/SnapshotRecycleBinInfo.h>
+#include <aws/ec2/model/SnapshotReturnCodes.h>
 #include <aws/ec2/model/SnapshotState.h>
 #include <aws/ec2/model/SnapshotTaskDetail.h>
 #include <aws/ec2/model/SnapshotTierStatus.h>
@@ -2536,6 +2541,7 @@
 #include <aws/ec2/model/VpnTunnelLogOptions.h>
 #include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>
+#include <aws/ec2/model/VpnTunnelProvisioningStatus.h>
 #include <aws/ec2/model/WeekDay.h>
 #include <aws/ec2/model/WithdrawByoipCidrRequest.h>
 #include <aws/ec2/model/WithdrawByoipCidrResponse.h>

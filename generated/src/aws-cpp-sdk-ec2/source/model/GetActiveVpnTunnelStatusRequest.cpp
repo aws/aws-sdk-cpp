@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/ec2/model/GetActiveVpnTunnelStatusRequest.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils;
+
+Aws::String GetActiveVpnTunnelStatusRequest::SerializePayload() const
+{
+  Aws::StringStream ss;
+  ss << "Action=GetActiveVpnTunnelStatus&";
+  if(m_vpnConnectionIdHasBeenSet)
+  {
+    ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
+  }
+
+  if(m_vpnTunnelOutsideIpAddressHasBeenSet)
+  {
+    ss << "VpnTunnelOutsideIpAddress=" << StringUtils::URLEncode(m_vpnTunnelOutsideIpAddress.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  ss << "Version=2016-11-15";
+  return ss.str();
+}
+
+
+void  GetActiveVpnTunnelStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

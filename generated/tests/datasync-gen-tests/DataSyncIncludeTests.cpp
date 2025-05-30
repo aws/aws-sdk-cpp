@@ -23,6 +23,7 @@
 #include <aws/datasync/model/AzureBlobType.h>
 #include <aws/datasync/model/CancelTaskExecutionRequest.h>
 #include <aws/datasync/model/CancelTaskExecutionResult.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateAgentResult.h>
 #include <aws/datasync/model/CreateLocationAzureBlobRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/datasync/model/CreateLocationSmbResult.h>
 #include <aws/datasync/model/CreateTaskRequest.h>
 #include <aws/datasync/model/CreateTaskResult.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/DeleteAgentRequest.h>
 #include <aws/datasync/model/DeleteAgentResult.h>
 #include <aws/datasync/model/DeleteLocationRequest.h>
@@ -114,6 +116,7 @@
 #include <aws/datasync/model/LocationFilterName.h>
 #include <aws/datasync/model/LocationListEntry.h>
 #include <aws/datasync/model/LogLevel.h>
+#include <aws/datasync/model/ManagedSecretConfig.h>
 #include <aws/datasync/model/ManifestAction.h>
 #include <aws/datasync/model/ManifestConfig.h>
 #include <aws/datasync/model/ManifestFormat.h>

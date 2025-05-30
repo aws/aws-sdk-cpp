@@ -58,9 +58,8 @@ namespace Model
      * <p>The ID of the Amazon Machine Image (AMI) that was assigned during
      * registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
-     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-     * <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not
-     * required.</p>
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you specify
+     * <code>InstanceId</code>, an <code>ImageId</code> is not required.</p>
      */
     inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -74,8 +73,8 @@ namespace Model
     /**
      * <p>The name of the key pair. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for
-     * Linux Instances</i>.</p>
+     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
@@ -172,9 +171,8 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance. For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-     * <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not
-     * required.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you specify
+     * <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -189,8 +187,7 @@ namespace Model
      * <p>The ID of the kernel associated with the AMI.</p>  <p>We recommend that
      * you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User
-     * provided kernels</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> 
+     * provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetKernelId() const { return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
@@ -205,8 +202,7 @@ namespace Model
      * <p>The ID of the RAM disk to select.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User
-     * provided kernels</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> 
+     * provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetRamdiskId() const { return m_ramdiskId; }
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
@@ -222,7 +218,7 @@ namespace Model
      * the instances at launch. By default, the block devices specified in the block
      * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     * device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
@@ -302,8 +298,8 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>The
+     * default value is <code>false</code>.</p>
      */
     inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }

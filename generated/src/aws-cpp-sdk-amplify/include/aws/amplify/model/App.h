@@ -15,6 +15,7 @@
 #include <aws/amplify/model/RepositoryCloneMethod.h>
 #include <aws/amplify/model/CacheConfig.h>
 #include <aws/amplify/model/WafConfiguration.h>
+#include <aws/amplify/model/JobConfig.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
 
@@ -412,6 +413,18 @@ namespace Model
     template<typename WafConfigurationT = WafConfiguration>
     App& WithWafConfiguration(WafConfigurationT&& value) { SetWafConfiguration(std::forward<WafConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration details that apply to the jobs for an Amplify app.</p>
+     */
+    inline const JobConfig& GetJobConfig() const { return m_jobConfig; }
+    inline bool JobConfigHasBeenSet() const { return m_jobConfigHasBeenSet; }
+    template<typename JobConfigT = JobConfig>
+    void SetJobConfig(JobConfigT&& value) { m_jobConfigHasBeenSet = true; m_jobConfig = std::forward<JobConfigT>(value); }
+    template<typename JobConfigT = JobConfig>
+    App& WithJobConfig(JobConfigT&& value) { SetJobConfig(std::forward<JobConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_appId;
@@ -497,6 +510,9 @@ namespace Model
 
     WafConfiguration m_wafConfiguration;
     bool m_wafConfigurationHasBeenSet = false;
+
+    JobConfig m_jobConfig;
+    bool m_jobConfigHasBeenSet = false;
   };
 
 } // namespace Model

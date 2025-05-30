@@ -28,6 +28,18 @@ Aws::String StartFlowCaptureRequest::SerializePayload() const
 
   }
 
+  if(m_vpcEndpointAssociationArnHasBeenSet)
+  {
+   payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
+
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
+
   if(m_minimumFlowAgeInSecondsHasBeenSet)
   {
    payload.WithInteger("MinimumFlowAgeInSeconds", m_minimumFlowAgeInSeconds);

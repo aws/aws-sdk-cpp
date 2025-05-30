@@ -13,6 +13,7 @@
 #include <aws/fsx/model/LustreLogConfiguration.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <aws/fsx/model/FileSystemLustreMetadataConfiguration.h>
+#include <aws/fsx/model/LustreReadCacheConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -83,9 +84,9 @@ namespace Model
      * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
      * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
      * for Lustre deployment types, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
-     * FSx for Lustre deployment options</a>.</p> <p>The default is
-     * <code>SCRATCH_1</code>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment
+     * and storage class options for FSx for Lustre file systems</a>.</p> <p>The
+     * default is <code>SCRATCH_1</code>.</p>
      */
     inline LustreDeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
@@ -242,6 +243,31 @@ namespace Model
     inline void SetEfaEnabled(bool value) { m_efaEnabledHasBeenSet = true; m_efaEnabled = value; }
     inline LustreFileSystemConfiguration& WithEfaEnabled(bool value) { SetEfaEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre file system using the
+     * Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+     */
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
+    inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
+    inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
+    inline LustreFileSystemConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Required when <code>StorageType</code> is set to
+     * <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read
+     * cache.</p>
+     */
+    inline const LustreReadCacheConfiguration& GetDataReadCacheConfiguration() const { return m_dataReadCacheConfiguration; }
+    inline bool DataReadCacheConfigurationHasBeenSet() const { return m_dataReadCacheConfigurationHasBeenSet; }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    void SetDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { m_dataReadCacheConfigurationHasBeenSet = true; m_dataReadCacheConfiguration = std::forward<DataReadCacheConfigurationT>(value); }
+    template<typename DataReadCacheConfigurationT = LustreReadCacheConfiguration>
+    LustreFileSystemConfiguration& WithDataReadCacheConfiguration(DataReadCacheConfigurationT&& value) { SetDataReadCacheConfiguration(std::forward<DataReadCacheConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -285,6 +311,12 @@ namespace Model
 
     bool m_efaEnabled{false};
     bool m_efaEnabledHasBeenSet = false;
+
+    int m_throughputCapacity{0};
+    bool m_throughputCapacityHasBeenSet = false;
+
+    LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+    bool m_dataReadCacheConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
