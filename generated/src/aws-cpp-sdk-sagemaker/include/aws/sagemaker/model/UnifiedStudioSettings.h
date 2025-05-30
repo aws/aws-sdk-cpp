@@ -136,6 +136,19 @@ namespace Model
     template<typename ProjectS3PathT = Aws::String>
     UnifiedStudioSettings& WithProjectS3Path(ProjectS3PathT&& value) { SetProjectS3Path(std::forward<ProjectS3PathT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the application managed by SageMaker AI and SageMaker Unified
+     * Studio in the Amazon Web Services IAM Identity Center.</p>
+     */
+    inline const Aws::String& GetSingleSignOnApplicationArn() const { return m_singleSignOnApplicationArn; }
+    inline bool SingleSignOnApplicationArnHasBeenSet() const { return m_singleSignOnApplicationArnHasBeenSet; }
+    template<typename SingleSignOnApplicationArnT = Aws::String>
+    void SetSingleSignOnApplicationArn(SingleSignOnApplicationArnT&& value) { m_singleSignOnApplicationArnHasBeenSet = true; m_singleSignOnApplicationArn = std::forward<SingleSignOnApplicationArnT>(value); }
+    template<typename SingleSignOnApplicationArnT = Aws::String>
+    UnifiedStudioSettings& WithSingleSignOnApplicationArn(SingleSignOnApplicationArnT&& value) { SetSingleSignOnApplicationArn(std::forward<SingleSignOnApplicationArnT>(value)); return *this;}
+    ///@}
   private:
 
     FeatureStatus m_studioWebPortalAccess{FeatureStatus::NOT_SET};
@@ -158,6 +171,9 @@ namespace Model
 
     Aws::String m_projectS3Path;
     bool m_projectS3PathHasBeenSet = false;
+
+    Aws::String m_singleSignOnApplicationArn;
+    bool m_singleSignOnApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

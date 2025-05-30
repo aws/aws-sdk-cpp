@@ -60,6 +60,11 @@ UnifiedStudioSettings& UnifiedStudioSettings::operator =(JsonView jsonValue)
     m_projectS3Path = jsonValue.GetString("ProjectS3Path");
     m_projectS3PathHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SingleSignOnApplicationArn"))
+  {
+    m_singleSignOnApplicationArn = jsonValue.GetString("SingleSignOnApplicationArn");
+    m_singleSignOnApplicationArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -105,6 +110,12 @@ JsonValue UnifiedStudioSettings::Jsonize() const
   if(m_projectS3PathHasBeenSet)
   {
    payload.WithString("ProjectS3Path", m_projectS3Path);
+
+  }
+
+  if(m_singleSignOnApplicationArnHasBeenSet)
+  {
+   payload.WithString("SingleSignOnApplicationArn", m_singleSignOnApplicationArn);
 
   }
 

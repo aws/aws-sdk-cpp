@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
 #include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
 #include <aws/sagemaker/model/ProductionVariantInferenceAmiVersion.h>
+#include <aws/sagemaker/model/ProductionVariantCapacityReservationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,19 @@ namespace Model
     inline void SetInferenceAmiVersion(ProductionVariantInferenceAmiVersion value) { m_inferenceAmiVersionHasBeenSet = true; m_inferenceAmiVersion = value; }
     inline ProductionVariant& WithInferenceAmiVersion(ProductionVariantInferenceAmiVersion value) { SetInferenceAmiVersion(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings for the capacity reservation for the compute instances that
+     * SageMaker AI reserves for an endpoint. </p>
+     */
+    inline const ProductionVariantCapacityReservationConfig& GetCapacityReservationConfig() const { return m_capacityReservationConfig; }
+    inline bool CapacityReservationConfigHasBeenSet() const { return m_capacityReservationConfigHasBeenSet; }
+    template<typename CapacityReservationConfigT = ProductionVariantCapacityReservationConfig>
+    void SetCapacityReservationConfig(CapacityReservationConfigT&& value) { m_capacityReservationConfigHasBeenSet = true; m_capacityReservationConfig = std::forward<CapacityReservationConfigT>(value); }
+    template<typename CapacityReservationConfigT = ProductionVariantCapacityReservationConfig>
+    ProductionVariant& WithCapacityReservationConfig(CapacityReservationConfigT&& value) { SetCapacityReservationConfig(std::forward<CapacityReservationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_variantName;
@@ -298,6 +312,9 @@ namespace Model
 
     ProductionVariantInferenceAmiVersion m_inferenceAmiVersion{ProductionVariantInferenceAmiVersion::NOT_SET};
     bool m_inferenceAmiVersionHasBeenSet = false;
+
+    ProductionVariantCapacityReservationConfig m_capacityReservationConfig;
+    bool m_capacityReservationConfigHasBeenSet = false;
   };
 
 } // namespace Model
