@@ -12,8 +12,8 @@
 #include <fstream>
 
 namespace {
-Aws::Array<const char*, 4> COMMENT_START_SEQ{" #", " ;", "\t#", "\t;"};
-Aws::Array<const char, 2> COMMENT_CHARS{'#', ';'};
+Aws::Array<const char*, 4> COMMENT_START_SEQ{{" #", " ;", "\t#", "\t;"}};
+Aws::Array<const char, 2> COMMENT_CHARS{{'#', ';'}};
 }
 
 namespace Aws
