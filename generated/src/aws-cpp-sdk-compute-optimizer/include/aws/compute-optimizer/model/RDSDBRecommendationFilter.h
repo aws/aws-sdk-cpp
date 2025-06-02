@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes a filter that returns a more specific list of Amazon RDS
+   * <p> Describes a filter that returns a more specific list of DB instance
    * recommendations. Use this filter with the <a>GetECSServiceRecommendations</a>
    * action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDBRecommendationFilter">AWS
@@ -45,18 +45,18 @@ namespace Model
     /**
      * <p> The name of the filter. </p> <p> Specify <code>Finding</code> to return
      * recommendations with a specific finding classification. </p> <p>You can filter
-     * your Amazon RDS recommendations by <code>tag:key</code> and <code>tag-key</code>
-     * tags.</p> <p>A <code>tag:key</code> is a key and value combination of a tag
-     * assigned to your Amazon RDS recommendations. Use the tag key in the filter name
-     * and the tag value as the filter value. For example, to find all Amazon RDS
-     * service recommendations that have a tag with the key of <code>Owner</code> and
-     * the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
-     * name and <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code>
-     * is the key of a tag assigned to your Amazon RDS recommendations. Use this filter
-     * to find all of your Amazon RDS recommendations that have a tag with a specific
-     * key. This doesn’t consider the tag value. For example, you can find your Amazon
-     * RDS service recommendations with a tag key value of <code>Owner</code> or
-     * without any tag keys assigned.</p>
+     * your DB instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your DB instance recommendations. Use the tag
+     * key in the filter name and the tag value as the filter value. For example, to
+     * find all DB instance recommendations that have a tag with the key of
+     * <code>Owner</code> and the value of <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> <p>A <code>tag-key</code> is the key of a tag assigned to your DB
+     * instance recommendations. Use this filter to find all of your DB instance
+     * recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your DB instance recommendations with a tag
+     * key value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline RDSDBRecommendationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

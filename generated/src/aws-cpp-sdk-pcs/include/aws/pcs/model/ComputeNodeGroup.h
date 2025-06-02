@@ -123,7 +123,16 @@ namespace Model
     /**
      * <p>The provisioning status of the compute node group.</p>  <p>The
      * provisioning status doesn't indicate the overall health of the compute node
-     * group.</p> 
+     * group.</p>   <p>The resource enters the
+     * <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is
+     * beyond end of life and we have suspended the cluster. When in these states, you
+     * can't use the cluster. The cluster controller is down and all compute instances
+     * are terminated. The resources still count toward your service quotas. You can
+     * delete a resource if its status is <code>SUSPENDED</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently
+     * asked questions about Slurm versions in PCS</a> in the <i>PCS User
+     * Guide</i>.</p> 
      */
     inline ComputeNodeGroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

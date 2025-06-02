@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfiguration.h>
+#include <aws/athena/model/ManagedQueryResultsConfiguration.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
@@ -67,6 +68,20 @@ namespace Model
     void SetResultConfiguration(ResultConfigurationT&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::forward<ResultConfigurationT>(value); }
     template<typename ResultConfigurationT = ResultConfiguration>
     WorkGroupConfiguration& WithResultConfiguration(ResultConfigurationT&& value) { SetResultConfiguration(std::forward<ResultConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The configuration for storing results in Athena owned storage, which
+     * includes whether this feature is enabled; whether encryption configuration, if
+     * any, is used for encrypting query results. </p>
+     */
+    inline const ManagedQueryResultsConfiguration& GetManagedQueryResultsConfiguration() const { return m_managedQueryResultsConfiguration; }
+    inline bool ManagedQueryResultsConfigurationHasBeenSet() const { return m_managedQueryResultsConfigurationHasBeenSet; }
+    template<typename ManagedQueryResultsConfigurationT = ManagedQueryResultsConfiguration>
+    void SetManagedQueryResultsConfiguration(ManagedQueryResultsConfigurationT&& value) { m_managedQueryResultsConfigurationHasBeenSet = true; m_managedQueryResultsConfiguration = std::forward<ManagedQueryResultsConfigurationT>(value); }
+    template<typename ManagedQueryResultsConfigurationT = ManagedQueryResultsConfiguration>
+    WorkGroupConfiguration& WithManagedQueryResultsConfiguration(ManagedQueryResultsConfigurationT&& value) { SetManagedQueryResultsConfiguration(std::forward<ManagedQueryResultsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,6 +238,9 @@ namespace Model
 
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;
+
+    ManagedQueryResultsConfiguration m_managedQueryResultsConfiguration;
+    bool m_managedQueryResultsConfigurationHasBeenSet = false;
 
     bool m_enforceWorkGroupConfiguration{false};
     bool m_enforceWorkGroupConfigurationHasBeenSet = false;

@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> Describes the savings opportunity for Amazon RDS instance recommendations
-   * after applying Savings Plans discounts. </p> <p> Savings opportunity represents
-   * the estimated monthly savings after applying Savings Plans discounts. You can
+   * <p> Describes the savings opportunity for DB instance recommendations after
+   * applying Savings Plans discounts. </p> <p> Savings opportunity represents the
+   * estimated monthly savings after applying Savings Plans discounts. You can
    * achieve this by implementing a given Compute Optimizer recommendation.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSInstanceSavingsOpportunityAfterDiscounts">AWS
@@ -44,8 +44,8 @@ namespace Model
     ///@{
     /**
      * <p> The estimated monthly savings possible as a percentage of monthly cost by
-     * adopting Compute Optimizer’s Amazon RDS instance recommendations. This includes
-     * any applicable Savings Plans discounts. </p>
+     * adopting Compute Optimizer’s DB instance recommendations. This includes any
+     * applicable Savings Plans discounts. </p>
      */
     inline double GetSavingsOpportunityPercentage() const { return m_savingsOpportunityPercentage; }
     inline bool SavingsOpportunityPercentageHasBeenSet() const { return m_savingsOpportunityPercentageHasBeenSet; }
@@ -55,9 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon RDS instance recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
+     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s DB
+     * instance recommendations. This includes any applicable Savings Plans discounts.
+     * </p>
      */
     inline const RDSInstanceEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }

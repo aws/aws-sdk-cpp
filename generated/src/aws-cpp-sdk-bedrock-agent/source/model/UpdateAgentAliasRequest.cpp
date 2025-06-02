@@ -22,6 +22,11 @@ Aws::String UpdateAgentAliasRequest::SerializePayload() const
 
   }
 
+  if(m_aliasInvocationStateHasBeenSet)
+  {
+   payload.WithString("aliasInvocationState", AliasInvocationStateMapper::GetNameForAliasInvocationState(m_aliasInvocationState));
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);

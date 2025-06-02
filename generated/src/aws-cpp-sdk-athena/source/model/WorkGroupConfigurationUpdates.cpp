@@ -35,6 +35,11 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_resultConfigurationUpdates = jsonValue.GetObject("ResultConfigurationUpdates");
     m_resultConfigurationUpdatesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedQueryResultsConfigurationUpdates"))
+  {
+    m_managedQueryResultsConfigurationUpdates = jsonValue.GetObject("ManagedQueryResultsConfigurationUpdates");
+    m_managedQueryResultsConfigurationUpdatesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("PublishCloudWatchMetricsEnabled"))
   {
     m_publishCloudWatchMetricsEnabled = jsonValue.GetBool("PublishCloudWatchMetricsEnabled");
@@ -106,6 +111,12 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_resultConfigurationUpdatesHasBeenSet)
   {
    payload.WithObject("ResultConfigurationUpdates", m_resultConfigurationUpdates.Jsonize());
+
+  }
+
+  if(m_managedQueryResultsConfigurationUpdatesHasBeenSet)
+  {
+   payload.WithObject("ManagedQueryResultsConfigurationUpdates", m_managedQueryResultsConfigurationUpdates.Jsonize());
 
   }
 

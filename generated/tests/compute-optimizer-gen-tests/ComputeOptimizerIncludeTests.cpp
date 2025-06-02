@@ -224,6 +224,7 @@
 #include <aws/compute-optimizer/model/RDSDatabaseProjectedMetric.h>
 #include <aws/compute-optimizer/model/RDSDatabaseRecommendedOptionProjectedMetric.h>
 #include <aws/compute-optimizer/model/RDSEffectiveRecommendationPreferences.h>
+#include <aws/compute-optimizer/model/RDSEstimatedMonthlyVolumeIOPsCostVariation.h>
 #include <aws/compute-optimizer/model/RDSInstanceEstimatedMonthlySavings.h>
 #include <aws/compute-optimizer/model/RDSInstanceFinding.h>
 #include <aws/compute-optimizer/model/RDSInstanceFindingReasonCode.h>

@@ -26,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p> Describes the projected metrics of an Amazon RDS recommendation option. </p>
-   * <p> To determine the performance difference between your current Amazon RDS and
-   * the recommended option, compare the metric data of your service against its
-   * projected metric data. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes the projected metrics of an Amazon Aurora and RDS database
+   * recommendation option. </p> <p> To determine the performance difference between
+   * your current Amazon Aurora and RDS database and the recommended option, compare
+   * the metric data of your service against its projected metric data.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDatabaseRecommendedOptionProjectedMetric">AWS
    * API Reference</a></p>
    */
@@ -44,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The recommended DB instance class for the Amazon RDS. </p>
+     * <p> The recommended DB instance class for the Amazon Aurora or RDS database.
+     * </p>
      */
     inline const Aws::String& GetRecommendedDBInstanceClass() const { return m_recommendedDBInstanceClass; }
     inline bool RecommendedDBInstanceClassHasBeenSet() const { return m_recommendedDBInstanceClassHasBeenSet; }
@@ -56,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The rank identifier of the RDS instance recommendation option. </p>
+     * <p> The rank identifier of the Amazon Aurora or RDS DB instance recommendation
+     * option. </p>
      */
     inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }

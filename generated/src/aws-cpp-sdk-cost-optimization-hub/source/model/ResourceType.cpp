@@ -35,6 +35,7 @@ namespace Aws
         static const int ElastiCacheReservedInstances_HASH = HashingUtils::HashString("ElastiCacheReservedInstances");
         static const int RdsDbInstanceStorage_HASH = HashingUtils::HashString("RdsDbInstanceStorage");
         static const int RdsDbInstance_HASH = HashingUtils::HashString("RdsDbInstance");
+        static const int AuroraDbClusterStorage_HASH = HashingUtils::HashString("AuroraDbClusterStorage");
         static const int DynamoDbReservedCapacity_HASH = HashingUtils::HashString("DynamoDbReservedCapacity");
         static const int MemoryDbReservedInstances_HASH = HashingUtils::HashString("MemoryDbReservedInstances");
 
@@ -102,6 +103,10 @@ namespace Aws
           {
             return ResourceType::RdsDbInstance;
           }
+          else if (hashCode == AuroraDbClusterStorage_HASH)
+          {
+            return ResourceType::AuroraDbClusterStorage;
+          }
           else if (hashCode == DynamoDbReservedCapacity_HASH)
           {
             return ResourceType::DynamoDbReservedCapacity;
@@ -156,6 +161,8 @@ namespace Aws
             return "RdsDbInstanceStorage";
           case ResourceType::RdsDbInstance:
             return "RdsDbInstance";
+          case ResourceType::AuroraDbClusterStorage:
+            return "AuroraDbClusterStorage";
           case ResourceType::DynamoDbReservedCapacity:
             return "DynamoDbReservedCapacity";
           case ResourceType::MemoryDbReservedInstances:

@@ -32,6 +32,7 @@
 #include <aws/entityresolution/model/DeleteMatchingWorkflowRequest.h>
 #include <aws/entityresolution/model/DeletePolicyStatementRequest.h>
 #include <aws/entityresolution/model/DeleteSchemaMappingRequest.h>
+#include <aws/entityresolution/model/GenerateMatchIdRequest.h>
 #include <aws/entityresolution/model/GetIdMappingJobRequest.h>
 #include <aws/entityresolution/model/GetIdMappingWorkflowRequest.h>
 #include <aws/entityresolution/model/GetIdNamespaceRequest.h>
@@ -552,6 +553,40 @@ DeleteSchemaMappingOutcome EntityResolutionClient::DeleteSchemaMapping(const Del
       endpointResolutionOutcome.GetResult().AddPathSegments("/schemas/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSchemaName());
       return DeleteSchemaMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GenerateMatchIdOutcome EntityResolutionClient::GenerateMatchId(const GenerateMatchIdRequest& request) const
+{
+  AWS_OPERATION_GUARD(GenerateMatchId);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateMatchId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateMatchId", "Required field: WorkflowName, is not set");
+    return GenerateMatchIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GenerateMatchId, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GenerateMatchId, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GenerateMatchId",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GenerateMatchIdOutcome>(
+    [&]()-> GenerateMatchIdOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateMatchId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/matchingworkflows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/generateMatches");
+      return GenerateMatchIdOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

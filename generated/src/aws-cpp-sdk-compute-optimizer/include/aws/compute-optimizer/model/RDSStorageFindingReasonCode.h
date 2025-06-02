@@ -20,7 +20,9 @@ namespace Model
     EBSVolumeThroughputUnderprovisioned,
     EBSVolumeIOPSOverprovisioned,
     EBSVolumeThroughputOverprovisioned,
-    NewGenerationStorageTypeAvailable
+    NewGenerationStorageTypeAvailable,
+    DBClusterStorageOptionAvailable,
+    DBClusterStorageSavingsAvailable
   };
 
 namespace RDSStorageFindingReasonCodeMapper

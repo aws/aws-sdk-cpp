@@ -53,8 +53,8 @@ namespace Model
     ///@{
     /**
      * <p>The Git commit hash for the Amazon ECS container agent build on the <a
-     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
-     * </a> GitHub repository.</p>
+     * href="https://github.com/aws/amazon-ecs-agent">amazon-ecs-agent </a> GitHub
+     * repository.</p>
      */
     inline const Aws::String& GetAgentHash() const { return m_agentHash; }
     inline bool AgentHashHasBeenSet() const { return m_agentHashHasBeenSet; }

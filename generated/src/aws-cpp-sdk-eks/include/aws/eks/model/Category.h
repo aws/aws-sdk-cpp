@@ -16,7 +16,8 @@ namespace Model
   enum class Category
   {
     NOT_SET,
-    UPGRADE_READINESS
+    UPGRADE_READINESS,
+    MISCONFIGURATION
   };
 
 namespace CategoryMapper

@@ -45,6 +45,11 @@ RDSDBStorageRecommendationOption& RDSDBStorageRecommendationOption::operator =(J
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("estimatedMonthlyVolumeIOPsCostVariation"))
+  {
+    m_estimatedMonthlyVolumeIOPsCostVariation = RDSEstimatedMonthlyVolumeIOPsCostVariationMapper::GetRDSEstimatedMonthlyVolumeIOPsCostVariationForName(jsonValue.GetString("estimatedMonthlyVolumeIOPsCostVariation"));
+    m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -74,6 +79,11 @@ JsonValue RDSDBStorageRecommendationOption::Jsonize() const
   {
    payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
 
+  }
+
+  if(m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet)
+  {
+   payload.WithString("estimatedMonthlyVolumeIOPsCostVariation", RDSEstimatedMonthlyVolumeIOPsCostVariationMapper::GetNameForRDSEstimatedMonthlyVolumeIOPsCostVariation(m_estimatedMonthlyVolumeIOPsCostVariation));
   }
 
   return payload;

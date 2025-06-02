@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ARN that identifies the Amazon RDS. </p> <p> The following is the format
-     * of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon Aurora or RDS database. </p> <p> The
+     * following is the format of the ARN: </p> <p>
      * <code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code> </p> <p> The
      * following is the format of a DB Cluster ARN: </p> <p>
      * <code>arn:aws:rds:{region}:{accountId}:cluster:{resourceName}</code> </p>
@@ -57,7 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token to advance to the next page of Amazon RDS recommendations. </p>
+     * <p> The token to advance to the next page of Amazon Aurora and RDS database
+     * recommendations. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -69,9 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of Amazon RDS recommendations to return with a single
-     * request.</p> <p>To retrieve the remaining results, make another request with the
-     * returned <code>nextToken</code> value.</p>
+     * <p>The maximum number of Amazon Aurora and RDS database recommendations to
+     * return with a single request.</p> <p>To retrieve the remaining results, make
+     * another request with the returned <code>nextToken</code> value.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -82,7 +83,7 @@ namespace Model
     ///@{
     /**
      * <p> An array of objects to specify a filter that returns a more specific list of
-     * Amazon RDS recommendations. </p>
+     * Amazon Aurora and RDS database recommendations. </p>
      */
     inline const Aws::Vector<RDSDBRecommendationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -96,11 +97,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Return the Amazon RDS recommendations to the specified Amazon Web Services
-     * account IDs. </p> <p>If your account is the management account or the delegated
-     * administrator of an organization, use this parameter to return the Amazon RDS
-     * recommendations to specific member accounts.</p> <p>You can only specify one
-     * account ID per request.</p>
+     * <p> Return the Amazon Aurora and RDS database recommendations to the specified
+     * Amazon Web Services account IDs. </p> <p>If your account is the management
+     * account or the delegated administrator of an organization, use this parameter to
+     * return the Amazon Aurora and RDS database recommendations to specific member
+     * accounts.</p> <p>You can only specify one account ID per request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

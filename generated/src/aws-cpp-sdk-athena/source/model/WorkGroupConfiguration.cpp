@@ -30,6 +30,11 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator =(JsonView jsonValue)
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
     m_resultConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedQueryResultsConfiguration"))
+  {
+    m_managedQueryResultsConfiguration = jsonValue.GetObject("ManagedQueryResultsConfiguration");
+    m_managedQueryResultsConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("EnforceWorkGroupConfiguration"))
   {
     m_enforceWorkGroupConfiguration = jsonValue.GetBool("EnforceWorkGroupConfiguration");
@@ -95,6 +100,12 @@ JsonValue WorkGroupConfiguration::Jsonize() const
   if(m_resultConfigurationHasBeenSet)
   {
    payload.WithObject("ResultConfiguration", m_resultConfiguration.Jsonize());
+
+  }
+
+  if(m_managedQueryResultsConfigurationHasBeenSet)
+  {
+   payload.WithObject("ManagedQueryResultsConfiguration", m_managedQueryResultsConfiguration.Jsonize());
 
   }
 

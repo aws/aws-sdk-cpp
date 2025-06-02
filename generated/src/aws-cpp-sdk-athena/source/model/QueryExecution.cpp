@@ -40,6 +40,11 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_statementType = StatementTypeMapper::GetStatementTypeForName(jsonValue.GetString("StatementType"));
     m_statementTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedQueryResultsConfiguration"))
+  {
+    m_managedQueryResultsConfiguration = jsonValue.GetObject("ManagedQueryResultsConfiguration");
+    m_managedQueryResultsConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ResultConfiguration"))
   {
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
@@ -116,6 +121,12 @@ JsonValue QueryExecution::Jsonize() const
   if(m_statementTypeHasBeenSet)
   {
    payload.WithString("StatementType", StatementTypeMapper::GetNameForStatementType(m_statementType));
+  }
+
+  if(m_managedQueryResultsConfigurationHasBeenSet)
+  {
+   payload.WithObject("ManagedQueryResultsConfiguration", m_managedQueryResultsConfiguration.Jsonize());
+
   }
 
   if(m_resultConfigurationHasBeenSet)

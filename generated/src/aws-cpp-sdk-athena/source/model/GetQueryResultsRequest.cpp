@@ -34,6 +34,11 @@ Aws::String GetQueryResultsRequest::SerializePayload() const
 
   }
 
+  if(m_queryResultTypeHasBeenSet)
+  {
+   payload.WithString("QueryResultType", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultType));
+  }
+
   return payload.View().WriteReadable();
 }
 

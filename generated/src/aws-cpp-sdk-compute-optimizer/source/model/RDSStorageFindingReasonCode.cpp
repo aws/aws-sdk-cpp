@@ -25,6 +25,8 @@ namespace Aws
         static const int EBSVolumeIOPSOverprovisioned_HASH = HashingUtils::HashString("EBSVolumeIOPSOverprovisioned");
         static const int EBSVolumeThroughputOverprovisioned_HASH = HashingUtils::HashString("EBSVolumeThroughputOverprovisioned");
         static const int NewGenerationStorageTypeAvailable_HASH = HashingUtils::HashString("NewGenerationStorageTypeAvailable");
+        static const int DBClusterStorageOptionAvailable_HASH = HashingUtils::HashString("DBClusterStorageOptionAvailable");
+        static const int DBClusterStorageSavingsAvailable_HASH = HashingUtils::HashString("DBClusterStorageSavingsAvailable");
 
 
         RDSStorageFindingReasonCode GetRDSStorageFindingReasonCodeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == NewGenerationStorageTypeAvailable_HASH)
           {
             return RDSStorageFindingReasonCode::NewGenerationStorageTypeAvailable;
+          }
+          else if (hashCode == DBClusterStorageOptionAvailable_HASH)
+          {
+            return RDSStorageFindingReasonCode::DBClusterStorageOptionAvailable;
+          }
+          else if (hashCode == DBClusterStorageSavingsAvailable_HASH)
+          {
+            return RDSStorageFindingReasonCode::DBClusterStorageSavingsAvailable;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "EBSVolumeThroughputOverprovisioned";
           case RDSStorageFindingReasonCode::NewGenerationStorageTypeAvailable:
             return "NewGenerationStorageTypeAvailable";
+          case RDSStorageFindingReasonCode::DBClusterStorageOptionAvailable:
+            return "DBClusterStorageOptionAvailable";
+          case RDSStorageFindingReasonCode::DBClusterStorageSavingsAvailable:
+            return "DBClusterStorageSavingsAvailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

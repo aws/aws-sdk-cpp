@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token to advance to the next page of Amazon RDS recommendations. </p>
+     * <p> The token to advance to the next page of Amazon Aurora and RDS database
+     * recommendations. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>
@@ -48,7 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of objects that describe the Amazon RDS recommendations. </p>
+     * <p> An array of objects that describe the Amazon Aurora and RDS database
+     * recommendations. </p>
      */
     inline const Aws::Vector<RDSDBRecommendation>& GetRdsDBRecommendations() const { return m_rdsDBRecommendations; }
     template<typename RdsDBRecommendationsT = Aws::Vector<RDSDBRecommendation>>

@@ -22,7 +22,9 @@ namespace Model
     DELETING,
     CREATE_FAILED,
     DELETE_FAILED,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    SUSPENDING,
+    SUSPENDED
   };
 
 namespace QueueStatusMapper

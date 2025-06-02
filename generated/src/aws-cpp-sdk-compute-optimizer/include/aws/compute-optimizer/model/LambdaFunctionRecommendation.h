@@ -144,7 +144,7 @@ namespace Model
     ///@{
     /**
      * <p>The finding classification of the function.</p> <p>Findings for functions
-     * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
+     * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> ��� The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
      * finding reason codes.</p> </li> <li> <p> <b> <code>NotOptimized</code> </b> —

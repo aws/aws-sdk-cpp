@@ -42,7 +42,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The categories to use to filter insights.</p>
+     * <p>The categories to use to filter insights. The following lists the available
+     * categories:</p> <ul> <li> <p> <code>UPGRADE_READINESS</code>: Amazon EKS
+     * identifies issues that could impact your ability to upgrade to new versions of
+     * Kubernetes. These are called upgrade insights.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your
+     * EKS Hybrid Nodes setup that could impair functionality of your cluster or
+     * workloads. These are called configuration insights.</p> </li> </ul>
      */
     inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }

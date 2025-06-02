@@ -29,6 +29,7 @@
 #include <aws/entityresolution/model/DeleteMatchingWorkflowResult.h>
 #include <aws/entityresolution/model/DeletePolicyStatementResult.h>
 #include <aws/entityresolution/model/DeleteSchemaMappingResult.h>
+#include <aws/entityresolution/model/GenerateMatchIdResult.h>
 #include <aws/entityresolution/model/GetIdMappingJobResult.h>
 #include <aws/entityresolution/model/GetIdMappingWorkflowResult.h>
 #include <aws/entityresolution/model/GetIdNamespaceResult.h>
@@ -111,6 +112,7 @@ namespace Aws
       class DeleteMatchingWorkflowRequest;
       class DeletePolicyStatementRequest;
       class DeleteSchemaMappingRequest;
+      class GenerateMatchIdRequest;
       class GetIdMappingJobRequest;
       class GetIdMappingWorkflowRequest;
       class GetIdNamespaceRequest;
@@ -151,6 +153,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteMatchingWorkflowResult, EntityResolutionError> DeleteMatchingWorkflowOutcome;
       typedef Aws::Utils::Outcome<DeletePolicyStatementResult, EntityResolutionError> DeletePolicyStatementOutcome;
       typedef Aws::Utils::Outcome<DeleteSchemaMappingResult, EntityResolutionError> DeleteSchemaMappingOutcome;
+      typedef Aws::Utils::Outcome<GenerateMatchIdResult, EntityResolutionError> GenerateMatchIdOutcome;
       typedef Aws::Utils::Outcome<GetIdMappingJobResult, EntityResolutionError> GetIdMappingJobOutcome;
       typedef Aws::Utils::Outcome<GetIdMappingWorkflowResult, EntityResolutionError> GetIdMappingWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetIdNamespaceResult, EntityResolutionError> GetIdNamespaceOutcome;
@@ -191,6 +194,7 @@ namespace Aws
       typedef std::future<DeleteMatchingWorkflowOutcome> DeleteMatchingWorkflowOutcomeCallable;
       typedef std::future<DeletePolicyStatementOutcome> DeletePolicyStatementOutcomeCallable;
       typedef std::future<DeleteSchemaMappingOutcome> DeleteSchemaMappingOutcomeCallable;
+      typedef std::future<GenerateMatchIdOutcome> GenerateMatchIdOutcomeCallable;
       typedef std::future<GetIdMappingJobOutcome> GetIdMappingJobOutcomeCallable;
       typedef std::future<GetIdMappingWorkflowOutcome> GetIdMappingWorkflowOutcomeCallable;
       typedef std::future<GetIdNamespaceOutcome> GetIdNamespaceOutcomeCallable;
@@ -234,6 +238,7 @@ namespace Aws
     typedef std::function<void(const EntityResolutionClient*, const Model::DeleteMatchingWorkflowRequest&, const Model::DeleteMatchingWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchingWorkflowResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::DeletePolicyStatementRequest&, const Model::DeletePolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyStatementResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::DeleteSchemaMappingRequest&, const Model::DeleteSchemaMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaMappingResponseReceivedHandler;
+    typedef std::function<void(const EntityResolutionClient*, const Model::GenerateMatchIdRequest&, const Model::GenerateMatchIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMatchIdResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::GetIdMappingJobRequest&, const Model::GetIdMappingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdMappingJobResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::GetIdMappingWorkflowRequest&, const Model::GetIdMappingWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdMappingWorkflowResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::GetIdNamespaceRequest&, const Model::GetIdNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdNamespaceResponseReceivedHandler;

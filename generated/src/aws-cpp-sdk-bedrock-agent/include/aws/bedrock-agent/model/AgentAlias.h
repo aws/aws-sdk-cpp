@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/AgentAliasStatus.h>
+#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/AgentAliasHistoryEvent.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
@@ -123,6 +124,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The invocation state for the agent alias. If the agent alias is running, the
+     * value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the
+     * value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code>
+     * operation to change the invocation state.</p>
+     */
+    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
+    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
+    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
+    inline AgentAlias& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier to ensure that the API request completes
      * no more than one time. If this token matches a previous request, Amazon Bedrock
      * ignores the request, but does not return an error. For more information, see <a
@@ -220,6 +234,9 @@ namespace Model
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+    bool m_aliasInvocationStateHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

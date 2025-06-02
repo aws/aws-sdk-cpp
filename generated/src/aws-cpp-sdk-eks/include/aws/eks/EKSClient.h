@@ -1313,7 +1313,14 @@ namespace EKS
         /**
          * <p>Returns a list of all insights checked for against the specified cluster. You
          * can filter which insights are returned by category, associated Kubernetes
-         * version, and status.</p><p><h3>See Also:</h3>   <a
+         * version, and status. The default filter lists all categories and every
+         * status.</p> <p>The following lists the available categories:</p> <ul> <li> <p>
+         * <code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact
+         * your ability to upgrade to new versions of Kubernetes. These are called upgrade
+         * insights.</p> </li> <li> <p> <code>MISCONFIGURATION</code>: Amazon EKS
+         * identifies misconfiguration in your EKS Hybrid Nodes setup that could impair
+         * functionality of your cluster or workloads. These are called configuration
+         * insights.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">AWS
          * API Reference</a></p>
          */

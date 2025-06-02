@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the job.</p>
+     * <p>The unique identifier of the matching job.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     template<typename JobIdT = Aws::String>

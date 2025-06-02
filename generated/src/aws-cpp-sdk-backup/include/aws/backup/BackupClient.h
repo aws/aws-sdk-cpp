@@ -2067,7 +2067,19 @@ namespace Backup
 
         /**
          * <p>Returns the tags assigned to the resource, such as a target recovery point,
-         * backup plan, or backup vault.</p><p><h3>See Also:</h3>   <a
+         * backup plan, or backup vault.</p> <p>This operation returns results depending on
+         * the resource type used in the value for <code>resourceArn</code>. For example,
+         * recovery points of Amazon DynamoDB with Advanced Settings have an ARN (Amazon
+         * Resource Name) that begins with <code>arn:aws:backup</code>. Recovery points
+         * (backups) of DynamoDB without Advanced Settings enabled have an ARN that begins
+         * with <code>arn:aws:dynamodb</code>.</p> <p>When this operation is called and
+         * when you include values of <code>resourceArn</code> that have an ARN other than
+         * <code>arn:aws:backup</code>, it may return one of the exceptions listed below.
+         * To prevent this exception, include only values representing resource types that
+         * are fully managed by Backup. These have an ARN that begins
+         * <code>arn:aws:backup</code> and they are noted in the <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+         * availability by resource</a> table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          */
@@ -2316,10 +2328,13 @@ namespace Backup
 
         /**
          * <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
-         * <p>This action is not supported for the following services: Amazon FSx for
-         * Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon
-         * FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
-         * Amazon Aurora, and Amazon Neptune.</p><p><h3>See Also:</h3>   <a
+         * <p>This action is not supported for the following services:</p> <ul> <li>
+         * <p>Amazon Aurora</p> </li> <li> <p>Amazon DocumentDB (with MongoDB
+         * compatibility)</p> </li> <li> <p>Amazon FSx for Lustre</p> </li> <li> <p>Amazon
+         * FSx for NetApp ONTAP</p> </li> <li> <p>Amazon FSx for OpenZFS</p> </li> <li>
+         * <p>Amazon FSx for Windows File Server</p> </li> <li> <p>Amazon Neptune</p> </li>
+         * <li> <p>SAP HANA databases on Amazon EC2 instances</p> </li> <li> <p>Amazon
+         * RDS</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">AWS
          * API Reference</a></p>
          */
@@ -2344,10 +2359,7 @@ namespace Backup
         }
 
         /**
-         * <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup
-         * vault identified by an Amazon Resource Name (ARN).</p> <p>This API is supported
-         * for recovery points for resource types including Aurora, Amazon DocumentDB.
-         * Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.</p><p><h3>See Also:</h3>   <a
+         * <p>Assigns a set of key-value pairs to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/TagResource">AWS
          * API Reference</a></p>
          */

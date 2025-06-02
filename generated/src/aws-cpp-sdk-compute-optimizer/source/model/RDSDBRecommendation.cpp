@@ -94,6 +94,11 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     m_currentInstancePerformanceRisk = RDSCurrentInstancePerformanceRiskMapper::GetRDSCurrentInstancePerformanceRiskForName(jsonValue.GetString("currentInstancePerformanceRisk"));
     m_currentInstancePerformanceRiskHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("currentStorageEstimatedMonthlyVolumeIOPsCostVariation"))
+  {
+    m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation = RDSEstimatedMonthlyVolumeIOPsCostVariationMapper::GetRDSEstimatedMonthlyVolumeIOPsCostVariationForName(jsonValue.GetString("currentStorageEstimatedMonthlyVolumeIOPsCostVariation"));
+    m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("storageFindingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> storageFindingReasonCodesJsonList = jsonValue.GetArray("storageFindingReasonCodes");
@@ -238,6 +243,11 @@ JsonValue RDSDBRecommendation::Jsonize() const
   if(m_currentInstancePerformanceRiskHasBeenSet)
   {
    payload.WithString("currentInstancePerformanceRisk", RDSCurrentInstancePerformanceRiskMapper::GetNameForRDSCurrentInstancePerformanceRisk(m_currentInstancePerformanceRisk));
+  }
+
+  if(m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet)
+  {
+   payload.WithString("currentStorageEstimatedMonthlyVolumeIOPsCostVariation", RDSEstimatedMonthlyVolumeIOPsCostVariationMapper::GetNameForRDSEstimatedMonthlyVolumeIOPsCostVariation(m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation));
   }
 
   if(m_storageFindingReasonCodesHasBeenSet)

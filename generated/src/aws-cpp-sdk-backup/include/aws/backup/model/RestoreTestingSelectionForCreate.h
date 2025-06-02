@@ -155,7 +155,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is amount of hours (1 to 168) available to run a validation script on
+     * <p>This is amount of hours (0 to 168) available to run a validation script on
      * the data. The data will be deleted upon the completion of the validation script
      * or the end of the specified retention period, whichever comes first.</p>
      */

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes the estimated monthly savings possible for Amazon RDS instances by
-   * adopting Compute Optimizer recommendations. This is based on Amazon RDS pricing
+   * <p> Describes the estimated monthly savings possible for DB instances by
+   * adopting Compute Optimizer recommendations. This is based on DB instance pricing
    * after applying Savings Plans discounts. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSInstanceEstimatedMonthlySavings">AWS
    * API Reference</a></p>
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The value of the estimated monthly savings for Amazon RDS instances. </p>
+     * <p> The value of the estimated monthly savings for DB instances. </p>
      */
     inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

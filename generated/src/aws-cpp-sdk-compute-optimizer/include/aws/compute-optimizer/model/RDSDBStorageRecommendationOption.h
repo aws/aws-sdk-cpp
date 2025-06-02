@@ -8,6 +8,7 @@
 #include <aws/compute-optimizer/model/DBStorageConfiguration.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/RDSStorageSavingsOpportunityAfterDiscounts.h>
+#include <aws/compute-optimizer/model/RDSEstimatedMonthlyVolumeIOPsCostVariation.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes the recommendation options for Amazon RDS storage. </p><p><h3>See
+   * <p> Describes the recommendation options for DB storage. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDBStorageRecommendationOption">AWS
    * API Reference</a></p>
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The rank identifier of the RDS storage recommendation option. </p>
+     * <p> The rank identifier of the DB storage recommendation option. </p>
      */
     inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
@@ -74,10 +75,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the savings opportunity for Amazon RDS storage recommendations or
-     * for the recommendation option. </p> <p> Savings opportunity represents the
-     * estimated monthly savings after applying Savings Plans discounts. You can
-     * achieve this by implementing a given Compute Optimizer recommendation. </p>
+     * <p> Describes the savings opportunity for DB storage recommendations or for the
+     * recommendation option. </p> <p> Savings opportunity represents the estimated
+     * monthly savings after applying Savings Plans discounts. You can achieve this by
+     * implementing a given Compute Optimizer recommendation. </p>
      */
     inline const RDSStorageSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const { return m_savingsOpportunityAfterDiscounts; }
     inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
@@ -85,6 +86,17 @@ namespace Model
     void SetSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::forward<SavingsOpportunityAfterDiscountsT>(value); }
     template<typename SavingsOpportunityAfterDiscountsT = RDSStorageSavingsOpportunityAfterDiscounts>
     RDSDBStorageRecommendationOption& WithSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { SetSavingsOpportunityAfterDiscounts(std::forward<SavingsOpportunityAfterDiscountsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The projected level of variation in monthly I/O costs for the DB storage
+     * recommendation option. </p>
+     */
+    inline RDSEstimatedMonthlyVolumeIOPsCostVariation GetEstimatedMonthlyVolumeIOPsCostVariation() const { return m_estimatedMonthlyVolumeIOPsCostVariation; }
+    inline bool EstimatedMonthlyVolumeIOPsCostVariationHasBeenSet() const { return m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet; }
+    inline void SetEstimatedMonthlyVolumeIOPsCostVariation(RDSEstimatedMonthlyVolumeIOPsCostVariation value) { m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet = true; m_estimatedMonthlyVolumeIOPsCostVariation = value; }
+    inline RDSDBStorageRecommendationOption& WithEstimatedMonthlyVolumeIOPsCostVariation(RDSEstimatedMonthlyVolumeIOPsCostVariation value) { SetEstimatedMonthlyVolumeIOPsCostVariation(value); return *this;}
     ///@}
   private:
 
@@ -99,6 +111,9 @@ namespace Model
 
     RDSStorageSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
     bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
+
+    RDSEstimatedMonthlyVolumeIOPsCostVariation m_estimatedMonthlyVolumeIOPsCostVariation{RDSEstimatedMonthlyVolumeIOPsCostVariation::NOT_SET};
+    bool m_estimatedMonthlyVolumeIOPsCostVariationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Optimized,
     Underprovisioned,
-    Overprovisioned
+    Overprovisioned,
+    NotOptimized
   };
 
 namespace RDSStorageFindingMapper

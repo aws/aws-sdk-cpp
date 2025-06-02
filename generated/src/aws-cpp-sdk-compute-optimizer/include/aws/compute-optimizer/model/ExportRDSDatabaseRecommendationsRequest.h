@@ -42,10 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Web Services account IDs for the export Amazon RDS
-     * recommendations. </p> <p>If your account is the management account or the
-     * delegated administrator of an organization, use this parameter to specify the
-     * member account you want to export recommendations to.</p> <p>This parameter
+     * <p> The Amazon Web Services account IDs for the export Amazon Aurora and RDS
+     * database recommendations. </p> <p>If your account is the management account or
+     * the delegated administrator of an organization, use this parameter to specify
+     * the member account you want to export recommendations to.</p> <p>This parameter
      * can't be specified together with the include member accounts parameter. The
      * parameters are mutually exclusive.</p> <p>If this parameter or the include
      * member accounts parameter is omitted, the recommendations for member accounts
@@ -65,7 +65,7 @@ namespace Model
     ///@{
     /**
      * <p> An array of objects to specify a filter that exports a more specific set of
-     * Amazon RDS recommendations. </p>
+     * Amazon Aurora and RDS recommendations. </p>
      */
     inline const Aws::Vector<RDSDBRecommendationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

@@ -27,6 +27,8 @@ namespace Aws
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
+        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
 
 
         QueueStatus GetQueueStatusForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return QueueStatus::UPDATE_FAILED;
           }
+          else if (hashCode == SUSPENDING_HASH)
+          {
+            return QueueStatus::SUSPENDING;
+          }
+          else if (hashCode == SUSPENDED_HASH)
+          {
+            return QueueStatus::SUSPENDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "DELETE_FAILED";
           case QueueStatus::UPDATE_FAILED:
             return "UPDATE_FAILED";
+          case QueueStatus::SUSPENDING:
+            return "SUSPENDING";
+          case QueueStatus::SUSPENDED:
+            return "SUSPENDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

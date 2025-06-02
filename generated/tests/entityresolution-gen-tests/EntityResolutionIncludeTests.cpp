@@ -43,6 +43,9 @@
 #include <aws/entityresolution/model/DeletedUniqueId.h>
 #include <aws/entityresolution/model/ErrorDetails.h>
 #include <aws/entityresolution/model/ExceedsLimitException.h>
+#include <aws/entityresolution/model/FailedRecord.h>
+#include <aws/entityresolution/model/GenerateMatchIdRequest.h>
+#include <aws/entityresolution/model/GenerateMatchIdResult.h>
 #include <aws/entityresolution/model/GetIdMappingJobRequest.h>
 #include <aws/entityresolution/model/GetIdMappingJobResult.h>
 #include <aws/entityresolution/model/GetIdMappingWorkflowRequest.h>
@@ -99,12 +102,15 @@
 #include <aws/entityresolution/model/ListSchemaMappingsResult.h>
 #include <aws/entityresolution/model/ListTagsForResourceRequest.h>
 #include <aws/entityresolution/model/ListTagsForResourceResult.h>
+#include <aws/entityresolution/model/MatchGroup.h>
 #include <aws/entityresolution/model/MatchPurpose.h>
+#include <aws/entityresolution/model/MatchedRecord.h>
 #include <aws/entityresolution/model/MatchingWorkflowSummary.h>
 #include <aws/entityresolution/model/NamespaceProviderProperties.h>
 #include <aws/entityresolution/model/NamespaceRuleBasedProperties.h>
 #include <aws/entityresolution/model/OutputAttribute.h>
 #include <aws/entityresolution/model/OutputSource.h>
+#include <aws/entityresolution/model/ProcessingType.h>
 #include <aws/entityresolution/model/ProviderComponentSchema.h>
 #include <aws/entityresolution/model/ProviderEndpointConfiguration.h>
 #include <aws/entityresolution/model/ProviderIdNameSpaceConfiguration.h>
@@ -115,6 +121,7 @@
 #include <aws/entityresolution/model/ProviderServiceSummary.h>
 #include <aws/entityresolution/model/PutPolicyRequest.h>
 #include <aws/entityresolution/model/PutPolicyResult.h>
+#include <aws/entityresolution/model/Record.h>
 #include <aws/entityresolution/model/RecordMatchingModel.h>
 #include <aws/entityresolution/model/ResolutionTechniques.h>
 #include <aws/entityresolution/model/ResolutionType.h>

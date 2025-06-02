@@ -389,8 +389,42 @@ namespace EntityResolution
         }
 
         /**
-         * <p>Gets the status, metrics, and errors (if there are any) that are associated
-         * with a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Generates or retrieves Match IDs for records using a rule-based matching
+         * workflow. When you call this operation, it processes your records against the
+         * workflow's matching rules to identify potential matches. For existing records,
+         * it retrieves their Match IDs and associated rules. For records without matches,
+         * it generates new Match IDs. The operation saves results to Amazon S3. </p>
+         * <p>The processing type (<code>processingType</code>) you choose affects both the
+         * accuracy and response time of the operation. Additional charges apply for each
+         * API call, whether made through the Entity Resolution console or directly via the
+         * API. The rule-based matching workflow must exist and be active before calling
+         * this operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateMatchIdOutcome GenerateMatchId(const Model::GenerateMatchIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateMatchId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateMatchIdRequestT = Model::GenerateMatchIdRequest>
+        Model::GenerateMatchIdOutcomeCallable GenerateMatchIdCallable(const GenerateMatchIdRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::GenerateMatchId, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateMatchId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateMatchIdRequestT = Model::GenerateMatchIdRequest>
+        void GenerateMatchIdAsync(const GenerateMatchIdRequestT& request, const GenerateMatchIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::GenerateMatchId, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the status, metrics, and errors (if there are any) that are
+         * associated with a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">AWS
          * API Reference</a></p>
          */
@@ -495,8 +529,8 @@ namespace EntityResolution
         }
 
         /**
-         * <p>Gets the status, metrics, and errors (if there are any) that are associated
-         * with a job.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the status, metrics, and errors (if there are any) that are
+         * associated with a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">AWS
          * API Reference</a></p>
          */

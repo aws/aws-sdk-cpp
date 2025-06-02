@@ -12,6 +12,7 @@
 #include <aws/compute-optimizer/model/RDSStorageFinding.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/RDSCurrentInstancePerformanceRisk.h>
+#include <aws/compute-optimizer/model/RDSEstimatedMonthlyVolumeIOPsCostVariation.h>
 #include <aws/compute-optimizer/model/RDSEffectiveRecommendationPreferences.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/RDSInstanceFindingReasonCode.h>
@@ -38,7 +39,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes an Amazon RDS recommendation. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes an Amazon Aurora and RDS database recommendation. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDBRecommendation">AWS
    * API Reference</a></p>
    */
@@ -53,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ARN of the current Amazon RDS. </p> <p> The following is the format of
-     * the ARN: </p> <p>
+     * <p> The ARN of the current Amazon Aurora or RDS database. </p> <p> The following
+     * is the format of the ARN: </p> <p>
      * <code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code> </p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
@@ -67,7 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Web Services account ID of the Amazon RDS. </p>
+     * <p> The Amazon Web Services account ID of the Amazon Aurora or RDS database.
+     * </p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -79,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The engine of the RDS instance. </p>
+     * <p> The engine of the DB instance. </p>
      */
     inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -113,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The DB instance class of the current RDS instance. </p>
+     * <p> The DB instance class of the current Aurora or RDS DB instance. </p>
      */
     inline const Aws::String& GetCurrentDBInstanceClass() const { return m_currentDBInstanceClass; }
     inline bool CurrentDBInstanceClassHasBeenSet() const { return m_currentDBInstanceClassHasBeenSet; }
@@ -125,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The configuration of the current RDS storage. </p>
+     * <p> The configuration of the current DB storage. </p>
      */
     inline const DBStorageConfiguration& GetCurrentStorageConfiguration() const { return m_currentStorageConfiguration; }
     inline bool CurrentStorageConfigurationHasBeenSet() const { return m_currentStorageConfigurationHasBeenSet; }
@@ -149,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> This indicates if the RDS instance is idle or not. </p>
+     * <p> This indicates if the DB instance is idle or not. </p>
      */
     inline Idle GetIdle() const { return m_idle; }
     inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
@@ -159,15 +162,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> The finding classification of an Amazon RDS instance. </p> <p>Findings for
-     * Amazon RDS instance include:</p> <ul> <li> <p> <b> <code>Underprovisioned</code>
-     * </b> — When Compute Optimizer detects that there’s not enough resource
-     * specifications, an Amazon RDS is considered under-provisioned.</p> </li> <li>
-     * <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that
-     * there’s excessive resource specifications, an Amazon RDS is considered
-     * over-provisioned.</p> </li> <li> <p> <b> <code>Optimized</code> </b> — When the
-     * specifications of your Amazon RDS instance meet the performance requirements of
-     * your workload, the service is considered optimized.</p> </li> </ul>
+     * <p> The finding classification of an Amazon Aurora and RDS DB instance. </p>
+     * <p>For more information about finding classifications, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-rds-recommendations.html#rds-recommendations-findings">
+     * Finding classifications for Aurora and RDS databases</a> in the <i>Compute
+     * Optimizer User Guide</i>.</p>
      */
     inline RDSInstanceFinding GetInstanceFinding() const { return m_instanceFinding; }
     inline bool InstanceFindingHasBeenSet() const { return m_instanceFindingHasBeenSet; }
@@ -177,15 +176,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> The finding classification of Amazon RDS storage. </p> <p>Findings for
-     * Amazon RDS instance include:</p> <ul> <li> <p> <b> <code>Underprovisioned</code>
-     * </b> — When Compute Optimizer detects that there’s not enough storage, an Amazon
-     * RDS is considered under-provisioned.</p> </li> <li> <p> <b>
-     * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
-     * excessive storage, an Amazon RDS is considered over-provisioned.</p> </li> <li>
-     * <p> <b> <code>Optimized</code> </b> — When the storage of your Amazon RDS meet
-     * the performance requirements of your workload, the service is considered
-     * optimized.</p> </li> </ul>
+     * <p> The finding classification of Amazon RDS DB instance storage. </p> <p>For
+     * more information about finding classifications, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-rds-recommendations.html#rds-recommendations-findings">
+     * Finding classifications for Aurora and RDS databases</a> in the <i>Compute
+     * Optimizer User Guide</i>.</p>
      */
     inline RDSStorageFinding GetStorageFinding() const { return m_storageFinding; }
     inline bool StorageFindingHasBeenSet() const { return m_storageFindingHasBeenSet; }
@@ -195,7 +190,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The reason for the finding classification of an Amazon RDS instance. </p>
+     * <p> The reason for the finding classification of a DB instance. </p>
      */
     inline const Aws::Vector<RDSInstanceFindingReasonCode>& GetInstanceFindingReasonCodes() const { return m_instanceFindingReasonCodes; }
     inline bool InstanceFindingReasonCodesHasBeenSet() const { return m_instanceFindingReasonCodesHasBeenSet; }
@@ -218,7 +213,18 @@ namespace Model
 
     ///@{
     /**
-     * <p> The reason for the finding classification of Amazon RDS storage. </p>
+     * <p> The level of variation in monthly I/O costs for the current DB storage
+     * configuration. </p>
+     */
+    inline RDSEstimatedMonthlyVolumeIOPsCostVariation GetCurrentStorageEstimatedMonthlyVolumeIOPsCostVariation() const { return m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation; }
+    inline bool CurrentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet() const { return m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet; }
+    inline void SetCurrentStorageEstimatedMonthlyVolumeIOPsCostVariation(RDSEstimatedMonthlyVolumeIOPsCostVariation value) { m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet = true; m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation = value; }
+    inline RDSDBRecommendation& WithCurrentStorageEstimatedMonthlyVolumeIOPsCostVariation(RDSEstimatedMonthlyVolumeIOPsCostVariation value) { SetCurrentStorageEstimatedMonthlyVolumeIOPsCostVariation(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The reason for the finding classification of RDS DB instance storage. </p>
      */
     inline const Aws::Vector<RDSStorageFindingReasonCode>& GetStorageFindingReasonCodes() const { return m_storageFindingReasonCodes; }
     inline bool StorageFindingReasonCodesHasBeenSet() const { return m_storageFindingReasonCodesHasBeenSet; }
@@ -231,8 +237,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of objects that describe the recommendation options for the Amazon
-     * RDS instance. </p>
+     * <p> An array of objects that describe the recommendation options for the RDS DB
+     * instance. </p>
      */
     inline const Aws::Vector<RDSDBInstanceRecommendationOption>& GetInstanceRecommendationOptions() const { return m_instanceRecommendationOptions; }
     inline bool InstanceRecommendationOptionsHasBeenSet() const { return m_instanceRecommendationOptionsHasBeenSet; }
@@ -246,7 +252,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of objects that describe the recommendation options for Amazon RDS
+     * <p> An array of objects that describe the recommendation options for DB instance
      * storage. </p>
      */
     inline const Aws::Vector<RDSDBStorageRecommendationOption>& GetStorageRecommendationOptions() const { return m_storageRecommendationOptions; }
@@ -261,8 +267,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of objects that describe the utilization metrics of the Amazon RDS.
-     * </p>
+     * <p> An array of objects that describe the utilization metrics of the DB
+     * instance. </p>
      */
     inline const Aws::Vector<RDSDBUtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
@@ -276,7 +282,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the effective recommendation preferences for Amazon RDS. </p>
+     * <p> Describes the effective recommendation preferences for DB instances. </p>
      */
     inline const RDSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
@@ -288,7 +294,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of days the Amazon RDS utilization metrics were analyzed. </p>
+     * <p> The number of days the DB instance utilization metrics were analyzed. </p>
      */
     inline double GetLookbackPeriodInDays() const { return m_lookbackPeriodInDays; }
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
@@ -298,7 +304,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The timestamp of when the Amazon RDS recommendation was last generated. </p>
+     * <p> The timestamp of when the DB instance recommendation was last generated.
+     * </p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
@@ -310,7 +317,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of tags assigned to your Amazon RDS recommendations. </p>
+     * <p> A list of tags assigned to your DB instance recommendations. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -361,6 +368,9 @@ namespace Model
 
     RDSCurrentInstancePerformanceRisk m_currentInstancePerformanceRisk{RDSCurrentInstancePerformanceRisk::NOT_SET};
     bool m_currentInstancePerformanceRiskHasBeenSet = false;
+
+    RDSEstimatedMonthlyVolumeIOPsCostVariation m_currentStorageEstimatedMonthlyVolumeIOPsCostVariation{RDSEstimatedMonthlyVolumeIOPsCostVariation::NOT_SET};
+    bool m_currentStorageEstimatedMonthlyVolumeIOPsCostVariationHasBeenSet = false;
 
     Aws::Vector<RDSStorageFindingReasonCode> m_storageFindingReasonCodes;
     bool m_storageFindingReasonCodesHasBeenSet = false;

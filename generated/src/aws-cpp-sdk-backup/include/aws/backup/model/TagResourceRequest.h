@@ -35,12 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
-     * the type of the tagged resource.</p> <p>ARNs that do not include
-     * <code>backup</code> are incompatible with tagging. <code>TagResource</code> and
-     * <code>UntagResource</code> with invalid ARNs will result in an error. Acceptable
-     * ARN content can include <code>arn:aws:backup:us-east</code>. Invalid ARN content
-     * may look like <code>arn:aws:ec2:us-east</code>.</p>
+     * <p>The ARN that uniquely identifies the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/AgentAliasStatus.h>
+#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
@@ -77,6 +78,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The invocation state for the agent alias. If the agent alias is running, the
+     * value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the
+     * value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code>
+     * operation to change the invocation state.</p>
+     */
+    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
+    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
+    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
+    inline AgentAliasSummary& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time at which the alias of the agent was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -135,6 +149,9 @@ namespace Model
 
     AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
     bool m_agentAliasStatusHasBeenSet = false;
+
+    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+    bool m_aliasInvocationStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

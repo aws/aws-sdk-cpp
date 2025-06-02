@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int UPGRADE_READINESS_HASH = HashingUtils::HashString("UPGRADE_READINESS");
+        static const int MISCONFIGURATION_HASH = HashingUtils::HashString("MISCONFIGURATION");
 
 
         Category GetCategoryForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == UPGRADE_READINESS_HASH)
           {
             return Category::UPGRADE_READINESS;
+          }
+          else if (hashCode == MISCONFIGURATION_HASH)
+          {
+            return Category::MISCONFIGURATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case Category::UPGRADE_READINESS:
             return "UPGRADE_READINESS";
+          case Category::MISCONFIGURATION:
+            return "MISCONFIGURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

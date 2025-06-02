@@ -26,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p> Describes the projected metrics of an Amazon RDS recommendation option. </p>
-   * <p> To determine the performance difference between your current Amazon RDS and
-   * the recommended option, compare the metric data of your service against its
-   * projected metric data. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes the projected metrics of an Amazon Aurora and RDS database
+   * recommendation option. </p> <p> To determine the performance difference between
+   * your current Amazon Aurora and RDS database and the recommended option, compare
+   * the metric data of your service against its projected metric data.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDatabaseProjectedMetric">AWS
    * API Reference</a></p>
    */

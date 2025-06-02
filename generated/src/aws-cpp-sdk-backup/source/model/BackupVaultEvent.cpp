@@ -37,6 +37,9 @@ namespace Aws
         static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
         static const int S3_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
         static const int S3_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
+        static const int RECOVERY_POINT_INDEX_COMPLETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_COMPLETED");
+        static const int RECOVERY_POINT_INDEX_DELETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_DELETED");
+        static const int RECOVERY_POINT_INDEXING_FAILED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEXING_FAILED");
 
 
         BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name)
@@ -110,6 +113,18 @@ namespace Aws
           {
             return BackupVaultEvent::S3_RESTORE_OBJECT_FAILED;
           }
+          else if (hashCode == RECOVERY_POINT_INDEX_COMPLETED_HASH)
+          {
+            return BackupVaultEvent::RECOVERY_POINT_INDEX_COMPLETED;
+          }
+          else if (hashCode == RECOVERY_POINT_INDEX_DELETED_HASH)
+          {
+            return BackupVaultEvent::RECOVERY_POINT_INDEX_DELETED;
+          }
+          else if (hashCode == RECOVERY_POINT_INDEXING_FAILED_HASH)
+          {
+            return BackupVaultEvent::RECOVERY_POINT_INDEXING_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -160,6 +175,12 @@ namespace Aws
             return "S3_BACKUP_OBJECT_FAILED";
           case BackupVaultEvent::S3_RESTORE_OBJECT_FAILED:
             return "S3_RESTORE_OBJECT_FAILED";
+          case BackupVaultEvent::RECOVERY_POINT_INDEX_COMPLETED:
+            return "RECOVERY_POINT_INDEX_COMPLETED";
+          case BackupVaultEvent::RECOVERY_POINT_INDEX_DELETED:
+            return "RECOVERY_POINT_INDEX_DELETED";
+          case BackupVaultEvent::RECOVERY_POINT_INDEXING_FAILED:
+            return "RECOVERY_POINT_INDEXING_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
