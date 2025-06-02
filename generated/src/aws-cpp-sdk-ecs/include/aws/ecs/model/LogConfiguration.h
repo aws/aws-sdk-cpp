@@ -182,32 +182,39 @@ namespace Model
      * account setting, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default
      * log driver mode</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> </dd> <dt>max-buffer-size</dt> <dd> <p>Required: No</p>
-     * <p>Default value: <code>1m</code> </p> <p>When <code>non-blocking</code> mode is
-     * used, the <code>max-buffer-size</code> log option controls the size of the
-     * buffer that's used for intermediate message storage. Make sure to specify an
-     * adequate buffer size based on your application. When the buffer fills up,
-     * further logs cannot be stored. Logs that cannot be stored are lost. </p> </dd>
-     * </dl> <p>To route logs using the <code>splunk</code> log router, you need to
-     * specify a <code>splunk-token</code> and a <code>splunk-url</code>.</p> <p>When
-     * you use the <code>awsfirelens</code> log router to route logs to an Amazon Web
-     * Services Service or Amazon Web Services Partner Network destination for log
-     * storage and analytics, you can set the <code>log-driver-buffer-limit</code>
-     * option to limit the number of events that are buffered in memory, before being
-     * sent to the log router container. It can help to resolve potential log loss
-     * issue because high throughput might result in memory running out for the buffer
-     * inside of Docker.</p> <p>Other options you can specify when using
-     * <code>awsfirelens</code> to route logs depend on the destination. When you
-     * export logs to Amazon Data Firehose, you can specify the Amazon Web Services
-     * Region with <code>region</code> and a name for the log stream with
-     * <code>delivery_stream</code>.</p> <p>When you export logs to Amazon Kinesis Data
-     * Streams, you can specify an Amazon Web Services Region with <code>region</code>
-     * and a data stream name with <code>stream</code>.</p> <p> When you export logs to
-     * Amazon OpenSearch Service, you can specify options like <code>Name</code>,
-     * <code>Host</code> (OpenSearch Service endpoint without protocol),
-     * <code>Port</code>, <code>Index</code>, <code>Type</code>, <code>Aws_auth</code>,
-     * <code>Aws_region</code>, <code>Suppress_Type_Name</code>, and <code>tls</code>.
-     * For more information, see <a
+     * Guide</i>.</p>  <p>On June 25, 2025, Amazon ECS is changing the default
+     * log driver mode from <code>blocking</code> to <code>non-blocking</code> to
+     * prioritize task availability over logging. To continue using the
+     * <code>blocking</code> mode after this change, do one of the following:</p> <ul>
+     * <li> <p>Set the <code>mode</code> option in your container definition's
+     * <code>logConfiguration</code> as <code>blocking</code>.</p> </li> <li> <p>Set
+     * the <code>defaultLogDriverMode</code> account setting to
+     * <code>blocking</code>.</p> </li> </ul>  </dd> <dt>max-buffer-size</dt>
+     * <dd> <p>Required: No</p> <p>Default value: <code>1m</code> </p> <p>When
+     * <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log
+     * option controls the size of the buffer that's used for intermediate message
+     * storage. Make sure to specify an adequate buffer size based on your application.
+     * When the buffer fills up, further logs cannot be stored. Logs that cannot be
+     * stored are lost. </p> </dd> </dl> <p>To route logs using the <code>splunk</code>
+     * log router, you need to specify a <code>splunk-token</code> and a
+     * <code>splunk-url</code>.</p> <p>When you use the <code>awsfirelens</code> log
+     * router to route logs to an Amazon Web Services Service or Amazon Web Services
+     * Partner Network destination for log storage and analytics, you can set the
+     * <code>log-driver-buffer-limit</code> option to limit the number of events that
+     * are buffered in memory, before being sent to the log router container. It can
+     * help to resolve potential log loss issue because high throughput might result in
+     * memory running out for the buffer inside of Docker.</p> <p>Other options you can
+     * specify when using <code>awsfirelens</code> to route logs depend on the
+     * destination. When you export logs to Amazon Data Firehose, you can specify the
+     * Amazon Web Services Region with <code>region</code> and a name for the log
+     * stream with <code>delivery_stream</code>.</p> <p>When you export logs to Amazon
+     * Kinesis Data Streams, you can specify an Amazon Web Services Region with
+     * <code>region</code> and a data stream name with <code>stream</code>.</p> <p>
+     * When you export logs to Amazon OpenSearch Service, you can specify options like
+     * <code>Name</code>, <code>Host</code> (OpenSearch Service endpoint without
+     * protocol), <code>Port</code>, <code>Index</code>, <code>Type</code>,
+     * <code>Aws_auth</code>, <code>Aws_region</code>, <code>Suppress_Type_Name</code>,
+     * and <code>tls</code>. For more information, see <a
      * href="http://aws.amazon.com/blogs/containers/under-the-hood-firelens-for-amazon-ecs-tasks/">Under
      * the hood: FireLens for Amazon ECS Tasks</a>.</p> <p>When you export logs to
      * Amazon S3, you can specify the bucket using the <code>bucket</code> option. You

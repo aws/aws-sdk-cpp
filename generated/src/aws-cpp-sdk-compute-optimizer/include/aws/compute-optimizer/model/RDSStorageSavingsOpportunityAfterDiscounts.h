@@ -44,7 +44,7 @@ namespace Model
     ///@{
     /**
      * <p> The estimated monthly savings possible as a percentage of monthly cost by
-     * adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes
+     * adopting Compute Optimizer’s DB instance storage recommendations. This includes
      * any applicable Savings Plans discounts. </p>
      */
     inline double GetSavingsOpportunityPercentage() const { return m_savingsOpportunityPercentage; }
@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon RDS storage recommendations. This includes any applicable Savings Plans
+     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s DB
+     * instance storage recommendations. This includes any applicable Savings Plans
      * discounts. </p>
      */
     inline const RDSStorageEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }

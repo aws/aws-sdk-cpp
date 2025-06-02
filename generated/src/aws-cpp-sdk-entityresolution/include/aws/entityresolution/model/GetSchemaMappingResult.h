@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code>
      * corresponds to a column the source data table, and contains column name plus
-     * additional information Venice uses for matching.</p>
+     * additional information Entity Resolution uses for matching.</p>
      */
     inline const Aws::Vector<SchemaInputAttribute>& GetMappedInputFields() const { return m_mappedInputFields; }
     template<typename MappedInputFieldsT = Aws::Vector<SchemaInputAttribute>>

@@ -23,7 +23,9 @@ namespace Model
     CREATE_FAILED,
     DELETE_FAILED,
     UPDATE_FAILED,
-    DELETED
+    DELETED,
+    SUSPENDING,
+    SUSPENDED
   };
 
 namespace ComputeNodeGroupStatusMapper

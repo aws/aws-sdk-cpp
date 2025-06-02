@@ -72,7 +72,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job. When
+     * no CRON expression is provided, Backup will use the default expression
+     * <code>cron(0 5 ? * * *)</code>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }

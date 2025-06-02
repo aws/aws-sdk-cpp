@@ -100,6 +100,11 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_rdsDbInstanceStorage = jsonValue.GetObject("rdsDbInstanceStorage");
     m_rdsDbInstanceStorageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("auroraDbClusterStorage"))
+  {
+    m_auroraDbClusterStorage = jsonValue.GetObject("auroraDbClusterStorage");
+    m_auroraDbClusterStorageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("dynamoDbReservedCapacity"))
   {
     m_dynamoDbReservedCapacity = jsonValue.GetObject("dynamoDbReservedCapacity");
@@ -204,6 +209,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_rdsDbInstanceStorageHasBeenSet)
   {
    payload.WithObject("rdsDbInstanceStorage", m_rdsDbInstanceStorage.Jsonize());
+
+  }
+
+  if(m_auroraDbClusterStorageHasBeenSet)
+  {
+   payload.WithObject("auroraDbClusterStorage", m_auroraDbClusterStorage.Jsonize());
 
   }
 

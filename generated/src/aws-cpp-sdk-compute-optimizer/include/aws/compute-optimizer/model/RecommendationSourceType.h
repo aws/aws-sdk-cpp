@@ -23,7 +23,8 @@ namespace Model
     EcsService,
     License,
     RdsDBInstance,
-    RdsDBInstanceStorage
+    RdsDBInstanceStorage,
+    AuroraDBClusterStorage
   };
 
 namespace RecommendationSourceTypeMapper

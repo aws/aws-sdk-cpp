@@ -123,6 +123,11 @@ namespace Model
     ///@{
     /**
      * <p>The number of recovery points that are stored in a backup vault.</p>
+     * <p>Recovery point count value displayed in the console can be an approximation.
+     * Use <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html">
+     * <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact
+     * count.</p>
      */
     inline long long GetNumberOfRecoveryPoints() const { return m_numberOfRecoveryPoints; }
     inline void SetNumberOfRecoveryPoints(long long value) { m_numberOfRecoveryPointsHasBeenSet = true; m_numberOfRecoveryPoints = value; }

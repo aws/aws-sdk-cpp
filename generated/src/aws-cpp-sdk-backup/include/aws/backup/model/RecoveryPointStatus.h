@@ -19,7 +19,10 @@ namespace Model
     COMPLETED,
     PARTIAL,
     DELETING,
-    EXPIRED
+    EXPIRED,
+    AVAILABLE,
+    STOPPED,
+    CREATING
   };
 
 namespace RecoveryPointStatusMapper

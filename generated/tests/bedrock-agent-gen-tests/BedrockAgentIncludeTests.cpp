@@ -37,6 +37,7 @@
 #include <aws/bedrock-agent/model/AgentSummary.h>
 #include <aws/bedrock-agent/model/AgentVersion.h>
 #include <aws/bedrock-agent/model/AgentVersionSummary.h>
+#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/bedrock-agent/model/AnyToolChoice.h>
 #include <aws/bedrock-agent/model/AssociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/AssociateAgentCollaboratorResult.h>

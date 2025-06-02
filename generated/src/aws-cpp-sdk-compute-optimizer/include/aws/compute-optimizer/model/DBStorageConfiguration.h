@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of RDS storage. </p>
+     * <p> The type of DB storage. </p>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The size of the RDS storage in gigabytes (GB). </p>
+     * <p> The size of the DB storage in gigabytes (GB). </p>
      */
     inline int GetAllocatedStorage() const { return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The provisioned IOPs of the RDS storage. </p>
+     * <p> The provisioned IOPs of the DB storage. </p>
      */
     inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -73,7 +73,7 @@ namespace Model
     ///@{
     /**
      * <p> The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically
-     * scale the storage of the RDS instance. </p>
+     * scale the storage of the DB instance. </p>
      */
     inline int GetMaxAllocatedStorage() const { return m_maxAllocatedStorage; }
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The storage throughput of the RDS storage. </p>
+     * <p> The storage throughput of the DB storage. </p>
      */
     inline int GetStorageThroughput() const { return m_storageThroughput; }
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }

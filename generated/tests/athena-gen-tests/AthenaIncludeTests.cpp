@@ -154,6 +154,9 @@
 #include <aws/athena/model/ListTagsForResourceResult.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
 #include <aws/athena/model/ListWorkGroupsResult.h>
+#include <aws/athena/model/ManagedQueryResultsConfiguration.h>
+#include <aws/athena/model/ManagedQueryResultsConfigurationUpdates.h>
+#include <aws/athena/model/ManagedQueryResultsEncryptionConfiguration.h>
 #include <aws/athena/model/NamedQuery.h>
 #include <aws/athena/model/NotebookMetadata.h>
 #include <aws/athena/model/NotebookSessionSummary.h>
@@ -167,6 +170,7 @@
 #include <aws/athena/model/QueryExecutionState.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
 #include <aws/athena/model/QueryExecutionStatus.h>
+#include <aws/athena/model/QueryResultType.h>
 #include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <aws/athena/model/QueryRuntimeStatistics.h>
 #include <aws/athena/model/QueryRuntimeStatisticsRows.h>

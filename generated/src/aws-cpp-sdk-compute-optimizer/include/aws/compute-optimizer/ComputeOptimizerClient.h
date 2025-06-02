@@ -379,15 +379,15 @@ namespace ComputeOptimizer
         }
 
         /**
-         * <p> Export optimization recommendations for your Amazon Relational Database
-         * Service (Amazon RDS). </p> <p>Recommendations are exported in a comma-separated
-         * values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file,
-         * to an existing Amazon Simple Storage Service (Amazon S3) bucket that you
-         * specify. For more information, see <a
+         * <p> Export optimization recommendations for your Amazon Aurora and Amazon
+         * Relational Database Service (Amazon RDS) databases. </p> <p>Recommendations are
+         * exported in a comma-separated values (CSV) file, and its metadata in a
+         * JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage
+         * Service (Amazon S3) bucket that you specify. For more information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon RDS export job in progress per Amazon Web Services
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * have only one Amazon Aurora or RDS export job in progress per Amazon Web
+         * Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">AWS
          * API Reference</a></p>
          */
@@ -772,8 +772,8 @@ namespace ComputeOptimizer
         }
 
         /**
-         * <p> Returns the projected metrics of Amazon RDS recommendations. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns the projected metrics of Aurora and RDS database recommendations.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">AWS
          * API Reference</a></p>
          */
@@ -798,9 +798,9 @@ namespace ComputeOptimizer
         }
 
         /**
-         * <p> Returns Amazon RDS recommendations. </p> <p>Compute Optimizer generates
-         * recommendations for Amazon RDS that meet a specific set of requirements. For
-         * more information, see the <a
+         * <p> Returns Amazon Aurora and RDS database recommendations. </p> <p>Compute
+         * Optimizer generates recommendations for Amazon Aurora and RDS databases that
+         * meet a specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
          * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -863,14 +863,19 @@ namespace ComputeOptimizer
          * <p>Returns the optimization findings for an account.</p> <p>It returns the
          * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
          * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
-         * <code>Optimized</code>.</p> </li> <li> <p>Auto Scaling groups in an account that
-         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+         * <code>Optimized</code>.</p> </li> <li> <p>EC2Auto Scaling groups in an account
+         * that are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
          * <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or
          * <code>Optimized</code>.</p> </li> <li> <p>Lambda functions in an account that
          * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
          * <p>Amazon ECS services in an account that are <code>Underprovisioned</code>,
-         * <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>Overprovisioned</code>, or <code>Optimized</code>.</p> </li> <li>
+         * <p>Commercial software licenses in an account that are
+         * <code>InsufficientMetrics</code>, <code>NotOptimized</code> or
+         * <code>Optimized</code>.</p> </li> <li> <p>Amazon Aurora and Amazon RDS databases
+         * in an account that are <code>Underprovisioned</code>,
+         * <code>Overprovisioned</code>, <code>Optimized</code>, or
+         * <code>NotOptimized</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">AWS
          * API Reference</a></p>
          */

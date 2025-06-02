@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes the recommendation options for an Amazon RDS instance.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Describes the recommendation options for a DB instance. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDBInstanceRecommendationOption">AWS
    * API Reference</a></p>
    */
@@ -44,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the DB instance class recommendation option for your Amazon RDS
-     * instance. </p>
+     * <p> Describes the DB instance class recommendation option for your Amazon Aurora
+     * or RDS database. </p>
      */
     inline const Aws::String& GetDbInstanceClass() const { return m_dbInstanceClass; }
     inline bool DbInstanceClassHasBeenSet() const { return m_dbInstanceClassHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * RDS instance recommendation option. </p>
+     * DB instance recommendation option. </p>
      */
     inline const Aws::Vector<RDSDBUtilizationMetric>& GetProjectedUtilizationMetrics() const { return m_projectedUtilizationMetrics; }
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The performance risk of the RDS instance recommendation option. </p>
+     * <p> The performance risk of the DB instance recommendation option. </p>
      */
     inline double GetPerformanceRisk() const { return m_performanceRisk; }
     inline bool PerformanceRiskHasBeenSet() const { return m_performanceRiskHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The rank identifier of the RDS instance recommendation option. </p>
+     * <p> The rank identifier of the DB instance recommendation option. </p>
      */
     inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
@@ -102,10 +102,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the savings opportunity for Amazon RDS recommendations or for the
-     * recommendation option. </p> <p>Savings opportunity represents the estimated
-     * monthly savings after applying Savings Plans discounts. You can achieve this by
-     * implementing a given Compute Optimizer recommendation.</p>
+     * <p> Describes the savings opportunity for Amazon Aurora and RDS database
+     * recommendations or for the recommendation option. </p> <p>Savings opportunity
+     * represents the estimated monthly savings after applying Savings Plans discounts.
+     * You can achieve this by implementing a given Compute Optimizer
+     * recommendation.</p>
      */
     inline const RDSInstanceSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const { return m_savingsOpportunityAfterDiscounts; }
     inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }

@@ -17,6 +17,8 @@
 #include <aws/cost-optimization-hub/model/AccountEnrollmentStatus.h>
 #include <aws/cost-optimization-hub/model/ActionType.h>
 #include <aws/cost-optimization-hub/model/AllocationStrategy.h>
+#include <aws/cost-optimization-hub/model/AuroraDbClusterStorage.h>
+#include <aws/cost-optimization-hub/model/AuroraDbClusterStorageConfiguration.h>
 #include <aws/cost-optimization-hub/model/BlockStoragePerformanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/ComputeConfiguration.h>
 #include <aws/cost-optimization-hub/model/ComputeSavingsPlans.h>

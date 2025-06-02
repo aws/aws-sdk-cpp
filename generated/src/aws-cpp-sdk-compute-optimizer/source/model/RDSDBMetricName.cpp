@@ -38,6 +38,9 @@ namespace Aws
         static const int AuroraMemoryNumKillQueryTotal_HASH = HashingUtils::HashString("AuroraMemoryNumKillQueryTotal");
         static const int ReadIOPSEphemeralStorage_HASH = HashingUtils::HashString("ReadIOPSEphemeralStorage");
         static const int WriteIOPSEphemeralStorage_HASH = HashingUtils::HashString("WriteIOPSEphemeralStorage");
+        static const int VolumeReadIOPs_HASH = HashingUtils::HashString("VolumeReadIOPs");
+        static const int VolumeBytesUsed_HASH = HashingUtils::HashString("VolumeBytesUsed");
+        static const int VolumeWriteIOPs_HASH = HashingUtils::HashString("VolumeWriteIOPs");
 
 
         RDSDBMetricName GetRDSDBMetricNameForName(const Aws::String& name)
@@ -115,6 +118,18 @@ namespace Aws
           {
             return RDSDBMetricName::WriteIOPSEphemeralStorage;
           }
+          else if (hashCode == VolumeReadIOPs_HASH)
+          {
+            return RDSDBMetricName::VolumeReadIOPs;
+          }
+          else if (hashCode == VolumeBytesUsed_HASH)
+          {
+            return RDSDBMetricName::VolumeBytesUsed;
+          }
+          else if (hashCode == VolumeWriteIOPs_HASH)
+          {
+            return RDSDBMetricName::VolumeWriteIOPs;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -167,6 +182,12 @@ namespace Aws
             return "ReadIOPSEphemeralStorage";
           case RDSDBMetricName::WriteIOPSEphemeralStorage:
             return "WriteIOPSEphemeralStorage";
+          case RDSDBMetricName::VolumeReadIOPs:
+            return "VolumeReadIOPs";
+          case RDSDBMetricName::VolumeBytesUsed:
+            return "VolumeBytesUsed";
+          case RDSDBMetricName::VolumeWriteIOPs:
+            return "VolumeWriteIOPs";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

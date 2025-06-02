@@ -31,6 +31,7 @@ namespace Model
     ElastiCacheReservedInstances,
     RdsDbInstanceStorage,
     RdsDbInstance,
+    AuroraDbClusterStorage,
     DynamoDbReservedCapacity,
     MemoryDbReservedInstances
   };

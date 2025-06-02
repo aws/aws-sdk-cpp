@@ -72,14 +72,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about Amazon Web Services cron expressions, see <a
+     * <p>A cron expression in UTC specifying when Backup initiates a backup job. When
+     * no CRON expression is provided, Backup will use the default expression
+     * <code>cron(0 5 ? * * *)</code>.</p> <p>For more information about Amazon Web
+     * Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
      * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
-     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
-     * click the preceding link and scroll down the page.</p>
+     * * ? *</code> (take a backup every day at 12 noon UTC).</p> <p>For a table of
+     * examples, click the preceding link and scroll down the page.</p>
      */
     inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }

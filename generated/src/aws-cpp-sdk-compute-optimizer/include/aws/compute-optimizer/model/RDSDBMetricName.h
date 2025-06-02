@@ -33,7 +33,10 @@ namespace Model
     AuroraMemoryNumKillConnTotal,
     AuroraMemoryNumKillQueryTotal,
     ReadIOPSEphemeralStorage,
-    WriteIOPSEphemeralStorage
+    WriteIOPSEphemeralStorage,
+    VolumeReadIOPs,
+    VolumeBytesUsed,
+    VolumeWriteIOPs
   };
 
 namespace RDSDBMetricNameMapper

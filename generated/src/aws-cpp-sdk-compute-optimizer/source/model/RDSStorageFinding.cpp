@@ -23,6 +23,7 @@ namespace Aws
         static const int Optimized_HASH = HashingUtils::HashString("Optimized");
         static const int Underprovisioned_HASH = HashingUtils::HashString("Underprovisioned");
         static const int Overprovisioned_HASH = HashingUtils::HashString("Overprovisioned");
+        static const int NotOptimized_HASH = HashingUtils::HashString("NotOptimized");
 
 
         RDSStorageFinding GetRDSStorageFindingForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Overprovisioned_HASH)
           {
             return RDSStorageFinding::Overprovisioned;
+          }
+          else if (hashCode == NotOptimized_HASH)
+          {
+            return RDSStorageFinding::NotOptimized;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "Underprovisioned";
           case RDSStorageFinding::Overprovisioned:
             return "Overprovisioned";
+          case RDSStorageFinding::NotOptimized:
+            return "NotOptimized";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

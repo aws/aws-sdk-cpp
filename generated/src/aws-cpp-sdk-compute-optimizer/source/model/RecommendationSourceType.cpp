@@ -28,6 +28,7 @@ namespace Aws
         static const int License_HASH = HashingUtils::HashString("License");
         static const int RdsDBInstance_HASH = HashingUtils::HashString("RdsDBInstance");
         static const int RdsDBInstanceStorage_HASH = HashingUtils::HashString("RdsDBInstanceStorage");
+        static const int AuroraDBClusterStorage_HASH = HashingUtils::HashString("AuroraDBClusterStorage");
 
 
         RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return RecommendationSourceType::RdsDBInstanceStorage;
           }
+          else if (hashCode == AuroraDBClusterStorage_HASH)
+          {
+            return RecommendationSourceType::AuroraDBClusterStorage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "RdsDBInstance";
           case RecommendationSourceType::RdsDBInstanceStorage:
             return "RdsDBInstanceStorage";
+          case RecommendationSourceType::AuroraDBClusterStorage:
+            return "AuroraDBClusterStorage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

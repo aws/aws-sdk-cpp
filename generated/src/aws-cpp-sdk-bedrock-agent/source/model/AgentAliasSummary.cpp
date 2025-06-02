@@ -40,6 +40,11 @@ AgentAliasSummary& AgentAliasSummary::operator =(JsonView jsonValue)
     m_agentAliasStatus = AgentAliasStatusMapper::GetAgentAliasStatusForName(jsonValue.GetString("agentAliasStatus"));
     m_agentAliasStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("aliasInvocationState"))
+  {
+    m_aliasInvocationState = AliasInvocationStateMapper::GetAliasInvocationStateForName(jsonValue.GetString("aliasInvocationState"));
+    m_aliasInvocationStateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -86,6 +91,11 @@ JsonValue AgentAliasSummary::Jsonize() const
   if(m_agentAliasStatusHasBeenSet)
   {
    payload.WithString("agentAliasStatus", AgentAliasStatusMapper::GetNameForAgentAliasStatus(m_agentAliasStatus));
+  }
+
+  if(m_aliasInvocationStateHasBeenSet)
+  {
+   payload.WithString("aliasInvocationState", AliasInvocationStateMapper::GetNameForAliasInvocationState(m_aliasInvocationState));
   }
 
   if(m_createdAtHasBeenSet)

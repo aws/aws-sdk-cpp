@@ -91,7 +91,7 @@ namespace Model
     ///@{
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline const ResolutionTechniques& GetResolutionTechniques() const { return m_resolutionTechniques; }
     template<typename ResolutionTechniquesT = ResolutionTechniques>

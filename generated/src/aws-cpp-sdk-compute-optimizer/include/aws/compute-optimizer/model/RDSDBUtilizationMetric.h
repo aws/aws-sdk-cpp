@@ -25,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p> Describes the utilization metric of an Amazon RDS. </p> <p> To determine the
-   * performance difference between your current Amazon RDS and the recommended
-   * option, compare the utilization metric data of your service against its
-   * projected utilization metric data. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes the utilization metric of an Amazon Aurora and RDS database. </p>
+   * <p> To determine the performance difference between your current DB instance and
+   * the recommended option, compare the utilization metric data of your service
+   * against its projected utilization metric data. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSDBUtilizationMetric">AWS
    * API Reference</a></p>
    */

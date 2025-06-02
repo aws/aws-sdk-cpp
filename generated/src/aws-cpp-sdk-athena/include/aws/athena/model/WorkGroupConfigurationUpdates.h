@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfigurationUpdates.h>
+#include <aws/athena/model/ManagedQueryResultsConfigurationUpdates.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
@@ -73,6 +74,19 @@ namespace Model
     void SetResultConfigurationUpdates(ResultConfigurationUpdatesT&& value) { m_resultConfigurationUpdatesHasBeenSet = true; m_resultConfigurationUpdates = std::forward<ResultConfigurationUpdatesT>(value); }
     template<typename ResultConfigurationUpdatesT = ResultConfigurationUpdates>
     WorkGroupConfigurationUpdates& WithResultConfigurationUpdates(ResultConfigurationUpdatesT&& value) { SetResultConfigurationUpdates(std::forward<ResultConfigurationUpdatesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Updates configuration information for managed query results in the
+     * workgroup.</p>
+     */
+    inline const ManagedQueryResultsConfigurationUpdates& GetManagedQueryResultsConfigurationUpdates() const { return m_managedQueryResultsConfigurationUpdates; }
+    inline bool ManagedQueryResultsConfigurationUpdatesHasBeenSet() const { return m_managedQueryResultsConfigurationUpdatesHasBeenSet; }
+    template<typename ManagedQueryResultsConfigurationUpdatesT = ManagedQueryResultsConfigurationUpdates>
+    void SetManagedQueryResultsConfigurationUpdates(ManagedQueryResultsConfigurationUpdatesT&& value) { m_managedQueryResultsConfigurationUpdatesHasBeenSet = true; m_managedQueryResultsConfigurationUpdates = std::forward<ManagedQueryResultsConfigurationUpdatesT>(value); }
+    template<typename ManagedQueryResultsConfigurationUpdatesT = ManagedQueryResultsConfigurationUpdates>
+    WorkGroupConfigurationUpdates& WithManagedQueryResultsConfigurationUpdates(ManagedQueryResultsConfigurationUpdatesT&& value) { SetManagedQueryResultsConfigurationUpdates(std::forward<ManagedQueryResultsConfigurationUpdatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -226,6 +240,9 @@ namespace Model
 
     ResultConfigurationUpdates m_resultConfigurationUpdates;
     bool m_resultConfigurationUpdatesHasBeenSet = false;
+
+    ManagedQueryResultsConfigurationUpdates m_managedQueryResultsConfigurationUpdates;
+    bool m_managedQueryResultsConfigurationUpdatesHasBeenSet = false;
 
     bool m_publishCloudWatchMetricsEnabled{false};
     bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;

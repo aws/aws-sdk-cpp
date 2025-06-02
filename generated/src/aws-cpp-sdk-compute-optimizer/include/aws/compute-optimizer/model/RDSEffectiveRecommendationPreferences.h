@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes the effective recommendation preferences for Amazon RDS.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Describes the effective recommendation preferences for Amazon Aurora and RDS
+   * databases. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSEffectiveRecommendationPreferences">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the CPU vendor and architecture for Amazon RDS recommendations.
+     * <p> Describes the CPU vendor and architecture for DB instance recommendations.
      * </p>
      */
     inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const { return m_cpuVendorArchitectures; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of days the utilization metrics of the Amazon RDS are analyzed.
+     * <p> The number of days the utilization metrics of the DB instance are analyzed.
      * </p>
      */
     inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
@@ -86,7 +86,7 @@ namespace Model
     ///@{
     /**
      * <p> Describes the savings estimation mode preference applied for calculating
-     * savings opportunity for Amazon RDS. </p>
+     * savings opportunity for DB instances. </p>
      */
     inline const RDSSavingsEstimationMode& GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/StatementType.h>
+#include <aws/athena/model/ManagedQueryResultsConfiguration.h>
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/athena/model/ResultReuseConfiguration.h>
 #include <aws/athena/model/QueryExecutionContext.h>
@@ -77,13 +78,26 @@ namespace Model
      * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
      * query statements, such as <code>CREATE TABLE AS SELECT</code>.
      * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-     * <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or
-     * <code>SHOW TABLES</code>.</p>
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
      */
     inline StatementType GetStatementType() const { return m_statementType; }
     inline bool StatementTypeHasBeenSet() const { return m_statementTypeHasBeenSet; }
     inline void SetStatementType(StatementType value) { m_statementTypeHasBeenSet = true; m_statementType = value; }
     inline QueryExecution& WithStatementType(StatementType value) { SetStatementType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The configuration for storing results in Athena owned storage, which
+     * includes whether this feature is enabled; whether encryption configuration, if
+     * any, is used for encrypting query results. </p>
+     */
+    inline const ManagedQueryResultsConfiguration& GetManagedQueryResultsConfiguration() const { return m_managedQueryResultsConfiguration; }
+    inline bool ManagedQueryResultsConfigurationHasBeenSet() const { return m_managedQueryResultsConfigurationHasBeenSet; }
+    template<typename ManagedQueryResultsConfigurationT = ManagedQueryResultsConfiguration>
+    void SetManagedQueryResultsConfiguration(ManagedQueryResultsConfigurationT&& value) { m_managedQueryResultsConfigurationHasBeenSet = true; m_managedQueryResultsConfiguration = std::forward<ManagedQueryResultsConfigurationT>(value); }
+    template<typename ManagedQueryResultsConfigurationT = ManagedQueryResultsConfiguration>
+    QueryExecution& WithManagedQueryResultsConfiguration(ManagedQueryResultsConfigurationT&& value) { SetManagedQueryResultsConfiguration(std::forward<ManagedQueryResultsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,6 +239,9 @@ namespace Model
 
     StatementType m_statementType{StatementType::NOT_SET};
     bool m_statementTypeHasBeenSet = false;
+
+    ManagedQueryResultsConfiguration m_managedQueryResultsConfiguration;
+    bool m_managedQueryResultsConfigurationHasBeenSet = false;
 
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;

@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ARN that identifies the Amazon RDS. </p> <p> The following is the format
-     * of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon Aurora or RDS database. </p> <p> The
+     * following is the format of the ARN: </p> <p>
      * <code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code> </p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }

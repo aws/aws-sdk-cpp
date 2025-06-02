@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/AthenaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/athena/model/QueryResultType.h>
 #include <utility>
 
 namespace Aws
@@ -70,6 +71,21 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetQueryResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> When you set this to <code>DATA_ROWS</code> or empty,
+     * <code>GetQueryResults</code> returns the query results in rows. If set to
+     * <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query
+     * types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and
+     * <code>INSERT</code> can generate a manifest file. If you use
+     * <code>DATA_MANIFEST</code> for other query types, the query will fail. </p>
+     */
+    inline QueryResultType GetQueryResultType() const { return m_queryResultType; }
+    inline bool QueryResultTypeHasBeenSet() const { return m_queryResultTypeHasBeenSet; }
+    inline void SetQueryResultType(QueryResultType value) { m_queryResultTypeHasBeenSet = true; m_queryResultType = value; }
+    inline GetQueryResultsRequest& WithQueryResultType(QueryResultType value) { SetQueryResultType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_queryExecutionId;
@@ -80,6 +96,9 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    QueryResultType m_queryResultType{QueryResultType::NOT_SET};
+    bool m_queryResultTypeHasBeenSet = false;
   };
 
 } // namespace Model

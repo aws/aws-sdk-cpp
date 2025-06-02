@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p> Describes the savings estimation mode used for calculating savings
-   * opportunity for Amazon RDS. </p><p><h3>See Also:</h3>   <a
+   * opportunity for DB instances. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RDSSavingsEstimationMode">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon RDS.
-     * </p>
+     * <p> Describes the source for calculating the savings opportunity for DB
+     * instances. </p>
      */
     inline RDSSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

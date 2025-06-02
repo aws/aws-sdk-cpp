@@ -187,7 +187,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The size, in bytes, of a backup.</p>
+     * <p>The size, in bytes, of a backup (recovery point).</p> <p>This value can
+     * render differently depending on the resource type as Backup pulls in data
+     * information from other Amazon Web Services services. For example, the value
+     * returned may show a value of <code>0</code>, which may differ from the
+     * anticipated value.</p> <p>The expected behavior for values by resource type are
+     * described as follows:</p> <ul> <li> <p>Amazon Aurora, Amazon DocumentDB, and
+     * Amazon Neptune do not have this value populate from the operation
+     * <code>GetBackupJobStatus</code>.</p> </li> <li> <p>For Amazon DynamoDB with
+     * advanced features, this value refers to the size of the recovery point
+     * (backup).</p> </li> <li> <p>Amazon EC2 and Amazon EBS show volume size
+     * (provisioned storage) returned as part of this value. Amazon EBS does not return
+     * backup size information; snapshot size will have the same value as the original
+     * resource that was backed up.</p> </li> <li> <p>For Amazon EFS, this value refers
+     * to the delta bytes transferred during a backup.</p> </li> <li> <p>Amazon FSx
+     * does not populate this value from the operation <code>GetBackupJobStatus</code>
+     * for FSx file systems.</p> </li> <li> <p>An Amazon RDS instance will show as
+     * <code>0</code>.</p> </li> <li> <p>For virtual machines running VMware, this
+     * value is passed to Backup through an asynchronous workflow, which can mean this
+     * displayed value can under-represent the actual backup size.</p> </li> </ul>
      */
     inline long long GetBackupSizeInBytes() const { return m_backupSizeInBytes; }
     inline bool BackupSizeInBytesHasBeenSet() const { return m_backupSizeInBytesHasBeenSet; }

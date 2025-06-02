@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
 #include <utility>
@@ -72,6 +73,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The invocation state for the agent alias. To pause the agent alias, set the
+     * value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running
+     * again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the
+     * <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get
+     * the invocation state of an agent alias.</p>
+     */
+    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
+    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
+    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
+    inline UpdateAgentAliasRequest& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a new description for the alias.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -105,6 +120,9 @@ namespace Model
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+    bool m_aliasInvocationStateHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

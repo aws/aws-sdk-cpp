@@ -20,6 +20,7 @@
 #include <aws/cost-optimization-hub/model/SageMakerSavingsPlans.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstance.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstanceStorage.h>
+#include <aws/cost-optimization-hub/model/AuroraDbClusterStorage.h>
 #include <aws/cost-optimization-hub/model/DynamoDbReservedCapacity.h>
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstances.h>
 #include <utility>
@@ -236,6 +237,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Aurora DB cluster storage recommendation details.</p>
+     */
+    inline const AuroraDbClusterStorage& GetAuroraDbClusterStorage() const { return m_auroraDbClusterStorage; }
+    inline bool AuroraDbClusterStorageHasBeenSet() const { return m_auroraDbClusterStorageHasBeenSet; }
+    template<typename AuroraDbClusterStorageT = AuroraDbClusterStorage>
+    void SetAuroraDbClusterStorage(AuroraDbClusterStorageT&& value) { m_auroraDbClusterStorageHasBeenSet = true; m_auroraDbClusterStorage = std::forward<AuroraDbClusterStorageT>(value); }
+    template<typename AuroraDbClusterStorageT = AuroraDbClusterStorage>
+    ResourceDetails& WithAuroraDbClusterStorage(AuroraDbClusterStorageT&& value) { SetAuroraDbClusterStorage(std::forward<AuroraDbClusterStorageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The DynamoDB reserved capacity recommendation details.</p>
      */
     inline const DynamoDbReservedCapacity& GetDynamoDbReservedCapacity() const { return m_dynamoDbReservedCapacity; }
@@ -303,6 +316,9 @@ namespace Model
 
     RdsDbInstanceStorage m_rdsDbInstanceStorage;
     bool m_rdsDbInstanceStorageHasBeenSet = false;
+
+    AuroraDbClusterStorage m_auroraDbClusterStorage;
+    bool m_auroraDbClusterStorageHasBeenSet = false;
 
     DynamoDbReservedCapacity m_dynamoDbReservedCapacity;
     bool m_dynamoDbReservedCapacityHasBeenSet = false;

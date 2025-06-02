@@ -24,6 +24,9 @@ namespace Aws
         static const int PARTIAL_HASH = HashingUtils::HashString("PARTIAL");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 
 
         RecoveryPointStatus GetRecoveryPointStatusForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == EXPIRED_HASH)
           {
             return RecoveryPointStatus::EXPIRED;
+          }
+          else if (hashCode == AVAILABLE_HASH)
+          {
+            return RecoveryPointStatus::AVAILABLE;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return RecoveryPointStatus::STOPPED;
+          }
+          else if (hashCode == CREATING_HASH)
+          {
+            return RecoveryPointStatus::CREATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +84,12 @@ namespace Aws
             return "DELETING";
           case RecoveryPointStatus::EXPIRED:
             return "EXPIRED";
+          case RecoveryPointStatus::AVAILABLE:
+            return "AVAILABLE";
+          case RecoveryPointStatus::STOPPED:
+            return "STOPPED";
+          case RecoveryPointStatus::CREATING:
+            return "CREATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

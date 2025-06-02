@@ -24,6 +24,7 @@ namespace Model
     EcsService,
     License,
     RdsDBInstance,
+    AuroraDBClusterStorage,
     Idle
   };
 

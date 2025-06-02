@@ -28,6 +28,7 @@ namespace Aws
         static const int EcsService_HASH = HashingUtils::HashString("EcsService");
         static const int License_HASH = HashingUtils::HashString("License");
         static const int RdsDBInstance_HASH = HashingUtils::HashString("RdsDBInstance");
+        static const int AuroraDBClusterStorage_HASH = HashingUtils::HashString("AuroraDBClusterStorage");
         static const int Idle_HASH = HashingUtils::HashString("Idle");
 
 
@@ -66,6 +67,10 @@ namespace Aws
           {
             return ResourceType::RdsDBInstance;
           }
+          else if (hashCode == AuroraDBClusterStorage_HASH)
+          {
+            return ResourceType::AuroraDBClusterStorage;
+          }
           else if (hashCode == Idle_HASH)
           {
             return ResourceType::Idle;
@@ -102,6 +107,8 @@ namespace Aws
             return "License";
           case ResourceType::RdsDBInstance:
             return "RdsDBInstance";
+          case ResourceType::AuroraDBClusterStorage:
+            return "AuroraDBClusterStorage";
           case ResourceType::Idle:
             return "Idle";
           default:

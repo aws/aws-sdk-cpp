@@ -26,15 +26,20 @@ namespace Aws
         static const int EngineVersion_HASH = HashingUtils::HashString("EngineVersion");
         static const int Idle_HASH = HashingUtils::HashString("Idle");
         static const int MultiAZDBInstance_HASH = HashingUtils::HashString("MultiAZDBInstance");
+        static const int ClusterWriter_HASH = HashingUtils::HashString("ClusterWriter");
         static const int CurrentDBInstanceClass_HASH = HashingUtils::HashString("CurrentDBInstanceClass");
         static const int CurrentStorageConfigurationStorageType_HASH = HashingUtils::HashString("CurrentStorageConfigurationStorageType");
         static const int CurrentStorageConfigurationAllocatedStorage_HASH = HashingUtils::HashString("CurrentStorageConfigurationAllocatedStorage");
         static const int CurrentStorageConfigurationMaxAllocatedStorage_HASH = HashingUtils::HashString("CurrentStorageConfigurationMaxAllocatedStorage");
         static const int CurrentStorageConfigurationIOPS_HASH = HashingUtils::HashString("CurrentStorageConfigurationIOPS");
         static const int CurrentStorageConfigurationStorageThroughput_HASH = HashingUtils::HashString("CurrentStorageConfigurationStorageThroughput");
+        static const int CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation_HASH = HashingUtils::HashString("CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation");
         static const int CurrentInstanceOnDemandHourlyPrice_HASH = HashingUtils::HashString("CurrentInstanceOnDemandHourlyPrice");
         static const int CurrentStorageOnDemandMonthlyPrice_HASH = HashingUtils::HashString("CurrentStorageOnDemandMonthlyPrice");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
+        static const int CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost_HASH = HashingUtils::HashString("CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost");
+        static const int CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost_HASH = HashingUtils::HashString("CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost");
+        static const int CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost_HASH = HashingUtils::HashString("CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost");
         static const int CurrentInstancePerformanceRisk_HASH = HashingUtils::HashString("CurrentInstancePerformanceRisk");
         static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
         static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
@@ -54,6 +59,9 @@ namespace Aws
         static const int UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum_HASH = HashingUtils::HashString("UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum");
         static const int UtilizationMetricsReadIOPSEphemeralStorageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsReadIOPSEphemeralStorageMaximum");
         static const int UtilizationMetricsWriteIOPSEphemeralStorageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsWriteIOPSEphemeralStorageMaximum");
+        static const int UtilizationMetricsVolumeBytesUsedAverage_HASH = HashingUtils::HashString("UtilizationMetricsVolumeBytesUsedAverage");
+        static const int UtilizationMetricsVolumeReadIOPsAverage_HASH = HashingUtils::HashString("UtilizationMetricsVolumeReadIOPsAverage");
+        static const int UtilizationMetricsVolumeWriteIOPsAverage_HASH = HashingUtils::HashString("UtilizationMetricsVolumeWriteIOPsAverage");
         static const int InstanceFinding_HASH = HashingUtils::HashString("InstanceFinding");
         static const int InstanceFindingReasonCodes_HASH = HashingUtils::HashString("InstanceFindingReasonCodes");
         static const int StorageFinding_HASH = HashingUtils::HashString("StorageFinding");
@@ -68,6 +76,7 @@ namespace Aws
         static const int StorageRecommendationOptionsIOPS_HASH = HashingUtils::HashString("StorageRecommendationOptionsIOPS");
         static const int StorageRecommendationOptionsStorageThroughput_HASH = HashingUtils::HashString("StorageRecommendationOptionsStorageThroughput");
         static const int StorageRecommendationOptionsRank_HASH = HashingUtils::HashString("StorageRecommendationOptionsRank");
+        static const int StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation");
         static const int InstanceRecommendationOptionsInstanceOnDemandHourlyPrice_HASH = HashingUtils::HashString("InstanceRecommendationOptionsInstanceOnDemandHourlyPrice");
         static const int InstanceRecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("InstanceRecommendationOptionsSavingsOpportunityPercentage");
         static const int InstanceRecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("InstanceRecommendationOptionsEstimatedMonthlySavingsCurrency");
@@ -76,6 +85,9 @@ namespace Aws
         static const int InstanceRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("InstanceRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
         static const int InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         static const int StorageRecommendationOptionsOnDemandMonthlyPrice_HASH = HashingUtils::HashString("StorageRecommendationOptionsOnDemandMonthlyPrice");
+        static const int StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost");
+        static const int StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost");
+        static const int StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost");
         static const int StorageRecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("StorageRecommendationOptionsSavingsOpportunityPercentage");
         static const int StorageRecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedMonthlySavingsCurrency");
         static const int StorageRecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("StorageRecommendationOptionsEstimatedMonthlySavingsValue");
@@ -119,6 +131,10 @@ namespace Aws
           {
             return ExportableRDSDBField::MultiAZDBInstance;
           }
+          else if (hashCode == ClusterWriter_HASH)
+          {
+            return ExportableRDSDBField::ClusterWriter;
+          }
           else if (hashCode == CurrentDBInstanceClass_HASH)
           {
             return ExportableRDSDBField::CurrentDBInstanceClass;
@@ -143,6 +159,10 @@ namespace Aws
           {
             return ExportableRDSDBField::CurrentStorageConfigurationStorageThroughput;
           }
+          else if (hashCode == CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation_HASH)
+          {
+            return ExportableRDSDBField::CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation;
+          }
           else if (hashCode == CurrentInstanceOnDemandHourlyPrice_HASH)
           {
             return ExportableRDSDBField::CurrentInstanceOnDemandHourlyPrice;
@@ -154,6 +174,18 @@ namespace Aws
           else if (hashCode == LookbackPeriodInDays_HASH)
           {
             return ExportableRDSDBField::LookbackPeriodInDays;
+          }
+          else if (hashCode == CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost;
+          }
+          else if (hashCode == CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost;
+          }
+          else if (hashCode == CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost;
           }
           else if (hashCode == CurrentInstancePerformanceRisk_HASH)
           {
@@ -231,6 +263,18 @@ namespace Aws
           {
             return ExportableRDSDBField::UtilizationMetricsWriteIOPSEphemeralStorageMaximum;
           }
+          else if (hashCode == UtilizationMetricsVolumeBytesUsedAverage_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsVolumeBytesUsedAverage;
+          }
+          else if (hashCode == UtilizationMetricsVolumeReadIOPsAverage_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsVolumeReadIOPsAverage;
+          }
+          else if (hashCode == UtilizationMetricsVolumeWriteIOPsAverage_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsVolumeWriteIOPsAverage;
+          }
           else if (hashCode == InstanceFinding_HASH)
           {
             return ExportableRDSDBField::InstanceFinding;
@@ -287,6 +331,10 @@ namespace Aws
           {
             return ExportableRDSDBField::StorageRecommendationOptionsRank;
           }
+          else if (hashCode == StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation_HASH)
+          {
+            return ExportableRDSDBField::StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation;
+          }
           else if (hashCode == InstanceRecommendationOptionsInstanceOnDemandHourlyPrice_HASH)
           {
             return ExportableRDSDBField::InstanceRecommendationOptionsInstanceOnDemandHourlyPrice;
@@ -318,6 +366,18 @@ namespace Aws
           else if (hashCode == StorageRecommendationOptionsOnDemandMonthlyPrice_HASH)
           {
             return ExportableRDSDBField::StorageRecommendationOptionsOnDemandMonthlyPrice;
+          }
+          else if (hashCode == StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost;
+          }
+          else if (hashCode == StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost;
+          }
+          else if (hashCode == StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost_HASH)
+          {
+            return ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost;
           }
           else if (hashCode == StorageRecommendationOptionsSavingsOpportunityPercentage_HASH)
           {
@@ -403,6 +463,8 @@ namespace Aws
             return "Idle";
           case ExportableRDSDBField::MultiAZDBInstance:
             return "MultiAZDBInstance";
+          case ExportableRDSDBField::ClusterWriter:
+            return "ClusterWriter";
           case ExportableRDSDBField::CurrentDBInstanceClass:
             return "CurrentDBInstanceClass";
           case ExportableRDSDBField::CurrentStorageConfigurationStorageType:
@@ -415,12 +477,20 @@ namespace Aws
             return "CurrentStorageConfigurationIOPS";
           case ExportableRDSDBField::CurrentStorageConfigurationStorageThroughput:
             return "CurrentStorageConfigurationStorageThroughput";
+          case ExportableRDSDBField::CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation:
+            return "CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation";
           case ExportableRDSDBField::CurrentInstanceOnDemandHourlyPrice:
             return "CurrentInstanceOnDemandHourlyPrice";
           case ExportableRDSDBField::CurrentStorageOnDemandMonthlyPrice:
             return "CurrentStorageOnDemandMonthlyPrice";
           case ExportableRDSDBField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
+          case ExportableRDSDBField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost:
+            return "CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost";
+          case ExportableRDSDBField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost:
+            return "CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost";
+          case ExportableRDSDBField::CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost:
+            return "CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost";
           case ExportableRDSDBField::CurrentInstancePerformanceRisk:
             return "CurrentInstancePerformanceRisk";
           case ExportableRDSDBField::UtilizationMetricsCpuMaximum:
@@ -459,6 +529,12 @@ namespace Aws
             return "UtilizationMetricsReadIOPSEphemeralStorageMaximum";
           case ExportableRDSDBField::UtilizationMetricsWriteIOPSEphemeralStorageMaximum:
             return "UtilizationMetricsWriteIOPSEphemeralStorageMaximum";
+          case ExportableRDSDBField::UtilizationMetricsVolumeBytesUsedAverage:
+            return "UtilizationMetricsVolumeBytesUsedAverage";
+          case ExportableRDSDBField::UtilizationMetricsVolumeReadIOPsAverage:
+            return "UtilizationMetricsVolumeReadIOPsAverage";
+          case ExportableRDSDBField::UtilizationMetricsVolumeWriteIOPsAverage:
+            return "UtilizationMetricsVolumeWriteIOPsAverage";
           case ExportableRDSDBField::InstanceFinding:
             return "InstanceFinding";
           case ExportableRDSDBField::InstanceFindingReasonCodes:
@@ -487,6 +563,8 @@ namespace Aws
             return "StorageRecommendationOptionsStorageThroughput";
           case ExportableRDSDBField::StorageRecommendationOptionsRank:
             return "StorageRecommendationOptionsRank";
+          case ExportableRDSDBField::StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation:
+            return "StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation";
           case ExportableRDSDBField::InstanceRecommendationOptionsInstanceOnDemandHourlyPrice:
             return "InstanceRecommendationOptionsInstanceOnDemandHourlyPrice";
           case ExportableRDSDBField::InstanceRecommendationOptionsSavingsOpportunityPercentage:
@@ -503,6 +581,12 @@ namespace Aws
             return "InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
           case ExportableRDSDBField::StorageRecommendationOptionsOnDemandMonthlyPrice:
             return "StorageRecommendationOptionsOnDemandMonthlyPrice";
+          case ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost:
+            return "StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost";
+          case ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost:
+            return "StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost";
+          case ExportableRDSDBField::StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost:
+            return "StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost";
           case ExportableRDSDBField::StorageRecommendationOptionsSavingsOpportunityPercentage:
             return "StorageRecommendationOptionsSavingsOpportunityPercentage";
           case ExportableRDSDBField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrency:

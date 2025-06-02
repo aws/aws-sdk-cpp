@@ -113,7 +113,7 @@ namespace Model
      * instance, such as CPU, memory, or network, can be sized down while still meeting
      * the performance requirements of your workload, and no specification is
      * under-provisioned. Over-provisioned instances may lead to unnecessary
-     * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
+     * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>���An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
      * and is not over provisioned. For optimized resources, Compute Optimizer might

@@ -59,6 +59,11 @@ AgentAlias& AgentAlias::operator =(JsonView jsonValue)
     m_agentId = jsonValue.GetString("agentId");
     m_agentIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("aliasInvocationState"))
+  {
+    m_aliasInvocationState = AliasInvocationStateMapper::GetAliasInvocationStateForName(jsonValue.GetString("aliasInvocationState"));
+    m_aliasInvocationStateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
@@ -142,6 +147,11 @@ JsonValue AgentAlias::Jsonize() const
   {
    payload.WithString("agentId", m_agentId);
 
+  }
+
+  if(m_aliasInvocationStateHasBeenSet)
+  {
+   payload.WithString("aliasInvocationState", AliasInvocationStateMapper::GetNameForAliasInvocationState(m_aliasInvocationState));
   }
 
   if(m_clientTokenHasBeenSet)
