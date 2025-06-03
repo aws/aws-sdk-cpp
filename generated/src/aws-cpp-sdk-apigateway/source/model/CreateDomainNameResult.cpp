@@ -134,6 +134,11 @@ CreateDomainNameResult& CreateDomainNameResult::operator =(const Aws::AmazonWebS
     m_policy = jsonValue.GetString("policy");
     m_policyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("routingMode"))
+  {
+    m_routingMode = RoutingModeMapper::GetRoutingModeForName(jsonValue.GetString("routingMode"));
+    m_routingModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

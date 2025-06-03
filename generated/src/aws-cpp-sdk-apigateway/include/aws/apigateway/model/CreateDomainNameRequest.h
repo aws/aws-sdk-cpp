@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/apigateway/model/MutualTlsAuthenticationInput.h>
+#include <aws/apigateway/model/RoutingMode.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +231,17 @@ namespace Model
     template<typename PolicyT = Aws::String>
     CreateDomainNameRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The routing mode for this domain name. The routing mode determines how API
+     * Gateway sends traffic from your custom domain name to your private APIs. </p>
+     */
+    inline RoutingMode GetRoutingMode() const { return m_routingMode; }
+    inline bool RoutingModeHasBeenSet() const { return m_routingModeHasBeenSet; }
+    inline void SetRoutingMode(RoutingMode value) { m_routingModeHasBeenSet = true; m_routingMode = value; }
+    inline CreateDomainNameRequest& WithRoutingMode(RoutingMode value) { SetRoutingMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -273,6 +285,9 @@ namespace Model
 
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
+
+    RoutingMode m_routingMode{RoutingMode::NOT_SET};
+    bool m_routingModeHasBeenSet = false;
   };
 
 } // namespace Model

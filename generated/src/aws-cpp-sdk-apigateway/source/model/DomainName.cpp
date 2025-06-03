@@ -135,6 +135,11 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_policy = jsonValue.GetString("policy");
     m_policyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("routingMode"))
+  {
+    m_routingMode = RoutingModeMapper::GetRoutingModeForName(jsonValue.GetString("routingMode"));
+    m_routingModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -268,6 +273,11 @@ JsonValue DomainName::Jsonize() const
   {
    payload.WithString("policy", m_policy);
 
+  }
+
+  if(m_routingModeHasBeenSet)
+  {
+   payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
   }
 
   return payload;

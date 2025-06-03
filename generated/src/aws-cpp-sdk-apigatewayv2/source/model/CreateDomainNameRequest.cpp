@@ -39,6 +39,11 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
 
   }
 
+  if(m_routingModeHasBeenSet)
+  {
+   payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigatewayv2/model/MutualTlsAuthentication.h>
+#include <aws/apigatewayv2/model/RoutingMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigatewayv2/model/DomainNameConfiguration.h>
 #include <utility>
@@ -59,6 +60,15 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const Aws::String& GetDomainNameArn() const { return m_domainNameArn; }
+    template<typename DomainNameArnT = Aws::String>
+    void SetDomainNameArn(DomainNameArnT&& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = std::forward<DomainNameArnT>(value); }
+    template<typename DomainNameArnT = Aws::String>
+    GetDomainNameResult& WithDomainNameArn(DomainNameArnT&& value) { SetDomainNameArn(std::forward<DomainNameArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The domain name configurations.</p>
      */
@@ -80,6 +90,15 @@ namespace Model
     void SetMutualTlsAuthentication(MutualTlsAuthenticationT&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::forward<MutualTlsAuthenticationT>(value); }
     template<typename MutualTlsAuthenticationT = MutualTlsAuthentication>
     GetDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthenticationT&& value) { SetMutualTlsAuthentication(std::forward<MutualTlsAuthenticationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The routing mode.</p>
+     */
+    inline RoutingMode GetRoutingMode() const { return m_routingMode; }
+    inline void SetRoutingMode(RoutingMode value) { m_routingModeHasBeenSet = true; m_routingMode = value; }
+    inline GetDomainNameResult& WithRoutingMode(RoutingMode value) { SetRoutingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -113,11 +132,17 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
+    Aws::String m_domainNameArn;
+    bool m_domainNameArnHasBeenSet = false;
+
     Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
     bool m_domainNameConfigurationsHasBeenSet = false;
 
     MutualTlsAuthentication m_mutualTlsAuthentication;
     bool m_mutualTlsAuthenticationHasBeenSet = false;
+
+    RoutingMode m_routingMode{RoutingMode::NOT_SET};
+    bool m_routingModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

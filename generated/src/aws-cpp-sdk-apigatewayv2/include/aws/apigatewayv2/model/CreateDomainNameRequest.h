@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigatewayv2/model/MutualTlsAuthenticationInput.h>
+#include <aws/apigatewayv2/model/RoutingMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigatewayv2/model/DomainNameConfiguration.h>
 #include <utility>
@@ -80,6 +81,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The routing mode.</p>
+     */
+    inline RoutingMode GetRoutingMode() const { return m_routingMode; }
+    inline bool RoutingModeHasBeenSet() const { return m_routingModeHasBeenSet; }
+    inline void SetRoutingMode(RoutingMode value) { m_routingModeHasBeenSet = true; m_routingMode = value; }
+    inline CreateDomainNameRequest& WithRoutingMode(RoutingMode value) { SetRoutingMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The collection of tags associated with a domain name.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -103,6 +114,9 @@ namespace Model
 
     MutualTlsAuthenticationInput m_mutualTlsAuthentication;
     bool m_mutualTlsAuthenticationHasBeenSet = false;
+
+    RoutingMode m_routingMode{RoutingMode::NOT_SET};
+    bool m_routingModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
