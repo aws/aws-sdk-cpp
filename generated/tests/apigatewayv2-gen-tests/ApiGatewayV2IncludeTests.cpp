@@ -43,6 +43,8 @@
 #include <aws/apigatewayv2/model/CreateRouteResponseRequest.h>
 #include <aws/apigatewayv2/model/CreateRouteResponseResult.h>
 #include <aws/apigatewayv2/model/CreateRouteResult.h>
+#include <aws/apigatewayv2/model/CreateRoutingRuleRequest.h>
+#include <aws/apigatewayv2/model/CreateRoutingRuleResult.h>
 #include <aws/apigatewayv2/model/CreateStageRequest.h>
 #include <aws/apigatewayv2/model/CreateStageResult.h>
 #include <aws/apigatewayv2/model/CreateVpcLinkRequest.h>
@@ -61,6 +63,7 @@
 #include <aws/apigatewayv2/model/DeleteRouteRequestParameterRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteResponseRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteSettingsRequest.h>
+#include <aws/apigatewayv2/model/DeleteRoutingRuleRequest.h>
 #include <aws/apigatewayv2/model/DeleteStageRequest.h>
 #include <aws/apigatewayv2/model/DeleteVpcLinkRequest.h>
 #include <aws/apigatewayv2/model/DeleteVpcLinkResult.h>
@@ -114,6 +117,8 @@
 #include <aws/apigatewayv2/model/GetRouteResult.h>
 #include <aws/apigatewayv2/model/GetRoutesRequest.h>
 #include <aws/apigatewayv2/model/GetRoutesResult.h>
+#include <aws/apigatewayv2/model/GetRoutingRuleRequest.h>
+#include <aws/apigatewayv2/model/GetRoutingRuleResult.h>
 #include <aws/apigatewayv2/model/GetStageRequest.h>
 #include <aws/apigatewayv2/model/GetStageResult.h>
 #include <aws/apigatewayv2/model/GetStagesRequest.h>
@@ -131,6 +136,8 @@
 #include <aws/apigatewayv2/model/IntegrationType.h>
 #include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/JWTConfiguration.h>
+#include <aws/apigatewayv2/model/ListRoutingRulesRequest.h>
+#include <aws/apigatewayv2/model/ListRoutingRulesResult.h>
 #include <aws/apigatewayv2/model/LoggingLevel.h>
 #include <aws/apigatewayv2/model/Model.h>
 #include <aws/apigatewayv2/model/MutualTlsAuthentication.h>
@@ -139,12 +146,22 @@
 #include <aws/apigatewayv2/model/ParameterConstraints.h>
 #include <aws/apigatewayv2/model/PassthroughBehavior.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
+#include <aws/apigatewayv2/model/PutRoutingRuleRequest.h>
+#include <aws/apigatewayv2/model/PutRoutingRuleResult.h>
 #include <aws/apigatewayv2/model/ReimportApiRequest.h>
 #include <aws/apigatewayv2/model/ReimportApiResult.h>
 #include <aws/apigatewayv2/model/ResetAuthorizersCacheRequest.h>
 #include <aws/apigatewayv2/model/Route.h>
 #include <aws/apigatewayv2/model/RouteResponse.h>
 #include <aws/apigatewayv2/model/RouteSettings.h>
+#include <aws/apigatewayv2/model/RoutingMode.h>
+#include <aws/apigatewayv2/model/RoutingRule.h>
+#include <aws/apigatewayv2/model/RoutingRuleAction.h>
+#include <aws/apigatewayv2/model/RoutingRuleActionInvokeApi.h>
+#include <aws/apigatewayv2/model/RoutingRuleCondition.h>
+#include <aws/apigatewayv2/model/RoutingRuleMatchBasePaths.h>
+#include <aws/apigatewayv2/model/RoutingRuleMatchHeaderValue.h>
+#include <aws/apigatewayv2/model/RoutingRuleMatchHeaders.h>
 #include <aws/apigatewayv2/model/SecurityPolicy.h>
 #include <aws/apigatewayv2/model/Stage.h>
 #include <aws/apigatewayv2/model/TagResourceRequest.h>

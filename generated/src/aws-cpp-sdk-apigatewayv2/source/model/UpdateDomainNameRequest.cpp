@@ -33,6 +33,11 @@ Aws::String UpdateDomainNameRequest::SerializePayload() const
 
   }
 
+  if(m_routingModeHasBeenSet)
+  {
+   payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

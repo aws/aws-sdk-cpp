@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace EMRServerless
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CancelJobRun"; }
 
     AWS_EMRSERVERLESS_API Aws::String SerializePayload() const override;
+
+    AWS_EMRSERVERLESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -55,6 +61,17 @@ namespace Model
     template<typename JobRunIdT = Aws::String>
     CancelJobRunRequest& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The duration (in seconds) to wait before forcefully terminating the job after
+     * cancellation is requested.</p>
+     */
+    inline int GetShutdownGracePeriodInSeconds() const { return m_shutdownGracePeriodInSeconds; }
+    inline bool ShutdownGracePeriodInSecondsHasBeenSet() const { return m_shutdownGracePeriodInSecondsHasBeenSet; }
+    inline void SetShutdownGracePeriodInSeconds(int value) { m_shutdownGracePeriodInSecondsHasBeenSet = true; m_shutdownGracePeriodInSeconds = value; }
+    inline CancelJobRunRequest& WithShutdownGracePeriodInSeconds(int value) { SetShutdownGracePeriodInSeconds(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -62,6 +79,9 @@ namespace Model
 
     Aws::String m_jobRunId;
     bool m_jobRunIdHasBeenSet = false;
+
+    int m_shutdownGracePeriodInSeconds{0};
+    bool m_shutdownGracePeriodInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -235,6 +235,7 @@
 #include <aws/apigateway/model/Resource.h>
 #include <aws/apigateway/model/ResourceOwner.h>
 #include <aws/apigateway/model/RestApi.h>
+#include <aws/apigateway/model/RoutingMode.h>
 #include <aws/apigateway/model/SdkConfigurationProperty.h>
 #include <aws/apigateway/model/SdkType.h>
 #include <aws/apigateway/model/SecurityPolicy.h>

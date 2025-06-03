@@ -35,6 +35,11 @@ UpdateDomainNameResult& UpdateDomainNameResult::operator =(const Aws::AmazonWebS
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("domainNameArn"))
+  {
+    m_domainNameArn = jsonValue.GetString("domainNameArn");
+    m_domainNameArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("domainNameConfigurations"))
   {
     Aws::Utils::Array<JsonView> domainNameConfigurationsJsonList = jsonValue.GetArray("domainNameConfigurations");
@@ -48,6 +53,11 @@ UpdateDomainNameResult& UpdateDomainNameResult::operator =(const Aws::AmazonWebS
   {
     m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
     m_mutualTlsAuthenticationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("routingMode"))
+  {
+    m_routingMode = RoutingModeMapper::GetRoutingModeForName(jsonValue.GetString("routingMode"));
+    m_routingModeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {

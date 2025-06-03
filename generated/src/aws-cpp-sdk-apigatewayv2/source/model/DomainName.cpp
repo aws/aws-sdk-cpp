@@ -35,6 +35,11 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("domainNameArn"))
+  {
+    m_domainNameArn = jsonValue.GetString("domainNameArn");
+    m_domainNameArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("domainNameConfigurations"))
   {
     Aws::Utils::Array<JsonView> domainNameConfigurationsJsonList = jsonValue.GetArray("domainNameConfigurations");
@@ -48,6 +53,11 @@ DomainName& DomainName::operator =(JsonView jsonValue)
   {
     m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
     m_mutualTlsAuthenticationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("routingMode"))
+  {
+    m_routingMode = RoutingModeMapper::GetRoutingModeForName(jsonValue.GetString("routingMode"));
+    m_routingModeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -77,6 +87,12 @@ JsonValue DomainName::Jsonize() const
 
   }
 
+  if(m_domainNameArnHasBeenSet)
+  {
+   payload.WithString("domainNameArn", m_domainNameArn);
+
+  }
+
   if(m_domainNameConfigurationsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
@@ -92,6 +108,11 @@ JsonValue DomainName::Jsonize() const
   {
    payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
 
+  }
+
+  if(m_routingModeHasBeenSet)
+  {
+   payload.WithString("routingMode", RoutingModeMapper::GetNameForRoutingMode(m_routingMode));
   }
 
   if(m_tagsHasBeenSet)
