@@ -54,6 +54,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A boolean that reflects whether or not the firewall monitoring dashboard is
+     * enabled on a firewall.</p> <p> Returns <code>TRUE</code> when the firewall
+     * monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when
+     * the firewall monitoring dashboard is not enabled on the firewall. </p>
+     */
+    inline bool GetEnableMonitoringDashboard() const { return m_enableMonitoringDashboard; }
+    inline void SetEnableMonitoringDashboard(bool value) { m_enableMonitoringDashboardHasBeenSet = true; m_enableMonitoringDashboard = value; }
+    inline DescribeLoggingConfigurationResult& WithEnableMonitoringDashboard(bool value) { SetEnableMonitoringDashboard(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -68,6 +80,9 @@ namespace Model
 
     LoggingConfiguration m_loggingConfiguration;
     bool m_loggingConfigurationHasBeenSet = false;
+
+    bool m_enableMonitoringDashboard{false};
+    bool m_enableMonitoringDashboardHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

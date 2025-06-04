@@ -67,11 +67,20 @@ namespace Model
      * <p>Specify one of the following templates to use for the clinical note summary.
      * The default is <code>HISTORY_AND_PHYSICAL</code>.</p> <ul> <li>
      * <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical
-     * documentation. Sections include Chief Complaint, History of Present Illness,
-     * Review of Systems, Past Medical History, Assessment, and Plan.</p> </li> <li>
-     * <p>GIRPP: Provides summaries based on the patients progress toward goals.
-     * Sections include Goal, Intervention, Response, Progress, and Plan.</p> </li>
-     * </ul>
+     * documentation. Examples of sections include Chief Complaint, History of Present
+     * Illness, Review of Systems, Past Medical History, Assessment, and Plan. </p>
+     * </li> <li> <p>GIRPP: Provides summaries based on the patients progress toward
+     * goals. Examples of sections include Goal, Intervention, Response, Progress, and
+     * Plan.</p> </li> <li> <p>BIRP: Focuses on the patient's behavioral patterns and
+     * responses. Examples of sections include Behavior, Intervention, Response, and
+     * Plan.</p> </li> <li> <p>SIRP: Emphasizes the situational context of therapy.
+     * Examples of sections include Situation, Intervention, Response, and Plan.</p>
+     * </li> <li> <p>DAP: Provides a simplified format for clinical documentation.
+     * Examples of sections include Data, Assessment, and Plan.</p> </li> <li>
+     * <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of
+     * sections include Subjective, Objective, Assessment, and Plan.</p> </li> <li>
+     * <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of
+     * sections include Subjective, Objective, Assessment, and Plan.</p> </li> </ul>
      */
     inline MedicalScribeNoteTemplate GetNoteTemplate() const { return m_noteTemplate; }
     inline bool NoteTemplateHasBeenSet() const { return m_noteTemplateHasBeenSet; }

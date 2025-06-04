@@ -197,6 +197,32 @@ namespace Invoicing
         }
 
         /**
+         * <p>Retrieves your invoice details programmatically, without line item
+         * details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInvoiceSummariesOutcome ListInvoiceSummaries(const Model::ListInvoiceSummariesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInvoiceSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInvoiceSummariesRequestT = Model::ListInvoiceSummariesRequest>
+        Model::ListInvoiceSummariesOutcomeCallable ListInvoiceSummariesCallable(const ListInvoiceSummariesRequestT& request) const
+        {
+            return SubmitCallable(&InvoicingClient::ListInvoiceSummaries, request);
+        }
+
+        /**
+         * An Async wrapper for ListInvoiceSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInvoiceSummariesRequestT = Model::ListInvoiceSummariesRequest>
+        void ListInvoiceSummariesAsync(const ListInvoiceSummariesRequestT& request, const ListInvoiceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InvoicingClient::ListInvoiceSummaries, request, handler, context);
+        }
+
+        /**
          * <p>This fetches a list of all invoice unit definitions for a given account, as
          * of the provided <code>AsOf</code> date.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceUnits">AWS

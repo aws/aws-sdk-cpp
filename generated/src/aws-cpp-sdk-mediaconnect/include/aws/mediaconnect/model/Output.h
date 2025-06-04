@@ -241,6 +241,27 @@ namespace Model
     inline void SetOutputStatus(OutputStatus value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
     inline Output& WithOutputStatus(OutputStatus value) { SetOutputStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address of the device that is currently receiving content from this
+     * output.</p>  <ul> <li> <p>For outputs that use protocols where you specify
+     * the destination (such as SRT Caller or Zixi Push), this value matches the
+     * configured destination address.</p> </li> <li> <p>For outputs that use listener
+     * protocols (such as SRT Listener), this value shows the address of the connected
+     * receiver. </p> </li> <li> <p>Peer IP addresses aren't available for
+     * entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.
+     * </p> </li> <li> <p>The peer IP address might not be visible for flows that
+     * haven't been started yet, or flows that were started before May 2025. In these
+     * cases, restart your flow to see the peer IP address.</p> </li> </ul> 
+     */
+    inline const Aws::String& GetPeerIpAddress() const { return m_peerIpAddress; }
+    inline bool PeerIpAddressHasBeenSet() const { return m_peerIpAddressHasBeenSet; }
+    template<typename PeerIpAddressT = Aws::String>
+    void SetPeerIpAddress(PeerIpAddressT&& value) { m_peerIpAddressHasBeenSet = true; m_peerIpAddress = std::forward<PeerIpAddressT>(value); }
+    template<typename PeerIpAddressT = Aws::String>
+    Output& WithPeerIpAddress(PeerIpAddressT&& value) { SetPeerIpAddress(std::forward<PeerIpAddressT>(value)); return *this;}
+    ///@}
   private:
 
     int m_dataTransferSubscriberFeePercent{0};
@@ -290,6 +311,9 @@ namespace Model
 
     OutputStatus m_outputStatus{OutputStatus::NOT_SET};
     bool m_outputStatusHasBeenSet = false;
+
+    Aws::String m_peerIpAddress;
+    bool m_peerIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

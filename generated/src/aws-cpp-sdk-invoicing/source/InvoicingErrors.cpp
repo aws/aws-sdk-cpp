@@ -6,8 +6,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/invoicing/InvoicingErrors.h>
-#include <aws/invoicing/model/InternalServerException.h>
 #include <aws/invoicing/model/ResourceNotFoundException.h>
+#include <aws/invoicing/model/InternalServerException.h>
 #include <aws/invoicing/model/ValidationException.h>
 #include <aws/invoicing/model/AccessDeniedException.h>
 
@@ -20,16 +20,16 @@ namespace Aws
 {
 namespace Invoicing
 {
-template<> AWS_INVOICING_API InternalServerException InvoicingError::GetModeledError()
-{
-  assert(this->GetErrorType() == InvoicingErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
 template<> AWS_INVOICING_API ResourceNotFoundException InvoicingError::GetModeledError()
 {
   assert(this->GetErrorType() == InvoicingErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INVOICING_API InternalServerException InvoicingError::GetModeledError()
+{
+  assert(this->GetErrorType() == InvoicingErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_INVOICING_API ValidationException InvoicingError::GetModeledError()

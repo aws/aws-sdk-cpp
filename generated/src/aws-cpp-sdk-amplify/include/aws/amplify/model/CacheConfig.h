@@ -47,10 +47,9 @@ namespace Model
      * <p>The type of cache configuration to use for an Amplify app.</p> <p>The
      * <code>AMPLIFY_MANAGED</code> cache configuration automatically applies an
      * optimized cache configuration for your app based on its platform, routing rules,
-     * and rewrite rules. This is the default setting.</p> <p>The
-     * <code>AMPLIFY_MANAGED_NO_COOKIES</code> cache configuration type is the same as
-     * <code>AMPLIFY_MANAGED</code>, except that it excludes all cookies from the cache
-     * key.</p>
+     * and rewrite rules.</p> <p>The <code>AMPLIFY_MANAGED_NO_COOKIES</code> cache
+     * configuration type is the same as <code>AMPLIFY_MANAGED</code>, except that it
+     * excludes all cookies from the cache key. This is the default setting.</p>
      */
     inline CacheConfigType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -104,6 +104,11 @@ Source& Source::operator =(JsonView jsonValue)
     m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
     m_gatewayBridgeSourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("peerIpAddress"))
+  {
+    m_peerIpAddress = jsonValue.GetString("peerIpAddress");
+    m_peerIpAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -203,6 +208,12 @@ JsonValue Source::Jsonize() const
   if(m_gatewayBridgeSourceHasBeenSet)
   {
    payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
+
+  }
+
+  if(m_peerIpAddressHasBeenSet)
+  {
+   payload.WithString("peerIpAddress", m_peerIpAddress);
 
   }
 

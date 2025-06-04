@@ -113,6 +113,11 @@ Output& Output::operator =(JsonView jsonValue)
     m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
     m_outputStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("peerIpAddress"))
+  {
+    m_peerIpAddress = jsonValue.GetString("peerIpAddress");
+    m_peerIpAddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -223,6 +228,12 @@ JsonValue Output::Jsonize() const
   if(m_outputStatusHasBeenSet)
   {
    payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
+  }
+
+  if(m_peerIpAddressHasBeenSet)
+  {
+   payload.WithString("peerIpAddress", m_peerIpAddress);
+
   }
 
   return payload;

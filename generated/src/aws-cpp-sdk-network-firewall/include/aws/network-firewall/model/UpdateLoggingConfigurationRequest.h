@@ -74,6 +74,23 @@ namespace Model
     template<typename LoggingConfigurationT = LoggingConfiguration>
     UpdateLoggingConfigurationRequest& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A boolean that lets you enable or disable the detailed firewall monitoring
+     * dashboard on the firewall. </p> <p>The monitoring dashboard provides
+     * comprehensive visibility into your firewall's flow logs and alert logs. After
+     * you enable detailed monitoring, you can access these dashboards directly from
+     * the <b>Monitoring</b> page of the Network Firewall console.</p> <p> Specify
+     * <code>TRUE</code> to enable the the detailed monitoring dashboard on the
+     * firewall. Specify <code>FALSE</code> to disable the the detailed monitoring
+     * dashboard on the firewall. </p>
+     */
+    inline bool GetEnableMonitoringDashboard() const { return m_enableMonitoringDashboard; }
+    inline bool EnableMonitoringDashboardHasBeenSet() const { return m_enableMonitoringDashboardHasBeenSet; }
+    inline void SetEnableMonitoringDashboard(bool value) { m_enableMonitoringDashboardHasBeenSet = true; m_enableMonitoringDashboard = value; }
+    inline UpdateLoggingConfigurationRequest& WithEnableMonitoringDashboard(bool value) { SetEnableMonitoringDashboard(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_firewallArn;
@@ -84,6 +101,9 @@ namespace Model
 
     LoggingConfiguration m_loggingConfiguration;
     bool m_loggingConfigurationHasBeenSet = false;
+
+    bool m_enableMonitoringDashboard{false};
+    bool m_enableMonitoringDashboardHasBeenSet = false;
   };
 
 } // namespace Model

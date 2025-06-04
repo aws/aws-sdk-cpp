@@ -229,6 +229,27 @@ namespace Model
     template<typename GatewayBridgeSourceT = GatewayBridgeSource>
     Source& WithGatewayBridgeSource(GatewayBridgeSourceT&& value) { SetGatewayBridgeSource(std::forward<GatewayBridgeSourceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address of the device that is currently sending content to this
+     * source. </p>  <ul> <li> <p>For sources that use protocols where you
+     * specify the origin (such as SRT Caller), this value matches the configured
+     * origin address. </p> </li> <li> <p>For sources that use listener protocols (such
+     * as SRT Listener or RTP), this value shows the address of the connected sender.
+     * </p> </li> <li> <p>Peer IP addresses aren't available for entitlements and
+     * CDI/ST2110 sources.</p> </li> <li> <p>The peer IP address might not be visible
+     * for flows that haven't been started yet, or flows that were started before May
+     * 2025. In these cases, restart your flow to see the peer IP address.</p> </li>
+     * </ul> 
+     */
+    inline const Aws::String& GetPeerIpAddress() const { return m_peerIpAddress; }
+    inline bool PeerIpAddressHasBeenSet() const { return m_peerIpAddressHasBeenSet; }
+    template<typename PeerIpAddressT = Aws::String>
+    void SetPeerIpAddress(PeerIpAddressT&& value) { m_peerIpAddressHasBeenSet = true; m_peerIpAddress = std::forward<PeerIpAddressT>(value); }
+    template<typename PeerIpAddressT = Aws::String>
+    Source& WithPeerIpAddress(PeerIpAddressT&& value) { SetPeerIpAddress(std::forward<PeerIpAddressT>(value)); return *this;}
+    ///@}
   private:
 
     int m_dataTransferSubscriberFeePercent{0};
@@ -275,6 +296,9 @@ namespace Model
 
     GatewayBridgeSource m_gatewayBridgeSource;
     bool m_gatewayBridgeSourceHasBeenSet = false;
+
+    Aws::String m_peerIpAddress;
+    bool m_peerIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,7 +123,8 @@ namespace Model
     ml_r5_8xlarge,
     ml_r5_12xlarge,
     ml_r5_16xlarge,
-    ml_r5_24xlarge
+    ml_r5_24xlarge,
+    ml_p6_b200_48xlarge
   };
 
 namespace TrainingInstanceTypeMapper
