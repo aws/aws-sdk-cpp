@@ -22,6 +22,11 @@ namespace Aws
 
         static const int HISTORY_AND_PHYSICAL_HASH = HashingUtils::HashString("HISTORY_AND_PHYSICAL");
         static const int GIRPP_HASH = HashingUtils::HashString("GIRPP");
+        static const int DAP_HASH = HashingUtils::HashString("DAP");
+        static const int SIRP_HASH = HashingUtils::HashString("SIRP");
+        static const int BIRP_HASH = HashingUtils::HashString("BIRP");
+        static const int BEHAVIORAL_SOAP_HASH = HashingUtils::HashString("BEHAVIORAL_SOAP");
+        static const int PHYSICAL_SOAP_HASH = HashingUtils::HashString("PHYSICAL_SOAP");
 
 
         MedicalScribeNoteTemplate GetMedicalScribeNoteTemplateForName(const Aws::String& name)
@@ -34,6 +39,26 @@ namespace Aws
           else if (hashCode == GIRPP_HASH)
           {
             return MedicalScribeNoteTemplate::GIRPP;
+          }
+          else if (hashCode == DAP_HASH)
+          {
+            return MedicalScribeNoteTemplate::DAP;
+          }
+          else if (hashCode == SIRP_HASH)
+          {
+            return MedicalScribeNoteTemplate::SIRP;
+          }
+          else if (hashCode == BIRP_HASH)
+          {
+            return MedicalScribeNoteTemplate::BIRP;
+          }
+          else if (hashCode == BEHAVIORAL_SOAP_HASH)
+          {
+            return MedicalScribeNoteTemplate::BEHAVIORAL_SOAP;
+          }
+          else if (hashCode == PHYSICAL_SOAP_HASH)
+          {
+            return MedicalScribeNoteTemplate::PHYSICAL_SOAP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +80,16 @@ namespace Aws
             return "HISTORY_AND_PHYSICAL";
           case MedicalScribeNoteTemplate::GIRPP:
             return "GIRPP";
+          case MedicalScribeNoteTemplate::DAP:
+            return "DAP";
+          case MedicalScribeNoteTemplate::SIRP:
+            return "SIRP";
+          case MedicalScribeNoteTemplate::BIRP:
+            return "BIRP";
+          case MedicalScribeNoteTemplate::BEHAVIORAL_SOAP:
+            return "BEHAVIORAL_SOAP";
+          case MedicalScribeNoteTemplate::PHYSICAL_SOAP:
+            return "PHYSICAL_SOAP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

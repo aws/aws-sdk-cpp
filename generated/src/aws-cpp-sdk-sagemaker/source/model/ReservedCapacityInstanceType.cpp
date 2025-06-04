@@ -26,6 +26,7 @@ namespace Aws
         static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
         static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
         static const int ml_trn2_48xlarge_HASH = HashingUtils::HashString("ml.trn2.48xlarge");
+        static const int ml_p6_b200_48xlarge_HASH = HashingUtils::HashString("ml.p6-b200.48xlarge");
 
 
         ReservedCapacityInstanceType GetReservedCapacityInstanceTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ReservedCapacityInstanceType::ml_trn2_48xlarge;
           }
+          else if (hashCode == ml_p6_b200_48xlarge_HASH)
+          {
+            return ReservedCapacityInstanceType::ml_p6_b200_48xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "ml.trn1.32xlarge";
           case ReservedCapacityInstanceType::ml_trn2_48xlarge:
             return "ml.trn2.48xlarge";
+          case ReservedCapacityInstanceType::ml_p6_b200_48xlarge:
+            return "ml.p6-b200.48xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

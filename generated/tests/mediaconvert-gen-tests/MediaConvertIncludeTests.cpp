@@ -477,6 +477,7 @@
 #include <aws/mediaconvert/model/Mp2Settings.h>
 #include <aws/mediaconvert/model/Mp3RateControlMode.h>
 #include <aws/mediaconvert/model/Mp3Settings.h>
+#include <aws/mediaconvert/model/Mp4C2paManifest.h>
 #include <aws/mediaconvert/model/Mp4CslgAtom.h>
 #include <aws/mediaconvert/model/Mp4FreeSpaceBox.h>
 #include <aws/mediaconvert/model/Mp4MoovPlacement.h>

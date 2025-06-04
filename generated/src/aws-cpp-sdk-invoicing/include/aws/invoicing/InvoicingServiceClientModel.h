@@ -22,6 +22,7 @@
 #include <aws/invoicing/model/CreateInvoiceUnitResult.h>
 #include <aws/invoicing/model/DeleteInvoiceUnitResult.h>
 #include <aws/invoicing/model/GetInvoiceUnitResult.h>
+#include <aws/invoicing/model/ListInvoiceSummariesResult.h>
 #include <aws/invoicing/model/ListInvoiceUnitsResult.h>
 #include <aws/invoicing/model/ListTagsForResourceResult.h>
 #include <aws/invoicing/model/TagResourceResult.h>
@@ -72,6 +73,7 @@ namespace Aws
       class CreateInvoiceUnitRequest;
       class DeleteInvoiceUnitRequest;
       class GetInvoiceUnitRequest;
+      class ListInvoiceSummariesRequest;
       class ListInvoiceUnitsRequest;
       class ListTagsForResourceRequest;
       class TagResourceRequest;
@@ -84,6 +86,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateInvoiceUnitResult, InvoicingError> CreateInvoiceUnitOutcome;
       typedef Aws::Utils::Outcome<DeleteInvoiceUnitResult, InvoicingError> DeleteInvoiceUnitOutcome;
       typedef Aws::Utils::Outcome<GetInvoiceUnitResult, InvoicingError> GetInvoiceUnitOutcome;
+      typedef Aws::Utils::Outcome<ListInvoiceSummariesResult, InvoicingError> ListInvoiceSummariesOutcome;
       typedef Aws::Utils::Outcome<ListInvoiceUnitsResult, InvoicingError> ListInvoiceUnitsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, InvoicingError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, InvoicingError> TagResourceOutcome;
@@ -96,6 +99,7 @@ namespace Aws
       typedef std::future<CreateInvoiceUnitOutcome> CreateInvoiceUnitOutcomeCallable;
       typedef std::future<DeleteInvoiceUnitOutcome> DeleteInvoiceUnitOutcomeCallable;
       typedef std::future<GetInvoiceUnitOutcome> GetInvoiceUnitOutcomeCallable;
+      typedef std::future<ListInvoiceSummariesOutcome> ListInvoiceSummariesOutcomeCallable;
       typedef std::future<ListInvoiceUnitsOutcome> ListInvoiceUnitsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -111,6 +115,7 @@ namespace Aws
     typedef std::function<void(const InvoicingClient*, const Model::CreateInvoiceUnitRequest&, const Model::CreateInvoiceUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInvoiceUnitResponseReceivedHandler;
     typedef std::function<void(const InvoicingClient*, const Model::DeleteInvoiceUnitRequest&, const Model::DeleteInvoiceUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvoiceUnitResponseReceivedHandler;
     typedef std::function<void(const InvoicingClient*, const Model::GetInvoiceUnitRequest&, const Model::GetInvoiceUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvoiceUnitResponseReceivedHandler;
+    typedef std::function<void(const InvoicingClient*, const Model::ListInvoiceSummariesRequest&, const Model::ListInvoiceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvoiceSummariesResponseReceivedHandler;
     typedef std::function<void(const InvoicingClient*, const Model::ListInvoiceUnitsRequest&, const Model::ListInvoiceUnitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvoiceUnitsResponseReceivedHandler;
     typedef std::function<void(const InvoicingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const InvoicingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

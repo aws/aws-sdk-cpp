@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <p>The format of the audio channel.</p> </p>
+     * <p> The format of the audio channel. </p>
      */
     inline const Aws::String& GetChannelOrder() const { return m_channelOrder; }
     inline bool ChannelOrderHasBeenSet() const { return m_channelOrderHasBeenSet; }

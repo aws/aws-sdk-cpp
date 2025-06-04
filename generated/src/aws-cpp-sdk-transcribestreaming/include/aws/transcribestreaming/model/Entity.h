@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The start time, in milliseconds, of the utterance that was identified as
-     * PII.</p>
+     * <p>The start time of the utterance that was identified as PII in seconds, with
+     * millisecond precision (e.g., 1.056)</p>
      */
     inline double GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The end time, in milliseconds, of the utterance that was identified as
-     * PII.</p>
+     * <p>The end time of the utterance that was identified as PII in seconds, with
+     * millisecond precision (e.g., 1.056)</p>
      */
     inline double GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

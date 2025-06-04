@@ -34,6 +34,12 @@ Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_enableMonitoringDashboardHasBeenSet)
+  {
+   payload.WithBool("EnableMonitoringDashboard", m_enableMonitoringDashboard);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

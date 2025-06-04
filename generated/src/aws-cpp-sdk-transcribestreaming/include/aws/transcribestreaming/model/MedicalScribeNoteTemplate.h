@@ -17,7 +17,12 @@ namespace Model
   {
     NOT_SET,
     HISTORY_AND_PHYSICAL,
-    GIRPP
+    GIRPP,
+    DAP,
+    SIRP,
+    BIRP,
+    BEHAVIORAL_SOAP,
+    PHYSICAL_SOAP
   };
 
 namespace MedicalScribeNoteTemplateMapper

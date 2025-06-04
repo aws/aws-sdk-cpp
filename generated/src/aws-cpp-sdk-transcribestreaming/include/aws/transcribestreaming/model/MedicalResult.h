@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+     * <p>The start time, in seconds, of the <code>Result</code>.</p>
      */
     inline double GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+     * <p>The end time, in seconds, of the <code>Result</code>.</p>
      */
     inline double GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

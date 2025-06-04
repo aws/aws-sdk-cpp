@@ -40,6 +40,11 @@ UpdateLoggingConfigurationResult& UpdateLoggingConfigurationResult::operator =(c
     m_loggingConfiguration = jsonValue.GetObject("LoggingConfiguration");
     m_loggingConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EnableMonitoringDashboard"))
+  {
+    m_enableMonitoringDashboard = jsonValue.GetBool("EnableMonitoringDashboard");
+    m_enableMonitoringDashboardHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
