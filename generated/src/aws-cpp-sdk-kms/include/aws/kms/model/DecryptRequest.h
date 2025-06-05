@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
      * encryption context is valid only for <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
      * encryption context.</p> <p>An <i>encryption context</i> is a collection of
@@ -65,7 +65,7 @@ namespace Model
      * encryption context is supported only on operations with symmetric encryption KMS
      * keys. On operations with symmetric encryption KMS keys, an encryption context is
      * optional, but it is strongly recommended.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const { return m_encryptionContext; }
@@ -87,7 +87,7 @@ namespace Model
      * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
@@ -180,8 +180,8 @@ namespace Model
     /**
      * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
      * parameter. </p> <p>To learn more about how to use this parameter, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+     * your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

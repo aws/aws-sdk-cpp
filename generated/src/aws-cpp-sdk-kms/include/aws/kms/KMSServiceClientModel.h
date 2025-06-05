@@ -25,6 +25,7 @@
 #include <aws/kms/model/CreateKeyResult.h>
 #include <aws/kms/model/DecryptResult.h>
 #include <aws/kms/model/DeleteCustomKeyStoreResult.h>
+#include <aws/kms/model/DeleteImportedKeyMaterialResult.h>
 #include <aws/kms/model/DeriveSharedSecretResult.h>
 #include <aws/kms/model/DescribeCustomKeyStoresResult.h>
 #include <aws/kms/model/DescribeKeyResult.h>
@@ -168,7 +169,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DecryptResult, KMSError> DecryptOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomKeyStoreResult, KMSError> DeleteCustomKeyStoreOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteImportedKeyMaterialOutcome;
+      typedef Aws::Utils::Outcome<DeleteImportedKeyMaterialResult, KMSError> DeleteImportedKeyMaterialOutcome;
       typedef Aws::Utils::Outcome<DeriveSharedSecretResult, KMSError> DeriveSharedSecretOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomKeyStoresResult, KMSError> DescribeCustomKeyStoresOutcome;
       typedef Aws::Utils::Outcome<DescribeKeyResult, KMSError> DescribeKeyOutcome;

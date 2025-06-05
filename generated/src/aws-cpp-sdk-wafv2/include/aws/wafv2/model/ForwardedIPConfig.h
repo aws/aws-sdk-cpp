@@ -30,10 +30,11 @@ namespace Model
    * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
    * any header name. </p>  <p>If the specified header isn't present in the
    * request, WAF doesn't apply the rule to the web request at all.</p> 
-   * <p>This configuration is used for <a>GeoMatchStatement</a> and
-   * <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use
-   * <a>IPSetForwardedIPConfig</a> instead. </p> <p>WAF only evaluates the first IP
-   * address found in the specified HTTP header. </p><p><h3>See Also:</h3>   <a
+   * <p>This configuration is used for <a>GeoMatchStatement</a>,
+   * <a>AsnMatchStatement</a>, and <a>RateBasedStatement</a>. For
+   * <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p>
+   * <p>WAF only evaluates the first IP address found in the specified HTTP header.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ForwardedIPConfig">AWS
    * API Reference</a></p>
    */

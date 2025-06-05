@@ -51,6 +51,16 @@ ReEncryptResult& ReEncryptResult::operator =(const Aws::AmazonWebServiceResult<J
     m_destinationEncryptionAlgorithm = EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(jsonValue.GetString("DestinationEncryptionAlgorithm"));
     m_destinationEncryptionAlgorithmHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SourceKeyMaterialId"))
+  {
+    m_sourceKeyMaterialId = jsonValue.GetString("SourceKeyMaterialId");
+    m_sourceKeyMaterialIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DestinationKeyMaterialId"))
+  {
+    m_destinationKeyMaterialId = jsonValue.GetString("DestinationKeyMaterialId");
+    m_destinationKeyMaterialIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

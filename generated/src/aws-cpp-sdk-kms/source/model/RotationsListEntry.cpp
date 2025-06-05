@@ -30,6 +30,36 @@ RotationsListEntry& RotationsListEntry::operator =(JsonView jsonValue)
     m_keyId = jsonValue.GetString("KeyId");
     m_keyIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KeyMaterialId"))
+  {
+    m_keyMaterialId = jsonValue.GetString("KeyMaterialId");
+    m_keyMaterialIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KeyMaterialDescription"))
+  {
+    m_keyMaterialDescription = jsonValue.GetString("KeyMaterialDescription");
+    m_keyMaterialDescriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ImportState"))
+  {
+    m_importState = ImportStateMapper::GetImportStateForName(jsonValue.GetString("ImportState"));
+    m_importStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KeyMaterialState"))
+  {
+    m_keyMaterialState = KeyMaterialStateMapper::GetKeyMaterialStateForName(jsonValue.GetString("KeyMaterialState"));
+    m_keyMaterialStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExpirationModel"))
+  {
+    m_expirationModel = ExpirationModelTypeMapper::GetExpirationModelTypeForName(jsonValue.GetString("ExpirationModel"));
+    m_expirationModelHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ValidTo"))
+  {
+    m_validTo = jsonValue.GetDouble("ValidTo");
+    m_validToHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RotationDate"))
   {
     m_rotationDate = jsonValue.GetDouble("RotationDate");
@@ -51,6 +81,38 @@ JsonValue RotationsListEntry::Jsonize() const
   {
    payload.WithString("KeyId", m_keyId);
 
+  }
+
+  if(m_keyMaterialIdHasBeenSet)
+  {
+   payload.WithString("KeyMaterialId", m_keyMaterialId);
+
+  }
+
+  if(m_keyMaterialDescriptionHasBeenSet)
+  {
+   payload.WithString("KeyMaterialDescription", m_keyMaterialDescription);
+
+  }
+
+  if(m_importStateHasBeenSet)
+  {
+   payload.WithString("ImportState", ImportStateMapper::GetNameForImportState(m_importState));
+  }
+
+  if(m_keyMaterialStateHasBeenSet)
+  {
+   payload.WithString("KeyMaterialState", KeyMaterialStateMapper::GetNameForKeyMaterialState(m_keyMaterialState));
+  }
+
+  if(m_expirationModelHasBeenSet)
+  {
+   payload.WithString("ExpirationModel", ExpirationModelTypeMapper::GetNameForExpirationModelType(m_expirationModel));
+  }
+
+  if(m_validToHasBeenSet)
+  {
+   payload.WithDouble("ValidTo", m_validTo.SecondsWithMSPrecision());
   }
 
   if(m_rotationDateHasBeenSet)

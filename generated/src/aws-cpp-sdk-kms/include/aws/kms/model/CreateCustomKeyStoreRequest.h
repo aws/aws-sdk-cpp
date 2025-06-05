@@ -95,7 +95,7 @@ namespace Model
      * parameter is required for custom key stores with a
      * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
      * password of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM
      * cluster. KMS logs into the cluster as this user to manage key material on your
      * behalf.</p> <p>The password must be a string of 7 to 32 characters. Its value is
@@ -217,7 +217,7 @@ namespace Model
      * <code>RawSecretAccessKey</code>, a secret key, and <code>AccessKeyId</code>, a
      * unique identifier for the <code>RawSecretAccessKey</code>. For character
      * requirements, see <a
-     * href="kms/latest/APIReference/API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
+     * href="API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
      * <p>KMS uses this authentication credential to sign requests to the external key
      * store proxy on your behalf. This credential is unrelated to Identity and Access
      * Management (IAM) and Amazon Web Services credentials.</p> <p>This parameter
@@ -243,7 +243,7 @@ namespace Model
      * <code>PUBLIC_ENDPOINT</code>. If the external key store proxy uses a Amazon VPC
      * endpoint service for communication with KMS, specify
      * <code>VPC_ENDPOINT_SERVICE</code>. For help making this choice, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/plan-xks-keystore.html#choose-xks-connectivity">Choosing
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/choose-xks-connectivity.html">Choosing
      * a connectivity option</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> <p>An Amazon VPC endpoint service keeps your communication with
      * KMS in a private address space entirely within Amazon Web Services, but it

@@ -22,6 +22,11 @@ Aws::String ListKeyRotationsRequest::SerializePayload() const
 
   }
 
+  if(m_includeKeyMaterialHasBeenSet)
+  {
+   payload.WithString("IncludeKeyMaterial", IncludeKeyMaterialMapper::GetNameForIncludeKeyMaterial(m_includeKeyMaterial));
+  }
+
   if(m_limitHasBeenSet)
   {
    payload.WithInteger("Limit", m_limit);

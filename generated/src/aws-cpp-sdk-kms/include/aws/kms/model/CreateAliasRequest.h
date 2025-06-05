@@ -63,9 +63,9 @@ namespace Model
      * </p> <p>A valid key ID is required. If you supply a null or empty string value,
      * this operation returns an error.</p> <p>For help finding the key ID and ARN, see
      * <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
-     * the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Specify the key ID or key ARN of the KMS key.</p> <p>For
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find
+     * the key ID and key ARN</a> in the <i> <i>Key Management Service Developer
+     * Guide</i> </i>.</p> <p>Specify the key ID or key ARN of the KMS key.</p> <p>For
      * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>

@@ -64,13 +64,6 @@ namespace Model
      * KMS is supported, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS
      * service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-     *  <p>HMAC KMS keys are not supported in all Amazon Web Services Regions. If
-     * you try to replicate an HMAC KMS key in an Amazon Web Services Region in which
-     * HMAC keys are not supported, the <code>ReplicateKey</code> operation returns an
-     * <code>UnsupportedOperationException</code>. For a list of Regions in which HMAC
-     * KMS keys are supported, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC keys
-     * in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> 
      * <p>The replica must be in a different Amazon Web Services Region than its
      * primary key and other replicas of that primary key, but in the same Amazon Web
      * Services partition. KMS must be available in the replica Region. If the Region
@@ -96,7 +89,7 @@ namespace Model
     /**
      * <p>The key policy to attach to the KMS key. This parameter is optional. If you
      * do not provide a key policy, KMS attaches the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html">default
      * key policy</a> to the KMS key.</p> <p>The key policy is not a shared property of
      * multi-Region keys. You can specify the same key policy or a different key policy
      * for each key in a set of related multi-Region keys. KMS does not synchronize
@@ -198,8 +191,8 @@ namespace Model
      * Web Services resource, Amazon Web Services generates a cost allocation report
      * with usage and costs aggregated by tags. Tags can also be used to control access
      * to a KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
-     * Keys</a>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tags
+     * in KMS</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

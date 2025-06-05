@@ -161,6 +161,11 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_xksKeyConfiguration = jsonValue.GetObject("XksKeyConfiguration");
     m_xksKeyConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CurrentKeyMaterialId"))
+  {
+    m_currentKeyMaterialId = jsonValue.GetString("CurrentKeyMaterialId");
+    m_currentKeyMaterialIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -320,6 +325,12 @@ JsonValue KeyMetadata::Jsonize() const
   if(m_xksKeyConfigurationHasBeenSet)
   {
    payload.WithObject("XksKeyConfiguration", m_xksKeyConfiguration.Jsonize());
+
+  }
+
+  if(m_currentKeyMaterialIdHasBeenSet)
+  {
+   payload.WithString("CurrentKeyMaterialId", m_currentKeyMaterialId);
 
   }
 

@@ -59,6 +59,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The identifier of the key material used to encrypt the data key.</p>
+     */
+    inline const Aws::String& GetKeyMaterialId() const { return m_keyMaterialId; }
+    template<typename KeyMaterialIdT = Aws::String>
+    void SetKeyMaterialId(KeyMaterialIdT&& value) { m_keyMaterialIdHasBeenSet = true; m_keyMaterialId = std::forward<KeyMaterialIdT>(value); }
+    template<typename KeyMaterialIdT = Aws::String>
+    GenerateDataKeyWithoutPlaintextResult& WithKeyMaterialId(KeyMaterialIdT&& value) { SetKeyMaterialId(std::forward<KeyMaterialIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,6 +84,9 @@ namespace Model
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
+
+    Aws::String m_keyMaterialId;
+    bool m_keyMaterialIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

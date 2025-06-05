@@ -62,7 +62,7 @@ namespace Model
      * <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>)
      * in the response to protect your key material during import. For more
      * information, see <a
-     * href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select
      * a wrapping algorithm</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> <p>For RSA_AES wrapping algorithms, you encrypt your key material
      * with an AES key that you generate, then encrypt your AES key with the RSA public

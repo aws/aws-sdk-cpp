@@ -22,6 +22,12 @@ Aws::String DeleteImportedKeyMaterialRequest::SerializePayload() const
 
   }
 
+  if(m_keyMaterialIdHasBeenSet)
+  {
+   payload.WithString("KeyMaterialId", m_keyMaterialId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

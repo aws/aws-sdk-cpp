@@ -81,14 +81,25 @@ namespace Model
      * principal might not be immediately visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document can include only the following characters:</p> <ul> <li> <p>Printable
-     * ASCII characters from the space character (<code>\u0020</code>) through the end
-     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
-     * Basic Latin and Latin-1 Supplement character set (through
-     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
-     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
-     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul>  <p>If
+     * either of the required <code>Resource</code> or <code>Action</code> elements are
+     * missing from a key policy statement, the policy statement has no effect. When a
+     * key policy statement is missing one of these elements, the KMS console correctly
+     * reports an error, but the <code>PutKeyPolicy</code> API request succeeds, even
+     * though the policy statement is ineffective.</p> <p>For more information on
+     * required key policy elements, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html#key-policy-elements">Elements
+     * in a key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     *  <p>A key policy document can include only the following characters:</p>
+     * <ul> <li> <p>Printable ASCII characters from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+     * <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through <code>\u00FF</code>).</p> </li> <li> <p>The tab
+     * (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return
+     * (<code>\u000D</code>) special characters</p> </li> </ul>  <p>If the key
+     * policy exceeds the length constraint, KMS returns a
+     * <code>LimitExceededException</code>.</p>  <p>For information about key
+     * policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
      * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a

@@ -80,6 +80,11 @@ RateBasedStatementCustomKey& RateBasedStatementCustomKey::operator =(JsonView js
     m_jA4Fingerprint = jsonValue.GetObject("JA4Fingerprint");
     m_jA4FingerprintHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ASN"))
+  {
+    m_aSN = jsonValue.GetObject("ASN");
+    m_aSNHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +155,12 @@ JsonValue RateBasedStatementCustomKey::Jsonize() const
   if(m_jA4FingerprintHasBeenSet)
   {
    payload.WithObject("JA4Fingerprint", m_jA4Fingerprint.Jsonize());
+
+  }
+
+  if(m_aSNHasBeenSet)
+  {
+   payload.WithObject("ASN", m_aSN.Jsonize());
 
   }
 

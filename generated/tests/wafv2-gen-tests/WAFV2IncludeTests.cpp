@@ -25,6 +25,7 @@
 #include <aws/wafv2/model/AllQueryArguments.h>
 #include <aws/wafv2/model/AllowAction.h>
 #include <aws/wafv2/model/AndStatement.h>
+#include <aws/wafv2/model/AsnMatchStatement.h>
 #include <aws/wafv2/model/AssociateWebACLRequest.h>
 #include <aws/wafv2/model/AssociateWebACLResult.h>
 #include <aws/wafv2/model/AssociatedResourceType.h>
@@ -213,6 +214,7 @@
 #include <aws/wafv2/model/RateBasedStatementAggregateKeyType.h>
 #include <aws/wafv2/model/RateBasedStatementCustomKey.h>
 #include <aws/wafv2/model/RateBasedStatementManagedKeysIPSet.h>
+#include <aws/wafv2/model/RateLimitAsn.h>
 #include <aws/wafv2/model/RateLimitCookie.h>
 #include <aws/wafv2/model/RateLimitForwardedIP.h>
 #include <aws/wafv2/model/RateLimitHTTPMethod.h>
