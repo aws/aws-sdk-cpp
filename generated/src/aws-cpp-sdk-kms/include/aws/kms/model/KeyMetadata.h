@@ -131,7 +131,7 @@ namespace Model
     ///@{
     /**
      * <p>The <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key.</p>
      */
     inline KeyUsageType GetKeyUsage() const { return m_keyUsage; }
@@ -173,11 +173,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. This
-     * value is present only for KMS keys whose <code>Origin</code> is
-     * <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
-     * <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+     * <p>The earliest time at which any imported key material permanently associated
+     * with this KMS key expires. When a key material expires, KMS deletes the key
+     * material and the KMS key becomes unusable. This value is present only for KMS
+     * keys whose <code>Origin</code> is <code>EXTERNAL</code> and the
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise
+     * this value is omitted.</p>
      */
     inline const Aws::Utils::DateTime& GetValidTo() const { return m_validTo; }
     inline bool ValidToHasBeenSet() const { return m_validToHasBeenSet; }
@@ -204,7 +205,7 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
      * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
      * KMS key. When you create a KMS key in an CloudHSM <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
      * CloudHSM cluster. This field is present only when the KMS key is created in an
      * CloudHSM key store.</p>
@@ -401,6 +402,23 @@ namespace Model
     template<typename XksKeyConfigurationT = XksKeyConfigurationType>
     KeyMetadata& WithXksKeyConfiguration(XksKeyConfigurationT&& value) { SetXksKeyConfiguration(std::forward<XksKeyConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the current key material. This value is present for symmetric
+     * encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric
+     * encryption keys with <code>EXTERNAL</code> origin. These KMS keys support
+     * automatic or on-demand key rotation and can have multiple key materials
+     * associated with them. KMS uses the current key material for both encryption and
+     * decryption, and the non-current key material for decryption operations only.</p>
+     */
+    inline const Aws::String& GetCurrentKeyMaterialId() const { return m_currentKeyMaterialId; }
+    inline bool CurrentKeyMaterialIdHasBeenSet() const { return m_currentKeyMaterialIdHasBeenSet; }
+    template<typename CurrentKeyMaterialIdT = Aws::String>
+    void SetCurrentKeyMaterialId(CurrentKeyMaterialIdT&& value) { m_currentKeyMaterialIdHasBeenSet = true; m_currentKeyMaterialId = std::forward<CurrentKeyMaterialIdT>(value); }
+    template<typename CurrentKeyMaterialIdT = Aws::String>
+    KeyMetadata& WithCurrentKeyMaterialId(CurrentKeyMaterialIdT&& value) { SetCurrentKeyMaterialId(std::forward<CurrentKeyMaterialIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_aWSAccountId;
@@ -474,6 +492,9 @@ namespace Model
 
     XksKeyConfigurationType m_xksKeyConfiguration;
     bool m_xksKeyConfigurationHasBeenSet = false;
+
+    Aws::String m_currentKeyMaterialId;
+    bool m_currentKeyMaterialIdHasBeenSet = false;
   };
 
 } // namespace Model

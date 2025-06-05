@@ -36,6 +36,11 @@ GenerateDataKeyWithoutPlaintextResult& GenerateDataKeyWithoutPlaintextResult::op
     m_keyId = jsonValue.GetString("KeyId");
     m_keyIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KeyMaterialId"))
+  {
+    m_keyMaterialId = jsonValue.GetString("KeyMaterialId");
+    m_keyMaterialIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

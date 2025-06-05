@@ -16,6 +16,7 @@
 #include <aws/wafv2/model/RateLimitUriPath.h>
 #include <aws/wafv2/model/RateLimitJA3Fingerprint.h>
 #include <aws/wafv2/model/RateLimitJA4Fingerprint.h>
+#include <aws/wafv2/model/RateLimitAsn.h>
 #include <utility>
 
 namespace Aws
@@ -220,6 +221,20 @@ namespace Model
     template<typename JA4FingerprintT = RateLimitJA4Fingerprint>
     RateBasedStatementCustomKey& WithJA4Fingerprint(JA4FingerprintT&& value) { SetJA4Fingerprint(std::forward<JA4FingerprintT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use an Autonomous System Number (ASN) derived from the request's originating
+     * or forwarded IP address as an aggregate key. Each distinct ASN contributes to
+     * the aggregation instance. </p>
+     */
+    inline const RateLimitAsn& GetASN() const { return m_aSN; }
+    inline bool ASNHasBeenSet() const { return m_aSNHasBeenSet; }
+    template<typename ASNT = RateLimitAsn>
+    void SetASN(ASNT&& value) { m_aSNHasBeenSet = true; m_aSN = std::forward<ASNT>(value); }
+    template<typename ASNT = RateLimitAsn>
+    RateBasedStatementCustomKey& WithASN(ASNT&& value) { SetASN(std::forward<ASNT>(value)); return *this;}
+    ///@}
   private:
 
     RateLimitHeader m_header;
@@ -254,6 +269,9 @@ namespace Model
 
     RateLimitJA4Fingerprint m_jA4Fingerprint;
     bool m_jA4FingerprintHasBeenSet = false;
+
+    RateLimitAsn m_aSN;
+    bool m_aSNHasBeenSet = false;
   };
 
 } // namespace Model

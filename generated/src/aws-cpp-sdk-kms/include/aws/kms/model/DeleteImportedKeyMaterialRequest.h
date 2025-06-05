@@ -52,10 +52,28 @@ namespace Model
     template<typename KeyIdT = Aws::String>
     DeleteImportedKeyMaterialRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the imported key material you are deleting. </p>  <p>If
+     * no KeyMaterialId is specified, KMS deletes the current key material.</p>
+     *  <p>To get the list of key material IDs associated with a KMS key,
+     * use <a>ListKeyRotations</a>.</p>
+     */
+    inline const Aws::String& GetKeyMaterialId() const { return m_keyMaterialId; }
+    inline bool KeyMaterialIdHasBeenSet() const { return m_keyMaterialIdHasBeenSet; }
+    template<typename KeyMaterialIdT = Aws::String>
+    void SetKeyMaterialId(KeyMaterialIdT&& value) { m_keyMaterialIdHasBeenSet = true; m_keyMaterialId = std::forward<KeyMaterialIdT>(value); }
+    template<typename KeyMaterialIdT = Aws::String>
+    DeleteImportedKeyMaterialRequest& WithKeyMaterialId(KeyMaterialIdT&& value) { SetKeyMaterialId(std::forward<KeyMaterialIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
+
+    Aws::String m_keyMaterialId;
+    bool m_keyMaterialIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -46,6 +46,11 @@ GenerateDataKeyPairWithoutPlaintextResult& GenerateDataKeyPairWithoutPlaintextRe
     m_keyPairSpec = DataKeyPairSpecMapper::GetDataKeyPairSpecForName(jsonValue.GetString("KeyPairSpec"));
     m_keyPairSpecHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KeyMaterialId"))
+  {
+    m_keyMaterialId = jsonValue.GetString("KeyMaterialId");
+    m_keyMaterialIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

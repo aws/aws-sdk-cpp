@@ -105,6 +105,11 @@ Statement& Statement::operator =(JsonView jsonValue)
     m_regexMatchStatement = jsonValue.GetObject("RegexMatchStatement");
     m_regexMatchStatementHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AsnMatchStatement"))
+  {
+    m_asnMatchStatement = jsonValue.GetObject("AsnMatchStatement");
+    m_asnMatchStatementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -199,6 +204,12 @@ JsonValue Statement::Jsonize() const
   if(m_regexMatchStatementHasBeenSet)
   {
    payload.WithObject("RegexMatchStatement", m_regexMatchStatement.Jsonize());
+
+  }
+
+  if(m_asnMatchStatementHasBeenSet)
+  {
+   payload.WithObject("AsnMatchStatement", m_asnMatchStatement.Jsonize());
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kms/model/ExpirationModelType.h>
+#include <aws/kms/model/ImportType.h>
 #include <utility>
 
 namespace Aws
@@ -46,7 +47,7 @@ namespace Model
      * <code>KeyState</code> must be <code>PendingImport</code>. </p> <p>The KMS key
      * can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS
      * key, or asymmetric signing KMS key, including a <a
-     * href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
      * key</a> of any supported type. You cannot perform this operation on a KMS key in
      * a custom key store, or on a KMS key in a different Amazon Web Services
      * account.</p> <p>Specify the key ID or key ARN of the KMS key.</p> <p>For
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>Specifies whether the key material expires. The default is
      * <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a
-     * href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting
      * an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>When the value of <code>ExpirationModel</code> is
      * <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the
@@ -134,6 +135,57 @@ namespace Model
     inline bool ExpirationModelHasBeenSet() const { return m_expirationModelHasBeenSet; }
     inline void SetExpirationModel(ExpirationModelType value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
     inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType value) { SetExpirationModel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the key material being imported is previously associated
+     * with this KMS key or not. This parameter is optional and only usable with
+     * symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If
+     * no key material has ever been imported into the KMS key, and this parameter is
+     * omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+     */
+    inline ImportType GetImportType() const { return m_importType; }
+    inline bool ImportTypeHasBeenSet() const { return m_importTypeHasBeenSet; }
+    inline void SetImportType(ImportType value) { m_importTypeHasBeenSet = true; m_importType = value; }
+    inline ImportKeyMaterialRequest& WithImportType(ImportType value) { SetImportType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Description for the key material being imported. This parameter is optional
+     * and only usable with symmetric encryption keys. If you do not specify a key
+     * material description, KMS retains the value you specified when you last imported
+     * the same key material into this KMS key.</p>
+     */
+    inline const Aws::String& GetKeyMaterialDescription() const { return m_keyMaterialDescription; }
+    inline bool KeyMaterialDescriptionHasBeenSet() const { return m_keyMaterialDescriptionHasBeenSet; }
+    template<typename KeyMaterialDescriptionT = Aws::String>
+    void SetKeyMaterialDescription(KeyMaterialDescriptionT&& value) { m_keyMaterialDescriptionHasBeenSet = true; m_keyMaterialDescription = std::forward<KeyMaterialDescriptionT>(value); }
+    template<typename KeyMaterialDescriptionT = Aws::String>
+    ImportKeyMaterialRequest& WithKeyMaterialDescription(KeyMaterialDescriptionT&& value) { SetKeyMaterialDescription(std::forward<KeyMaterialDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the key material being imported. This parameter is optional and
+     * only usable with symmetric encryption keys. You cannot specify a key material ID
+     * with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you
+     * import key material into a symmetric encryption key, KMS assigns a unique
+     * identifier to the key material based on the KMS key ID and the imported key
+     * material. When you re-import key material with a specified key material ID,
+     * KMS:</p> <ul> <li> <p>Computes the identifier for the key material</p> </li>
+     * <li> <p>Matches the computed identifier against the specified key material
+     * ID</p> </li> <li> <p>Verifies that the key material ID is already associated
+     * with the KMS key</p> </li> </ul> <p>To get the list of key material IDs
+     * associated with a KMS key, use <a>ListKeyRotations</a>.</p>
+     */
+    inline const Aws::String& GetKeyMaterialId() const { return m_keyMaterialId; }
+    inline bool KeyMaterialIdHasBeenSet() const { return m_keyMaterialIdHasBeenSet; }
+    template<typename KeyMaterialIdT = Aws::String>
+    void SetKeyMaterialId(KeyMaterialIdT&& value) { m_keyMaterialIdHasBeenSet = true; m_keyMaterialId = std::forward<KeyMaterialIdT>(value); }
+    template<typename KeyMaterialIdT = Aws::String>
+    ImportKeyMaterialRequest& WithKeyMaterialId(KeyMaterialIdT&& value) { SetKeyMaterialId(std::forward<KeyMaterialIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,6 +203,15 @@ namespace Model
 
     ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
     bool m_expirationModelHasBeenSet = false;
+
+    ImportType m_importType{ImportType::NOT_SET};
+    bool m_importTypeHasBeenSet = false;
+
+    Aws::String m_keyMaterialDescription;
+    bool m_keyMaterialDescriptionHasBeenSet = false;
+
+    Aws::String m_keyMaterialId;
+    bool m_keyMaterialIdHasBeenSet = false;
   };
 
 } // namespace Model

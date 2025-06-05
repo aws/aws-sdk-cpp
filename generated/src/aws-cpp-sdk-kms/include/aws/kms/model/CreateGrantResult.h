@@ -39,7 +39,7 @@ namespace Model
      * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetGrantToken() const { return m_grantToken; }

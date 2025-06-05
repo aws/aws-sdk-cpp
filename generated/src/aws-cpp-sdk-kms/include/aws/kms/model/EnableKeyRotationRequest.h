@@ -44,9 +44,9 @@ namespace Model
      * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
      * key store</a>. To enable or disable automatic rotation of a set of related <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
      * keys</a>, set the property on the primary key.</p> <p>Specify the key ID or key
      * ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:

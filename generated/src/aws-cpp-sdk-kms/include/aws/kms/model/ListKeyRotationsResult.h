@@ -36,7 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of completed key material rotations.</p>
+     * <p>A list of completed key material rotations. When the optional input parameter
+     * <code>IncludeKeyMaterial</code> is specified with a value of
+     * <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any
+     * imported key material pending rotation.</p>
      */
     inline const Aws::Vector<RotationsListEntry>& GetRotations() const { return m_rotations; }
     template<typename RotationsT = Aws::Vector<RotationsListEntry>>

@@ -43,6 +43,23 @@ Aws::String ImportKeyMaterialRequest::SerializePayload() const
    payload.WithString("ExpirationModel", ExpirationModelTypeMapper::GetNameForExpirationModelType(m_expirationModel));
   }
 
+  if(m_importTypeHasBeenSet)
+  {
+   payload.WithString("ImportType", ImportTypeMapper::GetNameForImportType(m_importType));
+  }
+
+  if(m_keyMaterialDescriptionHasBeenSet)
+  {
+   payload.WithString("KeyMaterialDescription", m_keyMaterialDescription);
+
+  }
+
+  if(m_keyMaterialIdHasBeenSet)
+  {
+   payload.WithString("KeyMaterialId", m_keyMaterialId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

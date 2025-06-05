@@ -7,6 +7,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/model/IncludeKeyMaterial.h>
 #include <utility>
 
 namespace Aws
@@ -53,6 +54,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Use this optional parameter to control which key materials associated with
+     * this key are listed in the response. The default value of this parameter is
+     * <code>ROTATIONS_ONLY</code>. If you omit this parameter, KMS returns information
+     * on the key materials created by automatic or on-demand key rotation. When you
+     * specify a value of <code>ALL_KEY_MATERIAL</code>, KMS adds the first key
+     * material and any imported key material pending rotation to the response. This
+     * parameter can only be used with KMS keys that support automatic or on-demand key
+     * rotation. </p>
+     */
+    inline IncludeKeyMaterial GetIncludeKeyMaterial() const { return m_includeKeyMaterial; }
+    inline bool IncludeKeyMaterialHasBeenSet() const { return m_includeKeyMaterialHasBeenSet; }
+    inline void SetIncludeKeyMaterial(IncludeKeyMaterial value) { m_includeKeyMaterialHasBeenSet = true; m_includeKeyMaterial = value; }
+    inline ListKeyRotationsRequest& WithIncludeKeyMaterial(IncludeKeyMaterial value) { SetIncludeKeyMaterial(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Use this parameter to specify the maximum number of items to return. When
      * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
@@ -82,6 +100,9 @@ namespace Model
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
+
+    IncludeKeyMaterial m_includeKeyMaterial{IncludeKeyMaterial::NOT_SET};
+    bool m_includeKeyMaterialHasBeenSet = false;
 
     int m_limit{0};
     bool m_limitHasBeenSet = false;

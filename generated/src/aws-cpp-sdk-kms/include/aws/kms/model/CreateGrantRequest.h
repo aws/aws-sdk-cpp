@@ -87,7 +87,7 @@ namespace Model
      * <p>The grant determines the retiring principal. Other principals might have
      * permission to retire the grant or revoke the grant. For details, see
      * <a>RevokeGrant</a> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring
      * and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -164,7 +164,7 @@ namespace Model
      * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
@@ -206,8 +206,8 @@ namespace Model
     /**
      * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
      * parameter. </p> <p>To learn more about how to use this parameter, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+     * your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

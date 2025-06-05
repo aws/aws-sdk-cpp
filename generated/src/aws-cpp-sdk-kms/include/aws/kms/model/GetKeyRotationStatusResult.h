@@ -77,12 +77,11 @@ namespace Model
     ///@{
     /**
      * <p>Identifies the date and time that an in progress on-demand rotation was
-     * initiated.</p> <p>The KMS API follows an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
-     * consistency</a> model due to the distributed nature of the system. As a result,
-     * there might be a slight delay between initiating on-demand key rotation and the
-     * rotation's completion. Once the on-demand rotation is complete, use
-     * <a>ListKeyRotations</a> to view the details of the on-demand rotation.</p>
+     * initiated.</p> <p>KMS uses a background process to perform rotations. As a
+     * result, there might be a slight delay between initiating on-demand key rotation
+     * and the rotation's completion. Once the on-demand rotation is complete, KMS
+     * removes this field from the response. You can use <a>ListKeyRotations</a> to
+     * view the details of the completed on-demand rotation.</p>
      */
     inline const Aws::Utils::DateTime& GetOnDemandRotationStartDate() const { return m_onDemandRotationStartDate; }
     template<typename OnDemandRotationStartDateT = Aws::Utils::DateTime>

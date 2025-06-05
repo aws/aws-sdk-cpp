@@ -24,7 +24,17 @@ ImportKeyMaterialResult::ImportKeyMaterialResult(const Aws::AmazonWebServiceResu
 
 ImportKeyMaterialResult& ImportKeyMaterialResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("KeyId"))
+  {
+    m_keyId = jsonValue.GetString("KeyId");
+    m_keyIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KeyMaterialId"))
+  {
+    m_keyMaterialId = jsonValue.GetString("KeyMaterialId");
+    m_keyMaterialIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

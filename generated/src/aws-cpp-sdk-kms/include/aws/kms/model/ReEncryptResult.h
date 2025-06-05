@@ -90,6 +90,31 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The identifier of the key material used to originally encrypt the data. This
+     * field is present only when the original encryption used a symmetric encryption
+     * KMS key.</p>
+     */
+    inline const Aws::String& GetSourceKeyMaterialId() const { return m_sourceKeyMaterialId; }
+    template<typename SourceKeyMaterialIdT = Aws::String>
+    void SetSourceKeyMaterialId(SourceKeyMaterialIdT&& value) { m_sourceKeyMaterialIdHasBeenSet = true; m_sourceKeyMaterialId = std::forward<SourceKeyMaterialIdT>(value); }
+    template<typename SourceKeyMaterialIdT = Aws::String>
+    ReEncryptResult& WithSourceKeyMaterialId(SourceKeyMaterialIdT&& value) { SetSourceKeyMaterialId(std::forward<SourceKeyMaterialIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the key material used to reencrypt the data. This field is
+     * present only when data is reencrypted using a symmetric encryption KMS key.</p>
+     */
+    inline const Aws::String& GetDestinationKeyMaterialId() const { return m_destinationKeyMaterialId; }
+    template<typename DestinationKeyMaterialIdT = Aws::String>
+    void SetDestinationKeyMaterialId(DestinationKeyMaterialIdT&& value) { m_destinationKeyMaterialIdHasBeenSet = true; m_destinationKeyMaterialId = std::forward<DestinationKeyMaterialIdT>(value); }
+    template<typename DestinationKeyMaterialIdT = Aws::String>
+    ReEncryptResult& WithDestinationKeyMaterialId(DestinationKeyMaterialIdT&& value) { SetDestinationKeyMaterialId(std::forward<DestinationKeyMaterialIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -113,6 +138,12 @@ namespace Model
 
     EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
     bool m_destinationEncryptionAlgorithmHasBeenSet = false;
+
+    Aws::String m_sourceKeyMaterialId;
+    bool m_sourceKeyMaterialIdHasBeenSet = false;
+
+    Aws::String m_destinationKeyMaterialId;
+    bool m_destinationKeyMaterialIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

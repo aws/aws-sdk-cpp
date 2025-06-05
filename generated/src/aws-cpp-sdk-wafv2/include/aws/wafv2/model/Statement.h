@@ -15,6 +15,7 @@
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
 #include <aws/wafv2/model/LabelMatchStatement.h>
 #include <aws/wafv2/model/RegexMatchStatement.h>
+#include <aws/wafv2/model/AsnMatchStatement.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
 
@@ -414,6 +415,24 @@ namespace Model
     template<typename RegexMatchStatementT = RegexMatchStatement>
     Statement& WithRegexMatchStatement(RegexMatchStatementT&& value) { SetRegexMatchStatement(std::forward<RegexMatchStatementT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A rule statement that inspects web traffic based on the Autonomous System
+     * Number (ASN) associated with the request's IP address.</p> <p>For additional
+     * details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
+     */
+    inline const AsnMatchStatement& GetAsnMatchStatement() const { return m_asnMatchStatement; }
+    inline bool AsnMatchStatementHasBeenSet() const { return m_asnMatchStatementHasBeenSet; }
+    template<typename AsnMatchStatementT = AsnMatchStatement>
+    void SetAsnMatchStatement(AsnMatchStatementT&& value) { m_asnMatchStatementHasBeenSet = true; m_asnMatchStatement = std::forward<AsnMatchStatementT>(value); }
+    template<typename AsnMatchStatementT = AsnMatchStatement>
+    Statement& WithAsnMatchStatement(AsnMatchStatementT&& value) { SetAsnMatchStatement(std::forward<AsnMatchStatementT>(value)); return *this;}
+    ///@}
   private:
 
     ByteMatchStatement m_byteMatchStatement;
@@ -460,6 +479,9 @@ namespace Model
 
     RegexMatchStatement m_regexMatchStatement;
     bool m_regexMatchStatementHasBeenSet = false;
+
+    AsnMatchStatement m_asnMatchStatement;
+    bool m_asnMatchStatementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,6 +39,7 @@
 #include <aws/kms/model/DeleteCustomKeyStoreRequest.h>
 #include <aws/kms/model/DeleteCustomKeyStoreResult.h>
 #include <aws/kms/model/DeleteImportedKeyMaterialRequest.h>
+#include <aws/kms/model/DeleteImportedKeyMaterialResult.h>
 #include <aws/kms/model/DeriveSharedSecretRequest.h>
 #include <aws/kms/model/DeriveSharedSecretResult.h>
 #include <aws/kms/model/DescribeCustomKeyStoresRequest.h>
@@ -80,10 +81,14 @@
 #include <aws/kms/model/GrantOperation.h>
 #include <aws/kms/model/ImportKeyMaterialRequest.h>
 #include <aws/kms/model/ImportKeyMaterialResult.h>
+#include <aws/kms/model/ImportState.h>
+#include <aws/kms/model/ImportType.h>
+#include <aws/kms/model/IncludeKeyMaterial.h>
 #include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
 #include <aws/kms/model/KeyEncryptionMechanism.h>
 #include <aws/kms/model/KeyListEntry.h>
 #include <aws/kms/model/KeyManagerType.h>
+#include <aws/kms/model/KeyMaterialState.h>
 #include <aws/kms/model/KeyMetadata.h>
 #include <aws/kms/model/KeySpec.h>
 #include <aws/kms/model/KeyState.h>

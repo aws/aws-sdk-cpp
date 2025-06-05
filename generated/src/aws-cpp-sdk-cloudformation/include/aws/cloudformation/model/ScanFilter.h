@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
      * type support</a> table in the <i>CloudFormation User Guide</i>.</p> <p>To scan
      * all resource types within a service, you can use a wildcard, represented by an
-     * asterisk (<code>*</code>). You can place a asterisk at only the end of the
+     * asterisk (<code>*</code>). You can place an asterisk at only the end of the
      * string, for example, <code>AWS::S3::*</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
