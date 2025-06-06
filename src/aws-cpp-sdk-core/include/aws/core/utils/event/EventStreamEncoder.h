@@ -8,6 +8,8 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/event/EventMessage.h>
 
 namespace Aws
 {
