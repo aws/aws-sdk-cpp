@@ -92,6 +92,7 @@ const char* CPP = "c++";
 const char* EXEC_ENV = "exec-env";
 const char* APP_ID = "app";
 const char* BUSINESS_METRICS = "m";
+const char* FEATURE_METADATA = "ft";
 }  // namespace
 
 UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
@@ -154,6 +155,10 @@ Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& f
   }
 
   // Does not need to be in order
+  if (!m_featureMetadata.empty()) {
+    SerializeMetadata(FEATURE_METADATA, m_featureMetadata);
+  }
+
   if (!m_archName.empty()) {
     SerializeMetadataWithVersion(METADATA, ARCH, m_archName);
   }
