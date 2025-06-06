@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/LivenessOutputConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/ChallengePreference.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +70,21 @@ namespace Model
     inline void SetAuditImagesLimit(int value) { m_auditImagesLimitHasBeenSet = true; m_auditImagesLimit = value; }
     inline CreateFaceLivenessSessionRequestSettings& WithAuditImagesLimit(int value) { SetAuditImagesLimit(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates preferred challenge types and versions for the Face Liveness
+     * session to be created.</p>
+     */
+    inline const Aws::Vector<ChallengePreference>& GetChallengePreferences() const { return m_challengePreferences; }
+    inline bool ChallengePreferencesHasBeenSet() const { return m_challengePreferencesHasBeenSet; }
+    template<typename ChallengePreferencesT = Aws::Vector<ChallengePreference>>
+    void SetChallengePreferences(ChallengePreferencesT&& value) { m_challengePreferencesHasBeenSet = true; m_challengePreferences = std::forward<ChallengePreferencesT>(value); }
+    template<typename ChallengePreferencesT = Aws::Vector<ChallengePreference>>
+    CreateFaceLivenessSessionRequestSettings& WithChallengePreferences(ChallengePreferencesT&& value) { SetChallengePreferences(std::forward<ChallengePreferencesT>(value)); return *this;}
+    template<typename ChallengePreferencesT = ChallengePreference>
+    CreateFaceLivenessSessionRequestSettings& AddChallengePreferences(ChallengePreferencesT&& value) { m_challengePreferencesHasBeenSet = true; m_challengePreferences.emplace_back(std::forward<ChallengePreferencesT>(value)); return *this; }
+    ///@}
   private:
 
     LivenessOutputConfig m_outputConfig;
@@ -75,6 +92,9 @@ namespace Model
 
     int m_auditImagesLimit{0};
     bool m_auditImagesLimitHasBeenSet = false;
+
+    Aws::Vector<ChallengePreference> m_challengePreferences;
+    bool m_challengePreferencesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,6 +142,12 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
    payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
+  if(m_promptCreationConfigurationsHasBeenSet)
+  {
+   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
+
+  }
+
   if(m_promptOverrideConfigurationHasBeenSet)
   {
    payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());

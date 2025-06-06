@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an input field provided to a node during a flow's async
+   * <p>Represents an input field provided to a node during a flow
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/NodeInputField">AWS
    * API Reference</a></p>

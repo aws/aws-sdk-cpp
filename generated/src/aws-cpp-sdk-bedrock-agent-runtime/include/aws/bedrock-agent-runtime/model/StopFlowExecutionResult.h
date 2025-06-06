@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution
      * that was stopped.</p>
      */
     inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated status of the async execution after the stop request. This will
+     * <p>The updated status of the flow execution after the stop request. This will
      * typically be ABORTED if the execution was successfully stopped.</p>
      */
     inline FlowExecutionStatus GetStatus() const { return m_status; }

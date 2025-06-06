@@ -56,7 +56,8 @@ namespace Model
     mx_central_1,
     us_isof_south_1,
     us_isof_east_1,
-    ap_southeast_7
+    ap_southeast_7,
+    ap_east_2
   };
 
 namespace CloudWatchRegionMapper

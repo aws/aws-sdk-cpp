@@ -54,6 +54,11 @@ GetFaceLivenessSessionResultsResult& GetFaceLivenessSessionResultsResult::operat
     }
     m_auditImagesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Challenge"))
+  {
+    m_challenge = jsonValue.GetObject("Challenge");
+    m_challengeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the async execution.</p>
+     * <p>The unique identifier of the flow execution.</p>
      */
     inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
     inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }

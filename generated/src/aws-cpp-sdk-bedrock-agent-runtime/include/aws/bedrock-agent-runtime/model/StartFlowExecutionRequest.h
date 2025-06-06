@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the flow alias to use for the async execution.</p>
+     * <p>The unique identifier of the flow alias to use for the flow execution.</p>
      */
     inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
     inline bool FlowAliasIdentifierHasBeenSet() const { return m_flowAliasIdentifierHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique name for the async execution. If you don't provide one, a
+     * <p>The unique name for the flow execution. If you don't provide one, a
      * system-generated name is used.</p>
      */
     inline const Aws::String& GetFlowExecutionName() const { return m_flowExecutionName; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The input data required for the async execution. This must match the input
+     * <p>The input data required for the flow execution. This must match the input
      * schema defined in the flow.</p>
      */
     inline const Aws::Vector<FlowInput>& GetInputs() const { return m_inputs; }
@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The performance settings for the foundation model used in the async
+     * <p>The performance settings for the foundation model used in the flow
      * execution.</p>
      */
     inline const ModelPerformanceConfiguration& GetModelPerformanceConfiguration() const { return m_modelPerformanceConfiguration; }

@@ -89,7 +89,7 @@ namespace Model
      * available in the connection pool. This setting only applies when the proxy has
      * opened its maximum number of connections and all connections are busy with
      * client sessions.</p> <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be between 0 and 3600.</p> </li> </ul>
+     * <li> <p>Must be between 0 and 300.</p> </li> </ul>
      */
     inline int GetConnectionBorrowTimeout() const { return m_connectionBorrowTimeout; }
     inline bool ConnectionBorrowTimeoutHasBeenSet() const { return m_connectionBorrowTimeoutHasBeenSet; }
@@ -120,11 +120,11 @@ namespace Model
      * <p>Add an initialization query, or modify the current one. You can specify one
      * or more SQL statements for the proxy to run when opening each new database
      * connection. The setting is typically used with <code>SET</code> statements to
-     * make sure that each connection has identical settings. Make sure that the query
-     * you add is valid. To include multiple variables in a single <code>SET</code>
-     * statement, use comma separators.</p> <p>For example: <code>SET variable1=value1,
-     * variable2=value2</code> </p> <p>For multiple statements, use semicolons as the
-     * separator.</p> <p>Default: no initialization query</p>
+     * make sure that each connection has identical settings. Make sure the query added
+     * here is valid. This is an optional field, so you can choose to leave it empty.
+     * For including multiple variables in a single SET statement, use a comma
+     * separator.</p> <p>For example: <code>SET variable1=value1,
+     * variable2=value2</code> </p> <p>Default: no initialization query</p>
      */
     inline const Aws::String& GetInitQuery() const { return m_initQuery; }
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }

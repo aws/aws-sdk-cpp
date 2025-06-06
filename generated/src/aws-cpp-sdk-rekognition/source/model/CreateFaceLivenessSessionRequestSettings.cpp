@@ -35,6 +35,15 @@ CreateFaceLivenessSessionRequestSettings& CreateFaceLivenessSessionRequestSettin
     m_auditImagesLimit = jsonValue.GetInteger("AuditImagesLimit");
     m_auditImagesLimitHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ChallengePreferences"))
+  {
+    Aws::Utils::Array<JsonView> challengePreferencesJsonList = jsonValue.GetArray("ChallengePreferences");
+    for(unsigned challengePreferencesIndex = 0; challengePreferencesIndex < challengePreferencesJsonList.GetLength(); ++challengePreferencesIndex)
+    {
+      m_challengePreferences.push_back(challengePreferencesJsonList[challengePreferencesIndex].AsObject());
+    }
+    m_challengePreferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +60,17 @@ JsonValue CreateFaceLivenessSessionRequestSettings::Jsonize() const
   if(m_auditImagesLimitHasBeenSet)
   {
    payload.WithInteger("AuditImagesLimit", m_auditImagesLimit);
+
+  }
+
+  if(m_challengePreferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> challengePreferencesJsonList(m_challengePreferences.size());
+   for(unsigned challengePreferencesIndex = 0; challengePreferencesIndex < challengePreferencesJsonList.GetLength(); ++challengePreferencesIndex)
+   {
+     challengePreferencesJsonList[challengePreferencesIndex].AsObject(m_challengePreferences[challengePreferencesIndex].Jsonize());
+   }
+   payload.WithArray("ChallengePreferences", std::move(challengePreferencesJsonList));
 
   }
 

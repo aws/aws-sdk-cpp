@@ -30,11 +30,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents an event that occurred during an async execution. This is a union
+   * <p>Represents an event that occurred during an flow execution. This is a union
    * type that can contain one of several event types, such as node input and output
    * events; flow input and output events; condition node result events, or failure
-   * events.</p>  <p>Asynchronous flows is in preview release for Amazon
-   * Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * events.</p>  <p>Flow executions is in preview release for Amazon Bedrock
+   * and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowExecutionEvent">AWS
    * API Reference</a></p>
    */
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about a condition evaluation result during the async
+     * <p>Contains information about a condition evaluation result during the flow
      * execution. This event is generated when a condition node in the flow evaluates
      * its conditions.</p>
      */

@@ -93,7 +93,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains a list of <code>Subnet</code> elements.</p>
+     * <p>Contains a list of <code>Subnet</code> elements. The list of subnets shown
+     * here might not reflect the current state of your VPC. For the most up-to-date
+     * information, we recommend checking your VPC configuration directly.</p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }

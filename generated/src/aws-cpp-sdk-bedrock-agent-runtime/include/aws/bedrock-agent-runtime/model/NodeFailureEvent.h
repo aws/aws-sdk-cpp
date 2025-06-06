@@ -27,9 +27,8 @@ namespace Model
 
   /**
    * <p>Contains information about a failure that occurred at a specific node during
-   * a flow's async execution.</p>  <p>Asynchronous flows is in preview release
-   * for Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>  
-   * <a
+   * a flow execution.</p>  <p>Flow executions is in preview release for Amazon
+   * Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/NodeFailureEvent">AWS
    * API Reference</a></p>
    */

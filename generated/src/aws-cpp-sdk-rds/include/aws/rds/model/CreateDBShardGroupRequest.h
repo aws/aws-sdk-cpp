@@ -64,12 +64,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to create standby DB shard groups for the DB shard group.
-     * Valid values are the following:</p> <ul> <li> <p>0 - Creates a DB shard group
-     * without a standby DB shard group. This is the default value.</p> </li> <li> <p>1
-     * - Creates a DB shard group with a standby DB shard group in a different
-     * Availability Zone (AZ).</p> </li> <li> <p>2 - Creates a DB shard group with two
-     * standby DB shard groups in two different AZs.</p> </li> </ul>
+     * <p>Specifies whether to create standby standby DB data access shard for the DB
+     * shard group. Valid values are the following:</p> <ul> <li> <p>0 - Creates a DB
+     * shard group without a standby DB data access shard. This is the default
+     * value.</p> </li> <li> <p>1 - Creates a DB shard group with a standby DB data
+     * access shard in a different Availability Zone (AZ).</p> </li> <li> <p>2 -
+     * Creates a DB shard group with two standby DB data access shard in two different
+     * AZs.</p> </li> </ul>
      */
     inline int GetComputeRedundancy() const { return m_computeRedundancy; }
     inline bool ComputeRedundancyHasBeenSet() const { return m_computeRedundancyHasBeenSet; }

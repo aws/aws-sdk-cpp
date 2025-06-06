@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the async execution.</p>
+     * <p>The unique identifier of the flow execution.</p>
      */
     inline const Aws::String& GetExecutionIdentifier() const { return m_executionIdentifier; }
     inline bool ExecutionIdentifierHasBeenSet() const { return m_executionIdentifierHasBeenSet; }
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the flow alias used for the async execution.</p>
+     * <p>The unique identifier of the flow alias used for the flow execution.</p>
      */
     inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
     inline bool FlowAliasIdentifierHasBeenSet() const { return m_flowAliasIdentifierHasBeenSet; }

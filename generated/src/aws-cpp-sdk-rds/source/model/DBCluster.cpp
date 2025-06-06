@@ -444,6 +444,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode globalClusterIdentifierNode = resultNode.FirstChild("GlobalClusterIdentifier");
+    if(!globalClusterIdentifierNode.IsNull())
+    {
+      m_globalClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterIdentifierNode.GetText());
+      m_globalClusterIdentifierHasBeenSet = true;
+    }
     XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
     if(!globalWriteForwardingStatusNode.IsNull())
     {
@@ -949,6 +955,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
+  }
+
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << StringUtils::URLEncode(WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus)) << "&";
@@ -1378,6 +1389,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
+  }
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+      oStream << location << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
   if(m_globalWriteForwardingStatusHasBeenSet)
   {

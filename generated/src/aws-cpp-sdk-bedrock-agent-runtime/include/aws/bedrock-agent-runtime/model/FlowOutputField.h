@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents an output field produced by a flow during an async execution.</p>
-   *  <p>Asynchronous flows is in preview release for Amazon Bedrock and is
+   * <p>Represents an output field produced by a flow during a flow execution.</p>
+   *  <p>Flow executions is in preview release for Amazon Bedrock and is
    * subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowOutputField">AWS
    * API Reference</a></p>
