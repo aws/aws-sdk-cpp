@@ -16,6 +16,7 @@
 #include <aws/bedrock-agent-runtime/model/GuardrailConfigurationWithArn.h>
 #include <aws/bedrock-agent-runtime/model/InlineSessionState.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationType.h>
+#include <aws/bedrock-agent-runtime/model/PromptCreationConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/PromptOverrideConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/AgentActionGroup.h>
@@ -314,6 +315,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies parameters that control how the service populates the agent prompt
+     * for an <code>InvokeInlineAgent</code> request. You can control which aspects of
+     * previous invocations in the same agent session the service uses to populate the
+     * agent prompt. This gives you more granular control over the contextual history
+     * that is used to process the current request.</p>
+     */
+    inline const PromptCreationConfigurations& GetPromptCreationConfigurations() const { return m_promptCreationConfigurations; }
+    inline bool PromptCreationConfigurationsHasBeenSet() const { return m_promptCreationConfigurationsHasBeenSet; }
+    template<typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+    void SetPromptCreationConfigurations(PromptCreationConfigurationsT&& value) { m_promptCreationConfigurationsHasBeenSet = true; m_promptCreationConfigurations = std::forward<PromptCreationConfigurationsT>(value); }
+    template<typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+    InvokeInlineAgentRequest& WithPromptCreationConfigurations(PromptCreationConfigurationsT&& value) { SetPromptCreationConfigurations(std::forward<PromptCreationConfigurationsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Configurations for advanced prompts used to override the default prompts to
      * enhance the accuracy of the inline agent. </p>
      */
@@ -406,6 +423,9 @@ namespace Model
 
     OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
     bool m_orchestrationTypeHasBeenSet = false;
+
+    PromptCreationConfigurations m_promptCreationConfigurations;
+    bool m_promptCreationConfigurationsHasBeenSet = false;
 
     PromptOverrideConfiguration m_promptOverrideConfiguration;
     bool m_promptOverrideConfigurationHasBeenSet = false;

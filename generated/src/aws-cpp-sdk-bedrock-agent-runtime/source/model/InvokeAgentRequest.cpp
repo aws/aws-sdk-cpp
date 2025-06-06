@@ -47,6 +47,12 @@ Aws::String InvokeAgentRequest::SerializePayload() const
 
   }
 
+  if(m_promptCreationConfigurationsHasBeenSet)
+  {
+   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
+
+  }
+
   if(m_sessionStateHasBeenSet)
   {
    payload.WithObject("sessionState", m_sessionState.Jsonize());

@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the inputs provided to the flow at the start of
-   * async execution.</p>  <p>Asynchronous flows is in preview release for
-   * Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * <p>Contains information about the inputs provided to the flow at the start of a
+   * flow execution.</p>  <p>Flow executions is in preview release for Amazon
+   * Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowExecutionInputEvent">AWS
    * API Reference</a></p>
    */

@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The flow definition used for the async execution, including the nodes,
+     * <p>The flow definition used for the flow execution, including the nodes,
      * connections, and configuration at the time when the execution started.</p>
      * <p>The definition returns as a string that follows the structure of a <a
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a>
@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the
-     * async execution.</p>
+     * flow execution.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     template<typename ExecutionRoleArnT = Aws::String>
@@ -73,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the flow alias used for the async execution.</p>
+     * <p>The unique identifier of the flow alias used for the flow execution.</p>
      */
     inline const Aws::String& GetFlowAliasIdentifier() const { return m_flowAliasIdentifier; }
     template<typename FlowAliasIdentifierT = Aws::String>
@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the flow used for the async execution.</p>
+     * <p>The version of the flow used for the flow execution.</p>
      */
     inline const Aws::String& GetFlowVersion() const { return m_flowVersion; }
     template<typename FlowVersionT = Aws::String>

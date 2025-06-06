@@ -134,7 +134,11 @@ namespace S3Tables
          * permission. </p> </li> <li> <p>If you use this operation with the optional
          * <code>encryptionConfiguration</code> request parameter you must have the
          * <code>s3tables:PutTableEncryption</code> permission. </p> </li> </ul> 
-         * <p>Additionally, </p>  </dd> </dl><p><h3>See Also:</h3>   <a
+         * <p>Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables
+         * maintenance principal access to your KMS key. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+         * requirements for S3 Tables SSE-KMS encryption</a>. </p>  </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTable">AWS
          * API Reference</a></p>
          */
@@ -408,13 +412,13 @@ namespace S3Tables
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTable">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetTableOutcome GetTable(const Model::GetTableRequest& request) const;
+        virtual Model::GetTableOutcome GetTable(const Model::GetTableRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetTable that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetTableRequestT = Model::GetTableRequest>
-        Model::GetTableOutcomeCallable GetTableCallable(const GetTableRequestT& request) const
+        Model::GetTableOutcomeCallable GetTableCallable(const GetTableRequestT& request = {}) const
         {
             return SubmitCallable(&S3TablesClient::GetTable, request);
         }
@@ -423,7 +427,7 @@ namespace S3Tables
          * An Async wrapper for GetTable that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetTableRequestT = Model::GetTableRequest>
-        void GetTableAsync(const GetTableRequestT& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetTableAsync(const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTableRequestT& request = {}) const
         {
             return SubmitAsync(&S3TablesClient::GetTable, request, handler, context);
         }
@@ -788,9 +792,11 @@ namespace S3Tables
          * <code>s3tables:PutTableBucketEncryption</code> permission to use this
          * operation.</p>  <p>If you choose SSE-KMS encryption you must grant the S3
          * Tables maintenance principal access to your KMS key. For more information, see
-         * <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
-         * requirements for S3 Tables SSE-KMS encryption</a> </p>  </dd>
-         * </dl><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+         * requirements for S3 Tables SSE-KMS encryption</a> in the <i>Amazon Simple
+         * Storage Service User Guide</i>.</p>  </dd> </dl><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">AWS
          * API Reference</a></p>
          */

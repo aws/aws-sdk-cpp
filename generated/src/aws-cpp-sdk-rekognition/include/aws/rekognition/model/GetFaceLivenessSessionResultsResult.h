@@ -9,6 +9,7 @@
 #include <aws/rekognition/model/LivenessSessionStatus.h>
 #include <aws/rekognition/model/AuditImage.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Challenge.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Contains information regarding the challenge type used for the Face Liveness
+     * check.</p>
+     */
+    inline const Challenge& GetChallenge() const { return m_challenge; }
+    template<typename ChallengeT = Challenge>
+    void SetChallenge(ChallengeT&& value) { m_challengeHasBeenSet = true; m_challenge = std::forward<ChallengeT>(value); }
+    template<typename ChallengeT = Challenge>
+    GetFaceLivenessSessionResultsResult& WithChallenge(ChallengeT&& value) { SetChallenge(std::forward<ChallengeT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -124,6 +137,9 @@ namespace Model
 
     Aws::Vector<AuditImage> m_auditImages;
     bool m_auditImagesHasBeenSet = false;
+
+    Challenge m_challenge;
+    bool m_challengeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

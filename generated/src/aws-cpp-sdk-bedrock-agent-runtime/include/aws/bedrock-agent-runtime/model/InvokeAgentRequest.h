@@ -10,6 +10,7 @@
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/BedrockModelConfigurations.h>
+#include <aws/bedrock-agent-runtime/model/PromptCreationConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/SessionState.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <utility>
@@ -147,6 +148,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies parameters that control how the service populates the agent prompt
+     * for an <code>InvokeAgent</code> request. You can control which aspects of
+     * previous invocations in the same agent session the service uses to populate the
+     * agent prompt. This gives you more granular control over the contextual history
+     * that is used to process the current request.</p>
+     */
+    inline const PromptCreationConfigurations& GetPromptCreationConfigurations() const { return m_promptCreationConfigurations; }
+    inline bool PromptCreationConfigurationsHasBeenSet() const { return m_promptCreationConfigurationsHasBeenSet; }
+    template<typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+    void SetPromptCreationConfigurations(PromptCreationConfigurationsT&& value) { m_promptCreationConfigurationsHasBeenSet = true; m_promptCreationConfigurations = std::forward<PromptCreationConfigurationsT>(value); }
+    template<typename PromptCreationConfigurationsT = PromptCreationConfigurations>
+    InvokeAgentRequest& WithPromptCreationConfigurations(PromptCreationConfigurationsT&& value) { SetPromptCreationConfigurations(std::forward<PromptCreationConfigurationsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the session. Use the same value across requests to
      * continue the same conversation.</p>
      */
@@ -222,6 +239,9 @@ namespace Model
 
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
+
+    PromptCreationConfigurations m_promptCreationConfigurations;
+    bool m_promptCreationConfigurationsHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

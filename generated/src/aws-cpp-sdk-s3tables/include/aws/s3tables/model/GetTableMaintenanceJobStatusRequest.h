@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the namespace the table is associated with. <pre><code>&lt;/p&gt;
-     * </code></pre>
+     * <p>The name of the namespace the table is associated with. </p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

@@ -567,21 +567,6 @@ GetTableOutcome S3TablesClient::GetTable(const GetTableRequest& request) const
 {
   AWS_OPERATION_GUARD(GetTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.TableBucketARNHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetTable", "Required field: TableBucketARN, is not set");
-    return GetTableOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
-  }
-  if (!request.NamespaceHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetTable", "Required field: Namespace, is not set");
-    return GetTableOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
-  }
-  if (!request.NameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetTable", "Required field: Name, is not set");
-    return GetTableOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTable, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -597,10 +582,7 @@ GetTableOutcome S3TablesClient::GetTable(const GetTableRequest& request) const
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tables/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/get-table");
       return GetTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

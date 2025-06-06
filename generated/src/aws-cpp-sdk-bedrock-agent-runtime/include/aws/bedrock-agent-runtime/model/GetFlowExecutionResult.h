@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the async execution ended. This field is only populated
+     * <p>The timestamp when the flow execution ended. This field is only populated
      * when the execution has completed, failed, timed out, or been aborted.</p>
      */
     inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
@@ -50,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of errors that occurred during the async execution. Each error
-     * includes an error code, message, and the node where the error occurred, if
+     * <p>A list of errors that occurred during the flow execution. Each error includes
+     * an error code, message, and the node where the error occurred, if
      * applicable.</p>
      */
     inline const Aws::Vector<FlowExecutionError>& GetErrors() const { return m_errors; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the async
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
      * execution.</p>
      */
     inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the async execution started.</p>
+     * <p>The timestamp when the flow execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     template<typename StartedAtT = Aws::Utils::DateTime>
@@ -121,7 +121,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the async execution.</p> <p>Async executions time out
+     * <p>The current status of the flow execution.</p> <p>Flow executions time out
      * after 24 hours.</p>
      */
     inline FlowExecutionStatus GetStatus() const { return m_status; }

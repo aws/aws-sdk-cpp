@@ -307,12 +307,12 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Retrieves the flow definition snapshot used for an asynchronous execution.
-         * The snapshot represents the flow metadata and definition as it existed at the
-         * time the asynchronous execution was started. Note that even if the flow is
-         * edited after an execution starts, the snapshot connected to the execution
-         * remains unchanged.</p>  <p>Asynchronous flows is in preview release for
-         * Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves the flow definition snapshot used for a flow execution. The
+         * snapshot represents the flow metadata and definition as it existed at the time
+         * the execution was started. Note that even if the flow is edited after an
+         * execution starts, the snapshot connected to the execution remains unchanged.</p>
+         *  <p>Flow executions is in preview release for Amazon Bedrock and is
+         * subject to change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetExecutionFlowSnapshot">AWS
          * API Reference</a></p>
          */
@@ -337,8 +337,8 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Retrieves details about a specific asynchronous execution of a flow,
-         * including its status, start and end times, and any errors that occurred during
+         * <p>Retrieves details about a specific flow execution, including its status,
+         * start and end times, and any errors that occurred during
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetFlowExecution">AWS
          * API Reference</a></p>
@@ -543,11 +543,11 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Lists events that occurred during an asynchronous execution of a flow. Events
-         * provide detailed information about the execution progress, including node inputs
-         * and outputs, flow inputs and outputs, condition results, and failure events.</p>
-         *  <p>Asynchronous flows is in preview release for Amazon Bedrock and is
-         * subject to change.</p> <p><h3>See Also:</h3>   <a
+         * <p>Lists events that occurred during a flow execution. Events provide detailed
+         * information about the execution progress, including node inputs and outputs,
+         * flow inputs and outputs, condition results, and failure events.</p> 
+         * <p>Flow executions is in preview release for Amazon Bedrock and is subject to
+         * change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutionEvents">AWS
          * API Reference</a></p>
          */
@@ -572,11 +572,11 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Lists all asynchronous executions for a flow. Results can be paginated and
-         * include summary information about each execution, such as status, start and end
-         * times, and the execution's Amazon Resource Name (ARN).</p> 
-         * <p>Asynchronous flows is in preview release for Amazon Bedrock and is subject to
-         * change.</p> <p><h3>See Also:</h3>   <a
+         * <p>Lists all executions of a flow. Results can be paginated and include summary
+         * information about each execution, such as status, start and end times, and the
+         * execution's Amazon Resource Name (ARN).</p>  <p>Flow executions is in
+         * preview release for Amazon Bedrock and is subject to change.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListFlowExecutions">AWS
          * API Reference</a></p>
          */
@@ -895,14 +895,13 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Starts an asynchronous execution of an Amazon Bedrock flow. Unlike
-         * synchronous flows that run until completion or time out after five minutes, you
-         * can run asynchronous flows for longer durations. Asynchronous flows also yield
-         * control so that your application can perform other tasks.</p> <p>This operation
-         * returns an Amazon Resource Name (ARN) that you can use to track and manage your
-         * flow's async execution.</p>  <p>Asynchronous flows is in preview release
-         * for Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Starts an execution of an Amazon Bedrock flow. Unlike flows that run until
+         * completion or time out after five minutes, flow executions let you run flows
+         * asynchronously for longer durations. Flow executions also yield control so that
+         * your application can perform other tasks.</p> <p>This operation returns an
+         * Amazon Resource Name (ARN) that you can use to track and manage your flow
+         * execution.</p>  <p>Flow executions is in preview release for Amazon
+         * Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StartFlowExecution">AWS
          * API Reference</a></p>
          */
@@ -927,8 +926,8 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Stops an Amazon Bedrock flow's asynchronous execution. This operation
-         * prevents further processing of the flow and changes the execution status to
+         * <p>Stops an Amazon Bedrock flow's execution. This operation prevents further
+         * processing of the flow and changes the execution status to
          * <code>Aborted</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StopFlowExecution">AWS
          * API Reference</a></p>

@@ -36,6 +36,7 @@
 #include <aws/s3tables/model/ListTableBucketsResult.h>
 #include <aws/s3tables/model/ListTablesResult.h>
 #include <aws/s3tables/model/UpdateTableMetadataLocationResult.h>
+#include <aws/s3tables/model/GetTableRequest.h>
 #include <aws/s3tables/model/ListTableBucketsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in S3TablesClient header */

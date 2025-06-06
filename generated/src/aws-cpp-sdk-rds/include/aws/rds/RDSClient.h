@@ -3226,7 +3226,13 @@ namespace Aws
 
         /**
          * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
-         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
+         * <p>This command doesn't apply to RDS Custom.</p>  <p>This operation uses
+         * resources on database instances. Because of this, we recommend publishing
+         * database logs to CloudWatch and then using the GetLogEvents operation. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+         * in the <i>Amazon CloudWatch Logs API Reference</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
          * API Reference</a></p>
          */

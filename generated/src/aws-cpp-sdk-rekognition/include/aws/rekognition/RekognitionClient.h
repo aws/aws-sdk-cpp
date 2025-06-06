@@ -232,8 +232,13 @@ namespace Rekognition
         /**
          * <p>Associates one or more faces with an existing UserID. Takes an array of
          * <code>FaceIds</code>. Each <code>FaceId</code> that are present in the
-         * <code>FaceIds</code> list is associated with the provided UserID. The maximum
-         * number of total <code>FaceIds</code> per UserID is 100. </p> <p>The
+         * <code>FaceIds</code> list is associated with the provided UserID. The number of
+         * FaceIds that can be used as input in a single request is limited to 100.</p>
+         * <p>Note that the total number of faces that can be associated with a single
+         * <code>UserID</code> is also limited to 100. Once a <code>UserID</code> has 100
+         * faces associated with it, no additional faces can be added. If more API calls
+         * are made after the limit is reached, a
+         * <code>ServiceQuotaExceededException</code> will result.</p> <p>The
          * <code>UserMatchThreshold</code> parameter specifies the minimum user match
          * confidence required for the face to be associated with a UserID that has at
          * least one <code>FaceID</code> already associated. This ensures that the
@@ -1078,9 +1083,7 @@ namespace Rekognition
          * provides the label name (<code>Name</code>), the level of confidence that the
          * image contains the object (<code>Confidence</code>), and object location
          * information, if it exists, for the label on the image (<code>Geometry</code>).
-         * Note that for the <code>DetectCustomLabelsLabels</code> operation,
-         * <code>Polygons</code> are not returned in the <code>Geometry</code> section of
-         * the response.</p> <p>To filter labels that are returned, specify a value for
+         * </p> <p>To filter labels that are returned, specify a value for
          * <code>MinConfidence</code>. <code>DetectCustomLabelsLabels</code> only returns
          * labels with a confidence that's higher than the specified value. The value of
          * <code>MinConfidence</code> maps to the assumed threshold values created during
@@ -1858,16 +1861,21 @@ namespace Rekognition
         }
 
         /**
-         * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
-         * by <a>StartPersonTracking</a>.</p> <p>The person path tracking operation is
-         * started by a call to <code>StartPersonTracking</code> which returns a job
-         * identifier (<code>JobId</code>). When the operation finishes, Amazon Rekognition
-         * Video publishes a completion status to the Amazon Simple Notification Service
-         * topic registered in the initial call to <code>StartPersonTracking</code>.</p>
-         * <p>To get the results of the person path tracking operation, first check that
-         * the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If
-         * so, call <a>GetPersonTracking</a> and pass the job identifier
-         * (<code>JobId</code>) from the initial call to
+         *  <p> <i>End of support notice:</i> On October 31, 2025, AWS will
+         * discontinue support for Amazon Rekognition People Pathing. After October 31,
+         * 2025, you will no longer be able to use the Rekognition People Pathing
+         * capability. For more information, visit this <a
+         * href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+         * post</a>.</p>  <p>Gets the path tracking results of a Amazon Rekognition
+         * Video analysis started by <a>StartPersonTracking</a>.</p> <p>The person path
+         * tracking operation is started by a call to <code>StartPersonTracking</code>
+         * which returns a job identifier (<code>JobId</code>). When the operation
+         * finishes, Amazon Rekognition Video publishes a completion status to the Amazon
+         * Simple Notification Service topic registered in the initial call to
+         * <code>StartPersonTracking</code>.</p> <p>To get the results of the person path
+         * tracking operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a> and
+         * pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
          * were tracked in the video. </p>  <p> <code>GetPersonTracking</code> only
@@ -2860,17 +2868,22 @@ namespace Rekognition
         }
 
         /**
-         * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
-         * <p>Amazon Rekognition Video can track the path of people in a video stored in an
-         * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
-         * of the video. <code>StartPersonTracking</code> returns a job identifier
-         * (<code>JobId</code>) which you use to get the results of the operation. When
-         * label detection is finished, Amazon Rekognition publishes a completion status to
-         * the Amazon Simple Notification Service topic that you specify in
-         * <code>NotificationChannel</code>. </p> <p>To get the results of the person
-         * detection operation, first check that the status value published to the Amazon
-         * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a> and
-         * pass the job identifier (<code>JobId</code>) from the initial call to
+         *  <p> <i>End of support notice:</i> On October 31, 2025, AWS will
+         * discontinue support for Amazon Rekognition People Pathing. After October 31,
+         * 2025, you will no longer be able to use the Rekognition People Pathing
+         * capability. For more information, visit this <a
+         * href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+         * post</a>.</p>  <p>Starts the asynchronous tracking of a person's path in
+         * a stored video.</p> <p>Amazon Rekognition Video can track the path of people in
+         * a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket
+         * name and the filename of the video. <code>StartPersonTracking</code> returns a
+         * job identifier (<code>JobId</code>) which you use to get the results of the
+         * operation. When label detection is finished, Amazon Rekognition publishes a
+         * completion status to the Amazon Simple Notification Service topic that you
+         * specify in <code>NotificationChannel</code>. </p> <p>To get the results of the
+         * person detection operation, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a>
+         * and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">AWS
          * API Reference</a></p>

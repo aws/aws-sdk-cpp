@@ -69,18 +69,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The identifier of the key material used to encrypt the ciphertext. This field
-     * is present only when the operation uses a symmetric encryption KMS key.</p>
-     */
-    inline const Aws::String& GetKeyMaterialId() const { return m_keyMaterialId; }
-    template<typename KeyMaterialIdT = Aws::String>
-    void SetKeyMaterialId(KeyMaterialIdT&& value) { m_keyMaterialIdHasBeenSet = true; m_keyMaterialId = std::forward<KeyMaterialIdT>(value); }
-    template<typename KeyMaterialIdT = Aws::String>
-    EncryptResult& WithKeyMaterialId(KeyMaterialIdT&& value) { SetKeyMaterialId(std::forward<KeyMaterialIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -98,9 +86,6 @@ namespace Model
 
     EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
     bool m_encryptionAlgorithmHasBeenSet = false;
-
-    Aws::String m_keyMaterialId;
-    bool m_keyMaterialIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

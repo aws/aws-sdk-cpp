@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a condition evaluation result during an async
+   * <p>Contains information about a condition evaluation result during a flow
    * execution. This event is generated when a condition node in the flow evaluates
-   * its conditions.</p>  <p>Asynchronous flows is in preview release for
-   * Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * its conditions.</p>  <p>Flow executions is in preview release for Amazon
+   * Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ConditionResultEvent">AWS
    * API Reference</a></p>
    */

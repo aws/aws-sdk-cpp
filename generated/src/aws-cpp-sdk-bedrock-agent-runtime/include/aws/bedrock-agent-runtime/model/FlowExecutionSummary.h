@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about a flow's async execution, including its
-   * status, timestamps, and identifiers.</p>  <p>Asynchronous flows is in
-   * preview release for Amazon Bedrock and is subject to change.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>Contains summary information about a flow execution, including its status,
+   * timestamps, and identifiers.</p>  <p>Flow executions is in preview release
+   * for Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowExecutionSummary">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the async execution was created.</p>
+     * <p>The timestamp when the flow execution was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the async execution ended. This field is only populated
+     * <p>The timestamp when the flow execution ended. This field is only populated
      * when the execution has completed, failed, timed out, or been aborted.</p>
      */
     inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the async
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
      * execution.</p>
      */
     inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
@@ -118,7 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the async execution.</p> <p>Async executions time out
+     * <p>The current status of the flow execution.</p> <p>Flow executions time out
      * after 24 hours.</p>
      */
     inline FlowExecutionStatus GetStatus() const { return m_status; }

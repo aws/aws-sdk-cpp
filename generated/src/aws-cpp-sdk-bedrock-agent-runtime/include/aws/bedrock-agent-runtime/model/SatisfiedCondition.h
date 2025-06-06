@@ -25,9 +25,8 @@ namespace Model
 
   /**
    * <p>Represents a condition that was satisfied during a condition node evaluation
-   * in a flow's async execution.</p>  <p>Asynchronous flows is in preview
-   * release for Amazon Bedrock and is subject to change.</p> <p><h3>See
-   * Also:</h3>   <a
+   * in a flow execution.</p>  <p>Flow executions is in preview release for
+   * Amazon Bedrock and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/SatisfiedCondition">AWS
    * API Reference</a></p>
    */

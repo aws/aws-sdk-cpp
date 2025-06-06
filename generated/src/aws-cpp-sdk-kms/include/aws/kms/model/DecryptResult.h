@@ -92,7 +92,9 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the key material used to decrypt the ciphertext. This field
-     * is present only when the operation uses a symmetric encryption KMS key.</p>
+     * is present only when the operation uses a symmetric encryption KMS key. This
+     * field is omitted if the request includes the <code>Recipient</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetKeyMaterialId() const { return m_keyMaterialId; }
     template<typename KeyMaterialIdT = Aws::String>

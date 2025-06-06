@@ -264,6 +264,7 @@
 #include <aws/bedrock-agent-runtime/model/PreProcessingParsedResponse.h>
 #include <aws/bedrock-agent-runtime/model/PreProcessingTrace.h>
 #include <aws/bedrock-agent-runtime/model/PromptConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/PromptCreationConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/PromptOverrideConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/PromptState.h>
 #include <aws/bedrock-agent-runtime/model/PromptTemplate.h>

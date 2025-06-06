@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of events that occurred during the async execution. Events can include
+     * <p>A list of events that occurred during the flow execution. Events can include
      * node inputs and outputs, flow inputs and outputs, condition results, and failure
      * events.</p>
      */

@@ -64,9 +64,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of async executions to return in a single response. If
-     * more executions exist than the specified maxResults value, a token is included
-     * in the response so that the remaining results can be retrieved.</p>
+     * <p>The maximum number of flow executions to return in a single response. If more
+     * executions exist than the specified <code>maxResults</code> value, a token is
+     * included in the response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the async
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
      * execution.</p>
      */
     inline const Aws::String& GetExecutionArn() const { return m_executionArn; }

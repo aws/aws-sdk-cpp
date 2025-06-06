@@ -811,6 +811,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster.</p>
+     */
+    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    DBCluster& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of write forwarding for a secondary cluster in an Aurora global
      * database.</p>
      */
@@ -1321,6 +1334,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
+
+    Aws::String m_globalClusterIdentifier;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     WriteForwardingStatus m_globalWriteForwardingStatus{WriteForwardingStatus::NOT_SET};
     bool m_globalWriteForwardingStatusHasBeenSet = false;

@@ -30,6 +30,9 @@
 #include <aws/rekognition/model/CelebrityDetail.h>
 #include <aws/rekognition/model/CelebrityRecognition.h>
 #include <aws/rekognition/model/CelebrityRecognitionSortBy.h>
+#include <aws/rekognition/model/Challenge.h>
+#include <aws/rekognition/model/ChallengePreference.h>
+#include <aws/rekognition/model/ChallengeType.h>
 #include <aws/rekognition/model/CompareFacesMatch.h>
 #include <aws/rekognition/model/CompareFacesRequest.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
@@ -351,6 +354,7 @@
 #include <aws/rekognition/model/UserMatch.h>
 #include <aws/rekognition/model/UserStatus.h>
 #include <aws/rekognition/model/ValidationData.h>
+#include <aws/rekognition/model/Versions.h>
 #include <aws/rekognition/model/Video.h>
 #include <aws/rekognition/model/VideoColorRange.h>
 #include <aws/rekognition/model/VideoJobStatus.h>
