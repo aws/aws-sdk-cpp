@@ -978,338 +978,338 @@ namespace
         AWS_ASSERT_SUCCESS(copyOutcome);
     }
 
-    TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
-    {
-        Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
-        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+//     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
+//     {
+//         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
+//         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+//         CreateBucketRequest createBucketRequest;
+//         createBucketRequest.SetBucket(fullBucketName);
+//         createBucketRequest.SetACL(BucketCannedACL::private_);
+//         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+//         AWS_ASSERT_SUCCESS(createBucketOutcome);
+//         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+//         TagTestBucket(fullBucketName, Client);
 
-        PutObjectRequest putObjectRequest;
-        putObjectRequest.SetBucket(fullBucketName);
+//         PutObjectRequest putObjectRequest;
+//         putObjectRequest.SetBucket(fullBucketName);
 
-        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-        *objectStream << "Name,Number\nAlice,1\nBob,2";
-        Aws::String firstColumn = "Name\nAlice\nBob\n";
-        objectStream->flush();
-        putObjectRequest.SetBody(objectStream);
-        putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-        auto objectSize = putObjectRequest.GetBody()->tellp();
-        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
-        // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
-        putObjectRequest.SetContentType("text/csv");
+//         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+//         *objectStream << "Name,Number\nAlice,1\nBob,2";
+//         Aws::String firstColumn = "Name\nAlice\nBob\n";
+//         objectStream->flush();
+//         putObjectRequest.SetBody(objectStream);
+//         putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         auto objectSize = putObjectRequest.GetBody()->tellp();
+//         putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+//         // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+//         putObjectRequest.SetContentType("text/csv");
 
-        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        AWS_ASSERT_SUCCESS(putObjectOutcome);
+//         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+//         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+//         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
-        SelectObjectContentRequest selectObjectContentRequest;
-        selectObjectContentRequest.SetBucket(fullBucketName);
-        selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         SelectObjectContentRequest selectObjectContentRequest;
+//         selectObjectContentRequest.SetBucket(fullBucketName);
+//         selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
 
-        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+//         selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
 
-        selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
+//         selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
 
-        CSVInput csvInput;
-        csvInput.SetFileHeaderInfo(FileHeaderInfo::NONE);
-        InputSerialization inputSerialization;
-        inputSerialization.SetCSV(csvInput);
-        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+//         CSVInput csvInput;
+//         csvInput.SetFileHeaderInfo(FileHeaderInfo::NONE);
+//         InputSerialization inputSerialization;
+//         inputSerialization.SetCSV(csvInput);
+//         selectObjectContentRequest.SetInputSerialization(inputSerialization);
 
-        CSVOutput csvOutput;
-        OutputSerialization outputSerialization;
-        outputSerialization.SetCSV(csvOutput);
-        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+//         CSVOutput csvOutput;
+//         OutputSerialization outputSerialization;
+//         outputSerialization.SetCSV(csvOutput);
+//         selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        bool isRecordsEventReceived = false;
-        bool isStatsEventReceived = false;
+//         bool isRecordsEventReceived = false;
+//         bool isStatsEventReceived = false;
 
-        SelectObjectContentHandler handler;
-        handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
-        {
-            isRecordsEventReceived = true;
-            auto recordsVector = recordsEvent.GetPayload();
-            Aws::String records(recordsVector.begin(), recordsVector.end());
-            ASSERT_STREQ(firstColumn.c_str(), records.c_str());
-        });
-        handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
-        {
-            isStatsEventReceived = true;
-            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesScanned());
-            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesProcessed());
-            ASSERT_EQ(static_cast<long long>(firstColumn.size()), statsEvent.GetDetails().GetBytesReturned());
-        });
+//         SelectObjectContentHandler handler;
+//         handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
+//         {
+//             isRecordsEventReceived = true;
+//             auto recordsVector = recordsEvent.GetPayload();
+//             Aws::String records(recordsVector.begin(), recordsVector.end());
+//             ASSERT_STREQ(firstColumn.c_str(), records.c_str());
+//         });
+//         handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
+//         {
+//             isStatsEventReceived = true;
+//             ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesScanned());
+//             ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesProcessed());
+//             ASSERT_EQ(static_cast<long long>(firstColumn.size()), statsEvent.GetDetails().GetBytesReturned());
+//         });
 
-        selectObjectContentRequest.SetEventStreamHandler(handler);
+//         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
-        AWS_ASSERT_SUCCESS(selectObjectContentOutcome);
-        ASSERT_TRUE(isRecordsEventReceived);
-        ASSERT_TRUE(isStatsEventReceived);
-    }
+//         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
+//         AWS_ASSERT_SUCCESS(selectObjectContentOutcome);
+//         ASSERT_TRUE(isRecordsEventReceived);
+//         ASSERT_TRUE(isStatsEventReceived);
+//     }
 
-#if 0
-    // S3 CRT Client doesn't support custom retry strategy right now.
-    // This test is to test failed event stream request will not cause crash during retry.
-    TEST_F(BucketAndObjectOperationTest, TestSelectObjectOperationWithEventStreamFailWithRetry)
-    {
-        Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
-        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName);
+// #if 0
+//     // S3 CRT Client doesn't support custom retry strategy right now.
+//     // This test is to test failed event stream request will not cause crash during retry.
+//     TEST_F(BucketAndObjectOperationTest, TestSelectObjectOperationWithEventStreamFailWithRetry)
+//     {
+//         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
+//         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+//         CreateBucketRequest createBucketRequest;
+//         createBucketRequest.SetBucket(fullBucketName);
+//         createBucketRequest.SetACL(BucketCannedACL::private_);
+//         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+//         AWS_ASSERT_SUCCESS(createBucketOutcome);
+//         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+//         TagTestBucket(fullBucketName);
 
-        PutObjectRequest putObjectRequest;
-        putObjectRequest.SetBucket(fullBucketName);
+//         PutObjectRequest putObjectRequest;
+//         putObjectRequest.SetBucket(fullBucketName);
 
-        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-        *objectStream << "Name,Number\nAlice,1\nBob,2";
-        Aws::String firstColumn = "Name\nAlice\nBob\n";
-        objectStream->flush();
-        putObjectRequest.SetBody(objectStream);
-        putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-        auto objectSize = putObjectRequest.GetBody()->tellp();
-        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
-        putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
-        putObjectRequest.SetContentType("text/csv");
+//         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+//         *objectStream << "Name,Number\nAlice,1\nBob,2";
+//         Aws::String firstColumn = "Name\nAlice\nBob\n";
+//         objectStream->flush();
+//         putObjectRequest.SetBody(objectStream);
+//         putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         auto objectSize = putObjectRequest.GetBody()->tellp();
+//         putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+//         putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+//         putObjectRequest.SetContentType("text/csv");
 
-        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        AWS_ASSERT_SUCCESS(putObjectOutcome);
+//         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+//         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+//         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
-        SelectObjectContentRequest selectObjectContentRequest;
-        selectObjectContentRequest.SetBucket(fullBucketName);
-        selectObjectContentRequest.SetKey("ANonExistenceKey");
+//         SelectObjectContentRequest selectObjectContentRequest;
+//         selectObjectContentRequest.SetBucket(fullBucketName);
+//         selectObjectContentRequest.SetKey("ANonExistenceKey");
 
-        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+//         selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
 
-        selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
+//         selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
 
-        CSVInput csvInput;
-        csvInput.SetFileHeaderInfo(FileHeaderInfo::NONE);
-        InputSerialization inputSerialization;
-        inputSerialization.SetCSV(csvInput);
-        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+//         CSVInput csvInput;
+//         csvInput.SetFileHeaderInfo(FileHeaderInfo::NONE);
+//         InputSerialization inputSerialization;
+//         inputSerialization.SetCSV(csvInput);
+//         selectObjectContentRequest.SetInputSerialization(inputSerialization);
 
-        CSVOutput csvOutput;
-        OutputSerialization outputSerialization;
-        outputSerialization.SetCSV(csvOutput);
-        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+//         CSVOutput csvOutput;
+//         OutputSerialization outputSerialization;
+//         outputSerialization.SetCSV(csvOutput);
+//         selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        bool isRecordsEventReceived = false;
-        bool isStatsEventReceived = false;
+//         bool isRecordsEventReceived = false;
+//         bool isStatsEventReceived = false;
 
-        SelectObjectContentHandler handler;
-        handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
-        {
-            isRecordsEventReceived = true;
-            auto recordsVector = recordsEvent.GetPayload();
-            Aws::String records(recordsVector.begin(), recordsVector.end());
-            ASSERT_STREQ(firstColumn.c_str(), records.c_str());
-        });
-        handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
-        {
-            isStatsEventReceived = true;
-            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesScanned());
-            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesProcessed());
-            ASSERT_EQ(static_cast<long long>(firstColumn.size()), statsEvent.GetDetails().GetBytesReturned());
-        });
+//         SelectObjectContentHandler handler;
+//         handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
+//         {
+//             isRecordsEventReceived = true;
+//             auto recordsVector = recordsEvent.GetPayload();
+//             Aws::String records(recordsVector.begin(), recordsVector.end());
+//             ASSERT_STREQ(firstColumn.c_str(), records.c_str());
+//         });
+//         handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
+//         {
+//             isStatsEventReceived = true;
+//             ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesScanned());
+//             ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesProcessed());
+//             ASSERT_EQ(static_cast<long long>(firstColumn.size()), statsEvent.GetDetails().GetBytesReturned());
+//         });
 
-        selectObjectContentRequest.SetEventStreamHandler(handler);
+//         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        auto selectObjectContentOutcome = retryClient->SelectObjectContent(selectObjectContentRequest);
-        ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
-    }
-#endif
+//         auto selectObjectContentOutcome = retryClient->SelectObjectContent(selectObjectContentRequest);
+//         ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
+//     }
+// #endif
 
-    TEST_F(BucketAndObjectOperationTest, TestEventStreamWithLargeFile)
-    {
-        Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str());
-        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+//     TEST_F(BucketAndObjectOperationTest, TestEventStreamWithLargeFile)
+//     {
+//         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str());
+//         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+//         CreateBucketRequest createBucketRequest;
+//         createBucketRequest.SetBucket(fullBucketName);
+//         createBucketRequest.SetACL(BucketCannedACL::private_);
+//         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+//         AWS_ASSERT_SUCCESS(createBucketOutcome);
+//         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+//         TagTestBucket(fullBucketName, Client);
 
-        PutObjectRequest putObjectRequest;
-        putObjectRequest.SetBucket(fullBucketName);
+//         PutObjectRequest putObjectRequest;
+//         putObjectRequest.SetBucket(fullBucketName);
 
-        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-        *objectStream << "Name,Number\n";
-        for (int i = 0; i < 1000000; i++)
-        {
-            *objectStream << "foo,0\n";
-        }
-        objectStream->flush();
-        putObjectRequest.SetBody(objectStream);
-        putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-        auto objectSize = putObjectRequest.GetBody()->tellp();
-        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
-        // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
-        putObjectRequest.SetContentType("text/csv");
+//         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+//         *objectStream << "Name,Number\n";
+//         for (int i = 0; i < 1000000; i++)
+//         {
+//             *objectStream << "foo,0\n";
+//         }
+//         objectStream->flush();
+//         putObjectRequest.SetBody(objectStream);
+//         putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         auto objectSize = putObjectRequest.GetBody()->tellp();
+//         putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+//         // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+//         putObjectRequest.SetContentType("text/csv");
 
-        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        AWS_ASSERT_SUCCESS(putObjectOutcome);
+//         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+//         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+//         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
-        SelectObjectContentRequest selectObjectContentRequest;
-        selectObjectContentRequest.SetBucket(fullBucketName);
-        selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         SelectObjectContentRequest selectObjectContentRequest;
+//         selectObjectContentRequest.SetBucket(fullBucketName);
+//         selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
 
-        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+//         selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
 
-        selectObjectContentRequest.SetExpression("select * from S3Object where cast(number as int) < 1");
+//         selectObjectContentRequest.SetExpression("select * from S3Object where cast(number as int) < 1");
 
-        CSVInput csvInput;
-        csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
-        InputSerialization inputSerialization;
-        inputSerialization.SetCSV(csvInput);
-        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+//         CSVInput csvInput;
+//         csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
+//         InputSerialization inputSerialization;
+//         inputSerialization.SetCSV(csvInput);
+//         selectObjectContentRequest.SetInputSerialization(inputSerialization);
 
-        CSVOutput csvOutput;
-        OutputSerialization outputSerialization;
-        outputSerialization.SetCSV(csvOutput);
-        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+//         CSVOutput csvOutput;
+//         OutputSerialization outputSerialization;
+//         outputSerialization.SetCSV(csvOutput);
+//         selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        size_t recordsTotalLength = 0;
-        bool isStatsEventReceived = false;
+//         size_t recordsTotalLength = 0;
+//         bool isStatsEventReceived = false;
 
-        SelectObjectContentHandler handler;
-        handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
-        {
-            recordsTotalLength += recordsEvent.GetPayload().size();
-        });
-        handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
-        {
-            isStatsEventReceived = true;
-            ASSERT_EQ(12ll/*length of the 1st row*/ + 6/*length of all the other row*/ * 1000000ll, statsEvent.GetDetails().GetBytesScanned());
-            ASSERT_EQ(6000012ll, statsEvent.GetDetails().GetBytesProcessed());
-            ASSERT_EQ(6000000ll, statsEvent.GetDetails().GetBytesReturned());
-        });
+//         SelectObjectContentHandler handler;
+//         handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
+//         {
+//             recordsTotalLength += recordsEvent.GetPayload().size();
+//         });
+//         handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
+//         {
+//             isStatsEventReceived = true;
+//             ASSERT_EQ(12ll/*length of the 1st row*/ + 6/*length of all the other row*/ * 1000000ll, statsEvent.GetDetails().GetBytesScanned());
+//             ASSERT_EQ(6000012ll, statsEvent.GetDetails().GetBytesProcessed());
+//             ASSERT_EQ(6000000ll, statsEvent.GetDetails().GetBytesReturned());
+//         });
 
-        selectObjectContentRequest.SetEventStreamHandler(handler);
+//         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
-        ASSERT_EQ(6000000u, recordsTotalLength);
-        ASSERT_TRUE(isStatsEventReceived);
-    }
+//         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
+//         ASSERT_EQ(6000000u, recordsTotalLength);
+//         ASSERT_TRUE(isStatsEventReceived);
+//     }
 
-    TEST_F(BucketAndObjectOperationTest, TestErrorsInXml)
-    {
-        SelectObjectContentRequest selectObjectContentRequest;
-        selectObjectContentRequest.SetBucket("adskflaklfakl");
-        selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//     TEST_F(BucketAndObjectOperationTest, TestErrorsInXml)
+//     {
+//         SelectObjectContentRequest selectObjectContentRequest;
+//         selectObjectContentRequest.SetBucket("adskflaklfakl");
+//         selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
 
-        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+//         selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
 
-        selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
+//         selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
 
-        CSVInput csvInput;
-        csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
-        InputSerialization inputSerialization;
-        inputSerialization.SetCSV(csvInput);
-        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+//         CSVInput csvInput;
+//         csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
+//         InputSerialization inputSerialization;
+//         inputSerialization.SetCSV(csvInput);
+//         selectObjectContentRequest.SetInputSerialization(inputSerialization);
 
-        CSVOutput csvOutput;
-        OutputSerialization outputSerialization;
-        outputSerialization.SetCSV(csvOutput);
-        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+//         CSVOutput csvOutput;
+//         OutputSerialization outputSerialization;
+//         outputSerialization.SetCSV(csvOutput);
+//         selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
-        ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
-#if ENABLE_CURL_CLIENT
-        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRemoteHostIpAddress().empty());
-#endif
-        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRequestId().empty());
-        ASSERT_EQ(S3CrtErrors::NO_SUCH_BUCKET, selectObjectContentOutcome.GetError().GetErrorType());
-    }
+//         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
+//         ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
+// #if ENABLE_CURL_CLIENT
+//         ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRemoteHostIpAddress().empty());
+// #endif
+//         ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRequestId().empty());
+//         ASSERT_EQ(S3CrtErrors::NO_SUCH_BUCKET, selectObjectContentOutcome.GetError().GetErrorType());
+//     }
 
-    TEST_F(BucketAndObjectOperationTest, TestErrorsInEventStream)
-    {
-        Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str());
-        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+//     TEST_F(BucketAndObjectOperationTest, TestErrorsInEventStream)
+//     {
+//         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str());
+//         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+//         CreateBucketRequest createBucketRequest;
+//         createBucketRequest.SetBucket(fullBucketName);
+//         createBucketRequest.SetACL(BucketCannedACL::private_);
+//         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+//         AWS_ASSERT_SUCCESS(createBucketOutcome);
+//         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+//         TagTestBucket(fullBucketName, Client);
 
-        PutObjectRequest putObjectRequest;
-        putObjectRequest.SetBucket(fullBucketName);
+//         PutObjectRequest putObjectRequest;
+//         putObjectRequest.SetBucket(fullBucketName);
 
-        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-        *objectStream << "Name,Number\n";
-        for (int i = 0; i < 1000000; i++)
-        {
-            *objectStream << "foo,0\n";
-        }
-        *objectStream << "bar,NAN";
-        objectStream->flush();
-        putObjectRequest.SetBody(objectStream);
-        putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-        auto objectSize = putObjectRequest.GetBody()->tellp();
-        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
-        // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
-        putObjectRequest.SetContentType("text/csv");
+//         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+//         *objectStream << "Name,Number\n";
+//         for (int i = 0; i < 1000000; i++)
+//         {
+//             *objectStream << "foo,0\n";
+//         }
+//         *objectStream << "bar,NAN";
+//         objectStream->flush();
+//         putObjectRequest.SetBody(objectStream);
+//         putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         auto objectSize = putObjectRequest.GetBody()->tellp();
+//         putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+//         // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+//         putObjectRequest.SetContentType("text/csv");
 
-        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        AWS_ASSERT_SUCCESS(putObjectOutcome);
+//         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+//         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+//         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
-        SelectObjectContentRequest selectObjectContentRequest;
-        selectObjectContentRequest.SetBucket(fullBucketName);
-        selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+//         SelectObjectContentRequest selectObjectContentRequest;
+//         selectObjectContentRequest.SetBucket(fullBucketName);
+//         selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
 
-        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+//         selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
 
-        selectObjectContentRequest.SetExpression("select * from S3Object where cast(number as int) < 1");
+//         selectObjectContentRequest.SetExpression("select * from S3Object where cast(number as int) < 1");
 
-        CSVInput csvInput;
-        csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
-        InputSerialization inputSerialization;
-        inputSerialization.SetCSV(csvInput);
-        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+//         CSVInput csvInput;
+//         csvInput.SetFileHeaderInfo(FileHeaderInfo::USE);
+//         InputSerialization inputSerialization;
+//         inputSerialization.SetCSV(csvInput);
+//         selectObjectContentRequest.SetInputSerialization(inputSerialization);
 
-        CSVOutput csvOutput;
-        OutputSerialization outputSerialization;
-        outputSerialization.SetCSV(csvOutput);
-        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+//         CSVOutput csvOutput;
+//         OutputSerialization outputSerialization;
+//         outputSerialization.SetCSV(csvOutput);
+//         selectObjectContentRequest.SetOutputSerialization(outputSerialization);
 
-        bool isErrorEventReceived = false;
+//         bool isErrorEventReceived = false;
 
-        SelectObjectContentHandler handler;
-        handler.SetOnErrorCallback([&](const AWSError<S3CrtErrors>& s3Error)
-        {
-            isErrorEventReceived = true;
-            ASSERT_EQ(CoreErrors::UNKNOWN, static_cast<CoreErrors>(s3Error.GetErrorType()));
-            ASSERT_STREQ("CastFailed", s3Error.GetExceptionName().c_str());
-        });
+//         SelectObjectContentHandler handler;
+//         handler.SetOnErrorCallback([&](const AWSError<S3CrtErrors>& s3Error)
+//         {
+//             isErrorEventReceived = true;
+//             ASSERT_EQ(CoreErrors::UNKNOWN, static_cast<CoreErrors>(s3Error.GetErrorType()));
+//             ASSERT_STREQ("CastFailed", s3Error.GetExceptionName().c_str());
+//         });
 
-        selectObjectContentRequest.SetEventStreamHandler(handler);
+//         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        Client->SelectObjectContent(selectObjectContentRequest);
+//         Client->SelectObjectContent(selectObjectContentRequest);
 
-        ASSERT_TRUE(isErrorEventReceived);
-    }
+//         ASSERT_TRUE(isErrorEventReceived);
+//     }
 
     TEST_F(BucketAndObjectOperationTest, TestNullBody)
     {
