@@ -217,6 +217,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS).
+     * Possible values are <code>Elastic VMware Service</code> or no value. For more
+     * information about Amazon EVS, see <a
+     * href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html">
+     * <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+     */
+    inline const Aws::String& GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Subnet& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const { return m_subnetId; }
@@ -229,7 +245,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet.</p> <ul> <li> <p> <code>failed</code>: The
+     * underlying infrastructure to support the subnet failed to provision as
+     * expected.</p> </li> <li> <p> <code>failed-insufficient-capacity</code>: The
+     * underlying infrastructure to support the subnet failed to provision due to a
+     * shortage of EC2 instance capacity.</p> </li> </ul>
      */
     inline SubnetState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -350,6 +370,9 @@ namespace Model
 
     BlockPublicAccessStates m_blockPublicAccessStates;
     bool m_blockPublicAccessStatesHasBeenSet = false;
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;

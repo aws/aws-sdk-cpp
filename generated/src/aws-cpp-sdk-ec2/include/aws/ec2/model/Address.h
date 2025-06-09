@@ -194,6 +194,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the subnet where the IP address is allocated.</p>
+     */
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    Address& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The service that manages the elastic IP address.</p>  <p>The only
      * option supported today is <code>alb</code>.</p> 
      */
@@ -263,6 +275,9 @@ namespace Model
 
     Aws::String m_carrierIp;
     bool m_carrierIpHasBeenSet = false;
+
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet = false;
 
     ServiceManaged m_serviceManaged{ServiceManaged::NOT_SET};
     bool m_serviceManagedHasBeenSet = false;

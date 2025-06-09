@@ -11,6 +11,7 @@
 #include <aws/marketplace-catalog/model/OfferSort.h>
 #include <aws/marketplace-catalog/model/ContainerProductSort.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductSort.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +115,16 @@ namespace Model
     template<typename ResaleAuthorizationSortT = ResaleAuthorizationSort>
     EntityTypeSort& WithResaleAuthorizationSort(ResaleAuthorizationSortT&& value) { SetResaleAuthorizationSort(std::forward<ResaleAuthorizationSortT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MachineLearningProductSort& GetMachineLearningProductSort() const { return m_machineLearningProductSort; }
+    inline bool MachineLearningProductSortHasBeenSet() const { return m_machineLearningProductSortHasBeenSet; }
+    template<typename MachineLearningProductSortT = MachineLearningProductSort>
+    void SetMachineLearningProductSort(MachineLearningProductSortT&& value) { m_machineLearningProductSortHasBeenSet = true; m_machineLearningProductSort = std::forward<MachineLearningProductSortT>(value); }
+    template<typename MachineLearningProductSortT = MachineLearningProductSort>
+    EntityTypeSort& WithMachineLearningProductSort(MachineLearningProductSortT&& value) { SetMachineLearningProductSort(std::forward<MachineLearningProductSortT>(value)); return *this;}
+    ///@}
   private:
 
     DataProductSort m_dataProductSort;
@@ -133,6 +144,9 @@ namespace Model
 
     ResaleAuthorizationSort m_resaleAuthorizationSort;
     bool m_resaleAuthorizationSortHasBeenSet = false;
+
+    MachineLearningProductSort m_machineLearningProductSort;
+    bool m_machineLearningProductSortHasBeenSet = false;
   };
 
 } // namespace Model

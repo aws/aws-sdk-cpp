@@ -120,7 +120,13 @@ namespace Model
      * <p>The ID or ARN of the file system to use for the destination. For
      * cross-account replication, this must be an ARN. The file system's replication
      * overwrite replication must be disabled. If no ID or ARN is specified, then a new
-     * file system is created. </p>
+     * file system is created. </p>  <p>When you initially configure replication
+     * to an existing file system, Amazon EFS writes data to or removes existing data
+     * from the destination file system to match data in the source file system. If you
+     * don't want to change data in the destination file system, then you should
+     * replicate to a new file system instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/create-replication.html">https://docs.aws.amazon.com/efs/latest/ug/create-replication.html</a>.</p>
+     * 
      */
     inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }

@@ -48,7 +48,7 @@ namespace Model
      * destination file system in a replication configuration. The file system is
      * read-only and can only be modified by EFS replication.</p> </li> <li> <p>
      * <code>REPLICATING</code> – The file system is being used as the destination file
-     * system in a replication configuration. The file system is read-only and is only
+     * system in a replication configuration. The file system is read-only and is
      * modified only by EFS replication.</p> </li> </ul> <p>If the replication
      * configuration is deleted, the file system's replication overwrite protection is
      * re-enabled, the file system becomes writeable.</p>

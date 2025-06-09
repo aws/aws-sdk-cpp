@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     pending,
     available,
-    unavailable
+    unavailable,
+    failed,
+    failed_insufficient_capacity
   };
 
 namespace SubnetStateMapper

@@ -8,10 +8,10 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/EnaSrdSpecification.h>
 #include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceAttachmentChanges.h>
 #include <utility>
 
@@ -103,6 +103,20 @@ namespace Model
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
     inline ModifyNetworkInterfaceAttributeRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of subnet IDs to associate with the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedSubnetIds() const { return m_associatedSubnetIds; }
+    inline bool AssociatedSubnetIdsHasBeenSet() const { return m_associatedSubnetIdsHasBeenSet; }
+    template<typename AssociatedSubnetIdsT = Aws::Vector<Aws::String>>
+    void SetAssociatedSubnetIds(AssociatedSubnetIdsT&& value) { m_associatedSubnetIdsHasBeenSet = true; m_associatedSubnetIds = std::forward<AssociatedSubnetIdsT>(value); }
+    template<typename AssociatedSubnetIdsT = Aws::Vector<Aws::String>>
+    ModifyNetworkInterfaceAttributeRequest& WithAssociatedSubnetIds(AssociatedSubnetIdsT&& value) { SetAssociatedSubnetIds(std::forward<AssociatedSubnetIdsT>(value)); return *this;}
+    template<typename AssociatedSubnetIdsT = Aws::String>
+    ModifyNetworkInterfaceAttributeRequest& AddAssociatedSubnetIds(AssociatedSubnetIdsT&& value) { m_associatedSubnetIdsHasBeenSet = true; m_associatedSubnetIds.emplace_back(std::forward<AssociatedSubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -202,6 +216,9 @@ namespace Model
 
     bool m_associatePublicIpAddress{false};
     bool m_associatePublicIpAddressHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedSubnetIds;
+    bool m_associatedSubnetIdsHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

@@ -245,6 +245,32 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Creates the layout to view data for a specific domain. This API can only be
+         * invoked from the Amazon Connect admin website.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDomainLayoutOutcome CreateDomainLayout(const Model::CreateDomainLayoutRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDomainLayout that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDomainLayoutRequestT = Model::CreateDomainLayoutRequest>
+        Model::CreateDomainLayoutOutcomeCallable CreateDomainLayoutCallable(const CreateDomainLayoutRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::CreateDomainLayout, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDomainLayout that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDomainLayoutRequestT = Model::CreateDomainLayoutRequest>
+        void CreateDomainLayoutAsync(const CreateDomainLayoutRequestT& request, const CreateDomainLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::CreateDomainLayout, request, handler, context);
+        }
+
+        /**
          * <p>Creates an event stream, which is a subscription to real-time events, such as
          * when profiles are created and updated through Amazon Connect Customer
          * Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data
@@ -486,6 +512,32 @@ namespace CustomerProfiles
         void DeleteDomainAsync(const DeleteDomainRequestT& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::DeleteDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the layout used to view data for a specific domain. This API can only
+         * be invoked from the Amazon Connect admin website.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainLayoutOutcome DeleteDomainLayout(const Model::DeleteDomainLayoutRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDomainLayout that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDomainLayoutRequestT = Model::DeleteDomainLayoutRequest>
+        Model::DeleteDomainLayoutOutcomeCallable DeleteDomainLayoutCallable(const DeleteDomainLayoutRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::DeleteDomainLayout, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDomainLayout that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDomainLayoutRequestT = Model::DeleteDomainLayoutRequest>
+        void DeleteDomainLayoutAsync(const DeleteDomainLayoutRequestT& request, const DeleteDomainLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::DeleteDomainLayout, request, handler, context);
         }
 
         /**
@@ -862,6 +914,32 @@ namespace CustomerProfiles
         void GetDomainAsync(const GetDomainRequestT& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::GetDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the layout to view data for a specific domain. This API can only be
+         * invoked from the Amazon Connect admin website.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainLayoutOutcome GetDomainLayout(const Model::GetDomainLayoutRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDomainLayout that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDomainLayoutRequestT = Model::GetDomainLayoutRequest>
+        Model::GetDomainLayoutOutcomeCallable GetDomainLayoutCallable(const GetDomainLayoutRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetDomainLayout, request);
+        }
+
+        /**
+         * An Async wrapper for GetDomainLayout that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDomainLayoutRequestT = Model::GetDomainLayoutRequest>
+        void GetDomainLayoutAsync(const GetDomainLayoutRequestT& request, const GetDomainLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetDomainLayout, request, handler, context);
         }
 
         /**
@@ -1334,6 +1412,33 @@ namespace CustomerProfiles
         void ListCalculatedAttributesForProfileAsync(const ListCalculatedAttributesForProfileRequestT& request, const ListCalculatedAttributesForProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListCalculatedAttributesForProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the existing layouts that can be used to view data for a specific
+         * domain. This API can only be invoked from the Amazon Connect admin
+         * website.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainLayoutsOutcome ListDomainLayouts(const Model::ListDomainLayoutsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDomainLayouts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDomainLayoutsRequestT = Model::ListDomainLayoutsRequest>
+        Model::ListDomainLayoutsOutcomeCallable ListDomainLayoutsCallable(const ListDomainLayoutsRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListDomainLayouts, request);
+        }
+
+        /**
+         * An Async wrapper for ListDomainLayouts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDomainLayoutsRequestT = Model::ListDomainLayoutsRequest>
+        void ListDomainLayoutsAsync(const ListDomainLayoutsRequestT& request, const ListDomainLayoutsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListDomainLayouts, request, handler, context);
         }
 
         /**
@@ -1992,6 +2097,32 @@ namespace CustomerProfiles
         void UpdateDomainAsync(const UpdateDomainRequestT& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::UpdateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the layout used to view data for a specific domain. This API can only
+         * be invoked from the Amazon Connect admin website.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainLayoutOutcome UpdateDomainLayout(const Model::UpdateDomainLayoutRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDomainLayout that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDomainLayoutRequestT = Model::UpdateDomainLayoutRequest>
+        Model::UpdateDomainLayoutOutcomeCallable UpdateDomainLayoutCallable(const UpdateDomainLayoutRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::UpdateDomainLayout, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDomainLayout that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDomainLayoutRequestT = Model::UpdateDomainLayoutRequest>
+        void UpdateDomainLayoutAsync(const UpdateDomainLayoutRequestT& request, const UpdateDomainLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::UpdateDomainLayout, request, handler, context);
         }
 
         /**

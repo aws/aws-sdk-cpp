@@ -34,6 +34,17 @@ Aws::String CreateMountTargetRequest::SerializePayload() const
 
   }
 
+  if(m_ipv6AddressHasBeenSet)
+  {
+   payload.WithString("Ipv6Address", m_ipv6Address);
+
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
   if(m_securityGroupsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());

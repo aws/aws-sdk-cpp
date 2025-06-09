@@ -83,7 +83,11 @@ namespace Model
     ///@{
     /**
      * <p>The JSON value of the details specific to the change type of the requested
-     * change.</p>
+     * change.</p> <p>To download the "DetailsDocument" shapes, see the <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+     * and <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+     * shapes on GitHub.</p>
      */
     inline Aws::Utils::DocumentView GetDetailsDocument() const { return m_detailsDocument; }
     inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }

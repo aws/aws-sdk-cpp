@@ -64,28 +64,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Transit encryption flag when connecting to cache. You cannot update this
-     * setting after creation.</p>
-     */
-    inline bool GetTransitEncryptionEnabled() const { return m_transitEncryptionEnabled; }
-    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
-    inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
-    inline CreateApiCacheRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>At-rest encryption flag for cache. You cannot update this setting after
-     * creation.</p>
-     */
-    inline bool GetAtRestEncryptionEnabled() const { return m_atRestEncryptionEnabled; }
-    inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
-    inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
-    inline CreateApiCacheRequest& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
      * from the same user are cached. Individual resolvers are automatically cached.
      * All API calls will try to return responses from the cache.</p> </li> <li> <p>
@@ -146,12 +124,6 @@ namespace Model
 
     long long m_ttl{0};
     bool m_ttlHasBeenSet = false;
-
-    bool m_transitEncryptionEnabled{false};
-    bool m_transitEncryptionEnabledHasBeenSet = false;
-
-    bool m_atRestEncryptionEnabled{false};
-    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     ApiCachingBehavior m_apiCachingBehavior{ApiCachingBehavior::NOT_SET};
     bool m_apiCachingBehaviorHasBeenSet = false;

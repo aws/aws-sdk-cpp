@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/customer-profiles/model/ReadinessStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -103,6 +104,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Whether historical data ingested before the Calculated Attribute was created
+     * should be included in calculations.</p>
+     */
+    inline bool GetUseHistoricalData() const { return m_useHistoricalData; }
+    inline bool UseHistoricalDataHasBeenSet() const { return m_useHistoricalDataHasBeenSet; }
+    inline void SetUseHistoricalData(bool value) { m_useHistoricalDataHasBeenSet = true; m_useHistoricalData = value; }
+    inline ListCalculatedAttributeDefinitionItem& WithUseHistoricalData(bool value) { SetUseHistoricalData(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Status of the Calculated Attribute creation (whether all historical data has
+     * been indexed.)</p>
+     */
+    inline ReadinessStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ReadinessStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListCalculatedAttributeDefinitionItem& WithStatus(ReadinessStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -132,6 +155,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
+
+    bool m_useHistoricalData{false};
+    bool m_useHistoricalDataHasBeenSet = false;
+
+    ReadinessStatus m_status{ReadinessStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
