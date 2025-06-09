@@ -253,6 +253,19 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode associatedSubnetsNode = resultNode.FirstChild("associatedSubnetSet");
+    if(!associatedSubnetsNode.IsNull())
+    {
+      XmlNode associatedSubnetsMember = associatedSubnetsNode.FirstChild("item");
+      m_associatedSubnetsHasBeenSet = !associatedSubnetsMember.IsNull();
+      while(!associatedSubnetsMember.IsNull())
+      {
+        m_associatedSubnets.push_back(associatedSubnetsMember.GetText());
+        associatedSubnetsMember = associatedSubnetsMember.NextNode("item");
+      }
+
+      m_associatedSubnetsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -456,6 +469,15 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_associatedSubnetsHasBeenSet)
+  {
+      unsigned associatedSubnetsIdx = 1;
+      for(auto& item : m_associatedSubnets)
+      {
+        oStream << location << index << locationValue << ".AssociatedSubnetSet." << associatedSubnetsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -625,6 +647,14 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String operatorLocationAndMember(location);
       operatorLocationAndMember += ".Operator";
       m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+  if(m_associatedSubnetsHasBeenSet)
+  {
+      unsigned associatedSubnetsIdx = 1;
+      for(auto& item : m_associatedSubnets)
+      {
+        oStream << location << ".AssociatedSubnetSet." << associatedSubnetsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

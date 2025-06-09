@@ -11,6 +11,7 @@
 #include <aws/marketplace-catalog/model/OfferFilters.h>
 #include <aws/marketplace-catalog/model/ContainerProductFilters.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationFilters.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductFilters.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +115,16 @@ namespace Model
     template<typename ResaleAuthorizationFiltersT = ResaleAuthorizationFilters>
     EntityTypeFilters& WithResaleAuthorizationFilters(ResaleAuthorizationFiltersT&& value) { SetResaleAuthorizationFilters(std::forward<ResaleAuthorizationFiltersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MachineLearningProductFilters& GetMachineLearningProductFilters() const { return m_machineLearningProductFilters; }
+    inline bool MachineLearningProductFiltersHasBeenSet() const { return m_machineLearningProductFiltersHasBeenSet; }
+    template<typename MachineLearningProductFiltersT = MachineLearningProductFilters>
+    void SetMachineLearningProductFilters(MachineLearningProductFiltersT&& value) { m_machineLearningProductFiltersHasBeenSet = true; m_machineLearningProductFilters = std::forward<MachineLearningProductFiltersT>(value); }
+    template<typename MachineLearningProductFiltersT = MachineLearningProductFilters>
+    EntityTypeFilters& WithMachineLearningProductFilters(MachineLearningProductFiltersT&& value) { SetMachineLearningProductFilters(std::forward<MachineLearningProductFiltersT>(value)); return *this;}
+    ///@}
   private:
 
     DataProductFilters m_dataProductFilters;
@@ -133,6 +144,9 @@ namespace Model
 
     ResaleAuthorizationFilters m_resaleAuthorizationFilters;
     bool m_resaleAuthorizationFiltersHasBeenSet = false;
+
+    MachineLearningProductFilters m_machineLearningProductFilters;
+    bool m_machineLearningProductFiltersHasBeenSet = false;
   };
 
 } // namespace Model

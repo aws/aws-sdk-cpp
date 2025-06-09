@@ -12,6 +12,7 @@
 #include <aws/marketplace-catalog/model/SaaSProductSummary.h>
 #include <aws/marketplace-catalog/model/OfferSummary.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSummary.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductSummary.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +196,16 @@ namespace Model
     template<typename ResaleAuthorizationSummaryT = ResaleAuthorizationSummary>
     EntitySummary& WithResaleAuthorizationSummary(ResaleAuthorizationSummaryT&& value) { SetResaleAuthorizationSummary(std::forward<ResaleAuthorizationSummaryT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MachineLearningProductSummary& GetMachineLearningProductSummary() const { return m_machineLearningProductSummary; }
+    inline bool MachineLearningProductSummaryHasBeenSet() const { return m_machineLearningProductSummaryHasBeenSet; }
+    template<typename MachineLearningProductSummaryT = MachineLearningProductSummary>
+    void SetMachineLearningProductSummary(MachineLearningProductSummaryT&& value) { m_machineLearningProductSummaryHasBeenSet = true; m_machineLearningProductSummary = std::forward<MachineLearningProductSummaryT>(value); }
+    template<typename MachineLearningProductSummaryT = MachineLearningProductSummary>
+    EntitySummary& WithMachineLearningProductSummary(MachineLearningProductSummaryT&& value) { SetMachineLearningProductSummary(std::forward<MachineLearningProductSummaryT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -232,6 +243,9 @@ namespace Model
 
     ResaleAuthorizationSummary m_resaleAuthorizationSummary;
     bool m_resaleAuthorizationSummaryHasBeenSet = false;
+
+    MachineLearningProductSummary m_machineLearningProductSummary;
+    bool m_machineLearningProductSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@
 #include <aws/customer-profiles/model/Consolidation.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionResult.h>
+#include <aws/customer-profiles/model/CreateDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/CreateDomainLayoutResult.h>
 #include <aws/customer-profiles/model/CreateDomainRequest.h>
 #include <aws/customer-profiles/model/CreateDomainResult.h>
 #include <aws/customer-profiles/model/CreateEventStreamRequest.h>
@@ -71,6 +73,8 @@
 #include <aws/customer-profiles/model/DateDimensionType.h>
 #include <aws/customer-profiles/model/DeleteCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteCalculatedAttributeDefinitionResult.h>
+#include <aws/customer-profiles/model/DeleteDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/DeleteDomainLayoutResult.h>
 #include <aws/customer-profiles/model/DeleteDomainRequest.h>
 #include <aws/customer-profiles/model/DeleteDomainResult.h>
 #include <aws/customer-profiles/model/DeleteEventStreamRequest.h>
@@ -126,6 +130,8 @@
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileRequest.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileResult.h>
+#include <aws/customer-profiles/model/GetDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/GetDomainLayoutResult.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
 #include <aws/customer-profiles/model/GetDomainResult.h>
 #include <aws/customer-profiles/model/GetEventStreamRequest.h>
@@ -166,6 +172,8 @@
 #include <aws/customer-profiles/model/JobSchedule.h>
 #include <aws/customer-profiles/model/JobScheduleDayOfTheWeek.h>
 #include <aws/customer-profiles/model/JobStats.h>
+#include <aws/customer-profiles/model/LayoutItem.h>
+#include <aws/customer-profiles/model/LayoutType.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsRequest.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
 #include <aws/customer-profiles/model/ListCalculatedAttributeDefinitionItem.h>
@@ -175,6 +183,8 @@
 #include <aws/customer-profiles/model/ListCalculatedAttributesForProfileRequest.h>
 #include <aws/customer-profiles/model/ListCalculatedAttributesForProfileResult.h>
 #include <aws/customer-profiles/model/ListDomainItem.h>
+#include <aws/customer-profiles/model/ListDomainLayoutsRequest.h>
+#include <aws/customer-profiles/model/ListDomainLayoutsResult.h>
 #include <aws/customer-profiles/model/ListDomainsRequest.h>
 #include <aws/customer-profiles/model/ListDomainsResult.h>
 #include <aws/customer-profiles/model/ListEventStreamsRequest.h>
@@ -243,6 +253,8 @@
 #include <aws/customer-profiles/model/Range.h>
 #include <aws/customer-profiles/model/RangeOverride.h>
 #include <aws/customer-profiles/model/RangeUnit.h>
+#include <aws/customer-profiles/model/Readiness.h>
+#include <aws/customer-profiles/model/ReadinessStatus.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingRequest.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingResponse.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingStatus.h>
@@ -284,12 +296,15 @@
 #include <aws/customer-profiles/model/UpdateAddress.h>
 #include <aws/customer-profiles/model/UpdateCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/UpdateCalculatedAttributeDefinitionResult.h>
+#include <aws/customer-profiles/model/UpdateDomainLayoutRequest.h>
+#include <aws/customer-profiles/model/UpdateDomainLayoutResult.h>
 #include <aws/customer-profiles/model/UpdateDomainRequest.h>
 #include <aws/customer-profiles/model/UpdateDomainResult.h>
 #include <aws/customer-profiles/model/UpdateEventTriggerRequest.h>
 #include <aws/customer-profiles/model/UpdateEventTriggerResult.h>
 #include <aws/customer-profiles/model/UpdateProfileRequest.h>
 #include <aws/customer-profiles/model/UpdateProfileResult.h>
+#include <aws/customer-profiles/model/ValueRange.h>
 #include <aws/customer-profiles/model/WorkflowAttributes.h>
 #include <aws/customer-profiles/model/WorkflowMetrics.h>
 #include <aws/customer-profiles/model/WorkflowStepItem.h>

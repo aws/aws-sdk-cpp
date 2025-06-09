@@ -51,6 +51,12 @@ Aws::String CreateCalculatedAttributeDefinitionRequest::SerializePayload() const
    payload.WithString("Statistic", StatisticMapper::GetNameForStatistic(m_statistic));
   }
 
+  if(m_useHistoricalDataHasBeenSet)
+  {
+   payload.WithBool("UseHistoricalData", m_useHistoricalData);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

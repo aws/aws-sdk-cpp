@@ -34,6 +34,17 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
     ss << "AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
 
+  if(m_associatedSubnetIdsHasBeenSet)
+  {
+    unsigned associatedSubnetIdsCount = 1;
+    for(auto& item : m_associatedSubnetIds)
+    {
+      ss << "AssociatedSubnetId." << associatedSubnetIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      associatedSubnetIdsCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

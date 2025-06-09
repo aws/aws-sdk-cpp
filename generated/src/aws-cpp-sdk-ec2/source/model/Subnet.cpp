@@ -129,6 +129,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_blockPublicAccessStates = blockPublicAccessStatesNode;
       m_blockPublicAccessStatesHasBeenSet = true;
     }
+    XmlNode typeNode = resultNode.FirstChild("type");
+    if(!typeNode.IsNull())
+    {
+      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
+      m_typeHasBeenSet = true;
+    }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
@@ -270,6 +276,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMemberSs.str().c_str());
   }
 
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
@@ -385,6 +396,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String blockPublicAccessStatesLocationAndMember(location);
       blockPublicAccessStatesLocationAndMember += ".BlockPublicAccessStates";
       m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMember.c_str());
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
   if(m_subnetIdHasBeenSet)
   {

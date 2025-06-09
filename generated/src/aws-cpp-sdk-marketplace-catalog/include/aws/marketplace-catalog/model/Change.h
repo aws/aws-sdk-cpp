@@ -111,7 +111,12 @@ namespace Model
     /**
      * <p>Alternative field that accepts a JSON value instead of a string for
      * <code>ChangeType</code> details. You can use either <code>Details</code> or
-     * <code>DetailsDocument</code>, but not both.</p>
+     * <code>DetailsDocument</code>, but not both.</p> <p>To download the
+     * "DetailsDocument" shapes, see the <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+     * and <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+     * shapes on GitHub.</p>
      */
     inline Aws::Utils::DocumentView GetDetailsDocument() const { return m_detailsDocument; }
     inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }

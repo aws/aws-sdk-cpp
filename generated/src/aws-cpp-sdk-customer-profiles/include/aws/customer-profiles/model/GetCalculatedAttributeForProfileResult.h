@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The timestamp of the newest object included in the calculated attribute
+     * calculation.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastObjectTimestamp() const { return m_lastObjectTimestamp; }
+    template<typename LastObjectTimestampT = Aws::Utils::DateTime>
+    void SetLastObjectTimestamp(LastObjectTimestampT&& value) { m_lastObjectTimestampHasBeenSet = true; m_lastObjectTimestamp = std::forward<LastObjectTimestampT>(value); }
+    template<typename LastObjectTimestampT = Aws::Utils::DateTime>
+    GetCalculatedAttributeForProfileResult& WithLastObjectTimestamp(LastObjectTimestampT&& value) { SetLastObjectTimestamp(std::forward<LastObjectTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -98,6 +111,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastObjectTimestamp{};
+    bool m_lastObjectTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

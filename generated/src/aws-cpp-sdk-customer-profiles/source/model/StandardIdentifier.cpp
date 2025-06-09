@@ -25,6 +25,15 @@ namespace Aws
         static const int CASE_HASH = HashingUtils::HashString("CASE");
         static const int ORDER_HASH = HashingUtils::HashString("ORDER");
         static const int COMMUNICATION_RECORD_HASH = HashingUtils::HashString("COMMUNICATION_RECORD");
+        static const int AIR_PREFERENCE_HASH = HashingUtils::HashString("AIR_PREFERENCE");
+        static const int HOTEL_PREFERENCE_HASH = HashingUtils::HashString("HOTEL_PREFERENCE");
+        static const int AIR_BOOKING_HASH = HashingUtils::HashString("AIR_BOOKING");
+        static const int AIR_SEGMENT_HASH = HashingUtils::HashString("AIR_SEGMENT");
+        static const int HOTEL_RESERVATION_HASH = HashingUtils::HashString("HOTEL_RESERVATION");
+        static const int HOTEL_STAY_REVENUE_HASH = HashingUtils::HashString("HOTEL_STAY_REVENUE");
+        static const int LOYALTY_HASH = HashingUtils::HashString("LOYALTY");
+        static const int LOYALTY_TRANSACTION_HASH = HashingUtils::HashString("LOYALTY_TRANSACTION");
+        static const int LOYALTY_PROMOTION_HASH = HashingUtils::HashString("LOYALTY_PROMOTION");
         static const int UNIQUE_HASH = HashingUtils::HashString("UNIQUE");
         static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
         static const int LOOKUP_ONLY_HASH = HashingUtils::HashString("LOOKUP_ONLY");
@@ -53,6 +62,42 @@ namespace Aws
           else if (hashCode == COMMUNICATION_RECORD_HASH)
           {
             return StandardIdentifier::COMMUNICATION_RECORD;
+          }
+          else if (hashCode == AIR_PREFERENCE_HASH)
+          {
+            return StandardIdentifier::AIR_PREFERENCE;
+          }
+          else if (hashCode == HOTEL_PREFERENCE_HASH)
+          {
+            return StandardIdentifier::HOTEL_PREFERENCE;
+          }
+          else if (hashCode == AIR_BOOKING_HASH)
+          {
+            return StandardIdentifier::AIR_BOOKING;
+          }
+          else if (hashCode == AIR_SEGMENT_HASH)
+          {
+            return StandardIdentifier::AIR_SEGMENT;
+          }
+          else if (hashCode == HOTEL_RESERVATION_HASH)
+          {
+            return StandardIdentifier::HOTEL_RESERVATION;
+          }
+          else if (hashCode == HOTEL_STAY_REVENUE_HASH)
+          {
+            return StandardIdentifier::HOTEL_STAY_REVENUE;
+          }
+          else if (hashCode == LOYALTY_HASH)
+          {
+            return StandardIdentifier::LOYALTY;
+          }
+          else if (hashCode == LOYALTY_TRANSACTION_HASH)
+          {
+            return StandardIdentifier::LOYALTY_TRANSACTION;
+          }
+          else if (hashCode == LOYALTY_PROMOTION_HASH)
+          {
+            return StandardIdentifier::LOYALTY_PROMOTION;
           }
           else if (hashCode == UNIQUE_HASH)
           {
@@ -96,6 +141,24 @@ namespace Aws
             return "ORDER";
           case StandardIdentifier::COMMUNICATION_RECORD:
             return "COMMUNICATION_RECORD";
+          case StandardIdentifier::AIR_PREFERENCE:
+            return "AIR_PREFERENCE";
+          case StandardIdentifier::HOTEL_PREFERENCE:
+            return "HOTEL_PREFERENCE";
+          case StandardIdentifier::AIR_BOOKING:
+            return "AIR_BOOKING";
+          case StandardIdentifier::AIR_SEGMENT:
+            return "AIR_SEGMENT";
+          case StandardIdentifier::HOTEL_RESERVATION:
+            return "HOTEL_RESERVATION";
+          case StandardIdentifier::HOTEL_STAY_REVENUE:
+            return "HOTEL_STAY_REVENUE";
+          case StandardIdentifier::LOYALTY:
+            return "LOYALTY";
+          case StandardIdentifier::LOYALTY_TRANSACTION:
+            return "LOYALTY_TRANSACTION";
+          case StandardIdentifier::LOYALTY_PROMOTION:
+            return "LOYALTY_PROMOTION";
           case StandardIdentifier::UNIQUE:
             return "UNIQUE";
           case StandardIdentifier::SECONDARY:

@@ -71,6 +71,7 @@
 #include <aws/elasticfilesystem/model/InternalServerError.h>
 #include <aws/elasticfilesystem/model/InvalidPolicyException.h>
 #include <aws/elasticfilesystem/model/IpAddressInUse.h>
+#include <aws/elasticfilesystem/model/IpAddressType.h>
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
 #include <aws/elasticfilesystem/model/LifecyclePolicy.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>

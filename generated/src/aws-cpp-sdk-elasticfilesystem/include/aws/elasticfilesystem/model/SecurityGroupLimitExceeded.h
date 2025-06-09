@@ -24,8 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the size of <code>SecurityGroups</code> specified in the request
-   * is greater than five.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if the number of <code>SecurityGroups</code> specified in the
+   * request is greater than the limit, which is based on account quota. Either
+   * delete some security groups or request that the account quota be raised. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+   * VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security
+   * Groups</b> table). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/SecurityGroupLimitExceeded">AWS
    * API Reference</a></p>
    */

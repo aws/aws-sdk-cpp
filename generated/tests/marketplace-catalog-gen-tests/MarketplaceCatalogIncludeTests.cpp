@@ -77,6 +77,16 @@
 #include <aws/marketplace-catalog/model/ListEntitiesResult.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceResult.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductFilters.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductLastModifiedDateFilter.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductLastModifiedDateFilterDateRange.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductSort.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductSortBy.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductSummary.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductTitleFilter.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductVisibilityFilter.h>
+#include <aws/marketplace-catalog/model/MachineLearningProductVisibilityString.h>
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilterDateRange.h>
 #include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>

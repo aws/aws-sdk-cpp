@@ -94,7 +94,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The JSON value of the details specific to the entity.</p>
+     * <p>The JSON value of the details specific to the entity.</p> <p>To download
+     * "DetailsDocument" shapes, see the <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+     * and <a
+     * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+     * shapes on GitHub.</p>
      */
     inline Aws::Utils::DocumentView GetDetailsDocument() const { return m_detailsDocument; }
     template<typename DetailsDocumentT = Aws::Utils::Document>

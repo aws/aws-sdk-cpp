@@ -433,6 +433,20 @@ namespace Model
     template<typename OperatorT = OperatorResponse>
     NetworkInterface& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The subnets associated with this network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedSubnets() const { return m_associatedSubnets; }
+    inline bool AssociatedSubnetsHasBeenSet() const { return m_associatedSubnetsHasBeenSet; }
+    template<typename AssociatedSubnetsT = Aws::Vector<Aws::String>>
+    void SetAssociatedSubnets(AssociatedSubnetsT&& value) { m_associatedSubnetsHasBeenSet = true; m_associatedSubnets = std::forward<AssociatedSubnetsT>(value); }
+    template<typename AssociatedSubnetsT = Aws::Vector<Aws::String>>
+    NetworkInterface& WithAssociatedSubnets(AssociatedSubnetsT&& value) { SetAssociatedSubnets(std::forward<AssociatedSubnetsT>(value)); return *this;}
+    template<typename AssociatedSubnetsT = Aws::String>
+    NetworkInterface& AddAssociatedSubnets(AssociatedSubnetsT&& value) { m_associatedSubnetsHasBeenSet = true; m_associatedSubnets.emplace_back(std::forward<AssociatedSubnetsT>(value)); return *this; }
+    ///@}
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -524,6 +538,9 @@ namespace Model
 
     OperatorResponse m_operator;
     bool m_operatorHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedSubnets;
+    bool m_associatedSubnetsHasBeenSet = false;
   };
 
 } // namespace Model
