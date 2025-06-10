@@ -43,8 +43,8 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> that uniquely identifies the application resource.
-     * Format example:
-     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
      * </p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -57,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An ID that uniquely identifies the application resource. For example:
-     * <code>a-9ZY8X7Wv6</code>.</p>
+     * <p>An ID that uniquely identifies the application resource. Example ID:
+     * <code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

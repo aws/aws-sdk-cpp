@@ -46,11 +46,12 @@ namespace Model
      * generates a ZIP file name based on the stream session metadata. Alternatively,
      * you can provide a custom file name with a <code>.zip</code> file extension.</p>
      * <p> Example 1: If you provide an S3 URI called
-     * <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams
-     * will save the files at that location. </p> <p> Example 2: If you provide an S3
-     * URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon
-     * GameLift Streams will save the files at
-     * <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then
+     * Amazon GameLift Streams will save the files at that location. </p> <p> Example
+     * 2: If you provide an S3 URI called
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>,
+     * then Amazon GameLift Streams will save the files at
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
      * or another similar name. </p>
      */
     inline const Aws::String& GetOutputUri() const { return m_outputUri; }
