@@ -92,8 +92,8 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> that uniquely identifies the application resource.
-     * Format example:
-     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
      * </p>
      */
     inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
@@ -105,10 +105,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) assigned to the stream session resource. When
-     * combined with the stream group ARN, this value uniquely identifies it across all
-     * Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:[AWS
-     * Region]:[AWS account]:streamsession/[resource ID]</code>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that's assigned to a stream session resource. When
+     * combined with the stream group resource ID, this value uniquely identifies the
+     * stream session across all Amazon Web Services Regions. Format is
+     * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:streamsession/[stream
+     * group resource ID]/[stream session resource ID]</code>.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     template<typename ArnT = Aws::String>
@@ -182,8 +185,9 @@ namespace Model
      * <p> The location where Amazon GameLift Streams is streaming your application
      * from. </p> <p> A location's name. For example, <code>us-east-1</code>. For a
      * complete list of locations that Amazon GameLift Streams supports, refer to <a
-     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
-     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+     * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetLocation() const { return m_location; }
     template<typename LocationT = Aws::String>
@@ -272,7 +276,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the Amazon GameLift Streams stream group that is
-     * hosting the stream session.</p>
+     * hosting the stream session. Format example: <code>sg-1AB2C3De4</code>.</p>
      */
     inline const Aws::String& GetStreamGroupId() const { return m_streamGroupId; }
     template<typename StreamGroupIdT = Aws::String>

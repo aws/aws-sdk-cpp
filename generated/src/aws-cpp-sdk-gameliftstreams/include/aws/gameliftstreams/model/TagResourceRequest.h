@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>The <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> of the Amazon GameLift Streams resource that you want to
      * apply tags to.</p>
      */

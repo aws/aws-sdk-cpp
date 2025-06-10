@@ -60,8 +60,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of a Amazon GameLift Streams stream group to retrieve
-     * the stream session for. You can use either the stream group ID or the Amazon
-     * Resource Name (ARN).</p>
+     * the stream session for. You can use either the stream group ID or the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

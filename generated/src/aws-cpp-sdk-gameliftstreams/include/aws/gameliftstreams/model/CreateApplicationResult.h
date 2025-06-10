@@ -83,8 +83,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon Resource Name (ARN) that's assigned to an application resource and
-     * uniquely identifies it across all Amazon Web Services Regions. Format is
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that's assigned to an application resource and uniquely
+     * identifies it across all Amazon Web Services Regions. Format is
      * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:application/[resource
      * ID]</code>.</p>
      */
@@ -147,12 +149,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
-     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
+     * <p>A unique ID value that is assigned to the resource when it's created. Format
+     * example: <code>a-9ZY8X7Wv6</code>.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>

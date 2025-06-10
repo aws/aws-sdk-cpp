@@ -46,9 +46,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The streaming capacity that is allocated and ready to handle stream requests
+     * <p>The streaming capacity that is allocated and ready to handle stream requests
      * without delay. You pay for this capacity whether it's in use or not. Best for
-     * quickest time from streaming request to streaming session. </p>
+     * quickest time from streaming request to streaming session.</p>
      */
     inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
     inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
@@ -60,8 +60,9 @@ namespace Model
     /**
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
      * of locations that Amazon GameLift Streams supports, refer to <a
-     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
-     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+     * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
@@ -73,10 +74,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The streaming capacity that Amazon GameLift Streams can allocate in response
+     * <p>The streaming capacity that Amazon GameLift Streams can allocate in response
      * to stream requests, and then de-allocate when the session has terminated. This
      * offers a cost control measure at the expense of a greater startup time
-     * (typically under 5 minutes). </p>
+     * (typically under 5 minutes).</p>
      */
     inline int GetOnDemandCapacity() const { return m_onDemandCapacity; }
     inline bool OnDemandCapacityHasBeenSet() const { return m_onDemandCapacityHasBeenSet; }

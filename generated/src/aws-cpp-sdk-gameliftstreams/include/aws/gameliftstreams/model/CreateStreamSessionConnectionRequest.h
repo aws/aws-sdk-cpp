@@ -52,11 +52,11 @@ namespace Model
      * <p> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
-     * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
-     * or ID-<code>sg-1AB2C3De4</code>. </p> <p> The stream group that you want to run
-     * this stream session with. The stream group must be in <code>ACTIVE</code> status
-     * and have idle stream capacity. </p>
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * Example ID: <code>sg-1AB2C3De4</code>. </p> <p> The stream group that you want
+     * to run this stream session with. The stream group must be in <code>ACTIVE</code>
+     * status and have idle stream capacity. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -85,8 +85,10 @@ namespace Model
     /**
      * <p> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> that uniquely identifies the stream session resource.
-     * Format example: <code>1AB2C3De4</code>. The stream session must be in
+     * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.
+     * Example ID: <code>ABC123def4567</code>. </p> <p> The stream session must be in
      * <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status. </p>
      */
     inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }

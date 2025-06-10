@@ -60,7 +60,13 @@ namespace Model
      * stream group. Once set, this application cannot be disassociated from the stream
      * group, unlike applications that are associated using AssociateApplications. If
      * not set when creating a stream group, you will need to call
-     * AssociateApplications later, before you can start streaming.</p>
+     * AssociateApplications later, before you can start streaming.</p> <p>This value
+     * is an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetDefaultApplicationIdentifier() const { return m_defaultApplicationIdentifier; }
     inline bool DefaultApplicationIdentifierHasBeenSet() const { return m_defaultApplicationIdentifierHasBeenSet; }

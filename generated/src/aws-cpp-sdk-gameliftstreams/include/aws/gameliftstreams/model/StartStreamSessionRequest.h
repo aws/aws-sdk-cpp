@@ -91,9 +91,9 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
-     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
@@ -149,9 +149,9 @@ namespace Model
      * <p>The stream group to run this stream session with.</p> <p>This value is an <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
-     * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
-     * or ID-<code>sg-1AB2C3De4</code>. </p>
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * Example ID: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -170,8 +170,9 @@ namespace Model
      * the primary location. </p> <p> This value is A set of location names. For
      * example, <code>us-east-1</code>. For a complete list of locations that Amazon
      * GameLift Streams supports, refer to <a
-     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
-     * and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+     * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
@@ -208,9 +209,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A WebRTC ICE offer string to use when initializing a WebRTC connection. The
-     * offer is a very long JSON string. Provide the string as a text value in
-     * quotes.</p>
+     * <p>A WebRTC ICE offer string to use when initializing a WebRTC connection.
+     * Typically, the offer is a very long JSON string. Provide the string as a text
+     * value in quotes.</p> <p>Amazon GameLift Streams also supports setting the field
+     * to "NO_CLIENT_CONNECTION". This will create a session without needing any
+     * browser request or Web SDK integration. The session starts up as usual and waits
+     * for a reconnection from a browser, which is accomplished using <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionConnection.html">CreateStreamSessionConnection</a>.</p>
      */
     inline const Aws::String& GetSignalRequest() const { return m_signalRequest; }
     inline bool SignalRequestHasBeenSet() const { return m_signalRequestHasBeenSet; }

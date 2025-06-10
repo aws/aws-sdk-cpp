@@ -42,8 +42,10 @@ namespace Model
      * save application logs. Required if you specify one or more
      * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
      * permissions that give Amazon GameLift Streams access to write the log files. For
-     * more information, see <b>Getting Started</b> in the Amazon GameLift Streams
-     * Developer Guide. </p> 
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html#application-bucket-permission-template">Application
+     * log bucket permission policy</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>.</p> 
      */
     inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
