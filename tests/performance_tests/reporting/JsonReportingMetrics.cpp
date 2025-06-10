@@ -20,7 +20,6 @@ void JsonReportingMetrics::SetTestContext(const Aws::String& size, const Aws::St
   m_testBucketType = bucketType;
 }
 
-JsonReportingMetrics::JsonReportingMetrics() {}
 JsonReportingMetrics::~JsonReportingMetrics() { DumpJson(); }
 
 JsonReportingMetricsFactory::~JsonReportingMetricsFactory() {}
@@ -87,7 +86,6 @@ void JsonReportingMetrics::OnRequestRetry(const Aws::String&, const Aws::String&
 void JsonReportingMetrics::OnFinish(const Aws::String&, const Aws::String&, const std::shared_ptr<const Aws::Http::HttpRequest>&,
                                     void*) const {}
 
-void JsonReportingMetrics::AggregateMetrics() const {}
 
 void JsonReportingMetrics::DumpJson() const {
   std::lock_guard<std::mutex> lock(m_mutex);

@@ -37,7 +37,6 @@ struct RequestMetric {
  */
 class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
  public:
-  JsonReportingMetrics();
   ~JsonReportingMetrics() override;
 
   void* OnRequestStarted(const Aws::String&, const Aws::String&, const std::shared_ptr<const Aws::Http::HttpRequest>&) const override;
@@ -60,11 +59,9 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void AddMetric(const Aws::String& serviceName, const Aws::String& requestName,
                  const Aws::Monitoring::CoreMetricsCollection& metricsFromCore) const;
   void DumpJson() const;
-  void AggregateMetrics() const;
 
   mutable std::mutex m_mutex;
   mutable Aws::Vector<RequestMetric> m_metrics;
-  mutable Aws::Map<Aws::String, Aws::Vector<double>> m_aggregatedMetrics;
 
   static Aws::String m_testSize;
   static Aws::String m_testBucketType;
@@ -75,7 +72,6 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
  */
 class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
  public:
-  JsonReportingMetricsFactory() {}
   ~JsonReportingMetricsFactory() override;
   Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> CreateMonitoringInstance() const override;
 };
