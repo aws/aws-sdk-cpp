@@ -26,7 +26,8 @@ public:
   Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String,
           bool,
           Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy,
-          Aws::Auth::AWSSigningAlgorithm > > additionalProperties;
+          Aws::Auth::AWSSigningAlgorithm,
+          Aws::Vector<Aws::String>>> additionalProperties;
 
 };
 
