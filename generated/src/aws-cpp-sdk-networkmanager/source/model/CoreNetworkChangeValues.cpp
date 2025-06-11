@@ -86,6 +86,21 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     }
     m_serviceInsertionActionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("VpnEcmpSupport"))
+  {
+    m_vpnEcmpSupport = jsonValue.GetBool("VpnEcmpSupport");
+    m_vpnEcmpSupportHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DnsSupport"))
+  {
+    m_dnsSupport = jsonValue.GetBool("DnsSupport");
+    m_dnsSupportHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SecurityGroupReferencingSupport"))
+  {
+    m_securityGroupReferencingSupport = jsonValue.GetBool("SecurityGroupReferencingSupport");
+    m_securityGroupReferencingSupportHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -164,6 +179,24 @@ JsonValue CoreNetworkChangeValues::Jsonize() const
      serviceInsertionActionsJsonList[serviceInsertionActionsIndex].AsObject(m_serviceInsertionActions[serviceInsertionActionsIndex].Jsonize());
    }
    payload.WithArray("ServiceInsertionActions", std::move(serviceInsertionActionsJsonList));
+
+  }
+
+  if(m_vpnEcmpSupportHasBeenSet)
+  {
+   payload.WithBool("VpnEcmpSupport", m_vpnEcmpSupport);
+
+  }
+
+  if(m_dnsSupportHasBeenSet)
+  {
+   payload.WithBool("DnsSupport", m_dnsSupport);
+
+  }
+
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+   payload.WithBool("SecurityGroupReferencingSupport", m_securityGroupReferencingSupport);
 
   }
 

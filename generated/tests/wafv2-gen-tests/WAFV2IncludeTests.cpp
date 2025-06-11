@@ -17,6 +17,7 @@
 #include <aws/wafv2/model/APIKeySummary.h>
 #include <aws/wafv2/model/AWSManagedRulesACFPRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesATPRuleSet.h>
+#include <aws/wafv2/model/AWSManagedRulesAntiDDoSRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesBotControlRuleSet.h>
 #include <aws/wafv2/model/ActionCondition.h>
 #include <aws/wafv2/model/ActionValue.h>
@@ -42,6 +43,8 @@
 #include <aws/wafv2/model/ChallengeResponse.h>
 #include <aws/wafv2/model/CheckCapacityRequest.h>
 #include <aws/wafv2/model/CheckCapacityResult.h>
+#include <aws/wafv2/model/ClientSideAction.h>
+#include <aws/wafv2/model/ClientSideActionConfig.h>
 #include <aws/wafv2/model/ComparisonOperator.h>
 #include <aws/wafv2/model/Condition.h>
 #include <aws/wafv2/model/CookieMatchPattern.h>
@@ -181,6 +184,7 @@
 #include <aws/wafv2/model/LogType.h>
 #include <aws/wafv2/model/LoggingConfiguration.h>
 #include <aws/wafv2/model/LoggingFilter.h>
+#include <aws/wafv2/model/LowReputationMode.h>
 #include <aws/wafv2/model/ManagedProductDescriptor.h>
 #include <aws/wafv2/model/ManagedRuleGroupConfig.h>
 #include <aws/wafv2/model/ManagedRuleGroupStatement.h>
@@ -194,6 +198,7 @@
 #include <aws/wafv2/model/MobileSdkRelease.h>
 #include <aws/wafv2/model/NoneAction.h>
 #include <aws/wafv2/model/NotStatement.h>
+#include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
 #include <aws/wafv2/model/OrStatement.h>
 #include <aws/wafv2/model/OverrideAction.h>
 #include <aws/wafv2/model/OversizeHandling.h>
@@ -252,6 +257,7 @@
 #include <aws/wafv2/model/SampledHTTPRequest.h>
 #include <aws/wafv2/model/Scope.h>
 #include <aws/wafv2/model/SensitivityLevel.h>
+#include <aws/wafv2/model/SensitivityToAct.h>
 #include <aws/wafv2/model/SingleHeader.h>
 #include <aws/wafv2/model/SingleQueryArgument.h>
 #include <aws/wafv2/model/SizeConstraintStatement.h>
@@ -279,6 +285,7 @@
 #include <aws/wafv2/model/UpdateWebACLResult.h>
 #include <aws/wafv2/model/UriFragment.h>
 #include <aws/wafv2/model/UriPath.h>
+#include <aws/wafv2/model/UsageOfAction.h>
 #include <aws/wafv2/model/UsernameField.h>
 #include <aws/wafv2/model/VersionToPublish.h>
 #include <aws/wafv2/model/VisibilityConfig.h>

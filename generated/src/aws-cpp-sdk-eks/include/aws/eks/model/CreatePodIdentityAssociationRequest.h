@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the cluster to create the association in.</p>
+     * <p>The name of the cluster to create the EKS Pod Identity association in.</p>
      */
     inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
@@ -48,9 +48,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Kubernetes namespace inside the cluster to create the
-     * association in. The service account and the pods that use the service account
-     * must be in this namespace.</p>
+     * <p>The name of the Kubernetes namespace inside the cluster to create the EKS Pod
+     * Identity association in. The service account and the Pods that use the service
+     * account must be in this namespace.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service
      * account. The EKS Pod Identity agent manages credentials to assume this role for
-     * applications in the containers in the pods that use this service account.</p>
+     * applications in the containers in the Pods that use this service account.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -131,6 +131,55 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>Disable the automatic sessions tags that are appended by EKS Pod
+     * Identity.</p> <p>EKS Pod Identity adds a pre-defined set of session tags when it
+     * assumes the role. You can use these tags to author a single role that can work
+     * across resources by allowing access to Amazon Web Services resources based on
+     * matching tags. By default, EKS Pod Identity attaches six tags, including tags
+     * for cluster name, namespace, and service account name. For the list of tags
+     * added by EKS Pod Identity, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List
+     * of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User
+     * Guide</i>.</p> <p>Amazon Web Services compresses inline session policies,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. If you receive a <code>PackedPolicyTooLarge</code> error
+     * indicating the packed binary format has exceeded the size limit, you can attempt
+     * to reduce the size by disabling the session tags added by EKS Pod Identity.</p>
+     */
+    inline bool GetDisableSessionTags() const { return m_disableSessionTags; }
+    inline bool DisableSessionTagsHasBeenSet() const { return m_disableSessionTagsHasBeenSet; }
+    inline void SetDisableSessionTags(bool value) { m_disableSessionTagsHasBeenSet = true; m_disableSessionTags = value; }
+    inline CreatePodIdentityAssociationRequest& WithDisableSessionTags(bool value) { SetDisableSessionTags(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the
+     * service account. This role is assumed by using the EKS Pod Identity association
+     * role, then the credentials for this role are injected into the Pod.</p> <p>When
+     * you run applications on Amazon EKS, your application might need to access Amazon
+     * Web Services resources from a different role that exists in the same or
+     * different Amazon Web Services account. For example, your application running in
+     * ��Account A” might need to access resources, such as Amazon S3 buckets in
+     * “Account B” or within “Account A” itself. You can create a association to access
+     * Amazon Web Services resources in “Account B” by creating two IAM roles: a role
+     * in “Account A” and a role in “Account B” (which can be the same or different
+     * account), each with the necessary trust and permission policies. After you
+     * provide these roles in the <i>IAM role</i> and <i>Target IAM role</i> fields,
+     * EKS will perform role chaining to ensure your application gets the required
+     * permissions. This means Role A will assume Role B, allowing your Pods to
+     * securely access resources like S3 buckets in the target account.</p>
+     */
+    inline const Aws::String& GetTargetRoleArn() const { return m_targetRoleArn; }
+    inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }
+    template<typename TargetRoleArnT = Aws::String>
+    void SetTargetRoleArn(TargetRoleArnT&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::forward<TargetRoleArnT>(value); }
+    template<typename TargetRoleArnT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithTargetRoleArn(TargetRoleArnT&& value) { SetTargetRoleArn(std::forward<TargetRoleArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -150,6 +199,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_disableSessionTags{false};
+    bool m_disableSessionTagsHasBeenSet = false;
+
+    Aws::String m_targetRoleArn;
+    bool m_targetRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

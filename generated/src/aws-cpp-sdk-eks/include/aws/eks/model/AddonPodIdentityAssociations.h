@@ -24,12 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>A type of Pod Identity Association owned by an Amazon EKS Add-on.</p> <p>Each
-   * EKS Pod Identity Association maps a role to a service account in a namespace in
-   * the cluster.</p> <p>For more information, see <a
+   * <p>A type of EKS Pod Identity association owned by an Amazon EKS add-on.</p>
+   * <p>Each association maps a role to a service account in a namespace in the
+   * cluster.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-   * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS
-   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * an IAM Role to an Amazon EKS add-on using EKS Pod Identity</a> in the <i>Amazon
+   * EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonPodIdentityAssociations">AWS
    * API Reference</a></p>
    */

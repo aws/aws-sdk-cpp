@@ -35,6 +35,16 @@ VpcOptions& VpcOptions::operator =(JsonView jsonValue)
     m_applianceModeSupport = jsonValue.GetBool("ApplianceModeSupport");
     m_applianceModeSupportHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DnsSupport"))
+  {
+    m_dnsSupport = jsonValue.GetBool("DnsSupport");
+    m_dnsSupportHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SecurityGroupReferencingSupport"))
+  {
+    m_securityGroupReferencingSupport = jsonValue.GetBool("SecurityGroupReferencingSupport");
+    m_securityGroupReferencingSupportHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +61,18 @@ JsonValue VpcOptions::Jsonize() const
   if(m_applianceModeSupportHasBeenSet)
   {
    payload.WithBool("ApplianceModeSupport", m_applianceModeSupport);
+
+  }
+
+  if(m_dnsSupportHasBeenSet)
+  {
+   payload.WithBool("DnsSupport", m_dnsSupport);
+
+  }
+
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+   payload.WithBool("SecurityGroupReferencingSupport", m_securityGroupReferencingSupport);
 
   }
 

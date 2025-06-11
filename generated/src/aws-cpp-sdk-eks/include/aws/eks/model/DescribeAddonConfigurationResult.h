@@ -73,8 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
-     * policies. Use this information to create an IAM Role for the Addon.</p>
+     * <p>The Kubernetes service account name used by the add-on, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the add-on.</p>
      */
     inline const Aws::Vector<AddonPodIdentityConfiguration>& GetPodIdentityConfiguration() const { return m_podIdentityConfiguration; }
     template<typename PodIdentityConfigurationT = Aws::Vector<AddonPodIdentityConfiguration>>

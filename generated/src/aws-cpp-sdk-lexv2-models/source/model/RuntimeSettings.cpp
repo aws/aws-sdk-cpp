@@ -30,6 +30,11 @@ RuntimeSettings& RuntimeSettings::operator =(JsonView jsonValue)
     m_slotResolutionImprovement = jsonValue.GetObject("slotResolutionImprovement");
     m_slotResolutionImprovementHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("nluImprovement"))
+  {
+    m_nluImprovement = jsonValue.GetObject("nluImprovement");
+    m_nluImprovementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue RuntimeSettings::Jsonize() const
   if(m_slotResolutionImprovementHasBeenSet)
   {
    payload.WithObject("slotResolutionImprovement", m_slotResolutionImprovement.Jsonize());
+
+  }
+
+  if(m_nluImprovementHasBeenSet)
+  {
+   payload.WithObject("nluImprovement", m_nluImprovement.Jsonize());
 
   }
 

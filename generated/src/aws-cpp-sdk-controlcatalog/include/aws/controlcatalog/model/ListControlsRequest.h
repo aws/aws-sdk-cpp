@@ -7,6 +7,7 @@
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/controlcatalog/ControlCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controlcatalog/model/ControlFilter.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +60,20 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListControlsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional filter that narrows the results to controls with specific
+     * implementation types or identifiers. If you don't provide a filter, the
+     * operation returns all available controls.</p>
+     */
+    inline const ControlFilter& GetFilter() const { return m_filter; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    template<typename FilterT = ControlFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ControlFilter>
+    ListControlsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -66,6 +81,9 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    ControlFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,6 +40,11 @@ ManagedRuleGroupConfig& ManagedRuleGroupConfig::operator =(JsonView jsonValue)
     m_aWSManagedRulesACFPRuleSet = jsonValue.GetObject("AWSManagedRulesACFPRuleSet");
     m_aWSManagedRulesACFPRuleSetHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AWSManagedRulesAntiDDoSRuleSet"))
+  {
+    m_aWSManagedRulesAntiDDoSRuleSet = jsonValue.GetObject("AWSManagedRulesAntiDDoSRuleSet");
+    m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue ManagedRuleGroupConfig::Jsonize() const
   if(m_aWSManagedRulesACFPRuleSetHasBeenSet)
   {
    payload.WithObject("AWSManagedRulesACFPRuleSet", m_aWSManagedRulesACFPRuleSet.Jsonize());
+
+  }
+
+  if(m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet)
+  {
+   payload.WithObject("AWSManagedRulesAntiDDoSRuleSet", m_aWSManagedRulesAntiDDoSRuleSet.Jsonize());
 
   }
 

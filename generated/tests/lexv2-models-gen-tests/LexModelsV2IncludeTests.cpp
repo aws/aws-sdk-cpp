@@ -405,6 +405,7 @@
 #include <aws/lexv2-models/model/MessageSelectionStrategy.h>
 #include <aws/lexv2-models/model/MultipleValuesSetting.h>
 #include <aws/lexv2-models/model/NewCustomVocabularyItem.h>
+#include <aws/lexv2-models/model/NluImprovementSpecification.h>
 #include <aws/lexv2-models/model/ObfuscationSetting.h>
 #include <aws/lexv2-models/model/ObfuscationSettingType.h>
 #include <aws/lexv2-models/model/OpensearchConfiguration.h>

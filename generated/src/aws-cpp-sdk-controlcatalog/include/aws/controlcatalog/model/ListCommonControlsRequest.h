@@ -65,8 +65,7 @@ namespace Model
     /**
      * <p>An optional filter that narrows the results to a specific objective.</p>
      * <p>This filter allows you to specify one objective ARN at a time. Passing
-     * multiple ARNs in the <code>CommonControlFilter</code> isn’t currently
-     * supported.</p>
+     * multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
      */
     inline const CommonControlFilter& GetCommonControlFilter() const { return m_commonControlFilter; }
     inline bool CommonControlFilterHasBeenSet() const { return m_commonControlFilterHasBeenSet; }

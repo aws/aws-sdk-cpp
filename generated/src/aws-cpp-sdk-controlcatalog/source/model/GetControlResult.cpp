@@ -30,6 +30,15 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Aliases"))
+  {
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+    {
+      m_aliases.push_back(aliasesJsonList[aliasesIndex].AsString());
+    }
+    m_aliasesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -73,6 +82,15 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
     m_createTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("GovernedResources"))
+  {
+    Aws::Utils::Array<JsonView> governedResourcesJsonList = jsonValue.GetArray("GovernedResources");
+    for(unsigned governedResourcesIndex = 0; governedResourcesIndex < governedResourcesJsonList.GetLength(); ++governedResourcesIndex)
+    {
+      m_governedResources.push_back(governedResourcesJsonList[governedResourcesIndex].AsString());
+    }
+    m_governedResourcesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

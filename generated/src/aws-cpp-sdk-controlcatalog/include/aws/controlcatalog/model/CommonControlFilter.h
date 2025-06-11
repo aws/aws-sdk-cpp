@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The objective that's used as filter criteria.</p> <p>You can use this
      * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
+     * <code>CommonControlFilter</code> isn’t supported.</p>
      */
     inline const Aws::Vector<ObjectiveResourceFilter>& GetObjectives() const { return m_objectives; }
     inline bool ObjectivesHasBeenSet() const { return m_objectivesHasBeenSet; }

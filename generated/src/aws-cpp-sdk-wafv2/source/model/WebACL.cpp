@@ -140,6 +140,11 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_retrofittedByFirewallManager = jsonValue.GetBool("RetrofittedByFirewallManager");
     m_retrofittedByFirewallManagerHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OnSourceDDoSProtectionConfig"))
+  {
+    m_onSourceDDoSProtectionConfig = jsonValue.GetObject("OnSourceDDoSProtectionConfig");
+    m_onSourceDDoSProtectionConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -283,6 +288,12 @@ JsonValue WebACL::Jsonize() const
   if(m_retrofittedByFirewallManagerHasBeenSet)
   {
    payload.WithBool("RetrofittedByFirewallManager", m_retrofittedByFirewallManager);
+
+  }
+
+  if(m_onSourceDDoSProtectionConfigHasBeenSet)
+  {
+   payload.WithObject("OnSourceDDoSProtectionConfig", m_onSourceDDoSProtectionConfig.Jsonize());
 
   }
 

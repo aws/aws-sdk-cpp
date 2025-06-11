@@ -79,6 +79,21 @@ PodIdentityAssociation& PodIdentityAssociation::operator =(JsonView jsonValue)
     m_ownerArn = jsonValue.GetString("ownerArn");
     m_ownerArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("disableSessionTags"))
+  {
+    m_disableSessionTags = jsonValue.GetBool("disableSessionTags");
+    m_disableSessionTagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("targetRoleArn"))
+  {
+    m_targetRoleArn = jsonValue.GetString("targetRoleArn");
+    m_targetRoleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+    m_externalIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -146,6 +161,24 @@ JsonValue PodIdentityAssociation::Jsonize() const
   if(m_ownerArnHasBeenSet)
   {
    payload.WithString("ownerArn", m_ownerArn);
+
+  }
+
+  if(m_disableSessionTagsHasBeenSet)
+  {
+   payload.WithBool("disableSessionTags", m_disableSessionTags);
+
+  }
+
+  if(m_targetRoleArnHasBeenSet)
+  {
+   payload.WithString("targetRoleArn", m_targetRoleArn);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

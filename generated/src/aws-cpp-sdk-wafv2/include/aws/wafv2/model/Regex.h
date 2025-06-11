@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A single regular expression. This is used in a
-   * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>A single regular expression. This is used in a <a>RegexPatternSet</a> and
+   * also in the configuration for the Amazon Web Services Managed Rules rule group
+   * <code>AWSManagedRulesAntiDDoSRuleSet</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Regex">AWS API
    * Reference</a></p>
    */

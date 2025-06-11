@@ -60,7 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of the Kubernetes namespace inside the cluster to create the
-     * association in. The service account and the pods that use the service account
+     * association in. The service account and the Pods that use the service account
      * must be in this namespace.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     * <p>If defined, the association is owned by an Amazon EKS add-on.</p>
      */
     inline const Aws::String& GetOwnerArn() const { return m_ownerArn; }
     inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }

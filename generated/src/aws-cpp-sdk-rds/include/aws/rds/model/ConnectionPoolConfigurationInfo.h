@@ -108,7 +108,12 @@ namespace Model
      * statements to make sure that each connection has identical settings. The query
      * added here must be valid. For including multiple variables in a single SET
      * statement, use a comma separator. This is an optional field.</p> <p>For example:
-     * <code>SET variable1=value1, variable2=value2</code> </p>
+     * <code>SET variable1=value1, variable2=value2</code> </p>  <p>Since
+     * you can access initialization query as part of target group configuration, it is
+     * not protected by authentication or cryptographic methods. Anyone with access to
+     * view or manage your proxy target group configuration can view the initialization
+     * query. You should not add sensitive data, such as passwords or long-lived
+     * encryption keys, to this option.</p> 
      */
     inline const Aws::String& GetInitQuery() const { return m_initQuery; }
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }
