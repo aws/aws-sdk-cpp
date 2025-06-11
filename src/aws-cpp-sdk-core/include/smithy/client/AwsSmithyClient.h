@@ -169,12 +169,15 @@ namespace client
                 const auto& epParams = ctx.m_pRequest->GetEndpointContextParams();
                 for (const auto& epParam : epParams) {
                     using ParameterType = Aws::Endpoint::EndpointParameter::ParameterType;
-                    if(epParam.GetStoredType() == ParameterType::STRING)
-                        identityParams.additionalProperties.insert({epParam.GetName(), epParam.GetStrValueNoCheck()});
-                    else if (epParam.GetStoredType() == ParameterType::BOOLEAN)
-                        identityParams.additionalProperties.insert({epParam.GetName(), epParam.GetBoolValueNoCheck()});
-                    else
-                        assert(!"Unknown endpoint parameter!");
+                    if(epParam.GetStoredType() == ParameterType::STRING) {
+                      identityParams.additionalProperties.insert({epParam.GetName(), epParam.GetStrValueNoCheck()});
+                    } else if (epParam.GetStoredType() == ParameterType::BOOLEAN) {
+                      identityParams.additionalProperties.insert({epParam.GetName(), epParam.GetBoolValueNoCheck()});
+                    } else if (epParam.GetStoredType() == ParameterType::STRING_ARRAY) {
+                      identityParams.additionalProperties.insert({epParam.GetName(), epParam.GetStrArrayValueNoCheck()});
+                    } else {
+                      assert(!"Unknown endpoint parameter!");
+                    }
                 }
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {
