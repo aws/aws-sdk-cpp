@@ -113,6 +113,12 @@ Aws::String CreateWebACLRequest::SerializePayload() const
 
   }
 
+  if(m_onSourceDDoSProtectionConfigHasBeenSet)
+  {
+   payload.WithObject("OnSourceDDoSProtectionConfig", m_onSourceDDoSProtectionConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

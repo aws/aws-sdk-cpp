@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/controlcatalog/model/ControlBehavior.h>
 #include <aws/controlcatalog/model/ControlSeverity.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
 #include <aws/controlcatalog/model/ImplementationDetails.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/controlcatalog/model/ControlParameter.h>
 #include <utility>
@@ -48,6 +48,22 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     GetControlResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of alternative identifiers for the control. These are human-readable
+     * designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same
+     * control across different Amazon Web Services services or compliance
+     * frameworks.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAliases() const { return m_aliases; }
+    template<typename AliasesT = Aws::Vector<Aws::String>>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aws::Vector<Aws::String>>
+    GetControlResult& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
+    template<typename AliasesT = Aws::String>
+    GetControlResult& AddAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases.emplace_back(std::forward<AliasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -141,6 +157,25 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of Amazon Web Services resource types that are governed by this
+     * control. This information helps you understand which controls can govern certain
+     * types of resources, and conversely, which resources are affected when the
+     * control is implemented. The resources are represented as Amazon Web Services
+     * CloudFormation resource types. If <code>GovernedResources</code> cannot be
+     * represented by available CloudFormation resource types, it’s returned as an
+     * empty list.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGovernedResources() const { return m_governedResources; }
+    template<typename GovernedResourcesT = Aws::Vector<Aws::String>>
+    void SetGovernedResources(GovernedResourcesT&& value) { m_governedResourcesHasBeenSet = true; m_governedResources = std::forward<GovernedResourcesT>(value); }
+    template<typename GovernedResourcesT = Aws::Vector<Aws::String>>
+    GetControlResult& WithGovernedResources(GovernedResourcesT&& value) { SetGovernedResources(std::forward<GovernedResourcesT>(value)); return *this;}
+    template<typename GovernedResourcesT = Aws::String>
+    GetControlResult& AddGovernedResources(GovernedResourcesT&& value) { m_governedResourcesHasBeenSet = true; m_governedResources.emplace_back(std::forward<GovernedResourcesT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -152,6 +187,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_aliases;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -176,6 +214,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_governedResources;
+    bool m_governedResourcesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

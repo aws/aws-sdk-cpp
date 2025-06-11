@@ -86,7 +86,8 @@ namespace Model
     SCOPE_DOWN,
     CUSTOM_KEYS,
     ACP_RULE_SET_RESPONSE_INSPECTION,
-    DATA_PROTECTION_CONFIG
+    DATA_PROTECTION_CONFIG,
+    LOW_REPUTATION_MODE
   };
 
 namespace ParameterExceptionFieldMapper

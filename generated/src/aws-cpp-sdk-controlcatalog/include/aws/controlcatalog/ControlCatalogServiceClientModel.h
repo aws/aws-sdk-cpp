@@ -20,9 +20,11 @@
 /* Service model headers required in ControlCatalogClient header */
 #include <aws/controlcatalog/model/GetControlResult.h>
 #include <aws/controlcatalog/model/ListCommonControlsResult.h>
+#include <aws/controlcatalog/model/ListControlMappingsResult.h>
 #include <aws/controlcatalog/model/ListControlsResult.h>
 #include <aws/controlcatalog/model/ListDomainsResult.h>
 #include <aws/controlcatalog/model/ListObjectivesResult.h>
+#include <aws/controlcatalog/model/ListControlMappingsRequest.h>
 #include <aws/controlcatalog/model/ListCommonControlsRequest.h>
 #include <aws/controlcatalog/model/ListDomainsRequest.h>
 #include <aws/controlcatalog/model/ListControlsRequest.h>
@@ -69,6 +71,7 @@ namespace Aws
       /* Service model forward declarations required in ControlCatalogClient header */
       class GetControlRequest;
       class ListCommonControlsRequest;
+      class ListControlMappingsRequest;
       class ListControlsRequest;
       class ListDomainsRequest;
       class ListObjectivesRequest;
@@ -77,6 +80,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<GetControlResult, ControlCatalogError> GetControlOutcome;
       typedef Aws::Utils::Outcome<ListCommonControlsResult, ControlCatalogError> ListCommonControlsOutcome;
+      typedef Aws::Utils::Outcome<ListControlMappingsResult, ControlCatalogError> ListControlMappingsOutcome;
       typedef Aws::Utils::Outcome<ListControlsResult, ControlCatalogError> ListControlsOutcome;
       typedef Aws::Utils::Outcome<ListDomainsResult, ControlCatalogError> ListDomainsOutcome;
       typedef Aws::Utils::Outcome<ListObjectivesResult, ControlCatalogError> ListObjectivesOutcome;
@@ -85,6 +89,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<GetControlOutcome> GetControlOutcomeCallable;
       typedef std::future<ListCommonControlsOutcome> ListCommonControlsOutcomeCallable;
+      typedef std::future<ListControlMappingsOutcome> ListControlMappingsOutcomeCallable;
       typedef std::future<ListControlsOutcome> ListControlsOutcomeCallable;
       typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
       typedef std::future<ListObjectivesOutcome> ListObjectivesOutcomeCallable;
@@ -96,6 +101,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const ControlCatalogClient*, const Model::GetControlRequest&, const Model::GetControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetControlResponseReceivedHandler;
     typedef std::function<void(const ControlCatalogClient*, const Model::ListCommonControlsRequest&, const Model::ListCommonControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCommonControlsResponseReceivedHandler;
+    typedef std::function<void(const ControlCatalogClient*, const Model::ListControlMappingsRequest&, const Model::ListControlMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlMappingsResponseReceivedHandler;
     typedef std::function<void(const ControlCatalogClient*, const Model::ListControlsRequest&, const Model::ListControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlsResponseReceivedHandler;
     typedef std::function<void(const ControlCatalogClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const ControlCatalogClient*, const Model::ListObjectivesRequest&, const Model::ListObjectivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectivesResponseReceivedHandler;

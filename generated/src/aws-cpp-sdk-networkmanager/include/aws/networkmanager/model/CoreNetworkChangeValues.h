@@ -153,6 +153,39 @@ namespace Model
     template<typename ServiceInsertionActionsT = ServiceInsertionAction>
     CoreNetworkChangeValues& AddServiceInsertionActions(ServiceInsertionActionsT&& value) { m_serviceInsertionActionsHasBeenSet = true; m_serviceInsertionActions.emplace_back(std::forward<ServiceInsertionActionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core
+     * network.</p>
+     */
+    inline bool GetVpnEcmpSupport() const { return m_vpnEcmpSupport; }
+    inline bool VpnEcmpSupportHasBeenSet() const { return m_vpnEcmpSupportHasBeenSet; }
+    inline void SetVpnEcmpSupport(bool value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport = value; }
+    inline CoreNetworkChangeValues& WithVpnEcmpSupport(bool value) { SetVpnEcmpSupport(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether public DNS support is supported. The default is
+     * <code>true</code>. </p>
+     */
+    inline bool GetDnsSupport() const { return m_dnsSupport; }
+    inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
+    inline void SetDnsSupport(bool value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
+    inline CoreNetworkChangeValues& WithDnsSupport(bool value) { SetDnsSupport(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether security group referencing is enabled for the core
+     * network.</p>
+     */
+    inline bool GetSecurityGroupReferencingSupport() const { return m_securityGroupReferencingSupport; }
+    inline bool SecurityGroupReferencingSupportHasBeenSet() const { return m_securityGroupReferencingSupportHasBeenSet; }
+    inline void SetSecurityGroupReferencingSupport(bool value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = value; }
+    inline CoreNetworkChangeValues& WithSecurityGroupReferencingSupport(bool value) { SetSecurityGroupReferencingSupport(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_segmentName;
@@ -181,6 +214,15 @@ namespace Model
 
     Aws::Vector<ServiceInsertionAction> m_serviceInsertionActions;
     bool m_serviceInsertionActionsHasBeenSet = false;
+
+    bool m_vpnEcmpSupport{false};
+    bool m_vpnEcmpSupportHasBeenSet = false;
+
+    bool m_dnsSupport{false};
+    bool m_dnsSupportHasBeenSet = false;
+
+    bool m_securityGroupReferencingSupport{false};
+    bool m_securityGroupReferencingSupportHasBeenSet = false;
   };
 
 } // namespace Model
