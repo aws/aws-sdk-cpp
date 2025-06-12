@@ -141,3 +141,4 @@ Please make sure to check out our resources too before opening an issue:
 * [Coding Standards](./docs/CODING_STANDARDS.md)
 * [License](./LICENSE)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
+*/
