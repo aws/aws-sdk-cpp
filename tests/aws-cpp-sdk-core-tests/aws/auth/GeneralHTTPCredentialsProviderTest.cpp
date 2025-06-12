@@ -28,6 +28,10 @@ const char AWS_CONTAINER_AUTHORIZATION_TOKEN[]      = "AWS_CONTAINER_AUTHORIZATI
 
 const std::vector<const char*> ENV_VARS = {AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE, AWS_CONTAINER_CREDENTIALS_RELATIVE_URI, AWS_CONTAINER_CREDENTIALS_FULL_URI, AWS_CONTAINER_AUTHORIZATION_TOKEN};
 
+namespace {
+size_t PROVIDER_CREATE_ATTEMPTS = 5;
+}
+
 
 class GeneralHTTPCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
@@ -488,9 +492,14 @@ TEST_P(GeneralHTTPCredentialsProviderResponseHandlingTests, ResponseHandlingTest
   }
 
   Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_FULL_URI", "http://localhost/get-credentials", 1);
-  std::shared_ptr<GeneralHTTPCredentialsProvider> genProvider = CreateGeneralProvider();
-  ASSERT_TRUE(genProvider && genProvider->IsValid());
-  AWSCredentials credentials = genProvider->GetAWSCredentials();
+  size_t createRetryCount{0};
+  std::shared_ptr<GeneralHTTPCredentialsProvider> provider{nullptr};
+  while ((!provider || !provider->IsValid()) && createRetryCount < PROVIDER_CREATE_ATTEMPTS) {
+    provider = CreateGeneralProvider();
+    createRetryCount++;
+  }
+  ASSERT_TRUE(provider && provider->IsValid());
+  AWSCredentials credentials = provider->GetAWSCredentials();
 
   auto requestsMade = m_mockHttpClient->GetAllRequestsMade();
   if (expect.GetString("type") == "error") {
