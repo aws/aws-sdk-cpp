@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
      * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
+     * <code>ObjectiveFilter</code> isn’t supported.</p>
      */
     inline const Aws::Vector<DomainResourceFilter>& GetDomains() const { return m_domains; }
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }

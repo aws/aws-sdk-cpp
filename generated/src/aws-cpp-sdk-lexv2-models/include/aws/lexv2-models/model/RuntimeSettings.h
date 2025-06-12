@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/SlotResolutionImprovementSpecification.h>
+#include <aws/lexv2-models/model/NluImprovementSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -51,10 +52,25 @@ namespace Model
     template<typename SlotResolutionImprovementT = SlotResolutionImprovementSpecification>
     RuntimeSettings& WithSlotResolutionImprovement(SlotResolutionImprovementT&& value) { SetSlotResolutionImprovement(std::forward<SlotResolutionImprovementT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object containing specifications for the assisted nlu feature.</p>
+     */
+    inline const NluImprovementSpecification& GetNluImprovement() const { return m_nluImprovement; }
+    inline bool NluImprovementHasBeenSet() const { return m_nluImprovementHasBeenSet; }
+    template<typename NluImprovementT = NluImprovementSpecification>
+    void SetNluImprovement(NluImprovementT&& value) { m_nluImprovementHasBeenSet = true; m_nluImprovement = std::forward<NluImprovementT>(value); }
+    template<typename NluImprovementT = NluImprovementSpecification>
+    RuntimeSettings& WithNluImprovement(NluImprovementT&& value) { SetNluImprovement(std::forward<NluImprovementT>(value)); return *this;}
+    ///@}
   private:
 
     SlotResolutionImprovementSpecification m_slotResolutionImprovement;
     bool m_slotResolutionImprovementHasBeenSet = false;
+
+    NluImprovementSpecification m_nluImprovement;
+    bool m_nluImprovementHasBeenSet = false;
   };
 
 } // namespace Model

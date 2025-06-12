@@ -41,10 +41,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource
-     * and that uniquely identifies the group across all Amazon Web Services Regions.
-     * Format is <code>arn:aws:gameliftstreams:[AWS Region]:[AWS
-     * account]:streamgroup/[resource ID]</code>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that is assigned to the stream group resource and that
+     * uniquely identifies the group across all Amazon Web Services Regions. Format is
+     * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:streamgroup/[resource
+     * ID]</code>.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     template<typename ArnT = Aws::String>
@@ -59,9 +61,9 @@ namespace Model
      * stream any of these applications by using this stream group. </p> <p>This value
      * is a set of <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Names (ARNs)</a> that uniquely identify application resources. Format
-     * example:
-     * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.
+     * Resource Names (ARNs)</a> that uniquely identify application resources. Example
+     * ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAssociatedApplications() const { return m_associatedApplications; }

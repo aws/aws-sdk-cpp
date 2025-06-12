@@ -37,9 +37,9 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
-     * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
-     * or ID-<code>sg-1AB2C3De4</code>. </p>
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * Example ID: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -56,11 +56,12 @@ namespace Model
      * generates a ZIP file name based on the stream session metadata. Alternatively,
      * you can provide a custom file name with a <code>.zip</code> file extension.</p>
      * <p> Example 1: If you provide an S3 URI called
-     * <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams
-     * will save the files at that location. </p> <p> Example 2: If you provide an S3
-     * URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon
-     * GameLift Streams will save the files at
-     * <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then
+     * Amazon GameLift Streams will save the files at that location. </p> <p> Example
+     * 2: If you provide an S3 URI called
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>,
+     * then Amazon GameLift Streams will save the files at
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
      * or another similar name. </p>
      */
     inline const Aws::String& GetOutputUri() const { return m_outputUri; }
@@ -76,7 +77,9 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
-     * resource. Format example: <code>1AB2C3De4</code>. </p>
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.
+     * Example ID: <code>ABC123def4567</code>. </p>
      */
     inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }
     inline bool StreamSessionIdentifierHasBeenSet() const { return m_streamSessionIdentifierHasBeenSet; }

@@ -224,9 +224,10 @@ namespace Model
     /**
      * <p>If you set this value to <code>False</code> when creating a cluster, the
      * default networking add-ons will not be installed.</p> <p>The default networking
-     * addons include vpc-cni, coredns, and kube-proxy.</p> <p>Use this option when you
-     * plan to install third-party alternative add-ons or self-manage the default
-     * networking add-ons.</p>
+     * add-ons include <code>vpc-cni</code>, <code>coredns</code>, and
+     * <code>kube-proxy</code>.</p> <p>Use this option when you plan to install
+     * third-party alternative add-ons or self-manage the default networking
+     * add-ons.</p>
      */
     inline bool GetBootstrapSelfManagedAddons() const { return m_bootstrapSelfManagedAddons; }
     inline bool BootstrapSelfManagedAddonsHasBeenSet() const { return m_bootstrapSelfManagedAddonsHasBeenSet; }

@@ -17,6 +17,7 @@ namespace Aws
     {
         static const char AF_SOUTH_1[] = "af-south-1"; // Africa (Cape Town)
         static const char AP_EAST_1[] = "ap-east-1"; // Asia Pacific (Hong Kong)
+        static const char AP_EAST_2[] = "ap-east-2"; // Asia Pacific (Taipei)
         static const char AP_NORTHEAST_1[] = "ap-northeast-1"; // Asia Pacific (Tokyo)
         static const char AP_NORTHEAST_2[] = "ap-northeast-2"; // Asia Pacific (Seoul)
         static const char AP_NORTHEAST_3[] = "ap-northeast-3"; // Asia Pacific (Osaka)

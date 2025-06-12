@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the compute type of the addon version.</p>
+     * <p>Indicates the compute type of the add-on version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComputeTypes() const { return m_computeTypes; }
     inline bool ComputeTypesHasBeenSet() const { return m_computeTypesHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates if the Addon requires IAM Permissions to operate, such as
+     * <p>Indicates if the add-on requires IAM Permissions to operate, such as
      * networking permissions.</p>
      */
     inline bool GetRequiresIamPermissions() const { return m_requiresIamPermissions; }

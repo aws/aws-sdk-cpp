@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of the Kubernetes namespace inside the cluster to create the
-     * association in. The service account and the pods that use the service account
+     * association in. The service account and the Pods that use the service account
      * must be in this namespace.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service
      * account. The EKS Pod Identity agent manages credentials to assume this role for
-     * applications in the containers in the pods that use this service account.</p>
+     * applications in the containers in the Pods that use this service account.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -165,7 +165,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The most recent timestamp that the association was modified at</p>
+     * <p>The most recent timestamp that the association was modified at.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
@@ -177,7 +177,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     * <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS
+     * add-on.</p>
      */
     inline const Aws::String& GetOwnerArn() const { return m_ownerArn; }
     inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }
@@ -185,6 +186,61 @@ namespace Model
     void SetOwnerArn(OwnerArnT&& value) { m_ownerArnHasBeenSet = true; m_ownerArn = std::forward<OwnerArnT>(value); }
     template<typename OwnerArnT = Aws::String>
     PodIdentityAssociation& WithOwnerArn(OwnerArnT&& value) { SetOwnerArn(std::forward<OwnerArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The state of the automatic sessions tags. The value of <i>true</i> disables
+     * these tags.</p> <p>EKS Pod Identity adds a pre-defined set of session tags when
+     * it assumes the role. You can use these tags to author a single role that can
+     * work across resources by allowing access to Amazon Web Services resources based
+     * on matching tags. By default, EKS Pod Identity attaches six tags, including tags
+     * for cluster name, namespace, and service account name. For the list of tags
+     * added by EKS Pod Identity, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List
+     * of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User
+     * Guide</i>.</p>
+     */
+    inline bool GetDisableSessionTags() const { return m_disableSessionTags; }
+    inline bool DisableSessionTagsHasBeenSet() const { return m_disableSessionTagsHasBeenSet; }
+    inline void SetDisableSessionTags(bool value) { m_disableSessionTagsHasBeenSet = true; m_disableSessionTags = value; }
+    inline PodIdentityAssociation& WithDisableSessionTags(bool value) { SetDisableSessionTags(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the
+     * service account. This role is assumed by using the EKS Pod Identity association
+     * role, then the credentials for this role are injected into the Pod.</p>
+     */
+    inline const Aws::String& GetTargetRoleArn() const { return m_targetRoleArn; }
+    inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }
+    template<typename TargetRoleArnT = Aws::String>
+    void SetTargetRoleArn(TargetRoleArnT&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::forward<TargetRoleArnT>(value); }
+    template<typename TargetRoleArnT = Aws::String>
+    PodIdentityAssociation& WithTargetRoleArn(TargetRoleArnT&& value) { SetTargetRoleArn(std::forward<TargetRoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for this EKS Pod Identity association for a target IAM
+     * role. You put this value in the trust policy of the target role, in a
+     * <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures
+     * that the target role can only be assumed by this association. This prevents the
+     * <i>confused deputy problem</i>. For more information about the confused deputy
+     * problem, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+     * confused deputy problem</a> in the <i>IAM User Guide</i>.</p> <p>If you want to
+     * use the same target role with multiple associations or other roles, use
+     * independent statements in the trust policy to allow <code>sts:AssumeRole</code>
+     * access from each role.</p>
+     */
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    PodIdentityAssociation& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -217,6 +273,15 @@ namespace Model
 
     Aws::String m_ownerArn;
     bool m_ownerArnHasBeenSet = false;
+
+    bool m_disableSessionTags{false};
+    bool m_disableSessionTagsHasBeenSet = false;
+
+    Aws::String m_targetRoleArn;
+    bool m_targetRoleArnHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

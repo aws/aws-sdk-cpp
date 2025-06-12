@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>An optional filter that narrows the results to a specific domain.</p> <p>This
      * filter allows you to specify one domain ARN at a time. Passing multiple ARNs in
-     * the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+     * the <code>ObjectiveFilter</code> isn’t supported.</p>
      */
     inline const ObjectiveFilter& GetObjectiveFilter() const { return m_objectiveFilter; }
     inline bool ObjectiveFilterHasBeenSet() const { return m_objectiveFilterHasBeenSet; }

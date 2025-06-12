@@ -32,7 +32,7 @@ namespace Model
    * and edge locations.</p> <p>Enter one or more IPv4 CIDR blocks in decimal
    * dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p> <p>It must
    * satisfy the following requirements:</p> <ul> <li> <p>Each block must be within
-   * an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24,
+   * an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32,
    * maximum allowed size is /8. Publicly-routable addresses aren't supported.</p>
    * </li> <li> <p>Each block cannot overlap with the range of the VPC CIDR blocks
    * for your EKS resources, or the block of the Kubernetes service IP range.</p>
@@ -58,7 +58,7 @@ namespace Model
      * and edge locations.</p> <p>Enter one or more IPv4 CIDR blocks in decimal
      * dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p> <p>It must
      * satisfy the following requirements:</p> <ul> <li> <p>Each block must be within
-     * an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24,
+     * an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32,
      * maximum allowed size is /8. Publicly-routable addresses aren't supported.</p>
      * </li> <li> <p>Each block cannot overlap with the range of the VPC CIDR blocks
      * for your EKS resources, or the block of the Kubernetes service IP range.</p>

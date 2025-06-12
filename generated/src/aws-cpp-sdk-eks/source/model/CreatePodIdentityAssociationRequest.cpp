@@ -51,6 +51,18 @@ Aws::String CreatePodIdentityAssociationRequest::SerializePayload() const
 
   }
 
+  if(m_disableSessionTagsHasBeenSet)
+  {
+   payload.WithBool("disableSessionTags", m_disableSessionTags);
+
+  }
+
+  if(m_targetRoleArnHasBeenSet)
+  {
+   payload.WithString("targetRoleArn", m_targetRoleArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

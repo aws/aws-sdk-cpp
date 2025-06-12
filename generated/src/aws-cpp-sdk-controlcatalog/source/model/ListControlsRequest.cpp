@@ -17,7 +17,15 @@ using namespace Aws::Http;
 
 Aws::String ListControlsRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 void ListControlsRequest::AddQueryStringParameters(URI& uri) const
