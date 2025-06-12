@@ -65,6 +65,11 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_executionRole = jsonValue.GetString("executionRole");
     m_executionRoleHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("executionIamPolicy"))
+  {
+    m_executionIamPolicy = jsonValue.GetObject("executionIamPolicy");
+    m_executionIamPolicyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("state"))
   {
     m_state = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("state"));
@@ -214,6 +219,12 @@ JsonValue JobRun::Jsonize() const
   if(m_executionRoleHasBeenSet)
   {
    payload.WithString("executionRole", m_executionRole);
+
+  }
+
+  if(m_executionIamPolicyHasBeenSet)
+  {
+   payload.WithObject("executionIamPolicy", m_executionIamPolicy.Jsonize());
 
   }
 

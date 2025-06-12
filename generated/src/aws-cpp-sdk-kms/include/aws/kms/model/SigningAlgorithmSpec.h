@@ -25,7 +25,8 @@ namespace Model
     ECDSA_SHA_256,
     ECDSA_SHA_384,
     ECDSA_SHA_512,
-    SM2DSA
+    SM2DSA,
+    ML_DSA_SHAKE_256
   };
 
 namespace SigningAlgorithmSpecMapper

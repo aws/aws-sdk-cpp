@@ -30,6 +30,7 @@ namespace Aws
         static const int ECDSA_SHA_384_HASH = HashingUtils::HashString("ECDSA_SHA_384");
         static const int ECDSA_SHA_512_HASH = HashingUtils::HashString("ECDSA_SHA_512");
         static const int SM2DSA_HASH = HashingUtils::HashString("SM2DSA");
+        static const int ML_DSA_SHAKE_256_HASH = HashingUtils::HashString("ML_DSA_SHAKE_256");
 
 
         SigningAlgorithmSpec GetSigningAlgorithmSpecForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return SigningAlgorithmSpec::SM2DSA;
           }
+          else if (hashCode == ML_DSA_SHAKE_256_HASH)
+          {
+            return SigningAlgorithmSpec::ML_DSA_SHAKE_256;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "ECDSA_SHA_512";
           case SigningAlgorithmSpec::SM2DSA:
             return "SM2DSA";
+          case SigningAlgorithmSpec::ML_DSA_SHAKE_256:
+            return "ML_DSA_SHAKE_256";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

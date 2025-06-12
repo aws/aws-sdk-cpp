@@ -7,6 +7,7 @@
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
 #include <aws/emr-serverless/model/JobRunState.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
 #include <aws/emr-serverless/model/JobDriver.h>
@@ -143,6 +144,16 @@ namespace Model
     void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
     template<typename ExecutionRoleT = Aws::String>
     JobRun& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const JobRunExecutionIamPolicy& GetExecutionIamPolicy() const { return m_executionIamPolicy; }
+    inline bool ExecutionIamPolicyHasBeenSet() const { return m_executionIamPolicyHasBeenSet; }
+    template<typename ExecutionIamPolicyT = JobRunExecutionIamPolicy>
+    void SetExecutionIamPolicy(ExecutionIamPolicyT&& value) { m_executionIamPolicyHasBeenSet = true; m_executionIamPolicy = std::forward<ExecutionIamPolicyT>(value); }
+    template<typename ExecutionIamPolicyT = JobRunExecutionIamPolicy>
+    JobRun& WithExecutionIamPolicy(ExecutionIamPolicyT&& value) { SetExecutionIamPolicy(std::forward<ExecutionIamPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -398,6 +409,9 @@ namespace Model
 
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;
+
+    JobRunExecutionIamPolicy m_executionIamPolicy;
+    bool m_executionIamPolicyHasBeenSet = false;
 
     JobRunState m_state{JobRunState::NOT_SET};
     bool m_stateHasBeenSet = false;
