@@ -2113,13 +2113,8 @@ namespace ECS
          * instances in either zone B or C are considered optimal for termination.</p>
          * </li> <li> <p>Stop the task on a container instance in an optimal Availability
          * Zone (based on the previous steps), favoring container instances with the
-         * largest number of running tasks for this service.</p> </li> </ul>  <p>You
-         * must have a service-linked role when you update any of the following service
-         * properties:</p> <ul> <li> <p> <code>loadBalancers</code>,</p> </li> <li> <p>
-         * <code>serviceRegistries</code> </p> </li> </ul> <p>For more information about
-         * the role see the <code>CreateService</code> request parameter <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
-         * <code>role</code> </a>. </p> <p><h3>See Also:</h3>   <a
+         * largest number of running tasks for this service.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          */

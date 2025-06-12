@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connectcampaignsv2/model/CommunicationLimitsConfig.h>
+#include <aws/connectcampaignsv2/model/InstanceCommunicationLimitsConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,27 +18,22 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CommunicationLimitsConfig::CommunicationLimitsConfig(JsonView jsonValue)
+InstanceCommunicationLimitsConfig::InstanceCommunicationLimitsConfig(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-CommunicationLimitsConfig& CommunicationLimitsConfig::operator =(JsonView jsonValue)
+InstanceCommunicationLimitsConfig& InstanceCommunicationLimitsConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allChannelSubtypes"))
   {
     m_allChannelSubtypes = jsonValue.GetObject("allChannelSubtypes");
     m_allChannelSubtypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceLimitsHandling"))
-  {
-    m_instanceLimitsHandling = InstanceLimitsHandlingMapper::GetInstanceLimitsHandlingForName(jsonValue.GetString("instanceLimitsHandling"));
-    m_instanceLimitsHandlingHasBeenSet = true;
-  }
   return *this;
 }
 
-JsonValue CommunicationLimitsConfig::Jsonize() const
+JsonValue InstanceCommunicationLimitsConfig::Jsonize() const
 {
   JsonValue payload;
 
@@ -46,11 +41,6 @@ JsonValue CommunicationLimitsConfig::Jsonize() const
   {
    payload.WithObject("allChannelSubtypes", m_allChannelSubtypes.Jsonize());
 
-  }
-
-  if(m_instanceLimitsHandlingHasBeenSet)
-  {
-   payload.WithString("instanceLimitsHandling", InstanceLimitsHandlingMapper::GetNameForInstanceLimitsHandling(m_instanceLimitsHandling));
   }
 
   return payload;

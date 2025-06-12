@@ -66,13 +66,15 @@ namespace Model
     ///@{
     /**
      * <p>The status of a campaign, which can be one of the following:</p> <ul> <li>
-     * <p> <code>CREATED</code> - The campaign has been created successfully but has
-     * not been approved. </p> </li> <li> <p> <code>READY</code> - The campaign has
-     * been approved but has not been deployed to the vehicle.</p> </li> <li> <p>
-     * <code>HEALTHY</code> - The campaign has been deployed to the vehicle. </p> </li>
-     * <li> <p> <code>SUSPENDED</code> - The campaign has been suspended and data
-     * collection is paused. </p> </li> <li> <p> <code>DELETING</code> - The campaign
-     * is being removed from the vehicle.</p> </li> </ul>
+     * <p> <code>CREATED</code> - The campaign exists but is not yet approved.</p>
+     * </li> <li> <p> <code>READY</code> - The campaign is approved but has not been
+     * deployed to the vehicle. Data has not arrived at the vehicle yet.</p> </li> <li>
+     * <p> <code>HEALTHY</code> - The campaign is deployed to the vehicle.</p> </li>
+     * <li> <p> <code>SUSPENDED</code> - The campaign is suspended and data collection
+     * is paused.</p> </li> <li> <p> <code>DELETING</code> - The campaign is being
+     * removed from the vehicle.</p> </li> <li> <p> <code>READY_FOR_CHECKIN</code> -
+     * The campaign is approved and waiting for vehicle check-in before deployment.</p>
+     * </li> </ul>
      */
     inline VehicleState GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

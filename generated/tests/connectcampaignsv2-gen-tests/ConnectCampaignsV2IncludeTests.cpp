@@ -67,11 +67,15 @@
 #include <aws/connectcampaignsv2/model/GetCampaignStateResult.h>
 #include <aws/connectcampaignsv2/model/GetConnectInstanceConfigRequest.h>
 #include <aws/connectcampaignsv2/model/GetConnectInstanceConfigResult.h>
+#include <aws/connectcampaignsv2/model/GetInstanceCommunicationLimitsRequest.h>
+#include <aws/connectcampaignsv2/model/GetInstanceCommunicationLimitsResult.h>
 #include <aws/connectcampaignsv2/model/GetInstanceOnboardingJobStatusRequest.h>
 #include <aws/connectcampaignsv2/model/GetInstanceOnboardingJobStatusResult.h>
+#include <aws/connectcampaignsv2/model/InstanceCommunicationLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/InstanceConfig.h>
 #include <aws/connectcampaignsv2/model/InstanceIdFilter.h>
 #include <aws/connectcampaignsv2/model/InstanceIdFilterOperator.h>
+#include <aws/connectcampaignsv2/model/InstanceLimitsHandling.h>
 #include <aws/connectcampaignsv2/model/InstanceOnboardingJobFailureCode.h>
 #include <aws/connectcampaignsv2/model/InstanceOnboardingJobStatus.h>
 #include <aws/connectcampaignsv2/model/InstanceOnboardingJobStatusCode.h>
@@ -97,6 +101,7 @@
 #include <aws/connectcampaignsv2/model/ProfileOutboundRequestFailureCode.h>
 #include <aws/connectcampaignsv2/model/ProgressiveConfig.h>
 #include <aws/connectcampaignsv2/model/PutConnectInstanceIntegrationRequest.h>
+#include <aws/connectcampaignsv2/model/PutInstanceCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/PutOutboundRequestBatchRequest.h>
 #include <aws/connectcampaignsv2/model/PutOutboundRequestBatchResult.h>
 #include <aws/connectcampaignsv2/model/PutProfileOutboundRequestBatchRequest.h>

@@ -23,6 +23,7 @@
 #include <aws/connectcampaignsv2/model/GetCampaignStateResult.h>
 #include <aws/connectcampaignsv2/model/GetCampaignStateBatchResult.h>
 #include <aws/connectcampaignsv2/model/GetConnectInstanceConfigResult.h>
+#include <aws/connectcampaignsv2/model/GetInstanceCommunicationLimitsResult.h>
 #include <aws/connectcampaignsv2/model/GetInstanceOnboardingJobStatusResult.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsResult.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsResult.h>
@@ -84,12 +85,14 @@ namespace Aws
       class GetCampaignStateRequest;
       class GetCampaignStateBatchRequest;
       class GetConnectInstanceConfigRequest;
+      class GetInstanceCommunicationLimitsRequest;
       class GetInstanceOnboardingJobStatusRequest;
       class ListCampaignsRequest;
       class ListConnectInstanceIntegrationsRequest;
       class ListTagsForResourceRequest;
       class PauseCampaignRequest;
       class PutConnectInstanceIntegrationRequest;
+      class PutInstanceCommunicationLimitsRequest;
       class PutOutboundRequestBatchRequest;
       class PutProfileOutboundRequestBatchRequest;
       class ResumeCampaignRequest;
@@ -120,12 +123,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCampaignStateResult, ConnectCampaignsV2Error> GetCampaignStateOutcome;
       typedef Aws::Utils::Outcome<GetCampaignStateBatchResult, ConnectCampaignsV2Error> GetCampaignStateBatchOutcome;
       typedef Aws::Utils::Outcome<GetConnectInstanceConfigResult, ConnectCampaignsV2Error> GetConnectInstanceConfigOutcome;
+      typedef Aws::Utils::Outcome<GetInstanceCommunicationLimitsResult, ConnectCampaignsV2Error> GetInstanceCommunicationLimitsOutcome;
       typedef Aws::Utils::Outcome<GetInstanceOnboardingJobStatusResult, ConnectCampaignsV2Error> GetInstanceOnboardingJobStatusOutcome;
       typedef Aws::Utils::Outcome<ListCampaignsResult, ConnectCampaignsV2Error> ListCampaignsOutcome;
       typedef Aws::Utils::Outcome<ListConnectInstanceIntegrationsResult, ConnectCampaignsV2Error> ListConnectInstanceIntegrationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectCampaignsV2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> PauseCampaignOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> PutConnectInstanceIntegrationOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> PutInstanceCommunicationLimitsOutcome;
       typedef Aws::Utils::Outcome<PutOutboundRequestBatchResult, ConnectCampaignsV2Error> PutOutboundRequestBatchOutcome;
       typedef Aws::Utils::Outcome<PutProfileOutboundRequestBatchResult, ConnectCampaignsV2Error> PutProfileOutboundRequestBatchOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> ResumeCampaignOutcome;
@@ -156,12 +161,14 @@ namespace Aws
       typedef std::future<GetCampaignStateOutcome> GetCampaignStateOutcomeCallable;
       typedef std::future<GetCampaignStateBatchOutcome> GetCampaignStateBatchOutcomeCallable;
       typedef std::future<GetConnectInstanceConfigOutcome> GetConnectInstanceConfigOutcomeCallable;
+      typedef std::future<GetInstanceCommunicationLimitsOutcome> GetInstanceCommunicationLimitsOutcomeCallable;
       typedef std::future<GetInstanceOnboardingJobStatusOutcome> GetInstanceOnboardingJobStatusOutcomeCallable;
       typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
       typedef std::future<ListConnectInstanceIntegrationsOutcome> ListConnectInstanceIntegrationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PauseCampaignOutcome> PauseCampaignOutcomeCallable;
       typedef std::future<PutConnectInstanceIntegrationOutcome> PutConnectInstanceIntegrationOutcomeCallable;
+      typedef std::future<PutInstanceCommunicationLimitsOutcome> PutInstanceCommunicationLimitsOutcomeCallable;
       typedef std::future<PutOutboundRequestBatchOutcome> PutOutboundRequestBatchOutcomeCallable;
       typedef std::future<PutProfileOutboundRequestBatchOutcome> PutProfileOutboundRequestBatchOutcomeCallable;
       typedef std::future<ResumeCampaignOutcome> ResumeCampaignOutcomeCallable;
@@ -195,12 +202,14 @@ namespace Aws
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::GetCampaignStateRequest&, const Model::GetCampaignStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignStateResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::GetCampaignStateBatchRequest&, const Model::GetCampaignStateBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignStateBatchResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::GetConnectInstanceConfigRequest&, const Model::GetConnectInstanceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectInstanceConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectCampaignsV2Client*, const Model::GetInstanceCommunicationLimitsRequest&, const Model::GetInstanceCommunicationLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceCommunicationLimitsResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::GetInstanceOnboardingJobStatusRequest&, const Model::GetInstanceOnboardingJobStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceOnboardingJobStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::ListConnectInstanceIntegrationsRequest&, const Model::ListConnectInstanceIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectInstanceIntegrationsResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PauseCampaignRequest&, const Model::PauseCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseCampaignResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutConnectInstanceIntegrationRequest&, const Model::PutConnectInstanceIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConnectInstanceIntegrationResponseReceivedHandler;
+    typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutInstanceCommunicationLimitsRequest&, const Model::PutInstanceCommunicationLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInstanceCommunicationLimitsResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutOutboundRequestBatchRequest&, const Model::PutOutboundRequestBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOutboundRequestBatchResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutProfileOutboundRequestBatchRequest&, const Model::PutProfileOutboundRequestBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileOutboundRequestBatchResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::ResumeCampaignRequest&, const Model::ResumeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeCampaignResponseReceivedHandler;

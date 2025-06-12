@@ -71,8 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the domain name. Supported only for private custom domain names.
-     * </p>
+     * <p>The ARN of the domain name. </p>
      */
     inline const Aws::String& GetDomainNameArn() const { return m_domainNameArn; }
     template<typename DomainNameArnT = Aws::String>

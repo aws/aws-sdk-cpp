@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/CommunicationLimits.h>
+#include <aws/connectcampaignsv2/model/InstanceLimitsHandling.h>
 #include <utility>
 
 namespace Aws
@@ -46,10 +47,21 @@ namespace Model
     template<typename AllChannelSubtypesT = CommunicationLimits>
     CommunicationLimitsConfig& WithAllChannelSubtypes(AllChannelSubtypesT&& value) { SetAllChannelSubtypes(std::forward<AllChannelSubtypesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline InstanceLimitsHandling GetInstanceLimitsHandling() const { return m_instanceLimitsHandling; }
+    inline bool InstanceLimitsHandlingHasBeenSet() const { return m_instanceLimitsHandlingHasBeenSet; }
+    inline void SetInstanceLimitsHandling(InstanceLimitsHandling value) { m_instanceLimitsHandlingHasBeenSet = true; m_instanceLimitsHandling = value; }
+    inline CommunicationLimitsConfig& WithInstanceLimitsHandling(InstanceLimitsHandling value) { SetInstanceLimitsHandling(value); return *this;}
+    ///@}
   private:
 
     CommunicationLimits m_allChannelSubtypes;
     bool m_allChannelSubtypesHasBeenSet = false;
+
+    InstanceLimitsHandling m_instanceLimitsHandling{InstanceLimitsHandling::NOT_SET};
+    bool m_instanceLimitsHandlingHasBeenSet = false;
   };
 
 } // namespace Model

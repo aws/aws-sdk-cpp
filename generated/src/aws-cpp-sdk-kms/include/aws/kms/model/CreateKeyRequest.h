@@ -116,10 +116,12 @@ namespace Model
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify
      * <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p> </li> <li> <p>For
-     * asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify
-     * <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric KMS keys with SM2 key
-     * pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>,
-     * <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p> </li> </ul>
+     * asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify
+     * <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric KMS keys with ML-DSA
+     * key pairs, specify <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric
+     * KMS keys with SM2 key pairs (China Regions only), specify
+     * <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or
+     * <code>KEY_AGREEMENT</code>.</p> </li> </ul>
      */
     inline KeyUsageType GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
@@ -168,9 +170,12 @@ namespace Model
      * <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li>
      * <p>Other asymmetric elliptic curve key pairs (signing and verification)</p> <ul>
      * <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (encryption and
-     * decryption -or- signing and verification -or- deriving shared secrets)</p> <ul>
-     * <li> <p> <code>SM2</code> (China Regions only)</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>Asymmetric ML-DSA key pairs
+     * (signing and verification)</p> <ul> <li> <p> <code>ML_DSA_44</code> </p> </li>
+     * <li> <p> <code>ML_DSA_65</code> </p> </li> <li> <p> <code>ML_DSA_87</code> </p>
+     * </li> </ul> </li> <li> <p>SM2 key pairs (encryption and decryption -or- signing
+     * and verification -or- deriving shared secrets)</p> <ul> <li> <p>
+     * <code>SM2</code> (China Regions only)</p> </li> </ul> </li> </ul>
      */
     inline KeySpec GetKeySpec() const { return m_keySpec; }
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }

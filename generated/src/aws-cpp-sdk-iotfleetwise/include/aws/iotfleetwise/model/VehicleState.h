@@ -20,7 +20,8 @@ namespace Model
     READY,
     HEALTHY,
     SUSPENDED,
-    DELETING
+    DELETING,
+    READY_FOR_CHECKIN
   };
 
 namespace VehicleStateMapper

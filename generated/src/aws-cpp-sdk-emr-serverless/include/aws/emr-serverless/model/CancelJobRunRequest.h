@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration (in seconds) to wait before forcefully terminating the job after
+     * <p>The duration in seconds to wait before forcefully terminating the job after
      * cancellation is requested.</p>
      */
     inline int GetShutdownGracePeriodInSeconds() const { return m_shutdownGracePeriodInSeconds; }

@@ -83,26 +83,33 @@ namespace Model
     /**
      * <p>Tells KMS whether the value of the <code>Message</code> parameter should be
      * hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed
-     * messages; use <code>DIGEST</code> for message digests, which are already
-     * hashed.</p> <p>When the value of <code>MessageType</code> is <code>RAW</code>,
-     * KMS uses the standard signing algorithm, which begins with a hash function. When
-     * the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
-     * algorithm.</p>  <p>Use the <code>DIGEST</code> value only when the
-     * value of the <code>Message</code> parameter is a message digest. If you use the
-     * <code>DIGEST</code> value with an unhashed message, the security of the signing
-     * operation can be compromised.</p>  <p>When the value of
-     * <code>MessageType</code>is <code>DIGEST</code>, the length of the
+     * messages; use <code>DIGEST</code> for message digests, which are already hashed;
+     * use <code>EXTERNAL_MU</code> for 64-byte representative μ used in ML-DSA signing
+     * as defined in NIST FIPS 204 Section 6.2.</p> <p>When the value of
+     * <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing
+     * algorithm, which begins with a hash function. When the value is
+     * <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm. When
+     * the value is <code>EXTERNAL_MU</code> KMS skips the concatenated hashing of the
+     * public key hash and the message done in the ML-DSA signing algorithm.</p>
+     *  <p>Use the <code>DIGEST</code> or <code>EXTERNAL_MU</code> value
+     * only when the value of the <code>Message</code> parameter is a message digest.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security
+     * of the signing operation can be compromised.</p>  <p>When the value
+     * of <code>MessageType</code> is <code>DIGEST</code>, the length of the
      * <code>Message</code> value must match the length of hashed messages for the
-     * specified signing algorithm.</p> <p>You can submit a message digest and omit the
+     * specified signing algorithm.</p> <p>When the value of <code>MessageType</code>
+     * is <code>EXTERNAL_MU</code> the length of the <code>Message</code> value must be
+     * 64 bytes.</p> <p>You can submit a message digest and omit the
      * <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed
      * again while signing. However, this can cause verification failures when
      * verifying with a system that assumes a single hash.</p> <p>The hashing algorithm
-     * in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code>
+     * that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code>
      * value.</p> <ul> <li> <p>Signing algorithms that end in SHA_256 use the SHA_256
      * hashing algorithm.</p> </li> <li> <p>Signing algorithms that end in SHA_384 use
      * the SHA_384 hashing algorithm.</p> </li> <li> <p>Signing algorithms that end in
-     * SHA_512 use the SHA_512 hashing algorithm.</p> </li> <li> <p>SM2DSA uses the SM3
-     * hashing algorithm. For details, see <a
+     * SHA_512 use the SHA_512 hashing algorithm.</p> </li> <li> <p>Signing algorithms
+     * that end in SHAKE_256 use the SHAKE_256 hashing algorithm.</p> </li> <li>
+     * <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/offline-operations.html#key-spec-sm-offline-verification">Offline
      * verification with SM2 key pairs</a>.</p> </li> </ul>
      */
