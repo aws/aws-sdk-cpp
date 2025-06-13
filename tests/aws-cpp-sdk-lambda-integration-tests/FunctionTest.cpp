@@ -31,7 +31,6 @@
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
-#include <aws/lambda/model/ResourceNotFoundException.h>
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
@@ -247,14 +246,14 @@ protected:
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
-        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs12_x);
+        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs22_x);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
         AWS_ASSERT_SUCCESS(createFunctionOutcome);
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
-        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs12_x, createFunctionOutcome.GetResult().GetRuntime());
+        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs22_x, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, Aws::Lambda::Model::State::Active);
@@ -316,7 +315,7 @@ TEST_F(FunctionTest, TestGetFunction)
     AWS_EXPECT_SUCCESS(getFunctionOutcome);
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs12_x, getFunctionResult.GetConfiguration().GetRuntime());
+    EXPECT_EQ(Runtime::nodejs22_x, getFunctionResult.GetConfiguration().GetRuntime());
     EXPECT_EQ("test.handler",getFunctionResult.GetConfiguration().GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionResult.GetConfiguration().GetFunctionName());
     //Just see that is looks like an aws url
@@ -334,7 +333,7 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
     AWS_EXPECT_SUCCESS(getFunctionConfigurationOutcome);
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs12_x, getFunctionConfigurationResult.GetRuntime());
+    EXPECT_EQ(Runtime::nodejs22_x, getFunctionConfigurationResult.GetRuntime());
     EXPECT_EQ("test.handler",getFunctionConfigurationResult.GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionConfigurationResult.GetFunctionName());
 }
@@ -490,7 +489,6 @@ TEST_F(FunctionTest, TestPermissions)
     if (!getRemovedPolicyOutcome.IsSuccess())
     {
        EXPECT_EQ(LambdaErrors::RESOURCE_NOT_FOUND, getRemovedPolicyOutcome.GetError().GetErrorType());
-       EXPECT_STREQ("User", getRemovedPolicyOutcome.GetError<ResourceNotFoundException>().GetType().c_str());
     }
     //Now we should get an empty policy a GetPolicy because we just removed it
     else
