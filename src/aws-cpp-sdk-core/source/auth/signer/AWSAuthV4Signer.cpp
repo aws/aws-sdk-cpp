@@ -234,7 +234,7 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
           request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         }
       }
-    } else {
+    } else if (signBody) {
       payloadHash = ComputePayloadHash(request);
       if (payloadHash.empty()) {
         // this indicates a hashing error occurred, which was logged
