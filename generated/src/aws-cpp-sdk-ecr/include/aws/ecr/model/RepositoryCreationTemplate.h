@@ -102,9 +102,10 @@ namespace Model
     ///@{
     /**
      * <p>The tag mutability setting for the repository. If this parameter is omitted,
-     * the default setting of MUTABLE will be used which will allow image tags to be
-     * overwritten. If IMMUTABLE is specified, all image tags within the repository
-     * will be immutable which will prevent them from being overwritten.</p>
+     * the default setting of <code>MUTABLE</code> will be used which will allow image
+     * tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
+     * within the repository will be immutable which will prevent them from being
+     * overwritten.</p>
      */
     inline ImageTagMutability GetImageTagMutability() const { return m_imageTagMutability; }
     inline bool ImageTagMutabilityHasBeenSet() const { return m_imageTagMutabilityHasBeenSet; }

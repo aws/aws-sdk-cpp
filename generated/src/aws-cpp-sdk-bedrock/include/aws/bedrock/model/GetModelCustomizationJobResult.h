@@ -125,17 +125,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
-    template<typename FailureMessageT = Aws::String>
-    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
-    template<typename FailureMessageT = Aws::String>
-    GetModelCustomizationJobResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>For a Distillation job, the details about the statuses of the sub-tasks of
      * the customization job. </p>
      */
@@ -144,6 +133,17 @@ namespace Model
     void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
     template<typename StatusDetailsT = StatusDetails>
     GetModelCustomizationJobResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetModelCustomizationJobResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -339,11 +339,11 @@ namespace Model
     ModelCustomizationJobStatus m_status{ModelCustomizationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet = false;
-
     StatusDetails m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;

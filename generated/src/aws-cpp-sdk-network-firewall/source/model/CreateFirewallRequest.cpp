@@ -97,6 +97,29 @@ Aws::String CreateFirewallRequest::SerializePayload() const
 
   }
 
+  if(m_transitGatewayIdHasBeenSet)
+  {
+   payload.WithString("TransitGatewayId", m_transitGatewayId);
+
+  }
+
+  if(m_availabilityZoneMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> availabilityZoneMappingsJsonList(m_availabilityZoneMappings.size());
+   for(unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength(); ++availabilityZoneMappingsIndex)
+   {
+     availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject(m_availabilityZoneMappings[availabilityZoneMappingsIndex].Jsonize());
+   }
+   payload.WithArray("AvailabilityZoneMappings", std::move(availabilityZoneMappingsJsonList));
+
+  }
+
+  if(m_availabilityZoneChangeProtectionHasBeenSet)
+  {
+   payload.WithBool("AvailabilityZoneChangeProtection", m_availabilityZoneChangeProtection);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

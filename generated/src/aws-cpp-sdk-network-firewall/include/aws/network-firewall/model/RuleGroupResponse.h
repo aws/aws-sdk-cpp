@@ -200,7 +200,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service SNS
      * topic that's used to record changes to the managed rule group. You can subscribe
      * to the SNS topic to receive notifications when the managed rule group is
      * modified, such as for new versions and for version expiration. For more

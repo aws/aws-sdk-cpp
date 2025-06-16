@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Data source for the imported model.</p><p><h3>See Also:</h3>   <a
+   * <p>The data source of the model to import.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ModelDataSource">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon S3 data source of the imported model.</p>
+     * <p>The Amazon S3 data source of the model to import.</p>
      */
     inline const S3DataSource& GetS3DataSource() const { return m_s3DataSource; }
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }

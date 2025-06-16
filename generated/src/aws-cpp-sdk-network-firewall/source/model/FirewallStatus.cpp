@@ -49,6 +49,11 @@ FirewallStatus& FirewallStatus::operator =(JsonView jsonValue)
     m_capacityUsageSummary = jsonValue.GetObject("CapacityUsageSummary");
     m_capacityUsageSummaryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransitGatewayAttachmentSyncState"))
+  {
+    m_transitGatewayAttachmentSyncState = jsonValue.GetObject("TransitGatewayAttachmentSyncState");
+    m_transitGatewayAttachmentSyncStateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +85,12 @@ JsonValue FirewallStatus::Jsonize() const
   if(m_capacityUsageSummaryHasBeenSet)
   {
    payload.WithObject("CapacityUsageSummary", m_capacityUsageSummary.Jsonize());
+
+  }
+
+  if(m_transitGatewayAttachmentSyncStateHasBeenSet)
+  {
+   payload.WithObject("TransitGatewayAttachmentSyncState", m_transitGatewayAttachmentSyncState.Jsonize());
 
   }
 

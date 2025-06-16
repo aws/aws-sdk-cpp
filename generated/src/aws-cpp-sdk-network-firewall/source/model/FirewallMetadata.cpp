@@ -35,6 +35,11 @@ FirewallMetadata& FirewallMetadata::operator =(JsonView jsonValue)
     m_firewallArn = jsonValue.GetString("FirewallArn");
     m_firewallArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransitGatewayAttachmentId"))
+  {
+    m_transitGatewayAttachmentId = jsonValue.GetString("TransitGatewayAttachmentId");
+    m_transitGatewayAttachmentIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue FirewallMetadata::Jsonize() const
   if(m_firewallArnHasBeenSet)
   {
    payload.WithString("FirewallArn", m_firewallArn);
+
+  }
+
+  if(m_transitGatewayAttachmentIdHasBeenSet)
+  {
+   payload.WithString("TransitGatewayAttachmentId", m_transitGatewayAttachmentId);
 
   }
 

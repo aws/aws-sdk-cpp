@@ -108,6 +108,16 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
     m_customizationConfig = jsonValue.GetObject("customizationConfig");
     m_customizationConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("modelStatus"))
+  {
+    m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("modelStatus"));
+    m_modelStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

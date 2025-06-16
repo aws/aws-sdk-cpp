@@ -43,7 +43,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>STRICT_ORDER</code> is the default and recommended option. With
+     * <code>STRICT_ORDER</code> is the recommended option, but
+     * <code>DEFAULT_ACTION_ORDER</code> is the default option. With
      * <code>STRICT_ORDER</code>, provide your rules in the order that you want them to
      * be evaluated. You can then choose one or more default actions for packets that
      * don't match any rules. Choose <code>STRICT_ORDER</code> to have the stateful

@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/CustomizationConfig.h>
+#include <aws/bedrock/model/ModelStatus.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <utility>
 
@@ -77,7 +78,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model. For models that
+     * you create with the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a>
+     * API operation, this is <code>NULL</code>.</p>
      */
     inline const Aws::String& GetJobArn() const { return m_jobArn; }
     template<typename JobArnT = Aws::String>
@@ -215,6 +219,32 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The current status of the custom model. Possible values include:</p> <ul>
+     * <li> <p> <code>Creating</code> - The model is being created and validated.</p>
+     * </li> <li> <p> <code>Active</code> - The model has been successfully created and
+     * is ready for use.</p> </li> <li> <p> <code>Failed</code> - The model creation
+     * process failed. Check the <code>failureMessage</code> field for details.</p>
+     * </li> </ul>
+     */
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline GetCustomModelResult& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A failure message for any issues that occurred when creating the custom
+     * model. This is included for only a failed CreateCustomModel operation.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetCustomModelResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -268,6 +298,12 @@ namespace Model
 
     CustomizationConfig m_customizationConfig;
     bool m_customizationConfigHasBeenSet = false;
+
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+    bool m_modelStatusHasBeenSet = false;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

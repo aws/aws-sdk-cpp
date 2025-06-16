@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
+#include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <utility>
 
 namespace Aws
@@ -246,6 +247,61 @@ namespace Model
     Firewall& WithEnabledAnalysisTypes(EnabledAnalysisTypesT&& value) { SetEnabledAnalysisTypes(std::forward<EnabledAnalysisTypesT>(value)); return *this;}
     inline Firewall& AddEnabledAnalysisTypes(EnabledAnalysisType value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the transit gateway associated with this firewall.
+     * This field is only present for transit gateway-attached firewalls.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const { return m_transitGatewayId; }
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+    template<typename TransitGatewayIdT = Aws::String>
+    void SetTransitGatewayId(TransitGatewayIdT&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::forward<TransitGatewayIdT>(value); }
+    template<typename TransitGatewayIdT = Aws::String>
+    Firewall& WithTransitGatewayId(TransitGatewayIdT&& value) { SetTransitGatewayId(std::forward<TransitGatewayIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID that owns the transit gateway. This may be
+     * different from the firewall owner's account ID when using a shared transit
+     * gateway.</p>
+     */
+    inline const Aws::String& GetTransitGatewayOwnerAccountId() const { return m_transitGatewayOwnerAccountId; }
+    inline bool TransitGatewayOwnerAccountIdHasBeenSet() const { return m_transitGatewayOwnerAccountIdHasBeenSet; }
+    template<typename TransitGatewayOwnerAccountIdT = Aws::String>
+    void SetTransitGatewayOwnerAccountId(TransitGatewayOwnerAccountIdT&& value) { m_transitGatewayOwnerAccountIdHasBeenSet = true; m_transitGatewayOwnerAccountId = std::forward<TransitGatewayOwnerAccountIdT>(value); }
+    template<typename TransitGatewayOwnerAccountIdT = Aws::String>
+    Firewall& WithTransitGatewayOwnerAccountId(TransitGatewayOwnerAccountIdT&& value) { SetTransitGatewayOwnerAccountId(std::forward<TransitGatewayOwnerAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zones where the firewall endpoints are created for a transit
+     * gateway-attached firewall. Each mapping specifies an Availability Zone where the
+     * firewall processes traffic.</p>
+     */
+    inline const Aws::Vector<AvailabilityZoneMapping>& GetAvailabilityZoneMappings() const { return m_availabilityZoneMappings; }
+    inline bool AvailabilityZoneMappingsHasBeenSet() const { return m_availabilityZoneMappingsHasBeenSet; }
+    template<typename AvailabilityZoneMappingsT = Aws::Vector<AvailabilityZoneMapping>>
+    void SetAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { m_availabilityZoneMappingsHasBeenSet = true; m_availabilityZoneMappings = std::forward<AvailabilityZoneMappingsT>(value); }
+    template<typename AvailabilityZoneMappingsT = Aws::Vector<AvailabilityZoneMapping>>
+    Firewall& WithAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { SetAvailabilityZoneMappings(std::forward<AvailabilityZoneMappingsT>(value)); return *this;}
+    template<typename AvailabilityZoneMappingsT = AvailabilityZoneMapping>
+    Firewall& AddAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { m_availabilityZoneMappingsHasBeenSet = true; m_availabilityZoneMappings.emplace_back(std::forward<AvailabilityZoneMappingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A setting indicating whether the firewall is protected against changes to its
+     * Availability Zone configuration. When set to <code>TRUE</code>, you must first
+     * disable this protection before adding or removing Availability Zones.</p>
+     */
+    inline bool GetAvailabilityZoneChangeProtection() const { return m_availabilityZoneChangeProtection; }
+    inline bool AvailabilityZoneChangeProtectionHasBeenSet() const { return m_availabilityZoneChangeProtectionHasBeenSet; }
+    inline void SetAvailabilityZoneChangeProtection(bool value) { m_availabilityZoneChangeProtectionHasBeenSet = true; m_availabilityZoneChangeProtection = value; }
+    inline Firewall& WithAvailabilityZoneChangeProtection(bool value) { SetAvailabilityZoneChangeProtection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_firewallName;
@@ -289,6 +345,18 @@ namespace Model
 
     Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
     bool m_enabledAnalysisTypesHasBeenSet = false;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet = false;
+
+    Aws::String m_transitGatewayOwnerAccountId;
+    bool m_transitGatewayOwnerAccountIdHasBeenSet = false;
+
+    Aws::Vector<AvailabilityZoneMapping> m_availabilityZoneMappings;
+    bool m_availabilityZoneMappingsHasBeenSet = false;
+
+    bool m_availabilityZoneChangeProtection{false};
+    bool m_availabilityZoneChangeProtectionHasBeenSet = false;
   };
 
 } // namespace Model
