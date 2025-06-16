@@ -60,15 +60,15 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
     m_status = ModelCustomizationJobStatusMapper::GetModelCustomizationJobStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureMessage"))
-  {
-    m_failureMessage = jsonValue.GetString("failureMessage");
-    m_failureMessageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("statusDetails"))
   {
     m_statusDetails = jsonValue.GetObject("statusDetails");
     m_statusDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
   }
   if(jsonValue.ValueExists("creationTime"))
   {

@@ -54,6 +54,11 @@ DescribeFirewallMetadataResult& DescribeFirewallMetadataResult::operator =(const
     }
     m_supportedAvailabilityZonesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransitGatewayAttachmentId"))
+  {
+    m_transitGatewayAttachmentId = jsonValue.GetString("TransitGatewayAttachmentId");
+    m_transitGatewayAttachmentIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

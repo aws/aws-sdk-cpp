@@ -19,6 +19,7 @@
 
 /* Service model headers required in BedrockClient header */
 #include <aws/bedrock/model/BatchDeleteEvaluationJobResult.h>
+#include <aws/bedrock/model/CreateCustomModelResult.h>
 #include <aws/bedrock/model/CreateEvaluationJobResult.h>
 #include <aws/bedrock/model/CreateGuardrailResult.h>
 #include <aws/bedrock/model/CreateGuardrailVersionResult.h>
@@ -133,6 +134,7 @@ namespace Aws
     {
       /* Service model forward declarations required in BedrockClient header */
       class BatchDeleteEvaluationJobRequest;
+      class CreateCustomModelRequest;
       class CreateEvaluationJobRequest;
       class CreateGuardrailRequest;
       class CreateGuardrailVersionRequest;
@@ -195,6 +197,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchDeleteEvaluationJobResult, BedrockError> BatchDeleteEvaluationJobOutcome;
+      typedef Aws::Utils::Outcome<CreateCustomModelResult, BedrockError> CreateCustomModelOutcome;
       typedef Aws::Utils::Outcome<CreateEvaluationJobResult, BedrockError> CreateEvaluationJobOutcome;
       typedef Aws::Utils::Outcome<CreateGuardrailResult, BedrockError> CreateGuardrailOutcome;
       typedef Aws::Utils::Outcome<CreateGuardrailVersionResult, BedrockError> CreateGuardrailVersionOutcome;
@@ -257,6 +260,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<BatchDeleteEvaluationJobOutcome> BatchDeleteEvaluationJobOutcomeCallable;
+      typedef std::future<CreateCustomModelOutcome> CreateCustomModelOutcomeCallable;
       typedef std::future<CreateEvaluationJobOutcome> CreateEvaluationJobOutcomeCallable;
       typedef std::future<CreateGuardrailOutcome> CreateGuardrailOutcomeCallable;
       typedef std::future<CreateGuardrailVersionOutcome> CreateGuardrailVersionOutcomeCallable;
@@ -322,6 +326,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const BedrockClient*, const Model::BatchDeleteEvaluationJobRequest&, const Model::BatchDeleteEvaluationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteEvaluationJobResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::CreateCustomModelRequest&, const Model::CreateCustomModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomModelResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateEvaluationJobRequest&, const Model::CreateEvaluationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEvaluationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateGuardrailRequest&, const Model::CreateGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateGuardrailVersionRequest&, const Model::CreateGuardrailVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGuardrailVersionResponseReceivedHandler;

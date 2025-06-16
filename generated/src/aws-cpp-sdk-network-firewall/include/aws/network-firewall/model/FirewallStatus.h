@@ -9,6 +9,7 @@
 #include <aws/network-firewall/model/ConfigurationSyncState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/network-firewall/model/CapacityUsageSummary.h>
+#include <aws/network-firewall/model/TransitGatewayAttachmentSyncState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/SyncState.h>
 #include <utility>
@@ -116,6 +117,21 @@ namespace Model
     template<typename CapacityUsageSummaryT = CapacityUsageSummary>
     FirewallStatus& WithCapacityUsageSummary(CapacityUsageSummaryT&& value) { SetCapacityUsageSummary(std::forward<CapacityUsageSummaryT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The synchronization state of the transit gateway attachment. This indicates
+     * whether the firewall's transit gateway configuration is properly synchronized
+     * and operational. Use this to verify that your transit gateway configuration
+     * changes have been applied.</p>
+     */
+    inline const TransitGatewayAttachmentSyncState& GetTransitGatewayAttachmentSyncState() const { return m_transitGatewayAttachmentSyncState; }
+    inline bool TransitGatewayAttachmentSyncStateHasBeenSet() const { return m_transitGatewayAttachmentSyncStateHasBeenSet; }
+    template<typename TransitGatewayAttachmentSyncStateT = TransitGatewayAttachmentSyncState>
+    void SetTransitGatewayAttachmentSyncState(TransitGatewayAttachmentSyncStateT&& value) { m_transitGatewayAttachmentSyncStateHasBeenSet = true; m_transitGatewayAttachmentSyncState = std::forward<TransitGatewayAttachmentSyncStateT>(value); }
+    template<typename TransitGatewayAttachmentSyncStateT = TransitGatewayAttachmentSyncState>
+    FirewallStatus& WithTransitGatewayAttachmentSyncState(TransitGatewayAttachmentSyncStateT&& value) { SetTransitGatewayAttachmentSyncState(std::forward<TransitGatewayAttachmentSyncStateT>(value)); return *this;}
+    ///@}
   private:
 
     FirewallStatusValue m_status{FirewallStatusValue::NOT_SET};
@@ -129,6 +145,9 @@ namespace Model
 
     CapacityUsageSummary m_capacityUsageSummary;
     bool m_capacityUsageSummaryHasBeenSet = false;
+
+    TransitGatewayAttachmentSyncState m_transitGatewayAttachmentSyncState;
+    bool m_transitGatewayAttachmentSyncStateHasBeenSet = false;
   };
 
 } // namespace Model

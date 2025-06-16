@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The last time that the rule group was changed.</p>
+     * <p>A timestamp indicating when the rule group was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     template<typename LastModifiedTimeT = Aws::Utils::DateTime>

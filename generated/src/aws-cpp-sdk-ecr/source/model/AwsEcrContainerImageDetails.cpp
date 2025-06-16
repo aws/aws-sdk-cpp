@@ -59,6 +59,16 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
     m_pushedAt = jsonValue.GetDouble("pushedAt");
     m_pushedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("registry"))
   {
     m_registry = jsonValue.GetString("registry");
@@ -114,6 +124,17 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
   if(m_pushedAtHasBeenSet)
   {
    payload.WithDouble("pushedAt", m_pushedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
+
   }
 
   if(m_registryHasBeenSet)

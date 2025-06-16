@@ -39,6 +39,8 @@ namespace Aws
         static const int TFTP_HASH = HashingUtils::HashString("TFTP");
         static const int NTP_HASH = HashingUtils::HashString("NTP");
         static const int DHCP_HASH = HashingUtils::HashString("DHCP");
+        static const int HTTP2_HASH = HashingUtils::HashString("HTTP2");
+        static const int QUIC_HASH = HashingUtils::HashString("QUIC");
 
 
         StatefulRuleProtocol GetStatefulRuleProtocolForName(const Aws::String& name)
@@ -120,6 +122,14 @@ namespace Aws
           {
             return StatefulRuleProtocol::DHCP;
           }
+          else if (hashCode == HTTP2_HASH)
+          {
+            return StatefulRuleProtocol::HTTP2;
+          }
+          else if (hashCode == QUIC_HASH)
+          {
+            return StatefulRuleProtocol::QUIC;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +184,10 @@ namespace Aws
             return "NTP";
           case StatefulRuleProtocol::DHCP:
             return "DHCP";
+          case StatefulRuleProtocol::HTTP2:
+            return "HTTP2";
+          case StatefulRuleProtocol::QUIC:
+            return "QUIC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

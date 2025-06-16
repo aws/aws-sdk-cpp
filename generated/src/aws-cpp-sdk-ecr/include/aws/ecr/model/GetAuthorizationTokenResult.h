@@ -37,7 +37,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of authorization token data objects that correspond to the
-     * <code>registryIds</code> values in the request.</p>
+     * <code>registryIds</code> values in the request.</p>  <p>The size of the
+     * authorization token returned by Amazon ECR is not fixed. We recommend that you
+     * don't make assumptions about the maximum size.</p> 
      */
     inline const Aws::Vector<AuthorizationData>& GetAuthorizationData() const { return m_authorizationData; }
     template<typename AuthorizationDataT = Aws::Vector<AuthorizationData>>

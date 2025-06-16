@@ -26,6 +26,8 @@
 #include <aws/bedrock/model/ByteContentDoc.h>
 #include <aws/bedrock/model/CloudWatchConfig.h>
 #include <aws/bedrock/model/CommitmentDuration.h>
+#include <aws/bedrock/model/CreateCustomModelRequest.h>
+#include <aws/bedrock/model/CreateCustomModelResult.h>
 #include <aws/bedrock/model/CreateEvaluationJobRequest.h>
 #include <aws/bedrock/model/CreateEvaluationJobResult.h>
 #include <aws/bedrock/model/CreateGuardrailRequest.h>
@@ -240,6 +242,7 @@
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
 #include <aws/bedrock/model/ModelInvocationJobSummary.h>
 #include <aws/bedrock/model/ModelModality.h>
+#include <aws/bedrock/model/ModelStatus.h>
 #include <aws/bedrock/model/OrchestrationConfiguration.h>
 #include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/bedrock/model/PerformanceConfigLatency.h>

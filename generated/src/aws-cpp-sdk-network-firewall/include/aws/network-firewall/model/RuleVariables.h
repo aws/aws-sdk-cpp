@@ -28,7 +28,8 @@ namespace Model
 
   /**
    * <p>Settings that are available for use in the rules in the <a>RuleGroup</a>
-   * where this is defined. </p><p><h3>See Also:</h3>   <a
+   * where this is defined. See <a>CreateRuleGroup</a> or <a>UpdateRuleGroup</a> for
+   * usage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RuleVariables">AWS
    * API Reference</a></p>
    */

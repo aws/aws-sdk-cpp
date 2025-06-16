@@ -12,6 +12,7 @@
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
+#include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,63 @@ namespace Model
     CreateFirewallRequest& WithEnabledAnalysisTypes(EnabledAnalysisTypesT&& value) { SetEnabledAnalysisTypes(std::forward<EnabledAnalysisTypesT>(value)); return *this;}
     inline CreateFirewallRequest& AddEnabledAnalysisTypes(EnabledAnalysisType value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Required when creating a transit gateway-attached firewall. The unique
+     * identifier of the transit gateway to attach to this firewall. You can provide
+     * either a transit gateway from your account or one that has been shared with you
+     * through Resource Access Manager.</p>  <p>After creating the firewall,
+     * you cannot change the transit gateway association. To use a different transit
+     * gateway, you must create a new firewall.</p>  <p>For information
+     * about creating firewalls, see <a>CreateFirewall</a>. For specific guidance about
+     * transit gateway-attached firewalls, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html">Considerations
+     * for transit gateway-attached firewalls</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const { return m_transitGatewayId; }
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+    template<typename TransitGatewayIdT = Aws::String>
+    void SetTransitGatewayId(TransitGatewayIdT&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::forward<TransitGatewayIdT>(value); }
+    template<typename TransitGatewayIdT = Aws::String>
+    CreateFirewallRequest& WithTransitGatewayId(TransitGatewayIdT&& value) { SetTransitGatewayId(std::forward<TransitGatewayIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Required. The Availability Zones where you want to create firewall endpoints
+     * for a transit gateway-attached firewall. You must specify at least one
+     * Availability Zone. Consider enabling the firewall in every Availability Zone
+     * where you have workloads to maintain Availability Zone independence.</p> <p>You
+     * can modify Availability Zones later using <a>AssociateAvailabilityZones</a> or
+     * <a>DisassociateAvailabilityZones</a>, but this may briefly disrupt traffic. The
+     * <code>AvailabilityZoneChangeProtection</code> setting controls whether you can
+     * make these modifications.</p>
+     */
+    inline const Aws::Vector<AvailabilityZoneMapping>& GetAvailabilityZoneMappings() const { return m_availabilityZoneMappings; }
+    inline bool AvailabilityZoneMappingsHasBeenSet() const { return m_availabilityZoneMappingsHasBeenSet; }
+    template<typename AvailabilityZoneMappingsT = Aws::Vector<AvailabilityZoneMapping>>
+    void SetAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { m_availabilityZoneMappingsHasBeenSet = true; m_availabilityZoneMappings = std::forward<AvailabilityZoneMappingsT>(value); }
+    template<typename AvailabilityZoneMappingsT = Aws::Vector<AvailabilityZoneMapping>>
+    CreateFirewallRequest& WithAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { SetAvailabilityZoneMappings(std::forward<AvailabilityZoneMappingsT>(value)); return *this;}
+    template<typename AvailabilityZoneMappingsT = AvailabilityZoneMapping>
+    CreateFirewallRequest& AddAvailabilityZoneMappings(AvailabilityZoneMappingsT&& value) { m_availabilityZoneMappingsHasBeenSet = true; m_availabilityZoneMappings.emplace_back(std::forward<AvailabilityZoneMappingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Optional. A setting indicating whether the firewall is protected against
+     * changes to its Availability Zone configuration. When set to <code>TRUE</code>,
+     * you cannot add or remove Availability Zones without first disabling this
+     * protection using <a>UpdateAvailabilityZoneChangeProtection</a>.</p> <p>Default
+     * value: <code>FALSE</code> </p>
+     */
+    inline bool GetAvailabilityZoneChangeProtection() const { return m_availabilityZoneChangeProtection; }
+    inline bool AvailabilityZoneChangeProtectionHasBeenSet() const { return m_availabilityZoneChangeProtectionHasBeenSet; }
+    inline void SetAvailabilityZoneChangeProtection(bool value) { m_availabilityZoneChangeProtectionHasBeenSet = true; m_availabilityZoneChangeProtection = value; }
+    inline CreateFirewallRequest& WithAvailabilityZoneChangeProtection(bool value) { SetAvailabilityZoneChangeProtection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_firewallName;
@@ -222,6 +280,15 @@ namespace Model
 
     Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
     bool m_enabledAnalysisTypesHasBeenSet = false;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet = false;
+
+    Aws::Vector<AvailabilityZoneMapping> m_availabilityZoneMappings;
+    bool m_availabilityZoneMappingsHasBeenSet = false;
+
+    bool m_availabilityZoneChangeProtection{false};
+    bool m_availabilityZoneChangeProtectionHasBeenSet = false;
   };
 
 } // namespace Model

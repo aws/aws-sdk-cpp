@@ -139,6 +139,71 @@ namespace NetworkFirewall
         virtual ~NetworkFirewallClient();
 
         /**
+         * <p>Accepts a transit gateway attachment request for Network Firewall. When you
+         * accept the attachment request, Network Firewall creates the necessary routing
+         * components to enable traffic flow between the transit gateway and firewall
+         * endpoints.</p> <p>You must accept a transit gateway attachment to complete the
+         * creation of a transit gateway-attached firewall, unless auto-accept is enabled
+         * on the transit gateway. After acceptance, use <a>DescribeFirewall</a> to verify
+         * the firewall status.</p> <p>To reject an attachment instead of accepting it, use
+         * <a>RejectNetworkFirewallTransitGatewayAttachment</a>.</p>  <p>It can take
+         * several minutes for the attachment acceptance to complete and the firewall to
+         * become available.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptNetworkFirewallTransitGatewayAttachmentOutcome AcceptNetworkFirewallTransitGatewayAttachment(const Model::AcceptNetworkFirewallTransitGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptNetworkFirewallTransitGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptNetworkFirewallTransitGatewayAttachmentRequestT = Model::AcceptNetworkFirewallTransitGatewayAttachmentRequest>
+        Model::AcceptNetworkFirewallTransitGatewayAttachmentOutcomeCallable AcceptNetworkFirewallTransitGatewayAttachmentCallable(const AcceptNetworkFirewallTransitGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::AcceptNetworkFirewallTransitGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptNetworkFirewallTransitGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptNetworkFirewallTransitGatewayAttachmentRequestT = Model::AcceptNetworkFirewallTransitGatewayAttachmentRequest>
+        void AcceptNetworkFirewallTransitGatewayAttachmentAsync(const AcceptNetworkFirewallTransitGatewayAttachmentRequestT& request, const AcceptNetworkFirewallTransitGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::AcceptNetworkFirewallTransitGatewayAttachment, request, handler, context);
+        }
+
+        /**
+         * <p>Associates the specified Availability Zones with a transit gateway-attached
+         * firewall. For each Availability Zone, Network Firewall creates a firewall
+         * endpoint to process traffic. You can specify one or more Availability Zones
+         * where you want to deploy the firewall.</p> <p>After adding Availability Zones,
+         * you must update your transit gateway route tables to direct traffic through the
+         * new firewall endpoints. Use <a>DescribeFirewall</a> to monitor the status of the
+         * new endpoints.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateAvailabilityZonesOutcome AssociateAvailabilityZones(const Model::AssociateAvailabilityZonesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateAvailabilityZones that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateAvailabilityZonesRequestT = Model::AssociateAvailabilityZonesRequest>
+        Model::AssociateAvailabilityZonesOutcomeCallable AssociateAvailabilityZonesCallable(const AssociateAvailabilityZonesRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::AssociateAvailabilityZones, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateAvailabilityZones that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateAvailabilityZonesRequestT = Model::AssociateAvailabilityZonesRequest>
+        void AssociateAvailabilityZonesAsync(const AssociateAvailabilityZonesRequestT& request, const AssociateAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::AssociateAvailabilityZones, request, handler, context);
+        }
+
+        /**
          * <p>Associates a <a>FirewallPolicy</a> to a <a>Firewall</a>. </p> <p>A firewall
          * policy defines how to monitor and manage your VPC network traffic, using a
          * collection of inspection rule groups and other settings. Each firewall requires
@@ -428,6 +493,36 @@ namespace NetworkFirewall
         void DeleteFirewallPolicyAsync(const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteFirewallPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteFirewallPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a transit gateway attachment from a Network Firewall. Either the
+         * firewall owner or the transit gateway owner can delete the attachment.</p>
+         *  <p>After you delete a transit gateway attachment, traffic will no
+         * longer flow through the firewall endpoints.</p>  <p>After you
+         * initiate the delete operation, use <a>DescribeFirewall</a> to monitor the
+         * deletion status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkFirewallTransitGatewayAttachmentOutcome DeleteNetworkFirewallTransitGatewayAttachment(const Model::DeleteNetworkFirewallTransitGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteNetworkFirewallTransitGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteNetworkFirewallTransitGatewayAttachmentRequestT = Model::DeleteNetworkFirewallTransitGatewayAttachmentRequest>
+        Model::DeleteNetworkFirewallTransitGatewayAttachmentOutcomeCallable DeleteNetworkFirewallTransitGatewayAttachmentCallable(const DeleteNetworkFirewallTransitGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DeleteNetworkFirewallTransitGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteNetworkFirewallTransitGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteNetworkFirewallTransitGatewayAttachmentRequestT = Model::DeleteNetworkFirewallTransitGatewayAttachmentRequest>
+        void DeleteNetworkFirewallTransitGatewayAttachmentAsync(const DeleteNetworkFirewallTransitGatewayAttachmentRequestT& request, const DeleteNetworkFirewallTransitGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DeleteNetworkFirewallTransitGatewayAttachment, request, handler, context);
         }
 
         /**
@@ -803,6 +898,39 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Removes the specified Availability Zone associations from a transit
+         * gateway-attached firewall. This removes the firewall endpoints from these
+         * Availability Zones and stops traffic filtering in those zones. Before removing
+         * an Availability Zone, ensure you've updated your transit gateway route tables to
+         * redirect traffic appropriately.</p>  <p>If
+         * <code>AvailabilityZoneChangeProtection</code> is enabled, you must first disable
+         * it using <a>UpdateAvailabilityZoneChangeProtection</a>.</p>  <p>To verify
+         * the status of your Availability Zone changes, use
+         * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateAvailabilityZonesOutcome DisassociateAvailabilityZones(const Model::DisassociateAvailabilityZonesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateAvailabilityZones that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateAvailabilityZonesRequestT = Model::DisassociateAvailabilityZonesRequest>
+        Model::DisassociateAvailabilityZonesOutcomeCallable DisassociateAvailabilityZonesCallable(const DisassociateAvailabilityZonesRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DisassociateAvailabilityZones, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateAvailabilityZones that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateAvailabilityZonesRequestT = Model::DisassociateAvailabilityZonesRequest>
+        void DisassociateAvailabilityZonesAsync(const DisassociateAvailabilityZonesRequestT& request, const DisassociateAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DisassociateAvailabilityZones, request, handler, context);
+        }
+
+        /**
          * <p>Removes the specified subnet associations from the firewall. This removes the
          * firewall endpoints from the subnets and removes any network filtering
          * protections that the endpoints were providing. </p><p><h3>See Also:</h3>   <a
@@ -1162,6 +1290,41 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Rejects a transit gateway attachment request for Network Firewall. When you
+         * reject the attachment request, Network Firewall cancels the creation of routing
+         * components between the transit gateway and firewall endpoints.</p> <p>Only the
+         * transit gateway owner can reject the attachment. After rejection, no traffic
+         * will flow through the firewall endpoints for this attachment.</p> <p>Use
+         * <a>DescribeFirewall</a> to monitor the rejection status. To accept the
+         * attachment instead of rejecting it, use
+         * <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.</p>  <p>Once
+         * rejected, you cannot reverse this action. To establish connectivity, you must
+         * create a new transit gateway-attached firewall.</p> <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectNetworkFirewallTransitGatewayAttachmentOutcome RejectNetworkFirewallTransitGatewayAttachment(const Model::RejectNetworkFirewallTransitGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectNetworkFirewallTransitGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectNetworkFirewallTransitGatewayAttachmentRequestT = Model::RejectNetworkFirewallTransitGatewayAttachmentRequest>
+        Model::RejectNetworkFirewallTransitGatewayAttachmentOutcomeCallable RejectNetworkFirewallTransitGatewayAttachmentCallable(const RejectNetworkFirewallTransitGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::RejectNetworkFirewallTransitGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for RejectNetworkFirewallTransitGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectNetworkFirewallTransitGatewayAttachmentRequestT = Model::RejectNetworkFirewallTransitGatewayAttachmentRequest>
+        void RejectNetworkFirewallTransitGatewayAttachmentAsync(const RejectNetworkFirewallTransitGatewayAttachmentRequestT& request, const RejectNetworkFirewallTransitGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::RejectNetworkFirewallTransitGatewayAttachment, request, handler, context);
+        }
+
+        /**
          * <p>Generates a traffic analysis report for the timeframe and traffic type you
          * specify.</p> <p>For information on the contents of a traffic analysis report,
          * see <a>AnalysisReport</a>.</p><p><h3>See Also:</h3>   <a
@@ -1316,6 +1479,38 @@ namespace NetworkFirewall
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the <code>AvailabilityZoneChangeProtection</code> setting for a
+         * transit gateway-attached firewall. When enabled, this setting prevents
+         * accidental changes to the firewall's Availability Zone configuration. This helps
+         * protect against disrupting traffic flow in production environments.</p> <p>When
+         * enabled, you must disable this protection before using
+         * <a>AssociateAvailabilityZones</a> or <a>DisassociateAvailabilityZones</a> to
+         * modify the firewall's Availability Zone configuration.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAvailabilityZoneChangeProtectionOutcome UpdateAvailabilityZoneChangeProtection(const Model::UpdateAvailabilityZoneChangeProtectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAvailabilityZoneChangeProtection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAvailabilityZoneChangeProtectionRequestT = Model::UpdateAvailabilityZoneChangeProtectionRequest>
+        Model::UpdateAvailabilityZoneChangeProtectionOutcomeCallable UpdateAvailabilityZoneChangeProtectionCallable(const UpdateAvailabilityZoneChangeProtectionRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::UpdateAvailabilityZoneChangeProtection, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAvailabilityZoneChangeProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAvailabilityZoneChangeProtectionRequestT = Model::UpdateAvailabilityZoneChangeProtectionRequest>
+        void UpdateAvailabilityZoneChangeProtectionAsync(const UpdateAvailabilityZoneChangeProtectionRequestT& request, const UpdateAvailabilityZoneChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::UpdateAvailabilityZoneChangeProtection, request, handler, context);
         }
 
         /**

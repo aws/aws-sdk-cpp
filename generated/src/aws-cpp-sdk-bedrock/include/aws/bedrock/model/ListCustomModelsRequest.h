@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/SortModelsBy.h>
 #include <aws/bedrock/model/SortOrder.h>
+#include <aws/bedrock/model/ModelStatus.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,22 @@ namespace Model
     inline void SetIsOwned(bool value) { m_isOwnedHasBeenSet = true; m_isOwned = value; }
     inline ListCustomModelsRequest& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The status of them model to filter results by. Possible values include:</p>
+     * <ul> <li> <p> <code>Creating</code> - Include only models that are currently
+     * being created and validated.</p> </li> <li> <p> <code>Active</code> - Include
+     * only models that have been successfully created and are ready for use.</p> </li>
+     * <li> <p> <code>Failed</code> - Include only models where the creation process
+     * failed.</p> </li> </ul> <p>If you don't specify a status, the API returns models
+     * in all states.</p>
+     */
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
+    inline bool ModelStatusHasBeenSet() const { return m_modelStatusHasBeenSet; }
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline ListCustomModelsRequest& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationTimeBefore{};
@@ -193,6 +210,9 @@ namespace Model
 
     bool m_isOwned{false};
     bool m_isOwnedHasBeenSet = false;
+
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+    bool m_modelStatusHasBeenSet = false;
   };
 
 } // namespace Model
