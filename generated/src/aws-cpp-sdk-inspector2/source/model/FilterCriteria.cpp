@@ -34,6 +34,24 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_awsAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codeRepositoryProjectName"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProjectNameJsonList = jsonValue.GetArray("codeRepositoryProjectName");
+    for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+    {
+      m_codeRepositoryProjectName.push_back(codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject());
+    }
+    m_codeRepositoryProjectNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryProviderType"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProviderTypeJsonList = jsonValue.GetArray("codeRepositoryProviderType");
+    for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+    {
+      m_codeRepositoryProviderType.push_back(codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject());
+    }
+    m_codeRepositoryProviderTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("codeVulnerabilityDetectorName"))
   {
     Aws::Utils::Array<JsonView> codeVulnerabilityDetectorNameJsonList = jsonValue.GetArray("codeVulnerabilityDetectorName");
@@ -436,6 +454,28 @@ JsonValue FilterCriteria::Jsonize() const
      awsAccountIdJsonList[awsAccountIdIndex].AsObject(m_awsAccountId[awsAccountIdIndex].Jsonize());
    }
    payload.WithArray("awsAccountId", std::move(awsAccountIdJsonList));
+
+  }
+
+  if(m_codeRepositoryProjectNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProjectNameJsonList(m_codeRepositoryProjectName.size());
+   for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+   {
+     codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject(m_codeRepositoryProjectName[codeRepositoryProjectNameIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProjectName", std::move(codeRepositoryProjectNameJsonList));
+
+  }
+
+  if(m_codeRepositoryProviderTypeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProviderTypeJsonList(m_codeRepositoryProviderType.size());
+   for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+   {
+     codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject(m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
 
   }
 

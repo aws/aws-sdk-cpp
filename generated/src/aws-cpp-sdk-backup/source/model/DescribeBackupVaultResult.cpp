@@ -85,6 +85,26 @@ DescribeBackupVaultResult& DescribeBackupVaultResult::operator =(const Aws::Amaz
     m_lockDate = jsonValue.GetDouble("LockDate");
     m_lockDateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SourceBackupVaultArn"))
+  {
+    m_sourceBackupVaultArn = jsonValue.GetString("SourceBackupVaultArn");
+    m_sourceBackupVaultArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MpaApprovalTeamArn"))
+  {
+    m_mpaApprovalTeamArn = jsonValue.GetString("MpaApprovalTeamArn");
+    m_mpaApprovalTeamArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MpaSessionArn"))
+  {
+    m_mpaSessionArn = jsonValue.GetString("MpaSessionArn");
+    m_mpaSessionArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LatestMpaApprovalTeamUpdate"))
+  {
+    m_latestMpaApprovalTeamUpdate = jsonValue.GetObject("LatestMpaApprovalTeamUpdate");
+    m_latestMpaApprovalTeamUpdateHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

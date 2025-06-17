@@ -18,7 +18,11 @@ namespace Model
     NOT_SET,
     FINDING,
     CLOUD_TRAIL,
-    S3_DATA_EVENTS
+    S3_DATA_EVENTS,
+    EKS_AUDIT_LOGS,
+    FLOW_LOGS,
+    DNS_LOGS,
+    RUNTIME_MONITORING
   };
 
 namespace SignalTypeMapper

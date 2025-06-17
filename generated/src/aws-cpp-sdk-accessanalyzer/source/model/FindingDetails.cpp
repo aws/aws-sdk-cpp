@@ -25,6 +25,11 @@ FindingDetails::FindingDetails(JsonView jsonValue)
 
 FindingDetails& FindingDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("internalAccessDetails"))
+  {
+    m_internalAccessDetails = jsonValue.GetObject("internalAccessDetails");
+    m_internalAccessDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("externalAccessDetails"))
   {
     m_externalAccessDetails = jsonValue.GetObject("externalAccessDetails");
@@ -56,6 +61,12 @@ FindingDetails& FindingDetails::operator =(JsonView jsonValue)
 JsonValue FindingDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_internalAccessDetailsHasBeenSet)
+  {
+   payload.WithObject("internalAccessDetails", m_internalAccessDetails.Jsonize());
+
+  }
 
   if(m_externalAccessDetailsHasBeenSet)
   {

@@ -40,6 +40,11 @@ Actor& Actor::operator =(JsonView jsonValue)
     m_session = jsonValue.GetObject("session");
     m_sessionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("process"))
+  {
+    m_process = jsonValue.GetObject("process");
+    m_processHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue Actor::Jsonize() const
   if(m_sessionHasBeenSet)
   {
    payload.WithObject("session", m_session.Jsonize());
+
+  }
+
+  if(m_processHasBeenSet)
+  {
+   payload.WithObject("process", m_process.Jsonize());
 
   }
 

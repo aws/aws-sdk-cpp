@@ -26,7 +26,8 @@ namespace Model
     IMAGE_LAYER,
     ACCOUNT,
     AWS_LAMBDA_FUNCTION,
-    LAMBDA_LAYER
+    LAMBDA_LAYER,
+    CODE_REPOSITORY
   };
 
 namespace AggregationTypeMapper

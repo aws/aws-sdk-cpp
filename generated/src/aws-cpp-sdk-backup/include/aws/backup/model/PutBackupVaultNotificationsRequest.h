@@ -65,22 +65,10 @@ namespace Model
     ///@{
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p> <p>For common use cases and code samples, see <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
-     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
-     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
-     * <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code> </p> </li>
-     * <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
-     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
-     * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> <li> <p> <code>RECOVERY_POINT_INDEX_COMPLETED</code> |
-     * <code>RECOVERY_POINT_INDEX_DELETED</code> |
-     * <code>RECOVERY_POINT_INDEXING_FAILED</code> </p> </li> </ul>  <p>The list
-     * below includes both supported events and deprecated events that are no longer in
-     * use (for reference). Deprecated events do not return statuses or notifications.
-     * Refer to the list above for the supported events.</p> 
+     * the backup vault. For the list of supported events, common use cases, and code
+     * samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification
+     * options with Backup</a>.</p>
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const { return m_backupVaultEvents; }
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }

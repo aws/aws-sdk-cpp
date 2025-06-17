@@ -84,6 +84,31 @@ namespace Model
     template<typename CertificateArnT = Aws::String>
     MariaDbDataProviderSettings& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The path for the Amazon S3 bucket that the application uses for accessing the
+     * user-defined schema.</p>
+     */
+    inline const Aws::String& GetS3Path() const { return m_s3Path; }
+    inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
+    template<typename S3PathT = Aws::String>
+    void SetS3Path(S3PathT&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::forward<S3PathT>(value); }
+    template<typename S3PathT = Aws::String>
+    MariaDbDataProviderSettings& WithS3Path(S3PathT&& value) { SetS3Path(std::forward<S3PathT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+     */
+    inline const Aws::String& GetS3AccessRoleArn() const { return m_s3AccessRoleArn; }
+    inline bool S3AccessRoleArnHasBeenSet() const { return m_s3AccessRoleArnHasBeenSet; }
+    template<typename S3AccessRoleArnT = Aws::String>
+    void SetS3AccessRoleArn(S3AccessRoleArnT&& value) { m_s3AccessRoleArnHasBeenSet = true; m_s3AccessRoleArn = std::forward<S3AccessRoleArnT>(value); }
+    template<typename S3AccessRoleArnT = Aws::String>
+    MariaDbDataProviderSettings& WithS3AccessRoleArn(S3AccessRoleArnT&& value) { SetS3AccessRoleArn(std::forward<S3AccessRoleArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_serverName;
@@ -97,6 +122,12 @@ namespace Model
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
+
+    Aws::String m_s3Path;
+    bool m_s3PathHasBeenSet = false;
+
+    Aws::String m_s3AccessRoleArn;
+    bool m_s3AccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

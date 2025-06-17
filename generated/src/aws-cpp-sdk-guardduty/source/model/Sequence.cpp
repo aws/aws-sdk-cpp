@@ -80,6 +80,15 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_sequenceIndicatorsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("additionalSequenceTypes"))
+  {
+    Aws::Utils::Array<JsonView> additionalSequenceTypesJsonList = jsonValue.GetArray("additionalSequenceTypes");
+    for(unsigned additionalSequenceTypesIndex = 0; additionalSequenceTypesIndex < additionalSequenceTypesJsonList.GetLength(); ++additionalSequenceTypesIndex)
+    {
+      m_additionalSequenceTypes.push_back(additionalSequenceTypesJsonList[additionalSequenceTypesIndex].AsString());
+    }
+    m_additionalSequenceTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -151,6 +160,17 @@ JsonValue Sequence::Jsonize() const
      sequenceIndicatorsJsonList[sequenceIndicatorsIndex].AsObject(m_sequenceIndicators[sequenceIndicatorsIndex].Jsonize());
    }
    payload.WithArray("sequenceIndicators", std::move(sequenceIndicatorsJsonList));
+
+  }
+
+  if(m_additionalSequenceTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalSequenceTypesJsonList(m_additionalSequenceTypes.size());
+   for(unsigned additionalSequenceTypesIndex = 0; additionalSequenceTypesIndex < additionalSequenceTypesJsonList.GetLength(); ++additionalSequenceTypesIndex)
+   {
+     additionalSequenceTypesJsonList[additionalSequenceTypesIndex].AsString(m_additionalSequenceTypes[additionalSequenceTypesIndex]);
+   }
+   payload.WithArray("additionalSequenceTypes", std::move(additionalSequenceTypesJsonList));
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/SourceMetadata.h>
+#include <aws/network-firewall/model/SummaryConfiguration.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -217,6 +218,22 @@ namespace Model
     inline void SetAnalyzeRuleGroup(bool value) { m_analyzeRuleGroupHasBeenSet = true; m_analyzeRuleGroup = value; }
     inline CreateRuleGroupRequest& WithAnalyzeRuleGroup(bool value) { SetAnalyzeRuleGroup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains a <code>RuleOptions</code> array of strings. You use
+     * <code>RuleOptions</code> to determine which of the following <a>RuleSummary</a>
+     * values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+     * <ul> <li> <p> <code>Metadata</code> - returns</p> </li> <li> <p>
+     * <code>Msg</code> </p> </li> <li> <p> <code>SID</code> </p> </li> </ul>
+     */
+    inline const SummaryConfiguration& GetSummaryConfiguration() const { return m_summaryConfiguration; }
+    inline bool SummaryConfigurationHasBeenSet() const { return m_summaryConfigurationHasBeenSet; }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    void SetSummaryConfiguration(SummaryConfigurationT&& value) { m_summaryConfigurationHasBeenSet = true; m_summaryConfiguration = std::forward<SummaryConfigurationT>(value); }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    CreateRuleGroupRequest& WithSummaryConfiguration(SummaryConfigurationT&& value) { SetSummaryConfiguration(std::forward<SummaryConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleGroupName;
@@ -251,6 +268,9 @@ namespace Model
 
     bool m_analyzeRuleGroup{false};
     bool m_analyzeRuleGroupHasBeenSet = false;
+
+    SummaryConfiguration m_summaryConfiguration;
+    bool m_summaryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

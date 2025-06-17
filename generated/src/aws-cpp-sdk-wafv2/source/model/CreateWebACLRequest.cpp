@@ -119,6 +119,12 @@ Aws::String CreateWebACLRequest::SerializePayload() const
 
   }
 
+  if(m_applicationConfigHasBeenSet)
+  {
+   payload.WithObject("ApplicationConfig", m_applicationConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

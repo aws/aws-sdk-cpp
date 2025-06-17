@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/SourceMetadata.h>
+#include <aws/network-firewall/model/SummaryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +202,19 @@ namespace Model
     inline void SetAnalyzeRuleGroup(bool value) { m_analyzeRuleGroupHasBeenSet = true; m_analyzeRuleGroup = value; }
     inline UpdateRuleGroupRequest& WithAnalyzeRuleGroup(bool value) { SetAnalyzeRuleGroup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Updates the selected summary configuration for a rule group.</p> <p>Changes
+     * affect subsequent responses from <a>DescribeRuleGroupSummary</a>.</p>
+     */
+    inline const SummaryConfiguration& GetSummaryConfiguration() const { return m_summaryConfiguration; }
+    inline bool SummaryConfigurationHasBeenSet() const { return m_summaryConfigurationHasBeenSet; }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    void SetSummaryConfiguration(SummaryConfigurationT&& value) { m_summaryConfigurationHasBeenSet = true; m_summaryConfiguration = std::forward<SummaryConfigurationT>(value); }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    UpdateRuleGroupRequest& WithSummaryConfiguration(SummaryConfigurationT&& value) { SetSummaryConfiguration(std::forward<SummaryConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_updateToken;
@@ -235,6 +249,9 @@ namespace Model
 
     bool m_analyzeRuleGroup{false};
     bool m_analyzeRuleGroupHasBeenSet = false;
+
+    SummaryConfiguration m_summaryConfiguration;
+    bool m_summaryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

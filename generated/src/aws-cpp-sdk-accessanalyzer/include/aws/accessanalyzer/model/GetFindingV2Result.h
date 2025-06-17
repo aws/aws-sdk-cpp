@@ -164,7 +164,8 @@ namespace Model
      * <p>The type of the finding. For external access analyzers, the type is
      * <code>ExternalAccess</code>. For unused access analyzers, the type can be
      * <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>,
-     * <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+     * <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For
+     * internal access analyzers, the type is <code>InternalAccess</code>.</p>
      */
     inline FindingType GetFindingType() const { return m_findingType; }
     inline void SetFindingType(FindingType value) { m_findingTypeHasBeenSet = true; m_findingType = value; }

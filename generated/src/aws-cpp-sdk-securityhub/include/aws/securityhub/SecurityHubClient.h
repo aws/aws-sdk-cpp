@@ -452,25 +452,27 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Used by Security Hub customers to update information about their
-         * investigation into a finding. Requested by administrator accounts or member
-         * accounts. Administrator accounts can update findings for their account and their
-         * member accounts. Member accounts can update findings for their account.</p>
-         * <p>Updates from <code>BatchUpdateFindings</code> don't affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Administrator and member accounts
-         * can use <code>BatchUpdateFindings</code> to update the following finding fields
-         * and objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
-         * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
-         * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
-         * <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p> Used by Security Hub customers to update information about their
+         * investigation into one or more findings. Requested by administrator accounts or
+         * member accounts. Administrator accounts can update findings for their account
+         * and their member accounts. A member account can update findings only for their
+         * own account. Administrator and member accounts can use this operation to update
+         * the following fields and objects for one or more findings: </p> <ul> <li> <p>
+         * <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code> </p> </li>
+         * <li> <p> <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p>
+         * </li> <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p>
+         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p>You can configure IAM policies to restrict access to fields and
-         * field values. For example, you might not want member accounts to be able to
-         * suppress findings or change the finding severity. See <a
+         * </li> </ul> <p> If you use this operation to update a finding, your updates
+         * don’t affect the value for the <code>UpdatedAt</code> field of the finding. Also
+         * note that it can take several minutes for Security Hub to process your request
+         * and update each finding specified in the request. </p> <p> You can configure IAM
+         * policies to restrict access to fields and field values. For example, you might
+         * not want member accounts to be able to suppress findings or change the finding
+         * severity. For more information see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-         * access to BatchUpdateFindings</a> in the <i>Security Hub User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
          */
@@ -492,6 +494,43 @@ namespace SecurityHub
         void BatchUpdateFindingsAsync(const BatchUpdateFindingsRequestT& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::BatchUpdateFindings, request, handler, context);
+        }
+
+        /**
+         * <p>Used by customers to update information about their investigation into a
+         * finding. Requested by delegated administrator accounts or member accounts.
+         * Delegated administrator accounts can update findings for their account and their
+         * member accounts. Member accounts can update findings for their account.
+         * <code>BatchUpdateFindings</code> and <code>BatchUpdateFindingV2</code> both use
+         * <code>securityhub:BatchUpdateFindings</code> in the <code>Action</code> element
+         * of an IAM policy statement. You must have permission to perform the
+         * <code>securityhub:BatchUpdateFindings</code> action. Updates from
+         * <code>BatchUpdateFindingsV2</code> don't affect the value of
+         * f<code>inding_info.modified_time</code>,
+         * <code>finding_info.modified_time_dt</code>, <code>time</code>, <code>time_dt for
+         * a finding</code>. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateFindingsV2Outcome BatchUpdateFindingsV2(const Model::BatchUpdateFindingsV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateFindingsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateFindingsV2RequestT = Model::BatchUpdateFindingsV2Request>
+        Model::BatchUpdateFindingsV2OutcomeCallable BatchUpdateFindingsV2Callable(const BatchUpdateFindingsV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchUpdateFindingsV2, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateFindingsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateFindingsV2RequestT = Model::BatchUpdateFindingsV2Request>
+        void BatchUpdateFindingsV2Async(const BatchUpdateFindingsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchUpdateFindingsV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchUpdateFindingsV2, request, handler, context);
         }
 
         /**
@@ -518,6 +557,33 @@ namespace SecurityHub
         void BatchUpdateStandardsControlAssociationsAsync(const BatchUpdateStandardsControlAssociationsRequestT& request, const BatchUpdateStandardsControlAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::BatchUpdateStandardsControlAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Grants permission to complete the authorization based on input parameters.
+         * This API is in preview release and subject to change.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConnectorRegistrationsV2Outcome ConnectorRegistrationsV2(const Model::ConnectorRegistrationsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ConnectorRegistrationsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ConnectorRegistrationsV2RequestT = Model::ConnectorRegistrationsV2Request>
+        Model::ConnectorRegistrationsV2OutcomeCallable ConnectorRegistrationsV2Callable(const ConnectorRegistrationsV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ConnectorRegistrationsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ConnectorRegistrationsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ConnectorRegistrationsV2RequestT = Model::ConnectorRegistrationsV2Request>
+        void ConnectorRegistrationsV2Async(const ConnectorRegistrationsV2RequestT& request, const ConnectorRegistrationsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ConnectorRegistrationsV2, request, handler, context);
         }
 
         /**
@@ -548,6 +614,32 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Enables aggregation across Amazon Web Services Regions. This API is in
+         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAggregatorV2Outcome CreateAggregatorV2(const Model::CreateAggregatorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateAggregatorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAggregatorV2RequestT = Model::CreateAggregatorV2Request>
+        Model::CreateAggregatorV2OutcomeCallable CreateAggregatorV2Callable(const CreateAggregatorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateAggregatorV2, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAggregatorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAggregatorV2RequestT = Model::CreateAggregatorV2Request>
+        void CreateAggregatorV2Async(const CreateAggregatorV2RequestT& request, const CreateAggregatorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateAggregatorV2, request, handler, context);
+        }
+
+        /**
          * <p> Creates an automation rule based on input parameters. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">AWS
@@ -571,6 +663,32 @@ namespace SecurityHub
         void CreateAutomationRuleAsync(const CreateAutomationRuleRequestT& request, const CreateAutomationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::CreateAutomationRule, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a V2 automation rule. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutomationRuleV2Outcome CreateAutomationRuleV2(const Model::CreateAutomationRuleV2Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutomationRuleV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutomationRuleV2RequestT = Model::CreateAutomationRuleV2Request>
+        Model::CreateAutomationRuleV2OutcomeCallable CreateAutomationRuleV2Callable(const CreateAutomationRuleV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateAutomationRuleV2, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutomationRuleV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutomationRuleV2RequestT = Model::CreateAutomationRuleV2Request>
+        void CreateAutomationRuleV2Async(const CreateAutomationRuleV2RequestT& request, const CreateAutomationRuleV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateAutomationRuleV2, request, handler, context);
         }
 
         /**
@@ -598,6 +716,32 @@ namespace SecurityHub
         void CreateConfigurationPolicyAsync(const CreateConfigurationPolicyRequestT& request, const CreateConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::CreateConfigurationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Grants permission to create a connectorV2 based on input parameters. This API
+         * is in preview release and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectorV2Outcome CreateConnectorV2(const Model::CreateConnectorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateConnectorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConnectorV2RequestT = Model::CreateConnectorV2Request>
+        Model::CreateConnectorV2OutcomeCallable CreateConnectorV2Callable(const CreateConnectorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateConnectorV2, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConnectorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConnectorV2RequestT = Model::CreateConnectorV2Request>
+        void CreateConnectorV2Async(const CreateConnectorV2RequestT& request, const CreateConnectorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateConnectorV2, request, handler, context);
         }
 
         /**
@@ -714,6 +858,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Grants permission to create a ticket in the chosen ITSM based on finding
+         * information for the provided finding metadata UID. This API is in preview
+         * release and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTicketV2Outcome CreateTicketV2(const Model::CreateTicketV2Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateTicketV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTicketV2RequestT = Model::CreateTicketV2Request>
+        Model::CreateTicketV2OutcomeCallable CreateTicketV2Callable(const CreateTicketV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateTicketV2, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTicketV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTicketV2RequestT = Model::CreateTicketV2Request>
+        void CreateTicketV2Async(const CreateTicketV2RequestT& request, const CreateTicketV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateTicketV2, request, handler, context);
+        }
+
+        /**
          *  <p>We recommend using Organizations instead of Security Hub invitations
          * to manage your member accounts. For information, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
@@ -775,6 +946,58 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Deletes the Aggregator V2. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAggregatorV2Outcome DeleteAggregatorV2(const Model::DeleteAggregatorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAggregatorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAggregatorV2RequestT = Model::DeleteAggregatorV2Request>
+        Model::DeleteAggregatorV2OutcomeCallable DeleteAggregatorV2Callable(const DeleteAggregatorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::DeleteAggregatorV2, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAggregatorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAggregatorV2RequestT = Model::DeleteAggregatorV2Request>
+        void DeleteAggregatorV2Async(const DeleteAggregatorV2RequestT& request, const DeleteAggregatorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::DeleteAggregatorV2, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a V2 automation rule. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAutomationRuleV2Outcome DeleteAutomationRuleV2(const Model::DeleteAutomationRuleV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAutomationRuleV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAutomationRuleV2RequestT = Model::DeleteAutomationRuleV2Request>
+        Model::DeleteAutomationRuleV2OutcomeCallable DeleteAutomationRuleV2Callable(const DeleteAutomationRuleV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::DeleteAutomationRuleV2, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAutomationRuleV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAutomationRuleV2RequestT = Model::DeleteAutomationRuleV2Request>
+        void DeleteAutomationRuleV2Async(const DeleteAutomationRuleV2RequestT& request, const DeleteAutomationRuleV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::DeleteAutomationRuleV2, request, handler, context);
+        }
+
+        /**
          * <p> Deletes a configuration policy. Only the Security Hub delegated
          * administrator can invoke this operation from the home Region. For the deletion
          * to succeed, you must first disassociate a configuration policy from target
@@ -802,6 +1025,32 @@ namespace SecurityHub
         void DeleteConfigurationPolicyAsync(const DeleteConfigurationPolicyRequestT& request, const DeleteConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::DeleteConfigurationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Grants permission to delete a connectorV2. This API is in preview release and
+         * subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectorV2Outcome DeleteConnectorV2(const Model::DeleteConnectorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConnectorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConnectorV2RequestT = Model::DeleteConnectorV2Request>
+        Model::DeleteConnectorV2OutcomeCallable DeleteConnectorV2Callable(const DeleteConnectorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::DeleteConnectorV2, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConnectorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConnectorV2RequestT = Model::DeleteConnectorV2Request>
+        void DeleteConnectorV2Async(const DeleteConnectorV2RequestT& request, const DeleteConnectorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::DeleteConnectorV2, request, handler, context);
         }
 
         /**
@@ -1035,6 +1284,58 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Gets information about the product integration. This API is in private
+         * preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProductsV2Outcome DescribeProductsV2(const Model::DescribeProductsV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeProductsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeProductsV2RequestT = Model::DescribeProductsV2Request>
+        Model::DescribeProductsV2OutcomeCallable DescribeProductsV2Callable(const DescribeProductsV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::DescribeProductsV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeProductsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeProductsV2RequestT = Model::DescribeProductsV2Request>
+        void DescribeProductsV2Async(const DescribeProductsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProductsV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::DescribeProductsV2, request, handler, context);
+        }
+
+        /**
+         * <p>Returns details about the service resource in your account. This API is in
+         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSecurityHubV2Outcome DescribeSecurityHubV2(const Model::DescribeSecurityHubV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeSecurityHubV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSecurityHubV2RequestT = Model::DescribeSecurityHubV2Request>
+        Model::DescribeSecurityHubV2OutcomeCallable DescribeSecurityHubV2Callable(const DescribeSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::DescribeSecurityHubV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSecurityHubV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSecurityHubV2RequestT = Model::DescribeSecurityHubV2Request>
+        void DescribeSecurityHubV2Async(const DescribeSecurityHubV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::DescribeSecurityHubV2, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
          * standard, the results include the standard ARN, the name, and a description.
          * </p><p><h3>See Also:</h3>   <a
@@ -1175,6 +1476,33 @@ namespace SecurityHub
         void DisableSecurityHubAsync(const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableSecurityHubRequestT& request = {}) const
         {
             return SubmitAsync(&SecurityHubClient::DisableSecurityHub, request, handler, context);
+        }
+
+        /**
+         * <p>Disable the service for the current Amazon Web Services Region or specified
+         * Amazon Web Services Region. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableSecurityHubV2Outcome DisableSecurityHubV2(const Model::DisableSecurityHubV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableSecurityHubV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableSecurityHubV2RequestT = Model::DisableSecurityHubV2Request>
+        Model::DisableSecurityHubV2OutcomeCallable DisableSecurityHubV2Callable(const DisableSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::DisableSecurityHubV2, request);
+        }
+
+        /**
+         * An Async wrapper for DisableSecurityHubV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableSecurityHubV2RequestT = Model::DisableSecurityHubV2Request>
+        void DisableSecurityHubV2Async(const DisableSecurityHubV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::DisableSecurityHubV2, request, handler, context);
         }
 
         /**
@@ -1330,6 +1658,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Enables the service in account for the current Amazon Web Services Region or
+         * specified Amazon Web Services Region. This API is in private preview and subject
+         * to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableSecurityHubV2Outcome EnableSecurityHubV2(const Model::EnableSecurityHubV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for EnableSecurityHubV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableSecurityHubV2RequestT = Model::EnableSecurityHubV2Request>
+        Model::EnableSecurityHubV2OutcomeCallable EnableSecurityHubV2Callable(const EnableSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::EnableSecurityHubV2, request);
+        }
+
+        /**
+         * An Async wrapper for EnableSecurityHubV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableSecurityHubV2RequestT = Model::EnableSecurityHubV2Request>
+        void EnableSecurityHubV2Async(const EnableSecurityHubV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableSecurityHubV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::EnableSecurityHubV2, request, handler, context);
+        }
+
+        /**
          * <p>Provides the details for the Security Hub administrator account for the
          * current member account.</p> <p>Can be used by both member accounts that are
          * managed using Organizations and accounts that were invited
@@ -1355,6 +1710,58 @@ namespace SecurityHub
         void GetAdministratorAccountAsync(const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAdministratorAccountRequestT& request = {}) const
         {
             return SubmitAsync(&SecurityHubClient::GetAdministratorAccount, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the configuration of the specified Aggregator V2. This API is in
+         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregatorV2Outcome GetAggregatorV2(const Model::GetAggregatorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetAggregatorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAggregatorV2RequestT = Model::GetAggregatorV2Request>
+        Model::GetAggregatorV2OutcomeCallable GetAggregatorV2Callable(const GetAggregatorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetAggregatorV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetAggregatorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAggregatorV2RequestT = Model::GetAggregatorV2Request>
+        void GetAggregatorV2Async(const GetAggregatorV2RequestT& request, const GetAggregatorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetAggregatorV2, request, handler, context);
+        }
+
+        /**
+         * <p>Returns an automation rule for the V2 service. This API is in private preview
+         * and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomationRuleV2Outcome GetAutomationRuleV2(const Model::GetAutomationRuleV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomationRuleV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomationRuleV2RequestT = Model::GetAutomationRuleV2Request>
+        Model::GetAutomationRuleV2OutcomeCallable GetAutomationRuleV2Callable(const GetAutomationRuleV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetAutomationRuleV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomationRuleV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomationRuleV2RequestT = Model::GetAutomationRuleV2Request>
+        void GetAutomationRuleV2Async(const GetAutomationRuleV2RequestT& request, const GetAutomationRuleV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetAutomationRuleV2, request, handler, context);
         }
 
         /**
@@ -1413,6 +1820,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Grants permission to retrieve details for a connectorV2 based on connector
+         * id. This API is in preview release and subject to change.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectorV2Outcome GetConnectorV2(const Model::GetConnectorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetConnectorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConnectorV2RequestT = Model::GetConnectorV2Request>
+        Model::GetConnectorV2OutcomeCallable GetConnectorV2Callable(const GetConnectorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetConnectorV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetConnectorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConnectorV2RequestT = Model::GetConnectorV2Request>
+        void GetConnectorV2Async(const GetConnectorV2RequestT& request, const GetConnectorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetConnectorV2, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the standards that are currently enabled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">AWS
@@ -1468,9 +1902,18 @@ namespace SecurityHub
         }
 
         /**
-         * <p> Returns history for a Security Hub finding in the last 90 days. The history
-         * includes changes made to any fields in the Amazon Web Services Security Finding
-         * Format (ASFF). </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the history of a Security Hub finding for the past 90 days. The
+         * history includes changes made to any fields in the Amazon Web Services Security
+         * Finding Format (ASFF) except top-level timestamp fields, such as the
+         * <code>CreatedAt</code> and <code>UpdatedAt</code> fields. </p> <p>This operation
+         * might return fewer results than the maximum number of results
+         * (<code>MaxResults</code>) specified in a request, even when more results are
+         * available. If this occurs, the response includes a <code>NextToken</code> value,
+         * which you should use to retrieve the next set of results in the response. The
+         * presence of a <code>NextToken</code> value in a response doesn't necessarily
+         * indicate that the results are incomplete. However, you should continue to
+         * specify a <code>NextToken</code> value until you receive a response that doesn't
+         * include this value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">AWS
          * API Reference</a></p>
          */
@@ -1492,6 +1935,36 @@ namespace SecurityHub
         void GetFindingHistoryAsync(const GetFindingHistoryRequestT& request, const GetFindingHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::GetFindingHistory, request, handler, context);
+        }
+
+        /**
+         * <p>Returns aggregated statistical data about findings.
+         * <code>GetFindingStatisticsV2</code> use
+         * <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code>
+         * element of an IAM policy statement. You must have permission to perform the
+         * <code>s</code> action. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingStatisticsV2Outcome GetFindingStatisticsV2(const Model::GetFindingStatisticsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetFindingStatisticsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFindingStatisticsV2RequestT = Model::GetFindingStatisticsV2Request>
+        Model::GetFindingStatisticsV2OutcomeCallable GetFindingStatisticsV2Callable(const GetFindingStatisticsV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetFindingStatisticsV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetFindingStatisticsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFindingStatisticsV2RequestT = Model::GetFindingStatisticsV2Request>
+        void GetFindingStatisticsV2Async(const GetFindingStatisticsV2RequestT& request, const GetFindingStatisticsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetFindingStatisticsV2, request, handler, context);
         }
 
         /**
@@ -1520,6 +1993,36 @@ namespace SecurityHub
         void GetFindingsAsync(const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFindingsRequestT& request = {}) const
         {
             return SubmitAsync(&SecurityHubClient::GetFindings, request, handler, context);
+        }
+
+        /**
+         * <p>Return a list of findings that match the specified criteria.
+         * <code>GetFindings</code> and <code>GetFindingsV2</code> both use
+         * <code>securityhub:GetFindings</code> in the <code>Action</code> element of an
+         * IAM policy statement. You must have permission to perform the
+         * <code>securityhub:GetFindings</code> action. This API is in private preview and
+         * subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingsV2Outcome GetFindingsV2(const Model::GetFindingsV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetFindingsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFindingsV2RequestT = Model::GetFindingsV2Request>
+        Model::GetFindingsV2OutcomeCallable GetFindingsV2Callable(const GetFindingsV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetFindingsV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetFindingsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFindingsV2RequestT = Model::GetFindingsV2Request>
+        void GetFindingsV2Async(const GetFindingsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFindingsV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetFindingsV2, request, handler, context);
         }
 
         /**
@@ -1636,6 +2139,59 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Retrieves statistical information about Amazon Web Services resources and
+         * their associated security findings. This API is in private preview and subject
+         * to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcesStatisticsV2Outcome GetResourcesStatisticsV2(const Model::GetResourcesStatisticsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcesStatisticsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcesStatisticsV2RequestT = Model::GetResourcesStatisticsV2Request>
+        Model::GetResourcesStatisticsV2OutcomeCallable GetResourcesStatisticsV2Callable(const GetResourcesStatisticsV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetResourcesStatisticsV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcesStatisticsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcesStatisticsV2RequestT = Model::GetResourcesStatisticsV2Request>
+        void GetResourcesStatisticsV2Async(const GetResourcesStatisticsV2RequestT& request, const GetResourcesStatisticsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetResourcesStatisticsV2, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of resources. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcesV2Outcome GetResourcesV2(const Model::GetResourcesV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetResourcesV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcesV2RequestT = Model::GetResourcesV2Request>
+        Model::GetResourcesV2OutcomeCallable GetResourcesV2Callable(const GetResourcesV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetResourcesV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcesV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcesV2RequestT = Model::GetResourcesV2Request>
+        void GetResourcesV2Async(const GetResourcesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcesV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetResourcesV2, request, handler, context);
+        }
+
+        /**
          * <p> Retrieves the definition of a security control. The definition includes the
          * control title, description, Region availability, parameter definitions, and
          * other details. </p><p><h3>See Also:</h3>   <a
@@ -1701,6 +2257,32 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Retrieves a list of V2 aggregators. This API is in private preview and
+         * subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAggregatorsV2Outcome ListAggregatorsV2(const Model::ListAggregatorsV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAggregatorsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAggregatorsV2RequestT = Model::ListAggregatorsV2Request>
+        Model::ListAggregatorsV2OutcomeCallable ListAggregatorsV2Callable(const ListAggregatorsV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListAggregatorsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListAggregatorsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAggregatorsV2RequestT = Model::ListAggregatorsV2Request>
+        void ListAggregatorsV2Async(const ListAggregatorsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAggregatorsV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListAggregatorsV2, request, handler, context);
+        }
+
+        /**
          * <p> A list of automation rules and their metadata for the calling account.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">AWS
@@ -1724,6 +2306,32 @@ namespace SecurityHub
         void ListAutomationRulesAsync(const ListAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutomationRulesRequestT& request = {}) const
         {
             return SubmitAsync(&SecurityHubClient::ListAutomationRules, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of automation rules and metadata for the calling account. This
+         * API is in private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomationRulesV2Outcome ListAutomationRulesV2(const Model::ListAutomationRulesV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAutomationRulesV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomationRulesV2RequestT = Model::ListAutomationRulesV2Request>
+        Model::ListAutomationRulesV2OutcomeCallable ListAutomationRulesV2Callable(const ListAutomationRulesV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListAutomationRulesV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomationRulesV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomationRulesV2RequestT = Model::ListAutomationRulesV2Request>
+        void ListAutomationRulesV2Async(const ListAutomationRulesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutomationRulesV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListAutomationRulesV2, request, handler, context);
         }
 
         /**
@@ -1779,6 +2387,33 @@ namespace SecurityHub
         void ListConfigurationPolicyAssociationsAsync(const ListConfigurationPolicyAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationPolicyAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&SecurityHubClient::ListConfigurationPolicyAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Grants permission to retrieve a list of connectorsV2 and their metadata for
+         * the calling account. This API is in preview release and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectorsV2Outcome ListConnectorsV2(const Model::ListConnectorsV2Request& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConnectorsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectorsV2RequestT = Model::ListConnectorsV2Request>
+        Model::ListConnectorsV2OutcomeCallable ListConnectorsV2Callable(const ListConnectorsV2RequestT& request = {}) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListConnectorsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectorsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectorsV2RequestT = Model::ListConnectorsV2Request>
+        void ListConnectorsV2Async(const ListConnectorsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorsV2RequestT& request = {}) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListConnectorsV2, request, handler, context);
         }
 
         /**
@@ -2139,6 +2774,58 @@ namespace SecurityHub
         }
 
         /**
+         * <p>Udpates the configuration for the Aggregator V2. This API is in private
+         * preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAggregatorV2Outcome UpdateAggregatorV2(const Model::UpdateAggregatorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAggregatorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAggregatorV2RequestT = Model::UpdateAggregatorV2Request>
+        Model::UpdateAggregatorV2OutcomeCallable UpdateAggregatorV2Callable(const UpdateAggregatorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateAggregatorV2, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAggregatorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAggregatorV2RequestT = Model::UpdateAggregatorV2Request>
+        void UpdateAggregatorV2Async(const UpdateAggregatorV2RequestT& request, const UpdateAggregatorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateAggregatorV2, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a V2 automation rule. This API is in private preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutomationRuleV2Outcome UpdateAutomationRuleV2(const Model::UpdateAutomationRuleV2Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutomationRuleV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutomationRuleV2RequestT = Model::UpdateAutomationRuleV2Request>
+        Model::UpdateAutomationRuleV2OutcomeCallable UpdateAutomationRuleV2Callable(const UpdateAutomationRuleV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateAutomationRuleV2, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutomationRuleV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutomationRuleV2RequestT = Model::UpdateAutomationRuleV2Request>
+        void UpdateAutomationRuleV2Async(const UpdateAutomationRuleV2RequestT& request, const UpdateAutomationRuleV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateAutomationRuleV2, request, handler, context);
+        }
+
+        /**
          * <p> Updates a configuration policy. Only the Security Hub delegated
          * administrator can invoke this operation from the home Region. </p><p><h3>See
          * Also:</h3>   <a
@@ -2163,6 +2850,33 @@ namespace SecurityHub
         void UpdateConfigurationPolicyAsync(const UpdateConfigurationPolicyRequestT& request, const UpdateConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::UpdateConfigurationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Grants permission to update a connectorV2 based on its id and input
+         * parameters. This API is in preview release and subject to change.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectorV2Outcome UpdateConnectorV2(const Model::UpdateConnectorV2Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConnectorV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConnectorV2RequestT = Model::UpdateConnectorV2Request>
+        Model::UpdateConnectorV2OutcomeCallable UpdateConnectorV2Callable(const UpdateConnectorV2RequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateConnectorV2, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConnectorV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConnectorV2RequestT = Model::UpdateConnectorV2Request>
+        void UpdateConnectorV2Async(const UpdateConnectorV2RequestT& request, const UpdateConnectorV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateConnectorV2, request, handler, context);
         }
 
         /**

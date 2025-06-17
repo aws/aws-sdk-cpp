@@ -106,12 +106,10 @@ namespace Bedrock
         }
 
         /**
-         * <p>Creates a new custom model in Amazon Bedrock from an existing SageMaker
-         * AI-trained Amazon Nova model stored in an Amazon-managed Amazon S3 bucket. After
-         * the model is active, you can use it for inference.</p> <p>To use the model for
-         * inference, you must purchase Provisioned Throughput for it. You can't use
-         * On-demand inference with these custom models. For more information about
-         * Provisioned Throughput, see <a
+         * <p>Creates a new custom model in Amazon Bedrock. After the model is active, you
+         * can use it for inference.</p> <p>To use the model for inference, you must
+         * purchase Provisioned Throughput for it. You can't use On-demand inference with
+         * these custom models. For more information about Provisioned Throughput, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
          * Throughput</a>.</p> <p>The model appears in <code>ListCustomModels</code> with a
          * <code>customizationType</code> of <code>imported</code>. To track the status of
@@ -119,16 +117,8 @@ namespace Bedrock
          * can be in the following states:</p> <ul> <li> <p> <code>Creating</code> -
          * Initial state during validation and registration</p> </li> <li> <p>
          * <code>Active</code> - Model is ready for use in inference</p> </li> <li> <p>
-         * <code>Failed</code> - Creation process encountered an error</p> </li> </ul>
-         * <p>For more information about creating custom models, including specific model
-         * requirements, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/create-custom-model-from-existing.html">Import
-         * a SageMaker AI-trained Amazon Nova model</a> in the Amazon Bedrock User Guide.
-         * </p>  <p>You use the <code>CreateCustomModel</code> API to import only
-         * SageMaker AI-trained Amazon Nova models. To import open-source models, you use
-         * the <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>.
-         * </p>  <p> <b>Related APIs</b> </p> <ul> <li> <p> <a
+         * <code>Failed</code> - Creation process encountered an error</p> </li> </ul> <p>
+         * <b>Related APIs</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModel.html">GetCustomModel</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModels.html">ListCustomModels</a>

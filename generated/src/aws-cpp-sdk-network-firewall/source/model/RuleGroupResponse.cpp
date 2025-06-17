@@ -108,6 +108,11 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     }
     m_analysisResultsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SummaryConfiguration"))
+  {
+    m_summaryConfiguration = jsonValue.GetObject("SummaryConfiguration");
+    m_summaryConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -209,6 +214,12 @@ JsonValue RuleGroupResponse::Jsonize() const
      analysisResultsJsonList[analysisResultsIndex].AsObject(m_analysisResults[analysisResultsIndex].Jsonize());
    }
    payload.WithArray("AnalysisResults", std::move(analysisResultsJsonList));
+
+  }
+
+  if(m_summaryConfigurationHasBeenSet)
+  {
+   payload.WithObject("SummaryConfiguration", m_summaryConfiguration.Jsonize());
 
   }
 

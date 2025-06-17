@@ -81,6 +81,12 @@ Aws::String UpdateRuleGroupRequest::SerializePayload() const
 
   }
 
+  if(m_summaryConfigurationHasBeenSet)
+  {
+   payload.WithObject("SummaryConfiguration", m_summaryConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm/model/CertificateExport.h>
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/ExtendedKeyUsageName.h>
 #include <aws/acm/model/KeyUsageName.h>
@@ -89,6 +90,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify
+     * certificates that can be exported.</p>
+     */
+    inline CertificateExport GetExportOption() const { return m_exportOption; }
+    inline bool ExportOptionHasBeenSet() const { return m_exportOptionHasBeenSet; }
+    inline void SetExportOption(CertificateExport value) { m_exportOptionHasBeenSet = true; m_exportOption = value; }
+    inline Filters& WithExportOption(CertificateExport value) { SetExportOption(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Identifies the Amazon Web Services service that manages the certificate
      * issued by ACM.</p>
      */
@@ -107,6 +119,9 @@ namespace Model
 
     Aws::Vector<KeyAlgorithm> m_keyTypes;
     bool m_keyTypesHasBeenSet = false;
+
+    CertificateExport m_exportOption{CertificateExport::NOT_SET};
+    bool m_exportOptionHasBeenSet = false;
 
     CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
     bool m_managedByHasBeenSet = false;

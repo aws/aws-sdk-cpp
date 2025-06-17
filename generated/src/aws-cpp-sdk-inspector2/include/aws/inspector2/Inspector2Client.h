@@ -111,6 +111,58 @@ namespace Inspector2
         }
 
         /**
+         * <p>Associates multiple code repositories with an Amazon Inspector code security
+         * scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchAssociateCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAssociateCodeSecurityScanConfigurationOutcome BatchAssociateCodeSecurityScanConfiguration(const Model::BatchAssociateCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAssociateCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchAssociateCodeSecurityScanConfigurationRequestT = Model::BatchAssociateCodeSecurityScanConfigurationRequest>
+        Model::BatchAssociateCodeSecurityScanConfigurationOutcomeCallable BatchAssociateCodeSecurityScanConfigurationCallable(const BatchAssociateCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchAssociateCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for BatchAssociateCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchAssociateCodeSecurityScanConfigurationRequestT = Model::BatchAssociateCodeSecurityScanConfigurationRequest>
+        void BatchAssociateCodeSecurityScanConfigurationAsync(const BatchAssociateCodeSecurityScanConfigurationRequestT& request, const BatchAssociateCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchAssociateCodeSecurityScanConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates multiple code repositories from an Amazon Inspector code
+         * security scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchDisassociateCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateCodeSecurityScanConfigurationOutcome BatchDisassociateCodeSecurityScanConfiguration(const Model::BatchDisassociateCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDisassociateCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDisassociateCodeSecurityScanConfigurationRequestT = Model::BatchDisassociateCodeSecurityScanConfigurationRequest>
+        Model::BatchDisassociateCodeSecurityScanConfigurationOutcomeCallable BatchDisassociateCodeSecurityScanConfigurationCallable(const BatchDisassociateCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchDisassociateCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDisassociateCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDisassociateCodeSecurityScanConfigurationRequestT = Model::BatchDisassociateCodeSecurityScanConfigurationRequest>
+        void BatchDisassociateCodeSecurityScanConfigurationAsync(const BatchDisassociateCodeSecurityScanConfigurationRequestT& request, const BatchDisassociateCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchDisassociateCodeSecurityScanConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the Amazon Inspector status of multiple Amazon Web Services
          * accounts within your environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetAccountStatus">AWS
@@ -346,6 +398,62 @@ namespace Inspector2
         }
 
         /**
+         * <p>Creates a code security integration with a source code repository
+         * provider.</p> <p>After calling the <code>CreateCodeSecurityIntegration</code>
+         * operation, you complete authentication and authorization with your provider.
+         * Next you call the <code>UpdateCodeSecurityIntegration</code> operation to
+         * provide the <code>details</code> to complete the integration setup</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCodeSecurityIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCodeSecurityIntegrationOutcome CreateCodeSecurityIntegration(const Model::CreateCodeSecurityIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCodeSecurityIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCodeSecurityIntegrationRequestT = Model::CreateCodeSecurityIntegrationRequest>
+        Model::CreateCodeSecurityIntegrationOutcomeCallable CreateCodeSecurityIntegrationCallable(const CreateCodeSecurityIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::CreateCodeSecurityIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCodeSecurityIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCodeSecurityIntegrationRequestT = Model::CreateCodeSecurityIntegrationRequest>
+        void CreateCodeSecurityIntegrationAsync(const CreateCodeSecurityIntegrationRequestT& request, const CreateCodeSecurityIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::CreateCodeSecurityIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a scan configuration for code security scanning.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCodeSecurityScanConfigurationOutcome CreateCodeSecurityScanConfiguration(const Model::CreateCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCodeSecurityScanConfigurationRequestT = Model::CreateCodeSecurityScanConfigurationRequest>
+        Model::CreateCodeSecurityScanConfigurationOutcomeCallable CreateCodeSecurityScanConfigurationCallable(const CreateCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::CreateCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCodeSecurityScanConfigurationRequestT = Model::CreateCodeSecurityScanConfigurationRequest>
+        void CreateCodeSecurityScanConfigurationAsync(const CreateCodeSecurityScanConfigurationRequestT& request, const CreateCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::CreateCodeSecurityScanConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a filter resource using specified filter criteria. When the filter
          * action is set to <code>SUPPRESS</code> this action creates a suppression
          * rule.</p><p><h3>See Also:</h3>   <a
@@ -449,6 +557,56 @@ namespace Inspector2
         void DeleteCisScanConfigurationAsync(const DeleteCisScanConfigurationRequestT& request, const DeleteCisScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::DeleteCisScanConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a code security integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCodeSecurityIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCodeSecurityIntegrationOutcome DeleteCodeSecurityIntegration(const Model::DeleteCodeSecurityIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCodeSecurityIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCodeSecurityIntegrationRequestT = Model::DeleteCodeSecurityIntegrationRequest>
+        Model::DeleteCodeSecurityIntegrationOutcomeCallable DeleteCodeSecurityIntegrationCallable(const DeleteCodeSecurityIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::DeleteCodeSecurityIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCodeSecurityIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCodeSecurityIntegrationRequestT = Model::DeleteCodeSecurityIntegrationRequest>
+        void DeleteCodeSecurityIntegrationAsync(const DeleteCodeSecurityIntegrationRequestT& request, const DeleteCodeSecurityIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::DeleteCodeSecurityIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a code security scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCodeSecurityScanConfigurationOutcome DeleteCodeSecurityScanConfiguration(const Model::DeleteCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCodeSecurityScanConfigurationRequestT = Model::DeleteCodeSecurityScanConfigurationRequest>
+        Model::DeleteCodeSecurityScanConfigurationOutcomeCallable DeleteCodeSecurityScanConfigurationCallable(const DeleteCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::DeleteCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCodeSecurityScanConfigurationRequestT = Model::DeleteCodeSecurityScanConfigurationRequest>
+        void DeleteCodeSecurityScanConfigurationAsync(const DeleteCodeSecurityScanConfigurationRequestT& request, const DeleteCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::DeleteCodeSecurityScanConfiguration, request, handler, context);
         }
 
         /**
@@ -707,6 +865,84 @@ namespace Inspector2
         void GetClustersForImageAsync(const GetClustersForImageRequestT& request, const GetClustersForImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::GetClustersForImage, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a code security integration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCodeSecurityIntegrationOutcome GetCodeSecurityIntegration(const Model::GetCodeSecurityIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCodeSecurityIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCodeSecurityIntegrationRequestT = Model::GetCodeSecurityIntegrationRequest>
+        Model::GetCodeSecurityIntegrationOutcomeCallable GetCodeSecurityIntegrationCallable(const GetCodeSecurityIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetCodeSecurityIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for GetCodeSecurityIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCodeSecurityIntegrationRequestT = Model::GetCodeSecurityIntegrationRequest>
+        void GetCodeSecurityIntegrationAsync(const GetCodeSecurityIntegrationRequestT& request, const GetCodeSecurityIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetCodeSecurityIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a specific code security scan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCodeSecurityScanOutcome GetCodeSecurityScan(const Model::GetCodeSecurityScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCodeSecurityScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCodeSecurityScanRequestT = Model::GetCodeSecurityScanRequest>
+        Model::GetCodeSecurityScanOutcomeCallable GetCodeSecurityScanCallable(const GetCodeSecurityScanRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetCodeSecurityScan, request);
+        }
+
+        /**
+         * An Async wrapper for GetCodeSecurityScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCodeSecurityScanRequestT = Model::GetCodeSecurityScanRequest>
+        void GetCodeSecurityScanAsync(const GetCodeSecurityScanRequestT& request, const GetCodeSecurityScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetCodeSecurityScan, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a code security scan configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCodeSecurityScanConfigurationOutcome GetCodeSecurityScanConfiguration(const Model::GetCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCodeSecurityScanConfigurationRequestT = Model::GetCodeSecurityScanConfigurationRequest>
+        Model::GetCodeSecurityScanConfigurationOutcomeCallable GetCodeSecurityScanConfigurationCallable(const GetCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCodeSecurityScanConfigurationRequestT = Model::GetCodeSecurityScanConfigurationRequest>
+        void GetCodeSecurityScanConfigurationAsync(const GetCodeSecurityScanConfigurationRequestT& request, const GetCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetCodeSecurityScanConfiguration, request, handler, context);
         }
 
         /**
@@ -1013,6 +1249,84 @@ namespace Inspector2
         void ListCisScansAsync(const ListCisScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCisScansRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListCisScans, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all code security integrations in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCodeSecurityIntegrationsOutcome ListCodeSecurityIntegrations(const Model::ListCodeSecurityIntegrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCodeSecurityIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCodeSecurityIntegrationsRequestT = Model::ListCodeSecurityIntegrationsRequest>
+        Model::ListCodeSecurityIntegrationsOutcomeCallable ListCodeSecurityIntegrationsCallable(const ListCodeSecurityIntegrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCodeSecurityIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCodeSecurityIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCodeSecurityIntegrationsRequestT = Model::ListCodeSecurityIntegrationsRequest>
+        void ListCodeSecurityIntegrationsAsync(const ListCodeSecurityIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCodeSecurityIntegrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCodeSecurityIntegrations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the associations between code repositories and Amazon Inspector code
+         * security scan configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityScanConfigurationAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCodeSecurityScanConfigurationAssociationsOutcome ListCodeSecurityScanConfigurationAssociations(const Model::ListCodeSecurityScanConfigurationAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCodeSecurityScanConfigurationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCodeSecurityScanConfigurationAssociationsRequestT = Model::ListCodeSecurityScanConfigurationAssociationsRequest>
+        Model::ListCodeSecurityScanConfigurationAssociationsOutcomeCallable ListCodeSecurityScanConfigurationAssociationsCallable(const ListCodeSecurityScanConfigurationAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCodeSecurityScanConfigurationAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCodeSecurityScanConfigurationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCodeSecurityScanConfigurationAssociationsRequestT = Model::ListCodeSecurityScanConfigurationAssociationsRequest>
+        void ListCodeSecurityScanConfigurationAssociationsAsync(const ListCodeSecurityScanConfigurationAssociationsRequestT& request, const ListCodeSecurityScanConfigurationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCodeSecurityScanConfigurationAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all code security scan configurations in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityScanConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCodeSecurityScanConfigurationsOutcome ListCodeSecurityScanConfigurations(const Model::ListCodeSecurityScanConfigurationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCodeSecurityScanConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCodeSecurityScanConfigurationsRequestT = Model::ListCodeSecurityScanConfigurationsRequest>
+        Model::ListCodeSecurityScanConfigurationsOutcomeCallable ListCodeSecurityScanConfigurationsCallable(const ListCodeSecurityScanConfigurationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCodeSecurityScanConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCodeSecurityScanConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCodeSecurityScanConfigurationsRequestT = Model::ListCodeSecurityScanConfigurationsRequest>
+        void ListCodeSecurityScanConfigurationsAsync(const ListCodeSecurityScanConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCodeSecurityScanConfigurationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCodeSecurityScanConfigurations, request, handler, context);
         }
 
         /**
@@ -1382,6 +1696,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Initiates a code security scan on a specified repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCodeSecurityScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCodeSecurityScanOutcome StartCodeSecurityScan(const Model::StartCodeSecurityScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCodeSecurityScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCodeSecurityScanRequestT = Model::StartCodeSecurityScanRequest>
+        Model::StartCodeSecurityScanOutcomeCallable StartCodeSecurityScanCallable(const StartCodeSecurityScanRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::StartCodeSecurityScan, request);
+        }
+
+        /**
+         * An Async wrapper for StartCodeSecurityScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCodeSecurityScanRequestT = Model::StartCodeSecurityScanRequest>
+        void StartCodeSecurityScanAsync(const StartCodeSecurityScanRequestT& request, const StartCodeSecurityScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::StartCodeSecurityScan, request, handler, context);
+        }
+
+        /**
          * <p> Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to
          * communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
          * calls this API to stop a CIS scan session for the scan ID supplied by the
@@ -1482,6 +1822,62 @@ namespace Inspector2
         void UpdateCisScanConfigurationAsync(const UpdateCisScanConfigurationRequestT& request, const UpdateCisScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::UpdateCisScanConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing code security integration.</p> <p>After calling the
+         * <code>CreateCodeSecurityIntegration</code> operation, you complete
+         * authentication and authorization with your provider. Next you call the
+         * <code>UpdateCodeSecurityIntegration</code> operation to provide the
+         * <code>details</code> to complete the integration setup</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCodeSecurityIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCodeSecurityIntegrationOutcome UpdateCodeSecurityIntegration(const Model::UpdateCodeSecurityIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCodeSecurityIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCodeSecurityIntegrationRequestT = Model::UpdateCodeSecurityIntegrationRequest>
+        Model::UpdateCodeSecurityIntegrationOutcomeCallable UpdateCodeSecurityIntegrationCallable(const UpdateCodeSecurityIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateCodeSecurityIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCodeSecurityIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCodeSecurityIntegrationRequestT = Model::UpdateCodeSecurityIntegrationRequest>
+        void UpdateCodeSecurityIntegrationAsync(const UpdateCodeSecurityIntegrationRequestT& request, const UpdateCodeSecurityIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateCodeSecurityIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing code security scan configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCodeSecurityScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCodeSecurityScanConfigurationOutcome UpdateCodeSecurityScanConfiguration(const Model::UpdateCodeSecurityScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCodeSecurityScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCodeSecurityScanConfigurationRequestT = Model::UpdateCodeSecurityScanConfigurationRequest>
+        Model::UpdateCodeSecurityScanConfigurationOutcomeCallable UpdateCodeSecurityScanConfigurationCallable(const UpdateCodeSecurityScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateCodeSecurityScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCodeSecurityScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCodeSecurityScanConfigurationRequestT = Model::UpdateCodeSecurityScanConfigurationRequest>
+        void UpdateCodeSecurityScanConfigurationAsync(const UpdateCodeSecurityScanConfigurationRequestT& request, const UpdateCodeSecurityScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateCodeSecurityScanConfiguration, request, handler, context);
         }
 
         /**

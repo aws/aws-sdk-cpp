@@ -40,6 +40,11 @@ StatefulRuleGroupReference& StatefulRuleGroupReference::operator =(JsonView json
     m_override = jsonValue.GetObject("Override");
     m_overrideHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DeepThreatInspection"))
+  {
+    m_deepThreatInspection = jsonValue.GetBool("DeepThreatInspection");
+    m_deepThreatInspectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue StatefulRuleGroupReference::Jsonize() const
   if(m_overrideHasBeenSet)
   {
    payload.WithObject("Override", m_override.Jsonize());
+
+  }
+
+  if(m_deepThreatInspectionHasBeenSet)
+  {
+   payload.WithBool("DeepThreatInspection", m_deepThreatInspection);
 
   }
 

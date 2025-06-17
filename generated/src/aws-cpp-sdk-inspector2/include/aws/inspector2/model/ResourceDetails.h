@@ -8,6 +8,7 @@
 #include <aws/inspector2/model/AwsEc2InstanceDetails.h>
 #include <aws/inspector2/model/AwsEcrContainerImageDetails.h>
 #include <aws/inspector2/model/AwsLambdaFunctionDetails.h>
+#include <aws/inspector2/model/CodeRepositoryDetails.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,19 @@ namespace Model
     template<typename AwsLambdaFunctionT = AwsLambdaFunctionDetails>
     ResourceDetails& WithAwsLambdaFunction(AwsLambdaFunctionT&& value) { SetAwsLambdaFunction(std::forward<AwsLambdaFunctionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about a code repository resource associated with a
+     * finding.</p>
+     */
+    inline const CodeRepositoryDetails& GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    template<typename CodeRepositoryT = CodeRepositoryDetails>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = CodeRepositoryDetails>
+    ResourceDetails& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
+    ///@}
   private:
 
     AwsEc2InstanceDetails m_awsEc2Instance;
@@ -88,6 +102,9 @@ namespace Model
 
     AwsLambdaFunctionDetails m_awsLambdaFunction;
     bool m_awsLambdaFunctionHasBeenSet = false;
+
+    CodeRepositoryDetails m_codeRepository;
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

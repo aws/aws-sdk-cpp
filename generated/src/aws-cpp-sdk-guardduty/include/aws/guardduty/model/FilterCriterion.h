@@ -45,9 +45,7 @@ namespace Model
     ///@{
     /**
      * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
+     * entries.</p>
      */
     inline CriterionKey GetCriterionKey() const { return m_criterionKey; }
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }

@@ -31,6 +31,7 @@ namespace Aws
         static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
         static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
         static const int LAMBDA_LAYER_HASH = HashingUtils::HashString("LAMBDA_LAYER");
+        static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITORY");
 
 
         AggregationType GetAggregationTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return AggregationType::LAMBDA_LAYER;
           }
+          else if (hashCode == CODE_REPOSITORY_HASH)
+          {
+            return AggregationType::CODE_REPOSITORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "AWS_LAMBDA_FUNCTION";
           case AggregationType::LAMBDA_LAYER:
             return "LAMBDA_LAYER";
+          case AggregationType::CODE_REPOSITORY:
+            return "CODE_REPOSITORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

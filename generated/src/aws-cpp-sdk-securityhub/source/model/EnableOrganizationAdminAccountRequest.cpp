@@ -22,6 +22,11 @@ Aws::String EnableOrganizationAdminAccountRequest::SerializePayload() const
 
   }
 
+  if(m_featureHasBeenSet)
+  {
+   payload.WithString("Feature", SecurityHubFeatureMapper::GetNameForSecurityHubFeature(m_feature));
+  }
+
   return payload.View().WriteReadable();
 }
 

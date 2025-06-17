@@ -25,6 +25,9 @@ namespace Aws
         static const int ECR_RESCAN_HASH = HashingUtils::HashString("ECR_RESCAN");
         static const int LAMBDA_FUNCTION_HOURS_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_HOURS");
         static const int LAMBDA_FUNCTION_CODE_HOURS_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_CODE_HOURS");
+        static const int CODE_REPOSITORY_SAST_HASH = HashingUtils::HashString("CODE_REPOSITORY_SAST");
+        static const int CODE_REPOSITORY_IAC_HASH = HashingUtils::HashString("CODE_REPOSITORY_IAC");
+        static const int CODE_REPOSITORY_SCA_HASH = HashingUtils::HashString("CODE_REPOSITORY_SCA");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == LAMBDA_FUNCTION_CODE_HOURS_HASH)
           {
             return UsageType::LAMBDA_FUNCTION_CODE_HOURS;
+          }
+          else if (hashCode == CODE_REPOSITORY_SAST_HASH)
+          {
+            return UsageType::CODE_REPOSITORY_SAST;
+          }
+          else if (hashCode == CODE_REPOSITORY_IAC_HASH)
+          {
+            return UsageType::CODE_REPOSITORY_IAC;
+          }
+          else if (hashCode == CODE_REPOSITORY_SCA_HASH)
+          {
+            return UsageType::CODE_REPOSITORY_SCA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +91,12 @@ namespace Aws
             return "LAMBDA_FUNCTION_HOURS";
           case UsageType::LAMBDA_FUNCTION_CODE_HOURS:
             return "LAMBDA_FUNCTION_CODE_HOURS";
+          case UsageType::CODE_REPOSITORY_SAST:
+            return "CODE_REPOSITORY_SAST";
+          case UsageType::CODE_REPOSITORY_IAC:
+            return "CODE_REPOSITORY_IAC";
+          case UsageType::CODE_REPOSITORY_SCA:
+            return "CODE_REPOSITORY_SCA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

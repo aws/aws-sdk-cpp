@@ -69,8 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
+     * <p>The rescan duration configured for image push date. </p>
      */
     inline EcrRescanDuration GetRescanDuration() const { return m_rescanDuration; }
     inline bool RescanDurationHasBeenSet() const { return m_rescanDurationHasBeenSet; }

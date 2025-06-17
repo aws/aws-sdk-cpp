@@ -42,6 +42,7 @@
 #include <aws/network-firewall/model/DescribeResourcePolicyResult.h>
 #include <aws/network-firewall/model/DescribeRuleGroupResult.h>
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataResult.h>
+#include <aws/network-firewall/model/DescribeRuleGroupSummaryResult.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationResult.h>
 #include <aws/network-firewall/model/DescribeVpcEndpointAssociationResult.h>
 #include <aws/network-firewall/model/DisassociateAvailabilityZonesResult.h>
@@ -84,6 +85,7 @@
 #include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataRequest.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
+#include <aws/network-firewall/model/DescribeRuleGroupSummaryRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
@@ -159,6 +161,7 @@ namespace Aws
       class DescribeResourcePolicyRequest;
       class DescribeRuleGroupRequest;
       class DescribeRuleGroupMetadataRequest;
+      class DescribeRuleGroupSummaryRequest;
       class DescribeTLSInspectionConfigurationRequest;
       class DescribeVpcEndpointAssociationRequest;
       class DisassociateAvailabilityZonesRequest;
@@ -218,6 +221,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, NetworkFirewallError> DescribeResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DescribeRuleGroupResult, NetworkFirewallError> DescribeRuleGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeRuleGroupMetadataResult, NetworkFirewallError> DescribeRuleGroupMetadataOutcome;
+      typedef Aws::Utils::Outcome<DescribeRuleGroupSummaryResult, NetworkFirewallError> DescribeRuleGroupSummaryOutcome;
       typedef Aws::Utils::Outcome<DescribeTLSInspectionConfigurationResult, NetworkFirewallError> DescribeTLSInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeVpcEndpointAssociationResult, NetworkFirewallError> DescribeVpcEndpointAssociationOutcome;
       typedef Aws::Utils::Outcome<DisassociateAvailabilityZonesResult, NetworkFirewallError> DisassociateAvailabilityZonesOutcome;
@@ -277,6 +281,7 @@ namespace Aws
       typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
       typedef std::future<DescribeRuleGroupOutcome> DescribeRuleGroupOutcomeCallable;
       typedef std::future<DescribeRuleGroupMetadataOutcome> DescribeRuleGroupMetadataOutcomeCallable;
+      typedef std::future<DescribeRuleGroupSummaryOutcome> DescribeRuleGroupSummaryOutcomeCallable;
       typedef std::future<DescribeTLSInspectionConfigurationOutcome> DescribeTLSInspectionConfigurationOutcomeCallable;
       typedef std::future<DescribeVpcEndpointAssociationOutcome> DescribeVpcEndpointAssociationOutcomeCallable;
       typedef std::future<DisassociateAvailabilityZonesOutcome> DisassociateAvailabilityZonesOutcomeCallable;
@@ -339,6 +344,7 @@ namespace Aws
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupRequest&, const Model::DescribeRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupMetadataRequest&, const Model::DescribeRuleGroupMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupMetadataResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupSummaryRequest&, const Model::DescribeRuleGroupSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupSummaryResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeTLSInspectionConfigurationRequest&, const Model::DescribeTLSInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTLSInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeVpcEndpointAssociationRequest&, const Model::DescribeVpcEndpointAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcEndpointAssociationResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DisassociateAvailabilityZonesRequest&, const Model::DisassociateAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAvailabilityZonesResponseReceivedHandler;

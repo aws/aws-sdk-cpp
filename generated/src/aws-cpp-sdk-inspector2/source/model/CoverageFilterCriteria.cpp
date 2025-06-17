@@ -34,6 +34,33 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_accountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codeRepositoryProjectName"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProjectNameJsonList = jsonValue.GetArray("codeRepositoryProjectName");
+    for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+    {
+      m_codeRepositoryProjectName.push_back(codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject());
+    }
+    m_codeRepositoryProjectNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryProviderType"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProviderTypeJsonList = jsonValue.GetArray("codeRepositoryProviderType");
+    for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+    {
+      m_codeRepositoryProviderType.push_back(codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject());
+    }
+    m_codeRepositoryProviderTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryProviderTypeVisibility"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProviderTypeVisibilityJsonList = jsonValue.GetArray("codeRepositoryProviderTypeVisibility");
+    for(unsigned codeRepositoryProviderTypeVisibilityIndex = 0; codeRepositoryProviderTypeVisibilityIndex < codeRepositoryProviderTypeVisibilityJsonList.GetLength(); ++codeRepositoryProviderTypeVisibilityIndex)
+    {
+      m_codeRepositoryProviderTypeVisibility.push_back(codeRepositoryProviderTypeVisibilityJsonList[codeRepositoryProviderTypeVisibilityIndex].AsObject());
+    }
+    m_codeRepositoryProviderTypeVisibilityHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ec2InstanceTags"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
@@ -124,6 +151,15 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lastScannedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastScannedCommitId"))
+  {
+    Aws::Utils::Array<JsonView> lastScannedCommitIdJsonList = jsonValue.GetArray("lastScannedCommitId");
+    for(unsigned lastScannedCommitIdIndex = 0; lastScannedCommitIdIndex < lastScannedCommitIdJsonList.GetLength(); ++lastScannedCommitIdIndex)
+    {
+      m_lastScannedCommitId.push_back(lastScannedCommitIdJsonList[lastScannedCommitIdIndex].AsObject());
+    }
+    m_lastScannedCommitIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("resourceId"))
   {
     Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
@@ -193,6 +229,39 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      accountIdJsonList[accountIdIndex].AsObject(m_accountId[accountIdIndex].Jsonize());
    }
    payload.WithArray("accountId", std::move(accountIdJsonList));
+
+  }
+
+  if(m_codeRepositoryProjectNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProjectNameJsonList(m_codeRepositoryProjectName.size());
+   for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+   {
+     codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject(m_codeRepositoryProjectName[codeRepositoryProjectNameIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProjectName", std::move(codeRepositoryProjectNameJsonList));
+
+  }
+
+  if(m_codeRepositoryProviderTypeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProviderTypeJsonList(m_codeRepositoryProviderType.size());
+   for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+   {
+     codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject(m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
+
+  }
+
+  if(m_codeRepositoryProviderTypeVisibilityHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProviderTypeVisibilityJsonList(m_codeRepositoryProviderTypeVisibility.size());
+   for(unsigned codeRepositoryProviderTypeVisibilityIndex = 0; codeRepositoryProviderTypeVisibilityIndex < codeRepositoryProviderTypeVisibilityJsonList.GetLength(); ++codeRepositoryProviderTypeVisibilityIndex)
+   {
+     codeRepositoryProviderTypeVisibilityJsonList[codeRepositoryProviderTypeVisibilityIndex].AsObject(m_codeRepositoryProviderTypeVisibility[codeRepositoryProviderTypeVisibilityIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProviderTypeVisibility", std::move(codeRepositoryProviderTypeVisibilityJsonList));
 
   }
 
@@ -303,6 +372,17 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      lastScannedAtJsonList[lastScannedAtIndex].AsObject(m_lastScannedAt[lastScannedAtIndex].Jsonize());
    }
    payload.WithArray("lastScannedAt", std::move(lastScannedAtJsonList));
+
+  }
+
+  if(m_lastScannedCommitIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lastScannedCommitIdJsonList(m_lastScannedCommitId.size());
+   for(unsigned lastScannedCommitIdIndex = 0; lastScannedCommitIdIndex < lastScannedCommitIdJsonList.GetLength(); ++lastScannedCommitIdIndex)
+   {
+     lastScannedCommitIdJsonList[lastScannedCommitIdIndex].AsObject(m_lastScannedCommitId[lastScannedCommitIdIndex].Jsonize());
+   }
+   payload.WithArray("lastScannedCommitId", std::move(lastScannedCommitIdJsonList));
 
   }
 

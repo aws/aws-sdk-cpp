@@ -80,6 +80,11 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InitiationDate"))
+  {
+    m_initiationDate = jsonValue.GetDouble("InitiationDate");
+    m_initiationDateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetDouble("CompletionDate");
@@ -219,6 +224,11 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_initiationDateHasBeenSet)
+  {
+   payload.WithDouble("InitiationDate", m_initiationDate.SecondsWithMSPrecision());
   }
 
   if(m_completionDateHasBeenSet)

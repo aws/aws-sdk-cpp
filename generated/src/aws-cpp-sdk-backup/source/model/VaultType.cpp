@@ -22,6 +22,7 @@ namespace Aws
 
         static const int BACKUP_VAULT_HASH = HashingUtils::HashString("BACKUP_VAULT");
         static const int LOGICALLY_AIR_GAPPED_BACKUP_VAULT_HASH = HashingUtils::HashString("LOGICALLY_AIR_GAPPED_BACKUP_VAULT");
+        static const int RESTORE_ACCESS_BACKUP_VAULT_HASH = HashingUtils::HashString("RESTORE_ACCESS_BACKUP_VAULT");
 
 
         VaultType GetVaultTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LOGICALLY_AIR_GAPPED_BACKUP_VAULT_HASH)
           {
             return VaultType::LOGICALLY_AIR_GAPPED_BACKUP_VAULT;
+          }
+          else if (hashCode == RESTORE_ACCESS_BACKUP_VAULT_HASH)
+          {
+            return VaultType::RESTORE_ACCESS_BACKUP_VAULT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "BACKUP_VAULT";
           case VaultType::LOGICALLY_AIR_GAPPED_BACKUP_VAULT:
             return "LOGICALLY_AIR_GAPPED_BACKUP_VAULT";
+          case VaultType::RESTORE_ACCESS_BACKUP_VAULT:
+            return "RESTORE_ACCESS_BACKUP_VAULT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

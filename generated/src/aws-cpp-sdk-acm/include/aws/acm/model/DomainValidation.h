@@ -99,11 +99,11 @@ namespace Model
      * <p>Contains the CNAME record that you add to your DNS database for domain
      * validation. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
-     * DNS to Validate Domain Ownership</a>.</p> <p>Note: The CNAME information that
+     * DNS to Validate Domain Ownership</a>.</p>  <p>The CNAME information that
      * you need does not include the name of your domain. If you include your domain
      * name in the DNS database CNAME record, validation fails. For example, if the
-     * name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
-     * "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+     * name is <code>_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com</code>, only
+     * <code>_a79865eb4cd1a6ab990a45779b4e0b96</code> must be used.</p> 
      */
     inline const ResourceRecord& GetResourceRecord() const { return m_resourceRecord; }
     inline bool ResourceRecordHasBeenSet() const { return m_resourceRecordHasBeenSet; }
@@ -116,9 +116,9 @@ namespace Model
     ///@{
     /**
      * <p>Contains information for HTTP-based domain validation of certificates
-     * requested through CloudFront and issued by ACM. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code> and the validation method is
-     * <code>HTTP</code>.</p>
+     * requested through Amazon CloudFront and issued by ACM. This field exists only
+     * when the certificate type is <code>AMAZON_ISSUED</code> and the validation
+     * method is <code>HTTP</code>.</p>
      */
     inline const HttpRedirect& GetHttpRedirect() const { return m_httpRedirect; }
     inline bool HttpRedirectHasBeenSet() const { return m_httpRedirectHasBeenSet; }

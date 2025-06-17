@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A conflict occurred.</p><p><h3>See Also:</h3>   <a
+   * <p>A conflict occurred. This exception occurs when the same resource is being
+   * modified by concurrent requests.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ConflictException">AWS
    * API Reference</a></p>
    */

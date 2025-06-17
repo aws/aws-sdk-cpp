@@ -19,7 +19,8 @@ namespace Model
     EC2,
     ECR,
     LAMBDA,
-    LAMBDA_CODE
+    LAMBDA_CODE,
+    CODE_REPOSITORY
   };
 
 namespace ResourceScanTypeMapper

@@ -10,6 +10,7 @@
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/KeyAlgorithm.h>
+#include <aws/acm/model/CertificateExport.h>
 #include <aws/acm/model/RenewalEligibility.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/acm/model/CertificateManagedBy.h>
@@ -199,6 +200,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates if export is enabled for the certificate.</p>
+     */
+    inline CertificateExport GetExportOption() const { return m_exportOption; }
+    inline bool ExportOptionHasBeenSet() const { return m_exportOptionHasBeenSet; }
+    inline void SetExportOption(CertificateExport value) { m_exportOptionHasBeenSet = true; m_exportOption = value; }
+    inline CertificateSummary& WithExportOption(CertificateExport value) { SetExportOption(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the certificate is currently in use by any Amazon Web
      * Services resources.</p>
      */
@@ -344,6 +355,9 @@ namespace Model
 
     Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsages;
     bool m_extendedKeyUsagesHasBeenSet = false;
+
+    CertificateExport m_exportOption{CertificateExport::NOT_SET};
+    bool m_exportOptionHasBeenSet = false;
 
     bool m_inUse{false};
     bool m_inUseHasBeenSet = false;

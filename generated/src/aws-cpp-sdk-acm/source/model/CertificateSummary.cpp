@@ -82,6 +82,11 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
     }
     m_extendedKeyUsagesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExportOption"))
+  {
+    m_exportOption = CertificateExportMapper::GetCertificateExportForName(jsonValue.GetString("ExportOption"));
+    m_exportOptionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("InUse"))
   {
     m_inUse = jsonValue.GetBool("InUse");
@@ -203,6 +208,11 @@ JsonValue CertificateSummary::Jsonize() const
    }
    payload.WithArray("ExtendedKeyUsages", std::move(extendedKeyUsagesJsonList));
 
+  }
+
+  if(m_exportOptionHasBeenSet)
+  {
+   payload.WithString("ExportOption", CertificateExportMapper::GetNameForCertificateExport(m_exportOption));
   }
 
   if(m_inUseHasBeenSet)

@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/SecurityHubFeature.h>
 #include <aws/securityhub/model/AdminAccount.h>
 #include <utility>
 
@@ -59,6 +60,16 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The feature where the delegated administrator account is listed. Defaults to
+     * Security Hub CSPM if not specified.</p>
+     */
+    inline SecurityHubFeature GetFeature() const { return m_feature; }
+    inline void SetFeature(SecurityHubFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline ListOrganizationAdminAccountsResult& WithFeature(SecurityHubFeature value) { SetFeature(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,6 +84,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
+    bool m_featureHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

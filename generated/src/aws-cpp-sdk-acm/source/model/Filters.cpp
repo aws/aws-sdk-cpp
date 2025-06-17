@@ -52,6 +52,11 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_keyTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("exportOption"))
+  {
+    m_exportOption = CertificateExportMapper::GetCertificateExportForName(jsonValue.GetString("exportOption"));
+    m_exportOptionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("managedBy"))
   {
     m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("managedBy"));
@@ -95,6 +100,11 @@ JsonValue Filters::Jsonize() const
    }
    payload.WithArray("keyTypes", std::move(keyTypesJsonList));
 
+  }
+
+  if(m_exportOptionHasBeenSet)
+  {
+   payload.WithString("exportOption", CertificateExportMapper::GetNameForCertificateExport(m_exportOption));
   }
 
   if(m_managedByHasBeenSet)
