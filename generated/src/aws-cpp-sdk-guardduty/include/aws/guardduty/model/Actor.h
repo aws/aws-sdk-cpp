@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/User.h>
 #include <aws/guardduty/model/Session.h>
+#include <aws/guardduty/model/ActorProcess.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,20 @@ namespace Model
     template<typename SessionT = Session>
     Actor& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the process associated with the threat actor. This
+     * includes details such as process name, path, execution time, and unique
+     * identifiers that help track the actor's activities within the system.</p>
+     */
+    inline const ActorProcess& GetProcess() const { return m_process; }
+    inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
+    template<typename ProcessT = ActorProcess>
+    void SetProcess(ProcessT&& value) { m_processHasBeenSet = true; m_process = std::forward<ProcessT>(value); }
+    template<typename ProcessT = ActorProcess>
+    Actor& WithProcess(ProcessT&& value) { SetProcess(std::forward<ProcessT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -85,6 +100,9 @@ namespace Model
 
     Session m_session;
     bool m_sessionHasBeenSet = false;
+
+    ActorProcess m_process;
+    bool m_processHasBeenSet = false;
   };
 
 } // namespace Model

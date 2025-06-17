@@ -30,6 +30,11 @@ AnalyzerConfiguration& AnalyzerConfiguration::operator =(JsonView jsonValue)
     m_unusedAccess = jsonValue.GetObject("unusedAccess");
     m_unusedAccessHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("internalAccess"))
+  {
+    m_internalAccess = jsonValue.GetObject("internalAccess");
+    m_internalAccessHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue AnalyzerConfiguration::Jsonize() const
   if(m_unusedAccessHasBeenSet)
   {
    payload.WithObject("unusedAccess", m_unusedAccess.Jsonize());
+
+  }
+
+  if(m_internalAccessHasBeenSet)
+  {
+   payload.WithObject("internalAccess", m_internalAccess.Jsonize());
 
   }
 

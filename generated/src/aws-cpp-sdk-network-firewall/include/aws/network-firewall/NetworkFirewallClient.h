@@ -498,7 +498,7 @@ namespace NetworkFirewall
         /**
          * <p>Deletes a transit gateway attachment from a Network Firewall. Either the
          * firewall owner or the transit gateway owner can delete the attachment.</p>
-         *  <p>After you delete a transit gateway attachment, traffic will no
+         *  <p>After you delete a transit gateway attachment, raffic will no
          * longer flow through the firewall endpoints.</p>  <p>After you
          * initiate the delete operation, use <a>DescribeFirewall</a> to monitor the
          * deletion status.</p><p><h3>See Also:</h3>   <a
@@ -843,6 +843,38 @@ namespace NetworkFirewall
         void DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRuleGroupMetadataRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeRuleGroupMetadata, request, handler, context);
+        }
+
+        /**
+         * <p>Returns detailed information for a stateful rule group.</p> <p>For active
+         * threat defense Amazon Web Services managed rule groups, this operation provides
+         * insight into the protections enabled by the rule group, based on Suricata rule
+         * metadata fields. Summaries are available for rule groups you manage and for
+         * active threat defense Amazon Web Services managed rule groups.</p> <p>To modify
+         * how threat information appears in summaries, use the
+         * <code>SummaryConfiguration</code> parameter in
+         * <a>UpdateRuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRuleGroupSummaryOutcome DescribeRuleGroupSummary(const Model::DescribeRuleGroupSummaryRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeRuleGroupSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRuleGroupSummaryRequestT = Model::DescribeRuleGroupSummaryRequest>
+        Model::DescribeRuleGroupSummaryOutcomeCallable DescribeRuleGroupSummaryCallable(const DescribeRuleGroupSummaryRequestT& request = {}) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DescribeRuleGroupSummary, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRuleGroupSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRuleGroupSummaryRequestT = Model::DescribeRuleGroupSummaryRequest>
+        void DescribeRuleGroupSummaryAsync(const DescribeRuleGroupSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRuleGroupSummaryRequestT& request = {}) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DescribeRuleGroupSummary, request, handler, context);
         }
 
         /**
@@ -1293,8 +1325,8 @@ namespace NetworkFirewall
          * <p>Rejects a transit gateway attachment request for Network Firewall. When you
          * reject the attachment request, Network Firewall cancels the creation of routing
          * components between the transit gateway and firewall endpoints.</p> <p>Only the
-         * transit gateway owner can reject the attachment. After rejection, no traffic
-         * will flow through the firewall endpoints for this attachment.</p> <p>Use
+         * firewall owner can reject the attachment. After rejection, no traffic will flow
+         * through the firewall endpoints for this attachment.</p> <p>Use
          * <a>DescribeFirewall</a> to monitor the rejection status. To accept the
          * attachment instead of rejecting it, use
          * <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.</p>  <p>Once

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     APPLICABLE,
     FAILED_TO_EVALUATE_RCP,
-    NOT_APPLICABLE
+    NOT_APPLICABLE,
+    APPLIED
   };
 
 namespace ResourceControlPolicyRestrictionMapper

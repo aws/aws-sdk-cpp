@@ -50,6 +50,11 @@ DataProvider& DataProvider::operator =(JsonView jsonValue)
     m_engine = jsonValue.GetString("Engine");
     m_engineHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Virtual"))
+  {
+    m_virtual = jsonValue.GetBool("Virtual");
+    m_virtualHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
@@ -88,6 +93,12 @@ JsonValue DataProvider::Jsonize() const
   if(m_engineHasBeenSet)
   {
    payload.WithString("Engine", m_engine);
+
+  }
+
+  if(m_virtualHasBeenSet)
+  {
+   payload.WithBool("Virtual", m_virtual);
 
   }
 

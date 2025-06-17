@@ -38,8 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>An array of objects that provide details on the activation status of Amazon
-     * Inspector deep inspection for each of the requested accounts. <pre><code>
-     * &lt;/p&gt; </code></pre>
+     * Inspector deep inspection for each of the requested accounts. </p>
      */
     inline const Aws::Vector<MemberAccountEc2DeepInspectionStatusState>& GetAccountIds() const { return m_accountIds; }
     template<typename AccountIdsT = Aws::Vector<MemberAccountEc2DeepInspectionStatusState>>
@@ -53,8 +52,7 @@ namespace Model
     ///@{
     /**
      * <p>An array of objects that provide details on any accounts that failed to
-     * activate Amazon Inspector deep inspection and why. <pre><code> &lt;/p&gt;
-     * </code></pre>
+     * activate Amazon Inspector deep inspection and why. </p>
      */
     inline const Aws::Vector<FailedMemberAccountEc2DeepInspectionStatusState>& GetFailedAccountIds() const { return m_failedAccountIds; }
     template<typename FailedAccountIdsT = Aws::Vector<FailedMemberAccountEc2DeepInspectionStatusState>>

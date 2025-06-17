@@ -8,6 +8,7 @@
 #include <aws/inspector2/model/AccountAggregationResponse.h>
 #include <aws/inspector2/model/AmiAggregationResponse.h>
 #include <aws/inspector2/model/AwsEcrContainerAggregationResponse.h>
+#include <aws/inspector2/model/CodeRepositoryAggregationResponse.h>
 #include <aws/inspector2/model/Ec2InstanceAggregationResponse.h>
 #include <aws/inspector2/model/FindingTypeAggregationResponse.h>
 #include <aws/inspector2/model/ImageLayerAggregationResponse.h>
@@ -85,6 +86,19 @@ namespace Model
     void SetAwsEcrContainerAggregation(AwsEcrContainerAggregationT&& value) { m_awsEcrContainerAggregationHasBeenSet = true; m_awsEcrContainerAggregation = std::forward<AwsEcrContainerAggregationT>(value); }
     template<typename AwsEcrContainerAggregationT = AwsEcrContainerAggregationResponse>
     AggregationResponse& WithAwsEcrContainerAggregation(AwsEcrContainerAggregationT&& value) { SetAwsEcrContainerAggregation(std::forward<AwsEcrContainerAggregationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details about an aggregation response based on code
+     * repositories.</p>
+     */
+    inline const CodeRepositoryAggregationResponse& GetCodeRepositoryAggregation() const { return m_codeRepositoryAggregation; }
+    inline bool CodeRepositoryAggregationHasBeenSet() const { return m_codeRepositoryAggregationHasBeenSet; }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
+    void SetCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { m_codeRepositoryAggregationHasBeenSet = true; m_codeRepositoryAggregation = std::forward<CodeRepositoryAggregationT>(value); }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
+    AggregationResponse& WithCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { SetCodeRepositoryAggregation(std::forward<CodeRepositoryAggregationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,6 +212,9 @@ namespace Model
 
     AwsEcrContainerAggregationResponse m_awsEcrContainerAggregation;
     bool m_awsEcrContainerAggregationHasBeenSet = false;
+
+    CodeRepositoryAggregationResponse m_codeRepositoryAggregation;
+    bool m_codeRepositoryAggregationHasBeenSet = false;
 
     Ec2InstanceAggregationResponse m_ec2InstanceAggregation;
     bool m_ec2InstanceAggregationHasBeenSet = false;

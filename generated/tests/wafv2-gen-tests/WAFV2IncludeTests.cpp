@@ -26,6 +26,8 @@
 #include <aws/wafv2/model/AllQueryArguments.h>
 #include <aws/wafv2/model/AllowAction.h>
 #include <aws/wafv2/model/AndStatement.h>
+#include <aws/wafv2/model/ApplicationAttribute.h>
+#include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/AsnMatchStatement.h>
 #include <aws/wafv2/model/AssociateWebACLRequest.h>
 #include <aws/wafv2/model/AssociateWebACLResult.h>

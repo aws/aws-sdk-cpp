@@ -55,11 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
-     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
-     * <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create
-     * only one analyzer per account per Region. You can create up to 5 analyzers per
-     * organization per Region.</p>
+     * <p>The type of analyzer to create. You can create only one analyzer per account
+     * per Region. You can create up to 5 analyzers per organization per Region.</p>
      */
     inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -120,7 +117,8 @@ namespace Model
     /**
      * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
      * access analyzer, the specified scope of unused access is used for the
-     * configuration.</p>
+     * configuration. If the analyzer is an internal access analyzer, the specified
+     * internal access analysis rules are used for the configuration.</p>
      */
     inline const AnalyzerConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

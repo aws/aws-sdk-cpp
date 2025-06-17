@@ -36,8 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
+     * Amazon Inspector deep inspection activation status for. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

@@ -59,6 +59,50 @@ namespace Model
 
     ///@{
     /**
+     * <p>Filter criteria for code repositories based on project name.</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetCodeRepositoryProjectName() const { return m_codeRepositoryProjectName; }
+    inline bool CodeRepositoryProjectNameHasBeenSet() const { return m_codeRepositoryProjectNameHasBeenSet; }
+    template<typename CodeRepositoryProjectNameT = Aws::Vector<CoverageStringFilter>>
+    void SetCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { m_codeRepositoryProjectNameHasBeenSet = true; m_codeRepositoryProjectName = std::forward<CodeRepositoryProjectNameT>(value); }
+    template<typename CodeRepositoryProjectNameT = Aws::Vector<CoverageStringFilter>>
+    CoverageFilterCriteria& WithCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { SetCodeRepositoryProjectName(std::forward<CodeRepositoryProjectNameT>(value)); return *this;}
+    template<typename CodeRepositoryProjectNameT = CoverageStringFilter>
+    CoverageFilterCriteria& AddCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { m_codeRepositoryProjectNameHasBeenSet = true; m_codeRepositoryProjectName.emplace_back(std::forward<CodeRepositoryProjectNameT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter criteria for code repositories based on provider type (such as GitHub,
+     * GitLab, etc.).</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetCodeRepositoryProviderType() const { return m_codeRepositoryProviderType; }
+    inline bool CodeRepositoryProviderTypeHasBeenSet() const { return m_codeRepositoryProviderTypeHasBeenSet; }
+    template<typename CodeRepositoryProviderTypeT = Aws::Vector<CoverageStringFilter>>
+    void SetCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { m_codeRepositoryProviderTypeHasBeenSet = true; m_codeRepositoryProviderType = std::forward<CodeRepositoryProviderTypeT>(value); }
+    template<typename CodeRepositoryProviderTypeT = Aws::Vector<CoverageStringFilter>>
+    CoverageFilterCriteria& WithCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { SetCodeRepositoryProviderType(std::forward<CodeRepositoryProviderTypeT>(value)); return *this;}
+    template<typename CodeRepositoryProviderTypeT = CoverageStringFilter>
+    CoverageFilterCriteria& AddCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { m_codeRepositoryProviderTypeHasBeenSet = true; m_codeRepositoryProviderType.emplace_back(std::forward<CodeRepositoryProviderTypeT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter criteria for code repositories based on visibility setting (public or
+     * private).</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetCodeRepositoryProviderTypeVisibility() const { return m_codeRepositoryProviderTypeVisibility; }
+    inline bool CodeRepositoryProviderTypeVisibilityHasBeenSet() const { return m_codeRepositoryProviderTypeVisibilityHasBeenSet; }
+    template<typename CodeRepositoryProviderTypeVisibilityT = Aws::Vector<CoverageStringFilter>>
+    void SetCodeRepositoryProviderTypeVisibility(CodeRepositoryProviderTypeVisibilityT&& value) { m_codeRepositoryProviderTypeVisibilityHasBeenSet = true; m_codeRepositoryProviderTypeVisibility = std::forward<CodeRepositoryProviderTypeVisibilityT>(value); }
+    template<typename CodeRepositoryProviderTypeVisibilityT = Aws::Vector<CoverageStringFilter>>
+    CoverageFilterCriteria& WithCodeRepositoryProviderTypeVisibility(CodeRepositoryProviderTypeVisibilityT&& value) { SetCodeRepositoryProviderTypeVisibility(std::forward<CodeRepositoryProviderTypeVisibilityT>(value)); return *this;}
+    template<typename CodeRepositoryProviderTypeVisibilityT = CoverageStringFilter>
+    CoverageFilterCriteria& AddCodeRepositoryProviderTypeVisibility(CodeRepositoryProviderTypeVisibilityT&& value) { m_codeRepositoryProviderTypeVisibilityHasBeenSet = true; m_codeRepositoryProviderTypeVisibility.emplace_back(std::forward<CodeRepositoryProviderTypeVisibilityT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon EC2 instance tags to filter on.</p>
      */
     inline const Aws::Vector<CoverageMapFilter>& GetEc2InstanceTags() const { return m_ec2InstanceTags; }
@@ -203,6 +247,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Filter criteria for code repositories based on the ID of the last scanned
+     * commit.</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetLastScannedCommitId() const { return m_lastScannedCommitId; }
+    inline bool LastScannedCommitIdHasBeenSet() const { return m_lastScannedCommitIdHasBeenSet; }
+    template<typename LastScannedCommitIdT = Aws::Vector<CoverageStringFilter>>
+    void SetLastScannedCommitId(LastScannedCommitIdT&& value) { m_lastScannedCommitIdHasBeenSet = true; m_lastScannedCommitId = std::forward<LastScannedCommitIdT>(value); }
+    template<typename LastScannedCommitIdT = Aws::Vector<CoverageStringFilter>>
+    CoverageFilterCriteria& WithLastScannedCommitId(LastScannedCommitIdT&& value) { SetLastScannedCommitId(std::forward<LastScannedCommitIdT>(value)); return *this;}
+    template<typename LastScannedCommitIdT = CoverageStringFilter>
+    CoverageFilterCriteria& AddLastScannedCommitId(LastScannedCommitIdT&& value) { m_lastScannedCommitIdHasBeenSet = true; m_lastScannedCommitId.emplace_back(std::forward<LastScannedCommitIdT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of Amazon Web Services resource IDs to return coverage statistics
      * for.</p>
      */
@@ -298,6 +357,15 @@ namespace Model
     Aws::Vector<CoverageStringFilter> m_accountId;
     bool m_accountIdHasBeenSet = false;
 
+    Aws::Vector<CoverageStringFilter> m_codeRepositoryProjectName;
+    bool m_codeRepositoryProjectNameHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_codeRepositoryProviderType;
+    bool m_codeRepositoryProviderTypeHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_codeRepositoryProviderTypeVisibility;
+    bool m_codeRepositoryProviderTypeVisibilityHasBeenSet = false;
+
     Aws::Vector<CoverageMapFilter> m_ec2InstanceTags;
     bool m_ec2InstanceTagsHasBeenSet = false;
 
@@ -327,6 +395,9 @@ namespace Model
 
     Aws::Vector<CoverageDateFilter> m_lastScannedAt;
     bool m_lastScannedAtHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_lastScannedCommitId;
+    bool m_lastScannedCommitIdHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceId;
     bool m_resourceIdHasBeenSet = false;

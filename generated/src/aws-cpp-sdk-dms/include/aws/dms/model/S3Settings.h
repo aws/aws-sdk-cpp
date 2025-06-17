@@ -697,11 +697,11 @@ namespace Model
      * to convert the current UTC time into a specified time zone. The conversion
      * occurs when a date partition folder is created and a CDC filename is generated.
      * The time zone format is Area/Location. Use this parameter when
-     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
-     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * <code>DatePartitionedEnabled</code> is set to true, as shown in the following
+     * example:</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
      * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
-     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
-     * "dms-nattarat-test"}'</code> </p>
+     * "DatePartitionTimezone":"Asia/Seoul", "BucketName": "dms-nattarat-test"}'</code>
+     * </p>
      */
     inline const Aws::String& GetDatePartitionTimezone() const { return m_datePartitionTimezone; }
     inline bool DatePartitionTimezoneHasBeenSet() const { return m_datePartitionTimezoneHasBeenSet; }

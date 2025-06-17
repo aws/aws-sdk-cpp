@@ -34,6 +34,12 @@ Aws::String CreateDataProviderRequest::SerializePayload() const
 
   }
 
+  if(m_virtualHasBeenSet)
+  {
+   payload.WithBool("Virtual", m_virtual);
+
+  }
+
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());

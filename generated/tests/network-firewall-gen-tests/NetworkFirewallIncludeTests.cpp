@@ -77,6 +77,8 @@
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataResult.h>
 #include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupResult.h>
+#include <aws/network-firewall/model/DescribeRuleGroupSummaryRequest.h>
+#include <aws/network-firewall/model/DescribeRuleGroupSummaryResult.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationResult.h>
 #include <aws/network-firewall/model/DescribeVpcEndpointAssociationRequest.h>
@@ -159,6 +161,7 @@
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/RuleOption.h>
 #include <aws/network-firewall/model/RuleOrder.h>
+#include <aws/network-firewall/model/RuleSummary.h>
 #include <aws/network-firewall/model/RuleVariables.h>
 #include <aws/network-firewall/model/RulesSource.h>
 #include <aws/network-firewall/model/RulesSourceList.h>
@@ -185,6 +188,9 @@
 #include <aws/network-firewall/model/StatelessRulesAndCustomActions.h>
 #include <aws/network-firewall/model/StreamExceptionPolicy.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
+#include <aws/network-firewall/model/Summary.h>
+#include <aws/network-firewall/model/SummaryConfiguration.h>
+#include <aws/network-firewall/model/SummaryRuleOption.h>
 #include <aws/network-firewall/model/SyncState.h>
 #include <aws/network-firewall/model/TCPFlag.h>
 #include <aws/network-firewall/model/TCPFlagField.h>

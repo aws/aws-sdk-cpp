@@ -211,6 +211,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time when the backup job that created this recovery point was
+     * initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetInitiationDate() const { return m_initiationDate; }
+    template<typename InitiationDateT = Aws::Utils::DateTime>
+    void SetInitiationDate(InitiationDateT&& value) { m_initiationDateHasBeenSet = true; m_initiationDate = std::forward<InitiationDateT>(value); }
+    template<typename InitiationDateT = Aws::Utils::DateTime>
+    DescribeRecoveryPointResult& WithInitiationDate(InitiationDateT&& value) { SetInitiationDate(std::forward<InitiationDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time that a job to create a recovery point is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
      * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
@@ -437,6 +449,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_initiationDate{};
+    bool m_initiationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate{};
     bool m_completionDateHasBeenSet = false;

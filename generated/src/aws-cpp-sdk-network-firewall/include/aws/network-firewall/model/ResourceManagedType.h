@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AWS_MANAGED_THREAT_SIGNATURES,
-    AWS_MANAGED_DOMAIN_LISTS
+    AWS_MANAGED_DOMAIN_LISTS,
+    ACTIVE_THREAT_DEFENSE
   };
 
 namespace ResourceManagedTypeMapper

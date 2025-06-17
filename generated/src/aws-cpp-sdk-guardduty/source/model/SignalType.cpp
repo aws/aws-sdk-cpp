@@ -23,6 +23,10 @@ namespace Aws
         static const int FINDING_HASH = HashingUtils::HashString("FINDING");
         static const int CLOUD_TRAIL_HASH = HashingUtils::HashString("CLOUD_TRAIL");
         static const int S3_DATA_EVENTS_HASH = HashingUtils::HashString("S3_DATA_EVENTS");
+        static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
+        static const int FLOW_LOGS_HASH = HashingUtils::HashString("FLOW_LOGS");
+        static const int DNS_LOGS_HASH = HashingUtils::HashString("DNS_LOGS");
+        static const int RUNTIME_MONITORING_HASH = HashingUtils::HashString("RUNTIME_MONITORING");
 
 
         SignalType GetSignalTypeForName(const Aws::String& name)
@@ -39,6 +43,22 @@ namespace Aws
           else if (hashCode == S3_DATA_EVENTS_HASH)
           {
             return SignalType::S3_DATA_EVENTS;
+          }
+          else if (hashCode == EKS_AUDIT_LOGS_HASH)
+          {
+            return SignalType::EKS_AUDIT_LOGS;
+          }
+          else if (hashCode == FLOW_LOGS_HASH)
+          {
+            return SignalType::FLOW_LOGS;
+          }
+          else if (hashCode == DNS_LOGS_HASH)
+          {
+            return SignalType::DNS_LOGS;
+          }
+          else if (hashCode == RUNTIME_MONITORING_HASH)
+          {
+            return SignalType::RUNTIME_MONITORING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +82,14 @@ namespace Aws
             return "CLOUD_TRAIL";
           case SignalType::S3_DATA_EVENTS:
             return "S3_DATA_EVENTS";
+          case SignalType::EKS_AUDIT_LOGS:
+            return "EKS_AUDIT_LOGS";
+          case SignalType::FLOW_LOGS:
+            return "FLOW_LOGS";
+          case SignalType::DNS_LOGS:
+            return "DNS_LOGS";
+          case SignalType::RUNTIME_MONITORING:
+            return "RUNTIME_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

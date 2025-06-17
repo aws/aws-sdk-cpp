@@ -47,6 +47,7 @@ namespace Aws
         static const int CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
         static const int CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = HashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
         static const int DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
+        static const int POLICY_TYPE_ENABLED_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("POLICY_TYPE_ENABLED_FOR_THIS_SERVICE");
         static const int MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
         static const int CANNOT_CLOSE_MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
         static const int CLOSE_ACCOUNT_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
@@ -169,6 +170,10 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE;
           }
+          else if (hashCode == POLICY_TYPE_ENABLED_FOR_THIS_SERVICE_HASH)
+          {
+            return ConstraintViolationExceptionReason::POLICY_TYPE_ENABLED_FOR_THIS_SERVICE;
+          }
           else if (hashCode == MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH)
           {
             return ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE;
@@ -275,6 +280,8 @@ namespace Aws
             return "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG";
           case ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE:
             return "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE";
+          case ConstraintViolationExceptionReason::POLICY_TYPE_ENABLED_FOR_THIS_SERVICE:
+            return "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE";
           case ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE:
             return "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE";
           case ConstraintViolationExceptionReason::CANNOT_CLOSE_MANAGEMENT_ACCOUNT:

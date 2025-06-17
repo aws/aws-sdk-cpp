@@ -25,6 +25,11 @@ ResourceStatus::ResourceStatus(JsonView jsonValue)
 
 ResourceStatus& ResourceStatus::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("codeRepository"))
+  {
+    m_codeRepository = StatusMapper::GetStatusForName(jsonValue.GetString("codeRepository"));
+    m_codeRepositoryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ec2"))
   {
     m_ec2 = StatusMapper::GetStatusForName(jsonValue.GetString("ec2"));
@@ -51,6 +56,11 @@ ResourceStatus& ResourceStatus::operator =(JsonView jsonValue)
 JsonValue ResourceStatus::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithString("codeRepository", StatusMapper::GetNameForStatus(m_codeRepository));
+  }
 
   if(m_ec2HasBeenSet)
   {

@@ -20,7 +20,8 @@ namespace Model
     UnusedIAMRole,
     UnusedIAMUserAccessKey,
     UnusedIAMUserPassword,
-    UnusedPermission
+    UnusedPermission,
+    InternalAccess
   };
 
 namespace FindingTypeMapper

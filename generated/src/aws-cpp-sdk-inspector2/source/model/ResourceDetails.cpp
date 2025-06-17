@@ -40,6 +40,11 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsLambdaFunction = jsonValue.GetObject("awsLambdaFunction");
     m_awsLambdaFunctionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codeRepository"))
+  {
+    m_codeRepository = jsonValue.GetObject("codeRepository");
+    m_codeRepositoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsLambdaFunctionHasBeenSet)
   {
    payload.WithObject("awsLambdaFunction", m_awsLambdaFunction.Jsonize());
+
+  }
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
 
   }
 

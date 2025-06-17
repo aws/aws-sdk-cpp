@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     BACKUP_VAULT,
-    LOGICALLY_AIR_GAPPED_BACKUP_VAULT
+    LOGICALLY_AIR_GAPPED_BACKUP_VAULT,
+    RESTORE_ACCESS_BACKUP_VAULT
   };
 
 namespace VaultTypeMapper

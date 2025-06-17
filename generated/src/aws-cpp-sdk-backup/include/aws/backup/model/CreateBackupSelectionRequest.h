@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup/model/BackupSelection.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -79,8 +80,8 @@ namespace Model
     BackupSelection m_backupSelection;
     bool m_backupSelectionHasBeenSet = false;
 
-    Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet = false;
+    Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_creatorRequestIdHasBeenSet = true;
   };
 
 } // namespace Model

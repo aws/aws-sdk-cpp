@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/ExternalAccessFindingsStatistics.h>
+#include <aws/accessanalyzer/model/InternalAccessFindingsStatistics.h>
 #include <aws/accessanalyzer/model/UnusedAccessFindingsStatistics.h>
 #include <utility>
 
@@ -54,6 +55,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The aggregate statistics for an internal access analyzer. This includes
+     * information about active, archived, and resolved findings related to internal
+     * access within your Amazon Web Services organization or account.</p>
+     */
+    inline const InternalAccessFindingsStatistics& GetInternalAccessFindingsStatistics() const { return m_internalAccessFindingsStatistics; }
+    inline bool InternalAccessFindingsStatisticsHasBeenSet() const { return m_internalAccessFindingsStatisticsHasBeenSet; }
+    template<typename InternalAccessFindingsStatisticsT = InternalAccessFindingsStatistics>
+    void SetInternalAccessFindingsStatistics(InternalAccessFindingsStatisticsT&& value) { m_internalAccessFindingsStatisticsHasBeenSet = true; m_internalAccessFindingsStatistics = std::forward<InternalAccessFindingsStatisticsT>(value); }
+    template<typename InternalAccessFindingsStatisticsT = InternalAccessFindingsStatistics>
+    FindingsStatistics& WithInternalAccessFindingsStatistics(InternalAccessFindingsStatisticsT&& value) { SetInternalAccessFindingsStatistics(std::forward<InternalAccessFindingsStatisticsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The aggregate statistics for an unused access analyzer.</p>
      */
     inline const UnusedAccessFindingsStatistics& GetUnusedAccessFindingsStatistics() const { return m_unusedAccessFindingsStatistics; }
@@ -67,6 +82,9 @@ namespace Model
 
     ExternalAccessFindingsStatistics m_externalAccessFindingsStatistics;
     bool m_externalAccessFindingsStatisticsHasBeenSet = false;
+
+    InternalAccessFindingsStatistics m_internalAccessFindingsStatistics;
+    bool m_internalAccessFindingsStatisticsHasBeenSet = false;
 
     UnusedAccessFindingsStatistics m_unusedAccessFindingsStatistics;
     bool m_unusedAccessFindingsStatisticsHasBeenSet = false;

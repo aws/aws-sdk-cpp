@@ -30,6 +30,12 @@ namespace Aws
         static const int UNUSUAL_API_FOR_ACCOUNT_HASH = HashingUtils::HashString("UNUSUAL_API_FOR_ACCOUNT");
         static const int UNUSUAL_ASN_FOR_ACCOUNT_HASH = HashingUtils::HashString("UNUSUAL_ASN_FOR_ACCOUNT");
         static const int UNUSUAL_ASN_FOR_USER_HASH = HashingUtils::HashString("UNUSUAL_ASN_FOR_USER");
+        static const int SUSPICIOUS_PROCESS_HASH = HashingUtils::HashString("SUSPICIOUS_PROCESS");
+        static const int MALICIOUS_DOMAIN_HASH = HashingUtils::HashString("MALICIOUS_DOMAIN");
+        static const int MALICIOUS_PROCESS_HASH = HashingUtils::HashString("MALICIOUS_PROCESS");
+        static const int CRYPTOMINING_IP_HASH = HashingUtils::HashString("CRYPTOMINING_IP");
+        static const int CRYPTOMINING_DOMAIN_HASH = HashingUtils::HashString("CRYPTOMINING_DOMAIN");
+        static const int CRYPTOMINING_PROCESS_HASH = HashingUtils::HashString("CRYPTOMINING_PROCESS");
 
 
         IndicatorType GetIndicatorTypeForName(const Aws::String& name)
@@ -75,6 +81,30 @@ namespace Aws
           {
             return IndicatorType::UNUSUAL_ASN_FOR_USER;
           }
+          else if (hashCode == SUSPICIOUS_PROCESS_HASH)
+          {
+            return IndicatorType::SUSPICIOUS_PROCESS;
+          }
+          else if (hashCode == MALICIOUS_DOMAIN_HASH)
+          {
+            return IndicatorType::MALICIOUS_DOMAIN;
+          }
+          else if (hashCode == MALICIOUS_PROCESS_HASH)
+          {
+            return IndicatorType::MALICIOUS_PROCESS;
+          }
+          else if (hashCode == CRYPTOMINING_IP_HASH)
+          {
+            return IndicatorType::CRYPTOMINING_IP;
+          }
+          else if (hashCode == CRYPTOMINING_DOMAIN_HASH)
+          {
+            return IndicatorType::CRYPTOMINING_DOMAIN;
+          }
+          else if (hashCode == CRYPTOMINING_PROCESS_HASH)
+          {
+            return IndicatorType::CRYPTOMINING_PROCESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +141,18 @@ namespace Aws
             return "UNUSUAL_ASN_FOR_ACCOUNT";
           case IndicatorType::UNUSUAL_ASN_FOR_USER:
             return "UNUSUAL_ASN_FOR_USER";
+          case IndicatorType::SUSPICIOUS_PROCESS:
+            return "SUSPICIOUS_PROCESS";
+          case IndicatorType::MALICIOUS_DOMAIN:
+            return "MALICIOUS_DOMAIN";
+          case IndicatorType::MALICIOUS_PROCESS:
+            return "MALICIOUS_PROCESS";
+          case IndicatorType::CRYPTOMINING_IP:
+            return "CRYPTOMINING_IP";
+          case IndicatorType::CRYPTOMINING_DOMAIN:
+            return "CRYPTOMINING_DOMAIN";
+          case IndicatorType::CRYPTOMINING_PROCESS:
+            return "CRYPTOMINING_PROCESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

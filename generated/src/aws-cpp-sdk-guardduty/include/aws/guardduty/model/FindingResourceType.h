@@ -20,7 +20,10 @@ namespace Model
     EC2_NETWORK_INTERFACE,
     S3_BUCKET,
     S3_OBJECT,
-    ACCESS_KEY
+    ACCESS_KEY,
+    EKS_CLUSTER,
+    KUBERNETES_WORKLOAD,
+    CONTAINER
   };
 
 namespace FindingResourceTypeMapper

@@ -9,6 +9,7 @@
 #include <aws/backup/model/VaultType.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/backup/model/LatestMpaApprovalTeamUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -197,6 +198,52 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ARN of the source backup vault from which this restore access backup
+     * vault was created.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const { return m_sourceBackupVaultArn; }
+    template<typename SourceBackupVaultArnT = Aws::String>
+    void SetSourceBackupVaultArn(SourceBackupVaultArnT&& value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn = std::forward<SourceBackupVaultArnT>(value); }
+    template<typename SourceBackupVaultArnT = Aws::String>
+    DescribeBackupVaultResult& WithSourceBackupVaultArn(SourceBackupVaultArnT&& value) { SetSourceBackupVaultArn(std::forward<SourceBackupVaultArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the MPA approval team associated with this backup vault.</p>
+     */
+    inline const Aws::String& GetMpaApprovalTeamArn() const { return m_mpaApprovalTeamArn; }
+    template<typename MpaApprovalTeamArnT = Aws::String>
+    void SetMpaApprovalTeamArn(MpaApprovalTeamArnT&& value) { m_mpaApprovalTeamArnHasBeenSet = true; m_mpaApprovalTeamArn = std::forward<MpaApprovalTeamArnT>(value); }
+    template<typename MpaApprovalTeamArnT = Aws::String>
+    DescribeBackupVaultResult& WithMpaApprovalTeamArn(MpaApprovalTeamArnT&& value) { SetMpaApprovalTeamArn(std::forward<MpaApprovalTeamArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the MPA session associated with this backup vault.</p>
+     */
+    inline const Aws::String& GetMpaSessionArn() const { return m_mpaSessionArn; }
+    template<typename MpaSessionArnT = Aws::String>
+    void SetMpaSessionArn(MpaSessionArnT&& value) { m_mpaSessionArnHasBeenSet = true; m_mpaSessionArn = std::forward<MpaSessionArnT>(value); }
+    template<typename MpaSessionArnT = Aws::String>
+    DescribeBackupVaultResult& WithMpaSessionArn(MpaSessionArnT&& value) { SetMpaSessionArn(std::forward<MpaSessionArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the latest update to the MPA approval team association for
+     * this backup vault.</p>
+     */
+    inline const LatestMpaApprovalTeamUpdate& GetLatestMpaApprovalTeamUpdate() const { return m_latestMpaApprovalTeamUpdate; }
+    template<typename LatestMpaApprovalTeamUpdateT = LatestMpaApprovalTeamUpdate>
+    void SetLatestMpaApprovalTeamUpdate(LatestMpaApprovalTeamUpdateT&& value) { m_latestMpaApprovalTeamUpdateHasBeenSet = true; m_latestMpaApprovalTeamUpdate = std::forward<LatestMpaApprovalTeamUpdateT>(value); }
+    template<typename LatestMpaApprovalTeamUpdateT = LatestMpaApprovalTeamUpdate>
+    DescribeBackupVaultResult& WithLatestMpaApprovalTeamUpdate(LatestMpaApprovalTeamUpdateT&& value) { SetLatestMpaApprovalTeamUpdate(std::forward<LatestMpaApprovalTeamUpdateT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -241,6 +288,18 @@ namespace Model
 
     Aws::Utils::DateTime m_lockDate{};
     bool m_lockDateHasBeenSet = false;
+
+    Aws::String m_sourceBackupVaultArn;
+    bool m_sourceBackupVaultArnHasBeenSet = false;
+
+    Aws::String m_mpaApprovalTeamArn;
+    bool m_mpaApprovalTeamArnHasBeenSet = false;
+
+    Aws::String m_mpaSessionArn;
+    bool m_mpaSessionArnHasBeenSet = false;
+
+    LatestMpaApprovalTeamUpdate m_latestMpaApprovalTeamUpdate;
+    bool m_latestMpaApprovalTeamUpdateHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

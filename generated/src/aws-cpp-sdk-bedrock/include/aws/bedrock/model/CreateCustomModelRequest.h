@@ -51,9 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The data source for the model. The Amazon S3 URI in the model source must be
-     * for the Amazon-managed Amazon S3 bucket containing your model artifacts.
-     * SageMaker AI creates this bucket when you run your first SageMaker AI training
-     * job.</p>
+     * for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
      */
     inline const ModelDataSource& GetModelSourceConfig() const { return m_modelSourceConfig; }
     inline bool ModelSourceConfigHasBeenSet() const { return m_modelSourceConfigHasBeenSet; }

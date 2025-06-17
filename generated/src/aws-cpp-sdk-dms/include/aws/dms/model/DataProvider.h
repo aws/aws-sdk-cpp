@@ -110,6 +110,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the data provider is virtual.</p>
+     */
+    inline bool GetVirtual() const { return m_virtual; }
+    inline bool VirtualHasBeenSet() const { return m_virtualHasBeenSet; }
+    inline void SetVirtual(bool value) { m_virtualHasBeenSet = true; m_virtual = value; }
+    inline DataProvider& WithVirtual(bool value) { SetVirtual(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The settings in JSON format for a data provider.</p>
      */
     inline const DataProviderSettings& GetSettings() const { return m_settings; }
@@ -135,6 +145,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
+
+    bool m_virtual{false};
+    bool m_virtualHasBeenSet = false;
 
     DataProviderSettings m_settings;
     bool m_settingsHasBeenSet = false;

@@ -75,6 +75,16 @@ OracleDataProviderSettings& OracleDataProviderSettings::operator =(JsonView json
     m_secretsManagerSecurityDbEncryptionAccessRoleArn = jsonValue.GetString("SecretsManagerSecurityDbEncryptionAccessRoleArn");
     m_secretsManagerSecurityDbEncryptionAccessRoleArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3Path"))
+  {
+    m_s3Path = jsonValue.GetString("S3Path");
+    m_s3PathHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3AccessRoleArn"))
+  {
+    m_s3AccessRoleArn = jsonValue.GetString("S3AccessRoleArn");
+    m_s3AccessRoleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -138,6 +148,18 @@ JsonValue OracleDataProviderSettings::Jsonize() const
   if(m_secretsManagerSecurityDbEncryptionAccessRoleArnHasBeenSet)
   {
    payload.WithString("SecretsManagerSecurityDbEncryptionAccessRoleArn", m_secretsManagerSecurityDbEncryptionAccessRoleArn);
+
+  }
+
+  if(m_s3PathHasBeenSet)
+  {
+   payload.WithString("S3Path", m_s3Path);
+
+  }
+
+  if(m_s3AccessRoleArnHasBeenSet)
+  {
+   payload.WithString("S3AccessRoleArn", m_s3AccessRoleArn);
 
   }
 

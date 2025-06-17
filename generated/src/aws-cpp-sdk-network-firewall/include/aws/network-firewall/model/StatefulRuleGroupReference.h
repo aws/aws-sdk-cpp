@@ -81,6 +81,26 @@ namespace Model
     template<typename OverrideT = StatefulRuleGroupOverride>
     StatefulRuleGroupReference& WithOverride(OverrideT&& value) { SetOverride(std::forward<OverrideT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Network Firewall plans to augment the active threat defense managed rule
+     * group with an additional deep threat inspection capability. When this capability
+     * is released, Amazon Web Services will analyze service logs of network traffic
+     * processed by these rule groups to identify threat indicators across customers.
+     * Amazon Web Services will use these threat indicators to improve the active
+     * threat defense managed rule groups and protect the security of Amazon Web
+     * Services customers and services.</p>  <p>Customers can opt-out of deep
+     * threat inspection at any time through the Network Firewall console or API. When
+     * customers opt out, Network Firewall will not use the network traffic processed
+     * by those customers' active threat defense rule groups for rule group
+     * improvement.</p> 
+     */
+    inline bool GetDeepThreatInspection() const { return m_deepThreatInspection; }
+    inline bool DeepThreatInspectionHasBeenSet() const { return m_deepThreatInspectionHasBeenSet; }
+    inline void SetDeepThreatInspection(bool value) { m_deepThreatInspectionHasBeenSet = true; m_deepThreatInspection = value; }
+    inline StatefulRuleGroupReference& WithDeepThreatInspection(bool value) { SetDeepThreatInspection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_resourceArn;
@@ -91,6 +111,9 @@ namespace Model
 
     StatefulRuleGroupOverride m_override;
     bool m_overrideHasBeenSet = false;
+
+    bool m_deepThreatInspection{false};
+    bool m_deepThreatInspectionHasBeenSet = false;
   };
 
 } // namespace Model

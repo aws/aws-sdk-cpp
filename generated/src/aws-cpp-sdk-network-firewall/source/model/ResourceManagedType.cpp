@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AWS_MANAGED_THREAT_SIGNATURES_HASH = HashingUtils::HashString("AWS_MANAGED_THREAT_SIGNATURES");
         static const int AWS_MANAGED_DOMAIN_LISTS_HASH = HashingUtils::HashString("AWS_MANAGED_DOMAIN_LISTS");
+        static const int ACTIVE_THREAT_DEFENSE_HASH = HashingUtils::HashString("ACTIVE_THREAT_DEFENSE");
 
 
         ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AWS_MANAGED_DOMAIN_LISTS_HASH)
           {
             return ResourceManagedType::AWS_MANAGED_DOMAIN_LISTS;
+          }
+          else if (hashCode == ACTIVE_THREAT_DEFENSE_HASH)
+          {
+            return ResourceManagedType::ACTIVE_THREAT_DEFENSE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AWS_MANAGED_THREAT_SIGNATURES";
           case ResourceManagedType::AWS_MANAGED_DOMAIN_LISTS:
             return "AWS_MANAGED_DOMAIN_LISTS";
+          case ResourceManagedType::ACTIVE_THREAT_DEFENSE:
+            return "ACTIVE_THREAT_DEFENSE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

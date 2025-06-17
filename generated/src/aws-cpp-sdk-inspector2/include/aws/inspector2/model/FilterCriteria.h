@@ -60,6 +60,36 @@ namespace Model
 
     ///@{
     /**
+     * <p>Filter criteria for findings based on the project name in a code
+     * repository.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetCodeRepositoryProjectName() const { return m_codeRepositoryProjectName; }
+    inline bool CodeRepositoryProjectNameHasBeenSet() const { return m_codeRepositoryProjectNameHasBeenSet; }
+    template<typename CodeRepositoryProjectNameT = Aws::Vector<StringFilter>>
+    void SetCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { m_codeRepositoryProjectNameHasBeenSet = true; m_codeRepositoryProjectName = std::forward<CodeRepositoryProjectNameT>(value); }
+    template<typename CodeRepositoryProjectNameT = Aws::Vector<StringFilter>>
+    FilterCriteria& WithCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { SetCodeRepositoryProjectName(std::forward<CodeRepositoryProjectNameT>(value)); return *this;}
+    template<typename CodeRepositoryProjectNameT = StringFilter>
+    FilterCriteria& AddCodeRepositoryProjectName(CodeRepositoryProjectNameT&& value) { m_codeRepositoryProjectNameHasBeenSet = true; m_codeRepositoryProjectName.emplace_back(std::forward<CodeRepositoryProjectNameT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter criteria for findings based on the repository provider type (such as
+     * GitHub, GitLab, etc.).</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetCodeRepositoryProviderType() const { return m_codeRepositoryProviderType; }
+    inline bool CodeRepositoryProviderTypeHasBeenSet() const { return m_codeRepositoryProviderTypeHasBeenSet; }
+    template<typename CodeRepositoryProviderTypeT = Aws::Vector<StringFilter>>
+    void SetCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { m_codeRepositoryProviderTypeHasBeenSet = true; m_codeRepositoryProviderType = std::forward<CodeRepositoryProviderTypeT>(value); }
+    template<typename CodeRepositoryProviderTypeT = Aws::Vector<StringFilter>>
+    FilterCriteria& WithCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { SetCodeRepositoryProviderType(std::forward<CodeRepositoryProviderTypeT>(value)); return *this;}
+    template<typename CodeRepositoryProviderTypeT = StringFilter>
+    FilterCriteria& AddCodeRepositoryProviderType(CodeRepositoryProviderTypeT&& value) { m_codeRepositoryProviderTypeHasBeenSet = true; m_codeRepositoryProviderType.emplace_back(std::forward<CodeRepositoryProviderTypeT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the detector used to identify a code vulnerability in a Lambda
      * function used to filter findings.</p>
      */
@@ -690,6 +720,12 @@ namespace Model
 
     Aws::Vector<StringFilter> m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_codeRepositoryProjectName;
+    bool m_codeRepositoryProjectNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_codeRepositoryProviderType;
+    bool m_codeRepositoryProviderTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_codeVulnerabilityDetectorName;
     bool m_codeVulnerabilityDetectorNameHasBeenSet = false;

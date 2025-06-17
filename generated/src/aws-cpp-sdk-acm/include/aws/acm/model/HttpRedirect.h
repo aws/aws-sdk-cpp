@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>Contains information for HTTP-based domain validation of certificates
-   * requested through CloudFront and issued by ACM. This field exists only when the
-   * certificate type is <code>AMAZON_ISSUED</code> and the validation method is
-   * <code>HTTP</code>.</p><p><h3>See Also:</h3>   <a
+   * requested through Amazon CloudFront and issued by ACM. This field exists only
+   * when the certificate type is <code>AMAZON_ISSUED</code> and the validation
+   * method is <code>HTTP</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/HttpRedirect">AWS
    * API Reference</a></p>
    */
