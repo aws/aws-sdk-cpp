@@ -326,6 +326,8 @@
 #include <aws/s3/model/RecordsEvent.h>
 #include <aws/s3/model/Redirect.h>
 #include <aws/s3/model/RedirectAllRequestsTo.h>
+#include <aws/s3/model/RenameObjectRequest.h>
+#include <aws/s3/model/RenameObjectResult.h>
 #include <aws/s3/model/ReplicaModifications.h>
 #include <aws/s3/model/ReplicaModificationsStatus.h>
 #include <aws/s3/model/ReplicationConfiguration.h>
