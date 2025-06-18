@@ -28,12 +28,13 @@ namespace S3ErrorMapper
 
 static const int NO_SUCH_UPLOAD_HASH = HashingUtils::HashString("NoSuchUpload");
 static const int ENCRYPTION_TYPE_MISMATCH_HASH = HashingUtils::HashString("EncryptionTypeMismatch");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest");
 static const int BUCKET_ALREADY_OWNED_BY_YOU_HASH = HashingUtils::HashString("BucketAlreadyOwnedByYou");
 static const int INVALID_WRITE_OFFSET_HASH = HashingUtils::HashString("InvalidWriteOffset");
 static const int OBJECT_ALREADY_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectAlreadyInActiveTierError");
 static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucket");
 static const int TOO_MANY_PARTS_HASH = HashingUtils::HashString("TooManyParts");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest");
+static const int IDEMPOTENCY_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotencyParameterMismatch");
 static const int NO_SUCH_KEY_HASH = HashingUtils::HashString("NoSuchKey");
 static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
 static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
@@ -51,6 +52,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ENCRYPTION_TYPE_MISMATCH_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::ENCRYPTION_TYPE_MISMATCH), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH)
   {
@@ -72,9 +77,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::TOO_MANY_PARTS), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == INVALID_REQUEST_HASH)
+  else if (hashCode == IDEMPOTENCY_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::IDEMPOTENCY_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_KEY_HASH)
   {

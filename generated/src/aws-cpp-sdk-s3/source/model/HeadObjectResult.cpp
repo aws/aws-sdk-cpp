@@ -282,6 +282,13 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
     m_partsCountHasBeenSet = true;
   }
 
+  const auto& tagCountIter = headers.find("x-amz-tagging-count");
+  if(tagCountIter != headers.end())
+  {
+    m_tagCount = StringUtils::ConvertToInt32(tagCountIter->second.c_str());
+    m_tagCountHasBeenSet = true;
+  }
+
   const auto& objectLockModeIter = headers.find("x-amz-object-lock-mode");
   if(objectLockModeIter != headers.end())
   {

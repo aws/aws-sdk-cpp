@@ -71,6 +71,19 @@ void DeleteBucketIntelligentTieringConfigurationRequest::AddQueryStringParameter
     }
 }
 
+Aws::Http::HeaderValueCollection DeleteBucketIntelligentTieringConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}
 
 DeleteBucketIntelligentTieringConfigurationRequest::EndpointParameters DeleteBucketIntelligentTieringConfigurationRequest::GetEndpointContextParams() const
 {

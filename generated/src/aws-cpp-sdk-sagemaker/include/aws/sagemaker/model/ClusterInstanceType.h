@@ -74,6 +74,7 @@ namespace Model
     ml_g6e_48xlarge,
     ml_p5e_48xlarge,
     ml_p5en_48xlarge,
+    ml_p6_b200_48xlarge,
     ml_trn2_48xlarge,
     ml_c6i_large,
     ml_c6i_xlarge,

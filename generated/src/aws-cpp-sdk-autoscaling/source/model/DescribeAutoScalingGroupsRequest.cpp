@@ -32,6 +32,11 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
     }
   }
 
+  if(m_includeInstancesHasBeenSet)
+  {
+    ss << "IncludeInstances=" << std::boolalpha << m_includeInstances << "&";
+  }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";

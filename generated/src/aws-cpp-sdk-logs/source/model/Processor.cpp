@@ -90,6 +90,11 @@ Processor& Processor::operator =(JsonView jsonValue)
     m_parseRoute53 = jsonValue.GetObject("parseRoute53");
     m_parseRoute53HasBeenSet = true;
   }
+  if(jsonValue.ValueExists("parseToOCSF"))
+  {
+    m_parseToOCSF = jsonValue.GetObject("parseToOCSF");
+    m_parseToOCSFHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("parsePostgres"))
   {
     m_parsePostgres = jsonValue.GetObject("parsePostgres");
@@ -217,6 +222,12 @@ JsonValue Processor::Jsonize() const
   if(m_parseRoute53HasBeenSet)
   {
    payload.WithObject("parseRoute53", m_parseRoute53.Jsonize());
+
+  }
+
+  if(m_parseToOCSFHasBeenSet)
+  {
+   payload.WithObject("parseToOCSF", m_parseToOCSF.Jsonize());
 
   }
 

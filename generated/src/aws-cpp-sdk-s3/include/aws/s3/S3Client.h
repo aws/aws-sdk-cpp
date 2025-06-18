@@ -359,11 +359,21 @@ namespace Aws
         }
 
         /**
-         * <p>Creates a copy of an object that is already stored in Amazon S3.</p> 
-         * <p>You can store individual objects of up to 5 TB in Amazon S3. You create a
-         * copy of your object up to 5 GB in size in a single atomic action using this API.
-         * However, to copy an object greater than 5 GB, you must use the multipart upload
-         * Upload Part - Copy (UploadPartCopy) API. For more information, see <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>  <p>Creates a copy of an object that
+         * is already stored in Amazon S3.</p>  <p>You can store individual objects
+         * of up to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size
+         * in a single atomic action using this API. However, to copy an object greater
+         * than 5 GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy)
+         * API. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
          * Object Using the REST Multipart Upload API</a>.</p>  <p>You can copy
          * individual objects between general purpose buckets, between directory buckets,
@@ -503,8 +513,26 @@ namespace Aws
         virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This action creates an Amazon S3 bucket. To create an Amazon S3 on
-         * Outposts bucket, see <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>   <p>End of support
+         * notice: Beginning October 1, 2025, Amazon S3 will stop returning
+         * <code>DisplayName</code>. Update your applications to use canonical IDs (unique
+         * identifier for Amazon Web Services accounts), Amazon Web Services account ID (12
+         * digit identifier) or IAM ARNs (full resource naming) as a direct replacement of
+         * <code>DisplayName</code>. </p> <p>This change affects the following Amazon Web
+         * Services Regions: US East (N. Virginia) Region, US West (N. California) Region,
+         * US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific (Sydney)
+         * Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South America
+         * (São Paulo) Region.</p>   <p>This action creates an Amazon S3
+         * bucket. To create an Amazon S3 on Outposts bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
          * <code>CreateBucket</code> </a>.</p>  <p>Creates a new S3 bucket. To
          * create a bucket, you must set up Amazon S3 and have a valid Amazon Web Services
@@ -682,10 +710,19 @@ namespace Aws
         }
 
         /**
-         * <p>This action initiates a multipart upload and returns an upload ID. This
-         * upload ID is used to associate all of the parts in the specific multipart
-         * upload. You specify this upload ID in each of your subsequent upload part
-         * requests (see <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>  <p>This action initiates a
+         * multipart upload and returns an upload ID. This upload ID is used to associate
+         * all of the parts in the specific multipart upload. You specify this upload ID in
+         * each of your subsequent upload part requests (see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
          * You also include this upload ID in the final request to either complete or abort
          * the multipart upload request. For more information about multipart uploads, see
@@ -2111,8 +2148,17 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>This implementation of the <code>GET</code> action uses the <code>acl</code>
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  
+         * <p>This operation is not supported for directory buckets.</p>  <p>This
+         * implementation of the <code>GET</code> action uses the <code>acl</code>
          * subresource to return the access control list (ACL) of a bucket. To use
          * <code>GET</code> to return the ACL of the bucket, you must have the
          * <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission
@@ -2536,9 +2582,18 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Returns the logging status of a bucket and the permissions users have to view
-         * and modify that status.</p> <p>The following operations are related to
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  
+         * <p>This operation is not supported for directory buckets.</p>  <p>Returns
+         * the logging status of a bucket and the permissions users have to view and modify
+         * that status.</p> <p>The following operations are related to
          * <code>GetBucketLogging</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
          * </p> </li> <li> <p> <a
@@ -2708,8 +2763,14 @@ namespace Aws
          * operation, you must have the <code>s3:GetBucketOwnershipControls</code>
          * permission. For more information about Amazon S3 permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html">Specifying
-         * permissions in a policy</a>. </p> <p>For information about Amazon S3 Object
-         * Ownership, see <a
+         * permissions in a policy</a>. </p>  <p>A bucket doesn't have
+         * <code>OwnershipControls</code> settings in the following cases:</p> <ul> <li>
+         * <p>The bucket was created before the <code>BucketOwnerEnforced</code> ownership
+         * setting was introduced and you've never explicitly applied this value</p> </li>
+         * <li> <p>You've manually deleted the bucket ownership control value using the
+         * <code>DeleteBucketOwnershipControls</code> API operation.</p> </li> </ul> <p>By
+         * default, Amazon S3 sets <code>OwnershipControls</code> for all newly created
+         * buckets.</p>  <p>For information about Amazon S3 Object Ownership, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Using
          * Object Ownership</a>. </p> <p>The following operations are related to
          * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
@@ -4043,9 +4104,18 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Returns a list of all buckets owned by the authenticated sender of the
-         * request. To grant IAM permission to use this operation, you must add the
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  
+         * <p>This operation is not supported for directory buckets.</p>  <p>Returns
+         * a list of all buckets owned by the authenticated sender of the request. To grant
+         * IAM permission to use this operation, you must add the
          * <code>s3:ListAllMyBuckets</code> policy action. </p> <p>For information about
          * Amazon S3 buckets, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
@@ -4136,10 +4206,19 @@ namespace Aws
         }
 
         /**
-         * <p>This operation lists in-progress multipart uploads in a bucket. An
-         * in-progress multipart upload is a multipart upload that has been initiated by
-         * the <code>CreateMultipartUpload</code> request, but has not yet been completed
-         * or aborted.</p>  <p> <b>Directory buckets</b> - If multipart uploads in a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  <p>This
+         * operation lists in-progress multipart uploads in a bucket. An in-progress
+         * multipart upload is a multipart upload that has been initiated by the
+         * <code>CreateMultipartUpload</code> request, but has not yet been completed or
+         * aborted.</p>  <p> <b>Directory buckets</b> - If multipart uploads in a
          * directory bucket are in progress, you can't delete the bucket until all the
          * in-progress multipart uploads are aborted or completed. To delete these
          * in-progress multipart uploads, use the <code>ListMultipartUploads</code>
@@ -4248,17 +4327,25 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Returns metadata about all versions of the objects in a bucket. You can also
-         * use request parameters as selection criteria to return metadata about a subset
-         * of all the object versions.</p>  <p> To use this operation, you must
-         * have permission to perform the <code>s3:ListBucketVersions</code> action. Be
-         * aware of the name difference. </p>   <p> A <code>200 OK</code>
-         * response can contain valid or invalid XML. Make sure to design your application
-         * to parse the contents of the response and handle it appropriately.</p> 
-         * <p>To use this operation, you must have READ access to the bucket.</p> <p>The
-         * following operations are related to <code>ListObjectVersions</code>:</p> <ul>
-         * <li> <p> <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  
+         * <p>This operation is not supported for directory buckets.</p>  <p>Returns
+         * metadata about all versions of the objects in a bucket. You can also use request
+         * parameters as selection criteria to return metadata about a subset of all the
+         * object versions.</p>  <p> To use this operation, you must have
+         * permission to perform the <code>s3:ListBucketVersions</code> action. Be aware of
+         * the name difference. </p>   <p> A <code>200 OK</code> response
+         * can contain valid or invalid XML. Make sure to design your application to parse
+         * the contents of the response and handle it appropriately.</p>  <p>To use
+         * this operation, you must have READ access to the bucket.</p> <p>The following
+         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4291,11 +4378,20 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
-         * request parameters as selection criteria to return a subset of the objects in a
-         * bucket. A 200 OK response can contain valid or invalid XML. Be sure to design
-         * your application to parse the contents of the response and handle it
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p>  
+         * <p>This operation is not supported for directory buckets.</p>  <p>Returns
+         * some or all (up to 1,000) of the objects in a bucket. You can use the request
+         * parameters as selection criteria to return a subset of the objects in a bucket.
+         * A 200 OK response can contain valid or invalid XML. Be sure to design your
+         * application to parse the contents of the response and handle it
          * appropriately.</p>  <p>This action has been revised. We recommend
          * that you use the newer version, <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>,
@@ -4434,6 +4530,15 @@ namespace Aws
         }
 
         /**
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * stop returning <code>DisplayName</code>. Update your applications to use
+         * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+         * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+         * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+         * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+         * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+         * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+         * (Ireland) Region, and South America (São Paulo) Region.</p> 
          * <p>Lists the parts that have been uploaded for a specific multipart upload.</p>
          * <p>To use this operation, you must provide the <code>upload ID</code> in the
          * request. You obtain this uploadID by sending the initiate multipart upload
@@ -4582,9 +4687,18 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Sets the permissions on an existing bucket using access control lists (ACL).
-         * For more information, see <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>   <p>This operation is not
+         * supported for directory buckets.</p>  <p>Sets the permissions on an
+         * existing bucket using access control lists (ACL). For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
          * ACLs</a>. To set the ACL of a bucket, you must have the <code>WRITE_ACP</code>
          * permission.</p> <p>You can use one of the following two ways to set a bucket's
@@ -4643,8 +4757,12 @@ namespace Aws
          * id="555566667777" </code> </p> </li> </ul> <p>You can use either a canned ACL or
          * specify access permissions explicitly. You cannot do both.</p> </dd> <dt>Grantee
          * Values</dt> <dd> <p>You can specify the person (grantee) to whom you're
-         * assigning access rights (using request elements) in the following ways:</p> <ul>
-         * <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
+         * assigning access rights (using request elements) in the following ways. For
+         * examples of how to specify these grantee values in JSON format, see the Amazon
+         * Web Services CLI example in <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html">
+         * Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <ul> <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          * xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
          * &lt;/Grantee&gt;</code> </p> <p>DisplayName is optional and ignored in the
@@ -5214,24 +5332,37 @@ namespace Aws
         }
 
         /**
-         *  <p>This operation is not supported for directory buckets.</p> 
-         * <p>Set the logging parameters for a bucket and to specify permissions for who
-         * can view and modify the logging parameters. All logs are saved to buckets in the
-         * same Amazon Web Services Region as the source bucket. To set the logging status
-         * of a bucket, you must be the bucket owner.</p> <p>The bucket owner is
-         * automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code>
-         * request element to grant access to other people. The <code>Permissions</code>
-         * request element specifies the kind of access the grantee has to the logs.</p>
-         *  <p>If the target bucket for log delivery uses the bucket owner
-         * enforced setting for S3 Object Ownership, you can't use the <code>Grantee</code>
-         * request element to grant access to others. Permissions can only be granted using
-         * policies. For more information, see <a
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>   <p>This operation is not
+         * supported for directory buckets.</p>  <p>Set the logging parameters for a
+         * bucket and to specify permissions for who can view and modify the logging
+         * parameters. All logs are saved to buckets in the same Amazon Web Services Region
+         * as the source bucket. To set the logging status of a bucket, you must be the
+         * bucket owner.</p> <p>The bucket owner is automatically granted FULL_CONTROL to
+         * all logs. You use the <code>Grantee</code> request element to grant access to
+         * other people. The <code>Permissions</code> request element specifies the kind of
+         * access the grantee has to the logs.</p>  <p>If the target bucket for
+         * log delivery uses the bucket owner enforced setting for S3 Object Ownership, you
+         * can't use the <code>Grantee</code> request element to grant access to others.
+         * Permissions can only be granted using policies. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
          * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Grantee Values</dt> <dd> <p>You can specify the person
          * (grantee) to whom you're assigning access rights (by using request elements) in
-         * the following ways:</p> <ul> <li> <p>By the person's ID:</p> <p>
-         * <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         * the following ways. For examples of how to specify these grantee values in JSON
+         * format, see the Amazon Web Services CLI example in <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html">
+         * Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <ul> <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
+         * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          * xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
          * &lt;/Grantee&gt;</code> </p> <p> <code>DisplayName</code> is optional and
          * ignored in the request.</p> </li> <li> <p>By Email address:</p> <p> <code>
@@ -5833,17 +5964,26 @@ namespace Aws
         }
 
         /**
-         * <p>Adds an object to a bucket.</p>  <ul> <li> <p>Amazon S3 never adds
-         * partial objects; if you receive a success response, Amazon S3 added the entire
-         * object to the bucket. You cannot use <code>PutObject</code> to only update a
-         * single piece of metadata for an existing object. You must put the entire object
-         * with updated metadata if you want to update some values.</p> </li> <li> <p>If
-         * your bucket uses the bucket owner enforced setting for Object Ownership, ACLs
-         * are disabled and no longer affect permissions. All objects written to the bucket
-         * by any account will be owned by the bucket owner.</p> </li> <li> <p>
-         * <b>Directory buckets</b> - For directory buckets, you must make requests for
-         * this API operation to the Zonal endpoint. These endpoints support
-         * virtual-hosted-style requests in the format
+         *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
+         * discontinue support for creating new Email Grantee Access Control Lists (ACL).
+         * Email Grantee ACLs created prior to this date will continue to work and remain
+         * accessible through the Amazon Web Services Management Console, Command Line
+         * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
+         * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
+         * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
+         * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
+         * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
+         * America (São Paulo) Region.</p>  <p>Adds an object to a bucket.</p>
+         *  <ul> <li> <p>Amazon S3 never adds partial objects; if you receive a
+         * success response, Amazon S3 added the entire object to the bucket. You cannot
+         * use <code>PutObject</code> to only update a single piece of metadata for an
+         * existing object. You must put the entire object with updated metadata if you
+         * want to update some values.</p> </li> <li> <p>If your bucket uses the bucket
+         * owner enforced setting for Object Ownership, ACLs are disabled and no longer
+         * affect permissions. All objects written to the bucket by any account will be
+         * owned by the bucket owner.</p> </li> <li> <p> <b>Directory buckets</b> - For
+         * directory buckets, you must make requests for this API operation to the Zonal
+         * endpoint. These endpoints support virtual-hosted-style requests in the format
          * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
@@ -6008,8 +6148,11 @@ namespace Aws
          * </ul> <p>You can use either a canned ACL or specify access permissions
          * explicitly. You cannot do both.</p> </dd> <dt>Grantee Values</dt> <dd> <p>You
          * can specify the person (grantee) to whom you're assigning access rights (using
-         * request elements) in the following ways:</p> <ul> <li> <p>By the person's
-         * ID:</p> <p> <code>&lt;Grantee
+         * request elements) in the following ways. For examples of how to specify these
+         * grantee values in JSON format, see the Amazon Web Services CLI example in <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html">
+         * Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <ul> <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          * xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
          * &lt;/Grantee&gt;</code> </p> <p>DisplayName is optional and ignored in the
@@ -6267,6 +6410,71 @@ namespace Aws
         void PutPublicAccessBlockAsync(const PutPublicAccessBlockRequestT& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3Client::PutPublicAccessBlock, request, handler, context);
+        }
+
+        /**
+         * <p>Renames an existing object in a directory bucket that uses the S3 Express One
+         * Zone storage class. You can use <code>RenameObject</code> by specifying an
+         * existing object’s name as the source and the new name of the object as the
+         * destination within the same directory bucket.</p>  <p>
+         * <code>RenameObject</code> is only supported for objects stored in the S3 Express
+         * One Zone storage class.</p>  <p> To prevent overwriting an object, you
+         * can use the <code>If-None-Match</code> conditional header.</p> <ul> <li> <p>
+         * <b>If-None-Match</b> - Renames the object only if an object with the specified
+         * name does not already exist in the directory bucket. If you don't want to
+         * overwrite an existing object, you can add the <code>If-None-Match</code>
+         * conditional header with the value <code>‘*’</code> in the
+         * <code>RenameObject</code> request. Amazon S3 then returns a <code>412
+         * Precondition Failed</code> error if the object with the specified name already
+         * exists. For more information, see <a
+         * href="https://datatracker.ietf.org/doc/rfc7232/">RFC 7232</a>.</p> </li> </ul>
+         * <dl> <dt>Permissions</dt> <dd> <p> To grant access to the
+         * <code>RenameObject</code> operation on a directory bucket, we recommend that you
+         * use the <code>CreateSession</code> operation for session-based authorization.
+         * Specifically, you grant the <code>s3express:CreateSession</code> permission to
+         * the directory bucket in a bucket policy or an IAM identity-based policy. Then,
+         * you make the <code>CreateSession</code> API call on the directory bucket to
+         * obtain a session token. With the session token in your request header, you can
+         * make API requests to this operation. After the session token expires, you make
+         * another <code>CreateSession</code> API call to generate a new session token for
+         * use. The Amazon Web Services CLI and SDKs will create and manage your session
+         * including refreshing the session token automatically to avoid service
+         * interruptions when a session expires. In your bucket policy, you can specify the
+         * <code>s3express:SessionMode</code> condition key to control who can create a
+         * <code>ReadWrite</code> or <code>ReadOnly</code> session. A
+         * <code>ReadWrite</code> session is required for executing all the Zonal endpoint
+         * API operations, including <code>RenameObject</code>. For more information about
+         * authorization, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+         * <code>CreateSession</code> </a>. To learn more about Zonal endpoint APT
+         * operations, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-create-session.html">Authorizing
+         * Zonal endpoint API operations with CreateSession</a> in the <i>Amazon S3 User
+         * Guide</i>. </p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory
+         * buckets </b> - The HTTP Host header syntax is <code>
+         * <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::RenameObjectOutcome RenameObject(const Model::RenameObjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for RenameObject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RenameObjectRequestT = Model::RenameObjectRequest>
+        Model::RenameObjectOutcomeCallable RenameObjectCallable(const RenameObjectRequestT& request) const
+        {
+            return SubmitCallable(&S3Client::RenameObject, request);
+        }
+
+        /**
+         * An Async wrapper for RenameObject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RenameObjectRequestT = Model::RenameObjectRequest>
+        void RenameObjectAsync(const RenameObjectRequestT& request, const RenameObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3Client::RenameObject, request, handler, context);
         }
 
         /**

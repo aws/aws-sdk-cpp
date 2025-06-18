@@ -176,8 +176,7 @@ namespace Model
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
      * in the response. You can use the returned <code>ContinuationToken</code> for
-     * pagination of the list response. You can use this <code>ContinuationToken</code>
-     * for pagination of the list results. </p>
+     * pagination of the list response.</p>
      */
     inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     template<typename ContinuationTokenT = Aws::String>

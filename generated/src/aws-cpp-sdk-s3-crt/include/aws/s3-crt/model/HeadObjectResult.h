@@ -523,6 +523,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of tags, if any, on the object, when you have the relevant
+     * permission to read object tags.</p> <p>You can use <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+     * to retrieve the tag set associated with an object.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
+     */
+    inline int GetTagCount() const { return m_tagCount; }
+    inline void SetTagCount(int value) { m_tagCountHasBeenSet = true; m_tagCount = value; }
+    inline HeadObjectResult& WithTagCount(int value) { SetTagCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Object Lock mode, if any, that's in effect for this object. This header
      * is only returned if the requester has the <code>s3:GetObjectRetention</code>
      * permission. For more information about S3 Object Lock, see <a
@@ -687,6 +700,9 @@ namespace Model
 
     int m_partsCount{0};
     bool m_partsCountHasBeenSet = false;
+
+    int m_tagCount{0};
+    bool m_tagCountHasBeenSet = false;
 
     ObjectLockMode m_objectLockMode{ObjectLockMode::NOT_SET};
     bool m_objectLockModeHasBeenSet = false;

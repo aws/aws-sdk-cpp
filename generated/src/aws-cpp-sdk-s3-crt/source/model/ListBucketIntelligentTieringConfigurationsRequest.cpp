@@ -71,6 +71,19 @@ void ListBucketIntelligentTieringConfigurationsRequest::AddQueryStringParameters
     }
 }
 
+Aws::Http::HeaderValueCollection ListBucketIntelligentTieringConfigurationsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}
 
 ListBucketIntelligentTieringConfigurationsRequest::EndpointParameters ListBucketIntelligentTieringConfigurationsRequest::GetEndpointContextParams() const
 {

@@ -328,6 +328,8 @@
 #include <aws/s3-crt/model/RecordsEvent.h>
 #include <aws/s3-crt/model/Redirect.h>
 #include <aws/s3-crt/model/RedirectAllRequestsTo.h>
+#include <aws/s3-crt/model/RenameObjectRequest.h>
+#include <aws/s3-crt/model/RenameObjectResult.h>
 #include <aws/s3-crt/model/ReplicaModifications.h>
 #include <aws/s3-crt/model/ReplicaModificationsStatus.h>
 #include <aws/s3-crt/model/ReplicationConfiguration.h>

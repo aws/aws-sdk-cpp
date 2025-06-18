@@ -18,6 +18,7 @@
 #include <aws/logs/model/ParseJSON.h>
 #include <aws/logs/model/ParseKeyValue.h>
 #include <aws/logs/model/ParseRoute53.h>
+#include <aws/logs/model/ParseToOCSF.h>
 #include <aws/logs/model/ParsePostgres.h>
 #include <aws/logs/model/ParseVPC.h>
 #include <aws/logs/model/ParseWAF.h>
@@ -245,6 +246,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Use this processor to convert logs into Open Cybersecurity Schema Framework
+     * (OCSF) format</p>
+     */
+    inline const ParseToOCSF& GetParseToOCSF() const { return m_parseToOCSF; }
+    inline bool ParseToOCSFHasBeenSet() const { return m_parseToOCSFHasBeenSet; }
+    template<typename ParseToOCSFT = ParseToOCSF>
+    void SetParseToOCSF(ParseToOCSFT&& value) { m_parseToOCSFHasBeenSet = true; m_parseToOCSF = std::forward<ParseToOCSFT>(value); }
+    template<typename ParseToOCSFT = ParseToOCSF>
+    Processor& WithParseToOCSF(ParseToOCSFT&& value) { SetParseToOCSF(std::forward<ParseToOCSFT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Use this parameter to include the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parsePostGres">
      * parsePostGres</a> processor in your transformer.</p> <p>If you use this
@@ -411,6 +425,9 @@ namespace Model
 
     ParseRoute53 m_parseRoute53;
     bool m_parseRoute53HasBeenSet = false;
+
+    ParseToOCSF m_parseToOCSF;
+    bool m_parseToOCSFHasBeenSet = false;
 
     ParsePostgres m_parsePostgres;
     bool m_parsePostgresHasBeenSet = false;
