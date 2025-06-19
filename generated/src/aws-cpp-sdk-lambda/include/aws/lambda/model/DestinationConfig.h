@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A configuration object that specifies the destination of an event after
-   * Lambda processes it.</p><p><h3>See Also:</h3>   <a
+   * Lambda processes it. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+   * a destination</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DestinationConfig">AWS
    * API Reference</a></p>
    */
@@ -41,7 +43,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination configuration for successful invocations.</p>
+     * <p>The destination configuration for successful invocations. Not supported in
+     * <code>CreateEventSourceMapping</code> or
+     * <code>UpdateEventSourceMapping</code>.</p>
      */
     inline const OnSuccess& GetOnSuccess() const { return m_onSuccess; }
     inline bool OnSuccessHasBeenSet() const { return m_onSuccessHasBeenSet; }

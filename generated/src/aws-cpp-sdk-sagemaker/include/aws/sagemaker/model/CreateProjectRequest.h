@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ServiceCatalogProvisioningDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
+#include <aws/sagemaker/model/CreateTemplateProvider.h>
 #include <utility>
 
 namespace Aws
@@ -95,6 +96,21 @@ namespace Model
     template<typename TagsT = Tag>
     CreateProjectRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> An array of template provider configurations for creating infrastructure
+     * resources for the project. </p>
+     */
+    inline const Aws::Vector<CreateTemplateProvider>& GetTemplateProviders() const { return m_templateProviders; }
+    inline bool TemplateProvidersHasBeenSet() const { return m_templateProvidersHasBeenSet; }
+    template<typename TemplateProvidersT = Aws::Vector<CreateTemplateProvider>>
+    void SetTemplateProviders(TemplateProvidersT&& value) { m_templateProvidersHasBeenSet = true; m_templateProviders = std::forward<TemplateProvidersT>(value); }
+    template<typename TemplateProvidersT = Aws::Vector<CreateTemplateProvider>>
+    CreateProjectRequest& WithTemplateProviders(TemplateProvidersT&& value) { SetTemplateProviders(std::forward<TemplateProvidersT>(value)); return *this;}
+    template<typename TemplateProvidersT = CreateTemplateProvider>
+    CreateProjectRequest& AddTemplateProviders(TemplateProvidersT&& value) { m_templateProvidersHasBeenSet = true; m_templateProviders.emplace_back(std::forward<TemplateProvidersT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_projectName;
@@ -108,6 +124,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<CreateTemplateProvider> m_templateProviders;
+    bool m_templateProvidersHasBeenSet = false;
   };
 
 } // namespace Model

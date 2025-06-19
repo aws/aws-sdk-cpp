@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CMAC,
-    ANSI_X9_24
+    ANSI_X9_24,
+    HMAC
   };
 
 namespace KeyCheckValueAlgorithmMapper

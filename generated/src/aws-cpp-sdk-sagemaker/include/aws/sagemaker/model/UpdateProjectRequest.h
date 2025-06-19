@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ServiceCatalogProvisioningUpdateDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
+#include <aws/sagemaker/model/UpdateTemplateProvider.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,20 @@ namespace Model
     template<typename TagsT = Tag>
     UpdateProjectRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The template providers to update in the project. </p>
+     */
+    inline const Aws::Vector<UpdateTemplateProvider>& GetTemplateProvidersToUpdate() const { return m_templateProvidersToUpdate; }
+    inline bool TemplateProvidersToUpdateHasBeenSet() const { return m_templateProvidersToUpdateHasBeenSet; }
+    template<typename TemplateProvidersToUpdateT = Aws::Vector<UpdateTemplateProvider>>
+    void SetTemplateProvidersToUpdate(TemplateProvidersToUpdateT&& value) { m_templateProvidersToUpdateHasBeenSet = true; m_templateProvidersToUpdate = std::forward<TemplateProvidersToUpdateT>(value); }
+    template<typename TemplateProvidersToUpdateT = Aws::Vector<UpdateTemplateProvider>>
+    UpdateProjectRequest& WithTemplateProvidersToUpdate(TemplateProvidersToUpdateT&& value) { SetTemplateProvidersToUpdate(std::forward<TemplateProvidersToUpdateT>(value)); return *this;}
+    template<typename TemplateProvidersToUpdateT = UpdateTemplateProvider>
+    UpdateProjectRequest& AddTemplateProvidersToUpdate(TemplateProvidersToUpdateT&& value) { m_templateProvidersToUpdateHasBeenSet = true; m_templateProvidersToUpdate.emplace_back(std::forward<TemplateProvidersToUpdateT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_projectName;
@@ -112,6 +127,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<UpdateTemplateProvider> m_templateProvidersToUpdate;
+    bool m_templateProvidersToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

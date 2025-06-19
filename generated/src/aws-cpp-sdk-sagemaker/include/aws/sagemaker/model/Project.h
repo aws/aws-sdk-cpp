@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/TemplateProviderDetail.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -149,6 +150,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> An array of template providers associated with the project. </p>
+     */
+    inline const Aws::Vector<TemplateProviderDetail>& GetTemplateProviderDetails() const { return m_templateProviderDetails; }
+    inline bool TemplateProviderDetailsHasBeenSet() const { return m_templateProviderDetailsHasBeenSet; }
+    template<typename TemplateProviderDetailsT = Aws::Vector<TemplateProviderDetail>>
+    void SetTemplateProviderDetails(TemplateProviderDetailsT&& value) { m_templateProviderDetailsHasBeenSet = true; m_templateProviderDetails = std::forward<TemplateProviderDetailsT>(value); }
+    template<typename TemplateProviderDetailsT = Aws::Vector<TemplateProviderDetail>>
+    Project& WithTemplateProviderDetails(TemplateProviderDetailsT&& value) { SetTemplateProviderDetails(std::forward<TemplateProviderDetailsT>(value)); return *this;}
+    template<typename TemplateProviderDetailsT = TemplateProviderDetail>
+    Project& AddTemplateProviderDetails(TemplateProviderDetailsT&& value) { m_templateProviderDetailsHasBeenSet = true; m_templateProviderDetails.emplace_back(std::forward<TemplateProviderDetailsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
@@ -214,6 +229,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
+
+    Aws::Vector<TemplateProviderDetail> m_templateProviderDetails;
+    bool m_templateProviderDetailsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

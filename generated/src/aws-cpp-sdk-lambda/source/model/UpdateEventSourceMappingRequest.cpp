@@ -110,6 +110,18 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
 
   }
 
+  if(m_amazonManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("AmazonManagedKafkaEventSourceConfig", m_amazonManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
   if(m_documentDBEventSourceConfigHasBeenSet)
   {
    payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());

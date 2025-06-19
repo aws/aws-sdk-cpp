@@ -72,8 +72,8 @@ namespace Model
      * Cryptography. It also contains the signing key certificate that will sign the
      * wrapped key during TR-34 key block generation. Call <a
      * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
-     * to receive an export token. It expires after 7 days. You can use the same export
-     * token to export multiple keys from the same service account.</p>
+     * to receive an export token. It expires after 30 days. You can use the same
+     * export token to export multiple keys from the same service account.</p>
      */
     inline const Aws::String& GetExportToken() const { return m_exportToken; }
     inline bool ExportTokenHasBeenSet() const { return m_exportTokenHasBeenSet; }

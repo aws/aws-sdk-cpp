@@ -109,8 +109,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Parameter information for key material import using the asymmetric ECDH key
-     * exchange method.</p>
+     * <p>Key derivation parameter information for key material import using asymmetric
+     * ECDH key exchange method.</p>
      */
     inline const ImportDiffieHellmanTr31KeyBlock& GetDiffieHellmanTr31KeyBlock() const { return m_diffieHellmanTr31KeyBlock; }
     inline bool DiffieHellmanTr31KeyBlockHasBeenSet() const { return m_diffieHellmanTr31KeyBlockHasBeenSet; }

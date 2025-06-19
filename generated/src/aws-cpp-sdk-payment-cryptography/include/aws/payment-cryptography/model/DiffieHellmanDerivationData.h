@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Derivation data used to derive an ECDH key.</p><p><h3>See Also:</h3>   <a
+   * <p>The shared information used when deriving a key using ECDH.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DiffieHellmanDerivationData">AWS
    * API Reference</a></p>
    */
@@ -39,12 +40,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A byte string containing information that binds the ECDH derived key to the
-     * two parties involved or to the context of the key.</p> <p>It may include details
+     * <p>A string containing information that binds the ECDH derived key to the two
+     * parties involved or to the context of the key.</p> <p>It may include details
      * like identities of the two parties deriving the key, context of the operation,
-     * session IDs, and optionally a nonce. It must not contain zero bytes, and
-     * re-using shared information for multiple ECDH key derivations is not
-     * recommended.</p>
+     * session IDs, and optionally a nonce. It must not contain zero bytes. It is not
+     * recommended to reuse shared information for multiple ECDH key derivations, as it
+     * could result in derived key material being the same across different
+     * derivations.</p>
      */
     inline const Aws::String& GetSharedInformation() const { return m_sharedInformation; }
     inline bool SharedInformationHasBeenSet() const { return m_sharedInformationHasBeenSet; }

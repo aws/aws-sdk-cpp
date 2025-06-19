@@ -9,8 +9,10 @@
 #include <aws/sagemaker/model/ServiceCatalogProvisioningDetails.h>
 #include <aws/sagemaker/model/ServiceCatalogProvisionedProductDetails.h>
 #include <aws/sagemaker/model/ProjectStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/TemplateProviderDetail.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +118,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> An array of template providers associated with the project. </p>
+     */
+    inline const Aws::Vector<TemplateProviderDetail>& GetTemplateProviderDetails() const { return m_templateProviderDetails; }
+    template<typename TemplateProviderDetailsT = Aws::Vector<TemplateProviderDetail>>
+    void SetTemplateProviderDetails(TemplateProviderDetailsT&& value) { m_templateProviderDetailsHasBeenSet = true; m_templateProviderDetails = std::forward<TemplateProviderDetailsT>(value); }
+    template<typename TemplateProviderDetailsT = Aws::Vector<TemplateProviderDetail>>
+    DescribeProjectResult& WithTemplateProviderDetails(TemplateProviderDetailsT&& value) { SetTemplateProviderDetails(std::forward<TemplateProviderDetailsT>(value)); return *this;}
+    template<typename TemplateProviderDetailsT = TemplateProviderDetail>
+    DescribeProjectResult& AddTemplateProviderDetails(TemplateProviderDetailsT&& value) { m_templateProviderDetailsHasBeenSet = true; m_templateProviderDetails.emplace_back(std::forward<TemplateProviderDetailsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const UserContext& GetCreatedBy() const { return m_createdBy; }
     template<typename CreatedByT = UserContext>
@@ -185,6 +200,9 @@ namespace Model
 
     ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
     bool m_projectStatusHasBeenSet = false;
+
+    Aws::Vector<TemplateProviderDetail> m_templateProviderDetails;
+    bool m_templateProviderDetailsHasBeenSet = false;
 
     UserContext m_createdBy;
     bool m_createdByHasBeenSet = false;

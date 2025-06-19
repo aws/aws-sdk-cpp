@@ -75,7 +75,7 @@ namespace Model
     ///@{
     /**
      * <p>The import token that initiates key import using the asymmetric RSA wrap and
-     * unwrap key exchange method into AWS Payment Cryptography. It expires after 7
+     * unwrap key exchange method into AWS Payment Cryptography. It expires after 30
      * days. You can use the same import token to import multiple keys to the same
      * service account.</p>
      */

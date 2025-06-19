@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
-     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+     * key for use within the TR-34 key block. The certificate expires in 30 days.</p>
      */
     inline const Aws::String& GetWrappingKeyCertificate() const { return m_wrappingKeyCertificate; }
     template<typename WrappingKeyCertificateT = Aws::String>
@@ -71,8 +71,8 @@ namespace Model
     ///@{
     /**
      * <p>The import token to initiate key import into Amazon Web Services Payment
-     * Cryptography. The import token expires after 7 days. You can use the same import
-     * token to import multiple keys to the same service account.</p>
+     * Cryptography. The import token expires after 30 days. You can use the same
+     * import token to import multiple keys to the same service account.</p>
      */
     inline const Aws::String& GetImportToken() const { return m_importToken; }
     template<typename ImportTokenT = Aws::String>

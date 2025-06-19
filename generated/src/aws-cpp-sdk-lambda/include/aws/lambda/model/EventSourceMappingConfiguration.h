@@ -199,7 +199,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result of the last Lambda invocation of your function.</p>
+     * <p>The result of the event source mapping's last processing attempt.</p>
      */
     inline const Aws::String& GetLastProcessingResult() const { return m_lastProcessingResult; }
     inline bool LastProcessingResultHasBeenSet() const { return m_lastProcessingResultHasBeenSet; }

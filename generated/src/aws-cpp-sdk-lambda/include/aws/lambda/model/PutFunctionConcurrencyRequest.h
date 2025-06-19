@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
      * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
-     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> ���
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length

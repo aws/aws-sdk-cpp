@@ -20,7 +20,11 @@ namespace Model
     TDES_3KEY,
     AES_128,
     AES_192,
-    AES_256
+    AES_256,
+    HMAC_SHA256,
+    HMAC_SHA384,
+    HMAC_SHA512,
+    HMAC_SHA224
   };
 
 namespace SymmetricKeyAlgorithmMapper
