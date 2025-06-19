@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>The signing key certificate in PEM format (base64 encoded) of the public key
-     * for signature within the TR-34 key block. The certificate expires after 7
+     * for signature within the TR-34 key block. The certificate expires after 30
      * days.</p>
      */
     inline const Aws::String& GetSigningKeyCertificate() const { return m_signingKeyCertificate; }
@@ -72,8 +72,8 @@ namespace Model
     ///@{
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
-     * Cryptography. The export token expires after 7 days. You can use the same export
-     * token to export multiple keys from the same service account.</p>
+     * Cryptography. The export token expires after 30 days. You can use the same
+     * export token to export multiple keys from the same service account.</p>
      */
     inline const Aws::String& GetExportToken() const { return m_exportToken; }
     template<typename ExportTokenT = Aws::String>

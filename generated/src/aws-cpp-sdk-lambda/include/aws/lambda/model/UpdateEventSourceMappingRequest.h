@@ -11,6 +11,8 @@
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/ScalingConfig.h>
+#include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
 #include <aws/lambda/model/ProvisionedPollerConfig.h>
@@ -259,6 +261,26 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const AmazonManagedKafkaEventSourceConfig& GetAmazonManagedKafkaEventSourceConfig() const { return m_amazonManagedKafkaEventSourceConfig; }
+    inline bool AmazonManagedKafkaEventSourceConfigHasBeenSet() const { return m_amazonManagedKafkaEventSourceConfigHasBeenSet; }
+    template<typename AmazonManagedKafkaEventSourceConfigT = AmazonManagedKafkaEventSourceConfig>
+    void SetAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfigT&& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = std::forward<AmazonManagedKafkaEventSourceConfigT>(value); }
+    template<typename AmazonManagedKafkaEventSourceConfigT = AmazonManagedKafkaEventSourceConfig>
+    UpdateEventSourceMappingRequest& WithAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfigT&& value) { SetAmazonManagedKafkaEventSourceConfig(std::forward<AmazonManagedKafkaEventSourceConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const SelfManagedKafkaEventSourceConfig& GetSelfManagedKafkaEventSourceConfig() const { return m_selfManagedKafkaEventSourceConfig; }
+    inline bool SelfManagedKafkaEventSourceConfigHasBeenSet() const { return m_selfManagedKafkaEventSourceConfigHasBeenSet; }
+    template<typename SelfManagedKafkaEventSourceConfigT = SelfManagedKafkaEventSourceConfig>
+    void SetSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigT&& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = std::forward<SelfManagedKafkaEventSourceConfigT>(value); }
+    template<typename SelfManagedKafkaEventSourceConfigT = SelfManagedKafkaEventSourceConfig>
+    UpdateEventSourceMappingRequest& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigT&& value) { SetSelfManagedKafkaEventSourceConfig(std::forward<SelfManagedKafkaEventSourceConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Specific configuration settings for a DocumentDB event source.</p>
      */
@@ -360,6 +382,12 @@ namespace Model
 
     ScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet = false;
+
+    AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
+    bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
+
+    SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
+    bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
 
     DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
     bool m_documentDBEventSourceConfigHasBeenSet = false;

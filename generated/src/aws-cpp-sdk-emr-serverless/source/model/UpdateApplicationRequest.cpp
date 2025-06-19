@@ -114,6 +114,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
+  if(m_identityCenterConfigurationHasBeenSet)
+  {
+   payload.WithObject("identityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

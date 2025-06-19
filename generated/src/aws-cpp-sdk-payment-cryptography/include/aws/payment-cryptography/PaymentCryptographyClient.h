@@ -164,15 +164,29 @@ namespace PaymentCryptography
          * class (example: <code>SYMMETRIC_KEY</code>), key algorithm (example:
          * <code>TDES_2KEY</code>), key usage (example:
          * <code>TR31_P0_PIN_ENCRYPTION_KEY</code>) and key modes of use (example:
-         * <code>Encrypt</code>). For information about valid combinations of key
-         * attributes, see <a
+         * <code>Encrypt</code>). Amazon Web Services Payment Cryptography binds key
+         * attributes to keys using key blocks when you store or export them. Amazon Web
+         * Services Payment Cryptography stores the key contents wrapped and never stores
+         * or transmits them in the clear.</p> <p>For information about valid combinations
+         * of key attributes, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> in the <i>Amazon Web Services Payment Cryptography User
          * Guide</i>. The mutable data contained within a key includes usage timestamp and
-         * key deletion timestamp and can be modified after creation.</p> <p>Amazon Web
-         * Services Payment Cryptography binds key attributes to keys using key blocks when
-         * you store or export them. Amazon Web Services Payment Cryptography stores the
-         * key contents wrapped and never stores or transmits them in the clear. </p> <p>
+         * key deletion timestamp and can be modified after creation.</p> <p>You can use
+         * the <code>CreateKey</code> operation to generate an ECC (Elliptic Curve
+         * Cryptography) key pair used for establishing an ECDH (Elliptic Curve
+         * Diffie-Hellman) key agreement between two parties. In the ECDH key agreement
+         * process, both parties generate their own ECC key pair with key usage K3 and
+         * exchange the public keys. Each party then use their private key, the received
+         * public key from the other party, and the key derivation parameters including key
+         * derivation function, hash algorithm, derivation data, and key algorithm to
+         * derive a shared key.</p> <p>To maintain the single-use principle of
+         * cryptographic keys in payments, ECDH derived keys should not be used for
+         * multiple purposes, such as a <code>TR31_P0_PIN_ENCRYPTION_KEY</code> and
+         * <code>TR31_K1_KEY_BLOCK_PROTECTION_KEY</code>. When creating ECC key pairs in
+         * Amazon Web Services Payment Cryptography you can optionally set the
+         * <code>DeriveKeyUsage</code> parameter, which defines the key usage bound to the
+         * symmetric key that will be derived using the ECC key pair.</p> <p>
          * <b>Cross-account use</b>: This operation can't be used across different Amazon
          * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
@@ -309,18 +323,21 @@ namespace PaymentCryptography
          * Payment Cryptography </p> <p>For symmetric key exchange, Amazon Web Services
          * Payment Cryptography uses the ANSI X9 TR-31 norm in accordance with PCI PIN
          * guidelines. And for asymmetric key exchange, Amazon Web Services Payment
-         * Cryptography supports ANSI X9 TR-34 norm and RSA wrap and unwrap key exchange
-         * mechanism. Asymmetric key exchange methods are typically used to establish
-         * bi-directional trust between the two parties exhanging keys and are used for
-         * initial key exchange such as Key Encryption Key (KEK). After which you can
-         * export working keys using symmetric method to perform various cryptographic
-         * operations within Amazon Web Services Payment Cryptography.</p> <p>The TR-34
-         * norm is intended for exchanging 3DES keys only and keys are imported in a
-         * WrappedKeyBlock format. Key attributes (such as KeyUsage, KeyAlgorithm,
-         * KeyModesOfUse, Exportability) are contained within the key block. With RSA wrap
-         * and unwrap, you can exchange both 3DES and AES-128 keys. The keys are imported
-         * in a WrappedKeyCryptogram format and you will need to specify the key attributes
-         * during import. </p> <p>You can also use <code>ExportKey</code> functionality to
+         * Cryptography supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve
+         * Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods are
+         * typically used to establish bi-directional trust between the two parties
+         * exhanging keys and are used for initial key exchange such as Key Encryption Key
+         * (KEK). After which you can export working keys using symmetric method to perform
+         * various cryptographic operations within Amazon Web Services Payment
+         * Cryptography.</p> <p>PCI requires specific minimum key strength of wrapping keys
+         * used to protect the keys being exchanged electronically. These requirements can
+         * change when PCI standards are revised. The rules specify that wrapping keys used
+         * for transport must be at least as strong as the key being protected. For more
+         * information on recommended key strength of wrapping keys and key exchange
+         * mechanism, see <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html">Importing
+         * and exporting keys</a> in the <i>Amazon Web Services Payment Cryptography User
+         * Guide</i>.</p> <p>You can also use <code>ExportKey</code> functionality to
          * generate and export an IPEK (Initial Pin Encryption Key) from Amazon Web
          * Services Payment Cryptography using either TR-31 or TR-34 export key exchange.
          * IPEK is generated from BDK (Base Derivation Key) and
@@ -356,7 +373,7 @@ namespace PaymentCryptography
          * sign the the export payload and the signing public key certificate is provided
          * to KRD to verify the signature. The KRD can import the root certificate into its
          * Hardware Security Module (HSM), as required. The export token and the associated
-         * KDH signing certificate expires after 7 days. </p> <p>Next the KRD generates a
+         * KDH signing certificate expires after 30 days. </p> <p>Next the KRD generates a
          * key pair for the the purpose of encrypting the KDH key and provides the public
          * key cerificate (also known as KRD wrapping certificate) back to KDH. The KRD
          * will also import the root cerificate chain into Amazon Web Services Payment
@@ -416,11 +433,33 @@ namespace PaymentCryptography
          * This parameter is optional for KEK export.</p> </li> <li> <p>
          * <code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in
          * case of IPEK) under export.</p> </li> <li> <p> <code>KeyMaterial</code>: Use
-         * <code>Tr31KeyBlock</code> parameters.</p> </li> </ul> <p>When this operation is
-         * successful, Amazon Web Services Payment Cryptography returns the working key or
-         * IPEK as a TR-31 WrappedKeyBlock.</p> <p> <b>Cross-account use:</b> This
-         * operation can't be used across different Amazon Web Services accounts.</p> <p>
-         * <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * <code>Tr31KeyBlock</code> parameters.</p> </li> </ul> <p> <b>To export working
+         * keys using ECDH</b> </p> <p>You can also use ECDH key agreement to export
+         * working keys in a TR-31 keyblock, where the wrapping key is an ECDH derived
+         * key.</p> <p>To initiate a TR-31 key export using ECDH, both sides must create an
+         * ECC key pair with key usage K3 and exchange public key certificates. In Amazon
+         * Web Services Payment Cryptography, you can do this by calling
+         * <code>CreateKey</code>. If you have not already done so, you must import the CA
+         * chain that issued the receiving public key certificate by calling
+         * <code>ImportKey</code> with input <code>RootCertificatePublicKey</code> for root
+         * CA or <code>TrustedPublicKey</code> for intermediate CA. You can then complete a
+         * TR-31 key export by deriving a shared wrapping key using the service ECC key
+         * pair, public certificate of your ECC key pair outside of Amazon Web Services
+         * Payment Cryptography, and the key derivation parameters including key derivation
+         * function, hash algorithm, derivation data, key algorithm.</p> <ul> <li> <p>
+         * <code>KeyMaterial</code>: Use <code>DiffieHellmanTr31KeyBlock</code>
+         * parameters.</p> </li> <li> <p> <code>PrivateKeyIdentifier</code>: The
+         * <code>KeyArn</code> of the ECC key pair created within Amazon Web Services
+         * Payment Cryptography to derive a shared KEK.</p> </li> <li> <p>
+         * <code>PublicKeyCertificate</code>: The public key certificate of the receiving
+         * ECC key pair in PEM format (base64 encoded) to derive a shared KEK.</p> </li>
+         * <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>: The
+         * <code>keyARN</code> of the CA that signed the public key certificate of the
+         * receiving ECC key pair.</p> </li> </ul> <p>When this operation is successful,
+         * Amazon Web Services Payment Cryptography returns the working key as a TR-31
+         * WrappedKeyBlock, where the wrapping key is the ECDH derived key.</p> <p>
+         * <b>Cross-account use:</b> This operation can't be used across different Amazon
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
@@ -526,7 +565,7 @@ namespace PaymentCryptography
          * export token and signing key certificate must be in place and operational before
          * calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
-         * The export token expires in 7 days. You can use the same export token to export
+         * The export token expires in 30 days. You can use the same export token to export
          * multiple keys from your service account.</p> <p> <b>Cross-account use:</b> This
          * operation can't be used across different Amazon Web Services accounts.</p> <p>
          * <b>Related operations:</b> </p> <ul> <li> <p> <a
@@ -564,7 +603,7 @@ namespace PaymentCryptography
          * certificate wraps the key under import. The import token and wrapping key
          * certificate must be in place and operational before calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
-         * The import token expires in 7 days. You can use the same import token to import
+         * The import token expires in 30 days. You can use the same import token to import
          * multiple keys into your service account.</p> <p> <b>Cross-account use:</b> This
          * operation can't be used across different Amazon Web Services accounts.</p> <p>
          * <b>Related operations:</b> </p> <ul> <li> <p> <a
@@ -637,37 +676,40 @@ namespace PaymentCryptography
          * asymmetric key exchange mechanisms.</p> <p>For symmetric key exchange, Amazon
          * Web Services Payment Cryptography uses the ANSI X9 TR-31 norm in accordance with
          * PCI PIN guidelines. And for asymmetric key exchange, Amazon Web Services Payment
-         * Cryptography supports ANSI X9 TR-34 norm and RSA wrap and unwrap key exchange
-         * mechanisms. Asymmetric key exchange methods are typically used to establish
-         * bi-directional trust between the two parties exhanging keys and are used for
-         * initial key exchange such as Key Encryption Key (KEK) or Zone Master Key (ZMK).
-         * After which you can import working keys using symmetric method to perform
-         * various cryptographic operations within Amazon Web Services Payment
-         * Cryptography.</p> <p>The TR-34 norm is intended for exchanging 3DES keys only
-         * and keys are imported in a WrappedKeyBlock format. Key attributes (such as
-         * KeyUsage, KeyAlgorithm, KeyModesOfUse, Exportability) are contained within the
-         * key block. With RSA wrap and unwrap, you can exchange both 3DES and AES-128
-         * keys. The keys are imported in a WrappedKeyCryptogram format and you will need
-         * to specify the key attributes during import. </p> <p>You can also import a
-         * <i>root public key certificate</i>, used to sign other public key certificates,
-         * or a <i>trusted public key certificate</i> under an already established root
-         * public key certificate.</p> <p> <b>To import a public root key certificate</b>
-         * </p> <p>Using this operation, you can import the public component (in PEM
-         * cerificate format) of your private root key. You can use the imported public
-         * root key certificate for digital signatures, for example signing wrapping key or
-         * signing key in TR-34, within your Amazon Web Services Payment Cryptography
-         * account.</p> <p>Set the following parameters:</p> <ul> <li> <p>
-         * <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> </p> </li> <li>
-         * <p> <code>KeyClass</code>: <code>PUBLIC_KEY</code> </p> </li> <li> <p>
-         * <code>KeyModesOfUse</code>: <code>Verify</code> </p> </li> <li> <p>
-         * <code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code>
-         * </p> </li> <li> <p> <code>PublicKeyCertificate</code>: The public key
-         * certificate in PEM format (base64 encoded) of the private root key under
-         * import.</p> </li> </ul> <p> <b>To import a trusted public key certificate</b>
-         * </p> <p>The root public key certificate must be in place and operational before
-         * you import a trusted public key certificate. Set the following parameters:</p>
-         * <ul> <li> <p> <code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code>
-         * </p> </li> <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>:
+         * Cryptography supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve
+         * Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods are
+         * typically used to establish bi-directional trust between the two parties
+         * exhanging keys and are used for initial key exchange such as Key Encryption Key
+         * (KEK) or Zone Master Key (ZMK). After which you can import working keys using
+         * symmetric method to perform various cryptographic operations within Amazon Web
+         * Services Payment Cryptography.</p> <p>PCI requires specific minimum key strength
+         * of wrapping keys used to protect the keys being exchanged electronically. These
+         * requirements can change when PCI standards are revised. The rules specify that
+         * wrapping keys used for transport must be at least as strong as the key being
+         * protected. For more information on recommended key strength of wrapping keys and
+         * key exchange mechanism, see <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html">Importing
+         * and exporting keys</a> in the <i>Amazon Web Services Payment Cryptography User
+         * Guide</i>.</p> <p>You can also import a <i>root public key certificate</i>, used
+         * to sign other public key certificates, or a <i>trusted public key
+         * certificate</i> under an already established root public key certificate.</p>
+         * <p> <b>To import a public root key certificate</b> </p> <p>Using this operation,
+         * you can import the public component (in PEM cerificate format) of your private
+         * root key. You can use the imported public root key certificate for digital
+         * signatures, for example signing wrapping key or signing key in TR-34, within
+         * your Amazon Web Services Payment Cryptography account.</p> <p>Set the following
+         * parameters:</p> <ul> <li> <p> <code>KeyMaterial</code>:
+         * <code>RootCertificatePublicKey</code> </p> </li> <li> <p> <code>KeyClass</code>:
+         * <code>PUBLIC_KEY</code> </p> </li> <li> <p> <code>KeyModesOfUse</code>:
+         * <code>Verify</code> </p> </li> <li> <p> <code>KeyUsage</code>:
+         * <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code> </p> </li> <li> <p>
+         * <code>PublicKeyCertificate</code>: The public key certificate in PEM format
+         * (base64 encoded) of the private root key under import.</p> </li> </ul> <p> <b>To
+         * import a trusted public key certificate</b> </p> <p>The root public key
+         * certificate must be in place and operational before you import a trusted public
+         * key certificate. Set the following parameters:</p> <ul> <li> <p>
+         * <code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code> </p> </li>
+         * <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>:
          * <code>KeyArn</code> of the <code>RootCertificatePublicKey</code>.</p> </li> <li>
          * <p> <code>KeyModesOfUse</code> and <code>KeyUsage</code>: Corresponding to the
          * cryptographic operations such as wrap, sign, or encrypt that you will allow the
@@ -687,7 +729,7 @@ namespace PaymentCryptography
          * wrapping certificate) and the root certificate chain. The KDH must trust and
          * install the KRD wrapping certificate on its HSM and use it to encrypt (wrap) the
          * KDH key during TR-34 WrappedKeyBlock generation. The import token and associated
-         * KRD wrapping certificate expires after 7 days.</p> <p>Next the KDH generates a
+         * KRD wrapping certificate expires after 30 days.</p> <p>Next the KDH generates a
          * key pair for the purpose of signing the encrypted KDH key and provides the
          * public certificate of the signing key to Amazon Web Services Payment
          * Cryptography. The KDH will also need to import the root certificate chain of the
@@ -720,7 +762,7 @@ namespace PaymentCryptography
          * import token. This operation also generates an encryption keypair for the
          * purpose of key import, signs the key and returns back the wrapping key
          * certificate in PEM format (base64 encoded) and its root certificate chain. The
-         * import token and associated KRD wrapping certificate expires after 7 days. </p>
+         * import token and associated KRD wrapping certificate expires after 30 days. </p>
          * <p>You must trust and install the wrapping certificate and its certificate chain
          * on the sending HSM and use it to wrap the key under export for
          * WrappedKeyCryptogram generation. Next call <code>ImportKey</code> with
@@ -738,9 +780,35 @@ namespace PaymentCryptography
          * typically generated by a HSM outside of Amazon Web Services Payment
          * Cryptography. </p> </li> <li> <p> <code>WrappingKeyIdentifier</code>: The
          * <code>KeyArn</code> of the KEK that Amazon Web Services Payment Cryptography
-         * uses to decrypt or unwrap the key under import.</p> </li> </ul> <p>
-         * <b>Cross-account use:</b> This operation can't be used across different Amazon
-         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * uses to decrypt or unwrap the key under import.</p> </li> </ul> <p> <b>To import
+         * working keys using ECDH</b> </p> <p>You can also use ECDH key agreement to
+         * import working keys as a TR-31 keyblock, where the wrapping key is an ECDH
+         * derived key.</p> <p>To initiate a TR-31 key import using ECDH, both sides must
+         * create an ECC key pair with key usage K3 and exchange public key certificates.
+         * In Amazon Web Services Payment Cryptography, you can do this by calling
+         * <code>CreateKey</code> and then <code>GetPublicKeyCertificate</code> to retrieve
+         * its public key certificate. Next, you can then generate a TR-31 WrappedKeyBlock
+         * using your own ECC key pair, the public certificate of the service's ECC key
+         * pair, and the key derivation parameters including key derivation function, hash
+         * algorithm, derivation data, and key algorithm. If you have not already done so,
+         * you must import the CA chain that issued the receiving public key certificate by
+         * calling <code>ImportKey</code> with input <code>RootCertificatePublicKey</code>
+         * for root CA or <code>TrustedPublicKey</code> for intermediate CA. To complete
+         * the TR-31 key import, you can use the following parameters. It is important that
+         * the ECDH key derivation parameters you use should match those used during import
+         * to derive the same shared wrapping key within Amazon Web Services Payment
+         * Cryptography.</p> <ul> <li> <p> <code>KeyMaterial</code>: Use
+         * <code>DiffieHellmanTr31KeyBlock</code> parameters.</p> </li> <li> <p>
+         * <code>PrivateKeyIdentifier</code>: The <code>KeyArn</code> of the ECC key pair
+         * created within Amazon Web Services Payment Cryptography to derive a shared
+         * KEK.</p> </li> <li> <p> <code>PublicKeyCertificate</code>: The public key
+         * certificate of the receiving ECC key pair in PEM format (base64 encoded) to
+         * derive a shared KEK.</p> </li> <li> <p>
+         * <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>keyARN</code> of
+         * the CA that signed the public key certificate of the receiving ECC key pair.</p>
+         * </li> </ul> <p> <b>Cross-account use:</b> This operation can't be used across
+         * different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>

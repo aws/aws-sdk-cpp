@@ -45,6 +45,17 @@ Aws::String CreateProjectRequest::SerializePayload() const
 
   }
 
+  if(m_templateProvidersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> templateProvidersJsonList(m_templateProviders.size());
+   for(unsigned templateProvidersIndex = 0; templateProvidersIndex < templateProvidersJsonList.GetLength(); ++templateProvidersIndex)
+   {
+     templateProvidersJsonList[templateProvidersIndex].AsObject(m_templateProviders[templateProvidersIndex].Jsonize());
+   }
+   payload.WithArray("TemplateProviders", std::move(templateProvidersJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

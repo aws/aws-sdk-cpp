@@ -19,6 +19,7 @@
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/InteractiveConfiguration.h>
 #include <aws/emr-serverless/model/SchedulerConfiguration.h>
+#include <aws/emr-serverless/model/IdentityCenterConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecification.h>
 #include <aws/emr-serverless/model/Configuration.h>
@@ -340,6 +341,19 @@ namespace Model
     template<typename SchedulerConfigurationT = SchedulerConfiguration>
     Application& WithSchedulerConfiguration(SchedulerConfigurationT&& value) { SetSchedulerConfiguration(std::forward<SchedulerConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IAM Identity Center configuration applied to enable trusted identity
+     * propagation. </p>
+     */
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+    inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    Application& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -407,6 +421,9 @@ namespace Model
 
     SchedulerConfiguration m_schedulerConfiguration;
     bool m_schedulerConfigurationHasBeenSet = false;
+
+    IdentityCenterConfiguration m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
