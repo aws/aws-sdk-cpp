@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/geo-places/model/SecondaryAddressComponentMatchScore.h>
 #include <utility>
 
 namespace Aws
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>An alphanumeric string included in a postal address to facilitate mail
      * sorting, such as post code, postcode, or ZIP code, for which the result should
-     * posses. </p>
+     * possess. </p>
      */
     inline double GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
@@ -169,6 +170,20 @@ namespace Model
     inline void SetBuilding(double value) { m_buildingHasBeenSet = true; m_building = value; }
     inline AddressComponentMatchScores& WithBuilding(double value) { SetBuilding(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Match scores for the secondary address components in the result.</p>
+     */
+    inline const Aws::Vector<SecondaryAddressComponentMatchScore>& GetSecondaryAddressComponents() const { return m_secondaryAddressComponents; }
+    inline bool SecondaryAddressComponentsHasBeenSet() const { return m_secondaryAddressComponentsHasBeenSet; }
+    template<typename SecondaryAddressComponentsT = Aws::Vector<SecondaryAddressComponentMatchScore>>
+    void SetSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { m_secondaryAddressComponentsHasBeenSet = true; m_secondaryAddressComponents = std::forward<SecondaryAddressComponentsT>(value); }
+    template<typename SecondaryAddressComponentsT = Aws::Vector<SecondaryAddressComponentMatchScore>>
+    AddressComponentMatchScores& WithSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { SetSecondaryAddressComponents(std::forward<SecondaryAddressComponentsT>(value)); return *this;}
+    template<typename SecondaryAddressComponentsT = SecondaryAddressComponentMatchScore>
+    AddressComponentMatchScores& AddSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { m_secondaryAddressComponentsHasBeenSet = true; m_secondaryAddressComponents.emplace_back(std::forward<SecondaryAddressComponentsT>(value)); return *this; }
+    ///@}
   private:
 
     double m_country{0.0};
@@ -206,6 +221,9 @@ namespace Model
 
     double m_building{0.0};
     bool m_buildingHasBeenSet = false;
+
+    Aws::Vector<SecondaryAddressComponentMatchScore> m_secondaryAddressComponents;
+    bool m_secondaryAddressComponentsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>An alphanumeric string included in a postal address to facilitate mail
      * sorting, such as post code, postcode, or ZIP code for which the result should
-     * posses. </p>
+     * possess. </p>
      */
     inline const Aws::String& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }

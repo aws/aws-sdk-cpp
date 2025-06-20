@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     SPECIFIED,
-    NO_DISPLAY_WINDOW
+    NO_DISPLAY_WINDOW,
+    SPECIFIED_OPTIMAL
   };
 
 namespace DvbddsHandlingMapper

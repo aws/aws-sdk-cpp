@@ -158,7 +158,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+     * <p>Name of the block. </p> <p>Example: <code>Sunny Mansion 203 block: 2
+     * Chome</code> </p>
      */
     inline const Aws::Vector<Highlight>& GetBlock() const { return m_block; }
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
@@ -172,7 +173,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+     * <p>Name of sub-block. </p> <p>Example: <code>Sunny Mansion 203 sub-block:
+     * 4</code> </p>
      */
     inline const Aws::Vector<Highlight>& GetSubBlock() const { return m_subBlock; }
     inline bool SubBlockHasBeenSet() const { return m_subBlockHasBeenSet; }
@@ -203,7 +205,7 @@ namespace Model
     /**
      * <p>An alphanumeric string included in a postal address to facilitate mail
      * sorting, such as post code, postcode, or ZIP code for which the result should
-     * posses. </p>
+     * possess. </p>
      */
     inline const Aws::Vector<Highlight>& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }

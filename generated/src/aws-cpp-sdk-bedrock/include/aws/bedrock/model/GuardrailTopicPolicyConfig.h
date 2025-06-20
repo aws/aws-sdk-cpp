@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailTopicsTierConfig.h>
 #include <aws/bedrock/model/GuardrailTopicConfig.h>
 #include <utility>
 
@@ -52,10 +53,25 @@ namespace Model
     template<typename TopicsConfigT = GuardrailTopicConfig>
     GuardrailTopicPolicyConfig& AddTopicsConfig(TopicsConfigT&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.emplace_back(std::forward<TopicsConfigT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The tier that your guardrail uses for denied topic filters.</p>
+     */
+    inline const GuardrailTopicsTierConfig& GetTierConfig() const { return m_tierConfig; }
+    inline bool TierConfigHasBeenSet() const { return m_tierConfigHasBeenSet; }
+    template<typename TierConfigT = GuardrailTopicsTierConfig>
+    void SetTierConfig(TierConfigT&& value) { m_tierConfigHasBeenSet = true; m_tierConfig = std::forward<TierConfigT>(value); }
+    template<typename TierConfigT = GuardrailTopicsTierConfig>
+    GuardrailTopicPolicyConfig& WithTierConfig(TierConfigT&& value) { SetTierConfig(std::forward<TierConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<GuardrailTopicConfig> m_topicsConfig;
     bool m_topicsConfigHasBeenSet = false;
+
+    GuardrailTopicsTierConfig m_tierConfig;
+    bool m_tierConfigHasBeenSet = false;
   };
 
 } // namespace Model

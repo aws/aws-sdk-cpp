@@ -34,6 +34,7 @@ namespace Aws
         static const int PointOfInterest_HASH = HashingUtils::HashString("PointOfInterest");
         static const int PointAddress_HASH = HashingUtils::HashString("PointAddress");
         static const int InterpolatedAddress_HASH = HashingUtils::HashString("InterpolatedAddress");
+        static const int SecondaryAddress_HASH = HashingUtils::HashString("SecondaryAddress");
 
 
         PlaceType GetPlaceTypeForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return PlaceType::InterpolatedAddress;
           }
+          else if (hashCode == SecondaryAddress_HASH)
+          {
+            return PlaceType::SecondaryAddress;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +144,8 @@ namespace Aws
             return "PointAddress";
           case PlaceType::InterpolatedAddress:
             return "InterpolatedAddress";
+          case PlaceType::SecondaryAddress:
+            return "SecondaryAddress";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

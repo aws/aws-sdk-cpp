@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes how parts of the result response match the input
-   * query.</p><p><h3>See Also:</h3>   <a
+   * <p>Indicates the starting and ending index of the text query that match the
+   * found title.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Highlight">AWS
    * API Reference</a></p>
    */

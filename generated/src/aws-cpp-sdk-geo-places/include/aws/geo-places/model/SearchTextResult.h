@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>The pricing bucket for which the query is charged at.</p> <p>For more
-     * inforamtion on pricing, please visit <a
+     * information on pricing, please visit <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * Pricing</a>.</p>
      */

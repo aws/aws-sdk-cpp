@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailContentFiltersTier.h>
 #include <aws/bedrock/model/GuardrailContentFilter.h>
 #include <utility>
 
@@ -55,10 +56,25 @@ namespace Model
     template<typename FiltersT = GuardrailContentFilter>
     GuardrailContentPolicy& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The tier that your guardrail uses for content filters.</p>
+     */
+    inline const GuardrailContentFiltersTier& GetTier() const { return m_tier; }
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+    template<typename TierT = GuardrailContentFiltersTier>
+    void SetTier(TierT&& value) { m_tierHasBeenSet = true; m_tier = std::forward<TierT>(value); }
+    template<typename TierT = GuardrailContentFiltersTier>
+    GuardrailContentPolicy& WithTier(TierT&& value) { SetTier(std::forward<TierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<GuardrailContentFilter> m_filters;
     bool m_filtersHasBeenSet = false;
+
+    GuardrailContentFiltersTier m_tier;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

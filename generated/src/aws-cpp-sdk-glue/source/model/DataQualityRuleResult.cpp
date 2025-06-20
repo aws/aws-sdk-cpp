@@ -59,6 +59,15 @@ DataQualityRuleResult& DataQualityRuleResult::operator =(JsonView jsonValue)
     m_evaluatedRule = jsonValue.GetString("EvaluatedRule");
     m_evaluatedRuleHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RuleMetrics"))
+  {
+    Aws::Map<Aws::String, JsonView> ruleMetricsJsonMap = jsonValue.GetObject("RuleMetrics").GetAllObjects();
+    for(auto& ruleMetricsItem : ruleMetricsJsonMap)
+    {
+      m_ruleMetrics[ruleMetricsItem.first] = ruleMetricsItem.second.AsDouble();
+    }
+    m_ruleMetricsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +112,17 @@ JsonValue DataQualityRuleResult::Jsonize() const
   if(m_evaluatedRuleHasBeenSet)
   {
    payload.WithString("EvaluatedRule", m_evaluatedRule);
+
+  }
+
+  if(m_ruleMetricsHasBeenSet)
+  {
+   JsonValue ruleMetricsJsonMap;
+   for(auto& ruleMetricsItem : m_ruleMetrics)
+   {
+     ruleMetricsJsonMap.WithDouble(ruleMetricsItem.first, ruleMetricsItem.second);
+   }
+   payload.WithObject("RuleMetrics", std::move(ruleMetricsJsonMap));
 
   }
 

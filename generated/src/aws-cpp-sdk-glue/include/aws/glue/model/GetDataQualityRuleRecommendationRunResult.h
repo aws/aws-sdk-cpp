@@ -27,6 +27,12 @@ namespace Glue
 {
 namespace Model
 {
+  /**
+   * <p>The response for the Data Quality rule recommendation run.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRunResponse">AWS
+   * API Reference</a></p>
+   */
   class GetDataQualityRuleRecommendationRunResult
   {
   public:

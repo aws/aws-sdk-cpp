@@ -151,6 +151,20 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     m_phonemes = jsonValue.GetObject("Phonemes");
     m_phonemesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MainAddress"))
+  {
+    m_mainAddress = jsonValue.GetObject("MainAddress");
+    m_mainAddressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SecondaryAddresses"))
+  {
+    Aws::Utils::Array<JsonView> secondaryAddressesJsonList = jsonValue.GetArray("SecondaryAddresses");
+    for(unsigned secondaryAddressesIndex = 0; secondaryAddressesIndex < secondaryAddressesJsonList.GetLength(); ++secondaryAddressesIndex)
+    {
+      m_secondaryAddresses.push_back(secondaryAddressesJsonList[secondaryAddressesIndex].AsObject());
+    }
+    m_secondaryAddressesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");

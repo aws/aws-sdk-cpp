@@ -11,6 +11,7 @@
 #include <aws/geo-places/model/SubRegion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-places/model/StreetComponents.h>
+#include <aws/geo-places/model/SecondaryAddressComponent.h>
 #include <utility>
 
 namespace Aws
@@ -94,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The locality or city of the address.</p> <p>Example:
+     * <p>The city or locality of the address.</p> <p>Example:
      * <code>Vancouver</code>.</p>
      */
     inline const Aws::String& GetLocality() const { return m_locality; }
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>An alphanumeric string included in a postal address to facilitate mail
      * sorting, such as post code, postcode, or ZIP code, for which the result should
-     * posses. </p>
+     * possess. </p>
      */
     inline const Aws::String& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
@@ -235,6 +236,22 @@ namespace Model
     template<typename BuildingT = Aws::String>
     Address& WithBuilding(BuildingT&& value) { SetBuilding(std::forward<BuildingT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Components that correspond to secondary identifiers on an Address. Secondary
+     * address components include information such as Suite or Unit Number, Building,
+     * or Floor.</p>
+     */
+    inline const Aws::Vector<SecondaryAddressComponent>& GetSecondaryAddressComponents() const { return m_secondaryAddressComponents; }
+    inline bool SecondaryAddressComponentsHasBeenSet() const { return m_secondaryAddressComponentsHasBeenSet; }
+    template<typename SecondaryAddressComponentsT = Aws::Vector<SecondaryAddressComponent>>
+    void SetSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { m_secondaryAddressComponentsHasBeenSet = true; m_secondaryAddressComponents = std::forward<SecondaryAddressComponentsT>(value); }
+    template<typename SecondaryAddressComponentsT = Aws::Vector<SecondaryAddressComponent>>
+    Address& WithSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { SetSecondaryAddressComponents(std::forward<SecondaryAddressComponentsT>(value)); return *this;}
+    template<typename SecondaryAddressComponentsT = SecondaryAddressComponent>
+    Address& AddSecondaryAddressComponents(SecondaryAddressComponentsT&& value) { m_secondaryAddressComponentsHasBeenSet = true; m_secondaryAddressComponents.emplace_back(std::forward<SecondaryAddressComponentsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_label;
@@ -281,6 +298,9 @@ namespace Model
 
     Aws::String m_building;
     bool m_buildingHasBeenSet = false;
+
+    Aws::Vector<SecondaryAddressComponent> m_secondaryAddressComponents;
+    bool m_secondaryAddressComponentsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TimeZone,
-    Access
+    Access,
+    Intersections
   };
 
 namespace ReverseGeocodeAdditionalFeatureMapper
