@@ -12,6 +12,7 @@
 #include <aws/geo-places/model/Contacts.h>
 #include <aws/geo-places/model/TimeZone.h>
 #include <aws/geo-places/model/PhonemeDetails.h>
+#include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/PostalCodeDetails.h>
 #include <aws/geo-places/model/Category.h>
 #include <aws/geo-places/model/FoodType.h>
@@ -70,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>The localized display name of this result item based on request parameter
-     * <code>language</code>. </p>
+     * <code>language</code>.</p>
      */
     inline const Aws::String& GetTitle() const { return m_title; }
     template<typename TitleT = Aws::String>
@@ -82,7 +83,7 @@ namespace Model
     ///@{
     /**
      * <p>The pricing bucket for which the query is charged at.</p> <p>For more
-     * inforamtion on pricing, please visit <a
+     * information on pricing, please visit <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * Pricing</a>.</p>
      */
@@ -281,6 +282,32 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The main address corresponding to a place of type Secondary Address.</p>
+     */
+    inline const RelatedPlace& GetMainAddress() const { return m_mainAddress; }
+    template<typename MainAddressT = RelatedPlace>
+    void SetMainAddress(MainAddressT&& value) { m_mainAddressHasBeenSet = true; m_mainAddress = std::forward<MainAddressT>(value); }
+    template<typename MainAddressT = RelatedPlace>
+    GetPlaceResult& WithMainAddress(MainAddressT&& value) { SetMainAddress(std::forward<MainAddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>All secondary addresses that are associated with a main address. A secondary
+     * address is one that includes secondary designators, such as a Suite or Unit
+     * Number, Building, or Floor information.</p>
+     */
+    inline const Aws::Vector<RelatedPlace>& GetSecondaryAddresses() const { return m_secondaryAddresses; }
+    template<typename SecondaryAddressesT = Aws::Vector<RelatedPlace>>
+    void SetSecondaryAddresses(SecondaryAddressesT&& value) { m_secondaryAddressesHasBeenSet = true; m_secondaryAddresses = std::forward<SecondaryAddressesT>(value); }
+    template<typename SecondaryAddressesT = Aws::Vector<RelatedPlace>>
+    GetPlaceResult& WithSecondaryAddresses(SecondaryAddressesT&& value) { SetSecondaryAddresses(std::forward<SecondaryAddressesT>(value)); return *this;}
+    template<typename SecondaryAddressesT = RelatedPlace>
+    GetPlaceResult& AddSecondaryAddresses(SecondaryAddressesT&& value) { m_secondaryAddressesHasBeenSet = true; m_secondaryAddresses.emplace_back(std::forward<SecondaryAddressesT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -346,6 +373,12 @@ namespace Model
 
     PhonemeDetails m_phonemes;
     bool m_phonemesHasBeenSet = false;
+
+    RelatedPlace m_mainAddress;
+    bool m_mainAddressHasBeenSet = false;
+
+    Aws::Vector<RelatedPlace> m_secondaryAddresses;
+    bool m_secondaryAddressesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

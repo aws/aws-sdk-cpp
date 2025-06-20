@@ -112,6 +112,22 @@ namespace Model
     template<typename EvaluatedRuleT = Aws::String>
     DataQualityRuleResult& WithEvaluatedRule(EvaluatedRuleT&& value) { SetEvaluatedRule(std::forward<EvaluatedRuleT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A map containing metrics associated with the evaluation of the rule based on
+     * row-level results. </p>
+     */
+    inline const Aws::Map<Aws::String, double>& GetRuleMetrics() const { return m_ruleMetrics; }
+    inline bool RuleMetricsHasBeenSet() const { return m_ruleMetricsHasBeenSet; }
+    template<typename RuleMetricsT = Aws::Map<Aws::String, double>>
+    void SetRuleMetrics(RuleMetricsT&& value) { m_ruleMetricsHasBeenSet = true; m_ruleMetrics = std::forward<RuleMetricsT>(value); }
+    template<typename RuleMetricsT = Aws::Map<Aws::String, double>>
+    DataQualityRuleResult& WithRuleMetrics(RuleMetricsT&& value) { SetRuleMetrics(std::forward<RuleMetricsT>(value)); return *this;}
+    inline DataQualityRuleResult& AddRuleMetrics(Aws::String key, double value) {
+      m_ruleMetricsHasBeenSet = true; m_ruleMetrics.emplace(key, value); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -131,6 +147,9 @@ namespace Model
 
     Aws::String m_evaluatedRule;
     bool m_evaluatedRuleHasBeenSet = false;
+
+    Aws::Map<Aws::String, double> m_ruleMetrics;
+    bool m_ruleMetricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,6 +34,11 @@ GuardrailTopicPolicy& GuardrailTopicPolicy::operator =(JsonView jsonValue)
     }
     m_topicsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tier"))
+  {
+    m_tier = jsonValue.GetObject("tier");
+    m_tierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -49,6 +54,12 @@ JsonValue GuardrailTopicPolicy::Jsonize() const
      topicsJsonList[topicsIndex].AsObject(m_topics[topicsIndex].Jsonize());
    }
    payload.WithArray("topics", std::move(topicsJsonList));
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithObject("tier", m_tier.Jsonize());
 
   }
 

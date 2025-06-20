@@ -41,6 +41,8 @@
 #include <aws/geo-places/model/GeocodeFilter.h>
 #include <aws/geo-places/model/GeocodeFilterPlaceType.h>
 #include <aws/geo-places/model/GeocodeIntendedUse.h>
+#include <aws/geo-places/model/GeocodeParsedQuery.h>
+#include <aws/geo-places/model/GeocodeParsedQueryAddressComponents.h>
 #include <aws/geo-places/model/GeocodeQueryComponents.h>
 #include <aws/geo-places/model/GeocodeRequest.h>
 #include <aws/geo-places/model/GeocodeResult.h>
@@ -50,9 +52,12 @@
 #include <aws/geo-places/model/GetPlaceRequest.h>
 #include <aws/geo-places/model/GetPlaceResult.h>
 #include <aws/geo-places/model/Highlight.h>
+#include <aws/geo-places/model/Intersection.h>
 #include <aws/geo-places/model/MatchScoreDetails.h>
 #include <aws/geo-places/model/OpeningHours.h>
 #include <aws/geo-places/model/OpeningHoursComponents.h>
+#include <aws/geo-places/model/ParsedQueryComponent.h>
+#include <aws/geo-places/model/ParsedQuerySecondaryAddressComponent.h>
 #include <aws/geo-places/model/PhonemeDetails.h>
 #include <aws/geo-places/model/PhonemeTranscription.h>
 #include <aws/geo-places/model/PlaceType.h>
@@ -65,6 +70,7 @@
 #include <aws/geo-places/model/RecordTypeCode.h>
 #include <aws/geo-places/model/Region.h>
 #include <aws/geo-places/model/RegionHighlights.h>
+#include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/ReverseGeocodeAdditionalFeature.h>
 #include <aws/geo-places/model/ReverseGeocodeFilter.h>
 #include <aws/geo-places/model/ReverseGeocodeFilterPlaceType.h>
@@ -84,6 +90,8 @@
 #include <aws/geo-places/model/SearchTextRequest.h>
 #include <aws/geo-places/model/SearchTextResult.h>
 #include <aws/geo-places/model/SearchTextResultItem.h>
+#include <aws/geo-places/model/SecondaryAddressComponent.h>
+#include <aws/geo-places/model/SecondaryAddressComponentMatchScore.h>
 #include <aws/geo-places/model/StreetComponents.h>
 #include <aws/geo-places/model/SubRegion.h>
 #include <aws/geo-places/model/SubRegionHighlights.h>

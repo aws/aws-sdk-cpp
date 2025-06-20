@@ -19,6 +19,9 @@ namespace Model
 {
 
   /**
+   * <p>A request to create a data quality ruleset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRulesetRequest">AWS
+   * API Reference</a></p>
    */
   class CreateDataQualityRulesetRequest : public GlueRequest
   {

@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>City or locality results should be present in. </p> <p>Example:
+     * <p>The city or locality results should be present in. </p> <p>Example:
      * <code>Vancouver</code>.</p>
      */
     inline const Aws::String& GetLocality() const { return m_locality; }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>An alphanumeric string included in a postal address to facilitate mail
      * sorting, such as post code, postcode, or ZIP code for which the result should
-     * posses. </p>
+     * possess. </p>
      */
     inline const Aws::String& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }

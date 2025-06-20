@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailTopicsTier.h>
 #include <aws/bedrock/model/GuardrailTopic.h>
 #include <utility>
 
@@ -55,10 +56,25 @@ namespace Model
     template<typename TopicsT = GuardrailTopic>
     GuardrailTopicPolicy& AddTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics.emplace_back(std::forward<TopicsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The tier that your guardrail uses for denied topic filters.</p>
+     */
+    inline const GuardrailTopicsTier& GetTier() const { return m_tier; }
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+    template<typename TierT = GuardrailTopicsTier>
+    void SetTier(TierT&& value) { m_tierHasBeenSet = true; m_tier = std::forward<TierT>(value); }
+    template<typename TierT = GuardrailTopicsTier>
+    GuardrailTopicPolicy& WithTier(TierT&& value) { SetTier(std::forward<TierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<GuardrailTopic> m_topics;
     bool m_topicsHasBeenSet = false;
+
+    GuardrailTopicsTier m_tier;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

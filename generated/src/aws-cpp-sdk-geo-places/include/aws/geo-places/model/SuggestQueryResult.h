@@ -45,7 +45,8 @@ namespace Model
      * political view and language. See the SearchText API documentation for more
      * details <a
      * href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText
-     * API docs</a>.</p>
+     * API docs</a>.</p>  <p>The fields <code>QueryText</code>, and
+     * <code>QueryID</code> are mutually exclusive.</p> 
      */
     inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
@@ -57,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The query type. Category qeuries will search for places which have an entry
+     * <p>The query type. Category queries will search for places which have an entry
      * matching the given category, for example "doctor office". BusinessChain queries
      * will search for instances of a given business.</p>
      */

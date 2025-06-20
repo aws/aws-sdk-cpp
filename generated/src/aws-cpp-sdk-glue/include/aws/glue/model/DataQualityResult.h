@@ -9,6 +9,7 @@
 #include <aws/glue/model/DataSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/DataQualityAggregatedMetrics.h>
 #include <aws/glue/model/DataQualityRuleResult.h>
 #include <aws/glue/model/DataQualityAnalyzerResult.h>
 #include <aws/glue/model/DataQualityObservation.h>
@@ -222,6 +223,20 @@ namespace Model
     template<typename ObservationsT = DataQualityObservation>
     DataQualityResult& AddObservations(ObservationsT&& value) { m_observationsHasBeenSet = true; m_observations.emplace_back(std::forward<ObservationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> A summary of <code>DataQualityAggregatedMetrics</code> objects showing the
+     * total counts of processed rows and rules, including their pass/fail statistics
+     * based on row-level results. </p>
+     */
+    inline const DataQualityAggregatedMetrics& GetAggregatedMetrics() const { return m_aggregatedMetrics; }
+    inline bool AggregatedMetricsHasBeenSet() const { return m_aggregatedMetricsHasBeenSet; }
+    template<typename AggregatedMetricsT = DataQualityAggregatedMetrics>
+    void SetAggregatedMetrics(AggregatedMetricsT&& value) { m_aggregatedMetricsHasBeenSet = true; m_aggregatedMetrics = std::forward<AggregatedMetricsT>(value); }
+    template<typename AggregatedMetricsT = DataQualityAggregatedMetrics>
+    DataQualityResult& WithAggregatedMetrics(AggregatedMetricsT&& value) { SetAggregatedMetrics(std::forward<AggregatedMetricsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_resultId;
@@ -265,6 +280,9 @@ namespace Model
 
     Aws::Vector<DataQualityObservation> m_observations;
     bool m_observationsHasBeenSet = false;
+
+    DataQualityAggregatedMetrics m_aggregatedMetrics;
+    bool m_aggregatedMetricsHasBeenSet = false;
   };
 
 } // namespace Model

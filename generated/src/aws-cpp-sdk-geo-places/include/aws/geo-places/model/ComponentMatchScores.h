@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Indicates how well the input matches the returned element. It is equal to 1
-   * if all input tokens are recognized and matched to the title in the
-   * result.</p><p><h3>See Also:</h3>   <a
+   * <p>Indicates how well the returned title and address components matches the
+   * input TextQuery. For each component a score is provied with 1 indicating all
+   * tokens were matched and 0 indicating no tokens were matched.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/ComponentMatchScores">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the starting and ending index of the title in the text query that
-     * match the found title. </p>
+     * <p>Indicates the match score of the title in the text query that match the found
+     * title. </p>
      */
     inline double GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }

@@ -19,7 +19,8 @@ namespace Model
     TimeZone,
     Phonemes,
     Access,
-    Contact
+    Contact,
+    SecondaryAddresses
   };
 
 namespace GetPlaceAdditionalFeatureMapper

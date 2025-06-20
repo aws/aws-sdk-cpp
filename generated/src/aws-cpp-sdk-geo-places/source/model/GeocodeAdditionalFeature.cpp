@@ -22,6 +22,8 @@ namespace Aws
 
         static const int TimeZone_HASH = HashingUtils::HashString("TimeZone");
         static const int Access_HASH = HashingUtils::HashString("Access");
+        static const int SecondaryAddresses_HASH = HashingUtils::HashString("SecondaryAddresses");
+        static const int Intersections_HASH = HashingUtils::HashString("Intersections");
 
 
         GeocodeAdditionalFeature GetGeocodeAdditionalFeatureForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == Access_HASH)
           {
             return GeocodeAdditionalFeature::Access;
+          }
+          else if (hashCode == SecondaryAddresses_HASH)
+          {
+            return GeocodeAdditionalFeature::SecondaryAddresses;
+          }
+          else if (hashCode == Intersections_HASH)
+          {
+            return GeocodeAdditionalFeature::Intersections;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "TimeZone";
           case GeocodeAdditionalFeature::Access:
             return "Access";
+          case GeocodeAdditionalFeature::SecondaryAddresses:
+            return "SecondaryAddresses";
+          case GeocodeAdditionalFeature::Intersections:
+            return "Intersections";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

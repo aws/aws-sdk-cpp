@@ -45,7 +45,7 @@ namespace Model
     ///@{
     /**
      * <p>The position, in <code>[lng, lat]</code> for which you are querying nearby
-     * resultsfor. Results closer to the position will be ranked higher then results
+     * results for. Results closer to the position will be ranked higher then results
      * further away from the position</p>
      */
     inline const Aws::Vector<double>& GetQueryPosition() const { return m_queryPosition; }
@@ -60,7 +60,8 @@ namespace Model
     ///@{
     /**
      * <p>The maximum distance in meters from the QueryPosition from which a result
-     * will be returned.</p>
+     * will be returned.</p>  <p>The fields <code>QueryText</code>, and
+     * <code>QueryID</code> are mutually exclusive.</p> 
      */
     inline long long GetQueryRadius() const { return m_queryRadius; }
     inline bool QueryRadiusHasBeenSet() const { return m_queryRadiusHasBeenSet; }
@@ -81,7 +82,7 @@ namespace Model
     ///@{
     /**
      * <p>A structure which contains a set of inclusion/exclusion properties that
-     * results must posses in order to be returned as a result.</p>
+     * results must possess in order to be returned as a result.</p>
      */
     inline const SearchNearbyFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -137,7 +138,12 @@ namespace Model
     ///@{
     /**
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-     * if left empty.</p>
+     * if left empty.</p>  <p>Storing the response of an SearchNearby query is
+     * required to comply with service terms, but charged at a higher cost per request.
+     * Please review the <a href="https://aws.amazon.com/location/sla/">user
+     * agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service
+     * pricing structure</a> to determine the correct setting for your use case.</p>
+     * 
      */
     inline SearchNearbyIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

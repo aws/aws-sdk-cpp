@@ -119,6 +119,15 @@ ReverseGeocodeResultItem& ReverseGeocodeResultItem::operator =(JsonView jsonValu
     m_politicalView = jsonValue.GetString("PoliticalView");
     m_politicalViewHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Intersections"))
+  {
+    Aws::Utils::Array<JsonView> intersectionsJsonList = jsonValue.GetArray("Intersections");
+    for(unsigned intersectionsIndex = 0; intersectionsIndex < intersectionsJsonList.GetLength(); ++intersectionsIndex)
+    {
+      m_intersections.push_back(intersectionsJsonList[intersectionsIndex].AsObject());
+    }
+    m_intersectionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -236,6 +245,17 @@ JsonValue ReverseGeocodeResultItem::Jsonize() const
   if(m_politicalViewHasBeenSet)
   {
    payload.WithString("PoliticalView", m_politicalView);
+
+  }
+
+  if(m_intersectionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> intersectionsJsonList(m_intersections.size());
+   for(unsigned intersectionsIndex = 0; intersectionsIndex < intersectionsJsonList.GetLength(); ++intersectionsIndex)
+   {
+     intersectionsJsonList[intersectionsIndex].AsObject(m_intersections[intersectionsIndex].Jsonize());
+   }
+   payload.WithArray("Intersections", std::move(intersectionsJsonList));
 
   }
 

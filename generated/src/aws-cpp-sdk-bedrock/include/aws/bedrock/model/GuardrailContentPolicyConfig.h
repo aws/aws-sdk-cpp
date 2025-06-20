@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailContentFiltersTierConfig.h>
 #include <aws/bedrock/model/GuardrailContentFilterConfig.h>
 #include <utility>
 
@@ -53,10 +54,25 @@ namespace Model
     template<typename FiltersConfigT = GuardrailContentFilterConfig>
     GuardrailContentPolicyConfig& AddFiltersConfig(FiltersConfigT&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.emplace_back(std::forward<FiltersConfigT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The tier that your guardrail uses for content filters.</p>
+     */
+    inline const GuardrailContentFiltersTierConfig& GetTierConfig() const { return m_tierConfig; }
+    inline bool TierConfigHasBeenSet() const { return m_tierConfigHasBeenSet; }
+    template<typename TierConfigT = GuardrailContentFiltersTierConfig>
+    void SetTierConfig(TierConfigT&& value) { m_tierConfigHasBeenSet = true; m_tierConfig = std::forward<TierConfigT>(value); }
+    template<typename TierConfigT = GuardrailContentFiltersTierConfig>
+    GuardrailContentPolicyConfig& WithTierConfig(TierConfigT&& value) { SetTierConfig(std::forward<TierConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<GuardrailContentFilterConfig> m_filtersConfig;
     bool m_filtersConfigHasBeenSet = false;
+
+    GuardrailContentFiltersTierConfig m_tierConfig;
+    bool m_tierConfigHasBeenSet = false;
   };
 
 } // namespace Model

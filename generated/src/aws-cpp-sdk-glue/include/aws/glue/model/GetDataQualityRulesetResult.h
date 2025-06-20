@@ -26,6 +26,11 @@ namespace Glue
 {
 namespace Model
 {
+  /**
+   * <p>Returns the data quality ruleset response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetResponse">AWS
+   * API Reference</a></p>
+   */
   class GetDataQualityRulesetResult
   {
   public:

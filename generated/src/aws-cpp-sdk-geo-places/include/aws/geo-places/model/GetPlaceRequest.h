@@ -100,7 +100,12 @@ namespace Model
     ///@{
     /**
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-     * if left empty.</p>
+     * if left empty.</p>  <p>Storing the response of an GetPlace query is
+     * required to comply with service terms, but charged at a higher cost per request.
+     * Please review the <a href="https://aws.amazon.com/location/sla/">user
+     * agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service
+     * pricing structure</a> to determine the correct setting for your use case.</p>
+     * 
      */
     inline GetPlaceIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

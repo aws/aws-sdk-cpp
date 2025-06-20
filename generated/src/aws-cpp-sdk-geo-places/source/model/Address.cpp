@@ -108,6 +108,15 @@ Address& Address::operator =(JsonView jsonValue)
     m_building = jsonValue.GetString("Building");
     m_buildingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SecondaryAddressComponents"))
+  {
+    Aws::Utils::Array<JsonView> secondaryAddressComponentsJsonList = jsonValue.GetArray("SecondaryAddressComponents");
+    for(unsigned secondaryAddressComponentsIndex = 0; secondaryAddressComponentsIndex < secondaryAddressComponentsJsonList.GetLength(); ++secondaryAddressComponentsIndex)
+    {
+      m_secondaryAddressComponents.push_back(secondaryAddressComponentsJsonList[secondaryAddressComponentsIndex].AsObject());
+    }
+    m_secondaryAddressComponentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -212,6 +221,17 @@ JsonValue Address::Jsonize() const
   if(m_buildingHasBeenSet)
   {
    payload.WithString("Building", m_building);
+
+  }
+
+  if(m_secondaryAddressComponentsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> secondaryAddressComponentsJsonList(m_secondaryAddressComponents.size());
+   for(unsigned secondaryAddressComponentsIndex = 0; secondaryAddressComponentsIndex < secondaryAddressComponentsJsonList.GetLength(); ++secondaryAddressComponentsIndex)
+   {
+     secondaryAddressComponentsJsonList[secondaryAddressComponentsIndex].AsObject(m_secondaryAddressComponents[secondaryAddressComponentsIndex].Jsonize());
+   }
+   payload.WithArray("SecondaryAddressComponents", std::move(secondaryAddressComponentsJsonList));
 
   }
 

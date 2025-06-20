@@ -124,6 +124,34 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     m_matchScores = jsonValue.GetObject("MatchScores");
     m_matchScoresHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ParsedQuery"))
+  {
+    m_parsedQuery = jsonValue.GetObject("ParsedQuery");
+    m_parsedQueryHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Intersections"))
+  {
+    Aws::Utils::Array<JsonView> intersectionsJsonList = jsonValue.GetArray("Intersections");
+    for(unsigned intersectionsIndex = 0; intersectionsIndex < intersectionsJsonList.GetLength(); ++intersectionsIndex)
+    {
+      m_intersections.push_back(intersectionsJsonList[intersectionsIndex].AsObject());
+    }
+    m_intersectionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MainAddress"))
+  {
+    m_mainAddress = jsonValue.GetObject("MainAddress");
+    m_mainAddressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SecondaryAddresses"))
+  {
+    Aws::Utils::Array<JsonView> secondaryAddressesJsonList = jsonValue.GetArray("SecondaryAddresses");
+    for(unsigned secondaryAddressesIndex = 0; secondaryAddressesIndex < secondaryAddressesJsonList.GetLength(); ++secondaryAddressesIndex)
+    {
+      m_secondaryAddresses.push_back(secondaryAddressesJsonList[secondaryAddressesIndex].AsObject());
+    }
+    m_secondaryAddressesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -247,6 +275,40 @@ JsonValue GeocodeResultItem::Jsonize() const
   if(m_matchScoresHasBeenSet)
   {
    payload.WithObject("MatchScores", m_matchScores.Jsonize());
+
+  }
+
+  if(m_parsedQueryHasBeenSet)
+  {
+   payload.WithObject("ParsedQuery", m_parsedQuery.Jsonize());
+
+  }
+
+  if(m_intersectionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> intersectionsJsonList(m_intersections.size());
+   for(unsigned intersectionsIndex = 0; intersectionsIndex < intersectionsJsonList.GetLength(); ++intersectionsIndex)
+   {
+     intersectionsJsonList[intersectionsIndex].AsObject(m_intersections[intersectionsIndex].Jsonize());
+   }
+   payload.WithArray("Intersections", std::move(intersectionsJsonList));
+
+  }
+
+  if(m_mainAddressHasBeenSet)
+  {
+   payload.WithObject("MainAddress", m_mainAddress.Jsonize());
+
+  }
+
+  if(m_secondaryAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> secondaryAddressesJsonList(m_secondaryAddresses.size());
+   for(unsigned secondaryAddressesIndex = 0; secondaryAddressesIndex < secondaryAddressesJsonList.GetLength(); ++secondaryAddressesIndex)
+   {
+     secondaryAddressesJsonList[secondaryAddressesIndex].AsObject(m_secondaryAddresses[secondaryAddressesIndex].Jsonize());
+   }
+   payload.WithArray("SecondaryAddresses", std::move(secondaryAddressesJsonList));
 
   }
 

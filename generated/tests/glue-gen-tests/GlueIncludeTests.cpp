@@ -240,6 +240,7 @@
 #include <aws/glue/model/DataLakeAccessPropertiesOutput.h>
 #include <aws/glue/model/DataLakePrincipal.h>
 #include <aws/glue/model/DataOperation.h>
+#include <aws/glue/model/DataQualityAggregatedMetrics.h>
 #include <aws/glue/model/DataQualityAnalyzerResult.h>
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
