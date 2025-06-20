@@ -20,7 +20,7 @@ if(VERSION_STRING)
     set(AWSSDK_VERSION_PATCH ${AWSSDK_VERSION_PATCH})
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-        "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
+        "${CMAKE_CURRENT_BINARY_DIR}/include/aws/core/VersionConfig.h"
         NEWLINE_STYLE UNIX)
 else()
     message("Not able to compute versioning string, not updating.")
@@ -38,7 +38,7 @@ else()
 endif()
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
-               "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h"
+               "${CMAKE_CURRENT_BINARY_DIR}/include/aws/core/SDKConfig.h"
                NEWLINE_STYLE UNIX)
 
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
@@ -92,6 +92,8 @@ file(GLOB SMITHY_IDENTITY_SIGNER_HEADERS "include/smithy/identity/signer/*.h")
 file(GLOB SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS "include/smithy/identity/signer/built-in/*.h")
 file(GLOB SMITHY_INTERCEPTOR_HEADERS "include/smithy/interceptor/*.h")
 file(GLOB SMITHY_INTERCEPTOR_IMPL_HEADERS "include/smithy/interceptor/impl/*.h")
+
+file(GLOB AWS_GENERATED_HEADERS "${CMAKE_CURRENT_BINARY_DIR}/include/aws/core/*.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
@@ -383,7 +385,7 @@ file(GLOB AWS_NATIVE_SDK_SRC
 
 # Visual studio project directory structure
 if(MSVC)
-    source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
+    source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS} ${AWS_GENERATED_HEADERS})
     source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
     source_group("Header Files\\aws\\core\\auth\\signer" FILES ${AWS_AUTH_SIGNER_HEADERS})
     source_group("Header Files\\aws\\core\\auth\\signer-provider" FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS})
@@ -591,6 +593,7 @@ endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 
 if (EXTERNAL_DEPS_INCLUDE_DIRS)
@@ -663,7 +666,7 @@ if(SIMPLE_INSTALL)
     endif()
 endif()
 
-install (FILES ${AWS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)
+install (FILES ${AWS_HEADERS} ${AWS_GENERATED_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth)
 install (FILES ${AWS_AUTH_SIGNER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer)
 install (FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer-provider)
