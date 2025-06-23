@@ -40,6 +40,11 @@ TableOptimizerConfiguration& TableOptimizerConfiguration::operator =(JsonView js
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
     m_vpcConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("compactionConfiguration"))
+  {
+    m_compactionConfiguration = jsonValue.GetObject("compactionConfiguration");
+    m_compactionConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("retentionConfiguration"))
   {
     m_retentionConfiguration = jsonValue.GetObject("retentionConfiguration");
@@ -72,6 +77,12 @@ JsonValue TableOptimizerConfiguration::Jsonize() const
   if(m_vpcConfigurationHasBeenSet)
   {
    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
+  if(m_compactionConfigurationHasBeenSet)
+  {
+   payload.WithObject("compactionConfiguration", m_compactionConfiguration.Jsonize());
 
   }
 

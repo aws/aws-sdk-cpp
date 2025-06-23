@@ -30,6 +30,11 @@ IcebergCompactionSettings& IcebergCompactionSettings::operator =(JsonView jsonVa
     m_targetFileSizeMB = jsonValue.GetInteger("targetFileSizeMB");
     m_targetFileSizeMBHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("strategy"))
+  {
+    m_strategy = IcebergCompactionStrategyMapper::GetIcebergCompactionStrategyForName(jsonValue.GetString("strategy"));
+    m_strategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -41,6 +46,11 @@ JsonValue IcebergCompactionSettings::Jsonize() const
   {
    payload.WithInteger("targetFileSizeMB", m_targetFileSizeMB);
 
+  }
+
+  if(m_strategyHasBeenSet)
+  {
+   payload.WithString("strategy", IcebergCompactionStrategyMapper::GetNameForIcebergCompactionStrategy(m_strategy));
   }
 
   return payload;

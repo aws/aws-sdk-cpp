@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableOptimizerVpcConfiguration.h>
+#include <aws/glue/model/CompactionConfiguration.h>
 #include <aws/glue/model/RetentionConfiguration.h>
 #include <aws/glue/model/OrphanFileDeletionConfiguration.h>
 #include <utility>
@@ -81,6 +82,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration for a compaction optimizer. This configuration defines how
+     * data files in your table will be compacted to improve query performance and
+     * reduce storage costs.</p>
+     */
+    inline const CompactionConfiguration& GetCompactionConfiguration() const { return m_compactionConfiguration; }
+    inline bool CompactionConfigurationHasBeenSet() const { return m_compactionConfigurationHasBeenSet; }
+    template<typename CompactionConfigurationT = CompactionConfiguration>
+    void SetCompactionConfiguration(CompactionConfigurationT&& value) { m_compactionConfigurationHasBeenSet = true; m_compactionConfiguration = std::forward<CompactionConfigurationT>(value); }
+    template<typename CompactionConfigurationT = CompactionConfiguration>
+    TableOptimizerConfiguration& WithCompactionConfiguration(CompactionConfigurationT&& value) { SetCompactionConfiguration(std::forward<CompactionConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration for a snapshot retention optimizer.</p>
      */
     inline const RetentionConfiguration& GetRetentionConfiguration() const { return m_retentionConfiguration; }
@@ -112,6 +127,9 @@ namespace Model
 
     TableOptimizerVpcConfiguration m_vpcConfiguration;
     bool m_vpcConfigurationHasBeenSet = false;
+
+    CompactionConfiguration m_compactionConfiguration;
+    bool m_compactionConfigurationHasBeenSet = false;
 
     RetentionConfiguration m_retentionConfiguration;
     bool m_retentionConfigurationHasBeenSet = false;

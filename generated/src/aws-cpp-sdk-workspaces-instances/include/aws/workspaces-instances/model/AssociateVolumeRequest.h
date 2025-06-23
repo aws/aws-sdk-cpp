@@ -1,0 +1,89 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
+#include <aws/workspaces-instances/WorkspacesInstancesRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace WorkspacesInstances
+{
+namespace Model
+{
+
+  /**
+   * <p>Specifies volume attachment parameters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/AssociateVolumeRequest">AWS
+   * API Reference</a></p>
+   */
+  class AssociateVolumeRequest : public WorkspacesInstancesRequest
+  {
+  public:
+    AWS_WORKSPACESINSTANCES_API AssociateVolumeRequest() = default;
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "AssociateVolume"; }
+
+    AWS_WORKSPACESINSTANCES_API Aws::String SerializePayload() const override;
+
+    AWS_WORKSPACESINSTANCES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    ///@{
+    /**
+     * <p>WorkSpace Instance to attach volume to.</p>
+     */
+    inline const Aws::String& GetWorkspaceInstanceId() const { return m_workspaceInstanceId; }
+    inline bool WorkspaceInstanceIdHasBeenSet() const { return m_workspaceInstanceIdHasBeenSet; }
+    template<typename WorkspaceInstanceIdT = Aws::String>
+    void SetWorkspaceInstanceId(WorkspaceInstanceIdT&& value) { m_workspaceInstanceIdHasBeenSet = true; m_workspaceInstanceId = std::forward<WorkspaceInstanceIdT>(value); }
+    template<typename WorkspaceInstanceIdT = Aws::String>
+    AssociateVolumeRequest& WithWorkspaceInstanceId(WorkspaceInstanceIdT&& value) { SetWorkspaceInstanceId(std::forward<WorkspaceInstanceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Volume to be attached.</p>
+     */
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    AssociateVolumeRequest& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Device path for volume attachment.</p>
+     */
+    inline const Aws::String& GetDevice() const { return m_device; }
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+    template<typename DeviceT = Aws::String>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Aws::String>
+    AssociateVolumeRequest& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_workspaceInstanceId;
+    bool m_workspaceInstanceIdHasBeenSet = false;
+
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet = false;
+
+    Aws::String m_device;
+    bool m_deviceHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace WorkspacesInstances
+} // namespace Aws

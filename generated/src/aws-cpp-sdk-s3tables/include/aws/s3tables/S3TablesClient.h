@@ -583,9 +583,12 @@ namespace S3Tables
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
          * Tables maintenance</a> in the <i>Amazon Simple Storage Service User
-         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must have the
          * <code>s3tables:GetTableMaintenanceConfiguration</code> permission to use this
-         * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * operation. </p> </li> <li> <p>You must have the
+         * <code>s3tables:GetTableData</code> permission to use set the compaction strategy
+         * to <code>sort</code> or <code>zorder</code>.</p> </li> </ul> </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
