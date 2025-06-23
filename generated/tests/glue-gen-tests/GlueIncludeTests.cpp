@@ -131,7 +131,9 @@
 #include <aws/glue/model/ColumnStatisticsTaskRun.h>
 #include <aws/glue/model/ColumnStatisticsTaskSettings.h>
 #include <aws/glue/model/ColumnStatisticsType.h>
+#include <aws/glue/model/CompactionConfiguration.h>
 #include <aws/glue/model/CompactionMetrics.h>
+#include <aws/glue/model/CompactionStrategy.h>
 #include <aws/glue/model/Comparator.h>
 #include <aws/glue/model/Compatibility.h>
 #include <aws/glue/model/CompressionType.h>
@@ -561,6 +563,7 @@
 #include <aws/glue/model/HudiTarget.h>
 #include <aws/glue/model/HudiTargetCompressionType.h>
 #include <aws/glue/model/HyperTargetCompressionType.h>
+#include <aws/glue/model/IcebergCompactionConfiguration.h>
 #include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/glue/model/IcebergInput.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionConfiguration.h>

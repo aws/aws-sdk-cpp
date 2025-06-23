@@ -50,6 +50,11 @@ TableOptimizerRun& TableOptimizerRun::operator =(JsonView jsonValue)
     m_compactionMetrics = jsonValue.GetObject("compactionMetrics");
     m_compactionMetricsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("compactionStrategy"))
+  {
+    m_compactionStrategy = CompactionStrategyMapper::GetCompactionStrategyForName(jsonValue.GetString("compactionStrategy"));
+    m_compactionStrategyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("retentionMetrics"))
   {
     m_retentionMetrics = jsonValue.GetObject("retentionMetrics");
@@ -92,6 +97,11 @@ JsonValue TableOptimizerRun::Jsonize() const
   {
    payload.WithObject("compactionMetrics", m_compactionMetrics.Jsonize());
 
+  }
+
+  if(m_compactionStrategyHasBeenSet)
+  {
+   payload.WithString("compactionStrategy", CompactionStrategyMapper::GetNameForCompactionStrategy(m_compactionStrategy));
   }
 
   if(m_retentionMetricsHasBeenSet)

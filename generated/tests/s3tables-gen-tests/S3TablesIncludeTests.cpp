@@ -50,6 +50,7 @@
 #include <aws/s3tables/model/GetTableRequest.h>
 #include <aws/s3tables/model/GetTableResult.h>
 #include <aws/s3tables/model/IcebergCompactionSettings.h>
+#include <aws/s3tables/model/IcebergCompactionStrategy.h>
 #include <aws/s3tables/model/IcebergMetadata.h>
 #include <aws/s3tables/model/IcebergSchema.h>
 #include <aws/s3tables/model/IcebergSnapshotManagementSettings.h>
