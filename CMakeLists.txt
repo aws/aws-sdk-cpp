@@ -344,7 +344,7 @@ if (LEGACY_BUILD)
     #Performance tests (under tests/performance_tests)
     option(BUILD_PERFORMANCE_TESTS "Build AWS C++ performance tests" OFF)
     if(BUILD_PERFORMANCE_TESTS)
-        add_subdirectory(tests/performance_tests)
+        add_subdirectory(tests/performance-tests)
     endif()
 
 
