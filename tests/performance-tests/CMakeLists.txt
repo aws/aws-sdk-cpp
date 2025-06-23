@@ -9,11 +9,11 @@ add_project(performance-tests
         aws-cpp-sdk-dynamodb
 )
 
-function(add_service_test SERVICE SDK_LIB)
+function(add_service_test SERVICE SDK_LIB PERF_TEST_FILE)
     add_executable(${SERVICE}-performance-test
             src/services/${SERVICE}/main.cpp
             src/reporting/JsonReportingMetrics.cpp
-            src/services/${SERVICE}/${SERVICE}PerformanceTest.cpp
+            src/services/${SERVICE}/${PERF_TEST_FILE}
     )
     set_compiler_flags(${SERVICE}-performance-test)
     set_compiler_warnings(${SERVICE}-performance-test)
@@ -21,5 +21,5 @@ function(add_service_test SERVICE SDK_LIB)
     target_link_libraries(${SERVICE}-performance-test PRIVATE aws-cpp-sdk-core ${SDK_LIB})
 endfunction()
 
-add_service_test(s3 aws-cpp-sdk-s3)
-add_service_test(dynamodb aws-cpp-sdk-dynamodb)
+add_service_test(s3 aws-cpp-sdk-s3 S3PerformanceTest.cpp)
+add_service_test(dynamodb aws-cpp-sdk-dynamodb DynamoDBPerformanceTest.cpp)
