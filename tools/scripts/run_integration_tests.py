@@ -55,7 +55,6 @@ def main():
         "aws-cpp-sdk-elasticfilesystem-integration-tests",
         "aws-cpp-sdk-rds-integration-tests",
         "aws-cpp-sdk-ec2-integration-tests",
-        "aws-cpp-sdk-timestream-query-integration-tests",
         "aws-cpp-sdk-bedrock-runtime-integration-tests"
     ]
 
