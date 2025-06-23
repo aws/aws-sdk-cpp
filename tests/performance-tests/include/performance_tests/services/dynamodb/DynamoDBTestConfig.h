@@ -8,8 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include "performance_tests/services/dynamodb/DynamoDBPerformanceTest.h"
-
 namespace PerformanceTest {
 namespace Services {
 namespace DynamoDB {

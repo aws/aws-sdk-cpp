@@ -3,18 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include "performance_tests/services/dynamodb/DynamoDBPerformanceTest.h"
-
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <aws/dynamodb/model/AttributeDefinition.h>
+#include <aws/dynamodb/model/AttributeValue.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
+#include <aws/dynamodb/model/DescribeTableRequest.h>
+#include <aws/dynamodb/model/TableStatus.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
+#include <aws/dynamodb/model/KeySchemaElement.h>
+#include <aws/dynamodb/model/KeyType.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
+#include <aws/dynamodb/model/ScalarAttributeType.h>
+#include <performance_tests/reporting/JsonReportingMetrics.h>
+#include <performance_tests/services/dynamodb/DynamoDBPerformanceTest.h>
 
 #include <chrono>
 #include <iostream>
@@ -22,17 +30,15 @@
 #include <thread>
 #include <utility>
 
-#include "performance_tests/reporting/JsonReportingMetrics.h"
-
 bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
   Aws::Vector<std::pair<Aws::String, Aws::String>> dimensions;
-  dimensions.push_back(std::make_pair("Size", config.sizeLabel));
+  dimensions.emplace_back("Size", config.sizeLabel);
   PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
 
   Aws::String tableName;
-  Aws::String raw_uuid = static_cast<Aws::String>(Aws::Utils::UUID::RandomUUID());
-  Aws::String id = Aws::Utils::StringUtils::ToLower(raw_uuid.c_str()).substr(0, 8);
-  tableName = "perf-table-" + id;
+  Aws::String const rawUUID = static_cast<Aws::String>(Aws::Utils::UUID::RandomUUID());
+  Aws::String const tableId = Aws::Utils::StringUtils::ToLower(rawUUID.c_str()).substr(0, 8);
+  tableName = "perf-table-" + tableId;
 
   Aws::DynamoDB::Model::CreateTableRequest createTableRequest;
   createTableRequest.SetTableName(tableName);
@@ -46,18 +52,30 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
   keySchema.WithAttributeName("id").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
   createTableRequest.AddKeySchema(keySchema);
 
-  Aws::DynamoDB::Model::BillingMode billingMode = Aws::DynamoDB::Model::BillingMode::PAY_PER_REQUEST;
+  Aws::DynamoDB::Model::BillingMode const billingMode = Aws::DynamoDB::Model::BillingMode::PAY_PER_REQUEST;
   createTableRequest.SetBillingMode(billingMode);
 
   auto createTableOutcome = dynamodb.CreateTable(createTableRequest);
   if (!createTableOutcome.IsSuccess()) {
-    std::cerr << "[ERROR] CreateTable failed: " << createTableOutcome.GetError().GetMessage() << std::endl;
+    std::cerr << "[ERROR] CreateTable failed: " << createTableOutcome.GetError().GetMessage() << '\n';
     return false;
   }
 
   // Wait for table to become active
-  std::this_thread::sleep_for(std::chrono::seconds(10));
-  Aws::String payload(config.sizeBytes, 'x');
+  Aws::DynamoDB::Model::DescribeTableRequest describeRequest;
+  describeRequest.SetTableName(tableName);
+  
+  while (true) {
+    auto describeOutcome = dynamodb.DescribeTable(describeRequest);
+    if (describeOutcome.IsSuccess()) {
+      auto status = describeOutcome.GetResult().GetTable().GetTableStatus();
+      if (status == Aws::DynamoDB::Model::TableStatus::ACTIVE) {
+        break;
+      }
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+  }
+  Aws::String const payload(config.sizeBytes, 'x');
 
   // Run PutItem multiple times
   for (int i = 0; i < iterations; i++) {
@@ -71,7 +89,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
 
     auto putItemOutcome = dynamodb.PutItem(putItemRequest);
     if (!putItemOutcome.IsSuccess()) {
-      std::cerr << "[ERROR] PutItem failed: " << putItemOutcome.GetError().GetMessage() << std::endl;
+      std::cerr << "[ERROR] PutItem failed: " << putItemOutcome.GetError().GetMessage() << '\n';
     }
   }
 
@@ -86,7 +104,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
 
     auto getItemOutcome = dynamodb.GetItem(getItemRequest);
     if (!getItemOutcome.IsSuccess()) {
-      std::cerr << "[ERROR] GetItem failed: " << getItemOutcome.GetError().GetMessage() << std::endl;
+      std::cerr << "[ERROR] GetItem failed: " << getItemOutcome.GetError().GetMessage() << '\n';
     }
   }
 

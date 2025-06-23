@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
@@ -15,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <cstdint>
+#include <memory>
 #include <utility>
 
 namespace PerformanceTest {
@@ -29,7 +31,6 @@ struct PerformanceMetricRecord {
   int64_t date;
   Aws::Vector<double> measurements;
   Aws::Vector<std::pair<Aws::String, Aws::String>> dimensions;
-
 };
 
 /**
@@ -40,13 +41,18 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
  public:
   ~JsonReportingMetrics() override;
 
-  void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override;
-  void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
-                          const Aws::Client::HttpResponseOutcome& outcome, const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
-  void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
-                       const Aws::Client::HttpResponseOutcome& outcome, const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
-  void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
-  void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+  void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName,
+                         const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override;
+  void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
+                          const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
+                          const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
+  void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName,
+                       const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
+                       const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
+  void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
+                      const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+  void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
+                const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
 
   static void SetTestContext(const Aws::Vector<std::pair<Aws::String, Aws::String>>& dimensions);
 

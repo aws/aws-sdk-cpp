@@ -8,13 +8,11 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3Client.h>
+#include <performance_tests/reporting/JsonReportingMetrics.h>
+#include <performance_tests/services/s3/S3PerformanceTest.h>
+#include <performance_tests/services/s3/S3TestConfig.h>
 
-#include <iostream>
 #include <string>
-
-#include "performance_tests/reporting/JsonReportingMetrics.h"
-#include "performance_tests/services/s3/S3PerformanceTest.h"
-#include "performance_tests/services/s3/S3TestConfig.h"
 
 int main(int argc, char** argv) {
   Aws::String region = "us-east-1";
@@ -23,7 +21,7 @@ int main(int argc, char** argv) {
   int iterations = 3;
 
   for (int i = 1; i < argc; ++i) {
-    Aws::String arg = argv[i];
+    Aws::String const arg = argv[i];
     if (arg == "--region" && i + 1 < argc) {
       region = argv[++i];
     } else if (arg == "--az-id" && i + 1 < argc) {
@@ -36,15 +34,15 @@ int main(int argc, char** argv) {
   }
 
   Aws::SDKOptions options;
-  options.monitoringOptions.customizedMonitoringFactory_create_fn.push_back(
+  options.monitoringOptions.customizedMonitoringFactory_create_fn.emplace_back(
       []() { return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>("JsonReportingMetricsFactory"); });
 
   Aws::InitAPI(options);
 
   PerformanceTest::Reporting::JsonReportingMetrics::RegisterOperationsToMonitor(PerformanceTest::Services::S3::TestConfig::OPERATIONS);
 
-  Aws::SDKOptions::SDKVersion version;
-  Aws::String versionStr = std::to_string(version.major) + "." + std::to_string(version.minor) + "." + std::to_string(version.patch);
+  Aws::SDKOptions::SDKVersion const version;
+  Aws::String const versionStr = std::to_string(version.major) + "." + std::to_string(version.minor) + "." + std::to_string(version.patch);
   PerformanceTest::Reporting::JsonReportingMetrics::SetProductInfo("cpp1", versionStr, commitId);
   PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename("s3-perf-results.json");
 

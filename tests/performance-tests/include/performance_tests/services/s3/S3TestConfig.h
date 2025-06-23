@@ -8,8 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include "performance_tests/services/s3/S3PerformanceTest.h"
-
 namespace PerformanceTest {
 namespace Services {
 namespace S3 {

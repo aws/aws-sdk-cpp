@@ -3,20 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include "performance_tests/reporting/JsonReportingMetrics.h"
-
+#include <aws/core/client/AWSClient.h>
+#include <aws/core/monitoring/CoreMetrics.h>
+#include <aws/core/monitoring/HttpClientMetrics.h>
+#include <aws/core/monitoring/MonitoringInterface.h>
+#include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <performance_tests/reporting/JsonReportingMetrics.h>
 
 #include <cstddef>
 #include <fstream>
-#include <map>
-#include <string>
+#include <memory>
 #include <utility>
 
 using namespace PerformanceTest::Reporting;
@@ -34,8 +38,8 @@ void JsonReportingMetrics::SetTestContext(const Aws::Vector<std::pair<Aws::Strin
 
 void JsonReportingMetrics::RegisterOperationsToMonitor(const Aws::Vector<Aws::String>& operations) {
   m_monitoredOperations.clear();
-  for (const auto& op : operations) {
-    m_monitoredOperations.insert(op);
+  for (const auto& operation : operations) {
+    m_monitoredOperations.insert(operation);
   }
 }
 
@@ -49,7 +53,7 @@ void JsonReportingMetrics::SetOutputFilename(const Aws::String& filename) { m_ou
 
 JsonReportingMetrics::~JsonReportingMetrics() { DumpJson(); }
 
-JsonReportingMetricsFactory::~JsonReportingMetricsFactory() {}
+JsonReportingMetricsFactory::~JsonReportingMetricsFactory() = default;
 
 auto JsonReportingMetricsFactory::CreateMonitoringInstance() const -> Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> {
   return Aws::MakeUnique<JsonReportingMetrics>("JsonReportingMetrics");
@@ -64,11 +68,11 @@ void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, 
   }
 
   double durationMs = 0.0;
-  Aws::String latencyKey = Aws::Monitoring::GetHttpClientMetricNameByType(Aws::Monitoring::HttpClientMetricsType::RequestLatency);
+  Aws::String const latencyKey = Aws::Monitoring::GetHttpClientMetricNameByType(Aws::Monitoring::HttpClientMetricsType::RequestLatency);
 
-  auto it = metricsFromCore.httpClientMetrics.find(latencyKey);
-  if (it != metricsFromCore.httpClientMetrics.end()) {
-    durationMs = static_cast<double>(it->second);
+  auto iterator = metricsFromCore.httpClientMetrics.find(latencyKey);
+  if (iterator != metricsFromCore.httpClientMetrics.end()) {
+    durationMs = static_cast<double>(iterator->second);
   }
 
   PerformanceMetricRecord record;
@@ -83,8 +87,8 @@ void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, 
   m_performanceRecords.push_back(record);
 }
 
-void* JsonReportingMetrics::OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName,
-                                             const std::shared_ptr<const Aws::Http::HttpRequest>& request) const {
+void* JsonReportingMetrics::OnRequestStarted(const Aws::String&, const Aws::String&,
+                                             const std::shared_ptr<const Aws::Http::HttpRequest>&) const {
   return nullptr;
 }
 
@@ -112,12 +116,12 @@ void JsonReportingMetrics::DumpJson() const {
   }
 
   // Group performance records by name and dimensions
-  std::map<std::string, PerformanceMetricRecord> aggregatedRecords;
+  Aws::Map<Aws::String, PerformanceMetricRecord> aggregatedRecords;
 
   for (const auto& record : m_performanceRecords) {
-    std::string key = record.name.c_str();
+    Aws::String key = record.name;
     for (const auto& dim : record.dimensions) {
-      key += ":" + std::string(dim.first.c_str()) + "=" + std::string(dim.second.c_str());
+      key += ":" + Aws::String(dim.first) + "=" + Aws::String(dim.second);
     }
 
     if (aggregatedRecords.find(key) == aggregatedRecords.end()) {
