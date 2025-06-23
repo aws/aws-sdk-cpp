@@ -5,6 +5,7 @@
 
 #include <aws/core/Aws.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
@@ -17,7 +18,7 @@
 int main(int argc, char** argv) {
   Aws::String region = "us-east-1";
   Aws::String commitId = "unknown";
-  int iterations = 3;
+  int iterations = 10;
 
   for (int i = 1; i < argc; ++i) {
     Aws::String const arg = argv[i];
@@ -31,25 +32,26 @@ int main(int argc, char** argv) {
   }
 
   Aws::SDKOptions options;
-  options.monitoringOptions.customizedMonitoringFactory_create_fn.emplace_back(
-      []() { return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>("JsonReportingMetricsFactory"); });
+  options.monitoringOptions.customizedMonitoringFactory_create_fn = {[]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
+    return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>("JsonReportingMetricsFactory");
+  }};
 
   Aws::InitAPI(options);
 
   PerformanceTest::Reporting::JsonReportingMetrics::RegisterOperationsToMonitor(
-      PerformanceTest::Services::DynamoDB::TestConfig::OPERATIONS);
+      PerformanceTest::Services::DynamoDB::TestConfig::Operations);
 
   Aws::SDKOptions::SDKVersion const version;
   Aws::String const versionStr = std::to_string(version.major) + "." + std::to_string(version.minor) + "." + std::to_string(version.patch);
   PerformanceTest::Reporting::JsonReportingMetrics::SetProductInfo("cpp1", versionStr, commitId);
-  PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename("dynamodb-perf-results.json");
+  PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename(PerformanceTest::Services::DynamoDB::TestConfig::OutputFilename);
 
   {
     Aws::Client::ClientConfiguration cfg;
     cfg.region = region;
 
     Aws::DynamoDB::DynamoDBClient dynamodb(cfg);
-    for (const auto& config : PerformanceTest::Services::DynamoDB::TestConfig::TEST_MATRIX) {
+    for (const auto& config : PerformanceTest::Services::DynamoDB::TestConfig::TestMatrix) {
       PerformanceTest::Services::DynamoDB::RunTest(dynamodb, config, iterations);
     }
   }

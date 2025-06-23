@@ -15,12 +15,12 @@
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
-#include <aws/dynamodb/model/TableStatus.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/KeyType.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/model/ScalarAttributeType.h>
+#include <aws/dynamodb/model/TableStatus.h>
 #include <performance_tests/reporting/JsonReportingMetrics.h>
 #include <performance_tests/services/dynamodb/DynamoDBPerformanceTest.h>
 
@@ -36,7 +36,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
   PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
 
   Aws::String tableName;
-  Aws::String const rawUUID = static_cast<Aws::String>(Aws::Utils::UUID::RandomUUID());
+  Aws::String const rawUUID = Aws::Utils::UUID::RandomUUID();
   Aws::String const tableId = Aws::Utils::StringUtils::ToLower(rawUUID.c_str()).substr(0, 8);
   tableName = "perf-table-" + tableId;
 
@@ -64,7 +64,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
   // Wait for table to become active
   Aws::DynamoDB::Model::DescribeTableRequest describeRequest;
   describeRequest.SetTableName(tableName);
-  
+
   while (true) {
     auto describeOutcome = dynamodb.DescribeTable(describeRequest);
     if (describeOutcome.IsSuccess()) {
@@ -75,6 +75,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
     }
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
+
   Aws::String const payload(config.sizeBytes, 'x');
 
   // Run PutItem multiple times

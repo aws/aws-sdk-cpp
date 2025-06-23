@@ -12,9 +12,11 @@ namespace PerformanceTest {
 namespace Services {
 namespace DynamoDB {
 namespace TestConfig {
-const Aws::Vector<Aws::String> OPERATIONS = {"PutItem", "GetItem"};
+const Aws::Vector<Aws::String> Operations = {"PutItem", "GetItem"};
 
-const Aws::Vector<TestCase> TEST_MATRIX = {{"8KB", 8 * 1024}, {"64KB", 64 * 1024}, {"392KB", 392 * 1024}};
+const Aws::Vector<TestCase> TestMatrix = {{"8KB", 8 * 1024}, {"64KB", 64 * 1024}, {"392KB", 392 * 1024}};
+
+const Aws::String OutputFilename = "dynamodb-performance-test-results.json";
 }  // namespace TestConfig
 }  // namespace DynamoDB
 }  // namespace Services

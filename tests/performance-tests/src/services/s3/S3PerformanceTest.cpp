@@ -37,7 +37,7 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
 
   Aws::String bucketName;
   Aws::S3::Model::CreateBucketRequest cbr;
-  Aws::String const rawUUID = static_cast<Aws::String>(Aws::Utils::UUID::RandomUUID());
+  Aws::String const rawUUID = Aws::Utils::UUID::RandomUUID();
   Aws::String const bucketId = Aws::Utils::StringUtils::ToLower(rawUUID.c_str()).substr(0, 8);
 
   if (config.bucketTypeLabel == "s3-express") {
