@@ -39,8 +39,8 @@ namespace Model
     /**
      * <p>A unique identifier for the game server group where the game server is
      * running. If you are not specifying a game server to claim, this value identifies
-     * where you want Amazon GameLift FleetIQ to look for an available game server to
-     * claim. </p>
+     * where you want Amazon GameLift Servers FleetIQ to look for an available game
+     * server to claim. </p>
      */
     inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
     ///@{
     /**
      * <p>A custom string that uniquely identifies the game server to claim. If this
-     * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
-     * server in the specified game server group.</p>
+     * parameter is left empty, Amazon GameLift Servers FleetIQ searches for an
+     * available game server in the specified game server group.</p>
      */
     inline const Aws::String& GetGameServerId() const { return m_gameServerId; }
     inline bool GameServerIdHasBeenSet() const { return m_gameServerIdHasBeenSet; }

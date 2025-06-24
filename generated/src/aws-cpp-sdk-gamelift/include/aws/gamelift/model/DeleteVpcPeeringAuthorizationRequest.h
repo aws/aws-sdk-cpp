@@ -37,8 +37,8 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the Amazon Web Services account that you use to
-     * manage your Amazon GameLift fleet. You can find your Account ID in the Amazon
-     * Web Services Management Console under account settings.</p>
+     * manage your Amazon GameLift Servers fleet. You can find your Account ID in the
+     * Amazon Web Services Management Console under account settings.</p>
      */
     inline const Aws::String& GetGameLiftAwsAccountId() const { return m_gameLiftAwsAccountId; }
     inline bool GameLiftAwsAccountIdHasBeenSet() const { return m_gameLiftAwsAccountIdHasBeenSet; }
@@ -51,12 +51,12 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
-     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
-     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about VPC peering in
-     * <a
+     * GameLift Servers fleet. The VPC must be in the same Region as your fleet. To
+     * look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the Amazon Web Services Management Console. Learn more about
+     * VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with Amazon GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Servers Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }

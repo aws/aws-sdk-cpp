@@ -37,10 +37,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
-     * fleet instance type determines the computing resources of each instance in the
-     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
-     * value for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift
+     * Servers. A fleet instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Do not specify a value for this parameter to retrieve limits for all instance
+     * types.</p>
      */
     inline EC2InstanceType GetEC2InstanceType() const { return m_eC2InstanceType; }
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }

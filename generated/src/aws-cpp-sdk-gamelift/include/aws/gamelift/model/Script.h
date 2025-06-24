@@ -58,9 +58,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift script resource and uniquely identifies
-     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
-     * ID matches the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift Servers script resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift script ARN, the
+     * resource ID matches the <i>ScriptId</i> value.</p>
      */
     inline const Aws::String& GetScriptArn() const { return m_scriptArn; }
     inline bool ScriptArnHasBeenSet() const { return m_scriptArnHasBeenSet; }
@@ -126,11 +126,11 @@ namespace Model
      * <p>The location of the Amazon S3 bucket where a zipped file containing your
      * Realtime scripts is stored. The storage location must specify the Amazon S3
      * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * GameLift Servers to access the Amazon S3 storage location. The S3 bucket must be
+     * in the same Region where you want to create a new script. By default, Amazon
+     * GameLift Servers uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. </p>
      */
     inline const S3Location& GetStorageLocation() const { return m_storageLocation; }
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }

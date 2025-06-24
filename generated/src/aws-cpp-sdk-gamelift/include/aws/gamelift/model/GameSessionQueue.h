@@ -61,11 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift game session queue resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift Servers game session queue resource and
+     * uniquely identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-     * name&gt;</code>. In a Amazon GameLift game session queue ARN, the resource ID
-     * matches the <i>Name</i> value.</p>
+     * name&gt;</code>. In a Amazon GameLift Servers game session queue ARN, the
+     * resource ID matches the <i>Name</i> value.</p>
      */
     inline const Aws::String& GetGameSessionQueueArn() const { return m_gameSessionQueueArn; }
     inline bool GameSessionQueueArnHasBeenSet() const { return m_gameSessionQueueArnHasBeenSet; }
@@ -91,8 +91,9 @@ namespace Model
     /**
      * <p>A set of policies that enforce a sliding cap on player latency when
      * processing game sessions placement requests. Use multiple policies to gradually
-     * relax the cap over time if Amazon GameLift can't make a placement. Policies are
-     * evaluated in order starting with the lowest maximum latency value. </p>
+     * relax the cap over time if Amazon GameLift Servers can't make a placement.
+     * Policies are evaluated in order starting with the lowest maximum latency value.
+     * </p>
      */
     inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const { return m_playerLatencyPolicies; }
     inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }

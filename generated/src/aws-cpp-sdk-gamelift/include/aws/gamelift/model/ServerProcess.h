@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>A set of instructions for launching server processes on fleet computes.
    * Server processes run either an executable in a custom game build or a Amazon
-   * GameLift Realtime script. Server process configurations are part of a fleet's
-   * runtime configuration.</p><p><h3>See Also:</h3>   <a
+   * GameLift Servers Realtime script. Server process configurations are part of a
+   * fleet's runtime configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
    * API Reference</a></p>
    */
@@ -48,9 +48,9 @@ namespace Model
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
-     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
-     * executable. For custom game builds, this parameter must indicate the executable
-     * that calls the server SDK operations <code>initSDK()</code> and
+     * <p>Amazon GameLift Servers doesn't support the use of setup scripts that launch
+     * the game executable. For custom game builds, this parameter must indicate the
+     * executable that calls the server SDK operations <code>initSDK()</code> and
      * <code>ProcessReady()</code>. </p> 
      */
     inline const Aws::String& GetLaunchPath() const { return m_launchPath; }

@@ -31,12 +31,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
-   * groups.</b> </p> <p>Properties that describe a game server group resource. A
-   * game server group manages certain properties related to a corresponding Amazon
-   * EC2 Auto Scaling group. </p> <p>A game server group is created by a successful
-   * call to <code>CreateGameServerGroup</code> and deleted by calling
-   * <code>DeleteGameServerGroup</code>. Game server group activity can be
+   * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
+   * server groups.</b> </p> <p>Properties that describe a game server group
+   * resource. A game server group manages certain properties related to a
+   * corresponding Amazon EC2 Auto Scaling group. </p> <p>A game server group is
+   * created by a successful call to <code>CreateGameServerGroup</code> and deleted
+   * by calling <code>DeleteGameServerGroup</code>. Game server group activity can be
    * temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
    * and <code>ResumeGameServerGroup</code>, respectively. </p><p><h3>See Also:</h3> 
    * <a
@@ -81,8 +81,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
-     * Scaling groups.</p>
+     * for an IAM role that allows Amazon GameLift Servers to access your Amazon EC2
+     * Auto Scaling groups.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -94,8 +94,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use
-     * when balancing and automatically scaling instances in the corresponding Auto
+     * <p>The set of Amazon EC2 instance types that Amazon GameLift Servers FleetIQ can
+     * use when balancing and automatically scaling instances in the corresponding Auto
      * Scaling group. </p>
      */
     inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const { return m_instanceDefinitions; }
@@ -110,22 +110,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
-     * On-Demand Instances in the game server group. Method options include the
-     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
-     * used in the game server group. If Spot Instances are unavailable or not viable
-     * for game hosting, the game server group provides no hosting capacity until Spot
-     * Instances can again be used. Until then, no new instances are started, and the
-     * existing nonviable Spot Instances are terminated (after current gameplay ends)
-     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
-     * value) Spot Instances are used whenever available in the game server group. If
-     * Spot Instances are unavailable, the game server group continues to provide
-     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
-     * Instances are terminated (after current gameplay ends) and are replaced with new
-     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
-     * On-Demand Instances are used in the game server group. No Spot Instances are
-     * used, even when available, while this balancing strategy is in force.</p> </li>
-     * </ul>
+     * <p>Indicates how Amazon GameLift Servers FleetIQ balances the use of Spot
+     * Instances and On-Demand Instances in the game server group. Method options
+     * include the following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot
+     * Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting
+     * capacity until Spot Instances can again be used. Until then, no new instances
+     * are started, and the existing nonviable Spot Instances are terminated (after
+     * current gameplay ends) and are not replaced.</p> </li> <li> <p>
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever
+     * available in the game server group. If Spot Instances are unavailable, the game
+     * server group continues to provide hosting capacity by falling back to On-Demand
+     * Instances. Existing nonviable Spot Instances are terminated (after current
+     * gameplay ends) and are replaced with new On-Demand Instances.</p> </li> <li> <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
+     * server group. No Spot Instances are used, even when available, while this
+     * balancing strategy is in force.</p> </li> </ul>
      */
     inline BalancingStrategy GetBalancingStrategy() const { return m_balancingStrategy; }
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
@@ -165,21 +165,21 @@ namespace Model
     ///@{
     /**
      * <p>The current status of the game server group. Possible statuses include:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the
-     * <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
-     * <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server
-     * group, which includes creating an Auto Scaling group in your Amazon Web Services
-     * account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has
-     * been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A
-     * request to delete the game server group has been received. </p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid
-     * <code>DeleteGameServerGroup()</code> request and is processing it. Amazon
-     * GameLift FleetIQ must first complete and release hosts before it deletes the
-     * Auto Scaling group and the game server group. </p> </li> <li> <p>
-     * <code>DELETED</code> - The game server group has been successfully deleted. </p>
-     * </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or
-     * deleting a game server group has failed, resulting in an error state.</p> </li>
-     * </ul>
+     * <ul> <li> <p> <code>NEW</code> - Amazon GameLift Servers FleetIQ has validated
+     * the <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p>
+     * <code>ACTIVATING</code> - Amazon GameLift Servers FleetIQ is setting up a game
+     * server group, which includes creating an Auto Scaling group in your Amazon Web
+     * Services account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server
+     * group has been successfully created. </p> </li> <li> <p>
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has
+     * been received. </p> </li> <li> <p> <code>DELETING</code> - Amazon GameLift
+     * Servers FleetIQ has received a valid <code>DeleteGameServerGroup()</code>
+     * request and is processing it. Amazon GameLift Servers FleetIQ must first
+     * complete and release hosts before it deletes the Auto Scaling group and the game
+     * server group. </p> </li> <li> <p> <code>DELETED</code> - The game server group
+     * has been successfully deleted. </p> </li> <li> <p> <code>ERROR</code> - The
+     * asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.</p> </li> </ul>
      */
     inline GameServerGroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

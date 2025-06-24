@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon GameLift managed container fleet. </p><p><h3>See
+   * <p>Describes an Amazon GameLift Servers managed container fleet. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerFleet">AWS
    * API Reference</a></p>
@@ -65,8 +65,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift Servers fleet resource and uniquely
+     * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The unique identifier for an Identity and Access Management (IAM) role with
      * permissions to run your containers on resources that are managed by Amazon
-     * GameLift. See <a
+     * GameLift Servers. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
      * up an IAM service role</a>. This fleet property can't be changed.</p>
      */
@@ -272,11 +272,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether Amazon GameLift can shut down game sessions on the fleet
-     * that are actively running and hosting players. Amazon GameLift might prompt an
-     * instance shutdown when scaling down fleet capacity or when retiring unhealthy
-     * instances. You can also set game session protection for individual game sessions
-     * using <a
+     * <p>Determines whether Amazon GameLift Servers can shut down game sessions on the
+     * fleet that are actively running and hosting players. Amazon GameLift Servers
+     * might prompt an instance shutdown when scaling down fleet capacity or when
+     * retiring unhealthy instances. You can also set game session protection for
+     * individual game sessions using <a
      * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      * <ul> <li> <p> <b>NoProtection</b> -- Game sessions can be shut down during
      * active gameplay. </p> </li> <li> <p> <b>FullProtection</b> -- Game sessions in
@@ -336,8 +336,8 @@ namespace Model
     ///@{
     /**
      * <p>The method that is used to collect container logs for the fleet. Amazon
-     * GameLift saves all standard output for each container in logs, including game
-     * session logs. </p> <ul> <li> <p> <code>CLOUDWATCH</code> -- Send logs to an
+     * GameLift Servers saves all standard output for each container in logs, including
+     * game session logs. </p> <ul> <li> <p> <code>CLOUDWATCH</code> -- Send logs to an
      * Amazon CloudWatch log group that you define. Each container emits a log stream,
      * which is organized in the log group. </p> </li> <li> <p> <code>S3</code> --
      * Store logs in an Amazon S3 bucket that you define.</p> </li> <li> <p>

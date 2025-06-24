@@ -10,6 +10,7 @@
 #include <aws/aiops/model/EncryptionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/aiops/model/CrossAccountConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -177,12 +178,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether Amazon Q Developer operational investigationshas access to
-     * change events that are recorded by CloudTrail.</p>
+     * <p>Specifies whether CloudWatch investigationshas access to change events that
+     * are recorded by CloudTrail.</p>
      */
     inline bool GetIsCloudTrailEventHistoryEnabled() const { return m_isCloudTrailEventHistoryEnabled; }
     inline void SetIsCloudTrailEventHistoryEnabled(bool value) { m_isCloudTrailEventHistoryEnabledHasBeenSet = true; m_isCloudTrailEventHistoryEnabled = value; }
     inline GetInvestigationGroupResult& WithIsCloudTrailEventHistoryEnabled(bool value) { SetIsCloudTrailEventHistoryEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Lists the <code>AWSAccountId</code> of the accounts configured for
+     * cross-account access and the results of the last scan performed on each
+     * account.</p>
+     */
+    inline const Aws::Vector<CrossAccountConfiguration>& GetCrossAccountConfigurations() const { return m_crossAccountConfigurations; }
+    template<typename CrossAccountConfigurationsT = Aws::Vector<CrossAccountConfiguration>>
+    void SetCrossAccountConfigurations(CrossAccountConfigurationsT&& value) { m_crossAccountConfigurationsHasBeenSet = true; m_crossAccountConfigurations = std::forward<CrossAccountConfigurationsT>(value); }
+    template<typename CrossAccountConfigurationsT = Aws::Vector<CrossAccountConfiguration>>
+    GetInvestigationGroupResult& WithCrossAccountConfigurations(CrossAccountConfigurationsT&& value) { SetCrossAccountConfigurations(std::forward<CrossAccountConfigurationsT>(value)); return *this;}
+    template<typename CrossAccountConfigurationsT = CrossAccountConfiguration>
+    GetInvestigationGroupResult& AddCrossAccountConfigurations(CrossAccountConfigurationsT&& value) { m_crossAccountConfigurationsHasBeenSet = true; m_crossAccountConfigurations.emplace_back(std::forward<CrossAccountConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -230,6 +246,9 @@ namespace Model
 
     bool m_isCloudTrailEventHistoryEnabled{false};
     bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
+
+    Aws::Vector<CrossAccountConfiguration> m_crossAccountConfigurations;
+    bool m_crossAccountConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -289,6 +289,7 @@
 #include <aws/gamelift/model/MatchmakingTicket.h>
 #include <aws/gamelift/model/MetricName.h>
 #include <aws/gamelift/model/OperatingSystem.h>
+#include <aws/gamelift/model/PingBeacon.h>
 #include <aws/gamelift/model/PlacedPlayerSession.h>
 #include <aws/gamelift/model/PlacementFallbackStrategy.h>
 #include <aws/gamelift/model/Player.h>
@@ -353,6 +354,7 @@
 #include <aws/gamelift/model/TerminateGameSessionRequest.h>
 #include <aws/gamelift/model/TerminateGameSessionResult.h>
 #include <aws/gamelift/model/TerminationMode.h>
+#include <aws/gamelift/model/UDPEndpoint.h>
 #include <aws/gamelift/model/UntagResourceRequest.h>
 #include <aws/gamelift/model/UntagResourceResult.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A method for collecting container logs for the fleet. Amazon GameLift saves
-   * all standard output for each container in logs, including game session logs. You
-   * can select from the following methods: </p><p><h3>See Also:</h3>   <a
+   * <p>A method for collecting container logs for the fleet. Amazon GameLift Servers
+   * saves all standard output for each container in logs, including game session
+   * logs. You can select from the following methods: </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LogConfiguration">AWS
    * API Reference</a></p>
    */

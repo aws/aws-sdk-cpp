@@ -69,14 +69,14 @@ namespace Model
     ///@{
     /**
      * <p>When you want to forward DNS queries for specified domain name to resolvers
-     * on your network, specify <code>FORWARD</code>.</p> <p>When you have a forwarding
-     * rule to forward DNS queries for a domain to your network and you want Resolver
-     * to process queries for a subdomain of that domain, specify
-     * <code>SYSTEM</code>.</p> <p>For example, to forward DNS queries for example.com
-     * to resolvers on your network, you create a rule and specify <code>FORWARD</code>
-     * for <code>RuleType</code>. To then have Resolver process queries for
-     * apex.example.com, you create a rule and specify <code>SYSTEM</code> for
-     * <code>RuleType</code>.</p> <p>Currently, only Resolver can create rules that
+     * on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
+     * <p>When you have a forwarding rule to forward DNS queries for a domain to your
+     * network and you want Resolver to process queries for a subdomain of that domain,
+     * specify <code>SYSTEM</code>.</p> <p>For example, to forward DNS queries for
+     * example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process
+     * queries for apex.example.com, you create a rule and specify <code>SYSTEM</code>
+     * for <code>RuleType</code>.</p> <p>Currently, only Resolver can create rules that
      * have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
      */
     inline RuleTypeOption GetRuleType() const { return m_ruleType; }
@@ -144,6 +144,19 @@ namespace Model
     template<typename TagsT = Tag>
     CreateResolverRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> DNS queries with the delegation records that match this domain name are
+     * forwarded to the resolvers on your network. </p>
+     */
+    inline const Aws::String& GetDelegationRecord() const { return m_delegationRecord; }
+    inline bool DelegationRecordHasBeenSet() const { return m_delegationRecordHasBeenSet; }
+    template<typename DelegationRecordT = Aws::String>
+    void SetDelegationRecord(DelegationRecordT&& value) { m_delegationRecordHasBeenSet = true; m_delegationRecord = std::forward<DelegationRecordT>(value); }
+    template<typename DelegationRecordT = Aws::String>
+    CreateResolverRuleRequest& WithDelegationRecord(DelegationRecordT&& value) { SetDelegationRecord(std::forward<DelegationRecordT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_creatorRequestId;
@@ -166,6 +179,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_delegationRecord;
+    bool m_delegationRecordHasBeenSet = false;
   };
 
 } // namespace Model

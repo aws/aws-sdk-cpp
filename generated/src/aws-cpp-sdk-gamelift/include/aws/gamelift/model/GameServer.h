@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
-   * groups.</b> </p> <p>Properties describing a game server that is running on an
-   * instance in a game server group. </p> <p>A game server is created by a
+   * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
+   * server groups.</b> </p> <p>Properties describing a game server that is running
+   * on an instance in a game server group. </p> <p>A game server is created by a
    * successful call to <code>RegisterGameServer</code> and deleted by calling
    * <code>DeregisterGameServer</code>. A game server is claimed to host a game
    * session by calling <code>ClaimGameServer</code>. </p><p><h3>See Also:</h3>   <a

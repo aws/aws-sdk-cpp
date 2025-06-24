@@ -2556,7 +2556,12 @@ namespace EC2
          * store volumes or Amazon EBS volumes in addition to the root device volume, the
          * new AMI contains block device mapping information for those volumes. When you
          * launch an instance from this new AMI, the instance automatically launches with
-         * those additional volumes.</p> <p>For more information, see <a
+         * those additional volumes.</p> <p>The location of the source instance determines
+         * where you can create the snapshots of the AMI:</p> <ul> <li> <p>If the source
+         * instance is in a Region, you must create the snapshots in the same Region as the
+         * instance.</p> </li> <li> <p>If the source instance is in a Local Zone, you can
+         * create the snapshots in the same Local Zone or in its parent Region.</p> </li>
+         * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
          * an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2588,9 +2593,8 @@ namespace EC2
          * Endpoint allows you to connect to an instance, without requiring the instance to
          * have a public IPv4 address. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
-         * to your instances without requiring a public IPv4 address using EC2 Instance
-         * Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">AWS
          * API Reference</a></p>
          */
@@ -20613,7 +20617,9 @@ namespace EC2
          * can create a new one or use an existing one), it must be in the same Region
          * where the report generation request is made, and it must have an appropriate
          * bucket policy. For a sample S3 policy, see <i>Sample Amazon S3 policy</i> under
-         * .</p> </li> <li> <p>Trusted access must be enabled for the service for which the
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartDeclarativePoliciesReport.html#API_StartDeclarativePoliciesReport_Examples">Examples</a>.</p>
+         * </li> <li> <p>Trusted access must be enabled for the service for which the
          * declarative policy will enforce a baseline configuration. If you use the Amazon
          * Web Services Organizations console, this is done automatically when you enable
          * declarative policies. The API uses the following service principal to identify
@@ -20778,12 +20784,15 @@ namespace EC2
         }
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. For more information, see <a
+         * <p>Stops an Amazon EBS-backed instance. You can restart your instance at any
+         * time using the <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html">StartInstances</a>
+         * API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
          * and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>When you stop an instance, we shut it down. You can restart your instance at
-         * any time.</p> <p>You can use the Stop operation together with the Hibernate
-         * parameter to hibernate an instance if the instance is <a
+         * <p>When you stop an instance, we shut it down.</p> <p>You can use the Stop
+         * operation together with the Hibernate parameter to hibernate an instance if the
+         * instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
          * for hibernation</a> and meets the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation

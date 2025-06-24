@@ -70,10 +70,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
-     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
-     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
-     * will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift Servers to access your Amazon S3 bucket. The S3 bucket and your new
+     * build must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
+     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
+     * GameLift Servers will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline const S3Location& GetStorageLocation() const { return m_storageLocation; }
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
@@ -91,10 +91,10 @@ namespace Model
      * system. You must specify a valid operating system in this request. There is no
      * default value. You can't change a build's operating system later.</p> 
      * <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details
-     * in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+     * in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
      * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
-     * for Amazon GameLift, first update the game server build to server SDK 5.x, and
-     * then deploy to AL2023 instances. See <a
+     * for Amazon GameLift Servers, first update the game server build to server SDK
+     * 5.x, and then deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */
@@ -134,10 +134,10 @@ namespace Model
     ///@{
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * Amazon GameLift. For more information see <a
+     * Amazon GameLift Servers. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>. By default Amazon GameLift sets this value
-     * to <code>4.0.2</code>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift Servers sets this
+     * value to <code>4.0.2</code>.</p>
      */
     inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }

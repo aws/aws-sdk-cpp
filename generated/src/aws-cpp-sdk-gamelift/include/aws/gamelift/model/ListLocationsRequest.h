@@ -38,7 +38,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+     * <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use
+     * this parameter to narrow down results to only Amazon Web Services-managed
+     * locations (Amazon EC2 or container) or only your custom locations (such as an
+     * Amazon GameLift Servers Anywhere fleet).</p>
      */
     inline const Aws::Vector<LocationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

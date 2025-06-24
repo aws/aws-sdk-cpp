@@ -38,7 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of container group to retrieve. Container group type determines how
-     * Amazon GameLift deploys the container group on each fleet instance.</p>
+     * Amazon GameLift Servers deploys the container group on each fleet instance.</p>
      */
     inline ContainerGroupType GetContainerGroupType() const { return m_containerGroupType; }
     inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }

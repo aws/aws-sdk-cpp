@@ -82,9 +82,9 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security
      * policies</a> in the <i>Application Load Balancers Guide</i> or <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security
      * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const { return m_sslPolicy; }
@@ -133,7 +133,7 @@ namespace Model
      * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
      * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN
      * policies</a> in the <i>Network Load Balancers Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlpnPolicy() const { return m_alpnPolicy; }

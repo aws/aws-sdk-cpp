@@ -14,7 +14,10 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/bedrock/BedrockServiceClientModel.h>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/bedrock/model/AgreementAvailability.h>
+#include <aws/bedrock/model/AgreementStatus.h>
 #include <aws/bedrock/model/ApplicationType.h>
+#include <aws/bedrock/model/AuthorizationStatus.h>
 #include <aws/bedrock/model/AutomatedEvaluationConfig.h>
 #include <aws/bedrock/model/AutomatedEvaluationCustomMetricConfig.h>
 #include <aws/bedrock/model/AutomatedEvaluationCustomMetricSource.h>
@@ -30,6 +33,8 @@
 #include <aws/bedrock/model/CreateCustomModelResult.h>
 #include <aws/bedrock/model/CreateEvaluationJobRequest.h>
 #include <aws/bedrock/model/CreateEvaluationJobResult.h>
+#include <aws/bedrock/model/CreateFoundationModelAgreementRequest.h>
+#include <aws/bedrock/model/CreateFoundationModelAgreementResult.h>
 #include <aws/bedrock/model/CreateGuardrailRequest.h>
 #include <aws/bedrock/model/CreateGuardrailResult.h>
 #include <aws/bedrock/model/CreateGuardrailVersionRequest.h>
@@ -60,6 +65,8 @@
 #include <aws/bedrock/model/DataProcessingDetails.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
+#include <aws/bedrock/model/DeleteFoundationModelAgreementRequest.h>
+#include <aws/bedrock/model/DeleteFoundationModelAgreementResult.h>
 #include <aws/bedrock/model/DeleteGuardrailRequest.h>
 #include <aws/bedrock/model/DeleteGuardrailResult.h>
 #include <aws/bedrock/model/DeleteImportedModelRequest.h>
@@ -76,8 +83,10 @@
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointResult.h>
+#include <aws/bedrock/model/DimensionalPriceRate.h>
 #include <aws/bedrock/model/DistillationConfig.h>
 #include <aws/bedrock/model/EndpointConfig.h>
+#include <aws/bedrock/model/EntitlementAvailability.h>
 #include <aws/bedrock/model/EvaluationBedrockModel.h>
 #include <aws/bedrock/model/EvaluationConfig.h>
 #include <aws/bedrock/model/EvaluationDataset.h>
@@ -113,6 +122,8 @@
 #include <aws/bedrock/model/GetCustomModelResult.h>
 #include <aws/bedrock/model/GetEvaluationJobRequest.h>
 #include <aws/bedrock/model/GetEvaluationJobResult.h>
+#include <aws/bedrock/model/GetFoundationModelAvailabilityRequest.h>
+#include <aws/bedrock/model/GetFoundationModelAvailabilityResult.h>
 #include <aws/bedrock/model/GetFoundationModelRequest.h>
 #include <aws/bedrock/model/GetFoundationModelResult.h>
 #include <aws/bedrock/model/GetGuardrailRequest.h>
@@ -137,6 +148,8 @@
 #include <aws/bedrock/model/GetPromptRouterResult.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
+#include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/GuardrailConfiguration.h>
 #include <aws/bedrock/model/GuardrailContentFilter.h>
 #include <aws/bedrock/model/GuardrailContentFilterAction.h>
@@ -202,10 +215,13 @@
 #include <aws/bedrock/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <aws/bedrock/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock/model/KnowledgeBaseVectorSearchConfiguration.h>
+#include <aws/bedrock/model/LegalTerm.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsResult.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsResult.h>
+#include <aws/bedrock/model/ListFoundationModelAgreementOffersRequest.h>
+#include <aws/bedrock/model/ListFoundationModelAgreementOffersResult.h>
 #include <aws/bedrock/model/ListFoundationModelsRequest.h>
 #include <aws/bedrock/model/ListFoundationModelsResult.h>
 #include <aws/bedrock/model/ListGuardrailsRequest.h>
@@ -249,10 +265,13 @@
 #include <aws/bedrock/model/ModelInvocationJobSummary.h>
 #include <aws/bedrock/model/ModelModality.h>
 #include <aws/bedrock/model/ModelStatus.h>
+#include <aws/bedrock/model/Offer.h>
+#include <aws/bedrock/model/OfferType.h>
 #include <aws/bedrock/model/OrchestrationConfiguration.h>
 #include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/bedrock/model/PerformanceConfigLatency.h>
 #include <aws/bedrock/model/PerformanceConfiguration.h>
+#include <aws/bedrock/model/PricingTerm.h>
 #include <aws/bedrock/model/PromptRouterStatus.h>
 #include <aws/bedrock/model/PromptRouterSummary.h>
 #include <aws/bedrock/model/PromptRouterTargetModel.h>
@@ -262,11 +281,14 @@
 #include <aws/bedrock/model/ProvisionedModelSummary.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>
+#include <aws/bedrock/model/PutUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/QueryTransformationConfiguration.h>
 #include <aws/bedrock/model/QueryTransformationType.h>
 #include <aws/bedrock/model/RAGConfig.h>
 #include <aws/bedrock/model/RatingScaleItem.h>
 #include <aws/bedrock/model/RatingScaleItemValue.h>
+#include <aws/bedrock/model/RegionAvailability.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/RequestMetadataBaseFilters.h>
@@ -294,10 +316,12 @@
 #include <aws/bedrock/model/StopModelCustomizationJobResult.h>
 #include <aws/bedrock/model/StopModelInvocationJobRequest.h>
 #include <aws/bedrock/model/StopModelInvocationJobResult.h>
+#include <aws/bedrock/model/SupportTerm.h>
 #include <aws/bedrock/model/Tag.h>
 #include <aws/bedrock/model/TagResourceRequest.h>
 #include <aws/bedrock/model/TagResourceResult.h>
 #include <aws/bedrock/model/TeacherModelConfig.h>
+#include <aws/bedrock/model/TermDetails.h>
 #include <aws/bedrock/model/TextInferenceConfig.h>
 #include <aws/bedrock/model/TooManyTagsException.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
@@ -315,6 +339,7 @@
 #include <aws/bedrock/model/ValidationDetails.h>
 #include <aws/bedrock/model/Validator.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
+#include <aws/bedrock/model/ValidityTerm.h>
 #include <aws/bedrock/model/VpcConfig.h>
 
 using BedrockIncludeTest = ::testing::Test;

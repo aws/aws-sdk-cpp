@@ -40,8 +40,8 @@ namespace Model
    * one. Filter configurations are used to limit placements to a subset of the
    * locations in a queue's destinations. If the override list includes a location
    * that's not on in the <code>FilterConfiguration</code> allowed list, Amazon
-   * GameLift won't attempt to place a game session there.</p> <p><h3>See
-   * Also:</h3>   <a
+   * GameLift Servers won't attempt to place a game session there.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PriorityConfigurationOverride">AWS
    * API Reference</a></p>
    */
@@ -77,7 +77,7 @@ namespace Model
      * locations (for Anywhere fleets). Each location must be listed only once. For
      * details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
-     * GameLift service locations.</a> </p>
+     * GameLift Servers service locations.</a> </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocationOrder() const { return m_locationOrder; }
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }

@@ -32,9 +32,10 @@ namespace Model
   /**
    * <p>Properties describing a game session.</p> <p>A game session in ACTIVE status
    * can host players. When a game session ends, its status is set to
-   * <code>TERMINATED</code>. </p> <p>Amazon GameLift retains a game session resource
-   * for 30 days after the game session ends. You can reuse idempotency token values
-   * after this time. Game session logs are retained for 14 days.</p> <p> <a
+   * <code>TERMINATED</code>. </p> <p>Amazon GameLift Servers retains a game session
+   * resource for 30 days after the game session ends. You can reuse idempotency
+   * token values after this time. Game session logs are retained for 14 days.</p>
+   * <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession">AWS
@@ -197,8 +198,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift Servers
+     * game server, an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -231,8 +232,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift Servers
+     * game server, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

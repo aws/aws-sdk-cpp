@@ -370,8 +370,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location where automated backups are stored: Amazon Web Services Outposts
-     * or the Amazon Web Services Region.</p>
+     * <p>The location where automated backups are stored: Dedicated Local Zones,
+     * Amazon Web Services Outposts or the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetBackupTarget() const { return m_backupTarget; }
     inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }

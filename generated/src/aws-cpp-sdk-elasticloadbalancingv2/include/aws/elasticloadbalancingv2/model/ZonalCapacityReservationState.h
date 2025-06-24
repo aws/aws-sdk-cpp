@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The capacity reservation status for each availability zone.</p><p><h3>See
+   * <p>The capacity reservation status for each Availability Zone.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ZonalCapacityReservationState">AWS
    * API Reference</a></p>
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the availability zone.</p>
+     * <p>Information about the Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }

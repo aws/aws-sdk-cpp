@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>Instructions for launching server processes on fleet computes. Server
-     * processes run either a custom game build executable or a Amazon GameLift
+     * processes run either a custom game build executable or a Amazon GameLift Servers
      * Realtime script. The runtime configuration lists the types of server processes
      * to run, how to launch them, and the number of processes to run concurrently.</p>
      */

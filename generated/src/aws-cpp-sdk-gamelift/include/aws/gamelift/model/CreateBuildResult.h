@@ -51,8 +51,8 @@ namespace Model
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a
+     * an Amazon S3 bucket that is owned by Amazon GameLift Servers. Credentials have a
+     * limited life span. To refresh these credentials, call <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */

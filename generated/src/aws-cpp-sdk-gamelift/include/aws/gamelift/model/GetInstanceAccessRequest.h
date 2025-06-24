@@ -41,7 +41,7 @@ namespace Model
      * statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>.
      * Use either a fleet ID or an ARN value. </p>  <p>You can access fleets in
      * <code>ERROR</code> status for a short period of time before Amazon GameLift
-     * deletes them.</p> 
+     * Servers deletes them.</p> 
      */
     inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }

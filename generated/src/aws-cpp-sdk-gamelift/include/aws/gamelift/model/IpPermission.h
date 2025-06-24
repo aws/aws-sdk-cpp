@@ -28,8 +28,8 @@ namespace Model
    * <p>A range of IP addresses and port settings that allow inbound traffic to
    * connect to processes on an instance in a fleet. Processes are assigned an IP
    * address/port number combination, which must fall into the fleet's allowed
-   * ranges. </p> <p>For Amazon GameLift Realtime fleets, Amazon GameLift
-   * automatically opens two port ranges, one for TCP messaging and one for
+   * ranges. </p> <p>For Amazon GameLift Servers Realtime fleets, Amazon GameLift
+   * Servers automatically opens two port ranges, one for TCP messaging and one for
    * UDP.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission">AWS
    * API Reference</a></p>

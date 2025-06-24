@@ -70,8 +70,9 @@ namespace Model
     /**
      * <p>A set of policies that enforce a sliding cap on player latency when
      * processing game sessions placement requests. Use multiple policies to gradually
-     * relax the cap over time if Amazon GameLift can't make a placement. Policies are
-     * evaluated in order starting with the lowest maximum latency value.</p>
+     * relax the cap over time if Amazon GameLift Servers can't make a placement.
+     * Policies are evaluated in order starting with the lowest maximum latency
+     * value.</p>
      */
     inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const { return m_playerLatencyPolicies; }
     inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }

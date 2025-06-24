@@ -141,6 +141,8 @@
 #include <aws/license-manager/model/Metadata.h>
 #include <aws/license-manager/model/Options.h>
 #include <aws/license-manager/model/OrganizationConfiguration.h>
+#include <aws/license-manager/model/ProductCodeListItem.h>
+#include <aws/license-manager/model/ProductCodeType.h>
 #include <aws/license-manager/model/ProductInformation.h>
 #include <aws/license-manager/model/ProductInformationFilter.h>
 #include <aws/license-manager/model/ProvisionalConfiguration.h>

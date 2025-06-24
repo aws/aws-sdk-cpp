@@ -30,11 +30,11 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon GameLift compute resource for hosting your game servers. Computes
-   * in an Amazon GameLift fleet differs depending on the fleet's compute type
-   * property as follows: </p> <ul> <li> <p>For managed EC2 fleets, a compute is an
-   * EC2 instance.</p> </li> <li> <p>For Anywhere fleets, a compute is a computing
-   * resource that you provide and is registered to the fleet.</p> </li>
+   * <p>An Amazon GameLift Servers compute resource for hosting your game servers.
+   * Computes in an Amazon GameLift Servers fleet differs depending on the fleet's
+   * compute type property as follows: </p> <ul> <li> <p>For managed EC2 fleets, a
+   * compute is an EC2 instance.</p> </li> <li> <p>For Anywhere fleets, a compute is
+   * a computing resource that you provide and is registered to the fleet.</p> </li>
    * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
@@ -101,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
-     * IP address for a compute.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift Servers requires a DNS
+     * name or IP address for a compute.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -114,8 +114,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
-     * address for a compute.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift Servers requires a DNS
+     * name or IP address for a compute.</p>
      */
     inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
@@ -167,10 +167,10 @@ namespace Model
     /**
      * <p>The type of operating system on the compute resource.</p>  <p>Amazon
      * Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a
-     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
-     * GameLift, first update the game server build to server SDK 5.x, and then deploy
-     * to AL2023 instances. See <a
+     * href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+     * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
+     * for Amazon GameLift Servers, first update the game server build to server SDK
+     * 5.x, and then deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */
@@ -183,7 +183,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
-     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
+     * an Amazon GameLift Servers Anywhere fleet, this property is empty. </p>
      */
     inline EC2InstanceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -193,9 +193,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
-     * in an Anywhere fleet. The game servers on the compute use this endpoint to
-     * connect to the Amazon GameLift service.</p>
+     * <p>The Amazon GameLift Servers SDK endpoint connection for a registered compute
+     * resource in an Anywhere fleet. The game servers on the compute use this endpoint
+     * to connect to the Amazon GameLift Servers service.</p>
      */
     inline const Aws::String& GetGameLiftServiceSdkEndpoint() const { return m_gameLiftServiceSdkEndpoint; }
     inline bool GameLiftServiceSdkEndpointHasBeenSet() const { return m_gameLiftServiceSdkEndpointHasBeenSet; }
@@ -207,7 +207,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     * <p> The endpoint of the Amazon GameLift Servers Agent. </p>
      */
     inline const Aws::String& GetGameLiftAgentEndpoint() const { return m_gameLiftAgentEndpoint; }
     inline bool GameLiftAgentEndpointHasBeenSet() const { return m_gameLiftAgentEndpointHasBeenSet; }

@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
-     * doesn't validate the path and certificate.</p>
+     * Servers doesn't validate the path and certificate.</p>
      */
     inline const Aws::String& GetCertificatePath() const { return m_certificatePath; }
     inline bool CertificatePathHasBeenSet() const { return m_certificatePathHasBeenSet; }
@@ -74,8 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
-     * name or IP address.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift Servers requires either
+     * a DNS name or IP address.</p>
      */
     inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
@@ -87,9 +87,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
-     * name or IP address. When registering an Anywhere fleet, an IP address is
-     * required.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift Servers requires
+     * either a DNS name or IP address. When registering an Anywhere fleet, an IP
+     * address is required.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }

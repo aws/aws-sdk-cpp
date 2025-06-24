@@ -35,6 +35,11 @@ LocationModel& LocationModel::operator =(JsonView jsonValue)
     m_locationArn = jsonValue.GetString("LocationArn");
     m_locationArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PingBeacon"))
+  {
+    m_pingBeacon = jsonValue.GetObject("PingBeacon");
+    m_pingBeaconHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue LocationModel::Jsonize() const
   if(m_locationArnHasBeenSet)
   {
    payload.WithString("LocationArn", m_locationArn);
+
+  }
+
+  if(m_pingBeaconHasBeenSet)
+  {
+   payload.WithObject("PingBeacon", m_pingBeacon.Jsonize());
 
   }
 

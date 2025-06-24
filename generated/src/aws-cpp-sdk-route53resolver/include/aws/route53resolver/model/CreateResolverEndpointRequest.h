@@ -97,9 +97,11 @@ namespace Model
     ///@{
     /**
      * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
-     * Resolver forwards DNS queries to the DNS service for a VPC from your network</p>
-     * </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS
-     * service for a VPC to your network</p> </li> </ul>
+     * Resolver forwards DNS queries to the DNS service for a VPC from your
+     * network.</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries
+     * from the DNS service for a VPC to your network.</p> </li> <li> <p>
+     * <code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private
+     * hosted zones from your network.</p> </li> </ul>
      */
     inline ResolverEndpointDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
@@ -180,13 +182,14 @@ namespace Model
     ///@{
     /**
      * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
-     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
-     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
-     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
-     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
-     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
-     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
-     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * default inbound endpoints only. </p> <p>For a default inbound endpoint you can
+     * apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li>
+     * <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS
+     * alone.</p> </li> <li> <p>None, which is treated as Do53.</p> </li> </ul> <p>For
+     * a delegation inbound endpoint you can use Do53 only.</p> <p>For an outbound
+     * endpoint you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH
+     * in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
      * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }

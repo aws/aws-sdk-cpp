@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/UserdataType.h>
 #include <aws/batch/model/LaunchTemplateSpecificationOverride.h>
 #include <utility>
 
@@ -119,6 +120,20 @@ namespace Model
     template<typename OverridesT = LaunchTemplateSpecificationOverride>
     LaunchTemplateSpecification& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The EKS node initialization process to use. You only need to specify this
+     * value if you are using a custom AMI. The default value is
+     * <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on
+     * EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose
+     * <code>EKS_NODEADM</code>.</p>
+     */
+    inline UserdataType GetUserdataType() const { return m_userdataType; }
+    inline bool UserdataTypeHasBeenSet() const { return m_userdataTypeHasBeenSet; }
+    inline void SetUserdataType(UserdataType value) { m_userdataTypeHasBeenSet = true; m_userdataType = value; }
+    inline LaunchTemplateSpecification& WithUserdataType(UserdataType value) { SetUserdataType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_launchTemplateId;
@@ -132,6 +147,9 @@ namespace Model
 
     Aws::Vector<LaunchTemplateSpecificationOverride> m_overrides;
     bool m_overridesHasBeenSet = false;
+
+    UserdataType m_userdataType{UserdataType::NOT_SET};
+    bool m_userdataTypeHasBeenSet = false;
   };
 
 } // namespace Model

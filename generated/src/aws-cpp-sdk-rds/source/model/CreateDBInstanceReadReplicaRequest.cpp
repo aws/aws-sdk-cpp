@@ -282,6 +282,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
+  if(m_backupTargetHasBeenSet)
+  {
+    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";

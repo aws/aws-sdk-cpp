@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/license-manager/model/ProductCodeListItem.h>
 #include <utility>
 
 namespace Aws
@@ -53,10 +55,27 @@ namespace Model
     template<typename UsageOperationT = Aws::String>
     LicenseConversionContext& WithUsageOperation(UsageOperationT&& value) { SetUsageOperation(std::forward<UsageOperationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Product codes referred to in the license conversion process.</p>
+     */
+    inline const Aws::Vector<ProductCodeListItem>& GetProductCodes() const { return m_productCodes; }
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+    template<typename ProductCodesT = Aws::Vector<ProductCodeListItem>>
+    void SetProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::forward<ProductCodesT>(value); }
+    template<typename ProductCodesT = Aws::Vector<ProductCodeListItem>>
+    LicenseConversionContext& WithProductCodes(ProductCodesT&& value) { SetProductCodes(std::forward<ProductCodesT>(value)); return *this;}
+    template<typename ProductCodesT = ProductCodeListItem>
+    LicenseConversionContext& AddProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes.emplace_back(std::forward<ProductCodesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_usageOperation;
     bool m_usageOperationHasBeenSet = false;
+
+    Aws::Vector<ProductCodeListItem> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
   };
 
 } // namespace Model

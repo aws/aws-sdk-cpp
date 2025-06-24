@@ -161,8 +161,8 @@ namespace Model
      * fleets). You can choose to limit placements to locations on the override list
      * only, or you can prioritize locations on the override list first and then fall
      * back to the queue's other locations if needed. Choose a fallback strategy to use
-     * in the event that Amazon GameLift fails to place a game session in any of the
-     * locations on the priority override list. </p>
+     * in the event that Amazon GameLift Servers fails to place a game session in any
+     * of the locations on the priority override list. </p>
      */
     inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const { return m_priorityConfigurationOverride; }
     inline bool PriorityConfigurationOverrideHasBeenSet() const { return m_priorityConfigurationOverrideHasBeenSet; }

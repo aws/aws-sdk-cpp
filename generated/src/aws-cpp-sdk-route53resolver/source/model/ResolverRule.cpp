@@ -99,6 +99,11 @@ ResolverRule& ResolverRule::operator =(JsonView jsonValue)
     m_modificationTime = jsonValue.GetString("ModificationTime");
     m_modificationTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DelegationRecord"))
+  {
+    m_delegationRecord = jsonValue.GetString("DelegationRecord");
+    m_delegationRecordHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -189,6 +194,12 @@ JsonValue ResolverRule::Jsonize() const
   if(m_modificationTimeHasBeenSet)
   {
    payload.WithString("ModificationTime", m_modificationTime);
+
+  }
+
+  if(m_delegationRecordHasBeenSet)
+  {
+   payload.WithString("DelegationRecord", m_delegationRecord);
 
   }
 

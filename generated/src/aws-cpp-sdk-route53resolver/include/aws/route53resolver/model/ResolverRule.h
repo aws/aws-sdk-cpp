@@ -133,12 +133,15 @@ namespace Model
     ///@{
     /**
      * <p>When you want to forward DNS queries for specified domain name to resolvers
-     * on your network, specify <code>FORWARD</code>.</p> <p>When you have a forwarding
-     * rule to forward DNS queries for a domain to your network and you want Resolver
-     * to process queries for a subdomain of that domain, specify
-     * <code>SYSTEM</code>.</p> <p>For example, to forward DNS queries for example.com
-     * to resolvers on your network, you create a rule and specify <code>FORWARD</code>
-     * for <code>RuleType</code>. To then have Resolver process queries for
+     * on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a
+     * query matches multiple Resolver rules (example.com and www.example.com),
+     * outbound DNS queries are routed using the Resolver rule that contains the most
+     * specific domain name (www.example.com).</p> <p>When you have a forwarding rule
+     * to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+     * <p>For example, to forward DNS queries for example.com to resolvers on your
+     * network, you create a rule and specify <code>FORWARD</code> for
+     * <code>RuleType</code>. To then have Resolver process queries for
      * apex.example.com, you create a rule and specify <code>SYSTEM</code> for
      * <code>RuleType</code>.</p> <p>Currently, only Resolver can create rules that
      * have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -240,6 +243,19 @@ namespace Model
     template<typename ModificationTimeT = Aws::String>
     ResolverRule& WithModificationTime(ModificationTimeT&& value) { SetModificationTime(std::forward<ModificationTimeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> DNS queries with delegation records that point to this domain name are
+     * forwarded to resolvers on your network. </p>
+     */
+    inline const Aws::String& GetDelegationRecord() const { return m_delegationRecord; }
+    inline bool DelegationRecordHasBeenSet() const { return m_delegationRecordHasBeenSet; }
+    template<typename DelegationRecordT = Aws::String>
+    void SetDelegationRecord(DelegationRecordT&& value) { m_delegationRecordHasBeenSet = true; m_delegationRecord = std::forward<DelegationRecordT>(value); }
+    template<typename DelegationRecordT = Aws::String>
+    ResolverRule& WithDelegationRecord(DelegationRecordT&& value) { SetDelegationRecord(std::forward<DelegationRecordT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -283,6 +299,9 @@ namespace Model
 
     Aws::String m_modificationTime;
     bool m_modificationTimeHasBeenSet = false;
+
+    Aws::String m_delegationRecord;
+    bool m_delegationRecordHasBeenSet = false;
   };
 
 } // namespace Model

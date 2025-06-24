@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     INBOUND,
-    OUTBOUND
+    OUTBOUND,
+    INBOUND_DELEGATION
   };
 
 namespace ResolverEndpointDirectionMapper

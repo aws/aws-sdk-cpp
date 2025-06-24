@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     FORWARD,
     SYSTEM,
-    RECURSIVE
+    RECURSIVE,
+    DELEGATE
   };
 
 namespace RuleTypeOptionMapper

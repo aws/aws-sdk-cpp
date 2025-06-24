@@ -40,7 +40,7 @@ namespace Model
      * from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon GameLift service.</p>
+     * S3 location controls by the Amazon GameLift Servers service.</p>
      */
     inline const Script& GetScript() const { return m_script; }
     template<typename ScriptT = Script>

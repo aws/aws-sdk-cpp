@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Amazon GameLift configuration options for your Anywhere fleets.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Amazon GameLift Servers configuration options for your Anywhere
+   * fleets.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AnywhereConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,11 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
-     * of your fleet to balance usage in queues. For more information about queues, see
-     * <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift Servers uses the
+     * provided cost of your fleet to balance usage in queues. For more information
+     * about queues, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
+     * up queues</a> in the <i>Amazon GameLift Servers Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCost() const { return m_cost; }
     inline bool CostHasBeenSet() const { return m_costHasBeenSet; }

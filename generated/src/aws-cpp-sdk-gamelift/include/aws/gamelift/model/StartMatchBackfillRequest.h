@@ -39,7 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon GameLift Servers will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */

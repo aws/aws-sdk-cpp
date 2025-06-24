@@ -165,6 +165,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Availability Zone where the EBS volume will be created (for example,
+     * <code>us-east-1a</code>).</p> <p>Either <code>AvailabilityZone</code> or
+     * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
+     * specified, Amazon EC2 automatically selects an Availability Zone within the
+     * Region.</p> <p>This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    EbsBlockDevice& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the encryption state of an EBS volume is changed while
      * being restored from a backing snapshot. The effect of setting the encryption
      * state to <code>true</code> depends on the volume origin (new or from a
@@ -230,6 +247,23 @@ namespace Model
     inline void SetVolumeInitializationRate(int value) { m_volumeInitializationRateHasBeenSet = true; m_volumeInitializationRate = value; }
     inline EbsBlockDevice& WithVolumeInitializationRate(int value) { SetVolumeInitializationRate(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone where the EBS volume will be created (for
+     * example, <code>use1-az1</code>).</p> <p>Either <code>AvailabilityZone</code> or
+     * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
+     * specified, Amazon EC2 automatically selects an Availability Zone within the
+     * Region.</p> <p>This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    EbsBlockDevice& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     bool m_deleteOnTermination{false};
@@ -256,11 +290,17 @@ namespace Model
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
 
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
+
     bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     int m_volumeInitializationRate{0};
     bool m_volumeInitializationRateHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

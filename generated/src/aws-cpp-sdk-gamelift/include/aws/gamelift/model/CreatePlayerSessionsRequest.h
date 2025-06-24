@@ -65,10 +65,10 @@ namespace Model
     ///@{
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
-     * developer-defined information related to the player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. Any player
-     * data strings for player IDs that are not included in the <code>PlayerIds</code>
-     * parameter are ignored. </p>
+     * developer-defined information related to the player. Amazon GameLift Servers
+     * does not use this data, so it can be formatted as needed for use in the game.
+     * Any player data strings for player IDs that are not included in the
+     * <code>PlayerIds</code> parameter are ignored. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPlayerDataMap() const { return m_playerDataMap; }
     inline bool PlayerDataMapHasBeenSet() const { return m_playerDataMapHasBeenSet; }

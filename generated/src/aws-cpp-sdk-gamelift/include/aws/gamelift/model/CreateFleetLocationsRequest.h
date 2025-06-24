@@ -52,9 +52,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
-     * as a remote location, in the form of an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * the fleet. You can add any Amazon GameLift Servers-supported Amazon Web Services
+     * Region as a remote location, in the form of an Amazon Web Services Region code
+     * such as <code>us-west-2</code>. </p>
      */
     inline const Aws::Vector<LocationConfiguration>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }

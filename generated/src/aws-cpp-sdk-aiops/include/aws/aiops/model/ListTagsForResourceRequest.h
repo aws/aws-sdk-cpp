@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon Q Developer operational investigations resource that
-     * you want to view tags for. You can use the <a
+     * <p>The ARN of the CloudWatch investigations resource that you want to view tags
+     * for. You can use the <a
      * href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_ListInvestigationGroups.html">ListInvestigationGroups</a>
      * operation to find the ARNs of investigation groups.</p> <p>The ARN format for an
      * investigation group is

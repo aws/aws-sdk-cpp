@@ -49,6 +49,11 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView js
     }
     m_overridesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("userdataType"))
+  {
+    m_userdataType = UserdataTypeMapper::GetUserdataTypeForName(jsonValue.GetString("userdataType"));
+    m_userdataTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +88,11 @@ JsonValue LaunchTemplateSpecification::Jsonize() const
    }
    payload.WithArray("overrides", std::move(overridesJsonList));
 
+  }
+
+  if(m_userdataTypeHasBeenSet)
+  {
+   payload.WithString("userdataType", UserdataTypeMapper::GetNameForUserdataType(m_userdataType));
   }
 
   return payload;

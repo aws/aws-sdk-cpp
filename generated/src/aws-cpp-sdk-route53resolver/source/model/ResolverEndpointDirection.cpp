@@ -22,6 +22,7 @@ namespace Aws
 
         static const int INBOUND_HASH = HashingUtils::HashString("INBOUND");
         static const int OUTBOUND_HASH = HashingUtils::HashString("OUTBOUND");
+        static const int INBOUND_DELEGATION_HASH = HashingUtils::HashString("INBOUND_DELEGATION");
 
 
         ResolverEndpointDirection GetResolverEndpointDirectionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == OUTBOUND_HASH)
           {
             return ResolverEndpointDirection::OUTBOUND;
+          }
+          else if (hashCode == INBOUND_DELEGATION_HASH)
+          {
+            return ResolverEndpointDirection::INBOUND_DELEGATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "INBOUND";
           case ResolverEndpointDirection::OUTBOUND:
             return "OUTBOUND";
+          case ResolverEndpointDirection::INBOUND_DELEGATION:
+            return "INBOUND_DELEGATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

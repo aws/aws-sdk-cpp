@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SnapshotLocationEnum.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
@@ -61,6 +62,22 @@ namespace Model
     CreateImageRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
     template<typename TagSpecificationsT = TagSpecification>
     CreateImageRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Only supported for instances in Local Zones. If the source instance is
+     * not in a Local Zone, omit this parameter.</p>  <p>The Amazon S3 location
+     * where the snapshots will be stored.</p> <ul> <li> <p>To create local snapshots
+     * in the same Local Zone as the source instance, specify <code>local</code>.</p>
+     * </li> <li> <p>To create regional snapshots in the parent Region of the Local
+     * Zone, specify <code>regional</code> or omit this parameter.</p> </li> </ul>
+     * <p>Default: <code>regional</code> </p>
+     */
+    inline SnapshotLocationEnum GetSnapshotLocation() const { return m_snapshotLocation; }
+    inline bool SnapshotLocationHasBeenSet() const { return m_snapshotLocationHasBeenSet; }
+    inline void SetSnapshotLocation(SnapshotLocationEnum value) { m_snapshotLocationHasBeenSet = true; m_snapshotLocation = value; }
+    inline CreateImageRequest& WithSnapshotLocation(SnapshotLocationEnum value) { SetSnapshotLocation(value); return *this;}
     ///@}
 
     ///@{
@@ -159,6 +176,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    SnapshotLocationEnum m_snapshotLocation{SnapshotLocationEnum::NOT_SET};
+    bool m_snapshotLocationHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

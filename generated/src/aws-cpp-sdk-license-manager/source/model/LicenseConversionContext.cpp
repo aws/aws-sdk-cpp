@@ -30,6 +30,15 @@ LicenseConversionContext& LicenseConversionContext::operator =(JsonView jsonValu
     m_usageOperation = jsonValue.GetString("UsageOperation");
     m_usageOperationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ProductCodes"))
+  {
+    Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("ProductCodes");
+    for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
+    {
+      m_productCodes.push_back(productCodesJsonList[productCodesIndex].AsObject());
+    }
+    m_productCodesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue LicenseConversionContext::Jsonize() const
   if(m_usageOperationHasBeenSet)
   {
    payload.WithString("UsageOperation", m_usageOperation);
+
+  }
+
+  if(m_productCodesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> productCodesJsonList(m_productCodes.size());
+   for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
+   {
+     productCodesJsonList[productCodesIndex].AsObject(m_productCodes[productCodesIndex].Jsonize());
+   }
+   payload.WithArray("ProductCodes", std::move(productCodesJsonList));
 
   }
 
