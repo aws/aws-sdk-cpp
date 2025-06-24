@@ -6,6 +6,7 @@
 #include <aws/core/Aws.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3Client.h>
@@ -44,7 +45,9 @@ int main(int argc, char** argv) {
   PerformanceTest::Reporting::JsonReportingMetrics::RegisterOperationsToMonitor(PerformanceTest::Services::S3::TestConfig::Operations);
 
   Aws::SDKOptions::SDKVersion const version;
-  Aws::String const versionStr = Aws::String(std::to_string(version.major)) + "." + Aws::String(std::to_string(version.minor)) + "." + Aws::String(std::to_string(version.patch));
+  Aws::String const versionStr = Aws::Utils::StringUtils::to_string(version.major) + "." +
+                                 Aws::Utils::StringUtils::to_string(version.minor) + "." +
+                                 Aws::Utils::StringUtils::to_string(version.patch);
   PerformanceTest::Reporting::JsonReportingMetrics::SetProductInfo("cpp1", versionStr, commitId);
   PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename(PerformanceTest::Services::S3::TestConfig::OutputFilename);
 
