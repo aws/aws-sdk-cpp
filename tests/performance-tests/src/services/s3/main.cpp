@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
   PerformanceTest::Reporting::JsonReportingMetrics::RegisterOperationsToMonitor(PerformanceTest::Services::S3::TestConfig::Operations);
 
   Aws::SDKOptions::SDKVersion const version;
-  Aws::String const versionStr = std::to_string(version.major) + "." + std::to_string(version.minor) + "." + std::to_string(version.patch);
+  Aws::String const versionStr = Aws::String(std::to_string(version.major)) + "." + Aws::String(std::to_string(version.minor)) + "." + Aws::String(std::to_string(version.patch));
   PerformanceTest::Reporting::JsonReportingMetrics::SetProductInfo("cpp1", versionStr, commitId);
   PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename(PerformanceTest::Services::S3::TestConfig::OutputFilename);
 

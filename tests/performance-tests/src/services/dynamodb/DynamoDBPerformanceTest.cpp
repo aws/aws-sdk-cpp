@@ -84,7 +84,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
     putItemRequest.SetTableName(tableName);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> item;
-    item["id"].SetS("test-key-" + std::to_string(i));
+    item["id"].SetS(Aws::String("test-key-") + Aws::String(std::to_string(i)));
     item["data"].SetS(payload);
     putItemRequest.SetItem(item);
 
@@ -100,7 +100,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
     getItemRequest.SetTableName(tableName);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> key;
-    key["id"].SetS("test-key-" + std::to_string(i));
+    key["id"].SetS(Aws::String("test-key-") + Aws::String(std::to_string(i)));
     getItemRequest.SetKey(key);
 
     auto getItemOutcome = dynamodb.GetItem(getItemRequest);
