@@ -71,7 +71,7 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
     *stream << payload;
 
     Aws::S3::Model::PutObjectRequest por;
-    por.WithBucket(bucketName).WithKey("test-object-" + std::to_string(i)).SetBody(stream);
+    por.WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)).SetBody(stream);
     if (!s3.PutObject(por).IsSuccess()) {
       std::cerr << "[ERROR] PutObject failed!" << '\n';
     }
@@ -80,14 +80,14 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
   // Run GetObject multiple times
   for (int i = 0; i < iterations; i++) {
     Aws::S3::Model::GetObjectRequest gor;
-    gor.WithBucket(bucketName).WithKey("test-object-" + std::to_string(i));
+    gor.WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i));
     if (!s3.GetObject(gor).IsSuccess()) {
       std::cerr << "[ERROR] GetObject failed!" << '\n';
     }
   }
 
   for (int i = 0; i < iterations; i++) {
-    s3.DeleteObject(Aws::S3::Model::DeleteObjectRequest().WithBucket(bucketName).WithKey("test-object-" + std::to_string(i)));
+    s3.DeleteObject(Aws::S3::Model::DeleteObjectRequest().WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)));
   }
   s3.DeleteBucket(Aws::S3::Model::DeleteBucketRequest().WithBucket(bucketName));
 
