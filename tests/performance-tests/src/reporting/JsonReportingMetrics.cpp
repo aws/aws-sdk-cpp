@@ -172,7 +172,7 @@ void JsonReportingMetrics::DumpJson() const {
 
   root.WithArray("results", std::move(results));
 
-  std::ofstream outFile(OutputFilename);
+  std::ofstream outFile(OutputFilename.c_str());
   if (outFile.is_open()) {
     outFile << root.View().WriteReadable();
   }
