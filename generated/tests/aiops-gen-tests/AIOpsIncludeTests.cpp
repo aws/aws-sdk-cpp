@@ -16,6 +16,7 @@
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/aiops/model/CreateInvestigationGroupRequest.h>
 #include <aws/aiops/model/CreateInvestigationGroupResult.h>
+#include <aws/aiops/model/CrossAccountConfiguration.h>
 #include <aws/aiops/model/DeleteInvestigationGroupPolicyRequest.h>
 #include <aws/aiops/model/DeleteInvestigationGroupPolicyResult.h>
 #include <aws/aiops/model/DeleteInvestigationGroupRequest.h>

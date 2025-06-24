@@ -145,8 +145,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a
-     * more specific identifier, see <code>ResolvedImageDigest</code>. </p>
+     * <p>The URI to the image that Amazon GameLift Servers deploys to a container
+     * fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.
+     * </p>
      */
     inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
@@ -158,10 +159,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The amount of memory that Amazon GameLift makes available to the container.
-     * If memory limits aren't set for an individual container, the container shares
-     * the container group's total memory allocation.</p> <p> <b>Related data type:
-     * </b> <a
+     * <p>The amount of memory that Amazon GameLift Servers makes available to the
+     * container. If memory limits aren't set for an individual container, the
+     * container shares the container group's total memory allocation.</p> <p>
+     * <b>Related data type: </b> <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition
      * TotalMemoryLimitMebibytes</a> </p>
      */
@@ -175,9 +176,10 @@ namespace Model
     /**
      * <p>A set of ports that allow access to the container from external users.
      * Processes running in the container can bind to a one of these ports. Container
-     * ports aren't directly accessed by inbound traffic. Amazon GameLift maps these
-     * container ports to externally accessible connection ports, which are assigned as
-     * needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+     * ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps
+     * these container ports to externally accessible connection ports, which are
+     * assigned as needed from the container fleet's
+     * <code>ConnectionPortRange</code>.</p>
      */
     inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
     inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }

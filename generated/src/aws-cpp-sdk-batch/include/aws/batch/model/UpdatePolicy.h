@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether jobs are automatically terminated when the computer
+     * <p>Specifies whether jobs are automatically terminated when the compute
      * environment infrastructure is updated. The default value is
      * <code>false</code>.</p>
      */

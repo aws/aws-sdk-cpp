@@ -73,6 +73,7 @@ namespace Aws
         static const int cs_CZ_HASH = HashingUtils::HashString("cs-CZ");
         static const int cy_WL_HASH = HashingUtils::HashString("cy-WL");
         static const int el_GR_HASH = HashingUtils::HashString("el-GR");
+        static const int et_EE_HASH = HashingUtils::HashString("et-EE");
         static const int et_ET_HASH = HashingUtils::HashString("et-ET");
         static const int eu_ES_HASH = HashingUtils::HashString("eu-ES");
         static const int fi_FI_HASH = HashingUtils::HashString("fi-FI");
@@ -340,6 +341,10 @@ namespace Aws
           else if (hashCode == el_GR_HASH)
           {
             return LanguageCode::el_GR;
+          }
+          else if (hashCode == et_EE_HASH)
+          {
+            return LanguageCode::et_EE;
           }
           else if (hashCode == et_ET_HASH)
           {
@@ -667,6 +672,8 @@ namespace Aws
             return "cy-WL";
           case LanguageCode::el_GR:
             return "el-GR";
+          case LanguageCode::et_EE:
+            return "et-EE";
           case LanguageCode::et_ET:
             return "et-ET";
           case LanguageCode::eu_ES:

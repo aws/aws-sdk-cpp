@@ -31,15 +31,16 @@ namespace Model
    * to start a new game session. This configuration replaces the default
    * prioritization process for queues.</p> <p>By default, a queue makes game session
    * placements based on the following criteria:</p> <ul> <li> <p>When a game session
-   * request does not include player latency data, Amazon GameLift places game
-   * sessions based on the following priorities: (1) the queue's default destination
-   * order, and (2) for multi-location fleets, an alphabetic list of locations.</p>
-   * </li> <li> <p>When a game session request includes player latency data, Amazon
-   * GameLift re-orders the queue's destinations to make placements where the average
-   * player latency is lowest. It reorders based the following priorities: (1) the
-   * lowest average latency across all players, (2) the lowest hosting cost, (3) the
-   * queue's default destination order, and (4) for multi-location fleets, an
-   * alphabetic list of locations.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * request does not include player latency data, Amazon GameLift Servers places
+   * game sessions based on the following priorities: (1) the queue's default
+   * destination order, and (2) for multi-location fleets, an alphabetic list of
+   * locations.</p> </li> <li> <p>When a game session request includes player latency
+   * data, Amazon GameLift Servers re-orders the queue's destinations to make
+   * placements where the average player latency is lowest. It reorders based the
+   * following priorities: (1) the lowest average latency across all players, (2) the
+   * lowest hosting cost, (3) the queue's default destination order, and (4) for
+   * multi-location fleets, an alphabetic list of locations.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PriorityConfiguration">AWS
    * API Reference</a></p>
    */
@@ -56,15 +57,15 @@ namespace Model
     /**
      * <p>A custom sequence to use when prioritizing where to place new game sessions.
      * Each priority type is listed once.</p> <ul> <li> <p> <code>LATENCY</code> --
-     * Amazon GameLift prioritizes locations where the average player latency is
-     * lowest. Player latency data is provided in each game session placement
-     * request.</p> </li> <li> <p> <code>COST</code> -- Amazon GameLift prioritizes
-     * queue destinations with the lowest current hosting costs. Cost is evaluated
-     * based on the destination's location, instance type, and fleet type (Spot or
-     * On-Demand).</p> </li> <li> <p> <code>DESTINATION</code> -- Amazon GameLift
-     * prioritizes based on the list order of destinations in the queue
-     * configuration.</p> </li> <li> <p> <code>LOCATION</code> -- Amazon GameLift
-     * prioritizes based on the provided order of locations, as defined in
+     * Amazon GameLift Servers prioritizes locations where the average player latency
+     * is lowest. Player latency data is provided in each game session placement
+     * request.</p> </li> <li> <p> <code>COST</code> -- Amazon GameLift Servers
+     * prioritizes queue destinations with the lowest current hosting costs. Cost is
+     * evaluated based on the destination's location, instance type, and fleet type
+     * (Spot or On-Demand).</p> </li> <li> <p> <code>DESTINATION</code> -- Amazon
+     * GameLift Servers prioritizes based on the list order of destinations in the
+     * queue configuration.</p> </li> <li> <p> <code>LOCATION</code> -- Amazon GameLift
+     * Servers prioritizes based on the provided order of locations, as defined in
      * <code>LocationOrder</code>. </p> </li> </ul>
      */
     inline const Aws::Vector<PriorityType>& GetPriorityOrder() const { return m_priorityOrder; }
@@ -84,7 +85,7 @@ namespace Model
      * local zones, and custom locations (for Anywhere fleets). Each location must be
      * listed only once. For details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
-     * GameLift service locations.</a> </p>
+     * GameLift Servers service locations.</a> </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocationOrder() const { return m_locationOrder; }
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }

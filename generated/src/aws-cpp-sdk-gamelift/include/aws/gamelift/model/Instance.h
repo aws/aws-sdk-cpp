@@ -29,8 +29,8 @@ namespace Model
 
   /**
    * <p>Represents a virtual computing instance that runs game server processes and
-   * hosts game sessions. In Amazon GameLift, one or more instances make up a managed
-   * EC2 fleet.</p><p><h3>See Also:</h3>   <a
+   * hosts game sessions. In Amazon GameLift Servers, one or more instances make up a
+   * managed EC2 fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
    * API Reference</a></p>
    */
@@ -59,8 +59,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift Servers fleet resource and uniquely
+     * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
@@ -120,10 +120,10 @@ namespace Model
     /**
      * <p>Operating system that is running on this EC2 instance. </p>  <p>Amazon
      * Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a
-     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
-     * GameLift, first update the game server build to server SDK 5.x, and then deploy
-     * to AL2023 instances. See <a
+     * href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+     * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
+     * for Amazon GameLift Servers, first update the game server build to server SDK
+     * 5.x, and then deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */
@@ -150,11 +150,11 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
-     * -- The instance is in the process of shutting down. This may happen to reduce
-     * capacity during a scaling down event or to recycle resources in the event of a
-     * problem.</p> </li> </ul>
+     * Amazon GameLift Servers that it is ready to host a game session. The instance is
+     * now considered ready to host game sessions. </p> </li> <li> <p>
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may
+     * happen to reduce capacity during a scaling down event or to recycle resources in
+     * the event of a problem.</p> </li> </ul>
      */
     inline InstanceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

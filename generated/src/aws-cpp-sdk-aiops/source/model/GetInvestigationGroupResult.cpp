@@ -100,6 +100,15 @@ GetInvestigationGroupResult& GetInvestigationGroupResult::operator =(const Aws::
     m_isCloudTrailEventHistoryEnabled = jsonValue.GetBool("isCloudTrailEventHistoryEnabled");
     m_isCloudTrailEventHistoryEnabledHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("crossAccountConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> crossAccountConfigurationsJsonList = jsonValue.GetArray("crossAccountConfigurations");
+    for(unsigned crossAccountConfigurationsIndex = 0; crossAccountConfigurationsIndex < crossAccountConfigurationsJsonList.GetLength(); ++crossAccountConfigurationsIndex)
+    {
+      m_crossAccountConfigurations.push_back(crossAccountConfigurationsJsonList[crossAccountConfigurationsIndex].AsObject());
+    }
+    m_crossAccountConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -71,6 +71,16 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
     ss << "CopyOptionGroup=" << std::boolalpha << m_copyOptionGroup << "&";
   }
 
+  if(m_snapshotAvailabilityZoneHasBeenSet)
+  {
+    ss << "SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
+  }
+
+  if(m_snapshotTargetHasBeenSet)
+  {
+    ss << "SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

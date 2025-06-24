@@ -56,8 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of container group being defined. Container group type determines
-     * how Amazon GameLift deploys the container group on each fleet instance.</p>
-     * <p>Default value: <code>GAME_SERVER</code> </p>
+     * how Amazon GameLift Servers deploys the container group on each fleet
+     * instance.</p> <p>Default value: <code>GAME_SERVER</code> </p>
      */
     inline ContainerGroupType GetContainerGroupType() const { return m_containerGroupType; }
     inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }
@@ -129,10 +129,10 @@ namespace Model
      * run on the same operating system.</p> <p>Default value:
      * <code>AMAZON_LINUX_2023</code> </p>  <p>Amazon Linux 2 (AL2) will reach
      * end of support on 6/30/2025. See more details in the <a
-     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+     * href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
      * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
-     * GameLift, first update the game server build to server SDK 5.x, and then deploy
-     * to AL2023 instances. See <a
+     * GameLift Servers, first update the game server build to server SDK 5.x, and then
+     * deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */

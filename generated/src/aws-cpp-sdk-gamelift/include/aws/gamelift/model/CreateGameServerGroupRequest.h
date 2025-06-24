@@ -45,8 +45,8 @@ namespace Model
     /**
      * <p>An identifier for the new game server group. This value is used to generate
      * unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon
-     * GameLift FleetIQ game server group. The name must be unique per Region per
-     * Amazon Web Services account.</p>
+     * GameLift Servers FleetIQ game server group. The name must be unique per Region
+     * per Amazon Web Services account.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
@@ -60,8 +60,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
-     * Scaling groups.</p>
+     * for an IAM role that allows Amazon GameLift Servers to access your Amazon EC2
+     * Auto Scaling groups.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -74,9 +74,9 @@ namespace Model
     ///@{
     /**
      * <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not
-     * scale down the group below this minimum. In production, this value should be set
-     * to at least 1. After the Auto Scaling group is created, update this value
+     * During automatic scaling events, Amazon GameLift Servers FleetIQ and Amazon EC2
+     * do not scale down the group below this minimum. In production, this value should
+     * be set to at least 1. After the Auto Scaling group is created, update this value
      * directly in the Auto Scaling group using the Amazon Web Services console or
      * APIs.</p>
      */
@@ -89,10 +89,10 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group.
-     * During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up
-     * the group above this maximum. After the Auto Scaling group is created, update
-     * this value directly in the Auto Scaling group using the Amazon Web Services
-     * console or APIs.</p>
+     * During automatic scaling events, Amazon GameLift Servers FleetIQ and EC2 do not
+     * scale up the group above this maximum. After the Auto Scaling group is created,
+     * update this value directly in the Auto Scaling group using the Amazon Web
+     * Services console or APIs.</p>
      */
     inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
@@ -113,8 +113,8 @@ namespace Model
      * Services console or APIs.</p>  <p>If you specify network interfaces in
      * your launch template, you must explicitly set the property
      * <code>AssociatePublicIpAddress</code> to "true". If no network interface is
-     * specified in the launch template, Amazon GameLift FleetIQ uses your account's
-     * default VPC.</p> 
+     * specified in the launch template, Amazon GameLift Servers FleetIQ uses your
+     * account's default VPC.</p> 
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
@@ -128,8 +128,8 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The
      * instance definitions must specify at least two different instance types that are
-     * supported by Amazon GameLift FleetIQ. For more information on instance types,
-     * see <a
+     * supported by Amazon GameLift Servers FleetIQ. For more information on instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You
      * can optionally specify capacity weighting for each instance type. If no weight
@@ -168,22 +168,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
-     * On-Demand Instances in the game server group. Method options include the
-     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
-     * used in the game server group. If Spot Instances are unavailable or not viable
-     * for game hosting, the game server group provides no hosting capacity until Spot
-     * Instances can again be used. Until then, no new instances are started, and the
-     * existing nonviable Spot Instances are terminated (after current gameplay ends)
-     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
-     * value) Spot Instances are used whenever available in the game server group. If
-     * Spot Instances are unavailable, the game server group continues to provide
-     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
-     * Instances are terminated (after current gameplay ends) and are replaced with new
-     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
-     * On-Demand Instances are used in the game server group. No Spot Instances are
-     * used, even when available, while this balancing strategy is in force.</p> </li>
-     * </ul>
+     * <p>Indicates how Amazon GameLift Servers FleetIQ balances the use of Spot
+     * Instances and On-Demand Instances in the game server group. Method options
+     * include the following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot
+     * Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting
+     * capacity until Spot Instances can again be used. Until then, no new instances
+     * are started, and the existing nonviable Spot Instances are terminated (after
+     * current gameplay ends) and are not replaced.</p> </li> <li> <p>
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever
+     * available in the game server group. If Spot Instances are unavailable, the game
+     * server group continues to provide hosting capacity by falling back to On-Demand
+     * Instances. Existing nonviable Spot Instances are terminated (after current
+     * gameplay ends) and are replaced with new On-Demand Instances.</p> </li> <li> <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
+     * server group. No Spot Instances are used, even when available, while this
+     * balancing strategy is in force.</p> </li> </ul>
      */
     inline BalancingStrategy GetBalancingStrategy() const { return m_balancingStrategy; }
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
@@ -211,7 +211,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of virtual private cloud (VPC) subnets to use with instances in the
-     * game server group. By default, all Amazon GameLift FleetIQ-supported
+     * game server group. By default, all Amazon GameLift Servers FleetIQ-supported
      * Availability Zones are used. You can use this parameter to specify VPCs that
      * you've set up. This property cannot be updated after the game server group is
      * created, and the corresponding Auto Scaling group will always use the property

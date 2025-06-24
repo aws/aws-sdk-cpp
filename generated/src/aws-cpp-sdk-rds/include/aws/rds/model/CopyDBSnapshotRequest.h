@@ -237,6 +237,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot.
+     * This value is valid only for snapshots that RDS stores on a Dedicated Local
+     * Zone.</p>
+     */
+    inline const Aws::String& GetSnapshotAvailabilityZone() const { return m_snapshotAvailabilityZone; }
+    inline bool SnapshotAvailabilityZoneHasBeenSet() const { return m_snapshotAvailabilityZoneHasBeenSet; }
+    template<typename SnapshotAvailabilityZoneT = Aws::String>
+    void SetSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { m_snapshotAvailabilityZoneHasBeenSet = true; m_snapshotAvailabilityZone = std::forward<SnapshotAvailabilityZoneT>(value); }
+    template<typename SnapshotAvailabilityZoneT = Aws::String>
+    CopyDBSnapshotRequest& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configures the location where RDS will store copied snapshots.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>local</code> (Dedicated Local Zone)</p> </li>
+     * <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul>
+     */
+    inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
+    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
+    template<typename SnapshotTargetT = Aws::String>
+    void SetSnapshotTarget(SnapshotTargetT&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::forward<SnapshotTargetT>(value); }
+    template<typename SnapshotTargetT = Aws::String>
+    CopyDBSnapshotRequest& WithSnapshotTarget(SnapshotTargetT&& value) { SetSnapshotTarget(std::forward<SnapshotTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
@@ -274,6 +303,12 @@ namespace Model
 
     bool m_copyOptionGroup{false};
     bool m_copyOptionGroupHasBeenSet = false;
+
+    Aws::String m_snapshotAvailabilityZone;
+    bool m_snapshotAvailabilityZoneHasBeenSet = false;
+
+    Aws::String m_snapshotTarget;
+    bool m_snapshotTargetHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

@@ -196,6 +196,7 @@
 #include <aws/batch/model/UpdatePolicy.h>
 #include <aws/batch/model/UpdateSchedulingPolicyRequest.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
+#include <aws/batch/model/UserdataType.h>
 #include <aws/batch/model/Volume.h>
 
 using BatchIncludeTest = ::testing::Test;

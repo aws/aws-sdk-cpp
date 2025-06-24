@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The location in Amazon S3 where build or script files are stored for access
-   * by Amazon GameLift.</p><p><h3>See Also:</h3>   <a
+   * by Amazon GameLift Servers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/S3Location">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,8 @@ namespace Model
     ///@{
     /**
      * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> 
-     * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
-     * that contain a dot (.).</p> 
+     * <p>Amazon GameLift Servers doesn't support uploading from Amazon S3 buckets with
+     * names that contain a dot (.).</p> 
      */
     inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift Servers to access the S3 bucket.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -81,9 +81,9 @@ namespace Model
     ///@{
     /**
      * <p>The version of the file, if object versioning is turned on for the bucket.
-     * Amazon GameLift uses this information when retrieving files from an S3 bucket
-     * that you own. Use this parameter to specify a specific version of the file. If
-     * not set, the latest version of the file is retrieved. </p>
+     * Amazon GameLift Servers uses this information when retrieving files from an S3
+     * bucket that you own. Use this parameter to specify a specific version of the
+     * file. If not set, the latest version of the file is retrieved. </p>
      */
     inline const Aws::String& GetObjectVersion() const { return m_objectVersion; }
     inline bool ObjectVersionHasBeenSet() const { return m_objectVersionHasBeenSet; }

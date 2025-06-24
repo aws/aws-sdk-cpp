@@ -44,9 +44,10 @@ namespace Model
     /**
      * <p>The host names. The maximum size of each name is 128 characters. The
      * comparison is case insensitive. The following wildcard characters are supported:
-     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
-     * you specify multiple strings, the condition is satisfied if one of the strings
-     * matches the host name.</p>
+     * * (matches 0 or more characters) and ? (matches exactly 1 character). You must
+     * include at least one "." character. You can include only alphabetical characters
+     * after the final "." character.</p> <p>If you specify multiple strings, the
+     * condition is satisfied if one of the strings matches the host name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

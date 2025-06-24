@@ -128,13 +128,13 @@ namespace Model
      * Services Region where you're creating the container group definition. For limits
      * on image size, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon
-     * GameLift endpoints and quotas</a>. You can use any of the following image URI
-     * formats: </p> <ul> <li> <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS
-     * region].amazonaws.com/[repository ID]</code> </p> </li> <li> <p>Image ID and
-     * digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository
-     * ID]@[digest]</code> </p> </li> <li> <p>Image ID and tag: <code>[AWS
-     * account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code> </p>
-     * </li> </ul>
+     * GameLift Servers endpoints and quotas</a>. You can use any of the following
+     * image URI formats: </p> <ul> <li> <p>Image ID only: <code>[AWS
+     * account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code> </p> </li>
+     * <li> <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS
+     * region].amazonaws.com/[repository ID]@[digest]</code> </p> </li> <li> <p>Image
+     * ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository
+     * ID]:[tag]</code> </p> </li> </ul>
      */
     inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
@@ -146,12 +146,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of ports that Amazon GameLift can assign to processes in the container.
-     * Processes, must be assigned a container port to accept inbound traffic
-     * connections. For example, a game server process requires a container port to
-     * allow game clients to connect to it. Container ports aren't directly accessed by
-     * inbound traffic. Instead, Amazon GameLift maps container ports to externally
-     * accessible connection ports (see the container fleet property
+     * <p>A set of ports that Amazon GameLift Servers can assign to processes in a
+     * container. The container port configuration must have enough ports for each
+     * container process that accepts inbound traffic connections. For example, a game
+     * server process requires a container port to allow game clients to connect to it.
+     * A container port configuration can have can have one or more container port
+     * ranges. Each range specifies starting and ending values as well as the supported
+     * network protocol.</p> <p>Container ports aren't directly accessed by inbound
+     * traffic. Amazon GameLift Servers maps each container port to an externally
+     * accessible connection port (see the container fleet property
      * <code>ConnectionPortRange</code>). </p>
      */
     inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
@@ -164,9 +167,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon GameLift server SDK version that the game server is integrated
-     * with. Only game servers using 5.2.0 or higher are compatible with container
-     * fleets.</p>
+     * <p>The Amazon GameLift Servers server SDK version that the game server is
+     * integrated with. Only game servers using 5.2.0 or higher are compatible with
+     * container fleets.</p>
      */
     inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }

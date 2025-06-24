@@ -23,6 +23,7 @@ namespace Aws
         static const int FORWARD_HASH = HashingUtils::HashString("FORWARD");
         static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
         static const int RECURSIVE_HASH = HashingUtils::HashString("RECURSIVE");
+        static const int DELEGATE_HASH = HashingUtils::HashString("DELEGATE");
 
 
         RuleTypeOption GetRuleTypeOptionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == RECURSIVE_HASH)
           {
             return RuleTypeOption::RECURSIVE;
+          }
+          else if (hashCode == DELEGATE_HASH)
+          {
+            return RuleTypeOption::DELEGATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "SYSTEM";
           case RuleTypeOption::RECURSIVE:
             return "RECURSIVE";
+          case RuleTypeOption::DELEGATE:
+            return "DELEGATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

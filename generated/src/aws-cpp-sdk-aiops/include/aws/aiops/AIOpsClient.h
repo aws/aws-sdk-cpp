@@ -16,14 +16,13 @@ namespace Aws
 namespace AIOps
 {
   /**
-   * <p>The Amazon Q Developer operational investigations feature is a generative
-   * AI-powered assistant that can help you respond to incidents in your system. It
-   * uses generative AI to scan your system's telemetry and quickly surface
-   * suggestions that might be related to your issue. These suggestions include
-   * metrics, logs, deployment events, and root-cause hypotheses. </p> <p>You can use
-   * API actions to create, manage, and delete investigation groups and investigation
-   * group policies. To start and manage investigations, you must use the CloudWatch
-   * console.</p>
+   * <p>The CloudWatch investigations feature is a generative AI-powered assistant
+   * that can help you respond to incidents in your system. It uses generative AI to
+   * scan your system's telemetry and quickly surface suggestions that might be
+   * related to your issue. These suggestions include metrics, logs, deployment
+   * events, and root-cause hypotheses. </p> <p>You can use API actions to create,
+   * manage, and delete investigation groups and investigation group policies. To
+   * start and manage investigations, you must use the CloudWatch console.</p>
    */
   class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>
   {
@@ -94,19 +93,18 @@ namespace AIOps
          * investigations and their data are retained by default.</p> </li> </ul>
          * <p>Currently, you can have one investigation group in each Region in your
          * account. Each investigation in a Region is a part of the investigation group in
-         * that Region</p> <p>To create an investigation group and set up Amazon Q
-         * Developer operational investigations, you must be signed in to an IAM principal
-         * that has the either the <code>AIOpsConsoleAdminPolicy</code> or the
-         * <code>AdministratorAccess</code> IAM policy attached, or to an account that has
-         * similar permissions.</p>  <p>You can configure CloudWatch alarms to
-         * start investigations and add events to investigations. If you create your
-         * investigation group with <code>CreateInvestigationGroup</code> and you want to
-         * enable alarms to do this, you must use <a
+         * that Region</p> <p>To create an investigation group and set up CloudWatch
+         * investigations, you must be signed in to an IAM principal that has the either
+         * the <code>AIOpsConsoleAdminPolicy</code> or the <code>AdministratorAccess</code>
+         * IAM policy attached, or to an account that has similar permissions.</p>
+         *  <p>You can configure CloudWatch alarms to start investigations and
+         * add events to investigations. If you create your investigation group with
+         * <code>CreateInvestigationGroup</code> and you want to enable alarms to do this,
+         * you must use <a
          * href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_PutInvestigationGroupPolicy.html">PutInvestigationGroupPolicy</a>
          * to create a resource policy that grants this permission to CloudWatch alarms.
          * </p> <p>For more information about configuring CloudWatch alarms to work with
-         * Amazon Q Developer operational investigations, see </p> <p><h3>See
-         * Also:</h3>   <a
+         * CloudWatch investigations, see </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/CreateInvestigationGroup">AWS
          * API Reference</a></p>
          */
@@ -263,9 +261,8 @@ namespace AIOps
         }
 
         /**
-         * <p>Displays the tags associated with a Amazon Q Developer operational
-         * investigations resource. Currently, investigation groups support
-         * tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Displays the tags associated with a CloudWatch investigations resource.
+         * Currently, investigation groups support tagging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */

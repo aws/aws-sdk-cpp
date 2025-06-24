@@ -25,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
-   * groups.</b> </p> <p> Additional properties, including status, that describe an
-   * EC2 instance in a game server group. Instance configurations are set with game
-   * server group properties (see <code>DescribeGameServerGroup</code> and with the
-   * EC2 launch template that was used when creating the game server group. </p>
-   * <p>Retrieve game server instances for a game server group by calling
+   * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
+   * server groups.</b> </p> <p> Additional properties, including status, that
+   * describe an EC2 instance in a game server group. Instance configurations are set
+   * with game server group properties (see <code>DescribeGameServerGroup</code> and
+   * with the EC2 launch template that was used when creating the game server group.
+   * </p> <p>Retrieve game server instances for a game server group by calling
    * <code>DescribeGameServerInstances</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerInstance">AWS
    * API Reference</a></p>

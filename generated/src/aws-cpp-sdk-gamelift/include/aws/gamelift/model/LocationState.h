@@ -31,8 +31,8 @@ namespace Model
    * preparing it for game hosting, and then removing all instances and deleting the
    * location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location
    * has been defined and desired instances is set to 1. </p> </li> <li> <p>
-   * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-   * up the new fleet location, creating new instances with the game build or
+   * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift Servers is
+   * setting up the new fleet location, creating new instances with the game build or
    * Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b>
    * -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An
    * error occurred when downloading, validating, building, or activating the fleet

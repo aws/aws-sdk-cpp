@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A set of one or more port numbers that can be opened on the container. </p>
-   * <p> <b>Part of:</b> <a
+   * <p>A set of one or more port numbers that can be opened on the container, and
+   * the supported network protocol. </p> <p> <b>Part of:</b> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerPortConfiguration.html">ContainerPortConfiguration</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortRange">AWS

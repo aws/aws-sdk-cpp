@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Resource ID of the Amazon VPC that you want to update the Resolver
-     * configuration for.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that
+     * you're configuring Resolver for.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }

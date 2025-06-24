@@ -28,7 +28,8 @@ namespace Model
    * managed fleet. These credentials are returned in response to a call to <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>,
    * which requests access for instances that are running game servers with the
-   * Amazon GameLift server SDK version 4.x or earlier.</p><p><h3>See Also:</h3>   <a
+   * Amazon GameLift Servers server SDK version 4.x or earlier.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceCredentials">AWS
    * API Reference</a></p>
    */

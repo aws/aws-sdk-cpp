@@ -163,8 +163,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift Servers
+     * game server, an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -197,8 +197,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift Servers
+     * server process, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -208,8 +208,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift Servers
+     * does not use this data, so it can be formatted as needed for use in the game.
+     * </p>
      */
     inline const Aws::String& GetPlayerData() const { return m_playerData; }
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }

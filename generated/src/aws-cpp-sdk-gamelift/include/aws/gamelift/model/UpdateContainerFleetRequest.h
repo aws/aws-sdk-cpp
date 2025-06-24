@@ -103,11 +103,11 @@ namespace Model
     ///@{
     /**
      * <p>The number of times to replicate the game server container group on each
-     * fleet instance. By default, Amazon GameLift calculates the maximum number of
-     * game server container groups that can fit on each instance. You can remove this
-     * property value to use the calculated value, or set it manually. If you set this
-     * number manually, Amazon GameLift uses your value as long as it's less than the
-     * calculated maximum.</p>
+     * fleet instance. By default, Amazon GameLift Servers calculates the maximum
+     * number of game server container groups that can fit on each instance. You can
+     * remove this property value to use the calculated value, or set it manually. If
+     * you set this number manually, Amazon GameLift Servers uses your value as long as
+     * it's less than the calculated maximum.</p>
      */
     inline int GetGameServerContainerGroupsPerInstance() const { return m_gameServerContainerGroupsPerInstance; }
     inline bool GameServerContainerGroupsPerInstanceHasBeenSet() const { return m_gameServerContainerGroupsPerInstanceHasBeenSet; }
@@ -118,7 +118,7 @@ namespace Model
     ///@{
     /**
      * <p>A revised set of port numbers to open on each fleet instance. By default,
-     * Amazon GameLift calculates an optimal port range based on your fleet
+     * Amazon GameLift Servers calculates an optimal port range based on your fleet
      * configuration. If you previously set this parameter manually, you can't reset
      * this to use the calculated settings.</p>
      */

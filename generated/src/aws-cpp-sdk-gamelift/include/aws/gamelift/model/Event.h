@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Log entry describing an event that involves Amazon GameLift resources (such
-   * as a fleet). In addition to tracking activity, event codes and messages can
-   * provide additional information for troubleshooting and debugging
+   * <p>Log entry describing an event that involves Amazon GameLift Servers resources
+   * (such as a fleet). In addition to tracking activity, event codes and messages
+   * can provide additional information for troubleshooting and debugging
    * problems.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event">AWS API
    * Reference</a></p>
@@ -72,44 +72,45 @@ namespace Model
      * events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet resource was successfully
      * created with a status of <code>NEW</code>. Event messaging includes the fleet
      * ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from
-     * <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the
-     * compressed build and running install scripts.</p> </li> <li>
+     * <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift Servers is
+     * downloading the compressed build and running install scripts.</p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
-     * to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and
-     * is now validating the build files.</p> </li> <li> <p>FLEET_STATE_BUILDING --
-     * Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
-     * Amazon GameLift has successfully verified the build files and is now launching a
-     * fleet instance.</p> </li> <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed
-     * from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is
-     * launching a game server process on the fleet instance and is testing its
-     * connectivity with the Amazon GameLift service.</p> </li> <li>
-     * <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code>
-     * to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p> </li>
-     * <li> <p>FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>.
-     * Describe the fleet event message for more details.</p> </li> </ul> <p> <b>Fleet
-     * creation events (ordered by fleet creation activity):</b> </p> <ul> <li>
-     * <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server
-     * build was successfully downloaded to an instance, and Amazon GameLiftis now
-     * extracting the build files from the uploaded build. Failure at this stage
-     * prevents a fleet from moving to ACTIVE status. Logs for this stage display a
-     * list of the files that are extracted and saved on the instance. Access the logs
-     * by using the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
-     * <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were
-     * successfully extracted, and Amazon GameLift is now running the build's install
-     * script (if one is included). Failure in this stage prevents a fleet from moving
-     * to ACTIVE status. Logs for this stage list the installation steps and whether or
-     * not the install completed successfully. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.</p> </li> <li> <p>FLEET_CREATION_COMPLETED_INSTALLER --
-     * The game server build files were successfully installed and validation of the
-     * installation will begin soon.</p> </li> <li> <p>FLEET_CREATION_FAILED_INSTALLER
-     * -- The installed failed while attempting to install the build files. This event
-     * indicates that the failure occurred before Amazon GameLift could start
-     * validation. </p> </li> <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The
-     * build process was successful, and the GameLift is now verifying that the game
-     * server launch paths, which are specified in the fleet's runtime configuration,
-     * exist. If any listed launch path exists, Amazon GameLift tries to launch a game
-     * server process and waits for the process to report ready. Failures in this stage
+     * to <code>VALIDATING</code>. Amazon GameLift Servers has successfully installed
+     * build and is now validating the build files.</p> </li> <li>
+     * <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to
+     * <code>BUILDING</code>. Amazon GameLift Servers has successfully verified the
+     * build files and is now launching a fleet instance.</p> </li> <li>
+     * <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to
+     * <code>ACTIVATING</code>. Amazon GameLift Servers is launching a game server
+     * process on the fleet instance and is testing its connectivity with the Amazon
+     * GameLift Servers service.</p> </li> <li> <p>FLEET_STATE_ACTIVE -- The fleet's
+     * status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is
+     * now ready to host game sessions.</p> </li> <li> <p>FLEET_STATE_ERROR -- The
+     * Fleet's status changed to <code>ERROR</code>. Describe the fleet event message
+     * for more details.</p> </li> </ul> <p> <b>Fleet creation events (ordered by fleet
+     * creation activity):</b> </p> <ul> <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The
+     * build failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully
+     * downloaded to an instance, and Amazon GameLift Serversis now extracting the
+     * build files from the uploaded build. Failure at this stage prevents a fleet from
+     * moving to ACTIVE status. Logs for this stage display a list of the files that
+     * are extracted and saved on the instance. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.</p> </li> <li> <p>FLEET_CREATION_RUNNING_INSTALLER --
+     * The game server build files were successfully extracted, and Amazon GameLift
+     * Servers is now running the build's install script (if one is included). Failure
+     * in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage
+     * list the installation steps and whether or not the install completed
+     * successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p>
+     * </li> <li> <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files
+     * were successfully installed and validation of the installation will begin
+     * soon.</p> </li> <li> <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed
+     * while attempting to install the build files. This event indicates that the
+     * failure occurred before Amazon GameLift Servers could start validation. </p>
+     * </li> <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was
+     * successful, and the GameLift is now verifying that the game server launch paths,
+     * which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, Amazon GameLift Servers tries to launch a game server
+     * process and waits for the process to report ready. Failures in this stage
      * prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage
      * list the launch paths in the runtime configuration and indicate whether each is
      * found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
@@ -134,9 +135,9 @@ namespace Model
      * exception occurred during fleet creation. Describe the fleet event message for
      * more details.</p> </li> </ul> <p> <b>VPC peering events:</b> </p> <ul> <li>
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
-     * between the VPC for an Amazon GameLift fleet and a VPC in your Amazon Web
-     * Services account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC
-     * peering connection has failed. Event details and status information provide
+     * between the VPC for an Amazon GameLift Servers fleet and a VPC in your Amazon
+     * Web Services account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information provide
      * additional detail. A common reason for peering failure is that the two VPCs have
      * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
      * block for the VPC in your Amazon Web Services account. For more information on
@@ -156,12 +157,13 @@ namespace Model
      * expected (5 minutes). Check your game session log to see why
      * <code>InitSDK()</code> was not called in time. This event is not emitted for
      * managed container fleets and Anywhere fleets unless they're deployed with the
-     * Amazon GameLift Agent.</p> </li> <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT --
-     * The server process did not call <code>ProcessReady()</code> within the time
-     * expected (5 minutes) after calling <code>InitSDK()</code>. Check your game
-     * session log to see why <code>ProcessReady()</code> was not called in time.</p>
-     * </li> <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without
-     * calling <code>ProcessEnding()</code>. Check your game session log to see why
+     * Amazon GameLift Servers Agent.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why
      * <code>ProcessEnding()</code> was not called.</p> </li> <li>
      * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
      * valid health check for too long and was therefore terminated by GameLift. Check
@@ -221,7 +223,7 @@ namespace Model
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the Amazon GameLift Servers console.</p>
      */
     inline const Aws::String& GetPreSignedLogUrl() const { return m_preSignedLogUrl; }
     inline bool PreSignedLogUrlHasBeenSet() const { return m_preSignedLogUrlHasBeenSet; }

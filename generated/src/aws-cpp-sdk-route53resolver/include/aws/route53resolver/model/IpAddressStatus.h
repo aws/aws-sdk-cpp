@@ -27,7 +27,8 @@ namespace Model
     DELETING,
     DELETE_FAILED_FAS_EXPIRED,
     UPDATING,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    ISOLATED
   };
 
 namespace IpAddressStatusMapper

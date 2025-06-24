@@ -37,15 +37,15 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon GameLift fleet of game hosting resources. Attributes
-   * differ based on the fleet's compute type, as follows:</p> <ul> <li> <p>EC2 fleet
-   * attributes identify a <code>Build</code> resource (for fleets with customer game
-   * server builds) or a <code>Script</code> resource (for Amazon GameLift Realtime
-   * fleets).</p> </li> <li> <p>Amazon GameLift Anywhere fleets have an abbreviated
-   * set of attributes, because most fleet configurations are set directly on the
-   * fleet's computes. Attributes include fleet identifiers and descriptive
-   * properties, creation/termination time, and fleet status.</p> </li> </ul> <p>
-   * <b>Returned by:</b> <a
+   * <p>Describes an Amazon GameLift Servers fleet of game hosting resources.
+   * Attributes differ based on the fleet's compute type, as follows:</p> <ul> <li>
+   * <p>EC2 fleet attributes identify a <code>Build</code> resource (for fleets with
+   * customer game server builds) or a <code>Script</code> resource (for Amazon
+   * GameLift Servers Realtime fleets).</p> </li> <li> <p>Amazon GameLift Servers
+   * Anywhere fleets have an abbreviated set of attributes, because most fleet
+   * configurations are set directly on the fleet's computes. Attributes include
+   * fleet identifiers and descriptive properties, creation/termination time, and
+   * fleet status.</p> </li> </ul> <p> <b>Returned by:</b> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
@@ -76,8 +76,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift Servers fleet resource and uniquely
+     * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
@@ -176,17 +176,17 @@ namespace Model
     /**
      * <p>Current status of the fleet. Possible fleet statuses include the
      * following:</p> <ul> <li> <p>NEW -- A new fleet resource has been defined and
-     * Amazon GameLift has started creating the fleet. Desired instances is set to 1.
-     * </p> </li> <li> <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is
-     * download the game server build, running install scripts, and then validating the
-     * build files. When complete, Amazon GameLift launches a fleet instance. </p>
-     * </li> <li> <p>ACTIVATING -- Amazon GameLift is launching a game server process
-     * and testing its connectivity with the Amazon GameLift service.</p> </li> <li>
-     * <p>ACTIVE -- The fleet is now ready to host game sessions.</p> </li> <li>
-     * <p>ERROR -- An error occurred when downloading, validating, building, or
-     * activating the fleet.</p> </li> <li> <p>DELETING -- Hosts are responding to a
-     * delete fleet request.</p> </li> <li> <p>TERMINATED -- The fleet no longer
-     * exists.</p> </li> </ul>
+     * Amazon GameLift Servers has started creating the fleet. Desired instances is set
+     * to 1. </p> </li> <li> <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift
+     * Servers is download the game server build, running install scripts, and then
+     * validating the build files. When complete, Amazon GameLift Servers launches a
+     * fleet instance. </p> </li> <li> <p>ACTIVATING -- Amazon GameLift Servers is
+     * launching a game server process and testing its connectivity with the Amazon
+     * GameLift Servers service.</p> </li> <li> <p>ACTIVE -- The fleet is now ready to
+     * host game sessions.</p> </li> <li> <p>ERROR -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li>
+     * <p>DELETING -- Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p>TERMINATED -- The fleet no longer exists.</p> </li> </ul>
      */
     inline FleetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -212,8 +212,8 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the Amazon GameLift build resource that is deployed on instances
-     * in this fleet. In a GameLift build ARN, the resource ID matches the
+     * associated with the Amazon GameLift Servers build resource that is deployed on
+     * instances in this fleet. In a GameLift build ARN, the resource ID matches the
      * <code>BuildId</code> value. This attribute is used with fleets where
      * <code>ComputeType</code> is "EC2".</p>
      */
@@ -287,7 +287,7 @@ namespace Model
     ///@{
     /**
      * <p> <b>This parameter is no longer used.</b> Game session log paths are now
-     * defined using the Amazon GameLift server API <code>ProcessReady()</code>
+     * defined using the Amazon GameLift Servers server API <code>ProcessReady()</code>
      * <code>logParameters</code>. See more information in the <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
@@ -325,10 +325,10 @@ namespace Model
      * fleet. This attribute is used with fleets where <code>ComputeType</code> is
      * <code>EC2</code>.</p>  <p>Amazon Linux 2 (AL2) will reach end of support
      * on 6/30/2025. See more details in the <a
-     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
-     * GameLift, first update the game server build to server SDK 5.x, and then deploy
-     * to AL2023 instances. See <a
+     * href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+     * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
+     * for Amazon GameLift Servers, first update the game server build to server SDK
+     * 5.x, and then deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */
@@ -420,8 +420,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of compute resource used to host your game servers. You can use your
-     * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
-     * with managed Amazon GameLift.</p>
+     * own compute resources with Amazon GameLift Servers Anywhere or use Amazon EC2
+     * instances with managed Amazon GameLift Servers.</p>
      */
     inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }

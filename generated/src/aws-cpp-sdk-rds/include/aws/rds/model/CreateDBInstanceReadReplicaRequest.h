@@ -804,6 +804,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The location where RDS stores automated backups and manual snapshots.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>local</code> for Dedicated Local
+     * Zones</p> </li> <li> <p> <code>region</code> for Amazon Web Services Region</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetBackupTarget() const { return m_backupTarget; }
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+    template<typename BackupTargetT = Aws::String>
+    void SetBackupTarget(BackupTargetT&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::forward<BackupTargetT>(value); }
+    template<typename BackupTargetT = Aws::String>
+    CreateDBInstanceReadReplicaRequest& WithBackupTarget(BackupTargetT&& value) { SetBackupTarget(std::forward<BackupTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
      * <code>CreateDBInstance</code>.</p> <p>This setting isn't valid for RDS for SQL
@@ -1015,6 +1030,9 @@ namespace Model
 
     bool m_enableCustomerOwnedIp{false};
     bool m_enableCustomerOwnedIpHasBeenSet = false;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet = false;
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;

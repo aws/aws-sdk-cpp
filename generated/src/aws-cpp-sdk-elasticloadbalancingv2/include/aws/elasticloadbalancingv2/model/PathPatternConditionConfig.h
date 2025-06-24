@@ -48,7 +48,9 @@ namespace Model
      * (matches exactly 1 character).</p> <p>If you specify multiple strings, the
      * condition is satisfied if one of them matches the request URL. The path pattern
      * is compared only to the path of the URL, not to its query string. To compare
-     * against the query string, use <a>QueryStringConditionConfig</a>.</p>
+     * against the query string, use a <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#query-string-conditions">query
+     * string condition</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

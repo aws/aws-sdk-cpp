@@ -24,9 +24,9 @@ namespace Model
   /**
    * <p>Settings for a target-based scaling policy. A target-based policy tracks a
    * particular fleet metric specifies a target value for the metric. As player usage
-   * changes, the policy triggers Amazon GameLift to adjust capacity so that the
-   * metric returns to the target value. The target configuration specifies settings
-   * as needed for the target based policy, including the target value.
+   * changes, the policy triggers Amazon GameLift Servers to adjust capacity so that
+   * the metric returns to the target value. The target configuration specifies
+   * settings as needed for the target based policy, including the target value.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TargetConfiguration">AWS
    * API Reference</a></p>

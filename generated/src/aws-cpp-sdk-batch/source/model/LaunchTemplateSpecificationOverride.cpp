@@ -49,6 +49,11 @@ LaunchTemplateSpecificationOverride& LaunchTemplateSpecificationOverride::operat
     }
     m_targetInstanceTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("userdataType"))
+  {
+    m_userdataType = UserdataTypeMapper::GetUserdataTypeForName(jsonValue.GetString("userdataType"));
+    m_userdataTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +88,11 @@ JsonValue LaunchTemplateSpecificationOverride::Jsonize() const
    }
    payload.WithArray("targetInstanceTypes", std::move(targetInstanceTypesJsonList));
 
+  }
+
+  if(m_userdataTypeHasBeenSet)
+  {
+   payload.WithString("userdataType", UserdataTypeMapper::GetNameForUserdataType(m_userdataType));
   }
 
   return payload;

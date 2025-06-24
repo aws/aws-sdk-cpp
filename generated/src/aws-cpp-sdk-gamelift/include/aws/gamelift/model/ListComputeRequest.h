@@ -50,8 +50,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of a location to retrieve compute resources for. For an Amazon
-     * GameLift Anywhere fleet, use a custom location. For a managed fleet, provide a
-     * Amazon Web Services Region or Local Zone code (for example:
+     * GameLift Servers Anywhere fleet, use a custom location. For a managed fleet,
+     * provide a Amazon Web Services Region or Local Zone code (for example:
      * <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline const Aws::String& GetLocation() const { return m_location; }

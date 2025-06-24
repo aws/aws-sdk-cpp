@@ -158,13 +158,13 @@ namespace Model
      * Services Region where you're creating the container group definition. For limits
      * on image size, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon
-     * GameLift endpoints and quotas</a>. You can use any of the following image URI
-     * formats: </p> <ul> <li> <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS
-     * region].amazonaws.com/[repository ID]</code> </p> </li> <li> <p>Image ID and
-     * digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository
-     * ID]@[digest]</code> </p> </li> <li> <p>Image ID and tag: <code>[AWS
-     * account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code> </p>
-     * </li> </ul>
+     * GameLift Servers endpoints and quotas</a>. You can use any of the following
+     * image URI formats: </p> <ul> <li> <p>Image ID only: <code>[AWS
+     * account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code> </p> </li>
+     * <li> <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS
+     * region].amazonaws.com/[repository ID]@[digest]</code> </p> </li> <li> <p>Image
+     * ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository
+     * ID]:[tag]</code> </p> </li> </ul>
      */
     inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
@@ -191,13 +191,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of ports that Amazon GameLift can assign to processes in the container.
-     * Any processes that accept inbound traffic connections must be assigned a port
-     * from this set. The container port range must be large enough to assign one to
-     * each process in the container that needs one. </p> <p>Container ports aren't
-     * directly accessed by inbound traffic. Amazon GameLift maps these container ports
-     * to externally accessible connection ports, which are assigned as needed from the
-     * container fleet's <code>ConnectionPortRange</code>.</p>
+     * <p>A set of ports that Amazon GameLift Servers can assign to processes in a
+     * container. The container port configuration must have enough ports for each
+     * container process that accepts inbound traffic connections. A container port
+     * configuration can have can have one or more container port ranges. Each range
+     * specifies starting and ending values as well as the supported network
+     * protocol.</p> <p>Container ports aren't directly accessed by inbound traffic.
+     * Amazon GameLift Servers maps each container port to an externally accessible
+     * connection port (see the container fleet property
+     * <code>ConnectionPortRange</code>). </p>
      */
     inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
     inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }

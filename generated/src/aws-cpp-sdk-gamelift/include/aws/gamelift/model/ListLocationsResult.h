@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A collection of locations.</p>
+     * <p>A collection of locations, including both Amazon Web Services and custom
+     * locations. Each location includes a name and ping beacon information that can be
+     * used to measure network latency between player devices and the location.</p>
      */
     inline const Aws::Vector<LocationModel>& GetLocations() const { return m_locations; }
     template<typename LocationsT = Aws::Vector<LocationModel>>

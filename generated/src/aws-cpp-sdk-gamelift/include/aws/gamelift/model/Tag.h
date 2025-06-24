@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn
-   * more</b> </p> <p> <a
+   * <p>A label that you can assign to a Amazon GameLift Servers resource. </p> <p>
+   * <b>Learn more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
    * Reference</i> </p> <p> <a

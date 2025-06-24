@@ -47,8 +47,9 @@ namespace Model
      * <p>The name of the HTTP header field. The maximum size is 40 characters. The
      * header name is case insensitive. The allowed characters are specified by RFC
      * 7230. Wildcards are not supported.</p> <p>You can't use an HTTP header condition
-     * to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a
-     * host header condition.</p>
+     * to specify the host header. Instead, use a <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host
+     * condition</a>.</p>
      */
     inline const Aws::String& GetHttpHeaderName() const { return m_httpHeaderName; }
     inline bool HttpHeaderNameHasBeenSet() const { return m_httpHeaderNameHasBeenSet; }

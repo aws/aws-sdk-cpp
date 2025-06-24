@@ -128,8 +128,8 @@ namespace Model
      *  <p>Only supported for instances in Local Zones. If the source instance is
      * not in a Local Zone, omit this parameter.</p>  <ul> <li> <p>To create
      * local snapshots in the same Local Zone as the source instance, specify
-     * <code>local</code>.</p> </li> <li> <p>To create a regional snapshots in the
-     * parent Region of the Local Zone, specify <code>regional</code> or omit this
+     * <code>local</code>.</p> </li> <li> <p>To create regional snapshots in the parent
+     * Region of the Local Zone, specify <code>regional</code> or omit this
      * parameter.</p> </li> </ul> <p>Default value: <code>regional</code> </p>
      */
     inline SnapshotLocationEnum GetLocation() const { return m_location; }

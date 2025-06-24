@@ -67,6 +67,12 @@ Aws::String CreateResolverRuleRequest::SerializePayload() const
 
   }
 
+  if(m_delegationRecordHasBeenSet)
+  {
+   payload.WithString("DelegationRecord", m_delegationRecord);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

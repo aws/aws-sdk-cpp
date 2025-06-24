@@ -30,12 +30,12 @@ namespace Model
    * in the container image. For more information on container health checks, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
    * command</a> in the <i>Amazon Elastic Container Service API</i>. Game server
-   * containers don't have a health check parameter; Amazon GameLift automatically
-   * handles health checks for these containers.</p> <p>The following example
-   * instructs the container to initiate a health check command every 60 seconds and
-   * wait 10 seconds for it to succeed. If it fails, retry the command 3 times before
-   * flagging the container as unhealthy. It also tells the container to wait 100
-   * seconds after launch before counting failed health checks.</p> <p>
+   * containers don't have a health check parameter; Amazon GameLift Servers
+   * automatically handles health checks for these containers.</p> <p>The following
+   * example instructs the container to initiate a health check command every 60
+   * seconds and wait 10 seconds for it to succeed. If it fails, retry the command 3
+   * times before flagging the container as unhealthy. It also tells the container to
+   * wait 100 seconds after launch before counting failed health checks.</p> <p>
    * <code>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ],
    * "Interval": 60, "Timeout": 10, "Retries": 3, "StartPeriod": 100 }</code> </p>
    * <p> <b>Part of:</b> <a

@@ -58,9 +58,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code>
-     * resource. It uniquely identifies the resource across all Amazon Web Services
-     * Regions. Format is
+     * that is assigned to an Amazon GameLift Servers
+     * <code>ContainerGroupDefinition</code> resource. It uniquely identifies the
+     * resource across all Amazon Web Services Regions. Format is
      * <code>arn:aws:gamelift:[region]::containergroupdefinition/[container group
      * definition name]:[version]</code>.</p>
      */
@@ -91,10 +91,10 @@ namespace Model
      * <p>The platform that all containers in the container group definition run
      * on.</p>  <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025.
      * See more details in the <a
-     * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+     * href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
      * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon
-     * GameLift, first update the game server build to server SDK 5.x, and then deploy
-     * to AL2023 instances. See <a
+     * GameLift Servers, first update the game server build to server SDK 5.x, and then
+     * deploy to AL2023 instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to server SDK version 5.</a> </p> 
      */
@@ -120,7 +120,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of container group. Container group type determines how Amazon
-     * GameLift deploys the container group on each fleet instance.</p>
+     * GameLift Servers deploys the container group on each fleet instance.</p>
      */
     inline ContainerGroupType GetContainerGroupType() const { return m_containerGroupType; }
     inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }
@@ -216,16 +216,17 @@ namespace Model
     ///@{
     /**
      * <p>Current status of the container group definition resource. Values
-     * include:</p> <ul> <li> <p> <code>COPYING</code> -- Amazon GameLift is in the
-     * process of making copies of all container images that are defined in the group.
-     * While in this state, the resource can't be used to create a container fleet.</p>
-     * </li> <li> <p> <code>READY</code> -- Amazon GameLift has copied the registry
-     * images for all containers that are defined in the group. You can use a container
-     * group definition in this status to create a container fleet. </p> </li> <li> <p>
-     * <code>FAILED</code> -- Amazon GameLift failed to create a valid container group
-     * definition resource. For more details on the cause of the failure, see
-     * <code>StatusReason</code>. A container group definition resource in failed
-     * status will be deleted within a few minutes.</p> </li> </ul>
+     * include:</p> <ul> <li> <p> <code>COPYING</code> -- Amazon GameLift Servers is in
+     * the process of making copies of all container images that are defined in the
+     * group. While in this state, the resource can't be used to create a container
+     * fleet.</p> </li> <li> <p> <code>READY</code> -- Amazon GameLift Servers has
+     * copied the registry images for all containers that are defined in the group. You
+     * can use a container group definition in this status to create a container fleet.
+     * </p> </li> <li> <p> <code>FAILED</code> -- Amazon GameLift Servers failed to
+     * create a valid container group definition resource. For more details on the
+     * cause of the failure, see <code>StatusReason</code>. A container group
+     * definition resource in failed status will be deleted within a few minutes.</p>
+     * </li> </ul>
      */
     inline ContainerGroupDefinitionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -237,20 +238,20 @@ namespace Model
     /**
      * <p>Additional information about a container group definition that's in
      * <code>FAILED</code> status. Possible reasons include:</p> <ul> <li> <p>An
-     * internal issue prevented Amazon GameLift from creating the container group
-     * definition resource. Delete the failed resource and call <a
+     * internal issue prevented Amazon GameLift Servers from creating the container
+     * group definition resource. Delete the failed resource and call <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
      * </p> </li> <li> <p>An access-denied message means that you don't have
      * permissions to access the container image on ECR. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
      * IAM permission examples</a> for help setting up required IAM permissions for
-     * Amazon GameLift.</p> </li> <li> <p>The <code>ImageUri</code> value for at least
-     * one of the containers in the container group definition was invalid or not found
-     * in the current Amazon Web Services account.</p> </li> <li> <p>At least one of
-     * the container images referenced in the container group definition exceeds the
-     * allowed size. For size limits, see <a
+     * Amazon GameLift Servers.</p> </li> <li> <p>The <code>ImageUri</code> value for
+     * at least one of the containers in the container group definition was invalid or
+     * not found in the current Amazon Web Services account.</p> </li> <li> <p>At least
+     * one of the container images referenced in the container group definition exceeds
+     * the allowed size. For size limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon
-     * GameLift endpoints and quotas</a>.</p> </li> <li> <p>At least one of the
+     * GameLift Servers endpoints and quotas</a>.</p> </li> <li> <p>At least one of the
      * container images referenced in the container group definition uses a different
      * operating system than the one defined for the container group.</p> </li> </ul>
      */

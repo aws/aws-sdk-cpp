@@ -128,10 +128,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon GameLift Servers with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances

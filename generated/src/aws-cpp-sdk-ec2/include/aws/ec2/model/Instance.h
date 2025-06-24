@@ -620,9 +620,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. This name is
-     * only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>The public DNS name assigned to the instance. This name is not available
+     * until the instance enters the <code>running</code> state. This name is only
+     * available if you've enabled DNS hostnames for your VPC. The format of this name
+     * depends on the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public
+     * hostname type</a>.</p>
      */
     inline const Aws::String& GetPublicDnsName() const { return m_publicDnsName; }
     inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }

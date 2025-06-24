@@ -1148,10 +1148,10 @@ namespace Model
     ///@{
     /**
      * <p>The location for storing automated backups and manual snapshots.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>outposts</code> (Amazon Web Services
-     * Outposts)</p> </li> <li> <p> <code>region</code> (Amazon Web Services
-     * Region)</p> </li> </ul> <p>Default: <code>region</code> </p> <p>For more
-     * information, see <a
+     * Values:</p> <ul> <li> <p> <code>local</code> (Dedicated Local Zone)</p> </li>
+     * <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul> <p>Default:
+     * <code>region</code> </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>

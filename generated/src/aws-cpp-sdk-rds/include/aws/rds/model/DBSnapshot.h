@@ -435,8 +435,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
-     * the Amazon Web Services Region.</p>
+     * <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon
+     * Web Services Outposts or the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
     inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
@@ -490,6 +490,20 @@ namespace Model
     inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
     inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
     inline DBSnapshot& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot.
+     * This value is valid only for snapshots that RDS stores on a Dedicated Local
+     * Zone.</p>
+     */
+    inline const Aws::String& GetSnapshotAvailabilityZone() const { return m_snapshotAvailabilityZone; }
+    inline bool SnapshotAvailabilityZoneHasBeenSet() const { return m_snapshotAvailabilityZoneHasBeenSet; }
+    template<typename SnapshotAvailabilityZoneT = Aws::String>
+    void SetSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { m_snapshotAvailabilityZoneHasBeenSet = true; m_snapshotAvailabilityZone = std::forward<SnapshotAvailabilityZoneT>(value); }
+    template<typename SnapshotAvailabilityZoneT = Aws::String>
+    DBSnapshot& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value)); return *this;}
     ///@}
   private:
 
@@ -600,6 +614,9 @@ namespace Model
 
     bool m_multiTenant{false};
     bool m_multiTenantHasBeenSet = false;
+
+    Aws::String m_snapshotAvailabilityZone;
+    bool m_snapshotAvailabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

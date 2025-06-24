@@ -261,6 +261,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
       m_multiTenantHasBeenSet = true;
     }
+    XmlNode snapshotAvailabilityZoneNode = resultNode.FirstChild("SnapshotAvailabilityZone");
+    if(!snapshotAvailabilityZoneNode.IsNull())
+    {
+      m_snapshotAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotAvailabilityZoneNode.GetText());
+      m_snapshotAvailabilityZoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -460,6 +466,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
+  if(m_snapshotAvailabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -619,6 +630,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_multiTenantHasBeenSet)
   {
       oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+  if(m_snapshotAvailabilityZoneHasBeenSet)
+  {
+      oStream << location << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
   }
 }
 

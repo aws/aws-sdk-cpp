@@ -121,8 +121,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URI to the image that Amazon GameLift uses when deploying this container
-     * to a container fleet. For a more specific identifier, see
+     * <p>The URI to the image that Amazon GameLift Servers uses when deploying this
+     * container to a container fleet. For a more specific identifier, see
      * <code>ResolvedImageDigest</code>. </p>
      */
     inline const Aws::String& GetImageUri() const { return m_imageUri; }
@@ -138,9 +138,9 @@ namespace Model
      * <p>The set of ports that are available to bind to processes in the container.
      * For example, a game server process requires a container port to allow game
      * clients to connect to it. Container ports aren't directly accessed by inbound
-     * traffic. Amazon GameLift maps these container ports to externally accessible
-     * connection ports, which are assigned as needed from the container fleet's
-     * <code>ConnectionPortRange</code>. </p>
+     * traffic. Amazon GameLift Servers maps these container ports to externally
+     * accessible connection ports, which are assigned as needed from the container
+     * fleet's <code>ConnectionPortRange</code>. </p>
      */
     inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
     inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }
@@ -165,9 +165,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon GameLift server SDK version that the game server is integrated
-     * with. Only game servers using 5.2.0 or higher are compatible with container
-     * fleets.</p>
+     * <p>The Amazon GameLift Servers server SDK version that the game server is
+     * integrated with. Only game servers using 5.2.0 or higher are compatible with
+     * container fleets.</p>
      */
     inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }

@@ -40,10 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Requested number of active instances. Amazon GameLift takes action as needed
-     * to maintain the desired number of instances. Capacity is scaled up or down by
-     * changing the desired instances. A change in the desired instances value can take
-     * up to 1 minute to be reflected when viewing a fleet's capacity settings. </p>
+     * <p>Requested number of active instances. Amazon GameLift Servers takes action as
+     * needed to maintain the desired number of instances. Capacity is scaled up or
+     * down by changing the desired instances. A change in the desired instances value
+     * can take up to 1 minute to be reflected when viewing a fleet's capacity
+     * settings. </p>
      */
     inline int GetDESIRED() const { return m_dESIRED; }
     inline bool DESIREDHasBeenSet() const { return m_dESIREDHasBeenSet; }

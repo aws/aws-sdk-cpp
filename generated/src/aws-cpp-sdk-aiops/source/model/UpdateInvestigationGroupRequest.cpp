@@ -61,6 +61,17 @@ Aws::String UpdateInvestigationGroupRequest::SerializePayload() const
 
   }
 
+  if(m_crossAccountConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> crossAccountConfigurationsJsonList(m_crossAccountConfigurations.size());
+   for(unsigned crossAccountConfigurationsIndex = 0; crossAccountConfigurationsIndex < crossAccountConfigurationsJsonList.GetLength(); ++crossAccountConfigurationsIndex)
+   {
+     crossAccountConfigurationsJsonList[crossAccountConfigurationsIndex].AsObject(m_crossAccountConfigurations[crossAccountConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("crossAccountConfigurations", std::move(crossAccountConfigurationsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

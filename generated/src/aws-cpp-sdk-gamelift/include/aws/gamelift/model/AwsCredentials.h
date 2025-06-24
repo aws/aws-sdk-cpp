@@ -25,17 +25,17 @@ namespace Model
 
   /**
    * <p>Amazon Web Services account security credentials that allow interactions with
-   * Amazon GameLift resources. The credentials are temporary and valid for a limited
-   * time span. You can request fresh credentials at any time. </p> <p> Amazon Web
-   * Services security credentials consist of three parts: an access key ID, a secret
-   * access key, and a session token. You must use all three parts together to
-   * authenticate your access requests.</p> <p>You need Amazon Web Services
-   * credentials for the following tasks: </p> <ul> <li> <p>To upload a game server
-   * build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To
-   * get access for this task, call <a
+   * Amazon GameLift Servers resources. The credentials are temporary and valid for a
+   * limited time span. You can request fresh credentials at any time. </p> <p>
+   * Amazon Web Services security credentials consist of three parts: an access key
+   * ID, a secret access key, and a session token. You must use all three parts
+   * together to authenticate your access requests.</p> <p>You need Amazon Web
+   * Services credentials for the following tasks: </p> <ul> <li> <p>To upload a game
+   * server build directly to Amazon GameLift Servers S3 storage using
+   * <code>CreateBuild</code>. To get access for this task, call <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html</a>.</p>
-   * </li> <li> <p>To remotely connect to an active Amazon GameLift fleet instances.
-   * To get remote access, call <a
+   * </li> <li> <p>To remotely connect to an active Amazon GameLift Servers fleet
+   * instances. To get remote access, call <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html</a>.</p>
    * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS

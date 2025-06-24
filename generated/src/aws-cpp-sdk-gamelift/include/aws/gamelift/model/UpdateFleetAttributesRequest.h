@@ -125,7 +125,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Servers Anywhere configuration options.</p>
      */
     inline const AnywhereConfiguration& GetAnywhereConfiguration() const { return m_anywhereConfiguration; }
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }

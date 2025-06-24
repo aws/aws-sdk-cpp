@@ -80,8 +80,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift Servers matchmaking rule set resource and
+     * uniquely identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
      * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
      * <i>RuleSetName</i> value.</p>

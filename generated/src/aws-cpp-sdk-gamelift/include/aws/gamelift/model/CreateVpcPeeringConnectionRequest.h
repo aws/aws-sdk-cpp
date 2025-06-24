@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift Servers which GameLift VPC to peer with. </p>
      */
     inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
@@ -50,8 +50,8 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
-     * the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift Servers fleet with. You can find your Account
+     * ID in the Amazon Web Services Management Console under account settings.</p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const { return m_peerVpcAwsAccountId; }
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
@@ -64,12 +64,12 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for a VPC with resources to be accessed by your Amazon
-     * GameLift fleet. The VPC must be in the same Region as your fleet. To look up a
-     * VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a>
-     * in the Amazon Web Services Management Console. Learn more about VPC peering in
-     * <a
+     * GameLift Servers fleet. The VPC must be in the same Region as your fleet. To
+     * look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the Amazon Web Services Management Console. Learn more about
+     * VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with Amazon GameLift Fleets</a>.</p>
+     * Peering with Amazon GameLift Servers Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }

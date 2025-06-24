@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/PingBeacon.h>
 #include <utility>
 
 namespace Aws
@@ -24,10 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Properties of a custom location for use in an Amazon GameLift Anywhere fleet.
-   * This data type is returned in response to a call to <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Properties of a location, which can include its name, ARN (for custom
+   * locations), and ping beacon information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationModel">AWS
    * API Reference</a></p>
    */
@@ -56,8 +55,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a Amazon GameLift location resource and uniquely identifies
-     * it. ARNs are unique across all Regions. Format is
+     * that is assigned to a custom location resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetLocationArn() const { return m_locationArn; }
@@ -67,6 +66,18 @@ namespace Model
     template<typename LocationArnT = Aws::String>
     LocationModel& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the UDP ping beacon for this location. </p>
+     */
+    inline const PingBeacon& GetPingBeacon() const { return m_pingBeacon; }
+    inline bool PingBeaconHasBeenSet() const { return m_pingBeaconHasBeenSet; }
+    template<typename PingBeaconT = PingBeacon>
+    void SetPingBeacon(PingBeaconT&& value) { m_pingBeaconHasBeenSet = true; m_pingBeacon = std::forward<PingBeaconT>(value); }
+    template<typename PingBeaconT = PingBeacon>
+    LocationModel& WithPingBeacon(PingBeaconT&& value) { SetPingBeacon(std::forward<PingBeaconT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_locationName;
@@ -74,6 +85,9 @@ namespace Model
 
     Aws::String m_locationArn;
     bool m_locationArnHasBeenSet = false;
+
+    PingBeacon m_pingBeacon;
+    bool m_pingBeaconHasBeenSet = false;
   };
 
 } // namespace Model

@@ -52,8 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. Amazon GameLift Servers
+     * does not use this data, so it can be formatted as needed for use in the
+     * game.</p>
      */
     inline const Aws::String& GetPlayerData() const { return m_playerData; }
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }

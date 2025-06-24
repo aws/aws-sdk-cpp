@@ -24,6 +24,11 @@ Aws::String CreateImageRequest::SerializePayload() const
     }
   }
 
+  if(m_snapshotLocationHasBeenSet)
+  {
+    ss << "SnapshotLocation=" << StringUtils::URLEncode(SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_snapshotLocation)) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

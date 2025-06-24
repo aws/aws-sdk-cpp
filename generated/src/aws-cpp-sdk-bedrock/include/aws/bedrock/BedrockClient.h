@@ -174,6 +174,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Request a model access agreement for the specified model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFoundationModelAgreementOutcome CreateFoundationModelAgreement(const Model::CreateFoundationModelAgreementRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFoundationModelAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFoundationModelAgreementRequestT = Model::CreateFoundationModelAgreementRequest>
+        Model::CreateFoundationModelAgreementOutcomeCallable CreateFoundationModelAgreementCallable(const CreateFoundationModelAgreementRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateFoundationModelAgreement, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFoundationModelAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFoundationModelAgreementRequestT = Model::CreateFoundationModelAgreementRequest>
+        void CreateFoundationModelAgreementAsync(const CreateFoundationModelAgreementRequestT& request, const CreateFoundationModelAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateFoundationModelAgreement, request, handler, context);
+        }
+
+        /**
          * <p>Creates a guardrail to block topics and to implement safeguards for your
          * generative AI applications.</p> <p>You can configure the following policies in a
          * guardrail to avoid undesirable and harmful content, filter out denied topics and
@@ -521,6 +547,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Delete the model access agreement for the specified model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFoundationModelAgreementOutcome DeleteFoundationModelAgreement(const Model::DeleteFoundationModelAgreementRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFoundationModelAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFoundationModelAgreementRequestT = Model::DeleteFoundationModelAgreementRequest>
+        Model::DeleteFoundationModelAgreementOutcomeCallable DeleteFoundationModelAgreementCallable(const DeleteFoundationModelAgreementRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteFoundationModelAgreement, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFoundationModelAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFoundationModelAgreementRequestT = Model::DeleteFoundationModelAgreementRequest>
+        void DeleteFoundationModelAgreementAsync(const DeleteFoundationModelAgreementRequestT& request, const DeleteFoundationModelAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteFoundationModelAgreement, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a guardrail.</p> <ul> <li> <p>To delete a guardrail, only specify the
          * ARN of the guardrail in the <code>guardrailIdentifier</code> field. If you
          * delete a guardrail, all of its versions will be deleted.</p> </li> <li> <p>To
@@ -822,6 +874,32 @@ namespace Bedrock
         void GetFoundationModelAsync(const GetFoundationModelRequestT& request, const GetFoundationModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::GetFoundationModel, request, handler, context);
+        }
+
+        /**
+         * <p>Get information about the Foundation model availability.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFoundationModelAvailabilityOutcome GetFoundationModelAvailability(const Model::GetFoundationModelAvailabilityRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFoundationModelAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFoundationModelAvailabilityRequestT = Model::GetFoundationModelAvailabilityRequest>
+        Model::GetFoundationModelAvailabilityOutcomeCallable GetFoundationModelAvailabilityCallable(const GetFoundationModelAvailabilityRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetFoundationModelAvailability, request);
+        }
+
+        /**
+         * An Async wrapper for GetFoundationModelAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFoundationModelAvailabilityRequestT = Model::GetFoundationModelAvailabilityRequest>
+        void GetFoundationModelAvailabilityAsync(const GetFoundationModelAvailabilityRequestT& request, const GetFoundationModelAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetFoundationModelAvailability, request, handler, context);
         }
 
         /**
@@ -1128,6 +1206,31 @@ namespace Bedrock
         }
 
         /**
+         * <p>Get usecase for model access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUseCaseForModelAccessOutcome GetUseCaseForModelAccess(const Model::GetUseCaseForModelAccessRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetUseCaseForModelAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetUseCaseForModelAccessRequestT = Model::GetUseCaseForModelAccessRequest>
+        Model::GetUseCaseForModelAccessOutcomeCallable GetUseCaseForModelAccessCallable(const GetUseCaseForModelAccessRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::GetUseCaseForModelAccess, request);
+        }
+
+        /**
+         * An Async wrapper for GetUseCaseForModelAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetUseCaseForModelAccessRequestT = Model::GetUseCaseForModelAccessRequest>
+        void GetUseCaseForModelAccessAsync(const GetUseCaseForModelAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetUseCaseForModelAccessRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::GetUseCaseForModelAccess, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the custom models that you have created with the
          * <code>CreateModelCustomizationJob</code> operation.</p> <p>For more information,
          * see <a
@@ -1181,6 +1284,32 @@ namespace Bedrock
         void ListEvaluationJobsAsync(const ListEvaluationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEvaluationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListEvaluationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Get the offers associated with the specified model.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFoundationModelAgreementOffersOutcome ListFoundationModelAgreementOffers(const Model::ListFoundationModelAgreementOffersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFoundationModelAgreementOffers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFoundationModelAgreementOffersRequestT = Model::ListFoundationModelAgreementOffersRequest>
+        Model::ListFoundationModelAgreementOffersOutcomeCallable ListFoundationModelAgreementOffersCallable(const ListFoundationModelAgreementOffersRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ListFoundationModelAgreementOffers, request);
+        }
+
+        /**
+         * An Async wrapper for ListFoundationModelAgreementOffers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFoundationModelAgreementOffersRequestT = Model::ListFoundationModelAgreementOffersRequest>
+        void ListFoundationModelAgreementOffersAsync(const ListFoundationModelAgreementOffersRequestT& request, const ListFoundationModelAgreementOffersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ListFoundationModelAgreementOffers, request, handler, context);
         }
 
         /**
@@ -1558,6 +1687,31 @@ namespace Bedrock
         void PutModelInvocationLoggingConfigurationAsync(const PutModelInvocationLoggingConfigurationRequestT& request, const PutModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::PutModelInvocationLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Put usecase for model access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutUseCaseForModelAccessOutcome PutUseCaseForModelAccess(const Model::PutUseCaseForModelAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutUseCaseForModelAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutUseCaseForModelAccessRequestT = Model::PutUseCaseForModelAccessRequest>
+        Model::PutUseCaseForModelAccessOutcomeCallable PutUseCaseForModelAccessCallable(const PutUseCaseForModelAccessRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::PutUseCaseForModelAccess, request);
+        }
+
+        /**
+         * An Async wrapper for PutUseCaseForModelAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutUseCaseForModelAccessRequestT = Model::PutUseCaseForModelAccessRequest>
+        void PutUseCaseForModelAccessAsync(const PutUseCaseForModelAccessRequestT& request, const PutUseCaseForModelAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::PutUseCaseForModelAccess, request, handler, context);
         }
 
         /**

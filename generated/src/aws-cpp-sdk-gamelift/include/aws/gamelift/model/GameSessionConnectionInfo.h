@@ -57,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift Servers
+     * game server, an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -91,8 +91,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift Servers
+     * game server, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

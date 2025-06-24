@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/UserdataType.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,20 @@ namespace Model
     template<typename TargetInstanceTypesT = Aws::String>
     LaunchTemplateSpecificationOverride& AddTargetInstanceTypes(TargetInstanceTypesT&& value) { m_targetInstanceTypesHasBeenSet = true; m_targetInstanceTypes.emplace_back(std::forward<TargetInstanceTypesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The EKS node initialization process to use. You only need to specify this
+     * value if you are using a custom AMI. The default value is
+     * <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on
+     * EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose
+     * <code>EKS_NODEADM</code>.</p>
+     */
+    inline UserdataType GetUserdataType() const { return m_userdataType; }
+    inline bool UserdataTypeHasBeenSet() const { return m_userdataTypeHasBeenSet; }
+    inline void SetUserdataType(UserdataType value) { m_userdataTypeHasBeenSet = true; m_userdataType = value; }
+    inline LaunchTemplateSpecificationOverride& WithUserdataType(UserdataType value) { SetUserdataType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_launchTemplateId;
@@ -151,6 +166,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_targetInstanceTypes;
     bool m_targetInstanceTypesHasBeenSet = false;
+
+    UserdataType m_userdataType{UserdataType::NOT_SET};
+    bool m_userdataTypeHasBeenSet = false;
   };
 
 } // namespace Model

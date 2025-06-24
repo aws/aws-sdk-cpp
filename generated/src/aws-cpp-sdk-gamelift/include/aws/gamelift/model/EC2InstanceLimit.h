@@ -25,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon GameLift service limits for an Amazon EC2 instance type and
-   * current utilization. Amazon GameLift allows Amazon Web Services accounts a
-   * maximum number of instances, per instance type, per Amazon Web Services Region
-   * or location, for use with Amazon GameLift. You can request an limit increase for
-   * your account by using the <b>Service limits</b> page in the Amazon GameLift
-   * console.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon GameLift Servers service limits for an Amazon EC2 instance type
+   * and current utilization. Amazon GameLift Servers allows Amazon Web Services
+   * accounts a maximum number of instances, per instance type, per Amazon Web
+   * Services Region or location, for use with Amazon GameLift Servers. You can
+   * request an limit increase for your account by using the <b>Service limits</b>
+   * page in the Amazon GameLift Servers console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit">AWS
    * API Reference</a></p>
    */
