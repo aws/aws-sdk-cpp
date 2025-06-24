@@ -70,7 +70,7 @@ if (LEGACY_BUILD)
     option(ENABLE_PROTOCOL_TESTS "Enable protocol tests" OFF)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
     option(AWS_APPSTORE_SAFE "Remove reference to private Apple APIs for AES GCM in Common Crypto. If set to OFF you application will get rejected from the apple app store." OFF)
-
+    option(ENABLE_CRT_VERSION_CHECK "Forces the check of found AWS-CRT-CPP version to match the expected one (only at the SDK build configuration)" ON)
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
@@ -249,6 +249,12 @@ if (LEGACY_BUILD)
         include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
+
+    if (ENABLE_CRT_VERSION_CHECK)
+        include(check_crt_version)
+        check_crt_version()
+    endif()
+
     aws_use_package(aws-crt-cpp)
     aws_use_package(aws-c-http)
     aws_use_package(aws-c-mqtt)
