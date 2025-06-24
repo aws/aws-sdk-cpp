@@ -7,8 +7,8 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelCustomizationJobStatus.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/StatusDetails.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/CustomizationType.h>
 #include <utility>
 
@@ -89,18 +89,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Time that the customization job was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
-    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
-    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
-    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
-    ModelCustomizationJobSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Details about the status of the data processing sub-task of the job.</p>
      */
     inline const StatusDetails& GetStatusDetails() const { return m_statusDetails; }
@@ -109,6 +97,18 @@ namespace Model
     void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
     template<typename StatusDetailsT = StatusDetails>
     ModelCustomizationJobSummary& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Time that the customization job was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ModelCustomizationJobSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,11 +185,11 @@ namespace Model
     ModelCustomizationJobStatus m_status{ModelCustomizationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime{};
-    bool m_lastModifiedTimeHasBeenSet = false;
-
     StatusDetails m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;

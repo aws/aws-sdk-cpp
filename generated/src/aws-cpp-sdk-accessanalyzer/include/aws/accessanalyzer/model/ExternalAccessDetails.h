@@ -120,7 +120,19 @@ namespace Model
     ///@{
     /**
      * <p>The type of restriction applied to the finding by the resource owner with an
-     * Organizations resource control policy (RCP).</p>
+     * Organizations resource control policy (RCP).</p> <ul> <li> <p>
+     * <code>APPLICABLE</code>: There is an RCP present in the organization but IAM
+     * Access Analyzer does not include it in the evaluation of effective permissions.
+     * For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the
+     * restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would
+     * still be included in the list of actions for the finding.</p> </li> <li> <p>
+     * <code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p>
+     * </li> <li> <p> <code>NOT_APPLICABLE</code>: There was no RCP present in the
+     * organization, or there was no RCP applicable to the resource. For example, the
+     * resource being analyzed is an Amazon RDS snapshot and there is an RCP in the
+     * organization, but the RCP only impacts Amazon S3 buckets.</p> </li> <li> <p>
+     * <code>APPLIED</code>: This restriction is not currently available for external
+     * access findings. </p> </li> </ul>
      */
     inline ResourceControlPolicyRestriction GetResourceControlPolicyRestriction() const { return m_resourceControlPolicyRestriction; }
     inline bool ResourceControlPolicyRestrictionHasBeenSet() const { return m_resourceControlPolicyRestrictionHasBeenSet; }

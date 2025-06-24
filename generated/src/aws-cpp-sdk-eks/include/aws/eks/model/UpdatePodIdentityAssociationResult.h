@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The full description of the EKS Pod Identity association that was
-     * updated.</p>
+     * <p>The full description of the association that was updated.</p>
      */
     inline const PodIdentityAssociation& GetAssociation() const { return m_association; }
     template<typename AssociationT = PodIdentityAssociation>

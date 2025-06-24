@@ -19,7 +19,8 @@ namespace Model
     AWS_EC2_INSTANCE,
     AWS_ECR_CONTAINER_IMAGE,
     AWS_ECR_REPOSITORY,
-    AWS_LAMBDA_FUNCTION
+    AWS_LAMBDA_FUNCTION,
+    CODE_REPOSITORY
   };
 
 namespace CoverageResourceTypeMapper

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about how to configure IAM for an Addon.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Information about how to configure IAM for an add-on.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonPodIdentityConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Kubernetes Service Account name used by the addon.</p>
+     * <p>The Kubernetes Service Account name used by the add-on.</p>
      */
     inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A suggested IAM Policy for the addon.</p>
+     * <p>A suggested IAM Policy for the add-on.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecommendedManagedPolicies() const { return m_recommendedManagedPolicies; }
     inline bool RecommendedManagedPoliciesHasBeenSet() const { return m_recommendedManagedPoliciesHasBeenSet; }

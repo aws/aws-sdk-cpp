@@ -164,8 +164,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the analyzer is an external access or unused access
-     * analyzer.</p>
+     * <p>Specifies if the analyzer is an external access, unused access, or internal
+     * access analyzer.</p>
      */
     inline const AnalyzerConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

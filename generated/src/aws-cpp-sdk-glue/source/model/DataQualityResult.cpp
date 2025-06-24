@@ -107,6 +107,11 @@ DataQualityResult& DataQualityResult::operator =(JsonView jsonValue)
     }
     m_observationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AggregatedMetrics"))
+  {
+    m_aggregatedMetrics = jsonValue.GetObject("AggregatedMetrics");
+    m_aggregatedMetricsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -208,6 +213,12 @@ JsonValue DataQualityResult::Jsonize() const
      observationsJsonList[observationsIndex].AsObject(m_observations[observationsIndex].Jsonize());
    }
    payload.WithArray("Observations", std::move(observationsJsonList));
+
+  }
+
+  if(m_aggregatedMetricsHasBeenSet)
+  {
+   payload.WithObject("AggregatedMetrics", m_aggregatedMetrics.Jsonize());
 
   }
 

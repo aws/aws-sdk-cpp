@@ -10,6 +10,9 @@
 #include <aws/guardduty/model/AccessKey.h>
 #include <aws/guardduty/model/Ec2NetworkInterface.h>
 #include <aws/guardduty/model/S3Object.h>
+#include <aws/guardduty/model/EksCluster.h>
+#include <aws/guardduty/model/KubernetesWorkload.h>
+#include <aws/guardduty/model/ContainerFindingResource.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +107,45 @@ namespace Model
     template<typename S3ObjectT = S3Object>
     ResourceData& WithS3Object(S3ObjectT&& value) { SetS3Object(std::forward<S3ObjectT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains detailed information about the Amazon EKS cluster associated with
+     * the activity that prompted GuardDuty to generate a finding.</p>
+     */
+    inline const EksCluster& GetEksCluster() const { return m_eksCluster; }
+    inline bool EksClusterHasBeenSet() const { return m_eksClusterHasBeenSet; }
+    template<typename EksClusterT = EksCluster>
+    void SetEksCluster(EksClusterT&& value) { m_eksClusterHasBeenSet = true; m_eksCluster = std::forward<EksClusterT>(value); }
+    template<typename EksClusterT = EksCluster>
+    ResourceData& WithEksCluster(EksClusterT&& value) { SetEksCluster(std::forward<EksClusterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains detailed information about the Kubernetes workload associated with
+     * the activity that prompted GuardDuty to generate a finding.</p>
+     */
+    inline const KubernetesWorkload& GetKubernetesWorkload() const { return m_kubernetesWorkload; }
+    inline bool KubernetesWorkloadHasBeenSet() const { return m_kubernetesWorkloadHasBeenSet; }
+    template<typename KubernetesWorkloadT = KubernetesWorkload>
+    void SetKubernetesWorkload(KubernetesWorkloadT&& value) { m_kubernetesWorkloadHasBeenSet = true; m_kubernetesWorkload = std::forward<KubernetesWorkloadT>(value); }
+    template<typename KubernetesWorkloadT = KubernetesWorkload>
+    ResourceData& WithKubernetesWorkload(KubernetesWorkloadT&& value) { SetKubernetesWorkload(std::forward<KubernetesWorkloadT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains detailed information about the container associated with the
+     * activity that prompted GuardDuty to generate a finding.</p>
+     */
+    inline const ContainerFindingResource& GetContainer() const { return m_container; }
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
+    template<typename ContainerT = ContainerFindingResource>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = ContainerFindingResource>
+    ResourceData& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
+    ///@}
   private:
 
     S3Bucket m_s3Bucket;
@@ -120,6 +162,15 @@ namespace Model
 
     S3Object m_s3Object;
     bool m_s3ObjectHasBeenSet = false;
+
+    EksCluster m_eksCluster;
+    bool m_eksClusterHasBeenSet = false;
+
+    KubernetesWorkload m_kubernetesWorkload;
+    bool m_kubernetesWorkloadHasBeenSet = false;
+
+    ContainerFindingResource m_container;
+    bool m_containerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Aws
         static const int UnusedIAMUserAccessKey_HASH = HashingUtils::HashString("UnusedIAMUserAccessKey");
         static const int UnusedIAMUserPassword_HASH = HashingUtils::HashString("UnusedIAMUserPassword");
         static const int UnusedPermission_HASH = HashingUtils::HashString("UnusedPermission");
+        static const int InternalAccess_HASH = HashingUtils::HashString("InternalAccess");
 
 
         FindingType GetFindingTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == UnusedPermission_HASH)
           {
             return FindingType::UnusedPermission;
+          }
+          else if (hashCode == InternalAccess_HASH)
+          {
+            return FindingType::InternalAccess;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "UnusedIAMUserPassword";
           case FindingType::UnusedPermission:
             return "UnusedPermission";
+          case FindingType::InternalAccess:
+            return "InternalAccess";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

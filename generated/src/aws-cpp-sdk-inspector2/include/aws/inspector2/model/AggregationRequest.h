@@ -8,6 +8,7 @@
 #include <aws/inspector2/model/AccountAggregation.h>
 #include <aws/inspector2/model/AmiAggregation.h>
 #include <aws/inspector2/model/AwsEcrContainerAggregation.h>
+#include <aws/inspector2/model/CodeRepositoryAggregation.h>
 #include <aws/inspector2/model/Ec2InstanceAggregation.h>
 #include <aws/inspector2/model/FindingTypeAggregation.h>
 #include <aws/inspector2/model/ImageLayerAggregation.h>
@@ -84,6 +85,19 @@ namespace Model
     void SetAwsEcrContainerAggregation(AwsEcrContainerAggregationT&& value) { m_awsEcrContainerAggregationHasBeenSet = true; m_awsEcrContainerAggregation = std::forward<AwsEcrContainerAggregationT>(value); }
     template<typename AwsEcrContainerAggregationT = AwsEcrContainerAggregation>
     AggregationRequest& WithAwsEcrContainerAggregation(AwsEcrContainerAggregationT&& value) { SetAwsEcrContainerAggregation(std::forward<AwsEcrContainerAggregationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details about an aggregation request based on code
+     * repositories.</p>
+     */
+    inline const CodeRepositoryAggregation& GetCodeRepositoryAggregation() const { return m_codeRepositoryAggregation; }
+    inline bool CodeRepositoryAggregationHasBeenSet() const { return m_codeRepositoryAggregationHasBeenSet; }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregation>
+    void SetCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { m_codeRepositoryAggregationHasBeenSet = true; m_codeRepositoryAggregation = std::forward<CodeRepositoryAggregationT>(value); }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregation>
+    AggregationRequest& WithCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { SetCodeRepositoryAggregation(std::forward<CodeRepositoryAggregationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,6 +213,9 @@ namespace Model
 
     AwsEcrContainerAggregation m_awsEcrContainerAggregation;
     bool m_awsEcrContainerAggregationHasBeenSet = false;
+
+    CodeRepositoryAggregation m_codeRepositoryAggregation;
+    bool m_codeRepositoryAggregationHasBeenSet = false;
 
     Ec2InstanceAggregation m_ec2InstanceAggregation;
     bool m_ec2InstanceAggregationHasBeenSet = false;

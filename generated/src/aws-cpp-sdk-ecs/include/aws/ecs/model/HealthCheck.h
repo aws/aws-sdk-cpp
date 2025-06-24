@@ -82,18 +82,42 @@ namespace Model
    * <p>If a task is run manually, and not as part of a service, the task will
    * continue its lifecycle regardless of its health status. For tasks that are part
    * of a service, if the task reports as unhealthy then the task will be stopped and
-   * the service scheduler will replace it.</p> <p>The following are notes about
-   * container health check support:</p> <ul> <li> <p>If the Amazon ECS container
-   * agent becomes disconnected from the Amazon ECS service, this won't cause a
-   * container to transition to an <code>UNHEALTHY</code> status. This is by design,
-   * to ensure that containers remain running during agent restarts or temporary
-   * unavailability. The health check status is the "last heard from" response from
-   * the Amazon ECS agent, so if the container was considered <code>HEALTHY</code>
-   * prior to the disconnect, that status will remain until the agent reconnects and
-   * another health check occurs. There are no assumptions made about the status of
-   * the container health checks.</p> </li> <li> <p>Container health checks require
-   * version <code>1.17.0</code> or greater of the Amazon ECS container agent. For
-   * more information, see <a
+   * the service scheduler will replace it.</p> <p>When a container health check
+   * fails for a task that is part of a service, the following process occurs:</p>
+   * <ol> <li> <p>The task is marked as <code>UNHEALTHY</code>.</p> </li> <li> <p>The
+   * unhealthy task will be stopped, and during the stopping process, it will go
+   * through the following states:</p> <ul> <li> <p> <code>DEACTIVATING</code> - In
+   * this state, Amazon ECS performs additional steps before stopping the task. For
+   * example, for tasks that are part of services configured to use Elastic Load
+   * Balancing target groups, target groups will be deregistered in this state.</p>
+   * </li> <li> <p> <code>STOPPING</code> - The task is in the process of being
+   * stopped.</p> </li> <li> <p> <code>DEPROVISIONING</code> - Resources associated
+   * with the task are being cleaned up.</p> </li> <li> <p> <code>STOPPED</code> -
+   * The task has been completely stopped.</p> </li> </ul> </li> <li> <p>After the
+   * old task stops, a new task will be launched to ensure service operation, and the
+   * new task will go through the following lifecycle:</p> <ul> <li> <p>
+   * <code>PROVISIONING</code> - Resources required for the task are being
+   * provisioned.</p> </li> <li> <p> <code>PENDING</code> - The task is waiting to be
+   * placed on a container instance.</p> </li> <li> <p> <code>ACTIVATING</code> - In
+   * this state, Amazon ECS pulls container images, creates containers, configures
+   * task networking, registers load balancer target groups, and configures service
+   * discovery status.</p> </li> <li> <p> <code>RUNNING</code> - The task is running
+   * and performing its work.</p> </li> </ul> </li> </ol> <p>For more detailed
+   * information about task lifecycle states, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle-explanation.html">Task
+   * lifecycle</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p> <p>The following are notes about container health check
+   * support:</p> <ul> <li> <p>If the Amazon ECS container agent becomes disconnected
+   * from the Amazon ECS service, this won't cause a container to transition to an
+   * <code>UNHEALTHY</code> status. This is by design, to ensure that containers
+   * remain running during agent restarts or temporary unavailability. The health
+   * check status is the "last heard from" response from the Amazon ECS agent, so if
+   * the container was considered <code>HEALTHY</code> prior to the disconnect, that
+   * status will remain until the agent reconnects and another health check occurs.
+   * There are no assumptions made about the status of the container health
+   * checks.</p> </li> <li> <p>Container health checks require version
+   * <code>1.17.0</code> or greater of the Amazon ECS container agent. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
    * the Amazon ECS container agent</a>.</p> </li> <li> <p>Container health checks
    * are supported for Fargate tasks if you're using platform version

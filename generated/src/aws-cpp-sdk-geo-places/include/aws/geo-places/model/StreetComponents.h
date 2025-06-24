@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Base name part of the street name. </p> <p>Example: Younge from the “Younge
+     * <p>Base name part of the street name. </p> <p>Example: Younge from the "Younge
      * street".</p>
      */
     inline const Aws::String& GetBaseName() const { return m_baseName; }
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>Street type part of the street name. </p> <p>Example:
-     * <code>“avenue"</code>.</p>
+     * <code>"avenue"</code>.</p>
      */
     inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -76,7 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>What character(s) separates the string from its type. </p>
+     * <p>Defines a separator character such as <code>""</code> or <code>" "</code>
+     * between the base name and type.</p>
      */
     inline const Aws::String& GetTypeSeparator() const { return m_typeSeparator; }
     inline bool TypeSeparatorHasBeenSet() const { return m_typeSeparatorHasBeenSet; }

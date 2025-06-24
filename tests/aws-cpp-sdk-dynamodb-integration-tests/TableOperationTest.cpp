@@ -31,6 +31,7 @@
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/UpdateItemRequest.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
+#include <aws/dynamodb/model/BatchGetItemRequest.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
 
@@ -1521,6 +1522,24 @@ TEST_F(TableOperationTest, TestEndpointOverride)
         Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
         AWS_ASSERT_SUCCESS(outcome);
     }
+}
+
+TEST_F(TableOperationTest, TestBatchGetItem) {
+  Aws::String table_name = BuildTableName(BASE_SIMPLE_TABLE);
+  CreateTable(table_name, 10, 10);
+
+  AttributeValue value{"wheres everyone going, bingo?"};
+  const auto put_item_result = m_client->PutItem(PutItemRequest().WithTableName(table_name).WithItem({{HASH_KEY_NAME, value}}));
+  AWS_ASSERT_SUCCESS(put_item_result);
+
+  const auto batch_get_item_result = m_client->BatchGetItem(BatchGetItemRequest()
+    .WithRequestItems({
+      {
+        table_name, KeysAndAttributes().WithKeys({{{HASH_KEY_NAME, value}}})
+      }
+    }));
+  AWS_ASSERT_SUCCESS(batch_get_item_result);
+  EXPECT_EQ(1ul, batch_get_item_result.GetResult().GetResponses().size());
 }
 
 } // anonymous namespace

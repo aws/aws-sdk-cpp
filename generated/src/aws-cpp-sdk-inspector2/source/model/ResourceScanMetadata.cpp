@@ -25,6 +25,11 @@ ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue)
 
 ResourceScanMetadata& ResourceScanMetadata::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("codeRepository"))
+  {
+    m_codeRepository = jsonValue.GetObject("codeRepository");
+    m_codeRepositoryHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ec2"))
   {
     m_ec2 = jsonValue.GetObject("ec2");
@@ -51,6 +56,12 @@ ResourceScanMetadata& ResourceScanMetadata::operator =(JsonView jsonValue)
 JsonValue ResourceScanMetadata::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
+
+  }
 
   if(m_ec2HasBeenSet)
   {

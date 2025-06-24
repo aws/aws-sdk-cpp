@@ -146,6 +146,13 @@
 #include <aws/sagemaker/model/CategoricalParameter.h>
 #include <aws/sagemaker/model/CategoricalParameterRange.h>
 #include <aws/sagemaker/model/CategoricalParameterRangeSpecification.h>
+#include <aws/sagemaker/model/CfnCreateTemplateProvider.h>
+#include <aws/sagemaker/model/CfnStackCreateParameter.h>
+#include <aws/sagemaker/model/CfnStackDetail.h>
+#include <aws/sagemaker/model/CfnStackParameter.h>
+#include <aws/sagemaker/model/CfnStackUpdateParameter.h>
+#include <aws/sagemaker/model/CfnTemplateProviderDetail.h>
+#include <aws/sagemaker/model/CfnUpdateTemplateProvider.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/ChannelSpecification.h>
 #include <aws/sagemaker/model/CheckpointConfig.h>
@@ -317,6 +324,7 @@
 #include <aws/sagemaker/model/CreateSpaceResult.h>
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigResult.h>
+#include <aws/sagemaker/model/CreateTemplateProvider.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTrainingPlanRequest.h>
@@ -1436,6 +1444,7 @@
 #include <aws/sagemaker/model/TargetPlatformArch.h>
 #include <aws/sagemaker/model/TargetPlatformOs.h>
 #include <aws/sagemaker/model/TargetTrackingScalingPolicyConfiguration.h>
+#include <aws/sagemaker/model/TemplateProviderDetail.h>
 #include <aws/sagemaker/model/TensorBoardAppSettings.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/TextClassificationJobConfig.h>
@@ -1584,6 +1593,7 @@
 #include <aws/sagemaker/model/UpdateProjectResult.h>
 #include <aws/sagemaker/model/UpdateSpaceRequest.h>
 #include <aws/sagemaker/model/UpdateSpaceResult.h>
+#include <aws/sagemaker/model/UpdateTemplateProvider.h>
 #include <aws/sagemaker/model/UpdateTrainingJobRequest.h>
 #include <aws/sagemaker/model/UpdateTrainingJobResult.h>
 #include <aws/sagemaker/model/UpdateTrialComponentRequest.h>

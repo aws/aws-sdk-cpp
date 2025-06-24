@@ -63,6 +63,19 @@ namespace Model
     template<typename FirewallArnT = Aws::String>
     FirewallMetadata& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the transit gateway attachment associated with this
+     * firewall. This field is only present for transit gateway-attached firewalls.</p>
+     */
+    inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value); }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    FirewallMetadata& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_firewallName;
@@ -70,6 +83,9 @@ namespace Model
 
     Aws::String m_firewallArn;
     bool m_firewallArnHasBeenSet = false;
+
+    Aws::String m_transitGatewayAttachmentId;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
   };
 
 } // namespace Model

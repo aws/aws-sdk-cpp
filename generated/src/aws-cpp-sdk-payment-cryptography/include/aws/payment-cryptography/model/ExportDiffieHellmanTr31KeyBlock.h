@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameter information for key material export using the asymmetric ECDH key
-   * exchange method.</p><p><h3>See Also:</h3>   <a
+   * <p>Key derivation parameter information for key material export using asymmetric
+   * ECDH key exchange method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportDiffieHellmanTr31KeyBlock">AWS
    * API Reference</a></p>
    */
@@ -45,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>keyARN</code> of the asymmetric ECC key.</p>
+     * <p>The <code>keyARN</code> of the asymmetric ECC key created within Amazon Web
+     * Services Payment Cryptography.</p>
      */
     inline const Aws::String& GetPrivateKeyIdentifier() const { return m_privateKeyIdentifier; }
     inline bool PrivateKeyIdentifierHasBeenSet() const { return m_privateKeyIdentifierHasBeenSet; }
@@ -57,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>keyARN</code> of the certificate that signed the client's
-     * <code>PublicKeyCertificate</code>.</p>
+     * <p>The <code>keyARN</code> of the CA that signed the
+     * <code>PublicKeyCertificate</code> for the client's receiving ECC key pair.</p>
      */
     inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const { return m_certificateAuthorityPublicKeyIdentifier; }
     inline bool CertificateAuthorityPublicKeyIdentifierHasBeenSet() const { return m_certificateAuthorityPublicKeyIdentifierHasBeenSet; }
@@ -70,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client's public key certificate in PEM format (base64 encoded) to use for
-     * ECDH key derivation.</p>
+     * <p>The public key certificate of the client's receiving ECC key pair, in PEM
+     * format (base64 encoded), to use for ECDH key derivation.</p>
      */
     inline const Aws::String& GetPublicKeyCertificate() const { return m_publicKeyCertificate; }
     inline bool PublicKeyCertificateHasBeenSet() const { return m_publicKeyCertificateHasBeenSet; }
@@ -83,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key algorithm of the derived ECDH key.</p>
+     * <p>The key algorithm of the shared derived ECDH key.</p>
      */
     inline SymmetricKeyAlgorithm GetDeriveKeyAlgorithm() const { return m_deriveKeyAlgorithm; }
     inline bool DeriveKeyAlgorithmHasBeenSet() const { return m_deriveKeyAlgorithmHasBeenSet; }
@@ -93,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key derivation function to use for deriving a key using ECDH.</p>
+     * <p>The key derivation function to use when deriving a key using ECDH.</p>
      */
     inline KeyDerivationFunction GetKeyDerivationFunction() const { return m_keyDerivationFunction; }
     inline bool KeyDerivationFunctionHasBeenSet() const { return m_keyDerivationFunctionHasBeenSet; }
@@ -103,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The hash type to use for deriving a key using ECDH.</p>
+     * <p>The hash type to use when deriving a key using ECDH.</p>
      */
     inline KeyDerivationHashAlgorithm GetKeyDerivationHashAlgorithm() const { return m_keyDerivationHashAlgorithm; }
     inline bool KeyDerivationHashAlgorithmHasBeenSet() const { return m_keyDerivationHashAlgorithmHasBeenSet; }
@@ -113,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Derivation data used to derive an ECDH key.</p>
+     * <p>The shared information used when deriving a key using ECDH.</p>
      */
     inline const DiffieHellmanDerivationData& GetDerivationData() const { return m_derivationData; }
     inline bool DerivationDataHasBeenSet() const { return m_derivationDataHasBeenSet; }

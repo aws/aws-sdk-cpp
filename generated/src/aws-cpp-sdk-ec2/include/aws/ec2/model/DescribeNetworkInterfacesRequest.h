@@ -139,9 +139,9 @@ namespace Model
      * (<code>api_gateway_managed</code> |
      * <code>aws_codestar_connections_managed</code> | <code>branch</code> |
      * <code>ec2_instance_connect_endpoint</code> | <code>efa</code> |
-     * <code>efa-only</code> | <code>efs</code> | <code>gateway_load_balancer</code> |
-     * <code>gateway_load_balancer_endpoint</code> |
-     * <code>global_accelerator_managed</code> | <code>interface</code> |
+     * <code>efa-only</code> | <code>efs</code> | <code>evs</code> |
+     * <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code>
+     * | <code>global_accelerator_managed</code> | <code>interface</code> |
      * <code>iot_rules_managed</code> | <code>lambda</code> |
      * <code>load_balancer</code> | <code>nat_gateway</code> |
      * <code>network_load_balancer</code> | <code>quicksight</code> |

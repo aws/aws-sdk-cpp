@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/SecurityHubFeature.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,17 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListOrganizationAdminAccountsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The feature where the delegated administrator account is listed. Defaults to
+     * Security Hub if not specified.</p>
+     */
+    inline SecurityHubFeature GetFeature() const { return m_feature; }
+    inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
+    inline void SetFeature(SecurityHubFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline ListOrganizationAdminAccountsRequest& WithFeature(SecurityHubFeature value) { SetFeature(value); return *this;}
+    ///@}
   private:
 
     int m_maxResults{0};
@@ -70,6 +82,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
+    bool m_featureHasBeenSet = false;
   };
 
 } // namespace Model

@@ -327,7 +327,7 @@ namespace ApiGatewayV2
         }
 
         /**
-         * <p>Creates a RoutingRule</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a RoutingRule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">AWS
          * API Reference</a></p>
          */

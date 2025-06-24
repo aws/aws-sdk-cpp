@@ -28,7 +28,10 @@ namespace Model
     HMAC_256,
     HMAC_384,
     HMAC_512,
-    SM2
+    SM2,
+    ML_DSA_44,
+    ML_DSA_65,
+    ML_DSA_87
   };
 
 namespace KeySpecMapper

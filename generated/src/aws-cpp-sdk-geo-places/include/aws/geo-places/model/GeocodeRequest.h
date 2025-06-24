@@ -46,7 +46,9 @@ namespace Model
     ///@{
     /**
      * <p>The free-form text query to match addresses against. This is usually a
-     * partially typed address from an end user in an address box or form.</p>
+     * partially typed address from an end user in an address box or form.</p> 
+     * <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually
+     * exclusive.</p> 
      */
     inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
@@ -96,7 +98,7 @@ namespace Model
     ///@{
     /**
      * <p>A structure which contains a set of inclusion/exclusion properties that
-     * results must posses in order to be returned as a result.</p>
+     * results must possess in order to be returned as a result.</p>
      */
     inline const GeocodeFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -152,7 +154,12 @@ namespace Model
     ///@{
     /**
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
-     * if left empty.</p>
+     * if left empty.</p>  <p>Storing the response of an Geocode query is
+     * required to comply with service terms, but charged at a higher cost per request.
+     * Please review the <a href="https://aws.amazon.com/location/sla/">user
+     * agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service
+     * pricing structure</a> to determine the correct setting for your use case.</p>
+     * 
      */
     inline GeocodeIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }

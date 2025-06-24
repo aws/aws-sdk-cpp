@@ -14,6 +14,8 @@
 #include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/AssociationConfig.h>
+#include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
+#include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/FirewallManagerRuleGroup.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
@@ -376,6 +378,31 @@ namespace Model
     inline void SetRetrofittedByFirewallManager(bool value) { m_retrofittedByFirewallManagerHasBeenSet = true; m_retrofittedByFirewallManager = value; }
     inline WebACL& WithRetrofittedByFirewallManager(bool value) { SetRetrofittedByFirewallManager(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configures the level of DDoS protection that applies to web ACLs associated
+     * with Application Load Balancers.</p>
+     */
+    inline const OnSourceDDoSProtectionConfig& GetOnSourceDDoSProtectionConfig() const { return m_onSourceDDoSProtectionConfig; }
+    inline bool OnSourceDDoSProtectionConfigHasBeenSet() const { return m_onSourceDDoSProtectionConfigHasBeenSet; }
+    template<typename OnSourceDDoSProtectionConfigT = OnSourceDDoSProtectionConfig>
+    void SetOnSourceDDoSProtectionConfig(OnSourceDDoSProtectionConfigT&& value) { m_onSourceDDoSProtectionConfigHasBeenSet = true; m_onSourceDDoSProtectionConfig = std::forward<OnSourceDDoSProtectionConfigT>(value); }
+    template<typename OnSourceDDoSProtectionConfigT = OnSourceDDoSProtectionConfig>
+    WebACL& WithOnSourceDDoSProtectionConfig(OnSourceDDoSProtectionConfigT&& value) { SetOnSourceDDoSProtectionConfig(std::forward<OnSourceDDoSProtectionConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+     */
+    inline const ApplicationConfig& GetApplicationConfig() const { return m_applicationConfig; }
+    inline bool ApplicationConfigHasBeenSet() const { return m_applicationConfigHasBeenSet; }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    void SetApplicationConfig(ApplicationConfigT&& value) { m_applicationConfigHasBeenSet = true; m_applicationConfig = std::forward<ApplicationConfigT>(value); }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    WebACL& WithApplicationConfig(ApplicationConfigT&& value) { SetApplicationConfig(std::forward<ApplicationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -434,6 +461,12 @@ namespace Model
 
     bool m_retrofittedByFirewallManager{false};
     bool m_retrofittedByFirewallManagerHasBeenSet = false;
+
+    OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
+    bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
+
+    ApplicationConfig m_applicationConfig;
+    bool m_applicationConfigHasBeenSet = false;
   };
 
 } // namespace Model

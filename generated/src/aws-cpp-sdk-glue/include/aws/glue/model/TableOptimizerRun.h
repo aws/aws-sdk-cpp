@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/CompactionMetrics.h>
+#include <aws/glue/model/CompactionStrategy.h>
 #include <aws/glue/model/RetentionMetrics.h>
 #include <aws/glue/model/OrphanFileDeletionMetrics.h>
 #include <utility>
@@ -104,6 +105,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The strategy used for the compaction run. Indicates which algorithm was
+     * applied to determine how files were selected and combined during the compaction
+     * process. Valid values are:</p> <ul> <li> <p> <code>binpack</code>: Combines
+     * small files into larger files, typically targeting sizes over 100MB, while
+     * applying any pending deletes. This is the recommended compaction strategy for
+     * most use cases. </p> </li> <li> <p> <code>sort</code>: Organizes data based on
+     * specified columns which are sorted hierarchically during compaction, improving
+     * query performance for filtered operations. This strategy is recommended when
+     * your queries frequently filter on specific columns. To use this strategy, you
+     * must first define a sort order in your Iceberg table properties using the
+     * <code>sort_order</code> table property.</p> </li> <li> <p> <code>z-order</code>:
+     * Optimizes data organization by blending multiple attributes into a single scalar
+     * value that can be used for sorting, allowing efficient querying across multiple
+     * dimensions. This strategy is recommended when you need to query data across
+     * multiple dimensions simultaneously. To use this strategy, you must first define
+     * a sort order in your Iceberg table properties using the <code>sort_order</code>
+     * table property. </p> </li> </ul>
+     */
+    inline CompactionStrategy GetCompactionStrategy() const { return m_compactionStrategy; }
+    inline bool CompactionStrategyHasBeenSet() const { return m_compactionStrategyHasBeenSet; }
+    inline void SetCompactionStrategy(CompactionStrategy value) { m_compactionStrategyHasBeenSet = true; m_compactionStrategy = value; }
+    inline TableOptimizerRun& WithCompactionStrategy(CompactionStrategy value) { SetCompactionStrategy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer
      * run.</p>
      */
@@ -143,6 +170,9 @@ namespace Model
 
     CompactionMetrics m_compactionMetrics;
     bool m_compactionMetricsHasBeenSet = false;
+
+    CompactionStrategy m_compactionStrategy{CompactionStrategy::NOT_SET};
+    bool m_compactionStrategyHasBeenSet = false;
 
     RetentionMetrics m_retentionMetrics;
     bool m_retentionMetricsHasBeenSet = false;

@@ -50,6 +50,21 @@ ResourceData& ResourceData::operator =(JsonView jsonValue)
     m_s3Object = jsonValue.GetObject("s3Object");
     m_s3ObjectHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("eksCluster"))
+  {
+    m_eksCluster = jsonValue.GetObject("eksCluster");
+    m_eksClusterHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("kubernetesWorkload"))
+  {
+    m_kubernetesWorkload = jsonValue.GetObject("kubernetesWorkload");
+    m_kubernetesWorkloadHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("container"))
+  {
+    m_container = jsonValue.GetObject("container");
+    m_containerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +99,24 @@ JsonValue ResourceData::Jsonize() const
   if(m_s3ObjectHasBeenSet)
   {
    payload.WithObject("s3Object", m_s3Object.Jsonize());
+
+  }
+
+  if(m_eksClusterHasBeenSet)
+  {
+   payload.WithObject("eksCluster", m_eksCluster.Jsonize());
+
+  }
+
+  if(m_kubernetesWorkloadHasBeenSet)
+  {
+   payload.WithObject("kubernetesWorkload", m_kubernetesWorkload.Jsonize());
+
+  }
+
+  if(m_containerHasBeenSet)
+  {
+   payload.WithObject("container", m_container.Jsonize());
 
   }
 

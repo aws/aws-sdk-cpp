@@ -139,6 +139,21 @@ namespace Model
     template<typename SequenceIndicatorsT = Indicator>
     Sequence& AddSequenceIndicators(SequenceIndicatorsT&& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators.emplace_back(std::forward<SequenceIndicatorsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Additional types of sequences that may be associated with the attack sequence
+     * finding, providing further context about the nature of the detected threat.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdditionalSequenceTypes() const { return m_additionalSequenceTypes; }
+    inline bool AdditionalSequenceTypesHasBeenSet() const { return m_additionalSequenceTypesHasBeenSet; }
+    template<typename AdditionalSequenceTypesT = Aws::Vector<Aws::String>>
+    void SetAdditionalSequenceTypes(AdditionalSequenceTypesT&& value) { m_additionalSequenceTypesHasBeenSet = true; m_additionalSequenceTypes = std::forward<AdditionalSequenceTypesT>(value); }
+    template<typename AdditionalSequenceTypesT = Aws::Vector<Aws::String>>
+    Sequence& WithAdditionalSequenceTypes(AdditionalSequenceTypesT&& value) { SetAdditionalSequenceTypes(std::forward<AdditionalSequenceTypesT>(value)); return *this;}
+    template<typename AdditionalSequenceTypesT = Aws::String>
+    Sequence& AddAdditionalSequenceTypes(AdditionalSequenceTypesT&& value) { m_additionalSequenceTypesHasBeenSet = true; m_additionalSequenceTypes.emplace_back(std::forward<AdditionalSequenceTypesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_uid;
@@ -161,6 +176,9 @@ namespace Model
 
     Aws::Vector<Indicator> m_sequenceIndicators;
     bool m_sequenceIndicatorsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_additionalSequenceTypes;
+    bool m_additionalSequenceTypesHasBeenSet = false;
   };
 
 } // namespace Model

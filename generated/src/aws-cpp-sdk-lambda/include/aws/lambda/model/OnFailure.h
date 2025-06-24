@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>A destination for events that failed processing.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnFailure">AWS
+   * <p>A destination for events that failed processing. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+   * a destination</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnFailure">AWS
    * API Reference</a></p>
    */
   class OnFailure

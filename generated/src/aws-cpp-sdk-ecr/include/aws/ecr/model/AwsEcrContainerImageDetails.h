@@ -116,6 +116,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>The most recent date and time a cluster was running the image.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastInUseAt() const { return m_lastInUseAt; }
+    inline bool LastInUseAtHasBeenSet() const { return m_lastInUseAtHasBeenSet; }
+    template<typename LastInUseAtT = Aws::Utils::DateTime>
+    void SetLastInUseAt(LastInUseAtT&& value) { m_lastInUseAtHasBeenSet = true; m_lastInUseAt = std::forward<LastInUseAtT>(value); }
+    template<typename LastInUseAtT = Aws::Utils::DateTime>
+    AwsEcrContainerImageDetails& WithLastInUseAt(LastInUseAtT&& value) { SetLastInUseAt(std::forward<LastInUseAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of Amazon ECS or Amazon EKS clusters currently running the
+     * image.</p>
+     */
+    inline long long GetInUseCount() const { return m_inUseCount; }
+    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
+    inline void SetInUseCount(long long value) { m_inUseCountHasBeenSet = true; m_inUseCount = value; }
+    inline AwsEcrContainerImageDetails& WithInUseCount(long long value) { SetInUseCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The registry the Amazon ECR container image belongs to.</p>
      */
     inline const Aws::String& GetRegistry() const { return m_registry; }
@@ -156,6 +179,12 @@ namespace Model
 
     Aws::Utils::DateTime m_pushedAt{};
     bool m_pushedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastInUseAt{};
+    bool m_lastInUseAtHasBeenSet = false;
+
+    long long m_inUseCount{0};
+    bool m_inUseCountHasBeenSet = false;
 
     Aws::String m_registry;
     bool m_registryHasBeenSet = false;

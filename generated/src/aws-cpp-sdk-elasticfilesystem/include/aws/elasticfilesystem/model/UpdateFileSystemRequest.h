@@ -64,7 +64,7 @@ namespace Model
      * want to provision for a file system that you're creating. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
      * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
-     * contact Amazon Web Services Support. For more information, see <a
+     * contact Amazon Web ServicesSupport. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */

@@ -131,7 +131,9 @@
 #include <aws/glue/model/ColumnStatisticsTaskRun.h>
 #include <aws/glue/model/ColumnStatisticsTaskSettings.h>
 #include <aws/glue/model/ColumnStatisticsType.h>
+#include <aws/glue/model/CompactionConfiguration.h>
 #include <aws/glue/model/CompactionMetrics.h>
+#include <aws/glue/model/CompactionStrategy.h>
 #include <aws/glue/model/Comparator.h>
 #include <aws/glue/model/Compatibility.h>
 #include <aws/glue/model/CompressionType.h>
@@ -240,6 +242,7 @@
 #include <aws/glue/model/DataLakeAccessPropertiesOutput.h>
 #include <aws/glue/model/DataLakePrincipal.h>
 #include <aws/glue/model/DataOperation.h>
+#include <aws/glue/model/DataQualityAggregatedMetrics.h>
 #include <aws/glue/model/DataQualityAnalyzerResult.h>
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
@@ -560,6 +563,7 @@
 #include <aws/glue/model/HudiTarget.h>
 #include <aws/glue/model/HudiTargetCompressionType.h>
 #include <aws/glue/model/HyperTargetCompressionType.h>
+#include <aws/glue/model/IcebergCompactionConfiguration.h>
 #include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/glue/model/IcebergInput.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionConfiguration.h>

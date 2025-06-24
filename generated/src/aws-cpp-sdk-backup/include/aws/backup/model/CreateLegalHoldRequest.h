@@ -10,6 +10,7 @@
 #include <aws/backup/model/RecoveryPointSelection.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -110,8 +111,8 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     RecoveryPointSelection m_recoveryPointSelection;
     bool m_recoveryPointSelectionHasBeenSet = false;

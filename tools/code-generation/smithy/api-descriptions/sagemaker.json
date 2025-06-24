@@ -5852,6 +5852,314 @@
         "com.amazonaws.sagemaker#CertifyForMarketplace": {
             "type": "boolean"
         },
+        "com.amazonaws.sagemaker#CfnCreateTemplateProvider": {
+            "type": "structure",
+            "members": {
+                "TemplateName": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> A unique identifier for the template within the project. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TemplateURL": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateURL",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The Amazon S3 URL of the CloudFormation template. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RoleARN": {
+                    "target": "com.amazonaws.sagemaker#RoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The IAM role that CloudFormation assumes when creating the stack. </p>"
+                    }
+                },
+                "Parameters": {
+                    "target": "com.amazonaws.sagemaker#CfnStackCreateParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of CloudFormation stack parameters.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackCreateParameter": {
+            "type": "structure",
+            "members": {
+                "Key": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterKey",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The name of the CloudFormation parameter. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The value of the CloudFormation parameter. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> A key-value pair that represents a parameter for the CloudFormation stack. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackCreateParameters": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#CfnStackCreateParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 180
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackDetail": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sagemaker#CfnStackName",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The name of the CloudFormation stack. </p>"
+                    }
+                },
+                "Id": {
+                    "target": "com.amazonaws.sagemaker#CfnStackId",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The unique identifier of the CloudFormation stack. </p>"
+                    }
+                },
+                "StatusMessage": {
+                    "target": "com.amazonaws.sagemaker#CfnStackStatusMessage",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> A human-readable message about the stack's current status. </p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Details about the CloudFormation stack. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 256
+                },
+                "smithy.api#pattern": "^(?=.{1,256}$)arn:aws[a-z\\-]*:cloudformation:[a-z0-9\\-]*:[0-9]{12}:stack/[a-zA-Z][a-zA-Z0-9-]{0,127}/.*$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                },
+                "smithy.api#pattern": "^[A-Za-z][A-Za-z0-9-]{0,127}$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackParameter": {
+            "type": "structure",
+            "members": {
+                "Key": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterKey",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The name of the CloudFormation parameter. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The value of the CloudFormation parameter. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackParameterKey": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 255
+                },
+                "smithy.api#pattern": "^.{1,255}$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackParameterValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 4096
+                },
+                "smithy.api#pattern": "^.{0,4096}$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackParameters": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#CfnStackParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 180
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackStatusMessage": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 4096
+                },
+                "smithy.api#pattern": "^.{1,4096}$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackUpdateParameter": {
+            "type": "structure",
+            "members": {
+                "Key": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterKey",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The name of the CloudFormation parameter. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameterValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The value of the CloudFormation parameter. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnStackUpdateParameters": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#CfnStackUpdateParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 180
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CfnTemplateName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 32
+                },
+                "smithy.api#pattern": "^(?=.{1,32}$)[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail": {
+            "type": "structure",
+            "members": {
+                "TemplateName": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The unique identifier of the template within the project. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TemplateURL": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateURL",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The Amazon S3 URL of the CloudFormation template. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RoleARN": {
+                    "target": "com.amazonaws.sagemaker#RoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The IAM role used by CloudFormation to create the stack. </p>"
+                    }
+                },
+                "Parameters": {
+                    "target": "com.amazonaws.sagemaker#CfnStackParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of CloudFormation stack parameters.</p>"
+                    }
+                },
+                "StackDetail": {
+                    "target": "com.amazonaws.sagemaker#CfnStackDetail",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Information about the CloudFormation stack created by the template provider. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnTemplateURL": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1024
+                },
+                "smithy.api#pattern": "^(?=.{1,1024}$)(https)://([^/]+)/(.+)$"
+            }
+        },
+        "com.amazonaws.sagemaker#CfnUpdateTemplateProvider": {
+            "type": "structure",
+            "members": {
+                "TemplateName": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateName",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The unique identifier of the template to update within the project. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TemplateURL": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateURL",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p> The Amazon S3 URL of the CloudFormation template.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Parameters": {
+                    "target": "com.amazonaws.sagemaker#CfnStackUpdateParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of CloudFormation stack parameters. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Contains configuration details for updating an existing CloudFormation template provider in the project. </p>"
+            }
+        },
         "com.amazonaws.sagemaker#Channel": {
             "type": "structure",
             "members": {
@@ -7599,6 +7907,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ml.p5en.48xlarge"
+                    }
+                },
+                "ML_P6_B200_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p6-b200.48xlarge"
                     }
                 },
                 "ML_TRN2_48XLARGE": {
@@ -14752,6 +15066,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>"
                     }
+                },
+                "TemplateProviders": {
+                    "target": "com.amazonaws.sagemaker#CreateTemplateProviderList",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of template provider configurations for creating infrastructure resources for the project. </p>"
+                    }
                 }
             },
             "traits": {
@@ -14937,6 +15257,32 @@
             },
             "traits": {
                 "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#CreateTemplateProvider": {
+            "type": "structure",
+            "members": {
+                "CfnTemplateProvider": {
+                    "target": "com.amazonaws.sagemaker#CfnCreateTemplateProvider",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Contains configuration details for a template provider. Only one type of template provider can be specified. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CreateTemplateProviderList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#CreateTemplateProvider"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1
+                }
             }
         },
         "com.amazonaws.sagemaker#CreateTrainingJob": {
@@ -26463,6 +26809,12 @@
                         "smithy.api#clientOptional": {},
                         "smithy.api#documentation": "<p>The status of the project.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "TemplateProviderDetails": {
+                    "target": "com.amazonaws.sagemaker#TemplateProviderDetailList",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of template providers associated with the project. </p>"
                     }
                 },
                 "CreatedBy": {
@@ -55847,6 +56199,168 @@
                     "traits": {
                         "smithy.api#enumValue": "ml.c6i.32xlarge"
                     }
+                },
+                "ML_M7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.large"
+                    }
+                },
+                "ML_M7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.xlarge"
+                    }
+                },
+                "ML_M7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.2xlarge"
+                    }
+                },
+                "ML_M7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.4xlarge"
+                    }
+                },
+                "ML_M7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.8xlarge"
+                    }
+                },
+                "ML_M7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.12xlarge"
+                    }
+                },
+                "ML_M7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.16xlarge"
+                    }
+                },
+                "ML_M7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.24xlarge"
+                    }
+                },
+                "ML_M7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.48xlarge"
+                    }
+                },
+                "ML_C7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.large"
+                    }
+                },
+                "ML_C7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.xlarge"
+                    }
+                },
+                "ML_C7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.2xlarge"
+                    }
+                },
+                "ML_C7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.4xlarge"
+                    }
+                },
+                "ML_C7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.8xlarge"
+                    }
+                },
+                "ML_C7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.12xlarge"
+                    }
+                },
+                "ML_C7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.16xlarge"
+                    }
+                },
+                "ML_C7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.24xlarge"
+                    }
+                },
+                "ML_C7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.48xlarge"
+                    }
+                },
+                "ML_R7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.large"
+                    }
+                },
+                "ML_R7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.xlarge"
+                    }
+                },
+                "ML_R7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.2xlarge"
+                    }
+                },
+                "ML_R7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.4xlarge"
+                    }
+                },
+                "ML_R7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.8xlarge"
+                    }
+                },
+                "ML_R7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.12xlarge"
+                    }
+                },
+                "ML_R7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.16xlarge"
+                    }
+                },
+                "ML_R7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.24xlarge"
+                    }
+                },
+                "ML_R7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.48xlarge"
+                    }
                 }
             }
         },
@@ -58052,6 +58566,240 @@
                     "traits": {
                         "smithy.api#enumValue": "ml.r7i.48xlarge"
                     }
+                },
+                "ML_C8G_MEDIUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.medium"
+                    }
+                },
+                "ML_C8G_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.large"
+                    }
+                },
+                "ML_C8G_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.xlarge"
+                    }
+                },
+                "ML_C8G_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.2xlarge"
+                    }
+                },
+                "ML_C8G_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.4xlarge"
+                    }
+                },
+                "ML_C8G_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.8xlarge"
+                    }
+                },
+                "ML_C8G_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.12xlarge"
+                    }
+                },
+                "ML_C8G_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.16xlarge"
+                    }
+                },
+                "ML_C8G_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.24xlarge"
+                    }
+                },
+                "ML_C8G_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c8g.48xlarge"
+                    }
+                },
+                "ML_R7GD_MEDIUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.medium"
+                    }
+                },
+                "ML_R7GD_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.large"
+                    }
+                },
+                "ML_R7GD_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.xlarge"
+                    }
+                },
+                "ML_R7GD_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.2xlarge"
+                    }
+                },
+                "ML_R7GD_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.4xlarge"
+                    }
+                },
+                "ML_R7GD_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.8xlarge"
+                    }
+                },
+                "ML_R7GD_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.12xlarge"
+                    }
+                },
+                "ML_R7GD_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7gd.16xlarge"
+                    }
+                },
+                "ML_M8G_MEDIUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.medium"
+                    }
+                },
+                "ML_M8G_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.large"
+                    }
+                },
+                "ML_M8G_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.xlarge"
+                    }
+                },
+                "ML_M8G_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.2xlarge"
+                    }
+                },
+                "ML_M8G_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.4xlarge"
+                    }
+                },
+                "ML_M8G_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.8xlarge"
+                    }
+                },
+                "ML_M8G_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.12xlarge"
+                    }
+                },
+                "ML_M8G_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.16xlarge"
+                    }
+                },
+                "ML_M8G_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.24xlarge"
+                    }
+                },
+                "ML_M8G_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m8g.48xlarge"
+                    }
+                },
+                "ML_C6IN_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.large"
+                    }
+                },
+                "ML_C6IN_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.xlarge"
+                    }
+                },
+                "ML_C6IN_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.2xlarge"
+                    }
+                },
+                "ML_C6IN_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.4xlarge"
+                    }
+                },
+                "ML_C6IN_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.8xlarge"
+                    }
+                },
+                "ML_C6IN_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.12xlarge"
+                    }
+                },
+                "ML_C6IN_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.16xlarge"
+                    }
+                },
+                "ML_C6IN_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.24xlarge"
+                    }
+                },
+                "ML_C6IN_32XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c6in.32xlarge"
+                    }
+                },
+                "ML_P6_B200_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p6-b200.48xlarge"
+                    }
+                },
+                "ML_P6E_GB200_36XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p6e-gb200.36xlarge"
+                    }
                 }
             }
         },
@@ -58587,6 +59335,12 @@
                     "target": "com.amazonaws.sagemaker#Timestamp",
                     "traits": {
                         "smithy.api#documentation": "<p>A timestamp specifying when the project was created.</p>"
+                    }
+                },
+                "TemplateProviderDetails": {
+                    "target": "com.amazonaws.sagemaker#TemplateProviderDetailList",
+                    "traits": {
+                        "smithy.api#documentation": "<p> An array of template providers associated with the project. </p>"
                     }
                 },
                 "Tags": {
@@ -60995,7 +61749,7 @@
                 "InstanceType": {
                     "target": "com.amazonaws.sagemaker#TrainingInstanceType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ML compute instance type. </p> <note> <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022. </p> <p> <a href=\"http://aws.amazon.com/ec2/instance-types/p4/\">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions. </p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon) (us-west-2)</p> </li> </ul> <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p> </note>"
+                        "smithy.api#documentation": "<p>The ML compute instance type. </p>"
                     }
                 },
                 "InstanceCount": {
@@ -61672,7 +62426,7 @@
                     "target": "com.amazonaws.sagemaker#S3DataType",
                     "traits": {
                         "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>",
+                        "smithy.api#documentation": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p> <p>If you choose <code>Converse</code>, <code>S3Uri</code> identifies an Amazon S3 location that contains data formatted according to Converse format. This format structures conversational messages with specific roles and content types used for training and fine-tuning foundational models.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -61735,6 +62489,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "AugmentedManifestFile"
+                    }
+                },
+                "CONVERSE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Converse"
                     }
                 }
             }
@@ -68327,6 +69087,32 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#TemplateProviderDetail": {
+            "type": "structure",
+            "members": {
+                "CfnTemplateProviderDetail": {
+                    "target": "com.amazonaws.sagemaker#CfnTemplateProviderDetail",
+                    "traits": {
+                        "smithy.api#documentation": "<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Details about a template provider configuration and associated provisioning information. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#TemplateProviderDetailList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#TemplateProviderDetail"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        },
         "com.amazonaws.sagemaker#TemplateUrl": {
             "type": "string",
             "traits": {
@@ -69931,6 +70717,168 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ml.p6-b200.48xlarge"
+                    }
+                },
+                "ML_M7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.large"
+                    }
+                },
+                "ML_M7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.xlarge"
+                    }
+                },
+                "ML_M7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.2xlarge"
+                    }
+                },
+                "ML_M7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.4xlarge"
+                    }
+                },
+                "ML_M7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.8xlarge"
+                    }
+                },
+                "ML_M7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.12xlarge"
+                    }
+                },
+                "ML_M7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.16xlarge"
+                    }
+                },
+                "ML_M7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.24xlarge"
+                    }
+                },
+                "ML_M7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.m7i.48xlarge"
+                    }
+                },
+                "ML_C7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.large"
+                    }
+                },
+                "ML_C7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.xlarge"
+                    }
+                },
+                "ML_C7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.2xlarge"
+                    }
+                },
+                "ML_C7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.4xlarge"
+                    }
+                },
+                "ML_C7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.8xlarge"
+                    }
+                },
+                "ML_C7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.12xlarge"
+                    }
+                },
+                "ML_C7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.16xlarge"
+                    }
+                },
+                "ML_C7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.24xlarge"
+                    }
+                },
+                "ML_C7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.c7i.48xlarge"
+                    }
+                },
+                "ML_R7I_LARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.large"
+                    }
+                },
+                "ML_R7I_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.xlarge"
+                    }
+                },
+                "ML_R7I_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.2xlarge"
+                    }
+                },
+                "ML_R7I_4XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.4xlarge"
+                    }
+                },
+                "ML_R7I_8XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.8xlarge"
+                    }
+                },
+                "ML_R7I_12XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.12xlarge"
+                    }
+                },
+                "ML_R7I_16XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.16xlarge"
+                    }
+                },
+                "ML_R7I_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.24xlarge"
+                    }
+                },
+                "ML_R7I_48XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.r7i.48xlarge"
                     }
                 }
             }
@@ -75776,6 +76724,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html\">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>"
                     }
+                },
+                "TemplateProvidersToUpdate": {
+                    "target": "com.amazonaws.sagemaker#UpdateTemplateProviderList",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The template providers to update in the project. </p>"
+                    }
                 }
             },
             "traits": {
@@ -75869,6 +76823,32 @@
             },
             "traits": {
                 "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateTemplateProvider": {
+            "type": "structure",
+            "members": {
+                "CfnTemplateProvider": {
+                    "target": "com.amazonaws.sagemaker#CfnUpdateTemplateProvider",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The CloudFormation template provider configuration to update. </p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Contains configuration details for updating an existing template provider in the project. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateTemplateProviderList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#UpdateTemplateProvider"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1
+                }
             }
         },
         "com.amazonaws.sagemaker#UpdateTrainingJob": {

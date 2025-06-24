@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CMAC_HASH = HashingUtils::HashString("CMAC");
         static const int ANSI_X9_24_HASH = HashingUtils::HashString("ANSI_X9_24");
+        static const int HMAC_HASH = HashingUtils::HashString("HMAC");
 
 
         KeyCheckValueAlgorithm GetKeyCheckValueAlgorithmForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ANSI_X9_24_HASH)
           {
             return KeyCheckValueAlgorithm::ANSI_X9_24;
+          }
+          else if (hashCode == HMAC_HASH)
+          {
+            return KeyCheckValueAlgorithm::HMAC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "CMAC";
           case KeyCheckValueAlgorithm::ANSI_X9_24:
             return "ANSI_X9_24";
+          case KeyCheckValueAlgorithm::HMAC:
+            return "HMAC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

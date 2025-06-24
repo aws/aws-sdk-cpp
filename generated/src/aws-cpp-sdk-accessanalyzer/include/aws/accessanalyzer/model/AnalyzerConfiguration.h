@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/UnusedAccessConfiguration.h>
+#include <aws/accessanalyzer/model/InternalAccessConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,27 @@ namespace Model
     template<typename UnusedAccessT = UnusedAccessConfiguration>
     AnalyzerConfiguration& WithUnusedAccess(UnusedAccessT&& value) { SetUnusedAccess(std::forward<UnusedAccessT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the configuration of an internal access analyzer for an Amazon Web
+     * Services organization or account. This configuration determines how the analyzer
+     * evaluates access within your Amazon Web Services environment.</p>
+     */
+    inline const InternalAccessConfiguration& GetInternalAccess() const { return m_internalAccess; }
+    inline bool InternalAccessHasBeenSet() const { return m_internalAccessHasBeenSet; }
+    template<typename InternalAccessT = InternalAccessConfiguration>
+    void SetInternalAccess(InternalAccessT&& value) { m_internalAccessHasBeenSet = true; m_internalAccess = std::forward<InternalAccessT>(value); }
+    template<typename InternalAccessT = InternalAccessConfiguration>
+    AnalyzerConfiguration& WithInternalAccess(InternalAccessT&& value) { SetInternalAccess(std::forward<InternalAccessT>(value)); return *this;}
+    ///@}
   private:
 
     UnusedAccessConfiguration m_unusedAccess;
     bool m_unusedAccessHasBeenSet = false;
+
+    InternalAccessConfiguration m_internalAccess;
+    bool m_internalAccessHasBeenSet = false;
   };
 
 } // namespace Model

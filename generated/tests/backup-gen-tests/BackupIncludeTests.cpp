@@ -17,6 +17,7 @@
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/AggregationPeriod.h>
 #include <aws/backup/model/AlreadyExistsException.h>
+#include <aws/backup/model/AssociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/BackupJob.h>
 #include <aws/backup/model/BackupJobState.h>
 #include <aws/backup/model/BackupJobStatus.h>
@@ -60,6 +61,8 @@
 #include <aws/backup/model/CreateLogicallyAirGappedBackupVaultResult.h>
 #include <aws/backup/model/CreateReportPlanRequest.h>
 #include <aws/backup/model/CreateReportPlanResult.h>
+#include <aws/backup/model/CreateRestoreAccessBackupVaultRequest.h>
+#include <aws/backup/model/CreateRestoreAccessBackupVaultResult.h>
 #include <aws/backup/model/CreateRestoreTestingPlanRequest.h>
 #include <aws/backup/model/CreateRestoreTestingPlanResult.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
@@ -100,6 +103,7 @@
 #include <aws/backup/model/DescribeReportPlanResult.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/DescribeRestoreJobResult.h>
+#include <aws/backup/model/DisassociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointFromParentRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
@@ -142,6 +146,8 @@
 #include <aws/backup/model/InvalidRequestException.h>
 #include <aws/backup/model/InvalidResourceStateException.h>
 #include <aws/backup/model/KeyValue.h>
+#include <aws/backup/model/LatestMpaApprovalTeamUpdate.h>
+#include <aws/backup/model/LatestRevokeRequest.h>
 #include <aws/backup/model/LegalHold.h>
 #include <aws/backup/model/LegalHoldStatus.h>
 #include <aws/backup/model/Lifecycle.h>
@@ -184,6 +190,8 @@
 #include <aws/backup/model/ListReportJobsResult.h>
 #include <aws/backup/model/ListReportPlansRequest.h>
 #include <aws/backup/model/ListReportPlansResult.h>
+#include <aws/backup/model/ListRestoreAccessBackupVaultsRequest.h>
+#include <aws/backup/model/ListRestoreAccessBackupVaultsResult.h>
 #include <aws/backup/model/ListRestoreJobSummariesRequest.h>
 #include <aws/backup/model/ListRestoreJobSummariesResult.h>
 #include <aws/backup/model/ListRestoreJobsByProtectedResourceRequest.h>
@@ -197,6 +205,8 @@
 #include <aws/backup/model/ListTagsRequest.h>
 #include <aws/backup/model/ListTagsResult.h>
 #include <aws/backup/model/MissingParameterValueException.h>
+#include <aws/backup/model/MpaRevokeSessionStatus.h>
+#include <aws/backup/model/MpaSessionStatus.h>
 #include <aws/backup/model/ProtectedResource.h>
 #include <aws/backup/model/ProtectedResourceConditions.h>
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
@@ -215,6 +225,7 @@
 #include <aws/backup/model/ReportPlan.h>
 #include <aws/backup/model/ReportSetting.h>
 #include <aws/backup/model/ResourceNotFoundException.h>
+#include <aws/backup/model/RestoreAccessBackupVaultListMember.h>
 #include <aws/backup/model/RestoreDeletionStatus.h>
 #include <aws/backup/model/RestoreJobCreator.h>
 #include <aws/backup/model/RestoreJobState.h>
@@ -233,6 +244,7 @@
 #include <aws/backup/model/RestoreTestingSelectionForList.h>
 #include <aws/backup/model/RestoreTestingSelectionForUpdate.h>
 #include <aws/backup/model/RestoreValidationStatus.h>
+#include <aws/backup/model/RevokeRestoreAccessBackupVaultRequest.h>
 #include <aws/backup/model/ServiceUnavailableException.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartBackupJobResult.h>

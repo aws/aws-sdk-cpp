@@ -14,6 +14,7 @@
 #include <aws/geo-places/model/Category.h>
 #include <aws/geo-places/model/FoodType.h>
 #include <aws/geo-places/model/AccessPoint.h>
+#include <aws/geo-places/model/Intersection.h>
 #include <utility>
 
 namespace Aws
@@ -188,7 +189,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Position of the access point represent by longitude and latitude.</p>
+     * <p>Position of the access point represented by longitude and latitude.</p>
      */
     inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
     inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
@@ -224,6 +225,20 @@ namespace Model
     void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
     template<typename PoliticalViewT = Aws::String>
     ReverseGeocodeResultItem& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>All Intersections that are near the provided address.</p>
+     */
+    inline const Aws::Vector<Intersection>& GetIntersections() const { return m_intersections; }
+    inline bool IntersectionsHasBeenSet() const { return m_intersectionsHasBeenSet; }
+    template<typename IntersectionsT = Aws::Vector<Intersection>>
+    void SetIntersections(IntersectionsT&& value) { m_intersectionsHasBeenSet = true; m_intersections = std::forward<IntersectionsT>(value); }
+    template<typename IntersectionsT = Aws::Vector<Intersection>>
+    ReverseGeocodeResultItem& WithIntersections(IntersectionsT&& value) { SetIntersections(std::forward<IntersectionsT>(value)); return *this;}
+    template<typename IntersectionsT = Intersection>
+    ReverseGeocodeResultItem& AddIntersections(IntersectionsT&& value) { m_intersectionsHasBeenSet = true; m_intersections.emplace_back(std::forward<IntersectionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -268,6 +283,9 @@ namespace Model
 
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
+
+    Aws::Vector<Intersection> m_intersections;
+    bool m_intersectionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -107,6 +107,11 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
     }
     m_observationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AggregatedMetrics"))
+  {
+    m_aggregatedMetrics = jsonValue.GetObject("AggregatedMetrics");
+    m_aggregatedMetricsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

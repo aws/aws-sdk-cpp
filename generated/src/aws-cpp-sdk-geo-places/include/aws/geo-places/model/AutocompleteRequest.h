@@ -46,7 +46,9 @@ namespace Model
     ///@{
     /**
      * <p>The free-form text query to match addresses against. This is usually a
-     * partially typed address from an end user in an address box or form.</p>
+     * partially typed address from an end user in an address box or form.</p> 
+     * <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually
+     * exclusive.</p> 
      */
     inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
@@ -86,7 +88,7 @@ namespace Model
     ///@{
     /**
      * <p>A structure which contains a set of inclusion/exclusion properties that
-     * results must posses in order to be returned as a result.</p>
+     * results must possess in order to be returned as a result.</p>
      */
     inline const AutocompleteFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -101,8 +103,9 @@ namespace Model
      * <p>The <code>PostalCodeMode</code> affects how postal code results are returned.
      * If a postal code spans multiple localities and this value is empty, partial
      * district or locality information may be returned under a single postal code
-     * result entry. If it's populated with the value <code>cityLookup</code>, all
-     * cities in that postal code are returned.</p>
+     * result entry. If it's populated with the value
+     * <code>EnumerateSpannedLocalities</code>, all cities in that postal code are
+     * returned.</p>
      */
     inline PostalCodeMode GetPostalCodeMode() const { return m_postalCodeMode; }
     inline bool PostalCodeModeHasBeenSet() const { return m_postalCodeModeHasBeenSet; }
@@ -144,6 +147,23 @@ namespace Model
      * <p>The alpha-2 or alpha-3 character code for the political view of a country.
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
+     * <p>The following political views are currently supported:</p> <ul> <li> <p>
+     * <code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and
+     * Tierra Del Fuego, including the Falkland Islands, South Georgia, and South
+     * Sandwich Islands</p> </li> <li> <p> <code>EGY</code>: Egypt's view on Bir
+     * Tawil</p> </li> <li> <p> <code>IND</code>: India's view on Gilgit-Baltistan</p>
+     * </li> <li> <p> <code>KEN</code>: Kenya's view on the Ilemi Triangle</p> </li>
+     * <li> <p> <code>MAR</code>: Morocco's view on Western Sahara</p> </li> <li> <p>
+     * <code>RUS</code>: Russia's view on Crimea</p> </li> <li> <p> <code>SDN</code>:
+     * Sudan's view on the Halaib Triangle</p> </li> <li> <p> <code>SRB</code>:
+     * Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p> </li> <li> <p>
+     * <code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa
+     * Headwaters</p> </li> <li> <p> <code>SYR</code>: Syria's view on the Golan
+     * Heights</p> </li> <li> <p> <code>TUR</code>: Turkey's view on Cyprus and
+     * Northern Cyprus</p> </li> <li> <p> <code>TZA</code>: Tanzania's view on Lake
+     * Malawi</p> </li> <li> <p> <code>URY</code>: Uruguay's view on Rincon de
+     * Artigas</p> </li> <li> <p> <code>VNM</code>: Vietnam's view on the Paracel
+     * Islands and Spratly Islands</p> </li> </ul>
      */
     inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }

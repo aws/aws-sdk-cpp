@@ -37,6 +37,7 @@ namespace Aws
         static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
         static const int S3_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
         static const int S3_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
+        static const int CONTINUOUS_BACKUP_INTERRUPTED_HASH = HashingUtils::HashString("CONTINUOUS_BACKUP_INTERRUPTED");
         static const int RECOVERY_POINT_INDEX_COMPLETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_COMPLETED");
         static const int RECOVERY_POINT_INDEX_DELETED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEX_DELETED");
         static const int RECOVERY_POINT_INDEXING_FAILED_HASH = HashingUtils::HashString("RECOVERY_POINT_INDEXING_FAILED");
@@ -113,6 +114,10 @@ namespace Aws
           {
             return BackupVaultEvent::S3_RESTORE_OBJECT_FAILED;
           }
+          else if (hashCode == CONTINUOUS_BACKUP_INTERRUPTED_HASH)
+          {
+            return BackupVaultEvent::CONTINUOUS_BACKUP_INTERRUPTED;
+          }
           else if (hashCode == RECOVERY_POINT_INDEX_COMPLETED_HASH)
           {
             return BackupVaultEvent::RECOVERY_POINT_INDEX_COMPLETED;
@@ -175,6 +180,8 @@ namespace Aws
             return "S3_BACKUP_OBJECT_FAILED";
           case BackupVaultEvent::S3_RESTORE_OBJECT_FAILED:
             return "S3_RESTORE_OBJECT_FAILED";
+          case BackupVaultEvent::CONTINUOUS_BACKUP_INTERRUPTED:
+            return "CONTINUOUS_BACKUP_INTERRUPTED";
           case BackupVaultEvent::RECOVERY_POINT_INDEX_COMPLETED:
             return "RECOVERY_POINT_INDEX_COMPLETED";
           case BackupVaultEvent::RECOVERY_POINT_INDEX_DELETED:

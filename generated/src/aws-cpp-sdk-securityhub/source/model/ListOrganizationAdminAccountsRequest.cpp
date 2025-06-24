@@ -37,6 +37,13 @@ void ListOrganizationAdminAccountsRequest::AddQueryStringParameters(URI& uri) co
       ss.str("");
     }
 
+    if(m_featureHasBeenSet)
+    {
+      ss << SecurityHubFeatureMapper::GetNameForSecurityHubFeature(m_feature);
+      uri.AddQueryStringParameter("Feature", ss.str());
+      ss.str("");
+    }
+
 }
 
 

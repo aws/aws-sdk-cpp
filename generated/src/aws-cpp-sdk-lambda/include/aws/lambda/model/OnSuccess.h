@@ -28,7 +28,9 @@ namespace Model
    * records of successful <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">asynchronous
    * invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda
-   * function, or Amazon EventBridge event bus as the destination.</p><p><h3>See
+   * function, or Amazon EventBridge event bus as the destination.</p>  <p>
+   * <code>OnSuccess</code> is not supported in <code>CreateEventSourceMapping</code>
+   * or <code>UpdateEventSourceMapping</code> requests.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnSuccess">AWS
    * API Reference</a></p>

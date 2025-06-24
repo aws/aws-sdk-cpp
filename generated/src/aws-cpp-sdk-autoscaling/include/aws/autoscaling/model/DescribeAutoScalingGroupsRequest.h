@@ -57,6 +57,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Specifies whether to include information about Amazon EC2 instances in the
+     * response. When set to <code>true</code> (default), the response includes
+     * instance details. </p>
+     */
+    inline bool GetIncludeInstances() const { return m_includeInstances; }
+    inline bool IncludeInstancesHasBeenSet() const { return m_includeInstancesHasBeenSet; }
+    inline void SetIncludeInstances(bool value) { m_includeInstancesHasBeenSet = true; m_includeInstances = value; }
+    inline DescribeAutoScalingGroupsRequest& WithIncludeInstances(bool value) { SetIncludeInstances(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
@@ -96,6 +108,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_autoScalingGroupNames;
     bool m_autoScalingGroupNamesHasBeenSet = false;
+
+    bool m_includeInstances{false};
+    bool m_includeInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

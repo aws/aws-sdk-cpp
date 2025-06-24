@@ -45,6 +45,11 @@ ListCalculatedAttributeForProfileItem& ListCalculatedAttributeForProfileItem::op
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastObjectTimestamp"))
+  {
+    m_lastObjectTimestamp = jsonValue.GetDouble("LastObjectTimestamp");
+    m_lastObjectTimestampHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -74,6 +79,11 @@ JsonValue ListCalculatedAttributeForProfileItem::Jsonize() const
   {
    payload.WithString("Value", m_value);
 
+  }
+
+  if(m_lastObjectTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastObjectTimestamp", m_lastObjectTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

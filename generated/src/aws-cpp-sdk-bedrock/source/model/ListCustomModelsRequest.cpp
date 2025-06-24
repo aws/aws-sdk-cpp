@@ -93,6 +93,13 @@ void ListCustomModelsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_modelStatusHasBeenSet)
+    {
+      ss << ModelStatusMapper::GetNameForModelStatus(m_modelStatus);
+      uri.AddQueryStringParameter("modelStatus", ss.str());
+      ss.str("");
+    }
+
 }
 
 

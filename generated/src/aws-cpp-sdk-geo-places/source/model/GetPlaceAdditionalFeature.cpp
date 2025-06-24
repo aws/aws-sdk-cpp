@@ -24,6 +24,7 @@ namespace Aws
         static const int Phonemes_HASH = HashingUtils::HashString("Phonemes");
         static const int Access_HASH = HashingUtils::HashString("Access");
         static const int Contact_HASH = HashingUtils::HashString("Contact");
+        static const int SecondaryAddresses_HASH = HashingUtils::HashString("SecondaryAddresses");
 
 
         GetPlaceAdditionalFeature GetGetPlaceAdditionalFeatureForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Contact_HASH)
           {
             return GetPlaceAdditionalFeature::Contact;
+          }
+          else if (hashCode == SecondaryAddresses_HASH)
+          {
+            return GetPlaceAdditionalFeature::SecondaryAddresses;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "Access";
           case GetPlaceAdditionalFeature::Contact:
             return "Contact";
+          case GetPlaceAdditionalFeature::SecondaryAddresses:
+            return "SecondaryAddresses";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

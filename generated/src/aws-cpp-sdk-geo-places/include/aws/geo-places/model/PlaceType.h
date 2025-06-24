@@ -29,7 +29,8 @@ namespace Model
     Street,
     PointOfInterest,
     PointAddress,
-    InterpolatedAddress
+    InterpolatedAddress,
+    SecondaryAddress
   };
 
 namespace PlaceTypeMapper

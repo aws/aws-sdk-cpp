@@ -56,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description for the subnet group.</p>
+     * <p>The description for the subnet group. </p> <p>Constraints: This parameter
+     * Must not contain non-printable control characters.</p>
      */
     inline const Aws::String& GetReplicationSubnetGroupDescription() const { return m_replicationSubnetGroupDescription; }
     inline bool ReplicationSubnetGroupDescriptionHasBeenSet() const { return m_replicationSubnetGroupDescriptionHasBeenSet; }

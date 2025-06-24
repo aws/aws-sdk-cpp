@@ -99,6 +99,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The unique identifier of the transit gateway attachment associated with this
+     * firewall. This field is only present for transit gateway-attached firewalls.</p>
+     */
+    inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value); }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    DescribeFirewallMetadataResult& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -122,6 +134,9 @@ namespace Model
 
     Aws::Map<Aws::String, AvailabilityZoneMetadata> m_supportedAvailabilityZones;
     bool m_supportedAvailabilityZonesHasBeenSet = false;
+
+    Aws::String m_transitGatewayAttachmentId;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

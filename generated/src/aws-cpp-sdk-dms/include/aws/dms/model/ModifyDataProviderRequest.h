@@ -92,6 +92,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the data provider is virtual.</p>
+     */
+    inline bool GetVirtual() const { return m_virtual; }
+    inline bool VirtualHasBeenSet() const { return m_virtualHasBeenSet; }
+    inline void SetVirtual(bool value) { m_virtualHasBeenSet = true; m_virtual = value; }
+    inline ModifyDataProviderRequest& WithVirtual(bool value) { SetVirtual(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code>
      * replaces all existing data provider settings with the exact settings that you
      * specify in this call. If this attribute is N, the current call to
@@ -130,6 +140,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
+
+    bool m_virtual{false};
+    bool m_virtualHasBeenSet = false;
 
     bool m_exactSettings{false};
     bool m_exactSettingsHasBeenSet = false;

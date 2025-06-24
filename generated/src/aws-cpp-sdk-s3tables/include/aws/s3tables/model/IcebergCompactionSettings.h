@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/s3tables/S3Tables_EXPORTS.h>
+#include <aws/s3tables/model/IcebergCompactionStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,10 +47,24 @@ namespace Model
     inline void SetTargetFileSizeMB(int value) { m_targetFileSizeMBHasBeenSet = true; m_targetFileSizeMB = value; }
     inline IcebergCompactionSettings& WithTargetFileSizeMB(int value) { SetTargetFileSizeMB(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The compaction strategy to use for the table. This determines how files are
+     * selected and combined during compaction operations.</p>
+     */
+    inline IcebergCompactionStrategy GetStrategy() const { return m_strategy; }
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
+    inline void SetStrategy(IcebergCompactionStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline IcebergCompactionSettings& WithStrategy(IcebergCompactionStrategy value) { SetStrategy(value); return *this;}
+    ///@}
   private:
 
     int m_targetFileSizeMB{0};
     bool m_targetFileSizeMBHasBeenSet = false;
+
+    IcebergCompactionStrategy m_strategy{IcebergCompactionStrategy::NOT_SET};
+    bool m_strategyHasBeenSet = false;
   };
 
 } // namespace Model

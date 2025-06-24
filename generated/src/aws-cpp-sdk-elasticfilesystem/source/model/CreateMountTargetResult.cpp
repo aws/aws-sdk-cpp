@@ -55,6 +55,11 @@ CreateMountTargetResult& CreateMountTargetResult::operator =(const Aws::AmazonWe
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Ipv6Address"))
+  {
+    m_ipv6Address = jsonValue.GetString("Ipv6Address");
+    m_ipv6AddressHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");

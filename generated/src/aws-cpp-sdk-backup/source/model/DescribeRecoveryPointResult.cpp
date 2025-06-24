@@ -80,6 +80,11 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InitiationDate"))
+  {
+    m_initiationDate = jsonValue.GetDouble("InitiationDate");
+    m_initiationDateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetDouble("CompletionDate");

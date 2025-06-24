@@ -101,6 +101,13 @@
 #include <aws/accessanalyzer/model/GetGeneratedPolicyResult.h>
 #include <aws/accessanalyzer/model/IamRoleConfiguration.h>
 #include <aws/accessanalyzer/model/InlineArchiveRule.h>
+#include <aws/accessanalyzer/model/InternalAccessAnalysisRule.h>
+#include <aws/accessanalyzer/model/InternalAccessAnalysisRuleCriteria.h>
+#include <aws/accessanalyzer/model/InternalAccessConfiguration.h>
+#include <aws/accessanalyzer/model/InternalAccessDetails.h>
+#include <aws/accessanalyzer/model/InternalAccessFindingsStatistics.h>
+#include <aws/accessanalyzer/model/InternalAccessResourceTypeDetails.h>
+#include <aws/accessanalyzer/model/InternalAccessType.h>
 #include <aws/accessanalyzer/model/InternalServerException.h>
 #include <aws/accessanalyzer/model/InternetConfiguration.h>
 #include <aws/accessanalyzer/model/JobDetails.h>
@@ -138,6 +145,7 @@
 #include <aws/accessanalyzer/model/PolicyGenerationDetails.h>
 #include <aws/accessanalyzer/model/PolicyType.h>
 #include <aws/accessanalyzer/model/Position.h>
+#include <aws/accessanalyzer/model/PrincipalType.h>
 #include <aws/accessanalyzer/model/RdsDbClusterSnapshotAttributeValue.h>
 #include <aws/accessanalyzer/model/RdsDbClusterSnapshotConfiguration.h>
 #include <aws/accessanalyzer/model/RdsDbSnapshotAttributeValue.h>
@@ -159,6 +167,7 @@
 #include <aws/accessanalyzer/model/S3ExpressDirectoryBucketConfiguration.h>
 #include <aws/accessanalyzer/model/S3PublicAccessBlockConfiguration.h>
 #include <aws/accessanalyzer/model/SecretsManagerSecretConfiguration.h>
+#include <aws/accessanalyzer/model/ServiceControlPolicyRestriction.h>
 #include <aws/accessanalyzer/model/ServiceQuotaExceededException.h>
 #include <aws/accessanalyzer/model/SnsTopicConfiguration.h>
 #include <aws/accessanalyzer/model/SortCriteria.h>

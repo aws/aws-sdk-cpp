@@ -25,6 +25,9 @@ namespace Aws
         static const int S3_BUCKET_HASH = HashingUtils::HashString("S3_BUCKET");
         static const int S3_OBJECT_HASH = HashingUtils::HashString("S3_OBJECT");
         static const int ACCESS_KEY_HASH = HashingUtils::HashString("ACCESS_KEY");
+        static const int EKS_CLUSTER_HASH = HashingUtils::HashString("EKS_CLUSTER");
+        static const int KUBERNETES_WORKLOAD_HASH = HashingUtils::HashString("KUBERNETES_WORKLOAD");
+        static const int CONTAINER_HASH = HashingUtils::HashString("CONTAINER");
 
 
         FindingResourceType GetFindingResourceTypeForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == ACCESS_KEY_HASH)
           {
             return FindingResourceType::ACCESS_KEY;
+          }
+          else if (hashCode == EKS_CLUSTER_HASH)
+          {
+            return FindingResourceType::EKS_CLUSTER;
+          }
+          else if (hashCode == KUBERNETES_WORKLOAD_HASH)
+          {
+            return FindingResourceType::KUBERNETES_WORKLOAD;
+          }
+          else if (hashCode == CONTAINER_HASH)
+          {
+            return FindingResourceType::CONTAINER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +91,12 @@ namespace Aws
             return "S3_OBJECT";
           case FindingResourceType::ACCESS_KEY:
             return "ACCESS_KEY";
+          case FindingResourceType::EKS_CLUSTER:
+            return "EKS_CLUSTER";
+          case FindingResourceType::KUBERNETES_WORKLOAD:
+            return "KUBERNETES_WORKLOAD";
+          case FindingResourceType::CONTAINER:
+            return "CONTAINER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

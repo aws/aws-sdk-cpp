@@ -30,6 +30,11 @@ CommunicationLimitsConfig& CommunicationLimitsConfig::operator =(JsonView jsonVa
     m_allChannelSubtypes = jsonValue.GetObject("allChannelSubtypes");
     m_allChannelSubtypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceLimitsHandling"))
+  {
+    m_instanceLimitsHandling = InstanceLimitsHandlingMapper::GetInstanceLimitsHandlingForName(jsonValue.GetString("instanceLimitsHandling"));
+    m_instanceLimitsHandlingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -41,6 +46,11 @@ JsonValue CommunicationLimitsConfig::Jsonize() const
   {
    payload.WithObject("allChannelSubtypes", m_allChannelSubtypes.Jsonize());
 
+  }
+
+  if(m_instanceLimitsHandlingHasBeenSet)
+  {
+   payload.WithString("instanceLimitsHandling", InstanceLimitsHandlingMapper::GetNameForInstanceLimitsHandling(m_instanceLimitsHandling));
   }
 
   return payload;

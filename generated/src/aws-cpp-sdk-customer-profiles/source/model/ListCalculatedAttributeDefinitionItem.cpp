@@ -50,6 +50,16 @@ ListCalculatedAttributeDefinitionItem& ListCalculatedAttributeDefinitionItem::op
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UseHistoricalData"))
+  {
+    m_useHistoricalData = jsonValue.GetBool("UseHistoricalData");
+    m_useHistoricalDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ReadinessStatusMapper::GetReadinessStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -92,6 +102,17 @@ JsonValue ListCalculatedAttributeDefinitionItem::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_useHistoricalDataHasBeenSet)
+  {
+   payload.WithBool("UseHistoricalData", m_useHistoricalData);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ReadinessStatusMapper::GetNameForReadinessStatus(m_status));
   }
 
   if(m_tagsHasBeenSet)

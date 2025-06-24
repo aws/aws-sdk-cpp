@@ -11,10 +11,13 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-places/model/TimeZone.h>
 #include <aws/geo-places/model/MatchScoreDetails.h>
+#include <aws/geo-places/model/GeocodeParsedQuery.h>
+#include <aws/geo-places/model/RelatedPlace.h>
 #include <aws/geo-places/model/PostalCodeDetails.h>
 #include <aws/geo-places/model/Category.h>
 #include <aws/geo-places/model/FoodType.h>
 #include <aws/geo-places/model/AccessPoint.h>
+#include <aws/geo-places/model/Intersection.h>
 #include <utility>
 
 namespace Aws
@@ -48,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>PlaceId</code> of the place you wish to receive the information
-     * for.</p>
+     * <p>The <code>PlaceId</code> of the place result.</p>
      */
     inline const Aws::String& GetPlaceId() const { return m_placeId; }
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
@@ -188,7 +190,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Position of the access point represent by longitude and latitude.</p>
+     * <p>Position of the access point represented by longitude and latitude.</p>
      */
     inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
     inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
@@ -238,6 +240,60 @@ namespace Model
     template<typename MatchScoresT = MatchScoreDetails>
     GeocodeResultItem& WithMatchScores(MatchScoresT&& value) { SetMatchScores(std::forward<MatchScoresT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Free-form text query.</p>
+     */
+    inline const GeocodeParsedQuery& GetParsedQuery() const { return m_parsedQuery; }
+    inline bool ParsedQueryHasBeenSet() const { return m_parsedQueryHasBeenSet; }
+    template<typename ParsedQueryT = GeocodeParsedQuery>
+    void SetParsedQuery(ParsedQueryT&& value) { m_parsedQueryHasBeenSet = true; m_parsedQuery = std::forward<ParsedQueryT>(value); }
+    template<typename ParsedQueryT = GeocodeParsedQuery>
+    GeocodeResultItem& WithParsedQuery(ParsedQueryT&& value) { SetParsedQuery(std::forward<ParsedQueryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>All Intersections that are near the provided address.</p>
+     */
+    inline const Aws::Vector<Intersection>& GetIntersections() const { return m_intersections; }
+    inline bool IntersectionsHasBeenSet() const { return m_intersectionsHasBeenSet; }
+    template<typename IntersectionsT = Aws::Vector<Intersection>>
+    void SetIntersections(IntersectionsT&& value) { m_intersectionsHasBeenSet = true; m_intersections = std::forward<IntersectionsT>(value); }
+    template<typename IntersectionsT = Aws::Vector<Intersection>>
+    GeocodeResultItem& WithIntersections(IntersectionsT&& value) { SetIntersections(std::forward<IntersectionsT>(value)); return *this;}
+    template<typename IntersectionsT = Intersection>
+    GeocodeResultItem& AddIntersections(IntersectionsT&& value) { m_intersectionsHasBeenSet = true; m_intersections.emplace_back(std::forward<IntersectionsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The main address corresponding to a place of type Secondary Address.</p>
+     */
+    inline const RelatedPlace& GetMainAddress() const { return m_mainAddress; }
+    inline bool MainAddressHasBeenSet() const { return m_mainAddressHasBeenSet; }
+    template<typename MainAddressT = RelatedPlace>
+    void SetMainAddress(MainAddressT&& value) { m_mainAddressHasBeenSet = true; m_mainAddress = std::forward<MainAddressT>(value); }
+    template<typename MainAddressT = RelatedPlace>
+    GeocodeResultItem& WithMainAddress(MainAddressT&& value) { SetMainAddress(std::forward<MainAddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>All secondary addresses that are associated with a main address. A secondary
+     * address is one that includes secondary designators, such as a Suite or Unit
+     * Number, Building, or Floor information.</p>
+     */
+    inline const Aws::Vector<RelatedPlace>& GetSecondaryAddresses() const { return m_secondaryAddresses; }
+    inline bool SecondaryAddressesHasBeenSet() const { return m_secondaryAddressesHasBeenSet; }
+    template<typename SecondaryAddressesT = Aws::Vector<RelatedPlace>>
+    void SetSecondaryAddresses(SecondaryAddressesT&& value) { m_secondaryAddressesHasBeenSet = true; m_secondaryAddresses = std::forward<SecondaryAddressesT>(value); }
+    template<typename SecondaryAddressesT = Aws::Vector<RelatedPlace>>
+    GeocodeResultItem& WithSecondaryAddresses(SecondaryAddressesT&& value) { SetSecondaryAddresses(std::forward<SecondaryAddressesT>(value)); return *this;}
+    template<typename SecondaryAddressesT = RelatedPlace>
+    GeocodeResultItem& AddSecondaryAddresses(SecondaryAddressesT&& value) { m_secondaryAddressesHasBeenSet = true; m_secondaryAddresses.emplace_back(std::forward<SecondaryAddressesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_placeId;
@@ -284,6 +340,18 @@ namespace Model
 
     MatchScoreDetails m_matchScores;
     bool m_matchScoresHasBeenSet = false;
+
+    GeocodeParsedQuery m_parsedQuery;
+    bool m_parsedQueryHasBeenSet = false;
+
+    Aws::Vector<Intersection> m_intersections;
+    bool m_intersectionsHasBeenSet = false;
+
+    RelatedPlace m_mainAddress;
+    bool m_mainAddressHasBeenSet = false;
+
+    Aws::Vector<RelatedPlace> m_secondaryAddresses;
+    bool m_secondaryAddressesHasBeenSet = false;
   };
 
 } // namespace Model

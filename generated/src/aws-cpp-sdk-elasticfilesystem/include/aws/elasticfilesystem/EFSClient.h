@@ -92,11 +92,13 @@ namespace EFS
          * operating system user and group override any identity information provided by
          * the NFS client. The file system path is exposed as the access point's root
          * directory. Applications using the access point can only access data in the
-         * application's own directory and any subdirectories. To learn more, see <a
+         * application's own directory and any subdirectories. A file system can have a
+         * maximum of 10,000 access points unless you request an increase. To learn more,
+         * see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
          * a file system using EFS access points</a>.</p>  <p>If multiple requests to
          * create access points on the same file system are sent in quick succession, and
-         * the file system is near the limit of 1,000 access points, you may experience a
+         * the file system is near the limit of access points, you may experience a
          * throttling response for these requests. This is to ensure that the file system
          * does not exceed the stated access point limit.</p>  <p>This operation
          * requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
@@ -277,15 +279,16 @@ namespace EFS
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
-         * href="http://aws.amazon.com/efs/">Amazon EFS</a>. In addition, by always using a
-         * mount target local to the instance's Availability Zone, you eliminate a partial
-         * failure scenario. If the Availability Zone in which your mount target is created
-         * goes down, then you can't access your file system through that mount target.
-         * </p> <p>This operation requires permissions for the following action on the file
-         * system:</p> <ul> <li> <p> <code>elasticfilesystem:CreateMountTarget</code> </p>
-         * </li> </ul> <p>This operation also requires permissions for the following Amazon
-         * EC2 actions:</p> <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li>
-         * <p> <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p>
+         * href="http://aws.amazon.com/efs/pricing/">Amazon EFS pricing</a>. In addition,
+         * by always using a mount target local to the instance's Availability Zone, you
+         * eliminate a partial failure scenario. If the Availability Zone in which your
+         * mount target is created goes down, then you can't access your file system
+         * through that mount target. </p> <p>This operation requires permissions for the
+         * following action on the file system:</p> <ul> <li> <p>
+         * <code>elasticfilesystem:CreateMountTarget</code> </p> </li> </ul> <p>This
+         * operation also requires permissions for the following Amazon EC2 actions:</p>
+         * <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p>
+         * <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p>
          * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">AWS
@@ -691,7 +694,7 @@ namespace EFS
 
         /**
          * <p>Returns the current <code>LifecycleConfiguration</code> object for the
-         * specified Amazon EFS file system. Lifecycle management uses the
+         * specified EFS file system. Lifecycle management uses the
          * <code>LifecycleConfiguration</code> object to identify when to move files
          * between storage classes. For a file system without a
          * <code>LifecycleConfiguration</code> object, the call returns an empty array in

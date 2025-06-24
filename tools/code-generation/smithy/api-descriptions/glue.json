@@ -7077,6 +7077,20 @@
                 "smithy.api#pattern": "^[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*$"
             }
         },
+        "com.amazonaws.glue#CompactionConfiguration": {
+            "type": "structure",
+            "members": {
+                "icebergConfiguration": {
+                    "target": "com.amazonaws.glue#IcebergCompactionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for an Iceberg compaction optimizer.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve \n      query performance and reduce storage costs.</p>"
+            }
+        },
         "com.amazonaws.glue#CompactionMetrics": {
             "type": "structure",
             "members": {
@@ -7089,6 +7103,29 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>A structure that contains compaction metrics for the optimizer run.</p>"
+            }
+        },
+        "com.amazonaws.glue#CompactionStrategy": {
+            "type": "enum",
+            "members": {
+                "BINPACK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "binpack"
+                    }
+                },
+                "SORT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sort"
+                    }
+                },
+                "ZORDER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "z-order"
+                    }
+                }
             }
         },
         "com.amazonaws.glue#Comparator": {
@@ -9966,6 +10003,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>A request to create a data quality ruleset.</p>",
                 "smithy.api#input": {}
             }
         },
@@ -13025,6 +13063,50 @@
                 "target": "com.amazonaws.glue#DataOperation"
             }
         },
+        "com.amazonaws.glue#DataQualityAggregatedMetrics": {
+            "type": "structure",
+            "members": {
+                "TotalRowsProcessed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of rows that were processed during the data quality evaluation.</p>"
+                    }
+                },
+                "TotalRowsPassed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of rows that passed all applicable data quality rules.</p>"
+                    }
+                },
+                "TotalRowsFailed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of rows that failed one or more data quality rules.</p>"
+                    }
+                },
+                "TotalRulesProcessed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of data quality rules that were evaluated.</p>"
+                    }
+                },
+                "TotalRulesPassed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of data quality rules that passed their evaluation criteria.</p>"
+                    }
+                },
+                "TotalRulesFailed": {
+                    "target": "com.amazonaws.glue#NullableDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The total number of data quality rules that failed their evaluation criteria.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A summary of metrics showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>"
+            }
+        },
         "com.amazonaws.glue#DataQualityAnalyzerResult": {
             "type": "structure",
             "members": {
@@ -13316,6 +13398,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>"
                     }
+                },
+                "AggregatedMetrics": {
+                    "target": "com.amazonaws.glue#DataQualityAggregatedMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p> A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results. </p>"
+                    }
                 }
             },
             "traits": {
@@ -13536,6 +13624,12 @@
                     "target": "com.amazonaws.glue#DataQualityRuleResultDescription",
                     "traits": {
                         "smithy.api#documentation": "<p>The evaluated rule.</p>"
+                    }
+                },
+                "RuleMetrics": {
+                    "target": "com.amazonaws.glue#RuleMetricsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A map containing metrics associated with the evaluation of the rule based on row-level results. </p>"
                     }
                 }
             },
@@ -20429,9 +20523,16 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>"
                     }
+                },
+                "AggregatedMetrics": {
+                    "target": "com.amazonaws.glue#DataQualityAggregatedMetrics",
+                    "traits": {
+                        "smithy.api#documentation": "<p> A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results. </p>"
+                    }
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>The response for the data quality result.</p>",
                 "smithy.api#output": {}
             }
         },
@@ -20566,6 +20667,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>The response for the Data Quality rule recommendation run.</p>",
                 "smithy.api#output": {}
             }
         },
@@ -20803,6 +20905,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>Returns the data quality ruleset response.</p>",
                 "smithy.api#output": {}
             }
         },
@@ -25765,6 +25868,20 @@
             "type": "string",
             "traits": {
                 "smithy.api#pattern": "^arn:aws(-(cn|us-gov|iso(-[bef])?))?:iam::[0-9]{12}:role/.+$"
+            }
+        },
+        "com.amazonaws.glue#IcebergCompactionConfiguration": {
+            "type": "structure",
+            "members": {
+                "strategy": {
+                    "target": "com.amazonaws.glue#CompactionStrategy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The strategy to use for compaction. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. \n          This is the recommended compaction strategy for most use cases.\n        </p>\n            </li>\n            <li>\n               <p>\n                  <code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query \n        performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, \n        you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p>\n            </li>\n            <li>\n               <p>\n                  <code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, \n          allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions \n          simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the \n          <code>sort_order</code> table property.\n        </p>\n            </li>\n         </ul>\n         <p>If an input is not provided, the default value 'binpack' will be used.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration for an Iceberg compaction optimizer. This configuration defines parameters for optimizing the layout of data files in Iceberg tables.</p>"
             }
         },
         "com.amazonaws.glue#IcebergCompactionMetrics": {
@@ -35164,6 +35281,18 @@
         "com.amazonaws.glue#RowTag": {
             "type": "string"
         },
+        "com.amazonaws.glue#RuleMetricsMap": {
+            "type": "map",
+            "key": {
+                "target": "com.amazonaws.glue#NameString"
+            },
+            "value": {
+                "target": "com.amazonaws.glue#NullableDouble"
+            },
+            "traits": {
+                "smithy.api#sensitive": {}
+            }
+        },
         "com.amazonaws.glue#RulesetNames": {
             "type": "list",
             "member": {
@@ -38689,6 +38818,7 @@
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>The request of the Data Quality rule recommendation request.</p>",
                 "smithy.api#input": {}
             }
         },
@@ -40736,6 +40866,12 @@
                         "smithy.api#documentation": "<p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>\n         <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>"
                     }
                 },
+                "compactionConfiguration": {
+                    "target": "com.amazonaws.glue#CompactionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to \n      improve query performance and reduce storage costs.</p>"
+                    }
+                },
                 "retentionConfiguration": {
                     "target": "com.amazonaws.glue#RetentionConfiguration",
                     "traits": {
@@ -40822,6 +40958,12 @@
                     "target": "com.amazonaws.glue#CompactionMetrics",
                     "traits": {
                         "smithy.api#documentation": "<p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>"
+                    }
+                },
+                "compactionStrategy": {
+                    "target": "com.amazonaws.glue#CompactionStrategy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the \n      compaction process. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. \n          This is the recommended compaction strategy for most use cases.\n        </p>\n            </li>\n            <li>\n               <p>\n                  <code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query \n          performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, \n          you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p>\n            </li>\n            <li>\n               <p>\n                  <code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, \n          allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions \n          simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the \n          <code>sort_order</code> table property.\n        </p>\n            </li>\n         </ul>"
                     }
                 },
                 "retentionMetrics": {

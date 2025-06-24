@@ -60,13 +60,11 @@ namespace Model
      * <p>The state of a campaign. The status can be one of:</p> <ul> <li> <p>
      * <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your
      * request to create the campaign. </p> </li> <li> <p>
-     * <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the
-     * <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT
-     * FleetWise to deploy the campaign to the target vehicle or fleet, use the API
-     * operation to approve the campaign. </p> </li> <li> <p> <code>RUNNING</code> -
-     * The campaign is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The
-     * campaign is suspended. To resume the campaign, use the API operation. </p> </li>
-     * </ul>
+     * <code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this
+     * state. Use the API operation to approve the campaign for deployment to the
+     * target vehicle or fleet. </p> </li> <li> <p> <code>RUNNING</code> - The campaign
+     * is active. </p> </li> <li> <p> <code>SUSPENDED</code> - The campaign is
+     * suspended. To resume the campaign, use the API operation. </p> </li> </ul>
      */
     inline CampaignStatus GetStatus() const { return m_status; }
     inline void SetStatus(CampaignStatus value) { m_statusHasBeenSet = true; m_status = value; }

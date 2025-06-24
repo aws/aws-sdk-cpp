@@ -414,12 +414,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The open mode of an Oracle read replica. The default is
+     * <p>The open mode of a Db2 or an Oracle read replica. The default is
      * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
+     * with read replicas for Amazon RDS for Db2</a> and <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
-     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
-     * 
+     * with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User
+     * Guide</i>. </p>  <p>This attribute is only supported in RDS for Db2, RDS
+     * for Oracle, and RDS Custom for Oracle.</p> 
      */
     inline ReplicaMode GetReplicaMode() const { return m_replicaMode; }
     inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }

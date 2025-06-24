@@ -40,6 +40,12 @@ Aws::String ModifyDataProviderRequest::SerializePayload() const
 
   }
 
+  if(m_virtualHasBeenSet)
+  {
+   payload.WithBool("Virtual", m_virtual);
+
+  }
+
   if(m_exactSettingsHasBeenSet)
   {
    payload.WithBool("ExactSettings", m_exactSettings);

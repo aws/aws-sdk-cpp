@@ -60,6 +60,15 @@ DescribeProjectResult& DescribeProjectResult::operator =(const Aws::AmazonWebSer
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("ProjectStatus"));
     m_projectStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TemplateProviderDetails"))
+  {
+    Aws::Utils::Array<JsonView> templateProviderDetailsJsonList = jsonValue.GetArray("TemplateProviderDetails");
+    for(unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength(); ++templateProviderDetailsIndex)
+    {
+      m_templateProviderDetails.push_back(templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject());
+    }
+    m_templateProviderDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");

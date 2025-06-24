@@ -533,18 +533,19 @@ namespace KMS
          * key. Then, use the <code>KeyUsage</code> parameter to determine whether the KMS
          * key will be used to encrypt and decrypt or sign and verify. You can't change
          * these properties after the KMS key is created.</p> <p>Asymmetric KMS keys
-         * contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair
-         * (China Regions only). The private key in an asymmetric KMS key never leaves KMS
-         * unencrypted. However, you can use the <a>GetPublicKey</a> operation to download
-         * the public key so it can be used outside of KMS. Each KMS key can have only one
-         * key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
-         * or sign and verify messages (but not both). KMS keys with NIST-recommended ECC
-         * key pairs can be used to sign and verify messages or derive shared secrets (but
-         * not both). KMS keys with <code>ECC_SECG_P256K1</code> can be used only to sign
-         * and verify messages. KMS keys with SM2 key pairs (China Regions only) can be
-         * used to either encrypt and decrypt data, sign and verify messages, or derive
-         * shared secrets (you must choose one key usage type). For information about
-         * asymmetric KMS keys, see <a
+         * contain an RSA key pair, Elliptic Curve (ECC) key pair, ML-DSA key pair or an
+         * SM2 key pair (China Regions only). The private key in an asymmetric KMS key
+         * never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
+         * operation to download the public key so it can be used outside of KMS. Each KMS
+         * key can have only one key usage. KMS keys with RSA key pairs can be used to
+         * encrypt and decrypt data or sign and verify messages (but not both). KMS keys
+         * with NIST-recommended ECC key pairs can be used to sign and verify messages or
+         * derive shared secrets (but not both). KMS keys with <code>ECC_SECG_P256K1</code>
+         * can be used only to sign and verify messages. KMS keys with ML-DSA key pairs can
+         * be used to sign and verify messages. KMS keys with SM2 key pairs (China Regions
+         * only) can be used to either encrypt and decrypt data, sign and verify messages,
+         * or derive shared secrets (you must choose one key usage type). For information
+         * about asymmetric KMS keys, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
          * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p> </p>
          * </dd> <dt>HMAC KMS key</dt> <dd> <p>To create an HMAC KMS key, set the
@@ -3191,20 +3192,21 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
          * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p>Digital signatures are generated and verified by using asymmetric key pair,
-         * such as an RSA or ECC pair that is represented by an asymmetric KMS key. The key
-         * owner (or an authorized user) uses their private key to sign a message. Anyone
-         * with the public key can verify that the message was signed with that particular
-         * private key and that the message hasn't changed since it was signed. </p> <p>To
-         * use the <code>Sign</code> operation, provide the following information:</p> <ul>
-         * <li> <p>Use the <code>KeyId</code> parameter to identify an asymmetric KMS key
-         * with a <code>KeyUsage</code> value of <code>SIGN_VERIFY</code>. To get the
-         * <code>KeyUsage</code> value of a KMS key, use the <a>DescribeKey</a> operation.
-         * The caller must have <code>kms:Sign</code> permission on the KMS key.</p> </li>
-         * <li> <p>Use the <code>Message</code> parameter to specify the message or message
-         * digest to sign. You can submit messages of up to 4096 bytes. To sign a larger
-         * message, generate a hash digest of the message, and then provide the hash digest
-         * in the <code>Message</code> parameter. To indicate whether the message is a full
-         * message or a digest, use the <code>MessageType</code> parameter.</p> </li> <li>
+         * such as an RSA, ECC, or ML-DSA pair that is represented by an asymmetric KMS
+         * key. The key owner (or an authorized user) uses their private key to sign a
+         * message. Anyone with the public key can verify that the message was signed with
+         * that particular private key and that the message hasn't changed since it was
+         * signed. </p> <p>To use the <code>Sign</code> operation, provide the following
+         * information:</p> <ul> <li> <p>Use the <code>KeyId</code> parameter to identify
+         * an asymmetric KMS key with a <code>KeyUsage</code> value of
+         * <code>SIGN_VERIFY</code>. To get the <code>KeyUsage</code> value of a KMS key,
+         * use the <a>DescribeKey</a> operation. The caller must have <code>kms:Sign</code>
+         * permission on the KMS key.</p> </li> <li> <p>Use the <code>Message</code>
+         * parameter to specify the message or message digest to sign. You can submit
+         * messages of up to 4096 bytes. To sign a larger message, generate a hash digest
+         * of the message, and then provide the hash digest in the <code>Message</code>
+         * parameter. To indicate whether the message is a full message, a digest, or an
+         * ML-DSA EXTERNAL_MU, use the <code>MessageType</code> parameter.</p> </li> <li>
          * <p>Choose a signing algorithm that is compatible with the KMS key. </p> </li>
          * </ul>  <p>When signing a message, be sure to record the KMS key and
          * the signing algorithm. This information is required to verify the signature.</p>

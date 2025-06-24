@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 data source of the imported job.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon S3 data source of the model to import. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/S3DataSource">AWS
    * API Reference</a></p>
    */

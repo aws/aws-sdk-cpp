@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TimeZone_HASH = HashingUtils::HashString("TimeZone");
         static const int Access_HASH = HashingUtils::HashString("Access");
+        static const int Intersections_HASH = HashingUtils::HashString("Intersections");
 
 
         ReverseGeocodeAdditionalFeature GetReverseGeocodeAdditionalFeatureForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Access_HASH)
           {
             return ReverseGeocodeAdditionalFeature::Access;
+          }
+          else if (hashCode == Intersections_HASH)
+          {
+            return ReverseGeocodeAdditionalFeature::Intersections;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "TimeZone";
           case ReverseGeocodeAdditionalFeature::Access:
             return "Access";
+          case ReverseGeocodeAdditionalFeature::Intersections:
+            return "Intersections";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

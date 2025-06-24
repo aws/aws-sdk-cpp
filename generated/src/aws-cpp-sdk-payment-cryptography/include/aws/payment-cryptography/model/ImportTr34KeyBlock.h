@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The import token that initiates key import using the asymmetric TR-34 key
      * exchange method into Amazon Web Services Payment Cryptography. It expires after
-     * 7 days. You can use the same import token to import multiple keys to the same
+     * 30 days. You can use the same import token to import multiple keys to the same
      * service account.</p>
      */
     inline const Aws::String& GetImportToken() const { return m_importToken; }

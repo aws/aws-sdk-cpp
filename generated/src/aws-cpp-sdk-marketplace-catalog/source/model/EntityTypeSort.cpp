@@ -55,6 +55,11 @@ EntityTypeSort& EntityTypeSort::operator =(JsonView jsonValue)
     m_resaleAuthorizationSort = jsonValue.GetObject("ResaleAuthorizationSort");
     m_resaleAuthorizationSortHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MachineLearningProductSort"))
+  {
+    m_machineLearningProductSort = jsonValue.GetObject("MachineLearningProductSort");
+    m_machineLearningProductSortHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -95,6 +100,12 @@ JsonValue EntityTypeSort::Jsonize() const
   if(m_resaleAuthorizationSortHasBeenSet)
   {
    payload.WithObject("ResaleAuthorizationSort", m_resaleAuthorizationSort.Jsonize());
+
+  }
+
+  if(m_machineLearningProductSortHasBeenSet)
+  {
+   payload.WithObject("MachineLearningProductSort", m_machineLearningProductSort.Jsonize());
 
   }
 

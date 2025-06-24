@@ -34,6 +34,11 @@ GuardrailContentPolicyConfig& GuardrailContentPolicyConfig::operator =(JsonView 
     }
     m_filtersConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tierConfig"))
+  {
+    m_tierConfig = jsonValue.GetObject("tierConfig");
+    m_tierConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -49,6 +54,12 @@ JsonValue GuardrailContentPolicyConfig::Jsonize() const
      filtersConfigJsonList[filtersConfigIndex].AsObject(m_filtersConfig[filtersConfigIndex].Jsonize());
    }
    payload.WithArray("filtersConfig", std::move(filtersConfigJsonList));
+
+  }
+
+  if(m_tierConfigHasBeenSet)
+  {
+   payload.WithObject("tierConfig", m_tierConfig.Jsonize());
 
   }
 

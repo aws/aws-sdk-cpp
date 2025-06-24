@@ -48,9 +48,7 @@ namespace Model
    * is invalid because the organization has already started the process to enable
    * all features.</p> </li> <li> <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD:
    * The request failed because the account is from a different marketplace than the
-   * accounts in the organization. For example, accounts with India addresses must be
-   * associated with the AISPL marketplace. All accounts in an organization must be
-   * from the same marketplace.</p> </li> <li>
+   * accounts in the organization.</p> </li> <li>
    * <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change
    * the membership of an account too quickly after its previous change.</p> </li>
    * <li> <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an

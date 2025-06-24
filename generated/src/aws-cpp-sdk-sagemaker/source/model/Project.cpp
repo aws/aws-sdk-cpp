@@ -70,6 +70,15 @@ Project& Project::operator =(JsonView jsonValue)
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TemplateProviderDetails"))
+  {
+    Aws::Utils::Array<JsonView> templateProviderDetailsJsonList = jsonValue.GetArray("TemplateProviderDetails");
+    for(unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength(); ++templateProviderDetailsIndex)
+    {
+      m_templateProviderDetails.push_back(templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject());
+    }
+    m_templateProviderDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -146,6 +155,17 @@ JsonValue Project::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_templateProviderDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> templateProviderDetailsJsonList(m_templateProviderDetails.size());
+   for(unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength(); ++templateProviderDetailsIndex)
+   {
+     templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject(m_templateProviderDetails[templateProviderDetailsIndex].Jsonize());
+   }
+   payload.WithArray("TemplateProviderDetails", std::move(templateProviderDetailsJsonList));
+
   }
 
   if(m_tagsHasBeenSet)

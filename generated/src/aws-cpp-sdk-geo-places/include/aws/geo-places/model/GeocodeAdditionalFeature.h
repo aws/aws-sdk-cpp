@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     TimeZone,
-    Access
+    Access,
+    SecondaryAddresses,
+    Intersections
   };
 
 namespace GeocodeAdditionalFeatureMapper

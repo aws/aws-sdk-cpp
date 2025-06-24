@@ -30,6 +30,11 @@ FindingsStatistics& FindingsStatistics::operator =(JsonView jsonValue)
     m_externalAccessFindingsStatistics = jsonValue.GetObject("externalAccessFindingsStatistics");
     m_externalAccessFindingsStatisticsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("internalAccessFindingsStatistics"))
+  {
+    m_internalAccessFindingsStatistics = jsonValue.GetObject("internalAccessFindingsStatistics");
+    m_internalAccessFindingsStatisticsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("unusedAccessFindingsStatistics"))
   {
     m_unusedAccessFindingsStatistics = jsonValue.GetObject("unusedAccessFindingsStatistics");
@@ -45,6 +50,12 @@ JsonValue FindingsStatistics::Jsonize() const
   if(m_externalAccessFindingsStatisticsHasBeenSet)
   {
    payload.WithObject("externalAccessFindingsStatistics", m_externalAccessFindingsStatistics.Jsonize());
+
+  }
+
+  if(m_internalAccessFindingsStatisticsHasBeenSet)
+  {
+   payload.WithObject("internalAccessFindingsStatistics", m_internalAccessFindingsStatistics.Jsonize());
 
   }
 

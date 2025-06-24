@@ -39,8 +39,10 @@ namespace Model
      * save application logs. Required if you specify one or more
      * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
      * permissions that give Amazon GameLift Streams access to write the log files. For
-     * more information, see <b>Getting Started</b> in the Amazon GameLift Streams
-     * Developer Guide. </p> 
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html#application-bucket-permission-template">Application
+     * log bucket permission policy</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>. </p> 
      */
     inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
@@ -88,9 +90,9 @@ namespace Model
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
-     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

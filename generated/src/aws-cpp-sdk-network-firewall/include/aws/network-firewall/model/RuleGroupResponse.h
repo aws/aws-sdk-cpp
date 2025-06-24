@@ -12,6 +12,7 @@
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/SourceMetadata.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/network-firewall/model/SummaryConfiguration.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <aws/network-firewall/model/AnalysisResult.h>
 #include <utility>
@@ -200,7 +201,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service SNS
      * topic that's used to record changes to the managed rule group. You can subscribe
      * to the SNS topic to receive notifications when the managed rule group is
      * modified, such as for new versions and for version expiration. For more
@@ -248,6 +249,22 @@ namespace Model
     template<typename AnalysisResultsT = AnalysisResult>
     RuleGroupResponse& AddAnalysisResults(AnalysisResultsT&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.emplace_back(std::forward<AnalysisResultsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A complex type containing the currently selected rule option fields that will
+     * be displayed for rule summarization returned by
+     * <a>DescribeRuleGroupSummary</a>.</p> <ul> <li> <p>The <code>RuleOptions</code>
+     * specified in <a>SummaryConfiguration</a> </p> </li> <li> <p>Rule metadata
+     * organization preferences</p> </li> </ul>
+     */
+    inline const SummaryConfiguration& GetSummaryConfiguration() const { return m_summaryConfiguration; }
+    inline bool SummaryConfigurationHasBeenSet() const { return m_summaryConfigurationHasBeenSet; }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    void SetSummaryConfiguration(SummaryConfigurationT&& value) { m_summaryConfigurationHasBeenSet = true; m_summaryConfiguration = std::forward<SummaryConfigurationT>(value); }
+    template<typename SummaryConfigurationT = SummaryConfiguration>
+    RuleGroupResponse& WithSummaryConfiguration(SummaryConfigurationT&& value) { SetSummaryConfiguration(std::forward<SummaryConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleGroupArn;
@@ -294,6 +311,9 @@ namespace Model
 
     Aws::Vector<AnalysisResult> m_analysisResults;
     bool m_analysisResultsHasBeenSet = false;
+
+    SummaryConfiguration m_summaryConfiguration;
+    bool m_summaryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

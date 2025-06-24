@@ -22,18 +22,6 @@ Aws::String CreateApiCacheRequest::SerializePayload() const
 
   }
 
-  if(m_transitEncryptionEnabledHasBeenSet)
-  {
-   payload.WithBool("transitEncryptionEnabled", m_transitEncryptionEnabled);
-
-  }
-
-  if(m_atRestEncryptionEnabledHasBeenSet)
-  {
-   payload.WithBool("atRestEncryptionEnabled", m_atRestEncryptionEnabled);
-
-  }
-
   if(m_apiCachingBehaviorHasBeenSet)
   {
    payload.WithString("apiCachingBehavior", ApiCachingBehaviorMapper::GetNameForApiCachingBehavior(m_apiCachingBehavior));

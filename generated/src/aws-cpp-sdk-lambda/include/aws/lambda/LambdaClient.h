@@ -294,10 +294,12 @@ namespace Lambda
          * <code>ParallelizationFactor</code> – Process multiple batches from each shard
          * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
          * MSK, and self-managed Apache Kafka), the following option is also available:</p>
-         * <ul> <li> <p> <code>DestinationConfig</code> – Send discarded records to an
-         * Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p> </li> </ul> <p>For
-         * information about which configuration parameters apply to each event source, see
-         * the following topics.</p> <ul> <li> <p> <a
+         * <ul> <li> <p> <code>OnFailure</code> – Send discarded records to an Amazon SQS
+         * queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+         * a destination</a>.</p> </li> </ul> <p>For information about which configuration
+         * parameters apply to each event source, see the following topics.</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
          * Amazon DynamoDB Streams</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">
@@ -2081,10 +2083,12 @@ namespace Lambda
          * <code>ParallelizationFactor</code> – Process multiple batches from each shard
          * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
          * MSK, and self-managed Apache Kafka), the following option is also available:</p>
-         * <ul> <li> <p> <code>DestinationConfig</code> – Send discarded records to an
-         * Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p> </li> </ul> <p>For
-         * information about which configuration parameters apply to each event source, see
-         * the following topics.</p> <ul> <li> <p> <a
+         * <ul> <li> <p> <code>OnFailure</code> – Send discarded records to an Amazon SQS
+         * queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+         * a destination</a>.</p> </li> </ul> <p>For information about which configuration
+         * parameters apply to each event source, see the following topics.</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
          * Amazon DynamoDB Streams</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">

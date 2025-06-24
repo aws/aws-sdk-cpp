@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/SchedulerConfiguration.h>
+#include <aws/emr-serverless/model/IdentityCenterConfigurationInput.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 #include <aws/emr-serverless/model/Configuration.h>
@@ -253,6 +254,21 @@ namespace Model
     template<typename SchedulerConfigurationT = SchedulerConfiguration>
     UpdateApplicationRequest& WithSchedulerConfiguration(SchedulerConfigurationT&& value) { SetSchedulerConfiguration(std::forward<SchedulerConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the IAM Identity Center configuration used to enable or disable
+     * trusted identity propagation. When provided, this configuration determines how
+     * the application interacts with IAM Identity Center for user authentication and
+     * access control.</p>
+     */
+    inline const IdentityCenterConfigurationInput& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+    inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfigurationInput>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfigurationInput>
+    UpdateApplicationRequest& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -299,6 +315,9 @@ namespace Model
 
     SchedulerConfiguration m_schedulerConfiguration;
     bool m_schedulerConfigurationHasBeenSet = false;
+
+    IdentityCenterConfigurationInput m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

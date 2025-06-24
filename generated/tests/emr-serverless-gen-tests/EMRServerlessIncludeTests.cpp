@@ -36,6 +36,8 @@
 #include <aws/emr-serverless/model/GetJobRunRequest.h>
 #include <aws/emr-serverless/model/GetJobRunResult.h>
 #include <aws/emr-serverless/model/Hive.h>
+#include <aws/emr-serverless/model/IdentityCenterConfiguration.h>
+#include <aws/emr-serverless/model/IdentityCenterConfigurationInput.h>
 #include <aws/emr-serverless/model/ImageConfiguration.h>
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>

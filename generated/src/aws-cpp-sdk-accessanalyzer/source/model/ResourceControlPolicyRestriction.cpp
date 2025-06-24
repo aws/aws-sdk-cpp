@@ -23,6 +23,7 @@ namespace Aws
         static const int APPLICABLE_HASH = HashingUtils::HashString("APPLICABLE");
         static const int FAILED_TO_EVALUATE_RCP_HASH = HashingUtils::HashString("FAILED_TO_EVALUATE_RCP");
         static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
+        static const int APPLIED_HASH = HashingUtils::HashString("APPLIED");
 
 
         ResourceControlPolicyRestriction GetResourceControlPolicyRestrictionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NOT_APPLICABLE_HASH)
           {
             return ResourceControlPolicyRestriction::NOT_APPLICABLE;
+          }
+          else if (hashCode == APPLIED_HASH)
+          {
+            return ResourceControlPolicyRestriction::APPLIED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "FAILED_TO_EVALUATE_RCP";
           case ResourceControlPolicyRestriction::NOT_APPLICABLE:
             return "NOT_APPLICABLE";
+          case ResourceControlPolicyRestriction::APPLIED:
+            return "APPLIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

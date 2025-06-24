@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/KafkaSchemaRegistryConfig.h>
 #include <utility>
 
 namespace Aws
@@ -54,10 +55,25 @@ namespace Model
     template<typename ConsumerGroupIdT = Aws::String>
     AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(ConsumerGroupIdT&& value) { SetConsumerGroupId(std::forward<ConsumerGroupIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specific configuration settings for a Kafka schema registry.</p>
+     */
+    inline const KafkaSchemaRegistryConfig& GetSchemaRegistryConfig() const { return m_schemaRegistryConfig; }
+    inline bool SchemaRegistryConfigHasBeenSet() const { return m_schemaRegistryConfigHasBeenSet; }
+    template<typename SchemaRegistryConfigT = KafkaSchemaRegistryConfig>
+    void SetSchemaRegistryConfig(SchemaRegistryConfigT&& value) { m_schemaRegistryConfigHasBeenSet = true; m_schemaRegistryConfig = std::forward<SchemaRegistryConfigT>(value); }
+    template<typename SchemaRegistryConfigT = KafkaSchemaRegistryConfig>
+    AmazonManagedKafkaEventSourceConfig& WithSchemaRegistryConfig(SchemaRegistryConfigT&& value) { SetSchemaRegistryConfig(std::forward<SchemaRegistryConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_consumerGroupId;
     bool m_consumerGroupIdHasBeenSet = false;
+
+    KafkaSchemaRegistryConfig m_schemaRegistryConfig;
+    bool m_schemaRegistryConfigHasBeenSet = false;
   };
 
 } // namespace Model

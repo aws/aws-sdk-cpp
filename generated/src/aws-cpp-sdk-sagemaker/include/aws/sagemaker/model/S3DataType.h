@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ManifestFile,
     S3Prefix,
-    AugmentedManifestFile
+    AugmentedManifestFile,
+    Converse
   };
 
 namespace S3DataTypeMapper

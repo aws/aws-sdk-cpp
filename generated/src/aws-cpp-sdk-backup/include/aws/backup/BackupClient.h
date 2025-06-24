@@ -80,6 +80,32 @@ namespace Backup
         virtual ~BackupClient();
 
         /**
+         * <p>Associates an MPA approval team with a backup vault.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateBackupVaultMpaApprovalTeamOutcome AssociateBackupVaultMpaApprovalTeam(const Model::AssociateBackupVaultMpaApprovalTeamRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateBackupVaultMpaApprovalTeam that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateBackupVaultMpaApprovalTeamRequestT = Model::AssociateBackupVaultMpaApprovalTeamRequest>
+        Model::AssociateBackupVaultMpaApprovalTeamOutcomeCallable AssociateBackupVaultMpaApprovalTeamCallable(const AssociateBackupVaultMpaApprovalTeamRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::AssociateBackupVaultMpaApprovalTeam, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateBackupVaultMpaApprovalTeam that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateBackupVaultMpaApprovalTeamRequestT = Model::AssociateBackupVaultMpaApprovalTeamRequest>
+        void AssociateBackupVaultMpaApprovalTeamAsync(const AssociateBackupVaultMpaApprovalTeamRequestT& request, const AssociateBackupVaultMpaApprovalTeamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::AssociateBackupVaultMpaApprovalTeam, request, handler, context);
+        }
+
+        /**
          * <p>Removes the specified legal hold on a recovery point. This action can only be
          * performed by a user with sufficient permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">AWS
@@ -304,6 +330,33 @@ namespace Backup
         void CreateReportPlanAsync(const CreateReportPlanRequestT& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::CreateReportPlan, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a restore access backup vault that provides temporary access to
+         * recovery points in a logically air-gapped backup vault, subject to MPA
+         * approval.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRestoreAccessBackupVaultOutcome CreateRestoreAccessBackupVault(const Model::CreateRestoreAccessBackupVaultRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRestoreAccessBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRestoreAccessBackupVaultRequestT = Model::CreateRestoreAccessBackupVaultRequest>
+        Model::CreateRestoreAccessBackupVaultOutcomeCallable CreateRestoreAccessBackupVaultCallable(const CreateRestoreAccessBackupVaultRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::CreateRestoreAccessBackupVault, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRestoreAccessBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRestoreAccessBackupVaultRequestT = Model::CreateRestoreAccessBackupVaultRequest>
+        void CreateRestoreAccessBackupVaultAsync(const CreateRestoreAccessBackupVaultRequestT& request, const CreateRestoreAccessBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::CreateRestoreAccessBackupVault, request, handler, context);
         }
 
         /**
@@ -966,6 +1019,33 @@ namespace Backup
         void DescribeRestoreJobAsync(const DescribeRestoreJobRequestT& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::DescribeRestoreJob, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the association between an MPA approval team and a backup vault,
+         * disabling the MPA approval workflow for restore operations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateBackupVaultMpaApprovalTeamOutcome DisassociateBackupVaultMpaApprovalTeam(const Model::DisassociateBackupVaultMpaApprovalTeamRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateBackupVaultMpaApprovalTeam that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateBackupVaultMpaApprovalTeamRequestT = Model::DisassociateBackupVaultMpaApprovalTeamRequest>
+        Model::DisassociateBackupVaultMpaApprovalTeamOutcomeCallable DisassociateBackupVaultMpaApprovalTeamCallable(const DisassociateBackupVaultMpaApprovalTeamRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::DisassociateBackupVaultMpaApprovalTeam, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateBackupVaultMpaApprovalTeam that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateBackupVaultMpaApprovalTeamRequestT = Model::DisassociateBackupVaultMpaApprovalTeamRequest>
+        void DisassociateBackupVaultMpaApprovalTeamAsync(const DisassociateBackupVaultMpaApprovalTeamRequestT& request, const DisassociateBackupVaultMpaApprovalTeamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::DisassociateBackupVaultMpaApprovalTeam, request, handler, context);
         }
 
         /**
@@ -1929,6 +2009,32 @@ namespace Backup
         }
 
         /**
+         * <p>Returns a list of restore access backup vaults associated with a specified
+         * backup vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRestoreAccessBackupVaultsOutcome ListRestoreAccessBackupVaults(const Model::ListRestoreAccessBackupVaultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRestoreAccessBackupVaults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRestoreAccessBackupVaultsRequestT = Model::ListRestoreAccessBackupVaultsRequest>
+        Model::ListRestoreAccessBackupVaultsOutcomeCallable ListRestoreAccessBackupVaultsCallable(const ListRestoreAccessBackupVaultsRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::ListRestoreAccessBackupVaults, request);
+        }
+
+        /**
+         * An Async wrapper for ListRestoreAccessBackupVaults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRestoreAccessBackupVaultsRequestT = Model::ListRestoreAccessBackupVaultsRequest>
+        void ListRestoreAccessBackupVaultsAsync(const ListRestoreAccessBackupVaultsRequestT& request, const ListRestoreAccessBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::ListRestoreAccessBackupVaults, request, handler, context);
+        }
+
+        /**
          * <p>This request obtains a summary of restore jobs created or running within the
          * the most recent 30 days. You can include parameters AccountID, State,
          * ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
@@ -2220,6 +2326,33 @@ namespace Backup
         void PutRestoreValidationResultAsync(const PutRestoreValidationResultRequestT& request, const PutRestoreValidationResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::PutRestoreValidationResult, request, handler, context);
+        }
+
+        /**
+         * <p>Revokes access to a restore access backup vault, removing the ability to
+         * restore from its recovery points and permanently deleting the
+         * vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RevokeRestoreAccessBackupVaultOutcome RevokeRestoreAccessBackupVault(const Model::RevokeRestoreAccessBackupVaultRequest& request) const;
+
+        /**
+         * A Callable wrapper for RevokeRestoreAccessBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RevokeRestoreAccessBackupVaultRequestT = Model::RevokeRestoreAccessBackupVaultRequest>
+        Model::RevokeRestoreAccessBackupVaultOutcomeCallable RevokeRestoreAccessBackupVaultCallable(const RevokeRestoreAccessBackupVaultRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::RevokeRestoreAccessBackupVault, request);
+        }
+
+        /**
+         * An Async wrapper for RevokeRestoreAccessBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RevokeRestoreAccessBackupVaultRequestT = Model::RevokeRestoreAccessBackupVaultRequest>
+        void RevokeRestoreAccessBackupVaultAsync(const RevokeRestoreAccessBackupVaultRequestT& request, const RevokeRestoreAccessBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::RevokeRestoreAccessBackupVault, request, handler, context);
         }
 
         /**

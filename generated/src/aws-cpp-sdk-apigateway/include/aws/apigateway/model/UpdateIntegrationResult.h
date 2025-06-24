@@ -230,7 +230,8 @@ namespace Model
     ///@{
     /**
      * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
-     * 29,000 milliseconds or 29 seconds.</p>
+     * 29,000 milliseconds or 29 seconds. You can increase the default value to longer
+     * than 29 seconds for Regional or private APIs only.</p>
      */
     inline int GetTimeoutInMillis() const { return m_timeoutInMillis; }
     inline void SetTimeoutInMillis(int value) { m_timeoutInMillisHasBeenSet = true; m_timeoutInMillis = value; }

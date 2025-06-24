@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CodeRepositoryMetadata.h>
 #include <aws/inspector2/model/Ec2Metadata.h>
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
@@ -40,6 +41,18 @@ namespace Model
     AWS_INSPECTOR2_API ResourceScanMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Contains metadata about scan coverage for a code repository resource.</p>
+     */
+    inline const CodeRepositoryMetadata& GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    template<typename CodeRepositoryT = CodeRepositoryMetadata>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = CodeRepositoryMetadata>
+    ResourceScanMetadata& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -92,6 +105,9 @@ namespace Model
     ResourceScanMetadata& WithLambdaFunction(LambdaFunctionT&& value) { SetLambdaFunction(std::forward<LambdaFunctionT>(value)); return *this;}
     ///@}
   private:
+
+    CodeRepositoryMetadata m_codeRepository;
+    bool m_codeRepositoryHasBeenSet = false;
 
     Ec2Metadata m_ec2;
     bool m_ec2HasBeenSet = false;

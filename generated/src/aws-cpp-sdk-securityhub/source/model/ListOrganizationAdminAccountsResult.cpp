@@ -39,6 +39,11 @@ ListOrganizationAdminAccountsResult& ListOrganizationAdminAccountsResult::operat
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Feature"))
+  {
+    m_feature = SecurityHubFeatureMapper::GetSecurityHubFeatureForName(jsonValue.GetString("Feature"));
+    m_featureHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

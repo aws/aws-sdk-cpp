@@ -21,7 +21,7 @@ AWS_ROLE_SESSION_NAME="$3"
 
 echo "Setting the run environment"
 export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${AWS_ACCOUNT}:role/IntegrationTest
-export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/tools/aws-cpp-sdk-lambda-integration-tests/resources
+export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/tests/aws-cpp-sdk-lambda-integration-tests/resources
 export sts=$(aws sts assume-role --role-arn "$TEST_ASSUME_ROLE_ARN" --role-session-name "${AWS_ROLE_SESSION_NAME}" --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]')
 export profile=sdk-integ-test
 aws configure set aws_access_key_id $(echo "$sts" | jq -r '.[0]') --profile "$profile"

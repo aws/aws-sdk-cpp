@@ -110,6 +110,12 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
     }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
+    }
     XmlNode serviceManagedNode = resultNode.FirstChild("serviceManaged");
     if(!serviceManagedNode.IsNull())
     {
@@ -201,6 +207,11 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
   if(m_serviceManagedHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceManaged=" << StringUtils::URLEncode(ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged)) << "&";
@@ -273,6 +284,10 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_carrierIpHasBeenSet)
   {
       oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
   if(m_serviceManagedHasBeenSet)
   {

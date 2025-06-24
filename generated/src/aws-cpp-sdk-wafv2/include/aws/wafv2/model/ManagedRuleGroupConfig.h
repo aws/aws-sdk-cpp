@@ -8,6 +8,7 @@
 #include <aws/wafv2/model/AWSManagedRulesBotControlRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesATPRuleSet.h>
 #include <aws/wafv2/model/AWSManagedRulesACFPRuleSet.h>
+#include <aws/wafv2/model/AWSManagedRulesAntiDDoSRuleSet.h>
 #include <utility>
 
 namespace Aws
@@ -33,11 +34,16 @@ namespace Model
    * account creation fraud prevention managed rule group. The configuration includes
    * the registration and sign-up pages of your application and the locations in the
    * account creation request payload of data, such as the user email and phone
-   * number fields. </p> </li> <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code>
-   * configuration object to configure the account takeover prevention managed rule
-   * group. The configuration includes the sign-in page of your application and the
-   * locations in the login request payload of data such as the username and
-   * password. </p> </li> <li> <p>Use the
+   * number fields. </p> </li> <li> <p>Use the
+   * <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure
+   * the anti-DDoS managed rule group. The configuration includes the sensitivity
+   * levels to use in the rules that typically block and challenge requests that
+   * might be participating in DDoS attacks and the specification to use to indicate
+   * whether a request can handle a silent browser challenge. </p> </li> <li> <p>Use
+   * the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the
+   * account takeover prevention managed rule group. The configuration includes the
+   * sign-in page of your application and the locations in the login request payload
+   * of data such as the username and password. </p> </li> <li> <p>Use the
    * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
    * the protection level that you want the Bot Control rule group to use. </p> </li>
    * </ul> <p>For example specifications, see the examples section of
@@ -118,6 +124,25 @@ namespace Model
     template<typename AWSManagedRulesACFPRuleSetT = AWSManagedRulesACFPRuleSet>
     ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSetT&& value) { SetAWSManagedRulesACFPRuleSet(std::forward<AWSManagedRulesACFPRuleSetT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Additional configuration for using the anti-DDoS managed rule group,
+     * <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS
+     * behavior for the rule group. </p> <p>For information about using the anti-DDoS
+     * managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF
+     * Anti-DDoS rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed
+     * Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline const AWSManagedRulesAntiDDoSRuleSet& GetAWSManagedRulesAntiDDoSRuleSet() const { return m_aWSManagedRulesAntiDDoSRuleSet; }
+    inline bool AWSManagedRulesAntiDDoSRuleSetHasBeenSet() const { return m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet; }
+    template<typename AWSManagedRulesAntiDDoSRuleSetT = AWSManagedRulesAntiDDoSRuleSet>
+    void SetAWSManagedRulesAntiDDoSRuleSet(AWSManagedRulesAntiDDoSRuleSetT&& value) { m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet = true; m_aWSManagedRulesAntiDDoSRuleSet = std::forward<AWSManagedRulesAntiDDoSRuleSetT>(value); }
+    template<typename AWSManagedRulesAntiDDoSRuleSetT = AWSManagedRulesAntiDDoSRuleSet>
+    ManagedRuleGroupConfig& WithAWSManagedRulesAntiDDoSRuleSet(AWSManagedRulesAntiDDoSRuleSetT&& value) { SetAWSManagedRulesAntiDDoSRuleSet(std::forward<AWSManagedRulesAntiDDoSRuleSetT>(value)); return *this;}
+    ///@}
   private:
 
     AWSManagedRulesBotControlRuleSet m_aWSManagedRulesBotControlRuleSet;
@@ -128,6 +153,9 @@ namespace Model
 
     AWSManagedRulesACFPRuleSet m_aWSManagedRulesACFPRuleSet;
     bool m_aWSManagedRulesACFPRuleSetHasBeenSet = false;
+
+    AWSManagedRulesAntiDDoSRuleSet m_aWSManagedRulesAntiDDoSRuleSet;
+    bool m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet = false;
   };
 
 } // namespace Model

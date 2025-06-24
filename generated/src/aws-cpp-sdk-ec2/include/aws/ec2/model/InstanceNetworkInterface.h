@@ -237,7 +237,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
-     * <code>efa</code> | <code>efa-only</code> | <code>trunk</code> </p>
+     * <code>efa</code> | <code>efa-only</code> | <code>evs</code> | <code>trunk</code>
+     * </p>
      */
     inline const Aws::String& GetInterfaceType() const { return m_interfaceType; }
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }

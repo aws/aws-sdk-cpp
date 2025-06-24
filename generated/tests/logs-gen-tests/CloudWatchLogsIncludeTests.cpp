@@ -103,6 +103,7 @@
 #include <aws/logs/model/Entity.h>
 #include <aws/logs/model/EntityRejectionErrorType.h>
 #include <aws/logs/model/EvaluationFrequency.h>
+#include <aws/logs/model/EventSource.h>
 #include <aws/logs/model/ExportTask.h>
 #include <aws/logs/model/ExportTaskExecutionInfo.h>
 #include <aws/logs/model/ExportTaskStatus.h>
@@ -176,6 +177,7 @@
 #include <aws/logs/model/MetricTransformation.h>
 #include <aws/logs/model/MoveKeyEntry.h>
 #include <aws/logs/model/MoveKeys.h>
+#include <aws/logs/model/OCSFVersion.h>
 #include <aws/logs/model/OpenSearchApplication.h>
 #include <aws/logs/model/OpenSearchCollection.h>
 #include <aws/logs/model/OpenSearchDataAccessPolicy.h>
@@ -196,6 +198,7 @@
 #include <aws/logs/model/ParseKeyValue.h>
 #include <aws/logs/model/ParsePostgres.h>
 #include <aws/logs/model/ParseRoute53.h>
+#include <aws/logs/model/ParseToOCSF.h>
 #include <aws/logs/model/ParseVPC.h>
 #include <aws/logs/model/ParseWAF.h>
 #include <aws/logs/model/PatternToken.h>

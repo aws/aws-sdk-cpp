@@ -107,6 +107,30 @@ Firewall& Firewall::operator =(JsonView jsonValue)
     }
     m_enabledAnalysisTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TransitGatewayId"))
+  {
+    m_transitGatewayId = jsonValue.GetString("TransitGatewayId");
+    m_transitGatewayIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TransitGatewayOwnerAccountId"))
+  {
+    m_transitGatewayOwnerAccountId = jsonValue.GetString("TransitGatewayOwnerAccountId");
+    m_transitGatewayOwnerAccountIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AvailabilityZoneMappings"))
+  {
+    Aws::Utils::Array<JsonView> availabilityZoneMappingsJsonList = jsonValue.GetArray("AvailabilityZoneMappings");
+    for(unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength(); ++availabilityZoneMappingsIndex)
+    {
+      m_availabilityZoneMappings.push_back(availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject());
+    }
+    m_availabilityZoneMappingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AvailabilityZoneChangeProtection"))
+  {
+    m_availabilityZoneChangeProtection = jsonValue.GetBool("AvailabilityZoneChangeProtection");
+    m_availabilityZoneChangeProtectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -210,6 +234,35 @@ JsonValue Firewall::Jsonize() const
      enabledAnalysisTypesJsonList[enabledAnalysisTypesIndex].AsString(EnabledAnalysisTypeMapper::GetNameForEnabledAnalysisType(m_enabledAnalysisTypes[enabledAnalysisTypesIndex]));
    }
    payload.WithArray("EnabledAnalysisTypes", std::move(enabledAnalysisTypesJsonList));
+
+  }
+
+  if(m_transitGatewayIdHasBeenSet)
+  {
+   payload.WithString("TransitGatewayId", m_transitGatewayId);
+
+  }
+
+  if(m_transitGatewayOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("TransitGatewayOwnerAccountId", m_transitGatewayOwnerAccountId);
+
+  }
+
+  if(m_availabilityZoneMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> availabilityZoneMappingsJsonList(m_availabilityZoneMappings.size());
+   for(unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength(); ++availabilityZoneMappingsIndex)
+   {
+     availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject(m_availabilityZoneMappings[availabilityZoneMappingsIndex].Jsonize());
+   }
+   payload.WithArray("AvailabilityZoneMappings", std::move(availabilityZoneMappingsJsonList));
+
+  }
+
+  if(m_availabilityZoneChangeProtectionHasBeenSet)
+  {
+   payload.WithBool("AvailabilityZoneChangeProtection", m_availabilityZoneChangeProtection);
 
   }
 

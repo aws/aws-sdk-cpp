@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/SecurityHubFeature.h>
 #include <utility>
 
 namespace Aws
@@ -44,10 +45,24 @@ namespace Model
     template<typename AdminAccountIdT = Aws::String>
     EnableOrganizationAdminAccountRequest& WithAdminAccountId(AdminAccountIdT&& value) { SetAdminAccountId(std::forward<AdminAccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The feature for which the delegated admin account is enabled. Defaults to
+     * Security Hub if not specified.</p>
+     */
+    inline SecurityHubFeature GetFeature() const { return m_feature; }
+    inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
+    inline void SetFeature(SecurityHubFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline EnableOrganizationAdminAccountRequest& WithFeature(SecurityHubFeature value) { SetFeature(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_adminAccountId;
     bool m_adminAccountIdHasBeenSet = false;
+
+    SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
+    bool m_featureHasBeenSet = false;
   };
 
 } // namespace Model

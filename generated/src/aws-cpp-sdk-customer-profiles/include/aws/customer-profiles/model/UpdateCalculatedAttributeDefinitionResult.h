@@ -10,6 +10,8 @@
 #include <aws/customer-profiles/model/Statistic.h>
 #include <aws/customer-profiles/model/Conditions.h>
 #include <aws/customer-profiles/model/AttributeDetails.h>
+#include <aws/customer-profiles/model/ReadinessStatus.h>
+#include <aws/customer-profiles/model/Readiness.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -128,6 +130,38 @@ namespace Model
 
     ///@{
     /**
+     * <p>Whether historical data ingested before the Calculated Attribute was created
+     * should be included in calculations.</p>
+     */
+    inline bool GetUseHistoricalData() const { return m_useHistoricalData; }
+    inline void SetUseHistoricalData(bool value) { m_useHistoricalDataHasBeenSet = true; m_useHistoricalData = value; }
+    inline UpdateCalculatedAttributeDefinitionResult& WithUseHistoricalData(bool value) { SetUseHistoricalData(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Status of the Calculated Attribute creation (whether all historical data has
+     * been indexed.)</p>
+     */
+    inline ReadinessStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ReadinessStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateCalculatedAttributeDefinitionResult& WithStatus(ReadinessStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information indicating if the Calculated Attribute is ready for use by
+     * confirming all historical data has been processed and reflected.</p>
+     */
+    inline const Readiness& GetReadiness() const { return m_readiness; }
+    template<typename ReadinessT = Readiness>
+    void SetReadiness(ReadinessT&& value) { m_readinessHasBeenSet = true; m_readiness = std::forward<ReadinessT>(value); }
+    template<typename ReadinessT = Readiness>
+    UpdateCalculatedAttributeDefinitionResult& WithReadiness(ReadinessT&& value) { SetReadiness(std::forward<ReadinessT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -174,6 +208,15 @@ namespace Model
 
     AttributeDetails m_attributeDetails;
     bool m_attributeDetailsHasBeenSet = false;
+
+    bool m_useHistoricalData{false};
+    bool m_useHistoricalDataHasBeenSet = false;
+
+    ReadinessStatus m_status{ReadinessStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Readiness m_readiness;
+    bool m_readinessHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

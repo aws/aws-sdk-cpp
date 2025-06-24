@@ -33,12 +33,14 @@
 #include <aws/connectcampaignsv2/model/GetCampaignStateRequest.h>
 #include <aws/connectcampaignsv2/model/GetCampaignStateBatchRequest.h>
 #include <aws/connectcampaignsv2/model/GetConnectInstanceConfigRequest.h>
+#include <aws/connectcampaignsv2/model/GetInstanceCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/GetInstanceOnboardingJobStatusRequest.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsRequest.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsRequest.h>
 #include <aws/connectcampaignsv2/model/ListTagsForResourceRequest.h>
 #include <aws/connectcampaignsv2/model/PauseCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/PutConnectInstanceIntegrationRequest.h>
+#include <aws/connectcampaignsv2/model/PutInstanceCommunicationLimitsRequest.h>
 #include <aws/connectcampaignsv2/model/PutOutboundRequestBatchRequest.h>
 #include <aws/connectcampaignsv2/model/PutProfileOutboundRequestBatchRequest.h>
 #include <aws/connectcampaignsv2/model/ResumeCampaignRequest.h>
@@ -604,6 +606,40 @@ GetConnectInstanceConfigOutcome ConnectCampaignsV2Client::GetConnectInstanceConf
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetInstanceCommunicationLimitsOutcome ConnectCampaignsV2Client::GetInstanceCommunicationLimits(const GetInstanceCommunicationLimitsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetInstanceCommunicationLimits);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstanceCommunicationLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectInstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInstanceCommunicationLimits", "Required field: ConnectInstanceId, is not set");
+    return GetInstanceCommunicationLimitsOutcome(Aws::Client::AWSError<ConnectCampaignsV2Errors>(ConnectCampaignsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetInstanceCommunicationLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetInstanceCommunicationLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetInstanceCommunicationLimits",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetInstanceCommunicationLimitsOutcome>(
+    [&]()-> GetInstanceCommunicationLimitsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstanceCommunicationLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/connect-instance/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/communication-limits");
+      return GetInstanceCommunicationLimitsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsV2Client::GetInstanceOnboardingJobStatus(const GetInstanceOnboardingJobStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(GetInstanceOnboardingJobStatus);
@@ -794,6 +830,40 @@ PutConnectInstanceIntegrationOutcome ConnectCampaignsV2Client::PutConnectInstanc
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectInstanceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
       return PutConnectInstanceIntegrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutInstanceCommunicationLimitsOutcome ConnectCampaignsV2Client::PutInstanceCommunicationLimits(const PutInstanceCommunicationLimitsRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutInstanceCommunicationLimits);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutInstanceCommunicationLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectInstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutInstanceCommunicationLimits", "Required field: ConnectInstanceId, is not set");
+    return PutInstanceCommunicationLimitsOutcome(Aws::Client::AWSError<ConnectCampaignsV2Errors>(ConnectCampaignsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutInstanceCommunicationLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutInstanceCommunicationLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutInstanceCommunicationLimits",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutInstanceCommunicationLimitsOutcome>(
+    [&]()-> PutInstanceCommunicationLimitsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutInstanceCommunicationLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/connect-instance/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/communication-limits");
+      return PutInstanceCommunicationLimitsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

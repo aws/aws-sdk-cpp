@@ -90,9 +90,9 @@ namespace Model
      * Private Certificate Authority.</p> </li> </ul> <p>For more information about
      * configuring certificates for outbound inspection, see <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
-     * SSL/TLS certificates with certificates with TLS inspection configurations</a> in
-     * the <i>Network Firewall Developer Guide</i>. </p> <p>For information about
-     * working with certificates in ACM, see <a
+     * SSL/TLS certificates with TLS inspection configurations</a> in the <i>Network
+     * Firewall Developer Guide</i>. </p> <p>For information about working with
+     * certificates in ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */

@@ -28,7 +28,13 @@ namespace Model
   /**
    * <p>Details for your use of the account takeover prevention managed rule group,
    * <code>AWSManagedRulesATPRuleSet</code>. This configuration is used in
-   * <code>ManagedRuleGroupConfig</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>ManagedRuleGroupConfig</code>. </p> <p>For additional information about
+   * this and the other intelligent threat mitigation rule groups, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-managed-protections">Intelligent
+   * threat mitigation in WAF</a> and <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list">Amazon
+   * Web Services Managed Rules rule groups list</a> in the <i>WAF Developer
+   * Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AWSManagedRulesATPRuleSet">AWS
    * API Reference</a></p>
    */

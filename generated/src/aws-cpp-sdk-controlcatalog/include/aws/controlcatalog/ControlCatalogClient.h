@@ -16,14 +16,13 @@ namespace Aws
 namespace ControlCatalog
 {
   /**
-   * <p>Welcome to the Amazon Web Services Control Catalog API reference. This guide
-   * is for developers who need detailed information about how to programmatically
-   * identify and filter the common controls and related metadata that are available
-   * to Amazon Web Services customers. This API reference provides descriptions,
-   * syntax, and usage examples for each of the actions and data types that are
-   * supported by Amazon Web Services Control Catalog. </p> <p>Use the following
-   * links to get started with the Amazon Web Services Control Catalog API:</p> <ul>
-   * <li> <p> <a
+   * <p>Welcome to the Control Catalog API reference. This guide is for developers
+   * who need detailed information about how to programmatically identify and filter
+   * the common controls and related metadata that are available to Amazon Web
+   * Services customers. This API reference provides descriptions, syntax, and usage
+   * examples for each of the actions and data types that are supported by Control
+   * Catalog. </p> <p>Use the following links to get started with the Control Catalog
+   * API:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_Operations.html">Actions</a>:
    * An alphabetical list of all Control Catalog API operations.</p> </li> <li> <p>
    * <a
@@ -157,11 +156,38 @@ namespace ControlCatalog
         }
 
         /**
-         * <p>Returns a paginated list of all available controls in the Amazon Web Services
-         * Control Catalog library. Allows you to discover available controls. The list of
-         * controls is given as structures of type <i>controlSummary</i>. The ARN is
-         * returned in the global <i>controlcatalog</i> format, as shown in the
-         * examples.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of control mappings from the Control Catalog.
+         * Control mappings show relationships between controls and other entities, such as
+         * common controls or compliance frameworks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListControlMappingsOutcome ListControlMappings(const Model::ListControlMappingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListControlMappings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListControlMappingsRequestT = Model::ListControlMappingsRequest>
+        Model::ListControlMappingsOutcomeCallable ListControlMappingsCallable(const ListControlMappingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ControlCatalogClient::ListControlMappings, request);
+        }
+
+        /**
+         * An Async wrapper for ListControlMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListControlMappingsRequestT = Model::ListControlMappingsRequest>
+        void ListControlMappingsAsync(const ListControlMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListControlMappingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ControlCatalogClient::ListControlMappings, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of all available controls in the Control Catalog
+         * library. Allows you to discover available controls. The list of controls is
+         * given as structures of type <i>controlSummary</i>. The ARN is returned in the
+         * global <i>controlcatalog</i> format, as shown in the examples.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">AWS
          * API Reference</a></p>
          */
@@ -186,8 +212,8 @@ namespace ControlCatalog
         }
 
         /**
-         * <p>Returns a paginated list of domains from the Amazon Web Services Control
-         * Catalog.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of domains from the Control Catalog.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListDomains">AWS
          * API Reference</a></p>
          */
@@ -212,10 +238,10 @@ namespace ControlCatalog
         }
 
         /**
-         * <p>Returns a paginated list of objectives from the Amazon Web Services Control
-         * Catalog.</p> <p>You can apply an optional filter to see the objectives that
-         * belong to a specific domain. If you don’t provide a filter, the operation
-         * returns all objectives. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of objectives from the Control Catalog.</p> <p>You
+         * can apply an optional filter to see the objectives that belong to a specific
+         * domain. If you don���t provide a filter, the operation returns all objectives.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListObjectives">AWS
          * API Reference</a></p>
          */

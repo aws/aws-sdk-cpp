@@ -60,6 +60,11 @@ CustomModelSummary& CustomModelSummary::operator =(JsonView jsonValue)
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
     m_ownerAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("modelStatus"))
+  {
+    m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("modelStatus"));
+    m_modelStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -105,6 +110,11 @@ JsonValue CustomModelSummary::Jsonize() const
   {
    payload.WithString("ownerAccountId", m_ownerAccountId);
 
+  }
+
+  if(m_modelStatusHasBeenSet)
+  {
+   payload.WithString("modelStatus", ModelStatusMapper::GetNameForModelStatus(m_modelStatus));
   }
 
   return payload;

@@ -146,11 +146,16 @@ namespace Model
      * account creation fraud prevention managed rule group. The configuration includes
      * the registration and sign-up pages of your application and the locations in the
      * account creation request payload of data, such as the user email and phone
-     * number fields. </p> </li> <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code>
-     * configuration object to configure the account takeover prevention managed rule
-     * group. The configuration includes the sign-in page of your application and the
-     * locations in the login request payload of data such as the username and
-     * password. </p> </li> <li> <p>Use the
+     * number fields. </p> </li> <li> <p>Use the
+     * <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure
+     * the anti-DDoS managed rule group. The configuration includes the sensitivity
+     * levels to use in the rules that typically block and challenge requests that
+     * might be participating in DDoS attacks and the specification to use to indicate
+     * whether a request can handle a silent browser challenge. </p> </li> <li> <p>Use
+     * the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the
+     * account takeover prevention managed rule group. The configuration includes the
+     * sign-in page of your application and the locations in the login request payload
+     * of data such as the username and password. </p> </li> <li> <p>Use the
      * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
      * the protection level that you want the Bot Control rule group to use. </p> </li>
      * </ul>
@@ -169,11 +174,13 @@ namespace Model
     /**
      * <p>Action settings to use in the place of the rule actions that are configured
      * inside the rule group. You specify one override for each rule whose action you
-     * want to change. </p>  <p>Take care to verify the rule names in your
-     * overrides. If you provide a rule name that doesn't match the name of any rule in
-     * the rule group, WAF doesn't return an error and doesn't apply the override
-     * setting.</p>  <p>You can use overrides for testing, for example you can
-     * override all of rule actions to <code>Count</code> and then monitor the
+     * want to change. </p>  <p>Verify the rule names in your overrides
+     * carefully. With managed rule groups, WAF silently ignores any override that uses
+     * an invalid rule name. With customer-owned rule groups, invalid rule names in
+     * your overrides will cause web ACL updates to fail. An invalid rule name is any
+     * name that doesn't exactly match the case-sensitive name of an existing rule in
+     * the rule group.</p>  <p>You can use overrides for testing, for example
+     * you can override all of rule actions to <code>Count</code> and then monitor the
      * resulting count metrics to understand how the rule group would handle your web
      * traffic. You can also permanently override some or all actions, to modify how
      * the rule group manages your web traffic.</p>

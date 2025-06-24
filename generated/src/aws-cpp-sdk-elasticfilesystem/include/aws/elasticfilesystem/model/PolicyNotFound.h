@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the default file system policy is in effect for the EFS file
-   * system specified.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if <code>no backup</code> is specified for a One Zone EFS file
+   * system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PolicyNotFound">AWS
    * API Reference</a></p>
    */

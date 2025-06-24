@@ -183,13 +183,16 @@ namespace ACM
 
         /**
          * <p>Exports a private certificate issued by a private certificate authority (CA)
-         * for use anywhere. The exported file contains the certificate, the certificate
-         * chain, and the encrypted private 2048-bit RSA key associated with the public key
-         * that is embedded in the certificate. For security, you must assign a passphrase
-         * for the private key when exporting it. </p> <p>For information about exporting
-         * and formatting a certificate using the ACM console or CLI, see <a
-         * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export
-         * a Private Certificate</a>.</p><p><h3>See Also:</h3>   <a
+         * or public certificate for use anywhere. The exported file contains the
+         * certificate, the certificate chain, and the encrypted private key associated
+         * with the public key that is embedded in the certificate. For security, you must
+         * assign a passphrase for the private key when exporting it. </p> <p>For
+         * information about exporting and formatting a certificate using the ACM console
+         * or CLI, see <a
+         * href="https://docs.aws.amazon.com/acm/latest/userguide/export-private.html">Export
+         * a private certificate</a> and <a
+         * href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export
+         * a public certificate</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">AWS
          * API Reference</a></p>
          */
@@ -458,9 +461,10 @@ namespace ACM
         }
 
         /**
-         * <p>Renews an eligible ACM certificate. At this time, only exported private
-         * certificates can be renewed with this operation. In order to renew your Amazon
-         * Web Services Private CA certificates with ACM, you must first <a
+         * <p>Renews an <a
+         * href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">eligible
+         * ACM certificate</a>. In order to renew your Amazon Web Services Private CA
+         * certificates with ACM, you must first <a
          * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
          * the ACM service principal permission to do so</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
@@ -499,8 +503,7 @@ namespace ACM
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
-         * validation</a>. We recommend that you use DNS validation. ACM issues public
-         * certificates after receiving approval from the domain owner. </p>  <p>ACM
+         * validation</a>. We recommend that you use DNS validation.</p>  <p>ACM
          * behavior differs from the <a
          * href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC 6125</a>
          * specification of the certificate validation process. ACM first checks for a
@@ -569,12 +572,39 @@ namespace ACM
         }
 
         /**
-         * <p>Updates a certificate. Currently, you can use this function to specify
-         * whether to opt in to or out of recording your certificate in a certificate
-         * transparency log. For more information, see <a
+         * <p>Revokes a public ACM certificate. You can only revoke certificates that have
+         * been previously exported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RevokeCertificateOutcome RevokeCertificate(const Model::RevokeCertificateRequest& request) const;
+
+        /**
+         * A Callable wrapper for RevokeCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RevokeCertificateRequestT = Model::RevokeCertificateRequest>
+        Model::RevokeCertificateOutcomeCallable RevokeCertificateCallable(const RevokeCertificateRequestT& request) const
+        {
+            return SubmitCallable(&ACMClient::RevokeCertificate, request);
+        }
+
+        /**
+         * An Async wrapper for RevokeCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RevokeCertificateRequestT = Model::RevokeCertificateRequest>
+        void RevokeCertificateAsync(const RevokeCertificateRequestT& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ACMClient::RevokeCertificate, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a certificate. You can use this function to specify whether to opt in
+         * to or out of recording your certificate in a certificate transparency log and
+         * exporting. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-         * Opting Out of Certificate Transparency Logging</a>. </p><p><h3>See Also:</h3>  
-         * <a
+         * Opting Out of Certificate Transparency Logging</a> and <a
+         * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+         * Manager Exportable Managed Certificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">AWS
          * API Reference</a></p>
          */

@@ -45,7 +45,7 @@ def main():
         "aws-cpp-sdk-s3-unit-tests",
         "aws-cpp-sdk-s3-crt-integration-tests",
         #"aws-cpp-sdk-s3control-integration-tests",
-        # "aws-cpp-sdk-lambda-integration-tests",
+        "aws-cpp-sdk-lambda-integration-tests",
         "aws-cpp-sdk-cognitoidentity-integration-tests",
         #"aws-cpp-sdk-transfer-tests",
         #"aws-cpp-sdk-s3-encryption-integration-tests",
@@ -55,7 +55,6 @@ def main():
         "aws-cpp-sdk-elasticfilesystem-integration-tests",
         "aws-cpp-sdk-rds-integration-tests",
         "aws-cpp-sdk-ec2-integration-tests",
-        "aws-cpp-sdk-timestream-query-integration-tests",
         "aws-cpp-sdk-bedrock-runtime-integration-tests"
     ]
 

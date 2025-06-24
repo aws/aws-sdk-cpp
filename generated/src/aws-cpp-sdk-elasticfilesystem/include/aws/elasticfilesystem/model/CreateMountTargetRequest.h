@@ -7,6 +7,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticfilesystem/model/IpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -63,7 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Valid IPv4 address within the address range of the specified subnet.</p>
+     * <p>If the IP address type for the mount target is IPv4, then specify the IPv4
+     * address within the address range of the specified subnet.</p>
      */
     inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
@@ -75,8 +77,41 @@ namespace Model
 
     ///@{
     /**
-     * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
-     * These must be for the same VPC as subnet specified.</p>
+     * <p>If the IP address type for the mount target is IPv6, then specify the IPv6
+     * address within the address range of the specified subnet.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+    template<typename Ipv6AddressT = Aws::String>
+    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
+    template<typename Ipv6AddressT = Aws::String>
+    CreateMountTargetRequest& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify the type of IP address of the mount target you are creating. Options
+     * are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4
+     * is used.</p> <ul> <li> <p>IPV4_ONLY – Create mount target with IPv4 only subnet
+     * or dual-stack subnet.</p> </li> <li> <p>DUAL_STACK – Create mount target with
+     * dual-stack subnet.</p> </li> <li> <p>IPV6_ONLY – Create mount target with IPv6
+     * only subnet.</p> </li> </ul>  <p>Creating IPv6 mount target only ENI in
+     * dual-stack subnet is not supported.</p> 
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateMountTargetRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
+     * for the same VPC as the subnet specified. The maximum number of security groups
+     * depends on account quota. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+     * VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security
+     * Groups</b> table). </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
@@ -97,6 +132,12 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;

@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of up to five VPC security group IDs.</p>
+     * <p>An array of VPC security group IDs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }

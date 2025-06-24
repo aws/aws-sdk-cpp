@@ -45,6 +45,11 @@ GetCalculatedAttributeForProfileResult& GetCalculatedAttributeForProfileResult::
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastObjectTimestamp"))
+  {
+    m_lastObjectTimestamp = jsonValue.GetDouble("LastObjectTimestamp");
+    m_lastObjectTimestampHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

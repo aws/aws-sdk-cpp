@@ -21,6 +21,7 @@
 #include <aws/backup/BackupClient.h>
 #include <aws/backup/BackupErrorMarshaller.h>
 #include <aws/backup/BackupEndpointProvider.h>
+#include <aws/backup/model/AssociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/CancelLegalHoldRequest.h>
 #include <aws/backup/model/CreateBackupPlanRequest.h>
 #include <aws/backup/model/CreateBackupSelectionRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/backup/model/CreateLegalHoldRequest.h>
 #include <aws/backup/model/CreateLogicallyAirGappedBackupVaultRequest.h>
 #include <aws/backup/model/CreateReportPlanRequest.h>
+#include <aws/backup/model/CreateRestoreAccessBackupVaultRequest.h>
 #include <aws/backup/model/CreateRestoreTestingPlanRequest.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/backup/model/DescribeReportJobRequest.h>
 #include <aws/backup/model/DescribeReportPlanRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
+#include <aws/backup/model/DisassociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointFromParentRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
@@ -89,6 +92,7 @@
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
 #include <aws/backup/model/ListReportJobsRequest.h>
 #include <aws/backup/model/ListReportPlansRequest.h>
+#include <aws/backup/model/ListRestoreAccessBackupVaultsRequest.h>
 #include <aws/backup/model/ListRestoreJobSummariesRequest.h>
 #include <aws/backup/model/ListRestoreJobsRequest.h>
 #include <aws/backup/model/ListRestoreJobsByProtectedResourceRequest.h>
@@ -99,6 +103,7 @@
 #include <aws/backup/model/PutBackupVaultLockConfigurationRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/PutRestoreValidationResultRequest.h>
+#include <aws/backup/model/RevokeRestoreAccessBackupVaultRequest.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartCopyJobRequest.h>
 #include <aws/backup/model/StartReportJobRequest.h>
@@ -256,6 +261,40 @@ void BackupClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+AssociateBackupVaultMpaApprovalTeamOutcome BackupClient::AssociateBackupVaultMpaApprovalTeam(const AssociateBackupVaultMpaApprovalTeamRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateBackupVaultMpaApprovalTeam);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateBackupVaultMpaApprovalTeam", "Required field: BackupVaultName, is not set");
+    return AssociateBackupVaultMpaApprovalTeamOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateBackupVaultMpaApprovalTeam",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateBackupVaultMpaApprovalTeamOutcome>(
+    [&]()-> AssociateBackupVaultMpaApprovalTeamOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/mpaApprovalTeam");
+      return AssociateBackupVaultMpaApprovalTeamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldRequest& request) const
@@ -498,6 +537,33 @@ CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanReq
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans");
       return CreateReportPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateRestoreAccessBackupVaultOutcome BackupClient::CreateRestoreAccessBackupVault(const CreateRestoreAccessBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateRestoreAccessBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRestoreAccessBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRestoreAccessBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateRestoreAccessBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateRestoreAccessBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateRestoreAccessBackupVaultOutcome>(
+    [&]()-> CreateRestoreAccessBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRestoreAccessBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-access-backup-vaults");
+      return CreateRestoreAccessBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1304,6 +1370,43 @@ DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestore
       endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
       return DescribeRestoreJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DisassociateBackupVaultMpaApprovalTeamOutcome BackupClient::DisassociateBackupVaultMpaApprovalTeam(const DisassociateBackupVaultMpaApprovalTeamRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateBackupVaultMpaApprovalTeam);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateBackupVaultMpaApprovalTeam", "Required field: BackupVaultName, is not set");
+    return DisassociateBackupVaultMpaApprovalTeamOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateBackupVaultMpaApprovalTeam",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateBackupVaultMpaApprovalTeamOutcome>(
+    [&]()-> DisassociateBackupVaultMpaApprovalTeamOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateBackupVaultMpaApprovalTeam, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      Aws::StringStream ss;
+      endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/mpaApprovalTeam");
+      ss.str("?delete");
+      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+      return DisassociateBackupVaultMpaApprovalTeamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2469,6 +2572,40 @@ ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansReques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListRestoreAccessBackupVaultsOutcome BackupClient::ListRestoreAccessBackupVaults(const ListRestoreAccessBackupVaultsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListRestoreAccessBackupVaults);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreAccessBackupVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRestoreAccessBackupVaults", "Required field: BackupVaultName, is not set");
+    return ListRestoreAccessBackupVaultsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRestoreAccessBackupVaults, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRestoreAccessBackupVaults, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRestoreAccessBackupVaults",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRestoreAccessBackupVaultsOutcome>(
+    [&]()-> ListRestoreAccessBackupVaultsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreAccessBackupVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logically-air-gapped-backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-access-backup-vaults/");
+      return ListRestoreAccessBackupVaultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListRestoreJobSummariesOutcome BackupClient::ListRestoreJobSummaries(const ListRestoreJobSummariesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListRestoreJobSummaries);
@@ -2781,6 +2918,46 @@ PutRestoreValidationResultOutcome BackupClient::PutRestoreValidationResult(const
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/validations");
       return PutRestoreValidationResultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+RevokeRestoreAccessBackupVaultOutcome BackupClient::RevokeRestoreAccessBackupVault(const RevokeRestoreAccessBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(RevokeRestoreAccessBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeRestoreAccessBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeRestoreAccessBackupVault", "Required field: BackupVaultName, is not set");
+    return RevokeRestoreAccessBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RestoreAccessBackupVaultArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeRestoreAccessBackupVault", "Required field: RestoreAccessBackupVaultArn, is not set");
+    return RevokeRestoreAccessBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreAccessBackupVaultArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RevokeRestoreAccessBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, RevokeRestoreAccessBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RevokeRestoreAccessBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RevokeRestoreAccessBackupVaultOutcome>(
+    [&]()-> RevokeRestoreAccessBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeRestoreAccessBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logically-air-gapped-backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-access-backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreAccessBackupVaultArn());
+      return RevokeRestoreAccessBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

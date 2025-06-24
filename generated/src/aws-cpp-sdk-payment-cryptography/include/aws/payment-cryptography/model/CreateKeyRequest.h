@@ -117,8 +117,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of
-     * the TR-31 spec.</p>
+     * <p>The intended cryptographic usage of keys derived from the ECC key pair to be
+     * created.</p> <p>After creating an ECC key pair, you cannot change the intended
+     * cryptographic usage of keys derived from it using ECDH.</p>
      */
     inline DeriveKeyUsage GetDeriveKeyUsage() const { return m_deriveKeyUsage; }
     inline bool DeriveKeyUsageHasBeenSet() const { return m_deriveKeyUsageHasBeenSet; }

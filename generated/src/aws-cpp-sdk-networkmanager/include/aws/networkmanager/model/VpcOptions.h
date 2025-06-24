@@ -57,6 +57,28 @@ namespace Model
     inline void SetApplianceModeSupport(bool value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
     inline VpcOptions& WithApplianceModeSupport(bool value) { SetApplianceModeSupport(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether DNS is supported.</p>
+     */
+    inline bool GetDnsSupport() const { return m_dnsSupport; }
+    inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
+    inline void SetDnsSupport(bool value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
+    inline VpcOptions& WithDnsSupport(bool value) { SetDnsSupport(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether security group referencing is enabled for this VPC
+     * attachment. The default is <code>true</code>. However, at the core network
+     * policy-level the default is set to <code>false</code>.</p>
+     */
+    inline bool GetSecurityGroupReferencingSupport() const { return m_securityGroupReferencingSupport; }
+    inline bool SecurityGroupReferencingSupportHasBeenSet() const { return m_securityGroupReferencingSupportHasBeenSet; }
+    inline void SetSecurityGroupReferencingSupport(bool value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = value; }
+    inline VpcOptions& WithSecurityGroupReferencingSupport(bool value) { SetSecurityGroupReferencingSupport(value); return *this;}
+    ///@}
   private:
 
     bool m_ipv6Support{false};
@@ -64,6 +86,12 @@ namespace Model
 
     bool m_applianceModeSupport{false};
     bool m_applianceModeSupportHasBeenSet = false;
+
+    bool m_dnsSupport{false};
+    bool m_dnsSupportHasBeenSet = false;
+
+    bool m_securityGroupReferencingSupport{false};
+    bool m_securityGroupReferencingSupportHasBeenSet = false;
   };
 
 } // namespace Model

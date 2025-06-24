@@ -34,7 +34,9 @@ namespace Model
     IKEV2,
     TFTP,
     NTP,
-    DHCP
+    DHCP,
+    HTTP2,
+    QUIC
   };
 
 namespace StatefulRuleProtocolMapper

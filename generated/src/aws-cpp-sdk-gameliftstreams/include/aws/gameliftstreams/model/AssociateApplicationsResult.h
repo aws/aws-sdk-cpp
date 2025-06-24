@@ -36,12 +36,12 @@ namespace Model
     ///@{
     /**
      * <p>A set of applications that are associated to the stream group.</p> <p>This
-     * value is a set of either <a
+     * value is a set of <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Names (ARN)</a> or IDs that uniquely identify application resources.
-     * Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>
-     * or ID-<code>a-9ZY8X7Wv6</code>. </p>
+     * Resource Names (ARNs)</a> that uniquely identify application resources. Example
+     * ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationArns() const { return m_applicationArns; }
     template<typename ApplicationArnsT = Aws::Vector<Aws::String>>
@@ -54,13 +54,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A stream group that is associated to the applications.</p> <p>This value is a
-     * <a
+     * <p>A stream group that is associated to the applications.</p> <p>This value is
+     * an <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
-     * resource. Format example:
-     * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>
-     * or ID-<code>sg-1AB2C3De4</code>. </p>
+     * Resource Name (ARN)</a> that uniquely identifies the stream group resource.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * </p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     template<typename ArnT = Aws::String>

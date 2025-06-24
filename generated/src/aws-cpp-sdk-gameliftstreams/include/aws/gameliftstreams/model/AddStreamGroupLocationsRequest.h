@@ -36,9 +36,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> A stream group to add the specified locations to. </p> <p>This value is a
-     * Amazon Resource Name (ARN) that uniquely identifies the stream group resource.
-     * Format example: <code>sg-1AB2C3De4</code>. </p>
+     * <p> A stream group to add the specified locations to. </p> <p>This value is an
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * Example ID: <code>sg-1AB2C3De4</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

@@ -26,6 +26,8 @@
 #include <aws/bedrock/model/ByteContentDoc.h>
 #include <aws/bedrock/model/CloudWatchConfig.h>
 #include <aws/bedrock/model/CommitmentDuration.h>
+#include <aws/bedrock/model/CreateCustomModelRequest.h>
+#include <aws/bedrock/model/CreateCustomModelResult.h>
 #include <aws/bedrock/model/CreateEvaluationJobRequest.h>
 #include <aws/bedrock/model/CreateEvaluationJobResult.h>
 #include <aws/bedrock/model/CreateGuardrailRequest.h>
@@ -140,6 +142,9 @@
 #include <aws/bedrock/model/GuardrailContentFilterAction.h>
 #include <aws/bedrock/model/GuardrailContentFilterConfig.h>
 #include <aws/bedrock/model/GuardrailContentFilterType.h>
+#include <aws/bedrock/model/GuardrailContentFiltersTier.h>
+#include <aws/bedrock/model/GuardrailContentFiltersTierConfig.h>
+#include <aws/bedrock/model/GuardrailContentFiltersTierName.h>
 #include <aws/bedrock/model/GuardrailContentPolicy.h>
 #include <aws/bedrock/model/GuardrailContentPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingAction.h>
@@ -171,6 +176,9 @@
 #include <aws/bedrock/model/GuardrailTopicPolicy.h>
 #include <aws/bedrock/model/GuardrailTopicPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailTopicType.h>
+#include <aws/bedrock/model/GuardrailTopicsTier.h>
+#include <aws/bedrock/model/GuardrailTopicsTierConfig.h>
+#include <aws/bedrock/model/GuardrailTopicsTierName.h>
 #include <aws/bedrock/model/GuardrailWord.h>
 #include <aws/bedrock/model/GuardrailWordAction.h>
 #include <aws/bedrock/model/GuardrailWordConfig.h>
@@ -240,6 +248,7 @@
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
 #include <aws/bedrock/model/ModelInvocationJobSummary.h>
 #include <aws/bedrock/model/ModelModality.h>
+#include <aws/bedrock/model/ModelStatus.h>
 #include <aws/bedrock/model/OrchestrationConfiguration.h>
 #include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/bedrock/model/PerformanceConfigLatency.h>

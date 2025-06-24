@@ -143,8 +143,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Starts the analysis of up to 20 source databases to recommend target engines
-         * for each source database. This is a batch version of <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Starts
+         * the analysis of up to 20 source databases to recommend target engines for each
+         * source database. This is a batch version of <a
          * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations</a>.</p>
          * <p>The result of analysis of each source database is reported individually in
          * the response. Because the batch request can result in a combination of
@@ -328,8 +335,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Creates a Fleet Advisor collector using the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Creates
+         * a Fleet Advisor collector using the specified parameters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">AWS
          * API Reference</a></p>
          */
@@ -692,7 +706,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Deletes the specified Fleet Advisor collector.</p><p><h3>See Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Deletes
+         * the specified Fleet Advisor collector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">AWS
          * API Reference</a></p>
          */
@@ -717,8 +738,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Deletes the specified Fleet Advisor collector databases.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Deletes
+         * the specified Fleet Advisor collector databases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">AWS
          * API Reference</a></p>
          */
@@ -1353,8 +1380,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Returns a list of the Fleet Advisor collectors in your account.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Returns
+         * a list of the Fleet Advisor collectors in your account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">AWS
          * API Reference</a></p>
          */
@@ -1379,8 +1413,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Returns a list of Fleet Advisor databases in your account.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Returns
+         * a list of Fleet Advisor databases in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">AWS
          * API Reference</a></p>
          */
@@ -1405,8 +1445,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Provides descriptions of large-scale assessment (LSA) analyses produced by
-         * your Fleet Advisor collectors. </p><p><h3>See Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Provides
+         * descriptions of large-scale assessment (LSA) analyses produced by your Fleet
+         * Advisor collectors. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">AWS
          * API Reference</a></p>
          */
@@ -1431,7 +1478,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Provides descriptions of the schemas discovered by your Fleet Advisor
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Provides
+         * descriptions of the schemas discovered by your Fleet Advisor
          * collectors.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">AWS
          * API Reference</a></p>
@@ -1457,7 +1511,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Returns a list of schemas detected by Fleet Advisor Collectors in your
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Returns
+         * a list of schemas detected by Fleet Advisor Collectors in your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">AWS
          * API Reference</a></p>
@@ -1717,8 +1778,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Returns a paginated list of limitations for recommendations of target Amazon
-         * Web Services engines.</p><p><h3>See Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Returns
+         * a paginated list of limitations for recommendations of target Amazon Web
+         * Services engines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations">AWS
          * API Reference</a></p>
          */
@@ -1743,7 +1811,14 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Returns a paginated list of target engine recommendations for your source
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Returns
+         * a paginated list of target engine recommendations for your source
          * databases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations">AWS
          * API Reference</a></p>
@@ -2677,8 +2752,15 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector
-         * in your account.</p><p><h3>See Also:</h3>   <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Runs
+         * large-scale assessment (LSA) analysis on every Fleet Advisor collector in your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">AWS
          * API Reference</a></p>
          */
@@ -2890,9 +2972,16 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>Starts the analysis of your source database to provide recommendations of
-         * target engines.</p> <p>You can create recommendations for multiple source
-         * databases using <a
+         *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+         * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+         * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+         * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+         * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Starts
+         * the analysis of your source database to provide recommendations of target
+         * engines.</p> <p>You can create recommendations for multiple source databases
+         * using <a
          * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html">BatchStartRecommendations</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations">AWS

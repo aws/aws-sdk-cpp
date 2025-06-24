@@ -27,6 +27,7 @@
 #include <aws/guardduty/model/AccountStatistics.h>
 #include <aws/guardduty/model/Action.h>
 #include <aws/guardduty/model/Actor.h>
+#include <aws/guardduty/model/ActorProcess.h>
 #include <aws/guardduty/model/AddonDetails.h>
 #include <aws/guardduty/model/AdminAccount.h>
 #include <aws/guardduty/model/AdminStatus.h>
@@ -46,9 +47,11 @@
 #include <aws/guardduty/model/BucketPolicy.h>
 #include <aws/guardduty/model/City.h>
 #include <aws/guardduty/model/CloudTrailConfigurationResult.h>
+#include <aws/guardduty/model/ClusterStatus.h>
 #include <aws/guardduty/model/Condition.h>
 #include <aws/guardduty/model/ConflictException.h>
 #include <aws/guardduty/model/Container.h>
+#include <aws/guardduty/model/ContainerFindingResource.h>
 #include <aws/guardduty/model/ContainerInstanceDetails.h>
 #include <aws/guardduty/model/Country.h>
 #include <aws/guardduty/model/CoverageEc2InstanceDetails.h>
@@ -140,6 +143,7 @@
 #include <aws/guardduty/model/Ec2NetworkInterface.h>
 #include <aws/guardduty/model/EcsClusterDetails.h>
 #include <aws/guardduty/model/EcsTaskDetails.h>
+#include <aws/guardduty/model/EksCluster.h>
 #include <aws/guardduty/model/EksClusterDetails.h>
 #include <aws/guardduty/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/guardduty/model/EnableOrganizationAdminAccountResult.h>
@@ -218,9 +222,11 @@
 #include <aws/guardduty/model/KubernetesDataSourceFreeTrial.h>
 #include <aws/guardduty/model/KubernetesDetails.h>
 #include <aws/guardduty/model/KubernetesPermissionCheckedDetails.h>
+#include <aws/guardduty/model/KubernetesResourcesTypes.h>
 #include <aws/guardduty/model/KubernetesRoleBindingDetails.h>
 #include <aws/guardduty/model/KubernetesRoleDetails.h>
 #include <aws/guardduty/model/KubernetesUserDetails.h>
+#include <aws/guardduty/model/KubernetesWorkload.h>
 #include <aws/guardduty/model/KubernetesWorkloadDetails.h>
 #include <aws/guardduty/model/LambdaDetails.h>
 #include <aws/guardduty/model/LineageObject.h>

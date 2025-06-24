@@ -16,6 +16,8 @@
 #include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/AssociationConfig.h>
+#include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
+#include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/Tag.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
@@ -258,6 +260,36 @@ namespace Model
     template<typename AssociationConfigT = AssociationConfig>
     CreateWebACLRequest& WithAssociationConfig(AssociationConfigT&& value) { SetAssociationConfig(std::forward<AssociationConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the type of DDoS protection to apply to web request data for a web
+     * ACL. For most scenarios, it is recommended to use the default protection level,
+     * <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple
+     * Application Load Balancers, the changes you make to DDoS protection in that web
+     * ACL will apply to all associated Application Load Balancers.</p>
+     */
+    inline const OnSourceDDoSProtectionConfig& GetOnSourceDDoSProtectionConfig() const { return m_onSourceDDoSProtectionConfig; }
+    inline bool OnSourceDDoSProtectionConfigHasBeenSet() const { return m_onSourceDDoSProtectionConfigHasBeenSet; }
+    template<typename OnSourceDDoSProtectionConfigT = OnSourceDDoSProtectionConfig>
+    void SetOnSourceDDoSProtectionConfig(OnSourceDDoSProtectionConfigT&& value) { m_onSourceDDoSProtectionConfigHasBeenSet = true; m_onSourceDDoSProtectionConfig = std::forward<OnSourceDDoSProtectionConfigT>(value); }
+    template<typename OnSourceDDoSProtectionConfigT = OnSourceDDoSProtectionConfig>
+    CreateWebACLRequest& WithOnSourceDDoSProtectionConfig(OnSourceDDoSProtectionConfigT&& value) { SetOnSourceDDoSProtectionConfig(std::forward<OnSourceDDoSProtectionConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configures the ability for the WAF console to store and retrieve application
+     * attributes during the web ACL creation process. Application attributes help WAF
+     * give recommendations for protection packs.</p>
+     */
+    inline const ApplicationConfig& GetApplicationConfig() const { return m_applicationConfig; }
+    inline bool ApplicationConfigHasBeenSet() const { return m_applicationConfigHasBeenSet; }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    void SetApplicationConfig(ApplicationConfigT&& value) { m_applicationConfigHasBeenSet = true; m_applicationConfig = std::forward<ApplicationConfigT>(value); }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    CreateWebACLRequest& WithApplicationConfig(ApplicationConfigT&& value) { SetApplicationConfig(std::forward<ApplicationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -298,6 +330,12 @@ namespace Model
 
     AssociationConfig m_associationConfig;
     bool m_associationConfigHasBeenSet = false;
+
+    OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
+    bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
+
+    ApplicationConfig m_applicationConfig;
+    bool m_applicationConfigHasBeenSet = false;
   };
 
 } // namespace Model

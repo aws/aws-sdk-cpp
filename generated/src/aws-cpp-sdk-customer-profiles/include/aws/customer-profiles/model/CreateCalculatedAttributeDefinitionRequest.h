@@ -136,6 +136,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Whether historical data ingested before the Calculated Attribute was created
+     * should be included in calculations.</p>
+     */
+    inline bool GetUseHistoricalData() const { return m_useHistoricalData; }
+    inline bool UseHistoricalDataHasBeenSet() const { return m_useHistoricalDataHasBeenSet; }
+    inline void SetUseHistoricalData(bool value) { m_useHistoricalDataHasBeenSet = true; m_useHistoricalData = value; }
+    inline CreateCalculatedAttributeDefinitionRequest& WithUseHistoricalData(bool value) { SetUseHistoricalData(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -174,6 +185,9 @@ namespace Model
 
     Statistic m_statistic{Statistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
+
+    bool m_useHistoricalData{false};
+    bool m_useHistoricalDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

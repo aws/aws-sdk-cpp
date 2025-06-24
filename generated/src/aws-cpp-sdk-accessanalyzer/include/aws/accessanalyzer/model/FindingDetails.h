@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
+#include <aws/accessanalyzer/model/InternalAccessDetails.h>
 #include <aws/accessanalyzer/model/ExternalAccessDetails.h>
 #include <aws/accessanalyzer/model/UnusedPermissionDetails.h>
 #include <aws/accessanalyzer/model/UnusedIamUserAccessKeyDetails.h>
@@ -42,6 +43,20 @@ namespace Model
     AWS_ACCESSANALYZER_API FindingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The details for an internal access analyzer finding. This contains
+     * information about access patterns identified within your Amazon Web Services
+     * organization or account.</p>
+     */
+    inline const InternalAccessDetails& GetInternalAccessDetails() const { return m_internalAccessDetails; }
+    inline bool InternalAccessDetailsHasBeenSet() const { return m_internalAccessDetailsHasBeenSet; }
+    template<typename InternalAccessDetailsT = InternalAccessDetails>
+    void SetInternalAccessDetails(InternalAccessDetailsT&& value) { m_internalAccessDetailsHasBeenSet = true; m_internalAccessDetails = std::forward<InternalAccessDetailsT>(value); }
+    template<typename InternalAccessDetailsT = InternalAccessDetails>
+    FindingDetails& WithInternalAccessDetails(InternalAccessDetailsT&& value) { SetInternalAccessDetails(std::forward<InternalAccessDetailsT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -107,6 +122,9 @@ namespace Model
     FindingDetails& WithUnusedIamUserPasswordDetails(UnusedIamUserPasswordDetailsT&& value) { SetUnusedIamUserPasswordDetails(std::forward<UnusedIamUserPasswordDetailsT>(value)); return *this;}
     ///@}
   private:
+
+    InternalAccessDetails m_internalAccessDetails;
+    bool m_internalAccessDetailsHasBeenSet = false;
 
     ExternalAccessDetails m_externalAccessDetails;
     bool m_externalAccessDetailsHasBeenSet = false;

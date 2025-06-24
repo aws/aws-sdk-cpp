@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -127,8 +128,8 @@ namespace Model
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet = false;
 
-    Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet = false;
+    Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_idempotencyTokenHasBeenSet = true;
 
     Lifecycle m_lifecycle;
     bool m_lifecycleHasBeenSet = false;

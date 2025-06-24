@@ -50,6 +50,16 @@ IbmDb2LuwDataProviderSettings& IbmDb2LuwDataProviderSettings::operator =(JsonVie
     m_certificateArn = jsonValue.GetString("CertificateArn");
     m_certificateArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3Path"))
+  {
+    m_s3Path = jsonValue.GetString("S3Path");
+    m_s3PathHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3AccessRoleArn"))
+  {
+    m_s3AccessRoleArn = jsonValue.GetString("S3AccessRoleArn");
+    m_s3AccessRoleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +93,18 @@ JsonValue IbmDb2LuwDataProviderSettings::Jsonize() const
   if(m_certificateArnHasBeenSet)
   {
    payload.WithString("CertificateArn", m_certificateArn);
+
+  }
+
+  if(m_s3PathHasBeenSet)
+  {
+   payload.WithString("S3Path", m_s3Path);
+
+  }
+
+  if(m_s3AccessRoleArnHasBeenSet)
+  {
+   payload.WithString("S3AccessRoleArn", m_s3AccessRoleArn);
 
   }
 

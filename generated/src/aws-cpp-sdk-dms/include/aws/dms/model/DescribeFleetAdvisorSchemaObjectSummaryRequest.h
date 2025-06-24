@@ -57,7 +57,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the maximum number of records returned in the response.</p>
+     *  <p> End of support notice: On May 20, 2026, Amazon Web Services will
+     * end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you
+     * will no longer be able to access the Amazon Web Services DMS Fleet Advisor;
+     * console or Amazon Web Services DMS Fleet Advisor; resources. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+     * Web Services DMS Fleet Advisor end of support</a>. </p>  <p>Sets the
+     * maximum number of records returned in the response.</p>
      */
     inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }

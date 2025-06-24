@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/KafkaSchemaRegistryConfig.h>
 #include <utility>
 
 namespace Aws
@@ -40,11 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the Kafka consumer group to join. The consumer group ID
+     * <p> The identifier for the Kafka consumer group to join. The consumer group ID
      * must be unique among all your Kafka event sources. After creating a Kafka event
      * source mapping with the consumer group ID specified, you cannot update this
      * value. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka-process.html#services-smaa-topic-add">Customizable
      * consumer group ID</a>.</p>
      */
     inline const Aws::String& GetConsumerGroupId() const { return m_consumerGroupId; }
@@ -54,10 +55,25 @@ namespace Model
     template<typename ConsumerGroupIdT = Aws::String>
     SelfManagedKafkaEventSourceConfig& WithConsumerGroupId(ConsumerGroupIdT&& value) { SetConsumerGroupId(std::forward<ConsumerGroupIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specific configuration settings for a Kafka schema registry.</p>
+     */
+    inline const KafkaSchemaRegistryConfig& GetSchemaRegistryConfig() const { return m_schemaRegistryConfig; }
+    inline bool SchemaRegistryConfigHasBeenSet() const { return m_schemaRegistryConfigHasBeenSet; }
+    template<typename SchemaRegistryConfigT = KafkaSchemaRegistryConfig>
+    void SetSchemaRegistryConfig(SchemaRegistryConfigT&& value) { m_schemaRegistryConfigHasBeenSet = true; m_schemaRegistryConfig = std::forward<SchemaRegistryConfigT>(value); }
+    template<typename SchemaRegistryConfigT = KafkaSchemaRegistryConfig>
+    SelfManagedKafkaEventSourceConfig& WithSchemaRegistryConfig(SchemaRegistryConfigT&& value) { SetSchemaRegistryConfig(std::forward<SchemaRegistryConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_consumerGroupId;
     bool m_consumerGroupIdHasBeenSet = false;
+
+    KafkaSchemaRegistryConfig m_schemaRegistryConfig;
+    bool m_schemaRegistryConfigHasBeenSet = false;
   };
 
 } // namespace Model

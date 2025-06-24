@@ -19,6 +19,8 @@
 
 /* Service model headers required in Inspector2Client header */
 #include <aws/inspector2/model/AssociateMemberResult.h>
+#include <aws/inspector2/model/BatchAssociateCodeSecurityScanConfigurationResult.h>
+#include <aws/inspector2/model/BatchDisassociateCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/BatchGetAccountStatusResult.h>
 #include <aws/inspector2/model/BatchGetCodeSnippetResult.h>
 #include <aws/inspector2/model/BatchGetFindingDetailsResult.h>
@@ -28,10 +30,14 @@
 #include <aws/inspector2/model/CancelFindingsReportResult.h>
 #include <aws/inspector2/model/CancelSbomExportResult.h>
 #include <aws/inspector2/model/CreateCisScanConfigurationResult.h>
+#include <aws/inspector2/model/CreateCodeSecurityIntegrationResult.h>
+#include <aws/inspector2/model/CreateCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/CreateFilterResult.h>
 #include <aws/inspector2/model/CreateFindingsReportResult.h>
 #include <aws/inspector2/model/CreateSbomExportResult.h>
 #include <aws/inspector2/model/DeleteCisScanConfigurationResult.h>
+#include <aws/inspector2/model/DeleteCodeSecurityIntegrationResult.h>
+#include <aws/inspector2/model/DeleteCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/DeleteFilterResult.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationResult.h>
 #include <aws/inspector2/model/DisableResult.h>
@@ -42,6 +48,9 @@
 #include <aws/inspector2/model/GetCisScanReportResult.h>
 #include <aws/inspector2/model/GetCisScanResultDetailsResult.h>
 #include <aws/inspector2/model/GetClustersForImageResult.h>
+#include <aws/inspector2/model/GetCodeSecurityIntegrationResult.h>
+#include <aws/inspector2/model/GetCodeSecurityScanResult.h>
+#include <aws/inspector2/model/GetCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/GetConfigurationResult.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountResult.h>
 #include <aws/inspector2/model/GetEc2DeepInspectionConfigurationResult.h>
@@ -54,6 +63,9 @@
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByChecksResult.h>
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByTargetResourceResult.h>
 #include <aws/inspector2/model/ListCisScansResult.h>
+#include <aws/inspector2/model/ListCodeSecurityIntegrationsResult.h>
+#include <aws/inspector2/model/ListCodeSecurityScanConfigurationAssociationsResult.h>
+#include <aws/inspector2/model/ListCodeSecurityScanConfigurationsResult.h>
 #include <aws/inspector2/model/ListCoverageResult.h>
 #include <aws/inspector2/model/ListCoverageStatisticsResult.h>
 #include <aws/inspector2/model/ListDelegatedAdminAccountsResult.h>
@@ -68,16 +80,20 @@
 #include <aws/inspector2/model/SendCisSessionHealthResult.h>
 #include <aws/inspector2/model/SendCisSessionTelemetryResult.h>
 #include <aws/inspector2/model/StartCisSessionResult.h>
+#include <aws/inspector2/model/StartCodeSecurityScanResult.h>
 #include <aws/inspector2/model/StopCisSessionResult.h>
 #include <aws/inspector2/model/TagResourceResult.h>
 #include <aws/inspector2/model/UntagResourceResult.h>
 #include <aws/inspector2/model/UpdateCisScanConfigurationResult.h>
+#include <aws/inspector2/model/UpdateCodeSecurityIntegrationResult.h>
+#include <aws/inspector2/model/UpdateCodeSecurityScanConfigurationResult.h>
 #include <aws/inspector2/model/UpdateConfigurationResult.h>
 #include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateEncryptionKeyResult.h>
 #include <aws/inspector2/model/UpdateFilterResult.h>
 #include <aws/inspector2/model/UpdateOrgEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateOrganizationConfigurationResult.h>
+#include <aws/inspector2/model/ListCodeSecurityScanConfigurationsRequest.h>
 #include <aws/inspector2/model/ListCisScansRequest.h>
 #include <aws/inspector2/model/GetEc2DeepInspectionConfigurationRequest.h>
 #include <aws/inspector2/model/GetFindingsReportStatusRequest.h>
@@ -93,6 +109,7 @@
 #include <aws/inspector2/model/ListDelegatedAdminAccountsRequest.h>
 #include <aws/inspector2/model/GetConfigurationRequest.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountRequest.h>
+#include <aws/inspector2/model/ListCodeSecurityIntegrationsRequest.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/inspector2/model/BatchGetMemberEc2DeepInspectionStatusRequest.h>
 #include <aws/inspector2/model/ListFindingsRequest.h>
@@ -139,6 +156,8 @@ namespace Aws
     {
       /* Service model forward declarations required in Inspector2Client header */
       class AssociateMemberRequest;
+      class BatchAssociateCodeSecurityScanConfigurationRequest;
+      class BatchDisassociateCodeSecurityScanConfigurationRequest;
       class BatchGetAccountStatusRequest;
       class BatchGetCodeSnippetRequest;
       class BatchGetFindingDetailsRequest;
@@ -148,10 +167,14 @@ namespace Aws
       class CancelFindingsReportRequest;
       class CancelSbomExportRequest;
       class CreateCisScanConfigurationRequest;
+      class CreateCodeSecurityIntegrationRequest;
+      class CreateCodeSecurityScanConfigurationRequest;
       class CreateFilterRequest;
       class CreateFindingsReportRequest;
       class CreateSbomExportRequest;
       class DeleteCisScanConfigurationRequest;
+      class DeleteCodeSecurityIntegrationRequest;
+      class DeleteCodeSecurityScanConfigurationRequest;
       class DeleteFilterRequest;
       class DescribeOrganizationConfigurationRequest;
       class DisableRequest;
@@ -162,6 +185,9 @@ namespace Aws
       class GetCisScanReportRequest;
       class GetCisScanResultDetailsRequest;
       class GetClustersForImageRequest;
+      class GetCodeSecurityIntegrationRequest;
+      class GetCodeSecurityScanRequest;
+      class GetCodeSecurityScanConfigurationRequest;
       class GetConfigurationRequest;
       class GetDelegatedAdminAccountRequest;
       class GetEc2DeepInspectionConfigurationRequest;
@@ -174,6 +200,9 @@ namespace Aws
       class ListCisScanResultsAggregatedByChecksRequest;
       class ListCisScanResultsAggregatedByTargetResourceRequest;
       class ListCisScansRequest;
+      class ListCodeSecurityIntegrationsRequest;
+      class ListCodeSecurityScanConfigurationAssociationsRequest;
+      class ListCodeSecurityScanConfigurationsRequest;
       class ListCoverageRequest;
       class ListCoverageStatisticsRequest;
       class ListDelegatedAdminAccountsRequest;
@@ -188,10 +217,13 @@ namespace Aws
       class SendCisSessionHealthRequest;
       class SendCisSessionTelemetryRequest;
       class StartCisSessionRequest;
+      class StartCodeSecurityScanRequest;
       class StopCisSessionRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateCisScanConfigurationRequest;
+      class UpdateCodeSecurityIntegrationRequest;
+      class UpdateCodeSecurityScanConfigurationRequest;
       class UpdateConfigurationRequest;
       class UpdateEc2DeepInspectionConfigurationRequest;
       class UpdateEncryptionKeyRequest;
@@ -202,6 +234,8 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateMemberResult, Inspector2Error> AssociateMemberOutcome;
+      typedef Aws::Utils::Outcome<BatchAssociateCodeSecurityScanConfigurationResult, Inspector2Error> BatchAssociateCodeSecurityScanConfigurationOutcome;
+      typedef Aws::Utils::Outcome<BatchDisassociateCodeSecurityScanConfigurationResult, Inspector2Error> BatchDisassociateCodeSecurityScanConfigurationOutcome;
       typedef Aws::Utils::Outcome<BatchGetAccountStatusResult, Inspector2Error> BatchGetAccountStatusOutcome;
       typedef Aws::Utils::Outcome<BatchGetCodeSnippetResult, Inspector2Error> BatchGetCodeSnippetOutcome;
       typedef Aws::Utils::Outcome<BatchGetFindingDetailsResult, Inspector2Error> BatchGetFindingDetailsOutcome;
@@ -211,10 +245,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelFindingsReportResult, Inspector2Error> CancelFindingsReportOutcome;
       typedef Aws::Utils::Outcome<CancelSbomExportResult, Inspector2Error> CancelSbomExportOutcome;
       typedef Aws::Utils::Outcome<CreateCisScanConfigurationResult, Inspector2Error> CreateCisScanConfigurationOutcome;
+      typedef Aws::Utils::Outcome<CreateCodeSecurityIntegrationResult, Inspector2Error> CreateCodeSecurityIntegrationOutcome;
+      typedef Aws::Utils::Outcome<CreateCodeSecurityScanConfigurationResult, Inspector2Error> CreateCodeSecurityScanConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateFilterResult, Inspector2Error> CreateFilterOutcome;
       typedef Aws::Utils::Outcome<CreateFindingsReportResult, Inspector2Error> CreateFindingsReportOutcome;
       typedef Aws::Utils::Outcome<CreateSbomExportResult, Inspector2Error> CreateSbomExportOutcome;
       typedef Aws::Utils::Outcome<DeleteCisScanConfigurationResult, Inspector2Error> DeleteCisScanConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DeleteCodeSecurityIntegrationResult, Inspector2Error> DeleteCodeSecurityIntegrationOutcome;
+      typedef Aws::Utils::Outcome<DeleteCodeSecurityScanConfigurationResult, Inspector2Error> DeleteCodeSecurityScanConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteFilterResult, Inspector2Error> DeleteFilterOutcome;
       typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, Inspector2Error> DescribeOrganizationConfigurationOutcome;
       typedef Aws::Utils::Outcome<DisableResult, Inspector2Error> DisableOutcome;
@@ -225,6 +263,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCisScanReportResult, Inspector2Error> GetCisScanReportOutcome;
       typedef Aws::Utils::Outcome<GetCisScanResultDetailsResult, Inspector2Error> GetCisScanResultDetailsOutcome;
       typedef Aws::Utils::Outcome<GetClustersForImageResult, Inspector2Error> GetClustersForImageOutcome;
+      typedef Aws::Utils::Outcome<GetCodeSecurityIntegrationResult, Inspector2Error> GetCodeSecurityIntegrationOutcome;
+      typedef Aws::Utils::Outcome<GetCodeSecurityScanResult, Inspector2Error> GetCodeSecurityScanOutcome;
+      typedef Aws::Utils::Outcome<GetCodeSecurityScanConfigurationResult, Inspector2Error> GetCodeSecurityScanConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetConfigurationResult, Inspector2Error> GetConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDelegatedAdminAccountResult, Inspector2Error> GetDelegatedAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetEc2DeepInspectionConfigurationResult, Inspector2Error> GetEc2DeepInspectionConfigurationOutcome;
@@ -237,6 +278,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCisScanResultsAggregatedByChecksResult, Inspector2Error> ListCisScanResultsAggregatedByChecksOutcome;
       typedef Aws::Utils::Outcome<ListCisScanResultsAggregatedByTargetResourceResult, Inspector2Error> ListCisScanResultsAggregatedByTargetResourceOutcome;
       typedef Aws::Utils::Outcome<ListCisScansResult, Inspector2Error> ListCisScansOutcome;
+      typedef Aws::Utils::Outcome<ListCodeSecurityIntegrationsResult, Inspector2Error> ListCodeSecurityIntegrationsOutcome;
+      typedef Aws::Utils::Outcome<ListCodeSecurityScanConfigurationAssociationsResult, Inspector2Error> ListCodeSecurityScanConfigurationAssociationsOutcome;
+      typedef Aws::Utils::Outcome<ListCodeSecurityScanConfigurationsResult, Inspector2Error> ListCodeSecurityScanConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListCoverageResult, Inspector2Error> ListCoverageOutcome;
       typedef Aws::Utils::Outcome<ListCoverageStatisticsResult, Inspector2Error> ListCoverageStatisticsOutcome;
       typedef Aws::Utils::Outcome<ListDelegatedAdminAccountsResult, Inspector2Error> ListDelegatedAdminAccountsOutcome;
@@ -251,10 +295,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendCisSessionHealthResult, Inspector2Error> SendCisSessionHealthOutcome;
       typedef Aws::Utils::Outcome<SendCisSessionTelemetryResult, Inspector2Error> SendCisSessionTelemetryOutcome;
       typedef Aws::Utils::Outcome<StartCisSessionResult, Inspector2Error> StartCisSessionOutcome;
+      typedef Aws::Utils::Outcome<StartCodeSecurityScanResult, Inspector2Error> StartCodeSecurityScanOutcome;
       typedef Aws::Utils::Outcome<StopCisSessionResult, Inspector2Error> StopCisSessionOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, Inspector2Error> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, Inspector2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCisScanConfigurationResult, Inspector2Error> UpdateCisScanConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateCodeSecurityIntegrationResult, Inspector2Error> UpdateCodeSecurityIntegrationOutcome;
+      typedef Aws::Utils::Outcome<UpdateCodeSecurityScanConfigurationResult, Inspector2Error> UpdateCodeSecurityScanConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateConfigurationResult, Inspector2Error> UpdateConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateEc2DeepInspectionConfigurationResult, Inspector2Error> UpdateEc2DeepInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateEncryptionKeyResult, Inspector2Error> UpdateEncryptionKeyOutcome;
@@ -265,6 +312,8 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateMemberOutcome> AssociateMemberOutcomeCallable;
+      typedef std::future<BatchAssociateCodeSecurityScanConfigurationOutcome> BatchAssociateCodeSecurityScanConfigurationOutcomeCallable;
+      typedef std::future<BatchDisassociateCodeSecurityScanConfigurationOutcome> BatchDisassociateCodeSecurityScanConfigurationOutcomeCallable;
       typedef std::future<BatchGetAccountStatusOutcome> BatchGetAccountStatusOutcomeCallable;
       typedef std::future<BatchGetCodeSnippetOutcome> BatchGetCodeSnippetOutcomeCallable;
       typedef std::future<BatchGetFindingDetailsOutcome> BatchGetFindingDetailsOutcomeCallable;
@@ -274,10 +323,14 @@ namespace Aws
       typedef std::future<CancelFindingsReportOutcome> CancelFindingsReportOutcomeCallable;
       typedef std::future<CancelSbomExportOutcome> CancelSbomExportOutcomeCallable;
       typedef std::future<CreateCisScanConfigurationOutcome> CreateCisScanConfigurationOutcomeCallable;
+      typedef std::future<CreateCodeSecurityIntegrationOutcome> CreateCodeSecurityIntegrationOutcomeCallable;
+      typedef std::future<CreateCodeSecurityScanConfigurationOutcome> CreateCodeSecurityScanConfigurationOutcomeCallable;
       typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
       typedef std::future<CreateFindingsReportOutcome> CreateFindingsReportOutcomeCallable;
       typedef std::future<CreateSbomExportOutcome> CreateSbomExportOutcomeCallable;
       typedef std::future<DeleteCisScanConfigurationOutcome> DeleteCisScanConfigurationOutcomeCallable;
+      typedef std::future<DeleteCodeSecurityIntegrationOutcome> DeleteCodeSecurityIntegrationOutcomeCallable;
+      typedef std::future<DeleteCodeSecurityScanConfigurationOutcome> DeleteCodeSecurityScanConfigurationOutcomeCallable;
       typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
       typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
       typedef std::future<DisableOutcome> DisableOutcomeCallable;
@@ -288,6 +341,9 @@ namespace Aws
       typedef std::future<GetCisScanReportOutcome> GetCisScanReportOutcomeCallable;
       typedef std::future<GetCisScanResultDetailsOutcome> GetCisScanResultDetailsOutcomeCallable;
       typedef std::future<GetClustersForImageOutcome> GetClustersForImageOutcomeCallable;
+      typedef std::future<GetCodeSecurityIntegrationOutcome> GetCodeSecurityIntegrationOutcomeCallable;
+      typedef std::future<GetCodeSecurityScanOutcome> GetCodeSecurityScanOutcomeCallable;
+      typedef std::future<GetCodeSecurityScanConfigurationOutcome> GetCodeSecurityScanConfigurationOutcomeCallable;
       typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
       typedef std::future<GetDelegatedAdminAccountOutcome> GetDelegatedAdminAccountOutcomeCallable;
       typedef std::future<GetEc2DeepInspectionConfigurationOutcome> GetEc2DeepInspectionConfigurationOutcomeCallable;
@@ -300,6 +356,9 @@ namespace Aws
       typedef std::future<ListCisScanResultsAggregatedByChecksOutcome> ListCisScanResultsAggregatedByChecksOutcomeCallable;
       typedef std::future<ListCisScanResultsAggregatedByTargetResourceOutcome> ListCisScanResultsAggregatedByTargetResourceOutcomeCallable;
       typedef std::future<ListCisScansOutcome> ListCisScansOutcomeCallable;
+      typedef std::future<ListCodeSecurityIntegrationsOutcome> ListCodeSecurityIntegrationsOutcomeCallable;
+      typedef std::future<ListCodeSecurityScanConfigurationAssociationsOutcome> ListCodeSecurityScanConfigurationAssociationsOutcomeCallable;
+      typedef std::future<ListCodeSecurityScanConfigurationsOutcome> ListCodeSecurityScanConfigurationsOutcomeCallable;
       typedef std::future<ListCoverageOutcome> ListCoverageOutcomeCallable;
       typedef std::future<ListCoverageStatisticsOutcome> ListCoverageStatisticsOutcomeCallable;
       typedef std::future<ListDelegatedAdminAccountsOutcome> ListDelegatedAdminAccountsOutcomeCallable;
@@ -314,10 +373,13 @@ namespace Aws
       typedef std::future<SendCisSessionHealthOutcome> SendCisSessionHealthOutcomeCallable;
       typedef std::future<SendCisSessionTelemetryOutcome> SendCisSessionTelemetryOutcomeCallable;
       typedef std::future<StartCisSessionOutcome> StartCisSessionOutcomeCallable;
+      typedef std::future<StartCodeSecurityScanOutcome> StartCodeSecurityScanOutcomeCallable;
       typedef std::future<StopCisSessionOutcome> StopCisSessionOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCisScanConfigurationOutcome> UpdateCisScanConfigurationOutcomeCallable;
+      typedef std::future<UpdateCodeSecurityIntegrationOutcome> UpdateCodeSecurityIntegrationOutcomeCallable;
+      typedef std::future<UpdateCodeSecurityScanConfigurationOutcome> UpdateCodeSecurityScanConfigurationOutcomeCallable;
       typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
       typedef std::future<UpdateEc2DeepInspectionConfigurationOutcome> UpdateEc2DeepInspectionConfigurationOutcomeCallable;
       typedef std::future<UpdateEncryptionKeyOutcome> UpdateEncryptionKeyOutcomeCallable;
@@ -331,6 +393,8 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const Inspector2Client*, const Model::AssociateMemberRequest&, const Model::AssociateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMemberResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::BatchAssociateCodeSecurityScanConfigurationRequest&, const Model::BatchAssociateCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateCodeSecurityScanConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::BatchDisassociateCodeSecurityScanConfigurationRequest&, const Model::BatchDisassociateCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateCodeSecurityScanConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetAccountStatusRequest&, const Model::BatchGetAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAccountStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetCodeSnippetRequest&, const Model::BatchGetCodeSnippetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCodeSnippetResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetFindingDetailsRequest&, const Model::BatchGetFindingDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFindingDetailsResponseReceivedHandler;
@@ -340,10 +404,14 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::CancelFindingsReportRequest&, const Model::CancelFindingsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelFindingsReportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CancelSbomExportRequest&, const Model::CancelSbomExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSbomExportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateCisScanConfigurationRequest&, const Model::CreateCisScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCisScanConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::CreateCodeSecurityIntegrationRequest&, const Model::CreateCodeSecurityIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeSecurityIntegrationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::CreateCodeSecurityScanConfigurationRequest&, const Model::CreateCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeSecurityScanConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateFindingsReportRequest&, const Model::CreateFindingsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFindingsReportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateSbomExportRequest&, const Model::CreateSbomExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSbomExportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::DeleteCisScanConfigurationRequest&, const Model::DeleteCisScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCisScanConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::DeleteCodeSecurityIntegrationRequest&, const Model::DeleteCodeSecurityIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeSecurityIntegrationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::DeleteCodeSecurityScanConfigurationRequest&, const Model::DeleteCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeSecurityScanConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::DisableRequest&, const Model::DisableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableResponseReceivedHandler;
@@ -354,6 +422,9 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::GetCisScanReportRequest&, const Model::GetCisScanReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCisScanReportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetCisScanResultDetailsRequest&, const Model::GetCisScanResultDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCisScanResultDetailsResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetClustersForImageRequest&, const Model::GetClustersForImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClustersForImageResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::GetCodeSecurityIntegrationRequest&, const Model::GetCodeSecurityIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeSecurityIntegrationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::GetCodeSecurityScanRequest&, const Model::GetCodeSecurityScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeSecurityScanResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::GetCodeSecurityScanConfigurationRequest&, const Model::GetCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeSecurityScanConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetConfigurationRequest&, const Model::GetConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetDelegatedAdminAccountRequest&, const Model::GetDelegatedAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDelegatedAdminAccountResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetEc2DeepInspectionConfigurationRequest&, const Model::GetEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEc2DeepInspectionConfigurationResponseReceivedHandler;
@@ -366,6 +437,9 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::ListCisScanResultsAggregatedByChecksRequest&, const Model::ListCisScanResultsAggregatedByChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCisScanResultsAggregatedByChecksResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListCisScanResultsAggregatedByTargetResourceRequest&, const Model::ListCisScanResultsAggregatedByTargetResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCisScanResultsAggregatedByTargetResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListCisScansRequest&, const Model::ListCisScansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCisScansResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::ListCodeSecurityIntegrationsRequest&, const Model::ListCodeSecurityIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeSecurityIntegrationsResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::ListCodeSecurityScanConfigurationAssociationsRequest&, const Model::ListCodeSecurityScanConfigurationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeSecurityScanConfigurationAssociationsResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::ListCodeSecurityScanConfigurationsRequest&, const Model::ListCodeSecurityScanConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeSecurityScanConfigurationsResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListCoverageRequest&, const Model::ListCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoverageResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListCoverageStatisticsRequest&, const Model::ListCoverageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoverageStatisticsResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListDelegatedAdminAccountsRequest&, const Model::ListDelegatedAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDelegatedAdminAccountsResponseReceivedHandler;
@@ -380,10 +454,13 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::SendCisSessionHealthRequest&, const Model::SendCisSessionHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCisSessionHealthResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::SendCisSessionTelemetryRequest&, const Model::SendCisSessionTelemetryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCisSessionTelemetryResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::StartCisSessionRequest&, const Model::StartCisSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCisSessionResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::StartCodeSecurityScanRequest&, const Model::StartCodeSecurityScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCodeSecurityScanResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::StopCisSessionRequest&, const Model::StopCisSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCisSessionResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateCisScanConfigurationRequest&, const Model::UpdateCisScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCisScanConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::UpdateCodeSecurityIntegrationRequest&, const Model::UpdateCodeSecurityIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeSecurityIntegrationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::UpdateCodeSecurityScanConfigurationRequest&, const Model::UpdateCodeSecurityScanConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeSecurityScanConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateEc2DeepInspectionConfigurationRequest&, const Model::UpdateEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEc2DeepInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateEncryptionKeyRequest&, const Model::UpdateEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEncryptionKeyResponseReceivedHandler;

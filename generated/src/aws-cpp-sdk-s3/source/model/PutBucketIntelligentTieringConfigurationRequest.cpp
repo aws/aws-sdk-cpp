@@ -82,6 +82,19 @@ void PutBucketIntelligentTieringConfigurationRequest::AddQueryStringParameters(U
     }
 }
 
+Aws::Http::HeaderValueCollection PutBucketIntelligentTieringConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}
 
 PutBucketIntelligentTieringConfigurationRequest::EndpointParameters PutBucketIntelligentTieringConfigurationRequest::GetEndpointContextParams() const
 {

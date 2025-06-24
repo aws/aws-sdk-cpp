@@ -809,7 +809,7 @@ public class C2jModelToGeneratorModelTransformer {
                             member.getShape().getName(),
                             reservedMapping.getValue().remappingName,
                             member.getShape().getName(),
-                            false);
+                            reservedMapping.getKey().equals(shape.getPayload()));
                 });
         }
     }

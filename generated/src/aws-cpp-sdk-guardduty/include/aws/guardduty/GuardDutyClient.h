@@ -888,10 +888,15 @@ namespace GuardDuty
 
         /**
          * <p>Provides the details of the GuardDuty administrator account associated with
-         * the current GuardDuty member account.</p>  <p>If the organization's
-         * management account or a delegated administrator runs this API, it will return
-         * success (<code>HTTP 200</code>) but no content.</p> <p><h3>See Also:</h3>
-         * <a
+         * the current GuardDuty member account.</p> <p>Based on the type of account that
+         * runs this API, the following list shows how the API behavior varies:</p> <ul>
+         * <li> <p>When the GuardDuty administrator account runs this API, it will return
+         * success (<code>HTTP 200</code>) but no content.</p> </li> <li> <p>When a member
+         * account runs this API, it will return the details of the GuardDuty administrator
+         * account that is associated with this calling member account.</p> </li> <li>
+         * <p>When an individual account (not associated with an organization) runs this
+         * API, it will return success (<code>HTTP 200</code>) but no content.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">AWS
          * API Reference</a></p>
          */

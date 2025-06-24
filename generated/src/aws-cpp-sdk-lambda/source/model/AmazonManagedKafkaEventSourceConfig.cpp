@@ -30,6 +30,11 @@ AmazonManagedKafkaEventSourceConfig& AmazonManagedKafkaEventSourceConfig::operat
     m_consumerGroupId = jsonValue.GetString("ConsumerGroupId");
     m_consumerGroupIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SchemaRegistryConfig"))
+  {
+    m_schemaRegistryConfig = jsonValue.GetObject("SchemaRegistryConfig");
+    m_schemaRegistryConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue AmazonManagedKafkaEventSourceConfig::Jsonize() const
   if(m_consumerGroupIdHasBeenSet)
   {
    payload.WithString("ConsumerGroupId", m_consumerGroupId);
+
+  }
+
+  if(m_schemaRegistryConfigHasBeenSet)
+  {
+   payload.WithObject("SchemaRegistryConfig", m_schemaRegistryConfig.Jsonize());
 
   }
 

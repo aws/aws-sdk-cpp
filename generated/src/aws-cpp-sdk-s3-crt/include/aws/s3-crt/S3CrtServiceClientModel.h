@@ -77,6 +77,7 @@
 #include <aws/s3-crt/model/PutObjectLockConfigurationResult.h>
 #include <aws/s3-crt/model/PutObjectRetentionResult.h>
 #include <aws/s3-crt/model/PutObjectTaggingResult.h>
+#include <aws/s3-crt/model/RenameObjectResult.h>
 #include <aws/s3-crt/model/RestoreObjectResult.h>
 #include <aws/s3-crt/model/UploadPartResult.h>
 #include <aws/s3-crt/model/UploadPartCopyResult.h>
@@ -215,6 +216,7 @@ namespace Aws
       class PutObjectRetentionRequest;
       class PutObjectTaggingRequest;
       class PutPublicAccessBlockRequest;
+      class RenameObjectRequest;
       class RestoreObjectRequest;
       class SelectObjectContentRequest;
       class UploadPartRequest;
@@ -316,6 +318,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutObjectRetentionResult, S3CrtError> PutObjectRetentionOutcome;
       typedef Aws::Utils::Outcome<PutObjectTaggingResult, S3CrtError> PutObjectTaggingOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> PutPublicAccessBlockOutcome;
+      typedef Aws::Utils::Outcome<RenameObjectResult, S3CrtError> RenameObjectOutcome;
       typedef Aws::Utils::Outcome<RestoreObjectResult, S3CrtError> RestoreObjectOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> SelectObjectContentOutcome;
       typedef Aws::Utils::Outcome<UploadPartResult, S3CrtError> UploadPartOutcome;
@@ -414,6 +417,7 @@ namespace Aws
       typedef std::future<PutObjectRetentionOutcome> PutObjectRetentionOutcomeCallable;
       typedef std::future<PutObjectTaggingOutcome> PutObjectTaggingOutcomeCallable;
       typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
+      typedef std::future<RenameObjectOutcome> RenameObjectOutcomeCallable;
       typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
       typedef std::future<SelectObjectContentOutcome> SelectObjectContentOutcomeCallable;
       typedef std::future<UploadPartOutcome> UploadPartOutcomeCallable;
@@ -518,6 +522,7 @@ namespace Aws
     typedef std::function<void(const S3CrtClient*, const Model::PutObjectRetentionRequest&, const Model::PutObjectRetentionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectRetentionResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::PutObjectTaggingRequest&, const Model::PutObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
+    typedef std::function<void(const S3CrtClient*, const Model::RenameObjectRequest&, const Model::RenameObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenameObjectResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreObjectResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::SelectObjectContentRequest&, const Model::SelectObjectContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectObjectContentResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::UploadPartRequest&, const Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartResponseReceivedHandler;

@@ -80,11 +80,13 @@ namespace Model
     /**
      * <p>Action settings to use in the place of the rule actions that are configured
      * inside the rule group. You specify one override for each rule whose action you
-     * want to change. </p>  <p>Take care to verify the rule names in your
-     * overrides. If you provide a rule name that doesn't match the name of any rule in
-     * the rule group, WAF doesn't return an error and doesn't apply the override
-     * setting.</p>  <p>You can use overrides for testing, for example you can
-     * override all of rule actions to <code>Count</code> and then monitor the
+     * want to change. </p>  <p>Verify the rule names in your overrides
+     * carefully. With managed rule groups, WAF silently ignores any override that uses
+     * an invalid rule name. With customer-owned rule groups, invalid rule names in
+     * your overrides will cause web ACL updates to fail. An invalid rule name is any
+     * name that doesn't exactly match the case-sensitive name of an existing rule in
+     * the rule group.</p>  <p>You can use overrides for testing, for example
+     * you can override all of rule actions to <code>Count</code> and then monitor the
      * resulting count metrics to understand how the rule group would handle your web
      * traffic. You can also permanently override some or all actions, to modify how
      * the rule group manages your web traffic.</p>

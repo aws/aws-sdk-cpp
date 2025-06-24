@@ -35,6 +35,21 @@ Range& Range::operator =(JsonView jsonValue)
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
     m_unitHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ValueRange"))
+  {
+    m_valueRange = jsonValue.GetObject("ValueRange");
+    m_valueRangeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TimestampSource"))
+  {
+    m_timestampSource = jsonValue.GetString("TimestampSource");
+    m_timestampSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TimestampFormat"))
+  {
+    m_timestampFormat = jsonValue.GetString("TimestampFormat");
+    m_timestampFormatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +66,24 @@ JsonValue Range::Jsonize() const
   if(m_unitHasBeenSet)
   {
    payload.WithString("Unit", UnitMapper::GetNameForUnit(m_unit));
+  }
+
+  if(m_valueRangeHasBeenSet)
+  {
+   payload.WithObject("ValueRange", m_valueRange.Jsonize());
+
+  }
+
+  if(m_timestampSourceHasBeenSet)
+  {
+   payload.WithString("TimestampSource", m_timestampSource);
+
+  }
+
+  if(m_timestampFormatHasBeenSet)
+  {
+   payload.WithString("TimestampFormat", m_timestampFormat);
+
   }
 
   return payload;

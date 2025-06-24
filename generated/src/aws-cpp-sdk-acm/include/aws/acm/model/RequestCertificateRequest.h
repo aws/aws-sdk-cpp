@@ -143,13 +143,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Currently, you can use this parameter to specify whether to add the
-     * certificate to a certificate transparency log. Certificate transparency makes it
-     * possible to detect SSL/TLS certificates that have been mistakenly or maliciously
-     * issued. Certificates that have not been logged typically produce an error
-     * message in a browser. For more information, see <a
+     * <p>You can use this parameter to specify whether to add the certificate to a
+     * certificate transparency log and export your certificate.</p> <p>Certificate
+     * transparency makes it possible to detect SSL/TLS certificates that have been
+     * mistakenly or maliciously issued. Certificates that have not been logged
+     * typically produce an error message in a browser. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
-     * Out of Certificate Transparency Logging</a>.</p>
+     * Out of Certificate Transparency Logging</a>.</p> <p>You can export public ACM
+     * certificates to use with Amazon Web Services services as well as outside the
+     * Amazon Web Services Cloud. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+     * Manager exportable public certificate</a>.</p>
      */
     inline const CertificateOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/CustomizationType.h>
+#include <aws/bedrock/model/ModelStatus.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,20 @@ namespace Model
     template<typename OwnerAccountIdT = Aws::String>
     CustomModelSummary& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the custom model. Possible values include:</p> <ul>
+     * <li> <p> <code>Creating</code> - The model is being created and validated.</p>
+     * </li> <li> <p> <code>Active</code> - The model has been successfully created and
+     * is ready for use.</p> </li> <li> <p> <code>Failed</code> - The model creation
+     * process failed.</p> </li> </ul>
+     */
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
+    inline bool ModelStatusHasBeenSet() const { return m_modelStatusHasBeenSet; }
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline CustomModelSummary& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelArn;
@@ -145,6 +160,9 @@ namespace Model
 
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
+
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+    bool m_modelStatusHasBeenSet = false;
   };
 
 } // namespace Model

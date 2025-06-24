@@ -151,6 +151,11 @@ Application& Application::operator =(JsonView jsonValue)
     m_schedulerConfiguration = jsonValue.GetObject("schedulerConfiguration");
     m_schedulerConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("identityCenterConfiguration"))
+  {
+    m_identityCenterConfiguration = jsonValue.GetObject("identityCenterConfiguration");
+    m_identityCenterConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -303,6 +308,12 @@ JsonValue Application::Jsonize() const
   if(m_schedulerConfigurationHasBeenSet)
   {
    payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
+
+  }
+
+  if(m_identityCenterConfigurationHasBeenSet)
+  {
+   payload.WithObject("identityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
 
   }
 

@@ -34,9 +34,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The (<a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon
-     * Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon
      * GameLift Streams resource ARN, call a List or Get operation for the
      * resource.</p>
      */

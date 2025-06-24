@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     RAW,
-    DIGEST
+    DIGEST,
+    EXTERNAL_MU
   };
 
 namespace MessageTypeMapper

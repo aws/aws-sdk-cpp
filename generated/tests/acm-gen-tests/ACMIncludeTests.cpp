@@ -16,6 +16,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/AddTagsToCertificateRequest.h>
 #include <aws/acm/model/CertificateDetail.h>
+#include <aws/acm/model/CertificateExport.h>
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/CertificateStatus.h>
@@ -61,6 +62,8 @@
 #include <aws/acm/model/ResendValidationEmailRequest.h>
 #include <aws/acm/model/ResourceRecord.h>
 #include <aws/acm/model/RevocationReason.h>
+#include <aws/acm/model/RevokeCertificateRequest.h>
+#include <aws/acm/model/RevokeCertificateResult.h>
 #include <aws/acm/model/SortBy.h>
 #include <aws/acm/model/SortOrder.h>
 #include <aws/acm/model/Tag.h>

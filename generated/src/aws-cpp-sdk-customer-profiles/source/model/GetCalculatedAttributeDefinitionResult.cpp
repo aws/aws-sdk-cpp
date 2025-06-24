@@ -70,6 +70,21 @@ GetCalculatedAttributeDefinitionResult& GetCalculatedAttributeDefinitionResult::
     m_attributeDetails = jsonValue.GetObject("AttributeDetails");
     m_attributeDetailsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UseHistoricalData"))
+  {
+    m_useHistoricalData = jsonValue.GetBool("UseHistoricalData");
+    m_useHistoricalDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ReadinessStatusMapper::GetReadinessStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Readiness"))
+  {
+    m_readiness = jsonValue.GetObject("Readiness");
+    m_readinessHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();

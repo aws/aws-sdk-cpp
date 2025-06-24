@@ -147,6 +147,11 @@
 #include <aws/lambda/model/KMSDisabledException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
+#include <aws/lambda/model/KafkaSchemaRegistryAccessConfig.h>
+#include <aws/lambda/model/KafkaSchemaRegistryAuthType.h>
+#include <aws/lambda/model/KafkaSchemaRegistryConfig.h>
+#include <aws/lambda/model/KafkaSchemaValidationAttribute.h>
+#include <aws/lambda/model/KafkaSchemaValidationConfig.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/Layer.h>
@@ -220,6 +225,7 @@
 #include <aws/lambda/model/RuntimeVersionConfig.h>
 #include <aws/lambda/model/RuntimeVersionError.h>
 #include <aws/lambda/model/ScalingConfig.h>
+#include <aws/lambda/model/SchemaRegistryEventRecordFormat.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/ServiceException.h>

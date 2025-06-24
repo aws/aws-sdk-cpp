@@ -54,7 +54,11 @@ namespace Model
      * identifies an object that is an augmented manifest file in JSON lines format.
      * This file contains the data you want to use for model training.
      * <code>AugmentedManifestFile</code> can only be used if the Channel's input mode
-     * is <code>Pipe</code>.</p>
+     * is <code>Pipe</code>.</p> <p>If you choose <code>Converse</code>,
+     * <code>S3Uri</code> identifies an Amazon S3 location that contains data formatted
+     * according to Converse format. This format structures conversational messages
+     * with specific roles and content types used for training and fine-tuning
+     * foundational models.</p>
      */
     inline S3DataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }

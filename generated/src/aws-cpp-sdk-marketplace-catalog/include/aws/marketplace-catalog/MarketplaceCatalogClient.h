@@ -17,7 +17,7 @@ namespace MarketplaceCatalog
 {
   /**
    * <p>Catalog API actions allow you to manage your entities through list, describe,
-   * and update capabilities. An entity can be a product or an offer on AWS
+   * and update capabilities. An <i>entity</i> can be a product or an offer on AWS
    * Marketplace. </p> <p>You can automate your entity update process by integrating
    * the AWS Marketplace Catalog API with your AWS Marketplace product build or
    * deployment pipelines. You can also create your own applications on top of the
@@ -370,7 +370,11 @@ namespace MarketplaceCatalog
          * with single-AMI products</a>. Also, for more information about change types
          * available for container-based products, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
-         * with container products</a>.</p><p><h3>See Also:</h3>   <a
+         * with container products</a>.</p> <p>To download "DetailsDocument" shapes, see <a
+         * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+         * and <a
+         * href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+         * shapes on GitHub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          */

@@ -40,6 +40,11 @@ AggregationRequest& AggregationRequest::operator =(JsonView jsonValue)
     m_awsEcrContainerAggregation = jsonValue.GetObject("awsEcrContainerAggregation");
     m_awsEcrContainerAggregationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codeRepositoryAggregation"))
+  {
+    m_codeRepositoryAggregation = jsonValue.GetObject("codeRepositoryAggregation");
+    m_codeRepositoryAggregationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ec2InstanceAggregation"))
   {
     m_ec2InstanceAggregation = jsonValue.GetObject("ec2InstanceAggregation");
@@ -102,6 +107,12 @@ JsonValue AggregationRequest::Jsonize() const
   if(m_awsEcrContainerAggregationHasBeenSet)
   {
    payload.WithObject("awsEcrContainerAggregation", m_awsEcrContainerAggregation.Jsonize());
+
+  }
+
+  if(m_codeRepositoryAggregationHasBeenSet)
+  {
+   payload.WithObject("codeRepositoryAggregation", m_codeRepositoryAggregation.Jsonize());
 
   }
 

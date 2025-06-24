@@ -387,6 +387,31 @@ namespace ConnectCampaignsV2
         }
 
         /**
+         * <p>Get the instance communication limits.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetInstanceCommunicationLimits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceCommunicationLimitsOutcome GetInstanceCommunicationLimits(const Model::GetInstanceCommunicationLimitsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInstanceCommunicationLimits that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInstanceCommunicationLimitsRequestT = Model::GetInstanceCommunicationLimitsRequest>
+        Model::GetInstanceCommunicationLimitsOutcomeCallable GetInstanceCommunicationLimitsCallable(const GetInstanceCommunicationLimitsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCampaignsV2Client::GetInstanceCommunicationLimits, request);
+        }
+
+        /**
+         * An Async wrapper for GetInstanceCommunicationLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInstanceCommunicationLimitsRequestT = Model::GetInstanceCommunicationLimitsRequest>
+        void GetInstanceCommunicationLimitsAsync(const GetInstanceCommunicationLimitsRequestT& request, const GetInstanceCommunicationLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCampaignsV2Client::GetInstanceCommunicationLimits, request, handler, context);
+        }
+
+        /**
          * <p>Get the specific instance onboarding job status.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetInstanceOnboardingJobStatus">AWS
@@ -539,6 +564,32 @@ namespace ConnectCampaignsV2
         void PutConnectInstanceIntegrationAsync(const PutConnectInstanceIntegrationRequestT& request, const PutConnectInstanceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectCampaignsV2Client::PutConnectInstanceIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Put the instance communication limits. This API is idempotent.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutInstanceCommunicationLimits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutInstanceCommunicationLimitsOutcome PutInstanceCommunicationLimits(const Model::PutInstanceCommunicationLimitsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutInstanceCommunicationLimits that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutInstanceCommunicationLimitsRequestT = Model::PutInstanceCommunicationLimitsRequest>
+        Model::PutInstanceCommunicationLimitsOutcomeCallable PutInstanceCommunicationLimitsCallable(const PutInstanceCommunicationLimitsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCampaignsV2Client::PutInstanceCommunicationLimits, request);
+        }
+
+        /**
+         * An Async wrapper for PutInstanceCommunicationLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutInstanceCommunicationLimitsRequestT = Model::PutInstanceCommunicationLimitsRequest>
+        void PutInstanceCommunicationLimitsAsync(const PutInstanceCommunicationLimitsRequestT& request, const PutInstanceCommunicationLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCampaignsV2Client::PutInstanceCommunicationLimits, request, handler, context);
         }
 
         /**

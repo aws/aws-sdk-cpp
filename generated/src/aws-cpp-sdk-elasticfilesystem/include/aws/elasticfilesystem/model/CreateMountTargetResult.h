@@ -105,6 +105,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 address for the mount target.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+    template<typename Ipv6AddressT = Aws::String>
+    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
+    template<typename Ipv6AddressT = Aws::String>
+    CreateMountTargetResult& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the network interface that Amazon EFS created when it created the
      * mount target.</p>
      */
@@ -183,6 +194,9 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;

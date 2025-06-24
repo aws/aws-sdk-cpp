@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>SuggestFilter structure which contains a set of inclusion/exclusion
-   * properties that results must posses in order to be returned as a
+   * properties that results must possess in order to be returned as a
    * result.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SuggestFilter">AWS
    * API Reference</a></p>
