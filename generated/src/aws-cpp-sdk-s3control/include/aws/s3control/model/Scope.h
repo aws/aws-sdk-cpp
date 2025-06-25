@@ -28,7 +28,7 @@ namespace Model
    * <p>You can use the access point scope to restrict access to specific prefixes,
    * API operations, or a combination of both.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets-manage-scope.html">Manage
-   * the scope of your access points for directory buckets.</a> </p><p><h3>See
+   * the scope of your access points for directory buckets</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/Scope">AWS API
    * Reference</a></p>

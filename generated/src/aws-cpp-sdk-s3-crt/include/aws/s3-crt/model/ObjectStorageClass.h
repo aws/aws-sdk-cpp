@@ -26,7 +26,8 @@ namespace Model
     OUTPOSTS,
     GLACIER_IR,
     SNOW,
-    EXPRESS_ONEZONE
+    EXPRESS_ONEZONE,
+    FSX_OPENZFS
   };
 
 namespace ObjectStorageClassMapper

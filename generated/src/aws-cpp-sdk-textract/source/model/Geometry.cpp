@@ -39,6 +39,11 @@ Geometry& Geometry::operator =(JsonView jsonValue)
     }
     m_polygonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RotationAngle"))
+  {
+    m_rotationAngle = jsonValue.GetDouble("RotationAngle");
+    m_rotationAngleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue Geometry::Jsonize() const
      polygonJsonList[polygonIndex].AsObject(m_polygon[polygonIndex].Jsonize());
    }
    payload.WithArray("Polygon", std::move(polygonJsonList));
+
+  }
+
+  if(m_rotationAngleHasBeenSet)
+  {
+   payload.WithDouble("RotationAngle", m_rotationAngle);
 
   }
 

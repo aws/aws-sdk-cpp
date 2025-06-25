@@ -37,7 +37,9 @@ namespace Model
     ///@{
     /**
      * <p>The server-side encryption algorithm used when you store objects in the
-     * directory bucket.</p>
+     * directory bucket.</p>  <p>When accessing data stored in Amazon FSx file
+     * systems using S3 access points, the only valid server side encryption option is
+     * <code>aws:fsx</code>.</p> 
      */
     inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline void SetServerSideEncryption(ServerSideEncryption value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }

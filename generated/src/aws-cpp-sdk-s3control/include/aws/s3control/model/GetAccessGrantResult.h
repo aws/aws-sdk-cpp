@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The type of permission that was granted in the access grant. Can be one of
      * the following values:</p> <ul> <li> <p> <code>READ</code> – Grant read-only
-     * access to the S3 data.</p> </li> <li> <p> <code>WRITE</code> �� Grant write-only
+     * access to the S3 data.</p> </li> <li> <p> <code>WRITE</code> – Grant write-only
      * access to the S3 data.</p> </li> <li> <p> <code>READWRITE</code> – Grant both
      * read and write access to the S3 data.</p> </li> </ul>
      */

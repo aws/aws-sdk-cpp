@@ -65,7 +65,7 @@ namespace Model
      * list of the LINE <code>Block</code> objects that are detected on a document
      * page.</p> </li> <li> <p> <i>WORD</i> - A word detected on a document page. A
      * word is one or more ISO basic Latin script characters that aren't separated by
-     * spaces.</p> </li> <li> <p> <i>LINE</i> - A string of tab-delimited, contiguous
+     * spaces.</p> </li> <li> <p> <i>LINE</i> - A string of space-delimited, contiguous
      * words that are detected on a document page.</p> </li> </ul> <p>In text analysis
      * operations, the following types are returned:</p> <ul> <li> <p> <i>PAGE</i> -
      * Contains a list of child <code>Block</code> objects that are detected on a

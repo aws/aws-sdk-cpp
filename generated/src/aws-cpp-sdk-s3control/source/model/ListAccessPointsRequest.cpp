@@ -47,6 +47,20 @@ void ListAccessPointsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_dataSourceIdHasBeenSet)
+    {
+      ss << m_dataSourceId;
+      uri.AddQueryStringParameter("dataSourceId", ss.str());
+      ss.str("");
+    }
+
+    if(m_dataSourceTypeHasBeenSet)
+    {
+      ss << m_dataSourceType;
+      uri.AddQueryStringParameter("dataSourceType", ss.str());
+      ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection ListAccessPointsRequest::GetRequestSpecificHeaders() const

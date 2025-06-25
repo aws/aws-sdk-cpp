@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int AES256_HASH = HashingUtils::HashString("AES256");
+        static const int aws_fsx_HASH = HashingUtils::HashString("aws:fsx");
         static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
         static const int aws_kms_dsse_HASH = HashingUtils::HashString("aws:kms:dsse");
 
@@ -31,6 +32,10 @@ namespace Aws
           if (hashCode == AES256_HASH)
           {
             return ServerSideEncryption::AES256;
+          }
+          else if (hashCode == aws_fsx_HASH)
+          {
+            return ServerSideEncryption::aws_fsx;
           }
           else if (hashCode == aws_kms_HASH)
           {
@@ -58,6 +63,8 @@ namespace Aws
             return {};
           case ServerSideEncryption::AES256:
             return "AES256";
+          case ServerSideEncryption::aws_fsx:
+            return "aws:fsx";
           case ServerSideEncryption::aws_kms:
             return "aws:kms";
           case ServerSideEncryption::aws_kms_dsse:

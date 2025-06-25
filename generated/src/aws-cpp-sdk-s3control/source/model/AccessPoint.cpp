@@ -73,6 +73,18 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
       m_bucketAccountIdHasBeenSet = true;
     }
+    XmlNode dataSourceIdNode = resultNode.FirstChild("DataSourceId");
+    if(!dataSourceIdNode.IsNull())
+    {
+      m_dataSourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dataSourceIdNode.GetText());
+      m_dataSourceIdHasBeenSet = true;
+    }
+    XmlNode dataSourceTypeNode = resultNode.FirstChild("DataSourceType");
+    if(!dataSourceTypeNode.IsNull())
+    {
+      m_dataSourceType = Aws::Utils::Xml::DecodeEscapedXmlText(dataSourceTypeNode.GetText());
+      m_dataSourceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +133,18 @@ void AccessPoint::AddToNode(XmlNode& parentNode) const
   {
    XmlNode bucketAccountIdNode = parentNode.CreateChildElement("BucketAccountId");
    bucketAccountIdNode.SetText(m_bucketAccountId);
+  }
+
+  if(m_dataSourceIdHasBeenSet)
+  {
+   XmlNode dataSourceIdNode = parentNode.CreateChildElement("DataSourceId");
+   dataSourceIdNode.SetText(m_dataSourceId);
+  }
+
+  if(m_dataSourceTypeHasBeenSet)
+  {
+   XmlNode dataSourceTypeNode = parentNode.CreateChildElement("DataSourceType");
+   dataSourceTypeNode.SetText(m_dataSourceType);
   }
 
 }

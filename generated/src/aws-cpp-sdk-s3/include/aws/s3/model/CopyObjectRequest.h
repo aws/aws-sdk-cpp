@@ -589,7 +589,13 @@ namespace Model
      * settings for new object copies with SSE-KMS in the encryption-related request
      * headers, you must ensure the encryption key is the same customer managed key
      * that you specified for the directory bucket's default encryption configuration.
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> <b>S3 access points for Amazon FSx </b> - When accessing
+     * data stored in Amazon FSx file systems using S3 access points, the only valid
+     * server side encryption option is <code>aws:fsx</code>. All Amazon FSx file
+     * systems have encryption configured by default and are encrypted at rest. Data is
+     * automatically encrypted before being written to the file system, and
+     * automatically decrypted as it is read. These processes are handled transparently
+     * by Amazon FSx.</p> </li> </ul>
      */
     inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }

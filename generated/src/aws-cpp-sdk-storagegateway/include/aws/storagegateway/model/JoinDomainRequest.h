@@ -80,9 +80,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
-     * If you need to specify the port number include it after the colon (“:”). For
-     * example, <code>mydc.mydomain.com:389</code>.</p>
+     * <p>List of IP addresses, NetBIOS names, or host names of your domain server. If
+     * you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>  <p>S3 File Gateway
+     * supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+     * <p>FSx File Gateway does not support IPv6.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetDomainControllers() const { return m_domainControllers; }
     inline bool DomainControllersHasBeenSet() const { return m_domainControllersHasBeenSet; }

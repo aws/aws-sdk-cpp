@@ -122,7 +122,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>,
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-storage-classes">FSx
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-storage-classes">FSx
      * for Lustre storage classes</a> in the <i>FSx for Lustre User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance-intelligent-tiering">Working
      * with Intelligent-Tiering</a> in the <i>Amazon FSx for OpenZFS User

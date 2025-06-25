@@ -63,7 +63,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
      * access to shared datasets in directory buckets with access points</a> in the
-     * Amazon S3 User Guide.</p>
+     * <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -146,8 +146,8 @@ namespace Model
      * API operations, or a combination of both. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
      * access to shared datasets in directory buckets with access points</a> in the
-     * Amazon S3 User Guide.</p>  <p>Scope is not supported for access points for
-     * general purpose buckets.</p> 
+     * <i>Amazon S3 User Guide</i>.</p>  <p>Scope is only supported for access
+     * points attached to directory buckets.</p> 
      */
     inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }

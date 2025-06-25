@@ -394,16 +394,15 @@ namespace Model
     ///@{
     /**
      * <p>The server-side encryption algorithm used when you store this object in
-     * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p> <ul>
-     * <li> <p> <b>Directory buckets </b> - For directory buckets, there are only two
-     * supported options for server-side encryption: server-side encryption with Amazon
-     * S3 managed keys (SSE-S3) (<code>AES256</code>) and server-side encryption with
-     * KMS keys (SSE-KMS) (<code>aws:kms</code>). We recommend that the bucket's
-     * default encryption uses the desired encryption configuration and you don't
-     * override the bucket default encryption in your <code>CreateSession</code>
-     * requests or <code>PUT</code> object requests. Then, new objects are
-     * automatically encrypted with the desired encryption settings. For more
-     * information, see <a
+     * Amazon S3 or Amazon FSx.</p> <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, there are only two supported options for server-side
+     * encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+     * (<code>AES256</code>) and server-side encryption with KMS keys (SSE-KMS)
+     * (<code>aws:kms</code>). We recommend that the bucket's default encryption uses
+     * the desired encryption configuration and you don't override the bucket default
+     * encryption in your <code>CreateSession</code> requests or <code>PUT</code>
+     * object requests. Then, new objects are automatically encrypted with the desired
+     * encryption settings. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
      * data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For
      * more information about the encryption overriding behaviors in directory buckets,
@@ -436,7 +435,13 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
      * the encryption request headers must match the default encryption configuration
-     * of the directory bucket. </p>  </li> </ul>
+     * of the directory bucket. </p>  </li> <li> <p> <b>S3 access points for
+     * Amazon FSx </b> - When accessing data stored in Amazon FSx file systems using S3
+     * access points, the only valid server side encryption option is
+     * <code>aws:fsx</code>. All Amazon FSx file systems have encryption configured by
+     * default and are encrypted at rest. Data is automatically encrypted before being
+     * written to the file system, and automatically decrypted as it is read. These
+     * processes are handled transparently by Amazon FSx.</p> </li> </ul>
      */
     inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }

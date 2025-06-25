@@ -31,6 +31,7 @@ namespace Aws
         static const int GLACIER_IR_HASH = HashingUtils::HashString("GLACIER_IR");
         static const int SNOW_HASH = HashingUtils::HashString("SNOW");
         static const int EXPRESS_ONEZONE_HASH = HashingUtils::HashString("EXPRESS_ONEZONE");
+        static const int FSX_OPENZFS_HASH = HashingUtils::HashString("FSX_OPENZFS");
 
 
         ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ObjectStorageClass::EXPRESS_ONEZONE;
           }
+          else if (hashCode == FSX_OPENZFS_HASH)
+          {
+            return ObjectStorageClass::FSX_OPENZFS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "SNOW";
           case ObjectStorageClass::EXPRESS_ONEZONE:
             return "EXPRESS_ONEZONE";
+          case ObjectStorageClass::FSX_OPENZFS:
+            return "FSX_OPENZFS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

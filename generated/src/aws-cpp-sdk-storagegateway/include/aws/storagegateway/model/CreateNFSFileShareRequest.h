@@ -184,7 +184,7 @@ namespace Model
     ///@{
     /**
      * <p>The list of clients that are allowed to access the S3 File Gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const { return m_clientList; }
     inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }

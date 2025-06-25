@@ -209,14 +209,14 @@ namespace Model
     ///@{
     /**
      * <p> A unique string with a max of 64 ASCII characters in the ASCII range of 33 -
-     * 126. <code>RenameObject</code> supports idempotency using a client token. To
-     * make an idempotent API request using <code>RenameObject</code>, specify a client
-     * token in the request. You should not reuse the same client token for other API
-     * requests. If you retry a request that completed successfully using the same
-     * client token and the same parameters, the retry succeeds without performing any
-     * further actions. If you retry a successful request using the same client token,
-     * but one or more of the parameters are different, the retry fails and an
-     * <code>IdempotentParameterMismatch</code> error is returned. </p>
+     * 126.</p>  <p> <code>RenameObject</code> supports idempotency using a
+     * client token. To make an idempotent API request using <code>RenameObject</code>,
+     * specify a client token in the request. You should not reuse the same client
+     * token for other API requests. If you retry a request that completed successfully
+     * using the same client token and the same parameters, the retry succeeds without
+     * performing any further actions. If you retry a successful request using the same
+     * client token, but one or more of the parameters are different, the retry fails
+     * and an <code>IdempotentParameterMismatch</code> error is returned. </p> 
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
