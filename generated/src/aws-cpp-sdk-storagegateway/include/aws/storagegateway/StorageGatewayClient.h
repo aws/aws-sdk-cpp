@@ -2607,15 +2607,16 @@ namespace StorageGateway
          * report captures the files after the reset, but before they become flagged again,
          * they will not be reported as <b>Files Failing Upload</b>.</p>  <p>The
          * following requirements must be met to successfully generate a cache report:</p>
-         * <ul> <li> <p>You must have permissions to list the entire Amazon S3 bucket
-         * associated with the specified file share.</p> </li> <li> <p>No other cache
-         * reports can currently be in-progress for the specified file share.</p> </li>
-         * <li> <p>There must be fewer than 10 existing cache reports for the specified
-         * file share.</p> </li> <li> <p>The gateway must be online and connected to Amazon
-         * Web Services.</p> </li> <li> <p>The root disk must have at least 20GB of free
-         * space when report generation starts.</p> </li> <li> <p>You must specify at least
-         * one value for <code>InclusionFilters</code> or <code>ExclusionFilters</code> in
-         * the request.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>You must have <code>s3:PutObject</code> and
+         * <code>s3:AbortMultipartUpload</code> permissions for the Amazon S3 bucket where
+         * you want to store the cache report.</p> </li> <li> <p>No other cache reports can
+         * currently be in-progress for the specified file share.</p> </li> <li> <p>There
+         * must be fewer than 10 existing cache reports for the specified file share.</p>
+         * </li> <li> <p>The gateway must be online and connected to Amazon Web
+         * Services.</p> </li> <li> <p>The root disk must have at least 20GB of free space
+         * when report generation starts.</p> </li> <li> <p>You must specify at least one
+         * value for <code>InclusionFilters</code> or <code>ExclusionFilters</code> in the
+         * request.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartCacheReport">AWS
          * API Reference</a></p>
          */

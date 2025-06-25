@@ -500,7 +500,9 @@ namespace Model
     ///@{
     /**
      * <p> The server-side encryption algorithm used when storing requested object in
-     * Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * Amazon S3 or Amazon FSx.</p>  <p>When accessing data stored in Amazon FSx
+     * file systems using S3 access points, the only valid server side encryption
+     * option is <code>aws:fsx</code>.</p> 
      */
     inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }

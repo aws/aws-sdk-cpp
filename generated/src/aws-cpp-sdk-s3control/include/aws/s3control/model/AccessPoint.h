@@ -129,6 +129,30 @@ namespace Model
     template<typename BucketAccountIdT = Aws::String>
     AccessPoint& WithBucketAccountId(BucketAccountIdT&& value) { SetBucketAccountId(std::forward<BucketAccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier for the data source of the access point.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    AccessPoint& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of the data source that the access point is attached to.</p>
+     */
+    inline const Aws::String& GetDataSourceType() const { return m_dataSourceType; }
+    inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
+    template<typename DataSourceTypeT = Aws::String>
+    void SetDataSourceType(DataSourceTypeT&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::forward<DataSourceTypeT>(value); }
+    template<typename DataSourceTypeT = Aws::String>
+    AccessPoint& WithDataSourceType(DataSourceTypeT&& value) { SetDataSourceType(std::forward<DataSourceTypeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -151,6 +175,12 @@ namespace Model
 
     Aws::String m_bucketAccountId;
     bool m_bucketAccountIdHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
+
+    Aws::String m_dataSourceType;
+    bool m_dataSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

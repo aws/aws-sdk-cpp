@@ -230,6 +230,44 @@ namespace FSx
         }
 
         /**
+         * <p>Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx
+         * for OpenZFS file systems, the volume must be hosted on a high-availability file
+         * system, either Single-AZ or Multi-AZ. For more information, see <a
+         * href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing your data
+         * using access points</a> in the Amazon FSx for OpenZFS User Guide. </p> <p>The
+         * requester requires the following permissions to perform these actions:</p> <ul>
+         * <li> <p> <code>fsx:CreateAndAttachS3AccessPoint</code> </p> </li> <li> <p>
+         * <code>s3:CreateAccessPoint</code> </p> </li> <li> <p>
+         * <code>s3:GetAccessPoint</code> </p> </li> <li> <p>
+         * <code>s3:PutAccessPointPolicy</code> </p> </li> <li> <p>
+         * <code>s3:DeleteAccessPoint</code> </p> </li> </ul> <p>The following actions are
+         * related to <code>CreateAndAttachS3AccessPoint</code>:</p> <ul> <li> <p>
+         * <a>DescribeS3AccessPointAttachments</a> </p> </li> <li> <p>
+         * <a>DetachAndDeleteS3AccessPoint</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateAndAttachS3AccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAndAttachS3AccessPointOutcome CreateAndAttachS3AccessPoint(const Model::CreateAndAttachS3AccessPointRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAndAttachS3AccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAndAttachS3AccessPointRequestT = Model::CreateAndAttachS3AccessPointRequest>
+        Model::CreateAndAttachS3AccessPointOutcomeCallable CreateAndAttachS3AccessPointCallable(const CreateAndAttachS3AccessPointRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::CreateAndAttachS3AccessPoint, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAndAttachS3AccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAndAttachS3AccessPointRequestT = Model::CreateAndAttachS3AccessPointRequest>
+        void CreateAndAttachS3AccessPointAsync(const CreateAndAttachS3AccessPointRequestT& request, const CreateAndAttachS3AccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::CreateAndAttachS3AccessPoint, request, handler, context);
+        }
+
+        /**
          * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
          * system, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume,
          * or Amazon FSx for OpenZFS file system. We recommend creating regular backups so
@@ -742,8 +780,16 @@ namespace FSx
          * deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
          * delete all the volumes and storage virtual machines (SVMs) on the file system.
          * Then provide a <code>FileSystemId</code> value to the
-         * <code>DeleteFileSystem</code> operation.</p> <p>By default, when you delete an
-         * Amazon FSx for Windows File Server file system, a final backup is created upon
+         * <code>DeleteFileSystem</code> operation.</p> <p>Before deleting an Amazon FSx
+         * for OpenZFS file system, make sure that there aren't any Amazon S3 access points
+         * attached to any volume. For more information on how to list S3 access points
+         * that are attached to volumes, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+         * S3 access point attachments</a>. For more information on how to delete S3 access
+         * points, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+         * an S3 access point attachment</a>.</p> <p>By default, when you delete an Amazon
+         * FSx for Windows File Server file system, a final backup is created upon
          * deletion. This final backup isn't subject to the file system's retention policy,
          * and must be manually deleted.</p> <p>To delete an Amazon FSx for Lustre file
          * system, first <a
@@ -1128,6 +1174,34 @@ namespace FSx
         }
 
         /**
+         * <p>Describes one or more S3 access points attached to Amazon FSx volumes.</p>
+         * <p>The requester requires the following permission to perform this action:</p>
+         * <ul> <li> <p> <code>fsx:DescribeS3AccessPointAttachments</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeS3AccessPointAttachments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeS3AccessPointAttachmentsOutcome DescribeS3AccessPointAttachments(const Model::DescribeS3AccessPointAttachmentsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeS3AccessPointAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeS3AccessPointAttachmentsRequestT = Model::DescribeS3AccessPointAttachmentsRequest>
+        Model::DescribeS3AccessPointAttachmentsOutcomeCallable DescribeS3AccessPointAttachmentsCallable(const DescribeS3AccessPointAttachmentsRequestT& request = {}) const
+        {
+            return SubmitCallable(&FSxClient::DescribeS3AccessPointAttachments, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeS3AccessPointAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeS3AccessPointAttachmentsRequestT = Model::DescribeS3AccessPointAttachmentsRequest>
+        void DescribeS3AccessPointAttachmentsAsync(const DescribeS3AccessPointAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeS3AccessPointAttachmentsRequestT& request = {}) const
+        {
+            return SubmitAsync(&FSxClient::DescribeS3AccessPointAttachments, request, handler, context);
+        }
+
+        /**
          * <p>Indicates whether participant accounts in your organization can create Amazon
          * FSx for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a
          * virtual private cloud (VPC) owner. For more information, see <a
@@ -1250,6 +1324,35 @@ namespace FSx
         void DescribeVolumesAsync(const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVolumesRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeVolumes, request, handler, context);
+        }
+
+        /**
+         * <p>Detaches an S3 access point from an Amazon FSx volume and deletes the S3
+         * access point.</p> <p>The requester requires the following permission to perform
+         * this action:</p> <ul> <li> <p> <code>fsx:DetachAndDeleteS3AccessPoint</code>
+         * </p> </li> <li> <p> <code>s3:DeleteAccessPoint</code> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DetachAndDeleteS3AccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachAndDeleteS3AccessPointOutcome DetachAndDeleteS3AccessPoint(const Model::DetachAndDeleteS3AccessPointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetachAndDeleteS3AccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DetachAndDeleteS3AccessPointRequestT = Model::DetachAndDeleteS3AccessPointRequest>
+        Model::DetachAndDeleteS3AccessPointOutcomeCallable DetachAndDeleteS3AccessPointCallable(const DetachAndDeleteS3AccessPointRequestT& request) const
+        {
+            return SubmitCallable(&FSxClient::DetachAndDeleteS3AccessPoint, request);
+        }
+
+        /**
+         * An Async wrapper for DetachAndDeleteS3AccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DetachAndDeleteS3AccessPointRequestT = Model::DetachAndDeleteS3AccessPointRequest>
+        void DetachAndDeleteS3AccessPointAsync(const DetachAndDeleteS3AccessPointRequestT& request, const DetachAndDeleteS3AccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FSxClient::DetachAndDeleteS3AccessPoint, request, handler, context);
         }
 
         /**

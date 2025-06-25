@@ -68,6 +68,16 @@ namespace Model
     template<typename PolygonT = Point>
     Geometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Provides a numerical value corresponding to the rotation of the text.</p>
+     */
+    inline double GetRotationAngle() const { return m_rotationAngle; }
+    inline bool RotationAngleHasBeenSet() const { return m_rotationAngleHasBeenSet; }
+    inline void SetRotationAngle(double value) { m_rotationAngleHasBeenSet = true; m_rotationAngle = value; }
+    inline Geometry& WithRotationAngle(double value) { SetRotationAngle(value); return *this;}
+    ///@}
   private:
 
     BoundingBox m_boundingBox;
@@ -75,6 +85,9 @@ namespace Model
 
     Aws::Vector<Point> m_polygon;
     bool m_polygonHasBeenSet = false;
+
+    double m_rotationAngle{0.0};
+    bool m_rotationAngleHasBeenSet = false;
   };
 
 } // namespace Model

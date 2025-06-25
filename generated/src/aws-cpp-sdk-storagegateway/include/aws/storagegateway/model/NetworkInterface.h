@@ -64,8 +64,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently
-     * not supported</i>.</p>
+     * <p>The Internet Protocol version 6 (IPv6) address of the interface.</p> 
+     * <p>This element returns IPv6 addresses for all gateway types except FSx File
+     * Gateway.</p> 
      */
     inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
     inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }

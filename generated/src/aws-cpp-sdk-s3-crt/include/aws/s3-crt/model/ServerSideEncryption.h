@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     AES256,
+    aws_fsx,
     aws_kms,
     aws_kms_dsse
   };

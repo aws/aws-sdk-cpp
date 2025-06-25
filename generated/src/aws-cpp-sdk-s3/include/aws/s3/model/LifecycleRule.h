@@ -82,8 +82,12 @@ namespace Model
      * <code>Tag</code>, <code>ObjectSizeGreaterThan</code>,
      * <code>ObjectSizeLessThan</code>, or <code>And</code> specified.
      * <code>Filter</code> is required if the <code>LifecycleRule</code> does not
-     * contain a <code>Prefix</code> element.</p>  <p> <code>Tag</code> filters
-     * are not supported for directory buckets.</p> 
+     * contain a <code>Prefix</code> element.</p> <p>For more information about
+     * <code>Tag</code> filters, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-filters.html">Adding
+     * filters to Lifecycle rules</a> in the <i>Amazon S3 User Guide</i>.</p> 
+     * <p> <code>Tag</code> filters are not supported for directory buckets.</p>
+     * 
      */
     inline const LifecycleRuleFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

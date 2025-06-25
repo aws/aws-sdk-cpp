@@ -234,12 +234,14 @@ namespace S3Control
          * <p>Creates an access point and associates it to a specified bucket. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-         * access to shared datasets in general purpose buckets with access points</a> or
-         * <a
+         * access to shared datasets with access points</a> or <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
          * access to shared datasets in directory buckets with access points</a> in the
-         * <i>Amazon S3 User Guide</i>.</p> <p/>  <p>S3 on Outposts only supports
-         * VPC-style access points. </p> <p>For more information, see <a
+         * <i>Amazon S3 User Guide</i>.</p> <p>To create an access point and attach it to a
+         * volume on an Amazon FSx file system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html">CreateAndAttachS3AccessPoint</a>
+         * in the <i>Amazon FSx API Reference</i>.</p> <p/>  <p>S3 on Outposts only
+         * supports VPC-style access points. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access
          * points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>All Amazon S3 on
@@ -2605,18 +2607,19 @@ namespace S3Control
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         * <p>Returns a list of the access points that are owned by the current account
-         * that's associated with the specified bucket. You can retrieve up to 1000 access
-         * points per call. If the specified bucket has more than 1,000 access points (or
-         * the number specified in <code>maxResults</code>, whichever is less), the
-         * response will include a continuation token that you can use to list the
-         * additional access points.</p> <p/> <p>All Amazon S3 on Outposts REST API
-         * requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you
-         * must use an S3 on Outposts endpoint hostname prefix instead of
-         * <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
-         * Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-         * <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a
+         * <p>Returns a list of the access points. You can retrieve up to 1,000 access
+         * points per call. If the call returns more than 1,000 access points (or the
+         * number specified in <code>maxResults</code>, whichever is less), the response
+         * will include a continuation token that you can use to list the additional access
+         * points.</p> <p>Returns only access points attached to S3 buckets by default. To
+         * return all access points specify <code>DataSourceType</code> as
+         * <code>ALL</code>.</p> <p/> <p>All Amazon S3 on Outposts REST API requests for
+         * this action require an additional parameter of <code>x-amz-outpost-id</code> to
+         * be passed with the request. In addition, you must use an S3 on Outposts endpoint
+         * hostname prefix instead of <code>s3-control</code>. For an example of the
+         * request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+         * hostname prefix and the <code>x-amz-outpost-id</code> derived by using the
+         * access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a>
          * section.</p> <p>The following actions are related to
          * <code>ListAccessPoints</code>:</p> <ul> <li> <p> <a

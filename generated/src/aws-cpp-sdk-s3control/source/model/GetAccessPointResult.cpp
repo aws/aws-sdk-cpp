@@ -99,6 +99,18 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
       m_bucketAccountIdHasBeenSet = true;
     }
+    XmlNode dataSourceIdNode = resultNode.FirstChild("DataSourceId");
+    if(!dataSourceIdNode.IsNull())
+    {
+      m_dataSourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dataSourceIdNode.GetText());
+      m_dataSourceIdHasBeenSet = true;
+    }
+    XmlNode dataSourceTypeNode = resultNode.FirstChild("DataSourceType");
+    if(!dataSourceTypeNode.IsNull())
+    {
+      m_dataSourceType = Aws::Utils::Xml::DecodeEscapedXmlText(dataSourceTypeNode.GetText());
+      m_dataSourceTypeHasBeenSet = true;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

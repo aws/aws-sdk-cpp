@@ -159,6 +159,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the data source of the access point.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    GetAccessPointResult& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of the data source that the access point is attached to.</p>
+     */
+    inline const Aws::String& GetDataSourceType() const { return m_dataSourceType; }
+    template<typename DataSourceTypeT = Aws::String>
+    void SetDataSourceType(DataSourceTypeT&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::forward<DataSourceTypeT>(value); }
+    template<typename DataSourceTypeT = Aws::String>
+    GetAccessPointResult& WithDataSourceType(DataSourceTypeT&& value) { SetDataSourceType(std::forward<DataSourceTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * AWS Request Id value
      */
     inline const Aws::String& GetRequestId() const { return m_requestId; }
@@ -209,6 +231,12 @@ namespace Model
 
     Aws::String m_bucketAccountId;
     bool m_bucketAccountIdHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
+
+    Aws::String m_dataSourceType;
+    bool m_dataSourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

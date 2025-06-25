@@ -56,9 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The file name of the input document. Synchronous operations can use image
-     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
-     * and TIFF format files.</p>
+     * <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG,
+     * or PNG format.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

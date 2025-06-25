@@ -25,6 +25,7 @@
 #include <aws/fsx/model/CancelDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CopyBackupRequest.h>
 #include <aws/fsx/model/CopySnapshotAndUpdateVolumeRequest.h>
+#include <aws/fsx/model/CreateAndAttachS3AccessPointRequest.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
@@ -48,10 +49,12 @@
 #include <aws/fsx/model/DescribeFileCachesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
+#include <aws/fsx/model/DescribeS3AccessPointAttachmentsRequest.h>
 #include <aws/fsx/model/DescribeSharedVpcConfigurationRequest.h>
 #include <aws/fsx/model/DescribeSnapshotsRequest.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
 #include <aws/fsx/model/DescribeVolumesRequest.h>
+#include <aws/fsx/model/DetachAndDeleteS3AccessPointRequest.h>
 #include <aws/fsx/model/DisassociateFileSystemAliasesRequest.h>
 #include <aws/fsx/model/ListTagsForResourceRequest.h>
 #include <aws/fsx/model/ReleaseFileSystemNfsV3LocksRequest.h>
@@ -307,6 +310,32 @@ CopySnapshotAndUpdateVolumeOutcome FSxClient::CopySnapshotAndUpdateVolume(const 
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopySnapshotAndUpdateVolume, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return CopySnapshotAndUpdateVolumeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateAndAttachS3AccessPointOutcome FSxClient::CreateAndAttachS3AccessPoint(const CreateAndAttachS3AccessPointRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateAndAttachS3AccessPoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAndAttachS3AccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAndAttachS3AccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateAndAttachS3AccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateAndAttachS3AccessPoint",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateAndAttachS3AccessPointOutcome>(
+    [&]()-> CreateAndAttachS3AccessPointOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAndAttachS3AccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return CreateAndAttachS3AccessPointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -911,6 +940,32 @@ DescribeFileSystemsOutcome FSxClient::DescribeFileSystems(const DescribeFileSyst
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeS3AccessPointAttachmentsOutcome FSxClient::DescribeS3AccessPointAttachments(const DescribeS3AccessPointAttachmentsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeS3AccessPointAttachments);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeS3AccessPointAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeS3AccessPointAttachments, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeS3AccessPointAttachments, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeS3AccessPointAttachments",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeS3AccessPointAttachmentsOutcome>(
+    [&]()-> DescribeS3AccessPointAttachmentsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeS3AccessPointAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DescribeS3AccessPointAttachmentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeSharedVpcConfigurationOutcome FSxClient::DescribeSharedVpcConfiguration(const DescribeSharedVpcConfigurationRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeSharedVpcConfiguration);
@@ -1009,6 +1064,32 @@ DescribeVolumesOutcome FSxClient::DescribeVolumes(const DescribeVolumesRequest& 
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVolumes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return DescribeVolumesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DetachAndDeleteS3AccessPointOutcome FSxClient::DetachAndDeleteS3AccessPoint(const DetachAndDeleteS3AccessPointRequest& request) const
+{
+  AWS_OPERATION_GUARD(DetachAndDeleteS3AccessPoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachAndDeleteS3AccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DetachAndDeleteS3AccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DetachAndDeleteS3AccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DetachAndDeleteS3AccessPoint",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DetachAndDeleteS3AccessPointOutcome>(
+    [&]()-> DetachAndDeleteS3AccessPointOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachAndDeleteS3AccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DetachAndDeleteS3AccessPointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
