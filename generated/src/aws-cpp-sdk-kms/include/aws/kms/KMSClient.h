@@ -25,31 +25,34 @@ namespace KMS
    * <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is
    * keeping some variations of this term.</p> <p>Amazon Web Services provides SDKs
    * that consist of libraries and sample code for various programming languages and
-   * platforms (Java, Ruby, .Net, macOS, Android, etc.). The SDKs provide a
-   * convenient way to create programmatic access to KMS and other Amazon Web
-   * Services services. For example, the SDKs take care of tasks such as signing
+   * platforms (Java, Rust, Python, Ruby, .Net, macOS, Android, etc.). The SDKs
+   * provide a convenient way to create programmatic access to KMS and other Amazon
+   * Web Services services. For example, the SDKs take care of tasks such as signing
    * requests (see below), managing errors, and retrying requests automatically. For
    * more information about the Amazon Web Services SDKs, including how to download
    * and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
    * Web Services</a>.</p>  <p>We recommend that you use the Amazon Web
    * Services SDKs to make programmatic API calls to KMS.</p> <p>If you need to use
    * FIPS 140-2 validated cryptographic modules when communicating with Amazon Web
-   * Services, use the FIPS endpoint in your preferred Amazon Web Services Region.
-   * For more information about the available FIPS endpoints, see <a
+   * Services, use one of the FIPS endpoints in your preferred Amazon Web Services
+   * Region. If you need communicate over IPv6, use the dual-stack endpoint in your
+   * preferred Amazon Web Services Region. For more information see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service
    * endpoints</a> in the Key Management Service topic of the <i>Amazon Web Services
-   * General Reference</i>.</p> <p>All KMS API calls must be signed and be
-   * transmitted using Transport Layer Security (TLS). KMS recommends you always use
-   * the latest supported TLS version. Clients must also support cipher suites with
-   * Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic
-   * Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and
-   * later support these modes.</p> <p> <b>Signing Requests</b> </p> <p>Requests must
-   * be signed using an access key ID and a secret access key. We strongly recommend
-   * that you do not use your Amazon Web Services account root access key ID and
-   * secret access key for everyday work. You can use the access key ID and secret
-   * access key for an IAM user or you can use the Security Token Service (STS) to
-   * generate temporary security credentials and use those to sign requests. </p>
-   * <p>All KMS requests must be signed with <a
+   * General Reference</i> and <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/ipv6-kms.html">Dual-stack
+   * endpoint support</a> in the KMS Developer Guide.</p> <p>All KMS API calls must
+   * be signed and be transmitted using Transport Layer Security (TLS). KMS
+   * recommends you always use the latest supported TLS version. Clients must also
+   * support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
+   * Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most
+   * modern systems such as Java 7 and later support these modes.</p> <p> <b>Signing
+   * Requests</b> </p> <p>Requests must be signed using an access key ID and a secret
+   * access key. We strongly recommend that you do not use your Amazon Web Services
+   * account root access key ID and secret access key for everyday work. You can use
+   * the access key ID and secret access key for an IAM user or you can use the
+   * Security Token Service (STS) to generate temporary security credentials and use
+   * those to sign requests. </p> <p>All KMS requests must be signed with <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4</a>.</p> <p> <b>Logging API Requests</b> </p> <p>KMS supports
    * CloudTrail, a service that logs Amazon Web Services API calls and related events

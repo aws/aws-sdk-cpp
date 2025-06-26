@@ -9,7 +9,6 @@
 #include <aws/iot-managed-integrations/model/DiscoveryType.h>
 #include <aws/iot-managed-integrations/model/DeviceDiscoveryStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -101,14 +100,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID tracking the current discovery process for one connector
-     * association.</p>
+     * <p>The identifier of the account association used for the device discovery.</p>
      */
-    inline const Aws::String& GetConnectorAssociationId() const { return m_connectorAssociationId; }
-    template<typename ConnectorAssociationIdT = Aws::String>
-    void SetConnectorAssociationId(ConnectorAssociationIdT&& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = std::forward<ConnectorAssociationIdT>(value); }
-    template<typename ConnectorAssociationIdT = Aws::String>
-    GetDeviceDiscoveryResult& WithConnectorAssociationId(ConnectorAssociationIdT&& value) { SetConnectorAssociationId(std::forward<ConnectorAssociationIdT>(value)); return *this;}
+    inline const Aws::String& GetAccountAssociationId() const { return m_accountAssociationId; }
+    template<typename AccountAssociationIdT = Aws::String>
+    void SetAccountAssociationId(AccountAssociationIdT&& value) { m_accountAssociationIdHasBeenSet = true; m_accountAssociationId = std::forward<AccountAssociationIdT>(value); }
+    template<typename AccountAssociationIdT = Aws::String>
+    GetDeviceDiscoveryResult& WithAccountAssociationId(AccountAssociationIdT&& value) { SetAccountAssociationId(std::forward<AccountAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,22 +118,6 @@ namespace Model
     void SetFinishedAt(FinishedAtT&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::forward<FinishedAtT>(value); }
     template<typename FinishedAtT = Aws::Utils::DateTime>
     GetDeviceDiscoveryResult& WithFinishedAt(FinishedAtT&& value) { SetFinishedAt(std::forward<FinishedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A set of key/value pairs that are used to manage the device discovery
-     * request.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    GetDeviceDiscoveryResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    GetDeviceDiscoveryResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
     ///@}
 
     ///@{
@@ -166,14 +148,11 @@ namespace Model
     Aws::String m_controllerId;
     bool m_controllerIdHasBeenSet = false;
 
-    Aws::String m_connectorAssociationId;
-    bool m_connectorAssociationIdHasBeenSet = false;
+    Aws::String m_accountAssociationId;
+    bool m_accountAssociationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedAt{};
     bool m_finishedAtHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

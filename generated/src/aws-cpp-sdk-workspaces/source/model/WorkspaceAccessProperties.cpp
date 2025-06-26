@@ -70,6 +70,11 @@ WorkspaceAccessProperties& WorkspaceAccessProperties::operator =(JsonView jsonVa
     m_deviceTypeWorkSpacesThinClient = AccessPropertyValueMapper::GetAccessPropertyValueForName(jsonValue.GetString("DeviceTypeWorkSpacesThinClient"));
     m_deviceTypeWorkSpacesThinClientHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AccessEndpointConfig"))
+  {
+    m_accessEndpointConfig = jsonValue.GetObject("AccessEndpointConfig");
+    m_accessEndpointConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -120,6 +125,12 @@ JsonValue WorkspaceAccessProperties::Jsonize() const
   if(m_deviceTypeWorkSpacesThinClientHasBeenSet)
   {
    payload.WithString("DeviceTypeWorkSpacesThinClient", AccessPropertyValueMapper::GetNameForAccessPropertyValue(m_deviceTypeWorkSpacesThinClient));
+  }
+
+  if(m_accessEndpointConfigHasBeenSet)
+  {
+   payload.WithObject("AccessEndpointConfig", m_accessEndpointConfig.Jsonize());
+
   }
 
   return payload;

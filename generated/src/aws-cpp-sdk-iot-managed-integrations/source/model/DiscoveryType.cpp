@@ -23,6 +23,7 @@ namespace Aws
         static const int ZWAVE_HASH = HashingUtils::HashString("ZWAVE");
         static const int ZIGBEE_HASH = HashingUtils::HashString("ZIGBEE");
         static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         DiscoveryType GetDiscoveryTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == CLOUD_HASH)
           {
             return DiscoveryType::CLOUD;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return DiscoveryType::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "ZIGBEE";
           case DiscoveryType::CLOUD:
             return "CLOUD";
+          case DiscoveryType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

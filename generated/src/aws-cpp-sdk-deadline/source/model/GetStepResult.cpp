@@ -59,6 +59,11 @@ GetStepResult& GetStepResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("taskFailureRetryCount"))
+  {
+    m_taskFailureRetryCount = jsonValue.GetInteger("taskFailureRetryCount");
+    m_taskFailureRetryCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("targetTaskRunStatus"))
   {
     m_targetTaskRunStatus = StepTargetTaskRunStatusMapper::GetStepTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));

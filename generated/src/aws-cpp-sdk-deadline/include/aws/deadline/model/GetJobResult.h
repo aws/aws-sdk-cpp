@@ -190,6 +190,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number of times tasks from the job failed and were retried.</p>
+     */
+    inline int GetTaskFailureRetryCount() const { return m_taskFailureRetryCount; }
+    inline void SetTaskFailureRetryCount(int value) { m_taskFailureRetryCountHasBeenSet = true; m_taskFailureRetryCount = value; }
+    inline GetJobResult& WithTaskFailureRetryCount(int value) { SetTaskFailureRetryCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The storage profile ID associated with the job.</p>
      */
     inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
@@ -332,6 +341,9 @@ namespace Model
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
     bool m_taskRunStatusCountsHasBeenSet = false;
+
+    int m_taskFailureRetryCount{0};
+    bool m_taskFailureRetryCountHasBeenSet = false;
 
     Aws::String m_storageProfileId;
     bool m_storageProfileIdHasBeenSet = false;

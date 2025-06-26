@@ -16,9 +16,11 @@ namespace Model
   enum class AuthMaterialType
   {
     NOT_SET,
+    CUSTOM_PROTOCOL_QR_BAR_CODE,
     WIFI_SETUP_QR_BAR_CODE,
     ZWAVE_QR_BAR_CODE,
-    ZIGBEE_QR_BAR_CODE
+    ZIGBEE_QR_BAR_CODE,
+    DISCOVERED_DEVICE
   };
 
 namespace AuthMaterialTypeMapper

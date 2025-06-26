@@ -27,6 +27,12 @@ Aws::String UpdateDataAccessorRequest::SerializePayload() const
 
   }
 
+  if(m_authenticationDetailHasBeenSet)
+  {
+   payload.WithObject("authenticationDetail", m_authenticationDetail.Jsonize());
+
+  }
+
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);

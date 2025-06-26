@@ -98,7 +98,7 @@ namespace Model
      * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
      * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
      * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
+     * <code>IMPAIRED</code> �� Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
      * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
      * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
      * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace

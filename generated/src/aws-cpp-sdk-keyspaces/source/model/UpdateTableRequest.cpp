@@ -92,6 +92,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
 
   }
 
+  if(m_cdcSpecificationHasBeenSet)
+  {
+   payload.WithObject("cdcSpecification", m_cdcSpecification.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

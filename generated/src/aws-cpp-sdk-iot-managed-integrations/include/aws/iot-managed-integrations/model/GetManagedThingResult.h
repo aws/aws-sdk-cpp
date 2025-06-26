@@ -182,14 +182,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The id of the connector policy.</p>  <p>This parameter is used for
-     * cloud-to-cloud devices only.</p> 
+     * <p>The identifier of the connector destination associated with this managed
+     * thing.</p>
      */
-    inline const Aws::String& GetConnectorPolicyId() const { return m_connectorPolicyId; }
-    template<typename ConnectorPolicyIdT = Aws::String>
-    void SetConnectorPolicyId(ConnectorPolicyIdT&& value) { m_connectorPolicyIdHasBeenSet = true; m_connectorPolicyId = std::forward<ConnectorPolicyIdT>(value); }
-    template<typename ConnectorPolicyIdT = Aws::String>
-    GetManagedThingResult& WithConnectorPolicyId(ConnectorPolicyIdT&& value) { SetConnectorPolicyId(std::forward<ConnectorPolicyIdT>(value)); return *this;}
+    inline const Aws::String& GetConnectorDestinationId() const { return m_connectorDestinationId; }
+    template<typename ConnectorDestinationIdT = Aws::String>
+    void SetConnectorDestinationId(ConnectorDestinationIdT&& value) { m_connectorDestinationIdHasBeenSet = true; m_connectorDestinationId = std::forward<ConnectorDestinationIdT>(value); }
+    template<typename ConnectorDestinationIdT = Aws::String>
+    GetManagedThingResult& WithConnectorDestinationId(ConnectorDestinationIdT&& value) { SetConnectorDestinationId(std::forward<ConnectorDestinationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -373,8 +373,8 @@ namespace Model
     Aws::String m_internationalArticleNumber;
     bool m_internationalArticleNumberHasBeenSet = false;
 
-    Aws::String m_connectorPolicyId;
-    bool m_connectorPolicyIdHasBeenSet = false;
+    Aws::String m_connectorDestinationId;
+    bool m_connectorDestinationIdHasBeenSet = false;
 
     Aws::String m_connectorDeviceId;
     bool m_connectorDeviceIdHasBeenSet = false;

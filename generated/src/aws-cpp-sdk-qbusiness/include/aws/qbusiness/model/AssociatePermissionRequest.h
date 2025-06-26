@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/PermissionCondition.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The conditions that restrict when the permission is effective. These
+     * conditions can be used to limit the permission based on specific attributes of
+     * the request.</p>
+     */
+    inline const Aws::Vector<PermissionCondition>& GetConditions() const { return m_conditions; }
+    inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
+    template<typename ConditionsT = Aws::Vector<PermissionCondition>>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Aws::Vector<PermissionCondition>>
+    AssociatePermissionRequest& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
+    template<typename ConditionsT = PermissionCondition>
+    AssociatePermissionRequest& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name of the IAM role for the ISV that is being granted
      * permission.</p>
      */
@@ -93,6 +110,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_actions;
     bool m_actionsHasBeenSet = false;
+
+    Aws::Vector<PermissionCondition> m_conditions;
+    bool m_conditionsHasBeenSet = false;
 
     Aws::String m_principal;
     bool m_principalHasBeenSet = false;

@@ -19,6 +19,10 @@
 #include <aws/keyspaces/model/AutoScalingSpecification.h>
 #include <aws/keyspaces/model/CapacitySpecification.h>
 #include <aws/keyspaces/model/CapacitySpecificationSummary.h>
+#include <aws/keyspaces/model/CdcPropagateTags.h>
+#include <aws/keyspaces/model/CdcSpecification.h>
+#include <aws/keyspaces/model/CdcSpecificationSummary.h>
+#include <aws/keyspaces/model/CdcStatus.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
 #include <aws/keyspaces/model/ClientSideTimestampsStatus.h>
 #include <aws/keyspaces/model/ClusteringKey.h>
@@ -89,6 +93,7 @@
 #include <aws/keyspaces/model/UpdateKeyspaceResult.h>
 #include <aws/keyspaces/model/UpdateTableRequest.h>
 #include <aws/keyspaces/model/UpdateTableResult.h>
+#include <aws/keyspaces/model/ViewType.h>
 
 using KeyspacesIncludeTest = ::testing::Test;
 

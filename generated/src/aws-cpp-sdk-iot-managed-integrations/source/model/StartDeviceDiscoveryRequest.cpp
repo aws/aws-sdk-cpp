@@ -21,15 +21,26 @@ Aws::String StartDeviceDiscoveryRequest::SerializePayload() const
    payload.WithString("DiscoveryType", DiscoveryTypeMapper::GetNameForDiscoveryType(m_discoveryType));
   }
 
+  if(m_customProtocolDetailHasBeenSet)
+  {
+   JsonValue customProtocolDetailJsonMap;
+   for(auto& customProtocolDetailItem : m_customProtocolDetail)
+   {
+     customProtocolDetailJsonMap.WithString(customProtocolDetailItem.first, customProtocolDetailItem.second);
+   }
+   payload.WithObject("CustomProtocolDetail", std::move(customProtocolDetailJsonMap));
+
+  }
+
   if(m_controllerIdentifierHasBeenSet)
   {
    payload.WithString("ControllerIdentifier", m_controllerIdentifier);
 
   }
 
-  if(m_connectorAssociationIdentifierHasBeenSet)
+  if(m_accountAssociationIdHasBeenSet)
   {
-   payload.WithString("ConnectorAssociationIdentifier", m_connectorAssociationIdentifier);
+   payload.WithString("AccountAssociationId", m_accountAssociationId);
 
   }
 
@@ -47,17 +58,6 @@ Aws::String StartDeviceDiscoveryRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

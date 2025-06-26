@@ -27,9 +27,9 @@ Aws::String SendManagedThingCommandRequest::SerializePayload() const
 
   }
 
-  if(m_connectorAssociationIdHasBeenSet)
+  if(m_accountAssociationIdHasBeenSet)
   {
-   payload.WithString("ConnectorAssociationId", m_connectorAssociationId);
+   payload.WithString("AccountAssociationId", m_accountAssociationId);
 
   }
 

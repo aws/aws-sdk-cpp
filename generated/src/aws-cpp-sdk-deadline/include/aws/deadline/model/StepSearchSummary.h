@@ -160,6 +160,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number of times tasks from the step failed and were retried.</p>
+     */
+    inline int GetTaskFailureRetryCount() const { return m_taskFailureRetryCount; }
+    inline bool TaskFailureRetryCountHasBeenSet() const { return m_taskFailureRetryCountHasBeenSet; }
+    inline void SetTaskFailureRetryCount(int value) { m_taskFailureRetryCountHasBeenSet = true; m_taskFailureRetryCount = value; }
+    inline StepSearchSummary& WithTaskFailureRetryCount(int value) { SetTaskFailureRetryCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -233,6 +243,9 @@ namespace Model
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
     bool m_taskRunStatusCountsHasBeenSet = false;
+
+    int m_taskFailureRetryCount{0};
+    bool m_taskFailureRetryCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

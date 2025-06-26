@@ -107,6 +107,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number of times tasks from the step failed and were retried.</p>
+     */
+    inline int GetTaskFailureRetryCount() const { return m_taskFailureRetryCount; }
+    inline void SetTaskFailureRetryCount(int value) { m_taskFailureRetryCountHasBeenSet = true; m_taskFailureRetryCount = value; }
+    inline GetStepResult& WithTaskFailureRetryCount(int value) { SetTaskFailureRetryCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The task status with which the job started.</p>
      */
     inline StepTargetTaskRunStatus GetTargetTaskRunStatus() const { return m_targetTaskRunStatus; }
@@ -253,6 +262,9 @@ namespace Model
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
     bool m_taskRunStatusCountsHasBeenSet = false;
+
+    int m_taskFailureRetryCount{0};
+    bool m_taskFailureRetryCountHasBeenSet = false;
 
     StepTargetTaskRunStatus m_targetTaskRunStatus{StepTargetTaskRunStatus::NOT_SET};
     bool m_targetTaskRunStatusHasBeenSet = false;

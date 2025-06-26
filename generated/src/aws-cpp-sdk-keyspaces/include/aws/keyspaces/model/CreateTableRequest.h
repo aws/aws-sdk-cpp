@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
 #include <aws/keyspaces/model/AutoScalingSpecification.h>
+#include <aws/keyspaces/model/CdcSpecification.h>
 #include <aws/keyspaces/model/Tag.h>
 #include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <utility>
@@ -283,6 +284,18 @@ namespace Model
     template<typename ReplicaSpecificationsT = ReplicaSpecification>
     CreateTableRequest& AddReplicaSpecifications(ReplicaSpecificationsT&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.emplace_back(std::forward<ReplicaSpecificationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The CDC stream settings of the table.</p>
+     */
+    inline const CdcSpecification& GetCdcSpecification() const { return m_cdcSpecification; }
+    inline bool CdcSpecificationHasBeenSet() const { return m_cdcSpecificationHasBeenSet; }
+    template<typename CdcSpecificationT = CdcSpecification>
+    void SetCdcSpecification(CdcSpecificationT&& value) { m_cdcSpecificationHasBeenSet = true; m_cdcSpecification = std::forward<CdcSpecificationT>(value); }
+    template<typename CdcSpecificationT = CdcSpecification>
+    CreateTableRequest& WithCdcSpecification(CdcSpecificationT&& value) { SetCdcSpecification(std::forward<CdcSpecificationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyspaceName;
@@ -323,6 +336,9 @@ namespace Model
 
     Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
     bool m_replicaSpecificationsHasBeenSet = false;
+
+    CdcSpecification m_cdcSpecification;
+    bool m_cdcSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

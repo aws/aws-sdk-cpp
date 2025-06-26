@@ -8,7 +8,6 @@
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/model/DeliveryDestinationType.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -106,22 +105,6 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     CreateDestinationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A set of key/value pairs that are used to manage the destination.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    CreateDestinationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    CreateDestinationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
   private:
 
     Aws::String m_deliveryDestinationArn;
@@ -141,9 +124,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

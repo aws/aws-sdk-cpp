@@ -7,9 +7,9 @@
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/iot-managed-integrations/model/DiscoveryType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/model/DiscoveryAuthMaterialType.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -38,12 +38,31 @@ namespace Model
     ///@{
     /**
      * <p>The discovery type supporting the type of device to be discovered in the
-     * device discovery job request.</p>
+     * device discovery task request.</p>
      */
     inline DiscoveryType GetDiscoveryType() const { return m_discoveryType; }
     inline bool DiscoveryTypeHasBeenSet() const { return m_discoveryTypeHasBeenSet; }
     inline void SetDiscoveryType(DiscoveryType value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = value; }
     inline StartDeviceDiscoveryRequest& WithDiscoveryType(DiscoveryType value) { SetDiscoveryType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Additional protocol-specific details required for device discovery, which
+     * vary based on the discovery type.</p>  <p>For a <code>DiscoveryType</code>
+     * of <code>CUSTOM</code>, the string-to-string map must have a key value of
+     * <code>Name</code> set to a non-empty-string.</p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProtocolDetail() const { return m_customProtocolDetail; }
+    inline bool CustomProtocolDetailHasBeenSet() const { return m_customProtocolDetailHasBeenSet; }
+    template<typename CustomProtocolDetailT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomProtocolDetail(CustomProtocolDetailT&& value) { m_customProtocolDetailHasBeenSet = true; m_customProtocolDetail = std::forward<CustomProtocolDetailT>(value); }
+    template<typename CustomProtocolDetailT = Aws::Map<Aws::String, Aws::String>>
+    StartDeviceDiscoveryRequest& WithCustomProtocolDetail(CustomProtocolDetailT&& value) { SetCustomProtocolDetail(std::forward<CustomProtocolDetailT>(value)); return *this;}
+    template<typename CustomProtocolDetailKeyT = Aws::String, typename CustomProtocolDetailValueT = Aws::String>
+    StartDeviceDiscoveryRequest& AddCustomProtocolDetail(CustomProtocolDetailKeyT&& key, CustomProtocolDetailValueT&& value) {
+      m_customProtocolDetailHasBeenSet = true; m_customProtocolDetail.emplace(std::forward<CustomProtocolDetailKeyT>(key), std::forward<CustomProtocolDetailValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -60,14 +79,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The id of the connector association.</p>
+     * <p>The identifier of the cloud-to-cloud account association to use for discovery
+     * of third-party devices.</p>
      */
-    inline const Aws::String& GetConnectorAssociationIdentifier() const { return m_connectorAssociationIdentifier; }
-    inline bool ConnectorAssociationIdentifierHasBeenSet() const { return m_connectorAssociationIdentifierHasBeenSet; }
-    template<typename ConnectorAssociationIdentifierT = Aws::String>
-    void SetConnectorAssociationIdentifier(ConnectorAssociationIdentifierT&& value) { m_connectorAssociationIdentifierHasBeenSet = true; m_connectorAssociationIdentifier = std::forward<ConnectorAssociationIdentifierT>(value); }
-    template<typename ConnectorAssociationIdentifierT = Aws::String>
-    StartDeviceDiscoveryRequest& WithConnectorAssociationIdentifier(ConnectorAssociationIdentifierT&& value) { SetConnectorAssociationIdentifier(std::forward<ConnectorAssociationIdentifierT>(value)); return *this;}
+    inline const Aws::String& GetAccountAssociationId() const { return m_accountAssociationId; }
+    inline bool AccountAssociationIdHasBeenSet() const { return m_accountAssociationIdHasBeenSet; }
+    template<typename AccountAssociationIdT = Aws::String>
+    void SetAccountAssociationId(AccountAssociationIdT&& value) { m_accountAssociationIdHasBeenSet = true; m_accountAssociationId = std::forward<AccountAssociationIdT>(value); }
+    template<typename AccountAssociationIdT = Aws::String>
+    StartDeviceDiscoveryRequest& WithAccountAssociationId(AccountAssociationIdT&& value) { SetAccountAssociationId(std::forward<AccountAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,33 +126,19 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     StartDeviceDiscoveryRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A set of key/value pairs that are used to manage the device discovery
-     * request.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    StartDeviceDiscoveryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    StartDeviceDiscoveryRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
   private:
 
     DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
     bool m_discoveryTypeHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::String> m_customProtocolDetail;
+    bool m_customProtocolDetailHasBeenSet = false;
+
     Aws::String m_controllerIdentifier;
     bool m_controllerIdentifierHasBeenSet = false;
 
-    Aws::String m_connectorAssociationIdentifier;
-    bool m_connectorAssociationIdentifierHasBeenSet = false;
+    Aws::String m_accountAssociationId;
+    bool m_accountAssociationIdHasBeenSet = false;
 
     Aws::String m_authenticationMaterial;
     bool m_authenticationMaterialHasBeenSet = false;
@@ -142,9 +148,6 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

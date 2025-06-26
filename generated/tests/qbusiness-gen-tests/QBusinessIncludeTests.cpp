@@ -114,6 +114,10 @@
 #include <aws/qbusiness/model/CustomPluginConfiguration.h>
 #include <aws/qbusiness/model/CustomizationConfiguration.h>
 #include <aws/qbusiness/model/DataAccessor.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationConfiguration.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationDetail.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationType.h>
+#include <aws/qbusiness/model/DataAccessorIdcTrustedTokenIssuerConfiguration.h>
 #include <aws/qbusiness/model/DataSource.h>
 #include <aws/qbusiness/model/DataSourceStatus.h>
 #include <aws/qbusiness/model/DataSourceSyncJob.h>
@@ -273,6 +277,8 @@
 #include <aws/qbusiness/model/OpenIDConnectProviderConfiguration.h>
 #include <aws/qbusiness/model/OrchestrationConfiguration.h>
 #include <aws/qbusiness/model/OrchestrationControl.h>
+#include <aws/qbusiness/model/PermissionCondition.h>
+#include <aws/qbusiness/model/PermissionConditionOperator.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
 #include <aws/qbusiness/model/PersonalizationControlMode.h>
 #include <aws/qbusiness/model/Plugin.h>

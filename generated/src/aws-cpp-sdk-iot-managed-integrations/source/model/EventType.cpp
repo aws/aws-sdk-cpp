@@ -22,11 +22,13 @@ namespace Aws
 
         static const int DEVICE_COMMAND_HASH = HashingUtils::HashString("DEVICE_COMMAND");
         static const int DEVICE_COMMAND_REQUEST_HASH = HashingUtils::HashString("DEVICE_COMMAND_REQUEST");
+        static const int DEVICE_DISCOVERY_STATUS_HASH = HashingUtils::HashString("DEVICE_DISCOVERY_STATUS");
         static const int DEVICE_EVENT_HASH = HashingUtils::HashString("DEVICE_EVENT");
         static const int DEVICE_LIFE_CYCLE_HASH = HashingUtils::HashString("DEVICE_LIFE_CYCLE");
         static const int DEVICE_STATE_HASH = HashingUtils::HashString("DEVICE_STATE");
         static const int DEVICE_OTA_HASH = HashingUtils::HashString("DEVICE_OTA");
         static const int CONNECTOR_ASSOCIATION_HASH = HashingUtils::HashString("CONNECTOR_ASSOCIATION");
+        static const int ACCOUNT_ASSOCIATION_HASH = HashingUtils::HashString("ACCOUNT_ASSOCIATION");
         static const int CONNECTOR_ERROR_REPORT_HASH = HashingUtils::HashString("CONNECTOR_ERROR_REPORT");
 
 
@@ -40,6 +42,10 @@ namespace Aws
           else if (hashCode == DEVICE_COMMAND_REQUEST_HASH)
           {
             return EventType::DEVICE_COMMAND_REQUEST;
+          }
+          else if (hashCode == DEVICE_DISCOVERY_STATUS_HASH)
+          {
+            return EventType::DEVICE_DISCOVERY_STATUS;
           }
           else if (hashCode == DEVICE_EVENT_HASH)
           {
@@ -60,6 +66,10 @@ namespace Aws
           else if (hashCode == CONNECTOR_ASSOCIATION_HASH)
           {
             return EventType::CONNECTOR_ASSOCIATION;
+          }
+          else if (hashCode == ACCOUNT_ASSOCIATION_HASH)
+          {
+            return EventType::ACCOUNT_ASSOCIATION;
           }
           else if (hashCode == CONNECTOR_ERROR_REPORT_HASH)
           {
@@ -85,6 +95,8 @@ namespace Aws
             return "DEVICE_COMMAND";
           case EventType::DEVICE_COMMAND_REQUEST:
             return "DEVICE_COMMAND_REQUEST";
+          case EventType::DEVICE_DISCOVERY_STATUS:
+            return "DEVICE_DISCOVERY_STATUS";
           case EventType::DEVICE_EVENT:
             return "DEVICE_EVENT";
           case EventType::DEVICE_LIFE_CYCLE:
@@ -95,6 +107,8 @@ namespace Aws
             return "DEVICE_OTA";
           case EventType::CONNECTOR_ASSOCIATION:
             return "CONNECTOR_ASSOCIATION";
+          case EventType::ACCOUNT_ASSOCIATION:
+            return "ACCOUNT_ASSOCIATION";
           case EventType::CONNECTOR_ERROR_REPORT:
             return "CONNECTOR_ERROR_REPORT";
           default:

@@ -141,9 +141,11 @@ namespace Model
     /**
      * <p>Indicates whether the key material being imported is previously associated
      * with this KMS key or not. This parameter is optional and only usable with
-     * symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If
-     * no key material has ever been imported into the KMS key, and this parameter is
-     * omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+     * symmetric encryption keys. If no key material has ever been imported into the
+     * KMS key, and this parameter is omitted, the parameter defaults to
+     * <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this
+     * parameter is omitted then the parameter defaults to
+     * <code>EXISTING_KEY_MATERIAL</code>.</p>
      */
     inline ImportType GetImportType() const { return m_importType; }
     inline bool ImportTypeHasBeenSet() const { return m_importTypeHasBeenSet; }

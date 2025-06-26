@@ -90,10 +90,10 @@ GetManagedThingResult& GetManagedThingResult::operator =(const Aws::AmazonWebSer
     m_internationalArticleNumber = jsonValue.GetString("InternationalArticleNumber");
     m_internationalArticleNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorPolicyId"))
+  if(jsonValue.ValueExists("ConnectorDestinationId"))
   {
-    m_connectorPolicyId = jsonValue.GetString("ConnectorPolicyId");
-    m_connectorPolicyIdHasBeenSet = true;
+    m_connectorDestinationId = jsonValue.GetString("ConnectorDestinationId");
+    m_connectorDestinationIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ConnectorDeviceId"))
   {

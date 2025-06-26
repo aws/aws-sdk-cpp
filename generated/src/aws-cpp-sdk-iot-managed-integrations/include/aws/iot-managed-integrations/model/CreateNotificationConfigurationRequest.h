@@ -8,7 +8,6 @@
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/iot-managed-integrations/model/EventType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -71,23 +70,6 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateNotificationConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A set of key/value pairs that are used to manage the notification
-     * configuration.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    CreateNotificationConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    CreateNotificationConfigurationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
   private:
 
     EventType m_eventType{EventType::NOT_SET};
@@ -98,9 +80,6 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

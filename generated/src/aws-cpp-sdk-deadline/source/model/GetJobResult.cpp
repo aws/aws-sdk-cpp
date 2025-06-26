@@ -99,6 +99,11 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("taskFailureRetryCount"))
+  {
+    m_taskFailureRetryCount = jsonValue.GetInteger("taskFailureRetryCount");
+    m_taskFailureRetryCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");

@@ -235,6 +235,18 @@ namespace Model
     template<typename CoreNetworkArnT = Aws::String>
     Route& WithCoreNetworkArn(CoreNetworkArnT&& value) { SetCoreNetworkArn(std::forward<CoreNetworkArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+     */
+    inline const Aws::String& GetOdbNetworkArn() const { return m_odbNetworkArn; }
+    inline bool OdbNetworkArnHasBeenSet() const { return m_odbNetworkArnHasBeenSet; }
+    template<typename OdbNetworkArnT = Aws::String>
+    void SetOdbNetworkArn(OdbNetworkArnT&& value) { m_odbNetworkArnHasBeenSet = true; m_odbNetworkArn = std::forward<OdbNetworkArnT>(value); }
+    template<typename OdbNetworkArnT = Aws::String>
+    Route& WithOdbNetworkArn(OdbNetworkArnT&& value) { SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -284,6 +296,9 @@ namespace Model
 
     Aws::String m_coreNetworkArn;
     bool m_coreNetworkArnHasBeenSet = false;
+
+    Aws::String m_odbNetworkArn;
+    bool m_odbNetworkArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,6 +44,11 @@ Aws::String CreateRouteRequest::SerializePayload() const
     ss << "CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
   }
 
+  if(m_odbNetworkArnHasBeenSet)
+  {
+    ss << "OdbNetworkArn=" << StringUtils::URLEncode(m_odbNetworkArn.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

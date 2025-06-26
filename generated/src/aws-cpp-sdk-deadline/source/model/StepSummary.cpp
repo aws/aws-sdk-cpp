@@ -59,6 +59,11 @@ StepSummary& StepSummary::operator =(JsonView jsonValue)
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("taskFailureRetryCount"))
+  {
+    m_taskFailureRetryCount = jsonValue.GetInteger("taskFailureRetryCount");
+    m_taskFailureRetryCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("targetTaskRunStatus"))
   {
     m_targetTaskRunStatus = StepTargetTaskRunStatusMapper::GetStepTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
@@ -142,6 +147,12 @@ JsonValue StepSummary::Jsonize() const
      taskRunStatusCountsJsonMap.WithInteger(TaskRunStatusMapper::GetNameForTaskRunStatus(taskRunStatusCountsItem.first), taskRunStatusCountsItem.second);
    }
    payload.WithObject("taskRunStatusCounts", std::move(taskRunStatusCountsJsonMap));
+
+  }
+
+  if(m_taskFailureRetryCountHasBeenSet)
+  {
+   payload.WithInteger("taskFailureRetryCount", m_taskFailureRetryCount);
 
   }
 

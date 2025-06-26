@@ -45,6 +45,12 @@ Aws::String CreateDataAccessorRequest::SerializePayload() const
 
   }
 
+  if(m_authenticationDetailHasBeenSet)
+  {
+   payload.WithObject("authenticationDetail", m_authenticationDetail.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
