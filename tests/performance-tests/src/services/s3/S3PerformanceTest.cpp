@@ -8,9 +8,9 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/BucketInfo.h>
 #include <aws/s3/model/BucketType.h>
@@ -26,13 +26,12 @@
 
 #include <iostream>
 #include <string>
-#include <utility>
 
 bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCase& config, const Aws::String& availabilityZoneId,
                                             int iterations) {
-  Aws::Vector<std::pair<Aws::String, Aws::String>> dimensions;
-  dimensions.emplace_back("Size", config.sizeLabel);
-  dimensions.emplace_back("BucketType", config.bucketTypeLabel);
+  Aws::Map<Aws::String, Aws::String> dimensions;
+  dimensions["Size"] = config.sizeLabel;
+  dimensions["BucketType"] = config.bucketTypeLabel;
   PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
 
   Aws::String bucketName;
@@ -87,7 +86,8 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
   }
 
   for (int i = 0; i < iterations; i++) {
-    s3.DeleteObject(Aws::S3::Model::DeleteObjectRequest().WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)));
+    s3.DeleteObject(
+        Aws::S3::Model::DeleteObjectRequest().WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)));
   }
   s3.DeleteBucket(Aws::S3::Model::DeleteBucketRequest().WithBucket(bucketName));
 

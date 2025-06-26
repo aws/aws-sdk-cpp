@@ -26,16 +26,14 @@
 
 using namespace PerformanceTest::Reporting;
 
-Aws::Vector<std::pair<Aws::String, Aws::String>> JsonReportingMetrics::TestDimensions;
+Aws::Map<Aws::String, Aws::String> JsonReportingMetrics::TestDimensions;
 Aws::Set<Aws::String> JsonReportingMetrics::MonitoredOperations;
 Aws::String JsonReportingMetrics::ProductId = "unknown";
 Aws::String JsonReportingMetrics::SdkVersion = "unknown";
 Aws::String JsonReportingMetrics::CommitId = "unknown";
 Aws::String JsonReportingMetrics::OutputFilename = "performance-test-results.json";
 
-void JsonReportingMetrics::SetTestContext(const Aws::Vector<std::pair<Aws::String, Aws::String>>& dimensions) {
-  TestDimensions = dimensions;
-}
+void JsonReportingMetrics::SetTestContext(const Aws::Map<Aws::String, Aws::String>& dimensions) { TestDimensions = dimensions; }
 
 void JsonReportingMetrics::RegisterOperationsToMonitor(const Aws::Vector<Aws::String>& operations) {
   MonitoredOperations.clear();
@@ -78,8 +76,8 @@ void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, 
       Aws::Utils::StringUtils::ToLower(serviceName.c_str()) + "." + Aws::Utils::StringUtils::ToLower(requestName.c_str()) + ".latency";
   record.description = "Time to complete " + requestName + " operation";
   record.unit = "Milliseconds";
-  record.date = Aws::Utils::DateTime::Now().Seconds();
-  record.measurements.push_back(durationMs);
+  record.date = Aws::Utils::DateTime::Now();
+  record.measurements.emplace_back(durationMs);
   record.dimensions = TestDimensions;
 
   m_performanceRecords.push_back(record);
@@ -146,24 +144,29 @@ void JsonReportingMetrics::DumpJson() const {
     jsonMetric.WithString("name", record.name);
     jsonMetric.WithString("description", record.description);
     jsonMetric.WithString("unit", record.unit);
-    jsonMetric.WithInt64("date", record.date);
+    jsonMetric.WithInt64("date", record.date.Seconds());
 
     if (!record.dimensions.empty()) {
       Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size());
-      for (size_t j = 0; j < record.dimensions.size(); ++j) {
+      size_t dimensionIndex = 0;
+      for (const auto& dim : record.dimensions) {
         Aws::Utils::Json::JsonValue dimension;
-        dimension.WithString("name", record.dimensions[j].first);
-        dimension.WithString("value", record.dimensions[j].second);
-        dimensionsArray[j] = std::move(dimension);
+        dimension.WithString("name", dim.first);
+        dimension.WithString("value", dim.second);
+        dimensionsArray[dimensionIndex++] = std::move(dimension);
       }
       jsonMetric.WithArray("dimensions", std::move(dimensionsArray));
     }
 
     Aws::Utils::Array<Aws::Utils::Json::JsonValue> measurementsArray(record.measurements.size());
-    for (size_t j = 0; j < record.measurements.size(); ++j) {
+    for (size_t measurementIndex = 0; measurementIndex < record.measurements.size(); ++measurementIndex) {
       Aws::Utils::Json::JsonValue measurementValue;
-      measurementValue.AsInt64(record.measurements[j]);
-      measurementsArray[j] = std::move(measurementValue);
+      if (record.measurements[measurementIndex].IsDouble()) {
+        measurementValue.AsDouble(record.measurements[measurementIndex].AsDouble());
+      } else {
+        measurementValue.AsInt64(record.measurements[measurementIndex].AsInt64());
+      }
+      measurementsArray[measurementIndex] = std::move(measurementValue);
     }
     jsonMetric.WithArray("measurements", std::move(measurementsArray));
 

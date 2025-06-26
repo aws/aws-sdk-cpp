@@ -7,7 +7,6 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/AttributeValue.h>
@@ -28,11 +27,10 @@
 #include <iostream>
 #include <string>
 #include <thread>
-#include <utility>
 
 bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
-  Aws::Vector<std::pair<Aws::String, Aws::String>> dimensions;
-  dimensions.emplace_back("Size", config.sizeLabel);
+  Aws::Map<Aws::String, Aws::String> dimensions;
+  dimensions["Size"] = config.sizeLabel;
   PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
 
   Aws::String tableName;

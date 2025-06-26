@@ -10,17 +10,40 @@
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/monitoring/MonitoringInterface.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <cstdint>
 #include <memory>
-#include <utility>
 
 namespace PerformanceTest {
 namespace Reporting {
+/**
+ * A measurement value that supports different numeric types.
+ */
+class Measurement {
+ public:
+  enum Type { INTEGER, DOUBLE };
+
+  Measurement(int64_t value) : m_type(INTEGER) { m_data.i = value; }
+  Measurement(double value) : m_type(DOUBLE) { m_data.d = value; }
+  bool IsInt64() const { return m_type == INTEGER; }
+  bool IsDouble() const { return m_type == DOUBLE; }
+  int64_t AsInt64() const { return m_type == INTEGER ? m_data.i : static_cast<int64_t>(m_data.d); }
+  double AsDouble() const { return m_type == DOUBLE ? m_data.d : static_cast<double>(m_data.i); }
+
+ private:
+  Type m_type;
+  union {
+    int64_t i;
+    double d;
+  } m_data;
+};
+
 /**
  * Container for a single performance metric record that stores measurement data and associated metadata.
  */
@@ -28,9 +51,9 @@ struct PerformanceMetricRecord {
   Aws::String name;
   Aws::String description;
   Aws::String unit;
-  int64_t date;
-  Aws::Vector<int64_t> measurements;
-  Aws::Vector<std::pair<Aws::String, Aws::String>> dimensions;
+  Aws::Utils::DateTime date;
+  Aws::Vector<Measurement> measurements;
+  Aws::Map<Aws::String, Aws::String> dimensions;
 };
 
 /**
@@ -101,7 +124,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * Sets test dimensions that will be included with all performance records.
    * @param dimensions Vector of key-value pairs representing test dimensions (e.g., size, bucket type)
    */
-  static void SetTestContext(const Aws::Vector<std::pair<Aws::String, Aws::String>>& dimensions);
+  static void SetTestContext(const Aws::Map<Aws::String, Aws::String>& dimensions);
 
   /**
    * Registers specific operations to monitor. If empty, all operations are monitored.
@@ -140,7 +163,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void DumpJson() const;
 
   mutable Aws::Vector<PerformanceMetricRecord> m_performanceRecords;
-  static Aws::Vector<std::pair<Aws::String, Aws::String>> TestDimensions;
+  static Aws::Map<Aws::String, Aws::String> TestDimensions;
   static Aws::Set<Aws::String> MonitoredOperations;
   static Aws::String ProductId;
   static Aws::String SdkVersion;
