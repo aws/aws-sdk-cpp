@@ -341,7 +341,7 @@ if (LEGACY_BUILD)
     add_sdks()
     include(tests)
 
-    #Performance tests (under tests/performance_tests)
+    #Performance tests (under tests/performance-tests)
     option(BUILD_PERFORMANCE_TESTS "Build AWS C++ performance tests" OFF)
     if(BUILD_PERFORMANCE_TESTS)
         add_subdirectory(tests/performance-tests)
