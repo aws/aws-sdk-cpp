@@ -36,20 +36,18 @@ int main(int argc, char** argv) {
   }
 
   Aws::SDKOptions options;
-  options.monitoringOptions.customizedMonitoringFactory_create_fn = {[]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
-    return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>("JsonReportingMetricsFactory");
+  Aws::SDKOptions::SDKVersion const version;
+  Aws::String const versionStr = Aws::Utils::StringUtils::to_string(static_cast<int>(version.major)) + "." +
+                                 Aws::Utils::StringUtils::to_string(static_cast<int>(version.minor)) + "." +
+                                 Aws::Utils::StringUtils::to_string(static_cast<int>(version.patch));
+
+  options.monitoringOptions.customizedMonitoringFactory_create_fn = {[&]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
+    return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>(
+        "JsonReportingMetricsFactory", PerformanceTest::Services::S3::TestConfig::Operations, "cpp1", versionStr, commitId,
+        PerformanceTest::Services::S3::TestConfig::OutputFilename);
   }};
 
   Aws::InitAPI(options);
-
-  PerformanceTest::Reporting::JsonReportingMetrics::RegisterOperationsToMonitor(PerformanceTest::Services::S3::TestConfig::Operations);
-
-  Aws::SDKOptions::SDKVersion const version;
-  Aws::String const versionStr = Aws::Utils::StringUtils::to_string(version.major) + "." +
-                                 Aws::Utils::StringUtils::to_string(version.minor) + "." +
-                                 Aws::Utils::StringUtils::to_string(version.patch);
-  PerformanceTest::Reporting::JsonReportingMetrics::SetProductInfo("cpp1", versionStr, commitId);
-  PerformanceTest::Reporting::JsonReportingMetrics::SetOutputFilename(PerformanceTest::Services::S3::TestConfig::OutputFilename);
 
   {
     Aws::Client::ClientConfiguration cfg;

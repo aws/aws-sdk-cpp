@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -12,7 +13,7 @@ namespace PerformanceTest {
 namespace Services {
 namespace S3 {
 namespace TestConfig {
-const Aws::Vector<Aws::String> Operations = {"PutObject", "GetObject"};
+const Aws::Set<Aws::String> Operations = {"PutObject", "GetObject"};
 
 const Aws::Vector<TestCase> TestMatrix = {{"8KB", 8 * 1024, "s3-standard"},    {"64KB", 64 * 1024, "s3-standard"},
                                           {"1MB", 1024 * 1024, "s3-standard"}, {"8KB", 8 * 1024, "s3-express"},

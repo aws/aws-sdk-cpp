@@ -29,11 +29,6 @@
 
 bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCase& config, const Aws::String& availabilityZoneId,
                                             int iterations) {
-  Aws::Map<Aws::String, Aws::String> dimensions;
-  dimensions["Size"] = config.sizeLabel;
-  dimensions["BucketType"] = config.bucketTypeLabel;
-  PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
-
   Aws::String bucketName;
   Aws::S3::Model::CreateBucketRequest cbr;
   Aws::String const rawUUID = Aws::Utils::UUID::RandomUUID();
@@ -71,6 +66,8 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
 
     Aws::S3::Model::PutObjectRequest por;
     por.WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)).SetBody(stream);
+    por.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
+    por.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", config.bucketTypeLabel);
     if (!s3.PutObject(por).IsSuccess()) {
       std::cerr << "[ERROR] PutObject failed!" << '\n';
     }
@@ -80,6 +77,8 @@ bool PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCas
   for (int i = 0; i < iterations; i++) {
     Aws::S3::Model::GetObjectRequest gor;
     gor.WithBucket(bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i));
+    gor.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
+    gor.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", config.bucketTypeLabel);
     if (!s3.GetObject(gor).IsSuccess()) {
       std::cerr << "[ERROR] GetObject failed!" << '\n';
     }

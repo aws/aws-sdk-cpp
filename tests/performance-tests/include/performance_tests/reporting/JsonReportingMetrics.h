@@ -62,6 +62,18 @@ struct PerformanceMetricRecord {
  */
 class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
  public:
+  /**
+   * Constructor that initializes the metrics collector with configuration parameters.
+   * @param monitoredOperations Set of operations to monitor (empty means monitor all)
+   * @param productId Product identifier (e.g., "cpp1")
+   * @param sdkVersion SDK version string
+   * @param commitId Git commit identifier
+   * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   */
+  JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(), const Aws::String& productId = "unknown",
+                       const Aws::String& sdkVersion = "unknown", const Aws::String& commitId = "unknown",
+                       const Aws::String& outputFilename = "performance-test-results.json");
+
   ~JsonReportingMetrics() override;
 
   /**
@@ -120,41 +132,18 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
                 const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
 
-  /**
-   * Sets test dimensions that will be included with all performance records.
-   * @param dimensions Vector of key-value pairs representing test dimensions (e.g., size, bucket type)
-   */
-  static void SetTestContext(const Aws::Map<Aws::String, Aws::String>& dimensions);
-
-  /**
-   * Registers specific operations to monitor. If empty, all operations are monitored.
-   * @param operations Vector of operation names to track (e.g., "PutObject", "GetItem")
-   */
-  static void RegisterOperationsToMonitor(const Aws::Vector<Aws::String>& operations);
-
-  /**
-   * Sets product information to include in the JSON output.
-   * @param productId Product identifier (e.g., "cpp1")
-   * @param sdkVersion SDK version string
-   * @param commitId Git commit identifier
-   */
-  static void SetProductInfo(const Aws::String& productId, const Aws::String& sdkVersion, const Aws::String& commitId);
-
-  /**
-   * Sets the output filename for the JSON performance report.
-   * @param filename Path to output file (e.g., "s3-perf-results.json")
-   */
-  static void SetOutputFilename(const Aws::String& filename);
-
  private:
   /**
-   * Adds a performance record for a completed AWS service operation.
+   * Adds a performance record with a specified duration.
    * @param serviceName Name of the AWS service (e.g., "S3", "DynamoDB")
    * @param requestName Name of the operation (e.g., "PutObject", "GetItem")
    * @param metricsFromCore Core metrics collection containing latency data
+   * @param request HTTP request object (optional, for extracting test metadata)
+   * @param durationMs Duration of the request in milliseconds (default: 0)
    */
   void AddPerformanceRecord(const Aws::String& serviceName, const Aws::String& requestName,
-                            const Aws::Monitoring::CoreMetricsCollection& metricsFromCore) const;
+                            const Aws::Monitoring::CoreMetricsCollection& metricsFromCore,
+                            const std::shared_ptr<const Aws::Http::HttpRequest>& request = nullptr, int64_t durationMs = 0) const;
 
   /**
    * Outputs aggregated performance metrics to JSON file.
@@ -163,12 +152,11 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void DumpJson() const;
 
   mutable Aws::Vector<PerformanceMetricRecord> m_performanceRecords;
-  static Aws::Map<Aws::String, Aws::String> TestDimensions;
-  static Aws::Set<Aws::String> MonitoredOperations;
-  static Aws::String ProductId;
-  static Aws::String SdkVersion;
-  static Aws::String CommitId;
-  static Aws::String OutputFilename;
+  Aws::Set<Aws::String> m_monitoredOperations;
+  Aws::String m_productId;
+  Aws::String m_sdkVersion;
+  Aws::String m_commitId;
+  Aws::String m_outputFilename;
 };
 
 /**
@@ -177,12 +165,32 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
  */
 class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
  public:
+  /**
+   * Constructor that initializes the factory with configuration parameters.
+   * @param monitoredOperations Set of operations to monitor (empty means monitor all)
+   * @param productId Product identifier (e.g., "cpp1")
+   * @param sdkVersion SDK version string
+   * @param commitId Git commit identifier
+   * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   */
+  JsonReportingMetricsFactory(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(),
+                              const Aws::String& productId = "unknown", const Aws::String& sdkVersion = "unknown",
+                              const Aws::String& commitId = "unknown", const Aws::String& outputFilename = "performance-test-results.json");
+
   ~JsonReportingMetricsFactory() override = default;
+
   /**
    * Creates a new JsonReportingMetrics instance for performance monitoring.
    * @return Unique pointer to monitoring interface implementation
    */
   Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> CreateMonitoringInstance() const override;
+
+ private:
+  Aws::Set<Aws::String> m_monitoredOperations;
+  Aws::String m_productId;
+  Aws::String m_sdkVersion;
+  Aws::String m_commitId;
+  Aws::String m_outputFilename;
 };
 }  // namespace Reporting
 }  // namespace PerformanceTest

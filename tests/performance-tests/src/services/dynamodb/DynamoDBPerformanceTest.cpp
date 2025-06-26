@@ -29,10 +29,6 @@
 #include <thread>
 
 bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
-  Aws::Map<Aws::String, Aws::String> dimensions;
-  dimensions["Size"] = config.sizeLabel;
-  PerformanceTest::Reporting::JsonReportingMetrics::SetTestContext(dimensions);
-
   Aws::String tableName;
   Aws::String const rawUUID = Aws::Utils::UUID::RandomUUID();
   Aws::String const tableId = Aws::Utils::StringUtils::ToLower(rawUUID.c_str()).substr(0, 8);
@@ -80,6 +76,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
   for (int i = 0; i < iterations; i++) {
     Aws::DynamoDB::Model::PutItemRequest putItemRequest;
     putItemRequest.SetTableName(tableName);
+    putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> item;
     item["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
@@ -96,6 +93,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
   for (int i = 0; i < iterations; i++) {
     Aws::DynamoDB::Model::GetItemRequest getItemRequest;
     getItemRequest.SetTableName(tableName);
+    getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> key;
     key["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
