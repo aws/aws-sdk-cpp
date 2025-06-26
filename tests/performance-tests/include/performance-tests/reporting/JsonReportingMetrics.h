@@ -93,7 +93,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param request HTTP request object
    * @param outcome HTTP response outcome
    * @param metrics Core metrics collection containing latency data
-   * @param context Request context (unused)
+   * @param context Request context
    */
   void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
                           const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
@@ -106,7 +106,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param request HTTP request object
    * @param outcome HTTP response outcome
    * @param metrics Core metrics collection containing latency data
-   * @param context Request context (unused)
+   * @param context Request context
    */
   void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName,
                        const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
@@ -117,7 +117,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
-   * @param context Request context (unused)
+   * @param context Request context
    */
   void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
                       const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
@@ -127,7 +127,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
-   * @param context Request context (unused)
+   * @param context Request context
    */
   void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
                 const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
