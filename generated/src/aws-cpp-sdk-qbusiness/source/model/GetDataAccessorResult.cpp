@@ -64,6 +64,11 @@ GetDataAccessorResult& GetDataAccessorResult::operator =(const Aws::AmazonWebSer
     }
     m_actionConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("authenticationDetail"))
+  {
+    m_authenticationDetail = jsonValue.GetObject("authenticationDetail");
+    m_authenticationDetailHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");

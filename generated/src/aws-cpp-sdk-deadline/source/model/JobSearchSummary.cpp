@@ -69,6 +69,11 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("taskFailureRetryCount"))
+  {
+    m_taskFailureRetryCount = jsonValue.GetInteger("taskFailureRetryCount");
+    m_taskFailureRetryCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
@@ -177,6 +182,12 @@ JsonValue JobSearchSummary::Jsonize() const
      taskRunStatusCountsJsonMap.WithInteger(TaskRunStatusMapper::GetNameForTaskRunStatus(taskRunStatusCountsItem.first), taskRunStatusCountsItem.second);
    }
    payload.WithObject("taskRunStatusCounts", std::move(taskRunStatusCountsJsonMap));
+
+  }
+
+  if(m_taskFailureRetryCountHasBeenSet)
+  {
+   payload.WithInteger("taskFailureRetryCount", m_taskFailureRetryCount);
 
   }
 

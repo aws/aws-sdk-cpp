@@ -49,6 +49,8 @@ enum class IoTManagedIntegrationsErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
+  INVALID_REQUEST,
+  LIMIT_EXCEEDED,
   SERVICE_QUOTA_EXCEEDED,
   UNAUTHORIZED
 };

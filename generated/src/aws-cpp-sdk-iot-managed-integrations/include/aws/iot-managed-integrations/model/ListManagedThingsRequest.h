@@ -89,14 +89,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filter on a connector policy id for a managed thing.</p>
+     * <p>Filter managed things by the connector destination ID they are associated
+     * with.</p>
      */
-    inline const Aws::String& GetConnectorPolicyIdFilter() const { return m_connectorPolicyIdFilter; }
-    inline bool ConnectorPolicyIdFilterHasBeenSet() const { return m_connectorPolicyIdFilterHasBeenSet; }
-    template<typename ConnectorPolicyIdFilterT = Aws::String>
-    void SetConnectorPolicyIdFilter(ConnectorPolicyIdFilterT&& value) { m_connectorPolicyIdFilterHasBeenSet = true; m_connectorPolicyIdFilter = std::forward<ConnectorPolicyIdFilterT>(value); }
-    template<typename ConnectorPolicyIdFilterT = Aws::String>
-    ListManagedThingsRequest& WithConnectorPolicyIdFilter(ConnectorPolicyIdFilterT&& value) { SetConnectorPolicyIdFilter(std::forward<ConnectorPolicyIdFilterT>(value)); return *this;}
+    inline const Aws::String& GetConnectorDestinationIdFilter() const { return m_connectorDestinationIdFilter; }
+    inline bool ConnectorDestinationIdFilterHasBeenSet() const { return m_connectorDestinationIdFilterHasBeenSet; }
+    template<typename ConnectorDestinationIdFilterT = Aws::String>
+    void SetConnectorDestinationIdFilter(ConnectorDestinationIdFilterT&& value) { m_connectorDestinationIdFilterHasBeenSet = true; m_connectorDestinationIdFilter = std::forward<ConnectorDestinationIdFilterT>(value); }
+    template<typename ConnectorDestinationIdFilterT = Aws::String>
+    ListManagedThingsRequest& WithConnectorDestinationIdFilter(ConnectorDestinationIdFilterT&& value) { SetConnectorDestinationIdFilter(std::forward<ConnectorDestinationIdFilterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter managed things by the connector device ID they are associated with.
+     * When specified, only managed things with this connector device ID will be
+     * returned.</p>
+     */
+    inline const Aws::String& GetConnectorDeviceIdFilter() const { return m_connectorDeviceIdFilter; }
+    inline bool ConnectorDeviceIdFilterHasBeenSet() const { return m_connectorDeviceIdFilterHasBeenSet; }
+    template<typename ConnectorDeviceIdFilterT = Aws::String>
+    void SetConnectorDeviceIdFilter(ConnectorDeviceIdFilterT&& value) { m_connectorDeviceIdFilterHasBeenSet = true; m_connectorDeviceIdFilter = std::forward<ConnectorDeviceIdFilterT>(value); }
+    template<typename ConnectorDeviceIdFilterT = Aws::String>
+    ListManagedThingsRequest& WithConnectorDeviceIdFilter(ConnectorDeviceIdFilterT&& value) { SetConnectorDeviceIdFilter(std::forward<ConnectorDeviceIdFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,8 +171,11 @@ namespace Model
     Aws::String m_parentControllerIdentifierFilter;
     bool m_parentControllerIdentifierFilterHasBeenSet = false;
 
-    Aws::String m_connectorPolicyIdFilter;
-    bool m_connectorPolicyIdFilterHasBeenSet = false;
+    Aws::String m_connectorDestinationIdFilter;
+    bool m_connectorDestinationIdFilterHasBeenSet = false;
+
+    Aws::String m_connectorDeviceIdFilter;
+    bool m_connectorDeviceIdFilterHasBeenSet = false;
 
     Aws::String m_serialNumberFilter;
     bool m_serialNumberFilterHasBeenSet = false;

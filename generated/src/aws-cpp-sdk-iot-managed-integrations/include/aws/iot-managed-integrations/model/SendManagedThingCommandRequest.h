@@ -62,15 +62,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID tracking the current discovery process for one connector
-     * association.</p>
+     * <p>The identifier of the account association to use when sending a command to a
+     * managed thing.</p>
      */
-    inline const Aws::String& GetConnectorAssociationId() const { return m_connectorAssociationId; }
-    inline bool ConnectorAssociationIdHasBeenSet() const { return m_connectorAssociationIdHasBeenSet; }
-    template<typename ConnectorAssociationIdT = Aws::String>
-    void SetConnectorAssociationId(ConnectorAssociationIdT&& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = std::forward<ConnectorAssociationIdT>(value); }
-    template<typename ConnectorAssociationIdT = Aws::String>
-    SendManagedThingCommandRequest& WithConnectorAssociationId(ConnectorAssociationIdT&& value) { SetConnectorAssociationId(std::forward<ConnectorAssociationIdT>(value)); return *this;}
+    inline const Aws::String& GetAccountAssociationId() const { return m_accountAssociationId; }
+    inline bool AccountAssociationIdHasBeenSet() const { return m_accountAssociationIdHasBeenSet; }
+    template<typename AccountAssociationIdT = Aws::String>
+    void SetAccountAssociationId(AccountAssociationIdT&& value) { m_accountAssociationIdHasBeenSet = true; m_accountAssociationId = std::forward<AccountAssociationIdT>(value); }
+    template<typename AccountAssociationIdT = Aws::String>
+    SendManagedThingCommandRequest& WithAccountAssociationId(AccountAssociationIdT&& value) { SetAccountAssociationId(std::forward<AccountAssociationIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -80,8 +80,8 @@ namespace Model
     Aws::Vector<CommandEndpoint> m_endpoints;
     bool m_endpointsHasBeenSet = false;
 
-    Aws::String m_connectorAssociationId;
-    bool m_connectorAssociationIdHasBeenSet = false;
+    Aws::String m_accountAssociationId;
+    bool m_accountAssociationIdHasBeenSet = false;
   };
 
 } // namespace Model

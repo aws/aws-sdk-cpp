@@ -88,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Auto Scaling status of the fleet.</p>
+     * <p>The status of the fleet.</p>
      */
     inline FleetStatus GetStatus() const { return m_status; }
     inline void SetStatus(FleetStatus value) { m_statusHasBeenSet = true; m_status = value; }

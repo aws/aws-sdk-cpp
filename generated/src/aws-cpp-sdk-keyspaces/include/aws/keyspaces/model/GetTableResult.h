@@ -16,6 +16,7 @@
 #include <aws/keyspaces/model/Comment.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/CdcSpecificationSummary.h>
 #include <aws/keyspaces/model/ReplicaSpecificationSummary.h>
 #include <utility>
 
@@ -199,6 +200,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream.</p>
+     */
+    inline const Aws::String& GetLatestStreamArn() const { return m_latestStreamArn; }
+    template<typename LatestStreamArnT = Aws::String>
+    void SetLatestStreamArn(LatestStreamArnT&& value) { m_latestStreamArnHasBeenSet = true; m_latestStreamArn = std::forward<LatestStreamArnT>(value); }
+    template<typename LatestStreamArnT = Aws::String>
+    GetTableResult& WithLatestStreamArn(LatestStreamArnT&& value) { SetLatestStreamArn(std::forward<LatestStreamArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CDC stream settings of the table.</p>
+     */
+    inline const CdcSpecificationSummary& GetCdcSpecification() const { return m_cdcSpecification; }
+    template<typename CdcSpecificationT = CdcSpecificationSummary>
+    void SetCdcSpecification(CdcSpecificationT&& value) { m_cdcSpecificationHasBeenSet = true; m_cdcSpecification = std::forward<CdcSpecificationT>(value); }
+    template<typename CdcSpecificationT = CdcSpecificationSummary>
+    GetTableResult& WithCdcSpecification(CdcSpecificationT&& value) { SetCdcSpecification(std::forward<CdcSpecificationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -249,6 +272,12 @@ namespace Model
 
     Aws::Vector<ReplicaSpecificationSummary> m_replicaSpecifications;
     bool m_replicaSpecificationsHasBeenSet = false;
+
+    Aws::String m_latestStreamArn;
+    bool m_latestStreamArnHasBeenSet = false;
+
+    CdcSpecificationSummary m_cdcSpecification;
+    bool m_cdcSpecificationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -50,6 +50,11 @@ DataAccessor& DataAccessor::operator =(JsonView jsonValue)
     m_principal = jsonValue.GetString("principal");
     m_principalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("authenticationDetail"))
+  {
+    m_authenticationDetail = jsonValue.GetObject("authenticationDetail");
+    m_authenticationDetailHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -94,6 +99,12 @@ JsonValue DataAccessor::Jsonize() const
   if(m_principalHasBeenSet)
   {
    payload.WithString("principal", m_principal);
+
+  }
+
+  if(m_authenticationDetailHasBeenSet)
+  {
+   payload.WithObject("authenticationDetail", m_authenticationDetail.Jsonize());
 
   }
 

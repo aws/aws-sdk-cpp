@@ -7,6 +7,7 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationDetail.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/ActionConfiguration.h>
 #include <utility>
@@ -120,6 +121,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The authentication configuration details for the data accessor. This
+     * specifies how the ISV authenticates when accessing data through this data
+     * accessor.</p>
+     */
+    inline const DataAccessorAuthenticationDetail& GetAuthenticationDetail() const { return m_authenticationDetail; }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    void SetAuthenticationDetail(AuthenticationDetailT&& value) { m_authenticationDetailHasBeenSet = true; m_authenticationDetail = std::forward<AuthenticationDetailT>(value); }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    GetDataAccessorResult& WithAuthenticationDetail(AuthenticationDetailT&& value) { SetAuthenticationDetail(std::forward<AuthenticationDetailT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the data accessor was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -170,6 +184,9 @@ namespace Model
 
     Aws::Vector<ActionConfiguration> m_actionConfigurations;
     bool m_actionConfigurationsHasBeenSet = false;
+
+    DataAccessorAuthenticationDetail m_authenticationDetail;
+    bool m_authenticationDetailHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

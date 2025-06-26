@@ -55,24 +55,15 @@ GetDeviceDiscoveryResult& GetDeviceDiscoveryResult::operator =(const Aws::Amazon
     m_controllerId = jsonValue.GetString("ControllerId");
     m_controllerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorAssociationId"))
+  if(jsonValue.ValueExists("AccountAssociationId"))
   {
-    m_connectorAssociationId = jsonValue.GetString("ConnectorAssociationId");
-    m_connectorAssociationIdHasBeenSet = true;
+    m_accountAssociationId = jsonValue.GetString("AccountAssociationId");
+    m_accountAssociationIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("FinishedAt"))
   {
     m_finishedAt = jsonValue.GetDouble("FinishedAt");
     m_finishedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

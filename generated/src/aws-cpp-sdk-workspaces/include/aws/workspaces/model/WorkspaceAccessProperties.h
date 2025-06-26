@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/AccessPropertyValue.h>
+#include <aws/workspaces/model/AccessEndpointConfig.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,18 @@ namespace Model
     inline void SetDeviceTypeWorkSpacesThinClient(AccessPropertyValue value) { m_deviceTypeWorkSpacesThinClientHasBeenSet = true; m_deviceTypeWorkSpacesThinClient = value; }
     inline WorkspaceAccessProperties& WithDeviceTypeWorkSpacesThinClient(AccessPropertyValue value) { SetDeviceTypeWorkSpacesThinClient(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the configuration for accessing the WorkSpace.</p>
+     */
+    inline const AccessEndpointConfig& GetAccessEndpointConfig() const { return m_accessEndpointConfig; }
+    inline bool AccessEndpointConfigHasBeenSet() const { return m_accessEndpointConfigHasBeenSet; }
+    template<typename AccessEndpointConfigT = AccessEndpointConfig>
+    void SetAccessEndpointConfig(AccessEndpointConfigT&& value) { m_accessEndpointConfigHasBeenSet = true; m_accessEndpointConfig = std::forward<AccessEndpointConfigT>(value); }
+    template<typename AccessEndpointConfigT = AccessEndpointConfig>
+    WorkspaceAccessProperties& WithAccessEndpointConfig(AccessEndpointConfigT&& value) { SetAccessEndpointConfig(std::forward<AccessEndpointConfigT>(value)); return *this;}
+    ///@}
   private:
 
     AccessPropertyValue m_deviceTypeWindows{AccessPropertyValue::NOT_SET};
@@ -162,6 +175,9 @@ namespace Model
 
     AccessPropertyValue m_deviceTypeWorkSpacesThinClient{AccessPropertyValue::NOT_SET};
     bool m_deviceTypeWorkSpacesThinClientHasBeenSet = false;
+
+    AccessEndpointConfig m_accessEndpointConfig;
+    bool m_accessEndpointConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -74,6 +74,17 @@ Aws::String CreateManagedThingRequest::SerializePayload() const
 
   }
 
+  if(m_capabilitySchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> capabilitySchemasJsonList(m_capabilitySchemas.size());
+   for(unsigned capabilitySchemasIndex = 0; capabilitySchemasIndex < capabilitySchemasJsonList.GetLength(); ++capabilitySchemasIndex)
+   {
+     capabilitySchemasJsonList[capabilitySchemasIndex].AsObject(m_capabilitySchemas[capabilitySchemasIndex].Jsonize());
+   }
+   payload.WithArray("CapabilitySchemas", std::move(capabilitySchemasJsonList));
+
+  }
+
   if(m_capabilitiesHasBeenSet)
   {
    payload.WithString("Capabilities", m_capabilities);

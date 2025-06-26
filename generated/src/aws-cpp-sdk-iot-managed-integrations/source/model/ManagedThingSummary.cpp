@@ -55,10 +55,10 @@ ManagedThingSummary& ManagedThingSummary::operator =(JsonView jsonValue)
     m_connectorDeviceId = jsonValue.GetString("ConnectorDeviceId");
     m_connectorDeviceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorPolicyId"))
+  if(jsonValue.ValueExists("ConnectorDestinationId"))
   {
-    m_connectorPolicyId = jsonValue.GetString("ConnectorPolicyId");
-    m_connectorPolicyIdHasBeenSet = true;
+    m_connectorDestinationId = jsonValue.GetString("ConnectorDestinationId");
+    m_connectorDestinationIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Model"))
   {
@@ -158,9 +158,9 @@ JsonValue ManagedThingSummary::Jsonize() const
 
   }
 
-  if(m_connectorPolicyIdHasBeenSet)
+  if(m_connectorDestinationIdHasBeenSet)
   {
-   payload.WithString("ConnectorPolicyId", m_connectorPolicyId);
+   payload.WithString("ConnectorDestinationId", m_connectorDestinationId);
 
   }
 

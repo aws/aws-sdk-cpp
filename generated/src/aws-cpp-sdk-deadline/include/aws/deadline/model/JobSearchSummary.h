@@ -148,6 +148,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number of times tasks from the job failed and were retried.</p>
+     */
+    inline int GetTaskFailureRetryCount() const { return m_taskFailureRetryCount; }
+    inline bool TaskFailureRetryCountHasBeenSet() const { return m_taskFailureRetryCountHasBeenSet; }
+    inline void SetTaskFailureRetryCount(int value) { m_taskFailureRetryCountHasBeenSet = true; m_taskFailureRetryCount = value; }
+    inline JobSearchSummary& WithTaskFailureRetryCount(int value) { SetTaskFailureRetryCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job priority.</p>
      */
     inline int GetPriority() const { return m_priority; }
@@ -292,6 +302,9 @@ namespace Model
 
     Aws::Map<TaskRunStatus, int> m_taskRunStatusCounts;
     bool m_taskRunStatusCountsHasBeenSet = false;
+
+    int m_taskFailureRetryCount{0};
+    bool m_taskFailureRetryCountHasBeenSet = false;
 
     int m_priority{0};
     bool m_priorityHasBeenSet = false;

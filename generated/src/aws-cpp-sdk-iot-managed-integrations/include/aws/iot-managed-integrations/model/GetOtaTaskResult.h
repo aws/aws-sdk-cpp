@@ -15,6 +15,7 @@
 #include <aws/iot-managed-integrations/model/OtaTaskSchedulingConfig.h>
 #include <aws/iot-managed-integrations/model/OtaTaskExecutionRetryConfig.h>
 #include <aws/iot-managed-integrations/model/OtaStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A set of key/value pairs that are used to manage the over-the-air (OTA)
+     * task.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetOtaTaskResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetOtaTaskResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -267,6 +284,9 @@ namespace Model
 
     OtaStatus m_status{OtaStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationDetail.h>
 #include <aws/qbusiness/model/ActionConfiguration.h>
 #include <utility>
 
@@ -75,6 +76,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The updated authentication configuration details for the data accessor. This
+     * specifies how the ISV will authenticate when accessing data through this data
+     * accessor.</p>
+     */
+    inline const DataAccessorAuthenticationDetail& GetAuthenticationDetail() const { return m_authenticationDetail; }
+    inline bool AuthenticationDetailHasBeenSet() const { return m_authenticationDetailHasBeenSet; }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    void SetAuthenticationDetail(AuthenticationDetailT&& value) { m_authenticationDetailHasBeenSet = true; m_authenticationDetail = std::forward<AuthenticationDetailT>(value); }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    UpdateDataAccessorRequest& WithAuthenticationDetail(AuthenticationDetailT&& value) { SetAuthenticationDetail(std::forward<AuthenticationDetailT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The updated friendly name for the data accessor.</p>
      */
     inline const Aws::String& GetDisplayName() const { return m_displayName; }
@@ -94,6 +109,9 @@ namespace Model
 
     Aws::Vector<ActionConfiguration> m_actionConfigurations;
     bool m_actionConfigurationsHasBeenSet = false;
+
+    DataAccessorAuthenticationDetail m_authenticationDetail;
+    bool m_authenticationDetailHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;

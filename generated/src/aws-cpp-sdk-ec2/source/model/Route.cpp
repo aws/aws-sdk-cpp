@@ -127,6 +127,12 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
       m_coreNetworkArnHasBeenSet = true;
     }
+    XmlNode odbNetworkArnNode = resultNode.FirstChild("odbNetworkArn");
+    if(!odbNetworkArnNode.IsNull())
+    {
+      m_odbNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(odbNetworkArnNode.GetText());
+      m_odbNetworkArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -214,6 +220,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
   }
 
+  if(m_odbNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OdbNetworkArn=" << StringUtils::URLEncode(m_odbNetworkArn.c_str()) << "&";
+  }
+
 }
 
 void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -281,6 +292,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_coreNetworkArnHasBeenSet)
   {
       oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+  if(m_odbNetworkArnHasBeenSet)
+  {
+      oStream << location << ".OdbNetworkArn=" << StringUtils::URLEncode(m_odbNetworkArn.c_str()) << "&";
   }
 }
 

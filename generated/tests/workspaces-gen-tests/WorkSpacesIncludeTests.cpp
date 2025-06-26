@@ -20,6 +20,9 @@
 #include <aws/workspaces/model/AGAPreferredProtocolForWorkSpace.h>
 #include <aws/workspaces/model/AcceptAccountLinkInvitationRequest.h>
 #include <aws/workspaces/model/AcceptAccountLinkInvitationResult.h>
+#include <aws/workspaces/model/AccessEndpoint.h>
+#include <aws/workspaces/model/AccessEndpointConfig.h>
+#include <aws/workspaces/model/AccessEndpointType.h>
 #include <aws/workspaces/model/AccessPropertyValue.h>
 #include <aws/workspaces/model/AccountLink.h>
 #include <aws/workspaces/model/AccountLinkStatusEnum.h>
@@ -192,6 +195,7 @@
 #include <aws/workspaces/model/ImportClientBrandingResult.h>
 #include <aws/workspaces/model/ImportWorkspaceImageRequest.h>
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
+#include <aws/workspaces/model/InternetFallbackProtocol.h>
 #include <aws/workspaces/model/IosClientBrandingAttributes.h>
 #include <aws/workspaces/model/IosImportClientBrandingAttributes.h>
 #include <aws/workspaces/model/IpRuleItem.h>

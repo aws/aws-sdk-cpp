@@ -10,7 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/model/AuthMaterialType.h>
 #include <aws/iot-managed-integrations/model/CapabilityReport.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot-managed-integrations/model/CapabilitySchemaItem.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -159,6 +161,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The capability schemas that define the functionality and features supported
+     * by the managed thing, including device capabilities and their associated
+     * properties.</p>
+     */
+    inline const Aws::Vector<CapabilitySchemaItem>& GetCapabilitySchemas() const { return m_capabilitySchemas; }
+    inline bool CapabilitySchemasHasBeenSet() const { return m_capabilitySchemasHasBeenSet; }
+    template<typename CapabilitySchemasT = Aws::Vector<CapabilitySchemaItem>>
+    void SetCapabilitySchemas(CapabilitySchemasT&& value) { m_capabilitySchemasHasBeenSet = true; m_capabilitySchemas = std::forward<CapabilitySchemasT>(value); }
+    template<typename CapabilitySchemasT = Aws::Vector<CapabilitySchemaItem>>
+    CreateManagedThingRequest& WithCapabilitySchemas(CapabilitySchemasT&& value) { SetCapabilitySchemas(std::forward<CapabilitySchemasT>(value)); return *this;}
+    template<typename CapabilitySchemasT = CapabilitySchemaItem>
+    CreateManagedThingRequest& AddCapabilitySchemas(CapabilitySchemasT&& value) { m_capabilitySchemasHasBeenSet = true; m_capabilitySchemas.emplace_back(std::forward<CapabilitySchemasT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The capabilities of the device such as light bulb.</p>
      */
     inline const Aws::String& GetCapabilities() const { return m_capabilities; }
@@ -213,7 +231,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The metadata for the managed thing.</p>
+     * <p>The metadata for the managed thing.</p>  <p>The
+     * <code>managedThing</code> <code>metadata</code> parameter is used for
+     * associating attributes with a <code>managedThing</code> that can be used for
+     * grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can
+     * be used in the <code>OtaTargetQueryString</code> parameter for the
+     * <code>CreateOtaTask</code> API operation.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetaData() const { return m_metaData; }
     inline bool MetaDataHasBeenSet() const { return m_metaDataHasBeenSet; }
@@ -257,6 +280,9 @@ namespace Model
 
     CapabilityReport m_capabilityReport;
     bool m_capabilityReportHasBeenSet = false;
+
+    Aws::Vector<CapabilitySchemaItem> m_capabilitySchemas;
+    bool m_capabilitySchemasHasBeenSet = false;
 
     Aws::String m_capabilities;
     bool m_capabilitiesHasBeenSet = false;

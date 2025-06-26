@@ -82,6 +82,84 @@ namespace IoTManagedIntegrations
         virtual ~IoTManagedIntegrationsClient();
 
         /**
+         * <p>Creates a new account association via the destination id.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccountAssociationOutcome CreateAccountAssociation(const Model::CreateAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAccountAssociationRequestT = Model::CreateAccountAssociationRequest>
+        Model::CreateAccountAssociationOutcomeCallable CreateAccountAssociationCallable(const CreateAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::CreateAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAccountAssociationRequestT = Model::CreateAccountAssociationRequest>
+        void CreateAccountAssociationAsync(const CreateAccountAssociationRequestT& request, const CreateAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::CreateAccountAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a C2C (cloud-to-cloud) connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCloudConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCloudConnectorOutcome CreateCloudConnector(const Model::CreateCloudConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCloudConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCloudConnectorRequestT = Model::CreateCloudConnectorRequest>
+        Model::CreateCloudConnectorOutcomeCallable CreateCloudConnectorCallable(const CreateCloudConnectorRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::CreateCloudConnector, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCloudConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCloudConnectorRequestT = Model::CreateCloudConnectorRequest>
+        void CreateCloudConnectorAsync(const CreateCloudConnectorRequestT& request, const CreateCloudConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::CreateCloudConnector, request, handler, context);
+        }
+
+        /**
+         * <p>Create a connector destination for connecting a cloud-to-cloud (C2C)
+         * connector to the customer's Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateConnectorDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectorDestinationOutcome CreateConnectorDestination(const Model::CreateConnectorDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConnectorDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConnectorDestinationRequestT = Model::CreateConnectorDestinationRequest>
+        Model::CreateConnectorDestinationOutcomeCallable CreateConnectorDestinationCallable(const CreateConnectorDestinationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::CreateConnectorDestination, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConnectorDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConnectorDestinationRequestT = Model::CreateConnectorDestinationRequest>
+        void CreateConnectorDestinationAsync(const CreateConnectorDestinationRequestT& request, const CreateConnectorDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::CreateConnectorDestination, request, handler, context);
+        }
+
+        /**
          * <p>Create a product credential locker. This operation will trigger the creation
          * of all the manufacturing resources including the Wi-Fi setup key pair and device
          * certificate.</p><p><h3>See Also:</h3>   <a
@@ -296,6 +374,84 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>Remove a third party account and related devices from an end
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountAssociationOutcome DeleteAccountAssociation(const Model::DeleteAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccountAssociationRequestT = Model::DeleteAccountAssociationRequest>
+        Model::DeleteAccountAssociationOutcomeCallable DeleteAccountAssociationCallable(const DeleteAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::DeleteAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccountAssociationRequestT = Model::DeleteAccountAssociationRequest>
+        void DeleteAccountAssociationAsync(const DeleteAccountAssociationRequestT& request, const DeleteAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::DeleteAccountAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a cloud connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteCloudConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCloudConnectorOutcome DeleteCloudConnector(const Model::DeleteCloudConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCloudConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCloudConnectorRequestT = Model::DeleteCloudConnectorRequest>
+        Model::DeleteCloudConnectorOutcomeCallable DeleteCloudConnectorCallable(const DeleteCloudConnectorRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::DeleteCloudConnector, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCloudConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCloudConnectorRequestT = Model::DeleteCloudConnectorRequest>
+        void DeleteCloudConnectorAsync(const DeleteCloudConnectorRequestT& request, const DeleteCloudConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::DeleteCloudConnector, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a connector destination for connecting a cloud-to-cloud (C2C)
+         * connector to the customer's Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectorDestinationOutcome DeleteConnectorDestination(const Model::DeleteConnectorDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConnectorDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConnectorDestinationRequestT = Model::DeleteConnectorDestinationRequest>
+        Model::DeleteConnectorDestinationOutcomeCallable DeleteConnectorDestinationCallable(const DeleteConnectorDestinationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::DeleteConnectorDestination, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConnectorDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConnectorDestinationRequestT = Model::DeleteConnectorDestinationRequest>
+        void DeleteConnectorDestinationAsync(const DeleteConnectorDestinationRequestT& request, const DeleteConnectorDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::DeleteConnectorDestination, request, handler, context);
+        }
+
+        /**
          * <p>Delete a credential locker. </p>  <p>This operation can't be undone and
          * any existing device won't be able to use IoT managed integrations.</p>
          * <p><h3>See Also:</h3>   <a
@@ -499,6 +655,110 @@ namespace IoTManagedIntegrations
         void DeleteProvisioningProfileAsync(const DeleteProvisioningProfileRequestT& request, const DeleteProvisioningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTManagedIntegrationsClient::DeleteProvisioningProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Deregisters an account association, removing the connection between a managed
+         * thing and a third-party account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterAccountAssociationOutcome DeregisterAccountAssociation(const Model::DeregisterAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeregisterAccountAssociationRequestT = Model::DeregisterAccountAssociationRequest>
+        Model::DeregisterAccountAssociationOutcomeCallable DeregisterAccountAssociationCallable(const DeregisterAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::DeregisterAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeregisterAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeregisterAccountAssociationRequestT = Model::DeregisterAccountAssociationRequest>
+        void DeregisterAccountAssociationAsync(const DeregisterAccountAssociationRequestT& request, const DeregisterAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::DeregisterAccountAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Get an account association for an Amazon Web Services account linked to a
+         * customer-managed destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountAssociationOutcome GetAccountAssociation(const Model::GetAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountAssociationRequestT = Model::GetAccountAssociationRequest>
+        Model::GetAccountAssociationOutcomeCallable GetAccountAssociationCallable(const GetAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::GetAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountAssociationRequestT = Model::GetAccountAssociationRequest>
+        void GetAccountAssociationAsync(const GetAccountAssociationRequestT& request, const GetAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::GetAccountAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Gets all the information about a connector for a connector
+         * developer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCloudConnectorOutcome GetCloudConnector(const Model::GetCloudConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCloudConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCloudConnectorRequestT = Model::GetCloudConnectorRequest>
+        Model::GetCloudConnectorOutcomeCallable GetCloudConnectorCallable(const GetCloudConnectorRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::GetCloudConnector, request);
+        }
+
+        /**
+         * An Async wrapper for GetCloudConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCloudConnectorRequestT = Model::GetCloudConnectorRequest>
+        void GetCloudConnectorAsync(const GetCloudConnectorRequestT& request, const GetCloudConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::GetCloudConnector, request, handler, context);
+        }
+
+        /**
+         * <p>Get a connector destination of a cloud-to-cloud (C2C) connector connecting to
+         * a customer's Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectorDestinationOutcome GetConnectorDestination(const Model::GetConnectorDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConnectorDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConnectorDestinationRequestT = Model::GetConnectorDestinationRequest>
+        Model::GetConnectorDestinationOutcomeCallable GetConnectorDestinationCallable(const GetConnectorDestinationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::GetConnectorDestination, request);
+        }
+
+        /**
+         * An Async wrapper for GetConnectorDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConnectorDestinationRequestT = Model::GetConnectorDestinationRequest>
+        void GetConnectorDestinationAsync(const GetConnectorDestinationRequestT& request, const GetConnectorDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::GetConnectorDestination, request, handler, context);
         }
 
         /**
@@ -761,8 +1021,12 @@ namespace IoTManagedIntegrations
         }
 
         /**
-         * <p>Get the metadata information for a managed thing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Get the metadata information for a managed thing.</p>  <p>The
+         * <code>managedThing</code> <code>metadata</code> parameter is used for
+         * associating attributes with a <code>managedThing</code> that can be used for
+         * grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can
+         * be used in the <code>OtaTargetQueryString</code> parameter for the
+         * <code>CreateOtaTask</code> API operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingMetaData">AWS
          * API Reference</a></p>
          */
@@ -966,6 +1230,84 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>Lists all account associations, with optional filtering by connector
+         * destination ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListAccountAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountAssociationsOutcome ListAccountAssociations(const Model::ListAccountAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAccountAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountAssociationsRequestT = Model::ListAccountAssociationsRequest>
+        Model::ListAccountAssociationsOutcomeCallable ListAccountAssociationsCallable(const ListAccountAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListAccountAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountAssociationsRequestT = Model::ListAccountAssociationsRequest>
+        void ListAccountAssociationsAsync(const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListAccountAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of connectors based on permissions. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCloudConnectorsOutcome ListCloudConnectors(const Model::ListCloudConnectorsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCloudConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCloudConnectorsRequestT = Model::ListCloudConnectorsRequest>
+        Model::ListCloudConnectorsOutcomeCallable ListCloudConnectorsCallable(const ListCloudConnectorsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListCloudConnectors, request);
+        }
+
+        /**
+         * An Async wrapper for ListCloudConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCloudConnectorsRequestT = Model::ListCloudConnectorsRequest>
+        void ListCloudConnectorsAsync(const ListCloudConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCloudConnectorsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListCloudConnectors, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all connector destinations, with optional filtering by cloud connector
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListConnectorDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectorDestinationsOutcome ListConnectorDestinations(const Model::ListConnectorDestinationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConnectorDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectorDestinationsRequestT = Model::ListConnectorDestinationsRequest>
+        Model::ListConnectorDestinationsOutcomeCallable ListConnectorDestinationsCallable(const ListConnectorDestinationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListConnectorDestinations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectorDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectorDestinationsRequestT = Model::ListConnectorDestinationsRequest>
+        void ListConnectorDestinationsAsync(const ListConnectorDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorDestinationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListConnectorDestinations, request, handler, context);
+        }
+
+        /**
          * <p>List information on an existing credential locker.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCredentialLockers">AWS
@@ -1018,6 +1360,58 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>Lists all device discovery tasks, with optional filtering by type and
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDeviceDiscoveries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeviceDiscoveriesOutcome ListDeviceDiscoveries(const Model::ListDeviceDiscoveriesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDeviceDiscoveries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDeviceDiscoveriesRequestT = Model::ListDeviceDiscoveriesRequest>
+        Model::ListDeviceDiscoveriesOutcomeCallable ListDeviceDiscoveriesCallable(const ListDeviceDiscoveriesRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListDeviceDiscoveries, request);
+        }
+
+        /**
+         * An Async wrapper for ListDeviceDiscoveries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDeviceDiscoveriesRequestT = Model::ListDeviceDiscoveriesRequest>
+        void ListDeviceDiscoveriesAsync(const ListDeviceDiscoveriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeviceDiscoveriesRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListDeviceDiscoveries, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all devices discovered during a specific device discovery
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDiscoveredDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDiscoveredDevicesOutcome ListDiscoveredDevices(const Model::ListDiscoveredDevicesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDiscoveredDevices that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDiscoveredDevicesRequestT = Model::ListDiscoveredDevicesRequest>
+        Model::ListDiscoveredDevicesOutcomeCallable ListDiscoveredDevicesCallable(const ListDiscoveredDevicesRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListDiscoveredDevices, request);
+        }
+
+        /**
+         * An Async wrapper for ListDiscoveredDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDiscoveredDevicesRequestT = Model::ListDiscoveredDevicesRequest>
+        void ListDiscoveredDevicesAsync(const ListDiscoveredDevicesRequestT& request, const ListDiscoveredDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListDiscoveredDevices, request, handler, context);
+        }
+
+        /**
          * <p>List all event log configurations for an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListEventLogConfigurations">AWS
@@ -1041,6 +1435,32 @@ namespace IoTManagedIntegrations
         void ListEventLogConfigurationsAsync(const ListEventLogConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventLogConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTManagedIntegrationsClient::ListEventLogConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all account associations for a specific managed thing.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThingAccountAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedThingAccountAssociationsOutcome ListManagedThingAccountAssociations(const Model::ListManagedThingAccountAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListManagedThingAccountAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedThingAccountAssociationsRequestT = Model::ListManagedThingAccountAssociationsRequest>
+        Model::ListManagedThingAccountAssociationsOutcomeCallable ListManagedThingAccountAssociationsCallable(const ListManagedThingAccountAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListManagedThingAccountAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedThingAccountAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedThingAccountAssociationsRequestT = Model::ListManagedThingAccountAssociationsRequest>
+        void ListManagedThingAccountAssociationsAsync(const ListManagedThingAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedThingAccountAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListManagedThingAccountAssociations, request, handler, context);
         }
 
         /**
@@ -1069,8 +1489,8 @@ namespace IoTManagedIntegrations
         }
 
         /**
-         * <p>List all of the associations and statuses for a managed thing by its
-         * owner.</p><p><h3>See Also:</h3>   <a
+         * <p>Listing all managed things with provision for filters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThings">AWS
          * API Reference</a></p>
          */
@@ -1249,6 +1669,31 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>List tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Sets the default encryption configuration for the Amazon Web Services
          * account. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
@@ -1328,6 +1773,33 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>Registers an account association with a managed thing, establishing a
+         * connection between a device and a third-party account.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/RegisterAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterAccountAssociationOutcome RegisterAccountAssociation(const Model::RegisterAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RegisterAccountAssociationRequestT = Model::RegisterAccountAssociationRequest>
+        Model::RegisterAccountAssociationOutcomeCallable RegisterAccountAssociationCallable(const RegisterAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::RegisterAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for RegisterAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RegisterAccountAssociationRequestT = Model::RegisterAccountAssociationRequest>
+        void RegisterAccountAssociationAsync(const RegisterAccountAssociationRequestT& request, const RegisterAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::RegisterAccountAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Customers can request IoT managed integrations to manage the server trust for
          * them or bring their own external server trusts for the custom domain. Returns an
          * IoT managed integrations endpoint.</p><p><h3>See Also:</h3>   <a
@@ -1381,6 +1853,32 @@ namespace IoTManagedIntegrations
         }
 
         /**
+         * <p>Relays third-party device events for a connector such as a new device or a
+         * device state change event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendConnectorEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendConnectorEventOutcome SendConnectorEvent(const Model::SendConnectorEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendConnectorEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendConnectorEventRequestT = Model::SendConnectorEventRequest>
+        Model::SendConnectorEventOutcomeCallable SendConnectorEventCallable(const SendConnectorEventRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::SendConnectorEvent, request);
+        }
+
+        /**
+         * An Async wrapper for SendConnectorEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendConnectorEventRequestT = Model::SendConnectorEventRequest>
+        void SendConnectorEventAsync(const SendConnectorEventRequestT& request, const SendConnectorEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::SendConnectorEvent, request, handler, context);
+        }
+
+        /**
          * <p>Send the command to the device represented by the managed thing.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendManagedThingCommand">AWS
@@ -1407,9 +1905,36 @@ namespace IoTManagedIntegrations
         }
 
         /**
-         * <p> During user-guided setup, this is used to start device discovery. The
-         * authentication material (install code) is passed as a message to the controller
-         * telling it to start the discovery.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a refresh of an existing account association to update its
+         * authorization and connection status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartAccountAssociationRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAccountAssociationRefreshOutcome StartAccountAssociationRefresh(const Model::StartAccountAssociationRefreshRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAccountAssociationRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAccountAssociationRefreshRequestT = Model::StartAccountAssociationRefreshRequest>
+        Model::StartAccountAssociationRefreshOutcomeCallable StartAccountAssociationRefreshCallable(const StartAccountAssociationRefreshRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::StartAccountAssociationRefresh, request);
+        }
+
+        /**
+         * An Async wrapper for StartAccountAssociationRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAccountAssociationRefreshRequestT = Model::StartAccountAssociationRefreshRequest>
+        void StartAccountAssociationRefreshAsync(const StartAccountAssociationRefreshRequestT& request, const StartAccountAssociationRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::StartAccountAssociationRefresh, request, handler, context);
+        }
+
+        /**
+         * <p> This API is used to start device discovery for hub-connected and
+         * third-party-connected devices. The authentication material (install code) is
+         * passed as a message to the controller telling it to start the
+         * discovery.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartDeviceDiscovery">AWS
          * API Reference</a></p>
          */
@@ -1431,6 +1956,133 @@ namespace IoTManagedIntegrations
         void StartDeviceDiscoveryAsync(const StartDeviceDiscoveryRequestT& request, const StartDeviceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTManagedIntegrationsClient::StartDeviceDiscovery, request, handler, context);
+        }
+
+        /**
+         * <p>Add tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Remove tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the properties of an existing account association.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateAccountAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountAssociationOutcome UpdateAccountAssociation(const Model::UpdateAccountAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountAssociationRequestT = Model::UpdateAccountAssociationRequest>
+        Model::UpdateAccountAssociationOutcomeCallable UpdateAccountAssociationCallable(const UpdateAccountAssociationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::UpdateAccountAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountAssociationRequestT = Model::UpdateAccountAssociationRequest>
+        void UpdateAccountAssociationAsync(const UpdateAccountAssociationRequestT& request, const UpdateAccountAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::UpdateAccountAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Update an existing cloud connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateCloudConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCloudConnectorOutcome UpdateCloudConnector(const Model::UpdateCloudConnectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCloudConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCloudConnectorRequestT = Model::UpdateCloudConnectorRequest>
+        Model::UpdateCloudConnectorOutcomeCallable UpdateCloudConnectorCallable(const UpdateCloudConnectorRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::UpdateCloudConnector, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCloudConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCloudConnectorRequestT = Model::UpdateCloudConnectorRequest>
+        void UpdateCloudConnectorAsync(const UpdateCloudConnectorRequestT& request, const UpdateCloudConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::UpdateCloudConnector, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the properties of an existing connector destination.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateConnectorDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectorDestinationOutcome UpdateConnectorDestination(const Model::UpdateConnectorDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConnectorDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConnectorDestinationRequestT = Model::UpdateConnectorDestinationRequest>
+        Model::UpdateConnectorDestinationOutcomeCallable UpdateConnectorDestinationCallable(const UpdateConnectorDestinationRequestT& request) const
+        {
+            return SubmitCallable(&IoTManagedIntegrationsClient::UpdateConnectorDestination, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConnectorDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConnectorDestinationRequestT = Model::UpdateConnectorDestinationRequest>
+        void UpdateConnectorDestinationAsync(const UpdateConnectorDestinationRequestT& request, const UpdateConnectorDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTManagedIntegrationsClient::UpdateConnectorDestination, request, handler, context);
         }
 
         /**

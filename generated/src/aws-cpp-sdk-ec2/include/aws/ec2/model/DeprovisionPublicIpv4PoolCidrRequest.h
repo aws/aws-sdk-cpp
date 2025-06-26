@@ -63,11 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to
-     * deprovision with a netmask of <code>/32</code>. You must rerun this command for
-     * each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will
-     * have to run this command to deprovision each of the 256 IP addresses in the
-     * <code>/24</code> CIDR.</p>
+     * <p>The CIDR you want to deprovision from the pool.</p>
      */
     inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }

@@ -51,10 +51,17 @@ void ListManagedThingsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_connectorPolicyIdFilterHasBeenSet)
+    if(m_connectorDestinationIdFilterHasBeenSet)
     {
-      ss << m_connectorPolicyIdFilter;
-      uri.AddQueryStringParameter("ConnectorPolicyIdFilter", ss.str());
+      ss << m_connectorDestinationIdFilter;
+      uri.AddQueryStringParameter("ConnectorDestinationIdFilter", ss.str());
+      ss.str("");
+    }
+
+    if(m_connectorDeviceIdFilterHasBeenSet)
+    {
+      ss << m_connectorDeviceIdFilter;
+      uri.AddQueryStringParameter("ConnectorDeviceIdFilter", ss.str());
       ss.str("");
     }
 

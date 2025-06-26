@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/DataAccessorAuthenticationDetail.h>
 #include <aws/qbusiness/model/ActionConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
@@ -103,6 +104,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The authentication configuration details for the data accessor. This
+     * specifies how the ISV will authenticate when accessing data through this data
+     * accessor.</p>
+     */
+    inline const DataAccessorAuthenticationDetail& GetAuthenticationDetail() const { return m_authenticationDetail; }
+    inline bool AuthenticationDetailHasBeenSet() const { return m_authenticationDetailHasBeenSet; }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    void SetAuthenticationDetail(AuthenticationDetailT&& value) { m_authenticationDetailHasBeenSet = true; m_authenticationDetail = std::forward<AuthenticationDetailT>(value); }
+    template<typename AuthenticationDetailT = DataAccessorAuthenticationDetail>
+    CreateDataAccessorRequest& WithAuthenticationDetail(AuthenticationDetailT&& value) { SetAuthenticationDetail(std::forward<AuthenticationDetailT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags to associate with the data accessor.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -130,6 +145,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    DataAccessorAuthenticationDetail m_authenticationDetail;
+    bool m_authenticationDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

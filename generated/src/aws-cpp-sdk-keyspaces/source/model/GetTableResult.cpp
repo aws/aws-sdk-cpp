@@ -99,6 +99,16 @@ GetTableResult& GetTableResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
     m_replicaSpecificationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("latestStreamArn"))
+  {
+    m_latestStreamArn = jsonValue.GetString("latestStreamArn");
+    m_latestStreamArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cdcSpecification"))
+  {
+    m_cdcSpecification = jsonValue.GetObject("cdcSpecification");
+    m_cdcSpecificationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

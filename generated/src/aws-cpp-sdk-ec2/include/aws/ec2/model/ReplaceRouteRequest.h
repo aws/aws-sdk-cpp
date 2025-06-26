@@ -122,6 +122,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+     */
+    inline const Aws::String& GetOdbNetworkArn() const { return m_odbNetworkArn; }
+    inline bool OdbNetworkArnHasBeenSet() const { return m_odbNetworkArnHasBeenSet; }
+    template<typename OdbNetworkArnT = Aws::String>
+    void SetOdbNetworkArn(OdbNetworkArnT&& value) { m_odbNetworkArnHasBeenSet = true; m_odbNetworkArn = std::forward<OdbNetworkArnT>(value); }
+    template<typename OdbNetworkArnT = Aws::String>
+    ReplaceRouteRequest& WithOdbNetworkArn(OdbNetworkArnT&& value) { SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -264,6 +276,9 @@ namespace Model
 
     Aws::String m_coreNetworkArn;
     bool m_coreNetworkArnHasBeenSet = false;
+
+    Aws::String m_odbNetworkArn;
+    bool m_odbNetworkArnHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

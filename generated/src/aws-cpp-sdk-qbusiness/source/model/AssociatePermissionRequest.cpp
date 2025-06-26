@@ -33,6 +33,17 @@ Aws::String AssociatePermissionRequest::SerializePayload() const
 
   }
 
+  if(m_conditionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
+   {
+     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+   }
+   payload.WithArray("conditions", std::move(conditionsJsonList));
+
+  }
+
   if(m_principalHasBeenSet)
   {
    payload.WithString("principal", m_principal);

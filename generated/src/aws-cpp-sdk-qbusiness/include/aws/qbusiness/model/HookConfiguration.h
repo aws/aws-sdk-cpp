@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For
+     * <p>The Amazon Resource Name (ARN) of the Lambda function during ingestion. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using
      * Lambda functions for Amazon Q Business document enrichment</a>.</p>
