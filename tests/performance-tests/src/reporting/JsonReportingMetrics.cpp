@@ -16,7 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
 
 #include <cstddef>
 #include <cstdint>

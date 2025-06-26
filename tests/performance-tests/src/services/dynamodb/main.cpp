@@ -10,9 +10,9 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
-#include <performance_tests/services/dynamodb/DynamoDBPerformanceTest.h>
-#include <performance_tests/services/dynamodb/DynamoDBTestConfig.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
+#include <performance-tests/services/dynamodb/DynamoDBTestConfig.h>
 
 #include <string>
 

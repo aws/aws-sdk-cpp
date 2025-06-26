@@ -10,9 +10,9 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3Client.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
-#include <performance_tests/services/s3/S3PerformanceTest.h>
-#include <performance_tests/services/s3/S3TestConfig.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/services/s3/S3PerformanceTest.h>
+#include <performance-tests/services/s3/S3TestConfig.h>
 
 #include <string>
 

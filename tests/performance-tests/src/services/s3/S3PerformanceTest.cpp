@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include "performance_tests/services/s3/S3PerformanceTest.h"
+#include "performance-tests/services/s3/S3PerformanceTest.h"
 
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UUID.h>
@@ -22,7 +22,7 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/LocationType.h>
 #include <aws/s3/model/PutObjectRequest.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
 
 #include <iostream>
 #include <string>

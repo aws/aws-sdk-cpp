@@ -20,8 +20,8 @@
 #include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <aws/dynamodb/model/TableStatus.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
-#include <performance_tests/services/dynamodb/DynamoDBPerformanceTest.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
 
 #include <chrono>
 #include <iostream>
