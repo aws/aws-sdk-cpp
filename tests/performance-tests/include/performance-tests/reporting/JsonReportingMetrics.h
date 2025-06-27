@@ -134,7 +134,8 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param durationMs Duration of the request in milliseconds
    */
   void AddPerformanceRecord(const Aws::String& serviceName, const Aws::String& requestName,
-                            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const std::variant<int64_t, double>& durationMs) const;
+                            const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                            const std::variant<int64_t, double>& durationMs) const;
 
   /**
    * Outputs aggregated performance metrics to JSON file.
