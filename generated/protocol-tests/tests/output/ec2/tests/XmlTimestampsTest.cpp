@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestamps) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"normal":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetNormal());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetNormal());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeFormat) {
@@ -46,7 +46,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeFormat) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"dateTime":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetDateTime());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTime());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeOnTargetFormat) {
@@ -65,7 +65,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeOnTargetFormat) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"dateTimeOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetDateTimeOnTarget());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTimeOnTarget());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsFormat) {
@@ -84,7 +84,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsFormat) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"epochSeconds":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetEpochSeconds());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSeconds());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsOnTargetFormat) {
@@ -103,7 +103,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsOnTargetFormat)
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"epochSecondsOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetEpochSecondsOnTarget());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSecondsOnTarget());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateFormat) {
@@ -122,7 +122,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateFormat) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"httpDate":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetHttpDate());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDate());
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateOnTargetFormat) {
@@ -141,5 +141,5 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateOnTargetFormat) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlTimestampsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"httpDateOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), result.GetHttpDateOnTarget());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDateOnTarget());
 }

@@ -21,7 +21,7 @@ AWS_PROTOCOL_TEST(JsonLists, RestJsonLists) {
   request.SetStringSet({R"(foo)", R"(bar)"});
   request.SetIntegerList({1, 2});
   request.SetBooleanList({true, false});
-  request.SetTimestampList({Aws::Utils::DateTime(1398796238L), Aws::Utils::DateTime(1398796238L)});
+  request.SetTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), Aws::Utils::DateTime(static_cast<int64_t>(1398796238))});
   request.SetEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(0)e")});
   request.SetIntEnumList({1, 2});
   {
