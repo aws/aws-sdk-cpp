@@ -107,7 +107,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10SerializeTimestampUnionValue) {
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
-    requestContents.SetTimestampValue(Aws::Utils::DateTime(1398796238L));
+    requestContents.SetTimestampValue(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
     request.SetContents(requestContents);
   }
 

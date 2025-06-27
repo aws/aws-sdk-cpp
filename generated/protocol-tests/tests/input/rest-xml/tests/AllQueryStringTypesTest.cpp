@@ -31,8 +31,8 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
   request.SetQueryDoubleList({1.1, 2.1, 3.1});
   request.SetQueryBoolean(true);
   request.SetQueryBooleanList({true, false, true});
-  request.SetQueryTimestamp(Aws::Utils::DateTime(1L));
-  request.SetQueryTimestampList({Aws::Utils::DateTime(1L), Aws::Utils::DateTime(2L), Aws::Utils::DateTime(3L)});
+  request.SetQueryTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1)));
+  request.SetQueryTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1)), Aws::Utils::DateTime(static_cast<int64_t>(2)), Aws::Utils::DateTime(static_cast<int64_t>(3))});
   request.SetQueryEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
   request.SetQueryEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e"), FooEnumMapper::GetFooEnumForName(R"e(Bar)e")});
   request.SetQueryIntegerEnum(1);

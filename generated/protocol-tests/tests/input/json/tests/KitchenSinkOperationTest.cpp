@@ -188,7 +188,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetTimestamp(Aws::Utils::DateTime(946845296L));
+  request.SetTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(946845296)));
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
@@ -207,7 +207,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetIso8601Timestamp(Aws::Utils::DateTime(946845296L));
+  request.SetIso8601Timestamp(Aws::Utils::DateTime(static_cast<int64_t>(946845296)));
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
@@ -226,7 +226,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdat
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetHttpdateTimestamp(Aws::Utils::DateTime(946845296L));
+  request.SetHttpdateTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(946845296)));
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
@@ -245,7 +245,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtim
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetUnixTimestamp(Aws::Utils::DateTime(946845296L));
+  request.SetUnixTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(946845296)));
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
