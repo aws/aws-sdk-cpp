@@ -77,7 +77,8 @@ void JsonReportingMetrics::StoreLatencyInContext(const Aws::String& serviceName,
 }
 
 void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, const Aws::String& requestName,
-                                                const std::shared_ptr<const Aws::Http::HttpRequest>& request, const std::variant<int64_t, double>& durationMs) const {
+                                                const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                                                const std::variant<int64_t, double>& durationMs) const {
   // If no operations are registered, monitor all operations. Otherwise, only monitor registered operations
   if (!m_monitoredOperations.empty() && m_monitoredOperations.find(requestName) == m_monitoredOperations.end()) {
     return;
