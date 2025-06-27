@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableInput.h>
 #include <aws/glue/model/ViewUpdateAction.h>
+#include <aws/glue/model/UpdateOpenTableFormatInput.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,19 @@ namespace Model
     void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
     template<typename DatabaseNameT = Aws::String>
     UpdateTableRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for the table within the specified database that will
+     * be created in the Glue Data Catalog.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,6 +145,16 @@ namespace Model
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline UpdateTableRequest& WithForce(bool value) { SetForce(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const UpdateOpenTableFormatInput& GetUpdateOpenTableFormatInput() const { return m_updateOpenTableFormatInput; }
+    inline bool UpdateOpenTableFormatInputHasBeenSet() const { return m_updateOpenTableFormatInputHasBeenSet; }
+    template<typename UpdateOpenTableFormatInputT = UpdateOpenTableFormatInput>
+    void SetUpdateOpenTableFormatInput(UpdateOpenTableFormatInputT&& value) { m_updateOpenTableFormatInputHasBeenSet = true; m_updateOpenTableFormatInput = std::forward<UpdateOpenTableFormatInputT>(value); }
+    template<typename UpdateOpenTableFormatInputT = UpdateOpenTableFormatInput>
+    UpdateTableRequest& WithUpdateOpenTableFormatInput(UpdateOpenTableFormatInputT&& value) { SetUpdateOpenTableFormatInput(std::forward<UpdateOpenTableFormatInputT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalogId;
@@ -138,6 +162,9 @@ namespace Model
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet = false;
@@ -156,6 +183,9 @@ namespace Model
 
     bool m_force{false};
     bool m_forceHasBeenSet = false;
+
+    UpdateOpenTableFormatInput m_updateOpenTableFormatInput;
+    bool m_updateOpenTableFormatInputHasBeenSet = false;
   };
 
 } // namespace Model

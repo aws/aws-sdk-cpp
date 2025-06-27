@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address associated with the instance.</p>
+     * <p>The email address associated with the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetDestinationEmailAddress() const { return m_destinationEmailAddress; }
     inline bool DestinationEmailAddressHasBeenSet() const { return m_destinationEmailAddressHasBeenSet; }

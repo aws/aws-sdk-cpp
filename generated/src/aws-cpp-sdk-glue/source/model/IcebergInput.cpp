@@ -35,6 +35,11 @@ IcebergInput& IcebergInput::operator =(JsonView jsonValue)
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CreateIcebergTableInput"))
+  {
+    m_createIcebergTableInput = jsonValue.GetObject("CreateIcebergTableInput");
+    m_createIcebergTableInputHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,12 @@ JsonValue IcebergInput::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
+
+  }
+
+  if(m_createIcebergTableInputHasBeenSet)
+  {
+   payload.WithObject("CreateIcebergTableInput", m_createIcebergTableInput.Jsonize());
 
   }
 

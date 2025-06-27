@@ -87,7 +87,7 @@ namespace Model
     ///@{
     /**
      * <p>The new name of the tenant database when renaming a tenant database. This
-     * parameter isn’t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * parameter isn���t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * the string null or any other reserved word.</p> </li> <li> <p>Can't be longer
      * than 8 characters.</p> </li> </ul>
      */

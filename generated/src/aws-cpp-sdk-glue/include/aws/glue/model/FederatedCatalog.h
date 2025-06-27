@@ -62,6 +62,19 @@ namespace Model
     template<typename ConnectionNameT = Aws::String>
     FederatedCatalog& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of connection used to access the federated catalog, specifying the
+     * protocol or method for connection to the external data source.</p>
+     */
+    inline const Aws::String& GetConnectionType() const { return m_connectionType; }
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+    template<typename ConnectionTypeT = Aws::String>
+    void SetConnectionType(ConnectionTypeT&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::forward<ConnectionTypeT>(value); }
+    template<typename ConnectionTypeT = Aws::String>
+    FederatedCatalog& WithConnectionType(ConnectionTypeT&& value) { SetConnectionType(std::forward<ConnectionTypeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_identifier;
@@ -69,6 +82,9 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet = false;
+
+    Aws::String m_connectionType;
+    bool m_connectionTypeHasBeenSet = false;
   };
 
 } // namespace Model

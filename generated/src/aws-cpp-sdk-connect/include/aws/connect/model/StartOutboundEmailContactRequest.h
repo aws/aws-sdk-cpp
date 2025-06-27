@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address associated with the instance.</p>
+     * <p>The email address associated with the Amazon Connect instance.</p>
      */
     inline const EmailAddressInfo& GetFromEmailAddress() const { return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
@@ -88,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The addtional recipients address of email in CC.</p>
+     * <p>The additional recipients address of email in CC.</p>
      */
     inline const OutboundAdditionalRecipients& GetAdditionalRecipients() const { return m_additionalRecipients; }
     inline bool AdditionalRecipientsHasBeenSet() const { return m_additionalRecipientsHasBeenSet; }

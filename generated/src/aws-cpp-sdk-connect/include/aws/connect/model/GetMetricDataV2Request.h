@@ -140,9 +140,9 @@ namespace Model
      * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> |
      * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
      * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
-     * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> |
-     * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CAMPAIGN_EXCLUDED_EVENT_TYPE
+     * </code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
+     * <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
      * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
      * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
      * <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> |
@@ -205,7 +205,9 @@ namespace Model
      * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> |
      * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
      * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
-     * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> |
+     * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |
+     * <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> |
+     * <code>CAMPAIGN_EXECUTION_TIMESTAMP</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
      * <code>contact/segmentAttributes/connect:Subtype</code> |
      * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
@@ -500,12 +502,24 @@ namespace Model
      * CAMPAIGN_INTERACTION_EVENT_TYPE</p> <p>Valid groupings and filters: Campaign</p>
      * <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-interactions">Campaign
-     * interactions</a> </p> </dd> <dt>CAMPAIGN_SEND_ATTEMPTS</dt> <dd> <p>This metric
+     * interactions</a> </p> </dd> <dt>CAMPAIGN_PROGRESS_RATE</dt> <dd> <p>This metric
+     * is only available for outbound campaigns initiated using a customer segment. It
+     * is not available for event triggered campaigns.</p> <p>Unit: Percent</p>
+     * <p>Valid groupings and filters: Campaign, Campaign Execution Timestamp</p> <p>UI
+     * name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-progress-rate">Campaign
+     * progress rate</a> </p> </dd> <dt>CAMPAIGN_SEND_ATTEMPTS</dt> <dd> <p>This metric
      * is available only for outbound campaigns.</p> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Campaign, Channel,
      * contact/segmentAttributes/connect:Subtype </p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-attempts">Campaign
-     * send attempts</a> </p> </dd> <dt>CASES_CREATED</dt> <dd> <p>Unit: Count</p>
+     * send attempts</a> </p> </dd> <dt>CAMPAIGN_SEND_EXCLUSIONS</dt> <dd> <p>This
+     * metric is available only for outbound campaigns.</p> <p>Valid metric filter key:
+     * CAMPAIGN_EXCLUDED_EVENT_TYPE</p> <p>Unit: Count</p> <p>Valid groupings and
+     * filters: Campaign, Campaign Excluded Event Type, Campaign Execution
+     * Timestamp</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-exclusions">Campaign
+     * send exclusions</a> </p> </dd> <dt>CASES_CREATED</dt> <dd> <p>Unit: Count</p>
      * <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and filters:
      * CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#cases-created">Cases
@@ -727,9 +741,27 @@ namespace Model
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype, Q in Connect</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#customer-talk-time-percent">Customer
-     * talk time percent</a> </p> </dd> <dt>REOPENED_CASE_ACTIONS</dt> <dd> <p>Unit:
-     * Count</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and
-     * filters: CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
+     * talk time percent</a> </p> </dd> <dt>RECIPIENTS_ATTEMPTED</dt> <dd> <p>This
+     * metric is only available for outbound campaigns initiated using a customer
+     * segment. It is not available for event triggered campaigns.</p> <p>Unit:
+     * Count</p> <p>Valid groupings and filters: Campaign, Campaign Execution
+     * Timestamp</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-attempted">Recipients
+     * attempted</a> </p> </dd> <dt>RECIPIENTS_INTERACTED</dt> <dd> <p>This metric is
+     * only available for outbound campaigns initiated using a customer segment. It is
+     * not available for event triggered campaigns.</p> <p>Valid metric filter key:
+     * CAMPAIGN_INTERACTION_EVENT_TYPE</p> <p>Unit: Count</p> <p>Valid groupings and
+     * filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype, Campaign
+     * Execution Timestamp</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-interacted">Recipients
+     * interacted</a> </p> </dd> <dt>RECIPIENTS_TARGETED</dt> <dd> <p>This metric is
+     * only available for outbound campaigns initiated using a customer segment. It is
+     * not available for event triggered campaigns.</p> <p>Unit: Count</p> <p>Valid
+     * groupings and filters: Campaign, Campaign Execution Timestamp</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-targeted">Recipients
+     * targeted</a> </p> </dd> <dt>REOPENED_CASE_ACTIONS</dt> <dd> <p>Unit: Count</p>
+     * <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and filters:
+     * CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#cases-reopened">Cases
      * reopened</a> </p> </dd> <dt>RESOLVED_CASE_ACTIONS</dt> <dd> <p>Unit: Count</p>
      * <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and filters:

@@ -16,7 +16,8 @@ namespace Model
   enum class InitiateAs
   {
     NOT_SET,
-    CONNECTED_TO_USER
+    CONNECTED_TO_USER,
+    COMPLETED
   };
 
 namespace InitiateAsMapper

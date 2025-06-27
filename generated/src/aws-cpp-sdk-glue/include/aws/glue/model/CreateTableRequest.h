@@ -66,6 +66,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the table within the specified database that will
+     * be created in the Glue Data Catalog.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <code>TableInput</code> object that defines the metadata table to create
      * in the catalog.</p>
      */
@@ -123,6 +136,9 @@ namespace Model
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet = false;

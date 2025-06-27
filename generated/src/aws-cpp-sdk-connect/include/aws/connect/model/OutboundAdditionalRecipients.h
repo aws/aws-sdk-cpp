@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The additional recipients information of outbound email.</p><p><h3>See
+   * <p>Information about the additional recipients of outbound email.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundAdditionalRecipients">AWS
    * API Reference</a></p>
@@ -41,7 +41,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional CC email address recipients information.</p>
+     * <p>Information about the <b>additional</b> CC email address recipients. Email
+     * recipients are limited to 50 total addresses: 1 required recipient in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html#API_SendOutboundEmail_RequestBody">DestinationEmailAddress</a>
+     * field and up to 49 recipients in the 'CcEmailAddresses' field.</p>
      */
     inline const Aws::Vector<EmailAddressInfo>& GetCcEmailAddresses() const { return m_ccEmailAddresses; }
     inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }

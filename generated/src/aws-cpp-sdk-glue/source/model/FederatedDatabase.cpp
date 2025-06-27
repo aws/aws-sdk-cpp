@@ -35,6 +35,11 @@ FederatedDatabase& FederatedDatabase::operator =(JsonView jsonValue)
     m_connectionName = jsonValue.GetString("ConnectionName");
     m_connectionNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ConnectionType"))
+  {
+    m_connectionType = jsonValue.GetString("ConnectionType");
+    m_connectionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue FederatedDatabase::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("ConnectionType", m_connectionType);
 
   }
 

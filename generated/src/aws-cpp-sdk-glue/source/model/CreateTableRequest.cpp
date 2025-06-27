@@ -28,6 +28,12 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   }
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
   if(m_tableInputHasBeenSet)
   {
    payload.WithObject("TableInput", m_tableInput.Jsonize());

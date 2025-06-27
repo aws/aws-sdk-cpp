@@ -44,6 +44,9 @@ namespace Aws
         static const int AWS_SES_US_EAST_2_HASH = HashingUtils::HashString("AWS_SES_US_EAST_2");
         static const int AWS_SES_US_WEST_1_HASH = HashingUtils::HashString("AWS_SES_US_WEST_1");
         static const int AWS_SES_US_WEST_2_HASH = HashingUtils::HashString("AWS_SES_US_WEST_2");
+        static const int AWS_SES_ME_CENTRAL_1_HASH = HashingUtils::HashString("AWS_SES_ME_CENTRAL_1");
+        static const int AWS_SES_AP_SOUTH_2_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTH_2");
+        static const int AWS_SES_EU_CENTRAL_2_HASH = HashingUtils::HashString("AWS_SES_EU_CENTRAL_2");
 
 
         DkimSigningAttributesOrigin GetDkimSigningAttributesOriginForName(const Aws::String& name)
@@ -145,6 +148,18 @@ namespace Aws
           {
             return DkimSigningAttributesOrigin::AWS_SES_US_WEST_2;
           }
+          else if (hashCode == AWS_SES_ME_CENTRAL_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_ME_CENTRAL_1;
+          }
+          else if (hashCode == AWS_SES_AP_SOUTH_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTH_2;
+          }
+          else if (hashCode == AWS_SES_EU_CENTRAL_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_CENTRAL_2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -209,6 +224,12 @@ namespace Aws
             return "AWS_SES_US_WEST_1";
           case DkimSigningAttributesOrigin::AWS_SES_US_WEST_2:
             return "AWS_SES_US_WEST_2";
+          case DkimSigningAttributesOrigin::AWS_SES_ME_CENTRAL_1:
+            return "AWS_SES_ME_CENTRAL_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_SOUTH_2:
+            return "AWS_SES_AP_SOUTH_2";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_CENTRAL_2:
+            return "AWS_SES_EU_CENTRAL_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

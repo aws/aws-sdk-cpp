@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
+     * <p>The email address, including the domain.</p>
      */
     inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     template<typename EmailAddressT = Aws::String>

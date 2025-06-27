@@ -160,7 +160,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>User details for the contact</p>
+     * <p>User details for the contact</p>  <p>UserInfo is required when
+     * creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation
+     * methods.</p> 
      */
     inline const UserInfo& GetUserInfo() const { return m_userInfo; }
     inline bool UserInfoHasBeenSet() const { return m_userInfoHasBeenSet; }

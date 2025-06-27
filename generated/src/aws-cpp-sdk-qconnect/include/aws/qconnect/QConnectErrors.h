@@ -50,7 +50,8 @@ enum class QConnectErrors
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   PRECONDITION_FAILED,
   SERVICE_QUOTA_EXCEEDED,
-  TOO_MANY_TAGS
+  TOO_MANY_TAGS,
+  UNAUTHORIZED
 };
 
 class AWS_QCONNECT_API QConnectError : public Aws::Client::AWSError<QConnectErrors>

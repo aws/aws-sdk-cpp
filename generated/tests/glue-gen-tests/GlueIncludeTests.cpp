@@ -188,6 +188,7 @@
 #include <aws/glue/model/CreateDevEndpointRequest.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
 #include <aws/glue/model/CreateGrokClassifierRequest.h>
+#include <aws/glue/model/CreateIcebergTableInput.h>
 #include <aws/glue/model/CreateIntegrationRequest.h>
 #include <aws/glue/model/CreateIntegrationResourcePropertyRequest.h>
 #include <aws/glue/model/CreateIntegrationResourcePropertyResult.h>
@@ -566,10 +567,20 @@
 #include <aws/glue/model/IcebergCompactionConfiguration.h>
 #include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/glue/model/IcebergInput.h>
+#include <aws/glue/model/IcebergNullOrder.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionConfiguration.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionMetrics.h>
+#include <aws/glue/model/IcebergPartitionField.h>
+#include <aws/glue/model/IcebergPartitionSpec.h>
 #include <aws/glue/model/IcebergRetentionConfiguration.h>
 #include <aws/glue/model/IcebergRetentionMetrics.h>
+#include <aws/glue/model/IcebergSchema.h>
+#include <aws/glue/model/IcebergSortDirection.h>
+#include <aws/glue/model/IcebergSortField.h>
+#include <aws/glue/model/IcebergSortOrder.h>
+#include <aws/glue/model/IcebergStructField.h>
+#include <aws/glue/model/IcebergStructTypeEnum.h>
+#include <aws/glue/model/IcebergTableUpdate.h>
 #include <aws/glue/model/IcebergTarget.h>
 #include <aws/glue/model/IcebergTargetCompressionType.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
@@ -977,6 +988,8 @@
 #include <aws/glue/model/UpdateDevEndpointRequest.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
 #include <aws/glue/model/UpdateGrokClassifierRequest.h>
+#include <aws/glue/model/UpdateIcebergInput.h>
+#include <aws/glue/model/UpdateIcebergTableInput.h>
 #include <aws/glue/model/UpdateIntegrationResourcePropertyRequest.h>
 #include <aws/glue/model/UpdateIntegrationResourcePropertyResult.h>
 #include <aws/glue/model/UpdateIntegrationTablePropertiesRequest.h>
@@ -988,6 +1001,7 @@
 #include <aws/glue/model/UpdateJsonClassifierRequest.h>
 #include <aws/glue/model/UpdateMLTransformRequest.h>
 #include <aws/glue/model/UpdateMLTransformResult.h>
+#include <aws/glue/model/UpdateOpenTableFormatInput.h>
 #include <aws/glue/model/UpdatePartitionRequest.h>
 #include <aws/glue/model/UpdatePartitionResult.h>
 #include <aws/glue/model/UpdateRegistryRequest.h>

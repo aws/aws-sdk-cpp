@@ -105,8 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The initial message to be sent to the newly created chat. If you have a Lex
-     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
+     * <p>The initial message to be sent to the newly created chat.</p>
      */
     inline const ChatMessage& GetInitialMessage() const { return m_initialMessage; }
     inline bool InitialMessageHasBeenSet() const { return m_initialMessageHasBeenSet; }

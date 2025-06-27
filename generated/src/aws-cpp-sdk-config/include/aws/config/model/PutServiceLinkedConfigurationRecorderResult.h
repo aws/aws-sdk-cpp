@@ -47,7 +47,8 @@ namespace Model
     /**
      * <p>The name of the specified configuration recorder.</p> <p>For service-linked
      * configuration recorders, Config automatically assigns a name that has the prefix
-     * "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+     * "<code>AWSConfigurationRecorderFor</code>" to the new service-linked
+     * configuration recorder.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
