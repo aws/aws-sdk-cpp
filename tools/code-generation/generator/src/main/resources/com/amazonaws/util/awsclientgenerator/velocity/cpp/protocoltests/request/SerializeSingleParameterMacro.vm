@@ -21,7 +21,7 @@ R"(${value.asText()})"##
 #elseif($shape.blob)
 Aws::String(R"(${value.asText()})")##
 #elseif($shape.timeStamp)
-Aws::Utils::DateTime(${value}L)##
+Aws::Utils::DateTime(static_cast<int64_t>(${value}))##
 #elseif($shape.enum)
 ${shape.name}Mapper::Get${shape.name}ForName(R"e(${value.asText()})e")##
 #elseif($shape.list)
