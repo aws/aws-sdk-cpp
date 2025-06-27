@@ -11,6 +11,7 @@
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/monitoring/MonitoringInterface.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
@@ -19,30 +20,10 @@
 
 #include <cstdint>
 #include <memory>
+#include <variant>
 
 namespace PerformanceTest {
 namespace Reporting {
-/**
- * A measurement value that supports different numeric types.
- */
-class Measurement {
- public:
-  enum Type { INTEGER, DOUBLE };
-
-  Measurement(int64_t value) : m_type(INTEGER) { m_data.i = value; }
-  Measurement(double value) : m_type(DOUBLE) { m_data.d = value; }
-  bool IsInt64() const { return m_type == INTEGER; }
-  bool IsDouble() const { return m_type == DOUBLE; }
-  int64_t AsInt64() const { return m_type == INTEGER ? m_data.i : static_cast<int64_t>(m_data.d); }
-  double AsDouble() const { return m_type == DOUBLE ? m_data.d : static_cast<double>(m_data.i); }
-
- private:
-  Type m_type;
-  union {
-    int64_t i;
-    double d;
-  } m_data;
-};
 
 /**
  * Container for a single performance metric record that stores measurement data and associated metadata.
@@ -52,7 +33,7 @@ struct PerformanceMetricRecord {
   Aws::String description;
   Aws::String unit;
   Aws::Utils::DateTime date;
-  Aws::Vector<Measurement> measurements;
+  Aws::Vector<std::variant<int64_t, double>> measurements;
   Aws::Map<Aws::String, Aws::String> dimensions;
 };
 
@@ -134,16 +115,26 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
 
  private:
   /**
-   * Adds a performance record with a specified duration.
-   * @param serviceName Name of the AWS service (e.g., "S3", "DynamoDB")
-   * @param requestName Name of the operation (e.g., "PutObject", "GetItem")
+   * Helper method to process request metrics and store in context.
+   * @param serviceName Name of the AWS service
+   * @param requestName Name of the operation
+   * @param request HTTP request object
    * @param metricsFromCore Core metrics collection containing latency data
-   * @param request HTTP request object (optional, for extracting test metadata)
-   * @param durationMs Duration of the request in milliseconds (default: 0)
+   * @param context Request context
+   */
+  void StoreLatencyInContext(const Aws::String& serviceName, const Aws::String& requestName,
+                             const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                             const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const;
+
+  /**
+   * Adds a performance record with a specified duration.
+   * @param serviceName Name of the AWS service
+   * @param requestName Name of the operation
+   * @param request HTTP request object
+   * @param durationMs Duration of the request in milliseconds
    */
   void AddPerformanceRecord(const Aws::String& serviceName, const Aws::String& requestName,
-                            const Aws::Monitoring::CoreMetricsCollection& metricsFromCore,
-                            const std::shared_ptr<const Aws::Http::HttpRequest>& request = nullptr, int64_t durationMs = 0) const;
+                            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const std::variant<int64_t, double>& durationMs) const;
 
   /**
    * Outputs aggregated performance metrics to JSON file.
@@ -151,12 +142,19 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    */
   void DumpJson() const;
 
+  /**
+   * Writes JSON to the output file.
+   * @param root The JSON root object to write
+   */
+  void WriteJsonToFile(const Aws::Utils::Json::JsonValue& root) const;
+
   mutable Aws::Vector<PerformanceMetricRecord> m_performanceRecords;
   Aws::Set<Aws::String> m_monitoredOperations;
   Aws::String m_productId;
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
+  mutable bool m_hasInvalidLatency;
 };
 
 /**
