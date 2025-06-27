@@ -16,61 +16,72 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <performance_tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
 
 #include <cstddef>
 #include <cstdint>
 #include <fstream>
 #include <memory>
 #include <utility>
+#include <variant>
 
 using namespace PerformanceTest::Reporting;
 
-Aws::Vector<std::pair<Aws::String, Aws::String>> JsonReportingMetrics::TestDimensions;
-Aws::Set<Aws::String> JsonReportingMetrics::MonitoredOperations;
-Aws::String JsonReportingMetrics::ProductId = "unknown";
-Aws::String JsonReportingMetrics::SdkVersion = "unknown";
-Aws::String JsonReportingMetrics::CommitId = "unknown";
-Aws::String JsonReportingMetrics::OutputFilename = "performance-test-results.json";
+struct RequestContext {
+  Aws::String serviceName;
+  Aws::String requestName;
+  std::shared_ptr<const Aws::Http::HttpRequest> request;
+  std::variant<int64_t, double> durationMs = int64_t(0);
+};
 
-void JsonReportingMetrics::SetTestContext(const Aws::Vector<std::pair<Aws::String, Aws::String>>& dimensions) {
-  TestDimensions = dimensions;
-}
-
-void JsonReportingMetrics::RegisterOperationsToMonitor(const Aws::Vector<Aws::String>& operations) {
-  MonitoredOperations.clear();
-  for (const auto& operation : operations) {
-    MonitoredOperations.insert(operation);
-  }
-}
-
-void JsonReportingMetrics::SetProductInfo(const Aws::String& productId, const Aws::String& sdkVersion, const Aws::String& commitId) {
-  ProductId = productId;
-  SdkVersion = sdkVersion;
-  CommitId = commitId;
-}
-
-void JsonReportingMetrics::SetOutputFilename(const Aws::String& filename) { OutputFilename = filename; }
+JsonReportingMetrics::JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& productId,
+                                           const Aws::String& sdkVersion, const Aws::String& commitId, const Aws::String& outputFilename)
+    : m_monitoredOperations(monitoredOperations),
+      m_productId(productId),
+      m_sdkVersion(sdkVersion),
+      m_commitId(commitId),
+      m_outputFilename(outputFilename),
+      m_hasInvalidLatency(false) {}
 
 JsonReportingMetrics::~JsonReportingMetrics() { DumpJson(); }
 
+JsonReportingMetricsFactory::JsonReportingMetricsFactory(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& productId,
+                                                         const Aws::String& sdkVersion, const Aws::String& commitId,
+                                                         const Aws::String& outputFilename)
+    : m_monitoredOperations(monitoredOperations),
+      m_productId(productId),
+      m_sdkVersion(sdkVersion),
+      m_commitId(commitId),
+      m_outputFilename(outputFilename) {}
+
 Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> JsonReportingMetricsFactory::CreateMonitoringInstance() const {
-  return Aws::MakeUnique<JsonReportingMetrics>("JsonReportingMetrics");
+  return Aws::MakeUnique<JsonReportingMetrics>("JsonReportingMetrics", m_monitoredOperations, m_productId, m_sdkVersion, m_commitId,
+                                               m_outputFilename);
+}
+
+void JsonReportingMetrics::StoreLatencyInContext(const Aws::String& serviceName, const Aws::String& requestName,
+                                                 const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                                                 const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const {
+  RequestContext* requestContext = static_cast<RequestContext*>(context);
+
+  Aws::String const latencyKey = Aws::Monitoring::GetHttpClientMetricNameByType(Aws::Monitoring::HttpClientMetricsType::RequestLatency);
+  auto iterator = metricsFromCore.httpClientMetrics.find(latencyKey);
+  if (iterator != metricsFromCore.httpClientMetrics.end() && iterator->second > 0) {
+    requestContext->serviceName = serviceName;
+    requestContext->requestName = requestName;
+    requestContext->request = request;
+    requestContext->durationMs = iterator->second;
+  } else {
+    m_hasInvalidLatency = true;
+  }
 }
 
 void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, const Aws::String& requestName,
-                                                const Aws::Monitoring::CoreMetricsCollection& metricsFromCore) const {
+                                                const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                                                const std::variant<int64_t, double>& durationMs) const {
   // If no operations are registered, monitor all operations. Otherwise, only monitor registered operations
-  if (!MonitoredOperations.empty() && MonitoredOperations.find(requestName) == MonitoredOperations.end()) {
+  if (!m_monitoredOperations.empty() && m_monitoredOperations.find(requestName) == m_monitoredOperations.end()) {
     return;
-  }
-
-  int64_t durationMs = 0;
-  Aws::String const latencyKey = Aws::Monitoring::GetHttpClientMetricNameByType(Aws::Monitoring::HttpClientMetricsType::RequestLatency);
-
-  auto iterator = metricsFromCore.httpClientMetrics.find(latencyKey);
-  if (iterator != metricsFromCore.httpClientMetrics.end()) {
-    durationMs = iterator->second;
   }
 
   PerformanceMetricRecord record;
@@ -78,38 +89,66 @@ void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, 
       Aws::Utils::StringUtils::ToLower(serviceName.c_str()) + "." + Aws::Utils::StringUtils::ToLower(requestName.c_str()) + ".latency";
   record.description = "Time to complete " + requestName + " operation";
   record.unit = "Milliseconds";
-  record.date = Aws::Utils::DateTime::Now().Seconds();
-  record.measurements.push_back(durationMs);
-  record.dimensions = TestDimensions;
+  record.date = Aws::Utils::DateTime::Now();
+  record.measurements.emplace_back(durationMs);
+
+  if (request) {
+    auto headers = request->GetHeaders();
+    for (const auto& header : headers) {
+      if (header.first.find("test-dimension-") == 0) {
+        Aws::String const key = header.first.substr(15);
+        record.dimensions[key] = header.second;
+      }
+    }
+  }
 
   m_performanceRecords.push_back(record);
 }
 
 void* JsonReportingMetrics::OnRequestStarted(const Aws::String&, const Aws::String&,
                                              const std::shared_ptr<const Aws::Http::HttpRequest>&) const {
-  return nullptr;
+  auto context = Aws::New<RequestContext>("RequestContext");
+  return context;
 }
 
 void JsonReportingMetrics::OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
-                                              const std::shared_ptr<const Aws::Http::HttpRequest>&, const Aws::Client::HttpResponseOutcome&,
-                                              const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void*) const {
-  AddPerformanceRecord(serviceName, requestName, metricsFromCore);
+                                              const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                                              const Aws::Client::HttpResponseOutcome&,
+                                              const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const {
+  StoreLatencyInContext(serviceName, requestName, request, metricsFromCore, context);
 }
 
 void JsonReportingMetrics::OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName,
-                                           const std::shared_ptr<const Aws::Http::HttpRequest>&, const Aws::Client::HttpResponseOutcome&,
-                                           const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void*) const {
-  AddPerformanceRecord(serviceName, requestName, metricsFromCore);
+                                           const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+                                           const Aws::Client::HttpResponseOutcome&,
+                                           const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const {
+  StoreLatencyInContext(serviceName, requestName, request, metricsFromCore, context);
 }
 
 void JsonReportingMetrics::OnRequestRetry(const Aws::String&, const Aws::String&, const std::shared_ptr<const Aws::Http::HttpRequest>&,
                                           void*) const {}
 
 void JsonReportingMetrics::OnFinish(const Aws::String&, const Aws::String&, const std::shared_ptr<const Aws::Http::HttpRequest>&,
-                                    void*) const {}
+                                    void* context) const {
+  RequestContext* requestContext = static_cast<RequestContext*>(context);
+
+  if (std::visit([](auto&& v) { return v > 0; }, requestContext->durationMs)) {
+    AddPerformanceRecord(requestContext->serviceName, requestContext->requestName, requestContext->request, requestContext->durationMs);
+  }
+
+  Aws::Delete(requestContext);
+}
 
 void JsonReportingMetrics::DumpJson() const {
-  if (m_performanceRecords.empty()) {
+  Aws::Utils::Json::JsonValue root;
+  root.WithString("productId", m_productId);
+  root.WithString("sdkVersion", m_sdkVersion);
+  root.WithString("commitId", m_commitId);
+
+  // If there is an invalid latency or there are no records, then use an empty results array
+  if (m_hasInvalidLatency || m_performanceRecords.empty()) {
+    root.WithArray("results", Aws::Utils::Array<Aws::Utils::Json::JsonValue>(0));
+    WriteJsonToFile(root);
     return;
   }
 
@@ -131,12 +170,6 @@ void JsonReportingMetrics::DumpJson() const {
     }
   }
 
-  // Create the JSON output
-  Aws::Utils::Json::JsonValue root;
-  root.WithString("productId", ProductId);
-  root.WithString("sdkVersion", SdkVersion);
-  root.WithString("commitId", CommitId);
-
   Aws::Utils::Array<Aws::Utils::Json::JsonValue> results(aggregatedRecords.size());
   size_t index = 0;
 
@@ -146,24 +179,29 @@ void JsonReportingMetrics::DumpJson() const {
     jsonMetric.WithString("name", record.name);
     jsonMetric.WithString("description", record.description);
     jsonMetric.WithString("unit", record.unit);
-    jsonMetric.WithInt64("date", record.date);
+    jsonMetric.WithInt64("date", record.date.Seconds());
 
     if (!record.dimensions.empty()) {
       Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size());
-      for (size_t j = 0; j < record.dimensions.size(); ++j) {
+      size_t dimensionIndex = 0;
+      for (const auto& dim : record.dimensions) {
         Aws::Utils::Json::JsonValue dimension;
-        dimension.WithString("name", record.dimensions[j].first);
-        dimension.WithString("value", record.dimensions[j].second);
-        dimensionsArray[j] = std::move(dimension);
+        dimension.WithString("name", dim.first);
+        dimension.WithString("value", dim.second);
+        dimensionsArray[dimensionIndex++] = std::move(dimension);
       }
       jsonMetric.WithArray("dimensions", std::move(dimensionsArray));
     }
 
     Aws::Utils::Array<Aws::Utils::Json::JsonValue> measurementsArray(record.measurements.size());
-    for (size_t j = 0; j < record.measurements.size(); ++j) {
+    for (size_t measurementIndex = 0; measurementIndex < record.measurements.size(); ++measurementIndex) {
       Aws::Utils::Json::JsonValue measurementValue;
-      measurementValue.AsInt64(record.measurements[j]);
-      measurementsArray[j] = std::move(measurementValue);
+      if (std::holds_alternative<double>(record.measurements[measurementIndex])) {
+        measurementValue.AsDouble(std::get<double>(record.measurements[measurementIndex]));
+      } else {
+        measurementValue.AsInt64(std::get<int64_t>(record.measurements[measurementIndex]));
+      }
+      measurementsArray[measurementIndex] = std::move(measurementValue);
     }
     jsonMetric.WithArray("measurements", std::move(measurementsArray));
 
@@ -171,8 +209,11 @@ void JsonReportingMetrics::DumpJson() const {
   }
 
   root.WithArray("results", std::move(results));
+  WriteJsonToFile(root);
+}
 
-  std::ofstream outFile(OutputFilename.c_str());
+void JsonReportingMetrics::WriteJsonToFile(const Aws::Utils::Json::JsonValue& root) const {
+  std::ofstream outFile(m_outputFilename.c_str());
   if (outFile.is_open()) {
     outFile << root.View().WriteReadable();
   }
