@@ -117,7 +117,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeTimestampUnionValue) {
   /* expectedResult = R"( {"contents":{"timestampValue":1398796238}} )" */
   {
     const MyUnion& resultContents = result.GetContents();
-    EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultContents.GetTimestampValue());
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), resultContents.GetTimestampValue());
   }
 }
 

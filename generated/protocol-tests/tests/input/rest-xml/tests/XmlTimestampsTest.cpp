@@ -17,7 +17,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetNormal(Aws::Utils::DateTime(1398796238L));
+  request.SetNormal(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetDateTime(Aws::Utils::DateTime(1398796238L));
+  request.SetDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -53,7 +53,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetDateTimeOnTarget(Aws::Utils::DateTime(1398796238L));
+  request.SetDateTimeOnTarget(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -71,7 +71,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetEpochSeconds(Aws::Utils::DateTime(1398796238L));
+  request.SetEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -89,7 +89,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(1398796238L));
+  request.SetEpochSecondsOnTarget(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -107,7 +107,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetHttpDate(Aws::Utils::DateTime(1398796238L));
+  request.SetHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
@@ -125,7 +125,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
   SetMockResponse();
 
   XmlTimestampsRequest request;
-  request.SetHttpDateOnTarget(Aws::Utils::DateTime(1398796238L));
+  request.SetHttpDateOnTarget(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)));
 
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;

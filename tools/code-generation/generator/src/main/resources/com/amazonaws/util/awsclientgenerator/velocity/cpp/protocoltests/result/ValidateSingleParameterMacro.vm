@@ -25,7 +25,7 @@ Aws::Utils::ByteBuffer(R"(${value.asText()})")##
 #if($macro.tsVal.contains(".") || $macro.tsVal.contains("E"))
 Aws::Utils::DateTime(${value})##
 #else
-Aws::Utils::DateTime(${value}L)##
+Aws::Utils::DateTime(static_cast<int64_t>(${value}))##
 #end
 #elseif($shape.enum)
 ${shape.name}Mapper::Get${shape.name}ForName(R"e(${value.asText()})e")##
