@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithNegativeOffset) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithPositiveOffset) {
@@ -46,5 +46,5 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithPositiveOffset) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResponse& result = outcome.GetResult();
   /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
 }

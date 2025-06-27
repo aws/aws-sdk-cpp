@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithTimestampHeaders)
   SetMockResponse();
 
   InputAndOutputWithHeadersRequest request;
-  request.SetHeaderTimestampList({Aws::Utils::DateTime(1576540098L), Aws::Utils::DateTime(1576540098L)});
+  request.SetHeaderTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), Aws::Utils::DateTime(static_cast<int64_t>(1576540098))});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   ExpectedRequest expectedRq;

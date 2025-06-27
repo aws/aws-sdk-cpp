@@ -26,7 +26,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, RestJsonDateTimeWithNegativeOffset) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResult& result = outcome.GetResult();
   /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, RestJsonDateTimeWithPositiveOffset) {
@@ -44,5 +44,5 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, RestJsonDateTimeWithPositiveOffset) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResult& result = outcome.GetResult();
   /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(1576540098L), result.GetDatetime());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
 }

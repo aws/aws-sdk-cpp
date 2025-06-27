@@ -196,7 +196,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_timestamp_shapes) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const KitchenSinkOperationResult& result = outcome.GetResult();
   /* expectedResult = R"( {"Timestamp":946845296} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(946845296L), result.GetTimestamp());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(946845296)), result.GetTimestamp());
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_iso8601_timestamps) {
@@ -215,7 +215,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_iso8601_timestamps) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const KitchenSinkOperationResult& result = outcome.GetResult();
   /* expectedResult = R"( {"Iso8601Timestamp":946845296} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(946845296L), result.GetIso8601Timestamp());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(946845296)), result.GetIso8601Timestamp());
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_httpdate_timestamps) {
@@ -234,7 +234,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_httpdate_timestamps) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const KitchenSinkOperationResult& result = outcome.GetResult();
   /* expectedResult = R"( {"HttpdateTimestamp":946845296} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(946845296L), result.GetHttpdateTimestamp());
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(946845296)), result.GetHttpdateTimestamp());
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_shapes) {

@@ -45,8 +45,8 @@ AWS_PROTOCOL_TEST(XmlLists, XmlLists) {
   EXPECT_EQ(false, resultBooleanListItem.at(1));
   const Aws::Vector<Aws::Utils::DateTime>& resultTimestampListItem = result.GetTimestampList();
   EXPECT_EQ(2U, resultTimestampListItem.size());
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultTimestampListItem.at(0));
-  EXPECT_EQ(Aws::Utils::DateTime(1398796238L), resultTimestampListItem.at(1));
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), resultTimestampListItem.at(0));
+  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), resultTimestampListItem.at(1));
   const Aws::Vector<FooEnum>& resultEnumListItem = result.GetEnumList();
   EXPECT_EQ(2U, resultEnumListItem.size());
   EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultEnumListItem.at(0));

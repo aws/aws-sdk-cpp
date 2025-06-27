@@ -17,13 +17,13 @@ AWS_PROTOCOL_TEST(TimestampFormatHeaders, TimestampFormatHeaders) {
   SetMockResponse();
 
   TimestampFormatHeadersRequest request;
-  request.SetMemberEpochSeconds(Aws::Utils::DateTime(1576540098L));
-  request.SetMemberHttpDate(Aws::Utils::DateTime(1576540098L));
-  request.SetMemberDateTime(Aws::Utils::DateTime(1576540098L));
-  request.SetDefaultFormat(Aws::Utils::DateTime(1576540098L));
-  request.SetTargetEpochSeconds(Aws::Utils::DateTime(1576540098L));
-  request.SetTargetHttpDate(Aws::Utils::DateTime(1576540098L));
-  request.SetTargetDateTime(Aws::Utils::DateTime(1576540098L));
+  request.SetMemberEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetMemberHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetMemberDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetDefaultFormat(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetTargetEpochSeconds(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetTargetHttpDate(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
+  request.SetTargetDateTime(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
 
   auto outcome = client.TimestampFormatHeaders(request);
   ExpectedRequest expectedRq;

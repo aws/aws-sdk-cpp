@@ -24,7 +24,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, InputWithHeadersAndAllParams) {
   request.SetFloat(4.1);
   request.SetDouble(5.1);
   request.SetBoolean(true);
-  request.SetTimestamp(Aws::Utils::DateTime(1576540098L));
+  request.SetTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabels(request);
   ExpectedRequest expectedRq;
@@ -47,7 +47,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, HttpRequestLabelEscaping) {
   request.SetFloat(4.1);
   request.SetDouble(5.1);
   request.SetBoolean(true);
-  request.SetTimestamp(Aws::Utils::DateTime(1576540098L));
+  request.SetTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)));
 
   auto outcome = client.HttpRequestWithLabels(request);
   ExpectedRequest expectedRq;
