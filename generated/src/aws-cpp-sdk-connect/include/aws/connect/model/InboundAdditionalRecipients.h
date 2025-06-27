@@ -25,8 +25,14 @@ namespace Model
 {
 
   /**
-   * <p>The additional TO CC recipients information of inbound email.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about the additional TO and CC recipients of an inbound email
+   * contact.</p>  <p>You can include up to 50 email addresses in total,
+   * distributed across <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEmailContact.html#API_StartEmailContact_RequestBody">DestinationEmailAddress</a>,
+   * <code>ToAddresses</code>, and <code>CcAddresses</code>. This total must include
+   * one required <code>DestinationEmailAddress</code>. You can then specify up to 49
+   * addresses allocated across <code>ToAddresses</code> and <code>CcAddresses</code>
+   * as needed.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/InboundAdditionalRecipients">AWS
    * API Reference</a></p>
    */
@@ -41,7 +47,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional recipients information present in to list.</p>
+     * <p>The <b>additional</b> recipients information present in to list. You must
+     * have 1 required recipient (<code>DestinationEmailAddress</code>). You can then
+     * specify up to 49 additional recipients (across <code>ToAddresses</code> and
+     * <code>CcAddresses</code>), for a total of 50 recipients.</p>
      */
     inline const Aws::Vector<EmailAddressInfo>& GetToAddresses() const { return m_toAddresses; }
     inline bool ToAddressesHasBeenSet() const { return m_toAddressesHasBeenSet; }
@@ -55,7 +64,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional recipients information present in cc list.</p>
+     * <p>The <b>additional</b> recipients information present in cc list. You must
+     * have 1 required recipient (<code>DestinationEmailAddress</code>). You can then
+     * specify up to 49 additional recipients (across <code>ToAddresses</code> and
+     * <code>CcAddresses</code>), for a total of 50 recipients.</p>
      */
     inline const Aws::Vector<EmailAddressInfo>& GetCcAddresses() const { return m_ccAddresses; }
     inline bool CcAddressesHasBeenSet() const { return m_ccAddressesHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/MetadataOperation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/CreateIcebergTableInput.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,19 @@ namespace Model
     template<typename VersionT = Aws::String>
     IcebergInput& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration parameters required to create a new Iceberg table in the
+     * Glue Data Catalog, including table properties and metadata specifications.</p>
+     */
+    inline const CreateIcebergTableInput& GetCreateIcebergTableInput() const { return m_createIcebergTableInput; }
+    inline bool CreateIcebergTableInputHasBeenSet() const { return m_createIcebergTableInputHasBeenSet; }
+    template<typename CreateIcebergTableInputT = CreateIcebergTableInput>
+    void SetCreateIcebergTableInput(CreateIcebergTableInputT&& value) { m_createIcebergTableInputHasBeenSet = true; m_createIcebergTableInput = std::forward<CreateIcebergTableInputT>(value); }
+    template<typename CreateIcebergTableInputT = CreateIcebergTableInput>
+    IcebergInput& WithCreateIcebergTableInput(CreateIcebergTableInputT&& value) { SetCreateIcebergTableInput(std::forward<CreateIcebergTableInputT>(value)); return *this;}
+    ///@}
   private:
 
     MetadataOperation m_metadataOperation{MetadataOperation::NOT_SET};
@@ -67,6 +81,9 @@ namespace Model
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    CreateIcebergTableInput m_createIcebergTableInput;
+    bool m_createIcebergTableInputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5870,7 +5870,10 @@ namespace Glue
          * <code>StartImportLabelsTaskRun</code>. After
          * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
          * learning transform will use the new and improved labels and perform a
-         * higher-quality transformation.</p><p><h3>See Also:</h3>   <a
+         * higher-quality transformation.</p> <p>Note: The role used to write the generated
+         * labeling set to the <code>OutputS3Path</code> is the role associated with the
+         * Machine Learning Transform, specified in the <code>CreateMLTransform</code>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">AWS
          * API Reference</a></p>
          */

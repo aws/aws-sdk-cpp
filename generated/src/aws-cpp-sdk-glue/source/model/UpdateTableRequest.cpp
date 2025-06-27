@@ -28,6 +28,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
 
   }
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
   if(m_tableInputHasBeenSet)
   {
    payload.WithObject("TableInput", m_tableInput.Jsonize());
@@ -60,6 +66,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_forceHasBeenSet)
   {
    payload.WithBool("Force", m_force);
+
+  }
+
+  if(m_updateOpenTableFormatInputHasBeenSet)
+  {
+   payload.WithObject("UpdateOpenTableFormatInput", m_updateOpenTableFormatInput.Jsonize());
 
   }
 

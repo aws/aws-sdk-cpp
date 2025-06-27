@@ -39,9 +39,9 @@ KubernetesWorkload& KubernetesWorkload::operator =(JsonView jsonValue)
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kubernetesResourcesTypes"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_kubernetesResourcesTypes = KubernetesResourcesTypesMapper::GetKubernetesResourcesTypesForName(jsonValue.GetString("kubernetesResourcesTypes"));
+    m_kubernetesResourcesTypes = KubernetesResourcesTypesMapper::GetKubernetesResourcesTypesForName(jsonValue.GetString("type"));
     m_kubernetesResourcesTypesHasBeenSet = true;
   }
   return *this;
@@ -70,7 +70,7 @@ JsonValue KubernetesWorkload::Jsonize() const
 
   if(m_kubernetesResourcesTypesHasBeenSet)
   {
-   payload.WithString("kubernetesResourcesTypes", KubernetesResourcesTypesMapper::GetNameForKubernetesResourcesTypes(m_kubernetesResourcesTypes));
+   payload.WithString("type", KubernetesResourcesTypesMapper::GetNameForKubernetesResourcesTypes(m_kubernetesResourcesTypes));
   }
 
   return payload;

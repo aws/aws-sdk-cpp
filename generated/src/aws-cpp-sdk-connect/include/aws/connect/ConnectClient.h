@@ -2853,7 +2853,12 @@ namespace Connect
         }
 
         /**
-         * <p>Describes the specified routing profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified routing profile.</p>  <p>
+         * <code>DescribeRoutingProfile</code> does not populate AssociatedQueueIds in its
+         * response. The example Response Syntax shown on this page is incorrect; we are
+         * working to update it. <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfiles</a>
+         * does include AssociatedQueueIds.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRoutingProfile">AWS
          * API Reference</a></p>
          */
@@ -5797,7 +5802,11 @@ namespace Connect
 
         /**
          * <p>Searches routing profiles in an Amazon Connect instance, with optional
-         * filtering.</p><p><h3>See Also:</h3>   <a
+         * filtering.</p>  <p> <code>SearchRoutingProfiles</code> does not populate
+         * LastModifiedRegion, LastModifiedTime, MediaConcurrencies.CrossChannelBehavior,
+         * and AgentAvailabilityTimer in its response, but <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
+         * does.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">AWS
          * API Reference</a></p>
          */

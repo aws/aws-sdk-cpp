@@ -111,10 +111,9 @@ namespace Model
      * <p>The locale to which specifies the language and region settings that determine
      * the response language for <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
-     *  <p>Changing this locale to anything other than <code>en_US</code>,
-     * <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations
-     * triggered by contact transcripts for agent assistance, as this feature is not
-     * supported in multiple languages.</p> 
+     *  <p>For more information on supported locales, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language
+     * support for Amazon Q in Connect</a>.</p> 
      */
     inline const Aws::String& GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }

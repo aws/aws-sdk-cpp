@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CONNECTED_TO_USER_HASH = HashingUtils::HashString("CONNECTED_TO_USER");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 
 
         InitiateAs GetInitiateAsForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == CONNECTED_TO_USER_HASH)
           {
             return InitiateAs::CONNECTED_TO_USER;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return InitiateAs::COMPLETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case InitiateAs::CONNECTED_TO_USER:
             return "CONNECTED_TO_USER";
+          case InitiateAs::COMPLETED:
+            return "COMPLETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
