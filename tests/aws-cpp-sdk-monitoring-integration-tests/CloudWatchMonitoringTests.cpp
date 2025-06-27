@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/monitoring/CloudWatchClient.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
+#include <aws/monitoring/model/GetDashboardRequest.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <gtest/gtest.h>
@@ -90,5 +91,13 @@ TEST_F(CloudWatchMonitoringOperationTest, PutLargeMetricDataTest) {
   Aws::CloudWatch::Model::PutMetricDataOutcome outcome =
       m_client->PutMetricData(request);
   AWS_ASSERT_SUCCESS(outcome);
+}
+
+TEST_F(CloudWatchMonitoringOperationTest, DashboardNotFoundShouldParseCorrectly) {
+  const auto response = m_client->GetDashboard(GetDashboardRequest().WithDashboardName("foo"));
+  EXPECT_FALSE(response.IsSuccess());
+  EXPECT_EQ(CloudWatchErrors::DASHBOARD_NOT_FOUND, response.GetError().GetErrorType());
+  EXPECT_EQ("ResourceNotFound", response.GetError().GetExceptionName());
+  EXPECT_EQ("Dashboard foo does not exist", response.GetError().GetMessage());
 }
 } // namespace
