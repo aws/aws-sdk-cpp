@@ -477,9 +477,9 @@ TEST_F(AWSErrorMarshallerTest, TestErrorsWithPrefixParse)
     JsonErrorMarshallerQueryCompatible awsErrorMarshaller2;
     error = awsErrorMarshaller2.Marshall(
         *BuildHttpResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
-    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
     ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
-    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ("Unable to parse ExceptionName: AwsQueryErrorCode Message: Test Message", error.GetMessage());
     ASSERT_EQ(requestId, error.GetRequestId());
     ASSERT_FALSE(error.ShouldRetry());
 }
@@ -746,9 +746,9 @@ TEST_F(AWSErrorMarshallerTest, TestErrorsWithoutPrefixParse)
     JsonErrorMarshallerQueryCompatible awsErrorMarshaller2;
     error = awsErrorMarshaller2.Marshall(
         *BuildHttpResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
-    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
     ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
-    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ("Unable to parse ExceptionName: AwsQueryErrorCode Message: Test Message", error.GetMessage());
     ASSERT_EQ(requestId, error.GetRequestId());
     ASSERT_FALSE(error.ShouldRetry());
 }

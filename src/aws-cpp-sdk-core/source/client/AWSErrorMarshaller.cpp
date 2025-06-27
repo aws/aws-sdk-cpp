@@ -62,6 +62,17 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
 
     if (httpResponse.HasHeader(ERROR_TYPE_HEADER)) {
       error = Marshall(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
+    } else if (httpResponse.HasHeader(QUERY_ERROR_HEADER)) {
+      auto errorCodeString = httpResponse.GetHeader(QUERY_ERROR_HEADER);
+      auto locationOfSemicolon = errorCodeString.find_first_of(';');
+      Aws::String errorCode;
+
+      if (locationOfSemicolon != Aws::String::npos) {
+        errorCode = errorCodeString.substr(0, locationOfSemicolon);
+      } else {
+        errorCode = errorCodeString;
+      }
+      error = Marshall(errorCode, message);
     } else if (payloadView.ValueExists(TYPE)) {
       error = Marshall(payloadView.GetString(TYPE), message);
     } else {
@@ -256,45 +267,6 @@ AWSError<CoreErrors> AWSErrorMarshaller::FindErrorByHttpResponseCode(Aws::Http::
 }
 
 void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& error, const Http::HttpResponse& httpResponse) const {
-  if (!error.GetExceptionName().empty()) {
-    auto exceptionPayload = GetJsonPayloadHttpResponse(httpResponse);
-    auto payloadView = JsonView(exceptionPayload);
-    /*
-        AWS Query-Compatible mode: This is a special setting that allows
-       certain AWS services to communicate using a specific "query"
-       format, which can send customized error codes. Users are divided
-       into different groups based on how they communicate with the
-       service: Group #1: Users using the AWS Query format, receiving
-       custom error codes. Group #2: Users using the regular AWS JSON
-       format without the trait, receiving standard error codes. Group #3:
-       Users using the AWS JSON format with the trait, receiving custom
-       error codes.
-
-        The header "x-amzn-query-error" shouldn't be present if it's not
-       awsQueryCompatible, so added checks for it.
-    */
-
-    if (httpResponse.HasHeader(QUERY_ERROR_HEADER)) {
-      auto errorCodeString = httpResponse.GetHeader(QUERY_ERROR_HEADER);
-      auto locationOfSemicolon = errorCodeString.find_first_of(';');
-      Aws::String errorCode;
-
-      if (locationOfSemicolon != Aws::String::npos) {
-        errorCode = errorCodeString.substr(0, locationOfSemicolon);
-      } else {
-        errorCode = errorCodeString;
-      }
-
-      error.SetExceptionName(errorCode);
-    }
-    // check for exception name from payload field 'type'
-    else if (payloadView.ValueExists(TYPE)) {
-      // handle missing header and parse code from message
-      const auto& typeStr = payloadView.GetString(TYPE);
-      auto locationOfPound = typeStr.find_first_of('#');
-      if (locationOfPound != Aws::String::npos) {
-        error.SetExceptionName(typeStr.substr(locationOfPound + 1));
-      }
-    }
-  }
+    AWS_UNREFERENCED_PARAM(error);
+    AWS_UNREFERENCED_PARAM(httpResponse);
 }
