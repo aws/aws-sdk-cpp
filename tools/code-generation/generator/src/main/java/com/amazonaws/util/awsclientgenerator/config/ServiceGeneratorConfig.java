@@ -20,6 +20,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.eventbridge.EventBri
 import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.monitoring.CloudwatchMonitoringJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.neptune.NeptuneCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
@@ -68,6 +69,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-neptune-query", new NeptuneCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge-json", new EventBridgeCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-dsql-rest-json", new DsqlCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-monitoring-json", new CloudwatchMonitoringJsonCppClientGenerator());
 
             // protocol tests clients
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2-protocol-ec2", new Ec2CppClientGenerator());
