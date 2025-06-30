@@ -4,7 +4,6 @@
  */
 
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
@@ -20,19 +19,25 @@
 #include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <aws/dynamodb/model/TableStatus.h>
-#include <performance-tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/Utils.h>
 #include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
 
 #include <chrono>
-#include <iostream>
 #include <string>
 #include <thread>
 
-bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
-  Aws::String tableName;
-  Aws::String const rawUUID = Aws::Utils::UUID::RandomUUID();
-  Aws::String const tableId = Aws::Utils::StringUtils::ToLower(rawUUID.c_str()).substr(0, 8);
-  tableName = "perf-table-" + tableId;
+void PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
+  auto tableName = SetupTable(dynamodb, config);
+  if (tableName.empty()) {
+    return;
+  }
+
+  RunOperations(dynamodb, tableName, config, iterations);
+  CleanupResources(dynamodb, tableName);
+}
+
+Aws::String PerformanceTest::Services::DynamoDB::SetupTable(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& /* config */) {
+  Aws::String tableName = "perf-table-" + PerformanceTest::Utils::GenerateUniqueId();
 
   Aws::DynamoDB::Model::CreateTableRequest createTableRequest;
   createTableRequest.SetTableName(tableName);
@@ -51,8 +56,8 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
 
   auto createTableOutcome = dynamodb.CreateTable(createTableRequest);
   if (!createTableOutcome.IsSuccess()) {
-    std::cerr << "[ERROR] CreateTable failed: " << createTableOutcome.GetError().GetMessage() << '\n';
-    return false;
+    PerformanceTest::Utils::LogError("DynamoDB", "CreateTable", createTableOutcome.GetError().GetMessage());
+    return "";
   }
 
   // Wait for table to become active
@@ -70,7 +75,12 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 
-  Aws::String const payload(config.sizeBytes, 'x');
+  return tableName;
+}
+
+void PerformanceTest::Services::DynamoDB::RunOperations(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName,
+                                                        const TestCase& config, int iterations) {
+  const auto payload = PerformanceTest::Utils::RandomString(config.sizeBytes);
 
   // Run PutItem multiple times
   for (int i = 0; i < iterations; i++) {
@@ -85,7 +95,7 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
 
     auto putItemOutcome = dynamodb.PutItem(putItemRequest);
     if (!putItemOutcome.IsSuccess()) {
-      std::cerr << "[ERROR] PutItem failed: " << putItemOutcome.GetError().GetMessage() << '\n';
+      PerformanceTest::Utils::LogError("DynamoDB", "PutItem", putItemOutcome.GetError().GetMessage());
     }
   }
 
@@ -101,13 +111,16 @@ bool PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient&
 
     auto getItemOutcome = dynamodb.GetItem(getItemRequest);
     if (!getItemOutcome.IsSuccess()) {
-      std::cerr << "[ERROR] GetItem failed: " << getItemOutcome.GetError().GetMessage() << '\n';
+      PerformanceTest::Utils::LogError("DynamoDB", "GetItem", getItemOutcome.GetError().GetMessage());
     }
   }
+}
 
+void PerformanceTest::Services::DynamoDB::CleanupResources(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName) {
   Aws::DynamoDB::Model::DeleteTableRequest deleteTableRequest;
   deleteTableRequest.SetTableName(tableName);
-  dynamodb.DeleteTable(deleteTableRequest);
-
-  return true;
+  auto deleteTableOutcome = dynamodb.DeleteTable(deleteTableRequest);
+  if (!deleteTableOutcome.IsSuccess()) {
+    PerformanceTest::Utils::LogError("DynamoDB", "DeleteTable", deleteTableOutcome.GetError().GetMessage());
+  }
 }

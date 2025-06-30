@@ -6,10 +6,10 @@
 #include <aws/core/Aws.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
-#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <performance-tests/Utils.h>
 #include <performance-tests/reporting/JsonReportingMetrics.h>
 #include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
 #include <performance-tests/services/dynamodb/DynamoDBTestConfig.h>
@@ -33,10 +33,7 @@ int main(int argc, char** argv) {
   }
 
   Aws::SDKOptions options;
-  Aws::SDKOptions::SDKVersion const version;
-  Aws::String const versionStr = Aws::Utils::StringUtils::to_string(static_cast<int>(version.major)) + "." +
-                                 Aws::Utils::StringUtils::to_string(static_cast<int>(version.minor)) + "." +
-                                 Aws::Utils::StringUtils::to_string(static_cast<int>(version.patch));
+  Aws::String const versionStr = PerformanceTest::Utils::GetSDKVersionString();
 
   options.monitoringOptions.customizedMonitoringFactory_create_fn = {[&]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
     return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>(
