@@ -5,6 +5,7 @@
 #set($serviceNamespace = $metadata.namespace)
 #set($payloadType = ${CppViewHelper.computeServicePayloadType($metadata.findFirstSupportedProtocol())})
 #set($nonCoreServiceErrors = $serviceModel.getNonCoreServiceErrors())
+#set($queryCompatibleMappings = $serviceModel.getQueryCompatibleErrorMappings())
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/HashingUtils.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
@@ -54,6 +55,9 @@ namespace ${metadata.classNamePrefix}ErrorMapper
 #foreach($error in $nonCoreServiceErrors)
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
 static const int ${constName}_HASH = HashingUtils::HashString("${error.text}");
+#end
+#foreach($mapping in $queryCompatibleMappings.entrySet())
+static const int ${mapping.getKey()}_HASH_COMPATIBLE = HashingUtils::HashString("${mapping.getValue()}");
 #end
 
 #if ($nonCoreServiceErrors.size() > 121)
@@ -129,6 +133,12 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 #end
 #else
   AWS_UNREFERENCED_PARAM(errorName);
+#end
+#foreach($mapping in $queryCompatibleMappings.entrySet())
+  ${elseText}if (hashCode == ${mapping.getKey()}_HASH_COMPATIBLE)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(${metadata.classNamePrefix}Errors::${mapping.getKey()}), RetryableType::NOT_RETRYABLE);
+  }
 #end
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
