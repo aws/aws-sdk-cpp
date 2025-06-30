@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of objects that you want to return with this call.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListManagedResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies that you want to receive the next page of results. Valid only if
      * you received a <code>nextToken</code> response in the previous request. If you
      * did, it indicates that more output is available. Set this parameter to the value
@@ -63,13 +53,23 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListManagedResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The number of objects that you want to return with this call.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListManagedResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

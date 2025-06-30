@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/ServiceSpecificCredentialMetadata.h>
 #include <utility>
@@ -49,6 +50,29 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>When IsTruncated is true, this element is present and contains the value to
+     * use for the Marker parameter in a subsequent pagination request.</p>
+     */
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListServiceSpecificCredentialsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the Marker
+     * request parameter to retrieve more items.</p>
+     */
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
+    inline ListServiceSpecificCredentialsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
     template<typename ResponseMetadataT = ResponseMetadata>
@@ -60,6 +84,12 @@ namespace Model
 
     Aws::Vector<ServiceSpecificCredentialMetadata> m_serviceSpecificCredentials;
     bool m_serviceSpecificCredentialsHasBeenSet = false;
+
+    Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
+
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet = false;

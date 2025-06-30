@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>Contains information about a server certificate.</p> <p> This data type is
-   * used as a response element in the <a>GetServerCertificate</a> operation.
-   * </p><p><h3>See Also:</h3>   <a
+   * used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html">GetServerCertificate</a>
+   * operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServerCertificate">AWS
    * API Reference</a></p>
    */

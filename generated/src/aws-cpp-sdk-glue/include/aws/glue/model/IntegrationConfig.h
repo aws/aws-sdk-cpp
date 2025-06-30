@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -53,10 +54,32 @@ namespace Model
     template<typename RefreshIntervalT = Aws::String>
     IntegrationConfig& WithRefreshInterval(RefreshIntervalT&& value) { SetRefreshInterval(std::forward<RefreshIntervalT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> A collection of key-value pairs that specify additional properties for the
+     * integration source. These properties provide configuration options that can be
+     * used to customize the behavior of the ODB source during data integration
+     * operations. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSourceProperties() const { return m_sourceProperties; }
+    inline bool SourcePropertiesHasBeenSet() const { return m_sourcePropertiesHasBeenSet; }
+    template<typename SourcePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSourceProperties(SourcePropertiesT&& value) { m_sourcePropertiesHasBeenSet = true; m_sourceProperties = std::forward<SourcePropertiesT>(value); }
+    template<typename SourcePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    IntegrationConfig& WithSourceProperties(SourcePropertiesT&& value) { SetSourceProperties(std::forward<SourcePropertiesT>(value)); return *this;}
+    template<typename SourcePropertiesKeyT = Aws::String, typename SourcePropertiesValueT = Aws::String>
+    IntegrationConfig& AddSourceProperties(SourcePropertiesKeyT&& key, SourcePropertiesValueT&& value) {
+      m_sourcePropertiesHasBeenSet = true; m_sourceProperties.emplace(std::forward<SourcePropertiesKeyT>(key), std::forward<SourcePropertiesValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_refreshInterval;
     bool m_refreshIntervalHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_sourceProperties;
+    bool m_sourcePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

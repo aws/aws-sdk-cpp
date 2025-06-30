@@ -21,6 +21,7 @@
 #include <aws/arc-zonal-shift/ARCZonalShiftClient.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrorMarshaller.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
+#include <aws/arc-zonal-shift/model/CancelPracticeRunRequest.h>
 #include <aws/arc-zonal-shift/model/CancelZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/model/CreatePracticeRunConfigurationRequest.h>
 #include <aws/arc-zonal-shift/model/DeletePracticeRunConfigurationRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/arc-zonal-shift/model/ListAutoshiftsRequest.h>
 #include <aws/arc-zonal-shift/model/ListManagedResourcesRequest.h>
 #include <aws/arc-zonal-shift/model/ListZonalShiftsRequest.h>
+#include <aws/arc-zonal-shift/model/StartPracticeRunRequest.h>
 #include <aws/arc-zonal-shift/model/StartZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/model/UpdateAutoshiftObserverNotificationStatusRequest.h>
 #include <aws/arc-zonal-shift/model/UpdatePracticeRunConfigurationRequest.h>
@@ -175,6 +177,39 @@ void ARCZonalShiftClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CancelPracticeRunOutcome ARCZonalShiftClient::CancelPracticeRun(const CancelPracticeRunRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelPracticeRun);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelPracticeRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ZonalShiftIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelPracticeRun", "Required field: ZonalShiftId, is not set");
+    return CancelPracticeRunOutcome(Aws::Client::AWSError<ARCZonalShiftErrors>(ARCZonalShiftErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ZonalShiftId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelPracticeRun, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelPracticeRun, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelPracticeRun",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelPracticeRunOutcome>(
+    [&]()-> CancelPracticeRunOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelPracticeRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/practiceruns/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZonalShiftId());
+      return CancelPracticeRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CancelZonalShiftOutcome ARCZonalShiftClient::CancelZonalShift(const CancelZonalShiftRequest& request) const
@@ -405,6 +440,33 @@ ListZonalShiftsOutcome ARCZonalShiftClient::ListZonalShifts(const ListZonalShift
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListZonalShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/zonalshifts");
       return ListZonalShiftsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartPracticeRunOutcome ARCZonalShiftClient::StartPracticeRun(const StartPracticeRunRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartPracticeRun);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPracticeRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartPracticeRun, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartPracticeRun, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartPracticeRun",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartPracticeRunOutcome>(
+    [&]()-> StartPracticeRunOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartPracticeRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/practiceruns");
+      return StartPracticeRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

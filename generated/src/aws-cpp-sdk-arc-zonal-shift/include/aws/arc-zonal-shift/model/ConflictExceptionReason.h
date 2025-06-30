@@ -22,7 +22,11 @@ namespace Model
     PracticeConfigurationAlreadyExists,
     AutoShiftEnabled,
     PracticeConfigurationDoesNotExist,
-    ZonalAutoshiftActive
+    ZonalAutoshiftActive,
+    PracticeOutcomeAlarmsRed,
+    PracticeBlockingAlarmsRed,
+    PracticeInBlockedDates,
+    PracticeInBlockedWindows
   };
 
 namespace ConflictExceptionReasonMapper

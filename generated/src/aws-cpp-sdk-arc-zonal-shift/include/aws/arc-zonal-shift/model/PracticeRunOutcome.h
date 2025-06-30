@@ -19,7 +19,8 @@ namespace Model
     FAILED,
     INTERRUPTED,
     PENDING,
-    SUCCEEDED
+    SUCCEEDED,
+    CAPACITY_CHECK_FAILED
   };
 
 namespace PracticeRunOutcomeMapper

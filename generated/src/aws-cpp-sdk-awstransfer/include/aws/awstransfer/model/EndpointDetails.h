@@ -79,6 +79,9 @@ namespace Model
      * equal in length to <code>SubnetIds</code>. For example, if you have three subnet
      * IDs, you must also specify three address allocation IDs.</p> </li> <li> <p>Call
      * the <code>UpdateServer</code> API to set or change this parameter.</p> </li>
+     * <li> <p>You can't set address allocation IDs for servers that have an
+     * <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this
+     * property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p> </li>
      * </ul> 
      */
     inline const Aws::Vector<Aws::String>& GetAddressAllocationIds() const { return m_addressAllocationIds; }

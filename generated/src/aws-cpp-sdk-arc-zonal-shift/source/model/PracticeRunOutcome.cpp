@@ -24,6 +24,7 @@ namespace Aws
         static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static const int CAPACITY_CHECK_FAILED_HASH = HashingUtils::HashString("CAPACITY_CHECK_FAILED");
 
 
         PracticeRunOutcome GetPracticeRunOutcomeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SUCCEEDED_HASH)
           {
             return PracticeRunOutcome::SUCCEEDED;
+          }
+          else if (hashCode == CAPACITY_CHECK_FAILED_HASH)
+          {
+            return PracticeRunOutcome::CAPACITY_CHECK_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "PENDING";
           case PracticeRunOutcome::SUCCEEDED:
             return "SUCCEEDED";
+          case PracticeRunOutcome::CAPACITY_CHECK_FAILED:
+            return "CAPACITY_CHECK_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

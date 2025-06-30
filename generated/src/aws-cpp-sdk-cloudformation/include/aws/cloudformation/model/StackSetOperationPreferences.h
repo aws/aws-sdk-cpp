@@ -79,9 +79,9 @@ namespace Model
      * <p>The number of accounts, per Region, for which this operation can fail before
      * CloudFormation stops the operation in that Region. If the operation is stopped
      * in a Region, CloudFormation doesn't attempt the operation in any subsequent
-     * Regions.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
+     * Regions.</p> <p>You can specify either <code>FailureToleranceCount</code> or
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline int GetFailureToleranceCount() const { return m_failureToleranceCount; }
     inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
@@ -96,9 +96,9 @@ namespace Model
      * is stopped in a Region, CloudFormation doesn't attempt the operation in any
      * subsequent Regions.</p> <p>When calculating the number of accounts based on the
      * specified percentage, CloudFormation rounds <i>down</i> to the next whole
-     * number.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
-     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
+     * number.</p> <p>You can specify either <code>FailureToleranceCount</code> or
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline int GetFailureTolerancePercentage() const { return m_failureTolerancePercentage; }
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
@@ -115,7 +115,7 @@ namespace Model
      * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
      * specify the <i>maximum</i> for operations. For large deployments, under certain
      * circumstances the actual number of accounts acted upon concurrently may be lower
-     * due to service throttling.</p> <p>Conditional: You must specify either
+     * due to service throttling.</p> <p>You can specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
      * CloudFormation sets the number as one instead.</p> <p>Note that this setting
      * lets you specify the <i>maximum</i> for operations. For large deployments, under
      * certain circumstances the actual number of accounts acted upon concurrently may
-     * be lower due to service throttling.</p> <p>Conditional: You must specify either
+     * be lower due to service throttling.</p> <p>You can specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */

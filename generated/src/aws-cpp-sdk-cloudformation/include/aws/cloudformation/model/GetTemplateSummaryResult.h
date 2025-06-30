@@ -171,7 +171,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object containing any warnings returned.</p>
+     * <p>An object that contains any warnings returned.</p>
      */
     inline const Warnings& GetWarnings() const { return m_warnings; }
     template<typename WarningsT = Warnings>

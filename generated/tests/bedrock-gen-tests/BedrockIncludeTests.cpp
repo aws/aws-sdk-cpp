@@ -17,6 +17,7 @@
 #include <aws/bedrock/model/AgreementAvailability.h>
 #include <aws/bedrock/model/AgreementStatus.h>
 #include <aws/bedrock/model/ApplicationType.h>
+#include <aws/bedrock/model/AttributeType.h>
 #include <aws/bedrock/model/AuthorizationStatus.h>
 #include <aws/bedrock/model/AutomatedEvaluationConfig.h>
 #include <aws/bedrock/model/AutomatedEvaluationCustomMetricConfig.h>
@@ -111,6 +112,7 @@
 #include <aws/bedrock/model/ExternalSourceType.h>
 #include <aws/bedrock/model/ExternalSourcesGenerationConfiguration.h>
 #include <aws/bedrock/model/ExternalSourcesRetrieveAndGenerateConfiguration.h>
+#include <aws/bedrock/model/FieldForReranking.h>
 #include <aws/bedrock/model/FilterAttribute.h>
 #include <aws/bedrock/model/FineTuningJobStatus.h>
 #include <aws/bedrock/model/FoundationModelDetails.h>
@@ -200,6 +202,7 @@
 #include <aws/bedrock/model/HumanEvaluationConfig.h>
 #include <aws/bedrock/model/HumanEvaluationCustomMetric.h>
 #include <aws/bedrock/model/HumanWorkflowConfig.h>
+#include <aws/bedrock/model/ImplicitFilterConfiguration.h>
 #include <aws/bedrock/model/ImportedModelSummary.h>
 #include <aws/bedrock/model/InferenceProfileModel.h>
 #include <aws/bedrock/model/InferenceProfileModelSource.h>
@@ -249,6 +252,8 @@
 #include <aws/bedrock/model/LoggingConfig.h>
 #include <aws/bedrock/model/MarketplaceModelEndpoint.h>
 #include <aws/bedrock/model/MarketplaceModelEndpointSummary.h>
+#include <aws/bedrock/model/MetadataAttributeSchema.h>
+#include <aws/bedrock/model/MetadataConfigurationForReranking.h>
 #include <aws/bedrock/model/ModelCopyJobStatus.h>
 #include <aws/bedrock/model/ModelCopyJobSummary.h>
 #include <aws/bedrock/model/ModelCustomization.h>
@@ -293,6 +298,8 @@
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/RequestMetadataBaseFilters.h>
 #include <aws/bedrock/model/RequestMetadataFilters.h>
+#include <aws/bedrock/model/RerankingMetadataSelectionMode.h>
+#include <aws/bedrock/model/RerankingMetadataSelectiveModeConfiguration.h>
 #include <aws/bedrock/model/RetrievalFilter.h>
 #include <aws/bedrock/model/RetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock/model/RetrieveAndGenerateType.h>
@@ -340,6 +347,10 @@
 #include <aws/bedrock/model/Validator.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <aws/bedrock/model/ValidityTerm.h>
+#include <aws/bedrock/model/VectorSearchBedrockRerankingConfiguration.h>
+#include <aws/bedrock/model/VectorSearchBedrockRerankingModelConfiguration.h>
+#include <aws/bedrock/model/VectorSearchRerankingConfiguration.h>
+#include <aws/bedrock/model/VectorSearchRerankingConfigurationType.h>
 #include <aws/bedrock/model/VpcConfig.h>
 
 using BedrockIncludeTest = ::testing::Test;

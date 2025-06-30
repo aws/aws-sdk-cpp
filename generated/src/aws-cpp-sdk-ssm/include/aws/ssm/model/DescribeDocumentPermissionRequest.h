@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the document for which you are the owner.</p>
+     * <p>The name of the document for which you are the owner. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

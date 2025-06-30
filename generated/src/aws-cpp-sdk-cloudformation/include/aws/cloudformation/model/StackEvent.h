@@ -250,7 +250,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional field containing information about the detailed status of the
+     * <p>An optional field that contains information about the detailed status of the
      * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
      * resources in the stack have reached that event. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand

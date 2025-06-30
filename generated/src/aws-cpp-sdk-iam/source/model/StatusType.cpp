@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Active_HASH = HashingUtils::HashString("Active");
         static const int Inactive_HASH = HashingUtils::HashString("Inactive");
+        static const int Expired_HASH = HashingUtils::HashString("Expired");
 
 
         StatusType GetStatusTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Inactive_HASH)
           {
             return StatusType::Inactive;
+          }
+          else if (hashCode == Expired_HASH)
+          {
+            return StatusType::Expired;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Active";
           case StatusType::Inactive:
             return "Inactive";
+          case StatusType::Expired:
+            return "Expired";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

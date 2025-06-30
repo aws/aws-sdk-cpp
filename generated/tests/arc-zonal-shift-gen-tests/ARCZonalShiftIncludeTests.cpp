@@ -20,6 +20,8 @@
 #include <aws/arc-zonal-shift/model/AutoshiftInResource.h>
 #include <aws/arc-zonal-shift/model/AutoshiftObserverNotificationStatus.h>
 #include <aws/arc-zonal-shift/model/AutoshiftSummary.h>
+#include <aws/arc-zonal-shift/model/CancelPracticeRunRequest.h>
+#include <aws/arc-zonal-shift/model/CancelPracticeRunResult.h>
 #include <aws/arc-zonal-shift/model/CancelZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/model/CancelZonalShiftResult.h>
 #include <aws/arc-zonal-shift/model/ConflictException.h>
@@ -44,6 +46,8 @@
 #include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
 #include <aws/arc-zonal-shift/model/PracticeRunOutcome.h>
 #include <aws/arc-zonal-shift/model/ShiftType.h>
+#include <aws/arc-zonal-shift/model/StartPracticeRunRequest.h>
+#include <aws/arc-zonal-shift/model/StartPracticeRunResult.h>
 #include <aws/arc-zonal-shift/model/StartZonalShiftRequest.h>
 #include <aws/arc-zonal-shift/model/StartZonalShiftResult.h>
 #include <aws/arc-zonal-shift/model/UpdateAutoshiftObserverNotificationStatusRequest.h>

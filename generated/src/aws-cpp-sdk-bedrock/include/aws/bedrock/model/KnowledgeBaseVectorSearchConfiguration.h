@@ -7,6 +7,8 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/SearchType.h>
 #include <aws/bedrock/model/RetrievalFilter.h>
+#include <aws/bedrock/model/ImplicitFilterConfiguration.h>
+#include <aws/bedrock/model/VectorSearchRerankingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +78,34 @@ namespace Model
     template<typename FilterT = RetrievalFilter>
     KnowledgeBaseVectorSearchConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration for implicit filtering in Knowledge Base vector searches. This
+     * allows the system to automatically apply filters based on the query context
+     * without requiring explicit filter expressions.</p>
+     */
+    inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const { return m_implicitFilterConfiguration; }
+    inline bool ImplicitFilterConfigurationHasBeenSet() const { return m_implicitFilterConfigurationHasBeenSet; }
+    template<typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+    void SetImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = std::forward<ImplicitFilterConfigurationT>(value); }
+    template<typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+    KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) { SetImplicitFilterConfiguration(std::forward<ImplicitFilterConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration for reranking search results in Knowledge Base vector searches.
+     * Reranking improves search relevance by reordering initial vector search results
+     * using more sophisticated relevance models.</p>
+     */
+    inline const VectorSearchRerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
+    inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     int m_numberOfResults{0};
@@ -86,6 +116,12 @@ namespace Model
 
     RetrievalFilter m_filter;
     bool m_filterHasBeenSet = false;
+
+    ImplicitFilterConfiguration m_implicitFilterConfiguration;
+    bool m_implicitFilterConfigurationHasBeenSet = false;
+
+    VectorSearchRerankingConfiguration m_rerankingConfiguration;
+    bool m_rerankingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,9 +29,13 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM user entity.</p> <p>This data type is used
-   * as a response element in the following operations:</p> <ul> <li> <p>
-   * <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p>
-   * <a>ListUsers</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * as a response element in the following operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html">CreateUser</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/User">AWS API
    * Reference</a></p>
    */
@@ -132,7 +136,11 @@ namespace Model
      * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
+     * is returned only in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a>
+     * operations. </p>
      */
     inline const Aws::Utils::DateTime& GetPasswordLastUsed() const { return m_passwordLastUsed; }
     inline bool PasswordLastUsedHasBeenSet() const { return m_passwordLastUsedHasBeenSet; }

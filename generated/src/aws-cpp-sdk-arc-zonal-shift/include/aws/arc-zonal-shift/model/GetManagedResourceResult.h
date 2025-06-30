@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
 #include <aws/arc-zonal-shift/model/ZonalAutoshiftStatus.h>
-#include <aws/arc-zonal-shift/model/AutoshiftInResource.h>
 #include <aws/arc-zonal-shift/model/ZonalShiftInResource.h>
+#include <aws/arc-zonal-shift/model/AutoshiftInResource.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetManagedResourceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the resource.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetManagedResourceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A collection of key-value pairs that indicate whether resources are active in
      * Availability Zones or not. The key name is the Availability Zone where the
      * resource is deployed. The value is 1 or 0.</p>
@@ -56,13 +78,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the resource.</p>
+     * <p>The zonal shifts that are currently active for a resource. </p>
      */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    GetManagedResourceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const { return m_zonalShifts; }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    void SetZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = std::forward<ZonalShiftsT>(value); }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    GetManagedResourceResult& WithZonalShifts(ZonalShiftsT&& value) { SetZonalShifts(std::forward<ZonalShiftsT>(value)); return *this;}
+    template<typename ZonalShiftsT = ZonalShiftInResource>
+    GetManagedResourceResult& AddZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.emplace_back(std::forward<ZonalShiftsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,17 +100,6 @@ namespace Model
     GetManagedResourceResult& WithAutoshifts(AutoshiftsT&& value) { SetAutoshifts(std::forward<AutoshiftsT>(value)); return *this;}
     template<typename AutoshiftsT = AutoshiftInResource>
     GetManagedResourceResult& AddAutoshifts(AutoshiftsT&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts.emplace_back(std::forward<AutoshiftsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the resource.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GetManagedResourceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,19 +128,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The zonal shifts that are currently active for a resource. </p>
-     */
-    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const { return m_zonalShifts; }
-    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
-    void SetZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = std::forward<ZonalShiftsT>(value); }
-    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
-    GetManagedResourceResult& WithZonalShifts(ZonalShiftsT&& value) { SetZonalShifts(std::forward<ZonalShiftsT>(value)); return *this;}
-    template<typename ZonalShiftsT = ZonalShiftInResource>
-    GetManagedResourceResult& AddZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.emplace_back(std::forward<ZonalShiftsT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -137,26 +137,26 @@ namespace Model
     ///@}
   private:
 
-    Aws::Map<Aws::String, double> m_appliedWeights;
-    bool m_appliedWeightsHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Vector<AutoshiftInResource> m_autoshifts;
-    bool m_autoshiftsHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Map<Aws::String, double> m_appliedWeights;
+    bool m_appliedWeightsHasBeenSet = false;
+
+    Aws::Vector<ZonalShiftInResource> m_zonalShifts;
+    bool m_zonalShiftsHasBeenSet = false;
+
+    Aws::Vector<AutoshiftInResource> m_autoshifts;
+    bool m_autoshiftsHasBeenSet = false;
 
     PracticeRunConfiguration m_practiceRunConfiguration;
     bool m_practiceRunConfigurationHasBeenSet = false;
 
     ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
     bool m_zonalAutoshiftStatusHasBeenSet = false;
-
-    Aws::Vector<ZonalShiftInResource> m_zonalShifts;
-    bool m_zonalShiftsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

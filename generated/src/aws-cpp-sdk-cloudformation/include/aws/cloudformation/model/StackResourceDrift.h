@@ -126,7 +126,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A JSON structure containing the expected property values of the stack
+     * <p>A JSON structure that contains the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
      * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
      * <code>DELETED</code>, this structure will not be present.</p>
@@ -141,7 +141,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A JSON structure containing the actual property values of the stack
+     * <p>A JSON structure that contains the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
      * <code>DELETED</code>, this structure will not be present.</p>
      */
@@ -179,7 +179,9 @@ namespace Model
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resource's actual configuration matches its expected template configuration.</p>
      * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
-     * return this value.</p> </li> </ul>
+     * return this value.</p> </li> <li> <p> <code>UNKNOWN</code>: CloudFormation could
+     * not run drift detection for the resource. See the <code>DriftStatusReason</code>
+     * for details.</p> </li> </ul>
      */
     inline StackResourceDriftStatus GetStackResourceDriftStatus() const { return m_stackResourceDriftStatus; }
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
@@ -211,6 +213,18 @@ namespace Model
     void SetModuleInfo(ModuleInfoT&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::forward<ModuleInfoT>(value); }
     template<typename ModuleInfoT = ModuleInfo>
     StackResourceDrift& WithModuleInfo(ModuleInfoT&& value) { SetModuleInfo(std::forward<ModuleInfoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The reason for the drift status. </p>
+     */
+    inline const Aws::String& GetDriftStatusReason() const { return m_driftStatusReason; }
+    inline bool DriftStatusReasonHasBeenSet() const { return m_driftStatusReasonHasBeenSet; }
+    template<typename DriftStatusReasonT = Aws::String>
+    void SetDriftStatusReason(DriftStatusReasonT&& value) { m_driftStatusReasonHasBeenSet = true; m_driftStatusReason = std::forward<DriftStatusReasonT>(value); }
+    template<typename DriftStatusReasonT = Aws::String>
+    StackResourceDrift& WithDriftStatusReason(DriftStatusReasonT&& value) { SetDriftStatusReason(std::forward<DriftStatusReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -246,6 +260,9 @@ namespace Model
 
     ModuleInfo m_moduleInfo;
     bool m_moduleInfoHasBeenSet = false;
+
+    Aws::String m_driftStatusReason;
+    bool m_driftStatusReasonHasBeenSet = false;
   };
 
 } // namespace Model

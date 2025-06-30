@@ -27,8 +27,11 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a>
-   * or <a>GetContextKeysForCustomPolicy</a> request. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+   * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPolicyResponse">AWS
    * API Reference</a></p>
    */

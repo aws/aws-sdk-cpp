@@ -57,10 +57,11 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the service-specific credential. You can get this
-     * value by calling <a>ListServiceSpecificCredentials</a>.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * value by calling <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html">ListServiceSpecificCredentials</a>.</p>
+     * <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline const Aws::String& GetServiceSpecificCredentialId() const { return m_serviceSpecificCredentialId; }
     inline bool ServiceSpecificCredentialIdHasBeenSet() const { return m_serviceSpecificCredentialIdHasBeenSet; }

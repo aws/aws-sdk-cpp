@@ -20,6 +20,7 @@
 #include <aws/connect/model/AnsweringMachineDetectionStatus.h>
 #include <aws/connect/model/CustomerVoiceActivity.h>
 #include <aws/connect/model/QualityMetrics.h>
+#include <aws/connect/model/ChatMetrics.h>
 #include <aws/connect/model/DisconnectDetails.h>
 #include <aws/connect/model/AdditionalEmailRecipients.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -490,6 +491,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Information about how agent, bot, and customer interact in a chat
+     * contact.</p>
+     */
+    inline const ChatMetrics& GetChatMetrics() const { return m_chatMetrics; }
+    inline bool ChatMetricsHasBeenSet() const { return m_chatMetricsHasBeenSet; }
+    template<typename ChatMetricsT = ChatMetrics>
+    void SetChatMetrics(ChatMetricsT&& value) { m_chatMetricsHasBeenSet = true; m_chatMetrics = std::forward<ChatMetricsT>(value); }
+    template<typename ChatMetricsT = ChatMetrics>
+    Contact& WithChatMetrics(ChatMetricsT&& value) { SetChatMetrics(std::forward<ChatMetricsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about the call disconnect experience.</p>
      */
     inline const DisconnectDetails& GetDisconnectDetails() const { return m_disconnectDetails; }
@@ -707,6 +721,9 @@ namespace Model
 
     QualityMetrics m_qualityMetrics;
     bool m_qualityMetricsHasBeenSet = false;
+
+    ChatMetrics m_chatMetrics;
+    bool m_chatMetricsHasBeenSet = false;
 
     DisconnectDetails m_disconnectDetails;
     bool m_disconnectDetailsHasBeenSet = false;

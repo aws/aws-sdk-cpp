@@ -27,6 +27,10 @@ namespace Aws
         static const int AutoShiftEnabled_HASH = HashingUtils::HashString("AutoShiftEnabled");
         static const int PracticeConfigurationDoesNotExist_HASH = HashingUtils::HashString("PracticeConfigurationDoesNotExist");
         static const int ZonalAutoshiftActive_HASH = HashingUtils::HashString("ZonalAutoshiftActive");
+        static const int PracticeOutcomeAlarmsRed_HASH = HashingUtils::HashString("PracticeOutcomeAlarmsRed");
+        static const int PracticeBlockingAlarmsRed_HASH = HashingUtils::HashString("PracticeBlockingAlarmsRed");
+        static const int PracticeInBlockedDates_HASH = HashingUtils::HashString("PracticeInBlockedDates");
+        static const int PracticeInBlockedWindows_HASH = HashingUtils::HashString("PracticeInBlockedWindows");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
@@ -60,6 +64,22 @@ namespace Aws
           {
             return ConflictExceptionReason::ZonalAutoshiftActive;
           }
+          else if (hashCode == PracticeOutcomeAlarmsRed_HASH)
+          {
+            return ConflictExceptionReason::PracticeOutcomeAlarmsRed;
+          }
+          else if (hashCode == PracticeBlockingAlarmsRed_HASH)
+          {
+            return ConflictExceptionReason::PracticeBlockingAlarmsRed;
+          }
+          else if (hashCode == PracticeInBlockedDates_HASH)
+          {
+            return ConflictExceptionReason::PracticeInBlockedDates;
+          }
+          else if (hashCode == PracticeInBlockedWindows_HASH)
+          {
+            return ConflictExceptionReason::PracticeInBlockedWindows;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +110,14 @@ namespace Aws
             return "PracticeConfigurationDoesNotExist";
           case ConflictExceptionReason::ZonalAutoshiftActive:
             return "ZonalAutoshiftActive";
+          case ConflictExceptionReason::PracticeOutcomeAlarmsRed:
+            return "PracticeOutcomeAlarmsRed";
+          case ConflictExceptionReason::PracticeBlockingAlarmsRed:
+            return "PracticeBlockingAlarmsRed";
+          case ConflictExceptionReason::PracticeInBlockedDates:
+            return "PracticeInBlockedDates";
+          case ConflictExceptionReason::PracticeInBlockedWindows:
+            return "PracticeInBlockedWindows";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

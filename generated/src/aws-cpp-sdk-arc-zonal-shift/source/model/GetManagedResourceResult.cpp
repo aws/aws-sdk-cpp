@@ -25,6 +25,16 @@ GetManagedResourceResult::GetManagedResourceResult(const Aws::AmazonWebServiceRe
 GetManagedResourceResult& GetManagedResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("appliedWeights"))
   {
     Aws::Map<Aws::String, JsonView> appliedWeightsJsonMap = jsonValue.GetObject("appliedWeights").GetAllObjects();
@@ -34,10 +44,14 @@ GetManagedResourceResult& GetManagedResourceResult::operator =(const Aws::Amazon
     }
     m_appliedWeightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("zonalShifts"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
+    Aws::Utils::Array<JsonView> zonalShiftsJsonList = jsonValue.GetArray("zonalShifts");
+    for(unsigned zonalShiftsIndex = 0; zonalShiftsIndex < zonalShiftsJsonList.GetLength(); ++zonalShiftsIndex)
+    {
+      m_zonalShifts.push_back(zonalShiftsJsonList[zonalShiftsIndex].AsObject());
+    }
+    m_zonalShiftsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("autoshifts"))
   {
@@ -48,11 +62,6 @@ GetManagedResourceResult& GetManagedResourceResult::operator =(const Aws::Amazon
     }
     m_autoshiftsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("practiceRunConfiguration"))
   {
     m_practiceRunConfiguration = jsonValue.GetObject("practiceRunConfiguration");
@@ -62,15 +71,6 @@ GetManagedResourceResult& GetManagedResourceResult::operator =(const Aws::Amazon
   {
     m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
     m_zonalAutoshiftStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("zonalShifts"))
-  {
-    Aws::Utils::Array<JsonView> zonalShiftsJsonList = jsonValue.GetArray("zonalShifts");
-    for(unsigned zonalShiftsIndex = 0; zonalShiftsIndex < zonalShiftsJsonList.GetLength(); ++zonalShiftsIndex)
-    {
-      m_zonalShifts.push_back(zonalShiftsJsonList[zonalShiftsIndex].AsObject());
-    }
-    m_zonalShiftsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

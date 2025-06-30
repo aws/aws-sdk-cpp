@@ -37,6 +37,12 @@ ServiceSpecificCredential& ServiceSpecificCredential::operator =(const XmlNode& 
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
+    XmlNode expirationDateNode = resultNode.FirstChild("ExpirationDate");
+    if(!expirationDateNode.IsNull())
+    {
+      m_expirationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_expirationDateHasBeenSet = true;
+    }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
@@ -54,6 +60,18 @@ ServiceSpecificCredential& ServiceSpecificCredential::operator =(const XmlNode& 
     {
       m_servicePassword = Aws::Utils::Xml::DecodeEscapedXmlText(servicePasswordNode.GetText());
       m_servicePasswordHasBeenSet = true;
+    }
+    XmlNode serviceCredentialAliasNode = resultNode.FirstChild("ServiceCredentialAlias");
+    if(!serviceCredentialAliasNode.IsNull())
+    {
+      m_serviceCredentialAlias = Aws::Utils::Xml::DecodeEscapedXmlText(serviceCredentialAliasNode.GetText());
+      m_serviceCredentialAliasHasBeenSet = true;
+    }
+    XmlNode serviceCredentialSecretNode = resultNode.FirstChild("ServiceCredentialSecret");
+    if(!serviceCredentialSecretNode.IsNull())
+    {
+      m_serviceCredentialSecret = Aws::Utils::Xml::DecodeEscapedXmlText(serviceCredentialSecretNode.GetText());
+      m_serviceCredentialSecretHasBeenSet = true;
     }
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
     if(!serviceSpecificCredentialIdNode.IsNull())
@@ -85,6 +103,11 @@ void ServiceSpecificCredential::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_expirationDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_serviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
@@ -98,6 +121,16 @@ void ServiceSpecificCredential::OutputToStream(Aws::OStream& oStream, const char
   if(m_servicePasswordHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServicePassword=" << StringUtils::URLEncode(m_servicePassword.c_str()) << "&";
+  }
+
+  if(m_serviceCredentialAliasHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  }
+
+  if(m_serviceCredentialSecretHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceCredentialSecret=" << StringUtils::URLEncode(m_serviceCredentialSecret.c_str()) << "&";
   }
 
   if(m_serviceSpecificCredentialIdHasBeenSet)
@@ -123,6 +156,10 @@ void ServiceSpecificCredential::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
+  if(m_expirationDateHasBeenSet)
+  {
+      oStream << location << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_serviceNameHasBeenSet)
   {
       oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
@@ -134,6 +171,14 @@ void ServiceSpecificCredential::OutputToStream(Aws::OStream& oStream, const char
   if(m_servicePasswordHasBeenSet)
   {
       oStream << location << ".ServicePassword=" << StringUtils::URLEncode(m_servicePassword.c_str()) << "&";
+  }
+  if(m_serviceCredentialAliasHasBeenSet)
+  {
+      oStream << location << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  }
+  if(m_serviceCredentialSecretHasBeenSet)
+  {
+      oStream << location << ".ServiceCredentialSecret=" << StringUtils::URLEncode(m_serviceCredentialSecret.c_str()) << "&";
   }
   if(m_serviceSpecificCredentialIdHasBeenSet)
   {

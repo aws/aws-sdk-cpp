@@ -35,9 +35,17 @@ namespace Model
     ///@{
     /**
      * <p>The identifier for the resource that Amazon Web Services shifts traffic for.
-     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>At
-     * this time, supported resources are Network Load Balancers and Application Load
-     * Balancers with cross-zone load balancing turned off.</p>
+     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>Amazon
+     * Application Recovery Controller currently supports enabling the following
+     * resources for zonal shift and zonal autoshift:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon
+     * EC2 Auto Scaling groups</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon
+     * Elastic Kubernetes Service</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application
+     * Load Balancer</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network
+     * Load Balancer</a> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

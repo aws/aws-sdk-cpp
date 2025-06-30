@@ -40,6 +40,16 @@ KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::
     m_filter = jsonValue.GetObject("filter");
     m_filterHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("implicitFilterConfiguration"))
+  {
+    m_implicitFilterConfiguration = jsonValue.GetObject("implicitFilterConfiguration");
+    m_implicitFilterConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("rerankingConfiguration"))
+  {
+    m_rerankingConfiguration = jsonValue.GetObject("rerankingConfiguration");
+    m_rerankingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +71,18 @@ JsonValue KnowledgeBaseVectorSearchConfiguration::Jsonize() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("filter", m_filter.Jsonize());
+
+  }
+
+  if(m_implicitFilterConfigurationHasBeenSet)
+  {
+   payload.WithObject("implicitFilterConfiguration", m_implicitFilterConfiguration.Jsonize());
+
+  }
+
+  if(m_rerankingConfigurationHasBeenSet)
+  {
+   payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
 
   }
 

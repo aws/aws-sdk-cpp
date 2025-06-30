@@ -123,6 +123,7 @@
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyResult.h>
 #include <aws/awstransfer/model/InputFileLocation.h>
+#include <aws/awstransfer/model/IpAddressType.h>
 #include <aws/awstransfer/model/ListAccessesRequest.h>
 #include <aws/awstransfer/model/ListAccessesResult.h>
 #include <aws/awstransfer/model/ListAgreementsRequest.h>

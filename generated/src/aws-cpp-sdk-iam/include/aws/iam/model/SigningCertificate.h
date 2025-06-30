@@ -27,8 +27,11 @@ namespace Model
 
   /**
    * <p>Contains information about an X.509 signing certificate.</p> <p>This data
-   * type is used as a response element in the <a>UploadSigningCertificate</a> and
-   * <a>ListSigningCertificates</a> operations. </p><p><h3>See Also:</h3>   <a
+   * type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html">UploadSigningCertificate</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSigningCertificates.html">ListSigningCertificates</a>
+   * operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SigningCertificate">AWS
    * API Reference</a></p>
    */

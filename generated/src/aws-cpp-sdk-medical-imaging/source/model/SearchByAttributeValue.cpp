@@ -65,6 +65,11 @@ SearchByAttributeValue& SearchByAttributeValue::operator =(JsonView jsonValue)
     m_dICOMStudyDateAndTime = jsonValue.GetObject("DICOMStudyDateAndTime");
     m_dICOMStudyDateAndTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isPrimary"))
+  {
+    m_isPrimary = jsonValue.GetBool("isPrimary");
+    m_isPrimaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +120,12 @@ JsonValue SearchByAttributeValue::Jsonize() const
   if(m_dICOMStudyDateAndTimeHasBeenSet)
   {
    payload.WithObject("DICOMStudyDateAndTime", m_dICOMStudyDateAndTime.Jsonize());
+
+  }
+
+  if(m_isPrimaryHasBeenSet)
+  {
+   payload.WithBool("isPrimary", m_isPrimary);
 
   }
 

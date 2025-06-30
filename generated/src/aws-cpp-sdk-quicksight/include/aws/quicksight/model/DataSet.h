@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the dataset.</p>
+     * <p>The ID of the dataset. Limited to 96 characters.</p>
      */
     inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }

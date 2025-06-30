@@ -7,6 +7,7 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/FromFormat.h>
 #include <aws/b2bi/model/FormatOptions.h>
+#include <aws/b2bi/model/AdvancedOptions.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,20 @@ namespace Model
     template<typename FormatOptionsT = FormatOptions>
     InputConversion& WithFormatOptions(FormatOptionsT&& value) { SetFormatOptions(std::forward<FormatOptionsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies advanced options for the input conversion process. These options
+     * provide additional control over how EDI files are processed during
+     * transformation.</p>
+     */
+    inline const AdvancedOptions& GetAdvancedOptions() const { return m_advancedOptions; }
+    inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    void SetAdvancedOptions(AdvancedOptionsT&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::forward<AdvancedOptionsT>(value); }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    InputConversion& WithAdvancedOptions(AdvancedOptionsT&& value) { SetAdvancedOptions(std::forward<AdvancedOptionsT>(value)); return *this;}
+    ///@}
   private:
 
     FromFormat m_fromFormat{FromFormat::NOT_SET};
@@ -70,6 +85,9 @@ namespace Model
 
     FormatOptions m_formatOptions;
     bool m_formatOptionsHasBeenSet = false;
+
+    AdvancedOptions m_advancedOptions;
+    bool m_advancedOptionsHasBeenSet = false;
   };
 
 } // namespace Model

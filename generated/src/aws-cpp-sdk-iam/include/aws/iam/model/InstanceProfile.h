@@ -29,10 +29,15 @@ namespace Model
 
   /**
    * <p>Contains information about an instance profile.</p> <p>This data type is used
-   * as a response element in the following operations:</p> <ul> <li> <p>
-   * <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p>
-   * </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p>
-   * <a>ListInstanceProfilesForRole</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * as a response element in the following operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html">GetInstanceProfile</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html">ListInstanceProfiles</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html">ListInstanceProfilesForRole</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/InstanceProfile">AWS
    * API Reference</a></p>
    */

@@ -366,7 +366,12 @@ namespace B2BI
          * models in Amazon Bedrock. For details, see <a
          * href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted
          * template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data
-         * Interchange User guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Interchange User guide</i>.</p>  <p>To generate a mapping, perform the
+         * following steps:</p> <ol> <li> <p>Start with an X12 EDI document to use as the
+         * input.</p> </li> <li> <p>Call <code>TestMapping</code> using your EDI
+         * document.</p> </li> <li> <p>Use the output from the <code>TestMapping</code>
+         * operation as either input or output for your GenerateMapping call, along with
+         * your sample file.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">AWS
          * API Reference</a></p>
          */
@@ -503,7 +508,11 @@ namespace B2BI
 
         /**
          * <p>Returns the details of the transformer run, based on the Transformer job
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * ID.</p>  <p>If 30 days have elapsed since your transformer job was
+         * started, the system deletes it. So, if you run <code>GetTransformerJob</code>
+         * and supply a <code>transformerId</code> and <code>transformerJobId</code> for a
+         * job that was started more than 30 days previously, you receive a 404
+         * response.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformerJob">AWS
          * API Reference</a></p>
          */
@@ -671,8 +680,11 @@ namespace B2BI
          * Data Interchange.</p> <p>If you only want to transform EDI (electronic data
          * interchange) documents, you don't need to create profiles, partnerships or
          * capabilities. Just create and configure a transformer, and then run the
-         * <code>StartTransformerJob</code> API to process your files.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>StartTransformerJob</code> API to process your files.</p>  <p>The
+         * system stores transformer jobs for 30 days. During that period, you can run <a
+         * href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetTransformerJob.html">GetTransformerJob</a>
+         * and supply its <code>transformerId</code> and <code>transformerJobId</code> to
+         * return details of the job.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">AWS
          * API Reference</a></p>
          */

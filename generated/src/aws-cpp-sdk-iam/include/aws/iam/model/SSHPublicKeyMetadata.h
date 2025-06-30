@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>Contains information about an SSH public key, without the key's body or
-   * fingerprint.</p> <p>This data type is used as a response element in the
-   * <a>ListSSHPublicKeys</a> operation.</p><p><h3>See Also:</h3>   <a
+   * fingerprint.</p> <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html">ListSSHPublicKeys</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKeyMetadata">AWS
    * API Reference</a></p>
    */

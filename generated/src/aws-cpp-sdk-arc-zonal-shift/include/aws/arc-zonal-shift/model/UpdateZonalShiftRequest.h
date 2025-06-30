@@ -34,6 +34,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of a zonal shift.</p>
+     */
+    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
+    inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
+    template<typename ZonalShiftIdT = Aws::String>
+    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
+    template<typename ZonalShiftIdT = Aws::String>
+    UpdateZonalShiftRequest& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A comment that you enter about the zonal shift. Only the latest comment is
      * retained; no comment history is maintained. A new comment overwrites any
      * existing comment string.</p>
@@ -69,28 +81,16 @@ namespace Model
     template<typename ExpiresInT = Aws::String>
     UpdateZonalShiftRequest& WithExpiresIn(ExpiresInT&& value) { SetExpiresIn(std::forward<ExpiresInT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of a zonal shift.</p>
-     */
-    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
-    inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
-    template<typename ZonalShiftIdT = Aws::String>
-    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
-    template<typename ZonalShiftIdT = Aws::String>
-    UpdateZonalShiftRequest& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_zonalShiftId;
+    bool m_zonalShiftIdHasBeenSet = false;
 
     Aws::String m_comment;
     bool m_commentHasBeenSet = false;
 
     Aws::String m_expiresIn;
     bool m_expiresInHasBeenSet = false;
-
-    Aws::String m_zonalShiftId;
-    bool m_zonalShiftIdHasBeenSet = false;
   };
 
 } // namespace Model

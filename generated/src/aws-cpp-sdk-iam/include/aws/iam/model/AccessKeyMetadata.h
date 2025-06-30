@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>Contains information about an Amazon Web Services access key, without its
-   * secret key.</p> <p>This data type is used as a response element in the
-   * <a>ListAccessKeys</a> operation.</p><p><h3>See Also:</h3>   <a
+   * secret key.</p> <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html">ListAccessKeys</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyMetadata">AWS
    * API Reference</a></p>
    */

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +46,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Returns an array of parsed file contents when the input file is split
+     * according to the specified split options. Each element in the array represents a
+     * separate split file's parsed content.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetParsedSplitFileContents() const { return m_parsedSplitFileContents; }
+    template<typename ParsedSplitFileContentsT = Aws::Vector<Aws::String>>
+    void SetParsedSplitFileContents(ParsedSplitFileContentsT&& value) { m_parsedSplitFileContentsHasBeenSet = true; m_parsedSplitFileContents = std::forward<ParsedSplitFileContentsT>(value); }
+    template<typename ParsedSplitFileContentsT = Aws::Vector<Aws::String>>
+    TestParsingResult& WithParsedSplitFileContents(ParsedSplitFileContentsT&& value) { SetParsedSplitFileContents(std::forward<ParsedSplitFileContentsT>(value)); return *this;}
+    template<typename ParsedSplitFileContentsT = Aws::String>
+    TestParsingResult& AddParsedSplitFileContents(ParsedSplitFileContentsT&& value) { m_parsedSplitFileContentsHasBeenSet = true; m_parsedSplitFileContents.emplace_back(std::forward<ParsedSplitFileContentsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -56,6 +72,9 @@ namespace Model
 
     Aws::String m_parsedFileContent;
     bool m_parsedFileContentHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_parsedSplitFileContents;
+    bool m_parsedSplitFileContentsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

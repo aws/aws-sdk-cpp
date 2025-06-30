@@ -40,6 +40,16 @@ DocumentBlock& DocumentBlock::operator =(JsonView jsonValue)
     m_source = jsonValue.GetObject("source");
     m_sourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("context"))
+  {
+    m_context = jsonValue.GetString("context");
+    m_contextHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("citations"))
+  {
+    m_citations = jsonValue.GetObject("citations");
+    m_citationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +71,18 @@ JsonValue DocumentBlock::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithObject("source", m_source.Jsonize());
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   payload.WithString("context", m_context);
+
+  }
+
+  if(m_citationsHasBeenSet)
+  {
+   payload.WithObject("citations", m_citations.Jsonize());
 
   }
 

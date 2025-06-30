@@ -30,6 +30,11 @@ X12Envelope& X12Envelope::operator =(JsonView jsonValue)
     m_common = jsonValue.GetObject("common");
     m_commonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("wrapOptions"))
+  {
+    m_wrapOptions = jsonValue.GetObject("wrapOptions");
+    m_wrapOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue X12Envelope::Jsonize() const
   if(m_commonHasBeenSet)
   {
    payload.WithObject("common", m_common.Jsonize());
+
+  }
+
+  if(m_wrapOptionsHasBeenSet)
+  {
+   payload.WithObject("wrapOptions", m_wrapOptions.Jsonize());
 
   }
 

@@ -40,6 +40,11 @@ ContentBlockDelta& ContentBlockDelta::operator =(JsonView jsonValue)
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
     m_reasoningContentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("citation"))
+  {
+    m_citation = jsonValue.GetObject("citation");
+    m_citationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue ContentBlockDelta::Jsonize() const
   if(m_reasoningContentHasBeenSet)
   {
    payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
+
+  }
+
+  if(m_citationHasBeenSet)
+  {
+   payload.WithObject("citation", m_citation.Jsonize());
 
   }
 

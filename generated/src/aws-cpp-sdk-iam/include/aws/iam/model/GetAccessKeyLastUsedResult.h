@@ -27,9 +27,13 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It
-   * is also returned as a member of the <a>AccessKeyMetaData</a> structure returned
-   * by the <a>ListAccessKeys</a> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html">GetAccessKeyLastUsed</a>
+   * request. It is also returned as a member of the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AccessKeyMetaData.html">AccessKeyMetaData</a>
+   * structure returned by the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html">ListAccessKeys</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsedResponse">AWS
    * API Reference</a></p>
    */

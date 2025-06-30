@@ -53,7 +53,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier for the query. A query ID is an internally-generated
-     * identifier for a specific query returned from an API call to start a query.</p>
+     * identifier for a specific query returned from an API call to create a query.</p>
      */
     inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }

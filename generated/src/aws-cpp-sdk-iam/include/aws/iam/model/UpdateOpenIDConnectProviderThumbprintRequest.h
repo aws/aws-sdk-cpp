@@ -41,8 +41,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for
      * which you want to update the thumbprint. You can get a list of OIDC provider
-     * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
-     * information about ARNs, see <a
+     * ARNs by using the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
+     * operation.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -58,8 +59,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * OpenID Connect provider. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const { return m_thumbprintList; }
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }

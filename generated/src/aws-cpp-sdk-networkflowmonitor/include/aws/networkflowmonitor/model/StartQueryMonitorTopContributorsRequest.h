@@ -76,9 +76,9 @@ namespace Model
     ///@{
     /**
      * <p>The metric that you want to query top contributors for. That is, you can
-     * specify this metric to return the top contributor network flows, for this type
-     * of metric, for a monitor and (optionally) within a specific category, such as
-     * network flows between Availability Zones.</p>
+     * specify a metric with this call and return the top contributor network flows,
+     * for that type of metric, for a monitor and (optionally) within a specific
+     * category, such as network flows between Availability Zones.</p>
      */
     inline MonitorMetric GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }

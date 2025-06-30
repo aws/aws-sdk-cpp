@@ -30,6 +30,15 @@ IntegrationConfig& IntegrationConfig::operator =(JsonView jsonValue)
     m_refreshInterval = jsonValue.GetString("RefreshInterval");
     m_refreshIntervalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SourceProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> sourcePropertiesJsonMap = jsonValue.GetObject("SourceProperties").GetAllObjects();
+    for(auto& sourcePropertiesItem : sourcePropertiesJsonMap)
+    {
+      m_sourceProperties[sourcePropertiesItem.first] = sourcePropertiesItem.second.AsString();
+    }
+    m_sourcePropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue IntegrationConfig::Jsonize() const
   if(m_refreshIntervalHasBeenSet)
   {
    payload.WithString("RefreshInterval", m_refreshInterval);
+
+  }
+
+  if(m_sourcePropertiesHasBeenSet)
+  {
+   JsonValue sourcePropertiesJsonMap;
+   for(auto& sourcePropertiesItem : m_sourceProperties)
+   {
+     sourcePropertiesJsonMap.WithString(sourcePropertiesItem.first, sourcePropertiesItem.second);
+   }
+   payload.WithObject("SourceProperties", std::move(sourcePropertiesJsonMap));
 
   }
 

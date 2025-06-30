@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string that contains the full conformance pack template body. The structure
+     * <p>A string containing the full conformance pack template body. The structure
      * containing the template body has a minimum length of 1 byte and a maximum length
      * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
      * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action

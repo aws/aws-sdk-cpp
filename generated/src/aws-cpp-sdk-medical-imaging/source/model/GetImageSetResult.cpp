@@ -80,6 +80,11 @@ GetImageSetResult& GetImageSetResult::operator =(const Aws::AmazonWebServiceResu
     m_overrides = jsonValue.GetObject("overrides");
     m_overridesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isPrimary"))
+  {
+    m_isPrimary = jsonValue.GetBool("isPrimary");
+    m_isPrimaryHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

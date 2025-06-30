@@ -59,7 +59,9 @@ namespace Model
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
+     * CloudFormation doesn't currently return this value.</p> </li> <li> <p>
+     * <code>UNKNOWN</code>: CloudFormation could not run drift detection for the
+     * resource.</p> </li> </ul>
      */
     inline const Aws::Vector<StackResourceDriftStatus>& GetStackResourceDriftStatusFilters() const { return m_stackResourceDriftStatusFilters; }
     inline bool StackResourceDriftStatusFiltersHasBeenSet() const { return m_stackResourceDriftStatusFiltersHasBeenSet; }

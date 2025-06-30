@@ -1376,6 +1376,8 @@
 #include <aws/quicksight/model/TemplateVersionSummary.h>
 #include <aws/quicksight/model/TeradataParameters.h>
 #include <aws/quicksight/model/TextAreaControlDisplayOptions.h>
+#include <aws/quicksight/model/TextBoxInteractionOptions.h>
+#include <aws/quicksight/model/TextBoxMenuOption.h>
 #include <aws/quicksight/model/TextConditionalFormat.h>
 #include <aws/quicksight/model/TextControlPlaceholderOptions.h>
 #include <aws/quicksight/model/TextFieldControlDisplayOptions.h>

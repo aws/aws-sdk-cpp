@@ -64,8 +64,8 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
      * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
+     * on the Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
      */
     inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }

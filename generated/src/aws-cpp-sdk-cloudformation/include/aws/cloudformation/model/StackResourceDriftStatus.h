@@ -19,7 +19,8 @@ namespace Model
     IN_SYNC,
     MODIFIED,
     DELETED,
-    NOT_CHECKED
+    NOT_CHECKED,
+    UNKNOWN
   };
 
 namespace StackResourceDriftStatusMapper

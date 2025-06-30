@@ -19,6 +19,7 @@
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
 #include <aws/dynamodb/model/ReplicationGroupUpdate.h>
+#include <aws/dynamodb/model/GlobalTableWitnessGroupUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -173,8 +174,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>For global tables, this property only applies to global
-     * tables using Version 2019.11.21 (Current version). </p> 
+     * table.</p>
      */
     inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const { return m_replicaUpdates; }
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
@@ -217,20 +217,42 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a>
      * action list.</p> <p>You can specify one of the following consistency modes:</p>
      * <ul> <li> <p> <code>EVENTUAL</code>: Configures a new global table for
-     * multi-Region eventual consistency. This is the default consistency mode for
-     * global tables.</p> </li> <li> <p> <code>STRONG</code>: Configures a new global
-     * table for multi-Region strong consistency (preview).</p>  <p>Multi-Region
-     * strong consistency (MRSC) is a new DynamoDB global tables capability currently
-     * available in preview mode. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
-     * tables multi-Region strong consistency</a>.</p>  </li> </ul> <p>If you
-     * don't specify this parameter, the global table consistency mode defaults to
-     * <code>EVENTUAL</code>.</p>
+     * multi-Region eventual consistency (MREC). This is the default consistency mode
+     * for global tables.</p> </li> <li> <p> <code>STRONG</code>: Configures a new
+     * global table for multi-Region strong consistency (MRSC).</p> </li> </ul> <p>If
+     * you don't specify this field, the global table consistency mode defaults to
+     * <code>EVENTUAL</code>. For more information about global tables consistency
+     * modes, see <a
+     * href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">
+     * Consistency modes</a> in DynamoDB developer guide. </p>
      */
     inline MultiRegionConsistency GetMultiRegionConsistency() const { return m_multiRegionConsistency; }
     inline bool MultiRegionConsistencyHasBeenSet() const { return m_multiRegionConsistencyHasBeenSet; }
     inline void SetMultiRegionConsistency(MultiRegionConsistency value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = value; }
     inline UpdateTableRequest& WithMultiRegionConsistency(MultiRegionConsistency value) { SetMultiRegionConsistency(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of witness updates for a MRSC global table. A witness provides a
+     * cost-effective alternative to a full replica in a MRSC global table by
+     * maintaining replicated change data written to global table replicas. You cannot
+     * perform read or write operations on a witness. For each witness, you can request
+     * one action:</p> <ul> <li> <p> <code>Create</code> - add a new witness to the
+     * global table.</p> </li> <li> <p> <code>Delete</code> - remove a witness from the
+     * global table.</p> </li> </ul> <p>You can create or delete only one witness per
+     * <code>UpdateTable</code> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">Multi-Region
+     * strong consistency (MRSC)</a> in the Amazon DynamoDB Developer Guide</p>
+     */
+    inline const Aws::Vector<GlobalTableWitnessGroupUpdate>& GetGlobalTableWitnessUpdates() const { return m_globalTableWitnessUpdates; }
+    inline bool GlobalTableWitnessUpdatesHasBeenSet() const { return m_globalTableWitnessUpdatesHasBeenSet; }
+    template<typename GlobalTableWitnessUpdatesT = Aws::Vector<GlobalTableWitnessGroupUpdate>>
+    void SetGlobalTableWitnessUpdates(GlobalTableWitnessUpdatesT&& value) { m_globalTableWitnessUpdatesHasBeenSet = true; m_globalTableWitnessUpdates = std::forward<GlobalTableWitnessUpdatesT>(value); }
+    template<typename GlobalTableWitnessUpdatesT = Aws::Vector<GlobalTableWitnessGroupUpdate>>
+    UpdateTableRequest& WithGlobalTableWitnessUpdates(GlobalTableWitnessUpdatesT&& value) { SetGlobalTableWitnessUpdates(std::forward<GlobalTableWitnessUpdatesT>(value)); return *this;}
+    template<typename GlobalTableWitnessUpdatesT = GlobalTableWitnessGroupUpdate>
+    UpdateTableRequest& AddGlobalTableWitnessUpdates(GlobalTableWitnessUpdatesT&& value) { m_globalTableWitnessUpdatesHasBeenSet = true; m_globalTableWitnessUpdates.emplace_back(std::forward<GlobalTableWitnessUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -294,6 +316,9 @@ namespace Model
 
     MultiRegionConsistency m_multiRegionConsistency{MultiRegionConsistency::NOT_SET};
     bool m_multiRegionConsistencyHasBeenSet = false;
+
+    Aws::Vector<GlobalTableWitnessGroupUpdate> m_globalTableWitnessUpdates;
+    bool m_globalTableWitnessUpdatesHasBeenSet = false;
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;

@@ -14,6 +14,7 @@
 #include <aws/b2bi/B2BIRequest.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
+#include <aws/b2bi/model/AdvancedOptions.h>
 #include <aws/b2bi/model/CapabilityConfiguration.h>
 #include <aws/b2bi/model/CapabilityDirection.h>
 #include <aws/b2bi/model/CapabilityOptions.h>
@@ -55,9 +56,11 @@
 #include <aws/b2bi/model/GetTransformerJobResult.h>
 #include <aws/b2bi/model/GetTransformerRequest.h>
 #include <aws/b2bi/model/GetTransformerResult.h>
+#include <aws/b2bi/model/InboundEdiOptions.h>
 #include <aws/b2bi/model/InputConversion.h>
 #include <aws/b2bi/model/InputFileSource.h>
 #include <aws/b2bi/model/InternalServerException.h>
+#include <aws/b2bi/model/LineTerminator.h>
 #include <aws/b2bi/model/ListCapabilitiesRequest.h>
 #include <aws/b2bi/model/ListCapabilitiesResult.h>
 #include <aws/b2bi/model/ListPartnershipsRequest.h>
@@ -106,12 +109,23 @@
 #include <aws/b2bi/model/UpdateProfileResult.h>
 #include <aws/b2bi/model/UpdateTransformerRequest.h>
 #include <aws/b2bi/model/UpdateTransformerResult.h>
+#include <aws/b2bi/model/WrapFormat.h>
+#include <aws/b2bi/model/WrapOptions.h>
+#include <aws/b2bi/model/X12AcknowledgmentOptions.h>
+#include <aws/b2bi/model/X12AdvancedOptions.h>
+#include <aws/b2bi/model/X12ControlNumbers.h>
 #include <aws/b2bi/model/X12Delimiters.h>
 #include <aws/b2bi/model/X12Details.h>
 #include <aws/b2bi/model/X12Envelope.h>
+#include <aws/b2bi/model/X12FunctionalAcknowledgment.h>
 #include <aws/b2bi/model/X12FunctionalGroupHeaders.h>
+#include <aws/b2bi/model/X12GS05TimeFormat.h>
+#include <aws/b2bi/model/X12InboundEdiOptions.h>
 #include <aws/b2bi/model/X12InterchangeControlHeaders.h>
 #include <aws/b2bi/model/X12OutboundEdiHeaders.h>
+#include <aws/b2bi/model/X12SplitBy.h>
+#include <aws/b2bi/model/X12SplitOptions.h>
+#include <aws/b2bi/model/X12TechnicalAcknowledgment.h>
 #include <aws/b2bi/model/X12TransactionSet.h>
 #include <aws/b2bi/model/X12Version.h>
 

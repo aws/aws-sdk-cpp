@@ -23,8 +23,9 @@ namespace Model
 
   /**
    * <p>Contains the row and column of a location of a <code>Statement</code> element
-   * in a policy document.</p> <p>This data type is used as a member of the <code>
-   * <a>Statement</a> </code> type.</p><p><h3>See Also:</h3>   <a
+   * in a policy document.</p> <p>This data type is used as a member of the <code> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Statement.html">Statement</a>
+   * </code> type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Position">AWS API
    * Reference</a></p>
    */

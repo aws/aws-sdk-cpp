@@ -24,6 +24,7 @@ namespace Aws
         static const int MODIFIED_HASH = HashingUtils::HashString("MODIFIED");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int NOT_CHECKED_HASH = HashingUtils::HashString("NOT_CHECKED");
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 
         StackResourceDriftStatus GetStackResourceDriftStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == NOT_CHECKED_HASH)
           {
             return StackResourceDriftStatus::NOT_CHECKED;
+          }
+          else if (hashCode == UNKNOWN_HASH)
+          {
+            return StackResourceDriftStatus::UNKNOWN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "DELETED";
           case StackResourceDriftStatus::NOT_CHECKED:
             return "NOT_CHECKED";
+          case StackResourceDriftStatus::UNKNOWN:
+            return "UNKNOWN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

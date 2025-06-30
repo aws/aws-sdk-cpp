@@ -8,6 +8,8 @@
 #include <aws/b2bi/model/X12InterchangeControlHeaders.h>
 #include <aws/b2bi/model/X12FunctionalGroupHeaders.h>
 #include <aws/b2bi/model/X12Delimiters.h>
+#include <aws/b2bi/model/X12ControlNumbers.h>
+#include <aws/b2bi/model/X12GS05TimeFormat.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +90,28 @@ namespace Model
     inline void SetValidateEdi(bool value) { m_validateEdiHasBeenSet = true; m_validateEdi = value; }
     inline X12OutboundEdiHeaders& WithValidateEdi(bool value) { SetValidateEdi(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies control number configuration for outbound X12 EDI headers. These
+     * settings determine the starting values for interchange, functional group, and
+     * transaction set control numbers.</p>
+     */
+    inline const X12ControlNumbers& GetControlNumbers() const { return m_controlNumbers; }
+    inline bool ControlNumbersHasBeenSet() const { return m_controlNumbersHasBeenSet; }
+    template<typename ControlNumbersT = X12ControlNumbers>
+    void SetControlNumbers(ControlNumbersT&& value) { m_controlNumbersHasBeenSet = true; m_controlNumbers = std::forward<ControlNumbersT>(value); }
+    template<typename ControlNumbersT = X12ControlNumbers>
+    X12OutboundEdiHeaders& WithControlNumbers(ControlNumbersT&& value) { SetControlNumbers(std::forward<ControlNumbersT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline X12GS05TimeFormat GetGs05TimeFormat() const { return m_gs05TimeFormat; }
+    inline bool Gs05TimeFormatHasBeenSet() const { return m_gs05TimeFormatHasBeenSet; }
+    inline void SetGs05TimeFormat(X12GS05TimeFormat value) { m_gs05TimeFormatHasBeenSet = true; m_gs05TimeFormat = value; }
+    inline X12OutboundEdiHeaders& WithGs05TimeFormat(X12GS05TimeFormat value) { SetGs05TimeFormat(value); return *this;}
+    ///@}
   private:
 
     X12InterchangeControlHeaders m_interchangeControlHeaders;
@@ -101,6 +125,12 @@ namespace Model
 
     bool m_validateEdi{false};
     bool m_validateEdiHasBeenSet = false;
+
+    X12ControlNumbers m_controlNumbers;
+    bool m_controlNumbersHasBeenSet = false;
+
+    X12GS05TimeFormat m_gs05TimeFormat{X12GS05TimeFormat::NOT_SET};
+    bool m_gs05TimeFormatHasBeenSet = false;
   };
 
 } // namespace Model

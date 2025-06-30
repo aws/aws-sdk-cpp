@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML
-     * file (for outbound EDI) to use as a starting point for the mapping.</p>
+     * <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format,
+     * to use as a starting point for the mapping.</p>
      */
     inline const Aws::String& GetInputFileContent() const { return m_inputFileContent; }
     inline bool InputFileContentHasBeenSet() const { return m_inputFileContentHasBeenSet; }
@@ -50,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML
-     * file (for inbound EDI) to use as a target for the mapping.</p>
+     * <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format,
+     * to use as a target for the mapping.</p>
      */
     inline const Aws::String& GetOutputFileContent() const { return m_outputFileContent; }
     inline bool OutputFileContentHasBeenSet() const { return m_outputFileContentHasBeenSet; }

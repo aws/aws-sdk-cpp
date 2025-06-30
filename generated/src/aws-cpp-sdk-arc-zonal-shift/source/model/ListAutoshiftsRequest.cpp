@@ -23,13 +23,6 @@ Aws::String ListAutoshiftsRequest::SerializePayload() const
 void ListAutoshiftsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
@@ -41,6 +34,13 @@ void ListAutoshiftsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << AutoshiftExecutionStatusMapper::GetNameForAutoshiftExecutionStatus(m_status);
       uri.AddQueryStringParameter("status", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

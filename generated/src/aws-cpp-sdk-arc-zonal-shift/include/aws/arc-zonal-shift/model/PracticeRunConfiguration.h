@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/arc-zonal-shift/model/ControlCondition.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -51,39 +51,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of one or more dates that you can specify when Amazon Web Services
-     * does not start practice runs for a resource.</p> <p>Specify blocked dates, in
-     * UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
-     */
-    inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
-    inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
-    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
-    void SetBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::forward<BlockedDatesT>(value); }
-    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
-    PracticeRunConfiguration& WithBlockedDates(BlockedDatesT&& value) { SetBlockedDates(std::forward<BlockedDatesT>(value)); return *this;}
-    template<typename BlockedDatesT = Aws::String>
-    PracticeRunConfiguration& AddBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.emplace_back(std::forward<BlockedDatesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>An array of one or more windows of days and times that you can block ARC from
-     * starting practice runs for a resource.</p> <p>Specify the blocked windows in
-     * UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by spaces. For
-     * example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
-    inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }
-    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
-    void SetBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows = std::forward<BlockedWindowsT>(value); }
-    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
-    PracticeRunConfiguration& WithBlockedWindows(BlockedWindowsT&& value) { SetBlockedWindows(std::forward<BlockedWindowsT>(value)); return *this;}
-    template<typename BlockedWindowsT = Aws::String>
-    PracticeRunConfiguration& AddBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.emplace_back(std::forward<BlockedWindowsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The <i>blocking alarm</i> for practice runs is an optional alarm that you can
      * specify that blocks practice runs when the alarm is in an <code>ALARM</code>
      * state.</p>
@@ -112,19 +79,52 @@ namespace Model
     template<typename OutcomeAlarmsT = ControlCondition>
     PracticeRunConfiguration& AddOutcomeAlarms(OutcomeAlarmsT&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms.emplace_back(std::forward<OutcomeAlarmsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of one or more windows of days and times that you can block ARC from
+     * starting practice runs for a resource.</p> <p>Specify the blocked windows in
+     * UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by spaces. For
+     * example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
+    inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }
+    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
+    void SetBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows = std::forward<BlockedWindowsT>(value); }
+    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
+    PracticeRunConfiguration& WithBlockedWindows(BlockedWindowsT&& value) { SetBlockedWindows(std::forward<BlockedWindowsT>(value)); return *this;}
+    template<typename BlockedWindowsT = Aws::String>
+    PracticeRunConfiguration& AddBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.emplace_back(std::forward<BlockedWindowsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of one or more dates that you can specify when Amazon Web Services
+     * does not start practice runs for a resource.</p> <p>Specify blocked dates, in
+     * UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
+    inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    void SetBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::forward<BlockedDatesT>(value); }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    PracticeRunConfiguration& WithBlockedDates(BlockedDatesT&& value) { SetBlockedDates(std::forward<BlockedDatesT>(value)); return *this;}
+    template<typename BlockedDatesT = Aws::String>
+    PracticeRunConfiguration& AddBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.emplace_back(std::forward<BlockedDatesT>(value)); return *this; }
+    ///@}
   private:
-
-    Aws::Vector<Aws::String> m_blockedDates;
-    bool m_blockedDatesHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_blockedWindows;
-    bool m_blockedWindowsHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_blockingAlarms;
     bool m_blockingAlarmsHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_outcomeAlarms;
     bool m_outcomeAlarmsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_blockedWindows;
+    bool m_blockedWindowsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_blockedDates;
+    bool m_blockedDatesHasBeenSet = false;
   };
 
 } // namespace Model

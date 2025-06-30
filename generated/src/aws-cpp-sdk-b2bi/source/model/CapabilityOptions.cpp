@@ -30,6 +30,11 @@ CapabilityOptions& CapabilityOptions::operator =(JsonView jsonValue)
     m_outboundEdi = jsonValue.GetObject("outboundEdi");
     m_outboundEdiHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inboundEdi"))
+  {
+    m_inboundEdi = jsonValue.GetObject("inboundEdi");
+    m_inboundEdiHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue CapabilityOptions::Jsonize() const
   if(m_outboundEdiHasBeenSet)
   {
    payload.WithObject("outboundEdi", m_outboundEdi.Jsonize());
+
+  }
+
+  if(m_inboundEdiHasBeenSet)
+  {
+   payload.WithObject("inboundEdi", m_inboundEdi.Jsonize());
 
   }
 

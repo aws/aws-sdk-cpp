@@ -8,8 +8,8 @@
 #include <aws/arc-zonal-shift/model/AppliedStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/arc-zonal-shift/model/PracticeRunOutcome.h>
 #include <aws/arc-zonal-shift/model/ShiftType.h>
+#include <aws/arc-zonal-shift/model/PracticeRunOutcome.h>
 #include <utility>
 
 namespace Aws
@@ -57,13 +57,48 @@ namespace Model
      * precedence over practice runs. That is, customer-initiated zonal shifts &gt;
      * autoshifts &gt; practice run zonal shifts.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How
-     * zonal autoshift and practice runs work</a> in the Amazon Route 53 Application
-     * Recovery Controller Developer Guide.</p>
+     * zonal autoshift and practice runs work</a> in the Amazon Application Recovery
+     * Controller Developer Guide.</p>
      */
     inline AppliedStatus GetAppliedStatus() const { return m_appliedStatus; }
     inline bool AppliedStatusHasBeenSet() const { return m_appliedStatusHasBeenSet; }
     inline void SetAppliedStatus(AppliedStatus value) { m_appliedStatusHasBeenSet = true; m_appliedStatus = value; }
     inline ZonalShiftInResource& WithAppliedStatus(AppliedStatus value) { SetAppliedStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of a zonal shift.</p>
+     */
+    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
+    inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
+    template<typename ZonalShiftIdT = Aws::String>
+    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
+    template<typename ZonalShiftIdT = Aws::String>
+    ZonalShiftInResource& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier for the resource to include in a zonal shift. The identifier
+     * is the Amazon Resource Name (ARN) for the resource.</p> <p>Amazon Application
+     * Recovery Controller currently supports enabling the following resources for
+     * zonal shift and zonal autoshift:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon
+     * EC2 Auto Scaling groups</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon
+     * Elastic Kubernetes Service</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application
+     * Load Balancer</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network
+     * Load Balancer</a> </p> </li> </ul>
+     */
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    ZonalShiftInResource& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,20 +114,6 @@ namespace Model
     void SetAwayFrom(AwayFromT&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::forward<AwayFromT>(value); }
     template<typename AwayFromT = Aws::String>
     ZonalShiftInResource& WithAwayFrom(AwayFromT&& value) { SetAwayFrom(std::forward<AwayFromT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A comment that you enter for a customer-initiated zonal shift. Only the
-     * latest comment is retained; no comment history is maintained. That is, a new
-     * comment overwrites any existing comment string.</p>
-     */
-    inline const Aws::String& GetComment() const { return m_comment; }
-    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    template<typename CommentT = Aws::String>
-    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
-    template<typename CommentT = Aws::String>
-    ZonalShiftInResource& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,42 +138,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The outcome, or end state, returned for a practice run. The following values
-     * can be returned:</p> <ul> <li> <p> <b>PENDING:</b> Outcome value when a practice
-     * run is in progress.</p> </li> <li> <p> <b>SUCCEEDED:</b> Outcome value when the
-     * outcome alarm specified for the practice run configuration does not go into an
-     * <code>ALARM</code> state during the practice run, and the practice run was not
-     * interrupted before it completed the expected 30 minute zonal shift.</p> </li>
-     * <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped
-     * before the expected 30 minute zonal shift duration, or there was another problem
-     * with the practice run that created an inconclusive outcome.</p> </li> <li> <p>
-     * <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice
-     * run configuration goes into an <code>ALARM</code> state during the practice run,
-     * and the practice run was not interrupted before it completed.</p> </li> </ul>
-     * <p>For more information about practice run outcomes, see <a
-     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html">
-     * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
-     * Application Recovery Controller Developer Guide.</p>
+     * <p>The time (UTC) when the zonal shift starts.</p>
      */
-    inline PracticeRunOutcome GetPracticeRunOutcome() const { return m_practiceRunOutcome; }
-    inline bool PracticeRunOutcomeHasBeenSet() const { return m_practiceRunOutcomeHasBeenSet; }
-    inline void SetPracticeRunOutcome(PracticeRunOutcome value) { m_practiceRunOutcomeHasBeenSet = true; m_practiceRunOutcome = value; }
-    inline ZonalShiftInResource& WithPracticeRunOutcome(PracticeRunOutcome value) { SetPracticeRunOutcome(value); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ZonalShiftInResource& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The identifier for the resource to include in a zonal shift. The identifier
-     * is the Amazon Resource Name (ARN) for the resource.</p> <p>At this time, you can
-     * only start a zonal shift for Network Load Balancers and Application Load
-     * Balancers with cross-zone load balancing turned off.</p>
+     * <p>A comment that you enter for a customer-initiated zonal shift. Only the
+     * latest comment is retained; no comment history is maintained. That is, a new
+     * comment overwrites any existing comment string.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
-    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    template<typename ResourceIdentifierT = Aws::String>
-    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
-    template<typename ResourceIdentifierT = Aws::String>
-    ZonalShiftInResource& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    inline const Aws::String& GetComment() const { return m_comment; }
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    ZonalShiftInResource& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,55 +174,59 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time (UTC) when the zonal shift starts.</p>
+     * <p>The outcome, or end state, returned for a practice run. The following values
+     * can be returned:</p> <ul> <li> <p> <b>PENDING:</b> Outcome value when a practice
+     * run is in progress.</p> </li> <li> <p> <b>SUCCEEDED:</b> Outcome value when the
+     * outcome alarm specified for the practice run configuration does not go into an
+     * <code>ALARM</code> state during the practice run, and the practice run was not
+     * interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+     * <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped
+     * before the expected 30 minute zonal shift duration, or there was another problem
+     * with the practice run that created an inconclusive outcome.</p> </li> <li> <p>
+     * <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice
+     * run configuration goes into an <code>ALARM</code> state during the practice run,
+     * and the practice run was not interrupted before it completed.</p> </li> <li> <p>
+     * <b>CAPACITY_CHECK_FAILED:</b> The check for balanced capacity across
+     * Availability Zones for your load balancing and Auto Scaling group resources
+     * failed.</p> </li> </ul> <p>For more information about practice run outcomes, see
+     * <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html">
+     * Considerations when you configure zonal autoshift</a> in the Amazon Application
+     * Recovery Controller Developer Guide.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    ZonalShiftInResource& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of a zonal shift.</p>
-     */
-    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
-    inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
-    template<typename ZonalShiftIdT = Aws::String>
-    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
-    template<typename ZonalShiftIdT = Aws::String>
-    ZonalShiftInResource& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
+    inline PracticeRunOutcome GetPracticeRunOutcome() const { return m_practiceRunOutcome; }
+    inline bool PracticeRunOutcomeHasBeenSet() const { return m_practiceRunOutcomeHasBeenSet; }
+    inline void SetPracticeRunOutcome(PracticeRunOutcome value) { m_practiceRunOutcomeHasBeenSet = true; m_practiceRunOutcome = value; }
+    inline ZonalShiftInResource& WithPracticeRunOutcome(PracticeRunOutcome value) { SetPracticeRunOutcome(value); return *this;}
     ///@}
   private:
 
     AppliedStatus m_appliedStatus{AppliedStatus::NOT_SET};
     bool m_appliedStatusHasBeenSet = false;
 
-    Aws::String m_awayFrom;
-    bool m_awayFromHasBeenSet = false;
-
-    Aws::String m_comment;
-    bool m_commentHasBeenSet = false;
-
-    Aws::Utils::DateTime m_expiryTime{};
-    bool m_expiryTimeHasBeenSet = false;
-
-    PracticeRunOutcome m_practiceRunOutcome{PracticeRunOutcome::NOT_SET};
-    bool m_practiceRunOutcomeHasBeenSet = false;
+    Aws::String m_zonalShiftId;
+    bool m_zonalShiftIdHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
-    ShiftType m_shiftType{ShiftType::NOT_SET};
-    bool m_shiftTypeHasBeenSet = false;
+    Aws::String m_awayFrom;
+    bool m_awayFromHasBeenSet = false;
+
+    Aws::Utils::DateTime m_expiryTime{};
+    bool m_expiryTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::String m_zonalShiftId;
-    bool m_zonalShiftIdHasBeenSet = false;
+    Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
+
+    ShiftType m_shiftType{ShiftType::NOT_SET};
+    bool m_shiftTypeHasBeenSet = false;
+
+    PracticeRunOutcome m_practiceRunOutcome{PracticeRunOutcome::NOT_SET};
+    bool m_practiceRunOutcomeHasBeenSet = false;
   };
 
 } // namespace Model

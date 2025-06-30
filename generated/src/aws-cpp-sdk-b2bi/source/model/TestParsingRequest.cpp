@@ -33,6 +33,12 @@ Aws::String TestParsingRequest::SerializePayload() const
 
   }
 
+  if(m_advancedOptionsHasBeenSet)
+  {
+   payload.WithObject("advancedOptions", m_advancedOptions.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

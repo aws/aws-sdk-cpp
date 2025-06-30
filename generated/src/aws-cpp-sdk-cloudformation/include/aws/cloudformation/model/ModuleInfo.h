@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A concatenated list of the module type or types containing the resource.
+     * <p>A concatenated list of the module type or types that contains the resource.
      * Module types are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
      * created from a module of type <code>AWS::First::Example::MODULE</code>, that's
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A concatenated list of the logical IDs of the module or modules containing
+     * <p>A concatenated list of the logical IDs of the module or modules that contains
      * the resource. Modules are listed starting with the inner-most nested module, and
      * separated by <code>/</code>.</p> <p>In the following example, the resource was
      * created from a module, <code>moduleA</code>, that's nested inside a parent

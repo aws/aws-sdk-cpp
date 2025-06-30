@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>Contains details about the most recent attempt to access the service.</p>
-   * <p>This data type is used as a response element in the
-   * <a>GetServiceLastAccessedDetails</a> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServiceLastAccessed">AWS
    * API Reference</a></p>
    */
@@ -152,7 +153,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>. This field is also null if the report was generated at the service
      * level and not the action level. For more information, see the
-     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     * <code>Granularity</code> field in <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateServiceLastAccessedDetails.html">GenerateServiceLastAccessedDetails</a>.</p>
      */
     inline const Aws::Vector<TrackedActionLastAccessed>& GetTrackedActionsLastAccessed() const { return m_trackedActionsLastAccessed; }
     inline bool TrackedActionsLastAccessedHasBeenSet() const { return m_trackedActionsLastAccessedHasBeenSet; }

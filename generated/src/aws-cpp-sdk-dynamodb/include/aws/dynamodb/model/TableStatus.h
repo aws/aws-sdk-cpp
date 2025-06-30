@@ -22,7 +22,8 @@ namespace Model
     ACTIVE,
     INACCESSIBLE_ENCRYPTION_CREDENTIALS,
     ARCHIVING,
-    ARCHIVED
+    ARCHIVED,
+    REPLICATION_NOT_AUTHORIZED
   };
 
 namespace TableStatusMapper

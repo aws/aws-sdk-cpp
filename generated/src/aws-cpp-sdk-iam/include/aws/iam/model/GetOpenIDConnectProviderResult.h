@@ -29,7 +29,8 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>GetOpenIDConnectProvider</a>
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html">GetOpenIDConnectProvider</a>
    * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProviderResponse">AWS
    * API Reference</a></p>
@@ -45,7 +46,8 @@ namespace Model
     ///@{
     /**
      * <p>The URL that the IAM OIDC provider resource object is associated with. For
-     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.</p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
     template<typename UrlT = Aws::String>
@@ -57,8 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OIDC provider resource object. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.</p>
+     * specified IAM OIDC provider resource object. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientIDList() const { return m_clientIDList; }
     template<typename ClientIDListT = Aws::Vector<Aws::String>>
@@ -72,8 +74,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OIDC provider resource object. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * OIDC provider resource object. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const { return m_thumbprintList; }
     template<typename ThumbprintListT = Aws::Vector<Aws::String>>

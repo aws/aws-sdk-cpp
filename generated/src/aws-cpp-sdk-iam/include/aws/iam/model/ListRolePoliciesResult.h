@@ -27,8 +27,9 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>ListRolePolicies</a> request.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html">ListRolePolicies</a>
+   * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePoliciesResponse">AWS
    * API Reference</a></p>
    */

@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>StackResourceDetail</code> structure containing the description of
+     * <p>A <code>StackResourceDetail</code> structure that contains the description of
      * the specified resource in the specified stack.</p>
      */
     inline const StackResourceDetail& GetStackResourceDetail() const { return m_stackResourceDetail; }

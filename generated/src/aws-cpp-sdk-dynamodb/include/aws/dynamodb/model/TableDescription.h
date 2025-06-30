@@ -24,6 +24,7 @@
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexDescription.h>
 #include <aws/dynamodb/model/ReplicaDescription.h>
+#include <aws/dynamodb/model/GlobalTableWitnessDescription.h>
 #include <utility>
 
 namespace Aws
@@ -406,6 +407,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The witness Region and its current status in the MRSC global table. Only one
+     * witness Region can be configured per MRSC global table.</p>
+     */
+    inline const Aws::Vector<GlobalTableWitnessDescription>& GetGlobalTableWitnesses() const { return m_globalTableWitnesses; }
+    inline bool GlobalTableWitnessesHasBeenSet() const { return m_globalTableWitnessesHasBeenSet; }
+    template<typename GlobalTableWitnessesT = Aws::Vector<GlobalTableWitnessDescription>>
+    void SetGlobalTableWitnesses(GlobalTableWitnessesT&& value) { m_globalTableWitnessesHasBeenSet = true; m_globalTableWitnesses = std::forward<GlobalTableWitnessesT>(value); }
+    template<typename GlobalTableWitnessesT = Aws::Vector<GlobalTableWitnessDescription>>
+    TableDescription& WithGlobalTableWitnesses(GlobalTableWitnessesT&& value) { SetGlobalTableWitnesses(std::forward<GlobalTableWitnessesT>(value)); return *this;}
+    template<typename GlobalTableWitnessesT = GlobalTableWitnessDescription>
+    TableDescription& AddGlobalTableWitnesses(GlobalTableWitnessesT&& value) { m_globalTableWitnessesHasBeenSet = true; m_globalTableWitnesses.emplace_back(std::forward<GlobalTableWitnessesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains details for the restore.</p>
      */
     inline const RestoreSummary& GetRestoreSummary() const { return m_restoreSummary; }
@@ -494,15 +510,13 @@ namespace Model
     /**
      * <p>Indicates one of the following consistency modes for a global table:</p> <ul>
      * <li> <p> <code>EVENTUAL</code>: Indicates that the global table is configured
-     * for multi-Region eventual consistency.</p> </li> <li> <p> <code>STRONG</code>:
-     * Indicates that the global table is configured for multi-Region strong
-     * consistency (preview).</p>  <p>Multi-Region strong consistency (MRSC) is a
-     * new DynamoDB global tables capability currently available in preview mode. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
-     * tables multi-Region strong consistency</a>.</p>  </li> </ul> <p>If you
-     * don't specify this field, the global table consistency mode defaults to
-     * <code>EVENTUAL</code>.</p>
+     * for multi-Region eventual consistency (MREC).</p> </li> <li> <p>
+     * <code>STRONG</code>: Indicates that the global table is configured for
+     * multi-Region strong consistency (MRSC).</p> </li> </ul> <p>If you don't specify
+     * this field, the global table consistency mode defaults to <code>EVENTUAL</code>.
+     * For more information about global tables consistency modes, see <a
+     * href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">
+     * Consistency modes</a> in DynamoDB developer guide. </p>
      */
     inline MultiRegionConsistency GetMultiRegionConsistency() const { return m_multiRegionConsistency; }
     inline bool MultiRegionConsistencyHasBeenSet() const { return m_multiRegionConsistencyHasBeenSet; }
@@ -564,6 +578,9 @@ namespace Model
 
     Aws::Vector<ReplicaDescription> m_replicas;
     bool m_replicasHasBeenSet = false;
+
+    Aws::Vector<GlobalTableWitnessDescription> m_globalTableWitnesses;
+    bool m_globalTableWitnessesHasBeenSet = false;
 
     RestoreSummary m_restoreSummary;
     bool m_restoreSummaryHasBeenSet = false;

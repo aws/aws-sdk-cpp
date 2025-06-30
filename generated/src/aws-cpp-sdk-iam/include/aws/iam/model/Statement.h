@@ -28,7 +28,8 @@ namespace Model
   /**
    * <p>Contains a reference to a <code>Statement</code> element in a policy document
    * that determines the result of the simulation.</p> <p>This data type is used by
-   * the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a>
+   * the <code>MatchedStatements</code> member of the <code> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EvaluationResult.html">EvaluationResult</a>
    * </code> type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Statement">AWS API
    * Reference</a></p>

@@ -111,6 +111,12 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
       m_moduleInfo = moduleInfoNode;
       m_moduleInfoHasBeenSet = true;
     }
+    XmlNode driftStatusReasonNode = resultNode.FirstChild("DriftStatusReason");
+    if(!driftStatusReasonNode.IsNull())
+    {
+      m_driftStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusReasonNode.GetText());
+      m_driftStatusReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -187,6 +193,11 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
       m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_driftStatusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DriftStatusReason=" << StringUtils::URLEncode(m_driftStatusReason.c_str()) << "&";
+  }
+
 }
 
 void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -248,6 +259,10 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String moduleInfoLocationAndMember(location);
       moduleInfoLocationAndMember += ".ModuleInfo";
       m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
+  }
+  if(m_driftStatusReasonHasBeenSet)
+  {
+      oStream << location << ".DriftStatusReason=" << StringUtils::URLEncode(m_driftStatusReason.c_str()) << "&";
   }
 }
 

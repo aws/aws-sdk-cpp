@@ -35,6 +35,16 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     m_exportToExcel = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToExcel"));
     m_exportToExcelHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExportToPdf"))
+  {
+    m_exportToPdf = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToPdf"));
+    m_exportToPdfHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PrintReports"))
+  {
+    m_printReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PrintReports"));
+    m_printReportsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreateAndUpdateThemes"))
   {
     m_createAndUpdateThemes = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateThemes"));
@@ -110,6 +120,26 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     m_createSPICEDataset = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSPICEDataset"));
     m_createSPICEDatasetHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExportToPdfInScheduledReports"))
+  {
+    m_exportToPdfInScheduledReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToPdfInScheduledReports"));
+    m_exportToPdfInScheduledReportsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExportToCsvInScheduledReports"))
+  {
+    m_exportToCsvInScheduledReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToCsvInScheduledReports"));
+    m_exportToCsvInScheduledReportsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExportToExcelInScheduledReports"))
+  {
+    m_exportToExcelInScheduledReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToExcelInScheduledReports"));
+    m_exportToExcelInScheduledReportsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IncludeContentInScheduledReportsEmail"))
+  {
+    m_includeContentInScheduledReportsEmail = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("IncludeContentInScheduledReportsEmail"));
+    m_includeContentInScheduledReportsEmailHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +155,16 @@ JsonValue Capabilities::Jsonize() const
   if(m_exportToExcelHasBeenSet)
   {
    payload.WithString("ExportToExcel", CapabilityStateMapper::GetNameForCapabilityState(m_exportToExcel));
+  }
+
+  if(m_exportToPdfHasBeenSet)
+  {
+   payload.WithString("ExportToPdf", CapabilityStateMapper::GetNameForCapabilityState(m_exportToPdf));
+  }
+
+  if(m_printReportsHasBeenSet)
+  {
+   payload.WithString("PrintReports", CapabilityStateMapper::GetNameForCapabilityState(m_printReports));
   }
 
   if(m_createAndUpdateThemesHasBeenSet)
@@ -200,6 +240,26 @@ JsonValue Capabilities::Jsonize() const
   if(m_createSPICEDatasetHasBeenSet)
   {
    payload.WithString("CreateSPICEDataset", CapabilityStateMapper::GetNameForCapabilityState(m_createSPICEDataset));
+  }
+
+  if(m_exportToPdfInScheduledReportsHasBeenSet)
+  {
+   payload.WithString("ExportToPdfInScheduledReports", CapabilityStateMapper::GetNameForCapabilityState(m_exportToPdfInScheduledReports));
+  }
+
+  if(m_exportToCsvInScheduledReportsHasBeenSet)
+  {
+   payload.WithString("ExportToCsvInScheduledReports", CapabilityStateMapper::GetNameForCapabilityState(m_exportToCsvInScheduledReports));
+  }
+
+  if(m_exportToExcelInScheduledReportsHasBeenSet)
+  {
+   payload.WithString("ExportToExcelInScheduledReports", CapabilityStateMapper::GetNameForCapabilityState(m_exportToExcelInScheduledReports));
+  }
+
+  if(m_includeContentInScheduledReportsEmailHasBeenSet)
+  {
+   payload.WithString("IncludeContentInScheduledReportsEmail", CapabilityStateMapper::GetNameForCapabilityState(m_includeContentInScheduledReportsEmail));
   }
 
   return payload;

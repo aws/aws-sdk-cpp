@@ -80,6 +80,11 @@ Session& Session::operator =(JsonView jsonValue)
     m_maxSessionDuration = jsonValue.GetString("MaxSessionDuration");
     m_maxSessionDurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AccessType"))
+  {
+    m_accessType = AccessTypeMapper::GetAccessTypeForName(jsonValue.GetString("AccessType"));
+    m_accessTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -148,6 +153,11 @@ JsonValue Session::Jsonize() const
   {
    payload.WithString("MaxSessionDuration", m_maxSessionDuration);
 
+  }
+
+  if(m_accessTypeHasBeenSet)
+  {
+   payload.WithString("AccessType", AccessTypeMapper::GetNameForAccessType(m_accessType));
   }
 
   return payload;

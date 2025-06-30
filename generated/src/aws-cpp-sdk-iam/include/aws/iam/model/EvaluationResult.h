@@ -32,8 +32,11 @@ namespace Model
 
   /**
    * <p>Contains the results of a simulation.</p> <p>This data type is used by the
-   * return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code>
-   * <a>SimulatePrincipalPolicy</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * return parameter of <code> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
+   * </code> and <code> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>
+   * </code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -108,8 +111,10 @@ namespace Model
      * <code>ResourceArns</code> parameter blank. If you include a list of resources,
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
-     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
+     * by a set of policies, you can call <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const { return m_missingContextValues; }
     inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }

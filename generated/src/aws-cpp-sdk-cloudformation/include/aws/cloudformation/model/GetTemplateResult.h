@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the template body.</p> <p>CloudFormation returns the
+     * <p>Structure that contains the template body.</p> <p>CloudFormation returns the
      * same template that was used when the stack was created.</p>
      */
     inline const Aws::String& GetTemplateBody() const { return m_templateBody; }

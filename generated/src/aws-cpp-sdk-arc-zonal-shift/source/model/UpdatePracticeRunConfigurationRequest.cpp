@@ -16,17 +16,6 @@ Aws::String UpdatePracticeRunConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_blockedDatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
-   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
-   {
-     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
-   }
-   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
-
-  }
-
   if(m_blockedWindowsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> blockedWindowsJsonList(m_blockedWindows.size());
@@ -35,6 +24,17 @@ Aws::String UpdatePracticeRunConfigurationRequest::SerializePayload() const
      blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
    }
    payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
+
+  }
+
+  if(m_blockedDatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
+   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
+   {
+     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
+   }
+   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
 
   }
 

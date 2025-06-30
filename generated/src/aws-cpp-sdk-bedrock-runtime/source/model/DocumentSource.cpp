@@ -36,6 +36,20 @@ DocumentSource& DocumentSource::operator =(JsonView jsonValue)
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("content"))
+  {
+    Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("content");
+    for(unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex)
+    {
+      m_content.push_back(contentJsonList[contentIndex].AsObject());
+    }
+    m_contentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +65,23 @@ JsonValue DocumentSource::Jsonize() const
   if(m_s3LocationHasBeenSet)
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
+
+  }
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("text", m_text);
+
+  }
+
+  if(m_contentHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> contentJsonList(m_content.size());
+   for(unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex)
+   {
+     contentJsonList[contentIndex].AsObject(m_content[contentIndex].Jsonize());
+   }
+   payload.WithArray("content", std::move(contentJsonList));
 
   }
 

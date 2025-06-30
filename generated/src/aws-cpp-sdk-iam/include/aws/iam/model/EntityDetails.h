@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p>An object that contains details about when the IAM entities (users or roles)
    * were last used in an attempt to access the specified Amazon Web Services
-   * service.</p> <p>This data type is a response element in the
-   * <a>GetServiceLastAccessedDetailsWithEntities</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * service.</p> <p>This data type is a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EntityDetails">AWS
    * API Reference</a></p>
    */

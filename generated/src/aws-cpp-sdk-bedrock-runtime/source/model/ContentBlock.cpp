@@ -70,6 +70,11 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
     m_reasoningContentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("citationsContent"))
+  {
+    m_citationsContent = jsonValue.GetObject("citationsContent");
+    m_citationsContentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -128,6 +133,12 @@ JsonValue ContentBlock::Jsonize() const
   if(m_reasoningContentHasBeenSet)
   {
    payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
+
+  }
+
+  if(m_citationsContentHasBeenSet)
+  {
+   payload.WithObject("citationsContent", m_citationsContent.Jsonize());
 
   }
 

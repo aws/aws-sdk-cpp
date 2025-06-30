@@ -26,6 +26,14 @@
 #include <aws/bedrock-runtime/model/BidirectionalOutputPayloadPart.h>
 #include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <aws/bedrock-runtime/model/CachePointType.h>
+#include <aws/bedrock-runtime/model/Citation.h>
+#include <aws/bedrock-runtime/model/CitationGeneratedContent.h>
+#include <aws/bedrock-runtime/model/CitationLocation.h>
+#include <aws/bedrock-runtime/model/CitationSourceContent.h>
+#include <aws/bedrock-runtime/model/CitationSourceContentDelta.h>
+#include <aws/bedrock-runtime/model/CitationsConfig.h>
+#include <aws/bedrock-runtime/model/CitationsContentBlock.h>
+#include <aws/bedrock-runtime/model/CitationsDelta.h>
 #include <aws/bedrock-runtime/model/ContentBlock.h>
 #include <aws/bedrock-runtime/model/ContentBlockDelta.h>
 #include <aws/bedrock-runtime/model/ContentBlockDeltaEvent.h>
@@ -46,7 +54,11 @@
 #include <aws/bedrock-runtime/model/ConverseStreamTrace.h>
 #include <aws/bedrock-runtime/model/ConverseTrace.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
+#include <aws/bedrock-runtime/model/DocumentCharLocation.h>
+#include <aws/bedrock-runtime/model/DocumentChunkLocation.h>
+#include <aws/bedrock-runtime/model/DocumentContentBlock.h>
 #include <aws/bedrock-runtime/model/DocumentFormat.h>
+#include <aws/bedrock-runtime/model/DocumentPageLocation.h>
 #include <aws/bedrock-runtime/model/DocumentSource.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeRequest.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeResult.h>

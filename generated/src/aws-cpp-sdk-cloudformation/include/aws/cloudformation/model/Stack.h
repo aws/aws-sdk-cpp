@@ -294,12 +294,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the direct parent of this stack. For the first level of nested stacks, the
-     * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
-     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * <p>For nested stacks, the stack ID of the direct parent of this stack. For the
+     * first level of nested stacks, the root stack is also the parent stack.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested
+     * stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const { return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
@@ -311,12 +310,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
-     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * <p>For nested stacks, the stack ID of the top-level stack to which the nested
+     * stack ultimately belongs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested
+     * stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetRootId() const { return m_rootId; }
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }

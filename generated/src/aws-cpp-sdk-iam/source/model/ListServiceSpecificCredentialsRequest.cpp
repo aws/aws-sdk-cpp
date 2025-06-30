@@ -24,6 +24,21 @@ Aws::String ListServiceSpecificCredentialsRequest::SerializePayload() const
     ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 
+  if(m_allUsersHasBeenSet)
+  {
+    ss << "AllUsers=" << std::boolalpha << m_allUsers << "&";
+  }
+
+  if(m_markerHasBeenSet)
+  {
+    ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  if(m_maxItemsHasBeenSet)
+  {
+    ss << "MaxItems=" << m_maxItems << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -67,9 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string that contains the full conformance pack template body. Structure
-     * containing the template body with a minimum length of 1 byte and a maximum
-     * length of 51,200 bytes.</p>
+     * <p>A string containing full conformance pack template body. Structure containing
+     * the template body with a minimum length of 1 byte and a maximum length of 51,200
+     * bytes.</p>
      */
     inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }

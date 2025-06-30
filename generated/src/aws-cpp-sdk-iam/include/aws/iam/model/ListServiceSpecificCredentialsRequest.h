@@ -67,6 +67,45 @@ namespace Model
     template<typename ServiceNameT = Aws::String>
     ListServiceSpecificCredentialsRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A flag indicating whether to list service specific credentials for all users.
+     * This parameter cannot be specified together with UserName. When true, returns
+     * all credentials associated with the specified service.</p>
+     */
+    inline bool GetAllUsers() const { return m_allUsers; }
+    inline bool AllUsersHasBeenSet() const { return m_allUsersHasBeenSet; }
+    inline void SetAllUsers(bool value) { m_allUsersHasBeenSet = true; m_allUsers = value; }
+    inline ListServiceSpecificCredentialsRequest& WithAllUsers(bool value) { SetAllUsers(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use this parameter only when paginating results and only after you receive a
+     * response indicating that the results are truncated. Set it to the value of the
+     * Marker from the response that you received to indicate where the next call
+     * should start.</p>
+     */
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListServiceSpecificCredentialsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the IsTruncated response element is true.</p>
+     */
+    inline int GetMaxItems() const { return m_maxItems; }
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline ListServiceSpecificCredentialsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userName;
@@ -74,6 +113,15 @@ namespace Model
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
+
+    bool m_allUsers{false};
+    bool m_allUsersHasBeenSet = false;
+
+    Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
+
+    int m_maxItems{0};
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

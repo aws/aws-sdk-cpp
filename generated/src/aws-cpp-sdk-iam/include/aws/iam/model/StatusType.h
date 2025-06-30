@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Active,
-    Inactive
+    Inactive,
+    Expired
   };
 
 namespace StatusTypeMapper

@@ -16,6 +16,7 @@
 #include <aws/awstransfer/model/State.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/S3StorageOptions.h>
+#include <aws/awstransfer/model/IpAddressType.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -425,6 +426,26 @@ namespace Model
     template<typename As2ServiceManagedEgressIpAddressesT = Aws::String>
     DescribedServer& AddAs2ServiceManagedEgressIpAddresses(As2ServiceManagedEgressIpAddressesT&& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.emplace_back(std::forward<As2ServiceManagedEgressIpAddressesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for
+     * your Transfer Family endpoint. The default value is <code>IPV4</code>.</p>
+     *  <p>The <code>IpAddressType</code> parameter has the following
+     * limitations:</p> <ul> <li> <p>It cannot be changed while the server is online.
+     * You must stop the server before modifying this parameter.</p> </li> <li> <p>It
+     * cannot be updated to <code>DUALSTACK</code> if the server has
+     * <code>AddressAllocationIds</code> specified.</p> </li> </ul>  
+     * <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you
+     * cannot set the <code>AddressAllocationIds</code> parameter for the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a>
+     * for the server.</p> 
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline DescribedServer& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -492,6 +513,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_as2ServiceManagedEgressIpAddresses;
     bool m_as2ServiceManagedEgressIpAddressesHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model
