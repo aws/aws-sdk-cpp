@@ -22,7 +22,7 @@ namespace SSM
    * scale.</p> <p>This reference is intended to be used with the <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web
    * Services Systems Manager User Guide</a>. To get started, see <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html">Setting
    * up Amazon Web Services Systems Manager</a>.</p> <p class="title"> <b>Related
    * resources</b> </p> <ul> <li> <p>For information about each of the tools that
    * comprise Systems Manager, see <a

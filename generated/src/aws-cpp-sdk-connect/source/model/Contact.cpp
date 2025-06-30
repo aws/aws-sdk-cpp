@@ -199,6 +199,11 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_qualityMetrics = jsonValue.GetObject("QualityMetrics");
     m_qualityMetricsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ChatMetrics"))
+  {
+    m_chatMetrics = jsonValue.GetObject("ChatMetrics");
+    m_chatMetricsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DisconnectDetails"))
   {
     m_disconnectDetails = jsonValue.GetObject("DisconnectDetails");
@@ -458,6 +463,12 @@ JsonValue Contact::Jsonize() const
   if(m_qualityMetricsHasBeenSet)
   {
    payload.WithObject("QualityMetrics", m_qualityMetrics.Jsonize());
+
+  }
+
+  if(m_chatMetricsHasBeenSet)
+  {
+   payload.WithObject("ChatMetrics", m_chatMetrics.Jsonize());
 
   }
 

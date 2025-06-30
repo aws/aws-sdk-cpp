@@ -555,11 +555,10 @@ namespace DynamoDB
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
          * in the <code>DELETING</code> state, no error is returned. </p> 
-         * <p>For global tables, this operation only applies to global tables using Version
-         * 2019.11.21 (Current version). </p>   <p>DynamoDB might
-         * continue to accept data read and write operations, such as <code>GetItem</code>
-         * and <code>PutItem</code>, on a table in the <code>DELETING</code> state until
-         * the table deletion is complete. For the full list of table states, see <a
+         * <p>DynamoDB might continue to accept data read and write operations, such as
+         * <code>GetItem</code> and <code>PutItem</code>, on a table in the
+         * <code>DELETING</code> state until the table deletion is complete. For the full
+         * list of table states, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.</p>
          *  <p>When you delete a table, any indexes on that table are also
          * deleted.</p> <p>If you have DynamoDB Streams enabled on the table, then the
@@ -924,10 +923,8 @@ namespace DynamoDB
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p>  <p>For global tables, this operation only applies to
-         * global tables using Version 2019.11.21 (Current version). </p> 
-         *  <p>If you issue a <code>DescribeTable</code> request immediately after a
-         * <code>CreateTable</code> request, DynamoDB might return a
+         * table.</p>  <p>If you issue a <code>DescribeTable</code> request
+         * immediately after a <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
          * for your table might not be available at that moment. Wait for a few seconds,
@@ -958,9 +955,7 @@ namespace DynamoDB
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p>  <p>For global tables, this operation only applies to
-         * global tables using Version 2019.11.21 (Current version).</p>
-         * <p><h3>See Also:</h3>   <a
+         * once.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -2042,11 +2037,9 @@ namespace DynamoDB
          * the global table version you are using</a>. To update existing global tables
          * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
-         * global tables</a>.</p>   <p> For global tables, this operation
-         * only applies to global tables using Version 2019.11.21 (Current version). If you
-         * are using global tables <a
+         * global tables</a>.</p>   <p> If you are using global tables <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
-         * 2019.11.21</a> you can use <a
+         * 2019.11.21</a> (Current) you can use <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
          * instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add
          * replicas and remove replicas in a single request, for simplicity we recommend
@@ -2175,19 +2168,17 @@ namespace DynamoDB
 
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
-         * DynamoDB Streams settings for a given table.</p>  <p>For global
-         * tables, this operation only applies to global tables using Version 2019.11.21
-         * (Current version). </p>  <p>You can only perform one of the
-         * following operations at once:</p> <ul> <li> <p>Modify the provisioned throughput
-         * settings of the table.</p> </li> <li> <p>Remove a global secondary index from
-         * the table.</p> </li> <li> <p>Create a new global secondary index on the table.
-         * After the index begins backfilling, you can use <code>UpdateTable</code> to
-         * perform other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an
-         * asynchronous operation; while it's executing, the table status changes from
-         * <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>,
-         * you can't issue another <code>UpdateTable</code> request. When the table returns
-         * to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
-         * complete.</p><p><h3>See Also:</h3>   <a
+         * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
+         * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
+         * throughput settings of the table.</p> </li> <li> <p>Remove a global secondary
+         * index from the table.</p> </li> <li> <p>Create a new global secondary index on
+         * the table. After the index begins backfilling, you can use
+         * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
+         * <code>UpdateTable</code> is an asynchronous operation; while it's executing, the
+         * table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While
+         * it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code>
+         * request. When the table returns to the <code>ACTIVE</code> state, the
+         * <code>UpdateTable</code> operation is complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
          * API Reference</a></p>
          */
@@ -2212,9 +2203,8 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Updates auto scaling settings on your global tables at once.</p> 
-         * <p>For global tables, this operation only applies to global tables using Version
-         * 2019.11.21 (Current version). </p> <p><h3>See Also:</h3>   <a
+         * <p>Updates auto scaling settings on your global tables at once.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */

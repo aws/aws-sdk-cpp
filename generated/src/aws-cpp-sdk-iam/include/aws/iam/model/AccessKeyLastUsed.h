@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Contains information about the last time an Amazon Web Services access key
    * was used since IAM began tracking this information on April 22, 2015.</p>
-   * <p>This data type is used as a response element in the
-   * <a>GetAccessKeyLastUsed</a> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html">GetAccessKeyLastUsed</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyLastUsed">AWS
    * API Reference</a></p>
    */

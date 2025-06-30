@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
 #include <aws/arc-zonal-shift/model/ZonalAutoshiftStatus.h>
+#include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +59,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The zonal autoshift status for the resource that you updated the practice run
+     * for.</p>
+     */
+    inline ZonalAutoshiftStatus GetZonalAutoshiftStatus() const { return m_zonalAutoshiftStatus; }
+    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
+    inline UpdatePracticeRunConfigurationResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus value) { SetZonalAutoshiftStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The practice run configuration that was updated.</p>
      */
     inline const PracticeRunConfiguration& GetPracticeRunConfiguration() const { return m_practiceRunConfiguration; }
@@ -66,16 +76,6 @@ namespace Model
     void SetPracticeRunConfiguration(PracticeRunConfigurationT&& value) { m_practiceRunConfigurationHasBeenSet = true; m_practiceRunConfiguration = std::forward<PracticeRunConfigurationT>(value); }
     template<typename PracticeRunConfigurationT = PracticeRunConfiguration>
     UpdatePracticeRunConfigurationResult& WithPracticeRunConfiguration(PracticeRunConfigurationT&& value) { SetPracticeRunConfiguration(std::forward<PracticeRunConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The zonal autoshift status for the resource that you updated the practice run
-     * for.</p>
-     */
-    inline ZonalAutoshiftStatus GetZonalAutoshiftStatus() const { return m_zonalAutoshiftStatus; }
-    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
-    inline UpdatePracticeRunConfigurationResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus value) { SetZonalAutoshiftStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -94,11 +94,11 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    PracticeRunConfiguration m_practiceRunConfiguration;
-    bool m_practiceRunConfigurationHasBeenSet = false;
-
     ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
     bool m_zonalAutoshiftStatusHasBeenSet = false;
+
+    PracticeRunConfiguration m_practiceRunConfiguration;
+    bool m_practiceRunConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

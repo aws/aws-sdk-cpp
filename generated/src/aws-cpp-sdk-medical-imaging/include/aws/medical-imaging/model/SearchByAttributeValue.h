@@ -135,6 +135,16 @@ namespace Model
     template<typename DICOMStudyDateAndTimeT = DICOMStudyDateAndTime>
     SearchByAttributeValue& WithDICOMStudyDateAndTime(DICOMStudyDateAndTimeT&& value) { SetDICOMStudyDateAndTime(std::forward<DICOMStudyDateAndTimeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The primary image set flag provided for search.</p>
+     */
+    inline bool GetIsPrimary() const { return m_isPrimary; }
+    inline bool IsPrimaryHasBeenSet() const { return m_isPrimaryHasBeenSet; }
+    inline void SetIsPrimary(bool value) { m_isPrimaryHasBeenSet = true; m_isPrimary = value; }
+    inline SearchByAttributeValue& WithIsPrimary(bool value) { SetIsPrimary(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dICOMPatientId;
@@ -160,6 +170,9 @@ namespace Model
 
     DICOMStudyDateAndTime m_dICOMStudyDateAndTime;
     bool m_dICOMStudyDateAndTimeHasBeenSet = false;
+
+    bool m_isPrimary{false};
+    bool m_isPrimaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/arc-zonal-shift/model/ControlCondition.h>
 #include <utility>
 
@@ -36,22 +36,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optionally, you can block ARC from starting practice runs for a resource on
-     * specific calendar dates.</p> <p>The format for blocked dates is: YYYY-MM-DD.
-     * Keep in mind, when you specify dates, that dates and times for practice runs are
-     * in UTC. Separate multiple blocked dates with spaces.</p> <p>For example, if you
-     * have an application update scheduled to launch on May 1, 2024, and you don't
-     * want practice runs to shift traffic away at that time, you could set a blocked
-     * date for <code>2024-05-01</code>.</p>
+     * <p>The identifier of the resource that Amazon Web Services shifts traffic for
+     * with a practice run zonal shift. The identifier is the Amazon Resource Name
+     * (ARN) for the resource.</p> <p>Amazon Application Recovery Controller currently
+     * supports enabling the following resources for zonal shift and zonal
+     * autoshift:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon
+     * EC2 Auto Scaling groups</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon
+     * Elastic Kubernetes Service</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application
+     * Load Balancer</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network
+     * Load Balancer</a> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
-    inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
-    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
-    void SetBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::forward<BlockedDatesT>(value); }
-    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
-    CreatePracticeRunConfigurationRequest& WithBlockedDates(BlockedDatesT&& value) { SetBlockedDates(std::forward<BlockedDatesT>(value)); return *this;}
-    template<typename BlockedDatesT = Aws::String>
-    CreatePracticeRunConfigurationRequest& AddBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.emplace_back(std::forward<BlockedDatesT>(value)); return *this; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    CreatePracticeRunConfigurationRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,6 +78,26 @@ namespace Model
     CreatePracticeRunConfigurationRequest& WithBlockedWindows(BlockedWindowsT&& value) { SetBlockedWindows(std::forward<BlockedWindowsT>(value)); return *this;}
     template<typename BlockedWindowsT = Aws::String>
     CreatePracticeRunConfigurationRequest& AddBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.emplace_back(std::forward<BlockedWindowsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Optionally, you can block ARC from starting practice runs for a resource on
+     * specific calendar dates.</p> <p>The format for blocked dates is: YYYY-MM-DD.
+     * Keep in mind, when you specify dates, that dates and times for practice runs are
+     * in UTC. Separate multiple blocked dates with spaces.</p> <p>For example, if you
+     * have an application update scheduled to launch on May 1, 2024, and you don't
+     * want practice runs to shift traffic away at that time, you could set a blocked
+     * date for <code>2024-05-01</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
+    inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    void SetBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::forward<BlockedDatesT>(value); }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    CreatePracticeRunConfigurationRequest& WithBlockedDates(BlockedDatesT&& value) { SetBlockedDates(std::forward<BlockedDatesT>(value)); return *this;}
+    template<typename BlockedDatesT = Aws::String>
+    CreatePracticeRunConfigurationRequest& AddBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.emplace_back(std::forward<BlockedDatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,38 +137,22 @@ namespace Model
     template<typename OutcomeAlarmsT = ControlCondition>
     CreatePracticeRunConfigurationRequest& AddOutcomeAlarms(OutcomeAlarmsT&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms.emplace_back(std::forward<OutcomeAlarmsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the resource that Amazon Web Services shifts traffic for
-     * with a practice run zonal shift. The identifier is the Amazon Resource Name
-     * (ARN) for the resource.</p> <p>At this time, supported resources are Network
-     * Load Balancers and Application Load Balancers with cross-zone load balancing
-     * turned off.</p>
-     */
-    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
-    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    template<typename ResourceIdentifierT = Aws::String>
-    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
-    template<typename ResourceIdentifierT = Aws::String>
-    CreatePracticeRunConfigurationRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::Vector<Aws::String> m_blockedDates;
-    bool m_blockedDatesHasBeenSet = false;
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_blockedWindows;
     bool m_blockedWindowsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_blockedDates;
+    bool m_blockedDatesHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_blockingAlarms;
     bool m_blockingAlarmsHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_outcomeAlarms;
     bool m_outcomeAlarmsHasBeenSet = false;
-
-    Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,8 +70,9 @@ namespace Model
      * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
+     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: CloudFormation
+     * could not run drift detection for a resource in the stack. See the
+     * <code>DetectionStatusReason</code> for details.</p> </li> </ul>
      */
     inline StackDriftStatus GetStackDriftStatus() const { return m_stackDriftStatus; }
     inline void SetStackDriftStatus(StackDriftStatus value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = value; }

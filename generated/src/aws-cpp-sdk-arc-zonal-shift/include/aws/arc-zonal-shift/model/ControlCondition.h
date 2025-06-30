@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/arc-zonal-shift/model/ControlConditionType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +34,8 @@ namespace Model
    * <p>Control condition alarms do not apply for autoshifts.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
-   * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
-   * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
+   * Considerations when you configure zonal autoshift</a> in the Amazon Application
+   * Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ControlCondition">AWS
    * API Reference</a></p>
    */
@@ -50,6 +50,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of alarm specified for a practice run. You can only specify Amazon
+     * CloudWatch alarms for practice runs, so the only valid value is
+     * <code>CLOUDWATCH</code>.</p>
+     */
+    inline ControlConditionType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(ControlConditionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ControlCondition& WithType(ControlConditionType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) for an Amazon CloudWatch alarm that you
      * specify as a control condition for a practice run.</p>
      */
@@ -60,25 +72,13 @@ namespace Model
     template<typename AlarmIdentifierT = Aws::String>
     ControlCondition& WithAlarmIdentifier(AlarmIdentifierT&& value) { SetAlarmIdentifier(std::forward<AlarmIdentifierT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of alarm specified for a practice run. You can only specify Amazon
-     * CloudWatch alarms for practice runs, so the only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
-    inline ControlConditionType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ControlConditionType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ControlCondition& WithType(ControlConditionType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_alarmIdentifier;
-    bool m_alarmIdentifierHasBeenSet = false;
 
     ControlConditionType m_type{ControlConditionType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_alarmIdentifier;
+    bool m_alarmIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

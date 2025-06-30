@@ -26,10 +26,15 @@ namespace Model
   /**
    * <p>Contains information about an attached policy.</p> <p>An attached policy is a
    * managed policy that has been attached to a user, group, or role. This data type
-   * is used as a response element in the <a>ListAttachedGroupPolicies</a>,
-   * <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and
-   * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
-   * about managed policies, refer to <a
+   * is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html">ListAttachedGroupPolicies</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html">ListAttachedRolePolicies</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html">ListAttachedUserPolicies</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+   * operations. </p> <p>For more information about managed policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * policies and inline policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a

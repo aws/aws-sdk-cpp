@@ -16,15 +16,15 @@ Aws::String StartZonalShiftRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_awayFromHasBeenSet)
+  if(m_resourceIdentifierHasBeenSet)
   {
-   payload.WithString("awayFrom", m_awayFrom);
+   payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
   }
 
-  if(m_commentHasBeenSet)
+  if(m_awayFromHasBeenSet)
   {
-   payload.WithString("comment", m_comment);
+   payload.WithString("awayFrom", m_awayFrom);
 
   }
 
@@ -34,9 +34,9 @@ Aws::String StartZonalShiftRequest::SerializePayload() const
 
   }
 
-  if(m_resourceIdentifierHasBeenSet)
+  if(m_commentHasBeenSet)
   {
-   payload.WithString("resourceIdentifier", m_resourceIdentifier);
+   payload.WithString("comment", m_comment);
 
   }
 

@@ -35,7 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <a>Role</a> object that contains details about the newly created role.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a>
+     * object that contains details about the newly created role.</p>
      */
     inline const Role& GetRole() const { return m_role; }
     template<typename RoleT = Role>

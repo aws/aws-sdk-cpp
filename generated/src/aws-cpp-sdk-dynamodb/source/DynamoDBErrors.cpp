@@ -43,8 +43,8 @@ static const int IMPORT_CONFLICT_HASH = HashingUtils::HashString("ImportConflict
 static const int TABLE_NOT_FOUND_HASH = HashingUtils::HashString("TableNotFoundException");
 static const int EXPORT_NOT_FOUND_HASH = HashingUtils::HashString("ExportNotFoundException");
 static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
-static const int BACKUP_IN_USE_HASH = HashingUtils::HashString("BackupInUseException");
 static const int REPLICATED_WRITE_CONFLICT_HASH = HashingUtils::HashString("ReplicatedWriteConflictException");
+static const int BACKUP_IN_USE_HASH = HashingUtils::HashString("BackupInUseException");
 static const int CONTINUOUS_BACKUPS_UNAVAILABLE_HASH = HashingUtils::HashString("ContinuousBackupsUnavailableException");
 static const int TABLE_IN_USE_HASH = HashingUtils::HashString("TableInUseException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
@@ -110,13 +110,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_IN_PROGRESS), RetryableType::RETRYABLE);
   }
+  else if (hashCode == REPLICATED_WRITE_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICATED_WRITE_CONFLICT), RetryableType::RETRYABLE);
+  }
   else if (hashCode == BACKUP_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::BACKUP_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == REPLICATED_WRITE_CONFLICT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICATED_WRITE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONTINUOUS_BACKUPS_UNAVAILABLE_HASH)
   {

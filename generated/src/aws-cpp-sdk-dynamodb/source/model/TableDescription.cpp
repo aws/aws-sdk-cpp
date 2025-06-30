@@ -135,6 +135,15 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_replicasHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("GlobalTableWitnesses"))
+  {
+    Aws::Utils::Array<JsonView> globalTableWitnessesJsonList = jsonValue.GetArray("GlobalTableWitnesses");
+    for(unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength(); ++globalTableWitnessesIndex)
+    {
+      m_globalTableWitnesses.push_back(globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject());
+    }
+    m_globalTableWitnessesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RestoreSummary"))
   {
     m_restoreSummary = jsonValue.GetObject("RestoreSummary");
@@ -310,6 +319,17 @@ JsonValue TableDescription::Jsonize() const
      replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());
    }
    payload.WithArray("Replicas", std::move(replicasJsonList));
+
+  }
+
+  if(m_globalTableWitnessesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> globalTableWitnessesJsonList(m_globalTableWitnesses.size());
+   for(unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength(); ++globalTableWitnessesIndex)
+   {
+     globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject(m_globalTableWitnesses[globalTableWitnessesIndex].Jsonize());
+   }
+   payload.WithArray("GlobalTableWitnesses", std::move(globalTableWitnessesJsonList));
 
   }
 

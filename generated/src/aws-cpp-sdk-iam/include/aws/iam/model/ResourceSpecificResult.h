@@ -30,8 +30,9 @@ namespace Model
 
   /**
    * <p>Contains the result of the simulation of a single API operation call on a
-   * single resource.</p> <p>This data type is used by a member of the
-   * <a>EvaluationResult</a> data type.</p><p><h3>See Also:</h3>   <a
+   * single resource.</p> <p>This data type is used by a member of the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EvaluationResult.html">EvaluationResult</a>
+   * data type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResourceSpecificResult">AWS
    * API Reference</a></p>
    */
@@ -96,9 +97,10 @@ namespace Model
      * <code>ResourceArns</code> to "*" or by not including the
      * <code>ResourceArns</code> parameter, then any missing context values are instead
      * included under the <code>EvaluationResults</code> section. To discover the
-     * context keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
+     * context keys used by a set of policies, you can call <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const { return m_missingContextValues; }
     inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }

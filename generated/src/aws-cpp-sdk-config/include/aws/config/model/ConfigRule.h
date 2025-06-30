@@ -122,7 +122,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }

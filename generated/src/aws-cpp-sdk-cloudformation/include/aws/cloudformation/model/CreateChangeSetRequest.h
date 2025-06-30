@@ -85,8 +85,9 @@ namespace Model
      * a template (max size: 1 MB) that's located in an Amazon S3 bucket or a Systems
      * Manager document. CloudFormation generates the change set by comparing this
      * template with the stack that you specified. The location for an Amazon S3 bucket
-     * must start with <code>https://</code>.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * must start with <code>https://</code>. URLs from S3 static websites are not
+     * supported.</p> <p>Conditional: You must specify only <code>TemplateBody</code>
+     * or <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
@@ -141,21 +142,21 @@ namespace Model
      * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-managedpolicy.html">
      * AWS::IAM::ManagedPolicy</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
@@ -398,16 +399,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates if the change set imports resources that already exist.</p> 
-     * <p>This parameter can only import resources that have custom names in templates.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * <p>Indicates if the change set auto-imports resources that already exist. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/import-resources-automatically.html">Import
+     * Amazon Web Services resources into a CloudFormation stack automatically</a> in
+     * the <i>CloudFormation User Guide</i>.</p>  <p>This parameter can only
+     * import resources that have custom names in templates. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">name
      * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
-     * not accept custom names, such as EC2 instances, use the resource import feature
-     * instead. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import
-     * Amazon Web Services resources into a CloudFormation stack with a resource
-     * import</a> in the <i>CloudFormation User Guide</i>.</p> 
+     * not accept custom names, such as EC2 instances, use the
+     * <code>ResourcesToImport</code> parameter instead.</p> 
      */
     inline bool GetImportExistingResources() const { return m_importExistingResources; }
     inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }

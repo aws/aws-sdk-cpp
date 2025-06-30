@@ -35,15 +35,15 @@ CreatePracticeRunConfigurationResult& CreatePracticeRunConfigurationResult::oper
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("practiceRunConfiguration"))
-  {
-    m_practiceRunConfiguration = jsonValue.GetObject("practiceRunConfiguration");
-    m_practiceRunConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("zonalAutoshiftStatus"))
   {
     m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
     m_zonalAutoshiftStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("practiceRunConfiguration"))
+  {
+    m_practiceRunConfiguration = jsonValue.GetObject("practiceRunConfiguration");
+    m_practiceRunConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

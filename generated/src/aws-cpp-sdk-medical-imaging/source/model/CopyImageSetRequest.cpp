@@ -37,6 +37,13 @@ void CopyImageSetRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_promoteToPrimaryHasBeenSet)
+    {
+      ss << m_promoteToPrimary;
+      uri.AddQueryStringParameter("promoteToPrimary", ss.str());
+      ss.str("");
+    }
+
 }
 
 

@@ -105,8 +105,9 @@ namespace Model
     ///@{
     /**
      * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
-     * Tasks can have the following reference types at the time of creation: URL |
-     * NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+     * Tasks can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>
+     * | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
      */
     inline const Aws::Map<Aws::String, Reference>& GetReferences() const { return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
@@ -122,10 +123,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The channel for the contact</p>  <p>CreateContact only supports
-     * the EMAIL and VOICE channels. The following information that states other
-     * channels are supported is incorrect. We are working to update this topic.</p>
-     * 
+     * <p>The channel for the contact.</p>  <p>The CHAT channel is not
+     * supported. The following information is incorrect. We're working to correct
+     * it.</p> 
      */
     inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
@@ -136,11 +136,12 @@ namespace Model
     ///@{
     /**
      * <p>Indicates how the contact was initiated. </p>  <p>CreateContact
-     * only supports the following initiation methods: </p> <ul> <li> <p>For EMAIL:
-     * OUTBOUND, AGENT_REPLY, and FLOW. </p> </li> <li> <p>For VOICE: TRANSFER and the
-     * subtype connect:ExternalAudio. </p> </li> </ul> <p>The following information
-     * that states other initiation methods are supported is incorrect. We are working
-     * to update this topic.</p> 
+     * only supports the following initiation methods. Valid values by channel are:
+     * </p> <ul> <li> <p>For VOICE: <code>TRANSFER</code> and the subtype
+     * <code>connect:ExternalAudio</code> </p> </li> <li> <p>For EMAIL:
+     * <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code> </p> </li>
+     * <li> <p>For TASK: <code>API</code> </p> </li> </ul> <p>The other channels listed
+     * below are incorrect. We're working to correct this information.</p> 
      */
     inline ContactInitiationMethod GetInitiationMethod() const { return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }
@@ -161,8 +162,8 @@ namespace Model
     ///@{
     /**
      * <p>User details for the contact</p>  <p>UserInfo is required when
-     * creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation
-     * methods.</p> 
+     * creating an EMAIL contact with <code>OUTBOUND</code> and
+     * <code>AGENT_REPLY</code> contact initiation methods.</p> 
      */
     inline const UserInfo& GetUserInfo() const { return m_userInfo; }
     inline bool UserInfoHasBeenSet() const { return m_userInfoHasBeenSet; }
@@ -174,7 +175,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Initial state of the contact when it's created</p>
+     * <p>Initial state of the contact when it's created. Only TASK channel contacts
+     * can be initiated with <code>COMPLETED</code> state.</p>
      */
     inline InitiateAs GetInitiateAs() const { return m_initiateAs; }
     inline bool InitiateAsHasBeenSet() const { return m_initiateAsHasBeenSet; }

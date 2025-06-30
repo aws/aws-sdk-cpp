@@ -92,9 +92,11 @@
 #include <aws/connect/model/Campaign.h>
 #include <aws/connect/model/CaseSlaConfiguration.h>
 #include <aws/connect/model/Channel.h>
+#include <aws/connect/model/ChatContactMetrics.h>
 #include <aws/connect/model/ChatEvent.h>
 #include <aws/connect/model/ChatEventType.h>
 #include <aws/connect/model/ChatMessage.h>
+#include <aws/connect/model/ChatMetrics.h>
 #include <aws/connect/model/ChatParticipantRoleConfig.h>
 #include <aws/connect/model/ChatStreamingConfiguration.h>
 #include <aws/connect/model/ClaimPhoneNumberRequest.h>
@@ -611,6 +613,7 @@
 #include <aws/connect/model/ParticipantCapabilities.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/ParticipantDetailsToAdd.h>
+#include <aws/connect/model/ParticipantMetrics.h>
 #include <aws/connect/model/ParticipantRole.h>
 #include <aws/connect/model/ParticipantState.h>
 #include <aws/connect/model/ParticipantTimerAction.h>

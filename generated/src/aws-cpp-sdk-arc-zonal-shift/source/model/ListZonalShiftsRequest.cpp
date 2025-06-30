@@ -23,13 +23,6 @@ Aws::String ListZonalShiftsRequest::SerializePayload() const
 void ListZonalShiftsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
@@ -37,17 +30,24 @@ void ListZonalShiftsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_resourceIdentifierHasBeenSet)
-    {
-      ss << m_resourceIdentifier;
-      uri.AddQueryStringParameter("resourceIdentifier", ss.str());
-      ss.str("");
-    }
-
     if(m_statusHasBeenSet)
     {
       ss << ZonalShiftStatusMapper::GetNameForZonalShiftStatus(m_status);
       uri.AddQueryStringParameter("status", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceIdentifierHasBeenSet)
+    {
+      ss << m_resourceIdentifier;
+      uri.AddQueryStringParameter("resourceIdentifier", ss.str());
       ss.str("");
     }
 

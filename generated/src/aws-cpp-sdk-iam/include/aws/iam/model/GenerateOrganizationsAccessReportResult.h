@@ -35,8 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job identifier that you can use in the
-     * <a>GetOrganizationsAccessReport</a> operation.</p>
+     * <p>The job identifier that you can use in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
+     * operation.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     template<typename JobIdT = Aws::String>

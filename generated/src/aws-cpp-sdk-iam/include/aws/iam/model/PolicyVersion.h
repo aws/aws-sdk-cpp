@@ -26,10 +26,15 @@ namespace Model
 
   /**
    * <p>Contains information about a version of a managed policy.</p> <p>This data
-   * type is used as a response element in the <a>CreatePolicyVersion</a>,
-   * <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and
-   * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
-   * about managed policies, refer to <a
+   * type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html">CreatePolicyVersion</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+   * operations. </p> <p>For more information about managed policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * policies and inline policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
@@ -50,15 +55,20 @@ namespace Model
     ///@{
     /**
      * <p>The policy document.</p> <p>The policy document is returned in the response
-     * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
-     * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
-     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
-     * this structure is URL-encoded compliant with <a
-     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
-     * decoding method to convert the policy back to plain JSON text. For example, if
-     * you use Java, you can use the <code>decode</code> method of the
-     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-     * and SDKs provide similar functionality.</p>
+     * to the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html">CreatePolicyVersion</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>
+     * operations. </p> <p>The policy document returned in this structure is
+     * URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+     * 3986</a>. You can use a URL decoding method to convert the policy back to plain
+     * JSON text. For example, if you use Java, you can use the <code>decode</code>
+     * method of the <code>java.net.URLDecoder</code> utility class in the Java SDK.
+     * Other languages and SDKs provide similar functionality.</p>
      */
     inline const Aws::String& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }

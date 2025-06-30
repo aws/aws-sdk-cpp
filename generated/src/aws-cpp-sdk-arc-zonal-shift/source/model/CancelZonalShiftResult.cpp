@@ -25,25 +25,25 @@ CancelZonalShiftResult::CancelZonalShiftResult(const Aws::AmazonWebServiceResult
 CancelZonalShiftResult& CancelZonalShiftResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("awayFrom"))
+  if(jsonValue.ValueExists("zonalShiftId"))
   {
-    m_awayFrom = jsonValue.GetString("awayFrom");
-    m_awayFromHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("comment"))
-  {
-    m_comment = jsonValue.GetString("comment");
-    m_commentHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("expiryTime"))
-  {
-    m_expiryTime = jsonValue.GetDouble("expiryTime");
-    m_expiryTimeHasBeenSet = true;
+    m_zonalShiftId = jsonValue.GetString("zonalShiftId");
+    m_zonalShiftIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
     m_resourceIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("awayFrom"))
+  {
+    m_awayFrom = jsonValue.GetString("awayFrom");
+    m_awayFromHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("expiryTime"))
+  {
+    m_expiryTime = jsonValue.GetDouble("expiryTime");
+    m_expiryTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("startTime"))
   {
@@ -55,10 +55,10 @@ CancelZonalShiftResult& CancelZonalShiftResult::operator =(const Aws::AmazonWebS
     m_status = ZonalShiftStatusMapper::GetZonalShiftStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("zonalShiftId"))
+  if(jsonValue.ValueExists("comment"))
   {
-    m_zonalShiftId = jsonValue.GetString("zonalShiftId");
-    m_zonalShiftIdHasBeenSet = true;
+    m_comment = jsonValue.GetString("comment");
+    m_commentHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

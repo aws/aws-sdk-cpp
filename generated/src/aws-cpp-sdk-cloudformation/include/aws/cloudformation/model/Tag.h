@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
+     * <p> <i>Required</i>. A string that contains the value for this tag. You can
+     * specify a maximum of 256 characters for a tag value.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

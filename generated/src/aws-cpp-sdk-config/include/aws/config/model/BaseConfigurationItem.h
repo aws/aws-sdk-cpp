@@ -195,9 +195,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A JSON-encoded string that contains the contents for the resource
-     * configuration. This string needs to be deserialized using
-     * <code>json.loads()</code> before you can access the contents. </p>
+     * <p>The description of the resource configuration.</p>
      */
     inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -209,11 +207,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string to string map that contains additional contents for the resource
-     * configuration.Config returns this field for certain resource types to supplement
-     * the information returned for the <code>configuration</code> field.</p> <p>This
-     * string needs to be deserialized using <code>json.loads()</code> before you can
-     * access the contents.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupplementaryConfiguration() const { return m_supplementaryConfiguration; }
     inline bool SupplementaryConfigurationHasBeenSet() const { return m_supplementaryConfigurationHasBeenSet; }
@@ -230,12 +225,7 @@ namespace Model
     ///@{
     /**
      * <p>The recording frequency that Config uses to record configuration changes for
-     * the resource.</p>  <p>This field only appears in the API response when
-     * <code>DAILY</code> recording is enabled for a resource type. If this field is
-     * not present, <code>CONTINUOUS</code> recording is enabled for that resource
-     * type. For more information on daily recording and continuous recording, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
-     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
+     * the resource.</p>
      */
     inline RecordingFrequency GetRecordingFrequency() const { return m_recordingFrequency; }
     inline bool RecordingFrequencyHasBeenSet() const { return m_recordingFrequencyHasBeenSet; }

@@ -27,6 +27,7 @@ namespace Aws
         static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
         static const int ARCHIVING_HASH = HashingUtils::HashString("ARCHIVING");
         static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+        static const int REPLICATION_NOT_AUTHORIZED_HASH = HashingUtils::HashString("REPLICATION_NOT_AUTHORIZED");
 
 
         TableStatus GetTableStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return TableStatus::ARCHIVED;
           }
+          else if (hashCode == REPLICATION_NOT_AUTHORIZED_HASH)
+          {
+            return TableStatus::REPLICATION_NOT_AUTHORIZED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "ARCHIVING";
           case TableStatus::ARCHIVED:
             return "ARCHIVED";
+          case TableStatus::REPLICATION_NOT_AUTHORIZED:
+            return "REPLICATION_NOT_AUTHORIZED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

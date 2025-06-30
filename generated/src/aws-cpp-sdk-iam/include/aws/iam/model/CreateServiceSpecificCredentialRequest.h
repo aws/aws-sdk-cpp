@@ -67,6 +67,18 @@ namespace Model
     template<typename ServiceNameT = Aws::String>
     CreateServiceSpecificCredentialRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of days until the service specific credential expires. This field
+     * is only valid for Bedrock API keys and must be a positive integer. When not
+     * specified, the credential will not expire.</p>
+     */
+    inline int GetCredentialAgeDays() const { return m_credentialAgeDays; }
+    inline bool CredentialAgeDaysHasBeenSet() const { return m_credentialAgeDaysHasBeenSet; }
+    inline void SetCredentialAgeDays(int value) { m_credentialAgeDaysHasBeenSet = true; m_credentialAgeDays = value; }
+    inline CreateServiceSpecificCredentialRequest& WithCredentialAgeDays(int value) { SetCredentialAgeDays(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userName;
@@ -74,6 +86,9 @@ namespace Model
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
+
+    int m_credentialAgeDays{0};
+    bool m_credentialAgeDaysHasBeenSet = false;
   };
 
 } // namespace Model

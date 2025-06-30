@@ -364,7 +364,14 @@ namespace CloudFormation
          * Amazon Web Services Regions. A stack instance refers to a stack in a specific
          * account and Region. You must specify at least one value for either
          * <code>Accounts</code> or <code>DeploymentTargets</code>, and you must specify at
-         * least one value for <code>Regions</code>.</p><p><h3>See Also:</h3>   <a
+         * least one value for <code>Regions</code>.</p>  <p>The maximum number of
+         * organizational unit (OUs) supported by a <code>CreateStackInstances</code>
+         * operation is 50.</p> <p>If you need more than 50, consider the following
+         * options:</p> <ul> <li> <p> <i>Batch processing:</i> If you don't want to expose
+         * your OU hierarchy, split up the operations into multiple calls with less than 50
+         * OUs each.</p> </li> <li> <p> <i>Parent OU strategy:</i> If you don't mind
+         * exposing the OU hierarchy, target a parent OU that contains all desired child
+         * OUs.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
          * API Reference</a></p>
          */
@@ -587,7 +594,14 @@ namespace CloudFormation
 
         /**
          * <p>Deletes stack instances for the specified accounts, in the specified Amazon
-         * Web Services Regions.</p><p><h3>See Also:</h3>   <a
+         * Web Services Regions.</p>  <p>The maximum number of organizational unit
+         * (OUs) supported by a <code>DeleteStackInstances</code> operation is 50.</p>
+         * <p>If you need more than 50, consider the following options:</p> <ul> <li> <p>
+         * <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+         * the operations into multiple calls with less than 50 OUs each.</p> </li> <li>
+         * <p> <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy,
+         * target a parent OU that contains all desired child OUs.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
          * API Reference</a></p>
          */
@@ -1109,8 +1123,9 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns the description of the specified StackSet.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the description of the specified StackSet.</p>  <p>This API
+         * provides <i>strongly consistent</i> reads meaning it will always return the most
+         * up-to-date data.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">AWS
          * API Reference</a></p>
          */
@@ -1135,8 +1150,9 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns the description of the specified StackSet operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the description of the specified StackSet operation.</p> 
+         * <p>This API provides <i>strongly consistent</i> reads meaning it will always
+         * return the most up-to-date data.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">AWS
          * API Reference</a></p>
          */
@@ -2006,8 +2022,10 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about the results of a stack set
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns summary information about the results of a stack set operation.</p>
+         *  <p>This API provides <i>eventually consistent</i> reads meaning it may
+         * take some time but will eventually return the most up-to-date data.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">AWS
          * API Reference</a></p>
          */
@@ -2032,8 +2050,10 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about operations performed on a stack
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns summary information about operations performed on a stack set.</p>
+         *  <p>This API provides <i>eventually consistent</i> reads meaning it may
+         * take some time but will eventually return the most up-to-date data.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">AWS
          * API Reference</a></p>
          */
@@ -2059,17 +2079,19 @@ namespace CloudFormation
 
         /**
          * <p>Returns summary information about stack sets that are associated with the
-         * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
-         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your
-         * Amazon Web Services account, <code>ListStackSets</code> returns all self-managed
-         * stack sets in your Amazon Web Services account.</p> </li> <li>
-         * <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to
-         * <code>SELF</code> while signed in to the organization's management account,
-         * <code>ListStackSets</code> returns all stack sets in the management account.</p>
-         * </li> <li> <p>[Service-managed permissions] If you set the <code>CallAs</code>
-         * parameter to <code>DELEGATED_ADMIN</code> while signed in to your member
-         * account, <code>ListStackSets</code> returns all stack sets with service-managed
-         * permissions in the management account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * user.</p>  <p>This API provides <i>strongly consistent</i> reads meaning
+         * it will always return the most up-to-date data.</p>  <ul> <li>
+         * <p>[Self-managed permissions] If you set the <code>CallAs</code> parameter to
+         * <code>SELF</code> while signed in to your Amazon Web Services account,
+         * <code>ListStackSets</code> returns all self-managed stack sets in your Amazon
+         * Web Services account.</p> </li> <li> <p>[Service-managed permissions] If you set
+         * the <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
+         * organization's management account, <code>ListStackSets</code> returns all stack
+         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
+         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
+         * while signed in to your member account, <code>ListStackSets</code> returns all
+         * stack sets with service-managed permissions in the management account.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          */
@@ -2683,7 +2705,14 @@ namespace CloudFormation
          * to update all stack instances with the updated template and parameter value
          * specified in the stack set. Once a stack instance has been updated with the new
          * parameter, you can then override the parameter value using
-         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>UpdateStackInstances</code>.</p>  <p>The maximum number of
+         * organizational unit (OUs) supported by a <code>UpdateStackInstances</code>
+         * operation is 50.</p> <p>If you need more than 50, consider the following
+         * options:</p> <ul> <li> <p> <i>Batch processing:</i> If you don't want to expose
+         * your OU hierarchy, split up the operations into multiple calls with less than 50
+         * OUs each.</p> </li> <li> <p> <i>Parent OU strategy:</i> If you don't mind
+         * exposing the OU hierarchy, target a parent OU that contains all desired child
+         * OUs.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
          * API Reference</a></p>
          */
@@ -2713,7 +2742,14 @@ namespace CloudFormation
          * created by updating the stack set fails (completely or partially, below or above
          * a specified failure tolerance), the stack set is updated with your changes.
          * Subsequent <a>CreateStackInstances</a> calls on the specified stack set use the
-         * updated stack set.</p><p><h3>See Also:</h3>   <a
+         * updated stack set.</p>  <p>The maximum number of organizational unit (OUs)
+         * supported by a <code>UpdateStackSet</code> operation is 50.</p> <p>If you need
+         * more than 50, consider the following options:</p> <ul> <li> <p> <i>Batch
+         * processing:</i> If you don't want to expose your OU hierarchy, split up the
+         * operations into multiple calls with less than 50 OUs each.</p> </li> <li> <p>
+         * <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+         * parent OU that contains all desired child OUs.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
          * API Reference</a></p>
          */

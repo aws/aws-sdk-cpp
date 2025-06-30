@@ -21,7 +21,8 @@ namespace Model
     Target,
     Owner,
     Status,
-    SessionId
+    SessionId,
+    AccessType
   };
 
 namespace SessionFilterKeyMapper

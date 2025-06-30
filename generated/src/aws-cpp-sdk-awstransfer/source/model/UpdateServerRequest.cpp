@@ -115,6 +115,11 @@ Aws::String UpdateServerRequest::SerializePayload() const
 
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
   return payload.View().WriteReadable();
 }
 

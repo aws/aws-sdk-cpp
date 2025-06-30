@@ -64,6 +64,7 @@
 #include <aws/dynamodb/model/CreateGlobalSecondaryIndexAction.h>
 #include <aws/dynamodb/model/CreateGlobalTableRequest.h>
 #include <aws/dynamodb/model/CreateGlobalTableResult.h>
+#include <aws/dynamodb/model/CreateGlobalTableWitnessGroupMemberAction.h>
 #include <aws/dynamodb/model/CreateReplicaAction.h>
 #include <aws/dynamodb/model/CreateReplicationGroupMemberAction.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
@@ -73,6 +74,7 @@
 #include <aws/dynamodb/model/DeleteBackupRequest.h>
 #include <aws/dynamodb/model/DeleteBackupResult.h>
 #include <aws/dynamodb/model/DeleteGlobalSecondaryIndexAction.h>
+#include <aws/dynamodb/model/DeleteGlobalTableWitnessGroupMemberAction.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
 #include <aws/dynamodb/model/DeleteItemResult.h>
 #include <aws/dynamodb/model/DeleteReplicaAction.h>
@@ -144,6 +146,8 @@
 #include <aws/dynamodb/model/GlobalTableDescription.h>
 #include <aws/dynamodb/model/GlobalTableGlobalSecondaryIndexSettingsUpdate.h>
 #include <aws/dynamodb/model/GlobalTableStatus.h>
+#include <aws/dynamodb/model/GlobalTableWitnessDescription.h>
+#include <aws/dynamodb/model/GlobalTableWitnessGroupUpdate.h>
 #include <aws/dynamodb/model/ImportStatus.h>
 #include <aws/dynamodb/model/ImportSummary.h>
 #include <aws/dynamodb/model/ImportTableDescription.h>
@@ -278,6 +282,7 @@
 #include <aws/dynamodb/model/UpdateTimeToLiveRequest.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
 #include <aws/dynamodb/model/WarmThroughput.h>
+#include <aws/dynamodb/model/WitnessStatus.h>
 #include <aws/dynamodb/model/WriteRequest.h>
 
 using DynamoDBIncludeTest = ::testing::Test;

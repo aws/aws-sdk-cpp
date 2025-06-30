@@ -24,6 +24,11 @@ Aws::String CreateServiceSpecificCredentialRequest::SerializePayload() const
     ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 
+  if(m_credentialAgeDaysHasBeenSet)
+  {
+    ss << "CredentialAgeDays=" << m_credentialAgeDays << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

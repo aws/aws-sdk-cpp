@@ -49,11 +49,23 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
       m_serviceUserName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUserNameNode.GetText());
       m_serviceUserNameHasBeenSet = true;
     }
+    XmlNode serviceCredentialAliasNode = resultNode.FirstChild("ServiceCredentialAlias");
+    if(!serviceCredentialAliasNode.IsNull())
+    {
+      m_serviceCredentialAlias = Aws::Utils::Xml::DecodeEscapedXmlText(serviceCredentialAliasNode.GetText());
+      m_serviceCredentialAliasHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+    }
+    XmlNode expirationDateNode = resultNode.FirstChild("ExpirationDate");
+    if(!expirationDateNode.IsNull())
+    {
+      m_expirationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_expirationDateHasBeenSet = true;
     }
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
     if(!serviceSpecificCredentialIdNode.IsNull())
@@ -89,9 +101,19 @@ void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
   }
 
+  if(m_serviceCredentialAliasHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_expirationDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceSpecificCredentialIdHasBeenSet)
@@ -120,9 +142,17 @@ void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
   }
+  if(m_serviceCredentialAliasHasBeenSet)
+  {
+      oStream << location << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  }
   if(m_createDateHasBeenSet)
   {
       oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_expirationDateHasBeenSet)
+  {
+      oStream << location << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceSpecificCredentialIdHasBeenSet)
   {

@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>StackSummary</code> structures containing information about
-     * the specified stacks.</p>
+     * <p>A list of <code>StackSummary</code> structures that contains information
+     * about the specified stacks.</p>
      */
     inline const Aws::Vector<StackSummary>& GetStackSummaries() const { return m_stackSummaries; }
     template<typename StackSummariesT = Aws::Vector<StackSummary>>

@@ -43,8 +43,8 @@ namespace Model
     /**
      * <p>The filter key name to describe your managed nodes.</p> <p>Valid filter key
      * values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds
-     * | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes |
-     * "tag-key" | "tag:<code>{keyname}</code> </p> <ul> <li> <p>Valid values for the
+     * | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key"
+     * | "tag:<code>{keyname}</code> </p> <ul> <li> <p>Valid values for the
      * <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
      * <li> <p>Valid values for the <code>PingStatus</code> filter key: Online |
      * ConnectionLost | Inactive (deprecated)</p> </li> <li> <p>Valid values for the

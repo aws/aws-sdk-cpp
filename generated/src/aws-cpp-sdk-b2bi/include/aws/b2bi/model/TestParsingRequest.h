@@ -9,6 +9,7 @@
 #include <aws/b2bi/model/S3Location.h>
 #include <aws/b2bi/model/FileFormat.h>
 #include <aws/b2bi/model/EdiType.h>
+#include <aws/b2bi/model/AdvancedOptions.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,20 @@ namespace Model
     template<typename EdiTypeT = EdiType>
     TestParsingRequest& WithEdiType(EdiTypeT&& value) { SetEdiType(std::forward<EdiTypeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies advanced options for parsing the input EDI file. These options
+     * allow for more granular control over the parsing process, including split
+     * options for X12 files.</p>
+     */
+    inline const AdvancedOptions& GetAdvancedOptions() const { return m_advancedOptions; }
+    inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    void SetAdvancedOptions(AdvancedOptionsT&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::forward<AdvancedOptionsT>(value); }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    TestParsingRequest& WithAdvancedOptions(AdvancedOptionsT&& value) { SetAdvancedOptions(std::forward<AdvancedOptionsT>(value)); return *this;}
+    ///@}
   private:
 
     S3Location m_inputFile;
@@ -83,6 +98,9 @@ namespace Model
 
     EdiType m_ediType;
     bool m_ediTypeHasBeenSet = false;
+
+    AdvancedOptions m_advancedOptions;
+    bool m_advancedOptionsHasBeenSet = false;
   };
 
 } // namespace Model

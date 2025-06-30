@@ -28,9 +28,13 @@ namespace Model
 
   /**
    * <p>Contains information about a managed policy.</p> <p>This data type is used as
-   * a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and
-   * <a>ListPolicies</a> operations. </p> <p>For more information about managed
-   * policies, refer to <a
+   * a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a>
+   * operations. </p> <p>For more information about managed policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * policies and inline policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
@@ -151,8 +155,11 @@ namespace Model
     ///@{
     /**
      * <p>A friendly description of the policy.</p> <p>This element is included in the
-     * response to the <a>GetPolicy</a> operation. It is not included in the response
-     * to the <a>ListPolicies</a> operation. </p>
+     * response to the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+     * operation. It is not included in the response to the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a>
+     * operation. </p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

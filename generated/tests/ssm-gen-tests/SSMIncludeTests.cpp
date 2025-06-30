@@ -15,6 +15,7 @@
 #include <aws/ssm/SSMServiceClientModel.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/AccessRequestStatus.h>
+#include <aws/ssm/model/AccessType.h>
 #include <aws/ssm/model/AccountSharingInfo.h>
 #include <aws/ssm/model/Activation.h>
 #include <aws/ssm/model/AddTagsToResourceRequest.h>

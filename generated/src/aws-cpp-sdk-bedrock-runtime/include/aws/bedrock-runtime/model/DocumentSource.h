@@ -7,6 +7,9 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/bedrock-runtime/model/S3Location.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-runtime/model/DocumentContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +68,33 @@ namespace Model
     template<typename S3LocationT = S3Location>
     DocumentSource& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The text content of the document source.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DocumentSource& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The structured content of the document source, which may include various
+     * content blocks such as text, images, or other document elements.</p>
+     */
+    inline const Aws::Vector<DocumentContentBlock>& GetContent() const { return m_content; }
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+    template<typename ContentT = Aws::Vector<DocumentContentBlock>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Vector<DocumentContentBlock>>
+    DocumentSource& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentT = DocumentContentBlock>
+    DocumentSource& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_bytes{};
@@ -72,6 +102,12 @@ namespace Model
 
     S3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
+
+    Aws::Vector<DocumentContentBlock> m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

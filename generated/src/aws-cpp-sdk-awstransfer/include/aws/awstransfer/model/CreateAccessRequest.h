@@ -42,9 +42,9 @@ namespace Model
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>The
-     * <code>HomeDirectory</code> parameter is only used if
-     * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
+     * <code>/bucket_name/home/mydirectory</code>.</p>  <p>You can use the
+     * <code>HomeDirectory</code> parameter for <code>HomeDirectoryType</code> when it
+     * is set to either <code>PATH</code> or <code>LOGICAL</code>.</p> 
      */
     inline const Aws::String& GetHomeDirectory() const { return m_homeDirectory; }
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }

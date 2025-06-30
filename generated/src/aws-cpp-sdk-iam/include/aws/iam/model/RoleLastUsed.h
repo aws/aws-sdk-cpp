@@ -32,8 +32,11 @@ namespace Model
    * might have been used more than 400 days ago. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
    * where data is tracked</a> in the <i>IAM user Guide</i>.</p> <p>This data type is
-   * returned as a response element in the <a>GetRole</a> and
-   * <a>GetAccountAuthorizationDetails</a> operations.</p><p><h3>See Also:</h3>   <a
+   * returned as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+   * operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleLastUsed">AWS
    * API Reference</a></p>
    */

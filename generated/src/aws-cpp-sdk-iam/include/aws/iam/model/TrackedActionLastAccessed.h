@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Contains details about the most recent attempt to access an action within the
-   * service.</p> <p>This data type is used as a response element in the
-   * <a>GetServiceLastAccessedDetails</a> operation.</p><p><h3>See Also:</h3>   <a
+   * service.</p> <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TrackedActionLastAccessed">AWS
    * API Reference</a></p>
    */

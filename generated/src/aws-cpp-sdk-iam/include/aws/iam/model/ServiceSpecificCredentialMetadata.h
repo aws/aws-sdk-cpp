@@ -79,6 +79,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>For Bedrock API keys, this is the public portion of the credential that
+     * includes the IAM user name and a suffix containing version and creation
+     * information.</p>
+     */
+    inline const Aws::String& GetServiceCredentialAlias() const { return m_serviceCredentialAlias; }
+    inline bool ServiceCredentialAliasHasBeenSet() const { return m_serviceCredentialAliasHasBeenSet; }
+    template<typename ServiceCredentialAliasT = Aws::String>
+    void SetServiceCredentialAlias(ServiceCredentialAliasT&& value) { m_serviceCredentialAliasHasBeenSet = true; m_serviceCredentialAlias = std::forward<ServiceCredentialAliasT>(value); }
+    template<typename ServiceCredentialAliasT = Aws::String>
+    ServiceSpecificCredentialMetadata& WithServiceCredentialAlias(ServiceCredentialAliasT&& value) { SetServiceCredentialAlias(std::forward<ServiceCredentialAliasT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the service-specific credential were created.</p>
      */
@@ -88,6 +102,20 @@ namespace Model
     void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
     template<typename CreateDateT = Aws::Utils::DateTime>
     ServiceSpecificCredentialMetadata& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the service specific credential expires. This field is
+     * only present for Bedrock API keys that were created with an expiration
+     * period.</p>
+     */
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    ServiceSpecificCredentialMetadata& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,8 +152,14 @@ namespace Model
     Aws::String m_serviceUserName;
     bool m_serviceUserNameHasBeenSet = false;
 
+    Aws::String m_serviceCredentialAlias;
+    bool m_serviceCredentialAliasHasBeenSet = false;
+
     Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_expirationDate{};
+    bool m_expirationDateHasBeenSet = false;
 
     Aws::String m_serviceSpecificCredentialId;
     bool m_serviceSpecificCredentialIdHasBeenSet = false;

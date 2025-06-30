@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockDelta.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlockDelta.h>
+#include <aws/bedrock-runtime/model/CitationsDelta.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,19 @@ namespace Model
     template<typename ReasoningContentT = ReasoningContentBlockDelta>
     ContentBlockDelta& WithReasoningContent(ReasoningContentT&& value) { SetReasoningContent(std::forward<ReasoningContentT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Incremental citation information that is streamed as part of the response
+     * generation process.</p>
+     */
+    inline const CitationsDelta& GetCitation() const { return m_citation; }
+    inline bool CitationHasBeenSet() const { return m_citationHasBeenSet; }
+    template<typename CitationT = CitationsDelta>
+    void SetCitation(CitationT&& value) { m_citationHasBeenSet = true; m_citation = std::forward<CitationT>(value); }
+    template<typename CitationT = CitationsDelta>
+    ContentBlockDelta& WithCitation(CitationT&& value) { SetCitation(std::forward<CitationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -86,6 +100,9 @@ namespace Model
 
     ReasoningContentBlockDelta m_reasoningContent;
     bool m_reasoningContentHasBeenSet = false;
+
+    CitationsDelta m_citation;
+    bool m_citationHasBeenSet = false;
   };
 
 } // namespace Model

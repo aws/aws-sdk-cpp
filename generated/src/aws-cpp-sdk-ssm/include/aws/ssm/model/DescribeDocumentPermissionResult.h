@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>The account IDs that have permission to use this document. The ID can be
-     * either an Amazon Web Services account or <i>All</i>.</p>
+     * either an Amazon Web Services account number or <code>all</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     template<typename AccountIdsT = Aws::Vector<Aws::String>>

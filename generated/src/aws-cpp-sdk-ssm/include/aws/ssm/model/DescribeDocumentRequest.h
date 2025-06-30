@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the SSM document.</p>  <p>If you're calling a shared SSM
+     * document from a different Amazon Web Services account, <code>Name</code> is the
+     * full Amazon Resource Name (ARN) of the document.</p> 
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -27,9 +27,9 @@ namespace Model
 
   /**
    * <p>The reason that the service-linked role deletion failed.</p> <p>This data
-   * type is used as a response element in the
-   * <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html">GetServiceLinkedRoleDeletionStatus</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletionTaskFailureReasonType">AWS
    * API Reference</a></p>
    */

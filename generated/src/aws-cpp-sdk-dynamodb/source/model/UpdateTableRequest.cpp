@@ -94,6 +94,17 @@ Aws::String UpdateTableRequest::SerializePayload() const
    payload.WithString("MultiRegionConsistency", MultiRegionConsistencyMapper::GetNameForMultiRegionConsistency(m_multiRegionConsistency));
   }
 
+  if(m_globalTableWitnessUpdatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> globalTableWitnessUpdatesJsonList(m_globalTableWitnessUpdates.size());
+   for(unsigned globalTableWitnessUpdatesIndex = 0; globalTableWitnessUpdatesIndex < globalTableWitnessUpdatesJsonList.GetLength(); ++globalTableWitnessUpdatesIndex)
+   {
+     globalTableWitnessUpdatesJsonList[globalTableWitnessUpdatesIndex].AsObject(m_globalTableWitnessUpdates[globalTableWitnessUpdatesIndex].Jsonize());
+   }
+   payload.WithArray("GlobalTableWitnessUpdates", std::move(globalTableWitnessUpdatesJsonList));
+
+  }
+
   if(m_onDemandThroughputHasBeenSet)
   {
    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());

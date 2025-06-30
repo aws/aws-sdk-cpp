@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/TextBoxInteractionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
     template<typename ContentT = Aws::String>
     SheetTextBox& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The general textbox interactions setup for a textbox.</p>
+     */
+    inline const TextBoxInteractionOptions& GetInteractions() const { return m_interactions; }
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+    template<typename InteractionsT = TextBoxInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = TextBoxInteractionOptions>
+    SheetTextBox& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_sheetTextBoxId;
@@ -69,6 +82,9 @@ namespace Model
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
+
+    TextBoxInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

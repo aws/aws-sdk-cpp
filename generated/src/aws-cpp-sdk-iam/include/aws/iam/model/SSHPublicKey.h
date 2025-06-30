@@ -27,8 +27,11 @@ namespace Model
 
   /**
    * <p>Contains information about an SSH public key.</p> <p>This data type is used
-   * as a response element in the <a>GetSSHPublicKey</a> and
-   * <a>UploadSSHPublicKey</a> operations. </p><p><h3>See Also:</h3>   <a
+   * as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html">GetSSHPublicKey</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html">UploadSSHPublicKey</a>
+   * operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKey">AWS
    * API Reference</a></p>
    */

@@ -35,7 +35,8 @@ namespace Model
    * automatically registered with ARC.</p> <p>Autoshifts are temporary. When the
    * Availability Zone recovers, Amazon Web Services ends the autoshift, and traffic
    * for the resource is no longer directed to the other Availability Zones in the
-   * Region.</p><p><h3>See Also:</h3>   <a
+   * Region.</p> <p>You can stop an autoshift for a resource by disabling zonal
+   * autoshift.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/AutoshiftSummary">AWS
    * API Reference</a></p>
    */

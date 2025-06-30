@@ -25,10 +25,13 @@ namespace Model
 
   /**
    * <p>Contains information about the reason that the operation failed.</p> <p>This
-   * data type is used as a response element in the
-   * <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and
-   * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p><p><h3>See
-   * Also:</h3>   <a
+   * data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a>
+   * operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ErrorDetails">AWS
    * API Reference</a></p>
    */

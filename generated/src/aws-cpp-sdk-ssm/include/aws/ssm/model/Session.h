@@ -9,6 +9,7 @@
 #include <aws/ssm/model/SessionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/SessionManagerOutputUrl.h>
+#include <aws/ssm/model/AccessType.h>
 #include <utility>
 
 namespace Aws
@@ -173,6 +174,19 @@ namespace Model
     template<typename MaxSessionDurationT = Aws::String>
     Session& WithMaxSessionDuration(MaxSessionDurationT&& value) { SetMaxSessionDuration(std::forward<MaxSessionDurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> <code>Standard</code> access type is the default for Session Manager
+     * sessions. <code>JustInTime</code> is the access type for <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time
+     * node access</a>. </p>
+     */
+    inline AccessType GetAccessType() const { return m_accessType; }
+    inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
+    inline void SetAccessType(AccessType value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline Session& WithAccessType(AccessType value) { SetAccessType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_sessionId;
@@ -207,6 +221,9 @@ namespace Model
 
     Aws::String m_maxSessionDuration;
     bool m_maxSessionDurationHasBeenSet = false;
+
+    AccessType m_accessType{AccessType::NOT_SET};
+    bool m_accessTypeHasBeenSet = false;
   };
 
 } // namespace Model

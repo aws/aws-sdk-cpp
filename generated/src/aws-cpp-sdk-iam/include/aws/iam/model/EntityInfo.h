@@ -26,9 +26,11 @@ namespace Model
 
   /**
    * <p>Contains details about the specified entity (user or role).</p> <p>This data
-   * type is an element of the <a>EntityDetails</a> object.</p><p><h3>See Also:</h3> 
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EntityInfo">AWS
-   * API Reference</a></p>
+   * type is an element of the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EntityDetails.html">EntityDetails</a>
+   * object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EntityInfo">AWS API
+   * Reference</a></p>
    */
   class EntityInfo
   {

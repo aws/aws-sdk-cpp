@@ -35,6 +35,11 @@ SheetTextBox& SheetTextBox::operator =(JsonView jsonValue)
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+    m_interactionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue SheetTextBox::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithString("Content", m_content);
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

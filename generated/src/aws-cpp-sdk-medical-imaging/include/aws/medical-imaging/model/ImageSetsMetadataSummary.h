@@ -97,6 +97,16 @@ namespace Model
     template<typename DICOMTagsT = DICOMTags>
     ImageSetsMetadataSummary& WithDICOMTags(DICOMTagsT&& value) { SetDICOMTags(std::forward<DICOMTagsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The flag to determine whether the image set is primary or not.</p>
+     */
+    inline bool GetIsPrimary() const { return m_isPrimary; }
+    inline bool IsPrimaryHasBeenSet() const { return m_isPrimaryHasBeenSet; }
+    inline void SetIsPrimary(bool value) { m_isPrimaryHasBeenSet = true; m_isPrimary = value; }
+    inline ImageSetsMetadataSummary& WithIsPrimary(bool value) { SetIsPrimary(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_imageSetId;
@@ -113,6 +123,9 @@ namespace Model
 
     DICOMTags m_dICOMTags;
     bool m_dICOMTagsHasBeenSet = false;
+
+    bool m_isPrimary{false};
+    bool m_isPrimaryHasBeenSet = false;
   };
 
 } // namespace Model

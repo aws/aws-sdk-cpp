@@ -39,9 +39,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Setting this flag will force the <code>CopyImageSet</code> and
-     * <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or
-     * Series level metadata are mismatched.</p>
+     * <p>Providing this parameter will force completion of the
+     * <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even
+     * if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
      */
     inline bool GetForced() const { return m_forced; }
     inline bool ForcedHasBeenSet() const { return m_forcedHasBeenSet; }

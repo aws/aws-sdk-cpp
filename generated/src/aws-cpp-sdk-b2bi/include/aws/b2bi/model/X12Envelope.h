@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/X12OutboundEdiHeaders.h>
+#include <aws/b2bi/model/WrapOptions.h>
 #include <utility>
 
 namespace Aws
@@ -53,10 +54,23 @@ namespace Model
     template<typename CommonT = X12OutboundEdiHeaders>
     X12Envelope& WithCommon(CommonT&& value) { SetCommon(std::forward<CommonT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const WrapOptions& GetWrapOptions() const { return m_wrapOptions; }
+    inline bool WrapOptionsHasBeenSet() const { return m_wrapOptionsHasBeenSet; }
+    template<typename WrapOptionsT = WrapOptions>
+    void SetWrapOptions(WrapOptionsT&& value) { m_wrapOptionsHasBeenSet = true; m_wrapOptions = std::forward<WrapOptionsT>(value); }
+    template<typename WrapOptionsT = WrapOptions>
+    X12Envelope& WithWrapOptions(WrapOptionsT&& value) { SetWrapOptions(std::forward<WrapOptionsT>(value)); return *this;}
+    ///@}
   private:
 
     X12OutboundEdiHeaders m_common;
     bool m_commonHasBeenSet = false;
+
+    WrapOptions m_wrapOptions;
+    bool m_wrapOptionsHasBeenSet = false;
   };
 
 } // namespace Model

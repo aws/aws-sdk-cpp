@@ -77,14 +77,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if
-     * Patient, Study, or Series level metadata are mismatched across the
+     * <p>Providing this parameter will force completion of the
+     * <code>CopyImageSet</code> operation, even if there are inconsistent Patient,
+     * Study, and/or Series level metadata elements between the
      * <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
      */
     inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline CopyImageSetRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Providing this parameter will configure the <code>CopyImageSet</code>
+     * operation to promote the given image set to the primary DICOM hierarchy. If
+     * successful, a new primary image set ID will be returned as the destination image
+     * set.</p>
+     */
+    inline bool GetPromoteToPrimary() const { return m_promoteToPrimary; }
+    inline bool PromoteToPrimaryHasBeenSet() const { return m_promoteToPrimaryHasBeenSet; }
+    inline void SetPromoteToPrimary(bool value) { m_promoteToPrimaryHasBeenSet = true; m_promoteToPrimary = value; }
+    inline CopyImageSetRequest& WithPromoteToPrimary(bool value) { SetPromoteToPrimary(value); return *this;}
     ///@}
   private:
 
@@ -99,6 +113,9 @@ namespace Model
 
     bool m_force{false};
     bool m_forceHasBeenSet = false;
+
+    bool m_promoteToPrimary{false};
+    bool m_promoteToPrimaryHasBeenSet = false;
   };
 
 } // namespace Model

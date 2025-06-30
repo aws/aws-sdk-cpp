@@ -58,9 +58,9 @@ namespace Model
     ///@{
     /**
      * <p>The resource type of the rollback trigger. Specify either <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html">AWS::CloudWatch::Alarm</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudwatch-alarm.html">AWS::CloudWatch::Alarm</a>
      * or <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a>
      * resource types.</p>
      */
     inline const Aws::String& GetType() const { return m_type; }

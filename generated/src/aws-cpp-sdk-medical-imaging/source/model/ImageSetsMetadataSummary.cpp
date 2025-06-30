@@ -50,6 +50,11 @@ ImageSetsMetadataSummary& ImageSetsMetadataSummary::operator =(JsonView jsonValu
     m_dICOMTags = jsonValue.GetObject("DICOMTags");
     m_dICOMTagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isPrimary"))
+  {
+    m_isPrimary = jsonValue.GetBool("isPrimary");
+    m_isPrimaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +87,12 @@ JsonValue ImageSetsMetadataSummary::Jsonize() const
   if(m_dICOMTagsHasBeenSet)
   {
    payload.WithObject("DICOMTags", m_dICOMTags.Jsonize());
+
+  }
+
+  if(m_isPrimaryHasBeenSet)
+  {
+   payload.WithBool("isPrimary", m_isPrimary);
 
   }
 

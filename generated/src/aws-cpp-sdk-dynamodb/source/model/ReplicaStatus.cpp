@@ -27,6 +27,9 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int REGION_DISABLED_HASH = HashingUtils::HashString("REGION_DISABLED");
         static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
+        static const int ARCHIVING_HASH = HashingUtils::HashString("ARCHIVING");
+        static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+        static const int REPLICATION_NOT_AUTHORIZED_HASH = HashingUtils::HashString("REPLICATION_NOT_AUTHORIZED");
 
 
         ReplicaStatus GetReplicaStatusForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ReplicaStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS;
           }
+          else if (hashCode == ARCHIVING_HASH)
+          {
+            return ReplicaStatus::ARCHIVING;
+          }
+          else if (hashCode == ARCHIVED_HASH)
+          {
+            return ReplicaStatus::ARCHIVED;
+          }
+          else if (hashCode == REPLICATION_NOT_AUTHORIZED_HASH)
+          {
+            return ReplicaStatus::REPLICATION_NOT_AUTHORIZED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +105,12 @@ namespace Aws
             return "REGION_DISABLED";
           case ReplicaStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS:
             return "INACCESSIBLE_ENCRYPTION_CREDENTIALS";
+          case ReplicaStatus::ARCHIVING:
+            return "ARCHIVING";
+          case ReplicaStatus::ARCHIVED:
+            return "ARCHIVED";
+          case ReplicaStatus::REPLICATION_NOT_AUTHORIZED:
+            return "REPLICATION_NOT_AUTHORIZED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the stack policy body. For more information, see <a
+     * <p>Structure that contains the stack policy body. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent
      * updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You can
      * specify either the <code>StackPolicyBody</code> or the
@@ -69,12 +69,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Location of a file containing the stack policy. The URL must point to a
+     * <p>Location of a file that contains the stack policy. The URL must point to a
      * policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon
      * Web Services Region as the stack. The location for an Amazon S3 bucket must
-     * start with <code>https://</code>. You can specify either the
-     * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
-     * not both.</p>
+     * start with <code>https://</code>. URLs from S3 static websites are not
+     * supported.</p> <p>You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const { return m_stackPolicyURL; }
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }

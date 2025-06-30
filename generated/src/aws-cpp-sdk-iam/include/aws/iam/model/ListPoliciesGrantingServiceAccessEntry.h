@@ -28,7 +28,8 @@ namespace Model
   /**
    * <p>Contains details about the permissions policies that are attached to the
    * specified identity (user, group, or role).</p> <p>This data type is used as a
-   * response element in the <a>ListPoliciesGrantingServiceAccess</a>
+   * response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html">ListPoliciesGrantingServiceAccess</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccessEntry">AWS
    * API Reference</a></p>

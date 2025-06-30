@@ -58,10 +58,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes.</p> <p>Conditional: You must specify only one of
-     * the following parameters: <code>TemplateBody</code>, <code>TemplateURL</code>,
-     * or set the <code>UsePreviousTemplate</code> to <code>true</code>.</p>
+     * <p>Structure that contains the template body with a minimum length of 1 byte and
+     * a maximum length of 51,200 bytes.</p> <p>Conditional: You must specify only one
+     * of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
+     * <code>true</code>.</p>
      */
     inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -73,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of a file containing the template body. The URL must point to a
+     * <p>The URL of a file that contains the template body. The URL must point to a
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
      * <p>Conditional: You must specify only one of the following parameters:
@@ -103,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the temporary overriding stack policy body. You can
+     * <p>Structure that contains the temporary overriding stack policy body. You can
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -120,11 +121,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Location of a file containing the temporary overriding stack policy. The URL
-     * must point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * <p>Location of a file that contains the temporary overriding stack policy. The
+     * URL must point to a policy (max size: 16KB) located in an S3 bucket in the same
      * Region as the stack. The location for an Amazon S3 bucket must start with
-     * <code>https://</code>. You can specify either the
-     * <code>StackPolicyDuringUpdateBody</code> or the
+     * <code>https://</code>. URLs from S3 static websites are not supported.</p>
+     * <p>You can specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
      * during this update. If you don't specify a stack policy, the current policy that
@@ -174,21 +175,21 @@ namespace Model
      * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-managedpolicy.html">
      * AWS::IAM::ManagedPolicy</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
@@ -286,7 +287,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing a new stack policy body. You can specify either the
+     * <p>Structure that contains a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
      * protect a new resource that you created during a stack update. If you don't
@@ -303,14 +304,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
+     * <p>Location of a file that contains the updated stack policy. The URL must point
+     * to a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. The location for an Amazon S3 bucket must start with
-     * <code>https://</code>. You can specify either the <code>StackPolicyBody</code>
-     * or the <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might
-     * update the stack policy, for example, in order to protect a new resource that
-     * you created during a stack update. If you don't specify a stack policy, the
-     * current policy that is associated with the stack is unchanged.</p>
+     * <code>https://</code>. URLs from S3 static websites are not supported.</p>
+     * <p>You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
+     * stack policy, for example, in order to protect a new resource that you created
+     * during a stack update. If you don't specify a stack policy, the current policy
+     * that is associated with the stack is unchanged.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const { return m_stackPolicyURL; }
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }

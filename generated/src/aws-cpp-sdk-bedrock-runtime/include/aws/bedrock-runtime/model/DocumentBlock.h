@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/DocumentFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/DocumentSource.h>
+#include <aws/bedrock-runtime/model/CitationsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,32 @@ namespace Model
     template<typename SourceT = DocumentSource>
     DocumentBlock& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contextual information about how the document should be processed or
+     * interpreted by the model when generating citations.</p>
+     */
+    inline const Aws::String& GetContext() const { return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    DocumentBlock& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings that control how citations should be generated for
+     * this specific document.</p>
+     */
+    inline const CitationsConfig& GetCitations() const { return m_citations; }
+    inline bool CitationsHasBeenSet() const { return m_citationsHasBeenSet; }
+    template<typename CitationsT = CitationsConfig>
+    void SetCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations = std::forward<CitationsT>(value); }
+    template<typename CitationsT = CitationsConfig>
+    DocumentBlock& WithCitations(CitationsT&& value) { SetCitations(std::forward<CitationsT>(value)); return *this;}
+    ///@}
   private:
 
     DocumentFormat m_format{DocumentFormat::NOT_SET};
@@ -88,6 +115,12 @@ namespace Model
 
     DocumentSource m_source;
     bool m_sourceHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
+
+    CitationsConfig m_citations;
+    bool m_citationsHasBeenSet = false;
   };
 
 } // namespace Model

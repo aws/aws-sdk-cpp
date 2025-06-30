@@ -36,6 +36,39 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of a zonal shift.</p>
+     */
+    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
+    template<typename ZonalShiftIdT = Aws::String>
+    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
+    template<typename ZonalShiftIdT = Aws::String>
+    UpdateZonalShiftResult& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier for the resource that Amazon Web Services shifts traffic for.
+     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>Amazon
+     * Application Recovery Controller currently supports enabling the following
+     * resources for zonal shift and zonal autoshift:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon
+     * EC2 Auto Scaling groups</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon
+     * Elastic Kubernetes Service</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application
+     * Load Balancer</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network
+     * Load Balancer</a> </p> </li> </ul>
+     */
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    UpdateZonalShiftResult& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is
      * moved away from for a resource when you start a zonal shift. Until the zonal
      * shift expires or you cancel it, traffic for the resource is instead moved to
@@ -46,19 +79,6 @@ namespace Model
     void SetAwayFrom(AwayFromT&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::forward<AwayFromT>(value); }
     template<typename AwayFromT = Aws::String>
     UpdateZonalShiftResult& WithAwayFrom(AwayFromT&& value) { SetAwayFrom(std::forward<AwayFromT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A comment that you enter about the zonal shift. Only the latest comment is
-     * retained; no comment history is maintained. A new comment overwrites any
-     * existing comment string.</p>
-     */
-    inline const Aws::String& GetComment() const { return m_comment; }
-    template<typename CommentT = Aws::String>
-    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
-    template<typename CommentT = Aws::String>
-    UpdateZonalShiftResult& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,20 +102,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the resource that Amazon Web Services shifts traffic for.
-     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>At
-     * this time, supported resources are Network Load Balancers and Application Load
-     * Balancers with cross-zone load balancing turned off.</p>
-     */
-    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
-    template<typename ResourceIdentifierT = Aws::String>
-    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
-    template<typename ResourceIdentifierT = Aws::String>
-    UpdateZonalShiftResult& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The time (UTC) when the zonal shift starts.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
@@ -109,8 +115,8 @@ namespace Model
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE:</b> The zonal
-     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED:</b> The zonal
-     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * shift has been started and is active.</p> </li> <li> <p> <b>EXPIRED:</b> The
+     * zonal shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
      * <b>CANCELED:</b> The zonal shift was canceled.</p> </li> </ul>
      */
     inline ZonalShiftStatus GetStatus() const { return m_status; }
@@ -120,13 +126,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of a zonal shift.</p>
+     * <p>A comment that you enter about the zonal shift. Only the latest comment is
+     * retained; no comment history is maintained. A new comment overwrites any
+     * existing comment string.</p>
      */
-    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
-    template<typename ZonalShiftIdT = Aws::String>
-    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
-    template<typename ZonalShiftIdT = Aws::String>
-    UpdateZonalShiftResult& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
+    inline const Aws::String& GetComment() const { return m_comment; }
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    UpdateZonalShiftResult& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,17 +147,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_awayFrom;
-    bool m_awayFromHasBeenSet = false;
-
-    Aws::String m_comment;
-    bool m_commentHasBeenSet = false;
-
-    Aws::Utils::DateTime m_expiryTime{};
-    bool m_expiryTimeHasBeenSet = false;
+    Aws::String m_zonalShiftId;
+    bool m_zonalShiftIdHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
+
+    Aws::String m_awayFrom;
+    bool m_awayFromHasBeenSet = false;
+
+    Aws::Utils::DateTime m_expiryTime{};
+    bool m_expiryTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
@@ -157,8 +165,8 @@ namespace Model
     ZonalShiftStatus m_status{ZonalShiftStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_zonalShiftId;
-    bool m_zonalShiftIdHasBeenSet = false;
+    Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

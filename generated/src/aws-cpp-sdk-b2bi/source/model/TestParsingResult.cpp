@@ -30,6 +30,15 @@ TestParsingResult& TestParsingResult::operator =(const Aws::AmazonWebServiceResu
     m_parsedFileContent = jsonValue.GetString("parsedFileContent");
     m_parsedFileContentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("parsedSplitFileContents"))
+  {
+    Aws::Utils::Array<JsonView> parsedSplitFileContentsJsonList = jsonValue.GetArray("parsedSplitFileContents");
+    for(unsigned parsedSplitFileContentsIndex = 0; parsedSplitFileContentsIndex < parsedSplitFileContentsJsonList.GetLength(); ++parsedSplitFileContentsIndex)
+    {
+      m_parsedSplitFileContents.push_back(parsedSplitFileContentsJsonList[parsedSplitFileContentsIndex].AsString());
+    }
+    m_parsedSplitFileContentsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

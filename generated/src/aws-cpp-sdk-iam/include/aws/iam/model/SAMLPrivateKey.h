@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Contains the private keys for the SAML provider.</p> <p>This data type is
-   * used as a response element in the <a>GetSAMLProvider</a>
+   * used as a response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html">GetSAMLProvider</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SAMLPrivateKey">AWS
    * API Reference</a></p>

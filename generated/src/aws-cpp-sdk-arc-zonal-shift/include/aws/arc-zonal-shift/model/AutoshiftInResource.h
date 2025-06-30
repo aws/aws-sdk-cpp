@@ -30,8 +30,8 @@ namespace Model
    * managed resource and information about the autoshift.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How
-   * zonal autoshift and practice runs work</a> in the Amazon Route 53 Application
-   * Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
+   * zonal autoshift and practice runs work</a> in the Amazon Application Recovery
+   * Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/AutoshiftInResource">AWS
    * API Reference</a></p>
    */
@@ -59,8 +59,8 @@ namespace Model
      * precedence over practice runs. That is, customer-initiated zonal shifts &gt;
      * autoshifts &gt; practice run zonal shifts.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How
-     * zonal autoshift and practice runs work</a> in the Amazon Route 53 Application
-     * Recovery Controller Developer Guide.</p>
+     * zonal autoshift and practice runs work</a> in the Amazon Application Recovery
+     * Controller Developer Guide.</p>
      */
     inline AutoshiftAppliedStatus GetAppliedStatus() const { return m_appliedStatus; }
     inline bool AppliedStatusHasBeenSet() const { return m_appliedStatusHasBeenSet; }

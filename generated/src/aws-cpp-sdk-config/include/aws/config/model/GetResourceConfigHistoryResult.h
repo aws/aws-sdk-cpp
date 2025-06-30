@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of <code>ConfigurationItems</code> Objects. Contatins the
-     * configuration history for one or more resources.</p>
+     * <p>A list that contains the configuration history of one or more resources.</p>
      */
     inline const Aws::Vector<ConfigurationItem>& GetConfigurationItems() const { return m_configurationItems; }
     template<typename ConfigurationItemsT = Aws::Vector<ConfigurationItem>>

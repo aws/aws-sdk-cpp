@@ -157,6 +157,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The flag to determine whether the image set is primary or not.</p>
+     */
+    inline bool GetIsPrimary() const { return m_isPrimary; }
+    inline void SetIsPrimary(bool value) { m_isPrimaryHasBeenSet = true; m_isPrimary = value; }
+    inline GetImageSetResult& WithIsPrimary(bool value) { SetIsPrimary(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -198,6 +207,9 @@ namespace Model
 
     Overrides m_overrides;
     bool m_overridesHasBeenSet = false;
+
+    bool m_isPrimary{false};
+    bool m_isPrimaryHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

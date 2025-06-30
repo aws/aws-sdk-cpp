@@ -70,6 +70,11 @@ ImageSetProperties& ImageSetProperties::operator =(JsonView jsonValue)
     m_overrides = jsonValue.GetObject("overrides");
     m_overridesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isPrimary"))
+  {
+    m_isPrimary = jsonValue.GetBool("isPrimary");
+    m_isPrimaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -123,6 +128,12 @@ JsonValue ImageSetProperties::Jsonize() const
   if(m_overridesHasBeenSet)
   {
    payload.WithObject("overrides", m_overrides.Jsonize());
+
+  }
+
+  if(m_isPrimaryHasBeenSet)
+  {
+   payload.WithBool("isPrimary", m_isPrimary);
 
   }
 

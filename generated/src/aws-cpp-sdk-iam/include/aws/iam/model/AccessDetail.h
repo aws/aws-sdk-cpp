@@ -29,7 +29,8 @@ namespace Model
    * Organizations entity last attempted to access an Amazon Web Services service. A
    * principal can be an IAM user, an IAM role, or the Amazon Web Services account
    * root user within the reported Organizations entity.</p> <p>This data type is a
-   * response element in the <a>GetOrganizationsAccessReport</a>
+   * response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessDetail">AWS
    * API Reference</a></p>

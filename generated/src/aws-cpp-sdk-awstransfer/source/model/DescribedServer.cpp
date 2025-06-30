@@ -151,6 +151,11 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     }
     m_as2ServiceManagedEgressIpAddressesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IpAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -304,6 +309,11 @@ JsonValue DescribedServer::Jsonize() const
    }
    payload.WithArray("As2ServiceManagedEgressIpAddresses", std::move(as2ServiceManagedEgressIpAddressesJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   return payload;

@@ -27,7 +27,8 @@ namespace Model
   /**
    * <p>An object that contains details about how a service-linked role is used, if
    * that information is returned by the service.</p> <p>This data type is used as a
-   * response element in the <a>GetServiceLinkedRoleDeletionStatus</a>
+   * response element in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html">GetServiceLinkedRoleDeletionStatus</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleUsageType">AWS
    * API Reference</a></p>

@@ -427,6 +427,41 @@ namespace Aws
         static const int AWS_Redshift_EndpointAccess_HASH = HashingUtils::HashString("AWS::Redshift::EndpointAccess");
         static const int AWS_Route53Resolver_FirewallRuleGroup_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallRuleGroup");
         static const int AWS_SSM_Document_HASH = HashingUtils::HashString("AWS::SSM::Document");
+        static const int AWS_AppConfig_ExtensionAssociation_HASH = HashingUtils::HashString("AWS::AppConfig::ExtensionAssociation");
+        static const int AWS_AppIntegrations_Application_HASH = HashingUtils::HashString("AWS::AppIntegrations::Application");
+        static const int AWS_AppSync_ApiCache_HASH = HashingUtils::HashString("AWS::AppSync::ApiCache");
+        static const int AWS_Bedrock_Guardrail_HASH = HashingUtils::HashString("AWS::Bedrock::Guardrail");
+        static const int AWS_Bedrock_KnowledgeBase_HASH = HashingUtils::HashString("AWS::Bedrock::KnowledgeBase");
+        static const int AWS_Cognito_IdentityPool_HASH = HashingUtils::HashString("AWS::Cognito::IdentityPool");
+        static const int AWS_Connect_Rule_HASH = HashingUtils::HashString("AWS::Connect::Rule");
+        static const int AWS_Connect_User_HASH = HashingUtils::HashString("AWS::Connect::User");
+        static const int AWS_EC2_ClientVpnTargetNetworkAssociation_HASH = HashingUtils::HashString("AWS::EC2::ClientVpnTargetNetworkAssociation");
+        static const int AWS_EC2_EIPAssociation_HASH = HashingUtils::HashString("AWS::EC2::EIPAssociation");
+        static const int AWS_EC2_IPAMResourceDiscovery_HASH = HashingUtils::HashString("AWS::EC2::IPAMResourceDiscovery");
+        static const int AWS_EC2_IPAMResourceDiscoveryAssociation_HASH = HashingUtils::HashString("AWS::EC2::IPAMResourceDiscoveryAssociation");
+        static const int AWS_EC2_InstanceConnectEndpoint_HASH = HashingUtils::HashString("AWS::EC2::InstanceConnectEndpoint");
+        static const int AWS_EC2_SnapshotBlockPublicAccess_HASH = HashingUtils::HashString("AWS::EC2::SnapshotBlockPublicAccess");
+        static const int AWS_EC2_VPCBlockPublicAccessExclusion_HASH = HashingUtils::HashString("AWS::EC2::VPCBlockPublicAccessExclusion");
+        static const int AWS_EC2_VPCBlockPublicAccessOptions_HASH = HashingUtils::HashString("AWS::EC2::VPCBlockPublicAccessOptions");
+        static const int AWS_EC2_VPCEndpointConnectionNotification_HASH = HashingUtils::HashString("AWS::EC2::VPCEndpointConnectionNotification");
+        static const int AWS_EC2_VPNConnectionRoute_HASH = HashingUtils::HashString("AWS::EC2::VPNConnectionRoute");
+        static const int AWS_Evidently_Segment_HASH = HashingUtils::HashString("AWS::Evidently::Segment");
+        static const int AWS_IAM_OIDCProvider_HASH = HashingUtils::HashString("AWS::IAM::OIDCProvider");
+        static const int AWS_InspectorV2_Activation_HASH = HashingUtils::HashString("AWS::InspectorV2::Activation");
+        static const int AWS_MSK_ClusterPolicy_HASH = HashingUtils::HashString("AWS::MSK::ClusterPolicy");
+        static const int AWS_MSK_VpcConnection_HASH = HashingUtils::HashString("AWS::MSK::VpcConnection");
+        static const int AWS_MediaConnect_Gateway_HASH = HashingUtils::HashString("AWS::MediaConnect::Gateway");
+        static const int AWS_MemoryDB_SubnetGroup_HASH = HashingUtils::HashString("AWS::MemoryDB::SubnetGroup");
+        static const int AWS_OpenSearchServerless_Collection_HASH = HashingUtils::HashString("AWS::OpenSearchServerless::Collection");
+        static const int AWS_OpenSearchServerless_VpcEndpoint_HASH = HashingUtils::HashString("AWS::OpenSearchServerless::VpcEndpoint");
+        static const int AWS_Redshift_EndpointAuthorization_HASH = HashingUtils::HashString("AWS::Redshift::EndpointAuthorization");
+        static const int AWS_Route53Profiles_Profile_HASH = HashingUtils::HashString("AWS::Route53Profiles::Profile");
+        static const int AWS_S3_StorageLensGroup_HASH = HashingUtils::HashString("AWS::S3::StorageLensGroup");
+        static const int AWS_S3Express_BucketPolicy_HASH = HashingUtils::HashString("AWS::S3Express::BucketPolicy");
+        static const int AWS_S3Express_DirectoryBucket_HASH = HashingUtils::HashString("AWS::S3Express::DirectoryBucket");
+        static const int AWS_SageMaker_InferenceExperiment_HASH = HashingUtils::HashString("AWS::SageMaker::InferenceExperiment");
+        static const int AWS_SecurityHub_Standard_HASH = HashingUtils::HashString("AWS::SecurityHub::Standard");
+        static const int AWS_Transfer_Profile_HASH = HashingUtils::HashString("AWS::Transfer::Profile");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2482,6 +2517,181 @@ namespace Aws
             enumValue = ResourceType::AWS_SSM_Document;
             return true;
           }
+          else if (hashCode == AWS_AppConfig_ExtensionAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_AppConfig_ExtensionAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_AppIntegrations_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_AppIntegrations_Application;
+            return true;
+          }
+          else if (hashCode == AWS_AppSync_ApiCache_HASH)
+          {
+            enumValue = ResourceType::AWS_AppSync_ApiCache;
+            return true;
+          }
+          else if (hashCode == AWS_Bedrock_Guardrail_HASH)
+          {
+            enumValue = ResourceType::AWS_Bedrock_Guardrail;
+            return true;
+          }
+          else if (hashCode == AWS_Bedrock_KnowledgeBase_HASH)
+          {
+            enumValue = ResourceType::AWS_Bedrock_KnowledgeBase;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_IdentityPool_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_IdentityPool;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_Rule_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_Rule;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_User_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_User;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_ClientVpnTargetNetworkAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_ClientVpnTargetNetworkAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_EIPAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_EIPAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_IPAMResourceDiscovery_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_IPAMResourceDiscovery;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_IPAMResourceDiscoveryAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_IPAMResourceDiscoveryAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_InstanceConnectEndpoint_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_InstanceConnectEndpoint;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_SnapshotBlockPublicAccess_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_SnapshotBlockPublicAccess;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCBlockPublicAccessExclusion_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCBlockPublicAccessExclusion;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCBlockPublicAccessOptions_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCBlockPublicAccessOptions;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCEndpointConnectionNotification_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCEndpointConnectionNotification;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPNConnectionRoute_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPNConnectionRoute;
+            return true;
+          }
+          else if (hashCode == AWS_Evidently_Segment_HASH)
+          {
+            enumValue = ResourceType::AWS_Evidently_Segment;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_OIDCProvider_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_OIDCProvider;
+            return true;
+          }
+          else if (hashCode == AWS_InspectorV2_Activation_HASH)
+          {
+            enumValue = ResourceType::AWS_InspectorV2_Activation;
+            return true;
+          }
+          else if (hashCode == AWS_MSK_ClusterPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_MSK_ClusterPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_MSK_VpcConnection_HASH)
+          {
+            enumValue = ResourceType::AWS_MSK_VpcConnection;
+            return true;
+          }
+          else if (hashCode == AWS_MediaConnect_Gateway_HASH)
+          {
+            enumValue = ResourceType::AWS_MediaConnect_Gateway;
+            return true;
+          }
+          else if (hashCode == AWS_MemoryDB_SubnetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_MemoryDB_SubnetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_OpenSearchServerless_Collection_HASH)
+          {
+            enumValue = ResourceType::AWS_OpenSearchServerless_Collection;
+            return true;
+          }
+          else if (hashCode == AWS_OpenSearchServerless_VpcEndpoint_HASH)
+          {
+            enumValue = ResourceType::AWS_OpenSearchServerless_VpcEndpoint;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_EndpointAuthorization_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_EndpointAuthorization;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Profiles_Profile_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Profiles_Profile;
+            return true;
+          }
+          else if (hashCode == AWS_S3_StorageLensGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_S3_StorageLensGroup;
+            return true;
+          }
+          else if (hashCode == AWS_S3Express_BucketPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_S3Express_BucketPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_S3Express_DirectoryBucket_HASH)
+          {
+            enumValue = ResourceType::AWS_S3Express_DirectoryBucket;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_InferenceExperiment_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_InferenceExperiment;
+            return true;
+          }
+          else if (hashCode == AWS_SecurityHub_Standard_HASH)
+          {
+            enumValue = ResourceType::AWS_SecurityHub_Standard;
+            return true;
+          }
+          else if (hashCode == AWS_Transfer_Profile_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Profile;
+            return true;
+          }
           return false;
         }
 
@@ -3733,6 +3943,111 @@ namespace Aws
             return true;
           case ResourceType::AWS_SSM_Document:
             value = "AWS::SSM::Document";
+            return true;
+          case ResourceType::AWS_AppConfig_ExtensionAssociation:
+            value = "AWS::AppConfig::ExtensionAssociation";
+            return true;
+          case ResourceType::AWS_AppIntegrations_Application:
+            value = "AWS::AppIntegrations::Application";
+            return true;
+          case ResourceType::AWS_AppSync_ApiCache:
+            value = "AWS::AppSync::ApiCache";
+            return true;
+          case ResourceType::AWS_Bedrock_Guardrail:
+            value = "AWS::Bedrock::Guardrail";
+            return true;
+          case ResourceType::AWS_Bedrock_KnowledgeBase:
+            value = "AWS::Bedrock::KnowledgeBase";
+            return true;
+          case ResourceType::AWS_Cognito_IdentityPool:
+            value = "AWS::Cognito::IdentityPool";
+            return true;
+          case ResourceType::AWS_Connect_Rule:
+            value = "AWS::Connect::Rule";
+            return true;
+          case ResourceType::AWS_Connect_User:
+            value = "AWS::Connect::User";
+            return true;
+          case ResourceType::AWS_EC2_ClientVpnTargetNetworkAssociation:
+            value = "AWS::EC2::ClientVpnTargetNetworkAssociation";
+            return true;
+          case ResourceType::AWS_EC2_EIPAssociation:
+            value = "AWS::EC2::EIPAssociation";
+            return true;
+          case ResourceType::AWS_EC2_IPAMResourceDiscovery:
+            value = "AWS::EC2::IPAMResourceDiscovery";
+            return true;
+          case ResourceType::AWS_EC2_IPAMResourceDiscoveryAssociation:
+            value = "AWS::EC2::IPAMResourceDiscoveryAssociation";
+            return true;
+          case ResourceType::AWS_EC2_InstanceConnectEndpoint:
+            value = "AWS::EC2::InstanceConnectEndpoint";
+            return true;
+          case ResourceType::AWS_EC2_SnapshotBlockPublicAccess:
+            value = "AWS::EC2::SnapshotBlockPublicAccess";
+            return true;
+          case ResourceType::AWS_EC2_VPCBlockPublicAccessExclusion:
+            value = "AWS::EC2::VPCBlockPublicAccessExclusion";
+            return true;
+          case ResourceType::AWS_EC2_VPCBlockPublicAccessOptions:
+            value = "AWS::EC2::VPCBlockPublicAccessOptions";
+            return true;
+          case ResourceType::AWS_EC2_VPCEndpointConnectionNotification:
+            value = "AWS::EC2::VPCEndpointConnectionNotification";
+            return true;
+          case ResourceType::AWS_EC2_VPNConnectionRoute:
+            value = "AWS::EC2::VPNConnectionRoute";
+            return true;
+          case ResourceType::AWS_Evidently_Segment:
+            value = "AWS::Evidently::Segment";
+            return true;
+          case ResourceType::AWS_IAM_OIDCProvider:
+            value = "AWS::IAM::OIDCProvider";
+            return true;
+          case ResourceType::AWS_InspectorV2_Activation:
+            value = "AWS::InspectorV2::Activation";
+            return true;
+          case ResourceType::AWS_MSK_ClusterPolicy:
+            value = "AWS::MSK::ClusterPolicy";
+            return true;
+          case ResourceType::AWS_MSK_VpcConnection:
+            value = "AWS::MSK::VpcConnection";
+            return true;
+          case ResourceType::AWS_MediaConnect_Gateway:
+            value = "AWS::MediaConnect::Gateway";
+            return true;
+          case ResourceType::AWS_MemoryDB_SubnetGroup:
+            value = "AWS::MemoryDB::SubnetGroup";
+            return true;
+          case ResourceType::AWS_OpenSearchServerless_Collection:
+            value = "AWS::OpenSearchServerless::Collection";
+            return true;
+          case ResourceType::AWS_OpenSearchServerless_VpcEndpoint:
+            value = "AWS::OpenSearchServerless::VpcEndpoint";
+            return true;
+          case ResourceType::AWS_Redshift_EndpointAuthorization:
+            value = "AWS::Redshift::EndpointAuthorization";
+            return true;
+          case ResourceType::AWS_Route53Profiles_Profile:
+            value = "AWS::Route53Profiles::Profile";
+            return true;
+          case ResourceType::AWS_S3_StorageLensGroup:
+            value = "AWS::S3::StorageLensGroup";
+            return true;
+          case ResourceType::AWS_S3Express_BucketPolicy:
+            value = "AWS::S3Express::BucketPolicy";
+            return true;
+          case ResourceType::AWS_S3Express_DirectoryBucket:
+            value = "AWS::S3Express::DirectoryBucket";
+            return true;
+          case ResourceType::AWS_SageMaker_InferenceExperiment:
+            value = "AWS::SageMaker::InferenceExperiment";
+            return true;
+          case ResourceType::AWS_SecurityHub_Standard:
+            value = "AWS::SecurityHub::Standard";
+            return true;
+          case ResourceType::AWS_Transfer_Profile:
+            value = "AWS::Transfer::Profile";
             return true;
           default:
             return false;

@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes.</p> <p>Conditional: You must pass
+     * <p>Structure that contains the template body with a minimum length of 1 byte and
+     * a maximum length of 51,200 bytes.</p> <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      * <code>TemplateBody</code> is used.</p>
      */
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of a file containing the template body. The URL must point to a
+     * <p>The URL of a file that contains the template body. The URL must point to a
      * template (max size: 1 MB) that is located in an Amazon S3 bucket or a Systems
      * Manager document. The location for an Amazon S3 bucket must start with
      * <code>https://</code>.</p> <p>Conditional: You must pass

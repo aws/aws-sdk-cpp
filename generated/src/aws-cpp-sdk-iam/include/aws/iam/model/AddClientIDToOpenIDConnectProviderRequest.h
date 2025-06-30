@@ -40,7 +40,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
      * resource to add the client ID to. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> operation.</p>
+     * using the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
+     * operation.</p>
      */
     inline const Aws::String& GetOpenIDConnectProviderArn() const { return m_openIDConnectProviderArn; }
     inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }

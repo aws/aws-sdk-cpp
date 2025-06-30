@@ -35,6 +35,11 @@ InputConversion& InputConversion::operator =(JsonView jsonValue)
     m_formatOptions = jsonValue.GetObject("formatOptions");
     m_formatOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("advancedOptions"))
+  {
+    m_advancedOptions = jsonValue.GetObject("advancedOptions");
+    m_advancedOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,12 @@ JsonValue InputConversion::Jsonize() const
   if(m_formatOptionsHasBeenSet)
   {
    payload.WithObject("formatOptions", m_formatOptions.Jsonize());
+
+  }
+
+  if(m_advancedOptionsHasBeenSet)
+  {
+   payload.WithObject("advancedOptions", m_advancedOptions.Jsonize());
 
   }
 

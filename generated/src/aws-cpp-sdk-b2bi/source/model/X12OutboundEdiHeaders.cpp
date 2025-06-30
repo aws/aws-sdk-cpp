@@ -45,6 +45,16 @@ X12OutboundEdiHeaders& X12OutboundEdiHeaders::operator =(JsonView jsonValue)
     m_validateEdi = jsonValue.GetBool("validateEdi");
     m_validateEdiHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("controlNumbers"))
+  {
+    m_controlNumbers = jsonValue.GetObject("controlNumbers");
+    m_controlNumbersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("gs05TimeFormat"))
+  {
+    m_gs05TimeFormat = X12GS05TimeFormatMapper::GetX12GS05TimeFormatForName(jsonValue.GetString("gs05TimeFormat"));
+    m_gs05TimeFormatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -74,6 +84,17 @@ JsonValue X12OutboundEdiHeaders::Jsonize() const
   {
    payload.WithBool("validateEdi", m_validateEdi);
 
+  }
+
+  if(m_controlNumbersHasBeenSet)
+  {
+   payload.WithObject("controlNumbers", m_controlNumbers.Jsonize());
+
+  }
+
+  if(m_gs05TimeFormatHasBeenSet)
+  {
+   payload.WithString("gs05TimeFormat", X12GS05TimeFormatMapper::GetNameForX12GS05TimeFormat(m_gs05TimeFormat));
   }
 
   return payload;

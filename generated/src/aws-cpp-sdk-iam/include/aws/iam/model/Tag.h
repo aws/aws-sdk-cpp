@@ -63,10 +63,7 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>Amazon Web
-     * Services always interprets the tag <code>Value</code> as a single string. If you
-     * need to store an array, you can store comma-separated values in the string.
-     * However, you must interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

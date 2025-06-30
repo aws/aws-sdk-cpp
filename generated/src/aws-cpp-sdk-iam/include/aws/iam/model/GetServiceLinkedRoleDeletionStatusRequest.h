@@ -38,8 +38,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
+     * <p>The deletion task identifier. This identifier is returned by the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a>
+     * operation in the format
      * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
      */
     inline const Aws::String& GetDeletionTaskId() const { return m_deletionTaskId; }

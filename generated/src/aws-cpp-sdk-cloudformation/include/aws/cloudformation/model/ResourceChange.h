@@ -199,7 +199,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An encoded JSON string containing the context of the resource before the
+     * <p>An encoded JSON string that contains the context of the resource before the
      * change is executed.</p>
      */
     inline const Aws::String& GetBeforeContext() const { return m_beforeContext; }
@@ -212,7 +212,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An encoded JSON string containing the context of the resource after the
+     * <p>An encoded JSON string that contains the context of the resource after the
      * change is executed.</p>
      */
     inline const Aws::String& GetAfterContext() const { return m_afterContext; }

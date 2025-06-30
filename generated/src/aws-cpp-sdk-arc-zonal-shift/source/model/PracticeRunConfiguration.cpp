@@ -25,24 +25,6 @@ PracticeRunConfiguration::PracticeRunConfiguration(JsonView jsonValue)
 
 PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("blockedDates"))
-  {
-    Aws::Utils::Array<JsonView> blockedDatesJsonList = jsonValue.GetArray("blockedDates");
-    for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
-    {
-      m_blockedDates.push_back(blockedDatesJsonList[blockedDatesIndex].AsString());
-    }
-    m_blockedDatesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("blockedWindows"))
-  {
-    Aws::Utils::Array<JsonView> blockedWindowsJsonList = jsonValue.GetArray("blockedWindows");
-    for(unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex)
-    {
-      m_blockedWindows.push_back(blockedWindowsJsonList[blockedWindowsIndex].AsString());
-    }
-    m_blockedWindowsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("blockingAlarms"))
   {
     Aws::Utils::Array<JsonView> blockingAlarmsJsonList = jsonValue.GetArray("blockingAlarms");
@@ -61,34 +43,30 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_outcomeAlarmsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("blockedWindows"))
+  {
+    Aws::Utils::Array<JsonView> blockedWindowsJsonList = jsonValue.GetArray("blockedWindows");
+    for(unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex)
+    {
+      m_blockedWindows.push_back(blockedWindowsJsonList[blockedWindowsIndex].AsString());
+    }
+    m_blockedWindowsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("blockedDates"))
+  {
+    Aws::Utils::Array<JsonView> blockedDatesJsonList = jsonValue.GetArray("blockedDates");
+    for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
+    {
+      m_blockedDates.push_back(blockedDatesJsonList[blockedDatesIndex].AsString());
+    }
+    m_blockedDatesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue PracticeRunConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_blockedDatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
-   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
-   {
-     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
-   }
-   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
-
-  }
-
-  if(m_blockedWindowsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blockedWindowsJsonList(m_blockedWindows.size());
-   for(unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex)
-   {
-     blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
-   }
-   payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
-
-  }
 
   if(m_blockingAlarmsHasBeenSet)
   {
@@ -109,6 +87,28 @@ JsonValue PracticeRunConfiguration::Jsonize() const
      outcomeAlarmsJsonList[outcomeAlarmsIndex].AsObject(m_outcomeAlarms[outcomeAlarmsIndex].Jsonize());
    }
    payload.WithArray("outcomeAlarms", std::move(outcomeAlarmsJsonList));
+
+  }
+
+  if(m_blockedWindowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blockedWindowsJsonList(m_blockedWindows.size());
+   for(unsigned blockedWindowsIndex = 0; blockedWindowsIndex < blockedWindowsJsonList.GetLength(); ++blockedWindowsIndex)
+   {
+     blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
+   }
+   payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
+
+  }
+
+  if(m_blockedDatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
+   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
+   {
+     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
+   }
+   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
 
   }
 

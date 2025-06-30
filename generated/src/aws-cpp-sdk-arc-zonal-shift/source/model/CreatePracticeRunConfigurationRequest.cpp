@@ -16,14 +16,9 @@ Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_blockedDatesHasBeenSet)
+  if(m_resourceIdentifierHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
-   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
-   {
-     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
-   }
-   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
+   payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
   }
 
@@ -35,6 +30,17 @@ Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
      blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
    }
    payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
+
+  }
+
+  if(m_blockedDatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blockedDatesJsonList(m_blockedDates.size());
+   for(unsigned blockedDatesIndex = 0; blockedDatesIndex < blockedDatesJsonList.GetLength(); ++blockedDatesIndex)
+   {
+     blockedDatesJsonList[blockedDatesIndex].AsString(m_blockedDates[blockedDatesIndex]);
+   }
+   payload.WithArray("blockedDates", std::move(blockedDatesJsonList));
 
   }
 
@@ -57,12 +63,6 @@ Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
      outcomeAlarmsJsonList[outcomeAlarmsIndex].AsObject(m_outcomeAlarms[outcomeAlarmsIndex].Jsonize());
    }
    payload.WithArray("outcomeAlarms", std::move(outcomeAlarmsJsonList));
-
-  }
-
-  if(m_resourceIdentifierHasBeenSet)
-  {
-   payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/IdentityCenterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +66,21 @@ namespace Model
     template<typename RoleArnT = Aws::String>
     AthenaParameters& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional parameter that configures IAM Identity Center authentication to
+     * grant Amazon QuickSight access to your workgroup.</p> <p>This parameter can only
+     * be specified if your Amazon QuickSight account is configured with IAM Identity
+     * Center.</p>
+     */
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+    inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    AthenaParameters& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_workGroup;
@@ -72,6 +88,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    IdentityCenterConfiguration m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

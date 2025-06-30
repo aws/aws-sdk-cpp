@@ -28,8 +28,9 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>ListMFADevices</a> request.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html">ListMFADevices</a>
+   * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevicesResponse">AWS
    * API Reference</a></p>
    */

@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ability to export to CSV files.</p>
+     * <p>The ability to export to CSV files from the UI.</p>
      */
     inline CapabilityState GetExportToCsv() const { return m_exportToCsv; }
     inline bool ExportToCsvHasBeenSet() const { return m_exportToCsvHasBeenSet; }
@@ -50,12 +50,32 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ability to export to Excel files.</p>
+     * <p>The ability to export to Excel files from the UI.</p>
      */
     inline CapabilityState GetExportToExcel() const { return m_exportToExcel; }
     inline bool ExportToExcelHasBeenSet() const { return m_exportToExcelHasBeenSet; }
     inline void SetExportToExcel(CapabilityState value) { m_exportToExcelHasBeenSet = true; m_exportToExcel = value; }
     inline Capabilities& WithExportToExcel(CapabilityState value) { SetExportToExcel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to export to PDF files from the UI.</p>
+     */
+    inline CapabilityState GetExportToPdf() const { return m_exportToPdf; }
+    inline bool ExportToPdfHasBeenSet() const { return m_exportToPdfHasBeenSet; }
+    inline void SetExportToPdf(CapabilityState value) { m_exportToPdfHasBeenSet = true; m_exportToPdf = value; }
+    inline Capabilities& WithExportToPdf(CapabilityState value) { SetExportToPdf(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to print reports.</p>
+     */
+    inline CapabilityState GetPrintReports() const { return m_printReports; }
+    inline bool PrintReportsHasBeenSet() const { return m_printReportsHasBeenSet; }
+    inline void SetPrintReports(CapabilityState value) { m_printReportsHasBeenSet = true; m_printReports = value; }
+    inline Capabilities& WithPrintReports(CapabilityState value) { SetPrintReports(value); return *this;}
     ///@}
 
     ///@{
@@ -207,6 +227,46 @@ namespace Model
     inline void SetCreateSPICEDataset(CapabilityState value) { m_createSPICEDatasetHasBeenSet = true; m_createSPICEDataset = value; }
     inline Capabilities& WithCreateSPICEDataset(CapabilityState value) { SetCreateSPICEDataset(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ability to export to PDF files in scheduled email reports.</p>
+     */
+    inline CapabilityState GetExportToPdfInScheduledReports() const { return m_exportToPdfInScheduledReports; }
+    inline bool ExportToPdfInScheduledReportsHasBeenSet() const { return m_exportToPdfInScheduledReportsHasBeenSet; }
+    inline void SetExportToPdfInScheduledReports(CapabilityState value) { m_exportToPdfInScheduledReportsHasBeenSet = true; m_exportToPdfInScheduledReports = value; }
+    inline Capabilities& WithExportToPdfInScheduledReports(CapabilityState value) { SetExportToPdfInScheduledReports(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to export to CSV files in scheduled email reports.</p>
+     */
+    inline CapabilityState GetExportToCsvInScheduledReports() const { return m_exportToCsvInScheduledReports; }
+    inline bool ExportToCsvInScheduledReportsHasBeenSet() const { return m_exportToCsvInScheduledReportsHasBeenSet; }
+    inline void SetExportToCsvInScheduledReports(CapabilityState value) { m_exportToCsvInScheduledReportsHasBeenSet = true; m_exportToCsvInScheduledReports = value; }
+    inline Capabilities& WithExportToCsvInScheduledReports(CapabilityState value) { SetExportToCsvInScheduledReports(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to export to Excel files in scheduled email reports.</p>
+     */
+    inline CapabilityState GetExportToExcelInScheduledReports() const { return m_exportToExcelInScheduledReports; }
+    inline bool ExportToExcelInScheduledReportsHasBeenSet() const { return m_exportToExcelInScheduledReportsHasBeenSet; }
+    inline void SetExportToExcelInScheduledReports(CapabilityState value) { m_exportToExcelInScheduledReportsHasBeenSet = true; m_exportToExcelInScheduledReports = value; }
+    inline Capabilities& WithExportToExcelInScheduledReports(CapabilityState value) { SetExportToExcelInScheduledReports(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to include content in scheduled email reports.</p>
+     */
+    inline CapabilityState GetIncludeContentInScheduledReportsEmail() const { return m_includeContentInScheduledReportsEmail; }
+    inline bool IncludeContentInScheduledReportsEmailHasBeenSet() const { return m_includeContentInScheduledReportsEmailHasBeenSet; }
+    inline void SetIncludeContentInScheduledReportsEmail(CapabilityState value) { m_includeContentInScheduledReportsEmailHasBeenSet = true; m_includeContentInScheduledReportsEmail = value; }
+    inline Capabilities& WithIncludeContentInScheduledReportsEmail(CapabilityState value) { SetIncludeContentInScheduledReportsEmail(value); return *this;}
+    ///@}
   private:
 
     CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
@@ -214,6 +274,12 @@ namespace Model
 
     CapabilityState m_exportToExcel{CapabilityState::NOT_SET};
     bool m_exportToExcelHasBeenSet = false;
+
+    CapabilityState m_exportToPdf{CapabilityState::NOT_SET};
+    bool m_exportToPdfHasBeenSet = false;
+
+    CapabilityState m_printReports{CapabilityState::NOT_SET};
+    bool m_printReportsHasBeenSet = false;
 
     CapabilityState m_createAndUpdateThemes{CapabilityState::NOT_SET};
     bool m_createAndUpdateThemesHasBeenSet = false;
@@ -259,6 +325,18 @@ namespace Model
 
     CapabilityState m_createSPICEDataset{CapabilityState::NOT_SET};
     bool m_createSPICEDatasetHasBeenSet = false;
+
+    CapabilityState m_exportToPdfInScheduledReports{CapabilityState::NOT_SET};
+    bool m_exportToPdfInScheduledReportsHasBeenSet = false;
+
+    CapabilityState m_exportToCsvInScheduledReports{CapabilityState::NOT_SET};
+    bool m_exportToCsvInScheduledReportsHasBeenSet = false;
+
+    CapabilityState m_exportToExcelInScheduledReports{CapabilityState::NOT_SET};
+    bool m_exportToExcelInScheduledReportsHasBeenSet = false;
+
+    CapabilityState m_includeContentInScheduledReportsEmail{CapabilityState::NOT_SET};
+    bool m_includeContentInScheduledReportsEmailHasBeenSet = false;
   };
 
 } // namespace Model

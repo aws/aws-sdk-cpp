@@ -28,7 +28,8 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>CreateOpenIDConnectProvider</a>
+   * <p>Contains the response to a successful <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
    * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProviderResponse">AWS
    * API Reference</a></p>
@@ -44,7 +45,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
-     * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
+     * created. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_OpenIDConnectProviderListEntry.html">OpenIDConnectProviderListEntry</a>.
+     * </p>
      */
     inline const Aws::String& GetOpenIDConnectProviderArn() const { return m_openIDConnectProviderArn; }
     template<typename OpenIDConnectProviderArnT = Aws::String>

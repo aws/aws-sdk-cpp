@@ -26,9 +26,13 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM group entity.</p> <p>This data type is used
-   * as a response element in the following operations:</p> <ul> <li> <p>
-   * <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p>
-   * <a>ListGroups</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * as a response element in the following operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html">CreateGroup</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html">GetGroup</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html">ListGroups</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Group">AWS API
    * Reference</a></p>
    */

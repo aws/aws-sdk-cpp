@@ -14,6 +14,7 @@
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
 #include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlock.h>
+#include <aws/bedrock-runtime/model/CitationsContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -129,7 +130,7 @@ namespace Model
      * <code>guardContent</code> in a call to the Converse API, the guardrail (if
      * passed in the Converse API) assesses the entire message.</p> <p>For more
      * information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
-     * Bedrock User Guide</i>. <pre><code> &lt;/p&gt; </code></pre>
+     * Bedrock User Guide</i>. </p>
      */
     inline const GuardrailConverseContentBlock& GetGuardContent() const { return m_guardContent; }
     inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }
@@ -164,6 +165,20 @@ namespace Model
     template<typename ReasoningContentT = ReasoningContentBlock>
     ContentBlock& WithReasoningContent(ReasoningContentT&& value) { SetReasoningContent(std::forward<ReasoningContentT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A content block that contains both generated text and associated citation
+     * information, providing traceability between the response and source
+     * documents.</p>
+     */
+    inline const CitationsContentBlock& GetCitationsContent() const { return m_citationsContent; }
+    inline bool CitationsContentHasBeenSet() const { return m_citationsContentHasBeenSet; }
+    template<typename CitationsContentT = CitationsContentBlock>
+    void SetCitationsContent(CitationsContentT&& value) { m_citationsContentHasBeenSet = true; m_citationsContent = std::forward<CitationsContentT>(value); }
+    template<typename CitationsContentT = CitationsContentBlock>
+    ContentBlock& WithCitationsContent(CitationsContentT&& value) { SetCitationsContent(std::forward<CitationsContentT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -192,6 +207,9 @@ namespace Model
 
     ReasoningContentBlock m_reasoningContent;
     bool m_reasoningContentHasBeenSet = false;
+
+    CitationsContentBlock m_citationsContent;
+    bool m_citationsContentHasBeenSet = false;
   };
 
 } // namespace Model

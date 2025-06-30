@@ -62,12 +62,12 @@ namespace Model
      * configuration recorders, Config automatically assigns the name of "default" when
      * creating a configuration recorder if you do not specify a name at creation
      * time.</p> <p>For service-linked configuration recorders, Config automatically
-     * assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to
-     * a new service-linked configuration recorder.</p>  <p> <b>Changing the name
-     * of a configuration recorder</b> </p> <p>To change the name of the customer
-     * managed configuration recorder, you must delete it and create a new customer
-     * managed configuration recorder with a new name.</p> <p>You cannot change the
-     * name of a service-linked configuration recorder.</p> 
+     * assigns a name that has the prefix "<code>AWS</code>" to a new service-linked
+     * configuration recorder.</p>  <p> <b>Changing the name of a configuration
+     * recorder</b> </p> <p>To change the name of the customer managed configuration
+     * recorder, you must delete it and create a new customer managed configuration
+     * recorder with a new name.</p> <p>You cannot change the name of a service-linked
+     * configuration recorder.</p> 
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

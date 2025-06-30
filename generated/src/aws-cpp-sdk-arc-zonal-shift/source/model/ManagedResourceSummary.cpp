@@ -25,28 +25,15 @@ ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue)
 
 ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("appliedWeights"))
-  {
-    Aws::Map<Aws::String, JsonView> appliedWeightsJsonMap = jsonValue.GetObject("appliedWeights").GetAllObjects();
-    for(auto& appliedWeightsItem : appliedWeightsJsonMap)
-    {
-      m_appliedWeights[appliedWeightsItem.first] = appliedWeightsItem.second.AsDouble();
-    }
-    m_appliedWeightsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoshifts"))
+  if(jsonValue.ValueExists("name"))
   {
-    Aws::Utils::Array<JsonView> autoshiftsJsonList = jsonValue.GetArray("autoshifts");
-    for(unsigned autoshiftsIndex = 0; autoshiftsIndex < autoshiftsJsonList.GetLength(); ++autoshiftsIndex)
-    {
-      m_autoshifts.push_back(autoshiftsJsonList[autoshiftsIndex].AsObject());
-    }
-    m_autoshiftsHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("availabilityZones"))
   {
@@ -57,20 +44,14 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("appliedWeights"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("practiceRunStatus"))
-  {
-    m_practiceRunStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("practiceRunStatus"));
-    m_practiceRunStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("zonalAutoshiftStatus"))
-  {
-    m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
-    m_zonalAutoshiftStatusHasBeenSet = true;
+    Aws::Map<Aws::String, JsonView> appliedWeightsJsonMap = jsonValue.GetObject("appliedWeights").GetAllObjects();
+    for(auto& appliedWeightsItem : appliedWeightsJsonMap)
+    {
+      m_appliedWeights[appliedWeightsItem.first] = appliedWeightsItem.second.AsDouble();
+    }
+    m_appliedWeightsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("zonalShifts"))
   {
@@ -81,6 +62,25 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
     }
     m_zonalShiftsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("autoshifts"))
+  {
+    Aws::Utils::Array<JsonView> autoshiftsJsonList = jsonValue.GetArray("autoshifts");
+    for(unsigned autoshiftsIndex = 0; autoshiftsIndex < autoshiftsJsonList.GetLength(); ++autoshiftsIndex)
+    {
+      m_autoshifts.push_back(autoshiftsJsonList[autoshiftsIndex].AsObject());
+    }
+    m_autoshiftsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("zonalAutoshiftStatus"))
+  {
+    m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
+    m_zonalAutoshiftStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("practiceRunStatus"))
+  {
+    m_practiceRunStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("practiceRunStatus"));
+    m_practiceRunStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -88,31 +88,15 @@ JsonValue ManagedResourceSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_appliedWeightsHasBeenSet)
-  {
-   JsonValue appliedWeightsJsonMap;
-   for(auto& appliedWeightsItem : m_appliedWeights)
-   {
-     appliedWeightsJsonMap.WithDouble(appliedWeightsItem.first, appliedWeightsItem.second);
-   }
-   payload.WithObject("appliedWeights", std::move(appliedWeightsJsonMap));
-
-  }
-
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
 
   }
 
-  if(m_autoshiftsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> autoshiftsJsonList(m_autoshifts.size());
-   for(unsigned autoshiftsIndex = 0; autoshiftsIndex < autoshiftsJsonList.GetLength(); ++autoshiftsIndex)
-   {
-     autoshiftsJsonList[autoshiftsIndex].AsObject(m_autoshifts[autoshiftsIndex].Jsonize());
-   }
-   payload.WithArray("autoshifts", std::move(autoshiftsJsonList));
+   payload.WithString("name", m_name);
 
   }
 
@@ -127,20 +111,15 @@ JsonValue ManagedResourceSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_appliedWeightsHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   JsonValue appliedWeightsJsonMap;
+   for(auto& appliedWeightsItem : m_appliedWeights)
+   {
+     appliedWeightsJsonMap.WithDouble(appliedWeightsItem.first, appliedWeightsItem.second);
+   }
+   payload.WithObject("appliedWeights", std::move(appliedWeightsJsonMap));
 
-  }
-
-  if(m_practiceRunStatusHasBeenSet)
-  {
-   payload.WithString("practiceRunStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_practiceRunStatus));
-  }
-
-  if(m_zonalAutoshiftStatusHasBeenSet)
-  {
-   payload.WithString("zonalAutoshiftStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_zonalAutoshiftStatus));
   }
 
   if(m_zonalShiftsHasBeenSet)
@@ -152,6 +131,27 @@ JsonValue ManagedResourceSummary::Jsonize() const
    }
    payload.WithArray("zonalShifts", std::move(zonalShiftsJsonList));
 
+  }
+
+  if(m_autoshiftsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> autoshiftsJsonList(m_autoshifts.size());
+   for(unsigned autoshiftsIndex = 0; autoshiftsIndex < autoshiftsJsonList.GetLength(); ++autoshiftsIndex)
+   {
+     autoshiftsJsonList[autoshiftsIndex].AsObject(m_autoshifts[autoshiftsIndex].Jsonize());
+   }
+   payload.WithArray("autoshifts", std::move(autoshiftsJsonList));
+
+  }
+
+  if(m_zonalAutoshiftStatusHasBeenSet)
+  {
+   payload.WithString("zonalAutoshiftStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_zonalAutoshiftStatus));
+  }
+
+  if(m_practiceRunStatusHasBeenSet)
+  {
+   payload.WithString("practiceRunStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_practiceRunStatus));
   }
 
   return payload;

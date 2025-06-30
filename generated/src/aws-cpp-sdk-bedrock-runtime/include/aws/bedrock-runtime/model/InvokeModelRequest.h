@@ -64,9 +64,9 @@ namespace Model
      * Provisioned Throughput. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run
      * inference using a Provisioned Throughput</a> in the Amazon Bedrock User
-     * Guide.</p> </li> <li> <p>If you use a custom model, first purchase Provisioned
-     * Throughput for it. Then specify the ARN of the resulting provisioned model. For
-     * more information, see <a
+     * Guide.</p> </li> <li> <p>If you use a custom model, specify the ARN of the
+     * custom model deployment (for on-demand inference) or the ARN of your provisioned
+     * model (for Provisioned Throughput). For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
      * a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p> </li>
      * <li> <p>If you use an <a

@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of objects that you want to return with this call.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListZonalShiftsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies that you want to receive the next page of results. Valid only if
      * you received a <code>nextToken</code> response in the previous request. If you
      * did, it indicates that more output is available. Set this parameter to the value
@@ -67,6 +57,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
+     * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
+     * shift has been started and is active.</p> </li> <li> <p> <b>EXPIRED</b>: The
+     * zonal shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
+     */
+    inline ZonalShiftStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ZonalShiftStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListZonalShiftsRequest& WithStatus(ZonalShiftStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of objects that you want to return with this call.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListZonalShiftsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier for the resource that you want to list zonal shifts for. The
      * identifier is the Amazon Resource Name (ARN) for the resource.</p>
      */
@@ -77,33 +91,19 @@ namespace Model
     template<typename ResourceIdentifierT = Aws::String>
     ListZonalShiftsRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
-     * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
-     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
-     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
-     */
-    inline ZonalShiftStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ZonalShiftStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ListZonalShiftsRequest& WithStatus(ZonalShiftStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet = false;
-
     ZonalShiftStatus m_status{ZonalShiftStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

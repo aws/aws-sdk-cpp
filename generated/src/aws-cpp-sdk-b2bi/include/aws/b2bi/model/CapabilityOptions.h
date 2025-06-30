@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/OutboundEdiOptions.h>
+#include <aws/b2bi/model/InboundEdiOptions.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,25 @@ namespace Model
     template<typename OutboundEdiT = OutboundEdiOptions>
     CapabilityOptions& WithOutboundEdi(OutboundEdiT&& value) { SetOutboundEdi(std::forward<OutboundEdiT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A structure that contains the inbound EDI options for the capability.</p>
+     */
+    inline const InboundEdiOptions& GetInboundEdi() const { return m_inboundEdi; }
+    inline bool InboundEdiHasBeenSet() const { return m_inboundEdiHasBeenSet; }
+    template<typename InboundEdiT = InboundEdiOptions>
+    void SetInboundEdi(InboundEdiT&& value) { m_inboundEdiHasBeenSet = true; m_inboundEdi = std::forward<InboundEdiT>(value); }
+    template<typename InboundEdiT = InboundEdiOptions>
+    CapabilityOptions& WithInboundEdi(InboundEdiT&& value) { SetInboundEdi(std::forward<InboundEdiT>(value)); return *this;}
+    ///@}
   private:
 
     OutboundEdiOptions m_outboundEdi;
     bool m_outboundEdiHasBeenSet = false;
+
+    InboundEdiOptions m_inboundEdi;
+    bool m_inboundEdiHasBeenSet = false;
   };
 
 } // namespace Model

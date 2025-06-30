@@ -57,6 +57,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time when the service specific credential expires. This field is
+     * only present for Bedrock API keys that were created with an expiration
+     * period.</p>
+     */
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    ServiceSpecificCredential& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the service associated with the service-specific credential.</p>
      */
     inline const Aws::String& GetServiceName() const { return m_serviceName; }
@@ -92,6 +106,34 @@ namespace Model
     void SetServicePassword(ServicePasswordT&& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = std::forward<ServicePasswordT>(value); }
     template<typename ServicePasswordT = Aws::String>
     ServiceSpecificCredential& WithServicePassword(ServicePasswordT&& value) { SetServicePassword(std::forward<ServicePasswordT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For Bedrock API keys, this is the public portion of the credential that
+     * includes the IAM user name and a suffix containing version and creation
+     * information.</p>
+     */
+    inline const Aws::String& GetServiceCredentialAlias() const { return m_serviceCredentialAlias; }
+    inline bool ServiceCredentialAliasHasBeenSet() const { return m_serviceCredentialAliasHasBeenSet; }
+    template<typename ServiceCredentialAliasT = Aws::String>
+    void SetServiceCredentialAlias(ServiceCredentialAliasT&& value) { m_serviceCredentialAliasHasBeenSet = true; m_serviceCredentialAlias = std::forward<ServiceCredentialAliasT>(value); }
+    template<typename ServiceCredentialAliasT = Aws::String>
+    ServiceSpecificCredential& WithServiceCredentialAlias(ServiceCredentialAliasT&& value) { SetServiceCredentialAlias(std::forward<ServiceCredentialAliasT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For Bedrock API keys, this is the secret portion of the credential that
+     * should be used to authenticate API calls. This value is returned only when the
+     * credential is created.</p>
+     */
+    inline const Aws::String& GetServiceCredentialSecret() const { return m_serviceCredentialSecret; }
+    inline bool ServiceCredentialSecretHasBeenSet() const { return m_serviceCredentialSecretHasBeenSet; }
+    template<typename ServiceCredentialSecretT = Aws::String>
+    void SetServiceCredentialSecret(ServiceCredentialSecretT&& value) { m_serviceCredentialSecretHasBeenSet = true; m_serviceCredentialSecret = std::forward<ServiceCredentialSecretT>(value); }
+    template<typename ServiceCredentialSecretT = Aws::String>
+    ServiceSpecificCredential& WithServiceCredentialSecret(ServiceCredentialSecretT&& value) { SetServiceCredentialSecret(std::forward<ServiceCredentialSecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,6 +175,9 @@ namespace Model
     Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
+    Aws::Utils::DateTime m_expirationDate{};
+    bool m_expirationDateHasBeenSet = false;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
@@ -141,6 +186,12 @@ namespace Model
 
     Aws::String m_servicePassword;
     bool m_servicePasswordHasBeenSet = false;
+
+    Aws::String m_serviceCredentialAlias;
+    bool m_serviceCredentialAliasHasBeenSet = false;
+
+    Aws::String m_serviceCredentialSecret;
+    bool m_serviceCredentialSecretHasBeenSet = false;
 
     Aws::String m_serviceSpecificCredentialId;
     bool m_serviceSpecificCredentialIdHasBeenSet = false;
