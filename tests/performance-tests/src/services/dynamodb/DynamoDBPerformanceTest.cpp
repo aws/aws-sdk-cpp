@@ -23,7 +23,6 @@
 #include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
 
 #include <chrono>
-#include <string>
 #include <thread>
 
 void PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {

@@ -21,8 +21,6 @@
 #include <performance-tests/Utils.h>
 #include <performance-tests/services/s3/S3PerformanceTest.h>
 
-#include <string>
-
 void PerformanceTest::Services::S3::RunTest(Aws::S3::S3Client& s3, const TestCase& config, const Aws::String& availabilityZoneId,
                                             int iterations) {
   auto bucketName = SetupBucket(s3, config, availabilityZoneId);
