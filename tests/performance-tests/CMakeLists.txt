@@ -7,7 +7,6 @@ add_project(performance-tests
         aws-cpp-sdk-core
         aws-cpp-sdk-s3
         aws-cpp-sdk-dynamodb
-        testing-resources
 )
 
 function(add_service_test SERVICE SDK_LIB PERF_TEST_FILE)

@@ -32,6 +32,7 @@ struct RequestContext {
   Aws::String requestName;
   std::shared_ptr<const Aws::Http::HttpRequest> request;
   std::variant<int64_t, double> durationMs = int64_t(0);
+  bool failed = false;
 };
 
 JsonReportingMetrics::JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& productId,
@@ -40,8 +41,7 @@ JsonReportingMetrics::JsonReportingMetrics(const Aws::Set<Aws::String>& monitore
       m_productId(productId),
       m_sdkVersion(sdkVersion),
       m_commitId(commitId),
-      m_outputFilename(outputFilename),
-      m_hasInvalidLatency(false) {}
+      m_outputFilename(outputFilename) {}
 
 JsonReportingMetrics::~JsonReportingMetrics() { DumpJson(); }
 
@@ -72,7 +72,7 @@ void JsonReportingMetrics::StoreLatencyInContext(const Aws::String& serviceName,
     requestContext->request = request;
     requestContext->durationMs = iterator->second;
   } else {
-    m_hasInvalidLatency = true;
+    requestContext->failed = true;
   }
 }
 
@@ -132,7 +132,7 @@ void JsonReportingMetrics::OnFinish(const Aws::String&, const Aws::String&, cons
                                     void* context) const {
   RequestContext* requestContext = static_cast<RequestContext*>(context);
 
-  if (std::visit([](auto&& v) { return v > 0; }, requestContext->durationMs)) {
+  if (!requestContext->failed) {
     AddPerformanceRecord(requestContext->serviceName, requestContext->requestName, requestContext->request, requestContext->durationMs);
   }
 
@@ -145,8 +145,7 @@ void JsonReportingMetrics::DumpJson() const {
   root.WithString("sdkVersion", m_sdkVersion);
   root.WithString("commitId", m_commitId);
 
-  // If there is an invalid latency or there are no records, then use an empty results array
-  if (m_hasInvalidLatency || m_performanceRecords.empty()) {
+  if (m_performanceRecords.empty()) {
     root.WithArray("results", Aws::Utils::Array<Aws::Utils::Json::JsonValue>(0));
     WriteJsonToFile(root);
     return;

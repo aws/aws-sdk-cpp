@@ -155,7 +155,6 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
-  mutable bool m_hasInvalidLatency;
 };
 
 /**
