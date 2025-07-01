@@ -37,6 +37,13 @@ void ListCollaborationTrainedModelExportJobsRequest::AddQueryStringParameters(UR
       ss.str("");
     }
 
+    if(m_trainedModelVersionIdentifierHasBeenSet)
+    {
+      ss << m_trainedModelVersionIdentifier;
+      uri.AddQueryStringParameter("trainedModelVersionIdentifier", ss.str());
+      ss.str("");
+    }
+
 }
 
 

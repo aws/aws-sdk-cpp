@@ -22,6 +22,12 @@ Aws::String StartTrainedModelExportJobRequest::SerializePayload() const
 
   }
 
+  if(m_trainedModelVersionIdentifierHasBeenSet)
+  {
+   payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
+
+  }
+
   if(m_outputConfigurationHasBeenSet)
   {
    payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());

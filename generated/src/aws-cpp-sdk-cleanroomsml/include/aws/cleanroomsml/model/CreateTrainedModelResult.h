@@ -44,6 +44,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The unique version identifier assigned to the newly created trained model.
+     * This identifier can be used to reference this specific version of the trained
+     * model in subsequent operations such as inference jobs or incremental
+     * training.</p> <p>The initial version identifier for the base version of the
+     * trained model is "NULL".</p>
+     */
+    inline const Aws::String& GetVersionIdentifier() const { return m_versionIdentifier; }
+    template<typename VersionIdentifierT = Aws::String>
+    void SetVersionIdentifier(VersionIdentifierT&& value) { m_versionIdentifierHasBeenSet = true; m_versionIdentifier = std::forward<VersionIdentifierT>(value); }
+    template<typename VersionIdentifierT = Aws::String>
+    CreateTrainedModelResult& WithVersionIdentifier(VersionIdentifierT&& value) { SetVersionIdentifier(std::forward<VersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -55,6 +70,9 @@ namespace Model
 
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
+
+    Aws::String m_versionIdentifier;
+    bool m_versionIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -40,6 +40,20 @@ TrainedModelSummary& TrainedModelSummary::operator =(JsonView jsonValue)
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("versionIdentifier"))
+  {
+    m_versionIdentifier = jsonValue.GetString("versionIdentifier");
+    m_versionIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("incrementalTrainingDataChannels"))
+  {
+    Aws::Utils::Array<JsonView> incrementalTrainingDataChannelsJsonList = jsonValue.GetArray("incrementalTrainingDataChannels");
+    for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+    {
+      m_incrementalTrainingDataChannels.push_back(incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject());
+    }
+    m_incrementalTrainingDataChannelsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -90,6 +104,23 @@ JsonValue TrainedModelSummary::Jsonize() const
   if(m_trainedModelArnHasBeenSet)
   {
    payload.WithString("trainedModelArn", m_trainedModelArn);
+
+  }
+
+  if(m_versionIdentifierHasBeenSet)
+  {
+   payload.WithString("versionIdentifier", m_versionIdentifier);
+
+  }
+
+  if(m_incrementalTrainingDataChannelsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> incrementalTrainingDataChannelsJsonList(m_incrementalTrainingDataChannels.size());
+   for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+   {
+     incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject(m_incrementalTrainingDataChannels[incrementalTrainingDataChannelsIndex].Jsonize());
+   }
+   payload.WithArray("incrementalTrainingDataChannels", std::move(incrementalTrainingDataChannelsJsonList));
 
   }
 

@@ -30,6 +30,11 @@ NativeIndexConfiguration& NativeIndexConfiguration::operator =(JsonView jsonValu
     m_indexId = jsonValue.GetString("indexId");
     m_indexIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+    m_versionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("boostingOverride"))
   {
     Aws::Map<Aws::String, JsonView> boostingOverrideJsonMap = jsonValue.GetObject("boostingOverride").GetAllObjects();
@@ -49,6 +54,12 @@ JsonValue NativeIndexConfiguration::Jsonize() const
   if(m_indexIdHasBeenSet)
   {
    payload.WithString("indexId", m_indexId);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

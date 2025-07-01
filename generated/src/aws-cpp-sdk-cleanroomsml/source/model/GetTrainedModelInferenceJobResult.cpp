@@ -60,6 +60,11 @@ GetTrainedModelInferenceJobResult& GetTrainedModelInferenceJobResult::operator =
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("trainedModelVersionIdentifier"))
+  {
+    m_trainedModelVersionIdentifier = jsonValue.GetString("trainedModelVersionIdentifier");
+    m_trainedModelVersionIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("resourceConfig"))
   {
     m_resourceConfig = jsonValue.GetObject("resourceConfig");

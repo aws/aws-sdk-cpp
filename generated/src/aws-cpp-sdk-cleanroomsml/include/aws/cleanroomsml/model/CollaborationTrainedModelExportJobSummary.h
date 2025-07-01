@@ -147,6 +147,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version identifier of the trained model that was exported in this
+     * job.</p>
+     */
+    inline const Aws::String& GetTrainedModelVersionIdentifier() const { return m_trainedModelVersionIdentifier; }
+    inline bool TrainedModelVersionIdentifierHasBeenSet() const { return m_trainedModelVersionIdentifierHasBeenSet; }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    void SetTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { m_trainedModelVersionIdentifierHasBeenSet = true; m_trainedModelVersionIdentifier = std::forward<TrainedModelVersionIdentifierT>(value); }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    CollaborationTrainedModelExportJobSummary& WithTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { SetTrainedModelVersionIdentifier(std::forward<TrainedModelVersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The membership ID of the member that created the trained model export
      * job.</p>
      */
@@ -198,6 +211,9 @@ namespace Model
 
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
+
+    Aws::String m_trainedModelVersionIdentifier;
+    bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;

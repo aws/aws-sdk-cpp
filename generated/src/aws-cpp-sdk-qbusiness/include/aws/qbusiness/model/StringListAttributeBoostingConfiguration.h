@@ -25,9 +25,14 @@ namespace Model
 
   /**
    * <p>Provides information on boosting <code>STRING_LIST</code> type document
-   * attributes.</p>  <p>For <code>STRING</code> and <code>STRING_LIST</code>
-   * type document attributes to be used for boosting on the console and the API,
-   * they must be enabled for search using the <a
+   * attributes.</p> <p>In the current boosting implementation, boosting focuses
+   * primarily on <code>DATE</code> attributes for recency and <code>STRING</code>
+   * attributes for source prioritization. <code>STRING_LIST</code> attributes can
+   * serve as additional boosting factors when needed, but are not supported when
+   * using <code>NativeIndexConfiguration</code> version 2.</p>  <p>For
+   * <code>STRING</code> and <code>STRING_LIST</code> type document attributes to be
+   * used for boosting on the console and the API, they must be enabled for search
+   * using the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeConfiguration.html">DocumentAttributeConfiguration</a>
    * object of the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html">UpdateIndex</a>
@@ -51,7 +56,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how much a document attribute is boosted.</p>
+     * <p>Specifies the priority of boosted document attributes in relation to other
+     * boosted attributes. This parameter determines how strongly the attribute
+     * influences document ranking in search results. <code>STRING_LIST</code>
+     * attributes can serve as additional boosting factors when needed, but are not
+     * supported when using <code>NativeIndexConfiguration</code> version 2.</p>
      */
     inline DocumentAttributeBoostingLevel GetBoostingLevel() const { return m_boostingLevel; }
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }

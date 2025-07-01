@@ -82,7 +82,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+     * <p>Specifies the maximum number of clusters to evaluate for the operation (not
+     * necessarily the number of matching items). After SageMaker processes the number
+     * of clusters up to <code>MaxResults</code>, it stops the operation and returns
+     * the matching clusters up to that point. If all the matching clusters are
+     * desired, SageMaker will go through all the clusters until <code>NextToken</code>
+     * is empty.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

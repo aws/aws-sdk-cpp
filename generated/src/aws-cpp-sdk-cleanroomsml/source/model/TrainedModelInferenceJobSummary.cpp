@@ -45,6 +45,11 @@ TrainedModelInferenceJobSummary& TrainedModelInferenceJobSummary::operator =(Jso
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("trainedModelVersionIdentifier"))
+  {
+    m_trainedModelVersionIdentifier = jsonValue.GetString("trainedModelVersionIdentifier");
+    m_trainedModelVersionIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
@@ -128,6 +133,12 @@ JsonValue TrainedModelInferenceJobSummary::Jsonize() const
   if(m_trainedModelArnHasBeenSet)
   {
    payload.WithString("trainedModelArn", m_trainedModelArn);
+
+  }
+
+  if(m_trainedModelVersionIdentifierHasBeenSet)
+  {
+   payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
 
   }
 

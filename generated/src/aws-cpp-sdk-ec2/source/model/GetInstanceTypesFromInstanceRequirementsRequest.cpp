@@ -56,6 +56,11 @@ Aws::String GetInstanceTypesFromInstanceRequirementsRequest::SerializePayload() 
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -53,6 +53,7 @@
 #include <aws/cleanroomsml/model/ListMLInputChannelsResult.h>
 #include <aws/cleanroomsml/model/ListTagsForResourceResult.h>
 #include <aws/cleanroomsml/model/ListTrainedModelInferenceJobsResult.h>
+#include <aws/cleanroomsml/model/ListTrainedModelVersionsResult.h>
 #include <aws/cleanroomsml/model/ListTrainedModelsResult.h>
 #include <aws/cleanroomsml/model/ListTrainingDatasetsResult.h>
 #include <aws/cleanroomsml/model/PutConfiguredAudienceModelPolicyResult.h>
@@ -155,6 +156,7 @@ namespace Aws
       class ListMLInputChannelsRequest;
       class ListTagsForResourceRequest;
       class ListTrainedModelInferenceJobsRequest;
+      class ListTrainedModelVersionsRequest;
       class ListTrainedModelsRequest;
       class ListTrainingDatasetsRequest;
       class PutConfiguredAudienceModelPolicyRequest;
@@ -216,6 +218,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMLInputChannelsResult, CleanRoomsMLError> ListMLInputChannelsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CleanRoomsMLError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTrainedModelInferenceJobsResult, CleanRoomsMLError> ListTrainedModelInferenceJobsOutcome;
+      typedef Aws::Utils::Outcome<ListTrainedModelVersionsResult, CleanRoomsMLError> ListTrainedModelVersionsOutcome;
       typedef Aws::Utils::Outcome<ListTrainedModelsResult, CleanRoomsMLError> ListTrainedModelsOutcome;
       typedef Aws::Utils::Outcome<ListTrainingDatasetsResult, CleanRoomsMLError> ListTrainingDatasetsOutcome;
       typedef Aws::Utils::Outcome<PutConfiguredAudienceModelPolicyResult, CleanRoomsMLError> PutConfiguredAudienceModelPolicyOutcome;
@@ -277,6 +280,7 @@ namespace Aws
       typedef std::future<ListMLInputChannelsOutcome> ListMLInputChannelsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTrainedModelInferenceJobsOutcome> ListTrainedModelInferenceJobsOutcomeCallable;
+      typedef std::future<ListTrainedModelVersionsOutcome> ListTrainedModelVersionsOutcomeCallable;
       typedef std::future<ListTrainedModelsOutcome> ListTrainedModelsOutcomeCallable;
       typedef std::future<ListTrainingDatasetsOutcome> ListTrainingDatasetsOutcomeCallable;
       typedef std::future<PutConfiguredAudienceModelPolicyOutcome> PutConfiguredAudienceModelPolicyOutcomeCallable;
@@ -341,6 +345,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsMLClient*, const Model::ListMLInputChannelsRequest&, const Model::ListMLInputChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMLInputChannelsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsMLClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsMLClient*, const Model::ListTrainedModelInferenceJobsRequest&, const Model::ListTrainedModelInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainedModelInferenceJobsResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsMLClient*, const Model::ListTrainedModelVersionsRequest&, const Model::ListTrainedModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainedModelVersionsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsMLClient*, const Model::ListTrainedModelsRequest&, const Model::ListTrainedModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainedModelsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsMLClient*, const Model::ListTrainingDatasetsRequest&, const Model::ListTrainingDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainingDatasetsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsMLClient*, const Model::PutConfiguredAudienceModelPolicyRequest&, const Model::PutConfiguredAudienceModelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfiguredAudienceModelPolicyResponseReceivedHandler;

@@ -6,15 +6,17 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/TrainedModelStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/cleanroomsml/model/ResourceConfig.h>
+#include <aws/cleanroomsml/model/TrainingInputMode.h>
 #include <aws/cleanroomsml/model/StoppingCondition.h>
 #include <aws/cleanroomsml/model/MetricsStatus.h>
 #include <aws/cleanroomsml/model/LogsStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanroomsml/model/IncrementalTrainingDataChannelOutput.h>
 #include <aws/cleanroomsml/model/ModelTrainingDataChannel.h>
 #include <utility>
 
@@ -78,6 +80,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version identifier of the trained model. This unique identifier
+     * distinguishes this version from other versions of the same trained model.</p>
+     */
+    inline const Aws::String& GetVersionIdentifier() const { return m_versionIdentifier; }
+    template<typename VersionIdentifierT = Aws::String>
+    void SetVersionIdentifier(VersionIdentifierT&& value) { m_versionIdentifierHasBeenSet = true; m_versionIdentifier = std::forward<VersionIdentifierT>(value); }
+    template<typename VersionIdentifierT = Aws::String>
+    GetTrainedModelResult& WithVersionIdentifier(VersionIdentifierT&& value) { SetVersionIdentifier(std::forward<VersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the incremental training data channels used to create this
+     * version of the trained model. This includes details about the base model that
+     * was used for incremental training and the channel configuration.</p>
+     */
+    inline const Aws::Vector<IncrementalTrainingDataChannelOutput>& GetIncrementalTrainingDataChannels() const { return m_incrementalTrainingDataChannels; }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannelOutput>>
+    void SetIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels = std::forward<IncrementalTrainingDataChannelsT>(value); }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannelOutput>>
+    GetTrainedModelResult& WithIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { SetIncrementalTrainingDataChannels(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this;}
+    template<typename IncrementalTrainingDataChannelsT = IncrementalTrainingDataChannelOutput>
+    GetTrainedModelResult& AddIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels.emplace_back(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the trained model.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -137,6 +166,17 @@ namespace Model
     void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
     template<typename ResourceConfigT = ResourceConfig>
     GetTrainedModelResult& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The input mode that was used for accessing the training data when this
+     * trained model was created. This indicates how the training data was made
+     * available to the training algorithm.</p>
+     */
+    inline TrainingInputMode GetTrainingInputMode() const { return m_trainingInputMode; }
+    inline void SetTrainingInputMode(TrainingInputMode value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
+    inline GetTrainedModelResult& WithTrainingInputMode(TrainingInputMode value) { SetTrainingInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -329,6 +369,12 @@ namespace Model
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
 
+    Aws::String m_versionIdentifier;
+    bool m_versionIdentifierHasBeenSet = false;
+
+    Aws::Vector<IncrementalTrainingDataChannelOutput> m_incrementalTrainingDataChannels;
+    bool m_incrementalTrainingDataChannelsHasBeenSet = false;
+
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
@@ -346,6 +392,9 @@ namespace Model
 
     ResourceConfig m_resourceConfig;
     bool m_resourceConfigHasBeenSet = false;
+
+    TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
+    bool m_trainingInputModeHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet = false;

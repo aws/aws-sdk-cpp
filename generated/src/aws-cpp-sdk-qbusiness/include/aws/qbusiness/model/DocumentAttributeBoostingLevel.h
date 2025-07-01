@@ -20,7 +20,9 @@ namespace Model
     LOW,
     MEDIUM,
     HIGH,
-    VERY_HIGH
+    VERY_HIGH,
+    ONE,
+    TWO
   };
 
 namespace DocumentAttributeBoostingLevelMapper

@@ -116,6 +116,18 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     GetInstanceTypesFromInstanceRequirementsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const { return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    GetInstanceTypesFromInstanceRequirementsRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    ///@}
   private:
 
     bool m_dryRun{false};
@@ -135,6 +147,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

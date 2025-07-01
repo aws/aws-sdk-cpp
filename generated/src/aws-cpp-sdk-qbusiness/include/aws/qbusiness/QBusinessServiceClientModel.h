@@ -26,6 +26,7 @@
 #include <aws/qbusiness/model/CheckDocumentAccessResult.h>
 #include <aws/qbusiness/model/CreateAnonymousWebExperienceUrlResult.h>
 #include <aws/qbusiness/model/CreateApplicationResult.h>
+#include <aws/qbusiness/model/CreateChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/CreateDataAccessorResult.h>
 #include <aws/qbusiness/model/CreateDataSourceResult.h>
 #include <aws/qbusiness/model/CreateIndexResult.h>
@@ -37,6 +38,7 @@
 #include <aws/qbusiness/model/DeleteApplicationResult.h>
 #include <aws/qbusiness/model/DeleteAttachmentResult.h>
 #include <aws/qbusiness/model/DeleteChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/DeleteChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/DeleteConversationResult.h>
 #include <aws/qbusiness/model/DeleteDataAccessorResult.h>
 #include <aws/qbusiness/model/DeleteDataSourceResult.h>
@@ -49,6 +51,7 @@
 #include <aws/qbusiness/model/DisassociatePermissionResult.h>
 #include <aws/qbusiness/model/GetApplicationResult.h>
 #include <aws/qbusiness/model/GetChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/GetChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/GetDataAccessorResult.h>
 #include <aws/qbusiness/model/GetDataSourceResult.h>
 #include <aws/qbusiness/model/GetGroupResult.h>
@@ -61,6 +64,7 @@
 #include <aws/qbusiness/model/GetWebExperienceResult.h>
 #include <aws/qbusiness/model/ListApplicationsResult.h>
 #include <aws/qbusiness/model/ListAttachmentsResult.h>
+#include <aws/qbusiness/model/ListChatResponseConfigurationsResult.h>
 #include <aws/qbusiness/model/ListConversationsResult.h>
 #include <aws/qbusiness/model/ListDataAccessorsResult.h>
 #include <aws/qbusiness/model/ListDataSourceSyncJobsResult.h>
@@ -85,6 +89,7 @@
 #include <aws/qbusiness/model/UntagResourceResult.h>
 #include <aws/qbusiness/model/UpdateApplicationResult.h>
 #include <aws/qbusiness/model/UpdateChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/UpdateChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/UpdateDataAccessorResult.h>
 #include <aws/qbusiness/model/UpdateDataSourceResult.h>
 #include <aws/qbusiness/model/UpdateIndexResult.h>
@@ -151,6 +156,7 @@ namespace Aws
       class CheckDocumentAccessRequest;
       class CreateAnonymousWebExperienceUrlRequest;
       class CreateApplicationRequest;
+      class CreateChatResponseConfigurationRequest;
       class CreateDataAccessorRequest;
       class CreateDataSourceRequest;
       class CreateIndexRequest;
@@ -162,6 +168,7 @@ namespace Aws
       class DeleteApplicationRequest;
       class DeleteAttachmentRequest;
       class DeleteChatControlsConfigurationRequest;
+      class DeleteChatResponseConfigurationRequest;
       class DeleteConversationRequest;
       class DeleteDataAccessorRequest;
       class DeleteDataSourceRequest;
@@ -174,6 +181,7 @@ namespace Aws
       class DisassociatePermissionRequest;
       class GetApplicationRequest;
       class GetChatControlsConfigurationRequest;
+      class GetChatResponseConfigurationRequest;
       class GetDataAccessorRequest;
       class GetDataSourceRequest;
       class GetGroupRequest;
@@ -186,6 +194,7 @@ namespace Aws
       class GetWebExperienceRequest;
       class ListApplicationsRequest;
       class ListAttachmentsRequest;
+      class ListChatResponseConfigurationsRequest;
       class ListConversationsRequest;
       class ListDataAccessorsRequest;
       class ListDataSourceSyncJobsRequest;
@@ -211,6 +220,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateApplicationRequest;
       class UpdateChatControlsConfigurationRequest;
+      class UpdateChatResponseConfigurationRequest;
       class UpdateDataAccessorRequest;
       class UpdateDataSourceRequest;
       class UpdateIndexRequest;
@@ -231,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CheckDocumentAccessResult, QBusinessError> CheckDocumentAccessOutcome;
       typedef Aws::Utils::Outcome<CreateAnonymousWebExperienceUrlResult, QBusinessError> CreateAnonymousWebExperienceUrlOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, QBusinessError> CreateApplicationOutcome;
+      typedef Aws::Utils::Outcome<CreateChatResponseConfigurationResult, QBusinessError> CreateChatResponseConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateDataAccessorResult, QBusinessError> CreateDataAccessorOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, QBusinessError> CreateDataSourceOutcome;
       typedef Aws::Utils::Outcome<CreateIndexResult, QBusinessError> CreateIndexOutcome;
@@ -242,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteApplicationResult, QBusinessError> DeleteApplicationOutcome;
       typedef Aws::Utils::Outcome<DeleteAttachmentResult, QBusinessError> DeleteAttachmentOutcome;
       typedef Aws::Utils::Outcome<DeleteChatControlsConfigurationResult, QBusinessError> DeleteChatControlsConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DeleteChatResponseConfigurationResult, QBusinessError> DeleteChatResponseConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteConversationResult, QBusinessError> DeleteConversationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataAccessorResult, QBusinessError> DeleteDataAccessorOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSourceResult, QBusinessError> DeleteDataSourceOutcome;
@@ -254,6 +266,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociatePermissionResult, QBusinessError> DisassociatePermissionOutcome;
       typedef Aws::Utils::Outcome<GetApplicationResult, QBusinessError> GetApplicationOutcome;
       typedef Aws::Utils::Outcome<GetChatControlsConfigurationResult, QBusinessError> GetChatControlsConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetChatResponseConfigurationResult, QBusinessError> GetChatResponseConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDataAccessorResult, QBusinessError> GetDataAccessorOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceResult, QBusinessError> GetDataSourceOutcome;
       typedef Aws::Utils::Outcome<GetGroupResult, QBusinessError> GetGroupOutcome;
@@ -266,6 +279,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWebExperienceResult, QBusinessError> GetWebExperienceOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, QBusinessError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListAttachmentsResult, QBusinessError> ListAttachmentsOutcome;
+      typedef Aws::Utils::Outcome<ListChatResponseConfigurationsResult, QBusinessError> ListChatResponseConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListConversationsResult, QBusinessError> ListConversationsOutcome;
       typedef Aws::Utils::Outcome<ListDataAccessorsResult, QBusinessError> ListDataAccessorsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceSyncJobsResult, QBusinessError> ListDataSourceSyncJobsOutcome;
@@ -291,6 +305,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, QBusinessError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationResult, QBusinessError> UpdateApplicationOutcome;
       typedef Aws::Utils::Outcome<UpdateChatControlsConfigurationResult, QBusinessError> UpdateChatControlsConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateChatResponseConfigurationResult, QBusinessError> UpdateChatResponseConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateDataAccessorResult, QBusinessError> UpdateDataAccessorOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSourceResult, QBusinessError> UpdateDataSourceOutcome;
       typedef Aws::Utils::Outcome<UpdateIndexResult, QBusinessError> UpdateIndexOutcome;
@@ -311,6 +326,7 @@ namespace Aws
       typedef std::future<CheckDocumentAccessOutcome> CheckDocumentAccessOutcomeCallable;
       typedef std::future<CreateAnonymousWebExperienceUrlOutcome> CreateAnonymousWebExperienceUrlOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+      typedef std::future<CreateChatResponseConfigurationOutcome> CreateChatResponseConfigurationOutcomeCallable;
       typedef std::future<CreateDataAccessorOutcome> CreateDataAccessorOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
       typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
@@ -322,6 +338,7 @@ namespace Aws
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
       typedef std::future<DeleteAttachmentOutcome> DeleteAttachmentOutcomeCallable;
       typedef std::future<DeleteChatControlsConfigurationOutcome> DeleteChatControlsConfigurationOutcomeCallable;
+      typedef std::future<DeleteChatResponseConfigurationOutcome> DeleteChatResponseConfigurationOutcomeCallable;
       typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
       typedef std::future<DeleteDataAccessorOutcome> DeleteDataAccessorOutcomeCallable;
       typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
@@ -334,6 +351,7 @@ namespace Aws
       typedef std::future<DisassociatePermissionOutcome> DisassociatePermissionOutcomeCallable;
       typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
       typedef std::future<GetChatControlsConfigurationOutcome> GetChatControlsConfigurationOutcomeCallable;
+      typedef std::future<GetChatResponseConfigurationOutcome> GetChatResponseConfigurationOutcomeCallable;
       typedef std::future<GetDataAccessorOutcome> GetDataAccessorOutcomeCallable;
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
       typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
@@ -346,6 +364,7 @@ namespace Aws
       typedef std::future<GetWebExperienceOutcome> GetWebExperienceOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListAttachmentsOutcome> ListAttachmentsOutcomeCallable;
+      typedef std::future<ListChatResponseConfigurationsOutcome> ListChatResponseConfigurationsOutcomeCallable;
       typedef std::future<ListConversationsOutcome> ListConversationsOutcomeCallable;
       typedef std::future<ListDataAccessorsOutcome> ListDataAccessorsOutcomeCallable;
       typedef std::future<ListDataSourceSyncJobsOutcome> ListDataSourceSyncJobsOutcomeCallable;
@@ -371,6 +390,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
       typedef std::future<UpdateChatControlsConfigurationOutcome> UpdateChatControlsConfigurationOutcomeCallable;
+      typedef std::future<UpdateChatResponseConfigurationOutcome> UpdateChatResponseConfigurationOutcomeCallable;
       typedef std::future<UpdateDataAccessorOutcome> UpdateDataAccessorOutcomeCallable;
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
       typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
@@ -395,6 +415,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::CheckDocumentAccessRequest&, const Model::CheckDocumentAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDocumentAccessResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateAnonymousWebExperienceUrlRequest&, const Model::CreateAnonymousWebExperienceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnonymousWebExperienceUrlResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::CreateChatResponseConfigurationRequest&, const Model::CreateChatResponseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChatResponseConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateDataAccessorRequest&, const Model::CreateDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
@@ -406,6 +427,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteAttachmentRequest&, const Model::DeleteAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttachmentResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteChatControlsConfigurationRequest&, const Model::DeleteChatControlsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChatControlsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::DeleteChatResponseConfigurationRequest&, const Model::DeleteChatResponseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChatResponseConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteConversationRequest&, const Model::DeleteConversationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConversationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteDataAccessorRequest&, const Model::DeleteDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
@@ -418,6 +440,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::DisassociatePermissionRequest&, const Model::DisassociatePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePermissionResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetChatControlsConfigurationRequest&, const Model::GetChatControlsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChatControlsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::GetChatResponseConfigurationRequest&, const Model::GetChatResponseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChatResponseConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetDataAccessorRequest&, const Model::GetDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
@@ -430,6 +453,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::GetWebExperienceRequest&, const Model::GetWebExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebExperienceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListAttachmentsRequest&, const Model::ListAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttachmentsResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::ListChatResponseConfigurationsRequest&, const Model::ListChatResponseConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChatResponseConfigurationsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListConversationsRequest&, const Model::ListConversationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConversationsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListDataAccessorsRequest&, const Model::ListDataAccessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataAccessorsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListDataSourceSyncJobsRequest&, const Model::ListDataSourceSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceSyncJobsResponseReceivedHandler;
@@ -455,6 +479,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateChatControlsConfigurationRequest&, const Model::UpdateChatControlsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChatControlsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::UpdateChatResponseConfigurationRequest&, const Model::UpdateChatResponseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChatResponseConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateDataAccessorRequest&, const Model::UpdateDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;

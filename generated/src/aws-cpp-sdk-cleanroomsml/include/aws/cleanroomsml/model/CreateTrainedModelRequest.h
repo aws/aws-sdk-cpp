@@ -11,6 +11,8 @@
 #include <aws/cleanroomsml/model/ResourceConfig.h>
 #include <aws/cleanroomsml/model/StoppingCondition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanroomsml/model/TrainingInputMode.h>
+#include <aws/cleanroomsml/model/IncrementalTrainingDataChannel.h>
 #include <aws/cleanroomsml/model/ModelTrainingDataChannel.h>
 #include <utility>
 
@@ -132,8 +134,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the incremental training data channels for the trained model. </p>
+     * <p>Incremental training allows you to create a new trained model with updates
+     * without retraining from scratch. You can specify up to one incremental training
+     * data channel that references a previously trained model and its version.</p>
+     * <p>Limit: Maximum of 20 channels total (including both
+     * <code>incrementalTrainingDataChannels</code> and <code>dataChannels</code>).</p>
+     */
+    inline const Aws::Vector<IncrementalTrainingDataChannel>& GetIncrementalTrainingDataChannels() const { return m_incrementalTrainingDataChannels; }
+    inline bool IncrementalTrainingDataChannelsHasBeenSet() const { return m_incrementalTrainingDataChannelsHasBeenSet; }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannel>>
+    void SetIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels = std::forward<IncrementalTrainingDataChannelsT>(value); }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannel>>
+    CreateTrainedModelRequest& WithIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { SetIncrementalTrainingDataChannels(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this;}
+    template<typename IncrementalTrainingDataChannelsT = IncrementalTrainingDataChannel>
+    CreateTrainedModelRequest& AddIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels.emplace_back(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Defines the data channels that are used as input for the trained model
-     * request.</p>
+     * request.</p> <p>Limit: Maximum of 20 channels total (including both
+     * <code>dataChannels</code> and <code>incrementalTrainingDataChannels</code>).</p>
      */
     inline const Aws::Vector<ModelTrainingDataChannel>& GetDataChannels() const { return m_dataChannels; }
     inline bool DataChannelsHasBeenSet() const { return m_dataChannelsHasBeenSet; }
@@ -143,6 +165,24 @@ namespace Model
     CreateTrainedModelRequest& WithDataChannels(DataChannelsT&& value) { SetDataChannels(std::forward<DataChannelsT>(value)); return *this;}
     template<typename DataChannelsT = ModelTrainingDataChannel>
     CreateTrainedModelRequest& AddDataChannels(DataChannelsT&& value) { m_dataChannelsHasBeenSet = true; m_dataChannels.emplace_back(std::forward<DataChannelsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The input mode for accessing the training data. This parameter determines how
+     * the training data is made available to the training algorithm. Valid values
+     * are:</p> <ul> <li> <p> <code>File</code> - The training data is downloaded to
+     * the training instance and made available as files.</p> </li> <li> <p>
+     * <code>FastFile</code> - The training data is streamed directly from Amazon S3 to
+     * the training algorithm, providing faster access for large datasets.</p> </li>
+     * <li> <p> <code>Pipe</code> - The training data is streamed to the training
+     * algorithm using named pipes, which can improve performance for certain
+     * algorithms.</p> </li> </ul>
+     */
+    inline TrainingInputMode GetTrainingInputMode() const { return m_trainingInputMode; }
+    inline bool TrainingInputModeHasBeenSet() const { return m_trainingInputModeHasBeenSet; }
+    inline void SetTrainingInputMode(TrainingInputMode value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
+    inline CreateTrainedModelRequest& WithTrainingInputMode(TrainingInputMode value) { SetTrainingInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -226,8 +266,14 @@ namespace Model
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet = false;
 
+    Aws::Vector<IncrementalTrainingDataChannel> m_incrementalTrainingDataChannels;
+    bool m_incrementalTrainingDataChannelsHasBeenSet = false;
+
     Aws::Vector<ModelTrainingDataChannel> m_dataChannels;
     bool m_dataChannelsHasBeenSet = false;
+
+    TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
+    bool m_trainingInputModeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

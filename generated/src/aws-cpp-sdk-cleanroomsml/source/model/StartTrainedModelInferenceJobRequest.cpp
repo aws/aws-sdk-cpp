@@ -28,6 +28,12 @@ Aws::String StartTrainedModelInferenceJobRequest::SerializePayload() const
 
   }
 
+  if(m_trainedModelVersionIdentifierHasBeenSet)
+  {
+   payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
+
+  }
+
   if(m_configuredModelAlgorithmAssociationArnHasBeenSet)
   {
    payload.WithString("configuredModelAlgorithmAssociationArn", m_configuredModelAlgorithmAssociationArn);

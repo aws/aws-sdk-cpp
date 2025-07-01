@@ -100,6 +100,8 @@
 #include <aws/cleanroomsml/model/GetTrainingDatasetRequest.h>
 #include <aws/cleanroomsml/model/GetTrainingDatasetResult.h>
 #include <aws/cleanroomsml/model/GlueDataSource.h>
+#include <aws/cleanroomsml/model/IncrementalTrainingDataChannel.h>
+#include <aws/cleanroomsml/model/IncrementalTrainingDataChannelOutput.h>
 #include <aws/cleanroomsml/model/InferenceContainerConfig.h>
 #include <aws/cleanroomsml/model/InferenceContainerExecutionParameters.h>
 #include <aws/cleanroomsml/model/InferenceInstanceType.h>
@@ -137,6 +139,8 @@
 #include <aws/cleanroomsml/model/ListTagsForResourceResult.h>
 #include <aws/cleanroomsml/model/ListTrainedModelInferenceJobsRequest.h>
 #include <aws/cleanroomsml/model/ListTrainedModelInferenceJobsResult.h>
+#include <aws/cleanroomsml/model/ListTrainedModelVersionsRequest.h>
+#include <aws/cleanroomsml/model/ListTrainedModelVersionsResult.h>
 #include <aws/cleanroomsml/model/ListTrainedModelsRequest.h>
 #include <aws/cleanroomsml/model/ListTrainedModelsResult.h>
 #include <aws/cleanroomsml/model/ListTrainingDatasetsRequest.h>
@@ -163,6 +167,8 @@
 #include <aws/cleanroomsml/model/RelevanceMetric.h>
 #include <aws/cleanroomsml/model/ResourceConfig.h>
 #include <aws/cleanroomsml/model/S3ConfigMap.h>
+#include <aws/cleanroomsml/model/S3DataDistributionType.h>
+#include <aws/cleanroomsml/model/ServiceQuotaExceededException.h>
 #include <aws/cleanroomsml/model/SharedAudienceMetrics.h>
 #include <aws/cleanroomsml/model/StartAudienceExportJobRequest.h>
 #include <aws/cleanroomsml/model/StartAudienceGenerationJobRequest.h>
@@ -175,6 +181,8 @@
 #include <aws/cleanroomsml/model/TagOnCreatePolicy.h>
 #include <aws/cleanroomsml/model/TagResourceRequest.h>
 #include <aws/cleanroomsml/model/TagResourceResult.h>
+#include <aws/cleanroomsml/model/TrainedModelArtifactMaxSize.h>
+#include <aws/cleanroomsml/model/TrainedModelArtifactMaxSizeUnitType.h>
 #include <aws/cleanroomsml/model/TrainedModelExportFileType.h>
 #include <aws/cleanroomsml/model/TrainedModelExportJobStatus.h>
 #include <aws/cleanroomsml/model/TrainedModelExportOutputConfiguration.h>
@@ -192,6 +200,7 @@
 #include <aws/cleanroomsml/model/TrainedModelsConfigurationPolicy.h>
 #include <aws/cleanroomsml/model/TrainingDatasetStatus.h>
 #include <aws/cleanroomsml/model/TrainingDatasetSummary.h>
+#include <aws/cleanroomsml/model/TrainingInputMode.h>
 #include <aws/cleanroomsml/model/UntagResourceRequest.h>
 #include <aws/cleanroomsml/model/UntagResourceResult.h>
 #include <aws/cleanroomsml/model/UpdateConfiguredAudienceModelRequest.h>

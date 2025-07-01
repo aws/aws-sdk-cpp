@@ -62,6 +62,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the domain unit.</p>
+     */
+    inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+    inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
+    template<typename DomainUnitIdT = Aws::String>
+    void SetDomainUnitId(DomainUnitIdT&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::forward<DomainUnitIdT>(value); }
+    template<typename DomainUnitIdT = Aws::String>
+    UpdateProjectRequest& WithDomainUnitId(DomainUnitIdT&& value) { SetDomainUnitId(std::forward<DomainUnitIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The environment deployment details of the project.</p>
      */
     inline const EnvironmentDeploymentDetails& GetEnvironmentDeploymentDetails() const { return m_environmentDeploymentDetails; }
@@ -144,6 +156,9 @@ namespace Model
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
+
+    Aws::String m_domainUnitId;
+    bool m_domainUnitIdHasBeenSet = false;
 
     EnvironmentDeploymentDetails m_environmentDeploymentDetails;
     bool m_environmentDeploymentDetailsHasBeenSet = false;

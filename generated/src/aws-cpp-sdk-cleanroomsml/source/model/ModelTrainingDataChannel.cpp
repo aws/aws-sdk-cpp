@@ -35,6 +35,11 @@ ModelTrainingDataChannel& ModelTrainingDataChannel::operator =(JsonView jsonValu
     m_channelName = jsonValue.GetString("channelName");
     m_channelNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("s3DataDistributionType"))
+  {
+    m_s3DataDistributionType = S3DataDistributionTypeMapper::GetS3DataDistributionTypeForName(jsonValue.GetString("s3DataDistributionType"));
+    m_s3DataDistributionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +57,11 @@ JsonValue ModelTrainingDataChannel::Jsonize() const
   {
    payload.WithString("channelName", m_channelName);
 
+  }
+
+  if(m_s3DataDistributionTypeHasBeenSet)
+  {
+   payload.WithString("s3DataDistributionType", S3DataDistributionTypeMapper::GetNameForS3DataDistributionType(m_s3DataDistributionType));
   }
 
   return payload;

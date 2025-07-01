@@ -45,6 +45,20 @@ CollaborationTrainedModelSummary& CollaborationTrainedModelSummary::operator =(J
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("versionIdentifier"))
+  {
+    m_versionIdentifier = jsonValue.GetString("versionIdentifier");
+    m_versionIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("incrementalTrainingDataChannels"))
+  {
+    Aws::Utils::Array<JsonView> incrementalTrainingDataChannelsJsonList = jsonValue.GetArray("incrementalTrainingDataChannels");
+    for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+    {
+      m_incrementalTrainingDataChannels.push_back(incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject());
+    }
+    m_incrementalTrainingDataChannelsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -101,6 +115,23 @@ JsonValue CollaborationTrainedModelSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_versionIdentifierHasBeenSet)
+  {
+   payload.WithString("versionIdentifier", m_versionIdentifier);
+
+  }
+
+  if(m_incrementalTrainingDataChannelsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> incrementalTrainingDataChannelsJsonList(m_incrementalTrainingDataChannels.size());
+   for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+   {
+     incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject(m_incrementalTrainingDataChannels[incrementalTrainingDataChannelsIndex].Jsonize());
+   }
+   payload.WithArray("incrementalTrainingDataChannels", std::move(incrementalTrainingDataChannelsJsonList));
 
   }
 

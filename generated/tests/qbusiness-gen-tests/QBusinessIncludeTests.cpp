@@ -76,6 +76,9 @@
 #include <aws/qbusiness/model/ChatModeConfiguration.h>
 #include <aws/qbusiness/model/ChatOutputStream.h>
 #include <aws/qbusiness/model/ChatRequest.h>
+#include <aws/qbusiness/model/ChatResponseConfiguration.h>
+#include <aws/qbusiness/model/ChatResponseConfigurationDetail.h>
+#include <aws/qbusiness/model/ChatResponseConfigurationStatus.h>
 #include <aws/qbusiness/model/ChatSyncRequest.h>
 #include <aws/qbusiness/model/ChatSyncResult.h>
 #include <aws/qbusiness/model/CheckDocumentAccessRequest.h>
@@ -93,6 +96,8 @@
 #include <aws/qbusiness/model/CreateAnonymousWebExperienceUrlResult.h>
 #include <aws/qbusiness/model/CreateApplicationRequest.h>
 #include <aws/qbusiness/model/CreateApplicationResult.h>
+#include <aws/qbusiness/model/CreateChatResponseConfigurationRequest.h>
+#include <aws/qbusiness/model/CreateChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/CreateDataAccessorRequest.h>
 #include <aws/qbusiness/model/CreateDataAccessorResult.h>
 #include <aws/qbusiness/model/CreateDataSourceRequest.h>
@@ -131,6 +136,8 @@
 #include <aws/qbusiness/model/DeleteAttachmentResult.h>
 #include <aws/qbusiness/model/DeleteChatControlsConfigurationRequest.h>
 #include <aws/qbusiness/model/DeleteChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/DeleteChatResponseConfigurationRequest.h>
+#include <aws/qbusiness/model/DeleteChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/DeleteConversationRequest.h>
 #include <aws/qbusiness/model/DeleteConversationResult.h>
 #include <aws/qbusiness/model/DeleteDataAccessorRequest.h>
@@ -182,6 +189,8 @@
 #include <aws/qbusiness/model/GetApplicationResult.h>
 #include <aws/qbusiness/model/GetChatControlsConfigurationRequest.h>
 #include <aws/qbusiness/model/GetChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/GetChatResponseConfigurationRequest.h>
+#include <aws/qbusiness/model/GetChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/GetDataAccessorRequest.h>
 #include <aws/qbusiness/model/GetDataAccessorResult.h>
 #include <aws/qbusiness/model/GetDataSourceRequest.h>
@@ -221,11 +230,14 @@
 #include <aws/qbusiness/model/IndexStatus.h>
 #include <aws/qbusiness/model/IndexType.h>
 #include <aws/qbusiness/model/InlineDocumentEnrichmentConfiguration.h>
+#include <aws/qbusiness/model/InstructionCollection.h>
 #include <aws/qbusiness/model/KendraIndexConfiguration.h>
 #include <aws/qbusiness/model/ListApplicationsRequest.h>
 #include <aws/qbusiness/model/ListApplicationsResult.h>
 #include <aws/qbusiness/model/ListAttachmentsRequest.h>
 #include <aws/qbusiness/model/ListAttachmentsResult.h>
+#include <aws/qbusiness/model/ListChatResponseConfigurationsRequest.h>
+#include <aws/qbusiness/model/ListChatResponseConfigurationsResult.h>
 #include <aws/qbusiness/model/ListConversationsRequest.h>
 #include <aws/qbusiness/model/ListConversationsResult.h>
 #include <aws/qbusiness/model/ListDataAccessorsRequest.h>
@@ -301,6 +313,8 @@
 #include <aws/qbusiness/model/ReadAccessType.h>
 #include <aws/qbusiness/model/RelevantContent.h>
 #include <aws/qbusiness/model/ResourceNotFoundException.h>
+#include <aws/qbusiness/model/ResponseConfiguration.h>
+#include <aws/qbusiness/model/ResponseConfigurationType.h>
 #include <aws/qbusiness/model/ResponseScope.h>
 #include <aws/qbusiness/model/Retriever.h>
 #include <aws/qbusiness/model/RetrieverConfiguration.h>
@@ -348,6 +362,8 @@
 #include <aws/qbusiness/model/UpdateApplicationResult.h>
 #include <aws/qbusiness/model/UpdateChatControlsConfigurationRequest.h>
 #include <aws/qbusiness/model/UpdateChatControlsConfigurationResult.h>
+#include <aws/qbusiness/model/UpdateChatResponseConfigurationRequest.h>
+#include <aws/qbusiness/model/UpdateChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/UpdateDataAccessorRequest.h>
 #include <aws/qbusiness/model/UpdateDataAccessorResult.h>
 #include <aws/qbusiness/model/UpdateDataSourceRequest.h>
