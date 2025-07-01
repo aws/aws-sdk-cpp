@@ -33,7 +33,7 @@ else
   COMMIT_ID="unknown"
 fi
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/:${PREFIX_DIR}/al2-build/lib:/lib64:/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-build/lib:${PREFIX_DIR}/al2-build/tests/testing-resources:/lib64:/lib:/usr/lib64:/usr/lib"
 cd "${PREFIX_DIR}/al2-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
 
