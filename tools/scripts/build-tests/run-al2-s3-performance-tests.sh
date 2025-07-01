@@ -26,10 +26,6 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
-cd "${PREFIX_DIR}/al2-build"
-if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-
 SDK_REPO_PATH="${PREFIX_DIR}/aws-sdk-cpp"
 if [ -d "$SDK_REPO_PATH" ]; then
   cd "$SDK_REPO_PATH"
@@ -38,6 +34,9 @@ if [ -d "$SDK_REPO_PATH" ]; then
 else
   COMMIT_ID="unknown"
 fi
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
 
 ./s3-performance-test --region "$REGION" --az-id "$AZ_ID" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
 cat s3-performance-test-results.json
