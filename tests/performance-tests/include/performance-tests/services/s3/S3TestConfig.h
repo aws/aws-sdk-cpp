@@ -13,7 +13,7 @@ namespace PerformanceTest {
 namespace Services {
 namespace S3 {
 namespace TestConfig {
-const Aws::Set<Aws::String> Operations = {"PutObject", "GetObject"};
+const Aws::Set<Aws::String> TestOperations = {"PutObject", "GetObject"};
 
 const Aws::Vector<TestCase> TestMatrix = {{"8KB", 8 * 1024, "s3-standard"},    {"64KB", 64 * 1024, "s3-standard"},
                                           {"1MB", 1024 * 1024, "s3-standard"}, {"8KB", 8 * 1024, "s3-express"},

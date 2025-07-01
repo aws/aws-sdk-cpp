@@ -13,7 +13,7 @@ namespace PerformanceTest {
 namespace Services {
 namespace DynamoDB {
 namespace TestConfig {
-const Aws::Set<Aws::String> Operations = {"PutItem", "GetItem"};
+const Aws::Set<Aws::String> TestOperations = {"PutItem", "GetItem"};
 
 const Aws::Vector<TestCase> TestMatrix = {{"8KB", 8 * 1024}, {"64KB", 64 * 1024}, {"392KB", 392 * 1024}};
 

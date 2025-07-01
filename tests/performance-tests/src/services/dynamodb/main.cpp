@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
 
   options.monitoringOptions.customizedMonitoringFactory_create_fn = {[&]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
     return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>(
-        "JsonReportingMetricsFactory", PerformanceTest::Services::DynamoDB::TestConfig::Operations, "cpp1", versionStr, commitId,
+        "JsonReportingMetricsFactory", PerformanceTest::Services::DynamoDB::TestConfig::TestOperations, "cpp1", versionStr, commitId,
         PerformanceTest::Services::DynamoDB::TestConfig::OutputFilename);
   }};
 
