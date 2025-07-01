@@ -30,7 +30,7 @@ SDK_REPO_PATH="${PREFIX_DIR}/aws-sdk-cpp"
 if [ -d "$SDK_REPO_PATH" ]; then
   cd "$SDK_REPO_PATH"
   COMMIT_ID=$(git rev-parse HEAD)
-  cd -
+  cd - > /dev/null
 else
   COMMIT_ID="unknown"
 fi
