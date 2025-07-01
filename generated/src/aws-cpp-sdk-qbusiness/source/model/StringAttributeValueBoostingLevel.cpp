@@ -24,6 +24,11 @@ namespace Aws
         static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
         static const int VERY_HIGH_HASH = HashingUtils::HashString("VERY_HIGH");
+        static const int ONE_HASH = HashingUtils::HashString("ONE");
+        static const int TWO_HASH = HashingUtils::HashString("TWO");
+        static const int THREE_HASH = HashingUtils::HashString("THREE");
+        static const int FOUR_HASH = HashingUtils::HashString("FOUR");
+        static const int FIVE_HASH = HashingUtils::HashString("FIVE");
 
 
         StringAttributeValueBoostingLevel GetStringAttributeValueBoostingLevelForName(const Aws::String& name)
@@ -44,6 +49,26 @@ namespace Aws
           else if (hashCode == VERY_HIGH_HASH)
           {
             return StringAttributeValueBoostingLevel::VERY_HIGH;
+          }
+          else if (hashCode == ONE_HASH)
+          {
+            return StringAttributeValueBoostingLevel::ONE;
+          }
+          else if (hashCode == TWO_HASH)
+          {
+            return StringAttributeValueBoostingLevel::TWO;
+          }
+          else if (hashCode == THREE_HASH)
+          {
+            return StringAttributeValueBoostingLevel::THREE;
+          }
+          else if (hashCode == FOUR_HASH)
+          {
+            return StringAttributeValueBoostingLevel::FOUR;
+          }
+          else if (hashCode == FIVE_HASH)
+          {
+            return StringAttributeValueBoostingLevel::FIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +94,16 @@ namespace Aws
             return "HIGH";
           case StringAttributeValueBoostingLevel::VERY_HIGH:
             return "VERY_HIGH";
+          case StringAttributeValueBoostingLevel::ONE:
+            return "ONE";
+          case StringAttributeValueBoostingLevel::TWO:
+            return "TWO";
+          case StringAttributeValueBoostingLevel::THREE:
+            return "THREE";
+          case StringAttributeValueBoostingLevel::FOUR:
+            return "FOUR";
+          case StringAttributeValueBoostingLevel::FIVE:
+            return "FIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

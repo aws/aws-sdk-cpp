@@ -7,7 +7,9 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/TrainedModelStatus.h>
+#include <aws/cleanroomsml/model/IncrementalTrainingDataChannelOutput.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +88,33 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CollaborationTrainedModelSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version identifier of this trained model version.</p>
+     */
+    inline const Aws::String& GetVersionIdentifier() const { return m_versionIdentifier; }
+    inline bool VersionIdentifierHasBeenSet() const { return m_versionIdentifierHasBeenSet; }
+    template<typename VersionIdentifierT = Aws::String>
+    void SetVersionIdentifier(VersionIdentifierT&& value) { m_versionIdentifierHasBeenSet = true; m_versionIdentifier = std::forward<VersionIdentifierT>(value); }
+    template<typename VersionIdentifierT = Aws::String>
+    CollaborationTrainedModelSummary& WithVersionIdentifier(VersionIdentifierT&& value) { SetVersionIdentifier(std::forward<VersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the incremental training data channels used to create this
+     * version of the trained model.</p>
+     */
+    inline const Aws::Vector<IncrementalTrainingDataChannelOutput>& GetIncrementalTrainingDataChannels() const { return m_incrementalTrainingDataChannels; }
+    inline bool IncrementalTrainingDataChannelsHasBeenSet() const { return m_incrementalTrainingDataChannelsHasBeenSet; }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannelOutput>>
+    void SetIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels = std::forward<IncrementalTrainingDataChannelsT>(value); }
+    template<typename IncrementalTrainingDataChannelsT = Aws::Vector<IncrementalTrainingDataChannelOutput>>
+    CollaborationTrainedModelSummary& WithIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { SetIncrementalTrainingDataChannels(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this;}
+    template<typename IncrementalTrainingDataChannelsT = IncrementalTrainingDataChannelOutput>
+    CollaborationTrainedModelSummary& AddIncrementalTrainingDataChannels(IncrementalTrainingDataChannelsT&& value) { m_incrementalTrainingDataChannelsHasBeenSet = true; m_incrementalTrainingDataChannels.emplace_back(std::forward<IncrementalTrainingDataChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -172,6 +201,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_versionIdentifier;
+    bool m_versionIdentifierHasBeenSet = false;
+
+    Aws::Vector<IncrementalTrainingDataChannelOutput> m_incrementalTrainingDataChannels;
+    bool m_incrementalTrainingDataChannelsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

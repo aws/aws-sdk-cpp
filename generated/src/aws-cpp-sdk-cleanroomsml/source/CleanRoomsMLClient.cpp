@@ -68,6 +68,7 @@
 #include <aws/cleanroomsml/model/ListMLInputChannelsRequest.h>
 #include <aws/cleanroomsml/model/ListTagsForResourceRequest.h>
 #include <aws/cleanroomsml/model/ListTrainedModelInferenceJobsRequest.h>
+#include <aws/cleanroomsml/model/ListTrainedModelVersionsRequest.h>
 #include <aws/cleanroomsml/model/ListTrainedModelsRequest.h>
 #include <aws/cleanroomsml/model/ListTrainingDatasetsRequest.h>
 #include <aws/cleanroomsml/model/PutConfiguredAudienceModelPolicyRequest.h>
@@ -1819,6 +1820,47 @@ ListTrainedModelInferenceJobsOutcome CleanRoomsMLClient::ListTrainedModelInferen
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/trained-model-inference-jobs");
       return ListTrainedModelInferenceJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListTrainedModelVersionsOutcome CleanRoomsMLClient::ListTrainedModelVersions(const ListTrainedModelVersionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListTrainedModelVersions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrainedModelVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrainedModelVersions", "Required field: MembershipIdentifier, is not set");
+    return ListTrainedModelVersionsOutcome(Aws::Client::AWSError<CleanRoomsMLErrors>(CleanRoomsMLErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.TrainedModelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrainedModelVersions", "Required field: TrainedModelArn, is not set");
+    return ListTrainedModelVersionsOutcome(Aws::Client::AWSError<CleanRoomsMLErrors>(CleanRoomsMLErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrainedModelArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTrainedModelVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListTrainedModelVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTrainedModelVersions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListTrainedModelVersionsOutcome>(
+    [&]()-> ListTrainedModelVersionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrainedModelVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trained-models/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+      return ListTrainedModelVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

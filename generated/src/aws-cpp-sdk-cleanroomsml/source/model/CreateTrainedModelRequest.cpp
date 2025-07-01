@@ -62,6 +62,17 @@ Aws::String CreateTrainedModelRequest::SerializePayload() const
 
   }
 
+  if(m_incrementalTrainingDataChannelsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> incrementalTrainingDataChannelsJsonList(m_incrementalTrainingDataChannels.size());
+   for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+   {
+     incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject(m_incrementalTrainingDataChannels[incrementalTrainingDataChannelsIndex].Jsonize());
+   }
+   payload.WithArray("incrementalTrainingDataChannels", std::move(incrementalTrainingDataChannelsJsonList));
+
+  }
+
   if(m_dataChannelsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> dataChannelsJsonList(m_dataChannels.size());
@@ -71,6 +82,11 @@ Aws::String CreateTrainedModelRequest::SerializePayload() const
    }
    payload.WithArray("dataChannels", std::move(dataChannelsJsonList));
 
+  }
+
+  if(m_trainingInputModeHasBeenSet)
+  {
+   payload.WithString("trainingInputMode", TrainingInputModeMapper::GetNameForTrainingInputMode(m_trainingInputMode));
   }
 
   if(m_descriptionHasBeenSet)

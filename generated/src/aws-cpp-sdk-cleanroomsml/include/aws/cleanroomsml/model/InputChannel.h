@@ -53,10 +53,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data
-     * referred to in the <code>dataSource</code> field the input channel.</p>
-     * <p>Passing a role across AWS accounts is not allowed. If you pass a role that
-     * isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
+     * <p>The Amazon Resource Name (ARN) of the role used to run the query specified in
+     * the <code>dataSource</code> field of the input channel.</p> <p>Passing a role
+     * across AWS accounts is not allowed. If you pass a role that isn't in your
+     * account, you get an <code>AccessDeniedException</code> error.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

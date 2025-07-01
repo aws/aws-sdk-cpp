@@ -26,8 +26,12 @@ namespace Model
 
   /**
    * <p>Provides information on boosting <code>NUMBER</code> type document
-   * attributes.</p> <p>For more information on how boosting document attributes work
-   * in Amazon Q Business, see <a
+   * attributes.</p> <p>In the current boosting implementation, boosting focuses
+   * primarily on <code>DATE</code> attributes for recency and <code>STRING</code>
+   * attributes for source prioritization. <code>NUMBER</code> attributes can serve
+   * as additional boosting factors when needed, but are not supported when using
+   * <code>NativeIndexConfiguration</code> version 2.</p> <p>For more information on
+   * how boosting document attributes work in Amazon Q Business, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
    * using document attributes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/NumberAttributeBoostingConfiguration">AWS
@@ -44,8 +48,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the duration, in seconds, of a boost applies to a
-     * <code>NUMBER</code> type document attribute.</p>
+     * <p>Specifies the priority of boosted document attributes in relation to other
+     * boosted attributes. This parameter determines how strongly the attribute
+     * influences document ranking in search results. <code>NUMBER</code> attributes
+     * can serve as additional boosting factors when needed, but are not supported when
+     * using <code>NativeIndexConfiguration</code> version 2.</p>
      */
     inline DocumentAttributeBoostingLevel GetBoostingLevel() const { return m_boostingLevel; }
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
@@ -55,7 +62,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how much a document attribute is boosted.</p>
+     * <p>Specifies whether higher or lower numeric values should be prioritized when
+     * boosting. Valid values are ASCENDING (higher numbers are more important) and
+     * DESCENDING (lower numbers are more important).</p>
      */
     inline NumberAttributeBoostingType GetBoostingType() const { return m_boostingType; }
     inline bool BoostingTypeHasBeenSet() const { return m_boostingTypeHasBeenSet; }

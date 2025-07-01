@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace CleanRoomsML
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CancelTrainedModel"; }
 
     AWS_CLEANROOMSML_API Aws::String SerializePayload() const override;
+
+    AWS_CLEANROOMSML_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -56,6 +62,21 @@ namespace Model
     template<typename TrainedModelArnT = Aws::String>
     CancelTrainedModelRequest& WithTrainedModelArn(TrainedModelArnT&& value) { SetTrainedModelArn(std::forward<TrainedModelArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version identifier of the trained model to cancel. This parameter allows
+     * you to specify which version of the trained model you want to cancel when
+     * multiple versions exist.</p> <p>If <code>versionIdentifier</code> is not
+     * specified, the base model will be cancelled.</p>
+     */
+    inline const Aws::String& GetVersionIdentifier() const { return m_versionIdentifier; }
+    inline bool VersionIdentifierHasBeenSet() const { return m_versionIdentifierHasBeenSet; }
+    template<typename VersionIdentifierT = Aws::String>
+    void SetVersionIdentifier(VersionIdentifierT&& value) { m_versionIdentifierHasBeenSet = true; m_versionIdentifier = std::forward<VersionIdentifierT>(value); }
+    template<typename VersionIdentifierT = Aws::String>
+    CancelTrainedModelRequest& WithVersionIdentifier(VersionIdentifierT&& value) { SetVersionIdentifier(std::forward<VersionIdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_membershipIdentifier;
@@ -63,6 +84,9 @@ namespace Model
 
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
+
+    Aws::String m_versionIdentifier;
+    bool m_versionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

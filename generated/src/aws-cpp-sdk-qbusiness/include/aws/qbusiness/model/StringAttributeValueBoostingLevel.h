@@ -19,7 +19,12 @@ namespace Model
     LOW,
     MEDIUM,
     HIGH,
-    VERY_HIGH
+    VERY_HIGH,
+    ONE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE
   };
 
 namespace StringAttributeValueBoostingLevelMapper

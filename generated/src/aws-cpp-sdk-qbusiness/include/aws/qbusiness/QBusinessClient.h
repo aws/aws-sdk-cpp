@@ -353,6 +353,34 @@ namespace QBusiness
         }
 
         /**
+         * <p>Creates a new chat response configuration for an Amazon Q Business
+         * application. This operation establishes a set of parameters that define how the
+         * system generates and formats responses to user queries in chat
+         * interactions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChatResponseConfigurationOutcome CreateChatResponseConfiguration(const Model::CreateChatResponseConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateChatResponseConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateChatResponseConfigurationRequestT = Model::CreateChatResponseConfigurationRequest>
+        Model::CreateChatResponseConfigurationOutcomeCallable CreateChatResponseConfigurationCallable(const CreateChatResponseConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::CreateChatResponseConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateChatResponseConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateChatResponseConfigurationRequestT = Model::CreateChatResponseConfigurationRequest>
+        void CreateChatResponseConfigurationAsync(const CreateChatResponseConfigurationRequestT& request, const CreateChatResponseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::CreateChatResponseConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new data accessor for an ISV to access data from a Amazon Q
          * Business application. The data accessor is an entity that represents the ISV's
          * access to the Amazon Q Business application's data. It includes the IAM role ARN
@@ -653,6 +681,32 @@ namespace QBusiness
         void DeleteChatControlsConfigurationAsync(const DeleteChatControlsConfigurationRequestT& request, const DeleteChatControlsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QBusinessClient::DeleteChatControlsConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a specified chat response configuration from an Amazon Q Business
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChatResponseConfigurationOutcome DeleteChatResponseConfiguration(const Model::DeleteChatResponseConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteChatResponseConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteChatResponseConfigurationRequestT = Model::DeleteChatResponseConfigurationRequest>
+        Model::DeleteChatResponseConfigurationOutcomeCallable DeleteChatResponseConfigurationCallable(const DeleteChatResponseConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::DeleteChatResponseConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteChatResponseConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteChatResponseConfigurationRequestT = Model::DeleteChatResponseConfigurationRequest>
+        void DeleteChatResponseConfigurationAsync(const DeleteChatResponseConfigurationRequestT& request, const DeleteChatResponseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::DeleteChatResponseConfiguration, request, handler, context);
         }
 
         /**
@@ -975,6 +1029,33 @@ namespace QBusiness
         void GetChatControlsConfigurationAsync(const GetChatControlsConfigurationRequestT& request, const GetChatControlsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QBusinessClient::GetChatControlsConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves detailed information about a specific chat response configuration
+         * from an Amazon Q Business application. This operation returns the complete
+         * configuration settings and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChatResponseConfigurationOutcome GetChatResponseConfiguration(const Model::GetChatResponseConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetChatResponseConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetChatResponseConfigurationRequestT = Model::GetChatResponseConfigurationRequest>
+        Model::GetChatResponseConfigurationOutcomeCallable GetChatResponseConfigurationCallable(const GetChatResponseConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::GetChatResponseConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetChatResponseConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetChatResponseConfigurationRequestT = Model::GetChatResponseConfigurationRequest>
+        void GetChatResponseConfigurationAsync(const GetChatResponseConfigurationRequestT& request, const GetChatResponseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::GetChatResponseConfiguration, request, handler, context);
         }
 
         /**
@@ -1301,6 +1382,34 @@ namespace QBusiness
         void ListAttachmentsAsync(const ListAttachmentsRequestT& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QBusinessClient::ListAttachments, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of all chat response configurations available in a specified
+         * Amazon Q Business application. This operation returns summary information about
+         * each configuration to help administrators manage and select appropriate response
+         * settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChatResponseConfigurationsOutcome ListChatResponseConfigurations(const Model::ListChatResponseConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListChatResponseConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListChatResponseConfigurationsRequestT = Model::ListChatResponseConfigurationsRequest>
+        Model::ListChatResponseConfigurationsOutcomeCallable ListChatResponseConfigurationsCallable(const ListChatResponseConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::ListChatResponseConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListChatResponseConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListChatResponseConfigurationsRequestT = Model::ListChatResponseConfigurationsRequest>
+        void ListChatResponseConfigurationsAsync(const ListChatResponseConfigurationsRequestT& request, const ListChatResponseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::ListChatResponseConfigurations, request, handler, context);
         }
 
         /**
@@ -1978,6 +2087,34 @@ namespace QBusiness
         void UpdateChatControlsConfigurationAsync(const UpdateChatControlsConfigurationRequestT& request, const UpdateChatControlsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QBusinessClient::UpdateChatControlsConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing chat response configuration in an Amazon Q Business
+         * application. This operation allows administrators to modify configuration
+         * settings, display name, and response parameters to refine how the system
+         * generates responses.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChatResponseConfigurationOutcome UpdateChatResponseConfiguration(const Model::UpdateChatResponseConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateChatResponseConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateChatResponseConfigurationRequestT = Model::UpdateChatResponseConfigurationRequest>
+        Model::UpdateChatResponseConfigurationOutcomeCallable UpdateChatResponseConfigurationCallable(const UpdateChatResponseConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::UpdateChatResponseConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateChatResponseConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateChatResponseConfigurationRequestT = Model::UpdateChatResponseConfigurationRequest>
+        void UpdateChatResponseConfigurationAsync(const UpdateChatResponseConfigurationRequestT& request, const UpdateChatResponseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::UpdateChatResponseConfiguration, request, handler, context);
         }
 
         /**

@@ -22,6 +22,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   }
 
+  if(m_domainUnitIdHasBeenSet)
+  {
+   payload.WithString("domainUnitId", m_domainUnitId);
+
+  }
+
   if(m_environmentDeploymentDetailsHasBeenSet)
   {
    payload.WithObject("environmentDeploymentDetails", m_environmentDeploymentDetails.Jsonize());

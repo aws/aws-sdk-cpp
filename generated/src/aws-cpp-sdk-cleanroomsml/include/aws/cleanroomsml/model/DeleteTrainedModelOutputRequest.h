@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace CleanRoomsML
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteTrainedModelOutput"; }
 
     AWS_CLEANROOMSML_API Aws::String SerializePayload() const override;
+
+    AWS_CLEANROOMSML_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -57,6 +63,20 @@ namespace Model
     template<typename MembershipIdentifierT = Aws::String>
     DeleteTrainedModelOutputRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version identifier of the trained model to delete. If not specified, the
+     * operation will delete the base version of the trained model. When specified,
+     * only the particular version will be deleted.</p>
+     */
+    inline const Aws::String& GetVersionIdentifier() const { return m_versionIdentifier; }
+    inline bool VersionIdentifierHasBeenSet() const { return m_versionIdentifierHasBeenSet; }
+    template<typename VersionIdentifierT = Aws::String>
+    void SetVersionIdentifier(VersionIdentifierT&& value) { m_versionIdentifierHasBeenSet = true; m_versionIdentifier = std::forward<VersionIdentifierT>(value); }
+    template<typename VersionIdentifierT = Aws::String>
+    DeleteTrainedModelOutputRequest& WithVersionIdentifier(VersionIdentifierT&& value) { SetVersionIdentifier(std::forward<VersionIdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_trainedModelArn;
@@ -64,6 +84,9 @@ namespace Model
 
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
+
+    Aws::String m_versionIdentifier;
+    bool m_versionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

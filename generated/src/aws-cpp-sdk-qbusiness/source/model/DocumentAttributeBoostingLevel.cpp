@@ -25,6 +25,8 @@ namespace Aws
         static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
         static const int VERY_HIGH_HASH = HashingUtils::HashString("VERY_HIGH");
+        static const int ONE_HASH = HashingUtils::HashString("ONE");
+        static const int TWO_HASH = HashingUtils::HashString("TWO");
 
 
         DocumentAttributeBoostingLevel GetDocumentAttributeBoostingLevelForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == VERY_HIGH_HASH)
           {
             return DocumentAttributeBoostingLevel::VERY_HIGH;
+          }
+          else if (hashCode == ONE_HASH)
+          {
+            return DocumentAttributeBoostingLevel::ONE;
+          }
+          else if (hashCode == TWO_HASH)
+          {
+            return DocumentAttributeBoostingLevel::TWO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "HIGH";
           case DocumentAttributeBoostingLevel::VERY_HIGH:
             return "VERY_HIGH";
+          case DocumentAttributeBoostingLevel::ONE:
+            return "ONE";
+          case DocumentAttributeBoostingLevel::TWO:
+            return "TWO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

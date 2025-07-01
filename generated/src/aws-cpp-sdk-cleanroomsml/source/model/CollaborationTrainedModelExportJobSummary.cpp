@@ -70,6 +70,11 @@ CollaborationTrainedModelExportJobSummary& CollaborationTrainedModelExportJobSum
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("trainedModelVersionIdentifier"))
+  {
+    m_trainedModelVersionIdentifier = jsonValue.GetString("trainedModelVersionIdentifier");
+    m_trainedModelVersionIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
@@ -135,6 +140,12 @@ JsonValue CollaborationTrainedModelExportJobSummary::Jsonize() const
   if(m_trainedModelArnHasBeenSet)
   {
    payload.WithString("trainedModelArn", m_trainedModelArn);
+
+  }
+
+  if(m_trainedModelVersionIdentifierHasBeenSet)
+  {
+   payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
 
   }
 

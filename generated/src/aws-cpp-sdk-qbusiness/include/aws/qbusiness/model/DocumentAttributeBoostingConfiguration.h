@@ -30,10 +30,13 @@ namespace Model
    * <p>Provides information on boosting supported Amazon Q Business document
    * attribute types. When an end user chat query matches document attributes that
    * have been boosted, Amazon Q Business prioritizes generating responses from
-   * content that matches the boosted document attributes.</p>  <p>For
-   * <code>STRING</code> and <code>STRING_LIST</code> type document attributes to be
-   * used for boosting on the console and the API, they must be enabled for search
-   * using the <a
+   * content that matches the boosted document attributes.</p> <p>In version 2,
+   * boosting uses numeric values (ONE, TWO) to indicate priority tiers that
+   * establish clear hierarchical relationships between boosted attributes. This
+   * allows for more precise control over how different attributes influence search
+   * results.</p>  <p>For <code>STRING</code> and <code>STRING_LIST</code> type
+   * document attributes to be used for boosting on the console and the API, they
+   * must be enabled for search using the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeConfiguration.html">DocumentAttributeConfiguration</a>
    * object of the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html">UpdateIndex</a>
@@ -58,7 +61,10 @@ namespace Model
     ///@{
     /**
      * <p>Provides information on boosting <code>NUMBER</code> type document
-     * attributes.</p>
+     * attributes.</p> <p> <code>NUMBER</code> attributes are not supported when using
+     * <code>NativeIndexConfiguration</code> version 2, which focuses on
+     * <code>DATE</code> attributes for recency and <code>STRING</code> attributes for
+     * source prioritization.</p>
      */
     inline const NumberAttributeBoostingConfiguration& GetNumberConfiguration() const { return m_numberConfiguration; }
     inline bool NumberConfigurationHasBeenSet() const { return m_numberConfigurationHasBeenSet; }
@@ -71,6 +77,8 @@ namespace Model
     ///@{
     /**
      * <p>Provides information on boosting <code>STRING</code> type document
+     * attributes.</p> <p>Version 2 assigns priority tiers to <code>STRING</code>
+     * attributes, establishing clear hierarchical relationships with other boosted
      * attributes.</p>
      */
     inline const StringAttributeBoostingConfiguration& GetStringConfiguration() const { return m_stringConfiguration; }
@@ -84,6 +92,8 @@ namespace Model
     ///@{
     /**
      * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p> <p>Version 2 assigns priority tiers to <code>DATE</code>
+     * attributes, establishing clear hierarchical relationships with other boosted
      * attributes.</p>
      */
     inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const { return m_dateConfiguration; }
@@ -97,7 +107,10 @@ namespace Model
     ///@{
     /**
      * <p>Provides information on boosting <code>STRING_LIST</code> type document
-     * attributes.</p>
+     * attributes.</p> <p> <code>STRING_LIST</code> attributes are not supported when
+     * using <code>NativeIndexConfiguration</code> version 2, which focuses on
+     * <code>DATE</code> attributes for recency and <code>STRING</code> attributes for
+     * source prioritization.</p>
      */
     inline const StringListAttributeBoostingConfiguration& GetStringListConfiguration() const { return m_stringListConfiguration; }
     inline bool StringListConfigurationHasBeenSet() const { return m_stringListConfigurationHasBeenSet; }

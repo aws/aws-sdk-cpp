@@ -54,6 +54,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>A read-only field that specifies the version of the
+     * <code>NativeIndexConfiguration</code>.</p> <p>Amazon Q Business introduces
+     * enhanced document retrieval capabilities in version 2 of
+     * <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting
+     * that prioritizes recency and source relevance to deliver more accurate responses
+     * to your queries. Version 2 has the following differences from version 1:</p>
+     * <ul> <li> <p>Version 2 supports a single Date field (created_at OR
+     * last_updated_at) for recency boosting</p> </li> <li> <p>Version 2 supports a
+     * single String field with an ordered list of up to 5 values</p> </li> <li>
+     * <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the
+     * text-based levels</p> </li> <li> <p>Version 2 allows specifying prioritization
+     * between Date and String fields</p> </li> <li> <p>Version 2 maintains backward
+     * compatibility with existing configurations</p> </li> </ul>
+     */
+    inline long long GetVersion() const { return m_version; }
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline NativeIndexConfiguration& WithVersion(long long value) { SetVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Overrides the default boosts applied by Amazon Q Business to supported
      * document attribute data types.</p>
      */
@@ -72,6 +94,9 @@ namespace Model
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
+
+    long long m_version{0};
+    bool m_versionHasBeenSet = false;
 
     Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration> m_boostingOverride;
     bool m_boostingOverrideHasBeenSet = false;

@@ -85,6 +85,20 @@ namespace Model
     template<typename TrainedModelArnT = Aws::String>
     ListTrainedModelInferenceJobsRequest& WithTrainedModelArn(TrainedModelArnT&& value) { SetTrainedModelArn(std::forward<TrainedModelArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version identifier of the trained model to filter inference jobs by. When
+     * specified, only inference jobs that used this specific version of the trained
+     * model are returned.</p>
+     */
+    inline const Aws::String& GetTrainedModelVersionIdentifier() const { return m_trainedModelVersionIdentifier; }
+    inline bool TrainedModelVersionIdentifierHasBeenSet() const { return m_trainedModelVersionIdentifierHasBeenSet; }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    void SetTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { m_trainedModelVersionIdentifierHasBeenSet = true; m_trainedModelVersionIdentifier = std::forward<TrainedModelVersionIdentifierT>(value); }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    ListTrainedModelInferenceJobsRequest& WithTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { SetTrainedModelVersionIdentifier(std::forward<TrainedModelVersionIdentifierT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -98,6 +112,9 @@ namespace Model
 
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
+
+    Aws::String m_trainedModelVersionIdentifier;
+    bool m_trainedModelVersionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

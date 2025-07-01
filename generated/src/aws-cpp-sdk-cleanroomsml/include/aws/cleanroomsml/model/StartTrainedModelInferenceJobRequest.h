@@ -77,6 +77,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version identifier of the trained model to use for inference. This
+     * specifies which version of the trained model should be used to generate
+     * predictions on the input data.</p>
+     */
+    inline const Aws::String& GetTrainedModelVersionIdentifier() const { return m_trainedModelVersionIdentifier; }
+    inline bool TrainedModelVersionIdentifierHasBeenSet() const { return m_trainedModelVersionIdentifierHasBeenSet; }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    void SetTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { m_trainedModelVersionIdentifierHasBeenSet = true; m_trainedModelVersionIdentifier = std::forward<TrainedModelVersionIdentifierT>(value); }
+    template<typename TrainedModelVersionIdentifierT = Aws::String>
+    StartTrainedModelInferenceJobRequest& WithTrainedModelVersionIdentifier(TrainedModelVersionIdentifierT&& value) { SetTrainedModelVersionIdentifier(std::forward<TrainedModelVersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the configured model algorithm association
      * that is used for this trained model inference job.</p>
      */
@@ -220,6 +234,9 @@ namespace Model
 
     Aws::String m_trainedModelArn;
     bool m_trainedModelArnHasBeenSet = false;
+
+    Aws::String m_trainedModelVersionIdentifier;
+    bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
     Aws::String m_configuredModelAlgorithmAssociationArn;
     bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;

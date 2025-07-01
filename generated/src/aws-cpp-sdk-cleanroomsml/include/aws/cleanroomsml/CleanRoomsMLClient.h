@@ -540,7 +540,8 @@ namespace CleanRoomsML
         }
 
         /**
-         * <p>Deletes the output of a trained model.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the model artifacts stored by the service.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">AWS
          * API Reference</a></p>
          */
@@ -1309,6 +1310,35 @@ namespace CleanRoomsML
         void ListTrainedModelInferenceJobsAsync(const ListTrainedModelInferenceJobsRequestT& request, const ListTrainedModelInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListTrainedModelInferenceJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of trained model versions for a specified trained model. This
+         * operation allows you to view all versions of a trained model, including
+         * information about their status and creation details. You can use this to track
+         * the evolution of your trained models and select specific versions for inference
+         * or further training.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrainedModelVersionsOutcome ListTrainedModelVersions(const Model::ListTrainedModelVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrainedModelVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrainedModelVersionsRequestT = Model::ListTrainedModelVersionsRequest>
+        Model::ListTrainedModelVersionsOutcomeCallable ListTrainedModelVersionsCallable(const ListTrainedModelVersionsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListTrainedModelVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrainedModelVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrainedModelVersionsRequestT = Model::ListTrainedModelVersionsRequest>
+        void ListTrainedModelVersionsAsync(const ListTrainedModelVersionsRequestT& request, const ListTrainedModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListTrainedModelVersions, request, handler, context);
         }
 
         /**

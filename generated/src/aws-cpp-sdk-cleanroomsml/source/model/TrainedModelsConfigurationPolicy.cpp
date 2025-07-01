@@ -39,6 +39,11 @@ TrainedModelsConfigurationPolicy& TrainedModelsConfigurationPolicy::operator =(J
     m_containerMetrics = jsonValue.GetObject("containerMetrics");
     m_containerMetricsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("maxArtifactSize"))
+  {
+    m_maxArtifactSize = jsonValue.GetObject("maxArtifactSize");
+    m_maxArtifactSizeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue TrainedModelsConfigurationPolicy::Jsonize() const
   if(m_containerMetricsHasBeenSet)
   {
    payload.WithObject("containerMetrics", m_containerMetrics.Jsonize());
+
+  }
+
+  if(m_maxArtifactSizeHasBeenSet)
+  {
+   payload.WithObject("maxArtifactSize", m_maxArtifactSize.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/MetricsConfigurationPolicy.h>
+#include <aws/cleanroomsml/model/TrainedModelArtifactMaxSize.h>
 #include <aws/cleanroomsml/model/LogsConfigurationPolicy.h>
 #include <utility>
 
@@ -65,6 +66,20 @@ namespace Model
     template<typename ContainerMetricsT = MetricsConfigurationPolicy>
     TrainedModelsConfigurationPolicy& WithContainerMetrics(ContainerMetricsT&& value) { SetContainerMetrics(std::forward<ContainerMetricsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum size limit for trained model artifacts as defined in the
+     * configuration policy. This setting helps enforce consistent size limits across
+     * trained models in the collaboration.</p>
+     */
+    inline const TrainedModelArtifactMaxSize& GetMaxArtifactSize() const { return m_maxArtifactSize; }
+    inline bool MaxArtifactSizeHasBeenSet() const { return m_maxArtifactSizeHasBeenSet; }
+    template<typename MaxArtifactSizeT = TrainedModelArtifactMaxSize>
+    void SetMaxArtifactSize(MaxArtifactSizeT&& value) { m_maxArtifactSizeHasBeenSet = true; m_maxArtifactSize = std::forward<MaxArtifactSizeT>(value); }
+    template<typename MaxArtifactSizeT = TrainedModelArtifactMaxSize>
+    TrainedModelsConfigurationPolicy& WithMaxArtifactSize(MaxArtifactSizeT&& value) { SetMaxArtifactSize(std::forward<MaxArtifactSizeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<LogsConfigurationPolicy> m_containerLogs;
@@ -72,6 +87,9 @@ namespace Model
 
     MetricsConfigurationPolicy m_containerMetrics;
     bool m_containerMetricsHasBeenSet = false;
+
+    TrainedModelArtifactMaxSize m_maxArtifactSize;
+    bool m_maxArtifactSizeHasBeenSet = false;
   };
 
 } // namespace Model

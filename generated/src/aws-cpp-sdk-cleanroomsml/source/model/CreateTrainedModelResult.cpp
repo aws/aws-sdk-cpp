@@ -30,6 +30,11 @@ CreateTrainedModelResult& CreateTrainedModelResult::operator =(const Aws::Amazon
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("versionIdentifier"))
+  {
+    m_versionIdentifier = jsonValue.GetString("versionIdentifier");
+    m_versionIdentifierHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

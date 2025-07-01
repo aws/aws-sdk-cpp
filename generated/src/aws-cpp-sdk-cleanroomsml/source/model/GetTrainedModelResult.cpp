@@ -40,6 +40,20 @@ GetTrainedModelResult& GetTrainedModelResult::operator =(const Aws::AmazonWebSer
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("versionIdentifier"))
+  {
+    m_versionIdentifier = jsonValue.GetString("versionIdentifier");
+    m_versionIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("incrementalTrainingDataChannels"))
+  {
+    Aws::Utils::Array<JsonView> incrementalTrainingDataChannelsJsonList = jsonValue.GetArray("incrementalTrainingDataChannels");
+    for(unsigned incrementalTrainingDataChannelsIndex = 0; incrementalTrainingDataChannelsIndex < incrementalTrainingDataChannelsJsonList.GetLength(); ++incrementalTrainingDataChannelsIndex)
+    {
+      m_incrementalTrainingDataChannels.push_back(incrementalTrainingDataChannelsJsonList[incrementalTrainingDataChannelsIndex].AsObject());
+    }
+    m_incrementalTrainingDataChannelsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -69,6 +83,11 @@ GetTrainedModelResult& GetTrainedModelResult::operator =(const Aws::AmazonWebSer
   {
     m_resourceConfig = jsonValue.GetObject("resourceConfig");
     m_resourceConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("trainingInputMode"))
+  {
+    m_trainingInputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("trainingInputMode"));
+    m_trainingInputModeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("stoppingCondition"))
   {
