@@ -33,7 +33,8 @@ else
 fi
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+cd "${PREFIX_DIR}/al2-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
 
-./dynamodb-performance-test --region "$REGION" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
+./tests/performance-tests/dynamodb-performance-test --region "$REGION" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
 cat dynamodb-performance-test-results.json
