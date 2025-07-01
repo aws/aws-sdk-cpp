@@ -26,7 +26,7 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/:${PREFIX_DIR}/al2-build/tests/testing-resources/"
 
 SDK_REPO_PATH="${PREFIX_DIR}/aws-sdk-cpp"
 if [ -d "$SDK_REPO_PATH" ]; then
