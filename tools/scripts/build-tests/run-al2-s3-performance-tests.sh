@@ -3,7 +3,7 @@ set -e
 
 DEFAULT_REGION="us-east-1"
 DEFAULT_AZ_ID="use1-az4"
-DEFAULT_ITERATIONS=3
+DEFAULT_ITERATIONS=10
 
 if [ "$#" -lt 1 ]; then
   echo "Usage: ${0} PREFIX_DIR [--region REGION] [--az-id AZ_ID] [--iterations NUM]"
