@@ -33,20 +33,10 @@ else
   COMMIT_ID="unknown"
 fi
 
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-build/generated/src/aws-cpp-sdk-s3:${PREFIX_DIR}/al2-build/src/aws-cpp-sdk-core:${PREFIX_DIR}/al2-build/crt/aws-crt-cpp:${PREFIX_DIR}/al2-build/lib"
-#BINARY=${PREFIX_DIR}/al2-build/tests/performance-tests/s3-performance-test
-#for lib in $(ldd "$BINARY" | awk '/=>/ {print $3}' | grep "$PREFIX_DIR/al2-build/crt/aws-crt-cpp/crt"); do
-#  dir=$(dirname "$lib")
-#  LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$dir"
-#done
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:./al2-build/generated/src/aws-cpp-sdk-s3:./al2-build/src/aws-cpp-sdk-core:./al2-build/crt/aws-crt-cpp:./al2-build/lib"
-BINARY=./s3-performance-test
-for lib in $(ldd "$BINARY" | awk '/=>/ {print $3}' | grep "al2-build/crt/aws-crt-cpp/crt"); do
-  rel_dir=$(echo "$lib" | sed 's|.*/al2-build/|./al2-build/|' | xargs dirname)
-  LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$rel_dir"
-done
-#cd "${PREFIX_DIR}/al2-build"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+
+cd "${PREFIX_DIR}/al2-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-./s3-performance-test --region "$REGION" --az-id "$AZ_ID" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
-#./tests/performance-tests/s3-performance-test --region "$REGION" --az-id "$AZ_ID" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
-cat s3-performance-test-results.json
+.tests/performance-tests/s3-performance-test --region "$REGION" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
+cp s3-performance-test-results.json results.json
+cat results.json
