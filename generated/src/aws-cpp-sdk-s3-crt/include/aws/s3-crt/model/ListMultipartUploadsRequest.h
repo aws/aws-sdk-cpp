@@ -100,8 +100,10 @@ namespace Model
      * <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the
      * substring starts at the beginning of the key. The keys that are grouped under
      * <code>CommonPrefixes</code> result element are not returned elsewhere in the
-     * response.</p>  <p> <b>Directory buckets</b> - For directory buckets,
-     * <code>/</code> is the only supported delimiter.</p> 
+     * response.</p> <p> <code>CommonPrefixes</code> is filtered out from results if it
+     * is not lexicographically greater than the key-marker.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }

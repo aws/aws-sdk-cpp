@@ -52,9 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you want to list the
-     * tags for. The tagged resource can be an S3 Storage Lens group or S3 Access
-     * Grants instance, registered location, or grant. </p>
+     * <p> The Amazon Resource Name (ARN) of the S3 resource that you want to list tags
+     * for. The tagged resource can be a directory bucket, S3 Storage Lens group or S3
+     * Access Grants instance, registered location, or grant. </p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

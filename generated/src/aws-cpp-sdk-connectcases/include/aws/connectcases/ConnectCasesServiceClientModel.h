@@ -28,10 +28,12 @@
 #include <aws/connectcases/model/CreateLayoutResult.h>
 #include <aws/connectcases/model/CreateRelatedItemResult.h>
 #include <aws/connectcases/model/CreateTemplateResult.h>
+#include <aws/connectcases/model/DeleteCaseResult.h>
 #include <aws/connectcases/model/DeleteCaseRuleResult.h>
 #include <aws/connectcases/model/DeleteDomainResult.h>
 #include <aws/connectcases/model/DeleteFieldResult.h>
 #include <aws/connectcases/model/DeleteLayoutResult.h>
+#include <aws/connectcases/model/DeleteRelatedItemResult.h>
 #include <aws/connectcases/model/DeleteTemplateResult.h>
 #include <aws/connectcases/model/GetCaseResult.h>
 #include <aws/connectcases/model/GetCaseAuditEventsResult.h>
@@ -107,10 +109,12 @@ namespace Aws
       class CreateLayoutRequest;
       class CreateRelatedItemRequest;
       class CreateTemplateRequest;
+      class DeleteCaseRequest;
       class DeleteCaseRuleRequest;
       class DeleteDomainRequest;
       class DeleteFieldRequest;
       class DeleteLayoutRequest;
+      class DeleteRelatedItemRequest;
       class DeleteTemplateRequest;
       class GetCaseRequest;
       class GetCaseAuditEventsRequest;
@@ -149,10 +153,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateLayoutResult, ConnectCasesError> CreateLayoutOutcome;
       typedef Aws::Utils::Outcome<CreateRelatedItemResult, ConnectCasesError> CreateRelatedItemOutcome;
       typedef Aws::Utils::Outcome<CreateTemplateResult, ConnectCasesError> CreateTemplateOutcome;
+      typedef Aws::Utils::Outcome<DeleteCaseResult, ConnectCasesError> DeleteCaseOutcome;
       typedef Aws::Utils::Outcome<DeleteCaseRuleResult, ConnectCasesError> DeleteCaseRuleOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, ConnectCasesError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<DeleteFieldResult, ConnectCasesError> DeleteFieldOutcome;
       typedef Aws::Utils::Outcome<DeleteLayoutResult, ConnectCasesError> DeleteLayoutOutcome;
+      typedef Aws::Utils::Outcome<DeleteRelatedItemResult, ConnectCasesError> DeleteRelatedItemOutcome;
       typedef Aws::Utils::Outcome<DeleteTemplateResult, ConnectCasesError> DeleteTemplateOutcome;
       typedef Aws::Utils::Outcome<GetCaseResult, ConnectCasesError> GetCaseOutcome;
       typedef Aws::Utils::Outcome<GetCaseAuditEventsResult, ConnectCasesError> GetCaseAuditEventsOutcome;
@@ -191,10 +197,12 @@ namespace Aws
       typedef std::future<CreateLayoutOutcome> CreateLayoutOutcomeCallable;
       typedef std::future<CreateRelatedItemOutcome> CreateRelatedItemOutcomeCallable;
       typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
+      typedef std::future<DeleteCaseOutcome> DeleteCaseOutcomeCallable;
       typedef std::future<DeleteCaseRuleOutcome> DeleteCaseRuleOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<DeleteFieldOutcome> DeleteFieldOutcomeCallable;
       typedef std::future<DeleteLayoutOutcome> DeleteLayoutOutcomeCallable;
+      typedef std::future<DeleteRelatedItemOutcome> DeleteRelatedItemOutcomeCallable;
       typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
       typedef std::future<GetCaseOutcome> GetCaseOutcomeCallable;
       typedef std::future<GetCaseAuditEventsOutcome> GetCaseAuditEventsOutcomeCallable;
@@ -236,10 +244,12 @@ namespace Aws
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateLayoutRequest&, const Model::CreateLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLayoutResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateRelatedItemRequest&, const Model::CreateRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelatedItemResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::DeleteCaseRequest&, const Model::DeleteCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteCaseRuleRequest&, const Model::DeleteCaseRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCaseRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteFieldRequest&, const Model::DeleteFieldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteLayoutRequest&, const Model::DeleteLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayoutResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::DeleteRelatedItemRequest&, const Model::DeleteRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRelatedItemResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteTemplateRequest&, const Model::DeleteTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetCaseRequest&, const Model::GetCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetCaseAuditEventsRequest&, const Model::GetCaseAuditEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCaseAuditEventsResponseReceivedHandler;

@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>The type of IPv4 address assigned to the outside interface of the customer
      * gateway.</p> <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code>
-     * </p> <p>Default: <code>PublicIpv4</code> </p>
+     * | <code>Ipv6</code> </p> <p>Default: <code>PublicIpv4</code> </p>
      */
     inline const Aws::String& GetOutsideIpAddressType() const { return m_outsideIpAddressType; }
     inline bool OutsideIpAddressTypeHasBeenSet() const { return m_outsideIpAddressTypeHasBeenSet; }

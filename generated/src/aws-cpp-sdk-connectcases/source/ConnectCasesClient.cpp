@@ -31,10 +31,12 @@
 #include <aws/connectcases/model/CreateLayoutRequest.h>
 #include <aws/connectcases/model/CreateRelatedItemRequest.h>
 #include <aws/connectcases/model/CreateTemplateRequest.h>
+#include <aws/connectcases/model/DeleteCaseRequest.h>
 #include <aws/connectcases/model/DeleteCaseRuleRequest.h>
 #include <aws/connectcases/model/DeleteDomainRequest.h>
 #include <aws/connectcases/model/DeleteFieldRequest.h>
 #include <aws/connectcases/model/DeleteLayoutRequest.h>
+#include <aws/connectcases/model/DeleteRelatedItemRequest.h>
 #include <aws/connectcases/model/DeleteTemplateRequest.h>
 #include <aws/connectcases/model/GetCaseRequest.h>
 #include <aws/connectcases/model/GetCaseAuditEventsRequest.h>
@@ -550,6 +552,46 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteCaseOutcome ConnectCasesClient::DeleteCase(const DeleteCaseRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCase);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCase", "Required field: CaseId, is not set");
+    return DeleteCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
+  }
+  if (!request.DomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCase", "Required field: DomainId, is not set");
+    return DeleteCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCase, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCase, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCase",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCaseOutcome>(
+    [&]()-> DeleteCaseOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+      return DeleteCaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteCaseRuleOutcome ConnectCasesClient::DeleteCaseRule(const DeleteCaseRuleRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteCaseRule);
@@ -697,6 +739,53 @@ DeleteLayoutOutcome ConnectCasesClient::DeleteLayout(const DeleteLayoutRequest& 
       endpointResolutionOutcome.GetResult().AddPathSegments("/layouts/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutId());
       return DeleteLayoutOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteRelatedItemOutcome ConnectCasesClient::DeleteRelatedItem(const DeleteRelatedItemRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteRelatedItem);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: CaseId, is not set");
+    return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
+  }
+  if (!request.DomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: DomainId, is not set");
+    return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.RelatedItemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: RelatedItemId, is not set");
+    return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RelatedItemId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRelatedItem, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteRelatedItem, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteRelatedItem",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteRelatedItemOutcome>(
+    [&]()-> DeleteRelatedItemOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/related-items/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRelatedItemId());
+      return DeleteRelatedItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

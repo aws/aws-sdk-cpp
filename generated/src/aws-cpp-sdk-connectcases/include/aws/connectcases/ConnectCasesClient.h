@@ -168,8 +168,8 @@ namespace ConnectCases
         }
 
         /**
-         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
-         * also have <a
+         * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code> you
+         * must also have <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
          * permission on the User ARN resource that you provide</p>  <p>Creates a
          * case in the specified Cases domain. Case system and custom fields are taken as
@@ -178,7 +178,7 @@ namespace ConnectCases
          * You must provide the full customer profile ARN in this format:
          * <code>arn:aws:profile:your_AWS_Region:your_AWS_account
          * ID:domains/your_profiles_domain_name/profiles/profile_ID</code> </p> </li> <li>
-         * <p> <code>title</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p> <code>title</code> </p> </li> </ul></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -397,6 +397,36 @@ namespace ConnectCases
         }
 
         /**
+         * <p> The DeleteCase API permanently deletes a case and all its associated
+         * resources from the cases data store. After a successful deletion, you
+         * cannot:</p> <ul> <li> <p>Retrieve related items</p> </li> <li> <p>Access audit
+         * history</p> </li> <li> <p>Perform any operations that require the CaseID</p>
+         * </li> </ul>  <p>This action is irreversible. Once you delete a case,
+         * you cannot recover its data.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCaseOutcome DeleteCase(const Model::DeleteCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCaseRequestT = Model::DeleteCaseRequest>
+        Model::DeleteCaseOutcomeCallable DeleteCaseCallable(const DeleteCaseRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteCase, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCaseRequestT = Model::DeleteCaseRequest>
+        void DeleteCaseAsync(const DeleteCaseRequestT& request, const DeleteCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteCase, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a case rule. In the Amazon Connect admin website, case rules are
          * known as <i>case field conditions</i>. For more information about case field
          * conditions, see <a
@@ -533,6 +563,35 @@ namespace ConnectCases
         void DeleteLayoutAsync(const DeleteLayoutRequestT& request, const DeleteLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectCasesClient::DeleteLayout, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the related item resource under a case.</p>  <p>This API cannot
+         * be used on a FILE type related attachment. To delete this type of file, use the
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
+         * API</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteRelatedItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRelatedItemOutcome DeleteRelatedItem(const Model::DeleteRelatedItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRelatedItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRelatedItemRequestT = Model::DeleteRelatedItemRequest>
+        Model::DeleteRelatedItemOutcomeCallable DeleteRelatedItemCallable(const DeleteRelatedItemRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteRelatedItem, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRelatedItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRelatedItemRequestT = Model::DeleteRelatedItemRequest>
+        void DeleteRelatedItemAsync(const DeleteRelatedItemRequestT& request, const DeleteRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteRelatedItem, request, handler, context);
         }
 
         /**
@@ -1082,14 +1141,14 @@ namespace ConnectCases
         }
 
         /**
-         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
-         * also have <a
+         * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code> you
+         * must also have <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
          * permission on the User ARN resource that you provide</p>  <p>Updates the
          * values of fields on a case. Fields to be updated are received as an array of
          * id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the
          * action is successful, the service sends back an HTTP 200 response with an empty
-         * HTTP body.</p><p><h3>See Also:</h3>   <a
+         * HTTP body.</p></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">AWS
          * API Reference</a></p>
          */

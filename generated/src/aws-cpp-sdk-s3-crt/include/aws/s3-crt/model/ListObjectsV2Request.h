@@ -95,13 +95,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A delimiter is a character that you use to group keys.</p>  <ul> <li>
-     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
-     * supported delimiter.</p> </li> <li> <p> <b>Directory buckets </b> - When you
-     * query <code>ListObjectsV2</code> with a delimiter during in-progress multipart
-     * uploads, the <code>CommonPrefixes</code> response parameter contains the
-     * prefixes that are associated with the in-progress multipart uploads. For more
-     * information about multipart uploads, see <a
+     * <p>A delimiter is a character that you use to group keys.</p> <p>
+     * <code>CommonPrefixes</code> is filtered out from results if it is not
+     * lexicographically greater than the <code>StartAfter</code> value.</p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, <code>/</code>
+     * is the only supported delimiter.</p> </li> <li> <p> <b>Directory buckets </b> -
+     * When you query <code>ListObjectsV2</code> with a delimiter during in-progress
+     * multipart uploads, the <code>CommonPrefixes</code> response parameter contains
+     * the prefixes that are associated with the in-progress multipart uploads. For
+     * more information about multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
      * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */

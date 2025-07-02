@@ -69,7 +69,8 @@ namespace Model
      * of the delimiter are grouped under a single result element in
      * <code>CommonPrefixes</code>. These groups are counted as one result against the
      * <code>max-keys</code> limitation. These keys are not returned elsewhere in the
-     * response.</p>
+     * response.</p> <p> <code>CommonPrefixes</code> is filtered out from results if it
+     * is not lexicographically greater than the key-marker.</p>
      */
     inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }

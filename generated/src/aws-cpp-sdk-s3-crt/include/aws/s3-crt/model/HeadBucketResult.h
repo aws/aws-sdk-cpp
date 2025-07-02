@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
-#include <aws/s3-crt/model/LocationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/model/LocationType.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,22 @@ namespace Model
     AWS_S3CRT_API HeadBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API HeadBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
+     * Amazon Web Services resources across all of Amazon Web Services.</p> 
+     * <p>This parameter is only supported for S3 directory buckets. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
+     * tags with directory buckets</a>.</p> 
+     */
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    HeadBucketResult& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -89,6 +105,9 @@ namespace Model
     HeadBucketResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_bucketArn;
+    bool m_bucketArnHasBeenSet = false;
 
     LocationType m_bucketLocationType{LocationType::NOT_SET};
     bool m_bucketLocationTypeHasBeenSet = false;
