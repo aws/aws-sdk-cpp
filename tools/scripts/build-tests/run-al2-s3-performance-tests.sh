@@ -33,7 +33,10 @@ else
   COMMIT_ID="unknown"
 fi
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-build/generated/src/aws-cpp-sdk-s3:${PREFIX_DIR}/al2-build/src/aws-cpp-sdk-core:${PREFIX_DIR}/al2-build/crt/aws-crt-cpp:${PREFIX_DIR}/al2-build/lib:${PREFIX_DIR}/al2-build/crt/aws-crt-cpp/crt/*"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-build/generated/src/aws-cpp-sdk-s3:${PREFIX_DIR}/al2-build/src/aws-cpp-sdk-core:${PREFIX_DIR}/al2-build/crt/aws-crt-cpp:${PREFIX_DIR}/al2-build/lib"
+for d in "${PREFIX_DIR}/al2-build/crt/aws-crt-cpp/crt"/*; do
+  [ -d "$d" ] && LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$d"
+done
 cd "${PREFIX_DIR}/al2-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
 
