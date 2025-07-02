@@ -8,6 +8,8 @@
 #include <aws/s3-crt/model/BucketLocationConstraint.h>
 #include <aws/s3-crt/model/LocationInfo.h>
 #include <aws/s3-crt/model/BucketInfo.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3-crt/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +92,25 @@ namespace Model
     template<typename BucketT = BucketInfo>
     CreateBucketConfiguration& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of tags that you can apply to the bucket that you're creating. Tags
+     * are key-value pairs of metadata used to categorize and organize your buckets,
+     * track costs, and control access. </p>  <p>This parameter is only supported
+     * for S3 directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
+     * tags with directory buckets</a>.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBucketConfiguration& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBucketConfiguration& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
   private:
 
     BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
@@ -100,6 +121,9 @@ namespace Model
 
     BucketInfo m_bucket;
     bool m_bucketHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

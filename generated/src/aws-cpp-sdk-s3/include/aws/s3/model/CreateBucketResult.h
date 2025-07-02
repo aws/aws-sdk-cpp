@@ -44,6 +44,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
+     * Amazon Web Services resources across all of Amazon Web Services.</p> 
+     * <p>This parameter is only supported for S3 directory buckets. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
+     * tags with directory buckets</a>.</p> 
+     */
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    CreateBucketResult& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -55,6 +71,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
+
+    Aws::String m_bucketArn;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

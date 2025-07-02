@@ -77,6 +77,23 @@ namespace Model
     template<typename BucketRegionT = Aws::String>
     Bucket& WithBucketRegion(BucketRegionT&& value) { SetBucketRegion(std::forward<BucketRegionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify
+     * Amazon Web Services resources across all of Amazon Web Services.</p> 
+     * <p>This parameter is only supported for S3 directory buckets. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
+     * tags with directory buckets</a>.</p> 
+     */
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
+    inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    Bucket& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -87,6 +104,9 @@ namespace Model
 
     Aws::String m_bucketRegion;
     bool m_bucketRegionHasBeenSet = false;
+
+    Aws::String m_bucketArn;
+    bool m_bucketArnHasBeenSet = false;
   };
 
 } // namespace Model

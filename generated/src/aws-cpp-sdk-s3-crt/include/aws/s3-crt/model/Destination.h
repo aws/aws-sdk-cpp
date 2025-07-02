@@ -83,7 +83,8 @@ namespace Model
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+     * Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p> <p>
+     * <code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
      */
     inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }

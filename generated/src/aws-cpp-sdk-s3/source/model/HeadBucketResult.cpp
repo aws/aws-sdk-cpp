@@ -31,6 +31,13 @@ HeadBucketResult& HeadBucketResult::operator =(const Aws::AmazonWebServiceResult
   }
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& bucketArnIter = headers.find("x-amz-bucket-arn");
+  if(bucketArnIter != headers.end())
+  {
+    m_bucketArn = bucketArnIter->second;
+    m_bucketArnHasBeenSet = true;
+  }
+
   const auto& bucketLocationTypeIter = headers.find("x-amz-bucket-location-type");
   if(bucketLocationTypeIter != headers.end())
   {

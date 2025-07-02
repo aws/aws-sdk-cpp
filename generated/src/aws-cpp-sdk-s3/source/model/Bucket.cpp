@@ -49,6 +49,12 @@ Bucket& Bucket::operator =(const XmlNode& xmlNode)
       m_bucketRegion = Aws::Utils::Xml::DecodeEscapedXmlText(bucketRegionNode.GetText());
       m_bucketRegionHasBeenSet = true;
     }
+    XmlNode bucketArnNode = resultNode.FirstChild("BucketArn");
+    if(!bucketArnNode.IsNull())
+    {
+      m_bucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(bucketArnNode.GetText());
+      m_bucketArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -73,6 +79,12 @@ void Bucket::AddToNode(XmlNode& parentNode) const
   {
    XmlNode bucketRegionNode = parentNode.CreateChildElement("BucketRegion");
    bucketRegionNode.SetText(m_bucketRegion);
+  }
+
+  if(m_bucketArnHasBeenSet)
+  {
+   XmlNode bucketArnNode = parentNode.CreateChildElement("BucketArn");
+   bucketArnNode.SetText(m_bucketArn);
   }
 
 }

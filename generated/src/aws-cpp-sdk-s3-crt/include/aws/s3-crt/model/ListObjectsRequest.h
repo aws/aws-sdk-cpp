@@ -96,7 +96,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A delimiter is a character that you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p> <p>
+     * <code>CommonPrefixes</code> is filtered out from results if it is not
+     * lexicographically greater than the key-marker.</p>
      */
     inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }

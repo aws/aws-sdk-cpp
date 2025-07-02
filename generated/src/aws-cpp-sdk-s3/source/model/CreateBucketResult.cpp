@@ -38,6 +38,13 @@ CreateBucketResult& CreateBucketResult::operator =(const Aws::AmazonWebServiceRe
     m_locationHasBeenSet = true;
   }
 
+  const auto& bucketArnIter = headers.find("x-amz-bucket-arn");
+  if(bucketArnIter != headers.end())
+  {
+    m_bucketArn = bucketArnIter->second;
+    m_bucketArnHasBeenSet = true;
+  }
+
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {

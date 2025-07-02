@@ -60,8 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the S3 resource that you're trying to
-     * remove the tags from. </p>
+     * <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags
+     * from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3
+     * Access Grants instance, registered location, or grant.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

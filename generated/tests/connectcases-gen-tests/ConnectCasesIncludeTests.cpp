@@ -55,6 +55,8 @@
 #include <aws/connectcases/model/CreateRelatedItemResult.h>
 #include <aws/connectcases/model/CreateTemplateRequest.h>
 #include <aws/connectcases/model/CreateTemplateResult.h>
+#include <aws/connectcases/model/DeleteCaseRequest.h>
+#include <aws/connectcases/model/DeleteCaseResult.h>
 #include <aws/connectcases/model/DeleteCaseRuleRequest.h>
 #include <aws/connectcases/model/DeleteCaseRuleResult.h>
 #include <aws/connectcases/model/DeleteDomainRequest.h>
@@ -63,6 +65,8 @@
 #include <aws/connectcases/model/DeleteFieldResult.h>
 #include <aws/connectcases/model/DeleteLayoutRequest.h>
 #include <aws/connectcases/model/DeleteLayoutResult.h>
+#include <aws/connectcases/model/DeleteRelatedItemRequest.h>
+#include <aws/connectcases/model/DeleteRelatedItemResult.h>
 #include <aws/connectcases/model/DeleteTemplateRequest.h>
 #include <aws/connectcases/model/DeleteTemplateResult.h>
 #include <aws/connectcases/model/DomainStatus.h>
