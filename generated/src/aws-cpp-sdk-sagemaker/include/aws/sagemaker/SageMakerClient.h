@@ -1189,6 +1189,35 @@ namespace SageMaker
         }
 
         /**
+         * <p>Creates presigned URLs for accessing hub content artifacts. This operation
+         * generates time-limited, secure URLs that allow direct download of model
+         * artifacts and associated files from Amazon SageMaker hub content, including
+         * gated models that require end-user license agreement acceptance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHubContentPresignedUrlsOutcome CreateHubContentPresignedUrls(const Model::CreateHubContentPresignedUrlsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateHubContentPresignedUrls that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateHubContentPresignedUrlsRequestT = Model::CreateHubContentPresignedUrlsRequest>
+        Model::CreateHubContentPresignedUrlsOutcomeCallable CreateHubContentPresignedUrlsCallable(const CreateHubContentPresignedUrlsRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateHubContentPresignedUrls, request);
+        }
+
+        /**
+         * An Async wrapper for CreateHubContentPresignedUrls that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateHubContentPresignedUrlsRequestT = Model::CreateHubContentPresignedUrlsRequest>
+        void CreateHubContentPresignedUrlsAsync(const CreateHubContentPresignedUrlsRequestT& request, const CreateHubContentPresignedUrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateHubContentPresignedUrls, request, handler, context);
+        }
+
+        /**
          * <p>Create a hub content reference in order to add a model in the JumpStart
          * public hub to a private hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">AWS
@@ -8632,6 +8661,32 @@ namespace SageMaker
         void StartPipelineExecutionAsync(const StartPipelineExecutionRequestT& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::StartPipelineExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a remote connection session between a local integrated development
+         * environments (IDEs) and a remote SageMaker space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSessionRequestT = Model::StartSessionRequest>
+        Model::StartSessionOutcomeCallable StartSessionCallable(const StartSessionRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::StartSession, request);
+        }
+
+        /**
+         * An Async wrapper for StartSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSessionRequestT = Model::StartSessionRequest>
+        void StartSessionAsync(const StartSessionRequestT& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::StartSession, request, handler, context);
         }
 
         /**

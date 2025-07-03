@@ -11,6 +11,7 @@
 #include <aws/deadline/model/SessionActionDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/model/AcquiredLimit.h>
+#include <aws/deadline/model/TaskRunManifestPropertiesResponse.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The list of manifest properties that describe file attachments for the task
+     * run.</p>
+     */
+    inline const Aws::Vector<TaskRunManifestPropertiesResponse>& GetManifests() const { return m_manifests; }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+    void SetManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests = std::forward<ManifestsT>(value); }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+    GetSessionActionResult& WithManifests(ManifestsT&& value) { SetManifests(std::forward<ManifestsT>(value)); return *this;}
+    template<typename ManifestsT = TaskRunManifestPropertiesResponse>
+    GetSessionActionResult& AddManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests.emplace_back(std::forward<ManifestsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -199,6 +214,9 @@ namespace Model
 
     Aws::Vector<AcquiredLimit> m_acquiredLimits;
     bool m_acquiredLimitsHasBeenSet = false;
+
+    Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+    bool m_manifestsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

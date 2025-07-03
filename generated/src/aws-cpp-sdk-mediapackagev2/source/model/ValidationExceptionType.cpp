@@ -29,6 +29,7 @@ namespace Aws
         static const int ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH_HASH = HashingUtils::HashString("ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH");
         static const int CENC_IV_INCOMPATIBLE_HASH = HashingUtils::HashString("CENC_IV_INCOMPATIBLE");
         static const int ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE");
+        static const int ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE");
         static const int ENCRYPTION_CONTRACT_UNENCRYPTED_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_UNENCRYPTED");
         static const int ENCRYPTION_CONTRACT_SHARED_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_SHARED");
         static const int NUM_MANIFESTS_LOW_HASH = HashingUtils::HashString("NUM_MANIFESTS_LOW");
@@ -77,12 +78,20 @@ namespace Aws
         static const int HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH = HashingUtils::HashString("HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED");
         static const int CLIP_START_TIME_WITH_START_OR_END_HASH = HashingUtils::HashString("CLIP_START_TIME_WITH_START_OR_END");
         static const int START_TAG_TIME_OFFSET_INVALID_HASH = HashingUtils::HashString("START_TAG_TIME_OFFSET_INVALID");
-        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
-        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
         static const int INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH = HashingUtils::HashString("INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION");
         static const int DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE_HASH = HashingUtils::HashString("DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE");
         static const int INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION_HASH = HashingUtils::HashString("INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION");
         static const int INCOMPATIBLE_XML_ENCODING_HASH = HashingUtils::HashString("INCOMPATIBLE_XML_ENCODING");
+        static const int CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE_HASH = HashingUtils::HashString("CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
+        static const int TS_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH = HashingUtils::HashString("TS_CONTAINER_TYPE_WITH_MSS_MANIFEST");
+        static const int CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH = HashingUtils::HashString("CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST");
+        static const int ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST");
+        static const int ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST");
+        static const int ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+        static const int ISM_CONTAINER_TYPE_WITH_SCTE_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_SCTE");
+        static const int ISM_CONTAINER_WITH_KEY_ROTATION_HASH = HashingUtils::HashString("ISM_CONTAINER_WITH_KEY_ROTATION");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -123,6 +132,10 @@ namespace Aws
           else if (hashCode == ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE_HASH)
           {
             return ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE;
+          }
+          else if (hashCode == ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE_HASH)
+          {
+            return ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE;
           }
           else if (hashCode == ENCRYPTION_CONTRACT_UNENCRYPTED_HASH)
           {
@@ -316,14 +329,6 @@ namespace Aws
           {
             return ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID;
           }
-          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH)
-          {
-            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING;
-          }
-          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH)
-          {
-            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
-          }
           else if (hashCode == INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION_HASH)
           {
             return ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION;
@@ -339,6 +344,46 @@ namespace Aws
           else if (hashCode == INCOMPATIBLE_XML_ENCODING_HASH)
           {
             return ValidationExceptionType::INCOMPATIBLE_XML_ENCODING;
+          }
+          else if (hashCode == CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE_HASH)
+          {
+            return ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE;
+          }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING;
+          }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
+          }
+          else if (hashCode == TS_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST;
+          }
+          else if (hashCode == CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST;
+          }
+          else if (hashCode == ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST;
+          }
+          else if (hashCode == ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST;
+          }
+          else if (hashCode == ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST;
+          }
+          else if (hashCode == ISM_CONTAINER_TYPE_WITH_SCTE_HASH)
+          {
+            return ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE;
+          }
+          else if (hashCode == ISM_CONTAINER_WITH_KEY_ROTATION_HASH)
+          {
+            return ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -374,6 +419,8 @@ namespace Aws
             return "CENC_IV_INCOMPATIBLE";
           case ValidationExceptionType::ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE:
             return "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE";
+          case ValidationExceptionType::ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE:
+            return "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE";
           case ValidationExceptionType::ENCRYPTION_CONTRACT_UNENCRYPTED:
             return "ENCRYPTION_CONTRACT_UNENCRYPTED";
           case ValidationExceptionType::ENCRYPTION_CONTRACT_SHARED:
@@ -470,10 +517,6 @@ namespace Aws
             return "CLIP_START_TIME_WITH_START_OR_END";
           case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:
             return "START_TAG_TIME_OFFSET_INVALID";
-          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING:
-            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
-          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
-            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
           case ValidationExceptionType::INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION:
             return "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION";
           case ValidationExceptionType::DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE:
@@ -482,6 +525,26 @@ namespace Aws
             return "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION";
           case ValidationExceptionType::INCOMPATIBLE_XML_ENCODING:
             return "INCOMPATIBLE_XML_ENCODING";
+          case ValidationExceptionType::CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE:
+            return "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
+          case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_MSS_MANIFEST:
+            return "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST";
+          case ValidationExceptionType::CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST:
+            return "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST";
+          case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST:
+            return "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST";
+          case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST:
+            return "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST";
+          case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST:
+            return "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST";
+          case ValidationExceptionType::ISM_CONTAINER_TYPE_WITH_SCTE:
+            return "ISM_CONTAINER_TYPE_WITH_SCTE";
+          case ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION:
+            return "ISM_CONTAINER_WITH_KEY_ROTATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

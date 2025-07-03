@@ -67,6 +67,8 @@
 #include <aws/customer-profiles/model/CreateSegmentEstimateResult.h>
 #include <aws/customer-profiles/model/CreateSegmentSnapshotRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentSnapshotResult.h>
+#include <aws/customer-profiles/model/CreateUploadJobRequest.h>
+#include <aws/customer-profiles/model/CreateUploadJobResult.h>
 #include <aws/customer-profiles/model/DataFormat.h>
 #include <aws/customer-profiles/model/DataPullMode.h>
 #include <aws/customer-profiles/model/DateDimension.h>
@@ -158,6 +160,10 @@
 #include <aws/customer-profiles/model/GetSegmentSnapshotResult.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesRequest.h>
 #include <aws/customer-profiles/model/GetSimilarProfilesResult.h>
+#include <aws/customer-profiles/model/GetUploadJobPathRequest.h>
+#include <aws/customer-profiles/model/GetUploadJobPathResult.h>
+#include <aws/customer-profiles/model/GetUploadJobRequest.h>
+#include <aws/customer-profiles/model/GetUploadJobResult.h>
 #include <aws/customer-profiles/model/GetWorkflowRequest.h>
 #include <aws/customer-profiles/model/GetWorkflowResult.h>
 #include <aws/customer-profiles/model/GetWorkflowStepsRequest.h>
@@ -216,6 +222,8 @@
 #include <aws/customer-profiles/model/ListSegmentDefinitionsResult.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceResult.h>
+#include <aws/customer-profiles/model/ListUploadJobsRequest.h>
+#include <aws/customer-profiles/model/ListUploadJobsResult.h>
 #include <aws/customer-profiles/model/ListWorkflowsItem.h>
 #include <aws/customer-profiles/model/ListWorkflowsRequest.h>
 #include <aws/customer-profiles/model/ListWorkflowsResult.h>
@@ -255,6 +263,7 @@
 #include <aws/customer-profiles/model/RangeUnit.h>
 #include <aws/customer-profiles/model/Readiness.h>
 #include <aws/customer-profiles/model/ReadinessStatus.h>
+#include <aws/customer-profiles/model/ResultsSummary.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingRequest.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingResponse.h>
 #include <aws/customer-profiles/model/RuleBasedMatchingStatus.h>
@@ -278,8 +287,13 @@
 #include <aws/customer-profiles/model/SourceFlowConfig.h>
 #include <aws/customer-profiles/model/SourceSegment.h>
 #include <aws/customer-profiles/model/StandardIdentifier.h>
+#include <aws/customer-profiles/model/StartUploadJobRequest.h>
+#include <aws/customer-profiles/model/StartUploadJobResult.h>
 #include <aws/customer-profiles/model/Statistic.h>
 #include <aws/customer-profiles/model/Status.h>
+#include <aws/customer-profiles/model/StatusReason.h>
+#include <aws/customer-profiles/model/StopUploadJobRequest.h>
+#include <aws/customer-profiles/model/StopUploadJobResult.h>
 #include <aws/customer-profiles/model/StringDimensionType.h>
 #include <aws/customer-profiles/model/TagResourceRequest.h>
 #include <aws/customer-profiles/model/TagResourceResult.h>
@@ -304,6 +318,8 @@
 #include <aws/customer-profiles/model/UpdateEventTriggerResult.h>
 #include <aws/customer-profiles/model/UpdateProfileRequest.h>
 #include <aws/customer-profiles/model/UpdateProfileResult.h>
+#include <aws/customer-profiles/model/UploadJobItem.h>
+#include <aws/customer-profiles/model/UploadJobStatus.h>
 #include <aws/customer-profiles/model/ValueRange.h>
 #include <aws/customer-profiles/model/WorkflowAttributes.h>
 #include <aws/customer-profiles/model/WorkflowMetrics.h>

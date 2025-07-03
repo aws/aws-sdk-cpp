@@ -35,6 +35,15 @@ TaskRunSessionActionDefinitionSummary& TaskRunSessionActionDefinitionSummary::op
     m_stepId = jsonValue.GetString("stepId");
     m_stepIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for(auto& parametersItem : parametersJsonMap)
+    {
+      m_parameters[parametersItem.first] = parametersItem.second.AsObject();
+    }
+    m_parametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +60,17 @@ JsonValue TaskRunSessionActionDefinitionSummary::Jsonize() const
   if(m_stepIdHasBeenSet)
   {
    payload.WithString("stepId", m_stepId);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
+   }
+   payload.WithObject("parameters", std::move(parametersJsonMap));
 
   }
 

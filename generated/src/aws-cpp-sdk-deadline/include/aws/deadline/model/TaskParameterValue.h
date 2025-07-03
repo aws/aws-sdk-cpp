@@ -85,6 +85,19 @@ namespace Model
     template<typename PathT = Aws::String>
     TaskParameterValue& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A range (for example 1-10) or selection of specific (for example 1,3,7,8,10)
+     * integers represented as a string.</p>
+     */
+    inline const Aws::String& GetChunkInt() const { return m_chunkInt; }
+    inline bool ChunkIntHasBeenSet() const { return m_chunkIntHasBeenSet; }
+    template<typename ChunkIntT = Aws::String>
+    void SetChunkInt(ChunkIntT&& value) { m_chunkIntHasBeenSet = true; m_chunkInt = std::forward<ChunkIntT>(value); }
+    template<typename ChunkIntT = Aws::String>
+    TaskParameterValue& WithChunkInt(ChunkIntT&& value) { SetChunkInt(std::forward<ChunkIntT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_int;
@@ -98,6 +111,9 @@ namespace Model
 
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
+
+    Aws::String m_chunkInt;
+    bool m_chunkIntHasBeenSet = false;
   };
 
 } // namespace Model

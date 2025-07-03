@@ -79,6 +79,17 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_mssManifestsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> mssManifestsJsonList(m_mssManifests.size());
+   for(unsigned mssManifestsIndex = 0; mssManifestsIndex < mssManifestsJsonList.GetLength(); ++mssManifestsIndex)
+   {
+     mssManifestsJsonList[mssManifestsIndex].AsObject(m_mssManifests[mssManifestsIndex].Jsonize());
+   }
+   payload.WithArray("MssManifests", std::move(mssManifestsJsonList));
+
+  }
+
   if(m_forceEndpointErrorConfigurationHasBeenSet)
   {
    payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());

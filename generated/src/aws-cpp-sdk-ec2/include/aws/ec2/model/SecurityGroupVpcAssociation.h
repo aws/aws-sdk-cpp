@@ -99,6 +99,18 @@ namespace Model
     template<typename StateReasonT = Aws::String>
     SecurityGroupVpcAssociation& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
+     */
+    inline const Aws::String& GetGroupOwnerId() const { return m_groupOwnerId; }
+    inline bool GroupOwnerIdHasBeenSet() const { return m_groupOwnerIdHasBeenSet; }
+    template<typename GroupOwnerIdT = Aws::String>
+    void SetGroupOwnerId(GroupOwnerIdT&& value) { m_groupOwnerIdHasBeenSet = true; m_groupOwnerId = std::forward<GroupOwnerIdT>(value); }
+    template<typename GroupOwnerIdT = Aws::String>
+    SecurityGroupVpcAssociation& WithGroupOwnerId(GroupOwnerIdT&& value) { SetGroupOwnerId(std::forward<GroupOwnerIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_groupId;
@@ -115,6 +127,9 @@ namespace Model
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
+
+    Aws::String m_groupOwnerId;
+    bool m_groupOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

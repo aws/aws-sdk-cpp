@@ -14,6 +14,7 @@
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateDashManifestConfiguration.h>
+#include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -178,6 +179,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update
+     * for the origin endpoint. This replaces the existing MSS manifest
+     * configurations.</p>
+     */
+    inline const Aws::Vector<CreateMssManifestConfiguration>& GetMssManifests() const { return m_mssManifests; }
+    inline bool MssManifestsHasBeenSet() const { return m_mssManifestsHasBeenSet; }
+    template<typename MssManifestsT = Aws::Vector<CreateMssManifestConfiguration>>
+    void SetMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests = std::forward<MssManifestsT>(value); }
+    template<typename MssManifestsT = Aws::Vector<CreateMssManifestConfiguration>>
+    UpdateOriginEndpointRequest& WithMssManifests(MssManifestsT&& value) { SetMssManifests(std::forward<MssManifestsT>(value)); return *this;}
+    template<typename MssManifestsT = CreateMssManifestConfiguration>
+    UpdateOriginEndpointRequest& AddMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests.emplace_back(std::forward<MssManifestsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The failover settings for the endpoint.</p>
      */
     inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const { return m_forceEndpointErrorConfiguration; }
@@ -232,6 +249,9 @@ namespace Model
 
     Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
     bool m_dashManifestsHasBeenSet = false;
+
+    Aws::Vector<CreateMssManifestConfiguration> m_mssManifests;
+    bool m_mssManifestsHasBeenSet = false;
 
     ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
     bool m_forceEndpointErrorConfigurationHasBeenSet = false;

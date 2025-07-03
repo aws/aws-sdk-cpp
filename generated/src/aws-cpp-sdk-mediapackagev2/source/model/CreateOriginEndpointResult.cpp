@@ -102,6 +102,15 @@ CreateOriginEndpointResult& CreateOriginEndpointResult::operator =(const Aws::Am
     }
     m_dashManifestsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MssManifests"))
+  {
+    Aws::Utils::Array<JsonView> mssManifestsJsonList = jsonValue.GetArray("MssManifests");
+    for(unsigned mssManifestsIndex = 0; mssManifestsIndex < mssManifestsJsonList.GetLength(); ++mssManifestsIndex)
+    {
+      m_mssManifests.push_back(mssManifestsJsonList[mssManifestsIndex].AsObject());
+    }
+    m_mssManifestsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ForceEndpointErrorConfiguration"))
   {
     m_forceEndpointErrorConfiguration = jsonValue.GetObject("ForceEndpointErrorConfiguration");

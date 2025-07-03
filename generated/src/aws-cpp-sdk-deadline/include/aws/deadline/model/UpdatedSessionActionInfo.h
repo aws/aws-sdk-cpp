@@ -8,6 +8,8 @@
 #include <aws/deadline/model/CompletedStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/deadline/model/TaskRunManifestPropertiesRequest.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +120,21 @@ namespace Model
     inline void SetProgressPercent(double value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
     inline UpdatedSessionActionInfo& WithProgressPercent(double value) { SetProgressPercent(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of output manifest properties reported by the worker agent, with each
+     * entry corresponding to a manifest property in the job.</p>
+     */
+    inline const Aws::Vector<TaskRunManifestPropertiesRequest>& GetManifests() const { return m_manifests; }
+    inline bool ManifestsHasBeenSet() const { return m_manifestsHasBeenSet; }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesRequest>>
+    void SetManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests = std::forward<ManifestsT>(value); }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesRequest>>
+    UpdatedSessionActionInfo& WithManifests(ManifestsT&& value) { SetManifests(std::forward<ManifestsT>(value)); return *this;}
+    template<typename ManifestsT = TaskRunManifestPropertiesRequest>
+    UpdatedSessionActionInfo& AddManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests.emplace_back(std::forward<ManifestsT>(value)); return *this; }
+    ///@}
   private:
 
     CompletedStatus m_completedStatus{CompletedStatus::NOT_SET};
@@ -140,6 +157,9 @@ namespace Model
 
     double m_progressPercent{0.0};
     bool m_progressPercentHasBeenSet = false;
+
+    Aws::Vector<TaskRunManifestPropertiesRequest> m_manifests;
+    bool m_manifestsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,8 @@
 #include <aws/deadline/model/SessionActionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/deadline/model/SessionActionDefinitionSummary.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/deadline/model/TaskRunManifestPropertiesResponse.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +122,21 @@ namespace Model
     template<typename DefinitionT = SessionActionDefinitionSummary>
     SessionActionSummary& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The list of manifest properties that describe file attachments for the task
+     * run.</p>
+     */
+    inline const Aws::Vector<TaskRunManifestPropertiesResponse>& GetManifests() const { return m_manifests; }
+    inline bool ManifestsHasBeenSet() const { return m_manifestsHasBeenSet; }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+    void SetManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests = std::forward<ManifestsT>(value); }
+    template<typename ManifestsT = Aws::Vector<TaskRunManifestPropertiesResponse>>
+    SessionActionSummary& WithManifests(ManifestsT&& value) { SetManifests(std::forward<ManifestsT>(value)); return *this;}
+    template<typename ManifestsT = TaskRunManifestPropertiesResponse>
+    SessionActionSummary& AddManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests.emplace_back(std::forward<ManifestsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_sessionActionId;
@@ -142,6 +159,9 @@ namespace Model
 
     SessionActionDefinitionSummary m_definition;
     bool m_definitionHasBeenSet = false;
+
+    Aws::Vector<TaskRunManifestPropertiesResponse> m_manifests;
+    bool m_manifestsHasBeenSet = false;
   };
 
 } // namespace Model

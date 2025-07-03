@@ -33,6 +33,7 @@
 #include <aws/mediapackagev2/model/CreateHarvestJobResult.h>
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointRequest.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointResult.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
@@ -79,6 +80,7 @@
 #include <aws/mediapackagev2/model/GetHarvestJobResult.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/GetMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetOriginEndpointPolicyRequest.h>
 #include <aws/mediapackagev2/model/GetOriginEndpointPolicyResult.h>
 #include <aws/mediapackagev2/model/GetOriginEndpointRequest.h>
@@ -93,6 +95,7 @@
 #include <aws/mediapackagev2/model/IngestEndpoint.h>
 #include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
 #include <aws/mediapackagev2/model/InputType.h>
+#include <aws/mediapackagev2/model/IsmEncryptionMethod.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsRequest.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsResult.h>
 #include <aws/mediapackagev2/model/ListChannelsRequest.h>
@@ -102,10 +105,12 @@
 #include <aws/mediapackagev2/model/ListHarvestJobsResult.h>
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/ListMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListOriginEndpointsRequest.h>
 #include <aws/mediapackagev2/model/ListOriginEndpointsResult.h>
 #include <aws/mediapackagev2/model/ListTagsForResourceRequest.h>
 #include <aws/mediapackagev2/model/ListTagsForResourceResult.h>
+#include <aws/mediapackagev2/model/MssManifestLayout.h>
 #include <aws/mediapackagev2/model/OriginEndpointListConfiguration.h>
 #include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
 #include <aws/mediapackagev2/model/PresetSpeke20Audio.h>

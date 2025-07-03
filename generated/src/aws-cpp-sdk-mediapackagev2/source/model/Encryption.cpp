@@ -40,6 +40,11 @@ Encryption& Encryption::operator =(JsonView jsonValue)
     m_keyRotationIntervalSeconds = jsonValue.GetInteger("KeyRotationIntervalSeconds");
     m_keyRotationIntervalSecondsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CmafExcludeSegmentDrmMetadata"))
+  {
+    m_cmafExcludeSegmentDrmMetadata = jsonValue.GetBool("CmafExcludeSegmentDrmMetadata");
+    m_cmafExcludeSegmentDrmMetadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("SpekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("SpekeKeyProvider");
@@ -67,6 +72,12 @@ JsonValue Encryption::Jsonize() const
   if(m_keyRotationIntervalSecondsHasBeenSet)
   {
    payload.WithInteger("KeyRotationIntervalSeconds", m_keyRotationIntervalSeconds);
+
+  }
+
+  if(m_cmafExcludeSegmentDrmMetadataHasBeenSet)
+  {
+   payload.WithBool("CmafExcludeSegmentDrmMetadata", m_cmafExcludeSegmentDrmMetadata);
 
   }
 

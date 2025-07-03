@@ -369,6 +369,8 @@
 #include <aws/deadline/model/TagResourceRequest.h>
 #include <aws/deadline/model/TagResourceResult.h>
 #include <aws/deadline/model/TaskParameterValue.h>
+#include <aws/deadline/model/TaskRunManifestPropertiesRequest.h>
+#include <aws/deadline/model/TaskRunManifestPropertiesResponse.h>
 #include <aws/deadline/model/TaskRunSessionActionDefinition.h>
 #include <aws/deadline/model/TaskRunSessionActionDefinitionSummary.h>
 #include <aws/deadline/model/TaskRunStatus.h>

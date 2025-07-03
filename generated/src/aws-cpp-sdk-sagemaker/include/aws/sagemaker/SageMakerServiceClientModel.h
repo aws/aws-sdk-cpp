@@ -45,6 +45,7 @@
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
 #include <aws/sagemaker/model/CreateHubResult.h>
+#include <aws/sagemaker/model/CreateHubContentPresignedUrlsResult.h>
 #include <aws/sagemaker/model/CreateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiResult.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
@@ -273,6 +274,7 @@
 #include <aws/sagemaker/model/StartInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StartMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
+#include <aws/sagemaker/model/StartSessionResult.h>
 #include <aws/sagemaker/model/StopInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StopMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
@@ -458,6 +460,7 @@ namespace Aws
       class CreateFeatureGroupRequest;
       class CreateFlowDefinitionRequest;
       class CreateHubRequest;
+      class CreateHubContentPresignedUrlsRequest;
       class CreateHubContentReferenceRequest;
       class CreateHumanTaskUiRequest;
       class CreateHyperParameterTuningJobRequest;
@@ -727,6 +730,7 @@ namespace Aws
       class StartMonitoringScheduleRequest;
       class StartNotebookInstanceRequest;
       class StartPipelineExecutionRequest;
+      class StartSessionRequest;
       class StopAutoMLJobRequest;
       class StopCompilationJobRequest;
       class StopEdgeDeploymentStageRequest;
@@ -819,6 +823,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateFeatureGroupResult, SageMakerError> CreateFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, SageMakerError> CreateFlowDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateHubResult, SageMakerError> CreateHubOutcome;
+      typedef Aws::Utils::Outcome<CreateHubContentPresignedUrlsResult, SageMakerError> CreateHubContentPresignedUrlsOutcome;
       typedef Aws::Utils::Outcome<CreateHubContentReferenceResult, SageMakerError> CreateHubContentReferenceOutcome;
       typedef Aws::Utils::Outcome<CreateHumanTaskUiResult, SageMakerError> CreateHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, SageMakerError> CreateHyperParameterTuningJobOutcome;
@@ -1088,6 +1093,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
       typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
+      typedef Aws::Utils::Outcome<StartSessionResult, SageMakerError> StartSessionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopAutoMLJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopCompilationJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgeDeploymentStageOutcome;
@@ -1180,6 +1186,7 @@ namespace Aws
       typedef std::future<CreateFeatureGroupOutcome> CreateFeatureGroupOutcomeCallable;
       typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
       typedef std::future<CreateHubOutcome> CreateHubOutcomeCallable;
+      typedef std::future<CreateHubContentPresignedUrlsOutcome> CreateHubContentPresignedUrlsOutcomeCallable;
       typedef std::future<CreateHubContentReferenceOutcome> CreateHubContentReferenceOutcomeCallable;
       typedef std::future<CreateHumanTaskUiOutcome> CreateHumanTaskUiOutcomeCallable;
       typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
@@ -1449,6 +1456,7 @@ namespace Aws
       typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
       typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
       typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
+      typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
       typedef std::future<StopAutoMLJobOutcome> StopAutoMLJobOutcomeCallable;
       typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
       typedef std::future<StopEdgeDeploymentStageOutcome> StopEdgeDeploymentStageOutcomeCallable;
@@ -1544,6 +1552,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateFeatureGroupRequest&, const Model::CreateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHubRequest&, const Model::CreateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateHubContentPresignedUrlsRequest&, const Model::CreateHubContentPresignedUrlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubContentPresignedUrlsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHubContentReferenceRequest&, const Model::CreateHubContentReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubContentReferenceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHumanTaskUiRequest&, const Model::CreateHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
@@ -1813,6 +1822,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopAutoMLJobRequest&, const Model::StopAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopCompilationJobRequest&, const Model::StopCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopEdgeDeploymentStageRequest&, const Model::StopEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgeDeploymentStageResponseReceivedHandler;

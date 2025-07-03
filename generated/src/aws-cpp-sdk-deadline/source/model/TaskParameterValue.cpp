@@ -45,6 +45,11 @@ TaskParameterValue& TaskParameterValue::operator =(JsonView jsonValue)
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("chunkInt"))
+  {
+    m_chunkInt = jsonValue.GetString("chunkInt");
+    m_chunkIntHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue TaskParameterValue::Jsonize() const
   if(m_pathHasBeenSet)
   {
    payload.WithString("path", m_path);
+
+  }
+
+  if(m_chunkIntHasBeenSet)
+  {
+   payload.WithString("chunkInt", m_chunkInt);
 
   }
 
