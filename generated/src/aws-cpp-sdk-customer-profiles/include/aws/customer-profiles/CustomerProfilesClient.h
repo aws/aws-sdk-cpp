@@ -460,6 +460,33 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Creates an Upload job to ingest data for segment imports. The metadata is
+         * created for the job with the provided field mapping and unique key.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUploadJobOutcome CreateUploadJob(const Model::CreateUploadJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateUploadJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateUploadJobRequestT = Model::CreateUploadJobRequest>
+        Model::CreateUploadJobOutcomeCallable CreateUploadJobCallable(const CreateUploadJobRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::CreateUploadJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateUploadJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateUploadJobRequestT = Model::CreateUploadJobRequest>
+        void CreateUploadJobAsync(const CreateUploadJobRequestT& request, const CreateUploadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::CreateUploadJob, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an existing calculated attribute definition. Note that deleting a
          * default calculated attribute is possible, however once deleted, you will be
          * unable to undo that action and will need to recreate it on your own using the
@@ -1287,6 +1314,58 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>This API retrieves the details of a specific upload job. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUploadJobOutcome GetUploadJob(const Model::GetUploadJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetUploadJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetUploadJobRequestT = Model::GetUploadJobRequest>
+        Model::GetUploadJobOutcomeCallable GetUploadJobCallable(const GetUploadJobRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetUploadJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetUploadJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetUploadJobRequestT = Model::GetUploadJobRequest>
+        void GetUploadJobAsync(const GetUploadJobRequestT& request, const GetUploadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetUploadJob, request, handler, context);
+        }
+
+        /**
+         * <p>This API retrieves the pre-signed URL and client token for uploading the file
+         * associated with the upload job. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUploadJobPathOutcome GetUploadJobPath(const Model::GetUploadJobPathRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetUploadJobPath that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetUploadJobPathRequestT = Model::GetUploadJobPathRequest>
+        Model::GetUploadJobPathOutcomeCallable GetUploadJobPathCallable(const GetUploadJobPathRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetUploadJobPath, request);
+        }
+
+        /**
+         * An Async wrapper for GetUploadJobPath that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetUploadJobPathRequestT = Model::GetUploadJobPathRequest>
+        void GetUploadJobPathAsync(const GetUploadJobPathRequestT& request, const GetUploadJobPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetUploadJobPath, request, handler, context);
+        }
+
+        /**
          * <p>Get details of specified workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">AWS
          * API Reference</a></p>
@@ -1778,6 +1857,32 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>This API retrieves a list of upload jobs for the specified domain.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUploadJobsOutcome ListUploadJobs(const Model::ListUploadJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUploadJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUploadJobsRequestT = Model::ListUploadJobsRequest>
+        Model::ListUploadJobsOutcomeCallable ListUploadJobsCallable(const ListUploadJobsRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListUploadJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListUploadJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUploadJobsRequestT = Model::ListUploadJobsRequest>
+        void ListUploadJobsAsync(const ListUploadJobsRequestT& request, const ListUploadJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListUploadJobs, request, handler, context);
+        }
+
+        /**
          * <p>Query to list all workflows.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows">AWS
          * API Reference</a></p>
@@ -1968,6 +2073,58 @@ namespace CustomerProfiles
         void SearchProfilesAsync(const SearchProfilesRequestT& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::SearchProfiles, request, handler, context);
+        }
+
+        /**
+         * <p>This API starts the processing of an upload job to ingest profile data.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartUploadJobOutcome StartUploadJob(const Model::StartUploadJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartUploadJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartUploadJobRequestT = Model::StartUploadJobRequest>
+        Model::StartUploadJobOutcomeCallable StartUploadJobCallable(const StartUploadJobRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::StartUploadJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartUploadJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartUploadJobRequestT = Model::StartUploadJobRequest>
+        void StartUploadJobAsync(const StartUploadJobRequestT& request, const StartUploadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::StartUploadJob, request, handler, context);
+        }
+
+        /**
+         * <p>This API stops the processing of an upload job. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopUploadJobOutcome StopUploadJob(const Model::StopUploadJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopUploadJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopUploadJobRequestT = Model::StopUploadJobRequest>
+        Model::StopUploadJobOutcomeCallable StopUploadJobCallable(const StopUploadJobRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::StopUploadJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopUploadJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopUploadJobRequestT = Model::StopUploadJobRequest>
+        void StopUploadJobAsync(const StopUploadJobRequestT& request, const StopUploadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::StopUploadJob, request, handler, context);
         }
 
         /**

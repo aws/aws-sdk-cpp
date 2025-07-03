@@ -142,6 +142,17 @@ namespace Model
     template<typename CustomFileSystemsT = CustomFileSystem>
     SpaceSettings& AddCustomFileSystems(CustomFileSystemsT&& value) { m_customFileSystemsHasBeenSet = true; m_customFileSystems.emplace_back(std::forward<CustomFileSystemsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A setting that enables or disables remote access for a SageMaker space. When
+     * enabled, this allows you to connect to the remote space from your local IDE.</p>
+     */
+    inline FeatureStatus GetRemoteAccess() const { return m_remoteAccess; }
+    inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
+    inline void SetRemoteAccess(FeatureStatus value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
+    inline SpaceSettings& WithRemoteAccess(FeatureStatus value) { SetRemoteAccess(value); return *this;}
+    ///@}
   private:
 
     JupyterServerAppSettings m_jupyterServerAppSettings;
@@ -167,6 +178,9 @@ namespace Model
 
     Aws::Vector<CustomFileSystem> m_customFileSystems;
     bool m_customFileSystemsHasBeenSet = false;
+
+    FeatureStatus m_remoteAccess{FeatureStatus::NOT_SET};
+    bool m_remoteAccessHasBeenSet = false;
   };
 
 } // namespace Model

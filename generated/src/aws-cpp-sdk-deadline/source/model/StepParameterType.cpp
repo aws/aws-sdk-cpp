@@ -24,6 +24,7 @@ namespace Aws
         static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
         static const int STRING_HASH = HashingUtils::HashString("STRING");
         static const int PATH_HASH = HashingUtils::HashString("PATH");
+        static const int CHUNK_INT_HASH = HashingUtils::HashString("CHUNK_INT");
 
 
         StepParameterType GetStepParameterTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PATH_HASH)
           {
             return StepParameterType::PATH;
+          }
+          else if (hashCode == CHUNK_INT_HASH)
+          {
+            return StepParameterType::CHUNK_INT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "STRING";
           case StepParameterType::PATH:
             return "PATH";
+          case StepParameterType::CHUNK_INT:
+            return "CHUNK_INT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -994,10 +994,10 @@ namespace EC2
          * specified VPC.</p>  <ul> <li> <p>The VPC you want to associate the
          * security group with must be in the same Region.</p> </li> <li> <p>You can
          * associate the security group with another VPC if your account owns the VPC or if
-         * the VPC was shared with you.</p> </li> <li> <p>You must own the security group
-         * and the VPC that it was created in.</p> </li> <li> <p>You cannot use this
-         * feature with default security groups.</p> </li> <li> <p>You cannot use this
-         * feature with the default VPC.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * the VPC was shared with you.</p> </li> <li> <p>You must own the security
+         * group.</p> </li> <li> <p>You cannot use this feature with default security
+         * groups.</p> </li> <li> <p>You cannot use this feature with the default VPC.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">AWS
          * API Reference</a></p>
          */

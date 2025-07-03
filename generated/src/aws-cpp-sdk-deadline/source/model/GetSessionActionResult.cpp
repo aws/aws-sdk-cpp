@@ -84,6 +84,15 @@ GetSessionActionResult& GetSessionActionResult::operator =(const Aws::AmazonWebS
     }
     m_acquiredLimitsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("manifests"))
+  {
+    Aws::Utils::Array<JsonView> manifestsJsonList = jsonValue.GetArray("manifests");
+    for(unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex)
+    {
+      m_manifests.push_back(manifestsJsonList[manifestsIndex].AsObject());
+    }
+    m_manifestsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

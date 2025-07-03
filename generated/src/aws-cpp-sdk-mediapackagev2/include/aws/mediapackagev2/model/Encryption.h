@@ -84,6 +84,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+     * <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes
+     * from CMAF segments, which can improve compatibility with certain devices and
+     * players that don't support these boxes.</p> <p>Important considerations:</p>
+     * <ul> <li> <p>This setting only affects CMAF container formats</p> </li> <li>
+     * <p>Key rotation can still be handled through media playlist signaling</p> </li>
+     * <li> <p>PSSH and TENC boxes remain unaffected</p> </li> <li> <p>Default behavior
+     * is preserved when this setting is disabled</p> </li> </ul> <p>Valid values:
+     * <code>true</code> | <code>false</code> </p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetCmafExcludeSegmentDrmMetadata() const { return m_cmafExcludeSegmentDrmMetadata; }
+    inline bool CmafExcludeSegmentDrmMetadataHasBeenSet() const { return m_cmafExcludeSegmentDrmMetadataHasBeenSet; }
+    inline void SetCmafExcludeSegmentDrmMetadata(bool value) { m_cmafExcludeSegmentDrmMetadataHasBeenSet = true; m_cmafExcludeSegmentDrmMetadata = value; }
+    inline Encryption& WithCmafExcludeSegmentDrmMetadata(bool value) { SetCmafExcludeSegmentDrmMetadata(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The parameters for the SPEKE key provider.</p>
      */
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
@@ -103,6 +121,9 @@ namespace Model
 
     int m_keyRotationIntervalSeconds{0};
     bool m_keyRotationIntervalSecondsHasBeenSet = false;
+
+    bool m_cmafExcludeSegmentDrmMetadata{false};
+    bool m_cmafExcludeSegmentDrmMetadataHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
     bool m_spekeKeyProviderHasBeenSet = false;

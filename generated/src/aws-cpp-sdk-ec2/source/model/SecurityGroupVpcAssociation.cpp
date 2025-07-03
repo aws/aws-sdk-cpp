@@ -61,6 +61,12 @@ SecurityGroupVpcAssociation& SecurityGroupVpcAssociation::operator =(const XmlNo
       m_stateReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonNode.GetText());
       m_stateReasonHasBeenSet = true;
     }
+    XmlNode groupOwnerIdNode = resultNode.FirstChild("groupOwnerId");
+    if(!groupOwnerIdNode.IsNull())
+    {
+      m_groupOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(groupOwnerIdNode.GetText());
+      m_groupOwnerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +99,11 @@ void SecurityGroupVpcAssociation::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
 
+  if(m_groupOwnerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupOwnerId=" << StringUtils::URLEncode(m_groupOwnerId.c_str()) << "&";
+  }
+
 }
 
 void SecurityGroupVpcAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,6 +127,10 @@ void SecurityGroupVpcAssociation::OutputToStream(Aws::OStream& oStream, const ch
   if(m_stateReasonHasBeenSet)
   {
       oStream << location << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
+  }
+  if(m_groupOwnerIdHasBeenSet)
+  {
+      oStream << location << ".GroupOwnerId=" << StringUtils::URLEncode(m_groupOwnerId.c_str()) << "&";
   }
 }
 

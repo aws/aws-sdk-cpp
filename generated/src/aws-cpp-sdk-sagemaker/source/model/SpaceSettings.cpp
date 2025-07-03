@@ -69,6 +69,11 @@ SpaceSettings& SpaceSettings::operator =(JsonView jsonValue)
     }
     m_customFileSystemsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RemoteAccess"))
+  {
+    m_remoteAccess = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("RemoteAccess"));
+    m_remoteAccessHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +130,11 @@ JsonValue SpaceSettings::Jsonize() const
    }
    payload.WithArray("CustomFileSystems", std::move(customFileSystemsJsonList));
 
+  }
+
+  if(m_remoteAccessHasBeenSet)
+  {
+   payload.WithString("RemoteAccess", FeatureStatusMapper::GetNameForFeatureStatus(m_remoteAccess));
   }
 
   return payload;

@@ -7,6 +7,7 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/TsEncryptionMethod.h>
 #include <aws/mediapackagev2/model/CmafEncryptionMethod.h>
+#include <aws/mediapackagev2/model/IsmEncryptionMethod.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +58,18 @@ namespace Model
     inline void SetCmafEncryptionMethod(CmafEncryptionMethod value) { m_cmafEncryptionMethodHasBeenSet = true; m_cmafEncryptionMethod = value; }
     inline EncryptionMethod& WithCmafEncryptionMethod(CmafEncryptionMethod value) { SetCmafEncryptionMethod(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This
+     * specifies how the MSS segments are encrypted to protect the content during
+     * delivery to client players.</p>
+     */
+    inline IsmEncryptionMethod GetIsmEncryptionMethod() const { return m_ismEncryptionMethod; }
+    inline bool IsmEncryptionMethodHasBeenSet() const { return m_ismEncryptionMethodHasBeenSet; }
+    inline void SetIsmEncryptionMethod(IsmEncryptionMethod value) { m_ismEncryptionMethodHasBeenSet = true; m_ismEncryptionMethod = value; }
+    inline EncryptionMethod& WithIsmEncryptionMethod(IsmEncryptionMethod value) { SetIsmEncryptionMethod(value); return *this;}
+    ///@}
   private:
 
     TsEncryptionMethod m_tsEncryptionMethod{TsEncryptionMethod::NOT_SET};
@@ -64,6 +77,9 @@ namespace Model
 
     CmafEncryptionMethod m_cmafEncryptionMethod{CmafEncryptionMethod::NOT_SET};
     bool m_cmafEncryptionMethodHasBeenSet = false;
+
+    IsmEncryptionMethod m_ismEncryptionMethod{IsmEncryptionMethod::NOT_SET};
+    bool m_ismEncryptionMethodHasBeenSet = false;
   };
 
 } // namespace Model

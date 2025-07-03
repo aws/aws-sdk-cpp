@@ -35,6 +35,11 @@ EncryptionMethod& EncryptionMethod::operator =(JsonView jsonValue)
     m_cmafEncryptionMethod = CmafEncryptionMethodMapper::GetCmafEncryptionMethodForName(jsonValue.GetString("CmafEncryptionMethod"));
     m_cmafEncryptionMethodHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IsmEncryptionMethod"))
+  {
+    m_ismEncryptionMethod = IsmEncryptionMethodMapper::GetIsmEncryptionMethodForName(jsonValue.GetString("IsmEncryptionMethod"));
+    m_ismEncryptionMethodHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,11 @@ JsonValue EncryptionMethod::Jsonize() const
   if(m_cmafEncryptionMethodHasBeenSet)
   {
    payload.WithString("CmafEncryptionMethod", CmafEncryptionMethodMapper::GetNameForCmafEncryptionMethod(m_cmafEncryptionMethod));
+  }
+
+  if(m_ismEncryptionMethodHasBeenSet)
+  {
+   payload.WithString("IsmEncryptionMethod", IsmEncryptionMethodMapper::GetNameForIsmEncryptionMethod(m_ismEncryptionMethod));
   }
 
   return payload;

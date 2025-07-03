@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AppType.h>
+#include <aws/sagemaker/model/FeatureStatus.h>
 #include <aws/sagemaker/model/SpaceStorageSettings.h>
 #include <utility>
 
@@ -51,6 +52,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>A setting that enables or disables remote access for a SageMaker space. When
+     * enabled, this allows you to connect to the remote space from your local IDE.</p>
+     */
+    inline FeatureStatus GetRemoteAccess() const { return m_remoteAccess; }
+    inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
+    inline void SetRemoteAccess(FeatureStatus value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
+    inline SpaceSettingsSummary& WithRemoteAccess(FeatureStatus value) { SetRemoteAccess(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The storage settings for a space.</p>
      */
     inline const SpaceStorageSettings& GetSpaceStorageSettings() const { return m_spaceStorageSettings; }
@@ -64,6 +76,9 @@ namespace Model
 
     AppType m_appType{AppType::NOT_SET};
     bool m_appTypeHasBeenSet = false;
+
+    FeatureStatus m_remoteAccess{FeatureStatus::NOT_SET};
+    bool m_remoteAccessHasBeenSet = false;
 
     SpaceStorageSettings m_spaceStorageSettings;
     bool m_spaceStorageSettingsHasBeenSet = false;

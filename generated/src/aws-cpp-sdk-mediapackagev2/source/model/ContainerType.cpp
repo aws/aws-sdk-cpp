@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TS_HASH = HashingUtils::HashString("TS");
         static const int CMAF_HASH = HashingUtils::HashString("CMAF");
+        static const int ISM_HASH = HashingUtils::HashString("ISM");
 
 
         ContainerType GetContainerTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CMAF_HASH)
           {
             return ContainerType::CMAF;
+          }
+          else if (hashCode == ISM_HASH)
+          {
+            return ContainerType::ISM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "TS";
           case ContainerType::CMAF:
             return "CMAF";
+          case ContainerType::ISM:
+            return "ISM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

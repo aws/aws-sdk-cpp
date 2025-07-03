@@ -42,6 +42,7 @@ namespace Model
     /**
      * <p>Security group VPC association filters.</p> <ul> <li> <p>
      * <code>group-id</code>: The security group ID.</p> </li> <li> <p>
+     * <code>group-owner-id</code>: The group owner ID.</p> </li> <li> <p>
      * <code>vpc-id</code>: The ID of the associated VPC.</p> </li> <li> <p>
      * <code>vpc-owner-id</code>: The account ID of the VPC owner.</p> </li> <li> <p>
      * <code>state</code>: The state of the association.</p> </li> <li> <p>

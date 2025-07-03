@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/deadline/model/TaskParameterValue.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +62,22 @@ namespace Model
     template<typename StepIdT = Aws::String>
     TaskRunSessionActionDefinitionSummary& WithStepId(StepIdT&& value) { SetStepId(std::forward<StepIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The parameters of a task run in a session action.</p>
+     */
+    inline const Aws::Map<Aws::String, TaskParameterValue>& GetParameters() const { return m_parameters; }
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+    template<typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, TaskParameterValue>>
+    TaskRunSessionActionDefinitionSummary& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = TaskParameterValue>
+    TaskRunSessionActionDefinitionSummary& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_taskId;
@@ -67,6 +85,9 @@ namespace Model
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, TaskParameterValue> m_parameters;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

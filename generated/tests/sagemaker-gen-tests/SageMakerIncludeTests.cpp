@@ -69,6 +69,7 @@
 #include <aws/sagemaker/model/AthenaResultCompressionType.h>
 #include <aws/sagemaker/model/AthenaResultFormat.h>
 #include <aws/sagemaker/model/AuthMode.h>
+#include <aws/sagemaker/model/AuthorizedUrl.h>
 #include <aws/sagemaker/model/AutoMLAlgorithm.h>
 #include <aws/sagemaker/model/AutoMLAlgorithmConfig.h>
 #include <aws/sagemaker/model/AutoMLCandidate.h>
@@ -258,6 +259,8 @@
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
+#include <aws/sagemaker/model/CreateHubContentPresignedUrlsRequest.h>
+#include <aws/sagemaker/model/CreateHubContentPresignedUrlsResult.h>
 #include <aws/sagemaker/model/CreateHubContentReferenceRequest.h>
 #include <aws/sagemaker/model/CreateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/CreateHubRequest.h>
@@ -1198,6 +1201,7 @@
 #include <aws/sagemaker/model/PipelineSummary.h>
 #include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 #include <aws/sagemaker/model/PreemptTeamTasks.h>
+#include <aws/sagemaker/model/PresignedUrlAccessConfig.h>
 #include <aws/sagemaker/model/PriorityClass.h>
 #include <aws/sagemaker/model/ProblemType.h>
 #include <aws/sagemaker/model/ProcessingClusterConfig.h>
@@ -1403,6 +1407,8 @@
 #include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/StartPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
+#include <aws/sagemaker/model/StartSessionRequest.h>
+#include <aws/sagemaker/model/StartSessionResult.h>
 #include <aws/sagemaker/model/Statistic.h>
 #include <aws/sagemaker/model/StepStatus.h>
 #include <aws/sagemaker/model/StopAutoMLJobRequest.h>

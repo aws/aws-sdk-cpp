@@ -60,6 +60,15 @@ UpdatedSessionActionInfo& UpdatedSessionActionInfo::operator =(JsonView jsonValu
     m_progressPercent = jsonValue.GetDouble("progressPercent");
     m_progressPercentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("manifests"))
+  {
+    Aws::Utils::Array<JsonView> manifestsJsonList = jsonValue.GetArray("manifests");
+    for(unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex)
+    {
+      m_manifests.push_back(manifestsJsonList[manifestsIndex].AsObject());
+    }
+    m_manifestsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +111,17 @@ JsonValue UpdatedSessionActionInfo::Jsonize() const
   if(m_progressPercentHasBeenSet)
   {
    payload.WithDouble("progressPercent", m_progressPercent);
+
+  }
+
+  if(m_manifestsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> manifestsJsonList(m_manifests.size());
+   for(unsigned manifestsIndex = 0; manifestsIndex < manifestsJsonList.GetLength(); ++manifestsIndex)
+   {
+     manifestsJsonList[manifestsIndex].AsObject(m_manifests[manifestsIndex].Jsonize());
+   }
+   payload.WithArray("manifests", std::move(manifestsJsonList));
 
   }
 

@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/GetMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetDashManifestConfiguration.h>
 #include <utility>
 
@@ -184,6 +185,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The updated Microsoft Smooth Streaming (MSS) manifest configurations for this
+     * origin endpoint.</p>
+     */
+    inline const Aws::Vector<GetMssManifestConfiguration>& GetGetMssManifests() const { return m_mssManifests; }
+    template<typename MssManifestsT = Aws::Vector<GetMssManifestConfiguration>>
+    void SetMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests = std::forward<MssManifestsT>(value); }
+    template<typename MssManifestsT = Aws::Vector<GetMssManifestConfiguration>>
+    UpdateOriginEndpointResult& WithMssManifests(MssManifestsT&& value) { SetMssManifests(std::forward<MssManifestsT>(value)); return *this;}
+    template<typename MssManifestsT = GetMssManifestConfiguration>
+    UpdateOriginEndpointResult& AddMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests.emplace_back(std::forward<MssManifestsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The failover settings for the endpoint.</p>
      */
     inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const { return m_forceEndpointErrorConfiguration; }
@@ -279,6 +294,9 @@ namespace Model
 
     Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
     bool m_lowLatencyHlsManifestsHasBeenSet = false;
+
+    Aws::Vector<GetMssManifestConfiguration> m_mssManifests;
+    bool m_mssManifestsHasBeenSet = false;
 
     ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
     bool m_forceEndpointErrorConfigurationHasBeenSet = false;

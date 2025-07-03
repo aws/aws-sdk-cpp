@@ -19,7 +19,8 @@ namespace Model
     INT,
     FLOAT,
     STRING,
-    PATH
+    PATH,
+    CHUNK_INT
   };
 
 namespace StepParameterTypeMapper

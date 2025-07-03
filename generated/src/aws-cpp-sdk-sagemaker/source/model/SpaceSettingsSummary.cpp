@@ -30,6 +30,11 @@ SpaceSettingsSummary& SpaceSettingsSummary::operator =(JsonView jsonValue)
     m_appType = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("AppType"));
     m_appTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RemoteAccess"))
+  {
+    m_remoteAccess = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("RemoteAccess"));
+    m_remoteAccessHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("SpaceStorageSettings"))
   {
     m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
@@ -45,6 +50,11 @@ JsonValue SpaceSettingsSummary::Jsonize() const
   if(m_appTypeHasBeenSet)
   {
    payload.WithString("AppType", AppTypeMapper::GetNameForAppType(m_appType));
+  }
+
+  if(m_remoteAccessHasBeenSet)
+  {
+   payload.WithString("RemoteAccess", FeatureStatusMapper::GetNameForFeatureStatus(m_remoteAccess));
   }
 
   if(m_spaceStorageSettingsHasBeenSet)

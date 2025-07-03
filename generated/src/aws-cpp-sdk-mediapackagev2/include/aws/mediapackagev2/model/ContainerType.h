@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TS,
-    CMAF
+    CMAF,
+    ISM
   };
 
 namespace ContainerTypeMapper
