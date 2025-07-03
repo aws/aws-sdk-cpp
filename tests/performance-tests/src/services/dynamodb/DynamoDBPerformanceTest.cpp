@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
@@ -25,21 +28,19 @@
 #include <chrono>
 #include <thread>
 
-void PerformanceTest::Services::DynamoDB::RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations) {
-  auto tableName = SetupTable(dynamodb, config);
-  if (tableName.empty()) {
-    return;
-  }
+PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config,
+                                                                                      int iterations)
+    : m_config(config), m_region(region), m_iterations(iterations) {}
 
-  RunOperations(dynamodb, tableName, config, iterations);
-  CleanupResources(dynamodb, tableName);
-}
+void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
+  Aws::Client::ClientConfiguration cfg;
+  cfg.region = m_region;
+  m_dynamodb = Aws::MakeUnique<Aws::DynamoDB::DynamoDBClient>("DynamoDBPerformanceTest", cfg);
 
-Aws::String PerformanceTest::Services::DynamoDB::SetupTable(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& /* config */) {
-  Aws::String tableName = "perf-table-" + PerformanceTest::Utils::GenerateUniqueId();
+  m_tableName = "perf-table-" + PerformanceTest::Utils::GenerateUniqueId();
 
   Aws::DynamoDB::Model::CreateTableRequest createTableRequest;
-  createTableRequest.SetTableName(tableName);
+  createTableRequest.SetTableName(m_tableName);
 
   Aws::DynamoDB::Model::AttributeDefinition hashKey;
   hashKey.SetAttributeName("id");
@@ -53,18 +54,19 @@ Aws::String PerformanceTest::Services::DynamoDB::SetupTable(Aws::DynamoDB::Dynam
   Aws::DynamoDB::Model::BillingMode const billingMode = Aws::DynamoDB::Model::BillingMode::PAY_PER_REQUEST;
   createTableRequest.SetBillingMode(billingMode);
 
-  auto createTableOutcome = dynamodb.CreateTable(createTableRequest);
+  auto createTableOutcome = m_dynamodb->CreateTable(createTableRequest);
   if (!createTableOutcome.IsSuccess()) {
-    PerformanceTest::Utils::LogError("DynamoDB", "CreateTable", createTableOutcome.GetError().GetMessage());
-    return "";
+    AWS_LOG_ERROR("PerformanceTest", ("DynamoDB:CreateTable failed: " + createTableOutcome.GetError().GetMessage()).c_str());
+    m_tableName.clear();
+    return;
   }
 
   // Wait for table to become active
   Aws::DynamoDB::Model::DescribeTableRequest describeRequest;
-  describeRequest.SetTableName(tableName);
+  describeRequest.SetTableName(m_tableName);
 
   while (true) {
-    auto describeOutcome = dynamodb.DescribeTable(describeRequest);
+    auto describeOutcome = m_dynamodb->DescribeTable(describeRequest);
     if (describeOutcome.IsSuccess()) {
       auto status = describeOutcome.GetResult().GetTable().GetTableStatus();
       if (status == Aws::DynamoDB::Model::TableStatus::ACTIVE) {
@@ -73,53 +75,60 @@ Aws::String PerformanceTest::Services::DynamoDB::SetupTable(Aws::DynamoDB::Dynam
     }
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
-
-  return tableName;
 }
 
-void PerformanceTest::Services::DynamoDB::RunOperations(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName,
-                                                        const TestCase& config, int iterations) {
-  const auto payload = PerformanceTest::Utils::RandomString(config.sizeBytes);
+void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
+  if (m_tableName.empty()) {
+    AWS_LOG_ERROR("PerformanceTest", "DynamoDB:Run - Table setup failed, skipping test");
+    return;
+  }
+
+  const auto payload = PerformanceTest::Utils::RandomString(m_config.sizeBytes);
 
   // Run PutItem multiple times
-  for (int i = 0; i < iterations; i++) {
+  for (int i = 0; i < m_iterations; i++) {
     Aws::DynamoDB::Model::PutItemRequest putItemRequest;
-    putItemRequest.SetTableName(tableName);
-    putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
+    putItemRequest.SetTableName(m_tableName);
+    putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> item;
     item["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
     item["data"].SetS(payload);
     putItemRequest.SetItem(item);
 
-    auto putItemOutcome = dynamodb.PutItem(putItemRequest);
+    auto putItemOutcome = m_dynamodb->PutItem(putItemRequest);
     if (!putItemOutcome.IsSuccess()) {
-      PerformanceTest::Utils::LogError("DynamoDB", "PutItem", putItemOutcome.GetError().GetMessage());
+      AWS_LOG_ERROR("PerformanceTest", ("DynamoDB:PutItem failed: " + putItemOutcome.GetError().GetMessage()).c_str());
     }
   }
 
   // Run GetItem multiple times
-  for (int i = 0; i < iterations; i++) {
+  for (int i = 0; i < m_iterations; i++) {
     Aws::DynamoDB::Model::GetItemRequest getItemRequest;
-    getItemRequest.SetTableName(tableName);
-    getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", config.sizeLabel);
+    getItemRequest.SetTableName(m_tableName);
+    getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
 
     Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> key;
     key["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
     getItemRequest.SetKey(key);
 
-    auto getItemOutcome = dynamodb.GetItem(getItemRequest);
+    auto getItemOutcome = m_dynamodb->GetItem(getItemRequest);
     if (!getItemOutcome.IsSuccess()) {
-      PerformanceTest::Utils::LogError("DynamoDB", "GetItem", getItemOutcome.GetError().GetMessage());
+      AWS_LOG_ERROR("PerformanceTest", ("DynamoDB:GetItem failed: " + getItemOutcome.GetError().GetMessage()).c_str());
     }
   }
 }
 
-void PerformanceTest::Services::DynamoDB::CleanupResources(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName) {
+void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::TearDown() {
+  if (m_tableName.empty()) {
+    AWS_LOG_ERROR("PerformanceTest", "DynamoDB:TearDown - No table to clean up, setup likely failed");
+    return;
+  }
+
   Aws::DynamoDB::Model::DeleteTableRequest deleteTableRequest;
-  deleteTableRequest.SetTableName(tableName);
-  auto deleteTableOutcome = dynamodb.DeleteTable(deleteTableRequest);
+  deleteTableRequest.SetTableName(m_tableName);
+  auto deleteTableOutcome = m_dynamodb->DeleteTable(deleteTableRequest);
   if (!deleteTableOutcome.IsSuccess()) {
-    PerformanceTest::Utils::LogError("DynamoDB", "DeleteTable", deleteTableOutcome.GetError().GetMessage());
+    AWS_LOG_ERROR("PerformanceTest", ("DynamoDB:DeleteTable failed: " + deleteTableOutcome.GetError().GetMessage()).c_str());
   }
 }

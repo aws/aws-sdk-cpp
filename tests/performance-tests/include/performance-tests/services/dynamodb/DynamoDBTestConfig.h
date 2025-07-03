@@ -5,19 +5,20 @@
 
 #pragma once
 
-#include <aws/core/utils/memory/stl/AWSSet.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
+
+#include <array>
+#include <set>
 
 namespace PerformanceTest {
 namespace Services {
 namespace DynamoDB {
 namespace TestConfig {
-const Aws::Set<Aws::String> TestOperations = {"PutItem", "GetItem"};
+const std::set<const char*> TestOperations = {"PutItem", "GetItem"};
 
-const Aws::Vector<TestCase> TestMatrix = {{"8KB", 8 * 1024}, {"64KB", 64 * 1024}, {"392KB", 392 * 1024}};
+const std::array<TestCase, 3> TestMatrix = {{{"8KB", 8 * 1024}, {"64KB", 64 * 1024}, {"392KB", 392 * 1024}}};
 
-const Aws::String OutputFilename = "dynamodb-performance-test-results.json";
+const char* OutputFilename = "dynamodb-performance-test-results.json";
 }  // namespace TestConfig
 }  // namespace DynamoDB
 }  // namespace Services

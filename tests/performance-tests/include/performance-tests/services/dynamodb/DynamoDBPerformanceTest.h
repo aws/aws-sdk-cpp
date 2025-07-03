@@ -5,8 +5,10 @@
 
 #pragma once
 
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <performance-tests/PerformanceTestBase.h>
 
 #include <cstddef>
 
@@ -17,42 +19,30 @@ namespace DynamoDB {
  * Configuration for DynamoDB performance test cases.
  */
 struct TestCase {
-  Aws::String sizeLabel;
+  const char* sizeLabel;
   size_t sizeBytes;
 };
 
 /**
- * Runs DynamoDB performance test by creating a table, performing PutItem and GetItem operations,
- * then cleaning up resources.
- * @param dynamodb DynamoDB client instance to use for operations
- * @param config Test configuration containing size parameters
- * @param iterations Number of put/get operations to perform
+ * DynamoDB performance test implementation.
+ * Tests PutItem and GetItem operations with different payload sizes.
  */
-void RunTest(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config, int iterations = 3);
+class DynamoDBPerformanceTest : public PerformanceTestBase {
+ public:
+  DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config, int iterations = 3);
 
-/**
- * Create DynamoDB table for testing and wait for it to become active.
- * @param dynamodb DynamoDB client instance
- * @param config Test configuration
- * @return Table name if successful, empty string if failed
- */
-Aws::String SetupTable(Aws::DynamoDB::DynamoDBClient& dynamodb, const TestCase& config);
+  void Setup() override;
+  void TearDown() override;
+  void Run() override;
 
-/**
- * Run PutItem and GetItem operations.
- * @param dynamodb DynamoDB client instance
- * @param tableName Name of the table to use
- * @param config Test configuration
- * @param iterations Number of operations to perform
- */
-void RunOperations(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName, const TestCase& config, int iterations);
+ private:
+  const TestCase& m_config;
+  const Aws::String m_region;
+  const int m_iterations;
+  Aws::UniquePtr<Aws::DynamoDB::DynamoDBClient> m_dynamodb;
+  Aws::String m_tableName;
+};
 
-/**
- * Clean up DynamoDB resources (delete table).
- * @param dynamodb DynamoDB client instance
- * @param tableName Name of the table to delete
- */
-void CleanupResources(Aws::DynamoDB::DynamoDBClient& dynamodb, const Aws::String& tableName);
 }  // namespace DynamoDB
 }  // namespace Services
 }  // namespace PerformanceTest
