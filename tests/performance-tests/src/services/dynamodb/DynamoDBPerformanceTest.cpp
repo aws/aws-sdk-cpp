@@ -78,6 +78,11 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
 }
 
 void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
+  if (!m_dynamodb) {
+    AWS_LOG_ERROR("PerformanceTest", "DynamoDB:Run - DynamoDB client not initialized, Setup() failed or was not called");
+    return;
+  }
+
   if (m_tableName.empty()) {
     AWS_LOG_ERROR("PerformanceTest", "DynamoDB:Run - Table setup failed, skipping test");
     return;
@@ -120,6 +125,11 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
 }
 
 void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::TearDown() {
+  if (!m_dynamodb) {
+    AWS_LOG_ERROR("PerformanceTest", "DynamoDB:TearDown - DynamoDB client not initialized, Setup() failed or was not called");
+    return;
+  }
+
   if (m_tableName.empty()) {
     AWS_LOG_ERROR("PerformanceTest", "DynamoDB:TearDown - No table to clean up, setup likely failed");
     return;
