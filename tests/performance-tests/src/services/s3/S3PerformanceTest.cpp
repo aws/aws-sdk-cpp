@@ -63,6 +63,11 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Setup() {
 }
 
 void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
+  if (!m_s3) {
+    AWS_LOG_ERROR("PerformanceTest", "S3:Run - S3 client not initialized, Setup() failed or was not called");
+    return;
+  }
+
   if (m_bucketName.empty()) {
     AWS_LOG_ERROR("PerformanceTest", "S3:Run - Bucket setup failed, skipping test");
     return;
@@ -72,8 +77,7 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
 
   // Run PutObject multiple times
   for (int i = 0; i < m_iterations; i++) {
-    auto stream = Aws::MakeShared<Aws::StringStream>("PerfStream");
-    *stream << randomPayload;
+    const auto stream = Aws::MakeShared<Aws::StringStream>("PerfStream", randomPayload);
 
     Aws::S3::Model::PutObjectRequest por;
     por.WithBucket(m_bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)).SetBody(stream);
@@ -99,6 +103,11 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
 }
 
 void PerformanceTest::Services::S3::S3PerformanceTest::TearDown() {
+  if (!m_s3) {
+    AWS_LOG_ERROR("PerformanceTest", "S3:TearDown - S3 client not initialized, Setup() failed or was not called");
+    return;
+  }
+
   if (m_bucketName.empty()) {
     AWS_LOG_ERROR("PerformanceTest", "S3:TearDown - No bucket to clean up, setup likely failed");
     return;
