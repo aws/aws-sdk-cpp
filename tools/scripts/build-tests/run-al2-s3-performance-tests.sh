@@ -6,7 +6,7 @@ DEFAULT_AZ_ID="use1-az4"
 DEFAULT_ITERATIONS=10
 
 if [ "$#" -lt 1 ]; then
-  echo "Usage: ${0} PREFIX_DIR [-r|--region REGION] [-a|--az-id AZ_ID] [-i|--iterations NUM]"
+  echo "Error: Missing required argument. Usage: ${0} PREFIX_DIR [-r|--region REGION] [-a|--az-id AZ_ID] [-i|--iterations NUM]"
   exit 1
 fi
 
@@ -30,7 +30,8 @@ SDK_REPO_PATH="${PREFIX_DIR}/aws-sdk-cpp"
 if [ -d "$SDK_REPO_PATH" ]; then
   COMMIT_ID=$(cd "$SDK_REPO_PATH" && git rev-parse HEAD)
 else
-  COMMIT_ID="unknown"
+  echo "Error: Git repository not found at $SDK_REPO_PATH"
+  exit 1
 fi
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
