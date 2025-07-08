@@ -30,7 +30,7 @@ struct TestCase {
  */
 class S3PerformanceTest : public PerformanceTestBase {
  public:
-  S3PerformanceTest(const Aws::String& region, const TestCase& config, const Aws::String& availabilityZoneId, int iterations = 3);
+  S3PerformanceTest(const Aws::String& region, const TestCase& config, const Aws::String& availabilityZoneId, int iterations = 10);
 
   void Setup() override;
   void TearDown() override;
