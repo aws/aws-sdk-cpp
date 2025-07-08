@@ -4,12 +4,11 @@
  */
 
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <aws/dynamodb/DynamoDBServiceClientModel.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <aws/dynamodb/model/BillingMode.h>
@@ -43,12 +42,12 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
   createTableRequest.SetTableName(m_tableName);
 
   Aws::DynamoDB::Model::AttributeDefinition hashKey;
-  hashKey.SetAttributeName("id");
+  hashKey.SetAttributeName("data");
   hashKey.SetAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
   createTableRequest.AddAttributeDefinitions(hashKey);
 
   Aws::DynamoDB::Model::KeySchemaElement keySchema;
-  keySchema.WithAttributeName("id").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
+  keySchema.WithAttributeName("data").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
   createTableRequest.AddKeySchema(keySchema);
 
   Aws::DynamoDB::Model::BillingMode const billingMode = Aws::DynamoDB::Model::BillingMode::PAY_PER_REQUEST;
@@ -62,18 +61,31 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
   }
 
   // Wait for table to become active
+  const int MAX_QUERIES = 20;
   Aws::DynamoDB::Model::DescribeTableRequest describeRequest;
   describeRequest.SetTableName(m_tableName);
 
-  while (true) {
-    auto describeOutcome = m_dynamodb->DescribeTable(describeRequest);
+  int count = 0;
+  while (count < MAX_QUERIES) {
+    const Aws::DynamoDB::Model::DescribeTableOutcome& describeOutcome = m_dynamodb->DescribeTable(describeRequest);
     if (describeOutcome.IsSuccess()) {
-      auto status = describeOutcome.GetResult().GetTable().GetTableStatus();
-      if (status == Aws::DynamoDB::Model::TableStatus::ACTIVE) {
+      Aws::DynamoDB::Model::TableStatus status = describeOutcome.GetResult().GetTable().GetTableStatus();
+      if (Aws::DynamoDB::Model::TableStatus::ACTIVE == status) {
         break;
       }
+      std::this_thread::sleep_for(std::chrono::seconds(1));
+    } else {
+      AWS_LOG_ERROR("PerformanceTest", ("DynamoDB:DescribeTable failed: " + describeOutcome.GetError().GetMessage()).c_str());
+      m_tableName.clear();
+      return;
     }
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    count++;
+  }
+
+  if (count >= MAX_QUERIES) {
+    AWS_LOG_ERROR("PerformanceTest", "DynamoDB:Table did not become active within timeout");
+    m_tableName.clear();
+    return;
   }
 }
 
@@ -95,11 +107,7 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
     Aws::DynamoDB::Model::PutItemRequest putItemRequest;
     putItemRequest.SetTableName(m_tableName);
     putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
-
-    Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> item;
-    item["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
-    item["data"].SetS(payload);
-    putItemRequest.SetItem(item);
+    putItemRequest.AddItem("data", Aws::DynamoDB::Model::AttributeValue().SetS(payload));
 
     auto putItemOutcome = m_dynamodb->PutItem(putItemRequest);
     if (!putItemOutcome.IsSuccess()) {
@@ -112,10 +120,7 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
     Aws::DynamoDB::Model::GetItemRequest getItemRequest;
     getItemRequest.SetTableName(m_tableName);
     getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
-
-    Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue> key;
-    key["id"].SetS(Aws::String("test-key-") + Aws::Utils::StringUtils::to_string(i));
-    getItemRequest.SetKey(key);
+    getItemRequest.AddKey("data", Aws::DynamoDB::Model::AttributeValue().SetS(payload));
 
     auto getItemOutcome = m_dynamodb->GetItem(getItemRequest);
     if (!getItemOutcome.IsSuccess()) {
