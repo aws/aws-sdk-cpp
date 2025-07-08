@@ -5,7 +5,7 @@ DEFAULT_REGION="us-east-1"
 DEFAULT_ITERATIONS=10
 
 if [ "$#" -lt 1 ]; then
-  echo "Usage: ${0} PREFIX_DIR [--region REGION] [--iterations NUM]"
+  echo "Usage: ${0} PREFIX_DIR [-r|--region REGION] [-i|--iterations NUM]"
   exit 1
 fi
 
@@ -17,8 +17,8 @@ ITERATIONS="$DEFAULT_ITERATIONS"
 
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
-    --region) REGION="$2"; shift 2 ;;
-    --iterations) ITERATIONS="$2"; shift 2 ;;
+    -r|--region) REGION="$2"; shift 2 ;;
+    -i|--iterations) ITERATIONS="$2"; shift 2 ;;
     *) echo "Unknown parameter: $1"; exit 1 ;;
   esac
 done
