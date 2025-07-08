@@ -29,7 +29,7 @@ struct TestCase {
  */
 class DynamoDBPerformanceTest : public PerformanceTestBase {
  public:
-  DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config, int iterations = 3);
+  DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config, int iterations = 10);
 
   void Setup() override;
   void TearDown() override;
