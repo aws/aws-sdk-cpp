@@ -1,4 +1,12 @@
 #!/bin/bash
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+
+# This script runs the pre-built S3 performance test executable
+# Expects SDK build directory at ${PREFIX_DIR}/al2-build, source project at ${PREFIX_DIR}/aws-sdk-cpp,
+# and SDK installation directory at ${PREFIX_DIR}/al2-install
+# Platform: Amazon Linux 2
+
 set -e
 
 DEFAULT_REGION="us-east-1"
