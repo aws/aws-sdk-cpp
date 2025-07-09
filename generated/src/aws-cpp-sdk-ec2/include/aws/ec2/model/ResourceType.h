@@ -110,6 +110,7 @@ namespace Model
     instance_connect_endpoint,
     verified_access_endpoint_target,
     ipam_external_resource_verification_token,
+    capacity_block,
     mac_modification_task
   };
 

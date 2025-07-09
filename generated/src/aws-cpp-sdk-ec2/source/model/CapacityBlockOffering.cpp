@@ -91,6 +91,18 @@ CapacityBlockOffering& CapacityBlockOffering::operator =(const XmlNode& xmlNode)
       m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
+    XmlNode ultraserverTypeNode = resultNode.FirstChild("ultraserverType");
+    if(!ultraserverTypeNode.IsNull())
+    {
+      m_ultraserverType = Aws::Utils::Xml::DecodeEscapedXmlText(ultraserverTypeNode.GetText());
+      m_ultraserverTypeHasBeenSet = true;
+    }
+    XmlNode ultraserverCountNode = resultNode.FirstChild("ultraserverCount");
+    if(!ultraserverCountNode.IsNull())
+    {
+      m_ultraserverCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ultraserverCountNode.GetText()).c_str()).c_str());
+      m_ultraserverCountHasBeenSet = true;
+    }
     XmlNode capacityBlockDurationMinutesNode = resultNode.FirstChild("capacityBlockDurationMinutes");
     if(!capacityBlockDurationMinutesNode.IsNull())
     {
@@ -154,6 +166,16 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
+  if(m_ultraserverTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UltraserverType=" << StringUtils::URLEncode(m_ultraserverType.c_str()) << "&";
+  }
+
+  if(m_ultraserverCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UltraserverCount=" << m_ultraserverCount << "&";
+  }
+
   if(m_capacityBlockDurationMinutesHasBeenSet)
   {
       oStream << location << index << locationValue << ".CapacityBlockDurationMinutes=" << m_capacityBlockDurationMinutes << "&";
@@ -202,6 +224,14 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_tenancyHasBeenSet)
   {
       oStream << location << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
+  }
+  if(m_ultraserverTypeHasBeenSet)
+  {
+      oStream << location << ".UltraserverType=" << StringUtils::URLEncode(m_ultraserverType.c_str()) << "&";
+  }
+  if(m_ultraserverCountHasBeenSet)
+  {
+      oStream << location << ".UltraserverCount=" << m_ultraserverCount << "&";
   }
   if(m_capacityBlockDurationMinutesHasBeenSet)
   {

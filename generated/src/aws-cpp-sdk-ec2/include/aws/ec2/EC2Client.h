@@ -7854,10 +7854,10 @@ namespace EC2
 
         /**
          * <p>Describes Capacity Block offerings available for purchase in the Amazon Web
-         * Services Region that you're currently using. With Capacity Blocks, you purchase
-         * a specific instance type for a period of time.</p> <p>To search for an available
-         * Capacity Block offering, you specify a reservation duration and instance
-         * count.</p><p><h3>See Also:</h3>   <a
+         * Services Region that you're currently using. With Capacity Blocks, you can
+         * purchase a specific GPU instance type or EC2 UltraServer for a period of
+         * time.</p> <p>To search for an available Capacity Block offering, you specify a
+         * reservation duration and instance count.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
          * API Reference</a></p>
          */
@@ -7879,6 +7879,58 @@ namespace EC2
         void DescribeCapacityBlockOfferingsAsync(const DescribeCapacityBlockOfferingsRequestT& request, const DescribeCapacityBlockOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeCapacityBlockOfferings, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the availability of capacity for the specified Capacity blocks, or
+         * all of your Capacity Blocks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlockStatusOutcome DescribeCapacityBlockStatus(const Model::DescribeCapacityBlockStatusRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlockStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlockStatusRequestT = Model::DescribeCapacityBlockStatusRequest>
+        Model::DescribeCapacityBlockStatusOutcomeCallable DescribeCapacityBlockStatusCallable(const DescribeCapacityBlockStatusRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlockStatus, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlockStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlockStatusRequestT = Model::DescribeCapacityBlockStatusRequest>
+        void DescribeCapacityBlockStatusAsync(const DescribeCapacityBlockStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityBlockStatusRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlockStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Describes details about Capacity Blocks in the Amazon Web Services Region
+         * that you're currently using.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlocks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlocksOutcome DescribeCapacityBlocks(const Model::DescribeCapacityBlocksRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlocksRequestT = Model::DescribeCapacityBlocksRequest>
+        Model::DescribeCapacityBlocksOutcomeCallable DescribeCapacityBlocksCallable(const DescribeCapacityBlocksRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlocks, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlocksRequestT = Model::DescribeCapacityBlocksRequest>
+        void DescribeCapacityBlocksAsync(const DescribeCapacityBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityBlocksRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlocks, request, handler, context);
         }
 
         /**
@@ -9233,22 +9285,19 @@ namespace EC2
          * of your EC2 instances within an Availability Zone or Local Zone. You can use
          * this information to determine the relative proximity of your EC2 instances
          * within the Amazon Web Services network to support your tightly coupled
-         * workloads.</p> <p class="title"> <b>Limitations</b> </p> <ul> <li> <p>Supported
-         * zones</p> <ul> <li> <p>Availability Zone</p> </li> <li> <p>Local Zone</p> </li>
-         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>Returns 3 network
-         * nodes in the response</p> <ul> <li> <p> <code>hpc6a.48xlarge</code> |
-         * <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> |
-         * <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> |
-         * <code>hpc7a.96xlarge</code> | <code>hpc7g.4xlarge</code> |
-         * <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code> </p> </li> <li> <p>
-         * <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> |
-         * <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> |
-         * <code>p5e.48xlarge</code> | <code>p5en.48xlarge</code> </p> </li> <li> <p>
-         * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> |
-         * <code>trn1n.32xlarge</code> | <code>trn2.48xlarge</code> |
-         * <code>trn2u.48xlarge</code> </p> </li> </ul> </li> <li> <p>Returns 4 network
-         * nodes in the response</p> <ul> <li> <p> <code>p6-b200.48xlarge</code> </p> </li>
-         * </ul> </li> </ul> </li> </ul> <p>For more information, see <a
+         * workloads.</p> <p>Instance topology is supported for specific instance types
+         * only. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
+         * Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p>  <p>The Amazon EC2 API follows an eventual consistency
+         * model due to the distributed nature of the system supporting it. As a result,
+         * when you call the DescribeInstanceTopology API command immediately after
+         * launching instances, the response might return a <code>null</code> value for
+         * <code>capacityBlockId</code> because the data might not have fully propagated
+         * across all subsystems. For more information, see <a
+         * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+         * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
+         * Guide</i>.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -12620,9 +12669,8 @@ namespace EC2
          * the instance first.</p> <p>When a volume with an Amazon Web Services Marketplace
          * product code is detached from an instance, the product code is no longer
          * associated with the instance.</p> <p>You can't detach or force detach volumes
-         * that are attached to Amazon ECS or Fargate tasks. Attempting to do this results
-         * in the <code>UnsupportedOperationException</code> exception with the
-         * <code>Unable to detach volume attached to ECS tasks</code> error message.</p>
+         * that are attached to Amazon Web Services-managed resources. Attempting to do
+         * this results in the <code>UnsupportedOperationException</code> exception.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-detaching-volume.html">Detach
          * an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See

@@ -207,6 +207,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()));
       m_deliveryPreferenceHasBeenSet = true;
     }
+    XmlNode capacityBlockIdNode = resultNode.FirstChild("capacityBlockId");
+    if(!capacityBlockIdNode.IsNull())
+    {
+      m_capacityBlockId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockIdNode.GetText());
+      m_capacityBlockIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -363,6 +369,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".DeliveryPreference=" << StringUtils::URLEncode(CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference)) << "&";
   }
 
+  if(m_capacityBlockIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -488,6 +499,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_deliveryPreferenceHasBeenSet)
   {
       oStream << location << ".DeliveryPreference=" << StringUtils::URLEncode(CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference)) << "&";
+  }
+  if(m_capacityBlockIdHasBeenSet)
+  {
+      oStream << location << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
   }
 }
 

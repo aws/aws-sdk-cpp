@@ -21,8 +21,7 @@ namespace FreeTier
    * all free tier offers that are associated with your Amazon Web Services account.
    * You can use the Free Tier API to filter and show only the data that you
    * want.</p> <p>Service endpoint</p> <p>The Free Tier API provides the following
-   * endpoint:</p> <ul> <li> <p>https://freetier.us-east-1.api.aws</p> </li> </ul>
-   * <p>For more information, see <a
+   * endpoint:</p> <ul/> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html">Using
    * the Amazon Web Services Free Tier</a> in the <i>Billing User Guide</i>.</p>
    */
@@ -85,6 +84,58 @@ namespace FreeTier
         virtual ~FreeTierClient();
 
         /**
+         * <p> Returns a specific activity record that is available to the customer.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountActivityOutcome GetAccountActivity(const Model::GetAccountActivityRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccountActivity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountActivityRequestT = Model::GetAccountActivityRequest>
+        Model::GetAccountActivityOutcomeCallable GetAccountActivityCallable(const GetAccountActivityRequestT& request) const
+        {
+            return SubmitCallable(&FreeTierClient::GetAccountActivity, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountActivity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountActivityRequestT = Model::GetAccountActivityRequest>
+        void GetAccountActivityAsync(const GetAccountActivityRequestT& request, const GetAccountActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FreeTierClient::GetAccountActivity, request, handler, context);
+        }
+
+        /**
+         * <p> This returns all of the information related to the state of the account plan
+         * related to Free Tier. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountPlanStateOutcome GetAccountPlanState(const Model::GetAccountPlanStateRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAccountPlanState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountPlanStateRequestT = Model::GetAccountPlanStateRequest>
+        Model::GetAccountPlanStateOutcomeCallable GetAccountPlanStateCallable(const GetAccountPlanStateRequestT& request = {}) const
+        {
+            return SubmitCallable(&FreeTierClient::GetAccountPlanState, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountPlanState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountPlanStateRequestT = Model::GetAccountPlanStateRequest>
+        void GetAccountPlanStateAsync(const GetAccountPlanStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountPlanStateRequestT& request = {}) const
+        {
+            return SubmitAsync(&FreeTierClient::GetAccountPlanState, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all Free Tier usage objects that match your
          * filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">AWS
@@ -108,6 +159,58 @@ namespace FreeTier
         void GetFreeTierUsageAsync(const GetFreeTierUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFreeTierUsageRequestT& request = {}) const
         {
             return SubmitAsync(&FreeTierClient::GetFreeTierUsage, request, handler, context);
+        }
+
+        /**
+         * <p> Returns a list of activities that are available. This operation supports
+         * pagination and filtering by status. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountActivitiesOutcome ListAccountActivities(const Model::ListAccountActivitiesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAccountActivities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountActivitiesRequestT = Model::ListAccountActivitiesRequest>
+        Model::ListAccountActivitiesOutcomeCallable ListAccountActivitiesCallable(const ListAccountActivitiesRequestT& request = {}) const
+        {
+            return SubmitCallable(&FreeTierClient::ListAccountActivities, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountActivities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountActivitiesRequestT = Model::ListAccountActivitiesRequest>
+        void ListAccountActivitiesAsync(const ListAccountActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountActivitiesRequestT& request = {}) const
+        {
+            return SubmitAsync(&FreeTierClient::ListAccountActivities, request, handler, context);
+        }
+
+        /**
+         * <p> The account plan type for the Amazon Web Services account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpgradeAccountPlanOutcome UpgradeAccountPlan(const Model::UpgradeAccountPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpgradeAccountPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpgradeAccountPlanRequestT = Model::UpgradeAccountPlanRequest>
+        Model::UpgradeAccountPlanOutcomeCallable UpgradeAccountPlanCallable(const UpgradeAccountPlanRequestT& request) const
+        {
+            return SubmitCallable(&FreeTierClient::UpgradeAccountPlan, request);
+        }
+
+        /**
+         * An Async wrapper for UpgradeAccountPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpgradeAccountPlanRequestT = Model::UpgradeAccountPlanRequest>
+        void UpgradeAccountPlanAsync(const UpgradeAccountPlanRequestT& request, const UpgradeAccountPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FreeTierClient::UpgradeAccountPlan, request, handler, context);
         }
 
 

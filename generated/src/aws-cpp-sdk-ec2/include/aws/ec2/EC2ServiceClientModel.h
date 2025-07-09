@@ -246,6 +246,8 @@
 #include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryResponse.h>
 #include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsResponse.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlockStatusResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlocksResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationsResponse.h>
@@ -705,6 +707,7 @@
 #include <aws/ec2/model/DescribeFlowLogsRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DescribeFpgaImagesRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
 #include <aws/ec2/model/DescribeServiceLinkVirtualInterfacesRequest.h>
@@ -755,6 +758,7 @@
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
 #include <aws/ec2/model/AuthorizeSecurityGroupIngressRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeConversionTasksRequest.h>
 #include <aws/ec2/model/DescribeTrafficMirrorFilterRulesRequest.h>
 #include <aws/ec2/model/CreateInstanceEventWindowRequest.h>
@@ -1149,6 +1153,8 @@ namespace Aws
       class DescribeCapacityBlockExtensionHistoryRequest;
       class DescribeCapacityBlockExtensionOfferingsRequest;
       class DescribeCapacityBlockOfferingsRequest;
+      class DescribeCapacityBlockStatusRequest;
+      class DescribeCapacityBlocksRequest;
       class DescribeCapacityReservationBillingRequestsRequest;
       class DescribeCapacityReservationFleetsRequest;
       class DescribeCapacityReservationsRequest;
@@ -1838,6 +1844,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeCapacityBlockExtensionHistoryResponse, EC2Error> DescribeCapacityBlockExtensionHistoryOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityBlockExtensionOfferingsResponse, EC2Error> DescribeCapacityBlockExtensionOfferingsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityBlockOfferingsResponse, EC2Error> DescribeCapacityBlockOfferingsOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityBlockStatusResponse, EC2Error> DescribeCapacityBlockStatusOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityBlocksResponse, EC2Error> DescribeCapacityBlocksOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationBillingRequestsResponse, EC2Error> DescribeCapacityReservationBillingRequestsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
@@ -2527,6 +2535,8 @@ namespace Aws
       typedef std::future<DescribeCapacityBlockExtensionHistoryOutcome> DescribeCapacityBlockExtensionHistoryOutcomeCallable;
       typedef std::future<DescribeCapacityBlockExtensionOfferingsOutcome> DescribeCapacityBlockExtensionOfferingsOutcomeCallable;
       typedef std::future<DescribeCapacityBlockOfferingsOutcome> DescribeCapacityBlockOfferingsOutcomeCallable;
+      typedef std::future<DescribeCapacityBlockStatusOutcome> DescribeCapacityBlockStatusOutcomeCallable;
+      typedef std::future<DescribeCapacityBlocksOutcome> DescribeCapacityBlocksOutcomeCallable;
       typedef std::future<DescribeCapacityReservationBillingRequestsOutcome> DescribeCapacityReservationBillingRequestsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
@@ -3219,6 +3229,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockExtensionHistoryRequest&, const Model::DescribeCapacityBlockExtensionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockExtensionHistoryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockExtensionOfferingsRequest&, const Model::DescribeCapacityBlockExtensionOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockExtensionOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockOfferingsRequest&, const Model::DescribeCapacityBlockOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockOfferingsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockStatusRequest&, const Model::DescribeCapacityBlockStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlocksRequest&, const Model::DescribeCapacityBlocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlocksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationBillingRequestsRequest&, const Model::DescribeCapacityReservationBillingRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationBillingRequestsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&, const Model::DescribeCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationsRequest&, const Model::DescribeCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationsResponseReceivedHandler;

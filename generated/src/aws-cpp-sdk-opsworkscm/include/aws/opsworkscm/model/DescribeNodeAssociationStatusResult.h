@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Attributes specific to the node association. In Puppet, the attibute
+     * <p>Attributes specific to the node association. In Puppet, the attribute
      * PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const { return m_engineAttributes; }

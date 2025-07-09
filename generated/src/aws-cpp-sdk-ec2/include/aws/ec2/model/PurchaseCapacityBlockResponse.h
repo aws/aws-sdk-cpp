@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CapacityReservation.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/CapacityBlock.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +47,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Capacity Block.</p>
+     */
+    inline const Aws::Vector<CapacityBlock>& GetCapacityBlocks() const { return m_capacityBlocks; }
+    template<typename CapacityBlocksT = Aws::Vector<CapacityBlock>>
+    void SetCapacityBlocks(CapacityBlocksT&& value) { m_capacityBlocksHasBeenSet = true; m_capacityBlocks = std::forward<CapacityBlocksT>(value); }
+    template<typename CapacityBlocksT = Aws::Vector<CapacityBlock>>
+    PurchaseCapacityBlockResponse& WithCapacityBlocks(CapacityBlocksT&& value) { SetCapacityBlocks(std::forward<CapacityBlocksT>(value)); return *this;}
+    template<typename CapacityBlocksT = CapacityBlock>
+    PurchaseCapacityBlockResponse& AddCapacityBlocks(CapacityBlocksT&& value) { m_capacityBlocksHasBeenSet = true; m_capacityBlocks.emplace_back(std::forward<CapacityBlocksT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
     template<typename ResponseMetadataT = ResponseMetadata>
@@ -56,6 +71,9 @@ namespace Model
 
     CapacityReservation m_capacityReservation;
     bool m_capacityReservationHasBeenSet = false;
+
+    Aws::Vector<CapacityBlock> m_capacityBlocks;
+    bool m_capacityBlocksHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet = false;

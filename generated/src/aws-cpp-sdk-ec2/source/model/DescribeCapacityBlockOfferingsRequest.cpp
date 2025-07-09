@@ -54,6 +54,16 @@ Aws::String DescribeCapacityBlockOfferingsRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
+  if(m_ultraserverTypeHasBeenSet)
+  {
+    ss << "UltraserverType=" << StringUtils::URLEncode(m_ultraserverType.c_str()) << "&";
+  }
+
+  if(m_ultraserverCountHasBeenSet)
+  {
+    ss << "UltraserverCount=" << m_ultraserverCount << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

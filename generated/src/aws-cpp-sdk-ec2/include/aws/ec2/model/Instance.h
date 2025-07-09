@@ -345,6 +345,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Capacity Block.</p>  <p>For P5 instances, a Capacity
+     * Block ID refers to a group of instances. For Trn2u instances, a capacity block
+     * ID refers to an EC2 UltraServer.</p> 
+     */
+    inline const Aws::String& GetCapacityBlockId() const { return m_capacityBlockId; }
+    inline bool CapacityBlockIdHasBeenSet() const { return m_capacityBlockIdHasBeenSet; }
+    template<typename CapacityBlockIdT = Aws::String>
+    void SetCapacityBlockId(CapacityBlockIdT&& value) { m_capacityBlockIdHasBeenSet = true; m_capacityBlockId = std::forward<CapacityBlockIdT>(value); }
+    template<typename CapacityBlockIdT = Aws::String>
+    Instance& WithCapacityBlockId(CapacityBlockIdT&& value) { SetCapacityBlockId(std::forward<CapacityBlockIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the Capacity Reservation.</p>
      */
     inline const Aws::String& GetCapacityReservationId() const { return m_capacityReservationId; }
@@ -885,6 +899,9 @@ namespace Model
 
     CpuOptions m_cpuOptions;
     bool m_cpuOptionsHasBeenSet = false;
+
+    Aws::String m_capacityBlockId;
+    bool m_capacityBlockIdHasBeenSet = false;
 
     Aws::String m_capacityReservationId;
     bool m_capacityReservationIdHasBeenSet = false;

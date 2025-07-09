@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * <p>The ARN of the Amazon Web Services-managed resource to which the volume is
      * attached.</p>
      */
     inline const Aws::String& GetAssociatedResource() const { return m_associatedResource; }
@@ -103,7 +103,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
-     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     * parameter is returned only for volumes that are attached to Amazon Web
+     * Services-managed resources.</p>
      */
     inline const Aws::String& GetVolumeOwnerId() const { return m_volumeOwnerId; }
     inline bool VolumeOwnerIdHasBeenSet() const { return m_volumeOwnerIdHasBeenSet; }

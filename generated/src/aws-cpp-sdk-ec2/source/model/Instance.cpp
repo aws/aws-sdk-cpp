@@ -205,6 +205,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_cpuOptions = cpuOptionsNode;
       m_cpuOptionsHasBeenSet = true;
     }
+    XmlNode capacityBlockIdNode = resultNode.FirstChild("capacityBlockId");
+    if(!capacityBlockIdNode.IsNull())
+    {
+      m_capacityBlockId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockIdNode.GetText());
+      m_capacityBlockIdHasBeenSet = true;
+    }
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
@@ -600,6 +606,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_capacityBlockIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
+  }
+
   if(m_capacityReservationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
@@ -952,6 +963,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String cpuOptionsLocationAndMember(location);
       cpuOptionsLocationAndMember += ".CpuOptions";
       m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMember.c_str());
+  }
+  if(m_capacityBlockIdHasBeenSet)
+  {
+      oStream << location << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
   }
   if(m_capacityReservationIdHasBeenSet)
   {

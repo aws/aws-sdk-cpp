@@ -26,7 +26,8 @@ namespace Model
     payment_failed,
     assessing,
     delayed,
-    unsupported
+    unsupported,
+    unavailable
   };
 
 namespace CapacityReservationStateMapper
