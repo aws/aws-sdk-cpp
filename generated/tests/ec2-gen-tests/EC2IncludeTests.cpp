@@ -227,10 +227,14 @@
 #include <aws/ec2/model/CancelSpotInstanceRequestsResponse.h>
 #include <aws/ec2/model/CancelledSpotInstanceRequest.h>
 #include <aws/ec2/model/CapacityAllocation.h>
+#include <aws/ec2/model/CapacityBlock.h>
 #include <aws/ec2/model/CapacityBlockExtension.h>
 #include <aws/ec2/model/CapacityBlockExtensionOffering.h>
 #include <aws/ec2/model/CapacityBlockExtensionStatus.h>
+#include <aws/ec2/model/CapacityBlockInterconnectStatus.h>
 #include <aws/ec2/model/CapacityBlockOffering.h>
+#include <aws/ec2/model/CapacityBlockResourceState.h>
+#include <aws/ec2/model/CapacityBlockStatus.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationBillingRequest.h>
 #include <aws/ec2/model/CapacityReservationBillingRequestStatus.h>
@@ -248,6 +252,7 @@
 #include <aws/ec2/model/CapacityReservationSpecification.h>
 #include <aws/ec2/model/CapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/CapacityReservationState.h>
+#include <aws/ec2/model/CapacityReservationStatus.h>
 #include <aws/ec2/model/CapacityReservationTarget.h>
 #include <aws/ec2/model/CapacityReservationTargetResponse.h>
 #include <aws/ec2/model/CapacityReservationTenancy.h>
@@ -723,6 +728,10 @@
 #include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsResponse.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockStatusResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlocksResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>

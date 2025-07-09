@@ -40,6 +40,19 @@ PurchaseCapacityBlockResponse& PurchaseCapacityBlockResponse::operator =(const A
       m_capacityReservation = capacityReservationNode;
       m_capacityReservationHasBeenSet = true;
     }
+    XmlNode capacityBlocksNode = resultNode.FirstChild("capacityBlockSet");
+    if(!capacityBlocksNode.IsNull())
+    {
+      XmlNode capacityBlocksMember = capacityBlocksNode.FirstChild("item");
+      m_capacityBlocksHasBeenSet = !capacityBlocksMember.IsNull();
+      while(!capacityBlocksMember.IsNull())
+      {
+        m_capacityBlocks.push_back(capacityBlocksMember);
+        capacityBlocksMember = capacityBlocksMember.NextNode("item");
+      }
+
+      m_capacityBlocksHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

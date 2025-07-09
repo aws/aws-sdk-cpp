@@ -7,8 +7,8 @@
 #include <aws/freetier/FreeTier_EXPORTS.h>
 #include <aws/freetier/model/Dimension.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/freetier/model/MatchOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/freetier/model/MatchOption.h>
 #include <utility>
 
 namespace Aws
@@ -53,20 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The match options that you can use to filter your results. You can specify
-     * only one of these values in the array.</p>
-     */
-    inline const Aws::Vector<MatchOption>& GetMatchOptions() const { return m_matchOptions; }
-    inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
-    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
-    void SetMatchOptions(MatchOptionsT&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::forward<MatchOptionsT>(value); }
-    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
-    DimensionValues& WithMatchOptions(MatchOptionsT&& value) { SetMatchOptions(std::forward<MatchOptionsT>(value)); return *this;}
-    inline DimensionValues& AddMatchOptions(MatchOption value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The metadata values you can specify to filter upon, so that the results all
      * match at least one of the specified values.</p>
      */
@@ -79,16 +65,30 @@ namespace Model
     template<typename ValuesT = Aws::String>
     DimensionValues& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The match options that you can use to filter your results. You can specify
+     * only one of these values in the array.</p>
+     */
+    inline const Aws::Vector<MatchOption>& GetMatchOptions() const { return m_matchOptions; }
+    inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
+    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
+    void SetMatchOptions(MatchOptionsT&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::forward<MatchOptionsT>(value); }
+    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
+    DimensionValues& WithMatchOptions(MatchOptionsT&& value) { SetMatchOptions(std::forward<MatchOptionsT>(value)); return *this;}
+    inline DimensionValues& AddMatchOptions(MatchOption value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
+    ///@}
   private:
 
     Dimension m_key{Dimension::NOT_SET};
     bool m_keyHasBeenSet = false;
 
-    Aws::Vector<MatchOption> m_matchOptions;
-    bool m_matchOptionsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<MatchOption> m_matchOptions;
+    bool m_matchOptionsHasBeenSet = false;
   };
 
 } // namespace Model

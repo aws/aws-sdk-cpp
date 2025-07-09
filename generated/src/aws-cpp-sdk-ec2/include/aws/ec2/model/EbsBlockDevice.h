@@ -170,7 +170,11 @@ namespace Model
      * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
      * specified, Amazon EC2 automatically selects an Availability Zone within the
      * Region.</p> <p>This parameter is not supported when using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -255,7 +259,11 @@ namespace Model
      * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
      * specified, Amazon EC2 automatically selects an Availability Zone within the
      * Region.</p> <p>This parameter is not supported when using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }

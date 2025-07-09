@@ -427,6 +427,18 @@ namespace Model
     inline void SetDeliveryPreference(CapacityReservationDeliveryPreference value) { m_deliveryPreferenceHasBeenSet = true; m_deliveryPreference = value; }
     inline CapacityReservation& WithDeliveryPreference(CapacityReservationDeliveryPreference value) { SetDeliveryPreference(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Capacity Block.</p>
+     */
+    inline const Aws::String& GetCapacityBlockId() const { return m_capacityBlockId; }
+    inline bool CapacityBlockIdHasBeenSet() const { return m_capacityBlockIdHasBeenSet; }
+    template<typename CapacityBlockIdT = Aws::String>
+    void SetCapacityBlockId(CapacityBlockIdT&& value) { m_capacityBlockIdHasBeenSet = true; m_capacityBlockId = std::forward<CapacityBlockIdT>(value); }
+    template<typename CapacityBlockIdT = Aws::String>
+    CapacityReservation& WithCapacityBlockId(CapacityBlockIdT&& value) { SetCapacityBlockId(std::forward<CapacityBlockIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityReservationId;
@@ -509,6 +521,9 @@ namespace Model
 
     CapacityReservationDeliveryPreference m_deliveryPreference{CapacityReservationDeliveryPreference::NOT_SET};
     bool m_deliveryPreferenceHasBeenSet = false;
+
+    Aws::String m_capacityBlockId;
+    bool m_capacityBlockIdHasBeenSet = false;
   };
 
 } // namespace Model

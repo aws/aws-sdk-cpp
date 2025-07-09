@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * <p>The ARN of the Amazon Web Services-managed resource to which the volume is
      * attached.</p>
      */
     inline const Aws::String& GetAssociatedResource() const { return m_associatedResource; }
@@ -63,9 +63,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The service principal of Amazon Web Services service that owns the underlying
-     * instance to which the volume is attached.</p> <p>This parameter is returned only
-     * for volumes that are attached to Fargate tasks.</p>
+     * <p>The service principal of the Amazon Web Services service that owns the
+     * underlying resource to which the volume is attached.</p> <p>This parameter is
+     * returned only for volumes that are attached to Amazon Web Services-managed
+     * resources.</p>
      */
     inline const Aws::String& GetInstanceOwningService() const { return m_instanceOwningService; }
     template<typename InstanceOwningServiceT = Aws::String>
@@ -87,8 +88,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
-     * this parameter returns <code>null</code>.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to an Amazon Web
+     * Services-managed resource, this parameter returns <code>null</code>.</p>
      */
     inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     template<typename InstanceIdT = Aws::String>
@@ -99,8 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
-     * parameter returns <code>null</code>.</p>
+     * <p>The device name.</p> <p>If the volume is attached to an Amazon Web
+     * Services-managed resource, this parameter returns <code>null</code>.</p>
      */
     inline const Aws::String& GetDevice() const { return m_device; }
     template<typename DeviceT = Aws::String>

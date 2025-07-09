@@ -161,6 +161,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+     */
+    inline const Aws::String& GetUltraserverType() const { return m_ultraserverType; }
+    inline bool UltraserverTypeHasBeenSet() const { return m_ultraserverTypeHasBeenSet; }
+    template<typename UltraserverTypeT = Aws::String>
+    void SetUltraserverType(UltraserverTypeT&& value) { m_ultraserverTypeHasBeenSet = true; m_ultraserverType = std::forward<UltraserverTypeT>(value); }
+    template<typename UltraserverTypeT = Aws::String>
+    CapacityBlockOffering& WithUltraserverType(UltraserverTypeT&& value) { SetUltraserverType(std::forward<UltraserverTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of EC2 UltraServers in the offering.</p>
+     */
+    inline int GetUltraserverCount() const { return m_ultraserverCount; }
+    inline bool UltraserverCountHasBeenSet() const { return m_ultraserverCountHasBeenSet; }
+    inline void SetUltraserverCount(int value) { m_ultraserverCountHasBeenSet = true; m_ultraserverCount = value; }
+    inline CapacityBlockOffering& WithUltraserverCount(int value) { SetUltraserverCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of minutes (in addition to
      * <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block
      * reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at
@@ -202,6 +224,12 @@ namespace Model
 
     CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
     bool m_tenancyHasBeenSet = false;
+
+    Aws::String m_ultraserverType;
+    bool m_ultraserverTypeHasBeenSet = false;
+
+    int m_ultraserverCount{0};
+    bool m_ultraserverCountHasBeenSet = false;
 
     int m_capacityBlockDurationMinutes{0};
     bool m_capacityBlockDurationMinutesHasBeenSet = false;

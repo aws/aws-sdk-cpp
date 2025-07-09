@@ -31,6 +31,7 @@ namespace Aws
         static const int assessing_HASH = HashingUtils::HashString("assessing");
         static const int delayed_HASH = HashingUtils::HashString("delayed");
         static const int unsupported_HASH = HashingUtils::HashString("unsupported");
+        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 
         CapacityReservationState GetCapacityReservationStateForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return CapacityReservationState::unsupported;
           }
+          else if (hashCode == unavailable_HASH)
+          {
+            return CapacityReservationState::unavailable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "delayed";
           case CapacityReservationState::unsupported:
             return "unsupported";
+          case CapacityReservationState::unavailable:
+            return "unavailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

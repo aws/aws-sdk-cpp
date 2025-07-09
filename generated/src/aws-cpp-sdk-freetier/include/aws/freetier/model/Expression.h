@@ -65,6 +65,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Return results that match any of the <code>Expressions</code> that you
+     * specified. in the array.</p>
+     */
+    inline const Aws::Vector<Expression>& GetOr() const { return m_or; }
+    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
+    template<typename OrT = Aws::Vector<Expression>>
+    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
+    template<typename OrT = Aws::Vector<Expression>>
+    Expression& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
+    template<typename OrT = Expression>
+    Expression& AddOr(OrT&& value) { m_orHasBeenSet = true; m_or.emplace_back(std::forward<OrT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Return results that match all <code>Expressions</code> that you specified in
      * the array.</p>
      */
@@ -76,18 +91,6 @@ namespace Model
     Expression& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
     template<typename AndT = Expression>
     Expression& AddAnd(AndT&& value) { m_andHasBeenSet = true; m_and.emplace_back(std::forward<AndT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The specific dimension, values, and match type to filter objects with.</p>
-     */
-    inline const DimensionValues& GetDimensions() const { return m_dimensions; }
-    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    template<typename DimensionsT = DimensionValues>
-    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
-    template<typename DimensionsT = DimensionValues>
-    Expression& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,31 +113,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Return results that match any of the <code>Expressions</code> that you
-     * specified. in the array.</p>
+     * <p>The specific dimension, values, and match type to filter objects with.</p>
      */
-    inline const Aws::Vector<Expression>& GetOr() const { return m_or; }
-    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-    template<typename OrT = Aws::Vector<Expression>>
-    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
-    template<typename OrT = Aws::Vector<Expression>>
-    Expression& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
-    template<typename OrT = Expression>
-    Expression& AddOr(OrT&& value) { m_orHasBeenSet = true; m_or.emplace_back(std::forward<OrT>(value)); return *this; }
+    inline const DimensionValues& GetDimensions() const { return m_dimensions; }
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+    template<typename DimensionsT = DimensionValues>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = DimensionValues>
+    Expression& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Vector<Expression> m_or;
+    bool m_orHasBeenSet = false;
 
     Aws::Vector<Expression> m_and;
     bool m_andHasBeenSet = false;
 
-    DimensionValues m_dimensions;
-    bool m_dimensionsHasBeenSet = false;
-
     std::shared_ptr<Expression> m_not;
     bool m_notHasBeenSet = false;
 
-    Aws::Vector<Expression> m_or;
-    bool m_orHasBeenSet = false;
+    DimensionValues m_dimensions;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,6 +115,20 @@ namespace Model
     template<typename ZoneIdT = Aws::String>
     InstanceTopology& WithZoneId(ZoneIdT&& value) { SetZoneId(std::forward<ZoneIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Capacity Block. This parameter is only supported for
+     * Ultraserver instances and identifies instances within the Ultraserver
+     * domain.</p>
+     */
+    inline const Aws::String& GetCapacityBlockId() const { return m_capacityBlockId; }
+    inline bool CapacityBlockIdHasBeenSet() const { return m_capacityBlockIdHasBeenSet; }
+    template<typename CapacityBlockIdT = Aws::String>
+    void SetCapacityBlockId(CapacityBlockIdT&& value) { m_capacityBlockIdHasBeenSet = true; m_capacityBlockId = std::forward<CapacityBlockIdT>(value); }
+    template<typename CapacityBlockIdT = Aws::String>
+    InstanceTopology& WithCapacityBlockId(CapacityBlockIdT&& value) { SetCapacityBlockId(std::forward<CapacityBlockIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -134,6 +148,9 @@ namespace Model
 
     Aws::String m_zoneId;
     bool m_zoneIdHasBeenSet = false;
+
+    Aws::String m_capacityBlockId;
+    bool m_capacityBlockIdHasBeenSet = false;
   };
 
 } // namespace Model

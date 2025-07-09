@@ -135,6 +135,28 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeCapacityBlockOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+     */
+    inline const Aws::String& GetUltraserverType() const { return m_ultraserverType; }
+    inline bool UltraserverTypeHasBeenSet() const { return m_ultraserverTypeHasBeenSet; }
+    template<typename UltraserverTypeT = Aws::String>
+    void SetUltraserverType(UltraserverTypeT&& value) { m_ultraserverTypeHasBeenSet = true; m_ultraserverType = std::forward<UltraserverTypeT>(value); }
+    template<typename UltraserverTypeT = Aws::String>
+    DescribeCapacityBlockOfferingsRequest& WithUltraserverType(UltraserverTypeT&& value) { SetUltraserverType(std::forward<UltraserverTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of EC2 UltraServers in the offerings.</p>
+     */
+    inline int GetUltraserverCount() const { return m_ultraserverCount; }
+    inline bool UltraserverCountHasBeenSet() const { return m_ultraserverCountHasBeenSet; }
+    inline void SetUltraserverCount(int value) { m_ultraserverCountHasBeenSet = true; m_ultraserverCount = value; }
+    inline DescribeCapacityBlockOfferingsRequest& WithUltraserverCount(int value) { SetUltraserverCount(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun{false};
@@ -160,6 +182,12 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_ultraserverType;
+    bool m_ultraserverTypeHasBeenSet = false;
+
+    int m_ultraserverCount{0};
+    bool m_ultraserverCountHasBeenSet = false;
   };
 
 } // namespace Model

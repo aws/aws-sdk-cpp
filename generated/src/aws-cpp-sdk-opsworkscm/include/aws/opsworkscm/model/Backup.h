@@ -299,8 +299,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
-     * server when the backup is created. </p>
+     * <p> The version of OpsWorks CM-specific tools that is obtained from the server
+     * when the backup is created. </p>
      */
     inline const Aws::String& GetToolsVersion() const { return m_toolsVersion; }
     inline bool ToolsVersionHasBeenSet() const { return m_toolsVersionHasBeenSet; }
@@ -312,8 +312,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The IAM user ARN of the requester for manual backups. This field is empty
-     * for automated backups. </p>
+     * <p> The user ARN of the requester for manual backups. This field is empty for
+     * automated backups. </p>
      */
     inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }

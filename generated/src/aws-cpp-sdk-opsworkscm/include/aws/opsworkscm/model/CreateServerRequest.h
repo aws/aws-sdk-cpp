@@ -196,8 +196,8 @@ namespace Model
     ///@{
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
-     * is created, AWS OpsWorks CM deletes the oldest backups if this number is
-     * exceeded. The default value is <code>1</code>. </p>
+     * is created, OpsWorks CM deletes the oldest backups if this number is exceeded.
+     * The default value is <code>1</code>. </p>
      */
     inline int GetBackupRetentionCount() const { return m_backupRetentionCount; }
     inline bool BackupRetentionCountHasBeenSet() const { return m_backupRetentionCountHasBeenSet; }
@@ -207,10 +207,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the server. The server name must be unique within your AWS
-     * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
-     * </p>
+     * <p> The name of the server. The server name must be unique within your Amazon
+     * Web Services account, within each region. Server names must start with a letter;
+     * then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40
+     * characters. </p>
      */
     inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
@@ -222,13 +222,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, if you
-     * are using API commands instead, run the service-role-creation.yaml AWS
-     * CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the instance profile
-     * you need. </p>
+     * <p> The ARN of the instance profile that your Amazon EC2 instances use. The
+     * OpsWorks console typically creates the instance profile for you</p>
      */
     inline const Aws::String& GetInstanceProfileArn() const { return m_instanceProfileArn; }
     inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
@@ -267,7 +262,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * <p> The start time for a one-hour period each week during which OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
      * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
      * <code>00</code>. The specified time is in coordinated universal time (UTC). The
@@ -286,7 +281,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * <p> The start time for a one-hour period during which OpsWorks CM backs up
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
@@ -310,8 +305,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
-     * and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, OpsWorks CM creates one new security group that uses TCP ports 22 and
+     * 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -325,13 +320,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
-     * your account. Although the AWS OpsWorks management console typically creates the
-     * service role for you, if you are using the AWS CLI or API commands, run the
-     * service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role and
-     * instance profile that you need. </p>
+     * <p> The service role that the OpsWorks CM service backend uses to work with your
+     * account.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
@@ -366,16 +356,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
-     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
-     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
-     * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
-     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
-     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
-     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
-     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     * <p>A map that contains tag keys and tag values to attach to an OpsWorks for Chef
+     * Automate or OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The key
+     * cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127 characters,
+     * and can contain only Unicode letters, numbers, or separators, or the following
+     * special characters: <code>+ - = . _ : / @</code> </p> </li> <li> <p>The value
+     * can be a maximum 255 characters, and contain only Unicode letters, numbers, or
+     * separators, or the following special characters: <code>+ - = . _ : / @</code>
+     * </p> </li> <li> <p>Leading and trailing spaces are trimmed from both the key and
+     * value.</p> </li> <li> <p>A maximum of 50 user-applied tags is allowed for any
+     * OpsWorks CM server.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -389,7 +379,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * <p> If you specify this field, OpsWorks CM creates the server by using the
      * backup represented by BackupId. </p>
      */
     inline const Aws::String& GetBackupId() const { return m_backupId; }
