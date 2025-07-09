@@ -1236,3 +1236,20 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }
+TEST_F(EnvironmentModifyingTest, TestDefaultProviderChainWithProfile)
+{
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[testprofile]" << std::endl;
+    credsFile << "aws_access_key_id = TestProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = TestProfileSecretKey" << std::endl;
+    credsFile.close();
+    
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
+    
+    DefaultAWSCredentialsProviderChain providerWithProfile("testprofile");
+    auto credentials = providerWithProfile.GetAWSCredentials();
+    EXPECT_STREQ("TestProfileAccessKey", credentials.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("TestProfileSecretKey", credentials.GetAWSSecretKey().c_str());
+    
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}

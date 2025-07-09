@@ -65,7 +65,16 @@ namespace Aws
              */
             DefaultAWSCredentialsProviderChain();
 
+
+         /**
+          * Initializes the provider chain with the specified profile for providers that support it.
+          */
+            DefaultAWSCredentialsProviderChain(const Aws::String& profile);
+
             DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain);
+
+        private:
+          void InitializeGeneralHTTPAndInstanceProviders();
         };
 
     } // namespace Auth
