@@ -240,7 +240,7 @@ S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, 
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-    m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)),
+    m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration, m_credProvider);

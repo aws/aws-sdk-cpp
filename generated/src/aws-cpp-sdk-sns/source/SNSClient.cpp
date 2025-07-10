@@ -137,7 +137,7 @@ SNSClient::SNSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.profileName.empty() ? Aws::String() : clientConfiguration.profileName),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),

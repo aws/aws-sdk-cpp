@@ -64,6 +64,7 @@
 #end
 #set($clientConfigurationNamespace = "Client")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($profileCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.profileName)")
 #set($s3ExpressIdentityProviderParam = "clientConfiguration.identityProviderSupplier(*this)")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
 #set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())

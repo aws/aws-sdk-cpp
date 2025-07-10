@@ -115,7 +115,7 @@ SsmSapClient::SsmSapClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   SsmSapClient::SsmSapClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.profileName.empty() ? Aws::String() : clientConfiguration.profileName),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SsmSapErrorMarshaller>(ALLOCATION_TAG)),

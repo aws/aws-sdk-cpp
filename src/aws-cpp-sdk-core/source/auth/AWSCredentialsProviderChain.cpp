@@ -40,19 +40,21 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
-DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
+DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws::String& profile) : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    if (profile.empty()) {
+        AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
+        AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
+        AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    } else {
+        AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag, profile.c_str()));
+        AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag, profile));
+        AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag, profile));
+    }
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
 
-    InitializeGeneralHTTPAndInstanceProviders();
-}
-
-void DefaultAWSCredentialsProviderChain::InitializeGeneralHTTPAndInstanceProviders(){
-// General HTTP Credentials (prev. known as ECS TaskRole credentials) only available when ENVIRONMENT VARIABLE is set
+    // General HTTP Credentials (prev. known as ECS TaskRole credentials) only available when ENVIRONMENT VARIABLE is set
     const auto relativeUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI);
     AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
             << " is " << relativeUri);
@@ -87,18 +89,6 @@ void DefaultAWSCredentialsProviderChain::InitializeGeneralHTTPAndInstanceProvide
         AddProvider(Aws::MakeShared<InstanceProfileCredentialsProvider>(DefaultCredentialsProviderChainTag));
         AWS_LOGSTREAM_INFO(DefaultCredentialsProviderChainTag, "Added EC2 metadata service credentials provider to the provider chain.");
     }
-}
-
-DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws::String& profile) : AWSCredentialsProviderChain()
-{
-    AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag, profile.c_str()));
-    AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag, profile));
-    AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag, profile));
-
-    InitializeGeneralHTTPAndInstanceProviders();
-
 }
 
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain) {

@@ -62,19 +62,12 @@ namespace Aws
             /**
              * Initializes the provider chain with EnvironmentAWSCredentialsProvider, ProfileConfigFileAWSCredentialsProvider,
              * ProcessCredentialsProvider, STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider in that order.
+             * Optionally accepts a profile name for providers that support it.
              */
-            DefaultAWSCredentialsProviderChain();
-
-
-         /**
-          * Initializes the provider chain with the specified profile for providers that support it.
-          */
-            DefaultAWSCredentialsProviderChain(const Aws::String& profile);
+            DefaultAWSCredentialsProviderChain(const Aws::String& profile = "");
 
             DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain);
 
-        private:
-          void InitializeGeneralHTTPAndInstanceProviders();
         };
 
     } // namespace Auth
