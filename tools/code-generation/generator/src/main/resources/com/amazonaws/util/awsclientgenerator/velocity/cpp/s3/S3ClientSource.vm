@@ -356,4 +356,15 @@ bool ${className}::MultipartUploadSupported() const
 {
     return true;
 }
+#if($serviceNamespace == "S3Crt")
+
+void ${className}::AddContentLengthToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+    const std::shared_ptr<Aws::IOStream>& body,
+    bool isChunked) const
+{
+    if (m_clientConfiguration.contentLengthConfiguration == ${className}Configuration::CONTENT_LENGTH_CONFIGURATION::SEEK_STREAM) {
+        BASECLASS::AddContentLengthToRequest(httpRequest, body, isChunked);
+    }
+}
+#end
 #end
