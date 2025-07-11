@@ -7191,6 +7191,10 @@ namespace Aws
         Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
         Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
 
+    protected:
+        void AddContentLengthToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+            const std::shared_ptr<Aws::IOStream>& body,
+            bool isChunked) const override;
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>;
         void init(const S3Crt::ClientConfiguration& clientConfiguration,

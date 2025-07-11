@@ -132,12 +132,14 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration),
     ${defaultCredentialsProviderChainMember},
 #else${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 
@@ -152,12 +154,14 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration),
     ${simpleCredentialsProviderMember},
 #else${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 
@@ -173,13 +177,15 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}),
     ${credentialsProviderMember},
 #else
     ${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 #else
@@ -189,13 +195,15 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}),
     ${defaultCredentialsProviderChainMember},
 #else
     ${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 
@@ -205,13 +213,15 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration),
     ${simpleCredentialsProviderMember},
 #else
     ${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 
@@ -222,13 +232,15 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration),
     ${virtualAddressingInit},
 #else
     ${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration${credentialsParam});
 }
 #end
@@ -239,13 +251,15 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
   BASECLASS(clientConfiguration, signerProvider,
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration),
     ${virtualAddressingInit},
 #else
     ${virtualAddressingInit},
 #end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
+  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
+  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(m_clientConfiguration);
 }
 

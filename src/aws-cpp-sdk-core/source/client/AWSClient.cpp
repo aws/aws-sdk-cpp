@@ -820,30 +820,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
             httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         }
     }
-
-    //Add transfer-encoding:chunked to header
-    if (body && isChunked && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
-    {
-        httpRequest->SetTransferEncoding(CHUNKED_VALUE);
-    }
-    //in the scenario where we are adding a content body as a stream, the request object likely already
-    //has a content-length header set and we don't want to seek the stream just to find this information.
-    else if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
-    {
-        if (!m_httpClient->SupportsChunkedTransferEncoding())
-        {
-            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "This http client doesn't support transfer-encoding:chunked. " <<
-                                                   "The request may fail if it's not a seekable stream.");
-        }
-        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
-        body->seekg(0, body->end);
-        auto streamSize = body->tellg();
-        body->seekg(0, body->beg);
-        Aws::StringStream ss;
-        ss << streamSize;
-        httpRequest->SetContentLength(ss.str());
-    }
-
+    AddContentLengthToRequest(httpRequest, body, isChunked);
     if (needsContentMd5 && body && !httpRequest->HasHeader(Http::CONTENT_MD5_HEADER))
     {
         AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, and content-md5 needs to be set" <<
@@ -860,6 +837,28 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
             httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(md5HashResult.GetResult()));
         }
     }
+}
+
+void AWSClient::AddContentLengthToRequest(
+  const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+  const std::shared_ptr<Aws::IOStream>& body,
+  bool isChunked) const
+{
+  if (body && isChunked && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER)) {
+    httpRequest->SetTransferEncoding(CHUNKED_VALUE);
+  } else if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER)) {
+    if (!m_httpClient->SupportsChunkedTransferEncoding()) {
+      AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "This http client doesn't support transfer-encoding:chunked. " <<
+                                             "The request may fail if it's not a seekable stream.");
+    }
+    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
+    body->seekg(0, body->end);
+    auto streamSize = body->tellg();
+    body->seekg(0, body->beg);
+    Aws::StringStream ss;
+    ss << streamSize;
+    httpRequest->SetContentLength(ss.str());
+  }
 }
 
 Aws::String Aws::Client::GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest)
