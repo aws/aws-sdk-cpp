@@ -239,12 +239,10 @@ S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, 
             signPayloads,
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
+    m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
     m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
-  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
-  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration, m_credProvider);
 }
 
@@ -258,12 +256,10 @@ S3CrtClient::S3CrtClient(const AWSCredentials& credentials, const S3Crt::ClientC
             signPayloads,
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
+    m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
     m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
-  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
-  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration, m_credProvider);
 }
 
@@ -278,12 +274,10 @@ S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             signPayloads,
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration, signPayloads),
+    m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
     m_credProvider(credentialsProvider),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
-  AWS_UNREFERENCED_PARAM(useVirtualAddressing);
-  AWS_UNREFERENCED_PARAM(USEast1RegionalEndPointOption);
   init(clientConfiguration, m_credProvider);
 }
 
@@ -5585,13 +5579,4 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
 bool S3CrtClient::MultipartUploadSupported() const
 {
     return true;
-}
-
-void S3CrtClient::AddContentLengthToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-    const std::shared_ptr<Aws::IOStream>& body,
-    bool isChunked) const
-{
-    if (m_clientConfiguration.contentLenghtConfiguration == S3CrtClientConfiguration::CONTENT_LENGTH_CONFIGURATION::SEEK_STREAM) {
-        BASECLASS::AddContentLengthToRequest(httpRequest, body, isChunked);
-    }
 }

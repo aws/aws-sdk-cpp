@@ -93,14 +93,4 @@
              * This setting maps to CRT's network_interface_names_array config.
              */
             Aws::Vector<Aws::String> networkInterfaceNames;
-
-            /**
-             * Configuration on how to handle missing content length. By default the SDK attempts to seek the stream
-             * to find the total length of the stream before streaming. CRT will fallback to multipart upload if there
-             * is no content length, creating multipart uploads of partSize before knowing the stream has ended.
-             */
-            enum class CONTENT_LENGTH_CONFIGURATION {
-              SEEK_STREAM,
-              MULTIPART_UPLOAD,
-            } contentLenghtConfiguration {CONTENT_LENGTH_CONFIGURATION::SEEK_STREAM};
             /* End of S3 CRT specifics */
