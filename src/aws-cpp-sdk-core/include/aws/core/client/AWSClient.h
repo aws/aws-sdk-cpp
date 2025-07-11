@@ -286,14 +286,6 @@ namespace Aws
                                           const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const;
 
             /**
-             * Adds content-length to the request if the request has a body by attempting to seek the end of
-             * the body.
-             */
-            virtual void AddContentLengthToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-                                                   const std::shared_ptr<Aws::IOStream>& body,
-                                                   bool isChunked) const;
-
-            /**
              *  Gets the underlying ErrorMarshaller for subclasses to use.
              */
             const std::shared_ptr<AWSErrorMarshaller>& GetErrorMarshaller() const
@@ -311,6 +303,7 @@ namespace Aws
             std::shared_ptr<Auth::AWSCredentialsProvider> GetCredentialsProvider() const {
                  return m_signerProvider->GetCredentialsProvider();
             }
+        protected:
 
             /**
               * Creates an HttpRequest instance with the given URI and sets the proper headers from the
