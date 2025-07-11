@@ -7,6 +7,7 @@
 
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <performance-tests/PerformanceTestBase.h>
 
@@ -31,12 +32,12 @@ class DynamoDBPerformanceTest : public PerformanceTestBase {
  public:
   DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config, int iterations = 10);
 
-  void Setup() override;
+  Aws::Utils::Outcome<bool, PerformanceTest::SetupError> Setup() override;
   void TearDown() override;
   void Run() override;
 
  private:
-  const TestCase& m_config;
+  const TestCase m_config;
   const Aws::String m_region;
   const int m_iterations;
   Aws::UniquePtr<Aws::DynamoDB::DynamoDBClient> m_dynamodb;

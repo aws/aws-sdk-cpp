@@ -7,6 +7,7 @@
 
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/s3/S3Client.h>
 #include <performance-tests/PerformanceTestBase.h>
 
@@ -32,12 +33,12 @@ class S3PerformanceTest : public PerformanceTestBase {
  public:
   S3PerformanceTest(const Aws::String& region, const TestCase& config, const Aws::String& availabilityZoneId, int iterations = 10);
 
-  void Setup() override;
+  Aws::Utils::Outcome<bool, PerformanceTest::SetupError> Setup() override;
   void TearDown() override;
   void Run() override;
 
  private:
-  const TestCase& m_config;
+  const TestCase m_config;
   const Aws::String m_region;
   const Aws::String m_availabilityZoneId;
   const int m_iterations;

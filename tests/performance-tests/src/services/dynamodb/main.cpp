@@ -7,6 +7,7 @@
 #include <aws/core/Version.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -46,11 +47,14 @@ int main(int argc, char** argv) {
 
   {
     for (const auto& config : PerformanceTest::Services::DynamoDB::TestConfig::TestMatrix) {
-      auto performanceTest = Aws::MakeUnique<PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest>("DynamoDBPerformanceTest",
-                                                                                                           region, config, iterations);
-      performanceTest->Setup();
-      performanceTest->Run();
-      performanceTest->TearDown();
+      PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest performanceTest(region, config, iterations);
+      auto setupResult = performanceTest.Setup();
+      if (setupResult.IsSuccess()) {
+        performanceTest.Run();
+      } else {
+        AWS_LOG_ERROR("PerformanceTest", setupResult.GetError().message.c_str());
+      }
+      performanceTest.TearDown();
     }
   }
 

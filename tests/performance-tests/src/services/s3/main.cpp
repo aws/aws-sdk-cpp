@@ -7,6 +7,7 @@
 #include <aws/core/Version.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -15,6 +16,7 @@
 #include <performance-tests/services/s3/S3TestConfig.h>
 
 #include <cxxopts.hpp>
+#include <iostream>
 #include <string>
 
 int main(int argc, char** argv) {
@@ -47,11 +49,14 @@ int main(int argc, char** argv) {
 
   {
     for (const auto& config : PerformanceTest::Services::S3::TestConfig::TestMatrix) {
-      auto performanceTest = Aws::MakeUnique<PerformanceTest::Services::S3::S3PerformanceTest>("S3PerformanceTest", region, config,
-                                                                                               availabilityZoneId, iterations);
-      performanceTest->Setup();
-      performanceTest->Run();
-      performanceTest->TearDown();
+      PerformanceTest::Services::S3::S3PerformanceTest performanceTest(region, config, availabilityZoneId, iterations);
+      auto setupResult = performanceTest.Setup();
+      if (setupResult.IsSuccess()) {
+        performanceTest.Run();
+      } else {
+        AWS_LOG_ERROR("PerformanceTest", setupResult.GetError().message.c_str());
+      }
+      performanceTest.TearDown();
     }
   }
 
