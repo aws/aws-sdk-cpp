@@ -16,7 +16,6 @@
 #include <performance-tests/services/s3/S3TestConfig.h>
 
 #include <cxxopts.hpp>
-#include <iostream>
 #include <string>
 
 int main(int argc, char** argv) {
