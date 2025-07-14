@@ -1,0 +1,48 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <performance-tests/PerformanceTestBase.h>
+#include <performance-tests/Utils.h>
+#include <performance-tests/services/{{ service_lower }}/{{ service }}PerformanceTest.h>
+
+#include <cassert>
+#include <cstring>
+
+// Include the service-specific AWS SDK headers here.
+PerformanceTest::Services::{{ service }}::{{ service }}PerformanceTest::{{ service }}PerformanceTest(const Aws::String& region, const TestCase& config, {% if constructor_params %}{% for param in constructor_params %}{{ param.type }} {{ param.main_arg_name | replace('-', '_') }}{% if not loop.last %}, {% endif %}{% endfor %}, {% endif %}int iterations)
+    : m_config(config), m_region(region){% if constructor_params %}, {% for param in constructor_params %}m_{{ param.main_arg_name | replace('-', '_') }}({{ param.main_arg_name | replace('-', '_') }}){% if not loop.last %}, {% endif %}{% endfor %}{% endif %}, m_iterations(iterations) {
+  Aws::Client::ClientConfiguration cfg;
+  cfg.region = m_region;
+  m_{{ service_lower }} = Aws::MakeUnique<Aws::{{ service }}::{{ service }}Client>("{{ service }}PerformanceTest", cfg);
+}
+
+Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services::{{ service }}::{{ service }}PerformanceTest::Setup() {
+  // Write resource Setup logic here.
+  
+  return true;
+}
+
+void PerformanceTest::Services::{{ service }}::{{ service }}PerformanceTest::Run() {
+  assert(m_{{ service_lower }} && "{{ service }} client not initialized - Setup() must succeed before Run()");
+  assert(!{{ resource_name_variable }}.empty() && "{{ service }} resource name empty - Setup() must succeed before Run()");
+
+  // Write Run logic here.
+}
+
+void PerformanceTest::Services::{{ service }}::{{ service }}PerformanceTest::TearDown() {
+  if (!m_{{ service_lower }} || {{ resource_name_variable }}.empty()) {
+    return;
+  }
+
+  // Write resource cleanup (TearDown) logic here.
+}

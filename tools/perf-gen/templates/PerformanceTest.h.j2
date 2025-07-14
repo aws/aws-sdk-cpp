@@ -1,0 +1,58 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/{{ service_lower }}/{{ service }}Client.h>
+#include <performance-tests/PerformanceTestBase.h>
+
+#include <cstddef>
+
+namespace PerformanceTest {
+namespace Services {
+namespace {{ service }} {
+/**
+ * Configuration for {{ service }} performance test cases.
+ */
+struct TestCase {
+{% for key in test_matrix[0].keys() %}
+{% if key.endswith("Bytes") %}
+  size_t {{ key }};
+{% else %}
+  const char* {{ key }};
+{% endif %}
+{% endfor %}
+};
+
+/**
+ * {{ service }} performance test implementation.
+ */
+class {{ service }}PerformanceTest : public PerformanceTestBase {
+ public:
+  {{ service }}PerformanceTest(const Aws::String& region, const TestCase& config, {% if constructor_params %}{% for param in constructor_params %}{{ param.type }} {{ param.main_arg_name | replace('-', '_') }}{% if not loop.last %}, {% endif %}{% endfor %}, {% endif %}int iterations = 10);
+
+  Aws::Utils::Outcome<bool, PerformanceTest::SetupError> Setup() override;
+  void TearDown() override;
+  void Run() override;
+
+ private:
+  const TestCase m_config;
+  const Aws::String m_region;
+{% if constructor_params %}
+{% for param in constructor_params %}
+  const Aws::String m_{{ param.main_arg_name | replace('-', '_') }};
+{% endfor %}
+{% endif %}
+  const int m_iterations;
+  Aws::UniquePtr<Aws::{{ service }}::{{ service }}Client> m_{{ service_lower }};
+  Aws::String {{ resource_name_variable }};
+};
+
+}  // namespace {{ service }}
+}  // namespace Services
+}  // namespace PerformanceTest

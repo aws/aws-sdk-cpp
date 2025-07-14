@@ -1,0 +1,69 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Aws.h>
+#include <aws/core/Version.h>
+#include <aws/core/monitoring/MonitoringFactory.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <performance-tests/reporting/JsonReportingMetrics.h>
+#include <performance-tests/services/{{ service_lower }}/{{ service }}PerformanceTest.h>
+#include <performance-tests/services/{{ service_lower }}/{{ service }}TestConfig.h>
+
+#include <cxxopts.hpp>
+#include <iostream>
+#include <string>
+
+int main(int argc, char** argv) {
+  cxxopts::Options options("{{ service_lower }}-perf-test", "{{ service }} Performance Test");
+  options.add_options()
+{%- for arg in main_args -%}
+("{{ arg.short }},{{ arg.name }}", "{{ arg.description }}", cxxopts::value<{{ arg.type }}>()->default_value("{{ arg.default }}"))
+{%- endfor -%}
+;
+
+  auto const result = options.parse(argc, argv);
+
+{% for arg in main_args %}
+{% if arg.type == 'int' %}
+  int const {{ arg.name | replace('-', '_') }} = result["{{ arg.name }}"].as<int>();
+{% else %}
+  Aws::String const {{ arg.name | replace('-', '_') }} = Aws::Utils::StringUtils::to_string(result["{{ arg.name }}"].as<std::string>());
+{% endif %}
+{% endfor %}
+
+  Aws::SDKOptions sdkOptions;
+  Aws::String const versionStr = Aws::Version::GetVersionString();
+
+  sdkOptions.monitoringOptions.customizedMonitoringFactory_create_fn = {[&]() -> Aws::UniquePtr<Aws::Monitoring::MonitoringFactory> {
+    Aws::Set<Aws::String> operations;
+    for (const auto& operation : PerformanceTest::Services::{{ service }}::TestConfig::TestOperations) {
+      operations.insert(operation);
+    }
+    return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>(
+        "JsonReportingMetricsFactory", operations, "cpp1", versionStr, commit_id, PerformanceTest::Services::{{ service }}::TestConfig::OutputFilename);
+  }};
+
+  Aws::InitAPI(sdkOptions);
+
+  {
+    for (const auto& config : PerformanceTest::Services::{{ service }}::TestConfig::TestMatrix) {
+      PerformanceTest::Services::{{ service }}::{{ service }}PerformanceTest performanceTest(region, config, {% if constructor_params %}{% for param in constructor_params %}{{ param.main_arg_name | replace('-', '_') }}{% if not loop.last %}, {% endif %}{% endfor %}, {% endif %}iterations);
+      auto setupResult = performanceTest.Setup();
+      if (setupResult.IsSuccess()) {
+        performanceTest.Run();
+      } else {
+        AWS_LOG_ERROR("PerformanceTest", setupResult.GetError().message.c_str());
+      }
+      performanceTest.TearDown();
+    }
+  }
+
+  Aws::ShutdownAPI(sdkOptions);
+  return 0;
+}

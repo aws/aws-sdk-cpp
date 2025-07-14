@@ -1,0 +1,22 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+
+#include <performance-tests/services/{{ service_lower }}/{{ service }}PerformanceTest.h>
+
+#include <array>
+
+namespace PerformanceTest {
+namespace Services {
+namespace {{ service }} {
+namespace TestConfig {
+extern const std::array<const char*, {{ operations|length }}> TestOperations;
+extern const std::array<TestCase, {{ test_matrix|length }}> TestMatrix;
+extern const char* OutputFilename;
+}  // namespace TestConfig
+}  // namespace {{ service }}
+}  // namespace Services
+}  // namespace PerformanceTest

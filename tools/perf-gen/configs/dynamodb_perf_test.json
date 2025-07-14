@@ -1,0 +1,47 @@
+{
+  "service": "DynamoDB",
+  "service_lower": "dynamodb",
+  "resource_name_variable": "m_tableName",
+  "operations": [
+    "PutItem",
+    "GetItem"
+  ],
+  "test_matrix": [
+    {
+      "sizeLabel": "8KB",
+      "sizeBytes": "8 * 1024"
+    },
+    {
+      "sizeLabel": "64KB",
+      "sizeBytes": "64 * 1024"
+    },
+    {
+      "sizeLabel": "392KB",
+      "sizeBytes": "392 * 1024"
+    }
+  ],
+  "output_filename": "dynamodb-performance-test-results.json",
+  "main_args": [
+    {
+      "name": "region",
+      "short": "r",
+      "description": "AWS region",
+      "type": "std::string",
+      "default": "us-east-1"
+    },
+    {
+      "name": "iterations",
+      "short": "i",
+      "description": "Number of iterations",
+      "type": "int",
+      "default": "10"
+    },
+    {
+      "name": "commit-id",
+      "short": "c",
+      "description": "Commit ID",
+      "type": "std::string",
+      "default": "unknown"
+    }
+  ]
+}

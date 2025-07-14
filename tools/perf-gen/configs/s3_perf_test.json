@@ -1,0 +1,78 @@
+{
+  "service": "S3",
+  "service_lower": "s3",
+  "resource_name_variable": "m_bucketName",
+  "operations": [
+    "PutObject",
+    "GetObject"
+  ],
+  "constructor_params": [
+    {
+      "type": "const Aws::String&",
+      "main_arg_name": "az-id"
+    }
+  ],
+  "test_matrix": [
+    {
+      "sizeLabel": "8KB",
+      "sizeBytes": "8 * 1024",
+      "bucketTypeLabel": "s3-standard"
+    },
+    {
+      "sizeLabel": "64KB",
+      "sizeBytes": "64 * 1024",
+      "bucketTypeLabel": "s3-standard"
+    },
+    {
+      "sizeLabel": "1MB",
+      "sizeBytes": "1024 * 1024",
+      "bucketTypeLabel": "s3-standard"
+    },
+    {
+      "sizeLabel": "8KB",
+      "sizeBytes": "8 * 1024",
+      "bucketTypeLabel": "s3-express"
+    },
+    {
+      "sizeLabel": "64KB",
+      "sizeBytes": "64 * 1024",
+      "bucketTypeLabel": "s3-express"
+    },
+    {
+      "sizeLabel": "1MB",
+      "sizeBytes": "1024 * 1024",
+      "bucketTypeLabel": "s3-express"
+    }
+  ],
+  "output_filename": "s3-performance-test-results.json",
+  "main_args": [
+    {
+      "name": "region",
+      "short": "r",
+      "description": "AWS region",
+      "type": "std::string",
+      "default": "us-east-1"
+    },
+    {
+      "name": "az-id",
+      "short": "a",
+      "description": "Availability zone ID",
+      "type": "std::string",
+      "default": "use1-az4"
+    },
+    {
+      "name": "iterations",
+      "short": "i",
+      "description": "Number of iterations",
+      "type": "int",
+      "default": "10"
+    },
+    {
+      "name": "commit-id",
+      "short": "c",
+      "description": "Commit ID",
+      "type": "std::string",
+      "default": "unknown"
+    }
+  ]
+}
