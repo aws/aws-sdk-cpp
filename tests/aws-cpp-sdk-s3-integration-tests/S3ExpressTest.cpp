@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
@@ -19,7 +20,6 @@
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
-#include <aws/s3/model/SelectObjectContentRequest.h>
 #include <aws/s3/model/ListDirectoryBucketsRequest.h>
 #include <aws/s3/model/CreateSessionRequest.h>
 #include <aws/s3/model/PutBucketPolicyRequest.h>
