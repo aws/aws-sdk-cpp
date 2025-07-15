@@ -3716,8 +3716,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Lists the history of SPICE ingestions for a dataset.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per
+         * user and 25 TPS per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIngestions">AWS
          * API Reference</a></p>
          */

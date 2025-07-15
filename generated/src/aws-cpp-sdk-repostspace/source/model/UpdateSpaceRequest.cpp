@@ -22,15 +22,21 @@ Aws::String UpdateSpaceRequest::SerializePayload() const
 
   }
 
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("tier", TierLevelMapper::GetNameForTierLevel(m_tier));
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
 
   }
 
-  if(m_tierHasBeenSet)
+  if(m_supportedEmailDomainsHasBeenSet)
   {
-   payload.WithString("tier", TierLevelMapper::GetNameForTierLevel(m_tier));
+   payload.WithObject("supportedEmailDomains", m_supportedEmailDomains.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -180,6 +180,8 @@
 #include <aws/sagemaker/model/ClusterNodeSummary.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterOrchestratorEksConfig.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterSchedulerConfigSummary.h>
 #include <aws/sagemaker/model/ClusterSortBy.h>
 #include <aws/sagemaker/model/ClusterStatus.h>
@@ -652,6 +654,8 @@
 #include <aws/sagemaker/model/EndpointStatus.h>
 #include <aws/sagemaker/model/EndpointStepMetadata.h>
 #include <aws/sagemaker/model/EndpointSummary.h>
+#include <aws/sagemaker/model/EnvironmentConfig.h>
+#include <aws/sagemaker/model/EnvironmentConfigDetails.h>
 #include <aws/sagemaker/model/EnvironmentParameter.h>
 #include <aws/sagemaker/model/EnvironmentParameterRanges.h>
 #include <aws/sagemaker/model/ErrorInfo.h>
@@ -663,6 +667,7 @@
 #include <aws/sagemaker/model/ExperimentSummary.h>
 #include <aws/sagemaker/model/Explainability.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/FSxLustreConfig.h>
 #include <aws/sagemaker/model/FSxLustreFileSystem.h>
 #include <aws/sagemaker/model/FSxLustreFileSystemConfig.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
@@ -967,6 +972,8 @@
 #include <aws/sagemaker/model/ListPipelineExecutionsResult.h>
 #include <aws/sagemaker/model/ListPipelineParametersForExecutionRequest.h>
 #include <aws/sagemaker/model/ListPipelineParametersForExecutionResult.h>
+#include <aws/sagemaker/model/ListPipelineVersionsRequest.h>
+#include <aws/sagemaker/model/ListPipelineVersionsResult.h>
 #include <aws/sagemaker/model/ListPipelinesRequest.h>
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsRequest.h>
@@ -1199,6 +1206,8 @@
 #include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/sagemaker/model/PipelineStatus.h>
 #include <aws/sagemaker/model/PipelineSummary.h>
+#include <aws/sagemaker/model/PipelineVersion.h>
+#include <aws/sagemaker/model/PipelineVersionSummary.h>
 #include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 #include <aws/sagemaker/model/PreemptTeamTasks.h>
 #include <aws/sagemaker/model/PresignedUrlAccessConfig.h>
@@ -1595,6 +1604,8 @@
 #include <aws/sagemaker/model/UpdatePipelineExecutionResult.h>
 #include <aws/sagemaker/model/UpdatePipelineRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineResult.h>
+#include <aws/sagemaker/model/UpdatePipelineVersionRequest.h>
+#include <aws/sagemaker/model/UpdatePipelineVersionResult.h>
 #include <aws/sagemaker/model/UpdateProjectRequest.h>
 #include <aws/sagemaker/model/UpdateProjectResult.h>
 #include <aws/sagemaker/model/UpdateSpaceRequest.h>

@@ -89,6 +89,11 @@ ServiceDeployment& ServiceDeployment::operator =(JsonView jsonValue)
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lifecycleStage"))
+  {
+    m_lifecycleStage = ServiceDeploymentLifecycleStageMapper::GetServiceDeploymentLifecycleStageForName(jsonValue.GetString("lifecycleStage"));
+    m_lifecycleStageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("deploymentConfiguration"))
   {
     m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
@@ -185,6 +190,11 @@ JsonValue ServiceDeployment::Jsonize() const
   {
    payload.WithString("statusReason", m_statusReason);
 
+  }
+
+  if(m_lifecycleStageHasBeenSet)
+  {
+   payload.WithString("lifecycleStage", ServiceDeploymentLifecycleStageMapper::GetNameForServiceDeploymentLifecycleStage(m_lifecycleStage));
   }
 
   if(m_deploymentConfigurationHasBeenSet)

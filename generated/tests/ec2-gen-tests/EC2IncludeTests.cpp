@@ -1482,6 +1482,8 @@
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/InferenceDeviceInfo.h>
 #include <aws/ec2/model/InferenceDeviceMemoryInfo.h>
+#include <aws/ec2/model/InitializationStatusDetails.h>
+#include <aws/ec2/model/InitializationType.h>
 #include <aws/ec2/model/Instance.h>
 #include <aws/ec2/model/InstanceAttachmentEnaSrdSpecification.h>
 #include <aws/ec2/model/InstanceAttachmentEnaSrdUdpSpecification.h>

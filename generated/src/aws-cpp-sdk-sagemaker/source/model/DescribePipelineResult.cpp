@@ -90,6 +90,16 @@ DescribePipelineResult& DescribePipelineResult::operator =(const Aws::AmazonWebS
     m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
     m_parallelismConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineVersionDisplayName"))
+  {
+    m_pipelineVersionDisplayName = jsonValue.GetString("PipelineVersionDisplayName");
+    m_pipelineVersionDisplayNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PipelineVersionDescription"))
+  {
+    m_pipelineVersionDescription = jsonValue.GetString("PipelineVersionDescription");
+    m_pipelineVersionDescriptionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

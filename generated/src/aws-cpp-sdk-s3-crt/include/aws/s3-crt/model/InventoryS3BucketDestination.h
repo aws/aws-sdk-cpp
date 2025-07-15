@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-   * (optional) where inventory results are published.</p><p><h3>See Also:</h3>   <a
+   * (optional) where S3 Inventory results are published.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryS3BucketDestination">AWS
    * API Reference</a></p>
    */

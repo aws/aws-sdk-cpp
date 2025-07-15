@@ -7,6 +7,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3tables/model/TableBucketType.h>
 #include <utility>
 
 namespace Aws
@@ -74,6 +75,16 @@ namespace Model
     inline void SetMaxBuckets(int value) { m_maxBucketsHasBeenSet = true; m_maxBuckets = value; }
     inline ListTableBucketsRequest& WithMaxBuckets(int value) { SetMaxBuckets(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of table buckets to filter by in the list.</p>
+     */
+    inline TableBucketType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(TableBucketType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListTableBucketsRequest& WithType(TableBucketType value) { SetType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_prefix;
@@ -84,6 +95,9 @@ namespace Model
 
     int m_maxBuckets{0};
     bool m_maxBucketsHasBeenSet = false;
+
+    TableBucketType m_type{TableBucketType::NOT_SET};
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

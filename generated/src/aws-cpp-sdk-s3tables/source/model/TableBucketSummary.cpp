@@ -50,6 +50,11 @@ TableBucketSummary& TableBucketSummary::operator =(JsonView jsonValue)
     m_tableBucketId = jsonValue.GetString("tableBucketId");
     m_tableBucketIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TableBucketTypeMapper::GetTableBucketTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +89,11 @@ JsonValue TableBucketSummary::Jsonize() const
   {
    payload.WithString("tableBucketId", m_tableBucketId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TableBucketTypeMapper::GetNameForTableBucketType(m_type));
   }
 
   return payload;

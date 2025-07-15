@@ -94,6 +94,12 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
 
       m_attachmentStatusesHasBeenSet = true;
     }
+    XmlNode initializationStatusDetailsNode = resultNode.FirstChild("initializationStatusDetails");
+    if(!initializationStatusDetailsNode.IsNull())
+    {
+      m_initializationStatusDetails = initializationStatusDetailsNode;
+      m_initializationStatusDetailsHasBeenSet = true;
+    }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
@@ -162,6 +168,13 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_initializationStatusDetailsHasBeenSet)
+  {
+      Aws::StringStream initializationStatusDetailsLocationAndMemberSs;
+      initializationStatusDetailsLocationAndMemberSs << location << index << locationValue << ".InitializationStatusDetails";
+      m_initializationStatusDetails.OutputToStream(oStream, initializationStatusDetailsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_availabilityZoneIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
@@ -218,6 +231,12 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
         attachmentStatusesSs << location << ".AttachmentStatuses." << attachmentStatusesIdx++;
         item.OutputToStream(oStream, attachmentStatusesSs.str().c_str());
       }
+  }
+  if(m_initializationStatusDetailsHasBeenSet)
+  {
+      Aws::String initializationStatusDetailsLocationAndMember(location);
+      initializationStatusDetailsLocationAndMember += ".InitializationStatusDetails";
+      m_initializationStatusDetails.OutputToStream(oStream, initializationStatusDetailsLocationAndMember.c_str());
   }
   if(m_availabilityZoneIdHasBeenSet)
   {

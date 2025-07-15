@@ -245,6 +245,7 @@
 #include <aws/sagemaker/model/ListPipelineExecutionStepsResult.h>
 #include <aws/sagemaker/model/ListPipelineExecutionsResult.h>
 #include <aws/sagemaker/model/ListPipelineParametersForExecutionResult.h>
+#include <aws/sagemaker/model/ListPipelineVersionsResult.h>
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListProjectsResult.h>
@@ -310,6 +311,7 @@
 #include <aws/sagemaker/model/UpdatePartnerAppResult.h>
 #include <aws/sagemaker/model/UpdatePipelineResult.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionResult.h>
+#include <aws/sagemaker/model/UpdatePipelineVersionResult.h>
 #include <aws/sagemaker/model/UpdateProjectResult.h>
 #include <aws/sagemaker/model/UpdateSpaceResult.h>
 #include <aws/sagemaker/model/UpdateTrainingJobResult.h>
@@ -697,6 +699,7 @@ namespace Aws
       class ListPipelineExecutionStepsRequest;
       class ListPipelineExecutionsRequest;
       class ListPipelineParametersForExecutionRequest;
+      class ListPipelineVersionsRequest;
       class ListPipelinesRequest;
       class ListProcessingJobsRequest;
       class ListProjectsRequest;
@@ -782,6 +785,7 @@ namespace Aws
       class UpdatePartnerAppRequest;
       class UpdatePipelineRequest;
       class UpdatePipelineExecutionRequest;
+      class UpdatePipelineVersionRequest;
       class UpdateProjectRequest;
       class UpdateSpaceRequest;
       class UpdateTrainingJobRequest;
@@ -1060,6 +1064,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPipelineExecutionStepsResult, SageMakerError> ListPipelineExecutionStepsOutcome;
       typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, SageMakerError> ListPipelineExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListPipelineParametersForExecutionResult, SageMakerError> ListPipelineParametersForExecutionOutcome;
+      typedef Aws::Utils::Outcome<ListPipelineVersionsResult, SageMakerError> ListPipelineVersionsOutcome;
       typedef Aws::Utils::Outcome<ListPipelinesResult, SageMakerError> ListPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListProcessingJobsResult, SageMakerError> ListProcessingJobsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, SageMakerError> ListProjectsOutcome;
@@ -1145,6 +1150,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdatePartnerAppResult, SageMakerError> UpdatePartnerAppOutcome;
       typedef Aws::Utils::Outcome<UpdatePipelineResult, SageMakerError> UpdatePipelineOutcome;
       typedef Aws::Utils::Outcome<UpdatePipelineExecutionResult, SageMakerError> UpdatePipelineExecutionOutcome;
+      typedef Aws::Utils::Outcome<UpdatePipelineVersionResult, SageMakerError> UpdatePipelineVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateProjectResult, SageMakerError> UpdateProjectOutcome;
       typedef Aws::Utils::Outcome<UpdateSpaceResult, SageMakerError> UpdateSpaceOutcome;
       typedef Aws::Utils::Outcome<UpdateTrainingJobResult, SageMakerError> UpdateTrainingJobOutcome;
@@ -1423,6 +1429,7 @@ namespace Aws
       typedef std::future<ListPipelineExecutionStepsOutcome> ListPipelineExecutionStepsOutcomeCallable;
       typedef std::future<ListPipelineExecutionsOutcome> ListPipelineExecutionsOutcomeCallable;
       typedef std::future<ListPipelineParametersForExecutionOutcome> ListPipelineParametersForExecutionOutcomeCallable;
+      typedef std::future<ListPipelineVersionsOutcome> ListPipelineVersionsOutcomeCallable;
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
       typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
@@ -1508,6 +1515,7 @@ namespace Aws
       typedef std::future<UpdatePartnerAppOutcome> UpdatePartnerAppOutcomeCallable;
       typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
       typedef std::future<UpdatePipelineExecutionOutcome> UpdatePipelineExecutionOutcomeCallable;
+      typedef std::future<UpdatePipelineVersionOutcome> UpdatePipelineVersionOutcomeCallable;
       typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
       typedef std::future<UpdateSpaceOutcome> UpdateSpaceOutcomeCallable;
       typedef std::future<UpdateTrainingJobOutcome> UpdateTrainingJobOutcomeCallable;
@@ -1789,6 +1797,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelineExecutionStepsRequest&, const Model::ListPipelineExecutionStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionStepsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelineExecutionsRequest&, const Model::ListPipelineExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelineParametersForExecutionRequest&, const Model::ListPipelineParametersForExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineParametersForExecutionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListPipelineVersionsRequest&, const Model::ListPipelineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineVersionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
@@ -1874,6 +1883,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePartnerAppRequest&, const Model::UpdatePartnerAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerAppResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineExecutionRequest&, const Model::UpdatePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineExecutionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineVersionRequest&, const Model::UpdatePipelineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateSpaceRequest&, const Model::UpdateSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrainingJobRequest&, const Model::UpdateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrainingJobResponseReceivedHandler;

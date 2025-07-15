@@ -45,6 +45,11 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     m_containerPort = jsonValue.GetInteger("containerPort");
     m_containerPortHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("advancedConfiguration"))
+  {
+    m_advancedConfiguration = jsonValue.GetObject("advancedConfiguration");
+    m_advancedConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue LoadBalancer::Jsonize() const
   if(m_containerPortHasBeenSet)
   {
    payload.WithInteger("containerPort", m_containerPort);
+
+  }
+
+  if(m_advancedConfigurationHasBeenSet)
+  {
+   payload.WithObject("advancedConfiguration", m_advancedConfiguration.Jsonize());
 
   }
 

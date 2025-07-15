@@ -55,6 +55,11 @@ Aws::String CreateInstanceConnectEndpointRequest::SerializePayload() const
     }
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

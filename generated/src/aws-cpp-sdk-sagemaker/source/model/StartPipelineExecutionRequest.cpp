@@ -63,6 +63,12 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
 
   }
 
+  if(m_pipelineVersionIdHasBeenSet)
+  {
+   payload.WithInt64("PipelineVersionId", m_pipelineVersionId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

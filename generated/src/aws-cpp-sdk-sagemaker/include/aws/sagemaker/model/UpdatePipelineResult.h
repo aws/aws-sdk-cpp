@@ -44,6 +44,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the pipeline version.</p>
+     */
+    inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
+    inline void SetPipelineVersionId(long long value) { m_pipelineVersionIdHasBeenSet = true; m_pipelineVersionId = value; }
+    inline UpdatePipelineResult& WithPipelineVersionId(long long value) { SetPipelineVersionId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -55,6 +64,9 @@ namespace Model
 
     Aws::String m_pipelineArn;
     bool m_pipelineArnHasBeenSet = false;
+
+    long long m_pipelineVersionId{0};
+    bool m_pipelineVersionIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

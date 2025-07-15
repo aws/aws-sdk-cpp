@@ -16,7 +16,11 @@ namespace Model
   enum class FilterType
   {
     NOT_SET,
-    TERM_MATCH
+    TERM_MATCH,
+    EQUALS,
+    CONTAINS,
+    ANY_OF,
+    NONE_OF
   };
 
 namespace FilterTypeMapper

@@ -8,6 +8,7 @@
 #include <aws/eventbridge/EventBridgeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
+#include <aws/eventbridge/model/LogConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eventbridge/model/Tag.h>
 #include <utility>
@@ -129,6 +130,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The logging configuration settings for the event bus.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
+     * event buses</a> in the <i>EventBridge User Guide</i>.</p>
+     */
+    inline const LogConfig& GetLogConfig() const { return m_logConfig; }
+    inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
+    template<typename LogConfigT = LogConfig>
+    void SetLogConfig(LogConfigT&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::forward<LogConfigT>(value); }
+    template<typename LogConfigT = LogConfig>
+    CreateEventBusRequest& WithLogConfig(LogConfigT&& value) { SetLogConfig(std::forward<LogConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags to associate with the event bus.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -156,6 +172,9 @@ namespace Model
 
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet = false;
+
+    LogConfig m_logConfig;
+    bool m_logConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

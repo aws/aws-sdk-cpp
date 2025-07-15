@@ -7,6 +7,7 @@
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
+#include <aws/eventbridge/model/LogConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -107,6 +108,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The logging configuration settings for the event bus.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
+     * event buses</a> in the <i>EventBridge User Guide</i>.</p>
+     */
+    inline const LogConfig& GetLogConfig() const { return m_logConfig; }
+    template<typename LogConfigT = LogConfig>
+    void SetLogConfig(LogConfigT&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::forward<LogConfigT>(value); }
+    template<typename LogConfigT = LogConfig>
+    DescribeEventBusResult& WithLogConfig(LogConfigT&& value) { SetLogConfig(std::forward<LogConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time the event bus was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
@@ -154,6 +169,9 @@ namespace Model
 
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
+
+    LogConfig m_logConfig;
+    bool m_logConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;

@@ -34,6 +34,12 @@ Aws::String DescribeStreamRequest::SerializePayload() const
 
   }
 
+  if(m_shardFilterHasBeenSet)
+  {
+   payload.WithObject("ShardFilter", m_shardFilter.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

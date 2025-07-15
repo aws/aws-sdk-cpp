@@ -44,6 +44,13 @@ void ListTableBucketsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_typeHasBeenSet)
+    {
+      ss << TableBucketTypeMapper::GetNameForTableBucketType(m_type);
+      uri.AddQueryStringParameter("type", ss.str());
+      ss.str("");
+    }
+
 }
 
 

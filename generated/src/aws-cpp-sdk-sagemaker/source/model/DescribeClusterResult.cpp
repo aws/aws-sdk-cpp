@@ -59,6 +59,15 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
     }
     m_instanceGroupsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RestrictedInstanceGroups"))
+  {
+    Aws::Utils::Array<JsonView> restrictedInstanceGroupsJsonList = jsonValue.GetArray("RestrictedInstanceGroups");
+    for(unsigned restrictedInstanceGroupsIndex = 0; restrictedInstanceGroupsIndex < restrictedInstanceGroupsJsonList.GetLength(); ++restrictedInstanceGroupsIndex)
+    {
+      m_restrictedInstanceGroups.push_back(restrictedInstanceGroupsJsonList[restrictedInstanceGroupsIndex].AsObject());
+    }
+    m_restrictedInstanceGroupsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");

@@ -197,7 +197,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of secondary private IPv4 addresses. You can���t specify this
+     * <p>The number of secondary private IPv4 addresses. You can’t specify this
      * parameter and also specify a secondary private IP address using the
      * <code>PrivateIpAddress</code> parameter.</p>
      */

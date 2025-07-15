@@ -65,10 +65,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches
-     * the discovery name for this Service Connect resource. You can use this ARN in
-     * other integrations with Cloud Map. However, Service Connect can't ensure
-     * connectivity outside of Amazon ECS.</p>
+     * <p>The Amazon Resource Name (ARN) for the service in Cloud Map that matches the
+     * discovery name for this Service Connect resource. You can use this ARN in other
+     * integrations with Cloud Map. However, Service Connect can't ensure connectivity
+     * outside of Amazon ECS.</p>
      */
     inline const Aws::String& GetDiscoveryArn() const { return m_discoveryArn; }
     inline bool DiscoveryArnHasBeenSet() const { return m_discoveryArnHasBeenSet; }

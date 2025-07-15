@@ -7,6 +7,7 @@
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodbstreams/model/ShardFilter.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,19 @@ namespace Model
     template<typename ExclusiveStartShardIdT = Aws::String>
     DescribeStreamRequest& WithExclusiveStartShardId(ExclusiveStartShardIdT&& value) { SetExclusiveStartShardId(std::forward<ExclusiveStartShardIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This optional field contains the filter definition for the
+     * <code>DescribeStream</code> API.</p>
+     */
+    inline const ShardFilter& GetShardFilter() const { return m_shardFilter; }
+    inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
+    template<typename ShardFilterT = ShardFilter>
+    void SetShardFilter(ShardFilterT&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::forward<ShardFilterT>(value); }
+    template<typename ShardFilterT = ShardFilter>
+    DescribeStreamRequest& WithShardFilter(ShardFilterT&& value) { SetShardFilter(std::forward<ShardFilterT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_streamArn;
@@ -83,6 +97,9 @@ namespace Model
 
     Aws::String m_exclusiveStartShardId;
     bool m_exclusiveStartShardIdHasBeenSet = false;
+
+    ShardFilter m_shardFilter;
+    bool m_shardFilterHasBeenSet = false;
   };
 
 } // namespace Model

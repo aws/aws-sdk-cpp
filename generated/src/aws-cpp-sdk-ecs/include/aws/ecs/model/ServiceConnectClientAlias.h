@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/ServiceConnectTestTrafficRules.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,21 @@ namespace Model
     template<typename DnsNameT = Aws::String>
     ServiceConnectClientAlias& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for test traffic routing rules used during blue/green
+     * deployments with Amazon ECS Service Connect. This allows you to route a portion
+     * of traffic to the new service revision of your service for testing before
+     * shifting all production traffic.</p>
+     */
+    inline const ServiceConnectTestTrafficRules& GetTestTrafficRules() const { return m_testTrafficRules; }
+    inline bool TestTrafficRulesHasBeenSet() const { return m_testTrafficRulesHasBeenSet; }
+    template<typename TestTrafficRulesT = ServiceConnectTestTrafficRules>
+    void SetTestTrafficRules(TestTrafficRulesT&& value) { m_testTrafficRulesHasBeenSet = true; m_testTrafficRules = std::forward<TestTrafficRulesT>(value); }
+    template<typename TestTrafficRulesT = ServiceConnectTestTrafficRules>
+    ServiceConnectClientAlias& WithTestTrafficRules(TestTrafficRulesT&& value) { SetTestTrafficRules(std::forward<TestTrafficRulesT>(value)); return *this;}
+    ///@}
   private:
 
     int m_port{0};
@@ -94,6 +110,9 @@ namespace Model
 
     Aws::String m_dnsName;
     bool m_dnsNameHasBeenSet = false;
+
+    ServiceConnectTestTrafficRules m_testTrafficRules;
+    bool m_testTrafficRulesHasBeenSet = false;
   };
 
 } // namespace Model

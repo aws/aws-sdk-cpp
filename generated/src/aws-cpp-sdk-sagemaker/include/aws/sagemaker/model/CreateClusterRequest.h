@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -64,6 +65,21 @@ namespace Model
     CreateClusterRequest& WithInstanceGroups(InstanceGroupsT&& value) { SetInstanceGroups(std::forward<InstanceGroupsT>(value)); return *this;}
     template<typename InstanceGroupsT = ClusterInstanceGroupSpecification>
     CreateClusterRequest& AddInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.emplace_back(std::forward<InstanceGroupsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The specialized instance groups for training models like Amazon Nova to be
+     * created in the SageMaker HyperPod cluster.</p>
+     */
+    inline const Aws::Vector<ClusterRestrictedInstanceGroupSpecification>& GetRestrictedInstanceGroups() const { return m_restrictedInstanceGroups; }
+    inline bool RestrictedInstanceGroupsHasBeenSet() const { return m_restrictedInstanceGroupsHasBeenSet; }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupSpecification>>
+    void SetRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups = std::forward<RestrictedInstanceGroupsT>(value); }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupSpecification>>
+    CreateClusterRequest& WithRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { SetRestrictedInstanceGroups(std::forward<RestrictedInstanceGroupsT>(value)); return *this;}
+    template<typename RestrictedInstanceGroupsT = ClusterRestrictedInstanceGroupSpecification>
+    CreateClusterRequest& AddRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups.emplace_back(std::forward<RestrictedInstanceGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -153,6 +169,9 @@ namespace Model
 
     Aws::Vector<ClusterInstanceGroupSpecification> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet = false;
+
+    Aws::Vector<ClusterRestrictedInstanceGroupSpecification> m_restrictedInstanceGroups;
+    bool m_restrictedInstanceGroupsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;

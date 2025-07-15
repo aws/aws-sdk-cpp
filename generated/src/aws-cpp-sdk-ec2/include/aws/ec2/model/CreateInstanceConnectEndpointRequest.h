@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -86,7 +87,10 @@ namespace Model
      * <p>Indicates whether the client IP address is preserved as the source. The
      * following are the possible values.</p> <ul> <li> <p> <code>true</code> - Use the
      * client IP address as the source.</p> </li> <li> <p> <code>false</code> - Use the
-     * network interface IP address as the source.</p> </li> </ul> <p>Default:
+     * network interface IP address as the source.</p> </li> </ul>  <p>
+     * <code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect
+     * Endpoints. To use <code>PreserveClientIp</code>, the value for
+     * <code>IpAddressType</code> must be <code>ipv4</code>.</p>  <p>Default:
      * <code>false</code> </p>
      */
     inline bool GetPreserveClientIp() const { return m_preserveClientIp; }
@@ -121,6 +125,23 @@ namespace Model
     template<typename TagSpecificationsT = TagSpecification>
     CreateInstanceConnectEndpointRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type of the endpoint.</p> <p>If no value is specified, the
+     * default value is determined by the IP address type of the subnet:</p> <ul> <li>
+     * <p> <code>dualstack</code> - If the subnet has both IPv4 and IPv6 CIDRs</p>
+     * </li> <li> <p> <code>ipv4</code> - If the subnet has only IPv4 CIDRs</p> </li>
+     * <li> <p> <code>ipv6</code> - If the subnet has only IPv6 CIDRs</p> </li> </ul>
+     *  <p> <code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance
+     * Connect Endpoints. To use <code>PreserveClientIp</code>, the value for
+     * <code>IpAddressType</code> must be <code>ipv4</code>.</p> 
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateInstanceConnectEndpointRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun{false};
@@ -140,6 +161,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

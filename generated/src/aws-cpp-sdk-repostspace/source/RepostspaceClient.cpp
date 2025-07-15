@@ -21,18 +21,24 @@
 #include <aws/repostspace/RepostspaceClient.h>
 #include <aws/repostspace/RepostspaceErrorMarshaller.h>
 #include <aws/repostspace/RepostspaceEndpointProvider.h>
+#include <aws/repostspace/model/BatchAddChannelRoleToAccessorsRequest.h>
 #include <aws/repostspace/model/BatchAddRoleRequest.h>
+#include <aws/repostspace/model/BatchRemoveChannelRoleFromAccessorsRequest.h>
 #include <aws/repostspace/model/BatchRemoveRoleRequest.h>
+#include <aws/repostspace/model/CreateChannelRequest.h>
 #include <aws/repostspace/model/CreateSpaceRequest.h>
 #include <aws/repostspace/model/DeleteSpaceRequest.h>
 #include <aws/repostspace/model/DeregisterAdminRequest.h>
+#include <aws/repostspace/model/GetChannelRequest.h>
 #include <aws/repostspace/model/GetSpaceRequest.h>
+#include <aws/repostspace/model/ListChannelsRequest.h>
 #include <aws/repostspace/model/ListSpacesRequest.h>
 #include <aws/repostspace/model/ListTagsForResourceRequest.h>
 #include <aws/repostspace/model/RegisterAdminRequest.h>
 #include <aws/repostspace/model/SendInvitesRequest.h>
 #include <aws/repostspace/model/TagResourceRequest.h>
 #include <aws/repostspace/model/UntagResourceRequest.h>
+#include <aws/repostspace/model/UpdateChannelRequest.h>
 #include <aws/repostspace/model/UpdateSpaceRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -177,6 +183,47 @@ void RepostspaceClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+BatchAddChannelRoleToAccessorsOutcome RepostspaceClient::BatchAddChannelRoleToAccessors(const BatchAddChannelRoleToAccessorsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchAddChannelRoleToAccessors);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAddChannelRoleToAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchAddChannelRoleToAccessors", "Required field: SpaceId, is not set");
+    return BatchAddChannelRoleToAccessorsOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.ChannelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchAddChannelRoleToAccessors", "Required field: ChannelId, is not set");
+    return BatchAddChannelRoleToAccessorsOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchAddChannelRoleToAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchAddChannelRoleToAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchAddChannelRoleToAccessors",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchAddChannelRoleToAccessorsOutcome>(
+    [&]()-> BatchAddChannelRoleToAccessorsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchAddChannelRoleToAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
+      return BatchAddChannelRoleToAccessorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 BatchAddRoleOutcome RepostspaceClient::BatchAddRole(const BatchAddRoleRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchAddRole);
@@ -211,6 +258,47 @@ BatchAddRoleOutcome RepostspaceClient::BatchAddRole(const BatchAddRoleRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+BatchRemoveChannelRoleFromAccessorsOutcome RepostspaceClient::BatchRemoveChannelRoleFromAccessors(const BatchRemoveChannelRoleFromAccessorsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchRemoveChannelRoleFromAccessors);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchRemoveChannelRoleFromAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchRemoveChannelRoleFromAccessors", "Required field: SpaceId, is not set");
+    return BatchRemoveChannelRoleFromAccessorsOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.ChannelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchRemoveChannelRoleFromAccessors", "Required field: ChannelId, is not set");
+    return BatchRemoveChannelRoleFromAccessorsOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchRemoveChannelRoleFromAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchRemoveChannelRoleFromAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchRemoveChannelRoleFromAccessors",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchRemoveChannelRoleFromAccessorsOutcome>(
+    [&]()-> BatchRemoveChannelRoleFromAccessorsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchRemoveChannelRoleFromAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
+      return BatchRemoveChannelRoleFromAccessorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 BatchRemoveRoleOutcome RepostspaceClient::BatchRemoveRole(const BatchRemoveRoleRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchRemoveRole);
@@ -239,6 +327,40 @@ BatchRemoveRoleOutcome RepostspaceClient::BatchRemoveRole(const BatchRemoveRoleR
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
       return BatchRemoveRoleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateChannelOutcome RepostspaceClient::CreateChannel(const CreateChannelRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateChannel);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateChannel", "Required field: SpaceId, is not set");
+    return CreateChannelOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateChannel",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateChannelOutcome>(
+    [&]()-> CreateChannelOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+      return CreateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -309,15 +431,15 @@ DeregisterAdminOutcome RepostspaceClient::DeregisterAdmin(const DeregisterAdminR
 {
   AWS_OPERATION_GUARD(DeregisterAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AdminIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeregisterAdmin", "Required field: AdminId, is not set");
-    return DeregisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AdminId]", false));
-  }
   if (!request.SpaceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeregisterAdmin", "Required field: SpaceId, is not set");
     return DeregisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.AdminIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeregisterAdmin", "Required field: AdminId, is not set");
+    return DeregisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AdminId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeregisterAdmin, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -339,6 +461,46 @@ DeregisterAdminOutcome RepostspaceClient::DeregisterAdmin(const DeregisterAdminR
       endpointResolutionOutcome.GetResult().AddPathSegments("/admins/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAdminId());
       return DeregisterAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetChannelOutcome RepostspaceClient::GetChannel(const GetChannelRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetChannel);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannel", "Required field: SpaceId, is not set");
+    return GetChannelOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.ChannelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannel", "Required field: ChannelId, is not set");
+    return GetChannelOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetChannel",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetChannelOutcome>(
+    [&]()-> GetChannelOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
+      return GetChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -372,6 +534,40 @@ GetSpaceOutcome RepostspaceClient::GetSpace(const GetSpaceRequest& request) cons
       endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
       return GetSpaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListChannelsOutcome RepostspaceClient::ListChannels(const ListChannelsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListChannels);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannels", "Required field: SpaceId, is not set");
+    return ListChannelsOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListChannels, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListChannels, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListChannels",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListChannelsOutcome>(
+    [&]()-> ListChannelsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+      return ListChannelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -442,15 +638,15 @@ RegisterAdminOutcome RepostspaceClient::RegisterAdmin(const RegisterAdminRequest
 {
   AWS_OPERATION_GUARD(RegisterAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AdminIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("RegisterAdmin", "Required field: AdminId, is not set");
-    return RegisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AdminId]", false));
-  }
   if (!request.SpaceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RegisterAdmin", "Required field: SpaceId, is not set");
     return RegisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.AdminIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RegisterAdmin", "Required field: AdminId, is not set");
+    return RegisterAdminOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AdminId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RegisterAdmin, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -577,6 +773,46 @@ UntagResourceOutcome RepostspaceClient::UntagResource(const UntagResourceRequest
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
       return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateChannelOutcome RepostspaceClient::UpdateChannel(const UpdateChannelRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateChannel);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: SpaceId, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceId]", false));
+  }
+  if (!request.ChannelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChannelId, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<RepostspaceErrors>(RepostspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateChannel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateChannel",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateChannelOutcome>(
+    [&]()-> UpdateChannelOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
+      return UpdateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

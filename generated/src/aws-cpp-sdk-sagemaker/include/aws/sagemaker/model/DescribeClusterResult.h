@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The specialized instance groups for training models like Amazon Nova to be
+     * created in the SageMaker HyperPod cluster.</p>
+     */
+    inline const Aws::Vector<ClusterRestrictedInstanceGroupDetails>& GetRestrictedInstanceGroups() const { return m_restrictedInstanceGroups; }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupDetails>>
+    void SetRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups = std::forward<RestrictedInstanceGroupsT>(value); }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupDetails>>
+    DescribeClusterResult& WithRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { SetRestrictedInstanceGroups(std::forward<RestrictedInstanceGroupsT>(value)); return *this;}
+    template<typename RestrictedInstanceGroupsT = ClusterRestrictedInstanceGroupDetails>
+    DescribeClusterResult& AddRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups.emplace_back(std::forward<RestrictedInstanceGroupsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     template<typename VpcConfigT = VpcConfig>
@@ -161,6 +176,9 @@ namespace Model
 
     Aws::Vector<ClusterInstanceGroupDetails> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet = false;
+
+    Aws::Vector<ClusterRestrictedInstanceGroupDetails> m_restrictedInstanceGroups;
+    bool m_restrictedInstanceGroupsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;

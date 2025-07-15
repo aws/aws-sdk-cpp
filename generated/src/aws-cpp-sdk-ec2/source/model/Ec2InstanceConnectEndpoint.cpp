@@ -142,6 +142,12 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -238,6 +244,11 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
       }
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
+  }
+
 }
 
 void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -315,6 +326,10 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
         tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 }
 

@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of private re:Posts to include in the results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSpacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The token for the next set of private re:Posts to return. You receive this
      * token from a previous ListSpaces operation.</p>
      */
@@ -60,13 +50,23 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListSpacesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of private re:Posts to include in the results.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListSpacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

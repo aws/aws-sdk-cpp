@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
+#include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +66,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The specialized instance groups for training models like Amazon Nova to be
+     * created in the SageMaker HyperPod cluster.</p>
+     */
+    inline const Aws::Vector<ClusterRestrictedInstanceGroupSpecification>& GetRestrictedInstanceGroups() const { return m_restrictedInstanceGroups; }
+    inline bool RestrictedInstanceGroupsHasBeenSet() const { return m_restrictedInstanceGroupsHasBeenSet; }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupSpecification>>
+    void SetRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups = std::forward<RestrictedInstanceGroupsT>(value); }
+    template<typename RestrictedInstanceGroupsT = Aws::Vector<ClusterRestrictedInstanceGroupSpecification>>
+    UpdateClusterRequest& WithRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { SetRestrictedInstanceGroups(std::forward<RestrictedInstanceGroupsT>(value)); return *this;}
+    template<typename RestrictedInstanceGroupsT = ClusterRestrictedInstanceGroupSpecification>
+    UpdateClusterRequest& AddRestrictedInstanceGroups(RestrictedInstanceGroupsT&& value) { m_restrictedInstanceGroupsHasBeenSet = true; m_restrictedInstanceGroups.emplace_back(std::forward<RestrictedInstanceGroupsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
      */
     inline ClusterNodeRecovery GetNodeRecovery() const { return m_nodeRecovery; }
@@ -94,6 +110,9 @@ namespace Model
 
     Aws::Vector<ClusterInstanceGroupSpecification> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet = false;
+
+    Aws::Vector<ClusterRestrictedInstanceGroupSpecification> m_restrictedInstanceGroups;
+    bool m_restrictedInstanceGroupsHasBeenSet = false;
 
     ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
     bool m_nodeRecoveryHasBeenSet = false;

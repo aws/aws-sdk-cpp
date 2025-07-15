@@ -45,10 +45,23 @@ namespace Model
     template<typename PipelineNameT = Aws::String>
     DescribePipelineRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the pipeline version to describe.</p>
+     */
+    inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
+    inline bool PipelineVersionIdHasBeenSet() const { return m_pipelineVersionIdHasBeenSet; }
+    inline void SetPipelineVersionId(long long value) { m_pipelineVersionIdHasBeenSet = true; m_pipelineVersionId = value; }
+    inline DescribePipelineRequest& WithPipelineVersionId(long long value) { SetPipelineVersionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet = false;
+
+    long long m_pipelineVersionId{0};
+    bool m_pipelineVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

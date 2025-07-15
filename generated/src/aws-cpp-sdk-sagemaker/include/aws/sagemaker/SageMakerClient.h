@@ -7760,6 +7760,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Gets a list of all versions of the pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPipelineVersionsOutcome ListPipelineVersions(const Model::ListPipelineVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPipelineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPipelineVersionsRequestT = Model::ListPipelineVersionsRequest>
+        Model::ListPipelineVersionsOutcomeCallable ListPipelineVersionsCallable(const ListPipelineVersionsRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::ListPipelineVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListPipelineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPipelineVersionsRequestT = Model::ListPipelineVersionsRequest>
+        void ListPipelineVersionsAsync(const ListPipelineVersionsRequestT& request, const ListPipelineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::ListPipelineVersions, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of pipelines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelines">AWS
          * API Reference</a></p>
@@ -10106,6 +10131,31 @@ namespace SageMaker
         void UpdatePipelineExecutionAsync(const UpdatePipelineExecutionRequestT& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::UpdatePipelineExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a pipeline version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePipelineVersionOutcome UpdatePipelineVersion(const Model::UpdatePipelineVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePipelineVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePipelineVersionRequestT = Model::UpdatePipelineVersionRequest>
+        Model::UpdatePipelineVersionOutcomeCallable UpdatePipelineVersionCallable(const UpdatePipelineVersionRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdatePipelineVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePipelineVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePipelineVersionRequestT = Model::UpdatePipelineVersionRequest>
+        void UpdatePipelineVersionAsync(const UpdatePipelineVersionRequestT& request, const UpdatePipelineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdatePipelineVersion, request, handler, context);
         }
 
         /**

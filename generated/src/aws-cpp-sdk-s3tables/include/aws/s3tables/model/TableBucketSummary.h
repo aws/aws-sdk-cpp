@@ -7,6 +7,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/s3tables/model/TableBucketType.h>
 #include <utility>
 
 namespace Aws
@@ -97,6 +98,16 @@ namespace Model
     template<typename TableBucketIdT = Aws::String>
     TableBucketSummary& WithTableBucketId(TableBucketIdT&& value) { SetTableBucketId(std::forward<TableBucketIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of the table bucket.</p>
+     */
+    inline TableBucketType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(TableBucketType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TableBucketSummary& WithType(TableBucketType value) { SetType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -113,6 +124,9 @@ namespace Model
 
     Aws::String m_tableBucketId;
     bool m_tableBucketIdHasBeenSet = false;
+
+    TableBucketType m_type{TableBucketType::NOT_SET};
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

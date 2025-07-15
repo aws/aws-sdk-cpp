@@ -35,6 +35,11 @@ ServiceConnectClientAlias& ServiceConnectClientAlias::operator =(JsonView jsonVa
     m_dnsName = jsonValue.GetString("dnsName");
     m_dnsNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("testTrafficRules"))
+  {
+    m_testTrafficRules = jsonValue.GetObject("testTrafficRules");
+    m_testTrafficRulesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue ServiceConnectClientAlias::Jsonize() const
   if(m_dnsNameHasBeenSet)
   {
    payload.WithString("dnsName", m_dnsName);
+
+  }
+
+  if(m_testTrafficRulesHasBeenSet)
+  {
+   payload.WithObject("testTrafficRules", m_testTrafficRules.Jsonize());
 
   }
 

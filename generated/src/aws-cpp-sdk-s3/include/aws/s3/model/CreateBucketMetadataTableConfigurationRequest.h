@@ -53,7 +53,7 @@ namespace Model
     ///@{
     /**
      * <p> The general purpose bucket that you want to create the metadata table
-     * configuration in. </p>
+     * configuration for. </p>
      */
     inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -100,8 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The expected owner of the general purpose bucket that contains your metadata
-     * table configuration. </p>
+     * <p> The expected owner of the general purpose bucket that corresponds to your
+     * metadata table configuration. </p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

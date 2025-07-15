@@ -50,6 +50,11 @@ ConnectionPropertiesInput& ConnectionPropertiesInput::operator =(JsonView jsonVa
     m_redshiftProperties = jsonValue.GetObject("redshiftProperties");
     m_redshiftPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("s3Properties"))
+  {
+    m_s3Properties = jsonValue.GetObject("s3Properties");
+    m_s3PropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("sparkEmrProperties"))
   {
     m_sparkEmrProperties = jsonValue.GetObject("sparkEmrProperties");
@@ -94,6 +99,12 @@ JsonValue ConnectionPropertiesInput::Jsonize() const
   if(m_redshiftPropertiesHasBeenSet)
   {
    payload.WithObject("redshiftProperties", m_redshiftProperties.Jsonize());
+
+  }
+
+  if(m_s3PropertiesHasBeenSet)
+  {
+   payload.WithObject("s3Properties", m_s3Properties.Jsonize());
 
   }
 

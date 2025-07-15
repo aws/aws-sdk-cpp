@@ -14,6 +14,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/AdvancedConfiguration.h>
 #include <aws/ecs/model/AgentUpdateStatus.h>
 #include <aws/ecs/model/ApplicationProtocol.h>
 #include <aws/ecs/model/AssignPublicIp.h>
@@ -82,7 +83,10 @@
 #include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/DeploymentControllerType.h>
 #include <aws/ecs/model/DeploymentEphemeralStorage.h>
+#include <aws/ecs/model/DeploymentLifecycleHook.h>
+#include <aws/ecs/model/DeploymentLifecycleHookStage.h>
 #include <aws/ecs/model/DeploymentRolloutState.h>
+#include <aws/ecs/model/DeploymentStrategy.h>
 #include <aws/ecs/model/DeregisterContainerInstanceRequest.h>
 #include <aws/ecs/model/DeregisterContainerInstanceResult.h>
 #include <aws/ecs/model/DeregisterTaskDefinitionRequest.h>
@@ -210,6 +214,7 @@
 #include <aws/ecs/model/RegisterTaskDefinitionRequest.h>
 #include <aws/ecs/model/RegisterTaskDefinitionResult.h>
 #include <aws/ecs/model/RepositoryCredentials.h>
+#include <aws/ecs/model/ResolvedConfiguration.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/ResourceRequirement.h>
 #include <aws/ecs/model/ResourceType.h>
@@ -227,12 +232,16 @@
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
 #include <aws/ecs/model/ServiceConnectService.h>
 #include <aws/ecs/model/ServiceConnectServiceResource.h>
+#include <aws/ecs/model/ServiceConnectTestTrafficHeaderMatchRules.h>
+#include <aws/ecs/model/ServiceConnectTestTrafficHeaderRules.h>
+#include <aws/ecs/model/ServiceConnectTestTrafficRules.h>
 #include <aws/ecs/model/ServiceConnectTlsCertificateAuthority.h>
 #include <aws/ecs/model/ServiceConnectTlsConfiguration.h>
 #include <aws/ecs/model/ServiceDeployment.h>
 #include <aws/ecs/model/ServiceDeploymentAlarms.h>
 #include <aws/ecs/model/ServiceDeploymentBrief.h>
 #include <aws/ecs/model/ServiceDeploymentCircuitBreaker.h>
+#include <aws/ecs/model/ServiceDeploymentLifecycleStage.h>
 #include <aws/ecs/model/ServiceDeploymentRollbackMonitorsStatus.h>
 #include <aws/ecs/model/ServiceDeploymentStatus.h>
 #include <aws/ecs/model/ServiceEvent.h>
@@ -240,6 +249,7 @@
 #include <aws/ecs/model/ServiceManagedEBSVolumeConfiguration.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/ServiceRevision.h>
+#include <aws/ecs/model/ServiceRevisionLoadBalancer.h>
 #include <aws/ecs/model/ServiceRevisionSummary.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <aws/ecs/model/Session.h>

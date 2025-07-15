@@ -30,6 +30,8 @@
 #include <aws/dynamodbstreams/model/Record.h>
 #include <aws/dynamodbstreams/model/SequenceNumberRange.h>
 #include <aws/dynamodbstreams/model/Shard.h>
+#include <aws/dynamodbstreams/model/ShardFilter.h>
+#include <aws/dynamodbstreams/model/ShardFilterType.h>
 #include <aws/dynamodbstreams/model/ShardIteratorType.h>
 #include <aws/dynamodbstreams/model/Stream.h>
 #include <aws/dynamodbstreams/model/StreamDescription.h>

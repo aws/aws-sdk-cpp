@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/ModelPackageGroup.h>
 #include <aws/sagemaker/model/Pipeline.h>
 #include <aws/sagemaker/model/PipelineExecution.h>
+#include <aws/sagemaker/model/PipelineVersion.h>
 #include <aws/sagemaker/model/FeatureGroup.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
 #include <aws/sagemaker/model/Project.h>
@@ -152,6 +153,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The version of the pipeline.</p>
+     */
+    inline const PipelineVersion& GetPipelineVersion() const { return m_pipelineVersion; }
+    inline bool PipelineVersionHasBeenSet() const { return m_pipelineVersionHasBeenSet; }
+    template<typename PipelineVersionT = PipelineVersion>
+    void SetPipelineVersion(PipelineVersionT&& value) { m_pipelineVersionHasBeenSet = true; m_pipelineVersion = std::forward<PipelineVersionT>(value); }
+    template<typename PipelineVersionT = PipelineVersion>
+    SearchRecord& WithPipelineVersion(PipelineVersionT&& value) { SetPipelineVersion(std::forward<PipelineVersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const FeatureGroup& GetFeatureGroup() const { return m_featureGroup; }
     inline bool FeatureGroupHasBeenSet() const { return m_featureGroupHasBeenSet; }
@@ -247,6 +260,9 @@ namespace Model
 
     PipelineExecution m_pipelineExecution;
     bool m_pipelineExecutionHasBeenSet = false;
+
+    PipelineVersion m_pipelineVersion;
+    bool m_pipelineVersionHasBeenSet = false;
 
     FeatureGroup m_featureGroup;
     bool m_featureGroupHasBeenSet = false;

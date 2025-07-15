@@ -139,6 +139,11 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_vpcLatticeConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resolvedConfiguration"))
+  {
+    m_resolvedConfiguration = jsonValue.GetObject("resolvedConfiguration");
+    m_resolvedConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -279,6 +284,12 @@ JsonValue ServiceRevision::Jsonize() const
      vpcLatticeConfigurationsJsonList[vpcLatticeConfigurationsIndex].AsObject(m_vpcLatticeConfigurations[vpcLatticeConfigurationsIndex].Jsonize());
    }
    payload.WithArray("vpcLatticeConfigurations", std::move(vpcLatticeConfigurationsJsonList));
+
+  }
+
+  if(m_resolvedConfigurationHasBeenSet)
+  {
+   payload.WithObject("resolvedConfiguration", m_resolvedConfiguration.Jsonize());
 
   }
 

@@ -46,6 +46,12 @@ Aws::String CreateEventBusRequest::SerializePayload() const
 
   }
 
+  if(m_logConfigHasBeenSet)
+  {
+   payload.WithObject("LogConfig", m_logConfig.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());

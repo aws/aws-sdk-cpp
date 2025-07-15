@@ -11,6 +11,7 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/AvailabilityZoneRebalancing.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
@@ -263,6 +264,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const DeploymentController& GetDeploymentController() const { return m_deploymentController; }
+    inline bool DeploymentControllerHasBeenSet() const { return m_deploymentControllerHasBeenSet; }
+    template<typename DeploymentControllerT = DeploymentController>
+    void SetDeploymentController(DeploymentControllerT&& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = std::forward<DeploymentControllerT>(value); }
+    template<typename DeploymentControllerT = DeploymentController>
+    UpdateServiceRequest& WithDeploymentController(DeploymentControllerT&& value) { SetDeploymentController(std::forward<DeploymentControllerT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>If <code>true</code>, this enables execute command functionality on all task
      * containers.</p> <p>If you do not want to override the value that was set when
@@ -464,6 +475,9 @@ namespace Model
 
     int m_healthCheckGracePeriodSeconds{0};
     bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
+
+    DeploymentController m_deploymentController;
+    bool m_deploymentControllerHasBeenSet = false;
 
     bool m_enableExecuteCommand{false};
     bool m_enableExecuteCommandHasBeenSet = false;

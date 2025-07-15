@@ -22,7 +22,8 @@ namespace Model
     RDS,
     MONGO_DB_ATLAS,
     NEPTUNE_ANALYTICS,
-    OPENSEARCH_MANAGED_CLUSTER
+    OPENSEARCH_MANAGED_CLUSTER,
+    S3_VECTORS
   };
 
 namespace KnowledgeBaseStorageTypeMapper

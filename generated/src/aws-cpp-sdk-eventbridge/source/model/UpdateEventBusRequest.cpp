@@ -40,6 +40,12 @@ Aws::String UpdateEventBusRequest::SerializePayload() const
 
   }
 
+  if(m_logConfigHasBeenSet)
+  {
+   payload.WithObject("LogConfig", m_logConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

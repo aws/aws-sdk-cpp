@@ -33,6 +33,17 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_restrictedInstanceGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> restrictedInstanceGroupsJsonList(m_restrictedInstanceGroups.size());
+   for(unsigned restrictedInstanceGroupsIndex = 0; restrictedInstanceGroupsIndex < restrictedInstanceGroupsJsonList.GetLength(); ++restrictedInstanceGroupsIndex)
+   {
+     restrictedInstanceGroupsJsonList[restrictedInstanceGroupsIndex].AsObject(m_restrictedInstanceGroups[restrictedInstanceGroupsIndex].Jsonize());
+   }
+   payload.WithArray("RestrictedInstanceGroups", std::move(restrictedInstanceGroupsJsonList));
+
+  }
+
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
