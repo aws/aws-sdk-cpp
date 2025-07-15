@@ -11,6 +11,9 @@
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
+#include <aws/core/http/standard/StandardHttpRequest.h>
+#include <aws/core/monitoring/DefaultMonitoring.h>
+#include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/utils/crypto/Cipher.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/DateTime.h>
@@ -50,9 +53,10 @@
 #pragma warning(disable: 4127)
 #endif //_WIN32
 
-#include <aws/core/http/standard/StandardHttpRequest.h>
-#include <aws/core/monitoring/DefaultMonitoring.h>
-#include <aws/core/monitoring/CoreMetrics.h>
+#if defined(_WIN32)
+// disable "warning C4702: unreachable code" from GTEST_SKIP on newer MSVS
+#pragma warning(disable: 4702)
+#endif
 
 using namespace Aws;
 using namespace Aws::Http::Standard;
@@ -980,6 +984,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
     {
+        GTEST_SKIP() << "Select objects is not supported on new AWS accounts";
         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
@@ -1136,6 +1141,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestEventStreamWithLargeFile)
     {
+        GTEST_SKIP() << "Select objects is not supported on new AWS accounts";
         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
@@ -1212,6 +1218,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestErrorsInXml)
     {
+        GTEST_SKIP() << "Select objects is not supported on new AWS accounts";
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket("adskflaklfakl");
         selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
@@ -1242,6 +1249,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestErrorsInEventStream)
     {
+        GTEST_SKIP() << "Select objects is not supported on new AWS accounts";
         Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
