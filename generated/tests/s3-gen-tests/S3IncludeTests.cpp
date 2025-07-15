@@ -63,6 +63,7 @@
 #include <aws/s3/model/CopyObjectResultDetails.h>
 #include <aws/s3/model/CopyPartResult.h>
 #include <aws/s3/model/CreateBucketConfiguration.h>
+#include <aws/s3/model/CreateBucketMetadataConfigurationRequest.h>
 #include <aws/s3/model/CreateBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/CreateBucketResult.h>
@@ -79,6 +80,7 @@
 #include <aws/s3/model/DeleteBucketIntelligentTieringConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
+#include <aws/s3/model/DeleteBucketMetadataConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketOwnershipControlsRequest.h>
@@ -99,6 +101,7 @@
 #include <aws/s3/model/DeletePublicAccessBlockRequest.h>
 #include <aws/s3/model/DeletedObject.h>
 #include <aws/s3/model/Destination.h>
+#include <aws/s3/model/DestinationResult.h>
 #include <aws/s3/model/EncodingType.h>
 #include <aws/s3/model/Encryption.h>
 #include <aws/s3/model/EncryptionConfiguration.h>
@@ -109,6 +112,7 @@
 #include <aws/s3/model/EventBridgeConfiguration.h>
 #include <aws/s3/model/ExistingObjectReplication.h>
 #include <aws/s3/model/ExistingObjectReplicationStatus.h>
+#include <aws/s3/model/ExpirationState.h>
 #include <aws/s3/model/ExpirationStatus.h>
 #include <aws/s3/model/ExpressionType.h>
 #include <aws/s3/model/FileHeaderInfo.h>
@@ -134,6 +138,9 @@
 #include <aws/s3/model/GetBucketLocationResult.h>
 #include <aws/s3/model/GetBucketLoggingRequest.h>
 #include <aws/s3/model/GetBucketLoggingResult.h>
+#include <aws/s3/model/GetBucketMetadataConfigurationRequest.h>
+#include <aws/s3/model/GetBucketMetadataConfigurationResult.h>
+#include <aws/s3/model/GetBucketMetadataConfigurationSdkResult.h>
 #include <aws/s3/model/GetBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/GetBucketMetadataTableConfigurationResult.h>
 #include <aws/s3/model/GetBucketMetadataTableConfigurationSdkResult.h>
@@ -193,6 +200,7 @@
 #include <aws/s3/model/IntelligentTieringStatus.h>
 #include <aws/s3/model/InvalidObjectState.h>
 #include <aws/s3/model/InventoryConfiguration.h>
+#include <aws/s3/model/InventoryConfigurationState.h>
 #include <aws/s3/model/InventoryDestination.h>
 #include <aws/s3/model/InventoryEncryption.h>
 #include <aws/s3/model/InventoryFilter.h>
@@ -202,9 +210,15 @@
 #include <aws/s3/model/InventoryOptionalField.h>
 #include <aws/s3/model/InventoryS3BucketDestination.h>
 #include <aws/s3/model/InventorySchedule.h>
+#include <aws/s3/model/InventoryTableConfiguration.h>
+#include <aws/s3/model/InventoryTableConfigurationResult.h>
+#include <aws/s3/model/InventoryTableConfigurationUpdates.h>
 #include <aws/s3/model/JSONInput.h>
 #include <aws/s3/model/JSONOutput.h>
 #include <aws/s3/model/JSONType.h>
+#include <aws/s3/model/JournalTableConfiguration.h>
+#include <aws/s3/model/JournalTableConfigurationResult.h>
+#include <aws/s3/model/JournalTableConfigurationUpdates.h>
 #include <aws/s3/model/LambdaFunctionConfiguration.h>
 #include <aws/s3/model/LifecycleConfiguration.h>
 #include <aws/s3/model/LifecycleExpiration.h>
@@ -238,10 +252,13 @@
 #include <aws/s3/model/LoggingEnabled.h>
 #include <aws/s3/model/MFADelete.h>
 #include <aws/s3/model/MFADeleteStatus.h>
+#include <aws/s3/model/MetadataConfiguration.h>
+#include <aws/s3/model/MetadataConfigurationResult.h>
 #include <aws/s3/model/MetadataDirective.h>
 #include <aws/s3/model/MetadataEntry.h>
 #include <aws/s3/model/MetadataTableConfiguration.h>
 #include <aws/s3/model/MetadataTableConfigurationResult.h>
+#include <aws/s3/model/MetadataTableEncryptionConfiguration.h>
 #include <aws/s3/model/Metrics.h>
 #include <aws/s3/model/MetricsAndOperator.h>
 #include <aws/s3/model/MetricsConfiguration.h>
@@ -323,6 +340,7 @@
 #include <aws/s3/model/QueueConfiguration.h>
 #include <aws/s3/model/QueueConfigurationDeprecated.h>
 #include <aws/s3/model/QuoteFields.h>
+#include <aws/s3/model/RecordExpiration.h>
 #include <aws/s3/model/RecordsEvent.h>
 #include <aws/s3/model/Redirect.h>
 #include <aws/s3/model/RedirectAllRequestsTo.h>
@@ -352,6 +370,7 @@
 #include <aws/s3/model/Rule.h>
 #include <aws/s3/model/S3KeyFilter.h>
 #include <aws/s3/model/S3Location.h>
+#include <aws/s3/model/S3TablesBucketType.h>
 #include <aws/s3/model/S3TablesDestination.h>
 #include <aws/s3/model/S3TablesDestinationResult.h>
 #include <aws/s3/model/SSEKMS.h>
@@ -377,6 +396,7 @@
 #include <aws/s3/model/StorageClassAnalysis.h>
 #include <aws/s3/model/StorageClassAnalysisDataExport.h>
 #include <aws/s3/model/StorageClassAnalysisSchemaVersion.h>
+#include <aws/s3/model/TableSseAlgorithm.h>
 #include <aws/s3/model/Tag.h>
 #include <aws/s3/model/Tagging.h>
 #include <aws/s3/model/TaggingDirective.h>
@@ -390,6 +410,8 @@
 #include <aws/s3/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/s3/model/TransitionStorageClass.h>
 #include <aws/s3/model/Type.h>
+#include <aws/s3/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
+#include <aws/s3/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
 #include <aws/s3/model/UploadPartCopyRequest.h>
 #include <aws/s3/model/UploadPartCopyResult.h>
 #include <aws/s3/model/UploadPartRequest.h>

@@ -50,6 +50,11 @@ UpdateEventBusResult& UpdateEventBusResult::operator =(const Aws::AmazonWebServi
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
     m_deadLetterConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LogConfig"))
+  {
+    m_logConfig = jsonValue.GetObject("LogConfig");
+    m_logConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

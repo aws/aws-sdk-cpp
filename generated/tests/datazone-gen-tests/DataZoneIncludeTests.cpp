@@ -546,6 +546,9 @@
 #include <aws/datazone/model/RuleTargetType.h>
 #include <aws/datazone/model/RuleType.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
+#include <aws/datazone/model/S3PropertiesInput.h>
+#include <aws/datazone/model/S3PropertiesOutput.h>
+#include <aws/datazone/model/S3PropertiesPatch.h>
 #include <aws/datazone/model/SageMakerRunConfigurationInput.h>
 #include <aws/datazone/model/SageMakerRunConfigurationOutput.h>
 #include <aws/datazone/model/ScheduleConfiguration.h>

@@ -9,6 +9,7 @@
 #include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
 #include <aws/datazone/model/RedshiftPropertiesPatch.h>
+#include <aws/datazone/model/S3PropertiesPatch.h>
 #include <aws/datazone/model/SparkEmrPropertiesPatch.h>
 #include <utility>
 
@@ -91,6 +92,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon S3 properties of a connection properties patch.</p>
+     */
+    inline const S3PropertiesPatch& GetS3Properties() const { return m_s3Properties; }
+    inline bool S3PropertiesHasBeenSet() const { return m_s3PropertiesHasBeenSet; }
+    template<typename S3PropertiesT = S3PropertiesPatch>
+    void SetS3Properties(S3PropertiesT&& value) { m_s3PropertiesHasBeenSet = true; m_s3Properties = std::forward<S3PropertiesT>(value); }
+    template<typename S3PropertiesT = S3PropertiesPatch>
+    ConnectionPropertiesPatch& WithS3Properties(S3PropertiesT&& value) { SetS3Properties(std::forward<S3PropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Spark EMR properties of a connection properties patch.</p>
      */
     inline const SparkEmrPropertiesPatch& GetSparkEmrProperties() const { return m_sparkEmrProperties; }
@@ -113,6 +126,9 @@ namespace Model
 
     RedshiftPropertiesPatch m_redshiftProperties;
     bool m_redshiftPropertiesHasBeenSet = false;
+
+    S3PropertiesPatch m_s3Properties;
+    bool m_s3PropertiesHasBeenSet = false;
 
     SparkEmrPropertiesPatch m_sparkEmrProperties;
     bool m_sparkEmrPropertiesHasBeenSet = false;

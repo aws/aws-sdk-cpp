@@ -99,6 +99,16 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     }
     m_pipelineParametersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineVersionId"))
+  {
+    m_pipelineVersionId = jsonValue.GetInt64("PipelineVersionId");
+    m_pipelineVersionIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PipelineVersionDisplayName"))
+  {
+    m_pipelineVersionDisplayName = jsonValue.GetString("PipelineVersionDisplayName");
+    m_pipelineVersionDisplayNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -189,6 +199,18 @@ JsonValue PipelineExecution::Jsonize() const
      pipelineParametersJsonList[pipelineParametersIndex].AsObject(m_pipelineParameters[pipelineParametersIndex].Jsonize());
    }
    payload.WithArray("PipelineParameters", std::move(pipelineParametersJsonList));
+
+  }
+
+  if(m_pipelineVersionIdHasBeenSet)
+  {
+   payload.WithInt64("PipelineVersionId", m_pipelineVersionId);
+
+  }
+
+  if(m_pipelineVersionDisplayNameHasBeenSet)
+  {
+   payload.WithString("PipelineVersionDisplayName", m_pipelineVersionDisplayName);
 
   }
 

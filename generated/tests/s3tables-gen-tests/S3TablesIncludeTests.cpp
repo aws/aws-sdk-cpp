@@ -77,6 +77,7 @@
 #include <aws/s3tables/model/TableBucketMaintenanceSettings.h>
 #include <aws/s3tables/model/TableBucketMaintenanceType.h>
 #include <aws/s3tables/model/TableBucketSummary.h>
+#include <aws/s3tables/model/TableBucketType.h>
 #include <aws/s3tables/model/TableMaintenanceConfigurationValue.h>
 #include <aws/s3tables/model/TableMaintenanceJobStatusValue.h>
 #include <aws/s3tables/model/TableMaintenanceJobType.h>

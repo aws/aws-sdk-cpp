@@ -44,8 +44,7 @@ namespace Model
     /**
      * <p>The private Autonomous System Number (ASN) for the Amazon side of the BGP
      * session. Valid values are from 1 to 4294967295. We recommend using a private ASN
-     * in the 64512–65534 (16-bit ASN) or 4200000000��4294967294 (32-bit ASN)
-     * range.</p>
+     * in the 64512–65534 (16-bit ASN) or 4200000000–4294967294 (32-bit ASN) range.</p>
      */
     inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }

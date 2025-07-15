@@ -7,6 +7,7 @@
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/s3tables/model/TableBucketType.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +90,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The type of the table bucket.</p>
+     */
+    inline TableBucketType GetType() const { return m_type; }
+    inline void SetType(TableBucketType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetTableBucketResult& WithType(TableBucketType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -112,6 +122,9 @@ namespace Model
 
     Aws::String m_tableBucketId;
     bool m_tableBucketIdHasBeenSet = false;
+
+    TableBucketType m_type{TableBucketType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

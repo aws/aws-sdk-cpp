@@ -40,6 +40,11 @@ DescribeTopicResult& DescribeTopicResult::operator =(const Aws::AmazonWebService
     m_topic = jsonValue.GetObject("Topic");
     m_topicHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomInstructions"))
+  {
+    m_customInstructions = jsonValue.GetObject("CustomInstructions");
+    m_customInstructionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ServiceRevisionSummary.h>
 #include <aws/ecs/model/ServiceDeploymentStatus.h>
+#include <aws/ecs/model/ServiceDeploymentLifecycleStage.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/Rollback.h>
 #include <aws/ecs/model/ServiceDeploymentCircuitBreaker.h>
@@ -205,6 +206,25 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The current lifecycle stage of the deployment. Possible values include:</p>
+     * <ul> <li> <p> <code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green)
+     * tasks</p> </li> <li> <p> <code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting
+     * test traffic to the new (green) tasks</p> </li> <li> <p>
+     * <code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic
+     * to the new (green) tasks</p> </li> <li> <p> <code>BAKE_TIME_IN_PROGRESS</code> -
+     * The duration when both blue and green service revisions are running
+     * simultaneously after the production traffic has shifted</p> </li> <li> <p>
+     * <code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p> </li>
+     * </ul>
+     */
+    inline ServiceDeploymentLifecycleStage GetLifecycleStage() const { return m_lifecycleStage; }
+    inline bool LifecycleStageHasBeenSet() const { return m_lifecycleStageHasBeenSet; }
+    inline void SetLifecycleStage(ServiceDeploymentLifecycleStage value) { m_lifecycleStageHasBeenSet = true; m_lifecycleStage = value; }
+    inline ServiceDeployment& WithLifecycleStage(ServiceDeploymentLifecycleStage value) { SetLifecycleStage(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
@@ -288,6 +308,9 @@ namespace Model
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    ServiceDeploymentLifecycleStage m_lifecycleStage{ServiceDeploymentLifecycleStage::NOT_SET};
+    bool m_lifecycleStageHasBeenSet = false;
 
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet = false;

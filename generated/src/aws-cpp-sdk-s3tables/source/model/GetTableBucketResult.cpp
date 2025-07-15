@@ -50,6 +50,11 @@ GetTableBucketResult& GetTableBucketResult::operator =(const Aws::AmazonWebServi
     m_tableBucketId = jsonValue.GetString("tableBucketId");
     m_tableBucketIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TableBucketTypeMapper::GetTableBucketTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

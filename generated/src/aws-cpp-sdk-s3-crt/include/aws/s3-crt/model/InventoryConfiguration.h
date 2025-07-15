@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the inventory configuration for an Amazon S3 bucket. For more
+   * <p>Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET
    * Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p><p><h3>See

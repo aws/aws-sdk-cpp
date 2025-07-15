@@ -23,11 +23,16 @@ namespace Model
 {
 
   /**
-   * <p> The metadata table configuration for a general purpose bucket. The
+   * <p> The V1 S3 Metadata configuration for a general purpose bucket. The
    * destination table bucket must be in the same Region and Amazon Web Services
    * account as the general purpose bucket. The specified metadata table name must be
    * unique within the <code>aws_s3_metadata</code> namespace in the destination
-   * table bucket. </p><p><h3>See Also:</h3>   <a
+   * table bucket. </p>  <p>If you created your S3 Metadata configuration
+   * before July 15, 2025, we recommend that you delete and re-create your
+   * configuration by using <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+   * so that you can expire journal table records and create a live inventory
+   * table.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetadataTableConfigurationResult">AWS
    * API Reference</a></p>
    */

@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of errors that occurred when roles were removed.</p>
-     */
-    inline const Aws::Vector<BatchError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<BatchError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<BatchError>>
-    BatchRemoveRoleResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = BatchError>
-    BatchRemoveRoleResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of successfully updated accessor identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemovedAccessorIds() const { return m_removedAccessorIds; }
@@ -61,6 +48,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An array of errors that occurred when roles were removed.</p>
+     */
+    inline const Aws::Vector<BatchError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    BatchRemoveRoleResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchError>
+    BatchRemoveRoleResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,11 +70,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<BatchError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_removedAccessorIds;
     bool m_removedAccessorIdsHasBeenSet = false;
+
+    Aws::Vector<BatchError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

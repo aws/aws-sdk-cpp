@@ -42,7 +42,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the volume status.</p>
+     * <p>The name of the volume status.</p> <ul> <li> <p> <code>io-enabled</code> -
+     * Indicates the volume I/O status. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-checks.html">Amazon
+     * EBS volume status checks</a>.</p> </li> <li> <p> <code>io-performance</code> -
+     * Indicates the volume performance status. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-checks.html">Amazon
+     * EBS volume status checks</a>.</p> </li> <li> <p>
+     * <code>initialization-state</code> - Indicates the status of the volume
+     * initialization process. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+     * Amazon EBS volumes</a>.</p> </li> </ul>
      */
     inline VolumeStatusName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

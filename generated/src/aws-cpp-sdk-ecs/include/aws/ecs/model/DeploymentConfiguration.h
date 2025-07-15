@@ -7,6 +7,9 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DeploymentCircuitBreaker.h>
 #include <aws/ecs/model/DeploymentAlarms.h>
+#include <aws/ecs/model/DeploymentStrategy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/DeploymentLifecycleHook.h>
 #include <utility>
 
 namespace Aws
@@ -178,6 +181,56 @@ namespace Model
     template<typename AlarmsT = DeploymentAlarms>
     DeploymentConfiguration& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The deployment strategy for the service. Choose from these valid values:</p>
+     * <ul> <li> <p> <code>ROLLING</code> - When you create a service which uses the
+     * rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS
+     * service scheduler replaces the currently running tasks with new tasks. The
+     * number of tasks that Amazon ECS adds or removes from the service during a
+     * rolling update is controlled by the service deployment configuration.</p> </li>
+     * <li> <p> <code>BLUE_GREEN</code> - A blue/green deployment strategy
+     * (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and
+     * risk by running two identical production environments called blue and green.
+     * With Amazon ECS blue/green deployments, you can validate new service revisions
+     * before directing production traffic to them. This approach provides a safer way
+     * to deploy changes with the ability to quickly roll back if needed.</p> </li>
+     * </ul>
+     */
+    inline DeploymentStrategy GetStrategy() const { return m_strategy; }
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
+    inline void SetStrategy(DeploymentStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline DeploymentConfiguration& WithStrategy(DeploymentStrategy value) { SetStrategy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The duration when both blue and green service revisions are running
+     * simultaneously after the production traffic has shifted.</p> <p>You must provide
+     * this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+     */
+    inline int GetBakeTimeInMinutes() const { return m_bakeTimeInMinutes; }
+    inline bool BakeTimeInMinutesHasBeenSet() const { return m_bakeTimeInMinutesHasBeenSet; }
+    inline void SetBakeTimeInMinutes(int value) { m_bakeTimeInMinutesHasBeenSet = true; m_bakeTimeInMinutes = value; }
+    inline DeploymentConfiguration& WithBakeTimeInMinutes(int value) { SetBakeTimeInMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of deployment lifecycle hook objects to run custom logic at specific
+     * stages of the deployment lifecycle. These hooks allow you to run custom logic at
+     * key points during the deployment process.</p>
+     */
+    inline const Aws::Vector<DeploymentLifecycleHook>& GetLifecycleHooks() const { return m_lifecycleHooks; }
+    inline bool LifecycleHooksHasBeenSet() const { return m_lifecycleHooksHasBeenSet; }
+    template<typename LifecycleHooksT = Aws::Vector<DeploymentLifecycleHook>>
+    void SetLifecycleHooks(LifecycleHooksT&& value) { m_lifecycleHooksHasBeenSet = true; m_lifecycleHooks = std::forward<LifecycleHooksT>(value); }
+    template<typename LifecycleHooksT = Aws::Vector<DeploymentLifecycleHook>>
+    DeploymentConfiguration& WithLifecycleHooks(LifecycleHooksT&& value) { SetLifecycleHooks(std::forward<LifecycleHooksT>(value)); return *this;}
+    template<typename LifecycleHooksT = DeploymentLifecycleHook>
+    DeploymentConfiguration& AddLifecycleHooks(LifecycleHooksT&& value) { m_lifecycleHooksHasBeenSet = true; m_lifecycleHooks.emplace_back(std::forward<LifecycleHooksT>(value)); return *this; }
+    ///@}
   private:
 
     DeploymentCircuitBreaker m_deploymentCircuitBreaker;
@@ -191,6 +244,15 @@ namespace Model
 
     DeploymentAlarms m_alarms;
     bool m_alarmsHasBeenSet = false;
+
+    DeploymentStrategy m_strategy{DeploymentStrategy::NOT_SET};
+    bool m_strategyHasBeenSet = false;
+
+    int m_bakeTimeInMinutes{0};
+    bool m_bakeTimeInMinutesHasBeenSet = false;
+
+    Aws::Vector<DeploymentLifecycleHook> m_lifecycleHooks;
+    bool m_lifecycleHooksHasBeenSet = false;
   };
 
 } // namespace Model

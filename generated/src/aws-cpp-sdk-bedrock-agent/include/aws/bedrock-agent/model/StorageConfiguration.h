@@ -12,6 +12,7 @@
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/RdsConfiguration.h>
 #include <aws/bedrock-agent/model/RedisEnterpriseCloudConfiguration.h>
+#include <aws/bedrock-agent/model/S3VectorsConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseStorageType.h>
 #include <utility>
 
@@ -143,6 +144,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration settings for storing knowledge base data using S3 vectors.
+     * This includes vector index information and S3 bucket details for vector
+     * storage.</p>
+     */
+    inline const S3VectorsConfiguration& GetS3VectorsConfiguration() const { return m_s3VectorsConfiguration; }
+    inline bool S3VectorsConfigurationHasBeenSet() const { return m_s3VectorsConfigurationHasBeenSet; }
+    template<typename S3VectorsConfigurationT = S3VectorsConfiguration>
+    void SetS3VectorsConfiguration(S3VectorsConfigurationT&& value) { m_s3VectorsConfigurationHasBeenSet = true; m_s3VectorsConfiguration = std::forward<S3VectorsConfigurationT>(value); }
+    template<typename S3VectorsConfigurationT = S3VectorsConfiguration>
+    StorageConfiguration& WithS3VectorsConfiguration(S3VectorsConfigurationT&& value) { SetS3VectorsConfiguration(std::forward<S3VectorsConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The vector store service in which the knowledge base is stored.</p>
      */
     inline KnowledgeBaseStorageType GetType() const { return m_type; }
@@ -172,6 +187,9 @@ namespace Model
 
     RedisEnterpriseCloudConfiguration m_redisEnterpriseCloudConfiguration;
     bool m_redisEnterpriseCloudConfigurationHasBeenSet = false;
+
+    S3VectorsConfiguration m_s3VectorsConfiguration;
+    bool m_s3VectorsConfigurationHasBeenSet = false;
 
     KnowledgeBaseStorageType m_type{KnowledgeBaseStorageType::NOT_SET};
     bool m_typeHasBeenSet = false;

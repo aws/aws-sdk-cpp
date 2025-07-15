@@ -32,7 +32,8 @@ namespace Model
     ImageVersion,
     Project,
     HyperParameterTuningJob,
-    ModelCard
+    ModelCard,
+    PipelineVersion
   };
 
 namespace ResourceTypeMapper

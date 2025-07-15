@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TopicDetails.h>
+#include <aws/quicksight/model/CustomInstructions.h>
 #include <utility>
 
 namespace Aws
@@ -70,6 +71,18 @@ namespace Model
     template<typename TopicT = TopicDetails>
     UpdateTopicRequest& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Custom instructions for the topic.</p>
+     */
+    inline const CustomInstructions& GetCustomInstructions() const { return m_customInstructions; }
+    inline bool CustomInstructionsHasBeenSet() const { return m_customInstructionsHasBeenSet; }
+    template<typename CustomInstructionsT = CustomInstructions>
+    void SetCustomInstructions(CustomInstructionsT&& value) { m_customInstructionsHasBeenSet = true; m_customInstructions = std::forward<CustomInstructionsT>(value); }
+    template<typename CustomInstructionsT = CustomInstructions>
+    UpdateTopicRequest& WithCustomInstructions(CustomInstructionsT&& value) { SetCustomInstructions(std::forward<CustomInstructionsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -80,6 +93,9 @@ namespace Model
 
     TopicDetails m_topic;
     bool m_topicHasBeenSet = false;
+
+    CustomInstructions m_customInstructions;
+    bool m_customInstructionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,6 +32,7 @@ namespace Aws
         static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
         static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
+        static const int S3_HASH = HashingUtils::HashString("S3");
         static const int SAPHANA_HASH = HashingUtils::HashString("SAPHANA");
         static const int SNOWFLAKE_HASH = HashingUtils::HashString("SNOWFLAKE");
         static const int SPARK_HASH = HashingUtils::HashString("SPARK");
@@ -91,6 +92,10 @@ namespace Aws
           else if (hashCode == REDSHIFT_HASH)
           {
             return ConnectionType::REDSHIFT;
+          }
+          else if (hashCode == S3_HASH)
+          {
+            return ConnectionType::S3;
           }
           else if (hashCode == SAPHANA_HASH)
           {
@@ -160,6 +165,8 @@ namespace Aws
             return "POSTGRESQL";
           case ConnectionType::REDSHIFT:
             return "REDSHIFT";
+          case ConnectionType::S3:
+            return "S3";
           case ConnectionType::SAPHANA:
             return "SAPHANA";
           case ConnectionType::SNOWFLAKE:

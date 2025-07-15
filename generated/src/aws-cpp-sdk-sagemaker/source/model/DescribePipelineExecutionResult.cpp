@@ -90,6 +90,11 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator =(con
     m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
     m_selectiveExecutionConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineVersionId"))
+  {
+    m_pipelineVersionId = jsonValue.GetInt64("PipelineVersionId");
+    m_pipelineVersionIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -86,7 +86,33 @@ namespace repostspace
         virtual ~RepostspaceClient();
 
         /**
-         * <p>Add role to multiple users or groups in a private re:Post.</p><p><h3>See
+         * <p>Add role to multiple users or groups in a private re:Post
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAddChannelRoleToAccessorsOutcome BatchAddChannelRoleToAccessors(const Model::BatchAddChannelRoleToAccessorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAddChannelRoleToAccessors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchAddChannelRoleToAccessorsRequestT = Model::BatchAddChannelRoleToAccessorsRequest>
+        Model::BatchAddChannelRoleToAccessorsOutcomeCallable BatchAddChannelRoleToAccessorsCallable(const BatchAddChannelRoleToAccessorsRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::BatchAddChannelRoleToAccessors, request);
+        }
+
+        /**
+         * An Async wrapper for BatchAddChannelRoleToAccessors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchAddChannelRoleToAccessorsRequestT = Model::BatchAddChannelRoleToAccessorsRequest>
+        void BatchAddChannelRoleToAccessorsAsync(const BatchAddChannelRoleToAccessorsRequestT& request, const BatchAddChannelRoleToAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::BatchAddChannelRoleToAccessors, request, handler, context);
+        }
+
+        /**
+         * <p>Add a role to multiple users or groups in a private re:Post.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddRole">AWS
          * API Reference</a></p>
@@ -112,8 +138,34 @@ namespace repostspace
         }
 
         /**
-         * <p>Remove role from multiple users or groups in a private re:Post.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Remove a role from multiple users or groups in a private re:Post
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchRemoveChannelRoleFromAccessorsOutcome BatchRemoveChannelRoleFromAccessors(const Model::BatchRemoveChannelRoleFromAccessorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchRemoveChannelRoleFromAccessors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchRemoveChannelRoleFromAccessorsRequestT = Model::BatchRemoveChannelRoleFromAccessorsRequest>
+        Model::BatchRemoveChannelRoleFromAccessorsOutcomeCallable BatchRemoveChannelRoleFromAccessorsCallable(const BatchRemoveChannelRoleFromAccessorsRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::BatchRemoveChannelRoleFromAccessors, request);
+        }
+
+        /**
+         * An Async wrapper for BatchRemoveChannelRoleFromAccessors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchRemoveChannelRoleFromAccessorsRequestT = Model::BatchRemoveChannelRoleFromAccessorsRequest>
+        void BatchRemoveChannelRoleFromAccessorsAsync(const BatchRemoveChannelRoleFromAccessorsRequestT& request, const BatchRemoveChannelRoleFromAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::BatchRemoveChannelRoleFromAccessors, request, handler, context);
+        }
+
+        /**
+         * <p>Remove a role from multiple users or groups in a private
+         * re:Post.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveRole">AWS
          * API Reference</a></p>
          */
@@ -135,6 +187,32 @@ namespace repostspace
         void BatchRemoveRoleAsync(const BatchRemoveRoleRequestT& request, const BatchRemoveRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RepostspaceClient::BatchRemoveRole, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a channel in an AWS re:Post Private private re:Post.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateChannelRequestT = Model::CreateChannelRequest>
+        Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::CreateChannel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateChannelRequestT = Model::CreateChannelRequest>
+        void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::CreateChannel, request, handler, context);
         }
 
         /**
@@ -214,6 +292,32 @@ namespace repostspace
         }
 
         /**
+         * <p>Displays information about a channel in a private re:Post.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetChannelRequestT = Model::GetChannelRequest>
+        Model::GetChannelOutcomeCallable GetChannelCallable(const GetChannelRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::GetChannel, request);
+        }
+
+        /**
+         * An Async wrapper for GetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetChannelRequestT = Model::GetChannelRequest>
+        void GetChannelAsync(const GetChannelRequestT& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::GetChannel, request, handler, context);
+        }
+
+        /**
          * <p>Displays information about the AWS re:Post Private private
          * re:Post.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetSpace">AWS
@@ -237,6 +341,32 @@ namespace repostspace
         void GetSpaceAsync(const GetSpaceRequestT& request, const GetSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RepostspaceClient::GetSpace, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the list of channel within a private re:Post with some information
+         * about each channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListChannelsRequestT = Model::ListChannelsRequest>
+        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::ListChannels, request);
+        }
+
+        /**
+         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListChannelsRequestT = Model::ListChannelsRequest>
+        void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::ListChannels, request, handler, context);
         }
 
         /**
@@ -398,6 +528,31 @@ namespace repostspace
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RepostspaceClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies an existing channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+        Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const UpdateChannelRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::UpdateChannel, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+        void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::UpdateChannel, request, handler, context);
         }
 
         /**

@@ -174,6 +174,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The display name of the pipeline version.</p>
+     */
+    inline const Aws::String& GetPipelineVersionDisplayName() const { return m_pipelineVersionDisplayName; }
+    template<typename PipelineVersionDisplayNameT = Aws::String>
+    void SetPipelineVersionDisplayName(PipelineVersionDisplayNameT&& value) { m_pipelineVersionDisplayNameHasBeenSet = true; m_pipelineVersionDisplayName = std::forward<PipelineVersionDisplayNameT>(value); }
+    template<typename PipelineVersionDisplayNameT = Aws::String>
+    DescribePipelineResult& WithPipelineVersionDisplayName(PipelineVersionDisplayNameT&& value) { SetPipelineVersionDisplayName(std::forward<PipelineVersionDisplayNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the pipeline version.</p>
+     */
+    inline const Aws::String& GetPipelineVersionDescription() const { return m_pipelineVersionDescription; }
+    template<typename PipelineVersionDescriptionT = Aws::String>
+    void SetPipelineVersionDescription(PipelineVersionDescriptionT&& value) { m_pipelineVersionDescriptionHasBeenSet = true; m_pipelineVersionDescription = std::forward<PipelineVersionDescriptionT>(value); }
+    template<typename PipelineVersionDescriptionT = Aws::String>
+    DescribePipelineResult& WithPipelineVersionDescription(PipelineVersionDescriptionT&& value) { SetPipelineVersionDescription(std::forward<PipelineVersionDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -221,6 +243,12 @@ namespace Model
 
     ParallelismConfiguration m_parallelismConfiguration;
     bool m_parallelismConfigurationHasBeenSet = false;
+
+    Aws::String m_pipelineVersionDisplayName;
+    bool m_pipelineVersionDisplayNameHasBeenSet = false;
+
+    Aws::String m_pipelineVersionDescription;
+    bool m_pipelineVersionDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

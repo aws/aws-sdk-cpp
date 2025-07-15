@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/repostspace/RepostspaceRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/repostspace/model/Role.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique ID of the private re:Post.</p>
+     */
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
+    inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    BatchAddRoleRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The user or group accessor identifiers to add the role to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccessorIds() const { return m_accessorIds; }
@@ -57,28 +69,16 @@ namespace Model
     inline void SetRole(Role value) { m_roleHasBeenSet = true; m_role = value; }
     inline BatchAddRoleRequest& WithRole(Role value) { SetRole(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique ID of the private re:Post.</p>
-     */
-    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
-    inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    template<typename SpaceIdT = Aws::String>
-    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
-    template<typename SpaceIdT = Aws::String>
-    BatchAddRoleRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_spaceId;
+    bool m_spaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accessorIds;
     bool m_accessorIdsHasBeenSet = false;
 
     Role m_role{Role::NOT_SET};
     bool m_roleHasBeenSet = false;
-
-    Aws::String m_spaceId;
-    bool m_spaceIdHasBeenSet = false;
   };
 
 } // namespace Model

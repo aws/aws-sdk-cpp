@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeStatusInfo.h>
+#include <aws/ec2/model/InitializationStatusDetails.h>
 #include <aws/ec2/model/VolumeStatusAction.h>
 #include <aws/ec2/model/VolumeStatusEvent.h>
 #include <aws/ec2/model/VolumeStatusAttachmentStatus.h>
@@ -136,6 +137,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Information about the volume initialization. It can take up to 5 minutes for
+     * the volume initialization information to be updated.</p> <p>Only available for
+     * volumes created from snapshots. Not available for empty volumes created without
+     * a snapshot.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
+     * Initialize Amazon EBS volumes</a>.</p>
+     */
+    inline const InitializationStatusDetails& GetInitializationStatusDetails() const { return m_initializationStatusDetails; }
+    inline bool InitializationStatusDetailsHasBeenSet() const { return m_initializationStatusDetailsHasBeenSet; }
+    template<typename InitializationStatusDetailsT = InitializationStatusDetails>
+    void SetInitializationStatusDetails(InitializationStatusDetailsT&& value) { m_initializationStatusDetailsHasBeenSet = true; m_initializationStatusDetails = std::forward<InitializationStatusDetailsT>(value); }
+    template<typename InitializationStatusDetailsT = InitializationStatusDetails>
+    VolumeStatusItem& WithInitializationStatusDetails(InitializationStatusDetailsT&& value) { SetInitializationStatusDetails(std::forward<InitializationStatusDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
@@ -167,6 +185,9 @@ namespace Model
 
     Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
     bool m_attachmentStatusesHasBeenSet = false;
+
+    InitializationStatusDetails m_initializationStatusDetails;
+    bool m_initializationStatusDetailsHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet = false;

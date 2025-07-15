@@ -12,6 +12,7 @@
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
 #include <aws/ecs/model/DeploymentEphemeralStorage.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/ResolvedConfiguration.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
@@ -276,6 +277,20 @@ namespace Model
     template<typename VpcLatticeConfigurationsT = VpcLatticeConfiguration>
     ServiceRevision& AddVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.emplace_back(std::forward<VpcLatticeConfigurationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The resolved configuration for the service revision which contains the actual
+     * resources your service revision uses, such as which target groups serve
+     * traffic.</p>
+     */
+    inline const ResolvedConfiguration& GetResolvedConfiguration() const { return m_resolvedConfiguration; }
+    inline bool ResolvedConfigurationHasBeenSet() const { return m_resolvedConfigurationHasBeenSet; }
+    template<typename ResolvedConfigurationT = ResolvedConfiguration>
+    void SetResolvedConfiguration(ResolvedConfigurationT&& value) { m_resolvedConfigurationHasBeenSet = true; m_resolvedConfiguration = std::forward<ResolvedConfigurationT>(value); }
+    template<typename ResolvedConfigurationT = ResolvedConfiguration>
+    ServiceRevision& WithResolvedConfiguration(ResolvedConfigurationT&& value) { SetResolvedConfiguration(std::forward<ResolvedConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_serviceRevisionArn;
@@ -331,6 +346,9 @@ namespace Model
 
     Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
     bool m_vpcLatticeConfigurationsHasBeenSet = false;
+
+    ResolvedConfiguration m_resolvedConfiguration;
+    bool m_resolvedConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

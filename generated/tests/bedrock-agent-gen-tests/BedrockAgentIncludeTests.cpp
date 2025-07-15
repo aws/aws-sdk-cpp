@@ -372,6 +372,7 @@
 #include <aws/bedrock-agent/model/S3DataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/S3Identifier.h>
 #include <aws/bedrock-agent/model/S3Location.h>
+#include <aws/bedrock-agent/model/S3VectorsConfiguration.h>
 #include <aws/bedrock-agent/model/SalesforceAuthType.h>
 #include <aws/bedrock-agent/model/SalesforceCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/SalesforceDataSourceConfiguration.h>

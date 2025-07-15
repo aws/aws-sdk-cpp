@@ -70,6 +70,11 @@ SearchRecord& SearchRecord::operator =(JsonView jsonValue)
     m_pipelineExecution = jsonValue.GetObject("PipelineExecution");
     m_pipelineExecutionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineVersion"))
+  {
+    m_pipelineVersion = jsonValue.GetObject("PipelineVersion");
+    m_pipelineVersionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("FeatureGroup"))
   {
     m_featureGroup = jsonValue.GetObject("FeatureGroup");
@@ -158,6 +163,12 @@ JsonValue SearchRecord::Jsonize() const
   if(m_pipelineExecutionHasBeenSet)
   {
    payload.WithObject("PipelineExecution", m_pipelineExecution.Jsonize());
+
+  }
+
+  if(m_pipelineVersionHasBeenSet)
+  {
+   payload.WithObject("PipelineVersion", m_pipelineVersion.Jsonize());
 
   }
 

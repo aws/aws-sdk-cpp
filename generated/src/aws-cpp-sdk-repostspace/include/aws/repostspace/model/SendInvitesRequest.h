@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/repostspace/RepostspaceRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the private re:Post.</p>
+     */
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
+    inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    SendInvitesRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The array of identifiers for the users and groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccessorIds() const { return m_accessorIds; }
@@ -49,30 +61,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The body of the invite.</p>
-     */
-    inline const Aws::String& GetMemberBody() const { return m_body; }
-    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    template<typename BodyT = Aws::String>
-    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
-    template<typename BodyT = Aws::String>
-    SendInvitesRequest& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the private re:Post.</p>
-     */
-    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
-    inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    template<typename SpaceIdT = Aws::String>
-    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
-    template<typename SpaceIdT = Aws::String>
-    SendInvitesRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The title of the invite.</p>
      */
     inline const Aws::String& GetTitle() const { return m_title; }
@@ -82,19 +70,31 @@ namespace Model
     template<typename TitleT = Aws::String>
     SendInvitesRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The body of the invite.</p>
+     */
+    inline const Aws::String& GetMemberBody() const { return m_body; }
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    SendInvitesRequest& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::Vector<Aws::String> m_accessorIds;
-    bool m_accessorIdsHasBeenSet = false;
-
-    Aws::String m_body;
-    bool m_bodyHasBeenSet = false;
 
     Aws::String m_spaceId;
     bool m_spaceIdHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_accessorIds;
+    bool m_accessorIdsHasBeenSet = false;
+
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::String m_body;
+    bool m_bodyHasBeenSet = false;
   };
 
 } // namespace Model

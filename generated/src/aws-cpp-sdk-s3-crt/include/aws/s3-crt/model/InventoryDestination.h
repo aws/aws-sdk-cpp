@@ -23,8 +23,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the inventory configuration for an Amazon S3 bucket.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the S3 Inventory configuration for an Amazon S3
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryDestination">AWS
    * API Reference</a></p>
    */

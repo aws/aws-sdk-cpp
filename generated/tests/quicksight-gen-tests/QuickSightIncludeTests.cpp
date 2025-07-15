@@ -326,6 +326,7 @@
 #include <aws/quicksight/model/CustomContentVisual.h>
 #include <aws/quicksight/model/CustomFilterConfiguration.h>
 #include <aws/quicksight/model/CustomFilterListConfiguration.h>
+#include <aws/quicksight/model/CustomInstructions.h>
 #include <aws/quicksight/model/CustomNarrativeOptions.h>
 #include <aws/quicksight/model/CustomParameterValues.h>
 #include <aws/quicksight/model/CustomPermissions.h>

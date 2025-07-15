@@ -27,6 +27,7 @@ namespace Aws
         static const int MONGO_DB_ATLAS_HASH = HashingUtils::HashString("MONGO_DB_ATLAS");
         static const int NEPTUNE_ANALYTICS_HASH = HashingUtils::HashString("NEPTUNE_ANALYTICS");
         static const int OPENSEARCH_MANAGED_CLUSTER_HASH = HashingUtils::HashString("OPENSEARCH_MANAGED_CLUSTER");
+        static const int S3_VECTORS_HASH = HashingUtils::HashString("S3_VECTORS");
 
 
         KnowledgeBaseStorageType GetKnowledgeBaseStorageTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return KnowledgeBaseStorageType::OPENSEARCH_MANAGED_CLUSTER;
           }
+          else if (hashCode == S3_VECTORS_HASH)
+          {
+            return KnowledgeBaseStorageType::S3_VECTORS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "NEPTUNE_ANALYTICS";
           case KnowledgeBaseStorageType::OPENSEARCH_MANAGED_CLUSTER:
             return "OPENSEARCH_MANAGED_CLUSTER";
+          case KnowledgeBaseStorageType::S3_VECTORS:
+            return "S3_VECTORS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

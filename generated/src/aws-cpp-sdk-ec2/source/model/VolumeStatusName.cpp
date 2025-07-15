@@ -22,6 +22,7 @@ namespace Aws
 
         static const int io_enabled_HASH = HashingUtils::HashString("io-enabled");
         static const int io_performance_HASH = HashingUtils::HashString("io-performance");
+        static const int initialization_state_HASH = HashingUtils::HashString("initialization-state");
 
 
         VolumeStatusName GetVolumeStatusNameForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == io_performance_HASH)
           {
             return VolumeStatusName::io_performance;
+          }
+          else if (hashCode == initialization_state_HASH)
+          {
+            return VolumeStatusName::initialization_state;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "io-enabled";
           case VolumeStatusName::io_performance:
             return "io-performance";
+          case VolumeStatusName::initialization_state:
+            return "initialization-state";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

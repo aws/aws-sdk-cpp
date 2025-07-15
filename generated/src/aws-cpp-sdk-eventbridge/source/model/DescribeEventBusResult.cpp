@@ -55,6 +55,11 @@ DescribeEventBusResult& DescribeEventBusResult::operator =(const Aws::AmazonWebS
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LogConfig"))
+  {
+    m_logConfig = jsonValue.GetObject("LogConfig");
+    m_logConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the schedule for generating inventory results.</p><p><h3>See
+   * <p>Specifies the schedule for generating S3 Inventory results.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventorySchedule">AWS
    * API Reference</a></p>

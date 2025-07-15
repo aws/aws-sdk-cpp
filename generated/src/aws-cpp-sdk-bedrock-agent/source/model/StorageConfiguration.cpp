@@ -60,6 +60,11 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_redisEnterpriseCloudConfiguration = jsonValue.GetObject("redisEnterpriseCloudConfiguration");
     m_redisEnterpriseCloudConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("s3VectorsConfiguration"))
+  {
+    m_s3VectorsConfiguration = jsonValue.GetObject("s3VectorsConfiguration");
+    m_s3VectorsConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = KnowledgeBaseStorageTypeMapper::GetKnowledgeBaseStorageTypeForName(jsonValue.GetString("type"));
@@ -111,6 +116,12 @@ JsonValue StorageConfiguration::Jsonize() const
   if(m_redisEnterpriseCloudConfigurationHasBeenSet)
   {
    payload.WithObject("redisEnterpriseCloudConfiguration", m_redisEnterpriseCloudConfiguration.Jsonize());
+
+  }
+
+  if(m_s3VectorsConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3VectorsConfiguration", m_s3VectorsConfiguration.Jsonize());
 
   }
 

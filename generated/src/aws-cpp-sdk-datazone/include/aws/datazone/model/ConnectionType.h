@@ -28,6 +28,7 @@ namespace Model
     ORACLE,
     POSTGRESQL,
     REDSHIFT,
+    S3,
     SAPHANA,
     SNOWFLAKE,
     SPARK,

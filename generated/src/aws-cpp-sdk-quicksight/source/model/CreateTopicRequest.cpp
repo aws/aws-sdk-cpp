@@ -50,6 +50,12 @@ Aws::String CreateTopicRequest::SerializePayload() const
 
   }
 
+  if(m_customInstructionsHasBeenSet)
+  {
+   payload.WithObject("CustomInstructions", m_customInstructions.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

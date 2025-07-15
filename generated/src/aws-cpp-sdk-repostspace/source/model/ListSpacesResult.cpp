@@ -25,11 +25,6 @@ ListSpacesResult::ListSpacesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListSpacesResult& ListSpacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("spaces"))
   {
     Aws::Utils::Array<JsonView> spacesJsonList = jsonValue.GetArray("spaces");
@@ -38,6 +33,11 @@ ListSpacesResult& ListSpacesResult::operator =(const Aws::AmazonWebServiceResult
       m_spaces.push_back(spacesJsonList[spacesIndex].AsObject());
     }
     m_spacesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

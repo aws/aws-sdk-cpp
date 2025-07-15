@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Configuration settings for IAM Identity Center in an OpenSearch
-   * Application.</p><p><h3>See Also:</h3>   <a
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IamIdentityCenterOptions">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether IAM Identity Center is enabled for the OpenSearch
-     * Application.</p>
+     * application.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role assigned to the IAM Identity
-     * Center application for the OpenSearch Application.</p>
+     * Center application for the OpenSearch application.</p>
      */
     inline const Aws::String& GetIamRoleForIdentityCenterApplicationArn() const { return m_iamRoleForIdentityCenterApplicationArn; }
     inline bool IamRoleForIdentityCenterApplicationArnHasBeenSet() const { return m_iamRoleForIdentityCenterApplicationArnHasBeenSet; }

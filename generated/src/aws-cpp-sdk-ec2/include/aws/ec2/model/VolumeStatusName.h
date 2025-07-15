@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     io_enabled,
-    io_performance
+    io_performance,
+    initialization_state
   };
 
 namespace VolumeStatusNameMapper

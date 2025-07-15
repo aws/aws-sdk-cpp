@@ -10,6 +10,7 @@
 #include <aws/ec2/model/Ec2InstanceConnectEndpointState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -117,7 +118,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the
+     * EC2 Instance Connect Endpoint.</p>
      */
     inline const Aws::String& GetFipsDnsName() const { return m_fipsDnsName; }
     inline bool FipsDnsNameHasBeenSet() const { return m_fipsDnsNameHasBeenSet; }
@@ -235,6 +237,16 @@ namespace Model
     template<typename TagsT = Tag>
     Ec2InstanceConnectEndpoint& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type of the endpoint.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline Ec2InstanceConnectEndpoint& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -281,6 +293,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

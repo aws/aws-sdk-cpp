@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the administrator.</p>
-     */
-    inline const Aws::String& GetAdminId() const { return m_adminId; }
-    inline bool AdminIdHasBeenSet() const { return m_adminIdHasBeenSet; }
-    template<typename AdminIdT = Aws::String>
-    void SetAdminId(AdminIdT&& value) { m_adminIdHasBeenSet = true; m_adminId = std::forward<AdminIdT>(value); }
-    template<typename AdminIdT = Aws::String>
-    RegisterAdminRequest& WithAdminId(AdminIdT&& value) { SetAdminId(std::forward<AdminIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the private re:Post.</p>
      */
     inline const Aws::String& GetSpaceId() const { return m_spaceId; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename SpaceIdT = Aws::String>
     RegisterAdminRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_adminId;
-    bool m_adminIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ID of the administrator.</p>
+     */
+    inline const Aws::String& GetAdminId() const { return m_adminId; }
+    inline bool AdminIdHasBeenSet() const { return m_adminIdHasBeenSet; }
+    template<typename AdminIdT = Aws::String>
+    void SetAdminId(AdminIdT&& value) { m_adminIdHasBeenSet = true; m_adminId = std::forward<AdminIdT>(value); }
+    template<typename AdminIdT = Aws::String>
+    RegisterAdminRequest& WithAdminId(AdminIdT&& value) { SetAdminId(std::forward<AdminIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_spaceId;
     bool m_spaceIdHasBeenSet = false;
+
+    Aws::String m_adminId;
+    bool m_adminIdHasBeenSet = false;
   };
 
 } // namespace Model

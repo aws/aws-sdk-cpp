@@ -127,6 +127,16 @@ namespace Model
     template<typename SelectiveExecutionConfigT = SelectiveExecutionConfig>
     StartPipelineExecutionRequest& WithSelectiveExecutionConfig(SelectiveExecutionConfigT&& value) { SetSelectiveExecutionConfig(std::forward<SelectiveExecutionConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the pipeline version to start execution from.</p>
+     */
+    inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
+    inline bool PipelineVersionIdHasBeenSet() const { return m_pipelineVersionIdHasBeenSet; }
+    inline void SetPipelineVersionId(long long value) { m_pipelineVersionIdHasBeenSet = true; m_pipelineVersionId = value; }
+    inline StartPipelineExecutionRequest& WithPipelineVersionId(long long value) { SetPipelineVersionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_pipelineName;
@@ -149,6 +159,9 @@ namespace Model
 
     SelectiveExecutionConfig m_selectiveExecutionConfig;
     bool m_selectiveExecutionConfigHasBeenSet = false;
+
+    long long m_pipelineVersionId{0};
+    bool m_pipelineVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,15 +27,15 @@ Aws::String SendInvitesRequest::SerializePayload() const
 
   }
 
-  if(m_bodyHasBeenSet)
-  {
-   payload.WithString("body", m_body);
-
-  }
-
   if(m_titleHasBeenSet)
   {
    payload.WithString("title", m_title);
+
+  }
+
+  if(m_bodyHasBeenSet)
+  {
+   payload.WithString("body", m_body);
 
   }
 

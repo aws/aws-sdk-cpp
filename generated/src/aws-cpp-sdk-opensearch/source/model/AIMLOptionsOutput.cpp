@@ -30,6 +30,11 @@ AIMLOptionsOutput& AIMLOptionsOutput::operator =(JsonView jsonValue)
     m_naturalLanguageQueryGenerationOptions = jsonValue.GetObject("NaturalLanguageQueryGenerationOptions");
     m_naturalLanguageQueryGenerationOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3VectorsEngine"))
+  {
+    m_s3VectorsEngine = jsonValue.GetObject("S3VectorsEngine");
+    m_s3VectorsEngineHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue AIMLOptionsOutput::Jsonize() const
   if(m_naturalLanguageQueryGenerationOptionsHasBeenSet)
   {
    payload.WithObject("NaturalLanguageQueryGenerationOptions", m_naturalLanguageQueryGenerationOptions.Jsonize());
+
+  }
+
+  if(m_s3VectorsEngineHasBeenSet)
+  {
+   payload.WithObject("S3VectorsEngine", m_s3VectorsEngine.Jsonize());
 
   }
 

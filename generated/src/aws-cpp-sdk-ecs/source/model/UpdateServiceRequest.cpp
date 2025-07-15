@@ -108,6 +108,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
 
   }
 
+  if(m_deploymentControllerHasBeenSet)
+  {
+   payload.WithObject("deploymentController", m_deploymentController.Jsonize());
+
+  }
+
   if(m_enableExecuteCommandHasBeenSet)
   {
    payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);

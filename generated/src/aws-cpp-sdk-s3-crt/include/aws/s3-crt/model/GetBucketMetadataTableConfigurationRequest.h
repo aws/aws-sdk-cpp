@@ -47,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The general purpose bucket that contains the metadata table configuration
-     * that you want to retrieve. </p>
+     * <p> The general purpose bucket that corresponds to the metadata table
+     * configuration that you want to retrieve. </p>
      */
     inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
     ///@{
     /**
      * <p> The expected owner of the general purpose bucket that you want to retrieve
-     * the metadata table configuration from. </p>
+     * the metadata table configuration for. </p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

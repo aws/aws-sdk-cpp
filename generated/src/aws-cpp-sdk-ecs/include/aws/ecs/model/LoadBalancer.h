@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/AdvancedConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,20 @@ namespace Model
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
     inline LoadBalancer& WithContainerPort(int value) { SetContainerPort(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The advanced settings for the load balancer used in blue/green deployments.
+     * Specify the alternate target group, listener rules, and IAM role required for
+     * traffic shifting during blue/green deployments.</p>
+     */
+    inline const AdvancedConfiguration& GetAdvancedConfiguration() const { return m_advancedConfiguration; }
+    inline bool AdvancedConfigurationHasBeenSet() const { return m_advancedConfigurationHasBeenSet; }
+    template<typename AdvancedConfigurationT = AdvancedConfiguration>
+    void SetAdvancedConfiguration(AdvancedConfigurationT&& value) { m_advancedConfigurationHasBeenSet = true; m_advancedConfiguration = std::forward<AdvancedConfigurationT>(value); }
+    template<typename AdvancedConfigurationT = AdvancedConfiguration>
+    LoadBalancer& WithAdvancedConfiguration(AdvancedConfigurationT&& value) { SetAdvancedConfiguration(std::forward<AdvancedConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_targetGroupArn;
@@ -129,6 +144,9 @@ namespace Model
 
     int m_containerPort{0};
     bool m_containerPortHasBeenSet = false;
+
+    AdvancedConfiguration m_advancedConfiguration;
+    bool m_advancedConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -469,8 +469,8 @@ namespace Model
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you need to
-     * set the <code>propagateTags</code> request parameter.</p>
+     * Developer Guide</i>.</p> <p>When you use Amazon ECS managed tags, you must set
+     * the <code>propagateTags</code> request parameter.</p>
      */
     inline bool GetEnableECSManagedTags() const { return m_enableECSManagedTags; }
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }

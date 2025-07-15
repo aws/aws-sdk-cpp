@@ -206,6 +206,28 @@ namespace Model
     template<typename PipelineParametersT = Parameter>
     PipelineExecution& AddPipelineParameters(PipelineParametersT&& value) { m_pipelineParametersHasBeenSet = true; m_pipelineParameters.emplace_back(std::forward<PipelineParametersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the pipeline version that started this execution.</p>
+     */
+    inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
+    inline bool PipelineVersionIdHasBeenSet() const { return m_pipelineVersionIdHasBeenSet; }
+    inline void SetPipelineVersionId(long long value) { m_pipelineVersionIdHasBeenSet = true; m_pipelineVersionId = value; }
+    inline PipelineExecution& WithPipelineVersionId(long long value) { SetPipelineVersionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the pipeline version that started this execution.</p>
+     */
+    inline const Aws::String& GetPipelineVersionDisplayName() const { return m_pipelineVersionDisplayName; }
+    inline bool PipelineVersionDisplayNameHasBeenSet() const { return m_pipelineVersionDisplayNameHasBeenSet; }
+    template<typename PipelineVersionDisplayNameT = Aws::String>
+    void SetPipelineVersionDisplayName(PipelineVersionDisplayNameT&& value) { m_pipelineVersionDisplayNameHasBeenSet = true; m_pipelineVersionDisplayName = std::forward<PipelineVersionDisplayNameT>(value); }
+    template<typename PipelineVersionDisplayNameT = Aws::String>
+    PipelineExecution& WithPipelineVersionDisplayName(PipelineVersionDisplayNameT&& value) { SetPipelineVersionDisplayName(std::forward<PipelineVersionDisplayNameT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_pipelineArn;
@@ -249,6 +271,12 @@ namespace Model
 
     Aws::Vector<Parameter> m_pipelineParameters;
     bool m_pipelineParametersHasBeenSet = false;
+
+    long long m_pipelineVersionId{0};
+    bool m_pipelineVersionIdHasBeenSet = false;
+
+    Aws::String m_pipelineVersionDisplayName;
+    bool m_pipelineVersionDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

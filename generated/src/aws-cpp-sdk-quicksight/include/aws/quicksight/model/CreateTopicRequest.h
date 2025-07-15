@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TopicDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/CustomInstructions.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
 
@@ -101,6 +102,18 @@ namespace Model
     template<typename FolderArnsT = Aws::String>
     CreateTopicRequest& AddFolderArns(FolderArnsT&& value) { m_folderArnsHasBeenSet = true; m_folderArns.emplace_back(std::forward<FolderArnsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Custom instructions for the topic.</p>
+     */
+    inline const CustomInstructions& GetCustomInstructions() const { return m_customInstructions; }
+    inline bool CustomInstructionsHasBeenSet() const { return m_customInstructionsHasBeenSet; }
+    template<typename CustomInstructionsT = CustomInstructions>
+    void SetCustomInstructions(CustomInstructionsT&& value) { m_customInstructionsHasBeenSet = true; m_customInstructions = std::forward<CustomInstructionsT>(value); }
+    template<typename CustomInstructionsT = CustomInstructions>
+    CreateTopicRequest& WithCustomInstructions(CustomInstructionsT&& value) { SetCustomInstructions(std::forward<CustomInstructionsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -117,6 +130,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_folderArns;
     bool m_folderArnsHasBeenSet = false;
+
+    CustomInstructions m_customInstructions;
+    bool m_customInstructionsHasBeenSet = false;
   };
 
 } // namespace Model

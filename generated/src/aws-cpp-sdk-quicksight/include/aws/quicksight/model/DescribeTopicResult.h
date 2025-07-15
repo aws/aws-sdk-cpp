@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TopicDetails.h>
+#include <aws/quicksight/model/CustomInstructions.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,17 @@ namespace Model
     inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeTopicResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Custom instructions for the topic.</p>
+     */
+    inline const CustomInstructions& GetCustomInstructions() const { return m_customInstructions; }
+    template<typename CustomInstructionsT = CustomInstructions>
+    void SetCustomInstructions(CustomInstructionsT&& value) { m_customInstructionsHasBeenSet = true; m_customInstructions = std::forward<CustomInstructionsT>(value); }
+    template<typename CustomInstructionsT = CustomInstructions>
+    DescribeTopicResult& WithCustomInstructions(CustomInstructionsT&& value) { SetCustomInstructions(std::forward<CustomInstructionsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -100,6 +112,9 @@ namespace Model
 
     int m_status{0};
     bool m_statusHasBeenSet = false;
+
+    CustomInstructions m_customInstructions;
+    bool m_customInstructionsHasBeenSet = false;
   };
 
 } // namespace Model

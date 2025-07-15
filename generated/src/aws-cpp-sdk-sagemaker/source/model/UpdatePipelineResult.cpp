@@ -30,6 +30,11 @@ UpdatePipelineResult& UpdatePipelineResult::operator =(const Aws::AmazonWebServi
     m_pipelineArn = jsonValue.GetString("PipelineArn");
     m_pipelineArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineVersionId"))
+  {
+    m_pipelineVersionId = jsonValue.GetInt64("PipelineVersionId");
+    m_pipelineVersionIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

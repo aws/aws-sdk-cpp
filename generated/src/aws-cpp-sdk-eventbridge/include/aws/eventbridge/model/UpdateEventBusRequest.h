@@ -8,6 +8,7 @@
 #include <aws/eventbridge/EventBridgeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
+#include <aws/eventbridge/model/LogConfig.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +106,21 @@ namespace Model
     template<typename DeadLetterConfigT = DeadLetterConfig>
     UpdateEventBusRequest& WithDeadLetterConfig(DeadLetterConfigT&& value) { SetDeadLetterConfig(std::forward<DeadLetterConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The logging configuration settings for the event bus.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for
+     * event buses</a> in the <i>EventBridge User Guide</i>.</p>
+     */
+    inline const LogConfig& GetLogConfig() const { return m_logConfig; }
+    inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
+    template<typename LogConfigT = LogConfig>
+    void SetLogConfig(LogConfigT&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::forward<LogConfigT>(value); }
+    template<typename LogConfigT = LogConfig>
+    UpdateEventBusRequest& WithLogConfig(LogConfigT&& value) { SetLogConfig(std::forward<LogConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -118,6 +134,9 @@ namespace Model
 
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet = false;
+
+    LogConfig m_logConfig;
+    bool m_logConfigHasBeenSet = false;
   };
 
 } // namespace Model
