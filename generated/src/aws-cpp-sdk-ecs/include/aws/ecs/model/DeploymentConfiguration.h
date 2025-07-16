@@ -206,7 +206,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration when both blue and green service revisions are running
+     * <p>The time period when both blue and green service revisions are running
      * simultaneously after the production traffic has shifted.</p> <p>You must provide
      * this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
      */
@@ -219,8 +219,7 @@ namespace Model
     ///@{
     /**
      * <p>An array of deployment lifecycle hook objects to run custom logic at specific
-     * stages of the deployment lifecycle. These hooks allow you to run custom logic at
-     * key points during the deployment process.</p>
+     * stages of the deployment lifecycle.</p>
      */
     inline const Aws::Vector<DeploymentLifecycleHook>& GetLifecycleHooks() const { return m_lifecycleHooks; }
     inline bool LifecycleHooksHasBeenSet() const { return m_lifecycleHooksHasBeenSet; }

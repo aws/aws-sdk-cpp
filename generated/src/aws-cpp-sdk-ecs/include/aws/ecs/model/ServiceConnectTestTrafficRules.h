@@ -27,7 +27,11 @@ namespace Model
    * <p>The test traffic routing configuration for Amazon ECS blue/green deployments.
    * This configuration allows you to define rules for routing specific traffic to
    * the new service revision during the deployment process, allowing for safe
-   * testing before full production traffic shift.</p><p><h3>See Also:</h3>   <a
+   * testing before full production traffic shift.</p> <p>For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html">Service
+   * Connect for Amazon ECS blue/green deployments</a> in the <i> Amazon Elastic
+   * Container Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceConnectTestTrafficRules">AWS
    * API Reference</a></p>
    */

@@ -31,8 +31,8 @@ namespace Model
    * service deployment to failed. Set the rollback parameter to have Amazon ECS to
    * roll back your service to the last completed deployment after a failure.</p>
    * <p>You can only use the <code>DeploymentAlarms</code> method to detect failures
-   * when the <code>DeploymentController</code> is set to <code>ECS</code> (rolling
-   * update).</p> <p>For more information, see <a
+   * when the <code>DeploymentController</code> is set to <code>ECS</code>.</p>
+   * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
    * update</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
    * </i>.</p><p><h3>See Also:</h3>   <a
