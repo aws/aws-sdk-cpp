@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/NoResult.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -26,7 +27,7 @@ class S3PerformanceTest : public PerformanceTestBase {
   S3PerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig, int iterations = 10,
                     const Aws::String& availabilityZoneId = "");
 
-  Aws::Utils::Outcome<bool, Aws::String> Setup() override;
+  Aws::Utils::Outcome<Aws::NoResult, Aws::String> Setup() override;
   void Run() override;
   void TearDown() override;
 
