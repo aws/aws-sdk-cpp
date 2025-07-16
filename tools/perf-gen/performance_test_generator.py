@@ -2,7 +2,7 @@
 
 import os
 import json
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 import argparse
 
 def generate_performance_test(config_path, template_dir, output_dir):
@@ -15,7 +15,8 @@ def generate_performance_test(config_path, template_dir, output_dir):
     env = Environment(
         loader=FileSystemLoader(template_dir),
         trim_blocks=True,
-        lstrip_blocks=True
+        lstrip_blocks=True,
+        autoescape=select_autoescape(['html', 'xml'])
     )
 
     service_src_dir = os.path.join(output_dir, f"performance-tests/src/services/{service_lower}")
