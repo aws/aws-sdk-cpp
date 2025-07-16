@@ -10,35 +10,34 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/s3/S3Client.h>
+#include <aws/dynamodb/DynamoDBClient.h>
 #include <performance-tests/PerformanceTestBase.h>
-#include <performance-tests/services/s3/S3TestConfig.h>
+#include <performance-tests/services/dynamodb/DynamoDBTestConfig.h>
 
 namespace PerformanceTest {
 namespace Services {
-namespace S3 {
+namespace DynamoDB {
 
 /**
- * S3 performance test implementation.
- * Tests PutObject and GetObject operations with different payload sizes and bucket types.
+ * DynamoDB performance test implementation.
+ * Tests PutItem and GetItem operations with different payload sizes.
  */
-class S3PerformanceTest : public PerformanceTestBase {
+class DynamoDBPerformanceTest : public PerformanceTestBase {
  public:
-  S3PerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig, int iterations = 10,
-                    const Aws::String& availabilityZoneId = "");
+  DynamoDBPerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig,
+                          int iterations = 10);
 
   Aws::Utils::Outcome<Aws::NoResult, Aws::String> Setup() override;
   void Run() override;
   void TearDown() override;
 
  private:
-  const Aws::UniquePtr<Aws::S3::S3Client> m_s3;
+  const Aws::UniquePtr<Aws::DynamoDB::DynamoDBClient> m_dynamodb;
   const TestConfig::TestCase m_testConfig;
   const int m_iterations;
-  const Aws::String m_bucketName;
-  const Aws::String m_availabilityZoneId;
+  const Aws::String m_tableName;
 };
 
-}  // namespace S3
+}  // namespace DynamoDB
 }  // namespace Services
 }  // namespace PerformanceTest
