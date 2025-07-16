@@ -12,25 +12,19 @@
 
 namespace PerformanceTest {
 namespace Services {
-namespace S3 {
+namespace DynamoDB {
 namespace TestConfig {
 
 /**
- * Payload sizes for S3 performance tests.
+ * Payload sizes for DynamoDB performance tests.
  */
-enum class PayloadSize { K8, K64, M1 };
+enum class PayloadSize { K8, K64, K392 };
 
 /**
- * Bucket types for S3 performance tests.
- */
-enum class BucketType { Standard, Express };
-
-/**
- * Configuration for S3 performance test cases.
+ * Configuration for DynamoDB performance test cases.
  */
 struct TestCase {
   PayloadSize payloadSize;
-  BucketType bucketType;
 };
 
 /**
@@ -43,27 +37,20 @@ size_t GetPayloadSizeInBytes(PayloadSize payloadSize);
 /**
  * Get the string label for a given PayloadSize enum.
  * @param payloadSize The PayloadSize enum value
- * @return String label (e.g., "8KB", "64KB", "1MB")
+ * @return String label (e.g., "8KB", "64KB", "392KB")
  */
 Aws::String GetPayloadSizeLabel(PayloadSize payloadSize);
 
-/**
- * Get the string label for a given BucketType enum.
- * @param bucketType The BucketType enum value
- * @return String label (e.g., "s3-standard", "s3-express")
- */
-Aws::String GetBucketTypeLabel(BucketType bucketType);
-
-/** Operations tested in S3 performance tests. */
+/** Operations tested in DynamoDB performance tests. */
 extern const std::array<const char*, 2> TestOperations;
 
 /** Array of all test case combinations. */
-extern const std::array<TestCase, 6> TestMatrix;
+extern const std::array<TestCase, 3> TestMatrix;
 
 /** Output filename for test results. */
 extern const char* OutputFilename;
 
 }  // namespace TestConfig
-}  // namespace S3
+}  // namespace DynamoDB
 }  // namespace Services
 }  // namespace PerformanceTest
