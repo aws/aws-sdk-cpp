@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -40,7 +42,7 @@ PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanc
   assert(m_dynamodb && "DynamoDB client not initialized");
 }
 
-Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
+Aws::Utils::Outcome<Aws::NoResult, Aws::String> PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
   Aws::DynamoDB::Model::CreateTableRequest createTableRequest;
   createTableRequest.SetTableName(m_tableName);
 
@@ -84,7 +86,7 @@ Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::DynamoDB::Dyna
   if (count >= MAX_QUERIES) {
     return "DynamoDB Setup() - Table did not become active within timeout";
   }
-  return true;
+  return Aws::NoResult();
 }
 
 void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {

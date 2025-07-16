@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
@@ -41,7 +43,7 @@ PerformanceTest::Services::S3::S3PerformanceTest::S3PerformanceTest(const Aws::C
   assert(m_s3 && "S3 client not initialized");
 }
 
-Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::S3::S3PerformanceTest::Setup() {
+Aws::Utils::Outcome<Aws::NoResult, Aws::String> PerformanceTest::Services::S3::S3PerformanceTest::Setup() {
   Aws::S3::Model::CreateBucketRequest cbr;
   cbr.SetBucket(m_bucketName);
 
@@ -61,7 +63,7 @@ Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::S3::S3Performa
   if (!createOutcome.IsSuccess()) {
     return "S3 Setup() - CreateBucket failed: " + createOutcome.GetError().GetMessage();
   }
-  return true;
+  return Aws::NoResult();
 }
 
 void PerformanceTest::Services::S3::S3PerformanceTest::Run() {

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/NoResult.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -21,7 +22,7 @@ class PerformanceTestBase {
    * Initialize resources for the test.
    * @return Outcome indicating success or failure with error details
    */
-  virtual Aws::Utils::Outcome<bool, Aws::String> Setup() = 0;
+  virtual Aws::Utils::Outcome<Aws::NoResult, Aws::String> Setup() = 0;
 
   /**
    * Run the performance test operations.
