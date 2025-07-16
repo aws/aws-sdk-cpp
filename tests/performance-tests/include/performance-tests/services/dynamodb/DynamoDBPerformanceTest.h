@@ -5,23 +5,17 @@
 
 #pragma once
 
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <performance-tests/PerformanceTestBase.h>
-
-#include <cstddef>
+#include <performance-tests/services/dynamodb/DynamoDBTestConfig.h>
 
 namespace PerformanceTest {
 namespace Services {
 namespace DynamoDB {
-/**
- * Configuration for DynamoDB performance test cases.
- */
-struct TestCase {
-  const char* sizeLabel;
-  size_t sizeBytes;
-};
 
 /**
  * DynamoDB performance test implementation.
@@ -29,18 +23,18 @@ struct TestCase {
  */
 class DynamoDBPerformanceTest : public PerformanceTestBase {
  public:
-  DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config, int iterations = 10);
+  DynamoDBPerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig,
+                          int iterations = 10);
 
-  void Setup() override;
-  void TearDown() override;
+  Aws::Utils::Outcome<bool, Aws::String> Setup() override;
   void Run() override;
+  void TearDown() override;
 
  private:
-  const TestCase& m_config;
-  const Aws::String m_region;
+  const Aws::UniquePtr<Aws::DynamoDB::DynamoDBClient> m_dynamodb;
+  const TestConfig::TestCase m_testConfig;
   const int m_iterations;
-  Aws::UniquePtr<Aws::DynamoDB::DynamoDBClient> m_dynamodb;
-  Aws::String m_tableName;
+  const Aws::String m_tableName;
 };
 
 }  // namespace DynamoDB

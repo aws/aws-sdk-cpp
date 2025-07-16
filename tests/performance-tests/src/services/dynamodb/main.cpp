@@ -5,8 +5,10 @@
 
 #include <aws/core/Aws.h>
 #include <aws/core/Version.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -45,12 +47,17 @@ int main(int argc, char** argv) {
   Aws::InitAPI(sdkOptions);
 
   {
-    for (const auto& config : PerformanceTest::Services::DynamoDB::TestConfig::TestMatrix) {
-      auto performanceTest = Aws::MakeUnique<PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest>("DynamoDBPerformanceTest",
-                                                                                                           region, config, iterations);
-      performanceTest->Setup();
-      performanceTest->Run();
-      performanceTest->TearDown();
+    for (const auto& testConfig : PerformanceTest::Services::DynamoDB::TestConfig::TestMatrix) {
+      Aws::Client::ClientConfiguration clientConfig;
+      clientConfig.region = region;
+      PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest performanceTest(clientConfig, testConfig, iterations);
+      auto setupOutcome = performanceTest.Setup();
+      if (setupOutcome.IsSuccess()) {
+        performanceTest.Run();
+      } else {
+        AWS_LOG_ERROR("PerformanceTest", setupOutcome.GetError().c_str());
+      }
+      performanceTest.TearDown();
     }
   }
 

@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 namespace PerformanceTest {
 
 /**
@@ -16,8 +19,9 @@ class PerformanceTestBase {
 
   /**
    * Initialize resources for the test.
+   * @return Outcome indicating success or failure with error details
    */
-  virtual void Setup() = 0;
+  virtual Aws::Utils::Outcome<bool, Aws::String> Setup() = 0;
 
   /**
    * Run the performance test operations.
