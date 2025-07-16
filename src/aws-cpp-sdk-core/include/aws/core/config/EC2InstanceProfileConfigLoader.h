@@ -19,6 +19,11 @@ namespace Aws
         class EC2MetadataClient;
     }
 
+    namespace Client
+    {
+        struct ClientConfiguration;
+    }
+
     namespace Config
     {
         static const char* const INSTANCE_PROFILE_KEY = "InstanceProfile";
@@ -33,7 +38,12 @@ namespace Aws
              * If client is nullptr, the default EC2MetadataClient will be created.
              */
             EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& = nullptr);
-
+            
+            /**
+             * Creates EC2MetadataClient using the provided ClientConfiguration.
+             */
+            EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration& clientConfig);
+            
             virtual ~EC2InstanceProfileConfigLoader() = default;
 
         protected:

@@ -440,7 +440,7 @@ namespace Aws
                */
               ResponseChecksumValidation responseChecksumValidation = ResponseChecksumValidation::WHEN_SUPPORTED;
             } checksumConfig;
-
+            
             /**
              * A helper function to read config value from env variable or aws profile config
              */
@@ -492,6 +492,21 @@ namespace Aws
             * AWS profile name to use for credentials.
             */
             Aws::String profile;
+
+            /**
+             * IMDS configuration settings
+             */
+            struct {
+              /**
+               * Number of total attempts to make when retrieving data from IMDS. Default 1.
+               */
+              long metadataServiceNumAttempts = 1;
+              
+              /**
+               * Timeout in seconds when retrieving data from IMDS. Default 1.
+               */
+              long metadataServiceTimeout = 1;
+            } imdsConfig;
           }credentialProviderConfig;
         };
 
