@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     S3,
     CWL,
-    FH
+    FH,
+    XRAY
   };
 
 namespace DeliveryDestinationTypeMapper

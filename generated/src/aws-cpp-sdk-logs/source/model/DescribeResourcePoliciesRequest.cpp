@@ -28,6 +28,17 @@ Aws::String DescribeResourcePoliciesRequest::SerializePayload() const
 
   }
 
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_policyScopeHasBeenSet)
+  {
+   payload.WithString("policyScope", PolicyScopeMapper::GetNameForPolicyScope(m_policyScope));
+  }
+
   return payload.View().WriteReadable();
 }
 

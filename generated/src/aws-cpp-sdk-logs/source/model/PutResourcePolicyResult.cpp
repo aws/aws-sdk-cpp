@@ -30,6 +30,11 @@ PutResourcePolicyResult& PutResourcePolicyResult::operator =(const Aws::AmazonWe
     m_resourcePolicy = jsonValue.GetObject("resourcePolicy");
     m_resourcePolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("revisionId"))
+  {
+    m_revisionId = jsonValue.GetString("revisionId");
+    m_revisionIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

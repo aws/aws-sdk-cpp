@@ -30,6 +30,8 @@
 #include <aws/bedrock/model/ByteContentDoc.h>
 #include <aws/bedrock/model/CloudWatchConfig.h>
 #include <aws/bedrock/model/CommitmentDuration.h>
+#include <aws/bedrock/model/CreateCustomModelDeploymentRequest.h>
+#include <aws/bedrock/model/CreateCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/CreateCustomModelRequest.h>
 #include <aws/bedrock/model/CreateCustomModelResult.h>
 #include <aws/bedrock/model/CreateEvaluationJobRequest.h>
@@ -59,11 +61,15 @@
 #include <aws/bedrock/model/CustomMetricBedrockEvaluatorModel.h>
 #include <aws/bedrock/model/CustomMetricDefinition.h>
 #include <aws/bedrock/model/CustomMetricEvaluatorModelConfig.h>
+#include <aws/bedrock/model/CustomModelDeploymentStatus.h>
+#include <aws/bedrock/model/CustomModelDeploymentSummary.h>
 #include <aws/bedrock/model/CustomModelSummary.h>
 #include <aws/bedrock/model/CustomModelUnits.h>
 #include <aws/bedrock/model/CustomizationConfig.h>
 #include <aws/bedrock/model/CustomizationType.h>
 #include <aws/bedrock/model/DataProcessingDetails.h>
+#include <aws/bedrock/model/DeleteCustomModelDeploymentRequest.h>
+#include <aws/bedrock/model/DeleteCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementRequest.h>
@@ -120,6 +126,8 @@
 #include <aws/bedrock/model/FoundationModelLifecycleStatus.h>
 #include <aws/bedrock/model/FoundationModelSummary.h>
 #include <aws/bedrock/model/GenerationConfiguration.h>
+#include <aws/bedrock/model/GetCustomModelDeploymentRequest.h>
+#include <aws/bedrock/model/GetCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/GetCustomModelRequest.h>
 #include <aws/bedrock/model/GetCustomModelResult.h>
 #include <aws/bedrock/model/GetEvaluationJobRequest.h>
@@ -219,6 +227,8 @@
 #include <aws/bedrock/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock/model/KnowledgeBaseVectorSearchConfiguration.h>
 #include <aws/bedrock/model/LegalTerm.h>
+#include <aws/bedrock/model/ListCustomModelDeploymentsRequest.h>
+#include <aws/bedrock/model/ListCustomModelDeploymentsResult.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsResult.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>

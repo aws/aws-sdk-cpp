@@ -149,6 +149,44 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deploys a custom model for on-demand inference in Amazon Bedrock. After you
+         * deploy your custom model, you use the deployment's Amazon Resource Name (ARN) as
+         * the <code>modelId</code> parameter when you submit prompts and generate
+         * responses with model inference.</p> <p> For more information about setting up
+         * on-demand inference for custom models, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Set
+         * up inference for a custom model</a>. </p> <p>The following actions are related
+         * to the <code>CreateCustomModelDeployment</code> operation:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModelDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCustomModelDeploymentOutcome CreateCustomModelDeployment(const Model::CreateCustomModelDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCustomModelDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCustomModelDeploymentRequestT = Model::CreateCustomModelDeploymentRequest>
+        Model::CreateCustomModelDeploymentOutcomeCallable CreateCustomModelDeploymentCallable(const CreateCustomModelDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateCustomModelDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCustomModelDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCustomModelDeploymentRequestT = Model::CreateCustomModelDeploymentRequest>
+        void CreateCustomModelDeploymentAsync(const CreateCustomModelDeploymentRequestT& request, const CreateCustomModelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateCustomModelDeployment, request, handler, context);
+        }
+
+        /**
          * <p>Creates an evaluation job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">AWS
          * API Reference</a></p>
@@ -547,6 +585,40 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deletes a custom model deployment. This operation stops the deployment and
+         * removes it from your account. After deletion, the deployment ARN can no longer
+         * be used for inference requests.</p> <p>The following actions are related to the
+         * <code>DeleteCustomModelDeployment</code> operation:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModelDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomModelDeploymentOutcome DeleteCustomModelDeployment(const Model::DeleteCustomModelDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCustomModelDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCustomModelDeploymentRequestT = Model::DeleteCustomModelDeploymentRequest>
+        Model::DeleteCustomModelDeploymentOutcomeCallable DeleteCustomModelDeploymentCallable(const DeleteCustomModelDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteCustomModelDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCustomModelDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCustomModelDeploymentRequestT = Model::DeleteCustomModelDeploymentRequest>
+        void DeleteCustomModelDeploymentAsync(const DeleteCustomModelDeploymentRequestT& request, const DeleteCustomModelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteCustomModelDeployment, request, handler, context);
+        }
+
+        /**
          * <p>Delete the model access agreement for the specified model.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">AWS
@@ -822,6 +894,41 @@ namespace Bedrock
         void GetCustomModelAsync(const GetCustomModelRequestT& request, const GetCustomModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::GetCustomModel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a custom model deployment, including its status,
+         * configuration, and metadata. Use this operation to monitor the deployment status
+         * and retrieve details needed for inference requests.</p> <p>The following actions
+         * are related to the <code>GetCustomModelDeployment</code> operation:</p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModelDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCustomModelDeploymentOutcome GetCustomModelDeployment(const Model::GetCustomModelDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCustomModelDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCustomModelDeploymentRequestT = Model::GetCustomModelDeploymentRequest>
+        Model::GetCustomModelDeploymentOutcomeCallable GetCustomModelDeploymentCallable(const GetCustomModelDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetCustomModelDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for GetCustomModelDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCustomModelDeploymentRequestT = Model::GetCustomModelDeploymentRequest>
+        void GetCustomModelDeploymentAsync(const GetCustomModelDeploymentRequestT& request, const GetCustomModelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetCustomModelDeployment, request, handler, context);
         }
 
         /**
@@ -1228,6 +1335,42 @@ namespace Bedrock
         void GetUseCaseForModelAccessAsync(const GetUseCaseForModelAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetUseCaseForModelAccessRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::GetUseCaseForModelAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Lists custom model deployments in your account. You can filter the results by
+         * creation time, name, status, and associated model. Use this operation to manage
+         * and monitor your custom model deployments.</p> <p>We recommend using pagination
+         * to ensure that the operation returns quickly and successfully.</p> <p>The
+         * following actions are related to the <code>ListCustomModelDeployments</code>
+         * operation:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModelDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomModelDeploymentsOutcome ListCustomModelDeployments(const Model::ListCustomModelDeploymentsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCustomModelDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCustomModelDeploymentsRequestT = Model::ListCustomModelDeploymentsRequest>
+        Model::ListCustomModelDeploymentsOutcomeCallable ListCustomModelDeploymentsCallable(const ListCustomModelDeploymentsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListCustomModelDeployments, request);
+        }
+
+        /**
+         * An Async wrapper for ListCustomModelDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCustomModelDeploymentsRequestT = Model::ListCustomModelDeploymentsRequest>
+        void ListCustomModelDeploymentsAsync(const ListCustomModelDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomModelDeploymentsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListCustomModelDeployments, request, handler, context);
         }
 
         /**

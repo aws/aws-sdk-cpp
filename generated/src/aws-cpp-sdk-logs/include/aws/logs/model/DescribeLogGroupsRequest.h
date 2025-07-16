@@ -70,14 +70,15 @@ namespace Model
     /**
      * <p>If you specify a string for this parameter, the operation returns only log
      * groups that have names that match the string based on a case-sensitive substring
-     * search. For example, if you specify <code>Foo</code>, log groups named
-     * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
-     * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
-     * then only <code>arn</code>, <code>creationTime</code>, and
-     * <code>logGroupName</code> are included in the response. </p>  <p>
-     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
-     * mutually exclusive. Only one of these parameters can be passed. </p> 
+     * search. For example, if you specify <code>DataLogs</code>, log groups named
+     * <code>DataLogs</code>, <code>aws/DataLogs</code>, and <code>GroupDataLogs</code>
+     * would match, but <code>datalogs</code>, <code>Data/log/s</code> and
+     * <code>Groupdata</code> would not match.</p> <p>If you specify
+     * <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+     * <code>creationTime</code>, and <code>logGroupName</code> are included in the
+     * response. </p>  <p> <code>logGroupNamePattern</code> and
+     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
+     * parameters can be passed. </p> 
      */
     inline const Aws::String& GetLogGroupNamePattern() const { return m_logGroupNamePattern; }
     inline bool LogGroupNamePatternHasBeenSet() const { return m_logGroupNamePatternHasBeenSet; }

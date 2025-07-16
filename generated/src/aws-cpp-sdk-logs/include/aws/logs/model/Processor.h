@@ -246,8 +246,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this processor to convert logs into Open Cybersecurity Schema Framework
-     * (OCSF) format</p>
+     * <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF)
+     * format.</p>
      */
     inline const ParseToOCSF& GetParseToOCSF() const { return m_parseToOCSF; }
     inline bool ParseToOCSFHasBeenSet() const { return m_parseToOCSFHasBeenSet; }

@@ -54,6 +54,11 @@ GetThreatIntelSetResult& GetThreatIntelSetResult::operator =(const Aws::AmazonWe
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("expectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("expectedBucketOwner");
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

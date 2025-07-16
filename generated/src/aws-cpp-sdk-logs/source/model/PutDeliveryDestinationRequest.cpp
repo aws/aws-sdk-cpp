@@ -33,6 +33,11 @@ Aws::String PutDeliveryDestinationRequest::SerializePayload() const
 
   }
 
+  if(m_deliveryDestinationTypeHasBeenSet)
+  {
+   payload.WithString("deliveryDestinationType", DeliveryDestinationTypeMapper::GetNameForDeliveryDestinationType(m_deliveryDestinationType));
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

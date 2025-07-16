@@ -134,7 +134,7 @@ namespace Model
     ///@{
     /**
      * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
-     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * state. This field is returned only if the <code>executionArn</code> is a child
      * workflow execution that was started by a Distributed Map state.</p>
      */
     inline const Aws::String& GetLabel() const { return m_label; }

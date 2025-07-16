@@ -23,6 +23,8 @@ namespace Aws
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
+        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
 
 
         ScopeStatus GetScopeStatusForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ScopeStatus::FAILED;
+          }
+          else if (hashCode == DEACTIVATING_HASH)
+          {
+            return ScopeStatus::DEACTIVATING;
+          }
+          else if (hashCode == DEACTIVATED_HASH)
+          {
+            return ScopeStatus::DEACTIVATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "IN_PROGRESS";
           case ScopeStatus::FAILED:
             return "FAILED";
+          case ScopeStatus::DEACTIVATING:
+            return "DEACTIVATING";
+          case ScopeStatus::DEACTIVATED:
+            return "DEACTIVATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

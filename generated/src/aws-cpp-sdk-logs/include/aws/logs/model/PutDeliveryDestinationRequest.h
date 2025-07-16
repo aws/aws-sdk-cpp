@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/OutputFormat.h>
 #include <aws/logs/model/DeliveryDestinationConfiguration.h>
+#include <aws/logs/model/DeliveryDestinationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -63,7 +64,12 @@ namespace Model
     ///@{
     /**
      * <p>A structure that contains the ARN of the Amazon Web Services resource that
-     * will receive the logs.</p>
+     * will receive the logs.</p>  <p>
+     * <code>deliveryDestinationConfiguration</code> is required for CloudWatch Logs,
+     * Amazon S3, Firehose log delivery destinations and not required for X-Ray trace
+     * delivery destinations. <code>deliveryDestinationType</code> is needed for X-Ray
+     * trace delivery destinations but not required for other logs delivery
+     * destinations.</p> 
      */
     inline const DeliveryDestinationConfiguration& GetDeliveryDestinationConfiguration() const { return m_deliveryDestinationConfiguration; }
     inline bool DeliveryDestinationConfigurationHasBeenSet() const { return m_deliveryDestinationConfigurationHasBeenSet; }
@@ -71,6 +77,24 @@ namespace Model
     void SetDeliveryDestinationConfiguration(DeliveryDestinationConfigurationT&& value) { m_deliveryDestinationConfigurationHasBeenSet = true; m_deliveryDestinationConfiguration = std::forward<DeliveryDestinationConfigurationT>(value); }
     template<typename DeliveryDestinationConfigurationT = DeliveryDestinationConfiguration>
     PutDeliveryDestinationRequest& WithDeliveryDestinationConfiguration(DeliveryDestinationConfigurationT&& value) { SetDeliveryDestinationConfiguration(std::forward<DeliveryDestinationConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of delivery destination. This parameter specifies the target service
+     * where log data will be delivered. Valid values include:</p> <ul> <li> <p>
+     * <code>S3</code> - Amazon S3 for long-term storage and analytics</p> </li> <li>
+     * <p> <code>CWL</code> - CloudWatch Logs for centralized log management</p> </li>
+     * <li> <p> <code>FH</code> - Amazon Kinesis Data Firehose for real-time data
+     * streaming</p> </li> <li> <p> <code>XRAY</code> - Amazon Web Services X-Ray for
+     * distributed tracing and application monitoring</p> </li> </ul> <p>The delivery
+     * destination type determines the format and configuration options available for
+     * log delivery.</p>
+     */
+    inline DeliveryDestinationType GetDeliveryDestinationType() const { return m_deliveryDestinationType; }
+    inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }
+    inline void SetDeliveryDestinationType(DeliveryDestinationType value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
+    inline PutDeliveryDestinationRequest& WithDeliveryDestinationType(DeliveryDestinationType value) { SetDeliveryDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,6 +125,9 @@ namespace Model
 
     DeliveryDestinationConfiguration m_deliveryDestinationConfiguration;
     bool m_deliveryDestinationConfigurationHasBeenSet = false;
+
+    DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
+    bool m_deliveryDestinationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

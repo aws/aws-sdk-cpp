@@ -93,6 +93,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified
+     * in the <b>location</b> parameter. This field appears in the response only if it
+     * was provided during ThreatIntelSet creation or update.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    GetThreatIntelSetResult& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -116,6 +129,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

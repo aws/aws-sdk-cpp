@@ -59,7 +59,14 @@ namespace Model
     ///@{
     /**
      * <p>If specified, only list the executions whose current execution status matches
-     * the given filter.</p>
+     * the given filter.</p> <p>If you provide a <code>PENDING_REDRIVE</code>
+     * statusFilter, you must specify <code>mapRunArn</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child
+     * workflow execution redrive behaviour</a> in the <i>Step Functions Developer
+     * Guide</i>. </p> <p>If you provide a stateMachineArn and a
+     * <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation
+     * exception.</p>
      */
     inline ExecutionStatus GetStatusFilter() const { return m_statusFilter; }
     inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }

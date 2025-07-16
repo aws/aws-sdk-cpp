@@ -22,6 +22,12 @@ Aws::String PutOriginEndpointPolicyRequest::SerializePayload() const
 
   }
 
+  if(m_cdnAuthConfigurationHasBeenSet)
+  {
+   payload.WithObject("CdnAuthConfiguration", m_cdnAuthConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -23,6 +23,7 @@
 #include <aws/bedrock/BedrockEndpointProvider.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobRequest.h>
 #include <aws/bedrock/model/CreateCustomModelRequest.h>
+#include <aws/bedrock/model/CreateCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/CreateEvaluationJobRequest.h>
 #include <aws/bedrock/model/CreateFoundationModelAgreementRequest.h>
 #include <aws/bedrock/model/CreateGuardrailRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/bedrock/model/CreatePromptRouterRequest.h>
 #include <aws/bedrock/model/CreateProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
+#include <aws/bedrock/model/DeleteCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementRequest.h>
 #include <aws/bedrock/model/DeleteGuardrailRequest.h>
 #include <aws/bedrock/model/DeleteImportedModelRequest.h>
@@ -46,6 +48,7 @@
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/GetCustomModelRequest.h>
+#include <aws/bedrock/model/GetCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/GetEvaluationJobRequest.h>
 #include <aws/bedrock/model/GetFoundationModelRequest.h>
 #include <aws/bedrock/model/GetFoundationModelAvailabilityRequest.h>
@@ -61,6 +64,7 @@
 #include <aws/bedrock/model/GetPromptRouterRequest.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
+#include <aws/bedrock/model/ListCustomModelDeploymentsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListFoundationModelAgreementOffersRequest.h>
@@ -278,6 +282,33 @@ CreateCustomModelOutcome BedrockClient::CreateCustomModel(const CreateCustomMode
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/custom-models/create-custom-model");
       return CreateCustomModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateCustomModelDeploymentOutcome BedrockClient::CreateCustomModelDeployment(const CreateCustomModelDeploymentRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateCustomModelDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateCustomModelDeployment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateCustomModelDeploymentOutcome>(
+    [&]()-> CreateCustomModelDeploymentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments");
+      return CreateCustomModelDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -647,6 +678,39 @@ DeleteCustomModelOutcome BedrockClient::DeleteCustomModel(const DeleteCustomMode
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteCustomModelDeploymentOutcome BedrockClient::DeleteCustomModelDeployment(const DeleteCustomModelDeploymentRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCustomModelDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CustomModelDeploymentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomModelDeployment", "Required field: CustomModelDeploymentIdentifier, is not set");
+    return DeleteCustomModelDeploymentOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomModelDeploymentIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCustomModelDeployment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCustomModelDeploymentOutcome>(
+    [&]()-> DeleteCustomModelDeploymentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+      return DeleteCustomModelDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteFoundationModelAgreementOutcome BedrockClient::DeleteFoundationModelAgreement(const DeleteFoundationModelAgreementRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteFoundationModelAgreement);
@@ -960,6 +1024,39 @@ GetCustomModelOutcome BedrockClient::GetCustomModel(const GetCustomModelRequest&
       endpointResolutionOutcome.GetResult().AddPathSegments("/custom-models/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModelIdentifier());
       return GetCustomModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetCustomModelDeploymentOutcome BedrockClient::GetCustomModelDeployment(const GetCustomModelDeploymentRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetCustomModelDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CustomModelDeploymentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCustomModelDeployment", "Required field: CustomModelDeploymentIdentifier, is not set");
+    return GetCustomModelDeploymentOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomModelDeploymentIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetCustomModelDeployment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetCustomModelDeployment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetCustomModelDeploymentOutcome>(
+    [&]()-> GetCustomModelDeploymentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCustomModelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+      return GetCustomModelDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1443,6 +1540,33 @@ GetUseCaseForModelAccessOutcome BedrockClient::GetUseCaseForModelAccess(const Ge
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUseCaseForModelAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/use-case-for-model-access");
       return GetUseCaseForModelAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCustomModelDeploymentsOutcome BedrockClient::ListCustomModelDeployments(const ListCustomModelDeploymentsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCustomModelDeployments);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomModelDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCustomModelDeployments, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCustomModelDeployments, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCustomModelDeployments",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCustomModelDeploymentsOutcome>(
+    [&]()-> ListCustomModelDeploymentsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomModelDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments");
+      return ListCustomModelDeploymentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

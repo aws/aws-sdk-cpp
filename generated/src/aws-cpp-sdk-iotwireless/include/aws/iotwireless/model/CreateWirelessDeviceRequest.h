@@ -51,7 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the new resource.</p>
+     * <p>The name of the new resource.</p>  <p>The following special characters
+     * aren't accepted: <code>&lt;&gt;^#~$</code> </p> 
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

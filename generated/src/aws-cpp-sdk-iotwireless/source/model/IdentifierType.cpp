@@ -22,7 +22,6 @@ namespace Aws
 
         static const int PartnerAccountId_HASH = HashingUtils::HashString("PartnerAccountId");
         static const int DevEui_HASH = HashingUtils::HashString("DevEui");
-        static const int FuotaTaskId_HASH = HashingUtils::HashString("FuotaTaskId");
         static const int GatewayEui_HASH = HashingUtils::HashString("GatewayEui");
         static const int WirelessDeviceId_HASH = HashingUtils::HashString("WirelessDeviceId");
         static const int WirelessGatewayId_HASH = HashingUtils::HashString("WirelessGatewayId");
@@ -38,10 +37,6 @@ namespace Aws
           else if (hashCode == DevEui_HASH)
           {
             return IdentifierType::DevEui;
-          }
-          else if (hashCode == FuotaTaskId_HASH)
-          {
-            return IdentifierType::FuotaTaskId;
           }
           else if (hashCode == GatewayEui_HASH)
           {
@@ -75,8 +70,6 @@ namespace Aws
             return "PartnerAccountId";
           case IdentifierType::DevEui:
             return "DevEui";
-          case IdentifierType::FuotaTaskId:
-            return "FuotaTaskId";
           case IdentifierType::GatewayEui:
             return "GatewayEui";
           case IdentifierType::WirelessDeviceId:

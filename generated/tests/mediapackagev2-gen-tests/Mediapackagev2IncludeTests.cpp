@@ -18,6 +18,7 @@
 #include <aws/mediapackagev2/model/AdMarkerHls.h>
 #include <aws/mediapackagev2/model/CancelHarvestJobRequest.h>
 #include <aws/mediapackagev2/model/CancelHarvestJobResult.h>
+#include <aws/mediapackagev2/model/CdnAuthConfiguration.h>
 #include <aws/mediapackagev2/model/ChannelGroupListConfiguration.h>
 #include <aws/mediapackagev2/model/ChannelListConfiguration.h>
 #include <aws/mediapackagev2/model/CmafEncryptionMethod.h>

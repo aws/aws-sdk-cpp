@@ -31,9 +31,9 @@ namespace Model
    * <p>This structure contains information about one <i>delivery destination</i> in
    * your account. A delivery destination is an Amazon Web Services resource that
    * represents an Amazon Web Services service that logs can be sent to. CloudWatch
-   * Logs, Amazon S3, are supported as Firehose delivery destinations.</p> <p>To
-   * configure logs delivery between a supported Amazon Web Services service and a
-   * destination, you must do the following:</p> <ul> <li> <p>Create a delivery
+   * Logs, Amazon S3, Firehose, and X-Ray are supported as delivery destinations.</p>
+   * <p>To configure logs delivery between a supported Amazon Web Services service
+   * and a destination, you must do the following:</p> <ul> <li> <p>Create a delivery
    * source, which is a logical object that represents the resource that is actually
    * sending the logs. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
@@ -89,8 +89,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Firehose.</p>
+     * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3,
+     * Firehose, or X-Ray.</p>
      */
     inline DeliveryDestinationType GetDeliveryDestinationType() const { return m_deliveryDestinationType; }
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }

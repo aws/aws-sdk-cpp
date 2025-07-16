@@ -56,6 +56,12 @@ Aws::String CreateThreatIntelSetRequest::SerializePayload() const
 
   }
 
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("expectedBucketOwner", m_expectedBucketOwner);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

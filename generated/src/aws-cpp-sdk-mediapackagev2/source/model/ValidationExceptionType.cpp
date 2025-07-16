@@ -92,6 +92,21 @@ namespace Aws
         static const int ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST");
         static const int ISM_CONTAINER_TYPE_WITH_SCTE_HASH = HashingUtils::HashString("ISM_CONTAINER_TYPE_WITH_SCTE");
         static const int ISM_CONTAINER_WITH_KEY_ROTATION_HASH = HashingUtils::HashString("ISM_CONTAINER_WITH_KEY_ROTATION");
+        static const int BATCH_GET_SECRET_VALUE_DENIED_HASH = HashingUtils::HashString("BATCH_GET_SECRET_VALUE_DENIED");
+        static const int GET_SECRET_VALUE_DENIED_HASH = HashingUtils::HashString("GET_SECRET_VALUE_DENIED");
+        static const int DESCRIBE_SECRET_DENIED_HASH = HashingUtils::HashString("DESCRIBE_SECRET_DENIED");
+        static const int INVALID_SECRET_FORMAT_HASH = HashingUtils::HashString("INVALID_SECRET_FORMAT");
+        static const int SECRET_IS_NOT_ONE_KEY_VALUE_PAIR_HASH = HashingUtils::HashString("SECRET_IS_NOT_ONE_KEY_VALUE_PAIR");
+        static const int INVALID_SECRET_KEY_HASH = HashingUtils::HashString("INVALID_SECRET_KEY");
+        static const int INVALID_SECRET_VALUE_HASH = HashingUtils::HashString("INVALID_SECRET_VALUE");
+        static const int SECRET_ARN_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SECRET_ARN_RESOURCE_NOT_FOUND");
+        static const int DECRYPT_SECRET_FAILED_HASH = HashingUtils::HashString("DECRYPT_SECRET_FAILED");
+        static const int TOO_MANY_SECRETS_HASH = HashingUtils::HashString("TOO_MANY_SECRETS");
+        static const int DUPLICATED_SECRET_HASH = HashingUtils::HashString("DUPLICATED_SECRET");
+        static const int MALFORMED_SECRET_ARN_HASH = HashingUtils::HashString("MALFORMED_SECRET_ARN");
+        static const int SECRET_FROM_DIFFERENT_ACCOUNT_HASH = HashingUtils::HashString("SECRET_FROM_DIFFERENT_ACCOUNT");
+        static const int SECRET_FROM_DIFFERENT_REGION_HASH = HashingUtils::HashString("SECRET_FROM_DIFFERENT_REGION");
+        static const int INVALID_SECRET_HASH = HashingUtils::HashString("INVALID_SECRET");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -385,6 +400,66 @@ namespace Aws
           {
             return ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION;
           }
+          else if (hashCode == BATCH_GET_SECRET_VALUE_DENIED_HASH)
+          {
+            return ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED;
+          }
+          else if (hashCode == GET_SECRET_VALUE_DENIED_HASH)
+          {
+            return ValidationExceptionType::GET_SECRET_VALUE_DENIED;
+          }
+          else if (hashCode == DESCRIBE_SECRET_DENIED_HASH)
+          {
+            return ValidationExceptionType::DESCRIBE_SECRET_DENIED;
+          }
+          else if (hashCode == INVALID_SECRET_FORMAT_HASH)
+          {
+            return ValidationExceptionType::INVALID_SECRET_FORMAT;
+          }
+          else if (hashCode == SECRET_IS_NOT_ONE_KEY_VALUE_PAIR_HASH)
+          {
+            return ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR;
+          }
+          else if (hashCode == INVALID_SECRET_KEY_HASH)
+          {
+            return ValidationExceptionType::INVALID_SECRET_KEY;
+          }
+          else if (hashCode == INVALID_SECRET_VALUE_HASH)
+          {
+            return ValidationExceptionType::INVALID_SECRET_VALUE;
+          }
+          else if (hashCode == SECRET_ARN_RESOURCE_NOT_FOUND_HASH)
+          {
+            return ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND;
+          }
+          else if (hashCode == DECRYPT_SECRET_FAILED_HASH)
+          {
+            return ValidationExceptionType::DECRYPT_SECRET_FAILED;
+          }
+          else if (hashCode == TOO_MANY_SECRETS_HASH)
+          {
+            return ValidationExceptionType::TOO_MANY_SECRETS;
+          }
+          else if (hashCode == DUPLICATED_SECRET_HASH)
+          {
+            return ValidationExceptionType::DUPLICATED_SECRET;
+          }
+          else if (hashCode == MALFORMED_SECRET_ARN_HASH)
+          {
+            return ValidationExceptionType::MALFORMED_SECRET_ARN;
+          }
+          else if (hashCode == SECRET_FROM_DIFFERENT_ACCOUNT_HASH)
+          {
+            return ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT;
+          }
+          else if (hashCode == SECRET_FROM_DIFFERENT_REGION_HASH)
+          {
+            return ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION;
+          }
+          else if (hashCode == INVALID_SECRET_HASH)
+          {
+            return ValidationExceptionType::INVALID_SECRET;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -545,6 +620,36 @@ namespace Aws
             return "ISM_CONTAINER_TYPE_WITH_SCTE";
           case ValidationExceptionType::ISM_CONTAINER_WITH_KEY_ROTATION:
             return "ISM_CONTAINER_WITH_KEY_ROTATION";
+          case ValidationExceptionType::BATCH_GET_SECRET_VALUE_DENIED:
+            return "BATCH_GET_SECRET_VALUE_DENIED";
+          case ValidationExceptionType::GET_SECRET_VALUE_DENIED:
+            return "GET_SECRET_VALUE_DENIED";
+          case ValidationExceptionType::DESCRIBE_SECRET_DENIED:
+            return "DESCRIBE_SECRET_DENIED";
+          case ValidationExceptionType::INVALID_SECRET_FORMAT:
+            return "INVALID_SECRET_FORMAT";
+          case ValidationExceptionType::SECRET_IS_NOT_ONE_KEY_VALUE_PAIR:
+            return "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR";
+          case ValidationExceptionType::INVALID_SECRET_KEY:
+            return "INVALID_SECRET_KEY";
+          case ValidationExceptionType::INVALID_SECRET_VALUE:
+            return "INVALID_SECRET_VALUE";
+          case ValidationExceptionType::SECRET_ARN_RESOURCE_NOT_FOUND:
+            return "SECRET_ARN_RESOURCE_NOT_FOUND";
+          case ValidationExceptionType::DECRYPT_SECRET_FAILED:
+            return "DECRYPT_SECRET_FAILED";
+          case ValidationExceptionType::TOO_MANY_SECRETS:
+            return "TOO_MANY_SECRETS";
+          case ValidationExceptionType::DUPLICATED_SECRET:
+            return "DUPLICATED_SECRET";
+          case ValidationExceptionType::MALFORMED_SECRET_ARN:
+            return "MALFORMED_SECRET_ARN";
+          case ValidationExceptionType::SECRET_FROM_DIFFERENT_ACCOUNT:
+            return "SECRET_FROM_DIFFERENT_ACCOUNT";
+          case ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION:
+            return "SECRET_FROM_DIFFERENT_REGION";
+          case ValidationExceptionType::INVALID_SECRET:
+            return "INVALID_SECRET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
