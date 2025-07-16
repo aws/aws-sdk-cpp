@@ -22,25 +22,25 @@
 #include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <aws/dynamodb/model/TableStatus.h>
-#include <performance-tests/PerformanceTestBase.h>
 #include <performance-tests/Utils.h>
 #include <performance-tests/services/dynamodb/DynamoDBPerformanceTest.h>
+#include <performance-tests/services/dynamodb/DynamoDBTestConfig.h>
 
 #include <cassert>
 #include <chrono>
 #include <thread>
 
-PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanceTest(const Aws::String& region, const TestCase& config,
+PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanceTest(const Aws::Client::ClientConfiguration& clientConfig,
+                                                                                      const TestConfig::TestCase& testConfig,
                                                                                       int iterations)
-    : m_config(config), m_region(region), m_iterations(iterations) {
-  Aws::Client::ClientConfiguration cfg;
-  cfg.region = m_region;
-  m_dynamodb = Aws::MakeUnique<Aws::DynamoDB::DynamoDBClient>("DynamoDBPerformanceTest", cfg);
+    : m_dynamodb(Aws::MakeUnique<Aws::DynamoDB::DynamoDBClient>("DynamoDBPerformanceTest", clientConfig)),
+      m_testConfig(testConfig),
+      m_iterations(iterations),
+      m_tableName("perf-table-" + PerformanceTest::Utils::GenerateUniqueId()) {
+  assert(m_dynamodb && "DynamoDB client not initialized");
 }
 
-Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
-  m_tableName = "perf-table-" + PerformanceTest::Utils::GenerateUniqueId();
-
+Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Setup() {
   Aws::DynamoDB::Model::CreateTableRequest createTableRequest;
   createTableRequest.SetTableName(m_tableName);
 
@@ -58,7 +58,7 @@ Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services
 
   auto createTableOutcome = m_dynamodb->CreateTable(createTableRequest);
   if (!createTableOutcome.IsSuccess()) {
-    return PerformanceTest::SetupError("DynamoDB Setup() - CreateTable failed: " + createTableOutcome.GetError().GetMessage());
+    return "DynamoDB Setup() - CreateTable failed: " + createTableOutcome.GetError().GetMessage();
   }
 
   // Wait for table to become active
@@ -70,34 +70,31 @@ Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services
   while (count < MAX_QUERIES) {
     const Aws::DynamoDB::Model::DescribeTableOutcome& describeOutcome = m_dynamodb->DescribeTable(describeRequest);
     if (describeOutcome.IsSuccess()) {
-      Aws::DynamoDB::Model::TableStatus status = describeOutcome.GetResult().GetTable().GetTableStatus();
+      Aws::DynamoDB::Model::TableStatus const status = describeOutcome.GetResult().GetTable().GetTableStatus();
       if (Aws::DynamoDB::Model::TableStatus::ACTIVE == status) {
         break;
       }
       std::this_thread::sleep_for(std::chrono::seconds(1));
     } else {
-      return PerformanceTest::SetupError("DynamoDB Setup() - DescribeTable failed: " + describeOutcome.GetError().GetMessage());
+      return "DynamoDB Setup() - DescribeTable failed: " + describeOutcome.GetError().GetMessage();
     }
     count++;
   }
 
   if (count >= MAX_QUERIES) {
-    return PerformanceTest::SetupError("DynamoDB Setup() - Table did not become active within timeout");
+    return "DynamoDB Setup() - Table did not become active within timeout";
   }
   return true;
 }
 
 void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
-  assert(m_dynamodb && "DynamoDB client not initialized - Setup() must succeed before Run()");
-  assert(!m_tableName.empty() && "DynamoDB table name empty - Setup() must succeed before Run()");
-
-  const auto payload = PerformanceTest::Utils::RandomString(m_config.sizeBytes);
+  const auto payload = PerformanceTest::Utils::RandomString(TestConfig::GetPayloadSizeInBytes(m_testConfig.payloadSize));
 
   // Run PutItem multiple times
   for (int i = 0; i < m_iterations; i++) {
     Aws::DynamoDB::Model::PutItemRequest putItemRequest;
     putItemRequest.SetTableName(m_tableName);
-    putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
+    putItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetPayloadSizeLabel(m_testConfig.payloadSize));
     putItemRequest.AddItem("data", Aws::DynamoDB::Model::AttributeValue().SetS(payload));
 
     auto putItemOutcome = m_dynamodb->PutItem(putItemRequest);
@@ -110,7 +107,7 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
   for (int i = 0; i < m_iterations; i++) {
     Aws::DynamoDB::Model::GetItemRequest getItemRequest;
     getItemRequest.SetTableName(m_tableName);
-    getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
+    getItemRequest.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetPayloadSizeLabel(m_testConfig.payloadSize));
     getItemRequest.AddKey("data", Aws::DynamoDB::Model::AttributeValue().SetS(payload));
 
     auto getItemOutcome = m_dynamodb->GetItem(getItemRequest);
@@ -121,10 +118,6 @@ void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::Run() {
 }
 
 void PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::TearDown() {
-  if (!m_dynamodb || m_tableName.empty()) {
-    return;
-  }
-
   Aws::DynamoDB::Model::DeleteTableRequest deleteTableRequest;
   deleteTableRequest.SetTableName(m_tableName);
   auto deleteTableOutcome = m_dynamodb->DeleteTable(deleteTableRequest);

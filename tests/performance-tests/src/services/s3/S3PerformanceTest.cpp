@@ -22,28 +22,30 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/LocationType.h>
 #include <aws/s3/model/PutObjectRequest.h>
-#include <performance-tests/PerformanceTestBase.h>
 #include <performance-tests/Utils.h>
 #include <performance-tests/services/s3/S3PerformanceTest.h>
+#include <performance-tests/services/s3/S3TestConfig.h>
 
 #include <cassert>
-#include <cstring>
 
-PerformanceTest::Services::S3::S3PerformanceTest::S3PerformanceTest(const Aws::String& region, const TestCase& config,
-                                                                    const Aws::String& availabilityZoneId, int iterations)
-    : m_config(config), m_region(region), m_availabilityZoneId(availabilityZoneId), m_iterations(iterations) {
-  Aws::Client::ClientConfiguration cfg;
-  cfg.region = m_region;
-  m_s3 = Aws::MakeUnique<Aws::S3::S3Client>("S3PerformanceTest", cfg);
+PerformanceTest::Services::S3::S3PerformanceTest::S3PerformanceTest(const Aws::Client::ClientConfiguration& clientConfig,
+                                                                    const TestConfig::TestCase& testConfig, int iterations,
+                                                                    const Aws::String& availabilityZoneId)
+    : m_s3(Aws::MakeUnique<Aws::S3::S3Client>("S3PerformanceTest", clientConfig)),
+      m_testConfig(testConfig),
+      m_iterations(iterations),
+      m_bucketName(testConfig.bucketType == TestConfig::BucketType::Express
+                       ? "perf-express-" + PerformanceTest::Utils::GenerateUniqueId() + "--" + availabilityZoneId + "--x-s3"
+                       : "perf-standard-" + PerformanceTest::Utils::GenerateUniqueId()),
+      m_availabilityZoneId(availabilityZoneId) {
+  assert(m_s3 && "S3 client not initialized");
 }
 
-Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services::S3::S3PerformanceTest::Setup() {
+Aws::Utils::Outcome<bool, Aws::String> PerformanceTest::Services::S3::S3PerformanceTest::Setup() {
   Aws::S3::Model::CreateBucketRequest cbr;
-  Aws::String const bucketId = PerformanceTest::Utils::GenerateUniqueId();
+  cbr.SetBucket(m_bucketName);
 
-  if (strcmp(m_config.bucketTypeLabel, "s3-express") == 0) {
-    m_bucketName = "perf-express-" + bucketId + "--" + m_availabilityZoneId + "--x-s3";
-    cbr.SetBucket(m_bucketName);
+  if (m_testConfig.bucketType == TestConfig::BucketType::Express) {
     Aws::S3::Model::CreateBucketConfiguration bucketConfig;
     bucketConfig.SetLocation(
         Aws::S3::Model::LocationInfo().WithType(Aws::S3::Model::LocationType::AvailabilityZone).WithName(m_availabilityZoneId));
@@ -53,23 +55,17 @@ Aws::Utils::Outcome<bool, PerformanceTest::SetupError> PerformanceTest::Services
                                .WithDataRedundancy(Aws::S3::Model::DataRedundancy::SingleAvailabilityZone));
 
     cbr.SetCreateBucketConfiguration(bucketConfig);
-  } else {
-    m_bucketName = "perf-standard-" + bucketId;
-    cbr.SetBucket(m_bucketName);
   }
 
   auto createOutcome = m_s3->CreateBucket(cbr);
   if (!createOutcome.IsSuccess()) {
-    return PerformanceTest::SetupError("S3 Setup() - CreateBucket failed: " + createOutcome.GetError().GetMessage());
+    return "S3 Setup() - CreateBucket failed: " + createOutcome.GetError().GetMessage();
   }
   return true;
 }
 
 void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
-  assert(m_s3 && "S3 client not initialized - Setup() must succeed before Run()");
-  assert(!m_bucketName.empty() && "S3 bucket name empty - Setup() must succeed before Run()");
-
-  const auto randomPayload = PerformanceTest::Utils::RandomString(m_config.sizeBytes);
+  const auto randomPayload = PerformanceTest::Utils::RandomString(TestConfig::GetPayloadSizeInBytes(m_testConfig.payloadSize));
 
   // Run PutObject multiple times
   for (int i = 0; i < m_iterations; i++) {
@@ -77,8 +73,8 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
 
     Aws::S3::Model::PutObjectRequest por;
     por.WithBucket(m_bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)).SetBody(stream);
-    por.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
-    por.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", m_config.bucketTypeLabel);
+    por.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetPayloadSizeLabel(m_testConfig.payloadSize));
+    por.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", TestConfig::GetBucketTypeLabel(m_testConfig.bucketType));
     auto putOutcome = m_s3->PutObject(por);
     if (!putOutcome.IsSuccess()) {
       AWS_LOG_ERROR("PerformanceTest", ("S3 Run() - PutObject failed: " + putOutcome.GetError().GetMessage()).c_str());
@@ -89,8 +85,8 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
   for (int i = 0; i < m_iterations; i++) {
     Aws::S3::Model::GetObjectRequest gor;
     gor.WithBucket(m_bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i));
-    gor.SetAdditionalCustomHeaderValue("test-dimension-size", m_config.sizeLabel);
-    gor.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", m_config.bucketTypeLabel);
+    gor.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetPayloadSizeLabel(m_testConfig.payloadSize));
+    gor.SetAdditionalCustomHeaderValue("test-dimension-bucket-type", TestConfig::GetBucketTypeLabel(m_testConfig.bucketType));
     auto getOutcome = m_s3->GetObject(gor);
     if (!getOutcome.IsSuccess()) {
       AWS_LOG_ERROR("PerformanceTest", ("S3 Run() - GetObject failed: " + getOutcome.GetError().GetMessage()).c_str());
@@ -99,10 +95,6 @@ void PerformanceTest::Services::S3::S3PerformanceTest::Run() {
 }
 
 void PerformanceTest::Services::S3::S3PerformanceTest::TearDown() {
-  if (!m_s3 || m_bucketName.empty()) {
-    return;
-  }
-
   for (int i = 0; i < m_iterations; i++) {
     auto deleteObjectOutcome = m_s3->DeleteObject(
         Aws::S3::Model::DeleteObjectRequest().WithBucket(m_bucketName).WithKey("test-object-" + Aws::Utils::StringUtils::to_string(i)));

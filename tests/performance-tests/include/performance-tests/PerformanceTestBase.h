@@ -11,15 +11,6 @@
 namespace PerformanceTest {
 
 /**
- * Setup error for performance tests.
- */
-struct SetupError {
-  Aws::String message;
-  SetupError() = default;
-  SetupError(const Aws::String& msg) : message(msg) {}
-};
-
-/**
  * Base class for all performance tests.
  */
 class PerformanceTestBase {
@@ -30,7 +21,7 @@ class PerformanceTestBase {
    * Initialize resources for the test.
    * @return Outcome indicating success or failure with error details
    */
-  virtual Aws::Utils::Outcome<bool, SetupError> Setup() = 0;
+  virtual Aws::Utils::Outcome<bool, Aws::String> Setup() = 0;
 
   /**
    * Run the performance test operations.
