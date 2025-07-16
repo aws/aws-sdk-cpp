@@ -62,11 +62,10 @@ namespace Model
     ///@{
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
-     * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p>  <p>Length
-     * constraints apply to the payload size, and are expressed as bytes in UTF-8
-     * encoding.</p>
+     * example:</p> <p> <code>"{\"first_name\" : \"Tim\"}"</code> </p>  <p>If you
+     * don't include any JSON input data, you still must include the two braces, for
+     * example: <code>"{}"</code> </p>  <p>Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
@@ -79,7 +78,13 @@ namespace Model
     ///@{
     /**
      * <p>Passes the X-Ray trace header. The trace header can also be passed in the
-     * request payload.</p>
+     * request payload.</p>  <p> For X-Ray traces, all Amazon Web Services
+     * services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request.
+     * Using the header is the preferred mechanism to identify a trace.
+     * <code>StartExecution</code> and <code>StartSyncExecution</code> API operations
+     * can also use <code>traceHeader</code> from the body of the request payload. If
+     * <b>both</b> sources are provided, Step Functions will use the <b>header
+     * value</b> (preferred) over the value in the request body. </p> 
      */
     inline const Aws::String& GetTraceHeader() const { return m_traceHeader; }
     inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }

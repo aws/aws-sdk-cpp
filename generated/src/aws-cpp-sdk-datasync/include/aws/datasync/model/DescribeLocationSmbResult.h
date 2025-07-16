@@ -128,9 +128,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to.
-     * This element applies only if <code>AuthenticationType</code> is set to
-     * <code>KERBEROS</code>.</p>
+     * <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server
+     * belongs to. This element applies only if <code>AuthenticationType</code> is set
+     * to <code>KERBEROS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const { return m_dnsIpAddresses; }
     template<typename DnsIpAddressesT = Aws::Vector<Aws::String>>

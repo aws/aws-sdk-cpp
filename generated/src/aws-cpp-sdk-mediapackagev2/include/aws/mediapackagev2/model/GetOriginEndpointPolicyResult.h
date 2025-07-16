@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackagev2/model/CdnAuthConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -83,6 +84,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The settings for using authorization headers between the MediaPackage
+     * endpoint and your CDN. </p> <p>For information about CDN authorization, see <a
+     * href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN
+     * authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+     */
+    inline const CdnAuthConfiguration& GetCdnAuthConfiguration() const { return m_cdnAuthConfiguration; }
+    template<typename CdnAuthConfigurationT = CdnAuthConfiguration>
+    void SetCdnAuthConfiguration(CdnAuthConfigurationT&& value) { m_cdnAuthConfigurationHasBeenSet = true; m_cdnAuthConfiguration = std::forward<CdnAuthConfigurationT>(value); }
+    template<typename CdnAuthConfigurationT = CdnAuthConfiguration>
+    GetOriginEndpointPolicyResult& WithCdnAuthConfiguration(CdnAuthConfigurationT&& value) { SetCdnAuthConfiguration(std::forward<CdnAuthConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -103,6 +118,9 @@ namespace Model
 
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
+
+    CdnAuthConfiguration m_cdnAuthConfiguration;
+    bool m_cdnAuthConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

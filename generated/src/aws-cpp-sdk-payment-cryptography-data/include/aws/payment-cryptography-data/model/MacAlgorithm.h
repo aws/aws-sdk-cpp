@@ -19,6 +19,7 @@ namespace Model
     ISO9797_ALGORITHM1,
     ISO9797_ALGORITHM3,
     CMAC,
+    HMAC,
     HMAC_SHA224,
     HMAC_SHA256,
     HMAC_SHA384,

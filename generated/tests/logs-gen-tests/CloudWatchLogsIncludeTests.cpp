@@ -203,6 +203,7 @@
 #include <aws/logs/model/ParseWAF.h>
 #include <aws/logs/model/PatternToken.h>
 #include <aws/logs/model/Policy.h>
+#include <aws/logs/model/PolicyScope.h>
 #include <aws/logs/model/PolicyType.h>
 #include <aws/logs/model/Processor.h>
 #include <aws/logs/model/PutAccountPolicyRequest.h>

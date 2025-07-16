@@ -7,6 +7,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/model/PolicyScope.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +55,31 @@ namespace Model
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeResourcePoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the CloudWatch Logs resource for which to query the resource
+     * policy.</p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DescribeResourcePoliciesRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the scope of the resource policy. Valid values are
+     * <code>ACCOUNT</code> or <code>RESOURCE</code>. When not specified, defaults to
+     * <code>ACCOUNT</code>.</p>
+     */
+    inline PolicyScope GetPolicyScope() const { return m_policyScope; }
+    inline bool PolicyScopeHasBeenSet() const { return m_policyScopeHasBeenSet; }
+    inline void SetPolicyScope(PolicyScope value) { m_policyScopeHasBeenSet = true; m_policyScope = value; }
+    inline DescribeResourcePoliciesRequest& WithPolicyScope(PolicyScope value) { SetPolicyScope(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -61,6 +87,12 @@ namespace Model
 
     int m_limit{0};
     bool m_limitHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
+
+    PolicyScope m_policyScope{PolicyScope::NOT_SET};
+    bool m_policyScopeHasBeenSet = false;
   };
 
 } // namespace Model

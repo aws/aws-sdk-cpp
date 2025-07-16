@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     SUCCEEDED,
     IN_PROGRESS,
-    FAILED
+    FAILED,
+    DEACTIVATING,
+    DEACTIVATED
   };
 
 namespace ScopeStatusMapper

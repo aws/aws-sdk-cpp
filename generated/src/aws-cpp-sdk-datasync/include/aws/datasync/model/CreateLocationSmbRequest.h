@@ -63,11 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the domain name or IP address of the SMB file server that your
-     * DataSync agent connects to.</p> <p>Remember the following when configuring this
-     * parameter:</p> <ul> <li> <p>You can't specify an IP version 6 (IPv6)
-     * address.</p> </li> <li> <p>If you're using Kerberos authentication, you must
-     * specify a domain name.</p> </li> </ul>
+     * <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server
+     * that your DataSync agent connects to.</p>  <p>If you're using Kerberos
+     * authentication, you must specify a domain name.</p> 
      */
     inline const Aws::String& GetServerHostname() const { return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
@@ -186,11 +184,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server
-     * belongs to. This parameter applies only if <code>AuthenticationType</code> is
-     * set to <code>KERBEROS</code>.</p> <p>If you have multiple domains in your
-     * environment, configuring this parameter makes sure that DataSync connects to the
-     * right SMB file server.</p>
+     * <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file
+     * server belongs to. This parameter applies only if
+     * <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p> <p>If you
+     * have multiple domains in your environment, configuring this parameter makes sure
+     * that DataSync connects to the right SMB file server.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const { return m_dnsIpAddresses; }
     inline bool DnsIpAddressesHasBeenSet() const { return m_dnsIpAddressesHasBeenSet; }
@@ -204,7 +202,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm
+     * <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm
      * that has permission to access the files, folders, and file metadata in your SMB
      * file server.</p> <p>A Kerberos principal might look like
      * <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p> <p>Principal names are case

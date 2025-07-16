@@ -23,6 +23,7 @@ namespace Aws
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int CWL_HASH = HashingUtils::HashString("CWL");
         static const int FH_HASH = HashingUtils::HashString("FH");
+        static const int XRAY_HASH = HashingUtils::HashString("XRAY");
 
 
         DeliveryDestinationType GetDeliveryDestinationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FH_HASH)
           {
             return DeliveryDestinationType::FH;
+          }
+          else if (hashCode == XRAY_HASH)
+          {
+            return DeliveryDestinationType::XRAY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "CWL";
           case DeliveryDestinationType::FH:
             return "FH";
+          case DeliveryDestinationType::XRAY:
+            return "XRAY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,7 +16,6 @@ namespace Model
   enum class EventNotificationResourceType
   {
     NOT_SET,
-    FuotaTask,
     SidewalkAccount,
     WirelessDevice,
     WirelessGateway

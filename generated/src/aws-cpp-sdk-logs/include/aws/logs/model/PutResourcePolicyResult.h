@@ -45,6 +45,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The revision ID of the created or updated resource policy. Only returned for
+     * resource-scoped policies.</p>
+     */
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    PutResourcePolicyResult& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -56,6 +68,9 @@ namespace Model
 
     ResourcePolicy m_resourcePolicy;
     bool m_resourcePolicyHasBeenSet = false;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

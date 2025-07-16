@@ -94,6 +94,19 @@ namespace Model
     inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
     inline UpdateIPSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified
+     * in the <b>location</b> parameter.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    UpdateIPSetRequest& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_detectorId;
@@ -110,6 +123,9 @@ namespace Model
 
     bool m_activate{false};
     bool m_activateHasBeenSet = false;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet = false;
   };
 
 } // namespace Model

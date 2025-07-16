@@ -200,11 +200,12 @@ namespace CloudWatchLogs
          * as <b>Supported [V2 Permissions]</b> in the table at <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>A delivery destination
-         * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery
-         * stream in Firehose.</p> <p>To configure logs delivery between a supported Amazon
-         * Web Services service and a destination, you must do the following:</p> <ul> <li>
-         * <p>Create a delivery source, which is a logical object that represents the
-         * resource that is actually sending the logs. For more information, see <a
+         * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, a delivery
+         * stream in Firehose, or X-Ray.</p> <p>To configure logs delivery between a
+         * supported Amazon Web Services service and a destination, you must do the
+         * following:</p> <ul> <li> <p>Create a delivery source, which is a logical object
+         * that represents the resource that is actually sending the logs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
          * that represents the actual delivery destination. For more information, see <a
@@ -1022,9 +1023,9 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
          * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
          * Web Services resource that sends logs to an logs delivery destination. The
-         * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web
-         * Services services support being configured as a delivery source. These services
-         * are listed in <a
+         * destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray. Only some
+         * Amazon Web Services services support being configured as a delivery source.
+         * These services are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
          * logging from Amazon Web Services services.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveries">AWS
@@ -2111,7 +2112,7 @@ namespace CloudWatchLogs
          * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code>
          * permissions.</p> </li> <li> <p>To create a subscription filter policy, you must
          * have the <code>logs:PutSubscriptionFilter</code> and
-         * <code>logs:PutccountPolicy</code> permissions.</p> </li> <li> <p>To create a
+         * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
          * transformer policy, you must have the <code>logs:PutTransformer</code> and
          * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
          * field index policy, you must have the <code>logs:PutIndexPolicy</code> and
@@ -2325,11 +2326,11 @@ namespace CloudWatchLogs
          * <p>Creates or updates a logical <i>delivery destination</i>. A delivery
          * destination is an Amazon Web Services resource that represents an Amazon Web
          * Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
-         * Firehose are supported as logs delivery destinations.</p> <p>To configure logs
-         * delivery between a supported Amazon Web Services service and a destination, you
-         * must do the following:</p> <ul> <li> <p>Create a delivery source, which is a
-         * logical object that represents the resource that is actually sending the logs.
-         * For more information, see <a
+         * Firehose are supported as logs delivery destinations and X-Ray as the trace
+         * delivery destination.</p> <p>To configure logs delivery between a supported
+         * Amazon Web Services service and a destination, you must do the following:</p>
+         * <ul> <li> <p>Create a delivery source, which is a logical object that represents
+         * the resource that is actually sending the logs. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
          * destination</i> in the same account of the actual delivery destination. The
@@ -2427,15 +2428,15 @@ namespace CloudWatchLogs
         /**
          * <p>Creates or updates a logical <i>delivery source</i>. A delivery source
          * represents an Amazon Web Services resource that sends logs to an logs delivery
-         * destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.</p>
-         * <p>To configure logs delivery between a delivery destination and an Amazon Web
-         * Services service that is supported as a delivery source, you must do the
-         * following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create a
-         * delivery source, which is a logical object that represents the resource that is
-         * actually sending the logs. </p> </li> <li> <p>Use
-         * <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>,
-         * which is a logical object that represents the actual delivery destination. For
-         * more information, see <a
+         * destination. The destination can be CloudWatch Logs, Amazon S3, Firehose or
+         * X-Ray for sending traces.</p> <p>To configure logs delivery between a delivery
+         * destination and an Amazon Web Services service that is supported as a delivery
+         * source, you must do the following:</p> <ul> <li> <p>Use
+         * <code>PutDeliverySource</code> to create a delivery source, which is a logical
+         * object that represents the resource that is actually sending the logs. </p>
+         * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
+         * destination</i>, which is a logical object that represents the actual delivery
+         * destination. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
          * </li> <li> <p>If you are delivering logs cross-account, you must use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>

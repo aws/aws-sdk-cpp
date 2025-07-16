@@ -75,6 +75,33 @@ namespace Model
     template<typename PolicyDocumentT = Aws::String>
     PutResourcePolicyRequest& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to
+     * be added or attached. Currently only supports LogGroup ARN.</p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    PutResourcePolicyRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The expected revision ID of the resource policy. Required when
+     * <code>resourceArn</code> is provided to prevent concurrent modifications. Use
+     * <code>null</code> when creating a resource policy for the first time.</p>
+     */
+    inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
+    inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }
+    template<typename ExpectedRevisionIdT = Aws::String>
+    void SetExpectedRevisionId(ExpectedRevisionIdT&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::forward<ExpectedRevisionIdT>(value); }
+    template<typename ExpectedRevisionIdT = Aws::String>
+    PutResourcePolicyRequest& WithExpectedRevisionId(ExpectedRevisionIdT&& value) { SetExpectedRevisionId(std::forward<ExpectedRevisionIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_policyName;
@@ -82,6 +109,12 @@ namespace Model
 
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
+
+    Aws::String m_expectedRevisionId;
+    bool m_expectedRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

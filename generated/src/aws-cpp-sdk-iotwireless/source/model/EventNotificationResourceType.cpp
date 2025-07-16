@@ -20,7 +20,6 @@ namespace Aws
       namespace EventNotificationResourceTypeMapper
       {
 
-        static const int FuotaTask_HASH = HashingUtils::HashString("FuotaTask");
         static const int SidewalkAccount_HASH = HashingUtils::HashString("SidewalkAccount");
         static const int WirelessDevice_HASH = HashingUtils::HashString("WirelessDevice");
         static const int WirelessGateway_HASH = HashingUtils::HashString("WirelessGateway");
@@ -29,11 +28,7 @@ namespace Aws
         EventNotificationResourceType GetEventNotificationResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FuotaTask_HASH)
-          {
-            return EventNotificationResourceType::FuotaTask;
-          }
-          else if (hashCode == SidewalkAccount_HASH)
+          if (hashCode == SidewalkAccount_HASH)
           {
             return EventNotificationResourceType::SidewalkAccount;
           }
@@ -61,8 +56,6 @@ namespace Aws
           {
           case EventNotificationResourceType::NOT_SET:
             return {};
-          case EventNotificationResourceType::FuotaTask:
-            return "FuotaTask";
           case EventNotificationResourceType::SidewalkAccount:
             return "SidewalkAccount";
           case EventNotificationResourceType::WirelessDevice:

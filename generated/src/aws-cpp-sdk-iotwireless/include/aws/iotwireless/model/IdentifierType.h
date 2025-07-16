@@ -18,7 +18,6 @@ namespace Model
     NOT_SET,
     PartnerAccountId,
     DevEui,
-    FuotaTaskId,
     GatewayEui,
     WirelessDeviceId,
     WirelessGatewayId

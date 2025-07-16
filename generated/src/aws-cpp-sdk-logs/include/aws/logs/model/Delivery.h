@@ -100,7 +100,7 @@ namespace Model
     ///@{
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Firehose.</p>
+     * CloudWatch Logs, Amazon S3, Firehose, or X-Ray.</p>
      */
     inline DeliveryDestinationType GetDeliveryDestinationType() const { return m_deliveryDestinationType; }
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }

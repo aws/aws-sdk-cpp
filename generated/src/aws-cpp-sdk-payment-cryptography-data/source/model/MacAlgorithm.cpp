@@ -23,6 +23,7 @@ namespace Aws
         static const int ISO9797_ALGORITHM1_HASH = HashingUtils::HashString("ISO9797_ALGORITHM1");
         static const int ISO9797_ALGORITHM3_HASH = HashingUtils::HashString("ISO9797_ALGORITHM3");
         static const int CMAC_HASH = HashingUtils::HashString("CMAC");
+        static const int HMAC_HASH = HashingUtils::HashString("HMAC");
         static const int HMAC_SHA224_HASH = HashingUtils::HashString("HMAC_SHA224");
         static const int HMAC_SHA256_HASH = HashingUtils::HashString("HMAC_SHA256");
         static const int HMAC_SHA384_HASH = HashingUtils::HashString("HMAC_SHA384");
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == CMAC_HASH)
           {
             return MacAlgorithm::CMAC;
+          }
+          else if (hashCode == HMAC_HASH)
+          {
+            return MacAlgorithm::HMAC;
           }
           else if (hashCode == HMAC_SHA224_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "ISO9797_ALGORITHM3";
           case MacAlgorithm::CMAC:
             return "CMAC";
+          case MacAlgorithm::HMAC:
+            return "HMAC";
           case MacAlgorithm::HMAC_SHA224:
             return "HMAC_SHA224";
           case MacAlgorithm::HMAC_SHA256:

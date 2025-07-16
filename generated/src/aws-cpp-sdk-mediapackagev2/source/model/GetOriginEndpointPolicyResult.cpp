@@ -45,6 +45,11 @@ GetOriginEndpointPolicyResult& GetOriginEndpointPolicyResult::operator =(const A
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CdnAuthConfiguration"))
+  {
+    m_cdnAuthConfiguration = jsonValue.GetObject("CdnAuthConfiguration");
+    m_cdnAuthConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

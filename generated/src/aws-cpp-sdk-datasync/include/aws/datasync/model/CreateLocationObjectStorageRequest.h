@@ -45,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the domain name or IP version 4 (IPv4) address of the object
-     * storage server that your DataSync agent connects to.</p>
+     * <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage
+     * server that your DataSync agent connects to.</p>
      */
     inline const Aws::String& GetServerHostname() const { return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
@@ -69,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the protocol that your object storage server uses to
-     * communicate.</p>
+     * <p>Specifies the protocol that your object storage server uses to communicate.
+     * If not specified, the default value is <code>HTTPS</code>.</p>
      */
     inline ObjectStorageServerProtocol GetServerProtocol() const { return m_serverProtocol; }
     inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
@@ -120,7 +120,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the secret key (for example, a password) if credentials are
-     * required to authenticate with the object storage server.</p>
+     * required to authenticate with the object storage server.</p>  <p>If you
+     * provide a secret using <code>SecretKey</code>, but do not provide secret
+     * configuration details using <code>CmkSecretConfig</code> or
+     * <code>CustomSecretConfig</code>, then DataSync stores the token using your
+     * Amazon Web Services account's Secrets Manager secret.</p> 
      */
     inline const Aws::String& GetSecretKey() const { return m_secretKey; }
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }

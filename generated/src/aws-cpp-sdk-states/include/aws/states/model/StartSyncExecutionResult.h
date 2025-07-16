@@ -169,7 +169,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>  <p> For
+     * X-Ray traces, all Amazon Web Services services use the
+     * <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is
+     * the preferred mechanism to identify a trace. <code>StartExecution</code> and
+     * <code>StartSyncExecution</code> API operations can also use
+     * <code>traceHeader</code> from the body of the request payload. If <b>both</b>
+     * sources are provided, Step Functions will use the <b>header value</b>
+     * (preferred) over the value in the request body. </p> 
      */
     inline const Aws::String& GetTraceHeader() const { return m_traceHeader; }
     template<typename TraceHeaderT = Aws::String>

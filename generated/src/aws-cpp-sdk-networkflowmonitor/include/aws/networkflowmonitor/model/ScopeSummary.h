@@ -55,9 +55,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a scope. The status can be one of the following, depending on
-     * the state of scope creation: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>,
-     * or <code>FAILED</code>.</p>
+     * <p>The status for a scope. The status can be one of the following:
+     * <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>,
+     * <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p> <p>A status of
+     * <code>DEACTIVATING</code> means that you've requested a scope to be deactivated
+     * and Network Flow Monitor is in the process of deactivating the scope. A status
+     * of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
      */
     inline ScopeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
