@@ -47,6 +47,7 @@ def skip_file(filename):
                                    '|.*source/[^/]+Endpoint.cpp'
                                    '|.*aws-cpp-sdk-core/include/aws/core/Region.h'
                                    '|.*tests/.*Test.cpp'
+                                   '|.*tools/perf-gen/'
                                    # add more white lists here
                                    )
     if skip_file_pattern.match(filename):
