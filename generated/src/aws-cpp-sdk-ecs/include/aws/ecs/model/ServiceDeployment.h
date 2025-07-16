@@ -208,15 +208,29 @@ namespace Model
     ///@{
     /**
      * <p>The current lifecycle stage of the deployment. Possible values include:</p>
-     * <ul> <li> <p> <code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green)
-     * tasks</p> </li> <li> <p> <code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting
-     * test traffic to the new (green) tasks</p> </li> <li> <p>
-     * <code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic
-     * to the new (green) tasks</p> </li> <li> <p> <code>BAKE_TIME_IN_PROGRESS</code> -
-     * The duration when both blue and green service revisions are running
-     * simultaneously after the production traffic has shifted</p> </li> <li> <p>
-     * <code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p> </li>
-     * </ul>
+     * <ul> <li> <p>RECONCILE_SERVICE</p> <p>The reconciliation stage that only happens
+     * when you start a new service deployment with more than 1 service revision in an
+     * ACTIVE state.</p> </li> <li> <p>PRE_SCALE_UP</p> <p>The green service revision
+     * has not started. The blue service revision is handling 100% of the production
+     * traffic. There is no test traffic.</p> </li> <li> <p>SCALE_UP</p> <p>The stage
+     * when the green service revision scales up to 100% and launches new tasks. The
+     * green service revision is not serving any traffic at this point.</p> </li> <li>
+     * <p>POST_SCALE_UP</p> <p>The green service revision has started. The blue service
+     * revision is handling 100% of the production traffic. There is no test
+     * traffic.</p> </li> <li> <p>TEST_TRAFFIC_SHIFT</p> <p>The blue and green service
+     * revisions are running. The blue service revision handles 100% of the production
+     * traffic. The green service revision is migrating from 0% to 100% of test
+     * traffic.</p> </li> <li> <p>POST_TEST_TRAFFIC_SHIFT</p> <p>The test traffic shift
+     * is complete. The green service revision handles 100% of the test traffic.</p>
+     * </li> <li> <p>PRODUCTION_TRAFFIC_SHIFT</p> <p>Production traffic is shifting to
+     * the green service revision. The green service revision is migrating from 0% to
+     * 100% of production traffic.</p> </li> <li> <p>POST_PRODUCTION_TRAFFIC_SHIFT</p>
+     * <p>The production traffic shift is complete.</p> </li> <li> <p>BAKE_TIME</p>
+     * <p>The stage when both blue and green service revisions are running
+     * simultaneously after the production traffic has shifted.</p> </li> <li>
+     * <p>CLEAN_UP</p> <p>The stage when the blue service revision has completely
+     * scaled down to 0 running tasks. The green service revision is now the production
+     * service revision after this stage.</p> </li> </ul>
      */
     inline ServiceDeploymentLifecycleStage GetLifecycleStage() const { return m_lifecycleStage; }
     inline bool LifecycleStageHasBeenSet() const { return m_lifecycleStageHasBeenSet; }

@@ -7,7 +7,6 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/Document.h>
 #include <aws/ecs/model/DeploymentLifecycleHookStage.h>
 #include <utility>
 
@@ -28,8 +27,11 @@ namespace Model
 
   /**
    * <p>A deployment lifecycle hook runs custom logic at specific stages of the
-   * deployment process. Currently, you can use Lambda functions as hook
-   * targets.</p><p><h3>See Also:</h3>   <a
+   * deployment process. Currently, you can use Lambda functions as hook targets.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-lifecycle-hooks.html">Lifecycle
+   * hooks for Amazon ECS service deployments</a> in the <i> Amazon Elastic Container
+   * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeploymentLifecycleHook">AWS
    * API Reference</a></p>
    */
@@ -62,8 +64,8 @@ namespace Model
      * permission to call Lambda functions on your behalf.</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-permissions.html">Permissions
-     * required for Lambda functions in Amazon ECS blue/green deployments</a> in the<i>
-     * Amazon Elastic Container Service Developer Guide</i>.</p>
+     * required for Lambda functions in Amazon ECS blue/green deployments</a> in the
+     * <i> Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -76,22 +78,19 @@ namespace Model
     ///@{
     /**
      * <p>The lifecycle stages at which to run the hook. Choose from these valid
-     * values:</p> <ul> <li> <p>RECONCILE_SERVICE</p> <p>This stage only happens when
-     * you start a new service deployment with more than 1 service revision in an
-     * ACTIVE state.</p> <p>You can use a lifecycle hook for this stage.</p> </li> <li>
-     * <p>PRE_SCALE_UP</p> <p>The green service revision has not started. The blue
-     * service revision is handling 100% of the production traffic. There is no test
+     * values:</p> <ul> <li> <p>RECONCILE_SERVICE</p> <p>The reconciliation stage that
+     * only happens when you start a new service deployment with more than 1 service
+     * revision in an ACTIVE state.</p> <p>You can use a lifecycle hook for this
+     * stage.</p> </li> <li> <p>PRE_SCALE_UP</p> <p>The green service revision has not
+     * started. The blue service revision is handling 100% of the production traffic.
+     * There is no test traffic.</p> <p>You can use a lifecycle hook for this
+     * stage.</p> </li> <li> <p>POST_SCALE_UP</p> <p>The green service revision has
+     * started. The blue service revision is handling 100% of the production traffic.
+     * There is no test traffic.</p> <p>You can use a lifecycle hook for this
+     * stage.</p> </li> <li> <p>TEST_TRAFFIC_SHIFT</p> <p>The blue and green service
+     * revisions are running. The blue service revision handles 100% of the production
+     * traffic. The green service revision is migrating from 0% to 100% of test
      * traffic.</p> <p>You can use a lifecycle hook for this stage.</p> </li> <li>
-     * <p>SCALE_UP</p> <p>The time when the green service revision scales up to 100%
-     * and launches new tasks. The green service revision is not serving any traffic at
-     * this point.</p> <p>You can't use a lifecycle hook for this stage.</p> </li> <li>
-     * <p>POST_SCALE_UP</p> <p>The green service revision has started. The blue service
-     * revision is handling 100% of the production traffic. There is no test
-     * traffic.</p> <p>You can use a lifecycle hook for this stage.</p> </li> <li>
-     * <p>TEST_TRAFFIC_SHIFT</p> <p>The blue and green service revisions are running.
-     * The blue service revision handles 100% of the production traffic. The green
-     * service revision is migrating from 0% to 100% of test traffic.</p> <p>You can
-     * use a lifecycle hook for this stage.</p> </li> <li>
      * <p>POST_TEST_TRAFFIC_SHIFT</p> <p>The test traffic shift is complete. The green
      * service revision handles 100% of the test traffic.</p> <p>You can use a
      * lifecycle hook for this stage.</p> </li> <li> <p>PRODUCTION_TRAFFIC_SHIFT</p>
@@ -99,13 +98,9 @@ namespace Model
      * service revision is migrating from 0% to 100% of production traffic.</p> <p>You
      * can use a lifecycle hook for this stage.</p> </li> <li>
      * <p>POST_PRODUCTION_TRAFFIC_SHIFT</p> <p>The production traffic shift is
-     * complete.</p> <p>Yes</p> </li> <li> <p>BAKE_TIME</p> <p>The duration when both
-     * blue and green service revisions are running simultaneously.</p> <p>You can't
-     * use a lifecycle hook for this stage.</p> </li> <li> <p>CLEAN_UP</p> <p>The blue
-     * service revision has completely scaled down to 0 running tasks. The green
-     * service revision is now the production service revision after this stage.</p>
-     * <p>You can't use a lifecycle hook for this stage.</p> </li> </ul> <p>You must
-     * provide this parameter when configuring a deployment lifecycle hook.</p>
+     * complete.</p> <p>You can use a lifecycle hook for this stage.</p> </li> </ul>
+     * <p>You must provide this parameter when configuring a deployment lifecycle
+     * hook.</p>
      */
     inline const Aws::Vector<DeploymentLifecycleHookStage>& GetLifecycleStages() const { return m_lifecycleStages; }
     inline bool LifecycleStagesHasBeenSet() const { return m_lifecycleStagesHasBeenSet; }
@@ -114,19 +109,6 @@ namespace Model
     template<typename LifecycleStagesT = Aws::Vector<DeploymentLifecycleHookStage>>
     DeploymentLifecycleHook& WithLifecycleStages(LifecycleStagesT&& value) { SetLifecycleStages(std::forward<LifecycleStagesT>(value)); return *this;}
     inline DeploymentLifecycleHook& AddLifecycleStages(DeploymentLifecycleHookStage value) { m_lifecycleStagesHasBeenSet = true; m_lifecycleStages.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Optionally provide details about the hook. Use this field to pass custom
-     * parameters to your hook target (such as a Lambda function).</p>
-     */
-    inline Aws::Utils::DocumentView GetHookDetails() const { return m_hookDetails; }
-    inline bool HookDetailsHasBeenSet() const { return m_hookDetailsHasBeenSet; }
-    template<typename HookDetailsT = Aws::Utils::Document>
-    void SetHookDetails(HookDetailsT&& value) { m_hookDetailsHasBeenSet = true; m_hookDetails = std::forward<HookDetailsT>(value); }
-    template<typename HookDetailsT = Aws::Utils::Document>
-    DeploymentLifecycleHook& WithHookDetails(HookDetailsT&& value) { SetHookDetails(std::forward<HookDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -138,9 +120,6 @@ namespace Model
 
     Aws::Vector<DeploymentLifecycleHookStage> m_lifecycleStages;
     bool m_lifecycleStagesHasBeenSet = false;
-
-    Aws::Utils::Document m_hookDetails;
-    bool m_hookDetailsHasBeenSet = false;
   };
 
 } // namespace Model

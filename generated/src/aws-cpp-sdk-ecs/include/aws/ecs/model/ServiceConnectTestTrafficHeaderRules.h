@@ -27,7 +27,11 @@ namespace Model
   /**
    * <p>The HTTP header rules used to identify and route test traffic during Amazon
    * ECS blue/green deployments. These rules specify which HTTP headers to examine
-   * and what values to match for routing decisions.</p><p><h3>See Also:</h3>   <a
+   * and what values to match for routing decisions.</p> <p>For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html">Service
+   * Connect for Amazon ECS blue/green deployments</a> in the <i> Amazon Elastic
+   * Container Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceConnectTestTrafficHeaderRules">AWS
    * API Reference</a></p>
    */

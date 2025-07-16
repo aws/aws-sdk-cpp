@@ -44,11 +44,6 @@ DeploymentLifecycleHook& DeploymentLifecycleHook::operator =(JsonView jsonValue)
     }
     m_lifecycleStagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hookDetails"))
-  {
-    m_hookDetails = jsonValue.GetObject("hookDetails");
-    m_hookDetailsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -77,14 +72,6 @@ JsonValue DeploymentLifecycleHook::Jsonize() const
    }
    payload.WithArray("lifecycleStages", std::move(lifecycleStagesJsonList));
 
-  }
-
-  if(m_hookDetailsHasBeenSet)
-  {
-    if(!m_hookDetails.View().IsNull())
-    {
-       payload.WithObject("hookDetails", JsonValue(m_hookDetails.View()));
-    }
   }
 
   return payload;

@@ -204,14 +204,16 @@ namespace ECS
          * ECS services</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> </ul> <p>The deployment controller is the mechanism that
          * determines how tasks are deployed for your service. The valid options are:</p>
-         * <ul> <li> <p>ECS</p> <p>When you create a service which uses the
+         * <ul> <li> <p>ECS</p> <p> When you create a service which uses the
          * <code>ECS</code> deployment controller, you can choose between the following
-         * deployment strategies:</p> <ul> <li> <p> <code>ROLLING</code>: When you create a
-         * service which uses the <i>rolling update</i> (<code>ROLLING</code>) deployment
-         * strategy, the Amazon ECS service scheduler replaces the currently running tasks
-         * with new tasks. The number of tasks that Amazon ECS adds or removes from the
-         * service during a rolling update is controlled by the service deployment
-         * configuration. For more information, see <a
+         * deployment strategies (which you can set in the “<code>strategy</code>” field in
+         * “<code>deploymentConfiguration</code>”): :</p> <ul> <li> <p>
+         * <code>ROLLING</code>: When you create a service which uses the <i>rolling
+         * update</i> (<code>ROLLING</code>) deployment strategy, the Amazon ECS service
+         * scheduler replaces the currently running tasks with new tasks. The number of
+         * tasks that Amazon ECS adds or removes from the service during a rolling update
+         * is controlled by the service deployment configuration. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Deploy
          * Amazon ECS services by replacing tasks</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p>Rolling update deployments are best suited
