@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/RelayAuthentication.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +33,59 @@ namespace Model
     AWS_MAILMANAGER_API GetRelayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetRelayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>The unique relay identifier.</p>
+     */
+    inline const Aws::String& GetRelayId() const { return m_relayId; }
+    template<typename RelayIdT = Aws::String>
+    void SetRelayId(RelayIdT&& value) { m_relayIdHasBeenSet = true; m_relayId = std::forward<RelayIdT>(value); }
+    template<typename RelayIdT = Aws::String>
+    GetRelayResult& WithRelayId(RelayIdT&& value) { SetRelayId(std::forward<RelayIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the relay.</p>
+     */
+    inline const Aws::String& GetRelayArn() const { return m_relayArn; }
+    template<typename RelayArnT = Aws::String>
+    void SetRelayArn(RelayArnT&& value) { m_relayArnHasBeenSet = true; m_relayArn = std::forward<RelayArnT>(value); }
+    template<typename RelayArnT = Aws::String>
+    GetRelayResult& WithRelayArn(RelayArnT&& value) { SetRelayArn(std::forward<RelayArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique name of the relay.</p>
+     */
+    inline const Aws::String& GetRelayName() const { return m_relayName; }
+    template<typename RelayNameT = Aws::String>
+    void SetRelayName(RelayNameT&& value) { m_relayNameHasBeenSet = true; m_relayName = std::forward<RelayNameT>(value); }
+    template<typename RelayNameT = Aws::String>
+    GetRelayResult& WithRelayName(RelayNameT&& value) { SetRelayName(std::forward<RelayNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The destination relay server address.</p>
+     */
+    inline const Aws::String& GetServerName() const { return m_serverName; }
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    GetRelayResult& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The destination relay server port.</p>
+     */
+    inline int GetServerPort() const { return m_serverPort; }
+    inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
+    inline GetRelayResult& WithServerPort(int value) { SetServerPort(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -69,59 +122,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the relay.</p>
-     */
-    inline const Aws::String& GetRelayArn() const { return m_relayArn; }
-    template<typename RelayArnT = Aws::String>
-    void SetRelayArn(RelayArnT&& value) { m_relayArnHasBeenSet = true; m_relayArn = std::forward<RelayArnT>(value); }
-    template<typename RelayArnT = Aws::String>
-    GetRelayResult& WithRelayArn(RelayArnT&& value) { SetRelayArn(std::forward<RelayArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique relay identifier.</p>
-     */
-    inline const Aws::String& GetRelayId() const { return m_relayId; }
-    template<typename RelayIdT = Aws::String>
-    void SetRelayId(RelayIdT&& value) { m_relayIdHasBeenSet = true; m_relayId = std::forward<RelayIdT>(value); }
-    template<typename RelayIdT = Aws::String>
-    GetRelayResult& WithRelayId(RelayIdT&& value) { SetRelayId(std::forward<RelayIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique name of the relay.</p>
-     */
-    inline const Aws::String& GetRelayName() const { return m_relayName; }
-    template<typename RelayNameT = Aws::String>
-    void SetRelayName(RelayNameT&& value) { m_relayNameHasBeenSet = true; m_relayName = std::forward<RelayNameT>(value); }
-    template<typename RelayNameT = Aws::String>
-    GetRelayResult& WithRelayName(RelayNameT&& value) { SetRelayName(std::forward<RelayNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The destination relay server address.</p>
-     */
-    inline const Aws::String& GetServerName() const { return m_serverName; }
-    template<typename ServerNameT = Aws::String>
-    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
-    template<typename ServerNameT = Aws::String>
-    GetRelayResult& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The destination relay server port.</p>
-     */
-    inline int GetServerPort() const { return m_serverPort; }
-    inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
-    inline GetRelayResult& WithServerPort(int value) { SetServerPort(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -131,20 +131,11 @@ namespace Model
     ///@}
   private:
 
-    RelayAuthentication m_authentication;
-    bool m_authenticationHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdTimestamp{};
-    bool m_createdTimestampHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModifiedTimestamp{};
-    bool m_lastModifiedTimestampHasBeenSet = false;
+    Aws::String m_relayId;
+    bool m_relayIdHasBeenSet = false;
 
     Aws::String m_relayArn;
     bool m_relayArnHasBeenSet = false;
-
-    Aws::String m_relayId;
-    bool m_relayIdHasBeenSet = false;
 
     Aws::String m_relayName;
     bool m_relayNameHasBeenSet = false;
@@ -154,6 +145,15 @@ namespace Model
 
     int m_serverPort{0};
     bool m_serverPortHasBeenSet = false;
+
+    RelayAuthentication m_authentication;
+    bool m_authenticationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
+    bool m_lastModifiedTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

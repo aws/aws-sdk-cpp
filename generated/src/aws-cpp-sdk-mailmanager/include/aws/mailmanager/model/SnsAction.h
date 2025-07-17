@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ActionFailurePolicy.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/SnsNotificationEncoding.h>
 #include <aws/mailmanager/model/SnsNotificationPayloadType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +57,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS Topic to which notification
+     * for the email received will be published.</p>
+     */
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    SnsAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM Role to use while writing to Amazon
+     * SNS. This role must have access to the <code>sns:Publish</code> API for the
+     * given topic.</p>
+     */
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SnsAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The encoding to use for the email within the Amazon SNS notification. The
      * default value is <code>UTF-8</code>. Use <code>BASE64</code> if you need to
      * preserve all special characters, especially when the original message uses a
@@ -81,49 +108,22 @@ namespace Model
     inline void SetPayloadType(SnsNotificationPayloadType value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
     inline SnsAction& WithPayloadType(SnsNotificationPayloadType value) { SetPayloadType(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM Role to use while writing to Amazon
-     * SNS. This role must have access to the <code>sns:Publish</code> API for the
-     * given topic.</p>
-     */
-    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    template<typename RoleArnT = Aws::String>
-    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
-    template<typename RoleArnT = Aws::String>
-    SnsAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS Topic to which notification
-     * for the email received will be published.</p>
-     */
-    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
-    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    template<typename TopicArnT = Aws::String>
-    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
-    template<typename TopicArnT = Aws::String>
-    SnsAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
-    ///@}
   private:
 
     ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
     bool m_actionFailurePolicyHasBeenSet = false;
+
+    Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     SnsNotificationEncoding m_encoding{SnsNotificationEncoding::NOT_SET};
     bool m_encodingHasBeenSet = false;
 
     SnsNotificationPayloadType m_payloadType{SnsNotificationPayloadType::NOT_SET};
     bool m_payloadTypeHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
-    Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

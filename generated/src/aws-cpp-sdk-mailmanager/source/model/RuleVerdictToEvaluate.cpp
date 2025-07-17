@@ -25,15 +25,15 @@ RuleVerdictToEvaluate::RuleVerdictToEvaluate(JsonView jsonValue)
 
 RuleVerdictToEvaluate& RuleVerdictToEvaluate::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Analysis"))
-  {
-    m_analysis = jsonValue.GetObject("Analysis");
-    m_analysisHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleVerdictAttributeMapper::GetRuleVerdictAttributeForName(jsonValue.GetString("Attribute"));
     m_attributeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Analysis"))
+  {
+    m_analysis = jsonValue.GetObject("Analysis");
+    m_analysisHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RuleVerdictToEvaluate::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_attributeHasBeenSet)
+  {
+   payload.WithString("Attribute", RuleVerdictAttributeMapper::GetNameForRuleVerdictAttribute(m_attribute));
+  }
+
   if(m_analysisHasBeenSet)
   {
    payload.WithObject("Analysis", m_analysis.Jsonize());
 
-  }
-
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", RuleVerdictAttributeMapper::GetNameForRuleVerdictAttribute(m_attribute));
   }
 
   return payload;

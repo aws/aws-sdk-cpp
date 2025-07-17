@@ -25,20 +25,20 @@ IngressPointPasswordConfiguration::IngressPointPasswordConfiguration(JsonView js
 
 IngressPointPasswordConfiguration& IngressPointPasswordConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("PreviousSmtpPasswordExpiryTimestamp"))
+  if(jsonValue.ValueExists("SmtpPasswordVersion"))
   {
-    m_previousSmtpPasswordExpiryTimestamp = jsonValue.GetDouble("PreviousSmtpPasswordExpiryTimestamp");
-    m_previousSmtpPasswordExpiryTimestampHasBeenSet = true;
+    m_smtpPasswordVersion = jsonValue.GetString("SmtpPasswordVersion");
+    m_smtpPasswordVersionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("PreviousSmtpPasswordVersion"))
   {
     m_previousSmtpPasswordVersion = jsonValue.GetString("PreviousSmtpPasswordVersion");
     m_previousSmtpPasswordVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SmtpPasswordVersion"))
+  if(jsonValue.ValueExists("PreviousSmtpPasswordExpiryTimestamp"))
   {
-    m_smtpPasswordVersion = jsonValue.GetString("SmtpPasswordVersion");
-    m_smtpPasswordVersionHasBeenSet = true;
+    m_previousSmtpPasswordExpiryTimestamp = jsonValue.GetDouble("PreviousSmtpPasswordExpiryTimestamp");
+    m_previousSmtpPasswordExpiryTimestampHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,10 @@ JsonValue IngressPointPasswordConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_previousSmtpPasswordExpiryTimestampHasBeenSet)
+  if(m_smtpPasswordVersionHasBeenSet)
   {
-   payload.WithDouble("PreviousSmtpPasswordExpiryTimestamp", m_previousSmtpPasswordExpiryTimestamp.SecondsWithMSPrecision());
+   payload.WithString("SmtpPasswordVersion", m_smtpPasswordVersion);
+
   }
 
   if(m_previousSmtpPasswordVersionHasBeenSet)
@@ -58,10 +59,9 @@ JsonValue IngressPointPasswordConfiguration::Jsonize() const
 
   }
 
-  if(m_smtpPasswordVersionHasBeenSet)
+  if(m_previousSmtpPasswordExpiryTimestampHasBeenSet)
   {
-   payload.WithString("SmtpPasswordVersion", m_smtpPasswordVersion);
-
+   payload.WithDouble("PreviousSmtpPasswordExpiryTimestamp", m_previousSmtpPasswordExpiryTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

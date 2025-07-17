@@ -98,12 +98,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the distribution uses <code>Aliases</code> (alternate domain names or
-     * CNAMEs) and the SSL/TLS certificate is stored in <a
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>If the distribution uses
+     * <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
+     * certificate is stored in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
      * and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
      * <p>If you specify an IAM certificate ID, you must also specify values for
-     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
+     * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p></p>
      */
     inline const Aws::String& GetIAMCertificateId() const { return m_iAMCertificateId; }
     inline bool IAMCertificateIdHasBeenSet() const { return m_iAMCertificateIdHasBeenSet; }

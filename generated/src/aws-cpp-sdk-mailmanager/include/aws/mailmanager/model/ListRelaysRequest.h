@@ -36,6 +36,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of relays to be returned in one request.</p>
+     */
+    inline int GetPageSize() const { return m_pageSize; }
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
+    inline ListRelaysRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If you received a pagination token from a previous call to this API, you can
      * provide it here to continue paginating through the next page of results.</p>
      */
@@ -46,23 +56,13 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListRelaysRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of relays to be returned in one request.</p>
-     */
-    inline int GetPageSize() const { return m_pageSize; }
-    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-    inline ListRelaysRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
 
     int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

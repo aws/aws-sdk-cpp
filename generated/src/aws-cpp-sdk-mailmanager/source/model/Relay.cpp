@@ -25,11 +25,6 @@ Relay::Relay(JsonView jsonValue)
 
 Relay& Relay::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("LastModifiedTimestamp"))
-  {
-    m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
-    m_lastModifiedTimestampHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("RelayId"))
   {
     m_relayId = jsonValue.GetString("RelayId");
@@ -40,17 +35,17 @@ Relay& Relay::operator =(JsonView jsonValue)
     m_relayName = jsonValue.GetString("RelayName");
     m_relayNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastModifiedTimestamp"))
+  {
+    m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
+    m_lastModifiedTimestampHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue Relay::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_lastModifiedTimestampHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTimestamp", m_lastModifiedTimestamp.SecondsWithMSPrecision());
-  }
 
   if(m_relayIdHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue Relay::Jsonize() const
   {
    payload.WithString("RelayName", m_relayName);
 
+  }
+
+  if(m_lastModifiedTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTimestamp", m_lastModifiedTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

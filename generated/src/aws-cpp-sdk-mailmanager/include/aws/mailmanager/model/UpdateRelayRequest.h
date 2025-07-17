@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/MailManagerRequest.h>
-#include <aws/mailmanager/model/RelayAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/RelayAuthentication.h>
 #include <utility>
 
 namespace Aws
@@ -34,19 +34,6 @@ namespace Model
 
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    ///@{
-    /**
-     * <p>Authentication for the relay destination server—specify the secretARN where
-     * the SMTP credentials are stored.</p>
-     */
-    inline const RelayAuthentication& GetAuthentication() const { return m_authentication; }
-    inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-    template<typename AuthenticationT = RelayAuthentication>
-    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
-    template<typename AuthenticationT = RelayAuthentication>
-    UpdateRelayRequest& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -93,10 +80,20 @@ namespace Model
     inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
     inline UpdateRelayRequest& WithServerPort(int value) { SetServerPort(value); return *this;}
     ///@}
-  private:
 
-    RelayAuthentication m_authentication;
-    bool m_authenticationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Authentication for the relay destination server—specify the secretARN where
+     * the SMTP credentials are stored.</p>
+     */
+    inline const RelayAuthentication& GetAuthentication() const { return m_authentication; }
+    inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
+    template<typename AuthenticationT = RelayAuthentication>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = RelayAuthentication>
+    UpdateRelayRequest& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_relayId;
     bool m_relayIdHasBeenSet = false;
@@ -109,6 +106,9 @@ namespace Model
 
     int m_serverPort{0};
     bool m_serverPortHasBeenSet = false;
+
+    RelayAuthentication m_authentication;
+    bool m_authenticationHasBeenSet = false;
   };
 
 } // namespace Model

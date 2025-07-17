@@ -25,11 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>A list of aliases (also called CNAMEs) and the CloudFront distributions and
-   * Amazon Web Services accounts that they are associated with. In the list, the
-   * distribution and account IDs are partially hidden, which allows you to identify
-   * the distributions and accounts that you own, but helps to protect the
-   * information of ones that you don't own.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of aliases (also called CNAMEs) and the CloudFront standard
+   * distributions and Amazon Web Services accounts that they are associated with. In
+   * the list, the standard distribution and account IDs are partially hidden, which
+   * allows you to identify the standard distributions and accounts that you own, but
+   * helps to protect the information of ones that you don't own.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAliasesList">AWS
    * API Reference</a></p>
    */

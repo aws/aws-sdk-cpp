@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/mailmanager/model/ExportDestinationConfiguration.h>
 #include <aws/mailmanager/model/ArchiveFilters.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mailmanager/model/ExportDestinationConfiguration.h>
 #include <aws/mailmanager/model/ExportStatus.h>
 #include <utility>
 
@@ -55,17 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Where the exported emails are being delivered.</p>
-     */
-    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const { return m_exportDestinationConfiguration; }
-    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
-    void SetExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { m_exportDestinationConfigurationHasBeenSet = true; m_exportDestinationConfiguration = std::forward<ExportDestinationConfigurationT>(value); }
-    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
-    GetArchiveExportResult& WithExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { SetExportDestinationConfiguration(std::forward<ExportDestinationConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The criteria used to filter emails included in the export.</p>
      */
     inline const ArchiveFilters& GetFilters() const { return m_filters; }
@@ -88,11 +77,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The end of the date range the exported emails cover.</p>
+     */
+    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    GetArchiveExportResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of email items included in the export.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetArchiveExportResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Where the exported emails are being delivered.</p>
+     */
+    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const { return m_exportDestinationConfiguration; }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    void SetExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { m_exportDestinationConfigurationHasBeenSet = true; m_exportDestinationConfiguration = std::forward<ExportDestinationConfigurationT>(value); }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    GetArchiveExportResult& WithExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { SetExportDestinationConfiguration(std::forward<ExportDestinationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,17 +115,6 @@ namespace Model
     void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
     template<typename StatusT = ExportStatus>
     GetArchiveExportResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The end of the date range the exported emails cover.</p>
-     */
-    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    GetArchiveExportResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,23 +130,23 @@ namespace Model
     Aws::String m_archiveId;
     bool m_archiveIdHasBeenSet = false;
 
-    ExportDestinationConfiguration m_exportDestinationConfiguration;
-    bool m_exportDestinationConfigurationHasBeenSet = false;
-
     ArchiveFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
     Aws::Utils::DateTime m_fromTimestamp{};
     bool m_fromTimestampHasBeenSet = false;
 
+    Aws::Utils::DateTime m_toTimestamp{};
+    bool m_toTimestampHasBeenSet = false;
+
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
+    ExportDestinationConfiguration m_exportDestinationConfiguration;
+    bool m_exportDestinationConfigurationHasBeenSet = false;
+
     ExportStatus m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_toTimestamp{};
-    bool m_toTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

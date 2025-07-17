@@ -69,8 +69,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this distribution.</p>
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>A complex type that contains information
+     * about CNAMEs (alternate domain names), if any, for this distribution.</p></p>
      */
     inline const Aliases& GetAliases() const { return m_aliases; }
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
@@ -213,20 +217,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The price class that corresponds with the maximum price that you want to pay
-     * for CloudFront service. If you specify <code>PriceClass_All</code>, CloudFront
-     * responds to requests for your objects from all CloudFront edge locations.</p>
-     * <p>If you specify a price class other than <code>PriceClass_All</code>,
-     * CloudFront serves your objects from the CloudFront edge location that has the
-     * lowest latency among the edge locations in your price class. Viewers who are in
-     * or near regions that are excluded from your specified price class may encounter
-     * slower performance.</p> <p>For more information about price classes, see <a
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>The price class that corresponds with the
+     * maximum price that you want to pay for CloudFront service. If you specify
+     * <code>PriceClass_All</code>, CloudFront responds to requests for your objects
+     * from all CloudFront edge locations.</p> <p>If you specify a price class other
+     * than <code>PriceClass_All</code>, CloudFront serves your objects from the
+     * CloudFront edge location that has the lowest latency among the edge locations in
+     * your price class. Viewers who are in or near regions that are excluded from your
+     * specified price class may encounter slower performance.</p> <p>For more
+     * information about price classes, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
      * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * Pricing</a>.</p></p>
      */
     inline PriceClass GetPriceClass() const { return m_priceClass; }
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
@@ -272,9 +281,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
-     * this distribution. To specify a web ACL created using the latest version of WAF,
-     * use the ACL ARN, for example
+     * <p> <p>Multi-tenant distributions only support WAF V2 web ACLs.</p>
+     *  <p>A unique identifier that specifies the WAF web ACL, if any, to
+     * associate with this distribution. To specify a web ACL created using the latest
+     * version of WAF, use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * To specify a web ACL created using WAF Classic, use the ACL ID, for example
      * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p> <p>WAF is a web
@@ -286,7 +296,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>.</p>
+     * Developer Guide</a>.</p></p>
      */
     inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
@@ -321,8 +331,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address
-     * for your distribution, specify <code>true</code>. If you specify
+     * <p> <p>To use this field for a multi-tenant distribution, use a connection
+     * group instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroup.html">ConnectionGroup</a>.</p>
+     *  <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6
+     * address for your distribution, specify <code>true</code>. If you specify
      * <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS
      * response code <code>NOERROR</code> and with no IP addresses. This allows viewers
      * to submit a second request, for an IPv4 address for your distribution.</p> <p>In
@@ -348,7 +361,7 @@ namespace Model
      * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
      * Services Integration or with another DNS service, you don't need to make any
      * changes. A CNAME record will route traffic to your distribution regardless of
-     * the IP address format of the viewer request.</p>
+     * the IP address format of the viewer request.</p></p>
      */
     inline bool GetIsIPV6Enabled() const { return m_isIPV6Enabled; }
     inline bool IsIPV6EnabledHasBeenSet() const { return m_isIPV6EnabledHasBeenSet; }
@@ -358,8 +371,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of a continuous deployment policy. For more information, see
-     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>The identifier of a continuous deployment
+     * policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p></p>
      */
     inline const Aws::String& GetContinuousDeploymentPolicyId() const { return m_continuousDeploymentPolicyId; }
     inline bool ContinuousDeploymentPolicyIdHasBeenSet() const { return m_continuousDeploymentPolicyIdHasBeenSet; }
@@ -371,9 +389,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A Boolean that indicates whether this is a staging distribution. When this
-     * value is <code>true</code>, this is a staging distribution. When this value is
-     * <code>false</code>, this is not a staging distribution.</p>
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>A Boolean that indicates whether this is a
+     * staging distribution. When this value is <code>true</code>, this is a staging
+     * distribution. When this value is <code>false</code>, this is not a staging
+     * distribution.</p></p>
      */
     inline bool GetStaging() const { return m_staging; }
     inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
@@ -383,8 +406,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>ID of the Anycast static IP list that is associated with the
-     * distribution.</p>
+     * <p> <p>To use this field for a multi-tenant distribution, use a connection
+     * group instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroup.html">ConnectionGroup</a>.</p>
+     *  <p>ID of the Anycast static IP list that is associated with the
+     * distribution.</p></p>
      */
     inline const Aws::String& GetAnycastIpListId() const { return m_anycastIpListId; }
     inline bool AnycastIpListIdHasBeenSet() const { return m_anycastIpListIdHasBeenSet; }
@@ -396,7 +422,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A distribution tenant configuration.</p>
+     * <p> <p>This field only supports multi-tenant distributions. You can't
+     * specify this field for standard distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>A distribution tenant configuration.</p></p>
      */
     inline const TenantConfig& GetTenantConfig() const { return m_tenantConfig; }
     inline bool TenantConfigHasBeenSet() const { return m_tenantConfigHasBeenSet; }
@@ -408,7 +438,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The connection mode to filter distributions by.</p>
+     * <p>This field specifies whether the connection mode is through a standard
+     * distribution (direct) or a multi-tenant distribution with distribution
+     * tenants(tenant-only).</p>
      */
     inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
     inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }

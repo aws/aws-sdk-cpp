@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The address to be retrieved from the address list.</p>
-     */
-    inline const Aws::String& GetAddress() const { return m_address; }
-    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    template<typename AddressT = Aws::String>
-    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
-    template<typename AddressT = Aws::String>
-    GetMemberOfAddressListRequest& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the address list to retrieve the address from.</p>
      */
     inline const Aws::String& GetAddressListId() const { return m_addressListId; }
@@ -57,13 +45,25 @@ namespace Model
     template<typename AddressListIdT = Aws::String>
     GetMemberOfAddressListRequest& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_address;
-    bool m_addressHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The address to be retrieved from the address list.</p>
+     */
+    inline const Aws::String& GetAddress() const { return m_address; }
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    GetMemberOfAddressListRequest& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_addressListId;
     bool m_addressListIdHasBeenSet = false;
+
+    Aws::String m_address;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,15 +16,15 @@ Aws::String CreateAddressListRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_addressListNameHasBeenSet)
-  {
-   payload.WithString("AddressListName", m_addressListName);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_addressListNameHasBeenSet)
+  {
+   payload.WithString("AddressListName", m_addressListName);
 
   }
 

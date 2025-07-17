@@ -25,30 +25,15 @@ GetRelayResult::GetRelayResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetRelayResult& GetRelayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Authentication"))
+  if(jsonValue.ValueExists("RelayId"))
   {
-    m_authentication = jsonValue.GetObject("Authentication");
-    m_authenticationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
-    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-    m_createdTimestampHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("LastModifiedTimestamp"))
-  {
-    m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
-    m_lastModifiedTimestampHasBeenSet = true;
+    m_relayId = jsonValue.GetString("RelayId");
+    m_relayIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("RelayArn"))
   {
     m_relayArn = jsonValue.GetString("RelayArn");
     m_relayArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RelayId"))
-  {
-    m_relayId = jsonValue.GetString("RelayId");
-    m_relayIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("RelayName"))
   {
@@ -64,6 +49,21 @@ GetRelayResult& GetRelayResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_serverPort = jsonValue.GetInteger("ServerPort");
     m_serverPortHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Authentication"))
+  {
+    m_authentication = jsonValue.GetObject("Authentication");
+    m_authenticationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedTimestamp"))
+  {
+    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
+    m_createdTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastModifiedTimestamp"))
+  {
+    m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
+    m_lastModifiedTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

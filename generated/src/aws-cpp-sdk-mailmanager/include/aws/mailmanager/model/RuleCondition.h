@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/RuleBooleanExpression.h>
-#include <aws/mailmanager/model/RuleDmarcExpression.h>
-#include <aws/mailmanager/model/RuleIpExpression.h>
-#include <aws/mailmanager/model/RuleNumberExpression.h>
 #include <aws/mailmanager/model/RuleStringExpression.h>
+#include <aws/mailmanager/model/RuleNumberExpression.h>
+#include <aws/mailmanager/model/RuleIpExpression.h>
 #include <aws/mailmanager/model/RuleVerdictExpression.h>
+#include <aws/mailmanager/model/RuleDmarcExpression.h>
 #include <utility>
 
 namespace Aws
@@ -57,26 +57,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The condition applies to a DMARC policy expression passed in this field.</p>
+     * <p>The condition applies to a string expression passed in this field.</p>
      */
-    inline const RuleDmarcExpression& GetDmarcExpression() const { return m_dmarcExpression; }
-    inline bool DmarcExpressionHasBeenSet() const { return m_dmarcExpressionHasBeenSet; }
-    template<typename DmarcExpressionT = RuleDmarcExpression>
-    void SetDmarcExpression(DmarcExpressionT&& value) { m_dmarcExpressionHasBeenSet = true; m_dmarcExpression = std::forward<DmarcExpressionT>(value); }
-    template<typename DmarcExpressionT = RuleDmarcExpression>
-    RuleCondition& WithDmarcExpression(DmarcExpressionT&& value) { SetDmarcExpression(std::forward<DmarcExpressionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The condition applies to an IP address expression passed in this field.</p>
-     */
-    inline const RuleIpExpression& GetIpExpression() const { return m_ipExpression; }
-    inline bool IpExpressionHasBeenSet() const { return m_ipExpressionHasBeenSet; }
-    template<typename IpExpressionT = RuleIpExpression>
-    void SetIpExpression(IpExpressionT&& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = std::forward<IpExpressionT>(value); }
-    template<typename IpExpressionT = RuleIpExpression>
-    RuleCondition& WithIpExpression(IpExpressionT&& value) { SetIpExpression(std::forward<IpExpressionT>(value)); return *this;}
+    inline const RuleStringExpression& GetStringExpression() const { return m_stringExpression; }
+    inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
+    template<typename StringExpressionT = RuleStringExpression>
+    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
+    template<typename StringExpressionT = RuleStringExpression>
+    RuleCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +81,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The condition applies to a string expression passed in this field.</p>
+     * <p>The condition applies to an IP address expression passed in this field.</p>
      */
-    inline const RuleStringExpression& GetStringExpression() const { return m_stringExpression; }
-    inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-    template<typename StringExpressionT = RuleStringExpression>
-    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
-    template<typename StringExpressionT = RuleStringExpression>
-    RuleCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
+    inline const RuleIpExpression& GetIpExpression() const { return m_ipExpression; }
+    inline bool IpExpressionHasBeenSet() const { return m_ipExpressionHasBeenSet; }
+    template<typename IpExpressionT = RuleIpExpression>
+    void SetIpExpression(IpExpressionT&& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = std::forward<IpExpressionT>(value); }
+    template<typename IpExpressionT = RuleIpExpression>
+    RuleCondition& WithIpExpression(IpExpressionT&& value) { SetIpExpression(std::forward<IpExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,25 +102,37 @@ namespace Model
     template<typename VerdictExpressionT = RuleVerdictExpression>
     RuleCondition& WithVerdictExpression(VerdictExpressionT&& value) { SetVerdictExpression(std::forward<VerdictExpressionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The condition applies to a DMARC policy expression passed in this field.</p>
+     */
+    inline const RuleDmarcExpression& GetDmarcExpression() const { return m_dmarcExpression; }
+    inline bool DmarcExpressionHasBeenSet() const { return m_dmarcExpressionHasBeenSet; }
+    template<typename DmarcExpressionT = RuleDmarcExpression>
+    void SetDmarcExpression(DmarcExpressionT&& value) { m_dmarcExpressionHasBeenSet = true; m_dmarcExpression = std::forward<DmarcExpressionT>(value); }
+    template<typename DmarcExpressionT = RuleDmarcExpression>
+    RuleCondition& WithDmarcExpression(DmarcExpressionT&& value) { SetDmarcExpression(std::forward<DmarcExpressionT>(value)); return *this;}
+    ///@}
   private:
 
     RuleBooleanExpression m_booleanExpression;
     bool m_booleanExpressionHasBeenSet = false;
 
-    RuleDmarcExpression m_dmarcExpression;
-    bool m_dmarcExpressionHasBeenSet = false;
-
-    RuleIpExpression m_ipExpression;
-    bool m_ipExpressionHasBeenSet = false;
+    RuleStringExpression m_stringExpression;
+    bool m_stringExpressionHasBeenSet = false;
 
     RuleNumberExpression m_numberExpression;
     bool m_numberExpressionHasBeenSet = false;
 
-    RuleStringExpression m_stringExpression;
-    bool m_stringExpressionHasBeenSet = false;
+    RuleIpExpression m_ipExpression;
+    bool m_ipExpressionHasBeenSet = false;
 
     RuleVerdictExpression m_verdictExpression;
     bool m_verdictExpressionHasBeenSet = false;
+
+    RuleDmarcExpression m_dmarcExpression;
+    bool m_dmarcExpressionHasBeenSet = false;
   };
 
 } // namespace Model

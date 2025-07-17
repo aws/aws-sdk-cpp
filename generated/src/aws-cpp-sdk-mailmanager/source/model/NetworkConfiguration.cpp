@@ -25,15 +25,15 @@ NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
 
 NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("PrivateNetworkConfiguration"))
-  {
-    m_privateNetworkConfiguration = jsonValue.GetObject("PrivateNetworkConfiguration");
-    m_privateNetworkConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("PublicNetworkConfiguration"))
   {
     m_publicNetworkConfiguration = jsonValue.GetObject("PublicNetworkConfiguration");
     m_publicNetworkConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PrivateNetworkConfiguration"))
+  {
+    m_privateNetworkConfiguration = jsonValue.GetObject("PrivateNetworkConfiguration");
+    m_privateNetworkConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NetworkConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_privateNetworkConfigurationHasBeenSet)
-  {
-   payload.WithObject("PrivateNetworkConfiguration", m_privateNetworkConfiguration.Jsonize());
-
-  }
-
   if(m_publicNetworkConfigurationHasBeenSet)
   {
    payload.WithObject("PublicNetworkConfiguration", m_publicNetworkConfiguration.Jsonize());
+
+  }
+
+  if(m_privateNetworkConfigurationHasBeenSet)
+  {
+   payload.WithObject("PrivateNetworkConfiguration", m_privateNetworkConfiguration.Jsonize());
 
   }
 

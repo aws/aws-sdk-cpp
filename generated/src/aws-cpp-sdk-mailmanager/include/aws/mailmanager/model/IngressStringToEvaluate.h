@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/IngressAnalysis.h>
 #include <aws/mailmanager/model/IngressStringEmailAttribute.h>
+#include <aws/mailmanager/model/IngressAnalysis.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The enum type representing the allowed attribute types for a string
+     * condition.</p>
+     */
+    inline IngressStringEmailAttribute GetAttribute() const { return m_attribute; }
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+    inline void SetAttribute(IngressStringEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline IngressStringToEvaluate& WithAttribute(IngressStringEmailAttribute value) { SetAttribute(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The structure type for a string condition stating the Add On ARN and its
      * returned value.</p>
      */
@@ -51,24 +62,13 @@ namespace Model
     template<typename AnalysisT = IngressAnalysis>
     IngressStringToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The enum type representing the allowed attribute types for a string
-     * condition.</p>
-     */
-    inline IngressStringEmailAttribute GetAttribute() const { return m_attribute; }
-    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(IngressStringEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline IngressStringToEvaluate& WithAttribute(IngressStringEmailAttribute value) { SetAttribute(value); return *this;}
-    ///@}
   private:
-
-    IngressAnalysis m_analysis;
-    bool m_analysisHasBeenSet = false;
 
     IngressStringEmailAttribute m_attribute{IngressStringEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
+
+    IngressAnalysis m_analysis;
+    bool m_analysisHasBeenSet = false;
   };
 
 } // namespace Model

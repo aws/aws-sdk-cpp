@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/ArchiveBooleanExpression.h>
 #include <aws/mailmanager/model/ArchiveStringExpression.h>
+#include <aws/mailmanager/model/ArchiveBooleanExpression.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
-    inline const ArchiveBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
-    inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-    template<typename BooleanExpressionT = ArchiveBooleanExpression>
-    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
-    template<typename BooleanExpressionT = ArchiveBooleanExpression>
-    ArchiveFilterCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A string expression to evaluate against email attributes.</p>
      */
     inline const ArchiveStringExpression& GetStringExpression() const { return m_stringExpression; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename StringExpressionT = ArchiveStringExpression>
     ArchiveFilterCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
     ///@}
-  private:
 
-    ArchiveBooleanExpression m_booleanExpression;
-    bool m_booleanExpressionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A boolean expression to evaluate against email attributes.</p>
+     */
+    inline const ArchiveBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
+    inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
+    template<typename BooleanExpressionT = ArchiveBooleanExpression>
+    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
+    template<typename BooleanExpressionT = ArchiveBooleanExpression>
+    ArchiveFilterCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
+    ///@}
+  private:
 
     ArchiveStringExpression m_stringExpression;
     bool m_stringExpressionHasBeenSet = false;
+
+    ArchiveBooleanExpression m_booleanExpression;
+    bool m_booleanExpressionHasBeenSet = false;
   };
 
 } // namespace Model

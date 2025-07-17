@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of a distribution in your account that has an attached SSL/TLS
+     * <p>The ID of a standard distribution in your account that has an attached TLS
      * certificate that includes the provided alias.</p>
      */
     inline const Aws::String& GetDistributionId() const { return m_distributionId; }

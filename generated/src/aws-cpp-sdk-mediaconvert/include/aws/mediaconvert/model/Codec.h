@@ -28,6 +28,7 @@ namespace Model
     AV1,
     AVC,
     HEVC,
+    JPEG2000,
     MJPEG,
     MP4V,
     MPEG2,

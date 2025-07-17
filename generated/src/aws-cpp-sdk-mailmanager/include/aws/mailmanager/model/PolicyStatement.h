@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/AcceptAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mailmanager/model/AcceptAction.h>
 #include <aws/mailmanager/model/PolicyCondition.h>
 #include <utility>
 
@@ -42,17 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action that informs a traffic policy resource to either allow or block
-     * the email if it matches a condition in the policy statement.</p>
-     */
-    inline AcceptAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(AcceptAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline PolicyStatement& WithAction(AcceptAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The list of conditions to apply to incoming messages for filtering email
      * traffic.</p>
      */
@@ -65,13 +54,24 @@ namespace Model
     template<typename ConditionsT = PolicyCondition>
     PolicyStatement& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
-  private:
 
-    AcceptAction m_action{AcceptAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The action that informs a traffic policy resource to either allow or block
+     * the email if it matches a condition in the policy statement.</p>
+     */
+    inline AcceptAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(AcceptAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline PolicyStatement& WithAction(AcceptAction value) { SetAction(value); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<PolicyCondition> m_conditions;
     bool m_conditionsHasBeenSet = false;
+
+    AcceptAction m_action{AcceptAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

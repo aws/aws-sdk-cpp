@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mailmanager/model/IngressAddressListEmailAttribute.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -43,6 +43,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The email attribute that needs to be evaluated against the address list.</p>
+     */
+    inline IngressAddressListEmailAttribute GetAttribute() const { return m_attribute; }
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+    inline void SetAttribute(IngressAddressListEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline IngressIsInAddressList& WithAttribute(IngressAddressListEmailAttribute value) { SetAttribute(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The address lists that will be used for evaluation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddressLists() const { return m_addressLists; }
@@ -54,23 +64,13 @@ namespace Model
     template<typename AddressListsT = Aws::String>
     IngressIsInAddressList& AddAddressLists(AddressListsT&& value) { m_addressListsHasBeenSet = true; m_addressLists.emplace_back(std::forward<AddressListsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The email attribute that needs to be evaluated against the address list.</p>
-     */
-    inline IngressAddressListEmailAttribute GetAttribute() const { return m_attribute; }
-    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(IngressAddressListEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline IngressIsInAddressList& WithAttribute(IngressAddressListEmailAttribute value) { SetAttribute(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Aws::String> m_addressLists;
-    bool m_addressListsHasBeenSet = false;
 
     IngressAddressListEmailAttribute m_attribute{IngressAddressListEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_addressLists;
+    bool m_addressListsHasBeenSet = false;
   };
 
 } // namespace Model

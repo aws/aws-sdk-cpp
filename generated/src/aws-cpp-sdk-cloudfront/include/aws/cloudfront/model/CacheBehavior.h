@@ -107,11 +107,16 @@ namespace Model
     ///@{
     /**
      * <p> <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
-     * account IDs whose public keys CloudFront can use to validate signed URLs or
-     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
-     * CloudFront requires signed URLs or signed cookies for all requests that match
-     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * <code>TrustedSigners</code>.</p>   <p>This field only supports
+     * standard distributions. You can't specify this field for multi-tenant
+     * distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>A list of Amazon Web Services account IDs
+     * whose public keys CloudFront can use to validate signed URLs or signed
+     * cookies.</p> <p>When a cache behavior contains trusted signers, CloudFront
+     * requires signed URLs or signed cookies for all requests that match the cache
+     * behavior. The URLs or cookies must be signed with the private key of a
      * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
@@ -189,12 +194,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether you want to distribute media files in the Microsoft Smooth
-     * Streaming format using the origin that is associated with this cache behavior.
-     * If so, specify <code>true</code>; if not, specify <code>false</code>. If you
-     * specify <code>true</code> for <code>SmoothStreaming</code>, you can still
-     * distribute other content using this cache behavior if the content matches the
-     * value of <code>PathPattern</code>.</p>
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>Indicates whether you want to distribute
+     * media files in the Microsoft Smooth Streaming format using the origin that is
+     * associated with this cache behavior. If so, specify <code>true</code>; if not,
+     * specify <code>false</code>. If you specify <code>true</code> for
+     * <code>SmoothStreaming</code>, you can still distribute other content using this
+     * cache behavior if the content matches the value of
+     * <code>PathPattern</code>.</p></p>
      */
     inline bool GetSmoothStreaming() const { return m_smoothStreaming; }
     inline bool SmoothStreamingHasBeenSet() const { return m_smoothStreamingHasBeenSet; }

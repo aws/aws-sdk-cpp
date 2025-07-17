@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/synthetics/model/Dependency.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +64,22 @@ namespace Model
     template<typename HandlerT = Aws::String>
     CanaryCodeOutput& WithHandler(HandlerT&& value) { SetHandler(std::forward<HandlerT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of dependencies that are used for running this canary. The
+     * dependencies are specified as a key-value pair, where the key is the type of
+     * dependency and the value is the dependency reference.</p>
+     */
+    inline const Aws::Vector<Dependency>& GetDependencies() const { return m_dependencies; }
+    inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
+    template<typename DependenciesT = Aws::Vector<Dependency>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<Dependency>>
+    CanaryCodeOutput& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = Dependency>
+    CanaryCodeOutput& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_sourceLocationArn;
@@ -69,6 +87,9 @@ namespace Model
 
     Aws::String m_handler;
     bool m_handlerHasBeenSet = false;
+
+    Aws::Vector<Dependency> m_dependencies;
+    bool m_dependenciesHasBeenSet = false;
   };
 
 } // namespace Model

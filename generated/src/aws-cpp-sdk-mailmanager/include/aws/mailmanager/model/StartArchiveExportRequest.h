@@ -7,9 +7,9 @@
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/MailManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/mailmanager/model/ExportDestinationConfiguration.h>
 #include <aws/mailmanager/model/ArchiveFilters.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mailmanager/model/ExportDestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -55,18 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details on where to deliver the exported email data.</p>
-     */
-    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const { return m_exportDestinationConfiguration; }
-    inline bool ExportDestinationConfigurationHasBeenSet() const { return m_exportDestinationConfigurationHasBeenSet; }
-    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
-    void SetExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { m_exportDestinationConfigurationHasBeenSet = true; m_exportDestinationConfiguration = std::forward<ExportDestinationConfigurationT>(value); }
-    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
-    StartArchiveExportRequest& WithExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { SetExportDestinationConfiguration(std::forward<ExportDestinationConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Criteria to filter which emails are included in the export.</p>
      */
     inline const ArchiveFilters& GetFilters() const { return m_filters; }
@@ -91,12 +79,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether to include message metadata as JSON files in the export.</p>
+     * <p>The end of the timestamp range to include emails from.</p>
      */
-    inline bool GetIncludeMetadata() const { return m_includeMetadata; }
-    inline bool IncludeMetadataHasBeenSet() const { return m_includeMetadataHasBeenSet; }
-    inline void SetIncludeMetadata(bool value) { m_includeMetadataHasBeenSet = true; m_includeMetadata = value; }
-    inline StartArchiveExportRequest& WithIncludeMetadata(bool value) { SetIncludeMetadata(value); return *this;}
+    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
+    inline bool ToTimestampHasBeenSet() const { return m_toTimestampHasBeenSet; }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    StartArchiveExportRequest& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,22 +101,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>The end of the timestamp range to include emails from.</p>
+     * <p>Details on where to deliver the exported email data.</p>
      */
-    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
-    inline bool ToTimestampHasBeenSet() const { return m_toTimestampHasBeenSet; }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    StartArchiveExportRequest& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
+    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const { return m_exportDestinationConfiguration; }
+    inline bool ExportDestinationConfigurationHasBeenSet() const { return m_exportDestinationConfigurationHasBeenSet; }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    void SetExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { m_exportDestinationConfigurationHasBeenSet = true; m_exportDestinationConfiguration = std::forward<ExportDestinationConfigurationT>(value); }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    StartArchiveExportRequest& WithExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { SetExportDestinationConfiguration(std::forward<ExportDestinationConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether to include message metadata as JSON files in the export.</p>
+     */
+    inline bool GetIncludeMetadata() const { return m_includeMetadata; }
+    inline bool IncludeMetadataHasBeenSet() const { return m_includeMetadataHasBeenSet; }
+    inline void SetIncludeMetadata(bool value) { m_includeMetadataHasBeenSet = true; m_includeMetadata = value; }
+    inline StartArchiveExportRequest& WithIncludeMetadata(bool value) { SetIncludeMetadata(value); return *this;}
     ///@}
   private:
 
     Aws::String m_archiveId;
     bool m_archiveIdHasBeenSet = false;
-
-    ExportDestinationConfiguration m_exportDestinationConfiguration;
-    bool m_exportDestinationConfigurationHasBeenSet = false;
 
     ArchiveFilters m_filters;
     bool m_filtersHasBeenSet = false;
@@ -134,14 +131,17 @@ namespace Model
     Aws::Utils::DateTime m_fromTimestamp{};
     bool m_fromTimestampHasBeenSet = false;
 
-    bool m_includeMetadata{false};
-    bool m_includeMetadataHasBeenSet = false;
+    Aws::Utils::DateTime m_toTimestamp{};
+    bool m_toTimestampHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTimestamp{};
-    bool m_toTimestampHasBeenSet = false;
+    ExportDestinationConfiguration m_exportDestinationConfiguration;
+    bool m_exportDestinationConfigurationHasBeenSet = false;
+
+    bool m_includeMetadata{false};
+    bool m_includeMetadataHasBeenSet = false;
   };
 
 } // namespace Model
