@@ -128,6 +128,9 @@ You can also tell gcc or clang to pass these linker flags by specifying `-Wl,--g
 ### BUILD_BENCHMARKS
 (Defaults to OFF) Enables building the benchmark executable
 
+### BUILD_PERFORMANCE_TESTS
+(Defaults to OFF) Enables building the performance test executables for S3 and DynamoDB. These tests measure operation latencies and output results to JSON files. Requires S3 and DynamoDB clients to be built.
+
 ### BUILD_OPTEL
 (Defaults to OFF) Enables building the open telemetry implementation of tracing
 

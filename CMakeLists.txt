@@ -61,6 +61,7 @@ if (LEGACY_BUILD)
     option(ENABLE_ZLIB_REQUEST_COMPRESSION "For services that support it, request content will be compressed. On by default if dependency available" ON)
     option(DISABLE_INTERNAL_IMDSV1_CALLS "Disables IMDSv1 internal client calls" OFF)
     option(BUILD_BENCHMARKS "Enables building the benchmark executable" OFF)
+    option(BUILD_PERFORMANCE_TESTS "Enables building the performance test executables" OFF)
     option(BUILD_OPTEL "Enables building the open telemetry implementation of tracing" OFF)
     option(AWS_SDK_WARNINGS_ARE_ERRORS "Compiler warning is treated as an error. Try turning this off when observing errors on a new or uncommon compiler" ON)
     option(BUILD_OPTEL_OTLP_BENCHMARKS "Enables building the benchmark tests with open telemetry OTLP clients" OFF)
@@ -340,6 +341,11 @@ if (LEGACY_BUILD)
 
     add_sdks()
     include(tests)
+
+    # Performance tests for services
+    if (BUILD_PERFORMANCE_TESTS)
+        add_subdirectory(tests/performance-tests)
+    endif()
 
     # for user friendly cmake usage
     include(setup_cmake_find_module)
