@@ -907,7 +907,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     const Aws::Utils::ByteBuffer byteBuffer1(buffer1, 6);
     unsigned char buffer2[6] = { 21, 35, 55, 68, 11, 6 };
     const Aws::Utils::ByteBuffer byteBuffer2(buffer2, 6);
-
+    const Aws::Utils::ByteBuffer emptyBuf;
     // create the Hash Key value
     AttributeValue hashKey("TestValue");
 
@@ -947,6 +947,9 @@ TEST_F(TableOperationTest, TestAttributeValues)
         //ReturnedItemCollection returnedItemCollection = result.GetItems();
         EXPECT_EQ("TestValue", returnedItemCollection[HASH_KEY_NAME].GetS());
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
+
+        EXPECT_EQ(emptyBuf, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(emptyBuf, returnedItemCollection["ByteBuffer"].AccessB());
     }
 
     // Number Value
