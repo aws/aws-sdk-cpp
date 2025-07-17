@@ -32,6 +32,11 @@ public:
 
     virtual const Aws::Utils::ByteBuffer GetB() const { return {}; }
 
+    virtual const Aws::Utils::ByteBuffer& AccessB() const {
+        static const Aws::Utils::ByteBuffer empty;
+        return empty;
+    }
+
     virtual const Aws::Vector<Aws::String> GetSS() const { return {}; }
 
     virtual void AddSItem(const Aws::String& ) { assert(false); }
@@ -104,6 +109,7 @@ public:
     explicit AttributeValueByteBuffer(const Aws::Utils::ByteBuffer& value) : m_b(value) {}
     explicit AttributeValueByteBuffer(Aws::Utils::Json::JsonView jsonValue);
     const Aws::Utils::ByteBuffer GetB() const override { return m_b; }
+    const Aws::Utils::ByteBuffer& AccessB() const override { return m_b; }
     bool IsDefault() const override { return m_b.GetLength() == 0; }
     bool operator == (const AttributeValueValue& other) const override { return GetType() == other.GetType() && m_b == other.GetB(); }
     Aws::Utils::Json::JsonValue Jsonize() const override;
