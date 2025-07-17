@@ -22,14 +22,9 @@ Aws::String CreateTrafficPolicyRequest::SerializePayload() const
 
   }
 
-  if(m_defaultActionHasBeenSet)
+  if(m_trafficPolicyNameHasBeenSet)
   {
-   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
-  }
-
-  if(m_maxMessageSizeBytesHasBeenSet)
-  {
-   payload.WithInteger("MaxMessageSizeBytes", m_maxMessageSizeBytes);
+   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
 
   }
 
@@ -44,6 +39,17 @@ Aws::String CreateTrafficPolicyRequest::SerializePayload() const
 
   }
 
+  if(m_defaultActionHasBeenSet)
+  {
+   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
+  }
+
+  if(m_maxMessageSizeBytesHasBeenSet)
+  {
+   payload.WithInteger("MaxMessageSizeBytes", m_maxMessageSizeBytes);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -52,12 +58,6 @@ Aws::String CreateTrafficPolicyRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_trafficPolicyNameHasBeenSet)
-  {
-   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
 
   }
 

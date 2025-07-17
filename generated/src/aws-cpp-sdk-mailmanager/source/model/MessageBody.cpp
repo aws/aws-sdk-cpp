@@ -25,6 +25,11 @@ MessageBody::MessageBody(JsonView jsonValue)
 
 MessageBody& MessageBody::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Text"))
+  {
+    m_text = jsonValue.GetString("Text");
+    m_textHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Html"))
   {
     m_html = jsonValue.GetString("Html");
@@ -35,17 +40,18 @@ MessageBody& MessageBody::operator =(JsonView jsonValue)
     m_messageMalformed = jsonValue.GetBool("MessageMalformed");
     m_messageMalformedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Text"))
-  {
-    m_text = jsonValue.GetString("Text");
-    m_textHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue MessageBody::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("Text", m_text);
+
+  }
 
   if(m_htmlHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue MessageBody::Jsonize() const
   if(m_messageMalformedHasBeenSet)
   {
    payload.WithBool("MessageMalformed", m_messageMalformed);
-
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
 
   }
 

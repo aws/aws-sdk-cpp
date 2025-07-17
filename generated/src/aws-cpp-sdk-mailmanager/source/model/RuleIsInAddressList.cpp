@@ -25,6 +25,11 @@ RuleIsInAddressList::RuleIsInAddressList(JsonView jsonValue)
 
 RuleIsInAddressList& RuleIsInAddressList::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Attribute"))
+  {
+    m_attribute = RuleAddressListEmailAttributeMapper::GetRuleAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
+    m_attributeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AddressLists"))
   {
     Aws::Utils::Array<JsonView> addressListsJsonList = jsonValue.GetArray("AddressLists");
@@ -34,17 +39,17 @@ RuleIsInAddressList& RuleIsInAddressList::operator =(JsonView jsonValue)
     }
     m_addressListsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attribute"))
-  {
-    m_attribute = RuleAddressListEmailAttributeMapper::GetRuleAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
-    m_attributeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RuleIsInAddressList::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_attributeHasBeenSet)
+  {
+   payload.WithString("Attribute", RuleAddressListEmailAttributeMapper::GetNameForRuleAddressListEmailAttribute(m_attribute));
+  }
 
   if(m_addressListsHasBeenSet)
   {
@@ -55,11 +60,6 @@ JsonValue RuleIsInAddressList::Jsonize() const
    }
    payload.WithArray("AddressLists", std::move(addressListsJsonList));
 
-  }
-
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", RuleAddressListEmailAttributeMapper::GetNameForRuleAddressListEmailAttribute(m_attribute));
   }
 
   return payload;

@@ -184,11 +184,14 @@ namespace Model
      * <li> <p> <code>description</code> - The description of the image (provided
      * during image creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean
      * that indicates whether enhanced networking with ENA is enabled.</p> </li> <li>
-     * <p> <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p> <code>image-allowed</code> - A Boolean
-     * that indicates whether the image meets the criteria specified for Allowed
-     * AMIs.</p> </li> <li> <p> <code>image-id</code> - The ID of the image.</p> </li>
-     * <li> <p> <code>image-type</code> - The image type (<code>machine</code> |
+     * <p> <code>free-tier-eligible</code> - A Boolean that indicates whether this
+     * image can be used under the Amazon Web Services Free Tier (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
+     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * <code>image-allowed</code> - A Boolean that indicates whether the image meets
+     * the criteria specified for Allowed AMIs.</p> </li> <li> <p>
+     * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
+     * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
      * <code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>

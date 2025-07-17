@@ -224,8 +224,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A complex type that contains information about price class for this streaming
-     * distribution.</p>
+     * <p> <p>This field only supports standard distributions. You can't specify
+     * this field for multi-tenant distributions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+     * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>  <p>A complex type that contains information
+     * about price class for this streaming distribution.</p></p>
      */
     inline PriceClass GetPriceClass() const { return m_priceClass; }
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
@@ -340,7 +344,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The connection mode to filter distributions by.</p>
+     * <p>This field specifies whether the connection mode is through a standard
+     * distribution (direct) or a multi-tenant distribution with distribution
+     * tenants(tenant-only).</p>
      */
     inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
     inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }

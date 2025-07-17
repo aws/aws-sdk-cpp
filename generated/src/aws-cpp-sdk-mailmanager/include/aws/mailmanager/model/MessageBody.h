@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The plain text body content of the message.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    MessageBody& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The HTML body content of the message.</p>
      */
     inline const Aws::String& GetHtml() const { return m_html; }
@@ -58,28 +70,16 @@ namespace Model
     inline void SetMessageMalformed(bool value) { m_messageMalformedHasBeenSet = true; m_messageMalformed = value; }
     inline MessageBody& WithMessageMalformed(bool value) { SetMessageMalformed(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The plain text body content of the message.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    MessageBody& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_html;
     bool m_htmlHasBeenSet = false;
 
     bool m_messageMalformed{false};
     bool m_messageMalformedHasBeenSet = false;
-
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

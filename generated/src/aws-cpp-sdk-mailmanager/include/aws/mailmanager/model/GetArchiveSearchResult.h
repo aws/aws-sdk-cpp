@@ -76,6 +76,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The end timestamp of the range the searched emails cover.</p>
+     */
+    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    GetArchiveSearchResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of search results to return.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -92,17 +103,6 @@ namespace Model
     void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
     template<typename StatusT = SearchStatus>
     GetArchiveSearchResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The end timestamp of the range the searched emails cover.</p>
-     */
-    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
-    template<typename ToTimestampT = Aws::Utils::DateTime>
-    GetArchiveSearchResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +124,14 @@ namespace Model
     Aws::Utils::DateTime m_fromTimestamp{};
     bool m_fromTimestampHasBeenSet = false;
 
+    Aws::Utils::DateTime m_toTimestamp{};
+    bool m_toTimestampHasBeenSet = false;
+
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     SearchStatus m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_toTimestamp{};
-    bool m_toTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

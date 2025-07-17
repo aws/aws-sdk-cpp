@@ -25,11 +25,6 @@ ListRuleSetsResult::ListRuleSetsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListRuleSetsResult& ListRuleSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("RuleSets"))
   {
     Aws::Utils::Array<JsonView> ruleSetsJsonList = jsonValue.GetArray("RuleSets");
@@ -38,6 +33,11 @@ ListRuleSetsResult& ListRuleSetsResult::operator =(const Aws::AmazonWebServiceRe
       m_ruleSets.push_back(ruleSetsJsonList[ruleSetsIndex].AsObject());
     }
     m_ruleSetsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

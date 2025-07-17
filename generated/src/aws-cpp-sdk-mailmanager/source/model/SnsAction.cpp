@@ -30,6 +30,16 @@ SnsAction& SnsAction::operator =(JsonView jsonValue)
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
     m_actionFailurePolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TopicArn"))
+  {
+    m_topicArn = jsonValue.GetString("TopicArn");
+    m_topicArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+    m_roleArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Encoding"))
   {
     m_encoding = SnsNotificationEncodingMapper::GetSnsNotificationEncodingForName(jsonValue.GetString("Encoding"));
@@ -39,16 +49,6 @@ SnsAction& SnsAction::operator =(JsonView jsonValue)
   {
     m_payloadType = SnsNotificationPayloadTypeMapper::GetSnsNotificationPayloadTypeForName(jsonValue.GetString("PayloadType"));
     m_payloadTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
-    m_roleArn = jsonValue.GetString("RoleArn");
-    m_roleArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("TopicArn"))
-  {
-    m_topicArn = jsonValue.GetString("TopicArn");
-    m_topicArnHasBeenSet = true;
   }
   return *this;
 }
@@ -62,14 +62,10 @@ JsonValue SnsAction::Jsonize() const
    payload.WithString("ActionFailurePolicy", ActionFailurePolicyMapper::GetNameForActionFailurePolicy(m_actionFailurePolicy));
   }
 
-  if(m_encodingHasBeenSet)
+  if(m_topicArnHasBeenSet)
   {
-   payload.WithString("Encoding", SnsNotificationEncodingMapper::GetNameForSnsNotificationEncoding(m_encoding));
-  }
+   payload.WithString("TopicArn", m_topicArn);
 
-  if(m_payloadTypeHasBeenSet)
-  {
-   payload.WithString("PayloadType", SnsNotificationPayloadTypeMapper::GetNameForSnsNotificationPayloadType(m_payloadType));
   }
 
   if(m_roleArnHasBeenSet)
@@ -78,10 +74,14 @@ JsonValue SnsAction::Jsonize() const
 
   }
 
-  if(m_topicArnHasBeenSet)
+  if(m_encodingHasBeenSet)
   {
-   payload.WithString("TopicArn", m_topicArn);
+   payload.WithString("Encoding", SnsNotificationEncodingMapper::GetNameForSnsNotificationEncoding(m_encoding));
+  }
 
+  if(m_payloadTypeHasBeenSet)
+  {
+   payload.WithString("PayloadType", SnsNotificationPayloadTypeMapper::GetNameForSnsNotificationPayloadType(m_payloadType));
   }
 
   return payload;

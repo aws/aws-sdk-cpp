@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/AacAudioDescriptionBroadcasterMix.h>
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
+#include <aws/mediaconvert/model/AacLoudnessMeasurementMode.h>
 #include <aws/mediaconvert/model/AacRateControlMode.h>
 #include <aws/mediaconvert/model/AacRawFormat.h>
 #include <aws/mediaconvert/model/AacSpecification.h>
@@ -116,6 +117,36 @@ namespace Model
 
     ///@{
     /**
+     * Choose the loudness measurement mode for your audio content. For music or
+     * advertisements: We recommend that you keep the default value, Program. For
+     * speech or other content: We recommend that you choose Anchor. When you do,
+     * MediaConvert optimizes the loudness of your output for clarify by applying
+     * speech gates.
+     */
+    inline AacLoudnessMeasurementMode GetLoudnessMeasurementMode() const { return m_loudnessMeasurementMode; }
+    inline bool LoudnessMeasurementModeHasBeenSet() const { return m_loudnessMeasurementModeHasBeenSet; }
+    inline void SetLoudnessMeasurementMode(AacLoudnessMeasurementMode value) { m_loudnessMeasurementModeHasBeenSet = true; m_loudnessMeasurementMode = value; }
+    inline AacSettings& WithLoudnessMeasurementMode(AacLoudnessMeasurementMode value) { SetLoudnessMeasurementMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A
+     * RAP allows a decoder to decode audio data mid-stream, without the need to
+     * reference previous audio frames, and perform adaptive audio bitrate switching.
+     * To specify the RAP interval: Enter an integer from 2000 to 30000, in
+     * milliseconds. Smaller values allow for better seeking and more frequent stream
+     * switching, while large values improve compression efficiency. To have
+     * MediaConvert automatically determine the RAP interval: Leave blank.
+     */
+    inline int GetRapInterval() const { return m_rapInterval; }
+    inline bool RapIntervalHasBeenSet() const { return m_rapIntervalHasBeenSet; }
+    inline void SetRapInterval(int value) { m_rapIntervalHasBeenSet = true; m_rapInterval = value; }
+    inline AacSettings& WithRapInterval(int value) { SetRapInterval(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
      * output bitrate will be equal to the value that you choose for Bitrate. For a
      * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
@@ -164,6 +195,18 @@ namespace Model
 
     ///@{
     /**
+     * Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing
+     * "loudness units". For more information, see the following specification:
+     * Supplementary information for R 128 EBU Tech 3342-2023.
+     */
+    inline int GetTargetLoudnessRange() const { return m_targetLoudnessRange; }
+    inline bool TargetLoudnessRangeHasBeenSet() const { return m_targetLoudnessRangeHasBeenSet; }
+    inline void SetTargetLoudnessRange(int value) { m_targetLoudnessRangeHasBeenSet = true; m_targetLoudnessRange = value; }
+    inline AacSettings& WithTargetLoudnessRange(int value) { SetTargetLoudnessRange(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
      * approximate VBR bitrates, see:
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
@@ -187,6 +230,12 @@ namespace Model
     AacCodingMode m_codingMode{AacCodingMode::NOT_SET};
     bool m_codingModeHasBeenSet = false;
 
+    AacLoudnessMeasurementMode m_loudnessMeasurementMode{AacLoudnessMeasurementMode::NOT_SET};
+    bool m_loudnessMeasurementModeHasBeenSet = false;
+
+    int m_rapInterval{0};
+    bool m_rapIntervalHasBeenSet = false;
+
     AacRateControlMode m_rateControlMode{AacRateControlMode::NOT_SET};
     bool m_rateControlModeHasBeenSet = false;
 
@@ -198,6 +247,9 @@ namespace Model
 
     AacSpecification m_specification{AacSpecification::NOT_SET};
     bool m_specificationHasBeenSet = false;
+
+    int m_targetLoudnessRange{0};
+    bool m_targetLoudnessRangeHasBeenSet = false;
 
     AacVbrQuality m_vbrQuality{AacVbrQuality::NOT_SET};
     bool m_vbrQualityHasBeenSet = false;

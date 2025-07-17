@@ -30,45 +30,45 @@ Row& Row::operator =(JsonView jsonValue)
     m_archivedMessageId = jsonValue.GetString("ArchivedMessageId");
     m_archivedMessageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Cc"))
+  if(jsonValue.ValueExists("ReceivedTimestamp"))
   {
-    m_cc = jsonValue.GetString("Cc");
-    m_ccHasBeenSet = true;
+    m_receivedTimestamp = jsonValue.GetDouble("ReceivedTimestamp");
+    m_receivedTimestampHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetString("Date");
     m_dateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Envelope"))
+  if(jsonValue.ValueExists("To"))
   {
-    m_envelope = jsonValue.GetObject("Envelope");
-    m_envelopeHasBeenSet = true;
+    m_to = jsonValue.GetString("To");
+    m_toHasBeenSet = true;
   }
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
     m_fromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HasAttachments"))
+  if(jsonValue.ValueExists("Cc"))
   {
-    m_hasAttachments = jsonValue.GetBool("HasAttachments");
-    m_hasAttachmentsHasBeenSet = true;
+    m_cc = jsonValue.GetString("Cc");
+    m_ccHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InReplyTo"))
+  if(jsonValue.ValueExists("Subject"))
   {
-    m_inReplyTo = jsonValue.GetString("InReplyTo");
-    m_inReplyToHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IngressPointId"))
-  {
-    m_ingressPointId = jsonValue.GetString("IngressPointId");
-    m_ingressPointIdHasBeenSet = true;
+    m_subject = jsonValue.GetString("Subject");
+    m_subjectHasBeenSet = true;
   }
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
     m_messageIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("HasAttachments"))
+  {
+    m_hasAttachments = jsonValue.GetBool("HasAttachments");
+    m_hasAttachmentsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReceivedHeaders"))
   {
@@ -79,35 +79,10 @@ Row& Row::operator =(JsonView jsonValue)
     }
     m_receivedHeadersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReceivedTimestamp"))
+  if(jsonValue.ValueExists("InReplyTo"))
   {
-    m_receivedTimestamp = jsonValue.GetDouble("ReceivedTimestamp");
-    m_receivedTimestampHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("SenderHostname"))
-  {
-    m_senderHostname = jsonValue.GetString("SenderHostname");
-    m_senderHostnameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("SenderIpAddress"))
-  {
-    m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
-    m_senderIpAddressHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("SourceArn"))
-  {
-    m_sourceArn = jsonValue.GetString("SourceArn");
-    m_sourceArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Subject"))
-  {
-    m_subject = jsonValue.GetString("Subject");
-    m_subjectHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("To"))
-  {
-    m_to = jsonValue.GetString("To");
-    m_toHasBeenSet = true;
+    m_inReplyTo = jsonValue.GetString("InReplyTo");
+    m_inReplyToHasBeenSet = true;
   }
   if(jsonValue.ValueExists("XMailer"))
   {
@@ -124,6 +99,31 @@ Row& Row::operator =(JsonView jsonValue)
     m_xPriority = jsonValue.GetString("XPriority");
     m_xPriorityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IngressPointId"))
+  {
+    m_ingressPointId = jsonValue.GetString("IngressPointId");
+    m_ingressPointIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SenderHostname"))
+  {
+    m_senderHostname = jsonValue.GetString("SenderHostname");
+    m_senderHostnameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SenderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
+    m_senderIpAddressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Envelope"))
+  {
+    m_envelope = jsonValue.GetObject("Envelope");
+    m_envelopeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SourceArn"))
+  {
+    m_sourceArn = jsonValue.GetString("SourceArn");
+    m_sourceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -137,10 +137,9 @@ JsonValue Row::Jsonize() const
 
   }
 
-  if(m_ccHasBeenSet)
+  if(m_receivedTimestampHasBeenSet)
   {
-   payload.WithString("Cc", m_cc);
-
+   payload.WithDouble("ReceivedTimestamp", m_receivedTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_dateHasBeenSet)
@@ -149,9 +148,9 @@ JsonValue Row::Jsonize() const
 
   }
 
-  if(m_envelopeHasBeenSet)
+  if(m_toHasBeenSet)
   {
-   payload.WithObject("Envelope", m_envelope.Jsonize());
+   payload.WithString("To", m_to);
 
   }
 
@@ -161,27 +160,27 @@ JsonValue Row::Jsonize() const
 
   }
 
-  if(m_hasAttachmentsHasBeenSet)
+  if(m_ccHasBeenSet)
   {
-   payload.WithBool("HasAttachments", m_hasAttachments);
+   payload.WithString("Cc", m_cc);
 
   }
 
-  if(m_inReplyToHasBeenSet)
+  if(m_subjectHasBeenSet)
   {
-   payload.WithString("InReplyTo", m_inReplyTo);
-
-  }
-
-  if(m_ingressPointIdHasBeenSet)
-  {
-   payload.WithString("IngressPointId", m_ingressPointId);
+   payload.WithString("Subject", m_subject);
 
   }
 
   if(m_messageIdHasBeenSet)
   {
    payload.WithString("MessageId", m_messageId);
+
+  }
+
+  if(m_hasAttachmentsHasBeenSet)
+  {
+   payload.WithBool("HasAttachments", m_hasAttachments);
 
   }
 
@@ -196,38 +195,9 @@ JsonValue Row::Jsonize() const
 
   }
 
-  if(m_receivedTimestampHasBeenSet)
+  if(m_inReplyToHasBeenSet)
   {
-   payload.WithDouble("ReceivedTimestamp", m_receivedTimestamp.SecondsWithMSPrecision());
-  }
-
-  if(m_senderHostnameHasBeenSet)
-  {
-   payload.WithString("SenderHostname", m_senderHostname);
-
-  }
-
-  if(m_senderIpAddressHasBeenSet)
-  {
-   payload.WithString("SenderIpAddress", m_senderIpAddress);
-
-  }
-
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
-  }
-
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithString("Subject", m_subject);
-
-  }
-
-  if(m_toHasBeenSet)
-  {
-   payload.WithString("To", m_to);
+   payload.WithString("InReplyTo", m_inReplyTo);
 
   }
 
@@ -246,6 +216,36 @@ JsonValue Row::Jsonize() const
   if(m_xPriorityHasBeenSet)
   {
    payload.WithString("XPriority", m_xPriority);
+
+  }
+
+  if(m_ingressPointIdHasBeenSet)
+  {
+   payload.WithString("IngressPointId", m_ingressPointId);
+
+  }
+
+  if(m_senderHostnameHasBeenSet)
+  {
+   payload.WithString("SenderHostname", m_senderHostname);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("SenderIpAddress", m_senderIpAddress);
+
+  }
+
+  if(m_envelopeHasBeenSet)
+  {
+   payload.WithObject("Envelope", m_envelope.Jsonize());
+
+  }
+
+  if(m_sourceArnHasBeenSet)
+  {
+   payload.WithString("SourceArn", m_sourceArn);
 
   }
 

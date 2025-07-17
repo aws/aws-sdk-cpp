@@ -25,20 +25,15 @@ IngressPoint::IngressPoint(JsonView jsonValue)
 
 IngressPoint& IngressPoint::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ARecord"))
+  if(jsonValue.ValueExists("IngressPointName"))
   {
-    m_aRecord = jsonValue.GetString("ARecord");
-    m_aRecordHasBeenSet = true;
+    m_ingressPointName = jsonValue.GetString("IngressPointName");
+    m_ingressPointNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
     m_ingressPointIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IngressPointName"))
-  {
-    m_ingressPointName = jsonValue.GetString("IngressPointName");
-    m_ingressPointNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
@@ -50,6 +45,11 @@ IngressPoint& IngressPoint::operator =(JsonView jsonValue)
     m_type = IngressPointTypeMapper::GetIngressPointTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ARecord"))
+  {
+    m_aRecord = jsonValue.GetString("ARecord");
+    m_aRecordHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -57,21 +57,15 @@ JsonValue IngressPoint::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_aRecordHasBeenSet)
+  if(m_ingressPointNameHasBeenSet)
   {
-   payload.WithString("ARecord", m_aRecord);
+   payload.WithString("IngressPointName", m_ingressPointName);
 
   }
 
   if(m_ingressPointIdHasBeenSet)
   {
    payload.WithString("IngressPointId", m_ingressPointId);
-
-  }
-
-  if(m_ingressPointNameHasBeenSet)
-  {
-   payload.WithString("IngressPointName", m_ingressPointName);
 
   }
 
@@ -83,6 +77,12 @@ JsonValue IngressPoint::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", IngressPointTypeMapper::GetNameForIngressPointType(m_type));
+  }
+
+  if(m_aRecordHasBeenSet)
+  {
+   payload.WithString("ARecord", m_aRecord);
+
   }
 
   return payload;

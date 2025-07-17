@@ -16,15 +16,15 @@ Aws::String RegisterMemberToAddressListRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_addressHasBeenSet)
-  {
-   payload.WithString("Address", m_address);
-
-  }
-
   if(m_addressListIdHasBeenSet)
   {
    payload.WithString("AddressListId", m_addressListId);
+
+  }
+
+  if(m_addressHasBeenSet)
+  {
+   payload.WithString("Address", m_address);
 
   }
 

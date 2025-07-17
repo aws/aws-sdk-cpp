@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/ExportState.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The timestamp of when the export job was submitted.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSubmissionTimestamp() const { return m_submissionTimestamp; }
+    inline bool SubmissionTimestampHasBeenSet() const { return m_submissionTimestampHasBeenSet; }
+    template<typename SubmissionTimestampT = Aws::Utils::DateTime>
+    void SetSubmissionTimestamp(SubmissionTimestampT&& value) { m_submissionTimestampHasBeenSet = true; m_submissionTimestamp = std::forward<SubmissionTimestampT>(value); }
+    template<typename SubmissionTimestampT = Aws::Utils::DateTime>
+    ExportStatus& WithSubmissionTimestamp(SubmissionTimestampT&& value) { SetSubmissionTimestamp(std::forward<SubmissionTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp of when the export job completed (if finished).</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTimestamp() const { return m_completionTimestamp; }
@@ -49,18 +61,6 @@ namespace Model
     void SetCompletionTimestamp(CompletionTimestampT&& value) { m_completionTimestampHasBeenSet = true; m_completionTimestamp = std::forward<CompletionTimestampT>(value); }
     template<typename CompletionTimestampT = Aws::Utils::DateTime>
     ExportStatus& WithCompletionTimestamp(CompletionTimestampT&& value) { SetCompletionTimestamp(std::forward<CompletionTimestampT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An error message if the export job failed.</p>
-     */
-    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    template<typename ErrorMessageT = Aws::String>
-    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
-    template<typename ErrorMessageT = Aws::String>
-    ExportStatus& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +75,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the export job was submitted.</p>
+     * <p>An error message if the export job failed.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmissionTimestamp() const { return m_submissionTimestamp; }
-    inline bool SubmissionTimestampHasBeenSet() const { return m_submissionTimestampHasBeenSet; }
-    template<typename SubmissionTimestampT = Aws::Utils::DateTime>
-    void SetSubmissionTimestamp(SubmissionTimestampT&& value) { m_submissionTimestampHasBeenSet = true; m_submissionTimestamp = std::forward<SubmissionTimestampT>(value); }
-    template<typename SubmissionTimestampT = Aws::Utils::DateTime>
-    ExportStatus& WithSubmissionTimestamp(SubmissionTimestampT&& value) { SetSubmissionTimestamp(std::forward<SubmissionTimestampT>(value)); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ExportStatus& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Utils::DateTime m_submissionTimestamp{};
+    bool m_submissionTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTimestamp{};
     bool m_completionTimestampHasBeenSet = false;
 
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
-
     ExportState m_state{ExportState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submissionTimestamp{};
-    bool m_submissionTimestampHasBeenSet = false;
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

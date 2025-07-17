@@ -25,6 +25,21 @@ GetRuleSetResult::GetRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetRuleSetResult& GetRuleSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("RuleSetId"))
+  {
+    m_ruleSetId = jsonValue.GetString("RuleSetId");
+    m_ruleSetIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RuleSetArn"))
+  {
+    m_ruleSetArn = jsonValue.GetString("RuleSetArn");
+    m_ruleSetArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RuleSetName"))
+  {
+    m_ruleSetName = jsonValue.GetString("RuleSetName");
+    m_ruleSetNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
@@ -34,21 +49,6 @@ GetRuleSetResult& GetRuleSetResult::operator =(const Aws::AmazonWebServiceResult
   {
     m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
     m_lastModificationDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RuleSetArn"))
-  {
-    m_ruleSetArn = jsonValue.GetString("RuleSetArn");
-    m_ruleSetArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RuleSetId"))
-  {
-    m_ruleSetId = jsonValue.GetString("RuleSetId");
-    m_ruleSetIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RuleSetName"))
-  {
-    m_ruleSetName = jsonValue.GetString("RuleSetName");
-    m_ruleSetNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Rules"))
   {

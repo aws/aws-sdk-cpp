@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/PrivateNetworkConfiguration.h>
 #include <aws/mailmanager/model/PublicNetworkConfiguration.h>
+#include <aws/mailmanager/model/PrivateNetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the network configuration for the private ingress point.</p>
-     */
-    inline const PrivateNetworkConfiguration& GetPrivateNetworkConfiguration() const { return m_privateNetworkConfiguration; }
-    inline bool PrivateNetworkConfigurationHasBeenSet() const { return m_privateNetworkConfigurationHasBeenSet; }
-    template<typename PrivateNetworkConfigurationT = PrivateNetworkConfiguration>
-    void SetPrivateNetworkConfiguration(PrivateNetworkConfigurationT&& value) { m_privateNetworkConfigurationHasBeenSet = true; m_privateNetworkConfiguration = std::forward<PrivateNetworkConfigurationT>(value); }
-    template<typename PrivateNetworkConfigurationT = PrivateNetworkConfiguration>
-    NetworkConfiguration& WithPrivateNetworkConfiguration(PrivateNetworkConfigurationT&& value) { SetPrivateNetworkConfiguration(std::forward<PrivateNetworkConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the network configuration for the public ingress point.</p>
      */
     inline const PublicNetworkConfiguration& GetPublicNetworkConfiguration() const { return m_publicNetworkConfiguration; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename PublicNetworkConfigurationT = PublicNetworkConfiguration>
     NetworkConfiguration& WithPublicNetworkConfiguration(PublicNetworkConfigurationT&& value) { SetPublicNetworkConfiguration(std::forward<PublicNetworkConfigurationT>(value)); return *this;}
     ///@}
-  private:
 
-    PrivateNetworkConfiguration m_privateNetworkConfiguration;
-    bool m_privateNetworkConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the network configuration for the private ingress point.</p>
+     */
+    inline const PrivateNetworkConfiguration& GetPrivateNetworkConfiguration() const { return m_privateNetworkConfiguration; }
+    inline bool PrivateNetworkConfigurationHasBeenSet() const { return m_privateNetworkConfigurationHasBeenSet; }
+    template<typename PrivateNetworkConfigurationT = PrivateNetworkConfiguration>
+    void SetPrivateNetworkConfiguration(PrivateNetworkConfigurationT&& value) { m_privateNetworkConfigurationHasBeenSet = true; m_privateNetworkConfiguration = std::forward<PrivateNetworkConfigurationT>(value); }
+    template<typename PrivateNetworkConfigurationT = PrivateNetworkConfiguration>
+    NetworkConfiguration& WithPrivateNetworkConfiguration(PrivateNetworkConfigurationT&& value) { SetPrivateNetworkConfiguration(std::forward<PrivateNetworkConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     PublicNetworkConfiguration m_publicNetworkConfiguration;
     bool m_publicNetworkConfigurationHasBeenSet = false;
+
+    PrivateNetworkConfiguration m_privateNetworkConfiguration;
+    bool m_privateNetworkConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

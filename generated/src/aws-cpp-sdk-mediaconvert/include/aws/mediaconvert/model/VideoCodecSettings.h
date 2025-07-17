@@ -90,11 +90,10 @@ namespace Model
     ///@{
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
-     * Choose Passthrough. If you have multiple input videos, note that they must have
-     * identical encoding attributes. When you choose Passthrough, your output
-     * container must be MXF or QuickTime MOV.
+     * by the object VideoCodec. To passthrough the video stream of your input without
+     * any video encoding: Choose Passthrough. More information about passthrough codec
+     * support and job settings requirements, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-passthrough-feature-restrictions.html
      */
     inline VideoCodec GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }

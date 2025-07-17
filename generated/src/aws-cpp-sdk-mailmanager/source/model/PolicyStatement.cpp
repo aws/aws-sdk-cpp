@@ -25,11 +25,6 @@ PolicyStatement::PolicyStatement(JsonView jsonValue)
 
 PolicyStatement& PolicyStatement::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Action"))
-  {
-    m_action = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("Action"));
-    m_actionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -39,17 +34,17 @@ PolicyStatement& PolicyStatement::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Action"))
+  {
+    m_action = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("Action"));
+    m_actionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue PolicyStatement::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("Action", AcceptActionMapper::GetNameForAcceptAction(m_action));
-  }
 
   if(m_conditionsHasBeenSet)
   {
@@ -60,6 +55,11 @@ JsonValue PolicyStatement::Jsonize() const
    }
    payload.WithArray("Conditions", std::move(conditionsJsonList));
 
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("Action", AcceptActionMapper::GetNameForAcceptAction(m_action));
   }
 
   return payload;

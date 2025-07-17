@@ -49,9 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target distribution resource for the domain. You can specify either
-     * <code>DistributionId</code> or <code>DistributionTenantId</code>, but not
-     * both.</p>
+     * <p>The target standard distribution or distribution tenant resource for the
+     * domain. You can specify either <code>DistributionId</code> or
+     * <code>DistributionTenantId</code>, but not both.</p>
      */
     inline const DistributionResourceId& GetTargetResource() const { return m_targetResource; }
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
@@ -63,8 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value of the <code>ETag</code> identifier for the distribution or
-     * distribution tenant that will be associated with the domain.</p>
+     * <p>The value of the <code>ETag</code> identifier for the standard distribution
+     * or distribution tenant that will be associated with the domain.</p>
      */
     inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }

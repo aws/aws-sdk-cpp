@@ -25,14 +25,10 @@ Rule::Rule(JsonView jsonValue)
 
 Rule& Rule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Actions"))
+  if(jsonValue.ValueExists("Name"))
   {
-    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
-    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-    {
-      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
-    }
-    m_actionsHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Conditions"))
   {
@@ -43,11 +39,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Unless"))
   {
     Aws::Utils::Array<JsonView> unlessJsonList = jsonValue.GetArray("Unless");
@@ -57,6 +48,15 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_unlessHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Actions"))
+  {
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,14 +64,9 @@ JsonValue Rule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-   {
-     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
-   }
-   payload.WithArray("Actions", std::move(actionsJsonList));
+   payload.WithString("Name", m_name);
 
   }
 
@@ -86,12 +81,6 @@ JsonValue Rule::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_unlessHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> unlessJsonList(m_unless.size());
@@ -100,6 +89,17 @@ JsonValue Rule::Jsonize() const
      unlessJsonList[unlessIndex].AsObject(m_unless[unlessIndex].Jsonize());
    }
    payload.WithArray("Unless", std::move(unlessJsonList));
+
+  }
+
+  if(m_actionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+   }
+   payload.WithArray("Actions", std::move(actionsJsonList));
 
   }
 

@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p> The unique identifier for the shard iterator. This value is used in the
      * <code>GetRecords</code> operation to retrieve data records from the specified
-     * shard. Each shard iterator expires 5 minutes after it is returned to the
+     * shard. Each shard iterator expires 15 minutes after it is returned to the
      * requester. </p>
      */
     inline const Aws::String& GetShardIterator() const { return m_shardIterator; }

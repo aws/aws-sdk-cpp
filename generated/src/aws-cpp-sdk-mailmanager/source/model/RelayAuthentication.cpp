@@ -25,15 +25,15 @@ RelayAuthentication::RelayAuthentication(JsonView jsonValue)
 
 RelayAuthentication& RelayAuthentication::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("NoAuthentication"))
-  {
-    m_noAuthentication = jsonValue.GetObject("NoAuthentication");
-    m_noAuthenticationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NoAuthentication"))
+  {
+    m_noAuthentication = jsonValue.GetObject("NoAuthentication");
+    m_noAuthenticationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RelayAuthentication::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_noAuthenticationHasBeenSet)
-  {
-   payload.WithObject("NoAuthentication", m_noAuthentication.Jsonize());
-
-  }
-
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_noAuthenticationHasBeenSet)
+  {
+   payload.WithObject("NoAuthentication", m_noAuthentication.Jsonize());
 
   }
 

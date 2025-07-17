@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the distribution that you're associating the alias with.</p>
+     * <p>The ID of the standard distribution that you're associating the alias
+     * with.</p>
      */
     inline const Aws::String& GetTargetDistributionId() const { return m_targetDistributionId; }
     inline bool TargetDistributionIdHasBeenSet() const { return m_targetDistributionIdHasBeenSet; }
@@ -52,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+     * <p>The alias (also known as a CNAME) to add to the target standard
+     * distribution.</p>
      */
     inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }

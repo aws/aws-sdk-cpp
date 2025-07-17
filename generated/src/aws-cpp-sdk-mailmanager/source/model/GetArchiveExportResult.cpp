@@ -30,11 +30,6 @@ GetArchiveExportResult& GetArchiveExportResult::operator =(const Aws::AmazonWebS
     m_archiveId = jsonValue.GetString("ArchiveId");
     m_archiveIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportDestinationConfiguration"))
-  {
-    m_exportDestinationConfiguration = jsonValue.GetObject("ExportDestinationConfiguration");
-    m_exportDestinationConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Filters"))
   {
     m_filters = jsonValue.GetObject("Filters");
@@ -45,20 +40,25 @@ GetArchiveExportResult& GetArchiveExportResult::operator =(const Aws::AmazonWebS
     m_fromTimestamp = jsonValue.GetDouble("FromTimestamp");
     m_fromTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ToTimestamp"))
+  {
+    m_toTimestamp = jsonValue.GetDouble("ToTimestamp");
+    m_toTimestampHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
     m_maxResultsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExportDestinationConfiguration"))
+  {
+    m_exportDestinationConfiguration = jsonValue.GetObject("ExportDestinationConfiguration");
+    m_exportDestinationConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ToTimestamp"))
-  {
-    m_toTimestamp = jsonValue.GetDouble("ToTimestamp");
-    m_toTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

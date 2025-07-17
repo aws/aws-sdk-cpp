@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/IngressBooleanExpression.h>
+#include <aws/mailmanager/model/IngressStringExpression.h>
 #include <aws/mailmanager/model/IngressIpv4Expression.h>
 #include <aws/mailmanager/model/IngressIpv6Expression.h>
-#include <aws/mailmanager/model/IngressStringExpression.h>
 #include <aws/mailmanager/model/IngressTlsProtocolExpression.h>
+#include <aws/mailmanager/model/IngressBooleanExpression.h>
 #include <utility>
 
 namespace Aws
@@ -44,16 +44,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
+     * <p>This represents a string based condition matching on the incoming mail. It
+     * performs the string operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
      */
-    inline const IngressBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
-    inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-    template<typename BooleanExpressionT = IngressBooleanExpression>
-    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
-    template<typename BooleanExpressionT = IngressBooleanExpression>
-    PolicyCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
+    inline const IngressStringExpression& GetStringExpression() const { return m_stringExpression; }
+    inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
+    template<typename StringExpressionT = IngressStringExpression>
+    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
+    template<typename StringExpressionT = IngressStringExpression>
+    PolicyCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,20 +86,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
-    inline const IngressStringExpression& GetStringExpression() const { return m_stringExpression; }
-    inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-    template<typename StringExpressionT = IngressStringExpression>
-    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
-    template<typename StringExpressionT = IngressStringExpression>
-    PolicyCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>This represents a TLS based condition matching on the incoming mail. It
      * performs the operation configured in 'Operator' and evaluates the 'Protocol'
      * object against the 'Value'.</p>
@@ -111,10 +97,24 @@ namespace Model
     template<typename TlsExpressionT = IngressTlsProtocolExpression>
     PolicyCondition& WithTlsExpression(TlsExpressionT&& value) { SetTlsExpression(std::forward<TlsExpressionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This represents a boolean type condition matching on the incoming mail. It
+     * performs the boolean operation configured in 'Operator' and evaluates the
+     * 'Protocol' object against the 'Value'.</p>
+     */
+    inline const IngressBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
+    inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
+    template<typename BooleanExpressionT = IngressBooleanExpression>
+    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
+    template<typename BooleanExpressionT = IngressBooleanExpression>
+    PolicyCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
+    ///@}
   private:
 
-    IngressBooleanExpression m_booleanExpression;
-    bool m_booleanExpressionHasBeenSet = false;
+    IngressStringExpression m_stringExpression;
+    bool m_stringExpressionHasBeenSet = false;
 
     IngressIpv4Expression m_ipExpression;
     bool m_ipExpressionHasBeenSet = false;
@@ -122,11 +122,11 @@ namespace Model
     IngressIpv6Expression m_ipv6Expression;
     bool m_ipv6ExpressionHasBeenSet = false;
 
-    IngressStringExpression m_stringExpression;
-    bool m_stringExpressionHasBeenSet = false;
-
     IngressTlsProtocolExpression m_tlsExpression;
     bool m_tlsExpressionHasBeenSet = false;
+
+    IngressBooleanExpression m_booleanExpression;
+    bool m_booleanExpressionHasBeenSet = false;
   };
 
 } // namespace Model

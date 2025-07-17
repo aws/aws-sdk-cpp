@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The last modification date of the rule set.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
-    inline bool LastModificationDateHasBeenSet() const { return m_lastModificationDateHasBeenSet; }
-    template<typename LastModificationDateT = Aws::Utils::DateTime>
-    void SetLastModificationDate(LastModificationDateT&& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = std::forward<LastModificationDateT>(value); }
-    template<typename LastModificationDateT = Aws::Utils::DateTime>
-    RuleSet& WithLastModificationDate(LastModificationDateT&& value) { SetLastModificationDate(std::forward<LastModificationDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the rule set.</p>
      */
     inline const Aws::String& GetRuleSetId() const { return m_ruleSetId; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename RuleSetNameT = Aws::String>
     RuleSet& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_lastModificationDate{};
-    bool m_lastModificationDateHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The last modification date of the rule set.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
+    inline bool LastModificationDateHasBeenSet() const { return m_lastModificationDateHasBeenSet; }
+    template<typename LastModificationDateT = Aws::Utils::DateTime>
+    void SetLastModificationDate(LastModificationDateT&& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = std::forward<LastModificationDateT>(value); }
+    template<typename LastModificationDateT = Aws::Utils::DateTime>
+    RuleSet& WithLastModificationDate(LastModificationDateT&& value) { SetLastModificationDate(std::forward<LastModificationDateT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_ruleSetId;
     bool m_ruleSetIdHasBeenSet = false;
 
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModificationDate{};
+    bool m_lastModificationDateHasBeenSet = false;
   };
 
 } // namespace Model

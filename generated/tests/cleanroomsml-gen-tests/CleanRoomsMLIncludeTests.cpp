@@ -166,6 +166,7 @@
 #include <aws/cleanroomsml/model/PutMLConfigurationRequest.h>
 #include <aws/cleanroomsml/model/RelevanceMetric.h>
 #include <aws/cleanroomsml/model/ResourceConfig.h>
+#include <aws/cleanroomsml/model/ResultFormat.h>
 #include <aws/cleanroomsml/model/S3ConfigMap.h>
 #include <aws/cleanroomsml/model/S3DataDistributionType.h>
 #include <aws/cleanroomsml/model/ServiceQuotaExceededException.h>

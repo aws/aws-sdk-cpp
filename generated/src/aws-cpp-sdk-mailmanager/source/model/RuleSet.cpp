@@ -25,11 +25,6 @@ RuleSet::RuleSet(JsonView jsonValue)
 
 RuleSet& RuleSet::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("LastModificationDate"))
-  {
-    m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-    m_lastModificationDateHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("RuleSetId"))
   {
     m_ruleSetId = jsonValue.GetString("RuleSetId");
@@ -40,17 +35,17 @@ RuleSet& RuleSet::operator =(JsonView jsonValue)
     m_ruleSetName = jsonValue.GetString("RuleSetName");
     m_ruleSetNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastModificationDate"))
+  {
+    m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
+    m_lastModificationDateHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RuleSet::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_lastModificationDateHasBeenSet)
-  {
-   payload.WithDouble("LastModificationDate", m_lastModificationDate.SecondsWithMSPrecision());
-  }
 
   if(m_ruleSetIdHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue RuleSet::Jsonize() const
   {
    payload.WithString("RuleSetName", m_ruleSetName);
 
+  }
+
+  if(m_lastModificationDateHasBeenSet)
+  {
+   payload.WithDouble("LastModificationDate", m_lastModificationDate.SecondsWithMSPrecision());
   }
 
   return payload;

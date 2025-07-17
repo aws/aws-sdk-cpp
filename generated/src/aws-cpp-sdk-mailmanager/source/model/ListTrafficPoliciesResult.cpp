@@ -25,11 +25,6 @@ ListTrafficPoliciesResult::ListTrafficPoliciesResult(const Aws::AmazonWebService
 ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TrafficPolicies"))
   {
     Aws::Utils::Array<JsonView> trafficPoliciesJsonList = jsonValue.GetArray("TrafficPolicies");
@@ -38,6 +33,11 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
       m_trafficPolicies.push_back(trafficPoliciesJsonList[trafficPoliciesIndex].AsObject());
     }
     m_trafficPoliciesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

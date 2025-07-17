@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/NoAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/NoAuthentication.h>
 #include <utility>
 
 namespace Aws
@@ -43,19 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
-    inline const NoAuthentication& GetNoAuthentication() const { return m_noAuthentication; }
-    inline bool NoAuthenticationHasBeenSet() const { return m_noAuthenticationHasBeenSet; }
-    template<typename NoAuthenticationT = NoAuthentication>
-    void SetNoAuthentication(NoAuthenticationT&& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = std::forward<NoAuthenticationT>(value); }
-    template<typename NoAuthenticationT = NoAuthentication>
-    RelayAuthentication& WithNoAuthentication(NoAuthenticationT&& value) { SetNoAuthentication(std::forward<NoAuthenticationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the secret created in secrets manager where the relay server's
      * SMTP credentials are stored.</p>
      */
@@ -66,13 +53,26 @@ namespace Model
     template<typename SecretArnT = Aws::String>
     RelayAuthentication& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
-  private:
 
-    NoAuthentication m_noAuthentication;
-    bool m_noAuthenticationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Keep an empty structure if the relay destination server does not require SMTP
+     * credential authentication.</p>
+     */
+    inline const NoAuthentication& GetNoAuthentication() const { return m_noAuthentication; }
+    inline bool NoAuthenticationHasBeenSet() const { return m_noAuthenticationHasBeenSet; }
+    template<typename NoAuthenticationT = NoAuthentication>
+    void SetNoAuthentication(NoAuthenticationT&& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = std::forward<NoAuthenticationT>(value); }
+    template<typename NoAuthenticationT = NoAuthentication>
+    RelayAuthentication& WithNoAuthentication(NoAuthenticationT&& value) { SetNoAuthentication(std::forward<NoAuthenticationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    NoAuthentication m_noAuthentication;
+    bool m_noAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/RuleSet.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListRuleSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The list of rule sets.</p>
      */
     inline const Aws::Vector<RuleSet>& GetRuleSets() const { return m_ruleSets; }
@@ -61,6 +48,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>If NextToken is returned, there are more results available. The value of
+     * NextToken is a unique pagination token for each page. Make the call again using
+     * the returned token to retrieve the next page.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,11 +70,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<RuleSet> m_ruleSets;
     bool m_ruleSetsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

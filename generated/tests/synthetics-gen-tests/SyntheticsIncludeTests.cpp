@@ -46,6 +46,8 @@
 #include <aws/synthetics/model/DeleteCanaryResult.h>
 #include <aws/synthetics/model/DeleteGroupRequest.h>
 #include <aws/synthetics/model/DeleteGroupResult.h>
+#include <aws/synthetics/model/Dependency.h>
+#include <aws/synthetics/model/DependencyType.h>
 #include <aws/synthetics/model/DescribeCanariesLastRunRequest.h>
 #include <aws/synthetics/model/DescribeCanariesLastRunResult.h>
 #include <aws/synthetics/model/DescribeCanariesRequest.h>

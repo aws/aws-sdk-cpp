@@ -16,27 +16,27 @@ Aws::String CreateAddressListImportJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_addressListIdHasBeenSet)
-  {
-   payload.WithString("AddressListId", m_addressListId);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
 
   }
 
-  if(m_importDataFormatHasBeenSet)
+  if(m_addressListIdHasBeenSet)
   {
-   payload.WithObject("ImportDataFormat", m_importDataFormat.Jsonize());
+   payload.WithString("AddressListId", m_addressListId);
 
   }
 
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_importDataFormatHasBeenSet)
+  {
+   payload.WithObject("ImportDataFormat", m_importDataFormat.Jsonize());
 
   }
 

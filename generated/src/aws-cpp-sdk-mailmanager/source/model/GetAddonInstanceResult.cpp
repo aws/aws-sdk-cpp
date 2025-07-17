@@ -25,20 +25,20 @@ GetAddonInstanceResult::GetAddonInstanceResult(const Aws::AmazonWebServiceResult
 GetAddonInstanceResult& GetAddonInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AddonInstanceArn"))
+  if(jsonValue.ValueExists("AddonSubscriptionId"))
   {
-    m_addonInstanceArn = jsonValue.GetString("AddonInstanceArn");
-    m_addonInstanceArnHasBeenSet = true;
+    m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");
+    m_addonSubscriptionIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("AddonName"))
   {
     m_addonName = jsonValue.GetString("AddonName");
     m_addonNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddonSubscriptionId"))
+  if(jsonValue.ValueExists("AddonInstanceArn"))
   {
-    m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");
-    m_addonSubscriptionIdHasBeenSet = true;
+    m_addonInstanceArn = jsonValue.GetString("AddonInstanceArn");
+    m_addonInstanceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {

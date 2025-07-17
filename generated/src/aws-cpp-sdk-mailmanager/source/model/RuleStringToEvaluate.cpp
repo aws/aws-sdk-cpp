@@ -25,11 +25,6 @@ RuleStringToEvaluate::RuleStringToEvaluate(JsonView jsonValue)
 
 RuleStringToEvaluate& RuleStringToEvaluate::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Analysis"))
-  {
-    m_analysis = jsonValue.GetObject("Analysis");
-    m_analysisHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleStringEmailAttributeMapper::GetRuleStringEmailAttributeForName(jsonValue.GetString("Attribute"));
@@ -40,18 +35,17 @@ RuleStringToEvaluate& RuleStringToEvaluate::operator =(JsonView jsonValue)
     m_mimeHeaderAttribute = jsonValue.GetString("MimeHeaderAttribute");
     m_mimeHeaderAttributeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Analysis"))
+  {
+    m_analysis = jsonValue.GetObject("Analysis");
+    m_analysisHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RuleStringToEvaluate::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_analysisHasBeenSet)
-  {
-   payload.WithObject("Analysis", m_analysis.Jsonize());
-
-  }
 
   if(m_attributeHasBeenSet)
   {
@@ -61,6 +55,12 @@ JsonValue RuleStringToEvaluate::Jsonize() const
   if(m_mimeHeaderAttributeHasBeenSet)
   {
    payload.WithString("MimeHeaderAttribute", m_mimeHeaderAttribute);
+
+  }
+
+  if(m_analysisHasBeenSet)
+  {
+   payload.WithObject("Analysis", m_analysis.Jsonize());
 
   }
 

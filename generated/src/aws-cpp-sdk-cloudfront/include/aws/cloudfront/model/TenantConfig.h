@@ -24,7 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for a distribution tenant.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>This field only supports multi-tenant distributions. You can't
+   * specify this field for standard distributions. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+   * features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront
+   * Developer Guide</i>.</p>  <p>The configuration for a distribution
+   * tenant.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TenantConfig">AWS
    * API Reference</a></p>
    */

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/Analysis.h>
 #include <aws/mailmanager/model/RuleBooleanEmailAttribute.h>
+#include <aws/mailmanager/model/Analysis.h>
 #include <aws/mailmanager/model/RuleIsInAddressList.h>
 #include <utility>
 
@@ -42,6 +42,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The boolean type representing the allowed attribute types for an email.</p>
+     */
+    inline RuleBooleanEmailAttribute GetAttribute() const { return m_attribute; }
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+    inline void SetAttribute(RuleBooleanEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute value) { SetAttribute(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Add On ARN and its returned value to evaluate in a boolean condition
      * expression.</p>
      */
@@ -51,16 +61,6 @@ namespace Model
     void SetAnalysis(AnalysisT&& value) { m_analysisHasBeenSet = true; m_analysis = std::forward<AnalysisT>(value); }
     template<typename AnalysisT = Analysis>
     RuleBooleanToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The boolean type representing the allowed attribute types for an email.</p>
-     */
-    inline RuleBooleanEmailAttribute GetAttribute() const { return m_attribute; }
-    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(RuleBooleanEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +77,11 @@ namespace Model
     ///@}
   private:
 
-    Analysis m_analysis;
-    bool m_analysisHasBeenSet = false;
-
     RuleBooleanEmailAttribute m_attribute{RuleBooleanEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
+
+    Analysis m_analysis;
+    bool m_analysisHasBeenSet = false;
 
     RuleIsInAddressList m_isInAddressList;
     bool m_isInAddressListHasBeenSet = false;

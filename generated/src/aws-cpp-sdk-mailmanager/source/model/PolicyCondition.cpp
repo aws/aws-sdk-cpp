@@ -25,10 +25,10 @@ PolicyCondition::PolicyCondition(JsonView jsonValue)
 
 PolicyCondition& PolicyCondition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("BooleanExpression"))
+  if(jsonValue.ValueExists("StringExpression"))
   {
-    m_booleanExpression = jsonValue.GetObject("BooleanExpression");
-    m_booleanExpressionHasBeenSet = true;
+    m_stringExpression = jsonValue.GetObject("StringExpression");
+    m_stringExpressionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IpExpression"))
   {
@@ -40,15 +40,15 @@ PolicyCondition& PolicyCondition::operator =(JsonView jsonValue)
     m_ipv6Expression = jsonValue.GetObject("Ipv6Expression");
     m_ipv6ExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StringExpression"))
-  {
-    m_stringExpression = jsonValue.GetObject("StringExpression");
-    m_stringExpressionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TlsExpression"))
   {
     m_tlsExpression = jsonValue.GetObject("TlsExpression");
     m_tlsExpressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BooleanExpression"))
+  {
+    m_booleanExpression = jsonValue.GetObject("BooleanExpression");
+    m_booleanExpressionHasBeenSet = true;
   }
   return *this;
 }
@@ -57,9 +57,9 @@ JsonValue PolicyCondition::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_booleanExpressionHasBeenSet)
+  if(m_stringExpressionHasBeenSet)
   {
-   payload.WithObject("BooleanExpression", m_booleanExpression.Jsonize());
+   payload.WithObject("StringExpression", m_stringExpression.Jsonize());
 
   }
 
@@ -75,15 +75,15 @@ JsonValue PolicyCondition::Jsonize() const
 
   }
 
-  if(m_stringExpressionHasBeenSet)
-  {
-   payload.WithObject("StringExpression", m_stringExpression.Jsonize());
-
-  }
-
   if(m_tlsExpressionHasBeenSet)
   {
    payload.WithObject("TlsExpression", m_tlsExpression.Jsonize());
+
+  }
+
+  if(m_booleanExpressionHasBeenSet)
+  {
+   payload.WithObject("BooleanExpression", m_booleanExpression.Jsonize());
 
   }
 

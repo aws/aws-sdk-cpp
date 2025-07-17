@@ -25,15 +25,15 @@ RuleBooleanToEvaluate::RuleBooleanToEvaluate(JsonView jsonValue)
 
 RuleBooleanToEvaluate& RuleBooleanToEvaluate::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Analysis"))
-  {
-    m_analysis = jsonValue.GetObject("Analysis");
-    m_analysisHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleBooleanEmailAttributeMapper::GetRuleBooleanEmailAttributeForName(jsonValue.GetString("Attribute"));
     m_attributeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Analysis"))
+  {
+    m_analysis = jsonValue.GetObject("Analysis");
+    m_analysisHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IsInAddressList"))
   {
@@ -47,15 +47,15 @@ JsonValue RuleBooleanToEvaluate::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_attributeHasBeenSet)
+  {
+   payload.WithString("Attribute", RuleBooleanEmailAttributeMapper::GetNameForRuleBooleanEmailAttribute(m_attribute));
+  }
+
   if(m_analysisHasBeenSet)
   {
    payload.WithObject("Analysis", m_analysis.Jsonize());
 
-  }
-
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", RuleBooleanEmailAttributeMapper::GetNameForRuleBooleanEmailAttribute(m_attribute));
   }
 
   if(m_isInAddressListHasBeenSet)

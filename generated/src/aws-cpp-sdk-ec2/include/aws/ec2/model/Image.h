@@ -395,6 +395,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the image is eligible for Amazon Web Services Free
+     * Tier.</p> <ul> <li> <p>If <code>true</code>, the AMI is eligible for Free Tier
+     * and can be used to launch instances under the Free Tier limits.</p> </li> <li>
+     * <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p> </li> </ul>
+     */
+    inline bool GetFreeTierEligible() const { return m_freeTierEligible; }
+    inline bool FreeTierEligibleHasBeenSet() const { return m_freeTierEligibleHasBeenSet; }
+    inline void SetFreeTierEligible(bool value) { m_freeTierEligibleHasBeenSet = true; m_freeTierEligible = value; }
+    inline Image& WithFreeTierEligible(bool value) { SetFreeTierEligible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const { return m_imageId; }
@@ -607,6 +620,9 @@ namespace Model
 
     Aws::String m_sourceImageRegion;
     bool m_sourceImageRegionHasBeenSet = false;
+
+    bool m_freeTierEligible{false};
+    bool m_freeTierEligibleHasBeenSet = false;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;

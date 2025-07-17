@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/AacAudioDescriptionBroadcasterMix.h>
 #include <aws/mediaconvert/model/AacCodecProfile.h>
 #include <aws/mediaconvert/model/AacCodingMode.h>
+#include <aws/mediaconvert/model/AacLoudnessMeasurementMode.h>
 #include <aws/mediaconvert/model/AacRateControlMode.h>
 #include <aws/mediaconvert/model/AacRawFormat.h>
 #include <aws/mediaconvert/model/AacSettings.h>

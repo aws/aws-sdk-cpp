@@ -35,6 +35,11 @@ ProtectedQueryInputParameters& ProtectedQueryInputParameters::operator =(JsonVie
     m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
     m_computeConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resultFormat"))
+  {
+    m_resultFormat = ResultFormatMapper::GetResultFormatForName(jsonValue.GetString("resultFormat"));
+    m_resultFormatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +57,11 @@ JsonValue ProtectedQueryInputParameters::Jsonize() const
   {
    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
 
+  }
+
+  if(m_resultFormatHasBeenSet)
+  {
+   payload.WithString("resultFormat", ResultFormatMapper::GetNameForResultFormat(m_resultFormat));
   }
 
   return payload;

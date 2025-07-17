@@ -16,15 +16,15 @@ Aws::String ListRelaysRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
-  }
-
   if(m_pageSizeHasBeenSet)
   {
    payload.WithInteger("PageSize", m_pageSize);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 

@@ -47,9 +47,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The distribution resource identifier. This can be the distribution or
-     * distribution tenant that has a valid certificate, which covers the domain that
-     * you specify.</p>
+     * <p>The distribution resource identifier. This can be the standard distribution
+     * or distribution tenant that has a valid certificate, which covers the domain
+     * that you specify.</p>
      */
     inline const DistributionResourceId& GetDomainControlValidationResource() const { return m_domainControlValidationResource; }
     inline bool DomainControlValidationResourceHasBeenSet() const { return m_domainControlValidationResourceHasBeenSet; }

@@ -7,8 +7,8 @@
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/ArchiveState.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/mailmanager/model/ArchiveRetention.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,17 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
-    inline const Aws::String& GetArchiveArn() const { return m_archiveArn; }
-    template<typename ArchiveArnT = Aws::String>
-    void SetArchiveArn(ArchiveArnT&& value) { m_archiveArnHasBeenSet = true; m_archiveArn = std::forward<ArchiveArnT>(value); }
-    template<typename ArchiveArnT = Aws::String>
-    GetArchiveResult& WithArchiveArn(ArchiveArnT&& value) { SetArchiveArn(std::forward<ArchiveArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the archive.</p>
      */
     inline const Aws::String& GetArchiveId() const { return m_archiveId; }
@@ -76,6 +65,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the archive.</p>
+     */
+    inline const Aws::String& GetArchiveArn() const { return m_archiveArn; }
+    template<typename ArchiveArnT = Aws::String>
+    void SetArchiveArn(ArchiveArnT&& value) { m_archiveArnHasBeenSet = true; m_archiveArn = std::forward<ArchiveArnT>(value); }
+    template<typename ArchiveArnT = Aws::String>
+    GetArchiveResult& WithArchiveArn(ArchiveArnT&& value) { SetArchiveArn(std::forward<ArchiveArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
      * archive is ready and available for use. </p> </li> <li> <p>
      * <code>PENDING_DELETION</code> – The archive has been marked for deletion and
@@ -85,6 +85,17 @@ namespace Model
     inline ArchiveState GetArchiveState() const { return m_archiveState; }
     inline void SetArchiveState(ArchiveState value) { m_archiveStateHasBeenSet = true; m_archiveState = value; }
     inline GetArchiveResult& WithArchiveState(ArchiveState value) { SetArchiveState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The retention period for emails in this archive.</p>
+     */
+    inline const ArchiveRetention& GetRetention() const { return m_retention; }
+    template<typename RetentionT = ArchiveRetention>
+    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
+    template<typename RetentionT = ArchiveRetention>
+    GetArchiveResult& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,18 +111,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-    template<typename KmsKeyArnT = Aws::String>
-    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
-    template<typename KmsKeyArnT = Aws::String>
-    GetArchiveResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The timestamp of when the archive was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
@@ -123,13 +122,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The retention period for emails in this archive.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
+     * archive.</p>
      */
-    inline const ArchiveRetention& GetRetention() const { return m_retention; }
-    template<typename RetentionT = ArchiveRetention>
-    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
-    template<typename RetentionT = ArchiveRetention>
-    GetArchiveResult& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    GetArchiveResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,29 +142,29 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_archiveArn;
-    bool m_archiveArnHasBeenSet = false;
-
     Aws::String m_archiveId;
     bool m_archiveIdHasBeenSet = false;
 
     Aws::String m_archiveName;
     bool m_archiveNameHasBeenSet = false;
 
+    Aws::String m_archiveArn;
+    bool m_archiveArnHasBeenSet = false;
+
     ArchiveState m_archiveState{ArchiveState::NOT_SET};
     bool m_archiveStateHasBeenSet = false;
+
+    ArchiveRetention m_retention;
+    bool m_retentionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
-
     Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    ArchiveRetention m_retention;
-    bool m_retentionHasBeenSet = false;
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

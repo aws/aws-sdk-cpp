@@ -22,27 +22,38 @@ Aws::String CreateIngressPointRequest::SerializePayload() const
 
   }
 
-  if(m_ingressPointConfigurationHasBeenSet)
-  {
-   payload.WithObject("IngressPointConfiguration", m_ingressPointConfiguration.Jsonize());
-
-  }
-
   if(m_ingressPointNameHasBeenSet)
   {
    payload.WithString("IngressPointName", m_ingressPointName);
 
   }
 
-  if(m_networkConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
-
+   payload.WithString("Type", IngressPointTypeMapper::GetNameForIngressPointType(m_type));
   }
 
   if(m_ruleSetIdHasBeenSet)
   {
    payload.WithString("RuleSetId", m_ruleSetId);
+
+  }
+
+  if(m_trafficPolicyIdHasBeenSet)
+  {
+   payload.WithString("TrafficPolicyId", m_trafficPolicyId);
+
+  }
+
+  if(m_ingressPointConfigurationHasBeenSet)
+  {
+   payload.WithObject("IngressPointConfiguration", m_ingressPointConfiguration.Jsonize());
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 
@@ -55,17 +66,6 @@ Aws::String CreateIngressPointRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
-  }
-
-  if(m_trafficPolicyIdHasBeenSet)
-  {
-   payload.WithString("TrafficPolicyId", m_trafficPolicyId);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", IngressPointTypeMapper::GetNameForIngressPointType(m_type));
   }
 
   return payload.View().WriteReadable();

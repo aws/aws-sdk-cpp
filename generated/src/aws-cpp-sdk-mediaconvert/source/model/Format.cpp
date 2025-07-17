@@ -24,6 +24,7 @@ namespace Aws
         static const int quicktime_HASH = HashingUtils::HashString("quicktime");
         static const int matroska_HASH = HashingUtils::HashString("matroska");
         static const int webm_HASH = HashingUtils::HashString("webm");
+        static const int mxf_HASH = HashingUtils::HashString("mxf");
 
 
         Format GetFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == webm_HASH)
           {
             return Format::webm;
+          }
+          else if (hashCode == mxf_HASH)
+          {
+            return Format::mxf;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "matroska";
           case Format::webm:
             return "webm";
+          case Format::mxf:
+            return "mxf";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

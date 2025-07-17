@@ -78,16 +78,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of search results to return.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline StartArchiveSearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The end timestamp of the range to search emails from.</p>
      */
     inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
@@ -96,6 +86,16 @@ namespace Model
     void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
     template<typename ToTimestampT = Aws::Utils::DateTime>
     StartArchiveSearchRequest& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of search results to return.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline StartArchiveSearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
@@ -108,11 +108,11 @@ namespace Model
     Aws::Utils::DateTime m_fromTimestamp{};
     bool m_fromTimestampHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::Utils::DateTime m_toTimestamp{};
     bool m_toTimestampHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

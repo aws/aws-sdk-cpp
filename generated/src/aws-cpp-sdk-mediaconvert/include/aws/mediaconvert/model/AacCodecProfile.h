@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     LC,
     HEV1,
-    HEV2
+    HEV2,
+    XHE
   };
 
 namespace AacCodecProfileMapper

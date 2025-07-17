@@ -25,25 +25,25 @@ AddonInstance::AddonInstance(JsonView jsonValue)
 
 AddonInstance& AddonInstance::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AddonInstanceArn"))
-  {
-    m_addonInstanceArn = jsonValue.GetString("AddonInstanceArn");
-    m_addonInstanceArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("AddonInstanceId"))
   {
     m_addonInstanceId = jsonValue.GetString("AddonInstanceId");
     m_addonInstanceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AddonSubscriptionId"))
+  {
+    m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");
+    m_addonSubscriptionIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("AddonName"))
   {
     m_addonName = jsonValue.GetString("AddonName");
     m_addonNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddonSubscriptionId"))
+  if(jsonValue.ValueExists("AddonInstanceArn"))
   {
-    m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");
-    m_addonSubscriptionIdHasBeenSet = true;
+    m_addonInstanceArn = jsonValue.GetString("AddonInstanceArn");
+    m_addonInstanceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
@@ -57,15 +57,15 @@ JsonValue AddonInstance::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_addonInstanceArnHasBeenSet)
-  {
-   payload.WithString("AddonInstanceArn", m_addonInstanceArn);
-
-  }
-
   if(m_addonInstanceIdHasBeenSet)
   {
    payload.WithString("AddonInstanceId", m_addonInstanceId);
+
+  }
+
+  if(m_addonSubscriptionIdHasBeenSet)
+  {
+   payload.WithString("AddonSubscriptionId", m_addonSubscriptionId);
 
   }
 
@@ -75,9 +75,9 @@ JsonValue AddonInstance::Jsonize() const
 
   }
 
-  if(m_addonSubscriptionIdHasBeenSet)
+  if(m_addonInstanceArnHasBeenSet)
   {
-   payload.WithString("AddonSubscriptionId", m_addonSubscriptionId);
+   payload.WithString("AddonInstanceArn", m_addonInstanceArn);
 
   }
 

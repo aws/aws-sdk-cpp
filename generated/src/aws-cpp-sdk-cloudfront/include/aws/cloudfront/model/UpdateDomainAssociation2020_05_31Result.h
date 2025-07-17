@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current version of the target distribution or distribution tenant that
-     * was associated with the domain.</p>
+     * <p>The current version of the target standard distribution or distribution
+     * tenant that was associated with the domain.</p>
      */
     inline const Aws::String& GetETag() const { return m_eTag; }
     template<typename ETagT = Aws::String>

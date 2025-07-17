@@ -25,25 +25,20 @@ GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult
 GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreatedTimestamp"))
+  if(jsonValue.ValueExists("TrafficPolicyName"))
   {
-    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-    m_createdTimestampHasBeenSet = true;
+    m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
+    m_trafficPolicyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultAction"))
+  if(jsonValue.ValueExists("TrafficPolicyId"))
   {
-    m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
-    m_defaultActionHasBeenSet = true;
+    m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
+    m_trafficPolicyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTimestamp"))
+  if(jsonValue.ValueExists("TrafficPolicyArn"))
   {
-    m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-    m_lastUpdatedTimestampHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("MaxMessageSizeBytes"))
-  {
-    m_maxMessageSizeBytes = jsonValue.GetInteger("MaxMessageSizeBytes");
-    m_maxMessageSizeBytesHasBeenSet = true;
+    m_trafficPolicyArn = jsonValue.GetString("TrafficPolicyArn");
+    m_trafficPolicyArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("PolicyStatements"))
   {
@@ -54,20 +49,25 @@ GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebS
     }
     m_policyStatementsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrafficPolicyArn"))
+  if(jsonValue.ValueExists("MaxMessageSizeBytes"))
   {
-    m_trafficPolicyArn = jsonValue.GetString("TrafficPolicyArn");
-    m_trafficPolicyArnHasBeenSet = true;
+    m_maxMessageSizeBytes = jsonValue.GetInteger("MaxMessageSizeBytes");
+    m_maxMessageSizeBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrafficPolicyId"))
+  if(jsonValue.ValueExists("DefaultAction"))
   {
-    m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
-    m_trafficPolicyIdHasBeenSet = true;
+    m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
+    m_defaultActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrafficPolicyName"))
+  if(jsonValue.ValueExists("CreatedTimestamp"))
   {
-    m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
-    m_trafficPolicyNameHasBeenSet = true;
+    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
+    m_createdTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedTimestamp"))
+  {
+    m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,15 +25,15 @@ AddressList::AddressList(JsonView jsonValue)
 
 AddressList& AddressList::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AddressListArn"))
-  {
-    m_addressListArn = jsonValue.GetString("AddressListArn");
-    m_addressListArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("AddressListId"))
   {
     m_addressListId = jsonValue.GetString("AddressListId");
     m_addressListIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AddressListArn"))
+  {
+    m_addressListArn = jsonValue.GetString("AddressListArn");
+    m_addressListArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("AddressListName"))
   {
@@ -57,15 +57,15 @@ JsonValue AddressList::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_addressListArnHasBeenSet)
-  {
-   payload.WithString("AddressListArn", m_addressListArn);
-
-  }
-
   if(m_addressListIdHasBeenSet)
   {
    payload.WithString("AddressListId", m_addressListId);
+
+  }
+
+  if(m_addressListArnHasBeenSet)
+  {
+   payload.WithString("AddressListArn", m_addressListArn);
 
   }
 

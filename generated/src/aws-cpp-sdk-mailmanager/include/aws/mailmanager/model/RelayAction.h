@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/ActionFailurePolicy.h>
-#include <aws/mailmanager/model/MailFrom.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/MailFrom.h>
 #include <utility>
 
 namespace Aws
@@ -54,17 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
-    inline MailFrom GetMailFrom() const { return m_mailFrom; }
-    inline bool MailFromHasBeenSet() const { return m_mailFromHasBeenSet; }
-    inline void SetMailFrom(MailFrom value) { m_mailFromHasBeenSet = true; m_mailFrom = value; }
-    inline RelayAction& WithMailFrom(MailFrom value) { SetMailFrom(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the relay resource to be used when relaying an email.</p>
      */
     inline const Aws::String& GetRelay() const { return m_relay; }
@@ -74,16 +63,27 @@ namespace Model
     template<typename RelayT = Aws::String>
     RelayAction& WithRelay(RelayT&& value) { SetRelay(std::forward<RelayT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This action specifies whether to preserve or replace original mail from
+     * address while relaying received emails to a destination server.</p>
+     */
+    inline MailFrom GetMailFrom() const { return m_mailFrom; }
+    inline bool MailFromHasBeenSet() const { return m_mailFromHasBeenSet; }
+    inline void SetMailFrom(MailFrom value) { m_mailFromHasBeenSet = true; m_mailFrom = value; }
+    inline RelayAction& WithMailFrom(MailFrom value) { SetMailFrom(value); return *this;}
+    ///@}
   private:
 
     ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
     bool m_actionFailurePolicyHasBeenSet = false;
 
-    MailFrom m_mailFrom{MailFrom::NOT_SET};
-    bool m_mailFromHasBeenSet = false;
-
     Aws::String m_relay;
     bool m_relayHasBeenSet = false;
+
+    MailFrom m_mailFrom{MailFrom::NOT_SET};
+    bool m_mailFromHasBeenSet = false;
   };
 
 } // namespace Model

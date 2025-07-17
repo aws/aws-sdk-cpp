@@ -22,12 +22,6 @@ Aws::String StartArchiveExportRequest::SerializePayload() const
 
   }
 
-  if(m_exportDestinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("ExportDestinationConfiguration", m_exportDestinationConfiguration.Jsonize());
-
-  }
-
   if(m_filtersHasBeenSet)
   {
    payload.WithObject("Filters", m_filters.Jsonize());
@@ -39,10 +33,9 @@ Aws::String StartArchiveExportRequest::SerializePayload() const
    payload.WithDouble("FromTimestamp", m_fromTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_includeMetadataHasBeenSet)
+  if(m_toTimestampHasBeenSet)
   {
-   payload.WithBool("IncludeMetadata", m_includeMetadata);
-
+   payload.WithDouble("ToTimestamp", m_toTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_maxResultsHasBeenSet)
@@ -51,9 +44,16 @@ Aws::String StartArchiveExportRequest::SerializePayload() const
 
   }
 
-  if(m_toTimestampHasBeenSet)
+  if(m_exportDestinationConfigurationHasBeenSet)
   {
-   payload.WithDouble("ToTimestamp", m_toTimestamp.SecondsWithMSPrecision());
+   payload.WithObject("ExportDestinationConfiguration", m_exportDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_includeMetadataHasBeenSet)
+  {
+   payload.WithBool("IncludeMetadata", m_includeMetadata);
+
   }
 
   return payload.View().WriteReadable();

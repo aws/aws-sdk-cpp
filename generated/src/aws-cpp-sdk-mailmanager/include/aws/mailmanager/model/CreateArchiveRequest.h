@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateArchiveRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique name for the new archive.</p>
      */
     inline const Aws::String& GetArchiveName() const { return m_archiveName; }
@@ -55,14 +67,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
+     * <p>The period for retaining emails in the archive before automatic deletion.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateArchiveRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const ArchiveRetention& GetRetention() const { return m_retention; }
+    inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
+    template<typename RetentionT = ArchiveRetention>
+    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
+    template<typename RetentionT = ArchiveRetention>
+    CreateArchiveRequest& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,18 +88,6 @@ namespace Model
     void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
     template<typename KmsKeyArnT = Aws::String>
     CreateArchiveRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
-    inline const ArchiveRetention& GetRetention() const { return m_retention; }
-    inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
-    template<typename RetentionT = ArchiveRetention>
-    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
-    template<typename RetentionT = ArchiveRetention>
-    CreateArchiveRequest& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,17 +106,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_archiveName;
-    bool m_archiveNameHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
+    Aws::String m_archiveName;
+    bool m_archiveNameHasBeenSet = false;
 
     ArchiveRetention m_retention;
     bool m_retentionHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

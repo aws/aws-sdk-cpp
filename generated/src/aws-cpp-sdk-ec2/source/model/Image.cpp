@@ -189,6 +189,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_sourceImageRegion = Aws::Utils::Xml::DecodeEscapedXmlText(sourceImageRegionNode.GetText());
       m_sourceImageRegionHasBeenSet = true;
     }
+    XmlNode freeTierEligibleNode = resultNode.FirstChild("freeTierEligible");
+    if(!freeTierEligibleNode.IsNull())
+    {
+      m_freeTierEligible = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(freeTierEligibleNode.GetText()).c_str()).c_str());
+      m_freeTierEligibleHasBeenSet = true;
+    }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
@@ -409,6 +415,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".SourceImageRegion=" << StringUtils::URLEncode(m_sourceImageRegion.c_str()) << "&";
   }
 
+  if(m_freeTierEligibleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
+  }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
@@ -588,6 +599,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sourceImageRegionHasBeenSet)
   {
       oStream << location << ".SourceImageRegion=" << StringUtils::URLEncode(m_sourceImageRegion.c_str()) << "&";
+  }
+  if(m_freeTierEligibleHasBeenSet)
+  {
+      oStream << location << ".FreeTierEligible=" << std::boolalpha << m_freeTierEligible << "&";
   }
   if(m_imageIdHasBeenSet)
   {

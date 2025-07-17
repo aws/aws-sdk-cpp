@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique ID of the Add On subscription.</p>
+     */
+    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
+    inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    AddonSubscription& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the Add On.</p>
      */
     inline const Aws::String& GetAddonName() const { return m_addonName; }
@@ -65,18 +77,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
-    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
-    inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    AddonSubscription& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The timestamp of when the Add On subscription was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
@@ -88,14 +88,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_addonSubscriptionId;
+    bool m_addonSubscriptionIdHasBeenSet = false;
+
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
 
     Aws::String m_addonSubscriptionArn;
     bool m_addonSubscriptionArnHasBeenSet = false;
-
-    Aws::String m_addonSubscriptionId;
-    bool m_addonSubscriptionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;

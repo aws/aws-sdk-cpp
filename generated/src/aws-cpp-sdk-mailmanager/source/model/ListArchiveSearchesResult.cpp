@@ -25,11 +25,6 @@ ListArchiveSearchesResult::ListArchiveSearchesResult(const Aws::AmazonWebService
 ListArchiveSearchesResult& ListArchiveSearchesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Searches"))
   {
     Aws::Utils::Array<JsonView> searchesJsonList = jsonValue.GetArray("Searches");
@@ -38,6 +33,11 @@ ListArchiveSearchesResult& ListArchiveSearchesResult::operator =(const Aws::Amaz
       m_searches.push_back(searchesJsonList[searchesIndex].AsObject());
     }
     m_searchesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

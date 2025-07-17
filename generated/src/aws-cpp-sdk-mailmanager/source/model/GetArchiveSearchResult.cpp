@@ -40,6 +40,11 @@ GetArchiveSearchResult& GetArchiveSearchResult::operator =(const Aws::AmazonWebS
     m_fromTimestamp = jsonValue.GetDouble("FromTimestamp");
     m_fromTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ToTimestamp"))
+  {
+    m_toTimestamp = jsonValue.GetDouble("ToTimestamp");
+    m_toTimestampHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
@@ -49,11 +54,6 @@ GetArchiveSearchResult& GetArchiveSearchResult::operator =(const Aws::AmazonWebS
   {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ToTimestamp"))
-  {
-    m_toTimestamp = jsonValue.GetDouble("ToTimestamp");
-    m_toTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -35,13 +35,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Add On instance.</p>
+     * <p>The subscription ID associated to the instance.</p>
      */
-    inline const Aws::String& GetAddonInstanceArn() const { return m_addonInstanceArn; }
-    template<typename AddonInstanceArnT = Aws::String>
-    void SetAddonInstanceArn(AddonInstanceArnT&& value) { m_addonInstanceArnHasBeenSet = true; m_addonInstanceArn = std::forward<AddonInstanceArnT>(value); }
-    template<typename AddonInstanceArnT = Aws::String>
-    GetAddonInstanceResult& WithAddonInstanceArn(AddonInstanceArnT&& value) { SetAddonInstanceArn(std::forward<AddonInstanceArnT>(value)); return *this;}
+    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    GetAddonInstanceResult& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,13 +58,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The subscription ID associated to the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the Add On instance.</p>
      */
-    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    GetAddonInstanceResult& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
+    inline const Aws::String& GetAddonInstanceArn() const { return m_addonInstanceArn; }
+    template<typename AddonInstanceArnT = Aws::String>
+    void SetAddonInstanceArn(AddonInstanceArnT&& value) { m_addonInstanceArnHasBeenSet = true; m_addonInstanceArn = std::forward<AddonInstanceArnT>(value); }
+    template<typename AddonInstanceArnT = Aws::String>
+    GetAddonInstanceResult& WithAddonInstanceArn(AddonInstanceArnT&& value) { SetAddonInstanceArn(std::forward<AddonInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +88,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_addonInstanceArn;
-    bool m_addonInstanceArnHasBeenSet = false;
+    Aws::String m_addonSubscriptionId;
+    bool m_addonSubscriptionIdHasBeenSet = false;
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
 
-    Aws::String m_addonSubscriptionId;
-    bool m_addonSubscriptionIdHasBeenSet = false;
+    Aws::String m_addonInstanceArn;
+    bool m_addonInstanceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;

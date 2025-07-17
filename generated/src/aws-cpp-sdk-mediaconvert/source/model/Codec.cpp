@@ -32,6 +32,7 @@ namespace Aws
         static const int AV1_HASH = HashingUtils::HashString("AV1");
         static const int AVC_HASH = HashingUtils::HashString("AVC");
         static const int HEVC_HASH = HashingUtils::HashString("HEVC");
+        static const int JPEG2000_HASH = HashingUtils::HashString("JPEG2000");
         static const int MJPEG_HASH = HashingUtils::HashString("MJPEG");
         static const int MP4V_HASH = HashingUtils::HashString("MP4V");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
@@ -94,6 +95,10 @@ namespace Aws
           else if (hashCode == HEVC_HASH)
           {
             return Codec::HEVC;
+          }
+          else if (hashCode == JPEG2000_HASH)
+          {
+            return Codec::JPEG2000;
           }
           else if (hashCode == MJPEG_HASH)
           {
@@ -175,6 +180,8 @@ namespace Aws
             return "AVC";
           case Codec::HEVC:
             return "HEVC";
+          case Codec::JPEG2000:
+            return "JPEG2000";
           case Codec::MJPEG:
             return "MJPEG";
           case Codec::MP4V:

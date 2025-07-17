@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the relay was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
-    inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
-    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
-    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
-    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
-    Relay& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique relay identifier.</p>
      */
     inline const Aws::String& GetRelayId() const { return m_relayId; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename RelayNameT = Aws::String>
     Relay& WithRelayName(RelayNameT&& value) { SetRelayName(std::forward<RelayNameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp{};
-    bool m_lastModifiedTimestampHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The timestamp of when the relay was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
+    inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    Relay& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_relayId;
     bool m_relayIdHasBeenSet = false;
 
     Aws::String m_relayName;
     bool m_relayNameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
+    bool m_lastModifiedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

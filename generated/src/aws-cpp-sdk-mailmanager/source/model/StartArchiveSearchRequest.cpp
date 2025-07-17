@@ -33,15 +33,15 @@ Aws::String StartArchiveSearchRequest::SerializePayload() const
    payload.WithDouble("FromTimestamp", m_fromTimestamp.SecondsWithMSPrecision());
   }
 
+  if(m_toTimestampHasBeenSet)
+  {
+   payload.WithDouble("ToTimestamp", m_toTimestamp.SecondsWithMSPrecision());
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
-  }
-
-  if(m_toTimestampHasBeenSet)
-  {
-   payload.WithDouble("ToTimestamp", m_toTimestamp.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

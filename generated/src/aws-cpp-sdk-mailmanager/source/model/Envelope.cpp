@@ -25,15 +25,15 @@ Envelope::Envelope(JsonView jsonValue)
 
 Envelope& Envelope::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("From"))
-  {
-    m_from = jsonValue.GetString("From");
-    m_fromHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Helo"))
   {
     m_helo = jsonValue.GetString("Helo");
     m_heloHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("From"))
+  {
+    m_from = jsonValue.GetString("From");
+    m_fromHasBeenSet = true;
   }
   if(jsonValue.ValueExists("To"))
   {
@@ -51,15 +51,15 @@ JsonValue Envelope::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_fromHasBeenSet)
-  {
-   payload.WithString("From", m_from);
-
-  }
-
   if(m_heloHasBeenSet)
   {
    payload.WithString("Helo", m_helo);
+
+  }
+
+  if(m_fromHasBeenSet)
+  {
+   payload.WithString("From", m_from);
 
   }
 
