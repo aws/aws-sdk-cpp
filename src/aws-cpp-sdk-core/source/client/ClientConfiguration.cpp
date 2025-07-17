@@ -41,6 +41,10 @@ static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION = "account_id_endpoint_mode";
+static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_TIMEOUT";
+static const char* AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR = "metadata_service_timeout";
+static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR = "AWS_METADATA_SERVICE_NUM_ATTEMPTS";
+static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR = "metadata_service_num_attempts";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -288,6 +292,31 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
         AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
         {"required", "disabled", "preferred"}, /* allowed values */
         "preferred" /* default value */);
+    
+    // Load IMDS configuration from environment variables and config file
+    Aws::String timeoutStr = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR,
+        config.profileName,
+        AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR,
+        {}, /* allowed values */
+        "1" /* default value */);
+
+    // Load IMDS configuration from environment variables and config file
+    Aws::String numAttemptsStr = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR,
+        config.profileName,
+        AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR,
+        {}, /* allowed values */
+        "1" /* default value */);
+
+    // Parse and set IMDS num attempts
+    long attempts = std::stol(numAttemptsStr);
+    if (attempts >= 1) {
+      config.imdsConfig.metadata_service_num_attempts = attempts;
+    }
+    // Parse and set IMDS timeout
+    long timeout = std::stol(timeoutStr);
+    if (timeout >= 1) {
+        config.imdsConfig.metadata_service_timeout = timeout;
+    }
 }
 
 ClientConfiguration::ClientConfiguration()

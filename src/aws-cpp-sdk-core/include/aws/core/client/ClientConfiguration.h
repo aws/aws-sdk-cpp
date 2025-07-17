@@ -454,7 +454,7 @@ namespace Aws
                * Timeout in seconds when retrieving data from IMDS. Default 1.
                */
               long metadata_service_timeout = 1;
-            } IMDSConfig;
+            } imdsConfig;
             
             /**
              * A helper function to read config value from env variable or aws profile config
