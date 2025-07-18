@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/InputScanType.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
+#include <aws/mediaconvert/model/InputTamsSettings.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/mediaconvert/model/InputVideoGenerator.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
@@ -247,11 +248,17 @@ namespace Model
     /**
      * Specify the source file for your transcoding job. You can use multiple inputs in
      * a single job. The service concatenates these inputs, in the order that you
-     * specify them in the job, to create the outputs. If your input format is IMF,
-     * specify your input by providing the path to your CPL. For example,
-     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
-     * *Supplemental IMPs* to specify any supplemental IMPs that contain assets
-     * referenced by the CPL.
+     * specify them in the job, to create the outputs. For standard inputs, provide the
+     * path to your S3, HTTP, or HTTPS source file. For example,
+     * s3://amzn-s3-demo-bucket/input.mp4 for an Amazon S3 input or
+     * https://example.com/input.mp4 for an HTTPS input. For TAMS inputs, specify the
+     * HTTPS endpoint of your TAMS server. For example, https://tams-server.example.com
+     * . When you do, also specify Source ID, Timerange, GAP handling, and the
+     * Authorization connection ARN under TAMS settings. (Don't include these
+     * parameters in the Input file URL.) For IMF inputs, specify your input by
+     * providing the path to your CPL. For example, s3://amzn-s3-demo-bucket/vf/cpl.xml
+     * . If the CPL is in an incomplete IMP, make sure to use Supplemental IMPsto
+     * specify any supplemental IMPs that contain assets referenced by the CPL.
      */
     inline const Aws::String& GetFileInput() const { return m_fileInput; }
     inline bool FileInputHasBeenSet() const { return m_fileInputHasBeenSet; }
@@ -405,6 +412,27 @@ namespace Model
 
     ///@{
     /**
+     * Specify a Time Addressable Media Store (TAMS) server as an input source. TAMS is
+     * an open-source API specification that provides access to time-segmented media
+     * content. Use TAMS to retrieve specific time ranges from live or archived media
+     * streams. When you specify TAMS settings, MediaConvert connects to your TAMS
+     * server, retrieves the media segments for your specified time range, and
+     * processes them as a single input. This enables workflows like extracting clips
+     * from live streams or processing specific portions of archived content. To use
+     * TAMS, you must: 1. Have access to a TAMS-compliant server 2. Specify the server
+     * URL in the Input file URL field 3. Provide the required SourceId and Timerange
+     * parameters 4. Configure authentication, if your TAMS server requires it
+     */
+    inline const InputTamsSettings& GetTamsSettings() const { return m_tamsSettings; }
+    inline bool TamsSettingsHasBeenSet() const { return m_tamsSettingsHasBeenSet; }
+    template<typename TamsSettingsT = InputTamsSettings>
+    void SetTamsSettings(TamsSettingsT&& value) { m_tamsSettingsHasBeenSet = true; m_tamsSettings = std::forward<TamsSettingsT>(value); }
+    template<typename TamsSettingsT = InputTamsSettings>
+    Input& WithTamsSettings(TamsSettingsT&& value) { SetTamsSettings(std::forward<TamsSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Use this Timecode source setting, located under the input settings, to specify
      * how the service counts input video frames. This input frame count affects only
      * the behavior of features that apply to a single input at a time, such as input
@@ -543,6 +571,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supplementalImps;
     bool m_supplementalImpsHasBeenSet = false;
+
+    InputTamsSettings m_tamsSettings;
+    bool m_tamsSettingsHasBeenSet = false;
 
     InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
     bool m_timecodeSourceHasBeenSet = false;

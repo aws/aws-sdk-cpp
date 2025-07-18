@@ -45,9 +45,9 @@ namespace Model
      * height as your overlay input video: Keep blank, or enter 0. To specify a
      * different height for the cropping rectangle: Enter an integer representing the
      * Unit type that you choose, either Pixels or Percentage. For example, when you
-     * enter 100 and choose Pixels, the cropping rectangle will 100 pixels high. When
-     * you enter 10, choose Percentage, and your overlay input video is 1920x1080, the
-     * cropping rectangle will be 108 pixels high.
+     * enter 100 and choose Pixels, the cropping rectangle will be 100 pixels high.
+     * When you enter 10, choose Percentage, and your overlay input video is 1920x1080,
+     * the cropping rectangle will be 108 pixels high.
      */
     inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
@@ -73,9 +73,9 @@ namespace Model
      * as your overlay input video: Keep blank, or enter 0. To specify a different
      * width for the cropping rectangle: Enter an integer representing the Unit type
      * that you choose, either Pixels or Percentage. For example, when you enter 100
-     * and choose Pixels, the cropping rectangle will 100 pixels wide. When you enter
-     * 10, choose Percentage, and your overlay input video is 1920x1080, the cropping
-     * rectangle will be 192 pixels wide.
+     * and choose Pixels, the cropping rectangle will be 100 pixels wide. When you
+     * enter 10, choose Percentage, and your overlay input video is 1920x1080, the
+     * cropping rectangle will be 192 pixels wide.
      */
     inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }

@@ -30,6 +30,7 @@
 #include <aws/outposts/model/GetConnectionResult.h>
 #include <aws/outposts/model/GetOrderResult.h>
 #include <aws/outposts/model/GetOutpostResult.h>
+#include <aws/outposts/model/GetOutpostBillingInformationResult.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
 #include <aws/outposts/model/GetSiteResult.h>
@@ -108,6 +109,7 @@ namespace Aws
       class GetConnectionRequest;
       class GetOrderRequest;
       class GetOutpostRequest;
+      class GetOutpostBillingInformationRequest;
       class GetOutpostInstanceTypesRequest;
       class GetOutpostSupportedInstanceTypesRequest;
       class GetSiteRequest;
@@ -144,6 +146,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetConnectionResult, OutpostsError> GetConnectionOutcome;
       typedef Aws::Utils::Outcome<GetOrderResult, OutpostsError> GetOrderOutcome;
       typedef Aws::Utils::Outcome<GetOutpostResult, OutpostsError> GetOutpostOutcome;
+      typedef Aws::Utils::Outcome<GetOutpostBillingInformationResult, OutpostsError> GetOutpostBillingInformationOutcome;
       typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<GetOutpostSupportedInstanceTypesResult, OutpostsError> GetOutpostSupportedInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
@@ -180,6 +183,7 @@ namespace Aws
       typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
       typedef std::future<GetOrderOutcome> GetOrderOutcomeCallable;
       typedef std::future<GetOutpostOutcome> GetOutpostOutcomeCallable;
+      typedef std::future<GetOutpostBillingInformationOutcome> GetOutpostBillingInformationOutcomeCallable;
       typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
       typedef std::future<GetOutpostSupportedInstanceTypesOutcome> GetOutpostSupportedInstanceTypesOutcomeCallable;
       typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
@@ -219,6 +223,7 @@ namespace Aws
     typedef std::function<void(const OutpostsClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOrderRequest&, const Model::GetOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrderResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostRequest&, const Model::GetOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::GetOutpostBillingInformationRequest&, const Model::GetOutpostBillingInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostBillingInformationResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostInstanceTypesRequest&, const Model::GetOutpostInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostSupportedInstanceTypesRequest&, const Model::GetOutpostSupportedInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostSupportedInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetSiteRequest&, const Model::GetSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteResponseReceivedHandler;

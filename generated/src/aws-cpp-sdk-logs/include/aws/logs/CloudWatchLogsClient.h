@@ -1828,6 +1828,43 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Retrieves a large logging object (LLO) and streams it back. This API is used
+         * to fetch the content of large portions of log events that have been ingested
+         * through the PutOpenTelemetryLogs API. When log events contain fields that would
+         * cause the total event size to exceed 1MB, CloudWatch Logs automatically
+         * processes up to 10 fields, starting with the largest fields. Each field is
+         * truncated as needed to keep the total event size as close to 1MB as possible.
+         * The excess portions are stored as Large Log Objects (LLOs) and these fields are
+         * processed separately and LLO reference system fields (in the format
+         * <code>@ptr.$[path.to.field]</code>) are added. The path in the reference field
+         * reflects the original JSON structure where the large field was located. For
+         * example, this could be <code>@ptr.$['input']['message']</code>,
+         * <code>@ptr.$['AAA']['BBB']['CCC']['DDD']</code>, <code>@ptr.$['AAA']</code>, or
+         * any other path matching your log structure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogObject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLogObjectOutcome GetLogObject(Model::GetLogObjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLogObject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLogObjectRequestT = Model::GetLogObjectRequest>
+        Model::GetLogObjectOutcomeCallable GetLogObjectCallable(GetLogObjectRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetLogObject, request);
+        }
+
+        /**
+         * An Async wrapper for GetLogObject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLogObjectRequestT = Model::GetLogObjectRequest>
+        void GetLogObjectAsync(GetLogObjectRequestT& request, const GetLogObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetLogObject, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves all of the fields and values of a single log event. All fields are
          * retrieved, even if the original query that produced the
          * <code>logRecordPointer</code> retrieved only a subset of fields. Fields are
@@ -2105,17 +2142,20 @@ namespace CloudWatchLogs
 
         /**
          * <p>Creates an account-level data protection policy, subscription filter policy,
-         * or field index policy that applies to all log groups or a subset of log groups
-         * in the account.</p> <p>To use this operation, you must be signed on with the
-         * correct permissions depending on the type of policy that you are creating.</p>
-         * <ul> <li> <p>To create a data protection policy, you must have the
-         * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code>
-         * permissions.</p> </li> <li> <p>To create a subscription filter policy, you must
-         * have the <code>logs:PutSubscriptionFilter</code> and
-         * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
-         * transformer policy, you must have the <code>logs:PutTransformer</code> and
-         * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
-         * field index policy, you must have the <code>logs:PutIndexPolicy</code> and
+         * field index policy, transformer policy, or metric extraction policy that applies
+         * to all log groups or a subset of log groups in the account.</p> <p>To use this
+         * operation, you must be signed on with the correct permissions depending on the
+         * type of policy that you are creating.</p> <ul> <li> <p>To create a data
+         * protection policy, you must have the <code>logs:PutDataProtectionPolicy</code>
+         * and <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create
+         * a subscription filter policy, you must have the
+         * <code>logs:PutSubscriptionFilter</code> and <code>logs:PutAccountPolicy</code>
+         * permissions.</p> </li> <li> <p>To create a transformer policy, you must have the
+         * <code>logs:PutTransformer</code> and <code>logs:PutAccountPolicy</code>
+         * permissions.</p> </li> <li> <p>To create a field index policy, you must have the
+         * <code>logs:PutIndexPolicy</code> and <code>logs:PutAccountPolicy</code>
+         * permissions.</p> </li> <li> <p>To create a metric extraction policy, you must
+         * have the <code>logs:PutMetricExtractionPolicy</code> and
          * <code>logs:PutAccountPolicy</code> permissions.</p> </li> </ul> <p> <b>Data
          * protection policy</b> </p> <p>A data protection policy can help safeguard
          * sensitive data that's ingested by your log groups by auditing and masking the
@@ -2245,8 +2285,53 @@ namespace CloudWatchLogs
          * instead of <code>PutAccountPolicy</code>. If you do so, that log group will use
          * only that log-group level policy, and will ignore the account-level policy that
          * you create with <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.</p>
+         * <p> <b>Metric extraction policy</b> </p> <p>A metric extraction policy controls
+         * whether CloudWatch Metrics can be created through the Embedded Metrics Format
+         * (EMF) for log groups in your account. By default, EMF metric creation is enabled
+         * for all log groups. You can use metric extraction policies to disable EMF metric
+         * creation for your entire account or specific log groups.</p> <p>When a policy
+         * disables EMF metric creation for a log group, log events in the EMF format are
+         * still ingested, but no CloudWatch Metrics are created from them.</p> 
+         * <p>Creating a policy disables metrics for AWS features that use EMF to create
+         * metrics, such as CloudWatch Container Insights and CloudWatch Application
+         * Signals. To prevent turning off those features by accident, we recommend that
+         * you exclude the underlying log-groups through a selection-criteria such as
+         * <code>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
+         * "/aws/ecs/containerinsights", "/aws/application-signals/data"]</code>.</p>
+         *  <p>Each account can have either one account-level metric extraction
+         * policy that applies to all log groups, or up to 5 policies that are each scoped
+         * to a subset of log groups with the <code>selectionCriteria</code> parameter. The
+         * selection criteria supports filtering by <code>LogGroupName</code> and
+         * <code>LogGroupNamePrefix</code> using the operators <code>IN</code> and
+         * <code>NOT IN</code>. You can specify up to 50 values in each <code>IN</code> or
+         * <code>NOT IN</code> list.</p> <p>The selection criteria can be specified in
+         * these formats:</p> <p> <code>LogGroupName IN ["log-group-1",
+         * "log-group-2"]</code> </p> <p> <code>LogGroupNamePrefix NOT IN ["/aws/prefix1",
+         * "/aws/prefix2"]</code> </p> <p>If you have multiple account-level metric
+         * extraction policies with selection criteria, no two of them can have overlapping
+         * criteria. For example, if you have one policy with selection criteria
+         * <code>LogGroupNamePrefix IN ["my-log"]</code>, you can't have another metric
+         * extraction policy with selection criteria <code>LogGroupNamePrefix IN
+         * ["/my-log-prod"]</code> or <code>LogGroupNamePrefix IN ["/my-logging"]</code>,
+         * as the set of log groups matching these prefixes would be a subset of the log
+         * groups matching the first policy's prefix, creating an overlap.</p> <p>When
+         * using <code>NOT IN</code>, only one policy with this operator is allowed per
+         * account.</p> <p>When combining policies with <code>IN</code> and <code>NOT
+         * IN</code> operators, the overlap check ensures that policies don't have
+         * conflicting effects. Two policies with <code>IN</code> and <code>NOT IN</code>
+         * operators do not overlap if and only if every value in the <code>IN
+         * </code>policy is completely contained within some value in the <code>NOT
+         * IN</code> policy. For example:</p> <ul> <li> <p>If you have a <code>NOT
+         * IN</code> policy for prefix <code>"/aws/lambda"</code>, you can create an
+         * <code>IN</code> policy for the exact log group name
+         * <code>"/aws/lambda/function1"</code> because the set of log groups matching
+         * <code>"/aws/lambda/function1"</code> is a subset of the log groups matching
+         * <code>"/aws/lambda"</code>.</p> </li> <li> <p>If you have a <code>NOT IN</code>
+         * policy for prefix <code>"/aws/lambda"</code>, you cannot create an
+         * <code>IN</code> policy for prefix <code>"/aws"</code> because the set of log
+         * groups matching <code>"/aws"</code> is not a subset of the log groups matching
+         * <code>"/aws/lambda"</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">AWS
          * API Reference</a></p>
          */

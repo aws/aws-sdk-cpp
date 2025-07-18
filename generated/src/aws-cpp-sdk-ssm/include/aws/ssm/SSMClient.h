@@ -31,7 +31,7 @@ namespace SSM
    * Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for
    * Automation, a tool in Amazon Web Services Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
-   * Manager Automation runbook reference</a> </i>.</p> </li> <li> <p>For information
+   * Manager Automation Runbook Reference</a> </i>.</p> </li> <li> <p>For information
    * about AppConfig, a tool in Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User
    * Guide</a> </i> and the <i> <a
@@ -1742,11 +1742,14 @@ namespace SSM
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p>  <p>If you change the KMS key alias for the KMS
-         * key used to encrypt a parameter, then you must also update the key alias the
-         * parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code>
-         * retrieves whatever the original key alias was referencing.</p>
-         * <p><h3>See Also:</h3>   <a
+         * set of results.</p> <p>Parameter names can't contain spaces. The service removes
+         * any spaces specified for the beginning or end of a parameter name. If the
+         * specified name for a parameter contains spaces between characters, the request
+         * fails with a <code>ValidationException</code> error.</p>  <p>If you
+         * change the KMS key alias for the KMS key used to encrypt a parameter, then you
+         * must also update the key alias the parameter uses to reference KMS. Otherwise,
+         * <code>DescribeParameters</code> retrieves whatever the original key alias was
+         * referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
@@ -2504,8 +2507,12 @@ namespace SSM
 
         /**
          * <p>Get information about a single parameter by specifying the parameter
-         * name.</p>  <p>To get information about more than one parameter at a time,
-         * use the <a>GetParameters</a> operation.</p> <p><h3>See Also:</h3>   <a
+         * name.</p> <p>Parameter names can't contain spaces. The service removes any
+         * spaces specified for the beginning or end of a parameter name. If the specified
+         * name for a parameter contains spaces between characters, the request fails with
+         * a <code>ValidationException</code> error.</p>  <p>To get information about
+         * more than one parameter at a time, use the <a>GetParameters</a> operation.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
          */
@@ -2530,11 +2537,15 @@ namespace SSM
         }
 
         /**
-         * <p>Retrieves the history of all changes to a parameter.</p>  <p>If
-         * you change the KMS key alias for the KMS key used to encrypt a parameter, then
-         * you must also update the key alias the parameter uses to reference KMS.
-         * Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key
-         * alias was referencing.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves the history of all changes to a parameter.</p> <p>Parameter names
+         * can't contain spaces. The service removes any spaces specified for the beginning
+         * or end of a parameter name. If the specified name for a parameter contains
+         * spaces between characters, the request fails with a
+         * <code>ValidationException</code> error.</p>  <p>If you change the KMS
+         * key alias for the KMS key used to encrypt a parameter, then you must also update
+         * the key alias the parameter uses to reference KMS. Otherwise,
+         * <code>GetParameterHistory</code> retrieves whatever the original key alias was
+         * referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          */
@@ -2561,7 +2572,11 @@ namespace SSM
         /**
          * <p>Get information about one or more parameters by specifying multiple parameter
          * names.</p>  <p>To get information about a single parameter, you can use
-         * the <a>GetParameter</a> operation instead.</p> <p><h3>See Also:</h3>   <a
+         * the <a>GetParameter</a> operation instead.</p>  <p>Parameter names can't
+         * contain spaces. The service removes any spaces specified for the beginning or
+         * end of a parameter name. If the specified name for a parameter contains spaces
+         * between characters, the request fails with a <code>ValidationException</code>
+         * error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          */
@@ -2594,7 +2609,11 @@ namespace SSM
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p><p><h3>See Also:</h3>   <a
+         * set of results.</p> <p>Parameter names can't contain spaces. The service removes
+         * any spaces specified for the beginning or end of a parameter name. If the
+         * specified name for a parameter contains spaces between characters, the request
+         * fails with a <code>ValidationException</code> error.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2756,7 +2775,11 @@ namespace SSM
          * <li> <p>Labels can't begin with a number, "<code>aws</code>" or
          * "<code>ssm</code>" (not case sensitive). If a label fails to meet these
          * requirements, then the label isn't associated with a parameter and the system
-         * displays it in the list of InvalidLabels.</p> </li> </ul><p><h3>See Also:</h3>  
+         * displays it in the list of InvalidLabels.</p> </li> <li> <p>Parameter names
+         * can't contain spaces. The service removes any spaces specified for the beginning
+         * or end of a parameter name. If the specified name for a parameter contains
+         * spaces between characters, the request fails with a
+         * <code>ValidationException</code> error.</p> </li> </ul><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
@@ -3315,10 +3338,16 @@ namespace SSM
          * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
          * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
          * time the patch, association, or custom compliance item was applied to the
-         * managed node.</p> </li> <li> <p>Id: The patch, association, or custom compliance
-         * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
-         * the compliance item. For example, <code>approved</code> for patches, or
-         * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
+         * managed node.</p>  <p>For State Manager associations, this represents
+         * the time when compliance status was captured by the Systems Manager service
+         * during its internal compliance aggregation workflow, not necessarily when the
+         * association was executed on the managed node. State Manager updates compliance
+         * information for all associations on an instance whenever any association
+         * executes, which may result in multiple associations showing the same execution
+         * time.</p>  </li> <li> <p>Id: The patch, association, or custom
+         * compliance ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The
+         * status of the compliance item. For example, <code>approved</code> for patches,
+         * or <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
          * severity. For example, <code>Critical</code>.</p> </li> <li> <p>DocumentName: An
          * SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
          * <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p>
@@ -3935,7 +3964,11 @@ namespace SSM
         }
 
         /**
-         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Remove a label or labels from a parameter.</p> <p>Parameter names can't
+         * contain spaces. The service removes any spaces specified for the beginning or
+         * end of a parameter name. If the specified name for a parameter contains spaces
+         * between characters, the request fails with a <code>ValidationException</code>
+         * error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
          * API Reference</a></p>
          */

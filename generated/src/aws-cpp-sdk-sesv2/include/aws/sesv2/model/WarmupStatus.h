@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     IN_PROGRESS,
-    DONE
+    DONE,
+    NOT_APPLICABLE
   };
 
 namespace WarmupStatusMapper
