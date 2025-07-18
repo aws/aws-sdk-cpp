@@ -661,8 +661,8 @@ namespace Aws
 
             httpRequest->SetUserAgent(m_userAgent);
 
-            httpRequest->AddQueryStringParameter("account_id", Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str()));
-            httpRequest->AddQueryStringParameter("role_name", Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str()));
+            httpRequest->AddQueryStringParameter("account_id", request.m_ssoAccountId);
+            httpRequest->AddQueryStringParameter("role_name", request.m_ssoRoleName);
 
             Aws::String credentialsStr = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
 
