@@ -45,6 +45,16 @@ AacSettings& AacSettings::operator =(JsonView jsonValue)
     m_codingMode = AacCodingModeMapper::GetAacCodingModeForName(jsonValue.GetString("codingMode"));
     m_codingModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("loudnessMeasurementMode"))
+  {
+    m_loudnessMeasurementMode = AacLoudnessMeasurementModeMapper::GetAacLoudnessMeasurementModeForName(jsonValue.GetString("loudnessMeasurementMode"));
+    m_loudnessMeasurementModeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("rapInterval"))
+  {
+    m_rapInterval = jsonValue.GetInteger("rapInterval");
+    m_rapIntervalHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("rateControlMode"))
   {
     m_rateControlMode = AacRateControlModeMapper::GetAacRateControlModeForName(jsonValue.GetString("rateControlMode"));
@@ -64,6 +74,11 @@ AacSettings& AacSettings::operator =(JsonView jsonValue)
   {
     m_specification = AacSpecificationMapper::GetAacSpecificationForName(jsonValue.GetString("specification"));
     m_specificationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("targetLoudnessRange"))
+  {
+    m_targetLoudnessRange = jsonValue.GetInteger("targetLoudnessRange");
+    m_targetLoudnessRangeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vbrQuality"))
   {
@@ -98,6 +113,17 @@ JsonValue AacSettings::Jsonize() const
    payload.WithString("codingMode", AacCodingModeMapper::GetNameForAacCodingMode(m_codingMode));
   }
 
+  if(m_loudnessMeasurementModeHasBeenSet)
+  {
+   payload.WithString("loudnessMeasurementMode", AacLoudnessMeasurementModeMapper::GetNameForAacLoudnessMeasurementMode(m_loudnessMeasurementMode));
+  }
+
+  if(m_rapIntervalHasBeenSet)
+  {
+   payload.WithInteger("rapInterval", m_rapInterval);
+
+  }
+
   if(m_rateControlModeHasBeenSet)
   {
    payload.WithString("rateControlMode", AacRateControlModeMapper::GetNameForAacRateControlMode(m_rateControlMode));
@@ -117,6 +143,12 @@ JsonValue AacSettings::Jsonize() const
   if(m_specificationHasBeenSet)
   {
    payload.WithString("specification", AacSpecificationMapper::GetNameForAacSpecification(m_specification));
+  }
+
+  if(m_targetLoudnessRangeHasBeenSet)
+  {
+   payload.WithInteger("targetLoudnessRange", m_targetLoudnessRange);
+
   }
 
   if(m_vbrQualityHasBeenSet)

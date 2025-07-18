@@ -19,7 +19,8 @@ namespace Model
     mp4,
     quicktime,
     matroska,
-    webm
+    webm,
+    mxf
   };
 
 namespace FormatMapper

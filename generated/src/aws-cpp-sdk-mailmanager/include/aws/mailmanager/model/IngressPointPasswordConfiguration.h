@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The previous password expiry timestamp of the ingress endpoint resource.</p>
+     * <p>The current password expiry timestamp of the ingress endpoint resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetPreviousSmtpPasswordExpiryTimestamp() const { return m_previousSmtpPasswordExpiryTimestamp; }
-    inline bool PreviousSmtpPasswordExpiryTimestampHasBeenSet() const { return m_previousSmtpPasswordExpiryTimestampHasBeenSet; }
-    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
-    void SetPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { m_previousSmtpPasswordExpiryTimestampHasBeenSet = true; m_previousSmtpPasswordExpiryTimestamp = std::forward<PreviousSmtpPasswordExpiryTimestampT>(value); }
-    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
-    IngressPointPasswordConfiguration& WithPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { SetPreviousSmtpPasswordExpiryTimestamp(std::forward<PreviousSmtpPasswordExpiryTimestampT>(value)); return *this;}
+    inline const Aws::String& GetSmtpPasswordVersion() const { return m_smtpPasswordVersion; }
+    inline bool SmtpPasswordVersionHasBeenSet() const { return m_smtpPasswordVersionHasBeenSet; }
+    template<typename SmtpPasswordVersionT = Aws::String>
+    void SetSmtpPasswordVersion(SmtpPasswordVersionT&& value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion = std::forward<SmtpPasswordVersionT>(value); }
+    template<typename SmtpPasswordVersionT = Aws::String>
+    IngressPointPasswordConfiguration& WithSmtpPasswordVersion(SmtpPasswordVersionT&& value) { SetSmtpPasswordVersion(std::forward<SmtpPasswordVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,25 +65,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current password expiry timestamp of the ingress endpoint resource.</p>
+     * <p>The previous password expiry timestamp of the ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetSmtpPasswordVersion() const { return m_smtpPasswordVersion; }
-    inline bool SmtpPasswordVersionHasBeenSet() const { return m_smtpPasswordVersionHasBeenSet; }
-    template<typename SmtpPasswordVersionT = Aws::String>
-    void SetSmtpPasswordVersion(SmtpPasswordVersionT&& value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion = std::forward<SmtpPasswordVersionT>(value); }
-    template<typename SmtpPasswordVersionT = Aws::String>
-    IngressPointPasswordConfiguration& WithSmtpPasswordVersion(SmtpPasswordVersionT&& value) { SetSmtpPasswordVersion(std::forward<SmtpPasswordVersionT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetPreviousSmtpPasswordExpiryTimestamp() const { return m_previousSmtpPasswordExpiryTimestamp; }
+    inline bool PreviousSmtpPasswordExpiryTimestampHasBeenSet() const { return m_previousSmtpPasswordExpiryTimestampHasBeenSet; }
+    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
+    void SetPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { m_previousSmtpPasswordExpiryTimestampHasBeenSet = true; m_previousSmtpPasswordExpiryTimestamp = std::forward<PreviousSmtpPasswordExpiryTimestampT>(value); }
+    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
+    IngressPointPasswordConfiguration& WithPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { SetPreviousSmtpPasswordExpiryTimestamp(std::forward<PreviousSmtpPasswordExpiryTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_previousSmtpPasswordExpiryTimestamp{};
-    bool m_previousSmtpPasswordExpiryTimestampHasBeenSet = false;
+    Aws::String m_smtpPasswordVersion;
+    bool m_smtpPasswordVersionHasBeenSet = false;
 
     Aws::String m_previousSmtpPasswordVersion;
     bool m_previousSmtpPasswordVersionHasBeenSet = false;
 
-    Aws::String m_smtpPasswordVersion;
-    bool m_smtpPasswordVersionHasBeenSet = false;
+    Aws::Utils::DateTime m_previousSmtpPasswordExpiryTimestamp{};
+    bool m_previousSmtpPasswordExpiryTimestampHasBeenSet = false;
   };
 
 } // namespace Model

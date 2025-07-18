@@ -39,19 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of a previously created subscription that an Add On instance is
-     * created for. You can only have one instance per subscription.</p>
-     */
-    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
-    inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
-    template<typename AddonSubscriptionIdT = Aws::String>
-    CreateAddonInstanceRequest& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
@@ -61,6 +48,19 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateAddonInstanceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique ID of a previously created subscription that an Add On instance is
+     * created for. You can only have one instance per subscription.</p>
+     */
+    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
+    inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    CreateAddonInstanceRequest& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_addonSubscriptionId;
-    bool m_addonSubscriptionIdHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    Aws::String m_addonSubscriptionId;
+    bool m_addonSubscriptionIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

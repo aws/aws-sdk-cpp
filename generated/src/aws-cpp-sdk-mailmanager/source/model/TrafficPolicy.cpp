@@ -25,20 +25,20 @@ TrafficPolicy::TrafficPolicy(JsonView jsonValue)
 
 TrafficPolicy& TrafficPolicy::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DefaultAction"))
+  if(jsonValue.ValueExists("TrafficPolicyName"))
   {
-    m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
-    m_defaultActionHasBeenSet = true;
+    m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
+    m_trafficPolicyNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
     m_trafficPolicyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrafficPolicyName"))
+  if(jsonValue.ValueExists("DefaultAction"))
   {
-    m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
-    m_trafficPolicyNameHasBeenSet = true;
+    m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
+    m_defaultActionHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,10 @@ JsonValue TrafficPolicy::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_defaultActionHasBeenSet)
+  if(m_trafficPolicyNameHasBeenSet)
   {
-   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
+   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
+
   }
 
   if(m_trafficPolicyIdHasBeenSet)
@@ -58,10 +59,9 @@ JsonValue TrafficPolicy::Jsonize() const
 
   }
 
-  if(m_trafficPolicyNameHasBeenSet)
+  if(m_defaultActionHasBeenSet)
   {
-   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
-
+   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
   }
 
   return payload;

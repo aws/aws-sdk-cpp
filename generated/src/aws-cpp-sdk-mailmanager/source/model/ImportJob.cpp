@@ -25,25 +25,30 @@ ImportJob::ImportJob(JsonView jsonValue)
 
 ImportJob& ImportJob::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AddressListId"))
+  if(jsonValue.ValueExists("JobId"))
   {
-    m_addressListId = jsonValue.GetString("AddressListId");
-    m_addressListIdHasBeenSet = true;
+    m_jobId = jsonValue.GetString("JobId");
+    m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedTimestamp"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
-    m_completedTimestampHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-    m_createdTimestampHasBeenSet = true;
+    m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
+  if(jsonValue.ValueExists("PreSignedUrl"))
   {
-    m_error = jsonValue.GetString("Error");
-    m_errorHasBeenSet = true;
+    m_preSignedUrl = jsonValue.GetString("PreSignedUrl");
+    m_preSignedUrlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ImportedItemsCount"))
+  {
+    m_importedItemsCount = jsonValue.GetInteger("ImportedItemsCount");
+    m_importedItemsCountHasBeenSet = true;
   }
   if(jsonValue.ValueExists("FailedItemsCount"))
   {
@@ -55,35 +60,30 @@ ImportJob& ImportJob::operator =(JsonView jsonValue)
     m_importDataFormat = jsonValue.GetObject("ImportDataFormat");
     m_importDataFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportedItemsCount"))
+  if(jsonValue.ValueExists("AddressListId"))
   {
-    m_importedItemsCount = jsonValue.GetInteger("ImportedItemsCount");
-    m_importedItemsCountHasBeenSet = true;
+    m_addressListId = jsonValue.GetString("AddressListId");
+    m_addressListIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobId"))
+  if(jsonValue.ValueExists("CreatedTimestamp"))
   {
-    m_jobId = jsonValue.GetString("JobId");
-    m_jobIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("PreSignedUrl"))
-  {
-    m_preSignedUrl = jsonValue.GetString("PreSignedUrl");
-    m_preSignedUrlHasBeenSet = true;
+    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
+    m_createdTimestampHasBeenSet = true;
   }
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
     m_startTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("CompletedTimestamp"))
   {
-    m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
+    m_completedTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Error"))
+  {
+    m_error = jsonValue.GetString("Error");
+    m_errorHasBeenSet = true;
   }
   return *this;
 }
@@ -92,25 +92,32 @@ JsonValue ImportJob::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_addressListIdHasBeenSet)
+  if(m_jobIdHasBeenSet)
   {
-   payload.WithString("AddressListId", m_addressListId);
+   payload.WithString("JobId", m_jobId);
 
   }
 
-  if(m_completedTimestampHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithDouble("CompletedTimestamp", m_completedTimestamp.SecondsWithMSPrecision());
+   payload.WithString("Name", m_name);
+
   }
 
-  if(m_createdTimestampHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+   payload.WithString("Status", ImportJobStatusMapper::GetNameForImportJobStatus(m_status));
   }
 
-  if(m_errorHasBeenSet)
+  if(m_preSignedUrlHasBeenSet)
   {
-   payload.WithString("Error", m_error);
+   payload.WithString("PreSignedUrl", m_preSignedUrl);
+
+  }
+
+  if(m_importedItemsCountHasBeenSet)
+  {
+   payload.WithInteger("ImportedItemsCount", m_importedItemsCount);
 
   }
 
@@ -126,28 +133,15 @@ JsonValue ImportJob::Jsonize() const
 
   }
 
-  if(m_importedItemsCountHasBeenSet)
+  if(m_addressListIdHasBeenSet)
   {
-   payload.WithInteger("ImportedItemsCount", m_importedItemsCount);
+   payload.WithString("AddressListId", m_addressListId);
 
   }
 
-  if(m_jobIdHasBeenSet)
+  if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("JobId", m_jobId);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
-  if(m_preSignedUrlHasBeenSet)
-  {
-   payload.WithString("PreSignedUrl", m_preSignedUrl);
-
+   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_startTimestampHasBeenSet)
@@ -155,9 +149,15 @@ JsonValue ImportJob::Jsonize() const
    payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
+  if(m_completedTimestampHasBeenSet)
   {
-   payload.WithString("Status", ImportJobStatusMapper::GetNameForImportJobStatus(m_status));
+   payload.WithDouble("CompletedTimestamp", m_completedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithString("Error", m_error);
+
   }
 
   return payload;

@@ -25,6 +25,11 @@ IngressIsInAddressList::IngressIsInAddressList(JsonView jsonValue)
 
 IngressIsInAddressList& IngressIsInAddressList::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Attribute"))
+  {
+    m_attribute = IngressAddressListEmailAttributeMapper::GetIngressAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
+    m_attributeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AddressLists"))
   {
     Aws::Utils::Array<JsonView> addressListsJsonList = jsonValue.GetArray("AddressLists");
@@ -34,17 +39,17 @@ IngressIsInAddressList& IngressIsInAddressList::operator =(JsonView jsonValue)
     }
     m_addressListsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attribute"))
-  {
-    m_attribute = IngressAddressListEmailAttributeMapper::GetIngressAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
-    m_attributeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue IngressIsInAddressList::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_attributeHasBeenSet)
+  {
+   payload.WithString("Attribute", IngressAddressListEmailAttributeMapper::GetNameForIngressAddressListEmailAttribute(m_attribute));
+  }
 
   if(m_addressListsHasBeenSet)
   {
@@ -55,11 +60,6 @@ JsonValue IngressIsInAddressList::Jsonize() const
    }
    payload.WithArray("AddressLists", std::move(addressListsJsonList));
 
-  }
-
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", IngressAddressListEmailAttributeMapper::GetNameForIngressAddressListEmailAttribute(m_attribute));
   }
 
   return payload;

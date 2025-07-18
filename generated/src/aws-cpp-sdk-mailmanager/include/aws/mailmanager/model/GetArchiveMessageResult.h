@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/Envelope.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/Metadata.h>
+#include <aws/mailmanager/model/Envelope.h>
 #include <utility>
 
 namespace Aws
@@ -42,17 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMTP envelope information of the email.</p>
-     */
-    inline const Envelope& GetEnvelope() const { return m_envelope; }
-    template<typename EnvelopeT = Envelope>
-    void SetEnvelope(EnvelopeT&& value) { m_envelopeHasBeenSet = true; m_envelope = std::forward<EnvelopeT>(value); }
-    template<typename EnvelopeT = Envelope>
-    GetArchiveMessageResult& WithEnvelope(EnvelopeT&& value) { SetEnvelope(std::forward<EnvelopeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A pre-signed URL to temporarily download the full message content.</p>
      */
     inline const Aws::String& GetMessageDownloadLink() const { return m_messageDownloadLink; }
@@ -74,6 +63,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The SMTP envelope information of the email.</p>
+     */
+    inline const Envelope& GetEnvelope() const { return m_envelope; }
+    template<typename EnvelopeT = Envelope>
+    void SetEnvelope(EnvelopeT&& value) { m_envelopeHasBeenSet = true; m_envelope = std::forward<EnvelopeT>(value); }
+    template<typename EnvelopeT = Envelope>
+    GetArchiveMessageResult& WithEnvelope(EnvelopeT&& value) { SetEnvelope(std::forward<EnvelopeT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -83,14 +83,14 @@ namespace Model
     ///@}
   private:
 
-    Envelope m_envelope;
-    bool m_envelopeHasBeenSet = false;
-
     Aws::String m_messageDownloadLink;
     bool m_messageDownloadLinkHasBeenSet = false;
 
     Metadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    Envelope m_envelope;
+    bool m_envelopeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

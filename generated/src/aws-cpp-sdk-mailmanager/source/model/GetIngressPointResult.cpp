@@ -25,26 +25,6 @@ GetIngressPointResult::GetIngressPointResult(const Aws::AmazonWebServiceResult<J
 GetIngressPointResult& GetIngressPointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ARecord"))
-  {
-    m_aRecord = jsonValue.GetString("ARecord");
-    m_aRecordHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
-    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-    m_createdTimestampHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IngressPointArn"))
-  {
-    m_ingressPointArn = jsonValue.GetString("IngressPointArn");
-    m_ingressPointArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IngressPointAuthConfiguration"))
-  {
-    m_ingressPointAuthConfiguration = jsonValue.GetObject("IngressPointAuthConfiguration");
-    m_ingressPointAuthConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
@@ -55,35 +35,55 @@ GetIngressPointResult& GetIngressPointResult::operator =(const Aws::AmazonWebSer
     m_ingressPointName = jsonValue.GetString("IngressPointName");
     m_ingressPointNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTimestamp"))
+  if(jsonValue.ValueExists("IngressPointArn"))
   {
-    m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-    m_lastUpdatedTimestampHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("NetworkConfiguration"))
-  {
-    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-    m_networkConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RuleSetId"))
-  {
-    m_ruleSetId = jsonValue.GetString("RuleSetId");
-    m_ruleSetIdHasBeenSet = true;
+    m_ingressPointArn = jsonValue.GetString("IngressPointArn");
+    m_ingressPointArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IngressPointStatusMapper::GetIngressPointStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = IngressPointTypeMapper::GetIngressPointTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ARecord"))
+  {
+    m_aRecord = jsonValue.GetString("ARecord");
+    m_aRecordHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RuleSetId"))
+  {
+    m_ruleSetId = jsonValue.GetString("RuleSetId");
+    m_ruleSetIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
     m_trafficPolicyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
+  if(jsonValue.ValueExists("IngressPointAuthConfiguration"))
   {
-    m_type = IngressPointTypeMapper::GetIngressPointTypeForName(jsonValue.GetString("Type"));
-    m_typeHasBeenSet = true;
+    m_ingressPointAuthConfiguration = jsonValue.GetObject("IngressPointAuthConfiguration");
+    m_ingressPointAuthConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NetworkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
+    m_networkConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedTimestamp"))
+  {
+    m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
+    m_createdTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedTimestamp"))
+  {
+    m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

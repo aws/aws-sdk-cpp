@@ -30,30 +30,30 @@ RuleCondition& RuleCondition::operator =(JsonView jsonValue)
     m_booleanExpression = jsonValue.GetObject("BooleanExpression");
     m_booleanExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DmarcExpression"))
+  if(jsonValue.ValueExists("StringExpression"))
   {
-    m_dmarcExpression = jsonValue.GetObject("DmarcExpression");
-    m_dmarcExpressionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IpExpression"))
-  {
-    m_ipExpression = jsonValue.GetObject("IpExpression");
-    m_ipExpressionHasBeenSet = true;
+    m_stringExpression = jsonValue.GetObject("StringExpression");
+    m_stringExpressionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("NumberExpression"))
   {
     m_numberExpression = jsonValue.GetObject("NumberExpression");
     m_numberExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StringExpression"))
+  if(jsonValue.ValueExists("IpExpression"))
   {
-    m_stringExpression = jsonValue.GetObject("StringExpression");
-    m_stringExpressionHasBeenSet = true;
+    m_ipExpression = jsonValue.GetObject("IpExpression");
+    m_ipExpressionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("VerdictExpression"))
   {
     m_verdictExpression = jsonValue.GetObject("VerdictExpression");
     m_verdictExpressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DmarcExpression"))
+  {
+    m_dmarcExpression = jsonValue.GetObject("DmarcExpression");
+    m_dmarcExpressionHasBeenSet = true;
   }
   return *this;
 }
@@ -68,15 +68,9 @@ JsonValue RuleCondition::Jsonize() const
 
   }
 
-  if(m_dmarcExpressionHasBeenSet)
+  if(m_stringExpressionHasBeenSet)
   {
-   payload.WithObject("DmarcExpression", m_dmarcExpression.Jsonize());
-
-  }
-
-  if(m_ipExpressionHasBeenSet)
-  {
-   payload.WithObject("IpExpression", m_ipExpression.Jsonize());
+   payload.WithObject("StringExpression", m_stringExpression.Jsonize());
 
   }
 
@@ -86,15 +80,21 @@ JsonValue RuleCondition::Jsonize() const
 
   }
 
-  if(m_stringExpressionHasBeenSet)
+  if(m_ipExpressionHasBeenSet)
   {
-   payload.WithObject("StringExpression", m_stringExpression.Jsonize());
+   payload.WithObject("IpExpression", m_ipExpression.Jsonize());
 
   }
 
   if(m_verdictExpressionHasBeenSet)
   {
    payload.WithObject("VerdictExpression", m_verdictExpression.Jsonize());
+
+  }
+
+  if(m_dmarcExpressionHasBeenSet)
+  {
+   payload.WithObject("DmarcExpression", m_dmarcExpression.Jsonize());
 
   }
 

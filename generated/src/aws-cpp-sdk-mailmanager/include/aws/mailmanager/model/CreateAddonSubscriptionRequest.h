@@ -39,19 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Add On to subscribe to. You can only have one subscription
-     * for each Add On name.</p>
-     */
-    inline const Aws::String& GetAddonName() const { return m_addonName; }
-    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-    template<typename AddonNameT = Aws::String>
-    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
-    template<typename AddonNameT = Aws::String>
-    CreateAddonSubscriptionRequest& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
@@ -61,6 +48,19 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateAddonSubscriptionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the Add On to subscribe to. You can only have one subscription
+     * for each Add On name.</p>
+     */
+    inline const Aws::String& GetAddonName() const { return m_addonName; }
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+    template<typename AddonNameT = Aws::String>
+    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
+    template<typename AddonNameT = Aws::String>
+    CreateAddonSubscriptionRequest& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_addonName;
-    bool m_addonNameHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

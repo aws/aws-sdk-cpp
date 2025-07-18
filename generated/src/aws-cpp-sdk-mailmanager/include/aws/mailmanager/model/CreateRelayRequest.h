@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/MailManagerRequest.h>
-#include <aws/mailmanager/model/RelayAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/RelayAuthentication.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mailmanager/model/Tag.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    ///@{
-    /**
-     * <p>Authentication for the relay destination server—specify the secretARN where
-     * the SMTP credentials are stored.</p>
-     */
-    inline const RelayAuthentication& GetAuthentication() const { return m_authentication; }
-    inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-    template<typename AuthenticationT = RelayAuthentication>
-    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
-    template<typename AuthenticationT = RelayAuthentication>
-    CreateRelayRequest& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -100,6 +87,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Authentication for the relay destination server—specify the secretARN where
+     * the SMTP credentials are stored.</p>
+     */
+    inline const RelayAuthentication& GetAuthentication() const { return m_authentication; }
+    inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
+    template<typename AuthenticationT = RelayAuthentication>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = RelayAuthentication>
+    CreateRelayRequest& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
@@ -114,9 +114,6 @@ namespace Model
     ///@}
   private:
 
-    RelayAuthentication m_authentication;
-    bool m_authenticationHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
@@ -128,6 +125,9 @@ namespace Model
 
     int m_serverPort{0};
     bool m_serverPortHasBeenSet = false;
+
+    RelayAuthentication m_authentication;
+    bool m_authenticationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

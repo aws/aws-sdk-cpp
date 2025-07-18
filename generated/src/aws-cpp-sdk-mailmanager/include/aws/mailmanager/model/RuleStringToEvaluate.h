@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/mailmanager/model/Analysis.h>
 #include <aws/mailmanager/model/RuleStringEmailAttribute.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/Analysis.h>
 #include <utility>
 
 namespace Aws
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Add On ARN and its returned value to evaluate in a string condition
-     * expression.</p>
-     */
-    inline const Analysis& GetAnalysis() const { return m_analysis; }
-    inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
-    template<typename AnalysisT = Analysis>
-    void SetAnalysis(AnalysisT&& value) { m_analysisHasBeenSet = true; m_analysis = std::forward<AnalysisT>(value); }
-    template<typename AnalysisT = Analysis>
-    RuleStringToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The email attribute to evaluate in a string condition expression.</p>
      */
     inline RuleStringEmailAttribute GetAttribute() const { return m_attribute; }
@@ -75,16 +62,29 @@ namespace Model
     template<typename MimeHeaderAttributeT = Aws::String>
     RuleStringToEvaluate& WithMimeHeaderAttribute(MimeHeaderAttributeT&& value) { SetMimeHeaderAttribute(std::forward<MimeHeaderAttributeT>(value)); return *this;}
     ///@}
-  private:
 
-    Analysis m_analysis;
-    bool m_analysisHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The Add On ARN and its returned value to evaluate in a string condition
+     * expression.</p>
+     */
+    inline const Analysis& GetAnalysis() const { return m_analysis; }
+    inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
+    template<typename AnalysisT = Analysis>
+    void SetAnalysis(AnalysisT&& value) { m_analysisHasBeenSet = true; m_analysis = std::forward<AnalysisT>(value); }
+    template<typename AnalysisT = Analysis>
+    RuleStringToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
+    ///@}
+  private:
 
     RuleStringEmailAttribute m_attribute{RuleStringEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     Aws::String m_mimeHeaderAttribute;
     bool m_mimeHeaderAttributeHasBeenSet = false;
+
+    Analysis m_analysis;
+    bool m_analysisHasBeenSet = false;
   };
 
 } // namespace Model

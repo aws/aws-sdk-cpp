@@ -25,11 +25,6 @@ GetArchiveResult::GetArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetArchiveResult& GetArchiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ArchiveArn"))
-  {
-    m_archiveArn = jsonValue.GetString("ArchiveArn");
-    m_archiveArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ArchiveId"))
   {
     m_archiveId = jsonValue.GetString("ArchiveId");
@@ -40,30 +35,35 @@ GetArchiveResult& GetArchiveResult::operator =(const Aws::AmazonWebServiceResult
     m_archiveName = jsonValue.GetString("ArchiveName");
     m_archiveNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ArchiveArn"))
+  {
+    m_archiveArn = jsonValue.GetString("ArchiveArn");
+    m_archiveArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ArchiveState"))
   {
     m_archiveState = ArchiveStateMapper::GetArchiveStateForName(jsonValue.GetString("ArchiveState"));
     m_archiveStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Retention"))
+  {
+    m_retention = jsonValue.GetObject("Retention");
+    m_retentionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyArn"))
-  {
-    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-    m_kmsKeyArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Retention"))
+  if(jsonValue.ValueExists("KmsKeyArn"))
   {
-    m_retention = jsonValue.GetObject("Retention");
-    m_retentionHasBeenSet = true;
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

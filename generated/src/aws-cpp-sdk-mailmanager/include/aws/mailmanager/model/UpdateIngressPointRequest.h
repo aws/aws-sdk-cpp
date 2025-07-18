@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/MailManagerRequest.h>
-#include <aws/mailmanager/model/IngressPointConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/model/IngressPointStatusToUpdate.h>
+#include <aws/mailmanager/model/IngressPointConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -38,19 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you choose an Authenticated ingress endpoint, you must configure either an
-     * SMTP password or a secret ARN.</p>
-     */
-    inline const IngressPointConfiguration& GetIngressPointConfiguration() const { return m_ingressPointConfiguration; }
-    inline bool IngressPointConfigurationHasBeenSet() const { return m_ingressPointConfigurationHasBeenSet; }
-    template<typename IngressPointConfigurationT = IngressPointConfiguration>
-    void SetIngressPointConfiguration(IngressPointConfigurationT&& value) { m_ingressPointConfigurationHasBeenSet = true; m_ingressPointConfiguration = std::forward<IngressPointConfigurationT>(value); }
-    template<typename IngressPointConfigurationT = IngressPointConfiguration>
-    UpdateIngressPointRequest& WithIngressPointConfiguration(IngressPointConfigurationT&& value) { SetIngressPointConfiguration(std::forward<IngressPointConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier for the ingress endpoint you want to update.</p>
      */
     inline const Aws::String& GetIngressPointId() const { return m_ingressPointId; }
@@ -75,6 +62,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The update status of an ingress endpoint.</p>
+     */
+    inline IngressPointStatusToUpdate GetStatusToUpdate() const { return m_statusToUpdate; }
+    inline bool StatusToUpdateHasBeenSet() const { return m_statusToUpdateHasBeenSet; }
+    inline void SetStatusToUpdate(IngressPointStatusToUpdate value) { m_statusToUpdateHasBeenSet = true; m_statusToUpdate = value; }
+    inline UpdateIngressPointRequest& WithStatusToUpdate(IngressPointStatusToUpdate value) { SetStatusToUpdate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of an existing rule set that you attach to an ingress endpoint
      * resource.</p>
      */
@@ -84,16 +81,6 @@ namespace Model
     void SetRuleSetId(RuleSetIdT&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::forward<RuleSetIdT>(value); }
     template<typename RuleSetIdT = Aws::String>
     UpdateIngressPointRequest& WithRuleSetId(RuleSetIdT&& value) { SetRuleSetId(std::forward<RuleSetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The update status of an ingress endpoint.</p>
-     */
-    inline IngressPointStatusToUpdate GetStatusToUpdate() const { return m_statusToUpdate; }
-    inline bool StatusToUpdateHasBeenSet() const { return m_statusToUpdateHasBeenSet; }
-    inline void SetStatusToUpdate(IngressPointStatusToUpdate value) { m_statusToUpdateHasBeenSet = true; m_statusToUpdate = value; }
-    inline UpdateIngressPointRequest& WithStatusToUpdate(IngressPointStatusToUpdate value) { SetStatusToUpdate(value); return *this;}
     ///@}
 
     ///@{
@@ -108,10 +95,20 @@ namespace Model
     template<typename TrafficPolicyIdT = Aws::String>
     UpdateIngressPointRequest& WithTrafficPolicyId(TrafficPolicyIdT&& value) { SetTrafficPolicyId(std::forward<TrafficPolicyIdT>(value)); return *this;}
     ///@}
-  private:
 
-    IngressPointConfiguration m_ingressPointConfiguration;
-    bool m_ingressPointConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>If you choose an Authenticated ingress endpoint, you must configure either an
+     * SMTP password or a secret ARN.</p>
+     */
+    inline const IngressPointConfiguration& GetIngressPointConfiguration() const { return m_ingressPointConfiguration; }
+    inline bool IngressPointConfigurationHasBeenSet() const { return m_ingressPointConfigurationHasBeenSet; }
+    template<typename IngressPointConfigurationT = IngressPointConfiguration>
+    void SetIngressPointConfiguration(IngressPointConfigurationT&& value) { m_ingressPointConfigurationHasBeenSet = true; m_ingressPointConfiguration = std::forward<IngressPointConfigurationT>(value); }
+    template<typename IngressPointConfigurationT = IngressPointConfiguration>
+    UpdateIngressPointRequest& WithIngressPointConfiguration(IngressPointConfigurationT&& value) { SetIngressPointConfiguration(std::forward<IngressPointConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_ingressPointId;
     bool m_ingressPointIdHasBeenSet = false;
@@ -119,14 +116,17 @@ namespace Model
     Aws::String m_ingressPointName;
     bool m_ingressPointNameHasBeenSet = false;
 
-    Aws::String m_ruleSetId;
-    bool m_ruleSetIdHasBeenSet = false;
-
     IngressPointStatusToUpdate m_statusToUpdate{IngressPointStatusToUpdate::NOT_SET};
     bool m_statusToUpdateHasBeenSet = false;
 
+    Aws::String m_ruleSetId;
+    bool m_ruleSetIdHasBeenSet = false;
+
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet = false;
+
+    IngressPointConfiguration m_ingressPointConfiguration;
+    bool m_ingressPointConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

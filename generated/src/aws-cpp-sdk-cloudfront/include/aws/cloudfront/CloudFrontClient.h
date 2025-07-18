@@ -84,19 +84,25 @@ namespace CloudFront
 
 
         /**
-         * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
-         * a CloudFront distribution.</p> <p>With this operation you can move an alias
-         * that's already in use on a CloudFront distribution to a different distribution
-         * in one step. This prevents the downtime that could occur if you first remove the
-         * alias from one distribution and then separately add the alias to another
-         * distribution.</p> <p>To use this operation to associate an alias with a
-         * distribution, you provide the alias and the ID of the target distribution for
-         * the alias. For more information, including how to set up the target
+         * <p> <p>The <code>AssociateAlias</code> API operation only supports
+         * standard distributions. To move domains between distribution tenants and/or
+         * standard distributions, we recommend that you use the <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html">UpdateDomainAssociation</a>
+         * API operation instead.</p>  <p>Associates an alias with a CloudFront
+         * standard distribution. An alias is commonly known as a custom domain or vanity
+         * domain. It can also be called a CNAME or alternate domain name.</p> <p>With this
+         * operation, you can move an alias that's already used for a standard distribution
+         * to a different standard distribution. This prevents the downtime that could
+         * occur if you first remove the alias from one standard distribution and then
+         * separately add the alias to another standard distribution.</p> <p>To use this
+         * operation, specify the alias and the ID of the target standard distribution.</p>
+         * <p>For more information, including how to set up the target standard
          * distribution, prerequisites that you must complete, and other restrictions, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
-         * an alternate domain name to a different distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * an alternate domain name to a different standard distribution or distribution
+         * tenant</a> in the <i>Amazon CloudFront Developer Guide</i>.</p></p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2682,33 +2688,39 @@ namespace CloudFront
         }
 
         /**
-         * <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that
-         * conflict or overlap with the provided alias, and the associated CloudFront
-         * distributions and Amazon Web Services accounts for each conflicting alias. In
-         * the returned list, the distribution and account IDs are partially hidden, which
-         * allows you to identify the distributions and accounts that you own, but helps to
+         * <p> <p>The <code>ListConflictingAliases</code> API operation only supports
+         * standard distributions. To list domain conflicts for both standard distributions
+         * and distribution tenants, we recommend that you use the <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html">ListDomainConflicts</a>
+         * API operation instead.</p>  <p>Gets a list of aliases that conflict or
+         * overlap with the provided alias, and the associated CloudFront standard
+         * distribution and Amazon Web Services accounts for each conflicting alias. An
+         * alias is commonly known as a custom domain or vanity domain. It can also be
+         * called a CNAME or alternate domain name.</p> <p>In the returned list, the
+         * standard distribution and account IDs are partially hidden, which allows you to
+         * identify the standard distribution and accounts that you own, and helps to
          * protect the information of ones that you don't own.</p> <p>Use this operation to
          * find aliases that are in use in CloudFront that conflict or overlap with the
          * provided alias. For example, if you provide <code>www.example.com</code> as
          * input, the returned list can include <code>www.example.com</code> and the
-         * overlapping wildcard alternate domain name (<code>*.example.com</code>), if they
-         * exist. If you provide <code>*.example.com</code> as input, the returned list can
-         * include <code>*.example.com</code> and any alternate domain names covered by
-         * that wildcard (for example, <code>www.example.com</code>,
+         * overlapping wildcard alternate domain name (<code><em>.example.com</code>), if
+         * they exist. If you provide <code></em>.example.com</code> as input, the returned
+         * list can include <code>*.example.com</code> and any alternate domain names
+         * covered by that wildcard (for example, <code>www.example.com</code>,
          * <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
-         * exist.</p> <p>To list conflicting aliases, you provide the alias to search and
-         * the ID of a distribution in your account that has an attached SSL/TLS
+         * exist.</p> <p>To list conflicting aliases, specify the alias to search and the
+         * ID of a standard distribution in your account that has an attached TLS
          * certificate that includes the provided alias. For more information, including
-         * how to set up the distribution and certificate, see <a
+         * how to set up the standard distribution and certificate, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
-         * an alternate domain name to a different distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> <p>You can optionally specify the maximum
-         * number of items to receive in the response. If the total number of items in the
-         * list exceeds the maximum that you specify, or the default maximum, the response
-         * is paginated. To get the next page of items, send a subsequent request that
-         * specifies the <code>NextMarker</code> value from the current response as the
-         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
-         * <a
+         * an alternate domain name to a different standard distribution or distribution
+         * tenant</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>You can
+         * optionally specify the maximum number of items to receive in the response. If
+         * the total number of items in the list exceeds the maximum that you specify, or
+         * the default maximum, the response is paginated. To get the next page of items,
+         * send a subsequent request that specifies the <code>NextMarker</code> value from
+         * the current response as the <code>Marker</code> value in the subsequent
+         * request.</p></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -3137,10 +3149,37 @@ namespace CloudFront
         }
 
         /**
+         * <p> <p>We recommend that you use the <code>ListDomainConflicts</code> API
+         * operation to check for domain conflicts, as it supports both standard
+         * distributions and distribution tenants. <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.html">ListConflictingAliases</a>
+         * performs similar checks but only supports standard distributions.</p> 
          * <p>Lists existing domain associations that conflict with the domain that you
-         * specify.</p> <p>You can use this API operation when transferring domains to
-         * identify potential domain conflicts. Domain conflicts must be resolved first
-         * before they can be moved.</p><p><h3>See Also:</h3>   <a
+         * specify.</p> <p>You can use this API operation to identify potential domain
+         * conflicts when moving domains between standard distributions and/or distribution
+         * tenants. Domain conflicts must be resolved first before they can be moved. </p>
+         * <p>For example, if you provide <code>www.example.com</code> as input, the
+         * returned list can include <code>www.example.com</code> and the overlapping
+         * wildcard alternate domain name (<code><em>.example.com</code>), if they exist.
+         * If you provide <code></em>.example.com</code> as input, the returned list can
+         * include <code>*.example.com</code> and any alternate domain names covered by
+         * that wildcard (for example, <code>www.example.com</code>,
+         * <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+         * exist.</p> <p>To list conflicting domains, specify the following:</p> <ul> <li>
+         * <p>The domain to search for</p> </li> <li> <p>The ID of a standard distribution
+         * or distribution tenant in your account that has an attached TLS certificate,
+         * which covers the specified domain</p> </li> </ul> <p>For more information,
+         * including how to set up the standard distribution or distribution tenant, and
+         * the certificate, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different standard distribution or distribution
+         * tenant</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>You can
+         * optionally specify the maximum number of items to receive in the response. If
+         * the total number of items in the list exceeds the maximum that you specify, or
+         * the default maximum, the response is paginated. To get the next page of items,
+         * send a subsequent request that specifies the <code>NextMarker</code> value from
+         * the current response as the <code>Marker</code> value in the subsequent
+         * request.</p></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -3950,8 +3989,23 @@ namespace CloudFront
         }
 
         /**
-         * <p>Moves a domain from its current distribution or distribution tenant to
-         * another one.</p><p><h3>See Also:</h3>   <a
+         * <p> <p>We recommend that you use the <code>UpdateDomainAssociation</code>
+         * API operation to move a domain association, as it supports both standard
+         * distributions and distribution tenants. <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html">AssociateAlias</a>
+         * performs similar checks but only supports standard distributions.</p> 
+         * <p>Moves a domain from its current standard distribution or distribution tenant
+         * to another one.</p> <p>You must first disable the source distribution (standard
+         * distribution or distribution tenant) and then separately call this operation to
+         * move the domain to another target distribution (standard distribution or
+         * distribution tenant).</p> <p>To use this operation, specify the domain and the
+         * ID of the target resource (standard distribution or distribution tenant). For
+         * more information, including how to set up the target resource, prerequisites
+         * that you must complete, and other restrictions, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different standard distribution or distribution
+         * tenant</a> in the <i>Amazon CloudFront Developer Guide</i>.</p></p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation2020_05_31">AWS
          * API Reference</a></p>
          */

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SecretsManager::Secret ARN of the ingress endpoint resource.</p>
-     */
-    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    template<typename SecretArnT = Aws::String>
-    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
-    template<typename SecretArnT = Aws::String>
-    IngressPointConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The password of the ingress endpoint resource.</p>
      */
     inline const Aws::String& GetSmtpPassword() const { return m_smtpPassword; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename SmtpPasswordT = Aws::String>
     IngressPointConfiguration& WithSmtpPassword(SmtpPasswordT&& value) { SetSmtpPassword(std::forward<SmtpPasswordT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The SecretsManager::Secret ARN of the ingress endpoint resource.</p>
+     */
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    IngressPointConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_smtpPassword;
     bool m_smtpPasswordHasBeenSet = false;
+
+    Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

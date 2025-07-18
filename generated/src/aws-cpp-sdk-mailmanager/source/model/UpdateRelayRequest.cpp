@@ -16,12 +16,6 @@ Aws::String UpdateRelayRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authenticationHasBeenSet)
-  {
-   payload.WithObject("Authentication", m_authentication.Jsonize());
-
-  }
-
   if(m_relayIdHasBeenSet)
   {
    payload.WithString("RelayId", m_relayId);
@@ -43,6 +37,12 @@ Aws::String UpdateRelayRequest::SerializePayload() const
   if(m_serverPortHasBeenSet)
   {
    payload.WithInteger("ServerPort", m_serverPort);
+
+  }
+
+  if(m_authenticationHasBeenSet)
+  {
+   payload.WithObject("Authentication", m_authentication.Jsonize());
 
   }
 

@@ -25,15 +25,15 @@ GetAddressListResult::GetAddressListResult(const Aws::AmazonWebServiceResult<Jso
 GetAddressListResult& GetAddressListResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AddressListArn"))
-  {
-    m_addressListArn = jsonValue.GetString("AddressListArn");
-    m_addressListArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("AddressListId"))
   {
     m_addressListId = jsonValue.GetString("AddressListId");
     m_addressListIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AddressListArn"))
+  {
+    m_addressListArn = jsonValue.GetString("AddressListArn");
+    m_addressListArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("AddressListName"))
   {

@@ -16,15 +16,15 @@ Aws::String CreateAddonSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_addonNameHasBeenSet)
-  {
-   payload.WithString("AddonName", m_addonName);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_addonNameHasBeenSet)
+  {
+   payload.WithString("AddonName", m_addonName);
 
   }
 

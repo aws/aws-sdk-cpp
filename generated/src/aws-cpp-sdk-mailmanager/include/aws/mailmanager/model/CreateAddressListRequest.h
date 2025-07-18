@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A user-friendly name for the address list.</p>
-     */
-    inline const Aws::String& GetAddressListName() const { return m_addressListName; }
-    inline bool AddressListNameHasBeenSet() const { return m_addressListNameHasBeenSet; }
-    template<typename AddressListNameT = Aws::String>
-    void SetAddressListName(AddressListNameT&& value) { m_addressListNameHasBeenSet = true; m_addressListName = std::forward<AddressListNameT>(value); }
-    template<typename AddressListNameT = Aws::String>
-    CreateAddressListRequest& WithAddressListName(AddressListNameT&& value) { SetAddressListName(std::forward<AddressListNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
@@ -60,6 +48,18 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateAddressListRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A user-friendly name for the address list.</p>
+     */
+    inline const Aws::String& GetAddressListName() const { return m_addressListName; }
+    inline bool AddressListNameHasBeenSet() const { return m_addressListNameHasBeenSet; }
+    template<typename AddressListNameT = Aws::String>
+    void SetAddressListName(AddressListNameT&& value) { m_addressListNameHasBeenSet = true; m_addressListName = std::forward<AddressListNameT>(value); }
+    template<typename AddressListNameT = Aws::String>
+    CreateAddressListRequest& WithAddressListName(AddressListNameT&& value) { SetAddressListName(std::forward<AddressListNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_addressListName;
-    bool m_addressListNameHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    Aws::String m_addressListName;
+    bool m_addressListNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

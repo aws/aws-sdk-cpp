@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the address list.</p>
-     */
-    inline const Aws::String& GetAddressListArn() const { return m_addressListArn; }
-    inline bool AddressListArnHasBeenSet() const { return m_addressListArnHasBeenSet; }
-    template<typename AddressListArnT = Aws::String>
-    void SetAddressListArn(AddressListArnT&& value) { m_addressListArnHasBeenSet = true; m_addressListArn = std::forward<AddressListArnT>(value); }
-    template<typename AddressListArnT = Aws::String>
-    AddressList& WithAddressListArn(AddressListArnT&& value) { SetAddressListArn(std::forward<AddressListArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the address list.</p>
      */
     inline const Aws::String& GetAddressListId() const { return m_addressListId; }
@@ -62,6 +50,18 @@ namespace Model
     void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
     template<typename AddressListIdT = Aws::String>
     AddressList& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the address list.</p>
+     */
+    inline const Aws::String& GetAddressListArn() const { return m_addressListArn; }
+    inline bool AddressListArnHasBeenSet() const { return m_addressListArnHasBeenSet; }
+    template<typename AddressListArnT = Aws::String>
+    void SetAddressListArn(AddressListArnT&& value) { m_addressListArnHasBeenSet = true; m_addressListArn = std::forward<AddressListArnT>(value); }
+    template<typename AddressListArnT = Aws::String>
+    AddressList& WithAddressListArn(AddressListArnT&& value) { SetAddressListArn(std::forward<AddressListArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,11 +101,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_addressListArn;
-    bool m_addressListArnHasBeenSet = false;
-
     Aws::String m_addressListId;
     bool m_addressListIdHasBeenSet = false;
+
+    Aws::String m_addressListArn;
+    bool m_addressListArnHasBeenSet = false;
 
     Aws::String m_addressListName;
     bool m_addressListNameHasBeenSet = false;

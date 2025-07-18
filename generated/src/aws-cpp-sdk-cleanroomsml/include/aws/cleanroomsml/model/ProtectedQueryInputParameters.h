@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/ProtectedQuerySQLParameters.h>
 #include <aws/cleanroomsml/model/ComputeConfiguration.h>
+#include <aws/cleanroomsml/model/ResultFormat.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,17 @@ namespace Model
     template<typename ComputeConfigurationT = ComputeConfiguration>
     ProtectedQueryInputParameters& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The format in which the query results should be returned. If not specified,
+     * defaults to <code>CSV</code>. </p>
+     */
+    inline ResultFormat GetResultFormat() const { return m_resultFormat; }
+    inline bool ResultFormatHasBeenSet() const { return m_resultFormatHasBeenSet; }
+    inline void SetResultFormat(ResultFormat value) { m_resultFormatHasBeenSet = true; m_resultFormat = value; }
+    inline ProtectedQueryInputParameters& WithResultFormat(ResultFormat value) { SetResultFormat(value); return *this;}
+    ///@}
   private:
 
     ProtectedQuerySQLParameters m_sqlParameters;
@@ -68,6 +80,9 @@ namespace Model
 
     ComputeConfiguration m_computeConfiguration;
     bool m_computeConfigurationHasBeenSet = false;
+
+    ResultFormat m_resultFormat{ResultFormat::NOT_SET};
+    bool m_resultFormatHasBeenSet = false;
   };
 
 } // namespace Model

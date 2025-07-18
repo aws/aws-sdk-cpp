@@ -16,27 +16,27 @@ Aws::String CreateArchiveRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_archiveNameHasBeenSet)
-  {
-   payload.WithString("ArchiveName", m_archiveName);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
 
   }
 
-  if(m_kmsKeyArnHasBeenSet)
+  if(m_archiveNameHasBeenSet)
   {
-   payload.WithString("KmsKeyArn", m_kmsKeyArn);
+   payload.WithString("ArchiveName", m_archiveName);
 
   }
 
   if(m_retentionHasBeenSet)
   {
    payload.WithObject("Retention", m_retention.Jsonize());
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

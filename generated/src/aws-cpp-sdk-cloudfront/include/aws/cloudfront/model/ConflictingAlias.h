@@ -23,11 +23,11 @@ namespace Model
 {
 
   /**
-   * <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web
-   * Services account ID that it's associated with. The distribution and account IDs
-   * are partially hidden, which allows you to identify the distributions and
-   * accounts that you own, but helps to protect the information of ones that you
-   * don't own.</p><p><h3>See Also:</h3>   <a
+   * <p>An alias (also called a CNAME) and the CloudFront standard distribution and
+   * Amazon Web Services account ID that it's associated with. The standard
+   * distribution and account IDs are partially hidden, which allows you to identify
+   * the standard distributions and accounts that you own, and helps to protect the
+   * information of ones that you don't own.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAlias">AWS
    * API Reference</a></p>
    */
@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
+     * <p>The (partially hidden) ID of the CloudFront standard distribution associated
+     * with the alias.</p>
      */
     inline const Aws::String& GetDistributionId() const { return m_distributionId; }
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
     ///@{
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
+     * standard distribution that's associated with the alias.</p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

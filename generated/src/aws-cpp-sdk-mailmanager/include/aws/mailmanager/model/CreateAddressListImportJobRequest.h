@@ -38,18 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the address list for importing addresses to.</p>
-     */
-    inline const Aws::String& GetAddressListId() const { return m_addressListId; }
-    inline bool AddressListIdHasBeenSet() const { return m_addressListIdHasBeenSet; }
-    template<typename AddressListIdT = Aws::String>
-    void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
-    template<typename AddressListIdT = Aws::String>
-    CreateAddressListImportJobRequest& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
@@ -63,14 +51,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The format of the input for an import job.</p>
+     * <p>The unique identifier of the address list for importing addresses to.</p>
      */
-    inline const ImportDataFormat& GetImportDataFormat() const { return m_importDataFormat; }
-    inline bool ImportDataFormatHasBeenSet() const { return m_importDataFormatHasBeenSet; }
-    template<typename ImportDataFormatT = ImportDataFormat>
-    void SetImportDataFormat(ImportDataFormatT&& value) { m_importDataFormatHasBeenSet = true; m_importDataFormat = std::forward<ImportDataFormatT>(value); }
-    template<typename ImportDataFormatT = ImportDataFormat>
-    CreateAddressListImportJobRequest& WithImportDataFormat(ImportDataFormatT&& value) { SetImportDataFormat(std::forward<ImportDataFormatT>(value)); return *this;}
+    inline const Aws::String& GetAddressListId() const { return m_addressListId; }
+    inline bool AddressListIdHasBeenSet() const { return m_addressListIdHasBeenSet; }
+    template<typename AddressListIdT = Aws::String>
+    void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
+    template<typename AddressListIdT = Aws::String>
+    CreateAddressListImportJobRequest& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +72,31 @@ namespace Model
     template<typename NameT = Aws::String>
     CreateAddressListImportJobRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_addressListId;
-    bool m_addressListIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The format of the input for an import job.</p>
+     */
+    inline const ImportDataFormat& GetImportDataFormat() const { return m_importDataFormat; }
+    inline bool ImportDataFormatHasBeenSet() const { return m_importDataFormatHasBeenSet; }
+    template<typename ImportDataFormatT = ImportDataFormat>
+    void SetImportDataFormat(ImportDataFormatT&& value) { m_importDataFormatHasBeenSet = true; m_importDataFormat = std::forward<ImportDataFormatT>(value); }
+    template<typename ImportDataFormatT = ImportDataFormat>
+    CreateAddressListImportJobRequest& WithImportDataFormat(ImportDataFormatT&& value) { SetImportDataFormat(std::forward<ImportDataFormatT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    ImportDataFormat m_importDataFormat;
-    bool m_importDataFormatHasBeenSet = false;
+    Aws::String m_addressListId;
+    bool m_addressListIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ImportDataFormat m_importDataFormat;
+    bool m_importDataFormatHasBeenSet = false;
   };
 
 } // namespace Model

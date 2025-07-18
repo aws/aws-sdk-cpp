@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * The format of your media file. For example: MP4, QuickTime (MOV), Matroska
-     * (MKV), or WebM. Note that this will be blank if your media file has a format
+     * (MKV), WebM or MXF. Note that this will be blank if your media file has a format
      * that the MediaConvert Probe operation does not recognize.
      */
     inline Format GetFormat() const { return m_format; }

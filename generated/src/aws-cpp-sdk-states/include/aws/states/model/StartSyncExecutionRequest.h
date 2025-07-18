@@ -62,10 +62,10 @@ namespace Model
     ///@{
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"{\"first_name\" : \"Tim\"}"</code> </p>  <p>If you
-     * don't include any JSON input data, you still must include the two braces, for
-     * example: <code>"{}"</code> </p>  <p>Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
+     * example:</p> <p> <code>"{\"first_name\" : \"Alejandro\"}"</code> </p> 
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"{}"</code> </p>  <p>Length constraints apply
+     * to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }

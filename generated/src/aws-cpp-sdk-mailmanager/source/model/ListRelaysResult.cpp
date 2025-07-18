@@ -25,11 +25,6 @@ ListRelaysResult::ListRelaysResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListRelaysResult& ListRelaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Relays"))
   {
     Aws::Utils::Array<JsonView> relaysJsonList = jsonValue.GetArray("Relays");
@@ -38,6 +33,11 @@ ListRelaysResult& ListRelaysResult::operator =(const Aws::AmazonWebServiceResult
       m_relays.push_back(relaysJsonList[relaysIndex].AsObject());
     }
     m_relaysHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

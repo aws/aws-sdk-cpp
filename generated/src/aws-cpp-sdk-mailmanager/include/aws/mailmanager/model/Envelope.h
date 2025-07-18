@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The RCPT FROM given by the host from which the email was received.</p>
-     */
-    inline const Aws::String& GetFrom() const { return m_from; }
-    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    template<typename FromT = Aws::String>
-    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
-    template<typename FromT = Aws::String>
-    Envelope& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The HELO used by the host from which the email was received.</p>
      */
     inline const Aws::String& GetHelo() const { return m_helo; }
@@ -60,6 +48,18 @@ namespace Model
     void SetHelo(HeloT&& value) { m_heloHasBeenSet = true; m_helo = std::forward<HeloT>(value); }
     template<typename HeloT = Aws::String>
     Envelope& WithHelo(HeloT&& value) { SetHelo(std::forward<HeloT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The RCPT FROM given by the host from which the email was received.</p>
+     */
+    inline const Aws::String& GetFrom() const { return m_from; }
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    Envelope& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +77,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_from;
-    bool m_fromHasBeenSet = false;
-
     Aws::String m_helo;
     bool m_heloHasBeenSet = false;
+
+    Aws::String m_from;
+    bool m_fromHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_to;
     bool m_toHasBeenSet = false;

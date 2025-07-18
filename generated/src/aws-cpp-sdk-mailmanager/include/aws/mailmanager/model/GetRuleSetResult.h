@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mailmanager/model/Rule.h>
 #include <utility>
@@ -37,6 +37,39 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the rule set resource.</p>
+     */
+    inline const Aws::String& GetRuleSetId() const { return m_ruleSetId; }
+    template<typename RuleSetIdT = Aws::String>
+    void SetRuleSetId(RuleSetIdT&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::forward<RuleSetIdT>(value); }
+    template<typename RuleSetIdT = Aws::String>
+    GetRuleSetResult& WithRuleSetId(RuleSetIdT&& value) { SetRuleSetId(std::forward<RuleSetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the rule set resource.</p>
+     */
+    inline const Aws::String& GetRuleSetArn() const { return m_ruleSetArn; }
+    template<typename RuleSetArnT = Aws::String>
+    void SetRuleSetArn(RuleSetArnT&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::forward<RuleSetArnT>(value); }
+    template<typename RuleSetArnT = Aws::String>
+    GetRuleSetResult& WithRuleSetArn(RuleSetArnT&& value) { SetRuleSetArn(std::forward<RuleSetArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A user-friendly name for the rule set resource.</p>
+     */
+    inline const Aws::String& GetRuleSetName() const { return m_ruleSetName; }
+    template<typename RuleSetNameT = Aws::String>
+    void SetRuleSetName(RuleSetNameT&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::forward<RuleSetNameT>(value); }
+    template<typename RuleSetNameT = Aws::String>
+    GetRuleSetResult& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date of when then rule set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
@@ -55,39 +88,6 @@ namespace Model
     void SetLastModificationDate(LastModificationDateT&& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = std::forward<LastModificationDateT>(value); }
     template<typename LastModificationDateT = Aws::Utils::DateTime>
     GetRuleSetResult& WithLastModificationDate(LastModificationDateT&& value) { SetLastModificationDate(std::forward<LastModificationDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule set resource.</p>
-     */
-    inline const Aws::String& GetRuleSetArn() const { return m_ruleSetArn; }
-    template<typename RuleSetArnT = Aws::String>
-    void SetRuleSetArn(RuleSetArnT&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::forward<RuleSetArnT>(value); }
-    template<typename RuleSetArnT = Aws::String>
-    GetRuleSetResult& WithRuleSetArn(RuleSetArnT&& value) { SetRuleSetArn(std::forward<RuleSetArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the rule set resource.</p>
-     */
-    inline const Aws::String& GetRuleSetId() const { return m_ruleSetId; }
-    template<typename RuleSetIdT = Aws::String>
-    void SetRuleSetId(RuleSetIdT&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::forward<RuleSetIdT>(value); }
-    template<typename RuleSetIdT = Aws::String>
-    GetRuleSetResult& WithRuleSetId(RuleSetIdT&& value) { SetRuleSetId(std::forward<RuleSetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A user-friendly name for the rule set resource.</p>
-     */
-    inline const Aws::String& GetRuleSetName() const { return m_ruleSetName; }
-    template<typename RuleSetNameT = Aws::String>
-    void SetRuleSetName(RuleSetNameT&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::forward<RuleSetNameT>(value); }
-    template<typename RuleSetNameT = Aws::String>
-    GetRuleSetResult& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,20 +113,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_ruleSetId;
+    bool m_ruleSetIdHasBeenSet = false;
+
+    Aws::String m_ruleSetArn;
+    bool m_ruleSetArnHasBeenSet = false;
+
+    Aws::String m_ruleSetName;
+    bool m_ruleSetNameHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationDate{};
     bool m_lastModificationDateHasBeenSet = false;
-
-    Aws::String m_ruleSetArn;
-    bool m_ruleSetArnHasBeenSet = false;
-
-    Aws::String m_ruleSetId;
-    bool m_ruleSetIdHasBeenSet = false;
-
-    Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;

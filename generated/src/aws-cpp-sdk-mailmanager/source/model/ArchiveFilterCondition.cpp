@@ -25,15 +25,15 @@ ArchiveFilterCondition::ArchiveFilterCondition(JsonView jsonValue)
 
 ArchiveFilterCondition& ArchiveFilterCondition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("BooleanExpression"))
-  {
-    m_booleanExpression = jsonValue.GetObject("BooleanExpression");
-    m_booleanExpressionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("StringExpression"))
   {
     m_stringExpression = jsonValue.GetObject("StringExpression");
     m_stringExpressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BooleanExpression"))
+  {
+    m_booleanExpression = jsonValue.GetObject("BooleanExpression");
+    m_booleanExpressionHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ArchiveFilterCondition::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_booleanExpressionHasBeenSet)
-  {
-   payload.WithObject("BooleanExpression", m_booleanExpression.Jsonize());
-
-  }
-
   if(m_stringExpressionHasBeenSet)
   {
    payload.WithObject("StringExpression", m_stringExpression.Jsonize());
+
+  }
+
+  if(m_booleanExpressionHasBeenSet)
+  {
+   payload.WithObject("BooleanExpression", m_booleanExpression.Jsonize());
 
   }
 

@@ -16,12 +16,6 @@ Aws::String UpdateIngressPointRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_ingressPointConfigurationHasBeenSet)
-  {
-   payload.WithObject("IngressPointConfiguration", m_ingressPointConfiguration.Jsonize());
-
-  }
-
   if(m_ingressPointIdHasBeenSet)
   {
    payload.WithString("IngressPointId", m_ingressPointId);
@@ -34,20 +28,26 @@ Aws::String UpdateIngressPointRequest::SerializePayload() const
 
   }
 
+  if(m_statusToUpdateHasBeenSet)
+  {
+   payload.WithString("StatusToUpdate", IngressPointStatusToUpdateMapper::GetNameForIngressPointStatusToUpdate(m_statusToUpdate));
+  }
+
   if(m_ruleSetIdHasBeenSet)
   {
    payload.WithString("RuleSetId", m_ruleSetId);
 
   }
 
-  if(m_statusToUpdateHasBeenSet)
-  {
-   payload.WithString("StatusToUpdate", IngressPointStatusToUpdateMapper::GetNameForIngressPointStatusToUpdate(m_statusToUpdate));
-  }
-
   if(m_trafficPolicyIdHasBeenSet)
   {
    payload.WithString("TrafficPolicyId", m_trafficPolicyId);
+
+  }
+
+  if(m_ingressPointConfigurationHasBeenSet)
+  {
+   payload.WithObject("IngressPointConfiguration", m_ingressPointConfiguration.Jsonize());
 
   }
 

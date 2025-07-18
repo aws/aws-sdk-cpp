@@ -30,15 +30,15 @@ RelayAction& RelayAction::operator =(JsonView jsonValue)
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
     m_actionFailurePolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MailFrom"))
-  {
-    m_mailFrom = MailFromMapper::GetMailFromForName(jsonValue.GetString("MailFrom"));
-    m_mailFromHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Relay"))
   {
     m_relay = jsonValue.GetString("Relay");
     m_relayHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MailFrom"))
+  {
+    m_mailFrom = MailFromMapper::GetMailFromForName(jsonValue.GetString("MailFrom"));
+    m_mailFromHasBeenSet = true;
   }
   return *this;
 }
@@ -52,15 +52,15 @@ JsonValue RelayAction::Jsonize() const
    payload.WithString("ActionFailurePolicy", ActionFailurePolicyMapper::GetNameForActionFailurePolicy(m_actionFailurePolicy));
   }
 
-  if(m_mailFromHasBeenSet)
-  {
-   payload.WithString("MailFrom", MailFromMapper::GetNameForMailFrom(m_mailFrom));
-  }
-
   if(m_relayHasBeenSet)
   {
    payload.WithString("Relay", m_relay);
 
+  }
+
+  if(m_mailFromHasBeenSet)
+  {
+   payload.WithString("MailFrom", MailFromMapper::GetNameForMailFrom(m_mailFrom));
   }
 
   return payload;

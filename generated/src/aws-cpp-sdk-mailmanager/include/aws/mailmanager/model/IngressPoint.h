@@ -41,15 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> The DNS A Record that identifies your ingress endpoint. Configure your DNS
-     * Mail Exchange (MX) record with this value to route emails to Mail Manager. </p>
+     * <p>A user friendly name for the ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetARecord() const { return m_aRecord; }
-    inline bool ARecordHasBeenSet() const { return m_aRecordHasBeenSet; }
-    template<typename ARecordT = Aws::String>
-    void SetARecord(ARecordT&& value) { m_aRecordHasBeenSet = true; m_aRecord = std::forward<ARecordT>(value); }
-    template<typename ARecordT = Aws::String>
-    IngressPoint& WithARecord(ARecordT&& value) { SetARecord(std::forward<ARecordT>(value)); return *this;}
+    inline const Aws::String& GetIngressPointName() const { return m_ingressPointName; }
+    inline bool IngressPointNameHasBeenSet() const { return m_ingressPointNameHasBeenSet; }
+    template<typename IngressPointNameT = Aws::String>
+    void SetIngressPointName(IngressPointNameT&& value) { m_ingressPointNameHasBeenSet = true; m_ingressPointName = std::forward<IngressPointNameT>(value); }
+    template<typename IngressPointNameT = Aws::String>
+    IngressPoint& WithIngressPointName(IngressPointNameT&& value) { SetIngressPointName(std::forward<IngressPointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,18 +61,6 @@ namespace Model
     void SetIngressPointId(IngressPointIdT&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::forward<IngressPointIdT>(value); }
     template<typename IngressPointIdT = Aws::String>
     IngressPoint& WithIngressPointId(IngressPointIdT&& value) { SetIngressPointId(std::forward<IngressPointIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A user friendly name for the ingress endpoint resource.</p>
-     */
-    inline const Aws::String& GetIngressPointName() const { return m_ingressPointName; }
-    inline bool IngressPointNameHasBeenSet() const { return m_ingressPointNameHasBeenSet; }
-    template<typename IngressPointNameT = Aws::String>
-    void SetIngressPointName(IngressPointNameT&& value) { m_ingressPointNameHasBeenSet = true; m_ingressPointName = std::forward<IngressPointNameT>(value); }
-    template<typename IngressPointNameT = Aws::String>
-    IngressPoint& WithIngressPointName(IngressPointNameT&& value) { SetIngressPointName(std::forward<IngressPointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,22 +82,35 @@ namespace Model
     inline void SetType(IngressPointType value) { m_typeHasBeenSet = true; m_type = value; }
     inline IngressPoint& WithType(IngressPointType value) { SetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The DNS A Record that identifies your ingress endpoint. Configure your DNS
+     * Mail Exchange (MX) record with this value to route emails to Mail Manager. </p>
+     */
+    inline const Aws::String& GetARecord() const { return m_aRecord; }
+    inline bool ARecordHasBeenSet() const { return m_aRecordHasBeenSet; }
+    template<typename ARecordT = Aws::String>
+    void SetARecord(ARecordT&& value) { m_aRecordHasBeenSet = true; m_aRecord = std::forward<ARecordT>(value); }
+    template<typename ARecordT = Aws::String>
+    IngressPoint& WithARecord(ARecordT&& value) { SetARecord(std::forward<ARecordT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_aRecord;
-    bool m_aRecordHasBeenSet = false;
-
-    Aws::String m_ingressPointId;
-    bool m_ingressPointIdHasBeenSet = false;
 
     Aws::String m_ingressPointName;
     bool m_ingressPointNameHasBeenSet = false;
+
+    Aws::String m_ingressPointId;
+    bool m_ingressPointIdHasBeenSet = false;
 
     IngressPointStatus m_status{IngressPointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     IngressPointType m_type{IngressPointType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_aRecord;
+    bool m_aRecordHasBeenSet = false;
   };
 
 } // namespace Model

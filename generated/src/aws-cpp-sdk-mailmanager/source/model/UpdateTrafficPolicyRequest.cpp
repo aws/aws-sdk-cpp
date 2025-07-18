@@ -16,14 +16,15 @@ Aws::String UpdateTrafficPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_defaultActionHasBeenSet)
+  if(m_trafficPolicyIdHasBeenSet)
   {
-   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
+   payload.WithString("TrafficPolicyId", m_trafficPolicyId);
+
   }
 
-  if(m_maxMessageSizeBytesHasBeenSet)
+  if(m_trafficPolicyNameHasBeenSet)
   {
-   payload.WithInteger("MaxMessageSizeBytes", m_maxMessageSizeBytes);
+   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
 
   }
 
@@ -38,15 +39,14 @@ Aws::String UpdateTrafficPolicyRequest::SerializePayload() const
 
   }
 
-  if(m_trafficPolicyIdHasBeenSet)
+  if(m_defaultActionHasBeenSet)
   {
-   payload.WithString("TrafficPolicyId", m_trafficPolicyId);
-
+   payload.WithString("DefaultAction", AcceptActionMapper::GetNameForAcceptAction(m_defaultAction));
   }
 
-  if(m_trafficPolicyNameHasBeenSet)
+  if(m_maxMessageSizeBytesHasBeenSet)
   {
-   payload.WithString("TrafficPolicyName", m_trafficPolicyName);
+   payload.WithInteger("MaxMessageSizeBytes", m_maxMessageSizeBytes);
 
   }
 
