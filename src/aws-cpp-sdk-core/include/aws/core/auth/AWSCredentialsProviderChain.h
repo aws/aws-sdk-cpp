@@ -59,11 +59,13 @@ namespace Aws
         class AWS_CORE_API DefaultAWSCredentialsProviderChain : public AWSCredentialsProviderChain
         {
         public:
-            /**
-             * Initializes the provider chain with EnvironmentAWSCredentialsProvider, ProfileConfigFileAWSCredentialsProvider,
-             * ProcessCredentialsProvider, STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider in that order.
-             */
-            DefaultAWSCredentialsProviderChain();
+          /**
+           * Initializes the provider chain using ClientConfiguration settings.
+           * If no configuration is provided, initializes with default providers in the following order:
+           * EnvironmentAWSCredentialsProvider, ProfileConfigFileAWSCredentialsProvider,
+           * ProcessCredentialsProvider, STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider.
+           */
+            DefaultAWSCredentialsProviderChain(const Aws::Client::CredentialProviderConfiguration& config = Aws::Client::CredentialProviderConfiguration());
 
             DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain);
         };

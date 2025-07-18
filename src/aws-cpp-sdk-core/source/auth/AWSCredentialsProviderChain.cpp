@@ -40,14 +40,24 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
-DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
+DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws::Client::CredentialProviderConfiguration& config) : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    if (config.profile.empty()) {
+      AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
+      AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    }
+    else {
+      AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag, config.profile.c_str()));
+      AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag, config.profile));
+    }
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    
+    if (config.profile.empty()) {
+      AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    }
+    else {
+      AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag, config.profile));
+    }
     // General HTTP Credentials (prev. known as ECS TaskRole credentials) only available when ENVIRONMENT VARIABLE is set
     const auto relativeUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI);
     AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI

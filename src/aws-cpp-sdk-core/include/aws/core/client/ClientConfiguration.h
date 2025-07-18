@@ -89,6 +89,19 @@ namespace Aws
         };
 
         /**
+         * Configuration structure for credential providers in the AWS SDK.
+         * This structure allows passing configuration options to credential providers
+         * such as profile name and client configuration for HTTP requests made by
+         * credential providers that need to make network calls (e.g., InstanceProfileCredentialsProvider).
+         */
+        struct CredentialProviderConfiguration {
+          /**
+           * AWS profile name to use for credentials.
+           */
+          Aws::String profile;
+        };
+
+        /**
          * This mutable structure is used to configure any of the AWS clients.
          * Default values can only be overwritten prior to passing to the client constructors.
          */
@@ -496,6 +509,5 @@ namespace Aws
         AWS_CORE_API Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig = nullptr);
 
         AWS_CORE_API Aws::String FilterUserAgentToken(char const * const token);
-
     } // namespace Client
 } // namespace Aws
