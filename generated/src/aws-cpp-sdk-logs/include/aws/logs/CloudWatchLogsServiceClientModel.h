@@ -189,6 +189,7 @@ namespace Aws
       class GetLogAnomalyDetectorRequest;
       class GetLogEventsRequest;
       class GetLogGroupFieldsRequest;
+      class GetLogObjectRequest;
       class GetLogRecordRequest;
       class GetQueryResultsRequest;
       class GetTransformerRequest;
@@ -279,6 +280,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLogAnomalyDetectorResult, CloudWatchLogsError> GetLogAnomalyDetectorOutcome;
       typedef Aws::Utils::Outcome<GetLogEventsResult, CloudWatchLogsError> GetLogEventsOutcome;
       typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, CloudWatchLogsError> GetLogGroupFieldsOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> GetLogObjectOutcome;
       typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
       typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQueryResultsOutcome;
       typedef Aws::Utils::Outcome<GetTransformerResult, CloudWatchLogsError> GetTransformerOutcome;
@@ -369,6 +371,7 @@ namespace Aws
       typedef std::future<GetLogAnomalyDetectorOutcome> GetLogAnomalyDetectorOutcomeCallable;
       typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
       typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
+      typedef std::future<GetLogObjectOutcome> GetLogObjectOutcomeCallable;
       typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
       typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
       typedef std::future<GetTransformerOutcome> GetTransformerOutcomeCallable;
@@ -462,6 +465,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogAnomalyDetectorRequest&, const Model::GetLogAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogGroupFieldsRequest&, const Model::GetLogGroupFieldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogGroupFieldsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogObjectRequest&, const Model::GetLogObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogObjectResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecordRequest&, const Model::GetLogRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogRecordResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetTransformerRequest&, const Model::GetTransformerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransformerResponseReceivedHandler;

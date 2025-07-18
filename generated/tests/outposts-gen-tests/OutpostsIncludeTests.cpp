@@ -59,6 +59,8 @@
 #include <aws/outposts/model/GetConnectionResult.h>
 #include <aws/outposts/model/GetOrderRequest.h>
 #include <aws/outposts/model/GetOrderResult.h>
+#include <aws/outposts/model/GetOutpostBillingInformationRequest.h>
+#include <aws/outposts/model/GetOutpostBillingInformationResult.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
@@ -116,6 +118,9 @@
 #include <aws/outposts/model/StartCapacityTaskResult.h>
 #include <aws/outposts/model/StartConnectionRequest.h>
 #include <aws/outposts/model/StartConnectionResult.h>
+#include <aws/outposts/model/Subscription.h>
+#include <aws/outposts/model/SubscriptionStatus.h>
+#include <aws/outposts/model/SubscriptionType.h>
 #include <aws/outposts/model/SupportedHardwareType.h>
 #include <aws/outposts/model/SupportedStorageEnum.h>
 #include <aws/outposts/model/TagResourceRequest.h>

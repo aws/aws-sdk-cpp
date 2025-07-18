@@ -33,6 +33,7 @@
 #include <aws/outposts/model/GetConnectionRequest.h>
 #include <aws/outposts/model/GetOrderRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
+#include <aws/outposts/model/GetOutpostBillingInformationRequest.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
@@ -584,6 +585,40 @@ GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) c
       endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
       return GetOutpostOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetOutpostBillingInformationOutcome OutpostsClient::GetOutpostBillingInformation(const GetOutpostBillingInformationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetOutpostBillingInformation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOutpostBillingInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOutpostBillingInformation", "Required field: OutpostIdentifier, is not set");
+    return GetOutpostBillingInformationOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOutpostBillingInformation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetOutpostBillingInformation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOutpostBillingInformation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetOutpostBillingInformationOutcome>(
+    [&]()-> GetOutpostBillingInformationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOutpostBillingInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outpost/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/billing-information");
+      return GetOutpostBillingInformationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

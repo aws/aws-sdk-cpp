@@ -54,7 +54,10 @@ namespace Model
      * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
      * the slash character ( / ) is used to delineate hierarchies in parameter names.
      * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
-     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * </li> <li> <p>Parameter names can't contain spaces. The service removes any
+     * spaces specified for the beginning or end of a parameter name. If the specified
+     * name for a parameter contains spaces between characters, the request fails with
+     * a <code>ValidationException</code> error.</p> </li> <li> <p>Parameter
      * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
      * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating

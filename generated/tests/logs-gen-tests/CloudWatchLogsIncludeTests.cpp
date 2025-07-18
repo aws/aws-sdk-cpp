@@ -109,6 +109,7 @@
 #include <aws/logs/model/ExportTaskStatus.h>
 #include <aws/logs/model/ExportTaskStatusCode.h>
 #include <aws/logs/model/FieldIndex.h>
+#include <aws/logs/model/FieldsData.h>
 #include <aws/logs/model/FilterLogEventsRequest.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/FilteredLogEvent.h>
@@ -131,6 +132,10 @@
 #include <aws/logs/model/GetLogEventsResult.h>
 #include <aws/logs/model/GetLogGroupFieldsRequest.h>
 #include <aws/logs/model/GetLogGroupFieldsResult.h>
+#include <aws/logs/model/GetLogObjectHandler.h>
+#include <aws/logs/model/GetLogObjectInitialResponse.h>
+#include <aws/logs/model/GetLogObjectRequest.h>
+#include <aws/logs/model/GetLogObjectResponseStream.h>
 #include <aws/logs/model/GetLogRecordRequest.h>
 #include <aws/logs/model/GetLogRecordResult.h>
 #include <aws/logs/model/GetQueryResultsRequest.h>

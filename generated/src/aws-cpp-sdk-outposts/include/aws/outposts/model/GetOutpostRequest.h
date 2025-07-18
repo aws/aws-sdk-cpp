@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The ID or ARN of the Outpost. </p>
+     * <p>The ID or ARN of the Outpost.</p>
      */
     inline const Aws::String& GetOutpostId() const { return m_outpostId; }
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }

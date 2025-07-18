@@ -27,7 +27,27 @@ namespace Model
 
   /**
    * <p>One or more filters. Use a filter to return a more specific list of
-   * results.</p><p><h3>See Also:</h3>   <a
+   * results.</p> <p> <b>Example formats for the <code>aws ssm get-inventory</code>
+   * command:</b> </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.AgentType,Values=amazon-ssm-agent,Type=Equal</code>
+   * </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.AgentVersion,Values=3.3.2299.0,Type=Equal</code>
+   * </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.ComputerName,Values=ip-192.0.2.0.us-east-2.compute.internal,Type=Equal</code>
+   * </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.InstanceId,Values=i-0a4cd6ceffEXAMPLE,i-1a2b3c4d5e6EXAMPLE,Type=Equal</code>
+   * </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.InstanceStatus,Values=Active,Type=Equal</code> </p>
+   * <p> <code>--filters
+   * Key=AWS:InstanceInformation.IpAddress,Values=198.51.100.0,Type=Equal</code> </p>
+   * <p> <code>--filters Key=AWS:InstanceInformation.PlatformName,Values="Amazon
+   * Linux",Type=Equal</code> </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.PlatformType,Values=Linux,Type=Equal</code> </p> <p>
+   * <code>--filters
+   * Key=AWS:InstanceInformation.PlatformVersion,Values=2023,Type=BeginWith</code>
+   * </p> <p> <code>--filters
+   * Key=AWS:InstanceInformation.ResourceType,Values=EC2Instance,Type=Equal</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryFilter">AWS
    * API Reference</a></p>
    */
@@ -54,9 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
+     * <p>Inventory filter values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

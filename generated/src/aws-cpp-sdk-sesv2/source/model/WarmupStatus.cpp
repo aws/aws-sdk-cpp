@@ -22,6 +22,7 @@ namespace Aws
 
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int DONE_HASH = HashingUtils::HashString("DONE");
+        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
 
 
         WarmupStatus GetWarmupStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DONE_HASH)
           {
             return WarmupStatus::DONE;
+          }
+          else if (hashCode == NOT_APPLICABLE_HASH)
+          {
+            return WarmupStatus::NOT_APPLICABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "IN_PROGRESS";
           case WarmupStatus::DONE:
             return "DONE";
+          case WarmupStatus::NOT_APPLICABLE:
+            return "NOT_APPLICABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

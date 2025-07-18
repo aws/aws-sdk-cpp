@@ -409,6 +409,7 @@
 #include <aws/mediaconvert/model/InputRotate.h>
 #include <aws/mediaconvert/model/InputSampleRange.h>
 #include <aws/mediaconvert/model/InputScanType.h>
+#include <aws/mediaconvert/model/InputTamsSettings.h>
 #include <aws/mediaconvert/model/InputTemplate.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/mediaconvert/model/InputVideoGenerator.h>
@@ -610,6 +611,7 @@
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/TagResourceRequest.h>
 #include <aws/mediaconvert/model/TagResourceResult.h>
+#include <aws/mediaconvert/model/TamsGapHandling.h>
 #include <aws/mediaconvert/model/TeletextDestinationSettings.h>
 #include <aws/mediaconvert/model/TeletextPageType.h>
 #include <aws/mediaconvert/model/TeletextSourceSettings.h>

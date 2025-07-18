@@ -154,6 +154,11 @@ Input& Input::operator =(JsonView jsonValue)
     }
     m_supplementalImpsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tamsSettings"))
+  {
+    m_tamsSettings = jsonValue.GetObject("tamsSettings");
+    m_tamsSettingsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("timecodeSource"))
   {
     m_timecodeSource = InputTimecodeSourceMapper::GetInputTimecodeSourceForName(jsonValue.GetString("timecodeSource"));
@@ -337,6 +342,12 @@ JsonValue Input::Jsonize() const
      supplementalImpsJsonList[supplementalImpsIndex].AsString(m_supplementalImps[supplementalImpsIndex]);
    }
    payload.WithArray("supplementalImps", std::move(supplementalImpsJsonList));
+
+  }
+
+  if(m_tamsSettingsHasBeenSet)
+  {
+   payload.WithObject("tamsSettings", m_tamsSettings.Jsonize());
 
   }
 
