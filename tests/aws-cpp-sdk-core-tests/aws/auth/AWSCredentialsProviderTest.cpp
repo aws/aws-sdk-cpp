@@ -1236,3 +1236,57 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }
+
+class DefaultAWSCredentialsProviderChainTest : public EnvironmentModifyingTest
+{
+};
+
+TEST_F(DefaultAWSCredentialsProviderChainTest, TestProfileConsistency)
+{
+    // Create credentials file with test profiles
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = DefaultSecretKey" << std::endl;
+    credsFile << std::endl;
+    credsFile << "[test-profile]" << std::endl;
+    credsFile << "aws_access_key_id = TestProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = TestProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    // Disable EC2 metadata service for faster tests
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
+
+    // Test with default profile (empty config)
+    {
+        Aws::Client::CredentialProviderConfiguration config;
+        DefaultAWSCredentialsProviderChain providerChain(config);
+        auto creds = providerChain.GetAWSCredentials();
+        EXPECT_EQ("DefaultAccessKey", creds.GetAWSAccessKeyId());
+        EXPECT_EQ("DefaultSecretKey", creds.GetAWSSecretKey());
+    }
+
+    // Test with specific profile in config
+    {
+        Aws::Client::CredentialProviderConfiguration config;
+        config.profile = "test-profile";
+        DefaultAWSCredentialsProviderChain providerChain(config);
+        auto creds = providerChain.GetAWSCredentials();
+        EXPECT_EQ("TestProfileAccessKey", creds.GetAWSAccessKeyId());
+        EXPECT_EQ("TestProfileSecretKey", creds.GetAWSSecretKey());
+    }
+
+    // Test with environment variables overriding profile
+    Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "EnvAccessKey", 1);
+    Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "EnvSecretKey", 1);
+    
+    {
+        Aws::Client::CredentialProviderConfiguration config;
+        config.profile = "test-profile";
+        DefaultAWSCredentialsProviderChain providerChain(config);
+        auto creds = providerChain.GetAWSCredentials();
+        // Environment variables should take precedence
+        EXPECT_EQ("EnvAccessKey", creds.GetAWSAccessKeyId());
+        EXPECT_EQ("EnvSecretKey", creds.GetAWSSecretKey());
+    }
+}
