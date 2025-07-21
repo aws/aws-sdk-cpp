@@ -4,6 +4,7 @@
  */
 
 #include <aws/crt/Api.h>
+#include <aws/crt/Config.h>
 #include <aws/crt/io/TlsOptions.h>
 #include <aws/crt/io/Bootstrap.h>
 #include <aws/core/Globals.h>
@@ -52,6 +53,19 @@ namespace Aws
         auto crtVersion = g_apiHandle->GetCrtVersion();
         AWS_LOGSTREAM_INFO(TAG, "Initialized AWS-CRT-CPP with version "
                 << crtVersion.major << "." << crtVersion.minor << "." << crtVersion.patch);
+
+        if(crtVersion.major != AWS_CRT_CPP_VERSION_MAJOR ||
+            crtVersion.minor != AWS_CRT_CPP_VERSION_MINOR ||
+            crtVersion.patch != AWS_CRT_CPP_VERSION_PATCH)
+        {
+            AWS_LOGSTREAM_ERROR(TAG, "AWS-CRT-CPP version mismatch detected.");
+            AWS_LOGSTREAM_INFO(TAG, "Initialized CRT with version "
+              << crtVersion.major << "." << crtVersion.minor << "." << crtVersion.patch << "; "
+              << "However, the AWS-SDK-CPP had been built with CRT version: "
+              << AWS_CRT_CPP_VERSION_MAJOR << "."
+              << AWS_CRT_CPP_VERSION_MINOR << "."
+              << AWS_CRT_CPP_VERSION_PATCH << ";");
+        }
     }
 
     void CleanupCrt()

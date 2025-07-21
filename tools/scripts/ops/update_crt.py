@@ -8,6 +8,7 @@ script to point to the latest released packages of the CRT.
 """
 
 import os
+import re
 import shutil
 import subprocess
 import time
@@ -15,9 +16,12 @@ import time
 from jinja2 import Environment, select_autoescape
 
 PREFETCH_DEPS_SH_NAME = "prefetch_crt_dependency.sh"
+EXPECTED_CRT_VER_CMAKE = "cmake/expected_crt_version.cmake"
+CRT_VERSION_F = "VERSION"
 CRT_DIR = "./crt/aws-crt-cpp"
 GIT_EXE = shutil.which("git")
 
+CRT_VERSION_PATTERN = re.compile("^(?P<major>[0-9]+).(?P<minor>[0-9]+).(?P<patch>[0-9]+).*")
 
 PREFETCH_DEPS_TEMPLATE = \
 """#!/bin/sh
@@ -64,6 +68,18 @@ echo "To complete setup run cmake -Bbuild; cmake --build build; cmake --build --
 
 """
 
+EXPECTED_CRT_VERSION_TEMPLATE = \
+"""# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+
+set(EXPECTED_CRT_VERSION_MAJOR {{ t_major }})
+set(EXPECTED_CRT_VERSION_MINOR {{ t_minor }})
+set(EXPECTED_CRT_VERSION_PATCH {{ t_patch }})
+
+set(EXPECTED_CRT_VERSION_MAJOR ${EXPECTED_CRT_VERSION_MAJOR} PARENT_SCOPE)
+set(EXPECTED_CRT_VERSION_MINOR ${EXPECTED_CRT_VERSION_MINOR} PARENT_SCOPE)
+set(EXPECTED_CRT_VERSION_PATCH ${EXPECTED_CRT_VERSION_PATCH} PARENT_SCOPE)
+"""
 
 def call_git(cwd: str, timeout: int, command: str):
     git_cmd = [GIT_EXE]
@@ -114,12 +130,22 @@ def main():
     with open(f"{PREFETCH_DEPS_SH_NAME}", mode="w", encoding="utf-8") as prefetch_script_f:
         prefetch_script_f.write(rendered_script)
 
+    with open(f"{CRT_DIR}/{CRT_VERSION_F}", mode="r", encoding="utf-8") as version_f:
+        ver_match = CRT_VERSION_PATTERN.match(version_f.read())
+        cmake_exp_ver_template = jinja2_env.from_string(EXPECTED_CRT_VERSION_TEMPLATE)
+        rendered_cmake_ver = cmake_exp_ver_template.render(t_major=ver_match.group("major"),
+                                                           t_minor=ver_match.group("minor"),
+                                                           t_patch=ver_match.group("patch"))
+
+        with open(f"{EXPECTED_CRT_VER_CMAKE}", mode="w", encoding="utf-8") as cmake_f:
+            cmake_f.write(rendered_cmake_ver)
+
     print(f"CRT submodule is updated to {latest_crt_version}\n"
-          f"Script {PREFETCH_DEPS_SH_NAME} content is updated.")
+          f"Scripts {PREFETCH_DEPS_SH_NAME} and {EXPECTED_CRT_VER_CMAKE} are updated.")
 
     print("Don't forget to git add, commit, and push:\n")
     print(f"    git checkout -b updateCrt/{latest_crt_version} && "
-          f"git add {CRT_DIR} {PREFETCH_DEPS_SH_NAME} && "
+          f"git add {CRT_DIR} {PREFETCH_DEPS_SH_NAME} {EXPECTED_CRT_VER_CMAKE} && "
           f"git commit -m \"Update CRT to {latest_crt_version}\" && "
           f"git push origin updateCrt/{latest_crt_version}")
 
