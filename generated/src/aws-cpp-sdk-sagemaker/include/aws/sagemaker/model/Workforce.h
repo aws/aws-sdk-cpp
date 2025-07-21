@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/OidcConfigForResponse.h>
 #include <aws/sagemaker/model/WorkforceVpcConfigResponse.h>
 #include <aws/sagemaker/model/WorkforceStatus.h>
+#include <aws/sagemaker/model/WorkforceIpAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,18 @@ namespace Model
     template<typename FailureReasonT = Aws::String>
     Workforce& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type you specify - either <code>IPv4</code> only or
+     * <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support
+     * your labeling workforce.</p>
+     */
+    inline WorkforceIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(WorkforceIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline Workforce& WithIpAddressType(WorkforceIpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_workforceName;
@@ -222,6 +235,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

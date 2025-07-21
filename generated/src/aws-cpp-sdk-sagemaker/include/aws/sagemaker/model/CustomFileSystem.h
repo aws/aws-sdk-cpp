@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EFSFileSystem.h>
 #include <aws/sagemaker/model/FSxLustreFileSystem.h>
+#include <aws/sagemaker/model/S3FileSystem.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,19 @@ namespace Model
     template<typename FSxLustreFileSystemT = FSxLustreFileSystem>
     CustomFileSystem& WithFSxLustreFileSystem(FSxLustreFileSystemT&& value) { SetFSxLustreFileSystem(std::forward<FSxLustreFileSystemT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A custom file system in Amazon S3. This is only supported in Amazon SageMaker
+     * Unified Studio.</p>
+     */
+    inline const S3FileSystem& GetS3FileSystem() const { return m_s3FileSystem; }
+    inline bool S3FileSystemHasBeenSet() const { return m_s3FileSystemHasBeenSet; }
+    template<typename S3FileSystemT = S3FileSystem>
+    void SetS3FileSystem(S3FileSystemT&& value) { m_s3FileSystemHasBeenSet = true; m_s3FileSystem = std::forward<S3FileSystemT>(value); }
+    template<typename S3FileSystemT = S3FileSystem>
+    CustomFileSystem& WithS3FileSystem(S3FileSystemT&& value) { SetS3FileSystem(std::forward<S3FileSystemT>(value)); return *this;}
+    ///@}
   private:
 
     EFSFileSystem m_eFSFileSystem;
@@ -70,6 +84,9 @@ namespace Model
 
     FSxLustreFileSystem m_fSxLustreFileSystem;
     bool m_fSxLustreFileSystemHasBeenSet = false;
+
+    S3FileSystem m_s3FileSystem;
+    bool m_s3FileSystemHasBeenSet = false;
   };
 
 } // namespace Model

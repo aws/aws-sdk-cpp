@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EFSFileSystemConfig.h>
 #include <aws/sagemaker/model/FSxLustreFileSystemConfig.h>
+#include <aws/sagemaker/model/S3FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,18 @@ namespace Model
     template<typename FSxLustreFileSystemConfigT = FSxLustreFileSystemConfig>
     CustomFileSystemConfig& WithFSxLustreFileSystemConfig(FSxLustreFileSystemConfigT&& value) { SetFSxLustreFileSystemConfig(std::forward<FSxLustreFileSystemConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings for a custom Amazon S3 file system.</p>
+     */
+    inline const S3FileSystemConfig& GetS3FileSystemConfig() const { return m_s3FileSystemConfig; }
+    inline bool S3FileSystemConfigHasBeenSet() const { return m_s3FileSystemConfigHasBeenSet; }
+    template<typename S3FileSystemConfigT = S3FileSystemConfig>
+    void SetS3FileSystemConfig(S3FileSystemConfigT&& value) { m_s3FileSystemConfigHasBeenSet = true; m_s3FileSystemConfig = std::forward<S3FileSystemConfigT>(value); }
+    template<typename S3FileSystemConfigT = S3FileSystemConfig>
+    CustomFileSystemConfig& WithS3FileSystemConfig(S3FileSystemConfigT&& value) { SetS3FileSystemConfig(std::forward<S3FileSystemConfigT>(value)); return *this;}
+    ///@}
   private:
 
     EFSFileSystemConfig m_eFSFileSystemConfig;
@@ -70,6 +83,9 @@ namespace Model
 
     FSxLustreFileSystemConfig m_fSxLustreFileSystemConfig;
     bool m_fSxLustreFileSystemConfigHasBeenSet = false;
+
+    S3FileSystemConfig m_s3FileSystemConfig;
+    bool m_s3FileSystemConfigHasBeenSet = false;
   };
 
 } // namespace Model

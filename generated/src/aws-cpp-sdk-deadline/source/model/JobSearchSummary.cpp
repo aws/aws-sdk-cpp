@@ -109,6 +109,16 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedBy"))
+  {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("jobParameters"))
   {
     Aws::Map<Aws::String, JsonView> jobParametersJsonMap = jsonValue.GetObject("jobParameters").GetAllObjects();
@@ -228,6 +238,17 @@ JsonValue JobSearchSummary::Jsonize() const
   if(m_startedAtHasBeenSet)
   {
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
+
   }
 
   if(m_jobParametersHasBeenSet)

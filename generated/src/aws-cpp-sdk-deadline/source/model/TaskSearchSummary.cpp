@@ -79,6 +79,16 @@ TaskSearchSummary& TaskSearchSummary::operator =(JsonView jsonValue)
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedBy"))
+  {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -145,6 +155,17 @@ JsonValue TaskSearchSummary::Jsonize() const
   if(m_endedAtHasBeenSet)
   {
    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
+
   }
 
   return payload;

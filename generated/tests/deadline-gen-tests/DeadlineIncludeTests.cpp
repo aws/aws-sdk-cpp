@@ -426,6 +426,7 @@
 #include <aws/deadline/model/ValidationException.h>
 #include <aws/deadline/model/ValidationExceptionField.h>
 #include <aws/deadline/model/ValidationExceptionReason.h>
+#include <aws/deadline/model/VpcConfiguration.h>
 #include <aws/deadline/model/WindowsUser.h>
 #include <aws/deadline/model/WorkerAmountCapability.h>
 #include <aws/deadline/model/WorkerAttributeCapability.h>

@@ -7,6 +7,7 @@
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
 #include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>
+#include <aws/deadline/model/VpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -66,6 +67,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    ServiceManagedEc2FleetConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The storage profile ID.</p>
      */
     inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
@@ -82,6 +95,9 @@ namespace Model
 
     ServiceManagedEc2InstanceMarketOptions m_instanceMarketOptions;
     bool m_instanceMarketOptionsHasBeenSet = false;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_storageProfileId;
     bool m_storageProfileIdHasBeenSet = false;

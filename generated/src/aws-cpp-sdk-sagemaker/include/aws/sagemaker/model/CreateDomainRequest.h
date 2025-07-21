@@ -97,7 +97,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The VPC subnets that the domain uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p> <p>The field is
+     * optional when the <code>AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code> for domains created from Amazon SageMaker
+     * Unified Studio.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
@@ -112,7 +115,10 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
-     * communication.</p>
+     * communication.</p> <p>The field is optional when the
+     * <code>AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code> for domains created from Amazon SageMaker
+     * Unified Studio.</p>
      */
     inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }

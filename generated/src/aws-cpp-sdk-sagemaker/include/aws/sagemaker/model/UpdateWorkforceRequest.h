@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/SourceIpConfig.h>
 #include <aws/sagemaker/model/OidcConfig.h>
 #include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
+#include <aws/sagemaker/model/WorkforceIpAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,18 @@ namespace Model
     template<typename WorkforceVpcConfigT = WorkforceVpcConfigRequest>
     UpdateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigT&& value) { SetWorkforceVpcConfig(std::forward<WorkforceVpcConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use this parameter to specify whether you want <code>IPv4</code> only or
+     * <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your
+     * labeling workforce.</p>
+     */
+    inline WorkforceIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(WorkforceIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline UpdateWorkforceRequest& WithIpAddressType(WorkforceIpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_workforceName;
@@ -104,6 +117,9 @@ namespace Model
 
     WorkforceVpcConfigRequest m_workforceVpcConfig;
     bool m_workforceVpcConfigHasBeenSet = false;
+
+    WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

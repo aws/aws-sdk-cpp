@@ -80,6 +80,11 @@ Workforce& Workforce::operator =(JsonView jsonValue)
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IpAddressType"))
+  {
+    m_ipAddressType = WorkforceIpAddressTypeMapper::GetWorkforceIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -148,6 +153,11 @@ JsonValue Workforce::Jsonize() const
   {
    payload.WithString("FailureReason", m_failureReason);
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", WorkforceIpAddressTypeMapper::GetNameForWorkforceIpAddressType(m_ipAddressType));
   }
 
   return payload;

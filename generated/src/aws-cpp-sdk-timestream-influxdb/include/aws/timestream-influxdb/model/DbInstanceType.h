@@ -23,7 +23,8 @@ namespace Model
     db_influx_4xlarge,
     db_influx_8xlarge,
     db_influx_12xlarge,
-    db_influx_16xlarge
+    db_influx_16xlarge,
+    db_influx_24xlarge
   };
 
 namespace DbInstanceTypeMapper

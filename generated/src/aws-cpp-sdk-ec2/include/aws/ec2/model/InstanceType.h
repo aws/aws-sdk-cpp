@@ -960,7 +960,21 @@ namespace Model
     r8gd_24xlarge,
     r8gd_48xlarge,
     r8gd_metal_24xl,
-    r8gd_metal_48xl
+    r8gd_metal_48xl,
+    c8gn_medium,
+    c8gn_large,
+    c8gn_xlarge,
+    c8gn_2xlarge,
+    c8gn_4xlarge,
+    c8gn_8xlarge,
+    c8gn_12xlarge,
+    c8gn_16xlarge,
+    c8gn_24xlarge,
+    c8gn_48xlarge,
+    c8gn_metal_24xl,
+    c8gn_metal_48xl,
+    f2_6xlarge,
+    p6e_gb200_36xlarge
   };
 
 namespace InstanceTypeMapper

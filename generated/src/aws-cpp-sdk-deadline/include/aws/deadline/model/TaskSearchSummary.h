@@ -159,6 +159,30 @@ namespace Model
     template<typename EndedAtT = Aws::Utils::DateTime>
     TaskSearchSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    TaskSearchSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that updated this resource.</p>
+     */
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    TaskSearchSummary& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_taskId;
@@ -190,6 +214,12 @@ namespace Model
 
     Aws::Utils::DateTime m_endedAt{};
     bool m_endedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,6 +40,11 @@ Aws::String UpdateWorkforceRequest::SerializePayload() const
 
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", WorkforceIpAddressTypeMapper::GetNameForWorkforceIpAddressType(m_ipAddressType));
+  }
+
   return payload.View().WriteReadable();
 }
 
