@@ -65,6 +65,8 @@ public:
 
     /// returns the ByteBuffer if the value is specialized to this type, otherwise an empty Buffer
     const Aws::Utils::ByteBuffer GetB() const;
+    /// returns a reference to the ByteBuffer if the value is specialized to this type, otherwise a reference to an empty Buffer
+    const Aws::Utils::ByteBuffer& AccessB() const;
     /// if already specialized to a ByteBuffer, sets the value to this value
     /// if uninitialized, specializes the type to a ByteBuffer with the specified value
     /// if already specialized to another type then the behavior is undefined
