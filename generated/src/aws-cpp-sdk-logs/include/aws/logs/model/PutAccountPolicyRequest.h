@@ -148,7 +148,7 @@ namespace Model
     ///@{
     /**
      * <p>Use this parameter to apply the new policy to a subset of log groups in the
-     * account.</p> <p>Specifing <code>selectionCriteria</code> is valid only when you
+     * account.</p> <p>Specifying <code>selectionCriteria</code> is valid only when you
      * specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>
      * or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p> <p>If
      * <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only

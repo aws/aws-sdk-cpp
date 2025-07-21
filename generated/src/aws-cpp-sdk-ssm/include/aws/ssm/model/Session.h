@@ -180,7 +180,7 @@ namespace Model
      * <p> <code>Standard</code> access type is the default for Session Manager
      * sessions. <code>JustInTime</code> is the access type for <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time
-     * node access</a>. </p>
+     * node access</a>.</p>
      */
     inline AccessType GetAccessType() const { return m_accessType; }
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }

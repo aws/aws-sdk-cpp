@@ -394,6 +394,32 @@ namespace Outposts
         }
 
         /**
+         * <p>Gets current and historical billing information about the specified
+         * Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOutpostBillingInformationOutcome GetOutpostBillingInformation(const Model::GetOutpostBillingInformationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetOutpostBillingInformation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetOutpostBillingInformationRequestT = Model::GetOutpostBillingInformationRequest>
+        Model::GetOutpostBillingInformationOutcomeCallable GetOutpostBillingInformationCallable(const GetOutpostBillingInformationRequestT& request) const
+        {
+            return SubmitCallable(&OutpostsClient::GetOutpostBillingInformation, request);
+        }
+
+        /**
+         * An Async wrapper for GetOutpostBillingInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetOutpostBillingInformationRequestT = Model::GetOutpostBillingInformationRequest>
+        void GetOutpostBillingInformationAsync(const GetOutpostBillingInformationRequestT& request, const GetOutpostBillingInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OutpostsClient::GetOutpostBillingInformation, request, handler, context);
+        }
+
+        /**
          * <p>Gets the instance types for the specified Outpost.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">AWS

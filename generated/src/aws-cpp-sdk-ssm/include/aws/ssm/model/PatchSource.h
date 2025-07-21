@@ -70,13 +70,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <p>The value of the repo configuration.</p> <p> <b>Example for yum
+     * repositories</b> </p> <p> <code>[main]</code> </p> <p>
+     * <code>name=MyCustomRepository</code> </p> <p>
      * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
+     * <code>enabled=1</code> </p> <p>For information about other options available for
+     * your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on
+     * the <i>man7.org</i> website.</p> <p> <b>Examples for Ubuntu Server and Debian
+     * Server</b> </p> <p> <code>deb http://security.ubuntu.com/ubuntu jammy
+     * main</code> </p> <p> <code>deb https://site.example.com/debian distribution
+     * component1 component2 component3</code> </p> <p>Repo information for Ubuntu
+     * Server repositories must be specifed in a single line. For more examples and
+     * information, see <a
+     * href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy
+     * (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a
+     * href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list
+     * format</a> on the <i>Debian Wiki</i>.</p>
      */
     inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
