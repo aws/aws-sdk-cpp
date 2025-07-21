@@ -66,6 +66,19 @@ AttributeValue& AttributeValue::SetB(const ByteBuffer& b)
     return *this;
 }
 
+const ByteBuffer& AttributeValue::AccessB() const
+{
+    if (m_value)
+    {
+       return m_value->AccessB();
+    }
+    else
+    {
+        static const ByteBuffer empty;
+        return empty;
+    }
+}
+
 const Aws::Vector<Aws::String> AttributeValue::GetSS() const
 {
     if (m_value)

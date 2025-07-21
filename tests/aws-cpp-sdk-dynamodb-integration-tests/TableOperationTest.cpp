@@ -907,7 +907,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     const Aws::Utils::ByteBuffer byteBuffer1(buffer1, 6);
     unsigned char buffer2[6] = { 21, 35, 55, 68, 11, 6 };
     const Aws::Utils::ByteBuffer byteBuffer2(buffer2, 6);
-
+    const Aws::Utils::ByteBuffer emptyBuf;
     // create the Hash Key value
     AttributeValue hashKey("TestValue");
 
@@ -947,6 +947,9 @@ TEST_F(TableOperationTest, TestAttributeValues)
         //ReturnedItemCollection returnedItemCollection = result.GetItems();
         EXPECT_EQ("TestValue", returnedItemCollection[HASH_KEY_NAME].GetS());
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
+
+        EXPECT_EQ(emptyBuf, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(emptyBuf, returnedItemCollection["ByteBuffer"].AccessB());
     }
 
     // Number Value
@@ -1058,6 +1061,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB()); // on the 3rd day of xmas...
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
     }
 
     // StringSet
@@ -1097,6 +1101,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
         auto ss = returnedItemCollection["String Set"].GetSS();
         EXPECT_EQ(2u, ss.size());
         EXPECT_NE(ss.end(), std::find(ss.begin(), ss.end(), "test1"));
@@ -1140,6 +1145,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
         auto ss = returnedItemCollection["String Set"].GetSS();
         EXPECT_EQ(2u, ss.size());
         EXPECT_NE(ss.end(), std::find(ss.begin(), ss.end(), "test1"));
@@ -1187,6 +1193,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
         auto ss = returnedItemCollection["String Set"].GetSS();
         EXPECT_EQ(2u, ss.size());
         EXPECT_NE(ss.end(), std::find(ss.begin(), ss.end(), "test1"));
@@ -1240,6 +1247,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
         auto ss = returnedItemCollection["String Set"].GetSS();
         EXPECT_EQ(2u, ss.size());
         EXPECT_NE(ss.end(), std::find(ss.begin(), ss.end(), "test1"));
@@ -1334,6 +1342,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
         EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].GetB());
+        EXPECT_EQ(byteBuffer1, returnedItemCollection["ByteBuffer"].AccessB());
         auto ss = returnedItemCollection["String Set"].GetSS();
         EXPECT_EQ(2u, ss.size());
         EXPECT_NE(ss.end(), std::find(ss.begin(), ss.end(), "test1"));
