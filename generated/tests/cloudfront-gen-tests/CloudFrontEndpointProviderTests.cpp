@@ -74,39 +74,42 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<CloudFrontEndpointProviderEndpointTestCase>> CloudFrontEndpointProviderTests::TEST_CASES;
-const size_t CloudFrontEndpointProviderTests::TEST_CASES_SZ = 28;
+const size_t CloudFrontEndpointProviderTests::TEST_CASES_SZ = 32;
 
 Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProviderTests::getTestCase() {
 
   Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
-  {"For region aws-global with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "aws-global"), EpParam("UseDualStack", false)}, // params
+  {"For custom endpoint with region not set and fips disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com")}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.amazonaws.com",
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
-  {"For region aws-global with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "aws-global"), EpParam("UseDualStack", false)}, // params
+  {"For custom endpoint with fips enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com")}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 2*/
+  {"For custom endpoint with fips disabled and dualstack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 3*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.us-east-1.api.aws",
+    {{/*epUrl*/"https://cloudfront-fips.global.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 3*/
+  /*TEST CASE 4*/
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -115,16 +118,16 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 4*/
+  /*TEST CASE 5*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.us-east-1.api.aws",
+    {{/*epUrl*/"https://cloudfront.global.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 5*/
+  /*TEST CASE 6*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -133,45 +136,36 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 6*/
-  {"For region aws-cn-global with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "aws-cn-global"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://cloudfront.cn-northwest-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
   /*TEST CASE 7*/
-  {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+  {"For region cn-northwest-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://cloudfront-fips.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+  {"For region cn-northwest-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://cloudfront-fips.cn-northwest-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 9*/
-  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+  {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://cloudfront.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
-  {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+  {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://cloudfront.cn-northwest-1.amazonaws.com.cn",
        {/*authScheme*/}, 
@@ -179,37 +173,37 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 11*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
+  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://cloudfront-fips.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 12*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://cloudfront-fips.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 13*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
+  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://cloudfront.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 14*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://cloudfront.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -224,7 +218,7 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
   {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://cloudfront-fips.c2s.ic.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -239,7 +233,7 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
   {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://cloudfront.c2s.ic.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -254,7 +248,7 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront-fips.us-isob-east-1.sc2s.sgov.gov",
+    {{/*epUrl*/"https://cloudfront-fips.sc2s.sgov.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -269,42 +263,72 @@ Aws::Vector<CloudFrontEndpointProviderEndpointTestCase> CloudFrontEndpointProvid
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://cloudfront.us-isob-east-1.sc2s.sgov.gov",
+    {{/*epUrl*/"https://cloudfront.sc2s.sgov.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 23*/
-  {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For region eu-isoe-west-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
   /*TEST CASE 24*/
-  {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
+  {"For region eu-isoe-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://cloudfront-fips.cloud.adc-e.uk",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 25*/
-  {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+  {"For region eu-isoe-west-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
   /*TEST CASE 26*/
-  {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
+  {"For region eu-isoe-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+    {{/*epUrl*/"https://cloudfront.cloud.adc-e.uk",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 27*/
+  {"For region us-isof-south-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
+  },
+  /*TEST CASE 28*/
+  {"For region us-isof-south-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://cloudfront-fips.csp.hci.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 29*/
+  {"For region us-isof-south-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
+  },
+  /*TEST CASE 30*/
+  {"For region us-isof-south-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://cloudfront.csp.hci.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 31*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

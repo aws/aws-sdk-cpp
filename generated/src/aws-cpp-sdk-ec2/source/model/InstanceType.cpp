@@ -965,6 +965,20 @@ namespace Aws
         static const int r8gd_48xlarge_HASH = HashingUtils::HashString("r8gd.48xlarge");
         static const int r8gd_metal_24xl_HASH = HashingUtils::HashString("r8gd.metal-24xl");
         static const int r8gd_metal_48xl_HASH = HashingUtils::HashString("r8gd.metal-48xl");
+        static const int c8gn_medium_HASH = HashingUtils::HashString("c8gn.medium");
+        static const int c8gn_large_HASH = HashingUtils::HashString("c8gn.large");
+        static const int c8gn_xlarge_HASH = HashingUtils::HashString("c8gn.xlarge");
+        static const int c8gn_2xlarge_HASH = HashingUtils::HashString("c8gn.2xlarge");
+        static const int c8gn_4xlarge_HASH = HashingUtils::HashString("c8gn.4xlarge");
+        static const int c8gn_8xlarge_HASH = HashingUtils::HashString("c8gn.8xlarge");
+        static const int c8gn_12xlarge_HASH = HashingUtils::HashString("c8gn.12xlarge");
+        static const int c8gn_16xlarge_HASH = HashingUtils::HashString("c8gn.16xlarge");
+        static const int c8gn_24xlarge_HASH = HashingUtils::HashString("c8gn.24xlarge");
+        static const int c8gn_48xlarge_HASH = HashingUtils::HashString("c8gn.48xlarge");
+        static const int c8gn_metal_24xl_HASH = HashingUtils::HashString("c8gn.metal-24xl");
+        static const int c8gn_metal_48xl_HASH = HashingUtils::HashString("c8gn.metal-48xl");
+        static const int f2_6xlarge_HASH = HashingUtils::HashString("f2.6xlarge");
+        static const int p6e_gb200_36xlarge_HASH = HashingUtils::HashString("p6e-gb200.36xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -5726,6 +5740,76 @@ namespace Aws
             enumValue = InstanceType::r8gd_metal_48xl;
             return true;
           }
+          else if (hashCode == c8gn_medium_HASH)
+          {
+            enumValue = InstanceType::c8gn_medium;
+            return true;
+          }
+          else if (hashCode == c8gn_large_HASH)
+          {
+            enumValue = InstanceType::c8gn_large;
+            return true;
+          }
+          else if (hashCode == c8gn_xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_2xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_4xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_8xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_12xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_16xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_16xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_24xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_24xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_48xlarge_HASH)
+          {
+            enumValue = InstanceType::c8gn_48xlarge;
+            return true;
+          }
+          else if (hashCode == c8gn_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::c8gn_metal_24xl;
+            return true;
+          }
+          else if (hashCode == c8gn_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::c8gn_metal_48xl;
+            return true;
+          }
+          else if (hashCode == f2_6xlarge_HASH)
+          {
+            enumValue = InstanceType::f2_6xlarge;
+            return true;
+          }
+          else if (hashCode == p6e_gb200_36xlarge_HASH)
+          {
+            enumValue = InstanceType::p6e_gb200_36xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -8623,6 +8707,48 @@ namespace Aws
             return true;
           case InstanceType::r8gd_metal_48xl:
             value = "r8gd.metal-48xl";
+            return true;
+          case InstanceType::c8gn_medium:
+            value = "c8gn.medium";
+            return true;
+          case InstanceType::c8gn_large:
+            value = "c8gn.large";
+            return true;
+          case InstanceType::c8gn_xlarge:
+            value = "c8gn.xlarge";
+            return true;
+          case InstanceType::c8gn_2xlarge:
+            value = "c8gn.2xlarge";
+            return true;
+          case InstanceType::c8gn_4xlarge:
+            value = "c8gn.4xlarge";
+            return true;
+          case InstanceType::c8gn_8xlarge:
+            value = "c8gn.8xlarge";
+            return true;
+          case InstanceType::c8gn_12xlarge:
+            value = "c8gn.12xlarge";
+            return true;
+          case InstanceType::c8gn_16xlarge:
+            value = "c8gn.16xlarge";
+            return true;
+          case InstanceType::c8gn_24xlarge:
+            value = "c8gn.24xlarge";
+            return true;
+          case InstanceType::c8gn_48xlarge:
+            value = "c8gn.48xlarge";
+            return true;
+          case InstanceType::c8gn_metal_24xl:
+            value = "c8gn.metal-24xl";
+            return true;
+          case InstanceType::c8gn_metal_48xl:
+            value = "c8gn.metal-48xl";
+            return true;
+          case InstanceType::f2_6xlarge:
+            value = "f2.6xlarge";
+            return true;
+          case InstanceType::p6e_gb200_36xlarge:
+            value = "p6e-gb200.36xlarge";
             return true;
           default:
             return false;

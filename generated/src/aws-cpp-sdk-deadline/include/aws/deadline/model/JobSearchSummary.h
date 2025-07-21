@@ -237,6 +237,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time the resource was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    JobSearchSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that updated this resource.</p>
+     */
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    JobSearchSummary& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job parameters.</p>
      */
     inline const Aws::Map<Aws::String, JobParameter>& GetJobParameters() const { return m_jobParameters; }
@@ -326,6 +350,12 @@ namespace Model
 
     Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::Map<Aws::String, JobParameter> m_jobParameters;
     bool m_jobParametersHasBeenSet = false;

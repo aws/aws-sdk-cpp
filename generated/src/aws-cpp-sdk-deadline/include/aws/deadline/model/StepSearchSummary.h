@@ -182,6 +182,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The user or system that created this resource.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    StepSearchSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the resource started running.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
@@ -202,6 +214,30 @@ namespace Model
     void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
     template<typename EndedAtT = Aws::Utils::DateTime>
     StepSearchSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the resource was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    StepSearchSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user or system that updated this resource.</p>
+     */
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    StepSearchSummary& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,11 +286,20 @@ namespace Model
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
+
     Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt{};
     bool m_endedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
     ParameterSpace m_parameterSpace;
     bool m_parameterSpaceHasBeenSet = false;

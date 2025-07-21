@@ -84,6 +84,11 @@ StepSearchSummary& StepSearchSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
@@ -93,6 +98,16 @@ StepSearchSummary& StepSearchSummary::operator =(JsonView jsonValue)
   {
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedBy"))
+  {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
   }
   if(jsonValue.ValueExists("parameterSpace"))
   {
@@ -173,6 +188,12 @@ JsonValue StepSearchSummary::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
+  }
+
   if(m_startedAtHasBeenSet)
   {
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -181,6 +202,17 @@ JsonValue StepSearchSummary::Jsonize() const
   if(m_endedAtHasBeenSet)
   {
    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
+
   }
 
   if(m_parameterSpaceHasBeenSet)

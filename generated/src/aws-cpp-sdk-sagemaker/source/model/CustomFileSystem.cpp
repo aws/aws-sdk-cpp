@@ -35,6 +35,11 @@ CustomFileSystem& CustomFileSystem::operator =(JsonView jsonValue)
     m_fSxLustreFileSystem = jsonValue.GetObject("FSxLustreFileSystem");
     m_fSxLustreFileSystemHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3FileSystem"))
+  {
+    m_s3FileSystem = jsonValue.GetObject("S3FileSystem");
+    m_s3FileSystemHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue CustomFileSystem::Jsonize() const
   if(m_fSxLustreFileSystemHasBeenSet)
   {
    payload.WithObject("FSxLustreFileSystem", m_fSxLustreFileSystem.Jsonize());
+
+  }
+
+  if(m_s3FileSystemHasBeenSet)
+  {
+   payload.WithObject("S3FileSystem", m_s3FileSystem.Jsonize());
 
   }
 

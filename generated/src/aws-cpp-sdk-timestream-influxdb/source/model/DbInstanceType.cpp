@@ -28,6 +28,7 @@ namespace Aws
         static const int db_influx_8xlarge_HASH = HashingUtils::HashString("db.influx.8xlarge");
         static const int db_influx_12xlarge_HASH = HashingUtils::HashString("db.influx.12xlarge");
         static const int db_influx_16xlarge_HASH = HashingUtils::HashString("db.influx.16xlarge");
+        static const int db_influx_24xlarge_HASH = HashingUtils::HashString("db.influx.24xlarge");
 
 
         DbInstanceType GetDbInstanceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return DbInstanceType::db_influx_16xlarge;
           }
+          else if (hashCode == db_influx_24xlarge_HASH)
+          {
+            return DbInstanceType::db_influx_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "db.influx.12xlarge";
           case DbInstanceType::db_influx_16xlarge:
             return "db.influx.16xlarge";
+          case DbInstanceType::db_influx_24xlarge:
+            return "db.influx.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

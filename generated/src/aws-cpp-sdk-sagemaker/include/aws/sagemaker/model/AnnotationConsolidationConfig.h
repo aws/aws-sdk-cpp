@@ -640,6 +640,31 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Generative AI/Custom</b> - Direct passthrough of output
+     * data without any transformation.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-PassThrough</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-PassThrough</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-PassThrough</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-PassThrough</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-PassThrough</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-PassThrough</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-PassThrough</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetAnnotationConsolidationLambdaArn() const { return m_annotationConsolidationLambdaArn; }

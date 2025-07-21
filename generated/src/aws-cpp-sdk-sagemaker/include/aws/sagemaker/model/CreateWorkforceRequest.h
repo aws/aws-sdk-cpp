@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
+#include <aws/sagemaker/model/WorkforceIpAddressType.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -119,6 +120,18 @@ namespace Model
     template<typename WorkforceVpcConfigT = WorkforceVpcConfigRequest>
     CreateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigT&& value) { SetWorkforceVpcConfig(std::forward<WorkforceVpcConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use this parameter to specify whether you want <code>IPv4</code> only or
+     * <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your
+     * labeling workforce.</p>
+     */
+    inline WorkforceIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(WorkforceIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateWorkforceRequest& WithIpAddressType(WorkforceIpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     CognitoConfig m_cognitoConfig;
@@ -138,6 +151,9 @@ namespace Model
 
     WorkforceVpcConfigRequest m_workforceVpcConfig;
     bool m_workforceVpcConfigHasBeenSet = false;
+
+    WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

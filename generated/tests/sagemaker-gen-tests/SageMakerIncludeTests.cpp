@@ -1332,6 +1332,8 @@
 #include <aws/sagemaker/model/S3DataDistribution.h>
 #include <aws/sagemaker/model/S3DataSource.h>
 #include <aws/sagemaker/model/S3DataType.h>
+#include <aws/sagemaker/model/S3FileSystem.h>
+#include <aws/sagemaker/model/S3FileSystemConfig.h>
 #include <aws/sagemaker/model/S3ModelDataSource.h>
 #include <aws/sagemaker/model/S3ModelDataType.h>
 #include <aws/sagemaker/model/S3Presign.h>
@@ -1640,6 +1642,7 @@
 #include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/WorkerAccessConfiguration.h>
 #include <aws/sagemaker/model/Workforce.h>
+#include <aws/sagemaker/model/WorkforceIpAddressType.h>
 #include <aws/sagemaker/model/WorkforceStatus.h>
 #include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
 #include <aws/sagemaker/model/WorkforceVpcConfigResponse.h>

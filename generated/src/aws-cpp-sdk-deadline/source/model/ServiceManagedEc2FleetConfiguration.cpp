@@ -35,6 +35,11 @@ ServiceManagedEc2FleetConfiguration& ServiceManagedEc2FleetConfiguration::operat
     m_instanceMarketOptions = jsonValue.GetObject("instanceMarketOptions");
     m_instanceMarketOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("vpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+    m_vpcConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");
@@ -56,6 +61,12 @@ JsonValue ServiceManagedEc2FleetConfiguration::Jsonize() const
   if(m_instanceMarketOptionsHasBeenSet)
   {
    payload.WithObject("instanceMarketOptions", m_instanceMarketOptions.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

@@ -35,6 +35,11 @@ CustomFileSystemConfig& CustomFileSystemConfig::operator =(JsonView jsonValue)
     m_fSxLustreFileSystemConfig = jsonValue.GetObject("FSxLustreFileSystemConfig");
     m_fSxLustreFileSystemConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3FileSystemConfig"))
+  {
+    m_s3FileSystemConfig = jsonValue.GetObject("S3FileSystemConfig");
+    m_s3FileSystemConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue CustomFileSystemConfig::Jsonize() const
   if(m_fSxLustreFileSystemConfigHasBeenSet)
   {
    payload.WithObject("FSxLustreFileSystemConfig", m_fSxLustreFileSystemConfig.Jsonize());
+
+  }
+
+  if(m_s3FileSystemConfigHasBeenSet)
+  {
+   payload.WithObject("S3FileSystemConfig", m_s3FileSystemConfig.Jsonize());
 
   }
 
