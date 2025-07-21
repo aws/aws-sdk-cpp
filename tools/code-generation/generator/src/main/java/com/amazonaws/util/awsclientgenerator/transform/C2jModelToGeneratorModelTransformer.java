@@ -27,6 +27,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import software.amazon.smithy.jmespath.JmespathExpression;
 
 public class C2jModelToGeneratorModelTransformer {
@@ -336,38 +337,46 @@ public class C2jModelToGeneratorModelTransformer {
                     // Header only event
                     shape.setEventPayloadType(null);
                 } else if (shape.hasEventPayloadMembers() || shape.getMembers().size() == 1) {
-                    if (shape.getMembers().size() == 1) {
-                        shape.getMembers().entrySet().stream().forEach(memberEntry -> {
-                            /**
-                             * Note: this is complicated and potentially not completely correct.
-                             * So touch at your own risk until we have protocol tests supported.
-                             * In summary:
-                             * - we need to determine how to serialize events in eventstream
-                             * - to specify payload there is an eventpayload trait
-                             * - but what happens if that trait is not specified
-                             * - if there is one field and its a string or struct then we assume that field is event payload
-                             * - if there is one field and its a blob within structure and not explicitly marked as eventpayload then parent shape is eventpayload
-                             * - if that one field is of any other type then treat parent shape as eventpayload
-                             * - if there is more than one field then parent shape is the payload
-                             */
-                            Shape memberShape = memberEntry.getValue().getShape();
-                            if (memberShape.isString() ||
-                                memberShape.isBlob() && !shape.isStructure() ||
-                                memberShape.isBlob() && memberEntry.getValue().isEventPayload() ||
-                                memberShape.isStructure()) {
-                                memberEntry.getValue().setEventPayload(true);
-                                shape.setEventPayloadMemberName(memberEntry.getKey());
-                                shape.setEventPayloadType(memberShape.getType());
-                            } else {
-                                if (!shape.getType().equals("structure")) {
-                                    throw new RuntimeException("Event shape should always has \"structure\" type if single member cannot be event payload.");
-                                }
-                                shape.setEventPayloadType(shape.getType());
+                    if (shape.getMembers().values().stream().filter(member -> !member.isEventHeader()).count() == 1) {
+                        final List<Map.Entry<String, ShapeMember>> memberEntries = shape.getMembers().entrySet().stream()
+                                .filter(member -> !member.getValue().isEventHeader())
+                                .collect(Collectors.toList());
+                        if (memberEntries.size() != 1) {
+                            throw new RuntimeException("Event shape should have exactly one payload member for event payload.");
+                        }
+                        /**
+                         * Note: this is complicated and potentially not completely correct.
+                         * So touch at your own risk until we have protocol tests supported.
+                         * In summary:
+                         * - we need to determine how to serialize events in eventstream
+                         * - to specify payload there is an eventpayload trait
+                         * - but what happens if that trait is not specified
+                         * - if there is one field and its a string or struct then we assume that field is event payload
+                         * - if there is one field and its a blob within structure and not explicitly marked as eventpayload then parent shape is eventpayload
+                         * - if that one field is of any other type then treat parent shape as eventpayload
+                         * - if there is more than one field then parent shape is the payload
+                         */
+                        final Map.Entry<String, ShapeMember> memberEntry = memberEntries.get(0);
+                        final Shape memberShape = memberEntry.getValue().getShape();
+                        if (memberShape.isString() ||
+                            memberShape.isBlob() && !shape.isStructure() ||
+                            memberShape.isBlob() && memberEntry.getValue().isEventPayload() ||
+                            memberShape.isStructure()) {
+                            memberEntry.getValue().setEventPayload(true);
+                            shape.setEventPayloadMemberName(memberEntry.getKey());
+                            shape.setEventPayloadType(memberShape.getType());
+                        } else {
+                            if (!shape.getType().equals("structure")) {
+                                throw new RuntimeException("Event shape should always has \"structure\" type if single member cannot be event payload.");
                             }
-
-                        });
+                            shape.setEventPayloadType(shape.getType());
+                        }
+                        shape.setEventStreamHeaders(shape.getMembers().entrySet().stream()
+                                .filter(headerEntry -> headerEntry.getValue().isEventHeader())
+                                .map(headerEntry -> Pair.of(headerEntry.getKey(), headerEntry.getValue().getShape()))
+                                .collect(Collectors.toMap(Pair::getKey, Pair::getValue)));
                     } else {
-                        throw new RuntimeException("Event shape used in Event Stream should only has one member if it has event payload member.");
+                        throw new RuntimeException("Event shape used in Event Stream should only has one non header member if it has event payload member.");
                     }
                 } else if (shape.getMembers().size() > 1) {
                     if (!shape.getType().equals("structure")) {

@@ -54,6 +54,7 @@ public class Shape {
     private String eventPayloadMemberName;
     private String eventPayloadType;
     private boolean isOutgoingEventStream;
+    private Map<String, Shape> eventStreamHeaders;
     private boolean exception;
     private boolean sensitive;
     private boolean hasPreSignedUrl;

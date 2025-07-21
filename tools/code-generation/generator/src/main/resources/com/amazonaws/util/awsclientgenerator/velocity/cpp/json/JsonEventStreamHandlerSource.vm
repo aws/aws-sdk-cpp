@@ -134,6 +134,19 @@ namespace Model
             ${eventShape.name} event(GetEventPayloadWithOwnership());
             m_on${eventShape.name}(event);
             break;
+#elseif($eventShape.getEventStreamHeaders().size() > 0)
+            ${eventShape.name} event(GetEventPayloadWithOwnership());
+#foreach($eventStreamHeaderMapping in $eventShape.getEventStreamHeaders().entrySet())
+#set($eventStreamHeader = $eventStreamHeaderMapping.getValue())
+#set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventStreamHeader.getName()))
+#set($headerVarName = $CppViewHelper.lowercasesFirstChar("${eventStreamHeader.getName()}Header"))
+            const auto $headerVarName = headers.find("${eventStreamHeaderMapping.getKey()}");
+            if ($headerVarName != headers.end()) {
+                event.Set$eventHeaderMemberNameWithFirstLetterCapitalized($headerVarName->second.GetEventHeaderValueAsString());
+            }
+#end
+            m_on${eventShape.name}(event);
+            break;
 ##multiple members or the only one member is structure
 #elseif(!$eventShape.members.isEmpty())
             JsonValue json(GetEventPayloadAsString());
