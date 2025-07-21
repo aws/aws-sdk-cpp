@@ -49,10 +49,32 @@ namespace Model
     inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value) { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}
     ///@}
 
+#foreach($eventHeaderMapping in $shape.getEventStreamHeaders().entrySet())
+#set($eventHeader = $eventHeaderMapping.getValue())
+#set($eventHeaderMemberName = $CppViewHelper.computeMemberVariableName($eventHeader.getName()))
+#set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventHeader.getName()))
+#set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
+#set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
+    inline const $eventHeaderMemberType Get${eventHeaderMemberNameWithFirstLetterCapitalized}() const { return $eventHeaderMemberName; }
+    inline bool ${eventHeaderMemberNameWithFirstLetterCapitalized}HasBeenSet() const { return $eventHeaderMemberHaseBeenSetName; }
+    template<typename T = $eventHeaderMemberType>
+    void Set${eventHeaderMemberNameWithFirstLetterCapitalized}(T&& value) { $eventHeaderMemberHaseBeenSetName = true; $eventHeaderMemberName = std::forward<T>(value); }
+    template<typename T = $eventHeaderMemberType>
+    ${classNameRef} With${eventHeaderMemberNameWithFirstLetterCapitalized}(T&& value) { Set${eventHeaderMemberNameWithFirstLetterCapitalized}(value); return *this; }
+
+#end
   private:
 
     Aws::Vector<unsigned char> $memberVariableName;
     bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)} = false;
+#foreach($eventHeaderMapping in $shape.getEventStreamHeaders().entrySet())
+#set($eventHeader = $eventHeaderMapping.getValue())
+#set($eventHeaderMemberName = $CppViewHelper.computeMemberVariableName($eventHeader.getName()))
+#set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
+#set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
+    $eventHeaderMemberType $eventHeaderMemberName;
+    bool $eventHeaderMemberHaseBeenSetName;
+#end
   };
 
 } // namespace Model
