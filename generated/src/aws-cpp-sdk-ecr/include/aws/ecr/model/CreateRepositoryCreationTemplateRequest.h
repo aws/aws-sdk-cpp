@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/ImageTagMutability.h>
 #include <aws/ecr/model/Tag.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilter.h>
 #include <aws/ecr/model/RCTAppliedFor.h>
 #include <utility>
 
@@ -121,6 +122,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Creates a repository creation template with a list of filters that define
+     * which image tags can override the default image tag mutability setting.</p>
+     */
+    inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const { return m_imageTagMutabilityExclusionFilters; }
+    inline bool ImageTagMutabilityExclusionFiltersHasBeenSet() const { return m_imageTagMutabilityExclusionFiltersHasBeenSet; }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    void SetImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters = std::forward<ImageTagMutabilityExclusionFiltersT>(value); }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    CreateRepositoryCreationTemplateRequest& WithImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { SetImageTagMutabilityExclusionFilters(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this;}
+    template<typename ImageTagMutabilityExclusionFiltersT = ImageTagMutabilityExclusionFilter>
+    CreateRepositoryCreationTemplateRequest& AddImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters.emplace_back(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The repository policy to apply to repositories created using the template. A
      * repository policy is a permissions policy associated with a repository to
      * control access permissions. </p>
@@ -191,6 +207,9 @@ namespace Model
 
     ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
     bool m_imageTagMutabilityHasBeenSet = false;
+
+    Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
+    bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
     Aws::String m_repositoryPolicy;
     bool m_repositoryPolicyHasBeenSet = false;

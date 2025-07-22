@@ -38,7 +38,20 @@ namespace Model
     cn_north_1,
     cn_northwest_1,
     us_gov_west_1,
-    us_gov_east_1
+    us_gov_east_1,
+    ca_west_1,
+    eu_south_2,
+    il_central_1,
+    me_central_1,
+    ap_northeast_3,
+    ap_southeast_3,
+    ap_southeast_4,
+    ap_southeast_5,
+    ap_southeast_7,
+    mx_central_1,
+    ap_east_2,
+    ap_south_2,
+    eu_central_2
   };
 
 namespace S3BucketRegionMapper

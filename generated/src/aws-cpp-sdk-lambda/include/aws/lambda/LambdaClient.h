@@ -16,7 +16,7 @@ namespace Aws
 namespace Lambda
 {
   /**
-   * <fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>Lambda is a compute
+   * <p><fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>Lambda is a compute
    * service that lets you run code without provisioning or managing servers. Lambda
    * runs your code on a high-availability compute infrastructure and performs all of
    * the administration of the compute resources, including server and operating
@@ -67,7 +67,7 @@ namespace Lambda
    * keeping your computer up-to-date is the more straightforward solution. To learn
    * more about ACM-provided certificates, see <a
    * href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon Web
-   * Services Certificate Manager FAQs.</a> </p>
+   * Services Certificate Manager FAQs.</a> </p></p>
    */
   class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>
   {

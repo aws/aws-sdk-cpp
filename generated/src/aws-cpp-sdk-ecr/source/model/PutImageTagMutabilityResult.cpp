@@ -40,6 +40,15 @@ PutImageTagMutabilityResult& PutImageTagMutabilityResult::operator =(const Aws::
     m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
     m_imageTagMutabilityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("imageTagMutabilityExclusionFilters"))
+  {
+    Aws::Utils::Array<JsonView> imageTagMutabilityExclusionFiltersJsonList = jsonValue.GetArray("imageTagMutabilityExclusionFilters");
+    for(unsigned imageTagMutabilityExclusionFiltersIndex = 0; imageTagMutabilityExclusionFiltersIndex < imageTagMutabilityExclusionFiltersJsonList.GetLength(); ++imageTagMutabilityExclusionFiltersIndex)
+    {
+      m_imageTagMutabilityExclusionFilters.push_back(imageTagMutabilityExclusionFiltersJsonList[imageTagMutabilityExclusionFiltersIndex].AsObject());
+    }
+    m_imageTagMutabilityExclusionFiltersHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

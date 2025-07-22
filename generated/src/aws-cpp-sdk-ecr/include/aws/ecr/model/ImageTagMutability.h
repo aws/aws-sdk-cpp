@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     MUTABLE,
-    IMMUTABLE
+    IMMUTABLE,
+    IMMUTABLE_WITH_EXCLUSION,
+    MUTABLE_WITH_EXCLUSION
   };
 
 namespace ImageTagMutabilityMapper

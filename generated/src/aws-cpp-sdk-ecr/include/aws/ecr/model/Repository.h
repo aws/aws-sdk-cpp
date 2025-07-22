@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecr/model/ImageTagMutability.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
 #include <aws/ecr/model/EncryptionConfiguration.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +121,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The image tag mutability exclusion filters associated with the repository.
+     * These filters specify which image tags can override the repository's default
+     * image tag mutability setting.</p>
+     */
+    inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const { return m_imageTagMutabilityExclusionFilters; }
+    inline bool ImageTagMutabilityExclusionFiltersHasBeenSet() const { return m_imageTagMutabilityExclusionFiltersHasBeenSet; }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    void SetImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters = std::forward<ImageTagMutabilityExclusionFiltersT>(value); }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    Repository& WithImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { SetImageTagMutabilityExclusionFilters(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this;}
+    template<typename ImageTagMutabilityExclusionFiltersT = ImageTagMutabilityExclusionFilter>
+    Repository& AddImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters.emplace_back(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ImageScanningConfiguration& GetImageScanningConfiguration() const { return m_imageScanningConfiguration; }
     inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
@@ -159,6 +177,9 @@ namespace Model
 
     ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
     bool m_imageTagMutabilityHasBeenSet = false;
+
+    Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
+    bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet = false;

@@ -211,6 +211,11 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_ebsRootVolumeThroughput = jsonValue.GetInteger("EbsRootVolumeThroughput");
     m_ebsRootVolumeThroughputHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExtendedSupport"))
+  {
+    m_extendedSupport = jsonValue.GetBool("ExtendedSupport");
+    m_extendedSupportHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -436,6 +441,12 @@ JsonValue Cluster::Jsonize() const
   if(m_ebsRootVolumeThroughputHasBeenSet)
   {
    payload.WithInteger("EbsRootVolumeThroughput", m_ebsRootVolumeThroughput);
+
+  }
+
+  if(m_extendedSupportHasBeenSet)
+  {
+   payload.WithBool("ExtendedSupport", m_extendedSupport);
 
   }
 

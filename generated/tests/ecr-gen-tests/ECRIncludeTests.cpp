@@ -97,6 +97,8 @@
 #include <aws/ecr/model/ImageScanStatus.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
 #include <aws/ecr/model/ImageTagMutability.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilter.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilterType.h>
 #include <aws/ecr/model/InitiateLayerUploadRequest.h>
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
 #include <aws/ecr/model/InvalidLayerPartException.h>
