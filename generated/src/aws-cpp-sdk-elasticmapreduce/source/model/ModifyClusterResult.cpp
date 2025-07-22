@@ -30,6 +30,11 @@ ModifyClusterResult& ModifyClusterResult::operator =(const Aws::AmazonWebService
     m_stepConcurrencyLevel = jsonValue.GetInteger("StepConcurrencyLevel");
     m_stepConcurrencyLevelHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExtendedSupport"))
+  {
+    m_extendedSupport = jsonValue.GetBool("ExtendedSupport");
+    m_extendedSupportHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

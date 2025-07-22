@@ -43,6 +43,19 @@ namespace Aws
         static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
         static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
         static const int us_gov_east_1_HASH = HashingUtils::HashString("us-gov-east-1");
+        static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
+        static const int eu_south_2_HASH = HashingUtils::HashString("eu-south-2");
+        static const int il_central_1_HASH = HashingUtils::HashString("il-central-1");
+        static const int me_central_1_HASH = HashingUtils::HashString("me-central-1");
+        static const int ap_northeast_3_HASH = HashingUtils::HashString("ap-northeast-3");
+        static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
+        static const int ap_southeast_4_HASH = HashingUtils::HashString("ap-southeast-4");
+        static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
+        static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
+        static const int mx_central_1_HASH = HashingUtils::HashString("mx-central-1");
+        static const int ap_east_2_HASH = HashingUtils::HashString("ap-east-2");
+        static const int ap_south_2_HASH = HashingUtils::HashString("ap-south-2");
+        static const int eu_central_2_HASH = HashingUtils::HashString("eu-central-2");
 
 
         S3BucketRegion GetS3BucketRegionForName(const Aws::String& name)
@@ -140,6 +153,58 @@ namespace Aws
           {
             return S3BucketRegion::us_gov_east_1;
           }
+          else if (hashCode == ca_west_1_HASH)
+          {
+            return S3BucketRegion::ca_west_1;
+          }
+          else if (hashCode == eu_south_2_HASH)
+          {
+            return S3BucketRegion::eu_south_2;
+          }
+          else if (hashCode == il_central_1_HASH)
+          {
+            return S3BucketRegion::il_central_1;
+          }
+          else if (hashCode == me_central_1_HASH)
+          {
+            return S3BucketRegion::me_central_1;
+          }
+          else if (hashCode == ap_northeast_3_HASH)
+          {
+            return S3BucketRegion::ap_northeast_3;
+          }
+          else if (hashCode == ap_southeast_3_HASH)
+          {
+            return S3BucketRegion::ap_southeast_3;
+          }
+          else if (hashCode == ap_southeast_4_HASH)
+          {
+            return S3BucketRegion::ap_southeast_4;
+          }
+          else if (hashCode == ap_southeast_5_HASH)
+          {
+            return S3BucketRegion::ap_southeast_5;
+          }
+          else if (hashCode == ap_southeast_7_HASH)
+          {
+            return S3BucketRegion::ap_southeast_7;
+          }
+          else if (hashCode == mx_central_1_HASH)
+          {
+            return S3BucketRegion::mx_central_1;
+          }
+          else if (hashCode == ap_east_2_HASH)
+          {
+            return S3BucketRegion::ap_east_2;
+          }
+          else if (hashCode == ap_south_2_HASH)
+          {
+            return S3BucketRegion::ap_south_2;
+          }
+          else if (hashCode == eu_central_2_HASH)
+          {
+            return S3BucketRegion::eu_central_2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -202,6 +267,32 @@ namespace Aws
             return "us-gov-west-1";
           case S3BucketRegion::us_gov_east_1:
             return "us-gov-east-1";
+          case S3BucketRegion::ca_west_1:
+            return "ca-west-1";
+          case S3BucketRegion::eu_south_2:
+            return "eu-south-2";
+          case S3BucketRegion::il_central_1:
+            return "il-central-1";
+          case S3BucketRegion::me_central_1:
+            return "me-central-1";
+          case S3BucketRegion::ap_northeast_3:
+            return "ap-northeast-3";
+          case S3BucketRegion::ap_southeast_3:
+            return "ap-southeast-3";
+          case S3BucketRegion::ap_southeast_4:
+            return "ap-southeast-4";
+          case S3BucketRegion::ap_southeast_5:
+            return "ap-southeast-5";
+          case S3BucketRegion::ap_southeast_7:
+            return "ap-southeast-7";
+          case S3BucketRegion::mx_central_1:
+            return "mx-central-1";
+          case S3BucketRegion::ap_east_2:
+            return "ap-east-2";
+          case S3BucketRegion::ap_south_2:
+            return "ap-south-2";
+          case S3BucketRegion::eu_central_2:
+            return "eu-central-2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

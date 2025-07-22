@@ -59,6 +59,16 @@ namespace Model
     inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
     inline ModifyClusterRequest& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool GetExtendedSupport() const { return m_extendedSupport; }
+    inline bool ExtendedSupportHasBeenSet() const { return m_extendedSupportHasBeenSet; }
+    inline void SetExtendedSupport(bool value) { m_extendedSupportHasBeenSet = true; m_extendedSupport = value; }
+    inline ModifyClusterRequest& WithExtendedSupport(bool value) { SetExtendedSupport(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterId;
@@ -66,6 +76,9 @@ namespace Model
 
     int m_stepConcurrencyLevel{0};
     bool m_stepConcurrencyLevelHasBeenSet = false;
+
+    bool m_extendedSupport{false};
+    bool m_extendedSupportHasBeenSet = false;
   };
 
 } // namespace Model

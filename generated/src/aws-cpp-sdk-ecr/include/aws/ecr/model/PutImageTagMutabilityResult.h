@@ -7,6 +7,8 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/model/ImageTagMutability.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +67,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Returns a list of filters that were defined for a repository. These filters
+     * determine which image tags can override the default image tag mutability setting
+     * of the repository.</p>
+     */
+    inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const { return m_imageTagMutabilityExclusionFilters; }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    void SetImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters = std::forward<ImageTagMutabilityExclusionFiltersT>(value); }
+    template<typename ImageTagMutabilityExclusionFiltersT = Aws::Vector<ImageTagMutabilityExclusionFilter>>
+    PutImageTagMutabilityResult& WithImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { SetImageTagMutabilityExclusionFilters(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this;}
+    template<typename ImageTagMutabilityExclusionFiltersT = ImageTagMutabilityExclusionFilter>
+    PutImageTagMutabilityResult& AddImageTagMutabilityExclusionFilters(ImageTagMutabilityExclusionFiltersT&& value) { m_imageTagMutabilityExclusionFiltersHasBeenSet = true; m_imageTagMutabilityExclusionFilters.emplace_back(std::forward<ImageTagMutabilityExclusionFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -82,6 +99,9 @@ namespace Model
 
     ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
     bool m_imageTagMutabilityHasBeenSet = false;
+
+    Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
+    bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

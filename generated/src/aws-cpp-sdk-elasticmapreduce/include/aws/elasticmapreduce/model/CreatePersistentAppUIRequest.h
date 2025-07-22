@@ -90,8 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The profiler type for the persistent application user interface. Valid values
-     * are SHS, TEZUI, or YTS.</p>
+     * <p>The profiler type for the persistent application user interface.</p>
      */
     inline ProfilerType GetProfilerType() const { return m_profilerType; }
     inline bool ProfilerTypeHasBeenSet() const { return m_profilerTypeHasBeenSet; }

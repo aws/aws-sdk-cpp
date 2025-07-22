@@ -526,6 +526,16 @@ namespace Model
     inline void SetEbsRootVolumeThroughput(int value) { m_ebsRootVolumeThroughputHasBeenSet = true; m_ebsRootVolumeThroughput = value; }
     inline RunJobFlowRequest& WithEbsRootVolumeThroughput(int value) { SetEbsRootVolumeThroughput(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool GetExtendedSupport() const { return m_extendedSupport; }
+    inline bool ExtendedSupportHasBeenSet() const { return m_extendedSupportHasBeenSet; }
+    inline void SetExtendedSupport(bool value) { m_extendedSupportHasBeenSet = true; m_extendedSupport = value; }
+    inline RunJobFlowRequest& WithExtendedSupport(bool value) { SetExtendedSupport(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -620,6 +630,9 @@ namespace Model
 
     int m_ebsRootVolumeThroughput{0};
     bool m_ebsRootVolumeThroughputHasBeenSet = false;
+
+    bool m_extendedSupport{false};
+    bool m_extendedSupportHasBeenSet = false;
   };
 
 } // namespace Model

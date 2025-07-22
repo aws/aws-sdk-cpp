@@ -54,6 +54,15 @@ RepositoryCreationTemplate& RepositoryCreationTemplate::operator =(JsonView json
     m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
     m_imageTagMutabilityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("imageTagMutabilityExclusionFilters"))
+  {
+    Aws::Utils::Array<JsonView> imageTagMutabilityExclusionFiltersJsonList = jsonValue.GetArray("imageTagMutabilityExclusionFilters");
+    for(unsigned imageTagMutabilityExclusionFiltersIndex = 0; imageTagMutabilityExclusionFiltersIndex < imageTagMutabilityExclusionFiltersJsonList.GetLength(); ++imageTagMutabilityExclusionFiltersIndex)
+    {
+      m_imageTagMutabilityExclusionFilters.push_back(imageTagMutabilityExclusionFiltersJsonList[imageTagMutabilityExclusionFiltersIndex].AsObject());
+    }
+    m_imageTagMutabilityExclusionFiltersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("repositoryPolicy"))
   {
     m_repositoryPolicy = jsonValue.GetString("repositoryPolicy");
@@ -127,6 +136,17 @@ JsonValue RepositoryCreationTemplate::Jsonize() const
   if(m_imageTagMutabilityHasBeenSet)
   {
    payload.WithString("imageTagMutability", ImageTagMutabilityMapper::GetNameForImageTagMutability(m_imageTagMutability));
+  }
+
+  if(m_imageTagMutabilityExclusionFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imageTagMutabilityExclusionFiltersJsonList(m_imageTagMutabilityExclusionFilters.size());
+   for(unsigned imageTagMutabilityExclusionFiltersIndex = 0; imageTagMutabilityExclusionFiltersIndex < imageTagMutabilityExclusionFiltersJsonList.GetLength(); ++imageTagMutabilityExclusionFiltersIndex)
+   {
+     imageTagMutabilityExclusionFiltersJsonList[imageTagMutabilityExclusionFiltersIndex].AsObject(m_imageTagMutabilityExclusionFilters[imageTagMutabilityExclusionFiltersIndex].Jsonize());
+   }
+   payload.WithArray("imageTagMutabilityExclusionFilters", std::move(imageTagMutabilityExclusionFiltersJsonList));
+
   }
 
   if(m_repositoryPolicyHasBeenSet)
