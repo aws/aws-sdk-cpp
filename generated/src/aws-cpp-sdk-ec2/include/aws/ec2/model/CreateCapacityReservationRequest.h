@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The instance type for which to reserve capacity.</p>  <p>You can
      * request future-dated Capacity Reservations for instance types in the C, M, R, I,
-     * and T instance families only.</p>  <p>For more information, see <a
+     * T, and G instance families only.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
@@ -130,9 +130,9 @@ namespace Model
     /**
      * <p>The number of instances for which to reserve capacity.</p>  <p>You can
      * request future-dated Capacity Reservations for an instance count with a minimum
-     * of 100 vCPUs. For example, if you request a future-dated Capacity Reservation
-     * for <code>m5.xlarge</code> instances, you must request at least 25 instances
-     * (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>  <p>Valid range: 1 - 1000</p>
+     * of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for
+     * <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16
+     * * m5.xlarge = 64 vCPUs</i>).</p>  <p>Valid range: 1 - 1000</p>
      */
     inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }

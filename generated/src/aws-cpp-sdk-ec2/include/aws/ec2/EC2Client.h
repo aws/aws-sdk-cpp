@@ -20655,9 +20655,9 @@ namespace EC2
          * <code>TargetId</code>, which can represent an individual account, or all the
          * accounts that fall under the specified organizational unit (OU) or root (the
          * entire Amazon Web Services Organization).</p> <p>The report is saved to your
-         * specified S3 bucket, using the following path structure (with the <i>italicized
-         * placeholders</i> representing your specific values):</p> <p>
-         * <code>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</code>
+         * specified S3 bucket, using the following path structure (with the capitalized
+         * placeholders representing your specific values):</p> <p>
+         * <code>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</code>
          * </p> <p class="title"> <b>Prerequisites for generating a report</b> </p> <ul>
          * <li> <p>The <code>StartDeclarativePoliciesReport</code> API can only be called
          * by the management account or delegated administrators for the organization.</p>
@@ -20838,8 +20838,11 @@ namespace EC2
          * API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
          * and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>When you stop an instance, we shut it down.</p> <p>You can use the Stop
-         * operation together with the Hibernate parameter to hibernate an instance if the
+         * <p>When you stop or hibernate an instance, we shut it down. By default, this
+         * includes a graceful operating system (OS) shutdown. To bypass the graceful
+         * shutdown, use the <code>skipOsShutdown</code> parameter; however, this might
+         * risk data integrity.</p> <p>You can use the StopInstances operation together
+         * with the <code>Hibernate</code> parameter to hibernate an instance if the
          * instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
          * for hibernation</a> and meets the <a
@@ -20850,9 +20853,9 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
          * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If your
          * instance appears stuck in the <code>stopping</code> state, there might be an
-         * issue with the underlying host computer. You can use the Stop operation together
-         * with the Force parameter to force stop your instance. For more information, see
-         * <a
+         * issue with the underlying host computer. You can use the StopInstances operation
+         * together with the Force parameter to force stop your instance. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
          * Amazon EC2 instance stop issues</a> in the <i>Amazon EC2 User Guide</i>.</p>
          * <p>Stopping and hibernating an instance differs from rebooting or terminating
@@ -20944,18 +20947,26 @@ namespace EC2
          * for termination protection.</p> </li> </ul> <p>Terminated instances remain
          * visible after termination (for approximately one hour).</p> <p>By default,
          * Amazon EC2 deletes all EBS volumes that were attached when the instance
-         * launched. Volumes attached after instance launch continue running.</p> <p>You
-         * can stop, start, and terminate EBS-backed instances. You can only terminate
-         * instance store-backed instances. What happens to an instance differs if you stop
-         * or terminate it. For example, when you stop an instance, the root device and any
-         * other devices attached to the instance persist. When you terminate an instance,
-         * any attached EBS volumes with the <code>DeleteOnTermination</code> block device
-         * mapping parameter set to <code>true</code> are automatically deleted. For more
-         * information about the differences between stopping and terminating instances,
-         * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
-         * about troubleshooting, see <a
+         * launched. Volumes attached after instance launch continue running.</p> <p>By
+         * default, the TerminateInstances operation includes a graceful operating system
+         * (OS) shutdown. To bypass the graceful shutdown, use the
+         * <code>skipOsShutdown</code> parameter; however, this might risk data
+         * integrity.</p> <p>You can stop, start, and terminate EBS-backed instances. You
+         * can only terminate instance store-backed instances. What happens to an instance
+         * differs if you stop or terminate it. For example, when you stop an instance, the
+         * root device and any other devices attached to the instance persist. When you
+         * terminate an instance, any attached EBS volumes with the
+         * <code>DeleteOnTermination</code> block device mapping parameter set to
+         * <code>true</code> are automatically deleted. For more information about the
+         * differences between stopping and terminating instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+         * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When
+         * you terminate an instance, we attempt to terminate it forcibly after a short
+         * while. If your instance appears stuck in the shutting-down state after a period
+         * of time, there might be an issue with the underlying host computer. For more
+         * information about terminating and troubleshooting terminating your instances,
+         * see <a href="https://docs.aws.amazon.com/">Terminate Amazon EC2 instances</a>
+         * and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

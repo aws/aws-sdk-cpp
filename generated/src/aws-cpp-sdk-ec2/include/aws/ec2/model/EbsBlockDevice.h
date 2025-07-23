@@ -170,9 +170,15 @@ namespace Model
      * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
      * specified, Amazon EC2 automatically selects an Availability Zone within the
      * Region.</p> <p>This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html">CreateFleet</a>,
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>,
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
@@ -259,9 +265,15 @@ namespace Model
      * <code>AvailabilityZoneId</code> can be specified, but not both. If neither is
      * specified, Amazon EC2 automatically selects an Availability Zone within the
      * Region.</p> <p>This parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html">CreateFleet</a>,
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>,
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */

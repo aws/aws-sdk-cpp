@@ -54,6 +54,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to bypass the graceful OS shutdown process when the
+     * instance is terminated.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetSkipOsShutdown() const { return m_skipOsShutdown; }
+    inline bool SkipOsShutdownHasBeenSet() const { return m_skipOsShutdownHasBeenSet; }
+    inline void SetSkipOsShutdown(bool value) { m_skipOsShutdownHasBeenSet = true; m_skipOsShutdown = value; }
+    inline TerminateInstancesRequest& WithSkipOsShutdown(bool value) { SetSkipOsShutdown(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -68,6 +79,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet = false;
+
+    bool m_skipOsShutdown{false};
+    bool m_skipOsShutdownHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

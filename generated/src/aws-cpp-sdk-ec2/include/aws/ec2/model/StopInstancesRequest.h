@@ -57,13 +57,27 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p> Default:
-     * <code>false</code> </p>
+     * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * Default: <code>false</code> </p>
      */
     inline bool GetHibernate() const { return m_hibernate; }
     inline bool HibernateHasBeenSet() const { return m_hibernateHasBeenSet; }
     inline void SetHibernate(bool value) { m_hibernateHasBeenSet = true; m_hibernate = value; }
     inline StopInstancesRequest& WithHibernate(bool value) { SetHibernate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to bypass the graceful OS shutdown process when the
+     * instance is stopped.</p>  <p>Bypassing the graceful OS shutdown might
+     * result in data loss or corruption (for example, memory contents not flushed to
+     * disk or loss of in-flight IOs) or skipped shutdown scripts.</p> 
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetSkipOsShutdown() const { return m_skipOsShutdown; }
+    inline bool SkipOsShutdownHasBeenSet() const { return m_skipOsShutdownHasBeenSet; }
+    inline void SetSkipOsShutdown(bool value) { m_skipOsShutdownHasBeenSet = true; m_skipOsShutdown = value; }
+    inline StopInstancesRequest& WithSkipOsShutdown(bool value) { SetSkipOsShutdown(value); return *this;}
     ///@}
 
     ///@{
@@ -104,6 +118,9 @@ namespace Model
 
     bool m_hibernate{false};
     bool m_hibernateHasBeenSet = false;
+
+    bool m_skipOsShutdown{false};
+    bool m_skipOsShutdownHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

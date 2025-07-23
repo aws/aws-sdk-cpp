@@ -216,6 +216,18 @@ namespace Model
     template<typename ArnT = Aws::String>
     DeviceSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The user ID of the most recent session on the device.</p>
+     */
+    inline const Aws::String& GetLastUserId() const { return m_lastUserId; }
+    inline bool LastUserIdHasBeenSet() const { return m_lastUserIdHasBeenSet; }
+    template<typename LastUserIdT = Aws::String>
+    void SetLastUserId(LastUserIdT&& value) { m_lastUserIdHasBeenSet = true; m_lastUserId = std::forward<LastUserIdT>(value); }
+    template<typename LastUserIdT = Aws::String>
+    DeviceSummary& WithLastUserId(LastUserIdT&& value) { SetLastUserId(std::forward<LastUserIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -262,6 +274,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_lastUserId;
+    bool m_lastUserIdHasBeenSet = false;
   };
 
 } // namespace Model

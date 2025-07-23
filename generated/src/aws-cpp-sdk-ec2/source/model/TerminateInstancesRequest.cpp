@@ -25,6 +25,11 @@ Aws::String TerminateInstancesRequest::SerializePayload() const
     }
   }
 
+  if(m_skipOsShutdownHasBeenSet)
+  {
+    ss << "SkipOsShutdown=" << std::boolalpha << m_skipOsShutdown << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

@@ -85,6 +85,12 @@ Aws::String StartJobRunRequest::SerializePayload() const
    payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
   }
 
+  if(m_executionRoleSessionPolicyHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleSessionPolicy", m_executionRoleSessionPolicy);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

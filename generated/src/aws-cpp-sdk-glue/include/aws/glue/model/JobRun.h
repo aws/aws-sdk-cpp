@@ -492,6 +492,20 @@ namespace Model
     template<typename StateDetailT = Aws::String>
     JobRun& WithStateDetail(StateDetailT&& value) { SetStateDetail(std::forward<StateDetailT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This inline session policy to the StartJobRun API allows you to dynamically
+     * restrict the permissions of the specified execution role for the scope of the
+     * job, without requiring the creation of additional IAM roles.</p>
+     */
+    inline const Aws::String& GetExecutionRoleSessionPolicy() const { return m_executionRoleSessionPolicy; }
+    inline bool ExecutionRoleSessionPolicyHasBeenSet() const { return m_executionRoleSessionPolicyHasBeenSet; }
+    template<typename ExecutionRoleSessionPolicyT = Aws::String>
+    void SetExecutionRoleSessionPolicy(ExecutionRoleSessionPolicyT&& value) { m_executionRoleSessionPolicyHasBeenSet = true; m_executionRoleSessionPolicy = std::forward<ExecutionRoleSessionPolicyT>(value); }
+    template<typename ExecutionRoleSessionPolicyT = Aws::String>
+    JobRun& WithExecutionRoleSessionPolicy(ExecutionRoleSessionPolicyT&& value) { SetExecutionRoleSessionPolicy(std::forward<ExecutionRoleSessionPolicyT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -577,6 +591,9 @@ namespace Model
 
     Aws::String m_stateDetail;
     bool m_stateDetailHasBeenSet = false;
+
+    Aws::String m_executionRoleSessionPolicy;
+    bool m_executionRoleSessionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

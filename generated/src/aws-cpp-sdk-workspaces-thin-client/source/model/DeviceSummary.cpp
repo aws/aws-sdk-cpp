@@ -100,6 +100,11 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastUserId"))
+  {
+    m_lastUserId = jsonValue.GetString("lastUserId");
+    m_lastUserIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -188,6 +193,12 @@ JsonValue DeviceSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_lastUserIdHasBeenSet)
+  {
+   payload.WithString("lastUserId", m_lastUserId);
 
   }
 
