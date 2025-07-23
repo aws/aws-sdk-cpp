@@ -125,6 +125,11 @@ Device& Device::operator =(JsonView jsonValue)
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastUserId"))
+  {
+    m_lastUserId = jsonValue.GetString("lastUserId");
+    m_lastUserIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -241,6 +246,12 @@ JsonValue Device::Jsonize() const
   if(m_kmsKeyArnHasBeenSet)
   {
    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+
+  }
+
+  if(m_lastUserIdHasBeenSet)
+  {
+   payload.WithString("lastUserId", m_lastUserId);
 
   }
 

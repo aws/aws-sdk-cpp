@@ -277,6 +277,18 @@ namespace Model
     template<typename KmsKeyArnT = Aws::String>
     Device& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The user ID of the most recent session on the device.</p>
+     */
+    inline const Aws::String& GetLastUserId() const { return m_lastUserId; }
+    inline bool LastUserIdHasBeenSet() const { return m_lastUserIdHasBeenSet; }
+    template<typename LastUserIdT = Aws::String>
+    void SetLastUserId(LastUserIdT&& value) { m_lastUserIdHasBeenSet = true; m_lastUserId = std::forward<LastUserIdT>(value); }
+    template<typename LastUserIdT = Aws::String>
+    Device& WithLastUserId(LastUserIdT&& value) { SetLastUserId(std::forward<LastUserIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -338,6 +350,9 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
+
+    Aws::String m_lastUserId;
+    bool m_lastUserIdHasBeenSet = false;
   };
 
 } // namespace Model

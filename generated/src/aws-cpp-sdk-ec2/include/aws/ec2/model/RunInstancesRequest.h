@@ -95,8 +95,8 @@ namespace Model
     ///@{
     /**
      * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
-     * EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html">Amazon
+     * EC2 Instance Types Guide</a>.</p>
      */
     inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -154,13 +154,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the key pair. You can create a key pair using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     *  <p>If you do not specify a key pair, you can't connect to the
-     * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> 
+     * <p>The name of the key pair. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html">Create
+     * a key pair for your EC2 instance</a>.</p>  <p>If you do not specify a
+     * key pair, you can't connect to the instance unless you choose an AMI that is
+     * configured to allow users another way to log in.</p> 
      */
     inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
@@ -247,10 +245,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the security groups. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-     * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface instead of using this parameter.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -298,8 +295,8 @@ namespace Model
      * <p>The user data to make available to the instance. User data must be
      * base64-encoded. Depending on the tool or SDK that you're using, the
      * base64-encoding might be performed for you. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
-     * with instance user data</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands at launch using instance user data</a>.</p>
      */
     inline const Aws::String& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
@@ -474,8 +471,8 @@ namespace Model
     ///@{
     /**
      * <p>The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the Instance Metadata Service options</a>.</p>
      */
     inline const InstanceMetadataOptionsRequest& GetMetadataOptions() const { return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -489,9 +486,8 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
-     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/">Amazon Web Services
+     * Nitro Enclaves User Guide</a>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
      */
     inline const EnclaveOptionsRequest& GetEnclaveOptions() const { return m_enclaveOptions; }
@@ -532,8 +528,8 @@ namespace Model
     /**
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * protection</a>. </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+     * stop protection for your EC2 instances</a>.</p>
      */
     inline bool GetDisableApiStop() const { return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
@@ -649,8 +645,9 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+     * idempotency in Amazon EC2 API requests</a>.</p> <p>Constraints: Maximum 64 ASCII
+     * characters</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
