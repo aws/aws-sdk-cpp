@@ -104,7 +104,7 @@ WAFV2Client::WAFV2Client(const WAFV2::WAFV2ClientConfiguration& clientConfigurat
                          std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WAFV2ErrorMarshaller>(ALLOCATION_TAG)),

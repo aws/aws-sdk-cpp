@@ -63,7 +63,7 @@
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = "Client")
-#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig)")
 #set($s3ExpressIdentityProviderParam = "clientConfiguration.identityProviderSupplier(*this)")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
 #set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())

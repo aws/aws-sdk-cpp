@@ -63,7 +63,7 @@ Cloud9Client::Cloud9Client(const Cloud9::Cloud9ClientConfiguration& clientConfig
                            std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Cloud9ErrorMarshaller>(ALLOCATION_TAG)),

@@ -54,7 +54,7 @@ MarketplaceDeploymentClient::MarketplaceDeploymentClient(const MarketplaceDeploy
                                                          std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MarketplaceDeploymentErrorMarshaller>(ALLOCATION_TAG)),

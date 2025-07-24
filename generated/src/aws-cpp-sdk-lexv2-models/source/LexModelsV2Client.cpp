@@ -152,7 +152,7 @@ LexModelsV2Client::LexModelsV2Client(const LexModelsV2::LexModelsV2ClientConfigu
                                      std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),

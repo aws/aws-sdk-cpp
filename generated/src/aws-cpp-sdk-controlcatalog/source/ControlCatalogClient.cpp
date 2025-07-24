@@ -56,7 +56,7 @@ ControlCatalogClient::ControlCatalogClient(const ControlCatalog::ControlCatalogC
                                            std::shared_ptr<ControlCatalogEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ControlCatalogErrorMarshaller>(ALLOCATION_TAG)),

@@ -73,7 +73,7 @@ ACMPCAClient::ACMPCAClient(const ACMPCA::ACMPCAClientConfiguration& clientConfig
                            std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),

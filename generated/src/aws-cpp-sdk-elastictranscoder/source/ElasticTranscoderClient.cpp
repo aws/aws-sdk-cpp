@@ -66,7 +66,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const ElasticTranscoder::Elasti
                                                  std::shared_ptr<ElasticTranscoderEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),

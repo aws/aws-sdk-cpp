@@ -67,7 +67,7 @@ TimestreamInfluxDBClient::TimestreamInfluxDBClient(const TimestreamInfluxDB::Tim
                                                    std::shared_ptr<TimestreamInfluxDBEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamInfluxDBErrorMarshaller>(ALLOCATION_TAG)),

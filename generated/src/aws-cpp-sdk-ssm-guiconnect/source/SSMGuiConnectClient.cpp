@@ -53,7 +53,7 @@ SSMGuiConnectClient::SSMGuiConnectClient(const SSMGuiConnect::SSMGuiConnectClien
                                          std::shared_ptr<SSMGuiConnectEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSMGuiConnectErrorMarshaller>(ALLOCATION_TAG)),

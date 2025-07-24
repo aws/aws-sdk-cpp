@@ -54,7 +54,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const SageMakerRuntime::SageMaker
                                                std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),

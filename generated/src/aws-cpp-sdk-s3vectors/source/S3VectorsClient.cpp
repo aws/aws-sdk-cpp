@@ -66,7 +66,7 @@ S3VectorsClient::S3VectorsClient(const S3Vectors::S3VectorsClientConfiguration& 
                                  std::shared_ptr<S3VectorsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<S3VectorsErrorMarshaller>(ALLOCATION_TAG)),
