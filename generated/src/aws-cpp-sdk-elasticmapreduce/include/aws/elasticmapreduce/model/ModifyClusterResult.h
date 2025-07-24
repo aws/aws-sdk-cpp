@@ -42,6 +42,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool GetExtendedSupport() const { return m_extendedSupport; }
+    inline void SetExtendedSupport(bool value) { m_extendedSupportHasBeenSet = true; m_extendedSupport = value; }
+    inline ModifyClusterResult& WithExtendedSupport(bool value) { SetExtendedSupport(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -53,6 +62,9 @@ namespace Model
 
     int m_stepConcurrencyLevel{0};
     bool m_stepConcurrencyLevelHasBeenSet = false;
+
+    bool m_extendedSupport{false};
+    bool m_extendedSupportHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

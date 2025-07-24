@@ -30,6 +30,11 @@ Aws::String StopInstancesRequest::SerializePayload() const
     ss << "Hibernate=" << std::boolalpha << m_hibernate << "&";
   }
 
+  if(m_skipOsShutdownHasBeenSet)
+  {
+    ss << "SkipOsShutdown=" << std::boolalpha << m_skipOsShutdown << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

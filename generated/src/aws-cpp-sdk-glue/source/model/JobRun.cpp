@@ -173,6 +173,11 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_stateDetail = jsonValue.GetString("StateDetail");
     m_stateDetailHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExecutionRoleSessionPolicy"))
+  {
+    m_executionRoleSessionPolicy = jsonValue.GetString("ExecutionRoleSessionPolicy");
+    m_executionRoleSessionPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -348,6 +353,12 @@ JsonValue JobRun::Jsonize() const
   if(m_stateDetailHasBeenSet)
   {
    payload.WithString("StateDetail", m_stateDetail);
+
+  }
+
+  if(m_executionRoleSessionPolicyHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleSessionPolicy", m_executionRoleSessionPolicy);
 
   }
 

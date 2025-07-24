@@ -240,6 +240,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   }
 
+  if(m_extendedSupportHasBeenSet)
+  {
+   payload.WithBool("ExtendedSupport", m_extendedSupport);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

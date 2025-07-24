@@ -6,8 +6,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lambda/LambdaErrors.h>
-#include <aws/lambda/model/EFSMountConnectivityException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
+#include <aws/lambda/model/EFSMountConnectivityException.h>
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
@@ -34,9 +34,9 @@
 #include <aws/lambda/model/EC2UnexpectedException.h>
 #include <aws/lambda/model/InvalidZipFileException.h>
 #include <aws/lambda/model/UnsupportedMediaTypeException.h>
-#include <aws/lambda/model/EFSMountFailureException.h>
-#include <aws/lambda/model/KMSDisabledException.h>
 #include <aws/lambda/model/KMSAccessDeniedException.h>
+#include <aws/lambda/model/KMSDisabledException.h>
+#include <aws/lambda/model/EFSMountFailureException.h>
 #include <aws/lambda/model/EC2ThrottledException.h>
 #include <aws/lambda/model/ResourceConflictException.h>
 #include <aws/lambda/model/ENILimitReachedException.h>
@@ -54,16 +54,16 @@ namespace Aws
 {
 namespace Lambda
 {
-template<> AWS_LAMBDA_API EFSMountConnectivityException LambdaError::GetModeledError()
-{
-  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_CONNECTIVITY);
-  return EFSMountConnectivityException(this->GetJsonPayload().View());
-}
-
 template<> AWS_LAMBDA_API ResourceNotReadyException LambdaError::GetModeledError()
 {
   assert(this->GetErrorType() == LambdaErrors::RESOURCE_NOT_READY);
   return ResourceNotReadyException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LAMBDA_API EFSMountConnectivityException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_CONNECTIVITY);
+  return EFSMountConnectivityException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API ResourceNotFoundException LambdaError::GetModeledError()
@@ -222,10 +222,10 @@ template<> AWS_LAMBDA_API UnsupportedMediaTypeException LambdaError::GetModeledE
   return UnsupportedMediaTypeException(this->GetJsonPayload().View());
 }
 
-template<> AWS_LAMBDA_API EFSMountFailureException LambdaError::GetModeledError()
+template<> AWS_LAMBDA_API KMSAccessDeniedException LambdaError::GetModeledError()
 {
-  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_FAILURE);
-  return EFSMountFailureException(this->GetJsonPayload().View());
+  assert(this->GetErrorType() == LambdaErrors::K_M_S_ACCESS_DENIED);
+  return KMSAccessDeniedException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API KMSDisabledException LambdaError::GetModeledError()
@@ -234,10 +234,10 @@ template<> AWS_LAMBDA_API KMSDisabledException LambdaError::GetModeledError()
   return KMSDisabledException(this->GetJsonPayload().View());
 }
 
-template<> AWS_LAMBDA_API KMSAccessDeniedException LambdaError::GetModeledError()
+template<> AWS_LAMBDA_API EFSMountFailureException LambdaError::GetModeledError()
 {
-  assert(this->GetErrorType() == LambdaErrors::K_M_S_ACCESS_DENIED);
-  return KMSAccessDeniedException(this->GetJsonPayload().View());
+  assert(this->GetErrorType() == LambdaErrors::E_F_S_MOUNT_FAILURE);
+  return EFSMountFailureException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API EC2ThrottledException LambdaError::GetModeledError()
@@ -285,8 +285,8 @@ template<> AWS_LAMBDA_API CodeStorageExceededException LambdaError::GetModeledEr
 namespace LambdaErrorMapper
 {
 
-static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
+static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
 static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
@@ -311,9 +311,9 @@ static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntime
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
 static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
-static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
-static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
+static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
+static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
@@ -327,13 +327,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_NOT_READY_HASH)
+  if (hashCode == RESOURCE_NOT_READY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH)
   {
@@ -431,17 +431,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == E_F_S_MOUNT_FAILURE_HASH)
+  else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), RetryableType::RETRYABLE);
   }
   else if (hashCode == K_M_S_DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), RetryableType::RETRYABLE);
   }
-  else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
+  else if (hashCode == E_F_S_MOUNT_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), RetryableType::RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == E_C2_THROTTLED_HASH)
   {

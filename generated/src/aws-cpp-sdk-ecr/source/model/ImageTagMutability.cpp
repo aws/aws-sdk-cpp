@@ -22,6 +22,8 @@ namespace Aws
 
         static const int MUTABLE_HASH = HashingUtils::HashString("MUTABLE");
         static const int IMMUTABLE_HASH = HashingUtils::HashString("IMMUTABLE");
+        static const int IMMUTABLE_WITH_EXCLUSION_HASH = HashingUtils::HashString("IMMUTABLE_WITH_EXCLUSION");
+        static const int MUTABLE_WITH_EXCLUSION_HASH = HashingUtils::HashString("MUTABLE_WITH_EXCLUSION");
 
 
         ImageTagMutability GetImageTagMutabilityForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == IMMUTABLE_HASH)
           {
             return ImageTagMutability::IMMUTABLE;
+          }
+          else if (hashCode == IMMUTABLE_WITH_EXCLUSION_HASH)
+          {
+            return ImageTagMutability::IMMUTABLE_WITH_EXCLUSION;
+          }
+          else if (hashCode == MUTABLE_WITH_EXCLUSION_HASH)
+          {
+            return ImageTagMutability::MUTABLE_WITH_EXCLUSION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "MUTABLE";
           case ImageTagMutability::IMMUTABLE:
             return "IMMUTABLE";
+          case ImageTagMutability::IMMUTABLE_WITH_EXCLUSION:
+            return "IMMUTABLE_WITH_EXCLUSION";
+          case ImageTagMutability::MUTABLE_WITH_EXCLUSION:
+            return "MUTABLE_WITH_EXCLUSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
