@@ -27,7 +27,8 @@
 
 using namespace PerformanceTest::Reporting;
 
-struct RequestContext {
+struct PerformanceTest::Reporting::RequestContext {
+  Aws::Utils::UUID requestId{Aws::Utils::UUID::RandomUUID()};
   Aws::String serviceName;
   Aws::String requestName;
   std::shared_ptr<const Aws::Http::HttpRequest> request;
@@ -107,8 +108,10 @@ void JsonReportingMetrics::AddPerformanceRecord(const Aws::String& serviceName, 
 
 void* JsonReportingMetrics::OnRequestStarted(const Aws::String&, const Aws::String&,
                                              const std::shared_ptr<const Aws::Http::HttpRequest>&) const {
-  auto context = Aws::New<RequestContext>("RequestContext");
-  return context;
+  auto context = Aws::MakeUnique<RequestContext>("RequestContext");
+  auto requestID = context->requestId;
+  m_requestContexts.emplace(requestID, std::move(context));
+  return m_requestContexts[requestID].get();
 }
 
 void JsonReportingMetrics::OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName,
@@ -136,7 +139,7 @@ void JsonReportingMetrics::OnFinish(const Aws::String&, const Aws::String&, cons
     AddPerformanceRecord(requestContext->serviceName, requestContext->requestName, requestContext->request, requestContext->durationMs);
   }
 
-  Aws::Delete(requestContext);
+  m_requestContexts.erase(requestContext->requestId);
 }
 
 void JsonReportingMetrics::DumpJson() const {
