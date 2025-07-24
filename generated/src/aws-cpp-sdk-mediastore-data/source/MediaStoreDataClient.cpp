@@ -55,7 +55,7 @@ MediaStoreDataClient::MediaStoreDataClient(const MediaStoreData::MediaStoreDataC
                                            std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),

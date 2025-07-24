@@ -1305,3 +1305,25 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }
+
+TEST_F(EnvironmentModifyingTest, TestDefaultAWSCredentialsProviderChainWithConfig)
+{
+  // Create a credentials file with a custom profile
+  Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  credsFile << "[custom-profile]" << std::endl;
+  credsFile << "aws_access_key_id = CustomProfileAccessKey" << std::endl;
+  credsFile << "aws_secret_access_key = CustomProfileSecretKey" << std::endl;
+  credsFile.close();
+
+  // Create config with custom profile
+  Aws::Client::ClientConfiguration::CredentialProviderConfiguration config;
+  config.profile = "custom-profile";
+
+  // Test the constructor with config
+  DefaultAWSCredentialsProviderChain providerChain(config);
+
+  // Verify it uses the custom profile
+  AWSCredentials creds = providerChain.GetAWSCredentials();
+  EXPECT_STREQ("CustomProfileAccessKey", creds.GetAWSAccessKeyId().c_str());
+  EXPECT_STREQ("CustomProfileSecretKey", creds.GetAWSSecretKey().c_str());
+}

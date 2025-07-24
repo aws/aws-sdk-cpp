@@ -119,7 +119,7 @@ VPCLatticeClient::VPCLatticeClient(const VPCLattice::VPCLatticeClientConfigurati
                                    std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VPCLatticeErrorMarshaller>(ALLOCATION_TAG)),

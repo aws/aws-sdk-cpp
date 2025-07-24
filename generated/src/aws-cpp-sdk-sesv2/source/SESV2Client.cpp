@@ -147,7 +147,7 @@ SESV2Client::SESV2Client(const SESV2::SESV2ClientConfiguration& clientConfigurat
                          std::shared_ptr<SESV2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),

@@ -65,6 +65,8 @@ namespace Aws
              */
             DefaultAWSCredentialsProviderChain();
 
+            DefaultAWSCredentialsProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config);
+
             DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain);
         };
 

@@ -126,7 +126,7 @@ OpenSearchServiceClient::OpenSearchServiceClient(const OpenSearchService::OpenSe
                                                  std::shared_ptr<OpenSearchServiceEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OpenSearchServiceErrorMarshaller>(ALLOCATION_TAG)),

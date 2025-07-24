@@ -118,7 +118,7 @@ LambdaClient::LambdaClient(const Lambda::LambdaClientConfiguration& clientConfig
                            std::shared_ptr<LambdaEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),

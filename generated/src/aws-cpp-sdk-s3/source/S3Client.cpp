@@ -223,7 +223,7 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
                    std::shared_ptr<S3EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
-                                                                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                                                 clientConfiguration.identityProviderSupplier(*this),
                                                                 SERVICE_NAME,
                                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region),
