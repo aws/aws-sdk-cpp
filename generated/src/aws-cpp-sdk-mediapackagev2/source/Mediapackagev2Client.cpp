@@ -80,7 +80,7 @@ Mediapackagev2Client::Mediapackagev2Client(const mediapackagev2::Mediapackagev2C
                                            std::shared_ptr<Mediapackagev2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Mediapackagev2ErrorMarshaller>(ALLOCATION_TAG)),

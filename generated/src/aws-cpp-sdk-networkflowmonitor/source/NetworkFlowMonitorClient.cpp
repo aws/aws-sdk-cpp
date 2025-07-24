@@ -75,7 +75,7 @@ NetworkFlowMonitorClient::NetworkFlowMonitorClient(const NetworkFlowMonitor::Net
                                                    std::shared_ptr<NetworkFlowMonitorEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkFlowMonitorErrorMarshaller>(ALLOCATION_TAG)),
