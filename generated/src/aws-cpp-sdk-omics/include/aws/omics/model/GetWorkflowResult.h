@@ -13,6 +13,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/DefinitionRepositoryDetails.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
 
@@ -251,6 +252,44 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The README content for the workflow, providing documentation and usage
+     * information.</p>
+     */
+    inline const Aws::String& GetReadme() const { return m_readme; }
+    template<typename ReadmeT = Aws::String>
+    void SetReadme(ReadmeT&& value) { m_readmeHasBeenSet = true; m_readme = std::forward<ReadmeT>(value); }
+    template<typename ReadmeT = Aws::String>
+    GetWorkflowResult& WithReadme(ReadmeT&& value) { SetReadme(std::forward<ReadmeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about the source code repository that hosts the workflow definition
+     * files.</p>
+     */
+    inline const DefinitionRepositoryDetails& GetDefinitionRepositoryDetails() const { return m_definitionRepositoryDetails; }
+    template<typename DefinitionRepositoryDetailsT = DefinitionRepositoryDetails>
+    void SetDefinitionRepositoryDetails(DefinitionRepositoryDetailsT&& value) { m_definitionRepositoryDetailsHasBeenSet = true; m_definitionRepositoryDetails = std::forward<DefinitionRepositoryDetailsT>(value); }
+    template<typename DefinitionRepositoryDetailsT = DefinitionRepositoryDetails>
+    GetWorkflowResult& WithDefinitionRepositoryDetails(DefinitionRepositoryDetailsT&& value) { SetDefinitionRepositoryDetails(std::forward<DefinitionRepositoryDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The path to the workflow README markdown file within the repository. This
+     * file provides documentation and usage information for the workflow. If not
+     * specified, the <code>README.md</code> file from the root directory of the
+     * repository will be used.</p>
+     */
+    inline const Aws::String& GetReadmePath() const { return m_readmePath; }
+    template<typename ReadmePathT = Aws::String>
+    void SetReadmePath(ReadmePathT&& value) { m_readmePathHasBeenSet = true; m_readmePath = std::forward<ReadmePathT>(value); }
+    template<typename ReadmePathT = Aws::String>
+    GetWorkflowResult& WithReadmePath(ReadmePathT&& value) { SetReadmePath(std::forward<ReadmePathT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -316,6 +355,15 @@ namespace Model
 
     Aws::String m_uuid;
     bool m_uuidHasBeenSet = false;
+
+    Aws::String m_readme;
+    bool m_readmeHasBeenSet = false;
+
+    DefinitionRepositoryDetails m_definitionRepositoryDetails;
+    bool m_definitionRepositoryDetailsHasBeenSet = false;
+
+    Aws::String m_readmePath;
+    bool m_readmePathHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -132,6 +132,21 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
     m_uuid = jsonValue.GetString("uuid");
     m_uuidHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("readme"))
+  {
+    m_readme = jsonValue.GetString("readme");
+    m_readmeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("definitionRepositoryDetails"))
+  {
+    m_definitionRepositoryDetails = jsonValue.GetObject("definitionRepositoryDetails");
+    m_definitionRepositoryDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("readmePath"))
+  {
+    m_readmePath = jsonValue.GetString("readmePath");
+    m_readmePathHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

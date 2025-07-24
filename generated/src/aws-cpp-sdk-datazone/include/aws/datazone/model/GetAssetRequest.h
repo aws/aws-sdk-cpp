@@ -52,7 +52,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon DataZone asset.</p>
+     * <p>The ID of the Amazon DataZone asset.</p> <p>This parameter supports either
+     * the value of <code>assetId</code> or <code>externalIdentifier</code> as input.
+     * If you are passing the value of <code>externalIdentifier</code>, you must prefix
+     * this value with <code>externalIdentifer%2F</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

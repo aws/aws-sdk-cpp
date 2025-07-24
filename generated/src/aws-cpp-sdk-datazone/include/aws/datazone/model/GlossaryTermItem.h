@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/GlossaryTermItemAdditionalAttributes.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/GlossaryTermStatus.h>
@@ -39,6 +40,18 @@ namespace Model
     AWS_DATAZONE_API GlossaryTermItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The additional attributes of an Amazon DataZone glossary term.</p>
+     */
+    inline const GlossaryTermItemAdditionalAttributes& GetAdditionalAttributes() const { return m_additionalAttributes; }
+    inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+    template<typename AdditionalAttributesT = GlossaryTermItemAdditionalAttributes>
+    void SetAdditionalAttributes(AdditionalAttributesT&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::forward<AdditionalAttributesT>(value); }
+    template<typename AdditionalAttributesT = GlossaryTermItemAdditionalAttributes>
+    GlossaryTermItem& WithAdditionalAttributes(AdditionalAttributesT&& value) { SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -183,6 +196,9 @@ namespace Model
     GlossaryTermItem& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
   private:
+
+    GlossaryTermItemAdditionalAttributes m_additionalAttributes;
+    bool m_additionalAttributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

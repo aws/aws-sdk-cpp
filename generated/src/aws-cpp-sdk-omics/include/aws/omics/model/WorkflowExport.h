@@ -16,7 +16,8 @@ namespace Model
   enum class WorkflowExport
   {
     NOT_SET,
-    DEFINITION
+    DEFINITION,
+    README
   };
 
 namespace WorkflowExportMapper

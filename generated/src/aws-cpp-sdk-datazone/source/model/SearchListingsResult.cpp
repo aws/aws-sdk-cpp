@@ -25,6 +25,15 @@ SearchListingsResult::SearchListingsResult(const Aws::AmazonWebServiceResult<Jso
 SearchListingsResult& SearchListingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("aggregates"))
+  {
+    Aws::Utils::Array<JsonView> aggregatesJsonList = jsonValue.GetArray("aggregates");
+    for(unsigned aggregatesIndex = 0; aggregatesIndex < aggregatesJsonList.GetLength(); ++aggregatesIndex)
+    {
+      m_aggregates.push_back(aggregatesJsonList[aggregatesIndex].AsObject());
+    }
+    m_aggregatesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");

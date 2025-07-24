@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int DEFINITION_HASH = HashingUtils::HashString("DEFINITION");
+        static const int README_HASH = HashingUtils::HashString("README");
 
 
         WorkflowExport GetWorkflowExportForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == DEFINITION_HASH)
           {
             return WorkflowExport::DEFINITION;
+          }
+          else if (hashCode == README_HASH)
+          {
+            return WorkflowExport::README;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case WorkflowExport::DEFINITION:
             return "DEFINITION";
+          case WorkflowExport::README:
+            return "README";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

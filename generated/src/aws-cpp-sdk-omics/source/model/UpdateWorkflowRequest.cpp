@@ -39,6 +39,12 @@ Aws::String UpdateWorkflowRequest::SerializePayload() const
 
   }
 
+  if(m_readmeMarkdownHasBeenSet)
+  {
+   payload.WithString("readmeMarkdown", m_readmeMarkdown);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

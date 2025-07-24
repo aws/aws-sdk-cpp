@@ -12,6 +12,7 @@
 #include <aws/omics/model/WorkflowEngine.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/DefinitionRepository.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -224,6 +225,81 @@ namespace Model
     template<typename WorkflowBucketOwnerIdT = Aws::String>
     CreateWorkflowVersionRequest& WithWorkflowBucketOwnerId(WorkflowBucketOwnerIdT&& value) { SetWorkflowBucketOwnerId(std::forward<WorkflowBucketOwnerIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The markdown content for the workflow version's README file. This provides
+     * documentation and usage information for users of this specific workflow
+     * version.</p>
+     */
+    inline const Aws::String& GetReadmeMarkdown() const { return m_readmeMarkdown; }
+    inline bool ReadmeMarkdownHasBeenSet() const { return m_readmeMarkdownHasBeenSet; }
+    template<typename ReadmeMarkdownT = Aws::String>
+    void SetReadmeMarkdown(ReadmeMarkdownT&& value) { m_readmeMarkdownHasBeenSet = true; m_readmeMarkdown = std::forward<ReadmeMarkdownT>(value); }
+    template<typename ReadmeMarkdownT = Aws::String>
+    CreateWorkflowVersionRequest& WithReadmeMarkdown(ReadmeMarkdownT&& value) { SetReadmeMarkdown(std::forward<ReadmeMarkdownT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The path to the workflow version parameter template JSON file within the
+     * repository. This file defines the input parameters for runs that use this
+     * workflow version. If not specified, the workflow version will be created without
+     * a parameter template.</p>
+     */
+    inline const Aws::String& GetParameterTemplatePath() const { return m_parameterTemplatePath; }
+    inline bool ParameterTemplatePathHasBeenSet() const { return m_parameterTemplatePathHasBeenSet; }
+    template<typename ParameterTemplatePathT = Aws::String>
+    void SetParameterTemplatePath(ParameterTemplatePathT&& value) { m_parameterTemplatePathHasBeenSet = true; m_parameterTemplatePath = std::forward<ParameterTemplatePathT>(value); }
+    template<typename ParameterTemplatePathT = Aws::String>
+    CreateWorkflowVersionRequest& WithParameterTemplatePath(ParameterTemplatePathT&& value) { SetParameterTemplatePath(std::forward<ParameterTemplatePathT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The path to the workflow version README markdown file within the repository.
+     * This file provides documentation and usage information for the workflow. If not
+     * specified, the <code>README.md</code> file from the root directory of the
+     * repository will be used.</p>
+     */
+    inline const Aws::String& GetReadmePath() const { return m_readmePath; }
+    inline bool ReadmePathHasBeenSet() const { return m_readmePathHasBeenSet; }
+    template<typename ReadmePathT = Aws::String>
+    void SetReadmePath(ReadmePathT&& value) { m_readmePathHasBeenSet = true; m_readmePath = std::forward<ReadmePathT>(value); }
+    template<typename ReadmePathT = Aws::String>
+    CreateWorkflowVersionRequest& WithReadmePath(ReadmePathT&& value) { SetReadmePath(std::forward<ReadmePathT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The repository information for the workflow version definition. This allows
+     * you to source your workflow version definition directly from a code
+     * repository.</p>
+     */
+    inline const DefinitionRepository& GetDefinitionRepository() const { return m_definitionRepository; }
+    inline bool DefinitionRepositoryHasBeenSet() const { return m_definitionRepositoryHasBeenSet; }
+    template<typename DefinitionRepositoryT = DefinitionRepository>
+    void SetDefinitionRepository(DefinitionRepositoryT&& value) { m_definitionRepositoryHasBeenSet = true; m_definitionRepository = std::forward<DefinitionRepositoryT>(value); }
+    template<typename DefinitionRepositoryT = DefinitionRepository>
+    CreateWorkflowVersionRequest& WithDefinitionRepository(DefinitionRepositoryT&& value) { SetDefinitionRepository(std::forward<DefinitionRepositoryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The S3 URI of the README file for the workflow version. This file provides
+     * documentation and usage information for the workflow version. Requirements
+     * include:</p> <ul> <li> <p>The S3 URI must begin with
+     * <code>s3://USER-OWNED-BUCKET/</code> </p> </li> <li> <p>The requester must have
+     * access to the S3 bucket and object.</p> </li> <li> <p>The max README content
+     * length is 500 KiB.</p> </li> </ul>
+     */
+    inline const Aws::String& GetReadmeUri() const { return m_readmeUri; }
+    inline bool ReadmeUriHasBeenSet() const { return m_readmeUriHasBeenSet; }
+    template<typename ReadmeUriT = Aws::String>
+    void SetReadmeUri(ReadmeUriT&& value) { m_readmeUriHasBeenSet = true; m_readmeUri = std::forward<ReadmeUriT>(value); }
+    template<typename ReadmeUriT = Aws::String>
+    CreateWorkflowVersionRequest& WithReadmeUri(ReadmeUriT&& value) { SetReadmeUri(std::forward<ReadmeUriT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_workflowId;
@@ -267,6 +343,21 @@ namespace Model
 
     Aws::String m_workflowBucketOwnerId;
     bool m_workflowBucketOwnerIdHasBeenSet = false;
+
+    Aws::String m_readmeMarkdown;
+    bool m_readmeMarkdownHasBeenSet = false;
+
+    Aws::String m_parameterTemplatePath;
+    bool m_parameterTemplatePathHasBeenSet = false;
+
+    Aws::String m_readmePath;
+    bool m_readmePathHasBeenSet = false;
+
+    DefinitionRepository m_definitionRepository;
+    bool m_definitionRepositoryHasBeenSet = false;
+
+    Aws::String m_readmeUri;
+    bool m_readmeUriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/datazone/model/FilterClause.h>
 #include <aws/datazone/model/SearchSort.h>
 #include <aws/datazone/model/SearchOutputAdditionalAttribute.h>
+#include <aws/datazone/model/AggregationListItem.h>
 #include <aws/datazone/model/SearchInItem.h>
 #include <utility>
 
@@ -48,6 +49,21 @@ namespace Model
     template<typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
     SearchListingsRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) { SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value)); return *this;}
     inline SearchListingsRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Enables you to specify one or more attributes to compute and return counts
+     * grouped by field values.</p>
+     */
+    inline const Aws::Vector<AggregationListItem>& GetAggregations() const { return m_aggregations; }
+    inline bool AggregationsHasBeenSet() const { return m_aggregationsHasBeenSet; }
+    template<typename AggregationsT = Aws::Vector<AggregationListItem>>
+    void SetAggregations(AggregationsT&& value) { m_aggregationsHasBeenSet = true; m_aggregations = std::forward<AggregationsT>(value); }
+    template<typename AggregationsT = Aws::Vector<AggregationListItem>>
+    SearchListingsRequest& WithAggregations(AggregationsT&& value) { SetAggregations(std::forward<AggregationsT>(value)); return *this;}
+    template<typename AggregationsT = AggregationListItem>
+    SearchListingsRequest& AddAggregations(AggregationsT&& value) { m_aggregationsHasBeenSet = true; m_aggregations.emplace_back(std::forward<AggregationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,6 +162,9 @@ namespace Model
 
     Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
     bool m_additionalAttributesHasBeenSet = false;
+
+    Aws::Vector<AggregationListItem> m_aggregations;
+    bool m_aggregationsHasBeenSet = false;
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;

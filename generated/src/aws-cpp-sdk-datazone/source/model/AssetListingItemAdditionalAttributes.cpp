@@ -39,6 +39,15 @@ AssetListingItemAdditionalAttributes& AssetListingItemAdditionalAttributes::oper
     }
     m_latestTimeSeriesDataPointFormsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("matchRationale"))
+  {
+    Aws::Utils::Array<JsonView> matchRationaleJsonList = jsonValue.GetArray("matchRationale");
+    for(unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex)
+    {
+      m_matchRationale.push_back(matchRationaleJsonList[matchRationaleIndex].AsObject());
+    }
+    m_matchRationaleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +69,17 @@ JsonValue AssetListingItemAdditionalAttributes::Jsonize() const
      latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject(m_latestTimeSeriesDataPointForms[latestTimeSeriesDataPointFormsIndex].Jsonize());
    }
    payload.WithArray("latestTimeSeriesDataPointForms", std::move(latestTimeSeriesDataPointFormsJsonList));
+
+  }
+
+  if(m_matchRationaleHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> matchRationaleJsonList(m_matchRationale.size());
+   for(unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex)
+   {
+     matchRationaleJsonList[matchRationaleIndex].AsObject(m_matchRationale[matchRationaleIndex].Jsonize());
+   }
+   payload.WithArray("matchRationale", std::move(matchRationaleJsonList));
 
   }
 

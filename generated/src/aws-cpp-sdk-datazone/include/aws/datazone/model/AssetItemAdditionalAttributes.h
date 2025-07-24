@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/FormOutput.h>
 #include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>
+#include <aws/datazone/model/MatchRationaleItem.h>
 #include <utility>
 
 namespace Aws
@@ -71,6 +72,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of rationales indicating why this item was matched by search.</p>
+     */
+    inline const Aws::Vector<MatchRationaleItem>& GetMatchRationale() const { return m_matchRationale; }
+    inline bool MatchRationaleHasBeenSet() const { return m_matchRationaleHasBeenSet; }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    void SetMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale = std::forward<MatchRationaleT>(value); }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    AssetItemAdditionalAttributes& WithMatchRationale(MatchRationaleT&& value) { SetMatchRationale(std::forward<MatchRationaleT>(value)); return *this;}
+    template<typename MatchRationaleT = MatchRationaleItem>
+    AssetItemAdditionalAttributes& AddMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale.emplace_back(std::forward<MatchRationaleT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The read-only forms included in the additional attributes of an inventory
      * asset.</p>
      */
@@ -90,6 +105,9 @@ namespace Model
 
     Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
     bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
+
+    Aws::Vector<MatchRationaleItem> m_matchRationale;
+    bool m_matchRationaleHasBeenSet = false;
 
     Aws::Vector<FormOutput> m_readOnlyFormsOutput;
     bool m_readOnlyFormsOutputHasBeenSet = false;

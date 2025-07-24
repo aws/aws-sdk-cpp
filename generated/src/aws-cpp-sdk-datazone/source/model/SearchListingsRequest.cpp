@@ -27,6 +27,17 @@ Aws::String SearchListingsRequest::SerializePayload() const
 
   }
 
+  if(m_aggregationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> aggregationsJsonList(m_aggregations.size());
+   for(unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex)
+   {
+     aggregationsJsonList[aggregationsIndex].AsObject(m_aggregations[aggregationsIndex].Jsonize());
+   }
+   payload.WithArray("aggregations", std::move(aggregationsJsonList));
+
+  }
+
   if(m_filtersHasBeenSet)
   {
    payload.WithObject("filters", m_filters.Jsonize());

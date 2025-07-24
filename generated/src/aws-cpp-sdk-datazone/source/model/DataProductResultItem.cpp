@@ -25,6 +25,11 @@ DataProductResultItem::DataProductResultItem(JsonView jsonValue)
 
 DataProductResultItem& DataProductResultItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalAttributes"))
+  {
+    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
+    m_additionalAttributesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -85,6 +90,12 @@ DataProductResultItem& DataProductResultItem::operator =(JsonView jsonValue)
 JsonValue DataProductResultItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalAttributesHasBeenSet)
+  {
+   payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
+
+  }
 
   if(m_createdAtHasBeenSet)
   {

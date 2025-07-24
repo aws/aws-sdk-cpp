@@ -75,7 +75,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The external identifier of the asset.</p>
+     * <p>The external identifier of the asset.</p> <p>If the value for the
+     * <code>externalIdentifier</code> parameter is specified, it must be a unique
+     * value.</p>
      */
     inline const Aws::String& GetExternalIdentifier() const { return m_externalIdentifier; }
     inline bool ExternalIdentifierHasBeenSet() const { return m_externalIdentifierHasBeenSet; }

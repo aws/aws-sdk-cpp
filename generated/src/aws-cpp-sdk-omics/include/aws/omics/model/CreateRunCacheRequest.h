@@ -49,7 +49,7 @@ namespace Model
      * CACHE_ON_FAILURE. When you start a run that uses this cache, you can override
      * the default cache behavior.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
-     * cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
+     * cache behavior</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
      */
     inline CacheBehavior GetCacheBehavior() const { return m_cacheBehavior; }
     inline bool CacheBehaviorHasBeenSet() const { return m_cacheBehaviorHasBeenSet; }

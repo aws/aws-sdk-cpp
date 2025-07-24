@@ -16,9 +16,14 @@ namespace Aws
 namespace Omics
 {
   /**
-   * <p>This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the
-   * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS
-   * HealthOmics?</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+   * <p>Amazon Web Services HealthOmics is a service that helps users such as
+   * bioinformaticians, researchers, and scientists to store, query, analyze, and
+   * generate insights from genomics and other biological data. It simplifies and
+   * accelerates the process of storing and analyzing genomic information for Amazon
+   * Web Services.</p> <p>For an introduction to the service, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html">What
+   * is Amazon Web Services HealthOmics?</a> in the <i>Amazon Web Services
+   * HealthOmics User Guide</i>.</p>
    */
   class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
   {
@@ -179,7 +184,10 @@ namespace Omics
         }
 
         /**
-         * <p>Cancels a run.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels a run using its ID and returns a response with no body if the
+         * operation is successful. To confirm that the run has been cancelled, use the
+         * <code>ListRuns</code> API operation to check that it is no longer
+         * listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRun">AWS API
          * Reference</a></p>
          */
@@ -355,15 +363,17 @@ namespace Omics
         }
 
         /**
-         * <p>You can create a run cache to save the task outputs from completed tasks in a
-         * run for a private workflow. Subsequent runs use the task outputs from the cache,
-         * rather than computing the task outputs again. You specify an Amazon S3 location
-         * where Amazon Web Services HealthOmics saves the cached data. This data must be
-         * immediately accessible (not in an archived state).</p> <p>For more information,
-         * see <a
+         * <p>Creates a run cache to store and reference task outputs from completed
+         * private runs. Specify an Amazon S3 location where Amazon Web Services
+         * HealthOmics saves the cached data. This data must be immediately accessible and
+         * not in an archived state. You can save intermediate task files to a run cache if
+         * they are declared as task outputs in the workflow definition file.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html">Call
+         * caching</a> and <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
-         * a run cache</a> in the Amazon Web Services HealthOmics User Guide.</p><p><h3>See
-         * Also:</h3>   <a
+         * a run cache</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">AWS
          * API Reference</a></p>
          */
@@ -388,8 +398,9 @@ namespace Omics
         }
 
         /**
-         * <p>You can optionally create a run group to limit the compute resources for the
-         * runs that you add to the group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a run group to limit the compute resources for the runs that are
+         * added to the group. Returns an ARN, ID, and tags for the run
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">AWS
          * API Reference</a></p>
          */
@@ -494,24 +505,24 @@ namespace Omics
         }
 
         /**
-         * <p>Creates a private workflow.Private workflows depend on a variety of resources
-         * that you create and configure before creating the workflow:</p> <ul> <li> <p>
-         * <i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a
-         * Amazon Web Services HealthOmics sequence store. </p> </li> <li> <p> <i>Workflow
+         * <p>Creates a private workflow. Before you create a private workflow, you must
+         * create and configure these required resources:</p> <ul> <li> <p> <i>Workflow
          * definition files</i>: Define your workflow in one or more workflow definition
          * files, written in WDL, Nextflow, or CWL. The workflow definition specifies the
          * inputs and outputs for runs that use the workflow. It also includes
          * specifications for the runs and run tasks for your workflow, including compute
-         * and memory requirements.</p> </li> <li> <p> <i>Parameter template files</i>:
-         * Define run parameters using a parameter template file (written in JSON). </p>
-         * </li> <li> <p> <i>ECR container images</i>: Create one or more container images
-         * for the workflow. Store the images in a private ECR repository.</p> </li> <li>
-         * <p>(Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan
-         * to use Sentieon software in a private workflow.</p> </li> </ul> <p>For more
+         * and memory requirements. The workflow definition file must be in .zip
+         * format.</p> </li> <li> <p>(Optional) <i>Parameter template</i>: You can create a
+         * parameter template file that defines the run parameters, or Amazon Web Services
+         * HealthOmics can generate the parameter template for you.</p> </li> <li> <p>
+         * <i>ECR container images</i>: Create one or more container images for the
+         * workflow. Store the images in a private ECR repository.</p> </li> <li>
+         * <p>(Optional) <i>Sentieon licenses</i>: Request a Sentieon license if using the
+         * Sentieon software in a private workflow.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
          * or updating a private workflow in Amazon Web Services HealthOmics</a> in the
-         * Amazon Web Services HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon Web Services HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">AWS
          * API Reference</a></p>
          */
@@ -545,8 +556,8 @@ namespace Omics
          * identifiable information (PII) in the version name. Version names appear in the
          * workflow version ARN.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services
+         * HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">AWS
          * API Reference</a></p>
          */
@@ -672,7 +683,16 @@ namespace Omics
         }
 
         /**
-         * <p>Deletes a workflow run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a run and returns a response with no body if the operation is
+         * successful. You can only delete a run that has reached a <code>COMPLETED</code>,
+         * <code>FAILED</code>, or <code>CANCELLED</code> stage. A completed run has
+         * delivered an output, or was cancelled and resulted in no output. When you delete
+         * a run, only the metadata associated with the run is deleted. The run outputs
+         * remain in Amazon S3 and logs remain in CloudWatch.</p> <p>To verify that the
+         * workflow is deleted:</p> <ul> <li> <p>Use <code>ListRuns</code> to confirm the
+         * workflow no longer appears in the list.</p> </li> <li> <p>Use
+         * <code>GetRun</code> to verify the workflow cannot be found.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRun">AWS API
          * Reference</a></p>
          */
@@ -697,14 +717,15 @@ namespace Omics
         }
 
         /**
-         * <p>Delete a run cache. This action removes the cache metadata stored in the
-         * service account, but doesn't delete the data in Amazon S3. You can access the
-         * cache data in Amazon S3, for inspection or to troubleshoot issues. You can
-         * remove old cache data using standard S3 <code>Delete</code> operations. </p>
-         * <p>For more information, see <a
+         * <p>Deletes a run cache and returns a response with no body if the operation is
+         * successful. This action removes the cache metadata stored in the service
+         * account, but does not delete the data in Amazon S3. You can access the cache
+         * data in Amazon S3, for inspection or to troubleshoot issues. You can remove old
+         * cache data using standard S3 <code>Delete</code> operations. </p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
-         * a run cache</a> in the Amazon Web Services HealthOmics User Guide.</p><p><h3>See
-         * Also:</h3>   <a
+         * a run cache</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">AWS
          * API Reference</a></p>
          */
@@ -729,7 +750,11 @@ namespace Omics
         }
 
         /**
-         * <p>Deletes a workflow run group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a run group and returns a response with no body if the operation is
+         * successful.</p> <p>To verify that the run group is deleted:</p> <ul> <li> <p>Use
+         * <code>ListRunGroups</code> to confirm the workflow no longer appears in the
+         * list.</p> </li> <li> <p>Use <code>GetRunGroup</code> to verify the workflow
+         * cannot be found.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunGroup">AWS
          * API Reference</a></p>
          */
@@ -857,7 +882,11 @@ namespace Omics
         }
 
         /**
-         * <p>Deletes a workflow.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a workflow by specifying its ID. No response is returned if the
+         * deletion is successful.</p> <p>To verify that the workflow is deleted:</p> <ul>
+         * <li> <p>Use <code>ListWorkflows</code> to confirm the workflow no longer appears
+         * in the list.</p> </li> <li> <p>Use <code>GetWorkflow</code> to verify the
+         * workflow cannot be found.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflow">AWS
          * API Reference</a></p>
          */
@@ -886,8 +915,8 @@ namespace Omics
          * ongoing runs that are using the workflow version.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services
+         * HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">AWS
          * API Reference</a></p>
          */
@@ -1216,15 +1245,14 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow run.</p> <p>If a workflow is shared with
-         * you, you cannot export information about the run.</p> <p>Amazon Web Services
-         * HealthOmics stores a fixed number of runs that are available to the console and
-         * API. If GetRun doesn't return the requested run, you can find run logs for all
-         * runs in the CloudWatch logs. For more information about viewing the run logs,
-         * see <a
-         * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-         * logs</a> in the <i>in the Amazon Web Services HealthOmics User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information about a specific run using its ID.</p> <p>Amazon
+         * Web Services HealthOmics stores a configurable number of runs, as determined by
+         * service limits, that are available to the console and API. If
+         * <code>GetRun</code> does not return the requested run, you can find all run logs
+         * in the CloudWatch logs. For more information about viewing the run logs, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html">CloudWatch
+         * logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">AWS API
          * Reference</a></p>
          */
@@ -1249,11 +1277,11 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieve the details for the specified run cache.</p> <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-         * caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves detailed information about the specified run cache using its
+         * ID.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html">Call
+         * caching for Amazon Web Services HealthOmics runs</a> in the <i>Amazon Web
+         * Services HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">AWS
          * API Reference</a></p>
          */
@@ -1278,7 +1306,8 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow run group.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a run group and returns its metadata.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunGroup">AWS
          * API Reference</a></p>
          */
@@ -1303,7 +1332,8 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow run task.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information about a run task using its ID.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">AWS
          * API Reference</a></p>
          */
@@ -1455,8 +1485,12 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow.</p> <p>If a workflow is shared with you,
-         * you cannot export the workflow.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets all information about a workflow using its ID.</p> <p>If a workflow is
+         * shared with you, you cannot export the workflow.</p> <p>For more information
+         * about your workflow status, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/using-get-workflow.html">Verify
+         * the workflow status</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">AWS
          * API Reference</a></p>
          */
@@ -1483,8 +1517,8 @@ namespace Omics
         /**
          * <p>Gets information about a workflow version. For more information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services
+         * HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">AWS
          * API Reference</a></p>
          */
@@ -1812,7 +1846,8 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of your run caches.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of your run caches and the metadata for each
+         * cache.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">AWS
          * API Reference</a></p>
          */
@@ -1837,7 +1872,8 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of run groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of all run groups and returns the metadata for each run
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">AWS
          * API Reference</a></p>
          */
@@ -1862,7 +1898,9 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of tasks for a run.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks and status information within their specified run.
+         * Use this operation to monitor runs and to identify which specific tasks have
+         * failed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunTasks">AWS
          * API Reference</a></p>
          */
@@ -1887,12 +1925,13 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of runs.</p> <p>Amazon Web Services HealthOmics stores a
-         * fixed number of runs that are available to the console and API. If the ListRuns
-         * response doesn't include specific runs that you expected, you can find run logs
-         * for all runs in the CloudWatch logs. For more information about viewing the run
-         * logs, see <a
-         * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+         * <p>Retrieves a list of runs and returns each run's metadata and status.</p>
+         * <p>Amazon Web Services HealthOmics stores a configurable number of runs, as
+         * determined by service limits, that are available to the console and API. If the
+         * <code>ListRuns</code> response doesn't include specific runs that you expected,
+         * you can find all run logs in the CloudWatch logs. For more information about
+         * viewing the run logs, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html">CloudWatch
          * logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">AWS API
@@ -2048,8 +2087,8 @@ namespace Omics
          * <p>Lists the workflow versions for the specified workflow. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services
+         * HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">AWS
          * API Reference</a></p>
          */
@@ -2074,7 +2113,12 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of workflows.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of existing workflows. You can filter for specific workflows
+         * by their name and type. Using the type parameter, specify <code>PRIVATE</code>
+         * to retrieve a list of private workflows or specify <code>READY2RUN</code> for a
+         * list of all Ready2Run workflows. If you do not specify the type of workflow,
+         * this operation returns a list of existing workflows.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">AWS
          * API Reference</a></p>
          */
@@ -2250,15 +2294,44 @@ namespace Omics
         }
 
         /**
-         * <p>Starts a new run or duplicates an existing run.</p> <p>For a new run, specify
-         * a unique <code>requestId</code>, the <code>workflowId</code>, and a role ARN. If
-         * you're using static run storage (the default), specify the required
-         * <code>storageCapacity</code>.</p> <p>You duplicate a run by specifing a unique
-         * <code>requestId</code>, the <code>runID</code> of the run to duplicate, and a
-         * role ARN.</p> <p>For more information about the optional parameters in the
-         * StartRun request, see <a
+         * <p>Starts a new run and returns details about the run, or duplicates an existing
+         * run. A run is a single invocation of a workflow. If you provide request IDs,
+         * Amazon Web Services HealthOmics identifies duplicate requests and starts the run
+         * only once. Monitor the progress of the run by calling the <code>GetRun</code>
+         * API operation.</p> <p>To start a new run, the following inputs are required:</p>
+         * <ul> <li> <p>A service role ARN (<code>roleArn</code>).</p> </li> <li> <p>The
+         * run's workflow ID (<code>workflowId</code>, not the <code>uuid</code> or
+         * <code>runId</code>).</p> </li> <li> <p>An Amazon S3 location
+         * (<code>outputUri</code>) where the run outputs will be saved.</p> </li> <li>
+         * <p>All required workflow parameters (<code>parameter</code>), which can include
+         * optional parameters from the parameter template. The run cannot include any
+         * parameters that are not defined in the parameter template. To see all possible
+         * parameters, use the <code>GetRun</code> API operation. </p> </li> <li> <p>For
+         * runs with a <code>STATIC</code> (default) storage type, specify the required
+         * storage capacity (in gibibytes). A storage capacity value is not required for
+         * runs that use <code>DYNAMIC</code> storage.</p> </li> </ul> <p>
+         * <code>StartRun</code> can also duplicate an existing run using the run's default
+         * values. You can modify these default values and/or add other optional inputs. To
+         * duplicate a run, the following inputs are required:</p> <ul> <li> <p>A service
+         * role ARN (<code>roleArn</code>).</p> </li> <li> <p>The ID of the run to
+         * duplicate (<code>runId</code>).</p> </li> <li> <p>An Amazon S3 location where
+         * the run outputs will be saved (<code>outputUri</code>).</p> </li> </ul> <p>To
+         * learn more about the optional parameters for <code>StartRun</code>, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting
-         * a run</a> in the <i>Amazon Web Services HealthOmics User
+         * a run</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p> <p>Use
+         * the <code>retentionMode</code> input to control how long the metadata for each
+         * run is stored in CloudWatch. There are two retention modes:</p> <ul> <li>
+         * <p>Specify <code>REMOVE</code> to automatically remove the oldest runs when you
+         * reach the maximum service retention limit for runs. It is recommended that you
+         * use the <code>REMOVE</code> mode to initiate major run requests so that your
+         * runs do not fail when you reach the limit.</p> </li> <li> <p>The
+         * <code>retentionMode</code> is set to the <code>RETAIN</code> mode by default,
+         * which allows you to manually remove runs after reaching the maximum service
+         * retention limit. Under this setting, you cannot create additional runs until you
+         * remove the excess runs.</p> </li> </ul> <p>To learn more about the retention
+         * modes, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run
+         * retention mode</a> in the <i>Amazon Web Services HealthOmics User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS API
          * Reference</a></p>
@@ -2410,7 +2483,15 @@ namespace Omics
         }
 
         /**
-         * <p>Update a run cache. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates a run cache using its ID and returns a response with no body if the
+         * operation is successful. You can update the run cache description, name, or the
+         * default run cache behavior with <code>CACHE_ON_FAILURE</code> or
+         * <code>CACHE_ALWAYS</code>. To confirm that your run cache settings have been
+         * properly updated, use the <code>GetRunCache</code> API operation.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html">How call
+         * caching works</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">AWS
          * API Reference</a></p>
          */
@@ -2435,7 +2516,14 @@ namespace Omics
         }
 
         /**
-         * <p>Updates a run group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a run group and returns a response with no body if
+         * the operation is successful.</p> <p>You can update the following settings with
+         * <code>UpdateRunGroup</code>:</p> <ul> <li> <p>Maximum number of CPUs</p> </li>
+         * <li> <p>Run time (measured in minutes)</p> </li> <li> <p>Number of GPUs</p>
+         * </li> <li> <p>Number of concurrent runs</p> </li> <li> <p>Group name</p> </li>
+         * </ul> <p>To confirm that the settings have been successfully updated, use the
+         * <code>ListRunGroups</code> or <code>GetRunGroup</code> API operations to verify
+         * that the desired changes have been made.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">AWS
          * API Reference</a></p>
          */
@@ -2511,10 +2599,16 @@ namespace Omics
         }
 
         /**
-         * <p>Updates information about a workflow. For more information, see <a
+         * <p>Updates information about a workflow.</p> <p>You can update the following
+         * workflow information:</p> <ul> <li> <p>Name</p> </li> <li> <p>Description</p>
+         * </li> <li> <p>Default storage type</p> </li> <li> <p>Default storage capacity
+         * (with workflow ID)</p> </li> </ul> <p>This operation returns a response with no
+         * body if the operation is successful. You can check the workflow updates by
+         * calling the <code>GetWorkflow</code> API operation.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
-         * a private workflow</a> in the Amazon Web Services HealthOmics User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * a private workflow</a> in the <i>Amazon Web Services HealthOmics User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">AWS
          * API Reference</a></p>
          */
@@ -2541,8 +2635,8 @@ namespace Omics
         /**
          * <p>Updates information about the workflow version. For more information, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-         * versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services
-         * HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services
+         * HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">AWS
          * API Reference</a></p>
          */

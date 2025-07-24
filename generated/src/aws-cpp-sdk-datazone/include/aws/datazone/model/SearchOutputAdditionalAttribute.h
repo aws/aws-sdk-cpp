@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FORMS,
-    TIME_SERIES_DATA_POINT_FORMS
+    TIME_SERIES_DATA_POINT_FORMS,
+    TEXT_MATCH_RATIONALE
   };
 
 namespace SearchOutputAdditionalAttributeMapper
