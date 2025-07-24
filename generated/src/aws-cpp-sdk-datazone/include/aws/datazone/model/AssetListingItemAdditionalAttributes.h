@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>
+#include <aws/datazone/model/MatchRationaleItem.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +66,20 @@ namespace Model
     template<typename LatestTimeSeriesDataPointFormsT = TimeSeriesDataPointSummaryFormOutput>
     AssetListingItemAdditionalAttributes& AddLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.emplace_back(std::forward<LatestTimeSeriesDataPointFormsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>List of rationales indicating why this item was matched by search.</p>
+     */
+    inline const Aws::Vector<MatchRationaleItem>& GetMatchRationale() const { return m_matchRationale; }
+    inline bool MatchRationaleHasBeenSet() const { return m_matchRationaleHasBeenSet; }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    void SetMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale = std::forward<MatchRationaleT>(value); }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    AssetListingItemAdditionalAttributes& WithMatchRationale(MatchRationaleT&& value) { SetMatchRationale(std::forward<MatchRationaleT>(value)); return *this;}
+    template<typename MatchRationaleT = MatchRationaleItem>
+    AssetListingItemAdditionalAttributes& AddMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale.emplace_back(std::forward<MatchRationaleT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_forms;
@@ -72,6 +87,9 @@ namespace Model
 
     Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
     bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
+
+    Aws::Vector<MatchRationaleItem> m_matchRationale;
+    bool m_matchRationaleHasBeenSet = false;
   };
 
 } // namespace Model

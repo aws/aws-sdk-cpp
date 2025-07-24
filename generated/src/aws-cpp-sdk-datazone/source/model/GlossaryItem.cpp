@@ -25,6 +25,11 @@ GlossaryItem::GlossaryItem(JsonView jsonValue)
 
 GlossaryItem& GlossaryItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalAttributes"))
+  {
+    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
+    m_additionalAttributesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -81,6 +86,12 @@ GlossaryItem& GlossaryItem::operator =(JsonView jsonValue)
 JsonValue GlossaryItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalAttributesHasBeenSet)
+  {
+   payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
+
+  }
 
   if(m_createdAtHasBeenSet)
   {

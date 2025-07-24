@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/MatchRationaleItem.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +51,27 @@ namespace Model
     template<typename FormsT = Aws::String>
     DataProductListingItemAdditionalAttributes& WithForms(FormsT&& value) { SetForms(std::forward<FormsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>List of rationales indicating why this item was matched by search.</p>
+     */
+    inline const Aws::Vector<MatchRationaleItem>& GetMatchRationale() const { return m_matchRationale; }
+    inline bool MatchRationaleHasBeenSet() const { return m_matchRationaleHasBeenSet; }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    void SetMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale = std::forward<MatchRationaleT>(value); }
+    template<typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+    DataProductListingItemAdditionalAttributes& WithMatchRationale(MatchRationaleT&& value) { SetMatchRationale(std::forward<MatchRationaleT>(value)); return *this;}
+    template<typename MatchRationaleT = MatchRationaleItem>
+    DataProductListingItemAdditionalAttributes& AddMatchRationale(MatchRationaleT&& value) { m_matchRationaleHasBeenSet = true; m_matchRationale.emplace_back(std::forward<MatchRationaleT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_forms;
     bool m_formsHasBeenSet = false;
+
+    Aws::Vector<MatchRationaleItem> m_matchRationale;
+    bool m_matchRationaleHasBeenSet = false;
   };
 
 } // namespace Model

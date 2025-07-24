@@ -30,6 +30,15 @@ DataProductListingItemAdditionalAttributes& DataProductListingItemAdditionalAttr
     m_forms = jsonValue.GetString("forms");
     m_formsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("matchRationale"))
+  {
+    Aws::Utils::Array<JsonView> matchRationaleJsonList = jsonValue.GetArray("matchRationale");
+    for(unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex)
+    {
+      m_matchRationale.push_back(matchRationaleJsonList[matchRationaleIndex].AsObject());
+    }
+    m_matchRationaleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue DataProductListingItemAdditionalAttributes::Jsonize() const
   if(m_formsHasBeenSet)
   {
    payload.WithString("forms", m_forms);
+
+  }
+
+  if(m_matchRationaleHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> matchRationaleJsonList(m_matchRationale.size());
+   for(unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex)
+   {
+     matchRationaleJsonList[matchRationaleIndex].AsObject(m_matchRationale[matchRationaleIndex].Jsonize());
+   }
+   payload.WithArray("matchRationale", std::move(matchRationaleJsonList));
 
   }
 

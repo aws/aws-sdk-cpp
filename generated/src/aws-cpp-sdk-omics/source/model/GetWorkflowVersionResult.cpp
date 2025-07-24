@@ -137,6 +137,21 @@ GetWorkflowVersionResult& GetWorkflowVersionResult::operator =(const Aws::Amazon
     m_workflowBucketOwnerId = jsonValue.GetString("workflowBucketOwnerId");
     m_workflowBucketOwnerIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("readme"))
+  {
+    m_readme = jsonValue.GetString("readme");
+    m_readmeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("definitionRepositoryDetails"))
+  {
+    m_definitionRepositoryDetails = jsonValue.GetObject("definitionRepositoryDetails");
+    m_definitionRepositoryDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("readmePath"))
+  {
+    m_readmePath = jsonValue.GetString("readmePath");
+    m_readmePathHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

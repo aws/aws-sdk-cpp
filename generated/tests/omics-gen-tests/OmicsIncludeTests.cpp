@@ -62,6 +62,8 @@
 #include <aws/omics/model/CreateWorkflowVersionRequest.h>
 #include <aws/omics/model/CreateWorkflowVersionResult.h>
 #include <aws/omics/model/CreationType.h>
+#include <aws/omics/model/DefinitionRepository.h>
+#include <aws/omics/model/DefinitionRepositoryDetails.h>
 #include <aws/omics/model/DeleteAnnotationStoreRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreResult.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
@@ -252,6 +254,8 @@
 #include <aws/omics/model/ShareResourceType.h>
 #include <aws/omics/model/ShareStatus.h>
 #include <aws/omics/model/SourceFiles.h>
+#include <aws/omics/model/SourceReference.h>
+#include <aws/omics/model/SourceReferenceType.h>
 #include <aws/omics/model/SseConfig.h>
 #include <aws/omics/model/StartAnnotationImportJobRequest.h>
 #include <aws/omics/model/StartAnnotationImportJobResult.h>

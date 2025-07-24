@@ -94,6 +94,19 @@ namespace Model
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline UpdateWorkflowRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The markdown content for the workflow's README file. This provides
+     * documentation and usage information for users of the workflow.</p>
+     */
+    inline const Aws::String& GetReadmeMarkdown() const { return m_readmeMarkdown; }
+    inline bool ReadmeMarkdownHasBeenSet() const { return m_readmeMarkdownHasBeenSet; }
+    template<typename ReadmeMarkdownT = Aws::String>
+    void SetReadmeMarkdown(ReadmeMarkdownT&& value) { m_readmeMarkdownHasBeenSet = true; m_readmeMarkdown = std::forward<ReadmeMarkdownT>(value); }
+    template<typename ReadmeMarkdownT = Aws::String>
+    UpdateWorkflowRequest& WithReadmeMarkdown(ReadmeMarkdownT&& value) { SetReadmeMarkdown(std::forward<ReadmeMarkdownT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -110,6 +123,9 @@ namespace Model
 
     int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
+
+    Aws::String m_readmeMarkdown;
+    bool m_readmeMarkdownHasBeenSet = false;
   };
 
 } // namespace Model

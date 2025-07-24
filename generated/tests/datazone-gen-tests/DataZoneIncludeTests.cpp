@@ -28,6 +28,9 @@
 #include <aws/datazone/model/AddPolicyGrantRequest.h>
 #include <aws/datazone/model/AddPolicyGrantResult.h>
 #include <aws/datazone/model/AddToProjectMemberPoolPolicyGrantDetail.h>
+#include <aws/datazone/model/AggregationListItem.h>
+#include <aws/datazone/model/AggregationOutput.h>
+#include <aws/datazone/model/AggregationOutputItem.h>
 #include <aws/datazone/model/AllDomainUnitsGrantFilter.h>
 #include <aws/datazone/model/AllUsersGrantFilter.h>
 #include <aws/datazone/model/AssetFilterConfiguration.h>
@@ -140,6 +143,7 @@
 #include <aws/datazone/model/CustomParameter.h>
 #include <aws/datazone/model/DataAssetActivityStatus.h>
 #include <aws/datazone/model/DataProductItem.h>
+#include <aws/datazone/model/DataProductItemAdditionalAttributes.h>
 #include <aws/datazone/model/DataProductItemType.h>
 #include <aws/datazone/model/DataProductListing.h>
 #include <aws/datazone/model/DataProductListingItem.h>
@@ -320,8 +324,10 @@
 #include <aws/datazone/model/GetUserProfileRequest.h>
 #include <aws/datazone/model/GetUserProfileResult.h>
 #include <aws/datazone/model/GlossaryItem.h>
+#include <aws/datazone/model/GlossaryItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryStatus.h>
 #include <aws/datazone/model/GlossaryTermItem.h>
+#include <aws/datazone/model/GlossaryTermItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryTermStatus.h>
 #include <aws/datazone/model/GlueConnection.h>
 #include <aws/datazone/model/GlueConnectionInput.h>
@@ -445,6 +451,8 @@
 #include <aws/datazone/model/ListingSummary.h>
 #include <aws/datazone/model/ListingSummaryItem.h>
 #include <aws/datazone/model/ManagedPolicyType.h>
+#include <aws/datazone/model/MatchOffset.h>
+#include <aws/datazone/model/MatchRationaleItem.h>
 #include <aws/datazone/model/Member.h>
 #include <aws/datazone/model/MemberDetails.h>
 #include <aws/datazone/model/MetadataFormEnforcementDetail.h>
@@ -612,6 +620,7 @@
 #include <aws/datazone/model/TargetEntityType.h>
 #include <aws/datazone/model/TaskStatus.h>
 #include <aws/datazone/model/TermRelations.h>
+#include <aws/datazone/model/TextMatchItem.h>
 #include <aws/datazone/model/TimeSeriesDataPointFormInput.h>
 #include <aws/datazone/model/TimeSeriesDataPointFormOutput.h>
 #include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>

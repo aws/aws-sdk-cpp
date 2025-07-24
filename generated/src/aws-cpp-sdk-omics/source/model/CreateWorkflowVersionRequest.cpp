@@ -101,6 +101,36 @@ Aws::String CreateWorkflowVersionRequest::SerializePayload() const
 
   }
 
+  if(m_readmeMarkdownHasBeenSet)
+  {
+   payload.WithString("readmeMarkdown", m_readmeMarkdown);
+
+  }
+
+  if(m_parameterTemplatePathHasBeenSet)
+  {
+   payload.WithString("parameterTemplatePath", m_parameterTemplatePath);
+
+  }
+
+  if(m_readmePathHasBeenSet)
+  {
+   payload.WithString("readmePath", m_readmePath);
+
+  }
+
+  if(m_definitionRepositoryHasBeenSet)
+  {
+   payload.WithObject("definitionRepository", m_definitionRepository.Jsonize());
+
+  }
+
+  if(m_readmeUriHasBeenSet)
+  {
+   payload.WithString("readmeUri", m_readmeUri);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

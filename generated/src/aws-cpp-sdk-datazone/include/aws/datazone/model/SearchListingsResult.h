@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/AggregationOutput.h>
 #include <aws/datazone/model/SearchResultItem.h>
 #include <utility>
 
@@ -33,6 +34,20 @@ namespace Model
     AWS_DATAZONE_API SearchListingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API SearchListingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>Contains computed counts grouped by field values based on the requested
+     * aggregation attributes for the matching listings.</p>
+     */
+    inline const Aws::Vector<AggregationOutput>& GetAggregates() const { return m_aggregates; }
+    template<typename AggregatesT = Aws::Vector<AggregationOutput>>
+    void SetAggregates(AggregatesT&& value) { m_aggregatesHasBeenSet = true; m_aggregates = std::forward<AggregatesT>(value); }
+    template<typename AggregatesT = Aws::Vector<AggregationOutput>>
+    SearchListingsResult& WithAggregates(AggregatesT&& value) { SetAggregates(std::forward<AggregatesT>(value)); return *this;}
+    template<typename AggregatesT = AggregationOutput>
+    SearchListingsResult& AddAggregates(AggregatesT&& value) { m_aggregatesHasBeenSet = true; m_aggregates.emplace_back(std::forward<AggregatesT>(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -81,6 +96,9 @@ namespace Model
     SearchListingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Vector<AggregationOutput> m_aggregates;
+    bool m_aggregatesHasBeenSet = false;
 
     Aws::Vector<SearchResultItem> m_items;
     bool m_itemsHasBeenSet = false;
