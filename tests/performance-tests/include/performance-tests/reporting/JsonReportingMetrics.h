@@ -38,6 +38,11 @@ struct PerformanceMetricRecord {
 };
 
 /**
+ * Context will be shared between monitor invocations.
+ */
+struct RequestContext;
+
+/**
  * An implementation of the MonitoringInterface that collects performance metrics
  * and reports them in a JSON format.
  */
@@ -150,6 +155,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void WriteJsonToFile(const Aws::Utils::Json::JsonValue& root) const;
 
   mutable Aws::Vector<PerformanceMetricRecord> m_performanceRecords;
+  mutable Aws::UnorderedMap<Aws::String, Aws::UniquePtr<RequestContext>> m_requestContexts;
   Aws::Set<Aws::String> m_monitoredOperations;
   Aws::String m_productId;
   Aws::String m_sdkVersion;
