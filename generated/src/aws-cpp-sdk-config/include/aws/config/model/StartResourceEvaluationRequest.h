@@ -63,8 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The mode of an evaluation. The valid values for this API are
-     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+     * <p>The mode of an evaluation.</p>  <p>The only valid value for this API is
+     * <code>PROACTIVE</code>.</p> 
      */
     inline EvaluationMode GetEvaluationMode() const { return m_evaluationMode; }
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }

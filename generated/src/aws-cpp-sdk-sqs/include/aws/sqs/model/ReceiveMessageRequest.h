@@ -79,8 +79,7 @@ namespace Model
      * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
      * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
      * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
-     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
-     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * producer that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li>
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
@@ -217,12 +216,12 @@ namespace Model
      * messages with a particular <code>MessageGroupId</code> are invisible, no more
      * messages belonging to the same <code>MessageGroupId</code> are returned until
      * the visibility timeout expires. You can still receive messages with another
-     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
-     * a caller of <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
-     * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
-     * <code>ReceiveRequestAttemptId</code> is 128 characters.
+     * <code>MessageGroupId</code> from your FIFO queue as long as they are
+     * visible.</p> </li> <li> <p>If a caller of <code>ReceiveMessage</code> can't
+     * track the <code>ReceiveRequestAttemptId</code>, no retries work until the
+     * original visibility timeout expires. As a result, delays might occur but the
+     * messages in the queue remain in a strict order.</p> </li> </ul> <p>The maximum
+     * length of <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best

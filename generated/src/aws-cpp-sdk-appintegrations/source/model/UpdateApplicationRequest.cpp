@@ -45,6 +45,30 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
+  if(m_isServiceHasBeenSet)
+  {
+   payload.WithBool("IsService", m_isService);
+
+  }
+
+  if(m_initializationTimeoutHasBeenSet)
+  {
+   payload.WithInteger("InitializationTimeout", m_initializationTimeout);
+
+  }
+
+  if(m_applicationConfigHasBeenSet)
+  {
+   payload.WithObject("ApplicationConfig", m_applicationConfig.Jsonize());
+
+  }
+
+  if(m_iframeConfigHasBeenSet)
+  {
+   payload.WithObject("IframeConfig", m_iframeConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

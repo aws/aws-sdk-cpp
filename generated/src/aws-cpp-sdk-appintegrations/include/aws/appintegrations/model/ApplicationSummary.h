@@ -109,6 +109,16 @@ namespace Model
     template<typename LastModifiedTimeT = Aws::Utils::DateTime>
     ApplicationSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the application is a service.</p>
+     */
+    inline bool GetIsService() const { return m_isService; }
+    inline bool IsServiceHasBeenSet() const { return m_isServiceHasBeenSet; }
+    inline void SetIsService(bool value) { m_isServiceHasBeenSet = true; m_isService = value; }
+    inline ApplicationSummary& WithIsService(bool value) { SetIsService(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -128,6 +138,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
+
+    bool m_isService{false};
+    bool m_isServiceHasBeenSet = false;
   };
 
 } // namespace Model

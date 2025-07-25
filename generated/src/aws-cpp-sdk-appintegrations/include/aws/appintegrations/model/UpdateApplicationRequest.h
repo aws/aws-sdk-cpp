@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appintegrations/model/ApplicationConfig.h>
+#include <aws/appintegrations/model/IframeConfig.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +98,51 @@ namespace Model
     template<typename PermissionsT = Aws::String>
     UpdateApplicationRequest& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the application is a service.</p>
+     */
+    inline bool GetIsService() const { return m_isService; }
+    inline bool IsServiceHasBeenSet() const { return m_isServiceHasBeenSet; }
+    inline void SetIsService(bool value) { m_isServiceHasBeenSet = true; m_isService = value; }
+    inline UpdateApplicationRequest& WithIsService(bool value) { SetIsService(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum time in milliseconds allowed to establish a connection with the
+     * workspace.</p>
+     */
+    inline int GetInitializationTimeout() const { return m_initializationTimeout; }
+    inline bool InitializationTimeoutHasBeenSet() const { return m_initializationTimeoutHasBeenSet; }
+    inline void SetInitializationTimeout(int value) { m_initializationTimeoutHasBeenSet = true; m_initializationTimeout = value; }
+    inline UpdateApplicationRequest& WithInitializationTimeout(int value) { SetInitializationTimeout(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings for the application.</p>
+     */
+    inline const ApplicationConfig& GetApplicationConfig() const { return m_applicationConfig; }
+    inline bool ApplicationConfigHasBeenSet() const { return m_applicationConfigHasBeenSet; }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    void SetApplicationConfig(ApplicationConfigT&& value) { m_applicationConfigHasBeenSet = true; m_applicationConfig = std::forward<ApplicationConfigT>(value); }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    UpdateApplicationRequest& WithApplicationConfig(ApplicationConfigT&& value) { SetApplicationConfig(std::forward<ApplicationConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The iframe configuration for the application.</p>
+     */
+    inline const IframeConfig& GetIframeConfig() const { return m_iframeConfig; }
+    inline bool IframeConfigHasBeenSet() const { return m_iframeConfigHasBeenSet; }
+    template<typename IframeConfigT = IframeConfig>
+    void SetIframeConfig(IframeConfigT&& value) { m_iframeConfigHasBeenSet = true; m_iframeConfig = std::forward<IframeConfigT>(value); }
+    template<typename IframeConfigT = IframeConfig>
+    UpdateApplicationRequest& WithIframeConfig(IframeConfigT&& value) { SetIframeConfig(std::forward<IframeConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -112,6 +159,18 @@ namespace Model
 
     Aws::Vector<Aws::String> m_permissions;
     bool m_permissionsHasBeenSet = false;
+
+    bool m_isService{false};
+    bool m_isServiceHasBeenSet = false;
+
+    int m_initializationTimeout{0};
+    bool m_initializationTimeoutHasBeenSet = false;
+
+    ApplicationConfig m_applicationConfig;
+    bool m_applicationConfigHasBeenSet = false;
+
+    IframeConfig m_iframeConfig;
+    bool m_iframeConfigHasBeenSet = false;
   };
 
 } // namespace Model

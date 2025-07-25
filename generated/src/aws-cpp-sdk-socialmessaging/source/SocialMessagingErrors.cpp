@@ -18,6 +18,7 @@ namespace SocialMessaging
 namespace SocialMessagingErrorMapper
 {
 
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
 static const int ACCESS_DENIED_BY_META_HASH = HashingUtils::HashString("AccessDeniedByMetaException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
@@ -29,7 +30,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DEPENDENCY_HASH)
+  if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == DEPENDENCY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SocialMessagingErrors::DEPENDENCY), RetryableType::RETRYABLE);
   }

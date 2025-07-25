@@ -83,6 +83,26 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
     }
     m_permissionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IsService"))
+  {
+    m_isService = jsonValue.GetBool("IsService");
+    m_isServiceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("InitializationTimeout"))
+  {
+    m_initializationTimeout = jsonValue.GetInteger("InitializationTimeout");
+    m_initializationTimeoutHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ApplicationConfig"))
+  {
+    m_applicationConfig = jsonValue.GetObject("ApplicationConfig");
+    m_applicationConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IframeConfig"))
+  {
+    m_iframeConfig = jsonValue.GetObject("IframeConfig");
+    m_iframeConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

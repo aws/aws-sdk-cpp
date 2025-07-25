@@ -21,7 +21,8 @@ namespace Model
     direct_connect_gateway,
     connect,
     peering,
-    tgw_peering
+    tgw_peering,
+    network_function
   };
 
 namespace TransitGatewayAttachmentResourceTypeMapper

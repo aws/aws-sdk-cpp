@@ -36,9 +36,9 @@ namespace SQS
    * SQS Message Attributes</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Amazon
    * SQS Dead-Letter Queues</a> </p> </li> </ul> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS
-   * in the <i>Command Line Interface</i> </a> </p> </li> <li> <p> <i>Amazon Web
-   * Services General Reference</i> </p> <ul> <li> <p> <a
+   * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sqs/index.html">Amazon
+   * SQS in the Command Line Interface</a> </p> </li> <li> <p> <i>Amazon Web Services
+   * General Reference</i> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
    */
@@ -292,7 +292,7 @@ namespace SQS
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
+         * From a standard queue to a FIFO queue</a> in the <i>Amazon SQS Developer
          * Guide</i>. </p>  </li> <li> <p>If you don't provide a value for an
          * attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
@@ -799,11 +799,10 @@ namespace SQS
          * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
          * <p>Amazon SQS does not throw an exception or completely reject the message if it
          * contains invalid characters. Instead, it replaces those invalid characters with
-         * <code>U+FFFD</code> before storing the message in the queue, as long as the
-         * message body contains at least one valid character.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
-         * Reference</a></p>
+         * U+FFFD before storing the message in the queue, as long as the message body
+         * contains at least one valid character.</p> <p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendMessageOutcome SendMessage(const Model::SendMessageRequest& request) const;
 
@@ -845,10 +844,10 @@ namespace SQS
          * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
          * <p>Amazon SQS does not throw an exception or completely reject the message if it
          * contains invalid characters. Instead, it replaces those invalid characters with
-         * <code>U+FFFD</code> before storing the message in the queue, as long as the
-         * message body contains at least one valid character.</p>  <p>If you
-         * don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon SQS
-         * uses the default value for the queue.</p><p><h3>See Also:</h3>   <a
+         * U+FFFD before storing the message in the queue, as long as the message body
+         * contains at least one valid character.</p>  <p>If you don't specify
+         * the <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the
+         * default value for the queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          */

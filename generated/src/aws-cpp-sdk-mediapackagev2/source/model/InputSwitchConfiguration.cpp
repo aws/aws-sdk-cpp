@@ -30,6 +30,11 @@ InputSwitchConfiguration& InputSwitchConfiguration::operator =(JsonView jsonValu
     m_mQCSInputSwitching = jsonValue.GetBool("MQCSInputSwitching");
     m_mQCSInputSwitchingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PreferredInput"))
+  {
+    m_preferredInput = jsonValue.GetInteger("PreferredInput");
+    m_preferredInputHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue InputSwitchConfiguration::Jsonize() const
   if(m_mQCSInputSwitchingHasBeenSet)
   {
    payload.WithBool("MQCSInputSwitching", m_mQCSInputSwitching);
+
+  }
+
+  if(m_preferredInputHasBeenSet)
+  {
+   payload.WithInteger("PreferredInput", m_preferredInput);
 
   }
 

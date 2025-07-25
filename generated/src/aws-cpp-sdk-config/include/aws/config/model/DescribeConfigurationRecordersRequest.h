@@ -42,6 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of names of the configuration recorders that you want to specify.</p>
+     *  <p>When making a request to this operation, you can only specify one
+     * configuration recorder.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationRecorderNames() const { return m_configurationRecorderNames; }
     inline bool ConfigurationRecorderNamesHasBeenSet() const { return m_configurationRecorderNamesHasBeenSet; }

@@ -142,6 +142,84 @@ namespace SocialMessaging
         }
 
         /**
+         * <p>Creates a new WhatsApp message template from a custom
+         * definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatsAppMessageTemplateOutcome CreateWhatsAppMessageTemplate(const Model::CreateWhatsAppMessageTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatsAppMessageTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWhatsAppMessageTemplateRequestT = Model::CreateWhatsAppMessageTemplateRequest>
+        Model::CreateWhatsAppMessageTemplateOutcomeCallable CreateWhatsAppMessageTemplateCallable(const CreateWhatsAppMessageTemplateRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::CreateWhatsAppMessageTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWhatsAppMessageTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWhatsAppMessageTemplateRequestT = Model::CreateWhatsAppMessageTemplateRequest>
+        void CreateWhatsAppMessageTemplateAsync(const CreateWhatsAppMessageTemplateRequestT& request, const CreateWhatsAppMessageTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::CreateWhatsAppMessageTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new WhatsApp message template using a template from Meta's template
+         * library.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateFromLibrary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatsAppMessageTemplateFromLibraryOutcome CreateWhatsAppMessageTemplateFromLibrary(const Model::CreateWhatsAppMessageTemplateFromLibraryRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatsAppMessageTemplateFromLibrary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWhatsAppMessageTemplateFromLibraryRequestT = Model::CreateWhatsAppMessageTemplateFromLibraryRequest>
+        Model::CreateWhatsAppMessageTemplateFromLibraryOutcomeCallable CreateWhatsAppMessageTemplateFromLibraryCallable(const CreateWhatsAppMessageTemplateFromLibraryRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::CreateWhatsAppMessageTemplateFromLibrary, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWhatsAppMessageTemplateFromLibrary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWhatsAppMessageTemplateFromLibraryRequestT = Model::CreateWhatsAppMessageTemplateFromLibraryRequest>
+        void CreateWhatsAppMessageTemplateFromLibraryAsync(const CreateWhatsAppMessageTemplateFromLibraryRequestT& request, const CreateWhatsAppMessageTemplateFromLibraryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::CreateWhatsAppMessageTemplateFromLibrary, request, handler, context);
+        }
+
+        /**
+         * <p>Uploads media for use in a WhatsApp message template.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateMedia">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatsAppMessageTemplateMediaOutcome CreateWhatsAppMessageTemplateMedia(const Model::CreateWhatsAppMessageTemplateMediaRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatsAppMessageTemplateMedia that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWhatsAppMessageTemplateMediaRequestT = Model::CreateWhatsAppMessageTemplateMediaRequest>
+        Model::CreateWhatsAppMessageTemplateMediaOutcomeCallable CreateWhatsAppMessageTemplateMediaCallable(const CreateWhatsAppMessageTemplateMediaRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::CreateWhatsAppMessageTemplateMedia, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWhatsAppMessageTemplateMedia that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWhatsAppMessageTemplateMediaRequestT = Model::CreateWhatsAppMessageTemplateMediaRequest>
+        void CreateWhatsAppMessageTemplateMediaAsync(const CreateWhatsAppMessageTemplateMediaRequestT& request, const CreateWhatsAppMessageTemplateMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::CreateWhatsAppMessageTemplateMedia, request, handler, context);
+        }
+
+        /**
          * <p>Delete a media object from the WhatsApp service. If the object is still in an
          * Amazon S3 bucket you should delete it from there too.</p><p><h3>See Also:</h3>  
          * <a
@@ -166,6 +244,31 @@ namespace SocialMessaging
         void DeleteWhatsAppMessageMediaAsync(const DeleteWhatsAppMessageMediaRequestT& request, const DeleteWhatsAppMessageMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SocialMessagingClient::DeleteWhatsAppMessageMedia, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a WhatsApp message template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWhatsAppMessageTemplateOutcome DeleteWhatsAppMessageTemplate(const Model::DeleteWhatsAppMessageTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWhatsAppMessageTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWhatsAppMessageTemplateRequestT = Model::DeleteWhatsAppMessageTemplateRequest>
+        Model::DeleteWhatsAppMessageTemplateOutcomeCallable DeleteWhatsAppMessageTemplateCallable(const DeleteWhatsAppMessageTemplateRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::DeleteWhatsAppMessageTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWhatsAppMessageTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWhatsAppMessageTemplateRequestT = Model::DeleteWhatsAppMessageTemplateRequest>
+        void DeleteWhatsAppMessageTemplateAsync(const DeleteWhatsAppMessageTemplateRequestT& request, const DeleteWhatsAppMessageTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::DeleteWhatsAppMessageTemplate, request, handler, context);
         }
 
         /**
@@ -277,6 +380,31 @@ namespace SocialMessaging
         }
 
         /**
+         * <p>Retrieves a specific WhatsApp message template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppMessageTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWhatsAppMessageTemplateOutcome GetWhatsAppMessageTemplate(const Model::GetWhatsAppMessageTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWhatsAppMessageTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWhatsAppMessageTemplateRequestT = Model::GetWhatsAppMessageTemplateRequest>
+        Model::GetWhatsAppMessageTemplateOutcomeCallable GetWhatsAppMessageTemplateCallable(const GetWhatsAppMessageTemplateRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::GetWhatsAppMessageTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetWhatsAppMessageTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWhatsAppMessageTemplateRequestT = Model::GetWhatsAppMessageTemplateRequest>
+        void GetWhatsAppMessageTemplateAsync(const GetWhatsAppMessageTemplateRequestT& request, const GetWhatsAppMessageTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::GetWhatsAppMessageTemplate, request, handler, context);
+        }
+
+        /**
          * <p>List all WhatsApp Business Accounts linked to your Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListLinkedWhatsAppBusinessAccounts">AWS
@@ -326,6 +454,58 @@ namespace SocialMessaging
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SocialMessagingClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Lists WhatsApp message templates for a specific WhatsApp Business
+         * Account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppMessageTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWhatsAppMessageTemplatesOutcome ListWhatsAppMessageTemplates(const Model::ListWhatsAppMessageTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWhatsAppMessageTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWhatsAppMessageTemplatesRequestT = Model::ListWhatsAppMessageTemplatesRequest>
+        Model::ListWhatsAppMessageTemplatesOutcomeCallable ListWhatsAppMessageTemplatesCallable(const ListWhatsAppMessageTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::ListWhatsAppMessageTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListWhatsAppMessageTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWhatsAppMessageTemplatesRequestT = Model::ListWhatsAppMessageTemplatesRequest>
+        void ListWhatsAppMessageTemplatesAsync(const ListWhatsAppMessageTemplatesRequestT& request, const ListWhatsAppMessageTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::ListWhatsAppMessageTemplates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists templates available in Meta's template library for WhatsApp
+         * messaging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppTemplateLibrary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWhatsAppTemplateLibraryOutcome ListWhatsAppTemplateLibrary(const Model::ListWhatsAppTemplateLibraryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWhatsAppTemplateLibrary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWhatsAppTemplateLibraryRequestT = Model::ListWhatsAppTemplateLibraryRequest>
+        Model::ListWhatsAppTemplateLibraryOutcomeCallable ListWhatsAppTemplateLibraryCallable(const ListWhatsAppTemplateLibraryRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::ListWhatsAppTemplateLibrary, request);
+        }
+
+        /**
+         * An Async wrapper for ListWhatsAppTemplateLibrary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWhatsAppTemplateLibraryRequestT = Model::ListWhatsAppTemplateLibraryRequest>
+        void ListWhatsAppTemplateLibraryAsync(const ListWhatsAppTemplateLibraryRequestT& request, const ListWhatsAppTemplateLibraryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::ListWhatsAppTemplateLibrary, request, handler, context);
         }
 
         /**
@@ -467,6 +647,31 @@ namespace SocialMessaging
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SocialMessagingClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing WhatsApp message template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppMessageTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWhatsAppMessageTemplateOutcome UpdateWhatsAppMessageTemplate(const Model::UpdateWhatsAppMessageTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWhatsAppMessageTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWhatsAppMessageTemplateRequestT = Model::UpdateWhatsAppMessageTemplateRequest>
+        Model::UpdateWhatsAppMessageTemplateOutcomeCallable UpdateWhatsAppMessageTemplateCallable(const UpdateWhatsAppMessageTemplateRequestT& request) const
+        {
+            return SubmitCallable(&SocialMessagingClient::UpdateWhatsAppMessageTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWhatsAppMessageTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWhatsAppMessageTemplateRequestT = Model::UpdateWhatsAppMessageTemplateRequest>
+        void UpdateWhatsAppMessageTemplateAsync(const UpdateWhatsAppMessageTemplateRequestT& request, const UpdateWhatsAppMessageTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SocialMessagingClient::UpdateWhatsAppMessageTemplate, request, handler, context);
         }
 
 
