@@ -254,6 +254,7 @@ Aws::String URI::GetURLEncodedPathRFC3986() const
 void URI::SetPath(const Aws::String& value)
 {
     m_pathSegments.clear();
+    m_pathHasTrailingSlash = false;
     AddPathSegments(value);
 }
 
