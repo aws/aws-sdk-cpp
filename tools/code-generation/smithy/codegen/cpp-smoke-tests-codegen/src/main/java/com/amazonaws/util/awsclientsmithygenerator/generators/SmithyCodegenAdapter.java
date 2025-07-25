@@ -192,6 +192,11 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     }
 
     @Override
+    public boolean isDocumentShape(Shape s) {
+        return s.getType() == ShapeType.DOCUMENT;
+    }
+
+    @Override
     public List<Node> getList(Node d)
     {
         return d.asArrayNode().get().getElements();

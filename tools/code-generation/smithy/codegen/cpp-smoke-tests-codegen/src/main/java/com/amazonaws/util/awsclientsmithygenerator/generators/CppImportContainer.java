@@ -5,6 +5,7 @@
 
  package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+ import com.google.common.base.CaseFormat;
  import com.google.common.collect.ImmutableMap;
  import com.google.common.collect.ImmutableSet;
  import software.amazon.smithy.codegen.core.ImportContainer;
@@ -56,7 +57,9 @@ public final class CppImportContainer implements ImportContainer {
                 "Aws::Utils::Document", "aws/core/utils/Document.h",
                 "Aws::Utils::ByteBuffer", "aws/core/utils/Array.h");
 
-         dynamicHeaders.add(String.format("aws/%s/%sClient.h", c2jNamespace, clientNamespace));
+         dynamicHeaders.add(String.format("aws/%s/%sClient.h",
+                 c2jNamespace,
+                 CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, clientNamespace)));
         
     }
 
