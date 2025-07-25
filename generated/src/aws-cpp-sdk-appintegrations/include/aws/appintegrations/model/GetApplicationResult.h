@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appintegrations/model/ApplicationConfig.h>
+#include <aws/appintegrations/model/IframeConfig.h>
 #include <utility>
 
 namespace Aws
@@ -155,6 +157,47 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates whether the application is a service.</p>
+     */
+    inline bool GetIsService() const { return m_isService; }
+    inline void SetIsService(bool value) { m_isServiceHasBeenSet = true; m_isService = value; }
+    inline GetApplicationResult& WithIsService(bool value) { SetIsService(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum time in milliseconds allowed to establish a connection with the
+     * workspace.</p>
+     */
+    inline int GetInitializationTimeout() const { return m_initializationTimeout; }
+    inline void SetInitializationTimeout(int value) { m_initializationTimeoutHasBeenSet = true; m_initializationTimeout = value; }
+    inline GetApplicationResult& WithInitializationTimeout(int value) { SetInitializationTimeout(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings for the application.</p>
+     */
+    inline const ApplicationConfig& GetApplicationConfig() const { return m_applicationConfig; }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    void SetApplicationConfig(ApplicationConfigT&& value) { m_applicationConfigHasBeenSet = true; m_applicationConfig = std::forward<ApplicationConfigT>(value); }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    GetApplicationResult& WithApplicationConfig(ApplicationConfigT&& value) { SetApplicationConfig(std::forward<ApplicationConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The iframe configuration for the application.</p>
+     */
+    inline const IframeConfig& GetIframeConfig() const { return m_iframeConfig; }
+    template<typename IframeConfigT = IframeConfig>
+    void SetIframeConfig(IframeConfigT&& value) { m_iframeConfigHasBeenSet = true; m_iframeConfig = std::forward<IframeConfigT>(value); }
+    template<typename IframeConfigT = IframeConfig>
+    GetApplicationResult& WithIframeConfig(IframeConfigT&& value) { SetIframeConfig(std::forward<IframeConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -193,6 +236,18 @@ namespace Model
 
     Aws::Vector<Aws::String> m_permissions;
     bool m_permissionsHasBeenSet = false;
+
+    bool m_isService{false};
+    bool m_isServiceHasBeenSet = false;
+
+    int m_initializationTimeout{0};
+    bool m_initializationTimeoutHasBeenSet = false;
+
+    ApplicationConfig m_applicationConfig;
+    bool m_applicationConfigHasBeenSet = false;
+
+    IframeConfig m_iframeConfig;
+    bool m_iframeConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

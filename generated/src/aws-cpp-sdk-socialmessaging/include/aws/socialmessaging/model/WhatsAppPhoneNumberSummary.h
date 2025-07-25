@@ -121,6 +121,19 @@ namespace Model
     template<typename QualityRatingT = Aws::String>
     WhatsAppPhoneNumberSummary& WithQualityRating(QualityRatingT&& value) { SetQualityRating(std::forward<QualityRatingT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The geographic region where the WhatsApp phone number's data is stored and
+     * processed.</p>
+     */
+    inline const Aws::String& GetDataLocalizationRegion() const { return m_dataLocalizationRegion; }
+    inline bool DataLocalizationRegionHasBeenSet() const { return m_dataLocalizationRegionHasBeenSet; }
+    template<typename DataLocalizationRegionT = Aws::String>
+    void SetDataLocalizationRegion(DataLocalizationRegionT&& value) { m_dataLocalizationRegionHasBeenSet = true; m_dataLocalizationRegion = std::forward<DataLocalizationRegionT>(value); }
+    template<typename DataLocalizationRegionT = Aws::String>
+    WhatsAppPhoneNumberSummary& WithDataLocalizationRegion(DataLocalizationRegionT&& value) { SetDataLocalizationRegion(std::forward<DataLocalizationRegionT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -143,6 +156,9 @@ namespace Model
 
     Aws::String m_qualityRating;
     bool m_qualityRatingHasBeenSet = false;
+
+    Aws::String m_dataLocalizationRegion;
+    bool m_dataLocalizationRegionHasBeenSet = false;
   };
 
 } // namespace Model

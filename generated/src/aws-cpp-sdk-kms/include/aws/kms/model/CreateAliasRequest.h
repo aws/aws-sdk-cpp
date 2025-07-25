@@ -44,7 +44,7 @@ namespace Model
      * characters. It can contain only alphanumeric characters, forward slashes (/),
      * underscores (_), and dashes (-). The alias name cannot begin with
      * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
      * Web Services managed keys</a>.</p>
      */
     inline const Aws::String& GetAliasName() const { return m_aliasName; }
@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>Associates the alias with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
      * managed key</a>. The KMS key must be in the same Amazon Web Services Region.
      * </p> <p>A valid key ID is required. If you supply a null or empty string value,
      * this operation returns an error.</p> <p>For help finding the key ID and ARN, see

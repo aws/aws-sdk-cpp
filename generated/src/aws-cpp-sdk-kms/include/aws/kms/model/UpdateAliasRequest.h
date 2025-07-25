@@ -54,10 +54,10 @@ namespace Model
     ///@{
     /**
      * <p>Identifies the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
      * managed key</a> to associate with the alias. You don't have permission to
      * associate an alias with an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
      * the same type as the current target KMS key (both symmetric or both asymmetric

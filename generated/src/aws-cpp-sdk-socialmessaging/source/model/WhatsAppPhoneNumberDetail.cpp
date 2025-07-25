@@ -60,6 +60,11 @@ WhatsAppPhoneNumberDetail& WhatsAppPhoneNumberDetail::operator =(JsonView jsonVa
     m_qualityRating = jsonValue.GetString("qualityRating");
     m_qualityRatingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("dataLocalizationRegion"))
+  {
+    m_dataLocalizationRegion = jsonValue.GetString("dataLocalizationRegion");
+    m_dataLocalizationRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -106,6 +111,12 @@ JsonValue WhatsAppPhoneNumberDetail::Jsonize() const
   if(m_qualityRatingHasBeenSet)
   {
    payload.WithString("qualityRating", m_qualityRating);
+
+  }
+
+  if(m_dataLocalizationRegionHasBeenSet)
+  {
+   payload.WithString("dataLocalizationRegion", m_dataLocalizationRegion);
 
   }
 

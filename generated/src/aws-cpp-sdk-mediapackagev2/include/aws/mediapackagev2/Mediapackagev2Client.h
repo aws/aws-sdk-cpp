@@ -372,8 +372,7 @@ namespace mediapackagev2
 
         /**
          * <p>Retrieves the specified channel that's configured in AWS Elemental
-         * MediaPackage, including the origin endpoints that are associated with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * MediaPackage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannel">AWS
          * API Reference</a></p>
          */
@@ -399,8 +398,7 @@ namespace mediapackagev2
 
         /**
          * <p>Retrieves the specified channel group that's configured in AWS Elemental
-         * MediaPackage, including the channels and origin endpoints that are associated
-         * with it.</p><p><h3>See Also:</h3>   <a
+         * MediaPackage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannelGroup">AWS
          * API Reference</a></p>
          */
@@ -558,8 +556,7 @@ namespace mediapackagev2
 
         /**
          * <p>Retrieves all channels in a specific channel group that are configured in AWS
-         * Elemental MediaPackage, including the origin endpoints that are associated with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * Elemental MediaPackage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannels">AWS
          * API Reference</a></p>
          */

@@ -55,6 +55,11 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IsService"))
+  {
+    m_isService = jsonValue.GetBool("IsService");
+    m_isServiceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +99,12 @@ JsonValue ApplicationSummary::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_isServiceHasBeenSet)
+  {
+   payload.WithBool("IsService", m_isService);
+
   }
 
   return payload;

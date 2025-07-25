@@ -21,22 +21,23 @@ namespace KMS
    * operations that you can call programmatically. For general information about
    * KMS, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/">
    * <i>Key Management Service Developer Guide</i> </a>.</p>  <p>KMS has
-   * replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-   * <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is
-   * keeping some variations of this term.</p> <p>Amazon Web Services provides SDKs
-   * that consist of libraries and sample code for various programming languages and
-   * platforms (Java, Rust, Python, Ruby, .Net, macOS, Android, etc.). The SDKs
-   * provide a convenient way to create programmatic access to KMS and other Amazon
-   * Web Services services. For example, the SDKs take care of tasks such as signing
-   * requests (see below), managing errors, and retrying requests automatically. For
-   * more information about the Amazon Web Services SDKs, including how to download
-   * and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
-   * Web Services</a>.</p>  <p>We recommend that you use the Amazon Web
-   * Services SDKs to make programmatic API calls to KMS.</p> <p>If you need to use
-   * FIPS 140-2 validated cryptographic modules when communicating with Amazon Web
-   * Services, use one of the FIPS endpoints in your preferred Amazon Web Services
-   * Region. If you need communicate over IPv6, use the dual-stack endpoint in your
-   * preferred Amazon Web Services Region. For more information see <a
+   * replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+   * Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent
+   * breaking changes, KMS is keeping some variations of this term.</p> <p>Amazon Web
+   * Services provides SDKs that consist of libraries and sample code for various
+   * programming languages and platforms (Java, Rust, Python, Ruby, .Net, macOS,
+   * Android, etc.). The SDKs provide a convenient way to create programmatic access
+   * to KMS and other Amazon Web Services services. For example, the SDKs take care
+   * of tasks such as signing requests (see below), managing errors, and retrying
+   * requests automatically. For more information about the Amazon Web Services SDKs,
+   * including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+   *  <p>We recommend that you use the Amazon Web Services SDKs to make
+   * programmatic API calls to KMS.</p> <p>If you need to use FIPS 140-2 validated
+   * cryptographic modules when communicating with Amazon Web Services, use one of
+   * the FIPS endpoints in your preferred Amazon Web Services Region. If you need
+   * communicate over IPv6, use the dual-stack endpoint in your preferred Amazon Web
+   * Services Region. For more information see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service
    * endpoints</a> in the Key Management Service topic of the <i>Amazon Web Services
    * General Reference</i> and <a
@@ -512,24 +513,24 @@ namespace KMS
          * creation date, description, and key state. </p> <p>Use the parameters of
          * <code>CreateKey</code> to specify the type of KMS key, the source of its key
          * material, its key policy, description, tags, and other properties.</p> 
-         * <p>KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS
-         * key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
-         * changes, KMS is keeping some variations of this term.</p>  <p>To create
-         * different types of KMS keys, use the following guidance:</p> <dl> <dt>Symmetric
-         * encryption KMS key</dt> <dd> <p>By default, <code>CreateKey</code> creates a
-         * symmetric encryption KMS key with key material that KMS generates. This is the
-         * basic and most widely used type of KMS key, and provides the best
-         * performance.</p> <p>To create a symmetric encryption KMS key, you don't need to
-         * specify any parameters. The default value for <code>KeySpec</code>,
-         * <code>SYMMETRIC_DEFAULT</code>, the default value for <code>KeyUsage</code>,
-         * <code>ENCRYPT_DECRYPT</code>, and the default value for <code>Origin</code>,
-         * <code>AWS_KMS</code>, create a symmetric encryption KMS key with KMS key
-         * material.</p> <p>If you need a key for basic encryption and decryption or you
-         * are creating a KMS key to protect your resources in an Amazon Web Services
-         * service, create a symmetric encryption KMS key. The key material in a symmetric
-         * encryption key never leaves KMS unencrypted. You can use a symmetric encryption
-         * KMS key to encrypt and decrypt data up to 4,096 bytes, but they are typically
-         * used to generate data keys and data keys pairs. For details, see
+         * <p>KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key
+         * Management Service key</i> and <i>KMS key</i>. The concept has not changed. To
+         * prevent breaking changes, KMS is keeping some variations of this term.</p>
+         *  <p>To create different types of KMS keys, use the following
+         * guidance:</p> <dl> <dt>Symmetric encryption KMS key</dt> <dd> <p>By default,
+         * <code>CreateKey</code> creates a symmetric encryption KMS key with key material
+         * that KMS generates. This is the basic and most widely used type of KMS key, and
+         * provides the best performance.</p> <p>To create a symmetric encryption KMS key,
+         * you don't need to specify any parameters. The default value for
+         * <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, the default value for
+         * <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, and the default value for
+         * <code>Origin</code>, <code>AWS_KMS</code>, create a symmetric encryption KMS key
+         * with KMS key material.</p> <p>If you need a key for basic encryption and
+         * decryption or you are creating a KMS key to protect your resources in an Amazon
+         * Web Services service, create a symmetric encryption KMS key. The key material in
+         * a symmetric encryption key never leaves KMS unencrypted. You can use a symmetric
+         * encryption KMS key to encrypt and decrypt data up to 4,096 bytes, but they are
+         * typically used to generate data keys and data keys pairs. For details, see
          * <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.</p> <p> </p> </dd>
          * <dt>Asymmetric KMS keys</dt> <dd> <p>To create an asymmetric KMS key, use the
          * <code>KeySpec</code> parameter to specify the type of key material in the KMS
@@ -1082,9 +1083,9 @@ namespace KMS
         /**
          * <p>Provides detailed information about a KMS key. You can run
          * <code>DescribeKey</code> on a <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed key</a> or an <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed key</a>.</p> <p>This detailed information includes the key
          * ARN, creation date (and deletion date, if applicable), the key state, and the
          * origin and expiration date (if any) of the key material. It includes fields,
@@ -1113,7 +1114,7 @@ namespace KMS
          * </li> </ul> <p>In general, <code>DescribeKey</code> is a non-mutating operation.
          * It returns data about KMS keys, but doesn't change them. However, Amazon Web
          * Services services use <code>DescribeKey</code> to create <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i>
          * with no key ID.</p> <p> <b>Cross-account use</b>: Yes. To perform this operation
          * with a KMS key in a different Amazon Web Services account, specify the key ARN
@@ -1211,12 +1212,12 @@ namespace KMS
          * keys</a>, set the property on the primary key.</p> <p>You can enable
          * (<a>EnableKeyRotation</a>) and disable automatic rotation of the key material in
          * <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed KMS keys</a>. Key material rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed KMS keys</a> is not configurable. KMS always rotates the
          * key material for every year. Rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
          * Web Services owned KMS keys</a> varies.</p>  <p>In May 2022, KMS changed
          * the rotation schedule for Amazon Web Services managed keys from every three
          * years to every year. For details, see <a>EnableKeyRotation</a>.</p> 
@@ -1359,7 +1360,7 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotating-keys-enable-disable.html">automatic
          * rotation of the key material</a> of the specified symmetric encryption KMS key.
          * </p> <p>By default, when you enable automatic rotation of a <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed KMS key</a>, KMS rotates the key material of the KMS key one year
          * (approximately 365 days) from the enable date and every year thereafter. You can
          * use the optional <code>RotationPeriodInDays</code> parameter to specify a custom
@@ -1384,10 +1385,10 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
          * keys</a>, set the property on the primary key. </p> <p>You cannot enable or
          * disable automatic rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon
          * Web Services managed keys every year. Rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
          * Web Services owned KMS keys</a> is managed by the Amazon Web Services service
          * that owns the key.</p>  <p>In May 2022, KMS changed the rotation schedule
          * for Amazon Web Services managed keys from every three years (approximately 1,095
@@ -2034,7 +2035,7 @@ namespace KMS
          * (<a>EnableKeyRotation</a>) and disable automatic rotation
          * (<a>DisableKeyRotation</a>) of the key material in customer managed KMS keys.
          * Key material rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed KMS keys</a> is not configurable. KMS always rotates the
          * key material in Amazon Web Services managed KMS keys every year. The key
          * rotation status for Amazon Web Services managed KMS keys is always
@@ -3062,10 +3063,10 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
          * keys</a>, invoke the on-demand rotation on the primary key.</p> <p>You cannot
          * initiate on-demand rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon
          * Web Services managed keys every year. Rotation of <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
          * Web Services owned KMS keys</a> is managed by the Amazon Web Services service
          * that owns the key.</p> <p>The KMS key that you use for this operation must be in
          * a compatible key state. For details, see <a
@@ -3260,7 +3261,7 @@ namespace KMS
 
         /**
          * <p>Adds or edits tags on a <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed key</a>.</p>  <p>Tagging or untagging a KMS key can allow or deny
          * permission to the KMS key. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
@@ -3269,11 +3270,11 @@ namespace KMS
          * case-sensitive strings. The tag value can be an empty (null) string. To add a
          * tag, specify a new tag key and a tag value. To edit a tag, specify an existing
          * tag key and a new tag value.</p> <p>You can use this operation to tag a <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed key</a>, but you cannot tag an <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
          * Web Services managed key</a>, an <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
          * Web Services owned key</a>, a <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
          * key store</a>, or an <a
@@ -3326,7 +3327,7 @@ namespace KMS
 
         /**
          * <p>Deletes tags from a <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
          * managed key</a>. To delete a tag, specify the tag key and the KMS key.</p>
          *  <p>Tagging or untagging a KMS key can allow or deny permission to the KMS
          * key. For details, see <a

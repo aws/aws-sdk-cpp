@@ -30,6 +30,11 @@ WhatsAppSignupCallback& WhatsAppSignupCallback::operator =(JsonView jsonValue)
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("callbackUrl"))
+  {
+    m_callbackUrl = jsonValue.GetString("callbackUrl");
+    m_callbackUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue WhatsAppSignupCallback::Jsonize() const
   if(m_accessTokenHasBeenSet)
   {
    payload.WithString("accessToken", m_accessToken);
+
+  }
+
+  if(m_callbackUrlHasBeenSet)
+  {
+   payload.WithString("callbackUrl", m_callbackUrl);
 
   }
 

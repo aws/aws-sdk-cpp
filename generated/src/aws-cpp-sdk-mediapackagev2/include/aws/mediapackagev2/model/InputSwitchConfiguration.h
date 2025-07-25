@@ -48,10 +48,27 @@ namespace Model
     inline void SetMQCSInputSwitching(bool value) { m_mQCSInputSwitchingHasBeenSet = true; m_mQCSInputSwitching = value; }
     inline InputSwitchConfiguration& WithMQCSInputSwitching(bool value) { SetMQCSInputSwitching(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For CMAF inputs, indicates which input MediaPackage should prefer when both
+     * inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest
+     * endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't
+     * specify a preferred input, MediaPackage uses its default switching behavior when
+     * MQCS scores are equal.</p>
+     */
+    inline int GetPreferredInput() const { return m_preferredInput; }
+    inline bool PreferredInputHasBeenSet() const { return m_preferredInputHasBeenSet; }
+    inline void SetPreferredInput(int value) { m_preferredInputHasBeenSet = true; m_preferredInput = value; }
+    inline InputSwitchConfiguration& WithPreferredInput(int value) { SetPreferredInput(value); return *this;}
+    ///@}
   private:
 
     bool m_mQCSInputSwitching{false};
     bool m_mQCSInputSwitchingHasBeenSet = false;
+
+    int m_preferredInput{0};
+    bool m_preferredInputHasBeenSet = false;
   };
 
 } // namespace Model

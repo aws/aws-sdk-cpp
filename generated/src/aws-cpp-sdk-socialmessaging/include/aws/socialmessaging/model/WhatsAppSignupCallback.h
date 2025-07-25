@@ -50,10 +50,25 @@ namespace Model
     template<typename AccessTokenT = Aws::String>
     WhatsAppSignupCallback& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The URL where WhatsApp will send callback notifications for this account.</p>
+     */
+    inline const Aws::String& GetCallbackUrl() const { return m_callbackUrl; }
+    inline bool CallbackUrlHasBeenSet() const { return m_callbackUrlHasBeenSet; }
+    template<typename CallbackUrlT = Aws::String>
+    void SetCallbackUrl(CallbackUrlT&& value) { m_callbackUrlHasBeenSet = true; m_callbackUrl = std::forward<CallbackUrlT>(value); }
+    template<typename CallbackUrlT = Aws::String>
+    WhatsAppSignupCallback& WithCallbackUrl(CallbackUrlT&& value) { SetCallbackUrl(std::forward<CallbackUrlT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet = false;
+
+    Aws::String m_callbackUrl;
+    bool m_callbackUrlHasBeenSet = false;
   };
 
 } // namespace Model
