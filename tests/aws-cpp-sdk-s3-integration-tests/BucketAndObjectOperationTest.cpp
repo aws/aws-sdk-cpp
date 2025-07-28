@@ -85,6 +85,7 @@ namespace
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
     static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
+    static std::string BASE_PUT_MULTIPART_COMPOSITE_CHECKSUM_BUCKET_NAME = "multiparttest";
     static std::string BASE_OBJECT_LOCK_BUCKET_NAME = "objectlock";
     static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
     static std::string BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
@@ -131,6 +132,7 @@ namespace
           std::ref(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME),
           std::ref(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME),
           std::ref(BASE_PUT_MULTIPART_BUCKET_NAME),
+          std::ref(BASE_PUT_MULTIPART_COMPOSITE_CHECKSUM_BUCKET_NAME),
           std::ref(BASE_OBJECT_LOCK_BUCKET_NAME),
           std::ref(BASE_ERRORS_TESTING_BUCKET),
           std::ref(BASE_INTERRUPT_TESTING_BUCKET),
@@ -2641,5 +2643,76 @@ namespace
       Aws::S3::Model::GetObjectOutcome outcome =
               client->GetObject(request);
       EXPECT_FALSE(outcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, ShouldSkipResponseValidationOnCompositeChecksums) {
+      const auto fullBucketName = CalculateBucketName(BASE_PUT_MULTIPART_COMPOSITE_CHECKSUM_BUCKET_NAME.c_str());
+      m_bucketsToDelete.insert(fullBucketName);
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+
+      CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
+      const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+      ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+      ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
+      TagTestBucket(fullBucketName, Client);
+
+      const Aws::String objectKey{"test-composite-checksum"};
+
+      const auto createMPUResponse = Client->CreateMultipartUpload(CreateMultipartUploadRequest{}
+        .WithBucket(fullBucketName)
+        .WithKey(objectKey)
+        .WithChecksumType(ChecksumType::COMPOSITE)
+        .WithChecksumAlgorithm(ChecksumAlgorithm::CRC32));
+      AWS_EXPECT_SUCCESS(createMPUResponse);
+
+      auto uploadPartOneRequest = UploadPartRequest{}
+        .WithBucket(fullBucketName)
+        .WithKey(objectKey)
+        .WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+        .WithUploadId(createMPUResponse.GetResult().GetUploadId())
+        .WithPartNumber(1);
+
+      uploadPartOneRequest.SetBody(Create5MbStreamForUploadPart("Hello from part 1"));
+
+      const auto partOneUploadResponse = Client->UploadPart(uploadPartOneRequest);
+      AWS_EXPECT_SUCCESS(partOneUploadResponse);
+
+      auto uploadPartTwoRequest = UploadPartRequest{}
+        .WithBucket(fullBucketName)
+        .WithKey(objectKey)
+        .WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+        .WithUploadId(createMPUResponse.GetResult().GetUploadId())
+        .WithPartNumber(2);
+
+      uploadPartTwoRequest.SetBody(Create5MbStreamForUploadPart("Hello from part 2"));
+
+      const auto partTwoUploadResponse = Client->UploadPart(uploadPartTwoRequest);
+      AWS_EXPECT_SUCCESS(partTwoUploadResponse);
+
+
+      const auto completeMpuRequest = Client->CompleteMultipartUpload(CompleteMultipartUploadRequest{}
+        .WithBucket(fullBucketName)
+        .WithKey(objectKey)
+        .WithUploadId(createMPUResponse.GetResult().GetUploadId())
+        .WithChecksumType(ChecksumType::COMPOSITE)
+        .WithMultipartUpload(CompletedMultipartUpload{}.WithParts({
+          CompletedPart{}.WithPartNumber(1)
+            .WithETag(partOneUploadResponse.GetResult().GetETag())
+            .WithChecksumCRC32(partOneUploadResponse.GetResult().GetChecksumCRC32()),
+          CompletedPart{}
+            .WithPartNumber(2)
+            .WithETag(partTwoUploadResponse.GetResult().GetETag())
+            .WithChecksumCRC32(partTwoUploadResponse.GetResult().GetChecksumCRC32())
+        })));
+      AWS_EXPECT_SUCCESS(completeMpuRequest);
+
+      const auto getObjectResponse = Client->GetObject(GetObjectRequest{}
+        .WithBucket(fullBucketName)
+        .WithKey(objectKey));
+      AWS_EXPECT_SUCCESS(getObjectResponse);
     }
 }

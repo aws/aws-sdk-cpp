@@ -171,9 +171,17 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
     }
     for (const auto& hashIterator : httpRequest->GetResponseValidationHashes()) {
       Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + hashIterator.first;
-      // TODO: If checksum ends with -#, then skip
       if (httpResponse->HasHeader(checksumHeaderKey.c_str())) {
         const Aws::String& checksumHeaderValue = httpResponse->GetHeader(checksumHeaderKey);
+        // Handle composite checksum case where checksum has a trailing value indicating part size
+        // i.e. c8Sk6w==-2 which denotes a 2 part composite checksum.
+        const auto compositeChecksumIter = checksumHeaderValue.rfind('-');
+        if (compositeChecksumIter != Aws::String::npos &&
+            compositeChecksumIter + 1 < checksumHeaderValue.length() &&
+            Aws::Utils::StringUtils::ConvertToInt32(checksumHeaderValue.substr(compositeChecksumIter + 1).c_str()) != 0) {
+          AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_CHECKSUM, "Skipping checksum validation for composite checksum: " << checksumHeaderValue);
+          break;
+        }
         if (HashingUtils::Base64Encode(hashIterator.second->GetHash().GetResult()) != checksumHeaderValue) {
           auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::VALIDATION, "",
                                                                       "Response checksums mismatch", false /*retryable*/};
