@@ -51,6 +51,20 @@ void ListActionsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_resolveToResourceTypeHasBeenSet)
+    {
+      ss << ResolveToResourceTypeMapper::GetNameForResolveToResourceType(m_resolveToResourceType);
+      uri.AddQueryStringParameter("resolveToResourceType", ss.str());
+      ss.str("");
+    }
+
+    if(m_resolveToResourceIdHasBeenSet)
+    {
+      ss << m_resolveToResourceId;
+      uri.AddQueryStringParameter("resolveToResourceId", ss.str());
+      ss.str("");
+    }
+
 }
 
 

@@ -30,6 +30,11 @@ DescribeAssetPropertyResult& DescribeAssetPropertyResult::operator =(const Aws::
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("assetExternalId"))
+  {
+    m_assetExternalId = jsonValue.GetString("assetExternalId");
+    m_assetExternalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("assetName"))
   {
     m_assetName = jsonValue.GetString("assetName");
@@ -49,11 +54,6 @@ DescribeAssetPropertyResult& DescribeAssetPropertyResult::operator =(const Aws::
   {
     m_compositeModel = jsonValue.GetObject("compositeModel");
     m_compositeModelHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("assetExternalId"))
-  {
-    m_assetExternalId = jsonValue.GetString("assetExternalId");
-    m_assetExternalIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

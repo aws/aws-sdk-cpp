@@ -8,6 +8,7 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/iotsitewise/model/TargetResourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/ResolveToResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +83,28 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListActionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of the resolved resource.</p>
+     */
+    inline ResolveToResourceType GetResolveToResourceType() const { return m_resolveToResourceType; }
+    inline bool ResolveToResourceTypeHasBeenSet() const { return m_resolveToResourceTypeHasBeenSet; }
+    inline void SetResolveToResourceType(ResolveToResourceType value) { m_resolveToResourceTypeHasBeenSet = true; m_resolveToResourceType = value; }
+    inline ListActionsRequest& WithResolveToResourceType(ResolveToResourceType value) { SetResolveToResourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the resolved resource.</p>
+     */
+    inline const Aws::String& GetResolveToResourceId() const { return m_resolveToResourceId; }
+    inline bool ResolveToResourceIdHasBeenSet() const { return m_resolveToResourceIdHasBeenSet; }
+    template<typename ResolveToResourceIdT = Aws::String>
+    void SetResolveToResourceId(ResolveToResourceIdT&& value) { m_resolveToResourceIdHasBeenSet = true; m_resolveToResourceId = std::forward<ResolveToResourceIdT>(value); }
+    template<typename ResolveToResourceIdT = Aws::String>
+    ListActionsRequest& WithResolveToResourceId(ResolveToResourceIdT&& value) { SetResolveToResourceId(std::forward<ResolveToResourceIdT>(value)); return *this;}
+    ///@}
   private:
 
     TargetResourceType m_targetResourceType{TargetResourceType::NOT_SET};
@@ -95,6 +118,12 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    ResolveToResourceType m_resolveToResourceType{ResolveToResourceType::NOT_SET};
+    bool m_resolveToResourceTypeHasBeenSet = false;
+
+    Aws::String m_resolveToResourceId;
+    bool m_resolveToResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

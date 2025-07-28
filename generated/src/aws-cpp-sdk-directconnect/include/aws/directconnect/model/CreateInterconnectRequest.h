@@ -109,6 +109,17 @@ namespace Model
     template<typename ProviderNameT = Aws::String>
     CreateInterconnectRequest& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether you want the interconnect to support MAC Security
+     * (MACsec).</p>
+     */
+    inline bool GetRequestMACSec() const { return m_requestMACSec; }
+    inline bool RequestMACSecHasBeenSet() const { return m_requestMACSecHasBeenSet; }
+    inline void SetRequestMACSec(bool value) { m_requestMACSecHasBeenSet = true; m_requestMACSec = value; }
+    inline CreateInterconnectRequest& WithRequestMACSec(bool value) { SetRequestMACSec(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_interconnectName;
@@ -128,6 +139,9 @@ namespace Model
 
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet = false;
+
+    bool m_requestMACSec{false};
+    bool m_requestMACSecHasBeenSet = false;
   };
 
 } // namespace Model

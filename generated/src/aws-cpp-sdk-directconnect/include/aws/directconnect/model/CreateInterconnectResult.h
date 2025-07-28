@@ -11,6 +11,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Tag.h>
+#include <aws/directconnect/model/MacSecKey.h>
 #include <utility>
 
 namespace Aws
@@ -218,6 +219,54 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+     */
+    inline bool GetMacSecCapable() const { return m_macSecCapable; }
+    inline void SetMacSecCapable(bool value) { m_macSecCapableHasBeenSet = true; m_macSecCapable = value; }
+    inline CreateInterconnectResult& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The MAC Security (MACsec) port link status.</p> <p>The valid values are
+     * <code>Encryption Up</code>, which means that there is an active Connection Key
+     * Name, or <code>Encryption Down</code>.</p>
+     */
+    inline const Aws::String& GetPortEncryptionStatus() const { return m_portEncryptionStatus; }
+    template<typename PortEncryptionStatusT = Aws::String>
+    void SetPortEncryptionStatus(PortEncryptionStatusT&& value) { m_portEncryptionStatusHasBeenSet = true; m_portEncryptionStatus = std::forward<PortEncryptionStatusT>(value); }
+    template<typename PortEncryptionStatusT = Aws::String>
+    CreateInterconnectResult& WithPortEncryptionStatus(PortEncryptionStatusT&& value) { SetPortEncryptionStatus(std::forward<PortEncryptionStatusT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const { return m_encryptionMode; }
+    template<typename EncryptionModeT = Aws::String>
+    void SetEncryptionMode(EncryptionModeT&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::forward<EncryptionModeT>(value); }
+    template<typename EncryptionModeT = Aws::String>
+    CreateInterconnectResult& WithEncryptionMode(EncryptionModeT&& value) { SetEncryptionMode(std::forward<EncryptionModeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The MAC Security (MACsec) security keys.</p>
+     */
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const { return m_macSecKeys; }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    void SetMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::forward<MacSecKeysT>(value); }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    CreateInterconnectResult& WithMacSecKeys(MacSecKeysT&& value) { SetMacSecKeys(std::forward<MacSecKeysT>(value)); return *this;}
+    template<typename MacSecKeysT = MacSecKey>
+    CreateInterconnectResult& AddMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.emplace_back(std::forward<MacSecKeysT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -271,6 +320,18 @@ namespace Model
 
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet = false;
+
+    bool m_macSecCapable{false};
+    bool m_macSecCapableHasBeenSet = false;
+
+    Aws::String m_portEncryptionStatus;
+    bool m_portEncryptionStatusHasBeenSet = false;
+
+    Aws::String m_encryptionMode;
+    bool m_encryptionModeHasBeenSet = false;
+
+    Aws::Vector<MacSecKey> m_macSecKeys;
+    bool m_macSecKeysHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

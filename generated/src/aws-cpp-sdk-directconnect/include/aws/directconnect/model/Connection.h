@@ -326,6 +326,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates whether the interconnect hosting this connection supports MAC
+     * Security (MACsec).</p>
+     */
+    inline bool GetPartnerInterconnectMacSecCapable() const { return m_partnerInterconnectMacSecCapable; }
+    inline bool PartnerInterconnectMacSecCapableHasBeenSet() const { return m_partnerInterconnectMacSecCapableHasBeenSet; }
+    inline void SetPartnerInterconnectMacSecCapable(bool value) { m_partnerInterconnectMacSecCapableHasBeenSet = true; m_partnerInterconnectMacSecCapable = value; }
+    inline Connection& WithPartnerInterconnectMacSecCapable(bool value) { SetPartnerInterconnectMacSecCapable(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -401,6 +412,9 @@ namespace Model
 
     Aws::Vector<MacSecKey> m_macSecKeys;
     bool m_macSecKeysHasBeenSet = false;
+
+    bool m_partnerInterconnectMacSecCapable{false};
+    bool m_partnerInterconnectMacSecCapableHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

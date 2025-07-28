@@ -50,6 +50,11 @@ DescribeActionResult& DescribeActionResult::operator =(const Aws::AmazonWebServi
     m_executionTime = jsonValue.GetDouble("executionTime");
     m_executionTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resolveTo"))
+  {
+    m_resolveTo = jsonValue.GetObject("resolveTo");
+    m_resolveToHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

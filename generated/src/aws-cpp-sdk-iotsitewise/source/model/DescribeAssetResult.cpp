@@ -30,6 +30,11 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("assetExternalId"))
+  {
+    m_assetExternalId = jsonValue.GetString("assetExternalId");
+    m_assetExternalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("assetArn"))
   {
     m_assetArn = jsonValue.GetString("assetArn");
@@ -100,11 +105,6 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
       m_assetCompositeModelSummaries.push_back(assetCompositeModelSummariesJsonList[assetCompositeModelSummariesIndex].AsObject());
     }
     m_assetCompositeModelSummariesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("assetExternalId"))
-  {
-    m_assetExternalId = jsonValue.GetString("assetExternalId");
-    m_assetExternalIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

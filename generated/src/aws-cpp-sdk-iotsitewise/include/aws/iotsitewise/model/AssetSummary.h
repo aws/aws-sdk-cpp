@@ -55,6 +55,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    AssetSummary& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the asset, which has the following format.</p> <p>
@@ -155,24 +169,13 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     AssetSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The external ID of the asset. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetExternalId() const { return m_externalId; }
-    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    template<typename ExternalIdT = Aws::String>
-    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
-    template<typename ExternalIdT = Aws::String>
-    AssetSummary& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
@@ -197,9 +200,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

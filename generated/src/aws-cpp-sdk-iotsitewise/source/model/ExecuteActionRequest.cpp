@@ -40,6 +40,12 @@ Aws::String ExecuteActionRequest::SerializePayload() const
 
   }
 
+  if(m_resolveToHasBeenSet)
+  {
+   payload.WithObject("resolveTo", m_resolveTo.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

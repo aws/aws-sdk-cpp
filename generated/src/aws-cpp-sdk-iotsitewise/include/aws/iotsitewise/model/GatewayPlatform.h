@@ -26,7 +26,15 @@ namespace Model
 {
 
   /**
-   * <p>Contains a gateway's platform information.</p><p><h3>See Also:</h3>   <a
+   * <p>The gateway's platform configuration. You can only specify one platform type
+   * in a gateway.</p> <p>(Legacy only) For Greengrass V1 gateways, specify the
+   * <code>greengrass</code> parameter with a valid Greengrass group ARN.</p> <p>For
+   * Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a
+   * valid core device thing name. If creating a V3 gateway
+   * (<code>gatewayVersion=3</code>), you must also specify the
+   * <code>coreDeviceOperatingSystem</code>.</p> <p>For Siemens Industrial Edge
+   * gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core
+   * thing name.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GatewayPlatform">AWS
    * API Reference</a></p>
    */

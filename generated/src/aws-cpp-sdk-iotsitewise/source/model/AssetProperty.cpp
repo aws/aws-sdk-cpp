@@ -30,6 +30,11 @@ AssetProperty& AssetProperty::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+    m_externalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -69,11 +74,6 @@ AssetProperty& AssetProperty::operator =(JsonView jsonValue)
     }
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalId"))
-  {
-    m_externalId = jsonValue.GetString("externalId");
-    m_externalIdHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -84,6 +84,12 @@ JsonValue AssetProperty::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 
@@ -130,12 +136,6 @@ JsonValue AssetProperty::Jsonize() const
      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
    }
    payload.WithArray("path", std::move(pathJsonList));
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
 
   }
 

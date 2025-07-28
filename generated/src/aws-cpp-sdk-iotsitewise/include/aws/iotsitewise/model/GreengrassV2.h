@@ -60,7 +60,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating system of the core device in IoT Greengrass V2.</p>
+     * <p>The operating system of the core device in IoT Greengrass V2. Specifying the
+     * operating system is required for MQTT-enabled, V3 gateways
+     * (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic
+     * stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
      */
     inline CoreDeviceOperatingSystem GetCoreDeviceOperatingSystem() const { return m_coreDeviceOperatingSystem; }
     inline bool CoreDeviceOperatingSystemHasBeenSet() const { return m_coreDeviceOperatingSystemHasBeenSet; }

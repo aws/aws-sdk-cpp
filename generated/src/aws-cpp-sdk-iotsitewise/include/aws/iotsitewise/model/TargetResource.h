@@ -48,10 +48,25 @@ namespace Model
     template<typename AssetIdT = Aws::String>
     TargetResource& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the computation model.</p>
+     */
+    inline const Aws::String& GetComputationModelId() const { return m_computationModelId; }
+    inline bool ComputationModelIdHasBeenSet() const { return m_computationModelIdHasBeenSet; }
+    template<typename ComputationModelIdT = Aws::String>
+    void SetComputationModelId(ComputationModelIdT&& value) { m_computationModelIdHasBeenSet = true; m_computationModelId = std::forward<ComputationModelIdT>(value); }
+    template<typename ComputationModelIdT = Aws::String>
+    TargetResource& WithComputationModelId(ComputationModelIdT&& value) { SetComputationModelId(std::forward<ComputationModelIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_assetId;
     bool m_assetIdHasBeenSet = false;
+
+    Aws::String m_computationModelId;
+    bool m_computationModelIdHasBeenSet = false;
   };
 
 } // namespace Model

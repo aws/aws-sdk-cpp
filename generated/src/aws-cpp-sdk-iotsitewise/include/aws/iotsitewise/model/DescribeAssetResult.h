@@ -52,6 +52,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    DescribeAssetResult& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the asset, which has the following format.</p> <p>
@@ -189,17 +200,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The external ID of the asset, if any.</p>
-     */
-    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
-    template<typename AssetExternalIdT = Aws::String>
-    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
-    template<typename AssetExternalIdT = Aws::String>
-    DescribeAssetResult& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -211,6 +211,9 @@ namespace Model
 
     Aws::String m_assetId;
     bool m_assetIdHasBeenSet = false;
+
+    Aws::String m_assetExternalId;
+    bool m_assetExternalIdHasBeenSet = false;
 
     Aws::String m_assetArn;
     bool m_assetArnHasBeenSet = false;
@@ -244,9 +247,6 @@ namespace Model
 
     Aws::Vector<AssetCompositeModelSummary> m_assetCompositeModelSummaries;
     bool m_assetCompositeModelSummariesHasBeenSet = false;
-
-    Aws::String m_assetExternalId;
-    bool m_assetExternalIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

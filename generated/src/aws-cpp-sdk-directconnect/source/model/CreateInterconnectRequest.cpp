@@ -57,6 +57,12 @@ Aws::String CreateInterconnectRequest::SerializePayload() const
 
   }
 
+  if(m_requestMACSecHasBeenSet)
+  {
+   payload.WithBool("requestMACSec", m_requestMACSec);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

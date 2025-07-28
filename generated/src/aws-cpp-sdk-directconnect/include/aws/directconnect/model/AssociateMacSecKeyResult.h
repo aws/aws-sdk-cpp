@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG
-     * (dxlag-xxxx).</p>
+     * <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx),
+     * or LAG (dxlag-xxxx).</p>
      */
     inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     template<typename ConnectionIdT = Aws::String>
@@ -48,8 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MAC Security (MACsec) security keys associated with the dedicated
-     * connection.</p>
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
      */
     inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const { return m_macSecKeys; }
     template<typename MacSecKeysT = Aws::Vector<MacSecKey>>

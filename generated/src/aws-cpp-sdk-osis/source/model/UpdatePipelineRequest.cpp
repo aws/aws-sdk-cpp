@@ -52,6 +52,12 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
 
   }
 
+  if(m_pipelineRoleArnHasBeenSet)
+  {
+   payload.WithString("PipelineRoleArn", m_pipelineRoleArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

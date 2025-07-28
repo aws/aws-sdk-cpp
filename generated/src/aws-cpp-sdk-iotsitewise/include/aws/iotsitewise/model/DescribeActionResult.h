@@ -9,6 +9,7 @@
 #include <aws/iotsitewise/model/TargetResource.h>
 #include <aws/iotsitewise/model/ActionPayload.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotsitewise/model/ResolveTo.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The detailed resource this action resolves to.</p>
+     */
+    inline const ResolveTo& GetResolveTo() const { return m_resolveTo; }
+    template<typename ResolveToT = ResolveTo>
+    void SetResolveTo(ResolveToT&& value) { m_resolveToHasBeenSet = true; m_resolveTo = std::forward<ResolveToT>(value); }
+    template<typename ResolveToT = ResolveTo>
+    DescribeActionResult& WithResolveTo(ResolveToT&& value) { SetResolveTo(std::forward<ResolveToT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -114,6 +126,9 @@ namespace Model
 
     Aws::Utils::DateTime m_executionTime{};
     bool m_executionTimeHasBeenSet = false;
+
+    ResolveTo m_resolveTo;
+    bool m_resolveToHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

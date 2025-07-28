@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static const int COMPUTATION_MODEL_HASH = HashingUtils::HashString("COMPUTATION_MODEL");
 
 
         TargetResourceType GetTargetResourceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ASSET_HASH)
           {
             return TargetResourceType::ASSET;
+          }
+          else if (hashCode == COMPUTATION_MODEL_HASH)
+          {
+            return TargetResourceType::COMPUTATION_MODEL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case TargetResourceType::ASSET:
             return "ASSET";
+          case TargetResourceType::COMPUTATION_MODEL:
+            return "COMPUTATION_MODEL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

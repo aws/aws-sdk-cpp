@@ -61,14 +61,16 @@ namespace Model
     ///@{
     /**
      * <p>The version of the gateway to create. Specify <code>3</code> to create an
-     * MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2
-     * gateway. If the version isn't specified, a Classic streams, V2 gateway is
-     * created by default.</p> <p> We recommend creating an MQTT-enabled, V3 gateway
-     * for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge
-     * should use gateway version <code>2</code>. For more information on gateway
+     * MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2
+     * gateway. If not specified, the default is <code>2</code> (Classic streams, V2
+     * gateway).</p>  <p>When creating a V3 gateway
+     * (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you
+     * must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+     *  <p> We recommend creating an MQTT-enabled gateway for self-hosted
+     * gateways and Siemens Industrial Edge gateways. For more information on gateway
      * versions, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html">
-     * Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use
+     * Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
      */
     inline const Aws::String& GetGatewayVersion() const { return m_gatewayVersion; }
     inline bool GatewayVersionHasBeenSet() const { return m_gatewayVersionHasBeenSet; }

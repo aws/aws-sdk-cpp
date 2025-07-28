@@ -135,6 +135,11 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PipelineRoleArn"))
+  {
+    m_pipelineRoleArn = jsonValue.GetString("PipelineRoleArn");
+    m_pipelineRoleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -269,6 +274,12 @@ JsonValue Pipeline::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_pipelineRoleArnHasBeenSet)
+  {
+   payload.WithString("PipelineRoleArn", m_pipelineRoleArn);
 
   }
 

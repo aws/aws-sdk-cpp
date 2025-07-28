@@ -51,6 +51,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>An external ID to assign to the asset. The asset must not already have an
+     * external ID. The external ID must be unique within your Amazon Web Services
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
+    inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    UpdateAssetRequest& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A friendly name for the asset.</p>
      */
     inline const Aws::String& GetAssetName() const { return m_assetName; }
@@ -86,26 +102,13 @@ namespace Model
     template<typename AssetDescriptionT = Aws::String>
     UpdateAssetRequest& WithAssetDescription(AssetDescriptionT&& value) { SetAssetDescription(std::forward<AssetDescriptionT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>An external ID to assign to the asset. The asset must not already have an
-     * external ID. The external ID must be unique within your Amazon Web Services
-     * account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
-    inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
-    template<typename AssetExternalIdT = Aws::String>
-    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
-    template<typename AssetExternalIdT = Aws::String>
-    UpdateAssetRequest& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_assetId;
     bool m_assetIdHasBeenSet = false;
+
+    Aws::String m_assetExternalId;
+    bool m_assetExternalIdHasBeenSet = false;
 
     Aws::String m_assetName;
     bool m_assetNameHasBeenSet = false;
@@ -115,9 +118,6 @@ namespace Model
 
     Aws::String m_assetDescription;
     bool m_assetDescriptionHasBeenSet = false;
-
-    Aws::String m_assetExternalId;
-    bool m_assetExternalIdHasBeenSet = false;
   };
 
 } // namespace Model

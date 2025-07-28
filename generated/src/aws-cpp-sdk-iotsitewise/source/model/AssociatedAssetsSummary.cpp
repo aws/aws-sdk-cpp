@@ -30,6 +30,11 @@ AssociatedAssetsSummary& AssociatedAssetsSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+    m_externalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -74,11 +79,6 @@ AssociatedAssetsSummary& AssociatedAssetsSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalId"))
-  {
-    m_externalId = jsonValue.GetString("externalId");
-    m_externalIdHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -89,6 +89,12 @@ JsonValue AssociatedAssetsSummary::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 
@@ -140,12 +146,6 @@ JsonValue AssociatedAssetsSummary::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
 
   }
 

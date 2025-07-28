@@ -28,6 +28,18 @@ Aws::String CreateAssetRequest::SerializePayload() const
 
   }
 
+  if(m_assetIdHasBeenSet)
+  {
+   payload.WithString("assetId", m_assetId);
+
+  }
+
+  if(m_assetExternalIdHasBeenSet)
+  {
+   payload.WithString("assetExternalId", m_assetExternalId);
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
@@ -48,18 +60,6 @@ Aws::String CreateAssetRequest::SerializePayload() const
   if(m_assetDescriptionHasBeenSet)
   {
    payload.WithString("assetDescription", m_assetDescription);
-
-  }
-
-  if(m_assetIdHasBeenSet)
-  {
-   payload.WithString("assetId", m_assetId);
-
-  }
-
-  if(m_assetExternalIdHasBeenSet)
-  {
-   payload.WithString("assetExternalId", m_assetExternalId);
 
   }
 

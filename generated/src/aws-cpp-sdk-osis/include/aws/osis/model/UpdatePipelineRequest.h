@@ -118,6 +118,22 @@ namespace Model
     template<typename EncryptionAtRestOptionsT = EncryptionAtRestOptions>
     UpdatePipelineRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptionsT&& value) { SetEncryptionAtRestOptions(std::forward<EncryptionAtRestOptionsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that provides the required
+     * permissions for a pipeline to read from the source and write to the sink. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting
+     * up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+     */
+    inline const Aws::String& GetPipelineRoleArn() const { return m_pipelineRoleArn; }
+    inline bool PipelineRoleArnHasBeenSet() const { return m_pipelineRoleArnHasBeenSet; }
+    template<typename PipelineRoleArnT = Aws::String>
+    void SetPipelineRoleArn(PipelineRoleArnT&& value) { m_pipelineRoleArnHasBeenSet = true; m_pipelineRoleArn = std::forward<PipelineRoleArnT>(value); }
+    template<typename PipelineRoleArnT = Aws::String>
+    UpdatePipelineRequest& WithPipelineRoleArn(PipelineRoleArnT&& value) { SetPipelineRoleArn(std::forward<PipelineRoleArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_pipelineName;
@@ -140,6 +156,9 @@ namespace Model
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet = false;
+
+    Aws::String m_pipelineRoleArn;
+    bool m_pipelineRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

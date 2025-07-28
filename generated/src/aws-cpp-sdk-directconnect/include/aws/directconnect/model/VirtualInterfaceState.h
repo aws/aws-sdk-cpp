@@ -21,6 +21,7 @@ namespace Model
     pending,
     available,
     down,
+    testing,
     deleting,
     deleted,
     rejected,
