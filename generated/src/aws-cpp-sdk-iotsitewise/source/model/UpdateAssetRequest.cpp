@@ -16,6 +16,12 @@ Aws::String UpdateAssetRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_assetExternalIdHasBeenSet)
+  {
+   payload.WithString("assetExternalId", m_assetExternalId);
+
+  }
+
   if(m_assetNameHasBeenSet)
   {
    payload.WithString("assetName", m_assetName);
@@ -31,12 +37,6 @@ Aws::String UpdateAssetRequest::SerializePayload() const
   if(m_assetDescriptionHasBeenSet)
   {
    payload.WithString("assetDescription", m_assetDescription);
-
-  }
-
-  if(m_assetExternalIdHasBeenSet)
-  {
-   payload.WithString("assetExternalId", m_assetExternalId);
 
   }
 

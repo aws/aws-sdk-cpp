@@ -56,6 +56,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    Property& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the property.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -146,24 +160,13 @@ namespace Model
     template<typename PathT = AssetPropertyPathSegment>
     Property& AddPath(PathT&& value) { m_pathHasBeenSet = true; m_path.emplace_back(std::forward<PathT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The external ID of the asset property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetExternalId() const { return m_externalId; }
-    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    template<typename ExternalIdT = Aws::String>
-    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
-    template<typename ExternalIdT = Aws::String>
-    Property& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -185,9 +188,6 @@ namespace Model
 
     Aws::Vector<AssetPropertyPathSegment> m_path;
     bool m_pathHasBeenSet = false;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -144,6 +144,11 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("partnerInterconnectMacSecCapable"))
+  {
+    m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
+    m_partnerInterconnectMacSecCapableHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -287,6 +292,12 @@ JsonValue Connection::Jsonize() const
      macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
    }
    payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
+
+  }
+
+  if(m_partnerInterconnectMacSecCapableHasBeenSet)
+  {
+   payload.WithBool("partnerInterconnectMacSecCapable", m_partnerInterconnectMacSecCapable);
 
   }
 

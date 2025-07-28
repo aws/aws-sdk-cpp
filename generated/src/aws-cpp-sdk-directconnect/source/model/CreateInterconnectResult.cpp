@@ -104,6 +104,30 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
     m_providerName = jsonValue.GetString("providerName");
     m_providerNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+    m_macSecCapableHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("portEncryptionStatus"))
+  {
+    m_portEncryptionStatus = jsonValue.GetString("portEncryptionStatus");
+    m_portEncryptionStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+    m_encryptionModeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
+    m_macSecKeysHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

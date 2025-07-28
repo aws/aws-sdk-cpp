@@ -59,7 +59,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>The maximum number of results to return at one time.</p> <ul> <li> <p>Minimum
+     * is 1</p> </li> <li> <p>Maximum is 20000</p> </li> <li> <p>Default is 250</p>
+     * </li> </ul>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -16,7 +16,8 @@ namespace Model
   enum class TargetResourceType
   {
     NOT_SET,
-    ASSET
+    ASSET,
+    COMPUTATION_MODEL
   };
 
 namespace TargetResourceTypeMapper

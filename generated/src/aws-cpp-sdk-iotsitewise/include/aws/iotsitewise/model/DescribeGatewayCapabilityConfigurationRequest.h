@@ -47,9 +47,8 @@ namespace Model
     ///@{
     /**
      * <p>The namespace of the capability configuration. For example, if you configure
-     * OPC-UA sources from the IoT SiteWise console, your OPC-UA capability
-     * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
-     * where <code>version</code> is a number such as <code>1</code>.</p>
+     * OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration
+     * has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
      */
     inline const Aws::String& GetCapabilityNamespace() const { return m_capabilityNamespace; }
     inline bool CapabilityNamespaceHasBeenSet() const { return m_capabilityNamespaceHasBeenSet; }

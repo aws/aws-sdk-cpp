@@ -47,6 +47,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    DescribeAssetPropertyResult& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the asset.</p>
      */
     inline const Aws::String& GetAssetName() const { return m_assetName; }
@@ -94,19 +107,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The external ID of the asset. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
-    template<typename AssetExternalIdT = Aws::String>
-    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
-    template<typename AssetExternalIdT = Aws::String>
-    DescribeAssetPropertyResult& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -119,6 +119,9 @@ namespace Model
     Aws::String m_assetId;
     bool m_assetIdHasBeenSet = false;
 
+    Aws::String m_assetExternalId;
+    bool m_assetExternalIdHasBeenSet = false;
+
     Aws::String m_assetName;
     bool m_assetNameHasBeenSet = false;
 
@@ -130,9 +133,6 @@ namespace Model
 
     CompositeModelProperty m_compositeModel;
     bool m_compositeModelHasBeenSet = false;
-
-    Aws::String m_assetExternalId;
-    bool m_assetExternalIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

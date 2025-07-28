@@ -143,6 +143,11 @@ UpdateConnectionResult& UpdateConnectionResult::operator =(const Aws::AmazonWebS
     }
     m_macSecKeysHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("partnerInterconnectMacSecCapable"))
+  {
+    m_partnerInterconnectMacSecCapable = jsonValue.GetBool("partnerInterconnectMacSecCapable");
+    m_partnerInterconnectMacSecCapableHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

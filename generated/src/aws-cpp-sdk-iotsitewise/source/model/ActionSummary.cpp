@@ -40,6 +40,11 @@ ActionSummary& ActionSummary::operator =(JsonView jsonValue)
     m_targetResource = jsonValue.GetObject("targetResource");
     m_targetResourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resolveTo"))
+  {
+    m_resolveTo = jsonValue.GetObject("resolveTo");
+    m_resolveToHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue ActionSummary::Jsonize() const
   if(m_targetResourceHasBeenSet)
   {
    payload.WithObject("targetResource", m_targetResource.Jsonize());
+
+  }
+
+  if(m_resolveToHasBeenSet)
+  {
+   payload.WithObject("resolveTo", m_resolveTo.Jsonize());
 
   }
 

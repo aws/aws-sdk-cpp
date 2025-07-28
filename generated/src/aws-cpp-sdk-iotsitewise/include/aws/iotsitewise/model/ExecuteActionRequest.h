@@ -9,6 +9,7 @@
 #include <aws/iotsitewise/model/TargetResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/ActionPayload.h>
+#include <aws/iotsitewise/model/ResolveTo.h>
 #include <utility>
 
 namespace Aws
@@ -83,6 +84,18 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     ExecuteActionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The detailed resource this action resolves to.</p>
+     */
+    inline const ResolveTo& GetResolveTo() const { return m_resolveTo; }
+    inline bool ResolveToHasBeenSet() const { return m_resolveToHasBeenSet; }
+    template<typename ResolveToT = ResolveTo>
+    void SetResolveTo(ResolveToT&& value) { m_resolveToHasBeenSet = true; m_resolveTo = std::forward<ResolveToT>(value); }
+    template<typename ResolveToT = ResolveTo>
+    ExecuteActionRequest& WithResolveTo(ResolveToT&& value) { SetResolveTo(std::forward<ResolveToT>(value)); return *this;}
+    ///@}
   private:
 
     TargetResource m_targetResource;
@@ -96,6 +109,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    ResolveTo m_resolveTo;
+    bool m_resolveToHasBeenSet = false;
   };
 
 } // namespace Model

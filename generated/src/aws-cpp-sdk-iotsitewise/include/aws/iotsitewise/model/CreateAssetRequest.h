@@ -64,6 +64,36 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    CreateAssetRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An external ID to assign to the asset. The external ID must be unique within
+     * your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
+    inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    CreateAssetRequest& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
@@ -106,36 +136,6 @@ namespace Model
     template<typename AssetDescriptionT = Aws::String>
     CreateAssetRequest& WithAssetDescription(AssetDescriptionT&& value) { SetAssetDescription(std::forward<AssetDescriptionT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
-    inline const Aws::String& GetAssetId() const { return m_assetId; }
-    inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    template<typename AssetIdT = Aws::String>
-    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
-    template<typename AssetIdT = Aws::String>
-    CreateAssetRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
-    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
-    inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
-    template<typename AssetExternalIdT = Aws::String>
-    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
-    template<typename AssetExternalIdT = Aws::String>
-    CreateAssetRequest& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_assetName;
@@ -143,6 +143,12 @@ namespace Model
 
     Aws::String m_assetModelId;
     bool m_assetModelIdHasBeenSet = false;
+
+    Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
+
+    Aws::String m_assetExternalId;
+    bool m_assetExternalIdHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
@@ -152,12 +158,6 @@ namespace Model
 
     Aws::String m_assetDescription;
     bool m_assetDescriptionHasBeenSet = false;
-
-    Aws::String m_assetId;
-    bool m_assetIdHasBeenSet = false;
-
-    Aws::String m_assetExternalId;
-    bool m_assetExternalIdHasBeenSet = false;
   };
 
 } // namespace Model

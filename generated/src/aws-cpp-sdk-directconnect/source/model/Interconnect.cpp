@@ -105,6 +105,30 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
     m_providerName = jsonValue.GetString("providerName");
     m_providerNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+    m_macSecCapableHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("portEncryptionStatus"))
+  {
+    m_portEncryptionStatus = jsonValue.GetString("portEncryptionStatus");
+    m_portEncryptionStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+    m_encryptionModeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
+    m_macSecKeysHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +225,35 @@ JsonValue Interconnect::Jsonize() const
   if(m_providerNameHasBeenSet)
   {
    payload.WithString("providerName", m_providerName);
+
+  }
+
+  if(m_macSecCapableHasBeenSet)
+  {
+   payload.WithBool("macSecCapable", m_macSecCapable);
+
+  }
+
+  if(m_portEncryptionStatusHasBeenSet)
+  {
+   payload.WithString("portEncryptionStatus", m_portEncryptionStatus);
+
+  }
+
+  if(m_encryptionModeHasBeenSet)
+  {
+   payload.WithString("encryptionMode", m_encryptionMode);
+
+  }
+
+  if(m_macSecKeysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> macSecKeysJsonList(m_macSecKeys.size());
+   for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+   {
+     macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
+   }
+   payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
 
   }
 

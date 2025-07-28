@@ -310,10 +310,10 @@ namespace DirectConnect
 
         /**
          * <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
-         * Association Key (CAK) pair with an Direct Connect dedicated connection.</p>
-         * <p>You must supply either the <code>secretARN,</code> or the CKN/CAK
-         * (<code>ckn</code> and <code>cak</code>) pair in the request.</p> <p>For
-         * information about MAC Security (MACsec) key considerations, see <a
+         * Association Key (CAK) pair with a Direct Connect connection.</p> <p>You must
+         * supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code> and
+         * <code>cak</code>) pair in the request.</p> <p>For information about MAC Security
+         * (MACsec) key considerations, see <a
          * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec
          * pre-shared CKN/CAK key considerations </a> in the <i>Direct Connect User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1557,8 +1557,8 @@ namespace DirectConnect
         }
 
         /**
-         * <p>Removes the association between a MAC Security (MACsec) security key and an
-         * Direct Connect dedicated connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the association between a MAC Security (MACsec) security key and a
+         * Direct Connect connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">AWS
          * API Reference</a></p>
          */
@@ -1722,10 +1722,10 @@ namespace DirectConnect
         }
 
         /**
-         * <p>Updates the Direct Connect dedicated connection configuration.</p> <p>You can
-         * update the following parameters for a connection:</p> <ul> <li> <p>The
-         * connection name</p> </li> <li> <p>The connection's MAC Security (MACsec)
-         * encryption mode.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Updates the Direct Connect connection configuration.</p> <p>You can update
+         * the following parameters for a connection:</p> <ul> <li> <p>The connection
+         * name</p> </li> <li> <p>The connection's MAC Security (MACsec) encryption
+         * mode.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">AWS
          * API Reference</a></p>
          */

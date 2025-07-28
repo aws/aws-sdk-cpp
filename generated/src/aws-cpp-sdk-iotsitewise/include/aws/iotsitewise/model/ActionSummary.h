@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/TargetResource.h>
+#include <aws/iotsitewise/model/ResolveTo.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,18 @@ namespace Model
     template<typename TargetResourceT = TargetResource>
     ActionSummary& WithTargetResource(TargetResourceT&& value) { SetTargetResource(std::forward<TargetResourceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The detailed resource this action resolves to.</p>
+     */
+    inline const ResolveTo& GetResolveTo() const { return m_resolveTo; }
+    inline bool ResolveToHasBeenSet() const { return m_resolveToHasBeenSet; }
+    template<typename ResolveToT = ResolveTo>
+    void SetResolveTo(ResolveToT&& value) { m_resolveToHasBeenSet = true; m_resolveTo = std::forward<ResolveToT>(value); }
+    template<typename ResolveToT = ResolveTo>
+    ActionSummary& WithResolveTo(ResolveToT&& value) { SetResolveTo(std::forward<ResolveToT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_actionId;
@@ -83,6 +96,9 @@ namespace Model
 
     TargetResource m_targetResource;
     bool m_targetResourceHasBeenSet = false;
+
+    ResolveTo m_resolveTo;
+    bool m_resolveToHasBeenSet = false;
   };
 
 } // namespace Model

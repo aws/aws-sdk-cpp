@@ -30,6 +30,11 @@ TargetResource& TargetResource::operator =(JsonView jsonValue)
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("computationModelId"))
+  {
+    m_computationModelId = jsonValue.GetString("computationModelId");
+    m_computationModelIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue TargetResource::Jsonize() const
   if(m_assetIdHasBeenSet)
   {
    payload.WithString("assetId", m_assetId);
+
+  }
+
+  if(m_computationModelIdHasBeenSet)
+  {
+   payload.WithString("computationModelId", m_computationModelId);
 
   }
 

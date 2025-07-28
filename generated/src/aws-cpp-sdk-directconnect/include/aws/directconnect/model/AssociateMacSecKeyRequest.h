@@ -36,9 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG
-     * (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a> or
-     * <a>DescribeLags</a> to retrieve connection ID.</p>
+     * <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx),
+     * or LAG (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a>,
+     * <a>DescribeInterconnects</a>, or <a>DescribeLags</a> to retrieve connection
+     * ID.</p>
      */
     inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
@@ -51,10 +52,10 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to
-     * associate with the dedicated connection.</p> <p>You can use
-     * <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security
-     * (MACsec) secret key.</p> <p>If you use this request parameter, you do not use
-     * the <code>ckn</code> and <code>cak</code> request parameters.</p>
+     * associate with the connection.</p> <p>You can use <a>DescribeConnections</a> or
+     * <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p> <p>If
+     * you use this request parameter, you do not use the <code>ckn</code> and
+     * <code>cak</code> request parameters.</p>
      */
     inline const Aws::String& GetSecretARN() const { return m_secretARN; }
     inline bool SecretARNHasBeenSet() const { return m_secretARNHasBeenSet; }
@@ -66,11 +67,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
-     * <p>You can create the CKN/CAK pair using an industry standard tool.</p> <p> The
-     * valid values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this
-     * request parameter, you must use the <code>cak</code> request parameter and not
-     * use the <code>secretARN</code> request parameter.</p>
+     * <p>The MAC Security (MACsec) CKN to associate with the connection.</p> <p>You
+     * can create the CKN/CAK pair using an industry standard tool.</p> <p> The valid
+     * values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this request
+     * parameter, you must use the <code>cak</code> request parameter and not use the
+     * <code>secretARN</code> request parameter.</p>
      */
     inline const Aws::String& GetCkn() const { return m_ckn; }
     inline bool CknHasBeenSet() const { return m_cknHasBeenSet; }
@@ -82,11 +83,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
-     * <p>You can create the CKN/CAK pair using an industry standard tool.</p> <p> The
-     * valid values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this
-     * request parameter, you must use the <code>ckn</code> request parameter and not
-     * use the <code>secretARN</code> request parameter.</p>
+     * <p>The MAC Security (MACsec) CAK to associate with the connection.</p> <p>You
+     * can create the CKN/CAK pair using an industry standard tool.</p> <p> The valid
+     * values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this request
+     * parameter, you must use the <code>ckn</code> request parameter and not use the
+     * <code>secretARN</code> request parameter.</p>
      */
     inline const Aws::String& GetCak() const { return m_cak; }
     inline bool CakHasBeenSet() const { return m_cakHasBeenSet; }

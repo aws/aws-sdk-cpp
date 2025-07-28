@@ -46,19 +46,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
-     * gateway is running the capability configuration.</p> </li> <li> <p>
-     * <code>NOT_APPLICABLE</code> – Synchronization is not required for this
-     * capability configuration. This is most common when integrating partner data
-     * sources, because the data integration is handled externally by the partner.</p>
-     * </li> <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the
-     * capability configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The
-     * gateway rejected the capability configuration.</p> </li> <li> <p>
-     * <code>UNKNOWN</code> – The synchronization status is currently unknown due to an
-     * undetermined or temporary error.</p> </li> </ul> <p>After you update a
-     * capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the
-     * gateway receives and applies or rejects the updated configuration.</p>
+     * <p>The synchronization status of the gateway capability configuration. The sync
+     * status can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> - The
+     * gateway is running with the latest configuration.</p> </li> <li> <p>
+     * <code>OUT_OF_SYNC</code> - The gateway hasn't received the latest
+     * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> - The gateway
+     * rejected the latest configuration.</p> </li> <li> <p> <code>UNKNOWN</code> - The
+     * gateway hasn't reported its sync status.</p> </li> <li> <p>
+     * <code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This
+     * is most common when integrating partner data sources, because the data
+     * integration is handled externally by the partner.</p> </li> </ul> <p>After you
+     * update a capability configuration, its sync status is <code>OUT_OF_SYNC</code>
+     * until the gateway receives and applies or rejects the updated configuration.</p>
      */
     inline CapabilitySyncStatus GetCapabilitySyncStatus() const { return m_capabilitySyncStatus; }
     inline void SetCapabilitySyncStatus(CapabilitySyncStatus value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = value; }

@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the dedicated connection.</p> <p>You can use
-     * <a>DescribeConnections</a> to retrieve the connection ID.</p>
+     * <p>The ID of the connection.</p> <p>You can use <a>DescribeConnections</a> to
+     * retrieve the connection ID.</p>
      */
     inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }

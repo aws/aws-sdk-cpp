@@ -30,15 +30,15 @@ AssetHierarchy& AssetHierarchy::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue AssetHierarchy::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("externalId", m_externalId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 

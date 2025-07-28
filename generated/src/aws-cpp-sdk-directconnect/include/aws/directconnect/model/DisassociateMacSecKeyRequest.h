@@ -36,9 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG
-     * (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a> or
-     * <a>DescribeLags</a> to retrieve connection ID.</p>
+     * <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx),
+     * or LAG (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a>,
+     * <a>DescribeInterconnects</a>, or <a>DescribeLags</a> to retrieve connection
+     * ID.</p>
      */
     inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
