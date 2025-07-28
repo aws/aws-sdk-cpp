@@ -179,3 +179,47 @@ TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldValidateBadResponseChec
     EXPECT_EQ(Client::CoreErrors::VALIDATION, responseOutcome.GetError().GetErrorType());
     EXPECT_EQ("Response checksums mismatch", responseOutcome.GetError().GetMessage());
 }
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldSkipCompositeChecksum) {
+    Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"crc32"};
+    MockChecksumRequest modeledRequest{"beached things", "crc32", true, true, responseValidationChecksumsToValidate};
+    InterceptorContext context{modeledRequest};
+    URI uri{"https://www.timefall.com/bts"};
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+    context.SetTransmitRequest(request);
+    const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+    auto responseHashes = request->GetResponseValidationHashes();
+    EXPECT_EQ(1ul, responseHashes.size());
+    EXPECT_EQ("crc32", responseHashes[0].first);
+    EXPECT_NE(nullptr, responseHashes[0].second);
+    auto bodyStr = Crt::ByteBufFromCString("beached things");
+    responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+    EXPECT_TRUE(requestOutcome.IsSuccess());
+    std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+    response->AddHeader("x-amz-checksum-crc32", "bb28==-1");
+    context.SetTransmitResponse(response);
+    const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+    EXPECT_TRUE(responseOutcome.IsSuccess());
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldFailForNonNumericCompositeTrailer) {
+    Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"crc32"};
+    MockChecksumRequest modeledRequest{"beached things", "crc32", true, true, responseValidationChecksumsToValidate};
+    InterceptorContext context{modeledRequest};
+    URI uri{"https://www.timefall.com/bts"};
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+    context.SetTransmitRequest(request);
+    const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+    auto responseHashes = request->GetResponseValidationHashes();
+    EXPECT_EQ(1ul, responseHashes.size());
+    EXPECT_EQ("crc32", responseHashes[0].first);
+    EXPECT_NE(nullptr, responseHashes[0].second);
+    auto bodyStr = Crt::ByteBufFromCString("beached things");
+    responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+    EXPECT_TRUE(requestOutcome.IsSuccess());
+    std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+    response->AddHeader("x-amz-checksum-crc32", "bb28==-ABC");
+    context.SetTransmitResponse(response);
+    const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+    EXPECT_FALSE(responseOutcome.IsSuccess());
+}
