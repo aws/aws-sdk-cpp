@@ -26,6 +26,7 @@ namespace Aws
         {
         public:
             STSAssumeRoleWebIdentityCredentialsProvider();
+            STSAssumeRoleWebIdentityCredentialsProvider(Aws::Client::ClientConfiguration::CredentialProviderConfiguration config);
 
             /**
              * Retrieves the credentials if found, otherwise returns empty credential set.

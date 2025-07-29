@@ -45,6 +45,12 @@ void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& 
   if(!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
+  this->configFactories.retryStrategyCreateFn = []() -> std::shared_ptr<Client::RetryStrategy> {
+    // TODO: renable once default retries are evaluated
+    // Align with other SDKs to default retry to 10 times for dynamodb.
+    // return Client::InitRetryStrategy(10);
+    return Client::InitRetryStrategy();
+  };
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Client::ClientConfigurationInitValues &configuration)

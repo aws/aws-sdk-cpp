@@ -238,6 +238,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 
     clientConfig.region = calculateRegion();
+    clientConfig.credentialProviderConfig.region = clientConfig.region;
 
     // Set the endpoint to interact with EC2 instance's metadata service
     Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
@@ -305,6 +306,7 @@ ClientConfiguration::ClientConfiguration()
         if (client)
         {
             region = client->GetCurrentRegion();
+            this->credentialProviderConfig.region = region;
         }
     }
     if (!region.empty())
@@ -312,6 +314,7 @@ ClientConfiguration::ClientConfiguration()
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
+    this->credentialProviderConfig.region = region;
 }
 
 ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
@@ -329,6 +332,7 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
         if (client)
         {
             region = client->GetCurrentRegion();
+            this->credentialProviderConfig.region = region;
         }
     }
     if (!region.empty())
@@ -336,6 +340,7 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
+    this->credentialProviderConfig.region = region;
 }
 
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
@@ -359,12 +364,14 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
             ec2MetadataRegion = client->GetCurrentRegion();
             hasEc2MetadataRegion = true;
             region = ec2MetadataRegion;
+            this->credentialProviderConfig.region = region;
         }
     }
 
     if(region.empty())
     {
         region = Aws::String(Aws::Region::US_EAST_1);
+        this->credentialProviderConfig.region = region;
     }
 
     if (profile && Aws::Config::HasCachedConfigProfile(profile)) {
@@ -373,6 +380,7 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
         auto tmpRegion = Aws::Config::GetCachedConfigProfile(this->profileName).GetRegion();
         if (!tmpRegion.empty()) {
             region = tmpRegion;
+            this->credentialProviderConfig.region = region;
         }
 
         Aws::String profileDefaultsMode = Aws::Config::GetCachedConfigProfile(this->profileName).GetDefaultsMode();
@@ -404,39 +412,19 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
             ec2MetadataRegion = client->GetCurrentRegion();
             hasEc2MetadataRegion = true;
             region = ec2MetadataRegion;
+            this->credentialProviderConfig.region = region;
         }
     }
     if (region.empty())
     {
         region = Aws::String(Aws::Region::US_EAST_1);
+        this->credentialProviderConfig.region = region;
     }
 
     Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, defaultMode, hasEc2MetadataRegion, ec2MetadataRegion);
 }
 
-std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
-{
-    int maxAttempts = 0;
-    Aws::String maxAttemptsString = Aws::Environment::GetEnv("AWS_MAX_ATTEMPTS");
-    if (maxAttemptsString.empty())
-    {
-        maxAttemptsString = Aws::Config::GetCachedConfigValue("max_attempts");
-    }
-    // In case users specify 0 explicitly to disable retry.
-    if (maxAttemptsString == "0")
-    {
-        maxAttempts = 0;
-    }
-    else
-    {
-        maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
-        if (maxAttempts == 0)
-        {
-            AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
-            maxAttempts = -1;
-        }
-    }
-
+std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode) {
     if (retryMode.empty())
     {
         retryMode = Aws::Environment::GetEnv("AWS_RETRY_MODE");
@@ -477,6 +465,32 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
     }
 
     return retryStrategy;
+}
+
+std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
+{
+    int maxAttempts = 0;
+    Aws::String maxAttemptsString = Aws::Environment::GetEnv("AWS_MAX_ATTEMPTS");
+    if (maxAttemptsString.empty())
+    {
+        maxAttemptsString = Aws::Config::GetCachedConfigValue("max_attempts");
+    }
+    // In case users specify 0 explicitly to disable retry.
+    if (maxAttemptsString == "0")
+    {
+        maxAttempts = 0;
+    }
+    else
+    {
+        maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
+        if (maxAttempts == 0)
+        {
+            AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
+            maxAttempts = -1;
+        }
+    }
+
+    return InitRetryStrategy(maxAttempts, retryMode);
 }
 
 Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& envKey,
