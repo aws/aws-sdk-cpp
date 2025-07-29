@@ -44,7 +44,7 @@ namespace Model
      * a political view, or, for styles that support specific political views, you can
      * choose a view, such as <code>IND</code> for the Indian view.</p>  <p>Not
      * all map resources or styles support political view styles. See <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political
      * views</a> for more information.</p> 
      */
     inline const Aws::String& GetPoliticalView() const { return m_politicalView; }

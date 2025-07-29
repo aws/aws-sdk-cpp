@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Specifies the map style selected from an available data provider.</p>
      * <p>Valid <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri
      * map styles</a>:</p> <ul> <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The
      * Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral
      * background with minimal colors, labels, and features that's designed to draw
@@ -64,7 +64,7 @@ namespace Model
      * Navigation map style, which provides a detailed basemap for the world symbolized
      * with a custom navigation map style that's designed for use during the day in
      * mobile devices.</p> </li> </ul> <p>Valid <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
      * world that blends 3D and 2D rendering.</p>  <p>The
@@ -87,7 +87,7 @@ namespace Model
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
      * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps
      * map styles</a>:</p> <ul> <li> <p> <code>VectorGrabStandardLight</code> – The
      * Grab Standard Light map style provides a basemap with detailed land use
      * coloring, area names, roads, landmarks, and points of interest covering
@@ -96,9 +96,9 @@ namespace Model
      * covering Southeast Asia.</p> </li> </ul>  <p>Grab provides maps only for
      * countries in Southeast Asia, and is only available in the Asia Pacific
      * (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open
      * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
      * – The Open Data Standard Light map style provides a detailed basemap for the
      * world suitable for website and mobile application use. The map includes highways
@@ -131,7 +131,7 @@ namespace Model
      * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
      * unset.</p>  <p>Not all map resources or styles support political view
      * styles. See <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political
      * views</a> for more information.</p> 
      */
     inline const Aws::String& GetPoliticalView() const { return m_politicalView; }

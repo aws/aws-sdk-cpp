@@ -50,6 +50,17 @@ Aws::String UpdateJobQueueRequest::SerializePayload() const
 
   }
 
+  if(m_serviceEnvironmentOrderHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceEnvironmentOrderJsonList(m_serviceEnvironmentOrder.size());
+   for(unsigned serviceEnvironmentOrderIndex = 0; serviceEnvironmentOrderIndex < serviceEnvironmentOrderJsonList.GetLength(); ++serviceEnvironmentOrderIndex)
+   {
+     serviceEnvironmentOrderJsonList[serviceEnvironmentOrderIndex].AsObject(m_serviceEnvironmentOrder[serviceEnvironmentOrderIndex].Jsonize());
+   }
+   payload.WithArray("serviceEnvironmentOrder", std::move(serviceEnvironmentOrderJsonList));
+
+  }
+
   if(m_jobStateTimeLimitActionsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> jobStateTimeLimitActionsJsonList(m_jobStateTimeLimitActions.size());

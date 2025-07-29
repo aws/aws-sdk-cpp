@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     saml,
-    iamidentitycenter
+    iamidentitycenter,
+    iamfederation
   };
 
 namespace SecurityConfigTypeMapper

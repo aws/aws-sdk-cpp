@@ -57,29 +57,29 @@ namespace Model
      * entering <code>HERE</code> returns an error.</p>  <p>Valid values
      * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
      * <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
      * provides place index functionality for Southeast Asia. For additional
      * information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>'
      * coverage, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>If you specify HERE
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services service
+     * terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
      * additional information , see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
-     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service developer guide</i>.</p>
      */
     inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }

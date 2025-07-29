@@ -55,6 +55,11 @@ SecurityConfigDetail& SecurityConfigDetail::operator =(JsonView jsonValue)
     m_iamIdentityCenterOptions = jsonValue.GetObject("iamIdentityCenterOptions");
     m_iamIdentityCenterOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("iamFederationOptions"))
+  {
+    m_iamFederationOptions = jsonValue.GetObject("iamFederationOptions");
+    m_iamFederationOptionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetInt64("createdDate");
@@ -104,6 +109,12 @@ JsonValue SecurityConfigDetail::Jsonize() const
   if(m_iamIdentityCenterOptionsHasBeenSet)
   {
    payload.WithObject("iamIdentityCenterOptions", m_iamIdentityCenterOptions.Jsonize());
+
+  }
+
+  if(m_iamFederationOptionsHasBeenSet)
+  {
+   payload.WithObject("iamFederationOptions", m_iamFederationOptions.Jsonize());
 
   }
 

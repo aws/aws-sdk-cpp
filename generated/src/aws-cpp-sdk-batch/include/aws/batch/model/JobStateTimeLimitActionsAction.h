@@ -16,7 +16,8 @@ namespace Model
   enum class JobStateTimeLimitActionsAction
   {
     NOT_SET,
-    CANCEL
+    CANCEL,
+    TERMINATE
   };
 
 namespace JobStateTimeLimitActionsActionMapper

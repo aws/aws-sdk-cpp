@@ -31,6 +31,7 @@
 #include <aws/batch/model/CRUpdateAllocationStrategy.h>
 #include <aws/batch/model/CancelJobRequest.h>
 #include <aws/batch/model/CancelJobResult.h>
+#include <aws/batch/model/CapacityLimit.h>
 #include <aws/batch/model/ComputeEnvironmentDetail.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
 #include <aws/batch/model/ComputeResource.h>
@@ -50,6 +51,8 @@
 #include <aws/batch/model/CreateJobQueueResult.h>
 #include <aws/batch/model/CreateSchedulingPolicyRequest.h>
 #include <aws/batch/model/CreateSchedulingPolicyResult.h>
+#include <aws/batch/model/CreateServiceEnvironmentRequest.h>
+#include <aws/batch/model/CreateServiceEnvironmentResult.h>
 #include <aws/batch/model/DeleteComputeEnvironmentRequest.h>
 #include <aws/batch/model/DeleteComputeEnvironmentResult.h>
 #include <aws/batch/model/DeleteConsumableResourceRequest.h>
@@ -58,6 +61,8 @@
 #include <aws/batch/model/DeleteJobQueueResult.h>
 #include <aws/batch/model/DeleteSchedulingPolicyRequest.h>
 #include <aws/batch/model/DeleteSchedulingPolicyResult.h>
+#include <aws/batch/model/DeleteServiceEnvironmentRequest.h>
+#include <aws/batch/model/DeleteServiceEnvironmentResult.h>
 #include <aws/batch/model/DeregisterJobDefinitionRequest.h>
 #include <aws/batch/model/DeregisterJobDefinitionResult.h>
 #include <aws/batch/model/DescribeComputeEnvironmentsRequest.h>
@@ -72,6 +77,10 @@
 #include <aws/batch/model/DescribeJobsResult.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesRequest.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
+#include <aws/batch/model/DescribeServiceEnvironmentsRequest.h>
+#include <aws/batch/model/DescribeServiceEnvironmentsResult.h>
+#include <aws/batch/model/DescribeServiceJobRequest.h>
+#include <aws/batch/model/DescribeServiceJobResult.h>
 #include <aws/batch/model/Device.h>
 #include <aws/batch/model/DeviceCgroupPermission.h>
 #include <aws/batch/model/EFSAuthorizationConfig.h>
@@ -125,6 +134,7 @@
 #include <aws/batch/model/JobDependency.h>
 #include <aws/batch/model/JobDetail.h>
 #include <aws/batch/model/JobQueueDetail.h>
+#include <aws/batch/model/JobQueueType.h>
 #include <aws/batch/model/JobStateTimeLimitAction.h>
 #include <aws/batch/model/JobStateTimeLimitActionsAction.h>
 #include <aws/batch/model/JobStateTimeLimitActionsState.h>
@@ -133,6 +143,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/KeyValuesPair.h>
+#include <aws/batch/model/LatestServiceJobAttempt.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
 #include <aws/batch/model/LaunchTemplateSpecificationOverride.h>
 #include <aws/batch/model/LinuxParameters.h>
@@ -145,6 +156,8 @@
 #include <aws/batch/model/ListJobsResult.h>
 #include <aws/batch/model/ListSchedulingPoliciesRequest.h>
 #include <aws/batch/model/ListSchedulingPoliciesResult.h>
+#include <aws/batch/model/ListServiceJobsRequest.h>
+#include <aws/batch/model/ListServiceJobsResult.h>
 #include <aws/batch/model/ListTagsForResourceRequest.h>
 #include <aws/batch/model/ListTagsForResourceResult.h>
 #include <aws/batch/model/LogConfiguration.h>
@@ -171,9 +184,26 @@
 #include <aws/batch/model/SchedulingPolicyDetail.h>
 #include <aws/batch/model/SchedulingPolicyListingDetail.h>
 #include <aws/batch/model/Secret.h>
+#include <aws/batch/model/ServiceEnvironmentDetail.h>
+#include <aws/batch/model/ServiceEnvironmentOrder.h>
+#include <aws/batch/model/ServiceEnvironmentState.h>
+#include <aws/batch/model/ServiceEnvironmentStatus.h>
+#include <aws/batch/model/ServiceEnvironmentType.h>
+#include <aws/batch/model/ServiceJobAttemptDetail.h>
+#include <aws/batch/model/ServiceJobEvaluateOnExit.h>
+#include <aws/batch/model/ServiceJobRetryAction.h>
+#include <aws/batch/model/ServiceJobRetryStrategy.h>
+#include <aws/batch/model/ServiceJobStatus.h>
+#include <aws/batch/model/ServiceJobSummary.h>
+#include <aws/batch/model/ServiceJobTimeout.h>
+#include <aws/batch/model/ServiceJobType.h>
+#include <aws/batch/model/ServiceResourceId.h>
+#include <aws/batch/model/ServiceResourceIdName.h>
 #include <aws/batch/model/ShareAttributes.h>
 #include <aws/batch/model/SubmitJobRequest.h>
 #include <aws/batch/model/SubmitJobResult.h>
+#include <aws/batch/model/SubmitServiceJobRequest.h>
+#include <aws/batch/model/SubmitServiceJobResult.h>
 #include <aws/batch/model/TagResourceRequest.h>
 #include <aws/batch/model/TagResourceResult.h>
 #include <aws/batch/model/TaskContainerDependency.h>
@@ -183,6 +213,8 @@
 #include <aws/batch/model/TaskPropertiesOverride.h>
 #include <aws/batch/model/TerminateJobRequest.h>
 #include <aws/batch/model/TerminateJobResult.h>
+#include <aws/batch/model/TerminateServiceJobRequest.h>
+#include <aws/batch/model/TerminateServiceJobResult.h>
 #include <aws/batch/model/Tmpfs.h>
 #include <aws/batch/model/Ulimit.h>
 #include <aws/batch/model/UntagResourceRequest.h>
@@ -196,6 +228,8 @@
 #include <aws/batch/model/UpdatePolicy.h>
 #include <aws/batch/model/UpdateSchedulingPolicyRequest.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
+#include <aws/batch/model/UpdateServiceEnvironmentRequest.h>
+#include <aws/batch/model/UpdateServiceEnvironmentResult.h>
 #include <aws/batch/model/UserdataType.h>
 #include <aws/batch/model/Volume.h>
 

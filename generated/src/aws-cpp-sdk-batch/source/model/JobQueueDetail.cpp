@@ -69,6 +69,20 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     }
     m_computeEnvironmentOrderHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("serviceEnvironmentOrder"))
+  {
+    Aws::Utils::Array<JsonView> serviceEnvironmentOrderJsonList = jsonValue.GetArray("serviceEnvironmentOrder");
+    for(unsigned serviceEnvironmentOrderIndex = 0; serviceEnvironmentOrderIndex < serviceEnvironmentOrderJsonList.GetLength(); ++serviceEnvironmentOrderIndex)
+    {
+      m_serviceEnvironmentOrder.push_back(serviceEnvironmentOrderJsonList[serviceEnvironmentOrderIndex].AsObject());
+    }
+    m_serviceEnvironmentOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("jobQueueType"))
+  {
+    m_jobQueueType = JobQueueTypeMapper::GetJobQueueTypeForName(jsonValue.GetString("jobQueueType"));
+    m_jobQueueTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -143,6 +157,22 @@ JsonValue JobQueueDetail::Jsonize() const
    }
    payload.WithArray("computeEnvironmentOrder", std::move(computeEnvironmentOrderJsonList));
 
+  }
+
+  if(m_serviceEnvironmentOrderHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceEnvironmentOrderJsonList(m_serviceEnvironmentOrder.size());
+   for(unsigned serviceEnvironmentOrderIndex = 0; serviceEnvironmentOrderIndex < serviceEnvironmentOrderJsonList.GetLength(); ++serviceEnvironmentOrderIndex)
+   {
+     serviceEnvironmentOrderJsonList[serviceEnvironmentOrderIndex].AsObject(m_serviceEnvironmentOrder[serviceEnvironmentOrderIndex].Jsonize());
+   }
+   payload.WithArray("serviceEnvironmentOrder", std::move(serviceEnvironmentOrderJsonList));
+
+  }
+
+  if(m_jobQueueTypeHasBeenSet)
+  {
+   payload.WithString("jobQueueType", JobQueueTypeMapper::GetNameForJobQueueType(m_jobQueueType));
   }
 
   if(m_tagsHasBeenSet)
