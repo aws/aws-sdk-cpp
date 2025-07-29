@@ -31,7 +31,7 @@ namespace Model
    * number of positions in the request. </p> <p>For example, a route with a
    * departure position and destination position returns one leg with the positions
    * <a
-   * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+   * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">snapped
    * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
    * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
    * destination position.</p> </li> </ul> <p>A route with a waypoint between the
@@ -58,7 +58,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline const Aws::Vector<double>& GetStartPosition() const { return m_startPosition; }
@@ -75,7 +75,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline const Aws::Vector<double>& GetEndPosition() const { return m_endPosition; }

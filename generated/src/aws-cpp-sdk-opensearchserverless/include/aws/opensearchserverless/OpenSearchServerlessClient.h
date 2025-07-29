@@ -22,7 +22,7 @@ namespace OpenSearchServerless
    * OpenSearch Service. OpenSearch Serverless removes the operational complexities
    * of provisioning, configuring, and tuning your OpenSearch clusters. It enables
    * you to easily search and analyze petabytes of data without having to worry about
-   * the underlying infrastructure and data management.</p> <p> To learn more about
+   * the underlying infrastructure and data management.</p> <p>To learn more about
    * OpenSearch Serverless, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
    * is Amazon OpenSearch Serverless?</a> </p>
@@ -291,7 +291,7 @@ namespace OpenSearchServerless
          * <p>Specifies a security configuration for OpenSearch Serverless. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
-         * authentication for Amazon OpenSearch Serverless</a>. </p><p><h3>See Also:</h3>  
+         * authentication for Amazon OpenSearch Serverless</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateSecurityConfig">AWS
          * API Reference</a></p>

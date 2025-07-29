@@ -9,6 +9,7 @@
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/IamFederationConfigOptions.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a security configuration for OpenSearch Serverless.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Details about a security configuration for OpenSearch
+   * Serverless.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/SecurityConfigDetail">AWS
    * API Reference</a></p>
    */
@@ -114,6 +115,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes IAM federation options in the form of a key-value map. Contains
+     * configuration details about how OpenSearch Serverless integrates with external
+     * identity providers through federation.</p>
+     */
+    inline const IamFederationConfigOptions& GetIamFederationOptions() const { return m_iamFederationOptions; }
+    inline bool IamFederationOptionsHasBeenSet() const { return m_iamFederationOptionsHasBeenSet; }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    void SetIamFederationOptions(IamFederationOptionsT&& value) { m_iamFederationOptionsHasBeenSet = true; m_iamFederationOptions = std::forward<IamFederationOptionsT>(value); }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    SecurityConfigDetail& WithIamFederationOptions(IamFederationOptionsT&& value) { SetIamFederationOptions(std::forward<IamFederationOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date the configuration was created.</p>
      */
     inline long long GetCreatedDate() const { return m_createdDate; }
@@ -150,6 +165,9 @@ namespace Model
 
     IamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
     bool m_iamIdentityCenterOptionsHasBeenSet = false;
+
+    IamFederationConfigOptions m_iamFederationOptions;
+    bool m_iamFederationOptionsHasBeenSet = false;
 
     long long m_createdDate{0};
     bool m_createdDateHasBeenSet = false;

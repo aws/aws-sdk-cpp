@@ -421,10 +421,10 @@ namespace CleanRooms
         }
 
         /**
-         * <p>Creates a privacy budget template for a specified membership. Each membership
-         * can have only one privacy budget template, but it can be deleted and recreated.
-         * If you need to change the privacy budget template for a membership, use the
-         * <a>UpdatePrivacyBudgetTemplate</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a privacy budget template for a specified collaboration. Each
+         * collaboration can have only one privacy budget template. If you need to change
+         * the privacy budget template, use the <a>UpdatePrivacyBudgetTemplate</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate">AWS
          * API Reference</a></p>
          */
@@ -731,8 +731,8 @@ namespace CleanRooms
         }
 
         /**
-         * <p>Deletes a privacy budget template for a specified membership.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a privacy budget template for a specified
+         * collaboration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate">AWS
          * API Reference</a></p>
          */
@@ -2167,7 +2167,7 @@ namespace CleanRooms
 
         /**
          * <p>Updates the privacy budget template for the specified
-         * membership.</p><p><h3>See Also:</h3>   <a
+         * collaboration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate">AWS
          * API Reference</a></p>
          */

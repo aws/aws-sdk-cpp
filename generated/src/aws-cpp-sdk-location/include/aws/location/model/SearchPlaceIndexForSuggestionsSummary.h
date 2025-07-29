@@ -113,7 +113,7 @@ namespace Model
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
      * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
      * information about data providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
     inline const Aws::String& GetDataSource() const { return m_dataSource; }

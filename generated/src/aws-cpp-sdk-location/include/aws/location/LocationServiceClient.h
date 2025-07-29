@@ -301,7 +301,7 @@ namespace LocationService
 
         /**
          * <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
          * a route</a> given the following required parameters:
          * <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
@@ -310,14 +310,14 @@ namespace LocationService
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">Specifying
          * a departure time</a> using either <code>DepartureTime</code> or
          * <code>DepartNow</code>. This calculates a route based on predictive traffic data
          * at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartNow</code> in a single request.
          * Specifying both parameters returns a validation error.</p>  </li> <li>
          * <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
          * a travel mode</a> using TravelMode sets the transportation mode used to
          * calculate the routes. This also lets you specify additional route preferences in
          * <code>CarModeOptions</code> if traveling by <code>Car</code>, or
@@ -350,7 +350,7 @@ namespace LocationService
 
         /**
          * <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
          * Calculates a route matrix</a> given the following required parameters:
          * <code>DeparturePositions</code> and <code>DestinationPositions</code>.
          * <code>CalculateRouteMatrix</code> calculates routes and returns the travel time
@@ -368,14 +368,14 @@ namespace LocationService
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating routes.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">
          * Specifying a departure time</a> using either <code>DepartureTime</code> or
          * <code>DepartNow</code>. This calculates routes based on predictive traffic data
          * at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartNow</code> in a single request.
          * Specifying both parameters returns a validation error.</p>  </li> <li>
          * <p> <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
          * a travel mode</a> using TravelMode sets the transportation mode used to
          * calculate the routes. This also lets you specify additional route preferences in
          * <code>CarModeOptions</code> if traveling by <code>Car</code>, or
@@ -434,7 +434,7 @@ namespace LocationService
          * <p>Creates an API key resource in your Amazon Web Services account, which lets
          * you grant actions for Amazon Location resources to the API key bearer.</p>
          *  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+         * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
          * API keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey">AWS
          * API Reference</a></p>
@@ -927,15 +927,20 @@ namespace LocationService
         }
 
         /**
-         * <p>Evaluates device positions against geofence geometries from a given geofence
-         * collection. The event forecasts three states for which a device can be in
-         * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-         * geofence, but would breach the fence if the device is moving at its current
-         * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-         * inside of a geofence, but would breach the fence if the device is moving at its
-         * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-         * is inside of a geofence, and the device is not moving.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>This action forecasts future geofence events that are likely to occur within
+         * a specified time horizon if a device continues moving at its current speed. Each
+         * forecasted event is associated with a geofence from a provided geofence
+         * collection. A forecast event can have one of the following states:</p> <p>
+         * <code>ENTER</code>: The device position is outside the referenced geofence, but
+         * the device may cross into the geofence during the forecasting time horizon if it
+         * maintains its current speed.</p> <p> <code>EXIT</code>: The device position is
+         * inside the referenced geofence, but the device may leave the geofence during the
+         * forecasted time horizon if the device maintains it's current speed.</p> <p>
+         * <code>IDLE</code>:The device is inside the geofence, and it will remain inside
+         * the geofence through the end of the time horizon if the device maintains it's
+         * current speed.</p>  <p>Heading direction is not considered in the current
+         * version. The API takes a conservative approach and includes events that can
+         * occur for any heading.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">AWS
          * API Reference</a></p>
          */
@@ -1159,8 +1164,11 @@ namespace LocationService
          * are the same in the original search request and the call to
          * <code>GetPlace</code>.</p> <ul> <li> <p>Customer Amazon Web Services account</p>
          * </li> <li> <p>Amazon Web Services Region</p> </li> <li> <p>Data provider
-         * specified in the place index resource</p> </li> </ul> <p><h3>See
-         * Also:</h3>   <a
+         * specified in the place index resource</p> </li> </ul>   <p>If your
+         * Place index resource is configured with Grab as your geolocation provider and
+         * Storage as Intended use, the GetPlace operation is unavailable. For more
+         * information, see <a href="http://aws.amazon.com/service-terms">AWS service
+         * terms</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">AWS
          * API Reference</a></p>
          */
@@ -1783,7 +1791,11 @@ namespace LocationService
         /**
          * <p>Verifies the integrity of the device's position by determining if it was
          * reported behind a proxy, and by comparing it to an inferred position estimated
-         * based on the device's state.</p><p><h3>See Also:</h3>   <a
+         * based on the device's state.</p>  <p>The Location Integrity SDK provides
+         * enhanced features related to device verification, and it is available for use by
+         * request. To get access to the SDK, contact <a
+         * href="https://aws.amazon.com/contact-us/sales-support/?pg=locationprice&amp;cta=herobtn">Sales
+         * Support</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">AWS
          * API Reference</a></p>
          */

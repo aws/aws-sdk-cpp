@@ -55,7 +55,7 @@ namespace Model
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
      * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
      * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
      * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
@@ -68,18 +68,18 @@ namespace Model
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code>
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
      * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
      * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
      * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open
      * Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight,
      * VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
      * VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans
@@ -124,7 +124,7 @@ namespace Model
     ///@{
     /**
      * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }

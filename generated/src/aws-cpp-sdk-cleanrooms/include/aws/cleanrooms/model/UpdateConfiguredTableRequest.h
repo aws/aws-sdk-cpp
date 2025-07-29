@@ -7,8 +7,9 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/cleanrooms/model/AnalysisMethod.h>
+#include <aws/cleanrooms/model/TableReference.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/AnalysisMethod.h>
 #include <aws/cleanrooms/model/SelectedAnalysisMethod.h>
 #include <utility>
 
@@ -73,6 +74,31 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const TableReference& GetTableReference() const { return m_tableReference; }
+    inline bool TableReferenceHasBeenSet() const { return m_tableReferenceHasBeenSet; }
+    template<typename TableReferenceT = TableReference>
+    void SetTableReference(TableReferenceT&& value) { m_tableReferenceHasBeenSet = true; m_tableReference = std::forward<TableReferenceT>(value); }
+    template<typename TableReferenceT = TableReference>
+    UpdateConfiguredTableRequest& WithTableReference(TableReferenceT&& value) { SetTableReference(std::forward<TableReferenceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The columns of the underlying table that can be used by collaborations or
+     * analysis rules.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedColumns() const { return m_allowedColumns; }
+    inline bool AllowedColumnsHasBeenSet() const { return m_allowedColumnsHasBeenSet; }
+    template<typename AllowedColumnsT = Aws::Vector<Aws::String>>
+    void SetAllowedColumns(AllowedColumnsT&& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns = std::forward<AllowedColumnsT>(value); }
+    template<typename AllowedColumnsT = Aws::Vector<Aws::String>>
+    UpdateConfiguredTableRequest& WithAllowedColumns(AllowedColumnsT&& value) { SetAllowedColumns(std::forward<AllowedColumnsT>(value)); return *this;}
+    template<typename AllowedColumnsT = Aws::String>
+    UpdateConfiguredTableRequest& AddAllowedColumns(AllowedColumnsT&& value) { m_allowedColumnsHasBeenSet = true; m_allowedColumns.emplace_back(std::forward<AllowedColumnsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     /**
      * <p> The analysis method for the configured table.</p> <p>
      * <code>DIRECT_QUERY</code> allows SQL queries to be run directly on this
@@ -108,6 +134,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    TableReference m_tableReference;
+    bool m_tableReferenceHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedColumns;
+    bool m_allowedColumnsHasBeenSet = false;
 
     AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
     bool m_analysisMethodHasBeenSet = false;

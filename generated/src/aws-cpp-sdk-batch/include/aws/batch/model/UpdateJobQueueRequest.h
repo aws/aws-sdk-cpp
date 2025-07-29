@@ -10,6 +10,7 @@
 #include <aws/batch/model/JQState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <aws/batch/model/ServiceEnvironmentOrder.h>
 #include <aws/batch/model/JobStateTimeLimitAction.h>
 #include <utility>
 
@@ -125,6 +126,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The order of the service environment associated with the job queue. Job
+     * queues with a higher priority are evaluated first when associated with the same
+     * service environment.</p>
+     */
+    inline const Aws::Vector<ServiceEnvironmentOrder>& GetServiceEnvironmentOrder() const { return m_serviceEnvironmentOrder; }
+    inline bool ServiceEnvironmentOrderHasBeenSet() const { return m_serviceEnvironmentOrderHasBeenSet; }
+    template<typename ServiceEnvironmentOrderT = Aws::Vector<ServiceEnvironmentOrder>>
+    void SetServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { m_serviceEnvironmentOrderHasBeenSet = true; m_serviceEnvironmentOrder = std::forward<ServiceEnvironmentOrderT>(value); }
+    template<typename ServiceEnvironmentOrderT = Aws::Vector<ServiceEnvironmentOrder>>
+    UpdateJobQueueRequest& WithServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { SetServiceEnvironmentOrder(std::forward<ServiceEnvironmentOrderT>(value)); return *this;}
+    template<typename ServiceEnvironmentOrderT = ServiceEnvironmentOrder>
+    UpdateJobQueueRequest& AddServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { m_serviceEnvironmentOrderHasBeenSet = true; m_serviceEnvironmentOrder.emplace_back(std::forward<ServiceEnvironmentOrderT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The set of actions that Batch perform on jobs that remain at the head of the
      * job queue in the specified state longer than specified times. Batch will perform
      * each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The
@@ -156,6 +173,9 @@ namespace Model
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet = false;
+
+    Aws::Vector<ServiceEnvironmentOrder> m_serviceEnvironmentOrder;
+    bool m_serviceEnvironmentOrderHasBeenSet = false;
 
     Aws::Vector<JobStateTimeLimitAction> m_jobStateTimeLimitActions;
     bool m_jobStateTimeLimitActionsHasBeenSet = false;

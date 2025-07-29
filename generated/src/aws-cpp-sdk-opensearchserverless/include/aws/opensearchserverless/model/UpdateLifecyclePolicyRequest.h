@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of lifecycle policy.</p>
+     * <p>The type of lifecycle policy.</p>
      */
     inline LifecyclePolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

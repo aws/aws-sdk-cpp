@@ -55,12 +55,13 @@ namespace Model
     ///@{
     /**
      * <p>Contains the details to specify the position of the geofence. Can be a
-     * polygon, a circle or a polygon encoded in Geobuf format. Including multiple
-     * selections will return a validation error.</p>  <p>The <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
-     * geofence polygon</a> format supports a maximum of 1,000 vertices. The <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence
-     * geobuf</a> format supports a maximum of 100,000 vertices.</p> 
+     * circle, a polygon, or a multipolygon. <code>Polygon</code> and
+     * <code>MultiPolygon</code> geometries can be defined using their respective
+     * parameters, or encoded in Geobuf format using the <code>Geobuf</code> parameter.
+     * Including multiple geometry types in the same request will return a validation
+     * error.</p>  <p>The geofence <code>Polygon</code> and
+     * <code>MultiPolygon</code> formats support a maximum of 1,000 total vertices. The
+     * <code>Geobuf</code> format supports a maximum of 100,000 vertices.</p> 
      */
     inline const GeofenceGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }

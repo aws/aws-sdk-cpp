@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>The key value/string of an API key. This value is used when making API calls
      * to authorize the call. For example, see <a
-     * href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+     * href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }
     template<typename KeyT = Aws::String>

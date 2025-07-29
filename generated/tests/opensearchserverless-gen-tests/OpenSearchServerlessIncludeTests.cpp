@@ -75,6 +75,7 @@
 #include <aws/opensearchserverless/model/GetSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/GetSecurityPolicyRequest.h>
 #include <aws/opensearchserverless/model/GetSecurityPolicyResult.h>
+#include <aws/opensearchserverless/model/IamFederationConfigOptions.h>
 #include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
 #include <aws/opensearchserverless/model/IamIdentityCenterGroupAttribute.h>
 #include <aws/opensearchserverless/model/IamIdentityCenterUserAttribute.h>

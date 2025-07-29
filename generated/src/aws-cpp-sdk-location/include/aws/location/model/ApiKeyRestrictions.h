@@ -46,18 +46,42 @@ namespace Model
      * example, if you have a place resource, you must include at least one place
      * action.</p> <p>The following are valid values for the actions.</p> <ul> <li> <p>
      * <b>Map actions</b> </p> <ul> <li> <p> <code>geo:GetMap*</code> - Allows all
-     * actions needed for map rendering.</p> </li> </ul> </li> <li> <p> <b>Place
-     * actions</b> </p> <ul> <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows
-     * geocoding.</p> </li> <li> <p> <code>geo:SearchPlaceIndexForPosition</code> -
-     * Allows reverse geocoding.</p> </li> <li> <p>
-     * <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions
-     * from text.</p> </li> <li> <p> <code>GetPlace</code> - Allows finding a place by
-     * place ID.</p> </li> </ul> </li> <li> <p> <b>Route actions</b> </p> <ul> <li> <p>
+     * actions needed for map rendering.</p> </li> <li> <p>
+     * <code>geo-maps:GetTile</code> - Allows retrieving map tiles.</p> </li> <li> <p>
+     * <code>geo-maps:GetStaticMap</code> - Allows retrieving static map images.</p>
+     * </li> <li> <p> <code>geo-maps:*</code> - Allows all actions related to map
+     * functionalities.</p> </li> </ul> </li> <li> <p> <b>Place actions</b> </p> <ul>
+     * <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.</p> </li>
+     * <li> <p> <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse
+     * geocoding.</p> </li> <li> <p> <code>geo:SearchPlaceIndexForSuggestions</code> -
+     * Allows generating suggestions from text.</p> </li> <li> <p>
+     * <code>GetPlace</code> - Allows finding a place by place ID.</p> </li> <li> <p>
+     * <code>geo-places:Geocode</code> - Allows geocoding using place information.</p>
+     * </li> <li> <p> <code>geo-places:ReverseGeocode</code> - Allows reverse geocoding
+     * from location coordinates.</p> </li> <li> <p>
+     * <code>geo-places:SearchNearby</code> - Allows searching for places near a
+     * location.</p> </li> <li> <p> <code>geo-places:SearchText</code> - Allows
+     * searching for places based on text input.</p> </li> <li> <p>
+     * <code>geo-places:Autocomplete</code> - Allows auto-completion of place names
+     * based on text input.</p> </li> <li> <p> <code>geo-places:Suggest</code> - Allows
+     * generating suggestions for places based on partial input.</p> </li> <li> <p>
+     * <code>geo-places:GetPlace</code> - Allows finding a place by its ID.</p> </li>
+     * <li> <p> <code>geo-places:*</code> - Allows all actions related to place
+     * services.</p> </li> </ul> </li> <li> <p> <b>Route actions</b> </p> <ul> <li> <p>
      * <code>geo:CalculateRoute</code> - Allows point to point routing.</p> </li> <li>
      * <p> <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of
-     * routes.</p> </li> </ul> </li> </ul>  <p>You must use these strings
-     * exactly. For example, to provide access to map rendering, the only valid action
-     * is <code>geo:GetMap*</code> as an input to the list.
+     * routes.</p> </li> <li> <p> <code>geo-routes:CalculateRoutes</code> - Allows
+     * calculating multiple routes between points.</p> </li> <li> <p>
+     * <code>geo-routes:CalculateRouteMatrix</code> - Allows calculating a matrix of
+     * routes between points.</p> </li> <li> <p>
+     * <code>geo-routes:CalculateIsolines</code> - Allows calculating isolines for a
+     * given area.</p> </li> <li> <p> <code>geo-routes:OptimizeWaypoints</code> -
+     * Allows optimizing the order of waypoints in a route.</p> </li> <li> <p>
+     * <code>geo-routes:SnapToRoads</code> - Allows snapping a route to the nearest
+     * roads.</p> </li> <li> <p> <code>geo-routes:*</code> - Allows all actions related
+     * to routing functionalities.</p> </li> </ul> </li> </ul>  <p>You must use
+     * these strings exactly. For example, to provide access to map rendering, the only
+     * valid action is <code>geo:GetMap*</code> as an input to the list.
      * <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is
      * not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you
      * must list each of the Place actions separately.</p> 

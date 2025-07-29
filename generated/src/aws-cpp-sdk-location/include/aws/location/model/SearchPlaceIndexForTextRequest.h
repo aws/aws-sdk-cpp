@@ -167,8 +167,8 @@ namespace Model
      * places. If you include more than one category, the results will include results
      * that match <i>any</i> of the categories listed.</p> <p>For more information
      * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFilterCategories() const { return m_filterCategories; }
     inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
@@ -183,7 +183,7 @@ namespace Model
     ///@{
     /**
      * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }

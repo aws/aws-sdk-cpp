@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>OpenSearch Serverless-related settings for the current Amazon Web Services
-     * account. </p>
+     * account.</p>
      */
     inline const AccountSettingsDetail& GetAccountSettingsDetail() const { return m_accountSettingsDetail; }
     template<typename AccountSettingsDetailT = AccountSettingsDetail>

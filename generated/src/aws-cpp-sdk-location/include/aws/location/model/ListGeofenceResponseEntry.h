@@ -56,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+     * <p>Contains the geofence geometry details describing the position of the
+     * geofence. Can be a circle, a polygon, or a multipolygon.</p>
      */
     inline const GeofenceGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
