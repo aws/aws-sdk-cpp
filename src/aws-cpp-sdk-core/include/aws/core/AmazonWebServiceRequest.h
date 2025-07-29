@@ -35,6 +35,10 @@ namespace Aws
     typedef std::function<void(const AmazonWebServiceRequest&)> RequestRetryHandler;
     typedef std::function<void(const Aws::Http::HttpRequest&)> RequestSignedHandler;
 
+    struct RetryContext {
+      std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_requestHash;
+    };
+
     /**
      * Base level abstraction for all modeled AWS requests
      */
@@ -222,7 +226,9 @@ namespace Aws
          */
         Aws::Set<Aws::Client::UserAgentFeature> GetUserAgentFeatures() const { return m_userAgentFeatures; }
 
-      inline virtual bool RequestChecksumRequired() const { return false; }
+        inline virtual bool RequestChecksumRequired() const { return false; }
+
+        mutable Aws::RetryContext m_retryContext;
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the

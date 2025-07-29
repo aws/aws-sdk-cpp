@@ -389,6 +389,13 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         {
             newUri.SetAuthority(newEndpoint);
         }
+
+        // Save checksum information from the original request if we haven't already - safe to assume that the checksum has been finalized, since we have sent and received a response
+        if (request.m_retryContext.m_requestHash.second == nullptr) {
+          auto originalRequestHash = httpRequest->GetRequestHash();
+          request.m_retryContext.m_requestHash = originalRequestHash;
+        }
+
         httpRequest = CreateHttpRequest(newUri, method, request.GetResponseStreamFactory());
 
         httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
@@ -920,6 +927,12 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
     httpRequest->SetServiceSpecificParameters(request.GetServiceSpecificParameters());
     request.AddQueryStringParameters(httpRequest->GetUri());
+
+    // check for retry context, if present use it
+    if (request.m_retryContext.m_requestHash.second != nullptr) {
+      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(request.m_retryContext.m_requestHash.second->GetHash().GetResult()));
+      httpRequest->SetRequestHash(request.m_retryContext.m_requestHash.first, hash);
+    }
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
