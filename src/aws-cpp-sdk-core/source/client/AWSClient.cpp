@@ -930,7 +930,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
 
     // check for retry context, if present use it
     if (request.m_retryContext.m_requestHash.second != nullptr) {
-      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(request.m_retryContext.m_requestHash.second->GetHash().GetResult()));
+      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(smithy::client::AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(request.m_retryContext.m_requestHash.second->GetHash().GetResult()));
       httpRequest->SetRequestHash(request.m_retryContext.m_requestHash.first, hash);
     }
 }
