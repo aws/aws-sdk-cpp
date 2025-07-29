@@ -32,24 +32,18 @@ using Aws::Utils::Threading::WriterLockGuard;
 static const char STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG[] = "STSAssumeRoleWithWebIdentityCredentialsProvider";
 static const int STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 60 * 1000; // 5 Minutes.
 
-STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider() :
+STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig):
     m_initialized(false)
 {
-    // check environment variables
-    Aws::String tmpRegion = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
     m_roleArn = Aws::Environment::GetEnv("AWS_ROLE_ARN");
     m_tokenFile = Aws::Environment::GetEnv("AWS_WEB_IDENTITY_TOKEN_FILE");
     m_sessionName = Aws::Environment::GetEnv("AWS_ROLE_SESSION_NAME");
 
     // check profile_config if either m_roleArn or m_tokenFile is not loaded from environment variable
     // region source is not enforced, but we need it to construct sts endpoint, if we can't find from environment, we should check if it's set in config file.
-    if (m_roleArn.empty() || m_tokenFile.empty() || tmpRegion.empty())
+    if (m_roleArn.empty() || m_tokenFile.empty())
     {
-        auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
-        if (tmpRegion.empty())
-        {
-            tmpRegion = profile.GetRegion();
-        }
+        auto profile = Aws::Config::GetCachedConfigProfile(credentialsConfig.profile);
         // If either of these two were not found from environment, use whatever found for all three in config file
         if (m_roleArn.empty() || m_tokenFile.empty())
         {
@@ -79,15 +73,6 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
         AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved role_arn from profile_config or environment variable to be " << m_roleArn);
     }
 
-    if (tmpRegion.empty())
-    {
-        tmpRegion = Aws::Region::US_EAST_1;
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved region from profile_config or environment variable to be " << tmpRegion);
-    }
-
     if (m_sessionName.empty())
     {
         m_sessionName = Aws::Utils::UUID::PseudoRandomUUID();
@@ -99,8 +84,7 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
 
     Aws::Client::ClientConfiguration config;
     config.scheme = Aws::Http::Scheme::HTTPS;
-    config.region = tmpRegion;
-
+    config.region = credentialsConfig.region;
     Aws::Vector<Aws::String> retryableErrors;
     retryableErrors.push_back("IDPCommunicationError");
     retryableErrors.push_back("InvalidIdentityToken");
@@ -111,6 +95,19 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     m_initialized = true;
     AWS_LOGSTREAM_INFO(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Creating STS AssumeRole with web identity creds provider.");
 }
+
+Aws::String LegacyGetRegion() {
+  auto region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
+  if (region.empty()) {
+    auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
+    region = profile.GetRegion();
+  }
+  return region;
+}
+
+STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider()
+    : STSAssumeRoleWebIdentityCredentialsProvider(
+          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{Aws::Auth::GetConfigProfileName(), LegacyGetRegion()}) {}
 
 AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials()
 {
