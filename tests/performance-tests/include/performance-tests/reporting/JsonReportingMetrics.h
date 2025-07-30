@@ -55,10 +55,11 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param sdkVersion SDK version string
    * @param commitId Git commit identifier
    * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   * @param buildMode Build mode ("debug" or "release")
    */
   JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(), const Aws::String& productId = "unknown",
                        const Aws::String& sdkVersion = "unknown", const Aws::String& commitId = "unknown",
-                       const Aws::String& outputFilename = "performance-test-results.json");
+                       const Aws::String& outputFilename = "performance-test-results.json", const Aws::String& buildMode = "unknown");
 
   ~JsonReportingMetrics() override;
 
@@ -161,6 +162,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
+  Aws::String m_buildMode;
 };
 
 /**
@@ -176,10 +178,12 @@ class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
    * @param sdkVersion SDK version string
    * @param commitId Git commit identifier
    * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   * @param buildMode Build mode ("debug" or "release")
    */
   JsonReportingMetricsFactory(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(),
                               const Aws::String& productId = "unknown", const Aws::String& sdkVersion = "unknown",
-                              const Aws::String& commitId = "unknown", const Aws::String& outputFilename = "performance-test-results.json");
+                              const Aws::String& commitId = "unknown", const Aws::String& outputFilename = "performance-test-results.json",
+                              const Aws::String& buildMode = "unknown");
 
   ~JsonReportingMetricsFactory() override = default;
 
@@ -195,6 +199,7 @@ class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
+  Aws::String m_buildMode;
 };
 }  // namespace Reporting
 }  // namespace PerformanceTest
