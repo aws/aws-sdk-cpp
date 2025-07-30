@@ -130,6 +130,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
 
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
   if(m_storageTypeHasBeenSet)
   {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";

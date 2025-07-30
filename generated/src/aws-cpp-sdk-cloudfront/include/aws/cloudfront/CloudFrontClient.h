@@ -248,7 +248,11 @@ namespace CloudFront
          * headers, cookies, and URL query strings. CloudFront uses the cache key to find
          * an object in its cache that it can return to the viewer.</p> </li> <li> <p>The
          * default, minimum, and maximum time to live (TTL) values that you want objects to
-         * stay in the CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query
+         * stay in the CloudFront cache.</p>  <p>If your minimum TTL is greater
+         * than 0, CloudFront will cache content for at least the duration specified in the
+         * cache policy's minimum TTL, even if the <code>Cache-Control: no-cache</code>,
+         * <code>no-store</code>, or <code>private</code> directives are present in the
+         * origin headers.</p>  </li> </ul> <p>The headers, cookies, and query
          * strings that are included in the cache key are also included in requests that
          * CloudFront sends to the origin. CloudFront sends a request when it can't find an
          * object in its cache that matches the request's cache key. If you want to send
@@ -3768,7 +3772,11 @@ namespace CloudFront
          * the cache policy configuration that you want to update.</p> </li> <li> <p>Call
          * <code>UpdateCachePolicy</code> by providing the entire cache policy
          * configuration, including the fields that you modified and those that you
-         * didn't.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * didn't.</p> </li> </ol>  <p>If your minimum TTL is greater than 0,
+         * CloudFront will cache content for at least the duration specified in the cache
+         * policy's minimum TTL, even if the <code>Cache-Control: no-cache</code>,
+         * <code>no-store</code>, or <code>private</code> directives are present in the
+         * origin headers.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          */

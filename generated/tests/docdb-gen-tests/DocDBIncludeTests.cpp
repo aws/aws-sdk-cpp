@@ -146,6 +146,9 @@
 #include <aws/docdb/model/RestoreDBClusterFromSnapshotResult.h>
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeResult.h>
+#include <aws/docdb/model/ServerlessV2FeaturesSupport.h>
+#include <aws/docdb/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/docdb/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/docdb/model/SourceType.h>
 #include <aws/docdb/model/StartDBClusterRequest.h>
 #include <aws/docdb/model/StartDBClusterResult.h>

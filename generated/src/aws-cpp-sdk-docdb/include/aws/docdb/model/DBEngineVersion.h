@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/docdb/model/ServerlessV2FeaturesSupport.h>
 #include <aws/docdb/model/UpgradeTarget.h>
 #include <utility>
 
@@ -172,6 +173,23 @@ namespace Model
     inline void SetSupportsCertificateRotationWithoutRestart(bool value) { m_supportsCertificateRotationWithoutRestartHasBeenSet = true; m_supportsCertificateRotationWithoutRestart = value; }
     inline DBEngineVersion& WithSupportsCertificateRotationWithoutRestart(bool value) { SetSupportsCertificateRotationWithoutRestart(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ
+     * between Amazon DocumentDB engine versions. You can test the values of this
+     * attribute when deciding which Amazon DocumentDB version to use in a new or
+     * upgraded cluster. You can also retrieve the version of an existing cluster and
+     * check whether that version supports certain Amazon DocumentDB Serverless
+     * features before you attempt to use those features.</p>
+     */
+    inline const ServerlessV2FeaturesSupport& GetServerlessV2FeaturesSupport() const { return m_serverlessV2FeaturesSupport; }
+    inline bool ServerlessV2FeaturesSupportHasBeenSet() const { return m_serverlessV2FeaturesSupportHasBeenSet; }
+    template<typename ServerlessV2FeaturesSupportT = ServerlessV2FeaturesSupport>
+    void SetServerlessV2FeaturesSupport(ServerlessV2FeaturesSupportT&& value) { m_serverlessV2FeaturesSupportHasBeenSet = true; m_serverlessV2FeaturesSupport = std::forward<ServerlessV2FeaturesSupportT>(value); }
+    template<typename ServerlessV2FeaturesSupportT = ServerlessV2FeaturesSupport>
+    DBEngineVersion& WithServerlessV2FeaturesSupport(ServerlessV2FeaturesSupportT&& value) { SetServerlessV2FeaturesSupport(std::forward<ServerlessV2FeaturesSupportT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_engine;
@@ -203,6 +221,9 @@ namespace Model
 
     bool m_supportsCertificateRotationWithoutRestart{false};
     bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
+
+    ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
+    bool m_serverlessV2FeaturesSupportHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/docdb/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/docdb/model/ClusterMasterUserSecret.h>
 #include <aws/docdb/model/DBClusterMember.h>
 #include <aws/docdb/model/VpcSecurityGroupMembership.h>
@@ -468,11 +469,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Storage type associated with your cluster</p> <p>Storage type associated with
-     * your cluster</p> <p>For information on storage types for Amazon DocumentDB
-     * clusters, see Cluster storage configurations in the <i>Amazon DocumentDB
-     * Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard |
-     * iopt1</code> </p> <p>Default value is <code>standard </code> </p>
+     * <p>Storage type associated with your cluster</p> <p>For information on storage
+     * types for Amazon DocumentDB clusters, see Cluster storage configurations in the
+     * <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type -
+     * <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code>
+     * </p>
      */
     inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -480,6 +481,18 @@ namespace Model
     void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
     template<typename StorageTypeT = Aws::String>
     DBCluster& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+     */
+    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
+    DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -594,6 +607,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     ClusterMasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;

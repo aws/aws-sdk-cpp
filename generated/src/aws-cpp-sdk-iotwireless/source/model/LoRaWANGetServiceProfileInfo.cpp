@@ -120,6 +120,26 @@ LoRaWANGetServiceProfileInfo& LoRaWANGetServiceProfileInfo::operator =(JsonView 
     m_minGwDiversity = jsonValue.GetInteger("MinGwDiversity");
     m_minGwDiversityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TxPowerIndexMin"))
+  {
+    m_txPowerIndexMin = jsonValue.GetInteger("TxPowerIndexMin");
+    m_txPowerIndexMinHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TxPowerIndexMax"))
+  {
+    m_txPowerIndexMax = jsonValue.GetInteger("TxPowerIndexMax");
+    m_txPowerIndexMaxHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NbTransMin"))
+  {
+    m_nbTransMin = jsonValue.GetInteger("NbTransMin");
+    m_nbTransMinHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NbTransMax"))
+  {
+    m_nbTransMax = jsonValue.GetInteger("NbTransMax");
+    m_nbTransMaxHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +258,30 @@ JsonValue LoRaWANGetServiceProfileInfo::Jsonize() const
   if(m_minGwDiversityHasBeenSet)
   {
    payload.WithInteger("MinGwDiversity", m_minGwDiversity);
+
+  }
+
+  if(m_txPowerIndexMinHasBeenSet)
+  {
+   payload.WithInteger("TxPowerIndexMin", m_txPowerIndexMin);
+
+  }
+
+  if(m_txPowerIndexMaxHasBeenSet)
+  {
+   payload.WithInteger("TxPowerIndexMax", m_txPowerIndexMax);
+
+  }
+
+  if(m_nbTransMinHasBeenSet)
+  {
+   payload.WithInteger("NbTransMin", m_nbTransMin);
+
+  }
+
+  if(m_nbTransMaxHasBeenSet)
+  {
+   payload.WithInteger("NbTransMax", m_nbTransMax);
 
   }
 

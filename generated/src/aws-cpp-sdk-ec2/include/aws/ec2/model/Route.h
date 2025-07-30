@@ -247,6 +247,19 @@ namespace Model
     template<typename OdbNetworkArnT = Aws::String>
     Route& WithOdbNetworkArn(OdbNetworkArnT&& value) { SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The next hop IP address for routes propagated by VPC Route Server into VPC
+     * route tables.</p>
+     */
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    Route& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -299,6 +312,9 @@ namespace Model
 
     Aws::String m_odbNetworkArn;
     bool m_odbNetworkArnHasBeenSet = false;
+
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

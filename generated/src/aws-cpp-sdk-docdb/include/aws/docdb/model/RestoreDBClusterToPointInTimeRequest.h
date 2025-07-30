@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/docdb/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/docdb/model/Tag.h>
 #include <utility>
 
@@ -235,6 +236,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains the scaling configuration of an Amazon DocumentDB Serverless
+     * cluster.</p>
+     */
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The storage type to associate with the DB cluster.</p> <p>For information on
      * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
      * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
@@ -285,6 +299,9 @@ namespace Model
 
     bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;

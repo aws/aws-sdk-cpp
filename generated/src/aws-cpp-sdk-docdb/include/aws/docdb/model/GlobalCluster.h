@@ -57,9 +57,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
+     * <p>The Amazon Web Services RegionRegion-unique, immutable identifier for the
+     * global database cluster. This identifier is found in CloudTrail log entries
+     * whenever the KMS customer master key (CMK) for the cluster is accessed. </p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const { return m_globalClusterResourceId; }
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }

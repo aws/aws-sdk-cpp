@@ -112,6 +112,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
   if(m_storageTypeHasBeenSet)
   {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";

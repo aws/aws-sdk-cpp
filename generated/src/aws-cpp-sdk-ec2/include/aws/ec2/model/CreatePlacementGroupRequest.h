@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
      * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
-     * <p>Rack ��� No usage restrictions.</p> </li> </ul>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
      */
     inline SpreadLevel GetSpreadLevel() const { return m_spreadLevel; }
     inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }

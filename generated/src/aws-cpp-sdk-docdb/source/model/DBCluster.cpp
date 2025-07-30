@@ -271,6 +271,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode serverlessV2ScalingConfigurationNode = resultNode.FirstChild("ServerlessV2ScalingConfiguration");
+    if(!serverlessV2ScalingConfigurationNode.IsNull())
+    {
+      m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
+      m_serverlessV2ScalingConfigurationHasBeenSet = true;
+    }
     XmlNode masterUserSecretNode = resultNode.FirstChild("MasterUserSecret");
     if(!masterUserSecretNode.IsNull())
     {
@@ -479,6 +485,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::StringStream serverlessV2ScalingConfigurationLocationAndMemberSs;
+      serverlessV2ScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_masterUserSecretHasBeenSet)
   {
       Aws::StringStream masterUserSecretLocationAndMemberSs;
@@ -651,6 +664,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
+      serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
   }
   if(m_masterUserSecretHasBeenSet)
   {
