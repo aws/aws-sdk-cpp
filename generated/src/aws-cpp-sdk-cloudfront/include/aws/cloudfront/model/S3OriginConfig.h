@@ -73,10 +73,28 @@ namespace Model
     template<typename OriginAccessIdentityT = Aws::String>
     S3OriginConfig& WithOriginAccessIdentity(OriginAccessIdentityT&& value) { SetOriginAccessIdentity(std::forward<OriginAccessIdentityT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 120 seconds, and the default (if you don't
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response
+     * timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline int GetOriginReadTimeout() const { return m_originReadTimeout; }
+    inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
+    inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
+    inline S3OriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_originAccessIdentity;
     bool m_originAccessIdentityHasBeenSet = false;
+
+    int m_originReadTimeout{0};
+    bool m_originReadTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

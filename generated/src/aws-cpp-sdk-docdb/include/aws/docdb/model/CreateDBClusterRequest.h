@@ -8,6 +8,7 @@
 #include <aws/docdb/DocDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/docdb/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/docdb/model/Tag.h>
 #include <utility>
 
@@ -353,6 +354,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains the scaling configuration of an Amazon DocumentDB Serverless
+     * cluster.</p>
+     */
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to manage the master user password with Amazon Web Services
      * Secrets Manager.</p> <p>Constraint: You can't manage the master user password
      * with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is
@@ -464,6 +478,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;

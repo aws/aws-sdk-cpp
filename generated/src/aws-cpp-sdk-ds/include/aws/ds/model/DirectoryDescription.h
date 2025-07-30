@@ -21,6 +21,7 @@
 #include <aws/ds/model/OwnerDirectoryDescription.h>
 #include <aws/ds/model/RegionsInfo.h>
 #include <aws/ds/model/OSVersion.h>
+#include <aws/ds/model/HybridSettingsDescription.h>
 #include <utility>
 
 namespace Aws
@@ -368,6 +369,20 @@ namespace Model
     inline void SetOsVersion(OSVersion value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
     inline DirectoryDescription& WithOsVersion(OSVersion value) { SetOsVersion(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the hybrid directory configuration for the
+     * directory, including Amazon Web Services System Manager managed node identifiers
+     * and DNS IPs.</p>
+     */
+    inline const HybridSettingsDescription& GetHybridSettings() const { return m_hybridSettings; }
+    inline bool HybridSettingsHasBeenSet() const { return m_hybridSettingsHasBeenSet; }
+    template<typename HybridSettingsT = HybridSettingsDescription>
+    void SetHybridSettings(HybridSettingsT&& value) { m_hybridSettingsHasBeenSet = true; m_hybridSettings = std::forward<HybridSettingsT>(value); }
+    template<typename HybridSettingsT = HybridSettingsDescription>
+    DirectoryDescription& WithHybridSettings(HybridSettingsT&& value) { SetHybridSettings(std::forward<HybridSettingsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_directoryId;
@@ -447,6 +462,9 @@ namespace Model
 
     OSVersion m_osVersion{OSVersion::NOT_SET};
     bool m_osVersionHasBeenSet = false;
+
+    HybridSettingsDescription m_hybridSettings;
+    bool m_hybridSettingsHasBeenSet = false;
   };
 
 } // namespace Model

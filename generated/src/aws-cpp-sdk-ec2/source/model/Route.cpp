@@ -133,6 +133,12 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_odbNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(odbNetworkArnNode.GetText());
       m_odbNetworkArnHasBeenSet = true;
     }
+    XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
+    if(!ipAddressNode.IsNull())
+    {
+      m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
+      m_ipAddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -225,6 +231,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".OdbNetworkArn=" << StringUtils::URLEncode(m_odbNetworkArn.c_str()) << "&";
   }
 
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
+  }
+
 }
 
 void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -296,6 +307,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_odbNetworkArnHasBeenSet)
   {
       oStream << location << ".OdbNetworkArn=" << StringUtils::URLEncode(m_odbNetworkArn.c_str()) << "&";
+  }
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
 }
 
