@@ -206,7 +206,7 @@ Aws::String URI::GetPath() const
         path.append(segment);
     }
 
-    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
+    if (m_pathSegments.empty() || (m_pathHasTrailingSlash && !s_preservePathSeparators))
     {
         path.push_back('/');
     }
@@ -223,7 +223,7 @@ Aws::String URI::GetURLEncodedPath() const
         ss << '/' << StringUtils::URLEncode(segment.c_str());
     }
 
-    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
+    if (m_pathSegments.empty() || (m_pathHasTrailingSlash && !s_preservePathSeparators))
     {
         ss << '/';
     }
@@ -243,7 +243,7 @@ Aws::String URI::GetURLEncodedPathRFC3986() const
         ss << '/' << urlEncodeSegment(segment, m_useRfcEncoding);
     }
 
-    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
+    if (m_pathSegments.empty() || (m_pathHasTrailingSlash && !s_preservePathSeparators))
     {
         ss << '/';
     }
