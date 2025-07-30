@@ -13,13 +13,19 @@ DEFAULT_REGION="us-east-1"
 DEFAULT_AZ_ID="use1-az4"
 DEFAULT_ITERATIONS=10
 
-if [ "$#" -lt 1 ]; then
-  echo "Error: Missing required argument. Usage: ${0} PREFIX_DIR [-r|--region REGION] [-a|--az-id AZ_ID] [-i|--iterations NUM]"
+if [ "$#" -lt 2 ]; then
+  echo "Error: Missing required arguments. Usage: ${0} PREFIX_DIR BUILD_MODE [-r|--region REGION] [-a|--az-id AZ_ID] [-i|--iterations NUM]"
   exit 1
 fi
 
 PREFIX_DIR="$1"
-shift  
+BUILD_MODE="$2"
+shift 2
+
+if [ "$BUILD_MODE" != "debug" ] && [ "$BUILD_MODE" != "release" ]; then
+  echo "Error: BUILD_MODE must be 'debug' or 'release', got: $BUILD_MODE"
+  exit 1
+fi
 
 REGION="$DEFAULT_REGION"
 AZ_ID="$DEFAULT_AZ_ID"
@@ -45,6 +51,8 @@ fi
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
 
 cd "${PREFIX_DIR}/al2-build"
-if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-./tests/performance-tests/s3-performance-test --region "$REGION" --az-id "$AZ_ID" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID"
+if [ "$BUILD_MODE" = "debug" ] && [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then
+  export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"
+fi
+./tests/performance-tests/s3-performance-test --region "$REGION" --az-id "$AZ_ID" --iterations "$ITERATIONS" --commit-id "$COMMIT_ID" --build-mode "$BUILD_MODE"
 cat s3-performance-test-results.json
