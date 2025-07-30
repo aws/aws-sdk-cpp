@@ -38,6 +38,11 @@ struct PerformanceMetricRecord {
 };
 
 /**
+ * Context will be shared between monitor invocations.
+ */
+struct RequestContext;
+
+/**
  * An implementation of the MonitoringInterface that collects performance metrics
  * and reports them in a JSON format.
  */
@@ -58,17 +63,17 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   ~JsonReportingMetrics() override;
 
   /**
-   * Called when an AWS request is started. Returns context for tracking.
+   * Called when an AWS request is started. Creates and returns context for tracking.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
-   * @return Context pointer (always returns nullptr)
+   * @return Context pointer to newly created RequestContext
    */
   void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName,
                          const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override;
 
   /**
-   * Called when an AWS request succeeds. Records performance metrics.
+   * Called when an AWS request succeeds. Stores latency metrics in context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -81,7 +86,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
                           const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
 
   /**
-   * Called when an AWS request fails. Records performance metrics.
+   * Called when an AWS request fails. Stores latency metrics in context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -104,7 +109,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
                       const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
 
   /**
-   * Called when an AWS request finishes. No action taken.
+   * Called when an AWS request finishes. Processes stored metrics and cleans up context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -150,6 +155,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   void WriteJsonToFile(const Aws::Utils::Json::JsonValue& root) const;
 
   mutable Aws::Vector<PerformanceMetricRecord> m_performanceRecords;
+  mutable Aws::UnorderedMap<Aws::String, Aws::UniquePtr<RequestContext>> m_requestContexts;
   Aws::Set<Aws::String> m_monitoredOperations;
   Aws::String m_productId;
   Aws::String m_sdkVersion;
