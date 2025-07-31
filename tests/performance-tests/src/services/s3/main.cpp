@@ -24,13 +24,15 @@ int main(int argc, char** argv) {
   options.add_options()("r,region", "AWS region", cxxopts::value<std::string>()->default_value("us-east-1"))(
       "a,az-id", "Availability zone ID", cxxopts::value<std::string>()->default_value("use1-az4"))(
       "i,iterations", "Number of iterations", cxxopts::value<int>()->default_value("10"))(
-      "c,commit-id", "Commit ID", cxxopts::value<std::string>()->default_value("unknown"));
+      "c,commit-id", "Commit ID", cxxopts::value<std::string>()->default_value("unknown"))(
+      "b,build-mode", "Build mode", cxxopts::value<std::string>()->default_value("unknown"));
 
   auto const result = options.parse(argc, argv);
 
   Aws::String const region = Aws::Utils::StringUtils::to_string(result["region"].as<std::string>());
   Aws::String const availabilityZoneId = Aws::Utils::StringUtils::to_string(result["az-id"].as<std::string>());
   Aws::String const commitId = Aws::Utils::StringUtils::to_string(result["commit-id"].as<std::string>());
+  Aws::String const buildMode = Aws::Utils::StringUtils::to_string(result["build-mode"].as<std::string>());
   int const iterations = result["iterations"].as<int>();
 
   Aws::SDKOptions sdkOptions;
@@ -42,7 +44,8 @@ int main(int argc, char** argv) {
       operations.insert(operation);
     }
     return Aws::MakeUnique<PerformanceTest::Reporting::JsonReportingMetricsFactory>(
-        "JsonReportingMetricsFactory", operations, "cpp1", versionStr, commitId, PerformanceTest::Services::S3::TestConfig::OutputFilename);
+        "JsonReportingMetricsFactory", operations, "cpp1", versionStr, commitId, PerformanceTest::Services::S3::TestConfig::OutputFilename,
+        buildMode);
   }};
 
   Aws::InitAPI(sdkOptions);
