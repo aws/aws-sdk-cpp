@@ -11,28 +11,25 @@ set -e
 
 DEFAULT_REGION="us-east-1"
 DEFAULT_ITERATIONS=10
+DEFAULT_BUILD_MODE="unknown"
 
-if [ "$#" -lt 2 ]; then
-  echo "Error: Missing required arguments. Usage: ${0} PREFIX_DIR BUILD_MODE [-r|--region REGION] [-i|--iterations NUM]"
+if [ "$#" -lt 1 ]; then
+  echo "Error: Missing required argument. Usage: ${0} PREFIX_DIR [-r|--region REGION] [-i|--iterations NUM] [-b|--build-mode BUILD_MODE]"
   exit 1
 fi
 
 PREFIX_DIR="$1"
-BUILD_MODE="$2"
-shift 2
-
-if [ "$BUILD_MODE" != "debug" ] && [ "$BUILD_MODE" != "release" ]; then
-  echo "Error: BUILD_MODE must be 'debug' or 'release', got: $BUILD_MODE"
-  exit 1
-fi
+shift
 
 REGION="$DEFAULT_REGION"
 ITERATIONS="$DEFAULT_ITERATIONS"
+BUILD_MODE="$DEFAULT_BUILD_MODE"
 
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
     -r|--region) REGION="$2"; shift 2 ;;
     -i|--iterations) ITERATIONS="$2"; shift 2 ;;
+    -b|--build-mode) BUILD_MODE="$2"; shift 2 ;;
     *) echo "Unknown parameter: $1"; exit 1 ;;
   esac
 done
