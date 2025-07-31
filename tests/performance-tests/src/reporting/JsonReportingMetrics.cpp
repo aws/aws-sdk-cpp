@@ -10,6 +10,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -37,27 +38,30 @@ struct PerformanceTest::Reporting::RequestContext {
 };
 
 JsonReportingMetrics::JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& productId,
-                                           const Aws::String& sdkVersion, const Aws::String& commitId, const Aws::String& outputFilename)
+                                           const Aws::String& sdkVersion, const Aws::String& commitId, const Aws::String& outputFilename,
+                                           const Aws::String& buildMode)
     : m_monitoredOperations(monitoredOperations),
       m_productId(productId),
       m_sdkVersion(sdkVersion),
       m_commitId(commitId),
-      m_outputFilename(outputFilename) {}
+      m_outputFilename(outputFilename),
+      m_buildMode(buildMode) {}
 
 JsonReportingMetrics::~JsonReportingMetrics() { DumpJson(); }
 
 JsonReportingMetricsFactory::JsonReportingMetricsFactory(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& productId,
                                                          const Aws::String& sdkVersion, const Aws::String& commitId,
-                                                         const Aws::String& outputFilename)
+                                                         const Aws::String& outputFilename, const Aws::String& buildMode)
     : m_monitoredOperations(monitoredOperations),
       m_productId(productId),
       m_sdkVersion(sdkVersion),
       m_commitId(commitId),
-      m_outputFilename(outputFilename) {}
+      m_outputFilename(outputFilename),
+      m_buildMode(buildMode) {}
 
 Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> JsonReportingMetricsFactory::CreateMonitoringInstance() const {
   return Aws::MakeUnique<JsonReportingMetrics>("JsonReportingMetrics", m_monitoredOperations, m_productId, m_sdkVersion, m_commitId,
-                                               m_outputFilename);
+                                               m_outputFilename, m_buildMode);
 }
 
 void JsonReportingMetrics::StoreLatencyInContext(const Aws::String& serviceName, const Aws::String& requestName,
@@ -184,8 +188,16 @@ void JsonReportingMetrics::DumpJson() const {
     jsonMetric.WithInt64("date", record.date.Seconds());
 
     if (!record.dimensions.empty()) {
-      Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size());
+      Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size() + (m_buildMode == "unknown" ? 0 : 1));
       size_t dimensionIndex = 0;
+
+      if (m_buildMode != "unknown") {
+        Aws::Utils::Json::JsonValue buildModeDimension;
+        buildModeDimension.WithString("name", "build-mode");
+        buildModeDimension.WithString("value", m_buildMode);
+        dimensionsArray[dimensionIndex++] = std::move(buildModeDimension);
+      }
+
       for (const auto& dim : record.dimensions) {
         Aws::Utils::Json::JsonValue dimension;
         dimension.WithString("name", dim.first);
