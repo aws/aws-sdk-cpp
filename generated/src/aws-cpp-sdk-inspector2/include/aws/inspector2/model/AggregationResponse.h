@@ -8,15 +8,15 @@
 #include <aws/inspector2/model/AccountAggregationResponse.h>
 #include <aws/inspector2/model/AmiAggregationResponse.h>
 #include <aws/inspector2/model/AwsEcrContainerAggregationResponse.h>
-#include <aws/inspector2/model/CodeRepositoryAggregationResponse.h>
 #include <aws/inspector2/model/Ec2InstanceAggregationResponse.h>
 #include <aws/inspector2/model/FindingTypeAggregationResponse.h>
 #include <aws/inspector2/model/ImageLayerAggregationResponse.h>
-#include <aws/inspector2/model/LambdaFunctionAggregationResponse.h>
-#include <aws/inspector2/model/LambdaLayerAggregationResponse.h>
 #include <aws/inspector2/model/PackageAggregationResponse.h>
 #include <aws/inspector2/model/RepositoryAggregationResponse.h>
 #include <aws/inspector2/model/TitleAggregationResponse.h>
+#include <aws/inspector2/model/LambdaLayerAggregationResponse.h>
+#include <aws/inspector2/model/LambdaFunctionAggregationResponse.h>
+#include <aws/inspector2/model/CodeRepositoryAggregationResponse.h>
 #include <utility>
 
 namespace Aws
@@ -90,19 +90,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details about an aggregation response based on code
-     * repositories.</p>
-     */
-    inline const CodeRepositoryAggregationResponse& GetCodeRepositoryAggregation() const { return m_codeRepositoryAggregation; }
-    inline bool CodeRepositoryAggregationHasBeenSet() const { return m_codeRepositoryAggregationHasBeenSet; }
-    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
-    void SetCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { m_codeRepositoryAggregationHasBeenSet = true; m_codeRepositoryAggregation = std::forward<CodeRepositoryAggregationT>(value); }
-    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
-    AggregationResponse& WithCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { SetCodeRepositoryAggregation(std::forward<CodeRepositoryAggregationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An object that contains details about an aggregation response based on Amazon
      * EC2 instances.</p>
      */
@@ -138,30 +125,6 @@ namespace Model
     void SetImageLayerAggregation(ImageLayerAggregationT&& value) { m_imageLayerAggregationHasBeenSet = true; m_imageLayerAggregation = std::forward<ImageLayerAggregationT>(value); }
     template<typename ImageLayerAggregationT = ImageLayerAggregationResponse>
     AggregationResponse& WithImageLayerAggregation(ImageLayerAggregationT&& value) { SetImageLayerAggregation(std::forward<ImageLayerAggregationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
-     */
-    inline const LambdaFunctionAggregationResponse& GetLambdaFunctionAggregation() const { return m_lambdaFunctionAggregation; }
-    inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
-    template<typename LambdaFunctionAggregationT = LambdaFunctionAggregationResponse>
-    void SetLambdaFunctionAggregation(LambdaFunctionAggregationT&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::forward<LambdaFunctionAggregationT>(value); }
-    template<typename LambdaFunctionAggregationT = LambdaFunctionAggregationResponse>
-    AggregationResponse& WithLambdaFunctionAggregation(LambdaFunctionAggregationT&& value) { SetLambdaFunctionAggregation(std::forward<LambdaFunctionAggregationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
-     */
-    inline const LambdaLayerAggregationResponse& GetLambdaLayerAggregation() const { return m_lambdaLayerAggregation; }
-    inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
-    template<typename LambdaLayerAggregationT = LambdaLayerAggregationResponse>
-    void SetLambdaLayerAggregation(LambdaLayerAggregationT&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::forward<LambdaLayerAggregationT>(value); }
-    template<typename LambdaLayerAggregationT = LambdaLayerAggregationResponse>
-    AggregationResponse& WithLambdaLayerAggregation(LambdaLayerAggregationT&& value) { SetLambdaLayerAggregation(std::forward<LambdaLayerAggregationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,6 +165,43 @@ namespace Model
     template<typename TitleAggregationT = TitleAggregationResponse>
     AggregationResponse& WithTitleAggregation(TitleAggregationT&& value) { SetTitleAggregation(std::forward<TitleAggregationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
+     */
+    inline const LambdaLayerAggregationResponse& GetLambdaLayerAggregation() const { return m_lambdaLayerAggregation; }
+    inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
+    template<typename LambdaLayerAggregationT = LambdaLayerAggregationResponse>
+    void SetLambdaLayerAggregation(LambdaLayerAggregationT&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::forward<LambdaLayerAggregationT>(value); }
+    template<typename LambdaLayerAggregationT = LambdaLayerAggregationResponse>
+    AggregationResponse& WithLambdaLayerAggregation(LambdaLayerAggregationT&& value) { SetLambdaLayerAggregation(std::forward<LambdaLayerAggregationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
+     */
+    inline const LambdaFunctionAggregationResponse& GetLambdaFunctionAggregation() const { return m_lambdaFunctionAggregation; }
+    inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
+    template<typename LambdaFunctionAggregationT = LambdaFunctionAggregationResponse>
+    void SetLambdaFunctionAggregation(LambdaFunctionAggregationT&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::forward<LambdaFunctionAggregationT>(value); }
+    template<typename LambdaFunctionAggregationT = LambdaFunctionAggregationResponse>
+    AggregationResponse& WithLambdaFunctionAggregation(LambdaFunctionAggregationT&& value) { SetLambdaFunctionAggregation(std::forward<LambdaFunctionAggregationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details about an aggregation response based on code
+     * repositories.</p>
+     */
+    inline const CodeRepositoryAggregationResponse& GetCodeRepositoryAggregation() const { return m_codeRepositoryAggregation; }
+    inline bool CodeRepositoryAggregationHasBeenSet() const { return m_codeRepositoryAggregationHasBeenSet; }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
+    void SetCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { m_codeRepositoryAggregationHasBeenSet = true; m_codeRepositoryAggregation = std::forward<CodeRepositoryAggregationT>(value); }
+    template<typename CodeRepositoryAggregationT = CodeRepositoryAggregationResponse>
+    AggregationResponse& WithCodeRepositoryAggregation(CodeRepositoryAggregationT&& value) { SetCodeRepositoryAggregation(std::forward<CodeRepositoryAggregationT>(value)); return *this;}
+    ///@}
   private:
 
     AccountAggregationResponse m_accountAggregation;
@@ -213,9 +213,6 @@ namespace Model
     AwsEcrContainerAggregationResponse m_awsEcrContainerAggregation;
     bool m_awsEcrContainerAggregationHasBeenSet = false;
 
-    CodeRepositoryAggregationResponse m_codeRepositoryAggregation;
-    bool m_codeRepositoryAggregationHasBeenSet = false;
-
     Ec2InstanceAggregationResponse m_ec2InstanceAggregation;
     bool m_ec2InstanceAggregationHasBeenSet = false;
 
@@ -225,12 +222,6 @@ namespace Model
     ImageLayerAggregationResponse m_imageLayerAggregation;
     bool m_imageLayerAggregationHasBeenSet = false;
 
-    LambdaFunctionAggregationResponse m_lambdaFunctionAggregation;
-    bool m_lambdaFunctionAggregationHasBeenSet = false;
-
-    LambdaLayerAggregationResponse m_lambdaLayerAggregation;
-    bool m_lambdaLayerAggregationHasBeenSet = false;
-
     PackageAggregationResponse m_packageAggregation;
     bool m_packageAggregationHasBeenSet = false;
 
@@ -239,6 +230,15 @@ namespace Model
 
     TitleAggregationResponse m_titleAggregation;
     bool m_titleAggregationHasBeenSet = false;
+
+    LambdaLayerAggregationResponse m_lambdaLayerAggregation;
+    bool m_lambdaLayerAggregationHasBeenSet = false;
+
+    LambdaFunctionAggregationResponse m_lambdaFunctionAggregation;
+    bool m_lambdaFunctionAggregationHasBeenSet = false;
+
+    CodeRepositoryAggregationResponse m_codeRepositoryAggregation;
+    bool m_codeRepositoryAggregationHasBeenSet = false;
   };
 
 } // namespace Model

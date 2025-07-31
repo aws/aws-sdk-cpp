@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    PackageAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the operating system package.</p>
      */
     inline const Aws::String& GetPackageName() const { return m_packageName; }
@@ -61,6 +49,18 @@ namespace Model
     void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
     template<typename PackageNameT = Aws::String>
     PackageAggregationResponse& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PackageAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,11 +76,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
     Aws::String m_packageName;
     bool m_packageNameHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;

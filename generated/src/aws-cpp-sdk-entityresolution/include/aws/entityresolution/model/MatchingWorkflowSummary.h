@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain
-   * the fields <code>WorkflowName</code>, <code>WorkflowArn</code>,
-   * <code>CreatedAt</code>, <code>UpdatedAt</code>.</p><p><h3>See Also:</h3>   <a
+   * the fields <code>workflowName</code>, <code>workflowArn</code>,
+   * <code>resolutionType</code>, <code>createdAt</code>,
+   * <code>updatedAt</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/MatchingWorkflowSummary">AWS
    * API Reference</a></p>
    */

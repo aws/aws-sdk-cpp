@@ -25,11 +25,6 @@ ListCisScanResultsAggregatedByTargetResourceResult::ListCisScanResultsAggregated
 ListCisScanResultsAggregatedByTargetResourceResult& ListCisScanResultsAggregatedByTargetResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("targetResourceAggregations"))
   {
     Aws::Utils::Array<JsonView> targetResourceAggregationsJsonList = jsonValue.GetArray("targetResourceAggregations");
@@ -38,6 +33,11 @@ ListCisScanResultsAggregatedByTargetResourceResult& ListCisScanResultsAggregated
       m_targetResourceAggregations.push_back(targetResourceAggregationsJsonList[targetResourceAggregationsIndex].AsObject());
     }
     m_targetResourceAggregationsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,11 +25,6 @@ ResourceState::ResourceState(JsonView jsonValue)
 
 ResourceState& ResourceState::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("codeRepository"))
-  {
-    m_codeRepository = jsonValue.GetObject("codeRepository");
-    m_codeRepositoryHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ec2"))
   {
     m_ec2 = jsonValue.GetObject("ec2");
@@ -50,18 +45,17 @@ ResourceState& ResourceState::operator =(JsonView jsonValue)
     m_lambdaCode = jsonValue.GetObject("lambdaCode");
     m_lambdaCodeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codeRepository"))
+  {
+    m_codeRepository = jsonValue.GetObject("codeRepository");
+    m_codeRepositoryHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ResourceState::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_codeRepositoryHasBeenSet)
-  {
-   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
-
-  }
 
   if(m_ec2HasBeenSet)
   {
@@ -84,6 +78,12 @@ JsonValue ResourceState::Jsonize() const
   if(m_lambdaCodeHasBeenSet)
   {
    payload.WithObject("lambdaCode", m_lambdaCode.Jsonize());
+
+  }
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
 
   }
 

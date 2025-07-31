@@ -25,45 +25,45 @@ CoveredResource::CoveredResource(JsonView jsonValue)
 
 CoveredResource& CoveredResource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("resourceType"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastScannedAt"))
-  {
-    m_lastScannedAt = jsonValue.GetDouble("lastScannedAt");
-    m_lastScannedAtHasBeenSet = true;
+    m_resourceType = CoverageResourceTypeMapper::GetCoverageResourceTypeForName(jsonValue.GetString("resourceType"));
+    m_resourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceMetadata"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_resourceMetadata = jsonValue.GetObject("resourceMetadata");
-    m_resourceMetadataHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
+  if(jsonValue.ValueExists("scanType"))
   {
-    m_resourceType = CoverageResourceTypeMapper::GetCoverageResourceTypeForName(jsonValue.GetString("resourceType"));
-    m_resourceTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanMode"))
-  {
-    m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
-    m_scanModeHasBeenSet = true;
+    m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
+    m_scanTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scanStatus"))
   {
     m_scanStatus = jsonValue.GetObject("scanStatus");
     m_scanStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanType"))
+  if(jsonValue.ValueExists("resourceMetadata"))
   {
-    m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
-    m_scanTypeHasBeenSet = true;
+    m_resourceMetadata = jsonValue.GetObject("resourceMetadata");
+    m_resourceMetadataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastScannedAt"))
+  {
+    m_lastScannedAt = jsonValue.GetDouble("lastScannedAt");
+    m_lastScannedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("scanMode"))
+  {
+    m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
+    m_scanModeHasBeenSet = true;
   }
   return *this;
 }
@@ -72,20 +72,31 @@ JsonValue CoveredResource::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("resourceType", CoverageResourceTypeMapper::GetNameForCoverageResourceType(m_resourceType));
+  }
+
+  if(m_resourceIdHasBeenSet)
+  {
+   payload.WithString("resourceId", m_resourceId);
+
+  }
+
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
 
   }
 
-  if(m_lastScannedAtHasBeenSet)
+  if(m_scanTypeHasBeenSet)
   {
-   payload.WithDouble("lastScannedAt", m_lastScannedAt.SecondsWithMSPrecision());
+   payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
   }
 
-  if(m_resourceIdHasBeenSet)
+  if(m_scanStatusHasBeenSet)
   {
-   payload.WithString("resourceId", m_resourceId);
+   payload.WithObject("scanStatus", m_scanStatus.Jsonize());
 
   }
 
@@ -95,25 +106,14 @@ JsonValue CoveredResource::Jsonize() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
+  if(m_lastScannedAtHasBeenSet)
   {
-   payload.WithString("resourceType", CoverageResourceTypeMapper::GetNameForCoverageResourceType(m_resourceType));
+   payload.WithDouble("lastScannedAt", m_lastScannedAt.SecondsWithMSPrecision());
   }
 
   if(m_scanModeHasBeenSet)
   {
    payload.WithString("scanMode", ScanModeMapper::GetNameForScanMode(m_scanMode));
-  }
-
-  if(m_scanStatusHasBeenSet)
-  {
-   payload.WithObject("scanStatus", m_scanStatus.Jsonize());
-
-  }
-
-  if(m_scanTypeHasBeenSet)
-  {
-   payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
   }
 
   return payload;

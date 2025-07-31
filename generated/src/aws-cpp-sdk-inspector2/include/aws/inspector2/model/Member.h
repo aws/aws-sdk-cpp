@@ -54,6 +54,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the member account.</p>
+     */
+    inline RelationshipStatus GetRelationshipStatus() const { return m_relationshipStatus; }
+    inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
+    inline void SetRelationshipStatus(RelationshipStatus value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
+    inline Member& WithRelationshipStatus(RelationshipStatus value) { SetRelationshipStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
      * administrator for this member account.</p>
      */
@@ -63,16 +73,6 @@ namespace Model
     void SetDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::forward<DelegatedAdminAccountIdT>(value); }
     template<typename DelegatedAdminAccountIdT = Aws::String>
     Member& WithDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { SetDelegatedAdminAccountId(std::forward<DelegatedAdminAccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the member account.</p>
-     */
-    inline RelationshipStatus GetRelationshipStatus() const { return m_relationshipStatus; }
-    inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
-    inline void SetRelationshipStatus(RelationshipStatus value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
-    inline Member& WithRelationshipStatus(RelationshipStatus value) { SetRelationshipStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -91,11 +91,11 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_delegatedAdminAccountId;
-    bool m_delegatedAdminAccountIdHasBeenSet = false;
-
     RelationshipStatus m_relationshipStatus{RelationshipStatus::NOT_SET};
     bool m_relationshipStatusHasBeenSet = false;
+
+    Aws::String m_delegatedAdminAccountId;
+    bool m_delegatedAdminAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;

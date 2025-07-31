@@ -40,38 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entity that issued the certificate.</p>
+     * <p>A hexadecimal identifier for the certificate.</p>
      */
-    inline const Aws::String& GetIssuer() const { return m_issuer; }
-    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    template<typename IssuerT = Aws::String>
-    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
-    template<typename IssuerT = Aws::String>
-    CertificateSummary& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The certificate is not valid after this date.</p>
-     */
-    inline const Aws::Utils::DateTime& GetNotValidAfter() const { return m_notValidAfter; }
-    inline bool NotValidAfterHasBeenSet() const { return m_notValidAfterHasBeenSet; }
-    template<typename NotValidAfterT = Aws::Utils::DateTime>
-    void SetNotValidAfter(NotValidAfterT&& value) { m_notValidAfterHasBeenSet = true; m_notValidAfter = std::forward<NotValidAfterT>(value); }
-    template<typename NotValidAfterT = Aws::Utils::DateTime>
-    CertificateSummary& WithNotValidAfter(NotValidAfterT&& value) { SetNotValidAfter(std::forward<NotValidAfterT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The certificate is not valid before this date.</p>
-     */
-    inline const Aws::Utils::DateTime& GetNotValidBefore() const { return m_notValidBefore; }
-    inline bool NotValidBeforeHasBeenSet() const { return m_notValidBeforeHasBeenSet; }
-    template<typename NotValidBeforeT = Aws::Utils::DateTime>
-    void SetNotValidBefore(NotValidBeforeT&& value) { m_notValidBeforeHasBeenSet = true; m_notValidBefore = std::forward<NotValidBeforeT>(value); }
-    template<typename NotValidBeforeT = Aws::Utils::DateTime>
-    CertificateSummary& WithNotValidBefore(NotValidBeforeT&& value) { SetNotValidBefore(std::forward<NotValidBeforeT>(value)); return *this;}
+    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
+    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
+    template<typename ThumbprintT = Aws::String>
+    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
+    template<typename ThumbprintT = Aws::String>
+    CertificateSummary& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,31 +64,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>A hexadecimal identifier for the certificate.</p>
+     * <p>The entity that issued the certificate.</p>
      */
-    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
-    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
-    template<typename ThumbprintT = Aws::String>
-    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
-    template<typename ThumbprintT = Aws::String>
-    CertificateSummary& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
+    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    CertificateSummary& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The certificate is not valid before this date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotValidBefore() const { return m_notValidBefore; }
+    inline bool NotValidBeforeHasBeenSet() const { return m_notValidBeforeHasBeenSet; }
+    template<typename NotValidBeforeT = Aws::Utils::DateTime>
+    void SetNotValidBefore(NotValidBeforeT&& value) { m_notValidBeforeHasBeenSet = true; m_notValidBefore = std::forward<NotValidBeforeT>(value); }
+    template<typename NotValidBeforeT = Aws::Utils::DateTime>
+    CertificateSummary& WithNotValidBefore(NotValidBeforeT&& value) { SetNotValidBefore(std::forward<NotValidBeforeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The certificate is not valid after this date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotValidAfter() const { return m_notValidAfter; }
+    inline bool NotValidAfterHasBeenSet() const { return m_notValidAfterHasBeenSet; }
+    template<typename NotValidAfterT = Aws::Utils::DateTime>
+    void SetNotValidAfter(NotValidAfterT&& value) { m_notValidAfterHasBeenSet = true; m_notValidAfter = std::forward<NotValidAfterT>(value); }
+    template<typename NotValidAfterT = Aws::Utils::DateTime>
+    CertificateSummary& WithNotValidAfter(NotValidAfterT&& value) { SetNotValidAfter(std::forward<NotValidAfterT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_issuer;
-    bool m_issuerHasBeenSet = false;
-
-    Aws::Utils::DateTime m_notValidAfter{};
-    bool m_notValidAfterHasBeenSet = false;
-
-    Aws::Utils::DateTime m_notValidBefore{};
-    bool m_notValidBeforeHasBeenSet = false;
+    Aws::String m_thumbprint;
+    bool m_thumbprintHasBeenSet = false;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet = false;
 
-    Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet = false;
+    Aws::String m_issuer;
+    bool m_issuerHasBeenSet = false;
+
+    Aws::Utils::DateTime m_notValidBefore{};
+    bool m_notValidBeforeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_notValidAfter{};
+    bool m_notValidAfterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,33 +34,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_accountIdFiltersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("checkIdFilters"))
-  {
-    Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
-    for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
-    {
-      m_checkIdFilters.push_back(checkIdFiltersJsonList[checkIdFiltersIndex].AsObject());
-    }
-    m_checkIdFiltersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failedChecksFilters"))
-  {
-    Aws::Utils::Array<JsonView> failedChecksFiltersJsonList = jsonValue.GetArray("failedChecksFilters");
-    for(unsigned failedChecksFiltersIndex = 0; failedChecksFiltersIndex < failedChecksFiltersJsonList.GetLength(); ++failedChecksFiltersIndex)
-    {
-      m_failedChecksFilters.push_back(failedChecksFiltersJsonList[failedChecksFiltersIndex].AsObject());
-    }
-    m_failedChecksFiltersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("platformFilters"))
-  {
-    Aws::Utils::Array<JsonView> platformFiltersJsonList = jsonValue.GetArray("platformFilters");
-    for(unsigned platformFiltersIndex = 0; platformFiltersIndex < platformFiltersJsonList.GetLength(); ++platformFiltersIndex)
-    {
-      m_platformFilters.push_back(platformFiltersJsonList[platformFiltersIndex].AsObject());
-    }
-    m_platformFiltersHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("statusFilters"))
   {
     Aws::Utils::Array<JsonView> statusFiltersJsonList = jsonValue.GetArray("statusFilters");
@@ -69,6 +42,15 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
       m_statusFilters.push_back(statusFiltersJsonList[statusFiltersIndex].AsObject());
     }
     m_statusFiltersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("checkIdFilters"))
+  {
+    Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
+    for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
+    {
+      m_checkIdFilters.push_back(checkIdFiltersJsonList[checkIdFiltersIndex].AsObject());
+    }
+    m_checkIdFiltersHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetResourceIdFilters"))
   {
@@ -88,6 +70,15 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_targetResourceTagFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("platformFilters"))
+  {
+    Aws::Utils::Array<JsonView> platformFiltersJsonList = jsonValue.GetArray("platformFilters");
+    for(unsigned platformFiltersIndex = 0; platformFiltersIndex < platformFiltersJsonList.GetLength(); ++platformFiltersIndex)
+    {
+      m_platformFilters.push_back(platformFiltersJsonList[platformFiltersIndex].AsObject());
+    }
+    m_platformFiltersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("targetStatusFilters"))
   {
     Aws::Utils::Array<JsonView> targetStatusFiltersJsonList = jsonValue.GetArray("targetStatusFilters");
@@ -105,6 +96,15 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
       m_targetStatusReasonFilters.push_back(targetStatusReasonFiltersJsonList[targetStatusReasonFiltersIndex].AsObject());
     }
     m_targetStatusReasonFiltersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failedChecksFilters"))
+  {
+    Aws::Utils::Array<JsonView> failedChecksFiltersJsonList = jsonValue.GetArray("failedChecksFilters");
+    for(unsigned failedChecksFiltersIndex = 0; failedChecksFiltersIndex < failedChecksFiltersJsonList.GetLength(); ++failedChecksFiltersIndex)
+    {
+      m_failedChecksFilters.push_back(failedChecksFiltersJsonList[failedChecksFiltersIndex].AsObject());
+    }
+    m_failedChecksFiltersHasBeenSet = true;
   }
   return *this;
 }
@@ -124,39 +124,6 @@ JsonValue CisScanResultsAggregatedByTargetResourceFilterCriteria::Jsonize() cons
 
   }
 
-  if(m_checkIdFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> checkIdFiltersJsonList(m_checkIdFilters.size());
-   for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
-   {
-     checkIdFiltersJsonList[checkIdFiltersIndex].AsObject(m_checkIdFilters[checkIdFiltersIndex].Jsonize());
-   }
-   payload.WithArray("checkIdFilters", std::move(checkIdFiltersJsonList));
-
-  }
-
-  if(m_failedChecksFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> failedChecksFiltersJsonList(m_failedChecksFilters.size());
-   for(unsigned failedChecksFiltersIndex = 0; failedChecksFiltersIndex < failedChecksFiltersJsonList.GetLength(); ++failedChecksFiltersIndex)
-   {
-     failedChecksFiltersJsonList[failedChecksFiltersIndex].AsObject(m_failedChecksFilters[failedChecksFiltersIndex].Jsonize());
-   }
-   payload.WithArray("failedChecksFilters", std::move(failedChecksFiltersJsonList));
-
-  }
-
-  if(m_platformFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> platformFiltersJsonList(m_platformFilters.size());
-   for(unsigned platformFiltersIndex = 0; platformFiltersIndex < platformFiltersJsonList.GetLength(); ++platformFiltersIndex)
-   {
-     platformFiltersJsonList[platformFiltersIndex].AsObject(m_platformFilters[platformFiltersIndex].Jsonize());
-   }
-   payload.WithArray("platformFilters", std::move(platformFiltersJsonList));
-
-  }
-
   if(m_statusFiltersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> statusFiltersJsonList(m_statusFilters.size());
@@ -165,6 +132,17 @@ JsonValue CisScanResultsAggregatedByTargetResourceFilterCriteria::Jsonize() cons
      statusFiltersJsonList[statusFiltersIndex].AsObject(m_statusFilters[statusFiltersIndex].Jsonize());
    }
    payload.WithArray("statusFilters", std::move(statusFiltersJsonList));
+
+  }
+
+  if(m_checkIdFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> checkIdFiltersJsonList(m_checkIdFilters.size());
+   for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
+   {
+     checkIdFiltersJsonList[checkIdFiltersIndex].AsObject(m_checkIdFilters[checkIdFiltersIndex].Jsonize());
+   }
+   payload.WithArray("checkIdFilters", std::move(checkIdFiltersJsonList));
 
   }
 
@@ -190,6 +168,17 @@ JsonValue CisScanResultsAggregatedByTargetResourceFilterCriteria::Jsonize() cons
 
   }
 
+  if(m_platformFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> platformFiltersJsonList(m_platformFilters.size());
+   for(unsigned platformFiltersIndex = 0; platformFiltersIndex < platformFiltersJsonList.GetLength(); ++platformFiltersIndex)
+   {
+     platformFiltersJsonList[platformFiltersIndex].AsObject(m_platformFilters[platformFiltersIndex].Jsonize());
+   }
+   payload.WithArray("platformFilters", std::move(platformFiltersJsonList));
+
+  }
+
   if(m_targetStatusFiltersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> targetStatusFiltersJsonList(m_targetStatusFilters.size());
@@ -209,6 +198,17 @@ JsonValue CisScanResultsAggregatedByTargetResourceFilterCriteria::Jsonize() cons
      targetStatusReasonFiltersJsonList[targetStatusReasonFiltersIndex].AsObject(m_targetStatusReasonFilters[targetStatusReasonFiltersIndex].Jsonize());
    }
    payload.WithArray("targetStatusReasonFilters", std::move(targetStatusReasonFiltersJsonList));
+
+  }
+
+  if(m_failedChecksFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> failedChecksFiltersJsonList(m_failedChecksFilters.size());
+   for(unsigned failedChecksFiltersIndex = 0; failedChecksFiltersIndex < failedChecksFiltersJsonList.GetLength(); ++failedChecksFiltersIndex)
+   {
+     failedChecksFiltersJsonList[failedChecksFiltersIndex].AsObject(m_failedChecksFilters[failedChecksFiltersIndex].Jsonize());
+   }
+   payload.WithArray("failedChecksFilters", std::move(failedChecksFiltersJsonList));
 
   }
 

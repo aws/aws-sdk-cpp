@@ -34,15 +34,15 @@ ListTrustStoreCertificatesResult& ListTrustStoreCertificatesResult::operator =(c
     }
     m_certificateListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
     m_trustStoreArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

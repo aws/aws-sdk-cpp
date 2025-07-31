@@ -25,6 +25,21 @@ GetSbomExportResult::GetSbomExportResult(const Aws::AmazonWebServiceResult<JsonV
 GetSbomExportResult& GetSbomExportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("reportId"))
+  {
+    m_reportId = jsonValue.GetString("reportId");
+    m_reportIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("format"))
+  {
+    m_format = SbomReportFormatMapper::GetSbomReportFormatForName(jsonValue.GetString("format"));
+    m_formatHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ExternalReportStatusMapper::GetExternalReportStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ReportingErrorCodeMapper::GetReportingErrorCodeForName(jsonValue.GetString("errorCode"));
@@ -35,30 +50,15 @@ GetSbomExportResult& GetSbomExportResult::operator =(const Aws::AmazonWebService
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterCriteria"))
-  {
-    m_filterCriteria = jsonValue.GetObject("filterCriteria");
-    m_filterCriteriaHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("format"))
-  {
-    m_format = SbomReportFormatMapper::GetSbomReportFormatForName(jsonValue.GetString("format"));
-    m_formatHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("reportId"))
-  {
-    m_reportId = jsonValue.GetString("reportId");
-    m_reportIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("s3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("s3Destination");
     m_s3DestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("filterCriteria"))
   {
-    m_status = ExternalReportStatusMapper::GetExternalReportStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_filterCriteria = jsonValue.GetObject("filterCriteria");
+    m_filterCriteriaHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

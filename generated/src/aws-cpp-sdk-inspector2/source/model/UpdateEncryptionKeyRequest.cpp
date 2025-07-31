@@ -22,14 +22,14 @@ Aws::String UpdateEncryptionKeyRequest::SerializePayload() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
-  }
-
   if(m_scanTypeHasBeenSet)
   {
    payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   return payload.View().WriteReadable();

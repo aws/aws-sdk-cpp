@@ -16,49 +16,14 @@ Aws::String CreateUserSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_additionalEncryptionContextHasBeenSet)
-  {
-   JsonValue additionalEncryptionContextJsonMap;
-   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
-   {
-     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
-   }
-   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_cookieSynchronizationConfigurationHasBeenSet)
-  {
-   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
-
-  }
-
   if(m_copyAllowedHasBeenSet)
   {
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
   }
 
-  if(m_customerManagedKeyHasBeenSet)
+  if(m_pasteAllowedHasBeenSet)
   {
-   payload.WithString("customerManagedKey", m_customerManagedKey);
-
-  }
-
-  if(m_deepLinkAllowedHasBeenSet)
-  {
-   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
-  }
-
-  if(m_disconnectTimeoutInMinutesHasBeenSet)
-  {
-   payload.WithInteger("disconnectTimeoutInMinutes", m_disconnectTimeoutInMinutes);
-
+   payload.WithString("pasteAllowed", EnabledTypeMapper::GetNameForEnabledType(m_pasteAllowed));
   }
 
   if(m_downloadAllowedHasBeenSet)
@@ -66,15 +31,9 @@ Aws::String CreateUserSettingsRequest::SerializePayload() const
    payload.WithString("downloadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_downloadAllowed));
   }
 
-  if(m_idleDisconnectTimeoutInMinutesHasBeenSet)
+  if(m_uploadAllowedHasBeenSet)
   {
-   payload.WithInteger("idleDisconnectTimeoutInMinutes", m_idleDisconnectTimeoutInMinutes);
-
-  }
-
-  if(m_pasteAllowedHasBeenSet)
-  {
-   payload.WithString("pasteAllowed", EnabledTypeMapper::GetNameForEnabledType(m_pasteAllowed));
+   payload.WithString("uploadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_uploadAllowed));
   }
 
   if(m_printAllowedHasBeenSet)
@@ -93,15 +52,56 @@ Aws::String CreateUserSettingsRequest::SerializePayload() const
 
   }
 
+  if(m_disconnectTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("disconnectTimeoutInMinutes", m_disconnectTimeoutInMinutes);
+
+  }
+
+  if(m_idleDisconnectTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("idleDisconnectTimeoutInMinutes", m_idleDisconnectTimeoutInMinutes);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
+
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
+  }
+
+  if(m_additionalEncryptionContextHasBeenSet)
+  {
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
+   {
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
+   }
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+
+  }
+
+  if(m_deepLinkAllowedHasBeenSet)
+  {
+   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
+  }
+
   if(m_toolbarConfigurationHasBeenSet)
   {
    payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
 
-  }
-
-  if(m_uploadAllowedHasBeenSet)
-  {
-   payload.WithString("uploadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_uploadAllowed));
   }
 
   return payload.View().WriteReadable();

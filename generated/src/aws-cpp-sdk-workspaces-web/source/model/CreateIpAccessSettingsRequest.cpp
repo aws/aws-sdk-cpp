@@ -16,26 +16,9 @@ Aws::String CreateIpAccessSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_additionalEncryptionContextHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   JsonValue additionalEncryptionContextJsonMap;
-   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
-   {
-     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
-   }
-   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_customerManagedKeyHasBeenSet)
-  {
-   payload.WithString("customerManagedKey", m_customerManagedKey);
+   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -45,9 +28,31 @@ Aws::String CreateIpAccessSettingsRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
+  }
+
+  if(m_additionalEncryptionContextHasBeenSet)
+  {
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
+   {
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
+   }
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
 
   }
 
@@ -62,14 +67,9 @@ Aws::String CreateIpAccessSettingsRequest::SerializePayload() const
 
   }
 
-  if(m_tagsHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

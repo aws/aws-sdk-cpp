@@ -25,6 +25,11 @@ Aws::String TerminateInstancesRequest::SerializePayload() const
     }
   }
 
+  if(m_forceHasBeenSet)
+  {
+    ss << "Force=" << std::boolalpha << m_force << "&";
+  }
+
   if(m_skipOsShutdownHasBeenSet)
   {
     ss << "SkipOsShutdown=" << std::boolalpha << m_skipOsShutdown << "&";

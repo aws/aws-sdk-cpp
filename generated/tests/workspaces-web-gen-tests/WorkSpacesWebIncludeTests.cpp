@@ -22,6 +22,8 @@
 #include <aws/workspaces-web/model/AssociateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsResult.h>
+#include <aws/workspaces-web/model/AssociateSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/AssociateSessionLoggerResult.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreResult.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsRequest.h>
@@ -49,6 +51,8 @@
 #include <aws/workspaces-web/model/CreateNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/CreatePortalRequest.h>
 #include <aws/workspaces-web/model/CreatePortalResult.h>
+#include <aws/workspaces-web/model/CreateSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/CreateSessionLoggerResult.h>
 #include <aws/workspaces-web/model/CreateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/CreateTrustStoreResult.h>
 #include <aws/workspaces-web/model/CreateUserAccessLoggingSettingsRequest.h>
@@ -70,6 +74,8 @@
 #include <aws/workspaces-web/model/DeleteNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/DeletePortalRequest.h>
 #include <aws/workspaces-web/model/DeletePortalResult.h>
+#include <aws/workspaces-web/model/DeleteSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/DeleteSessionLoggerResult.h>
 #include <aws/workspaces-web/model/DeleteTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DeleteTrustStoreResult.h>
 #include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsRequest.h>
@@ -84,6 +90,8 @@
 #include <aws/workspaces-web/model/DisassociateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsResult.h>
+#include <aws/workspaces-web/model/DisassociateSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/DisassociateSessionLoggerResult.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreResult.h>
 #include <aws/workspaces-web/model/DisassociateUserAccessLoggingSettingsRequest.h>
@@ -91,8 +99,11 @@
 #include <aws/workspaces-web/model/DisassociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserSettingsResult.h>
 #include <aws/workspaces-web/model/EnabledType.h>
+#include <aws/workspaces-web/model/Event.h>
+#include <aws/workspaces-web/model/EventFilter.h>
 #include <aws/workspaces-web/model/ExpireSessionRequest.h>
 #include <aws/workspaces-web/model/ExpireSessionResult.h>
+#include <aws/workspaces-web/model/FolderStructure.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsResult.h>
 #include <aws/workspaces-web/model/GetDataProtectionSettingsRequest.h>
@@ -107,6 +118,8 @@
 #include <aws/workspaces-web/model/GetPortalResult.h>
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataRequest.h>
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataResult.h>
+#include <aws/workspaces-web/model/GetSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/GetSessionLoggerResult.h>
 #include <aws/workspaces-web/model/GetSessionRequest.h>
 #include <aws/workspaces-web/model/GetSessionResult.h>
 #include <aws/workspaces-web/model/GetTrustStoreCertificateRequest.h>
@@ -139,6 +152,8 @@
 #include <aws/workspaces-web/model/ListNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/ListPortalsRequest.h>
 #include <aws/workspaces-web/model/ListPortalsResult.h>
+#include <aws/workspaces-web/model/ListSessionLoggersRequest.h>
+#include <aws/workspaces-web/model/ListSessionLoggersResult.h>
 #include <aws/workspaces-web/model/ListSessionsRequest.h>
 #include <aws/workspaces-web/model/ListSessionsResult.h>
 #include <aws/workspaces-web/model/ListTagsForResourceRequest.h>
@@ -151,6 +166,8 @@
 #include <aws/workspaces-web/model/ListUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/ListUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListUserSettingsResult.h>
+#include <aws/workspaces-web/model/LogConfiguration.h>
+#include <aws/workspaces-web/model/LogFileFormat.h>
 #include <aws/workspaces-web/model/MaxDisplayResolution.h>
 #include <aws/workspaces-web/model/NetworkSettings.h>
 #include <aws/workspaces-web/model/NetworkSettingsSummary.h>
@@ -161,8 +178,11 @@
 #include <aws/workspaces-web/model/RedactionPlaceHolderType.h>
 #include <aws/workspaces-web/model/RendererType.h>
 #include <aws/workspaces-web/model/ResourceNotFoundException.h>
+#include <aws/workspaces-web/model/S3LogConfiguration.h>
 #include <aws/workspaces-web/model/ServiceQuotaExceededException.h>
 #include <aws/workspaces-web/model/Session.h>
+#include <aws/workspaces-web/model/SessionLogger.h>
+#include <aws/workspaces-web/model/SessionLoggerSummary.h>
 #include <aws/workspaces-web/model/SessionSortBy.h>
 #include <aws/workspaces-web/model/SessionStatus.h>
 #include <aws/workspaces-web/model/SessionSummary.h>
@@ -176,6 +196,7 @@
 #include <aws/workspaces-web/model/ToolbarType.h>
 #include <aws/workspaces-web/model/TrustStore.h>
 #include <aws/workspaces-web/model/TrustStoreSummary.h>
+#include <aws/workspaces-web/model/Unit.h>
 #include <aws/workspaces-web/model/UntagResourceRequest.h>
 #include <aws/workspaces-web/model/UntagResourceResult.h>
 #include <aws/workspaces-web/model/UpdateBrowserSettingsRequest.h>
@@ -190,6 +211,8 @@
 #include <aws/workspaces-web/model/UpdateNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/UpdatePortalRequest.h>
 #include <aws/workspaces-web/model/UpdatePortalResult.h>
+#include <aws/workspaces-web/model/UpdateSessionLoggerRequest.h>
+#include <aws/workspaces-web/model/UpdateSessionLoggerResult.h>
 #include <aws/workspaces-web/model/UpdateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/UpdateTrustStoreResult.h>
 #include <aws/workspaces-web/model/UpdateUserAccessLoggingSettingsRequest.h>

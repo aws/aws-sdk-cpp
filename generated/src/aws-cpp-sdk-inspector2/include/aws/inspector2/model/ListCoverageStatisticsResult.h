@@ -49,6 +49,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number for all groups.</p>
+     */
+    inline long long GetTotalCounts() const { return m_totalCounts; }
+    inline void SetTotalCounts(long long value) { m_totalCountsHasBeenSet = true; m_totalCounts = value; }
+    inline ListCoverageStatisticsResult& WithTotalCounts(long long value) { SetTotalCounts(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. For
      * subsequent calls, use the <code>NextToken</code> value returned from the
@@ -59,15 +68,6 @@ namespace Model
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
     ListCoverageStatisticsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The total number for all groups.</p>
-     */
-    inline long long GetTotalCounts() const { return m_totalCounts; }
-    inline void SetTotalCounts(long long value) { m_totalCountsHasBeenSet = true; m_totalCounts = value; }
-    inline ListCoverageStatisticsResult& WithTotalCounts(long long value) { SetTotalCounts(value); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +83,11 @@ namespace Model
     Aws::Vector<Counts> m_countsByGroup;
     bool m_countsByGroupHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     long long m_totalCounts{0};
     bool m_totalCountsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

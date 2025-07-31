@@ -25,10 +25,15 @@ GetFindingsReportStatusResult::GetFindingsReportStatusResult(const Aws::AmazonWe
 GetFindingsReportStatusResult& GetFindingsReportStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("destination"))
+  if(jsonValue.ValueExists("reportId"))
   {
-    m_destination = jsonValue.GetObject("destination");
-    m_destinationHasBeenSet = true;
+    m_reportId = jsonValue.GetString("reportId");
+    m_reportIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ExternalReportStatusMapper::GetExternalReportStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("errorCode"))
   {
@@ -40,20 +45,15 @@ GetFindingsReportStatusResult& GetFindingsReportStatusResult::operator =(const A
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("destination"))
+  {
+    m_destination = jsonValue.GetObject("destination");
+    m_destinationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("filterCriteria"))
   {
     m_filterCriteria = jsonValue.GetObject("filterCriteria");
     m_filterCriteriaHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("reportId"))
-  {
-    m_reportId = jsonValue.GetString("reportId");
-    m_reportIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ExternalReportStatusMapper::GetExternalReportStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

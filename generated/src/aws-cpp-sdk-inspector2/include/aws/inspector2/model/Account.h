@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/ResourceStatus.h>
 #include <aws/inspector2/model/Status.h>
+#include <aws/inspector2/model/ResourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +54,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of Amazon Inspector for the account.</p>
+     */
+    inline Status GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Account& WithStatus(Status value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details of the status of Amazon Inspector scans by resource type.</p>
      */
     inline const ResourceStatus& GetResourceStatus() const { return m_resourceStatus; }
@@ -63,26 +73,16 @@ namespace Model
     template<typename ResourceStatusT = ResourceStatus>
     Account& WithResourceStatus(ResourceStatusT&& value) { SetResourceStatus(std::forward<ResourceStatusT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
-    inline Status GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
-    inline Account& WithStatus(Status value) { SetStatus(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    ResourceStatus m_resourceStatus;
-    bool m_resourceStatusHasBeenSet = false;
-
     Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    ResourceStatus m_resourceStatus;
+    bool m_resourceStatusHasBeenSet = false;
   };
 
 } // namespace Model

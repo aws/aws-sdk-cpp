@@ -11,6 +11,8 @@
 #include <aws/customer-profiles/model/Gender.h>
 #include <aws/customer-profiles/model/UpdateAddress.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/customer-profiles/model/ProfileType.h>
+#include <aws/customer-profiles/model/EngagementPreferences.h>
 #include <utility>
 
 namespace Aws
@@ -339,6 +341,28 @@ namespace Model
     template<typename GenderStringT = Aws::String>
     UpdateProfileRequest& WithGenderString(GenderStringT&& value) { SetGenderString(std::forward<GenderStringT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines the type of the profile.</p>
+     */
+    inline ProfileType GetProfileType() const { return m_profileType; }
+    inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
+    inline void SetProfileType(ProfileType value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
+    inline UpdateProfileRequest& WithProfileType(ProfileType value) { SetProfileType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Object that defines users preferred methods of engagement.</p>
+     */
+    inline const EngagementPreferences& GetEngagementPreferences() const { return m_engagementPreferences; }
+    inline bool EngagementPreferencesHasBeenSet() const { return m_engagementPreferencesHasBeenSet; }
+    template<typename EngagementPreferencesT = EngagementPreferences>
+    void SetEngagementPreferences(EngagementPreferencesT&& value) { m_engagementPreferencesHasBeenSet = true; m_engagementPreferences = std::forward<EngagementPreferencesT>(value); }
+    template<typename EngagementPreferencesT = EngagementPreferences>
+    UpdateProfileRequest& WithEngagementPreferences(EngagementPreferencesT&& value) { SetEngagementPreferences(std::forward<EngagementPreferencesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -415,6 +439,12 @@ namespace Model
 
     Aws::String m_genderString;
     bool m_genderStringHasBeenSet = false;
+
+    ProfileType m_profileType{ProfileType::NOT_SET};
+    bool m_profileTypeHasBeenSet = false;
+
+    EngagementPreferences m_engagementPreferences;
+    bool m_engagementPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

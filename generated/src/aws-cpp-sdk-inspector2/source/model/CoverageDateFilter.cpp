@@ -25,15 +25,15 @@ CoverageDateFilter::CoverageDateFilter(JsonView jsonValue)
 
 CoverageDateFilter& CoverageDateFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endInclusive"))
-  {
-    m_endInclusive = jsonValue.GetDouble("endInclusive");
-    m_endInclusiveHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("startInclusive"))
   {
     m_startInclusive = jsonValue.GetDouble("startInclusive");
     m_startInclusiveHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endInclusive"))
+  {
+    m_endInclusive = jsonValue.GetDouble("endInclusive");
+    m_endInclusiveHasBeenSet = true;
   }
   return *this;
 }
@@ -42,14 +42,14 @@ JsonValue CoverageDateFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_endInclusiveHasBeenSet)
-  {
-   payload.WithDouble("endInclusive", m_endInclusive.SecondsWithMSPrecision());
-  }
-
   if(m_startInclusiveHasBeenSet)
   {
    payload.WithDouble("startInclusive", m_startInclusive.SecondsWithMSPrecision());
+  }
+
+  if(m_endInclusiveHasBeenSet)
+  {
+   payload.WithDouble("endInclusive", m_endInclusive.SecondsWithMSPrecision());
   }
 
   return payload;

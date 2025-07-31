@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/CisNumberFilter.h>
 #include <aws/inspector2/model/CisStringFilter.h>
-#include <aws/inspector2/model/CisDateFilter.h>
-#include <aws/inspector2/model/CisScanStatusFilter.h>
 #include <aws/inspector2/model/TagFilter.h>
+#include <aws/inspector2/model/CisScanStatusFilter.h>
+#include <aws/inspector2/model/CisDateFilter.h>
+#include <aws/inspector2/model/CisNumberFilter.h>
 #include <utility>
 
 namespace Aws
@@ -44,30 +44,58 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of failed checks filters.</p>
+     * <p>The list of scan name filters.</p>
      */
-    inline const Aws::Vector<CisNumberFilter>& GetFailedChecksFilters() const { return m_failedChecksFilters; }
-    inline bool FailedChecksFiltersHasBeenSet() const { return m_failedChecksFiltersHasBeenSet; }
-    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
-    void SetFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters = std::forward<FailedChecksFiltersT>(value); }
-    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
-    ListCisScansFilterCriteria& WithFailedChecksFilters(FailedChecksFiltersT&& value) { SetFailedChecksFilters(std::forward<FailedChecksFiltersT>(value)); return *this;}
-    template<typename FailedChecksFiltersT = CisNumberFilter>
-    ListCisScansFilterCriteria& AddFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters.emplace_back(std::forward<FailedChecksFiltersT>(value)); return *this; }
+    inline const Aws::Vector<CisStringFilter>& GetScanNameFilters() const { return m_scanNameFilters; }
+    inline bool ScanNameFiltersHasBeenSet() const { return m_scanNameFiltersHasBeenSet; }
+    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
+    void SetScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters = std::forward<ScanNameFiltersT>(value); }
+    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScansFilterCriteria& WithScanNameFilters(ScanNameFiltersT&& value) { SetScanNameFilters(std::forward<ScanNameFiltersT>(value)); return *this;}
+    template<typename ScanNameFiltersT = CisStringFilter>
+    ListCisScansFilterCriteria& AddScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters.emplace_back(std::forward<ScanNameFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
-     * <p>The list of scan ARN filters.</p>
+     * <p>The list of target resource tag filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetScanArnFilters() const { return m_scanArnFilters; }
-    inline bool ScanArnFiltersHasBeenSet() const { return m_scanArnFiltersHasBeenSet; }
-    template<typename ScanArnFiltersT = Aws::Vector<CisStringFilter>>
-    void SetScanArnFilters(ScanArnFiltersT&& value) { m_scanArnFiltersHasBeenSet = true; m_scanArnFilters = std::forward<ScanArnFiltersT>(value); }
-    template<typename ScanArnFiltersT = Aws::Vector<CisStringFilter>>
-    ListCisScansFilterCriteria& WithScanArnFilters(ScanArnFiltersT&& value) { SetScanArnFilters(std::forward<ScanArnFiltersT>(value)); return *this;}
-    template<typename ScanArnFiltersT = CisStringFilter>
-    ListCisScansFilterCriteria& AddScanArnFilters(ScanArnFiltersT&& value) { m_scanArnFiltersHasBeenSet = true; m_scanArnFilters.emplace_back(std::forward<ScanArnFiltersT>(value)); return *this; }
+    inline const Aws::Vector<TagFilter>& GetTargetResourceTagFilters() const { return m_targetResourceTagFilters; }
+    inline bool TargetResourceTagFiltersHasBeenSet() const { return m_targetResourceTagFiltersHasBeenSet; }
+    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
+    void SetTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters = std::forward<TargetResourceTagFiltersT>(value); }
+    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
+    ListCisScansFilterCriteria& WithTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { SetTargetResourceTagFilters(std::forward<TargetResourceTagFiltersT>(value)); return *this;}
+    template<typename TargetResourceTagFiltersT = TagFilter>
+    ListCisScansFilterCriteria& AddTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.emplace_back(std::forward<TargetResourceTagFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of target resource ID filters.</p>
+     */
+    inline const Aws::Vector<CisStringFilter>& GetTargetResourceIdFilters() const { return m_targetResourceIdFilters; }
+    inline bool TargetResourceIdFiltersHasBeenSet() const { return m_targetResourceIdFiltersHasBeenSet; }
+    template<typename TargetResourceIdFiltersT = Aws::Vector<CisStringFilter>>
+    void SetTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { m_targetResourceIdFiltersHasBeenSet = true; m_targetResourceIdFilters = std::forward<TargetResourceIdFiltersT>(value); }
+    template<typename TargetResourceIdFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScansFilterCriteria& WithTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { SetTargetResourceIdFilters(std::forward<TargetResourceIdFiltersT>(value)); return *this;}
+    template<typename TargetResourceIdFiltersT = CisStringFilter>
+    ListCisScansFilterCriteria& AddTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { m_targetResourceIdFiltersHasBeenSet = true; m_targetResourceIdFilters.emplace_back(std::forward<TargetResourceIdFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of scan status filters.</p>
+     */
+    inline const Aws::Vector<CisScanStatusFilter>& GetScanStatusFilters() const { return m_scanStatusFilters; }
+    inline bool ScanStatusFiltersHasBeenSet() const { return m_scanStatusFiltersHasBeenSet; }
+    template<typename ScanStatusFiltersT = Aws::Vector<CisScanStatusFilter>>
+    void SetScanStatusFilters(ScanStatusFiltersT&& value) { m_scanStatusFiltersHasBeenSet = true; m_scanStatusFilters = std::forward<ScanStatusFiltersT>(value); }
+    template<typename ScanStatusFiltersT = Aws::Vector<CisScanStatusFilter>>
+    ListCisScansFilterCriteria& WithScanStatusFilters(ScanStatusFiltersT&& value) { SetScanStatusFilters(std::forward<ScanStatusFiltersT>(value)); return *this;}
+    template<typename ScanStatusFiltersT = CisScanStatusFilter>
+    ListCisScansFilterCriteria& AddScanStatusFilters(ScanStatusFiltersT&& value) { m_scanStatusFiltersHasBeenSet = true; m_scanStatusFilters.emplace_back(std::forward<ScanStatusFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,30 +128,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of scan name filters.</p>
+     * <p>The list of scan ARN filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetScanNameFilters() const { return m_scanNameFilters; }
-    inline bool ScanNameFiltersHasBeenSet() const { return m_scanNameFiltersHasBeenSet; }
-    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
-    void SetScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters = std::forward<ScanNameFiltersT>(value); }
-    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
-    ListCisScansFilterCriteria& WithScanNameFilters(ScanNameFiltersT&& value) { SetScanNameFilters(std::forward<ScanNameFiltersT>(value)); return *this;}
-    template<typename ScanNameFiltersT = CisStringFilter>
-    ListCisScansFilterCriteria& AddScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters.emplace_back(std::forward<ScanNameFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of scan status filters.</p>
-     */
-    inline const Aws::Vector<CisScanStatusFilter>& GetScanStatusFilters() const { return m_scanStatusFilters; }
-    inline bool ScanStatusFiltersHasBeenSet() const { return m_scanStatusFiltersHasBeenSet; }
-    template<typename ScanStatusFiltersT = Aws::Vector<CisScanStatusFilter>>
-    void SetScanStatusFilters(ScanStatusFiltersT&& value) { m_scanStatusFiltersHasBeenSet = true; m_scanStatusFilters = std::forward<ScanStatusFiltersT>(value); }
-    template<typename ScanStatusFiltersT = Aws::Vector<CisScanStatusFilter>>
-    ListCisScansFilterCriteria& WithScanStatusFilters(ScanStatusFiltersT&& value) { SetScanStatusFilters(std::forward<ScanStatusFiltersT>(value)); return *this;}
-    template<typename ScanStatusFiltersT = CisScanStatusFilter>
-    ListCisScansFilterCriteria& AddScanStatusFilters(ScanStatusFiltersT&& value) { m_scanStatusFiltersHasBeenSet = true; m_scanStatusFilters.emplace_back(std::forward<ScanStatusFiltersT>(value)); return *this; }
+    inline const Aws::Vector<CisStringFilter>& GetScanArnFilters() const { return m_scanArnFilters; }
+    inline bool ScanArnFiltersHasBeenSet() const { return m_scanArnFiltersHasBeenSet; }
+    template<typename ScanArnFiltersT = Aws::Vector<CisStringFilter>>
+    void SetScanArnFilters(ScanArnFiltersT&& value) { m_scanArnFiltersHasBeenSet = true; m_scanArnFilters = std::forward<ScanArnFiltersT>(value); }
+    template<typename ScanArnFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScansFilterCriteria& WithScanArnFilters(ScanArnFiltersT&& value) { SetScanArnFilters(std::forward<ScanArnFiltersT>(value)); return *this;}
+    template<typename ScanArnFiltersT = CisStringFilter>
+    ListCisScansFilterCriteria& AddScanArnFilters(ScanArnFiltersT&& value) { m_scanArnFiltersHasBeenSet = true; m_scanArnFilters.emplace_back(std::forward<ScanArnFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,6 +156,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The list of failed checks filters.</p>
+     */
+    inline const Aws::Vector<CisNumberFilter>& GetFailedChecksFilters() const { return m_failedChecksFilters; }
+    inline bool FailedChecksFiltersHasBeenSet() const { return m_failedChecksFiltersHasBeenSet; }
+    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
+    void SetFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters = std::forward<FailedChecksFiltersT>(value); }
+    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
+    ListCisScansFilterCriteria& WithFailedChecksFilters(FailedChecksFiltersT&& value) { SetFailedChecksFilters(std::forward<FailedChecksFiltersT>(value)); return *this;}
+    template<typename FailedChecksFiltersT = CisNumberFilter>
+    ListCisScansFilterCriteria& AddFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters.emplace_back(std::forward<FailedChecksFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of target account ID filters.</p>
      */
     inline const Aws::Vector<CisStringFilter>& GetTargetAccountIdFilters() const { return m_targetAccountIdFilters; }
@@ -153,41 +181,19 @@ namespace Model
     template<typename TargetAccountIdFiltersT = CisStringFilter>
     ListCisScansFilterCriteria& AddTargetAccountIdFilters(TargetAccountIdFiltersT&& value) { m_targetAccountIdFiltersHasBeenSet = true; m_targetAccountIdFilters.emplace_back(std::forward<TargetAccountIdFiltersT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The list of target resource ID filters.</p>
-     */
-    inline const Aws::Vector<CisStringFilter>& GetTargetResourceIdFilters() const { return m_targetResourceIdFilters; }
-    inline bool TargetResourceIdFiltersHasBeenSet() const { return m_targetResourceIdFiltersHasBeenSet; }
-    template<typename TargetResourceIdFiltersT = Aws::Vector<CisStringFilter>>
-    void SetTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { m_targetResourceIdFiltersHasBeenSet = true; m_targetResourceIdFilters = std::forward<TargetResourceIdFiltersT>(value); }
-    template<typename TargetResourceIdFiltersT = Aws::Vector<CisStringFilter>>
-    ListCisScansFilterCriteria& WithTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { SetTargetResourceIdFilters(std::forward<TargetResourceIdFiltersT>(value)); return *this;}
-    template<typename TargetResourceIdFiltersT = CisStringFilter>
-    ListCisScansFilterCriteria& AddTargetResourceIdFilters(TargetResourceIdFiltersT&& value) { m_targetResourceIdFiltersHasBeenSet = true; m_targetResourceIdFilters.emplace_back(std::forward<TargetResourceIdFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of target resource tag filters.</p>
-     */
-    inline const Aws::Vector<TagFilter>& GetTargetResourceTagFilters() const { return m_targetResourceTagFilters; }
-    inline bool TargetResourceTagFiltersHasBeenSet() const { return m_targetResourceTagFiltersHasBeenSet; }
-    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
-    void SetTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters = std::forward<TargetResourceTagFiltersT>(value); }
-    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
-    ListCisScansFilterCriteria& WithTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { SetTargetResourceTagFilters(std::forward<TargetResourceTagFiltersT>(value)); return *this;}
-    template<typename TargetResourceTagFiltersT = TagFilter>
-    ListCisScansFilterCriteria& AddTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.emplace_back(std::forward<TargetResourceTagFiltersT>(value)); return *this; }
-    ///@}
   private:
 
-    Aws::Vector<CisNumberFilter> m_failedChecksFilters;
-    bool m_failedChecksFiltersHasBeenSet = false;
+    Aws::Vector<CisStringFilter> m_scanNameFilters;
+    bool m_scanNameFiltersHasBeenSet = false;
 
-    Aws::Vector<CisStringFilter> m_scanArnFilters;
-    bool m_scanArnFiltersHasBeenSet = false;
+    Aws::Vector<TagFilter> m_targetResourceTagFilters;
+    bool m_targetResourceTagFiltersHasBeenSet = false;
+
+    Aws::Vector<CisStringFilter> m_targetResourceIdFilters;
+    bool m_targetResourceIdFiltersHasBeenSet = false;
+
+    Aws::Vector<CisScanStatusFilter> m_scanStatusFilters;
+    bool m_scanStatusFiltersHasBeenSet = false;
 
     Aws::Vector<CisDateFilter> m_scanAtFilters;
     bool m_scanAtFiltersHasBeenSet = false;
@@ -195,23 +201,17 @@ namespace Model
     Aws::Vector<CisStringFilter> m_scanConfigurationArnFilters;
     bool m_scanConfigurationArnFiltersHasBeenSet = false;
 
-    Aws::Vector<CisStringFilter> m_scanNameFilters;
-    bool m_scanNameFiltersHasBeenSet = false;
-
-    Aws::Vector<CisScanStatusFilter> m_scanStatusFilters;
-    bool m_scanStatusFiltersHasBeenSet = false;
+    Aws::Vector<CisStringFilter> m_scanArnFilters;
+    bool m_scanArnFiltersHasBeenSet = false;
 
     Aws::Vector<CisStringFilter> m_scheduledByFilters;
     bool m_scheduledByFiltersHasBeenSet = false;
 
+    Aws::Vector<CisNumberFilter> m_failedChecksFilters;
+    bool m_failedChecksFiltersHasBeenSet = false;
+
     Aws::Vector<CisStringFilter> m_targetAccountIdFilters;
     bool m_targetAccountIdFiltersHasBeenSet = false;
-
-    Aws::Vector<CisStringFilter> m_targetResourceIdFilters;
-    bool m_targetResourceIdFiltersHasBeenSet = false;
-
-    Aws::Vector<TagFilter> m_targetResourceTagFilters;
-    bool m_targetResourceTagFiltersHasBeenSet = false;
   };
 
 } // namespace Model

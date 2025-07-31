@@ -16,27 +16,15 @@ Aws::String ListCisScanResultsAggregatedByChecksRequest::SerializePayload() cons
 {
   JsonValue payload;
 
-  if(m_filterCriteriaHasBeenSet)
-  {
-   payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
   if(m_scanArnHasBeenSet)
   {
    payload.WithString("scanArn", m_scanArn);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
 
   }
 
@@ -48,6 +36,18 @@ Aws::String ListCisScanResultsAggregatedByChecksRequest::SerializePayload() cons
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", CisSortOrderMapper::GetNameForCisSortOrder(m_sortOrder));
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

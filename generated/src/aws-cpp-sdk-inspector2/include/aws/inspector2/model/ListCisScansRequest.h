@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/ListCisScansDetailLevel.h>
 #include <aws/inspector2/model/ListCisScansFilterCriteria.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/ListCisScansDetailLevel.h>
 #include <aws/inspector2/model/ListCisScansSortBy.h>
 #include <aws/inspector2/model/CisSortOrder.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -38,16 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The detail applied to the CIS scan.</p>
-     */
-    inline ListCisScansDetailLevel GetDetailLevel() const { return m_detailLevel; }
-    inline bool DetailLevelHasBeenSet() const { return m_detailLevelHasBeenSet; }
-    inline void SetDetailLevel(ListCisScansDetailLevel value) { m_detailLevelHasBeenSet = true; m_detailLevel = value; }
-    inline ListCisScansRequest& WithDetailLevel(ListCisScansDetailLevel value) { SetDetailLevel(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The CIS scan filter criteria.</p>
      */
     inline const ListCisScansFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
@@ -60,25 +50,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to be returned.</p>
+     * <p>The detail applied to the CIS scan.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCisScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListCisScansRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    inline ListCisScansDetailLevel GetDetailLevel() const { return m_detailLevel; }
+    inline bool DetailLevelHasBeenSet() const { return m_detailLevelHasBeenSet; }
+    inline void SetDetailLevel(ListCisScansDetailLevel value) { m_detailLevelHasBeenSet = true; m_detailLevel = value; }
+    inline ListCisScansRequest& WithDetailLevel(ListCisScansDetailLevel value) { SetDetailLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -100,25 +77,48 @@ namespace Model
     inline void SetSortOrder(CisSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline ListCisScansRequest& WithSortOrder(CisSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    ListCisScansDetailLevel m_detailLevel{ListCisScansDetailLevel::NOT_SET};
-    bool m_detailLevelHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The pagination token from a previous request that's used to retrieve the next
+     * page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScansRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to be returned.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListCisScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     ListCisScansFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    ListCisScansDetailLevel m_detailLevel{ListCisScansDetailLevel::NOT_SET};
+    bool m_detailLevelHasBeenSet = false;
 
     ListCisScansSortBy m_sortBy{ListCisScansSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
     CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

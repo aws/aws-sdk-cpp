@@ -54,6 +54,16 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
    m_scope.AddToNode(scopeNode);
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   XmlNode tagsParentNode = parentNode.CreateChildElement("Tags");
+   for(const auto& item : m_tags)
+   {
+     XmlNode tagsNode = tagsParentNode.CreateChildElement("Tag");
+     item.AddToNode(tagsNode);
+   }
+  }
+
   return payloadDoc.ConvertToString();
 }
 

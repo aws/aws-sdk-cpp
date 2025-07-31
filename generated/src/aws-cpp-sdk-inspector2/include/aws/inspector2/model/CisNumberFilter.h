@@ -37,16 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS number filter's lower inclusive.</p>
-     */
-    inline int GetLowerInclusive() const { return m_lowerInclusive; }
-    inline bool LowerInclusiveHasBeenSet() const { return m_lowerInclusiveHasBeenSet; }
-    inline void SetLowerInclusive(int value) { m_lowerInclusiveHasBeenSet = true; m_lowerInclusive = value; }
-    inline CisNumberFilter& WithLowerInclusive(int value) { SetLowerInclusive(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The CIS number filter's upper inclusive.</p>
      */
     inline int GetUpperInclusive() const { return m_upperInclusive; }
@@ -54,13 +44,23 @@ namespace Model
     inline void SetUpperInclusive(int value) { m_upperInclusiveHasBeenSet = true; m_upperInclusive = value; }
     inline CisNumberFilter& WithUpperInclusive(int value) { SetUpperInclusive(value); return *this;}
     ///@}
-  private:
 
-    int m_lowerInclusive{0};
-    bool m_lowerInclusiveHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The CIS number filter's lower inclusive.</p>
+     */
+    inline int GetLowerInclusive() const { return m_lowerInclusive; }
+    inline bool LowerInclusiveHasBeenSet() const { return m_lowerInclusiveHasBeenSet; }
+    inline void SetLowerInclusive(int value) { m_lowerInclusiveHasBeenSet = true; m_lowerInclusive = value; }
+    inline CisNumberFilter& WithLowerInclusive(int value) { SetLowerInclusive(value); return *this;}
+    ///@}
+  private:
 
     int m_upperInclusive{0};
     bool m_upperInclusiveHasBeenSet = false;
+
+    int m_lowerInclusive{0};
+    bool m_lowerInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

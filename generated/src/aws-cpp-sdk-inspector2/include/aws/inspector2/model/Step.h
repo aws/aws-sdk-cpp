@@ -39,19 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web
-     * Services console.</p>
-     */
-    inline const Aws::String& GetComponentArn() const { return m_componentArn; }
-    inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
-    template<typename ComponentArnT = Aws::String>
-    void SetComponentArn(ComponentArnT&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::forward<ComponentArnT>(value); }
-    template<typename ComponentArnT = Aws::String>
-    Step& WithComponentArn(ComponentArnT&& value) { SetComponentArn(std::forward<ComponentArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The component ID.</p>
      */
     inline const Aws::String& GetComponentId() const { return m_componentId; }
@@ -73,16 +60,29 @@ namespace Model
     template<typename ComponentTypeT = Aws::String>
     Step& WithComponentType(ComponentTypeT&& value) { SetComponentType(std::forward<ComponentTypeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_componentArn;
-    bool m_componentArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web
+     * Services console.</p>
+     */
+    inline const Aws::String& GetComponentArn() const { return m_componentArn; }
+    inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
+    template<typename ComponentArnT = Aws::String>
+    void SetComponentArn(ComponentArnT&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::forward<ComponentArnT>(value); }
+    template<typename ComponentArnT = Aws::String>
+    Step& WithComponentArn(ComponentArnT&& value) { SetComponentArn(std::forward<ComponentArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_componentId;
     bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentType;
     bool m_componentTypeHasBeenSet = false;
+
+    Aws::String m_componentArn;
+    bool m_componentArnHasBeenSet = false;
   };
 
 } // namespace Model

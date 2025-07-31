@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/AggregationFindingType.h>
 #include <aws/inspector2/model/AggregationResourceType.h>
-#include <aws/inspector2/model/FindingTypeSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/FindingTypeSortBy.h>
 #include <utility>
 
 namespace Aws
@@ -63,22 +63,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value to sort results by.</p>
-     */
-    inline FindingTypeSortBy GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(FindingTypeSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline FindingTypeAggregation& WithSortBy(FindingTypeSortBy value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The order to sort results by.</p>
      */
     inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline FindingTypeAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value to sort results by.</p>
+     */
+    inline FindingTypeSortBy GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(FindingTypeSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline FindingTypeAggregation& WithSortBy(FindingTypeSortBy value) { SetSortBy(value); return *this;}
     ///@}
   private:
 
@@ -88,11 +88,11 @@ namespace Model
     AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    FindingTypeSortBy m_sortBy{FindingTypeSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
-
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    FindingTypeSortBy m_sortBy{FindingTypeSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

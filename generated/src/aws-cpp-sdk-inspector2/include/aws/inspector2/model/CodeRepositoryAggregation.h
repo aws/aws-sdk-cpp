@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/CodeRepositorySortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/CodeRepositorySortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <utility>
 
@@ -71,16 +71,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource IDs to include in the aggregation results.</p>
+     * <p>The order to sort results by (ascending or descending) in the code repository
+     * aggregation.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
-    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    CodeRepositoryAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
-    template<typename ResourceIdsT = StringFilter>
-    CodeRepositoryAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline CodeRepositoryAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -95,13 +92,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The order to sort results by (ascending or descending) in the code repository
-     * aggregation.</p>
+     * <p>The resource IDs to include in the aggregation results.</p>
      */
-    inline SortOrder GetSortOrder() const { return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline CodeRepositoryAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
+    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    CodeRepositoryAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = StringFilter>
+    CodeRepositoryAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
@@ -111,14 +111,14 @@ namespace Model
     Aws::Vector<StringFilter> m_providerTypes;
     bool m_providerTypesHasBeenSet = false;
 
-    Aws::Vector<StringFilter> m_resourceIds;
-    bool m_resourceIdsHasBeenSet = false;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
+    bool m_sortOrderHasBeenSet = false;
 
     CodeRepositorySortBy m_sortBy{CodeRepositorySortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder{SortOrder::NOT_SET};
-    bool m_sortOrderHasBeenSet = false;
+    Aws::Vector<StringFilter> m_resourceIds;
+    bool m_resourceIdsHasBeenSet = false;
   };
 
 } // namespace Model

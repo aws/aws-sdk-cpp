@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/CodeLine.h>
 #include <aws/inspector2/model/SuggestedFix.h>
 #include <utility>
@@ -43,30 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information on the retrieved code snippet.</p>
-     */
-    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const { return m_codeSnippet; }
-    inline bool CodeSnippetHasBeenSet() const { return m_codeSnippetHasBeenSet; }
-    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
-    void SetCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::forward<CodeSnippetT>(value); }
-    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
-    CodeSnippetResult& WithCodeSnippet(CodeSnippetT&& value) { SetCodeSnippet(std::forward<CodeSnippetT>(value)); return *this;}
-    template<typename CodeSnippetT = CodeLine>
-    CodeSnippetResult& AddCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.emplace_back(std::forward<CodeSnippetT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The line number of the last line of a code snippet.</p>
-     */
-    inline int GetEndLine() const { return m_endLine; }
-    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
-    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
-    inline CodeSnippetResult& WithEndLine(int value) { SetEndLine(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of a finding that the code snippet is associated with.</p>
      */
     inline const Aws::String& GetFindingArn() const { return m_findingArn; }
@@ -89,6 +65,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The line number of the last line of a code snippet.</p>
+     */
+    inline int GetEndLine() const { return m_endLine; }
+    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
+    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
+    inline CodeSnippetResult& WithEndLine(int value) { SetEndLine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information on the retrieved code snippet.</p>
+     */
+    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const { return m_codeSnippet; }
+    inline bool CodeSnippetHasBeenSet() const { return m_codeSnippetHasBeenSet; }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    void SetCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::forward<CodeSnippetT>(value); }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    CodeSnippetResult& WithCodeSnippet(CodeSnippetT&& value) { SetCodeSnippet(std::forward<CodeSnippetT>(value)); return *this;}
+    template<typename CodeSnippetT = CodeLine>
+    CodeSnippetResult& AddCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.emplace_back(std::forward<CodeSnippetT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Details of a suggested code fix.</p>
      */
     inline const Aws::Vector<SuggestedFix>& GetSuggestedFixes() const { return m_suggestedFixes; }
@@ -102,17 +102,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<CodeLine> m_codeSnippet;
-    bool m_codeSnippetHasBeenSet = false;
-
-    int m_endLine{0};
-    bool m_endLineHasBeenSet = false;
-
     Aws::String m_findingArn;
     bool m_findingArnHasBeenSet = false;
 
     int m_startLine{0};
     bool m_startLineHasBeenSet = false;
+
+    int m_endLine{0};
+    bool m_endLineHasBeenSet = false;
+
+    Aws::Vector<CodeLine> m_codeSnippet;
+    bool m_codeSnippetHasBeenSet = false;
 
     Aws::Vector<SuggestedFix> m_suggestedFixes;
     bool m_suggestedFixesHasBeenSet = false;

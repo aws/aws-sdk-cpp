@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/SAMLOptionsOutput.h>
 #include <aws/opensearch/model/JWTOptionsOutput.h>
+#include <aws/opensearch/model/IAMFederationOptionsOutput.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -88,6 +89,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Container for information about the IAM federation configuration for an
+     * OpenSearch UI application.</p>
+     */
+    inline const IAMFederationOptionsOutput& GetIAMFederationOptions() const { return m_iAMFederationOptions; }
+    inline bool IAMFederationOptionsHasBeenSet() const { return m_iAMFederationOptionsHasBeenSet; }
+    template<typename IAMFederationOptionsT = IAMFederationOptionsOutput>
+    void SetIAMFederationOptions(IAMFederationOptionsT&& value) { m_iAMFederationOptionsHasBeenSet = true; m_iAMFederationOptions = std::forward<IAMFederationOptionsT>(value); }
+    template<typename IAMFederationOptionsT = IAMFederationOptionsOutput>
+    AdvancedSecurityOptions& WithIAMFederationOptions(IAMFederationOptionsT&& value) { SetIAMFederationOptions(std::forward<IAMFederationOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Date and time when the migration period will be disabled. Only necessary when
      * <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
@@ -126,6 +140,9 @@ namespace Model
 
     JWTOptionsOutput m_jWTOptions;
     bool m_jWTOptionsHasBeenSet = false;
+
+    IAMFederationOptionsOutput m_iAMFederationOptions;
+    bool m_iAMFederationOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_anonymousAuthDisableDate{};
     bool m_anonymousAuthDisableDateHasBeenSet = false;

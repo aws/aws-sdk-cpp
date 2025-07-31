@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the browser settings.</p>
-     */
-    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
-    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-    template<typename BrowserSettingsArnT = Aws::String>
-    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
-    template<typename BrowserSettingsArnT = Aws::String>
-    AssociateBrowserSettingsRequest& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const { return m_portalArn; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename PortalArnT = Aws::String>
     AssociateBrowserSettingsRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ARN of the browser settings.</p>
+     */
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
+    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    AssociateBrowserSettingsRequest& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;
+
+    Aws::String m_browserSettingsArn;
+    bool m_browserSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

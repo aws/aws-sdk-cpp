@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/Finding.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details on the findings in your environment.</p>
-     */
-    inline const Aws::Vector<Finding>& GetFindings() const { return m_findings; }
-    template<typename FindingsT = Aws::Vector<Finding>>
-    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
-    template<typename FindingsT = Aws::Vector<Finding>>
-    ListFindingsResult& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
-    template<typename FindingsT = Finding>
-    ListFindingsResult& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. For
      * subsequent calls, use the <code>NextToken</code> value returned from the
@@ -62,6 +49,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Contains details on the findings in your environment.</p>
+     */
+    inline const Aws::Vector<Finding>& GetFindings() const { return m_findings; }
+    template<typename FindingsT = Aws::Vector<Finding>>
+    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
+    template<typename FindingsT = Aws::Vector<Finding>>
+    ListFindingsResult& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
+    template<typename FindingsT = Finding>
+    ListFindingsResult& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -71,11 +71,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Finding> m_findings;
-    bool m_findingsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Finding> m_findings;
+    bool m_findingsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

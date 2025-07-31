@@ -49,6 +49,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the trust store.</p>
+     */
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    ListTrustStoreCertificatesResult& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.&gt;</p>
      */
@@ -57,17 +68,6 @@ namespace Model
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
     ListTrustStoreCertificatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the trust store.</p>
-     */
-    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
-    template<typename TrustStoreArnT = Aws::String>
-    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
-    template<typename TrustStoreArnT = Aws::String>
-    ListTrustStoreCertificatesResult& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +83,11 @@ namespace Model
     Aws::Vector<CertificateSummary> m_certificateList;
     bool m_certificateListHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

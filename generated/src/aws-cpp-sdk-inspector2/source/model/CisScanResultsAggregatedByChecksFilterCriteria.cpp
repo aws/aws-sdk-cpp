@@ -43,14 +43,14 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_checkIdFiltersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failedResourcesFilters"))
+  if(jsonValue.ValueExists("titleFilters"))
   {
-    Aws::Utils::Array<JsonView> failedResourcesFiltersJsonList = jsonValue.GetArray("failedResourcesFilters");
-    for(unsigned failedResourcesFiltersIndex = 0; failedResourcesFiltersIndex < failedResourcesFiltersJsonList.GetLength(); ++failedResourcesFiltersIndex)
+    Aws::Utils::Array<JsonView> titleFiltersJsonList = jsonValue.GetArray("titleFilters");
+    for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
     {
-      m_failedResourcesFilters.push_back(failedResourcesFiltersJsonList[failedResourcesFiltersIndex].AsObject());
+      m_titleFilters.push_back(titleFiltersJsonList[titleFiltersIndex].AsObject());
     }
-    m_failedResourcesFiltersHasBeenSet = true;
+    m_titleFiltersHasBeenSet = true;
   }
   if(jsonValue.ValueExists("platformFilters"))
   {
@@ -61,6 +61,15 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_platformFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("failedResourcesFilters"))
+  {
+    Aws::Utils::Array<JsonView> failedResourcesFiltersJsonList = jsonValue.GetArray("failedResourcesFilters");
+    for(unsigned failedResourcesFiltersIndex = 0; failedResourcesFiltersIndex < failedResourcesFiltersJsonList.GetLength(); ++failedResourcesFiltersIndex)
+    {
+      m_failedResourcesFilters.push_back(failedResourcesFiltersJsonList[failedResourcesFiltersIndex].AsObject());
+    }
+    m_failedResourcesFiltersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("securityLevelFilters"))
   {
     Aws::Utils::Array<JsonView> securityLevelFiltersJsonList = jsonValue.GetArray("securityLevelFilters");
@@ -69,15 +78,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
       m_securityLevelFilters.push_back(securityLevelFiltersJsonList[securityLevelFiltersIndex].AsObject());
     }
     m_securityLevelFiltersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("titleFilters"))
-  {
-    Aws::Utils::Array<JsonView> titleFiltersJsonList = jsonValue.GetArray("titleFilters");
-    for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
-    {
-      m_titleFilters.push_back(titleFiltersJsonList[titleFiltersIndex].AsObject());
-    }
-    m_titleFiltersHasBeenSet = true;
   }
   return *this;
 }
@@ -108,14 +108,14 @@ JsonValue CisScanResultsAggregatedByChecksFilterCriteria::Jsonize() const
 
   }
 
-  if(m_failedResourcesFiltersHasBeenSet)
+  if(m_titleFiltersHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> failedResourcesFiltersJsonList(m_failedResourcesFilters.size());
-   for(unsigned failedResourcesFiltersIndex = 0; failedResourcesFiltersIndex < failedResourcesFiltersJsonList.GetLength(); ++failedResourcesFiltersIndex)
+   Aws::Utils::Array<JsonValue> titleFiltersJsonList(m_titleFilters.size());
+   for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
    {
-     failedResourcesFiltersJsonList[failedResourcesFiltersIndex].AsObject(m_failedResourcesFilters[failedResourcesFiltersIndex].Jsonize());
+     titleFiltersJsonList[titleFiltersIndex].AsObject(m_titleFilters[titleFiltersIndex].Jsonize());
    }
-   payload.WithArray("failedResourcesFilters", std::move(failedResourcesFiltersJsonList));
+   payload.WithArray("titleFilters", std::move(titleFiltersJsonList));
 
   }
 
@@ -130,6 +130,17 @@ JsonValue CisScanResultsAggregatedByChecksFilterCriteria::Jsonize() const
 
   }
 
+  if(m_failedResourcesFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> failedResourcesFiltersJsonList(m_failedResourcesFilters.size());
+   for(unsigned failedResourcesFiltersIndex = 0; failedResourcesFiltersIndex < failedResourcesFiltersJsonList.GetLength(); ++failedResourcesFiltersIndex)
+   {
+     failedResourcesFiltersJsonList[failedResourcesFiltersIndex].AsObject(m_failedResourcesFilters[failedResourcesFiltersIndex].Jsonize());
+   }
+   payload.WithArray("failedResourcesFilters", std::move(failedResourcesFiltersJsonList));
+
+  }
+
   if(m_securityLevelFiltersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> securityLevelFiltersJsonList(m_securityLevelFilters.size());
@@ -138,17 +149,6 @@ JsonValue CisScanResultsAggregatedByChecksFilterCriteria::Jsonize() const
      securityLevelFiltersJsonList[securityLevelFiltersIndex].AsObject(m_securityLevelFilters[securityLevelFiltersIndex].Jsonize());
    }
    payload.WithArray("securityLevelFilters", std::move(securityLevelFiltersJsonList));
-
-  }
-
-  if(m_titleFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> titleFiltersJsonList(m_titleFilters.size());
-   for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
-   {
-     titleFiltersJsonList[titleFiltersIndex].AsObject(m_titleFilters[titleFiltersIndex].Jsonize());
-   }
-   payload.WithArray("titleFilters", std::move(titleFiltersJsonList));
 
   }
 

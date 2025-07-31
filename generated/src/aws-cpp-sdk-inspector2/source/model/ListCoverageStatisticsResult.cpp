@@ -34,15 +34,15 @@ ListCoverageStatisticsResult& ListCoverageStatisticsResult::operator =(const Aws
     }
     m_countsByGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("totalCounts"))
   {
     m_totalCounts = jsonValue.GetInt64("totalCounts");
     m_totalCountsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

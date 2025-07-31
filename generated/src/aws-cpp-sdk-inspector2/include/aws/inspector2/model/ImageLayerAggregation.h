@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/ImageLayerSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/ImageLayerSortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <utility>
 
@@ -43,20 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The hashes associated with the layers.</p>
-     */
-    inline const Aws::Vector<StringFilter>& GetLayerHashes() const { return m_layerHashes; }
-    inline bool LayerHashesHasBeenSet() const { return m_layerHashesHasBeenSet; }
-    template<typename LayerHashesT = Aws::Vector<StringFilter>>
-    void SetLayerHashes(LayerHashesT&& value) { m_layerHashesHasBeenSet = true; m_layerHashes = std::forward<LayerHashesT>(value); }
-    template<typename LayerHashesT = Aws::Vector<StringFilter>>
-    ImageLayerAggregation& WithLayerHashes(LayerHashesT&& value) { SetLayerHashes(std::forward<LayerHashesT>(value)); return *this;}
-    template<typename LayerHashesT = StringFilter>
-    ImageLayerAggregation& AddLayerHashes(LayerHashesT&& value) { m_layerHashesHasBeenSet = true; m_layerHashes.emplace_back(std::forward<LayerHashesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The repository associated with the container image hosting the layers.</p>
      */
     inline const Aws::Vector<StringFilter>& GetRepositories() const { return m_repositories; }
@@ -85,12 +71,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value to sort results by.</p>
+     * <p>The hashes associated with the layers.</p>
      */
-    inline ImageLayerSortBy GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(ImageLayerSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline ImageLayerAggregation& WithSortBy(ImageLayerSortBy value) { SetSortBy(value); return *this;}
+    inline const Aws::Vector<StringFilter>& GetLayerHashes() const { return m_layerHashes; }
+    inline bool LayerHashesHasBeenSet() const { return m_layerHashesHasBeenSet; }
+    template<typename LayerHashesT = Aws::Vector<StringFilter>>
+    void SetLayerHashes(LayerHashesT&& value) { m_layerHashesHasBeenSet = true; m_layerHashes = std::forward<LayerHashesT>(value); }
+    template<typename LayerHashesT = Aws::Vector<StringFilter>>
+    ImageLayerAggregation& WithLayerHashes(LayerHashesT&& value) { SetLayerHashes(std::forward<LayerHashesT>(value)); return *this;}
+    template<typename LayerHashesT = StringFilter>
+    ImageLayerAggregation& AddLayerHashes(LayerHashesT&& value) { m_layerHashesHasBeenSet = true; m_layerHashes.emplace_back(std::forward<LayerHashesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,10 +92,17 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline ImageLayerAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<StringFilter> m_layerHashes;
-    bool m_layerHashesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The value to sort results by.</p>
+     */
+    inline ImageLayerSortBy GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(ImageLayerSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ImageLayerAggregation& WithSortBy(ImageLayerSortBy value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<StringFilter> m_repositories;
     bool m_repositoriesHasBeenSet = false;
@@ -113,11 +110,14 @@ namespace Model
     Aws::Vector<StringFilter> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    ImageLayerSortBy m_sortBy{ImageLayerSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    Aws::Vector<StringFilter> m_layerHashes;
+    bool m_layerHashesHasBeenSet = false;
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    ImageLayerSortBy m_sortBy{ImageLayerSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -47,6 +47,8 @@
 #include <aws/customer-profiles/model/ConflictResolvingModel.h>
 #include <aws/customer-profiles/model/ConnectorOperator.h>
 #include <aws/customer-profiles/model/Consolidation.h>
+#include <aws/customer-profiles/model/ContactPreference.h>
+#include <aws/customer-profiles/model/ContactType.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/CreateDomainLayoutRequest.h>
@@ -103,6 +105,7 @@
 #include <aws/customer-profiles/model/DetectedProfileObjectType.h>
 #include <aws/customer-profiles/model/Dimension.h>
 #include <aws/customer-profiles/model/DomainStats.h>
+#include <aws/customer-profiles/model/EngagementPreferences.h>
 #include <aws/customer-profiles/model/EstimateStatus.h>
 #include <aws/customer-profiles/model/EventStreamDestinationDetails.h>
 #include <aws/customer-profiles/model/EventStreamDestinationStatus.h>
@@ -251,6 +254,9 @@
 #include <aws/customer-profiles/model/ProfileDimension.h>
 #include <aws/customer-profiles/model/ProfileQueryFailures.h>
 #include <aws/customer-profiles/model/ProfileQueryResult.h>
+#include <aws/customer-profiles/model/ProfileType.h>
+#include <aws/customer-profiles/model/ProfileTypeDimension.h>
+#include <aws/customer-profiles/model/ProfileTypeDimensionType.h>
 #include <aws/customer-profiles/model/PutIntegrationRequest.h>
 #include <aws/customer-profiles/model/PutIntegrationResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectRequest.h>

@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/CisSecurityLevel.h>
+#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/UpdateCisTargets.h>
 #include <utility>
 
@@ -61,6 +61,17 @@ namespace Model
 
     ///@{
     /**
+     * <p> The security level for the CIS scan configuration. Security level refers to
+     * the Benchmark levels that CIS assigns to a profile. </p>
+     */
+    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
+    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
+    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
+    inline UpdateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The schedule for the CIS scan configuration.</p>
      */
     inline const Schedule& GetSchedule() const { return m_schedule; }
@@ -69,17 +80,6 @@ namespace Model
     void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
     template<typename ScheduleT = Schedule>
     UpdateCisScanConfigurationRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The security level for the CIS scan configuration. Security level refers to
-     * the Benchmark levels that CIS assigns to a profile. </p>
-     */
-    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
-    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
-    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
-    inline UpdateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -101,11 +101,11 @@ namespace Model
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
 
-    Schedule m_schedule;
-    bool m_scheduleHasBeenSet = false;
-
     CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
     bool m_securityLevelHasBeenSet = false;
+
+    Schedule m_schedule;
+    bool m_scheduleHasBeenSet = false;
 
     UpdateCisTargets m_targets;
     bool m_targetsHasBeenSet = false;

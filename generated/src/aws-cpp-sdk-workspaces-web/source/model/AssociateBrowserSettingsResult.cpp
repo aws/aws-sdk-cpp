@@ -25,15 +25,15 @@ AssociateBrowserSettingsResult::AssociateBrowserSettingsResult(const Aws::Amazon
 AssociateBrowserSettingsResult& AssociateBrowserSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("browserSettingsArn"))
-  {
-    m_browserSettingsArn = jsonValue.GetString("browserSettingsArn");
-    m_browserSettingsArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
     m_portalArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("browserSettingsArn"))
+  {
+    m_browserSettingsArn = jsonValue.GetString("browserSettingsArn");
+    m_browserSettingsArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

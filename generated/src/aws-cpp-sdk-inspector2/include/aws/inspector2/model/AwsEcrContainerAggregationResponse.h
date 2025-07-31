@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/SeverityCounts.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,27 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID of the account that owns the
-     * container.</p>
+     * <p>The resource ID of the container.</p>
      */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    AwsEcrContainerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The architecture of the container.</p>
-     */
-    inline const Aws::String& GetArchitecture() const { return m_architecture; }
-    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    template<typename ArchitectureT = Aws::String>
-    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
-    template<typename ArchitectureT = Aws::String>
-    AwsEcrContainerAggregationResponse& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,6 +63,30 @@ namespace Model
     void SetImageSha(ImageShaT&& value) { m_imageShaHasBeenSet = true; m_imageSha = std::forward<ImageShaT>(value); }
     template<typename ImageShaT = Aws::String>
     AwsEcrContainerAggregationResponse& WithImageSha(ImageShaT&& value) { SetImageSha(std::forward<ImageShaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The container repository.</p>
+     */
+    inline const Aws::String& GetRepository() const { return m_repository; }
+    inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The architecture of the container.</p>
+     */
+    inline const Aws::String& GetArchitecture() const { return m_architecture; }
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+    template<typename ArchitectureT = Aws::String>
+    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
+    template<typename ArchitectureT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,13 +105,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
-     * container image is in use.</p>
+     * <p>The Amazon Web Services account ID of the account that owns the
+     * container.</p>
      */
-    inline long long GetInUseCount() const { return m_inUseCount; }
-    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
-    inline void SetInUseCount(long long value) { m_inUseCountHasBeenSet = true; m_inUseCount = value; }
-    inline AwsEcrContainerAggregationResponse& WithInUseCount(long long value) { SetInUseCount(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of finding by severity.</p>
+     */
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
+    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    AwsEcrContainerAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,67 +143,42 @@ namespace Model
 
     ///@{
     /**
-     * <p>The container repository.</p>
+     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
+     * container image is in use.</p>
      */
-    inline const Aws::String& GetRepository() const { return m_repository; }
-    inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    template<typename RepositoryT = Aws::String>
-    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
-    template<typename RepositoryT = Aws::String>
-    AwsEcrContainerAggregationResponse& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource ID of the container.</p>
-     */
-    inline const Aws::String& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::String>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::String>
-    AwsEcrContainerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of finding by severity.</p>
-     */
-    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
-    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    template<typename SeverityCountsT = SeverityCounts>
-    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
-    template<typename SeverityCountsT = SeverityCounts>
-    AwsEcrContainerAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
+    inline long long GetInUseCount() const { return m_inUseCount; }
+    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
+    inline void SetInUseCount(long long value) { m_inUseCountHasBeenSet = true; m_inUseCount = value; }
+    inline AwsEcrContainerAggregationResponse& WithInUseCount(long long value) { SetInUseCount(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_architecture;
-    bool m_architectureHasBeenSet = false;
-
-    Aws::String m_imageSha;
-    bool m_imageShaHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet = false;
-
-    long long m_inUseCount{0};
-    bool m_inUseCountHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastInUseAt{};
-    bool m_lastInUseAtHasBeenSet = false;
-
-    Aws::String m_repository;
-    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
+    Aws::String m_imageSha;
+    bool m_imageShaHasBeenSet = false;
+
+    Aws::String m_repository;
+    bool m_repositoryHasBeenSet = false;
+
+    Aws::String m_architecture;
+    bool m_architectureHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_imageTags;
+    bool m_imageTagsHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastInUseAt{};
+    bool m_lastInUseAtHasBeenSet = false;
+
+    long long m_inUseCount{0};
+    bool m_inUseCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCodeSecurityIntegrationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request. For subsequent calls,
      * use the NextToken value returned from the previous request to continue listing
@@ -62,13 +52,23 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListCodeSecurityIntegrationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of results to return in a single call.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListCodeSecurityIntegrationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

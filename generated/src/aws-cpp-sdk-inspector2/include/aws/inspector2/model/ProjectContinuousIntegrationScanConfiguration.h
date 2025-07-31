@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/ContinuousIntegrationScanEvent.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/RuleSetCategory.h>
 #include <utility>
 
@@ -42,6 +42,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The repository event that triggers continuous integration scans for the
+     * project.</p>
+     */
+    inline ContinuousIntegrationScanEvent GetSupportedEvent() const { return m_supportedEvent; }
+    inline bool SupportedEventHasBeenSet() const { return m_supportedEventHasBeenSet; }
+    inline void SetSupportedEvent(ContinuousIntegrationScanEvent value) { m_supportedEventHasBeenSet = true; m_supportedEvent = value; }
+    inline ProjectContinuousIntegrationScanConfiguration& WithSupportedEvent(ContinuousIntegrationScanEvent value) { SetSupportedEvent(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The categories of security rules applied during continuous integration scans
      * for the project.</p>
      */
@@ -53,24 +64,13 @@ namespace Model
     ProjectContinuousIntegrationScanConfiguration& WithRuleSetCategories(RuleSetCategoriesT&& value) { SetRuleSetCategories(std::forward<RuleSetCategoriesT>(value)); return *this;}
     inline ProjectContinuousIntegrationScanConfiguration& AddRuleSetCategories(RuleSetCategory value) { m_ruleSetCategoriesHasBeenSet = true; m_ruleSetCategories.push_back(value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The repository event that triggers continuous integration scans for the
-     * project.</p>
-     */
-    inline ContinuousIntegrationScanEvent GetSupportedEvent() const { return m_supportedEvent; }
-    inline bool SupportedEventHasBeenSet() const { return m_supportedEventHasBeenSet; }
-    inline void SetSupportedEvent(ContinuousIntegrationScanEvent value) { m_supportedEventHasBeenSet = true; m_supportedEvent = value; }
-    inline ProjectContinuousIntegrationScanConfiguration& WithSupportedEvent(ContinuousIntegrationScanEvent value) { SetSupportedEvent(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<RuleSetCategory> m_ruleSetCategories;
-    bool m_ruleSetCategoriesHasBeenSet = false;
 
     ContinuousIntegrationScanEvent m_supportedEvent{ContinuousIntegrationScanEvent::NOT_SET};
     bool m_supportedEventHasBeenSet = false;
+
+    Aws::Vector<RuleSetCategory> m_ruleSetCategories;
+    bool m_ruleSetCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

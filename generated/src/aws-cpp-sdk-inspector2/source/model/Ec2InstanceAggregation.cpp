@@ -34,6 +34,15 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_amisHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("operatingSystems"))
+  {
+    Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
+    for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
+    {
+      m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsObject());
+    }
+    m_operatingSystemsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("instanceIds"))
   {
     Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("instanceIds");
@@ -52,24 +61,15 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_instanceTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operatingSystems"))
+  if(jsonValue.ValueExists("sortOrder"))
   {
-    Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
-    for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
-    {
-      m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsObject());
-    }
-    m_operatingSystemsHasBeenSet = true;
+    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
+    m_sortOrderHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = Ec2InstanceSortByMapper::GetEc2InstanceSortByForName(jsonValue.GetString("sortBy"));
     m_sortByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
-    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-    m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
@@ -86,6 +86,17 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
      amisJsonList[amisIndex].AsObject(m_amis[amisIndex].Jsonize());
    }
    payload.WithArray("amis", std::move(amisJsonList));
+
+  }
+
+  if(m_operatingSystemsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
+   for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
+   {
+     operatingSystemsJsonList[operatingSystemsIndex].AsObject(m_operatingSystems[operatingSystemsIndex].Jsonize());
+   }
+   payload.WithArray("operatingSystems", std::move(operatingSystemsJsonList));
 
   }
 
@@ -111,25 +122,14 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
 
   }
 
-  if(m_operatingSystemsHasBeenSet)
+  if(m_sortOrderHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
-   for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
-   {
-     operatingSystemsJsonList[operatingSystemsIndex].AsObject(m_operatingSystems[operatingSystemsIndex].Jsonize());
-   }
-   payload.WithArray("operatingSystems", std::move(operatingSystemsJsonList));
-
+   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   if(m_sortByHasBeenSet)
   {
    payload.WithString("sortBy", Ec2InstanceSortByMapper::GetNameForEc2InstanceSortBy(m_sortBy));
-  }
-
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Tags associated with the Amazon ECR image metadata.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Aws::String>>
+    EcrContainerImageMetadata& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Aws::String>
+    EcrContainerImageMetadata& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The date an image was last pulled at.</p>
      */
     inline const Aws::Utils::DateTime& GetImagePulledAt() const { return m_imagePulledAt; }
@@ -50,17 +64,6 @@ namespace Model
     void SetImagePulledAt(ImagePulledAtT&& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = std::forward<ImagePulledAtT>(value); }
     template<typename ImagePulledAtT = Aws::Utils::DateTime>
     EcrContainerImageMetadata& WithImagePulledAt(ImagePulledAtT&& value) { SetImagePulledAt(std::forward<ImagePulledAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
-     * container image is in use.</p>
-     */
-    inline long long GetInUseCount() const { return m_inUseCount; }
-    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
-    inline void SetInUseCount(long long value) { m_inUseCountHasBeenSet = true; m_inUseCount = value; }
-    inline EcrContainerImageMetadata& WithInUseCount(long long value) { SetInUseCount(value); return *this;}
     ///@}
 
     ///@{
@@ -78,30 +81,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>Tags associated with the Amazon ECR image metadata.</p>
+     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
+     * container image is in use.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Aws::String>>
-    EcrContainerImageMetadata& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Aws::String>
-    EcrContainerImageMetadata& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    inline long long GetInUseCount() const { return m_inUseCount; }
+    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
+    inline void SetInUseCount(long long value) { m_inUseCountHasBeenSet = true; m_inUseCount = value; }
+    inline EcrContainerImageMetadata& WithInUseCount(long long value) { SetInUseCount(value); return *this;}
     ///@}
   private:
+
+    Aws::Vector<Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_imagePulledAt{};
     bool m_imagePulledAtHasBeenSet = false;
 
-    long long m_inUseCount{0};
-    bool m_inUseCountHasBeenSet = false;
-
     Aws::Utils::DateTime m_lastInUseAt{};
     bool m_lastInUseAtHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+    long long m_inUseCount{0};
+    bool m_inUseCountHasBeenSet = false;
   };
 
 } // namespace Model

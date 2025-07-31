@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>InputRecords</code>,
-   * <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and
-   * <code>RecordsNotProcessed</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>inputRecords</code>,
+   * <code>totalRecordsProcessed</code>, <code>matchIDs</code>, and
+   * <code>recordsNotProcessed</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/JobMetrics">AWS
    * API Reference</a></p>
    */

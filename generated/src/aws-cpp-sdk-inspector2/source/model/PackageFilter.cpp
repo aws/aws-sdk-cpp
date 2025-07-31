@@ -25,45 +25,45 @@ PackageFilter::PackageFilter(JsonView jsonValue)
 
 PackageFilter& PackageFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("architecture"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_architecture = jsonValue.GetObject("architecture");
-    m_architectureHasBeenSet = true;
+    m_name = jsonValue.GetObject("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetObject("version");
+    m_versionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("epoch"))
   {
     m_epoch = jsonValue.GetObject("epoch");
     m_epochHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filePath"))
-  {
-    m_filePath = jsonValue.GetObject("filePath");
-    m_filePathHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetObject("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("release"))
   {
     m_release = jsonValue.GetObject("release");
     m_releaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceLambdaLayerArn"))
+  if(jsonValue.ValueExists("architecture"))
   {
-    m_sourceLambdaLayerArn = jsonValue.GetObject("sourceLambdaLayerArn");
-    m_sourceLambdaLayerArnHasBeenSet = true;
+    m_architecture = jsonValue.GetObject("architecture");
+    m_architectureHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sourceLayerHash"))
   {
     m_sourceLayerHash = jsonValue.GetObject("sourceLayerHash");
     m_sourceLayerHashHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
+  if(jsonValue.ValueExists("sourceLambdaLayerArn"))
   {
-    m_version = jsonValue.GetObject("version");
-    m_versionHasBeenSet = true;
+    m_sourceLambdaLayerArn = jsonValue.GetObject("sourceLambdaLayerArn");
+    m_sourceLambdaLayerArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("filePath"))
+  {
+    m_filePath = jsonValue.GetObject("filePath");
+    m_filePathHasBeenSet = true;
   }
   return *this;
 }
@@ -72,9 +72,15 @@ JsonValue PackageFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_architectureHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("architecture", m_architecture.Jsonize());
+   payload.WithObject("name", m_name.Jsonize());
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithObject("version", m_version.Jsonize());
 
   }
 
@@ -84,27 +90,15 @@ JsonValue PackageFilter::Jsonize() const
 
   }
 
-  if(m_filePathHasBeenSet)
-  {
-   payload.WithObject("filePath", m_filePath.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithObject("name", m_name.Jsonize());
-
-  }
-
   if(m_releaseHasBeenSet)
   {
    payload.WithObject("release", m_release.Jsonize());
 
   }
 
-  if(m_sourceLambdaLayerArnHasBeenSet)
+  if(m_architectureHasBeenSet)
   {
-   payload.WithObject("sourceLambdaLayerArn", m_sourceLambdaLayerArn.Jsonize());
+   payload.WithObject("architecture", m_architecture.Jsonize());
 
   }
 
@@ -114,9 +108,15 @@ JsonValue PackageFilter::Jsonize() const
 
   }
 
-  if(m_versionHasBeenSet)
+  if(m_sourceLambdaLayerArnHasBeenSet)
   {
-   payload.WithObject("version", m_version.Jsonize());
+   payload.WithObject("sourceLambdaLayerArn", m_sourceLambdaLayerArn.Jsonize());
+
+  }
+
+  if(m_filePathHasBeenSet)
+  {
+   payload.WithObject("filePath", m_filePath.Jsonize());
 
   }
 

@@ -3001,6 +3001,36 @@ namespace IoT
         }
 
         /**
+         * <p>Retrieves the encryption configuration for resources and data of your Amazon
+         * Web Services account in Amazon Web Services IoT Core. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
+         * management in IoT</a> from the <i>Amazon Web Services IoT Core Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEncryptionConfigurationOutcome DescribeEncryptionConfiguration(const Model::DescribeEncryptionConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEncryptionConfigurationRequestT = Model::DescribeEncryptionConfigurationRequest>
+        Model::DescribeEncryptionConfigurationOutcomeCallable DescribeEncryptionConfigurationCallable(const DescribeEncryptionConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTClient::DescribeEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEncryptionConfigurationRequestT = Model::DescribeEncryptionConfigurationRequest>
+        void DescribeEncryptionConfigurationAsync(const DescribeEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEncryptionConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTClient::DescribeEncryptionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns or creates a unique endpoint specific to the Amazon Web Services
          * account making the call.</p>  <p>The first time
          * <code>DescribeEndpoint</code> is called, an endpoint is created. All subsequent
@@ -6778,11 +6808,26 @@ namespace IoT
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
          * action.</p> <p>You can cancel the transfer until it is acknowledged by the
          * recipient.</p> <p>No notification is sent to the transfer destination's account.
-         * It is up to the caller to notify the transfer target.</p> <p>The certificate
-         * being transferred must not be in the ACTIVE state. You can use the
+         * It's up to the caller to notify the transfer target.</p> <p>The certificate
+         * being transferred must not be in the <code>ACTIVE</code> state. You can use the
          * <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must
          * not have any policies attached to it. You can use the <a>DetachPolicy</a> action
-         * to detach them.</p><p><h3>See Also:</h3>   <a
+         * to detach them.</p> <p> <b>Customer managed key behavior:</b> When you use a
+         * customer managed key to secure your data and then transfer the key to a customer
+         * in a different account using the <a>TransferCertificate</a> operation, the
+         * certificates will no longer be protected by their customer managed key
+         * configuration. During the transfer process, certificates are encrypted using IoT
+         * owned keys.</p> <p>While a certificate is in the <b>PENDING_TRANSFER</b> state,
+         * it's always protected by IoT owned keys, regardless of the customer managed key
+         * configuration of either the source or destination account. </p> <p>Once the
+         * transfer is completed through <a>AcceptCertificateTransfer</a>,
+         * <a>RejectCertificateTransfer</a>, or <a>CancelCertificateTransfer</a>, the
+         * certificate will be protected by the customer managed key configuration of the
+         * account that owns the certificate after the transfer operation:</p> <ul> <li>
+         * <p>If the transfer is accepted: The certificate is protected by the destination
+         * account's customer managed key configuration.</p> </li> <li> <p>If the transfer
+         * is rejected or cancelled: The certificate is protected by the source account's
+         * customer managed key configuration.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferCertificate">AWS
          * API Reference</a></p>
          */
@@ -7167,6 +7212,39 @@ namespace IoT
         void UpdateDynamicThingGroupAsync(const UpdateDynamicThingGroupRequestT& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::UpdateDynamicThingGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the encryption configuration. By default, all Amazon Web Services IoT
+         * Core data at rest is encrypted using Amazon Web Services owned keys. Amazon Web
+         * Services IoT Core also supports symmetric customer managed keys from Amazon Web
+         * Services Key Management Service (KMS). With customer managed keys, you create,
+         * own, and manage the KMS keys in your Amazon Web Services account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
+         * encryption</a> in the <i>Amazon Web Services IoT Core Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEncryptionConfigurationOutcome UpdateEncryptionConfiguration(const Model::UpdateEncryptionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEncryptionConfigurationRequestT = Model::UpdateEncryptionConfigurationRequest>
+        Model::UpdateEncryptionConfigurationOutcomeCallable UpdateEncryptionConfigurationCallable(const UpdateEncryptionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdateEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEncryptionConfigurationRequestT = Model::UpdateEncryptionConfigurationRequest>
+        void UpdateEncryptionConfigurationAsync(const UpdateEncryptionConfigurationRequestT& request, const UpdateEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdateEncryptionConfiguration, request, handler, context);
         }
 
         /**

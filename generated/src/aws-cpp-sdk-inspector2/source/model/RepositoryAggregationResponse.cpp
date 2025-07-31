@@ -25,25 +25,25 @@ RepositoryAggregationResponse::RepositoryAggregationResponse(JsonView jsonValue)
 
 RepositoryAggregationResponse& RepositoryAggregationResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
-  {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("affectedImages"))
-  {
-    m_affectedImages = jsonValue.GetInt64("affectedImages");
-    m_affectedImagesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
     m_repositoryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("accountId"))
+  {
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
     m_severityCountsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("affectedImages"))
+  {
+    m_affectedImages = jsonValue.GetInt64("affectedImages");
+    m_affectedImagesHasBeenSet = true;
   }
   return *this;
 }
@@ -52,27 +52,27 @@ JsonValue RepositoryAggregationResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
-  if(m_affectedImagesHasBeenSet)
-  {
-   payload.WithInt64("affectedImages", m_affectedImages);
-
-  }
-
   if(m_repositoryHasBeenSet)
   {
    payload.WithString("repository", m_repository);
 
   }
 
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("accountId", m_accountId);
+
+  }
+
   if(m_severityCountsHasBeenSet)
   {
    payload.WithObject("severityCounts", m_severityCounts.Jsonize());
+
+  }
+
+  if(m_affectedImagesHasBeenSet)
+  {
+   payload.WithInt64("affectedImages", m_affectedImages);
 
   }
 

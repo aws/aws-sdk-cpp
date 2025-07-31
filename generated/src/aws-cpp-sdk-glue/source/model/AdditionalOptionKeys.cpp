@@ -22,6 +22,7 @@ namespace Aws
 
         static const int performanceTuning_caching_HASH = HashingUtils::HashString("performanceTuning.caching");
         static const int observations_scope_HASH = HashingUtils::HashString("observations.scope");
+        static const int compositeRuleEvaluation_method_HASH = HashingUtils::HashString("compositeRuleEvaluation.method");
 
 
         AdditionalOptionKeys GetAdditionalOptionKeysForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == observations_scope_HASH)
           {
             return AdditionalOptionKeys::observations_scope;
+          }
+          else if (hashCode == compositeRuleEvaluation_method_HASH)
+          {
+            return AdditionalOptionKeys::compositeRuleEvaluation_method;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "performanceTuning.caching";
           case AdditionalOptionKeys::observations_scope:
             return "observations.scope";
+          case AdditionalOptionKeys::compositeRuleEvaluation_method:
+            return "compositeRuleEvaluation.method";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

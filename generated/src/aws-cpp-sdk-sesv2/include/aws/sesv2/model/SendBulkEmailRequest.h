@@ -201,6 +201,21 @@ namespace Model
     template<typename EndpointIdT = Aws::String>
     SendBulkEmailRequest& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the tenant through which this bulk email will be sent.</p> 
+     * <p> The email sending operation will only succeed if all referenced resources
+     * (identities, configuration sets, and templates) are associated with this tenant.
+     * </p> 
+     */
+    inline const Aws::String& GetTenantName() const { return m_tenantName; }
+    inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+    template<typename TenantNameT = Aws::String>
+    void SetTenantName(TenantNameT&& value) { m_tenantNameHasBeenSet = true; m_tenantName = std::forward<TenantNameT>(value); }
+    template<typename TenantNameT = Aws::String>
+    SendBulkEmailRequest& WithTenantName(TenantNameT&& value) { SetTenantName(std::forward<TenantNameT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_fromEmailAddress;
@@ -232,6 +247,9 @@ namespace Model
 
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
+
+    Aws::String m_tenantName;
+    bool m_tenantNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,30 +25,20 @@ GetCodeSecurityScanResult::GetCodeSecurityScanResult(const Aws::AmazonWebService
 GetCodeSecurityScanResult& GetCodeSecurityScanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("scanId"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastCommitId"))
-  {
-    m_lastCommitId = jsonValue.GetString("lastCommitId");
-    m_lastCommitIdHasBeenSet = true;
+    m_scanId = jsonValue.GetString("scanId");
+    m_scanIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanId"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_scanId = jsonValue.GetString("scanId");
-    m_scanIdHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
@@ -60,10 +50,20 @@ GetCodeSecurityScanResult& GetCodeSecurityScanResult::operator =(const Aws::Amaz
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastCommitId"))
+  {
+    m_lastCommitId = jsonValue.GetString("lastCommitId");
+    m_lastCommitIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

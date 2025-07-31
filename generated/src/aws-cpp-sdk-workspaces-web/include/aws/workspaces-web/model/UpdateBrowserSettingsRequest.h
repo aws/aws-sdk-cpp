@@ -35,6 +35,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the browser settings.</p>
+     */
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
+    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    UpdateBrowserSettingsRequest& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A JSON string containing Chrome Enterprise policies that will be applied to
      * all streaming sessions. </p>
      */
@@ -44,18 +56,6 @@ namespace Model
     void SetBrowserPolicy(BrowserPolicyT&& value) { m_browserPolicyHasBeenSet = true; m_browserPolicy = std::forward<BrowserPolicyT>(value); }
     template<typename BrowserPolicyT = Aws::String>
     UpdateBrowserSettingsRequest& WithBrowserPolicy(BrowserPolicyT&& value) { SetBrowserPolicy(std::forward<BrowserPolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
-    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
-    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-    template<typename BrowserSettingsArnT = Aws::String>
-    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
-    template<typename BrowserSettingsArnT = Aws::String>
-    UpdateBrowserSettingsRequest& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,11 +76,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_browserPolicy;
-    bool m_browserPolicyHasBeenSet = false;
-
     Aws::String m_browserSettingsArn;
     bool m_browserSettingsArnHasBeenSet = false;
+
+    Aws::String m_browserPolicy;
+    bool m_browserPolicyHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

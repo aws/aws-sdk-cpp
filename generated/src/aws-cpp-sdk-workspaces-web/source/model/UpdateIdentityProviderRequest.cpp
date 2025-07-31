@@ -16,10 +16,15 @@ Aws::String UpdateIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_identityProviderNameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("identityProviderName", m_identityProviderName);
 
+  }
+
+  if(m_identityProviderTypeHasBeenSet)
+  {
+   payload.WithString("identityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
   }
 
   if(m_identityProviderDetailsHasBeenSet)
@@ -33,15 +38,10 @@ Aws::String UpdateIdentityProviderRequest::SerializePayload() const
 
   }
 
-  if(m_identityProviderNameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("identityProviderName", m_identityProviderName);
+   payload.WithString("clientToken", m_clientToken);
 
-  }
-
-  if(m_identityProviderTypeHasBeenSet)
-  {
-   payload.WithString("identityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
   }
 
   return payload.View().WriteReadable();

@@ -25,10 +25,10 @@ Resource::Resource(JsonView jsonValue)
 
 Resource& Resource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("details"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_details = jsonValue.GetObject("details");
-    m_detailsHasBeenSet = true;
+    m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("id"))
   {
@@ -54,10 +54,10 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("details"))
   {
-    m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_details = jsonValue.GetObject("details");
+    m_detailsHasBeenSet = true;
   }
   return *this;
 }
@@ -66,10 +66,9 @@ JsonValue Resource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_detailsHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("details", m_details.Jsonize());
-
+   payload.WithString("type", ResourceTypeMapper::GetNameForResourceType(m_type));
   }
 
   if(m_idHasBeenSet)
@@ -101,9 +100,10 @@ JsonValue Resource::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_detailsHasBeenSet)
   {
-   payload.WithString("type", ResourceTypeMapper::GetNameForResourceType(m_type));
+   payload.WithObject("details", m_details.Jsonize());
+
   }
 
   return payload;

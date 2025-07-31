@@ -55,6 +55,15 @@ DirectJDBCSource& DirectJDBCSource::operator =(JsonView jsonValue)
     m_redshiftTmpDir = jsonValue.GetString("RedshiftTmpDir");
     m_redshiftTmpDirHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OutputSchemas"))
+  {
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+    {
+      m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
+    }
+    m_outputSchemasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +103,17 @@ JsonValue DirectJDBCSource::Jsonize() const
   if(m_redshiftTmpDirHasBeenSet)
   {
    payload.WithString("RedshiftTmpDir", m_redshiftTmpDir);
+
+  }
+
+  if(m_outputSchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+   {
+     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+   }
+   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
 
   }
 

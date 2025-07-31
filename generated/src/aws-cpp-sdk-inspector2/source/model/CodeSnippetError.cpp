@@ -25,6 +25,11 @@ CodeSnippetError::CodeSnippetError(JsonView jsonValue)
 
 CodeSnippetError& CodeSnippetError::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("findingArn"))
+  {
+    m_findingArn = jsonValue.GetString("findingArn");
+    m_findingArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = CodeSnippetErrorCodeMapper::GetCodeSnippetErrorCodeForName(jsonValue.GetString("errorCode"));
@@ -35,17 +40,18 @@ CodeSnippetError& CodeSnippetError::operator =(JsonView jsonValue)
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingArn"))
-  {
-    m_findingArn = jsonValue.GetString("findingArn");
-    m_findingArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue CodeSnippetError::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingArnHasBeenSet)
+  {
+   payload.WithString("findingArn", m_findingArn);
+
+  }
 
   if(m_errorCodeHasBeenSet)
   {
@@ -55,12 +61,6 @@ JsonValue CodeSnippetError::Jsonize() const
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("errorMessage", m_errorMessage);
-
-  }
-
-  if(m_findingArnHasBeenSet)
-  {
-   payload.WithString("findingArn", m_findingArn);
 
   }
 

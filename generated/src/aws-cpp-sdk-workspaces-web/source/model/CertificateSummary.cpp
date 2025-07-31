@@ -25,30 +25,30 @@ CertificateSummary::CertificateSummary(JsonView jsonValue)
 
 CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("issuer"))
+  if(jsonValue.ValueExists("thumbprint"))
   {
-    m_issuer = jsonValue.GetString("issuer");
-    m_issuerHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("notValidAfter"))
-  {
-    m_notValidAfter = jsonValue.GetDouble("notValidAfter");
-    m_notValidAfterHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("notValidBefore"))
-  {
-    m_notValidBefore = jsonValue.GetDouble("notValidBefore");
-    m_notValidBeforeHasBeenSet = true;
+    m_thumbprint = jsonValue.GetString("thumbprint");
+    m_thumbprintHasBeenSet = true;
   }
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
     m_subjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("thumbprint"))
+  if(jsonValue.ValueExists("issuer"))
   {
-    m_thumbprint = jsonValue.GetString("thumbprint");
-    m_thumbprintHasBeenSet = true;
+    m_issuer = jsonValue.GetString("issuer");
+    m_issuerHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("notValidBefore"))
+  {
+    m_notValidBefore = jsonValue.GetDouble("notValidBefore");
+    m_notValidBeforeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("notValidAfter"))
+  {
+    m_notValidAfter = jsonValue.GetDouble("notValidAfter");
+    m_notValidAfterHasBeenSet = true;
   }
   return *this;
 }
@@ -57,20 +57,10 @@ JsonValue CertificateSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_issuerHasBeenSet)
+  if(m_thumbprintHasBeenSet)
   {
-   payload.WithString("issuer", m_issuer);
+   payload.WithString("thumbprint", m_thumbprint);
 
-  }
-
-  if(m_notValidAfterHasBeenSet)
-  {
-   payload.WithDouble("notValidAfter", m_notValidAfter.SecondsWithMSPrecision());
-  }
-
-  if(m_notValidBeforeHasBeenSet)
-  {
-   payload.WithDouble("notValidBefore", m_notValidBefore.SecondsWithMSPrecision());
   }
 
   if(m_subjectHasBeenSet)
@@ -79,10 +69,20 @@ JsonValue CertificateSummary::Jsonize() const
 
   }
 
-  if(m_thumbprintHasBeenSet)
+  if(m_issuerHasBeenSet)
   {
-   payload.WithString("thumbprint", m_thumbprint);
+   payload.WithString("issuer", m_issuer);
 
+  }
+
+  if(m_notValidBeforeHasBeenSet)
+  {
+   payload.WithDouble("notValidBefore", m_notValidBefore.SecondsWithMSPrecision());
+  }
+
+  if(m_notValidAfterHasBeenSet)
+  {
+   payload.WithDouble("notValidAfter", m_notValidAfter.SecondsWithMSPrecision());
   }
 
   return payload;

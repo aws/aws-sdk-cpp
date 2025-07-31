@@ -25,10 +25,14 @@ UpdateEc2DeepInspectionConfigurationResult::UpdateEc2DeepInspectionConfiguration
 UpdateEc2DeepInspectionConfigurationResult& UpdateEc2DeepInspectionConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("errorMessage"))
+  if(jsonValue.ValueExists("packagePaths"))
   {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
+    Aws::Utils::Array<JsonView> packagePathsJsonList = jsonValue.GetArray("packagePaths");
+    for(unsigned packagePathsIndex = 0; packagePathsIndex < packagePathsJsonList.GetLength(); ++packagePathsIndex)
+    {
+      m_packagePaths.push_back(packagePathsJsonList[packagePathsIndex].AsString());
+    }
+    m_packagePathsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("orgPackagePaths"))
   {
@@ -39,19 +43,15 @@ UpdateEc2DeepInspectionConfigurationResult& UpdateEc2DeepInspectionConfiguration
     }
     m_orgPackagePathsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("packagePaths"))
-  {
-    Aws::Utils::Array<JsonView> packagePathsJsonList = jsonValue.GetArray("packagePaths");
-    for(unsigned packagePathsIndex = 0; packagePathsIndex < packagePathsJsonList.GetLength(); ++packagePathsIndex)
-    {
-      m_packagePaths.push_back(packagePathsJsonList[packagePathsIndex].AsString());
-    }
-    m_packagePathsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = Ec2DeepInspectionStatusMapper::GetEc2DeepInspectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

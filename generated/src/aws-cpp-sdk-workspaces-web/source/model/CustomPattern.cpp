@@ -25,16 +25,6 @@ CustomPattern::CustomPattern(JsonView jsonValue)
 
 CustomPattern& CustomPattern::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("keywordRegex"))
-  {
-    m_keywordRegex = jsonValue.GetString("keywordRegex");
-    m_keywordRegexHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("patternDescription"))
-  {
-    m_patternDescription = jsonValue.GetString("patternDescription");
-    m_patternDescriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("patternName"))
   {
     m_patternName = jsonValue.GetString("patternName");
@@ -45,24 +35,22 @@ CustomPattern& CustomPattern::operator =(JsonView jsonValue)
     m_patternRegex = jsonValue.GetString("patternRegex");
     m_patternRegexHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("patternDescription"))
+  {
+    m_patternDescription = jsonValue.GetString("patternDescription");
+    m_patternDescriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("keywordRegex"))
+  {
+    m_keywordRegex = jsonValue.GetString("keywordRegex");
+    m_keywordRegexHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CustomPattern::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_keywordRegexHasBeenSet)
-  {
-   payload.WithString("keywordRegex", m_keywordRegex);
-
-  }
-
-  if(m_patternDescriptionHasBeenSet)
-  {
-   payload.WithString("patternDescription", m_patternDescription);
-
-  }
 
   if(m_patternNameHasBeenSet)
   {
@@ -73,6 +61,18 @@ JsonValue CustomPattern::Jsonize() const
   if(m_patternRegexHasBeenSet)
   {
    payload.WithString("patternRegex", m_patternRegex);
+
+  }
+
+  if(m_patternDescriptionHasBeenSet)
+  {
+   payload.WithString("patternDescription", m_patternDescription);
+
+  }
+
+  if(m_keywordRegexHasBeenSet)
+  {
+   payload.WithString("keywordRegex", m_keywordRegex);
 
   }
 

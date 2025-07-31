@@ -34,6 +34,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to list only currently associated members if
+     * <code>True</code> or to list all members within the organization if
+     * <code>False</code>.</p>
+     */
+    inline bool GetOnlyAssociated() const { return m_onlyAssociated; }
+    inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
+    inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
+    inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results the response can return. If your request would
      * return more than the maximum the response will return a <code>nextToken</code>
      * value, use this value when you call the action again to get the remaining
@@ -61,28 +73,16 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListMembersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to list only currently associated members if
-     * <code>True</code> or to list all members within the organization if
-     * <code>False</code>.</p>
-     */
-    inline bool GetOnlyAssociated() const { return m_onlyAssociated; }
-    inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
-    inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
-    inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
-    ///@}
   private:
+
+    bool m_onlyAssociated{false};
+    bool m_onlyAssociatedHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    bool m_onlyAssociated{false};
-    bool m_onlyAssociatedHasBeenSet = false;
   };
 
 } // namespace Model

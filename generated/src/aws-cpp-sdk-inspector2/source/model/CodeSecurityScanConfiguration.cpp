@@ -25,15 +25,15 @@ CodeSecurityScanConfiguration::CodeSecurityScanConfiguration(JsonView jsonValue)
 
 CodeSecurityScanConfiguration& CodeSecurityScanConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("continuousIntegrationScanConfiguration"))
-  {
-    m_continuousIntegrationScanConfiguration = jsonValue.GetObject("continuousIntegrationScanConfiguration");
-    m_continuousIntegrationScanConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("periodicScanConfiguration"))
   {
     m_periodicScanConfiguration = jsonValue.GetObject("periodicScanConfiguration");
     m_periodicScanConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("continuousIntegrationScanConfiguration"))
+  {
+    m_continuousIntegrationScanConfiguration = jsonValue.GetObject("continuousIntegrationScanConfiguration");
+    m_continuousIntegrationScanConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ruleSetCategories"))
   {
@@ -51,15 +51,15 @@ JsonValue CodeSecurityScanConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_continuousIntegrationScanConfigurationHasBeenSet)
-  {
-   payload.WithObject("continuousIntegrationScanConfiguration", m_continuousIntegrationScanConfiguration.Jsonize());
-
-  }
-
   if(m_periodicScanConfigurationHasBeenSet)
   {
    payload.WithObject("periodicScanConfiguration", m_periodicScanConfiguration.Jsonize());
+
+  }
+
+  if(m_continuousIntegrationScanConfigurationHasBeenSet)
+  {
+   payload.WithObject("continuousIntegrationScanConfiguration", m_continuousIntegrationScanConfiguration.Jsonize());
 
   }
 
