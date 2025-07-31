@@ -188,13 +188,15 @@ void JsonReportingMetrics::DumpJson() const {
     jsonMetric.WithInt64("date", record.date.Seconds());
 
     if (!record.dimensions.empty()) {
-      Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size() + 1);
+      Aws::Utils::Array<Aws::Utils::Json::JsonValue> dimensionsArray(record.dimensions.size() + (m_buildMode == "unknown" ? 0 : 1));
       size_t dimensionIndex = 0;
 
-      Aws::Utils::Json::JsonValue buildModeDimension;
-      buildModeDimension.WithString("name", "build-mode");
-      buildModeDimension.WithString("value", m_buildMode);
-      dimensionsArray[dimensionIndex++] = std::move(buildModeDimension);
+      if (m_buildMode != "unknown") {
+        Aws::Utils::Json::JsonValue buildModeDimension;
+        buildModeDimension.WithString("name", "build-mode");
+        buildModeDimension.WithString("value", m_buildMode);
+        dimensionsArray[dimensionIndex++] = std::move(buildModeDimension);
+      }
 
       for (const auto& dim : record.dimensions) {
         Aws::Utils::Json::JsonValue dimension;
