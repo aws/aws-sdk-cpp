@@ -55,25 +55,26 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
    * @param sdkVersion SDK version string
    * @param commitId Git commit identifier
    * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   * @param buildMode Build mode (e.g., "debug" or "release")
    */
   JsonReportingMetrics(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(), const Aws::String& productId = "unknown",
                        const Aws::String& sdkVersion = "unknown", const Aws::String& commitId = "unknown",
-                       const Aws::String& outputFilename = "performance-test-results.json");
+                       const Aws::String& outputFilename = "performance-test-results.json", const Aws::String& buildMode = "unknown");
 
   ~JsonReportingMetrics() override;
 
   /**
-   * Called when an AWS request is started. Returns context for tracking.
+   * Called when an AWS request is started. Creates and returns context for tracking.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
-   * @return Context pointer (always returns nullptr)
+   * @return Context pointer to newly created RequestContext
    */
   void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName,
                          const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override;
 
   /**
-   * Called when an AWS request succeeds. Records performance metrics.
+   * Called when an AWS request succeeds. Stores latency metrics in context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -86,7 +87,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
                           const Aws::Monitoring::CoreMetricsCollection& metrics, void* context) const override;
 
   /**
-   * Called when an AWS request fails. Records performance metrics.
+   * Called when an AWS request fails. Stores latency metrics in context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -109,7 +110,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
                       const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
 
   /**
-   * Called when an AWS request finishes. No action taken.
+   * Called when an AWS request finishes. Processes stored metrics and cleans up context.
    * @param serviceName Name of the AWS service
    * @param requestName Name of the operation
    * @param request HTTP request object
@@ -161,6 +162,7 @@ class JsonReportingMetrics : public Aws::Monitoring::MonitoringInterface {
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
+  Aws::String m_buildMode;
 };
 
 /**
@@ -176,10 +178,12 @@ class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
    * @param sdkVersion SDK version string
    * @param commitId Git commit identifier
    * @param outputFilename Path to output file (e.g., "s3-perf-results.json")
+   * @param buildMode Build mode (e.g., "debug" or "release")
    */
   JsonReportingMetricsFactory(const Aws::Set<Aws::String>& monitoredOperations = Aws::Set<Aws::String>(),
                               const Aws::String& productId = "unknown", const Aws::String& sdkVersion = "unknown",
-                              const Aws::String& commitId = "unknown", const Aws::String& outputFilename = "performance-test-results.json");
+                              const Aws::String& commitId = "unknown", const Aws::String& outputFilename = "performance-test-results.json",
+                              const Aws::String& buildMode = "unknown");
 
   ~JsonReportingMetricsFactory() override = default;
 
@@ -195,6 +199,7 @@ class JsonReportingMetricsFactory : public Aws::Monitoring::MonitoringFactory {
   Aws::String m_sdkVersion;
   Aws::String m_commitId;
   Aws::String m_outputFilename;
+  Aws::String m_buildMode;
 };
 }  // namespace Reporting
 }  // namespace PerformanceTest
