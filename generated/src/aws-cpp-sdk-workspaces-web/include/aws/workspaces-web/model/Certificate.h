@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -41,50 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The body of the certificate.</p>
+     * <p>A hexadecimal identifier for the certificate.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBody() const { return m_body; }
-    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    template<typename BodyT = Aws::Utils::ByteBuffer>
-    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
-    template<typename BodyT = Aws::Utils::ByteBuffer>
-    Certificate& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The entity that issued the certificate.</p>
-     */
-    inline const Aws::String& GetIssuer() const { return m_issuer; }
-    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    template<typename IssuerT = Aws::String>
-    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
-    template<typename IssuerT = Aws::String>
-    Certificate& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The certificate is not valid after this date.</p>
-     */
-    inline const Aws::Utils::DateTime& GetNotValidAfter() const { return m_notValidAfter; }
-    inline bool NotValidAfterHasBeenSet() const { return m_notValidAfterHasBeenSet; }
-    template<typename NotValidAfterT = Aws::Utils::DateTime>
-    void SetNotValidAfter(NotValidAfterT&& value) { m_notValidAfterHasBeenSet = true; m_notValidAfter = std::forward<NotValidAfterT>(value); }
-    template<typename NotValidAfterT = Aws::Utils::DateTime>
-    Certificate& WithNotValidAfter(NotValidAfterT&& value) { SetNotValidAfter(std::forward<NotValidAfterT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The certificate is not valid before this date.</p>
-     */
-    inline const Aws::Utils::DateTime& GetNotValidBefore() const { return m_notValidBefore; }
-    inline bool NotValidBeforeHasBeenSet() const { return m_notValidBeforeHasBeenSet; }
-    template<typename NotValidBeforeT = Aws::Utils::DateTime>
-    void SetNotValidBefore(NotValidBeforeT&& value) { m_notValidBeforeHasBeenSet = true; m_notValidBefore = std::forward<NotValidBeforeT>(value); }
-    template<typename NotValidBeforeT = Aws::Utils::DateTime>
-    Certificate& WithNotValidBefore(NotValidBeforeT&& value) { SetNotValidBefore(std::forward<NotValidBeforeT>(value)); return *this;}
+    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
+    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
+    template<typename ThumbprintT = Aws::String>
+    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
+    template<typename ThumbprintT = Aws::String>
+    Certificate& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,34 +65,70 @@ namespace Model
 
     ///@{
     /**
-     * <p>A hexadecimal identifier for the certificate.</p>
+     * <p>The entity that issued the certificate.</p>
      */
-    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
-    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
-    template<typename ThumbprintT = Aws::String>
-    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
-    template<typename ThumbprintT = Aws::String>
-    Certificate& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
+    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    Certificate& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The certificate is not valid before this date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotValidBefore() const { return m_notValidBefore; }
+    inline bool NotValidBeforeHasBeenSet() const { return m_notValidBeforeHasBeenSet; }
+    template<typename NotValidBeforeT = Aws::Utils::DateTime>
+    void SetNotValidBefore(NotValidBeforeT&& value) { m_notValidBeforeHasBeenSet = true; m_notValidBefore = std::forward<NotValidBeforeT>(value); }
+    template<typename NotValidBeforeT = Aws::Utils::DateTime>
+    Certificate& WithNotValidBefore(NotValidBeforeT&& value) { SetNotValidBefore(std::forward<NotValidBeforeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The certificate is not valid after this date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotValidAfter() const { return m_notValidAfter; }
+    inline bool NotValidAfterHasBeenSet() const { return m_notValidAfterHasBeenSet; }
+    template<typename NotValidAfterT = Aws::Utils::DateTime>
+    void SetNotValidAfter(NotValidAfterT&& value) { m_notValidAfterHasBeenSet = true; m_notValidAfter = std::forward<NotValidAfterT>(value); }
+    template<typename NotValidAfterT = Aws::Utils::DateTime>
+    Certificate& WithNotValidAfter(NotValidAfterT&& value) { SetNotValidAfter(std::forward<NotValidAfterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The body of the certificate.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetBody() const { return m_body; }
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+    template<typename BodyT = Aws::Utils::ByteBuffer>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::Utils::ByteBuffer>
+    Certificate& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_body{};
-    bool m_bodyHasBeenSet = false;
-
-    Aws::String m_issuer;
-    bool m_issuerHasBeenSet = false;
-
-    Aws::Utils::DateTime m_notValidAfter{};
-    bool m_notValidAfterHasBeenSet = false;
-
-    Aws::Utils::DateTime m_notValidBefore{};
-    bool m_notValidBeforeHasBeenSet = false;
+    Aws::String m_thumbprint;
+    bool m_thumbprintHasBeenSet = false;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet = false;
 
-    Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet = false;
+    Aws::String m_issuer;
+    bool m_issuerHasBeenSet = false;
+
+    Aws::Utils::DateTime m_notValidBefore{};
+    bool m_notValidBeforeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_notValidAfter{};
+    bool m_notValidAfterHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_body{};
+    bool m_bodyHasBeenSet = false;
   };
 
 } // namespace Model

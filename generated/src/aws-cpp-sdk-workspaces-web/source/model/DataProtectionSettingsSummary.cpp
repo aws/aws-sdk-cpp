@@ -25,25 +25,25 @@ DataProtectionSettingsSummary::DataProtectionSettingsSummary(JsonView jsonValue)
 
 DataProtectionSettingsSummary& DataProtectionSettingsSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("creationDate"))
-  {
-    m_creationDate = jsonValue.GetDouble("creationDate");
-    m_creationDateHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("dataProtectionSettingsArn"))
   {
     m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
     m_dataProtectionSettingsArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+    m_displayNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
+  if(jsonValue.ValueExists("creationDate"))
   {
-    m_displayName = jsonValue.GetString("displayName");
-    m_displayNameHasBeenSet = true;
+    m_creationDate = jsonValue.GetDouble("creationDate");
+    m_creationDateHasBeenSet = true;
   }
   return *this;
 }
@@ -52,14 +52,15 @@ JsonValue DataProtectionSettingsSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
-  }
-
   if(m_dataProtectionSettingsArnHasBeenSet)
   {
    payload.WithString("dataProtectionSettingsArn", m_dataProtectionSettingsArn);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -69,10 +70,9 @@ JsonValue DataProtectionSettingsSummary::Jsonize() const
 
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_creationDateHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
-
+   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   return payload;

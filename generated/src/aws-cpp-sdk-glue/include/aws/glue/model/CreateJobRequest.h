@@ -361,21 +361,23 @@ namespace Model
      * contain your most demanding transforms, aggregations, joins, and queries. This
      * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
      * the following Amazon Web Services Regions: US East (Ohio), US East (N.
-     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
-     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
-     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
-     * each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later Spark
-     * ETL jobs, in the same Amazon Web Services Regions as supported for the
-     * <code>G.4X</code> worker type.</p> </li> <li> <p>For the <code>G.025X</code>
-     * worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
-     * disk, and provides 1 executor per worker. We recommend this worker type for low
-     * volume streaming jobs. This worker type is only available for Glue version 3.0
-     * or later streaming jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker
-     * type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk,
-     * and provides up to 8 Ray workers based on the autoscaler.</p> </li> </ul>
+     * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Mumbai),
+     * Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia
+     * Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe
+     * (London), Europe (Spain), Europe (Stockholm), and South America (São Paulo).</p>
+     * </li> <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU
+     * (32 vCPUs, 128 GB of memory) with 512GB disk, and provides 1 executor per
+     * worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is
+     * available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon
+     * Web Services Regions as supported for the <code>G.4X</code> worker type.</p>
+     * </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25
+     * DPU (2 vCPUs, 4 GB of memory) with 84GB disk, and provides 1 executor per
+     * worker. We recommend this worker type for low volume streaming jobs. This worker
+     * type is only available for Glue version 3.0 or later streaming jobs.</p> </li>
+     * <li> <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU
+     * (8vCPUs, 64 GB of memory) with 128 GB disk, and provides up to 8 Ray workers
+     * based on the autoscaler.</p> </li> </ul>
      */
     inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }

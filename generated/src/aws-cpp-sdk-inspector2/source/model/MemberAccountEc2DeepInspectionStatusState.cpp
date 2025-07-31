@@ -30,15 +30,15 @@ MemberAccountEc2DeepInspectionStatusState& MemberAccountEc2DeepInspectionStatusS
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = Ec2DeepInspectionStatusMapper::GetEc2DeepInspectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue MemberAccountEc2DeepInspectionStatusState::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", Ec2DeepInspectionStatusMapper::GetNameForEc2DeepInspectionStatus(m_status));
+  }
+
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("errorMessage", m_errorMessage);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", Ec2DeepInspectionStatusMapper::GetNameForEc2DeepInspectionStatus(m_status));
   }
 
   return payload;

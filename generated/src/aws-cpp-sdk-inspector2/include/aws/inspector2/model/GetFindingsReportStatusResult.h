@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/Destination.h>
-#include <aws/inspector2/model/ReportingErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/FilterCriteria.h>
 #include <aws/inspector2/model/ExternalReportStatus.h>
+#include <aws/inspector2/model/ReportingErrorCode.h>
+#include <aws/inspector2/model/Destination.h>
+#include <aws/inspector2/model/FilterCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -38,13 +38,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination of the report.</p>
+     * <p>The ID of the report.</p>
      */
-    inline const Destination& GetDestination() const { return m_destination; }
-    template<typename DestinationT = Destination>
-    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
-    template<typename DestinationT = Destination>
-    GetFindingsReportStatusResult& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    GetFindingsReportStatusResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline ExternalReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExternalReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetFindingsReportStatusResult& WithStatus(ExternalReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -69,6 +78,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The destination of the report.</p>
+     */
+    inline const Destination& GetDestination() const { return m_destination; }
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    GetFindingsReportStatusResult& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The filter criteria associated with the report.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
@@ -76,26 +96,6 @@ namespace Model
     void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
     template<typename FilterCriteriaT = FilterCriteria>
     GetFindingsReportStatusResult& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the report.</p>
-     */
-    inline const Aws::String& GetReportId() const { return m_reportId; }
-    template<typename ReportIdT = Aws::String>
-    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
-    template<typename ReportIdT = Aws::String>
-    GetFindingsReportStatusResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the report.</p>
-     */
-    inline ExternalReportStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ExternalReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetFindingsReportStatusResult& WithStatus(ExternalReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,8 +108,11 @@ namespace Model
     ///@}
   private:
 
-    Destination m_destination;
-    bool m_destinationHasBeenSet = false;
+    Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
+
+    ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     ReportingErrorCode m_errorCode{ReportingErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
@@ -117,14 +120,11 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
+    Destination m_destination;
+    bool m_destinationHasBeenSet = false;
+
     FilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
-
-    Aws::String m_reportId;
-    bool m_reportIdHasBeenSet = false;
-
-    ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

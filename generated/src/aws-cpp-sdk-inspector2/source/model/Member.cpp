@@ -30,15 +30,15 @@ Member& Member::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("delegatedAdminAccountId"))
-  {
-    m_delegatedAdminAccountId = jsonValue.GetString("delegatedAdminAccountId");
-    m_delegatedAdminAccountIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = RelationshipStatusMapper::GetRelationshipStatusForName(jsonValue.GetString("relationshipStatus"));
     m_relationshipStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("delegatedAdminAccountId"))
+  {
+    m_delegatedAdminAccountId = jsonValue.GetString("delegatedAdminAccountId");
+    m_delegatedAdminAccountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
@@ -58,15 +58,15 @@ JsonValue Member::Jsonize() const
 
   }
 
+  if(m_relationshipStatusHasBeenSet)
+  {
+   payload.WithString("relationshipStatus", RelationshipStatusMapper::GetNameForRelationshipStatus(m_relationshipStatus));
+  }
+
   if(m_delegatedAdminAccountIdHasBeenSet)
   {
    payload.WithString("delegatedAdminAccountId", m_delegatedAdminAccountId);
 
-  }
-
-  if(m_relationshipStatusHasBeenSet)
-  {
-   payload.WithString("relationshipStatus", RelationshipStatusMapper::GetNameForRelationshipStatus(m_relationshipStatus));
   }
 
   if(m_updatedAtHasBeenSet)

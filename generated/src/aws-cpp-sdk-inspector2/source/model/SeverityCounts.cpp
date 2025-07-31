@@ -30,20 +30,20 @@ SeverityCounts& SeverityCounts::operator =(JsonView jsonValue)
     m_all = jsonValue.GetInt64("all");
     m_allHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("critical"))
+  if(jsonValue.ValueExists("medium"))
   {
-    m_critical = jsonValue.GetInt64("critical");
-    m_criticalHasBeenSet = true;
+    m_medium = jsonValue.GetInt64("medium");
+    m_mediumHasBeenSet = true;
   }
   if(jsonValue.ValueExists("high"))
   {
     m_high = jsonValue.GetInt64("high");
     m_highHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("medium"))
+  if(jsonValue.ValueExists("critical"))
   {
-    m_medium = jsonValue.GetInt64("medium");
-    m_mediumHasBeenSet = true;
+    m_critical = jsonValue.GetInt64("critical");
+    m_criticalHasBeenSet = true;
   }
   return *this;
 }
@@ -58,9 +58,9 @@ JsonValue SeverityCounts::Jsonize() const
 
   }
 
-  if(m_criticalHasBeenSet)
+  if(m_mediumHasBeenSet)
   {
-   payload.WithInt64("critical", m_critical);
+   payload.WithInt64("medium", m_medium);
 
   }
 
@@ -70,9 +70,9 @@ JsonValue SeverityCounts::Jsonize() const
 
   }
 
-  if(m_mediumHasBeenSet)
+  if(m_criticalHasBeenSet)
   {
-   payload.WithInt64("medium", m_medium);
+   payload.WithInt64("critical", m_critical);
 
   }
 

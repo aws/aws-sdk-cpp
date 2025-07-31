@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/UpdateGitHubIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateGitLabSelfManagedIntegrationDetail.h>
+#include <aws/inspector2/model/UpdateGitHubIntegrationDetail.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details specific to updating an integration with GitHub.</p>
-     */
-    inline const UpdateGitHubIntegrationDetail& GetGithub() const { return m_github; }
-    inline bool GithubHasBeenSet() const { return m_githubHasBeenSet; }
-    template<typename GithubT = UpdateGitHubIntegrationDetail>
-    void SetGithub(GithubT&& value) { m_githubHasBeenSet = true; m_github = std::forward<GithubT>(value); }
-    template<typename GithubT = UpdateGitHubIntegrationDetail>
-    UpdateIntegrationDetails& WithGithub(GithubT&& value) { SetGithub(std::forward<GithubT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Details specific to updating an integration with a self-managed GitLab
      * instance.</p>
      */
@@ -63,13 +51,25 @@ namespace Model
     template<typename GitlabSelfManagedT = UpdateGitLabSelfManagedIntegrationDetail>
     UpdateIntegrationDetails& WithGitlabSelfManaged(GitlabSelfManagedT&& value) { SetGitlabSelfManaged(std::forward<GitlabSelfManagedT>(value)); return *this;}
     ///@}
-  private:
 
-    UpdateGitHubIntegrationDetail m_github;
-    bool m_githubHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Details specific to updating an integration with GitHub.</p>
+     */
+    inline const UpdateGitHubIntegrationDetail& GetGithub() const { return m_github; }
+    inline bool GithubHasBeenSet() const { return m_githubHasBeenSet; }
+    template<typename GithubT = UpdateGitHubIntegrationDetail>
+    void SetGithub(GithubT&& value) { m_githubHasBeenSet = true; m_github = std::forward<GithubT>(value); }
+    template<typename GithubT = UpdateGitHubIntegrationDetail>
+    UpdateIntegrationDetails& WithGithub(GithubT&& value) { SetGithub(std::forward<GithubT>(value)); return *this;}
+    ///@}
+  private:
 
     UpdateGitLabSelfManagedIntegrationDetail m_gitlabSelfManaged;
     bool m_gitlabSelfManagedHasBeenSet = false;
+
+    UpdateGitHubIntegrationDetail m_github;
+    bool m_githubHasBeenSet = false;
   };
 
 } // namespace Model

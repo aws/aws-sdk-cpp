@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AWS_EC2_INSTANCE,
     AWS_ECR_CONTAINER_IMAGE,
-    AWS_LAMBDA_FUNCTION
+    AWS_LAMBDA_FUNCTION,
+    CODE_REPOSITORY
   };
 
 namespace AggregationResourceTypeMapper

@@ -30,15 +30,15 @@ StatusCounts& StatusCounts::operator =(JsonView jsonValue)
     m_failed = jsonValue.GetInteger("failed");
     m_failedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("passed"))
-  {
-    m_passed = jsonValue.GetInteger("passed");
-    m_passedHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("skipped"))
   {
     m_skipped = jsonValue.GetInteger("skipped");
     m_skippedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("passed"))
+  {
+    m_passed = jsonValue.GetInteger("passed");
+    m_passedHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue StatusCounts::Jsonize() const
 
   }
 
-  if(m_passedHasBeenSet)
-  {
-   payload.WithInteger("passed", m_passed);
-
-  }
-
   if(m_skippedHasBeenSet)
   {
    payload.WithInteger("skipped", m_skipped);
+
+  }
+
+  if(m_passedHasBeenSet)
+  {
+   payload.WithInteger("passed", m_passed);
 
   }
 

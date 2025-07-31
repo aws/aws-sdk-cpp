@@ -104,6 +104,7 @@
 #include <aws/iot/model/DescribeDetectMitigationActionsTaskResult.h>
 #include <aws/iot/model/DescribeDimensionResult.h>
 #include <aws/iot/model/DescribeDomainConfigurationResult.h>
+#include <aws/iot/model/DescribeEncryptionConfigurationResult.h>
 #include <aws/iot/model/DescribeEndpointResult.h>
 #include <aws/iot/model/DescribeEventConfigurationsResult.h>
 #include <aws/iot/model/DescribeFleetMetricResult.h>
@@ -240,6 +241,7 @@
 #include <aws/iot/model/UpdateDimensionResult.h>
 #include <aws/iot/model/UpdateDomainConfigurationResult.h>
 #include <aws/iot/model/UpdateDynamicThingGroupResult.h>
+#include <aws/iot/model/UpdateEncryptionConfigurationResult.h>
 #include <aws/iot/model/UpdateEventConfigurationsResult.h>
 #include <aws/iot/model/UpdateIndexingConfigurationResult.h>
 #include <aws/iot/model/UpdateMitigationActionResult.h>
@@ -279,6 +281,7 @@
 #include <aws/iot/model/ListDimensionsRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
 #include <aws/iot/model/DescribeDefaultAuthorizerRequest.h>
+#include <aws/iot/model/DescribeEncryptionConfigurationRequest.h>
 #include <aws/iot/model/ListActiveViolationsRequest.h>
 #include <aws/iot/model/ListV2LoggingLevelsRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
@@ -459,6 +462,7 @@ namespace Aws
       class DescribeDetectMitigationActionsTaskRequest;
       class DescribeDimensionRequest;
       class DescribeDomainConfigurationRequest;
+      class DescribeEncryptionConfigurationRequest;
       class DescribeEndpointRequest;
       class DescribeEventConfigurationsRequest;
       class DescribeFleetMetricRequest;
@@ -606,6 +610,7 @@ namespace Aws
       class UpdateDimensionRequest;
       class UpdateDomainConfigurationRequest;
       class UpdateDynamicThingGroupRequest;
+      class UpdateEncryptionConfigurationRequest;
       class UpdateEventConfigurationsRequest;
       class UpdateFleetMetricRequest;
       class UpdateIndexingConfigurationRequest;
@@ -728,6 +733,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDetectMitigationActionsTaskResult, IoTError> DescribeDetectMitigationActionsTaskOutcome;
       typedef Aws::Utils::Outcome<DescribeDimensionResult, IoTError> DescribeDimensionOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainConfigurationResult, IoTError> DescribeDomainConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DescribeEncryptionConfigurationResult, IoTError> DescribeEncryptionConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeEndpointResult, IoTError> DescribeEndpointOutcome;
       typedef Aws::Utils::Outcome<DescribeEventConfigurationsResult, IoTError> DescribeEventConfigurationsOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetMetricResult, IoTError> DescribeFleetMetricOutcome;
@@ -875,6 +881,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDimensionResult, IoTError> UpdateDimensionOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainConfigurationResult, IoTError> UpdateDomainConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateDynamicThingGroupResult, IoTError> UpdateDynamicThingGroupOutcome;
+      typedef Aws::Utils::Outcome<UpdateEncryptionConfigurationResult, IoTError> UpdateEncryptionConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateEventConfigurationsResult, IoTError> UpdateEventConfigurationsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateFleetMetricOutcome;
       typedef Aws::Utils::Outcome<UpdateIndexingConfigurationResult, IoTError> UpdateIndexingConfigurationOutcome;
@@ -997,6 +1004,7 @@ namespace Aws
       typedef std::future<DescribeDetectMitigationActionsTaskOutcome> DescribeDetectMitigationActionsTaskOutcomeCallable;
       typedef std::future<DescribeDimensionOutcome> DescribeDimensionOutcomeCallable;
       typedef std::future<DescribeDomainConfigurationOutcome> DescribeDomainConfigurationOutcomeCallable;
+      typedef std::future<DescribeEncryptionConfigurationOutcome> DescribeEncryptionConfigurationOutcomeCallable;
       typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
       typedef std::future<DescribeEventConfigurationsOutcome> DescribeEventConfigurationsOutcomeCallable;
       typedef std::future<DescribeFleetMetricOutcome> DescribeFleetMetricOutcomeCallable;
@@ -1144,6 +1152,7 @@ namespace Aws
       typedef std::future<UpdateDimensionOutcome> UpdateDimensionOutcomeCallable;
       typedef std::future<UpdateDomainConfigurationOutcome> UpdateDomainConfigurationOutcomeCallable;
       typedef std::future<UpdateDynamicThingGroupOutcome> UpdateDynamicThingGroupOutcomeCallable;
+      typedef std::future<UpdateEncryptionConfigurationOutcome> UpdateEncryptionConfigurationOutcomeCallable;
       typedef std::future<UpdateEventConfigurationsOutcome> UpdateEventConfigurationsOutcomeCallable;
       typedef std::future<UpdateFleetMetricOutcome> UpdateFleetMetricOutcomeCallable;
       typedef std::future<UpdateIndexingConfigurationOutcome> UpdateIndexingConfigurationOutcomeCallable;
@@ -1269,6 +1278,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::DescribeDetectMitigationActionsTaskRequest&, const Model::DescribeDetectMitigationActionsTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectMitigationActionsTaskResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeDimensionRequest&, const Model::DescribeDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeDomainConfigurationRequest&, const Model::DescribeDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigurationResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeEncryptionConfigurationRequest&, const Model::DescribeEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeEventConfigurationsRequest&, const Model::DescribeEventConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeFleetMetricRequest&, const Model::DescribeFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetMetricResponseReceivedHandler;
@@ -1416,6 +1426,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::UpdateDimensionRequest&, const Model::UpdateDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateDomainConfigurationRequest&, const Model::UpdateDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateDynamicThingGroupRequest&, const Model::UpdateDynamicThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDynamicThingGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::UpdateEncryptionConfigurationRequest&, const Model::UpdateEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateEventConfigurationsRequest&, const Model::UpdateEventConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateFleetMetricRequest&, const Model::UpdateFleetMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateIndexingConfigurationRequest&, const Model::UpdateIndexingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexingConfigurationResponseReceivedHandler;

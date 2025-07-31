@@ -16,12 +16,6 @@ Aws::String StopCisSessionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithObject("message", m_message.Jsonize());
-
-  }
-
   if(m_scanJobIdHasBeenSet)
   {
    payload.WithString("scanJobId", m_scanJobId);
@@ -31,6 +25,12 @@ Aws::String StopCisSessionRequest::SerializePayload() const
   if(m_sessionTokenHasBeenSet)
   {
    payload.WithString("sessionToken", m_sessionToken);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithObject("message", m_message.Jsonize());
 
   }
 

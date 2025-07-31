@@ -16,20 +16,9 @@ Aws::String CreateIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_portalArnHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_identityProviderDetailsHasBeenSet)
-  {
-   JsonValue identityProviderDetailsJsonMap;
-   for(auto& identityProviderDetailsItem : m_identityProviderDetails)
-   {
-     identityProviderDetailsJsonMap.WithString(identityProviderDetailsItem.first, identityProviderDetailsItem.second);
-   }
-   payload.WithObject("identityProviderDetails", std::move(identityProviderDetailsJsonMap));
+   payload.WithString("portalArn", m_portalArn);
 
   }
 
@@ -44,9 +33,20 @@ Aws::String CreateIdentityProviderRequest::SerializePayload() const
    payload.WithString("identityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
   }
 
-  if(m_portalArnHasBeenSet)
+  if(m_identityProviderDetailsHasBeenSet)
   {
-   payload.WithString("portalArn", m_portalArn);
+   JsonValue identityProviderDetailsJsonMap;
+   for(auto& identityProviderDetailsItem : m_identityProviderDetails)
+   {
+     identityProviderDetailsJsonMap.WithString(identityProviderDetailsItem.first, identityProviderDetailsItem.second);
+   }
+   payload.WithObject("identityProviderDetails", std::move(identityProviderDetailsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

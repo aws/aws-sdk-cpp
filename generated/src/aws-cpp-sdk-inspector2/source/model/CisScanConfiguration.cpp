@@ -25,30 +25,35 @@ CisScanConfiguration::CisScanConfiguration(JsonView jsonValue)
 
 CisScanConfiguration& CisScanConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ownerId"))
-  {
-    m_ownerId = jsonValue.GetString("ownerId");
-    m_ownerIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanConfigurationArn"))
   {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
     m_scanConfigurationArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ownerId"))
+  {
+    m_ownerId = jsonValue.GetString("ownerId");
+    m_ownerIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
     m_scanNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("securityLevel"))
+  {
+    m_securityLevel = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("securityLevel"));
+    m_securityLevelHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
     m_scheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("securityLevel"))
+  if(jsonValue.ValueExists("targets"))
   {
-    m_securityLevel = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("securityLevel"));
-    m_securityLevelHasBeenSet = true;
+    m_targets = jsonValue.GetObject("targets");
+    m_targetsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -59,11 +64,6 @@ CisScanConfiguration& CisScanConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targets"))
-  {
-    m_targets = jsonValue.GetObject("targets");
-    m_targetsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -71,15 +71,15 @@ JsonValue CisScanConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_ownerIdHasBeenSet)
-  {
-   payload.WithString("ownerId", m_ownerId);
-
-  }
-
   if(m_scanConfigurationArnHasBeenSet)
   {
    payload.WithString("scanConfigurationArn", m_scanConfigurationArn);
+
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+   payload.WithString("ownerId", m_ownerId);
 
   }
 
@@ -89,15 +89,21 @@ JsonValue CisScanConfiguration::Jsonize() const
 
   }
 
+  if(m_securityLevelHasBeenSet)
+  {
+   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
+  }
+
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
 
   }
 
-  if(m_securityLevelHasBeenSet)
+  if(m_targetsHasBeenSet)
   {
-   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
+   payload.WithObject("targets", m_targets.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)
@@ -108,12 +114,6 @@ JsonValue CisScanConfiguration::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_targetsHasBeenSet)
-  {
-   payload.WithObject("targets", m_targets.Jsonize());
 
   }
 

@@ -61,18 +61,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source of the CVSS score.</p>
-     */
-    inline const Aws::String& GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    template<typename SourceT = Aws::String>
-    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
-    template<typename SourceT = Aws::String>
-    CvssScore& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The version of CVSS used for the score.</p>
      */
     inline const Aws::String& GetVersion() const { return m_version; }
@@ -82,6 +70,18 @@ namespace Model
     template<typename VersionT = Aws::String>
     CvssScore& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The source of the CVSS score.</p>
+     */
+    inline const Aws::String& GetSource() const { return m_source; }
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CvssScore& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
+    ///@}
   private:
 
     double m_baseScore{0.0};
@@ -90,11 +90,11 @@ namespace Model
     Aws::String m_scoringVector;
     bool m_scoringVectorHasBeenSet = false;
 
-    Aws::String m_source;
-    bool m_sourceHasBeenSet = false;
-
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    Aws::String m_source;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

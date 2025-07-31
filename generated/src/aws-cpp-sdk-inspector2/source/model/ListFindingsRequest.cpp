@@ -16,12 +16,6 @@ Aws::String ListFindingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_filterCriteriaHasBeenSet)
-  {
-   payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -31,6 +25,12 @@ Aws::String ListFindingsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
 
   }
 

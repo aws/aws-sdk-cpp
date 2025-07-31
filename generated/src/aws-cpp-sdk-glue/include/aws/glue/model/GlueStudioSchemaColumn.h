@@ -61,6 +61,18 @@ namespace Model
     template<typename TypeT = Aws::String>
     GlueStudioSchemaColumn& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The data type of the column as defined in Glue Studio.</p>
+     */
+    inline const Aws::String& GetGlueStudioType() const { return m_glueStudioType; }
+    inline bool GlueStudioTypeHasBeenSet() const { return m_glueStudioTypeHasBeenSet; }
+    template<typename GlueStudioTypeT = Aws::String>
+    void SetGlueStudioType(GlueStudioTypeT&& value) { m_glueStudioTypeHasBeenSet = true; m_glueStudioType = std::forward<GlueStudioTypeT>(value); }
+    template<typename GlueStudioTypeT = Aws::String>
+    GlueStudioSchemaColumn& WithGlueStudioType(GlueStudioTypeT&& value) { SetGlueStudioType(std::forward<GlueStudioTypeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -68,6 +80,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_glueStudioType;
+    bool m_glueStudioTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/Day.h>
 #include <aws/inspector2/model/Time.h>
+#include <aws/inspector2/model/Day.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The monthly schedule's day.</p>
-     */
-    inline Day GetDay() const { return m_day; }
-    inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
-    inline void SetDay(Day value) { m_dayHasBeenSet = true; m_day = value; }
-    inline MonthlySchedule& WithDay(Day value) { SetDay(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The monthly schedule's start time.</p>
      */
     inline const Time& GetStartTime() const { return m_startTime; }
@@ -59,13 +49,23 @@ namespace Model
     template<typename StartTimeT = Time>
     MonthlySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
-  private:
 
-    Day m_day{Day::NOT_SET};
-    bool m_dayHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The monthly schedule's day.</p>
+     */
+    inline Day GetDay() const { return m_day; }
+    inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
+    inline void SetDay(Day value) { m_dayHasBeenSet = true; m_day = value; }
+    inline MonthlySchedule& WithDay(Day value) { SetDay(value); return *this;}
+    ///@}
+  private:
 
     Time m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Day m_day{Day::NOT_SET};
+    bool m_dayHasBeenSet = false;
   };
 
 } // namespace Model

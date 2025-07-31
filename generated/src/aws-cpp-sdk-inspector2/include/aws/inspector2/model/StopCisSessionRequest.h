@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/StopCisSessionMessage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/StopCisSessionMessage.h>
 #include <utility>
 
 namespace Aws
@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The stop CIS session message.</p>
-     */
-    inline const StopCisSessionMessage& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = StopCisSessionMessage>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = StopCisSessionMessage>
-    StopCisSessionRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique identifier for the scan job.</p>
      */
     inline const Aws::String& GetScanJobId() const { return m_scanJobId; }
@@ -68,16 +56,28 @@ namespace Model
     template<typename SessionTokenT = Aws::String>
     StopCisSessionRequest& WithSessionToken(SessionTokenT&& value) { SetSessionToken(std::forward<SessionTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    StopCisSessionMessage m_message;
-    bool m_messageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The stop CIS session message.</p>
+     */
+    inline const StopCisSessionMessage& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = StopCisSessionMessage>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = StopCisSessionMessage>
+    StopCisSessionRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_scanJobId;
     bool m_scanJobIdHasBeenSet = false;
 
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet = false;
+
+    StopCisSessionMessage m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

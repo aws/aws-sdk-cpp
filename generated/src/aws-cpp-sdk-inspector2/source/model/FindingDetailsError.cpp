@@ -25,6 +25,11 @@ FindingDetailsError::FindingDetailsError(JsonView jsonValue)
 
 FindingDetailsError& FindingDetailsError::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("findingArn"))
+  {
+    m_findingArn = jsonValue.GetString("findingArn");
+    m_findingArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = FindingDetailsErrorCodeMapper::GetFindingDetailsErrorCodeForName(jsonValue.GetString("errorCode"));
@@ -35,17 +40,18 @@ FindingDetailsError& FindingDetailsError::operator =(JsonView jsonValue)
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingArn"))
-  {
-    m_findingArn = jsonValue.GetString("findingArn");
-    m_findingArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FindingDetailsError::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingArnHasBeenSet)
+  {
+   payload.WithString("findingArn", m_findingArn);
+
+  }
 
   if(m_errorCodeHasBeenSet)
   {
@@ -55,12 +61,6 @@ JsonValue FindingDetailsError::Jsonize() const
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("errorMessage", m_errorMessage);
-
-  }
-
-  if(m_findingArnHasBeenSet)
-  {
-   payload.WithString("findingArn", m_findingArn);
 
   }
 

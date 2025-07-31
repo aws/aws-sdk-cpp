@@ -25,6 +25,11 @@ ListFindingsResult::ListFindingsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListFindingsResult& ListFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("findings"))
   {
     Aws::Utils::Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
@@ -33,11 +38,6 @@ ListFindingsResult& ListFindingsResult::operator =(const Aws::AmazonWebServiceRe
       m_findings.push_back(findingsJsonList[findingsIndex].AsObject());
     }
     m_findingsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/AggregationType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/AggregationResponse.h>
 #include <utility>
 
@@ -46,6 +46,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Objects that contain the results of an aggregation operation.</p>
+     */
+    inline const Aws::Vector<AggregationResponse>& GetResponses() const { return m_responses; }
+    template<typename ResponsesT = Aws::Vector<AggregationResponse>>
+    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
+    template<typename ResponsesT = Aws::Vector<AggregationResponse>>
+    ListFindingAggregationsResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
+    template<typename ResponsesT = AggregationResponse>
+    ListFindingAggregationsResult& AddResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses.emplace_back(std::forward<ResponsesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. For
      * subsequent calls, use the <code>NextToken</code> value returned from the
@@ -56,19 +69,6 @@ namespace Model
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
     ListFindingAggregationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Objects that contain the results of an aggregation operation.</p>
-     */
-    inline const Aws::Vector<AggregationResponse>& GetResponses() const { return m_responses; }
-    template<typename ResponsesT = Aws::Vector<AggregationResponse>>
-    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
-    template<typename ResponsesT = Aws::Vector<AggregationResponse>>
-    ListFindingAggregationsResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
-    template<typename ResponsesT = AggregationResponse>
-    ListFindingAggregationsResult& AddResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses.emplace_back(std::forward<ResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,11 +84,11 @@ namespace Model
     AggregationType m_aggregationType{AggregationType::NOT_SET};
     bool m_aggregationTypeHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<AggregationResponse> m_responses;
     bool m_responsesHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

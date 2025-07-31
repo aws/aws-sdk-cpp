@@ -25,14 +25,14 @@ AwsEcrContainerAggregation::AwsEcrContainerAggregation(JsonView jsonValue)
 
 AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("architectures"))
+  if(jsonValue.ValueExists("resourceIds"))
   {
-    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
-    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
+    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
-      m_architectures.push_back(architecturesJsonList[architecturesIndex].AsObject());
+      m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsObject());
     }
-    m_architecturesHasBeenSet = true;
+    m_resourceIdsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("imageShas"))
   {
@@ -43,6 +43,24 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_imageShasHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("repositories"))
+  {
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
+    {
+      m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
+    }
+    m_repositoriesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("architectures"))
+  {
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(architecturesJsonList[architecturesIndex].AsObject());
+    }
+    m_architecturesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("imageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
@@ -52,14 +70,15 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_imageTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inUseCount"))
+  if(jsonValue.ValueExists("sortOrder"))
   {
-    Aws::Utils::Array<JsonView> inUseCountJsonList = jsonValue.GetArray("inUseCount");
-    for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
-    {
-      m_inUseCount.push_back(inUseCountJsonList[inUseCountIndex].AsObject());
-    }
-    m_inUseCountHasBeenSet = true;
+    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
+    m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = AwsEcrContainerSortByMapper::GetAwsEcrContainerSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastInUseAt"))
   {
@@ -70,33 +89,14 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_lastInUseAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositories"))
+  if(jsonValue.ValueExists("inUseCount"))
   {
-    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
-    for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
+    Aws::Utils::Array<JsonView> inUseCountJsonList = jsonValue.GetArray("inUseCount");
+    for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
     {
-      m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
+      m_inUseCount.push_back(inUseCountJsonList[inUseCountIndex].AsObject());
     }
-    m_repositoriesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceIds"))
-  {
-    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
-    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-    {
-      m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsObject());
-    }
-    m_resourceIdsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortBy"))
-  {
-    m_sortBy = AwsEcrContainerSortByMapper::GetAwsEcrContainerSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
-    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-    m_sortOrderHasBeenSet = true;
+    m_inUseCountHasBeenSet = true;
   }
   return *this;
 }
@@ -105,14 +105,14 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_architecturesHasBeenSet)
+  if(m_resourceIdsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
-   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
-     architecturesJsonList[architecturesIndex].AsObject(m_architectures[architecturesIndex].Jsonize());
+     resourceIdsJsonList[resourceIdsIndex].AsObject(m_resourceIds[resourceIdsIndex].Jsonize());
    }
-   payload.WithArray("architectures", std::move(architecturesJsonList));
+   payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
 
   }
 
@@ -127,6 +127,28 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   }
 
+  if(m_repositoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> repositoriesJsonList(m_repositories.size());
+   for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
+   {
+     repositoriesJsonList[repositoriesIndex].AsObject(m_repositories[repositoriesIndex].Jsonize());
+   }
+   payload.WithArray("repositories", std::move(repositoriesJsonList));
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsObject(m_architectures[architecturesIndex].Jsonize());
+   }
+   payload.WithArray("architectures", std::move(architecturesJsonList));
+
+  }
+
   if(m_imageTagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> imageTagsJsonList(m_imageTags.size());
@@ -138,15 +160,14 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   }
 
-  if(m_inUseCountHasBeenSet)
+  if(m_sortOrderHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> inUseCountJsonList(m_inUseCount.size());
-   for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
-   {
-     inUseCountJsonList[inUseCountIndex].AsObject(m_inUseCount[inUseCountIndex].Jsonize());
-   }
-   payload.WithArray("inUseCount", std::move(inUseCountJsonList));
+   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
 
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", AwsEcrContainerSortByMapper::GetNameForAwsEcrContainerSortBy(m_sortBy));
   }
 
   if(m_lastInUseAtHasBeenSet)
@@ -160,36 +181,15 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   }
 
-  if(m_repositoriesHasBeenSet)
+  if(m_inUseCountHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> repositoriesJsonList(m_repositories.size());
-   for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
+   Aws::Utils::Array<JsonValue> inUseCountJsonList(m_inUseCount.size());
+   for(unsigned inUseCountIndex = 0; inUseCountIndex < inUseCountJsonList.GetLength(); ++inUseCountIndex)
    {
-     repositoriesJsonList[repositoriesIndex].AsObject(m_repositories[repositoriesIndex].Jsonize());
+     inUseCountJsonList[inUseCountIndex].AsObject(m_inUseCount[inUseCountIndex].Jsonize());
    }
-   payload.WithArray("repositories", std::move(repositoriesJsonList));
+   payload.WithArray("inUseCount", std::move(inUseCountJsonList));
 
-  }
-
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsObject(m_resourceIds[resourceIdsIndex].Jsonize());
-   }
-   payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
-
-  }
-
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", AwsEcrContainerSortByMapper::GetNameForAwsEcrContainerSortBy(m_sortBy));
-  }
-
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;

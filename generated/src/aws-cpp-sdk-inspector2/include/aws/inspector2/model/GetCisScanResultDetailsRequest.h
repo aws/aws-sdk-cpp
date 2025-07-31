@@ -37,6 +37,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The scan ARN.</p>
+     */
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
+    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    GetCisScanResultDetailsRequest& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The target resource ID.</p>
+     */
+    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
+    inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
+    template<typename TargetResourceIdT = Aws::String>
+    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
+    template<typename TargetResourceIdT = Aws::String>
+    GetCisScanResultDetailsRequest& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The account ID.</p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
@@ -61,42 +85,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of CIS scan result details to be returned in a single page
-     * of results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline GetCisScanResultDetailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetCisScanResultDetailsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The scan ARN.</p>
-     */
-    inline const Aws::String& GetScanArn() const { return m_scanArn; }
-    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    template<typename ScanArnT = Aws::String>
-    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
-    template<typename ScanArnT = Aws::String>
-    GetCisScanResultDetailsRequest& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The sort by order.</p>
      */
     inline CisScanResultDetailsSortBy GetSortBy() const { return m_sortBy; }
@@ -117,16 +105,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target resource ID.</p>
+     * <p>The pagination token from a previous request that's used to retrieve the next
+     * page of results.</p>
      */
-    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
-    inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
-    template<typename TargetResourceIdT = Aws::String>
-    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
-    template<typename TargetResourceIdT = Aws::String>
-    GetCisScanResultDetailsRequest& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCisScanResultDetailsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of CIS scan result details to be returned in a single page
+     * of results.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline GetCisScanResultDetailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_scanArn;
+    bool m_scanArnHasBeenSet = false;
+
+    Aws::String m_targetResourceId;
+    bool m_targetResourceIdHasBeenSet = false;
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
@@ -134,23 +140,17 @@ namespace Model
     CisScanResultDetailsFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_scanArn;
-    bool m_scanArnHasBeenSet = false;
-
     CisScanResultDetailsSortBy m_sortBy{CisScanResultDetailsSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
     CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    Aws::String m_targetResourceId;
-    bool m_targetResourceIdHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>IdMappingType</code>,
-   * <code>ProviderProperties</code>, and
-   * <code>RuleBasedProperties</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>idMappingType</code>,
+   * <code>providerProperties</code>, and
+   * <code>ruleBasedProperties</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdNamespaceIdMappingWorkflowProperties">AWS
    * API Reference</a></p>
    */

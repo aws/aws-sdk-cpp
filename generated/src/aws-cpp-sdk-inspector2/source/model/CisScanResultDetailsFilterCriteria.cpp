@@ -25,24 +25,6 @@ CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria(JsonView 
 
 CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("checkIdFilters"))
-  {
-    Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
-    for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
-    {
-      m_checkIdFilters.push_back(checkIdFiltersJsonList[checkIdFiltersIndex].AsObject());
-    }
-    m_checkIdFiltersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("findingArnFilters"))
-  {
-    Aws::Utils::Array<JsonView> findingArnFiltersJsonList = jsonValue.GetArray("findingArnFilters");
-    for(unsigned findingArnFiltersIndex = 0; findingArnFiltersIndex < findingArnFiltersJsonList.GetLength(); ++findingArnFiltersIndex)
-    {
-      m_findingArnFilters.push_back(findingArnFiltersJsonList[findingArnFiltersIndex].AsObject());
-    }
-    m_findingArnFiltersHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("findingStatusFilters"))
   {
     Aws::Utils::Array<JsonView> findingStatusFiltersJsonList = jsonValue.GetArray("findingStatusFilters");
@@ -52,14 +34,14 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_findingStatusFiltersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("securityLevelFilters"))
+  if(jsonValue.ValueExists("checkIdFilters"))
   {
-    Aws::Utils::Array<JsonView> securityLevelFiltersJsonList = jsonValue.GetArray("securityLevelFilters");
-    for(unsigned securityLevelFiltersIndex = 0; securityLevelFiltersIndex < securityLevelFiltersJsonList.GetLength(); ++securityLevelFiltersIndex)
+    Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
+    for(unsigned checkIdFiltersIndex = 0; checkIdFiltersIndex < checkIdFiltersJsonList.GetLength(); ++checkIdFiltersIndex)
     {
-      m_securityLevelFilters.push_back(securityLevelFiltersJsonList[securityLevelFiltersIndex].AsObject());
+      m_checkIdFilters.push_back(checkIdFiltersJsonList[checkIdFiltersIndex].AsObject());
     }
-    m_securityLevelFiltersHasBeenSet = true;
+    m_checkIdFiltersHasBeenSet = true;
   }
   if(jsonValue.ValueExists("titleFilters"))
   {
@@ -70,12 +52,41 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_titleFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("securityLevelFilters"))
+  {
+    Aws::Utils::Array<JsonView> securityLevelFiltersJsonList = jsonValue.GetArray("securityLevelFilters");
+    for(unsigned securityLevelFiltersIndex = 0; securityLevelFiltersIndex < securityLevelFiltersJsonList.GetLength(); ++securityLevelFiltersIndex)
+    {
+      m_securityLevelFilters.push_back(securityLevelFiltersJsonList[securityLevelFiltersIndex].AsObject());
+    }
+    m_securityLevelFiltersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("findingArnFilters"))
+  {
+    Aws::Utils::Array<JsonView> findingArnFiltersJsonList = jsonValue.GetArray("findingArnFilters");
+    for(unsigned findingArnFiltersIndex = 0; findingArnFiltersIndex < findingArnFiltersJsonList.GetLength(); ++findingArnFiltersIndex)
+    {
+      m_findingArnFilters.push_back(findingArnFiltersJsonList[findingArnFiltersIndex].AsObject());
+    }
+    m_findingArnFiltersHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CisScanResultDetailsFilterCriteria::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingStatusFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> findingStatusFiltersJsonList(m_findingStatusFilters.size());
+   for(unsigned findingStatusFiltersIndex = 0; findingStatusFiltersIndex < findingStatusFiltersJsonList.GetLength(); ++findingStatusFiltersIndex)
+   {
+     findingStatusFiltersJsonList[findingStatusFiltersIndex].AsObject(m_findingStatusFilters[findingStatusFiltersIndex].Jsonize());
+   }
+   payload.WithArray("findingStatusFilters", std::move(findingStatusFiltersJsonList));
+
+  }
 
   if(m_checkIdFiltersHasBeenSet)
   {
@@ -88,25 +99,14 @@ JsonValue CisScanResultDetailsFilterCriteria::Jsonize() const
 
   }
 
-  if(m_findingArnFiltersHasBeenSet)
+  if(m_titleFiltersHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> findingArnFiltersJsonList(m_findingArnFilters.size());
-   for(unsigned findingArnFiltersIndex = 0; findingArnFiltersIndex < findingArnFiltersJsonList.GetLength(); ++findingArnFiltersIndex)
+   Aws::Utils::Array<JsonValue> titleFiltersJsonList(m_titleFilters.size());
+   for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
    {
-     findingArnFiltersJsonList[findingArnFiltersIndex].AsObject(m_findingArnFilters[findingArnFiltersIndex].Jsonize());
+     titleFiltersJsonList[titleFiltersIndex].AsObject(m_titleFilters[titleFiltersIndex].Jsonize());
    }
-   payload.WithArray("findingArnFilters", std::move(findingArnFiltersJsonList));
-
-  }
-
-  if(m_findingStatusFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> findingStatusFiltersJsonList(m_findingStatusFilters.size());
-   for(unsigned findingStatusFiltersIndex = 0; findingStatusFiltersIndex < findingStatusFiltersJsonList.GetLength(); ++findingStatusFiltersIndex)
-   {
-     findingStatusFiltersJsonList[findingStatusFiltersIndex].AsObject(m_findingStatusFilters[findingStatusFiltersIndex].Jsonize());
-   }
-   payload.WithArray("findingStatusFilters", std::move(findingStatusFiltersJsonList));
+   payload.WithArray("titleFilters", std::move(titleFiltersJsonList));
 
   }
 
@@ -121,14 +121,14 @@ JsonValue CisScanResultDetailsFilterCriteria::Jsonize() const
 
   }
 
-  if(m_titleFiltersHasBeenSet)
+  if(m_findingArnFiltersHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> titleFiltersJsonList(m_titleFilters.size());
-   for(unsigned titleFiltersIndex = 0; titleFiltersIndex < titleFiltersJsonList.GetLength(); ++titleFiltersIndex)
+   Aws::Utils::Array<JsonValue> findingArnFiltersJsonList(m_findingArnFilters.size());
+   for(unsigned findingArnFiltersIndex = 0; findingArnFiltersIndex < findingArnFiltersJsonList.GetLength(); ++findingArnFiltersIndex)
    {
-     titleFiltersJsonList[titleFiltersIndex].AsObject(m_titleFilters[titleFiltersIndex].Jsonize());
+     findingArnFiltersJsonList[findingArnFiltersIndex].AsObject(m_findingArnFilters[findingArnFiltersIndex].Jsonize());
    }
-   payload.WithArray("titleFilters", std::move(titleFiltersJsonList));
+   payload.WithArray("findingArnFilters", std::move(findingArnFiltersJsonList));
 
   }
 

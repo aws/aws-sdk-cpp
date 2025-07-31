@@ -8,6 +8,7 @@
 #include <aws/opensearch/model/MasterUserOptions.h>
 #include <aws/opensearch/model/SAMLOptionsInput.h>
 #include <aws/opensearch/model/JWTOptionsInput.h>
+#include <aws/opensearch/model/IAMFederationOptionsInput.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Container for information about the IAM federation configuration for an
+     * OpenSearch UI application.</p>
+     */
+    inline const IAMFederationOptionsInput& GetIAMFederationOptions() const { return m_iAMFederationOptions; }
+    inline bool IAMFederationOptionsHasBeenSet() const { return m_iAMFederationOptionsHasBeenSet; }
+    template<typename IAMFederationOptionsT = IAMFederationOptionsInput>
+    void SetIAMFederationOptions(IAMFederationOptionsT&& value) { m_iAMFederationOptionsHasBeenSet = true; m_iAMFederationOptions = std::forward<IAMFederationOptionsT>(value); }
+    template<typename IAMFederationOptionsT = IAMFederationOptionsInput>
+    AdvancedSecurityOptionsInput& WithIAMFederationOptions(IAMFederationOptionsT&& value) { SetIAMFederationOptions(std::forward<IAMFederationOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>True to enable a 30-day migration period during which administrators can
      * create role mappings. Only necessary when <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
@@ -128,6 +142,9 @@ namespace Model
 
     JWTOptionsInput m_jWTOptions;
     bool m_jWTOptionsHasBeenSet = false;
+
+    IAMFederationOptionsInput m_iAMFederationOptions;
+    bool m_iAMFederationOptionsHasBeenSet = false;
 
     bool m_anonymousAuthEnabled{false};
     bool m_anonymousAuthEnabledHasBeenSet = false;

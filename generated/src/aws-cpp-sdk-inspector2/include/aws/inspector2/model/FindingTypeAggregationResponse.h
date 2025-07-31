@@ -53,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The value to sort results by.</p>
+     */
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
+    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    FindingTypeAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of findings that have an exploit available.</p>
      */
     inline long long GetExploitAvailableCount() const { return m_exploitAvailableCount; }
@@ -70,31 +82,19 @@ namespace Model
     inline void SetFixAvailableCount(long long value) { m_fixAvailableCountHasBeenSet = true; m_fixAvailableCount = value; }
     inline FindingTypeAggregationResponse& WithFixAvailableCount(long long value) { SetFixAvailableCount(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The value to sort results by.</p>
-     */
-    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
-    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    template<typename SeverityCountsT = SeverityCounts>
-    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
-    template<typename SeverityCountsT = SeverityCounts>
-    FindingTypeAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    SeverityCounts m_severityCounts;
+    bool m_severityCountsHasBeenSet = false;
 
     long long m_exploitAvailableCount{0};
     bool m_exploitAvailableCountHasBeenSet = false;
 
     long long m_fixAvailableCount{0};
     bool m_fixAvailableCountHasBeenSet = false;
-
-    SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

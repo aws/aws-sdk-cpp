@@ -34,15 +34,15 @@ PackageAggregation& PackageAggregation::operator =(JsonView jsonValue)
     }
     m_packageNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
-  {
-    m_sortBy = PackageSortByMapper::GetPackageSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = PackageSortByMapper::GetPackageSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -62,14 +62,14 @@ JsonValue PackageAggregation::Jsonize() const
 
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", PackageSortByMapper::GetNameForPackageSortBy(m_sortBy));
-  }
-
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", PackageSortByMapper::GetNameForPackageSortBy(m_sortBy));
   }
 
   return payload;

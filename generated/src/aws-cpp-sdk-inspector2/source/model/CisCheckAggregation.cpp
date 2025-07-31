@@ -25,45 +25,45 @@ CisCheckAggregation::CisCheckAggregation(JsonView jsonValue)
 
 CisCheckAggregation& CisCheckAggregation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("scanArn"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("checkDescription"))
-  {
-    m_checkDescription = jsonValue.GetString("checkDescription");
-    m_checkDescriptionHasBeenSet = true;
+    m_scanArn = jsonValue.GetString("scanArn");
+    m_scanArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("checkId"))
   {
     m_checkId = jsonValue.GetString("checkId");
     m_checkIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("title"))
+  {
+    m_title = jsonValue.GetString("title");
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("checkDescription"))
+  {
+    m_checkDescription = jsonValue.GetString("checkDescription");
+    m_checkDescriptionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("level"))
   {
     m_level = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("level"));
     m_levelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platform"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_platform = jsonValue.GetString("platform");
-    m_platformHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanArn"))
-  {
-    m_scanArn = jsonValue.GetString("scanArn");
-    m_scanArnHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("statusCounts"))
   {
     m_statusCounts = jsonValue.GetObject("statusCounts");
     m_statusCountsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("title"))
+  if(jsonValue.ValueExists("platform"))
   {
-    m_title = jsonValue.GetString("title");
-    m_titleHasBeenSet = true;
+    m_platform = jsonValue.GetString("platform");
+    m_platformHasBeenSet = true;
   }
   return *this;
 }
@@ -72,15 +72,9 @@ JsonValue CisCheckAggregation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
+  if(m_scanArnHasBeenSet)
   {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
-  if(m_checkDescriptionHasBeenSet)
-  {
-   payload.WithString("checkDescription", m_checkDescription);
+   payload.WithString("scanArn", m_scanArn);
 
   }
 
@@ -90,20 +84,26 @@ JsonValue CisCheckAggregation::Jsonize() const
 
   }
 
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("title", m_title);
+
+  }
+
+  if(m_checkDescriptionHasBeenSet)
+  {
+   payload.WithString("checkDescription", m_checkDescription);
+
+  }
+
   if(m_levelHasBeenSet)
   {
    payload.WithString("level", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_level));
   }
 
-  if(m_platformHasBeenSet)
+  if(m_accountIdHasBeenSet)
   {
-   payload.WithString("platform", m_platform);
-
-  }
-
-  if(m_scanArnHasBeenSet)
-  {
-   payload.WithString("scanArn", m_scanArn);
+   payload.WithString("accountId", m_accountId);
 
   }
 
@@ -113,9 +113,9 @@ JsonValue CisCheckAggregation::Jsonize() const
 
   }
 
-  if(m_titleHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-   payload.WithString("title", m_title);
+   payload.WithString("platform", m_platform);
 
   }
 

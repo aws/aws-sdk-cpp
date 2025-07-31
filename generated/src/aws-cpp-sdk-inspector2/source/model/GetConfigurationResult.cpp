@@ -25,15 +25,15 @@ GetConfigurationResult::GetConfigurationResult(const Aws::AmazonWebServiceResult
 GetConfigurationResult& GetConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ec2Configuration"))
-  {
-    m_ec2Configuration = jsonValue.GetObject("ec2Configuration");
-    m_ec2ConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ecrConfiguration"))
   {
     m_ecrConfiguration = jsonValue.GetObject("ecrConfiguration");
     m_ecrConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ec2Configuration"))
+  {
+    m_ec2Configuration = jsonValue.GetObject("ec2Configuration");
+    m_ec2ConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

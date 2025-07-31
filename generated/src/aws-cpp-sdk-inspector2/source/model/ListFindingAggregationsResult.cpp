@@ -30,11 +30,6 @@ ListFindingAggregationsResult& ListFindingAggregationsResult::operator =(const A
     m_aggregationType = AggregationTypeMapper::GetAggregationTypeForName(jsonValue.GetString("aggregationType"));
     m_aggregationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("responses"))
   {
     Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("responses");
@@ -43,6 +38,11 @@ ListFindingAggregationsResult& ListFindingAggregationsResult::operator =(const A
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
     }
     m_responsesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

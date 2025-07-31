@@ -25,15 +25,15 @@ IpRule::IpRule(JsonView jsonValue)
 
 IpRule& IpRule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ipRange"))
   {
     m_ipRange = jsonValue.GetString("ipRange");
     m_ipRangeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue IpRule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_ipRangeHasBeenSet)
   {
    payload.WithString("ipRange", m_ipRange);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

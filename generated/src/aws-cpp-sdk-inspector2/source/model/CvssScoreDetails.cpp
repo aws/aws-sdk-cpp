@@ -25,6 +25,31 @@ CvssScoreDetails::CvssScoreDetails(JsonView jsonValue)
 
 CvssScoreDetails& CvssScoreDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("scoreSource"))
+  {
+    m_scoreSource = jsonValue.GetString("scoreSource");
+    m_scoreSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cvssSource"))
+  {
+    m_cvssSource = jsonValue.GetString("cvssSource");
+    m_cvssSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+    m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("score"))
+  {
+    m_score = jsonValue.GetDouble("score");
+    m_scoreHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("scoringVector"))
+  {
+    m_scoringVector = jsonValue.GetString("scoringVector");
+    m_scoringVectorHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("adjustments"))
   {
     Aws::Utils::Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("adjustments");
@@ -34,31 +59,6 @@ CvssScoreDetails& CvssScoreDetails::operator =(JsonView jsonValue)
     }
     m_adjustmentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cvssSource"))
-  {
-    m_cvssSource = jsonValue.GetString("cvssSource");
-    m_cvssSourceHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("score"))
-  {
-    m_score = jsonValue.GetDouble("score");
-    m_scoreHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scoreSource"))
-  {
-    m_scoreSource = jsonValue.GetString("scoreSource");
-    m_scoreSourceHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scoringVector"))
-  {
-    m_scoringVector = jsonValue.GetString("scoringVector");
-    m_scoringVectorHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("version"))
-  {
-    m_version = jsonValue.GetString("version");
-    m_versionHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -66,14 +66,9 @@ JsonValue CvssScoreDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_adjustmentsHasBeenSet)
+  if(m_scoreSourceHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
-   for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
-   {
-     adjustmentsJsonList[adjustmentsIndex].AsObject(m_adjustments[adjustmentsIndex].Jsonize());
-   }
-   payload.WithArray("adjustments", std::move(adjustmentsJsonList));
+   payload.WithString("scoreSource", m_scoreSource);
 
   }
 
@@ -83,15 +78,15 @@ JsonValue CvssScoreDetails::Jsonize() const
 
   }
 
-  if(m_scoreHasBeenSet)
+  if(m_versionHasBeenSet)
   {
-   payload.WithDouble("score", m_score);
+   payload.WithString("version", m_version);
 
   }
 
-  if(m_scoreSourceHasBeenSet)
+  if(m_scoreHasBeenSet)
   {
-   payload.WithString("scoreSource", m_scoreSource);
+   payload.WithDouble("score", m_score);
 
   }
 
@@ -101,9 +96,14 @@ JsonValue CvssScoreDetails::Jsonize() const
 
   }
 
-  if(m_versionHasBeenSet)
+  if(m_adjustmentsHasBeenSet)
   {
-   payload.WithString("version", m_version);
+   Aws::Utils::Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
+   for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
+   {
+     adjustmentsJsonList[adjustmentsIndex].AsObject(m_adjustments[adjustmentsIndex].Jsonize());
+   }
+   payload.WithArray("adjustments", std::move(adjustmentsJsonList));
 
   }
 

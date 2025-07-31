@@ -25,6 +25,15 @@ FilterCriteria::FilterCriteria(JsonView jsonValue)
 
 FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("findingArn"))
+  {
+    Aws::Utils::Array<JsonView> findingArnJsonList = jsonValue.GetArray("findingArn");
+    for(unsigned findingArnIndex = 0; findingArnIndex < findingArnJsonList.GetLength(); ++findingArnIndex)
+    {
+      m_findingArn.push_back(findingArnJsonList[findingArnIndex].AsObject());
+    }
+    m_findingArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("awsAccountId"))
   {
     Aws::Utils::Array<JsonView> awsAccountIdJsonList = jsonValue.GetArray("awsAccountId");
@@ -34,68 +43,104 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_awsAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeRepositoryProjectName"))
+  if(jsonValue.ValueExists("findingType"))
   {
-    Aws::Utils::Array<JsonView> codeRepositoryProjectNameJsonList = jsonValue.GetArray("codeRepositoryProjectName");
-    for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+    Aws::Utils::Array<JsonView> findingTypeJsonList = jsonValue.GetArray("findingType");
+    for(unsigned findingTypeIndex = 0; findingTypeIndex < findingTypeJsonList.GetLength(); ++findingTypeIndex)
     {
-      m_codeRepositoryProjectName.push_back(codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject());
+      m_findingType.push_back(findingTypeJsonList[findingTypeIndex].AsObject());
     }
-    m_codeRepositoryProjectNameHasBeenSet = true;
+    m_findingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeRepositoryProviderType"))
+  if(jsonValue.ValueExists("severity"))
   {
-    Aws::Utils::Array<JsonView> codeRepositoryProviderTypeJsonList = jsonValue.GetArray("codeRepositoryProviderType");
-    for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+    Aws::Utils::Array<JsonView> severityJsonList = jsonValue.GetArray("severity");
+    for(unsigned severityIndex = 0; severityIndex < severityJsonList.GetLength(); ++severityIndex)
     {
-      m_codeRepositoryProviderType.push_back(codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject());
+      m_severity.push_back(severityJsonList[severityIndex].AsObject());
     }
-    m_codeRepositoryProviderTypeHasBeenSet = true;
+    m_severityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeVulnerabilityDetectorName"))
+  if(jsonValue.ValueExists("firstObservedAt"))
   {
-    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorNameJsonList = jsonValue.GetArray("codeVulnerabilityDetectorName");
-    for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+    Aws::Utils::Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("firstObservedAt");
+    for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
     {
-      m_codeVulnerabilityDetectorName.push_back(codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject());
+      m_firstObservedAt.push_back(firstObservedAtJsonList[firstObservedAtIndex].AsObject());
     }
-    m_codeVulnerabilityDetectorNameHasBeenSet = true;
+    m_firstObservedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeVulnerabilityDetectorTags"))
+  if(jsonValue.ValueExists("lastObservedAt"))
   {
-    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorTagsJsonList = jsonValue.GetArray("codeVulnerabilityDetectorTags");
-    for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+    Aws::Utils::Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("lastObservedAt");
+    for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
     {
-      m_codeVulnerabilityDetectorTags.push_back(codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject());
+      m_lastObservedAt.push_back(lastObservedAtJsonList[lastObservedAtIndex].AsObject());
     }
-    m_codeVulnerabilityDetectorTagsHasBeenSet = true;
+    m_lastObservedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeVulnerabilityFilePath"))
+  if(jsonValue.ValueExists("updatedAt"))
   {
-    Aws::Utils::Array<JsonView> codeVulnerabilityFilePathJsonList = jsonValue.GetArray("codeVulnerabilityFilePath");
-    for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+    Aws::Utils::Array<JsonView> updatedAtJsonList = jsonValue.GetArray("updatedAt");
+    for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
     {
-      m_codeVulnerabilityFilePath.push_back(codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject());
+      m_updatedAt.push_back(updatedAtJsonList[updatedAtIndex].AsObject());
     }
-    m_codeVulnerabilityFilePathHasBeenSet = true;
+    m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("componentId"))
+  if(jsonValue.ValueExists("findingStatus"))
   {
-    Aws::Utils::Array<JsonView> componentIdJsonList = jsonValue.GetArray("componentId");
-    for(unsigned componentIdIndex = 0; componentIdIndex < componentIdJsonList.GetLength(); ++componentIdIndex)
+    Aws::Utils::Array<JsonView> findingStatusJsonList = jsonValue.GetArray("findingStatus");
+    for(unsigned findingStatusIndex = 0; findingStatusIndex < findingStatusJsonList.GetLength(); ++findingStatusIndex)
     {
-      m_componentId.push_back(componentIdJsonList[componentIdIndex].AsObject());
+      m_findingStatus.push_back(findingStatusJsonList[findingStatusIndex].AsObject());
     }
-    m_componentIdHasBeenSet = true;
+    m_findingStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("componentType"))
+  if(jsonValue.ValueExists("title"))
   {
-    Aws::Utils::Array<JsonView> componentTypeJsonList = jsonValue.GetArray("componentType");
-    for(unsigned componentTypeIndex = 0; componentTypeIndex < componentTypeJsonList.GetLength(); ++componentTypeIndex)
+    Aws::Utils::Array<JsonView> titleJsonList = jsonValue.GetArray("title");
+    for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
     {
-      m_componentType.push_back(componentTypeJsonList[componentTypeIndex].AsObject());
+      m_title.push_back(titleJsonList[titleIndex].AsObject());
     }
-    m_componentTypeHasBeenSet = true;
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inspectorScore"))
+  {
+    Aws::Utils::Array<JsonView> inspectorScoreJsonList = jsonValue.GetArray("inspectorScore");
+    for(unsigned inspectorScoreIndex = 0; inspectorScoreIndex < inspectorScoreJsonList.GetLength(); ++inspectorScoreIndex)
+    {
+      m_inspectorScore.push_back(inspectorScoreJsonList[inspectorScoreIndex].AsObject());
+    }
+    m_inspectorScoreHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceType"))
+  {
+    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
+    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
+    {
+      m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
+    }
+    m_resourceTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceId"))
+  {
+    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
+    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
+    {
+      m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
+    }
+    m_resourceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceTags"))
+  {
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
+    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+    {
+      m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
+    }
+    m_resourceTagsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ec2InstanceImageId"))
   {
@@ -106,15 +151,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceImageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ec2InstanceSubnetId"))
-  {
-    Aws::Utils::Array<JsonView> ec2InstanceSubnetIdJsonList = jsonValue.GetArray("ec2InstanceSubnetId");
-    for(unsigned ec2InstanceSubnetIdIndex = 0; ec2InstanceSubnetIdIndex < ec2InstanceSubnetIdJsonList.GetLength(); ++ec2InstanceSubnetIdIndex)
-    {
-      m_ec2InstanceSubnetId.push_back(ec2InstanceSubnetIdJsonList[ec2InstanceSubnetIdIndex].AsObject());
-    }
-    m_ec2InstanceSubnetIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ec2InstanceVpcId"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceVpcIdJsonList = jsonValue.GetArray("ec2InstanceVpcId");
@@ -124,41 +160,14 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceVpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecrImageArchitecture"))
+  if(jsonValue.ValueExists("ec2InstanceSubnetId"))
   {
-    Aws::Utils::Array<JsonView> ecrImageArchitectureJsonList = jsonValue.GetArray("ecrImageArchitecture");
-    for(unsigned ecrImageArchitectureIndex = 0; ecrImageArchitectureIndex < ecrImageArchitectureJsonList.GetLength(); ++ecrImageArchitectureIndex)
+    Aws::Utils::Array<JsonView> ec2InstanceSubnetIdJsonList = jsonValue.GetArray("ec2InstanceSubnetId");
+    for(unsigned ec2InstanceSubnetIdIndex = 0; ec2InstanceSubnetIdIndex < ec2InstanceSubnetIdJsonList.GetLength(); ++ec2InstanceSubnetIdIndex)
     {
-      m_ecrImageArchitecture.push_back(ecrImageArchitectureJsonList[ecrImageArchitectureIndex].AsObject());
+      m_ec2InstanceSubnetId.push_back(ec2InstanceSubnetIdJsonList[ec2InstanceSubnetIdIndex].AsObject());
     }
-    m_ecrImageArchitectureHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ecrImageHash"))
-  {
-    Aws::Utils::Array<JsonView> ecrImageHashJsonList = jsonValue.GetArray("ecrImageHash");
-    for(unsigned ecrImageHashIndex = 0; ecrImageHashIndex < ecrImageHashJsonList.GetLength(); ++ecrImageHashIndex)
-    {
-      m_ecrImageHash.push_back(ecrImageHashJsonList[ecrImageHashIndex].AsObject());
-    }
-    m_ecrImageHashHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ecrImageInUseCount"))
-  {
-    Aws::Utils::Array<JsonView> ecrImageInUseCountJsonList = jsonValue.GetArray("ecrImageInUseCount");
-    for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
-    {
-      m_ecrImageInUseCount.push_back(ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject());
-    }
-    m_ecrImageInUseCountHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ecrImageLastInUseAt"))
-  {
-    Aws::Utils::Array<JsonView> ecrImageLastInUseAtJsonList = jsonValue.GetArray("ecrImageLastInUseAt");
-    for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
-    {
-      m_ecrImageLastInUseAt.push_back(ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject());
-    }
-    m_ecrImageLastInUseAtHasBeenSet = true;
+    m_ec2InstanceSubnetIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ecrImagePushedAt"))
   {
@@ -168,6 +177,15 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
       m_ecrImagePushedAt.push_back(ecrImagePushedAtJsonList[ecrImagePushedAtIndex].AsObject());
     }
     m_ecrImagePushedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ecrImageArchitecture"))
+  {
+    Aws::Utils::Array<JsonView> ecrImageArchitectureJsonList = jsonValue.GetArray("ecrImageArchitecture");
+    for(unsigned ecrImageArchitectureIndex = 0; ecrImageArchitectureIndex < ecrImageArchitectureJsonList.GetLength(); ++ecrImageArchitectureIndex)
+    {
+      m_ecrImageArchitecture.push_back(ecrImageArchitectureJsonList[ecrImageArchitectureIndex].AsObject());
+    }
+    m_ecrImageArchitectureHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ecrImageRegistry"))
   {
@@ -196,140 +214,32 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("epssScore"))
+  if(jsonValue.ValueExists("ecrImageHash"))
   {
-    Aws::Utils::Array<JsonView> epssScoreJsonList = jsonValue.GetArray("epssScore");
-    for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+    Aws::Utils::Array<JsonView> ecrImageHashJsonList = jsonValue.GetArray("ecrImageHash");
+    for(unsigned ecrImageHashIndex = 0; ecrImageHashIndex < ecrImageHashJsonList.GetLength(); ++ecrImageHashIndex)
     {
-      m_epssScore.push_back(epssScoreJsonList[epssScoreIndex].AsObject());
+      m_ecrImageHash.push_back(ecrImageHashJsonList[ecrImageHashIndex].AsObject());
     }
-    m_epssScoreHasBeenSet = true;
+    m_ecrImageHashHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exploitAvailable"))
+  if(jsonValue.ValueExists("ecrImageLastInUseAt"))
   {
-    Aws::Utils::Array<JsonView> exploitAvailableJsonList = jsonValue.GetArray("exploitAvailable");
-    for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+    Aws::Utils::Array<JsonView> ecrImageLastInUseAtJsonList = jsonValue.GetArray("ecrImageLastInUseAt");
+    for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
     {
-      m_exploitAvailable.push_back(exploitAvailableJsonList[exploitAvailableIndex].AsObject());
+      m_ecrImageLastInUseAt.push_back(ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject());
     }
-    m_exploitAvailableHasBeenSet = true;
+    m_ecrImageLastInUseAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingArn"))
+  if(jsonValue.ValueExists("ecrImageInUseCount"))
   {
-    Aws::Utils::Array<JsonView> findingArnJsonList = jsonValue.GetArray("findingArn");
-    for(unsigned findingArnIndex = 0; findingArnIndex < findingArnJsonList.GetLength(); ++findingArnIndex)
+    Aws::Utils::Array<JsonView> ecrImageInUseCountJsonList = jsonValue.GetArray("ecrImageInUseCount");
+    for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
     {
-      m_findingArn.push_back(findingArnJsonList[findingArnIndex].AsObject());
+      m_ecrImageInUseCount.push_back(ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject());
     }
-    m_findingArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("findingStatus"))
-  {
-    Aws::Utils::Array<JsonView> findingStatusJsonList = jsonValue.GetArray("findingStatus");
-    for(unsigned findingStatusIndex = 0; findingStatusIndex < findingStatusJsonList.GetLength(); ++findingStatusIndex)
-    {
-      m_findingStatus.push_back(findingStatusJsonList[findingStatusIndex].AsObject());
-    }
-    m_findingStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("findingType"))
-  {
-    Aws::Utils::Array<JsonView> findingTypeJsonList = jsonValue.GetArray("findingType");
-    for(unsigned findingTypeIndex = 0; findingTypeIndex < findingTypeJsonList.GetLength(); ++findingTypeIndex)
-    {
-      m_findingType.push_back(findingTypeJsonList[findingTypeIndex].AsObject());
-    }
-    m_findingTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("firstObservedAt"))
-  {
-    Aws::Utils::Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("firstObservedAt");
-    for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
-    {
-      m_firstObservedAt.push_back(firstObservedAtJsonList[firstObservedAtIndex].AsObject());
-    }
-    m_firstObservedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("fixAvailable"))
-  {
-    Aws::Utils::Array<JsonView> fixAvailableJsonList = jsonValue.GetArray("fixAvailable");
-    for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
-    {
-      m_fixAvailable.push_back(fixAvailableJsonList[fixAvailableIndex].AsObject());
-    }
-    m_fixAvailableHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inspectorScore"))
-  {
-    Aws::Utils::Array<JsonView> inspectorScoreJsonList = jsonValue.GetArray("inspectorScore");
-    for(unsigned inspectorScoreIndex = 0; inspectorScoreIndex < inspectorScoreJsonList.GetLength(); ++inspectorScoreIndex)
-    {
-      m_inspectorScore.push_back(inspectorScoreJsonList[inspectorScoreIndex].AsObject());
-    }
-    m_inspectorScoreHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaFunctionExecutionRoleArn"))
-  {
-    Aws::Utils::Array<JsonView> lambdaFunctionExecutionRoleArnJsonList = jsonValue.GetArray("lambdaFunctionExecutionRoleArn");
-    for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
-    {
-      m_lambdaFunctionExecutionRoleArn.push_back(lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject());
-    }
-    m_lambdaFunctionExecutionRoleArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaFunctionLastModifiedAt"))
-  {
-    Aws::Utils::Array<JsonView> lambdaFunctionLastModifiedAtJsonList = jsonValue.GetArray("lambdaFunctionLastModifiedAt");
-    for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
-    {
-      m_lambdaFunctionLastModifiedAt.push_back(lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject());
-    }
-    m_lambdaFunctionLastModifiedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaFunctionLayers"))
-  {
-    Aws::Utils::Array<JsonView> lambdaFunctionLayersJsonList = jsonValue.GetArray("lambdaFunctionLayers");
-    for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
-    {
-      m_lambdaFunctionLayers.push_back(lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject());
-    }
-    m_lambdaFunctionLayersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaFunctionName"))
-  {
-    Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
-    for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
-    {
-      m_lambdaFunctionName.push_back(lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject());
-    }
-    m_lambdaFunctionNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaFunctionRuntime"))
-  {
-    Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
-    for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
-    {
-      m_lambdaFunctionRuntime.push_back(lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject());
-    }
-    m_lambdaFunctionRuntimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastObservedAt"))
-  {
-    Aws::Utils::Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("lastObservedAt");
-    for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
-    {
-      m_lastObservedAt.push_back(lastObservedAtJsonList[lastObservedAtIndex].AsObject());
-    }
-    m_lastObservedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("networkProtocol"))
-  {
-    Aws::Utils::Array<JsonView> networkProtocolJsonList = jsonValue.GetArray("networkProtocol");
-    for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
-    {
-      m_networkProtocol.push_back(networkProtocolJsonList[networkProtocolIndex].AsObject());
-    }
-    m_networkProtocolHasBeenSet = true;
+    m_ecrImageInUseCountHasBeenSet = true;
   }
   if(jsonValue.ValueExists("portRange"))
   {
@@ -340,77 +250,32 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_portRangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relatedVulnerabilities"))
+  if(jsonValue.ValueExists("networkProtocol"))
   {
-    Aws::Utils::Array<JsonView> relatedVulnerabilitiesJsonList = jsonValue.GetArray("relatedVulnerabilities");
-    for(unsigned relatedVulnerabilitiesIndex = 0; relatedVulnerabilitiesIndex < relatedVulnerabilitiesJsonList.GetLength(); ++relatedVulnerabilitiesIndex)
+    Aws::Utils::Array<JsonView> networkProtocolJsonList = jsonValue.GetArray("networkProtocol");
+    for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
     {
-      m_relatedVulnerabilities.push_back(relatedVulnerabilitiesJsonList[relatedVulnerabilitiesIndex].AsObject());
+      m_networkProtocol.push_back(networkProtocolJsonList[networkProtocolIndex].AsObject());
     }
-    m_relatedVulnerabilitiesHasBeenSet = true;
+    m_networkProtocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
+  if(jsonValue.ValueExists("componentId"))
   {
-    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
-    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
+    Aws::Utils::Array<JsonView> componentIdJsonList = jsonValue.GetArray("componentId");
+    for(unsigned componentIdIndex = 0; componentIdIndex < componentIdJsonList.GetLength(); ++componentIdIndex)
     {
-      m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
+      m_componentId.push_back(componentIdJsonList[componentIdIndex].AsObject());
     }
-    m_resourceIdHasBeenSet = true;
+    m_componentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceTags"))
+  if(jsonValue.ValueExists("componentType"))
   {
-    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
-    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+    Aws::Utils::Array<JsonView> componentTypeJsonList = jsonValue.GetArray("componentType");
+    for(unsigned componentTypeIndex = 0; componentTypeIndex < componentTypeJsonList.GetLength(); ++componentTypeIndex)
     {
-      m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
+      m_componentType.push_back(componentTypeJsonList[componentTypeIndex].AsObject());
     }
-    m_resourceTagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceType"))
-  {
-    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
-    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
-    {
-      m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
-    }
-    m_resourceTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("severity"))
-  {
-    Aws::Utils::Array<JsonView> severityJsonList = jsonValue.GetArray("severity");
-    for(unsigned severityIndex = 0; severityIndex < severityJsonList.GetLength(); ++severityIndex)
-    {
-      m_severity.push_back(severityJsonList[severityIndex].AsObject());
-    }
-    m_severityHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("title"))
-  {
-    Aws::Utils::Array<JsonView> titleJsonList = jsonValue.GetArray("title");
-    for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
-    {
-      m_title.push_back(titleJsonList[titleIndex].AsObject());
-    }
-    m_titleHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    Aws::Utils::Array<JsonView> updatedAtJsonList = jsonValue.GetArray("updatedAt");
-    for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
-    {
-      m_updatedAt.push_back(updatedAtJsonList[updatedAtIndex].AsObject());
-    }
-    m_updatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("vendorSeverity"))
-  {
-    Aws::Utils::Array<JsonView> vendorSeverityJsonList = jsonValue.GetArray("vendorSeverity");
-    for(unsigned vendorSeverityIndex = 0; vendorSeverityIndex < vendorSeverityJsonList.GetLength(); ++vendorSeverityIndex)
-    {
-      m_vendorSeverity.push_back(vendorSeverityJsonList[vendorSeverityIndex].AsObject());
-    }
-    m_vendorSeverityHasBeenSet = true;
+    m_componentTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vulnerabilityId"))
   {
@@ -430,6 +295,15 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vulnerabilitySourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("vendorSeverity"))
+  {
+    Aws::Utils::Array<JsonView> vendorSeverityJsonList = jsonValue.GetArray("vendorSeverity");
+    for(unsigned vendorSeverityIndex = 0; vendorSeverityIndex < vendorSeverityJsonList.GetLength(); ++vendorSeverityIndex)
+    {
+      m_vendorSeverity.push_back(vendorSeverityJsonList[vendorSeverityIndex].AsObject());
+    }
+    m_vendorSeverityHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("vulnerablePackages"))
   {
     Aws::Utils::Array<JsonView> vulnerablePackagesJsonList = jsonValue.GetArray("vulnerablePackages");
@@ -439,12 +313,149 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vulnerablePackagesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("relatedVulnerabilities"))
+  {
+    Aws::Utils::Array<JsonView> relatedVulnerabilitiesJsonList = jsonValue.GetArray("relatedVulnerabilities");
+    for(unsigned relatedVulnerabilitiesIndex = 0; relatedVulnerabilitiesIndex < relatedVulnerabilitiesJsonList.GetLength(); ++relatedVulnerabilitiesIndex)
+    {
+      m_relatedVulnerabilities.push_back(relatedVulnerabilitiesJsonList[relatedVulnerabilitiesIndex].AsObject());
+    }
+    m_relatedVulnerabilitiesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fixAvailable"))
+  {
+    Aws::Utils::Array<JsonView> fixAvailableJsonList = jsonValue.GetArray("fixAvailable");
+    for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
+    {
+      m_fixAvailable.push_back(fixAvailableJsonList[fixAvailableIndex].AsObject());
+    }
+    m_fixAvailableHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionName"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
+    for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+    {
+      m_lambdaFunctionName.push_back(lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject());
+    }
+    m_lambdaFunctionNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionLayers"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionLayersJsonList = jsonValue.GetArray("lambdaFunctionLayers");
+    for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
+    {
+      m_lambdaFunctionLayers.push_back(lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject());
+    }
+    m_lambdaFunctionLayersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionRuntime"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
+    for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+    {
+      m_lambdaFunctionRuntime.push_back(lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject());
+    }
+    m_lambdaFunctionRuntimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionLastModifiedAt"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionLastModifiedAtJsonList = jsonValue.GetArray("lambdaFunctionLastModifiedAt");
+    for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
+    {
+      m_lambdaFunctionLastModifiedAt.push_back(lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject());
+    }
+    m_lambdaFunctionLastModifiedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionExecutionRoleArn"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionExecutionRoleArnJsonList = jsonValue.GetArray("lambdaFunctionExecutionRoleArn");
+    for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
+    {
+      m_lambdaFunctionExecutionRoleArn.push_back(lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject());
+    }
+    m_lambdaFunctionExecutionRoleArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("exploitAvailable"))
+  {
+    Aws::Utils::Array<JsonView> exploitAvailableJsonList = jsonValue.GetArray("exploitAvailable");
+    for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+    {
+      m_exploitAvailable.push_back(exploitAvailableJsonList[exploitAvailableIndex].AsObject());
+    }
+    m_exploitAvailableHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeVulnerabilityDetectorName"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorNameJsonList = jsonValue.GetArray("codeVulnerabilityDetectorName");
+    for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+    {
+      m_codeVulnerabilityDetectorName.push_back(codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject());
+    }
+    m_codeVulnerabilityDetectorNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeVulnerabilityDetectorTags"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorTagsJsonList = jsonValue.GetArray("codeVulnerabilityDetectorTags");
+    for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+    {
+      m_codeVulnerabilityDetectorTags.push_back(codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject());
+    }
+    m_codeVulnerabilityDetectorTagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeVulnerabilityFilePath"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityFilePathJsonList = jsonValue.GetArray("codeVulnerabilityFilePath");
+    for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+    {
+      m_codeVulnerabilityFilePath.push_back(codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject());
+    }
+    m_codeVulnerabilityFilePathHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("epssScore"))
+  {
+    Aws::Utils::Array<JsonView> epssScoreJsonList = jsonValue.GetArray("epssScore");
+    for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+    {
+      m_epssScore.push_back(epssScoreJsonList[epssScoreIndex].AsObject());
+    }
+    m_epssScoreHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryProjectName"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProjectNameJsonList = jsonValue.GetArray("codeRepositoryProjectName");
+    for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+    {
+      m_codeRepositoryProjectName.push_back(codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject());
+    }
+    m_codeRepositoryProjectNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryProviderType"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoryProviderTypeJsonList = jsonValue.GetArray("codeRepositoryProviderType");
+    for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+    {
+      m_codeRepositoryProviderType.push_back(codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject());
+    }
+    m_codeRepositoryProviderTypeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FilterCriteria::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingArnHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> findingArnJsonList(m_findingArn.size());
+   for(unsigned findingArnIndex = 0; findingArnIndex < findingArnJsonList.GetLength(); ++findingArnIndex)
+   {
+     findingArnJsonList[findingArnIndex].AsObject(m_findingArn[findingArnIndex].Jsonize());
+   }
+   payload.WithArray("findingArn", std::move(findingArnJsonList));
+
+  }
 
   if(m_awsAccountIdHasBeenSet)
   {
@@ -457,80 +468,124 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
-  if(m_codeRepositoryProjectNameHasBeenSet)
+  if(m_findingTypeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> codeRepositoryProjectNameJsonList(m_codeRepositoryProjectName.size());
-   for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+   Aws::Utils::Array<JsonValue> findingTypeJsonList(m_findingType.size());
+   for(unsigned findingTypeIndex = 0; findingTypeIndex < findingTypeJsonList.GetLength(); ++findingTypeIndex)
    {
-     codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject(m_codeRepositoryProjectName[codeRepositoryProjectNameIndex].Jsonize());
+     findingTypeJsonList[findingTypeIndex].AsObject(m_findingType[findingTypeIndex].Jsonize());
    }
-   payload.WithArray("codeRepositoryProjectName", std::move(codeRepositoryProjectNameJsonList));
+   payload.WithArray("findingType", std::move(findingTypeJsonList));
 
   }
 
-  if(m_codeRepositoryProviderTypeHasBeenSet)
+  if(m_severityHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> codeRepositoryProviderTypeJsonList(m_codeRepositoryProviderType.size());
-   for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+   Aws::Utils::Array<JsonValue> severityJsonList(m_severity.size());
+   for(unsigned severityIndex = 0; severityIndex < severityJsonList.GetLength(); ++severityIndex)
    {
-     codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject(m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
+     severityJsonList[severityIndex].AsObject(m_severity[severityIndex].Jsonize());
    }
-   payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
+   payload.WithArray("severity", std::move(severityJsonList));
 
   }
 
-  if(m_codeVulnerabilityDetectorNameHasBeenSet)
+  if(m_firstObservedAtHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorNameJsonList(m_codeVulnerabilityDetectorName.size());
-   for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+   Aws::Utils::Array<JsonValue> firstObservedAtJsonList(m_firstObservedAt.size());
+   for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
    {
-     codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject(m_codeVulnerabilityDetectorName[codeVulnerabilityDetectorNameIndex].Jsonize());
+     firstObservedAtJsonList[firstObservedAtIndex].AsObject(m_firstObservedAt[firstObservedAtIndex].Jsonize());
    }
-   payload.WithArray("codeVulnerabilityDetectorName", std::move(codeVulnerabilityDetectorNameJsonList));
+   payload.WithArray("firstObservedAt", std::move(firstObservedAtJsonList));
 
   }
 
-  if(m_codeVulnerabilityDetectorTagsHasBeenSet)
+  if(m_lastObservedAtHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorTagsJsonList(m_codeVulnerabilityDetectorTags.size());
-   for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+   Aws::Utils::Array<JsonValue> lastObservedAtJsonList(m_lastObservedAt.size());
+   for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
    {
-     codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject(m_codeVulnerabilityDetectorTags[codeVulnerabilityDetectorTagsIndex].Jsonize());
+     lastObservedAtJsonList[lastObservedAtIndex].AsObject(m_lastObservedAt[lastObservedAtIndex].Jsonize());
    }
-   payload.WithArray("codeVulnerabilityDetectorTags", std::move(codeVulnerabilityDetectorTagsJsonList));
+   payload.WithArray("lastObservedAt", std::move(lastObservedAtJsonList));
 
   }
 
-  if(m_codeVulnerabilityFilePathHasBeenSet)
+  if(m_updatedAtHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> codeVulnerabilityFilePathJsonList(m_codeVulnerabilityFilePath.size());
-   for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+   Aws::Utils::Array<JsonValue> updatedAtJsonList(m_updatedAt.size());
+   for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
    {
-     codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject(m_codeVulnerabilityFilePath[codeVulnerabilityFilePathIndex].Jsonize());
+     updatedAtJsonList[updatedAtIndex].AsObject(m_updatedAt[updatedAtIndex].Jsonize());
    }
-   payload.WithArray("codeVulnerabilityFilePath", std::move(codeVulnerabilityFilePathJsonList));
+   payload.WithArray("updatedAt", std::move(updatedAtJsonList));
 
   }
 
-  if(m_componentIdHasBeenSet)
+  if(m_findingStatusHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> componentIdJsonList(m_componentId.size());
-   for(unsigned componentIdIndex = 0; componentIdIndex < componentIdJsonList.GetLength(); ++componentIdIndex)
+   Aws::Utils::Array<JsonValue> findingStatusJsonList(m_findingStatus.size());
+   for(unsigned findingStatusIndex = 0; findingStatusIndex < findingStatusJsonList.GetLength(); ++findingStatusIndex)
    {
-     componentIdJsonList[componentIdIndex].AsObject(m_componentId[componentIdIndex].Jsonize());
+     findingStatusJsonList[findingStatusIndex].AsObject(m_findingStatus[findingStatusIndex].Jsonize());
    }
-   payload.WithArray("componentId", std::move(componentIdJsonList));
+   payload.WithArray("findingStatus", std::move(findingStatusJsonList));
 
   }
 
-  if(m_componentTypeHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> componentTypeJsonList(m_componentType.size());
-   for(unsigned componentTypeIndex = 0; componentTypeIndex < componentTypeJsonList.GetLength(); ++componentTypeIndex)
+   Aws::Utils::Array<JsonValue> titleJsonList(m_title.size());
+   for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
    {
-     componentTypeJsonList[componentTypeIndex].AsObject(m_componentType[componentTypeIndex].Jsonize());
+     titleJsonList[titleIndex].AsObject(m_title[titleIndex].Jsonize());
    }
-   payload.WithArray("componentType", std::move(componentTypeJsonList));
+   payload.WithArray("title", std::move(titleJsonList));
+
+  }
+
+  if(m_inspectorScoreHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inspectorScoreJsonList(m_inspectorScore.size());
+   for(unsigned inspectorScoreIndex = 0; inspectorScoreIndex < inspectorScoreJsonList.GetLength(); ++inspectorScoreIndex)
+   {
+     inspectorScoreJsonList[inspectorScoreIndex].AsObject(m_inspectorScore[inspectorScoreIndex].Jsonize());
+   }
+   payload.WithArray("inspectorScore", std::move(inspectorScoreJsonList));
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
+   for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
+   {
+     resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
+   }
+   payload.WithArray("resourceType", std::move(resourceTypeJsonList));
+
+  }
+
+  if(m_resourceIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
+   for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
+   {
+     resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
+   }
+   payload.WithArray("resourceId", std::move(resourceIdJsonList));
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   {
+     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("resourceTags", std::move(resourceTagsJsonList));
 
   }
 
@@ -545,17 +600,6 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
-  if(m_ec2InstanceSubnetIdHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ec2InstanceSubnetIdJsonList(m_ec2InstanceSubnetId.size());
-   for(unsigned ec2InstanceSubnetIdIndex = 0; ec2InstanceSubnetIdIndex < ec2InstanceSubnetIdJsonList.GetLength(); ++ec2InstanceSubnetIdIndex)
-   {
-     ec2InstanceSubnetIdJsonList[ec2InstanceSubnetIdIndex].AsObject(m_ec2InstanceSubnetId[ec2InstanceSubnetIdIndex].Jsonize());
-   }
-   payload.WithArray("ec2InstanceSubnetId", std::move(ec2InstanceSubnetIdJsonList));
-
-  }
-
   if(m_ec2InstanceVpcIdHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> ec2InstanceVpcIdJsonList(m_ec2InstanceVpcId.size());
@@ -567,47 +611,14 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
-  if(m_ecrImageArchitectureHasBeenSet)
+  if(m_ec2InstanceSubnetIdHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> ecrImageArchitectureJsonList(m_ecrImageArchitecture.size());
-   for(unsigned ecrImageArchitectureIndex = 0; ecrImageArchitectureIndex < ecrImageArchitectureJsonList.GetLength(); ++ecrImageArchitectureIndex)
+   Aws::Utils::Array<JsonValue> ec2InstanceSubnetIdJsonList(m_ec2InstanceSubnetId.size());
+   for(unsigned ec2InstanceSubnetIdIndex = 0; ec2InstanceSubnetIdIndex < ec2InstanceSubnetIdJsonList.GetLength(); ++ec2InstanceSubnetIdIndex)
    {
-     ecrImageArchitectureJsonList[ecrImageArchitectureIndex].AsObject(m_ecrImageArchitecture[ecrImageArchitectureIndex].Jsonize());
+     ec2InstanceSubnetIdJsonList[ec2InstanceSubnetIdIndex].AsObject(m_ec2InstanceSubnetId[ec2InstanceSubnetIdIndex].Jsonize());
    }
-   payload.WithArray("ecrImageArchitecture", std::move(ecrImageArchitectureJsonList));
-
-  }
-
-  if(m_ecrImageHashHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ecrImageHashJsonList(m_ecrImageHash.size());
-   for(unsigned ecrImageHashIndex = 0; ecrImageHashIndex < ecrImageHashJsonList.GetLength(); ++ecrImageHashIndex)
-   {
-     ecrImageHashJsonList[ecrImageHashIndex].AsObject(m_ecrImageHash[ecrImageHashIndex].Jsonize());
-   }
-   payload.WithArray("ecrImageHash", std::move(ecrImageHashJsonList));
-
-  }
-
-  if(m_ecrImageInUseCountHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ecrImageInUseCountJsonList(m_ecrImageInUseCount.size());
-   for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
-   {
-     ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject(m_ecrImageInUseCount[ecrImageInUseCountIndex].Jsonize());
-   }
-   payload.WithArray("ecrImageInUseCount", std::move(ecrImageInUseCountJsonList));
-
-  }
-
-  if(m_ecrImageLastInUseAtHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ecrImageLastInUseAtJsonList(m_ecrImageLastInUseAt.size());
-   for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
-   {
-     ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject(m_ecrImageLastInUseAt[ecrImageLastInUseAtIndex].Jsonize());
-   }
-   payload.WithArray("ecrImageLastInUseAt", std::move(ecrImageLastInUseAtJsonList));
+   payload.WithArray("ec2InstanceSubnetId", std::move(ec2InstanceSubnetIdJsonList));
 
   }
 
@@ -619,6 +630,17 @@ JsonValue FilterCriteria::Jsonize() const
      ecrImagePushedAtJsonList[ecrImagePushedAtIndex].AsObject(m_ecrImagePushedAt[ecrImagePushedAtIndex].Jsonize());
    }
    payload.WithArray("ecrImagePushedAt", std::move(ecrImagePushedAtJsonList));
+
+  }
+
+  if(m_ecrImageArchitectureHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ecrImageArchitectureJsonList(m_ecrImageArchitecture.size());
+   for(unsigned ecrImageArchitectureIndex = 0; ecrImageArchitectureIndex < ecrImageArchitectureJsonList.GetLength(); ++ecrImageArchitectureIndex)
+   {
+     ecrImageArchitectureJsonList[ecrImageArchitectureIndex].AsObject(m_ecrImageArchitecture[ecrImageArchitectureIndex].Jsonize());
+   }
+   payload.WithArray("ecrImageArchitecture", std::move(ecrImageArchitectureJsonList));
 
   }
 
@@ -655,168 +677,36 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
-  if(m_epssScoreHasBeenSet)
+  if(m_ecrImageHashHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> epssScoreJsonList(m_epssScore.size());
-   for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+   Aws::Utils::Array<JsonValue> ecrImageHashJsonList(m_ecrImageHash.size());
+   for(unsigned ecrImageHashIndex = 0; ecrImageHashIndex < ecrImageHashJsonList.GetLength(); ++ecrImageHashIndex)
    {
-     epssScoreJsonList[epssScoreIndex].AsObject(m_epssScore[epssScoreIndex].Jsonize());
+     ecrImageHashJsonList[ecrImageHashIndex].AsObject(m_ecrImageHash[ecrImageHashIndex].Jsonize());
    }
-   payload.WithArray("epssScore", std::move(epssScoreJsonList));
+   payload.WithArray("ecrImageHash", std::move(ecrImageHashJsonList));
 
   }
 
-  if(m_exploitAvailableHasBeenSet)
+  if(m_ecrImageLastInUseAtHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> exploitAvailableJsonList(m_exploitAvailable.size());
-   for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+   Aws::Utils::Array<JsonValue> ecrImageLastInUseAtJsonList(m_ecrImageLastInUseAt.size());
+   for(unsigned ecrImageLastInUseAtIndex = 0; ecrImageLastInUseAtIndex < ecrImageLastInUseAtJsonList.GetLength(); ++ecrImageLastInUseAtIndex)
    {
-     exploitAvailableJsonList[exploitAvailableIndex].AsObject(m_exploitAvailable[exploitAvailableIndex].Jsonize());
+     ecrImageLastInUseAtJsonList[ecrImageLastInUseAtIndex].AsObject(m_ecrImageLastInUseAt[ecrImageLastInUseAtIndex].Jsonize());
    }
-   payload.WithArray("exploitAvailable", std::move(exploitAvailableJsonList));
+   payload.WithArray("ecrImageLastInUseAt", std::move(ecrImageLastInUseAtJsonList));
 
   }
 
-  if(m_findingArnHasBeenSet)
+  if(m_ecrImageInUseCountHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> findingArnJsonList(m_findingArn.size());
-   for(unsigned findingArnIndex = 0; findingArnIndex < findingArnJsonList.GetLength(); ++findingArnIndex)
+   Aws::Utils::Array<JsonValue> ecrImageInUseCountJsonList(m_ecrImageInUseCount.size());
+   for(unsigned ecrImageInUseCountIndex = 0; ecrImageInUseCountIndex < ecrImageInUseCountJsonList.GetLength(); ++ecrImageInUseCountIndex)
    {
-     findingArnJsonList[findingArnIndex].AsObject(m_findingArn[findingArnIndex].Jsonize());
+     ecrImageInUseCountJsonList[ecrImageInUseCountIndex].AsObject(m_ecrImageInUseCount[ecrImageInUseCountIndex].Jsonize());
    }
-   payload.WithArray("findingArn", std::move(findingArnJsonList));
-
-  }
-
-  if(m_findingStatusHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> findingStatusJsonList(m_findingStatus.size());
-   for(unsigned findingStatusIndex = 0; findingStatusIndex < findingStatusJsonList.GetLength(); ++findingStatusIndex)
-   {
-     findingStatusJsonList[findingStatusIndex].AsObject(m_findingStatus[findingStatusIndex].Jsonize());
-   }
-   payload.WithArray("findingStatus", std::move(findingStatusJsonList));
-
-  }
-
-  if(m_findingTypeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> findingTypeJsonList(m_findingType.size());
-   for(unsigned findingTypeIndex = 0; findingTypeIndex < findingTypeJsonList.GetLength(); ++findingTypeIndex)
-   {
-     findingTypeJsonList[findingTypeIndex].AsObject(m_findingType[findingTypeIndex].Jsonize());
-   }
-   payload.WithArray("findingType", std::move(findingTypeJsonList));
-
-  }
-
-  if(m_firstObservedAtHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> firstObservedAtJsonList(m_firstObservedAt.size());
-   for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
-   {
-     firstObservedAtJsonList[firstObservedAtIndex].AsObject(m_firstObservedAt[firstObservedAtIndex].Jsonize());
-   }
-   payload.WithArray("firstObservedAt", std::move(firstObservedAtJsonList));
-
-  }
-
-  if(m_fixAvailableHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fixAvailableJsonList(m_fixAvailable.size());
-   for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
-   {
-     fixAvailableJsonList[fixAvailableIndex].AsObject(m_fixAvailable[fixAvailableIndex].Jsonize());
-   }
-   payload.WithArray("fixAvailable", std::move(fixAvailableJsonList));
-
-  }
-
-  if(m_inspectorScoreHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inspectorScoreJsonList(m_inspectorScore.size());
-   for(unsigned inspectorScoreIndex = 0; inspectorScoreIndex < inspectorScoreJsonList.GetLength(); ++inspectorScoreIndex)
-   {
-     inspectorScoreJsonList[inspectorScoreIndex].AsObject(m_inspectorScore[inspectorScoreIndex].Jsonize());
-   }
-   payload.WithArray("inspectorScore", std::move(inspectorScoreJsonList));
-
-  }
-
-  if(m_lambdaFunctionExecutionRoleArnHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lambdaFunctionExecutionRoleArnJsonList(m_lambdaFunctionExecutionRoleArn.size());
-   for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
-   {
-     lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject(m_lambdaFunctionExecutionRoleArn[lambdaFunctionExecutionRoleArnIndex].Jsonize());
-   }
-   payload.WithArray("lambdaFunctionExecutionRoleArn", std::move(lambdaFunctionExecutionRoleArnJsonList));
-
-  }
-
-  if(m_lambdaFunctionLastModifiedAtHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lambdaFunctionLastModifiedAtJsonList(m_lambdaFunctionLastModifiedAt.size());
-   for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
-   {
-     lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject(m_lambdaFunctionLastModifiedAt[lambdaFunctionLastModifiedAtIndex].Jsonize());
-   }
-   payload.WithArray("lambdaFunctionLastModifiedAt", std::move(lambdaFunctionLastModifiedAtJsonList));
-
-  }
-
-  if(m_lambdaFunctionLayersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lambdaFunctionLayersJsonList(m_lambdaFunctionLayers.size());
-   for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
-   {
-     lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject(m_lambdaFunctionLayers[lambdaFunctionLayersIndex].Jsonize());
-   }
-   payload.WithArray("lambdaFunctionLayers", std::move(lambdaFunctionLayersJsonList));
-
-  }
-
-  if(m_lambdaFunctionNameHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lambdaFunctionNameJsonList(m_lambdaFunctionName.size());
-   for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
-   {
-     lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject(m_lambdaFunctionName[lambdaFunctionNameIndex].Jsonize());
-   }
-   payload.WithArray("lambdaFunctionName", std::move(lambdaFunctionNameJsonList));
-
-  }
-
-  if(m_lambdaFunctionRuntimeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lambdaFunctionRuntimeJsonList(m_lambdaFunctionRuntime.size());
-   for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
-   {
-     lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
-   }
-   payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
-
-  }
-
-  if(m_lastObservedAtHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lastObservedAtJsonList(m_lastObservedAt.size());
-   for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
-   {
-     lastObservedAtJsonList[lastObservedAtIndex].AsObject(m_lastObservedAt[lastObservedAtIndex].Jsonize());
-   }
-   payload.WithArray("lastObservedAt", std::move(lastObservedAtJsonList));
-
-  }
-
-  if(m_networkProtocolHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> networkProtocolJsonList(m_networkProtocol.size());
-   for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
-   {
-     networkProtocolJsonList[networkProtocolIndex].AsObject(m_networkProtocol[networkProtocolIndex].Jsonize());
-   }
-   payload.WithArray("networkProtocol", std::move(networkProtocolJsonList));
+   payload.WithArray("ecrImageInUseCount", std::move(ecrImageInUseCountJsonList));
 
   }
 
@@ -831,91 +721,36 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
-  if(m_relatedVulnerabilitiesHasBeenSet)
+  if(m_networkProtocolHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> relatedVulnerabilitiesJsonList(m_relatedVulnerabilities.size());
-   for(unsigned relatedVulnerabilitiesIndex = 0; relatedVulnerabilitiesIndex < relatedVulnerabilitiesJsonList.GetLength(); ++relatedVulnerabilitiesIndex)
+   Aws::Utils::Array<JsonValue> networkProtocolJsonList(m_networkProtocol.size());
+   for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
    {
-     relatedVulnerabilitiesJsonList[relatedVulnerabilitiesIndex].AsObject(m_relatedVulnerabilities[relatedVulnerabilitiesIndex].Jsonize());
+     networkProtocolJsonList[networkProtocolIndex].AsObject(m_networkProtocol[networkProtocolIndex].Jsonize());
    }
-   payload.WithArray("relatedVulnerabilities", std::move(relatedVulnerabilitiesJsonList));
+   payload.WithArray("networkProtocol", std::move(networkProtocolJsonList));
 
   }
 
-  if(m_resourceIdHasBeenSet)
+  if(m_componentIdHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
-   for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
+   Aws::Utils::Array<JsonValue> componentIdJsonList(m_componentId.size());
+   for(unsigned componentIdIndex = 0; componentIdIndex < componentIdJsonList.GetLength(); ++componentIdIndex)
    {
-     resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
+     componentIdJsonList[componentIdIndex].AsObject(m_componentId[componentIdIndex].Jsonize());
    }
-   payload.WithArray("resourceId", std::move(resourceIdJsonList));
+   payload.WithArray("componentId", std::move(componentIdJsonList));
 
   }
 
-  if(m_resourceTagsHasBeenSet)
+  if(m_componentTypeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
-   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   Aws::Utils::Array<JsonValue> componentTypeJsonList(m_componentType.size());
+   for(unsigned componentTypeIndex = 0; componentTypeIndex < componentTypeJsonList.GetLength(); ++componentTypeIndex)
    {
-     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+     componentTypeJsonList[componentTypeIndex].AsObject(m_componentType[componentTypeIndex].Jsonize());
    }
-   payload.WithArray("resourceTags", std::move(resourceTagsJsonList));
-
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
-   for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
-   {
-     resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
-   }
-   payload.WithArray("resourceType", std::move(resourceTypeJsonList));
-
-  }
-
-  if(m_severityHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> severityJsonList(m_severity.size());
-   for(unsigned severityIndex = 0; severityIndex < severityJsonList.GetLength(); ++severityIndex)
-   {
-     severityJsonList[severityIndex].AsObject(m_severity[severityIndex].Jsonize());
-   }
-   payload.WithArray("severity", std::move(severityJsonList));
-
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> titleJsonList(m_title.size());
-   for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
-   {
-     titleJsonList[titleIndex].AsObject(m_title[titleIndex].Jsonize());
-   }
-   payload.WithArray("title", std::move(titleJsonList));
-
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> updatedAtJsonList(m_updatedAt.size());
-   for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
-   {
-     updatedAtJsonList[updatedAtIndex].AsObject(m_updatedAt[updatedAtIndex].Jsonize());
-   }
-   payload.WithArray("updatedAt", std::move(updatedAtJsonList));
-
-  }
-
-  if(m_vendorSeverityHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vendorSeverityJsonList(m_vendorSeverity.size());
-   for(unsigned vendorSeverityIndex = 0; vendorSeverityIndex < vendorSeverityJsonList.GetLength(); ++vendorSeverityIndex)
-   {
-     vendorSeverityJsonList[vendorSeverityIndex].AsObject(m_vendorSeverity[vendorSeverityIndex].Jsonize());
-   }
-   payload.WithArray("vendorSeverity", std::move(vendorSeverityJsonList));
+   payload.WithArray("componentType", std::move(componentTypeJsonList));
 
   }
 
@@ -941,6 +776,17 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
+  if(m_vendorSeverityHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vendorSeverityJsonList(m_vendorSeverity.size());
+   for(unsigned vendorSeverityIndex = 0; vendorSeverityIndex < vendorSeverityJsonList.GetLength(); ++vendorSeverityIndex)
+   {
+     vendorSeverityJsonList[vendorSeverityIndex].AsObject(m_vendorSeverity[vendorSeverityIndex].Jsonize());
+   }
+   payload.WithArray("vendorSeverity", std::move(vendorSeverityJsonList));
+
+  }
+
   if(m_vulnerablePackagesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> vulnerablePackagesJsonList(m_vulnerablePackages.size());
@@ -949,6 +795,160 @@ JsonValue FilterCriteria::Jsonize() const
      vulnerablePackagesJsonList[vulnerablePackagesIndex].AsObject(m_vulnerablePackages[vulnerablePackagesIndex].Jsonize());
    }
    payload.WithArray("vulnerablePackages", std::move(vulnerablePackagesJsonList));
+
+  }
+
+  if(m_relatedVulnerabilitiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> relatedVulnerabilitiesJsonList(m_relatedVulnerabilities.size());
+   for(unsigned relatedVulnerabilitiesIndex = 0; relatedVulnerabilitiesIndex < relatedVulnerabilitiesJsonList.GetLength(); ++relatedVulnerabilitiesIndex)
+   {
+     relatedVulnerabilitiesJsonList[relatedVulnerabilitiesIndex].AsObject(m_relatedVulnerabilities[relatedVulnerabilitiesIndex].Jsonize());
+   }
+   payload.WithArray("relatedVulnerabilities", std::move(relatedVulnerabilitiesJsonList));
+
+  }
+
+  if(m_fixAvailableHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> fixAvailableJsonList(m_fixAvailable.size());
+   for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
+   {
+     fixAvailableJsonList[fixAvailableIndex].AsObject(m_fixAvailable[fixAvailableIndex].Jsonize());
+   }
+   payload.WithArray("fixAvailable", std::move(fixAvailableJsonList));
+
+  }
+
+  if(m_lambdaFunctionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionNameJsonList(m_lambdaFunctionName.size());
+   for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+   {
+     lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject(m_lambdaFunctionName[lambdaFunctionNameIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionName", std::move(lambdaFunctionNameJsonList));
+
+  }
+
+  if(m_lambdaFunctionLayersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionLayersJsonList(m_lambdaFunctionLayers.size());
+   for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
+   {
+     lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject(m_lambdaFunctionLayers[lambdaFunctionLayersIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionLayers", std::move(lambdaFunctionLayersJsonList));
+
+  }
+
+  if(m_lambdaFunctionRuntimeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionRuntimeJsonList(m_lambdaFunctionRuntime.size());
+   for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+   {
+     lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
+
+  }
+
+  if(m_lambdaFunctionLastModifiedAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionLastModifiedAtJsonList(m_lambdaFunctionLastModifiedAt.size());
+   for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
+   {
+     lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject(m_lambdaFunctionLastModifiedAt[lambdaFunctionLastModifiedAtIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionLastModifiedAt", std::move(lambdaFunctionLastModifiedAtJsonList));
+
+  }
+
+  if(m_lambdaFunctionExecutionRoleArnHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionExecutionRoleArnJsonList(m_lambdaFunctionExecutionRoleArn.size());
+   for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
+   {
+     lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject(m_lambdaFunctionExecutionRoleArn[lambdaFunctionExecutionRoleArnIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionExecutionRoleArn", std::move(lambdaFunctionExecutionRoleArnJsonList));
+
+  }
+
+  if(m_exploitAvailableHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> exploitAvailableJsonList(m_exploitAvailable.size());
+   for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+   {
+     exploitAvailableJsonList[exploitAvailableIndex].AsObject(m_exploitAvailable[exploitAvailableIndex].Jsonize());
+   }
+   payload.WithArray("exploitAvailable", std::move(exploitAvailableJsonList));
+
+  }
+
+  if(m_codeVulnerabilityDetectorNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorNameJsonList(m_codeVulnerabilityDetectorName.size());
+   for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+   {
+     codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject(m_codeVulnerabilityDetectorName[codeVulnerabilityDetectorNameIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityDetectorName", std::move(codeVulnerabilityDetectorNameJsonList));
+
+  }
+
+  if(m_codeVulnerabilityDetectorTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorTagsJsonList(m_codeVulnerabilityDetectorTags.size());
+   for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+   {
+     codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject(m_codeVulnerabilityDetectorTags[codeVulnerabilityDetectorTagsIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityDetectorTags", std::move(codeVulnerabilityDetectorTagsJsonList));
+
+  }
+
+  if(m_codeVulnerabilityFilePathHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityFilePathJsonList(m_codeVulnerabilityFilePath.size());
+   for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+   {
+     codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject(m_codeVulnerabilityFilePath[codeVulnerabilityFilePathIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityFilePath", std::move(codeVulnerabilityFilePathJsonList));
+
+  }
+
+  if(m_epssScoreHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> epssScoreJsonList(m_epssScore.size());
+   for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+   {
+     epssScoreJsonList[epssScoreIndex].AsObject(m_epssScore[epssScoreIndex].Jsonize());
+   }
+   payload.WithArray("epssScore", std::move(epssScoreJsonList));
+
+  }
+
+  if(m_codeRepositoryProjectNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProjectNameJsonList(m_codeRepositoryProjectName.size());
+   for(unsigned codeRepositoryProjectNameIndex = 0; codeRepositoryProjectNameIndex < codeRepositoryProjectNameJsonList.GetLength(); ++codeRepositoryProjectNameIndex)
+   {
+     codeRepositoryProjectNameJsonList[codeRepositoryProjectNameIndex].AsObject(m_codeRepositoryProjectName[codeRepositoryProjectNameIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProjectName", std::move(codeRepositoryProjectNameJsonList));
+
+  }
+
+  if(m_codeRepositoryProviderTypeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoryProviderTypeJsonList(m_codeRepositoryProviderType.size());
+   for(unsigned codeRepositoryProviderTypeIndex = 0; codeRepositoryProviderTypeIndex < codeRepositoryProviderTypeJsonList.GetLength(); ++codeRepositoryProviderTypeIndex)
+   {
+     codeRepositoryProviderTypeJsonList[codeRepositoryProviderTypeIndex].AsObject(m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
+   }
+   payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
 
   }
 

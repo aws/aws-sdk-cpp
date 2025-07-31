@@ -188,6 +188,31 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Associates a session logger with a portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSessionLoggerOutcome AssociateSessionLogger(const Model::AssociateSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSessionLoggerRequestT = Model::AssociateSessionLoggerRequest>
+        Model::AssociateSessionLoggerOutcomeCallable AssociateSessionLoggerCallable(const AssociateSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::AssociateSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSessionLoggerRequestT = Model::AssociateSessionLoggerRequest>
+        void AssociateSessionLoggerAsync(const AssociateSessionLoggerRequestT& request, const AssociateSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::AssociateSessionLogger, request, handler, context);
+        }
+
+        /**
          * <p>Associates a trust store with a web portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateTrustStore">AWS
          * API Reference</a></p>
@@ -420,6 +445,31 @@ namespace WorkSpacesWeb
         void CreatePortalAsync(const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreatePortalRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::CreatePortal, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a session logger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSessionLoggerOutcome CreateSessionLogger(const Model::CreateSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSessionLoggerRequestT = Model::CreateSessionLoggerRequest>
+        Model::CreateSessionLoggerOutcomeCallable CreateSessionLoggerCallable(const CreateSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::CreateSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSessionLoggerRequestT = Model::CreateSessionLoggerRequest>
+        void CreateSessionLoggerAsync(const CreateSessionLoggerRequestT& request, const CreateSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::CreateSessionLogger, request, handler, context);
         }
 
         /**
@@ -657,6 +707,31 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Deletes a session logger resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSessionLoggerOutcome DeleteSessionLogger(const Model::DeleteSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSessionLoggerRequestT = Model::DeleteSessionLoggerRequest>
+        Model::DeleteSessionLoggerOutcomeCallable DeleteSessionLoggerCallable(const DeleteSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DeleteSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSessionLoggerRequestT = Model::DeleteSessionLoggerRequest>
+        void DeleteSessionLoggerAsync(const DeleteSessionLoggerRequestT& request, const DeleteSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DeleteSessionLogger, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the trust store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteTrustStore">AWS
          * API Reference</a></p>
@@ -833,6 +908,31 @@ namespace WorkSpacesWeb
         void DisassociateNetworkSettingsAsync(const DisassociateNetworkSettingsRequestT& request, const DisassociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::DisassociateNetworkSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a session logger from a portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSessionLoggerOutcome DisassociateSessionLogger(const Model::DisassociateSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSessionLoggerRequestT = Model::DisassociateSessionLoggerRequest>
+        Model::DisassociateSessionLoggerOutcomeCallable DisassociateSessionLoggerCallable(const DisassociateSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DisassociateSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSessionLoggerRequestT = Model::DisassociateSessionLoggerRequest>
+        void DisassociateSessionLoggerAsync(const DisassociateSessionLoggerRequestT& request, const DisassociateSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DisassociateSessionLogger, request, handler, context);
         }
 
         /**
@@ -1137,6 +1237,32 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Gets details about a specific session logger resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionLoggerOutcome GetSessionLogger(const Model::GetSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSessionLoggerRequestT = Model::GetSessionLoggerRequest>
+        Model::GetSessionLoggerOutcomeCallable GetSessionLoggerCallable(const GetSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::GetSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for GetSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSessionLoggerRequestT = Model::GetSessionLoggerRequest>
+        void GetSessionLoggerAsync(const GetSessionLoggerRequestT& request, const GetSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::GetSessionLogger, request, handler, context);
+        }
+
+        /**
          * <p>Gets the trust store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStore">AWS
          * API Reference</a></p>
@@ -1385,6 +1511,31 @@ namespace WorkSpacesWeb
         void ListPortalsAsync(const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPortalsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListPortals, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all available session logger resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionLoggersOutcome ListSessionLoggers(const Model::ListSessionLoggersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListSessionLoggers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionLoggersRequestT = Model::ListSessionLoggersRequest>
+        Model::ListSessionLoggersOutcomeCallable ListSessionLoggersCallable(const ListSessionLoggersRequestT& request = {}) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::ListSessionLoggers, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessionLoggers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionLoggersRequestT = Model::ListSessionLoggersRequest>
+        void ListSessionLoggersAsync(const ListSessionLoggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSessionLoggersRequestT& request = {}) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::ListSessionLoggers, request, handler, context);
         }
 
         /**
@@ -1739,6 +1890,31 @@ namespace WorkSpacesWeb
         void UpdatePortalAsync(const UpdatePortalRequestT& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::UpdatePortal, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the details of a session logger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSessionLoggerOutcome UpdateSessionLogger(const Model::UpdateSessionLoggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSessionLogger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSessionLoggerRequestT = Model::UpdateSessionLoggerRequest>
+        Model::UpdateSessionLoggerOutcomeCallable UpdateSessionLoggerCallable(const UpdateSessionLoggerRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::UpdateSessionLogger, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSessionLogger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSessionLoggerRequestT = Model::UpdateSessionLoggerRequest>
+        void UpdateSessionLoggerAsync(const UpdateSessionLoggerRequestT& request, const UpdateSessionLoggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::UpdateSessionLogger, request, handler, context);
         }
 
         /**

@@ -78,7 +78,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>OutputSource</code> objects, each of which contains fields
-     * <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+     * <code>outputS3Path</code> and <code>KMSArn</code>.</p>
      */
     inline const Aws::Vector<IdMappingWorkflowOutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
     inline bool OutputSourceConfigHasBeenSet() const { return m_outputSourceConfigHasBeenSet; }

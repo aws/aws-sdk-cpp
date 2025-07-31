@@ -16,15 +16,15 @@ Aws::String CreateSbomExportRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_reportFormatHasBeenSet)
-  {
-   payload.WithString("reportFormat", SbomReportFormatMapper::GetNameForSbomReportFormat(m_reportFormat));
-  }
-
   if(m_resourceFilterCriteriaHasBeenSet)
   {
    payload.WithObject("resourceFilterCriteria", m_resourceFilterCriteria.Jsonize());
 
+  }
+
+  if(m_reportFormatHasBeenSet)
+  {
+   payload.WithString("reportFormat", SbomReportFormatMapper::GetNameForSbomReportFormat(m_reportFormat));
   }
 
   if(m_s3DestinationHasBeenSet)

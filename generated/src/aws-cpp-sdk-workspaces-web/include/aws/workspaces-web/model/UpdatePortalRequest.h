@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
-#include <aws/workspaces-web/model/AuthenticationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/model/AuthenticationType.h>
 #include <aws/workspaces-web/model/InstanceType.h>
 #include <utility>
 
@@ -36,6 +36,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the web portal.</p>
+     */
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
+    inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    UpdatePortalRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the web portal. This is not visible to users who log into the web
+     * portal.</p>
+     */
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdatePortalRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of authentication integration points used when signing into the web
      * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
      * portals are authenticated directly through your identity provider. You need to
@@ -50,19 +75,6 @@ namespace Model
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
     inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
     inline UpdatePortalRequest& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the web portal. This is not visible to users who log into the web
-     * portal.</p>
-     */
-    inline const Aws::String& GetDisplayName() const { return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    template<typename DisplayNameT = Aws::String>
-    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
-    template<typename DisplayNameT = Aws::String>
-    UpdatePortalRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,34 +96,22 @@ namespace Model
     inline void SetMaxConcurrentSessions(int value) { m_maxConcurrentSessionsHasBeenSet = true; m_maxConcurrentSessions = value; }
     inline UpdatePortalRequest& WithMaxConcurrentSessions(int value) { SetMaxConcurrentSessions(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
-    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
-    inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-    template<typename PortalArnT = Aws::String>
-    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
-    template<typename PortalArnT = Aws::String>
-    UpdatePortalRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
-    ///@}
   private:
 
-    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-    bool m_authenticationTypeHasBeenSet = false;
+    Aws::String m_portalArn;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+    bool m_authenticationTypeHasBeenSet = false;
 
     InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     int m_maxConcurrentSessions{0};
     bool m_maxConcurrentSessionsHasBeenSet = false;
-
-    Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet = false;
   };
 
 } // namespace Model

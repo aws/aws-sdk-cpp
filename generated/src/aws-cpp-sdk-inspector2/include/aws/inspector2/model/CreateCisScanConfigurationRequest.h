@@ -7,10 +7,10 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/CisSecurityLevel.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/CreateCisTargets.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,17 @@ namespace Model
 
     ///@{
     /**
+     * <p> The security level for the CIS scan configuration. Security level refers to
+     * the Benchmark levels that CIS assigns to a profile. </p>
+     */
+    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
+    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
+    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
+    inline CreateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The schedule for the CIS scan configuration.</p>
      */
     inline const Schedule& GetSchedule() const { return m_schedule; }
@@ -62,13 +73,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> The security level for the CIS scan configuration. Security level refers to
-     * the Benchmark levels that CIS assigns to a profile. </p>
+     * <p>The targets for the CIS scan configuration.</p>
      */
-    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
-    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
-    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
-    inline CreateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
+    inline const CreateCisTargets& GetTargets() const { return m_targets; }
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+    template<typename TargetsT = CreateCisTargets>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = CreateCisTargets>
+    CreateCisScanConfigurationRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,34 +98,22 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The targets for the CIS scan configuration.</p>
-     */
-    inline const CreateCisTargets& GetTargets() const { return m_targets; }
-    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    template<typename TargetsT = CreateCisTargets>
-    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
-    template<typename TargetsT = CreateCisTargets>
-    CreateCisScanConfigurationRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
 
-    Schedule m_schedule;
-    bool m_scheduleHasBeenSet = false;
-
     CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
     bool m_securityLevelHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+    Schedule m_schedule;
+    bool m_scheduleHasBeenSet = false;
 
     CreateCisTargets m_targets;
     bool m_targetsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

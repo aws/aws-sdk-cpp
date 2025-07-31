@@ -25,15 +25,15 @@ CreateGitLabSelfManagedIntegrationDetail::CreateGitLabSelfManagedIntegrationDeta
 
 CreateGitLabSelfManagedIntegrationDetail& CreateGitLabSelfManagedIntegrationDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accessToken"))
-  {
-    m_accessToken = jsonValue.GetString("accessToken");
-    m_accessTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
     m_instanceUrlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("accessToken"))
+  {
+    m_accessToken = jsonValue.GetString("accessToken");
+    m_accessTokenHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CreateGitLabSelfManagedIntegrationDetail::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("accessToken", m_accessToken);
-
-  }
-
   if(m_instanceUrlHasBeenSet)
   {
    payload.WithString("instanceUrl", m_instanceUrl);
+
+  }
+
+  if(m_accessTokenHasBeenSet)
+  {
+   payload.WithString("accessToken", m_accessToken);
 
   }
 

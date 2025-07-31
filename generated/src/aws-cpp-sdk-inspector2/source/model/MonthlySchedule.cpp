@@ -25,15 +25,15 @@ MonthlySchedule::MonthlySchedule(JsonView jsonValue)
 
 MonthlySchedule& MonthlySchedule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("day"))
-  {
-    m_day = DayMapper::GetDayForName(jsonValue.GetString("day"));
-    m_dayHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetObject("startTime");
     m_startTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("day"))
+  {
+    m_day = DayMapper::GetDayForName(jsonValue.GetString("day"));
+    m_dayHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue MonthlySchedule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dayHasBeenSet)
-  {
-   payload.WithString("day", DayMapper::GetNameForDay(m_day));
-  }
-
   if(m_startTimeHasBeenSet)
   {
    payload.WithObject("startTime", m_startTime.Jsonize());
 
+  }
+
+  if(m_dayHasBeenSet)
+  {
+   payload.WithString("day", DayMapper::GetNameForDay(m_day));
   }
 
   return payload;

@@ -158,6 +158,16 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_genderString = jsonValue.GetString("GenderString");
     m_genderStringHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ProfileType"))
+  {
+    m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("ProfileType"));
+    m_profileTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EngagementPreferences"))
+  {
+    m_engagementPreferences = jsonValue.GetObject("EngagementPreferences");
+    m_engagementPreferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -320,6 +330,17 @@ JsonValue Profile::Jsonize() const
   if(m_genderStringHasBeenSet)
   {
    payload.WithString("GenderString", m_genderString);
+
+  }
+
+  if(m_profileTypeHasBeenSet)
+  {
+   payload.WithString("ProfileType", ProfileTypeMapper::GetNameForProfileType(m_profileType));
+  }
+
+  if(m_engagementPreferencesHasBeenSet)
+  {
+   payload.WithObject("EngagementPreferences", m_engagementPreferences.Jsonize());
 
   }
 

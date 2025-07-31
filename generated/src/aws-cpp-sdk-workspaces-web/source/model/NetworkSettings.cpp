@@ -25,6 +25,11 @@ NetworkSettings::NetworkSettings(JsonView jsonValue)
 
 NetworkSettings& NetworkSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("networkSettingsArn"))
+  {
+    m_networkSettingsArn = jsonValue.GetString("networkSettingsArn");
+    m_networkSettingsArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
     Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
@@ -34,19 +39,10 @@ NetworkSettings& NetworkSettings::operator =(JsonView jsonValue)
     }
     m_associatedPortalArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkSettingsArn"))
+  if(jsonValue.ValueExists("vpcId"))
   {
-    m_networkSettingsArn = jsonValue.GetString("networkSettingsArn");
-    m_networkSettingsArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("securityGroupIds"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
-      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
-    }
-    m_securityGroupIdsHasBeenSet = true;
+    m_vpcId = jsonValue.GetString("vpcId");
+    m_vpcIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("subnetIds"))
   {
@@ -57,10 +53,14 @@ NetworkSettings& NetworkSettings::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcId"))
+  if(jsonValue.ValueExists("securityGroupIds"))
   {
-    m_vpcId = jsonValue.GetString("vpcId");
-    m_vpcIdHasBeenSet = true;
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
   }
   return *this;
 }
@@ -68,6 +68,12 @@ NetworkSettings& NetworkSettings::operator =(JsonView jsonValue)
 JsonValue NetworkSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_networkSettingsArnHasBeenSet)
+  {
+   payload.WithString("networkSettingsArn", m_networkSettingsArn);
+
+  }
 
   if(m_associatedPortalArnsHasBeenSet)
   {
@@ -80,20 +86,9 @@ JsonValue NetworkSettings::Jsonize() const
 
   }
 
-  if(m_networkSettingsArnHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-   payload.WithString("networkSettingsArn", m_networkSettingsArn);
-
-  }
-
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+   payload.WithString("vpcId", m_vpcId);
 
   }
 
@@ -108,9 +103,14 @@ JsonValue NetworkSettings::Jsonize() const
 
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_securityGroupIdsHasBeenSet)
   {
-   payload.WithString("vpcId", m_vpcId);
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
 
   }
 

@@ -54,6 +54,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Forces the instances to terminate. The instance will first attempt a graceful
+     * shutdown, which includes flushing file system caches and metadata. If the
+     * graceful shutdown fails to complete within the timeout period, the instance
+     * shuts down forcibly without flushing the file system caches and metadata.</p>
+     */
+    inline bool GetForce() const { return m_force; }
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+    inline TerminateInstancesRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to bypass the graceful OS shutdown process when the
      * instance is terminated.</p> <p>Default: <code>false</code> </p>
      */
@@ -79,6 +92,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet = false;
+
+    bool m_force{false};
+    bool m_forceHasBeenSet = false;
 
     bool m_skipOsShutdown{false};
     bool m_skipOsShutdownHasBeenSet = false;

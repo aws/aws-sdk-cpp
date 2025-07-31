@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/ContinuousIntegrationScanConfiguration.h>
 #include <aws/inspector2/model/PeriodicScanConfiguration.h>
+#include <aws/inspector2/model/ContinuousIntegrationScanConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/RuleSetCategory.h>
 #include <utility>
@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Configuration settings for periodic scans that run on a scheduled basis.</p>
+     */
+    inline const PeriodicScanConfiguration& GetPeriodicScanConfiguration() const { return m_periodicScanConfiguration; }
+    inline bool PeriodicScanConfigurationHasBeenSet() const { return m_periodicScanConfigurationHasBeenSet; }
+    template<typename PeriodicScanConfigurationT = PeriodicScanConfiguration>
+    void SetPeriodicScanConfiguration(PeriodicScanConfigurationT&& value) { m_periodicScanConfigurationHasBeenSet = true; m_periodicScanConfiguration = std::forward<PeriodicScanConfigurationT>(value); }
+    template<typename PeriodicScanConfigurationT = PeriodicScanConfiguration>
+    CodeSecurityScanConfiguration& WithPeriodicScanConfiguration(PeriodicScanConfigurationT&& value) { SetPeriodicScanConfiguration(std::forward<PeriodicScanConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Configuration settings for continuous integration scans that run
      * automatically when code changes are made.</p>
      */
@@ -52,18 +64,6 @@ namespace Model
     void SetContinuousIntegrationScanConfiguration(ContinuousIntegrationScanConfigurationT&& value) { m_continuousIntegrationScanConfigurationHasBeenSet = true; m_continuousIntegrationScanConfiguration = std::forward<ContinuousIntegrationScanConfigurationT>(value); }
     template<typename ContinuousIntegrationScanConfigurationT = ContinuousIntegrationScanConfiguration>
     CodeSecurityScanConfiguration& WithContinuousIntegrationScanConfiguration(ContinuousIntegrationScanConfigurationT&& value) { SetContinuousIntegrationScanConfiguration(std::forward<ContinuousIntegrationScanConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Configuration settings for periodic scans that run on a scheduled basis.</p>
-     */
-    inline const PeriodicScanConfiguration& GetPeriodicScanConfiguration() const { return m_periodicScanConfiguration; }
-    inline bool PeriodicScanConfigurationHasBeenSet() const { return m_periodicScanConfigurationHasBeenSet; }
-    template<typename PeriodicScanConfigurationT = PeriodicScanConfiguration>
-    void SetPeriodicScanConfiguration(PeriodicScanConfigurationT&& value) { m_periodicScanConfigurationHasBeenSet = true; m_periodicScanConfiguration = std::forward<PeriodicScanConfigurationT>(value); }
-    template<typename PeriodicScanConfigurationT = PeriodicScanConfiguration>
-    CodeSecurityScanConfiguration& WithPeriodicScanConfiguration(PeriodicScanConfigurationT&& value) { SetPeriodicScanConfiguration(std::forward<PeriodicScanConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,11 +80,11 @@ namespace Model
     ///@}
   private:
 
-    ContinuousIntegrationScanConfiguration m_continuousIntegrationScanConfiguration;
-    bool m_continuousIntegrationScanConfigurationHasBeenSet = false;
-
     PeriodicScanConfiguration m_periodicScanConfiguration;
     bool m_periodicScanConfigurationHasBeenSet = false;
+
+    ContinuousIntegrationScanConfiguration m_continuousIntegrationScanConfiguration;
+    bool m_continuousIntegrationScanConfigurationHasBeenSet = false;
 
     Aws::Vector<RuleSetCategory> m_ruleSetCategories;
     bool m_ruleSetCategoriesHasBeenSet = false;

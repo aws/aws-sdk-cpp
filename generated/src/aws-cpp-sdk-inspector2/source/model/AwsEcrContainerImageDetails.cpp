@@ -25,20 +25,10 @@ AwsEcrContainerImageDetails::AwsEcrContainerImageDetails(JsonView jsonValue)
 
 AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("architecture"))
+  if(jsonValue.ValueExists("repositoryName"))
   {
-    m_architecture = jsonValue.GetString("architecture");
-    m_architectureHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("author"))
-  {
-    m_author = jsonValue.GetString("author");
-    m_authorHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("imageHash"))
-  {
-    m_imageHash = jsonValue.GetString("imageHash");
-    m_imageHashHasBeenSet = true;
+    m_repositoryName = jsonValue.GetString("repositoryName");
+    m_repositoryNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("imageTags"))
   {
@@ -49,35 +39,45 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
     }
     m_imageTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inUseCount"))
-  {
-    m_inUseCount = jsonValue.GetInt64("inUseCount");
-    m_inUseCountHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastInUseAt"))
-  {
-    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
-    m_lastInUseAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("platform"))
-  {
-    m_platform = jsonValue.GetString("platform");
-    m_platformHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("pushedAt"))
   {
     m_pushedAt = jsonValue.GetDouble("pushedAt");
     m_pushedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("author"))
+  {
+    m_author = jsonValue.GetString("author");
+    m_authorHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("architecture"))
+  {
+    m_architecture = jsonValue.GetString("architecture");
+    m_architectureHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("imageHash"))
+  {
+    m_imageHash = jsonValue.GetString("imageHash");
+    m_imageHashHasBeenSet = true;
   }
   if(jsonValue.ValueExists("registry"))
   {
     m_registry = jsonValue.GetString("registry");
     m_registryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositoryName"))
+  if(jsonValue.ValueExists("platform"))
   {
-    m_repositoryName = jsonValue.GetString("repositoryName");
-    m_repositoryNameHasBeenSet = true;
+    m_platform = jsonValue.GetString("platform");
+    m_platformHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
   }
   return *this;
 }
@@ -86,21 +86,9 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_architectureHasBeenSet)
+  if(m_repositoryNameHasBeenSet)
   {
-   payload.WithString("architecture", m_architecture);
-
-  }
-
-  if(m_authorHasBeenSet)
-  {
-   payload.WithString("author", m_author);
-
-  }
-
-  if(m_imageHashHasBeenSet)
-  {
-   payload.WithString("imageHash", m_imageHash);
+   payload.WithString("repositoryName", m_repositoryName);
 
   }
 
@@ -115,26 +103,27 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
 
   }
 
-  if(m_inUseCountHasBeenSet)
-  {
-   payload.WithInt64("inUseCount", m_inUseCount);
-
-  }
-
-  if(m_lastInUseAtHasBeenSet)
-  {
-   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
-  }
-
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("platform", m_platform);
-
-  }
-
   if(m_pushedAtHasBeenSet)
   {
    payload.WithDouble("pushedAt", m_pushedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_authorHasBeenSet)
+  {
+   payload.WithString("author", m_author);
+
+  }
+
+  if(m_architectureHasBeenSet)
+  {
+   payload.WithString("architecture", m_architecture);
+
+  }
+
+  if(m_imageHashHasBeenSet)
+  {
+   payload.WithString("imageHash", m_imageHash);
+
   }
 
   if(m_registryHasBeenSet)
@@ -143,9 +132,20 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
 
   }
 
-  if(m_repositoryNameHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-   payload.WithString("repositoryName", m_repositoryName);
+   payload.WithString("platform", m_platform);
+
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
 
   }
 

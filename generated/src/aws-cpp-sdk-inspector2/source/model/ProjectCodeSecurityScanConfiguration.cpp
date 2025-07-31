@@ -25,15 +25,6 @@ ProjectCodeSecurityScanConfiguration::ProjectCodeSecurityScanConfiguration(JsonV
 
 ProjectCodeSecurityScanConfiguration& ProjectCodeSecurityScanConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("continuousIntegrationScanConfigurations"))
-  {
-    Aws::Utils::Array<JsonView> continuousIntegrationScanConfigurationsJsonList = jsonValue.GetArray("continuousIntegrationScanConfigurations");
-    for(unsigned continuousIntegrationScanConfigurationsIndex = 0; continuousIntegrationScanConfigurationsIndex < continuousIntegrationScanConfigurationsJsonList.GetLength(); ++continuousIntegrationScanConfigurationsIndex)
-    {
-      m_continuousIntegrationScanConfigurations.push_back(continuousIntegrationScanConfigurationsJsonList[continuousIntegrationScanConfigurationsIndex].AsObject());
-    }
-    m_continuousIntegrationScanConfigurationsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("periodicScanConfigurations"))
   {
     Aws::Utils::Array<JsonView> periodicScanConfigurationsJsonList = jsonValue.GetArray("periodicScanConfigurations");
@@ -43,23 +34,21 @@ ProjectCodeSecurityScanConfiguration& ProjectCodeSecurityScanConfiguration::oper
     }
     m_periodicScanConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("continuousIntegrationScanConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> continuousIntegrationScanConfigurationsJsonList = jsonValue.GetArray("continuousIntegrationScanConfigurations");
+    for(unsigned continuousIntegrationScanConfigurationsIndex = 0; continuousIntegrationScanConfigurationsIndex < continuousIntegrationScanConfigurationsJsonList.GetLength(); ++continuousIntegrationScanConfigurationsIndex)
+    {
+      m_continuousIntegrationScanConfigurations.push_back(continuousIntegrationScanConfigurationsJsonList[continuousIntegrationScanConfigurationsIndex].AsObject());
+    }
+    m_continuousIntegrationScanConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProjectCodeSecurityScanConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_continuousIntegrationScanConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> continuousIntegrationScanConfigurationsJsonList(m_continuousIntegrationScanConfigurations.size());
-   for(unsigned continuousIntegrationScanConfigurationsIndex = 0; continuousIntegrationScanConfigurationsIndex < continuousIntegrationScanConfigurationsJsonList.GetLength(); ++continuousIntegrationScanConfigurationsIndex)
-   {
-     continuousIntegrationScanConfigurationsJsonList[continuousIntegrationScanConfigurationsIndex].AsObject(m_continuousIntegrationScanConfigurations[continuousIntegrationScanConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("continuousIntegrationScanConfigurations", std::move(continuousIntegrationScanConfigurationsJsonList));
-
-  }
 
   if(m_periodicScanConfigurationsHasBeenSet)
   {
@@ -69,6 +58,17 @@ JsonValue ProjectCodeSecurityScanConfiguration::Jsonize() const
      periodicScanConfigurationsJsonList[periodicScanConfigurationsIndex].AsObject(m_periodicScanConfigurations[periodicScanConfigurationsIndex].Jsonize());
    }
    payload.WithArray("periodicScanConfigurations", std::move(periodicScanConfigurationsJsonList));
+
+  }
+
+  if(m_continuousIntegrationScanConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> continuousIntegrationScanConfigurationsJsonList(m_continuousIntegrationScanConfigurations.size());
+   for(unsigned continuousIntegrationScanConfigurationsIndex = 0; continuousIntegrationScanConfigurationsIndex < continuousIntegrationScanConfigurationsJsonList.GetLength(); ++continuousIntegrationScanConfigurationsIndex)
+   {
+     continuousIntegrationScanConfigurationsJsonList[continuousIntegrationScanConfigurationsIndex].AsObject(m_continuousIntegrationScanConfigurations[continuousIntegrationScanConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("continuousIntegrationScanConfigurations", std::move(continuousIntegrationScanConfigurationsJsonList));
 
   }
 

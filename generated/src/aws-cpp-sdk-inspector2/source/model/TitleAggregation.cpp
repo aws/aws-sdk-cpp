@@ -25,26 +25,6 @@ TitleAggregation::TitleAggregation(JsonView jsonValue)
 
 TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("findingType"))
-  {
-    m_findingType = AggregationFindingTypeMapper::GetAggregationFindingTypeForName(jsonValue.GetString("findingType"));
-    m_findingTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceType"))
-  {
-    m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
-    m_resourceTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortBy"))
-  {
-    m_sortBy = TitleSortByMapper::GetTitleSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
-    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-    m_sortOrderHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("titles"))
   {
     Aws::Utils::Array<JsonView> titlesJsonList = jsonValue.GetArray("titles");
@@ -63,32 +43,32 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
     }
     m_vulnerabilityIdsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resourceType"))
+  {
+    m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
+    m_resourceTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortOrder"))
+  {
+    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
+    m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = TitleSortByMapper::GetTitleSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("findingType"))
+  {
+    m_findingType = AggregationFindingTypeMapper::GetAggregationFindingTypeForName(jsonValue.GetString("findingType"));
+    m_findingTypeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TitleAggregation::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_findingTypeHasBeenSet)
-  {
-   payload.WithString("findingType", AggregationFindingTypeMapper::GetNameForAggregationFindingType(m_findingType));
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", AggregationResourceTypeMapper::GetNameForAggregationResourceType(m_resourceType));
-  }
-
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", TitleSortByMapper::GetNameForTitleSortBy(m_sortBy));
-  }
-
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
-  }
 
   if(m_titlesHasBeenSet)
   {
@@ -110,6 +90,26 @@ JsonValue TitleAggregation::Jsonize() const
    }
    payload.WithArray("vulnerabilityIds", std::move(vulnerabilityIdsJsonList));
 
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("resourceType", AggregationResourceTypeMapper::GetNameForAggregationResourceType(m_resourceType));
+  }
+
+  if(m_sortOrderHasBeenSet)
+  {
+   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", TitleSortByMapper::GetNameForTitleSortBy(m_sortBy));
+  }
+
+  if(m_findingTypeHasBeenSet)
+  {
+   payload.WithString("findingType", AggregationFindingTypeMapper::GetNameForAggregationFindingType(m_findingType));
   }
 
   return payload;

@@ -179,7 +179,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS Glue schemas to apply to the processed data.</p>
+     * <p>The Glue schemas to apply to the processed data.</p>
      */
     inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }

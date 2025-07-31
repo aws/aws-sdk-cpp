@@ -42,20 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of scan configuration ARN filters.</p>
-     */
-    inline const Aws::Vector<CisStringFilter>& GetScanConfigurationArnFilters() const { return m_scanConfigurationArnFilters; }
-    inline bool ScanConfigurationArnFiltersHasBeenSet() const { return m_scanConfigurationArnFiltersHasBeenSet; }
-    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
-    void SetScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters = std::forward<ScanConfigurationArnFiltersT>(value); }
-    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
-    ListCisScanConfigurationsFilterCriteria& WithScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { SetScanConfigurationArnFilters(std::forward<ScanConfigurationArnFiltersT>(value)); return *this;}
-    template<typename ScanConfigurationArnFiltersT = CisStringFilter>
-    ListCisScanConfigurationsFilterCriteria& AddScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters.emplace_back(std::forward<ScanConfigurationArnFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The list of scan name filters.</p>
      */
     inline const Aws::Vector<CisStringFilter>& GetScanNameFilters() const { return m_scanNameFilters; }
@@ -81,16 +67,30 @@ namespace Model
     template<typename TargetResourceTagFiltersT = TagFilter>
     ListCisScanConfigurationsFilterCriteria& AddTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.emplace_back(std::forward<TargetResourceTagFiltersT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<CisStringFilter> m_scanConfigurationArnFilters;
-    bool m_scanConfigurationArnFiltersHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The list of scan configuration ARN filters.</p>
+     */
+    inline const Aws::Vector<CisStringFilter>& GetScanConfigurationArnFilters() const { return m_scanConfigurationArnFilters; }
+    inline bool ScanConfigurationArnFiltersHasBeenSet() const { return m_scanConfigurationArnFiltersHasBeenSet; }
+    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
+    void SetScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters = std::forward<ScanConfigurationArnFiltersT>(value); }
+    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScanConfigurationsFilterCriteria& WithScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { SetScanConfigurationArnFilters(std::forward<ScanConfigurationArnFiltersT>(value)); return *this;}
+    template<typename ScanConfigurationArnFiltersT = CisStringFilter>
+    ListCisScanConfigurationsFilterCriteria& AddScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters.emplace_back(std::forward<ScanConfigurationArnFiltersT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<CisStringFilter> m_scanNameFilters;
     bool m_scanNameFiltersHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_targetResourceTagFilters;
     bool m_targetResourceTagFiltersHasBeenSet = false;
+
+    Aws::Vector<CisStringFilter> m_scanConfigurationArnFilters;
+    bool m_scanConfigurationArnFiltersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,11 +25,6 @@ ClusterDetails::ClusterDetails(JsonView jsonValue)
 
 ClusterDetails& ClusterDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("clusterMetadata"))
-  {
-    m_clusterMetadata = jsonValue.GetObject("clusterMetadata");
-    m_clusterMetadataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lastInUse"))
   {
     m_lastInUse = jsonValue.GetDouble("lastInUse");
@@ -45,18 +40,17 @@ ClusterDetails& ClusterDetails::operator =(JsonView jsonValue)
     m_stoppedUnitCount = jsonValue.GetInt64("stoppedUnitCount");
     m_stoppedUnitCountHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("clusterMetadata"))
+  {
+    m_clusterMetadata = jsonValue.GetObject("clusterMetadata");
+    m_clusterMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ClusterDetails::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_clusterMetadataHasBeenSet)
-  {
-   payload.WithObject("clusterMetadata", m_clusterMetadata.Jsonize());
-
-  }
 
   if(m_lastInUseHasBeenSet)
   {
@@ -72,6 +66,12 @@ JsonValue ClusterDetails::Jsonize() const
   if(m_stoppedUnitCountHasBeenSet)
   {
    payload.WithInt64("stoppedUnitCount", m_stoppedUnitCount);
+
+  }
+
+  if(m_clusterMetadataHasBeenSet)
+  {
+   payload.WithObject("clusterMetadata", m_clusterMetadata.Jsonize());
 
   }
 

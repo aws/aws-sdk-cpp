@@ -45,6 +45,11 @@ AdvancedSecurityOptions& AdvancedSecurityOptions::operator =(JsonView jsonValue)
     m_jWTOptions = jsonValue.GetObject("JWTOptions");
     m_jWTOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IAMFederationOptions"))
+  {
+    m_iAMFederationOptions = jsonValue.GetObject("IAMFederationOptions");
+    m_iAMFederationOptionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AnonymousAuthDisableDate"))
   {
     m_anonymousAuthDisableDate = jsonValue.GetDouble("AnonymousAuthDisableDate");
@@ -83,6 +88,12 @@ JsonValue AdvancedSecurityOptions::Jsonize() const
   if(m_jWTOptionsHasBeenSet)
   {
    payload.WithObject("JWTOptions", m_jWTOptions.Jsonize());
+
+  }
+
+  if(m_iAMFederationOptionsHasBeenSet)
+  {
+   payload.WithObject("IAMFederationOptions", m_iAMFederationOptions.Jsonize());
 
   }
 

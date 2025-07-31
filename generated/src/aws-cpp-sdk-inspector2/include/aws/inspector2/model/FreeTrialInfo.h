@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/FreeTrialType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/FreeTrialStatus.h>
-#include <aws/inspector2/model/FreeTrialType.h>
 #include <utility>
 
 namespace Aws
@@ -42,15 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the Amazon Inspector free trail ends for a given
-     * account.</p>
+     * <p>The type of scan covered by the Amazon Inspector free trail.</p>
      */
-    inline const Aws::Utils::DateTime& GetEnd() const { return m_end; }
-    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    template<typename EndT = Aws::Utils::DateTime>
-    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
-    template<typename EndT = Aws::Utils::DateTime>
-    FreeTrialInfo& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
+    inline FreeTrialType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(FreeTrialType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FreeTrialInfo& WithType(FreeTrialType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,6 +65,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time that the Amazon Inspector free trail ends for a given
+     * account.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEnd() const { return m_end; }
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+    template<typename EndT = Aws::Utils::DateTime>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::Utils::DateTime>
+    FreeTrialInfo& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The order to sort results by.</p>
      */
     inline FreeTrialStatus GetStatus() const { return m_status; }
@@ -75,29 +85,19 @@ namespace Model
     inline void SetStatus(FreeTrialStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline FreeTrialInfo& WithStatus(FreeTrialStatus value) { SetStatus(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of scan covered by the Amazon Inspector free trail.</p>
-     */
-    inline FreeTrialType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(FreeTrialType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline FreeTrialInfo& WithType(FreeTrialType value) { SetType(value); return *this;}
-    ///@}
   private:
 
-    Aws::Utils::DateTime m_end{};
-    bool m_endHasBeenSet = false;
+    FreeTrialType m_type{FreeTrialType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_start{};
     bool m_startHasBeenSet = false;
 
+    Aws::Utils::DateTime m_end{};
+    bool m_endHasBeenSet = false;
+
     FreeTrialStatus m_status{FreeTrialStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
-
-    FreeTrialType m_type{FreeTrialType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CodeSecurityResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeSecurityResource.h>
 #include <aws/inspector2/model/AssociationResultStatusCode.h>
 #include <utility>
 
@@ -41,16 +41,6 @@ namespace Model
 
 
     ///@{
-    
-    inline const CodeSecurityResource& GetResource() const { return m_resource; }
-    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    template<typename ResourceT = CodeSecurityResource>
-    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
-    template<typename ResourceT = CodeSecurityResource>
-    FailedAssociationResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scan configuration that failed to be
      * associated or disassociated.</p>
@@ -61,6 +51,16 @@ namespace Model
     void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
     template<typename ScanConfigurationArnT = Aws::String>
     FailedAssociationResult& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const CodeSecurityResource& GetResource() const { return m_resource; }
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+    template<typename ResourceT = CodeSecurityResource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = CodeSecurityResource>
+    FailedAssociationResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,11 +86,11 @@ namespace Model
     ///@}
   private:
 
-    CodeSecurityResource m_resource;
-    bool m_resourceHasBeenSet = false;
-
     Aws::String m_scanConfigurationArn;
     bool m_scanConfigurationArnHasBeenSet = false;
+
+    CodeSecurityResource m_resource;
+    bool m_resourceHasBeenSet = false;
 
     AssociationResultStatusCode m_statusCode{AssociationResultStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;

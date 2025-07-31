@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/CisRuleStatus.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetCisRuleDetails() const { return m_cisRuleDetails; }
-    inline bool CisRuleDetailsHasBeenSet() const { return m_cisRuleDetailsHasBeenSet; }
-    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
-    void SetCisRuleDetails(CisRuleDetailsT&& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = std::forward<CisRuleDetailsT>(value); }
-    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
-    CisSessionMessage& WithCisRuleDetails(CisRuleDetailsT&& value) { SetCisRuleDetails(std::forward<CisRuleDetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The rule ID for the CIS session message.</p>
      */
     inline const Aws::String& GetRuleId() const { return m_ruleId; }
@@ -72,16 +60,28 @@ namespace Model
     inline void SetStatus(CisRuleStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline CisSessionMessage& WithStatus(CisRuleStatus value) { SetStatus(value); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::ByteBuffer m_cisRuleDetails{};
-    bool m_cisRuleDetailsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The CIS rule details for the CIS session message.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetCisRuleDetails() const { return m_cisRuleDetails; }
+    inline bool CisRuleDetailsHasBeenSet() const { return m_cisRuleDetailsHasBeenSet; }
+    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
+    void SetCisRuleDetails(CisRuleDetailsT&& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = std::forward<CisRuleDetailsT>(value); }
+    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
+    CisSessionMessage& WithCisRuleDetails(CisRuleDetailsT&& value) { SetCisRuleDetails(std::forward<CisRuleDetailsT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet = false;
 
     CisRuleStatus m_status{CisRuleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_cisRuleDetails{};
+    bool m_cisRuleDetailsHasBeenSet = false;
   };
 
 } // namespace Model

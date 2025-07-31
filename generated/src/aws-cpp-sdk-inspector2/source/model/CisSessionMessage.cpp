@@ -26,11 +26,6 @@ CisSessionMessage::CisSessionMessage(JsonView jsonValue)
 
 CisSessionMessage& CisSessionMessage::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cisRuleDetails"))
-  {
-    m_cisRuleDetails = HashingUtils::Base64Decode(jsonValue.GetString("cisRuleDetails"));
-    m_cisRuleDetailsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
@@ -41,17 +36,17 @@ CisSessionMessage& CisSessionMessage::operator =(JsonView jsonValue)
     m_status = CisRuleStatusMapper::GetCisRuleStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cisRuleDetails"))
+  {
+    m_cisRuleDetails = HashingUtils::Base64Decode(jsonValue.GetString("cisRuleDetails"));
+    m_cisRuleDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CisSessionMessage::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_cisRuleDetailsHasBeenSet)
-  {
-   payload.WithString("cisRuleDetails", HashingUtils::Base64Encode(m_cisRuleDetails));
-  }
 
   if(m_ruleIdHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue CisSessionMessage::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", CisRuleStatusMapper::GetNameForCisRuleStatus(m_status));
+  }
+
+  if(m_cisRuleDetailsHasBeenSet)
+  {
+   payload.WithString("cisRuleDetails", HashingUtils::Base64Encode(m_cisRuleDetails));
   }
 
   return payload;

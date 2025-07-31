@@ -25,15 +25,15 @@ ComputePlatform::ComputePlatform(JsonView jsonValue)
 
 ComputePlatform& ComputePlatform::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("product"))
-  {
-    m_product = jsonValue.GetString("product");
-    m_productHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
     m_vendorHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("product"))
+  {
+    m_product = jsonValue.GetString("product");
+    m_productHasBeenSet = true;
   }
   if(jsonValue.ValueExists("version"))
   {
@@ -47,15 +47,15 @@ JsonValue ComputePlatform::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_productHasBeenSet)
-  {
-   payload.WithString("product", m_product);
-
-  }
-
   if(m_vendorHasBeenSet)
   {
    payload.WithString("vendor", m_vendor);
+
+  }
+
+  if(m_productHasBeenSet)
+  {
+   payload.WithString("product", m_product);
 
   }
 

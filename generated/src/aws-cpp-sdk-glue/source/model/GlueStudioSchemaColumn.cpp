@@ -35,6 +35,11 @@ GlueStudioSchemaColumn& GlueStudioSchemaColumn::operator =(JsonView jsonValue)
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("GlueStudioType"))
+  {
+    m_glueStudioType = jsonValue.GetString("GlueStudioType");
+    m_glueStudioTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue GlueStudioSchemaColumn::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", m_type);
+
+  }
+
+  if(m_glueStudioTypeHasBeenSet)
+  {
+   payload.WithString("GlueStudioType", m_glueStudioType);
 
   }
 

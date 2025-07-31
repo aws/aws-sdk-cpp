@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/CoverageFilterCriteria.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CoverageFilterCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -32,19 +32,6 @@ namespace Model
 
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>An object that contains details on the filters to apply to the coverage data
-     * for your environment.</p>
-     */
-    inline const CoverageFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
-    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    template<typename FilterCriteriaT = CoverageFilterCriteria>
-    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
-    template<typename FilterCriteriaT = CoverageFilterCriteria>
-    ListCoverageRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -75,16 +62,29 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListCoverageRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    CoverageFilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An object that contains details on the filters to apply to the coverage data
+     * for your environment.</p>
+     */
+    inline const CoverageFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
+    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+    template<typename FilterCriteriaT = CoverageFilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = CoverageFilterCriteria>
+    ListCoverageRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
+    ///@}
+  private:
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    CoverageFilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

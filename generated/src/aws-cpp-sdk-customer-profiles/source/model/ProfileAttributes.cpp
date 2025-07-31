@@ -134,6 +134,11 @@ ProfileAttributes& ProfileAttributes::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ProfileType"))
+  {
+    m_profileType = jsonValue.GetObject("ProfileType");
+    m_profileTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -269,6 +274,12 @@ JsonValue ProfileAttributes::Jsonize() const
      attributesJsonMap.WithObject(attributesItem.first, attributesItem.second.Jsonize());
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_profileTypeHasBeenSet)
+  {
+   payload.WithObject("ProfileType", m_profileType.Jsonize());
 
   }
 

@@ -40,11 +40,6 @@ AggregationResponse& AggregationResponse::operator =(JsonView jsonValue)
     m_awsEcrContainerAggregation = jsonValue.GetObject("awsEcrContainerAggregation");
     m_awsEcrContainerAggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeRepositoryAggregation"))
-  {
-    m_codeRepositoryAggregation = jsonValue.GetObject("codeRepositoryAggregation");
-    m_codeRepositoryAggregationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ec2InstanceAggregation"))
   {
     m_ec2InstanceAggregation = jsonValue.GetObject("ec2InstanceAggregation");
@@ -60,16 +55,6 @@ AggregationResponse& AggregationResponse::operator =(JsonView jsonValue)
     m_imageLayerAggregation = jsonValue.GetObject("imageLayerAggregation");
     m_imageLayerAggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaFunctionAggregation"))
-  {
-    m_lambdaFunctionAggregation = jsonValue.GetObject("lambdaFunctionAggregation");
-    m_lambdaFunctionAggregationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaLayerAggregation"))
-  {
-    m_lambdaLayerAggregation = jsonValue.GetObject("lambdaLayerAggregation");
-    m_lambdaLayerAggregationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("packageAggregation"))
   {
     m_packageAggregation = jsonValue.GetObject("packageAggregation");
@@ -84,6 +69,21 @@ AggregationResponse& AggregationResponse::operator =(JsonView jsonValue)
   {
     m_titleAggregation = jsonValue.GetObject("titleAggregation");
     m_titleAggregationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaLayerAggregation"))
+  {
+    m_lambdaLayerAggregation = jsonValue.GetObject("lambdaLayerAggregation");
+    m_lambdaLayerAggregationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lambdaFunctionAggregation"))
+  {
+    m_lambdaFunctionAggregation = jsonValue.GetObject("lambdaFunctionAggregation");
+    m_lambdaFunctionAggregationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepositoryAggregation"))
+  {
+    m_codeRepositoryAggregation = jsonValue.GetObject("codeRepositoryAggregation");
+    m_codeRepositoryAggregationHasBeenSet = true;
   }
   return *this;
 }
@@ -110,12 +110,6 @@ JsonValue AggregationResponse::Jsonize() const
 
   }
 
-  if(m_codeRepositoryAggregationHasBeenSet)
-  {
-   payload.WithObject("codeRepositoryAggregation", m_codeRepositoryAggregation.Jsonize());
-
-  }
-
   if(m_ec2InstanceAggregationHasBeenSet)
   {
    payload.WithObject("ec2InstanceAggregation", m_ec2InstanceAggregation.Jsonize());
@@ -134,18 +128,6 @@ JsonValue AggregationResponse::Jsonize() const
 
   }
 
-  if(m_lambdaFunctionAggregationHasBeenSet)
-  {
-   payload.WithObject("lambdaFunctionAggregation", m_lambdaFunctionAggregation.Jsonize());
-
-  }
-
-  if(m_lambdaLayerAggregationHasBeenSet)
-  {
-   payload.WithObject("lambdaLayerAggregation", m_lambdaLayerAggregation.Jsonize());
-
-  }
-
   if(m_packageAggregationHasBeenSet)
   {
    payload.WithObject("packageAggregation", m_packageAggregation.Jsonize());
@@ -161,6 +143,24 @@ JsonValue AggregationResponse::Jsonize() const
   if(m_titleAggregationHasBeenSet)
   {
    payload.WithObject("titleAggregation", m_titleAggregation.Jsonize());
+
+  }
+
+  if(m_lambdaLayerAggregationHasBeenSet)
+  {
+   payload.WithObject("lambdaLayerAggregation", m_lambdaLayerAggregation.Jsonize());
+
+  }
+
+  if(m_lambdaFunctionAggregationHasBeenSet)
+  {
+   payload.WithObject("lambdaFunctionAggregation", m_lambdaFunctionAggregation.Jsonize());
+
+  }
+
+  if(m_codeRepositoryAggregationHasBeenSet)
+  {
+   payload.WithObject("codeRepositoryAggregation", m_codeRepositoryAggregation.Jsonize());
 
   }
 

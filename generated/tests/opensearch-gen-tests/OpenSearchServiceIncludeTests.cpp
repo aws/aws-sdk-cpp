@@ -186,6 +186,8 @@
 #include <aws/opensearch/model/GetUpgradeHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusResult.h>
+#include <aws/opensearch/model/IAMFederationOptionsInput.h>
+#include <aws/opensearch/model/IAMFederationOptionsOutput.h>
 #include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/IPAddressTypeStatus.h>
 #include <aws/opensearch/model/IamIdentityCenterOptions.h>

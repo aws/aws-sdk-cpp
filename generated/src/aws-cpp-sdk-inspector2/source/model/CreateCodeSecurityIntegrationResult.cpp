@@ -25,11 +25,6 @@ CreateCodeSecurityIntegrationResult::CreateCodeSecurityIntegrationResult(const A
 CreateCodeSecurityIntegrationResult& CreateCodeSecurityIntegrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("authorizationUrl"))
-  {
-    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
-    m_authorizationUrlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("integrationArn"))
   {
     m_integrationArn = jsonValue.GetString("integrationArn");
@@ -39,6 +34,11 @@ CreateCodeSecurityIntegrationResult& CreateCodeSecurityIntegrationResult::operat
   {
     m_status = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("authorizationUrl"))
+  {
+    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
+    m_authorizationUrlHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

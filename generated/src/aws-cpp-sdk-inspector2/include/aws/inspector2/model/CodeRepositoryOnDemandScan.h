@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/ScanStatus.h>
 #include <utility>
 
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the last on-demand scan was performed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastScanAt() const { return m_lastScanAt; }
-    inline bool LastScanAtHasBeenSet() const { return m_lastScanAtHasBeenSet; }
-    template<typename LastScanAtT = Aws::Utils::DateTime>
-    void SetLastScanAt(LastScanAtT&& value) { m_lastScanAtHasBeenSet = true; m_lastScanAt = std::forward<LastScanAtT>(value); }
-    template<typename LastScanAtT = Aws::Utils::DateTime>
-    CodeRepositoryOnDemandScan& WithLastScanAt(LastScanAtT&& value) { SetLastScanAt(std::forward<LastScanAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the last commit that was scanned during an on-demand scan.</p>
      */
     inline const Aws::String& GetLastScannedCommitId() const { return m_lastScannedCommitId; }
@@ -62,6 +50,18 @@ namespace Model
     void SetLastScannedCommitId(LastScannedCommitIdT&& value) { m_lastScannedCommitIdHasBeenSet = true; m_lastScannedCommitId = std::forward<LastScannedCommitIdT>(value); }
     template<typename LastScannedCommitIdT = Aws::String>
     CodeRepositoryOnDemandScan& WithLastScannedCommitId(LastScannedCommitIdT&& value) { SetLastScannedCommitId(std::forward<LastScannedCommitIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the last on-demand scan was performed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastScanAt() const { return m_lastScanAt; }
+    inline bool LastScanAtHasBeenSet() const { return m_lastScanAtHasBeenSet; }
+    template<typename LastScanAtT = Aws::Utils::DateTime>
+    void SetLastScanAt(LastScanAtT&& value) { m_lastScanAtHasBeenSet = true; m_lastScanAt = std::forward<LastScanAtT>(value); }
+    template<typename LastScanAtT = Aws::Utils::DateTime>
+    CodeRepositoryOnDemandScan& WithLastScanAt(LastScanAtT&& value) { SetLastScanAt(std::forward<LastScanAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +75,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastScanAt{};
-    bool m_lastScanAtHasBeenSet = false;
-
     Aws::String m_lastScannedCommitId;
     bool m_lastScannedCommitIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastScanAt{};
+    bool m_lastScanAtHasBeenSet = false;
 
     ScanStatus m_scanStatus;
     bool m_scanStatusHasBeenSet = false;

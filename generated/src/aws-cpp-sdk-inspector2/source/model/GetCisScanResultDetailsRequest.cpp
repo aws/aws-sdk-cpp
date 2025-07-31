@@ -16,6 +16,18 @@ Aws::String GetCisScanResultDetailsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_scanArnHasBeenSet)
+  {
+   payload.WithString("scanArn", m_scanArn);
+
+  }
+
+  if(m_targetResourceIdHasBeenSet)
+  {
+   payload.WithString("targetResourceId", m_targetResourceId);
+
+  }
+
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
@@ -25,24 +37,6 @@ Aws::String GetCisScanResultDetailsRequest::SerializePayload() const
   if(m_filterCriteriaHasBeenSet)
   {
    payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
-  if(m_scanArnHasBeenSet)
-  {
-   payload.WithString("scanArn", m_scanArn);
 
   }
 
@@ -56,9 +50,15 @@ Aws::String GetCisScanResultDetailsRequest::SerializePayload() const
    payload.WithString("sortOrder", CisSortOrderMapper::GetNameForCisSortOrder(m_sortOrder));
   }
 
-  if(m_targetResourceIdHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-   payload.WithString("targetResourceId", m_targetResourceId);
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

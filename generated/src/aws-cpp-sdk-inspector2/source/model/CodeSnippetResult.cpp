@@ -25,20 +25,6 @@ CodeSnippetResult::CodeSnippetResult(JsonView jsonValue)
 
 CodeSnippetResult& CodeSnippetResult::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("codeSnippet"))
-  {
-    Aws::Utils::Array<JsonView> codeSnippetJsonList = jsonValue.GetArray("codeSnippet");
-    for(unsigned codeSnippetIndex = 0; codeSnippetIndex < codeSnippetJsonList.GetLength(); ++codeSnippetIndex)
-    {
-      m_codeSnippet.push_back(codeSnippetJsonList[codeSnippetIndex].AsObject());
-    }
-    m_codeSnippetHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("endLine"))
-  {
-    m_endLine = jsonValue.GetInteger("endLine");
-    m_endLineHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
@@ -48,6 +34,20 @@ CodeSnippetResult& CodeSnippetResult::operator =(JsonView jsonValue)
   {
     m_startLine = jsonValue.GetInteger("startLine");
     m_startLineHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endLine"))
+  {
+    m_endLine = jsonValue.GetInteger("endLine");
+    m_endLineHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeSnippet"))
+  {
+    Aws::Utils::Array<JsonView> codeSnippetJsonList = jsonValue.GetArray("codeSnippet");
+    for(unsigned codeSnippetIndex = 0; codeSnippetIndex < codeSnippetJsonList.GetLength(); ++codeSnippetIndex)
+    {
+      m_codeSnippet.push_back(codeSnippetJsonList[codeSnippetIndex].AsObject());
+    }
+    m_codeSnippetHasBeenSet = true;
   }
   if(jsonValue.ValueExists("suggestedFixes"))
   {
@@ -65,23 +65,6 @@ JsonValue CodeSnippetResult::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_codeSnippetHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> codeSnippetJsonList(m_codeSnippet.size());
-   for(unsigned codeSnippetIndex = 0; codeSnippetIndex < codeSnippetJsonList.GetLength(); ++codeSnippetIndex)
-   {
-     codeSnippetJsonList[codeSnippetIndex].AsObject(m_codeSnippet[codeSnippetIndex].Jsonize());
-   }
-   payload.WithArray("codeSnippet", std::move(codeSnippetJsonList));
-
-  }
-
-  if(m_endLineHasBeenSet)
-  {
-   payload.WithInteger("endLine", m_endLine);
-
-  }
-
   if(m_findingArnHasBeenSet)
   {
    payload.WithString("findingArn", m_findingArn);
@@ -91,6 +74,23 @@ JsonValue CodeSnippetResult::Jsonize() const
   if(m_startLineHasBeenSet)
   {
    payload.WithInteger("startLine", m_startLine);
+
+  }
+
+  if(m_endLineHasBeenSet)
+  {
+   payload.WithInteger("endLine", m_endLine);
+
+  }
+
+  if(m_codeSnippetHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeSnippetJsonList(m_codeSnippet.size());
+   for(unsigned codeSnippetIndex = 0; codeSnippetIndex < codeSnippetJsonList.GetLength(); ++codeSnippetIndex)
+   {
+     codeSnippetJsonList[codeSnippetIndex].AsObject(m_codeSnippet[codeSnippetIndex].Jsonize());
+   }
+   payload.WithArray("codeSnippet", std::move(codeSnippetJsonList));
 
   }
 

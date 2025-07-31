@@ -25,15 +25,15 @@ NumberFilter::NumberFilter(JsonView jsonValue)
 
 NumberFilter& NumberFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("lowerInclusive"))
-  {
-    m_lowerInclusive = jsonValue.GetDouble("lowerInclusive");
-    m_lowerInclusiveHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("upperInclusive"))
   {
     m_upperInclusive = jsonValue.GetDouble("upperInclusive");
     m_upperInclusiveHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lowerInclusive"))
+  {
+    m_lowerInclusive = jsonValue.GetDouble("lowerInclusive");
+    m_lowerInclusiveHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NumberFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_lowerInclusiveHasBeenSet)
-  {
-   payload.WithDouble("lowerInclusive", m_lowerInclusive);
-
-  }
-
   if(m_upperInclusiveHasBeenSet)
   {
    payload.WithDouble("upperInclusive", m_upperInclusive);
+
+  }
+
+  if(m_lowerInclusiveHasBeenSet)
+  {
+   payload.WithDouble("lowerInclusive", m_lowerInclusive);
 
   }
 

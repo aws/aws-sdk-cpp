@@ -25,6 +25,11 @@ ProjectContinuousIntegrationScanConfiguration::ProjectContinuousIntegrationScanC
 
 ProjectContinuousIntegrationScanConfiguration& ProjectContinuousIntegrationScanConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("supportedEvent"))
+  {
+    m_supportedEvent = ContinuousIntegrationScanEventMapper::GetContinuousIntegrationScanEventForName(jsonValue.GetString("supportedEvent"));
+    m_supportedEventHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ruleSetCategories"))
   {
     Aws::Utils::Array<JsonView> ruleSetCategoriesJsonList = jsonValue.GetArray("ruleSetCategories");
@@ -34,17 +39,17 @@ ProjectContinuousIntegrationScanConfiguration& ProjectContinuousIntegrationScanC
     }
     m_ruleSetCategoriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("supportedEvent"))
-  {
-    m_supportedEvent = ContinuousIntegrationScanEventMapper::GetContinuousIntegrationScanEventForName(jsonValue.GetString("supportedEvent"));
-    m_supportedEventHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ProjectContinuousIntegrationScanConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_supportedEventHasBeenSet)
+  {
+   payload.WithString("supportedEvent", ContinuousIntegrationScanEventMapper::GetNameForContinuousIntegrationScanEvent(m_supportedEvent));
+  }
 
   if(m_ruleSetCategoriesHasBeenSet)
   {
@@ -55,11 +60,6 @@ JsonValue ProjectContinuousIntegrationScanConfiguration::Jsonize() const
    }
    payload.WithArray("ruleSetCategories", std::move(ruleSetCategoriesJsonList));
 
-  }
-
-  if(m_supportedEventHasBeenSet)
-  {
-   payload.WithString("supportedEvent", ContinuousIntegrationScanEventMapper::GetNameForContinuousIntegrationScanEvent(m_supportedEvent));
   }
 
   return payload;

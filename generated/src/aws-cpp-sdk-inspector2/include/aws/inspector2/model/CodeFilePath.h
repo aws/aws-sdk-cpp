@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The line number of the last line of code that a vulnerability was found
-     * in.</p>
-     */
-    inline int GetEndLine() const { return m_endLine; }
-    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
-    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
-    inline CodeFilePath& WithEndLine(int value) { SetEndLine(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the file the code vulnerability was found in.</p>
      */
     inline const Aws::String& GetFileName() const { return m_fileName; }
@@ -83,10 +72,18 @@ namespace Model
     inline void SetStartLine(int value) { m_startLineHasBeenSet = true; m_startLine = value; }
     inline CodeFilePath& WithStartLine(int value) { SetStartLine(value); return *this;}
     ///@}
-  private:
 
-    int m_endLine{0};
-    bool m_endLineHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The line number of the last line of code that a vulnerability was found
+     * in.</p>
+     */
+    inline int GetEndLine() const { return m_endLine; }
+    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
+    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
+    inline CodeFilePath& WithEndLine(int value) { SetEndLine(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
@@ -96,6 +93,9 @@ namespace Model
 
     int m_startLine{0};
     bool m_startLineHasBeenSet = false;
+
+    int m_endLine{0};
+    bool m_endLineHasBeenSet = false;
   };
 
 } // namespace Model

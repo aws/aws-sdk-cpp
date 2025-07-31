@@ -25,16 +25,6 @@ ImageLayerAggregationResponse::ImageLayerAggregationResponse(JsonView jsonValue)
 
 ImageLayerAggregationResponse& ImageLayerAggregationResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
-  {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("layerHash"))
-  {
-    m_layerHash = jsonValue.GetString("layerHash");
-    m_layerHashHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
@@ -44,6 +34,16 @@ ImageLayerAggregationResponse& ImageLayerAggregationResponse::operator =(JsonVie
   {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("layerHash"))
+  {
+    m_layerHash = jsonValue.GetString("layerHash");
+    m_layerHashHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("accountId"))
+  {
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("severityCounts"))
   {
@@ -57,18 +57,6 @@ JsonValue ImageLayerAggregationResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
-  if(m_layerHashHasBeenSet)
-  {
-   payload.WithString("layerHash", m_layerHash);
-
-  }
-
   if(m_repositoryHasBeenSet)
   {
    payload.WithString("repository", m_repository);
@@ -78,6 +66,18 @@ JsonValue ImageLayerAggregationResponse::Jsonize() const
   if(m_resourceIdHasBeenSet)
   {
    payload.WithString("resourceId", m_resourceId);
+
+  }
+
+  if(m_layerHashHasBeenSet)
+  {
+   payload.WithString("layerHash", m_layerHash);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("accountId", m_accountId);
 
   }
 

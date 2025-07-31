@@ -35,17 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL used to authorize the integration with the repository provider.</p>
-     */
-    inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
-    template<typename AuthorizationUrlT = Aws::String>
-    void SetAuthorizationUrl(AuthorizationUrlT&& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = std::forward<AuthorizationUrlT>(value); }
-    template<typename AuthorizationUrlT = Aws::String>
-    CreateCodeSecurityIntegrationResult& WithAuthorizationUrl(AuthorizationUrlT&& value) { SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the created code security integration.</p>
      */
     inline const Aws::String& GetIntegrationArn() const { return m_integrationArn; }
@@ -65,6 +54,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The URL used to authorize the integration with the repository provider.</p>
+     */
+    inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
+    template<typename AuthorizationUrlT = Aws::String>
+    void SetAuthorizationUrl(AuthorizationUrlT&& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = std::forward<AuthorizationUrlT>(value); }
+    template<typename AuthorizationUrlT = Aws::String>
+    CreateCodeSecurityIntegrationResult& WithAuthorizationUrl(AuthorizationUrlT&& value) { SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -74,14 +74,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_authorizationUrl;
-    bool m_authorizationUrlHasBeenSet = false;
-
     Aws::String m_integrationArn;
     bool m_integrationArnHasBeenSet = false;
 
     IntegrationStatus m_status{IntegrationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_authorizationUrl;
+    bool m_authorizationUrlHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

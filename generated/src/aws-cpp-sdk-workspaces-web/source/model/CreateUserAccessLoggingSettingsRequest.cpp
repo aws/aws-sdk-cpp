@@ -16,12 +16,6 @@ Aws::String CreateUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_kinesisStreamArnHasBeenSet)
   {
    payload.WithString("kinesisStreamArn", m_kinesisStreamArn);
@@ -36,6 +30,12 @@ Aws::String CreateUserAccessLoggingSettingsRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

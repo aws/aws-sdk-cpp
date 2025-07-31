@@ -22,15 +22,21 @@ Aws::String CreateCisScanConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_securityLevelHasBeenSet)
+  {
+   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
+  }
+
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
 
   }
 
-  if(m_securityLevelHasBeenSet)
+  if(m_targetsHasBeenSet)
   {
-   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
+   payload.WithObject("targets", m_targets.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)
@@ -41,12 +47,6 @@ Aws::String CreateCisScanConfigurationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_targetsHasBeenSet)
-  {
-   payload.WithObject("targets", m_targets.Jsonize());
 
   }
 

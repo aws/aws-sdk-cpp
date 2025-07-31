@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/FilterAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/FilterCriteria.h>
+#include <aws/inspector2/model/FilterAction.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -43,16 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action that is to be applied to the findings that match the filter.</p>
-     */
-    inline FilterAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline Filter& WithAction(FilterAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Number (ARN) associated with this filter.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -65,38 +55,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time this filter was created at.</p>
+     * <p>The Amazon Web Services account ID of the account that created the
+     * filter.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    Filter& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Details on the filter criteria associated with this filter.</p>
-     */
-    inline const FilterCriteria& GetCriteria() const { return m_criteria; }
-    inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    template<typename CriteriaT = FilterCriteria>
-    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
-    template<typename CriteriaT = FilterCriteria>
-    Filter& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the filter.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    Filter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    Filter& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +80,60 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID of the account that created the
-     * filter.</p>
+     * <p>Details on the filter criteria associated with this filter.</p>
      */
-    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
-    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    template<typename OwnerIdT = Aws::String>
-    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
-    template<typename OwnerIdT = Aws::String>
-    Filter& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
+    inline const FilterCriteria& GetCriteria() const { return m_criteria; }
+    inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
+    template<typename CriteriaT = FilterCriteria>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = FilterCriteria>
+    Filter& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The action that is to be applied to the findings that match the filter.</p>
+     */
+    inline FilterAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline Filter& WithAction(FilterAction value) { SetAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time this filter was created at.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Filter& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the filter was last updated at.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    Filter& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description of the filter.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Filter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,49 +163,37 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the filter was last updated at.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    Filter& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
   private:
-
-    FilterAction m_action{FilterAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    FilterCriteria m_criteria;
-    bool m_criteriaHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet = false;
+    FilterCriteria m_criteria;
+    bool m_criteriaHasBeenSet = false;
+
+    FilterAction m_action{FilterAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt{};
-    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

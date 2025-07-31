@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/EcrPullDateRescanDuration.h>
-#include <aws/inspector2/model/EcrPullDateRescanMode.h>
 #include <aws/inspector2/model/EcrRescanDuration.h>
 #include <aws/inspector2/model/EcrRescanDurationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/inspector2/model/EcrPullDateRescanDuration.h>
+#include <aws/inspector2/model/EcrPullDateRescanMode.h>
 #include <utility>
 
 namespace Aws
@@ -49,26 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
-    inline EcrPullDateRescanDuration GetPullDateRescanDuration() const { return m_pullDateRescanDuration; }
-    inline bool PullDateRescanDurationHasBeenSet() const { return m_pullDateRescanDurationHasBeenSet; }
-    inline void SetPullDateRescanDuration(EcrPullDateRescanDuration value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = value; }
-    inline EcrRescanDurationState& WithPullDateRescanDuration(EcrPullDateRescanDuration value) { SetPullDateRescanDuration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The pull date for the re-scan mode.</p>
-     */
-    inline EcrPullDateRescanMode GetPullDateRescanMode() const { return m_pullDateRescanMode; }
-    inline bool PullDateRescanModeHasBeenSet() const { return m_pullDateRescanModeHasBeenSet; }
-    inline void SetPullDateRescanMode(EcrPullDateRescanMode value) { m_pullDateRescanModeHasBeenSet = true; m_pullDateRescanMode = value; }
-    inline EcrRescanDurationState& WithPullDateRescanMode(EcrPullDateRescanMode value) { SetPullDateRescanMode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The rescan duration configured for image push date. </p>
      */
     inline EcrRescanDuration GetRescanDuration() const { return m_rescanDuration; }
@@ -99,13 +79,27 @@ namespace Model
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     EcrRescanDurationState& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The rescan duration configured for image pull date.</p>
+     */
+    inline EcrPullDateRescanDuration GetPullDateRescanDuration() const { return m_pullDateRescanDuration; }
+    inline bool PullDateRescanDurationHasBeenSet() const { return m_pullDateRescanDurationHasBeenSet; }
+    inline void SetPullDateRescanDuration(EcrPullDateRescanDuration value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = value; }
+    inline EcrRescanDurationState& WithPullDateRescanDuration(EcrPullDateRescanDuration value) { SetPullDateRescanDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The pull date for the re-scan mode.</p>
+     */
+    inline EcrPullDateRescanMode GetPullDateRescanMode() const { return m_pullDateRescanMode; }
+    inline bool PullDateRescanModeHasBeenSet() const { return m_pullDateRescanModeHasBeenSet; }
+    inline void SetPullDateRescanMode(EcrPullDateRescanMode value) { m_pullDateRescanModeHasBeenSet = true; m_pullDateRescanMode = value; }
+    inline EcrRescanDurationState& WithPullDateRescanMode(EcrPullDateRescanMode value) { SetPullDateRescanMode(value); return *this;}
+    ///@}
   private:
-
-    EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
-    bool m_pullDateRescanDurationHasBeenSet = false;
-
-    EcrPullDateRescanMode m_pullDateRescanMode{EcrPullDateRescanMode::NOT_SET};
-    bool m_pullDateRescanModeHasBeenSet = false;
 
     EcrRescanDuration m_rescanDuration{EcrRescanDuration::NOT_SET};
     bool m_rescanDurationHasBeenSet = false;
@@ -115,6 +109,12 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
+    bool m_pullDateRescanDurationHasBeenSet = false;
+
+    EcrPullDateRescanMode m_pullDateRescanMode{EcrPullDateRescanMode::NOT_SET};
+    bool m_pullDateRescanModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The thumbprint of the trust store certificate.</p>
-     */
-    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
-    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
-    template<typename ThumbprintT = Aws::String>
-    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
-    template<typename ThumbprintT = Aws::String>
-    GetTrustStoreCertificateRequest& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the trust store certificate.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename TrustStoreArnT = Aws::String>
     GetTrustStoreCertificateRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The thumbprint of the trust store certificate.</p>
+     */
+    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
+    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
+    template<typename ThumbprintT = Aws::String>
+    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
+    template<typename ThumbprintT = Aws::String>
+    GetTrustStoreCertificateRequest& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
+
+    Aws::String m_thumbprint;
+    bool m_thumbprintHasBeenSet = false;
   };
 
 } // namespace Model

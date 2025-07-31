@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the network settings.</p>
-     */
-    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
-    inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-    template<typename NetworkSettingsArnT = Aws::String>
-    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
-    template<typename NetworkSettingsArnT = Aws::String>
-    AssociateNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const { return m_portalArn; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename PortalArnT = Aws::String>
     AssociateNetworkSettingsRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ARN of the network settings.</p>
+     */
+    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
+    inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
+    template<typename NetworkSettingsArnT = Aws::String>
+    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
+    template<typename NetworkSettingsArnT = Aws::String>
+    AssociateNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;
+
+    Aws::String m_networkSettingsArn;
+    bool m_networkSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

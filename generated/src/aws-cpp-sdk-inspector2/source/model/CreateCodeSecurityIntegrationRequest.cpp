@@ -16,15 +16,20 @@ Aws::String CreateCodeSecurityIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("details", m_details.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", IntegrationTypeMapper::GetNameForIntegrationType(m_type));
+  }
+
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithObject("details", m_details.Jsonize());
 
   }
 
@@ -37,11 +42,6 @@ Aws::String CreateCodeSecurityIntegrationRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", IntegrationTypeMapper::GetNameForIntegrationType(m_type));
   }
 
   return payload.View().WriteReadable();

@@ -16,15 +16,9 @@ Aws::String UpdateDataProtectionSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_inlineRedactionConfigurationHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
+   payload.WithObject("inlineRedactionConfiguration", m_inlineRedactionConfiguration.Jsonize());
 
   }
 
@@ -34,9 +28,15 @@ Aws::String UpdateDataProtectionSettingsRequest::SerializePayload() const
 
   }
 
-  if(m_inlineRedactionConfigurationHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("inlineRedactionConfiguration", m_inlineRedactionConfiguration.Jsonize());
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

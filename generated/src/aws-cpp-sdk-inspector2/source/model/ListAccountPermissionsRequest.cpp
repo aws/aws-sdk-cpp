@@ -16,6 +16,11 @@ Aws::String ListAccountPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_serviceHasBeenSet)
+  {
+   payload.WithString("service", ServiceMapper::GetNameForService(m_service));
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -26,11 +31,6 @@ Aws::String ListAccountPermissionsRequest::SerializePayload() const
   {
    payload.WithString("nextToken", m_nextToken);
 
-  }
-
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("service", ServiceMapper::GetNameForService(m_service));
   }
 
   return payload.View().WriteReadable();

@@ -16,6 +16,23 @@ Aws::String CreateBrowserSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
+  }
+
   if(m_additionalEncryptionContextHasBeenSet)
   {
    JsonValue additionalEncryptionContextJsonMap;
@@ -36,23 +53,6 @@ Aws::String CreateBrowserSettingsRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_customerManagedKeyHasBeenSet)
-  {
-   payload.WithString("customerManagedKey", m_customerManagedKey);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

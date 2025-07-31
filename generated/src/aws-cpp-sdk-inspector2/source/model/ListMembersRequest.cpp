@@ -16,6 +16,12 @@ Aws::String ListMembersRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_onlyAssociatedHasBeenSet)
+  {
+   payload.WithBool("onlyAssociated", m_onlyAssociated);
+
+  }
+
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -25,12 +31,6 @@ Aws::String ListMembersRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
-
-  }
-
-  if(m_onlyAssociatedHasBeenSet)
-  {
-   payload.WithBool("onlyAssociated", m_onlyAssociated);
 
   }
 

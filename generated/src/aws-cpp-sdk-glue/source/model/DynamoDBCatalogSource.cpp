@@ -40,6 +40,16 @@ DynamoDBCatalogSource& DynamoDBCatalogSource::operator =(JsonView jsonValue)
     m_table = jsonValue.GetString("Table");
     m_tableHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PitrEnabled"))
+  {
+    m_pitrEnabled = jsonValue.GetBool("PitrEnabled");
+    m_pitrEnabledHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AdditionalOptions"))
+  {
+    m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
+    m_additionalOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +72,18 @@ JsonValue DynamoDBCatalogSource::Jsonize() const
   if(m_tableHasBeenSet)
   {
    payload.WithString("Table", m_table);
+
+  }
+
+  if(m_pitrEnabledHasBeenSet)
+  {
+   payload.WithBool("PitrEnabled", m_pitrEnabled);
+
+  }
+
+  if(m_additionalOptionsHasBeenSet)
+  {
+   payload.WithObject("AdditionalOptions", m_additionalOptions.Jsonize());
 
   }
 

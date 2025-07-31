@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/Ec2DeepInspectionStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,14 +36,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>An error message explaining why new Amazon Inspector deep inspection custom
-     * paths could not be added.</p>
+     * <p>The current Amazon Inspector deep inspection custom paths for your
+     * account.</p>
      */
-    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-    template<typename ErrorMessageT = Aws::String>
-    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
-    template<typename ErrorMessageT = Aws::String>
-    UpdateEc2DeepInspectionConfigurationResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetPackagePaths() const { return m_packagePaths; }
+    template<typename PackagePathsT = Aws::Vector<Aws::String>>
+    void SetPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths = std::forward<PackagePathsT>(value); }
+    template<typename PackagePathsT = Aws::Vector<Aws::String>>
+    UpdateEc2DeepInspectionConfigurationResult& WithPackagePaths(PackagePathsT&& value) { SetPackagePaths(std::forward<PackagePathsT>(value)); return *this;}
+    template<typename PackagePathsT = Aws::String>
+    UpdateEc2DeepInspectionConfigurationResult& AddPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths.emplace_back(std::forward<PackagePathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,25 +64,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current Amazon Inspector deep inspection custom paths for your
-     * account.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetPackagePaths() const { return m_packagePaths; }
-    template<typename PackagePathsT = Aws::Vector<Aws::String>>
-    void SetPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths = std::forward<PackagePathsT>(value); }
-    template<typename PackagePathsT = Aws::Vector<Aws::String>>
-    UpdateEc2DeepInspectionConfigurationResult& WithPackagePaths(PackagePathsT&& value) { SetPackagePaths(std::forward<PackagePathsT>(value)); return *this;}
-    template<typename PackagePathsT = Aws::String>
-    UpdateEc2DeepInspectionConfigurationResult& AddPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths.emplace_back(std::forward<PackagePathsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of Amazon Inspector deep inspection in your account.</p>
      */
     inline Ec2DeepInspectionStatus GetStatus() const { return m_status; }
     inline void SetStatus(Ec2DeepInspectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline UpdateEc2DeepInspectionConfigurationResult& WithStatus(Ec2DeepInspectionStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An error message explaining why new Amazon Inspector deep inspection custom
+     * paths could not be added.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UpdateEc2DeepInspectionConfigurationResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,17 +93,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
+    Aws::Vector<Aws::String> m_packagePaths;
+    bool m_packagePathsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_orgPackagePaths;
     bool m_orgPackagePathsHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_packagePaths;
-    bool m_packagePathsHasBeenSet = false;
-
     Ec2DeepInspectionStatus m_status{Ec2DeepInspectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

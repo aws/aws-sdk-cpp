@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/ClusterMetadata.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/inspector2/model/ClusterMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -37,16 +37,6 @@ namespace Model
     AWS_INSPECTOR2_API ClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    
-    inline const ClusterMetadata& GetClusterMetadata() const { return m_clusterMetadata; }
-    inline bool ClusterMetadataHasBeenSet() const { return m_clusterMetadataHasBeenSet; }
-    template<typename ClusterMetadataT = ClusterMetadata>
-    void SetClusterMetadata(ClusterMetadataT&& value) { m_clusterMetadataHasBeenSet = true; m_clusterMetadata = std::forward<ClusterMetadataT>(value); }
-    template<typename ClusterMetadataT = ClusterMetadata>
-    ClusterDetails& WithClusterMetadata(ClusterMetadataT&& value) { SetClusterMetadata(std::forward<ClusterMetadataT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -81,10 +71,17 @@ namespace Model
     inline void SetStoppedUnitCount(long long value) { m_stoppedUnitCountHasBeenSet = true; m_stoppedUnitCount = value; }
     inline ClusterDetails& WithStoppedUnitCount(long long value) { SetStoppedUnitCount(value); return *this;}
     ///@}
-  private:
 
-    ClusterMetadata m_clusterMetadata;
-    bool m_clusterMetadataHasBeenSet = false;
+    ///@{
+    
+    inline const ClusterMetadata& GetClusterMetadata() const { return m_clusterMetadata; }
+    inline bool ClusterMetadataHasBeenSet() const { return m_clusterMetadataHasBeenSet; }
+    template<typename ClusterMetadataT = ClusterMetadata>
+    void SetClusterMetadata(ClusterMetadataT&& value) { m_clusterMetadataHasBeenSet = true; m_clusterMetadata = std::forward<ClusterMetadataT>(value); }
+    template<typename ClusterMetadataT = ClusterMetadata>
+    ClusterDetails& WithClusterMetadata(ClusterMetadataT&& value) { SetClusterMetadata(std::forward<ClusterMetadataT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Utils::DateTime m_lastInUse{};
     bool m_lastInUseHasBeenSet = false;
@@ -94,6 +91,9 @@ namespace Model
 
     long long m_stoppedUnitCount{0};
     bool m_stoppedUnitCountHasBeenSet = false;
+
+    ClusterMetadata m_clusterMetadata;
+    bool m_clusterMetadataHasBeenSet = false;
   };
 
 } // namespace Model

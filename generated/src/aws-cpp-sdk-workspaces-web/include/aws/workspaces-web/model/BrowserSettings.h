@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -44,18 +44,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional encryption context of the browser settings.</p>
+     * <p>The ARN of the browser settings.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
-    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    BrowserSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
-    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
-    BrowserSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
-      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
-    }
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
+    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    BrowserSettings& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,18 +83,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the browser settings.</p>
-     */
-    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
-    inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-    template<typename BrowserSettingsArnT = Aws::String>
-    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
-    template<typename BrowserSettingsArnT = Aws::String>
-    BrowserSettings& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The customer managed key used to encrypt sensitive information in the browser
      * settings.</p>
      */
@@ -109,10 +93,26 @@ namespace Model
     template<typename CustomerManagedKeyT = Aws::String>
     BrowserSettings& WithCustomerManagedKey(CustomerManagedKeyT&& value) { SetCustomerManagedKey(std::forward<CustomerManagedKeyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
+    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    BrowserSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
+    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
+    BrowserSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
+      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-    bool m_additionalEncryptionContextHasBeenSet = false;
+    Aws::String m_browserSettingsArn;
+    bool m_browserSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
@@ -120,11 +120,11 @@ namespace Model
     Aws::String m_browserPolicy;
     bool m_browserPolicyHasBeenSet = false;
 
-    Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet = false;
-
     Aws::String m_customerManagedKey;
     bool m_customerManagedKeyHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
+    bool m_additionalEncryptionContextHasBeenSet = false;
   };
 
 } // namespace Model

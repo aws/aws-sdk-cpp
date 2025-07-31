@@ -56,30 +56,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The EC2 instance tags used as resource filter criteria.</p>
+     * <p>The resource IDs used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceMapFilter>& GetEc2InstanceTags() const { return m_ec2InstanceTags; }
-    inline bool Ec2InstanceTagsHasBeenSet() const { return m_ec2InstanceTagsHasBeenSet; }
-    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
-    void SetEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags = std::forward<Ec2InstanceTagsT>(value); }
-    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
-    ResourceFilterCriteria& WithEc2InstanceTags(Ec2InstanceTagsT&& value) { SetEc2InstanceTags(std::forward<Ec2InstanceTagsT>(value)); return *this;}
-    template<typename Ec2InstanceTagsT = ResourceMapFilter>
-    ResourceFilterCriteria& AddEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.emplace_back(std::forward<Ec2InstanceTagsT>(value)); return *this; }
+    inline const Aws::Vector<ResourceStringFilter>& GetResourceId() const { return m_resourceId; }
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    template<typename ResourceIdT = ResourceStringFilter>
+    ResourceFilterCriteria& AddResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId.emplace_back(std::forward<ResourceIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
-     * <p>The ECR image tags used as resource filter criteria.</p>
+     * <p>The resource types used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetEcrImageTags() const { return m_ecrImageTags; }
-    inline bool EcrImageTagsHasBeenSet() const { return m_ecrImageTagsHasBeenSet; }
-    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
-    void SetEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags = std::forward<EcrImageTagsT>(value); }
-    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
-    ResourceFilterCriteria& WithEcrImageTags(EcrImageTagsT&& value) { SetEcrImageTags(std::forward<EcrImageTagsT>(value)); return *this;}
-    template<typename EcrImageTagsT = ResourceStringFilter>
-    ResourceFilterCriteria& AddEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.emplace_back(std::forward<EcrImageTagsT>(value)); return *this; }
+    inline const Aws::Vector<ResourceStringFilter>& GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
+    template<typename ResourceTypeT = ResourceStringFilter>
+    ResourceFilterCriteria& AddResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.emplace_back(std::forward<ResourceTypeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,6 +113,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ECR image tags used as resource filter criteria.</p>
+     */
+    inline const Aws::Vector<ResourceStringFilter>& GetEcrImageTags() const { return m_ecrImageTags; }
+    inline bool EcrImageTagsHasBeenSet() const { return m_ecrImageTagsHasBeenSet; }
+    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
+    void SetEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags = std::forward<EcrImageTagsT>(value); }
+    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithEcrImageTags(EcrImageTagsT&& value) { SetEcrImageTags(std::forward<EcrImageTagsT>(value)); return *this;}
+    template<typename EcrImageTagsT = ResourceStringFilter>
+    ResourceFilterCriteria& AddEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.emplace_back(std::forward<EcrImageTagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The EC2 instance tags used as resource filter criteria.</p>
+     */
+    inline const Aws::Vector<ResourceMapFilter>& GetEc2InstanceTags() const { return m_ec2InstanceTags; }
+    inline bool Ec2InstanceTagsHasBeenSet() const { return m_ec2InstanceTagsHasBeenSet; }
+    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
+    void SetEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags = std::forward<Ec2InstanceTagsT>(value); }
+    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
+    ResourceFilterCriteria& WithEc2InstanceTags(Ec2InstanceTagsT&& value) { SetEc2InstanceTags(std::forward<Ec2InstanceTagsT>(value)); return *this;}
+    template<typename Ec2InstanceTagsT = ResourceMapFilter>
+    ResourceFilterCriteria& AddEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.emplace_back(std::forward<Ec2InstanceTagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services Lambda function tags used as resource filter
      * criteria.</p>
      */
@@ -125,44 +153,16 @@ namespace Model
     template<typename LambdaFunctionTagsT = ResourceMapFilter>
     ResourceFilterCriteria& AddLambdaFunctionTags(LambdaFunctionTagsT&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.emplace_back(std::forward<LambdaFunctionTagsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The resource IDs used as resource filter criteria.</p>
-     */
-    inline const Aws::Vector<ResourceStringFilter>& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
-    ResourceFilterCriteria& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
-    template<typename ResourceIdT = ResourceStringFilter>
-    ResourceFilterCriteria& AddResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId.emplace_back(std::forward<ResourceIdT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource types used as resource filter criteria.</p>
-     */
-    inline const Aws::Vector<ResourceStringFilter>& GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
-    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
-    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
-    ResourceFilterCriteria& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
-    template<typename ResourceTypeT = ResourceStringFilter>
-    ResourceFilterCriteria& AddResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.emplace_back(std::forward<ResourceTypeT>(value)); return *this; }
-    ///@}
   private:
 
     Aws::Vector<ResourceStringFilter> m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::Vector<ResourceMapFilter> m_ec2InstanceTags;
-    bool m_ec2InstanceTagsHasBeenSet = false;
+    Aws::Vector<ResourceStringFilter> m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
-    Aws::Vector<ResourceStringFilter> m_ecrImageTags;
-    bool m_ecrImageTagsHasBeenSet = false;
+    Aws::Vector<ResourceStringFilter> m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceStringFilter> m_ecrRepositoryName;
     bool m_ecrRepositoryNameHasBeenSet = false;
@@ -170,14 +170,14 @@ namespace Model
     Aws::Vector<ResourceStringFilter> m_lambdaFunctionName;
     bool m_lambdaFunctionNameHasBeenSet = false;
 
+    Aws::Vector<ResourceStringFilter> m_ecrImageTags;
+    bool m_ecrImageTagsHasBeenSet = false;
+
+    Aws::Vector<ResourceMapFilter> m_ec2InstanceTags;
+    bool m_ec2InstanceTagsHasBeenSet = false;
+
     Aws::Vector<ResourceMapFilter> m_lambdaFunctionTags;
     bool m_lambdaFunctionTagsHasBeenSet = false;
-
-    Aws::Vector<ResourceStringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
-
-    Aws::Vector<ResourceStringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

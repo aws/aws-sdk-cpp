@@ -16,15 +16,15 @@ Aws::String UpdatePortalRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
   if(m_instanceTypeHasBeenSet)

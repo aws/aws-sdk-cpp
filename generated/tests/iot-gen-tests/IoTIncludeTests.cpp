@@ -131,6 +131,8 @@
 #include <aws/iot/model/ConfidenceLevel.h>
 #include <aws/iot/model/ConfigName.h>
 #include <aws/iot/model/Configuration.h>
+#include <aws/iot/model/ConfigurationDetails.h>
+#include <aws/iot/model/ConfigurationStatus.h>
 #include <aws/iot/model/ConfirmTopicRuleDestinationRequest.h>
 #include <aws/iot/model/ConfirmTopicRuleDestinationResult.h>
 #include <aws/iot/model/ConflictException.h>
@@ -296,6 +298,8 @@
 #include <aws/iot/model/DescribeDimensionResult.h>
 #include <aws/iot/model/DescribeDomainConfigurationRequest.h>
 #include <aws/iot/model/DescribeDomainConfigurationResult.h>
+#include <aws/iot/model/DescribeEncryptionConfigurationRequest.h>
+#include <aws/iot/model/DescribeEncryptionConfigurationResult.h>
 #include <aws/iot/model/DescribeEndpointRequest.h>
 #include <aws/iot/model/DescribeEndpointResult.h>
 #include <aws/iot/model/DescribeEventConfigurationsRequest.h>
@@ -366,6 +370,7 @@
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/EnableIoTLoggingParams.h>
 #include <aws/iot/model/EnableTopicRuleRequest.h>
+#include <aws/iot/model/EncryptionType.h>
 #include <aws/iot/model/ErrorInfo.h>
 #include <aws/iot/model/EventType.h>
 #include <aws/iot/model/ExplicitDeny.h>
@@ -786,6 +791,8 @@
 #include <aws/iot/model/UpdateDomainConfigurationResult.h>
 #include <aws/iot/model/UpdateDynamicThingGroupRequest.h>
 #include <aws/iot/model/UpdateDynamicThingGroupResult.h>
+#include <aws/iot/model/UpdateEncryptionConfigurationRequest.h>
+#include <aws/iot/model/UpdateEncryptionConfigurationResult.h>
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateEventConfigurationsResult.h>
 #include <aws/iot/model/UpdateFleetMetricRequest.h>

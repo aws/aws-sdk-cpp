@@ -7,6 +7,8 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/JDBCConnectionType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +109,20 @@ namespace Model
     template<typename RedshiftTmpDirT = Aws::String>
     DirectJDBCSource& WithRedshiftTmpDir(RedshiftTmpDirT&& value) { SetRedshiftTmpDir(std::forward<RedshiftTmpDirT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the data schema for the direct JDBC source.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    DirectJDBCSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    DirectJDBCSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -126,6 +142,9 @@ namespace Model
 
     Aws::String m_redshiftTmpDir;
     bool m_redshiftTmpDirHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

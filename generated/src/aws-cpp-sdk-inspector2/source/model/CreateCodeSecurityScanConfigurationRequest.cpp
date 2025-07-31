@@ -16,9 +16,9 @@ Aws::String CreateCodeSecurityScanConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("configuration", m_configuration.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 
@@ -27,9 +27,9 @@ Aws::String CreateCodeSecurityScanConfigurationRequest::SerializePayload() const
    payload.WithString("level", ConfigurationLevelMapper::GetNameForConfigurationLevel(m_level));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_configurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

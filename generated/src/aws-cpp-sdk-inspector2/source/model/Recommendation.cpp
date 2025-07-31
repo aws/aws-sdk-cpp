@@ -25,15 +25,15 @@ Recommendation::Recommendation(JsonView jsonValue)
 
 Recommendation& Recommendation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Url"))
-  {
-    m_url = jsonValue.GetString("Url");
-    m_urlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Url"))
+  {
+    m_url = jsonValue.GetString("Url");
+    m_urlHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue Recommendation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_urlHasBeenSet)
+  {
+   payload.WithString("Url", m_url);
 
   }
 

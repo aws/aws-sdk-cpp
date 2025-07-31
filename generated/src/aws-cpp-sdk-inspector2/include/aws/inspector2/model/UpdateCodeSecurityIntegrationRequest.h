@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/UpdateIntegrationDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/UpdateIntegrationDetails.h>
 #include <utility>
 
 namespace Aws
@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated integration details specific to the repository provider type.</p>
-     */
-    inline const UpdateIntegrationDetails& GetDetails() const { return m_details; }
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    template<typename DetailsT = UpdateIntegrationDetails>
-    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
-    template<typename DetailsT = UpdateIntegrationDetails>
-    UpdateCodeSecurityIntegrationRequest& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the code security integration to
      * update.</p>
      */
@@ -57,13 +45,25 @@ namespace Model
     template<typename IntegrationArnT = Aws::String>
     UpdateCodeSecurityIntegrationRequest& WithIntegrationArn(IntegrationArnT&& value) { SetIntegrationArn(std::forward<IntegrationArnT>(value)); return *this;}
     ///@}
-  private:
 
-    UpdateIntegrationDetails m_details;
-    bool m_detailsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The updated integration details specific to the repository provider type.</p>
+     */
+    inline const UpdateIntegrationDetails& GetDetails() const { return m_details; }
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+    template<typename DetailsT = UpdateIntegrationDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = UpdateIntegrationDetails>
+    UpdateCodeSecurityIntegrationRequest& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_integrationArn;
     bool m_integrationArnHasBeenSet = false;
+
+    UpdateIntegrationDetails m_details;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

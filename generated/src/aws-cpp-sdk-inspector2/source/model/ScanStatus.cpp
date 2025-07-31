@@ -25,15 +25,15 @@ ScanStatus::ScanStatus(JsonView jsonValue)
 
 ScanStatus& ScanStatus::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("reason"))
-  {
-    m_reason = ScanStatusReasonMapper::GetScanStatusReasonForName(jsonValue.GetString("reason"));
-    m_reasonHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = ScanStatusCodeMapper::GetScanStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("reason"))
+  {
+    m_reason = ScanStatusReasonMapper::GetScanStatusReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
   }
   return *this;
 }
@@ -42,14 +42,14 @@ JsonValue ScanStatus::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", ScanStatusReasonMapper::GetNameForScanStatusReason(m_reason));
-  }
-
   if(m_statusCodeHasBeenSet)
   {
    payload.WithString("statusCode", ScanStatusCodeMapper::GetNameForScanStatusCode(m_statusCode));
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", ScanStatusReasonMapper::GetNameForScanStatusReason(m_reason));
   }
 
   return payload;

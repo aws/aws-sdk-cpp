@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/AwsEcrContainerSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/AwsEcrContainerSortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
-#include <aws/inspector2/model/NumberFilter.h>
 #include <aws/inspector2/model/DateFilter.h>
+#include <aws/inspector2/model/NumberFilter.h>
 #include <utility>
 
 namespace Aws
@@ -45,16 +45,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The architecture of the containers.</p>
+     * <p>The container resource IDs.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetArchitectures() const { return m_architectures; }
-    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
-    template<typename ArchitecturesT = Aws::Vector<StringFilter>>
-    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
-    template<typename ArchitecturesT = Aws::Vector<StringFilter>>
-    AwsEcrContainerAggregation& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
-    template<typename ArchitecturesT = StringFilter>
-    AwsEcrContainerAggregation& AddArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures.emplace_back(std::forward<ArchitecturesT>(value)); return *this; }
+    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    AwsEcrContainerAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = StringFilter>
+    AwsEcrContainerAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,6 +73,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The container repositories.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetRepositories() const { return m_repositories; }
+    inline bool RepositoriesHasBeenSet() const { return m_repositoriesHasBeenSet; }
+    template<typename RepositoriesT = Aws::Vector<StringFilter>>
+    void SetRepositories(RepositoriesT&& value) { m_repositoriesHasBeenSet = true; m_repositories = std::forward<RepositoriesT>(value); }
+    template<typename RepositoriesT = Aws::Vector<StringFilter>>
+    AwsEcrContainerAggregation& WithRepositories(RepositoriesT&& value) { SetRepositories(std::forward<RepositoriesT>(value)); return *this;}
+    template<typename RepositoriesT = StringFilter>
+    AwsEcrContainerAggregation& AddRepositories(RepositoriesT&& value) { m_repositoriesHasBeenSet = true; m_repositories.emplace_back(std::forward<RepositoriesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The architecture of the containers.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetArchitectures() const { return m_architectures; }
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+    template<typename ArchitecturesT = Aws::Vector<StringFilter>>
+    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
+    template<typename ArchitecturesT = Aws::Vector<StringFilter>>
+    AwsEcrContainerAggregation& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
+    template<typename ArchitecturesT = StringFilter>
+    AwsEcrContainerAggregation& AddArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures.emplace_back(std::forward<ArchitecturesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The image tags.</p>
      */
     inline const Aws::Vector<StringFilter>& GetImageTags() const { return m_imageTags; }
@@ -87,17 +115,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
-     * container image is in use.</p>
+     * <p>The sort order (ascending or descending).</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetInUseCount() const { return m_inUseCount; }
-    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
-    template<typename InUseCountT = Aws::Vector<NumberFilter>>
-    void SetInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount = std::forward<InUseCountT>(value); }
-    template<typename InUseCountT = Aws::Vector<NumberFilter>>
-    AwsEcrContainerAggregation& WithInUseCount(InUseCountT&& value) { SetInUseCount(std::forward<InUseCountT>(value)); return *this;}
-    template<typename InUseCountT = NumberFilter>
-    AwsEcrContainerAggregation& AddInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount.emplace_back(std::forward<InUseCountT>(value)); return *this; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline AwsEcrContainerAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value to sort by.</p>
+     */
+    inline AwsEcrContainerSortBy GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(AwsEcrContainerSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline AwsEcrContainerAggregation& WithSortBy(AwsEcrContainerSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -117,79 +150,46 @@ namespace Model
 
     ///@{
     /**
-     * <p>The container repositories.</p>
+     * <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR
+     * container image is in use.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRepositories() const { return m_repositories; }
-    inline bool RepositoriesHasBeenSet() const { return m_repositoriesHasBeenSet; }
-    template<typename RepositoriesT = Aws::Vector<StringFilter>>
-    void SetRepositories(RepositoriesT&& value) { m_repositoriesHasBeenSet = true; m_repositories = std::forward<RepositoriesT>(value); }
-    template<typename RepositoriesT = Aws::Vector<StringFilter>>
-    AwsEcrContainerAggregation& WithRepositories(RepositoriesT&& value) { SetRepositories(std::forward<RepositoriesT>(value)); return *this;}
-    template<typename RepositoriesT = StringFilter>
-    AwsEcrContainerAggregation& AddRepositories(RepositoriesT&& value) { m_repositoriesHasBeenSet = true; m_repositories.emplace_back(std::forward<RepositoriesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The container resource IDs.</p>
-     */
-    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
-    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    AwsEcrContainerAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
-    template<typename ResourceIdsT = StringFilter>
-    AwsEcrContainerAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The value to sort by.</p>
-     */
-    inline AwsEcrContainerSortBy GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(AwsEcrContainerSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline AwsEcrContainerAggregation& WithSortBy(AwsEcrContainerSortBy value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The sort order (ascending or descending).</p>
-     */
-    inline SortOrder GetSortOrder() const { return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline AwsEcrContainerAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
+    inline const Aws::Vector<NumberFilter>& GetInUseCount() const { return m_inUseCount; }
+    inline bool InUseCountHasBeenSet() const { return m_inUseCountHasBeenSet; }
+    template<typename InUseCountT = Aws::Vector<NumberFilter>>
+    void SetInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount = std::forward<InUseCountT>(value); }
+    template<typename InUseCountT = Aws::Vector<NumberFilter>>
+    AwsEcrContainerAggregation& WithInUseCount(InUseCountT&& value) { SetInUseCount(std::forward<InUseCountT>(value)); return *this;}
+    template<typename InUseCountT = NumberFilter>
+    AwsEcrContainerAggregation& AddInUseCount(InUseCountT&& value) { m_inUseCountHasBeenSet = true; m_inUseCount.emplace_back(std::forward<InUseCountT>(value)); return *this; }
     ///@}
   private:
-
-    Aws::Vector<StringFilter> m_architectures;
-    bool m_architecturesHasBeenSet = false;
-
-    Aws::Vector<StringFilter> m_imageShas;
-    bool m_imageShasHasBeenSet = false;
-
-    Aws::Vector<StringFilter> m_imageTags;
-    bool m_imageTagsHasBeenSet = false;
-
-    Aws::Vector<NumberFilter> m_inUseCount;
-    bool m_inUseCountHasBeenSet = false;
-
-    Aws::Vector<DateFilter> m_lastInUseAt;
-    bool m_lastInUseAtHasBeenSet = false;
-
-    Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    AwsEcrContainerSortBy m_sortBy{AwsEcrContainerSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    Aws::Vector<StringFilter> m_imageShas;
+    bool m_imageShasHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_repositories;
+    bool m_repositoriesHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_architectures;
+    bool m_architecturesHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_imageTags;
+    bool m_imageTagsHasBeenSet = false;
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    AwsEcrContainerSortBy m_sortBy{AwsEcrContainerSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
+
+    Aws::Vector<DateFilter> m_lastInUseAt;
+    bool m_lastInUseAtHasBeenSet = false;
+
+    Aws::Vector<NumberFilter> m_inUseCount;
+    bool m_inUseCountHasBeenSet = false;
   };
 
 } // namespace Model

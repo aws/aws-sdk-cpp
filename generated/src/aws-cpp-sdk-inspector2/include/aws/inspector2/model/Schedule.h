@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/DailySchedule.h>
-#include <aws/inspector2/model/MonthlySchedule.h>
 #include <aws/inspector2/model/OneTimeSchedule.h>
+#include <aws/inspector2/model/DailySchedule.h>
 #include <aws/inspector2/model/WeeklySchedule.h>
+#include <aws/inspector2/model/MonthlySchedule.h>
 #include <utility>
 
 namespace Aws
@@ -42,30 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The schedule's daily.</p>
-     */
-    inline const DailySchedule& GetDaily() const { return m_daily; }
-    inline bool DailyHasBeenSet() const { return m_dailyHasBeenSet; }
-    template<typename DailyT = DailySchedule>
-    void SetDaily(DailyT&& value) { m_dailyHasBeenSet = true; m_daily = std::forward<DailyT>(value); }
-    template<typename DailyT = DailySchedule>
-    Schedule& WithDaily(DailyT&& value) { SetDaily(std::forward<DailyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The schedule's monthly.</p>
-     */
-    inline const MonthlySchedule& GetMonthly() const { return m_monthly; }
-    inline bool MonthlyHasBeenSet() const { return m_monthlyHasBeenSet; }
-    template<typename MonthlyT = MonthlySchedule>
-    void SetMonthly(MonthlyT&& value) { m_monthlyHasBeenSet = true; m_monthly = std::forward<MonthlyT>(value); }
-    template<typename MonthlyT = MonthlySchedule>
-    Schedule& WithMonthly(MonthlyT&& value) { SetMonthly(std::forward<MonthlyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The schedule's one time.</p>
      */
     inline const OneTimeSchedule& GetOneTime() const { return m_oneTime; }
@@ -74,6 +50,18 @@ namespace Model
     void SetOneTime(OneTimeT&& value) { m_oneTimeHasBeenSet = true; m_oneTime = std::forward<OneTimeT>(value); }
     template<typename OneTimeT = OneTimeSchedule>
     Schedule& WithOneTime(OneTimeT&& value) { SetOneTime(std::forward<OneTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The schedule's daily.</p>
+     */
+    inline const DailySchedule& GetDaily() const { return m_daily; }
+    inline bool DailyHasBeenSet() const { return m_dailyHasBeenSet; }
+    template<typename DailyT = DailySchedule>
+    void SetDaily(DailyT&& value) { m_dailyHasBeenSet = true; m_daily = std::forward<DailyT>(value); }
+    template<typename DailyT = DailySchedule>
+    Schedule& WithDaily(DailyT&& value) { SetDaily(std::forward<DailyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,19 +75,31 @@ namespace Model
     template<typename WeeklyT = WeeklySchedule>
     Schedule& WithWeekly(WeeklyT&& value) { SetWeekly(std::forward<WeeklyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The schedule's monthly.</p>
+     */
+    inline const MonthlySchedule& GetMonthly() const { return m_monthly; }
+    inline bool MonthlyHasBeenSet() const { return m_monthlyHasBeenSet; }
+    template<typename MonthlyT = MonthlySchedule>
+    void SetMonthly(MonthlyT&& value) { m_monthlyHasBeenSet = true; m_monthly = std::forward<MonthlyT>(value); }
+    template<typename MonthlyT = MonthlySchedule>
+    Schedule& WithMonthly(MonthlyT&& value) { SetMonthly(std::forward<MonthlyT>(value)); return *this;}
+    ///@}
   private:
-
-    DailySchedule m_daily;
-    bool m_dailyHasBeenSet = false;
-
-    MonthlySchedule m_monthly;
-    bool m_monthlyHasBeenSet = false;
 
     OneTimeSchedule m_oneTime;
     bool m_oneTimeHasBeenSet = false;
 
+    DailySchedule m_daily;
+    bool m_dailyHasBeenSet = false;
+
     WeeklySchedule m_weekly;
     bool m_weeklyHasBeenSet = false;
+
+    MonthlySchedule m_monthly;
+    bool m_monthlyHasBeenSet = false;
   };
 
 } // namespace Model

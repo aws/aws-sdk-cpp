@@ -25,6 +25,16 @@ ToolbarConfiguration::ToolbarConfiguration(JsonView jsonValue)
 
 ToolbarConfiguration& ToolbarConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("toolbarType"))
+  {
+    m_toolbarType = ToolbarTypeMapper::GetToolbarTypeForName(jsonValue.GetString("toolbarType"));
+    m_toolbarTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("visualMode"))
+  {
+    m_visualMode = VisualModeMapper::GetVisualModeForName(jsonValue.GetString("visualMode"));
+    m_visualModeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("hiddenToolbarItems"))
   {
     Aws::Utils::Array<JsonView> hiddenToolbarItemsJsonList = jsonValue.GetArray("hiddenToolbarItems");
@@ -39,22 +49,22 @@ ToolbarConfiguration& ToolbarConfiguration::operator =(JsonView jsonValue)
     m_maxDisplayResolution = MaxDisplayResolutionMapper::GetMaxDisplayResolutionForName(jsonValue.GetString("maxDisplayResolution"));
     m_maxDisplayResolutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("toolbarType"))
-  {
-    m_toolbarType = ToolbarTypeMapper::GetToolbarTypeForName(jsonValue.GetString("toolbarType"));
-    m_toolbarTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("visualMode"))
-  {
-    m_visualMode = VisualModeMapper::GetVisualModeForName(jsonValue.GetString("visualMode"));
-    m_visualModeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ToolbarConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_toolbarTypeHasBeenSet)
+  {
+   payload.WithString("toolbarType", ToolbarTypeMapper::GetNameForToolbarType(m_toolbarType));
+  }
+
+  if(m_visualModeHasBeenSet)
+  {
+   payload.WithString("visualMode", VisualModeMapper::GetNameForVisualMode(m_visualMode));
+  }
 
   if(m_hiddenToolbarItemsHasBeenSet)
   {
@@ -70,16 +80,6 @@ JsonValue ToolbarConfiguration::Jsonize() const
   if(m_maxDisplayResolutionHasBeenSet)
   {
    payload.WithString("maxDisplayResolution", MaxDisplayResolutionMapper::GetNameForMaxDisplayResolution(m_maxDisplayResolution));
-  }
-
-  if(m_toolbarTypeHasBeenSet)
-  {
-   payload.WithString("toolbarType", ToolbarTypeMapper::GetNameForToolbarType(m_toolbarType));
-  }
-
-  if(m_visualModeHasBeenSet)
-  {
-   payload.WithString("visualMode", VisualModeMapper::GetNameForVisualMode(m_visualMode));
   }
 
   return payload;

@@ -22,18 +22,6 @@ Aws::String ListCisScanConfigurationsRequest::SerializePayload() const
 
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
   if(m_sortByHasBeenSet)
   {
    payload.WithString("sortBy", CisScanConfigurationsSortByMapper::GetNameForCisScanConfigurationsSortBy(m_sortBy));
@@ -42,6 +30,18 @@ Aws::String ListCisScanConfigurationsRequest::SerializePayload() const
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", CisSortOrderMapper::GetNameForCisSortOrder(m_sortOrder));
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

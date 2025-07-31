@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CodeSnippetErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeSnippetErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
+     */
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
+    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    CodeSnippetError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error code for the error that prevented a code snippet from being
      * retrieved.</p>
      */
@@ -62,28 +74,16 @@ namespace Model
     template<typename ErrorMessageT = Aws::String>
     CodeSnippetError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
-     */
-    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
-    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    template<typename FindingArnT = Aws::String>
-    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
-    template<typename FindingArnT = Aws::String>
-    CodeSnippetError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_findingArn;
+    bool m_findingArnHasBeenSet = false;
 
     CodeSnippetErrorCode m_errorCode{CodeSnippetErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
-
-    Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet = false;
   };
 
 } // namespace Model

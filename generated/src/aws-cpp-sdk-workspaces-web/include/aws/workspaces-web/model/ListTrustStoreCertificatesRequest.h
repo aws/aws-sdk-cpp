@@ -40,12 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to be included in the next page.</p>
+     * <p>The ARN of the trust store</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListTrustStoreCertificatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
+    inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    ListTrustStoreCertificatesRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,25 +65,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the trust store</p>
+     * <p>The maximum number of results to be included in the next page.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
-    inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    template<typename TrustStoreArnT = Aws::String>
-    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
-    template<typename TrustStoreArnT = Aws::String>
-    ListTrustStoreCertificatesRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListTrustStoreCertificatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_trustStoreArn;
+    bool m_trustStoreArnHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

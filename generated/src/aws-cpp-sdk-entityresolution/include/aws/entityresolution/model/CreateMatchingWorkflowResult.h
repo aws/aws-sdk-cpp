@@ -88,8 +88,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>OutputSource</code> objects, each of which contains fields
-     * <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and
-     * <code>Output</code>.</p>
+     * <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>,
+     * and <code>output</code>.</p>
      */
     inline const Aws::Vector<OutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
     template<typename OutputSourceConfigT = Aws::Vector<OutputSource>>

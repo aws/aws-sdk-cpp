@@ -25,6 +25,7 @@
 #include <aws/workspaces-web/model/AssociateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsRequest.h>
+#include <aws/workspaces-web/model/AssociateSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/workspaces-web/model/CreateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/CreatePortalRequest.h>
+#include <aws/workspaces-web/model/CreateSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/CreateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/CreateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateUserSettingsRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/workspaces-web/model/DeleteIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DeletePortalRequest.h>
+#include <aws/workspaces-web/model/DeleteSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/DeleteTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteUserSettingsRequest.h>
@@ -50,6 +53,7 @@
 #include <aws/workspaces-web/model/DisassociateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
+#include <aws/workspaces-web/model/DisassociateSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserSettingsRequest.h>
@@ -62,6 +66,7 @@
 #include <aws/workspaces-web/model/GetPortalRequest.h>
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataRequest.h>
 #include <aws/workspaces-web/model/GetSessionRequest.h>
+#include <aws/workspaces-web/model/GetSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/GetTrustStoreRequest.h>
 #include <aws/workspaces-web/model/GetTrustStoreCertificateRequest.h>
 #include <aws/workspaces-web/model/GetUserAccessLoggingSettingsRequest.h>
@@ -72,6 +77,7 @@
 #include <aws/workspaces-web/model/ListIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/ListPortalsRequest.h>
+#include <aws/workspaces-web/model/ListSessionLoggersRequest.h>
 #include <aws/workspaces-web/model/ListSessionsRequest.h>
 #include <aws/workspaces-web/model/ListTagsForResourceRequest.h>
 #include <aws/workspaces-web/model/ListTrustStoreCertificatesRequest.h>
@@ -86,6 +92,7 @@
 #include <aws/workspaces-web/model/UpdateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdatePortalRequest.h>
+#include <aws/workspaces-web/model/UpdateSessionLoggerRequest.h>
 #include <aws/workspaces-web/model/UpdateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/UpdateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateUserSettingsRequest.h>
@@ -236,15 +243,15 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
 {
   AWS_OPERATION_GUARD(AssociateBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.BrowserSettingsArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateBrowserSettings", "Required field: BrowserSettingsArn, is not set");
-    return AssociateBrowserSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrowserSettingsArn]", false));
-  }
   if (!request.PortalArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateBrowserSettings", "Required field: PortalArn, is not set");
     return AssociateBrowserSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.BrowserSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateBrowserSettings", "Required field: BrowserSettingsArn, is not set");
+    return AssociateBrowserSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrowserSettingsArn]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateBrowserSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -275,15 +282,15 @@ AssociateDataProtectionSettingsOutcome WorkSpacesWebClient::AssociateDataProtect
 {
   AWS_OPERATION_GUARD(AssociateDataProtectionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataProtectionSettingsArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
-    return AssociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
-  }
   if (!request.PortalArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateDataProtectionSettings", "Required field: PortalArn, is not set");
     return AssociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.DataProtectionSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
+    return AssociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -314,15 +321,15 @@ AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(
 {
   AWS_OPERATION_GUARD(AssociateIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.IpAccessSettingsArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
-    return AssociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
-  }
   if (!request.PortalArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateIpAccessSettings", "Required field: PortalArn, is not set");
     return AssociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.IpAccessSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
+    return AssociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateIpAccessSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -353,15 +360,15 @@ AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(co
 {
   AWS_OPERATION_GUARD(AssociateNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.NetworkSettingsArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("AssociateNetworkSettings", "Required field: NetworkSettingsArn, is not set");
-    return AssociateNetworkSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkSettingsArn]", false));
-  }
   if (!request.PortalArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateNetworkSettings", "Required field: PortalArn, is not set");
     return AssociateNetworkSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.NetworkSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateNetworkSettings", "Required field: NetworkSettingsArn, is not set");
+    return AssociateNetworkSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkSettingsArn]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateNetworkSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -382,6 +389,45 @@ AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(co
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
       endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
       return AssociateNetworkSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateSessionLoggerOutcome WorkSpacesWebClient::AssociateSessionLogger(const AssociateSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateSessionLogger", "Required field: PortalArn, is not set");
+    return AssociateSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.SessionLoggerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateSessionLogger", "Required field: SessionLoggerArn, is not set");
+    return AssociateSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionLoggerArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateSessionLoggerOutcome>(
+    [&]()-> AssociateSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLogger");
+      return AssociateSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -667,6 +713,33 @@ CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest&
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateSessionLoggerOutcome WorkSpacesWebClient::CreateSessionLogger(const CreateSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateSessionLoggerOutcome>(
+    [&]()-> CreateSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers");
+      return CreateSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustStoreRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateTrustStore);
@@ -946,6 +1019,39 @@ DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest&
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteSessionLoggerOutcome WorkSpacesWebClient::DeleteSessionLogger(const DeleteSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SessionLoggerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSessionLogger", "Required field: SessionLoggerArn, is not set");
+    return DeleteSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionLoggerArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteSessionLoggerOutcome>(
+    [&]()-> DeleteSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
+      return DeleteSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustStoreRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteTrustStore);
@@ -1175,6 +1281,40 @@ DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSetti
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
       endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
       return DisassociateNetworkSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DisassociateSessionLoggerOutcome WorkSpacesWebClient::DisassociateSessionLogger(const DisassociateSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateSessionLogger", "Required field: PortalArn, is not set");
+    return DisassociateSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateSessionLoggerOutcome>(
+    [&]()-> DisassociateSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLogger");
+      return DisassociateSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1594,6 +1734,39 @@ GetSessionOutcome WorkSpacesWebClient::GetSession(const GetSessionRequest& reque
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetSessionLoggerOutcome WorkSpacesWebClient::GetSessionLogger(const GetSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SessionLoggerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSessionLogger", "Required field: SessionLoggerArn, is not set");
+    return GetSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionLoggerArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetSessionLoggerOutcome>(
+    [&]()-> GetSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
+      return GetSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreRequest& request) const
 {
   AWS_OPERATION_GUARD(GetTrustStore);
@@ -1631,15 +1804,15 @@ GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(co
 {
   AWS_OPERATION_GUARD(GetTrustStoreCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrustStoreCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ThumbprintHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetTrustStoreCertificate", "Required field: Thumbprint, is not set");
-    return GetTrustStoreCertificateOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Thumbprint]", false));
-  }
   if (!request.TrustStoreArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetTrustStoreCertificate", "Required field: TrustStoreArn, is not set");
     return GetTrustStoreCertificateOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrustStoreArn]", false));
+  }
+  if (!request.ThumbprintHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrustStoreCertificate", "Required field: Thumbprint, is not set");
+    return GetTrustStoreCertificateOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Thumbprint]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTrustStoreCertificate, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1895,6 +2068,33 @@ ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& re
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/portals");
       return ListPortalsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListSessionLoggersOutcome WorkSpacesWebClient::ListSessionLoggers(const ListSessionLoggersRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListSessionLoggers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSessionLoggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSessionLoggers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListSessionLoggers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSessionLoggers",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListSessionLoggersOutcome>(
+    [&]()-> ListSessionLoggersOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSessionLoggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers");
+      return ListSessionLoggersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2349,6 +2549,39 @@ UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest&
       endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
       return UpdatePortalOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateSessionLoggerOutcome WorkSpacesWebClient::UpdateSessionLogger(const UpdateSessionLoggerRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateSessionLogger);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SessionLoggerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSessionLogger", "Required field: SessionLoggerArn, is not set");
+    return UpdateSessionLoggerOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionLoggerArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateSessionLogger, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateSessionLogger",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateSessionLoggerOutcome>(
+    [&]()-> UpdateSessionLoggerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSessionLogger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
+      return UpdateSessionLoggerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

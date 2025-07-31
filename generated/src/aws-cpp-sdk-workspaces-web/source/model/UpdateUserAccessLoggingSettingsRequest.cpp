@@ -16,15 +16,15 @@ Aws::String UpdateUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_kinesisStreamArnHasBeenSet)
   {
    payload.WithString("kinesisStreamArn", m_kinesisStreamArn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

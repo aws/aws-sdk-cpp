@@ -25,10 +25,14 @@ InlineRedactionConfiguration::InlineRedactionConfiguration(JsonView jsonValue)
 
 InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("globalConfidenceLevel"))
+  if(jsonValue.ValueExists("inlineRedactionPatterns"))
   {
-    m_globalConfidenceLevel = jsonValue.GetInteger("globalConfidenceLevel");
-    m_globalConfidenceLevelHasBeenSet = true;
+    Aws::Utils::Array<JsonView> inlineRedactionPatternsJsonList = jsonValue.GetArray("inlineRedactionPatterns");
+    for(unsigned inlineRedactionPatternsIndex = 0; inlineRedactionPatternsIndex < inlineRedactionPatternsJsonList.GetLength(); ++inlineRedactionPatternsIndex)
+    {
+      m_inlineRedactionPatterns.push_back(inlineRedactionPatternsJsonList[inlineRedactionPatternsIndex].AsObject());
+    }
+    m_inlineRedactionPatternsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("globalEnforcedUrls"))
   {
@@ -48,14 +52,10 @@ InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView 
     }
     m_globalExemptUrlsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inlineRedactionPatterns"))
+  if(jsonValue.ValueExists("globalConfidenceLevel"))
   {
-    Aws::Utils::Array<JsonView> inlineRedactionPatternsJsonList = jsonValue.GetArray("inlineRedactionPatterns");
-    for(unsigned inlineRedactionPatternsIndex = 0; inlineRedactionPatternsIndex < inlineRedactionPatternsJsonList.GetLength(); ++inlineRedactionPatternsIndex)
-    {
-      m_inlineRedactionPatterns.push_back(inlineRedactionPatternsJsonList[inlineRedactionPatternsIndex].AsObject());
-    }
-    m_inlineRedactionPatternsHasBeenSet = true;
+    m_globalConfidenceLevel = jsonValue.GetInteger("globalConfidenceLevel");
+    m_globalConfidenceLevelHasBeenSet = true;
   }
   return *this;
 }
@@ -64,9 +64,14 @@ JsonValue InlineRedactionConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_globalConfidenceLevelHasBeenSet)
+  if(m_inlineRedactionPatternsHasBeenSet)
   {
-   payload.WithInteger("globalConfidenceLevel", m_globalConfidenceLevel);
+   Aws::Utils::Array<JsonValue> inlineRedactionPatternsJsonList(m_inlineRedactionPatterns.size());
+   for(unsigned inlineRedactionPatternsIndex = 0; inlineRedactionPatternsIndex < inlineRedactionPatternsJsonList.GetLength(); ++inlineRedactionPatternsIndex)
+   {
+     inlineRedactionPatternsJsonList[inlineRedactionPatternsIndex].AsObject(m_inlineRedactionPatterns[inlineRedactionPatternsIndex].Jsonize());
+   }
+   payload.WithArray("inlineRedactionPatterns", std::move(inlineRedactionPatternsJsonList));
 
   }
 
@@ -92,14 +97,9 @@ JsonValue InlineRedactionConfiguration::Jsonize() const
 
   }
 
-  if(m_inlineRedactionPatternsHasBeenSet)
+  if(m_globalConfidenceLevelHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> inlineRedactionPatternsJsonList(m_inlineRedactionPatterns.size());
-   for(unsigned inlineRedactionPatternsIndex = 0; inlineRedactionPatternsIndex < inlineRedactionPatternsJsonList.GetLength(); ++inlineRedactionPatternsIndex)
-   {
-     inlineRedactionPatternsJsonList[inlineRedactionPatternsIndex].AsObject(m_inlineRedactionPatterns[inlineRedactionPatternsIndex].Jsonize());
-   }
-   payload.WithArray("inlineRedactionPatterns", std::move(inlineRedactionPatternsJsonList));
+   payload.WithInteger("globalConfidenceLevel", m_globalConfidenceLevel);
 
   }
 

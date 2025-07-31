@@ -25,20 +25,20 @@ Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse(JsonView jsonValu
 
 Ec2InstanceAggregationResponse& Ec2InstanceAggregationResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("instanceId"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
+    m_instanceId = jsonValue.GetString("instanceId");
+    m_instanceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ami"))
   {
     m_ami = jsonValue.GetString("ami");
     m_amiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceId"))
+  if(jsonValue.ValueExists("operatingSystem"))
   {
-    m_instanceId = jsonValue.GetString("instanceId");
-    m_instanceIdHasBeenSet = true;
+    m_operatingSystem = jsonValue.GetString("operatingSystem");
+    m_operatingSystemHasBeenSet = true;
   }
   if(jsonValue.ValueExists("instanceTags"))
   {
@@ -49,20 +49,20 @@ Ec2InstanceAggregationResponse& Ec2InstanceAggregationResponse::operator =(JsonV
     }
     m_instanceTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkFindings"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_networkFindings = jsonValue.GetInt64("networkFindings");
-    m_networkFindingsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("operatingSystem"))
-  {
-    m_operatingSystem = jsonValue.GetString("operatingSystem");
-    m_operatingSystemHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
     m_severityCountsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("networkFindings"))
+  {
+    m_networkFindings = jsonValue.GetInt64("networkFindings");
+    m_networkFindingsHasBeenSet = true;
   }
   return *this;
 }
@@ -71,9 +71,9 @@ JsonValue Ec2InstanceAggregationResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
+  if(m_instanceIdHasBeenSet)
   {
-   payload.WithString("accountId", m_accountId);
+   payload.WithString("instanceId", m_instanceId);
 
   }
 
@@ -83,9 +83,9 @@ JsonValue Ec2InstanceAggregationResponse::Jsonize() const
 
   }
 
-  if(m_instanceIdHasBeenSet)
+  if(m_operatingSystemHasBeenSet)
   {
-   payload.WithString("instanceId", m_instanceId);
+   payload.WithString("operatingSystem", m_operatingSystem);
 
   }
 
@@ -100,21 +100,21 @@ JsonValue Ec2InstanceAggregationResponse::Jsonize() const
 
   }
 
-  if(m_networkFindingsHasBeenSet)
+  if(m_accountIdHasBeenSet)
   {
-   payload.WithInt64("networkFindings", m_networkFindings);
-
-  }
-
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("operatingSystem", m_operatingSystem);
+   payload.WithString("accountId", m_accountId);
 
   }
 
   if(m_severityCountsHasBeenSet)
   {
    payload.WithObject("severityCounts", m_severityCounts.Jsonize());
+
+  }
+
+  if(m_networkFindingsHasBeenSet)
+  {
+   payload.WithInt64("networkFindings", m_networkFindings);
 
   }
 

@@ -25,15 +25,15 @@ CodeRepositoryOnDemandScan::CodeRepositoryOnDemandScan(JsonView jsonValue)
 
 CodeRepositoryOnDemandScan& CodeRepositoryOnDemandScan::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("lastScanAt"))
-  {
-    m_lastScanAt = jsonValue.GetDouble("lastScanAt");
-    m_lastScanAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lastScannedCommitId"))
   {
     m_lastScannedCommitId = jsonValue.GetString("lastScannedCommitId");
     m_lastScannedCommitIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastScanAt"))
+  {
+    m_lastScanAt = jsonValue.GetDouble("lastScanAt");
+    m_lastScanAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scanStatus"))
   {
@@ -47,15 +47,15 @@ JsonValue CodeRepositoryOnDemandScan::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_lastScanAtHasBeenSet)
-  {
-   payload.WithDouble("lastScanAt", m_lastScanAt.SecondsWithMSPrecision());
-  }
-
   if(m_lastScannedCommitIdHasBeenSet)
   {
    payload.WithString("lastScannedCommitId", m_lastScannedCommitId);
 
+  }
+
+  if(m_lastScanAtHasBeenSet)
+  {
+   payload.WithDouble("lastScanAt", m_lastScanAt.SecondsWithMSPrecision());
   }
 
   if(m_scanStatusHasBeenSet)

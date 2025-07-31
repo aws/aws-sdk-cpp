@@ -25,6 +25,11 @@ ListIdentityProvidersResult::ListIdentityProvidersResult(const Aws::AmazonWebSer
 ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("identityProviders"))
   {
     Aws::Utils::Array<JsonView> identityProvidersJsonList = jsonValue.GetArray("identityProviders");
@@ -33,11 +38,6 @@ ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const Aws::
       m_identityProviders.push_back(identityProvidersJsonList[identityProvidersIndex].AsObject());
     }
     m_identityProvidersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

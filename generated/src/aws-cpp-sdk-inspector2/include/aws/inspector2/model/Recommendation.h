@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL address to the CVE remediation recommendations.</p>
-     */
-    inline const Aws::String& GetUrl() const { return m_url; }
-    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    template<typename UrlT = Aws::String>
-    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
-    template<typename UrlT = Aws::String>
-    Recommendation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The recommended course of action to remediate the finding.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename TextT = Aws::String>
     Recommendation& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_url;
-    bool m_urlHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The URL address to the CVE remediation recommendations.</p>
+     */
+    inline const Aws::String& GetUrl() const { return m_url; }
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Recommendation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    Aws::String m_url;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

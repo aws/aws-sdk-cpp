@@ -25,25 +25,25 @@ Schedule::Schedule(JsonView jsonValue)
 
 Schedule& Schedule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("daily"))
-  {
-    m_daily = jsonValue.GetObject("daily");
-    m_dailyHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("monthly"))
-  {
-    m_monthly = jsonValue.GetObject("monthly");
-    m_monthlyHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("oneTime"))
   {
     m_oneTime = jsonValue.GetObject("oneTime");
     m_oneTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("daily"))
+  {
+    m_daily = jsonValue.GetObject("daily");
+    m_dailyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("weekly"))
   {
     m_weekly = jsonValue.GetObject("weekly");
     m_weeklyHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("monthly"))
+  {
+    m_monthly = jsonValue.GetObject("monthly");
+    m_monthlyHasBeenSet = true;
   }
   return *this;
 }
@@ -52,27 +52,27 @@ JsonValue Schedule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dailyHasBeenSet)
-  {
-   payload.WithObject("daily", m_daily.Jsonize());
-
-  }
-
-  if(m_monthlyHasBeenSet)
-  {
-   payload.WithObject("monthly", m_monthly.Jsonize());
-
-  }
-
   if(m_oneTimeHasBeenSet)
   {
    payload.WithObject("oneTime", m_oneTime.Jsonize());
 
   }
 
+  if(m_dailyHasBeenSet)
+  {
+   payload.WithObject("daily", m_daily.Jsonize());
+
+  }
+
   if(m_weeklyHasBeenSet)
   {
    payload.WithObject("weekly", m_weekly.Jsonize());
+
+  }
+
+  if(m_monthlyHasBeenSet)
+  {
+   payload.WithObject("monthly", m_monthly.Jsonize());
 
   }
 

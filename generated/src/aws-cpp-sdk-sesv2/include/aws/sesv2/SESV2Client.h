@@ -537,6 +537,66 @@ namespace SESV2
         }
 
         /**
+         * <p>Create a tenant.</p> <p> <i>Tenants</i> are logical containers that group
+         * related SES resources together. Each tenant can have its own set of resources
+         * like email identities, configuration sets, and templates, along with reputation
+         * metrics and sending status. This helps isolate and manage email sending for
+         * different customers or business units within your Amazon SES API v2
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTenantOutcome CreateTenant(const Model::CreateTenantRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTenant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTenantRequestT = Model::CreateTenantRequest>
+        Model::CreateTenantOutcomeCallable CreateTenantCallable(const CreateTenantRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::CreateTenant, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTenant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTenantRequestT = Model::CreateTenantRequest>
+        void CreateTenantAsync(const CreateTenantRequestT& request, const CreateTenantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::CreateTenant, request, handler, context);
+        }
+
+        /**
+         * <p>Associate a resource with a tenant.</p> <p> <i>Resources</i> can be email
+         * identities, configuration sets, or email templates. When you associate a
+         * resource with a tenant, you can use that resource when sending emails on behalf
+         * of that tenant.</p> <p>A single resource can be associated with multiple
+         * tenants, allowing for resource sharing across different tenants while
+         * maintaining isolation in email sending operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenantResourceAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTenantResourceAssociationOutcome CreateTenantResourceAssociation(const Model::CreateTenantResourceAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTenantResourceAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTenantResourceAssociationRequestT = Model::CreateTenantResourceAssociationRequest>
+        Model::CreateTenantResourceAssociationOutcomeCallable CreateTenantResourceAssociationCallable(const CreateTenantResourceAssociationRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::CreateTenantResourceAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTenantResourceAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTenantResourceAssociationRequestT = Model::CreateTenantResourceAssociationRequest>
+        void CreateTenantResourceAssociationAsync(const CreateTenantResourceAssociationRequestT& request, const CreateTenantResourceAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::CreateTenantResourceAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Delete an existing configuration set.</p> <p> <i>Configuration sets</i> are
          * groups of rules that you can apply to the emails you send. You apply a
          * configuration set to an email by including a reference to the configuration set
@@ -838,6 +898,62 @@ namespace SESV2
         void DeleteSuppressedDestinationAsync(const DeleteSuppressedDestinationRequestT& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::DeleteSuppressedDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Delete an existing tenant.</p> <p>When you delete a tenant, its associations
+         * with resources are removed, but the resources themselves are not
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTenantOutcome DeleteTenant(const Model::DeleteTenantRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTenant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTenantRequestT = Model::DeleteTenantRequest>
+        Model::DeleteTenantOutcomeCallable DeleteTenantCallable(const DeleteTenantRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::DeleteTenant, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTenant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTenantRequestT = Model::DeleteTenantRequest>
+        void DeleteTenantAsync(const DeleteTenantRequestT& request, const DeleteTenantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::DeleteTenant, request, handler, context);
+        }
+
+        /**
+         * <p>Delete an association between a tenant and a resource.</p> <p>When you delete
+         * a tenant-resource association, the resource itself is not deleted, only its
+         * association with the specific tenant is removed. After removal, the resource
+         * will no longer be available for use with that tenant's email sending
+         * operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenantResourceAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTenantResourceAssociationOutcome DeleteTenantResourceAssociation(const Model::DeleteTenantResourceAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTenantResourceAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTenantResourceAssociationRequestT = Model::DeleteTenantResourceAssociationRequest>
+        Model::DeleteTenantResourceAssociationOutcomeCallable DeleteTenantResourceAssociationCallable(const DeleteTenantResourceAssociationRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::DeleteTenantResourceAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTenantResourceAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTenantResourceAssociationRequestT = Model::DeleteTenantResourceAssociationRequest>
+        void DeleteTenantResourceAssociationAsync(const DeleteTenantResourceAssociationRequestT& request, const DeleteTenantResourceAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::DeleteTenantResourceAssociation, request, handler, context);
         }
 
         /**
@@ -1423,6 +1539,38 @@ namespace SESV2
         }
 
         /**
+         * <p>Retrieve information about a specific reputation entity, including its
+         * reputation management policy, customer-managed status, Amazon Web Services
+         * Amazon SES-managed status, and aggregate sending status.</p> <p> <i>Reputation
+         * entities</i> represent resources in your Amazon SES account that have reputation
+         * tracking and management capabilities. The reputation impact reflects the highest
+         * impact reputation finding for the entity. Reputation findings can be retrieved
+         * using the <code>ListRecommendations</code> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetReputationEntity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReputationEntityOutcome GetReputationEntity(const Model::GetReputationEntityRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetReputationEntity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetReputationEntityRequestT = Model::GetReputationEntityRequest>
+        Model::GetReputationEntityOutcomeCallable GetReputationEntityCallable(const GetReputationEntityRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::GetReputationEntity, request);
+        }
+
+        /**
+         * An Async wrapper for GetReputationEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetReputationEntityRequestT = Model::GetReputationEntityRequest>
+        void GetReputationEntityAsync(const GetReputationEntityRequestT& request, const GetReputationEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::GetReputationEntity, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a specific email address that's on the
          * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
@@ -1446,6 +1594,32 @@ namespace SESV2
         void GetSuppressedDestinationAsync(const GetSuppressedDestinationRequestT& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::GetSuppressedDestination, request, handler, context);
+        }
+
+        /**
+         * <p>Get information about a specific tenant, including the tenant's name, ID,
+         * ARN, creation timestamp, tags, and sending status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetTenant">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetTenantOutcome GetTenant(const Model::GetTenantRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTenant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTenantRequestT = Model::GetTenantRequest>
+        Model::GetTenantOutcomeCallable GetTenantCallable(const GetTenantRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::GetTenant, request);
+        }
+
+        /**
+         * An Async wrapper for GetTenant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTenantRequestT = Model::GetTenantRequest>
+        void GetTenantAsync(const GetTenantRequestT& request, const GetTenantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::GetTenant, request, handler, context);
         }
 
         /**
@@ -1806,6 +1980,65 @@ namespace SESV2
         }
 
         /**
+         * <p>List reputation entities in your Amazon SES account in the current Amazon Web
+         * Services Region. You can filter the results by entity type, reputation impact,
+         * sending status, or entity reference prefix.</p> <p> <i>Reputation entities</i>
+         * represent resources in your account that have reputation tracking and management
+         * capabilities. Use this operation to get an overview of all entities and their
+         * current reputation status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListReputationEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReputationEntitiesOutcome ListReputationEntities(const Model::ListReputationEntitiesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListReputationEntities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReputationEntitiesRequestT = Model::ListReputationEntitiesRequest>
+        Model::ListReputationEntitiesOutcomeCallable ListReputationEntitiesCallable(const ListReputationEntitiesRequestT& request = {}) const
+        {
+            return SubmitCallable(&SESV2Client::ListReputationEntities, request);
+        }
+
+        /**
+         * An Async wrapper for ListReputationEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReputationEntitiesRequestT = Model::ListReputationEntitiesRequest>
+        void ListReputationEntitiesAsync(const ListReputationEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReputationEntitiesRequestT& request = {}) const
+        {
+            return SubmitAsync(&SESV2Client::ListReputationEntities, request, handler, context);
+        }
+
+        /**
+         * <p>List all tenants associated with a specific resource.</p> <p>This operation
+         * returns a list of tenants that are associated with the specified resource. This
+         * is useful for understanding which tenants are currently using a particular
+         * resource such as an email identity, configuration set, or email
+         * template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListResourceTenants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceTenantsOutcome ListResourceTenants(const Model::ListResourceTenantsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceTenants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceTenantsRequestT = Model::ListResourceTenantsRequest>
+        Model::ListResourceTenantsOutcomeCallable ListResourceTenantsCallable(const ListResourceTenantsRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::ListResourceTenants, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceTenants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceTenantsRequestT = Model::ListResourceTenantsRequest>
+        void ListResourceTenantsAsync(const ListResourceTenantsRequestT& request, const ListResourceTenantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::ListResourceTenants, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of email addresses that are on the suppression list for your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
@@ -1859,6 +2092,62 @@ namespace SESV2
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>List all resources associated with a specific tenant.</p> <p>This operation
+         * returns a list of resources (email identities, configuration sets, or email
+         * templates) that are associated with the specified tenant. You can optionally
+         * filter the results by resource type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenantResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTenantResourcesOutcome ListTenantResources(const Model::ListTenantResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTenantResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTenantResourcesRequestT = Model::ListTenantResourcesRequest>
+        Model::ListTenantResourcesOutcomeCallable ListTenantResourcesCallable(const ListTenantResourcesRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::ListTenantResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListTenantResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTenantResourcesRequestT = Model::ListTenantResourcesRequest>
+        void ListTenantResourcesAsync(const ListTenantResourcesRequestT& request, const ListTenantResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::ListTenantResources, request, handler, context);
+        }
+
+        /**
+         * <p>List all tenants associated with your account in the current Amazon Web
+         * Services Region.</p> <p>This operation returns basic information about each
+         * tenant, such as tenant name, ID, ARN, and creation timestamp.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTenantsOutcome ListTenants(const Model::ListTenantsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTenants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTenantsRequestT = Model::ListTenantsRequest>
+        Model::ListTenantsOutcomeCallable ListTenantsCallable(const ListTenantsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SESV2Client::ListTenants, request);
+        }
+
+        /**
+         * An Async wrapper for ListTenants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTenantsRequestT = Model::ListTenantsRequest>
+        void ListTenantsAsync(const ListTenantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTenantsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SESV2Client::ListTenants, request, handler, context);
         }
 
         /**
@@ -2821,6 +3110,71 @@ namespace SESV2
         void UpdateEmailTemplateAsync(const UpdateEmailTemplateRequestT& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::UpdateEmailTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Update the customer-managed sending status for a reputation entity. This
+         * allows you to enable, disable, or reinstate sending for the entity.</p> <p>The
+         * customer-managed status works in conjunction with the Amazon Web Services Amazon
+         * SES-managed status to determine the overall sending capability. When you update
+         * the customer-managed status, the Amazon Web Services Amazon SES-managed status
+         * remains unchanged. If Amazon Web Services Amazon SES has disabled the entity, it
+         * will not be allowed to send regardless of the customer-managed status setting.
+         * When you reinstate an entity through the customer-managed status, it can
+         * continue sending only if the Amazon Web Services Amazon SES-managed status also
+         * permits sending, even if there are active reputation findings, until the
+         * findings are resolved or new violations occur.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityCustomerManagedStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReputationEntityCustomerManagedStatusOutcome UpdateReputationEntityCustomerManagedStatus(const Model::UpdateReputationEntityCustomerManagedStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateReputationEntityCustomerManagedStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateReputationEntityCustomerManagedStatusRequestT = Model::UpdateReputationEntityCustomerManagedStatusRequest>
+        Model::UpdateReputationEntityCustomerManagedStatusOutcomeCallable UpdateReputationEntityCustomerManagedStatusCallable(const UpdateReputationEntityCustomerManagedStatusRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::UpdateReputationEntityCustomerManagedStatus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateReputationEntityCustomerManagedStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateReputationEntityCustomerManagedStatusRequestT = Model::UpdateReputationEntityCustomerManagedStatusRequest>
+        void UpdateReputationEntityCustomerManagedStatusAsync(const UpdateReputationEntityCustomerManagedStatusRequestT& request, const UpdateReputationEntityCustomerManagedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::UpdateReputationEntityCustomerManagedStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Update the reputation management policy for a reputation entity. The policy
+         * determines how the entity responds to reputation findings, such as automatically
+         * pausing sending when certain thresholds are exceeded.</p> <p>Reputation
+         * management policies are Amazon Web Services Amazon SES-managed (predefined
+         * policies). You can select from none, standard, and strict
+         * policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReputationEntityPolicyOutcome UpdateReputationEntityPolicy(const Model::UpdateReputationEntityPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateReputationEntityPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateReputationEntityPolicyRequestT = Model::UpdateReputationEntityPolicyRequest>
+        Model::UpdateReputationEntityPolicyOutcomeCallable UpdateReputationEntityPolicyCallable(const UpdateReputationEntityPolicyRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::UpdateReputationEntityPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateReputationEntityPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateReputationEntityPolicyRequestT = Model::UpdateReputationEntityPolicyRequest>
+        void UpdateReputationEntityPolicyAsync(const UpdateReputationEntityPolicyRequestT& request, const UpdateReputationEntityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::UpdateReputationEntityPolicy, request, handler, context);
         }
 
 

@@ -30,15 +30,15 @@ InlineRedactionPattern& InlineRedactionPattern::operator =(JsonView jsonValue)
     m_builtInPatternId = jsonValue.GetString("builtInPatternId");
     m_builtInPatternIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("confidenceLevel"))
-  {
-    m_confidenceLevel = jsonValue.GetInteger("confidenceLevel");
-    m_confidenceLevelHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("customPattern"))
   {
     m_customPattern = jsonValue.GetObject("customPattern");
     m_customPatternHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("redactionPlaceHolder"))
+  {
+    m_redactionPlaceHolder = jsonValue.GetObject("redactionPlaceHolder");
+    m_redactionPlaceHolderHasBeenSet = true;
   }
   if(jsonValue.ValueExists("enforcedUrls"))
   {
@@ -58,10 +58,10 @@ InlineRedactionPattern& InlineRedactionPattern::operator =(JsonView jsonValue)
     }
     m_exemptUrlsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redactionPlaceHolder"))
+  if(jsonValue.ValueExists("confidenceLevel"))
   {
-    m_redactionPlaceHolder = jsonValue.GetObject("redactionPlaceHolder");
-    m_redactionPlaceHolderHasBeenSet = true;
+    m_confidenceLevel = jsonValue.GetInteger("confidenceLevel");
+    m_confidenceLevelHasBeenSet = true;
   }
   return *this;
 }
@@ -76,15 +76,15 @@ JsonValue InlineRedactionPattern::Jsonize() const
 
   }
 
-  if(m_confidenceLevelHasBeenSet)
-  {
-   payload.WithInteger("confidenceLevel", m_confidenceLevel);
-
-  }
-
   if(m_customPatternHasBeenSet)
   {
    payload.WithObject("customPattern", m_customPattern.Jsonize());
+
+  }
+
+  if(m_redactionPlaceHolderHasBeenSet)
+  {
+   payload.WithObject("redactionPlaceHolder", m_redactionPlaceHolder.Jsonize());
 
   }
 
@@ -110,9 +110,9 @@ JsonValue InlineRedactionPattern::Jsonize() const
 
   }
 
-  if(m_redactionPlaceHolderHasBeenSet)
+  if(m_confidenceLevelHasBeenSet)
   {
-   payload.WithObject("redactionPlaceHolder", m_redactionPlaceHolder.Jsonize());
+   payload.WithInteger("confidenceLevel", m_confidenceLevel);
 
   }
 

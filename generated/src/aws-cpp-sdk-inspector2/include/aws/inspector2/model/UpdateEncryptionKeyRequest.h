@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/ResourceType.h>
 #include <aws/inspector2/model/ScanType.h>
+#include <aws/inspector2/model/ResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -48,16 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource type for the encryption key.</p>
-     */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline UpdateEncryptionKeyRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The scan type for the encryption key.</p>
      */
     inline ScanType GetScanType() const { return m_scanType; }
@@ -65,16 +55,26 @@ namespace Model
     inline void SetScanType(ScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
     inline UpdateEncryptionKeyRequest& WithScanType(ScanType value) { SetScanType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The resource type for the encryption key.</p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline UpdateEncryptionKeyRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
-
     ScanType m_scanType{ScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
+
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

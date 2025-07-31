@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/workspaces-web/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -35,6 +35,33 @@ namespace Model
 
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The tags to add to the browser settings resource. A tag is a key-value
+     * pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBrowserSettingsRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBrowserSettingsRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The custom managed key of the browser settings.</p>
+     */
+    inline const Aws::String& GetCustomerManagedKey() const { return m_customerManagedKey; }
+    inline bool CustomerManagedKeyHasBeenSet() const { return m_customerManagedKeyHasBeenSet; }
+    template<typename CustomerManagedKeyT = Aws::String>
+    void SetCustomerManagedKey(CustomerManagedKeyT&& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = std::forward<CustomerManagedKeyT>(value); }
+    template<typename CustomerManagedKeyT = Aws::String>
+    CreateBrowserSettingsRequest& WithCustomerManagedKey(CustomerManagedKeyT&& value) { SetCustomerManagedKey(std::forward<CustomerManagedKeyT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -81,34 +108,13 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateBrowserSettingsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The custom managed key of the browser settings.</p>
-     */
-    inline const Aws::String& GetCustomerManagedKey() const { return m_customerManagedKey; }
-    inline bool CustomerManagedKeyHasBeenSet() const { return m_customerManagedKeyHasBeenSet; }
-    template<typename CustomerManagedKeyT = Aws::String>
-    void SetCustomerManagedKey(CustomerManagedKeyT&& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = std::forward<CustomerManagedKeyT>(value); }
-    template<typename CustomerManagedKeyT = Aws::String>
-    CreateBrowserSettingsRequest& WithCustomerManagedKey(CustomerManagedKeyT&& value) { SetCustomerManagedKey(std::forward<CustomerManagedKeyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The tags to add to the browser settings resource. A tag is a key-value
-     * pair.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    CreateBrowserSettingsRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    CreateBrowserSettingsRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_customerManagedKey;
+    bool m_customerManagedKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
     bool m_additionalEncryptionContextHasBeenSet = false;
@@ -118,12 +124,6 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_customerManagedKey;
-    bool m_customerManagedKeyHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

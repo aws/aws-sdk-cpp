@@ -86,6 +86,12 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   }
 
+  if(m_tenantNameHasBeenSet)
+  {
+   payload.WithString("TenantName", m_tenantName);
+
+  }
+
   if(m_listManagementOptionsHasBeenSet)
   {
    payload.WithObject("ListManagementOptions", m_listManagementOptions.Jsonize());

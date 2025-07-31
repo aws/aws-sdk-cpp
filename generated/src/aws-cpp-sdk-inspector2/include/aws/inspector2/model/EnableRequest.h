@@ -51,18 +51,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The idempotency token for the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    EnableRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The resource scan types you want to enable.</p>
      */
     inline const Aws::Vector<ResourceScanType>& GetResourceTypes() const { return m_resourceTypes; }
@@ -73,16 +61,28 @@ namespace Model
     EnableRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
     inline EnableRequest& AddResourceTypes(ResourceScanType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The idempotency token for the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    EnableRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
     bool m_accountIdsHasBeenSet = false;
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
     Aws::Vector<ResourceScanType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

@@ -25,15 +25,15 @@ CisNumberFilter::CisNumberFilter(JsonView jsonValue)
 
 CisNumberFilter& CisNumberFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("lowerInclusive"))
-  {
-    m_lowerInclusive = jsonValue.GetInteger("lowerInclusive");
-    m_lowerInclusiveHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("upperInclusive"))
   {
     m_upperInclusive = jsonValue.GetInteger("upperInclusive");
     m_upperInclusiveHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lowerInclusive"))
+  {
+    m_lowerInclusive = jsonValue.GetInteger("lowerInclusive");
+    m_lowerInclusiveHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CisNumberFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_lowerInclusiveHasBeenSet)
-  {
-   payload.WithInteger("lowerInclusive", m_lowerInclusive);
-
-  }
-
   if(m_upperInclusiveHasBeenSet)
   {
    payload.WithInteger("upperInclusive", m_upperInclusive);
+
+  }
+
+  if(m_lowerInclusiveHasBeenSet)
+  {
+   payload.WithInteger("lowerInclusive", m_lowerInclusive);
 
   }
 

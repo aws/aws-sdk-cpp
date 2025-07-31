@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/inspector2/model/PackageType.h>
 #include <aws/inspector2/model/Runtime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/LambdaVpcConfig.h>
+#include <aws/inspector2/model/PackageType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/Architecture.h>
 #include <utility>
 
@@ -46,17 +46,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instruction set architecture that the Amazon Web Services Lambda function
-     * supports. Architecture is a string array with one of the valid values. The
-     * default architecture value is <code>x86_64</code>.</p>
+     * <p>The name of the Amazon Web Services Lambda function.</p>
      */
-    inline const Aws::Vector<Architecture>& GetArchitectures() const { return m_architectures; }
-    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
-    template<typename ArchitecturesT = Aws::Vector<Architecture>>
-    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
-    template<typename ArchitecturesT = Aws::Vector<Architecture>>
-    AwsLambdaFunctionDetails& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
-    inline AwsLambdaFunctionDetails& AddArchitectures(Architecture value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    AwsLambdaFunctionDetails& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The runtime environment for the Amazon Web Services Lambda function.</p>
+     */
+    inline Runtime GetRuntime() const { return m_runtime; }
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+    inline void SetRuntime(Runtime value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline AwsLambdaFunctionDetails& WithRuntime(Runtime value) { SetRuntime(value); return *this;}
     ///@}
 
     ///@{
@@ -74,6 +81,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the Amazon Web Services Lambda function.</p>
+     */
+    inline const Aws::String& GetVersion() const { return m_version; }
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AwsLambdaFunctionDetails& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services Lambda function's execution role.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
@@ -82,32 +101,6 @@ namespace Model
     void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
     template<typename ExecutionRoleArnT = Aws::String>
     AwsLambdaFunctionDetails& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the Amazon Web Services Lambda function.</p>
-     */
-    inline const Aws::String& GetFunctionName() const { return m_functionName; }
-    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    template<typename FunctionNameT = Aws::String>
-    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
-    template<typename FunctionNameT = Aws::String>
-    AwsLambdaFunctionDetails& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that a user last updated the configuration, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
-     * format</a> </p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
-    inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    AwsLambdaFunctionDetails& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,6 +121,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Web Services Lambda function's networking configuration.</p>
+     */
+    inline const LambdaVpcConfig& GetVpcConfig() const { return m_vpcConfig; }
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+    template<typename VpcConfigT = LambdaVpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = LambdaVpcConfig>
+    AwsLambdaFunctionDetails& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of deployment package. Set to <code>Image</code> for container image
      * and set <code>Zip</code> for .zip file archive.</p>
      */
@@ -139,68 +144,63 @@ namespace Model
 
     ///@{
     /**
-     * <p>The runtime environment for the Amazon Web Services Lambda function.</p>
+     * <p>The instruction set architecture that the Amazon Web Services Lambda function
+     * supports. Architecture is a string array with one of the valid values. The
+     * default architecture value is <code>x86_64</code>.</p>
      */
-    inline Runtime GetRuntime() const { return m_runtime; }
-    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(Runtime value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline AwsLambdaFunctionDetails& WithRuntime(Runtime value) { SetRuntime(value); return *this;}
+    inline const Aws::Vector<Architecture>& GetArchitectures() const { return m_architectures; }
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+    template<typename ArchitecturesT = Aws::Vector<Architecture>>
+    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
+    template<typename ArchitecturesT = Aws::Vector<Architecture>>
+    AwsLambdaFunctionDetails& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
+    inline AwsLambdaFunctionDetails& AddArchitectures(Architecture value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
-     * <p>The version of the Amazon Web Services Lambda function.</p>
+     * <p>The date and time that a user last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
      */
-    inline const Aws::String& GetVersion() const { return m_version; }
-    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    template<typename VersionT = Aws::String>
-    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
-    template<typename VersionT = Aws::String>
-    AwsLambdaFunctionDetails& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services Lambda function's networking configuration.</p>
-     */
-    inline const LambdaVpcConfig& GetVpcConfig() const { return m_vpcConfig; }
-    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    template<typename VpcConfigT = LambdaVpcConfig>
-    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
-    template<typename VpcConfigT = LambdaVpcConfig>
-    AwsLambdaFunctionDetails& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
+    inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    AwsLambdaFunctionDetails& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Vector<Architecture> m_architectures;
-    bool m_architecturesHasBeenSet = false;
-
-    Aws::String m_codeSha256;
-    bool m_codeSha256HasBeenSet = false;
-
-    Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAt{};
-    bool m_lastModifiedAtHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_layers;
-    bool m_layersHasBeenSet = false;
-
-    PackageType m_packageType{PackageType::NOT_SET};
-    bool m_packageTypeHasBeenSet = false;
-
     Runtime m_runtime{Runtime::NOT_SET};
     bool m_runtimeHasBeenSet = false;
+
+    Aws::String m_codeSha256;
+    bool m_codeSha256HasBeenSet = false;
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
+    Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_layers;
+    bool m_layersHasBeenSet = false;
+
     LambdaVpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    PackageType m_packageType{PackageType::NOT_SET};
+    bool m_packageTypeHasBeenSet = false;
+
+    Aws::Vector<Architecture> m_architectures;
+    bool m_architecturesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedAt{};
+    bool m_lastModifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

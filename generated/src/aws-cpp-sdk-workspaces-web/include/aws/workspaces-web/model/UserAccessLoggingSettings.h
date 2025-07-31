@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the user access logging settings.</p>
+     */
+    inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
+    inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
+    template<typename UserAccessLoggingSettingsArnT = Aws::String>
+    void SetUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::forward<UserAccessLoggingSettingsArnT>(value); }
+    template<typename UserAccessLoggingSettingsArnT = Aws::String>
+    UserAccessLoggingSettings& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of web portal ARNs that this user access logging settings is
      * associated with.</p>
      */
@@ -65,28 +77,16 @@ namespace Model
     template<typename KinesisStreamArnT = Aws::String>
     UserAccessLoggingSettings& WithKinesisStreamArn(KinesisStreamArnT&& value) { SetKinesisStreamArn(std::forward<KinesisStreamArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
-    inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
-    inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
-    template<typename UserAccessLoggingSettingsArnT = Aws::String>
-    void SetUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::forward<UserAccessLoggingSettingsArnT>(value); }
-    template<typename UserAccessLoggingSettingsArnT = Aws::String>
-    UserAccessLoggingSettings& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_userAccessLoggingSettingsArn;
+    bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
 
     Aws::String m_kinesisStreamArn;
     bool m_kinesisStreamArnHasBeenSet = false;
-
-    Aws::String m_userAccessLoggingSettingsArn;
-    bool m_userAccessLoggingSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

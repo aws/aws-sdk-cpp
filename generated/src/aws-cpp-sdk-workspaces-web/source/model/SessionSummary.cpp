@@ -25,11 +25,6 @@ SessionSummary::SessionSummary(JsonView jsonValue)
 
 SessionSummary& SessionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
@@ -40,20 +35,25 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
+  if(jsonValue.ValueExists("username"))
   {
-    m_startTime = jsonValue.GetDouble("startTime");
-    m_startTimeHasBeenSet = true;
+    m_username = jsonValue.GetString("username");
+    m_usernameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("username"))
+  if(jsonValue.ValueExists("startTime"))
   {
-    m_username = jsonValue.GetString("username");
-    m_usernameHasBeenSet = true;
+    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -61,11 +61,6 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
 JsonValue SessionSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
 
   if(m_portalArnHasBeenSet)
   {
@@ -79,9 +74,10 @@ JsonValue SessionSummary::Jsonize() const
 
   }
 
-  if(m_startTimeHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+   payload.WithString("username", m_username);
+
   }
 
   if(m_statusHasBeenSet)
@@ -89,10 +85,14 @@ JsonValue SessionSummary::Jsonize() const
    payload.WithString("status", SessionStatusMapper::GetNameForSessionStatus(m_status));
   }
 
-  if(m_usernameHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-   payload.WithString("username", m_username);
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
 
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

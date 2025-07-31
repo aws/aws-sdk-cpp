@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/FilterCriteria.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/FilterCriteria.h>
 #include <aws/inspector2/model/SortCriteria.h>
 #include <utility>
 
@@ -33,18 +33,6 @@ namespace Model
 
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>Details on the filters to apply to your finding results.</p>
-     */
-    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
-    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    template<typename FilterCriteriaT = FilterCriteria>
-    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
-    template<typename FilterCriteriaT = FilterCriteria>
-    ListFindingsRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -78,6 +66,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details on the filters to apply to your finding results.</p>
+     */
+    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
+    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+    template<typename FilterCriteriaT = FilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = FilterCriteria>
+    ListFindingsRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details on the sort criteria to apply to your finding results.</p>
      */
     inline const SortCriteria& GetSortCriteria() const { return m_sortCriteria; }
@@ -89,14 +89,14 @@ namespace Model
     ///@}
   private:
 
-    FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet = false;
-
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    FilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet = false;
 
     SortCriteria m_sortCriteria;
     bool m_sortCriteriaHasBeenSet = false;

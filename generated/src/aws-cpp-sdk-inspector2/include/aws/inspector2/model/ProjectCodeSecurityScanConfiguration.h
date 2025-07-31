@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/ProjectContinuousIntegrationScanConfiguration.h>
 #include <aws/inspector2/model/ProjectPeriodicScanConfiguration.h>
+#include <aws/inspector2/model/ProjectContinuousIntegrationScanConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -42,20 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The continuous integration scan configurations applied to the project.</p>
-     */
-    inline const Aws::Vector<ProjectContinuousIntegrationScanConfiguration>& GetContinuousIntegrationScanConfigurations() const { return m_continuousIntegrationScanConfigurations; }
-    inline bool ContinuousIntegrationScanConfigurationsHasBeenSet() const { return m_continuousIntegrationScanConfigurationsHasBeenSet; }
-    template<typename ContinuousIntegrationScanConfigurationsT = Aws::Vector<ProjectContinuousIntegrationScanConfiguration>>
-    void SetContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { m_continuousIntegrationScanConfigurationsHasBeenSet = true; m_continuousIntegrationScanConfigurations = std::forward<ContinuousIntegrationScanConfigurationsT>(value); }
-    template<typename ContinuousIntegrationScanConfigurationsT = Aws::Vector<ProjectContinuousIntegrationScanConfiguration>>
-    ProjectCodeSecurityScanConfiguration& WithContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { SetContinuousIntegrationScanConfigurations(std::forward<ContinuousIntegrationScanConfigurationsT>(value)); return *this;}
-    template<typename ContinuousIntegrationScanConfigurationsT = ProjectContinuousIntegrationScanConfiguration>
-    ProjectCodeSecurityScanConfiguration& AddContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { m_continuousIntegrationScanConfigurationsHasBeenSet = true; m_continuousIntegrationScanConfigurations.emplace_back(std::forward<ContinuousIntegrationScanConfigurationsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The periodic scan configurations applied to the project.</p>
      */
     inline const Aws::Vector<ProjectPeriodicScanConfiguration>& GetPeriodicScanConfigurations() const { return m_periodicScanConfigurations; }
@@ -67,13 +53,27 @@ namespace Model
     template<typename PeriodicScanConfigurationsT = ProjectPeriodicScanConfiguration>
     ProjectCodeSecurityScanConfiguration& AddPeriodicScanConfigurations(PeriodicScanConfigurationsT&& value) { m_periodicScanConfigurationsHasBeenSet = true; m_periodicScanConfigurations.emplace_back(std::forward<PeriodicScanConfigurationsT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<ProjectContinuousIntegrationScanConfiguration> m_continuousIntegrationScanConfigurations;
-    bool m_continuousIntegrationScanConfigurationsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The continuous integration scan configurations applied to the project.</p>
+     */
+    inline const Aws::Vector<ProjectContinuousIntegrationScanConfiguration>& GetContinuousIntegrationScanConfigurations() const { return m_continuousIntegrationScanConfigurations; }
+    inline bool ContinuousIntegrationScanConfigurationsHasBeenSet() const { return m_continuousIntegrationScanConfigurationsHasBeenSet; }
+    template<typename ContinuousIntegrationScanConfigurationsT = Aws::Vector<ProjectContinuousIntegrationScanConfiguration>>
+    void SetContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { m_continuousIntegrationScanConfigurationsHasBeenSet = true; m_continuousIntegrationScanConfigurations = std::forward<ContinuousIntegrationScanConfigurationsT>(value); }
+    template<typename ContinuousIntegrationScanConfigurationsT = Aws::Vector<ProjectContinuousIntegrationScanConfiguration>>
+    ProjectCodeSecurityScanConfiguration& WithContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { SetContinuousIntegrationScanConfigurations(std::forward<ContinuousIntegrationScanConfigurationsT>(value)); return *this;}
+    template<typename ContinuousIntegrationScanConfigurationsT = ProjectContinuousIntegrationScanConfiguration>
+    ProjectCodeSecurityScanConfiguration& AddContinuousIntegrationScanConfigurations(ContinuousIntegrationScanConfigurationsT&& value) { m_continuousIntegrationScanConfigurationsHasBeenSet = true; m_continuousIntegrationScanConfigurations.emplace_back(std::forward<ContinuousIntegrationScanConfigurationsT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<ProjectPeriodicScanConfiguration> m_periodicScanConfigurations;
     bool m_periodicScanConfigurationsHasBeenSet = false;
+
+    Aws::Vector<ProjectContinuousIntegrationScanConfiguration> m_continuousIntegrationScanConfigurations;
+    bool m_continuousIntegrationScanConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

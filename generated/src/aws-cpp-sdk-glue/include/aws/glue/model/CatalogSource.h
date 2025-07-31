@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +75,33 @@ namespace Model
     template<typename TableT = Aws::String>
     CatalogSource& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Partitions satisfying this predicate are deleted. Files within the retention
+     * period in these partitions are not deleted. </p>
+     */
+    inline const Aws::String& GetPartitionPredicate() const { return m_partitionPredicate; }
+    inline bool PartitionPredicateHasBeenSet() const { return m_partitionPredicateHasBeenSet; }
+    template<typename PartitionPredicateT = Aws::String>
+    void SetPartitionPredicate(PartitionPredicateT&& value) { m_partitionPredicateHasBeenSet = true; m_partitionPredicate = std::forward<PartitionPredicateT>(value); }
+    template<typename PartitionPredicateT = Aws::String>
+    CatalogSource& WithPartitionPredicate(PartitionPredicateT&& value) { SetPartitionPredicate(std::forward<PartitionPredicateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the data schema for the catalog source.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    CatalogSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    CatalogSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -83,6 +112,12 @@ namespace Model
 
     Aws::String m_table;
     bool m_tableHasBeenSet = false;
+
+    Aws::String m_partitionPredicate;
+    bool m_partitionPredicateHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

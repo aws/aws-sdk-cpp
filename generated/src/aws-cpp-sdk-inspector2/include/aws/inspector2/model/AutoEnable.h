@@ -38,17 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents whether code repository scans are automatically enabled for new
-     * members of your Amazon Inspector organization.</p>
-     */
-    inline bool GetCodeRepository() const { return m_codeRepository; }
-    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
-    inline void SetCodeRepository(bool value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = value; }
-    inline AutoEnable& WithCodeRepository(bool value) { SetCodeRepository(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Represents whether Amazon EC2 scans are automatically enabled for new members
      * of your Amazon Inspector organization.</p>
      */
@@ -91,10 +80,18 @@ namespace Model
     inline void SetLambdaCode(bool value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
     inline AutoEnable& WithLambdaCode(bool value) { SetLambdaCode(value); return *this;}
     ///@}
-  private:
 
-    bool m_codeRepository{false};
-    bool m_codeRepositoryHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Represents whether code repository scans are automatically enabled for new
+     * members of your Amazon Inspector organization.</p>
+     */
+    inline bool GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    inline void SetCodeRepository(bool value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = value; }
+    inline AutoEnable& WithCodeRepository(bool value) { SetCodeRepository(value); return *this;}
+    ///@}
+  private:
 
     bool m_ec2{false};
     bool m_ec2HasBeenSet = false;
@@ -107,6 +104,9 @@ namespace Model
 
     bool m_lambdaCode{false};
     bool m_lambdaCodeHasBeenSet = false;
+
+    bool m_codeRepository{false};
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

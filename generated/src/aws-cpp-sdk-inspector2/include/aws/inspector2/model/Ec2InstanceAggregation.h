@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/Ec2InstanceSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/Ec2InstanceSortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <aws/inspector2/model/MapFilter.h>
 #include <utility>
@@ -59,6 +59,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The operating system types to aggregate findings for. Valid values must be
+     * uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and
+     * <code>ALPINE_LINUX_3_8</code>.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetOperatingSystems() const { return m_operatingSystems; }
+    inline bool OperatingSystemsHasBeenSet() const { return m_operatingSystemsHasBeenSet; }
+    template<typename OperatingSystemsT = Aws::Vector<StringFilter>>
+    void SetOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = std::forward<OperatingSystemsT>(value); }
+    template<typename OperatingSystemsT = Aws::Vector<StringFilter>>
+    Ec2InstanceAggregation& WithOperatingSystems(OperatingSystemsT&& value) { SetOperatingSystems(std::forward<OperatingSystemsT>(value)); return *this;}
+    template<typename OperatingSystemsT = StringFilter>
+    Ec2InstanceAggregation& AddOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.emplace_back(std::forward<OperatingSystemsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
      */
     inline const Aws::Vector<StringFilter>& GetInstanceIds() const { return m_instanceIds; }
@@ -87,18 +103,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating system types to aggregate findings for. Valid values must be
-     * uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-     * <code>ALPINE_LINUX_3_8</code>.</p>
+     * <p>The order to sort results by.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetOperatingSystems() const { return m_operatingSystems; }
-    inline bool OperatingSystemsHasBeenSet() const { return m_operatingSystemsHasBeenSet; }
-    template<typename OperatingSystemsT = Aws::Vector<StringFilter>>
-    void SetOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = std::forward<OperatingSystemsT>(value); }
-    template<typename OperatingSystemsT = Aws::Vector<StringFilter>>
-    Ec2InstanceAggregation& WithOperatingSystems(OperatingSystemsT&& value) { SetOperatingSystems(std::forward<OperatingSystemsT>(value)); return *this;}
-    template<typename OperatingSystemsT = StringFilter>
-    Ec2InstanceAggregation& AddOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.emplace_back(std::forward<OperatingSystemsT>(value)); return *this; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline Ec2InstanceAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -110,20 +120,13 @@ namespace Model
     inline void SetSortBy(Ec2InstanceSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
     inline Ec2InstanceAggregation& WithSortBy(Ec2InstanceSortBy value) { SetSortBy(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The order to sort results by.</p>
-     */
-    inline SortOrder GetSortOrder() const { return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline Ec2InstanceAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
-    ///@}
   private:
 
     Aws::Vector<StringFilter> m_amis;
     bool m_amisHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_operatingSystems;
+    bool m_operatingSystemsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_instanceIds;
     bool m_instanceIdsHasBeenSet = false;
@@ -131,14 +134,11 @@ namespace Model
     Aws::Vector<MapFilter> m_instanceTags;
     bool m_instanceTagsHasBeenSet = false;
 
-    Aws::Vector<StringFilter> m_operatingSystems;
-    bool m_operatingSystemsHasBeenSet = false;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
+    bool m_sortOrderHasBeenSet = false;
 
     Ec2InstanceSortBy m_sortBy{Ec2InstanceSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
-
-    SortOrder m_sortOrder{SortOrder::NOT_SET};
-    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

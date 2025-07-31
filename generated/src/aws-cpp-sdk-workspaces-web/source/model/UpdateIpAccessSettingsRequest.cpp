@@ -16,21 +16,15 @@ Aws::String UpdateIpAccessSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("displayName", m_displayName);
 
   }
 
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -42,6 +36,12 @@ Aws::String UpdateIpAccessSettingsRequest::SerializePayload() const
      ipRulesJsonList[ipRulesIndex].AsObject(m_ipRules[ipRulesIndex].Jsonize());
    }
    payload.WithArray("ipRules", std::move(ipRulesJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

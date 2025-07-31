@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>ProviderConfiguration</code> and
-   * <code>ProviderServiceArn</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>providerConfiguration</code> and
+   * <code>providerServiceArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/NamespaceProviderProperties">AWS
    * API Reference</a></p>
    */

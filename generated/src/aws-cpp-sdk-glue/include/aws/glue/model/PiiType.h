@@ -17,8 +17,11 @@ namespace Model
   {
     NOT_SET,
     RowAudit,
+    RowHashing,
     RowMasking,
+    RowPartialMasking,
     ColumnAudit,
+    ColumnHashing,
     ColumnMasking
   };
 

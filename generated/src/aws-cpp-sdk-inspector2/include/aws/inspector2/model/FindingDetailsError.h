@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/FindingDetailsErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/FindingDetailsErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The finding ARN that returned an error.</p>
+     */
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
+    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    FindingDetailsError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error code.</p>
      */
     inline FindingDetailsErrorCode GetErrorCode() const { return m_errorCode; }
@@ -60,28 +72,16 @@ namespace Model
     template<typename ErrorMessageT = Aws::String>
     FindingDetailsError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The finding ARN that returned an error.</p>
-     */
-    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
-    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    template<typename FindingArnT = Aws::String>
-    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
-    template<typename FindingArnT = Aws::String>
-    FindingDetailsError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_findingArn;
+    bool m_findingArnHasBeenSet = false;
 
     FindingDetailsErrorCode m_errorCode{FindingDetailsErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
-
-    Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet = false;
   };
 
 } // namespace Model

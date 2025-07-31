@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing the <code>JobId</code>, <code>Status</code>,
-   * <code>StartTime</code>, and <code>EndTime</code> of a job.</p><p><h3>See
+   * <p>An object containing the <code>jobId</code>, <code>status</code>,
+   * <code>startTime</code>, and <code>endTime</code> of a job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/JobSummary">AWS
    * API Reference</a></p>

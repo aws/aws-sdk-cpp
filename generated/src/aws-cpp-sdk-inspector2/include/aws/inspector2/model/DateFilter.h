@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A timestamp representing the end of the time period filtered on.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndInclusive() const { return m_endInclusive; }
-    inline bool EndInclusiveHasBeenSet() const { return m_endInclusiveHasBeenSet; }
-    template<typename EndInclusiveT = Aws::Utils::DateTime>
-    void SetEndInclusive(EndInclusiveT&& value) { m_endInclusiveHasBeenSet = true; m_endInclusive = std::forward<EndInclusiveT>(value); }
-    template<typename EndInclusiveT = Aws::Utils::DateTime>
-    DateFilter& WithEndInclusive(EndInclusiveT&& value) { SetEndInclusive(std::forward<EndInclusiveT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A timestamp representing the start of the time period filtered on.</p>
      */
     inline const Aws::Utils::DateTime& GetStartInclusive() const { return m_startInclusive; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename StartInclusiveT = Aws::Utils::DateTime>
     DateFilter& WithStartInclusive(StartInclusiveT&& value) { SetStartInclusive(std::forward<StartInclusiveT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_endInclusive{};
-    bool m_endInclusiveHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A timestamp representing the end of the time period filtered on.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndInclusive() const { return m_endInclusive; }
+    inline bool EndInclusiveHasBeenSet() const { return m_endInclusiveHasBeenSet; }
+    template<typename EndInclusiveT = Aws::Utils::DateTime>
+    void SetEndInclusive(EndInclusiveT&& value) { m_endInclusiveHasBeenSet = true; m_endInclusive = std::forward<EndInclusiveT>(value); }
+    template<typename EndInclusiveT = Aws::Utils::DateTime>
+    DateFilter& WithEndInclusive(EndInclusiveT&& value) { SetEndInclusive(std::forward<EndInclusiveT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Utils::DateTime m_startInclusive{};
     bool m_startInclusiveHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endInclusive{};
+    bool m_endInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

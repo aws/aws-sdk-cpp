@@ -21,8 +21,11 @@ namespace Aws
       {
 
         static const int RowAudit_HASH = HashingUtils::HashString("RowAudit");
+        static const int RowHashing_HASH = HashingUtils::HashString("RowHashing");
         static const int RowMasking_HASH = HashingUtils::HashString("RowMasking");
+        static const int RowPartialMasking_HASH = HashingUtils::HashString("RowPartialMasking");
         static const int ColumnAudit_HASH = HashingUtils::HashString("ColumnAudit");
+        static const int ColumnHashing_HASH = HashingUtils::HashString("ColumnHashing");
         static const int ColumnMasking_HASH = HashingUtils::HashString("ColumnMasking");
 
 
@@ -33,13 +36,25 @@ namespace Aws
           {
             return PiiType::RowAudit;
           }
+          else if (hashCode == RowHashing_HASH)
+          {
+            return PiiType::RowHashing;
+          }
           else if (hashCode == RowMasking_HASH)
           {
             return PiiType::RowMasking;
           }
+          else if (hashCode == RowPartialMasking_HASH)
+          {
+            return PiiType::RowPartialMasking;
+          }
           else if (hashCode == ColumnAudit_HASH)
           {
             return PiiType::ColumnAudit;
+          }
+          else if (hashCode == ColumnHashing_HASH)
+          {
+            return PiiType::ColumnHashing;
           }
           else if (hashCode == ColumnMasking_HASH)
           {
@@ -63,10 +78,16 @@ namespace Aws
             return {};
           case PiiType::RowAudit:
             return "RowAudit";
+          case PiiType::RowHashing:
+            return "RowHashing";
           case PiiType::RowMasking:
             return "RowMasking";
+          case PiiType::RowPartialMasking:
+            return "RowPartialMasking";
           case PiiType::ColumnAudit:
             return "ColumnAudit";
+          case PiiType::ColumnHashing:
+            return "ColumnHashing";
           case PiiType::ColumnMasking:
             return "ColumnMasking";
           default:

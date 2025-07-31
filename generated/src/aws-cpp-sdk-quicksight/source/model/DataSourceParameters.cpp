@@ -155,6 +155,11 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_bigQueryParameters = jsonValue.GetObject("BigQueryParameters");
     m_bigQueryParametersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ImpalaParameters"))
+  {
+    m_impalaParameters = jsonValue.GetObject("ImpalaParameters");
+    m_impalaParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -315,6 +320,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_bigQueryParametersHasBeenSet)
   {
    payload.WithObject("BigQueryParameters", m_bigQueryParameters.Jsonize());
+
+  }
+
+  if(m_impalaParametersHasBeenSet)
+  {
+   payload.WithObject("ImpalaParameters", m_impalaParameters.Jsonize());
 
   }
 

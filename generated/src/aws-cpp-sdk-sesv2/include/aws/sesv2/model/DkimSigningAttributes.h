@@ -140,7 +140,7 @@ namespace Model
      * <code>AWS_SES_AP_SOUTHEAST_2</code> – Configure DKIM for the identity by
      * replicating from a parent identity in Asia Pacific (Sydney) region using
      * Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-     * <code>AWS_SES_AP_SOUTHEAST_3</code> �� Configure DKIM for the identity by
+     * <code>AWS_SES_AP_SOUTHEAST_3</code> – Configure DKIM for the identity by
      * replicating from a parent identity in Asia Pacific (Jakarta) region using
      * Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
      * <code>AWS_SES_EU_CENTRAL_1</code> – Configure DKIM for the identity by

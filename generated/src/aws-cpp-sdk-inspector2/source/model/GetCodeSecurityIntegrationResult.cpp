@@ -25,30 +25,20 @@ GetCodeSecurityIntegrationResult::GetCodeSecurityIntegrationResult(const Aws::Am
 GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("authorizationUrl"))
-  {
-    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
-    m_authorizationUrlHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdOn"))
-  {
-    m_createdOn = jsonValue.GetDouble("createdOn");
-    m_createdOnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("integrationArn"))
   {
     m_integrationArn = jsonValue.GetString("integrationArn");
     m_integrationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateOn"))
-  {
-    m_lastUpdateOn = jsonValue.GetDouble("lastUpdateOn");
-    m_lastUpdateOnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
@@ -60,6 +50,16 @@ GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator =(c
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("createdOn"))
+  {
+    m_createdOn = jsonValue.GetDouble("createdOn");
+    m_createdOnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdateOn"))
+  {
+    m_lastUpdateOn = jsonValue.GetDouble("lastUpdateOn");
+    m_lastUpdateOnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -69,10 +69,10 @@ GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator =(c
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("authorizationUrl"))
   {
-    m_type = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_authorizationUrl = jsonValue.GetString("authorizationUrl");
+    m_authorizationUrlHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

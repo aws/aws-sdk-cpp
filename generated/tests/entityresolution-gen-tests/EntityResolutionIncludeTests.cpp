@@ -127,6 +127,8 @@
 #include <aws/entityresolution/model/ResolutionType.h>
 #include <aws/entityresolution/model/Rule.h>
 #include <aws/entityresolution/model/RuleBasedProperties.h>
+#include <aws/entityresolution/model/RuleCondition.h>
+#include <aws/entityresolution/model/RuleConditionProperties.h>
 #include <aws/entityresolution/model/SchemaAttributeType.h>
 #include <aws/entityresolution/model/SchemaInputAttribute.h>
 #include <aws/entityresolution/model/SchemaMappingSummary.h>

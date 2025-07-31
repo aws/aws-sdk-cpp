@@ -311,6 +311,20 @@ namespace Model
     template<typename StartingTimestampT = Aws::Utils::DateTime>
     KinesisStreamingSourceOptions& WithStartingTimestamp(StartingTimestampT&& value) { SetStartingTimestamp(std::forward<StartingTimestampT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out
+     * consumer. When specified, enables enhanced fan-out for dedicated throughput and
+     * lower latency data consumption.</p>
+     */
+    inline const Aws::String& GetFanoutConsumerARN() const { return m_fanoutConsumerARN; }
+    inline bool FanoutConsumerARNHasBeenSet() const { return m_fanoutConsumerARNHasBeenSet; }
+    template<typename FanoutConsumerARNT = Aws::String>
+    void SetFanoutConsumerARN(FanoutConsumerARNT&& value) { m_fanoutConsumerARNHasBeenSet = true; m_fanoutConsumerARN = std::forward<FanoutConsumerARNT>(value); }
+    template<typename FanoutConsumerARNT = Aws::String>
+    KinesisStreamingSourceOptions& WithFanoutConsumerARN(FanoutConsumerARNT&& value) { SetFanoutConsumerARN(std::forward<FanoutConsumerARNT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_endpointUrl;
@@ -375,6 +389,9 @@ namespace Model
 
     Aws::Utils::DateTime m_startingTimestamp{};
     bool m_startingTimestampHasBeenSet = false;
+
+    Aws::String m_fanoutConsumerARN;
+    bool m_fanoutConsumerARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/CisSecurityLevel.h>
 #include <aws/inspector2/model/CisFindingStatus.h>
+#include <aws/inspector2/model/CisSecurityLevel.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The CIS scan result details' scan ARN.</p>
+     */
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
+    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    CisScanResultDetails& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The CIS scan result details' account ID.</p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
@@ -53,48 +65,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID that's associated with the CIS scan result details.</p>
+     * <p>The CIS scan result details' target resource ID.</p>
      */
-    inline const Aws::String& GetCheckDescription() const { return m_checkDescription; }
-    inline bool CheckDescriptionHasBeenSet() const { return m_checkDescriptionHasBeenSet; }
-    template<typename CheckDescriptionT = Aws::String>
-    void SetCheckDescription(CheckDescriptionT&& value) { m_checkDescriptionHasBeenSet = true; m_checkDescription = std::forward<CheckDescriptionT>(value); }
-    template<typename CheckDescriptionT = Aws::String>
-    CisScanResultDetails& WithCheckDescription(CheckDescriptionT&& value) { SetCheckDescription(std::forward<CheckDescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan result details' check ID.</p>
-     */
-    inline const Aws::String& GetCheckId() const { return m_checkId; }
-    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
-    template<typename CheckIdT = Aws::String>
-    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
-    template<typename CheckIdT = Aws::String>
-    CisScanResultDetails& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan result details' finding ARN.</p>
-     */
-    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
-    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    template<typename FindingArnT = Aws::String>
-    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
-    template<typename FindingArnT = Aws::String>
-    CisScanResultDetails& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan result details' level.</p>
-     */
-    inline CisSecurityLevel GetLevel() const { return m_level; }
-    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(CisSecurityLevel value) { m_levelHasBeenSet = true; m_level = value; }
-    inline CisScanResultDetails& WithLevel(CisSecurityLevel value) { SetLevel(value); return *this;}
+    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
+    inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
+    template<typename TargetResourceIdT = Aws::String>
+    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
+    template<typename TargetResourceIdT = Aws::String>
+    CisScanResultDetails& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,30 +85,6 @@ namespace Model
     void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
     template<typename PlatformT = Aws::String>
     CisScanResultDetails& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan result details' remediation.</p>
-     */
-    inline const Aws::String& GetRemediation() const { return m_remediation; }
-    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
-    template<typename RemediationT = Aws::String>
-    void SetRemediation(RemediationT&& value) { m_remediationHasBeenSet = true; m_remediation = std::forward<RemediationT>(value); }
-    template<typename RemediationT = Aws::String>
-    CisScanResultDetails& WithRemediation(RemediationT&& value) { SetRemediation(std::forward<RemediationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan result details' scan ARN.</p>
-     */
-    inline const Aws::String& GetScanArn() const { return m_scanArn; }
-    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    template<typename ScanArnT = Aws::String>
-    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
-    template<typename ScanArnT = Aws::String>
-    CisScanResultDetails& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,14 +111,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS scan result details' target resource ID.</p>
+     * <p>The CIS scan result details' check ID.</p>
      */
-    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
-    inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
-    template<typename TargetResourceIdT = Aws::String>
-    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
-    template<typename TargetResourceIdT = Aws::String>
-    CisScanResultDetails& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
+    inline const Aws::String& GetCheckId() const { return m_checkId; }
+    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
+    template<typename CheckIdT = Aws::String>
+    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
+    template<typename CheckIdT = Aws::String>
+    CisScanResultDetails& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,31 +132,65 @@ namespace Model
     template<typename TitleT = Aws::String>
     CisScanResultDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The account ID that's associated with the CIS scan result details.</p>
+     */
+    inline const Aws::String& GetCheckDescription() const { return m_checkDescription; }
+    inline bool CheckDescriptionHasBeenSet() const { return m_checkDescriptionHasBeenSet; }
+    template<typename CheckDescriptionT = Aws::String>
+    void SetCheckDescription(CheckDescriptionT&& value) { m_checkDescriptionHasBeenSet = true; m_checkDescription = std::forward<CheckDescriptionT>(value); }
+    template<typename CheckDescriptionT = Aws::String>
+    CisScanResultDetails& WithCheckDescription(CheckDescriptionT&& value) { SetCheckDescription(std::forward<CheckDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CIS scan result details' remediation.</p>
+     */
+    inline const Aws::String& GetRemediation() const { return m_remediation; }
+    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+    template<typename RemediationT = Aws::String>
+    void SetRemediation(RemediationT&& value) { m_remediationHasBeenSet = true; m_remediation = std::forward<RemediationT>(value); }
+    template<typename RemediationT = Aws::String>
+    CisScanResultDetails& WithRemediation(RemediationT&& value) { SetRemediation(std::forward<RemediationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CIS scan result details' level.</p>
+     */
+    inline CisSecurityLevel GetLevel() const { return m_level; }
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+    inline void SetLevel(CisSecurityLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline CisScanResultDetails& WithLevel(CisSecurityLevel value) { SetLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CIS scan result details' finding ARN.</p>
+     */
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
+    inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    CisScanResultDetails& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
+    ///@}
   private:
+
+    Aws::String m_scanArn;
+    bool m_scanArnHasBeenSet = false;
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_checkDescription;
-    bool m_checkDescriptionHasBeenSet = false;
-
-    Aws::String m_checkId;
-    bool m_checkIdHasBeenSet = false;
-
-    Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet = false;
-
-    CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
-    bool m_levelHasBeenSet = false;
+    Aws::String m_targetResourceId;
+    bool m_targetResourceIdHasBeenSet = false;
 
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
-
-    Aws::String m_remediation;
-    bool m_remediationHasBeenSet = false;
-
-    Aws::String m_scanArn;
-    bool m_scanArnHasBeenSet = false;
 
     CisFindingStatus m_status{CisFindingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
@@ -210,11 +198,23 @@ namespace Model
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::String m_targetResourceId;
-    bool m_targetResourceIdHasBeenSet = false;
+    Aws::String m_checkId;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::String m_checkDescription;
+    bool m_checkDescriptionHasBeenSet = false;
+
+    Aws::String m_remediation;
+    bool m_remediationHasBeenSet = false;
+
+    CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
+    bool m_levelHasBeenSet = false;
+
+    Aws::String m_findingArn;
+    bool m_findingArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,15 +34,6 @@ LambdaLayerAggregation& LambdaLayerAggregation::operator =(JsonView jsonValue)
     }
     m_functionNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("layerArns"))
-  {
-    Aws::Utils::Array<JsonView> layerArnsJsonList = jsonValue.GetArray("layerArns");
-    for(unsigned layerArnsIndex = 0; layerArnsIndex < layerArnsJsonList.GetLength(); ++layerArnsIndex)
-    {
-      m_layerArns.push_back(layerArnsJsonList[layerArnsIndex].AsObject());
-    }
-    m_layerArnsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -52,15 +43,24 @@ LambdaLayerAggregation& LambdaLayerAggregation::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
+  if(jsonValue.ValueExists("layerArns"))
   {
-    m_sortBy = LambdaLayerSortByMapper::GetLambdaLayerSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
+    Aws::Utils::Array<JsonView> layerArnsJsonList = jsonValue.GetArray("layerArns");
+    for(unsigned layerArnsIndex = 0; layerArnsIndex < layerArnsJsonList.GetLength(); ++layerArnsIndex)
+    {
+      m_layerArns.push_back(layerArnsJsonList[layerArnsIndex].AsObject());
+    }
+    m_layerArnsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = LambdaLayerSortByMapper::GetLambdaLayerSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -80,17 +80,6 @@ JsonValue LambdaLayerAggregation::Jsonize() const
 
   }
 
-  if(m_layerArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> layerArnsJsonList(m_layerArns.size());
-   for(unsigned layerArnsIndex = 0; layerArnsIndex < layerArnsJsonList.GetLength(); ++layerArnsIndex)
-   {
-     layerArnsJsonList[layerArnsIndex].AsObject(m_layerArns[layerArnsIndex].Jsonize());
-   }
-   payload.WithArray("layerArns", std::move(layerArnsJsonList));
-
-  }
-
   if(m_resourceIdsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
@@ -102,14 +91,25 @@ JsonValue LambdaLayerAggregation::Jsonize() const
 
   }
 
-  if(m_sortByHasBeenSet)
+  if(m_layerArnsHasBeenSet)
   {
-   payload.WithString("sortBy", LambdaLayerSortByMapper::GetNameForLambdaLayerSortBy(m_sortBy));
+   Aws::Utils::Array<JsonValue> layerArnsJsonList(m_layerArns.size());
+   for(unsigned layerArnsIndex = 0; layerArnsIndex < layerArnsJsonList.GetLength(); ++layerArnsIndex)
+   {
+     layerArnsJsonList[layerArnsIndex].AsObject(m_layerArns[layerArnsIndex].Jsonize());
+   }
+   payload.WithArray("layerArns", std::move(layerArnsJsonList));
+
   }
 
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", LambdaLayerSortByMapper::GetNameForLambdaLayerSortBy(m_sortBy));
   }
 
   return payload;

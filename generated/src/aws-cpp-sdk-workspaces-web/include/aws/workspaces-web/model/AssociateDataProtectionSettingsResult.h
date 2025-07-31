@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the data protection settings resource.</p>
-     */
-    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    AssociateDataProtectionSettingsResult& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const { return m_portalArn; }
@@ -52,6 +41,17 @@ namespace Model
     void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
     template<typename PortalArnT = Aws::String>
     AssociateDataProtectionSettingsResult& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the data protection settings resource.</p>
+     */
+    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    AssociateDataProtectionSettingsResult& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_dataProtectionSettingsArn;
-    bool m_dataProtectionSettingsArnHasBeenSet = false;
-
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;
+
+    Aws::String m_dataProtectionSettingsArn;
+    bool m_dataProtectionSettingsArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

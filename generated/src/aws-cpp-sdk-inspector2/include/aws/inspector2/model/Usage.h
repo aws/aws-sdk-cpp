@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/Currency.h>
 #include <aws/inspector2/model/UsageType.h>
+#include <aws/inspector2/model/Currency.h>
 #include <utility>
 
 namespace Aws
@@ -41,22 +41,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The currency type used when calculating usage data.</p>
+     * <p>The type scan.</p>
      */
-    inline Currency GetCurrency() const { return m_currency; }
-    inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline Usage& WithCurrency(Currency value) { SetCurrency(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The estimated monthly cost of Amazon Inspector.</p>
-     */
-    inline double GetEstimatedMonthlyCost() const { return m_estimatedMonthlyCost; }
-    inline bool EstimatedMonthlyCostHasBeenSet() const { return m_estimatedMonthlyCostHasBeenSet; }
-    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCostHasBeenSet = true; m_estimatedMonthlyCost = value; }
-    inline Usage& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
+    inline UsageType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(UsageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Usage& WithType(UsageType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +61,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type scan.</p>
+     * <p>The estimated monthly cost of Amazon Inspector.</p>
      */
-    inline UsageType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(UsageType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline Usage& WithType(UsageType value) { SetType(value); return *this;}
+    inline double GetEstimatedMonthlyCost() const { return m_estimatedMonthlyCost; }
+    inline bool EstimatedMonthlyCostHasBeenSet() const { return m_estimatedMonthlyCostHasBeenSet; }
+    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCostHasBeenSet = true; m_estimatedMonthlyCost = value; }
+    inline Usage& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The currency type used when calculating usage data.</p>
+     */
+    inline Currency GetCurrency() const { return m_currency; }
+    inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
+    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline Usage& WithCurrency(Currency value) { SetCurrency(value); return *this;}
     ///@}
   private:
 
-    Currency m_currency{Currency::NOT_SET};
-    bool m_currencyHasBeenSet = false;
-
-    double m_estimatedMonthlyCost{0.0};
-    bool m_estimatedMonthlyCostHasBeenSet = false;
+    UsageType m_type{UsageType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     double m_total{0.0};
     bool m_totalHasBeenSet = false;
 
-    UsageType m_type{UsageType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    double m_estimatedMonthlyCost{0.0};
+    bool m_estimatedMonthlyCostHasBeenSet = false;
+
+    Currency m_currency{Currency::NOT_SET};
+    bool m_currencyHasBeenSet = false;
   };
 
 } // namespace Model

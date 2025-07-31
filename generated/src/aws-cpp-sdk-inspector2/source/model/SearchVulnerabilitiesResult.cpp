@@ -25,11 +25,6 @@ SearchVulnerabilitiesResult::SearchVulnerabilitiesResult(const Aws::AmazonWebSer
 SearchVulnerabilitiesResult& SearchVulnerabilitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("vulnerabilities"))
   {
     Aws::Utils::Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("vulnerabilities");
@@ -38,6 +33,11 @@ SearchVulnerabilitiesResult& SearchVulnerabilitiesResult::operator =(const Aws::
       m_vulnerabilities.push_back(vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject());
     }
     m_vulnerabilitiesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

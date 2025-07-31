@@ -25,25 +25,15 @@ CodeRepositoryMetadata::CodeRepositoryMetadata(JsonView jsonValue)
 
 CodeRepositoryMetadata& CodeRepositoryMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("integrationArn"))
-  {
-    m_integrationArn = jsonValue.GetString("integrationArn");
-    m_integrationArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastScannedCommitId"))
-  {
-    m_lastScannedCommitId = jsonValue.GetString("lastScannedCommitId");
-    m_lastScannedCommitIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("onDemandScan"))
-  {
-    m_onDemandScan = jsonValue.GetObject("onDemandScan");
-    m_onDemandScanHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
     m_projectNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("integrationArn"))
+  {
+    m_integrationArn = jsonValue.GetString("integrationArn");
+    m_integrationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("providerType"))
   {
@@ -55,10 +45,20 @@ CodeRepositoryMetadata& CodeRepositoryMetadata::operator =(JsonView jsonValue)
     m_providerTypeVisibility = jsonValue.GetString("providerTypeVisibility");
     m_providerTypeVisibilityHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastScannedCommitId"))
+  {
+    m_lastScannedCommitId = jsonValue.GetString("lastScannedCommitId");
+    m_lastScannedCommitIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("scanConfiguration"))
   {
     m_scanConfiguration = jsonValue.GetObject("scanConfiguration");
     m_scanConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("onDemandScan"))
+  {
+    m_onDemandScan = jsonValue.GetObject("onDemandScan");
+    m_onDemandScanHasBeenSet = true;
   }
   return *this;
 }
@@ -67,27 +67,15 @@ JsonValue CodeRepositoryMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_integrationArnHasBeenSet)
-  {
-   payload.WithString("integrationArn", m_integrationArn);
-
-  }
-
-  if(m_lastScannedCommitIdHasBeenSet)
-  {
-   payload.WithString("lastScannedCommitId", m_lastScannedCommitId);
-
-  }
-
-  if(m_onDemandScanHasBeenSet)
-  {
-   payload.WithObject("onDemandScan", m_onDemandScan.Jsonize());
-
-  }
-
   if(m_projectNameHasBeenSet)
   {
    payload.WithString("projectName", m_projectName);
+
+  }
+
+  if(m_integrationArnHasBeenSet)
+  {
+   payload.WithString("integrationArn", m_integrationArn);
 
   }
 
@@ -103,9 +91,21 @@ JsonValue CodeRepositoryMetadata::Jsonize() const
 
   }
 
+  if(m_lastScannedCommitIdHasBeenSet)
+  {
+   payload.WithString("lastScannedCommitId", m_lastScannedCommitId);
+
+  }
+
   if(m_scanConfigurationHasBeenSet)
   {
    payload.WithObject("scanConfiguration", m_scanConfiguration.Jsonize());
+
+  }
+
+  if(m_onDemandScanHasBeenSet)
+  {
+   payload.WithObject("onDemandScan", m_onDemandScan.Jsonize());
 
   }
 

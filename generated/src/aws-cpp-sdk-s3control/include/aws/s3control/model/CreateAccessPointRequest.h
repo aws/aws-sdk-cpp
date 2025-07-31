@@ -10,6 +10,8 @@
 #include <aws/s3control/model/VpcConfiguration.h>
 #include <aws/s3control/model/PublicAccessBlockConfiguration.h>
 #include <aws/s3control/model/Scope.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3control/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +158,26 @@ namespace Model
     template<typename ScopeT = Scope>
     CreateAccessPointRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of tags that you can apply to an access point. Tags are key-value
+     * pairs of metadata used to control access to your access points. For more
+     * information about tags, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Using
+     * tags with Amazon S3</a>. For information about tagging access points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#using-tags-for-abac">Using
+     * tags for attribute-based access control (ABAC)</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAccessPointRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAccessPointRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -178,6 +200,9 @@ namespace Model
 
     Scope m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

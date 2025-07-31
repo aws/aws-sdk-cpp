@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The evidence details.</p>
-     */
-    inline const Aws::String& GetEvidenceDetail() const { return m_evidenceDetail; }
-    inline bool EvidenceDetailHasBeenSet() const { return m_evidenceDetailHasBeenSet; }
-    template<typename EvidenceDetailT = Aws::String>
-    void SetEvidenceDetail(EvidenceDetailT&& value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail = std::forward<EvidenceDetailT>(value); }
-    template<typename EvidenceDetailT = Aws::String>
-    Evidence& WithEvidenceDetail(EvidenceDetailT&& value) { SetEvidenceDetail(std::forward<EvidenceDetailT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The evidence rule.</p>
      */
     inline const Aws::String& GetEvidenceRule() const { return m_evidenceRule; }
@@ -60,6 +48,18 @@ namespace Model
     void SetEvidenceRule(EvidenceRuleT&& value) { m_evidenceRuleHasBeenSet = true; m_evidenceRule = std::forward<EvidenceRuleT>(value); }
     template<typename EvidenceRuleT = Aws::String>
     Evidence& WithEvidenceRule(EvidenceRuleT&& value) { SetEvidenceRule(std::forward<EvidenceRuleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The evidence details.</p>
+     */
+    inline const Aws::String& GetEvidenceDetail() const { return m_evidenceDetail; }
+    inline bool EvidenceDetailHasBeenSet() const { return m_evidenceDetailHasBeenSet; }
+    template<typename EvidenceDetailT = Aws::String>
+    void SetEvidenceDetail(EvidenceDetailT&& value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail = std::forward<EvidenceDetailT>(value); }
+    template<typename EvidenceDetailT = Aws::String>
+    Evidence& WithEvidenceDetail(EvidenceDetailT&& value) { SetEvidenceDetail(std::forward<EvidenceDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +75,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_evidenceDetail;
-    bool m_evidenceDetailHasBeenSet = false;
-
     Aws::String m_evidenceRule;
     bool m_evidenceRuleHasBeenSet = false;
+
+    Aws::String m_evidenceDetail;
+    bool m_evidenceDetailHasBeenSet = false;
 
     Aws::String m_severity;
     bool m_severityHasBeenSet = false;

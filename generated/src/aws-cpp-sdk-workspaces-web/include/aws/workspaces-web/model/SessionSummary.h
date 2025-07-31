@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/SessionStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The end time of the session.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    SessionSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const { return m_portalArn; }
@@ -78,14 +66,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The start time of the session.</p>
+     * <p>The username of the session.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    SessionSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
+    inline const Aws::String& GetUsername() const { return m_username; }
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    SessionSummary& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,19 +88,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The username of the session.</p>
+     * <p>The start time of the session.</p>
      */
-    inline const Aws::String& GetUsername() const { return m_username; }
-    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    template<typename UsernameT = Aws::String>
-    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
-    template<typename UsernameT = Aws::String>
-    SessionSummary& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    SessionSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The end time of the session.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    SessionSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_endTime{};
-    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;
@@ -120,14 +117,17 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime{};
-    bool m_startTimeHasBeenSet = false;
+    Aws::String m_username;
+    bool m_usernameHasBeenSet = false;
 
     SessionStatus m_status{SessionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_username;
-    bool m_usernameHasBeenSet = false;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

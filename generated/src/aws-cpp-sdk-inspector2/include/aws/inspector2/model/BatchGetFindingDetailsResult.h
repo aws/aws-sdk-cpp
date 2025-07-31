@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/FindingDetailsError.h>
 #include <aws/inspector2/model/FindingDetail.h>
+#include <aws/inspector2/model/FindingDetailsError.h>
 #include <utility>
 
 namespace Aws
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Error information for findings that details could not be returned for.</p>
-     */
-    inline const Aws::Vector<FindingDetailsError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
-    BatchGetFindingDetailsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = FindingDetailsError>
-    BatchGetFindingDetailsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A finding's vulnerability details.</p>
      */
     inline const Aws::Vector<FindingDetail>& GetFindingDetails() const { return m_findingDetails; }
@@ -62,6 +49,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Error information for findings that details could not be returned for.</p>
+     */
+    inline const Aws::Vector<FindingDetailsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
+    BatchGetFindingDetailsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = FindingDetailsError>
+    BatchGetFindingDetailsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -71,11 +71,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<FindingDetailsError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::Vector<FindingDetail> m_findingDetails;
     bool m_findingDetailsHasBeenSet = false;
+
+    Aws::Vector<FindingDetailsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

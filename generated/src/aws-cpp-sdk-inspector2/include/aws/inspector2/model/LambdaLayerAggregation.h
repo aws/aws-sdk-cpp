@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/LambdaLayerSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/LambdaLayerSortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <utility>
 
@@ -58,6 +58,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
+    LambdaLayerAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = StringFilter>
+    LambdaLayerAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
      * layer. </p>
      */
@@ -73,16 +87,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
+     * <p>The order to use for sorting the results.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceIds() const { return m_resourceIds; }
-    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
-    template<typename ResourceIdsT = Aws::Vector<StringFilter>>
-    LambdaLayerAggregation& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
-    template<typename ResourceIdsT = StringFilter>
-    LambdaLayerAggregation& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline LambdaLayerAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -94,32 +104,22 @@ namespace Model
     inline void SetSortBy(LambdaLayerSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
     inline LambdaLayerAggregation& WithSortBy(LambdaLayerSortBy value) { SetSortBy(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The order to use for sorting the results.</p>
-     */
-    inline SortOrder GetSortOrder() const { return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline LambdaLayerAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
-    ///@}
   private:
 
     Aws::Vector<StringFilter> m_functionNames;
     bool m_functionNamesHasBeenSet = false;
 
-    Aws::Vector<StringFilter> m_layerArns;
-    bool m_layerArnsHasBeenSet = false;
-
     Aws::Vector<StringFilter> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    LambdaLayerSortBy m_sortBy{LambdaLayerSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    Aws::Vector<StringFilter> m_layerArns;
+    bool m_layerArnsHasBeenSet = false;
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    LambdaLayerSortBy m_sortBy{LambdaLayerSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

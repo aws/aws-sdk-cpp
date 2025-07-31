@@ -7,9 +7,9 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/inspector2/model/ListCisScanConfigurationsFilterCriteria.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/CisScanConfigurationsSortBy.h>
 #include <aws/inspector2/model/CisSortOrder.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -49,30 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of CIS scan configurations to be returned in a single page
-     * of results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCisScanConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListCisScanConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The CIS scan configuration sort by order.</p>
      */
     inline CisScanConfigurationsSortBy GetSortBy() const { return m_sortBy; }
@@ -90,22 +66,46 @@ namespace Model
     inline void SetSortOrder(CisSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline ListCisScanConfigurationsRequest& WithSortOrder(CisSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The pagination token from a previous request that's used to retrieve the next
+     * page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScanConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of CIS scan configurations to be returned in a single page
+     * of results.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListCisScanConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     ListCisScanConfigurationsFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
 
     CisScanConfigurationsSortBy m_sortBy{CisScanConfigurationsSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
     CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

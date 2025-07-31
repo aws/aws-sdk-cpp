@@ -23,17 +23,17 @@ Aws::String GetEncryptionKeyRequest::SerializePayload() const
 void GetEncryptionKeyRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_resourceTypeHasBeenSet)
-    {
-      ss << ResourceTypeMapper::GetNameForResourceType(m_resourceType);
-      uri.AddQueryStringParameter("resourceType", ss.str());
-      ss.str("");
-    }
-
     if(m_scanTypeHasBeenSet)
     {
       ss << ScanTypeMapper::GetNameForScanType(m_scanType);
       uri.AddQueryStringParameter("scanType", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceTypeHasBeenSet)
+    {
+      ss << ResourceTypeMapper::GetNameForResourceType(m_resourceType);
+      uri.AddQueryStringParameter("resourceType", ss.str());
       ss.str("");
     }
 

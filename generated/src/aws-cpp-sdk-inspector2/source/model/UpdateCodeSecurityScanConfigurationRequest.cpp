@@ -16,15 +16,15 @@ Aws::String UpdateCodeSecurityScanConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
-  }
-
   if(m_scanConfigurationArnHasBeenSet)
   {
    payload.WithString("scanConfigurationArn", m_scanConfigurationArn);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

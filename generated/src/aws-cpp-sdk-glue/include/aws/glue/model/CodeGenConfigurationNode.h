@@ -12,7 +12,6 @@
 #include <aws/glue/model/RedshiftSource.h>
 #include <aws/glue/model/S3CatalogSource.h>
 #include <aws/glue/model/S3CsvSource.h>
-#include <aws/glue/model/S3ExcelSource.h>
 #include <aws/glue/model/S3JsonSource.h>
 #include <aws/glue/model/S3ParquetSource.h>
 #include <aws/glue/model/RelationalCatalogSource.h>
@@ -23,9 +22,7 @@
 #include <aws/glue/model/RedshiftTarget.h>
 #include <aws/glue/model/S3CatalogTarget.h>
 #include <aws/glue/model/S3GlueParquetTarget.h>
-#include <aws/glue/model/S3HyperDirectTarget.h>
 #include <aws/glue/model/S3DirectTarget.h>
-#include <aws/glue/model/S3IcebergDirectTarget.h>
 #include <aws/glue/model/ApplyMapping.h>
 #include <aws/glue/model/SelectFields.h>
 #include <aws/glue/model/DropFields.h>
@@ -58,6 +55,7 @@
 #include <aws/glue/model/MySQLCatalogTarget.h>
 #include <aws/glue/model/OracleSQLCatalogTarget.h>
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
+#include <aws/glue/model/Route.h>
 #include <aws/glue/model/DynamicTransform.h>
 #include <aws/glue/model/EvaluateDataQuality.h>
 #include <aws/glue/model/S3CatalogHudiSource.h>
@@ -79,6 +77,13 @@
 #include <aws/glue/model/SnowflakeTarget.h>
 #include <aws/glue/model/ConnectorDataSource.h>
 #include <aws/glue/model/ConnectorDataTarget.h>
+#include <aws/glue/model/S3CatalogIcebergSource.h>
+#include <aws/glue/model/CatalogIcebergSource.h>
+#include <aws/glue/model/S3IcebergCatalogTarget.h>
+#include <aws/glue/model/S3IcebergDirectTarget.h>
+#include <aws/glue/model/S3ExcelSource.h>
+#include <aws/glue/model/S3HyperDirectTarget.h>
+#include <aws/glue/model/DynamoDBELTConnectorSource.h>
 #include <utility>
 
 namespace Aws
@@ -194,18 +199,6 @@ namespace Model
     void SetS3CsvSource(S3CsvSourceT&& value) { m_s3CsvSourceHasBeenSet = true; m_s3CsvSource = std::forward<S3CsvSourceT>(value); }
     template<typename S3CsvSourceT = S3CsvSource>
     CodeGenConfigurationNode& WithS3CsvSource(S3CsvSourceT&& value) { SetS3CsvSource(std::forward<S3CsvSourceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-     */
-    inline const S3ExcelSource& GetS3ExcelSource() const { return m_s3ExcelSource; }
-    inline bool S3ExcelSourceHasBeenSet() const { return m_s3ExcelSourceHasBeenSet; }
-    template<typename S3ExcelSourceT = S3ExcelSource>
-    void SetS3ExcelSource(S3ExcelSourceT&& value) { m_s3ExcelSourceHasBeenSet = true; m_s3ExcelSource = std::forward<S3ExcelSourceT>(value); }
-    template<typename S3ExcelSourceT = S3ExcelSource>
-    CodeGenConfigurationNode& WithS3ExcelSource(S3ExcelSourceT&& value) { SetS3ExcelSource(std::forward<S3ExcelSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,19 +326,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines configuration parameters for writing data to Amazon S3 using
-     * HyperDirect optimization.</p>
-     */
-    inline const S3HyperDirectTarget& GetS3HyperDirectTarget() const { return m_s3HyperDirectTarget; }
-    inline bool S3HyperDirectTargetHasBeenSet() const { return m_s3HyperDirectTargetHasBeenSet; }
-    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
-    void SetS3HyperDirectTarget(S3HyperDirectTargetT&& value) { m_s3HyperDirectTargetHasBeenSet = true; m_s3HyperDirectTarget = std::forward<S3HyperDirectTargetT>(value); }
-    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
-    CodeGenConfigurationNode& WithS3HyperDirectTarget(S3HyperDirectTargetT&& value) { SetS3HyperDirectTarget(std::forward<S3HyperDirectTargetT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies a data target that writes to Amazon S3.</p>
      */
     inline const S3DirectTarget& GetS3DirectTarget() const { return m_s3DirectTarget; }
@@ -354,19 +334,6 @@ namespace Model
     void SetS3DirectTarget(S3DirectTargetT&& value) { m_s3DirectTargetHasBeenSet = true; m_s3DirectTarget = std::forward<S3DirectTargetT>(value); }
     template<typename S3DirectTargetT = S3DirectTarget>
     CodeGenConfigurationNode& WithS3DirectTarget(S3DirectTargetT&& value) { SetS3DirectTarget(std::forward<S3DirectTargetT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Defines configuration parameters for writing data to Amazon S3 as an Apache
-     * Iceberg table.</p>
-     */
-    inline const S3IcebergDirectTarget& GetS3IcebergDirectTarget() const { return m_s3IcebergDirectTarget; }
-    inline bool S3IcebergDirectTargetHasBeenSet() const { return m_s3IcebergDirectTargetHasBeenSet; }
-    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
-    void SetS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { m_s3IcebergDirectTargetHasBeenSet = true; m_s3IcebergDirectTarget = std::forward<S3IcebergDirectTargetT>(value); }
-    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
-    CodeGenConfigurationNode& WithS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { SetS3IcebergDirectTarget(std::forward<S3IcebergDirectTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -782,6 +749,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies a route node that directs data to different output paths based on
+     * defined filtering conditions.</p>
+     */
+    inline const Route& GetRoute() const { return m_route; }
+    inline bool RouteHasBeenSet() const { return m_routeHasBeenSet; }
+    template<typename RouteT = Route>
+    void SetRoute(RouteT&& value) { m_routeHasBeenSet = true; m_route = std::forward<RouteT>(value); }
+    template<typename RouteT = Route>
+    CodeGenConfigurationNode& WithRoute(RouteT&& value) { SetRoute(std::forward<RouteT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies a custom visual transform created by a user.</p>
      */
     inline const DynamicTransform& GetDynamicTransform() const { return m_dynamicTransform; }
@@ -1035,6 +1015,96 @@ namespace Model
     template<typename ConnectorDataTargetT = ConnectorDataTarget>
     CodeGenConfigurationNode& WithConnectorDataTarget(ConnectorDataTargetT&& value) { SetConnectorDataTarget(std::forward<ConnectorDataTargetT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies an Apache Iceberg data source that is registered in the Glue Data
+     * Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+     */
+    inline const S3CatalogIcebergSource& GetS3CatalogIcebergSource() const { return m_s3CatalogIcebergSource; }
+    inline bool S3CatalogIcebergSourceHasBeenSet() const { return m_s3CatalogIcebergSourceHasBeenSet; }
+    template<typename S3CatalogIcebergSourceT = S3CatalogIcebergSource>
+    void SetS3CatalogIcebergSource(S3CatalogIcebergSourceT&& value) { m_s3CatalogIcebergSourceHasBeenSet = true; m_s3CatalogIcebergSource = std::forward<S3CatalogIcebergSourceT>(value); }
+    template<typename S3CatalogIcebergSourceT = S3CatalogIcebergSource>
+    CodeGenConfigurationNode& WithS3CatalogIcebergSource(S3CatalogIcebergSourceT&& value) { SetS3CatalogIcebergSource(std::forward<S3CatalogIcebergSourceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies an Apache Iceberg data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline const CatalogIcebergSource& GetCatalogIcebergSource() const { return m_catalogIcebergSource; }
+    inline bool CatalogIcebergSourceHasBeenSet() const { return m_catalogIcebergSourceHasBeenSet; }
+    template<typename CatalogIcebergSourceT = CatalogIcebergSource>
+    void SetCatalogIcebergSource(CatalogIcebergSourceT&& value) { m_catalogIcebergSourceHasBeenSet = true; m_catalogIcebergSource = std::forward<CatalogIcebergSourceT>(value); }
+    template<typename CatalogIcebergSourceT = CatalogIcebergSource>
+    CodeGenConfigurationNode& WithCatalogIcebergSource(CatalogIcebergSourceT&& value) { SetCatalogIcebergSource(std::forward<CatalogIcebergSourceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and
+     * registers the table in the Glue Data Catalog.</p>
+     */
+    inline const S3IcebergCatalogTarget& GetS3IcebergCatalogTarget() const { return m_s3IcebergCatalogTarget; }
+    inline bool S3IcebergCatalogTargetHasBeenSet() const { return m_s3IcebergCatalogTargetHasBeenSet; }
+    template<typename S3IcebergCatalogTargetT = S3IcebergCatalogTarget>
+    void SetS3IcebergCatalogTarget(S3IcebergCatalogTargetT&& value) { m_s3IcebergCatalogTargetHasBeenSet = true; m_s3IcebergCatalogTarget = std::forward<S3IcebergCatalogTargetT>(value); }
+    template<typename S3IcebergCatalogTargetT = S3IcebergCatalogTarget>
+    CodeGenConfigurationNode& WithS3IcebergCatalogTarget(S3IcebergCatalogTargetT&& value) { SetS3IcebergCatalogTarget(std::forward<S3IcebergCatalogTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines configuration parameters for writing data to Amazon S3 as an Apache
+     * Iceberg table.</p>
+     */
+    inline const S3IcebergDirectTarget& GetS3IcebergDirectTarget() const { return m_s3IcebergDirectTarget; }
+    inline bool S3IcebergDirectTargetHasBeenSet() const { return m_s3IcebergDirectTargetHasBeenSet; }
+    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
+    void SetS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { m_s3IcebergDirectTargetHasBeenSet = true; m_s3IcebergDirectTarget = std::forward<S3IcebergDirectTargetT>(value); }
+    template<typename S3IcebergDirectTargetT = S3IcebergDirectTarget>
+    CodeGenConfigurationNode& WithS3IcebergDirectTarget(S3IcebergDirectTargetT&& value) { SetS3IcebergDirectTarget(std::forward<S3IcebergDirectTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+     */
+    inline const S3ExcelSource& GetS3ExcelSource() const { return m_s3ExcelSource; }
+    inline bool S3ExcelSourceHasBeenSet() const { return m_s3ExcelSourceHasBeenSet; }
+    template<typename S3ExcelSourceT = S3ExcelSource>
+    void SetS3ExcelSource(S3ExcelSourceT&& value) { m_s3ExcelSourceHasBeenSet = true; m_s3ExcelSource = std::forward<S3ExcelSourceT>(value); }
+    template<typename S3ExcelSourceT = S3ExcelSource>
+    CodeGenConfigurationNode& WithS3ExcelSource(S3ExcelSourceT&& value) { SetS3ExcelSource(std::forward<S3ExcelSourceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines configuration parameters for writing data to Amazon S3 using
+     * HyperDirect optimization.</p>
+     */
+    inline const S3HyperDirectTarget& GetS3HyperDirectTarget() const { return m_s3HyperDirectTarget; }
+    inline bool S3HyperDirectTargetHasBeenSet() const { return m_s3HyperDirectTargetHasBeenSet; }
+    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
+    void SetS3HyperDirectTarget(S3HyperDirectTargetT&& value) { m_s3HyperDirectTargetHasBeenSet = true; m_s3HyperDirectTarget = std::forward<S3HyperDirectTargetT>(value); }
+    template<typename S3HyperDirectTargetT = S3HyperDirectTarget>
+    CodeGenConfigurationNode& WithS3HyperDirectTarget(S3HyperDirectTargetT&& value) { SetS3HyperDirectTarget(std::forward<S3HyperDirectTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB
+     * tables.</p>
+     */
+    inline const DynamoDBELTConnectorSource& GetDynamoDBELTConnectorSource() const { return m_dynamoDBELTConnectorSource; }
+    inline bool DynamoDBELTConnectorSourceHasBeenSet() const { return m_dynamoDBELTConnectorSourceHasBeenSet; }
+    template<typename DynamoDBELTConnectorSourceT = DynamoDBELTConnectorSource>
+    void SetDynamoDBELTConnectorSource(DynamoDBELTConnectorSourceT&& value) { m_dynamoDBELTConnectorSourceHasBeenSet = true; m_dynamoDBELTConnectorSource = std::forward<DynamoDBELTConnectorSourceT>(value); }
+    template<typename DynamoDBELTConnectorSourceT = DynamoDBELTConnectorSource>
+    CodeGenConfigurationNode& WithDynamoDBELTConnectorSource(DynamoDBELTConnectorSourceT&& value) { SetDynamoDBELTConnectorSource(std::forward<DynamoDBELTConnectorSourceT>(value)); return *this;}
+    ///@}
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -1057,9 +1127,6 @@ namespace Model
 
     S3CsvSource m_s3CsvSource;
     bool m_s3CsvSourceHasBeenSet = false;
-
-    S3ExcelSource m_s3ExcelSource;
-    bool m_s3ExcelSourceHasBeenSet = false;
 
     S3JsonSource m_s3JsonSource;
     bool m_s3JsonSourceHasBeenSet = false;
@@ -1091,14 +1158,8 @@ namespace Model
     S3GlueParquetTarget m_s3GlueParquetTarget;
     bool m_s3GlueParquetTargetHasBeenSet = false;
 
-    S3HyperDirectTarget m_s3HyperDirectTarget;
-    bool m_s3HyperDirectTargetHasBeenSet = false;
-
     S3DirectTarget m_s3DirectTarget;
     bool m_s3DirectTargetHasBeenSet = false;
-
-    S3IcebergDirectTarget m_s3IcebergDirectTarget;
-    bool m_s3IcebergDirectTargetHasBeenSet = false;
 
     ApplyMapping m_applyMapping;
     bool m_applyMappingHasBeenSet = false;
@@ -1196,6 +1257,9 @@ namespace Model
     PostgreSQLCatalogTarget m_postgreSQLCatalogTarget;
     bool m_postgreSQLCatalogTargetHasBeenSet = false;
 
+    Route m_route;
+    bool m_routeHasBeenSet = false;
+
     DynamicTransform m_dynamicTransform;
     bool m_dynamicTransformHasBeenSet = false;
 
@@ -1258,6 +1322,27 @@ namespace Model
 
     ConnectorDataTarget m_connectorDataTarget;
     bool m_connectorDataTargetHasBeenSet = false;
+
+    S3CatalogIcebergSource m_s3CatalogIcebergSource;
+    bool m_s3CatalogIcebergSourceHasBeenSet = false;
+
+    CatalogIcebergSource m_catalogIcebergSource;
+    bool m_catalogIcebergSourceHasBeenSet = false;
+
+    S3IcebergCatalogTarget m_s3IcebergCatalogTarget;
+    bool m_s3IcebergCatalogTargetHasBeenSet = false;
+
+    S3IcebergDirectTarget m_s3IcebergDirectTarget;
+    bool m_s3IcebergDirectTargetHasBeenSet = false;
+
+    S3ExcelSource m_s3ExcelSource;
+    bool m_s3ExcelSourceHasBeenSet = false;
+
+    S3HyperDirectTarget m_s3HyperDirectTarget;
+    bool m_s3HyperDirectTargetHasBeenSet = false;
+
+    DynamoDBELTConnectorSource m_dynamoDBELTConnectorSource;
+    bool m_dynamoDBELTConnectorSourceHasBeenSet = false;
   };
 
 } // namespace Model

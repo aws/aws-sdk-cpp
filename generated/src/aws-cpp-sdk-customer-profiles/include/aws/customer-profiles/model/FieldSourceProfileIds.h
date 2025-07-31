@@ -294,6 +294,30 @@ namespace Model
       m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier for the profile type field to be merged.</p>
+     */
+    inline const Aws::String& GetProfileType() const { return m_profileType; }
+    inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
+    template<typename ProfileTypeT = Aws::String>
+    void SetProfileType(ProfileTypeT&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::forward<ProfileTypeT>(value); }
+    template<typename ProfileTypeT = Aws::String>
+    FieldSourceProfileIds& WithProfileType(ProfileTypeT&& value) { SetProfileType(std::forward<ProfileTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier for the engagement preferences field to be merged.</p>
+     */
+    inline const Aws::String& GetEngagementPreferences() const { return m_engagementPreferences; }
+    inline bool EngagementPreferencesHasBeenSet() const { return m_engagementPreferencesHasBeenSet; }
+    template<typename EngagementPreferencesT = Aws::String>
+    void SetEngagementPreferences(EngagementPreferencesT&& value) { m_engagementPreferencesHasBeenSet = true; m_engagementPreferences = std::forward<EngagementPreferencesT>(value); }
+    template<typename EngagementPreferencesT = Aws::String>
+    FieldSourceProfileIds& WithEngagementPreferences(EngagementPreferencesT&& value) { SetEngagementPreferences(std::forward<EngagementPreferencesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountNumber;
@@ -358,6 +382,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    Aws::String m_profileType;
+    bool m_profileTypeHasBeenSet = false;
+
+    Aws::String m_engagementPreferences;
+    bool m_engagementPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

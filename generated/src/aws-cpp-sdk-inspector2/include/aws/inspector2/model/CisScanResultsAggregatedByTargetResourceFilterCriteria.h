@@ -7,11 +7,11 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/CisStringFilter.h>
-#include <aws/inspector2/model/CisNumberFilter.h>
 #include <aws/inspector2/model/CisResultStatusFilter.h>
 #include <aws/inspector2/model/TagFilter.h>
 #include <aws/inspector2/model/CisTargetStatusFilter.h>
 #include <aws/inspector2/model/CisTargetStatusReasonFilter.h>
+#include <aws/inspector2/model/CisNumberFilter.h>
 #include <utility>
 
 namespace Aws
@@ -60,48 +60,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The criteria's check ID filters.</p>
-     */
-    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const { return m_checkIdFilters; }
-    inline bool CheckIdFiltersHasBeenSet() const { return m_checkIdFiltersHasBeenSet; }
-    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
-    void SetCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::forward<CheckIdFiltersT>(value); }
-    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithCheckIdFilters(CheckIdFiltersT&& value) { SetCheckIdFilters(std::forward<CheckIdFiltersT>(value)); return *this;}
-    template<typename CheckIdFiltersT = CisStringFilter>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.emplace_back(std::forward<CheckIdFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The criteria's failed checks filters.</p>
-     */
-    inline const Aws::Vector<CisNumberFilter>& GetFailedChecksFilters() const { return m_failedChecksFilters; }
-    inline bool FailedChecksFiltersHasBeenSet() const { return m_failedChecksFiltersHasBeenSet; }
-    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
-    void SetFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters = std::forward<FailedChecksFiltersT>(value); }
-    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithFailedChecksFilters(FailedChecksFiltersT&& value) { SetFailedChecksFilters(std::forward<FailedChecksFiltersT>(value)); return *this;}
-    template<typename FailedChecksFiltersT = CisNumberFilter>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters.emplace_back(std::forward<FailedChecksFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The criteria's platform filters.</p>
-     */
-    inline const Aws::Vector<CisStringFilter>& GetPlatformFilters() const { return m_platformFilters; }
-    inline bool PlatformFiltersHasBeenSet() const { return m_platformFiltersHasBeenSet; }
-    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
-    void SetPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters = std::forward<PlatformFiltersT>(value); }
-    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithPlatformFilters(PlatformFiltersT&& value) { SetPlatformFilters(std::forward<PlatformFiltersT>(value)); return *this;}
-    template<typename PlatformFiltersT = CisStringFilter>
-    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters.emplace_back(std::forward<PlatformFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The criteria's status filter.</p>
      */
     inline const Aws::Vector<CisResultStatusFilter>& GetStatusFilters() const { return m_statusFilters; }
@@ -112,6 +70,20 @@ namespace Model
     CisScanResultsAggregatedByTargetResourceFilterCriteria& WithStatusFilters(StatusFiltersT&& value) { SetStatusFilters(std::forward<StatusFiltersT>(value)); return *this;}
     template<typename StatusFiltersT = CisResultStatusFilter>
     CisScanResultsAggregatedByTargetResourceFilterCriteria& AddStatusFilters(StatusFiltersT&& value) { m_statusFiltersHasBeenSet = true; m_statusFilters.emplace_back(std::forward<StatusFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The criteria's check ID filters.</p>
+     */
+    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const { return m_checkIdFilters; }
+    inline bool CheckIdFiltersHasBeenSet() const { return m_checkIdFiltersHasBeenSet; }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    void SetCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::forward<CheckIdFiltersT>(value); }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithCheckIdFilters(CheckIdFiltersT&& value) { SetCheckIdFilters(std::forward<CheckIdFiltersT>(value)); return *this;}
+    template<typename CheckIdFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.emplace_back(std::forward<CheckIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -144,6 +116,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The criteria's platform filters.</p>
+     */
+    inline const Aws::Vector<CisStringFilter>& GetPlatformFilters() const { return m_platformFilters; }
+    inline bool PlatformFiltersHasBeenSet() const { return m_platformFiltersHasBeenSet; }
+    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
+    void SetPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters = std::forward<PlatformFiltersT>(value); }
+    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithPlatformFilters(PlatformFiltersT&& value) { SetPlatformFilters(std::forward<PlatformFiltersT>(value)); return *this;}
+    template<typename PlatformFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters.emplace_back(std::forward<PlatformFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The criteria's target status filters.</p>
      */
     inline const Aws::Vector<CisTargetStatusFilter>& GetTargetStatusFilters() const { return m_targetStatusFilters; }
@@ -169,22 +155,30 @@ namespace Model
     template<typename TargetStatusReasonFiltersT = CisTargetStatusReasonFilter>
     CisScanResultsAggregatedByTargetResourceFilterCriteria& AddTargetStatusReasonFilters(TargetStatusReasonFiltersT&& value) { m_targetStatusReasonFiltersHasBeenSet = true; m_targetStatusReasonFilters.emplace_back(std::forward<TargetStatusReasonFiltersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The criteria's failed checks filters.</p>
+     */
+    inline const Aws::Vector<CisNumberFilter>& GetFailedChecksFilters() const { return m_failedChecksFilters; }
+    inline bool FailedChecksFiltersHasBeenSet() const { return m_failedChecksFiltersHasBeenSet; }
+    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
+    void SetFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters = std::forward<FailedChecksFiltersT>(value); }
+    template<typename FailedChecksFiltersT = Aws::Vector<CisNumberFilter>>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& WithFailedChecksFilters(FailedChecksFiltersT&& value) { SetFailedChecksFilters(std::forward<FailedChecksFiltersT>(value)); return *this;}
+    template<typename FailedChecksFiltersT = CisNumberFilter>
+    CisScanResultsAggregatedByTargetResourceFilterCriteria& AddFailedChecksFilters(FailedChecksFiltersT&& value) { m_failedChecksFiltersHasBeenSet = true; m_failedChecksFilters.emplace_back(std::forward<FailedChecksFiltersT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<CisStringFilter> m_accountIdFilters;
     bool m_accountIdFiltersHasBeenSet = false;
 
-    Aws::Vector<CisStringFilter> m_checkIdFilters;
-    bool m_checkIdFiltersHasBeenSet = false;
-
-    Aws::Vector<CisNumberFilter> m_failedChecksFilters;
-    bool m_failedChecksFiltersHasBeenSet = false;
-
-    Aws::Vector<CisStringFilter> m_platformFilters;
-    bool m_platformFiltersHasBeenSet = false;
-
     Aws::Vector<CisResultStatusFilter> m_statusFilters;
     bool m_statusFiltersHasBeenSet = false;
+
+    Aws::Vector<CisStringFilter> m_checkIdFilters;
+    bool m_checkIdFiltersHasBeenSet = false;
 
     Aws::Vector<CisStringFilter> m_targetResourceIdFilters;
     bool m_targetResourceIdFiltersHasBeenSet = false;
@@ -192,11 +186,17 @@ namespace Model
     Aws::Vector<TagFilter> m_targetResourceTagFilters;
     bool m_targetResourceTagFiltersHasBeenSet = false;
 
+    Aws::Vector<CisStringFilter> m_platformFilters;
+    bool m_platformFiltersHasBeenSet = false;
+
     Aws::Vector<CisTargetStatusFilter> m_targetStatusFilters;
     bool m_targetStatusFiltersHasBeenSet = false;
 
     Aws::Vector<CisTargetStatusReasonFilter> m_targetStatusReasonFilters;
     bool m_targetStatusReasonFiltersHasBeenSet = false;
+
+    Aws::Vector<CisNumberFilter> m_failedChecksFilters;
+    bool m_failedChecksFiltersHasBeenSet = false;
   };
 
 } // namespace Model

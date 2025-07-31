@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/ResourceState.h>
 #include <aws/inspector2/model/State.h>
+#include <aws/inspector2/model/ResourceState.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +54,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object detailing the status of Amazon Inspector for the account.</p>
+     */
+    inline const State& GetState() const { return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    template<typename StateT = State>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = State>
+    AccountState& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object detailing which resources Amazon Inspector is enabled to scan for
      * the account.</p>
      */
@@ -64,28 +76,16 @@ namespace Model
     template<typename ResourceStateT = ResourceState>
     AccountState& WithResourceState(ResourceStateT&& value) { SetResourceState(std::forward<ResourceStateT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
-    inline const State& GetState() const { return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    template<typename StateT = State>
-    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
-    template<typename StateT = State>
-    AccountState& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    ResourceState m_resourceState;
-    bool m_resourceStateHasBeenSet = false;
-
     State m_state;
     bool m_stateHasBeenSet = false;
+
+    ResourceState m_resourceState;
+    bool m_resourceStateHasBeenSet = false;
   };
 
 } // namespace Model

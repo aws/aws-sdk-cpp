@@ -27,12 +27,6 @@ Aws::String EnableRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_resourceTypesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
@@ -41,6 +35,12 @@ Aws::String EnableRequest::SerializePayload() const
      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceScanTypeMapper::GetNameForResourceScanType(m_resourceTypes[resourceTypesIndex]));
    }
    payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

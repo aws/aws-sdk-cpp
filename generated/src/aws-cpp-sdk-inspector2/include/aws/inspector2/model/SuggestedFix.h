@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fix's code.</p>
-     */
-    inline const Aws::String& GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    template<typename CodeT = Aws::String>
-    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
-    template<typename CodeT = Aws::String>
-    SuggestedFix& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The fix's description.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     SuggestedFix& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The fix's code.</p>
+     */
+    inline const Aws::String& GetCode() const { return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    SuggestedFix& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

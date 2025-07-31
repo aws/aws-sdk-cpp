@@ -31,6 +31,7 @@
 #include <aws/quicksight/model/StarburstParameters.h>
 #include <aws/quicksight/model/TrinoParameters.h>
 #include <aws/quicksight/model/BigQueryParameters.h>
+#include <aws/quicksight/model/ImpalaParameters.h>
 #include <utility>
 
 namespace Aws
@@ -376,6 +377,18 @@ namespace Model
     template<typename BigQueryParametersT = BigQueryParameters>
     DataSourceParameters& WithBigQueryParameters(BigQueryParametersT&& value) { SetBigQueryParameters(std::forward<BigQueryParametersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The parameters for Impala.</p>
+     */
+    inline const ImpalaParameters& GetImpalaParameters() const { return m_impalaParameters; }
+    inline bool ImpalaParametersHasBeenSet() const { return m_impalaParametersHasBeenSet; }
+    template<typename ImpalaParametersT = ImpalaParameters>
+    void SetImpalaParameters(ImpalaParametersT&& value) { m_impalaParametersHasBeenSet = true; m_impalaParameters = std::forward<ImpalaParametersT>(value); }
+    template<typename ImpalaParametersT = ImpalaParameters>
+    DataSourceParameters& WithImpalaParameters(ImpalaParametersT&& value) { SetImpalaParameters(std::forward<ImpalaParametersT>(value)); return *this;}
+    ///@}
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -455,6 +468,9 @@ namespace Model
 
     BigQueryParameters m_bigQueryParameters;
     bool m_bigQueryParametersHasBeenSet = false;
+
+    ImpalaParameters m_impalaParameters;
+    bool m_impalaParametersHasBeenSet = false;
   };
 
 } // namespace Model

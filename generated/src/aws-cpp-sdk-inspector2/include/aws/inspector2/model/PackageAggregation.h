@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/PackageSortBy.h>
 #include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/PackageSortBy.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <utility>
 
@@ -57,16 +57,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value to sort results by.</p>
-     */
-    inline PackageSortBy GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(PackageSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline PackageAggregation& WithSortBy(PackageSortBy value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The order to sort results by.</p>
      */
     inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -74,16 +64,26 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline PackageAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The value to sort results by.</p>
+     */
+    inline PackageSortBy GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(PackageSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline PackageAggregation& WithSortBy(PackageSortBy value) { SetSortBy(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<StringFilter> m_packageNames;
     bool m_packageNamesHasBeenSet = false;
 
-    PackageSortBy m_sortBy{PackageSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
-
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    PackageSortBy m_sortBy{PackageSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

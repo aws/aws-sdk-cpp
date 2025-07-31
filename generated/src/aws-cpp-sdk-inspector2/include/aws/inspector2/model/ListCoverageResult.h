@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/CoveredResource.h>
 #include <utility>
 
@@ -36,20 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details on the covered resources in your
-     * environment.</p>
-     */
-    inline const Aws::Vector<CoveredResource>& GetCoveredResources() const { return m_coveredResources; }
-    template<typename CoveredResourcesT = Aws::Vector<CoveredResource>>
-    void SetCoveredResources(CoveredResourcesT&& value) { m_coveredResourcesHasBeenSet = true; m_coveredResources = std::forward<CoveredResourcesT>(value); }
-    template<typename CoveredResourcesT = Aws::Vector<CoveredResource>>
-    ListCoverageResult& WithCoveredResources(CoveredResourcesT&& value) { SetCoveredResources(std::forward<CoveredResourcesT>(value)); return *this;}
-    template<typename CoveredResourcesT = CoveredResource>
-    ListCoverageResult& AddCoveredResources(CoveredResourcesT&& value) { m_coveredResourcesHasBeenSet = true; m_coveredResources.emplace_back(std::forward<CoveredResourcesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. For
      * subsequent calls, use the <code>NextToken</code> value returned from the
@@ -63,6 +49,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An object that contains details on the covered resources in your
+     * environment.</p>
+     */
+    inline const Aws::Vector<CoveredResource>& GetCoveredResources() const { return m_coveredResources; }
+    template<typename CoveredResourcesT = Aws::Vector<CoveredResource>>
+    void SetCoveredResources(CoveredResourcesT&& value) { m_coveredResourcesHasBeenSet = true; m_coveredResources = std::forward<CoveredResourcesT>(value); }
+    template<typename CoveredResourcesT = Aws::Vector<CoveredResource>>
+    ListCoverageResult& WithCoveredResources(CoveredResourcesT&& value) { SetCoveredResources(std::forward<CoveredResourcesT>(value)); return *this;}
+    template<typename CoveredResourcesT = CoveredResource>
+    ListCoverageResult& AddCoveredResources(CoveredResourcesT&& value) { m_coveredResourcesHasBeenSet = true; m_coveredResources.emplace_back(std::forward<CoveredResourcesT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<CoveredResource> m_coveredResources;
-    bool m_coveredResourcesHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<CoveredResource> m_coveredResources;
+    bool m_coveredResourcesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

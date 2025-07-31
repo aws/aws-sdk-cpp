@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    LambdaLayerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The names of the Amazon Web Services Lambda functions associated with the
      * layers.</p>
      */
@@ -62,6 +50,18 @@ namespace Model
     void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
     template<typename FunctionNameT = Aws::String>
     LambdaLayerAggregationResponse& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
+     */
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    LambdaLayerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +79,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
+     * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
      */
-    inline const Aws::String& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::String>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::String>
-    LambdaLayerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    LambdaLayerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,17 +102,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet = false;
+
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_layerArn;
     bool m_layerArnHasBeenSet = false;
 
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;

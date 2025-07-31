@@ -7,8 +7,8 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/SeverityCounts.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,15 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
-     * Lambda function. </p>
+     * <p>The resource IDs included in the aggregation results.</p>
      */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    LambdaFunctionAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    LambdaFunctionAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,6 +64,18 @@ namespace Model
     void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
     template<typename FunctionNameT = Aws::String>
     LambdaFunctionAggregationResponse& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The runtimes included in the aggregation results.</p>
+     */
+    inline const Aws::String& GetRuntime() const { return m_runtime; }
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+    template<typename RuntimeT = Aws::String>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = Aws::String>
+    LambdaFunctionAggregationResponse& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,39 +96,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date that the Amazon Web Services Lambda function included in the
-     * aggregation results was last changed.</p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
-    inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    LambdaFunctionAggregationResponse& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource IDs included in the aggregation results.</p>
-     */
-    inline const Aws::String& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::String>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::String>
-    LambdaFunctionAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The runtimes included in the aggregation results.</p>
-     */
-    inline const Aws::String& GetRuntime() const { return m_runtime; }
-    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    template<typename RuntimeT = Aws::String>
-    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
-    template<typename RuntimeT = Aws::String>
-    LambdaFunctionAggregationResponse& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    LambdaFunctionAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,28 +118,41 @@ namespace Model
     template<typename SeverityCountsT = SeverityCounts>
     LambdaFunctionAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
+    inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    LambdaFunctionAggregationResponse& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_functionName;
-    bool m_functionNameHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_lambdaTags;
-    bool m_lambdaTagsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModifiedAt{};
-    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
+    Aws::String m_functionName;
+    bool m_functionNameHasBeenSet = false;
+
     Aws::String m_runtime;
     bool m_runtimeHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::String> m_lambdaTags;
+    bool m_lambdaTagsHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedAt{};
+    bool m_lastModifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

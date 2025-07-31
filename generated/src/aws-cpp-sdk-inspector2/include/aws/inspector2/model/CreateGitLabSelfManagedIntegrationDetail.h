@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The URL of the self-managed GitLab instance.</p>
+     */
+    inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
+    inline bool InstanceUrlHasBeenSet() const { return m_instanceUrlHasBeenSet; }
+    template<typename InstanceUrlT = Aws::String>
+    void SetInstanceUrl(InstanceUrlT&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::forward<InstanceUrlT>(value); }
+    template<typename InstanceUrlT = Aws::String>
+    CreateGitLabSelfManagedIntegrationDetail& WithInstanceUrl(InstanceUrlT&& value) { SetInstanceUrl(std::forward<InstanceUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The personal access token used to authenticate with the self-managed GitLab
      * instance.</p>
      */
@@ -50,25 +62,13 @@ namespace Model
     template<typename AccessTokenT = Aws::String>
     CreateGitLabSelfManagedIntegrationDetail& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The URL of the self-managed GitLab instance.</p>
-     */
-    inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
-    inline bool InstanceUrlHasBeenSet() const { return m_instanceUrlHasBeenSet; }
-    template<typename InstanceUrlT = Aws::String>
-    void SetInstanceUrl(InstanceUrlT&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::forward<InstanceUrlT>(value); }
-    template<typename InstanceUrlT = Aws::String>
-    CreateGitLabSelfManagedIntegrationDetail& WithInstanceUrl(InstanceUrlT&& value) { SetInstanceUrl(std::forward<InstanceUrlT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_instanceUrl;
     bool m_instanceUrlHasBeenSet = false;
+
+    Aws::String m_accessToken;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

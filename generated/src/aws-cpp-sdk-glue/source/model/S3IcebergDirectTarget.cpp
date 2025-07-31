@@ -79,6 +79,11 @@ S3IcebergDirectTarget& S3IcebergDirectTarget::operator =(JsonView jsonValue)
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
     m_schemaChangePolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AutoDataQuality"))
+  {
+    m_autoDataQuality = jsonValue.GetObject("AutoDataQuality");
+    m_autoDataQualityHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = IcebergTargetCompressionTypeMapper::GetIcebergTargetCompressionTypeForName(jsonValue.GetString("Compression"));
@@ -88,6 +93,15 @@ S3IcebergDirectTarget& S3IcebergDirectTarget::operator =(JsonView jsonValue)
   {
     m_numberTargetPartitions = jsonValue.GetString("NumberTargetPartitions");
     m_numberTargetPartitionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OutputSchemas"))
+  {
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+    {
+      m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
+    }
+    m_outputSchemasHasBeenSet = true;
   }
   return *this;
 }
@@ -157,6 +171,12 @@ JsonValue S3IcebergDirectTarget::Jsonize() const
 
   }
 
+  if(m_autoDataQualityHasBeenSet)
+  {
+   payload.WithObject("AutoDataQuality", m_autoDataQuality.Jsonize());
+
+  }
+
   if(m_compressionHasBeenSet)
   {
    payload.WithString("Compression", IcebergTargetCompressionTypeMapper::GetNameForIcebergTargetCompressionType(m_compression));
@@ -165,6 +185,17 @@ JsonValue S3IcebergDirectTarget::Jsonize() const
   if(m_numberTargetPartitionsHasBeenSet)
   {
    payload.WithString("NumberTargetPartitions", m_numberTargetPartitions);
+
+  }
+
+  if(m_outputSchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+   {
+     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+   }
+   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
 
   }
 

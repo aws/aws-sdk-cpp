@@ -50,6 +50,11 @@ AdvancedSecurityOptionsInput& AdvancedSecurityOptionsInput::operator =(JsonView 
     m_jWTOptions = jsonValue.GetObject("JWTOptions");
     m_jWTOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IAMFederationOptions"))
+  {
+    m_iAMFederationOptions = jsonValue.GetObject("IAMFederationOptions");
+    m_iAMFederationOptionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AnonymousAuthEnabled"))
   {
     m_anonymousAuthEnabled = jsonValue.GetBool("AnonymousAuthEnabled");
@@ -89,6 +94,12 @@ JsonValue AdvancedSecurityOptionsInput::Jsonize() const
   if(m_jWTOptionsHasBeenSet)
   {
    payload.WithObject("JWTOptions", m_jWTOptions.Jsonize());
+
+  }
+
+  if(m_iAMFederationOptionsHasBeenSet)
+  {
+   payload.WithObject("IAMFederationOptions", m_iAMFederationOptions.Jsonize());
 
   }
 

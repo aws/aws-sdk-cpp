@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The remediation action recommended by CISA for this vulnerability.</p>
-     */
-    inline const Aws::String& GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    template<typename ActionT = Aws::String>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = Aws::String>
-    CisaData& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time CISA added this vulnerability to their catalogue.</p>
      */
     inline const Aws::Utils::DateTime& GetDateAdded() const { return m_dateAdded; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename DateDueT = Aws::Utils::DateTime>
     CisaData& WithDateDue(DateDueT&& value) { SetDateDue(std::forward<DateDueT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_action;
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The remediation action recommended by CISA for this vulnerability.</p>
+     */
+    inline const Aws::String& GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    CisaData& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Utils::DateTime m_dateAdded{};
     bool m_dateAddedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateDue{};
     bool m_dateDueHasBeenSet = false;
+
+    Aws::String m_action;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

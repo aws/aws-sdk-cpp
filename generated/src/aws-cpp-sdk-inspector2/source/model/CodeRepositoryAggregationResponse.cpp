@@ -25,10 +25,20 @@ CodeRepositoryAggregationResponse::CodeRepositoryAggregationResponse(JsonView js
 
 CodeRepositoryAggregationResponse& CodeRepositoryAggregationResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("projectNames"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
+    m_projectNames = jsonValue.GetString("projectNames");
+    m_projectNamesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("providerType"))
+  {
+    m_providerType = jsonValue.GetString("providerType");
+    m_providerTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("severityCounts"))
+  {
+    m_severityCounts = jsonValue.GetObject("severityCounts");
+    m_severityCountsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("exploitAvailableActiveFindingsCount"))
   {
@@ -40,25 +50,15 @@ CodeRepositoryAggregationResponse& CodeRepositoryAggregationResponse::operator =
     m_fixAvailableActiveFindingsCount = jsonValue.GetInt64("fixAvailableActiveFindingsCount");
     m_fixAvailableActiveFindingsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectNames"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_projectNames = jsonValue.GetString("projectNames");
-    m_projectNamesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("providerType"))
-  {
-    m_providerType = jsonValue.GetString("providerType");
-    m_providerTypeHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("severityCounts"))
-  {
-    m_severityCounts = jsonValue.GetObject("severityCounts");
-    m_severityCountsHasBeenSet = true;
   }
   return *this;
 }
@@ -67,9 +67,21 @@ JsonValue CodeRepositoryAggregationResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
+  if(m_projectNamesHasBeenSet)
   {
-   payload.WithString("accountId", m_accountId);
+   payload.WithString("projectNames", m_projectNames);
+
+  }
+
+  if(m_providerTypeHasBeenSet)
+  {
+   payload.WithString("providerType", m_providerType);
+
+  }
+
+  if(m_severityCountsHasBeenSet)
+  {
+   payload.WithObject("severityCounts", m_severityCounts.Jsonize());
 
   }
 
@@ -85,27 +97,15 @@ JsonValue CodeRepositoryAggregationResponse::Jsonize() const
 
   }
 
-  if(m_projectNamesHasBeenSet)
+  if(m_accountIdHasBeenSet)
   {
-   payload.WithString("projectNames", m_projectNames);
-
-  }
-
-  if(m_providerTypeHasBeenSet)
-  {
-   payload.WithString("providerType", m_providerType);
+   payload.WithString("accountId", m_accountId);
 
   }
 
   if(m_resourceIdHasBeenSet)
   {
    payload.WithString("resourceId", m_resourceId);
-
-  }
-
-  if(m_severityCountsHasBeenSet)
-  {
-   payload.WithObject("severityCounts", m_severityCounts.Jsonize());
 
   }
 

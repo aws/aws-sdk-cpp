@@ -41,26 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID for the CIS check.</p>
+     * <p>The scan ARN for the CIS check scan ARN.</p>
      */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    CisCheckAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description for the CIS check.</p>
-     */
-    inline const Aws::String& GetCheckDescription() const { return m_checkDescription; }
-    inline bool CheckDescriptionHasBeenSet() const { return m_checkDescriptionHasBeenSet; }
-    template<typename CheckDescriptionT = Aws::String>
-    void SetCheckDescription(CheckDescriptionT&& value) { m_checkDescriptionHasBeenSet = true; m_checkDescription = std::forward<CheckDescriptionT>(value); }
-    template<typename CheckDescriptionT = Aws::String>
-    CisCheckAggregation& WithCheckDescription(CheckDescriptionT&& value) { SetCheckDescription(std::forward<CheckDescriptionT>(value)); return *this;}
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
+    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    CisCheckAggregation& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,6 +65,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The CIS check title.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    CisCheckAggregation& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description for the CIS check.</p>
+     */
+    inline const Aws::String& GetCheckDescription() const { return m_checkDescription; }
+    inline bool CheckDescriptionHasBeenSet() const { return m_checkDescriptionHasBeenSet; }
+    template<typename CheckDescriptionT = Aws::String>
+    void SetCheckDescription(CheckDescriptionT&& value) { m_checkDescriptionHasBeenSet = true; m_checkDescription = std::forward<CheckDescriptionT>(value); }
+    template<typename CheckDescriptionT = Aws::String>
+    CisCheckAggregation& WithCheckDescription(CheckDescriptionT&& value) { SetCheckDescription(std::forward<CheckDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The CIS check level.</p>
      */
     inline CisSecurityLevel GetLevel() const { return m_level; }
@@ -87,26 +99,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS check platform.</p>
+     * <p>The account ID for the CIS check.</p>
      */
-    inline const Aws::String& GetPlatform() const { return m_platform; }
-    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    template<typename PlatformT = Aws::String>
-    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
-    template<typename PlatformT = Aws::String>
-    CisCheckAggregation& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The scan ARN for the CIS check scan ARN.</p>
-     */
-    inline const Aws::String& GetScanArn() const { return m_scanArn; }
-    inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    template<typename ScanArnT = Aws::String>
-    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
-    template<typename ScanArnT = Aws::String>
-    CisCheckAggregation& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CisCheckAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,40 +123,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS check title.</p>
+     * <p>The CIS check platform.</p>
      */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    CisCheckAggregation& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    inline const Aws::String& GetPlatform() const { return m_platform; }
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    CisCheckAggregation& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_checkDescription;
-    bool m_checkDescriptionHasBeenSet = false;
-
-    Aws::String m_checkId;
-    bool m_checkIdHasBeenSet = false;
-
-    CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
-    bool m_levelHasBeenSet = false;
-
-    Aws::String m_platform;
-    bool m_platformHasBeenSet = false;
 
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;
 
-    StatusCounts m_statusCounts;
-    bool m_statusCountsHasBeenSet = false;
+    Aws::String m_checkId;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::String m_checkDescription;
+    bool m_checkDescriptionHasBeenSet = false;
+
+    CisSecurityLevel m_level{CisSecurityLevel::NOT_SET};
+    bool m_levelHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
+    StatusCounts m_statusCounts;
+    bool m_statusCountsHasBeenSet = false;
+
+    Aws::String m_platform;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model
