@@ -16,6 +16,7 @@
 #include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <smithy/interceptor/Interceptor.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 #include <iomanip>
 
@@ -186,30 +187,30 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
 
   void calculateAndSetChecksum(const Aws::AmazonWebServiceRequest& request, std::shared_ptr<Aws::Http::HttpRequest> httpRequest,
                                const Aws::String& algorithm, const Aws::String& checksumType) {
-    static const Aws::UnorderedMap<Aws::String, ChecksumHandler> algorithmMap = {
-        {"crc64nvme",
-         {[]() { return Aws::MakeShared<CRC64>(AWS_SMITHY_CLIENT_CHECKSUM); },
+    static const Aws::Array<std::pair<const char*, ChecksumHandler>, 5> algorithmMap = {{
+      std::make_pair("crc64nvme", ChecksumHandler{
+          []() { return Aws::MakeShared<CRC64>(AWS_SMITHY_CLIENT_CHECKSUM); },
           [](Aws::IOStream& stream) { return HashingUtils::Base64Encode(HashingUtils::CalculateCRC64(stream)); },
-          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64}},
-        {"crc32",
-         {[]() { return Aws::MakeShared<CRC32>(AWS_SMITHY_CLIENT_CHECKSUM); },
+          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64}),
+      std::make_pair("crc32", ChecksumHandler{
+          []() { return Aws::MakeShared<CRC32>(AWS_SMITHY_CLIENT_CHECKSUM); },
           [](Aws::IOStream& stream) { return HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(stream)); },
-          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32}},
-        {"crc32c",
-         {[]() { return Aws::MakeShared<CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM); },
+          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32}),
+      std::make_pair("crc32c", ChecksumHandler{
+          []() { return Aws::MakeShared<CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM); },
           [](Aws::IOStream& stream) { return HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(stream)); },
-          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C}},
-        {"sha256",
-         {[]() { return Aws::MakeShared<Sha256>(AWS_SMITHY_CLIENT_CHECKSUM); },
+          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C}),
+      std::make_pair("sha256", ChecksumHandler{
+          []() { return Aws::MakeShared<Sha256>(AWS_SMITHY_CLIENT_CHECKSUM); },
           [](Aws::IOStream& stream) { return HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(stream)); },
-          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA256}},
-        {"sha1",
-         {[]() { return Aws::MakeShared<Sha1>(AWS_SMITHY_CLIENT_CHECKSUM); },
+          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA256}),
+      std::make_pair("sha1", ChecksumHandler{
+          []() { return Aws::MakeShared<Sha1>(AWS_SMITHY_CLIENT_CHECKSUM); },
           [](Aws::IOStream& stream) { return HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(stream)); },
-           Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1}}
-    };
+          Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1})
+  }};
 
-    auto it = algorithmMap.find(algorithm);
+    const auto it = find_if(algorithmMap.begin(), algorithmMap.end(), [&](const std::pair<const char*, ChecksumHandler> &pair) { return algorithm == pair.first; });
     if (it == algorithmMap.end()) {
       AWS_LOGSTREAM_WARN(AWS_SMITHY_CLIENT_CHECKSUM, "Checksum algorithm: " << algorithm << " is not supported by SDK.");
       return;
