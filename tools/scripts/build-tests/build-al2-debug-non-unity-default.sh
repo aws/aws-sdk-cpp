@@ -18,6 +18,6 @@ PREFIX_DIR="$1"
 mkdir "${PREFIX_DIR}/al2-build"
 mkdir "${PREFIX_DIR}/al2-install"
 cd "${PREFIX_DIR}/al2-build"
-cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DENABLE_UNITY_BUILD=OFF -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install"
+cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DENABLE_UNITY_BUILD=OFF -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DAWS_ENABLE_CORE_INTEGRATION_TEST=ON
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
 ninja-build install

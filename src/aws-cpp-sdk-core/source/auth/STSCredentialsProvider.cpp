@@ -2,166 +2,111 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-
-
+#include <aws/core/Globals.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
-#include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/platform/Environment.h>
-#include <aws/core/platform/FileSystem.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/FileSystemUtils.h>
-#include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/UUID.h>
-#include <cstdlib>
-#include <fstream>
-#include <string.h>
-#include <climits>
+#include <aws/crt/auth/Credentials.h>
 
-
-using namespace Aws::Utils;
-using namespace Aws::Utils::Logging;
 using namespace Aws::Auth;
-using namespace Aws::Internal;
-using namespace Aws::FileSystem;
-using namespace Aws::Client;
-using Aws::Utils::Threading::ReaderLockGuard;
-using Aws::Utils::Threading::WriterLockGuard;
+using namespace Aws::Utils;
 
-static const char STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG[] = "STSAssumeRoleWithWebIdentityCredentialsProvider";
-static const int STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 60 * 1000; // 5 Minutes.
-
-STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig):
-    m_initialized(false)
-{
-    m_roleArn = Aws::Environment::GetEnv("AWS_ROLE_ARN");
-    m_tokenFile = Aws::Environment::GetEnv("AWS_WEB_IDENTITY_TOKEN_FILE");
-    m_sessionName = Aws::Environment::GetEnv("AWS_ROLE_SESSION_NAME");
-
-    // check profile_config if either m_roleArn or m_tokenFile is not loaded from environment variable
-    // region source is not enforced, but we need it to construct sts endpoint, if we can't find from environment, we should check if it's set in config file.
-    if (m_roleArn.empty() || m_tokenFile.empty())
-    {
-        auto profile = Aws::Config::GetCachedConfigProfile(credentialsConfig.profile);
-        // If either of these two were not found from environment, use whatever found for all three in config file
-        if (m_roleArn.empty() || m_tokenFile.empty())
-        {
-            m_roleArn = profile.GetRoleArn();
-            m_tokenFile = profile.GetValue("web_identity_token_file");
-            m_sessionName = profile.GetValue("role_session_name");
-        }
-    }
-
-    if (m_tokenFile.empty())
-    {
-        AWS_LOGSTREAM_WARN(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Token file must be specified to use STS AssumeRole web identity creds provider.");
-        return; // No need to do further constructing
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved token_file from profile_config or environment variable to be " << m_tokenFile);
-    }
-
-    if (m_roleArn.empty())
-    {
-        AWS_LOGSTREAM_WARN(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "RoleArn must be specified to use STS AssumeRole web identity creds provider.");
-        return; // No need to do further constructing
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved role_arn from profile_config or environment variable to be " << m_roleArn);
-    }
-
-    if (m_sessionName.empty())
-    {
-        m_sessionName = Aws::Utils::UUID::PseudoRandomUUID();
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved session_name from profile_config or environment variable to be " << m_sessionName);
-    }
-
-    Aws::Client::ClientConfiguration config;
-    config.scheme = Aws::Http::Scheme::HTTPS;
-    config.region = credentialsConfig.region;
-    Aws::Vector<Aws::String> retryableErrors;
-    retryableErrors.push_back("IDPCommunicationError");
-    retryableErrors.push_back("InvalidIdentityToken");
-
-    config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, retryableErrors, 3/*maxRetries*/);
-
-    m_client = Aws::MakeUnique<Aws::Internal::STSCredentialsClient>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, config);
-    m_initialized = true;
-    AWS_LOGSTREAM_INFO(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Creating STS AssumeRole with web identity creds provider.");
+namespace {
+const char* STS_LOG_TAG = "STSAssumeRoleWebIdentityCredentialsProvider";
 }
 
-Aws::String LegacyGetRegion() {
-  auto region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
-  if (region.empty()) {
-    auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
-    region = profile.GetRegion();
+STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(
+    Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig)
+    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout)
+{
+  Aws::Crt::Auth::CredentialsProviderSTSWebIdentityConfig stsConfig{};
+  stsConfig.Bootstrap = GetDefaultClientBootstrap();
+  Aws::Crt::Io::TlsContextOptions tlsCtxOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
+  const Aws::Crt::Io::TlsContext tlsContext(tlsCtxOptions, Aws::Crt::Io::TlsMode::CLIENT);
+  const auto tlsOptions = Aws::GetDefaultTlsConnectionOptions();
+  if (tlsOptions) {
+    stsConfig.TlsConnectionOptions = *tlsOptions;
   }
-  return region;
+  stsConfig.Region = credentialsConfig.region.c_str();
+  stsConfig.TokenFilePath = credentialsConfig.stsCredentialsProviderConfig.tokenFilePath.c_str();
+  stsConfig.RoleArn = credentialsConfig.stsCredentialsProviderConfig.roleArn.c_str();
+  stsConfig.SessionName = [&credentialsConfig]() -> Aws::String {
+    if (!credentialsConfig.stsCredentialsProviderConfig.sessionName.empty()) {
+      return credentialsConfig.stsCredentialsProviderConfig.sessionName;
+    }
+    return UUID::RandomUUID();
+  }().c_str();
+  m_credentialsProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderSTSWebIdentity(stsConfig);
+  if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
+    m_state = STATE::INITIALIZED;
+  } else {
+    AWS_LOGSTREAM_WARN(STS_LOG_TAG, "Failed to create STS credentials provider");
+  }
+}
+
+Aws::String GetLegacySettingFromEnvOrProfile(const Aws::String& envVar,
+  std::function<Aws::String (Aws::Config::Profile)> profileFetchFunction)
+{
+  auto value = Aws::Environment::GetEnv(envVar.c_str());
+  if (value.empty()) {
+    auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
+    value = profileFetchFunction(profile);
+  }
+  return value;
 }
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider()
     : STSAssumeRoleWebIdentityCredentialsProvider(
-          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{Aws::Auth::GetConfigProfileName(), LegacyGetRegion(), {}}) {}
+          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{
+            Aws::Auth::GetConfigProfileName(),
+            GetLegacySettingFromEnvOrProfile("AWS_DEFAULT_REGION",
+              [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRegion(); }),
+            {},
+            {
+              GetLegacySettingFromEnvOrProfile("AWS_ROLE_ARN",
+                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRoleArn(); }),
+              GetLegacySettingFromEnvOrProfile("AWS_ROLE_SESSION_NAME",
+                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("role_session_name"); }),
+              GetLegacySettingFromEnvOrProfile("AWS_WEB_IDENTITY_TOKEN_FILE",
+                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("web_identity_token_file"); })
+            }})
+{}
 
-AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials()
-{
-    // A valid client means required information like role arn and token file were constructed correctly.
-    // We can use this provider to load creds, otherwise, we can just return empty creds.
-    if (!m_initialized)
-    {
-        return Aws::Auth::AWSCredentials();
-    }
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
-    return m_credentials;
+STSAssumeRoleWebIdentityCredentialsProvider::~STSAssumeRoleWebIdentityCredentialsProvider()  = default;
+
+AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() {
+  if (m_state != STATE::INITIALIZED) {
+    AWS_LOGSTREAM_DEBUG(STS_LOG_TAG, "STSCredentialsProvider is not initialized, returning empty credentials");
+    return AWSCredentials{};
+  }
+  AWSCredentials credentials{};
+  auto refreshDone = false;
+  m_credentialsProvider->GetCredentials(
+      [this, &credentials, &refreshDone](std::shared_ptr<Aws::Crt::Auth::Credentials> crtCredentials, int errorCode) -> void {
+        {
+          const std::unique_lock<std::mutex> lock{m_refreshMutex};
+          if (errorCode != AWS_ERROR_SUCCESS) {
+            AWS_LOGSTREAM_ERROR(STS_LOG_TAG, "Failed to get credentials from STS: " << errorCode);
+          } else {
+            const auto accountIdCursor = crtCredentials->GetAccessKeyId();
+            credentials.SetAWSAccessKeyId({reinterpret_cast<char*>(accountIdCursor.ptr), accountIdCursor.len});
+            const auto secretKeuCursor = crtCredentials->GetSecretAccessKey();
+            credentials.SetAWSSecretKey({reinterpret_cast<char*>(secretKeuCursor.ptr), secretKeuCursor.len});
+            const auto expiration = crtCredentials->GetExpirationTimepointInSeconds();
+            credentials.SetExpiration(DateTime{static_cast<double>(expiration)});
+            const auto sessionTokenCursor = crtCredentials->GetSessionToken();
+            credentials.SetSessionToken({reinterpret_cast<char*>(sessionTokenCursor.ptr), sessionTokenCursor.len});
+          }
+          refreshDone = true;
+        }
+        m_refreshSignal.notify_one();
+      });
+
+  std::unique_lock<std::mutex> lock{m_refreshMutex};
+  m_refreshSignal.wait_for(lock, m_providerFuturesTimeoutMs, [&refreshDone]() -> bool { return refreshDone; });
+  return credentials;
 }
 
-void STSAssumeRoleWebIdentityCredentialsProvider::Reload()
-{
-    AWS_LOGSTREAM_INFO(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Credentials have expired, attempting to renew from STS.");
-
-    Aws::IFStream tokenFile(m_tokenFile.c_str());
-    if(tokenFile)
-    {
-        Aws::String token((std::istreambuf_iterator<char>(tokenFile)), std::istreambuf_iterator<char>());
-        m_token = token;
-    }
-    else
-    {
-        AWS_LOGSTREAM_ERROR(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Can't open token file: " << m_tokenFile);
-        return;
-    }
-    STSCredentialsClient::STSAssumeRoleWithWebIdentityRequest request {m_sessionName, m_roleArn, m_token};
-
-    auto result = m_client->GetAssumeRoleWithWebIdentityCredentials(request);
-    AWS_LOGSTREAM_TRACE(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Successfully retrieved credentials with AWS_ACCESS_KEY: " << result.creds.GetAWSAccessKeyId());
-    m_credentials = result.creds;
-}
-
-bool STSAssumeRoleWebIdentityCredentialsProvider::ExpiresSoon() const
-{
-  return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
-}
-
-void STSAssumeRoleWebIdentityCredentialsProvider::RefreshIfExpired()
-{
-    ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsEmpty() && !ExpiresSoon())
-    {
-       return;
-    }
-
-    guard.UpgradeToWriterLock();
-    if (!m_credentials.IsExpiredOrEmpty() && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
-    {
-        return;
-    }
-
-    Reload();
+void STSAssumeRoleWebIdentityCredentialsProvider::Reload() {
+  AWS_LOGSTREAM_DEBUG(STS_LOG_TAG, "Calling reload on STSCredentialsProvider is a no-op and no longer in the call path");
 }
