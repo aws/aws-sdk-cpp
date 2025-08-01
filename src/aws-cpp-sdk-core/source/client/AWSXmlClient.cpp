@@ -20,6 +20,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/client/UserAgent.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -53,6 +54,10 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request
                                      const char* signerServiceNameOverride /* = nullptr */) const
 {
     const Aws::Http::URI& uri = endpoint.GetURI();
+    // Add S3Express user agent feature if backend is S3Express
+    if (endpoint.GetAttributes() && endpoint.GetAttributes()->backend == "S3Express") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::S3_EXPRESS_BUCKET);
+    }
     if (endpoint.GetAttributes()) {
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {

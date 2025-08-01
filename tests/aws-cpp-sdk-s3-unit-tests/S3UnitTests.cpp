@@ -378,6 +378,37 @@ TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
   EXPECT_TRUE(archMetadata < businessMetrics);
 }
 
+TEST_F(S3UnitTest, PutObjectS3ExpressShouldHaveJMetric) {
+  auto request = PutObjectRequest()
+    .WithBucket("o-worthy-heart--usw2-az1--x-s3")  // S3Express bucket pattern
+    .WithKey("who-tempers-anxiety-into-strength");
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG, "time marches on, and the age of a new king draws nearer");
+  request.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "alonzo.com/faker", HttpMethod::HTTP_PUT);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->PutObject(request);
+  
+  const auto requestSeen = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  const auto userAgentParsed = Utils::StringUtils::Split(userAgent, ' ');
+  
+  // Check for S3Express business metric (J) in user agent
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), 
+    [](const Aws::String & value) { return value.find("m/") != Aws::String::npos && value.find("J") != Aws::String::npos; });
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+}
+
 TEST_F(S3UnitTest, RequestShouldNotIncludeAChecksumIfNotRequired) {
   S3ClientConfiguration configuration{};
   configuration.checksumConfig.requestChecksumCalculation = RequestChecksumCalculation::WHEN_REQUIRED;
