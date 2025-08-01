@@ -36,7 +36,7 @@ namespace Aws
     typedef std::function<void(const Aws::Http::HttpRequest&)> RequestSignedHandler;
 
     struct RetryContext {
-      std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_requestHash;
+      std::shared_ptr<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>> m_requestHash = nullptr;
     };
 
     /**
@@ -228,7 +228,9 @@ namespace Aws
 
         inline virtual bool RequestChecksumRequired() const { return false; }
 
-        mutable Aws::RetryContext m_retryContext;
+        RetryContext GetRetryContext() const { return m_retryContext; }
+
+        void SetRetryContext(const RetryContext& context) const { m_retryContext = context; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the
@@ -248,6 +250,7 @@ namespace Aws
         RequestRetryHandler m_requestRetryHandler;
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
         mutable Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
+        mutable Aws::RetryContext m_retryContext;
     };
 
 } // namespace Aws

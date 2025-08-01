@@ -391,9 +391,13 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         }
 
         // Save checksum information from the original request if we haven't already - safe to assume that the checksum has been finalized, since we have sent and received a response
-        if (request.m_retryContext.m_requestHash.second == nullptr) {
+        RetryContext context = request.GetRetryContext();
+        if (context.m_requestHash == nullptr) {
           auto originalRequestHash = httpRequest->GetRequestHash();
-          request.m_retryContext.m_requestHash = originalRequestHash;
+          if (originalRequestHash.second != nullptr) {
+            context.m_requestHash = Aws::MakeShared<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>(AWS_CLIENT_LOG_TAG, originalRequestHash);
+            request.SetRetryContext(context);
+          }
         }
 
         httpRequest = CreateHttpRequest(newUri, method, request.GetResponseStreamFactory());
@@ -929,9 +933,10 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     request.AddQueryStringParameters(httpRequest->GetUri());
 
     // check for retry context, if present use it
-    if (request.m_retryContext.m_requestHash.second != nullptr) {
-      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(smithy::client::AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(request.m_retryContext.m_requestHash.second->GetHash().GetResult()));
-      httpRequest->SetRequestHash(request.m_retryContext.m_requestHash.first, hash);
+    RetryContext context = request.GetRetryContext();
+    if (context.m_requestHash != nullptr) {
+      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(smithy::client::AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(context.m_requestHash->second->GetHash().GetResult()));
+      httpRequest->SetRequestHash(context.m_requestHash->first, hash);
     }
 }
 
