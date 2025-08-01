@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for each read-only secondary cluster
-     * associated with the Aurora global cluster.</p>
+     * associated with the Amazon DocumentDB global cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReaders() const { return m_readers; }
     inline bool ReadersHasBeenSet() const { return m_readersHasBeenSet; }

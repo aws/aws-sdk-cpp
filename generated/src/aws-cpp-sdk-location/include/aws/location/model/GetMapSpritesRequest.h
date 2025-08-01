@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }

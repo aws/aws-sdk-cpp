@@ -162,7 +162,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The analytics engine.</p>
+     * <p> The analytics engine.</p>  <p>After July 16, 2025, the
+     * <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available. </p> 
      */
     inline AnalyticsEngine GetAnalyticsEngine() const { return m_analyticsEngine; }
     inline bool AnalyticsEngineHasBeenSet() const { return m_analyticsEngineHasBeenSet; }

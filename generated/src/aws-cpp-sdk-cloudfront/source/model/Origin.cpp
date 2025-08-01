@@ -85,6 +85,12 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
       m_connectionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTimeoutNode.GetText()).c_str()).c_str());
       m_connectionTimeoutHasBeenSet = true;
     }
+    XmlNode responseCompletionTimeoutNode = resultNode.FirstChild("ResponseCompletionTimeout");
+    if(!responseCompletionTimeoutNode.IsNull())
+    {
+      m_responseCompletionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(responseCompletionTimeoutNode.GetText()).c_str()).c_str());
+      m_responseCompletionTimeoutHasBeenSet = true;
+    }
     XmlNode originShieldNode = resultNode.FirstChild("OriginShield");
     if(!originShieldNode.IsNull())
     {
@@ -160,6 +166,14 @@ void Origin::AddToNode(XmlNode& parentNode) const
    XmlNode connectionTimeoutNode = parentNode.CreateChildElement("ConnectionTimeout");
    ss << m_connectionTimeout;
    connectionTimeoutNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_responseCompletionTimeoutHasBeenSet)
+  {
+   XmlNode responseCompletionTimeoutNode = parentNode.CreateChildElement("ResponseCompletionTimeout");
+   ss << m_responseCompletionTimeout;
+   responseCompletionTimeoutNode.SetText(ss.str());
    ss.str("");
   }
 

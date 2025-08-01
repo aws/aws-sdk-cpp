@@ -86,8 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The information in the analysis template. Currently supports
-     * <code>text</code>, the query text for the analysis template.</p>
+     * <p>The information in the analysis template.</p>
      */
     inline const AnalysisSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

@@ -48,8 +48,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply to.
-     * </p>
+     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
      * <p>If your initial <code>ListSecurityPolicies</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
      * subsequent <code>ListSecurityPolicies</code> operations, which returns results
-     * in the next page. </p>
+     * in the next page.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

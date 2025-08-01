@@ -49,7 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device's state, including current position and speed.</p>
+     * <p>Represents the device's state, including its current position and speed. When
+     * speed is omitted, this API performs a <i>containment check</i>. The
+     * <i>containment check</i> operation returns <code>IDLE</code> events for
+     * geofences where the device is currently inside of, but no other events.</p>
      */
     inline const ForecastGeofenceEventsDeviceState& GetDeviceState() const { return m_deviceState; }
     inline bool DeviceStateHasBeenSet() const { return m_deviceStateHasBeenSet; }
@@ -61,7 +64,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the time horizon in minutes for the forecasted events.</p>
+     * <p>The forward-looking time window for forecasting, specified in minutes. The
+     * API only returns events that are predicted to occur within this time horizon.
+     * When no value is specified, this API performs a <i>containment check</i>. The
+     * <i>containment check</i> operation returns <code>IDLE</code> events for
+     * geofences where the device is currently inside of, but no other events.</p>
      */
     inline double GetTimeHorizonMinutes() const { return m_timeHorizonMinutes; }
     inline bool TimeHorizonMinutesHasBeenSet() const { return m_timeHorizonMinutesHasBeenSet; }

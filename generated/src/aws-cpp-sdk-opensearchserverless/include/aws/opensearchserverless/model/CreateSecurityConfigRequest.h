@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/IamFederationConfigOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -75,7 +76,7 @@ namespace Model
     ///@{
     /**
      * <p>Describes SAML options in in the form of a key-value map. This field is
-     * required if you specify <code>saml</code> for the <code>type</code>
+     * required if you specify <code>SAML</code> for the <code>type</code>
      * parameter.</p>
      */
     inline const SamlConfigOptions& GetSamlOptions() const { return m_samlOptions; }
@@ -97,6 +98,20 @@ namespace Model
     void SetIamIdentityCenterOptions(IamIdentityCenterOptionsT&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::forward<IamIdentityCenterOptionsT>(value); }
     template<typename IamIdentityCenterOptionsT = CreateIamIdentityCenterConfigOptions>
     CreateSecurityConfigRequest& WithIamIdentityCenterOptions(IamIdentityCenterOptionsT&& value) { SetIamIdentityCenterOptions(std::forward<IamIdentityCenterOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Describes IAM federation options in the form of a key-value map. This field
+     * is required if you specify <code>iamFederation</code> for the <code>type</code>
+     * parameter.</p>
+     */
+    inline const IamFederationConfigOptions& GetIamFederationOptions() const { return m_iamFederationOptions; }
+    inline bool IamFederationOptionsHasBeenSet() const { return m_iamFederationOptionsHasBeenSet; }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    void SetIamFederationOptions(IamFederationOptionsT&& value) { m_iamFederationOptionsHasBeenSet = true; m_iamFederationOptions = std::forward<IamFederationOptionsT>(value); }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    CreateSecurityConfigRequest& WithIamFederationOptions(IamFederationOptionsT&& value) { SetIamFederationOptions(std::forward<IamFederationOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,6 +141,9 @@ namespace Model
 
     CreateIamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
     bool m_iamIdentityCenterOptionsHasBeenSet = false;
+
+    IamFederationConfigOptions m_iamFederationOptions;
+    bool m_iamFederationOptionsHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

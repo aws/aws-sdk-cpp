@@ -159,6 +159,11 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
     m_osVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OsVersion"));
     m_osVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("HybridSettings"))
+  {
+    m_hybridSettings = jsonValue.GetObject("HybridSettings");
+    m_hybridSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -315,6 +320,12 @@ JsonValue DirectoryDescription::Jsonize() const
   if(m_osVersionHasBeenSet)
   {
    payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
+  }
+
+  if(m_hybridSettingsHasBeenSet)
+  {
+   payload.WithObject("HybridSettings", m_hybridSettings.Jsonize());
+
   }
 
   return payload;

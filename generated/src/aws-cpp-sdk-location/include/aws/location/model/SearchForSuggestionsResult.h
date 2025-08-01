@@ -76,8 +76,8 @@ namespace Model
      * <p>The Amazon Location categories that describe the Place.</p> <p>For more
      * information about using categories, including a list of Amazon Location
      * categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }

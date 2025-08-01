@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/IamFederationConfigOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -103,6 +104,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes IAM federation options in the form of a key-value map for updating
+     * an existing security configuration. Use this field to modify IAM federation
+     * settings for the security configuration.</p>
+     */
+    inline const IamFederationConfigOptions& GetIamFederationOptions() const { return m_iamFederationOptions; }
+    inline bool IamFederationOptionsHasBeenSet() const { return m_iamFederationOptionsHasBeenSet; }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    void SetIamFederationOptions(IamFederationOptionsT&& value) { m_iamFederationOptionsHasBeenSet = true; m_iamFederationOptions = std::forward<IamFederationOptionsT>(value); }
+    template<typename IamFederationOptionsT = IamFederationConfigOptions>
+    UpdateSecurityConfigRequest& WithIamFederationOptions(IamFederationOptionsT&& value) { SetIamFederationOptions(std::forward<IamFederationOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -128,6 +143,9 @@ namespace Model
 
     UpdateIamIdentityCenterConfigOptions m_iamIdentityCenterOptionsUpdates;
     bool m_iamIdentityCenterOptionsUpdatesHasBeenSet = false;
+
+    IamFederationConfigOptions m_iamFederationOptions;
+    bool m_iamFederationOptionsHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

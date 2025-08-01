@@ -250,7 +250,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Storage type associated with your cluster snapshot </p> <p>For information on
+     * <p>Storage type associated with your cluster snapshot</p> <p>For information on
      * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
      * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
      * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard

@@ -232,6 +232,46 @@ namespace Model
     inline void SetMinGwDiversity(int value) { m_minGwDiversityHasBeenSet = true; m_minGwDiversity = value; }
     inline LoRaWANGetServiceProfileInfo& WithMinGwDiversity(int value) { SetMinGwDiversity(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Transmit Power Index minimum value.</p> <p>Default: <code>0</code> </p>
+     */
+    inline int GetTxPowerIndexMin() const { return m_txPowerIndexMin; }
+    inline bool TxPowerIndexMinHasBeenSet() const { return m_txPowerIndexMinHasBeenSet; }
+    inline void SetTxPowerIndexMin(int value) { m_txPowerIndexMinHasBeenSet = true; m_txPowerIndexMin = value; }
+    inline LoRaWANGetServiceProfileInfo& WithTxPowerIndexMin(int value) { SetTxPowerIndexMin(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Transmit Power Index maximum value.</p> <p>Default: <code>15</code> </p>
+     */
+    inline int GetTxPowerIndexMax() const { return m_txPowerIndexMax; }
+    inline bool TxPowerIndexMaxHasBeenSet() const { return m_txPowerIndexMaxHasBeenSet; }
+    inline void SetTxPowerIndexMax(int value) { m_txPowerIndexMaxHasBeenSet = true; m_txPowerIndexMax = value; }
+    inline LoRaWANGetServiceProfileInfo& WithTxPowerIndexMax(int value) { SetTxPowerIndexMax(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of transmissions.</p> <p>Default: <code>0</code> </p>
+     */
+    inline int GetNbTransMin() const { return m_nbTransMin; }
+    inline bool NbTransMinHasBeenSet() const { return m_nbTransMinHasBeenSet; }
+    inline void SetNbTransMin(int value) { m_nbTransMinHasBeenSet = true; m_nbTransMin = value; }
+    inline LoRaWANGetServiceProfileInfo& WithNbTransMin(int value) { SetNbTransMin(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of transmissions.</p> <p>Default: <code>3</code> </p>
+     */
+    inline int GetNbTransMax() const { return m_nbTransMax; }
+    inline bool NbTransMaxHasBeenSet() const { return m_nbTransMaxHasBeenSet; }
+    inline void SetNbTransMax(int value) { m_nbTransMaxHasBeenSet = true; m_nbTransMax = value; }
+    inline LoRaWANGetServiceProfileInfo& WithNbTransMax(int value) { SetNbTransMax(value); return *this;}
+    ///@}
   private:
 
     int m_ulRate{0};
@@ -290,6 +330,18 @@ namespace Model
 
     int m_minGwDiversity{0};
     bool m_minGwDiversityHasBeenSet = false;
+
+    int m_txPowerIndexMin{0};
+    bool m_txPowerIndexMinHasBeenSet = false;
+
+    int m_txPowerIndexMax{0};
+    bool m_txPowerIndexMaxHasBeenSet = false;
+
+    int m_nbTransMin{0};
+    bool m_nbTransMinHasBeenSet = false;
+
+    int m_nbTransMax{0};
+    bool m_nbTransMaxHasBeenSet = false;
   };
 
 } // namespace Model

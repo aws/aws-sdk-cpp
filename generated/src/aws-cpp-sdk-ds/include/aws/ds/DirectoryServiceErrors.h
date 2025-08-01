@@ -48,6 +48,7 @@ enum class DirectoryServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   AUTHENTICATION_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  A_D_ASSESSMENT_LIMIT_EXCEEDED,
   CERTIFICATE_ALREADY_EXISTS,
   CERTIFICATE_DOES_NOT_EXIST,
   CERTIFICATE_IN_USE,

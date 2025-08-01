@@ -50,7 +50,7 @@ namespace Model
      * <p>If your initial <code>ListSecurityConfigs</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
      * subsequent <code>ListSecurityConfigs</code> operations, which returns results in
-     * the next page. </p>
+     * the next page.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

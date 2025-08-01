@@ -66,12 +66,12 @@ namespace Model
      * 49.285]</code>.</p>  <p>Depending on the data provider selected in
      * the route calculator resource there may be additional restrictions on the inputs
      * you can choose. See <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
      * Position restrictions</a> in the <i>Amazon Location Service Developer
      * Guide</i>.</p>   <p>For route calculators that use Esri as the
      * data provider, if you specify a departure that's not located on a road, Amazon
      * Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">
      * moves the position to the nearest road</a>. The snapped value is available in
      * the result in <code>SnappedDeparturePositions</code>.</p>  <p>Valid
      * Values: <code>[-180 to 180,-90 to 90]</code> </p>
@@ -95,12 +95,12 @@ namespace Model
      * </p>  <p>Depending on the data provider selected in the route
      * calculator resource there may be additional restrictions on the inputs you can
      * choose. See <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
      * Position restrictions</a> in the <i>Amazon Location Service Developer
      * Guide</i>.</p>   <p>For route calculators that use Esri as the
      * data provider, if you specify a destination that's not located on a road, Amazon
      * Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">
      * moves the position to the nearest road</a>. The snapped value is available in
      * the result in <code>SnappedDestinationPositions</code>.</p>  <p>Valid
      * Values: <code>[-180 to 180,-90 to 90]</code> </p>
@@ -127,7 +127,7 @@ namespace Model
      * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
      * <code>Truck</code> is not available for Grab.</p> <p>For more information about
      * using Grab as a data provider, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
      * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
      * Value: <code>Car</code> </p>
      */
@@ -215,7 +215,7 @@ namespace Model
     ///@{
     /**
      * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }
