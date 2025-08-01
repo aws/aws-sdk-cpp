@@ -10,7 +10,7 @@ param($PREFIX_DIR)
 mkdir "${PREFIX_DIR}/win-build"
 mkdir "${PREFIX_DIR}/win-install"
 cd "${PREFIX_DIR}/win-build"
-&'C:\\Program Files\\CMake\\bin\\cmake.exe' ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/win-install"
+&'C:\\Program Files\\CMake\\bin\\cmake.exe' ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/win-install" -DAWS_ENABLE_CORE_INTEGRATION_TEST=ON
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build . -j 8
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build . --target install
 &cmd.exe /c "del /s /q *.pdb"
