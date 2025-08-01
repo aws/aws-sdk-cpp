@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compute platform product.</p>
-     */
-    inline const Aws::String& GetProduct() const { return m_product; }
-    inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    template<typename ProductT = Aws::String>
-    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
-    template<typename ProductT = Aws::String>
-    ComputePlatform& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The compute platform vendor.</p>
      */
     inline const Aws::String& GetVendor() const { return m_vendor; }
@@ -59,6 +47,18 @@ namespace Model
     void SetVendor(VendorT&& value) { m_vendorHasBeenSet = true; m_vendor = std::forward<VendorT>(value); }
     template<typename VendorT = Aws::String>
     ComputePlatform& WithVendor(VendorT&& value) { SetVendor(std::forward<VendorT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The compute platform product.</p>
+     */
+    inline const Aws::String& GetProduct() const { return m_product; }
+    inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    ComputePlatform& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_product;
-    bool m_productHasBeenSet = false;
-
     Aws::String m_vendor;
     bool m_vendorHasBeenSet = false;
+
+    Aws::String m_product;
+    bool m_productHasBeenSet = false;
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;

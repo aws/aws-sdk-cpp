@@ -25,30 +25,30 @@ ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue)
 
 ResourceScanMetadata& ResourceScanMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("codeRepository"))
+  if(jsonValue.ValueExists("ecrRepository"))
   {
-    m_codeRepository = jsonValue.GetObject("codeRepository");
-    m_codeRepositoryHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ec2"))
-  {
-    m_ec2 = jsonValue.GetObject("ec2");
-    m_ec2HasBeenSet = true;
+    m_ecrRepository = jsonValue.GetObject("ecrRepository");
+    m_ecrRepositoryHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ecrImage"))
   {
     m_ecrImage = jsonValue.GetObject("ecrImage");
     m_ecrImageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecrRepository"))
+  if(jsonValue.ValueExists("ec2"))
   {
-    m_ecrRepository = jsonValue.GetObject("ecrRepository");
-    m_ecrRepositoryHasBeenSet = true;
+    m_ec2 = jsonValue.GetObject("ec2");
+    m_ec2HasBeenSet = true;
   }
   if(jsonValue.ValueExists("lambdaFunction"))
   {
     m_lambdaFunction = jsonValue.GetObject("lambdaFunction");
     m_lambdaFunctionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("codeRepository"))
+  {
+    m_codeRepository = jsonValue.GetObject("codeRepository");
+    m_codeRepositoryHasBeenSet = true;
   }
   return *this;
 }
@@ -57,15 +57,9 @@ JsonValue ResourceScanMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_codeRepositoryHasBeenSet)
+  if(m_ecrRepositoryHasBeenSet)
   {
-   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
-
-  }
-
-  if(m_ec2HasBeenSet)
-  {
-   payload.WithObject("ec2", m_ec2.Jsonize());
+   payload.WithObject("ecrRepository", m_ecrRepository.Jsonize());
 
   }
 
@@ -75,15 +69,21 @@ JsonValue ResourceScanMetadata::Jsonize() const
 
   }
 
-  if(m_ecrRepositoryHasBeenSet)
+  if(m_ec2HasBeenSet)
   {
-   payload.WithObject("ecrRepository", m_ecrRepository.Jsonize());
+   payload.WithObject("ec2", m_ec2.Jsonize());
 
   }
 
   if(m_lambdaFunctionHasBeenSet)
   {
    payload.WithObject("lambdaFunction", m_lambdaFunction.Jsonize());
+
+  }
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
 
   }
 

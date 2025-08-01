@@ -25,15 +25,15 @@ AssociateDataProtectionSettingsResult::AssociateDataProtectionSettingsResult(con
 AssociateDataProtectionSettingsResult& AssociateDataProtectionSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dataProtectionSettingsArn"))
-  {
-    m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
-    m_dataProtectionSettingsArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
     m_portalArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("dataProtectionSettingsArn"))
+  {
+    m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
+    m_dataProtectionSettingsArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

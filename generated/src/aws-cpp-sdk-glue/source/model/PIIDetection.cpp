@@ -73,6 +73,41 @@ PIIDetection& PIIDetection::operator =(JsonView jsonValue)
     m_maskValue = jsonValue.GetString("MaskValue");
     m_maskValueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RedactText"))
+  {
+    m_redactText = jsonValue.GetString("RedactText");
+    m_redactTextHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RedactChar"))
+  {
+    m_redactChar = jsonValue.GetString("RedactChar");
+    m_redactCharHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MatchPattern"))
+  {
+    m_matchPattern = jsonValue.GetString("MatchPattern");
+    m_matchPatternHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NumLeftCharsToExclude"))
+  {
+    m_numLeftCharsToExclude = jsonValue.GetInteger("NumLeftCharsToExclude");
+    m_numLeftCharsToExcludeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NumRightCharsToExclude"))
+  {
+    m_numRightCharsToExclude = jsonValue.GetInteger("NumRightCharsToExclude");
+    m_numRightCharsToExcludeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DetectionParameters"))
+  {
+    m_detectionParameters = jsonValue.GetString("DetectionParameters");
+    m_detectionParametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DetectionSensitivity"))
+  {
+    m_detectionSensitivity = jsonValue.GetString("DetectionSensitivity");
+    m_detectionSensitivityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +169,48 @@ JsonValue PIIDetection::Jsonize() const
   if(m_maskValueHasBeenSet)
   {
    payload.WithString("MaskValue", m_maskValue);
+
+  }
+
+  if(m_redactTextHasBeenSet)
+  {
+   payload.WithString("RedactText", m_redactText);
+
+  }
+
+  if(m_redactCharHasBeenSet)
+  {
+   payload.WithString("RedactChar", m_redactChar);
+
+  }
+
+  if(m_matchPatternHasBeenSet)
+  {
+   payload.WithString("MatchPattern", m_matchPattern);
+
+  }
+
+  if(m_numLeftCharsToExcludeHasBeenSet)
+  {
+   payload.WithInteger("NumLeftCharsToExclude", m_numLeftCharsToExclude);
+
+  }
+
+  if(m_numRightCharsToExcludeHasBeenSet)
+  {
+   payload.WithInteger("NumRightCharsToExclude", m_numRightCharsToExclude);
+
+  }
+
+  if(m_detectionParametersHasBeenSet)
+  {
+   payload.WithString("DetectionParameters", m_detectionParameters);
+
+  }
+
+  if(m_detectionSensitivityHasBeenSet)
+  {
+   payload.WithString("DetectionSensitivity", m_detectionSensitivity);
 
   }
 

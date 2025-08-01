@@ -45,6 +45,12 @@ Aws::String CreateSecurityConfigRequest::SerializePayload() const
 
   }
 
+  if(m_iamFederationOptionsHasBeenSet)
+  {
+   payload.WithObject("iamFederationOptions", m_iamFederationOptions.Jsonize());
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);

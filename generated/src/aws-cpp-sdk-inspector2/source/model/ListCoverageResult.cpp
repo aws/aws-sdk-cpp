@@ -25,6 +25,11 @@ ListCoverageResult::ListCoverageResult(const Aws::AmazonWebServiceResult<JsonVal
 ListCoverageResult& ListCoverageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("coveredResources"))
   {
     Aws::Utils::Array<JsonView> coveredResourcesJsonList = jsonValue.GetArray("coveredResources");
@@ -33,11 +38,6 @@ ListCoverageResult& ListCoverageResult::operator =(const Aws::AmazonWebServiceRe
       m_coveredResources.push_back(coveredResourcesJsonList[coveredResourcesIndex].AsObject());
     }
     m_coveredResourcesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

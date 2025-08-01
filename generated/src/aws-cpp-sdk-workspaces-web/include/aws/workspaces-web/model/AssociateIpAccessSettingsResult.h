@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IP access settings resource.</p>
-     */
-    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    AssociateIpAccessSettingsResult& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const { return m_portalArn; }
@@ -52,6 +41,17 @@ namespace Model
     void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
     template<typename PortalArnT = Aws::String>
     AssociateIpAccessSettingsResult& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the IP access settings resource.</p>
+     */
+    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    AssociateIpAccessSettingsResult& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_ipAccessSettingsArn;
-    bool m_ipAccessSettingsArnHasBeenSet = false;
-
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;
+
+    Aws::String m_ipAccessSettingsArn;
+    bool m_ipAccessSettingsArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

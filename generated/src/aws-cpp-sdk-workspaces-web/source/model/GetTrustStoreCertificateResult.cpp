@@ -25,15 +25,15 @@ GetTrustStoreCertificateResult::GetTrustStoreCertificateResult(const Aws::Amazon
 GetTrustStoreCertificateResult& GetTrustStoreCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("certificate"))
-  {
-    m_certificate = jsonValue.GetObject("certificate");
-    m_certificateHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
     m_trustStoreArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetObject("certificate");
+    m_certificateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -40,15 +40,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return in the response. If your request
-     * would return more than the maximum the response will return a
-     * <code>nextToken</code> value, use this value when you call the action again to
-     * get the remaining results.</p>
+     * <p>The Amazon Resource Name (ARN) of the scan configuration to list associations
+     * for.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCodeSecurityScanConfigurationAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
+    inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    ListCodeSecurityScanConfigurationAssociationsRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +68,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the scan configuration to list associations
-     * for.</p>
+     * <p>The maximum number of results to return in the response. If your request
+     * would return more than the maximum the response will return a
+     * <code>nextToken</code> value, use this value when you call the action again to
+     * get the remaining results.</p>
      */
-    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
-    inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
-    template<typename ScanConfigurationArnT = Aws::String>
-    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
-    template<typename ScanConfigurationArnT = Aws::String>
-    ListCodeSecurityScanConfigurationAssociationsRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListCodeSecurityScanConfigurationAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_scanConfigurationArn;
+    bool m_scanConfigurationArnHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_scanConfigurationArn;
-    bool m_scanConfigurationArnHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

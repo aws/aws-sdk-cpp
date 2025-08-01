@@ -85,7 +85,7 @@ namespace Model
     ///@{
     /**
      * <p>Metadata that were added to the package version that can be used to define a
-     * package version’s configuration.</p>
+     * package version���s configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>

@@ -59,18 +59,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-     */
-    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
-    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    template<typename FilterArnT = Aws::String>
-    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
-    template<typename FilterArnT = Aws::String>
-    UpdateFilterRequest& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Defines the criteria to be update in the filter.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
@@ -95,6 +83,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+     */
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
+    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    UpdateFilterRequest& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The reason the filter was updated.</p>
      */
     inline const Aws::String& GetReason() const { return m_reason; }
@@ -112,14 +112,14 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet = false;
-
     FilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_filterArn;
+    bool m_filterArnHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;

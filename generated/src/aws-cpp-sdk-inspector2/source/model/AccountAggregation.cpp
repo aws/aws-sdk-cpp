@@ -35,15 +35,15 @@ AccountAggregation& AccountAggregation::operator =(JsonView jsonValue)
     m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
-  {
-    m_sortBy = AccountSortByMapper::GetAccountSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = AccountSortByMapper::GetAccountSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -62,14 +62,14 @@ JsonValue AccountAggregation::Jsonize() const
    payload.WithString("resourceType", AggregationResourceTypeMapper::GetNameForAggregationResourceType(m_resourceType));
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", AccountSortByMapper::GetNameForAccountSortBy(m_sortBy));
-  }
-
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", AccountSortByMapper::GetNameForAccountSortBy(m_sortBy));
   }
 
   return payload;

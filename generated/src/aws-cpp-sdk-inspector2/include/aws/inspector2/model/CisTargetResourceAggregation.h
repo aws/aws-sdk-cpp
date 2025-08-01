@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/StatusCounts.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/inspector2/model/StatusCounts.h>
 #include <aws/inspector2/model/CisTargetStatus.h>
 #include <aws/inspector2/model/CisTargetStatusReason.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -44,30 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID for the CIS target resource.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    CisTargetResourceAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The platform for the CIS target resource.</p>
-     */
-    inline const Aws::String& GetPlatform() const { return m_platform; }
-    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    template<typename PlatformT = Aws::String>
-    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
-    template<typename PlatformT = Aws::String>
-    CisTargetResourceAggregation& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The scan ARN for the CIS target resource.</p>
      */
     inline const Aws::String& GetScanArn() const { return m_scanArn; }
@@ -76,18 +52,6 @@ namespace Model
     void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
     template<typename ScanArnT = Aws::String>
     CisTargetResourceAggregation& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The target resource status counts.</p>
-     */
-    inline const StatusCounts& GetStatusCounts() const { return m_statusCounts; }
-    inline bool StatusCountsHasBeenSet() const { return m_statusCountsHasBeenSet; }
-    template<typename StatusCountsT = StatusCounts>
-    void SetStatusCounts(StatusCountsT&& value) { m_statusCountsHasBeenSet = true; m_statusCounts = std::forward<StatusCountsT>(value); }
-    template<typename StatusCountsT = StatusCounts>
-    CisTargetResourceAggregation& WithStatusCounts(StatusCountsT&& value) { SetStatusCounts(std::forward<StatusCountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,6 +68,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The account ID for the CIS target resource.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CisTargetResourceAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tag for the target resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTargetResourceTags() const { return m_targetResourceTags; }
@@ -116,6 +92,30 @@ namespace Model
     CisTargetResourceAggregation& AddTargetResourceTags(TargetResourceTagsKeyT&& key, TargetResourceTagsValueT&& value) {
       m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::forward<TargetResourceTagsKeyT>(key), std::forward<TargetResourceTagsValueT>(value)); return *this;
     }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The target resource status counts.</p>
+     */
+    inline const StatusCounts& GetStatusCounts() const { return m_statusCounts; }
+    inline bool StatusCountsHasBeenSet() const { return m_statusCountsHasBeenSet; }
+    template<typename StatusCountsT = StatusCounts>
+    void SetStatusCounts(StatusCountsT&& value) { m_statusCountsHasBeenSet = true; m_statusCounts = std::forward<StatusCountsT>(value); }
+    template<typename StatusCountsT = StatusCounts>
+    CisTargetResourceAggregation& WithStatusCounts(StatusCountsT&& value) { SetStatusCounts(std::forward<StatusCountsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The platform for the CIS target resource.</p>
+     */
+    inline const Aws::String& GetPlatform() const { return m_platform; }
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    CisTargetResourceAggregation& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,23 +139,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_platform;
-    bool m_platformHasBeenSet = false;
-
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;
-
-    StatusCounts m_statusCounts;
-    bool m_statusCountsHasBeenSet = false;
 
     Aws::String m_targetResourceId;
     bool m_targetResourceIdHasBeenSet = false;
 
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_targetResourceTags;
     bool m_targetResourceTagsHasBeenSet = false;
+
+    StatusCounts m_statusCounts;
+    bool m_statusCountsHasBeenSet = false;
+
+    Aws::String m_platform;
+    bool m_platformHasBeenSet = false;
 
     CisTargetStatus m_targetStatus{CisTargetStatus::NOT_SET};
     bool m_targetStatusHasBeenSet = false;

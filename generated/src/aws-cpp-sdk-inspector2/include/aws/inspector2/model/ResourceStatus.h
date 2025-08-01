@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of Amazon Inspector scanning for code repositories.</p>
-     */
-    inline Status GetCodeRepository() const { return m_codeRepository; }
-    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
-    inline void SetCodeRepository(Status value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = value; }
-    inline ResourceStatus& WithCodeRepository(Status value) { SetCodeRepository(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
      */
     inline Status GetEc2() const { return m_ec2; }
@@ -89,10 +79,17 @@ namespace Model
     inline void SetLambdaCode(Status value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
     inline ResourceStatus& WithLambdaCode(Status value) { SetLambdaCode(value); return *this;}
     ///@}
-  private:
 
-    Status m_codeRepository{Status::NOT_SET};
-    bool m_codeRepositoryHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The status of Amazon Inspector scanning for code repositories.</p>
+     */
+    inline Status GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    inline void SetCodeRepository(Status value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = value; }
+    inline ResourceStatus& WithCodeRepository(Status value) { SetCodeRepository(value); return *this;}
+    ///@}
+  private:
 
     Status m_ec2{Status::NOT_SET};
     bool m_ec2HasBeenSet = false;
@@ -105,6 +102,9 @@ namespace Model
 
     Status m_lambdaCode{Status::NOT_SET};
     bool m_lambdaCodeHasBeenSet = false;
+
+    Status m_codeRepository{Status::NOT_SET};
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

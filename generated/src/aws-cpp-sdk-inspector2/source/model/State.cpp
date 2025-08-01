@@ -25,6 +25,11 @@ State::State(JsonView jsonValue)
 
 State& State::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
@@ -35,17 +40,17 @@ State& State::operator =(JsonView jsonValue)
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue State::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
 
   if(m_errorCodeHasBeenSet)
   {
@@ -56,11 +61,6 @@ JsonValue State::Jsonize() const
   {
    payload.WithString("errorMessage", m_errorMessage);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;

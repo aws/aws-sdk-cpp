@@ -9,8 +9,10 @@
 #include <aws/batch/model/JQState.h>
 #include <aws/batch/model/JQStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/JobQueueType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <aws/batch/model/ServiceEnvironmentOrder.h>
 #include <aws/batch/model/JobStateTimeLimitAction.h>
 #include <utility>
 
@@ -167,6 +169,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The order of the service environment associated with the job queue. Job
+     * queues with a higher priority are evaluated first when associated with the same
+     * service environment.</p>
+     */
+    inline const Aws::Vector<ServiceEnvironmentOrder>& GetServiceEnvironmentOrder() const { return m_serviceEnvironmentOrder; }
+    inline bool ServiceEnvironmentOrderHasBeenSet() const { return m_serviceEnvironmentOrderHasBeenSet; }
+    template<typename ServiceEnvironmentOrderT = Aws::Vector<ServiceEnvironmentOrder>>
+    void SetServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { m_serviceEnvironmentOrderHasBeenSet = true; m_serviceEnvironmentOrder = std::forward<ServiceEnvironmentOrderT>(value); }
+    template<typename ServiceEnvironmentOrderT = Aws::Vector<ServiceEnvironmentOrder>>
+    JobQueueDetail& WithServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { SetServiceEnvironmentOrder(std::forward<ServiceEnvironmentOrderT>(value)); return *this;}
+    template<typename ServiceEnvironmentOrderT = ServiceEnvironmentOrder>
+    JobQueueDetail& AddServiceEnvironmentOrder(ServiceEnvironmentOrderT&& value) { m_serviceEnvironmentOrderHasBeenSet = true; m_serviceEnvironmentOrder.emplace_back(std::forward<ServiceEnvironmentOrderT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of job queue. For service jobs that run on SageMaker Training, this
+     * value is <code>SAGEMAKER_TRAINING</code>. For regular container jobs, this value
+     * is <code>EKS</code>, <code>ECS</code>, or <code>ECS_FARGATE</code> depending on
+     * the compute environment.</p>
+     */
+    inline JobQueueType GetJobQueueType() const { return m_jobQueueType; }
+    inline bool JobQueueTypeHasBeenSet() const { return m_jobQueueTypeHasBeenSet; }
+    inline void SetJobQueueType(JobQueueType value) { m_jobQueueTypeHasBeenSet = true; m_jobQueueType = value; }
+    inline JobQueueDetail& WithJobQueueType(JobQueueType value) { SetJobQueueType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
@@ -223,6 +254,12 @@ namespace Model
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet = false;
+
+    Aws::Vector<ServiceEnvironmentOrder> m_serviceEnvironmentOrder;
+    bool m_serviceEnvironmentOrderHasBeenSet = false;
+
+    JobQueueType m_jobQueueType{JobQueueType::NOT_SET};
+    bool m_jobQueueTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

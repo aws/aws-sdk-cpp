@@ -79,8 +79,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>OutputSource</code> objects, each of which contains fields
-     * <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and
-     * <code>Output</code>.</p>
+     * <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>,
+     * and <code>output</code>.</p>
      */
     inline const Aws::Vector<OutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
     inline bool OutputSourceConfigHasBeenSet() const { return m_outputSourceConfigHasBeenSet; }
@@ -107,8 +107,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object which defines an incremental run type and has only
-     * <code>incrementalRunType</code> as a field.</p>
+     * <p>Optional. An object that defines the incremental run type. This object
+     * contains only the <code>incrementalRunType</code> field, which appears as
+     * "Automatic" in the console. </p>  <p>For workflows where
+     * <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing
+     * is not supported. </p> 
      */
     inline const IncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
     inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }

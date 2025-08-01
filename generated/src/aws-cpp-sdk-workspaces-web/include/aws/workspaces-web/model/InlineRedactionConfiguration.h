@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/InlineRedactionPattern.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -42,20 +42,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The global confidence level for the inline redaction configuration. This
-     * indicates the certainty of data type matches in the redaction process.
-     * Confidence level 3 means high confidence, and requires a formatted text pattern
-     * match in order for content to be redacted. Confidence level 2 means medium
-     * confidence, and redaction considers both formatted and unformatted text, and
-     * adds keyword associate to the logic. Confidence level 1 means low confidence,
-     * and redaction is enforced for both formatted pattern + unformatted pattern
-     * without keyword. This is applied to patterns that do not have a pattern-level
-     * confidence level. Defaults to confidence level 2.</p>
+     * <p>The inline redaction patterns to be enabled for the inline redaction
+     * configuration.</p>
      */
-    inline int GetGlobalConfidenceLevel() const { return m_globalConfidenceLevel; }
-    inline bool GlobalConfidenceLevelHasBeenSet() const { return m_globalConfidenceLevelHasBeenSet; }
-    inline void SetGlobalConfidenceLevel(int value) { m_globalConfidenceLevelHasBeenSet = true; m_globalConfidenceLevel = value; }
-    inline InlineRedactionConfiguration& WithGlobalConfidenceLevel(int value) { SetGlobalConfidenceLevel(value); return *this;}
+    inline const Aws::Vector<InlineRedactionPattern>& GetInlineRedactionPatterns() const { return m_inlineRedactionPatterns; }
+    inline bool InlineRedactionPatternsHasBeenSet() const { return m_inlineRedactionPatternsHasBeenSet; }
+    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
+    void SetInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns = std::forward<InlineRedactionPatternsT>(value); }
+    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
+    InlineRedactionConfiguration& WithInlineRedactionPatterns(InlineRedactionPatternsT&& value) { SetInlineRedactionPatterns(std::forward<InlineRedactionPatternsT>(value)); return *this;}
+    template<typename InlineRedactionPatternsT = InlineRedactionPattern>
+    InlineRedactionConfiguration& AddInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns.emplace_back(std::forward<InlineRedactionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,22 +89,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The inline redaction patterns to be enabled for the inline redaction
-     * configuration.</p>
+     * <p>The global confidence level for the inline redaction configuration. This
+     * indicates the certainty of data type matches in the redaction process.
+     * Confidence level 3 means high confidence, and requires a formatted text pattern
+     * match in order for content to be redacted. Confidence level 2 means medium
+     * confidence, and redaction considers both formatted and unformatted text, and
+     * adds keyword associate to the logic. Confidence level 1 means low confidence,
+     * and redaction is enforced for both formatted pattern + unformatted pattern
+     * without keyword. This is applied to patterns that do not have a pattern-level
+     * confidence level. Defaults to confidence level 2.</p>
      */
-    inline const Aws::Vector<InlineRedactionPattern>& GetInlineRedactionPatterns() const { return m_inlineRedactionPatterns; }
-    inline bool InlineRedactionPatternsHasBeenSet() const { return m_inlineRedactionPatternsHasBeenSet; }
-    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
-    void SetInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns = std::forward<InlineRedactionPatternsT>(value); }
-    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
-    InlineRedactionConfiguration& WithInlineRedactionPatterns(InlineRedactionPatternsT&& value) { SetInlineRedactionPatterns(std::forward<InlineRedactionPatternsT>(value)); return *this;}
-    template<typename InlineRedactionPatternsT = InlineRedactionPattern>
-    InlineRedactionConfiguration& AddInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns.emplace_back(std::forward<InlineRedactionPatternsT>(value)); return *this; }
+    inline int GetGlobalConfidenceLevel() const { return m_globalConfidenceLevel; }
+    inline bool GlobalConfidenceLevelHasBeenSet() const { return m_globalConfidenceLevelHasBeenSet; }
+    inline void SetGlobalConfidenceLevel(int value) { m_globalConfidenceLevelHasBeenSet = true; m_globalConfidenceLevel = value; }
+    inline InlineRedactionConfiguration& WithGlobalConfidenceLevel(int value) { SetGlobalConfidenceLevel(value); return *this;}
     ///@}
   private:
 
-    int m_globalConfidenceLevel{0};
-    bool m_globalConfidenceLevelHasBeenSet = false;
+    Aws::Vector<InlineRedactionPattern> m_inlineRedactionPatterns;
+    bool m_inlineRedactionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_globalEnforcedUrls;
     bool m_globalEnforcedUrlsHasBeenSet = false;
@@ -115,8 +115,8 @@ namespace Model
     Aws::Vector<Aws::String> m_globalExemptUrls;
     bool m_globalExemptUrlsHasBeenSet = false;
 
-    Aws::Vector<InlineRedactionPattern> m_inlineRedactionPatterns;
-    bool m_inlineRedactionPatternsHasBeenSet = false;
+    int m_globalConfidenceLevel{0};
+    bool m_globalConfidenceLevelHasBeenSet = false;
   };
 
 } // namespace Model

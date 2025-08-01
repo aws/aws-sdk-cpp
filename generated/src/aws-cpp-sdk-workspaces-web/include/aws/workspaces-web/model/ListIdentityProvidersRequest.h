@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to be included in the next page.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListIdentityProvidersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
@@ -59,6 +49,16 @@ namespace Model
     void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
     template<typename NextTokenT = Aws::String>
     ListIdentityProvidersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to be included in the next page.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListIdentityProvidersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_portalArn;
     bool m_portalArnHasBeenSet = false;

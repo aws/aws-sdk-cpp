@@ -10,7 +10,9 @@
 #include <aws/glue/model/TargetFormat.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/DirectSchemaChangePolicy.h>
+#include <aws/glue/model/AutoDataQuality.h>
 #include <aws/glue/model/IcebergTargetCompressionType.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +141,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const AutoDataQuality& GetAutoDataQuality() const { return m_autoDataQuality; }
+    inline bool AutoDataQualityHasBeenSet() const { return m_autoDataQualityHasBeenSet; }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    void SetAutoDataQuality(AutoDataQualityT&& value) { m_autoDataQualityHasBeenSet = true; m_autoDataQuality = std::forward<AutoDataQualityT>(value); }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    S3IcebergDirectTarget& WithAutoDataQuality(AutoDataQualityT&& value) { SetAutoDataQuality(std::forward<AutoDataQualityT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Specifies the compression codec used for Iceberg table files in S3.</p>
      */
@@ -159,6 +171,20 @@ namespace Model
     void SetNumberTargetPartitions(NumberTargetPartitionsT&& value) { m_numberTargetPartitionsHasBeenSet = true; m_numberTargetPartitions = std::forward<NumberTargetPartitionsT>(value); }
     template<typename NumberTargetPartitionsT = Aws::String>
     S3IcebergDirectTarget& WithNumberTargetPartitions(NumberTargetPartitionsT&& value) { SetNumberTargetPartitions(std::forward<NumberTargetPartitionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    S3IcebergDirectTarget& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    S3IcebergDirectTarget& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 
@@ -183,11 +209,17 @@ namespace Model
     DirectSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;
 
+    AutoDataQuality m_autoDataQuality;
+    bool m_autoDataQualityHasBeenSet = false;
+
     IcebergTargetCompressionType m_compression{IcebergTargetCompressionType::NOT_SET};
     bool m_compressionHasBeenSet = false;
 
     Aws::String m_numberTargetPartitions;
     bool m_numberTargetPartitionsHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

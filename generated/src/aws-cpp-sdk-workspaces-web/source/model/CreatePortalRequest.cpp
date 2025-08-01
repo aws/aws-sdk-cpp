@@ -16,48 +16,9 @@ Aws::String CreatePortalRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_additionalEncryptionContextHasBeenSet)
-  {
-   JsonValue additionalEncryptionContextJsonMap;
-   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
-   {
-     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
-   }
-   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
-
-  }
-
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_customerManagedKeyHasBeenSet)
-  {
-   payload.WithString("customerManagedKey", m_customerManagedKey);
-
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
-  }
-
-  if(m_maxConcurrentSessionsHasBeenSet)
-  {
-   payload.WithInteger("maxConcurrentSessions", m_maxConcurrentSessions);
 
   }
 
@@ -69,6 +30,45 @@ Aws::String CreatePortalRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
+  }
+
+  if(m_additionalEncryptionContextHasBeenSet)
+  {
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
+   {
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
+   }
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
+  }
+
+  if(m_maxConcurrentSessionsHasBeenSet)
+  {
+   payload.WithInteger("maxConcurrentSessions", m_maxConcurrentSessions);
 
   }
 

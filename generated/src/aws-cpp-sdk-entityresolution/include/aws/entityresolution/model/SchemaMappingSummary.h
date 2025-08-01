@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>SchemaName</code>, <code>SchemaArn</code>,
-   * <code>CreatedAt</code>, and<code>UpdatedAt</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>schemaName</code>, <code>schemaArn</code>,
+   * <code>createdAt</code>, <code>updatedAt</code>, and
+   * <code>hasWorkflows</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaMappingSummary">AWS
    * API Reference</a></p>
    */

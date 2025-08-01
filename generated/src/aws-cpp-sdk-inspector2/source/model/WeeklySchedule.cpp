@@ -25,6 +25,11 @@ WeeklySchedule::WeeklySchedule(JsonView jsonValue)
 
 WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetObject("startTime");
+    m_startTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("days"))
   {
     Aws::Utils::Array<JsonView> daysJsonList = jsonValue.GetArray("days");
@@ -34,17 +39,18 @@ WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
     }
     m_daysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetObject("startTime");
-    m_startTimeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue WeeklySchedule::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithObject("startTime", m_startTime.Jsonize());
+
+  }
 
   if(m_daysHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue WeeklySchedule::Jsonize() const
      daysJsonList[daysIndex].AsString(DayMapper::GetNameForDay(m_days[daysIndex]));
    }
    payload.WithArray("days", std::move(daysJsonList));
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithObject("startTime", m_startTime.Jsonize());
 
   }
 

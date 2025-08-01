@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>RuleName</code>, and
-   * <code>MatchingKeys</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing the <code>ruleName</code> and
+   * <code>matchingKeys</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/Rule">AWS
    * API Reference</a></p>
    */

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the created security configuration. </p>
+     * <p>Details about the created security configuration.</p>
      */
     inline const SecurityConfigDetail& GetSecurityConfigDetail() const { return m_securityConfigDetail; }
     template<typename SecurityConfigDetailT = SecurityConfigDetail>

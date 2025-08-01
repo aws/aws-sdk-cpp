@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/inspector2/model/ConfigurationLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
+#include <aws/inspector2/model/ConfigurationLevel.h>
 #include <aws/inspector2/model/ScopeSettings.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -39,6 +39,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the scan configuration.</p>
+     */
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    GetCodeSecurityScanConfigurationResult& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the scan configuration.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetCodeSecurityScanConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration settings for the code security scan.</p>
      */
     inline const CodeSecurityScanConfiguration& GetConfiguration() const { return m_configuration; }
@@ -46,6 +68,28 @@ namespace Model
     void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
     template<typename ConfigurationT = CodeSecurityScanConfiguration>
     GetCodeSecurityScanConfigurationResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The security level for the scan configuration.</p>
+     */
+    inline ConfigurationLevel GetLevel() const { return m_level; }
+    inline void SetLevel(ConfigurationLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline GetCodeSecurityScanConfigurationResult& WithLevel(ConfigurationLevel value) { SetLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The scope settings that define which repositories will be scanned. If the
+     * <code>ScopeSetting</code> parameter is <code>ALL</code> the scan configuration
+     * applies to all existing and future projects imported into Amazon Inspector.</p>
+     */
+    inline const ScopeSettings& GetScopeSettings() const { return m_scopeSettings; }
+    template<typename ScopeSettingsT = ScopeSettings>
+    void SetScopeSettings(ScopeSettingsT&& value) { m_scopeSettingsHasBeenSet = true; m_scopeSettings = std::forward<ScopeSettingsT>(value); }
+    template<typename ScopeSettingsT = ScopeSettings>
+    GetCodeSecurityScanConfigurationResult& WithScopeSettings(ScopeSettingsT&& value) { SetScopeSettings(std::forward<ScopeSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,50 +112,6 @@ namespace Model
     void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
     GetCodeSecurityScanConfigurationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security level for the scan configuration.</p>
-     */
-    inline ConfigurationLevel GetLevel() const { return m_level; }
-    inline void SetLevel(ConfigurationLevel value) { m_levelHasBeenSet = true; m_level = value; }
-    inline GetCodeSecurityScanConfigurationResult& WithLevel(ConfigurationLevel value) { SetLevel(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the scan configuration.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GetCodeSecurityScanConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scan configuration.</p>
-     */
-    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
-    template<typename ScanConfigurationArnT = Aws::String>
-    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
-    template<typename ScanConfigurationArnT = Aws::String>
-    GetCodeSecurityScanConfigurationResult& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The scope settings that define which repositories will be scanned. If the
-     * <code>ScopeSetting</code> parameter is <code>ALL</code> the scan configuration
-     * applies to all existing and future projects imported into Amazon Inspector.</p>
-     */
-    inline const ScopeSettings& GetScopeSettings() const { return m_scopeSettings; }
-    template<typename ScopeSettingsT = ScopeSettings>
-    void SetScopeSettings(ScopeSettingsT&& value) { m_scopeSettingsHasBeenSet = true; m_scopeSettings = std::forward<ScopeSettingsT>(value); }
-    template<typename ScopeSettingsT = ScopeSettings>
-    GetCodeSecurityScanConfigurationResult& WithScopeSettings(ScopeSettingsT&& value) { SetScopeSettings(std::forward<ScopeSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,26 +139,26 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_scanConfigurationArn;
+    bool m_scanConfigurationArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     CodeSecurityScanConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    ConfigurationLevel m_level{ConfigurationLevel::NOT_SET};
+    bool m_levelHasBeenSet = false;
+
+    ScopeSettings m_scopeSettings;
+    bool m_scopeSettingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
-
-    ConfigurationLevel m_level{ConfigurationLevel::NOT_SET};
-    bool m_levelHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_scanConfigurationArn;
-    bool m_scanConfigurationArnHasBeenSet = false;
-
-    ScopeSettings m_scopeSettings;
-    bool m_scopeSettingsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

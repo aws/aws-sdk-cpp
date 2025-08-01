@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/ReportingErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/ResourceFilterCriteria.h>
 #include <aws/inspector2/model/SbomReportFormat.h>
-#include <aws/inspector2/model/Destination.h>
 #include <aws/inspector2/model/ExternalReportStatus.h>
+#include <aws/inspector2/model/ReportingErrorCode.h>
+#include <aws/inspector2/model/Destination.h>
+#include <aws/inspector2/model/ResourceFilterCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The report ID of the software bill of materials (SBOM) report.</p>
+     */
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    GetSbomExportResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The format of the software bill of materials (SBOM) report.</p>
+     */
+    inline SbomReportFormat GetFormat() const { return m_format; }
+    inline void SetFormat(SbomReportFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetSbomExportResult& WithFormat(SbomReportFormat value) { SetFormat(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the software bill of materials (SBOM) report.</p>
+     */
+    inline ExternalReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExternalReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSbomExportResult& WithStatus(ExternalReportStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An error code.</p>
      */
     inline ReportingErrorCode GetErrorCode() const { return m_errorCode; }
@@ -59,38 +88,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the resource filter criteria used for the software
-     * bill of materials (SBOM) report.</p>
-     */
-    inline const ResourceFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
-    template<typename FilterCriteriaT = ResourceFilterCriteria>
-    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
-    template<typename FilterCriteriaT = ResourceFilterCriteria>
-    GetSbomExportResult& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The format of the software bill of materials (SBOM) report.</p>
-     */
-    inline SbomReportFormat GetFormat() const { return m_format; }
-    inline void SetFormat(SbomReportFormat value) { m_formatHasBeenSet = true; m_format = value; }
-    inline GetSbomExportResult& WithFormat(SbomReportFormat value) { SetFormat(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The report ID of the software bill of materials (SBOM) report.</p>
-     */
-    inline const Aws::String& GetReportId() const { return m_reportId; }
-    template<typename ReportIdT = Aws::String>
-    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
-    template<typename ReportIdT = Aws::String>
-    GetSbomExportResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains details of the Amazon S3 bucket and KMS key used to export
      * findings</p>
      */
@@ -103,11 +100,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the software bill of materials (SBOM) report.</p>
+     * <p>Contains details about the resource filter criteria used for the software
+     * bill of materials (SBOM) report.</p>
      */
-    inline ExternalReportStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ExternalReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetSbomExportResult& WithStatus(ExternalReportStatus value) { SetStatus(value); return *this;}
+    inline const ResourceFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
+    template<typename FilterCriteriaT = ResourceFilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = ResourceFilterCriteria>
+    GetSbomExportResult& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,26 +120,26 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
+
+    SbomReportFormat m_format{SbomReportFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
+
+    ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
     ReportingErrorCode m_errorCode{ReportingErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    ResourceFilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet = false;
-
-    SbomReportFormat m_format{SbomReportFormat::NOT_SET};
-    bool m_formatHasBeenSet = false;
-
-    Aws::String m_reportId;
-    bool m_reportIdHasBeenSet = false;
-
     Destination m_s3Destination;
     bool m_s3DestinationHasBeenSet = false;
 
-    ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    ResourceFilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

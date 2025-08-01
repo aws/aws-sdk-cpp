@@ -345,8 +345,8 @@ namespace Model
     ///@{
     /**
      * <p>This field specifies whether the connection mode is through a standard
-     * distribution (direct) or a multi-tenant distribution with distribution
-     * tenants(tenant-only).</p>
+     * distribution (direct) or a multi-tenant distribution with distribution tenants
+     * (tenant-only).</p>
      */
     inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
     inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }

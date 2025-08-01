@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -32,20 +32,6 @@ namespace Model
 
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
-    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    template<typename AccountIdsT = Aws::Vector<Aws::String>>
-    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
-    template<typename AccountIdsT = Aws::Vector<Aws::String>>
-    ListUsageTotalsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
-    template<typename AccountIdsT = Aws::String>
-    ListUsageTotalsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -76,16 +62,30 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListUsageTotalsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    ListUsageTotalsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    ListUsageTotalsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
+    ///@}
+  private:
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_accountIds;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

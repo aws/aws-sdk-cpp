@@ -80,6 +80,20 @@ S3DirectTarget& S3DirectTarget::operator =(JsonView jsonValue)
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
     m_schemaChangePolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AutoDataQuality"))
+  {
+    m_autoDataQuality = jsonValue.GetObject("AutoDataQuality");
+    m_autoDataQualityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OutputSchemas"))
+  {
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+    {
+      m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
+    }
+    m_outputSchemasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -146,6 +160,23 @@ JsonValue S3DirectTarget::Jsonize() const
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_autoDataQualityHasBeenSet)
+  {
+   payload.WithObject("AutoDataQuality", m_autoDataQuality.Jsonize());
+
+  }
+
+  if(m_outputSchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+   {
+     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+   }
+   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
 
   }
 

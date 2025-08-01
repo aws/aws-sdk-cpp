@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>InputSourceARN</code>, <code>SchemaName</code>,
-   * and <code>Type</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>inputSourceARN</code>, <code>schemaName</code>,
+   * and <code>type</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdMappingWorkflowInputSource">AWS
    * API Reference</a></p>
    */

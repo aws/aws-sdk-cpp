@@ -25,15 +25,15 @@ SuggestedFix::SuggestedFix(JsonView jsonValue)
 
 SuggestedFix& SuggestedFix::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("code"))
-  {
-    m_code = jsonValue.GetString("code");
-    m_codeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("code"))
+  {
+    m_code = jsonValue.GetString("code");
+    m_codeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue SuggestedFix::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_codeHasBeenSet)
+  {
+   payload.WithString("code", m_code);
 
   }
 

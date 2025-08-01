@@ -7,8 +7,8 @@
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/CustomPattern.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-web/model/RedactionPlaceHolder.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -56,23 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The confidence level for inline redaction pattern. This indicates the
-     * certainty of data type matches in the redaction process. Confidence level 3
-     * means high confidence, and requires a formatted text pattern match in order for
-     * content to be redacted. Confidence level 2 means medium confidence, and
-     * redaction considers both formatted and unformatted text, and adds keyword
-     * associate to the logic. Confidence level 1 means low confidence, and redaction
-     * is enforced for both formatted pattern + unformatted pattern without keyword.
-     * This overrides the global confidence level.</p>
-     */
-    inline int GetConfidenceLevel() const { return m_confidenceLevel; }
-    inline bool ConfidenceLevelHasBeenSet() const { return m_confidenceLevelHasBeenSet; }
-    inline void SetConfidenceLevel(int value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
-    inline InlineRedactionPattern& WithConfidenceLevel(int value) { SetConfidenceLevel(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>&gt;The configuration for a custom pattern. Either a customPattern or
      * builtInPatternId is required.</p>
      */
@@ -82,6 +65,19 @@ namespace Model
     void SetCustomPattern(CustomPatternT&& value) { m_customPatternHasBeenSet = true; m_customPattern = std::forward<CustomPatternT>(value); }
     template<typename CustomPatternT = CustomPattern>
     InlineRedactionPattern& WithCustomPattern(CustomPatternT&& value) { SetCustomPattern(std::forward<CustomPatternT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The redaction placeholder that will replace the redacted text in session for
+     * the inline redaction pattern.</p>
+     */
+    inline const RedactionPlaceHolder& GetRedactionPlaceHolder() const { return m_redactionPlaceHolder; }
+    inline bool RedactionPlaceHolderHasBeenSet() const { return m_redactionPlaceHolderHasBeenSet; }
+    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
+    void SetRedactionPlaceHolder(RedactionPlaceHolderT&& value) { m_redactionPlaceHolderHasBeenSet = true; m_redactionPlaceHolder = std::forward<RedactionPlaceHolderT>(value); }
+    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
+    InlineRedactionPattern& WithRedactionPlaceHolder(RedactionPlaceHolderT&& value) { SetRedactionPlaceHolder(std::forward<RedactionPlaceHolderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,26 +113,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The redaction placeholder that will replace the redacted text in session for
-     * the inline redaction pattern.</p>
+     * <p>The confidence level for inline redaction pattern. This indicates the
+     * certainty of data type matches in the redaction process. Confidence level 3
+     * means high confidence, and requires a formatted text pattern match in order for
+     * content to be redacted. Confidence level 2 means medium confidence, and
+     * redaction considers both formatted and unformatted text, and adds keyword
+     * associate to the logic. Confidence level 1 means low confidence, and redaction
+     * is enforced for both formatted pattern + unformatted pattern without keyword.
+     * This overrides the global confidence level.</p>
      */
-    inline const RedactionPlaceHolder& GetRedactionPlaceHolder() const { return m_redactionPlaceHolder; }
-    inline bool RedactionPlaceHolderHasBeenSet() const { return m_redactionPlaceHolderHasBeenSet; }
-    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
-    void SetRedactionPlaceHolder(RedactionPlaceHolderT&& value) { m_redactionPlaceHolderHasBeenSet = true; m_redactionPlaceHolder = std::forward<RedactionPlaceHolderT>(value); }
-    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
-    InlineRedactionPattern& WithRedactionPlaceHolder(RedactionPlaceHolderT&& value) { SetRedactionPlaceHolder(std::forward<RedactionPlaceHolderT>(value)); return *this;}
+    inline int GetConfidenceLevel() const { return m_confidenceLevel; }
+    inline bool ConfidenceLevelHasBeenSet() const { return m_confidenceLevelHasBeenSet; }
+    inline void SetConfidenceLevel(int value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
+    inline InlineRedactionPattern& WithConfidenceLevel(int value) { SetConfidenceLevel(value); return *this;}
     ///@}
   private:
 
     Aws::String m_builtInPatternId;
     bool m_builtInPatternIdHasBeenSet = false;
 
-    int m_confidenceLevel{0};
-    bool m_confidenceLevelHasBeenSet = false;
-
     CustomPattern m_customPattern;
     bool m_customPatternHasBeenSet = false;
+
+    RedactionPlaceHolder m_redactionPlaceHolder;
+    bool m_redactionPlaceHolderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enforcedUrls;
     bool m_enforcedUrlsHasBeenSet = false;
@@ -144,8 +144,8 @@ namespace Model
     Aws::Vector<Aws::String> m_exemptUrls;
     bool m_exemptUrlsHasBeenSet = false;
 
-    RedactionPlaceHolder m_redactionPlaceHolder;
-    bool m_redactionPlaceHolderHasBeenSet = false;
+    int m_confidenceLevel{0};
+    bool m_confidenceLevelHasBeenSet = false;
   };
 
 } // namespace Model

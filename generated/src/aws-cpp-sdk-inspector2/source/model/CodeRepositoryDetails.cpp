@@ -25,15 +25,15 @@ CodeRepositoryDetails::CodeRepositoryDetails(JsonView jsonValue)
 
 CodeRepositoryDetails& CodeRepositoryDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("integrationArn"))
-  {
-    m_integrationArn = jsonValue.GetString("integrationArn");
-    m_integrationArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
     m_projectNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("integrationArn"))
+  {
+    m_integrationArn = jsonValue.GetString("integrationArn");
+    m_integrationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("providerType"))
   {
@@ -47,15 +47,15 @@ JsonValue CodeRepositoryDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_integrationArnHasBeenSet)
-  {
-   payload.WithString("integrationArn", m_integrationArn);
-
-  }
-
   if(m_projectNameHasBeenSet)
   {
    payload.WithString("projectName", m_projectName);
+
+  }
+
+  if(m_integrationArnHasBeenSet)
+  {
+   payload.WithString("integrationArn", m_integrationArn);
 
   }
 

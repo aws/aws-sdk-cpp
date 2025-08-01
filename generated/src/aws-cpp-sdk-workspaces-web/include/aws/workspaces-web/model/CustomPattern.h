@@ -40,35 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The keyword regex for the customer pattern. After there is a match to the
-     * pattern regex, the keyword regex is used to search within the proximity of the
-     * match. If there is a keyword match, then the match is confirmed. If no keyword
-     * regex is provided, the pattern regex match will automatically be confirmed. The
-     * format must follow JavaScript regex format. The pattern must be enclosed between
-     * slashes, and can have flags behind the second slash. For example, “/ab+c/gi”</p>
-     */
-    inline const Aws::String& GetKeywordRegex() const { return m_keywordRegex; }
-    inline bool KeywordRegexHasBeenSet() const { return m_keywordRegexHasBeenSet; }
-    template<typename KeywordRegexT = Aws::String>
-    void SetKeywordRegex(KeywordRegexT&& value) { m_keywordRegexHasBeenSet = true; m_keywordRegex = std::forward<KeywordRegexT>(value); }
-    template<typename KeywordRegexT = Aws::String>
-    CustomPattern& WithKeywordRegex(KeywordRegexT&& value) { SetKeywordRegex(std::forward<KeywordRegexT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The pattern description for the customer pattern.</p>
-     */
-    inline const Aws::String& GetPatternDescription() const { return m_patternDescription; }
-    inline bool PatternDescriptionHasBeenSet() const { return m_patternDescriptionHasBeenSet; }
-    template<typename PatternDescriptionT = Aws::String>
-    void SetPatternDescription(PatternDescriptionT&& value) { m_patternDescriptionHasBeenSet = true; m_patternDescription = std::forward<PatternDescriptionT>(value); }
-    template<typename PatternDescriptionT = Aws::String>
-    CustomPattern& WithPatternDescription(PatternDescriptionT&& value) { SetPatternDescription(std::forward<PatternDescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The pattern name for the custom pattern.</p>
      */
     inline const Aws::String& GetPatternName() const { return m_patternName; }
@@ -92,19 +63,48 @@ namespace Model
     template<typename PatternRegexT = Aws::String>
     CustomPattern& WithPatternRegex(PatternRegexT&& value) { SetPatternRegex(std::forward<PatternRegexT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The pattern description for the customer pattern.</p>
+     */
+    inline const Aws::String& GetPatternDescription() const { return m_patternDescription; }
+    inline bool PatternDescriptionHasBeenSet() const { return m_patternDescriptionHasBeenSet; }
+    template<typename PatternDescriptionT = Aws::String>
+    void SetPatternDescription(PatternDescriptionT&& value) { m_patternDescriptionHasBeenSet = true; m_patternDescription = std::forward<PatternDescriptionT>(value); }
+    template<typename PatternDescriptionT = Aws::String>
+    CustomPattern& WithPatternDescription(PatternDescriptionT&& value) { SetPatternDescription(std::forward<PatternDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The keyword regex for the customer pattern. After there is a match to the
+     * pattern regex, the keyword regex is used to search within the proximity of the
+     * match. If there is a keyword match, then the match is confirmed. If no keyword
+     * regex is provided, the pattern regex match will automatically be confirmed. The
+     * format must follow JavaScript regex format. The pattern must be enclosed between
+     * slashes, and can have flags behind the second slash. For example, “/ab+c/gi”</p>
+     */
+    inline const Aws::String& GetKeywordRegex() const { return m_keywordRegex; }
+    inline bool KeywordRegexHasBeenSet() const { return m_keywordRegexHasBeenSet; }
+    template<typename KeywordRegexT = Aws::String>
+    void SetKeywordRegex(KeywordRegexT&& value) { m_keywordRegexHasBeenSet = true; m_keywordRegex = std::forward<KeywordRegexT>(value); }
+    template<typename KeywordRegexT = Aws::String>
+    CustomPattern& WithKeywordRegex(KeywordRegexT&& value) { SetKeywordRegex(std::forward<KeywordRegexT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_keywordRegex;
-    bool m_keywordRegexHasBeenSet = false;
-
-    Aws::String m_patternDescription;
-    bool m_patternDescriptionHasBeenSet = false;
 
     Aws::String m_patternName;
     bool m_patternNameHasBeenSet = false;
 
     Aws::String m_patternRegex;
     bool m_patternRegexHasBeenSet = false;
+
+    Aws::String m_patternDescription;
+    bool m_patternDescriptionHasBeenSet = false;
+
+    Aws::String m_keywordRegex;
+    bool m_keywordRegexHasBeenSet = false;
   };
 
 } // namespace Model

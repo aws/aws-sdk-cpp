@@ -163,6 +163,17 @@ Aws::String UpdateProfileRequest::SerializePayload() const
 
   }
 
+  if(m_profileTypeHasBeenSet)
+  {
+   payload.WithString("ProfileType", ProfileTypeMapper::GetNameForProfileType(m_profileType));
+  }
+
+  if(m_engagementPreferencesHasBeenSet)
+  {
+   payload.WithObject("EngagementPreferences", m_engagementPreferences.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -34,6 +34,7 @@
 #include <aws/glue/model/AuthenticationConfigurationInput.h>
 #include <aws/glue/model/AuthenticationType.h>
 #include <aws/glue/model/AuthorizationCodeProperties.h>
+#include <aws/glue/model/AutoDataQuality.h>
 #include <aws/glue/model/BackfillError.h>
 #include <aws/glue/model/BackfillErrorCode.h>
 #include <aws/glue/model/BasicAuthenticationCredentials.h>
@@ -102,6 +103,7 @@
 #include <aws/glue/model/CatalogEncryptionMode.h>
 #include <aws/glue/model/CatalogEntry.h>
 #include <aws/glue/model/CatalogHudiSource.h>
+#include <aws/glue/model/CatalogIcebergSource.h>
 #include <aws/glue/model/CatalogImportStatus.h>
 #include <aws/glue/model/CatalogInput.h>
 #include <aws/glue/model/CatalogKafkaSource.h>
@@ -232,6 +234,8 @@
 #include <aws/glue/model/CsvSerdeOption.h>
 #include <aws/glue/model/CustomCode.h>
 #include <aws/glue/model/CustomEntityType.h>
+#include <aws/glue/model/DDBELTCatalogAdditionalOptions.h>
+#include <aws/glue/model/DDBELTConnectionOptions.h>
 #include <aws/glue/model/DQCompositeRuleEvaluationMethod.h>
 #include <aws/glue/model/DQResultsPublishingOptions.h>
 #include <aws/glue/model/DQStopJobOnFailureOptions.h>
@@ -271,6 +275,7 @@
 #include <aws/glue/model/DatapointInclusionAnnotation.h>
 #include <aws/glue/model/Datatype.h>
 #include <aws/glue/model/DateColumnStatisticsData.h>
+#include <aws/glue/model/DdbExportType.h>
 #include <aws/glue/model/DecimalColumnStatisticsData.h>
 #include <aws/glue/model/DecimalNumber.h>
 #include <aws/glue/model/DeleteBehavior.h>
@@ -358,6 +363,7 @@
 #include <aws/glue/model/DropNullFields.h>
 #include <aws/glue/model/DynamicTransform.h>
 #include <aws/glue/model/DynamoDBCatalogSource.h>
+#include <aws/glue/model/DynamoDBELTConnectorSource.h>
 #include <aws/glue/model/DynamoDBTarget.h>
 #include <aws/glue/model/Edge.h>
 #include <aws/glue/model/EnableHybridValues.h>
@@ -561,6 +567,7 @@
 #include <aws/glue/model/GovernedCatalogSource.h>
 #include <aws/glue/model/GovernedCatalogTarget.h>
 #include <aws/glue/model/GrokClassifier.h>
+#include <aws/glue/model/GroupFilters.h>
 #include <aws/glue/model/HudiTarget.h>
 #include <aws/glue/model/HudiTargetCompressionType.h>
 #include <aws/glue/model/HyperTargetCompressionType.h>
@@ -781,11 +788,13 @@
 #include <aws/glue/model/ResumeWorkflowRunResult.h>
 #include <aws/glue/model/RetentionConfiguration.h>
 #include <aws/glue/model/RetentionMetrics.h>
+#include <aws/glue/model/Route.h>
 #include <aws/glue/model/RunIdentifier.h>
 #include <aws/glue/model/RunStatementRequest.h>
 #include <aws/glue/model/RunStatementResult.h>
 #include <aws/glue/model/S3CatalogDeltaSource.h>
 #include <aws/glue/model/S3CatalogHudiSource.h>
+#include <aws/glue/model/S3CatalogIcebergSource.h>
 #include <aws/glue/model/S3CatalogSource.h>
 #include <aws/glue/model/S3CatalogTarget.h>
 #include <aws/glue/model/S3CsvSource.h>
@@ -802,6 +811,7 @@
 #include <aws/glue/model/S3HudiDirectTarget.h>
 #include <aws/glue/model/S3HudiSource.h>
 #include <aws/glue/model/S3HyperDirectTarget.h>
+#include <aws/glue/model/S3IcebergCatalogTarget.h>
 #include <aws/glue/model/S3IcebergDirectTarget.h>
 #include <aws/glue/model/S3JsonSource.h>
 #include <aws/glue/model/S3ParquetSource.h>

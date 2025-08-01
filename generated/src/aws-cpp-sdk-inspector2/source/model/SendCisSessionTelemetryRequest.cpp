@@ -16,17 +16,6 @@ Aws::String SendCisSessionTelemetryRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_messagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
-   for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
-   {
-     messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
-   }
-   payload.WithArray("messages", std::move(messagesJsonList));
-
-  }
-
   if(m_scanJobIdHasBeenSet)
   {
    payload.WithString("scanJobId", m_scanJobId);
@@ -36,6 +25,17 @@ Aws::String SendCisSessionTelemetryRequest::SerializePayload() const
   if(m_sessionTokenHasBeenSet)
   {
    payload.WithString("sessionToken", m_sessionToken);
+
+  }
+
+  if(m_messagesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
+   for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
+   {
+     messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
+   }
+   payload.WithArray("messages", std::move(messagesJsonList));
 
   }
 

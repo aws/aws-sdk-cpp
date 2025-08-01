@@ -37,8 +37,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain
-     * the fields <code>WorkflowName</code>, <code>WorkflowArn</code>,
-     * <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
+     * the fields <code>workflowName</code>, <code>workflowArn</code>,
+     * <code>resolutionType</code>, <code>createdAt</code>, and
+     * <code>updatedAt</code>.</p>
      */
     inline const Aws::Vector<MatchingWorkflowSummary>& GetWorkflowSummaries() const { return m_workflowSummaries; }
     template<typename WorkflowSummariesT = Aws::Vector<MatchingWorkflowSummary>>

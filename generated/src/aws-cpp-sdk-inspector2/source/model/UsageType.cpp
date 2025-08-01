@@ -28,6 +28,7 @@ namespace Aws
         static const int CODE_REPOSITORY_SAST_HASH = HashingUtils::HashString("CODE_REPOSITORY_SAST");
         static const int CODE_REPOSITORY_IAC_HASH = HashingUtils::HashString("CODE_REPOSITORY_IAC");
         static const int CODE_REPOSITORY_SCA_HASH = HashingUtils::HashString("CODE_REPOSITORY_SCA");
+        static const int EC2_AGENTLESS_INSTANCE_HOURS_HASH = HashingUtils::HashString("EC2_AGENTLESS_INSTANCE_HOURS");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return UsageType::CODE_REPOSITORY_SCA;
           }
+          else if (hashCode == EC2_AGENTLESS_INSTANCE_HOURS_HASH)
+          {
+            return UsageType::EC2_AGENTLESS_INSTANCE_HOURS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "CODE_REPOSITORY_IAC";
           case UsageType::CODE_REPOSITORY_SCA:
             return "CODE_REPOSITORY_SCA";
+          case UsageType::EC2_AGENTLESS_INSTANCE_HOURS:
+            return "EC2_AGENTLESS_INSTANCE_HOURS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

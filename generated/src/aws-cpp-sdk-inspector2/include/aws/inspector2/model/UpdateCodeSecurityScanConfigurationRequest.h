@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated configuration settings for the code security scan.</p>
-     */
-    inline const CodeSecurityScanConfiguration& GetConfiguration() const { return m_configuration; }
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    template<typename ConfigurationT = CodeSecurityScanConfiguration>
-    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
-    template<typename ConfigurationT = CodeSecurityScanConfiguration>
-    UpdateCodeSecurityScanConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the scan configuration to update.</p>
      */
     inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
@@ -56,13 +44,25 @@ namespace Model
     template<typename ScanConfigurationArnT = Aws::String>
     UpdateCodeSecurityScanConfigurationRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
-  private:
 
-    CodeSecurityScanConfiguration m_configuration;
-    bool m_configurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The updated configuration settings for the code security scan.</p>
+     */
+    inline const CodeSecurityScanConfiguration& GetConfiguration() const { return m_configuration; }
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+    template<typename ConfigurationT = CodeSecurityScanConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = CodeSecurityScanConfiguration>
+    UpdateCodeSecurityScanConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_scanConfigurationArn;
     bool m_scanConfigurationArnHasBeenSet = false;
+
+    CodeSecurityScanConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

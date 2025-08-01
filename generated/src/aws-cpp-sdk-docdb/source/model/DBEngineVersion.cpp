@@ -112,6 +112,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsCertificateRotationWithoutRestart = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsCertificateRotationWithoutRestartNode.GetText()).c_str()).c_str());
       m_supportsCertificateRotationWithoutRestartHasBeenSet = true;
     }
+    XmlNode serverlessV2FeaturesSupportNode = resultNode.FirstChild("ServerlessV2FeaturesSupport");
+    if(!serverlessV2FeaturesSupportNode.IsNull())
+    {
+      m_serverlessV2FeaturesSupport = serverlessV2FeaturesSupportNode;
+      m_serverlessV2FeaturesSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -183,6 +189,13 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
   }
 
+  if(m_serverlessV2FeaturesSupportHasBeenSet)
+  {
+      Aws::StringStream serverlessV2FeaturesSupportLocationAndMemberSs;
+      serverlessV2FeaturesSupportLocationAndMemberSs << location << index << locationValue << ".ServerlessV2FeaturesSupport";
+      m_serverlessV2FeaturesSupport.OutputToStream(oStream, serverlessV2FeaturesSupportLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -240,6 +253,12 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
   {
       oStream << location << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
+  }
+  if(m_serverlessV2FeaturesSupportHasBeenSet)
+  {
+      Aws::String serverlessV2FeaturesSupportLocationAndMember(location);
+      serverlessV2FeaturesSupportLocationAndMember += ".ServerlessV2FeaturesSupport";
+      m_serverlessV2FeaturesSupport.OutputToStream(oStream, serverlessV2FeaturesSupportLocationAndMember.c_str());
   }
 }
 

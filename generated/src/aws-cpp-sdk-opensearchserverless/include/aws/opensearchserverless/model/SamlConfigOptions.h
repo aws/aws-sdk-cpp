@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Custom entity id attribute to override default entity id for this saml
+     * <p>Custom entity ID attribute to override the default entity ID for this SAML
      * integration.</p>
      */
     inline const Aws::String& GetOpenSearchServerlessEntityId() const { return m_openSearchServerlessEntityId; }

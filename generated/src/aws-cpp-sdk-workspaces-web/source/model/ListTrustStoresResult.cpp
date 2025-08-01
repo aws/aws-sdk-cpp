@@ -25,11 +25,6 @@ ListTrustStoresResult::ListTrustStoresResult(const Aws::AmazonWebServiceResult<J
 ListTrustStoresResult& ListTrustStoresResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("trustStores"))
   {
     Aws::Utils::Array<JsonView> trustStoresJsonList = jsonValue.GetArray("trustStores");
@@ -38,6 +33,11 @@ ListTrustStoresResult& ListTrustStoresResult::operator =(const Aws::AmazonWebSer
       m_trustStores.push_back(trustStoresJsonList[trustStoresIndex].AsObject());
     }
     m_trustStoresHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

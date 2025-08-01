@@ -34,23 +34,23 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ec2InstanceTags"))
+  if(jsonValue.ValueExists("resourceId"))
   {
-    Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
-    for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
+    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
+    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
     {
-      m_ec2InstanceTags.push_back(ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject());
+      m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
     }
-    m_ec2InstanceTagsHasBeenSet = true;
+    m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecrImageTags"))
+  if(jsonValue.ValueExists("resourceType"))
   {
-    Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
-    for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
+    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
+    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
     {
-      m_ecrImageTags.push_back(ecrImageTagsJsonList[ecrImageTagsIndex].AsObject());
+      m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
     }
-    m_ecrImageTagsHasBeenSet = true;
+    m_resourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ecrRepositoryName"))
   {
@@ -70,6 +70,24 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ecrImageTags"))
+  {
+    Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
+    for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
+    {
+      m_ecrImageTags.push_back(ecrImageTagsJsonList[ecrImageTagsIndex].AsObject());
+    }
+    m_ecrImageTagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ec2InstanceTags"))
+  {
+    Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
+    for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
+    {
+      m_ec2InstanceTags.push_back(ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject());
+    }
+    m_ec2InstanceTagsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("lambdaFunctionTags"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionTagsJsonList = jsonValue.GetArray("lambdaFunctionTags");
@@ -78,24 +96,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
       m_lambdaFunctionTags.push_back(lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject());
     }
     m_lambdaFunctionTagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceId"))
-  {
-    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
-    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
-    {
-      m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
-    }
-    m_resourceIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceType"))
-  {
-    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
-    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
-    {
-      m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
-    }
-    m_resourceTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -115,25 +115,25 @@ JsonValue ResourceFilterCriteria::Jsonize() const
 
   }
 
-  if(m_ec2InstanceTagsHasBeenSet)
+  if(m_resourceIdHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> ec2InstanceTagsJsonList(m_ec2InstanceTags.size());
-   for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
+   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
+   for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
    {
-     ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject(m_ec2InstanceTags[ec2InstanceTagsIndex].Jsonize());
+     resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
    }
-   payload.WithArray("ec2InstanceTags", std::move(ec2InstanceTagsJsonList));
+   payload.WithArray("resourceId", std::move(resourceIdJsonList));
 
   }
 
-  if(m_ecrImageTagsHasBeenSet)
+  if(m_resourceTypeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> ecrImageTagsJsonList(m_ecrImageTags.size());
-   for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
+   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
+   for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
    {
-     ecrImageTagsJsonList[ecrImageTagsIndex].AsObject(m_ecrImageTags[ecrImageTagsIndex].Jsonize());
+     resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
    }
-   payload.WithArray("ecrImageTags", std::move(ecrImageTagsJsonList));
+   payload.WithArray("resourceType", std::move(resourceTypeJsonList));
 
   }
 
@@ -159,6 +159,28 @@ JsonValue ResourceFilterCriteria::Jsonize() const
 
   }
 
+  if(m_ecrImageTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ecrImageTagsJsonList(m_ecrImageTags.size());
+   for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
+   {
+     ecrImageTagsJsonList[ecrImageTagsIndex].AsObject(m_ecrImageTags[ecrImageTagsIndex].Jsonize());
+   }
+   payload.WithArray("ecrImageTags", std::move(ecrImageTagsJsonList));
+
+  }
+
+  if(m_ec2InstanceTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ec2InstanceTagsJsonList(m_ec2InstanceTags.size());
+   for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
+   {
+     ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject(m_ec2InstanceTags[ec2InstanceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ec2InstanceTags", std::move(ec2InstanceTagsJsonList));
+
+  }
+
   if(m_lambdaFunctionTagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> lambdaFunctionTagsJsonList(m_lambdaFunctionTags.size());
@@ -167,28 +189,6 @@ JsonValue ResourceFilterCriteria::Jsonize() const
      lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject(m_lambdaFunctionTags[lambdaFunctionTagsIndex].Jsonize());
    }
    payload.WithArray("lambdaFunctionTags", std::move(lambdaFunctionTagsJsonList));
-
-  }
-
-  if(m_resourceIdHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
-   for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
-   {
-     resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
-   }
-   payload.WithArray("resourceId", std::move(resourceIdJsonList));
-
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
-   for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
-   {
-     resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
-   }
-   payload.WithArray("resourceType", std::move(resourceTypeJsonList));
 
   }
 

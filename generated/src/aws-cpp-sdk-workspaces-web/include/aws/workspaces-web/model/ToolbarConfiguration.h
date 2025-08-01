@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/workspaces-web/model/MaxDisplayResolution.h>
 #include <aws/workspaces-web/model/ToolbarType.h>
 #include <aws/workspaces-web/model/VisualMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-web/model/MaxDisplayResolution.h>
 #include <aws/workspaces-web/model/ToolbarItem.h>
 #include <utility>
 
@@ -47,6 +47,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of toolbar displayed during the session.</p>
+     */
+    inline ToolbarType GetToolbarType() const { return m_toolbarType; }
+    inline bool ToolbarTypeHasBeenSet() const { return m_toolbarTypeHasBeenSet; }
+    inline void SetToolbarType(ToolbarType value) { m_toolbarTypeHasBeenSet = true; m_toolbarType = value; }
+    inline ToolbarConfiguration& WithToolbarType(ToolbarType value) { SetToolbarType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The visual mode of the toolbar.</p>
+     */
+    inline VisualMode GetVisualMode() const { return m_visualMode; }
+    inline bool VisualModeHasBeenSet() const { return m_visualModeHasBeenSet; }
+    inline void SetVisualMode(VisualMode value) { m_visualModeHasBeenSet = true; m_visualMode = value; }
+    inline ToolbarConfiguration& WithVisualMode(VisualMode value) { SetVisualMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of toolbar items to be hidden.</p>
      */
     inline const Aws::Vector<ToolbarItem>& GetHiddenToolbarItems() const { return m_hiddenToolbarItems; }
@@ -67,39 +87,19 @@ namespace Model
     inline void SetMaxDisplayResolution(MaxDisplayResolution value) { m_maxDisplayResolutionHasBeenSet = true; m_maxDisplayResolution = value; }
     inline ToolbarConfiguration& WithMaxDisplayResolution(MaxDisplayResolution value) { SetMaxDisplayResolution(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of toolbar displayed during the session.</p>
-     */
-    inline ToolbarType GetToolbarType() const { return m_toolbarType; }
-    inline bool ToolbarTypeHasBeenSet() const { return m_toolbarTypeHasBeenSet; }
-    inline void SetToolbarType(ToolbarType value) { m_toolbarTypeHasBeenSet = true; m_toolbarType = value; }
-    inline ToolbarConfiguration& WithToolbarType(ToolbarType value) { SetToolbarType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The visual mode of the toolbar.</p>
-     */
-    inline VisualMode GetVisualMode() const { return m_visualMode; }
-    inline bool VisualModeHasBeenSet() const { return m_visualModeHasBeenSet; }
-    inline void SetVisualMode(VisualMode value) { m_visualModeHasBeenSet = true; m_visualMode = value; }
-    inline ToolbarConfiguration& WithVisualMode(VisualMode value) { SetVisualMode(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<ToolbarItem> m_hiddenToolbarItems;
-    bool m_hiddenToolbarItemsHasBeenSet = false;
-
-    MaxDisplayResolution m_maxDisplayResolution{MaxDisplayResolution::NOT_SET};
-    bool m_maxDisplayResolutionHasBeenSet = false;
 
     ToolbarType m_toolbarType{ToolbarType::NOT_SET};
     bool m_toolbarTypeHasBeenSet = false;
 
     VisualMode m_visualMode{VisualMode::NOT_SET};
     bool m_visualModeHasBeenSet = false;
+
+    Aws::Vector<ToolbarItem> m_hiddenToolbarItems;
+    bool m_hiddenToolbarItemsHasBeenSet = false;
+
+    MaxDisplayResolution m_maxDisplayResolution{MaxDisplayResolution::NOT_SET};
+    bool m_maxDisplayResolutionHasBeenSet = false;
   };
 
 } // namespace Model

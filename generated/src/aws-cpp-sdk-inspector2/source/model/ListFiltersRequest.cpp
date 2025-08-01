@@ -16,11 +16,6 @@ Aws::String ListFiltersRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
-  }
-
   if(m_arnsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
@@ -32,15 +27,20 @@ Aws::String ListFiltersRequest::SerializePayload() const
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
+   payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
   }
 
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

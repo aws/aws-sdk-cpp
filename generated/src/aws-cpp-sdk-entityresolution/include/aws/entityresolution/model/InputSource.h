@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>InputSourceARN</code>, <code>SchemaName</code>,
-   * and <code>ApplyNormalization</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>inputSourceARN</code>, <code>schemaName</code>,
+   * and <code>applyNormalization</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/InputSource">AWS
    * API Reference</a></p>
    */

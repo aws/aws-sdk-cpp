@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/CisSecurityLevel.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/inspector2/model/Schedule.h>
 #include <aws/inspector2/model/CisTargets.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS scan configuration's owner ID.</p>
-     */
-    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
-    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    template<typename OwnerIdT = Aws::String>
-    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
-    template<typename OwnerIdT = Aws::String>
-    CisScanConfiguration& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The CIS scan configuration's scan configuration ARN.</p>
      */
     inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
@@ -63,6 +51,18 @@ namespace Model
     void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
     template<typename ScanConfigurationArnT = Aws::String>
     CisScanConfiguration& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CIS scan configuration's owner ID.</p>
+     */
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    CisScanConfiguration& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,6 +79,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The CIS scan configuration's security level.</p>
+     */
+    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
+    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
+    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
+    inline CisScanConfiguration& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The CIS scan configuration's schedule.</p>
      */
     inline const Schedule& GetSchedule() const { return m_schedule; }
@@ -91,12 +101,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CIS scan configuration's security level.</p>
+     * <p>The CIS scan configuration's targets.</p>
      */
-    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
-    inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
-    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
-    inline CisScanConfiguration& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
+    inline const CisTargets& GetTargets() const { return m_targets; }
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+    template<typename TargetsT = CisTargets>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = CisTargets>
+    CisScanConfiguration& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,40 +126,28 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The CIS scan configuration's targets.</p>
-     */
-    inline const CisTargets& GetTargets() const { return m_targets; }
-    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    template<typename TargetsT = CisTargets>
-    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
-    template<typename TargetsT = CisTargets>
-    CisScanConfiguration& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_scanConfigurationArn;
     bool m_scanConfigurationArnHasBeenSet = false;
 
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
+
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
-
-    Schedule m_schedule;
-    bool m_scheduleHasBeenSet = false;
 
     CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
     bool m_securityLevelHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+    Schedule m_schedule;
+    bool m_scheduleHasBeenSet = false;
 
     CisTargets m_targets;
     bool m_targetsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

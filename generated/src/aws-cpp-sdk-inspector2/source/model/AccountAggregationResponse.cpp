@@ -30,6 +30,11 @@ AccountAggregationResponse& AccountAggregationResponse::operator =(JsonView json
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("severityCounts"))
+  {
+    m_severityCounts = jsonValue.GetObject("severityCounts");
+    m_severityCountsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("exploitAvailableCount"))
   {
     m_exploitAvailableCount = jsonValue.GetInt64("exploitAvailableCount");
@@ -39,11 +44,6 @@ AccountAggregationResponse& AccountAggregationResponse::operator =(JsonView json
   {
     m_fixAvailableCount = jsonValue.GetInt64("fixAvailableCount");
     m_fixAvailableCountHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("severityCounts"))
-  {
-    m_severityCounts = jsonValue.GetObject("severityCounts");
-    m_severityCountsHasBeenSet = true;
   }
   return *this;
 }
@@ -58,6 +58,12 @@ JsonValue AccountAggregationResponse::Jsonize() const
 
   }
 
+  if(m_severityCountsHasBeenSet)
+  {
+   payload.WithObject("severityCounts", m_severityCounts.Jsonize());
+
+  }
+
   if(m_exploitAvailableCountHasBeenSet)
   {
    payload.WithInt64("exploitAvailableCount", m_exploitAvailableCount);
@@ -67,12 +73,6 @@ JsonValue AccountAggregationResponse::Jsonize() const
   if(m_fixAvailableCountHasBeenSet)
   {
    payload.WithInt64("fixAvailableCount", m_fixAvailableCount);
-
-  }
-
-  if(m_severityCountsHasBeenSet)
-  {
-   payload.WithObject("severityCounts", m_severityCounts.Jsonize());
 
   }
 

@@ -25,15 +25,15 @@ CoverageNumberFilter::CoverageNumberFilter(JsonView jsonValue)
 
 CoverageNumberFilter& CoverageNumberFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("lowerInclusive"))
-  {
-    m_lowerInclusive = jsonValue.GetInt64("lowerInclusive");
-    m_lowerInclusiveHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("upperInclusive"))
   {
     m_upperInclusive = jsonValue.GetInt64("upperInclusive");
     m_upperInclusiveHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lowerInclusive"))
+  {
+    m_lowerInclusive = jsonValue.GetInt64("lowerInclusive");
+    m_lowerInclusiveHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CoverageNumberFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_lowerInclusiveHasBeenSet)
-  {
-   payload.WithInt64("lowerInclusive", m_lowerInclusive);
-
-  }
-
   if(m_upperInclusiveHasBeenSet)
   {
    payload.WithInt64("upperInclusive", m_upperInclusive);
+
+  }
+
+  if(m_lowerInclusiveHasBeenSet)
+  {
+   payload.WithInt64("lowerInclusive", m_lowerInclusive);
 
   }
 

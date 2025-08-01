@@ -1215,15 +1215,15 @@ GetEncryptionKeyOutcome Inspector2Client::GetEncryptionKey(const GetEncryptionKe
 {
   AWS_OPERATION_GUARD(GetEncryptionKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetEncryptionKey", "Required field: ResourceType, is not set");
-    return GetEncryptionKeyOutcome(Aws::Client::AWSError<Inspector2Errors>(Inspector2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
-  }
   if (!request.ScanTypeHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetEncryptionKey", "Required field: ScanType, is not set");
     return GetEncryptionKeyOutcome(Aws::Client::AWSError<Inspector2Errors>(Inspector2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScanType]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEncryptionKey", "Required field: ResourceType, is not set");
+    return GetEncryptionKeyOutcome(Aws::Client::AWSError<Inspector2Errors>(Inspector2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetEncryptionKey, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

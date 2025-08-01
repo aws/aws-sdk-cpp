@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/ValidationExceptionReason.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/ValidationExceptionField.h>
 #include <utility>
 
@@ -42,20 +42,6 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The fields that failed validation.</p>
-     */
-    inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
-    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
-    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
-    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
-    ValidationException& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
-    template<typename FieldsT = ValidationExceptionField>
-    ValidationException& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -74,16 +60,30 @@ namespace Model
     inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
     inline ValidationException& WithReason(ValidationExceptionReason value) { SetReason(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<ValidationExceptionField> m_fields;
-    bool m_fieldsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The fields that failed validation.</p>
+     */
+    inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    ValidationException& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = ValidationExceptionField>
+    ValidationException& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
+
+    Aws::Vector<ValidationExceptionField> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

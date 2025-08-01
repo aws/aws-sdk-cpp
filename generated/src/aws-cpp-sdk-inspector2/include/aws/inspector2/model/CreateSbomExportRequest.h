@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/SbomReportFormat.h>
 #include <aws/inspector2/model/ResourceFilterCriteria.h>
+#include <aws/inspector2/model/SbomReportFormat.h>
 #include <aws/inspector2/model/Destination.h>
 #include <utility>
 
@@ -36,16 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The output format for the software bill of materials (SBOM) report.</p>
-     */
-    inline SbomReportFormat GetReportFormat() const { return m_reportFormat; }
-    inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
-    inline void SetReportFormat(SbomReportFormat value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
-    inline CreateSbomExportRequest& WithReportFormat(SbomReportFormat value) { SetReportFormat(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The resource filter criteria for the software bill of materials (SBOM)
      * report.</p>
      */
@@ -55,6 +45,16 @@ namespace Model
     void SetResourceFilterCriteria(ResourceFilterCriteriaT&& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = std::forward<ResourceFilterCriteriaT>(value); }
     template<typename ResourceFilterCriteriaT = ResourceFilterCriteria>
     CreateSbomExportRequest& WithResourceFilterCriteria(ResourceFilterCriteriaT&& value) { SetResourceFilterCriteria(std::forward<ResourceFilterCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The output format for the software bill of materials (SBOM) report.</p>
+     */
+    inline SbomReportFormat GetReportFormat() const { return m_reportFormat; }
+    inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
+    inline void SetReportFormat(SbomReportFormat value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
+    inline CreateSbomExportRequest& WithReportFormat(SbomReportFormat value) { SetReportFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -71,11 +71,11 @@ namespace Model
     ///@}
   private:
 
-    SbomReportFormat m_reportFormat{SbomReportFormat::NOT_SET};
-    bool m_reportFormatHasBeenSet = false;
-
     ResourceFilterCriteria m_resourceFilterCriteria;
     bool m_resourceFilterCriteriaHasBeenSet = false;
+
+    SbomReportFormat m_reportFormat{SbomReportFormat::NOT_SET};
+    bool m_reportFormatHasBeenSet = false;
 
     Destination m_s3Destination;
     bool m_s3DestinationHasBeenSet = false;

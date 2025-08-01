@@ -37,16 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The lower inclusive for the coverage number.</p>
-     */
-    inline long long GetLowerInclusive() const { return m_lowerInclusive; }
-    inline bool LowerInclusiveHasBeenSet() const { return m_lowerInclusiveHasBeenSet; }
-    inline void SetLowerInclusive(long long value) { m_lowerInclusiveHasBeenSet = true; m_lowerInclusive = value; }
-    inline CoverageNumberFilter& WithLowerInclusive(long long value) { SetLowerInclusive(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The upper inclusive for the coverage number.&gt;</p>
      */
     inline long long GetUpperInclusive() const { return m_upperInclusive; }
@@ -54,13 +44,23 @@ namespace Model
     inline void SetUpperInclusive(long long value) { m_upperInclusiveHasBeenSet = true; m_upperInclusive = value; }
     inline CoverageNumberFilter& WithUpperInclusive(long long value) { SetUpperInclusive(value); return *this;}
     ///@}
-  private:
 
-    long long m_lowerInclusive{0};
-    bool m_lowerInclusiveHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The lower inclusive for the coverage number.</p>
+     */
+    inline long long GetLowerInclusive() const { return m_lowerInclusive; }
+    inline bool LowerInclusiveHasBeenSet() const { return m_lowerInclusiveHasBeenSet; }
+    inline void SetLowerInclusive(long long value) { m_lowerInclusiveHasBeenSet = true; m_lowerInclusive = value; }
+    inline CoverageNumberFilter& WithLowerInclusive(long long value) { SetLowerInclusive(value); return *this;}
+    ///@}
+  private:
 
     long long m_upperInclusive{0};
     bool m_upperInclusiveHasBeenSet = false;
+
+    long long m_lowerInclusive{0};
+    bool m_lowerInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

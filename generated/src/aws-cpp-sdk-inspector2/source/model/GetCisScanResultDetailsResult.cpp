@@ -25,11 +25,6 @@ GetCisScanResultDetailsResult::GetCisScanResultDetailsResult(const Aws::AmazonWe
 GetCisScanResultDetailsResult& GetCisScanResultDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanResultDetails"))
   {
     Aws::Utils::Array<JsonView> scanResultDetailsJsonList = jsonValue.GetArray("scanResultDetails");
@@ -38,6 +33,11 @@ GetCisScanResultDetailsResult& GetCisScanResultDetailsResult::operator =(const A
       m_scanResultDetails.push_back(scanResultDetailsJsonList[scanResultDetailsIndex].AsObject());
     }
     m_scanResultDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

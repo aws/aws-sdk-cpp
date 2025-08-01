@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
+     * <p>The type of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetIamInstanceProfileArn() const { return m_iamInstanceProfileArn; }
-    inline bool IamInstanceProfileArnHasBeenSet() const { return m_iamInstanceProfileArnHasBeenSet; }
-    template<typename IamInstanceProfileArnT = Aws::String>
-    void SetIamInstanceProfileArn(IamInstanceProfileArnT&& value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn = std::forward<IamInstanceProfileArnT>(value); }
-    template<typename IamInstanceProfileArnT = Aws::String>
-    AwsEc2InstanceDetails& WithIamInstanceProfileArn(IamInstanceProfileArnT&& value) { SetIamInstanceProfileArn(std::forward<IamInstanceProfileArnT>(value)); return *this;}
+    inline const Aws::String& GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEc2InstanceDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,6 +106,42 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IAM instance profile ARN of the Amazon EC2 instance.</p>
+     */
+    inline const Aws::String& GetIamInstanceProfileArn() const { return m_iamInstanceProfileArn; }
+    inline bool IamInstanceProfileArnHasBeenSet() const { return m_iamInstanceProfileArnHasBeenSet; }
+    template<typename IamInstanceProfileArnT = Aws::String>
+    void SetIamInstanceProfileArn(IamInstanceProfileArnT&& value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn = std::forward<IamInstanceProfileArnT>(value); }
+    template<typename IamInstanceProfileArnT = Aws::String>
+    AwsEc2InstanceDetails& WithIamInstanceProfileArn(IamInstanceProfileArnT&& value) { SetIamInstanceProfileArn(std::forward<IamInstanceProfileArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The VPC ID of the Amazon EC2 instance.</p>
+     */
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2InstanceDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The subnet ID of the Amazon EC2 instance.</p>
+     */
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    AwsEc2InstanceDetails& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time the Amazon EC2 instance was launched at.</p>
      */
     inline const Aws::Utils::DateTime& GetLaunchedAt() const { return m_launchedAt; }
@@ -127,46 +163,10 @@ namespace Model
     template<typename PlatformT = Aws::String>
     AwsEc2InstanceDetails& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The subnet ID of the Amazon EC2 instance.</p>
-     */
-    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
-    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    template<typename SubnetIdT = Aws::String>
-    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
-    template<typename SubnetIdT = Aws::String>
-    AwsEc2InstanceDetails& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of the Amazon EC2 instance.</p>
-     */
-    inline const Aws::String& GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    template<typename TypeT = Aws::String>
-    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
-    template<typename TypeT = Aws::String>
-    AwsEc2InstanceDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The VPC ID of the Amazon EC2 instance.</p>
-     */
-    inline const Aws::String& GetVpcId() const { return m_vpcId; }
-    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    template<typename VpcIdT = Aws::String>
-    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
-    template<typename VpcIdT = Aws::String>
-    AwsEc2InstanceDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::String m_iamInstanceProfileArn;
-    bool m_iamInstanceProfileArnHasBeenSet = false;
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
@@ -180,20 +180,20 @@ namespace Model
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;
 
+    Aws::String m_iamInstanceProfileArn;
+    bool m_iamInstanceProfileArnHasBeenSet = false;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet = false;
+
     Aws::Utils::DateTime m_launchedAt{};
     bool m_launchedAtHasBeenSet = false;
 
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
-
-    Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet = false;
-
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
-
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

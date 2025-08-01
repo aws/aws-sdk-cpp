@@ -197,8 +197,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the volume that was used to create the snapshot. Snapshots created
-     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
-     * used for any purpose.</p>
+     * by a copy snapshot operation have an arbitrary volume ID that you should not use
+     * for any purpose.</p>
      */
     inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     template<typename VolumeIdT = Aws::String>

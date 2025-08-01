@@ -25,30 +25,20 @@ CisTargetResourceAggregation::CisTargetResourceAggregation(JsonView jsonValue)
 
 CisTargetResourceAggregation& CisTargetResourceAggregation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
-  {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("platform"))
-  {
-    m_platform = jsonValue.GetString("platform");
-    m_platformHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanArn"))
   {
     m_scanArn = jsonValue.GetString("scanArn");
     m_scanArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusCounts"))
-  {
-    m_statusCounts = jsonValue.GetObject("statusCounts");
-    m_statusCountsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("targetResourceId"))
   {
     m_targetResourceId = jsonValue.GetString("targetResourceId");
     m_targetResourceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("accountId"))
+  {
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetResourceTags"))
   {
@@ -65,6 +55,16 @@ CisTargetResourceAggregation& CisTargetResourceAggregation::operator =(JsonView 
       m_targetResourceTags[targetResourceTagsItem.first] = std::move(tagValueListList);
     }
     m_targetResourceTagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("statusCounts"))
+  {
+    m_statusCounts = jsonValue.GetObject("statusCounts");
+    m_statusCountsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("platform"))
+  {
+    m_platform = jsonValue.GetString("platform");
+    m_platformHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetStatus"))
   {
@@ -83,33 +83,21 @@ JsonValue CisTargetResourceAggregation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("platform", m_platform);
-
-  }
-
   if(m_scanArnHasBeenSet)
   {
    payload.WithString("scanArn", m_scanArn);
 
   }
 
-  if(m_statusCountsHasBeenSet)
-  {
-   payload.WithObject("statusCounts", m_statusCounts.Jsonize());
-
-  }
-
   if(m_targetResourceIdHasBeenSet)
   {
    payload.WithString("targetResourceId", m_targetResourceId);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("accountId", m_accountId);
 
   }
 
@@ -126,6 +114,18 @@ JsonValue CisTargetResourceAggregation::Jsonize() const
      targetResourceTagsJsonMap.WithArray(targetResourceTagsItem.first, std::move(tagValueListJsonList));
    }
    payload.WithObject("targetResourceTags", std::move(targetResourceTagsJsonMap));
+
+  }
+
+  if(m_statusCountsHasBeenSet)
+  {
+   payload.WithObject("statusCounts", m_statusCounts.Jsonize());
+
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("platform", m_platform);
 
   }
 

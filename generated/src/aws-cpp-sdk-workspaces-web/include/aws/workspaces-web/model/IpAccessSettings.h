@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/workspaces-web/model/IpRule.h>
 #include <utility>
 
@@ -44,18 +44,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional encryption context of the IP access settings.</p>
+     * <p>The ARN of the IP access settings resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
-    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    IpAccessSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
-    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
-    IpAccessSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
-      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
-    }
+    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
+    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    IpAccessSettings& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,6 +67,44 @@ namespace Model
     IpAccessSettings& WithAssociatedPortalArns(AssociatedPortalArnsT&& value) { SetAssociatedPortalArns(std::forward<AssociatedPortalArnsT>(value)); return *this;}
     template<typename AssociatedPortalArnsT = Aws::String>
     IpAccessSettings& AddAssociatedPortalArns(AssociatedPortalArnsT&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.emplace_back(std::forward<AssociatedPortalArnsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP rules of the IP access settings.</p>
+     */
+    inline const Aws::Vector<IpRule>& GetIpRules() const { return m_ipRules; }
+    inline bool IpRulesHasBeenSet() const { return m_ipRulesHasBeenSet; }
+    template<typename IpRulesT = Aws::Vector<IpRule>>
+    void SetIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules = std::forward<IpRulesT>(value); }
+    template<typename IpRulesT = Aws::Vector<IpRule>>
+    IpAccessSettings& WithIpRules(IpRulesT&& value) { SetIpRules(std::forward<IpRulesT>(value)); return *this;}
+    template<typename IpRulesT = IpRule>
+    IpAccessSettings& AddIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules.emplace_back(std::forward<IpRulesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> The display name of the IP access settings.</p>
+     */
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    IpAccessSettings& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the IP access settings.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpAccessSettings& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,60 +134,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the IP access settings.</p>
+     * <p>The additional encryption context of the IP access settings.</p>
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    IpAccessSettings& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The display name of the IP access settings.</p>
-     */
-    inline const Aws::String& GetDisplayName() const { return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    template<typename DisplayNameT = Aws::String>
-    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
-    template<typename DisplayNameT = Aws::String>
-    IpAccessSettings& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the IP access settings resource.</p>
-     */
-    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
-    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    IpAccessSettings& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IP rules of the IP access settings.</p>
-     */
-    inline const Aws::Vector<IpRule>& GetIpRules() const { return m_ipRules; }
-    inline bool IpRulesHasBeenSet() const { return m_ipRulesHasBeenSet; }
-    template<typename IpRulesT = Aws::Vector<IpRule>>
-    void SetIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules = std::forward<IpRulesT>(value); }
-    template<typename IpRulesT = Aws::Vector<IpRule>>
-    IpAccessSettings& WithIpRules(IpRulesT&& value) { SetIpRules(std::forward<IpRulesT>(value)); return *this;}
-    template<typename IpRulesT = IpRule>
-    IpAccessSettings& AddIpRules(IpRulesT&& value) { m_ipRulesHasBeenSet = true; m_ipRules.emplace_back(std::forward<IpRulesT>(value)); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
+    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    IpAccessSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
+    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
+    IpAccessSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
+      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-    bool m_additionalEncryptionContextHasBeenSet = false;
+    Aws::String m_ipAccessSettingsArn;
+    bool m_ipAccessSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
+
+    Aws::Vector<IpRule> m_ipRules;
+    bool m_ipRulesHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
@@ -161,17 +170,8 @@ namespace Model
     Aws::String m_customerManagedKey;
     bool m_customerManagedKeyHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_ipAccessSettingsArn;
-    bool m_ipAccessSettingsArnHasBeenSet = false;
-
-    Aws::Vector<IpRule> m_ipRules;
-    bool m_ipRulesHasBeenSet = false;
+    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
+    bool m_additionalEncryptionContextHasBeenSet = false;
   };
 
 } // namespace Model

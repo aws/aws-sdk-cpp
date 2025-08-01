@@ -7,8 +7,11 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/TargetFormat.h>
 #include <aws/glue/model/HyperTargetCompressionType.h>
 #include <aws/glue/model/DirectSchemaChangePolicy.h>
+#include <aws/glue/model/AutoDataQuality.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +72,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the data output format for the HyperDirect target.</p>
+     */
+    inline TargetFormat GetFormat() const { return m_format; }
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+    inline void SetFormat(TargetFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline S3HyperDirectTarget& WithFormat(TargetFormat value) { SetFormat(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Defines the partitioning strategy for the output data.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const { return m_partitionKeys; }
@@ -114,6 +127,34 @@ namespace Model
     template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
     S3HyperDirectTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to automatically enable data quality evaluation for the S3
+     * Hyper direct target. When set to <code>true</code>, data quality checks are
+     * performed automatically during the write operation.</p>
+     */
+    inline const AutoDataQuality& GetAutoDataQuality() const { return m_autoDataQuality; }
+    inline bool AutoDataQualityHasBeenSet() const { return m_autoDataQualityHasBeenSet; }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    void SetAutoDataQuality(AutoDataQualityT&& value) { m_autoDataQualityHasBeenSet = true; m_autoDataQuality = std::forward<AutoDataQualityT>(value); }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    S3HyperDirectTarget& WithAutoDataQuality(AutoDataQualityT&& value) { SetAutoDataQuality(std::forward<AutoDataQualityT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the data schema for the S3 Hyper direct target.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    S3HyperDirectTarget& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    S3HyperDirectTarget& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -121,6 +162,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_inputs;
     bool m_inputsHasBeenSet = false;
+
+    TargetFormat m_format{TargetFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
     bool m_partitionKeysHasBeenSet = false;
@@ -133,6 +177,12 @@ namespace Model
 
     DirectSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;
+
+    AutoDataQuality m_autoDataQuality;
+    bool m_autoDataQualityHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

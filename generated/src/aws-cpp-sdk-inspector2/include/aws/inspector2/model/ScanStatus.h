@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/ScanStatusReason.h>
 #include <aws/inspector2/model/ScanStatusCode.h>
+#include <aws/inspector2/model/ScanStatusReason.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,16 @@ namespace Model
     AWS_INSPECTOR2_API ScanStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The status code of the scan.</p>
+     */
+    inline ScanStatusCode GetStatusCode() const { return m_statusCode; }
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+    inline void SetStatusCode(ScanStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ScanStatus& WithStatusCode(ScanStatusCode value) { SetStatusCode(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -120,23 +130,13 @@ namespace Model
     inline void SetReason(ScanStatusReason value) { m_reasonHasBeenSet = true; m_reason = value; }
     inline ScanStatus& WithReason(ScanStatusReason value) { SetReason(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The status code of the scan.</p>
-     */
-    inline ScanStatusCode GetStatusCode() const { return m_statusCode; }
-    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(ScanStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline ScanStatus& WithStatusCode(ScanStatusCode value) { SetStatusCode(value); return *this;}
-    ///@}
   private:
-
-    ScanStatusReason m_reason{ScanStatusReason::NOT_SET};
-    bool m_reasonHasBeenSet = false;
 
     ScanStatusCode m_statusCode{ScanStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
+
+    ScanStatusReason m_reason{ScanStatusReason::NOT_SET};
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

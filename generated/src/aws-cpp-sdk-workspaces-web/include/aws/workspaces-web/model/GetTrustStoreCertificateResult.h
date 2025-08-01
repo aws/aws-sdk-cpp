@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/workspaces-web/model/Certificate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/model/Certificate.h>
 #include <utility>
 
 namespace Aws
@@ -35,17 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The certificate of the trust store certificate.</p>
-     */
-    inline const Certificate& GetCertificate() const { return m_certificate; }
-    template<typename CertificateT = Certificate>
-    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
-    template<typename CertificateT = Certificate>
-    GetTrustStoreCertificateResult& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the trust store certificate.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
@@ -53,6 +42,17 @@ namespace Model
     void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
     template<typename TrustStoreArnT = Aws::String>
     GetTrustStoreCertificateResult& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The certificate of the trust store certificate.</p>
+     */
+    inline const Certificate& GetCertificate() const { return m_certificate; }
+    template<typename CertificateT = Certificate>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Certificate>
+    GetTrustStoreCertificateResult& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,11 +65,11 @@ namespace Model
     ///@}
   private:
 
-    Certificate m_certificate;
-    bool m_certificateHasBeenSet = false;
-
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
+
+    Certificate m_certificate;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -33,7 +33,12 @@ namespace Model
    * <p>A complex type that describes the default cache behavior if you don't specify
    * a <code>CacheBehavior</code> element or if request URLs don't match any of the
    * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-   * must create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
+   * must create exactly one default cache behavior.</p>  <p>If your
+   * minimum TTL is greater than 0, CloudFront will cache content for at least the
+   * duration specified in the cache policy's minimum TTL, even if the
+   * <code>Cache-Control: no-cache</code>, <code>no-store</code>, or
+   * <code>private</code> directives are present in the origin headers.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */

@@ -87,7 +87,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which
-     * contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
+     * contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
      */
     inline const Aws::Vector<IdMappingWorkflowOutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
     template<typename OutputSourceConfigT = Aws::Vector<IdMappingWorkflowOutputSource>>

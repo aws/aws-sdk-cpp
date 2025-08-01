@@ -16,20 +16,9 @@ Aws::String CreateNetworkSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+   payload.WithString("vpcId", m_vpcId);
 
   }
 
@@ -44,6 +33,17 @@ Aws::String CreateNetworkSettingsRequest::SerializePayload() const
 
   }
 
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -55,9 +55,9 @@ Aws::String CreateNetworkSettingsRequest::SerializePayload() const
 
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("vpcId", m_vpcId);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

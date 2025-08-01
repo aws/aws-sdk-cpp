@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/AggregationFindingType.h>
-#include <aws/inspector2/model/AggregationResourceType.h>
-#include <aws/inspector2/model/TitleSortBy.h>
-#include <aws/inspector2/model/SortOrder.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/inspector2/model/AggregationResourceType.h>
+#include <aws/inspector2/model/SortOrder.h>
+#include <aws/inspector2/model/TitleSortBy.h>
+#include <aws/inspector2/model/AggregationFindingType.h>
 #include <aws/inspector2/model/StringFilter.h>
 #include <utility>
 
@@ -45,46 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of finding to aggregate on.</p>
-     */
-    inline AggregationFindingType GetFindingType() const { return m_findingType; }
-    inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
-    inline void SetFindingType(AggregationFindingType value) { m_findingTypeHasBeenSet = true; m_findingType = value; }
-    inline TitleAggregation& WithFindingType(AggregationFindingType value) { SetFindingType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource type to aggregate on.</p>
-     */
-    inline AggregationResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(AggregationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline TitleAggregation& WithResourceType(AggregationResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The value to sort results by.</p>
-     */
-    inline TitleSortBy GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(TitleSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline TitleAggregation& WithSortBy(TitleSortBy value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The order to sort results by.</p>
-     */
-    inline SortOrder GetSortOrder() const { return m_sortOrder; }
-    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline TitleAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The finding titles to aggregate on.</p>
      */
     inline const Aws::Vector<StringFilter>& GetTitles() const { return m_titles; }
@@ -110,25 +70,65 @@ namespace Model
     template<typename VulnerabilityIdsT = StringFilter>
     TitleAggregation& AddVulnerabilityIds(VulnerabilityIdsT&& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds.emplace_back(std::forward<VulnerabilityIdsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The resource type to aggregate on.</p>
+     */
+    inline AggregationResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(AggregationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline TitleAggregation& WithResourceType(AggregationResourceType value) { SetResourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The order to sort results by.</p>
+     */
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline TitleAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value to sort results by.</p>
+     */
+    inline TitleSortBy GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(TitleSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline TitleAggregation& WithSortBy(TitleSortBy value) { SetSortBy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of finding to aggregate on.</p>
+     */
+    inline AggregationFindingType GetFindingType() const { return m_findingType; }
+    inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
+    inline void SetFindingType(AggregationFindingType value) { m_findingTypeHasBeenSet = true; m_findingType = value; }
+    inline TitleAggregation& WithFindingType(AggregationFindingType value) { SetFindingType(value); return *this;}
+    ///@}
   private:
-
-    AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
-    bool m_findingTypeHasBeenSet = false;
-
-    AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
-
-    TitleSortBy m_sortBy{TitleSortBy::NOT_SET};
-    bool m_sortByHasBeenSet = false;
-
-    SortOrder m_sortOrder{SortOrder::NOT_SET};
-    bool m_sortOrderHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_titles;
     bool m_titlesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilityIds;
     bool m_vulnerabilityIdsHasBeenSet = false;
+
+    AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
+
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
+    bool m_sortOrderHasBeenSet = false;
+
+    TitleSortBy m_sortBy{TitleSortBy::NOT_SET};
+    bool m_sortByHasBeenSet = false;
+
+    AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
+    bool m_findingTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,6 +75,11 @@ S3GlueParquetTarget& S3GlueParquetTarget::operator =(JsonView jsonValue)
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
     m_schemaChangePolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AutoDataQuality"))
+  {
+    m_autoDataQuality = jsonValue.GetObject("AutoDataQuality");
+    m_autoDataQualityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -135,6 +140,12 @@ JsonValue S3GlueParquetTarget::Jsonize() const
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_autoDataQualityHasBeenSet)
+  {
+   payload.WithObject("AutoDataQuality", m_autoDataQuality.Jsonize());
 
   }
 

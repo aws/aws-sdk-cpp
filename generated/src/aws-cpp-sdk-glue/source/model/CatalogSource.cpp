@@ -40,6 +40,20 @@ CatalogSource& CatalogSource::operator =(JsonView jsonValue)
     m_table = jsonValue.GetString("Table");
     m_tableHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PartitionPredicate"))
+  {
+    m_partitionPredicate = jsonValue.GetString("PartitionPredicate");
+    m_partitionPredicateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OutputSchemas"))
+  {
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+    {
+      m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
+    }
+    m_outputSchemasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +76,23 @@ JsonValue CatalogSource::Jsonize() const
   if(m_tableHasBeenSet)
   {
    payload.WithString("Table", m_table);
+
+  }
+
+  if(m_partitionPredicateHasBeenSet)
+  {
+   payload.WithString("PartitionPredicate", m_partitionPredicate);
+
+  }
+
+  if(m_outputSchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+   {
+     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+   }
+   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
 
   }
 

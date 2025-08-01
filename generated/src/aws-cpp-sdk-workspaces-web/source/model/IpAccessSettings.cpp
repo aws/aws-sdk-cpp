@@ -25,14 +25,10 @@ IpAccessSettings::IpAccessSettings(JsonView jsonValue)
 
 IpAccessSettings& IpAccessSettings::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("additionalEncryptionContext"))
+  if(jsonValue.ValueExists("ipAccessSettingsArn"))
   {
-    Aws::Map<Aws::String, JsonView> additionalEncryptionContextJsonMap = jsonValue.GetObject("additionalEncryptionContext").GetAllObjects();
-    for(auto& additionalEncryptionContextItem : additionalEncryptionContextJsonMap)
-    {
-      m_additionalEncryptionContext[additionalEncryptionContextItem.first] = additionalEncryptionContextItem.second.AsString();
-    }
-    m_additionalEncryptionContextHasBeenSet = true;
+    m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
+    m_ipAccessSettingsArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
@@ -42,6 +38,25 @@ IpAccessSettings& IpAccessSettings::operator =(JsonView jsonValue)
       m_associatedPortalArns.push_back(associatedPortalArnsJsonList[associatedPortalArnsIndex].AsString());
     }
     m_associatedPortalArnsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipRules"))
+  {
+    Aws::Utils::Array<JsonView> ipRulesJsonList = jsonValue.GetArray("ipRules");
+    for(unsigned ipRulesIndex = 0; ipRulesIndex < ipRulesJsonList.GetLength(); ++ipRulesIndex)
+    {
+      m_ipRules.push_back(ipRulesJsonList[ipRulesIndex].AsObject());
+    }
+    m_ipRulesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+    m_displayNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("creationDate"))
   {
@@ -53,29 +68,14 @@ IpAccessSettings& IpAccessSettings::operator =(JsonView jsonValue)
     m_customerManagedKey = jsonValue.GetString("customerManagedKey");
     m_customerManagedKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("additionalEncryptionContext"))
   {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-    m_displayNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ipAccessSettingsArn"))
-  {
-    m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
-    m_ipAccessSettingsArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ipRules"))
-  {
-    Aws::Utils::Array<JsonView> ipRulesJsonList = jsonValue.GetArray("ipRules");
-    for(unsigned ipRulesIndex = 0; ipRulesIndex < ipRulesJsonList.GetLength(); ++ipRulesIndex)
+    Aws::Map<Aws::String, JsonView> additionalEncryptionContextJsonMap = jsonValue.GetObject("additionalEncryptionContext").GetAllObjects();
+    for(auto& additionalEncryptionContextItem : additionalEncryptionContextJsonMap)
     {
-      m_ipRules.push_back(ipRulesJsonList[ipRulesIndex].AsObject());
+      m_additionalEncryptionContext[additionalEncryptionContextItem.first] = additionalEncryptionContextItem.second.AsString();
     }
-    m_ipRulesHasBeenSet = true;
+    m_additionalEncryptionContextHasBeenSet = true;
   }
   return *this;
 }
@@ -84,14 +84,9 @@ JsonValue IpAccessSettings::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_additionalEncryptionContextHasBeenSet)
+  if(m_ipAccessSettingsArnHasBeenSet)
   {
-   JsonValue additionalEncryptionContextJsonMap;
-   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
-   {
-     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
-   }
-   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+   payload.WithString("ipAccessSettingsArn", m_ipAccessSettingsArn);
 
   }
 
@@ -106,6 +101,29 @@ JsonValue IpAccessSettings::Jsonize() const
 
   }
 
+  if(m_ipRulesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipRulesJsonList(m_ipRules.size());
+   for(unsigned ipRulesIndex = 0; ipRulesIndex < ipRulesJsonList.GetLength(); ++ipRulesIndex)
+   {
+     ipRulesJsonList[ipRulesIndex].AsObject(m_ipRules[ipRulesIndex].Jsonize());
+   }
+   payload.WithArray("ipRules", std::move(ipRulesJsonList));
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
@@ -117,32 +135,14 @@ JsonValue IpAccessSettings::Jsonize() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_additionalEncryptionContextHasBeenSet)
   {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_ipAccessSettingsArnHasBeenSet)
-  {
-   payload.WithString("ipAccessSettingsArn", m_ipAccessSettingsArn);
-
-  }
-
-  if(m_ipRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ipRulesJsonList(m_ipRules.size());
-   for(unsigned ipRulesIndex = 0; ipRulesIndex < ipRulesJsonList.GetLength(); ++ipRulesIndex)
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
    {
-     ipRulesJsonList[ipRulesIndex].AsObject(m_ipRules[ipRulesIndex].Jsonize());
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
    }
-   payload.WithArray("ipRules", std::move(ipRulesJsonList));
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
 
   }
 

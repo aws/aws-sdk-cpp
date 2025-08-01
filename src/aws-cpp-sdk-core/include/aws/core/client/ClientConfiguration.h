@@ -492,6 +492,11 @@ namespace Aws
             * AWS profile name to use for credentials.
             */
             Aws::String profile;
+
+            /**
+             * Region to use for calls
+             */
+            Aws::String region;
           }credentialProviderConfig;
         };
 
@@ -499,7 +504,8 @@ namespace Aws
          * A helper function to initialize a retry strategy.
          * Default is DefaultRetryStrategy (i.e. exponential backoff)
          */
-        std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
+        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
+        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode = "");
 
         /**
          * A helper function to compute a user agent

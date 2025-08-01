@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CANCEL_HASH = HashingUtils::HashString("CANCEL");
+        static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
 
 
         JobStateTimeLimitActionsAction GetJobStateTimeLimitActionsActionForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == CANCEL_HASH)
           {
             return JobStateTimeLimitActionsAction::CANCEL;
+          }
+          else if (hashCode == TERMINATE_HASH)
+          {
+            return JobStateTimeLimitActionsAction::TERMINATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case JobStateTimeLimitActionsAction::CANCEL:
             return "CANCEL";
+          case JobStateTimeLimitActionsAction::TERMINATE:
+            return "TERMINATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -30,15 +30,6 @@ IdentityProvider& IdentityProvider::operator =(JsonView jsonValue)
     m_identityProviderArn = jsonValue.GetString("identityProviderArn");
     m_identityProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identityProviderDetails"))
-  {
-    Aws::Map<Aws::String, JsonView> identityProviderDetailsJsonMap = jsonValue.GetObject("identityProviderDetails").GetAllObjects();
-    for(auto& identityProviderDetailsItem : identityProviderDetailsJsonMap)
-    {
-      m_identityProviderDetails[identityProviderDetailsItem.first] = identityProviderDetailsItem.second.AsString();
-    }
-    m_identityProviderDetailsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("identityProviderName"))
   {
     m_identityProviderName = jsonValue.GetString("identityProviderName");
@@ -48,6 +39,15 @@ IdentityProvider& IdentityProvider::operator =(JsonView jsonValue)
   {
     m_identityProviderType = IdentityProviderTypeMapper::GetIdentityProviderTypeForName(jsonValue.GetString("identityProviderType"));
     m_identityProviderTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("identityProviderDetails"))
+  {
+    Aws::Map<Aws::String, JsonView> identityProviderDetailsJsonMap = jsonValue.GetObject("identityProviderDetails").GetAllObjects();
+    for(auto& identityProviderDetailsItem : identityProviderDetailsJsonMap)
+    {
+      m_identityProviderDetails[identityProviderDetailsItem.first] = identityProviderDetailsItem.second.AsString();
+    }
+    m_identityProviderDetailsHasBeenSet = true;
   }
   return *this;
 }
@@ -62,17 +62,6 @@ JsonValue IdentityProvider::Jsonize() const
 
   }
 
-  if(m_identityProviderDetailsHasBeenSet)
-  {
-   JsonValue identityProviderDetailsJsonMap;
-   for(auto& identityProviderDetailsItem : m_identityProviderDetails)
-   {
-     identityProviderDetailsJsonMap.WithString(identityProviderDetailsItem.first, identityProviderDetailsItem.second);
-   }
-   payload.WithObject("identityProviderDetails", std::move(identityProviderDetailsJsonMap));
-
-  }
-
   if(m_identityProviderNameHasBeenSet)
   {
    payload.WithString("identityProviderName", m_identityProviderName);
@@ -82,6 +71,17 @@ JsonValue IdentityProvider::Jsonize() const
   if(m_identityProviderTypeHasBeenSet)
   {
    payload.WithString("identityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
+  }
+
+  if(m_identityProviderDetailsHasBeenSet)
+  {
+   JsonValue identityProviderDetailsJsonMap;
+   for(auto& identityProviderDetailsItem : m_identityProviderDetails)
+   {
+     identityProviderDetailsJsonMap.WithString(identityProviderDetailsItem.first, identityProviderDetailsItem.second);
+   }
+   payload.WithObject("identityProviderDetails", std::move(identityProviderDetailsJsonMap));
+
   }
 
   return payload;

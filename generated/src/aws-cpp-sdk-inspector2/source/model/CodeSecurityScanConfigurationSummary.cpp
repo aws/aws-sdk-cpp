@@ -25,19 +25,10 @@ CodeSecurityScanConfigurationSummary::CodeSecurityScanConfigurationSummary(JsonV
 
 CodeSecurityScanConfigurationSummary& CodeSecurityScanConfigurationSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("continuousIntegrationScanSupportedEvents"))
+  if(jsonValue.ValueExists("scanConfigurationArn"))
   {
-    Aws::Utils::Array<JsonView> continuousIntegrationScanSupportedEventsJsonList = jsonValue.GetArray("continuousIntegrationScanSupportedEvents");
-    for(unsigned continuousIntegrationScanSupportedEventsIndex = 0; continuousIntegrationScanSupportedEventsIndex < continuousIntegrationScanSupportedEventsJsonList.GetLength(); ++continuousIntegrationScanSupportedEventsIndex)
-    {
-      m_continuousIntegrationScanSupportedEvents.push_back(ContinuousIntegrationScanEventMapper::GetContinuousIntegrationScanEventForName(continuousIntegrationScanSupportedEventsJsonList[continuousIntegrationScanSupportedEventsIndex].AsString()));
-    }
-    m_continuousIntegrationScanSupportedEventsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("frequencyExpression"))
-  {
-    m_frequencyExpression = jsonValue.GetString("frequencyExpression");
-    m_frequencyExpressionHasBeenSet = true;
+    m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
+    m_scanConfigurationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
@@ -54,6 +45,20 @@ CodeSecurityScanConfigurationSummary& CodeSecurityScanConfigurationSummary::oper
     m_periodicScanFrequency = PeriodicScanFrequencyMapper::GetPeriodicScanFrequencyForName(jsonValue.GetString("periodicScanFrequency"));
     m_periodicScanFrequencyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("frequencyExpression"))
+  {
+    m_frequencyExpression = jsonValue.GetString("frequencyExpression");
+    m_frequencyExpressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("continuousIntegrationScanSupportedEvents"))
+  {
+    Aws::Utils::Array<JsonView> continuousIntegrationScanSupportedEventsJsonList = jsonValue.GetArray("continuousIntegrationScanSupportedEvents");
+    for(unsigned continuousIntegrationScanSupportedEventsIndex = 0; continuousIntegrationScanSupportedEventsIndex < continuousIntegrationScanSupportedEventsJsonList.GetLength(); ++continuousIntegrationScanSupportedEventsIndex)
+    {
+      m_continuousIntegrationScanSupportedEvents.push_back(ContinuousIntegrationScanEventMapper::GetContinuousIntegrationScanEventForName(continuousIntegrationScanSupportedEventsJsonList[continuousIntegrationScanSupportedEventsIndex].AsString()));
+    }
+    m_continuousIntegrationScanSupportedEventsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ruleSetCategories"))
   {
     Aws::Utils::Array<JsonView> ruleSetCategoriesJsonList = jsonValue.GetArray("ruleSetCategories");
@@ -62,11 +67,6 @@ CodeSecurityScanConfigurationSummary& CodeSecurityScanConfigurationSummary::oper
       m_ruleSetCategories.push_back(RuleSetCategoryMapper::GetRuleSetCategoryForName(ruleSetCategoriesJsonList[ruleSetCategoriesIndex].AsString()));
     }
     m_ruleSetCategoriesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanConfigurationArn"))
-  {
-    m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
-    m_scanConfigurationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scopeSettings"))
   {
@@ -89,20 +89,9 @@ JsonValue CodeSecurityScanConfigurationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_continuousIntegrationScanSupportedEventsHasBeenSet)
+  if(m_scanConfigurationArnHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> continuousIntegrationScanSupportedEventsJsonList(m_continuousIntegrationScanSupportedEvents.size());
-   for(unsigned continuousIntegrationScanSupportedEventsIndex = 0; continuousIntegrationScanSupportedEventsIndex < continuousIntegrationScanSupportedEventsJsonList.GetLength(); ++continuousIntegrationScanSupportedEventsIndex)
-   {
-     continuousIntegrationScanSupportedEventsJsonList[continuousIntegrationScanSupportedEventsIndex].AsString(ContinuousIntegrationScanEventMapper::GetNameForContinuousIntegrationScanEvent(m_continuousIntegrationScanSupportedEvents[continuousIntegrationScanSupportedEventsIndex]));
-   }
-   payload.WithArray("continuousIntegrationScanSupportedEvents", std::move(continuousIntegrationScanSupportedEventsJsonList));
-
-  }
-
-  if(m_frequencyExpressionHasBeenSet)
-  {
-   payload.WithString("frequencyExpression", m_frequencyExpression);
+   payload.WithString("scanConfigurationArn", m_scanConfigurationArn);
 
   }
 
@@ -123,6 +112,23 @@ JsonValue CodeSecurityScanConfigurationSummary::Jsonize() const
    payload.WithString("periodicScanFrequency", PeriodicScanFrequencyMapper::GetNameForPeriodicScanFrequency(m_periodicScanFrequency));
   }
 
+  if(m_frequencyExpressionHasBeenSet)
+  {
+   payload.WithString("frequencyExpression", m_frequencyExpression);
+
+  }
+
+  if(m_continuousIntegrationScanSupportedEventsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> continuousIntegrationScanSupportedEventsJsonList(m_continuousIntegrationScanSupportedEvents.size());
+   for(unsigned continuousIntegrationScanSupportedEventsIndex = 0; continuousIntegrationScanSupportedEventsIndex < continuousIntegrationScanSupportedEventsJsonList.GetLength(); ++continuousIntegrationScanSupportedEventsIndex)
+   {
+     continuousIntegrationScanSupportedEventsJsonList[continuousIntegrationScanSupportedEventsIndex].AsString(ContinuousIntegrationScanEventMapper::GetNameForContinuousIntegrationScanEvent(m_continuousIntegrationScanSupportedEvents[continuousIntegrationScanSupportedEventsIndex]));
+   }
+   payload.WithArray("continuousIntegrationScanSupportedEvents", std::move(continuousIntegrationScanSupportedEventsJsonList));
+
+  }
+
   if(m_ruleSetCategoriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> ruleSetCategoriesJsonList(m_ruleSetCategories.size());
@@ -131,12 +137,6 @@ JsonValue CodeSecurityScanConfigurationSummary::Jsonize() const
      ruleSetCategoriesJsonList[ruleSetCategoriesIndex].AsString(RuleSetCategoryMapper::GetNameForRuleSetCategory(m_ruleSetCategories[ruleSetCategoriesIndex]));
    }
    payload.WithArray("ruleSetCategories", std::move(ruleSetCategoriesJsonList));
-
-  }
-
-  if(m_scanConfigurationArnHasBeenSet)
-  {
-   payload.WithString("scanConfigurationArn", m_scanConfigurationArn);
 
   }
 

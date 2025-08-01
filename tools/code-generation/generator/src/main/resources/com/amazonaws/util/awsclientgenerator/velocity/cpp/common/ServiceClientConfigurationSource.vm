@@ -123,6 +123,15 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
 #end
+## DyanmoDB historically requires 10 retries for backwards compatibility
+#if($serviceModel.metadata.serviceId == "DynamoDB")
+  this->configFactories.retryStrategyCreateFn = []() -> std::shared_ptr<Client::RetryStrategy> {
+    // TODO: renable once default retries are evaluated
+    // Align with other SDKs to default retry to 10 times for dynamodb.
+    // return Client::InitRetryStrategy(10);
+    return Client::InitRetryStrategy();
+  };
+#end
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)

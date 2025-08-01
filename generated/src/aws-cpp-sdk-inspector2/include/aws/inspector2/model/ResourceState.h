@@ -39,16 +39,6 @@ namespace Model
 
 
     ///@{
-    
-    inline const State& GetCodeRepository() const { return m_codeRepository; }
-    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
-    template<typename CodeRepositoryT = State>
-    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
-    template<typename CodeRepositoryT = State>
-    ResourceState& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2
      * resources.</p>
@@ -99,10 +89,17 @@ namespace Model
     template<typename LambdaCodeT = State>
     ResourceState& WithLambdaCode(LambdaCodeT&& value) { SetLambdaCode(std::forward<LambdaCodeT>(value)); return *this;}
     ///@}
-  private:
 
-    State m_codeRepository;
-    bool m_codeRepositoryHasBeenSet = false;
+    ///@{
+    
+    inline const State& GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    template<typename CodeRepositoryT = State>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = State>
+    ResourceState& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
+    ///@}
+  private:
 
     State m_ec2;
     bool m_ec2HasBeenSet = false;
@@ -115,6 +112,9 @@ namespace Model
 
     State m_lambdaCode;
     bool m_lambdaCodeHasBeenSet = false;
+
+    State m_codeRepository;
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

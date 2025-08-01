@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Kinesis stream.</p>
-     */
-    inline const Aws::String& GetKinesisStreamArn() const { return m_kinesisStreamArn; }
-    inline bool KinesisStreamArnHasBeenSet() const { return m_kinesisStreamArnHasBeenSet; }
-    template<typename KinesisStreamArnT = Aws::String>
-    void SetKinesisStreamArn(KinesisStreamArnT&& value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn = std::forward<KinesisStreamArnT>(value); }
-    template<typename KinesisStreamArnT = Aws::String>
-    UserAccessLoggingSettingsSummary& WithKinesisStreamArn(KinesisStreamArnT&& value) { SetKinesisStreamArn(std::forward<KinesisStreamArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the user access logging settings.</p>
      */
     inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
@@ -60,13 +48,25 @@ namespace Model
     template<typename UserAccessLoggingSettingsArnT = Aws::String>
     UserAccessLoggingSettingsSummary& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_kinesisStreamArn;
-    bool m_kinesisStreamArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ARN of the Kinesis stream.</p>
+     */
+    inline const Aws::String& GetKinesisStreamArn() const { return m_kinesisStreamArn; }
+    inline bool KinesisStreamArnHasBeenSet() const { return m_kinesisStreamArnHasBeenSet; }
+    template<typename KinesisStreamArnT = Aws::String>
+    void SetKinesisStreamArn(KinesisStreamArnT&& value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn = std::forward<KinesisStreamArnT>(value); }
+    template<typename KinesisStreamArnT = Aws::String>
+    UserAccessLoggingSettingsSummary& WithKinesisStreamArn(KinesisStreamArnT&& value) { SetKinesisStreamArn(std::forward<KinesisStreamArnT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_userAccessLoggingSettingsArn;
     bool m_userAccessLoggingSettingsArnHasBeenSet = false;
+
+    Aws::String m_kinesisStreamArn;
+    bool m_kinesisStreamArnHasBeenSet = false;
   };
 
 } // namespace Model

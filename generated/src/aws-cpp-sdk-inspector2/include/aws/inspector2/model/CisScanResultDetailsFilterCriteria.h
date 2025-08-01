@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/inspector2/model/CisStringFilter.h>
 #include <aws/inspector2/model/CisFindingStatusFilter.h>
+#include <aws/inspector2/model/CisStringFilter.h>
 #include <aws/inspector2/model/CisSecurityLevelFilter.h>
 #include <utility>
 
@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The criteria's finding status filters.</p>
+     */
+    inline const Aws::Vector<CisFindingStatusFilter>& GetFindingStatusFilters() const { return m_findingStatusFilters; }
+    inline bool FindingStatusFiltersHasBeenSet() const { return m_findingStatusFiltersHasBeenSet; }
+    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
+    void SetFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters = std::forward<FindingStatusFiltersT>(value); }
+    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
+    CisScanResultDetailsFilterCriteria& WithFindingStatusFilters(FindingStatusFiltersT&& value) { SetFindingStatusFilters(std::forward<FindingStatusFiltersT>(value)); return *this;}
+    template<typename FindingStatusFiltersT = CisFindingStatusFilter>
+    CisScanResultDetailsFilterCriteria& AddFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters.emplace_back(std::forward<FindingStatusFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The criteria's check ID filters.</p>
      */
     inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const { return m_checkIdFilters; }
@@ -56,30 +70,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The criteria's finding ARN filters.</p>
+     * <p>The criteria's title filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetFindingArnFilters() const { return m_findingArnFilters; }
-    inline bool FindingArnFiltersHasBeenSet() const { return m_findingArnFiltersHasBeenSet; }
-    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
-    void SetFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters = std::forward<FindingArnFiltersT>(value); }
-    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
-    CisScanResultDetailsFilterCriteria& WithFindingArnFilters(FindingArnFiltersT&& value) { SetFindingArnFilters(std::forward<FindingArnFiltersT>(value)); return *this;}
-    template<typename FindingArnFiltersT = CisStringFilter>
-    CisScanResultDetailsFilterCriteria& AddFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters.emplace_back(std::forward<FindingArnFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The criteria's finding status filters.</p>
-     */
-    inline const Aws::Vector<CisFindingStatusFilter>& GetFindingStatusFilters() const { return m_findingStatusFilters; }
-    inline bool FindingStatusFiltersHasBeenSet() const { return m_findingStatusFiltersHasBeenSet; }
-    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
-    void SetFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters = std::forward<FindingStatusFiltersT>(value); }
-    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
-    CisScanResultDetailsFilterCriteria& WithFindingStatusFilters(FindingStatusFiltersT&& value) { SetFindingStatusFilters(std::forward<FindingStatusFiltersT>(value)); return *this;}
-    template<typename FindingStatusFiltersT = CisFindingStatusFilter>
-    CisScanResultDetailsFilterCriteria& AddFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters.emplace_back(std::forward<FindingStatusFiltersT>(value)); return *this; }
+    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
+    inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultDetailsFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
+    template<typename TitleFiltersT = CisStringFilter>
+    CisScanResultDetailsFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,33 +99,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The criteria's title filters.</p>
+     * <p>The criteria's finding ARN filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
-    inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
-    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
-    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
-    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
-    CisScanResultDetailsFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
-    template<typename TitleFiltersT = CisStringFilter>
-    CisScanResultDetailsFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
+    inline const Aws::Vector<CisStringFilter>& GetFindingArnFilters() const { return m_findingArnFilters; }
+    inline bool FindingArnFiltersHasBeenSet() const { return m_findingArnFiltersHasBeenSet; }
+    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
+    void SetFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters = std::forward<FindingArnFiltersT>(value); }
+    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultDetailsFilterCriteria& WithFindingArnFilters(FindingArnFiltersT&& value) { SetFindingArnFilters(std::forward<FindingArnFiltersT>(value)); return *this;}
+    template<typename FindingArnFiltersT = CisStringFilter>
+    CisScanResultDetailsFilterCriteria& AddFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters.emplace_back(std::forward<FindingArnFiltersT>(value)); return *this; }
     ///@}
   private:
-
-    Aws::Vector<CisStringFilter> m_checkIdFilters;
-    bool m_checkIdFiltersHasBeenSet = false;
-
-    Aws::Vector<CisStringFilter> m_findingArnFilters;
-    bool m_findingArnFiltersHasBeenSet = false;
 
     Aws::Vector<CisFindingStatusFilter> m_findingStatusFilters;
     bool m_findingStatusFiltersHasBeenSet = false;
 
-    Aws::Vector<CisSecurityLevelFilter> m_securityLevelFilters;
-    bool m_securityLevelFiltersHasBeenSet = false;
+    Aws::Vector<CisStringFilter> m_checkIdFilters;
+    bool m_checkIdFiltersHasBeenSet = false;
 
     Aws::Vector<CisStringFilter> m_titleFilters;
     bool m_titleFiltersHasBeenSet = false;
+
+    Aws::Vector<CisSecurityLevelFilter> m_securityLevelFilters;
+    bool m_securityLevelFiltersHasBeenSet = false;
+
+    Aws::Vector<CisStringFilter> m_findingArnFilters;
+    bool m_findingArnFiltersHasBeenSet = false;
   };
 
 } // namespace Model

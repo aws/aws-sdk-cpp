@@ -41,30 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    TitleAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that represent the count of matched findings per severity.</p>
-     */
-    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
-    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    template<typename SeverityCountsT = SeverityCounts>
-    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
-    template<typename SeverityCountsT = SeverityCounts>
-    TitleAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The title that the findings were aggregated on.</p>
      */
     inline const Aws::String& GetTitle() const { return m_title; }
@@ -86,19 +62,43 @@ namespace Model
     template<typename VulnerabilityIdT = Aws::String>
     TitleAggregationResponse& WithVulnerabilityId(VulnerabilityIdT&& value) { SetVulnerabilityId(std::forward<VulnerabilityIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    TitleAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that represent the count of matched findings per severity.</p>
+     */
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
+    inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    TitleAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet = false;
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
     Aws::String m_vulnerabilityId;
     bool m_vulnerabilityIdHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
+    SeverityCounts m_severityCounts;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

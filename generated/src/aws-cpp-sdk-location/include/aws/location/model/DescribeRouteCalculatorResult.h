@@ -105,7 +105,7 @@ namespace Model
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
      * more information about data providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
     inline const Aws::String& GetDataSource() const { return m_dataSource; }

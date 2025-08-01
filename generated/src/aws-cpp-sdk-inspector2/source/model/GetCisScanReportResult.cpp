@@ -25,15 +25,15 @@ GetCisScanReportResult::GetCisScanReportResult(const Aws::AmazonWebServiceResult
 GetCisScanReportResult& GetCisScanReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = CisReportStatusMapper::GetCisReportStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = CisReportStatusMapper::GetCisReportStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

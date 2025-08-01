@@ -194,6 +194,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time (in seconds) that a request from CloudFront to the origin can stay
+     * open and wait for a response. If the complete response isn't received from the
+     * origin by this time, CloudFront ends the connection.</p> <p>The value for
+     * <code>ResponseCompletionTimeout</code> must be equal to or greater than the
+     * value for <code>OriginReadTimeout</code>. If you don't set a value for
+     * <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum
+     * value.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response
+     * completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline int GetResponseCompletionTimeout() const { return m_responseCompletionTimeout; }
+    inline bool ResponseCompletionTimeoutHasBeenSet() const { return m_responseCompletionTimeoutHasBeenSet; }
+    inline void SetResponseCompletionTimeout(int value) { m_responseCompletionTimeoutHasBeenSet = true; m_responseCompletionTimeout = value; }
+    inline Origin& WithResponseCompletionTimeout(int value) { SetResponseCompletionTimeout(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on
      * your origin.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
@@ -250,6 +268,9 @@ namespace Model
 
     int m_connectionTimeout{0};
     bool m_connectionTimeoutHasBeenSet = false;
+
+    int m_responseCompletionTimeout{0};
+    bool m_responseCompletionTimeoutHasBeenSet = false;
 
     OriginShield m_originShield;
     bool m_originShieldHasBeenSet = false;

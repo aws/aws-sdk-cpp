@@ -66,7 +66,7 @@ namespace Model
      * <ul> <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li> </ul>
      *  <p>If you specify a departure that's not located on a road, Amazon
      * Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -89,7 +89,7 @@ namespace Model
      * <ul> <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li> </ul>
      *  <p>If you specify a destination that's not located on a road, Amazon
      * Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -111,7 +111,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -138,7 +138,7 @@ namespace Model
      * Grab as a data provider, and only within Southeast Asia.</p> <p>
      * <code>Truck</code> is not available for Grab.</p> <p>For more details on the
      * using Grab for routing, including areas of coverage, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
      * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>The
      * <code>TravelMode</code> you specify also determines how you specify route
      * preferences: </p> <ul> <li> <p>If traveling by <code>Car</code> use the
@@ -263,7 +263,7 @@ namespace Model
     ///@{
     /**
      * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }

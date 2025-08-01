@@ -91,6 +91,12 @@ Aws::String SendBulkEmailRequest::SerializePayload() const
 
   }
 
+  if(m_tenantNameHasBeenSet)
+  {
+   payload.WithString("TenantName", m_tenantName);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

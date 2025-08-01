@@ -28,8 +28,7 @@ namespace Model
 
   /**
    * <p>An object which defines the list of matching rules to run in a matching
-   * workflow. RuleBasedProperties contain a <code>Rules</code> field, which is a
-   * list of rule objects.</p><p><h3>See Also:</h3>   <a
+   * workflow. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/RuleBasedProperties">AWS
    * API Reference</a></p>
    */
@@ -59,18 +58,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or
+     * <p>The comparison type. You can choose <code>ONE_TO_ONE</code> or
      * <code>MANY_TO_MANY</code> as the <code>attributeMatchingModel</code>. </p> <p>If
-     * you choose <code>MANY_TO_MANY</code>, the system can match attributes across the
-     * sub-types of an attribute type. For example, if the value of the
-     * <code>Email</code> field of Profile A and the value of
-     * <code>BusinessEmail</code> field of Profile B matches, the two profiles are
-     * matched on the <code>Email</code> attribute type. </p> <p>If you choose
-     * <code>ONE_TO_ONE</code>, the system can only match attributes if the sub-types
-     * are an exact match. For example, for the <code>Email</code> attribute type, the
-     * system will only consider it a match if the value of the <code>Email</code>
-     * field of Profile A matches the value of the <code>Email</code> field of Profile
-     * B.</p>
+     * you choose <code>ONE_TO_ONE</code>, the system can only match attributes if the
+     * sub-types are an exact match. For example, for the <code>Email</code> attribute
+     * type, the system will only consider it a match if the value of the
+     * <code>Email</code> field of Profile A matches the value of the
+     * <code>Email</code> field of Profile B.</p> <p>If you choose
+     * <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types
+     * of an attribute type. For example, if the value of the <code>Email</code> field
+     * of Profile A and the value of <code>BusinessEmail</code> field of Profile B
+     * matches, the two profiles are matched on the <code>Email</code> attribute type.
+     * </p>
      */
     inline AttributeMatchingModel GetAttributeMatchingModel() const { return m_attributeMatchingModel; }
     inline bool AttributeMatchingModelHasBeenSet() const { return m_attributeMatchingModelHasBeenSet; }

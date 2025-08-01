@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
+     * <p>The Amazon EC2 instance ID.</p>
      */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    Ec2InstanceAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    Ec2InstanceAggregationResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon EC2 instance ID.</p>
+     * <p>The operating system of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    Ec2InstanceAggregationResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
+    inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+    template<typename OperatingSystemT = Aws::String>
+    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
+    template<typename OperatingSystemT = Aws::String>
+    Ec2InstanceAggregationResponse& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,24 +94,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of network findings for the Amazon EC2 instance.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
-    inline long long GetNetworkFindings() const { return m_networkFindings; }
-    inline bool NetworkFindingsHasBeenSet() const { return m_networkFindingsHasBeenSet; }
-    inline void SetNetworkFindings(long long value) { m_networkFindingsHasBeenSet = true; m_networkFindings = value; }
-    inline Ec2InstanceAggregationResponse& WithNetworkFindings(long long value) { SetNetworkFindings(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The operating system of the Amazon EC2 instance.</p>
-     */
-    inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
-    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    template<typename OperatingSystemT = Aws::String>
-    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
-    template<typename OperatingSystemT = Aws::String>
-    Ec2InstanceAggregationResponse& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Ec2InstanceAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,28 +115,38 @@ namespace Model
     template<typename SeverityCountsT = SeverityCounts>
     Ec2InstanceAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of network findings for the Amazon EC2 instance.</p>
+     */
+    inline long long GetNetworkFindings() const { return m_networkFindings; }
+    inline bool NetworkFindingsHasBeenSet() const { return m_networkFindingsHasBeenSet; }
+    inline void SetNetworkFindings(long long value) { m_networkFindingsHasBeenSet = true; m_networkFindings = value; }
+    inline Ec2InstanceAggregationResponse& WithNetworkFindings(long long value) { SetNetworkFindings(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_ami;
-    bool m_amiHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_instanceTags;
-    bool m_instanceTagsHasBeenSet = false;
-
-    long long m_networkFindings{0};
-    bool m_networkFindingsHasBeenSet = false;
+    Aws::String m_ami;
+    bool m_amiHasBeenSet = false;
 
     Aws::String m_operatingSystem;
     bool m_operatingSystemHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::String> m_instanceTags;
+    bool m_instanceTagsHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;
+
+    long long m_networkFindings{0};
+    bool m_networkFindingsHasBeenSet = false;
   };
 
 } // namespace Model

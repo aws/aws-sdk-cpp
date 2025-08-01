@@ -808,6 +808,7 @@
 #include <aws/quicksight/model/ImageSetConfiguration.h>
 #include <aws/quicksight/model/ImageSource.h>
 #include <aws/quicksight/model/ImageStaticFile.h>
+#include <aws/quicksight/model/ImpalaParameters.h>
 #include <aws/quicksight/model/IncludeFolderMembers.h>
 #include <aws/quicksight/model/IncludeGeneratedAnswer.h>
 #include <aws/quicksight/model/IncludeQuickSightQIndex.h>

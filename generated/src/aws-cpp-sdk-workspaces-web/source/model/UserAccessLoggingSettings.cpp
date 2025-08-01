@@ -25,6 +25,11 @@ UserAccessLoggingSettings::UserAccessLoggingSettings(JsonView jsonValue)
 
 UserAccessLoggingSettings& UserAccessLoggingSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("userAccessLoggingSettingsArn"))
+  {
+    m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");
+    m_userAccessLoggingSettingsArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
     Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
@@ -39,17 +44,18 @@ UserAccessLoggingSettings& UserAccessLoggingSettings::operator =(JsonView jsonVa
     m_kinesisStreamArn = jsonValue.GetString("kinesisStreamArn");
     m_kinesisStreamArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userAccessLoggingSettingsArn"))
-  {
-    m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");
-    m_userAccessLoggingSettingsArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue UserAccessLoggingSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_userAccessLoggingSettingsArnHasBeenSet)
+  {
+   payload.WithString("userAccessLoggingSettingsArn", m_userAccessLoggingSettingsArn);
+
+  }
 
   if(m_associatedPortalArnsHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue UserAccessLoggingSettings::Jsonize() const
   if(m_kinesisStreamArnHasBeenSet)
   {
    payload.WithString("kinesisStreamArn", m_kinesisStreamArn);
-
-  }
-
-  if(m_userAccessLoggingSettingsArnHasBeenSet)
-  {
-   payload.WithString("userAccessLoggingSettingsArn", m_userAccessLoggingSettingsArn);
 
   }
 
