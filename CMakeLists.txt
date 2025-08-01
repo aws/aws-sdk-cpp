@@ -71,6 +71,7 @@ if (LEGACY_BUILD)
     option(ENABLE_PROTOCOL_TESTS "Enable protocol tests" OFF)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
     option(AWS_APPSTORE_SAFE "Remove reference to private Apple APIs for AES GCM in Common Crypto. If set to OFF you application will get rejected from the apple app store." OFF)
+    option(AWS_ENABLE_CORE_INTEGRATION_TEST "Enables the core integration tests to be built which contains dependencies on other clients for setup and tear down" OFF)
 
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")

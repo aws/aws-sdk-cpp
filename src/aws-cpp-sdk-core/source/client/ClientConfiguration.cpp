@@ -45,6 +45,12 @@ static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_
 static const char* AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR = "metadata_service_timeout";
 static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR = "AWS_METADATA_SERVICE_NUM_ATTEMPTS";
 static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR = "metadata_service_num_attempts";
+static const char* AWS_IAM_ROLE_ARN_ENV_VAR = "AWS_IAM_ROLE_ARN";
+static const char* AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION = "role_arn";
+static const char* AWS_IAM_ROLE_SESSION_NAME_ENV_VAR = "AWS_IAM_ROLE_SESSION_NAME";
+static const char* AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION = "role_session_name";
+static const char* AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR = "AWS_WEB_IDENTITY_TOKEN_FILE";
+static const char* AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION = "web_identity_token_file";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -320,6 +326,24 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     // Initialize IMDS-specific retry strategy with configured number of attempts
     // Uses default retry mode with the specified max attempts from metadata_service_num_attempts
     config.credentialProviderConfig.imdsConfig.imdsRetryStrategy = InitRetryStrategy(attempts, "");
+
+    config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_ARN_ENV_VAR,
+          config.profileName,
+          AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION,
+          {}, /* allowed values */
+          "" /* default value */);
+
+      config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_SESSION_NAME_ENV_VAR,
+          config.profileName,
+          AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION,
+          {}, /* allowed values */
+          "" /* default value */);
+
+      config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR,
+          config.profileName,
+          AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
+          {}, /* allowed values */
+          "" /* default value */);
 }
 
 ClientConfiguration::ClientConfiguration()

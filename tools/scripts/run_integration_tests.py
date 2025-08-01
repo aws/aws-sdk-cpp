@@ -36,6 +36,7 @@ def main():
     exe_extension = ".exe" if platform.system() == "Windows" else ""
 
     test_list = [
+        "aws-cpp-sdk-core-integration-tests",
         "aws-cpp-sdk-transcribestreaming-integ-tests",
         "aws-cpp-sdk-dynamodb-unit-tests",
         "aws-cpp-sdk-dynamodb-integration-tests",
