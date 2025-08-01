@@ -519,7 +519,33 @@ namespace Aws
               bool disableImdsV1;
               bool disableImds;
             } imdsConfig;
-          }credentialProviderConfig;
+
+            /**
+             * Configuration for the STSCredentials provider
+             */
+            struct STSCredentialsCredentialProviderConfiguration {
+              STSCredentialsCredentialProviderConfiguration() = default;
+              STSCredentialsCredentialProviderConfiguration(const Aws::String& role, const Aws::String& session, const String& tokenFile)
+                  : roleArn(role), sessionName(session), tokenFilePath(tokenFile) {};
+              /**
+               * Arn of the role to assume by fetching credentials for
+               */
+              Aws::String roleArn;
+              /**
+               * Assumed role session identifier to be associated with the sourced credentials
+               */
+              Aws::String sessionName;
+              /**
+               * The OAuth 2.0 access token or OpenID Connect ID token
+               */
+              Aws::String tokenFilePath;
+
+              /**
+               * Time out for the credentials future call.
+               */
+              std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
+            } stsCredentialsProviderConfig;
+          } credentialProviderConfig;
         };
 
         /**
