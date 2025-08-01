@@ -151,6 +151,9 @@ namespace Aws
                                                                     const Aws::Map<Aws::String, Aws::String>& metadata,
                                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context,
                                                                     const Aws::String& precalculatedChecksum) {
+          // Track S3 Express bucket usage
+          m_transferConfig.s3Client->AppendToUserAgent("ft/s3-express");
+          
           // destructor of FStream will close stream automatically (when out of scope), no need to call close explicitly
 #ifdef _MSC_VER
           auto wide = Aws::Utils::StringUtils::ToWString(fileName.c_str());
@@ -169,6 +172,9 @@ namespace Aws
                                                                     const Aws::Map<Aws::String, Aws::String>& metadata,
                                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context,
                                                                     const Aws::String& precalculatedChecksum) {
+          // Track S3 Express bucket usage
+          m_transferConfig.s3Client->AppendToUserAgent("ft/s3-express");
+          
           auto handle =
               CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, context, "", precalculatedChecksum);
           return SubmitUpload(handle, fileStream);
@@ -181,6 +187,9 @@ namespace Aws
                                                                       const Aws::String& writeToFile,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
+          // Track S3 Express bucket usage
+          m_transferConfig.s3Client->AppendToUserAgent("ft/s3-express");
+            
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn, writeToFile);
             handle->ApplyDownloadConfiguration(downloadConfig);
             handle->SetContext(context);
@@ -205,6 +214,9 @@ namespace Aws
                                                                       const Aws::String& writeToFile,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
+          // Track S3 Express bucket usage
+          m_transferConfig.s3Client->AppendToUserAgent("ft/s3-express");
+            
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, fileOffset, downloadBytes, writeToStreamfn, writeToFile);
             handle->ApplyDownloadConfiguration(downloadConfig);
             handle->SetContext(context);
@@ -226,6 +238,9 @@ namespace Aws
                                                                       const DownloadConfiguration& downloadConfig,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
+          // Track S3 Express bucket usage
+          m_transferConfig.s3Client->AppendToUserAgent("ft/s3-express");
+            
 #ifdef _MSC_VER
             auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(writeToFile.c_str()).c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};

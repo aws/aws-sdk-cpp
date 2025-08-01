@@ -27,6 +27,8 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::S3_TRANSFER, "G"},
     {UserAgentFeature::S3_CRYPTO_V1N, "H"},
     {UserAgentFeature::S3_CRYPTO_V2, "I"},
+    {UserAgentFeature::S3_EXPRESS_BUCKET, "J"},
+    {UserAgentFeature::S3_ACCESS_GRANTS, "K"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32, "U"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C, "V"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64, "W"},
@@ -207,6 +209,8 @@ const std::pair<const char*, UserAgentFeature> LEGACY_FEATURE_MAPPING[] = {
     {"ft/s3-transfer", UserAgentFeature::S3_TRANSFER},
     {"ft/S3CryptoV1n", UserAgentFeature::S3_CRYPTO_V1N},
     {"ft/S3CryptoV2", UserAgentFeature::S3_CRYPTO_V2},
+    {"ft/s3-express", UserAgentFeature::S3_EXPRESS_BUCKET},
+    {"ft/s3-access-grants", UserAgentFeature::S3_ACCESS_GRANTS},
 };
 }
 
