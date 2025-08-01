@@ -36,7 +36,7 @@ namespace Aws
     typedef std::function<void(const Aws::Http::HttpRequest&)> RequestSignedHandler;
 
     struct RetryContext {
-      std::shared_ptr<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>> m_requestHash = nullptr;
+      std::shared_ptr<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>> m_requestHash;
     };
 
     /**
