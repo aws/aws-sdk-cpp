@@ -74,7 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of resource, for example <code>AWS::EC2::Instance</code>. </p>
+     * <p> The type of resource, for example <code>Amazon Web
+     * Services::EC2::Instance</code>. </p>
      */
     inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

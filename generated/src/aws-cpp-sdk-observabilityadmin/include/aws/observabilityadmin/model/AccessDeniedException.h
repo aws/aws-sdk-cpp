@@ -28,8 +28,8 @@ namespace Model
    * user or role that is making the request must have at least one IAM permissions
    * policy attached that grants the required permissions. For more information, see
    * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-   * management for AWS resources</a> in the IAM user guide. </p><p><h3>See
-   * Also:</h3>   <a
+   * management for Amazon Web Services resources</a> in the IAM user guide.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/AccessDeniedException">AWS
    * API Reference</a></p>
    */

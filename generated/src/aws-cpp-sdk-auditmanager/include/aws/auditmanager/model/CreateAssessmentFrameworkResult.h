@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the new framework that the
-     * <code>CreateAssessmentFramework</code> API returned. </p>
+     * <p> The new framework object that the <code>CreateAssessmentFramework</code> API
+     * returned. </p>
      */
     inline const Framework& GetFramework() const { return m_framework; }
     template<typename FrameworkT = Framework>

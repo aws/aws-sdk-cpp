@@ -104,6 +104,7 @@
 #include <aws/securityhub/model/AwsMskClusterDetails.h>
 #include <aws/securityhub/model/AwsS3AccessPointDetails.h>
 #include <aws/securityhub/model/AwsEc2ClientVpnEndpointDetails.h>
+#include <aws/securityhub/model/CodeRepositoryDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -1376,6 +1377,20 @@ namespace Model
     template<typename AwsEc2ClientVpnEndpointT = AwsEc2ClientVpnEndpointDetails>
     ResourceDetails& WithAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointT&& value) { SetAwsEc2ClientVpnEndpoint(std::forward<AwsEc2ClientVpnEndpointT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Details about an external code repository with which you can connect your
+     * Amazon Web Services resources. The connection is established through Amazon
+     * Inspector. </p>
+     */
+    inline const CodeRepositoryDetails& GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    template<typename CodeRepositoryT = CodeRepositoryDetails>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = CodeRepositoryDetails>
+    ResourceDetails& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
+    ///@}
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -1674,6 +1689,9 @@ namespace Model
 
     AwsEc2ClientVpnEndpointDetails m_awsEc2ClientVpnEndpoint;
     bool m_awsEc2ClientVpnEndpointHasBeenSet = false;
+
+    CodeRepositoryDetails m_codeRepository;
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

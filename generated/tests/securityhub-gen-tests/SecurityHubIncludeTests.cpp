@@ -586,6 +586,7 @@
 #include <aws/securityhub/model/ClassificationResult.h>
 #include <aws/securityhub/model/ClassificationStatus.h>
 #include <aws/securityhub/model/CloudWatchLogsLogGroupArnConfigDetails.h>
+#include <aws/securityhub/model/CodeRepositoryDetails.h>
 #include <aws/securityhub/model/CodeVulnerabilitiesFilePath.h>
 #include <aws/securityhub/model/Compliance.h>
 #include <aws/securityhub/model/ComplianceStatus.h>

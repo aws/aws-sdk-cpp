@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/model/NetworkType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -64,9 +65,9 @@ namespace Model
      * <p>Inbound rule 1</p> <ul> <li> <p>Protocol: All</p> </li> <li> <p>Ports:
      * All</p> </li> <li> <p>Source: Self</p> </li> </ul> </li> <li> <p>Outbound rule
      * 1</p> <ul> <li> <p>Protocol: All</p> </li> <li> <p>Ports: All</p> </li> <li>
-     * <p>Destination: 0.0.0.0/0 (IPv4)</p> </li> </ul> </li> <li> <p>Outbound rule
-     * 2</p> <ul> <li> <p>Protocol: All</p> </li> <li> <p>Ports: All</p> </li> <li>
-     * <p>Destination: Self</p> </li> </ul> </li> </ul>
+     * <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p> </li> </ul> </li> <li>
+     * <p>Outbound rule 2</p> <ul> <li> <p>Protocol: All</p> </li> <li> <p>Ports:
+     * All</p> </li> <li> <p>Destination: Self</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -77,6 +78,17 @@ namespace Model
     template<typename SecurityGroupIdsT = Aws::String>
     Networking& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address version the cluster uses. The default is
+     * <code>IPV4</code>.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline Networking& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -84,6 +96,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

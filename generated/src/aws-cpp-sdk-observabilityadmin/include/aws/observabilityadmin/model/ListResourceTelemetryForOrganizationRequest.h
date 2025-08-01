@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of AWS account IDs used to filter the resources to those associated
-     * with the specified accounts. </p>
+     * <p> A list of Amazon Web Services accounts used to filter the resources to those
+     * associated with the specified accounts. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIdentifiers() const { return m_accountIdentifiers; }
     inline bool AccountIdentifiersHasBeenSet() const { return m_accountIdentifiersHasBeenSet; }

@@ -85,7 +85,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The control sets that are associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>  <p>The
+     * <code>Controls</code> object returns a partial response when called through
+     * Framework APIs. For a complete <code>Controls</code> object, use
+     * <code>GetControl</code>.</p> 
      */
     inline const Aws::Vector<UpdateAssessmentFrameworkControlSet>& GetControlSets() const { return m_controlSets; }
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }

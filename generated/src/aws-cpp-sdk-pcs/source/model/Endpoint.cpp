@@ -40,6 +40,11 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
     m_publicIpAddressHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipv6Address"))
+  {
+    m_ipv6Address = jsonValue.GetString("ipv6Address");
+    m_ipv6AddressHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetString("port");
@@ -66,6 +71,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_publicIpAddressHasBeenSet)
   {
    payload.WithString("publicIpAddress", m_publicIpAddress);
+
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+   payload.WithString("ipv6Address", m_ipv6Address);
 
   }
 

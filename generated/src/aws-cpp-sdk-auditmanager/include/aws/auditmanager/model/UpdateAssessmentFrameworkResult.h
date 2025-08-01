@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the framework. </p>
+     * <p> The framework object. </p>
      */
     inline const Framework& GetFramework() const { return m_framework; }
     template<typename FrameworkT = Framework>

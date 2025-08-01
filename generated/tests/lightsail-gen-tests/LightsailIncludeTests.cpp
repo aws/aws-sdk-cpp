@@ -453,6 +453,7 @@
 #include <aws/lightsail/model/RecordState.h>
 #include <aws/lightsail/model/Region.h>
 #include <aws/lightsail/model/RegionName.h>
+#include <aws/lightsail/model/RegionSetupInProgressException.h>
 #include <aws/lightsail/model/RegisterContainerImageRequest.h>
 #include <aws/lightsail/model/RegisterContainerImageResult.h>
 #include <aws/lightsail/model/RegisteredDomainDelegationInfo.h>

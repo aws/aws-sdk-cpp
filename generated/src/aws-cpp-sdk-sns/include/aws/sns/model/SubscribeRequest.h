@@ -65,7 +65,7 @@ namespace Model
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
      * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
      * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
-     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * Amazon Data Firehose delivery stream.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -90,8 +90,8 @@ namespace Model
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
      * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
-     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
-     * Data Firehose delivery stream.</p> </li> </ul>
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Data
+     * Firehose delivery stream.</p> </li> </ul>
      */
     inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }

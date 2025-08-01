@@ -128,19 +128,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The control data sources where Audit Manager collects evidence from.</p>
-     */
-    inline const Aws::String& GetControlSources() const { return m_controlSources; }
-    inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
-    template<typename ControlSourcesT = Aws::String>
-    void SetControlSources(ControlSourcesT&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::forward<ControlSourcesT>(value); }
-    template<typename ControlSourcesT = Aws::String>
-    Framework& WithControlSources(ControlSourcesT&& value) { SetControlSources(std::forward<ControlSourcesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The control sets that are associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>  <p>The
+     * <code>Controls</code> object returns a partial response when called through
+     * Framework APIs. For a complete <code>Controls</code> object, use
+     * <code>GetControl</code>.</p> 
      */
     inline const Aws::Vector<ControlSet>& GetControlSets() const { return m_controlSets; }
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
@@ -237,9 +228,6 @@ namespace Model
 
     Aws::String m_logo;
     bool m_logoHasBeenSet = false;
-
-    Aws::String m_controlSources;
-    bool m_controlSourcesHasBeenSet = false;
 
     Aws::Vector<ControlSet> m_controlSets;
     bool m_controlSetsHasBeenSet = false;

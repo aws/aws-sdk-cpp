@@ -30,7 +30,8 @@ namespace Model
     ap_southeast_2,
     ap_northeast_1,
     ap_northeast_2,
-    eu_north_1
+    eu_north_1,
+    ap_southeast_3
   };
 
 namespace RegionNameMapper

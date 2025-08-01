@@ -213,17 +213,17 @@ namespace SNS
          * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
          * credentials, there is no <code>PlatformPrincipal</code>. The
          * <code>PlatformCredential</code> is a JSON formatted private key file. When using
-         * the Amazon Web Services CLI, the file must be in string format and special
-         * characters must be ignored. To format the file correctly, Amazon SNS recommends
-         * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
-         * service.json`</code>.</p> </li> <li> <p>For MPNS, <code>PlatformPrincipal</code>
-         * is <code>TLS certificate</code> and <code>PlatformCredential</code> is
-         * <code>private key</code>.</p> </li> <li> <p>For WNS,
-         * <code>PlatformPrincipal</code> is <code>Package Security Identifier</code> and
-         * <code>PlatformCredential</code> is <code>secret key</code>.</p> </li> </ul>
-         * <p>You can use the returned <code>PlatformApplicationArn</code> as an attribute
-         * for the <code>CreatePlatformEndpoint</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Web Services CLI or Amazon Web Services SDKs, the file must be in
+         * string format and special characters must be ignored. To format the file
+         * correctly, Amazon SNS recommends using the following command:
+         * <code>SERVICE_JSON=$(jq @json &lt; service.json)</code>.</p> </li> <li> <p>For
+         * MPNS, <code>PlatformPrincipal</code> is <code>TLS certificate</code> and
+         * <code>PlatformCredential</code> is <code>private key</code>.</p> </li> <li>
+         * <p>For WNS, <code>PlatformPrincipal</code> is <code>Package Security
+         * Identifier</code> and <code>PlatformCredential</code> is <code>secret
+         * key</code>.</p> </li> </ul> <p>You can use the returned
+         * <code>PlatformApplicationArn</code> as an attribute for the
+         * <code>CreatePlatformEndpoint</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
          * API Reference</a></p>
          */
@@ -1033,24 +1033,32 @@ namespace SNS
         }
 
         /**
-         * <p>Publishes up to ten messages to the specified topic. This is a batch version
-         * of <code>Publish</code>. For FIFO topics, multiple messages within a single
-         * batch are published in the order they are sent, and messages are deduplicated
-         * within the batch and across batches for 5 minutes.</p> <p>The result of
-         * publishing each message is reported individually in the response. Because the
-         * batch request can result in a combination of successful and unsuccessful
-         * actions, you should check for batch errors even when the call returns an HTTP
-         * status code of <code>200</code>.</p> <p>The maximum allowed individual message
-         * size and the maximum total payload size (the sum of the individual lengths of
-         * all of the batched messages) are both 256 KB (262,144 bytes). </p> <p>Some
-         * actions take lists of parameters. These lists are specified using the
-         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
-         * from 1. For example, a parameter list with two elements looks like this: </p>
-         * <p>&amp;AttributeName.1=first</p> <p>&amp;AttributeName.2=second</p> <p>If you
-         * send a batch message to a topic, Amazon SNS publishes the batch message to each
-         * endpoint that is subscribed to the topic. The format of the batch message
-         * depends on the notification protocol for each subscribed endpoint.</p> <p>When a
-         * <code>messageId</code> is returned, the batch message is saved and Amazon SNS
+         * <p>Publishes up to 10 messages to the specified topic in a single batch. This is
+         * a batch version of the <code>Publish</code> API. If you try to send more than 10
+         * messages in a single batch request, you will receive a
+         * <code>TooManyEntriesInBatchRequest</code> exception.</p> <p>For FIFO topics,
+         * multiple messages within a single batch are published in the order they are
+         * sent, and messages are deduplicated within the batch and across batches for five
+         * minutes.</p> <p>The result of publishing each message is reported individually
+         * in the response. Because the batch request can result in a combination of
+         * successful and unsuccessful actions, you should check for batch errors even when
+         * the call returns an HTTP status code of 200.</p> <p>The maximum allowed
+         * individual message size and the maximum total payload size (the sum of the
+         * individual lengths of all of the batched messages) are both 256 KB (262,144
+         * bytes).</p>  <p>The <code>PublishBatch</code> API can send up to 10
+         * messages at a time. If you attempt to send more than 10 messages in one request,
+         * you will encounter a <code>TooManyEntriesInBatchRequest</code> exception. In
+         * such cases, split your messages into multiple requests, each containing no more
+         * than 10 messages.</p>  <p>Some actions take lists of parameters.
+         * These lists are specified using the <code>param.n</code> notation. Values of
+         * <code>n</code> are integers starting from <b>1</b>. For example, a parameter
+         * list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <p>If you send a batch message to
+         * a topic, Amazon SNS publishes the batch message to each endpoint that is
+         * subscribed to the topic. The format of the batch message depends on the
+         * notification protocol for each subscribed endpoint.</p> <p>When a
+         * <code>messageId</code> is returned, the batch message is saved, and Amazon SNS
          * immediately delivers the message to subscribers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">AWS
          * API Reference</a></p>
@@ -1357,11 +1365,8 @@ namespace SNS
          * <code>Unsubscribe</code> call does not require authentication and the requester
          * is not the subscription owner, a final cancellation message is delivered to the
          * endpoint, so that the endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p>  <p>Amazon SQS queue
-         * subscriptions require authentication for deletion. Only the owner of the
-         * subscription, or the owner of the topic can unsubscribe using the required
-         * Amazon Web Services signature.</p>  <p>This action is throttled at 100
-         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
+         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          */

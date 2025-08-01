@@ -94,17 +94,17 @@ namespace AIOps
          * <p>Currently, you can have one investigation group in each Region in your
          * account. Each investigation in a Region is a part of the investigation group in
          * that Region</p> <p>To create an investigation group and set up CloudWatch
-         * investigations, you must be signed in to an IAM principal that has the either
-         * the <code>AIOpsConsoleAdminPolicy</code> or the <code>AdministratorAccess</code>
-         * IAM policy attached, or to an account that has similar permissions.</p>
-         *  <p>You can configure CloudWatch alarms to start investigations and
-         * add events to investigations. If you create your investigation group with
+         * investigations, you must be signed in to an IAM principal that has either the
+         * <code>AIOpsConsoleAdminPolicy</code> or the <code>AdministratorAccess</code> IAM
+         * policy attached, or to an account that has similar permissions.</p> 
+         * <p>You can configure CloudWatch alarms to start investigations and add events to
+         * investigations. If you create your investigation group with
          * <code>CreateInvestigationGroup</code> and you want to enable alarms to do this,
-         * you must use <a
-         * href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_PutInvestigationGroupPolicy.html">PutInvestigationGroupPolicy</a>
-         * to create a resource policy that grants this permission to CloudWatch alarms.
-         * </p> <p>For more information about configuring CloudWatch alarms to work with
-         * CloudWatch investigations, see </p> <p><h3>See Also:</h3>   <a
+         * you must use <code>PutInvestigationGroupPolicy</code> to create a resource
+         * policy that grants this permission to CloudWatch alarms. </p> <p>For more
+         * information about configuring CloudWatch alarms, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Using
+         * Amazon CloudWatch alarms</a> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/CreateInvestigationGroup">AWS
          * API Reference</a></p>
          */
@@ -209,8 +209,10 @@ namespace AIOps
         }
 
         /**
-         * <p>Returns the IAM resource policy that is associated with the specified
-         * investigation group.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the JSON of the IAM resource policy associated with the specified
+         * investigation group in a string. For example,
+         * <code>{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"aiops.alarms.cloudwatch.amazonaws.com\"},\"Action\":[\"aiops:CreateInvestigation\",\"aiops:CreateInvestigationEvent\"],\"Resource\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:SourceAccount\":\"111122223333\"},\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:cloudwatch:us-east-1:111122223333:alarm:*\"}}}]}</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/GetInvestigationGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -291,14 +293,13 @@ namespace AIOps
          * group.</p> <p>If you create your investigation group with
          * <code>CreateInvestigationGroup</code> and you want to enable CloudWatch alarms
          * to create investigations and add events to investigations, you must use this
-         * operation to create a policy similar to this example.</p> <p> <code>{ "Version":
-         * "2008-10-17", "Statement": [{ "Effect": "Allow", "Principal": { "Service":
-         * "aiops.alarms.cloudwatch.amazonaws.com" }, "Action":
-         * ["aiops:CreateInvestigation", "aiops:CreateInvestigationEvent"], "Resource":
-         * "*", "Condition": { "StringEquals": { "aws:SourceAccount": "<i>account-id</i>"
-         * }, "ArnLike": { "aws:SourceArn":
-         * "arn:aws:cloudwatch:<i>region</i>:<i>account-id</i>:alarm:*" } } }] }</code>
-         * </p><p><h3>See Also:</h3>   <a
+         * operation to create a policy similar to this example.</p> <p> <code> {
+         * "Version": "2008-10-17", "Statement": [ { "Effect": "Allow", "Principal": {
+         * "Service": "aiops.alarms.cloudwatch.amazonaws.com" }, "Action": [
+         * "aiops:CreateInvestigation", "aiops:CreateInvestigationEvent" ], "Resource":
+         * "*", "Condition": { "StringEquals": { "aws:SourceAccount": "account-id" },
+         * "ArnLike": { "aws:SourceArn": "arn:aws:cloudwatch:region:account-id:alarm:*" } }
+         * } ] } </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/PutInvestigationGroupPolicy">AWS
          * API Reference</a></p>
          */

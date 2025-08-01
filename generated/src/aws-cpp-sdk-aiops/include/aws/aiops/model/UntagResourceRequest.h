@@ -42,9 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that you want to remove the
-     * tags from. You can use the <a
-     * href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_ListInvestigationGroups.html">ListInvestigationGroups</a>
-     * operation to find the ARNs of investigation groups.</p>
+     * tags from. You can use the<code>ListInvestigationGroups</code> operation to find
+     * the ARNs of investigation groups.</p>
      */
     inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

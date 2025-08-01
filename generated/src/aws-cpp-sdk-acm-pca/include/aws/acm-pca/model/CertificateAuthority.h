@@ -216,13 +216,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines a cryptographic key management compliance standard used for handling
-     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
-     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
-     * must explicitly specify this parameter and value when creating a CA in that
-     * Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
-     * cannot be created in this region with the specified security standard."</p>
+     * <p>Defines a cryptographic key management compliance standard for handling and
+     * protecting CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> 
+     * <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA
+     * private keys in non-China regions using hardware security modules (HSMs) that
+     * comply with FIPS PUB 140-2 Level 3.</p> <p>For information about security
+     * standard support in different Amazon Web Services Regions, see <a
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage
+     * and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+     * 
      */
     inline KeyStorageSecurityStandard GetKeyStorageSecurityStandard() const { return m_keyStorageSecurityStandard; }
     inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }

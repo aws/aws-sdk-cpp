@@ -43,6 +43,11 @@ NetworkingRequest& NetworkingRequest::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("networkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +75,11 @@ JsonValue NetworkingRequest::Jsonize() const
    }
    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("networkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;

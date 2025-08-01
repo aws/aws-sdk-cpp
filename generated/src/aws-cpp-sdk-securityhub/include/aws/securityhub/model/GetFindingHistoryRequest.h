@@ -57,10 +57,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
-     * history from the CreatedAt timestamp of the finding to the time at which the API
-     * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p> <p>For more information
-     * about the validation and formatting of timestamp fields in Security Hub, see <a
+     * history from the <code>CreatedAt</code> timestamp of the finding to the time at
+     * which the API is called. In all of these scenarios, the response is limited to
+     * 100 results.</p> <p>For more information about the validation and formatting of
+     * timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
@@ -84,10 +84,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
-     * history from the CreatedAt timestamp of the finding to the time at which the API
-     * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p> <p>For more information
-     * about the validation and formatting of timestamp fields in Security Hub, see <a
+     * history from the <code>CreatedAt</code> timestamp of the finding to the time at
+     * which the API is called. In all of these scenarios, the response is limited to
+     * 100 results.</p> <p>For more information about the validation and formatting of
+     * timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }

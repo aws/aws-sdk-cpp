@@ -524,6 +524,11 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2ClientVpnEndpoint = jsonValue.GetObject("AwsEc2ClientVpnEndpoint");
     m_awsEc2ClientVpnEndpointHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CodeRepository"))
+  {
+    m_codeRepository = jsonValue.GetObject("CodeRepository");
+    m_codeRepositoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -1127,6 +1132,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEc2ClientVpnEndpointHasBeenSet)
   {
    payload.WithObject("AwsEc2ClientVpnEndpoint", m_awsEc2ClientVpnEndpoint.Jsonize());
+
+  }
+
+  if(m_codeRepositoryHasBeenSet)
+  {
+   payload.WithObject("CodeRepository", m_codeRepository.Jsonize());
 
   }
 
