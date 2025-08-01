@@ -41,6 +41,10 @@ static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION = "account_id_endpoint_mode";
+static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_TIMEOUT";
+static const char* AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR = "metadata_service_timeout";
+static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR = "AWS_METADATA_SERVICE_NUM_ATTEMPTS";
+static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR = "metadata_service_num_attempts";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -280,6 +284,7 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
         "false");
     if (disableIMDSv1 == "true") {
         config.disableImdsV1 = true;
+        config.credentialProviderConfig.imdsConfig.disableImdsV1 = true;
     }
 
     // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
@@ -289,11 +294,38 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
         AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
         {"required", "disabled", "preferred"}, /* allowed values */
         "preferred" /* default value */);
+    
+    // Load IMDS configuration from environment variables and config file
+    Aws::String timeoutStr = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR,
+        config.profileName,
+        AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR,
+        {}, /* allowed values */
+        "1" /* default value */);
+
+    // Load IMDS configuration from environment variables and config file
+    Aws::String numAttemptsStr = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR,
+        config.profileName,
+        AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR,
+        {}, /* allowed values */
+        "1" /* default value */);
+
+    // Parse and set IMDS timeout
+    long timeout = static_cast<long>(Aws::Utils::StringUtils::ConvertToInt32(timeoutStr.c_str()));
+    config.credentialProviderConfig.imdsConfig.metadataServiceTimeout = timeout;
+
+    // Parse and set IMDS num attempts
+    long attempts = static_cast<long>(Aws::Utils::StringUtils::ConvertToInt32(numAttemptsStr.c_str()));
+    config.credentialProviderConfig.imdsConfig.metadataServiceNumAttempts = attempts;
+
+    // Initialize IMDS-specific retry strategy with configured number of attempts
+    // Uses default retry mode with the specified max attempts from metadata_service_num_attempts
+    config.credentialProviderConfig.imdsConfig.imdsRetryStrategy = InitRetryStrategy(attempts, "");
 }
 
 ClientConfiguration::ClientConfiguration()
 {
     this->disableIMDS = false;
+    this->credentialProviderConfig.imdsConfig.disableImds = false;
     setLegacyClientConfigurationParameters(*this);
     setConfigFromEnvOrProfile(*this);
     this->credentialProviderConfig.profile = this->profileName;
@@ -320,6 +352,7 @@ ClientConfiguration::ClientConfiguration()
 ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
 {
     this->disableIMDS = configuration.shouldDisableIMDS;
+    this->credentialProviderConfig.imdsConfig.disableImds = configuration.shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
     setConfigFromEnvOrProfile(*this);
     this->credentialProviderConfig.profile = this->profileName;
@@ -346,6 +379,7 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
 {
     this->disableIMDS = shouldDisableIMDS;
+    this->credentialProviderConfig.imdsConfig.disableImds = shouldDisableIMDS;
     if (profile && Aws::Config::HasCachedConfigProfile(profile)) {
         this->profileName = Aws::String(profile);
     }
@@ -395,6 +429,7 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
 ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool shouldDisableIMDS)
 {
     this->disableIMDS = shouldDisableIMDS;
+    this->credentialProviderConfig.imdsConfig.disableImds = shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
     setConfigFromEnvOrProfile(*this);
     this->credentialProviderConfig.profile = this->profileName;

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/platform/OSVersionInfo.h>
@@ -242,6 +243,12 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
+InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, long refreshRateMs) :
+    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig)),
+    m_loadFrequencyMs(refreshRateMs)
+{
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with IMDS timeout: " << credentialConfig.imdsConfig.metadataServiceTimeout << "s, attempts: " << credentialConfig.imdsConfig.metadataServiceNumAttempts);
+}
 
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {

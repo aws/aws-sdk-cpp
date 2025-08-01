@@ -107,7 +107,7 @@ Aws::String LegacyGetRegion() {
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider()
     : STSAssumeRoleWebIdentityCredentialsProvider(
-          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{Aws::Auth::GetConfigProfileName(), LegacyGetRegion()}) {}
+          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{Aws::Auth::GetConfigProfileName(), LegacyGetRegion(), {}}) {}
 
 AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials()
 {

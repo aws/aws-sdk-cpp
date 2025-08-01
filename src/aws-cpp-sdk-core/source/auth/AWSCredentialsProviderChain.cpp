@@ -6,6 +6,7 @@
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/StringUtils.h>
@@ -125,7 +126,7 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws
     }
     else if (Aws::Utils::StringUtils::ToLower(ec2MetadataDisabled.c_str()) != "true")
     {
-        AddProvider(Aws::MakeShared<InstanceProfileCredentialsProvider>(DefaultCredentialsProviderChainTag));
+        AddProvider(Aws::MakeShared<InstanceProfileCredentialsProvider>(DefaultCredentialsProviderChainTag, config));
         AWS_LOGSTREAM_INFO(DefaultCredentialsProviderChainTag, "Added EC2 metadata service credentials provider to the provider chain.");
     }
 }

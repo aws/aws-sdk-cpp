@@ -497,6 +497,28 @@ namespace Aws
              * Region to use for calls
              */
             Aws::String region;
+
+            /**
+             * IMDS configuration settings
+             */
+            struct {
+              /**
+               * Number of total attempts to make when retrieving data from IMDS. Default 1.
+               */
+              long metadataServiceNumAttempts = 1;
+              
+              /**
+               * Timeout in seconds when retrieving data from IMDS. Default 1.
+               */
+              long metadataServiceTimeout = 1;
+
+              /**
+               * Retry Strategy for IMDS
+               */
+              std::shared_ptr<RetryStrategy> imdsRetryStrategy;
+              bool disableImdsV1;
+              bool disableImds;
+            } imdsConfig;
           }credentialProviderConfig;
         };
 
