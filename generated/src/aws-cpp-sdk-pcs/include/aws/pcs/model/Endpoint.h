@@ -51,7 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The endpoint's private IP address.</p> <p>Example: <code>2.2.2.2</code> </p>
+     * <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+     * <p>Example: <code>10.1.2.3</code> </p> <p>For clusters configured to use IPv6,
+     * this is an empty string.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const { return m_privateIpAddress; }
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
@@ -63,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The endpoint's public IP address.</p> <p>Example: <code>1.1.1.1</code> </p>
+     * <p>The endpoint's public IP address.</p> <p>Example: <code>192.0.2.1</code> </p>
      */
     inline const Aws::String& GetPublicIpAddress() const { return m_publicIpAddress; }
     inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
@@ -71,6 +73,18 @@ namespace Model
     void SetPublicIpAddress(PublicIpAddressT&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::forward<PublicIpAddressT>(value); }
     template<typename PublicIpAddressT = Aws::String>
     Endpoint& WithPublicIpAddress(PublicIpAddressT&& value) { SetPublicIpAddress(std::forward<PublicIpAddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The endpoint's IPv6 address.</p> <p>Example: <code>2001:db8::1</code> </p>
+     */
+    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+    template<typename Ipv6AddressT = Aws::String>
+    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
+    template<typename Ipv6AddressT = Aws::String>
+    Endpoint& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,6 +109,9 @@ namespace Model
 
     Aws::String m_publicIpAddress;
     bool m_publicIpAddressHasBeenSet = false;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet = false;
 
     Aws::String m_port;
     bool m_portHasBeenSet = false;

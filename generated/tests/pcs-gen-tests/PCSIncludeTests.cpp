@@ -60,6 +60,7 @@
 #include <aws/pcs/model/ListQueuesResult.h>
 #include <aws/pcs/model/ListTagsForResourceRequest.h>
 #include <aws/pcs/model/ListTagsForResourceResult.h>
+#include <aws/pcs/model/NetworkType.h>
 #include <aws/pcs/model/Networking.h>
 #include <aws/pcs/model/NetworkingRequest.h>
 #include <aws/pcs/model/PurchaseOption.h>

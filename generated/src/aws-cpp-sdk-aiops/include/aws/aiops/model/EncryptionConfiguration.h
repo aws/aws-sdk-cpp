@@ -42,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>Displays whether investigation data is encrypted by a customer managed key or
-     * an Amazon Web Services owned kay.</p>
+     * an Amazon Web Services owned key.</p>
      */
     inline EncryptionConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

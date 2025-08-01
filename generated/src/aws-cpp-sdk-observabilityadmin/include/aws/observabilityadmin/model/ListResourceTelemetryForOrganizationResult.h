@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of telemetry configurations for AWS resources supported by telemetry
-     * config in the organization. </p>
+     * <p> A list of telemetry configurations for Amazon Web Services resources
+     * supported by telemetry config in the organization. </p>
      */
     inline const Aws::Vector<TelemetryConfiguration>& GetTelemetryConfigurations() const { return m_telemetryConfigurations; }
     template<typename TelemetryConfigurationsT = Aws::Vector<TelemetryConfiguration>>

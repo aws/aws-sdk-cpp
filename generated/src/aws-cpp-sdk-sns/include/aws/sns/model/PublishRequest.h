@@ -223,15 +223,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <p>The <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
      * <code>(a-z, A-Z, 0-9)</code> and punctuation
-     * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
-     * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
-     * specific message group. Messages that belong to the same message group are
-     * processed in a FIFO manner (however, messages in different message groups might
-     * be processed out of order). Every message must include a
-     * <code>MessageGroupId</code>.</p>
+     * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p> For FIFO
+     * topics: The <code>MessageGroupId</code> is a tag that specifies that a message
+     * belongs to a specific message group. Messages that belong to the same message
+     * group are processed in a FIFO manner (however, messages in different message
+     * groups might be processed out of order). Every message must include a
+     * <code>MessageGroupId</code>. </p> <p> For standard topics: The
+     * <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS
+     * standard subscriptions to activate <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair
+     * queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any
+     * other endpoint types. When provided, the same validation rules apply as for FIFO
+     * topics. </p>
      */
     inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }

@@ -16,12 +16,14 @@ namespace Aws
 namespace ObservabilityAdmin
 {
   /**
-   * <p> Amazon CloudWatch Obsersavability Admin to control temletry config for your
-   * AWS Organization or account. Telemetry config conﬁg to discover and understand
-   * the state of telemetry conﬁguration for your AWS resources from a central view
-   * in the CloudWatch console. Telemetry conﬁg simpliﬁes the process of auditing
-   * your telemetry collection conﬁgurations across multiple resource types across
-   * your AWS Organization or account. For more information, see <a
+   * <p> You can use Amazon CloudWatch Observability Admin to discover and understand
+   * the state of telemetry configuration in CloudWatch for your Amazon Web Services
+   * Organization or account. This simplifies the process of auditing your telemetry
+   * collection configurations across multiple resource types within your Amazon Web
+   * Services Organization or account. By providing a consolidated view, it allows
+   * you to easily review and manage telemetry settings, helping you ensure proper
+   * monitoring and data collection across your Amazon Web Services environment. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
    * CloudWatch telemetry conﬁgurations</a> in the CloudWatch User Guide.</p> <p>For
    * information on the permissions you need to use this API, see <a
@@ -88,6 +90,116 @@ namespace ObservabilityAdmin
         virtual ~ObservabilityAdminClient();
 
         /**
+         * <p> Creates a telemetry rule that defines how telemetry should be configured for
+         * Amazon Web Services resources in your account. The rule specifies which
+         * resources should have telemetry enabled and how that telemetry data should be
+         * collected based on resource type, telemetry type, and selection criteria.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTelemetryRuleOutcome CreateTelemetryRule(const Model::CreateTelemetryRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTelemetryRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTelemetryRuleRequestT = Model::CreateTelemetryRuleRequest>
+        Model::CreateTelemetryRuleOutcomeCallable CreateTelemetryRuleCallable(const CreateTelemetryRuleRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::CreateTelemetryRule, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTelemetryRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTelemetryRuleRequestT = Model::CreateTelemetryRuleRequest>
+        void CreateTelemetryRuleAsync(const CreateTelemetryRuleRequestT& request, const CreateTelemetryRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::CreateTelemetryRule, request, handler, context);
+        }
+
+        /**
+         * <p> Creates a telemetry rule that applies across an Amazon Web Services
+         * Organization. This operation can only be called by the organization's management
+         * account or a delegated administrator account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTelemetryRuleForOrganizationOutcome CreateTelemetryRuleForOrganization(const Model::CreateTelemetryRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTelemetryRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTelemetryRuleForOrganizationRequestT = Model::CreateTelemetryRuleForOrganizationRequest>
+        Model::CreateTelemetryRuleForOrganizationOutcomeCallable CreateTelemetryRuleForOrganizationCallable(const CreateTelemetryRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::CreateTelemetryRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTelemetryRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTelemetryRuleForOrganizationRequestT = Model::CreateTelemetryRuleForOrganizationRequest>
+        void CreateTelemetryRuleForOrganizationAsync(const CreateTelemetryRuleForOrganizationRequestT& request, const CreateTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::CreateTelemetryRuleForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a telemetry rule from your account. Any telemetry configurations
+         * previously created by the rule will remain but no new resources will be
+         * configured by this rule. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTelemetryRuleOutcome DeleteTelemetryRule(const Model::DeleteTelemetryRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTelemetryRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTelemetryRuleRequestT = Model::DeleteTelemetryRuleRequest>
+        Model::DeleteTelemetryRuleOutcomeCallable DeleteTelemetryRuleCallable(const DeleteTelemetryRuleRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::DeleteTelemetryRule, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTelemetryRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTelemetryRuleRequestT = Model::DeleteTelemetryRuleRequest>
+        void DeleteTelemetryRuleAsync(const DeleteTelemetryRuleRequestT& request, const DeleteTelemetryRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::DeleteTelemetryRule, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes an organization-wide telemetry rule. This operation can only be
+         * called by the organization's management account or a delegated administrator
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTelemetryRuleForOrganizationOutcome DeleteTelemetryRuleForOrganization(const Model::DeleteTelemetryRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTelemetryRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTelemetryRuleForOrganizationRequestT = Model::DeleteTelemetryRuleForOrganizationRequest>
+        Model::DeleteTelemetryRuleForOrganizationOutcomeCallable DeleteTelemetryRuleForOrganizationCallable(const DeleteTelemetryRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::DeleteTelemetryRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTelemetryRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTelemetryRuleForOrganizationRequestT = Model::DeleteTelemetryRuleForOrganizationRequest>
+        void DeleteTelemetryRuleForOrganizationAsync(const DeleteTelemetryRuleForOrganizationRequestT& request, const DeleteTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::DeleteTelemetryRuleForOrganization, request, handler, context);
+        }
+
+        /**
          * <p> Returns the current onboarding status of the telemetry config feature,
          * including the status of the feature and reason the feature failed to start or
          * stop. </p><p><h3>See Also:</h3>   <a
@@ -116,9 +228,9 @@ namespace ObservabilityAdmin
 
         /**
          * <p> This returns the onboarding status of the telemetry configuration feature
-         * for the organization. It can only be called by a Management Account of an AWS
-         * Organization or an assigned Delegated Admin Account of AWS CloudWatch telemetry
-         * config. </p><p><h3>See Also:</h3>   <a
+         * for the organization. It can only be called by a Management Account of an Amazon
+         * Web Services Organization or an assigned Delegated Admin Account of Amazon
+         * CloudWatch telemetry config. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatusForOrganization">AWS
          * API Reference</a></p>
          */
@@ -143,8 +255,61 @@ namespace ObservabilityAdmin
         }
 
         /**
-         * <p> Returns a list of telemetry configurations for AWS resources supported by
-         * telemetry config. For more information, see <a
+         * <p> Retrieves the details of a specific telemetry rule in your account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTelemetryRuleOutcome GetTelemetryRule(const Model::GetTelemetryRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTelemetryRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTelemetryRuleRequestT = Model::GetTelemetryRuleRequest>
+        Model::GetTelemetryRuleOutcomeCallable GetTelemetryRuleCallable(const GetTelemetryRuleRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::GetTelemetryRule, request);
+        }
+
+        /**
+         * An Async wrapper for GetTelemetryRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTelemetryRuleRequestT = Model::GetTelemetryRuleRequest>
+        void GetTelemetryRuleAsync(const GetTelemetryRuleRequestT& request, const GetTelemetryRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::GetTelemetryRule, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the details of a specific organization telemetry rule. This
+         * operation can only be called by the organization's management account or a
+         * delegated administrator account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTelemetryRuleForOrganizationOutcome GetTelemetryRuleForOrganization(const Model::GetTelemetryRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTelemetryRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTelemetryRuleForOrganizationRequestT = Model::GetTelemetryRuleForOrganizationRequest>
+        Model::GetTelemetryRuleForOrganizationOutcomeCallable GetTelemetryRuleForOrganizationCallable(const GetTelemetryRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::GetTelemetryRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for GetTelemetryRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTelemetryRuleForOrganizationRequestT = Model::GetTelemetryRuleForOrganizationRequest>
+        void GetTelemetryRuleForOrganizationAsync(const GetTelemetryRuleForOrganizationRequestT& request, const GetTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::GetTelemetryRuleForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p> Returns a list of telemetry configurations for Amazon Web Services resources
+         * supported by telemetry config. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
          * CloudWatch telemetry configurations</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetry">AWS
@@ -171,8 +336,9 @@ namespace ObservabilityAdmin
         }
 
         /**
-         * <p> Returns a list of telemetry configurations for AWS resources supported by
-         * telemetry config in the organization. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of telemetry configurations for Amazon Web Services resources
+         * supported by telemetry config in the organization. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetryForOrganization">AWS
          * API Reference</a></p>
          */
@@ -197,7 +363,86 @@ namespace ObservabilityAdmin
         }
 
         /**
-         * <p> This action begins onboarding onboarding the caller AWS account to the
+         * <p> Lists all tags attached to the specified telemetry rule resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all telemetry rules in your account. You can filter the results by
+         * specifying a rule name prefix. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTelemetryRulesOutcome ListTelemetryRules(const Model::ListTelemetryRulesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTelemetryRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTelemetryRulesRequestT = Model::ListTelemetryRulesRequest>
+        Model::ListTelemetryRulesOutcomeCallable ListTelemetryRulesCallable(const ListTelemetryRulesRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::ListTelemetryRules, request);
+        }
+
+        /**
+         * An Async wrapper for ListTelemetryRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTelemetryRulesRequestT = Model::ListTelemetryRulesRequest>
+        void ListTelemetryRulesAsync(const ListTelemetryRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTelemetryRulesRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::ListTelemetryRules, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all telemetry rules in your organization. This operation can only be
+         * called by the organization's management account or a delegated administrator
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTelemetryRulesForOrganizationOutcome ListTelemetryRulesForOrganization(const Model::ListTelemetryRulesForOrganizationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTelemetryRulesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTelemetryRulesForOrganizationRequestT = Model::ListTelemetryRulesForOrganizationRequest>
+        Model::ListTelemetryRulesForOrganizationOutcomeCallable ListTelemetryRulesForOrganizationCallable(const ListTelemetryRulesForOrganizationRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::ListTelemetryRulesForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for ListTelemetryRulesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTelemetryRulesForOrganizationRequestT = Model::ListTelemetryRulesForOrganizationRequest>
+        void ListTelemetryRulesForOrganizationAsync(const ListTelemetryRulesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTelemetryRulesForOrganizationRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::ListTelemetryRulesForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p> This action begins onboarding the caller Amazon Web Services account to the
          * telemetry config feature. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluation">AWS
          * API Reference</a></p>
@@ -249,8 +494,8 @@ namespace ObservabilityAdmin
         }
 
         /**
-         * <p> This action begins offboarding the caller AWS account from the telemetry
-         * config feature. </p><p><h3>See Also:</h3>   <a
+         * <p> This action begins offboarding the caller Amazon Web Services account from
+         * the telemetry config feature. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluation">AWS
          * API Reference</a></p>
          */
@@ -275,8 +520,8 @@ namespace ObservabilityAdmin
         }
 
         /**
-         * <p> This action offboards the Organization of the caller AWS account from thef
-         * telemetry config feature. </p><p><h3>See Also:</h3>   <a
+         * <p> This action offboards the Organization of the caller Amazon Web Services
+         * account from the telemetry config feature. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluationForOrganization">AWS
          * API Reference</a></p>
          */
@@ -298,6 +543,111 @@ namespace ObservabilityAdmin
         void StopTelemetryEvaluationForOrganizationAsync(const StopTelemetryEvaluationForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StopTelemetryEvaluationForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&ObservabilityAdminClient::StopTelemetryEvaluationForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p> Adds or updates tags for a telemetry rule resource. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p> Removes tags from a telemetry rule resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p> Updates an existing telemetry rule in your account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTelemetryRuleOutcome UpdateTelemetryRule(const Model::UpdateTelemetryRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTelemetryRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTelemetryRuleRequestT = Model::UpdateTelemetryRuleRequest>
+        Model::UpdateTelemetryRuleOutcomeCallable UpdateTelemetryRuleCallable(const UpdateTelemetryRuleRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::UpdateTelemetryRule, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTelemetryRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTelemetryRuleRequestT = Model::UpdateTelemetryRuleRequest>
+        void UpdateTelemetryRuleAsync(const UpdateTelemetryRuleRequestT& request, const UpdateTelemetryRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::UpdateTelemetryRule, request, handler, context);
+        }
+
+        /**
+         * <p> Updates an existing telemetry rule that applies across an Amazon Web
+         * Services Organization. This operation can only be called by the organization's
+         * management account or a delegated administrator account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTelemetryRuleForOrganizationOutcome UpdateTelemetryRuleForOrganization(const Model::UpdateTelemetryRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTelemetryRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTelemetryRuleForOrganizationRequestT = Model::UpdateTelemetryRuleForOrganizationRequest>
+        Model::UpdateTelemetryRuleForOrganizationOutcomeCallable UpdateTelemetryRuleForOrganizationCallable(const UpdateTelemetryRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::UpdateTelemetryRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTelemetryRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTelemetryRuleForOrganizationRequestT = Model::UpdateTelemetryRuleForOrganizationRequest>
+        void UpdateTelemetryRuleForOrganizationAsync(const UpdateTelemetryRuleForOrganizationRequestT& request, const UpdateTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::UpdateTelemetryRuleForOrganization, request, handler, context);
         }
 
 

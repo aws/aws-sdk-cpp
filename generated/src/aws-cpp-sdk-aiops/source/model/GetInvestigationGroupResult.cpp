@@ -32,7 +32,7 @@ GetInvestigationGroupResult& GetInvestigationGroupResult::operator =(const Aws::
   }
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetInt64("createdAt");
     m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lastModifiedBy"))
@@ -42,7 +42,7 @@ GetInvestigationGroupResult& GetInvestigationGroupResult::operator =(const Aws::
   }
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
-    m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
+    m_lastModifiedAt = jsonValue.GetInt64("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
