@@ -6,6 +6,7 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +38,10 @@ namespace Aws
                 m_ec2metadataClient = client;
             }
         }
+        
+        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig)
+            : m_ec2metadataClient(Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG, credentialConfig))
+        {}
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {

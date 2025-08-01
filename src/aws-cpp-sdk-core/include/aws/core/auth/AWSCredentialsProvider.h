@@ -22,6 +22,10 @@
 
 namespace Aws
 {
+    namespace Client
+    {
+        struct ClientConfiguration;
+    }
     namespace Auth
     {
         constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
@@ -211,6 +215,11 @@ namespace Aws
              * uses a supplied EC2MetadataClient.
              */
             InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
+
+            /**
+             * Initializes the provider using ClientConfiguration for IMDS settings.
+             */
+            InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialProviderConfig, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Retrieves the credentials if found, otherwise returns empty credential set.
