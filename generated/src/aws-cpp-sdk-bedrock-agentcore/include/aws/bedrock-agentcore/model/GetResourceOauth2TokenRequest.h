@@ -50,18 +50,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user ID of the user you're retrieving the token on behalf of.</p>
-     */
-    inline const Aws::String& GetUserId() const { return m_userId; }
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    template<typename UserIdT = Aws::String>
-    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
-    template<typename UserIdT = Aws::String>
-    GetResourceOauth2TokenRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Reference to the credential provider</p>
      */
     inline const Aws::String& GetResourceCredentialProviderName() const { return m_resourceCredentialProviderName; }
@@ -140,9 +128,6 @@ namespace Model
 
     Aws::String m_workloadIdentityToken;
     bool m_workloadIdentityTokenHasBeenSet = false;
-
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
 
     Aws::String m_resourceCredentialProviderName;
     bool m_resourceCredentialProviderNameHasBeenSet = false;

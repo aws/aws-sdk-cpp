@@ -45,6 +45,7 @@
 #include <aws/iotsitewise/model/DeleteAssetRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelCompositeModelRequest.h>
+#include <aws/iotsitewise/model/DeleteAssetModelInterfaceRelationshipRequest.h>
 #include <aws/iotsitewise/model/DeleteComputationModelRequest.h>
 #include <aws/iotsitewise/model/DeleteDashboardRequest.h>
 #include <aws/iotsitewise/model/DeleteDatasetRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/iotsitewise/model/DescribeAssetCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelCompositeModelRequest.h>
+#include <aws/iotsitewise/model/DescribeAssetModelInterfaceRelationshipRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/DescribeBulkImportJobRequest.h>
 #include <aws/iotsitewise/model/DescribeComputationModelRequest.h>
@@ -100,11 +102,13 @@
 #include <aws/iotsitewise/model/ListDatasetsRequest.h>
 #include <aws/iotsitewise/model/ListExecutionsRequest.h>
 #include <aws/iotsitewise/model/ListGatewaysRequest.h>
+#include <aws/iotsitewise/model/ListInterfaceRelationshipsRequest.h>
 #include <aws/iotsitewise/model/ListPortalsRequest.h>
 #include <aws/iotsitewise/model/ListProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/ListProjectsRequest.h>
 #include <aws/iotsitewise/model/ListTagsForResourceRequest.h>
 #include <aws/iotsitewise/model/ListTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/PutAssetModelInterfaceRelationshipRequest.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsRequest.h>
 #include <aws/iotsitewise/model/PutStorageConfigurationRequest.h>
@@ -1006,6 +1010,49 @@ DeleteAssetModelCompositeModelOutcome IoTSiteWiseClient::DeleteAssetModelComposi
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DeleteAssetModelInterfaceRelationship(const DeleteAssetModelInterfaceRelationshipRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteAssetModelInterfaceRelationship);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAssetModelInterfaceRelationship", "Required field: AssetModelId, is not set");
+    return DeleteAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
+  }
+  if (!request.InterfaceAssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAssetModelInterfaceRelationship", "Required field: InterfaceAssetModelId, is not set");
+    return DeleteAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InterfaceAssetModelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteAssetModelInterfaceRelationship",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteAssetModelInterfaceRelationshipOutcome>(
+    [&]()-> DeleteAssetModelInterfaceRelationshipOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteAssetModelInterfaceRelationshipOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/interface/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInterfaceAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
+      return DeleteAssetModelInterfaceRelationshipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteComputationModelOutcome IoTSiteWiseClient::DeleteComputationModel(const DeleteComputationModelRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteComputationModel);
@@ -1463,6 +1510,49 @@ DescribeAssetModelCompositeModelOutcome IoTSiteWiseClient::DescribeAssetModelCom
       endpointResolutionOutcome.GetResult().AddPathSegments("/composite-models/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelCompositeModelId());
       return DescribeAssetModelCompositeModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::DescribeAssetModelInterfaceRelationship(const DescribeAssetModelInterfaceRelationshipRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeAssetModelInterfaceRelationship);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAssetModelInterfaceRelationship", "Required field: AssetModelId, is not set");
+    return DescribeAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
+  }
+  if (!request.InterfaceAssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAssetModelInterfaceRelationship", "Required field: InterfaceAssetModelId, is not set");
+    return DescribeAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InterfaceAssetModelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeAssetModelInterfaceRelationship",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeAssetModelInterfaceRelationshipOutcome>(
+    [&]()-> DescribeAssetModelInterfaceRelationshipOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeAssetModelInterfaceRelationshipOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/interface/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInterfaceAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
+      return DescribeAssetModelInterfaceRelationshipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2930,6 +3020,42 @@ ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListInterfaceRelationshipsOutcome IoTSiteWiseClient::ListInterfaceRelationships(const ListInterfaceRelationshipsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListInterfaceRelationships);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInterfaceRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InterfaceAssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListInterfaceRelationships", "Required field: InterfaceAssetModelId, is not set");
+    return ListInterfaceRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InterfaceAssetModelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListInterfaceRelationships, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListInterfaceRelationships, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListInterfaceRelationships",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListInterfaceRelationshipsOutcome>(
+    [&]()-> ListInterfaceRelationshipsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInterfaceRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListInterfaceRelationshipsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/interface/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInterfaceAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models");
+      return ListInterfaceRelationshipsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListPortals);
@@ -3086,6 +3212,49 @@ ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequ
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTimeSeriesOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/timeseries/");
       return ListTimeSeriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutAssetModelInterfaceRelationshipOutcome IoTSiteWiseClient::PutAssetModelInterfaceRelationship(const PutAssetModelInterfaceRelationshipRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutAssetModelInterfaceRelationship);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAssetModelInterfaceRelationship", "Required field: AssetModelId, is not set");
+    return PutAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
+  }
+  if (!request.InterfaceAssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAssetModelInterfaceRelationship", "Required field: InterfaceAssetModelId, is not set");
+    return PutAssetModelInterfaceRelationshipOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InterfaceAssetModelId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutAssetModelInterfaceRelationship, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutAssetModelInterfaceRelationship",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutAssetModelInterfaceRelationshipOutcome>(
+    [&]()-> PutAssetModelInterfaceRelationshipOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAssetModelInterfaceRelationship, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PutAssetModelInterfaceRelationshipOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-models/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/interface/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInterfaceAssetModelId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/asset-model-interface-relationship");
+      return PutAssetModelInterfaceRelationshipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

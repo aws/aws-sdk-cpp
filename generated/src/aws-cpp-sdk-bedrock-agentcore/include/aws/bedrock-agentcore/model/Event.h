@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an event in a memory store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about an event in an AgentCore Memory
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Event">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the memory store containing the event.</p>
+     * <p>The identifier of the AgentCore Memory resource containing the event.</p>
      */
     inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }

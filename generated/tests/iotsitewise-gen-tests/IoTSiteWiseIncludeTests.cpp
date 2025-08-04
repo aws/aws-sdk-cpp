@@ -162,6 +162,8 @@
 #include <aws/iotsitewise/model/DeleteAccessPolicyResult.h>
 #include <aws/iotsitewise/model/DeleteAssetModelCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelCompositeModelResult.h>
+#include <aws/iotsitewise/model/DeleteAssetModelInterfaceRelationshipRequest.h>
+#include <aws/iotsitewise/model/DeleteAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/DeleteAssetModelRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetModelResult.h>
 #include <aws/iotsitewise/model/DeleteAssetRequest.h>
@@ -186,6 +188,8 @@
 #include <aws/iotsitewise/model/DescribeAssetCompositeModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetModelCompositeModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelCompositeModelResult.h>
+#include <aws/iotsitewise/model/DescribeAssetModelInterfaceRelationshipRequest.h>
+#include <aws/iotsitewise/model/DescribeAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/DescribeAssetModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyRequest.h>
@@ -255,6 +259,7 @@
 #include <aws/iotsitewise/model/Greengrass.h>
 #include <aws/iotsitewise/model/GreengrassV2.h>
 #include <aws/iotsitewise/model/GroupIdentity.h>
+#include <aws/iotsitewise/model/HierarchyMapping.h>
 #include <aws/iotsitewise/model/IAMRoleIdentity.h>
 #include <aws/iotsitewise/model/IAMUserIdentity.h>
 #include <aws/iotsitewise/model/Identity.h>
@@ -263,6 +268,9 @@
 #include <aws/iotsitewise/model/ImageFile.h>
 #include <aws/iotsitewise/model/ImageFileType.h>
 #include <aws/iotsitewise/model/ImageLocation.h>
+#include <aws/iotsitewise/model/InterfaceRelationship.h>
+#include <aws/iotsitewise/model/InterfaceRelationshipSummary.h>
+#include <aws/iotsitewise/model/InterfaceSummary.h>
 #include <aws/iotsitewise/model/InterpolatedAssetPropertyValue.h>
 #include <aws/iotsitewise/model/InvocationOutput.h>
 #include <aws/iotsitewise/model/InvokeAssistantHandler.h>
@@ -312,6 +320,8 @@
 #include <aws/iotsitewise/model/ListExecutionsResult.h>
 #include <aws/iotsitewise/model/ListGatewaysRequest.h>
 #include <aws/iotsitewise/model/ListGatewaysResult.h>
+#include <aws/iotsitewise/model/ListInterfaceRelationshipsRequest.h>
+#include <aws/iotsitewise/model/ListInterfaceRelationshipsResult.h>
 #include <aws/iotsitewise/model/ListPortalsRequest.h>
 #include <aws/iotsitewise/model/ListPortalsResult.h>
 #include <aws/iotsitewise/model/ListProjectAssetsRequest.h>
@@ -348,10 +358,14 @@
 #include <aws/iotsitewise/model/ProjectSummary.h>
 #include <aws/iotsitewise/model/Property.h>
 #include <aws/iotsitewise/model/PropertyDataType.h>
+#include <aws/iotsitewise/model/PropertyMapping.h>
+#include <aws/iotsitewise/model/PropertyMappingConfiguration.h>
 #include <aws/iotsitewise/model/PropertyNotification.h>
 #include <aws/iotsitewise/model/PropertyNotificationState.h>
 #include <aws/iotsitewise/model/PropertyType.h>
 #include <aws/iotsitewise/model/PropertyValueNullValue.h>
+#include <aws/iotsitewise/model/PutAssetModelInterfaceRelationshipRequest.h>
+#include <aws/iotsitewise/model/PutAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/PutAssetPropertyValueEntry.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationResult.h>

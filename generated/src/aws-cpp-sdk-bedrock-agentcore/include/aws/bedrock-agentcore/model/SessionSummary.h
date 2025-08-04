@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about a session in a memory store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains summary information about a session in an AgentCore Memory
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SessionSummary">AWS
    * API Reference</a></p>
    */

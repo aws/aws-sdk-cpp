@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p> The license information that Amazon EVS requires to create an environment.
-   * Amazon EVS requires two license keys: a VCF solution key and a vSAN license
-   * key.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p> The license information that Amazon EVS requires to
+   * create an environment. Amazon EVS requires two license keys: a VCF solution key
+   * and a vSAN license key.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/LicenseInfo">AWS API
    * Reference</a></p>
    */
@@ -42,7 +43,8 @@ namespace Model
     ///@{
     /**
      * <p> The VCF solution key. This license unlocks VMware VCF product features,
-     * including vSphere, NSX, SDDC Manager, and vCenter Server.</p>
+     * including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key
+     * must cover a minimum of 256 cores.</p>
      */
     inline const Aws::String& GetSolutionKey() const { return m_solutionKey; }
     inline bool SolutionKeyHasBeenSet() const { return m_solutionKeyHasBeenSet; }
@@ -54,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The VSAN license key. This license unlocks vSAN features.</p>
+     * <p> The VSAN license key. This license unlocks vSAN features. The vSAN license
+     * key must provide at least 110 TiB of vSAN capacity.</p>
      */
     inline const Aws::String& GetVsanKey() const { return m_vsanKey; }
     inline bool VsanKeyHasBeenSet() const { return m_vsanKeyHasBeenSet; }

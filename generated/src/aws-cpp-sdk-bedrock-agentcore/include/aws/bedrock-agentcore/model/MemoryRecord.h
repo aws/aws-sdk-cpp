@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a memory record in a memory store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a memory record in an AgentCore Memory
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/MemoryRecord">AWS
    * API Reference</a></p>
    */

@@ -10,6 +10,7 @@
 #include <aws/iotsitewise/model/PropertyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/model/AssetModelPropertyPathSegment.h>
+#include <aws/iotsitewise/model/InterfaceSummary.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains a summary of a property associated with a model.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains a summary of a property associated with a model. This includes
+   * information about which interfaces the property belongs to, if
+   * any.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelPropertySummary">AWS
    * API Reference</a></p>
    */
@@ -151,6 +153,22 @@ namespace Model
     template<typename PathT = AssetModelPropertyPathSegment>
     AssetModelPropertySummary& AddPath(PathT&& value) { m_pathHasBeenSet = true; m_path.emplace_back(std::forward<PathT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of interface summaries that describe which interfaces this property
+     * belongs to, including the interface asset model ID and the corresponding
+     * property ID in the interface.</p>
+     */
+    inline const Aws::Vector<InterfaceSummary>& GetInterfaceSummaries() const { return m_interfaceSummaries; }
+    inline bool InterfaceSummariesHasBeenSet() const { return m_interfaceSummariesHasBeenSet; }
+    template<typename InterfaceSummariesT = Aws::Vector<InterfaceSummary>>
+    void SetInterfaceSummaries(InterfaceSummariesT&& value) { m_interfaceSummariesHasBeenSet = true; m_interfaceSummaries = std::forward<InterfaceSummariesT>(value); }
+    template<typename InterfaceSummariesT = Aws::Vector<InterfaceSummary>>
+    AssetModelPropertySummary& WithInterfaceSummaries(InterfaceSummariesT&& value) { SetInterfaceSummaries(std::forward<InterfaceSummariesT>(value)); return *this;}
+    template<typename InterfaceSummariesT = InterfaceSummary>
+    AssetModelPropertySummary& AddInterfaceSummaries(InterfaceSummariesT&& value) { m_interfaceSummariesHasBeenSet = true; m_interfaceSummaries.emplace_back(std::forward<InterfaceSummariesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -179,6 +197,9 @@ namespace Model
 
     Aws::Vector<AssetModelPropertyPathSegment> m_path;
     bool m_pathHasBeenSet = false;
+
+    Aws::Vector<InterfaceSummary> m_interfaceSummaries;
+    bool m_interfaceSummariesHasBeenSet = false;
   };
 
 } // namespace Model

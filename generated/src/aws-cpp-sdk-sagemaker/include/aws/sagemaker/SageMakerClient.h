@@ -192,6 +192,35 @@ namespace SageMaker
         }
 
         /**
+         * <p> Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in
+         * your EKS-orchestrated HyperPod cluster. </p> <p> This API works with the Amazon
+         * Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to
+         * manage the lifecycle of persistent storage in your HyperPod EKS clusters.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachClusterNodeVolumeOutcome AttachClusterNodeVolume(const Model::AttachClusterNodeVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for AttachClusterNodeVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AttachClusterNodeVolumeRequestT = Model::AttachClusterNodeVolumeRequest>
+        Model::AttachClusterNodeVolumeOutcomeCallable AttachClusterNodeVolumeCallable(const AttachClusterNodeVolumeRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::AttachClusterNodeVolume, request);
+        }
+
+        /**
+         * An Async wrapper for AttachClusterNodeVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AttachClusterNodeVolumeRequestT = Model::AttachClusterNodeVolumeRequest>
+        void AttachClusterNodeVolumeAsync(const AttachClusterNodeVolumeRequestT& request, const AttachClusterNodeVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::AttachClusterNodeVolume, request, handler, context);
+        }
+
+        /**
          * <p>Deletes specific nodes within a SageMaker HyperPod cluster.
          * <code>BatchDeleteClusterNodes</code> accepts a cluster name and a list of node
          * IDs.</p>  <ul> <li> <p>To safeguard your work, back up your data to
@@ -5856,6 +5885,35 @@ namespace SageMaker
         }
 
         /**
+         * <p> Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in
+         * your EKS-orchestrated SageMaker HyperPod cluster.</p> <p> This API works with
+         * the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI)
+         * driver to manage the lifecycle of persistent storage in your HyperPod EKS
+         * clusters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachClusterNodeVolumeOutcome DetachClusterNodeVolume(const Model::DetachClusterNodeVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetachClusterNodeVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DetachClusterNodeVolumeRequestT = Model::DetachClusterNodeVolumeRequest>
+        Model::DetachClusterNodeVolumeOutcomeCallable DetachClusterNodeVolumeCallable(const DetachClusterNodeVolumeRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DetachClusterNodeVolume, request);
+        }
+
+        /**
+         * An Async wrapper for DetachClusterNodeVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DetachClusterNodeVolumeRequestT = Model::DetachClusterNodeVolumeRequest>
+        void DetachClusterNodeVolumeAsync(const DetachClusterNodeVolumeRequestT& request, const DetachClusterNodeVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DetachClusterNodeVolume, request, handler, context);
+        }
+
+        /**
          * <p>Disables using Service Catalog in SageMaker. Service Catalog is used to
          * create SageMaker projects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisableSagemakerServicecatalogPortfolio">AWS
@@ -10328,14 +10386,19 @@ namespace SageMaker
          * By default, a workforce isn't restricted to specific IP addresses. If you
          * specify a range of IP addresses, workers who attempt to access tasks using any
          * IP address outside the specified range are denied and get a <code>Not
-         * Found</code> error message on the worker portal.</p> <p>To restrict access to
-         * all the workers in public internet, add the <code>SourceIpConfig</code> CIDR
-         * value as "10.0.0.0/16".</p>  <p>Amazon SageMaker does not support
-         * Source Ip restriction for worker portals in VPC.</p>  <p>Use
-         * <code>OidcConfig</code> to update the configuration of a workforce created using
-         * your own OIDC IdP. </p>  <p>You can only update your OIDC IdP
-         * configuration when there are no work teams associated with your workforce. You
-         * can delete work teams using the <a
+         * Found</code> error message on the worker portal.</p> <p>To restrict public
+         * internet access for all workers, configure the <code>SourceIpConfig</code> CIDR
+         * value. For example, when using <code>SourceIpConfig</code> with an
+         * <code>IpAddressType</code> of <code>IPv4</code>, you can restrict access to the
+         * IPv4 CIDR block "10.0.0.0/16". When using an <code>IpAddressType</code> of
+         * <code>dualstack</code>, you can specify both the IPv4 and IPv6 CIDR blocks, such
+         * as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for IPv6 only, or
+         * "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.</p> 
+         * <p>Amazon SageMaker does not support Source Ip restriction for worker portals in
+         * VPC.</p>  <p>Use <code>OidcConfig</code> to update the configuration
+         * of a workforce created using your own OIDC IdP. </p>  <p>You can only
+         * update your OIDC IdP configuration when there are no work teams associated with
+         * your workforce. You can delete work teams using the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
          * operation.</p>  <p>After restricting access to a range of IP
          * addresses or updating your OIDC IdP configuration with this operation, you can

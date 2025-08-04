@@ -74,6 +74,15 @@ AssetModelPropertySummary& AssetModelPropertySummary::operator =(JsonView jsonVa
     }
     m_pathHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("interfaceSummaries"))
+  {
+    Aws::Utils::Array<JsonView> interfaceSummariesJsonList = jsonValue.GetArray("interfaceSummaries");
+    for(unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength(); ++interfaceSummariesIndex)
+    {
+      m_interfaceSummaries.push_back(interfaceSummariesJsonList[interfaceSummariesIndex].AsObject());
+    }
+    m_interfaceSummariesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -136,6 +145,17 @@ JsonValue AssetModelPropertySummary::Jsonize() const
      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
    }
    payload.WithArray("path", std::move(pathJsonList));
+
+  }
+
+  if(m_interfaceSummariesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> interfaceSummariesJsonList(m_interfaceSummaries.size());
+   for(unsigned interfaceSummariesIndex = 0; interfaceSummariesIndex < interfaceSummariesJsonList.GetLength(); ++interfaceSummariesIndex)
+   {
+     interfaceSummariesJsonList[interfaceSummariesIndex].AsObject(m_interfaceSummaries[interfaceSummariesIndex].Jsonize());
+   }
+   payload.WithArray("interfaceSummaries", std::move(interfaceSummariesJsonList));
 
   }
 

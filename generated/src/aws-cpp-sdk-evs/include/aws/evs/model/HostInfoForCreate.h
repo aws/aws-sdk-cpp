@@ -25,10 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a host.</p>  <p>You cannot use
-   * <code>dedicatedHostId</code> and <code>placementGroupId</code> together in the
-   * same <code>HostInfoForCreate</code>object. This results in a
-   * <code>ValidationException</code> response.</p> <p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>An object that represents a host.</p>  <p>You
+   * cannot use <code>dedicatedHostId</code> and <code>placementGroupId</code>
+   * together in the same <code>HostInfoForCreate</code>object. This results in a
+   * <code>ValidationException</code> response.</p> </p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/HostInfoForCreate">AWS
    * API Reference</a></p>
    */

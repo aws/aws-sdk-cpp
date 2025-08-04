@@ -20,7 +20,8 @@ namespace Model
     GitHub,
     GitHubEnterpriseServer,
     GitLab,
-    GitLabSelfManaged
+    GitLabSelfManaged,
+    AzureDevOps
   };
 
 namespace ProviderTypeMapper

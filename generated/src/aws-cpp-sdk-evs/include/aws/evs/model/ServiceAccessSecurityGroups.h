@@ -25,10 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The security groups that allow traffic between the Amazon EVS control plane
-   * and your VPC for Amazon EVS service access. If a security group is not
-   * specified, Amazon EVS uses the default security group in your account for
-   * service access.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>The security groups that allow traffic between the Amazon
+   * EVS control plane and your VPC for Amazon EVS service access. If a security
+   * group is not specified, Amazon EVS uses the default security group in your
+   * account for service access.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ServiceAccessSecurityGroups">AWS
    * API Reference</a></p>
    */

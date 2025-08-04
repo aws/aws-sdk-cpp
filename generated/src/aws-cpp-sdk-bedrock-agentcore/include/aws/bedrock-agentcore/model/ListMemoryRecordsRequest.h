@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the memory store for which to list memory records.</p>
+     * <p>The identifier of the AgentCore Memory resource for which to list memory
+     * records.</p>
      */
     inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }

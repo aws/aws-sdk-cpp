@@ -17,8 +17,9 @@ namespace BedrockAgentCore
 {
   /**
    * <p> <p>Amazon Bedrock AgentCore is in preview release and is subject to
-   * change.</p>  <p>Data plane operations for Amazon Bedrock
-   * AgentCore.</p></p>
+   * change.</p>  <p>Welcome to the Amazon Bedrock AgentCore Data Plane API
+   * reference. Data Plane actions process and handle data or workloads within Amazon
+   * Web Services services. </p></p>
    */
   class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient>
   {
@@ -79,10 +80,10 @@ namespace BedrockAgentCore
         virtual ~BedrockAgentCoreClient();
 
         /**
-         * <p>Creates an event in a memory store. Events represent interactions or
-         * activities that occur within a session and are associated with specific
-         * actors.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:CreateEvent</code> permission.</p> <p>This operation is
+         * <p>Creates an event in an AgentCore Memory resource. Events represent
+         * interactions or activities that occur within a session and are associated with
+         * specific actors.</p> <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:CreateEvent</code> permission.</p> <p>This operation is
          * subject to request rate limiting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreateEvent">AWS
          * API Reference</a></p>
@@ -108,9 +109,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Deletes an event from a memory store. When you delete an event, it is
-         * permanently removed.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:DeleteEvent</code> permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an event from an AgentCore Memory resource. When you delete an event,
+         * it is permanently removed.</p> <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:DeleteEvent</code> permission.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteEvent">AWS
          * API Reference</a></p>
          */
@@ -135,10 +137,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Deletes a memory record from a memory store. When you delete a memory record,
-         * it is permanently removed.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:DeleteMemoryRecord</code> permission.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a memory record from an AgentCore Memory resource. When you delete a
+         * memory record, it is permanently removed.</p> <p>To use this operation, you must
+         * have the <code>bedrock-agentcore:DeleteMemoryRecord</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteMemoryRecord">AWS
          * API Reference</a></p>
          */
@@ -237,9 +239,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Retrieves information about a specific event in a memory store.</p> <p>To use
-         * this operation, you must have the <code>genesismemory:GetEvent</code>
-         * permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific event in an AgentCore Memory
+         * resource.</p> <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:GetEvent</code> permission.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetEvent">AWS
          * API Reference</a></p>
          */
@@ -264,9 +267,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Retrieves a specific memory record from a memory store.</p> <p>To use this
-         * operation, you must have the <code>genesismemory:GetMemoryRecord</code>
-         * permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a specific memory record from an AgentCore Memory resource.</p>
+         * <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:GetMemoryRecord</code> permission.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetMemoryRecord">AWS
          * API Reference</a></p>
          */
@@ -317,7 +321,7 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Reaturns the Oauth2Token of the provided resource</p><p><h3>See Also:</h3>  
+         * <p>Returns the OAuth 2.0 token of the provided resource</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceOauth2Token">AWS
          * API Reference</a></p>
@@ -421,15 +425,23 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Sends a request to an agent runtime in Amazon Bedrock and receives responses
-         * in real-time. The agent processes the request using the configured foundation
-         * model and any associated knowledge bases or action groups.</p> <p>To invoke an
-         * agent runtime, you must specify the agent runtime ARN and provide a payload
-         * containing your request. You can optionally specify a qualifier to target a
-         * specific version or alias of the agent.</p> <p>This operation supports streaming
-         * responses, allowing you to receive partial responses as they become available.
-         * We recommend using pagination to ensure that the operation returns quickly and
-         * successfully when processing large responses.</p><p><h3>See Also:</h3>   <a
+         * <p>Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore
+         * Runtime and receives responses in real-time. </p> <p>To invoke an agent you must
+         * specify the AgentCore Runtime ARN and provide a payload containing your request.
+         * You can optionally specify a qualifier to target a specific version or endpoint
+         * of the agent.</p> <p>This operation supports streaming responses, allowing you
+         * to receive partial responses as they become available. We recommend using
+         * pagination to ensure that the operation returns quickly and successfully when
+         * processing large responses.</p> <p>For example code, see <a
+         * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
+         * an AgentCore Runtime agent</a>. </p> <p>If you're integrating your agent with
+         * OAuth, you can't use the Amazon Web Services SDK to call
+         * <code>InvokeAgentRuntime</code>. Instead, make a HTTPS request to
+         * <code>InvokeAgentRuntime</code>. For an example, see <a
+         * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
+         * and authorize with Inbound Auth and Outbound Auth</a>.</p> <p>To use this
+         * operation, you must have the <code>bedrock-agentcore:InvokeAgentRuntime</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntime">AWS
          * API Reference</a></p>
          */
@@ -492,10 +504,11 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Lists all actors in a memory store. We recommend using pagination to ensure
-         * that the operation returns quickly and successfully.</p> <p>To use this
-         * operation, you must have the <code>genesismemory:ListActors</code>
-         * permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all actors in an AgentCore Memory resource. We recommend using
+         * pagination to ensure that the operation returns quickly and successfully.</p>
+         * <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:ListActors</code> permission.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListActors">AWS
          * API Reference</a></p>
          */
@@ -592,10 +605,11 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Lists events in a memory store based on specified criteria. We recommend
-         * using pagination to ensure that the operation returns quickly and
+         * <p>Lists events in an AgentCore Memory resource based on specified criteria. We
+         * recommend using pagination to ensure that the operation returns quickly and
          * successfully.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:ListEvents</code> permission.</p><p><h3>See Also:</h3>   <a
+         * <code>bedrock-agentcore:ListEvents</code> permission.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListEvents">AWS
          * API Reference</a></p>
          */
@@ -620,10 +634,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Lists memory records in a memory store based on specified criteria. We
-         * recommend using pagination to ensure that the operation returns quickly and
-         * successfully.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:ListMemoryRecords</code> permission.</p><p><h3>See
+         * <p>Lists memory records in an AgentCore Memory resource based on specified
+         * criteria. We recommend using pagination to ensure that the operation returns
+         * quickly and successfully.</p> <p>To use this operation, you must have the
+         * <code>bedrock-agentcore:ListMemoryRecords</code> permission.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryRecords">AWS
          * API Reference</a></p>
@@ -649,10 +663,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Lists sessions in a memory store based on specified criteria. We recommend
-         * using pagination to ensure that the operation returns quickly and
+         * <p>Lists sessions in an AgentCore Memory resource based on specified criteria.
+         * We recommend using pagination to ensure that the operation returns quickly and
          * successfully.</p> <p>To use this operation, you must have the
-         * <code>genesismemory:ListSessions</code> permission.</p><p><h3>See Also:</h3>  
+         * <code>bedrock-agentcore:ListSessions</code> permission.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListSessions">AWS
          * API Reference</a></p>
@@ -678,10 +692,10 @@ namespace BedrockAgentCore
         }
 
         /**
-         * <p>Searches for and retrieves memory records from a memory store based on
-         * specified search criteria. We recommend using pagination to ensure that the
-         * operation returns quickly and successfully.</p> <p>To use this operation, you
-         * must have the <code>genesismemory:RetrieveMemoryRecords</code>
+         * <p>Searches for and retrieves memory records from an AgentCore Memory resource
+         * based on specified search criteria. We recommend using pagination to ensure that
+         * the operation returns quickly and successfully.</p> <p>To use this operation,
+         * you must have the <code>bedrock-agentcore:RetrieveMemoryRecords</code>
          * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/RetrieveMemoryRecords">AWS
          * API Reference</a></p>

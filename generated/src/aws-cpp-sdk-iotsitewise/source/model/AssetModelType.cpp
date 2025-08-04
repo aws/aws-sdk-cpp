@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ASSET_MODEL_HASH = HashingUtils::HashString("ASSET_MODEL");
         static const int COMPONENT_MODEL_HASH = HashingUtils::HashString("COMPONENT_MODEL");
+        static const int INTERFACE_HASH = HashingUtils::HashString("INTERFACE");
 
 
         AssetModelType GetAssetModelTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == COMPONENT_MODEL_HASH)
           {
             return AssetModelType::COMPONENT_MODEL;
+          }
+          else if (hashCode == INTERFACE_HASH)
+          {
+            return AssetModelType::INTERFACE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ASSET_MODEL";
           case AssetModelType::COMPONENT_MODEL:
             return "COMPONENT_MODEL";
+          case AssetModelType::INTERFACE:
+            return "INTERFACE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

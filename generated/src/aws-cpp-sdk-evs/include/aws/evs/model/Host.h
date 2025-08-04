@@ -29,10 +29,12 @@ namespace Model
 {
 
   /**
-   * <p>An ESXi host that runs on an Amazon EC2 bare metal instance. Four hosts are
-   * created in an Amazon EVS environment during environment creation. You can add
-   * hosts to an environment using the <code>CreateEnvironmentHost</code> operation.
-   * Amazon EVS supports 4-16 hosts per environment.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>An ESXi host that runs on an Amazon EC2 bare metal
+   * instance. Four hosts are created in an Amazon EVS environment during environment
+   * creation. You can add hosts to an environment using the
+   * <code>CreateEnvironmentHost</code> operation. Amazon EVS supports 4-16 hosts per
+   * environment.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Host">AWS API
    * Reference</a></p>
    */

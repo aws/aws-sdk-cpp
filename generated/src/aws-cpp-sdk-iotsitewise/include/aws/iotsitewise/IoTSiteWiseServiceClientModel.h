@@ -39,6 +39,7 @@
 #include <aws/iotsitewise/model/DeleteAssetResult.h>
 #include <aws/iotsitewise/model/DeleteAssetModelResult.h>
 #include <aws/iotsitewise/model/DeleteAssetModelCompositeModelResult.h>
+#include <aws/iotsitewise/model/DeleteAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/DeleteComputationModelResult.h>
 #include <aws/iotsitewise/model/DeleteDashboardResult.h>
 #include <aws/iotsitewise/model/DeleteDatasetResult.h>
@@ -50,6 +51,7 @@
 #include <aws/iotsitewise/model/DescribeAssetCompositeModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetModelCompositeModelResult.h>
+#include <aws/iotsitewise/model/DescribeAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyResult.h>
 #include <aws/iotsitewise/model/DescribeBulkImportJobResult.h>
 #include <aws/iotsitewise/model/DescribeComputationModelResult.h>
@@ -89,11 +91,13 @@
 #include <aws/iotsitewise/model/ListDatasetsResult.h>
 #include <aws/iotsitewise/model/ListExecutionsResult.h>
 #include <aws/iotsitewise/model/ListGatewaysResult.h>
+#include <aws/iotsitewise/model/ListInterfaceRelationshipsResult.h>
 #include <aws/iotsitewise/model/ListPortalsResult.h>
 #include <aws/iotsitewise/model/ListProjectAssetsResult.h>
 #include <aws/iotsitewise/model/ListProjectsResult.h>
 #include <aws/iotsitewise/model/ListTagsForResourceResult.h>
 #include <aws/iotsitewise/model/ListTimeSeriesResult.h>
+#include <aws/iotsitewise/model/PutAssetModelInterfaceRelationshipResult.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsResult.h>
 #include <aws/iotsitewise/model/PutStorageConfigurationResult.h>
@@ -188,6 +192,7 @@ namespace Aws
       class DeleteAssetRequest;
       class DeleteAssetModelRequest;
       class DeleteAssetModelCompositeModelRequest;
+      class DeleteAssetModelInterfaceRelationshipRequest;
       class DeleteComputationModelRequest;
       class DeleteDashboardRequest;
       class DeleteDatasetRequest;
@@ -201,6 +206,7 @@ namespace Aws
       class DescribeAssetCompositeModelRequest;
       class DescribeAssetModelRequest;
       class DescribeAssetModelCompositeModelRequest;
+      class DescribeAssetModelInterfaceRelationshipRequest;
       class DescribeAssetPropertyRequest;
       class DescribeBulkImportJobRequest;
       class DescribeComputationModelRequest;
@@ -243,11 +249,13 @@ namespace Aws
       class ListDatasetsRequest;
       class ListExecutionsRequest;
       class ListGatewaysRequest;
+      class ListInterfaceRelationshipsRequest;
       class ListPortalsRequest;
       class ListProjectAssetsRequest;
       class ListProjectsRequest;
       class ListTagsForResourceRequest;
       class ListTimeSeriesRequest;
+      class PutAssetModelInterfaceRelationshipRequest;
       class PutDefaultEncryptionConfigurationRequest;
       class PutLoggingOptionsRequest;
       class PutStorageConfigurationRequest;
@@ -291,6 +299,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAssetResult, IoTSiteWiseError> DeleteAssetOutcome;
       typedef Aws::Utils::Outcome<DeleteAssetModelResult, IoTSiteWiseError> DeleteAssetModelOutcome;
       typedef Aws::Utils::Outcome<DeleteAssetModelCompositeModelResult, IoTSiteWiseError> DeleteAssetModelCompositeModelOutcome;
+      typedef Aws::Utils::Outcome<DeleteAssetModelInterfaceRelationshipResult, IoTSiteWiseError> DeleteAssetModelInterfaceRelationshipOutcome;
       typedef Aws::Utils::Outcome<DeleteComputationModelResult, IoTSiteWiseError> DeleteComputationModelOutcome;
       typedef Aws::Utils::Outcome<DeleteDashboardResult, IoTSiteWiseError> DeleteDashboardOutcome;
       typedef Aws::Utils::Outcome<DeleteDatasetResult, IoTSiteWiseError> DeleteDatasetOutcome;
@@ -304,6 +313,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAssetCompositeModelResult, IoTSiteWiseError> DescribeAssetCompositeModelOutcome;
       typedef Aws::Utils::Outcome<DescribeAssetModelResult, IoTSiteWiseError> DescribeAssetModelOutcome;
       typedef Aws::Utils::Outcome<DescribeAssetModelCompositeModelResult, IoTSiteWiseError> DescribeAssetModelCompositeModelOutcome;
+      typedef Aws::Utils::Outcome<DescribeAssetModelInterfaceRelationshipResult, IoTSiteWiseError> DescribeAssetModelInterfaceRelationshipOutcome;
       typedef Aws::Utils::Outcome<DescribeAssetPropertyResult, IoTSiteWiseError> DescribeAssetPropertyOutcome;
       typedef Aws::Utils::Outcome<DescribeBulkImportJobResult, IoTSiteWiseError> DescribeBulkImportJobOutcome;
       typedef Aws::Utils::Outcome<DescribeComputationModelResult, IoTSiteWiseError> DescribeComputationModelOutcome;
@@ -346,11 +356,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDatasetsResult, IoTSiteWiseError> ListDatasetsOutcome;
       typedef Aws::Utils::Outcome<ListExecutionsResult, IoTSiteWiseError> ListExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListGatewaysResult, IoTSiteWiseError> ListGatewaysOutcome;
+      typedef Aws::Utils::Outcome<ListInterfaceRelationshipsResult, IoTSiteWiseError> ListInterfaceRelationshipsOutcome;
       typedef Aws::Utils::Outcome<ListPortalsResult, IoTSiteWiseError> ListPortalsOutcome;
       typedef Aws::Utils::Outcome<ListProjectAssetsResult, IoTSiteWiseError> ListProjectAssetsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, IoTSiteWiseError> ListProjectsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSiteWiseError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTimeSeriesResult, IoTSiteWiseError> ListTimeSeriesOutcome;
+      typedef Aws::Utils::Outcome<PutAssetModelInterfaceRelationshipResult, IoTSiteWiseError> PutAssetModelInterfaceRelationshipOutcome;
       typedef Aws::Utils::Outcome<PutDefaultEncryptionConfigurationResult, IoTSiteWiseError> PutDefaultEncryptionConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutLoggingOptionsResult, IoTSiteWiseError> PutLoggingOptionsOutcome;
       typedef Aws::Utils::Outcome<PutStorageConfigurationResult, IoTSiteWiseError> PutStorageConfigurationOutcome;
@@ -394,6 +406,7 @@ namespace Aws
       typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
       typedef std::future<DeleteAssetModelOutcome> DeleteAssetModelOutcomeCallable;
       typedef std::future<DeleteAssetModelCompositeModelOutcome> DeleteAssetModelCompositeModelOutcomeCallable;
+      typedef std::future<DeleteAssetModelInterfaceRelationshipOutcome> DeleteAssetModelInterfaceRelationshipOutcomeCallable;
       typedef std::future<DeleteComputationModelOutcome> DeleteComputationModelOutcomeCallable;
       typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
       typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
@@ -407,6 +420,7 @@ namespace Aws
       typedef std::future<DescribeAssetCompositeModelOutcome> DescribeAssetCompositeModelOutcomeCallable;
       typedef std::future<DescribeAssetModelOutcome> DescribeAssetModelOutcomeCallable;
       typedef std::future<DescribeAssetModelCompositeModelOutcome> DescribeAssetModelCompositeModelOutcomeCallable;
+      typedef std::future<DescribeAssetModelInterfaceRelationshipOutcome> DescribeAssetModelInterfaceRelationshipOutcomeCallable;
       typedef std::future<DescribeAssetPropertyOutcome> DescribeAssetPropertyOutcomeCallable;
       typedef std::future<DescribeBulkImportJobOutcome> DescribeBulkImportJobOutcomeCallable;
       typedef std::future<DescribeComputationModelOutcome> DescribeComputationModelOutcomeCallable;
@@ -449,11 +463,13 @@ namespace Aws
       typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
       typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
       typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
+      typedef std::future<ListInterfaceRelationshipsOutcome> ListInterfaceRelationshipsOutcomeCallable;
       typedef std::future<ListPortalsOutcome> ListPortalsOutcomeCallable;
       typedef std::future<ListProjectAssetsOutcome> ListProjectAssetsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTimeSeriesOutcome> ListTimeSeriesOutcomeCallable;
+      typedef std::future<PutAssetModelInterfaceRelationshipOutcome> PutAssetModelInterfaceRelationshipOutcomeCallable;
       typedef std::future<PutDefaultEncryptionConfigurationOutcome> PutDefaultEncryptionConfigurationOutcomeCallable;
       typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
       typedef std::future<PutStorageConfigurationOutcome> PutStorageConfigurationOutcomeCallable;
@@ -500,6 +516,7 @@ namespace Aws
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetModelRequest&, const Model::DeleteAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetModelCompositeModelRequest&, const Model::DeleteAssetModelCompositeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetModelCompositeModelResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteAssetModelInterfaceRelationshipRequest&, const Model::DeleteAssetModelInterfaceRelationshipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetModelInterfaceRelationshipResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteComputationModelRequest&, const Model::DeleteComputationModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComputationModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
@@ -513,6 +530,7 @@ namespace Aws
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetCompositeModelRequest&, const Model::DescribeAssetCompositeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetCompositeModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelRequest&, const Model::DescribeAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelCompositeModelRequest&, const Model::DescribeAssetModelCompositeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelCompositeModelResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelInterfaceRelationshipRequest&, const Model::DescribeAssetModelInterfaceRelationshipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelInterfaceRelationshipResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetPropertyRequest&, const Model::DescribeAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetPropertyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeBulkImportJobRequest&, const Model::DescribeBulkImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBulkImportJobResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeComputationModelRequest&, const Model::DescribeComputationModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComputationModelResponseReceivedHandler;
@@ -555,11 +573,13 @@ namespace Aws
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListInterfaceRelationshipsRequest&, const Model::ListInterfaceRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInterfaceRelationshipsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListPortalsRequest&, const Model::ListPortalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortalsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectAssetsRequest&, const Model::ListProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTimeSeriesRequest&, const Model::ListTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTimeSeriesResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::PutAssetModelInterfaceRelationshipRequest&, const Model::PutAssetModelInterfaceRelationshipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAssetModelInterfaceRelationshipResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutDefaultEncryptionConfigurationRequest&, const Model::PutDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutStorageConfigurationRequest&, const Model::PutStorageConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageConfigurationResponseReceivedHandler;
