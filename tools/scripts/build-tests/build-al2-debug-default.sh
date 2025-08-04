@@ -20,10 +20,10 @@ BUILD_TYPE="${2:-Debug}"
 mkdir "${PREFIX_DIR}/al2-build"
 mkdir "${PREFIX_DIR}/al2-install"
 cd "${PREFIX_DIR}/al2-build"
-CMAKE_ARGS="-GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DMINIMIZE_SIZE=ON -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}/al2-install -DBUILD_PERFORMANCE_TESTS=ON"
+CMAKE_ARGS=(-GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE="$BUILD_TYPE" -DMINIMIZE_SIZE=ON -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DBUILD_PERFORMANCE_TESTS=ON)
 if [ "$BUILD_TYPE" = "Debug" ]; then
-  CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_CXX_FLAGS='-ggdb -fsanitize=address'"
+  CMAKE_ARGS+=(-DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address")
 fi
-cmake $CMAKE_ARGS
+cmake "${CMAKE_ARGS[@]}"
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
 ninja-build install
