@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the memory store containing the event.</p>
+     * <p>The identifier of the AgentCore Memory resource containing the event.</p>
      */
     inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about an actor in a memory store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains summary information about an actor in an AgentCore Memory
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ActorSummary">AWS
    * API Reference</a></p>
    */

@@ -14,6 +14,7 @@
 #include <aws/iotsitewise/model/AssetModelHierarchy.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModel.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModelSummary.h>
+#include <aws/iotsitewise/model/InterfaceRelationship.h>
 #include <utility>
 
 namespace Aws
@@ -220,6 +221,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of interface details that describe the interfaces implemented by this
+     * asset model, including interface asset model IDs and property mappings.</p>
+     */
+    inline const Aws::Vector<InterfaceRelationship>& GetInterfaceDetails() const { return m_interfaceDetails; }
+    template<typename InterfaceDetailsT = Aws::Vector<InterfaceRelationship>>
+    void SetInterfaceDetails(InterfaceDetailsT&& value) { m_interfaceDetailsHasBeenSet = true; m_interfaceDetails = std::forward<InterfaceDetailsT>(value); }
+    template<typename InterfaceDetailsT = Aws::Vector<InterfaceRelationship>>
+    DescribeAssetModelResult& WithInterfaceDetails(InterfaceDetailsT&& value) { SetInterfaceDetails(std::forward<InterfaceDetailsT>(value)); return *this;}
+    template<typename InterfaceDetailsT = InterfaceRelationship>
+    DescribeAssetModelResult& AddInterfaceDetails(InterfaceDetailsT&& value) { m_interfaceDetailsHasBeenSet = true; m_interfaceDetails.emplace_back(std::forward<InterfaceDetailsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The entity tag (ETag) is a hash of the retrieved version of the asset model.
      * It's used to make concurrent updates safely to the resource. See <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
@@ -287,6 +302,9 @@ namespace Model
 
     Aws::String m_assetModelVersion;
     bool m_assetModelVersionHasBeenSet = false;
+
+    Aws::Vector<InterfaceRelationship> m_interfaceDetails;
+    bool m_interfaceDetailsHasBeenSet = false;
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet = false;

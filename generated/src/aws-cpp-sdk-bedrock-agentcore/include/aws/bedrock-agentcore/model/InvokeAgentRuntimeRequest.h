@@ -166,7 +166,7 @@ namespace Model
     ///@{
     /**
      * <p>The qualifier to use for the agent runtime. This can be a version number or
-     * an alias name that points to a specific version. If not specified, Amazon
+     * an endpoint name that points to a specific version. If not specified, Amazon
      * Bedrock uses the default version of the agent runtime.</p>
      */
     inline const Aws::String& GetQualifier() const { return m_qualifier; }

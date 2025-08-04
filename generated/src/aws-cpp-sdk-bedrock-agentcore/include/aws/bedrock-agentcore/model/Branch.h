@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a branch in a memory store. Branches allow for
-   * organizing events into different conversation threads or paths.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a branch in an AgentCore Memory resource. Branches
+   * allow for organizing events into different conversation threads or
+   * paths.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Branch">AWS
    * API Reference</a></p>
    */

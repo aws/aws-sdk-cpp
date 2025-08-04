@@ -68,6 +68,8 @@
 #include <aws/sagemaker/model/AthenaDatasetDefinition.h>
 #include <aws/sagemaker/model/AthenaResultCompressionType.h>
 #include <aws/sagemaker/model/AthenaResultFormat.h>
+#include <aws/sagemaker/model/AttachClusterNodeVolumeRequest.h>
+#include <aws/sagemaker/model/AttachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/AuthorizedUrl.h>
 #include <aws/sagemaker/model/AutoMLAlgorithm.h>
@@ -587,6 +589,8 @@
 #include <aws/sagemaker/model/DescribeWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeWorkteamResult.h>
 #include <aws/sagemaker/model/DesiredWeightAndCapacity.h>
+#include <aws/sagemaker/model/DetachClusterNodeVolumeRequest.h>
+#include <aws/sagemaker/model/DetachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/DetailedAlgorithmStatus.h>
 #include <aws/sagemaker/model/DetailedModelPackageStatus.h>
 #include <aws/sagemaker/model/Device.h>
@@ -1637,6 +1641,7 @@
 #include <aws/sagemaker/model/VendorGuidance.h>
 #include <aws/sagemaker/model/Vertex.h>
 #include <aws/sagemaker/model/VisibilityConditions.h>
+#include <aws/sagemaker/model/VolumeAttachmentStatus.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/WarmPoolResourceStatus.h>
 #include <aws/sagemaker/model/WarmPoolStatus.h>

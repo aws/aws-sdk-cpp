@@ -387,13 +387,15 @@ namespace IoTSiteWise
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
          * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can create
-         * two types of asset models, <code>ASSET_MODEL</code> or
-         * <code>COMPONENT_MODEL</code>.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default)
-         * An asset model that you can use to create assets. Can't be included as a
-         * component in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A
-         * reusable component that you can include in the composite models of other asset
-         * models. You can't create assets directly from this type of asset model. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * three types of asset models, <code>ASSET_MODEL</code>,
+         * <code>COMPONENT_MODEL</code>, or an <code>INTERFACE</code>.</p> <ul> <li> <p>
+         * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets.
+         * Can't be included as a component in another asset model.</p> </li> <li> <p>
+         * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the
+         * composite models of other asset models. You can't create assets directly from
+         * this type of asset model. </p> </li> <li> <p> <b>INTERFACE</b> – An interface is
+         * a type of model that defines a standard structure that can be applied to
+         * different asset models.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
          */
@@ -788,6 +790,32 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Deletes an interface relationship between an asset model and an interface
+         * asset model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAssetModelInterfaceRelationshipOutcome DeleteAssetModelInterfaceRelationship(const Model::DeleteAssetModelInterfaceRelationshipRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAssetModelInterfaceRelationship that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAssetModelInterfaceRelationshipRequestT = Model::DeleteAssetModelInterfaceRelationshipRequest>
+        Model::DeleteAssetModelInterfaceRelationshipOutcomeCallable DeleteAssetModelInterfaceRelationshipCallable(const DeleteAssetModelInterfaceRelationshipRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DeleteAssetModelInterfaceRelationship, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAssetModelInterfaceRelationship that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAssetModelInterfaceRelationshipRequestT = Model::DeleteAssetModelInterfaceRelationshipRequest>
+        void DeleteAssetModelInterfaceRelationshipAsync(const DeleteAssetModelInterfaceRelationshipRequestT& request, const DeleteAssetModelInterfaceRelationshipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DeleteAssetModelInterfaceRelationship, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a computation model. This action can't be undone.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">AWS
@@ -1081,7 +1109,10 @@ namespace IoTSiteWise
         }
 
         /**
-         * <p>Retrieves information about an asset model.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about an asset model. This includes details about the
+         * asset model's properties, hierarchies, composite models, and any interface
+         * relationships if the asset model implements interfaces.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">AWS
          * API Reference</a></p>
          */
@@ -1132,6 +1163,32 @@ namespace IoTSiteWise
         void DescribeAssetModelCompositeModelAsync(const DescribeAssetModelCompositeModelRequestT& request, const DescribeAssetModelCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::DescribeAssetModelCompositeModel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about an interface relationship between an asset model
+         * and an interface asset model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAssetModelInterfaceRelationshipOutcome DescribeAssetModelInterfaceRelationship(const Model::DescribeAssetModelInterfaceRelationshipRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAssetModelInterfaceRelationship that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAssetModelInterfaceRelationshipRequestT = Model::DescribeAssetModelInterfaceRelationshipRequest>
+        Model::DescribeAssetModelInterfaceRelationshipOutcomeCallable DescribeAssetModelInterfaceRelationshipCallable(const DescribeAssetModelInterfaceRelationshipRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DescribeAssetModelInterfaceRelationship, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAssetModelInterfaceRelationship that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAssetModelInterfaceRelationshipRequestT = Model::DescribeAssetModelInterfaceRelationshipRequest>
+        void DescribeAssetModelInterfaceRelationshipAsync(const DescribeAssetModelInterfaceRelationshipRequestT& request, const DescribeAssetModelInterfaceRelationshipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DescribeAssetModelInterfaceRelationship, request, handler, context);
         }
 
         /**
@@ -2305,6 +2362,32 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Retrieves a paginated list of asset models that have a specific interface
+         * asset model applied to them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInterfaceRelationshipsOutcome ListInterfaceRelationships(const Model::ListInterfaceRelationshipsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInterfaceRelationships that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInterfaceRelationshipsRequestT = Model::ListInterfaceRelationshipsRequest>
+        Model::ListInterfaceRelationshipsOutcomeCallable ListInterfaceRelationshipsCallable(const ListInterfaceRelationshipsRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ListInterfaceRelationships, request);
+        }
+
+        /**
+         * An Async wrapper for ListInterfaceRelationships that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInterfaceRelationshipsRequestT = Model::ListInterfaceRelationshipsRequest>
+        void ListInterfaceRelationshipsAsync(const ListInterfaceRelationshipsRequestT& request, const ListInterfaceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ListInterfaceRelationships, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">AWS
@@ -2432,6 +2515,33 @@ namespace IoTSiteWise
         void ListTimeSeriesAsync(const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTimeSeriesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTSiteWiseClient::ListTimeSeries, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates an interface relationship between an asset model and an
+         * interface asset model. This operation applies an interface to an asset
+         * model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAssetModelInterfaceRelationshipOutcome PutAssetModelInterfaceRelationship(const Model::PutAssetModelInterfaceRelationshipRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAssetModelInterfaceRelationship that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAssetModelInterfaceRelationshipRequestT = Model::PutAssetModelInterfaceRelationshipRequest>
+        Model::PutAssetModelInterfaceRelationshipOutcomeCallable PutAssetModelInterfaceRelationshipCallable(const PutAssetModelInterfaceRelationshipRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::PutAssetModelInterfaceRelationship, request);
+        }
+
+        /**
+         * An Async wrapper for PutAssetModelInterfaceRelationship that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAssetModelInterfaceRelationshipRequestT = Model::PutAssetModelInterfaceRelationshipRequest>
+        void PutAssetModelInterfaceRelationshipAsync(const PutAssetModelInterfaceRelationshipRequestT& request, const PutAssetModelInterfaceRelationshipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::PutAssetModelInterfaceRelationship, request, handler, context);
         }
 
         /**

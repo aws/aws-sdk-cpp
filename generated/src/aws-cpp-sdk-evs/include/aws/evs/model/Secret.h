@@ -24,13 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>A managed secret that contains the credentials for installing vCenter Server,
-   * NSX, and SDDC Manager. During environment creation, the Amazon EVS control plane
-   * uses Amazon Web Services Secrets Manager to create, encrypt, validate, and store
-   * secrets. If you choose to delete your environment, Amazon EVS also deletes the
-   * secrets that are associated with your environment. Amazon EVS does not provide
-   * managed rotation of secrets. We recommend that you rotate secrets regularly to
-   * ensure that secrets are not long-lived.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>A managed secret that contains the credentials for
+   * installing vCenter Server, NSX, and SDDC Manager. During environment creation,
+   * the Amazon EVS control plane uses Amazon Web Services Secrets Manager to create,
+   * encrypt, validate, and store secrets. If you choose to delete your environment,
+   * Amazon EVS also deletes the secrets that are associated with your environment.
+   * Amazon EVS does not provide managed rotation of secrets. We recommend that you
+   * rotate secrets regularly to ensure that secrets are not
+   * long-lived.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Secret">AWS API
    * Reference</a></p>
    */

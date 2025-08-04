@@ -131,18 +131,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique ID for the VPC that connects to the environment control plane for
-     * service access.</p> <p>Amazon EVS requires that all VPC subnets exist in a
-     * single Availability Zone in a Region where the service is available.</p> <p>The
-     * VPC that you select must have a valid DHCP option set with domain name, at least
-     * two DNS servers, and an NTP server. These settings are used to configure your
-     * VCF appliances and hosts.</p> <p>If you plan to use HCX over the internet,
-     * choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from
-     * an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
+     * <p>A unique ID for the VPC that the environment is deployed inside.</p>
+     * <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone
+     * in a Region where the service is available.</p> <p>The VPC that you specify must
+     * have a valid DHCP option set with domain name, at least two DNS servers, and an
+     * NTP server. These settings are used to configure your VCF appliances and hosts.
+     * The VPC cannot be used with any other deployed Amazon EVS environment. Amazon
+     * EVS does not provide multi-VPC support for environments at this time.</p>
      * <p>Amazon EVS does not support the following Amazon Web Services networking
      * options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3
      * gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway
-     * associations.</p>
+     * associations.</p>  <p>Ensure that you specify a VPC that is adequately
+     * sized to accommodate the {evws} subnets.</p> 
      */
     inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
@@ -179,10 +179,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Customer confirmation that the customer has purchased and maintains
-     * sufficient VCF software licenses to cover all physical processor cores in the
-     * environment, in compliance with VMware's licensing requirements and terms of
-     * use.</p>
+     * <p>Customer confirmation that the customer has purchased and will continue to
+     * maintain the required number of VCF software licenses to cover all physical
+     * processor cores in the Amazon EVS environment. Information about your VCF
+     * software in Amazon EVS will be shared with Broadcom to verify license
+     * compliance. Amazon EVS does not validate license keys. To validate license keys,
+     * visit the Broadcom support portal.</p>
      */
     inline bool GetTermsAccepted() const { return m_termsAccepted; }
     inline bool TermsAcceptedHasBeenSet() const { return m_termsAcceptedHasBeenSet; }
@@ -194,11 +196,11 @@ namespace Model
     /**
      * <p>The license information that Amazon EVS requires to create an environment.
      * Amazon EVS requires two license keys: a VCF solution key and a vSAN license key.
-     * VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN
-     * storage capacity needs.</p> <p>VCF licenses can be used for only one Amazon EVS
-     * environment. Amazon EVS does not support reuse of VCF licenses for multiple
-     * environments.</p> <p>VCF license information can be retrieved from the Broadcom
-     * portal.</p>
+     * The VCF solution key must cover a minimum of 256 cores. The vSAN license key
+     * must provide at least 110 TiB of vSAN capacity.</p> <p>VCF licenses can be used
+     * for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF
+     * licenses for multiple environments.</p> <p>VCF license information can be
+     * retrieved from the Broadcom portal.</p>
      */
     inline const Aws::Vector<LicenseInfo>& GetLicenseInfo() const { return m_licenseInfo; }
     inline bool LicenseInfoHasBeenSet() const { return m_licenseInfoHasBeenSet; }
@@ -212,8 +214,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The initial VLAN subnets for the environment. You must specify a
-     * non-overlapping CIDR block for each VLAN subnet.</p>
+     * <p>The initial VLAN subnets for the Amazon EVS environment.</p>  <p>For
+     * each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block.
+     * Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size
+     * of /24.</p> 
      */
     inline const InitialVlans& GetInitialVlans() const { return m_initialVlans; }
     inline bool InitialVlansHasBeenSet() const { return m_initialVlansHasBeenSet; }
@@ -227,9 +231,9 @@ namespace Model
     /**
      * <p>The ESXi hosts to add to the environment. Amazon EVS requires that you
      * provide details for a minimum of 4 hosts during environment creation.</p> <p>For
-     * each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance
-     * type. Optionally, you can also provide a partition or cluster placement group to
-     * use, or use Amazon EC2 Dedicated Hosts.</p>
+     * each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2
+     * instance type. Optionally, you can also provide a partition or cluster placement
+     * group to use, or use Amazon EC2 Dedicated Hosts.</p>
      */
     inline const Aws::Vector<HostInfoForCreate>& GetHosts() const { return m_hosts; }
     inline bool HostsHasBeenSet() const { return m_hostsHasBeenSet; }
@@ -245,8 +249,8 @@ namespace Model
     /**
      * <p> The connectivity configuration for the environment. Amazon EVS requires that
      * you specify two route server peer IDs. During environment creation, the route
-     * server endpoints peer with the NSX edges over the NSX, providing BGP dynamic
-     * routing for overlay networks.</p>
+     * server endpoints peer with the NSX edges over the NSX uplink subnet, providing
+     * BGP-based dynamic routing for overlay networks.</p>
      */
     inline const ConnectivityInfo& GetConnectivityInfo() const { return m_connectivityInfo; }
     inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
