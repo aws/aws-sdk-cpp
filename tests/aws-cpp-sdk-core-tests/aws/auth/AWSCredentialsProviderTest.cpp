@@ -128,15 +128,6 @@ public:
 
     void SetUp()
     {
-        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");
-        SaveEnvironmentVariable("AWS_CONFIG_FILE");
-        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
-        SaveEnvironmentVariable("AWS_PROFILE");
-        SaveEnvironmentVariable("AWS_ACCESS_KEY_ID");
-        SaveEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
-        SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
-        SaveEnvironmentVariable("AWS_ACCOUNT_ID");
-
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
         Aws::StringStream ss;
         ss << ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
@@ -145,33 +136,18 @@ public:
 
     }
 
-    void TearDown()
-    {
-        RestoreEnvironmentVariable();
-    }
-
-    void SaveEnvironmentVariable(const char* variableName)
-    {
-        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
-    }
-
-    void RestoreEnvironmentVariable()
-    {
-        for(const auto& iter : m_environment)
-        {
-            if(iter.second.empty())
-            {
-                Aws::Environment::UnSetEnv(iter.first);
-            }
-            else
-            {
-                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
-            }
-        }
-    }
-
     Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
     Aws::String m_credsFileName;
+    Aws::Environment::EnvironmentRAII m_saveEnviornment{{
+      {"AWS_SHARED_CREDENTIALS_FILE", ""},
+      {"AWS_CONFIG_FILE", ""},
+      {"AWS_DEFAULT_PROFILE", ""},
+      {"AWS_PROFILE", ""},
+      {"AWS_ACCESS_KEY_ID", ""},
+      {"AWS_SECRET_ACCESS_KEY", ""},
+      {"AWS_EC2_METADATA_DISABLED", ""},
+      {"AWS_ACCOUNT_ID", ""},
+    }};
 };
 
 TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
@@ -194,6 +170,11 @@ TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
     credsFile << std::endl;
 
     credsFile.close();
+
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_DEFAULT_PROFILE", ""},
+      {"AWS_PROFILE", ""},
+    }};
 
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
     Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
@@ -219,6 +200,9 @@ TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_DEFAULT_PROFILE", ""},
+    }};
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
@@ -238,6 +222,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile)
 {
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_DEFAULT_PROFILE", ""},
+    }};
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
@@ -262,9 +249,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
-    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
-    Aws::Environment::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_DEFAULT_PROFILE", ""},
+    }};
     //On windows we don't redirect the home directory
     //This is to prevent when user actually sets .aws/credentials with Keys, this test would fail.
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "SomeUnknownProfileThatDoesNotExist", 1);
@@ -276,6 +263,12 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
 {
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_ACCESS_KEY_ID", ""},
+      {"AWS_SECRET_ACCESS_KEY", ""},
+      {"AWS_SESSION_TOKEN", ""},
+      {"AWS_ACCOUNT_ID", ""},
+    }};
     Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "Access Key", 1);
     Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
     Aws::Environment::SetEnv("AWS_SESSION_TOKEN", "Session Token", 1);
@@ -290,12 +283,36 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 {
-    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+      {"AWS_ACCESS_KEY_ID", ""},
+      {"AWS_SECRET_ACCESS_KEY", ""},
+    }};
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
+}
+
+TEST_F(EnvironmentModifyingTest, TestDefaultAWSCredentialsProviderChainWithConfig)
+{
+    // Create a credentials file with a custom profile
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[custom-profile]" << std::endl;
+    credsFile << "aws_access_key_id = CustomProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = CustomProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    // Create config with custom profile
+    Aws::Client::ClientConfiguration::CredentialProviderConfiguration config;
+    config.profile = "custom-profile";
+
+    // Test the constructor with config
+    DefaultAWSCredentialsProviderChain providerChain(config);
+
+    // Verify it uses the custom profile
+    AWSCredentials creds = providerChain.GetAWSCredentials();
+    EXPECT_STREQ("CustomProfileAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("CustomProfileSecretKey", creds.GetAWSSecretKey().c_str());
 }
 
 class InstanceProfileCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
@@ -1304,26 +1321,4 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "alarms"}));
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
-}
-
-TEST_F(EnvironmentModifyingTest, TestDefaultAWSCredentialsProviderChainWithConfig)
-{
-  // Create a credentials file with a custom profile
-  Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-  credsFile << "[custom-profile]" << std::endl;
-  credsFile << "aws_access_key_id = CustomProfileAccessKey" << std::endl;
-  credsFile << "aws_secret_access_key = CustomProfileSecretKey" << std::endl;
-  credsFile.close();
-
-  // Create config with custom profile
-  Aws::Client::ClientConfiguration::CredentialProviderConfiguration config;
-  config.profile = "custom-profile";
-
-  // Test the constructor with config
-  DefaultAWSCredentialsProviderChain providerChain(config);
-
-  // Verify it uses the custom profile
-  AWSCredentials creds = providerChain.GetAWSCredentials();
-  EXPECT_STREQ("CustomProfileAccessKey", creds.GetAWSAccessKeyId().c_str());
-  EXPECT_STREQ("CustomProfileSecretKey", creds.GetAWSSecretKey().c_str());
 }
