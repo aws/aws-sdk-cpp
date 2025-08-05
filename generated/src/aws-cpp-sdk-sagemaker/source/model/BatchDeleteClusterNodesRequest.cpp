@@ -33,6 +33,17 @@ Aws::String BatchDeleteClusterNodesRequest::SerializePayload() const
 
   }
 
+  if(m_nodeLogicalIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> nodeLogicalIdsJsonList(m_nodeLogicalIds.size());
+   for(unsigned nodeLogicalIdsIndex = 0; nodeLogicalIdsIndex < nodeLogicalIdsJsonList.GetLength(); ++nodeLogicalIdsIndex)
+   {
+     nodeLogicalIdsJsonList[nodeLogicalIdsIndex].AsString(m_nodeLogicalIds[nodeLogicalIdsIndex]);
+   }
+   payload.WithArray("NodeLogicalIds", std::move(nodeLogicalIdsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

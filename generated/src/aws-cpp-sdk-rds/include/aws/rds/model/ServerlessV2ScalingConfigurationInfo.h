@@ -61,7 +61,9 @@ namespace Model
      * <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an
      * Aurora Serverless v2 cluster. You can specify ACU values in half-step
      * increments, such as 32, 32.5, 33, and so on. The largest value that you can use
-     * is 256 for recent Aurora versions, or 128 for older versions.</p>
+     * is 256 for recent Aurora versions, or 128 for older versions. You can check the
+     * attributes of your engine version or platform version to determine the specific
+     * maximum capacity supported.</p>
      */
     inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }

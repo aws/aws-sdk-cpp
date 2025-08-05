@@ -35,6 +35,11 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NodeLogicalId"))
+  {
+    m_nodeLogicalId = jsonValue.GetString("NodeLogicalId");
+    m_nodeLogicalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("InstanceStatus"))
   {
     m_instanceStatus = jsonValue.GetObject("InstanceStatus");
@@ -99,6 +104,16 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_placement = jsonValue.GetObject("Placement");
     m_placementHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CurrentImageId"))
+  {
+    m_currentImageId = jsonValue.GetString("CurrentImageId");
+    m_currentImageIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DesiredImageId"))
+  {
+    m_desiredImageId = jsonValue.GetString("DesiredImageId");
+    m_desiredImageIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +130,12 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_nodeLogicalIdHasBeenSet)
+  {
+   payload.WithString("NodeLogicalId", m_nodeLogicalId);
 
   }
 
@@ -189,6 +210,18 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_placementHasBeenSet)
   {
    payload.WithObject("Placement", m_placement.Jsonize());
+
+  }
+
+  if(m_currentImageIdHasBeenSet)
+  {
+   payload.WithString("CurrentImageId", m_currentImageId);
+
+  }
+
+  if(m_desiredImageIdHasBeenSet)
+  {
+   payload.WithString("DesiredImageId", m_desiredImageId);
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
+#include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <utility>
@@ -150,6 +151,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The mode used for provisioning nodes in the cluster.</p>
+     */
+    inline ClusterNodeProvisioningMode GetNodeProvisioningMode() const { return m_nodeProvisioningMode; }
+    inline void SetNodeProvisioningMode(ClusterNodeProvisioningMode value) { m_nodeProvisioningModeHasBeenSet = true; m_nodeProvisioningMode = value; }
+    inline DescribeClusterResult& WithNodeProvisioningMode(ClusterNodeProvisioningMode value) { SetNodeProvisioningMode(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -188,6 +198,9 @@ namespace Model
 
     ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
     bool m_nodeRecoveryHasBeenSet = false;
+
+    ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
+    bool m_nodeProvisioningModeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

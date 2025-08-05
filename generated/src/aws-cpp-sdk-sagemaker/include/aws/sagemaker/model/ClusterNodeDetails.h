@@ -72,6 +72,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier for the node that persists throughout its lifecycle, from
+     * provisioning request to termination. This identifier can be used to track the
+     * node even before it has an assigned <code>InstanceId</code>.</p>
+     */
+    inline const Aws::String& GetNodeLogicalId() const { return m_nodeLogicalId; }
+    inline bool NodeLogicalIdHasBeenSet() const { return m_nodeLogicalIdHasBeenSet; }
+    template<typename NodeLogicalIdT = Aws::String>
+    void SetNodeLogicalId(NodeLogicalIdT&& value) { m_nodeLogicalIdHasBeenSet = true; m_nodeLogicalId = std::forward<NodeLogicalIdT>(value); }
+    template<typename NodeLogicalIdT = Aws::String>
+    ClusterNodeDetails& WithNodeLogicalId(NodeLogicalIdT&& value) { SetNodeLogicalId(std::forward<NodeLogicalIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the instance.</p>
      */
     inline const ClusterInstanceStatusDetails& GetInstanceStatus() const { return m_instanceStatus; }
@@ -218,6 +232,30 @@ namespace Model
     template<typename PlacementT = ClusterInstancePlacement>
     ClusterNodeDetails& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+     */
+    inline const Aws::String& GetCurrentImageId() const { return m_currentImageId; }
+    inline bool CurrentImageIdHasBeenSet() const { return m_currentImageIdHasBeenSet; }
+    template<typename CurrentImageIdT = Aws::String>
+    void SetCurrentImageId(CurrentImageIdT&& value) { m_currentImageIdHasBeenSet = true; m_currentImageId = std::forward<CurrentImageIdT>(value); }
+    template<typename CurrentImageIdT = Aws::String>
+    ClusterNodeDetails& WithCurrentImageId(CurrentImageIdT&& value) { SetCurrentImageId(std::forward<CurrentImageIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+     */
+    inline const Aws::String& GetDesiredImageId() const { return m_desiredImageId; }
+    inline bool DesiredImageIdHasBeenSet() const { return m_desiredImageIdHasBeenSet; }
+    template<typename DesiredImageIdT = Aws::String>
+    void SetDesiredImageId(DesiredImageIdT&& value) { m_desiredImageIdHasBeenSet = true; m_desiredImageId = std::forward<DesiredImageIdT>(value); }
+    template<typename DesiredImageIdT = Aws::String>
+    ClusterNodeDetails& WithDesiredImageId(DesiredImageIdT&& value) { SetDesiredImageId(std::forward<DesiredImageIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceGroupName;
@@ -225,6 +263,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_nodeLogicalId;
+    bool m_nodeLogicalIdHasBeenSet = false;
 
     ClusterInstanceStatusDetails m_instanceStatus;
     bool m_instanceStatusHasBeenSet = false;
@@ -261,6 +302,12 @@ namespace Model
 
     ClusterInstancePlacement m_placement;
     bool m_placementHasBeenSet = false;
+
+    Aws::String m_currentImageId;
+    bool m_currentImageIdHasBeenSet = false;
+
+    Aws::String m_desiredImageId;
+    bool m_desiredImageIdHasBeenSet = false;
   };
 
 } // namespace Model

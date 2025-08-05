@@ -195,6 +195,19 @@ namespace Model
     template<typename RemoteNetworkConfigT = RemoteNetworkConfigRequest>
     UpdateClusterConfigRequest& WithRemoteNetworkConfig(RemoteNetworkConfigT&& value) { SetRemoteNetworkConfig(std::forward<RemoteNetworkConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable or disable deletion protection for the cluster.
+     * When enabled (<code>true</code>), the cluster cannot be deleted until deletion
+     * protection is explicitly disabled. When disabled (<code>false</code>), the
+     * cluster can be deleted normally.</p>
+     */
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+    inline UpdateClusterConfigRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -229,6 +242,9 @@ namespace Model
 
     RemoteNetworkConfigRequest m_remoteNetworkConfig;
     bool m_remoteNetworkConfigHasBeenSet = false;
+
+    bool m_deletionProtection{false};
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,6 +35,11 @@ ClusterNodeSummary& ClusterNodeSummary::operator =(JsonView jsonValue)
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NodeLogicalId"))
+  {
+    m_nodeLogicalId = jsonValue.GetString("NodeLogicalId");
+    m_nodeLogicalIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
@@ -71,6 +76,12 @@ JsonValue ClusterNodeSummary::Jsonize() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_nodeLogicalIdHasBeenSet)
+  {
+   payload.WithString("NodeLogicalId", m_nodeLogicalId);
 
   }
 

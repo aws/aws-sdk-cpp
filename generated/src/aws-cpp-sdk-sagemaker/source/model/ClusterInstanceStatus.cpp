@@ -26,6 +26,7 @@ namespace Aws
         static const int ShuttingDown_HASH = HashingUtils::HashString("ShuttingDown");
         static const int SystemUpdating_HASH = HashingUtils::HashString("SystemUpdating");
         static const int DeepHealthCheckInProgress_HASH = HashingUtils::HashString("DeepHealthCheckInProgress");
+        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
 
 
         ClusterInstanceStatus GetClusterInstanceStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ClusterInstanceStatus::DeepHealthCheckInProgress;
           }
+          else if (hashCode == NotFound_HASH)
+          {
+            return ClusterInstanceStatus::NotFound;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "SystemUpdating";
           case ClusterInstanceStatus::DeepHealthCheckInProgress:
             return "DeepHealthCheckInProgress";
+          case ClusterInstanceStatus::NotFound:
+            return "NotFound";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -128,6 +128,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithBool("deletionProtection", m_deletionProtection);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
