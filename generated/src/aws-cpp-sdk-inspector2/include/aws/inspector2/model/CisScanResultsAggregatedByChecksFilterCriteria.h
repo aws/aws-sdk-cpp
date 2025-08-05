@@ -71,16 +71,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The criteria's failed resources filters.</p>
+     * <p>The criteria's title filters.</p>
      */
-    inline const Aws::Vector<CisNumberFilter>& GetFailedResourcesFilters() const { return m_failedResourcesFilters; }
-    inline bool FailedResourcesFiltersHasBeenSet() const { return m_failedResourcesFiltersHasBeenSet; }
-    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
-    void SetFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters = std::forward<FailedResourcesFiltersT>(value); }
-    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
-    CisScanResultsAggregatedByChecksFilterCriteria& WithFailedResourcesFilters(FailedResourcesFiltersT&& value) { SetFailedResourcesFilters(std::forward<FailedResourcesFiltersT>(value)); return *this;}
-    template<typename FailedResourcesFiltersT = CisNumberFilter>
-    CisScanResultsAggregatedByChecksFilterCriteria& AddFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters.emplace_back(std::forward<FailedResourcesFiltersT>(value)); return *this; }
+    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
+    inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
+    template<typename TitleFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,6 +99,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The criteria's failed resources filters.</p>
+     */
+    inline const Aws::Vector<CisNumberFilter>& GetFailedResourcesFilters() const { return m_failedResourcesFilters; }
+    inline bool FailedResourcesFiltersHasBeenSet() const { return m_failedResourcesFiltersHasBeenSet; }
+    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
+    void SetFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters = std::forward<FailedResourcesFiltersT>(value); }
+    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithFailedResourcesFilters(FailedResourcesFiltersT&& value) { SetFailedResourcesFilters(std::forward<FailedResourcesFiltersT>(value)); return *this;}
+    template<typename FailedResourcesFiltersT = CisNumberFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters.emplace_back(std::forward<FailedResourcesFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The criteria's security level filters.</p>
      */
     inline const Aws::Vector<CisSecurityLevelFilter>& GetSecurityLevelFilters() const { return m_securityLevelFilters; }
@@ -110,20 +124,6 @@ namespace Model
     template<typename SecurityLevelFiltersT = CisSecurityLevelFilter>
     CisScanResultsAggregatedByChecksFilterCriteria& AddSecurityLevelFilters(SecurityLevelFiltersT&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.emplace_back(std::forward<SecurityLevelFiltersT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The criteria's title filters.</p>
-     */
-    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
-    inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
-    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
-    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
-    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
-    CisScanResultsAggregatedByChecksFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
-    template<typename TitleFiltersT = CisStringFilter>
-    CisScanResultsAggregatedByChecksFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
-    ///@}
   private:
 
     Aws::Vector<CisStringFilter> m_accountIdFilters;
@@ -132,17 +132,17 @@ namespace Model
     Aws::Vector<CisStringFilter> m_checkIdFilters;
     bool m_checkIdFiltersHasBeenSet = false;
 
-    Aws::Vector<CisNumberFilter> m_failedResourcesFilters;
-    bool m_failedResourcesFiltersHasBeenSet = false;
+    Aws::Vector<CisStringFilter> m_titleFilters;
+    bool m_titleFiltersHasBeenSet = false;
 
     Aws::Vector<CisStringFilter> m_platformFilters;
     bool m_platformFiltersHasBeenSet = false;
 
+    Aws::Vector<CisNumberFilter> m_failedResourcesFilters;
+    bool m_failedResourcesFiltersHasBeenSet = false;
+
     Aws::Vector<CisSecurityLevelFilter> m_securityLevelFilters;
     bool m_securityLevelFiltersHasBeenSet = false;
-
-    Aws::Vector<CisStringFilter> m_titleFilters;
-    bool m_titleFiltersHasBeenSet = false;
   };
 
 } // namespace Model

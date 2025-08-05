@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/ParquetCompressionType.h>
 #include <aws/glue/model/DirectSchemaChangePolicy.h>
+#include <aws/glue/model/AutoDataQuality.h>
 #include <utility>
 
 namespace Aws
@@ -108,7 +109,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the number of target partitions for Parquet files when writing to
-     * Amazon S3 using AWS Glue.</p>
+     * Amazon S3 using Glue.</p>
      */
     inline const Aws::String& GetNumberTargetPartitions() const { return m_numberTargetPartitions; }
     inline bool NumberTargetPartitionsHasBeenSet() const { return m_numberTargetPartitionsHasBeenSet; }
@@ -128,6 +129,20 @@ namespace Model
     void SetSchemaChangePolicy(SchemaChangePolicyT&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::forward<SchemaChangePolicyT>(value); }
     template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
     S3GlueParquetTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to automatically enable data quality evaluation for the S3
+     * Glue Parquet target. When set to <code>true</code>, data quality checks are
+     * performed automatically during the write operation.</p>
+     */
+    inline const AutoDataQuality& GetAutoDataQuality() const { return m_autoDataQuality; }
+    inline bool AutoDataQualityHasBeenSet() const { return m_autoDataQualityHasBeenSet; }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    void SetAutoDataQuality(AutoDataQualityT&& value) { m_autoDataQualityHasBeenSet = true; m_autoDataQuality = std::forward<AutoDataQualityT>(value); }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    S3GlueParquetTarget& WithAutoDataQuality(AutoDataQualityT&& value) { SetAutoDataQuality(std::forward<AutoDataQualityT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,6 +166,9 @@ namespace Model
 
     DirectSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;
+
+    AutoDataQuality m_autoDataQuality;
+    bool m_autoDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

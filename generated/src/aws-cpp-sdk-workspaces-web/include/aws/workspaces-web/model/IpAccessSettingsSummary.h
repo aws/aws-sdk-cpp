@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,26 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation date timestamp of the IP access settings.</p>
+     * <p>The ARN of IP access settings.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
-    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    template<typename CreationDateT = Aws::Utils::DateTime>
-    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
-    template<typename CreationDateT = Aws::Utils::DateTime>
-    IpAccessSettingsSummary& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the IP access settings.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    IpAccessSettingsSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
+    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    IpAccessSettingsSummary& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +64,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of IP access settings.</p>
+     * <p>The description of the IP access settings.</p>
      */
-    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
-    inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
-    template<typename IpAccessSettingsArnT = Aws::String>
-    IpAccessSettingsSummary& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpAccessSettingsSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The creation date timestamp of the IP access settings.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    IpAccessSettingsSummary& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationDate{};
-    bool m_creationDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_ipAccessSettingsArn;
+    bool m_ipAccessSettingsArnHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    Aws::String m_ipAccessSettingsArn;
-    bool m_ipAccessSettingsArnHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

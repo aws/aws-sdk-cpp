@@ -25,25 +25,25 @@ Usage::Usage(JsonView jsonValue)
 
 Usage& Usage::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("currency"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
-    m_currencyHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("estimatedMonthlyCost"))
-  {
-    m_estimatedMonthlyCost = jsonValue.GetDouble("estimatedMonthlyCost");
-    m_estimatedMonthlyCostHasBeenSet = true;
+    m_type = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetDouble("total");
     m_totalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("estimatedMonthlyCost"))
   {
-    m_type = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_estimatedMonthlyCost = jsonValue.GetDouble("estimatedMonthlyCost");
+    m_estimatedMonthlyCostHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("currency"))
+  {
+    m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
+    m_currencyHasBeenSet = true;
   }
   return *this;
 }
@@ -52,15 +52,9 @@ JsonValue Usage::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_currencyHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("currency", CurrencyMapper::GetNameForCurrency(m_currency));
-  }
-
-  if(m_estimatedMonthlyCostHasBeenSet)
-  {
-   payload.WithDouble("estimatedMonthlyCost", m_estimatedMonthlyCost);
-
+   payload.WithString("type", UsageTypeMapper::GetNameForUsageType(m_type));
   }
 
   if(m_totalHasBeenSet)
@@ -69,9 +63,15 @@ JsonValue Usage::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_estimatedMonthlyCostHasBeenSet)
   {
-   payload.WithString("type", UsageTypeMapper::GetNameForUsageType(m_type));
+   payload.WithDouble("estimatedMonthlyCost", m_estimatedMonthlyCost);
+
+  }
+
+  if(m_currencyHasBeenSet)
+  {
+   payload.WithString("currency", CurrencyMapper::GetNameForCurrency(m_currency));
   }
 
   return payload;

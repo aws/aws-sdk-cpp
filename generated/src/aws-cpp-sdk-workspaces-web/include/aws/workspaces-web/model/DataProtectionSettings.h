@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/InlineRedactionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -44,18 +44,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The additional encryption context of the data protection settings.</p>
+     * <p>The ARN of the data protection settings resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
-    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
-    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
-    DataProtectionSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
-    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
-    DataProtectionSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
-      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
-    }
+    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
+    inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    DataProtectionSettings& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The inline redaction configuration for the data protection settings.</p>
+     */
+    inline const InlineRedactionConfiguration& GetInlineRedactionConfiguration() const { return m_inlineRedactionConfiguration; }
+    inline bool InlineRedactionConfigurationHasBeenSet() const { return m_inlineRedactionConfigurationHasBeenSet; }
+    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
+    void SetInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { m_inlineRedactionConfigurationHasBeenSet = true; m_inlineRedactionConfiguration = std::forward<InlineRedactionConfigurationT>(value); }
+    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
+    DataProtectionSettings& WithInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { SetInlineRedactionConfiguration(std::forward<InlineRedactionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,6 +79,30 @@ namespace Model
     DataProtectionSettings& WithAssociatedPortalArns(AssociatedPortalArnsT&& value) { SetAssociatedPortalArns(std::forward<AssociatedPortalArnsT>(value)); return *this;}
     template<typename AssociatedPortalArnsT = Aws::String>
     DataProtectionSettings& AddAssociatedPortalArns(AssociatedPortalArnsT&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.emplace_back(std::forward<AssociatedPortalArnsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The display name of the data protection settings.</p>
+     */
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    DataProtectionSettings& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the data protection settings.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DataProtectionSettings& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,58 +132,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the data protection settings resource.</p>
+     * <p>The additional encryption context of the data protection settings.</p>
      */
-    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
-    inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
-    template<typename DataProtectionSettingsArnT = Aws::String>
-    DataProtectionSettings& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the data protection settings.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    DataProtectionSettings& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The display name of the data protection settings.</p>
-     */
-    inline const Aws::String& GetDisplayName() const { return m_displayName; }
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    template<typename DisplayNameT = Aws::String>
-    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
-    template<typename DisplayNameT = Aws::String>
-    DataProtectionSettings& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The inline redaction configuration for the data protection settings.</p>
-     */
-    inline const InlineRedactionConfiguration& GetInlineRedactionConfiguration() const { return m_inlineRedactionConfiguration; }
-    inline bool InlineRedactionConfigurationHasBeenSet() const { return m_inlineRedactionConfigurationHasBeenSet; }
-    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
-    void SetInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { m_inlineRedactionConfigurationHasBeenSet = true; m_inlineRedactionConfiguration = std::forward<InlineRedactionConfigurationT>(value); }
-    template<typename InlineRedactionConfigurationT = InlineRedactionConfiguration>
-    DataProtectionSettings& WithInlineRedactionConfiguration(InlineRedactionConfigurationT&& value) { SetInlineRedactionConfiguration(std::forward<InlineRedactionConfigurationT>(value)); return *this;}
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
+    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    DataProtectionSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
+    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
+    DataProtectionSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
+      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-    bool m_additionalEncryptionContextHasBeenSet = false;
+    Aws::String m_dataProtectionSettingsArn;
+    bool m_dataProtectionSettingsArnHasBeenSet = false;
+
+    InlineRedactionConfiguration m_inlineRedactionConfiguration;
+    bool m_inlineRedactionConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
@@ -159,17 +168,8 @@ namespace Model
     Aws::String m_customerManagedKey;
     bool m_customerManagedKeyHasBeenSet = false;
 
-    Aws::String m_dataProtectionSettingsArn;
-    bool m_dataProtectionSettingsArnHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    InlineRedactionConfiguration m_inlineRedactionConfiguration;
-    bool m_inlineRedactionConfigurationHasBeenSet = false;
+    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
+    bool m_additionalEncryptionContextHasBeenSet = false;
   };
 
 } // namespace Model

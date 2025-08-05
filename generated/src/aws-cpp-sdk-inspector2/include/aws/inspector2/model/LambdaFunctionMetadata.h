@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/Runtime.h>
 #include <utility>
 
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of a function.</p>
-     */
-    inline const Aws::String& GetFunctionName() const { return m_functionName; }
-    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    template<typename FunctionNameT = Aws::String>
-    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
-    template<typename FunctionNameT = Aws::String>
-    LambdaFunctionMetadata& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The resource tags on an Amazon Web Services Lambda function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFunctionTags() const { return m_functionTags; }
@@ -86,6 +74,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of a function.</p>
+     */
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    LambdaFunctionMetadata& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An Amazon Web Services Lambda function's runtime.</p>
      */
     inline Runtime GetRuntime() const { return m_runtime; }
@@ -95,14 +95,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_functionName;
-    bool m_functionNameHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_functionTags;
     bool m_functionTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layers;
     bool m_layersHasBeenSet = false;
+
+    Aws::String m_functionName;
+    bool m_functionNameHasBeenSet = false;
 
     Runtime m_runtime{Runtime::NOT_SET};
     bool m_runtimeHasBeenSet = false;

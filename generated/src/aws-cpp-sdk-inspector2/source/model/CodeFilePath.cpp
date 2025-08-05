@@ -25,11 +25,6 @@ CodeFilePath::CodeFilePath(JsonView jsonValue)
 
 CodeFilePath& CodeFilePath::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endLine"))
-  {
-    m_endLine = jsonValue.GetInteger("endLine");
-    m_endLineHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
@@ -45,18 +40,17 @@ CodeFilePath& CodeFilePath::operator =(JsonView jsonValue)
     m_startLine = jsonValue.GetInteger("startLine");
     m_startLineHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("endLine"))
+  {
+    m_endLine = jsonValue.GetInteger("endLine");
+    m_endLineHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CodeFilePath::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_endLineHasBeenSet)
-  {
-   payload.WithInteger("endLine", m_endLine);
-
-  }
 
   if(m_fileNameHasBeenSet)
   {
@@ -73,6 +67,12 @@ JsonValue CodeFilePath::Jsonize() const
   if(m_startLineHasBeenSet)
   {
    payload.WithInteger("startLine", m_startLine);
+
+  }
+
+  if(m_endLineHasBeenSet)
+  {
+   payload.WithInteger("endLine", m_endLine);
 
   }
 

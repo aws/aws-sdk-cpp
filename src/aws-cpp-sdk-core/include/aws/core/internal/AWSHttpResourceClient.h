@@ -103,6 +103,7 @@ namespace Aws
              */
             EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
             EC2MetadataClient(const Client::ClientConfiguration& clientConfiguration, const char* endpoint = "http://169.254.169.254");
+            EC2MetadataClient(const Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, const char* endpoint = "http://169.254.169.254");
 
             EC2MetadataClient& operator =(const EC2MetadataClient& rhs) = delete;
             EC2MetadataClient(const EC2MetadataClient& rhs) = delete;

@@ -60,11 +60,6 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3CsvSource = jsonValue.GetObject("S3CsvSource");
     m_s3CsvSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3ExcelSource"))
-  {
-    m_s3ExcelSource = jsonValue.GetObject("S3ExcelSource");
-    m_s3ExcelSourceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("S3JsonSource"))
   {
     m_s3JsonSource = jsonValue.GetObject("S3JsonSource");
@@ -115,20 +110,10 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3GlueParquetTarget = jsonValue.GetObject("S3GlueParquetTarget");
     m_s3GlueParquetTargetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3HyperDirectTarget"))
-  {
-    m_s3HyperDirectTarget = jsonValue.GetObject("S3HyperDirectTarget");
-    m_s3HyperDirectTargetHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("S3DirectTarget"))
   {
     m_s3DirectTarget = jsonValue.GetObject("S3DirectTarget");
     m_s3DirectTargetHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("S3IcebergDirectTarget"))
-  {
-    m_s3IcebergDirectTarget = jsonValue.GetObject("S3IcebergDirectTarget");
-    m_s3IcebergDirectTargetHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ApplyMapping"))
   {
@@ -290,6 +275,11 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_postgreSQLCatalogTarget = jsonValue.GetObject("PostgreSQLCatalogTarget");
     m_postgreSQLCatalogTargetHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Route"))
+  {
+    m_route = jsonValue.GetObject("Route");
+    m_routeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DynamicTransform"))
   {
     m_dynamicTransform = jsonValue.GetObject("DynamicTransform");
@@ -395,6 +385,41 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_connectorDataTarget = jsonValue.GetObject("ConnectorDataTarget");
     m_connectorDataTargetHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3CatalogIcebergSource"))
+  {
+    m_s3CatalogIcebergSource = jsonValue.GetObject("S3CatalogIcebergSource");
+    m_s3CatalogIcebergSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CatalogIcebergSource"))
+  {
+    m_catalogIcebergSource = jsonValue.GetObject("CatalogIcebergSource");
+    m_catalogIcebergSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3IcebergCatalogTarget"))
+  {
+    m_s3IcebergCatalogTarget = jsonValue.GetObject("S3IcebergCatalogTarget");
+    m_s3IcebergCatalogTargetHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3IcebergDirectTarget"))
+  {
+    m_s3IcebergDirectTarget = jsonValue.GetObject("S3IcebergDirectTarget");
+    m_s3IcebergDirectTargetHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3ExcelSource"))
+  {
+    m_s3ExcelSource = jsonValue.GetObject("S3ExcelSource");
+    m_s3ExcelSourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("S3HyperDirectTarget"))
+  {
+    m_s3HyperDirectTarget = jsonValue.GetObject("S3HyperDirectTarget");
+    m_s3HyperDirectTargetHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DynamoDBELTConnectorSource"))
+  {
+    m_dynamoDBELTConnectorSource = jsonValue.GetObject("DynamoDBELTConnectorSource");
+    m_dynamoDBELTConnectorSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -441,12 +466,6 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_s3CsvSourceHasBeenSet)
   {
    payload.WithObject("S3CsvSource", m_s3CsvSource.Jsonize());
-
-  }
-
-  if(m_s3ExcelSourceHasBeenSet)
-  {
-   payload.WithObject("S3ExcelSource", m_s3ExcelSource.Jsonize());
 
   }
 
@@ -510,21 +529,9 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
 
   }
 
-  if(m_s3HyperDirectTargetHasBeenSet)
-  {
-   payload.WithObject("S3HyperDirectTarget", m_s3HyperDirectTarget.Jsonize());
-
-  }
-
   if(m_s3DirectTargetHasBeenSet)
   {
    payload.WithObject("S3DirectTarget", m_s3DirectTarget.Jsonize());
-
-  }
-
-  if(m_s3IcebergDirectTargetHasBeenSet)
-  {
-   payload.WithObject("S3IcebergDirectTarget", m_s3IcebergDirectTarget.Jsonize());
 
   }
 
@@ -720,6 +727,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
 
   }
 
+  if(m_routeHasBeenSet)
+  {
+   payload.WithObject("Route", m_route.Jsonize());
+
+  }
+
   if(m_dynamicTransformHasBeenSet)
   {
    payload.WithObject("DynamicTransform", m_dynamicTransform.Jsonize());
@@ -843,6 +856,48 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_connectorDataTargetHasBeenSet)
   {
    payload.WithObject("ConnectorDataTarget", m_connectorDataTarget.Jsonize());
+
+  }
+
+  if(m_s3CatalogIcebergSourceHasBeenSet)
+  {
+   payload.WithObject("S3CatalogIcebergSource", m_s3CatalogIcebergSource.Jsonize());
+
+  }
+
+  if(m_catalogIcebergSourceHasBeenSet)
+  {
+   payload.WithObject("CatalogIcebergSource", m_catalogIcebergSource.Jsonize());
+
+  }
+
+  if(m_s3IcebergCatalogTargetHasBeenSet)
+  {
+   payload.WithObject("S3IcebergCatalogTarget", m_s3IcebergCatalogTarget.Jsonize());
+
+  }
+
+  if(m_s3IcebergDirectTargetHasBeenSet)
+  {
+   payload.WithObject("S3IcebergDirectTarget", m_s3IcebergDirectTarget.Jsonize());
+
+  }
+
+  if(m_s3ExcelSourceHasBeenSet)
+  {
+   payload.WithObject("S3ExcelSource", m_s3ExcelSource.Jsonize());
+
+  }
+
+  if(m_s3HyperDirectTargetHasBeenSet)
+  {
+   payload.WithObject("S3HyperDirectTarget", m_s3HyperDirectTarget.Jsonize());
+
+  }
+
+  if(m_dynamoDBELTConnectorSourceHasBeenSet)
+  {
+   payload.WithObject("DynamoDBELTConnectorSource", m_dynamoDBELTConnectorSource.Jsonize());
 
   }
 

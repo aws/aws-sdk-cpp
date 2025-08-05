@@ -40,6 +40,7 @@ template<> AWS_EVS_API ValidationException EVSError::GetModeledError()
 namespace EVSErrorMapper
 {
 
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
 
@@ -48,7 +49,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == TOO_MANY_TAGS_HASH)
+  if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EVSErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EVSErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }

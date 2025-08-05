@@ -54,6 +54,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The state of Amazon Inspector deep inspection in the member account.</p>
+     */
+    inline Ec2DeepInspectionStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(Ec2DeepInspectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MemberAccountEc2DeepInspectionStatusState& WithStatus(Ec2DeepInspectionStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error message explaining why the account failed to activate Amazon
      * Inspector deep inspection.</p>
      */
@@ -64,26 +74,16 @@ namespace Model
     template<typename ErrorMessageT = Aws::String>
     MemberAccountEc2DeepInspectionStatusState& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The state of Amazon Inspector deep inspection in the member account.</p>
-     */
-    inline Ec2DeepInspectionStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(Ec2DeepInspectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline MemberAccountEc2DeepInspectionStatusState& WithStatus(Ec2DeepInspectionStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
-
     Ec2DeepInspectionStatus m_status{Ec2DeepInspectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

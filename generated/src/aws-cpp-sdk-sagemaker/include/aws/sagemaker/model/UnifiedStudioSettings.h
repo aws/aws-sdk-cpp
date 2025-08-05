@@ -139,8 +139,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the application managed by SageMaker AI and SageMaker Unified
-     * Studio in the Amazon Web Services IAM Identity Center.</p>
+     * <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker
+     * Unified Studio in the Amazon Web Services IAM Identity Center.</p>
      */
     inline const Aws::String& GetSingleSignOnApplicationArn() const { return m_singleSignOnApplicationArn; }
     inline bool SingleSignOnApplicationArnHasBeenSet() const { return m_singleSignOnApplicationArnHasBeenSet; }

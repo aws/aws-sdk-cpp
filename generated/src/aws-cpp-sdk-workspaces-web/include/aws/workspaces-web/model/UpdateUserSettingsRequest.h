@@ -7,8 +7,8 @@
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
+#include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/ToolbarConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -35,6 +35,95 @@ namespace Model
 
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The ARN of the user settings.</p>
+     */
+    inline const Aws::String& GetUserSettingsArn() const { return m_userSettingsArn; }
+    inline bool UserSettingsArnHasBeenSet() const { return m_userSettingsArnHasBeenSet; }
+    template<typename UserSettingsArnT = Aws::String>
+    void SetUserSettingsArn(UserSettingsArnT&& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = std::forward<UserSettingsArnT>(value); }
+    template<typename UserSettingsArnT = Aws::String>
+    UpdateUserSettingsRequest& WithUserSettingsArn(UserSettingsArnT&& value) { SetUserSettingsArn(std::forward<UserSettingsArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the user can copy text from the streaming session to the
+     * local device.</p>
+     */
+    inline EnabledType GetCopyAllowed() const { return m_copyAllowed; }
+    inline bool CopyAllowedHasBeenSet() const { return m_copyAllowedHasBeenSet; }
+    inline void SetCopyAllowed(EnabledType value) { m_copyAllowedHasBeenSet = true; m_copyAllowed = value; }
+    inline UpdateUserSettingsRequest& WithCopyAllowed(EnabledType value) { SetCopyAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the user can paste text from the local device to the
+     * streaming session.</p>
+     */
+    inline EnabledType GetPasteAllowed() const { return m_pasteAllowed; }
+    inline bool PasteAllowedHasBeenSet() const { return m_pasteAllowedHasBeenSet; }
+    inline void SetPasteAllowed(EnabledType value) { m_pasteAllowedHasBeenSet = true; m_pasteAllowed = value; }
+    inline UpdateUserSettingsRequest& WithPasteAllowed(EnabledType value) { SetPasteAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the user can download files from the streaming session to
+     * the local device.</p>
+     */
+    inline EnabledType GetDownloadAllowed() const { return m_downloadAllowed; }
+    inline bool DownloadAllowedHasBeenSet() const { return m_downloadAllowedHasBeenSet; }
+    inline void SetDownloadAllowed(EnabledType value) { m_downloadAllowedHasBeenSet = true; m_downloadAllowed = value; }
+    inline UpdateUserSettingsRequest& WithDownloadAllowed(EnabledType value) { SetDownloadAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the user can upload files from the local device to the
+     * streaming session.</p>
+     */
+    inline EnabledType GetUploadAllowed() const { return m_uploadAllowed; }
+    inline bool UploadAllowedHasBeenSet() const { return m_uploadAllowedHasBeenSet; }
+    inline void SetUploadAllowed(EnabledType value) { m_uploadAllowedHasBeenSet = true; m_uploadAllowed = value; }
+    inline UpdateUserSettingsRequest& WithUploadAllowed(EnabledType value) { SetUploadAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the user can print to the local device.</p>
+     */
+    inline EnabledType GetPrintAllowed() const { return m_printAllowed; }
+    inline bool PrintAllowedHasBeenSet() const { return m_printAllowedHasBeenSet; }
+    inline void SetPrintAllowed(EnabledType value) { m_printAllowedHasBeenSet = true; m_printAllowed = value; }
+    inline UpdateUserSettingsRequest& WithPrintAllowed(EnabledType value) { SetPrintAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect.</p>
+     */
+    inline int GetDisconnectTimeoutInMinutes() const { return m_disconnectTimeoutInMinutes; }
+    inline bool DisconnectTimeoutInMinutesHasBeenSet() const { return m_disconnectTimeoutInMinutesHasBeenSet; }
+    inline void SetDisconnectTimeoutInMinutes(int value) { m_disconnectTimeoutInMinutesHasBeenSet = true; m_disconnectTimeoutInMinutes = value; }
+    inline UpdateUserSettingsRequest& WithDisconnectTimeoutInMinutes(int value) { SetDisconnectTimeoutInMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the disconnect timeout interval
+     * begins.</p>
+     */
+    inline int GetIdleDisconnectTimeoutInMinutes() const { return m_idleDisconnectTimeoutInMinutes; }
+    inline bool IdleDisconnectTimeoutInMinutesHasBeenSet() const { return m_idleDisconnectTimeoutInMinutesHasBeenSet; }
+    inline void SetIdleDisconnectTimeoutInMinutes(int value) { m_idleDisconnectTimeoutInMinutesHasBeenSet = true; m_idleDisconnectTimeoutInMinutes = value; }
+    inline UpdateUserSettingsRequest& WithIdleDisconnectTimeoutInMinutes(int value) { SetIdleDisconnectTimeoutInMinutes(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -69,17 +158,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the user can copy text from the streaming session to the
-     * local device.</p>
-     */
-    inline EnabledType GetCopyAllowed() const { return m_copyAllowed; }
-    inline bool CopyAllowedHasBeenSet() const { return m_copyAllowedHasBeenSet; }
-    inline void SetCopyAllowed(EnabledType value) { m_copyAllowedHasBeenSet = true; m_copyAllowed = value; }
-    inline UpdateUserSettingsRequest& WithCopyAllowed(EnabledType value) { SetCopyAllowed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies whether the user can use deep links that open automatically when
      * connecting to a session.</p>
      */
@@ -87,61 +165,6 @@ namespace Model
     inline bool DeepLinkAllowedHasBeenSet() const { return m_deepLinkAllowedHasBeenSet; }
     inline void SetDeepLinkAllowed(EnabledType value) { m_deepLinkAllowedHasBeenSet = true; m_deepLinkAllowed = value; }
     inline UpdateUserSettingsRequest& WithDeepLinkAllowed(EnabledType value) { SetDeepLinkAllowed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The amount of time that a streaming session remains active after users
-     * disconnect.</p>
-     */
-    inline int GetDisconnectTimeoutInMinutes() const { return m_disconnectTimeoutInMinutes; }
-    inline bool DisconnectTimeoutInMinutesHasBeenSet() const { return m_disconnectTimeoutInMinutesHasBeenSet; }
-    inline void SetDisconnectTimeoutInMinutes(int value) { m_disconnectTimeoutInMinutesHasBeenSet = true; m_disconnectTimeoutInMinutes = value; }
-    inline UpdateUserSettingsRequest& WithDisconnectTimeoutInMinutes(int value) { SetDisconnectTimeoutInMinutes(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the user can download files from the streaming session to
-     * the local device.</p>
-     */
-    inline EnabledType GetDownloadAllowed() const { return m_downloadAllowed; }
-    inline bool DownloadAllowedHasBeenSet() const { return m_downloadAllowedHasBeenSet; }
-    inline void SetDownloadAllowed(EnabledType value) { m_downloadAllowedHasBeenSet = true; m_downloadAllowed = value; }
-    inline UpdateUserSettingsRequest& WithDownloadAllowed(EnabledType value) { SetDownloadAllowed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The amount of time that users can be idle (inactive) before they are
-     * disconnected from their streaming session and the disconnect timeout interval
-     * begins.</p>
-     */
-    inline int GetIdleDisconnectTimeoutInMinutes() const { return m_idleDisconnectTimeoutInMinutes; }
-    inline bool IdleDisconnectTimeoutInMinutesHasBeenSet() const { return m_idleDisconnectTimeoutInMinutesHasBeenSet; }
-    inline void SetIdleDisconnectTimeoutInMinutes(int value) { m_idleDisconnectTimeoutInMinutesHasBeenSet = true; m_idleDisconnectTimeoutInMinutes = value; }
-    inline UpdateUserSettingsRequest& WithIdleDisconnectTimeoutInMinutes(int value) { SetIdleDisconnectTimeoutInMinutes(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the user can paste text from the local device to the
-     * streaming session.</p>
-     */
-    inline EnabledType GetPasteAllowed() const { return m_pasteAllowed; }
-    inline bool PasteAllowedHasBeenSet() const { return m_pasteAllowedHasBeenSet; }
-    inline void SetPasteAllowed(EnabledType value) { m_pasteAllowedHasBeenSet = true; m_pasteAllowed = value; }
-    inline UpdateUserSettingsRequest& WithPasteAllowed(EnabledType value) { SetPasteAllowed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the user can print to the local device.</p>
-     */
-    inline EnabledType GetPrintAllowed() const { return m_printAllowed; }
-    inline bool PrintAllowedHasBeenSet() const { return m_printAllowedHasBeenSet; }
-    inline void SetPrintAllowed(EnabledType value) { m_printAllowedHasBeenSet = true; m_printAllowed = value; }
-    inline UpdateUserSettingsRequest& WithPrintAllowed(EnabledType value) { SetPrintAllowed(value); return *this;}
     ///@}
 
     ///@{
@@ -159,30 +182,31 @@ namespace Model
     template<typename ToolbarConfigurationT = ToolbarConfiguration>
     UpdateUserSettingsRequest& WithToolbarConfiguration(ToolbarConfigurationT&& value) { SetToolbarConfiguration(std::forward<ToolbarConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the user can upload files from the local device to the
-     * streaming session.</p>
-     */
-    inline EnabledType GetUploadAllowed() const { return m_uploadAllowed; }
-    inline bool UploadAllowedHasBeenSet() const { return m_uploadAllowedHasBeenSet; }
-    inline void SetUploadAllowed(EnabledType value) { m_uploadAllowedHasBeenSet = true; m_uploadAllowed = value; }
-    inline UpdateUserSettingsRequest& WithUploadAllowed(EnabledType value) { SetUploadAllowed(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
-    inline const Aws::String& GetUserSettingsArn() const { return m_userSettingsArn; }
-    inline bool UserSettingsArnHasBeenSet() const { return m_userSettingsArnHasBeenSet; }
-    template<typename UserSettingsArnT = Aws::String>
-    void SetUserSettingsArn(UserSettingsArnT&& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = std::forward<UserSettingsArnT>(value); }
-    template<typename UserSettingsArnT = Aws::String>
-    UpdateUserSettingsRequest& WithUserSettingsArn(UserSettingsArnT&& value) { SetUserSettingsArn(std::forward<UserSettingsArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_userSettingsArn;
+    bool m_userSettingsArnHasBeenSet = false;
+
+    EnabledType m_copyAllowed{EnabledType::NOT_SET};
+    bool m_copyAllowedHasBeenSet = false;
+
+    EnabledType m_pasteAllowed{EnabledType::NOT_SET};
+    bool m_pasteAllowedHasBeenSet = false;
+
+    EnabledType m_downloadAllowed{EnabledType::NOT_SET};
+    bool m_downloadAllowedHasBeenSet = false;
+
+    EnabledType m_uploadAllowed{EnabledType::NOT_SET};
+    bool m_uploadAllowedHasBeenSet = false;
+
+    EnabledType m_printAllowed{EnabledType::NOT_SET};
+    bool m_printAllowedHasBeenSet = false;
+
+    int m_disconnectTimeoutInMinutes{0};
+    bool m_disconnectTimeoutInMinutesHasBeenSet = false;
+
+    int m_idleDisconnectTimeoutInMinutes{0};
+    bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
@@ -190,35 +214,11 @@ namespace Model
     CookieSynchronizationConfiguration m_cookieSynchronizationConfiguration;
     bool m_cookieSynchronizationConfigurationHasBeenSet = false;
 
-    EnabledType m_copyAllowed{EnabledType::NOT_SET};
-    bool m_copyAllowedHasBeenSet = false;
-
     EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
     bool m_deepLinkAllowedHasBeenSet = false;
 
-    int m_disconnectTimeoutInMinutes{0};
-    bool m_disconnectTimeoutInMinutesHasBeenSet = false;
-
-    EnabledType m_downloadAllowed{EnabledType::NOT_SET};
-    bool m_downloadAllowedHasBeenSet = false;
-
-    int m_idleDisconnectTimeoutInMinutes{0};
-    bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
-
-    EnabledType m_pasteAllowed{EnabledType::NOT_SET};
-    bool m_pasteAllowedHasBeenSet = false;
-
-    EnabledType m_printAllowed{EnabledType::NOT_SET};
-    bool m_printAllowedHasBeenSet = false;
-
     ToolbarConfiguration m_toolbarConfiguration;
     bool m_toolbarConfigurationHasBeenSet = false;
-
-    EnabledType m_uploadAllowed{EnabledType::NOT_SET};
-    bool m_uploadAllowedHasBeenSet = false;
-
-    Aws::String m_userSettingsArn;
-    bool m_userSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

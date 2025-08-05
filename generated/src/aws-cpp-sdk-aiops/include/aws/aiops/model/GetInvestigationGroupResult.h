@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/aiops/model/EncryptionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -52,11 +51,9 @@ namespace Model
     /**
      * <p>The date and time that the investigation group was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetInvestigationGroupResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline long long GetCreatedAt() const { return m_createdAt; }
+    inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline GetInvestigationGroupResult& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +72,9 @@ namespace Model
      * <p>The date and time that the investigation group was most recently
      * modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
-    template<typename LastModifiedAtT = Aws::Utils::DateTime>
-    GetInvestigationGroupResult& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
+    inline long long GetLastModifiedAt() const { return m_lastModifiedAt; }
+    inline void SetLastModifiedAt(long long value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = value; }
+    inline GetInvestigationGroupResult& WithLastModifiedAt(long long value) { SetLastModifiedAt(value); return *this;}
     ///@}
 
     ///@{
@@ -141,9 +136,9 @@ namespace Model
     ///@{
     /**
      * <p>This structure is a string array. The first string is the ARN of a Amazon SNS
-     * topic. The array of strings display the ARNs of Amazon Q in chat applications
-     * configurations that are associated with that topic. For more information about
-     * these configuration ARNs, see <a
+     * topic. The array of strings display the ARNs of chat applications configurations
+     * that are associated with that topic. For more information about these
+     * configuration ARNs, see <a
      * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
      * started with Amazon Q in chat applications</a> and <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource
@@ -163,9 +158,9 @@ namespace Model
     ///@{
     /**
      * <p>Displays the custom tag keys for custom applications in your system that you
-     * have specified in the investigation group. Resource tags help Amazon Q narrow
-     * the search space when it is unable to discover definite relationships between
-     * resources. </p>
+     * have specified in the investigation group. Resource tags help CloudWatch
+     * investigations narrow the search space when it is unable to discover definite
+     * relationships between resources. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyBoundaries() const { return m_tagKeyBoundaries; }
     template<typename TagKeyBoundariesT = Aws::Vector<Aws::String>>
@@ -214,13 +209,13 @@ namespace Model
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
+    long long m_createdAt{0};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAt{};
+    long long m_lastModifiedAt{0};
     bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_name;

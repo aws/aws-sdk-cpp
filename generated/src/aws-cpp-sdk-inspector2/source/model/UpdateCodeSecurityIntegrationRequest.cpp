@@ -16,15 +16,15 @@ Aws::String UpdateCodeSecurityIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("details", m_details.Jsonize());
-
-  }
-
   if(m_integrationArnHasBeenSet)
   {
    payload.WithString("integrationArn", m_integrationArn);
+
+  }
+
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithObject("details", m_details.Jsonize());
 
   }
 

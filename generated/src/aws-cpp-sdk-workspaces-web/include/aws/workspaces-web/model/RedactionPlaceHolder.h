@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/RedactionPlaceHolderType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The redaction placeholder type that will replace the redacted text in
+     * session.</p>
+     */
+    inline RedactionPlaceHolderType GetRedactionPlaceHolderType() const { return m_redactionPlaceHolderType; }
+    inline bool RedactionPlaceHolderTypeHasBeenSet() const { return m_redactionPlaceHolderTypeHasBeenSet; }
+    inline void SetRedactionPlaceHolderType(RedactionPlaceHolderType value) { m_redactionPlaceHolderTypeHasBeenSet = true; m_redactionPlaceHolderType = value; }
+    inline RedactionPlaceHolder& WithRedactionPlaceHolderType(RedactionPlaceHolderType value) { SetRedactionPlaceHolderType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The redaction placeholder text that will replace the redacted text in session
      * for the custom text redaction placeholder type.</p>
      */
@@ -51,24 +62,13 @@ namespace Model
     template<typename RedactionPlaceHolderTextT = Aws::String>
     RedactionPlaceHolder& WithRedactionPlaceHolderText(RedactionPlaceHolderTextT&& value) { SetRedactionPlaceHolderText(std::forward<RedactionPlaceHolderTextT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The redaction placeholder type that will replace the redacted text in
-     * session.</p>
-     */
-    inline RedactionPlaceHolderType GetRedactionPlaceHolderType() const { return m_redactionPlaceHolderType; }
-    inline bool RedactionPlaceHolderTypeHasBeenSet() const { return m_redactionPlaceHolderTypeHasBeenSet; }
-    inline void SetRedactionPlaceHolderType(RedactionPlaceHolderType value) { m_redactionPlaceHolderTypeHasBeenSet = true; m_redactionPlaceHolderType = value; }
-    inline RedactionPlaceHolder& WithRedactionPlaceHolderType(RedactionPlaceHolderType value) { SetRedactionPlaceHolderType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_redactionPlaceHolderText;
-    bool m_redactionPlaceHolderTextHasBeenSet = false;
 
     RedactionPlaceHolderType m_redactionPlaceHolderType{RedactionPlaceHolderType::NOT_SET};
     bool m_redactionPlaceHolderTypeHasBeenSet = false;
+
+    Aws::String m_redactionPlaceHolderText;
+    bool m_redactionPlaceHolderTextHasBeenSet = false;
   };
 
 } // namespace Model

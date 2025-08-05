@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/AccessDeniedException.h>
 #include <aws/lightsail/model/UnauthenticatedException.h>
 #include <aws/lightsail/model/InvalidInputException.h>
+#include <aws/lightsail/model/RegionSetupInProgressException.h>
 #include <aws/lightsail/model/ServiceException.h>
 #include <aws/lightsail/model/AccountSetupInProgressException.h>
 
@@ -53,6 +54,12 @@ template<> AWS_LIGHTSAIL_API InvalidInputException LightsailError::GetModeledErr
   return InvalidInputException(this->GetJsonPayload().View());
 }
 
+template<> AWS_LIGHTSAIL_API RegionSetupInProgressException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::REGION_SETUP_IN_PROGRESS);
+  return RegionSetupInProgressException(this->GetJsonPayload().View());
+}
+
 template<> AWS_LIGHTSAIL_API ServiceException LightsailError::GetModeledError()
 {
   assert(this->GetErrorType() == LightsailErrors::SERVICE);
@@ -72,6 +79,7 @@ static const int OPERATION_FAILURE_HASH = HashingUtils::HashString("OperationFai
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int UNAUTHENTICATED_HASH = HashingUtils::HashString("UnauthenticatedException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int REGION_SETUP_IN_PROGRESS_HASH = HashingUtils::HashString("RegionSetupInProgressException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int ACCOUNT_SETUP_IN_PROGRESS_HASH = HashingUtils::HashString("AccountSetupInProgressException");
 
@@ -95,6 +103,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_INPUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LightsailErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == REGION_SETUP_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LightsailErrors::REGION_SETUP_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {

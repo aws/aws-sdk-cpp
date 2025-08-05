@@ -16,27 +16,15 @@ Aws::String ListCisScansRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_detailLevelHasBeenSet)
-  {
-   payload.WithString("detailLevel", ListCisScansDetailLevelMapper::GetNameForListCisScansDetailLevel(m_detailLevel));
-  }
-
   if(m_filterCriteriaHasBeenSet)
   {
    payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_detailLevelHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+   payload.WithString("detailLevel", ListCisScansDetailLevelMapper::GetNameForListCisScansDetailLevel(m_detailLevel));
   }
 
   if(m_sortByHasBeenSet)
@@ -47,6 +35,18 @@ Aws::String ListCisScansRequest::SerializePayload() const
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", CisSortOrderMapper::GetNameForCisSortOrder(m_sortOrder));
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

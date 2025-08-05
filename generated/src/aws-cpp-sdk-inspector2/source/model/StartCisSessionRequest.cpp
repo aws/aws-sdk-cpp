@@ -16,15 +16,15 @@ Aws::String StartCisSessionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithObject("message", m_message.Jsonize());
-
-  }
-
   if(m_scanJobIdHasBeenSet)
   {
    payload.WithString("scanJobId", m_scanJobId);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithObject("message", m_message.Jsonize());
 
   }
 

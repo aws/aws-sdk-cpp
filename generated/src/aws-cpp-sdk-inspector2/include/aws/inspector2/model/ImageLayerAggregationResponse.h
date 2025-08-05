@@ -41,31 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account that owns the container image
-     * hosting the layer image.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    ImageLayerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The layer hash.</p>
-     */
-    inline const Aws::String& GetLayerHash() const { return m_layerHash; }
-    inline bool LayerHashHasBeenSet() const { return m_layerHashHasBeenSet; }
-    template<typename LayerHashT = Aws::String>
-    void SetLayerHash(LayerHashT&& value) { m_layerHashHasBeenSet = true; m_layerHash = std::forward<LayerHashT>(value); }
-    template<typename LayerHashT = Aws::String>
-    ImageLayerAggregationResponse& WithLayerHash(LayerHashT&& value) { SetLayerHash(std::forward<LayerHashT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The repository the layer resides in.</p>
      */
     inline const Aws::String& GetRepository() const { return m_repository; }
@@ -90,6 +65,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The layer hash.</p>
+     */
+    inline const Aws::String& GetLayerHash() const { return m_layerHash; }
+    inline bool LayerHashHasBeenSet() const { return m_layerHashHasBeenSet; }
+    template<typename LayerHashT = Aws::String>
+    void SetLayerHash(LayerHashT&& value) { m_layerHashHasBeenSet = true; m_layerHash = std::forward<LayerHashT>(value); }
+    template<typename LayerHashT = Aws::String>
+    ImageLayerAggregationResponse& WithLayerHash(LayerHashT&& value) { SetLayerHash(std::forward<LayerHashT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the container image
+     * hosting the layer image.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ImageLayerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that represents the count of matched findings per severity.</p>
      */
     inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
@@ -101,17 +101,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_layerHash;
-    bool m_layerHashHasBeenSet = false;
-
     Aws::String m_repository;
     bool m_repositoryHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
+
+    Aws::String m_layerHash;
+    bool m_layerHashHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;

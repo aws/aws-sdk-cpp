@@ -134,6 +134,16 @@ FieldSourceProfileIds& FieldSourceProfileIds::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ProfileType"))
+  {
+    m_profileType = jsonValue.GetString("ProfileType");
+    m_profileTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EngagementPreferences"))
+  {
+    m_engagementPreferences = jsonValue.GetString("EngagementPreferences");
+    m_engagementPreferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -269,6 +279,18 @@ JsonValue FieldSourceProfileIds::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_profileTypeHasBeenSet)
+  {
+   payload.WithString("ProfileType", m_profileType);
+
+  }
+
+  if(m_engagementPreferencesHasBeenSet)
+  {
+   payload.WithString("EngagementPreferences", m_engagementPreferences);
 
   }
 

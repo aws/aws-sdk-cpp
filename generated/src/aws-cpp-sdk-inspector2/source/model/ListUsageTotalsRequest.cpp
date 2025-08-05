@@ -16,17 +16,6 @@ Aws::String ListUsageTotalsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_accountIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-   {
-     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
-   }
-   payload.WithArray("accountIds", std::move(accountIdsJsonList));
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -36,6 +25,17 @@ Aws::String ListUsageTotalsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_accountIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
+   {
+     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+   }
+   payload.WithArray("accountIds", std::move(accountIdsJsonList));
 
   }
 

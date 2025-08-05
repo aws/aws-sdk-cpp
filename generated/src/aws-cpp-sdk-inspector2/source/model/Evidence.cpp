@@ -25,15 +25,15 @@ Evidence::Evidence(JsonView jsonValue)
 
 Evidence& Evidence::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("evidenceDetail"))
-  {
-    m_evidenceDetail = jsonValue.GetString("evidenceDetail");
-    m_evidenceDetailHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("evidenceRule"))
   {
     m_evidenceRule = jsonValue.GetString("evidenceRule");
     m_evidenceRuleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("evidenceDetail"))
+  {
+    m_evidenceDetail = jsonValue.GetString("evidenceDetail");
+    m_evidenceDetailHasBeenSet = true;
   }
   if(jsonValue.ValueExists("severity"))
   {
@@ -47,15 +47,15 @@ JsonValue Evidence::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_evidenceDetailHasBeenSet)
-  {
-   payload.WithString("evidenceDetail", m_evidenceDetail);
-
-  }
-
   if(m_evidenceRuleHasBeenSet)
   {
    payload.WithString("evidenceRule", m_evidenceRule);
+
+  }
+
+  if(m_evidenceDetailHasBeenSet)
+  {
+   payload.WithString("evidenceDetail", m_evidenceDetail);
 
   }
 

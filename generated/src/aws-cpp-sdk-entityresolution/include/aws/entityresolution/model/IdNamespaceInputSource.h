@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>InputSourceARN</code> and
-   * <code>SchemaName</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>inputSourceARN</code> and
+   * <code>schemaName</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdNamespaceInputSource">AWS
    * API Reference</a></p>
    */

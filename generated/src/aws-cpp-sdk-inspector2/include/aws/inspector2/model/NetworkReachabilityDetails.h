@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/NetworkPath.h>
 #include <aws/inspector2/model/PortRange.h>
 #include <aws/inspector2/model/NetworkProtocol.h>
+#include <aws/inspector2/model/NetworkPath.h>
 #include <utility>
 
 namespace Aws
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details about a network path associated with a
-     * finding.</p>
-     */
-    inline const NetworkPath& GetNetworkPath() const { return m_networkPath; }
-    inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
-    template<typename NetworkPathT = NetworkPath>
-    void SetNetworkPath(NetworkPathT&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::forward<NetworkPathT>(value); }
-    template<typename NetworkPathT = NetworkPath>
-    NetworkReachabilityDetails& WithNetworkPath(NetworkPathT&& value) { SetNetworkPath(std::forward<NetworkPathT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An object that contains details about the open port range associated with a
      * finding.</p>
      */
@@ -75,16 +62,29 @@ namespace Model
     inline void SetProtocol(NetworkProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
     inline NetworkReachabilityDetails& WithProtocol(NetworkProtocol value) { SetProtocol(value); return *this;}
     ///@}
-  private:
 
-    NetworkPath m_networkPath;
-    bool m_networkPathHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An object that contains details about a network path associated with a
+     * finding.</p>
+     */
+    inline const NetworkPath& GetNetworkPath() const { return m_networkPath; }
+    inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
+    template<typename NetworkPathT = NetworkPath>
+    void SetNetworkPath(NetworkPathT&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::forward<NetworkPathT>(value); }
+    template<typename NetworkPathT = NetworkPath>
+    NetworkReachabilityDetails& WithNetworkPath(NetworkPathT&& value) { SetNetworkPath(std::forward<NetworkPathT>(value)); return *this;}
+    ///@}
+  private:
 
     PortRange m_openPortRange;
     bool m_openPortRangeHasBeenSet = false;
 
     NetworkProtocol m_protocol{NetworkProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
+
+    NetworkPath m_networkPath;
+    bool m_networkPathHasBeenSet = false;
   };
 
 } // namespace Model

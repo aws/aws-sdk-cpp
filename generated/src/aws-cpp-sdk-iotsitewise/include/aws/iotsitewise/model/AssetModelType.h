@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ASSET_MODEL,
-    COMPONENT_MODEL
+    COMPONENT_MODEL,
+    INTERFACE
   };
 
 namespace AssetModelTypeMapper

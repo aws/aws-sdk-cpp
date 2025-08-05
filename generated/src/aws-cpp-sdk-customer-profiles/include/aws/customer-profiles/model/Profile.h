@@ -11,6 +11,8 @@
 #include <aws/customer-profiles/model/Address.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/customer-profiles/model/ProfileType.h>
+#include <aws/customer-profiles/model/EngagementPreferences.h>
 #include <aws/customer-profiles/model/FoundByKeyValue.h>
 #include <utility>
 
@@ -365,6 +367,28 @@ namespace Model
     template<typename GenderStringT = Aws::String>
     Profile& WithGenderString(GenderStringT&& value) { SetGenderString(std::forward<GenderStringT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of the profile.</p>
+     */
+    inline ProfileType GetProfileType() const { return m_profileType; }
+    inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
+    inline void SetProfileType(ProfileType value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
+    inline Profile& WithProfileType(ProfileType value) { SetProfileType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The customer or account’s engagement preferences.</p>
+     */
+    inline const EngagementPreferences& GetEngagementPreferences() const { return m_engagementPreferences; }
+    inline bool EngagementPreferencesHasBeenSet() const { return m_engagementPreferencesHasBeenSet; }
+    template<typename EngagementPreferencesT = EngagementPreferences>
+    void SetEngagementPreferences(EngagementPreferencesT&& value) { m_engagementPreferencesHasBeenSet = true; m_engagementPreferences = std::forward<EngagementPreferencesT>(value); }
+    template<typename EngagementPreferencesT = EngagementPreferences>
+    Profile& WithEngagementPreferences(EngagementPreferencesT&& value) { SetEngagementPreferences(std::forward<EngagementPreferencesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_profileId;
@@ -441,6 +465,12 @@ namespace Model
 
     Aws::String m_genderString;
     bool m_genderStringHasBeenSet = false;
+
+    ProfileType m_profileType{ProfileType::NOT_SET};
+    bool m_profileTypeHasBeenSet = false;
+
+    EngagementPreferences m_engagementPreferences;
+    bool m_engagementPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

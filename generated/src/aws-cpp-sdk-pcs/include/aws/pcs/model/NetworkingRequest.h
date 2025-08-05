@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/model/NetworkType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -72,6 +73,17 @@ namespace Model
     template<typename SecurityGroupIdsT = Aws::String>
     NetworkingRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address version the cluster uses. The default is
+     * <code>IPV4</code>.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline NetworkingRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -79,6 +91,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/Status.h>
 #include <aws/inspector2/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/Status.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of Amazon Inspector for the account.</p>
+     */
+    inline Status GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline State& WithStatus(Status value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error code explaining why the account failed to enable Amazon
      * Inspector.</p>
      */
@@ -63,26 +73,16 @@ namespace Model
     template<typename ErrorMessageT = Aws::String>
     State& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
-    inline Status GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
-    inline State& WithStatus(Status value) { SetStatus(value); return *this;}
-    ///@}
   private:
+
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     ErrorCode m_errorCode{ErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
-
-    Status m_status{Status::NOT_SET};
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

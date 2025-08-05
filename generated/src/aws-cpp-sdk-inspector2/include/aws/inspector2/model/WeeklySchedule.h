@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/Time.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/Day.h>
 #include <utility>
 
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The weekly schedule's start time.</p>
+     */
+    inline const Time& GetStartTime() const { return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    template<typename StartTimeT = Time>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Time>
+    WeeklySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The weekly schedule's days.</p>
      */
     inline const Aws::Vector<Day>& GetDays() const { return m_days; }
@@ -51,25 +63,13 @@ namespace Model
     WeeklySchedule& WithDays(DaysT&& value) { SetDays(std::forward<DaysT>(value)); return *this;}
     inline WeeklySchedule& AddDays(Day value) { m_daysHasBeenSet = true; m_days.push_back(value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The weekly schedule's start time.</p>
-     */
-    inline const Time& GetStartTime() const { return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    template<typename StartTimeT = Time>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Time>
-    WeeklySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Day> m_days;
-    bool m_daysHasBeenSet = false;
 
     Time m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Aws::Vector<Day> m_days;
+    bool m_daysHasBeenSet = false;
   };
 
 } // namespace Model

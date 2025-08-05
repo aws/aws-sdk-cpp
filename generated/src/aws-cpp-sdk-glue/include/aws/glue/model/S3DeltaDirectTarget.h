@@ -11,6 +11,7 @@
 #include <aws/glue/model/TargetFormat.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/DirectSchemaChangePolicy.h>
+#include <aws/glue/model/AutoDataQuality.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +158,20 @@ namespace Model
     template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
     S3DeltaDirectTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to automatically enable data quality evaluation for the S3
+     * Delta direct target. When set to <code>true</code>, data quality checks are
+     * performed automatically during the write operation.</p>
+     */
+    inline const AutoDataQuality& GetAutoDataQuality() const { return m_autoDataQuality; }
+    inline bool AutoDataQualityHasBeenSet() const { return m_autoDataQualityHasBeenSet; }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    void SetAutoDataQuality(AutoDataQualityT&& value) { m_autoDataQualityHasBeenSet = true; m_autoDataQuality = std::forward<AutoDataQualityT>(value); }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    S3DeltaDirectTarget& WithAutoDataQuality(AutoDataQualityT&& value) { SetAutoDataQuality(std::forward<AutoDataQualityT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -185,6 +200,9 @@ namespace Model
 
     DirectSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;
+
+    AutoDataQuality m_autoDataQuality;
+    bool m_autoDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

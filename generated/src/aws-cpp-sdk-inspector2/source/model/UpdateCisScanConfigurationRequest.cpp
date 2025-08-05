@@ -28,15 +28,15 @@ Aws::String UpdateCisScanConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_securityLevelHasBeenSet)
+  {
+   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
+  }
+
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
 
-  }
-
-  if(m_securityLevelHasBeenSet)
-  {
-   payload.WithString("securityLevel", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_securityLevel));
   }
 
   if(m_targetsHasBeenSet)

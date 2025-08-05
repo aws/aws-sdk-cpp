@@ -25,15 +25,6 @@ ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria
 
 ListCisScanConfigurationsFilterCriteria& ListCisScanConfigurationsFilterCriteria::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("scanConfigurationArnFilters"))
-  {
-    Aws::Utils::Array<JsonView> scanConfigurationArnFiltersJsonList = jsonValue.GetArray("scanConfigurationArnFilters");
-    for(unsigned scanConfigurationArnFiltersIndex = 0; scanConfigurationArnFiltersIndex < scanConfigurationArnFiltersJsonList.GetLength(); ++scanConfigurationArnFiltersIndex)
-    {
-      m_scanConfigurationArnFilters.push_back(scanConfigurationArnFiltersJsonList[scanConfigurationArnFiltersIndex].AsObject());
-    }
-    m_scanConfigurationArnFiltersHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanNameFilters"))
   {
     Aws::Utils::Array<JsonView> scanNameFiltersJsonList = jsonValue.GetArray("scanNameFilters");
@@ -52,23 +43,21 @@ ListCisScanConfigurationsFilterCriteria& ListCisScanConfigurationsFilterCriteria
     }
     m_targetResourceTagFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("scanConfigurationArnFilters"))
+  {
+    Aws::Utils::Array<JsonView> scanConfigurationArnFiltersJsonList = jsonValue.GetArray("scanConfigurationArnFilters");
+    for(unsigned scanConfigurationArnFiltersIndex = 0; scanConfigurationArnFiltersIndex < scanConfigurationArnFiltersJsonList.GetLength(); ++scanConfigurationArnFiltersIndex)
+    {
+      m_scanConfigurationArnFilters.push_back(scanConfigurationArnFiltersJsonList[scanConfigurationArnFiltersIndex].AsObject());
+    }
+    m_scanConfigurationArnFiltersHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ListCisScanConfigurationsFilterCriteria::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_scanConfigurationArnFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> scanConfigurationArnFiltersJsonList(m_scanConfigurationArnFilters.size());
-   for(unsigned scanConfigurationArnFiltersIndex = 0; scanConfigurationArnFiltersIndex < scanConfigurationArnFiltersJsonList.GetLength(); ++scanConfigurationArnFiltersIndex)
-   {
-     scanConfigurationArnFiltersJsonList[scanConfigurationArnFiltersIndex].AsObject(m_scanConfigurationArnFilters[scanConfigurationArnFiltersIndex].Jsonize());
-   }
-   payload.WithArray("scanConfigurationArnFilters", std::move(scanConfigurationArnFiltersJsonList));
-
-  }
 
   if(m_scanNameFiltersHasBeenSet)
   {
@@ -89,6 +78,17 @@ JsonValue ListCisScanConfigurationsFilterCriteria::Jsonize() const
      targetResourceTagFiltersJsonList[targetResourceTagFiltersIndex].AsObject(m_targetResourceTagFilters[targetResourceTagFiltersIndex].Jsonize());
    }
    payload.WithArray("targetResourceTagFilters", std::move(targetResourceTagFiltersJsonList));
+
+  }
+
+  if(m_scanConfigurationArnFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> scanConfigurationArnFiltersJsonList(m_scanConfigurationArnFilters.size());
+   for(unsigned scanConfigurationArnFiltersIndex = 0; scanConfigurationArnFiltersIndex < scanConfigurationArnFiltersJsonList.GetLength(); ++scanConfigurationArnFiltersIndex)
+   {
+     scanConfigurationArnFiltersJsonList[scanConfigurationArnFiltersIndex].AsObject(m_scanConfigurationArnFilters[scanConfigurationArnFiltersIndex].Jsonize());
+   }
+   payload.WithArray("scanConfigurationArnFilters", std::move(scanConfigurationArnFiltersJsonList));
 
   }
 

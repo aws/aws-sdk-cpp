@@ -16,11 +16,6 @@ Aws::String GetCisScanReportRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_reportFormatHasBeenSet)
-  {
-   payload.WithString("reportFormat", CisReportFormatMapper::GetNameForCisReportFormat(m_reportFormat));
-  }
-
   if(m_scanArnHasBeenSet)
   {
    payload.WithString("scanArn", m_scanArn);
@@ -36,6 +31,11 @@ Aws::String GetCisScanReportRequest::SerializePayload() const
    }
    payload.WithArray("targetAccounts", std::move(targetAccountsJsonList));
 
+  }
+
+  if(m_reportFormatHasBeenSet)
+  {
+   payload.WithString("reportFormat", CisReportFormatMapper::GetNameForCisReportFormat(m_reportFormat));
   }
 
   return payload.View().WriteReadable();

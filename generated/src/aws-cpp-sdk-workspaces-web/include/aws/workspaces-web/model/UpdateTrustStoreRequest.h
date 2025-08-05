@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/Array.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -34,6 +34,18 @@ namespace Model
 
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The ARN of the trust store.</p>
+     */
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
+    inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    UpdateTrustStoreRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -79,19 +91,10 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     UpdateTrustStoreRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the trust store.</p>
-     */
-    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
-    inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    template<typename TrustStoreArnT = Aws::String>
-    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
-    template<typename TrustStoreArnT = Aws::String>
-    UpdateTrustStoreRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_trustStoreArn;
+    bool m_trustStoreArnHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_certificatesToAdd;
     bool m_certificatesToAddHasBeenSet = false;
@@ -101,9 +104,6 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

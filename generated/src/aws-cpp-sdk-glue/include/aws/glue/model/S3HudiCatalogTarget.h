@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/CatalogSchemaChangePolicy.h>
+#include <aws/glue/model/AutoDataQuality.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +134,34 @@ namespace Model
     template<typename SchemaChangePolicyT = CatalogSchemaChangePolicy>
     S3HudiCatalogTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to automatically enable data quality evaluation for the S3
+     * Hudi catalog target. When set to <code>true</code>, data quality checks are
+     * performed automatically during the write operation.</p>
+     */
+    inline const AutoDataQuality& GetAutoDataQuality() const { return m_autoDataQuality; }
+    inline bool AutoDataQualityHasBeenSet() const { return m_autoDataQualityHasBeenSet; }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    void SetAutoDataQuality(AutoDataQualityT&& value) { m_autoDataQualityHasBeenSet = true; m_autoDataQuality = std::forward<AutoDataQualityT>(value); }
+    template<typename AutoDataQualityT = AutoDataQuality>
+    S3HudiCatalogTarget& WithAutoDataQuality(AutoDataQualityT&& value) { SetAutoDataQuality(std::forward<AutoDataQualityT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    S3HudiCatalogTarget& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    S3HudiCatalogTarget& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -154,6 +184,12 @@ namespace Model
 
     CatalogSchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet = false;
+
+    AutoDataQuality m_autoDataQuality;
+    bool m_autoDataQualityHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

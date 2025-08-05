@@ -10,6 +10,7 @@
 #include <aws/customer-profiles/model/DateDimension.h>
 #include <aws/customer-profiles/model/AddressDimension.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/customer-profiles/model/ProfileTypeDimension.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/AttributeDimension.h>
 #include <utility>
@@ -299,6 +300,18 @@ namespace Model
       m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>A field to describe values to segment on within profile type.</p>
+     */
+    inline const ProfileTypeDimension& GetProfileType() const { return m_profileType; }
+    inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
+    template<typename ProfileTypeT = ProfileTypeDimension>
+    void SetProfileType(ProfileTypeT&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::forward<ProfileTypeT>(value); }
+    template<typename ProfileTypeT = ProfileTypeDimension>
+    ProfileAttributes& WithProfileType(ProfileTypeT&& value) { SetProfileType(std::forward<ProfileTypeT>(value)); return *this;}
+    ///@}
   private:
 
     ProfileDimension m_accountNumber;
@@ -363,6 +376,9 @@ namespace Model
 
     Aws::Map<Aws::String, AttributeDimension> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    ProfileTypeDimension m_profileType;
+    bool m_profileTypeHasBeenSet = false;
   };
 
 } // namespace Model

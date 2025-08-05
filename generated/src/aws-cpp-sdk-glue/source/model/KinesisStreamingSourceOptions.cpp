@@ -130,6 +130,11 @@ KinesisStreamingSourceOptions& KinesisStreamingSourceOptions::operator =(JsonVie
     m_startingTimestamp = jsonValue.GetString("StartingTimestamp");
     m_startingTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("FanoutConsumerARN"))
+  {
+    m_fanoutConsumerARN = jsonValue.GetString("FanoutConsumerARN");
+    m_fanoutConsumerARNHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -259,6 +264,12 @@ JsonValue KinesisStreamingSourceOptions::Jsonize() const
   if(m_startingTimestampHasBeenSet)
   {
    payload.WithString("StartingTimestamp", m_startingTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_fanoutConsumerARNHasBeenSet)
+  {
+   payload.WithString("FanoutConsumerARN", m_fanoutConsumerARN);
+
   }
 
   return payload;

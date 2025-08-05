@@ -25,15 +25,15 @@ AssociateIpAccessSettingsResult::AssociateIpAccessSettingsResult(const Aws::Amaz
 AssociateIpAccessSettingsResult& AssociateIpAccessSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ipAccessSettingsArn"))
-  {
-    m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
-    m_ipAccessSettingsArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
     m_portalArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipAccessSettingsArn"))
+  {
+    m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
+    m_ipAccessSettingsArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

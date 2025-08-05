@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/Service.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,16 @@ namespace Model
 
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The service scan type to check permissions for.</p>
+     */
+    inline Service GetService() const { return m_service; }
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+    inline void SetService(Service value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline ListAccountPermissionsRequest& WithService(Service value) { SetService(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -62,26 +72,16 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAccountPermissionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The service scan type to check permissions for.</p>
-     */
-    inline Service GetService() const { return m_service; }
-    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(Service value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline ListAccountPermissionsRequest& WithService(Service value) { SetService(value); return *this;}
-    ///@}
   private:
+
+    Service m_service{Service::NOT_SET};
+    bool m_serviceHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Service m_service{Service::NOT_SET};
-    bool m_serviceHasBeenSet = false;
   };
 
 } // namespace Model

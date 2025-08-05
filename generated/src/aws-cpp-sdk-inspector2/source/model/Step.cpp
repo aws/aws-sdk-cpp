@@ -25,11 +25,6 @@ Step::Step(JsonView jsonValue)
 
 Step& Step::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("componentArn"))
-  {
-    m_componentArn = jsonValue.GetString("componentArn");
-    m_componentArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("componentId"))
   {
     m_componentId = jsonValue.GetString("componentId");
@@ -40,18 +35,17 @@ Step& Step::operator =(JsonView jsonValue)
     m_componentType = jsonValue.GetString("componentType");
     m_componentTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("componentArn"))
+  {
+    m_componentArn = jsonValue.GetString("componentArn");
+    m_componentArnHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue Step::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_componentArnHasBeenSet)
-  {
-   payload.WithString("componentArn", m_componentArn);
-
-  }
 
   if(m_componentIdHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue Step::Jsonize() const
   if(m_componentTypeHasBeenSet)
   {
    payload.WithString("componentType", m_componentType);
+
+  }
+
+  if(m_componentArnHasBeenSet)
+  {
+   payload.WithString("componentArn", m_componentArn);
 
   }
 

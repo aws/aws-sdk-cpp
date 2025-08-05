@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CodeSecurityResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeSecurityResource.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
 
     ///@{
-    
-    inline const CodeSecurityResource& GetResource() const { return m_resource; }
-    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    template<typename ResourceT = CodeSecurityResource>
-    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
-    template<typename ResourceT = CodeSecurityResource>
-    DisassociateConfigurationRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scan configuration to disassociate from
      * a code repository.</p>
@@ -61,13 +51,23 @@ namespace Model
     template<typename ScanConfigurationArnT = Aws::String>
     DisassociateConfigurationRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
-  private:
 
-    CodeSecurityResource m_resource;
-    bool m_resourceHasBeenSet = false;
+    ///@{
+    
+    inline const CodeSecurityResource& GetResource() const { return m_resource; }
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+    template<typename ResourceT = CodeSecurityResource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = CodeSecurityResource>
+    DisassociateConfigurationRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_scanConfigurationArn;
     bool m_scanConfigurationArnHasBeenSet = false;
+
+    CodeSecurityResource m_resource;
+    bool m_resourceHasBeenSet = false;
   };
 
 } // namespace Model

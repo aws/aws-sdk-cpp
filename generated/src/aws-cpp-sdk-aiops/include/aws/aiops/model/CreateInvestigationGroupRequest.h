@@ -55,7 +55,8 @@ namespace Model
      * your resources that CloudWatch investigations will have access to during
      * investigations.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How
-     * to control what data Amazon Q has access to during investigations</a>.</p>
+     * to control what data CloudWatch investigations has access to during
+     * investigations</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -121,15 +122,16 @@ namespace Model
     ///@{
     /**
      * <p>Enter the existing custom tag keys for custom applications in your system.
-     * Resource tags help Amazon Q narrow the search space when it is unable to
-     * discover definite relationships between resources. For example, to discover that
-     * an Amazon ECS service depends on an Amazon RDS database, Amazon Q can discover
-     * this relationship using data sources such as X-Ray and CloudWatch Application
-     * Signals. However, if you haven't deployed these features, Amazon Q will attempt
-     * to identify possible relationships. Tag boundaries can be used to narrow the
-     * resources that will be discovered by Amazon Q in these cases.</p> <p>You don't
-     * need to enter tags created by myApplications or CloudFormation, because Amazon Q
-     * can automatically detect those tags.</p>
+     * Resource tags help CloudWatch investigations narrow the search space when it is
+     * unable to discover definite relationships between resources. For example, to
+     * discover that an Amazon ECS service depends on an Amazon RDS database,
+     * CloudWatch investigations can discover this relationship using data sources such
+     * as X-Ray and CloudWatch Application Signals. However, if you haven't deployed
+     * these features, CloudWatch investigations will attempt to identify possible
+     * relationships. Tag boundaries can be used to narrow the resources that will be
+     * discovered by CloudWatch investigations in these cases.</p> <p>You don't need to
+     * enter tags created by myApplications or CloudFormation, because CloudWatch
+     * investigations can automatically detect those tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyBoundaries() const { return m_tagKeyBoundaries; }
     inline bool TagKeyBoundariesHasBeenSet() const { return m_tagKeyBoundariesHasBeenSet; }
@@ -143,12 +145,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this structure to integrate CloudWatch investigations with Amazon Q in
-     * chat applications. This structure is a string array. For the first string,
-     * specify the ARN of an Amazon SNS topic. For the array of strings, specify the
-     * ARNs of one or more Amazon Q in chat applications configurations that you want
-     * to associate with that topic. For more information about these configuration
-     * ARNs, see <a
+     * <p>Use this structure to integrate CloudWatch investigations with chat
+     * applications. This structure is a string array. For the first string, specify
+     * the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of
+     * one or more chat applications configurations that you want to associate with
+     * that topic. For more information about these configuration ARNs, see <a
      * href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
      * started with Amazon Q in chat applications</a> and <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource
@@ -180,7 +181,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Number of <code>sourceAccountId</code> values that have been configured for
+     * <p>List of <code>sourceRoleArn</code> values that have been configured for
      * cross-account access.</p>
      */
     inline const Aws::Vector<CrossAccountConfiguration>& GetCrossAccountConfigurations() const { return m_crossAccountConfigurations; }

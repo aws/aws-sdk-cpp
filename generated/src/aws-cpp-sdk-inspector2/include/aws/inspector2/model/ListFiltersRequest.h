@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/FilterAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/inspector2/model/FilterAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,16 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action the filter applies to matched findings.</p>
-     */
-    inline FilterAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline ListFiltersRequest& WithAction(FilterAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon resource number (ARN) of the filter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArns() const { return m_arns; }
@@ -60,15 +50,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
+     * <p>The action the filter applies to matched findings.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListFiltersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline FilterAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ListFiltersRequest& WithAction(FilterAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -87,19 +74,32 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListFiltersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    FilterAction m_action{FilterAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of results the response can return. If your request would
+     * return more than the maximum the response will return a <code>nextToken</code>
+     * value, use this value when you call the action again to get the remaining
+     * results.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListFiltersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<Aws::String> m_arns;
     bool m_arnsHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    FilterAction m_action{FilterAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

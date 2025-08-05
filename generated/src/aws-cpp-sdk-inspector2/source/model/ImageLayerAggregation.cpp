@@ -25,15 +25,6 @@ ImageLayerAggregation::ImageLayerAggregation(JsonView jsonValue)
 
 ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("layerHashes"))
-  {
-    Aws::Utils::Array<JsonView> layerHashesJsonList = jsonValue.GetArray("layerHashes");
-    for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
-    {
-      m_layerHashes.push_back(layerHashesJsonList[layerHashesIndex].AsObject());
-    }
-    m_layerHashesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("repositories"))
   {
     Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
@@ -52,15 +43,24 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortBy"))
+  if(jsonValue.ValueExists("layerHashes"))
   {
-    m_sortBy = ImageLayerSortByMapper::GetImageLayerSortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
+    Aws::Utils::Array<JsonView> layerHashesJsonList = jsonValue.GetArray("layerHashes");
+    for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
+    {
+      m_layerHashes.push_back(layerHashesJsonList[layerHashesIndex].AsObject());
+    }
+    m_layerHashesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = ImageLayerSortByMapper::GetImageLayerSortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -68,17 +68,6 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
 JsonValue ImageLayerAggregation::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_layerHashesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> layerHashesJsonList(m_layerHashes.size());
-   for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
-   {
-     layerHashesJsonList[layerHashesIndex].AsObject(m_layerHashes[layerHashesIndex].Jsonize());
-   }
-   payload.WithArray("layerHashes", std::move(layerHashesJsonList));
-
-  }
 
   if(m_repositoriesHasBeenSet)
   {
@@ -102,14 +91,25 @@ JsonValue ImageLayerAggregation::Jsonize() const
 
   }
 
-  if(m_sortByHasBeenSet)
+  if(m_layerHashesHasBeenSet)
   {
-   payload.WithString("sortBy", ImageLayerSortByMapper::GetNameForImageLayerSortBy(m_sortBy));
+   Aws::Utils::Array<JsonValue> layerHashesJsonList(m_layerHashes.size());
+   for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
+   {
+     layerHashesJsonList[layerHashesIndex].AsObject(m_layerHashes[layerHashesIndex].Jsonize());
+   }
+   payload.WithArray("layerHashes", std::move(layerHashesJsonList));
+
   }
 
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", ImageLayerSortByMapper::GetNameForImageLayerSortBy(m_sortBy));
   }
 
   return payload;

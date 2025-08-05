@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/AddAssociationResult.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
+#include <aws/sagemaker/model/AttachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
@@ -172,6 +173,7 @@
 #include <aws/sagemaker/model/DescribeUserProfileResult.h>
 #include <aws/sagemaker/model/DescribeWorkforceResult.h>
 #include <aws/sagemaker/model/DescribeWorkteamResult.h>
+#include <aws/sagemaker/model/DetachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/DisableSagemakerServicecatalogPortfolioResult.h>
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioResult.h>
@@ -435,6 +437,7 @@ namespace Aws
       class AddAssociationRequest;
       class AddTagsRequest;
       class AssociateTrialComponentRequest;
+      class AttachClusterNodeVolumeRequest;
       class BatchDeleteClusterNodesRequest;
       class BatchDescribeModelPackageRequest;
       class CreateActionRequest;
@@ -626,6 +629,7 @@ namespace Aws
       class DescribeUserProfileRequest;
       class DescribeWorkforceRequest;
       class DescribeWorkteamRequest;
+      class DetachClusterNodeVolumeRequest;
       class DisableSagemakerServicecatalogPortfolioRequest;
       class DisassociateTrialComponentRequest;
       class EnableSagemakerServicecatalogPortfolioRequest;
@@ -800,6 +804,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddAssociationResult, SageMakerError> AddAssociationOutcome;
       typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
       typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
+      typedef Aws::Utils::Outcome<AttachClusterNodeVolumeResult, SageMakerError> AttachClusterNodeVolumeOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> BatchDeleteClusterNodesOutcome;
       typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
       typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
@@ -991,6 +996,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeUserProfileResult, SageMakerError> DescribeUserProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkforceResult, SageMakerError> DescribeWorkforceOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkteamResult, SageMakerError> DescribeWorkteamOutcome;
+      typedef Aws::Utils::Outcome<DetachClusterNodeVolumeResult, SageMakerError> DetachClusterNodeVolumeOutcome;
       typedef Aws::Utils::Outcome<DisableSagemakerServicecatalogPortfolioResult, SageMakerError> DisableSagemakerServicecatalogPortfolioOutcome;
       typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
       typedef Aws::Utils::Outcome<EnableSagemakerServicecatalogPortfolioResult, SageMakerError> EnableSagemakerServicecatalogPortfolioOutcome;
@@ -1165,6 +1171,7 @@ namespace Aws
       typedef std::future<AddAssociationOutcome> AddAssociationOutcomeCallable;
       typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
       typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
+      typedef std::future<AttachClusterNodeVolumeOutcome> AttachClusterNodeVolumeOutcomeCallable;
       typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutcomeCallable;
       typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
       typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
@@ -1356,6 +1363,7 @@ namespace Aws
       typedef std::future<DescribeUserProfileOutcome> DescribeUserProfileOutcomeCallable;
       typedef std::future<DescribeWorkforceOutcome> DescribeWorkforceOutcomeCallable;
       typedef std::future<DescribeWorkteamOutcome> DescribeWorkteamOutcomeCallable;
+      typedef std::future<DetachClusterNodeVolumeOutcome> DetachClusterNodeVolumeOutcomeCallable;
       typedef std::future<DisableSagemakerServicecatalogPortfolioOutcome> DisableSagemakerServicecatalogPortfolioOutcomeCallable;
       typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
       typedef std::future<EnableSagemakerServicecatalogPortfolioOutcome> EnableSagemakerServicecatalogPortfolioOutcomeCallable;
@@ -1533,6 +1541,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::AddAssociationRequest&, const Model::AddAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddAssociationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::AttachClusterNodeVolumeRequest&, const Model::AttachClusterNodeVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachClusterNodeVolumeResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::BatchDeleteClusterNodesRequest&, const Model::BatchDeleteClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteClusterNodesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::BatchDescribeModelPackageRequest&, const Model::BatchDescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionResponseReceivedHandler;
@@ -1724,6 +1733,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribeUserProfileRequest&, const Model::DescribeUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeWorkforceRequest&, const Model::DescribeWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeWorkteamRequest&, const Model::DescribeWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkteamResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DetachClusterNodeVolumeRequest&, const Model::DetachClusterNodeVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachClusterNodeVolumeResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DisableSagemakerServicecatalogPortfolioRequest&, const Model::DisableSagemakerServicecatalogPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSagemakerServicecatalogPortfolioResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::EnableSagemakerServicecatalogPortfolioRequest&, const Model::EnableSagemakerServicecatalogPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSagemakerServicecatalogPortfolioResponseReceivedHandler;

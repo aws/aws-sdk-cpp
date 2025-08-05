@@ -36,7 +36,9 @@ namespace Model
     ///@{
     /**
      * <p> The framework that the <code>GetAssessmentFramework</code> API returned.
-     * </p>
+     * </p>  <p>The <code>Controls</code> object returns a partial response when
+     * called through Framework APIs. For a complete <code>Controls</code> object, use
+     * <code>GetControl</code>.</p> 
      */
     inline const Framework& GetFramework() const { return m_framework; }
     template<typename FrameworkT = Framework>

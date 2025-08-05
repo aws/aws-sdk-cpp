@@ -35,15 +35,15 @@ CvssScore& CvssScore::operator =(JsonView jsonValue)
     m_scoringVector = jsonValue.GetString("scoringVector");
     m_scoringVectorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
-    m_source = jsonValue.GetString("source");
-    m_sourceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("source"))
+  {
+    m_source = jsonValue.GetString("source");
+    m_sourceHasBeenSet = true;
   }
   return *this;
 }
@@ -64,15 +64,15 @@ JsonValue CvssScore::Jsonize() const
 
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
-  }
-
   if(m_versionHasBeenSet)
   {
    payload.WithString("version", m_version);
+
+  }
+
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithString("source", m_source);
 
   }
 

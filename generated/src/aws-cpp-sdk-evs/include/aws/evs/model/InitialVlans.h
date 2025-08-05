@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The initial VLAN subnets for the environment. You must specify a
-   * non-overlapping CIDR block for each VLAN subnet.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>The initial VLAN subnets for the environment. Amazon EVS
+   * VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.
+   * Amazon EVS VLAN subnet CIDR blocks must not overlap with other subnets in the
+   * VPC.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/InitialVlans">AWS
    * API Reference</a></p>
    */
@@ -40,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The VMkernel management VLAN subnet. This VLAN subnet carries traffic for
-     * managing ESXi hosts and communicating with VMware vCenter Server.</p>
+     * <p> The host VMkernel management VLAN subnet. This VLAN subnet carries traffic
+     * for managing ESXi hosts and communicating with VMware vCenter Server.</p>
      */
     inline const InitialVlanInfo& GetVmkManagement() const { return m_vmkManagement; }
     inline bool VmkManagementHasBeenSet() const { return m_vmkManagementHasBeenSet; }

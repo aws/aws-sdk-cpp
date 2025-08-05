@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     performanceTuning_caching,
-    observations_scope
+    observations_scope,
+    compositeRuleEvaluation_method
   };
 
 namespace AdditionalOptionKeysMapper

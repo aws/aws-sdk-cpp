@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A check on the environment to identify environment health and validate VMware
-   * VCF licensing compliance.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon EVS is in public preview release and is subject to
+   * change.</p>  <p>A check on the environment to identify environment health
+   * and validate VMware VCF licensing compliance.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Check">AWS API
    * Reference</a></p>
    */

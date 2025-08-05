@@ -30,6 +30,16 @@ FailedAccount& FailedAccount::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceStatus"))
+  {
+    m_resourceStatus = jsonValue.GetObject("resourceStatus");
+    m_resourceStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
@@ -39,16 +49,6 @@ FailedAccount& FailedAccount::operator =(JsonView jsonValue)
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceStatus"))
-  {
-    m_resourceStatus = jsonValue.GetObject("resourceStatus");
-    m_resourceStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
   return *this;
 }
@@ -63,6 +63,17 @@ JsonValue FailedAccount::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_resourceStatusHasBeenSet)
+  {
+   payload.WithObject("resourceStatus", m_resourceStatus.Jsonize());
+
+  }
+
   if(m_errorCodeHasBeenSet)
   {
    payload.WithString("errorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
@@ -72,17 +83,6 @@ JsonValue FailedAccount::Jsonize() const
   {
    payload.WithString("errorMessage", m_errorMessage);
 
-  }
-
-  if(m_resourceStatusHasBeenSet)
-  {
-   payload.WithObject("resourceStatus", m_resourceStatus.Jsonize());
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;

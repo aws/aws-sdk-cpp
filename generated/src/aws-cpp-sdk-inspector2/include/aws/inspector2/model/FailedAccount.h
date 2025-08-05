@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/inspector2/model/ErrorCode.h>
-#include <aws/inspector2/model/ResourceStatus.h>
 #include <aws/inspector2/model/Status.h>
+#include <aws/inspector2/model/ResourceStatus.h>
+#include <aws/inspector2/model/ErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +55,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of Amazon Inspector for the account.</p>
+     */
+    inline Status GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FailedAccount& WithStatus(Status value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
+     * the account.</p>
+     */
+    inline const ResourceStatus& GetResourceStatus() const { return m_resourceStatus; }
+    inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
+    template<typename ResourceStatusT = ResourceStatus>
+    void SetResourceStatus(ResourceStatusT&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::forward<ResourceStatusT>(value); }
+    template<typename ResourceStatusT = ResourceStatus>
+    FailedAccount& WithResourceStatus(ResourceStatusT&& value) { SetResourceStatus(std::forward<ResourceStatusT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error code explaining why the account failed to enable Amazon
      * Inspector.</p>
      */
@@ -76,45 +99,22 @@ namespace Model
     template<typename ErrorMessageT = Aws::String>
     FailedAccount& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
-    inline const ResourceStatus& GetResourceStatus() const { return m_resourceStatus; }
-    inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
-    template<typename ResourceStatusT = ResourceStatus>
-    void SetResourceStatus(ResourceStatusT&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::forward<ResourceStatusT>(value); }
-    template<typename ResourceStatusT = ResourceStatus>
-    FailedAccount& WithResourceStatus(ResourceStatusT&& value) { SetResourceStatus(std::forward<ResourceStatusT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
-    inline Status GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
-    inline FailedAccount& WithStatus(Status value) { SetStatus(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    ResourceStatus m_resourceStatus;
+    bool m_resourceStatusHasBeenSet = false;
 
     ErrorCode m_errorCode{ErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
-
-    ResourceStatus m_resourceStatus;
-    bool m_resourceStatusHasBeenSet = false;
-
-    Status m_status{Status::NOT_SET};
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

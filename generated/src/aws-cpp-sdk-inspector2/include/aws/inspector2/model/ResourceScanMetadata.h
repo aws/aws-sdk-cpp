@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CodeRepositoryMetadata.h>
-#include <aws/inspector2/model/Ec2Metadata.h>
-#include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
+#include <aws/inspector2/model/EcrContainerImageMetadata.h>
+#include <aws/inspector2/model/Ec2Metadata.h>
 #include <aws/inspector2/model/LambdaFunctionMetadata.h>
+#include <aws/inspector2/model/CodeRepositoryMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -44,26 +44,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains metadata about scan coverage for a code repository resource.</p>
+     * <p>An object that contains details about the repository an Amazon ECR image
+     * resides in.</p>
      */
-    inline const CodeRepositoryMetadata& GetCodeRepository() const { return m_codeRepository; }
-    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
-    template<typename CodeRepositoryT = CodeRepositoryMetadata>
-    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
-    template<typename CodeRepositoryT = CodeRepositoryMetadata>
-    ResourceScanMetadata& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that contains metadata details for an Amazon EC2 instance.</p>
-     */
-    inline const Ec2Metadata& GetEc2() const { return m_ec2; }
-    inline bool Ec2HasBeenSet() const { return m_ec2HasBeenSet; }
-    template<typename Ec2T = Ec2Metadata>
-    void SetEc2(Ec2T&& value) { m_ec2HasBeenSet = true; m_ec2 = std::forward<Ec2T>(value); }
-    template<typename Ec2T = Ec2Metadata>
-    ResourceScanMetadata& WithEc2(Ec2T&& value) { SetEc2(std::forward<Ec2T>(value)); return *this;}
+    inline const EcrRepositoryMetadata& GetEcrRepository() const { return m_ecrRepository; }
+    inline bool EcrRepositoryHasBeenSet() const { return m_ecrRepositoryHasBeenSet; }
+    template<typename EcrRepositoryT = EcrRepositoryMetadata>
+    void SetEcrRepository(EcrRepositoryT&& value) { m_ecrRepositoryHasBeenSet = true; m_ecrRepository = std::forward<EcrRepositoryT>(value); }
+    template<typename EcrRepositoryT = EcrRepositoryMetadata>
+    ResourceScanMetadata& WithEcrRepository(EcrRepositoryT&& value) { SetEcrRepository(std::forward<EcrRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,15 +70,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details about the repository an Amazon ECR image
-     * resides in.</p>
+     * <p>An object that contains metadata details for an Amazon EC2 instance.</p>
      */
-    inline const EcrRepositoryMetadata& GetEcrRepository() const { return m_ecrRepository; }
-    inline bool EcrRepositoryHasBeenSet() const { return m_ecrRepositoryHasBeenSet; }
-    template<typename EcrRepositoryT = EcrRepositoryMetadata>
-    void SetEcrRepository(EcrRepositoryT&& value) { m_ecrRepositoryHasBeenSet = true; m_ecrRepository = std::forward<EcrRepositoryT>(value); }
-    template<typename EcrRepositoryT = EcrRepositoryMetadata>
-    ResourceScanMetadata& WithEcrRepository(EcrRepositoryT&& value) { SetEcrRepository(std::forward<EcrRepositoryT>(value)); return *this;}
+    inline const Ec2Metadata& GetEc2() const { return m_ec2; }
+    inline bool Ec2HasBeenSet() const { return m_ec2HasBeenSet; }
+    template<typename Ec2T = Ec2Metadata>
+    void SetEc2(Ec2T&& value) { m_ec2HasBeenSet = true; m_ec2 = std::forward<Ec2T>(value); }
+    template<typename Ec2T = Ec2Metadata>
+    ResourceScanMetadata& WithEc2(Ec2T&& value) { SetEc2(std::forward<Ec2T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,22 +92,34 @@ namespace Model
     template<typename LambdaFunctionT = LambdaFunctionMetadata>
     ResourceScanMetadata& WithLambdaFunction(LambdaFunctionT&& value) { SetLambdaFunction(std::forward<LambdaFunctionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains metadata about scan coverage for a code repository resource.</p>
+     */
+    inline const CodeRepositoryMetadata& GetCodeRepository() const { return m_codeRepository; }
+    inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
+    template<typename CodeRepositoryT = CodeRepositoryMetadata>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = CodeRepositoryMetadata>
+    ResourceScanMetadata& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
+    ///@}
   private:
-
-    CodeRepositoryMetadata m_codeRepository;
-    bool m_codeRepositoryHasBeenSet = false;
-
-    Ec2Metadata m_ec2;
-    bool m_ec2HasBeenSet = false;
-
-    EcrContainerImageMetadata m_ecrImage;
-    bool m_ecrImageHasBeenSet = false;
 
     EcrRepositoryMetadata m_ecrRepository;
     bool m_ecrRepositoryHasBeenSet = false;
 
+    EcrContainerImageMetadata m_ecrImage;
+    bool m_ecrImageHasBeenSet = false;
+
+    Ec2Metadata m_ec2;
+    bool m_ec2HasBeenSet = false;
+
     LambdaFunctionMetadata m_lambdaFunction;
     bool m_lambdaFunctionHasBeenSet = false;
+
+    CodeRepositoryMetadata m_codeRepository;
+    bool m_codeRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

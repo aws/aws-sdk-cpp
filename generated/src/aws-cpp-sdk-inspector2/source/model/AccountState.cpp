@@ -30,15 +30,15 @@ AccountState& AccountState::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceState"))
-  {
-    m_resourceState = jsonValue.GetObject("resourceState");
-    m_resourceStateHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
     m_stateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceState"))
+  {
+    m_resourceState = jsonValue.GetObject("resourceState");
+    m_resourceStateHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue AccountState::Jsonize() const
 
   }
 
-  if(m_resourceStateHasBeenSet)
-  {
-   payload.WithObject("resourceState", m_resourceState.Jsonize());
-
-  }
-
   if(m_stateHasBeenSet)
   {
    payload.WithObject("state", m_state.Jsonize());
+
+  }
+
+  if(m_resourceStateHasBeenSet)
+  {
+   payload.WithObject("resourceState", m_resourceState.Jsonize());
 
   }
 

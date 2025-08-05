@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/ResourceDetails.h>
+#include <aws/inspector2/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/inspector2/model/ResourceType.h>
+#include <aws/inspector2/model/ResourceDetails.h>
 #include <utility>
 
 namespace Aws
@@ -43,14 +43,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details about the resource involved in a finding.</p>
+     * <p>The type of resource.</p>
      */
-    inline const ResourceDetails& GetDetails() const { return m_details; }
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    template<typename DetailsT = ResourceDetails>
-    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
-    template<typename DetailsT = ResourceDetails>
-    Resource& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    inline ResourceType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(ResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Resource& WithType(ResourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,17 +105,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource.</p>
+     * <p>An object that contains details about the resource involved in a finding.</p>
      */
-    inline ResourceType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ResourceType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline Resource& WithType(ResourceType value) { SetType(value); return *this;}
+    inline const ResourceDetails& GetDetails() const { return m_details; }
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+    template<typename DetailsT = ResourceDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = ResourceDetails>
+    Resource& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 
-    ResourceDetails m_details;
-    bool m_detailsHasBeenSet = false;
+    ResourceType m_type{ResourceType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
@@ -131,8 +131,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    ResourceType m_type{ResourceType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    ResourceDetails m_details;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

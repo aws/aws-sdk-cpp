@@ -111,6 +111,15 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     m_assetModelVersion = jsonValue.GetString("assetModelVersion");
     m_assetModelVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("interfaceDetails"))
+  {
+    Aws::Utils::Array<JsonView> interfaceDetailsJsonList = jsonValue.GetArray("interfaceDetails");
+    for(unsigned interfaceDetailsIndex = 0; interfaceDetailsIndex < interfaceDetailsJsonList.GetLength(); ++interfaceDetailsIndex)
+    {
+      m_interfaceDetails.push_back(interfaceDetailsJsonList[interfaceDetailsIndex].AsObject());
+    }
+    m_interfaceDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& eTagIter = headers.find("etag");

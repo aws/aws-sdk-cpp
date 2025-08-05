@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/model/PeriodicScanFrequency.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/model/ScopeSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/inspector2/model/ContinuousIntegrationScanEvent.h>
@@ -46,27 +46,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The repository events that trigger continuous integration scans.</p>
+     * <p>The Amazon Resource Name (ARN) of the scan configuration.</p>
      */
-    inline const Aws::Vector<ContinuousIntegrationScanEvent>& GetContinuousIntegrationScanSupportedEvents() const { return m_continuousIntegrationScanSupportedEvents; }
-    inline bool ContinuousIntegrationScanSupportedEventsHasBeenSet() const { return m_continuousIntegrationScanSupportedEventsHasBeenSet; }
-    template<typename ContinuousIntegrationScanSupportedEventsT = Aws::Vector<ContinuousIntegrationScanEvent>>
-    void SetContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanSupportedEventsT&& value) { m_continuousIntegrationScanSupportedEventsHasBeenSet = true; m_continuousIntegrationScanSupportedEvents = std::forward<ContinuousIntegrationScanSupportedEventsT>(value); }
-    template<typename ContinuousIntegrationScanSupportedEventsT = Aws::Vector<ContinuousIntegrationScanEvent>>
-    CodeSecurityScanConfigurationSummary& WithContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanSupportedEventsT&& value) { SetContinuousIntegrationScanSupportedEvents(std::forward<ContinuousIntegrationScanSupportedEventsT>(value)); return *this;}
-    inline CodeSecurityScanConfigurationSummary& AddContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanEvent value) { m_continuousIntegrationScanSupportedEventsHasBeenSet = true; m_continuousIntegrationScanSupportedEvents.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The schedule expression for periodic scans, in cron format.</p>
-     */
-    inline const Aws::String& GetFrequencyExpression() const { return m_frequencyExpression; }
-    inline bool FrequencyExpressionHasBeenSet() const { return m_frequencyExpressionHasBeenSet; }
-    template<typename FrequencyExpressionT = Aws::String>
-    void SetFrequencyExpression(FrequencyExpressionT&& value) { m_frequencyExpressionHasBeenSet = true; m_frequencyExpression = std::forward<FrequencyExpressionT>(value); }
-    template<typename FrequencyExpressionT = Aws::String>
-    CodeSecurityScanConfigurationSummary& WithFrequencyExpression(FrequencyExpressionT&& value) { SetFrequencyExpression(std::forward<FrequencyExpressionT>(value)); return *this;}
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
+    inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    CodeSecurityScanConfigurationSummary& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,6 +92,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The schedule expression for periodic scans, in cron format.</p>
+     */
+    inline const Aws::String& GetFrequencyExpression() const { return m_frequencyExpression; }
+    inline bool FrequencyExpressionHasBeenSet() const { return m_frequencyExpressionHasBeenSet; }
+    template<typename FrequencyExpressionT = Aws::String>
+    void SetFrequencyExpression(FrequencyExpressionT&& value) { m_frequencyExpressionHasBeenSet = true; m_frequencyExpression = std::forward<FrequencyExpressionT>(value); }
+    template<typename FrequencyExpressionT = Aws::String>
+    CodeSecurityScanConfigurationSummary& WithFrequencyExpression(FrequencyExpressionT&& value) { SetFrequencyExpression(std::forward<FrequencyExpressionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The repository events that trigger continuous integration scans.</p>
+     */
+    inline const Aws::Vector<ContinuousIntegrationScanEvent>& GetContinuousIntegrationScanSupportedEvents() const { return m_continuousIntegrationScanSupportedEvents; }
+    inline bool ContinuousIntegrationScanSupportedEventsHasBeenSet() const { return m_continuousIntegrationScanSupportedEventsHasBeenSet; }
+    template<typename ContinuousIntegrationScanSupportedEventsT = Aws::Vector<ContinuousIntegrationScanEvent>>
+    void SetContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanSupportedEventsT&& value) { m_continuousIntegrationScanSupportedEventsHasBeenSet = true; m_continuousIntegrationScanSupportedEvents = std::forward<ContinuousIntegrationScanSupportedEventsT>(value); }
+    template<typename ContinuousIntegrationScanSupportedEventsT = Aws::Vector<ContinuousIntegrationScanEvent>>
+    CodeSecurityScanConfigurationSummary& WithContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanSupportedEventsT&& value) { SetContinuousIntegrationScanSupportedEvents(std::forward<ContinuousIntegrationScanSupportedEventsT>(value)); return *this;}
+    inline CodeSecurityScanConfigurationSummary& AddContinuousIntegrationScanSupportedEvents(ContinuousIntegrationScanEvent value) { m_continuousIntegrationScanSupportedEventsHasBeenSet = true; m_continuousIntegrationScanSupportedEvents.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The categories of security rules applied during the scan.</p>
      */
     inline const Aws::Vector<RuleSetCategory>& GetRuleSetCategories() const { return m_ruleSetCategories; }
@@ -114,18 +126,6 @@ namespace Model
     template<typename RuleSetCategoriesT = Aws::Vector<RuleSetCategory>>
     CodeSecurityScanConfigurationSummary& WithRuleSetCategories(RuleSetCategoriesT&& value) { SetRuleSetCategories(std::forward<RuleSetCategoriesT>(value)); return *this;}
     inline CodeSecurityScanConfigurationSummary& AddRuleSetCategories(RuleSetCategory value) { m_ruleSetCategoriesHasBeenSet = true; m_ruleSetCategories.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scan configuration.</p>
-     */
-    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
-    inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
-    template<typename ScanConfigurationArnT = Aws::String>
-    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
-    template<typename ScanConfigurationArnT = Aws::String>
-    CodeSecurityScanConfigurationSummary& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,11 +159,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<ContinuousIntegrationScanEvent> m_continuousIntegrationScanSupportedEvents;
-    bool m_continuousIntegrationScanSupportedEventsHasBeenSet = false;
-
-    Aws::String m_frequencyExpression;
-    bool m_frequencyExpressionHasBeenSet = false;
+    Aws::String m_scanConfigurationArn;
+    bool m_scanConfigurationArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -174,11 +171,14 @@ namespace Model
     PeriodicScanFrequency m_periodicScanFrequency{PeriodicScanFrequency::NOT_SET};
     bool m_periodicScanFrequencyHasBeenSet = false;
 
+    Aws::String m_frequencyExpression;
+    bool m_frequencyExpressionHasBeenSet = false;
+
+    Aws::Vector<ContinuousIntegrationScanEvent> m_continuousIntegrationScanSupportedEvents;
+    bool m_continuousIntegrationScanSupportedEventsHasBeenSet = false;
+
     Aws::Vector<RuleSetCategory> m_ruleSetCategories;
     bool m_ruleSetCategoriesHasBeenSet = false;
-
-    Aws::String m_scanConfigurationArn;
-    bool m_scanConfigurationArnHasBeenSet = false;
 
     ScopeSettings m_scopeSettings;
     bool m_scopeSettingsHasBeenSet = false;

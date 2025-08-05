@@ -205,6 +205,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the tenant through which this email will be sent.</p> 
+     * <p>The email sending operation will only succeed if all referenced resources
+     * (identities, configuration sets, and templates) are associated with this tenant.
+     * </p> 
+     */
+    inline const Aws::String& GetTenantName() const { return m_tenantName; }
+    inline bool TenantNameHasBeenSet() const { return m_tenantNameHasBeenSet; }
+    template<typename TenantNameT = Aws::String>
+    void SetTenantName(TenantNameT&& value) { m_tenantNameHasBeenSet = true; m_tenantName = std::forward<TenantNameT>(value); }
+    template<typename TenantNameT = Aws::String>
+    SendEmailRequest& WithTenantName(TenantNameT&& value) { SetTenantName(std::forward<TenantNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object used to specify a list or topic to which an email belongs, which
      * will be used when a contact chooses to unsubscribe.</p>
      */
@@ -246,6 +261,9 @@ namespace Model
 
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
+
+    Aws::String m_tenantName;
+    bool m_tenantNameHasBeenSet = false;
 
     ListManagementOptions m_listManagementOptions;
     bool m_listManagementOptionsHasBeenSet = false;

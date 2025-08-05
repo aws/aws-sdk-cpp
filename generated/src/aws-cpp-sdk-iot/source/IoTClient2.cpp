@@ -21,6 +21,7 @@
 #include <aws/iot/IoTClient.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/IoTEndpointProvider.h>
+#include <aws/iot/model/ListThingPrincipalsV2Request.h>
 #include <aws/iot/model/ListThingRegistrationTaskReportsRequest.h>
 #include <aws/iot/model/ListThingRegistrationTasksRequest.h>
 #include <aws/iot/model/ListThingTypesRequest.h>
@@ -68,6 +69,7 @@
 #include <aws/iot/model/UpdateDimensionRequest.h>
 #include <aws/iot/model/UpdateDomainConfigurationRequest.h>
 #include <aws/iot/model/UpdateDynamicThingGroupRequest.h>
+#include <aws/iot/model/UpdateEncryptionConfigurationRequest.h>
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateFleetMetricRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
@@ -101,6 +103,40 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
+
+ListThingPrincipalsV2Outcome IoTClient::ListThingPrincipalsV2(const ListThingPrincipalsV2Request& request) const
+{
+  AWS_OPERATION_GUARD(ListThingPrincipalsV2);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingPrincipalsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingPrincipalsV2", "Required field: ThingName, is not set");
+    return ListThingPrincipalsV2Outcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListThingPrincipalsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListThingPrincipalsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListThingPrincipalsV2",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListThingPrincipalsV2Outcome>(
+    [&]()-> ListThingPrincipalsV2Outcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThingPrincipalsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/things/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/principals-v2");
+      return ListThingPrincipalsV2Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
 
 ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
 {
@@ -1534,6 +1570,33 @@ UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDy
       endpointResolutionOutcome.GetResult().AddPathSegments("/dynamic-thing-groups/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingGroupName());
       return UpdateDynamicThingGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateEncryptionConfigurationOutcome IoTClient::UpdateEncryptionConfiguration(const UpdateEncryptionConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateEncryptionConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateEncryptionConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateEncryptionConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateEncryptionConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateEncryptionConfigurationOutcome>(
+    [&]()-> UpdateEncryptionConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/encryption-configuration");
+      return UpdateEncryptionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

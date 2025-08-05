@@ -43,6 +43,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of VPC subnet IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    LambdaVpcConfig& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    LambdaVpcConfig& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The VPC security groups and subnets that are attached to an Amazon Web
      * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
@@ -60,20 +74,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of VPC subnet IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
-    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    LambdaVpcConfig& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
-    template<typename SubnetIdsT = Aws::String>
-    LambdaVpcConfig& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const { return m_vpcId; }
@@ -85,11 +85,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;

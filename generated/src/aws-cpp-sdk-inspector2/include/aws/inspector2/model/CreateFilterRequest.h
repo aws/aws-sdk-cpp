@@ -86,18 +86,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reason for creating the filter.</p>
-     */
-    inline const Aws::String& GetReason() const { return m_reason; }
-    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    template<typename ReasonT = Aws::String>
-    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
-    template<typename ReasonT = Aws::String>
-    CreateFilterRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of tags for the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -110,6 +98,18 @@ namespace Model
     CreateFilterRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline const Aws::String& GetReason() const { return m_reason; }
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    CreateFilterRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,11 +125,11 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_reason;
-    bool m_reasonHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

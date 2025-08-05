@@ -35,6 +35,11 @@ ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
     m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
     m_ruleBasedPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ruleConditionProperties"))
+  {
+    m_ruleConditionProperties = jsonValue.GetObject("ruleConditionProperties");
+    m_ruleConditionPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("providerProperties"))
   {
     m_providerProperties = jsonValue.GetObject("providerProperties");
@@ -55,6 +60,12 @@ JsonValue ResolutionTechniques::Jsonize() const
   if(m_ruleBasedPropertiesHasBeenSet)
   {
    payload.WithObject("ruleBasedProperties", m_ruleBasedProperties.Jsonize());
+
+  }
+
+  if(m_ruleConditionPropertiesHasBeenSet)
+  {
+   payload.WithObject("ruleConditionProperties", m_ruleConditionProperties.Jsonize());
 
   }
 

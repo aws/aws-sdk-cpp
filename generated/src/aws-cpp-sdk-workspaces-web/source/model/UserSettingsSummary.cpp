@@ -25,60 +25,60 @@ UserSettingsSummary::UserSettingsSummary(JsonView jsonValue)
 
 UserSettingsSummary& UserSettingsSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cookieSynchronizationConfiguration"))
+  if(jsonValue.ValueExists("userSettingsArn"))
   {
-    m_cookieSynchronizationConfiguration = jsonValue.GetObject("cookieSynchronizationConfiguration");
-    m_cookieSynchronizationConfigurationHasBeenSet = true;
+    m_userSettingsArn = jsonValue.GetString("userSettingsArn");
+    m_userSettingsArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("copyAllowed"))
   {
     m_copyAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("copyAllowed"));
     m_copyAllowedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deepLinkAllowed"))
+  if(jsonValue.ValueExists("pasteAllowed"))
   {
-    m_deepLinkAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("deepLinkAllowed"));
-    m_deepLinkAllowedHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
-  {
-    m_disconnectTimeoutInMinutes = jsonValue.GetInteger("disconnectTimeoutInMinutes");
-    m_disconnectTimeoutInMinutesHasBeenSet = true;
+    m_pasteAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("pasteAllowed"));
+    m_pasteAllowedHasBeenSet = true;
   }
   if(jsonValue.ValueExists("downloadAllowed"))
   {
     m_downloadAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("downloadAllowed"));
     m_downloadAllowedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idleDisconnectTimeoutInMinutes"))
+  if(jsonValue.ValueExists("uploadAllowed"))
   {
-    m_idleDisconnectTimeoutInMinutes = jsonValue.GetInteger("idleDisconnectTimeoutInMinutes");
-    m_idleDisconnectTimeoutInMinutesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("pasteAllowed"))
-  {
-    m_pasteAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("pasteAllowed"));
-    m_pasteAllowedHasBeenSet = true;
+    m_uploadAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("uploadAllowed"));
+    m_uploadAllowedHasBeenSet = true;
   }
   if(jsonValue.ValueExists("printAllowed"))
   {
     m_printAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("printAllowed"));
     m_printAllowedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
+  {
+    m_disconnectTimeoutInMinutes = jsonValue.GetInteger("disconnectTimeoutInMinutes");
+    m_disconnectTimeoutInMinutesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("idleDisconnectTimeoutInMinutes"))
+  {
+    m_idleDisconnectTimeoutInMinutes = jsonValue.GetInteger("idleDisconnectTimeoutInMinutes");
+    m_idleDisconnectTimeoutInMinutesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cookieSynchronizationConfiguration"))
+  {
+    m_cookieSynchronizationConfiguration = jsonValue.GetObject("cookieSynchronizationConfiguration");
+    m_cookieSynchronizationConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("deepLinkAllowed"))
+  {
+    m_deepLinkAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("deepLinkAllowed"));
+    m_deepLinkAllowedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("toolbarConfiguration"))
   {
     m_toolbarConfiguration = jsonValue.GetObject("toolbarConfiguration");
     m_toolbarConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("uploadAllowed"))
-  {
-    m_uploadAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("uploadAllowed"));
-    m_uploadAllowedHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("userSettingsArn"))
-  {
-    m_userSettingsArn = jsonValue.GetString("userSettingsArn");
-    m_userSettingsArnHasBeenSet = true;
   }
   return *this;
 }
@@ -87,9 +87,9 @@ JsonValue UserSettingsSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  if(m_userSettingsArnHasBeenSet)
   {
-   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
+   payload.WithString("userSettingsArn", m_userSettingsArn);
 
   }
 
@@ -98,9 +98,24 @@ JsonValue UserSettingsSummary::Jsonize() const
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
   }
 
-  if(m_deepLinkAllowedHasBeenSet)
+  if(m_pasteAllowedHasBeenSet)
   {
-   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
+   payload.WithString("pasteAllowed", EnabledTypeMapper::GetNameForEnabledType(m_pasteAllowed));
+  }
+
+  if(m_downloadAllowedHasBeenSet)
+  {
+   payload.WithString("downloadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_downloadAllowed));
+  }
+
+  if(m_uploadAllowedHasBeenSet)
+  {
+   payload.WithString("uploadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_uploadAllowed));
+  }
+
+  if(m_printAllowedHasBeenSet)
+  {
+   payload.WithString("printAllowed", EnabledTypeMapper::GetNameForEnabledType(m_printAllowed));
   }
 
   if(m_disconnectTimeoutInMinutesHasBeenSet)
@@ -109,41 +124,26 @@ JsonValue UserSettingsSummary::Jsonize() const
 
   }
 
-  if(m_downloadAllowedHasBeenSet)
-  {
-   payload.WithString("downloadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_downloadAllowed));
-  }
-
   if(m_idleDisconnectTimeoutInMinutesHasBeenSet)
   {
    payload.WithInteger("idleDisconnectTimeoutInMinutes", m_idleDisconnectTimeoutInMinutes);
 
   }
 
-  if(m_pasteAllowedHasBeenSet)
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
   {
-   payload.WithString("pasteAllowed", EnabledTypeMapper::GetNameForEnabledType(m_pasteAllowed));
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
+
   }
 
-  if(m_printAllowedHasBeenSet)
+  if(m_deepLinkAllowedHasBeenSet)
   {
-   payload.WithString("printAllowed", EnabledTypeMapper::GetNameForEnabledType(m_printAllowed));
+   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
   }
 
   if(m_toolbarConfigurationHasBeenSet)
   {
    payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
-
-  }
-
-  if(m_uploadAllowedHasBeenSet)
-  {
-   payload.WithString("uploadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_uploadAllowed));
-  }
-
-  if(m_userSettingsArnHasBeenSet)
-  {
-   payload.WithString("userSettingsArn", m_userSettingsArn);
 
   }
 

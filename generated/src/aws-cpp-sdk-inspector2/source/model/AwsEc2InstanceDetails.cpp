@@ -25,10 +25,10 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue)
 
 AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("iamInstanceProfileArn"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_iamInstanceProfileArn = jsonValue.GetString("iamInstanceProfileArn");
-    m_iamInstanceProfileArnHasBeenSet = true;
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("imageId"))
   {
@@ -58,6 +58,21 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_keyName = jsonValue.GetString("keyName");
     m_keyNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("iamInstanceProfileArn"))
+  {
+    m_iamInstanceProfileArn = jsonValue.GetString("iamInstanceProfileArn");
+    m_iamInstanceProfileArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vpcId"))
+  {
+    m_vpcId = jsonValue.GetString("vpcId");
+    m_vpcIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("subnetId"))
+  {
+    m_subnetId = jsonValue.GetString("subnetId");
+    m_subnetIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("launchedAt"))
   {
     m_launchedAt = jsonValue.GetDouble("launchedAt");
@@ -68,21 +83,6 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_platform = jsonValue.GetString("platform");
     m_platformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subnetId"))
-  {
-    m_subnetId = jsonValue.GetString("subnetId");
-    m_subnetIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("vpcId"))
-  {
-    m_vpcId = jsonValue.GetString("vpcId");
-    m_vpcIdHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -90,9 +90,9 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_iamInstanceProfileArnHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("iamInstanceProfileArn", m_iamInstanceProfileArn);
+   payload.WithString("type", m_type);
 
   }
 
@@ -130,14 +130,15 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
 
   }
 
-  if(m_launchedAtHasBeenSet)
+  if(m_iamInstanceProfileArnHasBeenSet)
   {
-   payload.WithDouble("launchedAt", m_launchedAt.SecondsWithMSPrecision());
+   payload.WithString("iamInstanceProfileArn", m_iamInstanceProfileArn);
+
   }
 
-  if(m_platformHasBeenSet)
+  if(m_vpcIdHasBeenSet)
   {
-   payload.WithString("platform", m_platform);
+   payload.WithString("vpcId", m_vpcId);
 
   }
 
@@ -147,15 +148,14 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_launchedAtHasBeenSet)
   {
-   payload.WithString("type", m_type);
-
+   payload.WithDouble("launchedAt", m_launchedAt.SecondsWithMSPrecision());
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-   payload.WithString("vpcId", m_vpcId);
+   payload.WithString("platform", m_platform);
 
   }
 

@@ -41,28 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    RepositoryAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of container images impacted by the findings.</p>
-     */
-    inline long long GetAffectedImages() const { return m_affectedImages; }
-    inline bool AffectedImagesHasBeenSet() const { return m_affectedImagesHasBeenSet; }
-    inline void SetAffectedImages(long long value) { m_affectedImagesHasBeenSet = true; m_affectedImages = value; }
-    inline RepositoryAggregationResponse& WithAffectedImages(long long value) { SetAffectedImages(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the repository associated with the findings.</p>
      */
     inline const Aws::String& GetRepository() const { return m_repository; }
@@ -71,6 +49,18 @@ namespace Model
     void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
     template<typename RepositoryT = Aws::String>
     RepositoryAggregationResponse& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account associated with the findings.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    RepositoryAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +74,29 @@ namespace Model
     template<typename SeverityCountsT = SeverityCounts>
     RepositoryAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of container images impacted by the findings.</p>
+     */
+    inline long long GetAffectedImages() const { return m_affectedImages; }
+    inline bool AffectedImagesHasBeenSet() const { return m_affectedImagesHasBeenSet; }
+    inline void SetAffectedImages(long long value) { m_affectedImagesHasBeenSet = true; m_affectedImages = value; }
+    inline RepositoryAggregationResponse& WithAffectedImages(long long value) { SetAffectedImages(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    long long m_affectedImages{0};
-    bool m_affectedImagesHasBeenSet = false;
 
     Aws::String m_repository;
     bool m_repositoryHasBeenSet = false;
 
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     SeverityCounts m_severityCounts;
     bool m_severityCountsHasBeenSet = false;
+
+    long long m_affectedImages{0};
+    bool m_affectedImagesHasBeenSet = false;
   };
 
 } // namespace Model

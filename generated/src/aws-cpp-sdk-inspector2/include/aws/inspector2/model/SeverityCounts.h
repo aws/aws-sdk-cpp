@@ -48,12 +48,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total count of critical severity findings.</p>
+     * <p>The total count of medium severity findings.</p>
      */
-    inline long long GetCritical() const { return m_critical; }
-    inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
-    inline void SetCritical(long long value) { m_criticalHasBeenSet = true; m_critical = value; }
-    inline SeverityCounts& WithCritical(long long value) { SetCritical(value); return *this;}
+    inline long long GetMedium() const { return m_medium; }
+    inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
+    inline void SetMedium(long long value) { m_mediumHasBeenSet = true; m_medium = value; }
+    inline SeverityCounts& WithMedium(long long value) { SetMedium(value); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +68,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total count of medium severity findings.</p>
+     * <p>The total count of critical severity findings.</p>
      */
-    inline long long GetMedium() const { return m_medium; }
-    inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
-    inline void SetMedium(long long value) { m_mediumHasBeenSet = true; m_medium = value; }
-    inline SeverityCounts& WithMedium(long long value) { SetMedium(value); return *this;}
+    inline long long GetCritical() const { return m_critical; }
+    inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
+    inline void SetCritical(long long value) { m_criticalHasBeenSet = true; m_critical = value; }
+    inline SeverityCounts& WithCritical(long long value) { SetCritical(value); return *this;}
     ///@}
   private:
 
     long long m_all{0};
     bool m_allHasBeenSet = false;
 
-    long long m_critical{0};
-    bool m_criticalHasBeenSet = false;
+    long long m_medium{0};
+    bool m_mediumHasBeenSet = false;
 
     long long m_high{0};
     bool m_highHasBeenSet = false;
 
-    long long m_medium{0};
-    bool m_mediumHasBeenSet = false;
+    long long m_critical{0};
+    bool m_criticalHasBeenSet = false;
   };
 
 } // namespace Model

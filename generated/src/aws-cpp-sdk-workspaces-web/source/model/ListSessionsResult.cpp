@@ -25,11 +25,6 @@ ListSessionsResult::ListSessionsResult(const Aws::AmazonWebServiceResult<JsonVal
 ListSessionsResult& ListSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sessions"))
   {
     Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("sessions");
@@ -38,6 +33,11 @@ ListSessionsResult& ListSessionsResult::operator =(const Aws::AmazonWebServiceRe
       m_sessions.push_back(sessionsJsonList[sessionsIndex].AsObject());
     }
     m_sessionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

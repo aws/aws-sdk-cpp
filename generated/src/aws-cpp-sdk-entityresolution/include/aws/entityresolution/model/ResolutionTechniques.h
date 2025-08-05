@@ -7,6 +7,7 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/model/ResolutionType.h>
 #include <aws/entityresolution/model/RuleBasedProperties.h>
+#include <aws/entityresolution/model/RuleConditionProperties.h>
 #include <aws/entityresolution/model/ProviderProperties.h>
 #include <utility>
 
@@ -55,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
+     * <code>rules</code>, which is a list of rule objects.</p>
      */
     inline const RuleBasedProperties& GetRuleBasedProperties() const { return m_ruleBasedProperties; }
     inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
@@ -63,6 +64,18 @@ namespace Model
     void SetRuleBasedProperties(RuleBasedPropertiesT&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::forward<RuleBasedPropertiesT>(value); }
     template<typename RuleBasedPropertiesT = RuleBasedProperties>
     ResolutionTechniques& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object containing the <code>rules</code> for a matching workflow.</p>
+     */
+    inline const RuleConditionProperties& GetRuleConditionProperties() const { return m_ruleConditionProperties; }
+    inline bool RuleConditionPropertiesHasBeenSet() const { return m_ruleConditionPropertiesHasBeenSet; }
+    template<typename RuleConditionPropertiesT = RuleConditionProperties>
+    void SetRuleConditionProperties(RuleConditionPropertiesT&& value) { m_ruleConditionPropertiesHasBeenSet = true; m_ruleConditionProperties = std::forward<RuleConditionPropertiesT>(value); }
+    template<typename RuleConditionPropertiesT = RuleConditionProperties>
+    ResolutionTechniques& WithRuleConditionProperties(RuleConditionPropertiesT&& value) { SetRuleConditionProperties(std::forward<RuleConditionPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,6 +96,9 @@ namespace Model
 
     RuleBasedProperties m_ruleBasedProperties;
     bool m_ruleBasedPropertiesHasBeenSet = false;
+
+    RuleConditionProperties m_ruleConditionProperties;
+    bool m_ruleConditionPropertiesHasBeenSet = false;
 
     ProviderProperties m_providerProperties;
     bool m_providerPropertiesHasBeenSet = false;

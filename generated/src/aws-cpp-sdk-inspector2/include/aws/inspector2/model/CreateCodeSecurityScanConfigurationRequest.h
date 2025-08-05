@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
-#include <aws/inspector2/model/ConfigurationLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/ConfigurationLevel.h>
+#include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
 #include <aws/inspector2/model/ScopeSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -38,14 +38,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration settings for the code security scan.</p>
+     * <p>The name of the scan configuration.</p>
      */
-    inline const CodeSecurityScanConfiguration& GetConfiguration() const { return m_configuration; }
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    template<typename ConfigurationT = CodeSecurityScanConfiguration>
-    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
-    template<typename ConfigurationT = CodeSecurityScanConfiguration>
-    CreateCodeSecurityScanConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCodeSecurityScanConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scan configuration.</p>
+     * <p>The configuration settings for the code security scan.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateCodeSecurityScanConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const CodeSecurityScanConfiguration& GetConfiguration() const { return m_configuration; }
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+    template<typename ConfigurationT = CodeSecurityScanConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = CodeSecurityScanConfiguration>
+    CreateCodeSecurityScanConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +105,14 @@ namespace Model
     ///@}
   private:
 
-    CodeSecurityScanConfiguration m_configuration;
-    bool m_configurationHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     ConfigurationLevel m_level{ConfigurationLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    CodeSecurityScanConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     ScopeSettings m_scopeSettings;
     bool m_scopeSettingsHasBeenSet = false;

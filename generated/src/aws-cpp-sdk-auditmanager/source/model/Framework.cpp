@@ -60,11 +60,6 @@ Framework& Framework::operator =(JsonView jsonValue)
     m_logo = jsonValue.GetString("logo");
     m_logoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("controlSources"))
-  {
-    m_controlSources = jsonValue.GetString("controlSources");
-    m_controlSourcesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("controlSets"))
   {
     Aws::Utils::Array<JsonView> controlSetsJsonList = jsonValue.GetArray("controlSets");
@@ -148,12 +143,6 @@ JsonValue Framework::Jsonize() const
   if(m_logoHasBeenSet)
   {
    payload.WithString("logo", m_logo);
-
-  }
-
-  if(m_controlSourcesHasBeenSet)
-  {
-   payload.WithString("controlSources", m_controlSources);
 
   }
 

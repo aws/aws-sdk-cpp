@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The resource the action will be taken on.</p><p><h3>See Also:</h3>   <a
+   * <p>The resource the action will be taken on. This can include asset-based
+   * resources and computation model resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TargetResource">AWS
    * API Reference</a></p>
    */

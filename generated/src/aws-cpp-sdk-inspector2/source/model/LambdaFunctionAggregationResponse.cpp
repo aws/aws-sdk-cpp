@@ -25,15 +25,20 @@ LambdaFunctionAggregationResponse::LambdaFunctionAggregationResponse(JsonView js
 
 LambdaFunctionAggregationResponse& LambdaFunctionAggregationResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountId"))
+  if(jsonValue.ValueExists("resourceId"))
   {
-    m_accountId = jsonValue.GetString("accountId");
-    m_accountIdHasBeenSet = true;
+    m_resourceId = jsonValue.GetString("resourceId");
+    m_resourceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("functionName"))
   {
     m_functionName = jsonValue.GetString("functionName");
     m_functionNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("runtime"))
+  {
+    m_runtime = jsonValue.GetString("runtime");
+    m_runtimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("lambdaTags"))
   {
@@ -44,25 +49,20 @@ LambdaFunctionAggregationResponse& LambdaFunctionAggregationResponse::operator =
     }
     m_lambdaTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedAt"))
+  if(jsonValue.ValueExists("accountId"))
   {
-    m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-    m_lastModifiedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceId"))
-  {
-    m_resourceId = jsonValue.GetString("resourceId");
-    m_resourceIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("runtime"))
-  {
-    m_runtime = jsonValue.GetString("runtime");
-    m_runtimeHasBeenSet = true;
+    m_accountId = jsonValue.GetString("accountId");
+    m_accountIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
     m_severityCountsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastModifiedAt"))
+  {
+    m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
+    m_lastModifiedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -71,15 +71,21 @@ JsonValue LambdaFunctionAggregationResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
+  if(m_resourceIdHasBeenSet)
   {
-   payload.WithString("accountId", m_accountId);
+   payload.WithString("resourceId", m_resourceId);
 
   }
 
   if(m_functionNameHasBeenSet)
   {
    payload.WithString("functionName", m_functionName);
+
+  }
+
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithString("runtime", m_runtime);
 
   }
 
@@ -94,20 +100,9 @@ JsonValue LambdaFunctionAggregationResponse::Jsonize() const
 
   }
 
-  if(m_lastModifiedAtHasBeenSet)
+  if(m_accountIdHasBeenSet)
   {
-   payload.WithDouble("lastModifiedAt", m_lastModifiedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
-  }
-
-  if(m_runtimeHasBeenSet)
-  {
-   payload.WithString("runtime", m_runtime);
+   payload.WithString("accountId", m_accountId);
 
   }
 
@@ -115,6 +110,11 @@ JsonValue LambdaFunctionAggregationResponse::Jsonize() const
   {
    payload.WithObject("severityCounts", m_severityCounts.Jsonize());
 
+  }
+
+  if(m_lastModifiedAtHasBeenSet)
+  {
+   payload.WithDouble("lastModifiedAt", m_lastModifiedAt.SecondsWithMSPrecision());
   }
 
   return payload;

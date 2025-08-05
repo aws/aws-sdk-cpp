@@ -22,12 +22,6 @@ Aws::String GetResourceOauth2TokenRequest::SerializePayload() const
 
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
-
-  }
-
   if(m_resourceCredentialProviderNameHasBeenSet)
   {
    payload.WithString("resourceCredentialProviderName", m_resourceCredentialProviderName);

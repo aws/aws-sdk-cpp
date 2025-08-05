@@ -41,15 +41,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details on the package architecture type to filter
-     * on.</p>
+     * <p>An object that contains details on the name of the package to filter on.</p>
      */
-    inline const StringFilter& GetArchitecture() const { return m_architecture; }
-    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    template<typename ArchitectureT = StringFilter>
-    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
-    template<typename ArchitectureT = StringFilter>
-    PackageFilter& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
+    inline const StringFilter& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = StringFilter>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = StringFilter>
+    PackageFilter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The package version to filter on.</p>
+     */
+    inline const StringFilter& GetVersion() const { return m_version; }
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+    template<typename VersionT = StringFilter>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = StringFilter>
+    PackageFilter& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,30 +77,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains details on the package file path to filter on.</p>
-     */
-    inline const StringFilter& GetFilePath() const { return m_filePath; }
-    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    template<typename FilePathT = StringFilter>
-    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
-    template<typename FilePathT = StringFilter>
-    PackageFilter& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that contains details on the name of the package to filter on.</p>
-     */
-    inline const StringFilter& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = StringFilter>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = StringFilter>
-    PackageFilter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An object that contains details on the package release to filter on.</p>
      */
     inline const StringFilter& GetRelease() const { return m_release; }
@@ -102,14 +89,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that describes the details of a string filter.</p>
+     * <p>An object that contains details on the package architecture type to filter
+     * on.</p>
      */
-    inline const StringFilter& GetSourceLambdaLayerArn() const { return m_sourceLambdaLayerArn; }
-    inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
-    template<typename SourceLambdaLayerArnT = StringFilter>
-    void SetSourceLambdaLayerArn(SourceLambdaLayerArnT&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::forward<SourceLambdaLayerArnT>(value); }
-    template<typename SourceLambdaLayerArnT = StringFilter>
-    PackageFilter& WithSourceLambdaLayerArn(SourceLambdaLayerArnT&& value) { SetSourceLambdaLayerArn(std::forward<SourceLambdaLayerArnT>(value)); return *this;}
+    inline const StringFilter& GetArchitecture() const { return m_architecture; }
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+    template<typename ArchitectureT = StringFilter>
+    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
+    template<typename ArchitectureT = StringFilter>
+    PackageFilter& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,40 +114,52 @@ namespace Model
 
     ///@{
     /**
-     * <p>The package version to filter on.</p>
+     * <p>An object that describes the details of a string filter.</p>
      */
-    inline const StringFilter& GetVersion() const { return m_version; }
-    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    template<typename VersionT = StringFilter>
-    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
-    template<typename VersionT = StringFilter>
-    PackageFilter& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
+    inline const StringFilter& GetSourceLambdaLayerArn() const { return m_sourceLambdaLayerArn; }
+    inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
+    template<typename SourceLambdaLayerArnT = StringFilter>
+    void SetSourceLambdaLayerArn(SourceLambdaLayerArnT&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::forward<SourceLambdaLayerArnT>(value); }
+    template<typename SourceLambdaLayerArnT = StringFilter>
+    PackageFilter& WithSourceLambdaLayerArn(SourceLambdaLayerArnT&& value) { SetSourceLambdaLayerArn(std::forward<SourceLambdaLayerArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details on the package file path to filter on.</p>
+     */
+    inline const StringFilter& GetFilePath() const { return m_filePath; }
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+    template<typename FilePathT = StringFilter>
+    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
+    template<typename FilePathT = StringFilter>
+    PackageFilter& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
     ///@}
   private:
-
-    StringFilter m_architecture;
-    bool m_architectureHasBeenSet = false;
-
-    NumberFilter m_epoch;
-    bool m_epochHasBeenSet = false;
-
-    StringFilter m_filePath;
-    bool m_filePathHasBeenSet = false;
 
     StringFilter m_name;
     bool m_nameHasBeenSet = false;
 
+    StringFilter m_version;
+    bool m_versionHasBeenSet = false;
+
+    NumberFilter m_epoch;
+    bool m_epochHasBeenSet = false;
+
     StringFilter m_release;
     bool m_releaseHasBeenSet = false;
 
-    StringFilter m_sourceLambdaLayerArn;
-    bool m_sourceLambdaLayerArnHasBeenSet = false;
+    StringFilter m_architecture;
+    bool m_architectureHasBeenSet = false;
 
     StringFilter m_sourceLayerHash;
     bool m_sourceLayerHashHasBeenSet = false;
 
-    StringFilter m_version;
-    bool m_versionHasBeenSet = false;
+    StringFilter m_sourceLambdaLayerArn;
+    bool m_sourceLambdaLayerArnHasBeenSet = false;
+
+    StringFilter m_filePath;
+    bool m_filePathHasBeenSet = false;
   };
 
 } // namespace Model

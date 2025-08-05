@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
-#include <aws/inspector2/model/CisReportFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/inspector2/model/CisReportFormat.h>
 #include <utility>
 
 namespace Aws
@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The format of the report. Valid values are <code>PDF</code> and
-     * <code>CSV</code>. If no value is specified, the report format defaults to
-     * <code>PDF</code>. </p>
-     */
-    inline CisReportFormat GetReportFormat() const { return m_reportFormat; }
-    inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
-    inline void SetReportFormat(CisReportFormat value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
-    inline GetCisScanReportRequest& WithReportFormat(CisReportFormat value) { SetReportFormat(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The scan ARN.</p>
      */
     inline const Aws::String& GetScanArn() const { return m_scanArn; }
@@ -71,16 +59,28 @@ namespace Model
     template<typename TargetAccountsT = Aws::String>
     GetCisScanReportRequest& AddTargetAccounts(TargetAccountsT&& value) { m_targetAccountsHasBeenSet = true; m_targetAccounts.emplace_back(std::forward<TargetAccountsT>(value)); return *this; }
     ///@}
-  private:
 
-    CisReportFormat m_reportFormat{CisReportFormat::NOT_SET};
-    bool m_reportFormatHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline CisReportFormat GetReportFormat() const { return m_reportFormat; }
+    inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
+    inline void SetReportFormat(CisReportFormat value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
+    inline GetCisScanReportRequest& WithReportFormat(CisReportFormat value) { SetReportFormat(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetAccounts;
     bool m_targetAccountsHasBeenSet = false;
+
+    CisReportFormat m_reportFormat{CisReportFormat::NOT_SET};
+    bool m_reportFormatHasBeenSet = false;
   };
 
 } // namespace Model

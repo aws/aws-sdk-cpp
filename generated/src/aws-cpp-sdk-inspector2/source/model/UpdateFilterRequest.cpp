@@ -27,12 +27,6 @@ Aws::String UpdateFilterRequest::SerializePayload() const
 
   }
 
-  if(m_filterArnHasBeenSet)
-  {
-   payload.WithString("filterArn", m_filterArn);
-
-  }
-
   if(m_filterCriteriaHasBeenSet)
   {
    payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
@@ -42,6 +36,12 @@ Aws::String UpdateFilterRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_filterArnHasBeenSet)
+  {
+   payload.WithString("filterArn", m_filterArn);
 
   }
 

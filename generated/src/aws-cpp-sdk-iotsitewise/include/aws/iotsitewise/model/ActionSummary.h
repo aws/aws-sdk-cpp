@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the summary of the actions.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the summary of the actions, including information about where the
+   * action resolves to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ActionSummary">AWS
    * API Reference</a></p>
    */

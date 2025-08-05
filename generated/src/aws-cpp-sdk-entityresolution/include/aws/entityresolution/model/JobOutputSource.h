@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>KMSArn</code>, <code>OutputS3Path</code>, and
-   * <code>RoleArn</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>KMSArn</code>, <code>outputS3Path</code>, and
+   * <code>roleArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/JobOutputSource">AWS
    * API Reference</a></p>
    */

@@ -25,15 +25,15 @@ AssociateNetworkSettingsResult::AssociateNetworkSettingsResult(const Aws::Amazon
 AssociateNetworkSettingsResult& AssociateNetworkSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("networkSettingsArn"))
-  {
-    m_networkSettingsArn = jsonValue.GetString("networkSettingsArn");
-    m_networkSettingsArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
     m_portalArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("networkSettingsArn"))
+  {
+    m_networkSettingsArn = jsonValue.GetString("networkSettingsArn");
+    m_networkSettingsArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

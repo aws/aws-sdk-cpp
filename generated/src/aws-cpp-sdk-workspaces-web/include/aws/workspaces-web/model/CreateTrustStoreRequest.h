@@ -52,6 +52,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The tags to add to the trust store. A tag is a key-value pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTrustStoreRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTrustStoreRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. Idempotency ensures that an API request completes
      * only once. With an idempotent request, if the original request completes
@@ -66,30 +80,16 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateTrustStoreRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    CreateTrustStoreRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    CreateTrustStoreRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
   private:
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_certificateList;
     bool m_certificateListHasBeenSet = false;
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

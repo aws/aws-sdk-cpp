@@ -25,35 +25,35 @@ StopCisSessionMessage::StopCisSessionMessage(JsonView jsonValue)
 
 StopCisSessionMessage& StopCisSessionMessage::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("benchmarkProfile"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_benchmarkProfile = jsonValue.GetString("benchmarkProfile");
-    m_benchmarkProfileHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("benchmarkVersion"))
-  {
-    m_benchmarkVersion = jsonValue.GetString("benchmarkVersion");
-    m_benchmarkVersionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("computePlatform"))
-  {
-    m_computePlatform = jsonValue.GetObject("computePlatform");
-    m_computePlatformHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("progress"))
-  {
-    m_progress = jsonValue.GetObject("progress");
-    m_progressHasBeenSet = true;
+    m_status = StopCisSessionStatusMapper::GetStopCisSessionStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("progress"))
   {
-    m_status = StopCisSessionStatusMapper::GetStopCisSessionStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_progress = jsonValue.GetObject("progress");
+    m_progressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = jsonValue.GetObject("computePlatform");
+    m_computePlatformHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("benchmarkVersion"))
+  {
+    m_benchmarkVersion = jsonValue.GetString("benchmarkVersion");
+    m_benchmarkVersionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("benchmarkProfile"))
+  {
+    m_benchmarkProfile = jsonValue.GetString("benchmarkProfile");
+    m_benchmarkProfileHasBeenSet = true;
   }
   return *this;
 }
@@ -62,21 +62,14 @@ JsonValue StopCisSessionMessage::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_benchmarkProfileHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("benchmarkProfile", m_benchmarkProfile);
-
+   payload.WithString("status", StopCisSessionStatusMapper::GetNameForStopCisSessionStatus(m_status));
   }
 
-  if(m_benchmarkVersionHasBeenSet)
+  if(m_reasonHasBeenSet)
   {
-   payload.WithString("benchmarkVersion", m_benchmarkVersion);
-
-  }
-
-  if(m_computePlatformHasBeenSet)
-  {
-   payload.WithObject("computePlatform", m_computePlatform.Jsonize());
+   payload.WithString("reason", m_reason);
 
   }
 
@@ -86,15 +79,22 @@ JsonValue StopCisSessionMessage::Jsonize() const
 
   }
 
-  if(m_reasonHasBeenSet)
+  if(m_computePlatformHasBeenSet)
   {
-   payload.WithString("reason", m_reason);
+   payload.WithObject("computePlatform", m_computePlatform.Jsonize());
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_benchmarkVersionHasBeenSet)
   {
-   payload.WithString("status", StopCisSessionStatusMapper::GetNameForStopCisSessionStatus(m_status));
+   payload.WithString("benchmarkVersion", m_benchmarkVersion);
+
+  }
+
+  if(m_benchmarkProfileHasBeenSet)
+  {
+   payload.WithString("benchmarkProfile", m_benchmarkProfile);
+
   }
 
   return payload;

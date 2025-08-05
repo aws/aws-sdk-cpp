@@ -25,21 +25,6 @@ EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue)
 
 EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("imagePulledAt"))
-  {
-    m_imagePulledAt = jsonValue.GetDouble("imagePulledAt");
-    m_imagePulledAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inUseCount"))
-  {
-    m_inUseCount = jsonValue.GetInt64("inUseCount");
-    m_inUseCountHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastInUseAt"))
-  {
-    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
-    m_lastInUseAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -49,28 +34,27 @@ EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("imagePulledAt"))
+  {
+    m_imagePulledAt = jsonValue.GetDouble("imagePulledAt");
+    m_imagePulledAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastInUseAt"))
+  {
+    m_lastInUseAt = jsonValue.GetDouble("lastInUseAt");
+    m_lastInUseAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inUseCount"))
+  {
+    m_inUseCount = jsonValue.GetInt64("inUseCount");
+    m_inUseCountHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue EcrContainerImageMetadata::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_imagePulledAtHasBeenSet)
-  {
-   payload.WithDouble("imagePulledAt", m_imagePulledAt.SecondsWithMSPrecision());
-  }
-
-  if(m_inUseCountHasBeenSet)
-  {
-   payload.WithInt64("inUseCount", m_inUseCount);
-
-  }
-
-  if(m_lastInUseAtHasBeenSet)
-  {
-   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
-  }
 
   if(m_tagsHasBeenSet)
   {
@@ -80,6 +64,22 @@ JsonValue EcrContainerImageMetadata::Jsonize() const
      tagsJsonList[tagsIndex].AsString(m_tags[tagsIndex]);
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_imagePulledAtHasBeenSet)
+  {
+   payload.WithDouble("imagePulledAt", m_imagePulledAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastInUseAtHasBeenSet)
+  {
+   payload.WithDouble("lastInUseAt", m_lastInUseAt.SecondsWithMSPrecision());
+  }
+
+  if(m_inUseCountHasBeenSet)
+  {
+   payload.WithInt64("inUseCount", m_inUseCount);
 
   }
 

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/CodeSecurityResource.h>
 #include <aws/inspector2/model/CodeScanStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -37,36 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID associated with the scan.</p>
+     * <p>The unique identifier of the scan.</p>
      */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    GetCodeSecurityScanResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The timestamp when the scan was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetCodeSecurityScanResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the last commit that was scanned. This is only returned if
-     * the scan was successful or skipped.</p>
-     */
-    inline const Aws::String& GetLastCommitId() const { return m_lastCommitId; }
-    template<typename LastCommitIdT = Aws::String>
-    void SetLastCommitId(LastCommitIdT&& value) { m_lastCommitIdHasBeenSet = true; m_lastCommitId = std::forward<LastCommitIdT>(value); }
-    template<typename LastCommitIdT = Aws::String>
-    GetCodeSecurityScanResult& WithLastCommitId(LastCommitIdT&& value) { SetLastCommitId(std::forward<LastCommitIdT>(value)); return *this;}
+    inline const Aws::String& GetScanId() const { return m_scanId; }
+    template<typename ScanIdT = Aws::String>
+    void SetScanId(ScanIdT&& value) { m_scanIdHasBeenSet = true; m_scanId = std::forward<ScanIdT>(value); }
+    template<typename ScanIdT = Aws::String>
+    GetCodeSecurityScanResult& WithScanId(ScanIdT&& value) { SetScanId(std::forward<ScanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,13 +59,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the scan.</p>
+     * <p>The Amazon Web Services account ID associated with the scan.</p>
      */
-    inline const Aws::String& GetScanId() const { return m_scanId; }
-    template<typename ScanIdT = Aws::String>
-    void SetScanId(ScanIdT&& value) { m_scanIdHasBeenSet = true; m_scanId = std::forward<ScanIdT>(value); }
-    template<typename ScanIdT = Aws::String>
-    GetCodeSecurityScanResult& WithScanId(ScanIdT&& value) { SetScanId(std::forward<ScanIdT>(value)); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetCodeSecurityScanResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,6 +90,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The timestamp when the scan was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetCodeSecurityScanResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the scan was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -120,6 +108,18 @@ namespace Model
     void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     GetCodeSecurityScanResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the last commit that was scanned. This is only returned if
+     * the scan was successful or skipped.</p>
+     */
+    inline const Aws::String& GetLastCommitId() const { return m_lastCommitId; }
+    template<typename LastCommitIdT = Aws::String>
+    void SetLastCommitId(LastCommitIdT&& value) { m_lastCommitIdHasBeenSet = true; m_lastCommitId = std::forward<LastCommitIdT>(value); }
+    template<typename LastCommitIdT = Aws::String>
+    GetCodeSecurityScanResult& WithLastCommitId(LastCommitIdT&& value) { SetLastCommitId(std::forward<LastCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,20 +132,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_lastCommitId;
-    bool m_lastCommitIdHasBeenSet = false;
+    Aws::String m_scanId;
+    bool m_scanIdHasBeenSet = false;
 
     CodeSecurityResource m_resource;
     bool m_resourceHasBeenSet = false;
 
-    Aws::String m_scanId;
-    bool m_scanIdHasBeenSet = false;
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     CodeScanStatus m_status{CodeScanStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
@@ -153,8 +147,14 @@ namespace Model
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_lastCommitId;
+    bool m_lastCommitIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

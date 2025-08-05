@@ -35,7 +35,7 @@ namespace Model
     ///@{
     /**
      * <p>Specify either the name or the ARN of the investigation group that you want
-     * to view.</p>
+     * to view. This is used to set the name of the investigation group.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

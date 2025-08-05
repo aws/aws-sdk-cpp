@@ -144,8 +144,8 @@ namespace EntityResolution
          * <p>Creates an <code>IdMappingWorkflow</code> object which stores the
          * configuration of the data processing job to be run. Each
          * <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an
-         * existing workflow, use the <code>UpdateIdMappingWorkflow</code>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * existing workflow, use the UpdateIdMappingWorkflow API.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -172,7 +172,7 @@ namespace EntityResolution
         /**
          * <p>Creates an ID namespace object which will help customers provide metadata
          * explaining their dataset and how to use it. Each ID namespace must have a unique
-         * name. To modify an existing ID namespace, use the <code>UpdateIdNamespace</code>
+         * name. To modify an existing ID namespace, use the UpdateIdNamespace
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">AWS
          * API Reference</a></p>
@@ -198,11 +198,11 @@ namespace EntityResolution
         }
 
         /**
-         * <p>Creates a <code>MatchingWorkflow</code> object which stores the configuration
-         * of the data processing job to be run. It is important to note that there should
-         * not be a pre-existing <code>MatchingWorkflow</code> with the same name. To
-         * modify an existing workflow, utilize the <code>UpdateMatchingWorkflow</code>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a matching workflow that defines the configuration for a data
+         * processing job. The workflow name must be unique. To modify an existing
+         * workflow, use <code>UpdateMatchingWorkflow</code>. </p>  <p>For
+         * workflows where <code>resolutionType</code> is ML_MATCHING, incremental
+         * processing is not supported. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -1006,10 +1006,9 @@ namespace EntityResolution
 
         /**
          * <p>Updates an existing <code>IdMappingWorkflow</code>. This method is identical
-         * to <code>CreateIdMappingWorkflow</code>, except it uses an HTTP <code>PUT</code>
-         * request instead of a <code>POST</code> request, and the
-         * <code>IdMappingWorkflow</code> must already exist for the method to
-         * succeed.</p><p><h3>See Also:</h3>   <a
+         * to CreateIdMappingWorkflow, except it uses an HTTP <code>PUT</code> request
+         * instead of a <code>POST</code> request, and the <code>IdMappingWorkflow</code>
+         * must already exist for the method to succeed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -1059,11 +1058,10 @@ namespace EntityResolution
         }
 
         /**
-         * <p>Updates an existing <code>MatchingWorkflow</code>. This method is identical
-         * to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code>
-         * request instead of a <code>POST</code> request, and the
-         * <code>MatchingWorkflow</code> must already exist for the method to
-         * succeed.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing matching workflow. The workflow must already exist for
+         * this operation to succeed.</p>  <p>For workflows where
+         * <code>resolutionType</code> is ML_MATCHING, incremental processing is not
+         * supported. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">AWS
          * API Reference</a></p>
          */

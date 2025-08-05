@@ -43,6 +43,16 @@ CodeRepositoryAggregation& CodeRepositoryAggregation::operator =(JsonView jsonVa
     }
     m_providerTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sortOrder"))
+  {
+    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
+    m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sortBy"))
+  {
+    m_sortBy = CodeRepositorySortByMapper::GetCodeRepositorySortByForName(jsonValue.GetString("sortBy"));
+    m_sortByHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -51,16 +61,6 @@ CodeRepositoryAggregation& CodeRepositoryAggregation::operator =(JsonView jsonVa
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsObject());
     }
     m_resourceIdsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortBy"))
-  {
-    m_sortBy = CodeRepositorySortByMapper::GetCodeRepositorySortByForName(jsonValue.GetString("sortBy"));
-    m_sortByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
-    m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-    m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
@@ -91,6 +91,16 @@ JsonValue CodeRepositoryAggregation::Jsonize() const
 
   }
 
+  if(m_sortOrderHasBeenSet)
+  {
+   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", CodeRepositorySortByMapper::GetNameForCodeRepositorySortBy(m_sortBy));
+  }
+
   if(m_resourceIdsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
@@ -100,16 +110,6 @@ JsonValue CodeRepositoryAggregation::Jsonize() const
    }
    payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
 
-  }
-
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", CodeRepositorySortByMapper::GetNameForCodeRepositorySortBy(m_sortBy));
-  }
-
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;

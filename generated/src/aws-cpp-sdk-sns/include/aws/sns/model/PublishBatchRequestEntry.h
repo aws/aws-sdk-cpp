@@ -92,7 +92,7 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g. http). </p>
+     * want to send to a specific transport protocol (for example, http). </p>
      */
     inline const Aws::String& GetMessageStructure() const { return m_messageStructure; }
     inline bool MessageStructureHasBeenSet() const { return m_messageStructureHasBeenSet; }
@@ -176,22 +176,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter applies only to FIFO (first-in-first-out) topics.</p> <p>The
-     * tag that specifies that a message belongs to a specific message group. Messages
-     * that belong to the same message group are processed in a FIFO manner (however,
-     * messages in different message groups might be processed out of order). To
-     * interleave multiple ordered streams within a single topic, use
+     * <p>FIFO topics: The tag that specifies that a message belongs to a specific
+     * message group. Messages that belong to the same message group are processed in a
+     * FIFO manner (however, messages in different message groups might be processed
+     * out of order). To interleave multiple ordered streams within a single topic, use
      * <code>MessageGroupId</code> values (for example, session data for multiple
      * users). In this scenario, multiple consumers can process the topic, but the
-     * session data of each user is processed in a FIFO fashion. </p> <p>You must
-     * associate a non-empty <code>MessageGroupId</code> with a message. If you don't
-     * provide a <code>MessageGroupId</code>, the action fails. </p> <p>The length of
-     * <code>MessageGroupId</code> is 128 characters.</p> <p>
-     * <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z,
-     * 0-9)</code> and punctuation
-     * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>  <p>
-     * <code>MessageGroupId</code> is required for FIFO topics. You can't use it for
-     * standard topics. </p> 
+     * session data of each user is processed in a FIFO fashion. You must associate a
+     * non-empty <code>MessageGroupId</code> with a message. If you do not provide a
+     * <code>MessageGroupId</code>, the action fails. </p> <p>Standard topics: The
+     * <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS
+     * standard subscriptions to activate <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair
+     * queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any
+     * other endpoint types.</p> <p>The length of <code>MessageGroupId</code> is 128
+     * characters.</p> <p> <code>MessageGroupId</code> can contain alphanumeric
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
+     * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
      */
     inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }

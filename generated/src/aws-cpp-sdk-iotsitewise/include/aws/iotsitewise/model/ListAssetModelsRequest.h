@@ -48,7 +48,9 @@ namespace Model
      * Can't be included as a component in another asset model.</p> </li> <li> <p>
      * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the
      * composite models of other asset models. You can't create assets directly from
-     * this type of asset model. </p> </li> </ul>
+     * this type of asset model. </p> </li> <li> <p> <b>INTERFACE</b> – An interface is
+     * a type of model that defines a standard structure that can be applied to
+     * different asset models.</p> </li> </ul>
      */
     inline const Aws::Vector<AssetModelType>& GetAssetModelTypes() const { return m_assetModelTypes; }
     inline bool AssetModelTypesHasBeenSet() const { return m_assetModelTypesHasBeenSet; }

@@ -25,15 +25,15 @@ AssociateConfigurationRequest::AssociateConfigurationRequest(JsonView jsonValue)
 
 AssociateConfigurationRequest& AssociateConfigurationRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("resource"))
-  {
-    m_resource = jsonValue.GetObject("resource");
-    m_resourceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanConfigurationArn"))
   {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
     m_scanConfigurationArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resource"))
+  {
+    m_resource = jsonValue.GetObject("resource");
+    m_resourceHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue AssociateConfigurationRequest::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithObject("resource", m_resource.Jsonize());
-
-  }
-
   if(m_scanConfigurationArnHasBeenSet)
   {
    payload.WithString("scanConfigurationArn", m_scanConfigurationArn);
+
+  }
+
+  if(m_resourceHasBeenSet)
+  {
+   payload.WithObject("resource", m_resource.Jsonize());
 
   }
 

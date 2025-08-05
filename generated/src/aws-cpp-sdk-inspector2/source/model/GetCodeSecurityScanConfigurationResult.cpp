@@ -25,10 +25,30 @@ GetCodeSecurityScanConfigurationResult::GetCodeSecurityScanConfigurationResult(c
 GetCodeSecurityScanConfigurationResult& GetCodeSecurityScanConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("scanConfigurationArn"))
+  {
+    m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
+    m_scanConfigurationArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("level"))
+  {
+    m_level = ConfigurationLevelMapper::GetConfigurationLevelForName(jsonValue.GetString("level"));
+    m_levelHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("scopeSettings"))
+  {
+    m_scopeSettings = jsonValue.GetObject("scopeSettings");
+    m_scopeSettingsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("createdAt"))
   {
@@ -39,26 +59,6 @@ GetCodeSecurityScanConfigurationResult& GetCodeSecurityScanConfigurationResult::
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("level"))
-  {
-    m_level = ConfigurationLevelMapper::GetConfigurationLevelForName(jsonValue.GetString("level"));
-    m_levelHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanConfigurationArn"))
-  {
-    m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
-    m_scanConfigurationArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scopeSettings"))
-  {
-    m_scopeSettings = jsonValue.GetObject("scopeSettings");
-    m_scopeSettingsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/Operation.h>
 #include <aws/inspector2/model/Service.h>
+#include <aws/inspector2/model/Operation.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operations that can be performed with the given permissions.</p>
-     */
-    inline Operation GetOperation() const { return m_operation; }
-    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(Operation value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline Permission& WithOperation(Operation value) { SetOperation(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The services that the permissions allow an account to perform the given
      * operations for.</p>
      */
@@ -59,13 +49,23 @@ namespace Model
     inline void SetService(Service value) { m_serviceHasBeenSet = true; m_service = value; }
     inline Permission& WithService(Service value) { SetService(value); return *this;}
     ///@}
-  private:
 
-    Operation m_operation{Operation::NOT_SET};
-    bool m_operationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The operations that can be performed with the given permissions.</p>
+     */
+    inline Operation GetOperation() const { return m_operation; }
+    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
+    inline void SetOperation(Operation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline Permission& WithOperation(Operation value) { SetOperation(value); return *this;}
+    ///@}
+  private:
 
     Service m_service{Service::NOT_SET};
     bool m_serviceHasBeenSet = false;
+
+    Operation m_operation{Operation::NOT_SET};
+    bool m_operationHasBeenSet = false;
   };
 
 } // namespace Model

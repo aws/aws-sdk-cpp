@@ -16,15 +16,15 @@ Aws::String UpdateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_ec2ConfigurationHasBeenSet)
-  {
-   payload.WithObject("ec2Configuration", m_ec2Configuration.Jsonize());
-
-  }
-
   if(m_ecrConfigurationHasBeenSet)
   {
    payload.WithObject("ecrConfiguration", m_ecrConfiguration.Jsonize());
+
+  }
+
+  if(m_ec2ConfigurationHasBeenSet)
+  {
+   payload.WithObject("ec2Configuration", m_ec2Configuration.Jsonize());
 
   }
 

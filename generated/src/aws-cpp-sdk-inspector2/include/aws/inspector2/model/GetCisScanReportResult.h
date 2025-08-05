@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
-#include <aws/inspector2/model/CisReportStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CisReportStatus.h>
 #include <utility>
 
 namespace Aws
@@ -35,15 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status.</p>
-     */
-    inline CisReportStatus GetStatus() const { return m_status; }
-    inline void SetStatus(CisReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetCisScanReportResult& WithStatus(CisReportStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
@@ -51,6 +42,15 @@ namespace Model
     void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
     template<typename UrlT = Aws::String>
     GetCisScanReportResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status.</p>
+     */
+    inline CisReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(CisReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetCisScanReportResult& WithStatus(CisReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -63,11 +63,11 @@ namespace Model
     ///@}
   private:
 
-    CisReportStatus m_status{CisReportStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
     Aws::String m_url;
     bool m_urlHasBeenSet = false;
+
+    CisReportStatus m_status{CisReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
